@@ -6,8 +6,8 @@ all:  ## Compile paper
 
 full:  ## Compile everything
 	pdflatex $(SOURCE).tex
-	bibtex $(SOURCE)
 	pdflatex $(SOURCE).tex
+	bibtex $(SOURCE)
 	pdflatex $(SOURCE).tex
 
 clean:  ## Clean output files
