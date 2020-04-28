@@ -3,6 +3,7 @@ SHELL=/bin/zsh   # for the while loop below
 
 all:  ## Compile paper
 	pdflatex $(SOURCE)
+	open *.pdf
 
 full:  ## Compile everything
 	pdflatex $(SOURCE).tex
