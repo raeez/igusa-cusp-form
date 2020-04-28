@@ -139,11 +139,11 @@ non-trivial multiplier system $$\nu_{\chi_5}:
 \Sp_4(\Z) \rightarrow \C$$ for $\chi_5$
 such that $|\nu_{\chi_5}(g)| = 1$ for all $g \in \Sp_4(\Z)$
 (found by Maass \cite{MAASS:1}) is given by
-$$\nu_{\chi_5}(\begin{pmatrix}0 & \Id_2\\
--\Id_2 & 0\end{pmatrix}) = 1,$$ $$\nu_{\chi_5}(\begin{pmatrix}\Id_2 & B\\
-0 & \Id_2\end{pmatrix}) = (-1)^{b_1 + b_2 + b_3},$$
-$$\nu_{\chi_5}(\begin{pmatrix}{}^tA^{-1} & 0\\
-0 & A\end{pmatrix}) = (-1)^{(1 + a_1 + a_4)(1 + a_2 + a_3) + a_1a_4}$$
+$$\nu_{\chi_5}\begin{pmatrix}0 & \Id_2\\
+-\Id_2 & 0\end{pmatrix} = 1,$$ $$\nu_{\chi_5}\begin{pmatrix}\Id_2 & B\\
+0 & \Id_2\end{pmatrix} = (-1)^{b_1 + b_2 + b_3},$$
+$$\nu_{\chi_5}\begin{pmatrix}{}^tA^{-1} & 0\\
+0 & A\end{pmatrix} = (-1)^{(1 + a_1 + a_4)(1 + a_2 + a_3) + a_1a_4}$$
 where $A = \begin{pmatrix}a_1 & a_2\\
 a_3 & a_4\end{pmatrix} \in \GL_2(\Z)$ and $B = \begin{pmatrix}b_1 &
 b_2\\
@@ -200,7 +200,7 @@ the symplectic group $\Sp_4(\Z)/\{\pm\Id_5\}$ and the orthogonal group
 $\Orth(\La^{3,2})_+/{\pm\Id_5}$}
 
 Proofs for results of this section can be found in \cite{KNAPP:1}. We
-start with some isomorphisms related to low rank symplectic and
+start with some isomorphisms relating relevant low rank symplectic and
 orthogonal groups.
 
 
@@ -316,9 +316,7 @@ $g \in \Sp_4(\Z).$
 Consider some fixed primitive hyperbolic sublattice
 $$\La^{2,1} = \HypPlan \oplus [2] \simeq \Z f_2 \oplus \Z f_3 \oplus \Z
 f_{-2} \subset \La^{3,2}$$
-Throughout we will use the convention of expressing linear combinations
-of a the basis elements $\{f_2,f_3,f_{-2}\}$ as
-$$z_1 f_{-2} + z_2 f_3 + z_3 f_2$$
+
 Extending automorphisms $\phi \in \Orth(\La^{2,1})$ to be the identity
 on $(\La^{2,1})^{\perp}$ yields an embedding $\Orth(\La^{2,1})
 \rightarrow \Orth(\La^{3,2})$, hence we can investigate the automorphy
@@ -470,17 +468,16 @@ distinguish two cases:
 %\begin{proof}
 %\end{proof}
 
-Next let us investigate the cone $\R_{\geq 0}
-\Cone(\La^{2,1}_{II})_+ = \R_{\geq 0} \delta_1 + \R_{\geq 0} \delta_2
+Next let us investigate the cone $\Delta(\La^{2,1}_{II})_+ = \R_{\geq 0} \delta_1 + \R_{\geq 0} \delta_2
 + \R_{\geq 0} \delta_3$ along with its dual cone
-$$\Cone(\La^{2,1}_{II})_+^* = \{ x \in \La^{2,1} \otimes \R | (x,
+$$\Delta(\La^{2,1}_{II})_+^* = \{ x \in \La^{2,1} \otimes \R | (x,
 \delta_i) \leq 0 \}.$$ Since $\Poly_{II} \subset \Cone(\La^{2,1})_+ /
 \R_{>0}$ has finite volume in the hyperbolic space and since the cone
 $\overline{\Cone(\La^{2,1})_+} = \overline{\Cone(\La^{2,1})_+^*}$ is
 self-dual, the above is equivalent to the sequence of embeddings of
 cones
-$$\Cone(\La^{2,1}_{II})_+^* \subset
-\overline{\Cone(\La^{2,1})_+} \subset  \Cone(\La^{2,1}_{II})_+$$
+$$\Delta(\La^{2,1}_{II})_+^* \subset
+\overline{\Cone(\La^{2,1})_+} \subset  \Delta(\La^{2,1}_{II})_+$$
 We stress this property is key to our construction, and is actually equivalent to
 finite volume of $\Poly_{II}$.
 
@@ -496,10 +493,9 @@ we have $$\rho = \frac{1}{2}\delta_1 + \frac{1}{2}\delta_2 +
 \frac{1}{2}\delta_3 = f_2 - \frac{1}{2}f_3 + f_{-2}$$
 
 Identifying $\La^{2,1}\otimes \Q \simeq \La^{2,1}_{II} \otimes \Q$,
-then it is clear that $\rho \in \Cone(\La^{2,1}_{II})_+^*$ hence
+then it is clear that $\rho \in \Delta(\La^{2,1}_{II})_+^*$ hence
 by the sequence of embeddings of cones above we have $\rho \in
 \Cone(\La^{2,1})_+ = \Cone(\La^{2,1}_{II})_+$.
-
 
 Now we use the reflection group $W^{(2)}(\La^{2,1}_{II})$ to study the
 fourier coefficients of $\chi_5$. Again fix  $z = z_1 f_{-2} + z_2 f_3 +
@@ -508,10 +504,10 @@ z_3 f_2 \in \La^{2,1} \otimes \R + i\Cone(\La^{2,1})_+ = \La^{2,1}_{II}
 $$(\La^{2,1}_{II})^* = \Z \frac{1}{2} f_2 + \Z \frac{1}{2} f_3 + \Z
 \frac{1}{2} f_{-2} = \frac{1}{2}\La^{2,1}$$
 
-
-
-Thus for $n,l,m \in \Z$ we can express $$\frac{1}{64}f(n,l,m)\exp(\pi i
-(n z_1 + lz_2 + m z_3)) $$ $$= \frac{1}{64} f(n,l,m) \exp(- \pi i f_2 - l f_3
+Thus for $n,l,m \in \Z$ we have $n \equiv m \equiv l \equiv 1 \mod 2$,
+$n,m > 0$ and
+$4nm - l^2 > 0$, and hence we can express $$\frac{1}{64}f(n,l,m)\exp(\pi i
+(n z_1 + lz_2 + m z_3)) $$ $$= \frac{1}{64} f(n,l,m) \exp(- \pi i (nf_2 - l f_3
 \frac{1}{2} + mf_{-2}, z))$$
 $$= m(a) \exp (-\pi i(\rho +a, z)),$$
 where $$a = (n-1) f_2 - (l-1)\frac{1}{2} f_3 + (m-1) f_2 \in (\La^{2,1})^*
@@ -534,50 +530,61 @@ $(\rho + a, \delta_i) = 0$ then the corresponding fourier coefficient
 $m(a) = 0$ since $\chi_5$ is anti-invariant with respect to
 $s_{\delta_i}$. It follows that $(\rho +a, \delta_i)$ is integral and
 $(\rho +a, \delta_i) < 0$ for all $i$. By the construction of $\rho$ we
-have $(a, \delta_i) \leq 0$ and it follows then that $a \in \R_{\geq 0}
-\Cone(\La^{2,1}_{II})^*_+$ but then by the sequence of cone embeddings
+have $(a, \delta_i) \leq 0$ and it follows then that $a \in
+\Delta(\La^{2,1}_{II})^*_+$ but then by the sequence of cone embeddings
 above we have $$a \in \R_{\geq 0} \Cone(\La^{2,1}_{II})_+^* \cap
 \overline{\Cone(\La^{2,1})_+} = \R_{\geq 0} \Poly_{II}.$$ It follows
 that $a \in \R_{>0}\Poly_{II}$ if $a \neq 0$. If $a = 0$ we have $m(a) =
--1$, so by the congruences $m,n,l = 1 \mod 2$ we have $a \in 2
+-1$, so by the congruences $m\equiv n \equiv l \equiv 1 \mod 2$ we have $a \in 2
 (\La^{2,1})^* = \La^{2,1}_{II}.$
 
-Now consider the primitive elements $a_0 \in \La^{2,1}_{II} \cap \R_{>0}
-\Poly_{II}$ with $(a_0,a_0) = 0$ corresponding to the three vertices at
-infinity; by the third lemma above, the group $A(\Poly_{II,prim})$ is
-transitive on these three vertices and the corresponding primitive
-elements are given explicitly by $2f_2,
-2f_{-2}, 2f_2 - 2f_3 + 2 f_{-2}$); furthermore, by the third lemma above, the group
-$A(\Poly_{II,prim})$ preserves the fourier expansion just obtained. Thus
-given say $a_0 = 2 f_2$ one of the three primitive elements of
-$\La^{2,1}_{II} \cap \R_{>0}\Poly_{II}$ we have the identity of formal
-power series
+
+Now, putting this all together, and changing the range of summation to
+$a \in \La^{2,1}_{II} \cap \R_{> 0}\Poly_{II}$, we find
+\begin{lemma}
+$$\displaystyle\sum_{w \in W^{(2)}(\La^{2,1})} \text{det}(w)( \exp(-\pi
+i(w(\rho),z))- \sum_{a \in \La^{2,1}_{II}\cap\R_{>0}\Poly_{II}}
+m(a)\exp(-\pi i(w(\rho+a),z)))$$
+\end{lemma}
+
+Now we investigate the behaviour of a certain triple of primitive
+elements at \textit{infinity}. Their relevance will become clear
+shortly. Consider the primitive elements $a_0 \in \La^{2,1}_{II} \cap
+\R_{>0} \Poly_{II}$ with $(a_0,a_0) = 0$ corresponding to the three
+vertices at infinity of the hyperbolic plane; by the third lemma above, the group
+$A(\Poly_{II,prim})$ is transitive on these three vertices and the
+corresponding primitive elements are given explicitly by $2f_2, 2f_{-2},
+2f_2 - 2f_3 + 2 f_{-2}$); furthermore, by the third lemma above, the
+group $A(\Poly_{II,prim})$ preserves the fourier expansion just
+obtained. Thus given say $a_0 = 2 f_2$ one of the three primitive
+elements of $\La^{2,1}_{II} \cap \R_{>0}\Poly_{II}$ we have the identity
+of formal power series
 
 $$1 + \frac{1}{64} \sum_{t \in \N} f(1 + 2t, 1, 1)q^t = \displaystyle\prod_{k\in \N} (1
 - q^k)^9$$
 
 is equivalent to an equality
 
-$$ 1 - \sum_{t \in \N} m(t a_0) q^t = \displaystyle\prod_{k\in \N}
-(1 - q^k)^{\tau(k a_0)}$$
+$$ 1 - \sum_{t \in \N} m(t a_0) q^t = \displaystyle\prod_{t\in \N}
+(1 - q^t)^{\tau(t a_0) = 9 }$$
 
 where $\tau(a) = 9$ for any  $a \in \La^{2,1}_{II} \cap \R_{>0}
-\Poly_{II}$ (i.e. $\tau(k a_0) = 9$) with $(a,a) = 0$. Then transitivity
+\Poly_{II}$ with $(a,a) = 0$. Then transitivity
 of the group $S_3$ means it is true for all three primitive elements.
 
 
 The just-derived expression for the fourier transform of $\frac{1}{64}
-\chi_5$ sharply recalls to mind the Weyl-Kac denominator
-formula in the theory of generalized
-kac-moody algebras. Indeed, the fundamental polyhedron
-$\Poly_{II}$ along with the set of orthogonal vectors $\Poly_{II,prim} =
-\{\delta_1,\delta_2,\delta_3\}$ can be considered as a (real) root datum for
+\chi_5$, as well as the generating series and product in $q^t$ arising
+from multiples of the primitive elements at infinity sharply recalls to
+mind the Weyl-Kac denominator formula in the theory of generalized
+kac-moody algebras. Indeed, the fundamental polyhedron $\Poly_{II}$
+along with the set of orthogonal vectors $\Poly_{II,prim} =
+\{\delta_1,\delta_2,\delta_3\}$ can be considered as a (real) root datum
+for
 the the Gram matrix
 
 $$(\delta_i,\delta_j) = \begin{pmatrix}2 & -2 & -2\\-2 & 2 & -2\\-2 & -2
 & 2\end{pmatrix}$$
-
-which is a generalized symmetric Cartan matrix.
 
 \section{The generalized Kac-Moody algebra $\bkm$ and its automorphic
 correction $\autcor$}
@@ -595,9 +602,9 @@ this \textit{automorphic correction} $\autcor$.
 Using the coefficients $m(a)$ and $\tau(a)$ of the last section, we
 introduce the following sets of \textit{simple roots} for $a \in
 \La^{2,1}_{II} \cap \R_{>0} \Poly_{II}$:
-$$\Delta_{\overline{0}}^{im} =\{ m(a)a | (a,a) < 0 , m(a) > 0\} \cup \{\tau(a)a | (a,a) = 0,\tau(a)>0\}$$
+$$\Delta_{\overline{0}}^{im} = \{\tau(a)a | (a,a) = 0,\tau(a)>0\}$$
 where $ka$ for $k\in \N$ means that we repeat $a$ exactly $k$ times and
-$$\Delta_{\overline{1}}^{im} = \{ m(a)a | (a,a) < 0 , m(a)< 0\} \cup \{\tau(a)a | (a,a) = 0, \tau(a)<0\}$$
+$$\Delta_{\overline{1}}^{im} = \{ m(a)a | (a,a) < 0 , m(a)< 0\}$$
 where $ka$ for $-k \in \N$ means we repeat the element $a$ exactly $-k$
 times. The negative sign here corresponds to all of the $-k$ elements
 being \textit{odd}, in the sense of superalgebras, hence the elements
