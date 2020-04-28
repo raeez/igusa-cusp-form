@@ -490,16 +490,12 @@ by the sequence of embeddings of cones above we have $\rho \in
 \Cone(\La^{2,1})_+ = \Cone(\La^{2,1}_{II})_+$.
 
 Now we use the reflection group $W^{(2)}(\La^{2,1}_{II})$ to study the
-fourier coefficients of $\Delta_5$. Again fix  $z = z_1 f_{-2} + z_2 f_3 +
-z_3 f_2 \in \La^{2,1} \otimes \R + i\Cone(\La^{2,1})_+ = \La^{2,1}_{II}
-\otimes \R + i\Cone(\La^{2,1}_{II})_+$ as above. Then the lattice
-$$(\La^{2,1}_{II})^* = \Z \frac{1}{2} f_2 + \Z \frac{1}{2} f_3 + \Z
-\frac{1}{2} f_{-2} = \frac{1}{2}\La^{2,1}$$
+fourier coefficients of $\Delta_5$. Again fix  $z = z_1 f_{-2} + z_2 f_3 + z_3 f_2 \in \La^{2,1} \otimes \R + i\Cone(\La^{2,1})_+ = \La^{2,1}_{II} \otimes \R + i\Cone(\La^{2,1}_{II})_+$ as above. Then the lattice
+$$(\La^{2,1}_{II})^* = \Z \frac{1}{2} f_2 + \Z \frac{1}{2} f_3 + \Z \frac{1}{2} f_{-2} = \frac{1}{2}\La^{2,1}$$
 
 Thus for $n,l,m \in \Z$ we have $n \equiv m \equiv l \equiv 1 \mod 2$,
 $n,m > 0$ and
-$4nm - l^2 > 0$, and hence we can express $$\frac{1}{64}f(n,l,m)\exp(\pi i
-(n z_1 + lz_2 + m z_3)) $$ $$= \frac{1}{64} f(n,l,m) \exp(- \pi i (nf_2 - l f_3
+$4nm - l^2 > 0$, and hence we can express $$\frac{1}{64}f(n,l,m)\exp(\pi i (n z_1 + lz_2 + m z_3)) $$ $$= \frac{1}{64} f(n,l,m) \exp(- \pi i (nf_2 - l f_3
 \frac{1}{2} + mf_{-2}, z))$$
 $$= m(a) \exp (-\pi i(\rho +a, z)),$$
 where $$a = (n-1) f_2 - (l-1)\frac{1}{2} f_3 + (m-1) f_2 \in (\La^{2,1})^*
@@ -511,10 +507,7 @@ Expressing the type $II$ case in the third lemma above in terms of the
 lattice weyl vector $\rho$, the reflection group
 $W^{(2)}(\La^{2,1}_{II})$ and the $m(a)$, we see
 
-$$\frac{1}{64} \Delta_5(Z) = \displaystyle\sum_{w \in W^{(2)}(\La^{2,1}_{II})}
-\text{det}(w) (
-\displaystyle\sum_{\rho +a \in (\La^{2,1}_{II})^* \cap \La^{2,1}_{II}} m(a) \exp(-\pi
-i(w(\rho +a), z) ))$$
+$$\frac{1}{64} \Delta_5(Z) = \displaystyle\sum_{w \in W^{(2)}(\La^{2,1}_{II})} \text{det}(w) ( \displaystyle\sum_{\rho +a \in (\La^{2,1}_{II})^* \cap \La^{2,1}_{II}} m(a) \exp(-\pi i(w(\rho +a), z) ))$$
 
 since for this sum we have $\rho +a \in (\La^{2,1}_{II})^* \cap
 \La^{2,1}_{II}$ we see $(\rho +a, \delta_i) \leq 0$ for all $i$. If
@@ -522,8 +515,7 @@ $(\rho + a, \delta_i) = 0$ then the corresponding fourier coefficient
 $m(a) = 0$ since $\Delta_5$ is anti-invariant with respect to
 $s_{\delta_i}$. It follows that $(\rho +a, \delta_i)$ is integral and
 $(\rho +a, \delta_i) < 0$ for all $i$. By the construction of $\rho$ we
-have $(a, \delta_i) \leq 0$ and it follows then that $a \in
-\Delta(\La^{2,1}_{II})^*_+$ but then by the sequence of cone embeddings
+have $(a, \delta_i) \leq 0$ and it follows then that $a \in \Delta(\La^{2,1}_{II})^*_+$ but then by the sequence of cone embeddings
 above we have $$a \in \R_{\geq 0} \Cone(\La^{2,1}_{II})_+^* \cap
 \overline{\Cone(\La^{2,1})_+} = \R_{\geq 0} \Poly_{II}.$$ It follows
 that $a \in \R_{>0}\Poly_{II}$ if $a \neq 0$. If $a = 0$ we have $m(a) =
@@ -541,13 +533,12 @@ m(a)\exp(-\pi i(w(\rho+a),z)))$$
 
 Now we investigate the behaviour of a certain triple of primitive
 elements at \textit{infinity}. Their relevance will become clear
-shortly. Consider the primitive elements $a_0 \in \La^{2,1}_{II} \cap
-\R_{>0} \Poly_{II}$ with $(a_0,a_0) = 0$ corresponding to the three
+shortly. Consider the primitive elements $a_0 \in \La^{2,1}_{II} \cap \R_{>0} \Poly_{II}$ with $(a_0,a_0) = 0$ corresponding to the three
 vertices at infinity of the hyperbolic plane; by the third lemma above, the group
-$A(\Poly_{II,prim})$ is transitive on these three vertices and the
-corresponding primitive elements are given explicitly by $2f_2, 2f_{-2},
-2f_2 - 2f_3 + 2 f_{-2}$); furthermore, by the third lemma above, the
-group $A(\Poly_{II,prim})$ preserves the fourier expansion just
+$Aut(\Poly_{II})$ is transitive on these three vertices and the
+corresponding primitive elements are given explicitly by $\{2f_2,
+2f_{-2}, 2f_2 - 2f_3 + 2 f_{-2}\}$; furthermore, by the third lemma above, the
+group $Aut(\Poly_{II})$ preserves the fourier expansion just
 obtained. Thus given say $a_0 = 2 f_2$ one of the three primitive
 elements of $\La^{2,1}_{II} \cap \R_{>0}\Poly_{II}$ we have the identity
 of formal power series
