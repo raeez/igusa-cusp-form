@@ -17,6 +17,8 @@ generalized Borcherds-Kac-Moody superalgebras and the Igusa cusp form $\Delta_5$
 \usepackage{tikz-cd}
 
 %\usepackage{natbib}
+\newtheorem{question}{Question}
+\newtheorem{conjecture}{Conjecture}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 \newtheorem{remark}{Remark}
@@ -35,7 +37,7 @@ generalized Borcherds-Kac-Moody superalgebras and the Igusa cusp form $\Delta_5$
 \newcommand{\SL}{\mathbf{SL}}
 \newcommand{\Orth}{\mathbf{O}}
 \newcommand{\SO}{\mathbf{SO}}
-\newcommand{\Hpl}{\mathcal{H}}
+\newcommand{\Hpl}{\mathbb{H}}
 \newcommand{\IV}{\mathbf{IV}}
 \newcommand{\fbasis}{(f_i)_{\{1,2,3,-2,-1\}}}
 \newcommand{\Id}{\mathbf{I}}
@@ -51,7 +53,7 @@ generalized Borcherds-Kac-Moody superalgebras and the Igusa cusp form $\Delta_5$
 
 \maketitle
 
-\begin{abstract} We investigate the relationship between the siegel
+\begin{abstract} Motivated by considerations in arithmetic algebraic geometry, we investigate a relationship between the siegel
 modular form known as the Igusa cusp form $\Delta_5$ of weight $5$ and a
 certain weak Jacobi form $\phi_{0,1}$ of weight $0$ and index $1$. Following
 Kac-Moody, Borcherds, Gritsenko and Nikulin et. al., we work out in
@@ -117,6 +119,105 @@ correction $\autcor$.  \end{abstract}
 %   motivations/applications
 
 \tableofcontents
+
+\section{A motivating conjecture}
+Fix the genus $g = 2$ and consider the integral symplectic groups
+$\Gamma_t$, or so-called \textit{paramodular groups}, and their
+corresponding congruence subgroups of Hecke type
+
+$$t,n \in \mathbb{Z}_+: \Gamma_t(N) =
+\{\begin{pmatrix}*&*t&*&*\\*&*&*&*t^{-1}\\*N&*Nt&*&*\\*Nt&*Nt&*t&*\end{pmatrix}
+\in \mathbf{Sp_4}(\mathbb{Q})| *\in\mathbb{Z}\}.$$
+The group $\Gamma_1 = \Gamma_1(1) =  \mathbf{Sp}_4(\mathbb{Z})$ while $\Gamma_t = \Gamma_t(1)$ can be conjugated to the integral
+symplectic group of integral skew-symmetric form with elementary
+divisor $(1,t)$. The corresponding quotients $\mathbb{H}_2/\Gamma_t$ of the genus $2$
+Siegel-upper space are the moduli spaces of $(1,t)$-polarized abelian
+surfaces.
+
+Gritsenko-Clery\cite{GC} answered the following question
+
+\begin{question}
+Which Siegel modular forms with respect to $\Gamma_t(N)$ (with
+character/multiplier system) vanish exactly along
+$\Gamma_t(N)$-translates of the diagonal
+$\{\begin{pmatrix}a&\\&b\end{pmatrix}|a,b \in \mathbb{H}_1\} \subset
+\mathbb{H}_2$ precisely to order 1?
+\end{question}
+
+their answer comes in the form of
+
+\begin{theorem}
+For all possible congruence subgroups $\Gamma_t(N) < \Gamma_t$ there are exactly $8$
+diagonal-divisor modular forms.
+\end{theorem}
+
+See \cite{GC} for the full treatment. This writeup concerns the simplest
+specimen from this class, the weight $5$ cuspidal modular form for the group
+$\Gamma_1 = \mathbf{Sp}_4(\mathbb{Z})$ given by Igusa's cusp form
+$\Delta_5$, defined in the following section.
+
+One of our motivations for investigating the detailed structure of
+$\Delta_5$, and indeed, each modular form from this class, comes from
+the arithmetic geometry of certain Calabi-Yau threefolds.
+
+Let $(E,e_0)$ be an elliptic curve with an $N$-torsion point $e_0$ and
+let $S$ be an elliptically fibered CY3 $$\pi: S \rightarrow
+\mathbb{P}^1$$ admitting sections $$s_1, s_2 : \mathbb{P}^1 \rightarrow
+S$$ with $s_2$ of order $N$ relative to $s_1$, and where we treat $s_1$
+as the zero-section. Then we can form the $N$ sections $$s_1, s_2,
+\ldots, s_k = s + s_2(\pi(s_{k-1})),\ldots, s_N.$$ The product $$S\times
+E$$ admits a free action by the finite group $\Z/N\Z$ given by $$(s,e)
+\mapsto (s + s_2(\pi(s)),e + e_0);$$ and so the quotient $X$ is a projective
+Calabi-Yau threefold. Now consider the
+class of the fiber $F \in Pic(S)$ of the map $\pi$, and form the curve
+class $$\beta_h = \frac{1}{N}(s_1 + \ldots + s_N + hF), \text{ for }
+h\geq 0.$$ We are interested in a certain zeta function of $X$ formed out of
+virtual volumes of the moduli stacks of 1-dimensional sheaves supported
+on $\beta_h$. To define this zeta function, consider $\mathrm{Hilb}^n(X,
+\beta_h)$ the Hilbert scheme of $1$-dimensional subschemes $Z \subset X$
+such that $$[Z] = \beta_h$$ $$\chi(\mathcal{O}_Z) = n$$
+i.e.\ with given algebro-topological invariants of cycle class $\beta_h$
+and euler characteristic $n$. $E$ acts on $S\times E$, and this action
+descends to $X$. We can then define the reduced numerical Donaldson-Thomas
+invariant associtaed to $(\beta_h,n)$
+\cite{DT},\cite{OB} by virtual integration over this quotient stack
+$$\int_{\mathrm{Hilb}^n(X,\beta_h)/E} \nu de = \sum_{k\in \mathbb{Z}}
+k\cdot e(\nu^{-1}(k))$$ where $\nu: \mathrm{Hilb}^n(X,\beta_h)
+\rightarrow \mathbb{Z}$ is Behrend's constructible function. Let
+$<\alpha,\beta>: \int_S \alpha \cup \beta$ be the intersection form on
+$S$, then we have \cite{OB}
+
+\begin{theorem}
+For $X = S\times E$ i.e.\ order $N = 1$ we have $$Z^X(q,t,p)=
+\sum_{h=0}^{\infty}\sum_{d=0}^{\infty}\sum_{n\in\mathbb{Z}}
+\mathbf{DT}^X_{n,(\beta_h,d)}q^{d-1}t^{\frac{1}{2}<\beta_h,\beta_h>}(-p)^n
+= \frac{C}{(\Delta_5)^2}$$ for a constant $C$.\end{theorem} Moreover,
+as will become relevant from later discussion, it is interesting to note
+that the \textit{elliptic genus} of a K3 surface is given by the weak
+jacobi form $\phi_{0,1}$, defined in section 6. Generalizing slightly,
+then we may consider in addition to $(E,e_0)$ the data $(S,L, g_N,h_M)$
+of a K3 surface $S$ together with lattice polarization $L$, and finite
+order symplectic automorphisms $g_N$ and $h_M$ of orders $N,M$
+necessarily less than or equal to $8$ by a theorem of
+Nikulin\cite{NIKULIN}. Then we may analogously define the twisted zeta
+functions $Z^X_{L,h_M}$ counting $\frac{1}{M}$-fractional sheaves on $X
+= (S\times E)/{\Z/N\Z}$ via numerical (or if we wish, refined)
+Donaldson-Thomas theory. In the numerical case, we have
+\begin{conjecture}
+all eight diagonal divisor modular froms of Gritsenko-Clery arise, up to
+constant $C$,as reciprocal-square roots of $Z^X_{L,h_M}$. Moreover,
+these Siegel paramodular forms all arise as denominator functions of
+generalized Borcherds-Kac-Moody superalgebras, with root multiplicities
+specified by $g_N-h_M$-twisted twined elliptic genera of K3 surfaces.
+
+\end{conjecture}
+
+Our treatment follows \cite{GN}, while most of the fundamental ideas
+concerning automorphic corrections of generalized Borcherds-Kac-Moody
+algebras follows Borcherds\cite{B}. We make no claims to originality,
+except in the formulation of the conjecture, in which case we accept all
+responsibility for lack of precision.
+
 
 \section{Preamble on the cusp form $\Delta_5$}
 
@@ -382,7 +483,7 @@ subgroup $$W(\La^{2,1}) \subset \Orth(\La^{2,1})_+.$$
 
 The lattice $\La^{2,1}$ is special, in particular because the
 automorphism group is known explicitly. Here we list the facts we will
-need from \cite{NIKULIN:1}
+need from \cite{NIKULIN}
 The group $\Orth(\La^{2,1})_+ = W^{(2)}(\La^{2,1})$ where the index
 $(2)$ indicates the subgroup generated by reflections in all elements of
 $=\La^{2,1}$ with square $2$. Analagously, we define
