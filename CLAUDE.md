@@ -10,7 +10,7 @@ This repository carries the paper *A Borcherds lift of the weak Jacobi form $\ph
 
 **Source layout.**
 
-- `proj.tex` — root TeX (AMS article class, 9pt, `mathpazo` body). Entry point.
+- `proj.tex` — root TeX (memoir class, EB Garamond body, newtx math). Entry point.
 - `proj.bib` + `proj.bbl` — bibliography.
 - `proj.pdf` — rendered artifact.
 - `Makefile` — `make` runs `pdflatex → biber → pdflatex → pdflatex`.
