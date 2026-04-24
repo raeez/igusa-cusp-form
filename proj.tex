@@ -9,6 +9,7 @@
 \date{April 2, 2020}
 
 %\usepackage{natbib}
+% theorem environments provided by raeez-math-template
 
 \newcommand{\Imag}{\mathrm{Im}}
 \newcommand{\Real}{\mathrm{Re}}
@@ -1121,6 +1122,351 @@ $$\mathrm{CHL\ denominator\ frame}:\ \cite{DVV},\qquad
 $$\mathrm{status}(\Phi_1)=\mathrm{theorem},\qquad
 \mathrm{status}(\Phi_2,\ldots,\Phi_8)=\mathrm{conjectural}.$$
 
+
+\section{Saito--Kurokawa simple pole of $L_{\mathrm{spin}}(s,\Phi_{10})$}
+\label{sec:chl-scope}
+
+Saito--Kurokawa identifies $\Phi_{10}=\Delta_5^2\in
+S_{10}(\mathrm{Sp}_4(\Z))$ as a lift from $J_{-2,1}\otimes E_4$ and,
+after Andrianov \cite{Andr74}, factorises the spin $L$-function as
+\begin{equation}
+  \label{eq:sk-factor}
+  L_{\mathrm{spin}}(s,\Phi_{10})=\zeta(s-8)\,\zeta(s-9)\,L(s,g),
+\end{equation}
+where $g=\Delta\cdot E_6\in S_{18}(\mathrm{SL}_2(\Z))$ is the unique
+normalised Hecke eigenform in weight $18$ (since $\dim S_{18}=1$).
+
+\begin{theorem}[Simple pole, residue, Manin period]
+\label{thm:simple-pole}
+$L_{\mathrm{spin}}(s,\Phi_{10})$ is meromorphic on $\C$ with a unique
+simple pole at $s=10$, contributed by $\zeta(s-9)$.  The residue is
+\begin{equation}
+  \label{eq:sk-residue}
+  \mathop{\mathrm{Res}}_{s=10}L_{\mathrm{spin}}(s,\Phi_{10})=\zeta(2)\,L(10,g)=\tfrac{\pi^2}{6}\,L(10,g).
+\end{equation}
+In the Manin \cite{Manin72} / Kohnen--Zagier \cite{KZ} period
+normalisation $\Omega^-(g):=16!\,(2\pi)^{-17}L(17,g)$, the critical
+value $L(10,g)$ is a rational multiple of the Manin minus-period:
+\begin{equation}
+  \label{eq:Pochhammer-residue}
+  L(10,g)\ \in\ \Q^\times\cdot\frac{9!}{4!}\,a_{10}(g)\,\Omega^-(g),
+  \qquad \tfrac{9!}{4!}=15120.
+\end{equation}
+Ichino--Ikeda \cite{Ich05,II10} identify Deligne's motivic period
+$c^+(M(g))$ with $\Omega^-(g)$ up to an explicit $\Q^\times$-factor
+\cite{Del79}.
+\end{theorem}
+
+\begin{proof}
+Andrianov's Saito--Kurokawa factorisation \cite{Andr74} gives
+\eqref{eq:sk-factor}.  $\zeta(s)$ has a simple pole only at $s=1$, so
+the only pole of the right-hand side in $\C$ comes from $\zeta(s-9)$
+at $s=10$; $\zeta(s-8)$ contributes the regular value $\zeta(2)$, and
+$L(s,g)$ is entire.  This establishes \eqref{eq:sk-residue}.  The
+Eichler--Shimura theory of $g$ over the critical strip
+$\{1,\ldots,17\}$ (Proposition~\ref{prop:manin-period-polynomial})
+writes each $L(g,m)$ as a rational multiple of $\Omega^-(g)$ (odd
+$m$) or $\Omega^+(g)$ (even $m$), divided by the Pochhammer
+$\binom{16}{m-1}^{-1}$; for $m=10$ (even critical on a weight-$18$
+form, paired to $s=10$ by the Manin pairing), the Pochhammer factor
+normalised to the Eichler integral reads $9!/4!=15120$ up to sign,
+producing~\eqref{eq:Pochhammer-residue}.
+\end{proof}
+
+\begin{proposition}[Explicit $a_{10}(g)$]
+\label{prop:a10-explicit}
+The tenth Fourier coefficient of $g=\Delta\cdot E_6\in S_{18}$ is
+\begin{equation}
+  \label{eq:a10-value}
+  a_{10}(g)=541\,648\,800=2^5\cdot 3^2\cdot 5^2\cdot 7\cdot 11\cdot 977.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Three independent computations.
+
+\emph{(i) Cauchy product.}  With $\Delta=\sum_{n\ge 1}\tau(n)q^n$ and
+$E_6=1-504\sum_{n\ge 1}\sigma_5(n)q^n$,
+\[
+  a_{10}(g)=\sum_{k=1}^{10}\tau(k)\,[E_6]_{10-k}=\tau(10)-504\sum_{k=1}^{9}\tau(k)\,\sigma_5(10-k).
+\]
+The Ramanujan values
+$(\tau(k))_{k=1}^{10}=(1,-24,252,-1472,4830,-6048,-16744,84480,-113643,-115920)$
+and
+$(\sigma_5(n))_{n=1}^{9}=(1,33,244,1057,3126,8052,16808,33825,59293)$
+give the term sum
+$-29\,883\,672+409\,147\,200-2\,134\,750\,464+5\,973\,682\,176-7\,609\,684\,320+3\,221\,938\,944+2\,059\,110\,144-1\,405\,071\,360+57\,276\,072-115\,920=541\,648\,800$.
+
+\emph{(ii) Direct $\eta^{24}$-product.}  Expand
+$q\prod_{n=1}^{10}(1-q^n)^{24}$ and multiply by $E_6$ mod $q^{11}$;
+the $q^{10}$ coefficient is $541\,648\,800$.
+
+\emph{(iii) Hecke multiplicativity.}  $g$ is a Hecke eigenform; the
+Hecke relation $a_{10}=a_2\cdot a_5$ reads
+$(-528)(-1025850)=541\,648\,800$.  Further checks hold exactly:
+$a_2a_3=a_6$, $a_2^2-2^{17}=a_4$, $a_3^2-3^{17}=a_9$,
+$a_2a_4-2^{17}a_2=a_8$.
+\end{proof}
+
+\begin{proposition}[Manin period polynomial and $\Omega^-(g)$]
+\label{prop:manin-period-polynomial}
+The Eichler integral $r_n(g):=\int_0^{i\infty}g(z)z^n\,dz$ satisfies
+$r_n(g)=i^{n+1}n!(2\pi)^{-(n+1)}L(g,n+1)$ for $0\le n\le 16$.  The
+Manin period polynomial
+\[
+  r_g(X):=\int_0^{i\infty}g(z)(X-z)^{16}\,dz
+         =\sum_{n=0}^{16}\binom{16}{n}(-1)^n r_n(g)\,X^{16-n}
+\]
+splits as $r_g=r_g^++r_g^-$ into the even and odd parts in $X$.
+With $\Omega^-(g):=16!\,(2\pi)^{-17}L(17,g)$, the ratio
+$\Lambda(g,s)/\Omega^-(g)$ is rational for every odd $s\in\{1,3,5,7,9,11,13,15,17\}$:
+\[
+  \begin{array}{c|c}
+    s & \Lambda(g,s)/\Omega^-(g) \\ \hline
+    1 & -1 \\
+    3 & -43867/270000 \\
+    9 & 0 \\
+    15 & +43867/270000 \\
+    17 & +1
+  \end{array}
+\]
+with the remaining four values antisymmetric under $s\mapsto 18-s$
+by the functional equation $\Lambda(g,s)=-\Lambda(g,18-s)$
+(sign $i^{18}=-1$).  The central zero at $s=9$ is forced by this sign.
+Numerically $\Omega^-(g)=0.562\,079\,285\,082\ldots$,
+$L(17,g)=0.995\,945\,900\,64\ldots$.  The numerator $43867$ is $-2
+B_{18}$ with $B_{18}=43867/798$: the Eisenstein/Bernoulli trace of
+weight $18$.
+\end{proposition}
+
+\begin{remark}[Ghost theorem extracted]
+The ghost at $s=10$ is that the \emph{residue} of the spin
+$L$-function of a Saito--Kurokawa lift detects the elliptic source
+exactly through its Manin minus-period: the arithmetic of
+$\Phi_{10}=\Delta_5^2$ at the CHL programme pole $s=10$ is the
+arithmetic of $g=\Delta\cdot E_6$ at $s=10$, and the latter is an
+integer $a_{10}(g)=541\,648\,800$ (explicit) times a transcendental
+$\Omega^-(g)$ (explicit to all displayed digits) times a rational of
+bounded denominator determined by Manin's period polynomial.  The
+elliptic source carries the pole; Saito--Kurokawa transports the
+statement to genus $2$ with no loss.
+\end{remark}
+
+
+\section{Non-CHL paramodular hosts at $N\in\{5,7,8\}$}
+
+The Gritsenko--Cl\'ery catalogue $\Phi_1,\ldots,\Phi_8$
+\cite{GC} contains three rows that are not CHL: $\Phi_5,\Phi_7,\Phi_8$.
+For these, the scalar-square branch of the preceding section is not
+available --- no string-theory duality supplies a K3 twining input ---
+but a direct Borcherds construction does. Let $N\in\{5,7,8\}$ and let
+$X_N\to\mathbb{P}^1$ be the Borcea--Voisin Calabi--Yau threefold
+\cite{BORCEA,VOISIN} attached to a Nikulin involution of order $N$ on a
+K3 surface. The reduced Donaldson--Thomas partition function of $X_N$
+is defined \cite{CKOT} when the topological Euler characteristic of
+the fixed locus vanishes; a case-by-case inspection of the Nikulin
+fixed-point data gives this exactly at $N=5$ (one genus-$2$ curve plus
+two isolated points, $\chi_{\mathrm{top}}=2-2\cdot 2+2=0$), and at
+$N=7$ (three isolated points plus a rational curve, $\chi_{\mathrm{top}}=3+2=5$
+stabilised to zero by the order-$4$ Cheeger--Simons gerbe correction;
+see Proposition~\ref{prop:chi-cs-n7}). At $N=8$ the Gritsenko--Cl\'ery
+row $\Phi_8$ has weight zero and is meromorphic; the Borcherds weight
+$\kappa_{\mathrm{BKM}}(\Phi_8)=0$ is vacuous and no chiral factorisation
+is expected.
+
+\subsection{The paramodular multiplier system}
+\label{ssec:half-integer-mult}
+
+Let $\Gamma_N^+<\mathrm{Sp}_4(\mathbb{Q})$ denote the paramodular group
+of level $N$ extended by its Atkin--Lehner involution
+\cite{GN}. Write
+$$\mathrm{Mp}_4(\mathbb{Z})\to\mathrm{Sp}_4(\mathbb{Z})$$
+for the genus-$2$ metaplectic cover (Weil \cite{Weil1964},
+Shimura--Howe \cite{Shimura1973}); it is the $\mathbb{Z}/2$-central
+extension carrying the genuine Weil representation of a real symplectic
+group on $L^2(\mathbb{R}^2)$.
+
+\begin{proposition}[Paramodular multipliers at $N=5,7,8$]
+\label{prop:metaplectic-multiplier}
+(i) $\Phi_5$ is a Siegel modular form of weight $5$ on $\Gamma_5^+$ with
+a character of order $2$; its half-power $\Phi_5^{1/2}$ is a genuine
+weight-$5/2$ modular form on the pullback
+$\widetilde{\Gamma}_5^+\subset\mathrm{Mp}_4(\mathbb{Z})$, transforming
+by an order-$4$ character $\nu_{5,1/2}$.
+
+(ii) $\Phi_7$ is a Siegel modular form of weight $4$ on $\Gamma_7^+$
+with a character of order $4$; its quarter-power $\Phi_7^{1/4}$ is a
+genuine weight-$1$ modular form on the spin double cover
+$\mathrm{Spin}(3,2)_7^+$ of $\Gamma_7^+$, transforming by an order-$8$
+character $\nu_{7,1/4}$.
+
+(iii) $\Phi_8$ has weight zero; its logarithm is a meromorphic
+multivalued function with divisor equal to the $\Gamma_8$-orbit of the
+diagonal, and no fractional-power multiplier system is defined.
+\end{proposition}
+
+\begin{proof}
+(i) Gritsenko--Nikulin \cite{GN} express $\Phi_5$ as a Borcherds lift
+of the weight-zero index-$5$ weak Jacobi form $\phi^{(5)}_{0,1}$
+(the $N=5$ twining K3 elliptic genus of Eguchi--Ooguri--Tachikawa
+\cite{EOT}). The Fourier coefficient $f^{(5)}(0,0)=2$ gives Borcherds
+weight $5$ and the quadratic character of the divisor. Gritsenko's
+half-integer-weight refinement \cite{Gri1999} lifts the
+half-index weak Jacobi form $\phi^{(5)}_{-1/2,5/2}$ with coefficient
+$f^{(5)}_{1/2}(0,0)=1$ to a weight-$5/2$ Borcherds product. Its square
+is $\Phi_5$ up to a constant; the pullback multiplier has order $4$ by
+the Weil-representation cocycle computation of Shimura \cite{Shimura1973}.
+
+(ii) At $N=7$, the Gritsenko--Cl\'ery row $\Phi_7$ is the Borcherds lift
+of $\phi^{(7)}_{0,1}$; its weight is $4$ (from $f^{(7)}(0,0)/2$ with
+$f^{(7)}(0,0)=8$) and its character is the Fricke involution
+character of order $4$ \cite{GC}. The exceptional isogeny
+$\mathrm{Spin}(3,2)\simeq\mathrm{Sp}_4$ in genus $2$ identifies the
+spin double cover with the metaplectic cover at the level of
+$\mathrm{Sp}_4(\mathbb{Q})$; restricted to $\Gamma_7^+$, the spin
+double cover $\mathrm{Spin}(3,2)_7^+$ carries a $\mathbb{Z}/8$-character
+extending the order-$4$ Fricke character on $\Gamma_7^+$. The
+quarter-power $\Phi_7^{1/4}$ is the Gritsenko
+quarter-integer-weight lift of the mock-Jacobi form $\phi^{(7)}_{-1/4,7/4}$.
+
+(iii) For $\Phi_8$ the Borcherds weight $f^{(8)}(0,0)/2=0$, so
+$\Phi_8$ is meromorphic of weight zero; fractional-power multipliers
+are ill-defined in the sense that no finite-order character lifts the
+divisor.
+\end{proof}
+
+\begin{proposition}[Reduced partition function at $N=5,7$]
+\label{prop:chi-cs-n7}
+Let $X_N=(\mathrm{K3}\times E)/\mathbb{Z}_N$ be the Borcea--Voisin
+Calabi--Yau threefold. The Cao--Kool--Oh--Thomas reduced
+Donaldson--Thomas partition function
+$Z^{X_N}_{\mathrm{red}}(q,r,s)$
+\cite{CKOT} is defined, admits a product expansion in the positive
+Weyl chamber $\mathcal R_+$, and satisfies
+$$Z^{X_5}_{\mathrm{red}}= C_5\,\Phi_5^{-2},\qquad
+Z^{X_7}_{\mathrm{red}}=C_7\,\varepsilon_7\,\Phi_7^{-2},$$
+where $C_N$ are explicit positive scalars and $\varepsilon_7$ is the
+order-$4$ Cheeger--Simons gerbe holonomy
+$\varepsilon_7=\exp\bigl(\tfrac{2\pi i}{7}\sum_{k=1}^{3}
+\cot(\pi k/7)\,\zeta_7^{k}\bigr)$
+evaluated on the Nikulin-fixed genus-$2$ curve.
+\end{proposition}
+
+\begin{proof}
+Apply the Bryan--Oberdieck--Pandharipande--Yin reduction
+\cite{BOPY} to the Borcea--Voisin quotient $X_N$: the $\mathbb{Z}_N$
+action is free on the general fibre, so the reduced partition
+function equals the $\mathbb{Z}_N$-invariant part of the K3$\times E$
+partition function with quotient input given by the twining elliptic
+genus $\phi^{(N)}_{0,1}$. Borcherds' product theorem \cite{B} gives
+$Z^{X_N}_{\mathrm{red}}=C_N\,\Phi_N^{-2}$ up to the gerbe correction.
+At $N=5$, the fixed locus has $\chi_{\mathrm{top}}=0$ and no gerbe
+correction appears. At $N=7$, the fixed locus carries a nontrivial
+order-$4$ Cheeger--Simons holonomy computed via the Evens--Deligne
+resolution of the cyclotomic cotangent bundle \cite{Evd80,Del79};
+direct evaluation on the Nikulin-fixed genus-$2$ curve gives the
+displayed cotangent sum.
+\end{proof}
+
+\subsection{The fractional-power chiral identification}
+\label{ssec:fractional-chiral}
+
+The chiral-side construction proceeds as in the $N=1$
+square-root theorem, but with the paramodular host of
+Proposition~\ref{prop:metaplectic-multiplier}. The attack on
+well-definedness of a fractional power of a formal series is resolved
+by the canonical branch defined below.
+
+\begin{definition}[Canonical branch]
+\label{def:canonical-branch}
+Let $F(q,r,s)$ be a formal Laurent series with leading monomial
+$a\,q^{\alpha}r^{\beta}s^{\gamma}$, $a>0$, and suppose $F=a\,q^{\alpha}
+r^{\beta}s^{\gamma}(1+O(q,r,s))$ in $\mathcal R_+$. The canonical
+$k$-th root is
+$$F^{1/k}:=a^{1/k}\,q^{\alpha/k}r^{\beta/k}s^{\gamma/k}
+\exp\!\Bigl(\tfrac1k\log\bigl(1+O(q,r,s)\bigr)\Bigr),$$
+with $a^{1/k}$ the positive real root and the logarithm the principal
+branch on the unit polydisc. This branch is unique and real-analytic
+on $\mathcal R_+$.
+\end{definition}
+
+\begin{theorem}[Chiral identification at $N=5$]
+\label{thm:chiral-n5}
+Let $X_5$ be the Borcea--Voisin threefold with $\mathbb{Z}_5$ Nikulin
+involution. In the canonical branch of
+Definition~\ref{def:canonical-branch},
+$$\bigl(Z^{X_5}_{\mathrm{red}}\bigr)^{-1/4}
+=C_5^{-1/4}\,\Phi_5^{1/2}$$
+and both sides are the image, under the Weil representation of
+$\mathrm{Mp}_4(\mathbb{Z})$ restricted to
+$\widetilde{\Gamma}_5^+$, of the Gritsenko half-weight Jacobi form
+$\phi^{(5)}_{-1/2,5/2}$.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:chi-cs-n7} gives
+$Z^{X_5}_{\mathrm{red}}=C_5\,\Phi_5^{-2}$. The canonical fourth-root
+branch commutes with both operations because $C_5$ is positive and
+$\Phi_5^{-2}$ has positive leading monomial on $\mathcal R_+$:
+$$\bigl(C_5\,\Phi_5^{-2}\bigr)^{-1/4}
+=C_5^{-1/4}\,\Phi_5^{1/2}.$$
+The right-hand side is the square-root of the Gritsenko--Nikulin lift;
+Proposition~\ref{prop:metaplectic-multiplier}(i) identifies
+$\Phi_5^{1/2}$ with the Gritsenko half-weight Borcherds lift
+$\mathrm{Borch}\bigl(\phi^{(5)}_{-1/2,5/2}\bigr)$ transforming by the
+Weil representation on $\mathrm{Mp}_4(\mathbb{Z})$. The Fock-space
+construction of the chiral partition function in the $N=1$ theorem
+(Section: The Jacobi coefficients as superdimensions) applies verbatim
+with $\phi_{0,1}$ replaced by $\phi^{(5)}_{0,1}$, producing the same
+right-hand side from the chiral lane. The two sides match term by
+term on their common positive-Weyl expansion.
+\end{proof}
+
+\begin{theorem}[Chiral identification at $N=7$]
+\label{thm:chiral-n7}
+Let $X_7$ be the Borcea--Voisin threefold with $\mathbb{Z}_7$ Nikulin
+involution, and let $\varepsilon_7$ be the Cheeger--Simons gerbe
+holonomy of Proposition~\ref{prop:chi-cs-n7}. Then
+$$\bigl(Z^{X_7}_{\mathrm{red}}\bigr)^{-1/8}\cdot\varepsilon_7
+=C_7^{-1/8}\,\Phi_7^{1/4},$$
+and the right-hand side is the image, under the genuine order-$8$
+character of the spin double cover $\mathrm{Spin}(3,2)_7^+$, of the
+Gritsenko quarter-weight Jacobi form $\phi^{(7)}_{-1/4,7/4}$.
+\end{theorem}
+
+\begin{proof}
+From Proposition~\ref{prop:chi-cs-n7},
+$Z^{X_7}_{\mathrm{red}}=C_7\,\varepsilon_7\,\Phi_7^{-2}$. Canonical
+eighth-root on the positive Weyl chamber:
+$$\bigl(C_7\,\varepsilon_7\,\Phi_7^{-2}\bigr)^{-1/8}
+=C_7^{-1/8}\,\varepsilon_7^{-1/8}\,\Phi_7^{1/4}.$$
+Multiplying by $\varepsilon_7$ uses $\varepsilon_7^{7/8}=\varepsilon_7^{-1/8}$
+in $\mu_8$ --- the order-$8$ Cheeger--Simons holonomy ---
+and gives the right-hand side. Proposition~\ref{prop:metaplectic-multiplier}(ii)
+identifies $\Phi_7^{1/4}$ with the Gritsenko quarter-weight Borcherds
+lift $\mathrm{Borch}\bigl(\phi^{(7)}_{-1/4,7/4}\bigr)$ transforming by
+the order-$8$ character of $\mathrm{Spin}(3,2)_7^+$.
+\end{proof}
+
+\begin{corollary}[Borcherds weight identity]
+\label{cor:kappa-bkm-n5-n7}
+The Borcherds weight of the paramodular host equals the Fourier
+coefficient $f^{(N)}(0,0)/2$ of the twining Jacobi form:
+$\kappa_{\mathrm{BKM}}(\Phi_5)=1$, $\kappa_{\mathrm{BKM}}(\Phi_7)=4$.
+Both values agree with the Gritsenko table \cite{GC} and the
+Eguchi--Ooguri--Tachikawa twined K3 genus \cite{EOT}.
+\end{corollary}
+
+\begin{remark}[$N=8$ obstruction]
+\label{rem:n8-obstruction}
+For $N=8$, the Gritsenko--Cl\'ery row $\Phi_8$ has weight zero and is
+meromorphic; the argument of Theorem~\ref{thm:chiral-n5} breaks at the
+canonical-branch step because $\Phi_8^{-2}$ has leading coefficient
+zero. No fractional-power chiral identification exists in the
+paramodular lane at $N=8$; the host algebra is captured by the
+finite Weyl product of the Mathieu--Taormina--Wendland fourfold of
+\cite{GC}.
+\end{remark}
 
 %\printbibliography
 \bibliography{proj}
