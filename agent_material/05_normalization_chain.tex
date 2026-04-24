@@ -1,0 +1,470 @@
+\section{Normalization chain for the square-root product}
+
+This section records the constants in the normalization used in the
+manuscript.  The claims below are identities after the external scalar
+$C\in\C^\times$ in the protected curve-counting series has been fixed.
+The Borcherds product fixes all other constants.
+
+\subsection{Variables and Jacobi input}
+
+Put
+$$
+Z=\begin{pmatrix}z_1&z_2\\ z_2&z_3\end{pmatrix},\qquad
+q=e^{2\pi i z_1},\qquad r=e^{2\pi i z_2},\qquad
+s=e^{2\pi i z_3}.
+$$
+Then
+$$
+\exp\bigl(\pi i(nz_1+lz_2+mz_3)\bigr)
+=q^{n/2}r^{l/2}s^{m/2},
+$$
+while the Borcherds product factors use
+$$
+\exp\bigl(2\pi i(nz_1+lz_2+mz_3)\bigr)
+=q^nr^ls^m.
+$$
+
+The Jacobi form used as Borcherds input is not the K3 elliptic genus
+itself but half of it:
+$$
+Z_{\mathrm{K3}}(\tau,z)=2\phi_{0,1}(\tau,z),
+\qquad
+\phi_{0,1}(\tau,z)=\sum_{n\geq0,\;l\in\Z}f(n,l)q^nr^l.
+$$
+In the Eichler--Zagier normalization \cite{EZ:1},
+$$
+\phi_{0,1}(\tau,z)
+=4\left(
+\frac{\vartheta_2(\tau,z)^2}{\vartheta_2(\tau,0)^2}
++\frac{\vartheta_3(\tau,z)^2}{\vartheta_3(\tau,0)^2}
++\frac{\vartheta_4(\tau,z)^2}{\vartheta_4(\tau,0)^2}
+\right),
+$$
+and the first terms are
+$$
+\phi_{0,1}
+=(r^{-1}+10+r)
++q(10r^{-2}-64r^{-1}+108-64r+10r^2)+O(q^2).
+$$
+Thus
+$$
+f(0,-1)=1,\qquad f(0,0)=10,\qquad f(0,1)=1.
+$$
+
+\subsection{Primary-source variable map}
+
+Oberdieck--Pixton \cite[Theorem 1]{OB} use
+$$
+P:=p_{\mathrm{OP}}=e^{iu}=e^{2\pi iz},\qquad
+Q:=q_{\mathrm{OP}}=e^{2\pi i\tau},\qquad
+T:=\widetilde q_{\mathrm{OP}}=e^{2\pi i\widetilde\tau}.
+$$
+Their primitive Gromov--Witten partition function is
+$$
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=\sum_{g,h,d}
+N_{g,h,d}u^{2g-2}Q^{h-1}T^{d-1}.
+$$
+Oberdieck--Pandharipande use the same Siegel variables
+\cite[Section 2]{OPand}:
+$$
+\Omega=\begin{pmatrix}\tau&z\\ z&\widetilde\tau\end{pmatrix},
+\qquad
+P=e^{2\pi iz},\quad Q=e^{2\pi i\tau},\quad T=e^{2\pi i\widetilde\tau}.
+$$
+The Borcherds variables of this manuscript are
+$$
+q=Q,\qquad r=P,\qquad s=T.
+$$
+The Hilbert-scheme Donaldson--Thomas variables in the displayed series
+$$
+Z^X_{\mathrm{DT}}(q,t,p)
+=\sum_{h,d,n}\mathbf{DT}^X_{n,(\beta_h,d)}
+q^{d-1}t^{h-1}(-p)^n
+$$
+are therefore
+$$
+q_{\mathrm{DT}}=T=s,\qquad
+t_{\mathrm{DT}}=Q=q,\qquad
+p_{\mathrm{DT}}=P=r.
+$$
+The last equality uses Bryan's convention \cite[Definition 2.1]{BRYAN}
+$$
+\mathbf{DT}(X)=
+\sum_{h,d,n}\mathbf{DT}_{h,d,n}(X)\,
+\widetilde q^{\,h-1}q^{d-1}(-p)^n
+$$
+and Bryan's warning that his $q,\widetilde q$ are opposite to the
+Oberdieck--Pandharipande convention.  The stable-pairs sign is
+compatible with Oberdieck--Pandharipande's convention
+\cite[Section 2]{OPand}
+$$
+y=-P.
+$$
+
+\begin{lemma}[Weight fixed by the zero coefficient]
+The Borcherds lift of the input $\phi_{0,1}$ has weight
+$$
+\frac{f(0,0)}{2}=5.
+$$
+If one uses $Z_{\mathrm{K3}}=2\phi_{0,1}$ as input instead, all product
+exponents and the weight double; the resulting scalar genus-two form is
+the square $\Delta_5^2=\Delta_{10}$.
+\end{lemma}
+
+\begin{proof}
+Borcherds' weight formula for the multiplicative lift of a weak Jacobi
+form of weight zero and index one gives weight one half of the
+coefficient of $q^0r^0$ \cite{B}, \cite{GN}.  The displayed expansion gives
+$f(0,0)=10$, hence the weight is $5$.  Replacing the input by
+$2\phi_{0,1}$ replaces each coefficient $f(n,l)$ by $2f(n,l)$, so the
+weight becomes $10$ and the multiplicative product is squared.
+\end{proof}
+
+\subsection{The coefficient 64}
+
+The Igusa normalization in this manuscript is fixed by the product of the
+ten even genus-two theta constants \cite{FREITAG:1}, \cite{VDGEER:1},
+\cite{MAASS:1}
+$$
+\Delta_5(Z)=
+\prod_{\substack{a,b\in(\Z/2\Z)^2\\ a\cdot b\equiv0\!\!\pmod2}}
+\nu_{a,b}(Z),
+$$
+where
+$$
+\nu_{a,b}(Z)=
+\sum_{l\in\Z^2}
+\exp\bigl(\pi i(Z[l+a/2]+b\cdot l)\bigr).
+$$
+Equivalently, for $u_i=l_i+a_i/2$,
+$$
+\nu_{a,b}(Z)=
+\sum_{l\in\Z^2}
+(-1)^{b_1l_1+b_2l_2}
+q^{u_1^2/2}r^{u_1u_2}s^{u_2^2/2}.
+$$
+
+The leading terms by the first characteristic $a$ are:
+$$
+\begin{array}{c|c|c}
+a & \hbox{allowed } b & \hbox{lowest product in this } a\hbox{-block}\\
+\hline
+(0,0) & (0,0),(1,0),(0,1),(1,1) & 1\\
+(1,0) & (0,0),(0,1) & 4q^{1/4}\\
+(0,1) & (0,0),(1,0) & 4s^{1/4}\\
+(1,1) & (0,0),(1,1) &
+4q^{1/4}s^{1/4}(r^{1/2}-r^{-1/2})
+\end{array}
+$$
+The last row is the only row with a nontrivial $r$-sign:
+$$
+\nu_{(1,1),(0,0)}
+=2q^{1/8}s^{1/8}(r^{1/4}+r^{-1/4})+\cdots,
+$$
+$$
+\nu_{(1,1),(1,1)}
+=2q^{1/8}s^{1/8}(r^{1/4}-r^{-1/4})+\cdots.
+$$
+Multiplication gives
+$$
+\Delta_5(Z)
+=64q^{1/2}s^{1/2}(r^{1/2}-r^{-1/2})+\cdots
+$$
+and hence, in the Fourier convention
+$$
+\Delta_5(Z)
+=\sum c_\Delta(n,l,m)\exp\bigl(\pi i(nz_1+lz_2+mz_3)\bigr),
+$$
+one has
+$$
+c_\Delta(1,1,1)=64,\qquad c_\Delta(1,-1,1)=-64.
+$$
+Thus the sign of $\Delta_5$ is fixed by the condition
+$c_\Delta(1,1,1)=64$.
+
+\subsection{Borcherds product, vacuum factor, and 1/64}
+
+Let
+$$
+\Gamma_{\mathrm{eff}}
+=\{(n,l,m)\mid m>0,\ n\geq0,\ l\in\Z\}
+\cup\{(n,l,0)\mid n>0,\ l\in\Z\}
+\cup\{(0,l,0)\mid l<0\}.
+$$
+The Gritsenko--Nikulin Borcherds product attached to $\phi_{0,1}$ is
+$$
+D_5(Z):=\frac{1}{64}\Delta_5(Z)
+=q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{f(nm,l)}.
+$$
+The word ``monic'' refers to the vacuum monomial
+$q^{1/2}r^{1/2}s^{1/2}$ before expansion of the real-root factor
+$(1-r^{-1})^{f(0,-1)}=(1-r^{-1})$.  Expanding that factor gives
+$$
+D_5(Z)
+=q^{1/2}s^{1/2}(r^{1/2}-r^{-1/2})+\cdots,
+$$
+which is exactly the theta-constant computation above divided by $64$.
+
+The determinant used in the body of the paper is the non-monic Igusa
+normalization
+$$
+\mathcal D_X(Z):=\Delta_5(Z)
+=64D_5(Z).
+$$
+Equivalently, with
+$$
+v_0(Z):=64q^{1/2}r^{1/2}s^{1/2},
+$$
+one has
+$$
+\mathcal D_X(Z)
+=v_0(Z)
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{f(nm,l)}.
+$$
+For the one-particle superspace
+$$
+\mathcal V=\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}\mathcal V_\gamma,
+\qquad
+\sdim\mathcal V_{(n,l,m)}=f(nm,l),
+$$
+the Fock character identity gives
+$$
+\sch\mathcal F(\mathcal V)
+=\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{-f(nm,l)}.
+$$
+Therefore
+$$
+\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}(Z)
+:=\mathcal D_X(Z)^{-1}
+=\frac1{64}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V).
+$$
+This is the source of the factor $1/64$: it is the inverse of the Igusa
+leading coefficient, not a Fock-space multiplicity.
+
+\subsection{The doubling substitution}
+
+Let
+$$
+z=z_1f_{-2}+z_2f_3+z_3f_2,
+\qquad
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}.
+$$
+With the lattice pairing used in the manuscript,
+$$
+q^nr^ls^m=\exp\bigl(-\pi i(\alpha(n,l,m),z)\bigr).
+$$
+The Weyl--Kac--Borcherds denominator is written with
+$\exp(-2\pi i(\,\cdot\,,z))$.  Consequently the manuscript passes from
+the Borcherds product convention to the denominator convention by the
+substitution
+$$
+Z\longmapsto2Z:
+\qquad
+\exp\bigl(-\pi i(\lambda,z)\bigr)
+\longmapsto
+\exp\bigl(-2\pi i(\lambda,z)\bigr).
+$$
+With $\rho=f_2-\frac12f_3+f_{-2}$,
+$$
+D_5(2Z)
+=\frac1{64}\Delta_5(2Z)
+=e^{-2\pi i(\rho,z)}
+\prod_{\alpha\in\mathcal R_+}
+\left(1-e^{-2\pi i(\alpha,z)}\right)^{\smult(\alpha)}.
+$$
+Thus
+$$
+\operatorname{den}(\mathfrak g_{\Delta_5})
+=\frac1{64}\Delta_5(2Z).
+$$
+
+\subsection{The scalar square and the constant C}
+
+The character of $\Delta_5$ squares to the trivial character, and the
+scalar Igusa cusp form is
+$$
+\Delta_{10}(Z)=\Delta_5(Z)^2.
+$$
+In the present normalization this is
+$$
+\Delta_{10}(Z)
+=4096\,qrs
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{2f(nm,l)}.
+$$
+Equivalently,
+$$
+\frac1{4096}\Delta_{10}(Z)=D_5(Z)^2.
+$$
+
+Oberdieck--Pixton define \cite[(3)]{OB}
+$$
+\chi_{10}^{\mathrm{OP}}(P,Q,T)
+=PQT
+\prod_{k,h,d}
+(1-P^kQ^hT^d)^{c_{\mathrm{K3}}(4hd-k^2)},
+$$
+where the product runs over
+$$
+k\in\Z,\qquad h,d\geq0,\qquad
+(h>0\ \hbox{or}\ d>0)\quad\hbox{or}\quad(h=d=0,\ k<0).
+$$
+The coefficient function is the K3 elliptic genus:
+$$
+Z_{\mathrm{K3}}(P,Q)
+=\sum_{h\geq0,\;k\in\Z}
+c_{\mathrm{K3}}(4h-k^2)P^kQ^h
+=2\phi_{0,1}(Q,P).
+$$
+Hence
+$$
+c_{\mathrm{K3}}(4hd-k^2)=2f(hd,k),
+$$
+and the OP product is the square of the monic Borcherds product:
+$$
+\chi_{10}^{\mathrm{OP}}(P,Q,T)=D_5(Z)^2
+=4096^{-1}\Delta_5(Z)^2.
+$$
+Oberdieck--Pixton prove \cite[Theorem 1]{OB}
+$$
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=-\left(\chi_{10}^{\mathrm{OP}}(P,Q,T)\right)^{-1},
+\qquad P=e^{iu}.
+$$
+Therefore, in the theta-constant normalization of this manuscript,
+$$
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=-4096\,\Delta_5(Z)^{-2}.
+$$
+The sign is the sign in the primary theorem; the factor $4096$ is
+$64^2$ and comes only from replacing the monic product $D_5$ by
+$\Delta_5$.
+
+For a general scalar-square branch the partition function is normalized
+only up to a nonzero scalar $C$:
+$$
+Z^X_{\square}(q,r,s)=\frac{C}{\Delta_5(Z)^2}
+=\frac{C}{\Delta_{10}(Z)}.
+$$
+For the OP branch,
+$$
+C_{\mathrm{OP}}=-4096.
+$$
+For the Hilbert-scheme DT branch displayed above, no primary source
+used here fixes the equality with the OP branch in all degrees.  The
+honest statement is the assumption
+$$
+Z^X_{\mathrm{DT}}(q_{\mathrm{DT}},t_{\mathrm{DT}},p_{\mathrm{DT}})
+=C_{\mathrm{DT}}\Delta_5(Z)^{-2},
+\qquad C_{\mathrm{DT}}\in\C^\times.
+$$
+Hence
+$$
+\frac{C}{Z^X_{\square}}=\Delta_5(Z)^2=\Delta_{10}(Z),
+\qquad
+\sqrt{\frac{C}{Z^X_{\square}}}=\Delta_5(Z),
+$$
+where the square-root branch is the branch with leading vacuum factor
+$$
+64q^{1/2}r^{1/2}s^{1/2}.
+$$
+Consequently
+$$
+\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}=\Delta_5^{-1},
+\qquad
+\left(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}\right)^2
+=\frac{Z^X_{\square}}{C}.
+$$
+The scalar $C$ belongs to the enumerative normalization of
+$Z^X_{\square}$; it is not produced by the Borcherds product.
+
+\subsection{Audit outcome}
+
+The normalizations fixed by primary sources are:
+$$
+\begin{array}{c|c|c}
+\hbox{normalization} & \hbox{value} & \hbox{source}\\
+\hline
+\hbox{OP variables} &
+(P,Q,T)=(e^{iu},q_{\mathrm{OP}},\widetilde q_{\mathrm{OP}})
+& \cite[Theorem 1]{OB}\\
+\hbox{OP partition function} &
+\mathcal Z_{\mathrm{OP}}=-1/\chi_{10}^{\mathrm{OP}}
+& \cite[Theorem 1]{OB}\\
+\hbox{OP product} &
+\chi_{10}^{\mathrm{OP}}=D_5^2
+& \cite[(3)]{OB}\\
+\hbox{this manuscript} &
+D_5=64^{-1}\Delta_5
+& \cite{GN},\cite{B}\\
+\hbox{constant conversion} &
+\chi_{10}^{\mathrm{OP}}=4096^{-1}\Delta_5^2
+& c_\Delta(1,1,1)=64\\
+\hbox{OP scalar} &
+C_{\mathrm{OP}}=-4096
+& -1/\chi_{10}^{\mathrm{OP}}\\
+\hbox{DT variables} &
+(q_{\mathrm{DT}},t_{\mathrm{DT}},p_{\mathrm{DT}})=(T,Q,P)
+& \cite[Definition 2.1]{BRYAN}
+\end{array}
+$$
+The remaining ambiguity is not a sign or a factor of $64$.  It is the
+unproved identification
+$$
+Z^X_{\mathrm{DT}}
+\stackrel{?}{=}
+\mathcal Z_{\mathrm{OP}}
+$$
+in the Behrend-weighted Hilbert-scheme normalization.  Until that
+comparison is supplied, the manuscript must keep $C_{\mathrm{DT}}$
+separate from $C_{\mathrm{OP}}=-4096$.
+
+\subsection{Check table}
+
+$$
+\begin{array}{c|c|c}
+\hbox{object} & \hbox{normalization} & \hbox{consequence}\\
+\hline
+q,r,s
+& e^{2\pi iz_1},e^{2\pi iz_2},e^{2\pi iz_3}
+& \exp(\pi i(nz_1+lz_2+mz_3))=q^{n/2}r^{l/2}s^{m/2}\\
+Z_{\mathrm{K3}}
+& Z_{\mathrm{K3}}=2\phi_{0,1}
+& \hbox{Borcherds input is }\phi_{0,1}\\
+\phi_{0,1}
+& r^{-1}+10+r+O(q)
+& f(0,0)=10\\
+\hbox{weight}
+& f(0,0)/2
+& 5\\
+\Delta_5
+& \prod_{\mathrm{even}}\nu_{a,b}
+& c_\Delta(1,1,1)=64\\
+D_5
+& 64^{-1}\Delta_5
+& q^{1/2}r^{1/2}s^{1/2}\prod(1-q^nr^ls^m)^{f(nm,l)}\\
+\mathcal D_X
+& \Delta_5
+& v_0=64q^{1/2}r^{1/2}s^{1/2}\\
+\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}
+& \mathcal D_X^{-1}
+& 64^{-1}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V)\\
+\operatorname{den}(\mathfrak g_{\Delta_5})
+& D_5(2Z)
+& 64^{-1}\Delta_5(2Z)\\
+\Delta_{10}
+& \Delta_5^2
+& 4096\,D_5^2\\
+Z^X_{\mathrm{OP}}
+& -4096\,\Delta_5^{-2}
+& \hbox{Oberdieck--Pixton primitive theorem}\\
+Z^X_{\square}
+& C/\Delta_5^2
+& (\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}})^2=Z^X_{\square}/C
+\end{array}
+$$

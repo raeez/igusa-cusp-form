@@ -4,7 +4,7 @@
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\theHsection}{\arabic{section}}
 
-\title{\textit{The Dirac Square Root of the Igusa Partition Function}\\[0.5em]\small A Borcherds lift of the weak Jacobi form $\phi_{0,1}$, generalized Borcherds--Kac--Moody superalgebras, and the Igusa cusp form $\Delta_5$}
+\title{\texorpdfstring{\textit{The Square Root of the Igusa Partition Function}\\[0.5em]\small A Borcherds lift of the weak Jacobi form $\phi_{0,1}$, generalized Borcherds--Kac--Moody superalgebras, and the Igusa cusp form $\Delta_5$}{The Square Root of the Igusa Partition Function: A Borcherds lift of the weak Jacobi form phi 0,1, generalized Borcherds--Kac--Moody superalgebras, and the Igusa cusp form Delta 5}}
 \author{Raeez Lorgat}
 \date{April 2, 2020}
 
@@ -38,13 +38,14 @@
 \newcommand{\sdet}{\operatorname{sdet}}
 \newcommand{\rootmult}{\operatorname{mult}}
 \newcommand{\smult}{\operatorname{smult}}
+\newcommand{\Prim}{\operatorname{Prim}}
 %\newcommand{\bkm}{\mathfrak{g}_{\begin{pmatrix}2 & -2 & -2 \\
 %-2 & 2 & -2\\
 %-2 & -2& 2\end{pmatrix}}}
 \newcommand{\autcor}{\mathfrak{g}_{\Delta_5}}
 
 \ifdefined\mainpreambleonly
-  \endinput
+  \expandafter\endinput
 \fi
 
 \begin{document}
@@ -52,95 +53,231 @@
 \maketitle
 
 \begin{abstract}
-$$\phi_{0,1}=\frac12 Z_{\mathrm{K3}}
-=\operatorname{Str}_{\mathcal H_{K3}}q^{L_0-c/24}r^{J_0}
-=\sum f(n,l)q^nr^l.$$
-$$\Gamma_{\mathrm{eff}}
-=\{(n,l,m)\mid m>0,\ n\ge0,\ l\in\Z\}$$
+For \(X=S\times E\),
 $$
-\cup\{(n,l,0)\mid n>0,\ l\in\Z\}
-\cup\{(0,l,0)\mid l<0\}\subset\Z^3.$$
-$$\mathcal V=\bigoplus_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
-\mathcal V_{n,l,m},\qquad
-\sdim\mathcal V_{n,l,m}=f(nm,l).$$
-$$\mathcal D_X
-=64q^{1/2}r^{1/2}s^{1/2}\sdet_{\mathcal V}(1-x)
+Z^X_{\mathrm{OP}}
+=-\left(\chi_{10}^{\mathrm{OP}}\right)^{-1}
+=-4096\,\Delta_5^{-2}.
+$$
+With Eichler--Zagier normalization $Z_{\mathrm{K3}}=2\phi_{0,1}$, write
+$$\phi_{0,1}=\sum f(n,l)q^nr^l.$$
+Set
+$$
+[\mathbb U_{n,l}]\in K_0(\mathrm{sVect}_{\mathrm{fd}}),\qquad
+\sdim\mathbb U_{n,l}=f(n,l),\qquad
+\mathcal V_{(n,l,m)}:=\mathbb U_{nm,l}.
+$$
+$$
+\mathcal D_X
 =64q^{1/2}r^{1/2}s^{1/2}
-\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
-(1-q^nr^ls^m)^{f(nm,l)}.$$
-$$\mathcal D_X^{-1}
-=\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V),$$
-$$\mathcal D_X=\Delta_5,\qquad \Delta_{10}=\Delta_5^2.$$
-$$X=S\times E,\qquad S\ \mathrm{K3},\qquad E\ \mathrm{elliptic}.$$
-$$Z^X_{\square}=C/\Delta_5^2.$$
-$$Z^X_{\square}=Z^X_{\mathrm{OP}}\quad(\hbox{Oberdieck--Pixton}),\qquad
-Z^X_{\square}=Z^X_{\mathrm{DT}}\quad(\hbox{Assumption \ref{ass:dt-square}}).$$
-$$\mathcal D_X^2=C/Z^X_{\square},\qquad
-Z^X_{\square}=C(\mathcal D_X^{-1})^2.$$
-$$\frac1{64}\mathcal D_X(2Z)=\operatorname{den}(\autcor).$$
-$$\La^{3,2}=q_0^\perp,\qquad
-\La^{2,1}_{II}=\Z\delta_1+\Z\delta_2+\Z\delta_3,$$
-$$\rho=f_2-\frac12f_3+f_{-2}.$$
-$$E_0:=\rho,\qquad
-q^{1/2}r^{1/2}s^{1/2}=e^{-\pi i(E_0,z)}.$$
-$$\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},$$
-$$f(nm,l)=
-\dim \mathfrak{g}_{\alpha(n,l,m),\overline 0}
--\dim \mathfrak{g}_{\alpha(n,l,m),\overline 1},\qquad
-q^nr^ls^m=e^{-\pi i(\alpha(n,l,m),z)}.$$
-$$\Delta^{re}=\{\delta_1,\delta_2,\delta_3\},\qquad
-\mathcal W_{\mathrm{pert}}=\bigcup_{\delta\in\Delta^{re}}
-\{(z,\delta)=0\}.$$
-$$\Delta^{im}=\Delta^{im}_{\overline0}\cup
-\Delta^{im}_{\overline1},\qquad
-\mathcal O_{\mathrm{BPS}}(a)=
-\mathfrak g_{a,\overline0}\ominus\mathfrak g_{a,\overline1}.$$
-$$\mathcal H_{\mathrm{diag}}
-=\left\{\begin{pmatrix}a&0\\0&b\end{pmatrix}\mid
-a,b\in\mathbb H_1\right\},\qquad
-\mathcal M_{\mathrm{massless}}
-=\operatorname{supp}\operatorname{div}(\Delta_5)
-=\Sp_4(\Z)\cdot\mathcal H_{\mathrm{diag}}.$$
-$$\epsilon_{\det}:=\nu_{\Delta_5},\qquad
-\epsilon_{\det}(s_{\delta_i})=-1.$$
+\prod_{\gamma=(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{f(nm,l)}
+=\Delta_5,\qquad
+\mathcal D_X^2=-4096/Z^X_{\mathrm{OP}}.
+$$
+$$
+\langle\gamma,\gamma'\rangle_{\mathrm{ind}}
+=2(nm'+n'm)-ll',\qquad
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},
+$$
+$$
+(\alpha(\gamma),\alpha(\gamma'))
+=-2\langle\gamma,\gamma'\rangle_{\mathrm{ind}},\qquad
+\Cone_{\mathrm{Borch}}=\R_{\ge0}\alpha(\Gamma_{\mathrm{act}}).
+$$
+$$
+\mathcal A_{\mathrm{den}}:=\mathfrak g_{\Delta_5},\qquad
+\operatorname{den}(\mathcal A_{\mathrm{den}})
+=64^{-1}\Delta_5(2Z).
+$$
+For \(\gamma=(n,l,m)\in\Gamma_{\mathrm{act}}\),
+$$
+\smult(\alpha(\gamma))=f(nm,l).
+$$
+The remaining construction problem is
+$$
+\Prim_{\mathrm{prot}}\mathcal P^{\mathrm{Hall}}_{X,\sigma,o}
+\stackrel{?}{\cong}\mathcal A_{\mathrm{den}}.
+$$
 \end{abstract}
 
 \bigskip
 \tableofcontents
 
-\section{The one-particle index and its determinant}
+\section{The duality principle}
+\label{sec:duality-principle}
 
-Put
+$$
+\mathcal D_X=\Delta_5\in M_5(\Sp_4(\Z),\nu_{\Delta_5}),
+$$
+$$
+\mathcal D_X|_{\mathfrak c_\infty}
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod_{\Gamma_{\mathrm{eff}}}(1-q^nr^ls^m)^{f(nm,l)}.
+$$
+
+For
+$$Z=\begin{pmatrix}z_1&z_2\\z_2&z_3\end{pmatrix},$$
+put
 $$q=e^{2\pi iz_1},\qquad r=e^{2\pi iz_2},\qquad s=e^{2\pi iz_3}.$$
+For
+$$
+T(n,l,m)=
+\begin{pmatrix}n&l/2\\ l/2&m\end{pmatrix},
+\qquad n,l,m\in\Z,
+$$
+put
+$$
+(T(n,l,m),Z)_{\mathrm{tr}}
+=\operatorname{tr}(T(n,l,m)Z)=nz_1+lz_2+mz_3.
+$$
+Then
+$$x^{(n,l,m)}=\exp(2\pi i(T(n,l,m),Z)_{\mathrm{tr}})
+=q^nr^ls^m.$$
 
-\begin{definition}[Effective BPS charge semigroup]
-Let
-$$\Gamma_{\mathrm{BPS}}=\Z^3,\qquad
-\gamma=(n,l,m),\qquad x^\gamma=q^nr^ls^m.$$
-Define
+\begin{definition}[Index-lattice notation]
 $$
-\Gamma_{\mathrm{eff}}=
-\{(n,l,m)\mid m>0,\ n\geq0,\ l\in\Z\}
+\Gamma_{\mathrm{gram}}:=\Gamma_{\mathrm{ind}}:=\Z^3,\qquad
+\Gamma_{\mathrm{act}}\subset\Gamma_{\mathrm{eff}}\subset\Gamma_{\mathrm{gram}}.
 $$
+Here \(\Gamma_{\mathrm{eff}}\) is the cusp-positive semigroup and
+\(\Gamma_{\mathrm{act}}\) is the non-zero Jacobi-support locus.  No
+microscopic charge lattice is constructed from this notation.
+\end{definition}
+
+\begin{proposition}[Charge matrix convention]
+Assume a protected charge grading with primitive electric-magnetic pair
+$Q,P$ in an even lattice.  Set
 $$
+n=\frac{(Q,Q)}2,\qquad l=(Q,P),\qquad m=\frac{(P,P)}2.
+$$
+Then
+$$
+\begin{pmatrix}(Q,Q)&(Q,P)\\ (P,Q)&(P,P)\end{pmatrix}
+=2T(n,l,m),
+$$
+and the invariant discriminant is
+$$
+\det(2T(n,l,m))=4nm-l^2.
+$$
+The genus-two chemical potential $Z$ pairs with this same matrix:
+$$
+\exp(2\pi i\,\operatorname{tr}(TZ))=q^nr^ls^m.
+$$
+Thus the variables in the Borcherds product record the Gram invariants
+of this protected charge grading.
+\end{proposition}
+
+\begin{proof}
+The charge lattice is even, hence $(Q,Q)/2$ and $(P,P)/2$ are integral
+and $(Q,P)\in\Z$.  The displayed matrix identity is immediate from the
+definitions.  Its determinant is $4nm-l^2$.  The last equality is the
+definition of the Fourier character attached to the chemical potential
+$Z$.  This is the Harvey--Moore and Dijkgraaf--Verlinde--Verlinde
+charge grading used by the BPS product \cite{HM}, \cite{DVV}.
+\end{proof}
+
+\begin{definition}[Gram-index pairing]
+For
+$$\gamma=(n,l,m),\qquad \gamma'=(n',l',m'),$$
+define
+$$
+\langle\gamma,\gamma'\rangle_{\mathrm{ind}}
+=2(nm'+n'm)-ll'.
+$$
+The physical discriminant is
+$$
+\Delta(\gamma)=\langle\gamma,\gamma\rangle_{\mathrm{ind}}
+=4nm-l^2.
+$$
+\end{definition}
+
+\begin{definition}[Cusp polarization]
+The standard cusp polarization is the ordered limit
+$$0<|s|\ll |q|\ll |r|^{-1}\ll1.$$
+It gives exactly the effective semigroup
+$$
+\Gamma_{\mathrm{eff}}
+=\{(n,l,m)\mid m>0,\ n\geq0,\ l\in\Z\}
 \cup\{(n,l,0)\mid n>0,\ l\in\Z\}
 \cup\{(0,l,0)\mid l<0\}.
 $$
-$$\gamma>0\quad\Longleftrightarrow\quad
-\gamma\in\Gamma_{\mathrm{eff}}.$$
 \end{definition}
 
-\begin{definition}[K3 one-particle index]
-$$Z_{\mathrm{K3}}(\tau,z)=
-\operatorname{Tr}_{RR(\mathrm{K3})}
-(-1)^{F_L+F_R}q^{L_0-c/24}r^{J_0},\qquad c=6.$$
+\begin{remark}[Status of the chamber]
+The pairing $\langle\ ,\ \rangle_{\mathrm{ind}}$ is the pairing on
+Gram invariants.  The order on $\Gamma_{\mathrm{eff}}$ is a Fock
+polarization at one cusp.  A duality element transports this
+polarization to the corresponding product chamber at the transported
+cusp; it does not preserve the displayed inequalities inside the same
+coordinate chart.
+\end{remark}
+
+\section{The one-particle index and its determinant}
+
+The Gram-index lattice is
+$$\Gamma_{\mathrm{ind}}=\Z^3,\qquad
+\gamma=(n,l,m),\qquad x^\gamma=q^nr^ls^m.$$
+The cusp polarization of Section \ref{sec:duality-principle} fixes
+$$\gamma>0\quad\Longleftrightarrow\quad
+\gamma\in\Gamma_{\mathrm{eff}}.$$
+
+\begin{definition}[Ramond-sector K3 index and its half]
+Let $\mathcal H_{\mathrm{RR}}(S)$ be the Ramond--Ramond Hilbert space of
+a unitary $\mathcal N=(4,4)$ sigma model on a K3 surface $S$.  Its
+central charges are
+$$c=\overline c=6.$$
+Choose a right-moving Ramond supercharge $Q_R$ with
+$$Q_R^2=0,\qquad
+\{Q_R,Q_R^\dagger\}=
+2\left(\overline L_0-\frac{\overline c}{24}\right).$$
+The K3 elliptic genus is the protected supertrace
+$$
+Z_{\mathrm{K3}}(\tau,z)=
+\operatorname{Tr}_{\mathcal H_{\mathrm{RR}}(S)}
+(-1)^{F_L+F_R}q^{L_0-c/24}
+\overline q^{\,\overline L_0-\overline c/24}r^{J_0}.
+$$
+The BPS space in degree $(n,l)$ is
+$$
+\mathcal H^{\mathrm{BPS}}_{n,l}(S):=
+H^\bullet\!\left(
+\{\psi\mid (L_0-c/24)\psi=n\psi,\ J_0\psi=l\psi\},Q_R
+\right).
+$$
+\end{definition}
+
+\begin{lemma}[Right-moving localization]
+Then
+$$
+Z_{\mathrm{K3}}(\tau,z)=
+\sum_{n\geq0,\;l\in\Z}
+\sdim\mathcal H^{\mathrm{BPS}}_{n,l}(S)q^nr^l.
+$$
+\end{lemma}
+
+\begin{proof}
+If $\overline L_0-\overline c/24>0$, the displayed anticommutator pairs
+states with opposite $(-1)^{F_R}$ parity.  Their supertrace cancels.
+The unpaired states are the $Q_R$-harmonic representatives, hence the
+graded superdimension of $Q_R$-cohomology gives the elliptic genus.
+\end{proof}
+
+\begin{definition}[Half-K3 index object]
+Eichler--Zagier normalization \cite{EZ:1}:
 $$Z_{\mathrm{K3}}(\tau,z)=2\phi_{0,1}(\tau,z),$$
 $$\phi_{0,1}(\tau,z)
-=\operatorname{Str}_{\mathcal{H}_1}q^{L_0}r^{J_0}
 =\sum_{n\geq 0,\;l\in\Z}f(n,l)q^nr^l.$$
-$$\sdim(\mathcal H_{1;n,l})=f(n,l).$$
-$$\phi_{0,1}=r^{-1}+10+r+O(q),$$
-$$\frac{f(0,0)}{2}=5.$$
+Thus
+$$\sdim\mathcal H^{\mathrm{BPS}}_{n,l}(S)=2f(n,l).$$
+The class
+$$\mathbb U_{n,l}\in K_0(\mathrm{sVect}_{\mathrm{fd}}),
+\qquad \sdim\mathbb U_{n,l}=f(n,l),$$
+is the normalized half-index object used by the Borcherds lift.  It is
+not asserted to be a canonical half of
+$\mathcal H^{\mathrm{BPS}}_{n,l}(S)$ as a Hilbert space.
+$$\phi_{0,1}=r^{-1}+10+r+O(q),\qquad
+\frac{f(0,0)}{2}=5.$$
 \end{definition}
 
 \begin{lemma}[Fock trace and superdeterminant]
@@ -169,9 +306,12 @@ Tensor product over a homogeneous basis proves the product.
 $$x^{(n,l,m)}=q^nr^ls^m.$$
 $$\mathcal V=\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}\mathcal V_\gamma,
 \qquad
-\mathcal V_{(n,l,m)}=\mathcal V_{n,l,m},\qquad
+\mathcal V_{(n,l,m)}=\mathcal V_{n,l,m}:=\mathbb U_{nm,l},\qquad
 \sdim\mathcal V_{n,l,m}=f(nm,l).$$
-DMVV \cite{DMVV}:
+The $m>0$ sector is the $K_0$-level virtual half of the DMVV product
+\cite{DMVV}, obtained by replacing
+$Z_{\mathrm{K3}}=2\phi_{0,1}$ by $\phi_{0,1}$.  The normalized Fock
+character in the Borcherds chamber is
 $$\sch\mathcal F(\mathcal V)
 =\prod_{\gamma\in\Gamma_{\mathrm{eff}}}(1-x^\gamma)^{-\sdim\mathcal V_\gamma}
 =\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
@@ -180,16 +320,20 @@ $$\sdet_{\mathcal V}(1-x)
 =\prod_{\gamma\in\Gamma_{\mathrm{eff}}}(1-x^\gamma)^{\sdim\mathcal V_\gamma}
 =\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}.$$
+The sector $m>0$ is the normalized half of the second-quantized DMVV
+index.  The terms with $m=0$ are cusp and Weyl-chamber boundary factors
+of the Borcherds product; the determinant reads only their signed
+indices $f(0,l)$.
 $$v_0(Z)=64q^{1/2}r^{1/2}s^{1/2}.$$
 $$v_0\notin\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}\mathcal V_\gamma.$$
 
-\begin{definition}[Chiral determinant]
+\begin{definition}[Virtual protected determinant]
 $$\mathcal{D}_X(Z)
 =v_0(Z)\sdet_{\mathcal V}(1-x)
 =64q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}.$$
-$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}(Z)
+$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}(Z)
 =\mathcal D_X(Z)^{-1}
 =\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
@@ -198,7 +342,7 @@ $$\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}(Z)
 
 \begin{proposition}
 $$[q^{1/2}r^{1/2}s^{1/2}]\,\mathcal D_X=64,$$
-$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}
+$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}
 =\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V),$$
 $$\mathcal D_X
 =64q^{1/2}r^{1/2}s^{1/2}\sdet_{\mathcal V}(1-x).$$
@@ -213,13 +357,60 @@ $$\sch\mathcal F(\mathcal V)
 (1-q^nr^ls^m)^{f(nm,l)}.$$
 $$v_0(Z)\sdet_{\mathcal V}(1-x)=\mathcal D_X,\qquad
 v_0(Z)^{-1}\sch\mathcal F(\mathcal V)
-=\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}.$$
+=\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}.$$
 \end{proof}
+
+\begin{theorem}[Virtuality of the square root]
+The construction above produces a class
+$$
+[\mathcal V]\in
+K_0(\Gamma_{\mathrm{eff}}\hbox{-graded finite-dimensional super vector spaces})
+$$
+together with its Fock determinant.  By itself this determinant does not
+construct a Hilbert space, a vertex algebra, or a factorization algebra
+whose character is $\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}$.
+
+Consequently every theorem below uses only the equalities
+$$\sdim\mathcal V_{(n,l,m)}=f(nm,l),\qquad
+\mathcal D_X=v_0\sdet_{\mathcal V}(1-x).$$
+The denominator algebra and formal current envelope are constructed
+later from the Borcherds root datum, not from a canonical half of the K3
+Hilbert space.
+\end{theorem}
+
+\begin{proof}
+By definition, $\mathcal V_{(n,l,m)}=\mathbb U_{nm,l}$ is specified only
+through its class in $K_0(\mathrm{sVect}_{\mathrm{fd}})$ and through the
+integer $\sdim\mathbb U_{nm,l}=f(nm,l)$.  The Fock trace and
+superdeterminant lemma depends only on these signed dimensions.  No
+operation in the construction supplies composition maps, operator
+products, locality, or a Hilbert completion.
+\end{proof}
+
+\begin{openproblem}[Honest chiral square-root Hilbert lift]
+Construct, if it exists, an honest chiral one-particle Hilbert space
+with a $\Gamma_{\mathrm{eff}}$-graded super-vector-space decomposition
+$$
+\mathcal H^{\mathrm{1p,ch}}
+=\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}
+\mathcal H^{\mathrm{1p,ch}}_\gamma
+$$
+with protected superdimensions
+$$
+\operatorname{Tr}_{\mathcal H^{\mathrm{1p,ch}}_{(n,l,m)}}(-1)^F
+=f(nm,l).
+$$
+The determinant construction does not assume this object.  It uses only
+the virtual classes $\mathbb U_{n,l}$ and their signed dimensions.  The
+algebraic object below is instead the Borcherds denominator algebra
+selected by the same charge grading and the same signed multiplicities.
+\end{openproblem}
 
 \section{The normalized cusp form}
 
-Freitag \cite{FREITAG:1} and Van der Geer \cite{VDGEER:1}:
-$$\mathcal{SM}(\Sp_4(\Z)) = \C[E_4,E_6,\Delta_{10},\Delta_{12}],$$
+Freitag \cite{FREITAG:1} and Van der Geer \cite{VDGEER:1}: the
+even-weight scalar subring is
+$$M^{\mathrm{even}}_*(\Sp_4(\Z)) = \C[E_4,E_6,\Delta_{10},\Delta_{12}],$$
 $$\mathrm{wt}(E_4,E_6,\Delta_{10},\Delta_{12})=(4,6,10,12).$$
 $$\Delta_{10}=\Delta_5^2,\qquad
 \mathrm{wt}(\Delta_5)=5,\qquad
@@ -271,7 +462,7 @@ $$\nu_{11}(z_1,z_2)=
 \sum_{n\in\Z}(-1)^n
 \exp\left(\frac{\pi i}{4}(2n+1)^2z_1+\pi i(2n+1)z_2\right).$$
 $$\nu_{11} =
-q^{1/8}r^{-1/2}\prod_{n\geq1}
+-q^{1/8}r^{-1/2}\prod_{n\geq1}
 (1-q^{n-1}r)(1-q^nr^{-1})(1-q^n),$$
 $$q=\exp(2\pi iz_1),\qquad r=\exp(2\pi iz_2).$$
 $$\psi_{5,\frac12}=\eta(z_1)^9\nu_{11}(z_1,z_2),\qquad
@@ -287,7 +478,7 @@ $$1+\frac1{64}\sum_{t\geq1}c_\Delta(1+2t,1,1)q^t
 $$\mathcal H_{\mathrm{diag}}
 =\left\{\begin{pmatrix}a&0\\0&b\end{pmatrix}\mid
 a,b\in\mathbb H_1\right\}.$$
-Gritsenko--Clery \cite{GC}, $N=1$:
+Gritsenko--Cl\'ery \cite{GC}, $N=1$:
 $$\operatorname{supp}\operatorname{div}(\Delta_5)
 =\Sp_4(\Z)\cdot\mathcal H_{\mathrm{diag}},\qquad
 \operatorname{mult}_{\mathcal H_{\mathrm{diag}}}(\Delta_5)=1.$$
@@ -315,6 +506,79 @@ $$64q^{1/2}r^{1/2}s^{1/2}
 $$\mathcal D_X(Z)=\Delta_5(Z).$$
 \end{proof}
 
+\begin{remark}[Normalization of the square root]
+The constants in the square-root product are fixed by the following
+chain:
+\begin{center}
+\small
+\begin{tabular}{p{0.25\textwidth}p{0.62\textwidth}}
+\hline
+Object & Fixed value \\
+\hline
+Fourier variables &
+\(q=e^{2\pi iz_1},\ r=e^{2\pi iz_2},\ s=e^{2\pi iz_3}\) \\
+Borcherds input &
+\(Z_{\mathrm{K3}}=2\phi_{0,1}\) \\
+Weight &
+\(\mathrm{wt}\,\operatorname{Borch}(\phi_{0,1})=f(0,0)/2=5\) \\
+Igusa leading coefficient &
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64\) \\
+Monic product &
+\(D_5=64^{-1}\Delta_5
+=q^{1/2}r^{1/2}s^{1/2}\prod(1-q^nr^ls^m)^{f(nm,l)}\) \\
+Determinant normalization &
+\(\mathcal D_X=\Delta_5,\quad
+v_0=64q^{1/2}r^{1/2}s^{1/2}\) \\
+Virtual inverse &
+\(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}
+=64^{-1}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V)\) \\
+BKM denominator &
+\(\operatorname{den}(\autcor)=D_5(2Z)=64^{-1}\Delta_5(2Z)\) \\
+Scalar square &
+\(Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\);
+in general \(Z^X_{\square}=C_{\square}\Delta_5^{-2}\), hence
+\((\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}})^2=Z^X_{\square}/C_{\square}\) \\
+\hline
+\end{tabular}
+\end{center}
+\end{remark}
+
+\begin{proposition}[Universal Borcherds--Gritsenko weight identity at $N=1$]
+Let $\phi_{0,1}\in J_{0,1}^{\mathrm{weak}}$ be the weight-zero index-one
+weak Jacobi form with Fourier expansion
+$\phi_{0,1}(z_1,z_2)=\sum_{n,l}f(n,l)\,q^nr^l$, and let
+$\Phi_N:=\operatorname{Borch}(\phi_{0,1}^{(N)})$ denote the
+Gritsenko--Nikulin singular-theta lift of the $N$-th Hecke image.  At
+$N=1$ the lift coincides with $\Delta_5$ and the Borcherds weight
+reads
+$$\operatorname{wt}(\Delta_5)=\frac{f(0,0)}{2}=5=\frac{c_1(0)}{2},$$
+with $c_1(0):=f(0,0)=10$.  The identity $\operatorname{wt}(\Phi_N)=c_N(0)/2$
+is the universal form: the $N=1$ row pins
+$(\operatorname{wt},c_N(0))=(5,10)$, and the covering group attached to
+the reflection datum of $\Delta_5$ is the trivial integer-weight cover
+over $\Sp_4(\Z)$.
+\end{proposition}
+
+\begin{proof}
+The Borcherds singular-theta regularisation of $\phi_{0,1}$ produces a
+meromorphic Siegel modular form of weight $f(0,0)/2$ on the paramodular
+group $\Gamma^{(N)}_{\mathrm{para}}$; at $N=1$ this group is $\Sp_4(\Z)$
+by Gritsenko--Nikulin \cite{GN}.  The input Jacobi form $\phi_{0,1}$
+has $f(0,0)=10$ (Eichler--Zagier, elliptic genus of K3), hence the
+output weight is $5$.  Identifying $\operatorname{Borch}(\phi_{0,1})$
+with $\Delta_5$ via the Igusa identification above
+($\mathcal D_X=\Delta_5$) fixes
+$\operatorname{wt}(\Delta_5)=5$.  Setting $c_1(0):=f(0,0)$ exhibits the
+row $(N=1,\,\operatorname{wt}=5,\,c_1(0)=10)$ of the Gritsenko--Cl\'ery
+spread \cite{GC}; the remaining rows at $N\in\{2,3,4,6\}$ and the
+half/quarter-integer continuations are anchored here but proved in
+\cite{GC}.  Integrality $\operatorname{wt}(\Delta_5)\in\Z$ pins the automorphy
+weight-multiplier to the trivial line bundle over $\Sp_4(\Z)$: no
+passage to $\operatorname{Mp}_4$ is required, and the non-trivial
+Maass character $\nu_{\Delta_5}$ is a finite-order representation of
+$\Sp_4(\Z)$ in its own right, orthogonal to the weight datum.
+\end{proof}
+
 \section{The protected D-brane index}
 
 Let $S$ be an elliptically fibered K3 surface
@@ -326,14 +590,20 @@ $$\beta_h=s_1+hF,\qquad h\geq 0.$$
 
 Type IIA D6--D2--D0 charge:
 $$\gamma(h,d,n)=(1;\,(\beta_h,d);\,n).$$
-$$\Omega_X(h,d,n)=
-\operatorname{Tr}_{\mathcal H_{\gamma(h,d,n)}}(-1)^F.$$
+Write $\Omega_X(h,d,n)$ for the protected D6--D2--D0 index attached to
+this charge.  The microscopic lift is open:
+$$
+\exists\,\mathcal H_{\gamma(h,d,n)},\qquad
+\operatorname{Tr}_{\mathcal H_{\gamma(h,d,n)}}(-1)^F
+=\Omega_X(h,d,n).
+$$
 $$\mathrm{Hilb}^n(X,(\beta_h,d))
 =\{Y\subset X\mid [Y]=(\beta_h,d),\ \chi(\mathcal O_Y)=n\}.$$
 $$E\curvearrowright X,\qquad (x,e')\mapsto (x,e+e').$$
 $$\mathbf{DT}^X_{n,(\beta_h,d)}
 =\int_{\mathrm{Hilb}^n(X,(\beta_h,d))/E}\nu\,de,$$
-$$\nu=\hbox{Behrend function}\quad\cite{BEHREND,DT}.$$
+$$\nu=\hbox{Behrend function}.$$
+Behrend--Thomas: \cite{BEHREND}, \cite{DT}.
 
 \section{The scalar square}
 
@@ -342,33 +612,204 @@ $$Z^X_{\mathrm{DT}}(q,t,p)=
 \mathbf{DT}^X_{n,(\beta_h,d)}
 q^{d-1}t^{\frac{1}{2}\langle\beta_h,\beta_h\rangle}(-p)^n.$$
 
-\begin{theorem}[Oberdieck--Pixton \cite{OB}]
+\begin{proposition}[Oberdieck--Pixton normalization]
+\label{prop:op-normalization}
+Let the Oberdieck--Pixton variables be
+$$p_{\mathrm{OP}}=e^{iu},\qquad q_{\mathrm{OP}},\qquad
+\widetilde q_{\mathrm{OP}}.$$
+The variable map is
+$$q=q_{\mathrm{OP}},\qquad r=p_{\mathrm{OP}},\qquad
+s=\widetilde q_{\mathrm{OP}}.$$
+For the displayed DT variables,
+$$q_{\mathrm{DT}}=\widetilde q_{\mathrm{OP}}=s,\qquad
+t_{\mathrm{DT}}=q_{\mathrm{OP}}=q,\qquad
+p_{\mathrm{DT}}=p_{\mathrm{OP}}=r.$$
+The product denoted $\chi_{10}$ by Oberdieck--Pixton is
+$$\chi_{10}^{\mathrm{OP}}
+=D_5^2
+=\left(64^{-1}\Delta_5\right)^2
+=4096^{-1}\Delta_5^2.$$
+Consequently their primitive reduced partition function is
+$$Z^X_{\mathrm{OP}}=-\left(\chi_{10}^{\mathrm{OP}}\right)^{-1}
+=-4096\,\Delta_5^{-2}.$$
+\end{proposition}
+
+\begin{proof}
+Oberdieck--Pixton use the primitive expansion \cite{OB}*{Theorem 1}
+$$
+Z^X_{\mathrm{OP}}
+=\sum_{g,h,d}N_{g,h,d}u^{2g-2}
+q_{\mathrm{OP}}^{h-1}\widetilde q_{\mathrm{OP}}^{d-1}
+$$
+and the stable-pairs substitution, in the coordinate convention of
+Oberdieck--Pandharipande \cite{OPand}*{Section 2},
+$$y=-p_{\mathrm{OP}},\qquad p_{\mathrm{OP}}=e^{iu}.$$
+There
+$$
+\Omega=\begin{pmatrix}\tau&z\\ z&\widetilde\tau\end{pmatrix},\qquad
+p_{\mathrm{OP}}=e^{2\pi iz}=e^{iu},\qquad
+q_{\mathrm{OP}}=e^{2\pi i\tau},\qquad
+\widetilde q_{\mathrm{OP}}=e^{2\pi i\widetilde\tau}.
+$$
+The displayed DT convention uses
+$$q_{\mathrm{DT}}^{d-1}t_{\mathrm{DT}}^{h-1}(-p_{\mathrm{DT}})^n,$$
+and Bryan records that the DT convention interchanges the $q$ and
+$\widetilde q$ variables relative to Oberdieck--Pandharipande
+\cite{BRYAN}*{Definition 2.1 and Conjecture 2.3}.  This gives the stated
+variable map.
+
+Oberdieck--Pixton define the Igusa product by \cite{OB}*{(3)}
+$$
+\chi_{10}^{\mathrm{OP}}(p,q,\widetilde q)
+=pq\widetilde q
+\prod(1-p^kq^h\widetilde q^d)^{c(4hd-k^2)}
+$$
+in the chamber $h>0$ or $d>0$, together with $h=d=0,\ k<0$.  The
+exponents are the K3 elliptic-genus coefficients.  Since
+$$Z_{\mathrm{K3}}=2\phi_{0,1},\qquad
+\phi_{0,1}=\sum f(n,l)q^nr^l,$$
+those exponents are $2f(nm,l)$.  Therefore the Oberdieck--Pixton monic
+product is exactly the square of
+$$D_5=64^{-1}\Delta_5
+=q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{f(nm,l)}.$$
+Their Theorem 1, equivalently the Laurent expansion in \cite{OB}*{(56)},
+gives $Z^X_{\mathrm{OP}}=-1/\chi_{10}^{\mathrm{OP}}$.
+\end{proof}
+
+\begin{theorem}[Oberdieck--Pixton/Oberdieck reduced DT square]
 \label{thm:op-square}
-$$Z^X_{\mathrm{OP}}(q,t,p)=\frac{C_{\mathrm{OP}}}{\Delta_5(Z)^2},
-\qquad C_{\mathrm{OP}}\in\C^\times.$$
+Let \(\beta_h\in H_2(S,\Z)\) be primitive and non-zero, with
+$$\langle\beta_h,\beta_h\rangle=2h-2.$$
+Under the variable map
+$$
+p=P=e^{iu},\qquad t=Q,\qquad q=T,\qquad
+(q_{\mathrm{Bch}},r_{\mathrm{Bch}},s_{\mathrm{Bch}})=(Q,P,T),
+$$
+one has
+$$
+Z^X_{\mathrm{DT}}(T,Q,P)
+=Z^X_{\mathrm{OP}}(P,Q,T)
+=-4096\,\Delta_5(Z)^{-2}.
+$$
+Equivalently,
+$$C_{\mathrm{DT}}=C_{\mathrm{OP}}=-4096.$$
 \end{theorem}
 
-\begin{assumption}[DT scalar square]
-\label{ass:dt-square}
-$$Z^X_{\mathrm{DT}}(q,t,p)=\frac{C_{\mathrm{DT}}}{\Delta_5(Z)^2},
-\qquad C_{\mathrm{DT}}\in\C^\times.$$
-\end{assumption}
+\begin{proof}
+Oberdieck's reduced DT/PT theorem for \(S\times E\),
+\cite{OberdieckReducedPT}*{Theorem 3(i)}, gives, for every non-zero
+\(\beta\in H_2(S,\Z)\),
+$$
+\sum_n\mathbf{DT}^X_{n,(\beta,d)}x^n
+=
+\sum_n\mathsf P^X_{n,(\beta,d)}x^n.
+$$
+Set \(x=-P\).  The degree-zero factor is
+$$M(-P)^{\chi(S\times E)}=M(-P)^0=1.$$
+For primitive \(\beta_h\), the reduced GW/PT comparison used in
+Oberdieck--Pixton \cite{OB}*{Section 7.1, equation (GWPTcorr)},
+together with Oberdieck--Pandharipande
+\cite{OPand}*{Proposition 5}, gives
+$$
+\sum_n\mathsf P^X_{n,(\beta_h,d)}(-P)^n
+=
+\sum_g\mathsf N^X_{g,h,d}u^{2g-2},\qquad P=e^{iu}.
+$$
+Multiplying by \(Q^{h-1}T^{d-1}\) and summing over \(h,d\) gives
+$$Z^X_{\mathrm{DT}}(T,Q,P)=Z^X_{\mathrm{OP}}(P,Q,T).$$
+Oberdieck--Pixton \cite{OB}*{Theorem 1} and
+Proposition~\ref{prop:op-normalization} give
+$$Z^X_{\mathrm{OP}}(P,Q,T)=-4096\,\Delta_5(Z)^{-2}.$$
+\end{proof}
+
+\begin{conjecture}[Protected D-brane index dictionary]
+For the D6--D2--D0 charge
+$$\gamma(h,d,n)=(1;\,(\beta_h,d);\,n),$$
+the physical protected index is expected to be represented by the
+Behrend-weighted Hilbert-scheme invariant:
+$$
+\Omega_X(h,d,n)
+=\operatorname{Tr}_{\mathcal H_{\gamma(h,d,n)}}(-1)^F
+\stackrel{\mathrm{phys}}{=}
+\mathbf{DT}^X_{n,(\beta_h,d)}.
+$$
+This conjectural dictionary is separate from the enumerative scalar
+identity in Theorem \ref{thm:op-square}.
+\end{conjecture}
 
 \begin{definition}[Scalar-square branch]
-$$Z^X_{\square}(q,t,p)=\frac{C_{\square}}{\Delta_5(Z)^2},
-\qquad C_{\square}\in\C^\times.$$
-$$Z^X_{\square}=Z^X_{\mathrm{OP}}\quad\hbox{by Theorem \ref{thm:op-square}},$$
-$$Z^X_{\square}=Z^X_{\mathrm{DT}}\quad\hbox{under Assumption \ref{ass:dt-square}}.$$
+The datum of a scalar-square branch is a source
+$$\mathfrak s\in\{\mathrm{OP},\mathrm{DT}\}$$
+and a Laurent expansion satisfying
+$$Z^X_{\mathfrak s}(Z)=\frac{C_{\mathfrak s}}{\Delta_5(Z)^2},
+\qquad C_{\mathfrak s}\in\C^\times.$$
+The unconditional branch is
+$$Z^X_{\square,\mathrm{uncond}}:=Z^X_{\mathrm{OP}},\qquad
+C_{\square,\mathrm{uncond}}:=-4096.$$
+The Hilbert-scheme DT branch is
+$$Z^X_{\square,\mathrm{DT}}:=Z^X_{\mathrm{DT}},\qquad
+C_{\square,\mathrm{DT}}:=-4096.$$
+If the source is not displayed, $Z^X_{\square}$ denotes an arbitrary
+scalar-square branch.
 \end{definition}
 
-$$\mathcal{D}_X(Z)^2=\frac{C_{\square}}{Z^X_{\square}(q,t,p)}.$$
-$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}:=\mathcal D_X^{-1}.$$
-$$Z^X_{\square}=C_{\square}\,(\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}})^2,$$
-$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}
+\begin{theorem}[Square-root consequence]
+For \(\mathfrak s\in\{\mathrm{OP},\mathrm{DT}\}\), with variables
+normalised as in Theorem~\ref{thm:op-square},
+$$Z^X_{\mathfrak s}(Z)=-4096\,\Delta_5(Z)^{-2}.$$
+Thus
+$$\mathcal{D}_X(Z)^2=\frac{-4096}{Z^X_{\mathfrak s}(Z)},
+\qquad \mathcal D_X(Z)=\Delta_5(Z).$$
+$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}:=\mathcal D_X^{-1}.$$
+$$Z^X_{\mathfrak s}
+=-4096\,(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}})^2,$$
+$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}
 =\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V).$$
+\end{theorem}
 
+\begin{proof}
+Theorem~\ref{thm:op-square} gives the first display for
+\(\mathfrak s=\mathrm{OP}\) and \(\mathfrak s=\mathrm{DT}\).  Hence
+$$-4096/Z^X_{\mathfrak s}=\Delta_5^2.$$
+The chosen square root is the Borcherds determinant already normalized
+as
+$$\mathcal D_X=\Delta_5,$$
+not an arbitrary analytic branch.  Inverting gives
+$$Z^X_{\mathfrak s}=-4096(\mathcal D_X^{-1})^2.$$
+\end{proof}
 
-\section{The orthogonal model of the exponents}
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.25\textwidth}
+>{\raggedright\arraybackslash}p{0.34\textwidth}
+>{\raggedright\arraybackslash}p{0.31\textwidth}}
+\hline
+Object & Equation & Status \\
+\hline
+Primitive reduced curve counting &
+\(Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\) &
+proved by Oberdieck--Pixton for primitive K3 classes, after
+Proposition \ref{prop:op-normalization} \\
+Hilbert-scheme DT series &
+\(Z^X_{\mathrm{DT}}=\sum\mathbf{DT}^X_{n,(\beta_h,d)}
+T^{d-1}Q^{h-1}(-P)^n\) &
+definition; equality with \(-4096\Delta_5^{-2}\) follows from
+Oberdieck reduced DT/PT and Theorem \ref{thm:op-square} \\
+Protected D-brane index &
+\(\Omega_X(h,d,n)\stackrel{\mathrm{phys}}{=}
+\mathbf{DT}^X_{n,(\beta_h,d)}\) &
+conjectural physics dictionary \\
+Scalar-square branch &
+\(Z^X_{\square}=C_{\square}\Delta_5^{-2}\) &
+unconditional with \(C_{\square}=-4096\) for
+\(Z^X_{\mathrm{OP}}\) and \(Z^X_{\mathrm{DT}}\) \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{The exterior-square model of the duality group}
 
 $$\La^4=\Z e_1\oplus\Z e_2\oplus\Z e_3\oplus\Z e_4.$$
 $$g\in\SL_4(\Z):\qquad
@@ -468,7 +909,38 @@ $${}^t(z_2^2-z_1z_3,z_3,z_2,z_1,1)z_0$$
 into the two actions produces the commutative square.
 \end{proof}
 
+\begin{definition}[Automorphic duality datum]
+$$G_{\mathrm{aut}}=\PSp_4(\Z)\simeq\SO_+(\La^{3,2}).$$
+The protected determinant is not an invariant scalar function on
+$\Hpl_2$.  It is a section of the automorphic line
+$$\mathcal L^5\otimes\nu_{\Delta_5}$$
+with transformation law
+$$
+\Delta_5(g\cdot Z)
+=\nu_{\Delta_5}(g)\det(CZ+D)^5\Delta_5(Z),
+\qquad
+g=\begin{pmatrix}A&B\\ C&D\end{pmatrix}\in\Sp_4(\Z).
+$$
+The scalar square is a section of $\mathcal L^{10}$:
+$$
+\Delta_5^2(g\cdot Z)=\det(CZ+D)^{10}\Delta_5^2(Z).
+$$
+For every scalar-square branch,
+$$
+Z^X_{\square}(g\cdot Z)
+=\det(CZ+D)^{-10}Z^X_{\square}(Z).
+$$
+\end{definition}
+
 \section{The Weyl chamber and the Weyl vector}
+
+Change polarization on the same Gram-index lattice:
+$$
+\Gamma_{\mathrm{ind}}\xrightarrow{\ \alpha\ }\La^{2,1}_{II},\qquad
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}.
+$$
+The cusp polarization gives the Fock determinant.  The denominator
+polarization gives the Borcherds chamber.
 
 Fix the primitive hyperbolic sublattice
 $$\La^{2,1} = \HypPlan \oplus [2] \simeq \Z f_2 \oplus \Z f_3 \oplus \Z
@@ -629,19 +1101,94 @@ $$z = z_1 f_{-2} + z_2 f_3 + z_3 f_2
 The dual lattice is
 $$(\La^{2,1}_{II})^* = \Z \frac{1}{2} f_2 + \Z \frac{1}{2} f_3 + \Z \frac{1}{2} f_{-2} = \frac{1}{2}\La^{2,1}.$$
 
-\begin{definition}[BPS charge degrees in the Weyl chamber]
-For $\gamma=(n,l,m)\in\Gamma_{\mathrm{BPS}}$ set
+\begin{definition}[Gram-index degrees in the Weyl chamber]
+For $\gamma=(n,l,m)\in\Gamma_{\mathrm{ind}}$ set
 $$\alpha(\gamma)=\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
 \in\La^{2,1}_{II}.$$
 With
 $$z=z_1f_{-2}+z_2f_3+z_3f_2,$$
-the character of the BPS charge is
+the character of the Gram-index charge is
 $$x^\gamma=q^nr^ls^m=\exp(-\pi i(\alpha(\gamma),z)).$$
+For $\gamma'=(n',l',m')$,
+$$
+(\alpha(\gamma),\alpha(\gamma'))
+=-2\langle\gamma,\gamma'\rangle_{\mathrm{ind}},
+\qquad
+(\alpha(\gamma),\alpha(\gamma))=-2(4nm-l^2).
+$$
+Thus the Borcherds degree is the Lorentzian image of the Gram-index
+grading.  The Weyl chamber below is determined by the cusp polarization
+fixed in Section \ref{sec:duality-principle} together with the active
+Jacobi support, since charges with zero exponent do not generate walls.
 $$E_0:=\rho.$$
 $$q^{1/2}r^{1/2}s^{1/2}=\exp(-\pi i(\rho,z)).$$
 $$\exp(-2\pi i(\alpha(\gamma),z)),\qquad
 \exp(-2\pi i(\rho,z)).$$
 \end{definition}
+
+\begin{definition}[Active support and Borcherds cone]
+In the standard cusp chamber, the active charge support is
+$$
+\Gamma_{\mathrm{act}}
+=\{\gamma=(n,l,m)\in\Gamma_{\mathrm{eff}}\mid f(nm,l)\neq0\}.
+$$
+The inactive triples in $\Gamma_{\mathrm{eff}}\setminus\Gamma_{\mathrm{act}}$
+are ordering data only; their product exponents are zero.  The product
+does not prove absence of root spaces with zero signed superdimension.
+The proof-grade Borcherds cone is the real cone generated by the active
+positive Gram-index charges after the Lorentzian degree map:
+$$
+\Cone_{\mathrm{Borch}}
+:=\R_{\geq0}\,\alpha(\Gamma_{\mathrm{act}})
+\subset \La^{2,1}_{II}\otimes\R.
+$$
+The real-root hyperplanes below are the walls used by the denominator
+identity in this polarization.
+\end{definition}
+
+\begin{lemma}[Active support gives the type-II chamber cone]
+\label{lem:active-support-type-ii-cone}
+For $\gamma=(n,l,m)\in\Gamma_{\mathrm{act}}$,
+$$
+\alpha(\gamma)
+=n\delta_1+m\delta_2+(n+m-l)\delta_3,
+$$
+with
+$$n\ge0,\qquad m\ge0,\qquad n+m-l\ge0.$$
+Consequently
+$$
+\Cone_{\mathrm{Borch}}
+=\R_{\geq0}\delta_1+\R_{\geq0}\delta_2+\R_{\geq0}\delta_3.
+$$
+\end{lemma}
+
+\begin{proof}
+The displayed decomposition is
+$$
+n(2f_2-f_3)+m(2f_{-2}-f_3)+(n+m-l)f_3
+=2nf_2-lf_3+2mf_{-2}.
+$$
+The effective chamber gives $n,m\ge0$.  Since
+$\phi_{0,1}$ is weak of index one, $f(nm,l)\ne0$ implies
+$4nm-l^2\ge-1$.  If $n=0$ or $m=0$, this gives $l^2\le1$, and the
+boundary cases in $\Gamma_{\mathrm{eff}}$ give $l\le n+m$.  If
+$n,m>0$ and $l\ge n+m+1$, then
+$$
+l^2\ge(n+m+1)^2
+=4nm+(n-m)^2+2(n+m)+1>4nm+1,
+$$
+contradicting $l^2\le4nm+1$.  Hence $n+m-l\ge0$.
+The reverse inclusion follows from the active charges
+$$
+(1,0,0),\qquad (0,0,1),\qquad (0,-1,0),
+$$
+whose degrees are $\delta_1+\delta_3$, $\delta_2+\delta_3$, and
+$\delta_3$, and from the active charges
+$$
+(1,1,0),\qquad (0,1,1),
+$$
+whose degrees are $\delta_1$ and $\delta_2$.
+\end{proof}
 
 For $n,l,m \in \Z$ with $n \equiv m \equiv l \equiv 1 \mod 2$,
 $n,m > 0$ and
@@ -720,7 +1267,8 @@ for every primitive isotropic ray
 $$\Z_{>0}a\subset
 \overline{\Poly_{II}}\cap\La^{2,1}_{II}.$$
 On isotropic rays, the coefficients $m(ta)$ are determined by the
-eta-product expansion; the simple-root multiplicity is $\tau(ta)$.
+eta-product expansion; the signed simple-root supermultiplicity is
+\(\tau(ta)\).
 
 
 The real root datum is the wall set
@@ -741,7 +1289,14 @@ $$A=((\delta_i,\delta_j))_{1\leq i,j\leq3}
 =\begin{pmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{pmatrix}$$
 $$A\ \hbox{symmetric generalized Cartan},\qquad
 \bkm(A)\ \hbox{Kac--Moody}.$$
-$$\mathcal A_{\mathrm{phys}}:=\autcor.$$
+$$\mathcal A_{\mathrm{den}}:=\autcor.$$
+This is the algebraic denominator square root.  It is the automorphic
+correction of $\bkm(A)$ constructed by Gritsenko--Nikulin \cite{GN},
+with root spaces graded by the Gram-degree map
+$$
+\gamma=(n,l,m)\longmapsto
+\alpha(\gamma)=2nf_2-lf_3+2mf_{-2}.
+$$
 The Borcherds correction character in the coefficient chamber is
 $$\mathcal C_{\mathrm{im}}(z)
 =1-\sum_{a\in\La^{2,1}_{II}\cap\R_{>0}\Poly_{II}}
@@ -752,6 +1307,372 @@ Harvey--Moore charge grading \cite{HM}:
 $$\smult(\alpha)
 =\dim\mathfrak{g}_{\alpha,\overline 0}
 -\dim\mathfrak{g}_{\alpha,\overline 1}.$$
+
+\begin{definition}[Denominator Lie superalgebra]
+For $\gamma\in\Gamma_{\mathrm{ind}}$ set
+$$
+\mathcal A_{\mathrm{den},\gamma}
+:=
+\begin{cases}
+\La^{2,1}_{II}\otimes\R,&\gamma=0,\\
+\mathfrak g_{\Delta_5,\alpha(\gamma)},&\alpha(\gamma)\in\mathcal R,\\
+0,&\alpha(\gamma)\notin\mathcal R.
+\end{cases}
+$$
+The zero degree is the Cartan subalgebra and is not governed by
+\(f(0,0)\).  The bracket is the Borcherds--Kac--Moody bracket of
+\(\autcor\):
+$$
+[\ ,\ ]:
+\mathcal A_{\mathrm{den},\gamma}
+\otimes
+\mathcal A_{\mathrm{den},\gamma'}
+\longrightarrow
+\mathcal A_{\mathrm{den},\gamma+\gamma'}.
+$$
+\end{definition}
+
+\begin{theorem}[Denominator algebra square root]
+\label{thm:bracket-level-square-root}
+The denominator Lie superalgebra has the following properties.
+$$
+\mathcal A_{\mathrm{den}}
+=\mathcal A_{\mathrm{den},0}\oplus
+\bigoplus_{\substack{\gamma\in\Gamma_{\mathrm{ind}}\\
+\alpha(\gamma)\in\mathcal R}}
+\mathcal A_{\mathrm{den},\gamma},
+\qquad
+[\mathcal A_{\mathrm{den},\gamma},\mathcal A_{\mathrm{den},\gamma'}]
+\subset \mathcal A_{\mathrm{den},\gamma+\gamma'}.
+$$
+Its visible positive signed charge multiplicities are the K3 half-index
+coefficients:
+$$
+\smult(\alpha(n,l,m))=f(nm,l)
+\qquad((n,l,m)\in\Gamma_{\mathrm{act}}).
+$$
+Its Weyl--Kac--Borcherds denominator is
+$$
+\operatorname{den}(\mathcal A_{\mathrm{den}})
+=64^{-1}\Delta_5(2Z).
+$$
+This is a theorem about the Borcherds denominator algebra.  It is not a
+construction of the microscopic BPS Hilbert space or its operator
+product.
+\end{theorem}
+
+\begin{proof}
+Gritsenko--Nikulin construct $\autcor$ as the generalized
+Borcherds--Kac--Moody superalgebra whose real simple roots are
+$\delta_1,\delta_2,\delta_3$ and whose imaginary simple-root
+multiplicities are read from the Borcherds correction character.  A
+root-graded Lie superalgebra has
+$$
+[\mathfrak g_{\Delta_5,\alpha},\mathfrak g_{\Delta_5,\beta}]
+\subset\mathfrak g_{\Delta_5,\alpha+\beta}.
+$$
+The degree map $\alpha(\gamma)$ is additive, hence the bracket conserves
+the Gram-degree grading.  The denominator identity proved below reads
+$$
+\frac1{64}\Delta_5(2Z)
+=e^{-2\pi i(\rho,z)}
+\prod_{\alpha\in\mathcal R_+}
+(1-e^{-2\pi i(\alpha,z)})^{\smult(\alpha)}.
+$$
+Comparing this with the Borcherds product gives
+$$
+\smult(\alpha(n,l,m))=f(nm,l)
+\qquad((n,l,m)\in\Gamma_{\mathrm{act}}).
+$$
+\end{proof}
+
+\begin{definition}[Formal current envelope]
+Let $E$ be the elliptic curve in $X=S\times E$.  Put
+$$
+\operatorname{Cur}_E(\mathcal A_{\mathrm{den}})
+:=\mathcal A_{\mathrm{den}}\otimes\mathcal O_E
+$$
+with the level-zero current bracket
+$$
+[a\otimes f,b\otimes g]=[a,b]\otimes fg.
+$$
+Its chiral enveloping algebra in the sense of Beilinson--Drinfeld
+\cite{BD} is
+$$
+\mathsf{Den}_{\Delta_5,E}
+:=U_E^{\mathrm{ch}}\!
+\left(\operatorname{Cur}_E(\mathcal A_{\mathrm{den}})\right).
+$$
+\end{definition}
+
+\begin{theorem}[Formal current square root]
+\label{thm:factorization-square-root}
+\(\mathsf{Den}_{\Delta_5,E}\) is the formal Beilinson--Drinfeld current
+envelope on \(E\) obtained from the denominator Lie superalgebra.  Its
+constant-mode primitive Lie superalgebra is
+\(\mathcal A_{\mathrm{den}}\), and the denominator of that primitive
+bracket is
+$$
+64^{-1}\Delta_5(2Z).
+$$
+It is not, without additional microscopic input, the BPS factorization
+algebra of the compactification.
+\end{theorem}
+
+\begin{proof}
+The current construction sends any Lie superalgebra to a Lie-* algebra
+on a smooth curve, and the chiral enveloping construction sends a Lie-*
+algebra to a chiral algebra \cite{BD}; equivalently, in vertex-algebra
+language, this is the universal current vertex algebra at level zero
+\cite{KACVA}.  Constant sections of
+$\mathcal A_{\mathrm{den}}\otimes\mathcal O_E$ recover the original Lie
+superalgebra.  The denominator statement is exactly
+Theorem \ref{thm:bracket-level-square-root}.
+\end{proof}
+
+\begin{definition}[Sectorial Hall truncation]
+Let \(X=K3\times E\).  Fix a Bridgeland stability condition
+\(\sigma=(Z_\sigma,\mathcal P_\sigma)\) on the compact category and a
+strict sector \(S\subset\C^\times\) of angular width \(<\pi\), with no
+active BPS ray on its boundary.  Choose \(\vartheta\) so that
+$$
+h_S(\gamma):=\Re(e^{-i\vartheta}Z_\sigma(\gamma))>0
+$$
+on every nonzero semistable class with central charge in \(S\).
+For \(R>0\), set
+$$
+F_{\sigma,S}(R)
+=\{\gamma\mid \mathfrak M_{\sigma,S,\gamma}^{ss}\ne\varnothing,\
+0<h_S(\gamma)\le R\},
+$$
+and
+$$
+\Gamma_{\sigma,S}^{HN}(R)
+=\left\{\gamma_1+\cdots+\gamma_k\ \middle|\
+\gamma_i\in F_{\sigma,S}(R),\
+\sum_i h_S(\gamma_i)\le R\right\}.
+$$
+If an oriented critical Hall object
+\(\mathcal H_{\sigma,S}^{or}\) has been constructed, put
+$$
+\mathcal H_{\sigma,S}^{>R}
+=\prod_{h_S(\gamma)>R}\mathcal H_{\sigma,S,\gamma}^{or},
+\qquad
+\mathsf F_R\mathcal H_{\sigma,S}^{or}
+=\mathcal H_{\sigma,S}^{or}/\mathcal H_{\sigma,S}^{>R}.
+$$
+\end{definition}
+
+\begin{proposition}[The finite object]
+\label{prop:sectorial-hall-truncation}
+A nonzero additive heart cannot have finite nonzero charge support in
+\(\Gamma_{\mathrm{ind}}\).  The active support
+\(\Gamma_{\mathrm{act}}\) is not additive.  The finite Hall object is
+therefore not a finite active-support heart.
+
+Assume the support property, the HN property, finite type of the
+semistable stacks in bounded \(h_S\)-height, and the oriented critical
+Hall correspondences.  Then \(F_{\sigma,S}(R)\) and
+\(\Gamma_{\sigma,S}^{HN}(R)\) are finite,
+\(\mathcal H_{\sigma,S}^{>R}\) is a two-sided Hall ideal, and
+\(\mathsf F_R\mathcal H_{\sigma,S}^{or}\) is a finite Hall quotient.
+The compact sectorial Hall object is the completed inverse system
+$$
+\widehat{\mathcal H}_{\sigma,S}^{or}
+=\varprojlim_R\mathsf F_R\mathcal H_{\sigma,S}^{or}.
+$$
+\end{proposition}
+
+\begin{proof}
+If a heart contains an object of nonzero charge \(\gamma\), it contains
+all finite direct sums of that object, hence all charges \(k\gamma\).
+Since \(\Gamma_{\mathrm{ind}}\) is torsion-free, the charge support is
+infinite.  Also \((0,-1,0)\in\Gamma_{\mathrm{act}}\), while
+\((0,-2,0)\notin\Gamma_{\mathrm{act}}\), so active support is not
+additive.
+
+For semistable classes in \(S\), the strict-sector condition gives
+\(h_S(\gamma)\ge c|Z_\sigma(\gamma)|\) for some \(c>0\).  The support
+property and discreteness of the numerical lattice make
+\(F_{\sigma,S}(R)\) finite.  The function \(h_S\) is positive and
+additive on extensions in the sector; hence HN sums of total height
+\(\le R\) form a finite set and the subspace of height \(>R\) is a
+two-sided Hall ideal.  The inverse limit is the \(h_S\)-adic Hall
+completion.
+\end{proof}
+
+\begin{definition}[Compact Igusa realization datum]
+\label{def:compact-igusa-realization-datum}
+A compact realization of the Igusa square root is a quintuple
+$$
+\mathfrak K_X
+=\left(\mathcal F_X,\mathcal H_X,C_X,\Theta_{\mathrm{Kos}},
+\Pi_{\mathrm{prim}}\right)
+$$
+with the following data.
+\begin{enumerate}
+\item A charge-completed compact observable factorization algebra
+\(\mathcal F_X\) on \(\operatorname{Ran}(E)\), finite-first with respect to the
+sectorial HN quotients of Proposition~\ref{prop:sectorial-hall-truncation}.
+\item An oriented compact Hall factorization object \(\mathcal H_X\)
+with extension correspondences
+$$
+\mathfrak M_\gamma^\sigma\times\mathfrak M_\eta^\sigma
+\xleftarrow{\ p_{\gamma,\eta}\ }
+\mathfrak E_{\gamma,\eta}^\sigma
+\xrightarrow{\ q_{\gamma,\eta}\ }
+\mathfrak M_{\gamma+\eta}^\sigma,
+$$
+vanishing-cycle coefficients, Thom--Sebastiani orientation transport,
+protected integration, and orientation character \(\epsilon_o=\nu_{\Delta_5}\).
+\item A conilpotent chiral coalgebra \(C_X\) and a charge-preserving
+quasi-isomorphism
+$$
+C_X\simeq \bar B_E^{\mathrm{ch}}(\mathcal F_X)
+$$
+in the completed chiral bar category.
+\item A chiral cobar quasi-isomorphism
+$$
+\Theta_{\mathrm{Kos}}:
+\Omega_E^{\mathrm{ch}}C_X
+\xrightarrow{\ \simeq\ }
+\mathsf{Den}_{\Delta_5,E}.
+$$
+\item A primitive Lie comparison
+$$
+\Pi_{\mathrm{prim}}:
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+\xrightarrow{\ \sim\ }
+\mathcal A_{\mathrm{den}}
+$$
+which preserves the \(\Gamma_{\mathrm{ind}}\)-grading, the bracket, the
+real Serre relations, the imaginary simple-root multiplicities and
+parities, the orthogonality relations, and the completed Hopf pairing.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Microscopic Hall--Drinfeld realization criterion]
+\label{thm:microscopic-hall-drinfeld-criterion}
+If a compact Igusa realization datum exists, then
+$$
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+\cong
+\mathcal A_{\mathrm{den}}
+=\mathfrak g_{\Delta_5}
+$$
+as charge-graded Lie superalgebras, and
+$$
+\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}.
+$$
+Consequently
+$$
+\sdim H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_{(n,l,m)}
+=f(nm,l)
+$$
+on \(\Gamma_{\mathrm{act}}\), and the primitive denominator is
+\(64^{-1}\Delta_5(2Z)\).
+
+Conversely, any compact \(K3\times E\) BPS factorization algebra whose
+primitive Lie algebra is \(\mathfrak g_{\Delta_5}\) and whose chiral
+Koszul realization is \(\mathsf{Den}_{\Delta_5,E}\) determines the five
+data of Definition~\ref{def:compact-igusa-realization-datum}.
+\end{theorem}
+
+\begin{proof}
+The primitive comparison is an isomorphism of charge-graded Lie
+superalgebras, so it identifies the Hall/factorization bracket with the
+Borcherds--Gritsenko--Nikulin bracket.  The protected integration
+compatibility gives the signed multiplicities \(f(nm,l)\).  Substitution
+in the Borcherds denominator identity gives
+\(64^{-1}\Delta_5(2Z)\).  The chiral statement is exactly the
+quasi-isomorphism \(\Theta_{\mathrm{Kos}}\).
+
+The converse is formal.  A compact BPS factorization algebra supplies
+\(\mathcal F_X\).  Its Hall model, if it realizes the BPS bracket,
+supplies \(\mathcal H_X\), protected integration, and the orientation
+character.  A chiral Koszul realization supplies the coalgebra \(C_X\)
+and the cobar quasi-isomorphism.  The primitive identification supplies
+\(\Pi_{\mathrm{prim}}\).
+\end{proof}
+
+\begin{proposition}[Low-degree bracket information]
+\label{prop:low-degree-denominator-brackets}
+The denominator algebra determines the following low-degree data.  With
+$$
+\alpha(n,l,m)=n\delta_1+m\delta_2+(n+m-l)\delta_3,
+$$
+the active rows through height three are
+$$
+\begin{array}{c|c|c|c}
+\beta & \gamma & (\beta,\beta) & \smult(\beta)\\ \hline
+\delta_i & (1,1,0),(0,1,1),(0,-1,0) & 2 & 1\\
+\delta_i+\delta_j\ (i<j) & (1,2,1),(1,0,0),(0,0,1) & 0 & 10\\
+2\delta_i+\delta_j\ (i\ne j) & \hbox{six real rows} & 2 & 1\\
+\delta_1+\delta_2+\delta_3 & (1,1,1) & -6 & -64 .
+\end{array}
+$$
+After choosing even Chevalley generators \(e_i,f_i,h_i\) for the real
+simple roots,
+$$
+[h_i,e_j]=(\delta_i,\delta_j)e_j,\qquad
+[e_i,f_j]=\delta_{ij}h_i,\qquad
+(\operatorname{ad}e_i)^3e_j=0\quad(i\ne j).
+$$
+For \(E_{ij}:=[e_i,e_j]\),
+$$
+[f_i,E_{ij}]=2e_j,\qquad [f_j,E_{ij}]=-2e_i.
+$$
+These are denominator-algebra constants.  They are not compact Hall
+constants.
+\end{proposition}
+
+\begin{proof}
+The table is obtained by writing
+\(\beta=c_1\delta_1+c_2\delta_2+c_3\delta_3\) and solving
+$$
+\gamma(\beta)=(c_1,c_1+c_2-c_3,c_2).
+$$
+Then \((\beta,\beta)=-2(4nm-l^2)\), and
+\(\smult(\beta)=f(nm,l)\) follows from
+Theorem~\ref{thm:bracket-level-square-root}.  The displayed bracket
+constants are the normalized Chevalley, Jacobi and Serre constants for
+the symmetric Cartan matrix \(A=((\delta_i,\delta_j))\).
+\end{proof}
+
+\begin{proposition}[The determinant does not determine Hall constants]
+\label{prop:determinant-does-not-determine-hall-constants}
+The scalar square, the Borcherds product, and active support determine
+signed multiplicities.  They do not determine the compact Hall
+structure constants.
+\end{proposition}
+
+\begin{proof}
+The product records only
+$$
+\smult(\alpha)
+=\dim\mathfrak g_{\alpha,\overline0}
+-\dim\mathfrak g_{\alpha,\overline1}.
+$$
+A graded super vector space with the same signed dimensions gives the
+same product.  The zero bracket on that graded space gives the same
+product but not the Borcherds bracket, since
+\([e_i,e_j]\ne0\) in \(\mathcal A_{\mathrm{den}}\) for \(i\ne j\).
+A Hall bracket would require compact extension correspondences,
+orientation data, protected integration, and a basis of protected
+primitives.  None of these is encoded in the determinant.
+\end{proof}
+
+\begin{openproblem}[Compact Hall and chiral Koszul realization]
+Construct the datum
+\(\mathfrak K_X\) of Definition~\ref{def:compact-igusa-realization-datum}.
+Equivalently, construct the compact observable factorization algebra,
+the oriented HN-completed Hall object, protected integration,
+the conilpotent chiral bar coalgebra, the chiral cobar
+quasi-isomorphism to \(\mathsf{Den}_{\Delta_5,E}\), and the primitive
+Lie comparison with \(\mathfrak g_{\Delta_5}\).  The scalar square and
+the denominator algebra are inputs to this problem.  They are not its
+solution.
+\end{openproblem}
 
 \begin{definition}[Imaginary simple roots]
 For $a\in \La^{2,1}_{II}\cap\R_{>0}\Poly_{II}$ set
@@ -772,7 +1693,10 @@ $$
 0,&\text{otherwise}.
 \end{cases}
 $$
-Define multisets by multiplicity:
+This sign split is the Gritsenko--Nikulin BKM parity datum.  As a
+product statement alone it would be only a choice of Grothendieck
+representative for the signed exponent.  Define multisets by
+multiplicity:
 $$a\in\Delta_{\overline0}^{im}\quad\hbox{with multiplicity }
 \mu_{\overline0}(a),$$
 $$a\in\Delta_{\overline1}^{im}\quad\hbox{with multiplicity }
@@ -858,7 +1782,7 @@ $$\smult(\alpha)=\rootmult_{\overline{0}}(\alpha)
 The Weyl--Kac--Borcherds denominator is
 $$
 \begin{aligned}
-\Phi(z)
+\Phi_{\Delta_5}(z)
 &=\sum_{w\in W^{(2)}(\La^{2,1}_{II})}\det(w)
 \left(
 e^{-2\pi i(w(\rho),z)}
@@ -874,7 +1798,7 @@ $$\Omega(\La^{2,1}_{II})
 =\La^{2,1}_{II}\otimes\R+i\Cone(\La^{2,1}_{II})_+.$$
 
 \begin{theorem}[Denominator identity]
-$$\frac{1}{64}\Delta_5(2Z)=\Phi(z).$$
+$$\frac{1}{64}\Delta_5(2Z)=\Phi_{\Delta_5}(z).$$
 $$\operatorname{den}(\autcor)=\frac1{64}\Delta_5(2Z).$$
 \end{theorem}
 
@@ -895,20 +1819,24 @@ $$e^{-2\pi i(\rho,z)}
 \left(1-e^{-2\pi i(\alpha,z)}\right)^{\smult(\alpha)}.$$
 \end{proof}
 
-\begin{proposition}[BPS cone and denominator cone]
-$$\alpha(\Gamma_{\mathrm{eff}})
-=\{\alpha(n,l,m)\mid(n,l,m)\in\Gamma_{\mathrm{eff}}\}
+\begin{proposition}[Gram-index cone and denominator cone]
+$$\alpha(\Gamma_{\mathrm{act}})
+=\{\alpha(n,l,m)\mid(n,l,m)\in\Gamma_{\mathrm{eff}},\ f(nm,l)\neq0\}
 \subset\La^{2,1}_{II}.$$
-$$\mathcal R_+\subset\alpha(\Gamma_{\mathrm{eff}}),\qquad
-\mathcal R_+=\{\alpha(\gamma)\mid \smult(\alpha(\gamma))\neq0\}.$$
+$$
+\alpha(\Gamma_{\mathrm{act}})
+\subset
+\mathcal R_+^{\mathrm{vis}}
+:=\{\alpha\in\mathcal R_+\mid \smult(\alpha)\neq0\}.
+$$
 $$\smult(\alpha(n,l,m))
 =\dim\mathfrak{g}_{\alpha(n,l,m),\overline0}
 -\dim\mathfrak{g}_{\alpha(n,l,m),\overline1}
-=f(nm,l).$$
+=f(nm,l)\qquad((n,l,m)\in\Gamma_{\mathrm{act}}).$$
 \end{proposition}
 
 \begin{proof}
-$$\alpha:\Gamma_{\mathrm{BPS}}\to\La^{2,1}_{II},\qquad
+$$\alpha:\Gamma_{\mathrm{ind}}\to\La^{2,1}_{II},\qquad
 (n,l,m)\mapsto2nf_2-lf_3+2mf_{-2}.$$
 $$q^nr^ls^m=\exp(-\pi i(\alpha(n,l,m),z))$$
 $$Z\mapsto2Z.$$
@@ -920,8 +1848,101 @@ $$\frac1{64}\mathcal D_X(2Z)
 =e^{-2\pi i(\rho,z)}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 \left(1-e^{-2\pi i(\alpha(n,l,m),z)}\right)^{f(nm,l)}.$$
+The triples in $\Gamma_{\mathrm{eff}}\setminus\Gamma_{\mathrm{act}}$
+have exponent zero and do not contribute visible product factors.  The
+denominator product alone does not prove absence of root spaces with
+zero signed superdimension.
 $$\mathcal D_X=\Delta_5\quad\Longrightarrow\quad
-\smult(\alpha(n,l,m))=f(nm,l).$$
+\smult(\alpha(n,l,m))=f(nm,l)
+\quad((n,l,m)\in\Gamma_{\mathrm{act}}).$$
+\end{proof}
+
+\begin{proposition}[What the denominator determines]
+The identity
+$$
+\frac1{64}\Delta_5(2Z)
+=e^{-2\pi i(\rho,z)}
+\prod_{\alpha\in\mathcal R_+}
+\left(1-e^{-2\pi i(\alpha,z)}\right)^{\smult(\alpha)}
+$$
+determines the signed integers $\smult(\alpha)$.  It does not determine
+the two parity dimensions
+$$
+\rootmult_{\overline0}(\alpha),\qquad
+\rootmult_{\overline1}(\alpha),
+$$
+and it does not determine the structure constants
+$$
+[\mathfrak g_\alpha,\mathfrak g_\beta]\to
+\mathfrak g_{\alpha+\beta}.
+$$
+\end{proposition}
+
+\begin{proof}
+Taking the logarithm of the product reads off only the exponent attached
+to each monomial.  That exponent is
+$$
+\smult(\alpha)=
+\rootmult_{\overline0}(\alpha)-\rootmult_{\overline1}(\alpha).
+$$
+The difference $a-b$ does not determine the pair $(a,b)$, and no
+bilinear bracket appears in the product.
+\end{proof}
+
+\begin{proposition}[Index equality is not a state-space identification]
+The equality
+$$\smult(\alpha(n,l,m))=f(nm,l)$$
+identifies the root-space Euler characteristic of
+$\mathcal A_{\mathrm{den}}$ with the virtual K3 half-index
+coefficient.  It does not prove an isomorphism
+$$
+\mathfrak g_{\alpha(n,l,m)}
+\cong
+\mathcal H^{\mathrm{BPS}}_{(n,l,m)}
+$$
+and it does not prove that the microscopic operator product on BPS
+states is the Borcherds bracket.
+\end{proposition}
+
+\begin{theorem}[What the determinant forgets]
+\label{thm:protected-denominator-shadow}
+Let
+$$
+\mathcal B=\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}\mathcal B_\gamma
+$$
+be any charge-graded super vector space with finite-dimensional
+homogeneous pieces and
+$$\sdim\mathcal B_{(n,l,m)}=f(nm,l).$$
+Then its Gram-graded Euler/Fock determinant is
+$$
+64q^{1/2}r^{1/2}s^{1/2}
+\prod_{\gamma\in\Gamma_{\mathrm{eff}}}(1-x^\gamma)^{\sdim\mathcal B_\gamma}
+=\Delta_5(Z).
+$$
+If $\mathcal B$ carries a bracket compatible with charge addition, the
+determinant forgets that bracket and remembers exactly the class of
+$\mathcal B$ in
+$$K_0(\Gamma_{\mathrm{eff}}\hbox{-graded finite super vector spaces}).$$
+Thus the determinant of
+$\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}$ is
+the Grothendieck shadow of its denominator bracket.  The bracket exists, but the
+determinant sees only its charge-graded Grothendieck class.
+\end{theorem}
+
+\begin{proof}
+The Fock determinant lemma gives
+$$
+\sdet_{\mathcal B}(1-x)
+=\prod_{\gamma\in\Gamma_{\mathrm{eff}}}(1-x^\gamma)^{\sdim\mathcal B_\gamma}.
+$$
+The hypothesis $\sdim\mathcal B_{(n,l,m)}=f(nm,l)$ identifies this
+product with the Borcherds product for $64^{-1}\Delta_5$.  Multiplying
+by the vacuum factor gives $\Delta_5$.  A bracket
+$$[\mathcal B_\gamma,\mathcal B_{\gamma'}]\to
+\mathcal B_{\gamma+\gamma'}$$
+does not occur in the determinant formula.  The determinant is therefore
+invariant under replacing $\mathcal B$ by any other graded super vector
+space with the same Grothendieck class.
 \end{proof}
 
 \section{The Jacobi coefficients as superdimensions}
@@ -964,8 +1985,10 @@ $$
 
 \begin{proof}
 $$f(n,l)=O(\exp(\sqrt{4n-l^2})).$$
-Kac's convergence argument \cite{KAC:1} applies near the
-zero-dimensional cusp of $\Sp_4(\Z)$.
+The Borcherds product theorem, in the Gritsenko--Nikulin normalization,
+applies to the input $\phi_{0,1}$ and gives a meromorphic Siegel modular
+form convergent in the zero-dimensional cusp chamber
+\cite{B}*{Theorem 13.3}, \cite{GN}*{Section 2}.
 
 $$P(Z):=\exp(\pi i(z_1 + z_2 + z_3))
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
@@ -1036,21 +2059,23 @@ $$D(Z):=\frac{1}{64}\Delta_5(Z)
 $$\Delta_{10}(Z)=\Delta_5(Z)^2
 =4096\,qrs\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{2f(nm,l)}.$$
-$$Z^X_{\square}=C/\Delta_5^2.$$
-$$\frac{C}{Z^X_{\square}}=\Delta_5(Z)^2,$$
-$$\sqrt{\frac{C}{Z^X_{\square}}}
+$$Z^X_{\square}=C_{\square}/\Delta_5^2,\qquad
+C_{\square}\in\C^\times.$$
+$$D_X(Z):=\Delta_5(Z)
 =64\,q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}.$$
-$$\frac1{64}\Delta_5(2Z)=\Phi(z).$$
-$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}
-=\left(\sqrt{\frac{C}{Z^X_{\square}}}\right)^{-1}$$
-$$\left(\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}\right)^2
-=Z^X_{\square}/C.$$
+$$D_X(Z)^2=\frac{C_{\square}}{Z^X_{\square}}.$$
+$$\frac1{64}\Delta_5(2Z)=\Phi_{\Delta_5}(z).$$
+$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}
+=D_X^{-1}$$
+$$\left(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}\right)^2
+=Z^X_{\square}/C_{\square}.$$
 $$\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},$$
 $$f(nm,l)=\dim \mathfrak{g}_{\alpha(n,l,m),\overline 0}
 -\dim \mathfrak{g}_{\alpha(n,l,m),\overline 1}, \qquad
-q^nr^ls^m=\exp(-\pi i(\alpha(n,l,m),z)).$$
+q^nr^ls^m=\exp(-\pi i(\alpha(n,l,m),z))$$
+for $(n,l,m)\in\Gamma_{\mathrm{act}}$.
 \end{theorem}
 
 \begin{proof}
@@ -1061,25 +2086,26 @@ $$\operatorname{Borch}(\phi_{0,1})
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}.$$
 $$\operatorname{Borch}(\phi_{0,1})=\Delta_5
-\qquad\cite{GN,B}.$$
+\qquad(\hbox{Borcherds--Gritsenko--Nikulin}).$$
+Borcherds--Gritsenko--Nikulin: \cite{B}, \cite{GN}.
 $$\Delta_{10}=\Delta_5^2.$$
-$$Z^X_{\square}=C/\Delta_5^2,$$
-$$\sqrt{\frac{C}{Z^X_{\square}}}
-=\operatorname{Borch}(\phi_{0,1}).$$
+$$Z^X_{\square}=C_{\square}/\Delta_5^2,$$
+$$\frac{C_{\square}}{Z^X_{\square}}
+=\operatorname{Borch}(\phi_{0,1})^2.$$
 $$\sdim\mathcal V_{n,l,m}=f(nm,l)$$
 $$\sch\mathcal F(\mathcal V)
 =\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{-f(nm,l)}.$$
-$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}
+$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}
 =\frac1{64}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V).$$
-$$\left(\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}\right)^{-1}
+$$\left(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}\right)^{-1}
 =64q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}.$$
 \end{proof}
 
 
-\section{Conjectural CHL extensions}
+\section{Eight diagonal-divisor factorization rows}
 
 $$g=2.$$
 $$t,N \in \mathbb{Z}_+:\quad \Gamma_t(N) =
@@ -1091,385 +2117,1581 @@ $$\mathcal H_{\mathrm{diag}}
 =\left\{\begin{pmatrix}a&0\\0&b\end{pmatrix}\mid
 a,b\in\mathbb{H}_1\right\}\subset\mathbb{H}_2.$$
 
-\begin{theorem}[Gritsenko--Clery]
-In the class of Siegel modular forms with character for Hecke-type
-congruence subgroups of genus-$2$ paramodular groups whose divisor is
+\begin{theorem}[Clery--Gritsenko]
+In the class of Siegel modular forms with character or multiplier system
+for the Hecke-type congruence subgroups $\Gamma_t(N)$ whose divisor is
 the union of the $\Gamma_t(N)$-translates of $\mathcal H_{\mathrm{diag}}$
-with multiplicity one, the Gritsenko--Clery catalogue has exactly eight
-rows \cite{GC}.
+with multiplicity one, there are exactly eight rows
+\cite{GC}*{Theorem 1.4}.  The nine-candidate list is
+\cite{GC}*{Proposition 1.2}; the proof of Theorem 1.4 excludes only
+the ninth candidate \((t,N;k)=(2,4;\frac12)\).  The congruence
+Borcherds product with all
+cusp coefficients is \cite{GC}*{Theorem 3.1}, with the final Section 3
+product displays for $\nabla_3,\nabla_2,\nabla_{3/2}$, and $Q_1$.
 \end{theorem}
 
-$$\Phi_1,\ldots,\Phi_8,\qquad \Phi_1=\Delta_5.$$
-$$\frac1{64}\Phi_1(2Z)=\operatorname{den}(\autcor).$$
+$$
+\begin{array}{c|c|c|c|c}
+j&F_j&\Gamma&\mathrm{wt}(F_j)&\mathrm{character}\\ \hline
+1&\Delta_5&\Gamma_1&5&v_\eta^{12}\times v_H\\
+2&\Delta_2&\Gamma_2^+&2&v_\eta^{6}\times v_H\\
+3&\Delta_1&\Gamma_3^+&1&v_\eta^{4}\times v_H\\
+4&\Delta_{1/2}&\Gamma_4^+&\frac12&v_\eta^{3}\times v_H\ (\mathrm{degree}\ 8)\\
+5&\nabla_3&\Gamma_0^{(2)}(2)&3&\chi_2^{(2)}\times v_H\\
+6&\nabla_2&\Gamma_0^{(2)}(3)&2&\chi_2^{(3)}\times v_H\\
+7&\nabla_{3/2}&\Gamma_0^{(2)}(4)&\frac32&\chi_4^{(4)}\times v_H\\
+8&Q_1&\Gamma_2(2)&1&\chi_4^{(2)}\times v_H
+\end{array}
+$$
+$$\operatorname{supp}\operatorname{div}_{\mathbb H_2}(F_j)
+=\bigcup_{\gamma\in\Gamma_j}\gamma\langle\mathcal H_{\mathrm{diag}}\rangle,
+\qquad
+\operatorname{mult}_{\mathcal H_{\mathrm{diag}}}(F_j)=1.$$
 
-\begin{conjecture}[CHL square-root extension]
-For a CHL labelling of the eight Gritsenko--Clery rows, each row
-$\Phi_j$ with an assigned K3 twining genus
-$$\phi^{(j)}_{0,1}=\tfrac12 Z^{(j)}_{\mathrm{K3}}$$
-has:
-\begin{enumerate}
-\item[(i)] a scalar-square branch
-$$Z_j=C_j/\Phi_j^2;$$
-\item[(ii)] a generalized Borcherds--Kac--Moody superalgebra
-$\mathfrak g_j$ with denominator $\Phi_j$;
-\item[(iii)] signed root superdimensions equal to the Fourier
-coefficients of $\phi^{(j)}_{0,1}$.
-\end{enumerate}
+$$F_1=\Delta_5,\qquad
+\frac1{64}F_1(2Z)=\operatorname{den}(\autcor).$$
+
+By Theorem~\ref{thm:gn-denominator-234} the full-paramodular rows
+$F_2,F_3,F_4$ also carry Gritsenko--Nikulin denominator identities.
+The congruence rows $F_5,F_6,F_7,F_8$ have product-degree lattices in
+Proposition~\ref{prop:congruence-product-degree-lattices}.  A
+nonabelian Weyl--Borcherds promotion is additional structure: it is
+imported for $F_5,F_6,F_7,F_8$ from the CHL denominator theorem of
+Govindarajan.  For $F_7$ this imported theorem lives on the
+$\mu_4$-multiplier cover determined by the Clery--Gritsenko order-four
+multiplier and supplies no Vol.~III CY/DT/chiral boundary host.
+
+\begin{proposition}[Extension separation]
+\label{prop:extension-quarantine}
+No statement in this section is used in the $N=1$ theorem for
+$\Delta_5$.  For every row the product formula itself gives a charged
+primitive product.  It gives a Gram-graded Euler/Fock determinant only
+after a one-particle index and a charge-invariant interpretation have
+been supplied.
+A nonabelian denominator theorem is stronger: it additionally requires a
+Weyl chamber, real simple roots, a reflection character, and a Weyl
+alternating sum.
+\end{proposition}
+
+\begin{conjecture}[Denominator extension beyond known rows]
+For every row not already covered by the Gritsenko--Nikulin denominator
+theorems or by the Govindarajan CHL/WKB denominator theorem, whose datum
+$$
+\mathscr P_j=(\phi_j,\Gamma_{j,\mathrm{prod}}^+,
+\Gamma_{j,\mathrm{mod}},\rho_j,\nu_j,L_j,\alpha_j)
+$$
+has been constructed, with
+$$\phi^{(j)}(\tau,z)=\sum c_j(n,l)q^nr^l,$$
+there is a positive product cone $\Gamma_{j,\mathrm{prod}}^+$, a Weyl vector $\rho_j$, and a
+generalized Borcherds--Kac--Moody superalgebra $\mathfrak g_j$ such that
+$$F_j(Z)=C_j e^{2\pi i(\rho_j,Z)}
+\prod_{\gamma\in\Gamma_{j,\mathrm{prod}}^+}(1-e^{2\pi i(\gamma,Z)})^{c_j(\gamma)},$$
+$$\operatorname{den}(\mathfrak g_j)=C'_jF_j(a_jZ),\qquad
+\sdim(\mathfrak g_{j,\gamma})=c_j(\gamma).$$
+If a future construction supplies the row by a CHL/K3 sector with
+$$\phi^{(j)}=\tfrac12Z^{(j)}_{\mathrm{K3}},$$
+then the scalar-square branch is
+$$Z_j=C_j/F_j^2.$$
 \end{conjecture}
 
-$$\mathrm{CHL\ denominator\ frame}:\ \cite{DVV},\qquad
-\mathrm{automorphic\ product}:\ \cite{B}.$$
-$$\mathrm{status}(\Phi_1)=\mathrm{theorem},\qquad
-\mathrm{status}(\Phi_2,\ldots,\Phi_8)=\mathrm{conjectural}.$$
+\begin{proposition}[CHL squares and denominator signs]
+\label{prop:chl-square-root-separation}
+The identities
+$$
+\nabla_3^2=\Phi_6,\qquad \nabla_2^2=\Phi_4
+$$
+which occur in the CHL dyon literature do not by themselves give
+denominator identities for the square-root rows $F_5=\nabla_3$ and
+$F_6=\nabla_2$.  They give scalar Siegel modular forms on the CHL side.
+To descend from a scalar square to a denominator theorem for a root
+form, one must also construct the reflection character, the parity, and
+the Weyl anti-invariant additive side.  Govindarajan's twisted CHL
+theorem supplies exactly this missing structure for
+$$F_5=\nabla_3,\qquad F_6=\nabla_2,\qquad
+F_7=\nabla_{3/2},\qquad F_8=Q_1,$$
+as recorded in Theorem~\ref{thm:govindarajan-denominator-rows}.
+\end{proposition}
 
+\begin{proof}
+Clery--Gritsenko record the dd-forms $\nabla_3$ and $\nabla_2$ and note
+that their squares were constructed in the CHL papers as $\Phi_6$ and
+$\Phi_4$.  The square forgets the sign character which a denominator
+identity needs on simple real reflections.  Thus the scalar CHL product
+is evidence for the automorphic product, not by itself a proof of the
+BKM datum $(P_j,\mathcal M_j,W_j,\epsilon_j,\rho_j,N_j(a))$ for the
+root form.  The additional datum is supplied by
+\cite{Gov11BKM}, building on \cite{GK09CHL} and \cite{CD09BKM}.
+\end{proof}
 
-\section{Saito--Kurokawa simple pole of $L_{\mathrm{spin}}(s,\Phi_{10})$}
-\label{sec:chl-scope}
+The physical square-root atlas used in Vol.~III has weights
+$$
+(5,2,1,1,\tfrac12,1,\tfrac14,0).
+$$
+That line is not the table of the theorem above unless a row map from
+the Clery--Gritsenko forms to the physical rows has first been built.
+Thus
+$$\mathrm{Clery\mbox{--}Gritsenko\ classification}\neq
+\mathrm{CHL\ realisation\ theorem}.$$
+$$\mathrm{status}(F_1)=\mathrm{theorem},\qquad
+\mathrm{status}(F_2,F_3,F_4)=\mathrm{GN\ denominator\ theorem},$$
+$$\mathrm{status}(F_5,F_6,F_7,F_8)
+=\mathrm{Govindarajan\ CHL/WKB\ denominator\ theorem},$$
+with $F_7$ understood on the $\mu_4$-multiplier cover determined by its
+order-four multiplier and not as a Vol.~III physical boundary theorem.
+Dijkgraaf--Verlinde--Verlinde: \cite{DVV}.  Borcherds: \cite{B}.
 
-Saito--Kurokawa identifies $\Phi_{10}=\Delta_5^2\in
-S_{10}(\mathrm{Sp}_4(\Z))$ as a lift from $J_{-2,1}\otimes E_4$ and,
-after Andrianov \cite{Andr74}, factorises the spin $L$-function as
-\begin{equation}
-  \label{eq:sk-factor}
-  L_{\mathrm{spin}}(s,\Phi_{10})=\zeta(s-8)\,\zeta(s-9)\,L(s,g),
-\end{equation}
-where $g=\Delta\cdot E_6\in S_{18}(\mathrm{SL}_2(\Z))$ is the unique
-normalised Hecke eigenform in weight $18$ (since $\dim S_{18}=1$).
+\appendix
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\theHsection}{appendix.\Alph{section}}
 
-\begin{theorem}[Simple pole, residue, Manin period]
-\label{thm:simple-pole}
-$L_{\mathrm{spin}}(s,\Phi_{10})$ is meromorphic on $\C$ with a unique
-simple pole at $s=10$, contributed by $\zeta(s-9)$.  The residue is
-\begin{equation}
-  \label{eq:sk-residue}
-  \mathop{\mathrm{Res}}_{s=10}L_{\mathrm{spin}}(s,\Phi_{10})=\zeta(2)\,L(10,g)=\tfrac{\pi^2}{6}\,L(10,g).
-\end{equation}
-In the Manin \cite{Manin72} / Kohnen--Zagier \cite{KZ} period
-normalisation $\Omega^-(g):=16!\,(2\pi)^{-17}L(17,g)$, the critical
-value $L(10,g)$ is a rational multiple of the Manin minus-period:
-\begin{equation}
-  \label{eq:Pochhammer-residue}
-  L(10,g)\ \in\ \Q^\times\cdot\frac{9!}{4!}\,a_{10}(g)\,\Omega^-(g),
-  \qquad \tfrac{9!}{4!}=15120.
-\end{equation}
-Ichino--Ikeda \cite{Ich05,II10} identify Deligne's motivic period
-$c^+(M(g))$ with $\Omega^-(g)$ up to an explicit $\Q^\times$-factor
-\cite{Del79}.
+\section{\texorpdfstring{Spin \(L\)-factor normalisation for \(\Delta_5^2\)}
+{Spin L-factor normalisation for Delta5 squared}}
+\label{app:sk-shadow}
+
+Set the theta-constant normalisation
+$$\Delta_{10}^{\theta}:=\Delta_5^2.$$
+The Oberdieck--Pixton monic normalisation is
+$$\chi_{10}^{\mathrm{OP}}:=2^{-12}\Delta_{10}^{\theta}
+=4096^{-1}\Delta_5^2.$$
+The spinor $L$-function is attached to the Hecke eigenline
+$$\C\Delta_{10}^{\theta}=\C\chi_{10}^{\mathrm{OP}};$$
+it is independent of the non-zero scalar used to name its generator.
+Put
+$$\Delta(q)=q\prod_{n\geq1}(1-q^n)^{24},\qquad
+E_6(q)=1-504\sum_{n\geq1}\sigma_5(n)q^n,$$
+$$g:=\Delta E_6=\sum_{n\geq1}a_n(g)q^n\in S_{18}(\SL_2(\Z)).$$
+
+\begin{theorem}[Andrianov factorisation]
+\label{thm:andrianov-factor}
+For the Saito--Kurokawa representation generated by
+$\Delta_{10}^{\theta}$,
+$$L_{\mathrm{spin}}(s,\Delta_{10}^{\theta})
+=\zeta(s-8)\zeta(s-9)L(s,g).$$
+Here \(L_{\mathrm{spin}}\) is Andrianov's uncompleted classical spinor
+\(L\)-function.  For a genus-two form of weight \(10\), the completed
+function is
+$$
+L_{\mathrm{spin}}^*(s,F)
+=(2\pi)^{-2s}\Gamma(s)\Gamma(s-8)L_{\mathrm{spin}}(s,F).
+$$
 \end{theorem}
 
 \begin{proof}
-Andrianov's Saito--Kurokawa factorisation \cite{Andr74} gives
-\eqref{eq:sk-factor}.  $\zeta(s)$ has a simple pole only at $s=1$, so
-the only pole of the right-hand side in $\C$ comes from $\zeta(s-9)$
-at $s=10$; $\zeta(s-8)$ contributes the regular value $\zeta(2)$, and
-$L(s,g)$ is entire.  This establishes \eqref{eq:sk-residue}.  The
-Eichler--Shimura theory of $g$ over the critical strip
-$\{1,\ldots,17\}$ (Proposition~\ref{prop:manin-period-polynomial})
-writes each $L(g,m)$ as a rational multiple of $\Omega^-(g)$ (odd
-$m$) or $\Omega^+(g)$ (even $m$), divided by the Pochhammer
-$\binom{16}{m-1}^{-1}$; for $m=10$ (even critical on a weight-$18$
-form, paired to $s=10$ by the Manin pairing), the Pochhammer factor
-normalised to the Eichler integral reads $9!/4!=15120$ up to sign,
-producing~\eqref{eq:Pochhammer-residue}.
+The Igusa cusp form \(\Delta_{10}^{\theta}\) spans the weight-\(10\)
+Maass Spezialschar line attached by the Saito--Kurokawa correspondence
+to the unique normalized form \(g=\Delta E_6\in S_{18}(\SL_2(\Z))\)
+\cite{ZagierSK}.
+This is Andrianov's spinor $L$-factor formula for the degree-$2$
+Saito--Kurokawa lift attached to the weight-$18$ elliptic cusp form
+$g$ \cite{Andr74}.  Since $\dim S_{18}(\SL_2(\Z))=1$, the source form
+is $\Delta E_6$.
 \end{proof}
 
-\begin{proposition}[Explicit $a_{10}(g)$]
-\label{prop:a10-explicit}
-The tenth Fourier coefficient of $g=\Delta\cdot E_6\in S_{18}$ is
-\begin{equation}
-  \label{eq:a10-value}
-  a_{10}(g)=541\,648\,800=2^5\cdot 3^2\cdot 5^2\cdot 7\cdot 11\cdot 977.
-\end{equation}
+\begin{proposition}[Central-zero cancellation]
+\label{prop:sk-central-zero}
+With
+$$\Lambda(g,s):=(2\pi)^{-s}\Gamma(s)L(s,g),$$
+one has
+$$\Lambda(g,s)=-\Lambda(g,18-s),\qquad L(9,g)=0.$$
+Hence the possible pole of $\zeta(s-8)L(s,g)$ at $s=9$ is cancelled.
+At $s=10$ the residue is
+$$\operatorname*{Res}_{s=10}L_{\mathrm{spin}}(s,\Delta_{10}^{\theta})
+=\zeta(2)L(10,g)=\frac{\pi^2}{6}L(10,g).$$
+Moreover \(L(10,g)\ne0\).  Thus
+\(L_{\mathrm{spin}}(s,\Delta_{10}^{\theta})\) has a simple pole at
+\(s=10\) with non-zero residue.
 \end{proposition}
 
 \begin{proof}
-Three independent computations.
-
-\emph{(i) Cauchy product.}  With $\Delta=\sum_{n\ge 1}\tau(n)q^n$ and
-$E_6=1-504\sum_{n\ge 1}\sigma_5(n)q^n$,
-\[
-  a_{10}(g)=\sum_{k=1}^{10}\tau(k)\,[E_6]_{10-k}=\tau(10)-504\sum_{k=1}^{9}\tau(k)\,\sigma_5(10-k).
-\]
-The Ramanujan values
-$(\tau(k))_{k=1}^{10}=(1,-24,252,-1472,4830,-6048,-16744,84480,-113643,-115920)$
-and
-$(\sigma_5(n))_{n=1}^{9}=(1,33,244,1057,3126,8052,16808,33825,59293)$
-give the term sum
-$-29\,883\,672+409\,147\,200-2\,134\,750\,464+5\,973\,682\,176-7\,609\,684\,320+3\,221\,938\,944+2\,059\,110\,144-1\,405\,071\,360+57\,276\,072-115\,920=541\,648\,800$.
-
-\emph{(ii) Direct $\eta^{24}$-product.}  Expand
-$q\prod_{n=1}^{10}(1-q^n)^{24}$ and multiply by $E_6$ mod $q^{11}$;
-the $q^{10}$ coefficient is $541\,648\,800$.
-
-\emph{(iii) Hecke multiplicativity.}  $g$ is a Hecke eigenform; the
-Hecke relation $a_{10}=a_2\cdot a_5$ reads
-$(-528)(-1025850)=541\,648\,800$.  Further checks hold exactly:
-$a_2a_3=a_6$, $a_2^2-2^{17}=a_4$, $a_3^2-3^{17}=a_9$,
-$a_2a_4-2^{17}a_2=a_8$.
+For a level-one cusp form of weight $18$, the root number is
+$(-1)^{18/2}=-1$.  Thus the completed $L$-function is odd about
+$s=9$, and the central value vanishes.  The factor $\zeta(s-8)$ has
+its only possible pole at $s=9$, so the product
+$\zeta(s-8)L(s,g)$ is regular there.  At $s=10$ the factor
+$\zeta(s-9)$ has residue $1$, while $\zeta(s-8)=\zeta(2)$.
+Write
+$$L_p(s,g)=(1-\alpha_pp^{-s})^{-1}(1-\beta_pp^{-s})^{-1}.$$
+Deligne's Ramanujan--Petersson theorem gives
+$$|\alpha_p|=|\beta_p|=p^{17/2}.$$
+At \(s=10\),
+$$|\alpha_pp^{-10}|=|\beta_pp^{-10}|=p^{-3/2},$$
+so the Euler product converges absolutely and has no zero.
 \end{proof}
 
-\begin{proposition}[Manin period polynomial and $\Omega^-(g)$]
-\label{prop:manin-period-polynomial}
-The Eichler integral $r_n(g):=\int_0^{i\infty}g(z)z^n\,dz$ satisfies
-$r_n(g)=i^{n+1}n!(2\pi)^{-(n+1)}L(g,n+1)$ for $0\le n\le 16$.  The
-Manin period polynomial
-\[
-  r_g(X):=\int_0^{i\infty}g(z)(X-z)^{16}\,dz
-         =\sum_{n=0}^{16}\binom{16}{n}(-1)^n r_n(g)\,X^{16-n}
-\]
-splits as $r_g=r_g^++r_g^-$ into the even and odd parts in $X$.
-With $\Omega^-(g):=16!\,(2\pi)^{-17}L(17,g)$, the ratio
-$\Lambda(g,s)/\Omega^-(g)$ is rational for every odd $s\in\{1,3,5,7,9,11,13,15,17\}$:
-\[
-  \begin{array}{c|c}
-    s & \Lambda(g,s)/\Omega^-(g) \\ \hline
-    1 & -1 \\
-    3 & -43867/270000 \\
-    9 & 0 \\
-    15 & +43867/270000 \\
-    17 & +1
-  \end{array}
-\]
-with the remaining four values antisymmetric under $s\mapsto 18-s$
-by the functional equation $\Lambda(g,s)=-\Lambda(g,18-s)$
-(sign $i^{18}=-1$).  The central zero at $s=9$ is forced by this sign.
-Numerically $\Omega^-(g)=0.562\,079\,285\,082\ldots$,
-$L(17,g)=0.995\,945\,900\,64\ldots$.  The numerator $43867$ is $-2
-B_{18}$ with $B_{18}=43867/798$: the Eisenstein/Bernoulli trace of
-weight $18$.
+\begin{proposition}[Manin--Deligne period scope]
+\label{prop:manin-deligne-scope}
+There are Manin periods $\Omega^\pm(g)$ such that
+$$\varepsilon(m)=
+\begin{cases}
++,&m\equiv0\pmod 2,\\
+-,&m\equiv1\pmod 2,
+\end{cases}
+\qquad
+\frac{L(m,g)}{(2\pi i)^m\Omega^{\varepsilon(m)}(g)}\in\Q,
+\qquad 1\leq m\leq17.$$
+In particular
+$$L(10,g)\in \Q^\times(2\pi i)^{10}\Omega^+(g).$$
 \end{proposition}
 
-\begin{remark}[Ghost theorem extracted]
-The ghost at $s=10$ is that the \emph{residue} of the spin
-$L$-function of a Saito--Kurokawa lift detects the elliptic source
-exactly through its Manin minus-period: the arithmetic of
-$\Phi_{10}=\Delta_5^2$ at the CHL programme pole $s=10$ is the
-arithmetic of $g=\Delta\cdot E_6$ at $s=10$, and the latter is an
-integer $a_{10}(g)=541\,648\,800$ (explicit) times a transcendental
-$\Omega^-(g)$ (explicit to all displayed digits) times a rational of
-bounded denominator determined by Manin's period polynomial.  The
-elliptic source carries the pole; Saito--Kurokawa transports the
-statement to genus $2$ with no loss.
+\begin{proof}
+This is the Eichler--Shimura--Manin period theorem for the rational
+newform $g$ \cite{Manin72}, \cite{KZ}, in Deligne's period normalisation
+\cite{Del79}.  The nonvanishing at \(m=10\) is supplied by the Euler
+product in Proposition~\ref{prop:sk-central-zero}.  No identity of the form
+$$L(10,g)=q\,a_{10}(g)\Omega^-(g),\qquad q\in\Q^\times,$$
+is used.
+\end{proof}
+
+\begin{proposition}[Coefficient check]
+\label{prop:a10-explicit}
+$$a_{10}(g)=541648800
+=2^5\cdot3^2\cdot5^2\cdot7\cdot11\cdot977.$$
+\end{proposition}
+
+\begin{proof}
+$$a_{10}(g)=\tau(10)-504\sum_{k=1}^{9}\tau(k)\sigma_5(10-k).$$
+$$
+(\tau(1),\ldots,\tau(10))
+=(1,-24,252,-1472,4830,-6048,-16744,84480,-113643,-115920),
+$$
+$$
+(\sigma_5(1),\ldots,\sigma_5(9))
+=(1,33,244,1057,3126,8052,16808,33825,59293).
+$$
+Substitution gives $a_{10}(g)=541648800$.
+Equivalently, since $g$ is a Hecke eigenform,
+$$a_{10}(g)=a_2(g)a_5(g)=(-528)(-1025850)=541648800.$$
+\end{proof}
+
+\begin{remark}[Scalar-square status]
+$$
+\begin{array}{c|c|c}
+\mathrm{claim}&\mathrm{obstruction}&\mathrm{status}\\ \hline
+\chi_{10}^{\mathrm{OP}}=\Delta_5^2
+&\mathrm{normalisation\ conflict}
+&\chi_{10}^{\mathrm{OP}}=2^{-12}\Delta_5^2\\
+L_{\mathrm{spin}}=\zeta(s-8)\zeta(s-9)L(s,g)
+&\mathrm{scalar\ normalisation}
+&\mathrm{Hecke\ eigenline}\\
+\mathrm{unique\ pole\ from\ }\zeta(s-9)
+&\zeta(s-8)\mathrm{\ also\ has\ }s=9
+&L(9,g)=0\\
+L(10,g)\sim a_{10}(g)\Omega^-(g)
+&\mathrm{wrong\ period\ parity}
+&L(10,g)\sim \Omega^+(g)\\
+\mathrm{arithmetic\ shadow}\Rightarrow\mathrm{BKM\ proof}
+&\mathrm{wrong\ implication}
+&\mathrm{appendix\ only}
+\end{array}
+$$
 \end{remark}
 
 
-\section{Non-CHL paramodular hosts at $N\in\{5,7,8\}$}
+\section{Eight diagonal-divisor boundary rows}
+\label{app:eight-row-boundary}
 
-The Gritsenko--Cl\'ery catalogue $\Phi_1,\ldots,\Phi_8$
-\cite{GC} contains three rows that are not CHL: $\Phi_5,\Phi_7,\Phi_8$.
-For these, the scalar-square branch of the preceding section is not
-available --- no string-theory duality supplies a K3 twining input ---
-but a direct Borcherds construction does. Let $N\in\{5,7,8\}$ and let
-$X_N\to\mathbb{P}^1$ be the Borcea--Voisin Calabi--Yau threefold
-\cite{BORCEA,VOISIN} attached to a Nikulin involution of order $N$ on a
-K3 surface. The reduced Donaldson--Thomas partition function of $X_N$
-is defined \cite{CKOT} when the topological Euler characteristic of
-the fixed locus vanishes; a case-by-case inspection of the Nikulin
-fixed-point data gives this exactly at $N=5$ (one genus-$2$ curve plus
-two isolated points, $\chi_{\mathrm{top}}=2-2\cdot 2+2=0$), and at
-$N=7$ (three isolated points plus a rational curve, $\chi_{\mathrm{top}}=3+2=5$
-stabilised to zero by the order-$4$ Cheeger--Simons gerbe correction;
-see Proposition~\ref{prop:chi-cs-n7}). At $N=8$ the Gritsenko--Cl\'ery
-row $\Phi_8$ has weight zero and is meromorphic; the Borcherds weight
-$\kappa_{\mathrm{BKM}}(\Phi_8)=0$ is vacuous and no chiral factorisation
-is expected.
+Let $F_j$ denote the diagonal-divisor forms in the present \(F\)-order.
+The Clery--Gritsenko source order is
+$$
+\Delta_5,\Delta_2,\nabla_3,\Delta_1,\nabla_2,\Delta_{1/2},
+\nabla_{3/2},Q_1.
+$$
+The present order is \cite{GC}
+$$
+\begin{array}{c|c|c|c|c}
+j&F_j&(t,N)&\Gamma_j&\mathrm{wt}\\ \hline
+1&\Delta_5&(1,1)&\Gamma_1&5\\
+2&\Delta_2&(2,1)&\Gamma_2^+&2\\
+3&\Delta_1&(3,1)&\Gamma_3^+&1\\
+4&\Delta_{1/2}&(4,1)&\Gamma_4^+&\frac12\\
+5&\nabla_3&(1,2)&\Gamma_0^{(2)}(2)&3\\
+6&\nabla_2&(1,3)&\Gamma_0^{(2)}(3)&2\\
+7&\nabla_{3/2}&(1,4)&\Gamma_0^{(2)}(4)&\frac32\\
+8&Q_1&(2,2)&\Gamma_2(2)&1
+\end{array}
+$$
+and
+$$
+\operatorname{supp}\operatorname{div}_{\mathbb H_2}(F_j)=
+\bigcup_{\gamma\in\Gamma_j}\gamma\langle\mathcal H_{\mathrm{diag}}\rangle,
+\qquad
+\operatorname{mult}_{\mathcal H_{\mathrm{diag}}}(F_j)=1.
+$$
+Here $F_7=\nabla_{3/2}$ is the Clery--Gritsenko row at
+$(t,N)=(1,4)$.  It is not the Vol.~III physical
+$\Phi^{\mathrm{V3}}_7$ slot until a separate row map has been
+constructed.
 
-\subsection{The paramodular multiplier system}
-\label{ssec:half-integer-mult}
+The characters and multiplier systems are
+$$
+\begin{array}{c|c}
+j&\nu_j\\ \hline
+1&v_\eta^{12}\times v_H\\
+2&v_\eta^{6}\times v_H\\
+3&v_\eta^{4}\times v_H\\
+4&v_\eta^{3}\times v_H\quad(\mathrm{degree}\ 8)\\
+5&\chi_2^{(2)}\times v_H\\
+6&\chi_2^{(3)}\times v_H\\
+7&\chi_4^{(4)}\times v_H\quad(\mathrm{order}\ 4)\\
+8&\chi_4^{(2)}\times v_H
+\end{array}
+$$
 
-Let $\Gamma_N^+<\mathrm{Sp}_4(\mathbb{Q})$ denote the paramodular group
-of level $N$ extended by its Atkin--Lehner involution
-\cite{GN}. Write
-$$\mathrm{Mp}_4(\mathbb{Z})\to\mathrm{Sp}_4(\mathbb{Z})$$
-for the genus-$2$ metaplectic cover (Weil \cite{Weil1964},
-Shimura--Howe \cite{Shimura1973}); it is the $\mathbb{Z}/2$-central
-extension carrying the genuine Weil representation of a real symplectic
-group on $L^2(\mathbb{R}^2)$.
-
-\begin{proposition}[Paramodular multipliers at $N=5,7,8$]
-\label{prop:metaplectic-multiplier}
-(i) $\Phi_5$ is a Siegel modular form of weight $5$ on $\Gamma_5^+$ with
-a character of order $2$; its half-power $\Phi_5^{1/2}$ is a genuine
-weight-$5/2$ modular form on the pullback
-$\widetilde{\Gamma}_5^+\subset\mathrm{Mp}_4(\mathbb{Z})$, transforming
-by an order-$4$ character $\nu_{5,1/2}$.
-
-(ii) $\Phi_7$ is a Siegel modular form of weight $4$ on $\Gamma_7^+$
-with a character of order $4$; its quarter-power $\Phi_7^{1/4}$ is a
-genuine weight-$1$ modular form on the spin double cover
-$\mathrm{Spin}(3,2)_7^+$ of $\Gamma_7^+$, transforming by an order-$8$
-character $\nu_{7,1/4}$.
-
-(iii) $\Phi_8$ has weight zero; its logarithm is a meromorphic
-multivalued function with divisor equal to the $\Gamma_8$-orbit of the
-diagonal, and no fractional-power multiplier system is defined.
-\end{proposition}
-
-\begin{proof}
-(i) Gritsenko--Nikulin \cite{GN} express $\Phi_5$ as a Borcherds lift
-of the weight-zero index-$5$ weak Jacobi form $\phi^{(5)}_{0,1}$
-(the $N=5$ twining K3 elliptic genus of Eguchi--Ooguri--Tachikawa
-\cite{EOT}). The Fourier coefficient $f^{(5)}(0,0)=2$ gives Borcherds
-weight $5$ and the quadratic character of the divisor. Gritsenko's
-half-integer-weight refinement \cite{Gri1999} lifts the
-half-index weak Jacobi form $\phi^{(5)}_{-1/2,5/2}$ with coefficient
-$f^{(5)}_{1/2}(0,0)=1$ to a weight-$5/2$ Borcherds product. Its square
-is $\Phi_5$ up to a constant; the pullback multiplier has order $4$ by
-the Weil-representation cocycle computation of Shimura \cite{Shimura1973}.
-
-(ii) At $N=7$, the Gritsenko--Cl\'ery row $\Phi_7$ is the Borcherds lift
-of $\phi^{(7)}_{0,1}$; its weight is $4$ (from $f^{(7)}(0,0)/2$ with
-$f^{(7)}(0,0)=8$) and its character is the Fricke involution
-character of order $4$ \cite{GC}. The exceptional isogeny
-$\mathrm{Spin}(3,2)\simeq\mathrm{Sp}_4$ in genus $2$ identifies the
-spin double cover with the metaplectic cover at the level of
-$\mathrm{Sp}_4(\mathbb{Q})$; restricted to $\Gamma_7^+$, the spin
-double cover $\mathrm{Spin}(3,2)_7^+$ carries a $\mathbb{Z}/8$-character
-extending the order-$4$ Fricke character on $\Gamma_7^+$. The
-quarter-power $\Phi_7^{1/4}$ is the Gritsenko
-quarter-integer-weight lift of the mock-Jacobi form $\phi^{(7)}_{-1/4,7/4}$.
-
-(iii) For $\Phi_8$ the Borcherds weight $f^{(8)}(0,0)/2=0$, so
-$\Phi_8$ is meromorphic of weight zero; fractional-power multipliers
-are ill-defined in the sense that no finite-order character lifts the
-divisor.
-\end{proof}
-
-\begin{proposition}[Reduced partition function at $N=5,7$]
-\label{prop:chi-cs-n7}
-Let $X_N=(\mathrm{K3}\times E)/\mathbb{Z}_N$ be the Borcea--Voisin
-Calabi--Yau threefold. The Cao--Kool--Oh--Thomas reduced
-Donaldson--Thomas partition function
-$Z^{X_N}_{\mathrm{red}}(q,r,s)$
-\cite{CKOT} is defined, admits a product expansion in the positive
-Weyl chamber $\mathcal R_+$, and satisfies
-$$Z^{X_5}_{\mathrm{red}}= C_5\,\Phi_5^{-2},\qquad
-Z^{X_7}_{\mathrm{red}}=C_7\,\varepsilon_7\,\Phi_7^{-2},$$
-where $C_N$ are explicit positive scalars and $\varepsilon_7$ is the
-order-$4$ Cheeger--Simons gerbe holonomy
-$\varepsilon_7=\exp\bigl(\tfrac{2\pi i}{7}\sum_{k=1}^{3}
-\cot(\pi k/7)\,\zeta_7^{k}\bigr)$
-evaluated on the Nikulin-fixed genus-$2$ curve.
-\end{proposition}
-
-\begin{proof}
-Apply the Bryan--Oberdieck--Pandharipande--Yin reduction
-\cite{BOPY} to the Borcea--Voisin quotient $X_N$: the $\mathbb{Z}_N$
-action is free on the general fibre, so the reduced partition
-function equals the $\mathbb{Z}_N$-invariant part of the K3$\times E$
-partition function with quotient input given by the twining elliptic
-genus $\phi^{(N)}_{0,1}$. Borcherds' product theorem \cite{B} gives
-$Z^{X_N}_{\mathrm{red}}=C_N\,\Phi_N^{-2}$ up to the gerbe correction.
-At $N=5$, the fixed locus has $\chi_{\mathrm{top}}=0$ and no gerbe
-correction appears. At $N=7$, the fixed locus carries a nontrivial
-order-$4$ Cheeger--Simons holonomy computed via the Evens--Deligne
-resolution of the cyclotomic cotangent bundle \cite{Evd80,Del79};
-direct evaluation on the Nikulin-fixed genus-$2$ curve gives the
-displayed cotangent sum.
-\end{proof}
-
-\subsection{The fractional-power chiral identification}
-\label{ssec:fractional-chiral}
-
-The chiral-side construction proceeds as in the $N=1$
-square-root theorem, but with the paramodular host of
-Proposition~\ref{prop:metaplectic-multiplier}. The attack on
-well-definedness of a fractional power of a formal series is resolved
-by the canonical branch defined below.
-
-\begin{definition}[Canonical branch]
-\label{def:canonical-branch}
-Let $F(q,r,s)$ be a formal Laurent series with leading monomial
-$a\,q^{\alpha}r^{\beta}s^{\gamma}$, $a>0$, and suppose $F=a\,q^{\alpha}
-r^{\beta}s^{\gamma}(1+O(q,r,s))$ in $\mathcal R_+$. The canonical
-$k$-th root is
-$$F^{1/k}:=a^{1/k}\,q^{\alpha/k}r^{\beta/k}s^{\gamma/k}
-\exp\!\Bigl(\tfrac1k\log\bigl(1+O(q,r,s)\bigr)\Bigr),$$
-with $a^{1/k}$ the positive real root and the logarithm the principal
-branch on the unit polydisc. This branch is unique and real-analytic
-on $\mathcal R_+$.
+\begin{definition}[Row proof datum]
+For a row $j$, a denominator proof consists of
+$$
+\mathscr P_j=(\phi_j,\Gamma_{j,\mathrm{prod}}^+,
+\Gamma_{j,\mathrm{mod}},\rho_j,\nu_j,L_j,\alpha_j),
+$$
+where
+$$\phi_j(\tau,z)=\sum c_j(n,l)q^nr^l,$$
+$$F_j(Z)=C_j e^{2\pi i(\rho_j,Z)}
+\prod_{\gamma\in\Gamma_{j,\mathrm{prod}}^+}
+(1-e^{2\pi i(\gamma,Z)})^{c_j(\gamma)},$$
+$$\nu_j:\Gamma_{j,\mathrm{mod}}\rightarrow\C^\times,\qquad
+\operatorname{supp}\operatorname{div}(F_j)=
+\Gamma_{j,\mathrm{mod}}\cdot\mathcal H_{\mathrm{diag}},
+\qquad \operatorname{mult}_{\mathcal H_{\mathrm{diag}}}(F_j)=1,$$
+and
+$$\alpha_j:\Gamma_{j,\mathrm{prod}}^+\rightarrow L_j,\qquad
+\sdim(\mathfrak g_{j,\alpha_j(\gamma)})=c_j(\gamma).$$
+For a product with several cusps this single-source notation is only a
+template.  The actual congruence-row product datum is the
+cusp-labelled datum constructed below.
 \end{definition}
 
-\begin{theorem}[Chiral identification at $N=5$]
-\label{thm:chiral-n5}
-Let $X_5$ be the Borcea--Voisin threefold with $\mathbb{Z}_5$ Nikulin
-involution. In the canonical branch of
-Definition~\ref{def:canonical-branch},
-$$\bigl(Z^{X_5}_{\mathrm{red}}\bigr)^{-1/4}
-=C_5^{-1/4}\,\Phi_5^{1/2}$$
-and both sides are the image, under the Weil representation of
-$\mathrm{Mp}_4(\mathbb{Z})$ restricted to
-$\widetilde{\Gamma}_5^+$, of the Gritsenko half-weight Jacobi form
-$\phi^{(5)}_{-1/2,5/2}$.
+\begin{definition}[Gritsenko--Nikulin degree lattice]
+For $t\in\Z_{>0}$ set
+$$
+M_t:=U(4t)\oplus\langle 2\rangle
+=\Z f_2\oplus\Z\widehat f_3\oplus\Z f_{-2},
+$$
+with Gram matrix
+$$
+\left(\begin{array}{ccc}
+0&0&-4t\\
+0&2&0\\
+-4t&0&0
+\end{array}\right).
+$$
+For $(n,l,m)\in\Z^3$ put
+$$
+\alpha_t(n,l,m):=nf_2+l\widehat f_3+mf_{-2}\in M_t,\qquad
+e_t^{(n,l,m)}:=q^nr^ls^{tm}.
+$$
+Then
+$$
+(\alpha_t(n,l,m),\alpha_t(n,l,m))
+=-2(4tnm-l^2).
+$$
+Let $\Gamma_t^{\mathrm{prod}}$ be the Gritsenko--Nikulin product cone:
+$(n,l,m)>0$ if $m>0$, or if $m=0,n>0$, or if $m=n=0,l<0$.
+\end{definition}
+
+\begin{lemma}[Two exponential normalizations]
+\label{lem:two-denominator-normalizations}
+Let
+$$D_5(Z):=64^{-1}\Delta_5(Z).$$
+Gritsenko--Nikulin's Siegel normalization gives
+$$
+D_5(Z)=q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)>0}
+(1-q^nr^ls^m)^{f(nm,l)}
+$$
+with leading monomial $q^{1/2}r^{1/2}s^{1/2}$.
+The denominator normalization used for the main BKM algebra is instead
+$$
+q^nr^ls^m=\exp(-\pi i(\alpha(n,l,m),z)).
+$$
+Thus replacing $Z$ by $2Z$ converts the product character to the usual
+$\exp(-2\pi i(\alpha,z))$ denominator character, and
+$$
+\operatorname{den}(\mathfrak g_{\Delta_5})=D_5(2Z)
+=64^{-1}\Delta_5(2Z).
+$$
+For rows $F_2,F_3,F_4$, Appendix~\ref{app:eight-row-boundary} uses the
+Gritsenko--Nikulin exponential
+$$e_t^{(n,l,m)}=q^nr^ls^{tm}$$
+directly.  Hence
+$$C'_j=1,\qquad a_j=1\qquad(j=2,3,4)$$
+is a statement in the $e_t$ normalization.  It is not the doubled
+$N=1$ normalization of the main $\Delta_5$ denominator.
+\end{lemma}
+
+\begin{proof}
+The first product is Gritsenko--Nikulin \cite{GN}*{Theorem 4.1}.
+Their Proposition 3.1 identifies $D_5(2Z)$ with the denominator
+function of the corrected Lorentzian BKM superalgebra.  The rows
+$F_2,F_3,F_4$ are the separate $e_t^{(n,l,m)}=q^nr^ls^{tm}$
+denominator identities of Gritsenko--Nikulin
+\cite{GNII}*{Theorem 2.1, (2.3), (2.11), Lemma 2.5, (2.18), (2.19),
+Theorem 2.6, (2.20), (2.21), Section 5.1.1}.
+\end{proof}
+
+\begin{proposition}[Full-paramodular rows]
+\label{prop:gn-paramodular-row-data}
+Let
+$$
+\phi_{0,2}=\sum f_2(n,l)q^nr^l,\qquad
+\phi_{0,3}=\sum f_3(n,l)q^nr^l,\qquad
+\phi_{0,4}=\sum f_4(n,l)q^nr^l,
+$$
+where \cite{GNII}
+$$
+\phi_{0,2}=\frac{1}{2}\eta^{-4}
+\sum_{m,n\in\Z}(3m-n)\left({\frac{-4}{m}}\right)
+\left({\frac{12}{n}}\right)q^{(3m^2+n^2)/24}r^{(m+n)/2},
+$$
+$$
+\phi_{0,3}=\left(\frac{\vartheta(\tau,2z)}{\vartheta(\tau,z)}
+\right)^2,\qquad
+\phi_{0,4}=\frac{\vartheta(\tau,3z)}{\vartheta(\tau,z)}.
+$$
+Then the rows $F_2,F_3,F_4$ have the following product data:
+$$
+\begin{array}{c|c|c|c|c}
+j&F_j&\phi_j&L_j&\rho_j\\ \hline
+2&\Delta_2&\phi_{0,2}&M_2&(\frac14,\frac12,\frac14)\\
+3&\Delta_1&\phi_{0,3}&M_3&(\frac16,\frac12,\frac16)\\
+4&\Delta_{1/2}&\phi_{0,4}&M_4&(\frac18,\frac12,\frac18)
+\end{array}
+$$
+and
+$$
+\alpha_j^{\mathrm{GN}}(n,l,m):=\alpha_t(n,l,m)\quad
+\hbox{for }(j,t)=(2,2),(3,3),(4,4).
+$$
+The product identities are
+$$
+\begin{aligned}
+\Delta_2(Z)&=q^{1/4}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_2^{\mathrm{prod}}}
+(1-q^nr^ls^{2m})^{f_2(nm,l)},
+\end{aligned}
+$$
+$$
+\begin{aligned}
+\Delta_1(Z)&=q^{1/6}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_3^{\mathrm{prod}}}
+(1-q^nr^ls^{3m})^{f_3(nm,l)},
+\end{aligned}
+$$
+$$
+\begin{aligned}
+\Delta_{1/2}(Z)&=q^{1/8}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_4^{\mathrm{prod}}}
+(1-q^nr^ls^{4m})^{f_4(nm,l)}.
+\end{aligned}
+$$
+The characters are respectively induced by
+$v_\eta^6\times v_H$, $v_\eta^4\times v_H$, and
+$v_\eta^3\times v_H$.
+Equivalently, on the extended paramodular groups,
+$$
+\nu_2=\chi_4:\Gamma_2^+\rightarrow\mu_4,\qquad
+\nu_3=\chi_6:\Gamma_3^+\rightarrow\mu_6,\qquad
+\nu_4=v_8:\Gamma_4^+\rightarrow\mu_8.
+$$
+Thus for \((j,t)=(2,2),(3,3),(4,4)\),
+$$
+\Gamma_{j,\mathrm{prod}}^+=\Gamma_t^{\mathrm{prod}},\qquad
+\Gamma_{j,\mathrm{mod}}=\Gamma_t^+.
+$$
+\end{proposition}
+
+\begin{proof}
+The product formulae are Gritsenko--Nikulin \cite{GNII},
+Theorem 2.1 and formulae (2.21), (2.20), (2.11).  Their Section 5
+puts all formulae of Lie type on the hyperbolic lattice $M_t$ and writes
+the exponent as $e^{(n,l,m)}=q^nr^ls^{tm}$.  The Weyl vector is
+$$\rho_{t,II,\overline0}
+=\left(\frac{1}{2t},\frac{1}{2},\frac{1}{2t}\right),$$
+which gives the three displayed prefactors for $t=2,3,4$.
+\end{proof}
+
+\begin{proposition}[Gritsenko--Nikulin chambers for $F_2,F_3,F_4$]
+\label{prop:gn-chambers-234}
+For $t=2,3,4$ the Weyl group is
+$$W_{t,II,\overline0}=W^{(2)}(M_t),$$
+and all simple real roots in the chamber below are even.  The Weyl
+vector is
+$$\rho_t=\left(\frac{1}{2t},\frac12,\frac{1}{2t}\right).$$
+The simple real roots are
+$$
+P_2=\{(0,-1,0),\ (1,1,0),\ (1,3,1),\ (0,1,1)\},
+$$
+$$
+\begin{aligned}
+P_3=\{&(0,-1,0),\ (1,1,0),\ (2,5,1),\\
+&(2,7,2),\ (1,5,2),\ (0,1,1)\},
+\end{aligned}
+$$
+and
+$$
+P_4=\{\delta\in M_4\mid(\delta,\delta)=2,\ (\delta,\rho_4)=-1\}.
+$$
+Thus the automorphic denominator chamber for $F_j$ is the chamber in
+$M_t\otimes\R$ cut out by $(x,\delta)\leq0$ for
+$\delta\in P_t$, where $(j,t)=(2,2),(3,3),(4,4)$.
+\end{proposition}
+
+\begin{proof}
+This is Gritsenko--Nikulin \cite{GNII}, Section 5.1.1, cases
+$(t,II,\overline0)$.  The displayed sets are exactly
+$P_{t,II,\overline0}(\mathcal M_{t,II,\overline0})$ for
+$t=2,3,4$.
+\end{proof}
+
+\begin{lemma}[Product cone and chamber compatibility]
+\label{lem:gn-product-chamber-compatibility}
+Let \(t=2,3,4\).  If
+$$f_t(nm,l)\ne0,\qquad (n,l,m)\in\Gamma_t^{\mathrm{prod}},$$
+then
+$$
+(\alpha_t(n,l,m),\rho_t)\le0.
+$$
+For \(t=2,3\) the inequality is strict.  For \(t=4\), equality occurs
+only on the parabolic ray
+$$\alpha_t(n,l,m)\in\Q_{>0}\rho_4.$$
+\end{lemma}
+
+\begin{proof}
+The Jacobi support satisfies
+$$4tnm-l^2\ge -1.$$
+Since
+$$
+(\alpha_t(n,l,m),\rho_t)=-2n+l-2m,
+$$
+the chamber inequality is \(l\le2n+2m\).  For \(t=2,3\), Gritsenko--
+Nikulin Lemma 2.5 gives the required strict chamber condition on the
+active support.  For \(t=4\), the proof of Gritsenko--Nikulin (1.33)
+gives the same condition, with equality only in the parabolic case.
+Equivalently, equality and \(4tnm-l^2\ge -1\) force
+$$n=m,\qquad l=4n,$$
+so
+$$\alpha_4(n,4n,n)=8n\rho_4.$$
+\end{proof}
+
+\begin{theorem}[Gritsenko--Nikulin denominator rows]
+\label{thm:gn-denominator-234}
+Let $t=2,3,4$ and put
+$$
+\begin{array}{c|c|c}
+t&F(t)&\phi_t\\ \hline
+2&\Delta_2&\phi_{0,2}\\
+3&\Delta_1&\phi_{0,3}\\
+4&\Delta_{1/2}&\phi_{0,4}
+\end{array}
+$$
+Let
+$$
+\mathfrak g_t^{\mathrm{GN}}
+\quad (t=2,3,4)
+$$
+be the generalized Borcherds--Kac--Moody superalgebra whose Lorentzian
+root lattice is $M_t$, whose Weyl group is
+$W_t=W^{(2)}(M_t)$, whose Weyl vector is
+$$
+\rho_t=\left(\frac{1}{2t},\frac12,\frac{1}{2t}\right),
+$$
+and whose simple real roots are $P_t=P_{t,II,\overline0}$ from
+Proposition~\ref{prop:gn-chambers-234}.  Let $\mathcal M_t$ denote
+the corresponding chamber.  Then
+$$
+P_{t,\overline1}=\varnothing,\qquad P_{t,\overline0}=P_t,
+$$
+so every simple real root is even and
+$\epsilon_t(s_\delta)=-1$ for every $\delta\in P_t$; equivalently
+$\epsilon_t(w)=\det(w)$ on $W_t$.
+
+Let
+$$
+\phi_t(\tau,z)=\sum f_t(n,l)q^nr^l .
+$$
+The integers \(N_t(a)\) below are the additive-side coefficients in
+Gritsenko--Nikulin (5.1), equivalently the signed supermultiplicities of
+imaginary simple roots.  They are not the product exponents \(f_t(nm,l)\).
+In the Gritsenko--Nikulin exponential normalization
+$e_t^{(n,l,m)}=q^nr^ls^{tm}$, the Weyl--Kac--Borcherds denominator
+identity is
+$$
+\begin{aligned}
+\operatorname{den}(\mathfrak g_t^{\mathrm{GN}})
+&=\sum_{w\in W_t}\epsilon_t(w)
+ \left(e_t^{w(\rho_t)}
+ +\sum_{a\in\R_{++}\mathcal M_t\cap M_t}
+ N_t(a)e_t^{w(\rho_t+a)}\right)\\
+&=e_t^{\rho_t}
+\prod_{(n,l,m)\in\Gamma_t^{\mathrm{prod}}}
+\left(1-e_t^{(n,l,m)}\right)^{f_t(nm,l)}
+=F(t)(Z).
+\end{aligned}
+$$
+Equivalently,
+$$
+\operatorname{den}(\mathfrak g_2^{\mathrm{GN}})=\Delta_2(Z),\qquad
+\operatorname{den}(\mathfrak g_3^{\mathrm{GN}})=\Delta_1(Z),\qquad
+\operatorname{den}(\mathfrak g_4^{\mathrm{GN}})=\Delta_{1/2}(Z).
+$$
+Thus, for rows $j=2,3,4$,
+$$
+C'_j=1,\qquad a_j=1,\qquad
+L_j=M_j,\qquad \alpha_j=\alpha_j^{\mathrm{GN}}
+$$
+in this normalization.  The imaginary root spaces are determined here
+only as signed multiplicity spaces:
+$$
+\sdim(\mathfrak g_{t,\alpha_t(n,l,m)})
+=f_t(nm,l)
+$$
+on the product side, with imaginary simple-root superdimensions
+$N_t(a)$ on the Weyl-sum side.
 \end{theorem}
 
 \begin{proof}
-Proposition~\ref{prop:chi-cs-n7} gives
-$Z^{X_5}_{\mathrm{red}}=C_5\,\Phi_5^{-2}$. The canonical fourth-root
-branch commutes with both operations because $C_5$ is positive and
-$\Phi_5^{-2}$ has positive leading monomial on $\mathcal R_+$:
-$$\bigl(C_5\,\Phi_5^{-2}\bigr)^{-1/4}
-=C_5^{-1/4}\,\Phi_5^{1/2}.$$
-The right-hand side is the square-root of the Gritsenko--Nikulin lift;
-Proposition~\ref{prop:metaplectic-multiplier}(i) identifies
-$\Phi_5^{1/2}$ with the Gritsenko half-weight Borcherds lift
-$\mathrm{Borch}\bigl(\phi^{(5)}_{-1/2,5/2}\bigr)$ transforming by the
-Weil representation on $\mathrm{Mp}_4(\mathbb{Z})$. The Fock-space
-construction of the chiral partition function in the $N=1$ theorem
-(Section: The Jacobi coefficients as superdimensions) applies verbatim
-with $\phi_{0,1}$ replaced by $\phi^{(5)}_{0,1}$, producing the same
-right-hand side from the chiral lane. The two sides match term by
-term on their common positive-Weyl expansion.
+Gritsenko--Nikulin \cite{GNII}*{Section 5.1} state that almost all
+identities proved earlier in their paper give denominator formulae for
+Lorentzian Kac--Moody algebras.  Their formula (5.1) is exactly the
+displayed Weyl--Kac--Borcherds identity on
+$M_t=U(4t)\oplus\langle2\rangle$, with
+$e^{(n,l,m)}=q^nr^ls^{tm}$.
+
+For the cases $(t,II,\overline0)$, $t=2,3,4$, they give
+$$
+W_{t,II,\overline0}=W^{(2)}(M_t),\qquad
+\rho_{t,II,\overline0}
+=\left(\frac{1}{2t},\frac12,\frac{1}{2t}\right),
+$$
+and
+$$
+P_{t,II,\overline0}(\mathcal M_{t,II,\overline0})
+=P_{t,II,\overline0}(\mathcal M_{t,II,\overline0})_{\overline0}.
+$$
+Hence the odd simple-real-root set is empty and the Weyl character is
+the ordinary reflection sign on the simple real reflections.  The roots
+in $P_t$ have square $2$, and the generalized Cartan matrix is
+$((\delta,\delta'))_{\delta,\delta'\in P_t}$; for $t=4$ this is the
+infinite symmetric parabolic matrix recorded by Gritsenko--Nikulin.
+For real roots \(4tn-l^2=-1\), the relevant Jacobi coefficient is \(1\):
+this is Gritsenko--Nikulin Lemma 2.5 for \(t=2,3\) and the proof of
+Gritsenko--Nikulin (1.33) for \(t=4\).
+
+The product factors are the full-paramodular products
+\cite{GNII}*{(2.21), (2.20), (2.11)}, already displayed in
+Proposition~\ref{prop:gn-paramodular-row-data}.  Their prefactors are
+exactly $e_t^{\rho_t}$.  Therefore the denominator functions are
+$\Delta_2$, $\Delta_1$, and $\Delta_{1/2}$ with no further scalar or
+argument rescaling in the $e_t$ normalization.
 \end{proof}
 
-\begin{theorem}[Chiral identification at $N=7$]
-\label{thm:chiral-n7}
-Let $X_7$ be the Borcea--Voisin threefold with $\mathbb{Z}_7$ Nikulin
-involution, and let $\varepsilon_7$ be the Cheeger--Simons gerbe
-holonomy of Proposition~\ref{prop:chi-cs-n7}. Then
-$$\bigl(Z^{X_7}_{\mathrm{red}}\bigr)^{-1/8}\cdot\varepsilon_7
-=C_7^{-1/8}\,\Phi_7^{1/4},$$
-and the right-hand side is the image, under the genuine order-$8$
-character of the spin double cover $\mathrm{Spin}(3,2)_7^+$, of the
-Gritsenko quarter-weight Jacobi form $\phi^{(7)}_{-1/4,7/4}$.
+\begin{proposition}[Congruence products]
+\label{prop:gc-row-data}
+For $j=5,6,7,8$ Clery--Gritsenko construct the following Borcherds
+products \cite{GC}.  The weak Jacobi inputs are
+$$
+\begin{array}{c|c|c}
+j&\phi_j&\rho_j^{\mathrm{pref}}\\ \hline
+5&4(\xi_{1,0}^{(2)})^2\in J^w_{0,1}(\Gamma_0(2))
+&(\frac12,\frac12,\frac12)\\
+6&3\xi_{3,1}^{(6)}\xi_{3,5}^{(6)}
+\in J^w_{0,1}(\Gamma_0(3))
+&(\frac12,\frac12,\frac12)\\
+7&2\xi_{2,1}^{(4)}\xi_{2,3}^{(4)}
+\in J^w_{0,1}(\Gamma_0(4))
+&(\frac12,\frac12,\frac12)\\
+8&2\xi_{1,0}^{(2)}(\tau,2z)\in J^w_{0,2}(\Gamma_0(2))
+&(\frac14,\frac12,\frac12)
+\end{array}
+$$
+where $\rho_j^{\mathrm{pref}}$ is read from the literal product
+prefactor $q^{\rho_{\tau}}r^{\rho_z}s^{\rho_{\omega}}$.  At this
+stage it is a prefactor exponent, not a proved Weyl vector.  In
+particular, for $F_8$ the $M_2$ product coordinate corresponding to
+$s^{1/2}$ is $(1/4,1/2,1/4)$ because
+$e^{\alpha_2(a,b,c)}=q^ar^bs^{2c}$.
+More precisely, if
+$$S=\left(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\right),$$
+and
+$$
+\phi_5=\sum c_5(n,l)q^nr^l,\qquad
+\phi_5|_{0,1}S=\sum c_{5,S}(n,l)q^nr^l,
+$$
+then
+$$
+\begin{aligned}
+F_5(Z)&=\nabla_3(Z)\\
+&=q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_1^{\mathrm{prod}}}
+(1-q^nr^ls^m)^{c_5(nm,l)}
+(1-q^{2n}r^{2l}s^{2m})^{c_{5,S}(nm,l)}.
+\end{aligned}
+$$
+If
+$$
+\phi_6=\sum c_6(n,l)q^nr^l,\qquad
+\phi_6|_{0,1}S=\sum c_{6,S}(n,l)q^nr^l,
+$$
+then
+$$
+\begin{aligned}
+F_6(Z)&=\nabla_2(Z)\\
+&=q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_1^{\mathrm{prod}}}
+(1-q^nr^ls^m)^{c_6(nm,l)}
+(1-q^{3n}r^{3l}s^{3m})^{c_{6,S}(nm,l)}.
+\end{aligned}
+$$
+If
+$$
+\phi_7=\sum c_7(n,l)q^nr^l,\qquad
+\phi_7|_{0,1}S=\sum c_{7,S}(n,l)q^nr^l,\qquad
+\phi_7|_{0,1}M=\sum c_{7,M}(n,l)q^nr^l,
+$$
+where $M=\left(\begin{smallmatrix}1&-1\\2&-1\end{smallmatrix}\right)$, then
+$$
+\begin{aligned}
+F_7(Z)&=\nabla_{3/2}(Z)\\
+&=q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_1^{\mathrm{prod}}}
+(1-q^nr^ls^m)^{c_7(nm,l)}\\
+&\qquad\qquad\cdot
+(1-q^{2n}r^{2l}s^{2m})^{c_{7,M}(nm,l)/2}
+(1-q^{4n}r^{4l}s^{4m})^{c_{7,S}(nm,l)}.
+\end{aligned}
+$$
+If
+$$
+\phi_8=\sum c_8(n,l)q^nr^l,\qquad
+\phi_8|_{0,2}S=\sum c_{8,S}(n,l)q^nr^l,
+$$
+then
+$$
+\begin{aligned}
+F_8(Z)&=Q_1(Z)\\
+&=q^{1/4}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_2^{\mathrm{prod}}}
+(1-q^nr^ls^{2m})^{c_8(nm,l)}
+(1-q^{2n}r^{2l}s^{4m})^{c_{8,S}(nm,l)}.
+\end{aligned}
+$$
+These four displays pin the automorphic products.  By themselves they
+do not construct a BKM chamber, parity function, or Weyl-sum identity.
+\end{proposition}
+
+\begin{proof}
+The formulae are Clery--Gritsenko \cite{GC}*{Theorem 3.1} and the four
+product displays for $\nabla_3,\nabla_2,\nabla_{3/2}$, and $Q_1$ at
+the end of Section 3.  The second factors in $F_5,F_6,F_8$ and the
+second and third factors in $F_7$ come from the non-infinity cusps of
+$\Gamma_0(N)$ in their congruence Borcherds product theorem.
+\end{proof}
+
+\begin{proposition}[Product degree lattices for $F_5,F_6,F_7,F_8$]
+\label{prop:congruence-product-degree-lattices}
+For the product rows $j=5,6,7,8$ set
+$$
+(t_5,N_5)=(1,2),\qquad (t_6,N_6)=(1,3),\qquad
+(t_7,N_7)=(1,4),\qquad (t_8,N_8)=(2,2).
+$$
+The Clery--Gritsenko modular host is the orthogonal lattice
+$$
+\mathcal O_j=U\oplus U(N_j)\oplus\langle-2t_j\rangle
+$$
+of signature $(2,3)$.  The single product-degree lattice for the
+monomial denominator is
+$$
+L_j^{\mathrm{prod}}:=M_{t_j}.
+$$
+Define the cusp-labelled degree maps by
+$$
+\alpha_5^{\mathrm{prod}}(n,l,m;\infty)=\alpha_1(n,l,m),\qquad
+\alpha_5^{\mathrm{prod}}(n,l,m;S)=\alpha_1(2n,2l,2m),
+$$
+$$
+\alpha_6^{\mathrm{prod}}(n,l,m;\infty)=\alpha_1(n,l,m),\qquad
+\alpha_6^{\mathrm{prod}}(n,l,m;S)=\alpha_1(3n,3l,3m),
+$$
+$$
+\alpha_7^{\mathrm{prod}}(n,l,m;\infty)=\alpha_1(n,l,m),\qquad
+\alpha_7^{\mathrm{prod}}(n,l,m;M)=\alpha_1(2n,2l,2m),
+$$
+$$
+\alpha_7^{\mathrm{prod}}(n,l,m;S)=\alpha_1(4n,4l,4m),
+$$
+and
+$$
+\alpha_8^{\mathrm{prod}}(n,l,m;\infty)=\alpha_2(n,l,m),\qquad
+\alpha_8^{\mathrm{prod}}(n,l,m;S)=\alpha_2(2n,2l,2m).
+$$
+The corresponding product-prefactor degrees are
+$$
+\rho_5^{\mathrm{prod}}=\rho_6^{\mathrm{prod}}=\rho_7^{\mathrm{prod}}
+=\alpha_1(\tfrac12,\tfrac12,\tfrac12),\qquad
+\rho_8^{\mathrm{prod}}=\alpha_2(\tfrac14,\tfrac12,\tfrac14).
+$$
+For $\lambda\in L_j^{\mathrm{prod}}$ let $\mu_j(\lambda)$ be the sum
+of all cusp coefficients whose labelled degree is $\lambda$:
+$$
+\mu_j(\lambda)=
+\sum_{\alpha_j^{\mathrm{prod}}(n,l,m;\kappa)=\lambda}
+\widetilde c_{j,\kappa}(nm,l),
+$$
+where
+$$
+\widetilde c_{j,\infty}=c_j,\qquad
+\widetilde c_{5,S}=c_{5,S},\qquad
+\widetilde c_{6,S}=c_{6,S},
+$$
+$$
+\widetilde c_{7,M}=\frac12c_{7,M},\qquad
+\widetilde c_{7,S}=c_{7,S},\qquad
+\widetilde c_{8,S}=c_{8,S}.
+$$
+The Clery--Gritsenko product is an automorphic product with integral
+exponents on its multiplier cover; in particular the row-$7$ exponents
+\(\frac12c_{7,M}(n,l)\) are integers on the displayed support.
+Let
+$$
+\mathcal K_5=\mathcal K_6=\mathcal K_8=\{\infty,S\},\qquad
+\mathcal K_7=\{\infty,M,S\},
+$$
+and
+$$
+\mathcal D_j:=\Gamma_{t_j}^{\mathrm{prod}}\times\mathcal K_j.
+$$
+The cusp-labelled product datum is
+$$
+\mathscr E_j^{\mathrm{prod}}
+:=(\mathcal D_j,\alpha_j^{\mathrm{prod}},\mu_j).
+$$
+Then
+$$
+F_j(Z)=e^{\rho_j^{\mathrm{prod}}}
+\prod_{\lambda\in\alpha_j^{\mathrm{prod}}(\mathcal D_j)}
+\left(1-e^\lambda\right)^{\mu_j(\lambda)}
+\qquad(j=5,6,7,8),
+$$
+where $e^{\alpha_1(a,b,c)}=q^ar^bs^c$ and
+$e^{\alpha_2(a,b,c)}=q^ar^bs^{2c}$.
+\end{proposition}
+
+\begin{proof}
+The displayed maps are the unique monomial-degree maps forced by the
+three products in Proposition~\ref{prop:gc-row-data}.  For $F_5$ the
+non-infinity cusp contributes the monomials
+$q^{2n}r^{2l}s^{2m}$, hence degree $\alpha_1(2n,2l,2m)$.  For $F_6$
+the corresponding monomial is $q^{3n}r^{3l}s^{3m}$, hence degree
+$\alpha_1(3n,3l,3m)$.  For $F_7$ the two non-infinity factors have
+monomials $q^{2n}r^{2l}s^{2m}$ and $q^{4n}r^{4l}s^{4m}$; the first
+has half exponent $c_{7,M}/2$ exactly as in the Clery--Gritsenko
+product.  For $F_8$ the product has index $t=2$:
+$e^{\alpha_2(n,l,m)}=q^nr^ls^{2m}$ and the non-infinity cusp contributes
+$e^{\alpha_2(2n,2l,2m)}=q^{2n}r^{2l}s^{4m}$.  If two labelled cusp
+contributions land on the same lattice degree, exponents add; this is
+precisely the definition of $\mu_j$.
+
+Clery--Gritsenko \cite{GC}*{Theorem 3.1} realize these products as
+orthogonal Borcherds products for
+$U\oplus U(N_j)\oplus\langle-2t_j\rangle$.  That theorem supplies the
+automorphic product and the divisor.  It does not supply a Weyl chamber,
+simple real roots, a parity function, or a Weyl-sum identity on
+$M_{t_j}$.  Thus $L_j^{\mathrm{prod}}$ and
+$\alpha_j^{\mathrm{prod}}$ are constructed here as product data, not as
+a completed BKM denominator datum.  The completed denominator datum for
+$F_5,F_6,F_7,F_8$ is imported separately from the CHL theorem in
+Theorem~\ref{thm:govindarajan-denominator-rows}.
+\end{proof}
+
+\begin{definition}[Formal product algebra of a row]
+For a row $j$ with product-degree function $\mu_j$, let
+$$
+\mathcal V_j^{\mathrm{prod}}
+=\bigoplus_{\lambda\in L_j^{\mathrm{prod}},\ \lambda>0}
+\mathcal V_{j,\lambda}
+$$
+be any graded super vector space with finite-dimensional homogeneous
+pieces and
+$$
+\sdim\mathcal V_{j,\lambda}=\mu_j(\lambda).
+$$
+Choose a Grothendieck representative: the even part has dimension $\mu_j(\lambda)$ when
+$\mu_j(\lambda)>0$, the odd part of dimension $-\mu_j(\lambda)$ when
+$\mu_j(\lambda)<0$, and the zero space when $\mu_j(\lambda)=0$.  Give
+it the abelian Lie superalgebra bracket:
+$$[\mathcal V_{j,\lambda},\mathcal V_{j,\lambda'}]=0.$$
+Its formal current envelope on $E$ is
+$$
+\mathsf{Prod}_{j,E}
+:=U_E^{\mathrm{ch}}
+\left(\mathcal V_j^{\mathrm{prod}}\otimes\mathcal O_E\right).
+$$
+\end{definition}
+
+\begin{theorem}[Eight formal current rows]
+\label{thm:eight-formal-current-rows}
+Every Clery--Gritsenko diagonal-divisor row has a formal determinant
+object.  For $j=1$ this is
+$\mathsf{Den}_{\Delta_5,E}$ from
+Theorem~\ref{thm:factorization-square-root}.  For $j=2,3,4$ it is the
+current envelope of the Gritsenko--Nikulin BKM algebra
+$\mathfrak g_j^{\mathrm{GN}}$.  For $j=5,6,7,8$ it is the formal
+product algebra $\mathsf{Prod}_{j,E}$ above.
+For $j=5,6,7,8$, Theorem~\ref{thm:govindarajan-denominator-rows}
+also supplies a nonabelian CHL/WKB denominator algebra; the abelian
+product algebra in this theorem is the part constructed directly from
+the Clery--Gritsenko product exponents.
+For $j=5,6,7,8$ this is only the tautological virtual product object
+realizing the Clery--Gritsenko exponents.  Its Beilinson--Drinfeld
+envelope is abelian; it carries no Weyl-sum side, no BKM bracket, and no
+physical protected BPS interpretation.
+
+In all eight cases the formal determinant is the corresponding monic
+automorphic product:
+$$
+e^{\rho_j}\sdet_{\mathcal V_j}(1-e)
+=D_j(Z),
+$$
+where $D_1=64^{-1}\Delta_5$ and $D_j=F_j$ for the displayed
+Clery--Gritsenko product normalizations $j>1$,
+with the normalizations stated in
+Propositions~\ref{prop:gn-paramodular-row-data},
+\ref{prop:gc-row-data}, and
+\ref{prop:congruence-product-degree-lattices}.
 \end{theorem}
 
 \begin{proof}
-From Proposition~\ref{prop:chi-cs-n7},
-$Z^{X_7}_{\mathrm{red}}=C_7\,\varepsilon_7\,\Phi_7^{-2}$. Canonical
-eighth-root on the positive Weyl chamber:
-$$\bigl(C_7\,\varepsilon_7\,\Phi_7^{-2}\bigr)^{-1/8}
-=C_7^{-1/8}\,\varepsilon_7^{-1/8}\,\Phi_7^{1/4}.$$
-Multiplying by $\varepsilon_7$ uses $\varepsilon_7^{7/8}=\varepsilon_7^{-1/8}$
-in $\mu_8$ --- the order-$8$ Cheeger--Simons holonomy ---
-and gives the right-hand side. Proposition~\ref{prop:metaplectic-multiplier}(ii)
-identifies $\Phi_7^{1/4}$ with the Gritsenko quarter-weight Borcherds
-lift $\mathrm{Borch}\bigl(\phi^{(7)}_{-1/4,7/4}\bigr)$ transforming by
-the order-$8$ character of $\mathrm{Spin}(3,2)_7^+$.
+For $j=1$, Theorem~\ref{thm:bracket-level-square-root} gives the
+Borcherds denominator algebra and Theorem~\ref{thm:factorization-square-root} gives
+the formal current envelope.  For $j=2,3,4$,
+Theorem~\ref{thm:gn-denominator-234} gives the BKM brackets and their
+denominator identities.
+
+For $j=5,6,7,8$, Proposition~\ref{prop:congruence-product-degree-lattices}
+constructs the degree lattice, the positive product support, the
+prefactor, and the signed exponent $\mu_j$.  The super vector space
+$\mathcal V_j^{\mathrm{prod}}$ realizes these signed dimensions.  The
+Fock determinant lemma gives
+$$
+e^{\rho_j^{\mathrm{prod}}}
+\prod_\lambda(1-e^\lambda)^{\sdim\mathcal V_{j,\lambda}}
+=
+e^{\rho_j^{\mathrm{prod}}}
+\prod_\lambda(1-e^\lambda)^{\mu_j(\lambda)}
+=F_j(Z).
+$$
+The formal current enveloping construction gives a chiral algebra on
+\(E\) from this abelian Lie superalgebra.  It is not a compact BPS
+factorization algebra.
 \end{proof}
 
-\begin{corollary}[Borcherds weight identity]
-\label{cor:kappa-bkm-n5-n7}
-The Borcherds weight of the paramodular host equals the Fourier
-coefficient $f^{(N)}(0,0)/2$ of the twining Jacobi form:
-$\kappa_{\mathrm{BKM}}(\Phi_5)=1$, $\kappa_{\mathrm{BKM}}(\Phi_7)=4$.
-Both values agree with the Gritsenko table \cite{GC} and the
-Eguchi--Ooguri--Tachikawa twined K3 genus \cite{EOT}.
-\end{corollary}
+\begin{proposition}[Nonabelian promotion test for $F_5,F_6,F_7,F_8$]
+\label{prop:congruence-denominator-test}
+Suppose that one of the congruence product rows
+$$j\in\{5,6,7,8\}$$
+is the denominator of a generalized Borcherds--Kac--Moody
+superalgebra on the product lattice $L_j^{\mathrm{prod}}$.  Then the
+following additional data must exist:
+$$
+\left(P_j,\mathcal M_j,W_j,\epsilon_j,\rho_j,N_j(a)\right).
+$$
+They must satisfy
+$$
+W_j=\langle s_\delta\mid\delta\in P_j\rangle,\qquad
+\mathcal M_j=\{x\mid(x,\delta)\leq0\ \hbox{for all }\delta\in P_j\},
+$$
+$$
+(\rho_j,\delta)=-\frac{(\delta,\delta)}{2}
+\qquad(\delta\in P_j),
+$$
+and the Weyl--Kac--Borcherds identity
+$$
+\begin{aligned}
+F_j(Z)
+&=\sum_{w\in W_j}\epsilon_j(w)
+\left(e^{w(\rho_j)}
++\sum_{a\in L_j^{\mathrm{prod}}\cap\R_{>0}\mathcal M_j}
+N_j(a)e^{w(\rho_j+a)}\right)\\
+&=e^{\rho_j^{\mathrm{prod}}}
+\prod_{\lambda\in\alpha_j^{\mathrm{prod}}(\mathcal D_j)}
+\left(1-e^\lambda\right)^{\mu_j(\lambda)}.
+\end{aligned}
+$$
+In particular the product already fixes the signed root multiplicity
+function $\mu_j$ and the product-prefactor degree
+$$
+\rho_5^{\mathrm{prod}}=\rho_6^{\mathrm{prod}}=\rho_7^{\mathrm{prod}}
+=\alpha_1(\tfrac12,\tfrac12,\tfrac12),\qquad
+\rho_8^{\mathrm{prod}}=\alpha_2(\tfrac14,\tfrac12,\tfrac14),
+$$
+but it does not fix $P_j$, $\mathcal M_j$, $W_j$, $\epsilon_j$, or the
+imaginary simple-root coefficients $N_j(a)$.
+\end{proposition}
 
-\begin{remark}[$N=8$ obstruction]
-\label{rem:n8-obstruction}
-For $N=8$, the Gritsenko--Cl\'ery row $\Phi_8$ has weight zero and is
-meromorphic; the argument of Theorem~\ref{thm:chiral-n5} breaks at the
-canonical-branch step because $\Phi_8^{-2}$ has leading coefficient
-zero. No fractional-power chiral identification exists in the
-paramodular lane at $N=8$; the host algebra is captured by the
-finite Weyl product of the Mathieu--Taormina--Wendland fourfold of
-\cite{GC}.
+\begin{proof}
+The equalities in Proposition~\ref{prop:congruence-product-degree-lattices}
+construct only the monomial degree and the total exponent
+$\mu_j(\lambda)$.  A denominator theorem has a second side: the Weyl
+alternating sum.  That side requires a reflection chamber, a set of
+simple real roots, a reflection character, and the imaginary
+simple-root contribution.
+
+The Gritsenko--Nikulin chambers for $M_1$ and $M_2$ cannot be imported
+by notation.  The forms $\nabla_3$, $\nabla_2$, $\nabla_{3/2}$, and
+$Q_1$ are congruence products with non-infinity cusp factors, whereas
+$\Delta_5$ and $\Delta_2$ are full-paramodular denominator forms.
+Clery--Gritsenko construct the automorphic product, character, and
+diagonal divisor on
+$$U\oplus U(N_j)\oplus\langle-2t_j\rangle,$$
+but their product theorem does not identify the simple real roots or
+prove a Weyl anti-invariant additive expansion on $M_{t_j}$.  Therefore
+the displayed six-tuple is an additional theorem to be proved, not a
+consequence of the product formula.
+\end{proof}
+
+\begin{theorem}[Govindarajan CHL/WKB denominator rows]
+\label{thm:govindarajan-denominator-rows}
+In the CHL/twisted-dyon normalization of Cheng--Dabholkar and
+Govindarajan, the rows
+$$
+F_5=\nabla_3,\qquad F_6=\nabla_2,\qquad
+F_7=\nabla_{3/2},\qquad F_8=Q_1
+$$
+are Weyl--Kac--Borcherds denominator forms.  The row $F_7$ is taken on
+the $\mu_4$-multiplier cover determined by the Clery--Gritsenko
+order-four multiplier.  This does not make $F_7$ an ordinary scalar
+denominator on $\Gamma_0^{(2)}(4)$, and it supplies no Vol.~III row map,
+metaplectic boundary theorem, or CY/DT/chiral host.  In the
+product-degree notation of this appendix the real-root data are
+$$
+L_5=L_6=L_7=M_1,\qquad
+P_5=P_6=P_7=P^{(1)},\qquad
+\rho_5=\rho_6=\rho_7=\alpha_1(\tfrac12,\tfrac12,\tfrac12),
+$$
+where
+$$
+P^{(1)}=\{(0,-1,0),\ (1,1,0),\ (0,1,1)\},
+$$
+and
+$$
+L_8=M_2,\qquad
+P_8=P^{(2)},\qquad
+\rho_8=\alpha_2(\tfrac14,\tfrac12,\tfrac14),
+$$
+where
+$$
+P^{(2)}=\{(0,-1,0),\ (1,1,0),\ (1,3,1),\ (0,1,1)\}.
+$$
+The Weyl chambers and Weyl groups are
+$$
+\mathcal M_j=\{x\in L_j\otimes\R\mid (x,\delta)\le0
+\hbox{ for every }\delta\in P_j\},
+\qquad
+W_j=\langle s_\delta\mid\delta\in P_j\rangle.
+$$
+Every simple real root is even and the reflection character is
+$$\epsilon_j(w)=\det(w).$$
+For $j=5,6,7,8$ the denominator product side is expressed through the
+cusp-labelled product datum $\mathscr E_j^{\mathrm{prod}}$, with root
+multiplicity function $\mu_j$.
+The Clery--Gritsenko character $\nu_j$, restricted to the embedded CHL
+Weyl group $W_j$, is the reflection character:
+$$
+\nu_j|_{W_j}=\epsilon_j=\det.
+$$
+This restriction is part of the Govindarajan WKB denominator theorem,
+not a consequence of the Clery--Gritsenko product alone.
+The Cartan matrices are
+$$
+A^{(1)}=\left(\begin{array}{rrr}
+2&-2&-2\\
+-2&2&-2\\
+-2&-2&2
+\end{array}\right),
+$$
+for $F_5,F_6,F_7$, and
+$$
+A^{(2)}=\left(\begin{array}{rrrr}
+2&-2&-6&-2\\
+-2&2&-2&-6\\
+-6&-2&2&-2\\
+-2&-6&-2&2
+\end{array}\right),
+$$
+for $F_8$.
+
+Equivalently, for \(x=(u,v,w)\), the two chambers are
+$$
+\mathcal M_1=\{x\mid v\ge0,\ v\le2w,\ v\le2u\},
+$$
+and
+$$
+\mathcal M_2=\{x\mid v\ge0,\ v\le4w,\ 3v\le4(u+w),\ v\le4u\}.
+$$
+
+There are integral imaginary simple-root coefficients $N_j(a)$,
+depending on the CHL twist, such that
+$$
+\begin{aligned}
+F_j(Z)
+&=\sum_{w\in W_j}\det(w)
+\left(e^{w(\rho_j)}
++\sum_{a\in L_j\cap\R_{>0}\mathcal M_j}
+N_j(a)e^{w(\rho_j+a)}\right)\\
+&=e^{\rho_j}
+\prod_{\lambda\in\alpha_j^{\mathrm{prod}}(\mathcal D_j)}
+\left(1-e^\lambda\right)^{\mu_j(\lambda)}
+\qquad(j=5,6,7,8).
+\end{aligned}
+$$
+Thus the six-tuples
+$$
+(P_j,\mathcal M_j,W_j,\epsilon_j,\rho_j,N_j(a))
+$$
+are constructed for $j=5,6,7,8$ by the CHL denominator theorem.  They are
+not consequences of the Clery--Gritsenko product formula alone.
+In the monic Clery--Gritsenko/Govindarajan product variables used in
+Proposition~\ref{prop:gc-row-data}, the imported identities have
+$$
+C'_j=1,\qquad a_j=1\qquad(j=5,6,7,8).
+$$
+This is not the doubled $N=1$ normalization of
+Lemma~\ref{lem:two-denominator-normalizations}.
+\end{theorem}
+
+\begin{remark}[$F_7$ on the \(\mu_4\)-multiplier cover]
+\label{rem:f7-mu4-cover}
+The row \(F_7=\nabla_{3/2}\) is the Clery--Gritsenko
+diagonal-divisor form of type \((t,N)=(1,4)\), weight \(3/2\), on
+\(\Gamma_0^{(2)}(4)\) with an order-four multiplier.  After pullback to
+the associated \(\mu_4\)-multiplier cover, Govindarajan's CHL/WKB
+theorem identifies it with the Weyl--Kac--Borcherds denominator of
+\(\mathcal G_1(4)\).  This is not an ordinary scalar denominator on
+\(\Gamma_0^{(2)}(4)\).  It is not a Vol.~III physical
+\(\Phi^{\mathrm{V3}}_7\), not a metaplectic boundary host, and not a
+CY/DT or chiral/Hall theorem.
+
+The square identity \(F_7^2=\Phi_3\) is only a scalar square identity.
+It does not carry the reflection sign, parity, Weyl chamber, or
+Weyl-alternating side.  The coefficient convention for the additive
+side is fixed in Lemma~\ref{lem:nabla-three-halves-coefficients}.
 \end{remark}
 
+\begin{lemma}[Coefficient normalisation for $\nabla_3$ and $\nabla_2$]
+\label{lem:nabla32-coefficients}
+Let
+$$
+\psi_5(\tau,z)=\vartheta(\tau,z)\eta(\tau)\eta(2\tau)^4
+=\sum g_5(u,v)q^{u/2}r^{v/2},
+$$
+and
+$$
+\psi_6(\tau,z)=\vartheta(\tau,z)\eta(3\tau)^3
+=\sum g_6(u,v)q^{u/2}r^{v/2}.
+$$
+For $a=\alpha_1(A,B,C)\in M_1\cap\R_{\ge0}\mathcal M_1$, put
+$$
+n=2A+1,\qquad l=2B+1,\qquad m=2C+1.
+$$
+In the plus-sign convention of
+Theorem~\ref{thm:govindarajan-denominator-rows}, the imaginary
+simple-root coefficients for the rows $F_5$ and $F_6$ are
+$$
+N_5(a)=\sum_{d\mid(n,l,m)}
+d^2\,g_5\left(\frac{nm}{d^2},\frac ld\right),
+$$
+and
+$$
+N_6(a)=\sum_{d\mid(n,l,m)}
+\left(\frac{-3}{d}\right)d\,
+g_6\left(\frac{nm}{d^2},\frac ld\right).
+$$
+Govindarajan--Gopala Krishna write the same coefficients with the
+opposite sign in the imaginary-root correction term:
+$$m_j(a)=-N_j(a)\qquad(j=5,6).$$
+\end{lemma}
+
+\begin{proof}
+Govindarajan--Gopala Krishna construct the additive lift whose Weyl
+alternating side gives the denominator identity for the corresponding
+CHL square roots \cite{GK09CHL}*{(4.2), (4.4), (4.5), (4.8)}.  Their
+Maass lift gives the displayed divisor sums from the Jacobi seeds
+$\psi_5$ and $\psi_6$, and their Weyl--Kac--Borcherds sum writes these
+coefficients as the imaginary simple-root correction.  The sign
+difference is only the convention:
+$$
+e^\rho+\sum_aN_j(a)e^{\rho+a},
+$$
+whereas \cite{GK09CHL} writes the correction with a minus sign.
+\end{proof}
+
+\begin{lemma}[Coefficient normalisation for $\nabla_{3/2}$]
+\label{lem:nabla-three-halves-coefficients}
+Let
+$$
+\nabla_{3/2}(Z)=\Delta^{(4)}_{3/2}(Z)
+=\frac18\theta_5(2Z)\theta_7(2Z)\theta_9(2Z)
+=\sum_{n,l,m}A_7(n,l,m)q^{n/2}r^{l/2}s^{m/2},
+$$
+with $A_7(1,1,1)=1$.  The first term is
+$$
+\left(\sqrt r-\frac1{\sqrt r}\right)\sqrt q\,\sqrt s+\cdots,
+$$
+so $A_7(1,-1,1)=-1$.  For
+$a=\alpha_1(A,B,C)\in M_1\cap\R_{\ge0}\mathcal M_1$, put
+$$
+n=2A+1,\qquad l=2B+1,\qquad m=2C+1.
+$$
+Then the imaginary simple-root coefficient in the plus-sign convention
+of Theorem~\ref{thm:govindarajan-denominator-rows} is
+$$
+N_7(\alpha_1(A,B,C))=A_7(2A+1,2B+1,2C+1)
+=[q^{A+1/2}r^{B+1/2}s^{C+1/2}]\nabla_{3/2}(Z).
+$$
+In Govindarajan--Gopala Krishna's WKB sign convention,
+$$m_7(a)=-N_7(a).$$
+No Maass divisor-sum formula for $N_7$ is asserted here.
+\end{lemma}
+
+\begin{proof}
+Clery--Gritsenko construct $\nabla_{3/2}$ as the order-four
+multiplier row.  Govindarajan--Gopala Krishna identify the square-root
+theta product and the square relation
+$$
+F_7^2=\Phi_3
+$$
+in the composite $N=4$ CHL case \cite{GK10Composite}.  Factoring the
+Weyl vector gives
+$$
+e^{\rho_7+a}=q^{A+1/2}r^{B+1/2}s^{C+1/2},
+$$
+which is exactly the displayed coefficient extraction.  The sourced
+divisor-sum formula belongs to the square $F_7^2$, with its composite
+$N=4$ Jacobi seed.  Applying a prime-type half-index formula directly
+to $F_7$ would introduce fractional divisor powers at non-primitive
+chamber points, while the theta product has integral coefficients.
+\end{proof}
+
+\begin{lemma}[$Q_1$ in $M_2$ notation]
+\label{lem:q1-m2-normalisation}
+In $M_2$,
+$$
+e^{\alpha_2(n,l,m)}=q^nr^ls^{2m},\qquad
+(\alpha_2(n,l,m),\alpha_2(n',l',m'))
+=2ll'-8(nm'+n'm).
+$$
+The four simple real roots of the $Q_1$ row are
+$$
+\delta_1=(0,-1,0),\quad
+\delta_2=(1,1,0),\quad
+\delta_3=(1,3,1),\quad
+\delta_4=(0,1,1),
+$$
+with Gram matrix $A^{(2)}$.  The Weyl vector is
+$$
+\rho_8=\alpha_2(\tfrac14,\tfrac12,\tfrac14),\qquad
+e^{\rho_8}=q^{1/4}r^{1/2}s^{1/2},
+$$
+and
+$$
+(\rho_8,\delta_i)=-1\qquad(1\le i\le4).
+$$
+
+Let $A_8(n,l,m)$ be defined by
+$$
+Q_1(Z)=
+\sum_{n,l,m} A_8(n,l,m)
+q^{n+1/4}r^{l+1/2}s^{2m+1/2}.
+$$
+Govindarajan's theta-product formula, in his characteristic notation, is
+$$
+Q_1(Z)=\frac14\,
+\vartheta\!\left[\begin{array}{cc}1&0\\0&1\end{array}\right](Z')
+\vartheta\!\left[\begin{array}{cc}1&1\\1&1\end{array}\right](Z'),
+\qquad
+Z'=\left(\begin{array}{cc}\tau&2z\\2z&4\sigma\end{array}\right).
+$$
+Equivalently,
+$$
+A_8(n,l,m)=\frac14\sum_{\mathcal S(n,l,m)}(-1)^{j+k+h},
+$$
+where $\mathcal S(n,l,m)$ is the set of
+$(i,j,k,h)\in\Z^4$ satisfying
+$$
+\frac12\left((i+\tfrac12)^2+(k+\tfrac12)^2\right)=n+\tfrac14,
+$$
+$$
+2(i+\tfrac12)j+2(k+\tfrac12)(h+\tfrac12)=l+\tfrac12,
+$$
+and
+$$
+2j^2+2(h+\tfrac12)^2=2m+\tfrac12.
+$$
+Then the imaginary simple-root coefficient in the plus-sign convention
+is
+$$
+N_8(\alpha_2(n,l,m))=A_8(n,l,m)
+$$
+for the chamber-supported imaginary shifts.  Govindarajan's expansion
+has coefficient $-1$ at the monomials
+$$
+r^{-1},\qquad qr,\qquad rs^2,\qquad qr^3s^2.
+$$
+After factoring $e^{\rho_8}$ these are precisely the four simple real
+root monomials for
+$$
+\delta_1,\quad\delta_2,\quad\delta_4,\quad\delta_3,
+$$
+so the signed real-simple-root supermultiplicity is \(+1\) in each
+case.  Their even parity and multiplicity-one real-root status are the
+Cheng--Dabholkar/Govindarajan CHL denominator data.
+\end{lemma}
+
+\begin{proof}
+The first display is the definition of $\alpha_2$ and the Gram matrix
+on $M_2$.  The simple roots and Weyl vector are Cheng--Dabholkar's
+$N=2$ chamber data translated through
+$$
+\alpha_2(n,l,m)\longleftrightarrow
+\left(\begin{array}{cc}2n&l\\ l&4m\end{array}\right).
+$$
+Govindarajan identifies $Q_1$ with the row $\mathcal G_2(4)$ and gives
+both the product formula and the first Fourier terms.  The order-four
+Clery--Gritsenko character restricts to the Weyl sign on the reflection
+group by the oddness under the elementary reflection $z\mapsto -z$ and
+the chamber symmetries used in the CHL proof.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:govindarajan-denominator-rows}]
+Cheng--Dabholkar identify, for CHL level $N=1,2,3$, the Weyl group,
+simple real roots, Weyl chamber, and Weyl denominator identity of the
+dyon algebra
+\cite{CD09BKM}*{(2.10)--(2.16), (3.16), (3.22), (3.23), (3.26),
+(3.42), (5.1), (5.2), (5.8), (5.10), (5.12)--(5.15), Appendix A}.
+For $N=1$ the simple real roots are
+$P^{(1)}$ and the Cartan matrix is $A^{(1)}$; for $N=2$ the simple real
+roots are $P^{(2)}$ and the Cartan matrix is $A^{(2)}$.
+Govindarajan then treats twisted dyons and proves that, for fixed $N$,
+the algebras $\mathcal G_N(M)$ have the same real simple roots, Weyl
+vector, and Cartan matrix, while the imaginary simple roots depend on
+$M$ \cite{Gov11BKM}*{Section 4.2, Section 4.3, Table 3}.
+
+Govindarajan's Table 3 gives
+$$
+\nabla_3\longleftrightarrow\mathcal G_1(2),\qquad
+\nabla_2\longleftrightarrow\mathcal G_1(3),\qquad
+\nabla_{3/2}\longleftrightarrow\mathcal G_1(4),\qquad
+Q_1\longleftrightarrow\mathcal G_2(4).
+$$
+Section 4.2 of \cite{Gov11BKM} checks the required ingredients: sum
+and product representations, integrality, correct multiplicity of the
+simple real roots, and the sign change of the square root under a Weyl
+reflection.  Section 4.3 states the Weyl--Kac--Borcherds denominator
+formula for $\mathcal G_N(M)$.
+For $F_7=\nabla_{3/2}$ this is an imported theorem on the
+$\mu_4$-multiplier cover.  It supplies no Vol.~III boundary partition
+identity and no CY/DT/chiral host.
+For $Q_1$, Govindarajan supplies the WKB denominator data needed here
+\cite{Gov11BKM}*{Appendix C, Appendix D}.
+The dyon-counting additive-seed issue for the $(2,4)$ and $(4,2)$
+examples is not used.
+The later hyperbolic and umbral extensions of \cite{GovSam19} are also
+not used here: for $N=5,6$ they replace $W$ by $W_+$, leave the sum
+side incompletely characterized, and treat some rows as product-only or
+candidate BKM data \cite{GovSam19}*{Sections 3.3 and 4}.
+
+It remains only to translate the real-root data into the notation used
+here.  On $M_t$,
+$$
+((n,l,m),(n',l',m'))=2ll'-4t(nm'+n'm).
+$$
+With $t=1$, the set $P^{(1)}$ has Gram matrix $A^{(1)}$ and
+$\rho=\alpha_1(1/2,1/2,1/2)$ satisfies
+$(\rho,\delta)=-1$ for every $\delta\in P^{(1)}$.  With $t=2$, the set
+$P^{(2)}$ has Gram matrix $A^{(2)}$ and
+$\rho=\alpha_2(1/4,1/2,1/4)$ satisfies
+$(\rho,\delta)=-1$ for every $\delta\in P^{(2)}$.  These are exactly
+the Weyl-vector equations
+$(\rho,\delta)=-(\delta,\delta)/2$ because all displayed real roots
+have square $2$.
+\end{proof}
+
+\begin{remark}[Nonabelian status]
+\label{prop:no-unbuilt-denominator}
+The row datum has the following status:
+$$
+\begin{array}{c|c|c}
+j&\mathrm{automorphic\ data}\ (F_j,\Gamma_j,\nu_j,\rho_j^{\mathrm{pref}})
+&\mathrm{lattice\ and\ degree\ status}\\ \hline
+1&\mathrm{constructed\ here}&\mathrm{constructed\ here}\\
+2,3,4&\mathrm{GN\ denominator\ theorem}
+&L_j=M_j,\ \alpha_j=\alpha_j^{\mathrm{GN}}\\
+5,6,7&\mathrm{CG\ product;\ Govindarajan\ denominator}
+&P^{(1)},\mathcal M_1,W_1,\epsilon=\det\ \mathrm{constructed}\\
+8&\mathrm{CG\ product;\ Govindarajan\ denominator}
+&P^{(2)},\mathcal M_2,W_2,\epsilon=\det\ \mathrm{constructed}\\
+\end{array}
+$$
+Thus all eight rows now have formal product/current-envelope objects.
+Rows \(1\)--\(4\) have the Gritsenko--Nikulin denominator algebras.
+Rows \(5\)--\(8\) have the Govindarajan CHL/WKB denominator algebras in
+the imported normalization.  The row \(F_7\) is imported only on the
+\(\mu_4\)-multiplier cover; it supplies no Vol.~III physical boundary
+theorem.
+\end{remark}
+
+\begin{openproblem}[Physical row map and boundary host]
+\label{conj:nonabelian-row-extension}
+Construct, for every physical row, a datum
+$$
+(\iota_j,X_j,\theta_j,\mathcal P_j)
+$$
+such that
+$$
+\iota_j:\Phi^{\mathrm{phys}}_j\longleftrightarrow F_i^{\mathrm{CG}},
+\qquad
+Z^{X_j}_{\mathrm{red}}=C_j(F_i^{\mathrm{CG}})^{-2},
+$$
+and
+$$
+\Prim_{\mathrm{prot}}\mathcal P_j\cong\mathfrak g_i.
+$$
+Here \(\theta_j\) fixes the modular group or cover, character, divisor,
+Jacobi seed, normalization, orientation, Behrend sign, and Fourier
+chamber.  The CHL/WKB denominator rows \(F_5,\ldots,F_8\) are no longer
+the conjectural part after
+Theorem~\ref{thm:govindarajan-denominator-rows}.
+\end{openproblem}
+
+\begin{proposition}[Boundary scope]
+\label{prop:boundary-scope}
+In the primary Clery--Gritsenko enumeration,
+$$
+\{j:\mathrm{wt}(F_j)\in\Z\}=\{1,2,3,5,6,8\},\qquad
+\{j:\mathrm{wt}(F_j)\notin\Z\}=\{4,7\}.
+$$
+The older Vol.~III comparison notation
+$$\Phi^{\mathrm{V3}}_1,\ldots,\Phi^{\mathrm{V3}}_8,\qquad
+\mathrm{wt}(\Phi^{\mathrm{V3}}_j)=(5,2,1,1,\tfrac12,1,\tfrac14,0),$$
+is stale against the current Vol.~III frontier.  It is not a
+Clery--Gritsenko row system and not a live physical atlas.
+\end{proposition}
+
+\begin{proof}
+The Clery--Gritsenko theorem gives the exact weights in the first
+display.  The deprecated comparison weights
+$$
+(5,2,1,1,\tfrac12,1,\tfrac14,0)
+$$
+are therefore not the primary-source row labels of \cite{GC}.  The
+Borcea--Voisin route \cite{BORCEA}, \cite{VOISIN} and reduced
+curve-counting route \cite{OhThomasI}, \cite{OhThomasII}, \cite{BOPY}
+require a separate
+construction of $X_j$, the reduced theory, and the product identity.  No
+such construction is used in the $N=1$ theorem.
+\end{proof}
+
+\begin{remark}[Boundary row status]
+The Clery--Gritsenko weights are
+\[
+(5,2,1,\tfrac12,3,2,\tfrac32,1),
+\]
+so they are split from every stale Vol.~III comparison tuple containing
+weight \(1/4\) or weight \(0\).  The assertion that \(F_4\) is integral
+is false: \(F_4=\Delta_{1/2}\).  There is therefore no physical
+\(\Phi^{\mathrm{V3}}_4\) identification.  Any boundary
+partition identity remains open until the row map, the reduced theory,
+and the duality signs are built.
+\end{remark}
+
+\begin{remark}[Vol.~III row-map obstruction]
+The symbols \(F_i\) and \(\Phi^{\mathrm{V3}}_j\) label different row
+systems.  When a collision is possible, write \(F_i^{\mathrm{CG}}\) for
+the Clery--Gritsenko rows in the present order,
+\(T_a^{\mathrm{CG}}\) for the same catalogue in triple order, and
+\(\Phi^{\mathrm{old}}_j\) for the deprecated comparison symbols.  The rows
+\(F_i^{\mathrm{CG}}\) are the diagonal-divisor
+forms of \cite{GC}; in the order used here their weights are
+$$
+(5,2,1,\tfrac12,3,2,\tfrac32,1).
+$$
+Vol.~III sometimes lists the same Clery--Gritsenko catalogue in the
+triple order
+$$
+(t,N)=(1,1),(2,1),(1,2),(3,1),(1,3),(4,1),(1,4),(2,2),
+$$
+where the weights are
+$$
+(5,2,3,1,2,\tfrac12,\tfrac32,1).
+$$
+The permutation from that triple order to the present \(F_i\)-order is
+$$
+(1,2,5,3,6,4,7,8).
+$$
+
+The deprecated comparison symbols
+$$
+\Phi^{\mathrm{old}}_1,\ldots,\Phi^{\mathrm{old}}_8,\qquad
+\mathrm{wt}(\Phi^{\mathrm{old}}_j)=(5,2,1,1,\tfrac12,1,\tfrac14,0),
+$$
+are therefore not Clery--Gritsenko row labels.  A row map
+$$
+\Phi^{\mathrm{old}}_j\longleftrightarrow F_i
+$$
+would have to specify the modular group or cover, character, divisor,
+Jacobi seed at every cusp, product-degree lattice, Weyl vector, real
+simple roots, reflection character, and, on the physical side, the
+CY/DT/chiral host and reduced partition identity.  No such datum is
+constructed here.
+
+Consequently the direct identifications
+$$
+\Phi^{\mathrm{old}}_5=F_5,\qquad
+\Phi^{\mathrm{old}}_7=F_7,\qquad
+\Phi^{\mathrm{old}}_8=F_8
+$$
+are false already by weight.  The Clery--Gritsenko catalogue contains
+no weight-\(1/4\) row and no weight-\(0\) row.  The CHL square
+identities, such as \(\nabla_3^2=\Phi_6\) and
+\(\nabla_2^2=\Phi_4\), are scalar square identities; they are not row
+maps and do not by themselves carry the denominator sign, parity, or
+Weyl alternating side.
+\end{remark}
+
+\begin{remark}[Boundary host gate]
+A boundary identity
+$$
+Z_j=C_j(\Phi^{\mathrm{V3}}_j)^{-2}
+$$
+is not a consequence of the Clery--Gritsenko product, of a fractional
+weight, or of a formal current envelope.  Before such an identity is
+used, one must supply a row map
+\(\Phi^{\mathrm{V3}}_j\leftrightarrow F_i\) fixing the weight, group,
+multiplier, cover, divisor, Jacobi input, and normalization; a
+Calabi--Yau or orbifold host \(X_j\) with reduced
+obstruction theory, orientation, Behrend sign, Fourier chamber, and a
+partition theorem
+$$
+Z^{X_j}_{\mathrm{red}}=C_jF_i^{-2};
+$$
+and a compact oriented Hall/chiral datum whose protected primitive
+bracket satisfies the Borcherds relations for the same row.  Until these
+data are built, the boundary rows carry only their automorphic product
+and any separately proved denominator theorem.  They carry no CY/DT
+partition identity, no physical BPS factorization algebra, and no
+fractional chiral power.
+\end{remark}
+
+The following compatibility dictionary is restricted to the $N=1$ Igusa
+boundary.  The dictionary itself supplies no row map
+$$\Phi^{\mathrm{V3}}_j\longleftrightarrow F_i$$
+and no physical row-map denominator theorem for any congruence
+row.  The separate Govindarajan CHL/WKB denominator theorem remains
+Theorem~\ref{thm:govindarajan-denominator-rows}.
+
+\input{agent_material/06_vol3_homotopy_positive_cone_dictionary}
+
 %\printbibliography
+\bibliographystyle{amsrn}
 \bibliography{proj}
-\bibliographystyle{ieeetr}
 
 \end{document}
