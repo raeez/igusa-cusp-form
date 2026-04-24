@@ -1,8 +1,10 @@
 % !TEX root = proj.tex
 \documentclass[9pt]{amsart} \usepackage[utf8]{inputenc}
 
-\title{A Borcherds lift of the weak Jacobi form $\phi_{0,1}$,
-generalized Borcherds-Kac-Moody superalgebras and the Igusa cusp form $\Delta_5$}
+\title[The Dirac square root of the Igusa partition function]
+{The Dirac Square Root of the Igusa Partition Function\\[0.35em]
+{\normalfont\scriptsize A Borcherds lift of the weak Jacobi form $\phi_{0,1}$,\\
+generalized Borcherds-Kac-Moody superalgebras and the Igusa cusp form $\Delta_5$}}
 
 \author{Raeez Lorgat } \date{April 2 2020}
 
@@ -20,6 +22,9 @@ generalized Borcherds-Kac-Moody superalgebras and the Igusa cusp form $\Delta_5$
 \newtheorem{question}{Question}
 \newtheorem{conjecture}{Conjecture}
 \newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
 \newtheorem{lemma}{Lemma}
 \newtheorem{remark}{Remark}
 
@@ -43,7 +48,13 @@ generalized Borcherds-Kac-Moody superalgebras and the Igusa cusp form $\Delta_5$
 \newcommand{\Id}{\mathbf{I}}
 \newcommand{\Cone}{\mathcal{C}}
 \newcommand{\Poly}{\mathcal{P}}
+\newcommand{\Aut}{\operatorname{Aut}}
 \newcommand{\bkm}{\mathfrak{g}}
+\newcommand{\sdim}{\operatorname{sdim}}
+\newcommand{\sch}{\operatorname{sch}}
+\newcommand{\sdet}{\operatorname{sdet}}
+\newcommand{\rootmult}{\operatorname{mult}}
+\newcommand{\smult}{\operatorname{smult}}
 %\newcommand{\bkm}{\mathfrak{g}_{\begin{pmatrix}2 & -2 & -2 \\
 %-2 & 2 & -2\\
 %-2 & -2& 2\end{pmatrix}}}
@@ -51,195 +62,187 @@ generalized Borcherds-Kac-Moody superalgebras and the Igusa cusp form $\Delta_5$
 
 \begin{document}
 
+\begin{abstract}
+Let $X=S\times E$, with $S$ a K3 surface and $E$ an elliptic curve.
+Define the reduced D6--D2--D0 index by the Behrend-weighted Euler
+characteristic of $\mathrm{Hilb}^n(X,(\beta_h,d))/E$.  Scalar-square
+branch:
+$$Z^X_{\square}=C/\Delta_5^2.$$
+In the primitive reduced curve-counting chamber this is
+Oberdieck--Pixton; in the Behrend-weighted Hilbert-scheme normalization
+it is an assumption.
+Set
+$$\mathcal D_X^2=C/Z^X_{\square}.$$
+Cusp branch:
+$$\mathcal D_X=\Delta_5
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)>0}(1-q^nr^ls^m)^{f(nm,l)},$$
+where
+$$\phi_{0,1}=\frac12 Z_{\mathrm{K3}}
+=\operatorname{Str}_{\mathcal H_{K3}}q^{L_0-c/24}r^{J_0}
+=\sum f(n,l)q^nr^l.$$
+$$\mathcal D_X^{-1}
+=\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V),$$
+$$\mathcal D_X
+=64q^{1/2}r^{1/2}s^{1/2}\sdet_{\mathcal V}(1-x).$$
+$$\frac1{64}\mathcal D_X(2Z)=\operatorname{den}(\autcor).$$
+The lattice is $\La^{3,2}$; the chamber lies in
+$\La^{2,1}_{II}$; the Weyl vector is
+$$\rho=f_2-\frac12f_3+f_{-2}.$$
+For
+$$\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},$$
+$$f(nm,l)=
+\dim \mathfrak{g}_{\alpha(n,l,m),\overline 0}
+-\dim \mathfrak{g}_{\alpha(n,l,m),\overline 1},\qquad
+q^nr^ls^m=e^{-\pi i(\alpha(n,l,m),z)}.$$
+\end{abstract}
+
 \maketitle
 
-\begin{abstract} Motivated by considerations in arithmetic algebraic geometry, we investigate a relationship between the siegel
-modular form known as the Igusa cusp form $\Delta_5$ of weight $5$ and a
-certain weak Jacobi form $\phi_{0,1}$ of weight $0$ and index $1$. Following
-Kac-Moody, Borcherds, Gritsenko and Nikulin et. al., we work out in
-elementary detail the derivation of an infinite product formula for
-$\Delta_5$ as an expansion at the cusp. In doing so, we give an elementary
-construction of a pair of an infinite dimensional generalized kac-moody
-superalgebra $\bkm$ along with its \textit{automorphic
-correction} $\bkm\subset
-\autcor$, both constructed from an underlying
-real (in the case of $\bkm$) (respectively real and
-imaginary in the case of $\autcor$) root datum.
-Both of these sets of root datum are realized in the geometry of the
-lattice $\La^{3,2}$ of signature $(3,2)$, its hyperbolic
-sublattices $\La^{2,1}, \La^{2,1}_{II}$,the associated Weyl group(s) and
-Weyl vector. The macdonald identity for the automorphic correction
-algebra witnesses the infinite product formula for the cusp form
-$\Delta_5$ via the Weyl-Kac character formula applied to the trivial one
-dimensional representation $\C$. The weight 0 index 1 weak Jacobi form
-$\phi_{0,1}$ is related to $\Delta_5$ as a Jacobi form counting the
-super dimensions of weight spaces in the automorphic
-correction $\autcor$.  \end{abstract}
-% We conclude with a brief
-% interpretation of the dimensions of the weight spaces of
-% $\autcor$ as physical states in a string
-% propagating in a background Calabi-Yau geometry given by $S \times E$
-% where $S$ is a $K3$ surface and $E$ is an elliptic curve. This
-% perspective motivates us to give a short list of formal generating
-% functions of coherent ideal sheaves of algebraic Calabi-Yau three-folds,
-% generalizing the structure found in the case of $S\times E$ and
-% $\Delta_5$.
-
- % \section{Notation and Conventions}
- %
- % \begin{itemize}
- % \item $\Sp_4(\Z)$ definition and generators
- % \item $\La^{3,2}$
- % \item $\La^{1,1}$
- % \item $\fbasis$
- % \item $Z = (z1,z2, newline z2,z3)$
- % \item The $n\times n$ identity matrices given by $\Id_n$
- % \item $\O_{\R}$ has four components
- % \item $\O_{\R,+}$
- % \item type $\IV$ domains $\Hpl^{\IV}_+,\overline{\Hpl^{\IV}_+}$
- % \item
- % \end{itemize}
-
-%\section{Overview}
-
-
-% TODO writeup overview
-% - infinite product formulas and distribution of zeros / poles
-% - geometry of inclusion of cusp
-% - expansion of weyl-kac character formula of kac-moody algebras "at
-%   the cusp"
-% - explicit cartan matrix and kac-moody algebras (recall that every kac-moody
-%
-% - how to discuss singular theta lifts, Harvey-Moore, automorphic
-%   (threshold) corrections, borcherd's automorphic forms with
-%   singularities on grassmannians, leading up to the gritsenko-maas
-%   (additve) borcherds (multiplicative) lifts
-%
-% - how to treat the same, while keeping faithful to stringy
-%   motivations/applications
-
+\clearpage
 \tableofcontents
 
-\section{A motivating conjecture}
-Fix the genus $g = 2$ and consider the integral symplectic groups
-$\Gamma_t$, or so-called \textit{paramodular groups}, and their
-corresponding congruence subgroups of Hecke type
+\section{The one-particle index and its determinant}
 
-$$t,n \in \mathbb{Z}_+: \Gamma_t(N) =
-\{\begin{pmatrix}*&*t&*&*\\*&*&*&*t^{-1}\\*N&*Nt&*&*\\*Nt&*Nt&*t&*\end{pmatrix}
-\in \mathbf{Sp_4}(\mathbb{Q})| *\in\mathbb{Z}\}.$$
-The group $\Gamma_1 = \Gamma_1(1) =  \mathbf{Sp}_4(\mathbb{Z})$ while $\Gamma_t = \Gamma_t(1)$ can be conjugated to the integral
-symplectic group of integral skew-symmetric form with elementary
-divisor $(1,t)$. The corresponding quotients $\mathbb{H}_2/\Gamma_t$ of the genus $2$
-Siegel-upper space are the moduli spaces of $(1,t)$-polarized abelian
-surfaces.
+Put
+$$q=e^{2\pi iz_1},\qquad r=e^{2\pi iz_2},\qquad s=e^{2\pi iz_3}.$$
 
-Gritsenko-Clery\cite{GC} answered the following question
+The one-particle input is the Ramond supertrace on the K3 sigma model:
+$$Z_{\mathrm{K3}}(\tau,z)=
+\operatorname{Tr}_{RR(\mathrm{K3})}
+(-1)^{F_L+F_R}q^{L_0-c/24}r^{J_0},\qquad c=6.$$
+Normalize:
+$$Z_{\mathrm{K3}}(\tau,z)=2\phi_{0,1}(\tau,z),$$
+where $\mathcal H_1$ carries the Ramond ground-state shifted grading and
+$$\phi_{0,1}(\tau,z)
+=\operatorname{Str}_{\mathcal{H}_1}q^{L_0}r^{J_0}
+=\sum_{n\geq 0,\;l\in\Z}f(n,l)q^nr^l.$$
+The virtual graded super vector space $\mathcal H_1$ is fixed by
+$$\sdim(\mathcal H_{1;n,l})=f(n,l).$$
 
-\begin{question}
-Which Siegel modular forms with respect to $\Gamma_t(N)$ (with
-character/multiplier system) vanish exactly along
-$\Gamma_t(N)$-translates of the diagonal
-$\{\begin{pmatrix}a&\\&b\end{pmatrix}|a,b \in \mathbb{H}_1\} \subset
-\mathbb{H}_2$ precisely to order 1?
-\end{question}
+The $q^0$ term is
+$$\phi_{0,1}=r^{-1}+10+r+O(q),$$
+and Borcherds' weight is
+$$\frac{f(0,0)}{2}=5.$$
 
-their answer comes in the form of
+\begin{lemma}[Fock trace and superdeterminant]
+Let
+$$V=\bigoplus_{\lambda\in P}V_\lambda$$
+be a $P$-graded super vector space with finite-dimensional homogeneous
+pieces and let $a_\lambda=\sdim V_\lambda$.  Put
+$$\mathcal F(V)=\operatorname{Sym}(V_{\overline 0})
+\otimes \bigwedge(V_{\overline 1}).$$
+As a formal character,
+$$\sch\mathcal F(V):=
+\sum_{\mu\in P}\sdim\mathcal F(V)_\mu\,x^\mu
+=\prod_{\lambda\in P}(1-x^\lambda)^{-a_\lambda}.$$
+The inverse character is the superdeterminant
+$$\sdet_V(1-x)=\prod_{\lambda\in P}(1-x^\lambda)^{a_\lambda}.$$
+\end{lemma}
 
-\begin{theorem}
-For all possible congruence subgroups $\Gamma_t(N) < \Gamma_t$ there are exactly $8$
-diagonal-divisor modular forms.
-\end{theorem}
+\begin{proof}
+A one-dimensional even generator of weight $\lambda$ contributes
+$1+x^\lambda+x^{2\lambda}+\cdots=(1-x^\lambda)^{-1}$.  A
+one-dimensional odd generator contributes $1-x^\lambda$.  Multiplying
+over a homogeneous basis proves the formula.
+\end{proof}
 
-See \cite{GC} for the full treatment. This writeup concerns the simplest
-specimen from this class, the weight $5$ cuspidal modular form for the group
-$\Gamma_1 = \mathbf{Sp}_4(\mathbb{Z})$ given by Igusa's cusp form
-$\Delta_5$, defined in the following section.
+Write
+$$x^{(n,l,m)}=q^nr^ls^m.$$
+Put
+$$\mathcal V=\bigoplus_{(n,l,m)>0}\mathcal V_{n,l,m},\qquad
+\sdim\mathcal V_{n,l,m}=f(nm,l).$$
+DMVV second quantization \cite{DMVV}:
+$$\sch\mathcal F(\mathcal V)
+=\prod_{(n,l,m)>0}(1-x^{(n,l,m)})^{-f(nm,l)}.$$
+Inverse determinant:
+$$\sdet_{\mathcal V}(1-x)
+=\prod_{(n,l,m)>0}(1-x^{(n,l,m)})^{f(nm,l)}.$$
+Vacuum factor:
+$$v_0(Z)=64q^{1/2}r^{1/2}s^{1/2}.$$
+It is an exterior vacuum prefactor, not a homogeneous summand of
+$\mathcal V$.
 
-One of our motivations for investigating the detailed structure of
-$\Delta_5$, and indeed, each modular form from this class, comes from
-the arithmetic geometry of certain Calabi-Yau threefolds.
+\begin{definition}[Chiral determinant]
+The chiral determinant attached to the one-particle index is
+$$\mathcal{D}_X(Z)
+=v_0(Z)\sdet_{\mathcal V}(1-x)
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)>0}(1-q^nr^ls^m)^{f(nm,l)}.$$
+Its inverse is the chiral BPS factor
+$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}(Z)
+=\mathcal D_X(Z)^{-1}
+=\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}
+\prod_{(n,l,m)>0}(1-q^nr^ls^m)^{-f(nm,l)}.$$
+\end{definition}
 
-Let $(E,e_0)$ be an elliptic curve with an $N$-torsion point $e_0$ and
-let $S$ be an elliptically fibered K3 $$\pi: S \rightarrow
-\mathbb{P}^1$$ admitting sections $$s_1, s_2 : \mathbb{P}^1 \rightarrow
-S$$ with $s_2$ of order $N$ relative to $s_1$, and where we treat $s_1$
-as the zero-section. Then we can form the $N$ sections $$s_1, s_2,
-\ldots, s_k = s + s_2(\pi(s_{k-1})),\ldots, s_N.$$ The product $$S\times
-E$$ admits a free action by the finite group $\Z/N\Z$ given by $$(s,e)
-\mapsto (s + s_2(\pi(s)),e + e_0);$$ and so the quotient $X$ is a projective
-Calabi-Yau threefold. Now consider the
-class of the fiber $F \in Pic(S)$ of the map $\pi$, and form the curve
-class $$\beta_h = \frac{1}{N}(s_1 + \ldots + s_N + hF), \text{ for }
-h\geq 0.$$ We are interested in a certain zeta function of $X$ formed out of
-virtual volumes of the moduli stacks of 1-dimensional sheaves supported
-on $\beta_h$. To define this zeta function, consider $\mathrm{Hilb}^n(X,
-\beta_h)$ the Hilbert scheme of $1$-dimensional subschemes $Z \subset X$
-such that $$[Z] = \beta_h$$ $$\chi(\mathcal{O}_Z) = n$$
-i.e.\ with given algebro-topological invariants of cycle class $\beta_h$
-and euler characteristic $n$. $E$ acts on $S\times E$, and this action
-descends to $X$. We can then define the reduced numerical Donaldson-Thomas
-invariant associtaed to $(\beta_h,n)$
-\cite{DT},\cite{OB} by virtual integration over this quotient stack
-$$\int_{\mathrm{Hilb}^n(X,\beta_h)/E} \nu de = \sum_{k\in \mathbb{Z}}
-k\cdot e(\nu^{-1}(k))$$ where $\nu: \mathrm{Hilb}^n(X,\beta_h)
-\rightarrow \mathbb{Z}$ is Behrend's constructible function. Let
-$<\alpha,\beta>: \int_S \alpha \cup \beta$ be the intersection form on
-$S$, then we have \cite{OB}
+\begin{proposition}
+The determinant constructed above has initial term
+$$64q^{1/2}r^{1/2}s^{1/2},$$
+and
+$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}
+=\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V),$$
+$$\mathcal D_X
+=64q^{1/2}r^{1/2}s^{1/2}\sdet_{\mathcal V}(1-x).$$
+\end{proposition}
 
-\begin{theorem}
-For $X = S\times E$ i.e.\ order $N = 1$ we have $$Z^X(q,t,p)=
-\sum_{h=0}^{\infty}\sum_{d=0}^{\infty}\sum_{n\in\mathbb{Z}}
-\mathbf{DT}^X_{n,(\beta_h,d)}q^{d-1}t^{\frac{1}{2}<\beta_h,\beta_h>}(-p)^n
-= \frac{C}{(\Delta_5)^2}$$ for a constant $C$.\end{theorem} Moreover,
-as will become relevant from later discussion, it is interesting to note
-that the \textit{elliptic genus} of a K3 surface is given by the weak
-jacobi form $2\phi_{0,1}$, defined in section 6. Generalizing slightly,
-then we may consider in addition to $(E,e_0)$ the data $(S,L, g_N,h_M)$
-of a K3 surface $S$ together with lattice polarization $L$, and finite
-order symplectic automorphisms $g_N$ and $h_M$ of orders $N,M$
-necessarily less than or equal to $8$ by a theorem of
-Nikulin\cite{NIKULIN}. Then we may analogously define the twisted zeta
-functions $Z^X_{L,h_M}$ counting $\frac{1}{M}$-fractional sheaves on $X
-= (S\times E)/{\Z/N\Z}$ via numerical (or if we wish, refined)
-Donaldson-Thomas theory. In the numerical case, we have
-\begin{conjecture}
-all eight diagonal divisor modular forms of Gritsenko-Clery arise, up to
-constant $C$, as reciprocal-square roots of $Z^X_{L,h_M}$. Moreover,
-these Siegel paramodular forms all arise as denominator functions of
-generalized Borcherds-Kac-Moody superalgebras, with root multiplicities
-specified by $g_N-h_M$-twisted twined elliptic genera of K3 surfaces.
+\begin{proof}
+Apply the Fock trace lemma to $\mathcal V$:
+$$\sch\mathcal F(\mathcal V)
+=\prod_{(n,l,m)>0}(1-q^nr^ls^m)^{-f(nm,l)},\qquad
+\sdet_{\mathcal V}(1-x)
+=\prod_{(n,l,m)>0}(1-q^nr^ls^m)^{f(nm,l)}.$$
+Multiplication by $v_0(Z)$ gives $\mathcal D_X$; multiplication by
+$v_0(Z)^{-1}$ gives $\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}$.
+\end{proof}
 
-\end{conjecture}
+\begin{definition}[Root character map]
+$$z=z_1f_{-2}+z_2f_3+z_3f_2,\qquad
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}.$$
+With the bilinear form on $\La^{2,1}_{II}$,
+$$q^{1/2}r^{1/2}s^{1/2}=\exp(-\pi i(\rho,z)),$$
+and
+$$q^nr^ls^m=\exp(-\pi i(\alpha(n,l,m),z)).$$
+Under $Z\mapsto2Z$:
+$$\exp(-2\pi i(\rho,z))
+\qquad\textrm{and}\qquad
+\exp(-2\pi i(\alpha(n,l,m),z)).$$
+Thus $\Delta_5(Z)$ is the half-character product and $\Delta_5(2Z)$ is
+the integral denominator-character product.
+\end{definition}
 
-Our treatment follows \cite{GN}, while most of the fundamental ideas
-concerning automorphic corrections of generalized Borcherds-Kac-Moody
-algebras follows Borcherds\cite{B}. We make no claims to originality,
-except in the formulation of the conjecture, in which case we accept all
-responsibility for lack of precision.
+\begin{definition}[Root superdimension]
+$$\smult(\alpha(n,l,m))
+:=\dim \mathfrak{g}_{\alpha(n,l,m),\overline 0}
+-\dim \mathfrak{g}_{\alpha(n,l,m),\overline 1}
+=f(nm,l).$$
+\end{definition}
 
+\section{The normalized cusp form}
 
-\section{Preamble on the cusp form $\Delta_5$}
-
-We freely use results from Freitag\cite{FREITAG:1} and Van der
-Geer\cite{VDGEER:1}. Recall the ring of even weight Siegel modular
-forms $$\mathcal{SM}(\Sp_4(\Z)) = \C[E_4,E_6,\Delta_{10},\Delta_{12}]$$
-generated by two eisenstein series $(E_4,E_6)$ of weights 4 and 6 and
-the two siegel cusp forms $\Delta_{10},\Delta_{12}$ of weights 10 and 12
-respectively. Note that $\Delta_{10}$ is the square of a cusp form
-$\Delta_5$ of weight 5 with a non-trivial multiplier system $\nu_{\Delta_5}$.
-$\Delta_5$ may be explicitly expressed as the product of all ten even theta
-constants $$\Delta_5 = \displaystyle\prod_{\substack{(a,b)\in (\Z/2\Z)^2\\{}^t ab
-\equiv 0 \mod 2}}\nu_{a,b}$$
-where $$\nu_{ab}(z) =\displaystyle\sum_{l\in\Z^2} \exp(\pi i (z[l +
-\frac{1}{2}a] + {}^tbl))$$ using $$z[x] = {}^tx z x.$$
+Freitag \cite{FREITAG:1} and Van der Geer \cite{VDGEER:1}:
+$$\mathcal{SM}(\Sp_4(\Z)) = \C[E_4,E_6,\Delta_{10},\Delta_{12}],$$
+with weights
+$$\mathrm{wt}(E_4,E_6,\Delta_{10},\Delta_{12})=(4,6,10,12).$$
+Square root:
+$$\Delta_{10}=\Delta_5^2,\qquad
+\mathrm{wt}(\Delta_5)=5,\qquad
+\Delta_5|_5 g=\nu_{\Delta_5}(g)\Delta_5.$$
+Theta-constant normalization:
+$$\Delta_5 =
+\prod_{\substack{(a,b)\in (\Z/2\Z)^2\\{}^t ab\equiv 0 \mod 2}}
+\nu_{a,b},$$
+with
+$$\nu_{ab}(z)=
+\sum_{l\in\Z^2}\exp\bigl(\pi i(z[l+\tfrac12a]+{}^tbl)\bigr),
+\qquad z[x]={}^txzx.$$
 
 Let $M = \begin{pmatrix} A & B\\
-C & D\end{pmatrix} \in \Sp_4(\Z)$, then the explicit form of the
-non-trivial multiplier system $$\nu_{\Delta_5}:
-\Sp_4(\Z) \rightarrow \C$$ for $\Delta_5$
-such that $|\nu_{\Delta_5}(g)| = 1$ for all $g \in \Sp_4(\Z)$
-(found by Maass \cite{MAASS:1}) is given by
+C & D\end{pmatrix} \in \Sp_4(\Z)$.  On the standard generators,
+Maass's character \cite{MAASS:1}
+$$\nu_{\Delta_5}:\Sp_4(\Z)\rightarrow \C^\times,\qquad
+|\nu_{\Delta_5}|=1,$$
+is
 $$\nu_{\Delta_5}\begin{pmatrix}0 & \Id_2\\
 -\Id_2 & 0\end{pmatrix} = 1,$$ $$\nu_{\Delta_5}\begin{pmatrix}\Id_2 & B\\
 0 & \Id_2\end{pmatrix} = (-1)^{b_1 + b_2 + b_3},$$
@@ -250,128 +253,113 @@ a_3 & a_4\end{pmatrix} \in \GL_2(\Z)$ and $B = \begin{pmatrix}b_1 &
 b_2\\
 b_2 & b_3\end{pmatrix} \in M_{2\times2}(\Z).$
 
+$\Delta_5$ is a weight-$5$ form with character
+$\nu_{\Delta_5}$, and $\Delta_5^2=\Delta_{10}$ is scalar.
 
+For
+$$Z=\begin{pmatrix}z_1&z_2\\z_2&z_3\end{pmatrix},$$
+$$\Delta_5(Z) =
+\sum_{\substack{n,l,m\equiv 1 \bmod 2\\4nm-l^2>0\\n,m>0}}
+c_\Delta(n,l,m)\exp\bigl(\pi i(nz_1+lz_2+mz_3)\bigr),$$
+with
+$$c_\Delta(1,1,1)=64,\qquad c_\Delta(n,l,m)\in64\Z.$$
+The isotropic cusp identity is
+$$1+\frac1{64}\sum_{t\geq1}c_\Delta(1+2t,1,1)q^t
+=\prod_{k\geq1}(1-q^k)^9.$$
 
-Using the expression in terms of even theta constants as well as the
-explicit form of the multiplier system, we can show that
-in terms of the matrix $Z=\begin{pmatrix}z_0 & z_1\\ z_2 &
-z_3\end{pmatrix}$ that we can express the fourier expansion $$\Delta_5(Z) =
-\displaystyle\sum_{\substack{n,l,m = 1 \textrm{mod} 2,\\4nm - l^2 > 0,\\ n,m > 0}} f(n,l,m)\exp(\pi
-i(n z_1 + l z_2 + mz_3))$$ It is easy to show that $f(1,1,1) = 64$ as
-well as that $64 | f(n,l,m)$ for all $n,l,m$.  Finally, we
-will need the following identity of power series
-
-$$1 + \frac{1}{64} \displaystyle\sum_{n\in \mathbb{N}} f(1+2t, 1, 1)q^t
-= \displaystyle\prod_{k\in
-\mathbb{N}}(1 - q^k)^9$$
-
-\begin{proof}
-Recall the fourier-Jacobi expension of $$\Delta_5(Z) =
-\displaystyle\sum_{\substack{m>0,\\m = 1
-\mod 2}} \phi_{5,m} (z_1,z_2)\exp (\pi i m z_3)$$
-then the first Fourier-Jacobi coefficient is a Jacobi cusp form of index
-$\frac{1}{2}$ and non-trivial character. We'll need the Jacobi
-theta-series $$\nu_{11}(z_1,z_2) = \displaystyle\sum_{n \in \Z} (-1)^n \exp(\frac{\pi
-i}{4} (2n + 1)^2 z_1 + \pi i(2n +1) z_2),$$ a variant of the Jacobi
-triple-product formula yields a product expansion for $$\nu_{11} =
-q^{\frac{1}{8}}r^{-\frac{1}{2}} \displaystyle\prod_{n \geq 1} (1 - q^{n-1} r ) (1 - q^n
-r^{-1}) (1 -q^n)$$ where $q = \exp(2\pi i z_1)$ and $r = \exp(2\pi i
-z_2)$, but
-then $\psi_{5,\frac{1}{2}} = \eta(z_1)^9 \nu_{11}(z_1,z_2)$ is another
-Jacobi cusp form of index $\frac{1}{2}$ and the same character, with
-$$\eta(z_1) = \exp(\frac{\pi i z_1}{12}) \displaystyle\prod_{n\geq 1} (1 - \exp(2\pi i n
-z_1);$$ the
-squares of these Jacobi cusp forms are Jacobi cusp forms of weight $10$
-and index $1$; up to a constant, there is only one of these, and it is
-the first Fourier-Jacobi coefficient of $\Delta_{10} = \Delta_5^2$;
-comparing fourier coefficients of the product expansion we obtain $$\frac{1}{64}
-\phi_{5,1}(z_1,z_2) = \psi_{5,\frac{1}{2}}(z_1,z_2) =
--q^{\frac{1}{2}}r^{-\frac{1}{2}}\displaystyle\prod_{n\geq 1} (1 - q^{n-1}r )(1 -q^n
-r^{-1})(1 - q^n)^{10}$$ the
-desired identity as an application of the Jacobi triple-product identity
-applied to the coefficient of $r^{\frac{1}{2}}$.
+\begin{proof}[Cusp computation]
+Fourier--Jacobi expansion:
+$$\Delta_5(Z) =
+\sum_{\substack{m>0\\m\equiv1\bmod2}}
+\phi_{5,m}(z_1,z_2)\exp(\pi i m z_3).$$
+The first coefficient has weight $5$, index $\frac12$, and the
+non-trivial character.  Put
+$$\nu_{11}(z_1,z_2)=
+\sum_{n\in\Z}(-1)^n
+\exp\left(\frac{\pi i}{4}(2n+1)^2z_1+\pi i(2n+1)z_2\right).$$
+Jacobi triple product:
+$$\nu_{11} =
+q^{1/8}r^{-1/2}\prod_{n\geq1}
+(1-q^{n-1}r)(1-q^nr^{-1})(1-q^n),$$
+where $q=\exp(2\pi iz_1)$ and $r=\exp(2\pi iz_2)$.
+Set
+$$\psi_{5,\frac12}=\eta(z_1)^9\nu_{11}(z_1,z_2),\qquad
+\eta(z_1)=q^{1/24}\prod_{n\geq1}(1-q^n).$$
+Squared form: weight $10$, index $1$.  The one-dimensional
+space contains the first Fourier--Jacobi coefficient of
+$$\Delta_{10}=\Delta_5^2.$$
+Coefficient comparison:
+$$\frac1{64}\phi_{5,1}(z_1,z_2)=\psi_{5,\frac12}(z_1,z_2)
+=-q^{1/2}r^{-1/2}\prod_{n\geq1}
+(1-q^{n-1}r)(1-q^nr^{-1})(1-q^n)^{10}.$$
+Coefficient of $r^{1/2}$:
+$$1+\frac1{64}\sum_{t\geq1}c_\Delta(1+2t,1,1)q^t
+=\prod_{k\geq1}(1-q^k)^9.$$
 \end{proof}
-Together these fundamental properties of the cusp form $\Delta_5$
-will be used to construct a generalized kac moody lie superalgebra with
-denominator identity in terms of $\Delta_5$.
+In the Gritsenko--Clery table \cite{GC}, the $N=1$ row has diagonal
+Humbert divisor of multiplicity one.  Reflection identities:
+$$\Delta_5|_5g=\nu_{\Delta_5}(g)\Delta_5,\qquad
+\Delta_5(s_{\delta_i}Z)=-\Delta_5(Z).$$
 
 
-\section{An isomorphism between
-the symplectic group $\Sp_4(\Z)/\{\pm\Id_5\}$ and the orthogonal group
-$\Orth(\La^{3,2})_+/{\pm\Id_5}$}
+\section{The orthogonal model of the exponents}
 
-Proofs for results of this section can be found in \cite{KNAPP:1}. We
-obtain an isomorphism relating relevant low rank symplectic and
-orthogonal groups.
+Realize the exponent lattice as $q_0^\perp\subset\wedge^2\La^4$.  Let
+$$\La^4=\Z e_1\oplus\Z e_2\oplus\Z e_3\oplus\Z e_4.$$
+For $g\in\SL_4(\Z)$,
+$$\wedge^2g:\wedge^2\La^4\longrightarrow\wedge^2\La^4.$$
+The Pfaffian pairing is
+$$u\wedge v=(u,v)e_1\wedge e_2\wedge e_3\wedge e_4.$$
+The form is even, unimodular, integral, $\SL_4(\Z)$-invariant, and has
+signature $(3,3)$.
 
+Fix
+$$q_0=e_1\wedge e_3+e_2\wedge e_4.$$
+For $x,y\in\La^4$, define
+$$-x\wedge y\wedge q_0
+=B_{q_0}(x,y)e_1\wedge e_2\wedge e_3\wedge e_4.$$
+The stabilizer is
+$$\{g\in \SL(\La^4)\mid(\wedge^2g)q_0=q_0\}\simeq\Sp_4(\Z).$$
 
-Consider the rank 4 free $\Z$-module $$\La^4 = \Z e_1 \oplus \Z e_2
-\oplus \Z e_3 \oplus \Z e_4.$$
+Set
+$$\La^{3,2}=q_0^\perp\subset\wedge^2\La^4.$$
+In the basis
+$$
+f_1=e_1\wedge e_2,\quad
+f_2=e_2\wedge e_3,\quad
+f_3=e_1\wedge e_3-e_2\wedge e_4,\quad
+f_{-2}=e_4\wedge e_1,\quad
+f_{-1}=e_4\wedge e_3.
+$$
+the non-zero pairings are
+$$(f_1,f_{-1})=(f_2,f_{-2})=-1,\qquad (f_3,f_3)=2.$$
+$$\La^{3,2}\simeq\HypPlan\oplus\HypPlan\oplus[2],\qquad
+\HypPlan=\begin{pmatrix}0&-1\\-1&0\end{pmatrix}.$$
 
-Any $\Z$-linear map $g: \La^4 \rightarrow \La^4$ induces a linear map
-$\wedge^2 g : \La^4 \wedge \La^4 \rightarrow \La^4 \wedge \La^4.$ In
-particular, we have an induced action of $\SL_4(\Z)$.
+The type $\IV$ domain is
+$$\Hpl^{\IV}=
+\{Z\in\Proj(\La^{3,2}\otimes\C)\mid (Z,Z)=0,\ (Z,\overline Z)<0\}.$$
+Component:
+$$\Hpl_+^{\IV}=
+\{{}^t(z_2^2-z_1z_3,\ z_3,\ z_2,\ z_1,\ 1)z_0\in\Hpl^{\IV}
+\mid \Imag z_1>0\}.$$
+Writing $y_i=\Imag z_i$,
+$$ (Z,\overline Z)<0\quad\Longleftrightarrow\quad y_1y_3-y_2^2>0.$$
+The period map identifies
+$$\Hpl_+^{\IV}\simeq
+\left\{\begin{pmatrix}z_1&z_2\\z_2&z_3\end{pmatrix}\in\Hpl_2\right\}.$$
 
-We have a (pfaffian) scalar product
-$(,): \La^4 \wedge \La^4 \rightarrow \C$ defined by $u \wedge v =
-(u,v)e_1 \wedge e_2 \wedge e_3 \wedge e_4 \in \wedge^4 \La^4$.  This is
-an $\SL_4(\Z)$ invariant even unimodular integral symmetric bilinear
-form of signature $(3,3)$.
-
-Observe that the for $q = e_1\wedge e_3 + e_2 \wedge e_4 \in \La^4
-\wedge \La^4$ we have $$-x \wedge y \wedge q = B_q(x,y) e_1 \wedge e_2
-\wedge e_3 \wedge e_4$$ and hence the elements $q \in \La^4 \wedge
-\La^4$ can be identified with integral skew-symmetric bilinear forms on
-$\La^4$.
-
-
-It follows that $$ \{ g : \La^4 \rightarrow \La^4 | (g \wedge g)(e_1
-\wedge e_3 + e_2 \wedge e_4) = e_1 \wedge e_3 + e_2 \wedge e_4 \} \simeq
-\Sp_4(\Z).$$
-
-Hence the lattice $$\La^{3,2} = (e_1 \wedge e_3 + e_2 \wedge e_4)^{\perp}
-\subset \La^4 \wedge \La^4$$ is isomorphic to $$\La^{3,2} \simeq \HypPlan \oplus \HypPlan \oplus [2]$$
-with $[2]$ the one dimensional $\Z$ lattice with inner product given by
-the matrix $(2)$ and $\HypPlan$ the standard integral hyperbolic plane i.e.\ a lattice with
-quadratic form $\begin{pmatrix}0 & -1\\ -1 & 0\end{pmatrix}$
-
-Next we fix a basis $\fbasis$ in $\La^{3,2}$ given by
-$$ (f_1 = e_1 \wedge e_2,$$
-$$ f_2 = e_2 \wedge e_3,$$
-$$ f_3 = e_1 \wedge e_3 - e_2 \wedge e_4, $$
-$$ f_{-2} = e_4 \wedge e_1, $$
-$$ f_{-1} = e_4 \wedge e_3)$$
-
-Now the real orthogonal group $\Orth_{\R}(\La^{3,2}) =
-\Orth_{\R}(\La^{3,2}\otimes \R)$ acts on the domain $$\Hpl^{\IV} = \{ Z \in
-\Proj(\La^{3,2} \otimes \C) | (Z,Z) = 0, (Z, \overline{Z}) < 0\} = \Hpl_+^{\IV}
-\cup \overline{\Hpl^{\IV}_+}$$
-
-where we have (in the basis of the $\fbasis$ given above
-$$\Hpl_+^{\IV} = \{ Z = {}^t((z_2^2 - z_1 z_3), z_3, z_2, z_1, 1)\cdot z_0
-\in \Hpl^{\IV} |\Imag(z_1) > 0 \},$$ is the classical homogenous domain
-of type $\IV$. Note that the condition $(Z,\overline{Z})<0$ is equivalent to $y_1 y_3 -
-y_2^2 > 0$ where the $y_i = \Imag(z_i)$.
-
-Then it is easy to see that the domain $\Hpl_+^{\IV}$ coincides with the
-Siegel upper half plane, $\Hpl_2$ after we identify points of
-$\Hpl_+^{\IV}$ with symmetric matrices $\begin{pmatrix} z_1 & z_2\\ z_2 &
-z_3\end{pmatrix}$.
-
-The real orthogonal group $\Orth_{\R}(\La^{3,2})$ has four connected
-components. We denote by $\Orth_{\R}(\La^{3,2})_+$ the subgroup of
-$\Orth_{\R}(\La^{3,2})$ of index $2$ consisting of those elements which
-leave $\Hpl_+^{\IV}$ invariant. The kernel of the action of
-$\Orth_{\R}(\La^{3,2})_+$ on $\Hpl_+^{\IV}$ is given by $\pm \Id_5$. Since
-$\La^{3,2}$ is odd-dimensional, the group $\Orth_{\R}(\La^{3,2})_+ =
-\pm\Id_5\SO_{\R}(\La^{3,2})_+$ where $\SO_{\R}(\La^{3,2})_+$ is the
-subgroup of elements with real spin-norm equal to $1$. Then we denote
+Let $\Orth_{\R}(\La^{3,2})_+$ be the index-two subgroup preserving
+$\Hpl_+^{\IV}$.  Its kernel on $\Hpl_+^{\IV}$ is $\{\pm\Id_5\}$, and
+$$\Orth_{\R}(\La^{3,2})_+=\{\pm\Id_5\}\SO_{\R}(\La^{3,2})_+,$$
+where $\SO_{\R}(\La^{3,2})_+$ has real spin-norm $1$.  Put
 $$\Orth(\La^{3,2})_+ = \Orth_{\R}(\La^{3,2})_+ \cap \Orth(\La^{3,2})$$
-and $$\SO(\La^{3,2})_+ = \SO_{\R}(\La^{3,2})_+ \cap \Orth(\La^{3,2})$$
+and
+$$\SO(\La^{3,2})_+=\SO_{\R}(\La^{3,2})_+\cap\Orth(\La^{3,2}).$$
 
-It is now an elementary exercise to realize concretely the images of the
-generators of $\Sp_4(\Z)$ given for $M=\begin{pmatrix} m_1 & m_2\\
-m_2 & m_3\end{pmatrix}$ such that $M \in M_{2\times2}(\Z)$,
+The three Siegel generator types act on $q_0^\perp$, in the basis
+$\fbasis$, by the following matrices.  For
+$$M=\begin{pmatrix}m_1&m_2\\m_2&m_3\end{pmatrix},$$
 $$\wedge^2(g_0) = \wedge^2(\begin{pmatrix}0 & \Id_2 \\ -\Id_2 &
 0\end{pmatrix} = \begin{pmatrix}
 0 & 0 & 0 & 0 & -1\\
@@ -381,10 +369,10 @@ $$\wedge^2(g_0) = \wedge^2(\begin{pmatrix}0 & \Id_2 \\ -\Id_2 &
 -1 & 0 & 0 & 0 & 0
 \end{pmatrix},$$
 $$\wedge^2(g_{M \in M_{2\times2}(\Z)}) = \wedge^2(\begin{pmatrix}\Id_2 & M\\ 0 &
-\Id_2\end{pmatrix} = \begin{pmatrix}1 & -m_1 & 2m_2 & -m_3 & m^2 - m_1 m_2\\
+\Id_2\end{pmatrix} = \begin{pmatrix}1 & -m_1 & 2m_2 & -m_3 & m_2^2 - m_1 m_3\\
 0 & 1 & 0 & 0 & m_3\\
 0 & 0 & 1 & 0 & m_2\\
-0 & 0 & 0 & 0 & m_1\\
+0 & 0 & 0 & 1 & m_1\\
 0 & 0 & 0 & 0 & 1\end{pmatrix},$$
 $$\wedge^2((g_A)_{A\in GL_2(\Z)}) = \wedge^2(\begin{pmatrix}{}^tA^{-1} &
 0\\0 & A\end{pmatrix} = \text{det}(A)\begin{pmatrix}1 & 0 & 0 & 0 & 0\\
@@ -393,477 +381,656 @@ $$\wedge^2((g_A)_{A\in GL_2(\Z)}) = \wedge^2(\begin{pmatrix}{}^tA^{-1} &
 0 & a_3^2 & -2a_3a_4 & a_4^2 & 0\\
 0 & 0 & 0 & 0 & 1\end{pmatrix}$$
 
-Hence we have
-
 \begin{lemma}
-The correspondence $\wedge^2$ defines an isomorphism $$\wedge^2 :
-\Sp_4(\Z)/\{\pm \Id_5\} \rightarrow \SO_+(\La^{3,2}) \simeq
-\Orth(\La^{3,2})_+/\{\pm\Id_5\}$$ yielding a commutative square
+The exterior-square representation is
+$$\wedge^2 :
+\Sp_4(\Z)/\{\pm \Id_4\} \rightarrow \SO_+(\La^{3,2}) \simeq
+\Orth(\La^{3,2})_+/\{\pm\Id_5\}.$$
+For every $g\in\Sp_4(\Z)$,
 
   \[ \begin{tikzcd}
 \Hpl_2 \arrow{r}{} \arrow[swap]{d}{} & \Hpl_2 \arrow{d}{} \\%
 \Hpl_+^{\IV} \arrow{r}{g \wedge g}& \Hpl_+^{\IV}
 \end{tikzcd}
 \]
-
-
-involving isomorphisms $\Hpl_2 \rightarrow \Hpl_+^{\IV}$ and arbitrary
-$g \in \Sp_4(\Z).$
-
 \end{lemma}
 
-\section{$\Delta_5$ and the lattice $\La^{3,2}$}
+\begin{proof}
+The Pfaffian pairing is preserved by $\wedge^2\SL_4$.  The subgroup
+fixing
+$$q_0=e_1\wedge e_3+e_2\wedge e_4$$
+is the group preserving the alternating form $B_{q_0}$, namely
+$\Sp_4(\Z)$.  Its action preserves $q_0^\perp=\La^{3,2}$ and the displayed
+component of the type-$\IV$ domain.  The kernel on $q_0^\perp$ is
+$\{\pm\Id_4\}$.  The exceptional isomorphism
+$\PSp_4(\R)\simeq \SO_{\R}(3,2)_+$ identifies the image with
+$\SO_+(\La^{3,2})$.  The displayed matrices are the integral generators
+on both sides.  Substitution of
+$${}^t(z_2^2-z_1z_3,z_3,z_2,z_1,1)z_0$$
+into the two actions yields the
+commutative square.
+\end{proof}
 
-Consider some fixed primitive hyperbolic sublattice
+\section{The Weyl chamber and the Weyl vector}
+
+Fix the primitive hyperbolic sublattice
 $$\La^{2,1} = \HypPlan \oplus [2] \simeq \Z f_2 \oplus \Z f_3 \oplus \Z
 f_{-2} \subset \La^{3,2}$$
 
-Extending automorphisms $\phi \in \Orth(\La^{2,1})$ to be the identity
-on $(\La^{2,1})^{\perp}$ yields an embedding $\Orth(\La^{2,1})
-\rightarrow \Orth(\La^{3,2})$, hence we can investigate the automorphy
-of $\Delta_5$ with respect to the subgroup $\Orth(\La^{2,1})$.
+Extend $\phi\in\Orth(\La^{2,1})$ by the identity on
+$(\La^{2,1})^\perp$, giving
+$$\Orth(\La^{2,1})\hookrightarrow\Orth(\La^{3,2}).$$
+Via this embedding, regard $\Delta_5$ as an automorphic form for
+$\Orth(\La^{2,1})$.
 
-%TODO definition of primitive element
-% TODO expand on: every primitive element (or any other integral symmetric
-% bilinear form) with $(\alpha,\alpha) > 0 and (\alpha,\alpha)|2(\La^{2,1},\alpha)$
-
-Recall for example from Kac \cite{KAC:1} that to every primitive element $(\alpha \in
-\La^{2,1})$ satisfying $(\alpha,\alpha) > 0$ and $(\alpha, \alpha) |
-2(\La^{2,1}, \alpha)$ defines a reflection $$s_{\alpha}: x \mapsto
-2\frac{(x,\alpha)}{(\alpha, \alpha)}\alpha$$ for all $x \in \La^{2,1}$. Then
+For a primitive element $\alpha \in \La^{2,1}$ satisfying
+$(\alpha,\alpha)>0$ and
+$$(\alpha,\alpha)\mid 2(\La^{2,1},\alpha),$$
+Kac's reflection formula \cite{KAC:1} is
+$$s_{\alpha}:x\mapsto x-2\frac{(x,\alpha)}{(\alpha,\alpha)}\alpha.$$
 $s_{\alpha}(\alpha) = -\alpha$ and $s_{\alpha}|_{\alpha^{\perp}}$ is the
-identity. Hence for all $\alpha \in \La^{2,1}$ satisfying
-$(\alpha,\alpha) = 2$ we get a reflection $$s_{\alpha}: x \mapsto
-(x,\alpha)\alpha.$$
+identity. For all $\alpha \in \La^{2,1}$ satisfying
+$(\alpha,\alpha) = 2$ this is
+$$s_{\alpha}: x \mapsto
+x - (x,\alpha)\alpha.$$
 
-Now observe
 \begin{lemma}
-Consider $\alpha$ an element with square $2$, then if $\alpha \in
-\{\delta_1 = 2f_2 -f_3, \delta_2 = 2f_{-2} - f_3, \delta_3 = f_3\}$ we
-have
+Let $(\alpha,\alpha)=2$.  For
+$$\delta_1=2f_2-f_3,\qquad
+\delta_2=2f_{-2}-f_3,\qquad
+\delta_3=f_3,$$
 $$\Delta_5(s_{\alpha}Z) = - \Delta_5(Z)$$
-while if $\alpha \in \{f_{-2} - f_2, f_2 - f_3, f_2 + f_3\}$ then
-
+when $\alpha\in\{\delta_1,\delta_2,\delta_3\}$.  For
+$$\alpha\in\{f_{-2}-f_2,\ f_2-f_3,\ f_2+f_3\},$$
 $$\Delta_5(s_{\alpha}Z) = \Delta_5(Z)$$
 \end{lemma}
 \begin{proof}
-Denoting by $\overline{U} = \wedge^2(\begin{pmatrix}{}^tU^{-1} & 0\\ 0 & U\end{pmatrix})$ with $U \in \GL_2(\Z)$ then we have
-$$s_{f_{-2} - f_2} = -\overline{\begin{pmatrix}0 & 1\\ 1 &0\end{pmatrix}}, s_{f_3} = - \overline{\begin{pmatrix}1& 0\\  0 &-1\end{pmatrix}}, s_{f_2 - f_3} =
--\overline{\begin{pmatrix}1 & -1\\ 0 & -1\end{pmatrix}}.$$ Then the result follows from Maas' explicit
-formula for the multiplier of $\Delta_5.$
+Let
+$$\overline U=\wedge^2\begin{pmatrix}{}^tU^{-1}&0\\0&U\end{pmatrix},
+\qquad U\in\GL_2(\Z).$$
+Required reflections:
+$$s_{f_{-2}-f_2}=-\overline{\begin{pmatrix}0&1\\1&0\end{pmatrix}},
+\qquad
+s_{f_3}=-\overline{\begin{pmatrix}1&0\\0&-1\end{pmatrix}},
+\qquad
+s_{f_2-f_3}=-\overline{\begin{pmatrix}1&-1\\0&-1\end{pmatrix}}.$$
+Maass's character has value $-1$ on
+$s_{\delta_i}$ and $+1$ on the three remaining reflection classes.
 \end{proof}
 
-Now observe that since $\La^{2,1}$ is hyperbolic of signature $(2,1)$
-then $\La^{2,1}$ defines a cone $\Cone(\La^{2,1}) = \{ x \in \La^{2,1}
-\otimes \R | (x,x) < 0\}$. Then $\Cone(\La^{2,1})$ is a union of two
-half-cones; We select one of these cones $\Cone(\La^{2,1})_+$ by the
-constraint that the complexified cone $$\Omega(\Cone(\La^{2,1})_+) = \La^{2,1} \otimes \R
-+i\Cone(\La^{2,1})_+ \subset \Hpl^{\IV}_+$$ hence for $$z = z_3 f_2 + z_2
-f_3 + z_1 f_{-2} \in \Omega(\Cone(\La^{2,1}))$$ then the corresponding
-point $$Z = {}^t ((z_2^2 - z_1z_3), z_3, z_2, z_1, 1) \cdot z_0 \in
-\Hpl^{\IV}_+.$$ Denote by $\Orth(\La^{2,1})_+$ the subgroup of
-$\Orth(\La^{2,1})$ of index 2 fixing the half-cone
-$\Cone(\Lambda^{2,1})_+$. Then since $\La^{2,1}$ is a hyperbolic
-lattice, the group $\Orth(\La^{2,1})_+$ is discrete in the corresponding
-hyerbolic space $$\Cone(\La^{2,1})_+ / \R_{>0}$$ where we take the
-qotient by the strictly positive real numbers' scaling action.
-Hyperbolicity also implies that the hyperbolic space
-$\Cone(\La^{2,1})_+ / \R_{>0}$ has a fundamental domain of finite
-volume. It follows that any reflection $s_{\alpha}$ with $\alpha \in
-\La^{2,1}$ satisfying $(\alpha,\alpha) > 0$ is a reflection in the
-hyperplane $$\Hpl_{\alpha} = \{ \R_{>0}x \in \Cone(\La^{2,1})_+/\R_{>0} |
-(x,\alpha) = 0\}.$$ Hence this reflection maps the half-space
-$$\Hpl_{\alpha,+} = \{\R_{>0} x \in \Cone(\La^{2,1})_+/\R_{>0} |
-(x,\alpha) \leq  0\}$$ to the opposite half-space $\Hpl_{-\alpha}$ which
-are both bounded by the hyperplane $\Hpl_{\alpha}$. We call $\alpha$
-\textit{orthogonal} to both $\Hpl_{\alpha}$ and $\Hpl_{\alpha,+}$. Taken
-together, all the reflections of $\Lambda^{2,1}$ generate a reflection
-subgroup $$W(\La^{2,1}) \subset \Orth(\La^{2,1})_+.$$
+\noindent The time-like cone is
+$$\Cone(\La^{2,1}) = \{ x \in \La^{2,1}
+\otimes \R | (x,x) < 0\}.$$
+Let $\Cone(\La^{2,1})_+$ be the component for which
+$$\Omega(\Cone(\La^{2,1})_+):=
+\La^{2,1}\otimes\R+i\Cone(\La^{2,1})_+\subset\Hpl^{\IV}_+.$$
+For
+$$z=z_3f_2+z_2f_3+z_1f_{-2}\in\Omega(\Cone(\La^{2,1})_+),$$
+the type $\IV$ point is
+$$Z={}^t(z_2^2-z_1z_3,\ z_3,\ z_2,\ z_1,\ 1)z_0.$$
+Let $\Orth(\La^{2,1})_+$ be the index-two subgroup fixing
+$\Cone(\La^{2,1})_+$.  It acts discretely on
+$$\Cone(\La^{2,1})_+/\R_{>0}.$$
+
+For $(\alpha,\alpha)>0$,
+$$\Hpl_{\alpha}=
+\{\R_{>0}x\in\Cone(\La^{2,1})_+/\R_{>0}\mid (x,\alpha)=0\},$$
+and
+$$\Hpl_{\alpha,+}=
+\{\R_{>0}x\in\Cone(\La^{2,1})_+/\R_{>0}\mid (x,\alpha)\leq0\}.$$
+Let $W(\La^{2,1})$ be the subgroup generated by these positive-norm
+reflections:
+$$W(\La^{2,1})\subset\Orth(\La^{2,1})_+.$$
 
 
-The lattice $\La^{2,1}$ is special, in particular because the
-automorphism group is known explicitly. Here we list the facts we will
-need from \cite{NIKULIN}
-The group $\Orth(\La^{2,1})_+ = W^{(2)}(\La^{2,1})$ where the index
-$(2)$ indicates the subgroup generated by reflections in all elements of
-$=\La^{2,1}$ with square $2$. Analagously, we define
-$\Delta^{(k)}(\Lambda^{2,1})$ the set of all primitive elements
-$\delta \in \La^{2,1}$ with $(\delta,\delta) = k$ which define
-reflections $s_{\delta}$ of $\La^{2,1}$ and similarly $W^{(k)}$ denotes
-the reflection group generated by all these reflections $s_{\delta}$.
-Thus, we can reformulate what we have seen so far in this language, by
-stating that $\Orth(\La^{2,1})_+$ is generated by reflections in
-$\Delta^{(2)}(\La^{2,1})$ and any element of this set $\delta$
-corresponds to a reflection $s_{\delta}$ of one of two types:
+Nikulin's theorem for $\HypPlan\oplus[2]$ \cite{NIKULIN}:
+$$\Orth(\La^{2,1})_+=W^{(2)}(\La^{2,1}),$$
+where $W^{(2)}$ is generated by reflections in square-$2$ vectors.
+For $k>0$ put
+$$\Delta^{(k)}(\La^{2,1})=
+\{\delta\in\La^{2,1}\mid \delta\ \text{primitive},\
+(\delta,\delta)=k,\ s_\delta\in\Orth(\La^{2,1})\}.$$
+Each $\delta\in\Delta^{(2)}(\La^{2,1})$ has one of two divisibilities:
 \begin{itemize}
 \item Type I: $(\delta, \La^{2,1}) = \Z$
 \item Type II: $(\delta, \La^{2,1}) = 2\Z$
 \end{itemize}
 
-We introduce sublattices $\La^{2,1}_I$ and $\La^{2,1}_{II}$ which are
-generated by elements $\delta_I$ or $\delta_{II}$ of type $I$ and $II$
-respectively. Then we have
+The type sublattices are
+$$\La^{2,1}_I=
+\{mf_2+lf_3+nf_{-2}\in\La^{2,1}\mid m+l+n\equiv0\pmod2\},$$
+$$\La^{2,1}_{II}=
+\{mf_2+lf_3+nf_{-2}\in\La^{2,1}\mid m\equiv n\equiv0\pmod2\}.$$
+Type I roots lie in $\La^{2,1}_I$; type II roots lie in
+$\La^{2,1}_{II}$.  The reflection subgroups are normal, with indices
+$$[W^{(2)}(\La^{2,1}):W^{(2)}(\La^{2,1}_I)]=2,\qquad
+[W^{(2)}(\La^{2,1}):W^{(2)}(\La^{2,1}_{II})]=6.$$
 
-$$\La^{2,1}_I = \{m f_2 + l f_3 + n f_{-2} \in \La^{2,1} | m + l + n = 0 \mod 2\}$$
+The chambers are
+$$\Poly'=\bigcap_{\delta\in\Poly'_{prim}}\Hpl_{\delta,+},
+\qquad \Poly'\in\{\Poly,\Poly_I,\Poly_{II}\},$$
+with walls
+$$\Poly_{prim}=\{f_2-f_3,\ f_{-2}-f_2,\ f_3\},$$
+$$\Poly_{I,prim}=\{f_2-f_3,\ f_{-2}-f_2,\ f_2+f_3\},$$
+$$\Poly_{II,prim}=\{\delta_1,\delta_2,\delta_3\}.$$
+For
+$$\Aut(\Poly')=\{g\in\Orth(\La^{2,1})_+\mid g\Poly'=\Poly'\},$$
+$$\Aut(\Poly)=1,\qquad
+\Aut(\Poly_I)=\langle s_{f_3}\rangle,\qquad
+\Aut(\Poly_{II})\simeq S_3,$$
+with $\Aut(\Poly_{II})$ generated by
+$s_{f_2-f_3}$ and $s_{f_{-2}-f_2}$.  The chamber decomposition is
+$$\Orth(\La^{2,1})_+
+\simeq W^{(2)}(\La^{2,1})
+\simeq W^{(2)}(\La^{2,1}_I)\rtimes\Aut(\Poly_I)
+\simeq W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II}).$$
 
-and
-
-$$\La^{2,1}_{II} = \{m f_2 + l f_3 + n f_{-2} \in \La^{2,1} | m = n =  0 \mod 2\}$$
-
-and an element $\delta \in \Delta^{(2)}(\La^{2,1})$ has type $I$
-(respectively type $II$) if and only if $\delta \in \La^{2,1}_I$
-(respectively $\delta \in \La^{2,1}_{II}$). It follows that the
-subgroups of $\Orth(\La^{2,1})_+$ generated by all reflections of type
-$I$ (respectively type $II$) are given by $W^{(2)}(\La^{2,1}_I)$
-(respectively $W^{(2)}(\La^{2,1}_{II})$.) All lattices $\La^{2,1},
- \La^{2,1}_I$ and $\La^{2,1}_{II}$ are $W^{(2)}(\La^{2,1})$ invariant and
- both subgroups of reflections of type $I$ and $II$ are normal in
- $W^{(2)}(\La^{2,1})$. The index of $W^{(2)}(\La^{2,1}_I)$ as a subgroup
- is 2, while the index of $W^{(2)}(\La^{2,1}_{II})$ is $6$. We have
- fundamental polyhedra $\Poly, \Poly_I$ and $\Poly_{II}$ for each
- respective reflection group; denoting by $\Poly' \in \{\Poly, \Poly_I,
- \Poly_{II}\}$ we can express these polyhedra explictly in each case by
- the intersection of all hyperplanes $$\displaystyle\bigcap_{\delta \in
- \Poly'_{prim}} \Hpl_{\delta,+}$$ determined by minimal sets of
- primitive elements of positive square (in this case, square $2$) in
- $\La^{2,1}$. These sets are given explicitly by $\Poly'_{prim}$ of
- (primitive) orthogonal vectors to the given polyhedra by
-
- $$\Poly_{prim} = \{f_2 - f_3, f_{-2} - f_2, f_3\}$$
- $$\Poly_{I,prim} = \{f_2 -f_3, f_{-2} - f_2, f_2 + f_3\}$$
- $$\Poly_{II,prim} = \{\delta_1, \delta_2, \delta_3\}$$
-It follows that the three types of reflection groups $W^{(2)}(\La^{2,1}),
-W^{(2)}(\La^{2,1}_I)$ and $W^{(2)}(\La^{2,1}_{II})$ are generated by
-reflections in faces of each of the fundamental polyhedra respectively. We denote
-by $$Aut(\Poly') = \{g \in \Orth(\La^{2,1})_+ | g \Poly' = \Poly' \}$$ the
-group of symmetries of each fundamental polyhedron $\Poly'$, then the group
-$Aut(\Poly)$ is trivial, while the group $Aut(\Poly_{I})$ has order
-$2$ and is generated by $s_{f_3}$, while the group $Aut(\Poly_{II})
-\simeq S_3$ and is generated by $s_{f_2 -f_3,}, s_{f_{-2} - f_2}$. So we
-can realize $$\Orth(\La^{2,1})_+ \simeq W^{(2)}(\La^{2,1}) \simeq W^{(2)}(\La^{2,1}_I) \rtimes Aut(\Poly_{I}) \simeq
-W^{(2)}(\La^{2,1}_{II}) \rtimes Aut(\Poly_{II})$$
-
-To summarize, the automorphy of $\Delta_5$ with respect to subgroups of
-$\Orth(\La^{2,1})$ can be expressed as
+Multiplier restriction:
 
 \begin{lemma}
-$\Delta_5$ is either invariant or anti-invariant with respect to elements
-of the group $\Orth(\La^{2,1})_+$. By our explicit classification above, we can
-distinguish two cases:
+$\Delta_5$ is invariant or anti-invariant under $\Orth(\La^{2,1})_+$:
 \begin{itemize}
-  \item when $w \in W^{(2)}(\La^{2,1}_I)$ and $a \in Aut(\Poly_{I})$ we
-  have
+  \item for $w \in W^{(2)}(\La^{2,1}_I)$ and $a \in \Aut(\Poly_{I})$,
   $$\Delta_5(w \cdot a Z) = \text{det}(a) \Delta_5(Z)$$
-  \item when $w \in W^{(2)}(\La^{2,1}_{II})$ and $a \in Aut(\Poly_{II})$ we
-  have
+  \item for $w \in W^{(2)}(\La^{2,1}_{II})$ and $a \in \Aut(\Poly_{II})$,
   $$\Delta_5(w \cdot a Z) = \text{det}(w) \Delta_5(Z)$$
 \end{itemize}
 
 \end{lemma}
-%\begin{proof}
-%\end{proof}
+\begin{proof}
+The signs on the generating reflections are computed from the displayed
+Maass multiplier.  The semidirect-product decompositions extend
+the formulas to all displayed elements.
+\end{proof}
 
-Next let us investigate the cone $\Delta(\La^{2,1}_{II})_+ = \R_{\geq 0} \delta_1 + \R_{\geq 0} \delta_2
-+ \R_{\geq 0} \delta_3$ along with its dual cone
+Set
+$$\Delta(\La^{2,1}_{II})_+
+= \R_{\geq 0} \delta_1 + \R_{\geq 0} \delta_2
++ \R_{\geq 0} \delta_3$$
+and
 $$\Delta(\La^{2,1}_{II})_+^* = \{ x \in \La^{2,1} \otimes \R | (x,
-\delta_i) \leq 0 \}.$$ Since $\Poly_{II} \subset \Cone(\La^{2,1})_+ /
-\R_{>0}$ has finite volume in the hyperbolic space and since the cone
-$\overline{\Cone(\La^{2,1})_+} = \overline{\Cone(\La^{2,1})_+^*}$ is
-self-dual, the above is equivalent to the sequence of embeddings of
-cones
+\delta_i) \leq 0 \}.$$
+For the finite-volume chamber $\Poly_{II}$, the dual cone obeys
 $$\Delta(\La^{2,1}_{II})_+^* \subset
-\overline{\Cone(\La^{2,1})_+} \subset  \Delta(\La^{2,1}_{II})_+$$
-We stress this property is key to our construction, and is actually equivalent to
-finite volume of $\Poly_{II}$.
+\overline{\Cone(\La^{2,1})_+} \subset  \Delta(\La^{2,1}_{II})_+.$$
 
-Another important property of the group $W^{(2)}(\Poly_{II})$ is the
-existence of a \textit{Lattice Weyl vector}. This is an element $\rho
-\in \Poly_{II} \otimes \Q$ satisfying $$(\rho, \delta_i) =
--\frac{(\delta_i,\delta_i)}{2} = -1$$ for any $\delta_i \in \Poly_{II}.$
-But then by the Gram matrix of the $\delta_i$
+The Weyl vector is determined by
+$$ (\rho,\delta_i)=-\frac{(\delta_i,\delta_i)}{2}=-1,\qquad i=1,2,3.$$
+Since
 
 $$(\delta_i,\delta_j) = \begin{pmatrix}2 & -2 & -2\\-2 & 2 & -2\\-2 & -2 & 2\end{pmatrix}$$
-we have $$\rho = \frac{1}{2}\delta_1 + \frac{1}{2}\delta_2 + \frac{1}{2}\delta_3 = f_2 - \frac{1}{2}f_3 + f_{-2}$$
+one obtains
+$$\rho = \frac{1}{2}\delta_1 + \frac{1}{2}\delta_2 + \frac{1}{2}\delta_3 = f_2 - \frac{1}{2}f_3 + f_{-2}.$$
 
-Identifying $\La^{2,1}\otimes \Q \simeq \La^{2,1}_{II} \otimes \Q$,
-then it is clear that $\rho \in \Delta(\La^{2,1}_{II})_+^*$ hence
-by the sequence of embeddings of cones above we have $\rho \in
-\Cone(\La^{2,1})_+ = \Cone(\La^{2,1}_{II})_+$.
+Also
+$$\rho \in
+\Cone(\La^{2,1})_+ = \Cone(\La^{2,1}_{II})_+.$$
 
-Now we use the reflection group $W^{(2)}(\La^{2,1}_{II})$ to study the
-fourier coefficients of $\Delta_5$. Again fix  $z = z_1 f_{-2} + z_2 f_3 + z_3 f_2 \in \La^{2,1} \otimes \R + i\Cone(\La^{2,1})_+ = \La^{2,1}_{II} \otimes \R + i\Cone(\La^{2,1}_{II})_+$ as above. Then the lattice
+Fix
+$$z = z_1 f_{-2} + z_2 f_3 + z_3 f_2
+\in \La^{2,1} \otimes \R + i\Cone(\La^{2,1})_+
+= \La^{2,1}_{II} \otimes \R + i\Cone(\La^{2,1}_{II})_+.$$
+The dual lattice is
 $$(\La^{2,1}_{II})^* = \Z \frac{1}{2} f_2 + \Z \frac{1}{2} f_3 + \Z \frac{1}{2} f_{-2} = \frac{1}{2}\La^{2,1}$$
 
-Thus for $n,l,m \in \Z$ we have $n \equiv m \equiv l \equiv 1 \mod 2$,
+For $n,l,m \in \Z$ with $n \equiv m \equiv l \equiv 1 \mod 2$,
 $n,m > 0$ and
-$4nm - l^2 > 0$, and hence we can express $$\frac{1}{64}f(n,l,m)\exp(\pi i (n z_1 + lz_2 + m z_3)) $$ $$= \frac{1}{64} f(n,l,m) \exp(- \pi i (nf_2 - l f_3
-\frac{1}{2} + mf_{-2}, z))$$
-$$= m(a) \exp (-\pi i(\rho +a, z)),$$
-where $$a = (n-1) f_2 - (l-1)\frac{1}{2} f_3 + (m-1) f_2 \in (\La^{2,1})^*
-= \frac{1}{2} \La^{2,1}_{II}$$ and $$m(a) = -\frac{1}{64} f(n,l,m).$$ By
-the properties at the end of the pre-amble on the cusp form $\Delta_5$, we
-see $\rho + a \in \Cone(\La^{2,1})_+$, $m(a) \in \Z$ and $m(0) = -1$.
+$4nm - l^2 > 0$, set
+$$a = (n-1) f_2 - \frac{l-1}{2} f_3 + (m-1) f_{-2},
+\qquad
+m(a) = -\frac{1}{64} c_\Delta(n,l,m).$$
+$$\rho+a=nf_2-\frac l2f_3+mf_{-2},$$
+and
+$$\frac{1}{64}c_\Delta(n,l,m)\exp(\pi i (n z_1 + lz_2 + m z_3)) $$
+$$= \frac{1}{64} c_\Delta(n,l,m)
+\exp\left(- \pi i\left(nf_2-\frac{l}{2}f_3+mf_{-2}, z\right)\right)$$
+$$= -m(a) \exp (-\pi i(\rho +a, z)),$$
+with
+$$a\in(\La^{2,1})^*=\frac{1}{2}\La^{2,1}_{II}.$$
+The normalization $c_\Delta(1,1,1)=64$ fixes $m(0)=-1$.  Since
+$c_\Delta(n,l,m)\in64\Z$, all $m(a)$ are integral.  The inequality
+$4nm-l^2>0$ implies
+$$\rho+a\in \Cone(\La^{2,1})_+.$$
 
-Expressing the type $II$ case in the third lemma above in terms of the
-lattice weyl vector $\rho$, the reflection group
-$W^{(2)}(\La^{2,1}_{II})$ and the $m(a)$, we see
-
-$$\frac{1}{64} \Delta_5(Z) = \displaystyle\sum_{w \in W^{(2)}(\La^{2,1}_{II})} \text{det}(w) ( \displaystyle\sum_{\rho +a \in (\La^{2,1}_{II})^* \cap \La^{2,1}_{II}} m(a) \exp(-\pi i(w(\rho +a), z) ))$$
-
-since for this sum we have $\rho +a \in (\La^{2,1}_{II})^* \cap
-\La^{2,1}_{II}$ we see $(\rho +a, \delta_i) \leq 0$ for all $i$. If
-$(\rho + a, \delta_i) = 0$ then the corresponding fourier coefficient
-$m(a) = 0$ since $\Delta_5$ is anti-invariant with respect to
-$s_{\delta_i}$. It follows that $(\rho +a, \delta_i)$ is integral and
-$(\rho +a, \delta_i) < 0$ for all $i$. By the construction of $\rho$ we
-have $(a, \delta_i) \leq 0$ and it follows then that $a \in \Delta(\La^{2,1}_{II})^*_+$ but then by the sequence of cone embeddings
-above we have $$a \in \R_{\geq 0} \Cone(\La^{2,1}_{II})_+^* \cap
-\overline{\Cone(\La^{2,1})_+} = \R_{\geq 0} \Poly_{II}.$$ It follows
-that $a \in \R_{>0}\Poly_{II}$ if $a \neq 0$. If $a = 0$ we have $m(a) =
--1$, so by the congruences $m\equiv n \equiv l \equiv 1 \mod 2$ we have $a \in 2
-(\La^{2,1})^* = \La^{2,1}_{II}.$
+Let $\lambda=\rho+a$.  For nonzero coefficients in the chosen chamber,
+$$\lambda\in(\La^{2,1}_{II})^*\cap\R_+\Poly_{II},\qquad
+(\lambda,\delta_i)\leq0.$$
+If $(\lambda,\delta_i)=0$, anti-invariance under $s_{\delta_i}$ forces
+$m(a)=0$.  For nonzero terms, $(\lambda,\delta_i)<0$.  Since
+$(\rho,\delta_i)=-1$,
+$$(a,\delta_i)\leq0,\qquad
+a\in\Delta(\La^{2,1}_{II})^*_+.$$
+Cone embeddings:
+$$a \in \R_{\geq 0} \Cone(\La^{2,1}_{II})_+^* \cap
+\overline{\Cone(\La^{2,1})_+} = \R_{\geq 0} \Poly_{II}.$$
+The congruences $m\equiv n\equiv l\equiv1\pmod2$ imply
+$$a\in 2(\La^{2,1})^*=\La^{2,1}_{II}.$$
+$$a=0\qquad\hbox{or}\qquad
+a\in\La^{2,1}_{II}\cap\R_{>0}\Poly_{II}.$$
 
 
-Now, putting this all together, and changing the range of summation to
-$a \in \La^{2,1}_{II} \cap \R_{> 0}\Poly_{II}$, we find
 \begin{lemma}
-$$\displaystyle\sum_{w \in W^{(2)}(\La^{2,1})} \text{det}(w)( \exp(-\pi
+$$\frac{1}{64}\Delta_5(Z)
+=\displaystyle\sum_{w \in W^{(2)}(\La^{2,1}_{II})} \text{det}(w)( \exp(-\pi
 i(w(\rho),z))- \sum_{a \in \La^{2,1}_{II}\cap\R_{>0}\Poly_{II}}
 m(a)\exp(-\pi i(w(\rho+a),z)))$$
 \end{lemma}
 
-Now we investigate the behaviour of a certain triple of primitive
-elements at \textit{infinity}. Their relevance will become clear
-shortly. Consider the primitive elements $a_0 \in \La^{2,1}_{II} \cap \R_{>0} \Poly_{II}$ with $(a_0,a_0) = 0$ corresponding to the three
-vertices at infinity of the hyperbolic plane; by the third lemma above, the group
-$Aut(\Poly_{II})$ is transitive on these three vertices and the
-corresponding primitive elements are given explicitly by $\{2f_2,
-2f_{-2}, 2f_2 - 2f_3 + 2 f_{-2}\}$; furthermore, by the third lemma above, the
-group $Aut(\Poly_{II})$ preserves the fourier expansion just
-obtained. Thus given say $a_0 = 2 f_2$ one of the three primitive
-elements of $\La^{2,1}_{II} \cap \R_{>0}\Poly_{II}$ we have the identity
-of formal power series
+\begin{proof}
+Let $c_\lambda$ be the coefficient of $e^{-\pi i(\lambda,z)}$ in
+$64^{-1}\Delta_5$.  The leading term has
+$$\lambda=\rho,\qquad c_\rho=1.$$
+The other exponents in the chosen chamber have
+$$\lambda=\rho+a,\qquad
+a\in\La^{2,1}_{II}\cap\R_{>0}\Poly_{II},\qquad
+c_{\rho+a}=-m(a).$$
+Anti-invariance:
+$$c_{w\lambda}=\det(w)c_\lambda.$$
+If $\lambda$ lies on a simple wall, then
+$$s_{\delta_i}\lambda=\lambda,\qquad c_\lambda=-c_\lambda=0.$$
+Summing the signed Weyl translates proves the formula.
+\end{proof}
 
-$$1 + \frac{1}{64} \sum_{t \in \N} f(1 + 2t, 1, 1)q^t = \displaystyle\prod_{k\in \N} (1
+The primitive isotropic rays of $\overline{\Poly_{II}}$ are generated by
+$$2f_2,\qquad 2f_{-2},\qquad 2f_2-2f_3+2f_{-2}.$$
+The group $\Aut(\Poly_{II})\simeq S_3$ is transitive on these three
+vectors.  For $a_0=2f_2$:
+
+$$1 + \frac{1}{64} \sum_{t \geq 1} c_\Delta(1 + 2t, 1, 1)q^t = \displaystyle\prod_{k\geq 1} (1
 - q^k)^9$$
 
-is equivalent to an equality
+In denominator notation,
 
-$$ 1 - \sum_{t \in \N} m(t a_0) q^t = \displaystyle\prod_{t\in \N}
-(1 - q^t)^{\tau(t a_0) = 9 }$$
+$$ 1 - \sum_{t \geq 1} m(t a_0) q^t = \displaystyle\prod_{t\geq 1}
+(1 - q^t)^{\tau(t a_0)},\qquad \tau(t a_0)=9\quad(t\geq1).$$
 
-where $\tau(a) = 9$ for any  $a \in \La^{2,1}_{II} \cap \R_{>0}
-\Poly_{II}$ with $(a,a) = 0$. Then transitivity
-of the group $S_3$ means it is true for all three primitive elements.
+By $S_3$-symmetry,
+$$\tau(ta)=9\qquad(t\geq1)$$
+for every primitive isotropic ray
+$$\Z_{>0}a\subset
+\overline{\Poly_{II}}\cap\La^{2,1}_{II}.$$
+On isotropic rays, the coefficients $m(ta)$ are determined by the
+eta-product expansion; the simple-root multiplicity is $\tau(ta)$.
 
 
-The just-derived expression for the fourier transform of $\frac{1}{64}
-\Delta_5$, as well as the generating series and product in $q^t$ arising
-from multiples of the primitive elements at infinity sharply recalls to
-mind the Weyl-Kac denominator formula in the theory of generalized
-kac-moody algebras. Indeed, the fundamental polyhedron $\Poly_{II}$
-along with the set of orthogonal vectors $\Poly_{II,prim} =
-\{\delta_1,\delta_2,\delta_3\}$ can be considered as a (real) root datum
-for
-the the Gram matrix
+The real root datum is the wall set
+$$\Poly_{II,prim}=\{\delta_1,\delta_2,\delta_3\}$$
+with Gram matrix
 
 $$(\delta_i,\delta_j) = \begin{pmatrix}2 & -2 & -2\\-2 & 2 & -2\\-2 & -2 & 2\end{pmatrix}$$
 
-\section{The generalized Kac-Moody algebra $\bkm$ and its automorphic
-correction $\autcor$}
+\section{The denominator algebra}
 
-The Gram matrix of the elements $\Poly_{II,prim}$ is integral, has only $2$
-on the diagonal and only non-positive integers off the diagonal, and
-hence it is symmetric generalized Cartan matrix. The theory of Kac-Moody
-algebras associates to this matrix an infinite dimensional lie algebra we will denote
-$\bkm$. However, the structure of the lattices
-$\La^{3,2}, \La^{2,1}$ and $\La^{2,1}_{II}$ as well as the fourier
-coefficients of $\Delta_5$ strongly suggests the
-presence of a strictly larger \textit{corrected} lie algebra.
-Constructions of Borcherds along this line inform the construction of
-this \textit{automorphic correction} $\autcor$.
+The wall matrix
+$$A=((\delta_i,\delta_j))_{1\leq i,j\leq3}
+=\begin{pmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{pmatrix}$$
+is a symmetric generalized Cartan matrix.  Let $\bkm$ be the
+Kac--Moody algebra with Cartan matrix $A$.  The Borcherds correction
+character is the signed sum over finite subsets of pairwise orthogonal
+imaginary simple roots in the index set.  In this coefficient chamber:
+$$\mathcal C_{\mathrm{im}}(z)
+=1-\sum_{a\in\La^{2,1}_{II}\cap\R_{>0}\Poly_{II}}
+m(a)e^{-2\pi i(a,z)}.$$
+The corrected numerator is
+$$e^{-2\pi i(\rho,z)}\mathcal C_{\mathrm{im}}(z).$$
 
-Using the coefficients $m(a)$ and $\tau(a)$ of the last section, we
-introduce the following sets of \textit{simple imaginary roots} for $a \in
-\La^{2,1}_{II} \cap \R_{>0} \Poly_{II}$:
-$$\Delta_{\overline{0}}^{im} = \{\tau(a)a | (a,a) = 0,\tau(a)>0\}$$
-where $ka$ for $k\in \N$ means that we repeat $a$ exactly $k$ times and
-$$\Delta_{\overline{1}}^{im} = \{ m(a)a | (a,a) < 0 , m(a)< 0\}$$
-where $ka$ for $-k \in \N$ means we repeat the element $a$ exactly $-k$
-times. The negative sign here corresponds to all of the $-k$ elements
-being \textit{odd}, in the sense of superalgebras, hence the elements
-$\Delta_{\overline{0}}^{im}$ and $\Delta_{\overline{1}}^{im}$ are the
-\textit{even and odd imaginary simple roots} of a new, strictly larger algebra
-$\mathfrak{g}_{\Delta_5}$.
-Then we denote the imaginary simple roots by $$\Delta^{im} = \Delta_{\overline{0}}^{im} \cup \Delta_{\overline{1}}^{im}$$
-Following from the kac-moody construction of $\bkm$, we
-have $$\Delta_{\overline{0}}^{re} = \Delta^{re} = \Poly_{II,prim} = \Z\delta_1 \oplus \Z\delta_2 \oplus \Z\delta_3$$ which are
-the \textit{real even simple roots}. Hence
-$\autcor$ is a superalgebra \textit{without real odd
-roots}. By construction, elements of $\Delta^{re}$ correspond to
-elements of $\La^{2,1}_{II} \subset \La^{2,1}_{II}\otimes \R$.
-Furthermore we observe $(\alpha,\alpha) > 0$ if $\alpha \in \Delta^{re}$
-and $(\alpha,\alpha) \leq 0$ if $\alpha \in \Delta^{im}$ and
-$(\alpha,\alpha') \leq 0$ for all distinct $\alpha, \alpha' \in \Delta$ if
-$(\alpha,\alpha) > 0$ we also have
-$$2\frac{(\alpha,\alpha')}{(\alpha,\alpha)} \in \Z$$ which is valid
-because here $(\alpha,\alpha) = 2$ and $\alpha' \in \La^{2,1}_{II}$
-where $\La^{2,1}_{II} = \{\delta_1,\delta_2,\delta_3\} = \Delta^{re}$.
-Then our generalized kac-moody lie superalgebra
-$\autcor$ is generated by $h_{\alpha},
-e_{\alpha}, f_{\alpha}$ with $\alpha \in \Delta$.
+Harvey--Moore charge grading \cite{HM}:
+$$\smult(\alpha)
+=\dim\mathfrak{g}_{\alpha,\overline 0}
+-\dim\mathfrak{g}_{\alpha,\overline 1}.$$
 
-
-Then the map $\alpha \mapsto h_{\alpha}$ gives an embedding of
-$\La^{2,1}_{II}\otimes\R$ into $\autcor$ as an
-even abelian subalgebra. We have the relations
+\begin{definition}[Imaginary simple roots]
+For $a\in \La^{2,1}_{II}\cap\R_{>0}\Poly_{II}$ set
+$$
+\mu_{\overline 0}(a)=
+\begin{cases}
+m(a),& (a,a)<0\ \text{and}\ m(a)>0,\\
+\tau(a),& (a,a)=0\ \text{and}\ \tau(a)>0,\\
+0,&\text{otherwise},
+\end{cases}
+$$
+and
+$$
+\mu_{\overline 1}(a)=
+\begin{cases}
+-m(a),& (a,a)<0\ \text{and}\ m(a)<0,\\
+-\tau(a),& (a,a)=0\ \text{and}\ \tau(a)<0,\\
+0,&\text{otherwise}.
+\end{cases}
+$$
+Define multisets by multiplicity:
+$$a\in\Delta_{\overline0}^{im}\quad\hbox{with multiplicity }
+\mu_{\overline0}(a),$$
+$$a\in\Delta_{\overline1}^{im}\quad\hbox{with multiplicity }
+\mu_{\overline1}(a).$$
+Put
+$$\Delta^{im}=\Delta_{\overline0}^{im}\cup\Delta_{\overline1}^{im}.$$
+\end{definition}
+The real simple roots are
+$$\Delta_{\overline0}^{re}=\Delta^{re}=\Poly_{II,prim}
+=\{\delta_1,\delta_2,\delta_3\},\qquad
+\Delta_{\overline1}^{re}=\varnothing.$$
+No real odd roots occur.
+Put
+$$\Delta_{\overline p}=\Delta_{\overline p}^{re}\cup
+\Delta_{\overline p}^{im}\qquad(p=0,1),\qquad
+\Delta=\Delta_{\overline0}\cup\Delta_{\overline1}.$$
+The Cartan data satisfy $(\alpha,\alpha)>0$ for
+$\alpha \in \Delta^{re}$, $(\alpha,\alpha)\leq 0$ for
+$\alpha \in \Delta^{im}$, and
+$(\alpha,\alpha')\leq 0$ for all distinct $\alpha,\alpha'\in\Delta$.
+If $(\alpha,\alpha)>0$, then
+$$2\frac{(\alpha,\alpha')}{(\alpha,\alpha)} \in \Z,$$
+since $(\alpha,\alpha)=2$ and
+$\La^{2,1}_{II}=\Z\delta_1+\Z\delta_2+\Z\delta_3$.
+\begin{definition}[Generators and relations]
+Let $I$ be an index set equipped with a parity map $p:I\to\Z/2\Z$ and a
+root map $i\mapsto\alpha_i\in\Delta$, with fibres over an imaginary root
+of cardinality $\mu_{\overline p}(a)$ in parity $p$.  If
+$i\neq j$ and $\alpha_i=\alpha_j$, the two indices are distinct simple
+roots.  The denominator correction is formed in the index set $I$; only
+the lattice character collapses repeated copies to the same vector.
+The superalgebra $\autcor$ is generated by
+$$h_i,\ e_i,\ f_i,\qquad i\in I.$$
+The Cartan subalgebra is identified with $\La^{2,1}_{II}\otimes\R$ by
+$h_i\mapsto\alpha_i$.  Relations:
 
 \begin{itemize}
-\item $[h_{\alpha}, e_{\alpha'}] = (\alpha, \alpha')e_{\alpha'}$ and
-$[h_{\alpha}, f_{\alpha'}] = -(\alpha, \alpha')f_{\alpha'}$
-\item $[e_{\alpha}, f_{\alpha'}] = h_{\alpha}$ if $\alpha = \alpha'$ and
-is $0$ otherwise
-\item $(\textrm{ad} e_{\alpha})^{1- 2\frac{(\alpha,\alpha')}{\alpha,\alpha)}}e_{\alpha'} = (\textrm{ad} f_{\alpha})^{1- 2\frac{(\alpha,\alpha')}{\alpha,\alpha)}}f_{\alpha'} = 0$
-if $\alpha \in \Delta^{re}$
-\item if $(\alpha,\alpha') = 0$ then $[e_{\alpha}, e_{\alpha'}] = [f_{\alpha},f_{\alpha'}] = 0$
+\item $[h_i,e_j]=(\alpha_i,\alpha_j)e_j$ and
+$[h_i,f_j]=-(\alpha_i,\alpha_j)f_j$
+\item $[e_i,f_j]=\delta_{ij}h_i$
+\item if $\alpha_i \in \Delta^{re}$ and $i\neq j$, then
+$$
+(\operatorname{ad} e_i)^{1-2(\alpha_i,\alpha_j)/(\alpha_i,\alpha_i)}
+e_j=
+(\operatorname{ad} f_i)^{1-2(\alpha_i,\alpha_j)/(\alpha_i,\alpha_i)}
+f_j=0
+$$
+\item if $(\alpha_i,\alpha_j)=0$, then $[e_i,e_j]=[f_i,f_j]=0$
 \end{itemize}
+\end{definition}
 
-The superalgebra $\autcor$ is graded by
-$\La^{2,1}_{II}$. Let $$\widetilde{\Cone(\La^{2,1}_{II})_+} =
-\sum_{\alpha \in \Delta} \Z_+\alpha \subset \La^{2,1}_{II}$$ be the
-integral cone generated by all simple roots, which happens in this
-instance to coincide with the integral cone of all simple real roots
-(recall the sequence of embeddings of cones in the previous section).
-Now we have the triangular decomposition $$\autcor = (\oplus_{\alpha \in \widetilde{\Cone(\La^{2,1}_{II})_+}} \mathfrak{g}_{\alpha}) \oplus
-(\La^{2,1}_{II} \otimes \R) \oplus (\oplus_{\alpha \in
--\widetilde{\Cone(\La^{2,1}_{II})_+}} \mathfrak{g}_{\alpha})$$
- then $e_{\alpha}$ and $f_{\alpha}$ have degree
-$\alpha$ and $-\alpha$ respectively, $\mathfrak{g}_0 = \La^{2,1}_{II}
-\otimes \R$ and we call all elements $\alpha \in
-\pm\widetilde{\Cone(\La^{2,1}_{II})_+}$ \textit{roots} if
-$\mathfrak{g}_{\alpha}$ is nonzero. We define \textit{positive}
-(respectively \textit{negative}) roots by $\Delta_{\pm} = \Delta \cap
-\pm\widetilde{\Cone(\La^{2,1}_{II})_+}.$ For every root $\alpha$ we
-denote $\textbf{mult}_{\overline{0}}\alpha =
-\textrm{dim}\mathfrak{g}_{\alpha,\overline{0}}$ and
-$\textbf{mult}_{\overline{1}}\alpha =
--\textrm{dim}\mathfrak{g}_{\alpha,\overline{1}}$ then
-$$\textbf{mult}\alpha = \textbf{mult}_{\overline{0}}\alpha +
-\textbf{mult}_{\overline{1}}\alpha = \textrm{dim}
-\mathfrak{g}_{\alpha,\overline{0}} -
-\textrm{dim}\mathfrak{g}_{\alpha,\overline{1}}.$$
-Finally, we arrive at the denominator identity, which is the
-Weyl-Kac-Borcherds character formula applied to the complex
-one-dimensional representation of our generalized kac-moody
-superalgebra; it reads $$\Phi = \sum_{w \in W^{(2)}(\La^{2,1}_{II})} \text{det}(w) (\exp(-2\pi i(w(\rho), z)) - \sum_{a\in \La^{2,1}_{II} \cap \R_{>0} \Poly_{II}} m(a) \exp(-2\pi i(w(\rho + a), z)) ) $$ $$= \exp(-2\pi i(\rho,z)) \displaystyle\prod_{\alpha \in \Delta_+} (1 - \exp(-2\pi i
-(\alpha,z)))^{\textbf{mult}\alpha}$$ valid for $z \in
-\Omega(\La^{2,1}_{II}) = \La^{2,1}_{II} \otimes \R + i
-\Cone(\La^{2,1}_{II})_+$ and the function $\Phi$ is called the
-denominator function.  Thus applying the results of the last section we
-arrive at the infinite product expansion for the form $\Delta_5$:
+The grading is by $\La^{2,1}_{II}$.  Put
+$$Q_+=\sum_{\alpha\in\Delta}\Z_{\geq0}\alpha
+\subset\La^{2,1}_{II}.$$
+The triangular decomposition is
+$$\autcor =
+\left(\bigoplus_{\alpha \in Q_+\setminus\{0\}}
+\mathfrak{g}_{\alpha}\right)
+\oplus(\La^{2,1}_{II}\otimes\R)
+\oplus
+\left(\bigoplus_{\alpha \in Q_+\setminus\{0\}}
+\mathfrak{g}_{-\alpha}\right).$$
+For $i\in I$,
+$$\deg e_i=\alpha_i,\qquad \deg f_i=-\alpha_i,\qquad \deg h_i=0.$$
+The bracket extends this grading and
+$$\mathfrak{g}_0=\La^{2,1}_{II}\otimes\R.$$
+The positive and negative roots are
+$$\mathcal R_+=\{\alpha\in Q_+\setminus\{0\}\mid
+\mathfrak{g}_{\alpha}\neq0\},\qquad
+\mathcal R_-=-\mathcal R_+.$$
+For every root $\alpha$, set
+$$\rootmult_{\overline{0}}(\alpha)
+=\dim\mathfrak{g}_{\alpha,\overline{0}},\qquad
+\rootmult_{\overline{1}}(\alpha)
+=\dim\mathfrak{g}_{\alpha,\overline{1}}.$$
+The signed root superdimension is
+$$\smult(\alpha)=\rootmult_{\overline{0}}(\alpha)
+-\rootmult_{\overline{1}}(\alpha).$$
+The Weyl--Kac--Borcherds denominator is
+$$
+\begin{aligned}
+\Phi(z)
+&=\sum_{w\in W^{(2)}(\La^{2,1}_{II})}\det(w)
+\left(
+e^{-2\pi i(w(\rho),z)}
+-\sum_{a\in\La^{2,1}_{II}\cap\R_{>0}\Poly_{II}}
+m(a)e^{-2\pi i(w(\rho+a),z)}
+\right)\\
+&=e^{-2\pi i(\rho,z)}
+\prod_{\alpha\in\mathcal R_+}
+\left(1-e^{-2\pi i(\alpha,z)}\right)^{\smult(\alpha)}.
+\end{aligned}
+$$
+Domain:
+$$\Omega(\La^{2,1}_{II})
+=\La^{2,1}_{II}\otimes\R+i\Cone(\La^{2,1}_{II})_+.$$
 
-\begin{theorem}
-  $$\frac{1}{64}\Delta_5(2Z) = \Phi(z)$$
-  and hence the denominator of the \textit{corrected} generalized
-  kac-moody lie superalgebra $\autcor$ is the
-  siegel modular form of genus $2$ and weight $5$.
+\begin{theorem}[Denominator identity]
+$$\frac{1}{64}\Delta_5(2Z)=\Phi(z).$$
+The denominator of the corrected generalized Kac--Moody Lie
+superalgebra $\autcor$ is the Siegel modular form of genus $2$ and
+weight $5$.
 \end{theorem}
 
-The denominator function $\Phi$ is well-defined on the complexified cone
-$\Omega(\Cone(\La^{2,1}_{II})_+)$ which admits embeddings as a cusp into
-the type $\IV$ domain. The embedding is not canonical, as it is defined
-up to changing $z\mapsto tz$ for $t\in \N$.
-%accounting for the coefficient $2$ in the theorem.
+\begin{proof}
+The alternating expansion is the signed Weyl sum for
+$$\frac1{64}\Delta_5(Z).$$
+The substitution $Z\mapsto2Z$ changes
+$$e^{-\pi i(w(\rho+a),z)}\quad\hbox{to}\quad
+e^{-2\pi i(w(\rho+a),z)},$$
+the integral denominator characters of $\La^{2,1}_{II}$.  The
+Weyl--Kac--Borcherds denominator identity is
+$$e^{-2\pi i(\rho,z)}
+\prod_{\alpha\in\mathcal R_+}
+\left(1-e^{-2\pi i(\alpha,z)}\right)^{\smult(\alpha)}.$$
+\end{proof}
 
-\section{Super dimensions of root spaces and the weight 0 index 1 weak Jacobi
-form $\phi_{0,1}$}
+\section{The Jacobi coefficients as superdimensions}
 
-The last section demonstrates that there is a product formula for
-$\Delta_5$:
-$$\Phi = \sum_{w \in W^{(2)}(\La^{2,1}_{II})} \text{det}(w)
-(\exp(-2\pi i(w(\rho), z)) - \sum_{a\in \La^{2,1}_{II} \cap \R_{>0}
-\Poly_{II}} m(a) \exp(-2\pi i(w(\rho + a), z)) ) $$ $$= \exp(-2\pi i(\rho,z))
-\displaystyle\prod_{\alpha \in \Delta_+} (1 - \exp(-2\pi i
-(\alpha,z)))^{\textbf{mult}\alpha}$$
-
-we will now combine automorphy of $\Delta_5$ with knowledge of certain
-related Jacobi forms to determine the integers $\textbf{mult}\alpha$ for
-roots $\alpha$.
-Throughout we freely reference Eichler-Zagier\cite{EZ:1}.
-Consider the Fourier-Jacobi expansion of $\Delta_{12}$ and denote by
-$\phi_{12,1}$ the Jacobi cusp form of weight $12$ appearing as its first
-fourier-Jacobi coefficient. Its fourier coefficients may be calculated
-in terms of explicitly given Eisenstein series for the groups $\SL_2$
-and the Jacobi group. The form has integral and coprime coefficients
+The signed root multiplicities are
+$$\smult(\alpha).$$
+They are the coefficients of the Eichler--Zagier weak Jacobi form
+\cite{EZ:1}, normalized by
+$$Z_{\mathrm{K3}}=2\phi_{0,1}.$$
+Let $\phi_{12,1}$ be the first Fourier--Jacobi coefficient of
+$\Delta_{12}$.  Its integral coprime expansion begins
 $$\phi_{12,1}(z_1,z_2) = (r^{-1} + 10 + r)q + (10r^{-2} -88r^{-1} -132
--88r +10r^{2})q^2 + \ldots$$ we introduce another function with integral
-coefficients $$\displaystyle\phi_{0,1} (z_1,z_2) =
+-88r +10r^{2})q^2 + \ldots$$
+Let
+$$\delta_{12}(z_1)=q\prod_{n\geq1}(1-q^n)^{24}.$$
+Define
+$$\displaystyle\phi_{0,1} (z_1,z_2) =
 \frac{\phi_{12,1}}{\delta_{12}} = \displaystyle\sum_{\substack{n\geq 0\\l\in \Z}}
-f(n,l)\exp(2\pi i(nz_1 + lz_2)$$ where $$\delta_{12}(z_1) = q\displaystyle\prod_{n\geq
-1}(1 - q^n)^{24}$$ is the $\SL_2(\Z)$ cusp form of weight $12$. Then
-$\phi_{0,1}$ is a weak Jacobi form of weight $0$ and index $1$. It
-satisfies the same functional equations as holomorphic Jacobi forms and
-has nonzero coefficients only with indices $(n,l) \in \Z^2$ such that
-$n\geq 0$ (as $\phi_{12,1}$ is a cusp form) and $4n - l^2 \geq -1$. The
-weight is even, hence $f(n,l) = f(n,-l)$ and $f(n,l)$ only depends on
-$4n-l^2$. Explicitly $$\phi_{0,1} (z_1,z_2) = (r^{-1} +10 + r) +
+f(n,l)\exp(2\pi i(nz_1 + lz_2)).$$
+Moreover
+$$\phi_{0,1}\in J^{\mathrm{weak}}_{0,1},$$
+$$f(n,l)=0\quad\text{unless}\quad n\geq0,\quad 4n-l^2\geq-1,$$
+and
+$$f(n,l)=f(n,-l).$$
+The first terms are
+$$\phi_{0,1} (z_1,z_2) = (r^{-1} +10 + r) +
 q(10r^{-2} - 64r^{-1} + 108  -64r + 10r^2) + \ldots$$
-then we have the product expansion
 
 \begin{theorem}
-$$\frac{1}{64} \Delta_5 = \exp(\pi i(z_1 + z_2 + z_3)) \displaystyle\prod_{n,l,m \in \Z,
-(n,l,m) >0} (1 - \exp(2\pi i(nz_1 + lz_2 + mz_3)))^{f(nm,l)}$$ where the
-condition $(n,l,m) > 0$ means the product is taken over the set of
-positive roots $\Delta_+$
+$$\frac{1}{64} \Delta_5(Z)
+= \exp(\pi i(z_1 + z_2 + z_3))
+\displaystyle\prod_{\substack{n,l,m \in \Z\\(n,l,m)>0}}
+(1 - \exp(2\pi i(nz_1 + lz_2 + mz_3)))^{f(nm,l)}$$
+where the condition $(n,l,m)>0$ is the positive-root ordering induced
+by $\mathcal R_+$.
 \end{theorem}
 
 \begin{remark}
-Explicitly, the condition $(n,l,m) > 0$ means that $n\geq 0,m\geq 0$ and
-$l$ is aritrary integral if $n>0$ or $m > 0$ and $l<0$ if $n = m = 0$.
+Ordering:
+$$
+(n,l,m)>0\Longleftrightarrow
+\begin{cases}
+m>0,\ n\geq0,\ l\in\Z,\\
+\text{or }m=0,\ n>0,\ l\in\Z,\\
+\text{or }n=m=0,\ l<0.
+\end{cases}
+$$
 \end{remark}
 
 \begin{proof}
-An analysis of the fourier coefficients of the form $\phi_{12,1}$ as
-well as its expression as a linear combination of standard Jacobi theta
-functions allows one to prove that the fourier coefficients of
-$\phi_{0,1}$ have the asymptotic behavior of $$f(n,l) =O(\exp(\sqrt{4n
--l^2}).$$ This estimate together with the methodology of Kac\cite{KAC:1}
-allows us to prove that the product in the theorem converges on any
-neighborhood of the zero dimensional cusp of $\Sp_4(\Z)$.
+The theta expansion yields
+$$f(n,l)=O(\exp(\sqrt{4n-l^2})).$$
+Kac's convergence argument \cite{KAC:1} applies near the
+zero-dimensional cusp of $\Sp_4(\Z)$.
 
-We express the product in the theorem as $$\exp(\pi i(z_1 + z_2 + z_3))
-\displaystyle\prod_{n>0,l\in\Z \textrm{or} n=0, l<0}(1 -\exp(2\pi i(nz_1 +
-lz_2))^{f(0,l)}$$ $$ \times \displaystyle\prod_{n\geq0,m>0,l\in\Z}(1 - \exp(2\pi i(n z_1 + l
-z_2 + m z_3)))^{f(nm,l)}$$ where we have $f(0,0) = 10, f(0,-1) =1,
-f(0,l) = 0$ if $l < -1$.
+Let $P(Z)$ denote the product in the theorem.  Split $P$:
+$$\exp(\pi i(z_1+z_2+z_3))
+\prod_{\substack{n>0,\;l\in\Z\\\text{or }n=0,\;l<0}}
+\left(1-e^{2\pi i(nz_1+lz_2)}\right)^{f(0,l)}$$
+$$\times
+\prod_{\substack{n\geq0,\;m>0\\l\in\Z}}
+\left(1-e^{2\pi i(nz_1+lz_2+mz_3)}\right)^{f(nm,l)},$$
+with
+$$f(0,0)=10,\qquad f(0,-1)=1,\qquad f(0,l)=0\quad(l<-1).$$
 
 
-Consider next the minus embedding of the usual hecke operators
-$T_{-}(m)$ for $\GL_2(\Z)$ then for each Jacobi form $\phi$ of weight
-$k$ and index $t \in \Q$ we have a function $(\phi |_k T_{-}(m))$ which
-is a Jacobi form of index $mt$. One can proceed to show the factors of
-the above product admits an expression of its logarithm as
-$$\textrm{log}(\displaystyle\prod_{n\geq 0,m>0,l\in\Z} (\cdots) = - \sum_{m\geq 1} m^2
-(\phi_{0,1}\exp^{2\pi i t z_3}|_0 T_{-}(m)))$$ The expansion shows that
-this particular factor is invariant with respect to the maximal
-parabolic subgroup $\Gamma_{\infty}$ of $\Sp_4(\Z)$.
+For the second factor,
+$$\log(1-X)=-\sum_{k\geq1}X^k/k,$$
+$$
+\log\left(
+\prod_{\substack{n\geq0,\;m>0\\l\in\Z}}
+(1-q^nr^ls^m)^{f(nm,l)}
+\right)
+=-\sum_{k\geq1}\frac1k
+\sum_{\substack{n\geq0,\;m>0\\l\in\Z}}
+f(nm,l)q^{kn}r^{kl}s^{km}.
+$$
+Grouping by $s$-degree is the minus-Hecke logarithm of the Borcherds
+lift.  No normalized Hecke operator enters the calculation.  The
+reciprocal is the chiral second-quantized protected factor; its square is
+the reduced index up to $C$.  The determinant is
+invariant under the maximal parabolic
+$\Gamma_{\infty}<\Sp_4(\Z)$.
 
-  Now observe that the other factor in the product is equal to
-  $\psi_{5,\frac{1}{2}}\exp(2\pi i t z_3)$. Together these facts imply
-  the product transforms like a modular form for the Jacobi group
-  $\Gamma_{\infty} / \pm\Id_4$ with a certain character $\nu_{\infty} :
-  \Gamma_{\infty} / \pm\Id_4 \rightarrow \pm 1$. Testing against the
-  matrix $S = \begin{pmatrix}\begin{matrix}0 & 1\\ 1 & 0\end{matrix} & 0\\ 0 &
-  \begin{matrix}0 & 1\\1 & 0\end{matrix}\end{pmatrix}$
-
-  yields antiinvariance  of the product, while the multiplier system
-  returns $1$. It follows that since the Jacobi group and $I$ together
-  generate $\PSp_4(\Z)$ we get that the product is a Siegel modular form
-  of weight $5$ with the same multiplier system as $\Delta_5$. Comparing
-  the first fourier coefficient finishes the proof.
+First factor:
+$$\psi_{5,\frac{1}{2}}(z_1,z_2)e^{\pi iz_3}.$$
+For $\gamma\in\Gamma_{\infty}/\{\pm\Id_4\}$,
+$$P|_5\gamma=\nu_{\infty}(\gamma)P,\qquad
+\nu_{\infty}:\Gamma_{\infty} / \pm\Id_4 \rightarrow \{\pm 1\}.$$
+For
+$$S = \begin{pmatrix}\begin{matrix}0 & 1\\ 1 & 0\end{matrix} & 0\\ 0 &
+\begin{matrix}0 & 1\\1 & 0\end{matrix}\end{pmatrix},$$
+the product is anti-invariant and the Maass multiplier is $1$.  The
+Jacobi group and $S$ generate $\PSp_4(\Z)$, so the product is a
+Siegel modular form of weight $5$ with the multiplier of $\Delta_5$.
+The first Fourier coefficient is $64$.
 
 
 \end{proof}
+
+\begin{theorem}[The $N=1$ square-root theorem]
+Set
+$$q=\exp(2\pi i z_1), \quad r=\exp(2\pi i z_2), \quad
+s=\exp(2\pi i z_3).$$
+The normalized K3 elliptic-genus input is
+$$\phi_{0,1}(\tau,z)
+=4\left(\frac{\vartheta_2(\tau,z)^2}{\vartheta_2(\tau,0)^2}
++\frac{\vartheta_3(\tau,z)^2}{\vartheta_3(\tau,0)^2}
++\frac{\vartheta_4(\tau,z)^2}{\vartheta_4(\tau,0)^2}\right).$$
+Its expansion begins
+$$\phi_{0,1}
+= (r^{-1}+10+r)
++q(10r^{-2}-64r^{-1}+108-64r+10r^2)$$
+$$\quad
++q^2(r^{-3}+108r^{-2}-513r^{-1}+808-513r+108r^2+r^3)
++O(q^3).$$
+The coefficient $f(0,0)=10$ fixes Borcherds weight
+$f(0,0)/2=5$.
+
+The cusp-normalized product is
+$$D(Z):=\frac{1}{64}\Delta_5(Z)
+=q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)>0}(1-q^nr^ls^m)^{f(nm,l)}.$$
+$$\Delta_{10}(Z)=\Delta_5(Z)^2
+=4096\,qrs\prod_{(n,l,m)>0}(1-q^nr^ls^m)^{2f(nm,l)}.$$
+For the scalar-square branch,
+$$Z^X_{\square}=C/\Delta_5^2.$$
+$$\frac{C}{Z^X_{\square}}=\Delta_5(Z)^2,$$
+so the cusp branch is
+$$\sqrt{\frac{C}{Z^X_{\square}}}
+=64\,q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)>0}(1-q^nr^ls^m)^{f(nm,l)}.$$
+Normalize by $Z\mapsto2Z$ and scalar $1/64$:
+$$\frac1{64}\Delta_5(2Z)=\Phi(z).$$
+The reciprocal
+$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}
+=\left(\sqrt{\frac{C}{Z^X_{\square}}}\right)^{-1}$$
+is the chiral second-quantized protected factor.  Its square is
+$$\left(\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}\right)^2
+=Z^X_{\square}/C.$$
+For
+$$\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},$$
+the exponents in the denominator are the graded root multiplicities
+$$f(nm,l)=\dim \mathfrak{g}_{\alpha(n,l,m),\overline 0}
+-\dim \mathfrak{g}_{\alpha(n,l,m),\overline 1}, \qquad
+q^nr^ls^m=\exp(-\pi i(\alpha(n,l,m),z)).$$
+\end{theorem}
+
+\begin{proof}
+The theta expression is the Eichler--Zagier generator \cite{EZ:1} of
+$J^{\mathrm{weak}}_{0,1}$ in the normalization
+$Z_{\mathrm{K3}}=2\phi_{0,1}$.  Multiplication of the theta series yields
+the displayed coefficients.  The coefficient $f(0,0)=10$ fixes weight
+$5$.  Borcherds' product attached to $\phi_{0,1}$ \cite{GN,B} has the displayed
+exponents.  With leading coefficient $64$ and multiplier
+$\nu_{\Delta_5}$ it is $\Delta_5$.  Igusa's square is
+$$\Delta_{10}=\Delta_5^2.$$
+Scalar-square branch:
+$$Z^X_{\square}=C/\Delta_5^2,$$
+and the chosen branch has initial term
+$$64q^{1/2}r^{1/2}s^{1/2}.$$
+Apply the Fock trace lemma to
+$$\sdim\mathcal V_{n,l,m}=f(nm,l)$$
+to get
+$$\sch\mathcal F(\mathcal V)
+=\prod_{(n,l,m)>0}(1-q^nr^ls^m)^{-f(nm,l)}.$$
+Multiply by the inverse vacuum factor:
+$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{ch}}
+=\frac1{64}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V).$$
+Invert to obtain the displayed square root.
+\end{proof}
+
+
+\section{Conjectural CHL extensions}
+
+Fix genus $g=2$.  Paramodular groups and Hecke-type congruence
+subgroups:
+$$t,N \in \mathbb{Z}_+:\quad \Gamma_t(N) =
+\{\begin{pmatrix}*&*t&*&*\\*&*&*&*t^{-1}\\*N&*Nt&*&*\\*Nt&*Nt&*t&*\end{pmatrix}
+\in \mathbf{Sp_4}(\mathbb{Q})\mid *\in\mathbb{Z}\}.$$
+The quotient $\mathbb{H}_2/\Gamma_t$ parametrizes
+$(1,t)$-polarized abelian surfaces.  Let
+$$\mathcal H_{\mathrm{diag}}
+=\left\{\begin{pmatrix}a&0\\0&b\end{pmatrix}\mid
+a,b\in\mathbb{H}_1\right\}\subset\mathbb{H}_2.$$
+
+\begin{theorem}[Gritsenko--Clery]
+In the class of Siegel modular forms with character for Hecke-type
+congruence subgroups of genus-$2$ paramodular groups whose divisor is
+the union of the $\Gamma_t(N)$-translates of $\mathcal H_{\mathrm{diag}}$
+with multiplicity one, the Gritsenko--Clery catalogue has exactly eight
+rows \cite{GC}.
+\end{theorem}
+
+Denote these rows by
+$$\Phi_1,\ldots,\Phi_8,\qquad \Phi_1=\Delta_5.$$
+For $j=1$:
+$$\frac1{64}\Phi_1(2Z)=\operatorname{den}(\autcor).$$
+
+\begin{conjecture}[CHL square-root extension]
+After a CHL labelling of the eight Gritsenko--Clery rows, each row
+$\Phi_j$ with a corresponding K3 twining genus
+$$\phi^{(j)}_{0,1}=\tfrac12 Z^{(j)}_{\mathrm{K3}}$$
+has:
+\begin{enumerate}
+\item[(i)] a scalar-square branch
+$$Z_j=C_j/\Phi_j^2;$$
+\item[(ii)] a generalized Borcherds--Kac--Moody superalgebra
+$\mathfrak g_j$ with denominator $\Phi_j$;
+\item[(iii)] signed root superdimensions equal to the Fourier
+coefficients of $\phi^{(j)}_{0,1}$.
+\end{enumerate}
+\end{conjecture}
+
+The conjecture uses the Dijkgraaf--Verlinde--Verlinde CHL denominator
+frame \cite{DVV} and Borcherds' automorphic product theorem \cite{B}.
+The $N=1$ theorem is independent of this conjecture.
 
 
 %\printbibliography
@@ -871,4 +1038,3 @@ parabolic subgroup $\Gamma_{\infty}$ of $\Sp_4(\Z)$.
 \bibliographystyle{ieeetr}
 
 \end{document}
-

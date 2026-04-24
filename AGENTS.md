@@ -4,7 +4,7 @@
 > **Inherits `~/ecosystem/AGENTS-HARNESS.md`** — canonical Codex / GPT-5-family harness calibration: reasoning-effort per task class, agentic eagerness, tool-use discipline, tool preambles, persistence and stop conditions, verbosity control, uncertainty handling, long-context outlining, self-reflection rubric, scope discipline, error-handling, git-and-worktree restatement for Codex defaults, frontend quality, no-LLM-commit-attribution, voice.
 > **Mirrors this repo's `CLAUDE.md`** on substance. Before editing, `read_file ./CLAUDE.md`. `AGENTS.md` and `CLAUDE.md` must not diverge in facts; they may differ in structure and voice.
 >
-> **Model target.** gpt-5-codex family, `reasoning_effort=xhigh` for any non-trivial work here (Pro-class; never lower than `high`). Terse, declarative voice per `INVARIANTS.md §IV`. No LLM attribution on commits (`INVARIANTS.md §VI`).
+> **Model target.** Deepest host-exposed GPT-5.5 / GPT-5-Codex-family model, `reasoning_effort=xhigh` for any non-trivial mathematical work (never lower than `high`). Terse, declarative voice per `INVARIANTS.md §IV`. No LLM attribution on commits (`INVARIANTS.md §VI`).
 
 ---
 
@@ -128,12 +128,52 @@ Systematic restatement of the settings, discipline, and load order that already 
 | Parameter | Setting | Rationale |
 |---|---|---|
 | `reasoning_effort` | **`xhigh`** (always; never lower than `high`) | Borcherds-product / BKM / Igusa cusp-form — frontier modular-form theory. No downgrade permitted. |
-| `model` | **gpt-5-codex family, latest** (current preferred: gpt-5.3-codex; fallback: gpt-5.2-codex) | Pro-class mathematics harness. |
+| `model` | **Deepest host-exposed model**: GPT-5.5 Pro / Heavy in ChatGPT when available; GPT-5.5 or latest GPT-5-Codex-family model in Codex; API fallback latest GPT-5.4 / GPT-5-Codex model with `xhigh` where supported. | Pro-class mathematics harness. |
 | `verbosity` | As the proof requires | No abridgment of load-bearing calculations. Terse where terse is honest. |
 | Token budget | **Unbounded** for research tasks | If context fills, compact side work. Never elide a Fourier coefficient, a denominator-identity exponent, a lattice convention. |
 | Tool use | **Parallel reads** for TeX + bib + cited PDFs | Batch `read_file` across every citation before writing. |
 | Persistence | **Absolute** | Do not yield on a partial argument. Either close or name the open obligation precisely. |
 | Self-reflection rubric | **Required** before any inscription | See `~/ecosystem/AGENTS-HARNESS.md §VIII`; instantiation below. |
+
+### Long-form proof harness — GPT-5.5 Pro / Heavy analogue
+
+Public OpenAI material describes GPT-5.5 Pro as the ChatGPT
+research-grade option for the hardest long-running workflows and
+GPT-5.5 in Codex as a 400K-context agentic coding model. The private
+ChatGPT Pro harness is not public. This repo encodes the open analogue:
+deepest model, maximum reasoning effort, large context, tool-grounded
+verification, and repeated attack-heal cycles.
+
+1. **Deliberation budget.** For theorem repair, cross-volume synthesis,
+   adversarial review, or primary-source reconstruction, a 30-60 minute
+   agent run is normal. Do not stop because the first plan is plausible.
+   Stop only when the proof closes, a computation decides the point, or
+   the exact open obligation is named.
+2. **Private scratch, public proof trace.** Use private reasoning for
+   search and synthesis; never expose raw scratchpad as an answer. The
+   deliverable is the checked proof path: definitions, reductions,
+   cited theorems, computations, and the remaining obstruction if any.
+3. **Context before invention.** Load `CLAUDE.md`, this file, `proj.tex`,
+   `proj.bib`, cited Borcherds / Gritsenko / Igusa sources, compute
+   files, and cross-repo anchors before the first mathematical edit.
+   Build an internal outline; do not write from memory.
+4. **Multiple routes.** For any load-bearing identity, seek independent
+   derivations: worked coefficient, lattice convention check, primary
+   literature, local computation, and cross-repo consistency. Agreement
+   is evidence; disagreement is the deliverable.
+5. **Adversarial loop.** After a proposed repair, attack the strongest
+   failure mode: sign, character, Weyl vector, divisor normalization,
+   multiplier system, exponent, or false transfer into Vol III. Heal,
+   then attack again until no fatal objection survives.
+6. **Agent topology.** Large swarms are partitioned by disjoint proof
+   obligations or files. Subagents provide evidence, not authority. The
+   main thread integrates by deep semantic merge and heals the proof,
+   statement, or construction rather than voting truth into existence or
+   degrading the manuscript.
+7. **Progress reports.** Long runs emit compact `commentary` checkpoints:
+   what has been read, what has been ruled out, what proof obligation
+   remains. The final answer is short unless the proof itself is the
+   requested artifact.
 
 ### Self-reflection rubric (before any revision, inscription, or merge)
 
