@@ -9,7 +9,7 @@
 #    make standalone Build standalone documents -> out/
 #    make icloud     Copy latest PDFs to iCloud Drive
 #    make clean      Remove LaTeX build debris
-#    make veryclean  Remove build debris; preserve tracked out/main.pdf
+#    make veryclean  Remove build debris and generated PDFs
 #    make help       Show available targets
 #
 # ============================================================================
@@ -175,7 +175,9 @@ clean:
 	@echo "  ok  Clean."
 
 veryclean: clean
-	@echo "  out/main.pdf is tracked; veryclean preserves $(OUT_DIR)."
+	@echo "  Removing generated PDFs..."
+	@rm -f $(MAIN).pdf $(BIB).pdf $(PDF) $(OUT_DIR)/$(BIB).pdf $(STANDALONE_PDFS)
+	@rmdir $(OUT_DIR) 2>/dev/null || true
 	@echo "  ok  Clean."
 
 count:
@@ -200,7 +202,7 @@ help:
 	@echo "  make standalone Build standalone documents -> out/"
 	@echo "  make icloud     Copy latest PDFs to iCloud Drive"
 	@echo "  make clean      Remove build debris"
-	@echo "  make veryclean  Remove build debris; preserve tracked out/main.pdf"
+	@echo "  make veryclean  Remove build debris and generated PDFs"
 	@echo "  make count      Paper statistics"
 	@echo "  make help       This message"
 	@echo ""

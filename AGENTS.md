@@ -212,7 +212,7 @@ Load-bearing claims about $\Delta_5$, $\phi_{0,1}$, Borcherds-product exponents,
 2. `~/ecosystem/INVARIANTS.md §IV` (voice) + `~/ecosystem/AGENTS-HARNESS.md §VIII` (self-reflection).
 3. `main.tex` (root) + `proj.bib`.
 4. Cross-repo: `~/calabi-yau-quantum-groups/FRONTIER.md` for the Vol III $\kappa$-stratification frame.
-5. `out/main.pdf` for typeset verification when needed.
+5. Locally generated `out/main.pdf` for typeset verification when needed; ignored by Git.
 
 ### Escalation — research-grade triggers (additional to `AGENTS-HARNESS.md §XVI`)
 
