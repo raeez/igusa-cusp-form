@@ -6,14 +6,14 @@
 
 ## Repo-local
 
-This repository carries the paper *A Borcherds lift of the weak Jacobi form $\phi_{0,1}$, generalized Borcherds–Kac–Moody superalgebras and the Igusa cusp form $\Delta_5$* (2020; Raeez Lorgat). The construction ties a weight-one weak Jacobi form through a generalized BKM superalgebra to the weight-5 Igusa cusp form — a structural sibling of the $K3 \times E$ moonshine frontier held in `~/calabi-yau-quantum-groups` (Vol III) and the BCOV frontier in `~/topological-strings`.
+This repository carries the paper *A Borcherds lift of the weak Jacobi form $\phi_{0,1}$, generalized Borcherds–Kac–Moody superalgebras and the Igusa cusp form $\Delta_5$* (2020; Raeez Lorgat). The construction ties the weight-zero index-one weak Jacobi form $\phi_{0,1}$ through a generalized BKM superalgebra to the weight-5 Igusa cusp form — a structural sibling of the $K3 \times E$ moonshine frontier held in `~/calabi-yau-quantum-groups` (Vol III) and the BCOV frontier in `~/topological-strings`.
 
 **Source layout.**
 
-- `proj.tex` — root TeX (memoir class, EB Garamond body, newtx math). Entry point.
-- `proj.bib` + `proj.bbl` — bibliography.
-- `proj.pdf` — rendered artifact.
-- `Makefile` — `make` runs `pdflatex → biber → pdflatex → pdflatex`.
+- `main.tex` — root TeX (memoir class, EB Garamond body, newtx math). Entry point.
+- `proj.bib` — bibliography database.
+- `out/main.pdf` — rendered artifact.
+- `Makefile` — `make` runs `pdflatex → bibtex → pdflatex → pdflatex`.
 - `presentation.key` — companion presentation (Keynote).
 
 **Research constellation role.** The Igusa cusp form $\Delta_5$ is the ur-example of the Borcherds-product / infinite-product structure that the Vol III $\kappa$-stratification generalizes. Any load-bearing claim about BKM superalgebras, Mukai-lattice modularity, or $K3 \times E$ on Vol III must be consistent with the construction here; disagreement is the deliverable, not the shortcut. The BCOV side (topological-strings) is the physics dual to the generating function's modular and mock-modular structure.
@@ -31,7 +31,7 @@ reconstruction. The private ChatGPT Pro harness is not public; this is
 the open local analogue.
 
 Long runs are normal. A 30-60 minute agent run is acceptable when a
-proof obligation requires it. Load `proj.tex`, `proj.bib`, the cited
+proof obligation requires it. Load `main.tex`, `proj.bib`, the cited
 Borcherds / Gritsenko / Igusa sources, compute files, and Vol III /
 topological-strings anchors before the first mathematical edit. Private
 scratch stays private; the deliverable is the checked proof trace and

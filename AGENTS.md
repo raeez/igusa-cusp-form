@@ -17,7 +17,7 @@ generalized Borcherds-Kac-Moody superalgebra and automorphic
 correction.
 
 Every read, grep, edit, proof repair, computation, or retraction should
-serve the manuscript `proj.tex`: make the derivation of the product
+serve the manuscript `main.tex`: make the derivation of the product
 formula for `\Delta_5`, the root datum in `\Lambda^{3,2}`, the Weyl
 group action, and the Macdonald/Weyl-Kac identity precise enough to
 check line by line against Borcherds, Gritsenko-Nikulin, Kac-Moody,
@@ -39,7 +39,7 @@ and Gritsenko-Clery sources.
 
 ## What counts as progress
 
-- A theorem, lemma, or computation in `proj.tex` made derivable from
+- A theorem, lemma, or computation in `main.tex` made derivable from
   first principles with all constants, signs, lattice conventions, and
   divisors fixed.
 - A falsified formula at a specific coefficient, root, divisor, weight,
@@ -58,7 +58,7 @@ and Gritsenko-Clery sources.
 3. Do not amend commits without explicit instruction.
 4. Do not rebuild after every edit. Build at session end when useful.
 5. Never guess a modular, Jacobi, BKM, or lattice formula. Derive it
-   from `proj.tex`, direct computation, or primary literature.
+   from `main.tex`, direct computation, or primary literature.
 6. Claim strength must match proof strength. Mark conjectural material
    explicitly.
 7. User-authorized large swarms are permitted and should be run with
@@ -99,7 +99,7 @@ computations, and session-end builds only when appropriate.
 
 ## How to work
 
-Read `proj.tex` in context before editing. Use `rg` for symbols,
+Read `main.tex` in context before editing. Use `rg` for symbols,
 theorem environments, coefficients, and bibliography keys. Preserve the
 manuscript's elementary derivation style: define the lattice, state the
 root datum, compute the Weyl vector, write the product, then identify
@@ -153,7 +153,7 @@ verification, and repeated attack-heal cycles.
    search and synthesis; never expose raw scratchpad as an answer. The
    deliverable is the checked proof path: definitions, reductions,
    cited theorems, computations, and the remaining obstruction if any.
-3. **Context before invention.** Load `CLAUDE.md`, this file, `proj.tex`,
+3. **Context before invention.** Load `CLAUDE.md`, this file, `main.tex`,
    `proj.bib`, cited Borcherds / Gritsenko / Igusa sources, compute
    files, and cross-repo anchors before the first mathematical edit.
    Build an internal outline; do not write from memory.
@@ -191,7 +191,7 @@ If any category falls short — restart that category. Do not patch.
 
 ### Long-context handling
 
-`proj.tex` + `proj.bib` + cited Borcherds / Gritsenko / Igusa references can easily exceed 10K tokens together:
+`main.tex` + `proj.bib` + cited Borcherds / Gritsenko / Igusa references can easily exceed 10K tokens together:
 
 1. Outline internally before responding. Do not show the outline.
 2. Parallel-`read_file` the paper, the bibliography, and any cited PDF materials at once.
@@ -210,9 +210,9 @@ Load-bearing claims about $\Delta_5$, $\phi_{0,1}$, Borcherds-product exponents,
 
 1. `./CLAUDE.md` (repo identity).
 2. `~/ecosystem/INVARIANTS.md §IV` (voice) + `~/ecosystem/AGENTS-HARNESS.md §VIII` (self-reflection).
-3. `proj.tex` (root) + `proj.bib`.
+3. `main.tex` (root) + `proj.bib`.
 4. Cross-repo: `~/calabi-yau-quantum-groups/FRONTIER.md` for the Vol III $\kappa$-stratification frame.
-5. `proj.pdf` for typeset verification when needed.
+5. `out/main.pdf` for typeset verification when needed.
 
 ### Escalation — research-grade triggers (additional to `AGENTS-HARNESS.md §XVI`)
 

@@ -1,4 +1,4 @@
-% !TEX root = proj.tex
+% !TEX root = main.tex
 \documentclass[11pt]{memoir}
 \usepackage{raeez-math-template}
 \renewcommand{\thesection}{\arabic{section}}
@@ -94,7 +94,7 @@ For \(\gamma=(n,l,m)\in\Gamma_{\mathrm{act}}\),
 $$
 \smult(\alpha(\gamma))=f(nm,l).
 $$
-The remaining construction problem is
+The microscopic comparison problem is
 $$
 \Prim_{\mathrm{prot}}\mathcal P^{\mathrm{Hall}}_{X,\sigma,o}
 \stackrel{?}{\cong}\mathcal A_{\mathrm{den}}.
@@ -204,7 +204,7 @@ $$
 $$
 \end{definition}
 
-\begin{remark}[Status of the chamber]
+\begin{remark}[Chamber transport]
 The pairing $\langle\ ,\ \rangle_{\mathrm{ind}}$ is the pairing on
 Gram invariants.  The order on $\Gamma_{\mathrm{eff}}$ is a Fock
 polarization at one cusp.  A duality element transports this
@@ -361,7 +361,7 @@ v_0(Z)^{-1}\sch\mathcal F(\mathcal V)
 \end{proof}
 
 \begin{theorem}[Virtuality of the square root]
-The construction above produces a class
+The displayed construction produces a class
 $$
 [\mathcal V]\in
 K_0(\Gamma_{\mathrm{eff}}\hbox{-graded finite-dimensional super vector spaces})
@@ -370,7 +370,7 @@ together with its Fock determinant.  By itself this determinant does not
 construct a Hilbert space, a vertex algebra, or a factorization algebra
 whose character is $\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}$.
 
-Consequently every theorem below uses only the equalities
+All denominator statements use only the equalities
 $$\sdim\mathcal V_{(n,l,m)}=f(nm,l),\qquad
 \mathcal D_X=v_0\sdet_{\mathcal V}(1-x).$$
 The denominator algebra and formal current envelope are constructed
@@ -400,10 +400,10 @@ $$
 \operatorname{Tr}_{\mathcal H^{\mathrm{1p,ch}}_{(n,l,m)}}(-1)^F
 =f(nm,l).
 $$
-The determinant construction does not assume this object.  It uses only
-the virtual classes $\mathbb U_{n,l}$ and their signed dimensions.  The
-algebraic object below is instead the Borcherds denominator algebra
-selected by the same charge grading and the same signed multiplicities.
+The determinant construction uses only the virtual classes
+\(\mathbb U_{n,l}\) and their signed dimensions.  The algebraic object
+constructed from the same charge grading and the same signed
+multiplicities is the Borcherds denominator algebra.
 \end{openproblem}
 
 \section{The normalized cusp form}
@@ -566,11 +566,11 @@ group $\Gamma^{(N)}_{\mathrm{para}}$; at $N=1$ this group is $\Sp_4(\Z)$
 by Gritsenko--Nikulin \cite{GN}.  The input Jacobi form $\phi_{0,1}$
 has $f(0,0)=10$ (Eichler--Zagier, elliptic genus of K3), hence the
 output weight is $5$.  Identifying $\operatorname{Borch}(\phi_{0,1})$
-with $\Delta_5$ via the Igusa identification above
+with $\Delta_5$ via the Igusa identification
 ($\mathcal D_X=\Delta_5$) fixes
 $\operatorname{wt}(\Delta_5)=5$.  Setting $c_1(0):=f(0,0)$ exhibits the
 row $(N=1,\,\operatorname{wt}=5,\,c_1(0)=10)$ of the Gritsenko--Cl\'ery
-spread \cite{GC}; the remaining rows at $N\in\{2,3,4,6\}$ and the
+spread \cite{GC}; the rows at $N\in\{2,3,4,6\}$ and the
 half/quarter-integer continuations are anchored here but proved in
 \cite{GC}.  Integrality $\operatorname{wt}(\Delta_5)\in\Z$ pins the automorphy
 weight-multiplier to the trivial line bundle over $\Sp_4(\Z)$: no
@@ -724,10 +724,11 @@ Proposition~\ref{prop:op-normalization} give
 $$Z^X_{\mathrm{OP}}(P,Q,T)=-4096\,\Delta_5(Z)^{-2}.$$
 \end{proof}
 
-\begin{conjecture}[Protected D-brane index dictionary]
+\begin{conjecture}[Protected D-brane index]
 For the D6--D2--D0 charge
 $$\gamma(h,d,n)=(1;\,(\beta_h,d);\,n),$$
-the physical protected index is expected to be represented by the
+the physical protected index is represented, in the conjectural
+enumerative identification, by the
 Behrend-weighted Hilbert-scheme invariant:
 $$
 \Omega_X(h,d,n)
@@ -735,7 +736,7 @@ $$
 \stackrel{\mathrm{phys}}{=}
 \mathbf{DT}^X_{n,(\beta_h,d)}.
 $$
-This conjectural dictionary is separate from the enumerative scalar
+This conjectural identification is separate from the enumerative scalar
 identity in Theorem \ref{thm:op-square}.
 \end{conjecture}
 
@@ -786,7 +787,7 @@ $$Z^X_{\mathfrak s}=-4096(\mathcal D_X^{-1})^2.$$
 >{\raggedright\arraybackslash}p{0.34\textwidth}
 >{\raggedright\arraybackslash}p{0.31\textwidth}}
 \hline
-Object & Equation & Status \\
+Object & Equation & Claim strength \\
 \hline
 Primitive reduced curve counting &
 \(Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\) &
@@ -800,7 +801,7 @@ Oberdieck reduced DT/PT and Theorem \ref{thm:op-square} \\
 Protected D-brane index &
 \(\Omega_X(h,d,n)\stackrel{\mathrm{phys}}{=}
 \mathbf{DT}^X_{n,(\beta_h,d)}\) &
-conjectural physics dictionary \\
+conjectural physics identification \\
 Scalar-square branch &
 \(Z^X_{\square}=C_{\square}\Delta_5^{-2}\) &
 unconditional with \(C_{\square}=-4096\) for
@@ -983,7 +984,7 @@ s_{f_3}=-\overline{\begin{pmatrix}1&0\\0&-1\end{pmatrix}},
 \qquad
 s_{f_2-f_3}=-\overline{\begin{pmatrix}1&-1\\0&-1\end{pmatrix}}.$$
 Maass's character has value $-1$ on
-$s_{\delta_i}$ and $+1$ on the three remaining reflection classes.
+$s_{\delta_i}$ and $+1$ on the three other reflection classes.
 \end{proof}
 
 \noindent The time-like cone is
@@ -1117,9 +1118,9 @@ $$
 (\alpha(\gamma),\alpha(\gamma))=-2(4nm-l^2).
 $$
 Thus the Borcherds degree is the Lorentzian image of the Gram-index
-grading.  The Weyl chamber below is determined by the cusp polarization
-fixed in Section \ref{sec:duality-principle} together with the active
-Jacobi support, since charges with zero exponent do not generate walls.
+grading.  The Weyl chamber is determined by the cusp polarization fixed
+in Section \ref{sec:duality-principle} together with the active Jacobi
+support, since charges with zero exponent do not generate walls.
 $$E_0:=\rho.$$
 $$q^{1/2}r^{1/2}s^{1/2}=\exp(-\pi i(\rho,z)).$$
 $$\exp(-2\pi i(\alpha(\gamma),z)),\qquad
@@ -1142,7 +1143,7 @@ $$
 :=\R_{\geq0}\,\alpha(\Gamma_{\mathrm{act}})
 \subset \La^{2,1}_{II}\otimes\R.
 $$
-The real-root hyperplanes below are the walls used by the denominator
+The real-root hyperplanes are the walls used by the denominator
 identity in this polarization.
 \end{definition}
 
@@ -1356,9 +1357,9 @@ $$
 \operatorname{den}(\mathcal A_{\mathrm{den}})
 =64^{-1}\Delta_5(2Z).
 $$
-This is a theorem about the Borcherds denominator algebra.  It is not a
-construction of the microscopic BPS Hilbert space or its operator
-product.
+The theorem concerns the Borcherds denominator algebra.  A microscopic
+BPS Hilbert space and its operator product require separate
+construction.
 \end{theorem}
 
 \begin{proof}
@@ -1372,7 +1373,7 @@ $$
 \subset\mathfrak g_{\Delta_5,\alpha+\beta}.
 $$
 The degree map $\alpha(\gamma)$ is additive, hence the bracket conserves
-the Gram-degree grading.  The denominator identity proved below reads
+the Gram-degree grading.  The denominator identity reads
 $$
 \frac1{64}\Delta_5(2Z)
 =e^{-2\pi i(\rho,z)}
@@ -1415,8 +1416,8 @@ bracket is
 $$
 64^{-1}\Delta_5(2Z).
 $$
-It is not, without additional microscopic input, the BPS factorization
-algebra of the compactification.
+A BPS factorization algebra of the compactification requires additional
+microscopic input.
 \end{theorem}
 
 \begin{proof}
@@ -1647,7 +1648,7 @@ structure constants.
 \end{proposition}
 
 \begin{proof}
-The product records only
+The product determines
 $$
 \smult(\alpha)
 =\dim\mathfrak g_{\alpha,\overline0}
@@ -1657,7 +1658,7 @@ A graded super vector space with the same signed dimensions gives the
 same product.  The zero bracket on that graded space gives the same
 product but not the Borcherds bracket, since
 \([e_i,e_j]\ne0\) in \(\mathcal A_{\mathrm{den}}\) for \(i\ne j\).
-A Hall bracket would require compact extension correspondences,
+A Hall bracket requires compact extension correspondences,
 orientation data, protected integration, and a basis of protected
 primitives.  None of these is encoded in the determinant.
 \end{proof}
@@ -1693,9 +1694,9 @@ $$
 0,&\text{otherwise}.
 \end{cases}
 $$
-This sign split is the Gritsenko--Nikulin BKM parity datum.  As a
-product statement alone it would be only a choice of Grothendieck
-representative for the signed exponent.  Define multisets by
+This sign split is the Gritsenko--Nikulin BKM parity datum.  The
+product statement alone fixes only a Grothendieck representative for the
+signed exponent.  Define multisets by
 multiplicity:
 $$a\in\Delta_{\overline0}^{im}\quad\hbox{with multiplicity }
 \mu_{\overline0}(a),$$
@@ -2156,10 +2157,10 @@ $F_2,F_3,F_4$ also carry Gritsenko--Nikulin denominator identities.
 The congruence rows $F_5,F_6,F_7,F_8$ have product-degree lattices in
 Proposition~\ref{prop:congruence-product-degree-lattices}.  A
 nonabelian Weyl--Borcherds promotion is additional structure: it is
-imported for $F_5,F_6,F_7,F_8$ from the CHL denominator theorem of
-Govindarajan.  For $F_7$ this imported theorem lives on the
+the CHL denominator theorem of Govindarajan for \(F_5,F_6,F_7,F_8\).
+For \(F_7\) the theorem lives on the
 $\mu_4$-multiplier cover determined by the Clery--Gritsenko order-four
-multiplier and supplies no Vol.~III CY/DT/chiral boundary host.
+multiplier, with no Vol.~III CY/DT/chiral boundary host.
 
 \begin{proposition}[Extension separation]
 \label{prop:extension-quarantine}
@@ -2188,7 +2189,7 @@ $$F_j(Z)=C_j e^{2\pi i(\rho_j,Z)}
 \prod_{\gamma\in\Gamma_{j,\mathrm{prod}}^+}(1-e^{2\pi i(\gamma,Z)})^{c_j(\gamma)},$$
 $$\operatorname{den}(\mathfrak g_j)=C'_jF_j(a_jZ),\qquad
 \sdim(\mathfrak g_{j,\gamma})=c_j(\gamma).$$
-If a future construction supplies the row by a CHL/K3 sector with
+If a CHL/K3 sector supplies the row with
 $$\phi^{(j)}=\tfrac12Z^{(j)}_{\mathrm{K3}},$$
 then the scalar-square branch is
 $$Z_j=C_j/F_j^2.$$
@@ -2223,19 +2224,19 @@ root form.  The additional datum is supplied by
 \cite{Gov11BKM}, building on \cite{GK09CHL} and \cite{CD09BKM}.
 \end{proof}
 
-The physical square-root atlas used in Vol.~III has weights
+The Vol.~III square-root comparison tuple has weights
 $$
 (5,2,1,1,\tfrac12,1,\tfrac14,0).
 $$
-That line is not the table of the theorem above unless a row map from
-the Clery--Gritsenko forms to the physical rows has first been built.
+It is not the Clery--Gritsenko table.  A comparison with the
+Clery--Gritsenko forms requires a row map.
 Thus
 $$\mathrm{Clery\mbox{--}Gritsenko\ classification}\neq
 \mathrm{CHL\ realisation\ theorem}.$$
-$$\mathrm{status}(F_1)=\mathrm{theorem},\qquad
-\mathrm{status}(F_2,F_3,F_4)=\mathrm{GN\ denominator\ theorem},$$
-$$\mathrm{status}(F_5,F_6,F_7,F_8)
-=\mathrm{Govindarajan\ CHL/WKB\ denominator\ theorem},$$
+$$F_1:\ \mathrm{theorem},\qquad
+F_2,F_3,F_4:\ \mathrm{GN\ denominator\ theorem},$$
+$$F_5,F_6,F_7,F_8:
+\ \mathrm{Govindarajan\ CHL/WKB\ denominator\ theorem},$$
 with $F_7$ understood on the $\mu_4$-multiplier cover determined by its
 order-four multiplier and not as a Vol.~III physical boundary theorem.
 Dijkgraaf--Verlinde--Verlinde: \cite{DVV}.  Borcherds: \cite{B}.
@@ -2318,8 +2319,8 @@ $$|\alpha_pp^{-10}|=|\beta_pp^{-10}|=p^{-3/2},$$
 so the Euler product converges absolutely and has no zero.
 \end{proof}
 
-\begin{proposition}[Manin--Deligne period scope]
-\label{prop:manin-deligne-scope}
+\begin{proposition}[Manin--Deligne period]
+\label{prop:manin-deligne-period}
 There are Manin periods $\Omega^\pm(g)$ such that
 $$\varepsilon(m)=
 \begin{cases}
@@ -2363,10 +2364,10 @@ Equivalently, since $g$ is a Hecke eigenform,
 $$a_{10}(g)=a_2(g)a_5(g)=(-528)(-1025850)=541648800.$$
 \end{proof}
 
-\begin{remark}[Scalar-square status]
+\begin{remark}[Scalar-square separations]
 $$
 \begin{array}{c|c|c}
-\mathrm{claim}&\mathrm{obstruction}&\mathrm{status}\\ \hline
+\mathrm{claim}&\mathrm{failure}&\mathrm{correct\ statement}\\ \hline
 \chi_{10}^{\mathrm{OP}}=\Delta_5^2
 &\mathrm{normalisation\ conflict}
 &\chi_{10}^{\mathrm{OP}}=2^{-12}\Delta_5^2\\
@@ -2456,8 +2457,8 @@ and
 $$\alpha_j:\Gamma_{j,\mathrm{prod}}^+\rightarrow L_j,\qquad
 \sdim(\mathfrak g_{j,\alpha_j(\gamma)})=c_j(\gamma).$$
 For a product with several cusps this single-source notation is only a
-template.  The actual congruence-row product datum is the
-cusp-labelled datum constructed below.
+template.  The congruence-row product datum is the cusp-labelled datum
+of Proposition~\ref{prop:congruence-product-degree-lattices}.
 \end{definition}
 
 \begin{definition}[Gritsenko--Nikulin degree lattice]
@@ -2499,7 +2500,7 @@ D_5(Z)=q^{1/2}r^{1/2}s^{1/2}
 (1-q^nr^ls^m)^{f(nm,l)}
 $$
 with leading monomial $q^{1/2}r^{1/2}s^{1/2}$.
-The denominator normalization used for the main BKM algebra is instead
+The denominator normalization used for the main BKM algebra is
 $$
 q^nr^ls^m=\exp(-\pi i(\alpha(n,l,m),z)).
 $$
@@ -2613,7 +2614,7 @@ which gives the three displayed prefactors for $t=2,3,4$.
 \label{prop:gn-chambers-234}
 For $t=2,3,4$ the Weyl group is
 $$W_{t,II,\overline0}=W^{(2)}(M_t),$$
-and all simple real roots in the chamber below are even.  The Weyl
+and all simple real roots in this chamber are even.  The Weyl
 vector is
 $$\rho_t=\left(\frac{1}{2t},\frac12,\frac{1}{2t}\right).$$
 The simple real roots are
@@ -2708,7 +2709,7 @@ Let
 $$
 \phi_t(\tau,z)=\sum f_t(n,l)q^nr^l .
 $$
-The integers \(N_t(a)\) below are the additive-side coefficients in
+The integers \(N_t(a)\) are the additive-side coefficients in
 Gritsenko--Nikulin (5.1), equivalently the signed supermultiplicities of
 imaginary simple roots.  They are not the product exponents \(f_t(nm,l)\).
 In the Gritsenko--Nikulin exponential normalization
@@ -2995,10 +2996,10 @@ orthogonal Borcherds products for
 $U\oplus U(N_j)\oplus\langle-2t_j\rangle$.  That theorem supplies the
 automorphic product and the divisor.  It does not supply a Weyl chamber,
 simple real roots, a parity function, or a Weyl-sum identity on
-$M_{t_j}$.  Thus $L_j^{\mathrm{prod}}$ and
-$\alpha_j^{\mathrm{prod}}$ are constructed here as product data, not as
-a completed BKM denominator datum.  The completed denominator datum for
-$F_5,F_6,F_7,F_8$ is imported separately from the CHL theorem in
+$M_{t_j}$.  Thus \(L_j^{\mathrm{prod}}\) and
+\(\alpha_j^{\mathrm{prod}}\) are product data, not a completed BKM
+denominator datum.  The completed denominator datum for
+\(F_5,F_6,F_7,F_8\) comes from the CHL theorem in
 Theorem~\ref{thm:govindarajan-denominator-rows}.
 \end{proof}
 
@@ -3035,7 +3036,7 @@ $\mathsf{Den}_{\Delta_5,E}$ from
 Theorem~\ref{thm:factorization-square-root}.  For $j=2,3,4$ it is the
 current envelope of the Gritsenko--Nikulin BKM algebra
 $\mathfrak g_j^{\mathrm{GN}}$.  For $j=5,6,7,8$ it is the formal
-product algebra $\mathsf{Prod}_{j,E}$ above.
+product algebra \(\mathsf{Prod}_{j,E}\).
 For $j=5,6,7,8$, Theorem~\ref{thm:govindarajan-denominator-rows}
 also supplies a nonabelian CHL/WKB denominator algebra; the abelian
 product algebra in this theorem is the part constructed directly from
@@ -3135,8 +3136,8 @@ alternating sum.  That side requires a reflection chamber, a set of
 simple real roots, a reflection character, and the imaginary
 simple-root contribution.
 
-The Gritsenko--Nikulin chambers for $M_1$ and $M_2$ cannot be imported
-by notation.  The forms $\nabla_3$, $\nabla_2$, $\nabla_{3/2}$, and
+The Gritsenko--Nikulin chambers for $M_1$ and $M_2$ do not follow by
+notation.  The forms $\nabla_3$, $\nabla_2$, $\nabla_{3/2}$, and
 $Q_1$ are congruence products with non-infinity cusp factors, whereas
 $\Delta_5$ and $\Delta_2$ are full-paramodular denominator forms.
 Clery--Gritsenko construct the automorphic product, character, and
@@ -3158,9 +3159,9 @@ F_7=\nabla_{3/2},\qquad F_8=Q_1
 $$
 are Weyl--Kac--Borcherds denominator forms.  The row $F_7$ is taken on
 the $\mu_4$-multiplier cover determined by the Clery--Gritsenko
-order-four multiplier.  This does not make $F_7$ an ordinary scalar
-denominator on $\Gamma_0^{(2)}(4)$, and it supplies no Vol.~III row map,
-metaplectic boundary theorem, or CY/DT/chiral host.  In the
+order-four multiplier.  Thus \(F_7\) is a denominator on the
+\(\mu_4\)-cover, with no Vol.~III row map, metaplectic boundary theorem,
+or CY/DT/chiral host.  In the
 product-degree notation of this appendix the real-root data are
 $$
 L_5=L_6=L_7=M_1,\qquad
@@ -3249,8 +3250,8 @@ $$
 $$
 are constructed for $j=5,6,7,8$ by the CHL denominator theorem.  They are
 not consequences of the Clery--Gritsenko product formula alone.
-In the monic Clery--Gritsenko/Govindarajan product variables used in
-Proposition~\ref{prop:gc-row-data}, the imported identities have
+In the monic Clery--Gritsenko/Govindarajan product variables of
+Proposition~\ref{prop:gc-row-data}, the identities have
 $$
 C'_j=1,\qquad a_j=1\qquad(j=5,6,7,8).
 $$
@@ -3265,10 +3266,9 @@ diagonal-divisor form of type \((t,N)=(1,4)\), weight \(3/2\), on
 \(\Gamma_0^{(2)}(4)\) with an order-four multiplier.  After pullback to
 the associated \(\mu_4\)-multiplier cover, Govindarajan's CHL/WKB
 theorem identifies it with the Weyl--Kac--Borcherds denominator of
-\(\mathcal G_1(4)\).  This is not an ordinary scalar denominator on
-\(\Gamma_0^{(2)}(4)\).  It is not a Vol.~III physical
-\(\Phi^{\mathrm{V3}}_7\), not a metaplectic boundary host, and not a
-CY/DT or chiral/Hall theorem.
+\(\mathcal G_1(4)\).  It is the \(\mu_4\)-cover denominator identity,
+with no Vol.~III physical \(\Phi^{\mathrm{V3}}_7\), no
+metaplectic boundary host, and no CY/DT or chiral/Hall theorem.
 
 The square identity \(F_7^2=\Phi_3\) is only a scalar square identity.
 It does not carry the reflection sign, parity, Weyl chamber, or
@@ -3366,9 +3366,9 @@ e^{\rho_7+a}=q^{A+1/2}r^{B+1/2}s^{C+1/2},
 $$
 which is exactly the displayed coefficient extraction.  The sourced
 divisor-sum formula belongs to the square $F_7^2$, with its composite
-$N=4$ Jacobi seed.  Applying a prime-type half-index formula directly
-to $F_7$ would introduce fractional divisor powers at non-primitive
-chamber points, while the theta product has integral coefficients.
+$N=4$ Jacobi seed.  A direct prime-type half-index formula for \(F_7\)
+introduces fractional divisor powers at non-primitive chamber points,
+whereas the theta product has integral coefficients.
 \end{proof}
 
 \begin{lemma}[$Q_1$ in $M_2$ notation]
@@ -3442,7 +3442,7 @@ $$
 \delta_1,\quad\delta_2,\quad\delta_4,\quad\delta_3,
 $$
 so the signed real-simple-root supermultiplicity is \(+1\) in each
-case.  Their even parity and multiplicity-one real-root status are the
+case.  Their even parity and multiplicity-one real-root data are the
 Cheng--Dabholkar/Govindarajan CHL denominator data.
 \end{lemma}
 
@@ -3487,20 +3487,19 @@ and product representations, integrality, correct multiplicity of the
 simple real roots, and the sign change of the square root under a Weyl
 reflection.  Section 4.3 states the Weyl--Kac--Borcherds denominator
 formula for $\mathcal G_N(M)$.
-For $F_7=\nabla_{3/2}$ this is an imported theorem on the
-$\mu_4$-multiplier cover.  It supplies no Vol.~III boundary partition
+For \(F_7=\nabla_{3/2}\) the theorem is on the
+\(\mu_4\)-multiplier cover, with no Vol.~III boundary partition
 identity and no CY/DT/chiral host.
-For $Q_1$, Govindarajan supplies the WKB denominator data needed here
+For \(Q_1\), Govindarajan supplies the WKB denominator data
 \cite{Gov11BKM}*{Appendix C, Appendix D}.
 The dyon-counting additive-seed issue for the $(2,4)$ and $(4,2)$
-examples is not used.
+examples plays no role.
 The later hyperbolic and umbral extensions of \cite{GovSam19} are also
-not used here: for $N=5,6$ they replace $W$ by $W_+$, leave the sum
+outside this proof: for $N=5,6$ they replace $W$ by $W_+$, leave the sum
 side incompletely characterized, and treat some rows as product-only or
 candidate BKM data \cite{GovSam19}*{Sections 3.3 and 4}.
 
-It remains only to translate the real-root data into the notation used
-here.  On $M_t$,
+The real-root data translate to this notation as follows.  On \(M_t\),
 $$
 ((n,l,m),(n',l',m'))=2ll'-4t(nm'+n'm).
 $$
@@ -3515,13 +3514,13 @@ $(\rho,\delta)=-(\delta,\delta)/2$ because all displayed real roots
 have square $2$.
 \end{proof}
 
-\begin{remark}[Nonabelian status]
+\begin{remark}[Nonabelian row data]
 \label{prop:no-unbuilt-denominator}
-The row datum has the following status:
+The row data are:
 $$
 \begin{array}{c|c|c}
 j&\mathrm{automorphic\ data}\ (F_j,\Gamma_j,\nu_j,\rho_j^{\mathrm{pref}})
-&\mathrm{lattice\ and\ degree\ status}\\ \hline
+&\mathrm{lattice\ and\ degree\ datum}\\ \hline
 1&\mathrm{constructed\ here}&\mathrm{constructed\ here}\\
 2,3,4&\mathrm{GN\ denominator\ theorem}
 &L_j=M_j,\ \alpha_j=\alpha_j^{\mathrm{GN}}\\
@@ -3531,11 +3530,11 @@ j&\mathrm{automorphic\ data}\ (F_j,\Gamma_j,\nu_j,\rho_j^{\mathrm{pref}})
 &P^{(2)},\mathcal M_2,W_2,\epsilon=\det\ \mathrm{constructed}\\
 \end{array}
 $$
-Thus all eight rows now have formal product/current-envelope objects.
+Thus all eight rows have formal product/current-envelope objects.
 Rows \(1\)--\(4\) have the Gritsenko--Nikulin denominator algebras.
 Rows \(5\)--\(8\) have the Govindarajan CHL/WKB denominator algebras in
-the imported normalization.  The row \(F_7\) is imported only on the
-\(\mu_4\)-multiplier cover; it supplies no Vol.~III physical boundary
+the CHL normalization.  The row \(F_7\) lives on the
+\(\mu_4\)-multiplier cover and gives no Vol.~III physical boundary
 theorem.
 \end{remark}
 
@@ -3557,32 +3556,32 @@ $$
 $$
 Here \(\theta_j\) fixes the modular group or cover, character, divisor,
 Jacobi seed, normalization, orientation, Behrend sign, and Fourier
-chamber.  The CHL/WKB denominator rows \(F_5,\ldots,F_8\) are no longer
-the conjectural part after
-Theorem~\ref{thm:govindarajan-denominator-rows}.
+chamber.  The CHL/WKB theorem proves the denominator identities for
+\(F_5,\ldots,F_8\).  The physical row map and the boundary host are the
+open data.
 \end{openproblem}
 
-\begin{proposition}[Boundary scope]
-\label{prop:boundary-scope}
+\begin{proposition}[Boundary weights]
+\label{prop:boundary-weights}
 In the primary Clery--Gritsenko enumeration,
 $$
 \{j:\mathrm{wt}(F_j)\in\Z\}=\{1,2,3,5,6,8\},\qquad
 \{j:\mathrm{wt}(F_j)\notin\Z\}=\{4,7\}.
 $$
-The older Vol.~III comparison notation
+The Vol.~III comparison notation
 $$\Phi^{\mathrm{V3}}_1,\ldots,\Phi^{\mathrm{V3}}_8,\qquad
 \mathrm{wt}(\Phi^{\mathrm{V3}}_j)=(5,2,1,1,\tfrac12,1,\tfrac14,0),$$
-is stale against the current Vol.~III frontier.  It is not a
-Clery--Gritsenko row system and not a live physical atlas.
+does not define the Clery--Gritsenko row system and defines no physical
+atlas in this paper.
 \end{proposition}
 
 \begin{proof}
 The Clery--Gritsenko theorem gives the exact weights in the first
-display.  The deprecated comparison weights
+display.  The comparison weights
 $$
 (5,2,1,1,\tfrac12,1,\tfrac14,0)
 $$
-are therefore not the primary-source row labels of \cite{GC}.  The
+are not the primary-source row labels of \cite{GC}.  The
 Borcea--Voisin route \cite{BORCEA}, \cite{VOISIN} and reduced
 curve-counting route \cite{OhThomasI}, \cite{OhThomasII}, \cite{BOPY}
 require a separate
@@ -3590,32 +3589,30 @@ construction of $X_j$, the reduced theory, and the product identity.  No
 such construction is used in the $N=1$ theorem.
 \end{proof}
 
-\begin{remark}[Boundary row status]
+\begin{remark}[Boundary rows]
 The Clery--Gritsenko weights are
 \[
 (5,2,1,\tfrac12,3,2,\tfrac32,1),
 \]
-so they are split from every stale Vol.~III comparison tuple containing
-weight \(1/4\) or weight \(0\).  The assertion that \(F_4\) is integral
-is false: \(F_4=\Delta_{1/2}\).  There is therefore no physical
-\(\Phi^{\mathrm{V3}}_4\) identification.  Any boundary
-partition identity remains open until the row map, the reduced theory,
-and the duality signs are built.
+and no Clery--Gritsenko row has weight \(1/4\) or weight \(0\).  Also
+\(F_4=\Delta_{1/2}\), so \(F_4\) has half-integral weight.  A physical
+\(\Phi^{\mathrm{V3}}_4\) identification requires a row map.  A boundary
+partition identity requires the row map, the reduced theory, and the
+duality signs.
 \end{remark}
 
-\begin{remark}[Vol.~III row-map obstruction]
+\begin{remark}[Vol.~III row map]
 The symbols \(F_i\) and \(\Phi^{\mathrm{V3}}_j\) label different row
 systems.  When a collision is possible, write \(F_i^{\mathrm{CG}}\) for
 the Clery--Gritsenko rows in the present order,
 \(T_a^{\mathrm{CG}}\) for the same catalogue in triple order, and
-\(\Phi^{\mathrm{old}}_j\) for the deprecated comparison symbols.  The rows
+\(\Phi^{\mathrm{cmp}}_j\) for the comparison symbols.  The rows
 \(F_i^{\mathrm{CG}}\) are the diagonal-divisor
-forms of \cite{GC}; in the order used here their weights are
+forms of \cite{GC}; in this paper's order their weights are
 $$
 (5,2,1,\tfrac12,3,2,\tfrac32,1).
 $$
-Vol.~III sometimes lists the same Clery--Gritsenko catalogue in the
-triple order
+In triple order the same Clery--Gritsenko catalogue is indexed by
 $$
 (t,N)=(1,1),(2,1),(1,2),(3,1),(1,3),(4,1),(1,4),(2,2),
 $$
@@ -3628,26 +3625,26 @@ $$
 (1,2,5,3,6,4,7,8).
 $$
 
-The deprecated comparison symbols
+The comparison symbols
 $$
-\Phi^{\mathrm{old}}_1,\ldots,\Phi^{\mathrm{old}}_8,\qquad
-\mathrm{wt}(\Phi^{\mathrm{old}}_j)=(5,2,1,1,\tfrac12,1,\tfrac14,0),
+\Phi^{\mathrm{cmp}}_1,\ldots,\Phi^{\mathrm{cmp}}_8,\qquad
+\mathrm{wt}(\Phi^{\mathrm{cmp}}_j)=(5,2,1,1,\tfrac12,1,\tfrac14,0),
 $$
 are therefore not Clery--Gritsenko row labels.  A row map
 $$
-\Phi^{\mathrm{old}}_j\longleftrightarrow F_i
+\Phi^{\mathrm{cmp}}_j\longleftrightarrow F_i
 $$
-would have to specify the modular group or cover, character, divisor,
+requires the modular group or cover, character, divisor,
 Jacobi seed at every cusp, product-degree lattice, Weyl vector, real
 simple roots, reflection character, and, on the physical side, the
-CY/DT/chiral host and reduced partition identity.  No such datum is
-constructed here.
+CY/DT/chiral host and reduced partition identity.  This paper contains
+no such datum.
 
 Consequently the direct identifications
 $$
-\Phi^{\mathrm{old}}_5=F_5,\qquad
-\Phi^{\mathrm{old}}_7=F_7,\qquad
-\Phi^{\mathrm{old}}_8=F_8
+\Phi^{\mathrm{cmp}}_5=F_5,\qquad
+\Phi^{\mathrm{cmp}}_7=F_7,\qquad
+\Phi^{\mathrm{cmp}}_8=F_8
 $$
 are false already by weight.  The Clery--Gritsenko catalogue contains
 no weight-\(1/4\) row and no weight-\(0\) row.  The CHL square
@@ -3657,14 +3654,13 @@ maps and do not by themselves carry the denominator sign, parity, or
 Weyl alternating side.
 \end{remark}
 
-\begin{remark}[Boundary host gate]
+\begin{remark}[Boundary host]
 A boundary identity
 $$
 Z_j=C_j(\Phi^{\mathrm{V3}}_j)^{-2}
 $$
-is not a consequence of the Clery--Gritsenko product, of a fractional
-weight, or of a formal current envelope.  Before such an identity is
-used, one must supply a row map
+requires more than a Clery--Gritsenko product, a fractional weight, or a
+formal current envelope.  It requires a row map
 \(\Phi^{\mathrm{V3}}_j\leftrightarrow F_i\) fixing the weight, group,
 multiplier, cover, divisor, Jacobi input, and normalization; a
 Calabi--Yau or orbifold host \(X_j\) with reduced
@@ -3674,21 +3670,21 @@ $$
 Z^{X_j}_{\mathrm{red}}=C_jF_i^{-2};
 $$
 and a compact oriented Hall/chiral datum whose protected primitive
-bracket satisfies the Borcherds relations for the same row.  Until these
-data are built, the boundary rows carry only their automorphic product
-and any separately proved denominator theorem.  They carry no CY/DT
-partition identity, no physical BPS factorization algebra, and no
+bracket satisfies the Borcherds relations for the same row.  In the
+absence of these data, the boundary rows carry only their automorphic
+product and any separately proved denominator theorem.  They carry no
+CY/DT partition identity, no physical BPS factorization algebra, and no
 fractional chiral power.
 \end{remark}
 
-The following compatibility dictionary is restricted to the $N=1$ Igusa
-boundary.  The dictionary itself supplies no row map
+The following comparison table is restricted to the $N=1$ Igusa
+boundary.  It contains no row map
 $$\Phi^{\mathrm{V3}}_j\longleftrightarrow F_i$$
 and no physical row-map denominator theorem for any congruence
 row.  The separate Govindarajan CHL/WKB denominator theorem remains
 Theorem~\ref{thm:govindarajan-denominator-rows}.
 
-\input{agent_material/06_vol3_homotopy_positive_cone_dictionary}
+\input{appendices/vol3_homotopy_positive_cone}
 
 %\printbibliography
 \bibliographystyle{amsrn}
