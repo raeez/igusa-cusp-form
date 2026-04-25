@@ -5,11 +5,11 @@
 #  Usage:
 #    make            Full paper build -> out/main.pdf
 #    make fast       Single pdflatex pass -> out/main.pdf
-#    make release    Full rebuild -> out/ + standalones + iCloud
+#    make release    Full rebuild -> out/main.pdf + standalones + iCloud
 #    make standalone Build standalone documents -> out/
 #    make icloud     Copy latest PDFs to iCloud Drive
 #    make clean      Remove LaTeX build debris
-#    make veryclean  Remove build debris and out/
+#    make veryclean  Remove build debris; preserve tracked out/main.pdf
 #    make help       Show available targets
 #
 # ============================================================================
@@ -30,6 +30,7 @@ TEX_SOURCES := $(MAIN).tex $(wildcard appendices/*.tex)
 ICLOUD_DIR := /Users/raeez/Library/Mobile Documents/com~apple~CloudDocs/research
 
 STANDALONE_TEX := $(wildcard standalone/*.tex)
+STANDALONE_PDFS := $(patsubst standalone/%.tex,$(OUT_DIR)/%.pdf,$(STANDALONE_TEX))
 STANDALONE_PASSES := 3
 
 AUX_EXTS := aux bbl blg idx ilg ind log out toc synctex.gz fdb_latexmk fls
@@ -74,7 +75,6 @@ fast:
 	@echo "  ok  $(PDF)"
 
 release:
-	@rm -rf $(OUT_DIR)
 	@mkdir -p $(OUT_DIR) $(LOG_DIR)
 	@echo ""
 	@echo "  =========================================="
@@ -82,14 +82,20 @@ release:
 	@echo "  =========================================="
 	@echo ""
 	@echo "  [1/2] Paper"
-	@$(MAKE) --no-print-directory $(PDF)
+	@$(MAKE) --no-print-directory -B $(PDF)
 	@echo ""
 	@echo "  [2/2] Standalone documents and iCloud"
 	@$(MAKE) --no-print-directory icloud
 	@echo ""
 	@echo "  =========================================="
-	@echo "  Release complete. All output in out/:"
-	@ls -1 $(OUT_DIR)/*.pdf 2>/dev/null | sed 's/^/    /'
+	@echo "  Release complete. Canonical output:"
+	@echo "    $(PDF)"
+	@if [ -n "$(strip $(STANDALONE_TEX))" ]; then \
+		echo "  Standalone output:"; \
+		for pdf in $(STANDALONE_PDFS); do \
+			if [ -f "$$pdf" ]; then echo "    $$pdf"; fi; \
+		done; \
+	fi
 	@echo "  =========================================="
 
 standalone:
@@ -139,15 +145,18 @@ standalone:
 icloud: $(PDF) standalone
 	@echo "  -- Copying Igusa PDFs to iCloud --"
 	@mkdir -p "$(ICLOUD_DIR)/modular_forms"
+	@cp $(PDF) "$(ICLOUD_DIR)/modular_forms/$(MAIN).pdf"
+	@echo "    ok  modular_forms/$(MAIN).pdf"
 	@cp $(PDF) "$(ICLOUD_DIR)/modular_forms/igusa_cusp_form.pdf"
 	@echo "    ok  modular_forms/igusa_cusp_form.pdf"
-	@for pdf in $(OUT_DIR)/*.pdf; do \
-		name=$$(basename "$$pdf"); \
-		if [ "$$name" != "$(MAIN).pdf" ]; then \
+	@if [ -n "$(strip $(STANDALONE_TEX))" ]; then \
+		for pdf in $(STANDALONE_PDFS); do \
+			if [ ! -f "$$pdf" ]; then continue; fi; \
+			name=$$(basename "$$pdf"); \
 			cp "$$pdf" "$(ICLOUD_DIR)/modular_forms/$$name"; \
 			echo "    ok  modular_forms/$$name"; \
-		fi; \
-	done
+		done; \
+	fi
 	@echo "  Igusa PDFs copied to iCloud."
 
 view:
@@ -166,8 +175,8 @@ clean:
 	@echo "  ok  Clean."
 
 veryclean: clean
-	@rm -rf $(OUT_DIR)
-	@echo "  ok  out/ removed."
+	@echo "  out/main.pdf is tracked; veryclean preserves $(OUT_DIR)."
+	@echo "  ok  Clean."
 
 count:
 	@echo ""
@@ -187,11 +196,11 @@ help:
 	@echo "  --------------------------------"
 	@echo "  make            Full paper build -> out/main.pdf"
 	@echo "  make fast       Single pdflatex pass -> out/main.pdf"
-	@echo "  make release    Full rebuild -> out/ + standalones + iCloud"
+	@echo "  make release    Full rebuild -> out/main.pdf + standalones + iCloud"
 	@echo "  make standalone Build standalone documents -> out/"
 	@echo "  make icloud     Copy latest PDFs to iCloud Drive"
 	@echo "  make clean      Remove build debris"
-	@echo "  make veryclean  Remove build debris and out/"
+	@echo "  make veryclean  Remove build debris; preserve tracked out/main.pdf"
 	@echo "  make count      Paper statistics"
 	@echo "  make help       This message"
 	@echo ""
