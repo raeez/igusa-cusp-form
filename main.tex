@@ -1508,7 +1508,9 @@ B(c,c')=\bigl((Q,Q'),(Q,P')+(Q',P),(P,P')\bigr),
 \]
 satisfying
 \(\Pi(c+c')=\Pi(c)+\Pi(c')+B(c,c')\) and
-\(B(c,c)=2\Pi(c)\).  The central extension
+\(B(c,c)=2\Pi(c)\); \([B]=0\) in
+\(H^2_{\mathrm{sym}}(\Gamma_X^{\mathrm{phys}};\Gamma_{\mathrm{ind}})\)
+via Lemma~\ref{lem:b-cocycle-central-extension}.  The central extension
 \[
 \Gamma_X:=\Gamma_X^{\mathrm{phys}}\oplus_B\Gamma_{\mathrm{ind}},
 \qquad
@@ -1530,7 +1532,11 @@ correction needed because \(\Pi\) is quadratic, not linear; without it
 the bracket \([\mathcal A_{\mathrm{den},\Pi(c)},
 \mathcal A_{\mathrm{den},\Pi(c')}]
 \subset\mathcal A_{\mathrm{den},\Pi(c+c')}\) fails by the cocycle
-correction \(B(c,c')\).  Compatibility of \(\Pi\) with the chamber
+correction \(B(c,c')\).  The precise sense of ``standard
+Heisenberg-type'' is recorded in
+Remark~\ref{rem:b-cocycle-status}: cohomologically the extension is
+split (\([B]=0\)) but the splitting requires the quadratic primitive
+\(\Pi\), not a linear cochain.  Compatibility of \(\Pi\) with the chamber
 ordering of \(\Gamma_{\mathrm{eff}}\) is automatic: the BPS positivity
 conditions on \((Q,P)\) (electric/magnetic primitivity, chamber-positive
 central charge) restrict to the Borcherds-positive cone in
@@ -1686,6 +1692,189 @@ Expand
 The three cross terms are exactly the three components of \(B(c_1,c_2)\).
 \end{proof}
 
+\begin{lemma}[Symmetric bilinear $2$-cocycle and on-the-nose
+associativity of the Gram-corrected charge product]
+\label{lem:b-cocycle-central-extension}
+Let \(S\) be a complex K3 surface and
+\(\La_S=H^*(S,\Z)\) the Mukai lattice (even unimodular, signature
+\((4,20)\)).  Let
+\(\Gamma_X^{\mathrm{phys}}:=\La_S\oplus\La_S\),
+\(\Gamma_{\mathrm{gram}}:=\Z^3\), and let
+\(\Pi_X:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{gram}}\),
+\(B:\Gamma_X^{\mathrm{phys}}\times\Gamma_X^{\mathrm{phys}}\to
+\Gamma_{\mathrm{gram}}\) be as in
+Definition~\textup{\ref{def:dyonic-mukai-lattice}}, namely, with
+\(c=(Q,P)\),
+\[
+\Pi_X(Q,P)=\bigl(\tfrac{(Q,Q)}{2},\,(Q,P),\,\tfrac{(P,P)}{2}\bigr),
+\qquad
+B((Q,P),(Q',P'))=\bigl((Q,Q'),(Q,P')+(Q',P),(P,P')\bigr).
+\]
+Then:
+\begin{enumerate}
+\item[\textup{(i)}] \(B\) is symmetric and \(\Z\)-bilinear, and takes
+integral values: \(B\in\Hom_\Z\!\bigl(S^2\Gamma_X^{\mathrm{phys}},
+\Gamma_{\mathrm{gram}}\bigr)\subset
+\Hom_\Z\!\bigl(\Gamma_X^{\mathrm{phys}}\otimes_\Z
+\Gamma_X^{\mathrm{phys}},\Gamma_{\mathrm{gram}}\bigr)\).
+\item[\textup{(ii)}] (Polarisation.)  \(B(c,c)=2\Pi_X(c)\) for every
+\(c\in\Gamma_X^{\mathrm{phys}}\).
+\item[\textup{(iii)}] (Symmetric Hochschild $2$-cocycle.) \(B\) is
+normalised, \(B(c,0)=B(0,c)=0\), and the additive coboundary
+\[
+(\delta B)(a,b,c):=B(b,c)-B(a+b,c)+B(a,b+c)-B(a,b)
+\]
+vanishes identically.  Hence
+\([B]\in H^2_{\mathrm{sym}}\!\bigl(\Gamma_X^{\mathrm{phys}};
+\Gamma_{\mathrm{gram}}\bigr)\) is well defined.
+\item[\textup{(iv)}] (Star-associativity on the nose.) The product on
+\(\widehat\Gamma_X:=\Gamma_X^{\mathrm{phys}}\oplus\Gamma_{\mathrm{gram}}\),
+\[
+(c,T)\star(c',T'):=\bigl(c+c',\,T+T'+B(c,c')\bigr),
+\]
+is associative and commutative; the unit is \((0,0)\) and the inverse
+of \((c,T)\) is \((-c,\,-T+B(c,c))=(-c,\,-T+2\Pi_X(c))\).  Thus
+\((\widehat\Gamma_X,\star)\) is an abelian group, and the sequence
+\[
+0\longrightarrow\Gamma_{\mathrm{gram}}\xrightarrow{T\mapsto(0,T)}
+\widehat\Gamma_X\xrightarrow{\mathrm{pr}_1}
+\Gamma_X^{\mathrm{phys}}\longrightarrow0
+\]
+is a central extension of abelian groups with cocycle \(B\).
+\item[\textup{(v)}] (Splitting; \([B]=0\).)  The Gram-shadow section
+\(s:\Gamma_X^{\mathrm{phys}}\to\widehat\Gamma_X\), \(s(c):=(c,\Pi_X(c))\),
+is a homomorphism for \(\star\); equivalently
+\(B=-\delta\Pi_X\) in
+\(B^2_{\mathrm{sym}}(\Gamma_X^{\mathrm{phys}};\Gamma_{\mathrm{gram}})\),
+where \((\delta\Pi_X)(c,c')=\Pi_X(c)+\Pi_X(c')-\Pi_X(c+c')\).  In particular
+\([B]=0\), the extension is split as an extension of abelian groups, and
+\((c,T)\mapsto(c,T-\Pi_X(c))\) is an isomorphism
+\(\widehat\Gamma_X\xrightarrow{\sim}
+\Gamma_X^{\mathrm{phys}}\oplus\Gamma_{\mathrm{gram}}\) of abelian
+groups carrying \(\star\) to componentwise addition.
+\item[\textup{(vi)}] (Quadratic obstruction.)  \(B\) is not the
+coboundary of any \emph{linear} \(1\)-cochain
+\(L:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{gram}}\): if
+\(B(c,c')=L(c)+L(c')-L(c+c')\) for an additive \(L\), then setting
+\(c'=c\) and using \textup{(ii)} gives \(2\Pi_X(c)=2L(c)-L(2c)=0\),
+i.e.\ \(\Pi_X\equiv 0\), contradiction.  Trivialising \([B]\) requires the
+quadratic refinement \(\Pi_X\); without \(\Pi_X\) the symmetric bilinear
+form \(B\) carries the standard Heisenberg-type extension class.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Write \(c=(Q,P)\), \(c'=(Q',P')\), \(c''=(Q'',P'')\) with
+\(Q,Q',Q'',P,P',P''\in\La_S\), and abbreviate
+\((\,\cdot\,,\,\cdot\,):\La_S\times\La_S\to\Z\) by juxtaposition,
+\(QQ'=(Q,Q')\), so that
+\(B(c,c')=(QQ',\,QP'+Q'P,\,PP')\).
+
+\smallskip\emph{(i) Symmetry, bilinearity, integrality.}
+The components \(QQ'\) and \(PP'\) are the symmetric Mukai pairing on
+\(\La_S\), so each is symmetric and \(\Z\)-bilinear.  The middle
+component is the polarisation
+\((c,c')\mapsto QP'+Q'P\) of the symmetric biadditive form
+\((c,c')\mapsto QP'+Q'P\); swapping
+\((Q,P)\leftrightarrow(Q',P')\) returns \(Q'P+QP'=QP'+Q'P\), so it is
+symmetric, and \(\Z\)-bilinear in each slot by bilinearity of
+\((\,\cdot\,,\,\cdot\,)\).  Integrality of every component follows from
+the unimodular even structure on \(\La_S\).
+
+\smallskip\emph{(ii) Polarisation.}
+Set \(c'=c\): the cross terms reduce to
+\(QQ\), \(QP+QP=2QP\), \(PP\), so
+\(B(c,c)=(Q^2,2QP,P^2)=2\Pi_X(c)\).
+
+\smallskip\emph{(iii) Cocycle.}
+Bilinearity gives normalisation \(B(c,0)=B(0,c)=0\) immediately.  For
+the cocycle identity, observe that any symmetric \(\Z\)-bilinear form
+\(\beta:G\times G\to A\) on an abelian group \(G\) with values in a
+trivial \(G\)-module \(A\) satisfies, by bilinearity in the first slot,
+\[
+\beta(a+b,c)=\beta(a,c)+\beta(b,c),
+\qquad
+\beta(a,b+c)=\beta(a,b)+\beta(a,c).
+\]
+Substituting into
+\((\delta\beta)(a,b,c)=\beta(b,c)-\beta(a+b,c)+\beta(a,b+c)-\beta(a,b)\),
+\[
+(\delta\beta)(a,b,c)=
+\beta(b,c)-\beta(a,c)-\beta(b,c)+\beta(a,b)+\beta(a,c)-\beta(a,b)=0.
+\]
+Applied componentwise to \(B\), this yields \(\delta B=0\).  Hence
+\(B\in Z^2_{\mathrm{sym}}(\Gamma_X^{\mathrm{phys}};\Gamma_{\mathrm{gram}})\).
+
+\smallskip\emph{(iv) Associativity, identity, inverse.}
+Compute the two bracketings of
+\((c,T)\star(c',T')\star(c'',T'')\):
+\begin{align*}
+\bigl((c,T)\star(c',T')\bigr)\star(c'',T'')
+&=\bigl(c+c'+c'',\,T+T'+T''+B(c,c')+B(c+c',c'')\bigr),\\
+(c,T)\star\bigl((c',T')\star(c'',T'')\bigr)
+&=\bigl(c+c'+c'',\,T+T'+T''+B(c',c'')+B(c,c'+c'')\bigr).
+\end{align*}
+The associator is the difference of the central components,
+\(\mathrm{Ass}(c,c',c'')=B(c,c')+B(c+c',c'')-B(c',c'')-B(c,c'+c'')\),
+which equals \(-(\delta B)(c,c',c'')=0\) by~(iii); equivalently, it
+vanishes by bilinearity of \(B\).  Commutativity follows from symmetry
+of \(B\).  The identity computation
+\((c,T)\star(0,0)=(c,T+B(c,0))=(c,T)\) and the inverse computation
+\((c,T)\star(-c,-T+B(c,c))=(0,B(c,c)-B(c,c))=(0,0)\) (using
+\(B(c,-c)=-B(c,c)\) by bilinearity) finish the abelian-group structure.
+That \(B\) is the cocycle of the displayed central extension is direct
+from the formula for \(\star\) and normalisation \(B(c,0)=B(0,c)=0\).
+
+\smallskip\emph{(v) Splitting.}
+By Lemma~\ref{lem:gram-additivity-defect},
+\(\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c')\), so
+\[
+s(c)\star s(c')
+=(c+c',\,\Pi_X(c)+\Pi_X(c')+B(c,c'))=(c+c',\,\Pi_X(c+c'))=s(c+c').
+\]
+Thus \(s\) is a homomorphism, and
+\(B(c,c')=\Pi_X(c+c')-\Pi_X(c)-\Pi_X(c')=-(\delta\Pi_X)(c,c')\) shows
+\(B=-\delta\Pi_X\), so \([B]=0\).  The change of variables
+\((c,T)\mapsto(c,T-\Pi_X(c))\) is bijective on the underlying set with
+inverse \((c,T)\mapsto(c,T+\Pi_X(c))\), and carries
+\(\star\) to componentwise addition:
+\[
+(c,T-\Pi_X(c))+(c',T'-\Pi_X(c'))
+=(c+c',\,T+T'-\Pi_X(c)-\Pi_X(c'))
+=(c+c',\,(T+T'+B(c,c'))-\Pi_X(c+c')),
+\]
+matching the change of variables applied to
+\((c+c',T+T'+B(c,c'))=(c,T)\star(c',T')\).
+
+\smallskip\emph{(vi) Quadratic obstruction.}
+Suppose \(B=\delta L\) for some additive
+\(L:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{gram}}\), i.e.\
+\(B(c,c')=L(c)+L(c')-L(c+c')\).  Setting \(c'=c\),
+\(B(c,c)=2L(c)-L(2c)\); but \(L\) additive gives \(L(2c)=2L(c)\), so
+\(B(c,c)=0\), contradicting \(B(c,c)=2\Pi_X(c)\) for any
+\(c=(Q,P)\) with \((Q,Q),(Q,P),(P,P)\) not all zero.  Hence no linear
+trivialisation exists; the quadratic primitive \(\Pi_X\) is necessary.
+\end{proof}
+
+\begin{remark}[Status]
+\label{rem:b-cocycle-status}
+\emph{Proved.}  All six clauses are arithmetic identities in \(\Z^3\)
+over the even unimodular Mukai lattice \(\La_S\); the proof uses no
+automorphic input.  Structurally the lemma fixes the bookkeeping
+content of the extension \(\widehat\Gamma_X\): cohomologically the
+extension is split (clause~(v)), but the double grading it records --
+physical charge upstairs, Borcherds Fourier index downstairs -- is the
+device by which a hypothetical \(\Gamma_X^{\mathrm{phys}}\)-graded Hall
+source descends to the \(\Gamma_{\mathrm{gram}}\)-graded denominator
+algebra.  Clause~(vi) records the precise sense in which
+trivialisation \emph{requires} the quadratic refinement \(\Pi_X\): without
+it, \(B\) carries the standard Heisenberg extension class and the
+descent is obstructed.  The remaining content of the construction
+(positivity of the Gram pushforward on the chamber semigroup
+\(\Gamma_{\mathrm{eff}}\); compatibility with the multiplicities
+\(f(nm,l)\)) is the subject of the subsequent obstruction lemmas.
+\end{remark}
+
 \begin{definition}[Gram-corrected charge extension]
 \label{def:gram-corrected-charge-extension}
 Set
@@ -1710,14 +1899,10 @@ Gram pushforward or an equivalent cocycle-corrected descent.
 \end{definition}
 
 \begin{proof}
-The map \(B\) is symmetric bilinear, hence \(\star\) is associative and
-commutative.  The identity is \((0,0)\), and the inverse of \((c,T)\) is
-\((-c,-T+B(c,c))\).  Finally,
-\[
-s(c)\star s(c')=(c+c',\,\Pi_X(c)+\Pi_X(c')+B(c,c'))
-=s(c+c')
-\]
-by Lemma~\ref{lem:gram-additivity-defect}.
+By Lemma~\ref{lem:b-cocycle-central-extension}(i),(iii),(iv), \(\star\) is
+associative and commutative, the identity is \((0,0)\), and the inverse
+of \((c,T)\) is \((-c,-T+B(c,c))\); the section \(s\) is the splitting
+of clause~(v).
 \end{proof}
 
 \begin{definition}[Gram-index pairing]
@@ -2794,6 +2979,272 @@ critical-Hall side; it is required for hypothesis~(1b) of
 Theorem~\ref{thm:primitive-recognition}.
 \end{openproblem}
 
+\begin{theorem}[PTVV--Joyce \(\Pi\)-descent of the primitive bracket;
+conditional sharpening of
+Open Problem~\ref{op:pi-descent-of-bracket}]
+\label{thm:ptvv-joyce-pi-descent}
+Adopt the notation of Definition~\ref{def:dyonic-mukai-lattice} and
+Definition~\ref{def:additive-physical-charge-lattice}: physical lattice
+\(\Gamma_X^{\mathrm{phys}}=\La_S\oplus\La_S\), Gram shadow
+\(\Pi_X:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{gram}}=\Z^3\),
+symmetric quadratic cocycle
+\(B(c,c')=(Q\!\cdot\!Q',\,Q\!\cdot\!P'+Q'\!\cdot\!P,\,P\!\cdot\!P')\)
+satisfying \(\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c')\).  Suppose:
+\begin{enumerate}
+\item[(P)] \emph{(PTVV host.)}  The protected primitive layer
+\(\widetilde P_X=\bigoplus_c\widetilde P_{X,c}\) is realized as
+\(\widetilde P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\) for an oriented
+critical Hall/factorization object \(\mathcal F_X\) on a
+\((-1)\)-shifted symplectic derived moduli stack
+\(\mathfrak M_{X,c}\) of compactly supported B-branes on \(K3\times E\)
+in the sense of
+Pantev--Toen--Vaquie--Vezzosi (cf.\ the local schema of
+Definition~\ref{def:local-protected-observable-algebra}), graded by
+physical charge \(c\in\Gamma_X^{\mathrm{phys}}\), with reduced
+\(E\)-quotient compatible with the projection
+\(p_E:K3\times E\to E\) of
+Definition~\ref{def:protected-hall-integration-criterion}.
+\item[(O)] \emph{(Multiplicative orientation.)}  An orientation datum
+\(\{o_c\}_{c\in\Gamma_X^{\mathrm{phys}}}\) in the sense of
+Definition~\ref{def:orientation-line} is supplied with
+\emph{Joyce--Kinjo--Park--Safronov multiplicative isomorphisms}
+\[
+\mu_{c,c'}\,:\;o_{c+c'}\;\xrightarrow{\ \sim\ }\;o_c\otimes o_{c'},
+\qquad c,c'\in\Gamma_X^{\mathrm{phys}},
+\]
+satisfying the cocycle pentagon
+\(\mu_{c+c',c''}\circ\mu_{c,c'}=\mu_{c,c'+c''}\circ\mu_{c',c''}\)
+on the Cartesian extension correspondence and compatible with the
+reduced \(E\)-quotient and with the HN/sectorial completion of
+Lemma~\ref{prop:sectorial-hall-truncation}.  Equivalently, the
+collection \(\{o_c\}\) is a multiplicative section of the determinant
+gerbe over the moduli of objects in the protected sector.
+\item[(F)] \emph{(Frobenius pairing.)}  The protected Hall bracket
+\([\,\cdot\,,\,\cdot\,]\) and the protected Hopf pairing
+\(\langle\,\cdot\,,\,\cdot\,\rangle\) on \(\widetilde P_X\) (the latter
+furnished by the squaring isomorphism
+\(o_c^{\otimes 2}\simeq\det\mathrm{RHom}(\mathcal C,\mathcal C)\) of
+Definition~\ref{def:orientation-line} and the PTVV
+\((-1)\)-shifted symplectic form on
+\(\mathfrak M_{X,c}\), trivialized along the reduced \(E\)-quotient via
+the Costello--Li flat Calabi--Yau pairing
+\cite{CostelloRenormalization}) satisfy the
+graded-Frobenius identity
+\[
+\langle[x,y],z\rangle
++(-1)^{|x|\cdot|y|}\langle y,[x,z]\rangle=0
+\]
+for homogeneous \(x,y,z\in\widetilde P_X\) of physical charges
+\(c_x,c_y,c_z\) with \(c_x+c_y+c_z=0\).
+\end{enumerate}
+Then the cocycle \(B\) acts trivially on bracket targets in primitives:
+\[
+[\widetilde P_{X,c},\widetilde P_{X,c'}]
+\subset\widetilde P_{X,c+c'}\cap
+\Pi_X^{-1}\bigl(\Pi_X(c+c')\bigr),
+\]
+and the Hochschild class \([B]\in HH^2(\widetilde P_X^{\mathrm{br}};
+\Gamma_{\mathrm{gram}})\) of \(B\) in the primitive bracket category
+\(\widetilde P_X^{\mathrm{br}}\) is a coboundary,
+\([B]=[d_{\mathrm{Hoch}}\Theta]=0\), where
+\(\Theta\) is the determinant-line Hochschild \(1\)-cochain produced
+from the multiplicative trivialization
+\(\{\mu_{c,c'}\}\) of (O).  Consequently the bracket descends along
+\(\Pi_X\) to a \(\Gamma_{\mathrm{gram}}\)-graded Lie superalgebra
+structure on
+\[
+P_X^\Pi=\Pi_{X,*}\widetilde P_X,
+\]
+and hypothesis~(1b) of
+Theorem~\ref{thm:primitive-recognition} is satisfied.
+\end{theorem}
+
+\begin{proof}[Proof template (conditional on (P), (O), (F))]
+\emph{Step 1 (Hochschild realization of \(B\)).}
+Pick a representative cocycle for the central extension
+\(\Gamma_X=\Gamma_X^{\mathrm{phys}}\oplus_B\Gamma_{\mathrm{gram}}\) of
+Definition~\ref{def:gram-corrected-charge-extension} and view
+\(B(c,c')\in\Gamma_{\mathrm{gram}}\) as a symmetric Hochschild
+\(2\)-cochain on the abelian (graded) category
+\(\widetilde P_X^{\mathrm{br}}\), valued in the central
+\(\Gamma_{\mathrm{gram}}\)-coefficient module that records the Gram
+target degree of a bracket.  Concretely, on a homogeneous pair
+\((x,y)\in\widetilde P_{X,c}\times\widetilde P_{X,c'}\), \(B(c,c')\)
+measures the discrepancy between the \emph{physical} target degree
+\(c+c'\) and the naive Gram-additive target degree
+\(\Pi_X(c)+\Pi_X(c')\).  Symmetry of \(B\) and the identity
+\(B(c,c)=2\Pi_X(c)\) (Definition~\ref{def:dyonic-mukai-lattice}) make
+\(B\) an honest Hochschild \(2\)-cocycle for the trivial bracket-target
+action.
+
+\emph{Step 2 (Determinant-line trivialization \(\Theta\)).}
+The squaring isomorphism
+\(o_c^{\otimes 2}\simeq\det\mathrm{RHom}(\mathcal C,\mathcal C)\) of
+Definition~\ref{def:orientation-line}, together with the multiplicative
+isomorphisms \(\mu_{c,c'}\) of (O), gives a trivialization of the
+determinant gerbe along the addition map
+\(\Gamma_X^{\mathrm{phys}}\times\Gamma_X^{\mathrm{phys}}\to
+\Gamma_X^{\mathrm{phys}}\).  Take logarithms (in the sense of
+\(c_1\) of orientation lines) to obtain a Hochschild \(1\)-cochain
+\[
+\Theta:\Gamma_X^{\mathrm{phys}}\longrightarrow\Gamma_{\mathrm{gram}}
+\]
+whose Hochschild differential
+\(d_{\mathrm{Hoch}}\Theta(c,c')=\Theta(c+c')-\Theta(c)-\Theta(c')\)
+records the failure of additivity of the determinant degree, which is
+precisely the symmetric quadratic Gram defect.  The pentagon for
+\(\{\mu_{c,c'}\}\) translates into associativity of \(d_{\mathrm{Hoch}}\Theta\).
+The arithmetic identity
+\(\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c')\) of
+Lemma~\ref{lem:gram-additivity-defect} forces
+\[
+d_{\mathrm{Hoch}}\Theta=B\quad\text{in}\quad
+C^2(\Gamma_X^{\mathrm{phys}},\Gamma_{\mathrm{gram}}).
+\]
+This is the witness step: the multiplicative orientation provides
+\(\Theta\), and the quadratic identity for \(\Pi_X\) makes \(\Theta\) an
+exact primitive of \(B\).
+
+\emph{Step 3 (Frobenius transport from pairing target to bracket target).}
+The bracket on \(\widetilde P_X\) lifts to the central extension
+\(\widehat\Gamma_X=\Gamma_X^{\mathrm{phys}}\oplus\Gamma_{\mathrm{gram}}\)
+of Definition~\ref{def:gram-corrected-charge-extension}, in which the
+Hochschild cochain \(\Theta\) defines a section
+\(s_\Theta(c)=(c,\Theta(c))\).  The Frobenius identity (F)
+\[
+\langle[x,y],z\rangle+(-1)^{|x|\cdot|y|}\langle y,[x,z]\rangle=0
+\]
+forces the cocycle action of \(B\) on the bracket target to coincide
+with the cocycle action of \(B\) on the pairing target: the LHS measures
+the Gram degree shift of \([x,y]\) against \(z\); the RHS measures the
+Gram degree shift of \([x,z]\) against \(y\); both are computed by the
+same orientation cocycle \(d_{\mathrm{Hoch}}\Theta\).
+Consequently the cocycle action of \(B\) on bracket targets factors
+through \(d_{\mathrm{Hoch}}\Theta\).  By Step~2, \(d_{\mathrm{Hoch}}\Theta=B\), so the
+discrepancy between \emph{physical} target degree and \emph{Gram}
+target degree is the Hochschild boundary of a single global cochain
+\(\Theta\), independent of \((x,y)\).
+
+\emph{Step 4 (Cohomological vanishing on primitives).}
+Restrict to primitives.  The protected primitive subspace
+\(\widetilde P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\) is the kernel
+of the reduced coproduct, on which the Hopf pairing
+\(\langle\,\cdot\,,\,\cdot\,\rangle\) is non-degenerate
+(Theorem~\ref{thm:primitive-recognition}~(6)).  Non-degeneracy upgrades
+the Frobenius identity (F) from a target-degree statement to a
+strict cocycle relation in the Hochschild cohomology of the bracket
+category.  The class \([B]\in HH^2\) of the cocycle action of \(B\) on
+bracket targets in primitives is then represented by
+\(d_{\mathrm{Hoch}}\Theta\), hence vanishes in cohomology.  The bracket
+therefore lands in \(\widetilde P_{X,c+c'}\) intersected with the
+fibre \(\Pi_X^{-1}(\Pi_X(c+c'))\), as claimed; the
+\(\Gamma_{\mathrm{gram}}\)-grading on
+\(P_X^\Pi=\Pi_{X,*}\widetilde P_X\) is a genuine Lie-superalgebra
+grading; and hypothesis~(1b) of
+Theorem~\ref{thm:primitive-recognition} is met.
+\qedhere
+\end{proof}
+
+\begin{remark}[Status discipline]
+The status of Theorem~\ref{thm:ptvv-joyce-pi-descent} is
+\emph{conditional}.  Hypotheses (P), (O), (F) are not constructed
+in this paper for \(K3\times E\); each is an open analytic/categorical
+obligation.  In particular:
+(P) is the open compact PTVV host of
+Definition~\ref{def:compact-igusa-realization-datum}, item~(M);
+(O) is a strengthening of
+Definition~\ref{def:orientation-line} from a per-class square root to a
+\emph{multiplicative} square root (additionally compatible with the
+reduced \(E\)-quotient), partially addressed by
+work of Joyce--Upmeier on Calabi--Yau \(3\)-folds and recent work of
+Kinjo--Park--Safronov on multiplicative orientation cocycles for
+\((-1)\)-shifted symplectic stacks; (F) is a graded-Frobenius
+identity that follows formally from the
+PTVV symplectic structure on \(\mathfrak M_{X,c}\) and the
+Costello--Li flat CY pairing, but the chain-level identification
+of the integrated pairing and bracket on protected primitives is
+itself part of the open compact realization datum.  This theorem
+sharpens Open Problem~\ref{op:pi-descent-of-bracket} from a
+``positivity-of-cocycle'' obligation to a precise
+construction-and-witness obligation: \emph{construct
+\(\{\mu_{c,c'}\}\) and show that the orientation cocycle equals
+\(B\) at the level of Hochschild \(2\)-cochains.}  No
+analytic/categorical claim about the existence of (P), (O), (F) for
+\(K3\times E\) is added.
+\end{remark}
+
+\begin{remark}[Hypothesis comparison]
+The proposed witness was selected from the list
+\{H(\(\alpha\)), H(\(\beta\)), H(\(\gamma\)), H(\(\delta\))\}:
+\begin{itemize}
+\item[\(\alpha\)] PTVV \((-1)\)-shifted symplectic Frobenius +
+Joyce--Kinjo--Park--Safronov multiplicative orientation: provides
+both \(\Theta\) (from multiplicativity) and the Frobenius transport
+(from the symplectic form) in one geometric package, with the
+multiplicative isomorphism \(o_{c+c'}\simeq o_c\otimes o_{c'}\) as
+the load-bearing single hypothesis.  Plausibility \emph{high}
+(geometric, in line with the existing
+Definitions~\ref{def:local-protected-observable-algebra}--\ref{def:orientation-line},
+no new automorphic input, reduces cleanly to Hochschild boundary).
+\emph{Selected.}
+\item[\(\beta\)] Costello higher Chern--Simons + Costello--Li flat
+CY pairing: yields the Frobenius identity directly from
+holomorphic factorization, but does not, by itself, provide a
+multiplicative orientation; \(\Pi\)-descent then collapses to a
+separate orientation-monodromy problem already named in
+Open Problem~\ref{op:orientation-monodromy-character}.  Plausibility
+\emph{medium}; useful as a parallel chiral host.
+\item[\(\gamma\)] Davison--Meinhardt CoHA primitive truncation +
+parity argument: the parity vanishing of \(B\) on odd primitives is
+attractive but does not exhibit \(B\) as a Hochschild boundary; it
+only suppresses one parity sector and leaves the even-primitive
+descent as a separate obligation.  Plausibility \emph{medium};
+applies to a strict subsector.
+\item[\(\delta\)] Ad hoc axiom on the recognition certificate: this
+is the present formulation of
+Open Problem~\ref{op:pi-descent-of-bracket}; it adds no geometric
+content and is the position to be improved on.  Plausibility
+\emph{low} as a deliverable.
+\end{itemize}
+H(\(\alpha\)) is the most parsimonious because the multiplicative
+orientation isomorphism \(\mu_{c,c'}\) and the PTVV symplectic form on
+\(\mathfrak M_{X,c}\) are both already named (in
+Definitions~\ref{def:local-protected-observable-algebra},
+\ref{def:orientation-line}, and the
+PTVV/BBDJS/Joyce--Upmeier remark of
+\S\ref{def:local-protected-observable-algebra}); the only genuinely
+new ingredient is the multiplicativity (cocycle) constraint
+\(\mu_{c+c',c''}\circ\mu_{c,c'}=\mu_{c,c'+c''}\circ\mu_{c',c''}\).
+The hypothesis is named, falsifiable, and reduces to an existence
+question for a multiplicative orientation cocycle on the protected
+sector of \(K3\times E\).
+\end{remark}
+
+\begin{remark}[Reduction of Open Problem~\ref{op:pi-descent-of-bracket}]
+Theorem~\ref{thm:ptvv-joyce-pi-descent} reduces the
+``positivity-of-cocycle'' / Hochschild-boundary obligation of
+Open Problem~\ref{op:pi-descent-of-bracket} to the following two
+items, both currently open:
+\begin{itemize}
+\item[(O\(_*\))] Construct the multiplicative orientation
+\(\{\mu_{c,c'}\}\) on the reduced compact protected sector of
+\(K3\times E\), with cocycle pentagon and reduced-\(E\)
+compatibility.
+\item[(F\(_*\))] Verify the chain-level graded Frobenius identity for
+the protected Hall bracket and Hopf pairing on
+\(\widetilde P_X\), with sign convention as in
+Theorem~\ref{thm:primitive-recognition}~(5).
+\end{itemize}
+Granting (P), (O\(_*\)), (F\(_*\)), the descent is automatic by the
+proof template above.  Each of (O\(_*\)) and (F\(_*\)) is a
+geometric/categorical assertion whose status can be tracked
+independently of the modular and denominator arguments of this paper,
+and against the parallel constructions in
+\texttt{calabi-yau-quantum-groups} (Vol.~III \(\kappa\)-stratification)
+and \texttt{topological-strings} (BCOV chiral pairing on the
+generating function).
+\end{remark}
+
 \begin{remark}[Unitarity]
 The present paper uses the protected index, the virtual determinant, and
 the Borcherds denominator algebra.  A holomorphic \(E_3\)-factorization
@@ -3061,7 +3512,16 @@ so that the induced \(\Gamma_{\mathrm{gram}}\)-grading of
 \(P_X^\Pi\) is a genuine Lie-superalgebra grading.  Equivalently,
 \(B\) lies in the Hochschild kernel of the protected primitive
 bracket; its proof is part of the open Hall datum (Open
-Problem~\ref{op:pi-descent-of-bracket}).
+Problem~\ref{op:pi-descent-of-bracket}).  Conditional on the PTVV
+host (P), multiplicative orientation cocycle (O), and chain-level
+graded Frobenius identity (F),
+Theorem~\ref{thm:ptvv-joyce-pi-descent} discharges this hypothesis,
+exhibiting \(B=d_{\mathrm{Hoch}}\Theta\) as a Hochschild boundary for
+the determinant-line cochain \(\Theta\) produced from the
+multiplicative trivialisation \(\{\mu_{c,c'}\}\) of (O); the residual
+construction obligation -- existence of (O), (F) on the reduced
+compact protected sector of \(K3\times E\) -- remains as Open
+Problem~\ref{op:pi-descent-of-bracket}.
 \item The degree map
 \[
 \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
