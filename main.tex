@@ -158,7 +158,7 @@ and separates four levels of structure:
 Rows \(1\)--\(4\) are governed by the Gritsenko--Nikulin denominator
 theorems.  Rows \(5\)--\(8\) have Clery--Gritsenko products and
 Govindarajan CHL/WKB denominator identities.  A physical row map, a
-reduced enumerative partition theorem, and a compact Hall/chiral source
+reduced enumerative partition theorem, and a compact \(E_3\)/Hall/chiral source
 remain additional data.
 
 \begin{center}
@@ -274,123 +274,27 @@ The square root is therefore not an analytic ambiguity in
 one-particle theory.  The scalar square forgets orientation and
 reflection character; the square root remembers them.
 
-\section{The duality principle}
-\label{sec:duality-principle}
+\section{The one-particle index and its determinant}
 
+For the determinant calculation set
 $$
-\mathcal D_X=\Delta_5\in M_5(\Sp_4(\Z),\nu_{\Delta_5}),
+Z=\begin{pmatrix}z_1&z_2\\z_2&z_3\end{pmatrix},\qquad
+q=e^{2\pi iz_1},\qquad r=e^{2\pi iz_2},\qquad s=e^{2\pi iz_3}.
 $$
+The Gram-index lattice is
 $$
-\mathcal D_X|_{\mathfrak c_\infty}
-=64q^{1/2}r^{1/2}s^{1/2}
-\prod_{\Gamma_{\mathrm{eff}}}(1-q^nr^ls^m)^{f(nm,l)}.
+\Gamma_{\mathrm{ind}}=\Z^3,\qquad
+\gamma=(n,l,m),\qquad x^\gamma=q^nr^ls^m.
 $$
-
-For
-$$Z=\begin{pmatrix}z_1&z_2\\z_2&z_3\end{pmatrix},$$
-put
-$$q=e^{2\pi iz_1},\qquad r=e^{2\pi iz_2},\qquad s=e^{2\pi iz_3}.$$
-For
-$$
-T(n,l,m)=
-\begin{pmatrix}n&l/2\\ l/2&m\end{pmatrix},
-\qquad n,l,m\in\Z,
-$$
-put
-$$
-(T(n,l,m),Z)_{\mathrm{tr}}
-=\operatorname{tr}(T(n,l,m)Z)=nz_1+lz_2+mz_3.
-$$
-Then
-$$x^{(n,l,m)}=\exp(2\pi i(T(n,l,m),Z)_{\mathrm{tr}})
-=q^nr^ls^m.$$
-
-\begin{definition}[Index-lattice notation]
-$$
-\Gamma_{\mathrm{gram}}:=\Gamma_{\mathrm{ind}}:=\Z^3,\qquad
-\Gamma_{\mathrm{act}}\subset\Gamma_{\mathrm{eff}}\subset\Gamma_{\mathrm{gram}}.
-$$
-Here \(\Gamma_{\mathrm{eff}}\) is the cusp-positive semigroup and
-\(\Gamma_{\mathrm{act}}\) is the non-zero Jacobi-support locus.  No
-microscopic charge lattice is constructed from this notation.
-\end{definition}
-
-\begin{proposition}[Charge matrix convention]
-Assume a protected charge grading with primitive electric-magnetic pair
-$Q,P$ in an even lattice.  Set
-$$
-n=\frac{(Q,Q)}2,\qquad l=(Q,P),\qquad m=\frac{(P,P)}2.
-$$
-Then
-$$
-\begin{pmatrix}(Q,Q)&(Q,P)\\ (P,Q)&(P,P)\end{pmatrix}
-=2T(n,l,m),
-$$
-and the invariant discriminant is
-$$
-\det(2T(n,l,m))=4nm-l^2.
-$$
-The genus-two chemical potential $Z$ pairs with this same matrix:
-$$
-\exp(2\pi i\,\operatorname{tr}(TZ))=q^nr^ls^m.
-$$
-Thus the variables in the Borcherds product record the Gram invariants
-of this protected charge grading.
-\end{proposition}
-
-\begin{proof}
-The charge lattice is even, hence $(Q,Q)/2$ and $(P,P)/2$ are integral
-and $(Q,P)\in\Z$.  The displayed matrix identity is immediate from the
-definitions.  Its determinant is $4nm-l^2$.  The last equality is the
-definition of the Fourier character attached to the chemical potential
-$Z$.  This is the Harvey--Moore and Dijkgraaf--Verlinde--Verlinde
-charge grading used by the BPS product \cite{HM}, \cite{DVV}.
-\end{proof}
-
-\begin{definition}[Gram-index pairing]
-For
-$$\gamma=(n,l,m),\qquad \gamma'=(n',l',m'),$$
-define
-$$
-\langle\gamma,\gamma'\rangle_{\mathrm{ind}}
-=2(nm'+n'm)-ll'.
-$$
-The physical discriminant is
-$$
-\Delta(\gamma)=\langle\gamma,\gamma\rangle_{\mathrm{ind}}
-=4nm-l^2.
-$$
-\end{definition}
-
-\begin{definition}[Cusp polarization]
 The standard cusp polarization is the ordered limit
 $$0<|s|\ll |q|\ll |r|^{-1}\ll1.$$
-It gives exactly the effective semigroup
+It determines the semigroup
 $$
 \Gamma_{\mathrm{eff}}
 =\{(n,l,m)\mid m>0,\ n\geq0,\ l\in\Z\}
 \cup\{(n,l,0)\mid n>0,\ l\in\Z\}
 \cup\{(0,l,0)\mid l<0\}.
 $$
-\end{definition}
-
-\begin{remark}[Chamber transport]
-The pairing $\langle\ ,\ \rangle_{\mathrm{ind}}$ is the pairing on
-Gram invariants.  The order on $\Gamma_{\mathrm{eff}}$ is a Fock
-polarization at one cusp.  A duality element transports this
-polarization to the corresponding product chamber at the transported
-cusp; it does not preserve the displayed inequalities inside the same
-coordinate chart.
-\end{remark}
-
-\section{The one-particle index and its determinant}
-
-The Gram-index lattice is
-$$\Gamma_{\mathrm{ind}}=\Z^3,\qquad
-\gamma=(n,l,m),\qquad x^\gamma=q^nr^ls^m.$$
-The cusp polarization of Section \ref{sec:duality-principle} fixes
-$$\gamma>0\quad\Longleftrightarrow\quad
-\gamma\in\Gamma_{\mathrm{eff}}.$$
 
 \begin{definition}[Ramond-sector K3 index and its half]
 Let $\mathcal H_{\mathrm{RR}}(S)$ be the Ramond--Ramond Hilbert space of
@@ -796,6 +700,16 @@ $$Z^X_{\mathrm{DT}}(q,t,p)=
 \mathbf{DT}^X_{n,(\beta_h,d)}
 q^{d-1}t^{\frac{1}{2}\langle\beta_h,\beta_h\rangle}(-p)^n.$$
 
+\begin{center}
+\small
+\begin{tabular}{c|c|c|c}
+role & OP variable & DT variable & Borcherds variable \\ \hline
+\(K3\) norm \(h-1\) & \(q_{\mathrm{OP}}\) & \(t_{\mathrm{DT}}\) & \(q_{\mathrm{Bch}}\) \\
+elliptic degree \(d-1\) & \(\widetilde q_{\mathrm{OP}}\) & \(q_{\mathrm{DT}}\) & \(s_{\mathrm{Bch}}\) \\
+D0/Fourier index \(n\) & \(p_{\mathrm{OP}}=e^{iu}\) & \(p_{\mathrm{DT}}\) with \((-p_{\mathrm{DT}})^n\) & \(r_{\mathrm{Bch}}\)
+\end{tabular}
+\end{center}
+
 \begin{proposition}[Oberdieck--Pixton normalization]
 \label{prop:op-normalization}
 Let the Oberdieck--Pixton variables be
@@ -862,7 +776,7 @@ Their Theorem 1, equivalently the Laurent expansion in \cite{OB}*{(56)},
 gives $Z^X_{\mathrm{OP}}=-1/\chi_{10}^{\mathrm{OP}}$.
 \end{proof}
 
-\begin{theorem}[Oberdieck--Pixton/Oberdieck reduced DT square]
+\begin{theorem}[Reduced Hilbert-scheme DT/PT/OP scalar square]
 \label{thm:op-square}
 Let \(\beta_h\in H_2(S,\Z)\) be primitive and non-zero, with
 $$\langle\beta_h,\beta_h\rangle=2h-2.$$
@@ -879,6 +793,9 @@ Z^X_{\mathrm{DT}}(T,Q,P)
 $$
 Equivalently,
 $$C_{\mathrm{DT}}=C_{\mathrm{OP}}=-4096.$$
+This is an enumerative scalar identity.  The identification of these
+coefficients with a physical protected D-brane index is the separate
+conjectural statement below.
 \end{theorem}
 
 \begin{proof}
@@ -993,6 +910,111 @@ unconditional with \(C_{\square}=-4096\) for
 \hline
 \end{tabular}
 \end{center}
+
+\section{The duality principle}
+\label{sec:duality-principle}
+
+The preceding determinant was constructed in one cusp chamber.  Duality
+does not preserve the displayed chamber inequalities in the same
+coordinates; it transports the chamber, the Fourier expansion, and the
+automorphic line together.  The invariant object is
+$$
+\mathcal D_X=\Delta_5\in M_5(\Sp_4(\Z),\nu_{\Delta_5}),
+$$
+with cusp expansion
+$$
+\mathcal D_X|_{\mathfrak c_\infty}
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{f(nm,l)}.
+$$
+
+For
+$$Z=\begin{pmatrix}z_1&z_2\\z_2&z_3\end{pmatrix},$$
+put
+$$q=e^{2\pi iz_1},\qquad r=e^{2\pi iz_2},\qquad s=e^{2\pi iz_3}.$$
+For
+$$
+T(n,l,m)=
+\begin{pmatrix}n&l/2\\ l/2&m\end{pmatrix},
+\qquad n,l,m\in\Z,
+$$
+put
+$$
+(T(n,l,m),Z)_{\mathrm{tr}}
+=\operatorname{tr}(T(n,l,m)Z)=nz_1+lz_2+mz_3.
+$$
+Then
+$$x^{(n,l,m)}=\exp(2\pi i(T(n,l,m),Z)_{\mathrm{tr}})
+=q^nr^ls^m.$$
+
+\begin{definition}[Gram-index notation]
+$$
+\Gamma_{\mathrm{gram}}:=\Gamma_{\mathrm{ind}}:=\Z^3,\qquad
+\Gamma_{\mathrm{act}}\subset\Gamma_{\mathrm{eff}}\subset\Gamma_{\mathrm{gram}}.
+$$
+Here \(\Gamma_{\mathrm{eff}}\) is the cusp-positive semigroup and
+\(\Gamma_{\mathrm{act}}\) is the non-zero Jacobi-support locus.  This is
+notation for Gram invariants and Fourier indices.  It is not the
+construction of a microscopic charge lattice.
+\end{definition}
+
+\begin{proposition}[Gram matrix convention for protected charges]
+Assume a protected charge grading with primitive electric-magnetic pair
+\(Q,P\) in an even lattice.  Set
+$$
+n=\frac{(Q,Q)}2,\qquad l=(Q,P),\qquad m=\frac{(P,P)}2.
+$$
+Then
+$$
+\begin{pmatrix}(Q,Q)&(Q,P)\\ (P,Q)&(P,P)\end{pmatrix}
+=2T(n,l,m),
+$$
+and the Gram discriminant is
+$$
+\det(2T(n,l,m))=4nm-l^2.
+$$
+The genus-two chemical potential \(Z\) pairs with the same matrix:
+$$
+\exp(2\pi i\,\operatorname{tr}(TZ))=q^nr^ls^m.
+$$
+Thus the Borcherds monomial records the Gram invariants of the protected
+charge grading, once such a physical grading has been supplied.
+\end{proposition}
+
+\begin{proof}
+By hypothesis the compactification charge lattice is even, so
+\((Q,Q)/2\) and \((P,P)/2\) are integral and \((Q,P)\in\Z\).  The matrix
+identity and its determinant are immediate.  The final equality is the
+Fourier character attached to the chemical potential \(Z\).  The
+Harvey--Moore and Dijkgraaf--Verlinde--Verlinde interpretation of this
+Fourier character as a physical charge grading is additional physical
+input \cite{HM}, \cite{DVV}.
+\end{proof}
+
+\begin{definition}[Gram-index pairing]
+For
+$$\gamma=(n,l,m),\qquad \gamma'=(n',l',m'),$$
+define
+$$
+\langle\gamma,\gamma'\rangle_{\mathrm{ind}}
+=2(nm'+n'm)-ll'.
+$$
+The Gram discriminant is
+$$
+\Delta_{\mathrm{gram}}(\gamma)
+=\langle\gamma,\gamma\rangle_{\mathrm{ind}}
+=4nm-l^2.
+$$
+\end{definition}
+
+\begin{remark}[Chamber transport]
+The pairing \(\langle\ ,\ \rangle_{\mathrm{ind}}\) is the pairing on
+Gram invariants.  The order on \(\Gamma_{\mathrm{eff}}\) is a Fock
+polarization at one cusp.  A duality element transports this
+polarization to the corresponding product chamber at the transported
+cusp.
+\end{remark}
 
 \section{The exterior-square model of the duality group}
 
@@ -1292,7 +1314,7 @@ $$\alpha(\gamma)=\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
 \in\La^{2,1}_{II}.$$
 With
 $$z=z_1f_{-2}+z_2f_3+z_3f_2,$$
-the character of the Gram-index charge is
+the character of the Gram-index degree is
 $$x^\gamma=q^nr^ls^m=\exp(-\pi i(\alpha(\gamma),z)).$$
 For $\gamma'=(n',l',m')$,
 $$
@@ -1304,7 +1326,7 @@ $$
 Thus the Borcherds degree is the Lorentzian image of the Gram-index
 grading.  The Weyl chamber is determined by the cusp polarization fixed
 in Section \ref{sec:duality-principle} together with the active Jacobi
-support, since charges with zero exponent do not generate walls.
+support, since indices with zero exponent do not generate walls.
 $$E_0:=\rho.$$
 $$q^{1/2}r^{1/2}s^{1/2}=\exp(-\pi i(\rho,z)).$$
 $$\exp(-2\pi i(\alpha(\gamma),z)),\qquad
@@ -1312,7 +1334,7 @@ $$\exp(-2\pi i(\alpha(\gamma),z)),\qquad
 \end{definition}
 
 \begin{definition}[Active support and Borcherds cone]
-In the standard cusp chamber, the active charge support is
+In the standard cusp chamber, the active support is
 $$
 \Gamma_{\mathrm{act}}
 =\{\gamma=(n,l,m)\in\Gamma_{\mathrm{eff}}\mid f(nm,l)\neq0\}.
@@ -1321,7 +1343,7 @@ The inactive triples in $\Gamma_{\mathrm{eff}}\setminus\Gamma_{\mathrm{act}}$
 are ordering data only; their product exponents are zero.  The product
 does not prove absence of root spaces with zero signed superdimension.
 The proof-grade Borcherds cone is the real cone generated by the active
-positive Gram-index charges after the Lorentzian degree map:
+positive Gram-index degrees after the Lorentzian degree map:
 $$
 \Cone_{\mathrm{Borch}}
 :=\R_{\geq0}\,\alpha(\Gamma_{\mathrm{act}})
@@ -1363,12 +1385,12 @@ l^2\ge(n+m+1)^2
 =4nm+(n-m)^2+2(n+m)+1>4nm+1,
 $$
 contradicting $l^2\le4nm+1$.  Hence $n+m-l\ge0$.
-The reverse inclusion follows from the active charges
+The reverse inclusion follows from the active triples
 $$
 (1,0,0),\qquad (0,0,1),\qquad (0,-1,0),
 $$
 whose degrees are $\delta_1+\delta_3$, $\delta_2+\delta_3$, and
-$\delta_3$, and from the active charges
+$\delta_3$, and from the active triples
 $$
 (1,1,0),\qquad (0,1,1),
 $$
@@ -1600,7 +1622,7 @@ bracket is
 $$
 64^{-1}\Delta_5(2Z).
 $$
-A BPS factorization algebra of the compactification requires additional
+A compact \(E_3\)/Hall/chiral BPS realization requires additional
 microscopic input.
 \end{theorem}
 
@@ -1809,14 +1831,14 @@ $$
 $$
 with the following data.
 \begin{enumerate}
-\item A charge-completed holomorphic \(E_3\)-factorization algebra
+\item[\((E_3)\)] A charge-completed holomorphic \(E_3\)-factorization algebra
 \(\mathcal A^{E_3}_X=\Phi^{\mathrm{FA}}_3(K3\times E)\) on
 \(X=K3\times E\), finite-first after the sectorial HN quotients of
 Proposition~\ref{prop:sectorial-hall-truncation}.  A compact
 holomorphic-Chern--Simons/BV construction is a witness for this datum
 when it satisfies descent, the quantum master equation, and anomaly
 cancellation in the completed charge category.
-\item A chain-level \(K3\)-to-\(E\) specialization
+\item[\((\mathrm{Sp})\)] A chain-level \(K3\)-to-\(E\) specialization
 \(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\), equivalently the admissible
 pushforward along \(p_E:K3\times E\to E\), with
 $$
@@ -1828,7 +1850,7 @@ $$
 $$
 a charge-completed compact observable factorization algebra on
 \(\operatorname{Ran}(E)\).
-\item An oriented compact Hall factorization object \(\mathcal H_X\)
+\item[\((\mathrm H)\)] An oriented compact Hall factorization object \(\mathcal H_X\)
 with extension correspondences
 $$
 \mathfrak M_\gamma^\sigma\times\mathfrak M_\eta^\sigma
@@ -1839,20 +1861,20 @@ $$
 $$
 vanishing-cycle coefficients, Thom--Sebastiani orientation transport,
 protected integration, and orientation character \(\epsilon_o=\nu_{\Delta_5}\).
-\item A conilpotent chiral coalgebra \(C_X\) and a charge-preserving
+\item[\((\mathrm C)\)] A conilpotent chiral coalgebra \(C_X\) and a charge-preserving
 quasi-isomorphism
 $$
 C_X\simeq \bar B_E^{\mathrm{ch}}(\mathcal F_X)
 $$
 in the completed chiral bar category.
-\item A chiral cobar quasi-isomorphism
+\item[\((\Theta)\)] A chiral cobar quasi-isomorphism
 $$
 \Theta_{\mathrm{Kos}}:
 \Omega_E^{\mathrm{ch}}C_X
 \xrightarrow{\ \simeq\ }
 \mathsf{Den}_{\Delta_5,E}.
 $$
-\item A primitive Lie comparison
+\item[\((\Pi)\)] A primitive Lie comparison
 $$
 \Pi_{\mathrm{prim}}:
 H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
@@ -2366,6 +2388,12 @@ $$\Delta_{10}(Z)=\Delta_5(Z)^2
 (1-q^nr^ls^m)^{2f(nm,l)}.$$
 $$Z^X_{\square}=C_{\square}/\Delta_5^2,\qquad
 C_{\square}\in\C^\times.$$
+For the reduced Hilbert-scheme DT/PT/OP scalar branch of
+Theorem~\ref{thm:op-square},
+$$
+Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}
+=-4096\,\Delta_5^{-2}.
+$$
 $$D_X(Z):=\Delta_5(Z)
 =64\,q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
@@ -2475,6 +2503,58 @@ $$\operatorname{supp}\operatorname{div}_{\mathbb H_2}(F_j)
 $$F_1=\Delta_5,\qquad
 \frac1{64}F_1(2Z)=\operatorname{den}(\autcor).$$
 
+\begin{center}
+\scriptsize
+\begin{tabular}{c p{0.13\textwidth} p{0.20\textwidth} p{0.20\textwidth} p{0.18\textwidth} p{0.17\textwidth}}
+\hline
+row & form & product & denominator & scalar square & physical host \\
+\hline
+1 & \(\Delta_5\) &
+Clery--Gritsenko product; Borcherds--Gritsenko--Nikulin lift of
+\(\phi_{0,1}\) &
+Gritsenko--Nikulin denominator algebra \(\mathfrak g_{\Delta_5}\) &
+OP/DT reduced scalar square
+\(-4096\Delta_5^{-2}\) &
+virtual determinant constructed; compact \(E_3\)/Hall/chiral host open \\
+2 & \(\Delta_2\) &
+Clery--Gritsenko product &
+Gritsenko--Nikulin denominator row &
+no reduced scalar theorem supplied here &
+open \\
+3 & \(\Delta_1\) &
+Clery--Gritsenko product &
+Gritsenko--Nikulin denominator row &
+no reduced scalar theorem supplied here &
+open \\
+4 & \(\Delta_{1/2}\) &
+Clery--Gritsenko product on the multiplier cover &
+Gritsenko--Nikulin denominator row on the relevant cover &
+no reduced scalar theorem supplied here &
+open \\
+5 & \(\nabla_3\) &
+Clery--Gritsenko product &
+Govindarajan \(G_1(2)\) CHL/WKB denominator theorem &
+CHL scalar square in the dyon literature; no CY/DT theorem here &
+compact row host open \\
+6 & \(\nabla_2\) &
+Clery--Gritsenko product &
+Govindarajan \(G_1(3)\) CHL/WKB denominator theorem &
+CHL scalar square in the dyon literature; no CY/DT theorem here &
+compact row host open \\
+7 & \(\nabla_{3/2}\) &
+Clery--Gritsenko product with order-four multiplier &
+Govindarajan \(G_1(4)\) CHL/WKB theorem on the \(\mu_4\)-cover &
+CHL scalar square only after fixing the cover and branch &
+compact row host open \\
+8 & \(Q_1\) &
+Clery--Gritsenko product &
+Govindarajan \(G_2(4)\) CHL/WKB denominator theorem &
+CHL scalar square in the dyon literature; no CY/DT theorem here &
+compact row host open \\
+\hline
+\end{tabular}
+\end{center}
+
 By Theorem~\ref{thm:gn-denominator-234} the full-paramodular rows
 $F_2,F_3,F_4$ also carry Gritsenko--Nikulin denominator identities.
 The congruence rows $F_5,F_6,F_7,F_8$ have product-degree lattices in
@@ -2488,8 +2568,8 @@ multiplier, with no CY/DT/chiral boundary host supplied here.
 \begin{proposition}[Extension separation]
 \label{prop:extension-quarantine}
 No statement in this section is used in the $N=1$ theorem for
-$\Delta_5$.  For every row the product formula itself gives a charged
-primitive product.  It gives a Gram-graded Euler/Fock determinant only
+$\Delta_5$.  For every row the product formula itself gives a
+Gram-indexed primitive product.  It gives a Gram-graded Euler/Fock determinant only
 after a one-particle index and a charge-invariant interpretation have
 been supplied.
 A nonabelian denominator theorem is stronger: it additionally requires a
@@ -3991,11 +4071,11 @@ partition theorem
 $$
 Z^{X_j}_{\mathrm{red}}=C_jF_i^{-2};
 $$
-and a compact oriented Hall/chiral datum whose protected primitive
-bracket satisfies the Borcherds relations for the same row.  In the
+and a compact oriented \(E_d\)/Hall/chiral datum whose protected
+primitive bracket satisfies the Borcherds relations for the same row.  In the
 absence of these data, the boundary rows carry only their automorphic
 product and any separately proved denominator theorem.  They carry no
-CY/DT partition identity, no physical BPS factorization algebra, and no
+CY/DT partition identity, no compact physical factorization algebra, and no
 fractional chiral power.
 \end{remark}
 
