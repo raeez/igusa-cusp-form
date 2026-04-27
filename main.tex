@@ -6345,10 +6345,15 @@ concretely, on a derived chart \(\Spec R\) of \(\mathfrak M_{X,c}\),
 \(A_X^{\mathrm{prot}}\) is the commutative dg algebra of homotopical
 endomorphisms produced by the \((-1)\)-shifted symplectic structure.
 Form the bar resolution \(\operatorname{Bar}_*(A_X^{\mathrm{prot}})\) and the
-mixed complex \((C_*(A_X^{\mathrm{prot}}),b,B)\) of Connes; here
-\(b\) is the Hochschild boundary and \(B\) is the Connes
-\(B\)-operator with \(B^2=0\) and \([b,B]+B b=0\) on the nose
-\cite{ConnesNCG}, \cite{LodayCyclicHomology}.  Cyclic homology is
+mixed complex \((C_*(A_X^{\mathrm{prot}}),b,B_{\mathrm{C}})\) of Connes; here
+\(b\) is the Hochschild boundary and \(B_{\mathrm{C}}\) is the Connes
+\(B\)-operator with \(B_{\mathrm{C}}^2=0\) and
+\([b,B_{\mathrm{C}}]+B_{\mathrm{C}}\,b=0\) on the nose
+\cite{ConnesNCG}, \cite{LodayCyclicHomology}.  (The subscript
+\({\mathrm{C}}\) distinguishes the Connes operator from the
+gerbe-class cocycle \(B\colon\Gamma_X^{\mathrm{phys}}\times\Gamma_X^{\mathrm{phys}}
+\to\Gamma_{\mathrm{gram}}\) of
+Definition~\ref{def:dyonic-mukai-lattice}.)  Cyclic homology is
 \(HC_*(A_X^{\mathrm{prot}})=H_*(C_*(A_X^{\mathrm{prot}}),b+u B)\) with
 \(u\) of degree \(-2\); the periodic completion is
 \(HP_*(A_X^{\mathrm{prot}})\).  The \((-1)\)-shifted symplectic form
@@ -6377,9 +6382,9 @@ Two consequences are immediate:
 \begin{enumerate}
 \item[(\(\alpha\))] symmetry, \(B_{\mathrm{ch}}(c,c')=B_{\mathrm{ch}}(c',c)\),
 holds on the nose by interchanging the two terms;
-\item[(\(\beta\))] strict closedness, \((b+uB) B_{\mathrm{ch}}=0\),
+\item[(\(\beta\))] strict closedness, \((b+uB_{\mathrm{C}}) B_{\mathrm{ch}}=0\),
 follows from cyclic invariance and the Calabi--Yau identity
-\(b\varpi_X=0=B\varpi_X\) which characterises a class in \(HC_2\).
+\(b\varpi_X=0=B_{\mathrm{C}}\varpi_X\) which characterises a class in \(HC_2\).
 \end{enumerate}
 The image of \(B_{\mathrm{ch}}\) in
 \(HC^2_{\mathrm{strict}}(A_X^{\mathrm{prot}};\Gamma_{\mathrm{gram}})\)
@@ -6400,7 +6405,7 @@ collapse of the A\(_\infty\) structure to a strict associative dg
 algebra is computed as the homotopy of the Hochschild cocycle identity
 for \(B_{\mathrm{ch}}\); cyclic invariance (\(\alpha\)) and strict
 closedness (\(\beta\)) of Step~2\(^\prime\) reduce \(K_4\) to a
-quadrilinear expression in the Connes \(B\)-operator applied to
+quadrilinear expression in \(B_{\mathrm{C}}\) applied to
 \(\varpi_X\), which vanishes by \(B^2=0\).  Hence
 \(\operatorname{Bar}_*(\widehat\Gamma_X)\) collapses to a strictly associative dg
 monoid in the cyclic-homology category, equivalently \(\widehat\Gamma_X\)
@@ -6412,7 +6417,7 @@ coboundary of the Connes contraction
 \(\iota_{\varpi_X}:HC_*\to HC_{*-2}\) applied to \(\Pi_X\): explicitly,
 \(\iota_{\varpi_X}\Pi_X\) is the chain-level avatar of the Hochschild
 \(1\)-cochain \(\Theta\) of the first proof, and
-\((b+uB)(\iota_{\varpi_X}\Pi_X)=B_{\mathrm{ch}}\) on the nose.
+\((b+uB_{\mathrm{C}})(\iota_{\varpi_X}\Pi_X)=B_{\mathrm{ch}}\) on the nose.
 
 \smallskip\emph{Step 4\(^\prime\) (Compatibility with PTVV--Joyce).}
 The two routes give the same group \(\Gamma_X\): the comparison
@@ -6421,7 +6426,7 @@ The two routes give the same group \(\Gamma_X\): the comparison
 and the Joyce--Kinjo--Park--Safronov multiplicative isomorphism
 \(\mu_{c,c'}\) of (O) is, in this language, the cyclic-homology lift
 to the determinant gerbe of the chain-level identity
-\((b+uB)(\iota_{\varpi_X}\Pi_X)=B_{\mathrm{ch}}\).  Equivalently, the
+\((b+uB_{\mathrm{C}})(\iota_{\varpi_X}\Pi_X)=B_{\mathrm{ch}}\).  Equivalently, the
 Kapustin--Rozansky / Kontsevich--Soibelman correspondence between
 shifted symplectic geometry and cyclic homology
 \cite{KSCoHA}, refined by Davison--Meinhardt
