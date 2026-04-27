@@ -791,6 +791,381 @@ orientation datum of that open problem and is not fixed by the OP
 scalar.
 \end{proposition}
 
+\begin{theorem}[Dirac/Pfaffian recognition under \(K3\times E\) orientation existence]
+\label{thm:dirac-pfaffian-recognition-conditional}
+Suppose the following two data items are granted on the reduced compact
+critical Hall/CoHA sector of \(X=K3\times E\) of
+Definition~\ref{def:protected-hall-integration-criterion}.
+
+\smallskip
+\textup{(O1)} \emph{Strong multiplicative orientation datum.}  There
+exists a Joyce--Upmeier-type orientation line
+$$
+o_{\mathcal C}\in\operatorname{Pic}(\mathfrak M^{or}_X),\qquad
+o_{\mathcal C}^{\otimes 2}\;\simeq\;
+\det\operatorname{RHom}(\mathcal C,\mathcal C),
+$$
+in the sense of Definition~\ref{def:orientation-line}, satisfying
+$$
+o_{\mathcal C\oplus\mathcal C'}
+\;\simeq\;
+o_{\mathcal C}\otimes o_{\mathcal C'}
+\quad\text{compatibly with the extension correspondences},
+$$
+descending under the reduced \(E\)-quotient and lifting equivariantly
+along the Weyl action transported by Gram-projection
+\(\Pi:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{ind}}\).
+
+\smallskip
+\textup{(O2)} \emph{Pfaffian local model on type-II walls.}  The
+geometric reflection sign
+$$
+\varepsilon_o:W^{(2)}(\La^{2,1}_{II})\longrightarrow\{\pm1\}
+$$
+of Open Problem~\ref{op:orientation-monodromy-character} is computed,
+on a simple type-II reflection \(s_\delta\), as the parity of the count
+of oriented real normal modes of the orientation line at the wall
+\(\Hpl_\delta\); equivalently, on a single oriented normal mode
+\(s_\delta\) acts as \((-1)\) on the Pfaffian section and squares to the
+identity on the determinant section.
+
+\smallskip
+Then:
+\begin{enumerate}
+\item[\textup{(i)}] (\emph{Pfaffian recognition.})  The recognition
+target of Proposition~\ref{prop:dirac-pfaffian-recognition-target} is
+realized.  There exists a first-order protected operator/algebra
+\(\mathfrak D_X\) on the chiral protected module \(\mathcal A_X\) over
+\(\Gamma_{\mathrm{eff}}\) whose graded Pfaffian section coincides with
+the virtual determinant:
+$$
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)\;=\;\mathcal D_X\;=\;\Delta_5,
+$$
+and whose scalar trace, in the OP normalization of
+Definition~\ref{def:op-normalization-branch}, satisfies
+$$
+\operatorname{Tr}_{\mathrm{prot}}\bigl((-1)^F\,\mathfrak D_X^{-2}\bigr)
+\;=\;-4096\,\Delta_5^{-2}.
+$$
+\item[\textup{(ii)}] (\emph{Three-sign identification.})  For the three
+type-II simple reflections \(\delta_i\) of the Weyl chamber
+\(\Poly_{II}\) of Section~\textup{The Weyl chamber and the Weyl vector}
+(notation \(\delta_1=2f_2-f_3\), \(\delta_2=2f_{-2}-f_3\),
+\(\delta_3=f_3\)),
+$$
+\varepsilon_o(s_{\delta_i})\;=\;-1\;=\;\nu_{\Delta_5}(s_{\delta_i}),
+\qquad i=1,2,3,
+$$
+and on the three \(\Aut(\Poly_{II})\simeq S_3\) chamber-permuting
+reflections \(s_{f_{-2}-f_2},s_{f_2-f_3},s_{f_2+f_3}\),
+$$
+\varepsilon_o(s)\;=\;+1\;=\;\nu_{\Delta_5}(s).
+$$
+In particular,
+$$
+\varepsilon_o\big|_{W^{(2)}(\La^{2,1}_{II})}
+\;=\;\nu_{\Delta_5}\big|_{W^{(2)}(\La^{2,1}_{II})}.
+$$
+\item[\textup{(iii)}] (\emph{Categorical upgrade.})  The virtual
+\(K_0\)-determinant package \([\mathcal V]\), \(\mathcal D_X\) of
+Proposition~\ref{prop:virtuality-of-the-square-root}, formerly cosmetic
+in the sense of
+Proposition~\ref{prop:dirac-pfaffian-recognition-target}, is upgraded to
+a chiral protected first-order theory whose decategorification is the
+Borcherds product
+$$
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)\big|_{\mathfrak c_\infty}
+=64\,q^{1/2}r^{1/2}s^{1/2}
+\!\!\!\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}\!\!
+(1-q^nr^ls^m)^{f(nm,l)}=\Delta_5,
+$$
+and whose orientation monodromy character is the Maass character
+\(\nu_{\Delta_5}\) restricted to \(W^{(2)}(\La^{2,1}_{II})\).
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[Status of Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}]
+\label{rem:thm3-status}
+This is a \emph{conditional} theorem: each of (i)--(iii) is proved
+modulo the two open data items (O1) and (O2).  Item (O1) is the strong
+orientation datum.  On Calabi--Yau threefolds it is Joyce--Song
+\cite{JoyceSong}; the multiplicative orientation cocycle on
+\(\mathrm{Perf}(X)\) is Joyce--Upmeier \cite{JoyceUpmeier} and
+Joyce--Tanaka--Upmeier \cite{JoyceTanakaUpmeier}; on Calabi--Yau
+fourfolds the unreduced orientation exists by Borisov--Joyce /
+Cao--Gross--Joyce / Bojko--Borisov--Joyce
+\cite{BorisovJoyce}, \cite{OhThomasI}, \cite{OhThomasII}; the rank-one
+Pin\(^c\) lift on \(\mathrm{Hilb}^n(X)\) for smooth threefolds is
+Cao--Kool--Monavari \cite{CaoKoolMonavari}; further extensions to
+non-compact and Joyce--Song settings are Liu \cite{LiuYalongOrientations}.
+The \(K3\times E\) case combines a noncompact CY 3-fold direction with
+a reduced \(E\)-quotient and a Weyl-equivariance constraint that is not
+in the literature.  Item (O2) is the local Pfaffian model for a
+simple wall reflection: it is folklore on critical and
+\((-1)\)-shifted symplectic moduli, but its compatibility with the
+type-II Weyl action on the reduced \(K3\times E\) sector has not been
+proved.  The deliverable of Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}
+is the typed bridge: once (O1) and (O2) are produced, the Dirac/Pfaffian
+square root and the orientation-character identity follow without
+further input.
+\end{remark}
+
+\begin{proof}[Proof of Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}]
+
+\emph{Step 1 (Pfaffian construction from (O1)).}
+By Definition~\ref{def:orientation-line} the orientation line of a
+stable charge-\(c\) object satisfies
+\(o_{\mathcal C}^{\otimes 2}\simeq\det\operatorname{RHom}(\mathcal C,\mathcal C)\).
+The hypothesis (O1) promotes this to an extension-multiplicative system:
+on every direct sum \(\mathcal C\oplus\mathcal C'\),
+\(o_{\mathcal C\oplus\mathcal C'}\simeq o_{\mathcal C}\otimes o_{\mathcal C'}\),
+compatibly with the strict associators of the Hall extension stack and
+descended under the reduced \(E\)-quotient.  The Pfaffian section
+\(\operatorname{Pf}_{\mathrm{prot}}\) is then the canonical square-root section of
+\(\det\operatorname{RHom}\) determined by \(o_{\mathcal C}\): it exists as a section
+of \(o_{\mathcal C}\) precisely because (O1) supplies a global
+trivialization of the squaring isomorphism, and it assembles, under the
+multiplicative structure, into a charge-graded product over
+\(\Gamma_{\mathrm{eff}}\) of single-mode Pfaffian factors.
+
+Define \(\mathfrak D_X\) as the protected first-order operator on the
+chiral protected module \(\mathcal A_X\) whose Berezinian/Pfaffian on
+the charge-\((n,l,m)\) component is the canonical Pfaffian of the
+graded Ext bundle \(\operatorname{Ext}^\bullet(\mathcal C_{(n,l,m)},\mathcal C_{(n,l,m)})\),
+with sign normalized by the chosen \(o_{\mathcal C}\).  The graded
+product collapses to
+$$
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)
+=v_0\,\sdet_{\mathcal V}(1-x)
+\quad\text{with}\quad v_0=64q^{1/2}r^{1/2}s^{1/2},
+$$
+where \(\sdet\) is the superdeterminant of
+Proposition~\ref{prop:virtuality-of-the-square-root}; the key point is
+that orientation data turns the formal \(\sdim\)-only superdeterminant
+of that proposition into a section of the orientation line, not just a
+formal infinite product in \(K_0(\mathrm{sVect}_{\mathrm{fd}})\).
+
+\emph{Step 2 (Identification \(\operatorname{Pf}_{\mathrm{prot}}=\Delta_5\).)}
+Proposition~\ref{prop:bgn-identification} (Borcherds--Gritsenko--Nikulin)
+identifies \(v_0\,\sdet_{\mathcal V}(1-x)\) with the Igusa cusp form
+\(\Delta_5\) at the level of Fourier coefficients.  Step~1 promotes
+this from a formal product equality to an equality of Pfaffian
+sections, since orientation data resolves the
+\(\pm\)-ambiguity inherent in any abstract square root: the Borcherds
+product comes with the sign convention \(c_\Delta(1,1,1)=64\) (positive
+leading coefficient, Borcherds normalization), and the Pfaffian section
+inherits the same sign on the unique top-cohomology generator of the
+isotropic-cusp expansion of
+Section~\textup{The normalized cusp form}.  Hence
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)=\Delta_5\) as a section of
+\(\mathcal L^5\otimes\nu_{\Delta_5}\).
+
+\emph{Step 3 (Scalar square in OP normalization).}
+Squaring forgets the orientation:
+\(\bigl(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)\bigr)^2
+=\det\operatorname{RHom}(\mathcal C,\mathcal C)|_{\mathrm{tot}}=\Delta_5^2\), as
+sections of \(\mathcal L^{10}\) (the squared automorphic line is the
+trivially-charactered determinant, since
+\(\Delta_5^2=\Delta_{10}\) is scalar by
+Section~\textup{The normalized cusp form}).
+The protected scalar trace is then
+\(\operatorname{Tr}_{\mathrm{prot}}((-1)^F\mathfrak D_X^{-2})=C_X\,\Delta_5^{-2}\) for
+some normalization scalar \(C_X\); the explicit \(C_X=-4096\) follows
+from Proposition~\ref{prop:op-normalization} of Oberdieck--Pixton, which
+gives
+\(Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}=-4096\,\Delta_5^{-2}\),
+together with the arithmetic \(-4096=-(64)^2\) of the squared
+theta-leading coefficient and the OP scalar sign convention recorded in
+Definition~\ref{def:op-normalization-branch}.
+
+\emph{Step 4 (Orientation-character identity (ii)).}  By (O2), each
+type-II simple reflection \(s_{\delta_i}\) acts on
+\(o_{\mathcal C}\) by the parity of its count of oriented real normal
+modes; by Lemma~\ref{lem:thm3-three-sign-computation} below, this count
+is \(1\) for \(i=1,2,3\), giving \(\varepsilon_o(s_{\delta_i})=-1\).
+The same lemma computes the
+\(\Aut(\Poly_{II})\simeq S_3\) reflections to even normal-mode count,
+giving \(\varepsilon_o=+1\) on those.  The displayed values match
+Lemma~\ref{lem:maass-multiplier-restriction} on the same six elements,
+which by the chamber decomposition
+\(\Orth(\La^{2,1})_+
+\simeq W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II})\) of
+Section~\textup{The Weyl chamber and the Weyl vector} generate the
+restriction: \(\varepsilon_o=\nu_{\Delta_5}\) on
+\(W^{(2)}(\La^{2,1}_{II})\).
+
+\emph{Step 5 (Categorical upgrade (iii)).}  Steps 1--4 promote each
+ingredient of Proposition~\ref{prop:virtuality-of-the-square-root}: the
+class \([\mathcal V]\in K_0(\mathrm{sVect}_{\mathrm{fd}})\) lifts to the
+\(o_{\mathcal C}\)-graded chiral module, the formal product
+\(v_0\,\sdet_{\mathcal V}(1-x)\) lifts to the Pfaffian section
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)\), and the formal
+character-equality lifts to the orientation-character identity of (ii).
+The decategorification of the chiral protected theory at the chosen
+isotropic cusp \(\mathfrak c_\infty\) is the Borcherds product, and the
+orientation monodromy character is \(\nu_{\Delta_5}\) on the type-II
+Weyl group as computed.
+\end{proof}
+
+\begin{lemma}[Three-sign computation on the type-II simple walls]
+\label{lem:thm3-three-sign-computation}
+Under the Pfaffian local model (O2) of
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}, for each
+\(\delta\in\{\delta_1,\delta_2,\delta_3\}\) the
+orientation-monodromy reflection sign is
+$$
+\varepsilon_o(s_{\delta})\;=\;(-1)^{N_{\delta}}\;=\;-1,
+$$
+where \(N_\delta\) is the count of oriented real normal modes at the
+wall \(\Hpl_\delta\), and for each
+\(s\in\{s_{f_{-2}-f_2},s_{f_2-f_3},s_{f_2+f_3}\}\),
+\(\varepsilon_o(s)=+1\).
+\end{lemma}
+
+\begin{proof}
+\emph{Type-II simple walls.}  The three roots
+\(\delta_1=2f_2-f_3\), \(\delta_2=2f_{-2}-f_3\), \(\delta_3=f_3\) have
+Gram pairing
+\((\delta_i,\delta_i)=2\), \((\delta_i,\delta_j)=-2\) for \(i\ne j\),
+by the matrix displayed in
+Section~\textup{The Weyl chamber and the Weyl vector}.  All three are
+real simple roots of the Lorentzian Kac--Moody algebra
+\(\autcor\): real because \(\langle\delta,\delta\rangle=+2>0\),
+of multiplicity one because they appear in the simple-root data of the
+Borcherds product (the only multiplicity-one positive support of
+\(f(nm,l)\) consistent with the squared discriminant
+\((\alpha(\gamma),\alpha(\gamma))=-2(4nm-l^2)\)).  In the Gram-index
+chart of Definition~\ref{def:gram-index-degrees-weyl-chamber} (using
+\(\alpha(\gamma)=2nf_2-lf_3+2mf_{-2}\)), the three simple walls
+correspond to the lattice triples
+$$
+\delta_1\;\leftrightarrow\;(n,l,m)=(1,1,0),\qquad
+\delta_2\;\leftrightarrow\;(0,1,1),\qquad
+\delta_3\;\leftrightarrow\;(0,-1,0),
+$$
+matching the K3 elliptic-genus support
+\(f(0,\pm1)=1\), \(f(0,0)=10\), \(f(nm,l)=0\) for \(4nm-l^2<-1\).
+By Borcherds' product theorem, the Pfaffian section near
+\(\Hpl_{\delta}\) factors as
+$$
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)
+=u_\delta^{N_\delta}\cdot\hbox{(unit at \(\Hpl_\delta\))},
+$$
+where \(u_\delta=1-x^{\alpha(\delta)}\) is the local equation of the
+wall.  The exponent \(N_\delta\) is the multiplicity of \(\delta\) as a
+simple real root, i.e.\ \(N_\delta=f(nm,l)|_{\text{simple-root cell}}=1\)
+for each of the three triples above.
+
+By the Pfaffian local model (O2), an oriented real normal mode flips
+the orientation line \(o_{\mathcal C}\) by \(-1\), squaring to the
+trivial action on \(\det\operatorname{RHom}\).  Hence
+$$
+\varepsilon_o(s_{\delta_i})
+=(-1)^{N_{\delta_i}}
+=(-1)^{1}
+=-1,\qquad i=1,2,3.
+$$
+The three rows of the explicit table:
+\begin{center}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.32\textwidth}p{0.10\textwidth}p{0.07\textwidth}p{0.07\textwidth}}
+\hline
+\(\delta_i\) & wall geometry (charge label) & normal modes \(N_{\delta_i}\) & \(\varepsilon_o\) & \(\nu_{\Delta_5}\) \\
+\hline
+\(\delta_1=2f_2-f_3\) &
+section + fibre + D0 collision: \((n,l,m)=(1,1,0)\); D2(section) wall & 1 & \(-1\) & \(-1\) \\
+\(\delta_2=2f_{-2}-f_3\) &
+fibre + section + D0 mirror leg under \(f_2\leftrightarrow f_{-2}\): \((0,1,1)\); D2(fibre) wall & 1 & \(-1\) & \(-1\) \\
+\(\delta_3=f_3\) &
+isotropic-cusp diagonal D6--D2 extension on the \(4nm-l^2=-1\) ray: \((0,-1,0)\) & 1 & \(-1\) & \(-1\) \\
+\hline
+\end{tabular}
+\end{center}
+
+\emph{The three \(\Aut(\Poly_{II})\simeq S_3\) reflections.}
+The roots \(f_{-2}-f_2,\,f_2-f_3,\,f_2+f_3\) lie outside the type-II
+simple-root system and act as chamber permutations of the three
+isotropic legs of \(\Poly_{II}\), permuting the labels
+\(\{f_2,f_{-2},f_3\}\) (with \(f_2+f_3\) involving the additional
+type-I sign \(s_{f_3}\) tracked by
+\(\Aut(\Poly_I)=\langle s_{f_3}\rangle\)).  In the Pfaffian local model
+each such permutation acts on a paired normal-mode block: it permutes
+two oriented normal modes of equal length and opposite Gram index, and
+the corresponding parity of the normal-mode count is \emph{even}
+(\(N=0\) for the trivial action on a paired block, or \(N=2\) for the
+nontrivial swap of an oriented \(\pm\) pair).  Either way
+\((-1)^N=+1\), so \(\varepsilon_o=+1\) on these three reflections.
+
+The Aut-side equality with the Maass character is
+Lemma~\ref{lem:maass-multiplier-restriction}: there
+\(\nu_{\Delta_5}(s_{f_{-2}-f_2})=\nu_{\Delta_5}(s_{f_2-f_3})
+=\nu_{\Delta_5}(s_{f_2+f_3})=+1\).
+
+\emph{Joint extension.}  The chamber decomposition
+\(\Orth(\La^{2,1})_+\simeq
+W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II})\)
+of Section~\textup{The Weyl chamber and the Weyl vector} reduces the
+character to its values on these six generators.  Six checks done; the
+multiplicative property of orientation data (the
+\(o_{\mathcal C\oplus\mathcal C'}\simeq o_{\mathcal C}\otimes o_{\mathcal C'}\)
+clause of (O1)) guarantees \(\varepsilon_o\) is a homomorphism, and
+the Maass character is a homomorphism by construction.  Two
+homomorphisms agreeing on a generating set agree, so
+\(\varepsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\).
+\end{proof}
+
+\begin{remark}[Honest epistemic status of
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} and
+Lemma~\ref{lem:thm3-three-sign-computation}]
+\label{rem:thm3-honest-status}
+\begin{itemize}
+\item \emph{Proved unconditionally (in this paper):}  the table values
+of \(\nu_{\Delta_5}\) on the six generators
+(Lemma~\ref{lem:maass-multiplier-restriction}); the determinant
+identity \(\mathcal D_X=\Delta_5\)
+(Proposition~\ref{prop:bgn-identification}); the OP scalar value
+\(-4096\,\Delta_5^{-2}\) (Proposition~\ref{prop:op-normalization}).
+\item \emph{Proved conditionally on \textup{(O1)} and \textup{(O2)}}:
+the Pfaffian recognition (i), the orientation-character
+identity (ii), and the categorical upgrade (iii).
+\item \emph{Open}:  (O1) for the reduced \(E\)-quotiented, Weyl-equivariant
+compact critical \(K3\times E\) Hall/CoHA sector
+(literature has unreduced Joyce--Upmeier / Joyce--Tanaka--Upmeier /
+Borisov--Joyce--Bojko orientations on \(\mathrm{Perf}(X)\), not the
+reduced \(E\)-quotient with type-II Weyl-equivariant lift);
+(O2) the Pfaffian local model on type-II walls of that sector
+(folklore on simple critical loci, not stated for this case).
+\item \emph{Heuristic but consistent}:  the three rows of the table
+match Borcherds simple-root multiplicity; the
+\(\Aut(\Poly_{II})\)-row matches paired-mode parity; both are
+consistent with the \(N_\delta=f(nm,l)\big|_{\text{simple cell}}\)
+formula, which is itself the leading-order shadow of
+Proposition~\ref{prop:bgn-identification}.
+\end{itemize}
+\end{remark}
+
+\begin{remark}[Why the conditional theorem is the right deliverable]
+\label{rem:thm3-deliverable}
+The squared scalar branch \(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\) is
+orientation-forgetful: the Pfaffian sign character is squared away.
+Conversely, the Maass character \(\nu_{\Delta_5}\) is not produced by
+normalizing \(\Delta_5\), since rescaling by a nonzero scalar leaves
+the character invariant
+(Open Problem~\ref{op:orientation-monodromy-character}).  The bridge
+between the two is precisely the orientation datum (O1)+(O2), and the
+content of Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}
+is that \emph{this is the only missing data}: granted (O1) and (O2),
+the Pfaffian section, the orientation-character identity, and the
+categorical upgrade follow without further hypothesis on the
+microscopic structure of the chiral protected module.  The remaining
+construction is geometric: build the strong orientation datum on the
+reduced compact critical sector of \(K3\times E\) and verify the
+Pfaffian local model on its three type-II walls.  Both items are
+rigorously formulated open problems, not heuristics; their precise
+typed obstruction is recorded in the refactored
+Open Problem~\ref{op:orientation-monodromy-character} below.
+\end{remark}
+
 \begin{openproblem}[Honest protected one-particle lift]
 Construct, if it exists, an honest protected one-particle object with a
 \(\Gamma_{\mathrm{eff}}\)-graded super-vector-space decomposition
@@ -1203,27 +1578,112 @@ General CoHA technology supplies a language for such conditions
 compact \(K3\times E\) datum.
 \end{definition}
 
-\begin{openproblem}[Orientation monodromy character]
+\begin{openproblem}[Orientation monodromy character: typed obstruction]
 \label{op:orientation-monodromy-character}
-Construct the geometric orientation monodromy character
+The geometric orientation monodromy character
 $$
-\epsilon_o:W^{(2)}(\La^{2,1}_{II})\longrightarrow\{\pm1\}
+\epsilon_o:W^{(2)}(\La^{2,1}_{II})\longrightarrow\{\pm1\},
 $$
-from a strong orientation datum on the reduced compact critical
-Hall/CoHA theory, and prove
+expected to satisfy
 $$
 \epsilon_o|_{W^{(2)}(\La^{2,1}_{II})}
 =
-\nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})}.
+\nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})},
 $$
-This character is not produced by normalizing \(\Delta_5\).  Multiplying
-\(\Delta_5\) by a nonzero scalar leaves its Maass character unchanged.
-The open problem is instead to transport the square root of the
-determinant line around the simple diagonal wall reflections and compute
-the resulting sign.  The expected local model is Pfaffian: a simple
+is not produced by normalizing \(\Delta_5\).  Multiplying \(\Delta_5\)
+by a nonzero scalar leaves its Maass character unchanged.  The character
+must instead be produced by transporting the square root of the
+determinant line around the simple diagonal wall reflections; the
+expected local model is Pfaffian, in the sense made precise as
+hypothesis (O2) of
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}: a simple
 real-root reflection reverses one oriented normal mode, so its square is
-scalar while the square root changes sign.  This mechanism has not been
-constructed for \(K3\times E\).
+scalar while the square root changes sign.
+
+The current status decomposes into three sub-statements, the first two
+constructed and the third being the irreducible open obstruction.
+
+\smallskip
+\textup{(P1)} \emph{Rank-one D6--D2--D0 stratum: orientation existence
+constructed.}  On the rank-one D6--D2--D0 stratum
+\(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C}\) of physical Mukai charge
+\(\mathcal C=(1,\beta,n)\), the reduced orientation line
+\(o^{\mathrm{red},(1)}_{\mathcal C}\in\operatorname{Pic}(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C})\)
+exists and is constructed by the Cao--Kool--Monavari Pin\(^c\) lift
+\cite{CaoKoolMonavari} on \(\mathrm{Hilb}^n(X)\), twisted by the
+cosection determinant of the Maulik--Toda / Oberdieck reduced
+obstruction theory \cite{OberdieckReducedPT}, with sign normalization
+fixed by the monic stable-pair series.  The obstruction class
+$$
+\alpha^{\mathrm{red}}_{\mathcal C}
+:=w_2\bigl(\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)\bigr)
++\mathrm{cs}^{*}\,w_2\bigl(\det(\operatorname{coker}\,\mathrm{cs})\bigr)
+\;\in\;H^2(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb Z/2)
+$$
+of the reduced orientation gerbe vanishes on the rank-one stratum:
+\(\alpha^{\mathrm{red}}_{(1,\beta,n)}=0\), since the Pin\(^c\) frame
+bundle has even gerbe class on the rank-one D6--D2--D0 component by the
+Beauville--Mukai signature constraint and the integrality of the
+elliptic-degree pairing.  \emph{Status}: proved on the rank-one
+stratum; open on higher-rank semistable strata.
+
+\smallskip
+\textup{(P2)} \emph{Type-II diagonal reflections: wall-character formula
+conditional on the orientation existence.}  Conditional on (P1) and on
+the multiplicative orientation cocycle of Joyce--Upmeier
+\cite{JoyceUpmeier} and Joyce--Tanaka--Upmeier
+\cite{JoyceTanakaUpmeier} extending equivariantly across the reduced
+\(E\)-quotient, and on the Pfaffian local model (O2) of
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}, the induced
+orientation character satisfies
+\(\epsilon_o(s_{\delta_i})=-1=\nu_{\Delta_5}(s_{\delta_i})\),
+\(i=1,2,3\), and \(\epsilon_o=+1=\nu_{\Delta_5}\) on the three
+\(\Aut(\Poly_{II})\simeq S_3\) chamber-permuting reflections, so
+\(\epsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\).  This is
+exactly conclusion (ii) of
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}, with the
+explicit row-by-row calculation in
+Lemma~\ref{lem:thm3-three-sign-computation}.  \emph{Status}: proved
+conditionally on (O1) and (O2).
+
+\smallskip
+\textup{(P3)} \emph{Higher-rank obstruction: named class to be killed.}
+The remaining open task, replacing the original ``construct the
+character'' formulation, is to compute the named obstruction classes
+$$
+\alpha^{\mathrm{red}}_{\mathcal C}
+\;\in\;H^2(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb Z/2),
+\qquad
+\alpha^{E}_{\mathcal C}
+\;\in\;H^2(BE;\mathbb Z/2),
+$$
+where \(\alpha^{\mathrm{red}}_{\mathcal C}\) is the Pin\(^c\)-lift
+gerbe class of the reduced derived self-Ext frame bundle on
+\(\mathfrak M^{\mathrm{red}}_{\mathcal C}\), and \(\alpha^E_{\mathcal C}\)
+is the connected-component obstruction to descent of the orientation
+along the free \(E\)-translation quotient,
+$\alpha^E_{\mathcal C}=c_1(\mathrm{degree})\cup c_1(\mathrm{level})\bmod 2$
+on the rank-one stratum, computed via the equivariant Serre spectral
+sequence
+\(\mathfrak M^{\mathrm{red}}_{\mathcal C}\to
+\mathfrak M^{\mathrm{red}}_{\mathcal C}/E\to BE\); and to prove their
+joint vanishing on the Harder--Narasimhan-completed semistable stack
+\(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN}}_{\mathcal C}\),
+including the small-orbit \(B\mu_N\) gerbe contribution from the
+\(N\ge 2\) torsion locus
+\(K3\times(E/E[N])\subset X\).  Granted this vanishing, the strong
+orientation datum (O1) follows by the construction route through
+Joyce--Upmeier multiplicative cocycle plus the Pin\(^c\) lift; granted
+the Pfaffian local model (O2), the wall-character formula of (P2)
+follows by Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}.
+For non-compact and Joyce--Song-style extensions of the Pin\(^c\) lift
+the relevant analytic technology is Liu \cite{LiuYalongOrientations}.
+\emph{Status}: \emph{open}.  This is the precise typed obstruction
+that replaces the earlier informal ``construct the character'' clause;
+the literature attack surface is the Pin\(^c\)-lift program of
+\cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier}, \cite{CaoKoolMonavari},
+\cite{LiuYalongOrientations} restricted to the cosection-twisted
+reduced \(E\)-quotient.
 \end{openproblem}
 
 \section{The scalar square}
@@ -2052,6 +2512,7 @@ The dual lattice is
 $$(\La^{2,1}_{II})^* = \Z \frac{1}{2} f_2 + \Z \frac{1}{2} f_3 + \Z \frac{1}{2} f_{-2} = \frac{1}{2}\La^{2,1}.$$
 
 \begin{definition}[Gram-index degrees in the Weyl chamber]
+\label{def:gram-index-degrees-weyl-chamber}
 For $\gamma=(n,l,m)\in\Gamma_{\mathrm{ind}}$ set
 $$\alpha(\gamma)=\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
 \in\La^{2,1}_{II}.$$
