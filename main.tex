@@ -1083,18 +1083,70 @@ isotropic-cusp diagonal D6--D2 extension on the \(4nm-l^2=-1\) ray: \((0,-1,0)\)
 \end{center}
 
 \emph{The three \(\Aut(\Poly_{II})\simeq S_3\) reflections.}
-The roots \(f_{-2}-f_2,\,f_2-f_3,\,f_2+f_3\) lie outside the type-II
-simple-root system and act as chamber permutations of the three
-isotropic legs of \(\Poly_{II}\), permuting the labels
-\(\{f_2,f_{-2},f_3\}\) (with \(f_2+f_3\) involving the additional
-type-I sign \(s_{f_3}\) tracked by
-\(\Aut(\Poly_I)=\langle s_{f_3}\rangle\)).  In the Pfaffian local model
-each such permutation acts on a paired normal-mode block: it permutes
-two oriented normal modes of equal length and opposite Gram index, and
-the corresponding parity of the normal-mode count is \emph{even}
-(\(N=0\) for the trivial action on a paired block, or \(N=2\) for the
-nontrivial swap of an oriented \(\pm\) pair).  Either way
-\((-1)^N=+1\), so \(\varepsilon_o=+1\) on these three reflections.
+The three chamber-permuting roots
+\(\alpha_1=f_{-2}-f_2\), \(\alpha_2=f_2-f_3\), \(\alpha_3=f_2+f_3\)
+all have squared norm \((\alpha_i,\alpha_i)=2\) by the Gram pairing
+\((f_2,f_{-2})=-1\), \((f_3,f_3)=2\) of
+Section~\textup{The Weyl chamber and the Weyl vector}.  They lie in
+\(\La^{2,1}\setminus\La^{2,1}_{II}\) (type~I, not type~II), so they
+do \emph{not} appear in the type-II simple-root system
+\(\{\delta_1,\delta_2,\delta_3\}\) used by the Borcherds product
+\cite[Theorem 2.1, Section~4]{GN}.  We compute the wall multiplicity
+\(N_{\alpha}=\ord_{\Hpl_\alpha}(\Delta_5)\) directly via Borcherds'
+divisor formula \cite[Section~4]{GN}, \cite{Gritsenko99}.
+
+By Borcherds' theorem (specialized to \(\Delta_5\) in the type-II
+parametrization \(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\) of
+Definition~\ref{def:gram-index-degrees-weyl-chamber}, with K3
+elliptic-genus coefficients \(f(n,l)\) of the weight-zero index-one
+weak Jacobi form \(\phi_{0,1}\) \cite[\S2.2]{EZ:1}),
+\[
+N_{\alpha}\;=\;\ord_{\Hpl_\alpha}(\Delta_5)
+\;=\;\sum_{k\ge1:\;\pm k\alpha=\alpha(\gamma_k),\,\gamma_k\in\Gamma_{\mathrm{eff}}}
+f\bigl(n_k m_k,l_k\bigr),
+\]
+where \((n_k,l_k,m_k)\) is the unique triple realizing
+\(\alpha(\gamma_k)=\pm k\alpha\) when one exists, and the sum is empty
+otherwise.  Because the parametrization
+\(\alpha(\gamma)=2nf_2-lf_3+2mf_{-2}\) requires the coefficients of
+\(f_2\) and \(f_{-2}\) to be \emph{even}, only \(k\) with \(k\alpha\)
+having even \(f_2\)- and \(f_{-2}\)-coefficients contribute.  We
+tabulate:
+\begin{itemize}
+\item[(i)] \(\alpha_1=f_{-2}-f_2\): the \(f_2\)- and
+\(f_{-2}\)-coefficients are \(\mp1\), so \(k=1\) is excluded.  For
+\(k=2\), \(2\alpha_1=2f_{-2}-2f_2\) gives \((n,l,m)=(-1,0,1)\); the
+opposite orientation \(-2\alpha_1\) gives \((1,0,-1)\).  Neither lies
+in \(\Gamma_{\mathrm{eff}}=\{n\ge0,m\ge0,n+m-l\ge0\}\) of
+Lemma~\ref{lem:active-support-type-ii-cone}, since one of \(n,m\) is
+negative.  All higher \(k\) inherit the same sign obstruction.  Hence
+the sum is empty and \(N_{\alpha_1}=0\).
+\item[(ii)] \(\alpha_2=f_2-f_3\): for \(k=1\), the \(f_2\)-coefficient
+is odd, excluded.  For \(k=2\), \(2\alpha_2=2f_2-2f_3\) gives
+\((n,l,m)=(1,2,0)\), with index value \(f(nm,l)=f(0,2)\).  By the
+explicit Fourier expansion
+\(\phi_{0,1}=\sum f(n,l)q^nr^l\) of \cite[\S2.2, Theorem~9.3 and
+Table~p.~141]{EZ:1} (equivalently, the K3 elliptic-genus normalization
+\(Z_{\mathrm{K3}}=2\phi_{0,1}\) recorded in
+Section~\textup{Protected locality}), the \(q^0\) row supports only
+\(|l|\le1\) (specifically \(f(0,0)=10\), \(f(0,\pm1)=1\),
+\(f(0,l)=0\) for \(|l|\ge2\)), so \(f(0,2)=0\).  For \(k\ge3\), even
+multiples \(k=2j\) give \((j,2j,0)\) with index value \(f(0,2j)=0\)
+by the same support bound.  Hence the sum is empty and
+\(N_{\alpha_2}=0\).
+\item[(iii)] \(\alpha_3=f_2+f_3\): identical analysis, replacing
+\(l\mapsto-l\): \(2\alpha_3=2f_2+2f_3\) gives \((n,l,m)=(1,-2,0)\)
+with \(f(0,-2)=0\) by the \(r\to r^{-1}\) symmetry of \(\phi_{0,1}\)
+\cite[\S2.2]{EZ:1}.  Hence \(N_{\alpha_3}=0\).
+\end{itemize}
+By the Pfaffian local model (O2), \(N_\alpha\) is also the count of
+oriented real normal modes of \(\mathfrak D_X\) at the wall
+\(\Hpl_\alpha\) (the Pfaffian section vanishes to the same order as
+its automorphic image \(\Delta_5\)).  Therefore
+\[
+\varepsilon_o(s_{\alpha_i})\;=\;(-1)^{N_{\alpha_i}}\;=\;(-1)^0\;=\;+1,
+\qquad i=1,2,3.
+\]
 
 The Aut-side equality with the Maass character is
 Lemma~\ref{lem:maass-multiplier-restriction}: there
@@ -1136,12 +1188,15 @@ Borisov--Joyce--Bojko \cite{BorisovJoyce} orientations on \(\mathrm{Perf}(X)\), 
 reduced \(E\)-quotient with type-II Weyl-equivariant lift);
 (O2) the Pfaffian local model on type-II walls of that sector
 (folklore on simple critical loci, not stated for this case).
-\item \emph{Heuristic but consistent}:  the three rows of the table
-match Borcherds simple-root multiplicity; the
-\(\Aut(\Poly_{II})\)-row matches paired-mode parity; both are
-consistent with the \(N_\delta=f(nm,l)\big|_{\text{simple cell}}\)
-formula, which is itself the leading-order shadow of
-Proposition~\ref{prop:bgn-identification}.
+\item \emph{Computed from imported coefficients}:  the three rows of
+the table match Borcherds simple-root multiplicity \(N_{\delta_i}=1\)
+via \(f(nm,l)\) at \((1,1,0),(0,1,1),(0,-1,0)\); the
+\(\Aut(\Poly_{II})\)-row evaluates the same Borcherds divisor formula
+of \cite[Section~4]{GN} at the three type-I roots and yields
+\(N_\alpha=0\) by the explicit support of \(\phi_{0,1}\) recorded in
+\cite[\S2.2]{EZ:1}; both lines are then consistent with the
+\(N_\delta=f(nm,l)\) formula, which is itself the leading-order shadow
+of Proposition~\ref{prop:bgn-identification}.
 \end{itemize}
 \end{remark}
 
