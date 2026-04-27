@@ -53,44 +53,31 @@
 \maketitle
 
 \begin{abstract}
-For \(X=S\times E\), with \(S\) a K3 surface and \(E\) an elliptic
-curve, Oberdieck--Pixton's primitive reduced curve-counting theorem and
-Oberdieck's reduced DT/PT comparison give, after converting OP's monic
-Igusa normalization to the theta-constant normalization used here,
-\[
-Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}
-=-\left(\chi_{10}^{\mathrm{OP}}\right)^{-1}
-=-4096\,\Delta_5(Z)^{-2}.
-\]
-This paper fixes the automorphic square-root object behind this scalar
-identity.  It is not an analytic branch.  It is the Borcherds product of
-the half-normalized K3 elliptic genus:
+For \(X=K3\times E\) the theorem-level physical input used here is the
+protected index.  Right-moving localization in the K3 Ramond sector gives
 \[
 Z_{\mathrm{K3}}=2\phi_{0,1},\qquad
-\phi_{0,1}=\sum f(n,l)q^nr^l,\qquad
-\operatorname{Borch}_{\theta}(\phi_{0,1})=\Delta_5.
+\phi_{0,1}=\sum f(n,l)q^nr^l.
 \]
-Here \(\operatorname{Borch}_{\theta}\) denotes the theta-normalized
-Borcherds product.  The cusp form \(\Delta_5\) is the product of the ten
-even genus-two theta constants, normalized by
-\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64\).  The monic product is
+Replacing the protected K3 index by its Borcherds half produces only a
+virtual one-particle determinant.  It does not produce a microscopic
+Hilbert space.  For virtual super vector spaces
+\(\mathbb U_{n,l}\) with \(\sdim\mathbb U_{n,l}=f(n,l)\), set
+\(\mathcal V_{(n,l,m)}=\mathbb U_{nm,l}\).  In the Borcherds cusp
+chamber the determinant is
 \[
-D_5=\operatorname{Borch}_{\mathrm{mon}}(\phi_{0,1})
-=64^{-1}\Delta_5.
-\]
-Equivalently, for a virtual super vector space
-\(\mathbb U_{n,l}\) with
-\(\sdim\mathbb U_{n,l}=f(n,l)\), the Fock superdeterminant
-\[
-\mathcal D_X
+\mathcal D_X(Z)
 =64q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}
+=\Delta_5(Z).
 \]
-is \(\Delta_5\).
+The constant \(64\) is the theta-constant normalization
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64\); hence the monic Borcherds
+product is \(D_5=64^{-1}\Delta_5\).
 
-The same coefficients are the signed root multiplicities in the
-Gritsenko--Nikulin denominator algebra.  Under
+The same coefficients are the signed root supermultiplicities in the
+Gritsenko--Nikulin Borcherds--Kac--Moody denominator algebra.  Under
 \[
 \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
 \]
@@ -100,21 +87,34 @@ one has
 =64^{-1}\Delta_5(2Z),\qquad
 \smult\mathfrak g_{\Delta_5,\alpha(n,l,m)}=f(nm,l)
 \]
-on the active support.  Thus the square-root ladder is
-\[
-Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2},\qquad
-\Delta_5=\operatorname{Borch}_{\theta}(\phi_{0,1}),\qquad
-\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z).
-\]
+on the active support.  Thus the denominator algebra supplies the
+algebraic square root target; it does not supply compact Hall
+correspondences, an orientation, or local collision maps.
 
-The construction is a normalization and denominator-algebra comparison.
-It does not construct a microscopic BPS Hilbert space, the holomorphic
-\(E_3\)-factorization algebra on \(K3\times E\), or its compact
-Hall/chiral specialization on \(E\).  Those data are isolated as the
-realization problem.  The final part records the eight Clery--Gritsenko
-diagonal-divisor rows, the Gritsenko--Nikulin and Govindarajan
-CHL/Weyl--Kac--Borcherds denominator theorems attached to them, and the
-still-open physical row-map problem.
+The scalar Behrend-weighted branch is imported from
+Oberdieck--Pixton, Oberdieck--Pandharipande, and Oberdieck.  In OP's
+normalization \(\chi_{10}^{\mathrm{OP}}=D_5^2\), so
+\[
+\chi_{10}^{\mathrm{OP}}=(64^{-1}\Delta_5)^2
+=4096^{-1}\Delta_5^2,\qquad
+Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}
+=-\left(\chi_{10}^{\mathrm{OP}}\right)^{-1}
+=-4096\,\Delta_5^{-2}.
+\]
+The factor \(4096=64^2\) is a normalization conversion; the minus sign is
+the OP scalar convention.  Neither fixes the automorphic reflection
+character or the compact orientation monodromy.
+
+A compact realization would have to begin with a holomorphic
+\(E_3\)-factorization algebra on \(K3\times E\), specialize it along the
+K3 direction to a chiral object on \(\operatorname{Ran}(E)\), solve the
+positive-elliptic-degree locality obstruction, and identify the protected
+primitive bracket with \(\mathfrak g_{\Delta_5}\).  This paper proves the
+virtual determinant, records the imported scalar and denominator
+theorems, and formulates that compact Hall/factorization realization as
+an open recognition problem.  The final part records the eight
+Clery--Gritsenko diagonal-divisor rows and the certificate required
+before any boundary row becomes a physical host.
 \end{abstract}
 
 \bigskip
@@ -123,100 +123,176 @@ still-open physical row-map problem.
 \section{Introduction and claim strength}
 \label{sec:introduction-claim-strength}
 
-The scalar enumerative theorem gives
+The local object comes first.  A compact BPS theory on
+\(X=K3\times E\), if it exists in the form needed here, should produce
+protected local observables before any trace is taken.  After twisting
+and passing to the protected index, the positive Hilbert space has
+collapsed to a charge-graded virtual object, but locality has not
+disappeared: disjoint insertions must still factorize and collisions
+must remember extensions.
+
+Thus the natural order is
 \[
-Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}.
+\hbox{protected locality}
+\longrightarrow
+\hbox{compact/hybrid factorization}
+\longrightarrow
+\hbox{primitive recognition}
+\longrightarrow
+\hbox{Borcherds denominator}
+\longrightarrow
+\hbox{OP scalar square}
+\longrightarrow
+\hbox{eight-row host certificates}.
 \]
-Squaring has forgotten the automorphic character and the Weyl
-denominator sign.  The first problem of the paper is to identify the
-canonical automorphic object whose square is being seen by this scalar
-identity.  The answer is the Borcherds determinant \(\Delta_5\), not an
-analytic choice of a branch.
+The paper follows this order at the level of claims.  Some arrows are
+proved in this manuscript, some are imported theorems, and some are
+open realization requirements.
 
-The physical order expected of a compact realization is stronger and is
-not proved here.  A protected local theory, if constructed, would first
-supply a holomorphic \(E_3\)-factorization algebra on the
-Calabi--Yau threefold; a chain-level specialization along \(K3\) would
-then give the \(E_1\)-chiral shadow on \(E\); the primitive bracket of
-that shadow would be the microscopic home of the Borcherds algebra.  This
-paper proves the determinant and denominator shadows and isolates this
-stronger local object as the realization problem.
-
-The paper has two arcs.
-
-First, the \(N=1\) Igusa arc fixes the square-root normalization of the
-primitive \(K3\times E\) scalar partition function:
+\paragraph{Protected locality.}
+The protected index is theorem-level.  Right-moving localization of the
+unitary K3 sigma model gives
 \[
-Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2},\qquad
-\Delta_5=\operatorname{Borch}_{\theta}(\phi_{0,1}),\qquad
+Z_{\mathrm{K3}}=2\phi_{0,1},\qquad
+\phi_{0,1}=\sum f(n,l)q^nr^l.
+\]
+The half-index used by the Borcherds lift is represented only in
+\(K_0(\mathrm{sVect}_{\mathrm{fd}})\).  Its coefficients are signed
+superdimensions, not dimensions of a constructed compact D-brane Hilbert
+space.
+
+\paragraph{Compact and hybrid factorization.}
+A compact realization would first supply a charge-completed holomorphic
+\(E_3\)-factorization algebra
+\[
+\mathcal A^{E_3}_X,\qquad X=K3\times E,
+\]
+then a chain-level K3-to-\(E\) specialization
+\[
+\mathcal F_X\simeq
+\mathrm{Sp}^{\mathrm{ch}}_{K3,E}(\mathcal A^{E_3}_X)
+\in\mathrm{Fact}(\operatorname{Ran}(E)).
+\]
+This is not reconstructed from the scalar partition function or from the
+Borcherds product.  There is also a geometric obstruction: a
+one-dimensional subscheme with positive elliptic degree projects onto
+all of \(E\).  Hence a naive support-local object on
+\(\operatorname{Ran}(E)\) sees only projection-finite sectors.  The full
+Igusa \(s\)-direction requires either projection-finite locality plus a
+separate global Hecke/Fock mode, or a hybrid local/global factorization
+theory for wrapped \(E\)-sectors.  This is open.
+
+\paragraph{Primitive recognition.}
+The microscopic algebra sought from such a compact realization is the
+protected primitive bracket
+\[
+[\ ,\ ]:\Prim_{\gamma}^{\mathrm{prot}}(\mathcal F_X)
+\otimes
+\Prim_{\eta}^{\mathrm{prot}}(\mathcal F_X)
+\longrightarrow
+\Prim_{\gamma+\eta}^{\mathrm{prot}}(\mathcal F_X).
+\]
+The recognition theorem proved later is conditional: if the compact
+Igusa datum \(\mathfrak K_X\) exists, including the oriented Hall object,
+protected integration, chiral bar-cobar comparison, and presentation-level
+primitive Lie comparison, then
+\[
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+\cong
+\mathfrak g_{\Delta_5}
+\]
+and the chiral cobar object is the formal current envelope
+\(\mathsf{Den}_{\Delta_5,E}\).  This is a recognition criterion, not an
+existence theorem.
+
+\paragraph{Borcherds denominator.}
+The target algebra is imported from the Borcherds--Gritsenko--Nikulin
+construction.  With
+\[
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},
+\]
+the visible active coefficients satisfy
+\[
+\smult\mathfrak g_{\Delta_5,\alpha(n,l,m)}=f(nm,l),\qquad
 \operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z).
 \]
-The input is the half-normalized K3 elliptic genus
-\[
-Z_{\mathrm{K3}}=2\phi_{0,1}.
-\]
-The output is a virtual Fock determinant and the known
-Gritsenko--Nikulin denominator algebra.  No canonical half of the K3
-Hilbert space is constructed.
+This determines signed root supermultiplicities and the denominator
+identity.  It does not determine compact Hall constants.
 
-Second, the diagonal-divisor arc records the eight Clery--Gritsenko
-forms
+\paragraph{OP scalar square.}
+The reduced scalar branch is imported from
+Oberdieck--Pixton, Oberdieck--Pandharipande, and Oberdieck:
+\[
+Z^X_{\mathrm{DT}}(T,Q,P)=Z^X_{\mathrm{OP}}(P,Q,T)
+=-4096\,\Delta_5(Z)^{-2}.
+\]
+The constants are fixed once.  The theta-constant form satisfies
+\[
+[q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64,\qquad
+D_5=64^{-1}\Delta_5.
+\]
+OP's monic product is \(\chi_{10}^{\mathrm{OP}}=D_5^2\), hence
+\[
+\chi_{10}^{\mathrm{OP}}=4096^{-1}\Delta_5^2,\qquad
+Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}
+=-4096\Delta_5^{-2}.
+\]
+The number \(64\) is a theta-leading coefficient.  The number
+\(-4096\) is the OP scalar normalization.  Neither proves the compact
+orientation character.  The comparison
+\[
+\epsilon_o=\nu_{\Delta_5}
+\]
+between geometric orientation monodromy and the automorphic reflection
+character remains part of the open compact realization datum.
+
+\paragraph{Eight-row host certificates.}
+The diagonal-divisor boundary problem concerns the eight
+Clery--Gritsenko forms
 \[
 \Delta_5,\Delta_2,\Delta_1,\Delta_{1/2},
-\nabla_3,\nabla_2,\nabla_{3/2},Q_1
+\nabla_3,\nabla_2,\nabla_{3/2},Q_1 .
 \]
-and separates four distinct structures:
-\[
-\begin{array}{ccc}
-\hbox{automorphic product} & \Longrightarrow &
-\hbox{possible denominator data}\\
-\Downarrow & & \Downarrow\\
-\hbox{scalar enumerative square} & \dashrightarrow &
-\hbox{compact physical host}.
-\end{array}
-\]
-Only the solid implications explicitly cited in the row are available;
-the dashed arrow is a realization problem, not a consequence of the
-product or denominator identity.
-Rows \(1\)--\(4\) are governed by the Gritsenko--Nikulin denominator
-theorems.  Rows \(5\)--\(8\) have Clery--Gritsenko products and
-Govindarajan CHL/WKB denominator identities.  A physical row map, a
-reduced enumerative partition theorem, and a compact \(E_3\)/Hall/chiral source
-remain additional data.
+Rows \(1\)--\(4\) have Gritsenko--Nikulin denominator theorems.  Rows
+\(5\)--\(8\) have Clery--Gritsenko products and Govindarajan CHL/WKB
+denominator theorems; \(F_7=\nabla_{3/2}\) is on the required
+\(\mu_4\)-multiplier cover.  A physical host for any boundary row
+requires a certificate fixing the modular group or cover, character,
+divisor, cusp Jacobi inputs, product lattice, Weyl vector, real roots,
+reflection character, physical charge lattice, one-particle protected
+index, orientation, reduced scalar theorem if one is claimed, and
+primitive algebra comparison.  Without that certificate the row is only
+an automorphic product plus any separately proved denominator theorem.
 
 \begin{center}
 \small
-\begin{tabular}{p{0.25\textwidth}p{0.30\textwidth}p{0.34\textwidth}}
+\begin{tabular}{p{0.23\textwidth}p{0.25\textwidth}p{0.41\textwidth}}
 \hline
-Object & Status & Source of the status \\
+Structural level & Claim strength & Content \\
 \hline
-\(Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\) &
-proved scalar identity &
-Oberdieck--Pixton, with the normalization checked here \\
-\(\mathcal D_X=\Delta_5\) &
-virtual Fock determinant, not a Hilbert space &
-the \(K_0\)-class \(\mathbb U_{n,l}\) and
-Borcherds--Gritsenko--Nikulin product theorem \\
-\(\mathfrak g_{\Delta_5}\) &
-known denominator algebra &
-Gritsenko--Nikulin automorphic correction \\
-\(\mathsf{Den}_{\Delta_5,E}\) &
-formal current envelope &
-Beilinson--Drinfeld current construction applied to
-\(\mathfrak g_{\Delta_5}\) \\
-compact \(E_3\)/Hall/chiral BPS realization &
-open problem &
-requires a holomorphic \(E_3\)-source, \(K3\)-to-\(E\) specialization,
-orientation, protected integration, sectorial Hall completion, and
-primitive bracket comparison \\
-eight diagonal-divisor rows &
-automorphic and denominator catalogue &
-Clery--Gritsenko products; Gritsenko--Nikulin rows \(1\)--\(4\);
-Govindarajan CHL/WKB rows \(5\)--\(8\) \\
-physical row maps for rows \(5\)--\(8\) &
-conjectural/open &
-requires a CHL/CY/DT/chiral host and a reduced scalar theorem
-\(Z_j=C_jF_j^{-2}\) \\
+Virtual determinant &
+proved here from \(K_0\) data plus imported Borcherds product &
+\(\mathcal D_X=\Delta_5\).  No canonical half-Hilbert space or operator
+product is constructed. \\
+Scalar Behrend square &
+imported theorem &
+Oberdieck--Pixton, Oberdieck--Pandharipande, and Oberdieck give
+\(Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\) in the
+reduced quotient-by-\(E\), Behrend-weighted setting. \\
+BKM denominator &
+imported theorem &
+Gritsenko--Nikulin give \(\mathfrak g_{\Delta_5}\) and
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\). \\
+Compact Hall/factorization realization &
+conditional/open &
+If \(\mathfrak K_X\) exists, the primitive and chiral comparisons follow
+by the recognition criterion.  Existence, \(\operatorname{Ran}(E)\)
+hybrid locality,
+protected integration, and orientation monodromy are open. \\
+Eight-row host certificates &
+framework; mostly open &
+The catalogue and denominator rows are imported where cited.  Physical
+row maps and scalar squares require row-by-row certificates. \\
 \hline
 \end{tabular}
 \end{center}
@@ -254,13 +330,38 @@ $$
 $$
 The auxiliary notation \(\Phi^{\mathrm{FA}}_3(X)\), when used, is only a
 placeholder for this Stage-1 datum; no such functor is constructed in
-this paper.  In a compact realization \(\mathcal A^{E_3}_X\) is the
-object whose disjoint holomorphic insertions factorize.  The elliptic
-curve \(E\) enters only after a supplied chain-level
-\(K3\)-specialization whose output is denoted
+this paper.  No external \(\Phi^{\mathrm{FA}}_3\) formalism is used here
+as an existence theorem unless it supplies the chain-level local
+observables, factorization maps, descent, anomaly/QME control, and
+compact charge completion required below.  In a compact realization
+\(\mathcal A^{E_3}_X\) is the object whose disjoint holomorphic
+insertions factorize.  The elliptic curve \(E\) enters only after a
+supplied chain-level \(K3\)-specialization whose output is denoted
 $$
 \mathcal F_X\in\mathrm{Fact}(\operatorname{Ran}(E)).
 $$
+This is the first compact-realization obstruction.  The
+projection-finite sector, where \(p_E(\operatorname{Supp}A)\) is a finite
+subset of \(E\), is naturally local on \(\operatorname{Ran}(E)\).  A
+one-dimensional sector of positive elliptic degree is not.  If
+\(C\subset K3\times E\) has positive elliptic degree, then
+\((p_E)_*[C]\) is a positive multiple of \([E]\); hence \(p_E(C)\) is a
+one-dimensional closed subset of the irreducible curve \(E\), and so
+\(p_E(C)=E\).  Such a class is wrapped or global over \(E\), not
+localized at finitely many points of \(E\).
+
+This is the elliptic-degree locality obstruction.  Naive support-local
+factorization on \(\operatorname{Ran}(E)\) sees projection-finite
+sectors, but by itself it misses the positive \(s\)-direction of the
+Igusa product, the direction which records elliptic degree after the
+OP/Borcherds variable conversion.  A compact realization must therefore
+choose at least one repair of the following kind: projection-finite local
+factorization together with separate global Fock/Hecke modes for the
+wrapped elliptic-degree sector, or a hybrid local/global wrapped
+factorization theory.  This is a realization obstruction.  It is not a
+defect in the Borcherds determinant or in the Gritsenko--Nikulin
+denominator identity.
+
 Thus, in a realization, the curve-level rule is not imposed externally.
 It is the one-dimensional chiral shadow of the holomorphic
 \(E_3\)-observable: well-separated protected insertions on \(E\)
@@ -719,9 +820,9 @@ required for the weight factor.  The Hodge automorphic line
 
 \section{The protected-index dictionary}
 
-Only the OP/DT scalar branch now requires an elliptically fibered K3
-surface with a section.  The Borcherds determinant above used only the
-universal K3 elliptic genus.
+Only the OP/DT scalar branch requires an elliptically fibered K3 surface
+with a section.  The Borcherds determinant above used only the universal
+K3 elliptic genus.
 
 Let $S$ be an elliptically fibered K3 surface
 $$\pi:S\rightarrow \mathbb{P}^1$$
@@ -734,19 +835,123 @@ Type IIA D6--D2--D0 charge:
 $$\gamma(h,d,n)=(1;\,(\beta_h,d);\,n).$$
 Write $\Omega_X(h,d,n)$ for the putative protected D6--D2--D0 index
 attached to this charge in a compact physical realization.  The
-microscopic lift is open:
+microscopic trace is not constructed here; the desired datum would be:
 $$
-\exists\,\mathcal H_{\gamma(h,d,n)},\qquad
+\stackrel{?}{\exists}\,\mathcal H_{\gamma(h,d,n)},\qquad
 \operatorname{Tr}_{\mathcal H_{\gamma(h,d,n)}}(-1)^F
 =\Omega_X(h,d,n).
 $$
 $$\mathrm{Hilb}^n(X,(\beta_h,d))
 =\{Y\subset X\mid [Y]=(\beta_h,d),\ \chi(\mathcal O_Y)=n\}.$$
 $$E\curvearrowright X,\qquad (x,e')\mapsto (x,e+e').$$
-$$\mathbf{DT}^X_{n,(\beta_h,d)}
-=\int_{\mathrm{Hilb}^n(X,(\beta_h,d))/E}\nu\,de,$$
-$$\nu=\hbox{Behrend function}.$$
-Behrend--Thomas: \cite{BEHREND}, \cite{DT}.
+
+\begin{proposition}[Reduced scalar quotient integration]
+\label{prop:reduced-scalar-quotient-integration}
+The reduced DT/PT side used in this paper is the coefficientwise scalar
+Behrend-weighted quotient integration
+$$
+\mathbf{DT}^X_{n,(\beta,d)}
+=
+\int_{\mathrm{Hilb}^n(X,(\beta,d))/E}\nu_{\mathrm{Hilb}}\,de,
+$$
+and
+$$
+\mathsf P^X_{n,(\beta,d)}
+=
+\int_{P_n(X,(\beta,d))/E}\nu_P\,de
+$$
+for the stable-pair moduli space \(P_n(X,(\beta,d))\).  It lands in
+numbers, coefficient by coefficient.  Oberdieck's reduced stable-pair
+quotient invariant agrees with the reduced virtual-class incidence
+definition, and his reduced DT/PT theorem identifies the two reduced
+quotient series for nonzero K3 class \cite[Theorem 3(i)]{OberdieckReducedPT}.
+This is scalar integration.  It is not a Hall product, not a CoHA
+integration map, and not an orientation character.
+\end{proposition}
+
+\begin{proof}
+Behrend's constructible function gives the weighted Euler
+characteristic used in Donaldson--Thomas theory \cite{BEHREND},
+\cite{DT}.  The \(E\)-action on \(X=S\times E\) forces the ordinary
+unreduced invariant to vanish, so the reduced theory integrates over
+the quotient by \(E\).  Bryan's Hilbert-scheme normalization and
+Oberdieck's stable-pair normalization are exactly the quotient
+Behrend-weighted Euler characteristics \cite{BRYAN},
+\cite{OberdieckReducedPT}.  Oberdieck proves the quotient stable-pair
+definition equals the reduced incidence invariant and proves the
+reduced DT/PT comparison for nonzero K3 class.  These statements produce
+integers indexed by \((\beta,d,n)\); no algebra object or primitive
+projection is constructed.
+\end{proof}
+
+\begin{conjecture}[Protected D-brane index]
+\label{conj:protected-d-brane-index}
+For the D6--D2--D0 charge
+$$\gamma(h,d,n)=(1;\,(\beta_h,d);\,n),$$
+if such a compact physical Hilbert space is supplied, the conjectural
+enumerative dictionary identifies its protected trace with the
+Behrend-weighted Hilbert-scheme quotient invariant:
+$$
+\Omega_X(h,d,n)
+:=\operatorname{Tr}_{\mathcal H_{\gamma(h,d,n)}}(-1)^F
+\stackrel{\mathrm{phys}}{=}
+\mathbf{DT}^X_{n,(\beta_h,d)}.
+$$
+This physical identification is not used in the scalar theorem below.
+\end{conjecture}
+
+\begin{definition}[Protected Hall integration criterion]
+\label{def:protected-hall-integration-criterion}
+A protected Hall or critical CoHA integration map refining
+Proposition~\ref{prop:reduced-scalar-quotient-integration} would have
+to supply the following data before comparison with
+\(\mathfrak g_{\Delta_5}\):
+an extension-closed compact Hall/CoHA sector for the reduced
+\(E\)-quotient, oriented critical extension correspondences,
+vanishing-cycle coefficient systems, HN-finite sector completions,
+protected integration compatible with the completed Hall product and
+wall crossing, a primitive projection, and a lifted Weyl action on the
+oriented completed theory.
+
+If these data exist, the test is rigid: protected primitives must have
+signed dimensions
+$$
+\sdim\Prim_{(n,l,m)}=f(nm,l),
+$$
+their bracket must be the Borcherds--Gritsenko--Nikulin bracket, and the
+induced orientation character must restrict on the type-II Weyl group as
+$$
+\epsilon_o|_{W^{(2)}(\La^{2,1}_{II})}
+=
+\nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})}.
+$$
+General CoHA technology supplies a language for such conditions
+\cite{KSCoHA}, \cite{DavisonMeinhardtCoHA}; it does not construct this
+compact \(K3\times E\) datum.
+\end{definition}
+
+\begin{openproblem}[Orientation monodromy character]
+\label{op:orientation-monodromy-character}
+Construct the geometric orientation monodromy character
+$$
+\epsilon_o:W^{(2)}(\La^{2,1}_{II})\longrightarrow\{\pm1\}
+$$
+from a strong orientation datum on the reduced compact critical
+Hall/CoHA theory, and prove
+$$
+\epsilon_o|_{W^{(2)}(\La^{2,1}_{II})}
+=
+\nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})}.
+$$
+This character is not produced by normalizing \(\Delta_5\).  Multiplying
+\(\Delta_5\) by a nonzero scalar leaves its Maass character unchanged.
+The open problem is instead to transport the square root of the
+determinant line around the simple diagonal wall reflections and compute
+the resulting sign.  The expected local model is Pfaffian: a simple
+real-root reflection reverses one oriented normal mode, so its square is
+scalar while the square root changes sign.  This mechanism has not been
+constructed for \(K3\times E\).
+\end{openproblem}
 
 \section{The scalar square}
 
@@ -843,7 +1048,7 @@ Their Theorem 1, equivalently the Laurent expansion in \cite[(56)]{OB},
 gives $Z^X_{\mathrm{OP}}=-1/\chi_{10}^{\mathrm{OP}}$.
 \end{proof}
 
-\begin{theorem}[Reduced Hilbert-scheme DT/PT/OP scalar square]
+\begin{theorem}[Reduced DT/PT/OP scalar square]
 \label{thm:op-square}
 Let \(\beta_h\in H_2(S,\Z)\) be primitive and non-zero, with
 $$\langle\beta_h,\beta_h\rangle=2h-2.$$
@@ -858,13 +1063,12 @@ Z^X_{\mathrm{DT}}(T,Q,P)
 =Z^X_{\mathrm{OP}}(P,Q,T)
 =-4096\,\Delta_5(Z)^{-2}.
 $$
-The equality is an equality of Laurent expansions in the OP chamber
-described in Proposition~\ref{prop:op-normalization}.
-Equivalently,
-$$C_{\mathrm{DT}}=C_{\mathrm{OP}}=-4096.$$
-This is an enumerative scalar identity.  The identification of these
-coefficients with a physical protected D-brane index is the separate
-conjectural statement below.
+The equality is an equality of Laurent expansions in the OP chamber of
+Proposition~\ref{prop:op-normalization}.  It is the theorem-level
+OP/DT/PT scalar branch attached to the Behrend-weighted quotient
+integration of Proposition~\ref{prop:reduced-scalar-quotient-integration}.
+The physical protected-index identification is
+Conjecture~\ref{conj:protected-d-brane-index}.
 \end{theorem}
 
 \begin{proof}
@@ -891,22 +1095,6 @@ Oberdieck--Pixton \cite[Theorem 1]{OB} and
 Proposition~\ref{prop:op-normalization} give
 $$Z^X_{\mathrm{OP}}(P,Q,T)=-4096\,\Delta_5(Z)^{-2}.$$
 \end{proof}
-
-\begin{conjecture}[Protected D-brane index]
-For the D6--D2--D0 charge
-$$\gamma(h,d,n)=(1;\,(\beta_h,d);\,n),$$
-the physical protected index is represented, in the conjectural
-enumerative identification, by the
-Behrend-weighted Hilbert-scheme invariant:
-$$
-\Omega_X(h,d,n)
-=\operatorname{Tr}_{\mathcal H_{\gamma(h,d,n)}}(-1)^F
-\stackrel{\mathrm{phys}}{=}
-\mathbf{DT}^X_{n,(\beta_h,d)}.
-$$
-This conjectural identification is separate from the enumerative scalar
-identity in Theorem \ref{thm:op-square}.
-\end{conjecture}
 
 \begin{definition}[Scalar-square branch]
 The OP/DT scalar-square branch is the proved enumerative branch
@@ -949,34 +1137,30 @@ not an arbitrary analytic branch.  Inverting gives
 $$Z^X_{\mathfrak s}=-4096(\mathcal D_X^{-1})^2.$$
 \end{proof}
 
-\begin{center}
-\small
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.25\textwidth}
->{\raggedright\arraybackslash}p{0.34\textwidth}
->{\raggedright\arraybackslash}p{0.31\textwidth}}
-\hline
-Object & Equation & Claim strength \\
-\hline
-Primitive reduced curve counting &
-\(Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\) &
-proved by Oberdieck--Pixton for primitive K3 classes, after
-Proposition \ref{prop:op-normalization} \\
-Hilbert-scheme DT series &
-\(Z^X_{\mathrm{DT}}=\sum\mathbf{DT}^X_{n,(\beta_h,d)}
-T^{d-1}Q^{h-1}(-P)^n\) &
-definition; equality with \(-4096\Delta_5^{-2}\) follows from
-Oberdieck reduced DT/PT and Theorem \ref{thm:op-square} \\
-Protected D-brane index &
-\(\Omega_X(h,d,n)\stackrel{\mathrm{phys}}{=}
-\mathbf{DT}^X_{n,(\beta_h,d)}\) &
-conjectural physics identification \\
-Scalar-square branch &
-\(Z^X_{\square}=C_{\square}\Delta_5^{-2}\) &
-unconditional with \(C_{\square}=-4096\) for
-\(Z^X_{\mathrm{OP}}\) and \(Z^X_{\mathrm{DT}}\) \\
-\hline
-\end{tabular}
-\end{center}
+\begin{remark}[Constants are not orientation data]
+The number \(64\) fixes the theta-normalized Igusa section and hence the
+Weyl monomial in the determinant:
+$$
+\Delta_5
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod(1-q^nr^ls^m)^{f(nm,l)}.
+$$
+The monic denominator section is \(D_5=64^{-1}\Delta_5\).  The number
+\(4096\) is \(64^2\), appearing because Oberdieck--Pixton use
+$$
+\chi_{10}^{\mathrm{OP}}=D_5^2=4096^{-1}\Delta_5^2.
+$$
+The minus sign in
+$$
+Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}
+$$
+is the OP scalar convention.  None of these constants is the Hall
+orientation character.  The automorphic character
+\(\nu_{\Delta_5}\) is fixed by the Maass transformation law, and the
+geometric character \(\epsilon_o\), if it exists, must be produced by
+orientation-line monodromy as in
+Open Problem~\ref{op:orientation-monodromy-character}.
+\end{remark}
 
 \section{The duality principle}
 \label{sec:duality-principle}
@@ -1818,11 +2002,88 @@ These are not procedures for reconstructing the holomorphic
 In a compact realization, the required local object would be a
 finite-stage holomorphic \(E_3\)-factorization algebra on \(X\), and its
 \(K3\)-specialization would be a finite-stage chiral factorization
-algebra on \(\operatorname{Ran}(E)\).  The automorphic product is a
+algebra on \(\operatorname{Ran}(E)\).  This assertion is local only for
+projection-finite sectors over \(E\).  The automorphic product is a
 protected global trace after charge completion, wall-chamber choice, and
-summation over compact \(K3\)-modes.  Duality monodromy and the
-Borcherds chamber are therefore global features of the trace.  They do
-not replace the local factorization maps on disjoint opens.
+summation over compact \(K3\)-modes.  Duality monodromy, elliptic-degree
+wrapping, and the Borcherds chamber are therefore global features of the
+trace.  They do not replace the local factorization maps on disjoint
+opens.
+\end{remark}
+
+\begin{definition}[Projection-finite and wrapped elliptic sectors]
+Let \(p_E:K3\times E\to E\) be projection.  A compact Hall or chiral
+sector is projection-finite over \(E\) if every object \(A\) in it
+satisfies
+\[
+p_E(\operatorname{Supp}A)\subset F
+\]
+for some finite subset \(F\subset E\).  A one-dimensional sector is
+wrapped over \(E\) if its curve class has positive elliptic degree, i.e.
+if the pushforward of its one-cycle to \(E\) is \(b[E]\) with \(b>0\).
+\end{definition}
+
+\begin{lemma}[The elliptic-degree locality obstruction]
+\label{lem:elliptic-degree-locality-obstruction}
+Let \(C\subset K3\times E\) be a one-dimensional subscheme whose curve
+class has positive elliptic degree:
+\[
+(p_E)_*[C]=b[E],\qquad b>0.
+\]
+Then \(p_E(C)=E\).  In particular, \(C\) is not localized at finitely
+many points of \(E\), and it is not contained in \(p_E^{-1}(U)\) for any
+proper open \(U\subsetneq E\).
+\end{lemma}
+
+\begin{proof}
+If \(p_E(C)\) were zero-dimensional, then the pushforward of the
+one-cycle \([C]\) to the curve \(E\) would vanish.  This contradicts
+\((p_E)_*[C]=b[E]\) with \(b>0\).  Hence \(p_E(C)\) is a
+one-dimensional closed subset of the irreducible curve \(E\), and
+therefore \(p_E(C)=E\).
+\end{proof}
+
+\begin{corollary}[Naive Ran locality misses the elliptic-degree direction]
+\label{cor:ranE-locality-misses-elliptic-degree}
+A support-local factorization algebra on \(\operatorname{Ran}(E)\),
+defined only by separating supports over disjoint opens of \(E\), sees
+the projection-finite sector.  It does not by itself realize the full
+\(s\)-direction of the Igusa product.
+\end{corollary}
+
+\begin{proof}
+The variable \(s\) is the Borcherds variable corresponding to the
+OP elliptic-degree direction in Proposition~\ref{prop:op-normalization}.
+By Lemma~\ref{lem:elliptic-degree-locality-obstruction}, positive
+elliptic degree projects onto all of \(E\).  Such objects cannot be
+separated by choosing disjoint opens in \(E\).  Therefore ordinary
+support-local factorization on \(\operatorname{Ran}(E)\) has no
+locality mechanism for the wrapped elliptic-degree sector.
+\end{proof}
+
+\begin{remark}[Repair alternatives]
+The obstruction is a defect of the proposed compact realization, not of
+the Borcherds product.  The determinant
+\(\Delta_5=\operatorname{Borch}_{\theta}(\phi_{0,1})\) and the
+denominator identity for \(\mathfrak g_{\Delta_5}\) remain theorem-level
+automorphic statements.  What is missing is the compact local/global
+source whose protected primitive trace gives them.
+
+Two honest repair paths visible in the present architecture are these.
+\begin{enumerate}
+\item Construct the projection-finite local Hall/chiral factorization
+object on \(\operatorname{Ran}(E)\), then prove that the missing
+positive elliptic-degree direction is supplied by separate global
+Fock/Hecke modes compatible with protected integration, the product
+variable \(s\), and the primitive denominator comparison.
+\item Construct a hybrid local/global wrapped factorization theory:
+local vertical insertions live on \(\operatorname{Ran}(E)\), while
+positive elliptic-degree sectors are global wrapped legs.  This requires
+extension stacks with local and global legs, Thom--Sebastiani orientation
+transport, associativity over two-step flags, and compatibility with
+protected integration.
+\end{enumerate}
+No theorem in this paper supplies either repair.
 \end{remark}
 
 \begin{remark}[Unitarity]
@@ -1874,14 +2135,17 @@ $$
 $$
 \end{definition}
 
-\begin{proposition}[The finite object]
+\begin{proposition}[Conditional finite Hall quotient]
 \label{prop:sectorial-hall-truncation}
 A nonzero additive heart cannot have finite nonzero charge support in
 \(\Gamma_{\mathrm{ind}}\).  The active support
 \(\Gamma_{\mathrm{act}}\) is not additive.  The finite Hall object is
 therefore not a finite active-support heart.
 
-Assume the support property, the HN property, finite type of the
+This constructs no Hall object for \(K3\times E\); it records the
+finite quotient once the oriented critical Hall object and its
+correspondences have been supplied.  Assume the support property, the
+HN property, finite type of the
 semistable stacks in bounded \(h_S\)-height, and the oriented critical
 Hall correspondences.  Then \(F_{\sigma,S}(R)\) and
 \(\Gamma_{\sigma,S}^{HN}(R)\) are finite,
@@ -1919,7 +2183,7 @@ $$
 \mathfrak K_X
 =\left(\mathcal A^{E_3}_X,\mathrm{Sp}^{\mathrm{ch}}_{K3,E},
 \mathcal F_X,\mathcal H_X,C_X,\Theta_{\mathrm{Kos}},
-\Pi_{\mathrm{prim}}\right)
+\Pi_{\mathrm{rec}}\right)
 $$
 with the following data.
 \begin{enumerate}
@@ -1940,9 +2204,11 @@ $$
 \simeq
 (p_E)_*\mathcal A^{E_3}_X
 $$
-a charge-completed compact observable factorization algebra on
-\(\operatorname{Ran}(E)\).  These equivalences are part of the datum,
-not operations constructed from the determinant.
+a charge-completed compact observable factorization object on
+\(\operatorname{Ran}(E)\) in the projection-finite sectors, together
+with the global Fock/Hecke or hybrid wrapped-sector data carrying
+positive elliptic degree.  These equivalences and wrapped-sector data
+are part of the datum, not operations constructed from the determinant.
 \item[\((\mathrm H)\)] An oriented compact Hall factorization object \(\mathcal H_X\)
 with finite-type sectorial moduli stacks and extension correspondences
 $$
@@ -1955,16 +2221,18 @@ $$
 perfect reduced obstruction theories or critical
 \((-1)\)-shifted symplectic structures, vanishing-cycle coefficients,
 orientation lines with chosen square roots, Thom--Sebastiani orientation
-transport coherent for triple extensions, protected integration maps
-compatible with HN completion and wall crossing, and a lifted action of
-\(W^{(2)}(\La^{2,1}_{II})\) on the oriented completed Hall object.  The
-induced orientation character \(\epsilon_o\) is required to satisfy
+transport coherent for triple extensions, and protected integration maps
+compatible with HN completion and wall crossing.  If a lifted action of
+\(W^{(2)}(\La^{2,1}_{II})\) on the oriented completed Hall object is
+supplied, its induced orientation character \(\epsilon_o\) is required to satisfy
 \[
 \epsilon_o|_{W^{(2)}(\La^{2,1}_{II})}
 =\nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})}.
 \]
 Constructing the domain of this comparison and the character
-\(\epsilon_o\) is part of the datum.
+\(\epsilon_o\) is part of the datum.  The comparison is a geometric
+orientation-monodromy condition on the Hall side; it is not obtained by
+choosing the scalar normalization of \(\Delta_5\).
 \item[\((\mathrm C)\)] A conilpotent chiral coalgebra \(C_X\) and a charge-preserving
 quasi-isomorphism
 $$
@@ -1978,52 +2246,120 @@ $$
 \xrightarrow{\ \simeq\ }
 \mathsf{Den}_{\Delta_5,E}.
 $$
-\item[\((\Pi)\)] A primitive Lie comparison
+\item[\((\Pi)\)] A primitive recognition certificate
+\(\Pi_{\mathrm{rec}}\) for
 $$
-\Pi_{\mathrm{prim}}:
-H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
-\xrightarrow{\ \sim\ }
-\mathcal A_{\mathrm{den}}
+P_X:=H^0\Prim_{\mathrm{prot}}(\mathcal F_X).
 $$
-which preserves the \(\Gamma_{\mathrm{ind}}\)-grading, the bracket, the
-real Serre relations, the imaginary simple-root multiplicities and
-parities, the orthogonality relations, and the completed Hopf pairing.
+This certificate is not a determinant datum.  It consists of the
+charge-graded Lie superalgebra structure on \(P_X\), the parity split of
+each homogeneous primitive piece, simple primitive representatives for
+the Gritsenko--Nikulin real and imaginary simple roots, verification of
+the Borcherds--Kac defining relations in the protected bracket, the
+completed Hopf pairing, generation by the simple primitives and the
+Cartan, and the same radical quotient as the Gritsenko--Nikulin
+automorphic correction.
 \end{enumerate}
 \end{definition}
 
-\begin{proposition}[Consequences of a compact Igusa realization datum]
+\begin{theorem}[Primitive recognition theorem]
 \label{prop:compact-igusa-realization-criterion}
-If a compact Igusa realization datum exists, then
+\label{thm:primitive-recognition}
+Let \(\mathscr B_{\Delta_5}\) be the Borcherds--Cartan superdatum used by
+Gritsenko--Nikulin for the automorphic correction: Cartan
+\(\La^{2,1}_{II}\otimes\C\), real simple roots
+\(\delta_1,\delta_2,\delta_3\), imaginary simple-root fibres with the
+Gritsenko--Nikulin parity split, and bilinear form
+\((\alpha_i,\alpha_j)\).  Let \(G(\mathscr B_{\Delta_5})\) denote the
+corresponding Borcherds--Kac Lie superalgebra modulo the standard radical
+of the completed invariant pairing; this is
+\(\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}\).
+
+Suppose a compact Hall/factorization construction supplies
+$$
+P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+$$
+after its completed Hopf-pairing radical quotient, with the following
+data.
+\begin{enumerate}
+\item A \(\Gamma_{\mathrm{ind}}\)-graded Lie superalgebra structure on
+\(P_X\), finite dimensional in each homogeneous parity piece, and a
+Cartan identification
+$$P_{X,0}\simeq\La^{2,1}_{II}\otimes\C.$$
+\item The degree map
+\[
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
+\]
+identifies the charge grading with the Gritsenko--Nikulin root grading.
+\item For every simple-root index \(i\) of
+\(\mathscr B_{\Delta_5}\), primitive representatives
+\[
+e_i^X\in P_{X,\alpha_i},\qquad
+f_i^X\in P_{X,-\alpha_i},\qquad
+h_i^X\in P_{X,0}
+\]
+are supplied, preserving the real/imaginary distinction, multiplicity
+fibres, and parity map.
+\item In the protected Hall/factorization bracket these representatives
+satisfy the Borcherds--Kac defining relations for
+\(\mathscr B_{\Delta_5}\): Cartan and Chevalley relations, real Serre
+relations for the even real simple roots, the imaginary-root
+orthogonality relations \((\alpha_i,\alpha_j)=0\Rightarrow
+[e_i^X,e_j^X]=[f_i^X,f_j^X]=0\), and the super sign rule.
+\item The completed Hopf pairing on the positive and negative primitive
+halves has the same radical quotient as the Gritsenko--Nikulin/Kac
+construction of \(G(\mathscr B_{\Delta_5})\).
+\item \(P_X\) is generated by \(P_{X,0}\) and the simple primitive
+representatives \(e_i^X,f_i^X\).
+\item The full root-space parity dimensions in \(P_X\) agree with those
+of \(G(\mathscr B_{\Delta_5})\).  Consequently, on active positive
+Gram degrees,
+$$
+\sdim P_{X,(n,l,m)}=f(nm,l),
+$$
+but this signed equality is only a necessary numerical consequence of the
+recognition data.
+\end{enumerate}
+Then
 $$
 H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
 \cong
 \mathcal A_{\mathrm{den}}
 =\mathfrak g_{\Delta_5}
 $$
-as charge-graded Lie superalgebras, and
+as charge-graded Lie superalgebras, and its Weyl--Kac--Borcherds
+denominator is \(64^{-1}\Delta_5(2Z)\).  If in addition
+\(\Theta_{\mathrm{Kos}}\) is supplied, then
 $$
 \Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}.
 $$
-Consequently
-$$
-\sdim H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_{(n,l,m)}
-=f(nm,l)
-$$
-on \(\Gamma_{\mathrm{act}}\), and the primitive denominator is
-\(64^{-1}\Delta_5(2Z)\).
-This proposition is a criterion for recognizing a successful
-microscopic realization.  It is not an existence theorem.
-\end{proposition}
+\end{theorem}
 
 \begin{proof}
-The primitive comparison is an isomorphism of charge-graded Lie
-superalgebras, so it identifies the Hall/factorization bracket with the
-Borcherds--Gritsenko--Nikulin bracket.  The protected integration
-compatibility gives the signed multiplicities \(f(nm,l)\).  Substitution
-in the Borcherds denominator identity gives
-\(64^{-1}\Delta_5(2Z)\).  The chiral statement is exactly the
-quasi-isomorphism \(\Theta_{\mathrm{Kos}}\).
+The simple primitive representatives and the displayed relations give a
+homomorphism
+$$
+G(\mathscr B_{\Delta_5})\longrightarrow P_X
+$$
+from the universal Borcherds--Kac presentation.  Generation gives
+surjectivity.  The equality of the completed radical quotient and the
+full parity dimensions rule out an additional kernel or additional
+zero-superdimension root spaces.  Hence the homomorphism is an
+isomorphism of charge-graded Lie superalgebras.  The denominator statement
+is Theorem~\ref{thm:denominator-algebra-identity}.  The chiral statement
+is exactly the quasi-isomorphism \(\Theta_{\mathrm{Kos}}\).
 \end{proof}
+
+\begin{remark}[What is not proved]
+The recognition theorem is conditional.  This paper does not construct
+the compact Hall/factorization object, the protected primitive bracket
+constants, the full parity dimensions of compact primitives, the simple
+primitive representatives, or the verification of the Borcherds--Kac
+relations in a Hall bracket.  The signed equality
+\(\sdim P_{X,(n,l,m)}=f(nm,l)\) and the determinant
+\(\mathcal D_X=\Delta_5\) are necessary shadows.  They are not sufficient
+to identify \(P_X\) with \(\mathfrak g_{\Delta_5}\).
+\end{remark}
 
 \begin{proposition}[Low-degree bracket information]
 \label{prop:low-degree-denominator-brackets}
@@ -2069,13 +2405,15 @@ constants are the normalized Chevalley, Jacobi and Serre constants for
 the symmetric Cartan matrix \(A=((\delta_i,\delta_j))\).
 \end{proof}
 
-\begin{proposition}[The determinant does not determine Hall constants]
+\begin{proposition}[The determinant does not determine primitive recognition data]
 \label{prop:determinant-does-not-determine-hall-constants}
 The scalar square, the Borcherds product, and active support determine
 the visible signed product exponents.  After the
 Gritsenko--Nikulin denominator theorem, these exponents are the signed
 root supermultiplicities.  They do not determine the compact Hall
-structure constants.
+structure constants, the full parity dimensions, the simple primitive
+representatives, the Borcherds--Kac relation verification, or the
+Hopf-pairing radical quotient.
 \end{proposition}
 
 \begin{proof}
@@ -2091,7 +2429,9 @@ product but not the Borcherds bracket, since
 \([e_i,e_j]\ne0\) in \(\mathcal A_{\mathrm{den}}\) for \(i\ne j\).
 A Hall bracket requires compact extension correspondences,
 orientation data, protected integration, and a basis of protected
-primitives.  None of these is encoded in the determinant.
+primitives.  The recognition theorem also requires the full parity split,
+simple-root representatives, defining relations, generation, and the
+radical quotient.  None of these is encoded in the determinant.
 \end{proof}
 
 \begin{openproblem}[Compact \(E_3\), Hall, and chiral Koszul realization]
@@ -2103,9 +2443,13 @@ on \(K3\times E\), its chain-level \(K3\)-to-\(E\) specialization, the
 compact observable chiral shadow on \(\operatorname{Ran}(E)\), the
 oriented HN-completed Hall object, protected integration, the
 conilpotent chiral bar coalgebra, the chiral cobar quasi-isomorphism to
-\(\mathsf{Den}_{\Delta_5,E}\), and the primitive Lie comparison with
-\(\mathfrak g_{\Delta_5}\).  The scalar square and the denominator
-algebra are inputs to this problem.  They are not its solution.
+\(\mathsf{Den}_{\Delta_5,E}\), and the primitive recognition certificate
+of Theorem~\ref{thm:primitive-recognition}.  In particular one must
+construct the compact Hall bracket constants, the full compact parity
+dimensions, the simple primitive representatives, and the
+Borcherds--Kac relation verification.  The scalar square and the
+denominator algebra are inputs to this problem.  They are not its
+solution.
 \end{openproblem}
 
 \begin{definition}[Imaginary simple roots]
@@ -2314,6 +2658,8 @@ $$
 [\mathfrak g_\alpha,\mathfrak g_\beta]\to
 \mathfrak g_{\alpha+\beta}.
 $$
+Thus signed root multiplicity is necessary input for primitive
+recognition, but it is not a recognition theorem.
 \end{proposition}
 
 \begin{proof}
@@ -2348,7 +2694,12 @@ $$
 \mathcal H^{\mathrm{BPS}}_{(n,l,m)}
 $$
 and it does not prove that the microscopic operator product on BPS
-states is the Borcherds bracket.
+states is the Borcherds bracket.  In particular, it does not prove
+$$
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\cong\mathfrak g_{\Delta_5}.
+$$
+That comparison requires the primitive recognition hypotheses of
+Theorem~\ref{thm:primitive-recognition}.
 \end{proposition}
 
 \begin{proposition}[What the determinant forgets]
@@ -2366,14 +2717,17 @@ $$
 \prod_{\gamma\in\Gamma_{\mathrm{eff}}}(1-x^\gamma)^{\sdim\mathcal B_\gamma}
 =\Delta_5(Z).
 $$
-If $\mathcal B$ carries a bracket compatible with charge addition, the
-determinant forgets that bracket and remembers the class of
+If $\mathcal B$ carries a bracket compatible with charge addition, a
+parity split, simple-root representatives, or a Hopf pairing, the
+determinant forgets those data and remembers the class of
 $\mathcal B$ in
 $$K_0(\Gamma_{\mathrm{eff}}\hbox{-graded finite super vector spaces}).$$
 Thus the determinant of
 $\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}$ is
-the Grothendieck shadow of its denominator bracket.  The bracket exists, but the
-determinant sees only its charge-graded Grothendieck class.
+the Grothendieck shadow of its denominator bracket.  The Borcherds
+denominator bracket exists inside \(\mathcal A_{\mathrm{den}}\) by the
+Gritsenko--Nikulin construction, but the determinant sees only its
+charge-graded Grothendieck class.
 \end{proposition}
 
 \begin{proof}
@@ -2387,9 +2741,11 @@ product with the Borcherds product for $64^{-1}\Delta_5$.  Multiplying
 by the vacuum factor gives $\Delta_5$.  A bracket
 $$[\mathcal B_\gamma,\mathcal B_{\gamma'}]\to
 \mathcal B_{\gamma+\gamma'}$$
-does not occur in the determinant formula.  The determinant is therefore
-invariant under replacing $\mathcal B$ by any other graded super vector
-space with the same Grothendieck class.
+does not occur in the determinant formula.  Neither do simple primitive
+representatives, parity dimensions, relation constants, or a Hopf-pairing
+radical.  The determinant is therefore invariant under replacing
+$\mathcal B$ by any other graded super vector space with the same
+Grothendieck class.
 \end{proof}
 
 \section{Coefficient dictionary and main synthesis}
@@ -2446,7 +2802,22 @@ third readings are automorphic and denominator-algebra incarnations of
 the same integer.  This is not an equality of Hilbert spaces, brackets,
 or Hall structure constants.
 
-\begin{theorem}[Virtual Igusa determinant and reduced scalar square]
+The synthesis is the following spine:
+\[
+\hbox{virtual determinant}
+\longrightarrow
+\hbox{denominator algebra}
+\longrightarrow
+\hbox{reduced scalar square}
+\longrightarrow
+\hbox{compact realization problem}
+\longrightarrow
+\hbox{eight-row certificate extension}.
+\]
+The arrows record the order of comparison.  They are not automatic
+implications from a product to a physical host.
+
+\begin{theorem}[Coefficient dictionary and synthesis theorem]
 \label{thm:protected-igusa-determinant}
 Let \(X=K3\times E\).  Let
 \[
@@ -2458,7 +2829,10 @@ and define the virtual one-particle object in the cusp chamber by
 \mathcal V_{(n,l,m)}=\mathbb U_{nm,l},\qquad
 (n,l,m)\in\Gamma_{\mathrm{eff}}.
 \]
-Then its virtual determinant is the Igusa square root
+Then the theorem-level and conditional content of the paper is exactly
+as follows.
+
+First, the virtual determinant is the theta-normalized Igusa square root:
 \[
 \mathcal D_X(Z)
 =64q^{1/2}r^{1/2}s^{1/2}
@@ -2466,22 +2840,13 @@ Then its virtual determinant is the Igusa square root
 (1-q^nr^ls^m)^{f(nm,l)}
 =\Delta_5(Z).
 \]
-For the reduced Hilbert-scheme DT/PT/OP scalar branch,
+The numerical factor \(64\) is the theta-constant leading coefficient
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5\); the monic Borcherds product is
 \[
-Z^X_{\mathrm{DT}}(T,Q,P)=Z^X_{\mathrm{OP}}(P,Q,T)
-=-4096\,\Delta_5(Z)^{-2}.
-\]
-Thus, with
-\[
-\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}=\mathcal D_X^{-1},
-\]
-one has
-\[
-Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}
-=-4096\,(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}})^2.
+D_5=64^{-1}\Delta_5.
 \]
 
-Under the Lorentzian degree map
+Second, under the Lorentzian degree map
 \[
 \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},
 \qquad
@@ -2499,14 +2864,82 @@ and
 \operatorname{den}(\mathfrak g_{\Delta_5})
 =64^{-1}\Delta_5(2Z).
 \]
-The determinant and denominator statements are theorems.  The stronger
-microscopic comparison
+This is the Gritsenko--Nikulin denominator theorem.  It determines the
+signed root supermultiplicities in the fixed Borcherds datum; it does
+not determine compact Hall constants or microscopic brackets.
+
+Third, for the reduced Hilbert-scheme DT/PT/OP scalar branch,
+\[
+Z^X_{\mathrm{DT}}(T,Q,P)=Z^X_{\mathrm{OP}}(P,Q,T)
+=-4096\,\Delta_5(Z)^{-2}.
+\]
+Here
+\[
+\chi_{10}^{\mathrm{OP}}=D_5^2=(64^{-1}\Delta_5)^2
+=4096^{-1}\Delta_5^2,
+\qquad
+Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1};
+\]
+hence \(-4096=-(64)^2\) is the OP scalar sign together with the
+theta-to-monic normalization.  It is not an orientation character.
+Thus, with
+\[
+\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}=\mathcal D_X^{-1},
+\]
+one has
+\[
+Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}
+=-4096\,(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}})^2.
+\]
+
+Fourth, the stronger microscopic comparison
 \[
 H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
 \cong
 \mathfrak g_{\Delta_5}
 \]
-is the compact \(E_3\)/Hall/chiral realization problem.
+is open unless the compact datum of
+Definition~\ref{def:compact-igusa-realization-datum} is constructed.
+If such a datum is constructed, Theorem~\ref{thm:primitive-recognition}
+identifies its primitive denominator with \(64^{-1}\Delta_5(2Z)\).
+
+Fifth, any claimed compact realization must also satisfy three
+consequences.
+\begin{enumerate}
+\item A naive support-local factorization object on
+\(\operatorname{Ran}(E)\) sees only projection-finite sectors.  If a
+one-dimensional subscheme of \(K3\times E\) has positive elliptic
+degree, its projection to \(E\) is all of \(E\).  Thus the full
+\(s\)-direction of the Igusa product requires either a separate
+global Fock/Hecke mode or a hybrid local/global wrapped factorization
+theory.
+\item The automorphic character \(\nu_{\Delta_5}\) is theorem-level
+data of \(\Delta_5\), and \(\Delta_5^2\) forgets it.  A compact Hall
+orientation must construct a strong orientation character
+\(\epsilon_o\) and prove
+\[
+\epsilon_o|_{W^{(2)}(\Lambda^{2,1}_{II})}
+=\nu_{\Delta_5}|_{W^{(2)}(\Lambda^{2,1}_{II})}.
+\]
+The constants \(64\), \(4096\), and the OP minus sign do not solve this
+orientation-monodromy problem.
+\item A primitive comparison with \(\mathfrak g_{\Delta_5}\) is a
+presentation-level recognition theorem, not a consequence of signed
+dimensions.  One must supply primitive representatives for the real and
+imaginary simple roots, their parities, the Chevalley, real Serre and
+orthogonality relations, generation, the completed Hopf pairing and the
+same radical quotient.  Under these hypotheses the Borcherds--Kac
+universal presentation gives the isomorphism with
+\(\mathfrak g_{\Delta_5}\); without them the determinant fixes only a
+Grothendieck class.
+\end{enumerate}
+
+Finally, the diagonal-divisor rows extend this same logic.  A row is
+promoted beyond its automorphic product only by a row certificate fixing
+the modular group or cover, character, divisor, Jacobi seed, product
+lattice, Weyl chamber, reflection character, scalar theorem if one is
+claimed, orientation data, one-particle index, and primitive algebra
+comparison.
 \end{theorem}
 
 \begin{proof}
@@ -2517,16 +2950,54 @@ The Fock trace calculation gives
 \]
 The Borcherds--Gritsenko--Nikulin product formula for the input
 \(\phi_{0,1}\) identifies this product with \(\Delta_5\), as recorded in
-Proposition~\ref{prop:bgn-identification}.  The reduced scalar
-identity is Theorem~\ref{thm:op-square}.  The Lorentzian monomial
-identity and pairing computation are in
+Proposition~\ref{prop:bgn-identification}.  The leading coefficient
+\(64\) is fixed in the theta-normalized Fourier expansion of
+\(\Delta_5\), hence \(D_5=64^{-1}\Delta_5\) is the monic product.
+
+The Lorentzian monomial identity and pairing computation are in
 Section~\ref{sec:duality-principle} and the Weyl-chamber section.  The
 root-supermultiplicity and denominator identity are
-Theorem~\ref{thm:denominator-algebra-identity}.  None of these ingredients
-constructs the compact \(E_3\)/Hall/chiral datum of
-Definition~\ref{def:compact-igusa-realization-datum}; that is exactly
-Open Problem~\ref{op:compact-igusa-realization}.
+Theorem~\ref{thm:denominator-algebra-identity}; the argument \(2Z\)
+comes from passing from
+\(\exp(-\pi i(\alpha,z))\) to the usual denominator character
+\(\exp(-2\pi i(\alpha,z))\).
+
+The reduced scalar identity is Theorem~\ref{thm:op-square}, with the
+normalization conversion of Proposition~\ref{prop:op-normalization}.
+Since Oberdieck--Pixton use
+\(\chi_{10}^{\mathrm{OP}}=D_5^2\) and prove
+\(Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}\), the theta
+normalization gives
+\[
+Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}.
+\]
+Oberdieck's reduced DT/PT comparison and the primitive
+Oberdieck--Pandharipande comparison give the same branch for
+\(Z^X_{\mathrm{DT}}\).
+
+The compact comparison is not used in these proofs.  It is precisely
+Open Problem~\ref{op:compact-igusa-realization}.  The
+\(\operatorname{Ran}(E)\) obstruction follows because a positive
+elliptic-degree curve has one-dimensional image in the irreducible
+curve \(E\), hence image \(E\); support separation on disjoint opens of
+\(\operatorname{Ran}(E)\) cannot see such a sector.  The orientation
+statement follows from the automorphic character computation for
+\(\Delta_5\) and from the definition of a compact orientation datum;
+rescaling \(\Delta_5\) by \(64^{-1}\) changes no character.  The
+primitive recognition statement is the universal property of the
+Borcherds--Kac presentation recorded in the denominator-algebra section.
+The determinant and scalar square do not contain the missing
+presentation, orientation, or Hall correspondence data.  The row
+certificate condition is the same separation applied to the
+Clery--Gritsenko catalogue in the next part.
 \end{proof}
+
+Thus the paper has one dictionary and several levels of structure.  The
+dictionary is the integer \(f(nm,l)\).  The proved structures are the
+virtual determinant, the Gritsenko--Nikulin denominator algebra, and the
+reduced OP/DT scalar square with constants \(64\) and \(-4096\) fixed as
+above.  The compact \(K3\times E\) source and the boundary-row physical
+hosts are certificate problems.
 
 
 \part{Diagonal-divisor rows and CHL boundary physics}
@@ -2538,9 +3009,9 @@ This part is not an appendix to the \(N=1\) theorem.  It is the second
 problem of the paper.  The Clery--Gritsenko catalogue gives eight
 diagonal-divisor automorphic products.  The Gritsenko--Nikulin and
 Govindarajan theorems promote these products to denominator identities
-in the rows where the Weyl data are known.  A physical scalar square or
-Hall/chiral host is a stronger object and is recorded only where its
-data have been specified.
+in the rows where the Weyl data are known.  A CHL dyon square, a reduced
+CY/DT scalar host, and a compact Hall/chiral host are further structures.
+They are recorded only where their data have been specified.
 
 $$g=2.$$
 $$t,N \in \mathbb{Z}_+:\quad \Gamma_t(N) =
@@ -2551,6 +3022,49 @@ $$\mathbb H_2/\Gamma_t
 $$\mathcal H_{\mathrm{diag}}
 =\left\{\begin{pmatrix}a&0\\0&b\end{pmatrix}\mid
 a,b\in\mathbb{H}_1\right\}\subset\mathbb{H}_2.$$
+
+\begin{definition}[Physical-host certificate]
+\label{def:physical-host-certificate}
+For a diagonal-divisor row \(F_j\), a physical-host certificate is a
+five-level ledger
+\[
+\mathfrak C_j=
+\left(
+\mathscr A_j,\mathscr D_j,\mathscr S_j,\mathscr Z_j,\mathscr H_j
+\right).
+\]
+The entries have the following meanings.
+\begin{enumerate}
+\item \(\mathscr A_j\) is the automorphic product certificate: the form
+\(F_j\), the group or multiplier cover, the character, the diagonal
+divisor, the product chamber, the Jacobi input at every cusp, and the
+product-degree map.
+\item \(\mathscr D_j\) is the denominator certificate: a
+Weyl--Kac--Borcherds denominator algebra with root lattice, Weyl vector,
+simple real roots, Weyl chamber, Weyl group, reflection character,
+imaginary simple-root coefficients, product side, and Weyl alternating
+side.
+\item \(\mathscr S_j\) is a CHL/dyon-square certificate: a sourced
+dyon-counting scalar form \(\Phi_j\), a row map to the same automorphic
+row and cover, and an identity \(F_j^2=\Phi_j\) in the stated chamber.
+This is not a denominator theorem and not a CY/DT partition theorem.
+\item \(\mathscr Z_j\) is a reduced CY/DT scalar-host certificate: a
+compact Calabi--Yau threefold, orbifold Calabi--Yau, or CHL background
+with oriented reduced obstruction theory, fixed variables and chamber,
+and a proved identity
+\[
+Z^{X_j}_{\mathrm{red}}(Z)=C_jF_j(Z)^{-2}.
+\]
+\item \(\mathscr H_j\) is a compact Hall/chiral certificate: an oriented
+compact Hall, Drinfeld, or factorization object whose protected
+one-particle index gives the product exponents and whose protected
+primitive bracket identifies the denominator algebra with the same
+orientation/reflection character.
+\end{enumerate}
+The product row, denominator row, dyon square, reduced scalar host, and
+compact Hall/chiral host are separate structures.  None of the five
+entries implies another unless a cited theorem constructs the implication.
+\end{definition}
 
 \begin{theorem}[Clery--Gritsenko]
 In the class of Siegel modular forms with character or multiplier system
@@ -2567,14 +3081,15 @@ product displays for $\nabla_3,\nabla_2,\nabla_{3/2}$, and $Q_1$.
 
 $$
 \begin{array}{c|c|c|c|c}
-j&F_j&\Gamma&\mathrm{wt}(F_j)&\mathrm{character}\\ \hline
+j&F_j&\Gamma&\mathrm{wt}(F_j)&\mathrm{character/multiplier}\\ \hline
 1&\Delta_5&\Gamma_1&5&v_\eta^{12}\times v_H\\
 2&\Delta_2&\Gamma_2^+&2&v_\eta^{6}\times v_H\\
 3&\Delta_1&\Gamma_3^+&1&v_\eta^{4}\times v_H\\
 4&\Delta_{1/2}&\Gamma_4^+&\frac12&v_\eta^{3}\times v_H\ (\mathrm{degree}\ 8)\\
 5&\nabla_3&\Gamma_0^{(2)}(2)&3&\chi_2^{(2)}\times v_H\\
 6&\nabla_2&\Gamma_0^{(2)}(3)&2&\chi_2^{(3)}\times v_H\\
-7&\nabla_{3/2}&\Gamma_0^{(2)}(4)&\frac32&\chi_4^{(4)}\times v_H\\
+7&\nabla_{3/2}&\Gamma_0^{(2)}(4)&\frac32&
+\hbox{order-four multiplier } \chi_4^{(4)}\times v_H\\
 8&Q_1&\Gamma_2(2)&1&\chi_4^{(2)}\times v_H
 \end{array}
 $$
@@ -2587,60 +3102,83 @@ $$F_1=\Delta_5,\qquad
 \frac1{64}F_1(2Z)=\operatorname{den}(\autcor).$$
 
 \begin{center}
+\begingroup
+\setlength{\tabcolsep}{3pt}
 \scriptsize
-\begin{tabular}{@{}c p{0.13\textwidth} p{0.20\textwidth} p{0.20\textwidth} p{0.18\textwidth} p{0.17\textwidth}@{}}
+\begin{tabular}{@{}c p{0.14\textwidth} p{0.16\textwidth} p{0.16\textwidth} p{0.17\textwidth} p{0.17\textwidth}@{}}
 \hline
-row & form & product & denominator & scalar status & physical host \\
+row & automorphic product & denominator theorem & CHL/dyon square &
+reduced CY/DT scalar host & compact Hall/chiral host \\
 \hline
-1 & \(\Delta_5\) &
-Clery--Gritsenko product; Borcherds--Gritsenko--Nikulin lift of
-\(\phi_{0,1}\) &
-Gritsenko--Nikulin denominator algebra \(\mathfrak g_{\Delta_5}\) &
-OP/DT reduced scalar square
+1 &
+\(F_1=\Delta_5\); Clery--Gritsenko product and
+Borcherds--Gritsenko--Nikulin lift of \(\phi_{0,1}\) &
+Gritsenko--Nikulin denominator algebra \(\mathfrak g_{\Delta_5}\);
+\(64^{-1}\Delta_5(2Z)\) normalization &
+no CHL row map used; \(\Delta_5^2\) is the Igusa scalar square, not a
+boundary dyon certificate &
+proved OP/DT \(K3\times E\) scalar host:
 \(-4096\Delta_5^{-2}\) &
-virtual determinant constructed; compact \(E_3\)/Hall/chiral host open \\
-2 & \(\Delta_2\) &
-Clery--Gritsenko product &
-Gritsenko--Nikulin denominator row &
-no reduced scalar theorem supplied here &
-open \\
-3 & \(\Delta_1\) &
-Clery--Gritsenko product &
-Gritsenko--Nikulin denominator row &
-no reduced scalar theorem supplied here &
-open \\
-4 & \(\Delta_{1/2}\) &
-Clery--Gritsenko product on the multiplier cover &
-Gritsenko--Nikulin denominator row on the relevant cover &
-no reduced scalar theorem supplied here &
-open \\
-5 & \(\nabla_3\) &
-Clery--Gritsenko product &
-Govindarajan \(G_1(2)\) CHL/WKB denominator theorem &
-CHL dyon square only; no reduced CY/DT theorem here &
-compact row host open \\
-6 & \(\nabla_2\) &
-Clery--Gritsenko product &
-Govindarajan \(G_1(3)\) CHL/WKB denominator theorem &
-CHL dyon square only; no reduced CY/DT theorem here &
-compact row host open \\
-7 & \(\nabla_{3/2}\) &
-Clery--Gritsenko product with order-four multiplier &
-Govindarajan \(G_1(4)\) CHL/WKB theorem on the \(\mu_4\)-cover &
-CHL dyon square only after fixing the cover and branch; no reduced
-CY/DT theorem here &
-compact row host open \\
-8 & \(Q_1\) &
-Clery--Gritsenko product &
-Govindarajan \(G_2(4)\) CHL/WKB denominator theorem &
-CHL dyon square only; no reduced CY/DT theorem here &
-compact row host open \\
+open; the formal determinant is not a compact Hall/chiral source \\
+2 &
+\(F_2=\Delta_2\); Clery--Gritsenko product &
+Gritsenko--Nikulin denominator row \(\mathfrak g^{\mathrm{GN}}_2\) &
+no audited CHL/dyon row map &
+no audited curve-counting scalar theorem &
+no audited Hall or factorization host \\
+3 &
+\(F_3=\Delta_1\); Clery--Gritsenko product &
+Gritsenko--Nikulin denominator row \(\mathfrak g^{\mathrm{GN}}_3\) &
+no audited CHL/dyon row map &
+no audited curve-counting scalar theorem &
+no audited Hall or factorization host \\
+4 &
+\(F_4=\Delta_{1/2}\); Clery--Gritsenko product on the degree-eight
+multiplier cover &
+Gritsenko--Nikulin denominator row on the same cover
+\(\mathfrak g^{\mathrm{GN}}_4\) &
+no audited CHL/dyon row map &
+no audited curve-counting scalar theorem &
+no audited Hall or factorization host \\
+5 &
+\(F_5=\nabla_3\); Clery--Gritsenko product &
+Govindarajan \(\mathcal G_1(2)\) CHL/WKB denominator theorem &
+sourced scalar dyon square \(\nabla_3^2=\Phi_6\) &
+no reduced CY/DT certificate &
+no compact Hall/chiral certificate \\
+6 &
+\(F_6=\nabla_2\); Clery--Gritsenko product &
+Govindarajan \(\mathcal G_1(3)\) CHL/WKB denominator theorem &
+sourced scalar dyon square \(\nabla_2^2=\Phi_4\) &
+no reduced CY/DT certificate &
+no compact Hall/chiral certificate \\
+7 &
+\(F_7=\nabla_{3/2}\); Clery--Gritsenko product on the order-four
+multiplier cover &
+Govindarajan \(\mathcal G_1(4)\) CHL/WKB denominator theorem on the
+\(\mu_4\)-cover &
+sourced scalar dyon square \(F_7^2=\Phi_3\) only after fixing the
+cover and branch &
+no reduced CY/DT certificate &
+no compact Hall/chiral certificate \\
+8 &
+\(F_8=Q_1\); Clery--Gritsenko \((t,N)=(2,2)\) product &
+Govindarajan \(\mathcal G_2(4)\) CHL/WKB denominator theorem &
+sourced twisted dyon square \(Q_1^2=\Phi_2^{(2,4)}\); \(Q_1\) is the
+special \(\mathcal G_2(4)\) row &
+no reduced CY/DT certificate &
+no compact Hall/chiral certificate \\
 \hline
 \end{tabular}
+\endgroup
 \end{center}
 
+This table is a certificate ledger, not a catalogue of physical hosts.
 By Theorem~\ref{thm:gn-denominator-234} the full-paramodular rows
 $F_2,F_3,F_4$ also carry Gritsenko--Nikulin denominator identities.
+The audited sources do not construct a reduced curve-counting theorem,
+Hall object, or factorization host for these three rows.  Their status is
+therefore product plus denominator theorem only.
 The congruence rows $F_5,F_6,F_7,F_8$ have product-degree lattices in
 Proposition~\ref{prop:congruence-product-degree-lattices}.  The
 additional denominator data -- Weyl chamber, real roots, reflection
@@ -2648,7 +3186,9 @@ character, and Weyl sum -- are supplied by the CHL denominator theorem
 of Govindarajan for \(F_5,F_6,F_7,F_8\).
 For \(F_7\) the theorem lives on the
 $\mu_4$-multiplier cover determined by the Clery--Gritsenko order-four
-multiplier, with no CY/DT/chiral boundary host supplied here.
+multiplier.  For \(Q_1\) the row is the special \(\mathcal G_2(4)\)
+twisted CHL denominator row.  Neither statement supplies a reduced
+CY/DT scalar host or compact Hall/chiral certificate.
 
 \begin{proposition}[Extension separation]
 \label{prop:extension-quarantine}
@@ -2662,10 +3202,10 @@ Weyl chamber, real simple roots, a reflection character, and a Weyl
 alternating sum.
 \end{proposition}
 
-\begin{openproblem}[Future denominator extensions beyond the known rows]
+\begin{openproblem}[Future certificates beyond the known rows]
 For any future diagonal-divisor or boundary product not already covered
 by the Gritsenko--Nikulin denominator theorems or by the Govindarajan
-CHL/WKB denominator theorem, first construct the product datum
+CHL/WKB denominator theorem, first construct the product certificate
 $$
 \mathscr P_j=(\phi_j,\Gamma_{j,\mathrm{prod}}^+,
 \Gamma_{j,\mathrm{mod}},\rho_j,\nu_j,L_j,\alpha_j)
@@ -2681,13 +3221,20 @@ $$F_j(Z)=C_j e^{2\pi i(\rho_j,Z)}
 \prod_{\gamma\in\Gamma_{j,\mathrm{prod}}^+}(1-e^{2\pi i(\gamma,Z)})^{c_j(\gamma)},$$
 $$\operatorname{den}(\mathfrak g_j)=C'_jF_j(a_jZ),\qquad
 \sdim(\mathfrak g_{j,\gamma})=c_j(\gamma).$$
-If a CHL/K3 sector supplies the row with
-$$\phi^{(j)}=\tfrac12Z^{(j)}_{\mathrm{K3}},$$
-then the scalar-square branch is
-$$Z_j=C_j/F_j^2.$$
-This open problem is not used for the eight-row catalogue below, and it
-implies no scalar square or physical host without further enumerative
-and compact-local data.
+If a CHL/K3 sector supplies a dyon-counting scalar square, it fills only
+the \(\mathscr S_j\) level of
+Definition~\ref{def:physical-host-certificate}.  If a reduced CY/DT
+scalar identity is claimed, one must separately construct \(X_j\), the
+reduced obstruction theory, orientation, Fourier chamber, variables, and
+the theorem
+\[
+Z^{X_j}_{\mathrm{red}}(Z)=C_jF_j(Z)^{-2}.
+\]
+If a compact Hall/chiral host is claimed, one must separately construct
+the protected one-particle index and primitive bracket comparison.  This
+open problem is not used for the eight-row ledger and implies no scalar
+square, CY/DT host, or Hall/chiral host without the corresponding
+certificate entries.
 \end{openproblem}
 
 \begin{proposition}[CHL squares and denominator signs]
@@ -2724,7 +3271,8 @@ $$
 (5,2,1,1,\tfrac12,1,\tfrac14,0).
 $$
 It is not the Clery--Gritsenko table.  A comparison with the
-Clery--Gritsenko forms requires a row map.
+Clery--Gritsenko forms requires the relevant entries of
+Definition~\ref{def:physical-host-certificate}.
 Thus
 $$\mathrm{Clery\mbox{--}Gritsenko\ classification}\neq
 \mathrm{CHL\ realisation\ theorem}.$$
@@ -2733,8 +3281,10 @@ F_2,F_3,F_4:\ \mathrm{GN\ denominator\ theorem},$$
 $$F_5,F_6,F_7,F_8:
 \ \mathrm{Govindarajan\ CHL/WKB\ denominator\ theorem},$$
 with $F_7$ understood on the $\mu_4$-multiplier cover determined by its
-order-four multiplier and not as a physical boundary theorem.
-Dijkgraaf--Verlinde--Verlinde: \cite{DVV}.  Borcherds: \cite{B}.
+order-four multiplier.  Dijkgraaf--Verlinde--Verlinde and Borcherds
+give the \(N=1\) physical and automorphic background
+\cite{DVV,B}; they do not construct physical-host certificates for the
+other seven rows.
 
 \appendix
 \renewcommand{\thesection}{\Alph{section}}
@@ -4034,45 +4584,67 @@ j&\mathrm{automorphic\ data}\ (F_j,\Gamma_j,\nu_j,\rho_j^{\mathrm{pref}})
 2,3,4&\mathrm{GN\ denominator\ theorem}
 &L_j=M_j,\ \alpha_j=\alpha_j^{\mathrm{GN}}\\
 5,6,7&\mathrm{CG\ product;\ Govindarajan\ denominator}
-&P^{(1)},\mathcal M_1,W_1,\epsilon=\det\ \mathrm{constructed}\\
+&P^{(1)},\mathcal M_1,W_1,\epsilon=\det\
+\mathrm{constructed\ as\ CHL/WKB\ denominator\ data}\\
 8&\mathrm{CG\ product;\ Govindarajan\ denominator}
-&P^{(2)},\mathcal M_2,W_2,\epsilon=\det\ \mathrm{constructed}\\
+&P^{(2)},\mathcal M_2,W_2,\epsilon=\det\
+\mathrm{constructed\ as\ CHL/WKB\ denominator\ data}\\
 \end{array}
 $$
 Thus all eight rows have formal product/current-envelope objects.
 Rows \(1\)--\(4\) have the Gritsenko--Nikulin denominator algebras.
 Rows \(5\)--\(8\) have the Govindarajan CHL/WKB denominator algebras in
 the CHL normalization.  The row \(F_7\) lives on the
-\(\mu_4\)-multiplier cover and gives no physical boundary
-theorem.
+\(\mu_4\)-multiplier cover and fills no physical-host certificate beyond
+the sourced denominator level.
 \end{remark}
 
-\begin{openproblem}[Physical row map and boundary host]
+\begin{openproblem}[Physical-host certificates and row maps]
 \label{conj:nonabelian-row-extension}
-Construct, for every physical row, a datum
+Construct, for every claimed physical realization of a
+Clery--Gritsenko row, a datum
 $$
-(\iota_j,X_j,\theta_j,\mathcal P_j)
+(\iota_j,\mathscr R_j,
+\mathscr A_j,\mathscr D_j,\mathscr S_j,\mathscr Z_j,\mathscr H_j)
 $$
 such that
 $$
-\iota_j:\Phi^{\mathrm{phys}}_j\longleftrightarrow F_i^{\mathrm{CG}},
-\qquad
-Z^{X_j}_{\mathrm{red}}=C_j(F_i^{\mathrm{CG}})^{-2},
+\iota_j:\Phi^{\mathrm{phys}}_j\longleftrightarrow F_i^{\mathrm{CG}}
 $$
-and
-$$
-\Prim_{\mathrm{prot}}\mathcal P_j\cong\mathfrak g_i.
-$$
-Here \(\theta_j\) fixes the modular group or cover, character, divisor,
-Jacobi seed, normalization, orientation, Behrend sign, and Fourier
-chamber.  The CHL/WKB theorem proves the denominator identities for
-\(F_5,\ldots,F_8\).  The physical row map and the boundary host are the
-open data.
+fixes the exact row, parent form when a root is used, group or cover,
+automorphy cocycle, multiplier and its order, divisor multiplicities,
+Jacobi seed at every cusp, product-degree lattice, chamber, branch,
+normalization, and source theorem.  The
+entries
+\((\mathscr A_j,\mathscr D_j,\mathscr S_j,\mathscr Z_j,\mathscr H_j)\)
+are the five levels of Definition~\ref{def:physical-host-certificate}.
+For rows \(F_5,\ldots,F_8\), the Govindarajan CHL/WKB theorem fills
+\(\mathscr D_j\), and the sourced scalar square fills \(\mathscr S_j\)
+where stated.  It does not fill \(\mathscr Z_j\) or
+\(\mathscr H_j\).  A boundary partition identity and a compact
+Hall/chiral source remain open until these certificate entries are
+constructed.
 \end{openproblem}
 
-\begin{proposition}[Boundary weights]
+\begin{proposition}[Comparison row systems]
 \label{prop:boundary-weights}
-In the primary Clery--Gritsenko enumeration,
+The Clery--Gritsenko rows in the present \(F_i\)-order have weights
+$$
+(5,2,1,\tfrac12,3,2,\tfrac32,1).
+$$
+In triple order
+$$
+(t,N)=(1,1),(2,1),(1,2),(3,1),(1,3),(4,1),(1,4),(2,2),
+$$
+the weights are
+$$
+(5,2,3,1,2,\tfrac12,\tfrac32,1),
+$$
+and the permutation from triple order to present order is
+$$
+(1,2,5,3,6,4,7,8).
+$$
+Consequently
 $$
 \{j:\mathrm{wt}(F_j)\in\Z\}=\{1,2,3,5,6,8\},\qquad
 \{j:\mathrm{wt}(F_j)\notin\Z\}=\{4,7\}.
@@ -4081,80 +4653,13 @@ The comparison notation
 $$\Phi^{\mathrm{cmp}}_1,\ldots,\Phi^{\mathrm{cmp}}_8,\qquad
 \mathrm{wt}(\Phi^{\mathrm{cmp}}_j)=(5,2,1,1,\tfrac12,1,\tfrac14,0),$$
 does not define the Clery--Gritsenko row system and defines no physical
-atlas in this paper.
-\end{proposition}
-
-\begin{proof}
-The Clery--Gritsenko theorem gives the exact weights in the first
-display.  The comparison weights
-$$
-(5,2,1,1,\tfrac12,1,\tfrac14,0)
-$$
-are not the primary-source row labels of \cite{GC}.  The
-Borcea--Voisin route \cite{BORCEA}, \cite{VOISIN} and reduced
-curve-counting route \cite{OhThomasI}, \cite{OhThomasII}, \cite{BOPY}
-require a separate
-construction of $X_j$, the reduced theory, and the product identity.  No
-such construction is used in the $N=1$ theorem.
-\end{proof}
-
-\begin{remark}[Boundary rows]
-The Clery--Gritsenko weights are
-\[
-(5,2,1,\tfrac12,3,2,\tfrac32,1),
-\]
-and no row in the eight Clery--Gritsenko diagonal-divisor catalogue has
-weight \(1/4\) or weight \(0\).  Also \(F_4=\Delta_{1/2}\), so \(F_4\)
-has half-integral weight.  A physical
-\(\Phi^{\mathrm{cmp}}_4\) identification requires a row map.  A boundary
-partition identity requires the row map, the reduced theory, and the
-duality signs.
-\end{remark}
-
-\begin{remark}[Comparison row map]
-The symbols \(F_i\) and \(\Phi^{\mathrm{cmp}}_j\) label different row
-systems.  When a collision is possible, write \(F_i^{\mathrm{CG}}\) for
-the Clery--Gritsenko rows in the present order,
-\(T_a^{\mathrm{CG}}\) for the same catalogue in triple order, and
-\(\Phi^{\mathrm{cmp}}_j\) for the comparison symbols.  The rows
-\(F_i^{\mathrm{CG}}\) are the diagonal-divisor
-forms of \cite{GC}; in this paper's order their weights are
-$$
-(5,2,1,\tfrac12,3,2,\tfrac32,1).
-$$
-In triple order the same Clery--Gritsenko catalogue is indexed by
-$$
-(t,N)=(1,1),(2,1),(1,2),(3,1),(1,3),(4,1),(1,4),(2,2),
-$$
-where the weights are
-$$
-(5,2,3,1,2,\tfrac12,\tfrac32,1).
-$$
-The permutation from that triple order to the present \(F_i\)-order is
-$$
-(1,2,5,3,6,4,7,8).
-$$
-
-The comparison symbols
-$$
-\Phi^{\mathrm{cmp}}_1,\ldots,\Phi^{\mathrm{cmp}}_8,\qquad
-\mathrm{wt}(\Phi^{\mathrm{cmp}}_j)=(5,2,1,1,\tfrac12,1,\tfrac14,0),
-$$
-are therefore not Clery--Gritsenko row labels.  A row map
+atlas in this paper.  A row map
 $$
 \Phi^{\mathrm{cmp}}_j\longleftrightarrow F_i
 $$
-requires the modular group or cover, character, divisor,
-Jacobi seed at every cusp, product-degree lattice, Weyl vector, real
-simple roots, reflection character, and, on the physical side, the
-CY/DT/chiral host and reduced partition identity.  This paper contains
-no such datum.
-A comparison symbol is a Clery--Gritsenko form only after a certificate
-fixes the exact \(F_i^{\mathrm{CG}}\), weight, group or cover,
-character or multiplier order, divisor multiplicity, cusp Jacobi inputs,
-product normalization, and any denominator datum used.
-
-Consequently the direct identifications
+requires the relevant entries of
+Definition~\ref{def:physical-host-certificate}.  Consequently the direct
+identifications
 $$
 \Phi^{\mathrm{cmp}}_5=F_5,\qquad
 \Phi^{\mathrm{cmp}}_7=F_7,\qquad
@@ -4166,30 +4671,19 @@ identities, such as \(\nabla_3^2=\Phi_6\) and
 \(\nabla_2^2=\Phi_4\), are scalar square identities; they are not row
 maps and do not by themselves carry the denominator sign, parity, or
 Weyl alternating side.
-\end{remark}
+\end{proposition}
 
-\begin{remark}[Boundary host]
-A boundary identity
-$$
-Z_j=C_j(\Phi^{\mathrm{cmp}}_j)^{-2}
-$$
-requires more than a Clery--Gritsenko product, a fractional weight, or a
-formal current envelope.  It requires a row map
-\(\Phi^{\mathrm{cmp}}_j\leftrightarrow F_i\) fixing the weight, group,
-multiplier, cover, divisor, Jacobi input, and normalization; a
-Calabi--Yau or orbifold host \(X_j\) with reduced
-obstruction theory, orientation, Behrend sign, Fourier chamber, and a
-partition theorem
-$$
-Z^{X_j}_{\mathrm{red}}=C_jF_i^{-2};
-$$
-and a compact oriented \(E_d\)/Hall/chiral datum whose protected
-primitive bracket satisfies the Borcherds relations for the same row.  In the
-absence of these data, the boundary rows carry only their automorphic
-product and any separately proved denominator theorem.  They carry no
-CY/DT partition identity, no compact physical factorization algebra, and no
-fractional chiral power.
-\end{remark}
+\begin{proof}
+The Clery--Gritsenko theorem gives the exact weights, groups, characters,
+and divisors of the eight diagonal-divisor rows \cite{GC}.  The displayed
+comparison tuple is not that theorem table.  The Borcea--Voisin route
+\cite{BORCEA}, \cite{VOISIN} and higher-dimensional curve-counting routes
+\cite{OhThomasI}, \cite{OhThomasII}, \cite{BOPY} require separate
+construction of \(X_j\), the reduced theory, the protected index, and the
+product identity.  None is constructed here.  Thus the comparison symbols
+remain external labels until a certificate identifies them with
+Clery--Gritsenko rows.
+\end{proof}
 
 \begin{definition}[Canonical fractional branch]
 \label{def:canonical-fractional-branch}
@@ -4222,11 +4716,12 @@ The earlier fractional-power comparison symbols
 do not label Clery--Gritsenko rows.  The only source-compatible
 statement retained here is the following conditional test.
 
-If a comparison form \(\Phi^{\mathrm{cmp}}_5\) of weight \(5\) and
-quadratic character is supplied, then a modular square root
-\((\Phi^{\mathrm{cmp}}_5)^{1/2}\) must live on the pullback of its
-paramodular group to the genus-two metaplectic cover and must carry the
-corresponding genuine half-integral multiplier.
+The displayed comparison weight of \(\Phi^{\mathrm{cmp}}_5\) is
+\(1/2\).  If it is presented as a square root, the parent form must have
+weight \(1\), and the root must live on the pullback of the parent group
+to the genus-two metaplectic cover with a genuine half-integral
+multiplier.  A weight-\(5\) parent would produce a weight-\(5/2\) square
+root and does not certify this displayed comparison slot.
 
 If the comparison symbol \(\Phi^{\mathrm{cmp}}_7\) is supplied with its
 displayed comparison weight \(1/4\), then it must be a genuine
@@ -4237,6 +4732,11 @@ root \(\psi\) with \(\psi^4=\chi\) exists after pullback and \(\chi\)
 has exact order \(4\), then the character part has order divisible by
 \(16\), unless an explicit automorphy-cocycle relation reduces it.  No
 such relation is constructed here.
+The \(\mu_4\)-cover of the Clery--Gritsenko row
+\(F_7=\nabla_{3/2}\), whose weight is \(3/2\), is not a modular-root
+certificate for a comparison object \(\Phi^{\mathrm{cmp}}_7\) of weight
+\(1/4\).  That comparison object needs its own parent, cover, cocycle,
+and character-root computation.
 
 If a comparison form \(\Phi^{\mathrm{cmp}}_8\) has weight \(0\), the
 canonical branch of Definition~\ref{def:canonical-fractional-branch}
@@ -4254,50 +4754,40 @@ background for such metaplectic phenomena \cite{Weil1964},
 elementary: if \(\chi\) has exact order \(4\) and \(\psi^4=\chi\), then
 \(\psi\) cannot have order \(8\), since \(\psi^4\) would have order at
 most \(2\); absent a further cocycle relation, order \(16\) is the first
-possible character order.  The weight-zero case has no
-automorphy weight to absorb the logarithmic branch; a formal root can be
-chosen in a chamber, but this is not a modular or chiral construction.
+possible character order.  In the weight-zero case the formal branch
+supplies no metaplectic weight contribution; modularity would have to
+come entirely from divisor divisibility and a character or automorphy
+cocycle root.  A formal root can be chosen in a chamber, but this is not
+a modular or chiral construction.
 \end{proof}
 
-\begin{openproblem}[Fractional comparison-row physical host]
+\begin{openproblem}[Fractional comparison-row physical-host certificate]
 \label{op:fractional-comparison-row-host}
-For a fractional comparison row, construct a physical-host certificate
-consisting of:
-$$
-\mathscr R_j,\quad X_j,\quad
-\Gamma_j^{\mathrm{BPS}},\quad
-\widetilde\Gamma_j,\quad
-\theta_j,\quad
-Z_j^{\mathrm{red}},\quad
-\mathcal H_{j,\kappa}^{1p},\quad
-\mathsf C_j.
-$$
-Here \(\mathscr R_j\) is the modular-root certificate: it fixes the
-parent form, root exponent, exact group or cover, multiplier character
-and its order, automorphy cocycle, divisor multiplicities, branch, and
-source theorem.  The symbol \(X_j\) is a compact Calabi--Yau, orbifold
-Calabi--Yau, or CHL background with an oriented reduced obstruction theory;
-\(\widetilde\Gamma_j\) is the modular group or multiplier cover on
-which the fractional root is genuine; \(\theta_j\) fixes the
-orientation, Behrend sign, chamber, and possible gerbe holonomy; and
+For a fractional comparison row, construct a modular-root certificate
+\(\mathscr R_j\) and the five-level physical-host certificate of
+Definition~\ref{def:physical-host-certificate}.  The root certificate
+must fix the parent form, root exponent, exact group or cover,
+multiplier character and its order, automorphy cocycle, divisor
+multiplicities, branch, product normalization, and source theorem.
+The reduced scalar level, if claimed, must produce a compact
+Calabi--Yau, orbifold Calabi--Yau, or CHL background with oriented
+reduced obstruction theory and prove
 $$
 Z_j^{\mathrm{red}}=C_j(\Phi^{\mathrm{cmp}}_j)^{-2}
 $$
-is a reduced scalar theorem, not a consequence of the automorphic
-product.  The one-particle protected object must satisfy the appropriate
-cusp-labelled superdimension formula, and \(\mathsf C_j\) must have
-protected primitives mapping to the denominator algebra attached to the
-same row.
+in the fixed chamber and cover.  The compact Hall/chiral level must
+construct the protected one-particle index and primitive bracket
+comparison for the same row.
 
 Borcea--Voisin and higher-dimensional curve-counting constructions
 \cite{BORCEA}, \cite{VOISIN}, \cite{OhThomasI}, \cite{OhThomasII},
 \cite{BOPY} are possible sources for such a certificate.  This paper
-does not assert that they supply it.
-Until \(\mathscr R_j\) and the physical host are constructed, the
-symbols \(\Phi^{\mathrm{cmp}}_5,\Phi^{\mathrm{cmp}}_7,\Phi^{\mathrm{cmp}}_8\)
-are formal comparison symbols only: no Clery--Gritsenko row, finite-order
-multiplier, denominator identity, CY/DT partition theorem, or chiral
-power follows.
+does not assert that they supply it.  Until \(\mathscr R_j\) and the
+relevant certificate entries are constructed, the symbols
+\(\Phi^{\mathrm{cmp}}_5,\Phi^{\mathrm{cmp}}_7,\Phi^{\mathrm{cmp}}_8\)
+are formal comparison symbols only: no Clery--Gritsenko row,
+finite-order multiplier, denominator identity, CY/DT partition theorem,
+or chiral power follows.
 \end{openproblem}
 
 The following comparison table is restricted to the $N=1$ Igusa

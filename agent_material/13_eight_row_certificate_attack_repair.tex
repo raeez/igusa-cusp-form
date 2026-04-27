@@ -1,0 +1,163 @@
+\subsection{\texorpdfstring{Eight-row physical-host certificate repair}
+{Eight-row physical-host certificate repair}}
+
+\subsubsection*{Claim attacked}
+
+The attacked claim is that the eight Clery--Gritsenko rows form a
+physical-host catalogue once their products and denominator identities
+are listed:
+\[
+\mathrm{CG\ product}
+\quad+\quad
+\mathrm{denominator\ row}
+\quad\Longrightarrow\quad
+\mathrm{physical\ host}.
+\]
+This implication is false.  A product row, a denominator row, a
+CHL/dyon square, a reduced CY/DT scalar host, and a compact Hall/chiral
+host are separate structures.
+
+\subsubsection*{Repair inserted in the manuscript}
+
+The repair introduces Definition~\ref{def:physical-host-certificate}
+before the row tables in Section~\ref{sec:eight-dd-rows-status}.  A row
+certificate has five independent levels:
+\[
+(\mathscr A_j,\mathscr D_j,\mathscr S_j,\mathscr Z_j,\mathscr H_j),
+\]
+where \(\mathscr A_j\) is the automorphic product,
+\(\mathscr D_j\) is the Weyl--Kac--Borcherds denominator theorem,
+\(\mathscr S_j\) is a CHL/dyon scalar-square certificate,
+\(\mathscr Z_j\) is a reduced CY/DT scalar-host theorem, and
+\(\mathscr H_j\) is a compact Hall/chiral primitive-bracket
+certificate.
+
+The row ledger in `main.tex` was rewritten with exactly these columns.
+It now records:
+\[
+\begin{array}{c|c|c|c|c|c}
+j&F_j&\mathscr A_j&\mathscr D_j&\mathscr Z_j&\mathscr H_j\\ \hline
+1&\Delta_5&\mathrm{proved}&\mathrm{GN\ proved}&
+\mathrm{OP/DT\ scalar\ host\ proved}&\mathrm{open}\\
+2&\Delta_2&\mathrm{proved}&\mathrm{GN\ proved}&
+\mathrm{no\ audited\ host}&\mathrm{no\ audited\ host}\\
+3&\Delta_1&\mathrm{proved}&\mathrm{GN\ proved}&
+\mathrm{no\ audited\ host}&\mathrm{no\ audited\ host}\\
+4&\Delta_{1/2}&\mathrm{proved\ on\ cover}&
+\mathrm{GN\ proved\ on\ cover}&
+\mathrm{no\ audited\ host}&\mathrm{no\ audited\ host}\\
+5&\nabla_3&\mathrm{proved}&
+\mathrm{Govindarajan\ }\mathcal G_1(2)&
+\mathrm{no\ CY/DT\ certificate}&\mathrm{no\ compact\ certificate}\\
+6&\nabla_2&\mathrm{proved}&
+\mathrm{Govindarajan\ }\mathcal G_1(3)&
+\mathrm{no\ CY/DT\ certificate}&\mathrm{no\ compact\ certificate}\\
+7&\nabla_{3/2}&\mathrm{proved\ on\ }\mu_4\mathrm{\ cover}&
+\mathrm{Govindarajan\ }\mathcal G_1(4)\ \mathrm{on\ }\mu_4&
+\mathrm{no\ CY/DT\ certificate}&\mathrm{no\ compact\ certificate}\\
+8&Q_1&\mathrm{proved}&
+\mathrm{Govindarajan\ }\mathcal G_2(4)&
+\mathrm{no\ CY/DT\ certificate}&\mathrm{no\ compact\ certificate}.
+\end{array}
+\]
+The \(\mathscr S_j\) column is nonempty for rows \(5\)--\(8\) only as a
+sourced dyon-square statement:
+\[
+\nabla_3^2=\Phi_6,\qquad
+\nabla_2^2=\Phi_4,\qquad
+\nabla_{3/2}^2=\Phi_3,\qquad
+Q_1^2=\Phi_2^{(2,4)}.
+\]
+These identities do not imply \(\mathscr Z_j\) or \(\mathscr H_j\).
+
+\subsubsection*{Attack--heal checks}
+
+\begin{enumerate}
+\item \(F_1\).  The repaired statement is sharp: the reduced
+\(K3\times E\) OP/DT scalar host is proved,
+\[
+Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2},
+\]
+while the compact Hall/chiral host remains open.  The virtual determinant
+is not promoted to a compact source.
+\item \(F_2,F_3,F_4\).  The Gritsenko--Nikulin denominator rows remain
+theorem-level.  No audited source supplies a CHL row map, reduced
+curve-counting theorem, Hall object, or factorization host for these rows.
+\item \(F_5,F_6,F_7,F_8\).  The Govindarajan CHL/WKB denominator
+theorem is retained.  The scalar dyon squares are recorded only in the
+\(\mathscr S_j\) level.  No physical host is asserted without a
+certificate.
+\item \(F_7\).  Every denominator and square-root statement carries the
+\(\mu_4\)-multiplier-cover qualification forced by the order-four
+Clery--Gritsenko multiplier.
+\item \(Q_1\).  The row is treated as the special
+\((t,N)=(2,2)\), \(\mathcal G_2(4)\) Govindarajan row.  It is not
+identified with an \(N=1\) boundary row or a weight-zero comparison slot.
+\item Comparison symbols.  The tuple
+\[
+(5,2,1,1,\tfrac12,1,\tfrac14,0)
+\]
+is kept separate from the Clery--Gritsenko weights.  A comparison with
+the \(F_i\) rows now requires the relevant entries of the physical-host
+certificate.
+\end{enumerate}
+
+\subsubsection*{Files changed}
+
+\[
+\begin{array}{l}
+\texttt{main.tex},\\
+\texttt{agent\_material/13\_eight\_row\_certificate\_attack\_repair.tex}.
+\end{array}
+\]
+
+\subsubsection*{Checks run}
+
+\[
+\begin{array}{l}
+\texttt{sed}\ \mathrm{reads\ of\ CLAUDE.md,\ AGENTS.md,\ }
+\texttt{/Users/raeez/ecosystem/INVARIANTS.md},\\
+\texttt{sed}\ \mathrm{reads\ of\ main.tex\ row\ sections,\ }
+\texttt{agent\_material/12\_eight\_rows\_hosts\_F1\_F4\_attack\_heal.tex},\\
+\texttt{sed}\ \mathrm{reads\ of\ }
+\texttt{agent\_material/12\_eight\_rows\_hosts\_F5\_F8\_attack\_heal.tex},\\
+\texttt{sed}\ \mathrm{reads\ of\ }
+\texttt{agent\_material/11\_chl\_boundary\_primary\_source\_audit.tex},\\
+\texttt{rg}\ \mathrm{for\ physical\ host,\ CHL,\ Govindarajan,\ }
+\mathrm{and\ certificate\ language},\\
+\texttt{git\ diff\ --check\ --\ main.tex\ }
+\texttt{agent\_material/13\_eight\_row\_certificate\_attack\_repair.tex},\\
+\texttt{pdflatex\ -interaction=nonstopmode\ -file-line-error\ }
+\texttt{-output-directory=/tmp/igusa-cusp-form-build\ main.tex}.
+\end{array}
+\]
+The TeX pass was intentionally run into \(\texttt{/tmp}\), not
+\(\texttt{out/}\), because \(\texttt{out/main.pdf}\) was already modified
+by another worker.  The pass completed successfully.  Undefined
+references and citations remain the expected one-pass/no-bibtex warnings.
+
+\subsubsection*{Residual open obligations}
+
+\[
+\begin{array}{c|p{0.72\textwidth}}
+F_1&
+Construct the compact protected Hilbert space, orientation comparison,
+Hall/factorization source, and primitive bracket comparison with
+\(\mathfrak g_{\Delta_5}\).\\
+F_2,F_3,F_4&
+Find or construct reduced scalar identities
+\(Z_j^{\mathrm{red}}=C_jF_j^{-2}\), physical charge lattices, and
+Hall/chiral hosts matching the Gritsenko--Nikulin denominator rows.\\
+F_5,F_6,F_7&
+Construct compact row maps for
+\(\mathcal G_1(2),\mathcal G_1(3),\mathcal G_1(4)\), including the
+\(\mu_4\)-cover for \(F_7\).\\
+F_8&
+Construct the level-two, twist-four row map for
+\(\mathcal G_2(4)\) and \(Q_1\).\\
+Comparison rows&
+For every fractional or external comparison symbol, construct the
+modular-root certificate, exact row map, reduced scalar theorem if
+claimed, and compact Hall/chiral primitive comparison.
+\end{array}
+\]

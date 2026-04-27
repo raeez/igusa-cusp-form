@@ -1,0 +1,118 @@
+\section{Protected integration and orientation attack repair}
+\label{sec:integration-orientation-attack-repair}
+
+\subsection{Claim repaired}
+
+The repaired claim is a triad.
+
+\begin{enumerate}
+\item The reduced OP/DT/PT theorem is scalar.  Its integration map is the
+Behrend-weighted reduced quotient Euler characteristic on
+\(\mathrm{Hilb}^n(X,(\beta,d))/E\) and \(P_n(X,(\beta,d))/E\), and the
+proved branch is
+\[
+  Z^X_{\mathrm{DT}}(T,Q,P)=Z^X_{\mathrm{OP}}(P,Q,T)
+  =-4096\,\Delta_5(Z)^{-2}.
+\]
+\item A protected Hall or critical CoHA integration map is only a
+criterion at this stage.  It requires oriented critical extension
+correspondences, vanishing-cycle coefficients, HN-completed sector
+quotients, wall-crossing compatibility, primitive extraction, and a
+lifted Weyl action on the oriented completed theory.
+\item The orientation character is an open geometric problem.  One must
+construct the monodromy character
+\[
+  \epsilon_o:W^{(2)}(\Lambda^{2,1}_{II})\to\{\pm1\}
+\]
+from the square root of the Hall determinant line and prove
+\[
+  \epsilon_o|_{W^{(2)}(\Lambda^{2,1}_{II})}
+  =
+  \nu_{\Delta_5}|_{W^{(2)}(\Lambda^{2,1}_{II})}.
+\]
+This is not produced by normalizing \(\Delta_5\).
+\end{enumerate}
+
+\subsection{Constants separated}
+
+The manuscript now separates the constants and signs.
+
+\[
+  [q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64
+\]
+is the theta-normalized leading coefficient, equivalently the coefficient
+attached to the Weyl monomial in the determinant.
+
+\[
+  D_5=64^{-1}\Delta_5,\qquad
+  \chi_{10}^{\mathrm{OP}}=D_5^2=4096^{-1}\Delta_5^2
+\]
+is the OP monic normalization.  Thus \(4096=64^2\).
+
+\[
+  Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}
+\]
+is the OP scalar sign convention.  None of \(64\), \(4096\), or the OP
+minus sign is the Hall orientation character.
+
+\subsection{Files changed}
+
+\begin{enumerate}
+\item \(\texttt{main.tex}\): rewrote the owned
+\emph{The protected-index dictionary} and \emph{The scalar square}
+sections into the theorem/criterion/open-problem triad; updated only the
+orientation item in Definition~\ref{def:compact-igusa-realization-datum}
+to state that \(\epsilon_o\) is geometric monodromy, not scalar
+normalization.
+\item \(\texttt{appendices/boundary\_compatibility\_conditions.tex}\):
+updated the orientation-character row and paragraph to say explicitly
+that the comparison character must come from Hall determinant-line
+monodromy.
+\item \(\texttt{agent\_material/13\_integration\_orientation\_attack\_repair.tex}\):
+this report.
+\end{enumerate}
+
+\subsection{Checks run}
+
+\begin{enumerate}
+\item Read the required files:
+\(\texttt{CLAUDE.md}\), \(\texttt{AGENTS.md}\),
+\(\texttt{\string~/ecosystem/INVARIANTS.md}\), \(\texttt{main.tex}\),
+\(\texttt{agent\_material/12\_protected\_integration\_orientation\_attack\_heal.tex}\),
+and \(\texttt{agent\_material/03\_scalar\_square\_status.tex}\).
+\item Checked bibliography keys for
+\(\texttt{OB}\), \(\texttt{OPand}\),
+\(\texttt{OberdieckReducedPT}\), \(\texttt{BRYAN}\),
+\(\texttt{BEHREND}\), \(\texttt{DT}\),
+\(\texttt{KSCoHA}\), and \(\texttt{DavisonMeinhardtCoHA}\).
+\item Ran targeted \(\texttt{rg}\) scans for
+\(\epsilon_o\), \(\nu_{\Delta_5}\), \(64\), \(4096\), protected
+integration, Hall orientation, HN completion, vanishing cycles, and wall
+crossing.
+\item Ran \(\texttt{make}\).  It completed successfully and rebuilt
+\(\texttt{out/main.pdf}\).
+\item Scanned \(\texttt{out/main.log}\) for undefined references and
+undefined citations; no such hits were reported.
+\item Ran the invariant-language scan for attribution markers and forbidden
+standalone-document phrases on the edited TeX surfaces; no hits.
+\end{enumerate}
+
+\subsection{Remaining obligations}
+
+\begin{enumerate}
+\item Construct the compact reduced \(K3\times E\) Hall or critical CoHA
+sector with oriented extension correspondences.
+\item Prove \(E\)-quotient descent for vanishing-cycle coefficients and
+for the strong orientation datum.
+\item Prove HN-finite completion and wall-crossing compatibility for
+protected integration.
+\item Construct primitive extraction and prove the Borcherds--Kac bracket
+relations in the protected Hall/factorization bracket.
+\item Compute the orientation-line monodromy for the simple diagonal
+reflections \(s_{\delta_i}\), then extend it to
+\[
+  \epsilon_o|_{W^{(2)}(\Lambda^{2,1}_{II})}
+  =
+  \nu_{\Delta_5}|_{W^{(2)}(\Lambda^{2,1}_{II})}.
+\]
+\end{enumerate}

@@ -1,0 +1,156 @@
+\section{Synthesis coherence attack-repair}
+\label{sec:synthesis-coherence-attack-repair}
+
+\subsection{Scope}
+
+Writable scope was the section
+\[
+\texttt{main.tex}
+\quad
+\hbox{from }
+\texttt{\string\section\{Coefficient dictionary and main synthesis\}}
+\hbox{ to before }
+\texttt{\string\part\{Diagonal-divisor rows and CHL boundary physics\}},
+\]
+and this report.
+
+The source packet read before inscription was:
+\[
+\texttt{CLAUDE.md},\quad
+\texttt{AGENTS.md},\quad
+\texttt{\string~/ecosystem/INVARIANTS.md},\quad
+\texttt{main.tex},\quad
+\texttt{agent\_material/12\_synthesis\_architecture\_attack\_heal.tex},
+\]
+together with all local \(\texttt{agent\_material/12\_*}\) reports.
+
+\subsection{Claim attacked}
+
+The attacked failure mode was synthesis drift: the coefficient
+dictionary could read as a repair ledger instead of as the forced spine
+of the paper.  The repaired spine is now stated in mathematical prose:
+\[
+\hbox{virtual determinant}
+\longrightarrow
+\hbox{denominator algebra}
+\longrightarrow
+\hbox{reduced scalar square}
+\longrightarrow
+\hbox{compact realization problem}
+\longrightarrow
+\hbox{eight-row certificate extension}.
+\]
+The arrows are explicitly declared to be comparison order, not automatic
+implications from product formulae to physical hosts.
+
+\subsection{Main repair}
+
+The synthesis theorem was rewritten as a status-exact ledger:
+\begin{enumerate}
+\item the \(K_0\)-virtual determinant is proved:
+\[
+\mathcal D_X=\Delta_5;
+\]
+\item the Gritsenko--Nikulin denominator theorem is imported:
+\[
+\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z);
+\]
+\item the Oberdieck--Pixton/Oberdieck/Oberdieck--Pandharipande scalar
+branch is imported:
+\[
+Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2};
+\]
+\item the compact \(E_3\)/Hall/chiral comparison is kept open unless
+Definition~\ref{def:compact-igusa-realization-datum} is constructed;
+\item the eight-row extension is stated as a row-certificate problem.
+\end{enumerate}
+
+\subsection{Constants}
+
+The constants are placed at theorem level.
+\[
+[q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64,\qquad
+D_5=64^{-1}\Delta_5.
+\]
+The scalar normalization is recorded as
+\[
+\chi_{10}^{\mathrm{OP}}=D_5^2
+=(64^{-1}\Delta_5)^2
+=4096^{-1}\Delta_5^2,
+\qquad
+Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}.
+\]
+Thus
+\[
+Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}.
+\]
+The report and the manuscript both state that \(64\), \(4096\), and the
+OP minus sign are not compact Hall orientation data.
+
+\subsection{Three consequences inserted}
+
+The Ran(\(E\)) obstruction is now a consequence of any claimed compact
+realization: positive elliptic degree projects onto all of \(E\), so a
+naive support-local Ran(\(E\)) object sees only projection-finite
+sectors unless a global Fock/Hecke mode or hybrid wrapped factorization
+theory is supplied.
+
+The orientation monodromy problem is now a consequence of the scalar
+square forgetting \(\nu_{\Delta_5}\): a compact realization must
+construct a strong orientation character \(\epsilon_o\) and prove
+\[
+\epsilon_o|_{W^{(2)}(\Lambda^{2,1}_{II})}
+=\nu_{\Delta_5}|_{W^{(2)}(\Lambda^{2,1}_{II})}.
+\]
+
+The primitive recognition theorem is now stated as presentation-level:
+signed dimensions are insufficient; one needs simple primitive
+representatives, parities, defining Borcherds--Kac relations,
+generation, completed Hopf pairing, and the same radical quotient.
+
+\subsection{Files changed}
+
+\[
+\texttt{main.tex},\qquad
+\texttt{agent\_material/13\_synthesis\_coherence\_attack\_repair.tex}.
+\]
+
+\subsection{Checks run}
+
+Before this report was written:
+\begin{enumerate}
+\item \(\texttt{git status --short --branch}\) verified the active
+branch and clean starting state.
+\item \(\texttt{sed -n}\) reads loaded the required control files,
+the synthesis section, adjacent manuscript sections, and all
+\(\texttt{agent\_material/12\_*}\) reports.
+\item \(\texttt{rg}\) scanned \(\texttt{main.tex}\) for
+\(\texttt{Coefficient dictionary}\), \(\texttt{64}\),
+\(\texttt{-4096}\), \(\texttt{Ran(E)}\), orientation, primitive
+recognition, and row-certificate anchors.
+\item Post-edit \(\texttt{sed -n '2568,2825p' main.tex}\) reread the
+owned section.
+\end{enumerate}
+
+After the edit:
+\begin{enumerate}
+\item \(\texttt{git diff --check -- main.tex agent\_material/13\_synthesis\_coherence\_attack\_repair.tex}\)
+reported no whitespace errors.
+\item \(\texttt{rg}\) verified the synthesis anchors for
+\(-4096=-(64)^2\), Ran(\(E\)), orientation monodromy, primitive
+recognition, and row certificates.
+\item A full \(\texttt{make}\) build was not run.  The shared checkout
+already contained concurrent modifications outside this agent's scope,
+including \(\texttt{appendices/boundary\_compatibility\_conditions.tex}\),
+\(\texttt{out/main.pdf}\), and other Agent 13 reports.  Building would
+mutate the shared generated PDF and auxiliary files.
+\end{enumerate}
+
+\subsection{Residual issues}
+
+No contradiction with the Agent 12 reports was found in the owned
+section.  Residual mathematical issues are the paper's stated open
+obligations: compact \(E_3\)/Hall/chiral realization, Ran(\(E\))
+global-wrapping or projection-finite repair, strong orientation
+monodromy, primitive presentation recognition, and row-by-row physical
+host certificates.

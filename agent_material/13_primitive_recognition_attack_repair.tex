@@ -1,0 +1,182 @@
+\section{Primitive recognition theorem: attack--repair}
+\label{sec:primitive-recognition-attack-repair}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\La}{\Lambda}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\smult}{\operatorname{smult}}
+\providecommand{\autcor}{\mathfrak g_{\Delta_5}}
+
+\subsection{Claim attacked}
+
+The false implication is
+\[
+\mathcal D_X=\Delta_5,\qquad
+\sdim H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_{(n,l,m)}=f(nm,l)
+\quad\Longrightarrow\quad
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\cong\autcor .
+\]
+It is false.  The determinant and the signed superdimension equality are
+Grothendieck shadows.  They do not contain compact Hall products,
+primitive projections, bracket constants, parity dimensions, simple-root
+representatives, or a Hopf-pairing radical quotient.
+
+\subsection{Repair inserted in the manuscript}
+
+The primitive comparison is now a recognition theorem.  Let
+\(\mathscr B_{\Delta_5}\) be the Gritsenko--Nikulin Borcherds--Cartan
+superdatum: Cartan \(\La^{2,1}_{II}\otimes\C\), real simple roots
+\(\delta_1,\delta_2,\delta_3\), imaginary simple-root fibres with the
+Gritsenko--Nikulin parity split, and bilinear form
+\((\alpha_i,\alpha_j)\).  The corresponding Borcherds--Kac Lie
+superalgebra modulo the standard radical is
+\[
+G(\mathscr B_{\Delta_5})=\mathcal A_{\mathrm{den}}=\autcor .
+\]
+
+A compact primitive object
+\[
+P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+\]
+is recognized as \(\autcor\) only after the following data have been
+supplied.
+\begin{enumerate}
+\item A charge-graded Lie superalgebra structure on \(P_X\), with finite
+homogeneous parity pieces and Cartan
+\[
+P_{X,0}\simeq\La^{2,1}_{II}\otimes\C .
+\]
+\item The charge-to-root map
+\[
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
+\]
+identifying the protected charge grading with the
+Gritsenko--Nikulin root grading.
+\item Primitive representatives \(e_i^X,f_i^X,h_i^X\) for every real and
+imaginary simple-root index of \(\mathscr B_{\Delta_5}\), preserving
+multiplicity fibres and parity.
+\item Verification in the protected Hall/factorization bracket of the
+Borcherds--Kac defining relations: Cartan, Chevalley, real Serre,
+imaginary-root orthogonality, and super signs.
+\item A completed Hopf pairing whose radical quotient is the same as the
+Gritsenko--Nikulin/Kac quotient.
+\item Generation by the Cartan and simple primitive representatives.
+\item Agreement of full root-space parity dimensions, not only signed
+Euler characteristics.
+\end{enumerate}
+Under these hypotheses the universal presentation gives a surjection
+\[
+G(\mathscr B_{\Delta_5})\longrightarrow P_X .
+\]
+Generation gives surjectivity, and the radical quotient plus full parity
+dimensions gives injectivity.  Hence
+\[
+P_X\cong\autcor
+\]
+as a charge-graded Lie superalgebra.  This is a presentation-level
+recognition theorem.  It is not a determinant theorem.
+
+\subsection{What is not proved}
+
+The manuscript still does not construct:
+\begin{enumerate}
+\item the compact Hall/factorization object;
+\item the compact Hall bracket constants;
+\item the full compact primitive parity dimensions;
+\item primitive representatives of all real and imaginary simple roots;
+\item the Borcherds--Kac defining relations inside the compact bracket;
+\item the completed Hopf pairing and its radical quotient;
+\item the chiral Koszul quasi-isomorphism from the compact bar--cobar
+object to \(\mathsf{Den}_{\Delta_5,E}\).
+\end{enumerate}
+The signed equality
+\[
+\sdim P_{X,(n,l,m)}=f(nm,l)
+\]
+is necessary for recognition.  It is insufficient.
+
+\subsection{Determinant-forgets attack}
+
+Let
+\[
+B=\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}B_\gamma,\qquad
+\sdim B_{(n,l,m)}=f(nm,l).
+\]
+Then
+\[
+64q^{1/2}r^{1/2}s^{1/2}
+\prod_{\gamma\in\Gamma_{\mathrm{eff}}}(1-x^\gamma)^{\sdim B_\gamma}
+=\Delta_5(Z).
+\]
+Putting the zero bracket on \(B\) gives the same determinant but not
+\(\autcor\), since \([e_i,e_j]\ne0\) in the denominator algebra for
+\(i\ne j\).
+
+Even after fixing \(\autcor\), adding a root-graded pair
+\[
+M\oplus \Pi M
+\]
+of opposite parity has zero signed character.  A semidirect extension by
+such a pair can preserve the signed determinant while changing the
+algebra.  The recognition theorem excludes this only by requiring full
+parity dimensions and the completed radical quotient.
+
+\subsection{Claim status}
+
+The repaired manuscript may assert:
+\[
+\hbox{recognition hypotheses}
+\quad\Longrightarrow\quad
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\cong\autcor .
+\]
+It may not assert:
+\[
+\mathcal D_X=\Delta_5
+\quad\Longrightarrow\quad
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\cong\autcor .
+\]
+
+\subsection{Files changed, checks, remaining obligations}
+
+Files changed by this agent:
+\[
+\texttt{main.tex},\qquad
+\texttt{agent\_material/13\_primitive\_recognition\_attack\_repair.tex},\qquad
+\texttt{out/main.pdf}\ \hbox{(rebuilt)}.
+\]
+
+Checks run:
+\[
+\begin{array}{l}
+\texttt{sed -n '1,240p' CLAUDE.md},\\
+\texttt{sed -n '1,260p' AGENTS.md},\\
+\texttt{sed -n '1,220p' /Users/raeez/ecosystem/INVARIANTS.md},\\
+\texttt{sed -n '1,220p' /Users/raeez/ecosystem/AGENTS-HARNESS.md},\\
+\texttt{nl -ba main.tex | sed -n '1724,1905p'},\\
+\texttt{nl -ba main.tex | sed -n '2148,2448p'},\\
+\texttt{nl -ba main.tex | sed -n '2628,2736p'},\\
+\texttt{sed -n '1,520p' agent\_material/12\_primitive\_comparison\_attack\_heal.tex},\\
+\texttt{sed -n '1,260p' agent\_material/04\_bkm\_state\_algebra.tex},\\
+\texttt{rg -n -F -e "Pi\_\{\textbackslash\textbackslashmathrm\{prim\}" -e "primitive Lie comparison" main.tex},\\
+\texttt{rg -n -F -e "thm:primitive-recognition" -e "What is not proved" main.tex agent\_material/13\_primitive\_recognition\_attack\_repair.tex},\\
+\texttt{git diff --check -- main.tex agent\_material/13\_primitive\_recognition\_attack\_repair.tex},\\
+\texttt{git status --short -- main.tex agent\_material/13\_primitive\_recognition\_attack\_repair.tex out/main.pdf},\\
+\texttt{make},\\
+\texttt{make -B}.
+\end{array}
+\]
+
+Remaining obligations:
+\begin{enumerate}
+\item Construct the compact Hall/factorization object.
+\item Compute the protected primitive bracket constants.
+\item Prove full compact parity dimensions.
+\item Produce simple primitive representatives for all real and imaginary
+simple roots.
+\item Verify the Borcherds--Kac relations in the compact bracket.
+\item Construct the completed Hopf pairing and identify its radical
+quotient with the Gritsenko--Nikulin/Kac quotient.
+\item Prove the chiral Koszul comparison.
+\end{enumerate}

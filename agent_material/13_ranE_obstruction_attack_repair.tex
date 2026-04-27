@@ -1,0 +1,144 @@
+\section{Ran(\(E\)) obstruction and compact/hybrid repair}
+\label{sec:ranE-obstruction-attack-repair}
+
+\subsection{Claim attacked}
+
+The attacked claim is the naive implication
+\[
+\mathcal F_X\in\mathrm{Fact}(\operatorname{Ran}(E))
+\quad\Longrightarrow\quad
+\hbox{all Igusa charge directions are support-local on }E.
+\]
+This implication is false.  The projection-finite sector is local on
+\(\operatorname{Ran}(E)\).  Positive elliptic degree is global over
+\(E\), and ordinary support-local factorization does not see it.
+
+\subsection{Exact obstruction}
+
+\begin{theorem}[Elliptic-degree locality obstruction]
+Let \(p_E:K3\times E\to E\) be projection.  Let
+\(C\subset K3\times E\) be a one-dimensional subscheme whose curve class
+has positive elliptic degree:
+\[
+(p_E)_*[C]=b[E],\qquad b>0.
+\]
+Then \(p_E(C)=E\).  Hence \(C\) is not supported over a finite subset of
+\(E\), and it is not contained in \(p_E^{-1}(U)\) for any proper open
+\(U\subsetneq E\).
+\end{theorem}
+
+\begin{proof}
+If \(p_E(C)\) were zero-dimensional, the pushforward of the one-cycle
+\([C]\) to the curve \(E\) would be zero.  This contradicts
+\((p_E)_*[C]=b[E]\) with \(b>0\).  Thus \(p_E(C)\) is a one-dimensional
+closed subset of the irreducible curve \(E\).  Therefore \(p_E(C)=E\).
+\end{proof}
+
+\subsection{Sector distinction}
+
+A sector is projection-finite over \(E\) when every object \(A\) in it
+satisfies
+\[
+p_E(\operatorname{Supp}A)\subset F
+\]
+for some finite \(F\subset E\).  This is the sector where disjoint-open
+factorization on \(\operatorname{Ran}(E)\) has its usual support
+meaning.
+
+A sector is wrapped or global over \(E\) when the one-dimensional part of
+the charge has positive elliptic degree.  These objects dominate \(E\).
+They cannot be separated by disjoint opens of \(E\), so the usual Ran
+diagonal calculus does not by itself produce their collision theory.
+
+The \(s\)-variable of the Igusa product is the OP elliptic-degree
+direction after the variable conversion in the manuscript.  Therefore a
+naive projection-local Hall/chiral object misses the positive
+\(s\)-direction unless an additional global mechanism is supplied.
+
+\subsection{Repair alternatives}
+
+There are two honest repair routes.
+
+\begin{enumerate}
+\item \textbf{Projection-finite local factorization plus global
+Fock/Hecke modes.}  Construct the local Hall/chiral factorization object
+only for the projection-finite sector.  Then construct a separate global
+Fock/Hecke mechanism carrying positive elliptic degree, and prove its
+compatibility with protected integration, the \(s\)-variable, and the
+primitive denominator comparison.
+
+\item \textbf{Hybrid local/global wrapped factorization.}  Enlarge the
+factorization object.  Local vertical insertions live on
+\(\operatorname{Ran}(E)\); positive elliptic-degree sectors are global
+wrapped legs.  The missing theorem is the extension-stack construction
+with local and global legs, together with Thom--Sebastiani orientation
+transport, associativity over two-step flags, and compatibility with
+protected integration.
+\end{enumerate}
+
+Both routes preserve the Borcherds determinant.  The obstruction is not a
+defect in
+\[
+\Delta_5=\operatorname{Borch}_{\theta}(\phi_{0,1})
+\]
+or in the Gritsenko--Nikulin denominator identity.  It is a realization
+obstruction for a compact \(E_3\)/Hall/chiral source.
+
+\subsection{Main-text integration}
+
+The manuscript now names the obstruction in Section
+\ref{sec:physical-question}.  The same obstruction is stated formally in
+the holomorphic \(E_3\)-to-chiral discussion before the compact Igusa
+datum:
+\[
+\text{projection-finite Ran locality}
+\quad\hbox{versus}\quad
+\text{wrapped/global elliptic-degree sectors}.
+\]
+
+\subsection{Files changed}
+
+\begin{itemize}
+\item \verb|main.tex|: Section \ref{sec:physical-question}; the
+holomorphic \(E_3\)/factorization discussion before
+Definition~\ref{def:compact-igusa-realization-datum}.
+\item \verb|agent_material/13_ranE_obstruction_attack_repair.tex|.
+\item \verb|out/main.pdf|: rebuilt by \verb|make|.
+\end{itemize}
+
+\subsection{Checks run}
+
+\begin{itemize}
+\item Read \verb|CLAUDE.md|, \verb|AGENTS.md|,
+\verb|/Users/raeez/ecosystem/INVARIANTS.md|, \verb|main.tex|,
+\verb|proj.bib|, \verb|agent_material/12_compact_hall_ranE_attack_heal.tex|,
+and \verb|agent_material/12_synthesis_architecture_attack_heal.tex|.
+\item Read the harness self-reflection section in
+\verb|/Users/raeez/ecosystem/AGENTS-HARNESS.md|.
+\item Grepped \verb|main.tex| and \verb|agent_material| for
+\(\operatorname{Ran}(E)\), elliptic degree, support locality, Fock,
+Hecke, and compact realization anchors.
+\item Ran \verb|git diff --check|; no whitespace errors were reported.
+\item Ran \verb|make|; it completed successfully and wrote
+\verb|out/main.pdf|.  The TeX log still contains layout warnings
+\(overfull/underfull boxes and a hyperref PDF-string warning\), but no
+fatal error.
+\end{itemize}
+
+\subsection{Remaining mathematical obligations}
+
+\begin{enumerate}
+\item Prove a projection-finite Hall/chiral locality theorem with the
+chosen compact heart, stability condition, HN completion, critical atlas,
+and orientation.
+\item If the first repair route is chosen, construct the global
+Fock/Hecke elliptic-degree modes and prove compatibility with protected
+integration and the Borcherds product.
+\item If the hybrid route is chosen, construct extension stacks with
+local Ran legs and wrapped \(E\)-global legs, then prove associativity,
+orientation compatibility, and continuity in the sectorial completion.
+\item Prove that either repaired source has protected primitive
+superdimensions \(f(nm,l)\) and primitive bracket
+\(\mathfrak g_{\Delta_5}\), rather than importing these from the
+denominator identity.
+\end{enumerate}
