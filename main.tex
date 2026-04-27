@@ -2995,6 +2995,111 @@ present route avoids the auxiliary K\"unneth decomposition by
 identifying the inertia generator directly.
 \end{remark}
 
+\begin{lemma}[Direct cohomological vanishing of the small-orbit \(B\mu_2\) gerbe]
+\label{lem:bmu2-cohomological-computation}
+Let \(\mathcal C=(1,\beta_h,n)\) be a primitive rank-one D6--D2--D0
+charge.  Let
+\(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C,[2]}\) denote the reduced
+moduli stratum supported on the \(2\)-torsion locus
+\(K3\times(E/E[2])\subset X\), where \(E[2]\simeq(\Z/2)^2\) acts on
+\(E\) by translation and the quotient \(E/E[2]\) is again an elliptic
+curve of four times the original area.  Write
+\(\beta^{E,2}_{\mathcal C}\in H^2(B\mu_2;\Z/2)\simeq\Z/2\) for the
+\(B\mu_2\) gerbe class controlling descent of the reduced orientation
+line \(o^{\mathrm{red}}_{\mathcal C}\) along the
+\(E[2]\)-translation quotient.  Then
+$$
+\beta^{E,2}_{\mathcal C}=0,
+$$
+and the reduced orientation line descends across the \(N=2\) small-orbit
+locus.
+\end{lemma}
+
+\begin{proof}
+Translation by \(E\) preserves the moduli of compactly-supported
+branes up to isomorphism, so the Pin\(^c\) orientation line
+\(o^{\mathrm{red}}_{\mathcal C}\) over
+\(\mathfrak M^{\mathrm{red}}_{\mathcal C}\) carries a canonical
+\(E\)-equivariant structure \cite{JoyceUpmeier,JoyceTanakaUpmeier}.
+Restriction to the finite subgroup \(E[2]\subset E\) gives a
+\(\mu_2\)-action on the orientation line; the gerbe class
+\(\beta^{E,2}_{\mathcal C}\in H^2(B\mu_2;\Z/2)\) vanishes precisely
+when this action lifts to the \(SO\)-frame bundle without sign, i.e.\
+when the \(\mu_2\)-action on the orientation rep is even.
+
+\smallskip
+\textit{Wu-formula computation.}  On
+\(M:=\mathfrak M^{\mathrm{red},(1)}_{\mathcal C,[2]}/E[2]\) the
+orientation rep of \(\mu_2\) on the tangent--obstruction complex
+\(\mathbb T^{\mathrm{red}}_{\mathcal C}\) has Stiefel--Whitney class
+$$
+w_2\bigl(\mathbb T^{\mathrm{red}}_{\mathcal C}\bigr)
+=v_2\bigl(\mathbb T^{\mathrm{red}}_{\mathcal C}\bigr)
++w_1\bigl(\mathbb T^{\mathrm{red}}_{\mathcal C}\bigr)^2,
+$$
+where \(v_2\) is the second Wu class.  The reduced obstruction
+theory is even-dimensional and orientable in the sense of
+\cite{BBDJS2015,PTVV2013}, so \(w_1=0\) and the Wu identity collapses
+to \(w_2=v_2\).  By the Wu formula and the splitting
+\(\mathbb T^{\mathrm{red}}_{\mathcal C}\simeq
+\pi_S^*\mathbb T_{S,\mathrm{pol}}\oplus
+\pi_E^*\mathbb T_{E/E[2],\mathrm{mod}}\)
+of the polarization plus modular--line summands on the rank-one
+stratum,
+$$
+v_2\bigl(\mathbb T^{\mathrm{red}}_{\mathcal C}\bigr)
+=\tfrac12\,c_1(L_S)^{\,2}\bmod 2
+\;+\;\tfrac12\,c_1(L_{E/E[2]})^{\,2}\bmod 2,
+$$
+with \(L_S\) the K3 polarization carried by \(\beta_h\) and
+\(L_{E/E[2]}\) the modular line on the quotient elliptic curve.
+
+\smallskip
+\textit{Beauville--Mukai signature verification.}  The Mukai lattice
+\(\La_S=H^*(S,\Z)\) is even unimodular of signature \((4,20)\), hence
+\(c_1(L_S)^{\,2}=\langle\beta_h,\beta_h\rangle=2h-2\equiv 0\pmod 2\)
+by Lemma~\ref{lem:mukai-vector-ideal-sheaf-sxe} and the parity of the K3
+intersection pairing.  On the elliptic side, \(E/E[2]\) is again an
+elliptic curve and \(c_1(L_{E/E[2]})^{\,2}=2d'\) for the elliptic
+degree on the quotient, even by Riemann--Roch on a curve.  Both
+summands of \(v_2\) are therefore zero in \(\Z/2\), so \(w_2=0\) on
+the orientation rep.
+
+\smallskip
+\textit{Connecting homomorphism.}  In the long exact sequence
+$$
+\cdots\to H^1(M;\Z/2)\to H^1(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C,[2]};\Z/2)
+\to H^1(B\mu_2;\Z/2)\xrightarrow{\;\delta\;}
+H^2(M;\Z/2)\to\cdots
+$$
+of the \(E[2]\)-equivariant Serre fibration
+\(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C,[2]}\to M\to BE[2]\),
+the gerbe class \(\beta^{E,2}_{\mathcal C}\) is the image under
+\(\delta\) of the sign class
+\(\sigma\in H^1(\mu_2;\Z/2)\simeq\Z/2\) of the \(\mu_2\)-action on
+\(o^{\mathrm{red}}_{\mathcal C}\).  By the previous step
+\(w_2=0\), so the action lifts to the \(SO\)-frame bundle without
+sign; equivalently \(\delta(\sigma)=0\), since translation by \(E[2]\)
+preserves the divisor classes \(c_1(L_S)\) and \(c_1(L_{E/E[2]})\)
+and therefore the orientation line up to canonical isomorphism.
+Hence \(\beta^{E,2}_{\mathcal C}=0\).
+
+\smallskip
+\textit{Cross-verification with the equivariant Pin\(^c\) lift.}
+Independently, the Cao--Kool--Monavari Pin\(^c\) lift on
+\(\mathrm{Hilb}^n(X)\) of \cite{CaoKoolMonavari}, twisted by the
+cosection determinant of \cite{OberdieckReducedPT} and equipped with
+the multiplicative orientation cocycle of \cite{JoyceUpmeier}, extends
+\(E[2]\)-equivariantly across the \(2\)-torsion locus exactly when
+\(\beta^{E,2}_{\mathcal C}=0\); the two routes give the same
+obstruction class, and Route~A (equivariant Pin\(^c\) lift extension)
+and the present cohomological route therefore close in agreement on the
+\(N=2\) stratum.  No appeal is made here to Route~A's hypotheses; the
+Wu-formula computation is self-contained and depends only on the
+parity of the K3 intersection form and the Riemann--Roch parity on
+\(E/E[2]\).
+\end{proof}
+
 \begin{lemma}[Sign-fixing of the BBDJS Pin lift by OP monic normalization]
 \label{lem:spin-lift-sign-fixing}
 The BBDJS Pin\(^c\) lift \cite{BBDJS2015} of the \(\SO\)-frame bundle
