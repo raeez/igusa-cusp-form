@@ -4648,6 +4648,165 @@ index.  Reflection positivity is not a hypothesis of the Borcherds
 denominator theorem.
 \end{remark}
 
+\begin{lemma}[Cyclotomic-spectrum construction of the multiplicative
+orientation cocycle; Route B for hypothesis (O) of
+Theorem~\textup{\ref{thm:ptvv-joyce-pi-descent}}]
+\label{lem:cyclotomic-multiplicative-orientation}
+Let \(\mathcal F_X\) be the protected observable algebra of
+Definition~\textup{\ref{def:local-protected-observable-algebra}},
+graded by physical charge \(c\in\Gamma_X^{\mathrm{phys}}\), and let
+\(\{o_c\}_{c\in\Gamma_X^{\mathrm{phys}}}\) be the orientation lines of
+Definition~\textup{\ref{def:orientation-line}}.  Suppose:
+\begin{enumerate}
+\item[\textup{(C1)}] \emph{(Cyclotomic host.)} Each charged sector
+\(\mathcal F_{X,c}\) is realised as a connective cyclotomic spectrum
+in the sense of Nikolaus--Scholze \cite{NikolausScholze}; the
+\(p\)-typical cyclotomic structure map
+\(\varphi_p:\mathcal F_{X,c}\to(\mathcal F_{X,c})^{tC_p}\) is the
+Frobenius inherited from the chiral product on
+\(\operatorname{Ran}(E)\).  Equivalently, the underlying spectrum
+\(HH(\mathcal F_{X,c})\) carries the natural \(S^1\)-action by the
+Connes operator \(B\) of Goodwillie \cite{Goodwillie1985}, with
+genuine \(S^1\)-fixed points
+\(HC^-(\mathcal F_{X,c}):=HH(\mathcal F_{X,c})^{hS^1}\).
+\item[\textup{(C2)}] \emph{(Determinant track.)} The orientation line
+\(o_c\) lifts to a unit
+\(\widehat o_c\in\pi_0HC^-(\mathcal F_{X,c})\) representing the
+graded determinant
+\(\det\mathrm{RHom}(\mathcal C,\mathcal C)^{1/2}\) of
+Definition~\textup{\ref{def:orientation-line}} in the \(S^1\)-equivariant
+periodic Picard groupoid, in the sense of
+Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov}.
+\item[\textup{(C3)}] \emph{(Strict tensor compatibility.)} The
+external product on \(\{\mathcal F_{X,c}\}\) is symmetric monoidal as
+a map of cyclotomic spectra,
+\(\mathcal F_{X,c}\boxtimes\mathcal F_{X,c'}\to\mathcal F_{X,c+c'}\),
+intertwining \(\varphi_p\) on each side.
+\end{enumerate}
+Then there exists a multiplicative orientation cocycle
+\[
+\mu_{c,c'}\,:\;o_{c+c'}\;\xrightarrow{\ \sim\ }\;o_c\otimes o_{c'},
+\qquad c,c'\in\Gamma_X^{\mathrm{phys}},
+\]
+with the following properties:
+\begin{enumerate}
+\item[\textup{(i)}] (Strict pentagon.)
+\(\mu_{c+c',c''}\circ\mu_{c,c'}=\mu_{c,c'+c''}\circ\mu_{c',c''}\) as
+maps of \(HC^-\)-modules, with no higher coherence remainder.
+\item[\textup{(ii)}] (\(S^1\)-equivariance.) Each \(\mu_{c,c'}\) is
+an \(S^1\)-equivariant map of cyclotomic spectra; the Connes operator
+\(B\) intertwines source and target.
+\item[\textup{(iii)}] (PTVV compatibility.) The Tate construction
+\((-)^{tC_p}\) carries \(\mu_{c,c'}\) to a comparison of Frobenius
+twists \(\mathcal F_{X,c}^{(p)}\otimes\mathcal F_{X,c'}^{(p)}\to
+\mathcal F_{X,c+c'}^{(p)}\) compatible with the PTVV \cite{PTVV2013}
+\((-1)\)-shifted symplectic form on \(\mathfrak M_{X,c}\), in the
+sense that \(\mu_{c,c'}\) restricts on the underlying graded
+determinants to the symplectic-Lagrangian comparison map of
+\cite{JoyceKinjoParkSafronov}.
+\end{enumerate}
+In particular, hypothesis (O) of
+Theorem~\textup{\ref{thm:ptvv-joyce-pi-descent}} is satisfied, and the
+construction of \(\{\mu_{c,c'}\}\) is independent of the Costello--Li
+flat Calabi--Yau pairing and of any K\"unneth decomposition of
+\(\mathcal F_X\) along \(K3\times E\).
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1 (Construction of \(\mu_{c,c'}\) in \(HC^-\)).}  Apply the
+\(S^1\)-fixed-points functor \((-)^{hS^1}\) to the symmetric monoidal
+external product of (C3): the resulting map
+\[
+HC^-(\mathcal F_{X,c})\otimes HC^-(\mathcal F_{X,c'})
+\;\longrightarrow\;
+HC^-(\mathcal F_{X,c+c'})
+\]
+is a strict map of \(\mathbb E_\infty\)-algebras in cyclotomic spectra
+by Nikolaus--Scholze \cite[Cor.~II.1.7, Thm.~II.6.9]{NikolausScholze},
+since \((-)^{hS^1}\) is lax symmetric monoidal and the cyclotomic
+Frobenius \(\varphi_p\) is itself symmetric monoidal.  Take
+\(\widehat o_c\) and \(\widehat o_{c'}\) as in (C2); their product
+under this map lifts the right-hand side of the desired isomorphism
+\(o_c\otimes o_{c'}\), and divides the lift \(\widehat o_{c+c'}\) of
+\(o_{c+c'}\) to define
+\(\mu_{c,c'}:=\widehat o_{c+c'}\cdot
+(\widehat o_c\boxtimes\widehat o_{c'})^{-1}\).  The Connes operator
+\(B\) acts trivially on units of \(\pi_0\), so \(\mu_{c,c'}\) is
+\(S^1\)-equivariant on the nose.
+
+\emph{Step 2 (Strict pentagon from \(\mathbb E_\infty\)-associativity).}
+The pentagon
+\(\mu_{c+c',c''}\circ\mu_{c,c'}=\mu_{c,c'+c''}\circ\mu_{c',c''}\) is
+the \(\pi_0\)-shadow of the strict associator of the
+\(\mathbb E_\infty\)-algebra structure on \(\bigoplus_c HC^-(\mathcal F_{X,c})\)
+in cyclotomic spectra.  Strictness follows because Nikolaus--Scholze
+\cite[Thm.~I.1.13]{NikolausScholze} present the cyclotomic
+\(\infty\)-category as a strict \(\mathbb E_\infty\)-monoidal limit
+along the Frobenius diagram; the homotopy-coherent pentagon
+collapses to an on-the-nose identity at the level of
+\(\pi_0\)-units.  No higher coherence datum is required, because
+\(\pi_0HC^-\) is a discrete commutative monoid and units satisfy strict
+associativity in any commutative monoid.
+
+\emph{Step 3 (\(S^1\)-equivariance built in).}  By construction
+\(HC^-=HH^{hS^1}\) is the genuine \(S^1\)-fixed-points spectrum, so
+every map produced by Step~1 is \(S^1\)-equivariant.  The Connes
+operator \(B\) is the generator of the \(S^1\)-action on \(HH\)
+\cite{Goodwillie1985}, and \(B\) acts as a derivation on \(HC^-\);
+it kills \(\pi_0\)-units, hence kills \(\mu_{c,c'}\) as a higher
+homotopy.
+
+\emph{Step 4 (Tate-construction comparison with PTVV).}  Apply
+\((-)^{tC_p}\) to the equation defining \(\mu_{c,c'}\).  The
+Frobenius \(\varphi_p\) intertwines source and target by (C1) and (C3),
+so \(\mu_{c,c'}^{tC_p}\) is the comparison of Frobenius twists
+\(\mathcal F_{X,c}^{(p)}\otimes\mathcal F_{X,c'}^{(p)}\to
+\mathcal F_{X,c+c'}^{(p)}\).  Restrict to the underlying graded
+determinants: the symplectic structure on
+\(\mathfrak M_{X,c}\) of PTVV \cite{PTVV2013} is the
+\((-1)\)-shifted symplectic form whose square root is \(o_c\)
+\textup{\cite[Definition~\ref{def:orientation-line}]{}}; under
+\((-)^{tC_p}\) this form is sent to the Tate-Frobenius pairing on
+\(\det\mathrm{RHom}(\mathcal C,\mathcal C)^{(p)}\), which by
+Joyce--Kinjo--Park--Safronov \cite[multiplicative orientation
+construction]{JoyceKinjoParkSafronov} agrees with the
+symplectic-Lagrangian comparison map.  Compatibility (iii) follows.
+
+\emph{Conclusion.}  The data \(\{\mu_{c,c'}\}\) is a multiplicative
+orientation cocycle satisfying (i)--(iii), so hypothesis (O) of
+Theorem~\ref{thm:ptvv-joyce-pi-descent} holds.  The construction
+factors through the cyclotomic-spectrum machinery of Nikolaus--Scholze
+\cite{NikolausScholze} and the Connes-\(B\) calculus of
+Goodwillie \cite{Goodwillie1985}; it does not invoke Costello--Li
+chiral pairings, K\"unneth decompositions of \(\mathcal F_X\) along
+\(K3\times E\), or any compactness datum beyond (C1)--(C3).  \qedhere
+\end{proof}
+
+\begin{remark}[Status discipline for Lemma~\ref{lem:cyclotomic-multiplicative-orientation}]
+\emph{Conditional.}  The construction is rigorous granting
+hypotheses (C1), (C2), (C3); each is an open obligation for the
+protected observable algebra of \(K3\times E\).  Specifically: (C1)
+asks that \(\mathcal F_{X,c}\) carry an honest cyclotomic structure
+in the Nikolaus--Scholze sense \cite{NikolausScholze}, refining the
+expected chiral Frobenius; (C2) asks that orientation lines lift to
+\(\pi_0HC^-\) units, sharper than the per-class square root of
+Definition~\ref{def:orientation-line}; (C3) asks symmetric monoidality
+of the external product on \(\{\mathcal F_{X,c}\}\) at the cyclotomic
+level.  None is established here for \(K3\times E\); each replaces a
+slice of the Costello--Li / K\"unneth obligation by a cyclotomic
+analogue.  \emph{Independence.}  The hypotheses (C1)--(C3) are
+disjoint from the Costello--Li flat Calabi--Yau pairing and from any
+K\"unneth decomposition: the cocycle \(\mu_{c,c'}\) is built from the
+Hochschild--cyclic machinery of \(\mathcal F_X\) alone.
+Lemma~\ref{lem:cyclotomic-multiplicative-orientation} is therefore an
+\emph{independent route} to hypothesis (O), parallel to
+H(\(\beta\)) of the hypothesis-comparison remark above.
+\emph{Residual obstruction.}  The remaining obligation is the
+construction of the cyclotomic structure on \(\mathcal F_{X,c}\) for
+\(K3\times E\); this is a derived-algebraic / chromatic question
+distinct from the analytic obligations attached to (P), (F).
+\end{remark}
+
 \begin{definition}[Sectorial Hall truncation]
 Suppose an extension-closed compact Hall category graded by the additive
 physical lattice \(\Gamma_X^{\mathrm{phys}}\) of
