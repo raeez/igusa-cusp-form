@@ -1959,6 +1959,29 @@ The second would be the chiral Koszul theorem.  Both require microscopic
 data beyond the scalar square and beyond the formal current envelope.
 \end{definition}
 
+\begin{openproblem}[Compact holomorphic \(E_3\) source]
+\label{op:compact-e3-source}
+Construct the Stage-1 object \(\mathcal A^{E_3}_X\) for
+\(X=K3\times E\).  A candidate compact holomorphic-Chern--Simons/BV
+construction must prove, before any comparison with \(\Delta_5\), the
+following finite-chain data:
+\begin{enumerate}
+\item descent for local observables on \(X\) and a quantum master
+equation after compact charge completion;
+\item anomaly cancellation and a finite-first sectorial completion
+compatible with Harder--Narasimhan quotients;
+\item the chain-level \(K3\)-to-\(E\) specialization
+\(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\);
+\item the projection-finite or hybrid wrapped repair for positive
+elliptic degree;
+\item a strong orientation, protected integration, and primitive
+recognition certificate.
+\end{enumerate}
+Existing BV, CoHA, and chiral-algebra formalisms give the language for
+these requirements.  They do not, by themselves, construct this compact
+source for \(K3\times E\).
+\end{openproblem}
+
 \begin{remark}[Where the quantum comparison would live]
 Assume the Stage-1 algebra \(\mathcal A^{E_3}_X\), the specialization
 \(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\), a conilpotent coalgebra
@@ -2000,6 +2023,39 @@ $$
 These are not procedures for reconstructing the holomorphic
 \(E_3\)-source from the denominator alone.
 \end{remark}
+
+\begin{proposition}[Target-internal bar--cobar inversion]
+\label{prop:target-internal-bar-cobar-inversion}
+The formal target \(\mathsf{Den}_{\Delta_5,E}\) has its own
+bar--cobar inversion:
+\[
+\Omega_E^{\mathrm{ch}}\bar B_E^{\mathrm{ch}}
+(\mathsf{Den}_{\Delta_5,E})
+\longrightarrow
+\mathsf{Den}_{\Delta_5,E}.
+\]
+This is an internal reconstruction of the already defined current
+envelope.  It is not the compact Koszul comparison
+\[
+\Omega_E^{\mathrm{ch}}C_X
+\stackrel{?}{\simeq}
+\mathsf{Den}_{\Delta_5,E}
+\]
+unless \(C_X\) has first been constructed from the compact
+\(K3\times E\) factorization object and identified with
+\(\bar B_E^{\mathrm{ch}}(\mathcal F_X)\).  The missing datum is the
+source coalgebra and the comparison map, not the target-side inversion.
+\end{proposition}
+
+\begin{proof}
+Beilinson--Drinfeld bar--cobar formalism is an adjunction on chiral
+algebras and conilpotent chiral coalgebras on the curve.  Applying it to
+the known target \(\mathsf{Den}_{\Delta_5,E}\) produces a tautological
+counit map back to that target.  No moduli stack of compact objects,
+collision coproduct, orientation system, or protected integration map
+enters this construction.  Those are precisely the extra data in
+Definition~\ref{def:compact-igusa-realization-datum}.
+\end{proof}
 
 \begin{remark}[Locality]
 In a compact realization, the required local object would be a
@@ -2088,6 +2144,26 @@ protected integration.
 \end{enumerate}
 No theorem in this paper supplies either repair.
 \end{remark}
+
+\begin{openproblem}[Hybrid wrapped factorization]
+\label{op:hybrid-wrapped-factorization}
+Construct the second repair path in the preceding remark.  The datum
+should consist of projection-finite local moduli
+\(\mathcal M^{\mathrm{loc}}\), wrapped elliptic-degree moduli
+\(\mathcal M^{\mathrm{wr}}\), and mixed extension correspondences
+\[
+\mathfrak E^{\mathrm{loc}},\qquad
+\mathfrak E^{\mathrm{wr}},\qquad
+\mathfrak E^{\mathrm{hyb}}
+\]
+which remember relative position in \(E\) before the reduced
+\(E\)-quotient is taken.  The correspondences must be associative over
+two-step flags, carry Thom--Sebastiani-compatible orientations, admit
+protected integration after completion, and recover the \(s\)-direction
+of the Igusa product in the decategorified trace.  Ordinary disjoint-open
+factorization on \(\operatorname{Ran}(E)\) is only the
+projection-finite part of such a theory.
+\end{openproblem}
 
 \begin{remark}[Unitarity]
 The present paper uses the protected index, the virtual determinant, and
@@ -3072,6 +3148,11 @@ orientation/reflection character.
 The product row, denominator row, dyon square, reduced scalar host, and
 compact Hall/chiral host are separate structures.  None of the five
 entries implies another unless a cited theorem constructs the implication.
+In particular, matching a weight, a square root, or a comparison symbol
+does not fill a certificate.  A row-map theorem must name the host,
+charge lattice, effective chamber, modular group or cover, product
+lattice, orientation character, one-particle index, scalar identity when
+claimed, and primitive Hall/chiral comparison.
 \end{definition}
 
 \begin{theorem}[Clery--Gritsenko]
