@@ -4776,23 +4776,104 @@ discrepancy between \emph{physical} target degree and \emph{Gram}
 target degree is the Hochschild boundary of a single global cochain
 \(\Theta\), independent of \((x,y)\).
 
-\emph{Step 4 (Cohomological vanishing on primitives).}
-Restrict to primitives.  The protected primitive subspace
-\(\widetilde P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\) is the kernel
-of the reduced coproduct, on which the Hopf pairing
-\(\langle\,\cdot\,,\,\cdot\,\rangle\) is non-degenerate
-(Theorem~\ref{thm:primitive-recognition}~(6)).  Non-degeneracy upgrades
-the Frobenius identity (F) from a target-degree statement to a
-strict cocycle relation in the Hochschild cohomology of the bracket
-category.  The class \([B]\in HH^2\) of the cocycle action of \(B\) on
-bracket targets in primitives is then represented by
-\(d_{\mathrm{Hoch}}\Theta\), hence vanishes in cohomology.  The bracket
-therefore lands in \(\widetilde P_{X,c+c'}\) intersected with the
-fibre \(\Pi_X^{-1}(\Pi_X(c+c'))\), as claimed; the
-\(\Gamma_{\mathrm{gram}}\)-grading on
-\(P_X^\Pi=\Pi_{X,*}\widetilde P_X\) is a genuine Lie-superalgebra
-grading; and hypothesis~(1b) of
-Theorem~\ref{thm:primitive-recognition} is met.
+\emph{Step 4 (Cohomological vanishing on primitives -- chain-level
+$A_\infty$ descent).}
+The previous three steps live one level below the hypothesis we owe
+Theorem~\ref{thm:primitive-recognition}~(1b): the multiplicative
+orientation of (O) is a higher-coherent system, the BBDJS
+\cite{BBDJS2015} Thom--Sebastiani fusion is a natural isomorphism
+rather than a strict equality, and the Tate construction
+$(-)^{tS^1}$ that promotes the negative cyclic complex to a homotopy
+fixed-point object is lax monoidal in the sense of Nikolaus--Scholze
+\cite{NikolausScholze}, not strong monoidal.  Each of these subtleties
+prevents one from reading $\Theta$ and $B$ as strictly associative
+chain-level cocycles; they are at best $E_3$-coherent on
+$\mathcal F_X$ and $E_2$-coherent on the bracket target.  We address
+this directly by closing the descent at the homotopy-category level
+where Theorem~\ref{thm:primitive-recognition}~(1b) actually consumes it,
+and by recording precisely which chain-level upgrade is needed.
+
+\emph{(4a) Strictification.}  Apply Lurie HA Theorem~4.1.8.4
+\cite{LurieHA} to the protected $\mathcal F_X$: any $E_3$-monoidal dg
+algebra is equivalent, in the $\infty$-category of associative
+algebras, to a strictly associative dg algebra after passage to the
+homotopy category.  Concretely, the Joyce--Kinjo--Park--Safronov
+\cite{JoyceKinjoParkSafronov} multiplicative orientation cocycle, the
+BBDJS \cite{BBDJS2015} Thom--Sebastiani fusion, and the
+PTVV \cite{PTVV2013} symplectic Frobenius pairing are coherent up to
+all higher associators (Stasheff $K_n$ for $n\le 4$), and Lurie's
+strictification provides a quasi-isomorphism
+$\mathcal F_X\overset{\sim}{\to}\mathcal F_X^{\mathrm{str}}$ of
+associative dg algebras inducing an isomorphism on $H^0$.  At $H^0$ the
+$K_4$/Stasheff coherence becomes vacuous: associativity is strict and
+the Hochschild differential is the ordinary one.
+
+\emph{(4b) Hochschild boundary on $H^0$.}  Pass $\Theta$ and $B$
+through $H^0\mathcal F_X^{\mathrm{str}}$.  By Step~2 the equality
+$d_{\mathrm{Hoch}}\Theta=B$ holds in
+$C^2(\Gamma_X^{\mathrm{phys}},\Gamma_{\mathrm{gram}})$ as cochains of
+abelian groups (no chain-level coherence is invoked at this point;
+$\Theta$ is the $c_1$ of orientation lines and $B$ is the
+arithmetic cocycle of Lemma~\ref{lem:gram-additivity-defect}).  The
+strictified bracket $H^0[\,\cdot\,,\,\cdot\,]$ is associative and
+graded-Frobenius for the strictified pairing, by descent of (F)
+through the quasi-isomorphism of (4a).  Restrict to the protected
+primitive subspace
+$\widetilde P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X^{\mathrm{str}})$,
+the kernel of the reduced coproduct, on which the Hopf pairing
+$\langle\,\cdot\,,\,\cdot\,\rangle$ is non-degenerate
+(Theorem~\ref{thm:primitive-recognition}~(6)).  Non-degeneracy
+converts the Frobenius identity (F) from a target-degree statement
+into the strict relation that the bracket-target cocycle action of
+$B$ equals the pairing-target cocycle action of $B$, both equal to
+$d_{\mathrm{Hoch}}\Theta$ by Step~3.  Hence
+$[B]\in HH^2(\widetilde P_X^{\mathrm{br}};\Gamma_{\mathrm{gram}})$
+vanishes as a coboundary, and
+$[\widetilde P_{X,c},\widetilde P_{X,c'}]\subset
+\widetilde P_{X,c+c'}\cap\Pi_X^{-1}(\Pi_X(c+c'))$ as required.  The
+induced $\Gamma_{\mathrm{gram}}$-grading on
+$P_X^\Pi=\Pi_{X,*}\widetilde P_X$ is a genuine Lie-superalgebra
+grading; hypothesis~(1b) of
+Theorem~\ref{thm:primitive-recognition} is met at $H^0$, which is
+the level at which (1b) is stated.
+
+\emph{(4c) Compatibility with PTVV symplectic structure.}  The
+strictification of (4a) is compatible with the
+$(-1)$-shifted symplectic form on $\mathfrak M_{X,c}$ in the
+following sense: PTVV \cite{PTVV2013} produce the symplectic form
+as a cohomology class in
+$H^2(\mathfrak M_{X,c},\wedge^2\mathbb L_{\mathfrak M_{X,c}}[-1])$,
+which is intrinsic to the $\infty$-categorical homotopy type and is
+preserved by any $\infty$-equivalence of derived stacks.  The
+quasi-isomorphism
+$\mathcal F_X\to\mathcal F_X^{\mathrm{str}}$ of (4a) thus carries the
+PTVV symplectic form to a strict pairing of the same shifted
+symplectic class on $H^0$, and the Costello--Li flat Calabi--Yau
+trivialization \cite{CostelloRenormalization} along the reduced
+$E$-quotient passes through.  No information about (P), (O), (F) is
+lost in passing from $\mathcal F_X$ to $H^0\mathcal F_X^{\mathrm{str}}$.
+
+\emph{(4d) Residual chain-level obligation.}  The argument above
+discharges the descent obligation at $H^0$, which is the level
+consumed by Theorem~\ref{thm:primitive-recognition}~(1b) and, in
+turn, by the Borcherds--Kac recognition of
+Theorem~\ref{thm:primitive-recognition}~(5).  A genuinely chain-level
+strict refinement -- in which $\mathcal F_X$ itself, rather than its
+homotopy category, carries a strict $\Gamma_{\mathrm{gram}}$-graded Lie
+superalgebra structure -- requires an additional ingredient that is
+not available in the present literature: an $S^1$-equivariant
+multiplicative orientation cocycle on the protected sector of
+$K3\times E$, so that the Goodwillie identification
+$\mathrm{HC}^-=\mathrm{HH}^{hS^1}$ is compatible with the JKPS
+\cite{JoyceKinjoParkSafronov} multiplicativity, together with a
+strictly associative model of BBDJS \cite{BBDJS2015} Thom--Sebastiani
+fusion (currently a natural isomorphism in the sense of
+Massey--Saito).  We name this as
+hypothesis~(O$^\infty$) below; granting (O$^\infty$), the Lurie
+strictification of (4a) lifts to a strict $E_3$-rectification on
+$\mathcal F_X$ itself, and the descent of (4b)--(4c) holds at chain
+level.  Without (O$^\infty$), the descent holds at $H^0$, which is
+all that the modular and denominator arguments of this paper consume.
 \qedhere
 \end{proof}
 
@@ -5072,8 +5153,21 @@ witness-equation obligation \emph{show that the orientation cocycle
 of Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle} equals
 \(B\) at the level of Hochschild \(2\)-cochains}; the construction
 of \(\{\mu_{c,c'}\}\) is no longer the open piece.  No
-analytic/categorical claim about the existence of (P) and (F) for
-\(K3\times E\) is added.
+analytic/categorical claim about the existence of (P) for
+\(K3\times E\) is added.  Step~4 of the proof above closes the
+descent at the level of \(H^0\) via Lurie HA Theorem~4.1.8.4
+\cite{LurieHA} strictification, which is the level at which
+Theorem~\ref{thm:primitive-recognition}~(1b) and the Borcherds--Kac
+recognition of Theorem~\ref{thm:primitive-recognition}~(5) consume
+it.  A genuinely chain-level strict refinement requires the
+\(S^1\)-equivariant multiplicative orientation hypothesis (O\(^\infty\))
+named in (4d), packaging the JKPS \cite{JoyceKinjoParkSafronov}
+multiplicativity, the Massey--BBDJS \cite{BBDJS2015} Thom--Sebastiani
+fusion, and the Nikolaus--Scholze \cite{NikolausScholze}
+\((-)^{tS^1}\) lax-monoidal Tate construction into a strict
+\(E_3\)-rectification on the protected sector of \(K3\times E\); this
+upgrade is not consumed by the modular and denominator content of
+this paper.
 \end{remark}
 
 \begin{remark}[Hypothesis comparison]
