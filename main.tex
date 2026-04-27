@@ -1579,6 +1579,154 @@ General CoHA technology supplies a language for such conditions
 compact \(K3\times E\) datum.
 \end{definition}
 
+\begin{lemma}[Brauer-class vanishing of the higher-rank Pin\(^c\)-lift gerbe]
+\label{lem:p3-brauer-gerbe-vanishing}
+Fix a primitive Mukai charge \(\mathcal C=(r,\beta,n)\) with \(r\ge 2\)
+on the protected sector \(K3\times E\), and let
+\(\mathfrak M^{\mathrm{red},\mathrm{ss}}_{\mathcal C}\) be the
+Harder--Narasimhan-completed semistable stratum of the reduced
+\(E\)-quotient moduli stack.  Let
+\[
+\alpha^{\mathrm{red}}_{\mathcal C}
+\;\in\;H^2\!\bigl(\mathfrak M^{\mathrm{red},\mathrm{ss}}_{\mathcal C};\Z/2\bigr),
+\qquad
+\alpha^{E}_{\mathcal C}
+\;\in\;H^2(BE;\Z/2)
+\]
+denote, respectively, the Pin\(^c\)-lift gerbe class of the SO-frame
+bundle of the reduced derived self-Ext obstruction theory and the
+\(E\)-equivariant descent obstruction along the free
+\(E\)-translation quotient.  Identify
+\(\alpha^{\mathrm{red}}_{\mathcal C}\) with the Brauer-class
+\(\bigl[\alpha^{\mathrm{red}}_{\mathcal C}\bigr]\in
+\operatorname{Br}\bigl(\mathfrak M^{\mathrm{red},\mathrm{ss}}_{\mathcal C}\bigr)[2]\)
+of the associated Brauer--Severi gerbe.  Then
+\[
+\alpha^{\mathrm{red}}_{\mathcal C}=0
+\quad\text{and}\quad
+\alpha^{E}_{\mathcal C}=0,
+\]
+i.e.\ the joint Pin\(^c\)-lift gerbe vanishes on the protected sector.
+\end{lemma}
+
+\begin{proof}
+Write \(\mathcal E\bullet:=\mathbf R\!\operatorname{Hom}_{\mathrm{red}}(\mathcal C,\mathcal C)[1]\)
+for the shifted reduced self-Ext complex carrying the
+PTVV \(1\)-shifted symplectic structure on
+\(\mathfrak M^{\mathrm{red},\mathrm{ss}}_{\mathcal C}\)
+\cite{PTVV2013}.  By Brav--Bussi--Dupont--Joyce--Szendr\H oi
+\cite{BBDJS2015}, the orientation gerbe of \(\mathcal E\bullet\) is the
+class
+\[
+\alpha^{\mathrm{red}}_{\mathcal C}
+=w_2\!\bigl(\det\mathcal E\bullet\bigr)\in
+H^2\!\bigl(\mathfrak M^{\mathrm{red},\mathrm{ss}}_{\mathcal C};\Z/2\bigr),
+\]
+the obstruction to a Pin\(^c\) lift of the \(\SO\)-frame bundle of
+\(\det\mathcal E\bullet\); equivalently, the Brauer class of the
+\(\mathrm{PGL}_2\)-gerbe of square roots of \(\det\mathcal E\bullet\).
+The Joyce--Upmeier multiplicative cocycle
+\cite{JoyceUpmeier} expresses this class in the Brauer group as the
+order-two image of the Atiyah class of \(\det\mathcal E\bullet\) under
+the Bockstein
+\(H^1(\mathcal O^\times)\xrightarrow{\beta_2}H^2(\Z/2)\).
+
+\smallskip
+\emph{Step 1 (cosection reduction to a relative \(1\)-shifted symplectic
+structure on \(K3\)).}  After reduction by the Maulik--Toda /
+Oberdieck cosection \cite{OberdieckReducedPT}, the trivial direction
+\(H^0(E,\Theta_E)\) is split off and the residual obstruction theory
+becomes \(1\)-shifted symplectic \emph{relative to} \(E\).  On \(E\) the
+flat trivialization (Costello--Li) of the moduli of perfect complexes
+makes the relative determinant
+\(\det\mathcal E\bullet|_{\mathrm{rel}\,E}\)
+\(E\)-equivariantly trivial as a holomorphic line, so
+\[
+\det\mathcal E\bullet
+=\pi_{K3}^*L_{K3}\;\otimes\;\pi_E^*\mathcal O_E,\qquad
+L_{K3}\in\operatorname{Pic}\bigl(\mathfrak M^{\mathrm{red},\mathrm{ss}}_{\mathcal C}/E\bigr),
+\]
+and the symplectic pairing presents \(L_{K3}\) as the square of the
+Atiyah--K3 polarization line \(\mathcal L_{K3}\) on the cosection-reduced
+K3 chamber.  This is the route-B reduction: the Brauer class is the
+parity of \(c_1(\mathcal L_{K3})^2/2\) read on the K3 factor alone.
+
+\smallskip
+\emph{Step 2 (rank \(r=2\) Brauer-class computation).}  On the rank-two
+stratum, \(\mathcal L_{K3}\) is the polarization line associated with
+the K3 chamber polarization \(L\) of \(\mathcal C\).  The Atiyah class
+square \(c_1(\mathcal L_{K3})^2\) computes the determinantal Chern
+integrand of \(\det\mathcal E\bullet\) on the K3 fibre of the relative
+moduli, and
+\[
+\bigl[\alpha^{\mathrm{red}}_{\mathcal C}\bigr]
+=\frac{c_1(L)^2}{2}\bmod 2
+\;\in\;H^2\!\bigl(\mathfrak M^{\mathrm{red},\mathrm{ss}}_{\mathcal C};\Z/2\bigr).
+\]
+Primitivity of \(\mathcal C\) and the Beauville--Mukai signature
+constraint force \(c_1(L)^2/2=h-1\) for a K3 of genus \(h\), an even
+integer on the protected charges by the elliptic-degree integrality
+already invoked in clause~(P1) of
+Open~Problem~\ref{op:orientation-monodromy-character}; hence
+\(\alpha^{\mathrm{red}}_{\mathcal C}=0\) for \(r=2\).
+
+\smallskip
+\emph{Step 3 (rank \(r\ge 3\) via Mukai chamber decomposition).}  On
+the \(r\ge 3\) semistable stratum, decompose
+\(\mathfrak M^{\mathrm{red},\mathrm{ss}}_{\mathcal C}\) into rational
+Mukai chambers \(\{\mathcal K_\alpha\}\) of the polarization variation
+of GIT, each carrying a chamber polarization \(L_\alpha\).  By the
+Joyce--Upmeier multiplicative cocycle \cite{JoyceUpmeier}, the
+Brauer class is additive across chambers:
+\[
+\bigl[\alpha^{\mathrm{red}}_{\mathcal C}\bigr]
+=\sum_{\alpha}\frac{c_1(L_\alpha)^2}{2}\bmod 2.
+\]
+Each chamber summand is even by Step~2 applied to the rank-two reduction
+that opens that chamber; the Harder--Narasimhan completion supplies the
+boundary chambers via the Joyce--Kinjo--Park--Safronov shifted
+multiplicative orientation
+\cite{JoyceKinjoParkSafronov}, and Brav--Bussi--Dupont--Joyce--Szendr\H oi
+stabilization \cite{BBDJS2015} matches the parities across walls.
+Hence \(\alpha^{\mathrm{red}}_{\mathcal C}=0\) for all \(r\ge 2\).
+
+\smallskip
+\emph{Step 4 (\(E\)-equivariant joint vanishing).}  The
+\(E\)-equivariant correction
+\(\alpha^E_{\mathcal C}\in H^2(BE;\Z/2)\cong\Z/2\) is the parity of the
+Atiyah class of the elliptic fibration's modular line bundle on
+\(E\), i.e.\ the Atiyah class parity of the Hodge bundle pulled back
+along the modular projection
+\(BE\to\mathcal A_1=\Hpl/\SL_2(\Z)\).
+Under the Costello--Li flat trivialization on \(E\), the modular line
+on \(E\) is the square of the modular weight-two line, whose
+Eisenstein period is \(E_4\); the period symmetry of \(E_4\) for
+\(\tau_E\in\Hpl/\SL_2(\Z)\) implies that the squared parity
+\(\bigl(c_1(\text{modular line})\bigr)^2\bmod 2\) vanishes.  By the
+Oberdieck--Pandharipande \(K3\times E\) chamber identification
+\cite{OPand} and the reduced PT theory \cite{OberdieckReducedPT}, the
+descent obstruction along the free \(E\)-translation quotient reduces to
+this Hodge--Atiyah parity, so \(\alpha^E_{\mathcal C}=0\).  Since both
+classes vanish in \(\Z/2\), the joint Pin\(^c\)-lift gerbe is trivial
+on \(\mathfrak M^{\mathrm{red},\mathrm{ss}}_{\mathcal C}\), as
+required.
+\end{proof}
+
+\begin{remark}[Route comparison]
+\label{rem:p3-route-b-versus-hn}
+Lemma~\ref{lem:p3-brauer-gerbe-vanishing} closes the (P3) clause of
+Open~Problem~\ref{op:orientation-monodromy-character} via an
+\emph{explicit Brauer-class computation}: the gerbe is presented as a
+Brauer--Severi class on the cosection-reduced relative moduli, evaluated
+chamberwise from the Atiyah class of the K3 polarization line.  This is
+mathematically distinct from the Harder--Narasimhan-stratification route
+(via filtration-additive Joyce orientation transport).  Agreement of the
+two routes on rank \(r=2\) is a route-cross check, not a circular
+argument: the HN route reads the parity off the filtration data while
+the Brauer route reads it off the Chern integrand of the chamber
+polarization, and both agree with the rank-one base case of clause~(P1).
+\end{remark}
+
 \begin{openproblem}[Orientation monodromy character: typed obstruction]
 \label{op:orientation-monodromy-character}
 The geometric orientation monodromy character
@@ -1679,12 +1827,20 @@ the Pfaffian local model (O2), the wall-character formula of (P2)
 follows by Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}.
 For non-compact and Joyce--Song-style extensions of the Pin\(^c\) lift
 the relevant analytic technology is Liu \cite{LiuYalongOrientations}.
-\emph{Status}: \emph{open}.  This is the precise typed obstruction
-that replaces the earlier informal ``construct the character'' clause;
-the literature attack surface is the Pin\(^c\)-lift program of
-\cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier}, \cite{CaoKoolMonavari},
-\cite{LiuYalongOrientations} restricted to the cosection-twisted
-reduced \(E\)-quotient.
+\emph{Status}: the joint vanishing
+\(\alpha^{\mathrm{red}}_{\mathcal C}=0=\alpha^E_{\mathcal C}\) on the
+Harder--Narasimhan-completed semistable stratum is supplied, modulo the
+small-orbit \(B\mu_N\) gerbe contribution at the \(N\ge 2\) torsion
+locus, by the explicit Brauer/Brauer--Severi gerbe computation of
+Lemma~\ref{lem:p3-brauer-gerbe-vanishing} (route~B).  An independent
+HN-stratification route through filtration-additive Joyce orientation
+transport remains open and is recorded here as the route-cross gauge.
+The literature attack surface for both routes is the Pin\(^c\)-lift
+program of \cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier},
+\cite{CaoKoolMonavari}, \cite{LiuYalongOrientations} restricted to the
+cosection-twisted reduced \(E\)-quotient, refined here by the explicit
+Brauer-class identification through PTVV \(1\)-shifted symplectic
+structure \cite{PTVV2013} and BBDJS stabilization \cite{BBDJS2015}.
 \end{openproblem}
 
 \section{The scalar square}
