@@ -3471,6 +3471,18 @@ physical charge \(c\in\Gamma_X^{\mathrm{phys}}\), with reduced
 \(E\)-quotient compatible with the projection
 \(p_E:K3\times E\to E\) of
 Definition~\ref{def:protected-hall-integration-criterion}.
+The chain-level factorization product on the protected observable
+algebra \(\mathcal A_X\) is delivered as an \(A_\infty\) (homotopy
+\(E_3\)) factorization algebra, not as a strict \(E_3\)-algebra: the
+Massey--Saito Thom--Sebastiani isomorphism on disjoint d-critical charts
+is a \emph{derived} natural isomorphism in the BBDJS setup
+\cite{BBDJS2015}, so associativity, commutativity, and unitality of the
+disjoint-supports product hold up to coherent higher homotopy rather
+than on the nose.  A strict \(E_3\)-rectification on the protected
+sector of \(K3\times E\), of the type pursued by
+Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov} for
+multiplicative orientation cocycles, is a separate residual obligation
+recorded in the status remark below.
 \item[(O)] \emph{(Multiplicative orientation.)}  An orientation datum
 \(\{o_c\}_{c\in\Gamma_X^{\mathrm{phys}}}\) in the sense of
 Definition~\ref{def:orientation-line} is supplied with
@@ -3504,47 +3516,64 @@ graded-Frobenius identity
 for homogeneous \(x,y,z\in\widetilde P_X\) of physical charges
 \(c_x,c_y,c_z\) with \(c_x+c_y+c_z=0\).
 \end{enumerate}
-Then the cocycle \(B\) acts trivially on bracket targets in primitives:
+Then the cocycle \(B\) acts trivially on bracket targets in primitives,
+up to coherent \(A_\infty\)-homotopy on the chain-level Hall lift and
+strictly after passing to the cohomology of the protected primitive
+bracket category:
 \[
 [\widetilde P_{X,c},\widetilde P_{X,c'}]
 \subset\widetilde P_{X,c+c'}\cap
-\Pi_X^{-1}\bigl(\Pi_X(c+c')\bigr),
+\Pi_X^{-1}\bigl(\Pi_X(c+c')\bigr)\quad\text{in cohomology,}
 \]
-and the Hochschild class \([B]\in HH^2(\widetilde P_X^{\mathrm{br}};
-\Gamma_{\mathrm{gram}})\) of \(B\) in the primitive bracket category
-\(\widetilde P_X^{\mathrm{br}}\) is a coboundary,
+the chain-level inclusion holding inside the \(A_\infty\)-fibre
+\(\Pi_X^{-1}(\Pi_X(c+c'))\) up to coherent homotopy.  The Hochschild
+class \([B]\in HH^2(\widetilde P_X^{A_\infty,\mathrm{br}};
+\Gamma_{\mathrm{gram}})\) of \(B\), computed in the
+\(A_\infty\)-Hochschild complex of the primitive bracket category
+\(\widetilde P_X^{A_\infty,\mathrm{br}}\), is an \(A_\infty\)-coboundary,
 \([B]=[d_{\mathrm{Hoch}}\Theta]=0\), where
 \(\Theta\) is the determinant-line Hochschild \(1\)-cochain produced
 from the multiplicative trivialization
 \(\{\mu_{c,c'}\}\) of (O).  Consequently the bracket descends along
-\(\Pi_X\) to a \(\Gamma_{\mathrm{gram}}\)-graded Lie superalgebra
-structure on
+\(\Pi_X\) to an \(A_\infty\)-monoidal \(\Gamma_{\mathrm{gram}}\)-graded
+Lie superalgebra structure on
 \[
 P_X^\Pi=\Pi_{X,*}\widetilde P_X,
 \]
-and hypothesis~(1b) of
-Theorem~\ref{thm:primitive-recognition} is satisfied.
+strict on the cohomology \(H^0\Prim_{\mathrm{prot}}\) used by
+Theorem~\ref{thm:primitive-recognition}, and hypothesis~(1b) of
+Theorem~\ref{thm:primitive-recognition} is satisfied at the level of
+cohomology.
 \end{theorem}
 
 \begin{proof}[Proof template (conditional on (P), (O), (F))]
-\emph{Step 1 (Hochschild realization of \(B\)).}
+\emph{Step 1 (\(A_\infty\)-Hochschild realization of \(B\)).}
 Pick a representative cocycle for the central extension
 \(\Gamma_X=\Gamma_X^{\mathrm{phys}}\oplus_B\Gamma_{\mathrm{gram}}\) of
-Definition~\ref{def:gram-corrected-charge-extension} and view
-\(B(c,c')\in\Gamma_{\mathrm{gram}}\) as a symmetric Hochschild
-\(2\)-cochain on the abelian (graded) category
-\(\widetilde P_X^{\mathrm{br}}\), valued in the central
-\(\Gamma_{\mathrm{gram}}\)-coefficient module that records the Gram
-target degree of a bracket.  Concretely, on a homogeneous pair
+Definition~\ref{def:gram-corrected-charge-extension}.  By (P) the
+chain-level Hall lift \(\widetilde P_X^{A_\infty,\mathrm{br}}\) is an
+\(A_\infty\) (homotopy \(E_3\)) bracket category whose disjoint-supports
+multiplication is the Massey--Saito Thom--Sebastiani product on the
+underlying d-critical structure \cite{BBDJS2015}, coherent up to higher
+homotopy and not strict.  View
+\(B(c,c')\in\Gamma_{\mathrm{gram}}\) as a symmetric \(A_\infty\)-Hochschild
+\(2\)-cochain on \(\widetilde P_X^{A_\infty,\mathrm{br}}\), valued in
+the central \(\Gamma_{\mathrm{gram}}\)-coefficient module that records
+the Gram target degree of a bracket; equivalently a class in
+\(HH^2(\widetilde P_X^{A_\infty,\mathrm{br}};\Gamma_{\mathrm{gram}})\)
+defined up to coherent \(A_\infty\)-homotopy.  Concretely, on a
+homogeneous pair
 \((x,y)\in\widetilde P_{X,c}\times\widetilde P_{X,c'}\), \(B(c,c')\)
 measures the discrepancy between the \emph{physical} target degree
 \(c+c'\) and the naive Gram-additive target degree
 \(\Pi_X(c)+\Pi_X(c')\).  Symmetry of \(B\) and the identity
 \(B(c,c)=2\Pi_X(c)\) (Definition~\ref{def:dyonic-mukai-lattice}) make
-\(B\) an honest Hochschild \(2\)-cocycle for the trivial bracket-target
-action.
+\(B\) an honest \(A_\infty\)-Hochschild \(2\)-cocycle for the trivial
+bracket-target action; on the cohomology
+\(H^*(\widetilde P_X^{A_\infty,\mathrm{br}})\) this descends to a strict
+Hochschild cocycle in the classical sense.
 
-\emph{Step 2 (Determinant-line trivialization \(\Theta\)).}
+\emph{Step 2 (Determinant-line trivialization \(\Theta\), \(A_\infty\)-witness).}
 The squaring isomorphism
 \(o_c^{\otimes 2}\simeq\det\mathrm{RHom}(\mathcal C,\mathcal C)\) of
 Definition~\ref{def:orientation-line}, together with the multiplicative
@@ -3552,25 +3581,34 @@ isomorphisms \(\mu_{c,c'}\) of (O), gives a trivialization of the
 determinant gerbe along the addition map
 \(\Gamma_X^{\mathrm{phys}}\times\Gamma_X^{\mathrm{phys}}\to
 \Gamma_X^{\mathrm{phys}}\).  Take logarithms (in the sense of
-\(c_1\) of orientation lines) to obtain a Hochschild \(1\)-cochain
+\(c_1\) of orientation lines) to obtain an \(A_\infty\)-Hochschild
+\(1\)-cochain
 \[
 \Theta:\Gamma_X^{\mathrm{phys}}\longrightarrow\Gamma_{\mathrm{gram}}
 \]
-whose Hochschild differential
+whose \(A_\infty\)-Hochschild differential
 \(d_{\mathrm{Hoch}}\Theta(c,c')=\Theta(c+c')-\Theta(c)-\Theta(c')\)
 records the failure of additivity of the determinant degree, which is
 precisely the symmetric quadratic Gram defect.  The pentagon for
-\(\{\mu_{c,c'}\}\) translates into associativity of \(d_{\mathrm{Hoch}}\Theta\).
+\(\{\mu_{c,c'}\}\) translates into the homotopy-associativity datum for
+\(d_{\mathrm{Hoch}}\Theta\).
 The arithmetic identity
 \(\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c')\) of
 Lemma~\ref{lem:gram-additivity-defect} forces
 \[
-d_{\mathrm{Hoch}}\Theta=B\quad\text{in}\quad
-C^2(\Gamma_X^{\mathrm{phys}},\Gamma_{\mathrm{gram}}).
+[d_{\mathrm{Hoch}}\Theta]=[B]\quad\text{in}\quad
+HH^2(\widetilde P_X^{A_\infty,\mathrm{br}};\Gamma_{\mathrm{gram}}),
 \]
+that is, equality at the level of \(A_\infty\)-Hochschild classes (up
+to coherent homotopy on the chain-level Hall lift), and on the nose in
+the cohomology
+\(C^2(\Gamma_X^{\mathrm{phys}},\Gamma_{\mathrm{gram}})\) of the
+underlying abelian grading.
 This is the witness step: the multiplicative orientation provides
 \(\Theta\), and the quadratic identity for \(\Pi_X\) makes \(\Theta\) an
-exact primitive of \(B\).
+\(A_\infty\)-exact primitive of \(B\); strict primitivity is recovered
+on the cohomology of the bracket category, which is what the downstream
+recognition theorem uses.
 
 \emph{Step 3 (Frobenius transport from pairing target to bracket target).}
 The bracket on \(\widetilde P_X\) lifts to the central extension
@@ -3592,23 +3630,38 @@ discrepancy between \emph{physical} target degree and \emph{Gram}
 target degree is the Hochschild boundary of a single global cochain
 \(\Theta\), independent of \((x,y)\).
 
-\emph{Step 4 (Cohomological vanishing on primitives).}
+\emph{Step 4 (\(A_\infty\)-cohomological vanishing on primitives).}
 Restrict to primitives.  The protected primitive subspace
 \(\widetilde P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\) is the kernel
 of the reduced coproduct, on which the Hopf pairing
 \(\langle\,\cdot\,,\,\cdot\,\rangle\) is non-degenerate
 (Theorem~\ref{thm:primitive-recognition}~(6)).  Non-degeneracy upgrades
-the Frobenius identity (F) from a target-degree statement to a
-strict cocycle relation in the Hochschild cohomology of the bracket
-category.  The class \([B]\in HH^2\) of the cocycle action of \(B\) on
-bracket targets in primitives is then represented by
-\(d_{\mathrm{Hoch}}\Theta\), hence vanishes in cohomology.  The bracket
-therefore lands in \(\widetilde P_{X,c+c'}\) intersected with the
-fibre \(\Pi_X^{-1}(\Pi_X(c+c'))\), as claimed; the
+the Frobenius identity (F) from a target-degree statement to a cocycle
+relation in the \(A_\infty\)-Hochschild cohomology of the bracket
+category, valid up to coherent higher homotopy on the chain-level Hall
+lift and strictly on its cohomology.  The class \([B]\in HH^2\) of the
+cocycle action of \(B\) on bracket targets in primitives is then
+represented by \(d_{\mathrm{Hoch}}\Theta\), hence vanishes in
+\(A_\infty\)-Hochschild cohomology and a fortiori in the cohomology
+\(H^*(\widetilde P_X^{A_\infty,\mathrm{br}})\).  The bracket therefore
+lands in the \(A_\infty\)-fibre
+\(\Pi_X^{-1}(\Pi_X(c+c'))\) up to coherent homotopy, and strictly in
+\(\widetilde P_{X,c+c'}\cap\Pi_X^{-1}(\Pi_X(c+c'))\) on
+\(H^0\Prim_{\mathrm{prot}}\).  The \(\Pi\)-descent on the chain-level
+Hall lift is therefore \(A_\infty\)-monoidal, not strict; the induced
 \(\Gamma_{\mathrm{gram}}\)-grading on
 \(P_X^\Pi=\Pi_{X,*}\widetilde P_X\) is a genuine Lie-superalgebra
-grading; and hypothesis~(1b) of
-Theorem~\ref{thm:primitive-recognition} is met.
+grading on the cohomology used by
+Theorem~\ref{thm:primitive-recognition}; and hypothesis~(1b) of
+Theorem~\ref{thm:primitive-recognition} is met at the level of
+cohomology.  Strict \(E_3\)-rectification of the chain-level
+\(\Pi\)-descent on the protected sector of \(K3\times E\) is a residual
+obligation requiring a Joyce--Kinjo--Park--Safronov-style
+\cite{JoyceKinjoParkSafronov} strict refinement of the Massey--Saito
+Thom--Sebastiani product; it is not used by the downstream recognition,
+denominator algebra, denominator identity, or synthesis theorems, which
+consume \(\Pi\)-descent only as a Lie-superalgebra grading on
+\(H^0\Prim_{\mathrm{prot}}\).
 \qedhere
 \end{proof}
 
@@ -3618,7 +3671,10 @@ The status of Theorem~\ref{thm:ptvv-joyce-pi-descent} is
 in this paper for \(K3\times E\); each is an open analytic/categorical
 obligation.  In particular:
 (P) is the open compact PTVV \cite{PTVV2013} host of
-Definition~\ref{def:compact-igusa-realization-datum}, item~(M);
+Definition~\ref{def:compact-igusa-realization-datum}, item~(M),
+delivered as an \(A_\infty\) (homotopy \(E_3\)) factorization algebra
+because the Massey--Saito Thom--Sebastiani product is a derived natural
+isomorphism in the BBDJS \cite{BBDJS2015} setup;
 (O) is a strengthening of
 Definition~\ref{def:orientation-line} from a per-class square root to a
 \emph{multiplicative} square root (additionally compatible with the
@@ -3635,9 +3691,27 @@ sharpens Open Problem~\ref{op:pi-descent-of-bracket} from a
 ``positivity-of-cocycle'' obligation to a precise
 construction-and-witness obligation: \emph{construct
 \(\{\mu_{c,c'}\}\) and show that the orientation cocycle equals
-\(B\) at the level of Hochschild \(2\)-cochains.}  No
-analytic/categorical claim about the existence of (P), (O), (F) for
-\(K3\times E\) is added.
+\(B\) as an \(A_\infty\)-Hochschild \(2\)-class, strictly on the
+cohomology \(H^0\Prim_{\mathrm{prot}}\) used by the recognition
+theorem.}  No analytic/categorical claim about the existence of (P),
+(O), (F) for \(K3\times E\) is added.
+
+A separate residual obligation, recorded explicitly: a strict
+\(E_3\)-rectification of the chain-level \(\Pi\)-descent on the
+protected sector of \(K3\times E\) -- promoting the \(A_\infty\)
+factorization product on \(\mathcal A_X\) to a strict \(E_3\)-product
+and the \(A_\infty\)-monoidal \(\Pi\)-descent to a strict-monoidal one
+-- requires a Joyce--Kinjo--Park--Safronov-style
+\cite{JoyceKinjoParkSafronov} strict refinement of the Massey--Saito
+Thom--Sebastiani isomorphism on disjoint d-critical charts, with
+multiplicative orientation cocycle compatibility and pentagon
+coherence.  This rectification is open; it is not used by the
+downstream recognition (Theorem~\ref{thm:primitive-recognition}),
+denominator algebra (Theorem~\ref{thm:denominator-algebra-identity}),
+denominator identity, or synthesis
+(Theorem~\ref{thm:protected-igusa-determinant}) theorems, which consume
+\(\Pi\)-descent only as a Lie-superalgebra grading on the cohomology
+\(H^0\Prim_{\mathrm{prot}}(\Pi_{X,*}\mathcal F_X)\).
 \end{remark}
 
 \begin{remark}[Hypothesis comparison]
@@ -3977,18 +4051,24 @@ P^\Pi_{X,\Pi_X(c)+\Pi_X(c')},
 \]
 so that the induced \(\Gamma_{\mathrm{gram}}\)-grading of
 \(P_X^\Pi\) is a genuine Lie-superalgebra grading.  Equivalently,
-\(B\) lies in the Hochschild kernel of the protected primitive
-bracket; its proof is part of the open Hall datum (Open
-Problem~\ref{op:pi-descent-of-bracket}).  Conditional on the PTVV \cite{PTVV2013}
-host (P), multiplicative orientation cocycle (O), and chain-level
+\(B\) lies in the \(A_\infty\)-Hochschild kernel of the protected
+primitive bracket and the strict Hochschild kernel of its cohomology;
+its proof is part of the open Hall datum (Open
+Problem~\ref{op:pi-descent-of-bracket}).  Conditional on the PTVV
+\cite{PTVV2013} host (P) (in its \(A_\infty\)/homotopy-\(E_3\) form,
+since Massey--Saito Thom--Sebastiani is a derived natural isomorphism
+\cite{BBDJS2015}), multiplicative orientation cocycle (O), and chain-level
 graded Frobenius identity (F),
-Theorem~\ref{thm:ptvv-joyce-pi-descent} discharges this hypothesis,
-exhibiting \(B=d_{\mathrm{Hoch}}\Theta\) as a Hochschild boundary for
-the determinant-line cochain \(\Theta\) produced from the
-multiplicative trivialisation \(\{\mu_{c,c'}\}\) of (O); the residual
-construction obligation -- existence of (O), (F) on the reduced
-compact protected sector of \(K3\times E\) -- remains as Open
-Problem~\ref{op:pi-descent-of-bracket}.
+Theorem~\ref{thm:ptvv-joyce-pi-descent} discharges hypothesis~(1b) at
+the level of cohomology, exhibiting \(B=d_{\mathrm{Hoch}}\Theta\) as an
+\(A_\infty\)-Hochschild boundary for the determinant-line cochain
+\(\Theta\) produced from the multiplicative trivialisation
+\(\{\mu_{c,c'}\}\) of (O), and as a strict Hochschild boundary on the
+cohomology \(H^0\Prim_{\mathrm{prot}}\) consumed below.  The residual
+construction obligations -- existence of (O), (F) on the reduced
+compact protected sector of \(K3\times E\), and a strict
+\(E_3\)-rectification of the chain-level \(\Pi\)-descent on that
+sector -- remain as Open Problem~\ref{op:pi-descent-of-bracket}.
 \item The degree map
 \[
 \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
