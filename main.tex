@@ -583,12 +583,14 @@ $$\Delta_5|_5g=\nu_{\Delta_5}(g)\Delta_5,\qquad
 \Delta_5(s_{\delta_i}Z)=-\Delta_5(Z).$$
 \end{definition}
 
-\begin{proposition}[Igusa identification of the determinant]
+\begin{proposition}[Borcherds--Gritsenko--Nikulin identification]
+By the Borcherds--Gritsenko--Nikulin product formula for
+\(\phi_{0,1}\),
 $$\mathcal D_X(Z)=\Delta_5(Z).$$
 \end{proposition}
 
 \begin{proof}
-Borcherds' product theorem for $\phi_{0,1}$:
+The product theorem gives
 $$64q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}.$$
@@ -673,7 +675,7 @@ Maass character $\nu_{\Delta_5}$ is a finite-order representation of
 $\Sp_4(\Z)$ in its own right, orthogonal to the weight datum.
 \end{proof}
 
-\section{The protected D-brane index}
+\section{The protected-index dictionary}
 
 Let $S$ be an elliptically fibered K3 surface
 $$\pi:S\rightarrow \mathbb{P}^1$$
@@ -1525,34 +1527,41 @@ superalgebra.  The denominator statement is exactly
 Theorem \ref{thm:bracket-level-square-root}.
 \end{proof}
 
-\begin{definition}[Quantum upgrade problem]
+\begin{definition}[Holomorphic \(E_3\) quantum upgrade]
 The determinant and denominator results above are protected
-Euler-characteristic statements.  The quantum upgrade asks for the
-chain-level source whose Euler shadow is that determinant.
+Euler-characteristic statements.  The quantum upgrade does not start
+from the scalar determinant.  It starts from the holomorphic
+\(E_3\)-factorization algebra on the Calabi--Yau threefold
+$$
+\mathcal A^{E_3}_X
+:=\Phi^{\mathrm{FA}}_3(X),
+\qquad X=K3\times E.
+$$
+This is the Stage-1 object in the Calabi--Yau-to-chiral construction.
+A compact holomorphic-Chern--Simons/BV model, when constructed, is a
+construction of \(\mathcal A^{E_3}_X\): its quantum master equation,
+descent, and anomaly cancellation are witnesses that the holomorphic
+\(E_3\)-factorization algebra exists in the completed charge category.
 
-For \(X=K3\times E\), a quantum source for the Igusa square root is a
-local BV quantum theory on \(X\), with action
+The curve-level BPS algebra is obtained only after Stage-2
+specialization along the \(K3\)-direction:
 $$
-I=I_{\mathrm{cl}}+\hbar I_1+\hbar^2I_2+\cdots
-$$
-satisfying the quantum master equation, descent, and anomaly
-cancellation in the completed charge category.  Its quantum observables
-are then pushed forward along
-$$
-p_E:X\longrightarrow E
-$$
-to a charge-completed factorization algebra on \(\operatorname{Ran}(E)\):
-$$
-\mathcal F_X
+\mathrm{Sp}^{\mathrm{ch}}_{K3,E}
+\bigl(\mathcal A^{E_3}_X\bigr)
 \simeq
-(p_E)_*\operatorname{Obs}^q(X).
+\int_{K3}\mathcal A^{E_3}_X
+\simeq
+(p_E)_*\mathcal A^{E_3}_X
+=:\mathcal F_X
+\in \mathrm{Fact}(\operatorname{Ran}(E)).
 $$
-The expected holomorphic/topological model is the compact
-holomorphic-Chern--Simons source
-\(\operatorname{Obs}^{q,E}_{\mathrm{hCS}}(K3\times E)\), but this paper
-does not construct it.
+The notation records the required specialization datum; constructing it
+chain-level is part of the quantum problem.  Restrictions to chambers,
+pushforwards to \(E\), and chiral Koszul dualities are then operations on
+\(\mathcal A^{E_3}_X\) and on its \(E_1\)-chiral shadow \(\mathcal F_X\),
+not replacements for the \(E_3\)-source.
 
-The required quantum statement is the pair of comparisons
+The required Igusa statement is the pair of comparisons
 $$
 H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
 \cong
@@ -1562,50 +1571,72 @@ H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
 \simeq
 \mathsf{Den}_{\Delta_5,E}.
 $$
-The first comparison is the bracket theorem.  The second is the chiral
-Koszul theorem.  Both require microscopic data beyond the scalar square
-and beyond the formal current envelope.
+Here \(C_X\) is the chiral bar coalgebra attached to the shadow
+\(\mathcal F_X\).  The first comparison is the bracket theorem.  The
+second is the chiral Koszul theorem.  Both require microscopic data
+beyond the scalar square and beyond the formal current envelope.
 \end{definition}
 
-\begin{proposition}[Why factorization is the natural quantum form]
-Assume the local BV source in the preceding definition has been
-constructed.  Then the quantum observables form a Costello--Gwilliam
-factorization algebra \cite{CostelloRenormalization},
-\cite{CostelloGwilliam1}, \cite{CostelloGwilliam2}.  After pushforward
-to \(E\), disjoint opens of \(E\) carry independent observable algebras,
-and collision along the diagonal gives the chiral operation.  Protected
-primitives therefore form the natural receptacle for the BPS bracket.
+\begin{proposition}[Why holomorphic \(E_3\) is the natural quantum form]
+Assume the Stage-1 algebra \(\mathcal A^{E_3}_X\) and the specialization
+\(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\) have been constructed.  Then
+\(\mathcal F_X=\mathrm{Sp}^{\mathrm{ch}}_{K3,E}(\mathcal A^{E_3}_X)\)
+is the natural factorization algebra on \(\operatorname{Ran}(E)\) whose
+protected primitives can carry the BPS bracket, and whose chiral
+bar--cobar comparison can recover the formal current envelope
+\(\mathsf{Den}_{\Delta_5,E}\).
 \end{proposition}
 
 \begin{proof}
-Locality of the BV action gives factorization products for disjoint
-opens.  The quantum master equation makes the differential square to
-zero and makes the products compatible with descent.  Pushing forward
-along \(p_E\) integrates the \(K3\)-direction and leaves a
-factorization algebra on the curve \(E\).  On a smooth curve,
-Beilinson--Drinfeld chiral operations are the algebraic form of the
-collision maps.  The primitive part of a Hopf/factorization object
-carries the induced Lie superbracket.  Identifying that primitive bracket
-with \(\mathfrak g_{\Delta_5}\) is exactly the missing comparison datum.
+Costello--Gwilliam locality for the holomorphic quantum theory
+\cite{CostelloRenormalization}, \cite{CostelloGwilliam1},
+\cite{CostelloGwilliam2} gives factorization products before any trace
+or determinant is taken.  In complex dimension three this locality is
+the \(E_3\)-structure on \(\mathcal A^{E_3}_X\).  Factorization-homology
+specialization over \(K3\) consumes the two transverse holomorphic
+directions and leaves an \(E_1\)-chiral object on the curve \(E\).  On a
+smooth curve, Beilinson--Drinfeld chiral operations are the algebraic
+form of collision maps \cite{BD}.  The primitive part of a
+Hopf/factorization object carries the induced Lie superbracket.
+Identifying that primitive bracket with \(\mathfrak g_{\Delta_5}\) is
+exactly the missing comparison datum.
 \end{proof}
 
+\begin{remark}[Pushforward, restriction, Koszul duality]
+Stage 2 is specialization, not inversion.  A restriction to a chamber
+or sector is a restriction of \(\mathcal A^{E_3}_X\) before, or of
+\(\mathcal F_X\) after, the \(K3\)-specialization.  Pushforward along
+\(p_E\) is the geometric notation for the same specialization.  Chiral
+Koszul duality begins after the \(E_1\)-shadow exists:
+$$
+C_X\simeq \overline B_E^{\mathrm{ch}}(\mathcal F_X),
+\qquad
+\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}.
+$$
+It is not a procedure for reconstructing the holomorphic \(E_3\)-source
+from the denominator alone.
+\end{remark}
+
 \begin{remark}[Locality]
-The local object is the finite-stage observable algebra on
-\(\operatorname{Ran}(E)\).  The automorphic product is its protected
-global trace after charge completion, wall-chamber choice, and summation
-over compact \(K3\)-modes.  Duality monodromy and the Borcherds chamber
-are therefore global features of the trace.  They do not replace the
-local factorization maps on disjoint opens.
+The local object is the finite-stage holomorphic
+\(E_3\)-factorization algebra on \(X\).  Its \(K3\)-specialization is the
+finite-stage chiral factorization algebra on \(\operatorname{Ran}(E)\).
+The automorphic product is a protected global trace after charge
+completion, wall-chamber choice, and summation over compact \(K3\)-modes.
+Duality monodromy and the Borcherds chamber are therefore global
+features of the trace.  They do not replace the local factorization maps
+on disjoint opens.
 \end{remark}
 
 \begin{remark}[Unitarity]
-The quantum object used here is a BV/BRST cochain theory.  It is not a
-positive Hilbert-space construction.  Negative coefficients
-\(f(nm,l)\) record odd protected states in a supertrace, not negative
-probabilities.  If the untwisted compactification is unitary, the
-statement that survives the twist is right-moving cohomology, protected
-integration, and the signed index.  Reflection positivity is not a
-hypothesis of the Borcherds denominator theorem.
+The quantum object used here is a holomorphic \(E_3\)-factorization
+algebra in cochains.  It is not a positive Hilbert-space construction.
+Negative coefficients \(f(nm,l)\) record odd protected states in a
+supertrace, not negative probabilities.  If the untwisted
+compactification is unitary, the statement that survives the twist is
+right-moving cohomology, protected integration, and the signed index.
+Reflection positivity is not a hypothesis of the Borcherds denominator
+theorem.
 \end{remark}
 
 \begin{definition}[Sectorial Hall truncation]
@@ -1681,20 +1712,34 @@ completion.
 
 \begin{definition}[Compact Igusa realization datum]
 \label{def:compact-igusa-realization-datum}
-A compact realization of the Igusa square root is a quintuple
+A compact realization of the Igusa square root is a package
 $$
 \mathfrak K_X
-=\left(\mathcal F_X,\mathcal H_X,C_X,\Theta_{\mathrm{Kos}},
+=\left(\mathcal A^{E_3}_X,\mathrm{Sp}^{\mathrm{ch}}_{K3,E},
+\mathcal F_X,\mathcal H_X,C_X,\Theta_{\mathrm{Kos}},
 \Pi_{\mathrm{prim}}\right)
 $$
 with the following data.
 \begin{enumerate}
-\item A charge-completed compact observable factorization algebra
-\(\mathcal F_X\) on \(\operatorname{Ran}(E)\), finite-first with respect to the
-sectorial HN quotients of Proposition~\ref{prop:sectorial-hall-truncation},
-and obtained from a local BV quantum source on \(K3\times E\) satisfying
-descent, the quantum master equation, and anomaly cancellation in the
-completed charge category.
+\item A charge-completed holomorphic \(E_3\)-factorization algebra
+\(\mathcal A^{E_3}_X=\Phi^{\mathrm{FA}}_3(K3\times E)\) on
+\(X=K3\times E\), finite-first after the sectorial HN quotients of
+Proposition~\ref{prop:sectorial-hall-truncation}.  A compact
+holomorphic-Chern--Simons/BV construction is a witness for this datum
+when it satisfies descent, the quantum master equation, and anomaly
+cancellation in the completed charge category.
+\item A chain-level \(K3\)-to-\(E\) specialization
+\(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\), equivalently the admissible
+pushforward along \(p_E:K3\times E\to E\), with
+$$
+\mathcal F_X
+\simeq
+\mathrm{Sp}^{\mathrm{ch}}_{K3,E}(\mathcal A^{E_3}_X)
+\simeq
+(p_E)_*\mathcal A^{E_3}_X
+$$
+a charge-completed compact observable factorization algebra on
+\(\operatorname{Ran}(E)\).
 \item An oriented compact Hall factorization object \(\mathcal H_X\)
 with extension correspondences
 $$
@@ -1732,7 +1777,7 @@ parities, the orthogonality relations, and the completed Hopf pairing.
 \end{enumerate}
 \end{definition}
 
-\begin{theorem}[Microscopic Hall--Drinfeld realization criterion]
+\begin{proposition}[Consequences of a compact Igusa realization datum]
 \label{thm:microscopic-hall-drinfeld-criterion}
 If a compact Igusa realization datum exists, then
 $$
@@ -1752,12 +1797,9 @@ $$
 $$
 on \(\Gamma_{\mathrm{act}}\), and the primitive denominator is
 \(64^{-1}\Delta_5(2Z)\).
-
-Conversely, any compact \(K3\times E\) BPS factorization algebra whose
-primitive Lie algebra is \(\mathfrak g_{\Delta_5}\) and whose chiral
-Koszul realization is \(\mathsf{Den}_{\Delta_5,E}\) determines the five
-data of Definition~\ref{def:compact-igusa-realization-datum}.
-\end{theorem}
+This proposition is a criterion for recognizing a successful
+microscopic realization.  It is not an existence theorem.
+\end{proposition}
 
 \begin{proof}
 The primitive comparison is an isomorphism of charge-graded Lie
@@ -1767,13 +1809,6 @@ compatibility gives the signed multiplicities \(f(nm,l)\).  Substitution
 in the Borcherds denominator identity gives
 \(64^{-1}\Delta_5(2Z)\).  The chiral statement is exactly the
 quasi-isomorphism \(\Theta_{\mathrm{Kos}}\).
-
-The converse is formal.  A compact BPS factorization algebra supplies
-\(\mathcal F_X\).  Its Hall model, if it realizes the BPS bracket,
-supplies \(\mathcal H_X\), protected integration, and the orientation
-character.  A chiral Koszul realization supplies the coalgebra \(C_X\)
-and the cobar quasi-isomorphism.  The primitive identification supplies
-\(\Pi_{\mathrm{prim}}\).
 \end{proof}
 
 \begin{proposition}[Low-degree bracket information]
@@ -1843,16 +1878,17 @@ orientation data, protected integration, and a basis of protected
 primitives.  None of these is encoded in the determinant.
 \end{proof}
 
-\begin{openproblem}[Compact Hall and chiral Koszul realization]
+\begin{openproblem}[Compact \(E_3\), Hall, and chiral Koszul realization]
 Construct the datum
 \(\mathfrak K_X\) of Definition~\ref{def:compact-igusa-realization-datum}.
-Equivalently, construct the compact observable factorization algebra,
-the oriented HN-completed Hall object, protected integration,
-the conilpotent chiral bar coalgebra, the chiral cobar
-quasi-isomorphism to \(\mathsf{Den}_{\Delta_5,E}\), and the primitive
-Lie comparison with \(\mathfrak g_{\Delta_5}\).  The scalar square and
-the denominator algebra are inputs to this problem.  They are not its
-solution.
+Equivalently, construct the holomorphic \(E_3\)-factorization algebra
+on \(K3\times E\), its chain-level \(K3\)-to-\(E\) specialization, the
+compact observable chiral shadow on \(\operatorname{Ran}(E)\), the
+oriented HN-completed Hall object, protected integration, the
+conilpotent chiral bar coalgebra, the chiral cobar quasi-isomorphism to
+\(\mathsf{Den}_{\Delta_5,E}\), and the primitive Lie comparison with
+\(\mathfrak g_{\Delta_5}\).  The scalar square and the denominator
+algebra are inputs to this problem.  They are not its solution.
 \end{openproblem}
 
 \begin{definition}[Imaginary simple roots]
@@ -2286,7 +2322,18 @@ $$\left(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}\right)^{-1}
 \end{proof}
 
 
-\section{Eight diagonal-divisor factorization rows}
+\part{Diagonal-divisor rows and CHL boundary physics}
+
+\section{Eight diagonal-divisor rows: automorphic and physical status}
+\label{sec:eight-dd-rows-status}
+
+This part is not an appendix to the \(N=1\) theorem.  It is the second
+problem of the paper.  The Clery--Gritsenko catalogue gives eight
+diagonal-divisor automorphic products.  The Gritsenko--Nikulin and
+Govindarajan theorems promote these products to denominator identities
+in the rows where the Weyl data are known.  A physical scalar square or
+Hall/chiral host is a stronger object and is recorded only where its
+data have been specified.
 
 $$g=2.$$
 $$t,N \in \mathbb{Z}_+:\quad \Gamma_t(N) =
@@ -2340,7 +2387,7 @@ nonabelian Weyl--Borcherds promotion is additional structure: it is
 the CHL denominator theorem of Govindarajan for \(F_5,F_6,F_7,F_8\).
 For \(F_7\) the theorem lives on the
 $\mu_4$-multiplier cover determined by the Clery--Gritsenko order-four
-multiplier, with no Vol.~III CY/DT/chiral boundary host.
+multiplier, with no CY/DT/chiral boundary host supplied here.
 
 \begin{proposition}[Extension separation]
 \label{prop:extension-quarantine}
@@ -2404,7 +2451,7 @@ root form.  The additional datum is supplied by
 \cite{Gov11BKM}, building on \cite{GK09CHL} and \cite{CD09BKM}.
 \end{proof}
 
-The Vol.~III square-root comparison tuple has weights
+A separate comparison tuple has weights
 $$
 (5,2,1,1,\tfrac12,1,\tfrac14,0).
 $$
@@ -2418,7 +2465,7 @@ F_2,F_3,F_4:\ \mathrm{GN\ denominator\ theorem},$$
 $$F_5,F_6,F_7,F_8:
 \ \mathrm{Govindarajan\ CHL/WKB\ denominator\ theorem},$$
 with $F_7$ understood on the $\mu_4$-multiplier cover determined by its
-order-four multiplier and not as a Vol.~III physical boundary theorem.
+order-four multiplier and not as a physical boundary theorem.
 Dijkgraaf--Verlinde--Verlinde: \cite{DVV}.  Borcherds: \cite{B}.
 
 \appendix
@@ -2599,9 +2646,8 @@ $$
 \operatorname{mult}_{\mathcal H_{\mathrm{diag}}}(F_j)=1.
 $$
 Here $F_7=\nabla_{3/2}$ is the Clery--Gritsenko row at
-$(t,N)=(1,4)$.  It is not the Vol.~III physical
-$\Phi^{\mathrm{V3}}_7$ slot until a separate row map has been
-constructed.
+$(t,N)=(1,4)$.  It is not a physical comparison slot until a separate
+row map has been constructed.
 
 The characters and multiplier systems are
 $$
@@ -3340,7 +3386,7 @@ $$
 are Weyl--Kac--Borcherds denominator forms.  The row $F_7$ is taken on
 the $\mu_4$-multiplier cover determined by the Clery--Gritsenko
 order-four multiplier.  Thus \(F_7\) is a denominator on the
-\(\mu_4\)-cover, with no Vol.~III row map, metaplectic boundary theorem,
+\(\mu_4\)-cover, with no physical row map, metaplectic boundary theorem,
 or CY/DT/chiral host.  In the
 product-degree notation of this appendix the real-root data are
 $$
@@ -3447,7 +3493,7 @@ diagonal-divisor form of type \((t,N)=(1,4)\), weight \(3/2\), on
 the associated \(\mu_4\)-multiplier cover, Govindarajan's CHL/WKB
 theorem identifies it with the Weyl--Kac--Borcherds denominator of
 \(\mathcal G_1(4)\).  It is the \(\mu_4\)-cover denominator identity,
-with no Vol.~III physical \(\Phi^{\mathrm{V3}}_7\), no
+with no physical comparison-row identification, no
 metaplectic boundary host, and no CY/DT or chiral/Hall theorem.
 
 The square identity \(F_7^2=\Phi_3\) is only a scalar square identity.
@@ -3668,7 +3714,7 @@ simple real roots, and the sign change of the square root under a Weyl
 reflection.  Section 4.3 states the Weyl--Kac--Borcherds denominator
 formula for $\mathcal G_N(M)$.
 For \(F_7=\nabla_{3/2}\) the theorem is on the
-\(\mu_4\)-multiplier cover, with no Vol.~III boundary partition
+\(\mu_4\)-multiplier cover, with no physical boundary partition
 identity and no CY/DT/chiral host.
 For \(Q_1\), Govindarajan supplies the WKB denominator data
 \cite{Gov11BKM}*{Appendix C, Appendix D}.
@@ -3714,7 +3760,7 @@ Thus all eight rows have formal product/current-envelope objects.
 Rows \(1\)--\(4\) have the Gritsenko--Nikulin denominator algebras.
 Rows \(5\)--\(8\) have the Govindarajan CHL/WKB denominator algebras in
 the CHL normalization.  The row \(F_7\) lives on the
-\(\mu_4\)-multiplier cover and gives no Vol.~III physical boundary
+\(\mu_4\)-multiplier cover and gives no physical boundary
 theorem.
 \end{remark}
 
@@ -3748,9 +3794,9 @@ $$
 \{j:\mathrm{wt}(F_j)\in\Z\}=\{1,2,3,5,6,8\},\qquad
 \{j:\mathrm{wt}(F_j)\notin\Z\}=\{4,7\}.
 $$
-The Vol.~III comparison notation
-$$\Phi^{\mathrm{V3}}_1,\ldots,\Phi^{\mathrm{V3}}_8,\qquad
-\mathrm{wt}(\Phi^{\mathrm{V3}}_j)=(5,2,1,1,\tfrac12,1,\tfrac14,0),$$
+The comparison notation
+$$\Phi^{\mathrm{cmp}}_1,\ldots,\Phi^{\mathrm{cmp}}_8,\qquad
+\mathrm{wt}(\Phi^{\mathrm{cmp}}_j)=(5,2,1,1,\tfrac12,1,\tfrac14,0),$$
 does not define the Clery--Gritsenko row system and defines no physical
 atlas in this paper.
 \end{proposition}
@@ -3776,13 +3822,13 @@ The Clery--Gritsenko weights are
 \]
 and no Clery--Gritsenko row has weight \(1/4\) or weight \(0\).  Also
 \(F_4=\Delta_{1/2}\), so \(F_4\) has half-integral weight.  A physical
-\(\Phi^{\mathrm{V3}}_4\) identification requires a row map.  A boundary
+\(\Phi^{\mathrm{cmp}}_4\) identification requires a row map.  A boundary
 partition identity requires the row map, the reduced theory, and the
 duality signs.
 \end{remark}
 
-\begin{remark}[Vol.~III row map]
-The symbols \(F_i\) and \(\Phi^{\mathrm{V3}}_j\) label different row
+\begin{remark}[Comparison row map]
+The symbols \(F_i\) and \(\Phi^{\mathrm{cmp}}_j\) label different row
 systems.  When a collision is possible, write \(F_i^{\mathrm{CG}}\) for
 the Clery--Gritsenko rows in the present order,
 \(T_a^{\mathrm{CG}}\) for the same catalogue in triple order, and
@@ -3837,11 +3883,11 @@ Weyl alternating side.
 \begin{remark}[Boundary host]
 A boundary identity
 $$
-Z_j=C_j(\Phi^{\mathrm{V3}}_j)^{-2}
+Z_j=C_j(\Phi^{\mathrm{cmp}}_j)^{-2}
 $$
 requires more than a Clery--Gritsenko product, a fractional weight, or a
 formal current envelope.  It requires a row map
-\(\Phi^{\mathrm{V3}}_j\leftrightarrow F_i\) fixing the weight, group,
+\(\Phi^{\mathrm{cmp}}_j\leftrightarrow F_i\) fixing the weight, group,
 multiplier, cover, divisor, Jacobi input, and normalization; a
 Calabi--Yau or orbifold host \(X_j\) with reduced
 obstruction theory, orientation, Behrend sign, Fourier chamber, and a
@@ -3859,7 +3905,7 @@ fractional chiral power.
 
 The following comparison table is restricted to the $N=1$ Igusa
 boundary.  It contains no row map
-$$\Phi^{\mathrm{V3}}_j\longleftrightarrow F_i$$
+$$\Phi^{\mathrm{cmp}}_j\longleftrightarrow F_i$$
 and no physical row-map denominator theorem for any congruence
 row.  The separate Govindarajan CHL/WKB denominator theorem remains
 Theorem~\ref{thm:govindarajan-denominator-rows}.
