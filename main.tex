@@ -4,7 +4,7 @@
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\theHsection}{\arabic{section}}
 
-\title{\texorpdfstring{\textit{The Square Root of the Igusa Partition Function}\\[0.5em]\small A Borcherds lift of the weak Jacobi form $\phi_{0,1}$, generalized Borcherds--Kac--Moody superalgebras, and the Igusa cusp form $\Delta_5$}{The Square Root of the Igusa Partition Function: A Borcherds lift of the weak Jacobi form phi 0,1, generalized Borcherds--Kac--Moody superalgebras, and the Igusa cusp form Delta 5}}
+\title{\texorpdfstring{\textit{The Square Root of the Igusa Partition Function}\\[0.5em]\small A protected BPS determinant, holomorphic \(E_3\) locality, and the Borcherds algebra of \(\Delta_5\)}{The Square Root of the Igusa Partition Function: A protected BPS determinant, holomorphic E3 locality, and the Borcherds algebra of Delta 5}}
 \author{Raeez Lorgat}
 \date{Original note: April 2020. Current revision: April 2026.}
 
@@ -99,12 +99,13 @@ Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2},\qquad
 \]
 
 The construction is a normalization and denominator-algebra comparison.
-It does not construct a microscopic BPS Hilbert space or a compact
-Hall/chiral factorization algebra.  Those data are isolated as the
-realization problem.  The final part records the eight
-Clery--Gritsenko diagonal-divisor rows, the Gritsenko--Nikulin and
-Govindarajan CHL/Weyl--Kac--Borcherds denominator theorems attached to
-them, and the still-open physical row-map problem.
+It does not construct a microscopic BPS Hilbert space, the holomorphic
+\(E_3\)-factorization algebra on \(K3\times E\), or its compact
+Hall/chiral specialization on \(E\).  Those data are isolated as the
+realization problem.  The final part records the eight Clery--Gritsenko
+diagonal-divisor rows, the Gritsenko--Nikulin and Govindarajan
+CHL/Weyl--Kac--Borcherds denominator theorems attached to them, and the
+still-open physical row-map problem.
 \end{abstract}
 
 \bigskip
@@ -112,6 +113,14 @@ them, and the still-open physical row-map problem.
 
 \section{Introduction and claim strength}
 \label{sec:introduction-claim-strength}
+
+The physical order is the following.  Protected locality gives a
+holomorphic \(E_3\)-factorization algebra on the Calabi--Yau threefold;
+specialization along \(K3\) gives the \(E_1\)-chiral shadow on \(E\);
+the primitive bracket of that shadow is the expected microscopic home of
+the Borcherds algebra.  The determinant and the scalar square are
+Euler-characteristic shadows of this stronger object, not substitutes
+for it.
 
 The paper has two arcs.
 
@@ -144,7 +153,7 @@ and separates four levels of structure:
 \quad<\quad
 \hbox{scalar square}
 \quad<\quad
-\hbox{physical Hall/chiral host}.
+\hbox{physical \(E_3\)/Hall/chiral host}.
 \]
 Rows \(1\)--\(4\) are governed by the Gritsenko--Nikulin denominator
 theorems.  Rows \(5\)--\(8\) have Clery--Gritsenko products and
@@ -172,10 +181,11 @@ Gritsenko--Nikulin automorphic correction \\
 formal current envelope &
 Beilinson--Drinfeld current construction applied to
 \(\mathfrak g_{\Delta_5}\) \\
-compact Hall/chiral BPS realization &
+compact \(E_3\)/Hall/chiral BPS realization &
 open problem &
-requires orientation, protected integration, sectorial Hall completion,
-and primitive bracket comparison \\
+requires a holomorphic \(E_3\)-source, \(K3\)-to-\(E\) specialization,
+orientation, protected integration, sectorial Hall completion, and
+primitive bracket comparison \\
 eight diagonal-divisor rows &
 automorphic and denominator catalogue &
 Clery--Gritsenko products; Gritsenko--Nikulin rows \(1\)--\(4\);
@@ -197,6 +207,72 @@ the exponent \(f(nm,l)\) is non-zero.
 
 \part{\texorpdfstring{The \(N=1\) Igusa square root}
 {The N=1 Igusa square root}}
+
+\section{The physical question}
+\label{sec:physical-question}
+
+A charged BPS state is not, in the first instance, a local field.  It
+lies in a superselection sector.  Its charge is measured at infinity,
+and its existence depends on a stability chamber.  Thus the ordinary
+local operator algebra of an untwisted four-dimensional theory is not
+the primary object of this paper.
+
+The protected theory is different.  After taking the cohomology of the
+chosen supercharge, long multiplets cancel.  The object which remains is
+not a positive Hilbert space but a charge-graded virtual object whose
+Euler characteristic is stable under deformation.  The protected theory
+remembers the cancellation law of a unitary theory, not its positive
+inner product.
+
+For \(X=K3\times E\) the natural local object before reduction is the
+holomorphic \(E_3\)-factorization algebra
+$$
+\mathcal A^{E_3}_X=\Phi^{\mathrm{FA}}_3(X).
+$$
+This is the object whose disjoint holomorphic insertions factorize.  The
+elliptic curve \(E\) enters only after the \(K3\)-specialization
+$$
+\mathrm{Sp}^{\mathrm{ch}}_{K3,E}(\mathcal A^{E_3}_X)
+=:\mathcal F_X
+\in\mathrm{Fact}(\operatorname{Ran}(E)).
+$$
+Thus the curve-level rule is not imposed externally.  It is the
+one-dimensional chiral shadow of the holomorphic \(E_3\)-observable:
+well-separated protected insertions on \(E\) multiply, while collisions
+remember extension and bound-state data.  In primitive form this is the
+expected bracket
+$$
+[\ ,\ ]:
+\Prim_{\gamma}^{\mathrm{prot}}(\mathcal F_X)
+\otimes
+\Prim_{\eta}^{\mathrm{prot}}(\mathcal F_X)
+\longrightarrow
+\Prim_{\gamma+\eta}^{\mathrm{prot}}(\mathcal F_X).
+$$
+
+The Igusa square-root problem is to identify this primitive protected
+algebra.  The determinant below gives its predicted signed
+one-particle spectrum:
+$$
+\sdim\Prim_{\gamma}^{\mathrm{prot}}(\mathcal F_X)
+=f(nm,l),
+\qquad \gamma=(n,l,m).
+$$
+The Borcherds--Kac--Moody denominator algebra gives the algebraic
+candidate:
+$$
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+\stackrel{?}{\cong}
+\mathfrak g_{\Delta_5}.
+$$
+The theorem-level content of the paper is the determinant and
+denominator comparison.  The displayed isomorphism is the compact
+\(E_3\)/Hall/chiral realization problem.
+
+The square root is therefore not an analytic ambiguity in
+\(\Delta_5^2\).  It is the determinant line of the protected
+one-particle theory.  The scalar square forgets orientation and
+reflection character; the square root remembers them.
 
 \section{The duality principle}
 \label{sec:duality-principle}
@@ -357,6 +433,15 @@ The unpaired states are the $Q_R$-harmonic representatives, hence the
 graded superdimension of $Q_R$-cohomology gives the elliptic genus.
 \end{proof}
 
+\begin{remark}[Where unitarity enters]
+Unitarity is used here before the index is taken: it gives the adjoint
+relation which pairs positive right-moving energy states and makes the
+supertrace localize.  After passing to the protected index, the object is
+virtual.  A coefficient \(f(n,l)\) is a superdimension, not a positive
+dimension.  Negative coefficients record odd protected states in a
+supertrace.  They are not negative probabilities.
+\end{remark}
+
 \begin{definition}[Half-K3 index object]
 Eichler--Zagier normalization \cite{EZ:1}:
 $$Z_{\mathrm{K3}}(\tau,z)=2\phi_{0,1}(\tau,z),$$
@@ -461,8 +546,9 @@ $$
 K_0(\Gamma_{\mathrm{eff}}\hbox{-graded finite-dimensional super vector spaces})
 $$
 together with its Fock determinant.  By itself this determinant does not
-construct a Hilbert space, a vertex algebra, or a factorization algebra
-whose character is $\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}$.
+construct a Hilbert space, a vertex algebra, a holomorphic
+\(E_3\)-factorization algebra, or a chiral factorization algebra whose
+character is $\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}$.
 
 All denominator statements use only the equalities
 $$\sdim\mathcal V_{(n,l,m)}=f(nm,l),\qquad
@@ -481,9 +567,9 @@ operation in the construction supplies composition maps, operator
 products, locality, or a Hilbert completion.
 \end{proof}
 
-\begin{openproblem}[Honest chiral square-root Hilbert lift]
-Construct, if it exists, an honest chiral one-particle Hilbert space
-with a $\Gamma_{\mathrm{eff}}$-graded super-vector-space decomposition
+\begin{openproblem}[Honest protected one-particle lift]
+Construct, if it exists, an honest protected one-particle object with a
+\(\Gamma_{\mathrm{eff}}\)-graded super-vector-space decomposition
 $$
 \mathcal H^{\mathrm{1p,ch}}
 =\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}
@@ -497,7 +583,9 @@ $$
 The determinant construction uses only the virtual classes
 \(\mathbb U_{n,l}\) and their signed dimensions.  The algebraic object
 constructed from the same charge grading and the same signed
-multiplicities is the Borcherds denominator algebra.
+multiplicities is the Borcherds denominator algebra.  Such a lift would
+still be weaker than the holomorphic \(E_3\)-factorization algebra,
+because it would not by itself supply the collision law.
 \end{openproblem}
 
 \section{The normalized cusp form}
@@ -2253,7 +2341,7 @@ $$[q^{1/2}r^{1/2}s^{1/2}]\,64P=64.$$
 
 \end{proof}
 
-\begin{theorem}[$N=1$ determinant--denominator square root]
+\begin{theorem}[Protected Igusa determinant and denominator]
 Set
 $$q=\exp(2\pi i z_1), \quad r=\exp(2\pi i z_2), \quad
 s=\exp(2\pi i z_3).$$
@@ -2293,6 +2381,14 @@ $$f(nm,l)=\dim \mathfrak{g}_{\alpha(n,l,m),\overline 0}
 -\dim \mathfrak{g}_{\alpha(n,l,m),\overline 1}, \qquad
 q^nr^ls^m=\exp(-\pi i(\alpha(n,l,m),z))$$
 for $(n,l,m)\in\Gamma_{\mathrm{act}}$.
+The determinant statement is a theorem at the virtual one-particle
+level.  The denominator statement is a theorem at the Borcherds
+root-datum level.  The stronger microscopic comparison
+$$
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\cong\mathfrak g_{\Delta_5}
+$$
+is the compact \(E_3\)/Hall/chiral realization problem, not a
+consequence of the scalar square.
 \end{theorem}
 
 \begin{proof}
@@ -3902,6 +3998,102 @@ product and any separately proved denominator theorem.  They carry no
 CY/DT partition identity, no physical BPS factorization algebra, and no
 fractional chiral power.
 \end{remark}
+
+\begin{definition}[Canonical fractional branch]
+\label{def:canonical-fractional-branch}
+Let
+$$
+F(Z)=a\,q^\alpha r^\beta s^\gamma(1+O(q,r,s)),
+\qquad a\in\R_{>0},
+$$
+be a product expansion in a fixed positive Weyl chamber.  Its canonical
+\(k\)-th root in that chamber is
+$$
+F(Z)^{1/k}
+=a^{1/k}q^{\alpha/k}r^{\beta/k}s^{\gamma/k}
+\exp\left(\frac1k\log(1+O(q,r,s))\right),
+$$
+where \(a^{1/k}\) is the positive real root and the logarithm is the
+formal logarithm in the completed product algebra.  This defines a
+formal branch.  It does not define a modular form until the relevant
+metaplectic or multiplier-cover character has been constructed.
+\end{definition}
+
+\begin{proposition}[Reconstituted fractional-power comparison test]
+\label{prop:fractional-power-comparison-test}
+The earlier fractional-power comparison symbols
+\[
+\Phi^{\mathrm{cmp}}_5,\qquad
+\Phi^{\mathrm{cmp}}_7,\qquad
+\Phi^{\mathrm{cmp}}_8
+\]
+do not label Clery--Gritsenko rows.  The only source-compatible
+statement retained here is the following conditional test.
+
+If a comparison form \(\Phi^{\mathrm{cmp}}_5\) of weight \(5\) and
+quadratic character is supplied, then a modular square root
+\((\Phi^{\mathrm{cmp}}_5)^{1/2}\) must live on the pullback of its
+paramodular group to the genus-two metaplectic cover and must carry the
+corresponding genuine half-integral multiplier.
+
+If a comparison form \(\Phi^{\mathrm{cmp}}_7\) of weight \(4\) and
+order-four character is supplied, then a modular fourth root
+\((\Phi^{\mathrm{cmp}}_7)^{1/4}\) must live on an order-eight multiplier
+cover; in the genus-two orthogonal description this is the spin-cover
+version of the exceptional isogeny
+\(\operatorname{Spin}(3,2)\simeq\operatorname{Sp}_4\).
+
+If a comparison form \(\Phi^{\mathrm{cmp}}_8\) has weight \(0\), the
+canonical branch of Definition~\ref{def:canonical-fractional-branch}
+is only a formal logarithmic branch.  By itself it gives no
+finite-order modular multiplier and no chiral square-root theorem.
+\end{proposition}
+
+\begin{proof}
+The first two assertions are the standard metaplectic obstruction for
+half-integral and quarter-integral weights: a fractional power of an
+automorphic product is modular only after the automorphy factor,
+character, and divisor multiplicities lift to a genuine character on a
+cover \cite{Weil1964}, \cite{Shimura1973}, \cite{Gri1999}.  The
+genus-two equality of the symplectic and orthogonal descriptions is the
+exceptional isogeny used throughout the exterior-square model.  The
+weight-zero case has no automorphy weight to absorb the logarithmic
+branch; a formal root can be chosen in a chamber, but this is not a
+modular or chiral construction.
+\end{proof}
+
+\begin{openproblem}[Fractional comparison-row physical host]
+\label{op:fractional-comparison-row-host}
+For a fractional comparison row, construct a physical-host certificate
+consisting of:
+$$
+X_j,\quad
+\Gamma_j^{\mathrm{BPS}},\quad
+\widetilde\Gamma_j,\quad
+\theta_j,\quad
+Z_j^{\mathrm{red}},\quad
+\mathcal H_{j,\kappa}^{1p},\quad
+\mathsf C_j.
+$$
+Here \(X_j\) is a compact Calabi--Yau, orbifold Calabi--Yau, or CHL
+background with an oriented reduced obstruction theory;
+\(\widetilde\Gamma_j\) is the modular group or multiplier cover on
+which the fractional root is genuine; \(\theta_j\) fixes the
+orientation, Behrend sign, chamber, and possible gerbe holonomy; and
+$$
+Z_j^{\mathrm{red}}=C_j(\Phi^{\mathrm{cmp}}_j)^{-2}
+$$
+is a reduced scalar theorem, not a consequence of the automorphic
+product.  The one-particle protected object must satisfy the appropriate
+cusp-labelled superdimension formula, and \(\mathsf C_j\) must have
+protected primitives mapping to the denominator algebra attached to the
+same row.
+
+Borcea--Voisin and higher-dimensional curve-counting constructions
+\cite{BORCEA}, \cite{VOISIN}, \cite{OhThomasI}, \cite{OhThomasII},
+\cite{BOPY} are possible sources for such a certificate.  This paper
+does not assert that they supply it.
+\end{openproblem}
 
 The following comparison table is restricted to the $N=1$ Igusa
 boundary.  It contains no row map
