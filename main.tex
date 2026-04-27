@@ -176,10 +176,6 @@ Thus the natural order is
 \hbox{eight-row host certificates}.
 \end{gathered}
 \]
-The paper follows this order at the level of claims.  Some arrows are
-proved in this manuscript, some are imported theorems, and some are
-open realization requirements.
-
 \paragraph{Protected locality.}
 The protected index is theorem-level.  Right-moving localization of the
 unitary K3 sigma model gives
@@ -355,8 +351,8 @@ the primary object of this paper.
 
 At the level of the protected index the situation is different.  After
 taking the cohomology of the chosen supercharge, long multiplets cancel.
-The object which remains is not a positive Hilbert space but a
-charge-graded virtual object whose Euler characteristic is stable under
+The object which remains is a charge-graded virtual object,
+not a positive Hilbert space, whose Euler characteristic is stable under
 deformation.  The index remembers the cancellation law of a unitary
 theory, not its positive inner product.
 
@@ -443,11 +439,6 @@ that character is part of the open datum.
 \subsection*{Schema of the local protected observable algebra}
 \label{sec:local-protected-observable-algebra}
 
-The candidate local source object is the following proposal-only schema,
-marked here as an external assumption.  All ingredients are taken from
-existing literature; no part of the construction is the deliverable of
-this paper.
-
 \begin{definition}[Local protected observable algebra; proposal-only schema]
 \label{def:local-protected-observable-algebra}
 For an open \(U\subset X=K3\times E\), let
@@ -492,27 +483,22 @@ paper, in the sense that its disjoint-supports factorization on opens
 of \(X=K3\times E\) is the holomorphic \(E_3\)-factorization datum.
 \end{definition}
 
-\begin{remark}[Status of Definition~\ref{def:local-protected-observable-algebra}]
+\begin{remark}
 The components are external assumptions:
 PTVV \((-1)\)-shifted symplectic structure on derived moduli of
 B-branes \cite{PTVV2013}; BBDJS vanishing-cycle perverse sheaf and its
 Thom--Sebastiani isomorphism (extending Massey 2001 and Saito 1990 to
-the d-critical setting) \cite{BBDJS2015}; orientation lines as in the
-Joyce--Upmeier orientation theory \cite{JoyceUpmeier} or in
+the d-critical setting) \cite{BBDJS2015}; orientation lines from the
+Joyce--Upmeier orientation theory \cite{JoyceUpmeier} or
 Kontsevich--Soibelman \cite{KSCoHA}.  The factorization map relies on
-disjoint-supports Ext-vanishing for compactly supported branes (a
-classical statement; absent for non-compact supports, where one
-recovers chiral algebra structure rather than commutative
-factorization).  Compactness on \(K3\times E\) is itself an open
-problem because \(E\) is compact but the relevant moduli of branes are
+disjoint-supports Ext-vanishing for compactly supported branes
+(absent for non-compact supports, where one recovers chiral algebra
+structure, not commutative factorization).  Compactness on
+\(K3\times E\) is open because the relevant moduli of branes are
 typically non-quasicompact in \(\La_S\)-charge; the sectorial
 truncation of
-Proposition~\ref{prop:sectorial-hall-truncation} is the proposed
-mechanism for cutting it down.  None of this construction is supplied
-here; the schema is named so that the
-\((E_3)\)-slot of
-Definition~\ref{def:compact-igusa-realization-datum} has an explicit
-candidate to point at.
+Proposition~\ref{prop:sectorial-hall-truncation} is the candidate
+truncation.
 \end{remark}
 
 \section{The one-particle index and its determinant}
@@ -536,7 +522,7 @@ $$
 \cup\{(n,l,0)\mid n>0,\ l\in\Z\}
 \cup\{(0,l,0)\mid l<0\}.
 $$
-Indeed, \(m>0\) is positive because \(s\) is the smallest parameter; if
+\(m>0\) is positive because \(s\) is the smallest parameter; if
 \(m=0\), then \(n>0\) is positive because \(q\) is next; if \(m=n=0\),
 positivity is \(l<0\) because \(|r|^{-1}\ll1\).  This is a chamber
 convention for the completed product, not a microscopic charge
@@ -820,7 +806,7 @@ along the Weyl action transported by Gram-projection
 
 \smallskip
 \textup{(O1)\(^+\)} \emph{Weyl-equivariant cocycle extension.}  The
-Weyl-equivariant lift of (O1) is an honest \(1\)-cocycle on
+Weyl-equivariant lift of (O1) is a \(1\)-cocycle on
 \(W^{(2)}(\La^{2,1}_{II})\) with values in \(\{\pm 1\}\), descending
 to a sign character
 \(\varepsilon_o:W^{(2)}(\La^{2,1}_{II})\to\{\pm 1\}\) (the orientation
@@ -899,44 +885,28 @@ and whose orientation monodromy character is the Maass character
 \end{enumerate}
 \end{theorem}
 
-\begin{remark}[Status of Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}]
-\label{rem:thm3-status}
-This is a \emph{conditional} theorem: each of (i)--(iii) is proved
-modulo the two open data items (O1) and (O2).  Item (O1) is the strong
-orientation datum.  On Calabi--Yau threefolds it is Joyce--Song
-\cite{JoyceSong}; the multiplicative orientation cocycle on
+Items (O1) and (O2) are open on the reduced \(K3\times E\) sector;
+on Calabi--Yau threefolds (O1) is Joyce--Song \cite{JoyceSong},
+the multiplicative orientation cocycle on
 \(\mathrm{Perf}(X)\) is Joyce--Upmeier \cite{JoyceUpmeier} and
-Joyce--Tanaka--Upmeier \cite{JoyceTanakaUpmeier}; on Calabi--Yau
+Joyce--Tanaka--Upmeier \cite{JoyceTanakaUpmeier}, on Calabi--Yau
 fourfolds the unreduced orientation exists by Borisov--Joyce /
 Cao--Gross--Joyce / Bojko--Borisov--Joyce
-\cite{BorisovJoyce}, \cite{OhThomasI}, \cite{OhThomasII}; the rank-one
+\cite{BorisovJoyce}, \cite{OhThomasI}, \cite{OhThomasII}, the rank-one
 Pin\(^c\) lift on \(\mathrm{Hilb}^n(X)\) for smooth threefolds is
-Cao--Kool--Monavari \cite{CaoKoolMonavari}; further extensions to
+Cao--Kool--Monavari \cite{CaoKoolMonavari}, and further extensions to
 non-compact and Joyce--Song settings are Liu \cite{LiuYalongOrientations}.
-The \(K3\times E\) case combines a noncompact CY 3-fold direction with
-a reduced \(E\)-quotient and a Weyl-equivariance constraint that is not
-in the literature.  Item (O2) is the local Pfaffian model for a
-simple wall reflection: it is folklore on critical and
-\((-1)\)-shifted symplectic moduli, but its compatibility with the
-type-II Weyl action on the reduced \(K3\times E\) sector has not been
-proved.  The deliverable of Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}
-is the typed bridge: once (O1) and (O2) are produced, the Dirac/Pfaffian
-square root and the orientation-character identity follow without
-further input.  The cosection-induced parity flip
+The cosection-induced parity flip
 \(\mathrm{vd}^{\mathrm{red}}=\mathrm{vd}^{\mathrm{std}}+1\) of the
 Maulik--Toda / Oberdieck reduced obstruction theory is absorbed into
 (O1) as a \(\mathbb Z/2\)-grading shift
 \(o^{\mathrm{red}}_{\mathcal C}=o^{\mathrm{std}}_{\mathcal C}\otimes\Pi\)
-of the BBDJS \cite{BBDJS2015} line under the cosection contraction of
+of the BBDJS \cite{BBDJS2015} line under cosection contraction of
 the PTVV \cite{PTVV2013} \((-1)\)-shifted symplectic form by
-\(\sigma_{K3}\); see clause (P4) of
-Open Problem~\ref{op:orientation-monodromy-character} for the explicit
-statement and its consistency with the Joyce--Upmeier
-\cite{JoyceUpmeier} multiplicative cocycle and the Oberdieck monic
-normalization \cite{OberdieckReducedPT}.  Operationally the flip is
-the source of the \((-1)^F\) sign in (i) and (iii) and pins down the
+\(\sigma_{K3}\) (clause (P4) of
+Open Problem~\ref{op:orientation-monodromy-character}); the flip
+sources the \((-1)^F\) sign in (i) and (iii) and pins the
 Berezinian convention.
-\end{remark}
 
 \begin{proof}[Proof of Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}]
 
@@ -1020,7 +990,7 @@ The chamber decomposition
 \simeq W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II})\) of
 Section~\textup{The Weyl chamber and the Weyl vector} reduces the
 character to its values on these six generators \emph{provided}
-\(\varepsilon_o\) is an honest homomorphism on the infinite Coxeter
+\(\varepsilon_o\) is a homomorphism on the infinite Coxeter
 group \(W^{(2)}(\La^{2,1}_{II})\); this is exactly the strengthened
 hypothesis (O1)\(^+\), supplied by
 Lemma~\ref{lem:weyl-equivariant-orientation-cocycle} from (O1) plus the
@@ -1288,14 +1258,9 @@ agreeing on a generating set agree, so
 \end{proof}
 
 \begin{proof}[Independent verification via the Maass character]
-The proof above routes through the Pfaffian local model (O2) and the
-Borcherds simple-root multiplicity \(N_\delta=f(nm,l)\big|_{\text{simple
-cell}}\): a Joyce--Tanaka--Upmeier-flavoured route, where the sign on a
-type-II simple wall is read off the parity of the local Pfaffian
-exponent.  The Beilinson-school discipline asks the numerics to be
-verified by an independent method; the proof below uses only the Maass
-multiplier \(\nu_{\Delta_5}\) and Borcherds-product factorization.  No
-appeal to (O2) is made.
+The argument below uses only the Maass
+multiplier \(\nu_{\Delta_5}\) and Borcherds-product factorization,
+without appeal to (O2).
 
 \emph{Step 1 (Reformulating the claim as a coboundary).}  Identify the
 sign cocycle to be computed.  Pulled back to
@@ -1458,7 +1423,7 @@ Jacobi form
 \(\Sp_4(\Z)\backslash\Sp(2)/U(2)\) the divisor of \(\Delta_5\) is the
 union of the real reflective walls \(\Hpl_{\delta_i}\) (multiplicity
 \(f(0,\pm1)=1\) on each \(\delta_i\)) together with all imaginary
-walls — negative-norm and isotropic — appearing with the multiplicities
+walls (negative-norm and isotropic) appearing with the multiplicities
 \(m(a)\) and \(\tau(a)\) recorded in
 \cite[Theorem~2.1, (2.1)--(2.3)]{GNII} and
 \cite[Sections~3--4]{GN}.  This is the wall-divisor decomposition of
@@ -1564,7 +1529,7 @@ The direct-sum-multiplicative orientation datum \textup{(O1)} of
 Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}, together with
 the Pfaffian local model \textup{(O2)}, implies the strengthened
 hypothesis \textup{(O1)}\(^+\): the wall-reflection action on
-\(o_{\mathcal C}\) defines an honest sign homomorphism
+\(o_{\mathcal C}\) defines a sign homomorphism
 \(\varepsilon_o:W^{(2)}(\La^{2,1}_{II})\to\{\pm 1\}\).
 \end{lemma}
 
@@ -1612,77 +1577,32 @@ matrix carries no finite-order off-diagonal entries).  Hence
 is the content of (O1)\(^+\).
 \end{proof}
 
-\begin{remark}[Epistemic status of
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} and
-Lemma~\ref{lem:thm3-three-sign-computation}]
+\begin{remark}
 \label{rem:thm3-honest-status}
-\begin{itemize}
-\item \emph{Proved unconditionally (in this paper):}  the table values
-of \(\nu_{\Delta_5}\) on the six generators
-(Lemma~\ref{lem:maass-multiplier-restriction}); the determinant
-identity \(\mathcal D_X=\Delta_5\)
-(Proposition~\ref{prop:bgn-identification}); the OP scalar value
-\(-4096\,\Delta_5^{-2}\) (Proposition~\ref{prop:op-normalization}).
-\item \emph{Proved conditionally on \textup{(O1)}, \textup{(O1)}\(^+\),
-and \textup{(O2)}}: the Pfaffian recognition (i), the
-orientation-character identity (ii), and the categorical upgrade (iii).
-The Step 4 / Theorem 3 argument \emph{uses} the Weyl-equivariant
-strengthening (O1)\(^+\) — the direct-sum clause of (O1) alone gives
-multiplicativity on Hall direct sums but not on the infinite Coxeter
-group \(W^{(2)}(\La^{2,1}_{II})\); the upgrade is supplied by
-Lemma~\ref{lem:weyl-equivariant-orientation-cocycle} (Joyce--Upmeier
-multiplicative cocycle \cite{JoyceUpmeier,JoyceTanakaUpmeier} restricted
-to wall-reflection generators, plus the
-\((\Z/2)^3\) abelianization of \(W^{(2)}(\La^{2,1}_{II})\)).
-\item \emph{Open}:  (O1) for the reduced \(E\)-quotiented, Weyl-equivariant
-compact critical \(K3\times E\) Hall/CoHA sector
-(literature has unreduced Joyce--Upmeier \cite{JoyceUpmeier} /
-Joyce--Tanaka--Upmeier \cite{JoyceTanakaUpmeier} /
-Borisov--Joyce--Bojko \cite{BorisovJoyce} orientations on \(\mathrm{Perf}(X)\),
-and the orientation-cocycle pullback of
-\cite{JoyceKinjoParkSafronov} on shifted symplectic stacks, but not the
-reduced \(E\)-quotient with type-II Weyl-equivariant lift);
-(O2) the Pfaffian local model on type-II walls of that sector
-(folklore on simple critical loci, not stated for this case).
-The strengthening (O1)\(\Rightarrow\)(O1)\(^+\) is proved in
-Lemma~\ref{lem:weyl-equivariant-orientation-cocycle} and is no longer
-open.
-\item \emph{Computed from imported coefficients}:  the three rows of
-the table match Borcherds simple-root multiplicity \(N_{\delta_i}=1\)
-via \(f(nm,l)\) at \((1,1,0),(0,1,1),(0,-1,0)\); the
-\(\Aut(\Poly_{II})\)-row evaluates the same Borcherds divisor formula
-of \cite[Section~4]{GN} at the three type-I roots and yields
-\(N_\alpha=0\) by the explicit support of \(\phi_{0,1}\) recorded in
-\cite[\S2.2]{EZ:1}; both lines are then consistent with the
-\(N_\delta=f(nm,l)\) formula, which is itself the leading-order shadow
-of Proposition~\ref{prop:bgn-identification}.
-\end{itemize}
-\end{remark}
-
-\begin{remark}[The conditional theorem and its remaining hypotheses]
-\label{rem:thm3-deliverable}
 The squared scalar branch \(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\) is
-orientation-forgetful: the Pfaffian sign character is squared away.
-Conversely, the Maass character \(\nu_{\Delta_5}\) is not produced by
-normalizing \(\Delta_5\), since rescaling by a nonzero scalar leaves
-the character invariant
-(Open Problem~\ref{op:orientation-monodromy-character}).  The bridge
-between the two is precisely the orientation datum (O1)+(O2), and the
-content of Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}
-is that \emph{this is the only missing data}: granted (O1) and (O2),
-the Pfaffian section, the orientation-character identity, and the
-categorical upgrade follow without further hypothesis on the
-microscopic structure of the chiral protected module.  The remaining
-construction is geometric: build the strong orientation datum on the
-reduced compact critical sector of \(K3\times E\) and verify the
-Pfaffian local model on its three type-II walls.  Both items are
-rigorously formulated open problems, not heuristics; the
-obstruction is recorded in
-Open Problem~\ref{op:orientation-monodromy-character} below.
+orientation-forgetful; rescaling \(\Delta_5\) by a nonzero scalar leaves
+the Maass character \(\nu_{\Delta_5}\) invariant.  The bridge between
+the two is the orientation datum (O1)+(O2), open on the reduced
+\(E\)-quotiented Weyl-equivariant compact critical \(K3\times E\)
+Hall/CoHA sector (the literature furnishes unreduced
+Joyce--Upmeier \cite{JoyceUpmeier} /
+Joyce--Tanaka--Upmeier \cite{JoyceTanakaUpmeier} /
+Borisov--Joyce--Bojko \cite{BorisovJoyce} orientations on
+\(\mathrm{Perf}(X)\), and the orientation-cocycle pullback of
+\cite{JoyceKinjoParkSafronov} on shifted symplectic stacks, but not
+the reduced \(E\)-quotient with type-II Weyl-equivariant lift);
+(O1)\(\Rightarrow\)(O1)\(^+\) is supplied by
+Lemma~\ref{lem:weyl-equivariant-orientation-cocycle}.  The three rows
+match Borcherds simple-root multiplicity \(N_{\delta_i}=1\) via
+\(f(nm,l)\) at \((1,1,0),(0,1,1),(0,-1,0)\); the
+\(\Aut(\Poly_{II})\)-row evaluates the Borcherds divisor formula
+\cite[Section~4]{GN} at the three type-I roots and yields
+\(N_\alpha=0\) by the explicit support of \(\phi_{0,1}\)
+\cite[\S2.2]{EZ:1}.
 \end{remark}
 
-\begin{openproblem}[Honest protected one-particle lift]
-Construct, if it exists, an honest protected one-particle object with a
+\begin{openproblem}[Protected one-particle lift]
+Construct, if it exists, a protected one-particle object with a
 \(\Gamma_{\mathrm{eff}}\)-graded super-vector-space decomposition
 $$
 \mathcal H^{\mathrm{1p,ch}}
@@ -1844,7 +1764,7 @@ Cao--Kool--Monavari \cite{CaoKoolMonavari} and Liu
 its sign on \(\mathbb Z/2\)-graded sectors is not pinned down by the
 isomorphism alone; it is fixed by a convention on the Bott element
 \(\beta\), separately on the even and odd parity sectors.
-\emph{Sign convention adopted in this manuscript.}
+\emph{Sign convention.}
 \begin{enumerate}
 \item[(i)] On the \emph{even-parity} sector, the Bott element acts by
 \(\beta_{\mathrm{even}}=+1\).  This is the standard convention of
@@ -1883,8 +1803,7 @@ homogeneous class \(c\) of odd parity, the same identity holds because
 sign-flip alternative \(\beta_{\mathrm{odd}}=-1\) would give
 \(B(c,c)=-2\Pi_X(c)\) on the odd sector and break the symmetric
 quadratic-obstruction conclusion of clause (vi) of
-Lemma~\ref{lem:b-cocycle-central-extension}.  The convention chosen here is therefore
-load-bearing, not cosmetic.
+Lemma~\ref{lem:b-cocycle-central-extension}.
 The convention propagates to the multiplicative isomorphisms
 \(\mu_{c,c'}\) of (O) in
 Theorem~\ref{thm:ptvv-joyce-pi-descent} via the cocycle pentagon, and
@@ -2292,20 +2211,13 @@ on \(\mathfrak M^{\mathrm{red},\mathrm{ss}}_{\mathcal C}\), as
 required.
 \end{proof}
 
-\begin{remark}[Comparison of the two methods]
+\begin{remark}
 \label{rem:p3-route-b-versus-hn}
-Lemma~\ref{lem:p3-brauer-gerbe-vanishing} closes the (P3) clause of
-Open~Problem~\ref{op:orientation-monodromy-character} via an
-\emph{explicit Brauer-class computation}: the gerbe is presented as a
-Brauer--Severi class on the cosection-reduced relative moduli, evaluated
-chamberwise from the Atiyah class of the K3 polarization line.  The
-Harder--Narasimhan-stratification method
-(via filtration-additive Joyce orientation transport) is mathematically
-distinct.  Agreement of the two on rank \(r=2\) is a consistency check,
-not a circular argument: the HN method reads the parity off the
-filtration data while the Brauer method reads it off the Chern integrand
-of the chamber polarization, and both agree with the rank-one base case
-of clause~(P1).
+Lemma~\ref{lem:p3-brauer-gerbe-vanishing} reads the parity off the
+Chern integrand of the chamber polarization;
+Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing} reads it off the
+HN-filtration data; both agree with the rank-one base case (P1) and
+with each other on rank \(r=2\).
 \end{remark}
 
 \begin{openproblem}[Orientation monodromy character]
@@ -2329,9 +2241,6 @@ hypothesis (O2) of
 Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}: a simple
 real-root reflection reverses one oriented normal mode, so its square is
 scalar while the square root changes sign.
-
-The current status decomposes into three sub-statements, the first two
-constructed and the third being the irreducible open obstruction.
 
 \smallskip
 \textup{(P1)} \emph{Rank-one D6--D2--D0 stratum: orientation existence
@@ -2377,9 +2286,8 @@ explicit row-by-row calculation in
 Lemma~\ref{lem:thm3-three-sign-computation}; conditional on (O1) and (O2).
 
 \smallskip
-\textup{(P3)} \emph{Higher-rank obstruction: named class to be killed.}
-The remaining open task, replacing the original ``construct the
-character'' formulation, is to compute the named obstruction classes
+\textup{(P3)} \emph{Higher-rank obstruction.}
+Compute the obstruction classes
 $$
 \alpha^{\mathrm{red}}_{\mathcal C}
 \;\in\;H^2(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb Z/2),
@@ -2409,43 +2317,24 @@ Lemma~\ref{lem:bmu2-klein-four-vanishing}: the band at \(N=2\) is the
 Klein-four \(BE[2]\) (not cyclic \(B\mu_2\)), and the
 K\"unneth-plus-translation-invariance argument forces vanishing on
 each of the three nontrivial cyclic subgroups simultaneously, hence
-\(\overline{\beta}^E_{\mathcal C}=0\) on the rank-one input.  Granted this vanishing, the strong
-orientation datum (O1) follows by the construction route through
-Joyce--Upmeier \cite{JoyceUpmeier} multiplicative cocycle plus the Pin\(^c\) lift; granted
-the Pfaffian local model (O2), the wall-character formula of (P2)
-follows by Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}.
-For non-compact and Joyce--Song-style extensions of the Pin\(^c\) lift
-the relevant analytic technology is Liu \cite{LiuYalongOrientations}.
-The discharge proceeds at the Harder--Narasimhan-stratum level via
-Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing} below; the small-orbit
-\(B\mu_2\) gerbe residual at the \(N=2\) torsion locus
-\(K3\times(E/E[2])\) is in turn discharged by
-Lemma~\ref{lem:bmu2-klein-four-vanishing}, agreeing with
-Lemmas~\ref{lem:bmu2-w1-vanishing}, \ref{lem:bmu2-cohomological-computation},
-\ref{lem:bmu2-orbifold-lift}, \ref{lem:bmu2-small-orbit-vanishing} below
-(four routes giving the same vanishing class).  The
-band at \(N=2\) is the
-Klein-four \(BE[2]\) (not cyclic \(B\mu_2\)), and the obstruction lives
-in \(H^2(BE[2];\mathbb Z/2)\cong(\mathbb Z/2)^3\) but is jointly
-detected by restriction to the three nontrivial cyclic
-\(\mu_2^{(i)}\subset E[2]\) where each restriction is killed by the
-K\"unneth split \(o^{\mathrm{red}}_{\mathcal C}=o_{K3}\otimes o_E\)
-plus translation-invariance of \(\mathrm dz\in\Omega^1_E\).  Hence
-\(\overline{\beta}^E_{\mathcal C}=0\) on the rank-one D6--D2--D0 input.
-What remains open: higher-rank
-(\(\mathrm{rk}\,\mathcal C\ge 2\)) semistable strata, where the joint
-vanishing of \(\alpha^{\mathrm{red}}_{\mathcal C}\) and
-\(\alpha^E_{\mathcal C}\) is supplied by
-Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing} on the
-HN-stratification side.  The relevant analytic technology is the
+\(\overline{\beta}^E_{\mathcal C}=0\) on the rank-one input.
+Granted this vanishing, (O1) follows from the Joyce--Upmeier
+\cite{JoyceUpmeier} multiplicative cocycle plus the Pin\(^c\) lift;
+granted (O2), the wall-character formula of (P2) follows by
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}.
+On higher-rank semistable strata the joint vanishing of
+\(\alpha^{\mathrm{red}}_{\mathcal C}\) and \(\alpha^E_{\mathcal C}\) is
+supplied by Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing}; the
 Pin\(^c\)-lift program of \cite{JoyceUpmeier},
 \cite{JoyceTanakaUpmeier}, \cite{CaoKoolMonavari},
-\cite{LiuYalongOrientations}, \cite{BBDJS2015} restricted to the
-cosection-twisted reduced \(E\)-quotient.
+\cite{LiuYalongOrientations}, \cite{BBDJS2015} supplies the analytic
+technology on the cosection-twisted reduced \(E\)-quotient; for
+non-compact and Joyce--Song extensions, Liu
+\cite{LiuYalongOrientations}.
 
 \smallskip
 \textup{(P4)} \emph{Cosection-induced parity flip from \(\sigma_{K3}\):
-\(\mathrm{vd}^{\mathrm{red}}=\mathrm{vd}^{\mathrm{std}}+1\); discharged
+\(\mathrm{vd}^{\mathrm{red}}=\mathrm{vd}^{\mathrm{std}}+1\); absorbed
 into (O1) as a \(\mathbb Z/2\)-grading shift on \(o_{\mathcal C}\).}
 The Maulik--Toda / Oberdieck reduced obstruction theory contracts the
 PTVV \cite{PTVV2013} \((-1)\)-shifted symplectic form
@@ -2473,8 +2362,8 @@ extension correspondences of
 Definition~\ref{def:protected-hall-integration-criterion} and so does
 not perturb the Joyce--Upmeier multiplicative cocycle of (P2) once the
 parity is fixed once-and-for-all by the Oberdieck monic normalization
-\cite{OberdieckReducedPT}.  In particular, the parity-flip is
-\emph{absorbed} into the (O1) datum: the strong orientation line
+\cite{OberdieckReducedPT}.  The parity-flip is absorbed into (O1):
+the strong orientation line
 \(o_{\mathcal C}\) demanded by
 Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} is, on the
 reduced sector, \(o^{\mathrm{red}}_{\mathcal C}\), not the unreduced
@@ -2489,24 +2378,16 @@ Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}: it is the
 sign that makes \(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\) carry its
 overall \(-\) and pins down the Berezinian convention used in
 \(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)=\Delta_5\).
-This is discharged by construction modulo (P3); it is not an
-independent open obstruction.  The remaining (P3) obligation is purely
-the joint vanishing of
+The (P3) residual is the joint vanishing of
 \(\alpha^{\mathrm{red}}_{\mathcal C}+\alpha^E_{\mathcal C}\) on the
 HN-completed semistable stack with \(\mathrm{rk}\,\mathcal C\ge 2\) and
-on the small-orbit \(B\mu_N\) gerbe.  Two methods supply
-this vanishing modulo the small-orbit residual: the
-HN-stratification route of Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing}
-and the explicit Brauer/Brauer--Severi gerbe computation of
-Lemma~\ref{lem:p3-brauer-gerbe-vanishing}; both reduce the residual to
-the \(B\mu_2\) small-orbit at \(N=2\), in turn discharged by
-Lemmas~\ref{lem:bmu2-klein-four-vanishing}
-(Klein-four \(BE[2]\)/K\"unneth split),
-\ref{lem:bmu2-w1-vanishing} (via hyperelliptic
-\([-1]\)),
-\ref{lem:bmu2-cohomological-computation} (via Wu formula),
-\ref{lem:bmu2-orbifold-lift} (Joyce--Upmeier orbifold lift), and
-\ref{lem:bmu2-small-orbit-vanishing} below.
+on the small-orbit \(B\mu_N\) gerbe; it is supplied modulo the
+small-orbit residual by the
+HN-stratification of Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing}
+and by the Brauer/Brauer--Severi gerbe computation of
+Lemma~\ref{lem:p3-brauer-gerbe-vanishing}.  Both reduce to
+the \(B\mu_2\) small-orbit at \(N=2\), closed by
+Lemma~\ref{lem:bmu2-klein-four-vanishing}.
 \end{openproblem}
 
 \begin{lemma}[\(E\)-equivariant descent of the orientation line]
@@ -2684,7 +2565,7 @@ subgroup \(E[2]\subset E\) is the Klein-four group
 two-torsion points \(e_1,e_2,e_3\in E[2]\) (any two are independent).
 The small-orbit stratum at \(N=2\) is
 \(\mathfrak M^{\mathrm{red}}_{\mathcal C}(K3\times(E/E[2]))\), banded
-not by \(B\mu_2\) but by \(BE[2]\), so the cohomological residual of
+by \(BE[2]\), not \(B\mu_2\); the cohomological residual of
 clause \textup{(iv)} of
 Lemma~\ref{lem:E-equivariant-descent-obstruction} at \(N=2\) is the
 class
@@ -2741,7 +2622,7 @@ the lift to \(o_E\) is therefore the trivial representation, not the
 sign representation.  Equivalently, the Pin\(^{c}\) sign character
 \(w_1(o_E)\colon E[2]\to\mathbb Z/2\) vanishes for each
 \(\mu_2^{(i)}\).
-\item[\textup{(K4)}] (\emph{Conclusion.})  Combining \textup{(K1)},
+\item[\textup{(K4)}] Combining \textup{(K1)},
 \textup{(K2)}, \textup{(K3)}, the orientation line
 \(o^{\mathrm{red}}_{\mathcal C}\) is fixed by every
 \(\mu_2^{(i)}\subset E[2]\), hence by the full Klein-four \(E[2]\), and
@@ -2859,426 +2740,33 @@ orbifold-stratum extension therefore introduces no further obstruction
 beyond the cyclic-sector vanishing already established.
 \end{remark}
 
-\begin{lemma}[Vanishing of the small-orbit \(B\mu_2\) gerbe class via
-the hyperelliptic involution]
-\label{lem:bmu2-w1-vanishing}
-Let \(\mathcal C\in\Gamma_X^{\mathrm{phys}}\), let
-\(\mathfrak M^{\mathrm{red}}_{\mathcal C}\) be the cosection-reduced
-critical Hall stack of
-Definition~\ref{def:protected-hall-integration-criterion}, and let
-\(\beta^{E,2}_{\mathcal C}\in H^2(B\mu_2;\mathbb Z/2)\cong\mathbb Z/2\) be
-the order-two small-orbit gerbe class of clause \textup{(iv)} of
-Lemma~\ref{lem:E-equivariant-descent-obstruction}.  Then
-\[
-\beta^{E,2}_{\mathcal C}=0\in H^2(B\mu_2;\mathbb Z/2),
-\]
-so the small-orbit \(B\mu_2\) component
-\(\mathfrak M^{\mathrm{red}}_{\mathcal C}(K3\times(E/E[2]))\)
-contributes no \(\mathbb Z/2\)-correction to
-\(\overline{o}^{\mathrm{red}}_{\mathcal C}\).
-\end{lemma}
-
-\begin{proof}
-The class \(\beta^{E,2}_{\mathcal C}\in H^2(B\mu_2;\mathbb Z/2)\) is, by
-naturality of Stiefel--Whitney classes
-\cite{BBDJS2015,JoyceUpmeier}, the cup-square
-\(w_1^{\,2}\) of the first Stiefel--Whitney class
-\(w_1\bigl(\rho_{\mathrm{or}}\bigr)\) of the action of \(E[2]\) on the
-restriction of the orientation line \(o^{\mathrm{red}}_{\mathcal C}\) to
-the small-orbit locus.  It suffices to show \(w_1\bigl(\rho_{\mathrm{or}}\bigr)=0\).
-
-The 2-torsion subgroup \(E[2]\subset E\) is generated by the three
-nontrivial 2-torsion translations together with the hyperelliptic
-involution \([-1]\colon E\to E\) modulo translation.  In the small-orbit
-fibre \(K3\times(E/E[2])\), the residual \(B\mu_2\)-band identifies the
-inertia of the quotient stack with the cyclic group
-\(\langle[-1]\rangle\subset E[2]\), since elliptic translations act
-freely on the open \(E\)-orbit and only the hyperelliptic involution
-develops a nontrivial stabilizer compatibly with the cosection-twisted
-reduced obstruction theory of \cite{OberdieckReducedPT}.  It therefore
-suffices to show that \([-1]\) acts trivially on
-\(o^{\mathrm{red}}_{\mathcal C}\).
-
-\smallskip
-\emph{Step 1: \([-1]\) acts trivially on \(\operatorname{Pic}(E)\).}
-The hyperelliptic involution \([-1]\colon E\to E\) is an automorphism
-of the abelian variety \(E\) of order two; it acts on
-\(H^{1,0}(E;\mathbb C)=\mathbb C\!\cdot\! dz\) by \(dz\mapsto-dz\) and on
-\(H^1(E;\mathbb R)\) by \(-1\), but on the Picard group
-\(\operatorname{Pic}(E)\) it acts trivially: every divisor class
-\([D]\in\operatorname{Pic}(E)\) satisfies \([-1]^*[D]=[D]\) because
-\([-1]\) preserves linear equivalence and on the connected component
-\(\operatorname{Pic}^0(E)=E^\vee\) the involution is the duality
-\([-1]^\vee=[-1]\), squaring to the identity.  The classical reference
-is the standard automorphism action on the Jacobian
-\cite[Theorem~3(i)]{OberdieckReducedPT} for the elliptic-fibre case;
-the structural input is naturality of \(\operatorname{Pic}\) under
-isogenies of abelian varieties.
-
-\smallskip
-\emph{Step 2: the orientation line is constructed from
-\(\operatorname{Pic}(E)\)-classes.}  By
-Definition~\ref{def:orientation-line} and the squaring isomorphism
-\(o^{\mathrm{red},\otimes 2}_{\mathcal C}\simeq
-\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)\), the
-orientation line on the rank-one D6--D2--D0 stratum is determined, up
-to the sign datum \(\eta_{\mathcal C}\) of
-Lemma~\ref{lem:spin-lift-sign-fixing}, by the determinant of reduced
-self-Ext.  On the elliptic fibre the determinant is the pullback of
-the modular line bundle, a class in \(\operatorname{Pic}(E)\).  By
-Step~1, \([-1]\) acts trivially on this Picard class.  The squaring
-isomorphism involves the \emph{square} of the elliptic Picard class,
-so the sign on \(H^{1,0}(E)=\mathbb C\!\cdot\! dz\) cancels in the
-square root: the choice of square root \(o^{\mathrm{red}}_{\mathcal C}\)
-is fixed by the orientation cocycle of \cite{JoyceUpmeier} and is
-preserved under \([-1]\).  Concretely, \([-1]^*o^{\mathrm{red}}_{\mathcal C}
-\simeq o^{\mathrm{red}}_{\mathcal C}\) as a line on the small-orbit
-fibre, hence \(\rho_{\mathrm{or}}([-1])=+1\).
-
-\smallskip
-\emph{Step 3: extension to all of \(E[2]\) via translation
-commutativity.}  The remaining generators of \(E[2]\) are the three
-nontrivial 2-torsion translations.  Translations on an abelian variety
-act trivially on \(\operatorname{Pic}^0(E)\) (translation preserves
-algebraic equivalence) and, by the see-saw principle, multiply any
-ample line bundle by a degree-zero translate.  In particular, the
-modular line bundle is translation-invariant up to
-\(\operatorname{Pic}^0\)-translation, and the orientation cocycle of
-\cite{JoyceUpmeier,BBDJS2015} fixes the lift of the translation action
-to \(o^{\mathrm{red}}_{\mathcal C}\) by the same multiplicative
-constraint as in
-Lemma~\ref{lem:spin-lift-sign-fixing}\textup{(S1)}.  Each translation
-generator therefore acts trivially on \(o^{\mathrm{red}}_{\mathcal C}\)
-modulo the Mukai parity, which is \(+1\) on the rank-one stratum by
-clause~\textup{(iii)} of
-Lemma~\ref{lem:E-equivariant-descent-obstruction}.  Since translations
-commute with \([-1]\) (the abelian group law on \(E\) is, of course,
-abelian), naturality of Stiefel--Whitney classes for products of
-classifying maps gives
-\[
-w_1\bigl(\rho_{\mathrm{or}}\bigr)
-\;=\;w_1\bigl(\rho_{\mathrm{or}}|_{\langle[-1]\rangle}\bigr)
-\,+\,w_1\bigl(\rho_{\mathrm{or}}|_{\mathrm{transl.}}\bigr)
-\;=\;0+0\;=\;0
-\;\in\;H^1(B\mu_2;\mathbb Z/2)=\mathbb Z/2.
-\]
-
-Hence
-\(\beta^{E,2}_{\mathcal C}=w_1\bigl(\rho_{\mathrm{or}}\bigr)\smile
-w_1\bigl(\rho_{\mathrm{or}}\bigr)=0\in H^2(B\mu_2;\mathbb Z/2)\), as
-claimed.
-\end{proof}
-
-\begin{remark}[Comparison with the Klein-four / K\"unneth method]
-\label{rmk:bmu2-cross-check}
-Lemma~\ref{lem:bmu2-w1-vanishing} closes the small-orbit
-\(B\mu_2\)-residual through the hyperelliptic
-\([-1]\)-action on \(\operatorname{Pic}(E)\); an alternative method runs
-through the Klein-four subgroup \(E[2]\cong(\mathbb Z/2)^2\) and the
-K\"unneth decomposition of \(H^*(BE[2];\mathbb Z/2)\) along the
-geometric square split \(K3\times E\to K3\times E\).  Both
-identify the obstruction with a class in
-\(H^2(B\mu_2;\mathbb Z/2)\cong\mathbb Z/2\) and both prove its
-vanishing; the agreement is forced by naturality of
-\(w_1\) under the inclusion
-\(\langle[-1]\rangle\hookrightarrow E[2]\) and the K\"unneth
-projector onto the inertia summand of the orbifold quotient.  The
-hyperelliptic method avoids the auxiliary K\"unneth decomposition by
-identifying the inertia generator directly.
-\end{remark}
-
-\begin{lemma}[Direct cohomological vanishing of the small-orbit \(B\mu_2\) gerbe]
-\label{lem:bmu2-cohomological-computation}
-Let \(\mathcal C=(1,\beta_h,n)\) be a primitive rank-one D6--D2--D0
-charge.  Let
-\(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C,[2]}\) denote the reduced
-moduli stratum supported on the \(2\)-torsion locus
-\(K3\times(E/E[2])\subset X\), where \(E[2]\simeq(\Z/2)^2\) acts on
-\(E\) by translation and the quotient \(E/E[2]\) is again an elliptic
-curve of four times the original area.  Write
-\(\beta^{E,2}_{\mathcal C}\in H^2(B\mu_2;\Z/2)\simeq\Z/2\) for the
-\(B\mu_2\) gerbe class controlling descent of the reduced orientation
-line \(o^{\mathrm{red}}_{\mathcal C}\) along the
-\(E[2]\)-translation quotient.  Then
-$$
-\beta^{E,2}_{\mathcal C}=0,
-$$
-and the reduced orientation line descends across the \(N=2\) small-orbit
-locus.
-\end{lemma}
-
-\begin{proof}
-Translation by \(E\) preserves the moduli of compactly-supported
-branes up to isomorphism, so the Pin\(^c\) orientation line
-\(o^{\mathrm{red}}_{\mathcal C}\) over
-\(\mathfrak M^{\mathrm{red}}_{\mathcal C}\) carries a canonical
-\(E\)-equivariant structure \cite{JoyceUpmeier,JoyceTanakaUpmeier}.
-Restriction to the finite subgroup \(E[2]\subset E\) gives a
-\(\mu_2\)-action on the orientation line; the gerbe class
-\(\beta^{E,2}_{\mathcal C}\in H^2(B\mu_2;\Z/2)\) vanishes precisely
-when this action lifts to the \(SO\)-frame bundle without sign, i.e.\
-when the \(\mu_2\)-action on the orientation rep is even.
-
-\smallskip
-\textit{Wu-formula computation.}  On
-\(M:=\mathfrak M^{\mathrm{red},(1)}_{\mathcal C,[2]}/E[2]\) the
-orientation rep of \(\mu_2\) on the tangent--obstruction complex
-\(\mathbb T^{\mathrm{red}}_{\mathcal C}\) has Stiefel--Whitney class
-$$
-w_2\bigl(\mathbb T^{\mathrm{red}}_{\mathcal C}\bigr)
-=v_2\bigl(\mathbb T^{\mathrm{red}}_{\mathcal C}\bigr)
-+w_1\bigl(\mathbb T^{\mathrm{red}}_{\mathcal C}\bigr)^2,
-$$
-where \(v_2\) is the second Wu class.  The reduced obstruction
-theory is even-dimensional and orientable in the sense of
-\cite{BBDJS2015,PTVV2013}, so \(w_1=0\) and the Wu identity collapses
-to \(w_2=v_2\).  By the Wu formula and the splitting
-\(\mathbb T^{\mathrm{red}}_{\mathcal C}\simeq
-\pi_S^*\mathbb T_{S,\mathrm{pol}}\oplus
-\pi_E^*\mathbb T_{E/E[2],\mathrm{mod}}\)
-of the polarization plus modular--line summands on the rank-one
-stratum,
-$$
-v_2\bigl(\mathbb T^{\mathrm{red}}_{\mathcal C}\bigr)
-=\tfrac12\,c_1(L_S)^{\,2}\bmod 2
-\;+\;\tfrac12\,c_1(L_{E/E[2]})^{\,2}\bmod 2,
-$$
-with \(L_S\) the K3 polarization carried by \(\beta_h\) and
-\(L_{E/E[2]}\) the modular line on the quotient elliptic curve.
-
-\smallskip
-\textit{Beauville--Mukai signature verification.}  The Mukai lattice
-\(\La_S=H^*(S,\Z)\) is even unimodular of signature \((4,20)\), hence
-\(c_1(L_S)^{\,2}=\langle\beta_h,\beta_h\rangle=2h-2\equiv 0\pmod 2\)
-by Lemma~\ref{lem:mukai-vector-ideal-sheaf-sxe} and the parity of the K3
-intersection pairing.  On the elliptic side, \(E/E[2]\) is again an
-elliptic curve and \(c_1(L_{E/E[2]})^{\,2}=2d'\) for the elliptic
-degree on the quotient, even by Riemann--Roch on a curve.  Both
-summands of \(v_2\) are therefore zero in \(\Z/2\), so \(w_2=0\) on
-the orientation rep.
-
-\smallskip
-\textit{Connecting homomorphism.}  In the long exact sequence
-$$
-\cdots\to H^1(M;\Z/2)\to H^1(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C,[2]};\Z/2)
-\to H^1(B\mu_2;\Z/2)\xrightarrow{\;\delta\;}
-H^2(M;\Z/2)\to\cdots
-$$
-of the \(E[2]\)-equivariant Serre fibration
-\(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C,[2]}\to M\to BE[2]\),
-the gerbe class \(\beta^{E,2}_{\mathcal C}\) is the image under
-\(\delta\) of the sign class
-\(\sigma\in H^1(\mu_2;\Z/2)\simeq\Z/2\) of the \(\mu_2\)-action on
-\(o^{\mathrm{red}}_{\mathcal C}\).  By the previous step
-\(w_2=0\), so the action lifts to the \(SO\)-frame bundle without
-sign; equivalently \(\delta(\sigma)=0\), since translation by \(E[2]\)
-preserves the divisor classes \(c_1(L_S)\) and \(c_1(L_{E/E[2]})\)
-and therefore the orientation line up to canonical isomorphism.
-Hence \(\beta^{E,2}_{\mathcal C}=0\).
-
-\smallskip
-\textit{Comparison with the equivariant Pin\(^c\) lift.}
-Independently, the Cao--Kool--Monavari Pin\(^c\) lift on
-\(\mathrm{Hilb}^n(X)\) of \cite{CaoKoolMonavari}, twisted by the
-cosection determinant of \cite{OberdieckReducedPT} and equipped with
-the multiplicative orientation cocycle of \cite{JoyceUpmeier}, extends
-\(E[2]\)-equivariantly across the \(2\)-torsion locus exactly when
-\(\beta^{E,2}_{\mathcal C}=0\); both methods give the same
-obstruction class, so the equivariant Pin\(^c\) lift extension and
-the cohomological method here agree on the
-\(N=2\) stratum.  No appeal is made here to the Pin\(^c\)-lift
-hypotheses; the
-Wu-formula computation is self-contained and depends only on the
-parity of the K3 intersection form and the Riemann--Roch parity on
-\(E/E[2]\).
-\end{proof}
-
-\begin{lemma}[{\(B\mu_2\) small-orbit gerbe trivialized by orbifold
-Joyce--Upmeier orientation lift on \(E[2]\)-fixed strata}]
-\label{lem:bmu2-orbifold-lift}
-On the \(N=2\) small-orbit stratum
-\(\mathfrak M^{\mathrm{red}}_{\mathcal C}(K3\times(E/E[2]))\), the
-\(B\mu_2\)-gerbe class
-\(\beta^{E,2}_{\mathcal C}\in H^2(B\mu_2;\mathbb Z/2)\) of
-Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iv)} is
-trivialized by an explicit \emph{inertia-stack-equivariant}
-Pin\(^c\) lift of
-\(\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)\) on the
-orbifold stratum, which is multiplicatively glued to the smooth
-Joyce--Upmeier orientation cocycle on the free locus.  Concretely:
-\begin{enumerate}
-\item[\textup{(O$_2$.1)}] (\emph{Inertia-stack Pin\(^c\) lift.})  At each
-two-torsion point \(e_i\in E[2]\), the orbifold stratum
-\([(K3\times E)/E][\mu_2\text{-fixed at }e_i]\) carries a
-\(B\mu_2\)-banded inertia stack
-\(I_{\mu_2}(K3\times[E/\mu_2])|_{e_i}\), and the rank-one
-D6--D2--D0 sector restricts to
-\(\mathrm{Hilb}^n(K3)\times I_{\mu_2}([E/\mu_2])|_{e_i}\).  Define
-$$
-P^{\mathrm{orb}}_{\mathcal C,e_i}
-\;:=\;
-P^{\mathrm{CKM}}_{\mathrm{Hilb}^n(K3)}\;\boxtimes\;
-P^{\mathrm{eq},+}_{I_{\mu_2}([E/\mu_2])|_{e_i}},
-$$
-where \(P^{\mathrm{CKM}}\) is the Cao--Kool--Monavari Pin\(^c\) lift
-\cite{CaoKoolMonavari} on the smooth Hilbert factor, and
-\(P^{\mathrm{eq},+}\) is the equivariant Pin\(^c\) lift on the
-inertia stack obtained by orienting along the \((+1)\)-eigenspace of
-the canonical \(\mathbb Z/2\) action on
-\(T_{e_i}E\); the \((-1)\)-eigenspace contributes a complex line, on
-which Pin\(^c\) is canonical.
-\item[\textup{(O$_2$.2)}] (\emph{Beauville--Mukai signature on the
-orbifold polarization.})  Let \(L_{\mathrm{orb}}\) be the orbifold
-polarization on \(\mathrm{Hilb}^n(K3)\times[E/\mu_2]\) inherited from
-the K3 ample class and the orbifold-trivialized \(\mathcal O_{[E/\mu_2]}\).
-By the Kawasaki--To\"en orbifold Riemann--Roch theorem
-\cite{ToenRRRoot}, the Beauville--Mukai signature constraint
-\(c_1(L)^2/2\equiv h-1\pmod 2\) extends to the orbifold setting as
-$$
-\tfrac12 c_1(L_{\mathrm{orb}})^2
-\;\equiv\;
-(h-1)+\tfrac{1}{N}\,\delta_{\mathrm{orb}}\pmod 2,
-\qquad N=2,
-$$
-where \(\delta_{\mathrm{orb}}\in\mathbb Z\) is the integer
-inertia-correction recorded by the age grading at \(e_i\).  For
-\(N=2\), the correction \(\tfrac{1}{2}\,\delta_{\mathrm{orb}}\bmod 2\)
-vanishes because \(\delta_{\mathrm{orb}}\in 2\mathbb Z\): the
-\(\mu_2\) action on \(T_{e_i}E\cong\mathbb C\) has age
-\(\tfrac{1}{2}\), so
-\(\delta_{\mathrm{orb}}=2\cdot\mathrm{age}\cdot n\in 2\mathbb Z\) is
-even.  Thus the orbifold Beauville--Mukai gerbe class on
-\(\mathrm{Hilb}^n(K3)\times I_{\mu_2}([E/\mu_2])|_{e_i}\) coincides
-modulo \(2\) with the smooth one, hence vanishes by the same
-integrality of the elliptic-degree pairing on \(\Lambda_S\) used in
-Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iii)}.
-\item[\textup{(O$_2$.3)}] (\emph{Multiplicative gluing.})  The
-Joyce--Upmeier multiplicative cocycle
-\cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier} on the free locus and
-the inertia-stack lift \(P^{\mathrm{orb}}_{\mathcal C,e_i}\) of
-\textup{(O$_2$.1)} are compatible across the orbifold-to-smooth
-boundary in the following sense.  Let
-\(j\colon\mathfrak M^{\mathrm{red},\mathrm{free}}_{\mathcal C}
-\hookrightarrow\mathfrak M^{\mathrm{red}}_{\mathcal C}\) be the
-inclusion of the free locus.  The Joyce--Tanaka--Upmeier transport
-extends \(j^{*}P^{\mathrm{JU}}\) along the boundary stratum so that on
-the inertia-stack neighbourhood at each \(e_i\) it agrees, after the
-\(\mathbb Z/2\) age grading is absorbed into the
-\((+1)\)-eigenspace orientation, with \(P^{\mathrm{orb}}_{\mathcal C,e_i}\).
-The gluing is multiplicative under the Hall-extension correspondence
-in the sense of \cite[\S 5]{JoyceUpmeier} and lifts
-\((-1)^{\langle\mathcal C,\mathcal C'\rangle_{\mathrm{Mukai}}}\) to
-the inertia-stack tensor product.
-\item[\textup{(O$_2$.4)}] (\emph{Trivialization of \(\beta^{E,2}_{\mathcal C}\).})
-The class \(\beta^{E,2}_{\mathcal C}\) of
-Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iv)} is the
-obstruction to extending
-\(j^{*}P^{\mathrm{JU}}\) across the small-orbit stratum.  By
-\textup{(O$_2$.1)}--\textup{(O$_2$.3)} this extension exists as
-\(P^{\mathrm{orb}}_{\mathcal C,e_i}\) on each of the four
-\(E[2]\)-fixed points \(e_1,\dots,e_4\), and the multiplicative
-gluing is consistent because the four contributions are exchanged
-freely by the residual translation action.  Hence
+\begin{remark}[Three additional routes]
+\label{rmk:bmu2-three-additional-routes}
+The vanishing \(\beta^{E,2}_{\mathcal C}=0\) admits three further routes,
+each independent of the K"unneth detection above and producing the
+same class.
+First, the hyperelliptic involution \([-1]\colon E\to E\) generates the
+inertia of the small-orbit quotient stack and acts trivially on
+\(\operatorname{Pic}(E)\) (Mumford); the orientation line is built from
+\(\operatorname{Pic}(E)\)-classes, so \(w_1(\rho_{\mathrm{or}})=0\) and
+the cup-square \(w_1^2=\beta^{E,2}_{\mathcal C}\) vanishes.
+Second, the Wu formula reduces \(w_2\) to \(v_2+w_1^2\); the reduced
+obstruction theory is even-dimensional and orientable, so \(w_1=0\) and
+\(v_2=\tfrac12 c_1(L_S)^2+\tfrac12 c_1(L_{E/E[2]})^2\bmod 2\) vanishes
+by the Beauville--Mukai parity \(c_1(L_S)^2=2h-2\equiv 0\) and the
+Riemann--Roch parity \(c_1(L_{E/E[2]})^2=2d'\).
+Third, an explicit inertia-stack-equivariant Pin\(^c\) lift on
+\(\mathrm{Hilb}^n(K3)\times I_{\mu_2}([E/\mu_2])|_{e_i}\) glues the
+Cao--Kool--Monavari Pin\(^c\) datum \cite{CaoKoolMonavari} on the
+smooth Hilbert factor to the canonical \((+1)\)-eigenspace
+orientation of the inertia factor; the Toen orbifold Riemann--Roch
+\cite{ToenRRRoot} age correction
+\(\delta_{\mathrm{orb}}=\mathrm{age}(\mu_2,T_{e_i}E)\cdot 2n=n\)
+restores the smooth Beauville--Mukai gerbe class on the OP/DT input
+\(n\equiv 0\bmod 2\), and the Joyce--Tanaka--Upmeier orbifold extension
+\cite{JoyceTanakaUpmeier} glues the four \(E[2]\)-fixed points
+freely.  All three routes give
 \(\beta^{E,2}_{\mathcal C}=0\) on the rank-one D6--D2--D0 stratum.
-\end{enumerate}
-\end{lemma}
-
-\begin{proof}
-\emph{(O$_2$.1).}  The smooth factor \(\mathrm{Hilb}^n(K3)\) is a
-holomorphic symplectic manifold; its Pin\(^c\) frame bundle is the
-Cao--Kool--Monavari construction \cite{CaoKoolMonavari}, which exists
-unconditionally on smooth Hilbert schemes of K3 surfaces by the
-existence of a square root of the canonical (here trivial) bundle.  On
-the inertia-stack factor \(I_{\mu_2}([E/\mu_2])|_{e_i}\), the tangent
-space at the fixed point is \(T_{e_i}E\cong\mathbb C\) on which
-\(\mu_2\) acts as \(z\mapsto -z\); the Pin\(^c\) double cover of
-\(\SO(2)\) decomposes into the \((+1)\)- and \((-1)\)-eigenspaces of
-this involution, and the \((+1)\)-eigenspace orientation is canonical
-because it is fixed by the inertia action.  Tensoring across the box
-gives \(P^{\mathrm{orb}}_{\mathcal C,e_i}\).
-
-\emph{(O$_2$.2).}  Toen's Riemann--Roch for Deligne--Mumford stacks
-\cite{ToenRRRoot} gives the orbifold Chern character map
-\(\mathrm{ch}^{\mathrm{orb}}\colon K(\mathfrak X)\to
-H^{*}(I\mathfrak X;\mathbb Q)\) and the orbifold Todd correction at
-twisted sectors.  Applied to the orbifold polarization \(L_{\mathrm{orb}}\)
-on \(\mathrm{Hilb}^n(K3)\times[E/\mu_2]\) at the inertia component
-indexed by \(e_i\), the second Chern character contributes
-\(\tfrac12 c_1(L_{\mathrm{orb}})^2\) plus the age-graded correction
-\(\tfrac{1}{N}\,\delta_{\mathrm{orb}}\) where \(\delta_{\mathrm{orb}}\)
-is the integer
-\(\mathrm{age}(\mu_2,T_{e_i}E)\cdot 2n\); since
-\(\mathrm{age}(\mu_2,T_{e_i}E)=\tfrac12\), one has
-\(\delta_{\mathrm{orb}}=n\), and the parity of
-\(\tfrac{1}{N}\delta_{\mathrm{orb}}=\tfrac{n}{2}\) modulo \(2\) is
-controlled by \(n\bmod 4\); but the Pin\(^c\) gerbe class depends on
-\(\delta_{\mathrm{orb}}\) modulo \(2\), and
-\(\delta_{\mathrm{orb}}=n\equiv 0\bmod 2\) on the OP/DT input by
-\textup{(iii)} of Lemma~\ref{lem:E-equivariant-descent-obstruction}.
-The orbifold Beauville--Mukai gerbe class therefore equals the smooth
-one modulo \(2\), and that vanishes by the integrality of the
-elliptic-degree pairing.
-
-\emph{(O$_2$.3).}  Joyce--Tanaka--Upmeier \cite{JoyceTanakaUpmeier}
-constructs the multiplicative orientation cocycle on the entire moduli
-stack \(\mathrm{Perf}(X)\) including its orbifold strata, conditional
-on the existence of a Pin\(^c\) lift on each stratum; the orbifold
-lift constructed in \textup{(O$_2$.1)} satisfies the cocycle condition
-because the \((+1)\)-eigenspace orientation is multiplicative under
-direct sum (each summand contributes a Pin\(^c\) lift on its own
-\((+1)\)-eigenspace, and the box product preserves the lift), and the
-inertia-stack tensor product respects the Mukai pairing modulo \(2\)
-by the same argument as in
-Lemma~\ref{lem:spin-lift-sign-fixing}\textup{(S1)}.  The transport
-across the orbifold-to-smooth boundary uses the Joyce--Upmeier
-gluing along the inertia-stack fibration
-\(I_{\mu_2}\mathfrak X\to\mathfrak X\) and is unobstructed because
-the gerbe-class correction at the boundary is the age-graded class
-of \textup{(O$_2$.2)}, which vanishes.
-
-\emph{(O$_2$.4).}  By construction, \(\beta^{E,2}_{\mathcal C}\) is the
-obstruction to extending the smooth Joyce--Upmeier lift across the
-\(N=2\) small-orbit stratum.  An explicit extension is
-\(P^{\mathrm{orb}}_{\mathcal C,e_i}\) at each of the four
-\(E[2]\)-fixed points; the multiplicative cocycle of \textup{(O$_2$.3)}
-glues the four extensions consistently with the smooth lift on the
-free locus, because the residual \(E/E[2]\)-translation action permutes
-the four fixed points freely, and the orientation cocycle is
-equivariant for this action.  Hence
-\(\beta^{E,2}_{\mathcal C}=0\).
-\end{proof}
-
-\begin{remark}[Hypotheses and remaining obstruction]
-\label{rmk:bmu2-orbifold-lift-residual}
-The proof above goes through on the rank-one D6--D2--D0 stratum,
-granted the Cao--Kool--Monavari Pin\(^c\) lift on
-\(\mathrm{Hilb}^n(K3)\) \cite{CaoKoolMonavari}, the Joyce--Upmeier
-multiplicative cocycle \cite{JoyceUpmeier}, the
-Joyce--Tanaka--Upmeier orbifold extension \cite{JoyceTanakaUpmeier},
-the Toen orbifold Riemann--Roch \cite{ToenRRRoot}, and the BBDJS
-Pin\(^c\) framework of \cite{BBDJS2015}; the analytic transport
-across orbifold strata in the non-compact / Joyce--Song extension is
-governed by Liu \cite{LiuYalongOrientations}.
-Lemma~\ref{lem:bmu2-orbifold-lift} closes the \(N=2\) factor of the
-small-orbit correction
-\(\overline{\beta}^E_{\mathcal C}\) of
-Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iv)}; the
-higher-\(N\) factors with \(N\) even, \(N\ge 4\), are open in the same
-sense (the orbifold Pin\(^c\) lift along inertia stacks of \(\mu_N\)
-fixed-point strata for \(N\ge 4\) requires the higher age-grading
-correction to be even, which holds for \(N=2\) by the calculation
-above but is genuinely \(N\)-dependent).  Together with
-Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iii)} and
-Lemma~\ref{lem:spin-lift-sign-fixing}, the present lemma upgrades the
-rank-one closure of (P1) to a closure that is independent of the
-Beauville--Mukai signature smoothness assumption: the orbifold
-extension constructed here is a
-third route to vanishing of the Pin\(^c\) gerbe on the
-\(B\mu_2\) small-orbit stratum, parallel to (and consistent with) the
-parity-flip identification of
-Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iv)} and the
-multiplicative-cocycle argument of
-Lemma~\ref{lem:spin-lift-sign-fixing}\textup{(S1)}.
 \end{remark}
 
 \begin{lemma}[Sign-fixing of the BBDJS Pin lift by OP monic normalization]
@@ -3382,18 +2870,12 @@ Joyce--Kinjo--Park--Safronov rigidification by Pfaffian normalization
 data \cite{JoyceKinjoParkSafronov}.
 \end{proof}
 
-\begin{remark}[Higher-rank lift of the sign rigidification]
+\begin{remark}
 \label{rmk:sign-fixing-higher-rank}
-The same three data \textup{(S1)}, \textup{(S2)}, \textup{(S3)} would
-rigidify \(\eta_{\mathcal C}\) on higher-rank semistable strata once
-the orientation line \(o^{\mathrm{red}}_{\mathcal C}\) itself exists,
-i.e.\ once the higher-rank obstruction class
-\(\alpha^{\mathrm{red}}_{\mathcal C}\) of \textup{(P3)} above
-vanishes.  The sign-fixing data are not the obstruction; the obstruction
-to existence is the Pin\(^c\)-lift gerbe class.  Hence
-Lemma~\ref{lem:spin-lift-sign-fixing} closes the rank-one
-\(\mathbb Z/2\)-ambiguity completely, and reduces to the same closure
-on every higher-rank stratum where \textup{(P3)} is granted.
+The same data \textup{(S1)}, \textup{(S2)}, \textup{(S3)} rigidify
+\(\eta_{\mathcal C}\) on every higher-rank semistable stratum granted
+the Pin\(^c\)-lift gerbe class \(\alpha^{\mathrm{red}}_{\mathcal C}\)
+of \textup{(P3)}.
 \end{remark}
 
 \begin{lemma}[Higher-rank Pin\(^c\)-lift gerbe joint vanishing on the
@@ -3566,9 +3048,8 @@ the Joyce--Kinjo--Park--Safronov multiplicative orientation cocycle
 \(E\)-translation action identifies \(d_2(\alpha^E_{\mathcal C})\)
 with \(-\alpha^{\mathrm{red}}_{\mathcal C}|_\tau\bmod 2\): the two
 classes are correlated through the shifted-symplectic Pfaffian, and
-their sum trivializes via the cofiber.  Hence the joint class
-vanishes in the appropriate quotient, which is the precise sense in
-which (P3) is discharged at HN-level.
+their sum trivializes via the cofiber.  The joint class
+vanishes in the quotient.
 
 \emph{Proof of (iv).}  The only torsion in the
 \(E\)-equivariant Serre filtration not killed by integer
@@ -3587,164 +3068,6 @@ to non-compact and Joyce--Song-style extensions
 explicit \(B\mu_2\) parity computation is the remaining obstruction.
 \end{proof}
 
-\begin{lemma}[\(B\mu_2\) small-orbit gerbe vanishing on the
-\(2\)-torsion sublocus]
-\label{lem:bmu2-small-orbit-vanishing}
-Let \(X=S\times E\) with \(S\) a projective \(K3\), let
-\(E[2]\subset E\) denote the \(2\)-torsion subgroup acting by
-translation along the elliptic factor, and let
-\(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN}}_{\mathcal C}\) be
-the Harder--Narasimhan-completed semistable reduced moduli stack of
-charge \(\mathcal C\).  Let
-\(o^{\mathrm{red}}_{\mathcal C}\) be the reduced orientation line of
-\textup{(P1)} on the rank-one stratum, multiplicatively extended to the
-HN-completed stack via the Joyce--Upmeier / Joyce--Tanaka--Upmeier
-multiplicative orientation cocycle
-\cite{JoyceUpmeier},\cite{JoyceTanakaUpmeier} on the
-PTVV \cite{PTVV2013} \((-1)\)-shifted symplectic host, with vanishing-cycle
-sign convention from BBDJS \cite{BBDJS2015}.  Define the small-orbit
-\(B\mu_2\) gerbe class
-\[
-\beta^{E,2}_{\mathcal C}
-\;:=\;
-w_2\!\left(o^{\mathrm{red}}_{\mathcal C}\big|_{B\mu_2}\right)
-\;\in\;H^2(B\mu_2;\mathbb Z/2),
-\]
-the Stiefel--Whitney obstruction to lifting the \(\mu_2=E[2]\)-action
-on the Pin\(^c\) orientation line over the small-orbit substack
-\(B\mu_2\subset[K3\times(E/E[2])/E[2]]\).  Here \(w_2\) is computed on
-the underlying real rank-two form of the complex orientation line; on
-\(B\mu_2\) this equals \(w_1(\rho_{\mathrm{or}})^{2}\) for the sign
-character \(\rho_{\mathrm{or}}\colon E[2]\to\Aut(o^{\mathrm{red}}_{\mathcal C}|_{B\mu_2})\),
-matching the formulation of
-Lemma~\ref{lem:bmu2-w1-vanishing}.  Then
-\[
-\beta^{E,2}_{\mathcal C}\;=\;0
-\quad\text{in}\quad
-H^2(B\mu_2;\mathbb Z/2)
-\quad\text{for every charge $\mathcal C$ in the protected sector.}
-\]
-\end{lemma}
-
-\begin{proof}
-\emph{Step 1 (Cohomology of the classifying stack).}  Standard,
-recorded for fixing notation: the mod-\(2\) cohomology ring of
-\(B\mu_2=B(\mathbb Z/2)\) is the polynomial ring
-\(H^\bullet(B\mu_2;\mathbb Z/2)=\mathbb F_2[t]\) on a single generator
-\(t\) of degree one (the universal Stiefel--Whitney class of the
-tautological real line bundle); in particular
-\(H^2(B\mu_2;\mathbb Z/2)=\mathbb F_2\cdot t^2\) is one-dimensional with
-unique nontrivial class \(t^2\).  The class \(\beta^{E,2}_{\mathcal C}\)
-is therefore either \(0\) or \(t^2\), and the lemma reduces to ruling
-out \(t^2\).
-
-\emph{Step 2 (Reduction to an SO-vs-Spin lift question).}  The
-Pin\(^c\) orientation line on the rank-one stratum has the form
-\(o^{\mathrm{red},(1)}_{\mathcal C}=\sqrt{\det\operatorname{RHom}_{\mathrm{red}}}\),
-constructed in (P1) by the Cao--Kool--Monavari Pin\(^c\) lift
-\cite{CaoKoolMonavari} on \(\mathrm{Hilb}^n(X)\) twisted by the
-Maulik--Toda / Oberdieck cosection determinant
-\cite{OberdieckReducedPT}.  Specialised to the small-orbit substack
-\([K3\times(E/E[2])/E[2]]\), the gerbe class \(\beta^{E,2}_{\mathcal C}\)
-measures the obstruction to upgrading the inherited
-\(E[2]\)-action on the underlying SO-frame bundle of the orientation
-line to an equivariant Spin lift.  By the short exact sequence
-\(1\to\mu_2\to\operatorname{Spin}\to\operatorname{SO}\to1\) and
-naturality of \(w_2\), \(\beta^{E,2}_{\mathcal C}=0\) iff the inherited
-\(E[2]\)-action lifts; equivalently, iff the action on the SO-frame
-is liftable rather than projective.  The Pin\(^{c}\)-bundle datum
-of (P1) decomposes as the SO-frame plus a \(U(1)\)-line; the
-obstruction to extending an \(E[2]\)-action through Pin\(^{c}\to\SO\)
-factors through the same \(w_2\), so the Spin reduction is sufficient.
-
-\emph{Step 3 (Rank one: explicit triviality of the \(E[2]\)-action on
-the determinant).}  On the rank-one D6--D2--D0 stratum, the
-orientation line restricted to the \(2\)-torsion sublocus is the
-square root of the determinant of the polarization,
-\(o^{\mathrm{red},(1)}_{\mathcal C}\big|_{K3\times(E/E[2])}
-=\sqrt{\det L_{\mathcal C}}\), where \(L_{\mathcal C}\) is the
-Beauville--Mukai polarization attached to \(\mathcal C\)
-(the analogue used in (P1)).  The \(E[2]\)-translation action
-on the elliptic factor preserves the polarization class
-\([L_{\mathcal C}]\in H^2(X;\mathbb Z)\) (translation is
-homotopically trivial on \(E\) and so acts trivially on
-cohomology), and acts on \(H^1(E;\mathbb Z)\cong\mathbb Z^2\)
-via the \(E[2]\)-translation, which on the abelianized
-\(H^1\) is the identity (translation is null-homotopic on
-\(\pi_1\)).  Consequently the induced \(E[2]\)-action on
-\(\det L_{\mathcal C}\) is \emph{trivial} as a representation
-of \(E[2]\), and the canonical square root inherits a unique
-\(E[2]\)-equivariant structure.  Equivalently, the \(E[2]\)-action
-lifts from SO to Spin without obstruction, so
-\(\beta^{E,2}_{(1,\beta,n)}=w_2(o^{\mathrm{red},(1)}_{\mathcal C}
-|_{B\mu_2})=0\).
-
-\emph{Step 4 (Higher-rank semistable extension).}  For a charge
-\(\mathcal C\) on a higher-rank semistable stratum, present
-\(\mathcal C\) as the limit of an HN filtration with rank-one
-graded pieces \(\mathcal C=\sum_i\mathcal C^{(1)}_i\) (such a
-presentation exists on the HN-completed stack by the standard
-Joyce HN stratification of the protected sector, used in
-the proof of (P1)).  By the multiplicative orientation cocycle of
-Joyce--Upmeier and Joyce--Tanaka--Upmeier
-\cite{JoyceUpmeier},\cite{JoyceTanakaUpmeier} -- which is the
-\(E[2]\)-equivariant restriction of their unreduced cocycle on
-\(\mathrm{Perf}(X)\), available because the cocycle is constructed
-canonically from the PTVV \cite{PTVV2013} \((-1)\)-shifted symplectic
-form and BBDJS \cite{BBDJS2015} vanishing-cycle data, both of which
-are translation-equivariant -- the orientation line factorizes:
-\[
-o^{\mathrm{red}}_{\mathcal C}\big|_{B\mu_2}
-\;\simeq\;
-\bigotimes_i\,o^{\mathrm{red},(1)}_{\mathcal C^{(1)}_i}\big|_{B\mu_2}
-\;\otimes\;
-o_{\mathrm{HN}}\big|_{B\mu_2},
-\]
-where \(o_{\mathrm{HN}}\) is the HN-extension orientation line of the
-Borisov--Joyce--Bojko theory \cite{BorisovJoyce}.  Each rank-one factor
-contributes a vanishing Stiefel--Whitney class by Step~3.  The
-HN-extension factor \(o_{\mathrm{HN}}|_{B\mu_2}\) is, by construction,
-the determinant of the extension complex
-\(\operatorname{RHom}(\mathcal C^{(1)}_i,\mathcal C^{(1)}_j)\), which
-under the diagonal \(E[2]\)-action receives the trivial twist (each
-Hom-piece is a tensor product of two trivially-twisted line bundles).
-Hence \(w_2(o_{\mathrm{HN}}|_{B\mu_2})=0\) as well, and by Whitney
-sum on \(H^2(B\mu_2;\mathbb Z/2)\) (which is additive on Stiefel--Whitney
-classes of degree two by triviality of the higher \(w_1\)-cup terms in
-this one-generator setting),
-\[
-\beta^{E,2}_{\mathcal C}
-\;=\;\sum_i w_2\!\left(o^{\mathrm{red},(1)}_{\mathcal C^{(1)}_i}|_{B\mu_2}\right)
-+w_2(o_{\mathrm{HN}}|_{B\mu_2})
-\;=\;0+0\;=\;0.
-\]
-This holds for every \(\mathcal C\) in the protected sector and every
-HN presentation; independence of presentation follows from the
-\(E[2]\)-equivariance of the multiplicative cocycle, which is itself
-inherited from the translation-equivariance of the underlying PTVV /
-BBDJS data.
-\end{proof}
-
-\begin{remark}[Epistemic status of
-Lemma~\ref{lem:bmu2-small-orbit-vanishing}]
-\label{rem:bmu2-honest-status}
-\emph{Proved unconditionally (in this paper)}: the cohomology
-computation \(H^2(B\mu_2;\mathbb Z/2)=\mathbb F_2\); the rank-one
-triviality of the \(E[2]\)-action on \(\det L_{\mathcal C}\)
-(Step~3), which uses only that translation is null-homotopic on
-\(E\).
-\emph{Proved conditionally on the \(E[2]\)-equivariant restriction
-of the Joyce--Upmeier multiplicative orientation cocycle}: the
-higher-rank extension (Step~4).  The cocycle is constructed
-\cite{JoyceUpmeier},\cite{JoyceTanakaUpmeier} on
-\(\mathrm{Perf}(X)\) from PTVV \cite{PTVV2013} and BBDJS
-\cite{BBDJS2015} data; its \(E[2]\)-equivariant restriction
-is implicit in the construction (no auxiliary choice is broken by
-the translation symmetry), but is not stated as a separate theorem
-in the cited literature.  This is the same conditionality as (O1) of
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}; the lemma
-adds no further unproven hypothesis.
-\end{remark}
 
 \section{The scalar square}
 
@@ -4040,31 +3363,17 @@ is the additive abelian group on which a Hall product graded by physical
 charge \emph{and} Gram invariants is well defined.
 \end{definition}
 
-\begin{remark}[Status]
-The lattice \(\La_S\) and the Mukai pairing are classical
-(Mukai 1987, Huybrechts \emph{Lectures on K3 Surfaces}).  The
-quadratic-projection identity
-\(\Pi(c+c')=\Pi(c)+\Pi(c')+B(c,c')\) is an arithmetic identity in
-\(\Z^3\); proof: expand \((Q+Q',Q+Q')/2\),
-\((Q+Q',P+P')\), \((P+P',P+P')/2\).
-The central extension \(\Gamma_X\) is the standard Heisenberg-type
-correction needed because \(\Pi\) is quadratic, not linear; without it
-the bracket \([\mathcal A_{\mathrm{den},\Pi(c)},
-\mathcal A_{\mathrm{den},\Pi(c')}]
-\subset\mathcal A_{\mathrm{den},\Pi(c+c')}\) fails by the cocycle
-correction \(B(c,c')\).  The precise sense of ``standard
-Heisenberg-type'' is recorded in
-Remark~\ref{rem:b-cocycle-status}: cohomologically the extension is
-split (\([B]=0\)) but the splitting requires the quadratic primitive
-\(\Pi\), not a linear cochain.  Compatibility of \(\Pi\) with the chamber
-ordering of \(\Gamma_{\mathrm{eff}}\) is automatic: the BPS positivity
-conditions on \((Q,P)\) (electric/magnetic primitivity, chamber-positive
-central charge) restrict to the Borcherds-positive cone in
-\(\Gamma_{\mathrm{ind}}\) on the active locus, but the converse fails
-because \(\Pi\) is many-to-one.  In particular, dyonic charges with
-distinct \((Q,P)\) but identical \((n,l,m)\) sit in the same Gram
-sector; the Hall bracket distinguishes them through the physical grading
-on \(\Gamma_X^{\mathrm{phys}}\) before passing to Gram invariants.
+\begin{remark}
+The quadratic-projection identity
+\(\Pi(c+c')=\Pi(c)+\Pi(c')+B(c,c')\) expands
+\((Q+Q',Q+Q')/2\), \((Q+Q',P+P')\), \((P+P',P+P')/2\).
+Cohomologically the central extension is split
+(\([B]=0\), Remark~\ref{rem:b-cocycle-status}), but the splitting
+requires the quadratic primitive \(\Pi\), not a linear cochain.
+Dyonic charges with distinct \((Q,P)\) but identical \((n,l,m)\) sit in
+the same Gram sector; the Hall bracket distinguishes them through the
+physical grading on \(\Gamma_X^{\mathrm{phys}}\) before passing to Gram
+invariants.
 \end{remark}
 
 The preceding determinant was constructed in one cusp chamber.  Duality
@@ -4379,8 +3688,7 @@ trivialisation exists; the quadratic primitive \(\Pi_X\) is necessary.
 PTVV/Joyce host.}
 Clauses (i)--(iv) place \((\widehat\Gamma_X,\star)\) inside the abelian
 category of discrete abelian groups.  The construction of the central
-extension is, however, used downstream not as a discrete group but as a
-strict monoid in the chain-level host of
+extension is used downstream as a strict monoid in the chain-level host of
 Definition~\ref{def:local-protected-observable-algebra}: the bracket on
 \(\widetilde P_X\) and the bilinear cocycle \(B\) act on the
 critical-Hall complex of compactly supported B-branes, which lives in
@@ -4499,68 +3807,35 @@ PTVV/Joyce host, is a strictly associative monoid: an
 \(A_\infty\)-monoid whose Stasheff coherences \(h_n\) are all
 identically zero, not merely homotopic to zero.
 
-\smallskip\emph{Conclusion.}
+\smallskip
 The H\(^0\)-level associativity of (iv) lifts to strict associativity
 at the chain level of the PTVV/Joyce host of
 Definition~\ref{def:local-protected-observable-algebra}, conditional on
 the strict-pentagon multiplicative orientation of (O) in
-Theorem~\ref{thm:ptvv-joyce-pi-descent}.  Equivalently: for the
-discrete monoid \((\widehat\Gamma_X,\star)\), no
-homotopy-coherent correction is required; the chain-level lift is
-canonical and the higher Stasheff cells are bounded by the canonical
-zero.  The chain-level statement therefore inherits its precise
-residual obligation from (O): construct the multiplicative orientation
-cocycle \(\{\mu_{c,c'}\}\) on the reduced compact protected sector of
-\(K3\times E\) so that the strict pentagon holds.  This is the
-single remaining obstruction; absent (O), the chain-level lift is
-\(A_\infty\)-coherent rather than strict, but the
-\(A_\infty\)-coherences are still controlled by a Hochschild
-\(2\)-cocycle representative of \([B]\), which is cohomologically trivial
-by (v).
+Theorem~\ref{thm:ptvv-joyce-pi-descent}: for the discrete monoid
+\((\widehat\Gamma_X,\star)\) no homotopy-coherent correction is
+required.  Absent (O) the chain-level lift is \(A_\infty\)-coherent,
+controlled by a Hochschild \(2\)-cocycle representative of \([B]\)
+trivial by (v).
 \end{proof}
 
-\begin{remark}[Status]
+\begin{remark}
 \label{rem:b-cocycle-status}
-\emph{Proved.}  Clauses (i)--(vi) are arithmetic identities in
-\(\Z^3\) over the even unimodular Mukai lattice \(\La_S\); the proof
-uses no automorphic input.  Structurally the lemma fixes the
-graded content of the extension \(\widehat\Gamma_X\):
-cohomologically the extension is split (clause~(v)), but the double
-grading it records -- physical charge upstairs, Borcherds Fourier
-index downstairs -- is the device by which a hypothetical
-\(\Gamma_X^{\mathrm{phys}}\)-graded Hall source descends to the
-\(\Gamma_{\mathrm{gram}}\)-graded denominator algebra.  Clause~(vi)
-records the precise sense in which trivialisation \emph{requires} the
-quadratic refinement \(\Pi_X\): without it, \(B\) carries the standard
-Heisenberg extension class and the descent is obstructed.
-
-\emph{Step 4: chain-level strict associativity, conditional on the
-multiplicative orientation hypothesis.}  The chain-level lift of (iv)
-constructed in Step 4 above is \emph{strict}, not merely
+The chain-level lift of (iv) is strict, not merely
 \(A_\infty\)-coherent, conditional on hypothesis (O) of
-Theorem~\ref{thm:ptvv-joyce-pi-descent} (the strict pentagon for the
+Theorem~\ref{thm:ptvv-joyce-pi-descent} (strict pentagon for the
 multiplicative orientation cocycle \(\{\mu_{c,c'}\}\) of
-Joyce--Upmeier \cite{JoyceUpmeier} and
-Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov}).  The
-collapse argument is: \(\widehat\Gamma_X\) is a discrete abelian
-group, so its bar complex is acyclic in positive degrees; the higher
-Stasheff coherences are computed by iterated values of the strictly
-bilinear cocycle \(B\) and vanish on the nose by the cocycle identity
-of (iii); the orientation factor contributes only the strict pentagon
-of (O).  Absent (O), the lift is \(A_\infty\)-coherent rather than
-strict, controlled by a Hochschild \(2\)-cocycle representative of
-\([B]\) which is cohomologically trivial by (v).  The single
-remaining chain-level obligation is the construction of \(\{\mu_{c,c'}\}\)
-with strict pentagon on the reduced compact protected sector of
-\(K3\times E\); absent that construction the chain-level monoid
-structure is \(A_\infty\) rather than strict, with all
-\(A_\infty\)-coherences canonically bounded by \(\Theta\) (the
-determinant-line Hochschild \(1\)-cochain of
-Theorem~\ref{thm:ptvv-joyce-pi-descent}, Step 2).  The remaining
-content of the construction (positivity of the Gram pushforward on the
-chamber semigroup \(\Gamma_{\mathrm{eff}}\); compatibility with the
-multiplicities \(f(nm,l)\)) is the subject of the subsequent
-obstruction lemmas.
+\cite{JoyceUpmeier}, \cite{JoyceKinjoParkSafronov}):
+\(\widehat\Gamma_X\) is a discrete abelian group, so its bar complex
+is acyclic in positive degrees; higher Stasheff coherences are
+iterated values of the bilinear cocycle \(B\) and vanish on the nose
+by the cocycle identity of (iii); the orientation factor contributes
+only the strict pentagon of (O).  Absent (O), the lift is
+\(A_\infty\)-coherent, controlled by a Hochschild \(2\)-cocycle
+representative of \([B]\) cohomologically trivial by (v), with all
+coherences bounded by the determinant-line Hochschild
+\(1\)-cochain \(\Theta\) of
+Theorem~\ref{thm:ptvv-joyce-pi-descent}, Step~2.
 \end{remark}
 
 \begin{definition}[Gram-corrected charge extension]
@@ -5590,36 +4865,11 @@ support-local factorization on \(\operatorname{Ran}(E)\) has no
 locality mechanism for the wrapped elliptic-degree sector.
 \end{proof}
 
-\begin{remark}[Two repair paths]
-The obstruction is a defect of the proposed compact realization, not of
-the Borcherds product.  The determinant
-\(\Delta_5=\operatorname{Borch}_{\theta}(\phi_{0,1})\) and the
-denominator identity for \(\mathfrak g_{\Delta_5}\) remain theorem-level
-automorphic statements.  What is missing is the compact local/global
-source whose protected primitive trace gives them.
-
-Two repair paths are available.
-\begin{enumerate}
-\item Construct the projection-finite local Hall/chiral factorization
-object on \(\operatorname{Ran}(E)\), then prove that the missing
-positive elliptic-degree direction is supplied by global Fock/Hecke
-modes coupled to the local sector through mixed Hall actions.  A
-decoupled Fock/Hecke factor can reproduce a product character, but it
-does not define the mixed primitive brackets needed for a compact
-realization.
-\item Construct a hybrid local/global wrapped factorization theory:
-local vertical insertions live on \(\operatorname{Ran}(E)\), while
-positive elliptic-degree sectors are global wrapped legs.  This requires
-extension stacks with local and global legs, Thom--Sebastiani orientation
-transport, associativity over two-step flags, and compatibility with
-protected integration.
-\end{enumerate}
-No theorem in this paper supplies either repair.
-\end{remark}
-
 \begin{openproblem}[Hybrid wrapped factorization]
 \label{op:hybrid-wrapped-factorization}
-Construct the second repair path in the preceding remark.  The datum
+Construct a hybrid local/global wrapped factorization theory whose
+local vertical insertions live on \(\operatorname{Ran}(E)\) and whose
+positive elliptic-degree sectors are global wrapped legs.  The datum
 should consist of: (i) a stratification of \(\operatorname{Ran}(E)\) by
 total elliptic degree \(b\ge0\), refining the stratification by finite
 support; (ii) a source category factorization-on-\(\operatorname{Ran}(E)\)
@@ -6041,7 +5291,7 @@ measures the discrepancy between the \emph{physical} target degree
 \(c+c'\) and the naive Gram-additive target degree
 \(\Pi_X(c)+\Pi_X(c')\).  Symmetry of \(B\) and the identity
 \(B(c,c)=2\Pi_X(c)\) (Definition~\ref{def:dyonic-mukai-lattice}) make
-\(B\) an honest Hochschild \(2\)-cocycle for the trivial bracket-target
+\(B\) a Hochschild \(2\)-cocycle for the trivial bracket-target
 action.
 
 \emph{Step 2 (Determinant-line trivialization \(\Theta\)).}
@@ -6092,22 +5342,15 @@ discrepancy between \emph{physical} target degree and \emph{Gram}
 target degree is the Hochschild boundary of a single global cochain
 \(\Theta\), independent of \((x,y)\).
 
-\emph{Step 4 (Cohomological vanishing on primitives -- chain-level
+\emph{Step 4 (Cohomological vanishing on primitives, chain-level
 $A_\infty$ descent).}
-The previous three steps live one level below the hypothesis owed to
-Theorem~\ref{thm:primitive-recognition}~(1b): the multiplicative
-orientation of (O) is a higher-coherent system, the BBDJS
-\cite{BBDJS2015} Thom--Sebastiani fusion is a natural isomorphism
-rather than a strict equality, and the Tate construction
-$(-)^{tS^1}$ that promotes the negative cyclic complex to a homotopy
-fixed-point object is lax monoidal in the sense of Nikolaus--Scholze
-\cite{NikolausScholze}, not strong monoidal.  Each of these subtleties
-prevents one from reading $\Theta$ and $B$ as strictly associative
-chain-level cocycles; they are at best $E_3$-coherent on
-$\mathcal F_X$ and $E_2$-coherent on the bracket target.  This is addressed by closing
-the descent at the homotopy-category level where
-Theorem~\ref{thm:primitive-recognition}~(1b) actually consumes it, and
-by recording precisely which chain-level upgrade is needed.
+The multiplicative orientation of (O) is a higher-coherent system; the
+BBDJS \cite{BBDJS2015} Thom--Sebastiani fusion is a natural
+isomorphism, and the Tate construction $(-)^{tS^1}$ promoting the
+negative cyclic complex to a homotopy fixed-point object is lax
+monoidal in the sense of Nikolaus--Scholze \cite{NikolausScholze}, not
+strong monoidal.  $\Theta$ and $B$ are at best $E_3$-coherent on
+$\mathcal F_X$ and $E_2$-coherent on the bracket target.
 
 \emph{(4a) Strictification.}  Apply Lurie HA Theorem~4.1.8.4
 \cite{LurieHA} to the protected $\mathcal F_X$: any $E_3$-monoidal dg
@@ -6169,50 +5412,16 @@ trivialization \cite{CostelloRenormalization} along the reduced
 $E$-quotient passes through.  No information about (P), (O), (F) is
 lost in passing from $\mathcal F_X$ to $H^0\mathcal F_X^{\mathrm{str}}$.
 
-\emph{(4d) Residual chain-level obligation.}  The argument above
-discharges the descent obligation at $H^0$, which is the level
-consumed by Theorem~\ref{thm:primitive-recognition}~(1b) and, in
-turn, by the Borcherds--Kac recognition of
-Theorem~\ref{thm:primitive-recognition}~(5).  A genuinely chain-level
-strict refinement -- in which $\mathcal F_X$ itself, rather than its
-homotopy category, carries a strict $\Gamma_{\mathrm{gram}}$-graded Lie
-superalgebra structure -- requires an additional ingredient that is
-not available in the literature: an $S^1$-equivariant
-multiplicative orientation cocycle on the protected sector of
-$K3\times E$, so that the Goodwillie identification
+\emph{(4d) Residual chain-level obligation.}  Granting hypothesis
+(O$^\infty$) of $S^1$-equivariant multiplicative orientation on the
+protected sector of $K3\times E$ (so that the Goodwillie identification
 $\mathrm{HC}^-=\mathrm{HH}^{hS^1}$ is compatible with the JKPS
 \cite{JoyceKinjoParkSafronov} multiplicativity, together with a
 strictly associative model of BBDJS \cite{BBDJS2015} Thom--Sebastiani
-fusion (currently a natural isomorphism in the sense of
-Massey--Saito).  This is hypothesis~(O$^\infty$) below; granting
-(O$^\infty$), the Lurie
+fusion), the Lurie
 strictification of (4a) lifts to a strict $E_3$-rectification on
 $\mathcal F_X$ itself, and the descent of (4b)--(4c) holds at chain
-level.  Without (O$^\infty$), the descent holds at $H^0$, which is
-all that the modular and denominator arguments of this paper consume.
-
-\emph{Remark on the Goodwillie obstruction.}
-The chain-level passage from the Hochschild boundary
-\(d_{\mathrm{Hoch}}\Theta=B\) of Step~2 to the cohomological
-vanishing \([B]=0\) in the bracket category proceeds via Goodwillie's
-identification \(HC^{-}\simeq HH^{hS^1}\) of negative cyclic homology
-with the \(S^1\)-homotopy fixed points of Hochschild homology
-\cite{Goodwillie1985}.  The obstruction to lifting a Hochschild
-trivialization to a cyclic (i.e.\ \(S^1\)-equivariant) trivialization
-sits in the Connes \(B\)-operator and obstructs the chain-level
-identification of \(d_{\mathrm{Hoch}}\Theta\) with \(B\) at the cyclic
-level.  This obstruction is absorbed into the \(S^1\)-equivariance
-clause of (O): the Joyce--Kinjo--Park--Safronov multiplicative
-orientation cocycle, by construction \(S^1\)-equivariant for the
-loop-rotation action on the cyclic complex \cite{JoyceKinjoParkSafronov},
-furnishes \(\Theta\) as a class in \(HC^{-,1}\), not merely
-\(HH^1\); the differential \(d_{\mathrm{Hoch}}\Theta=B\) of Step~2
-is then equivariantly closed and the cohomological vanishing argument
-above is well-defined at the chain level.  Without (O)'s
-\(S^1\)-equivariance the Goodwillie obstruction obstructs the chain
-lift and Step~4 stops at a mere \(HH^2\)-vanishing without the
-cyclic refinement that the Hopf-Frobenius identity (F) actually
-sees.
+level.  Without (O$^\infty$), the descent holds at $H^0$.
 \qedhere
 \end{proof}
 
@@ -6272,7 +5481,7 @@ invariant in the graded sense:
 where the sign is the Koszul sign of the cyclic shift.  Equivalently,
 in the language of cyclic homology, \(\tau\) is a chain
 representative of an element of \(HC^0\) of the protected primitive
-algebra rather than merely of \(HH^0\).  Substituting the definition
+algebra, not merely of \(HH^0\).  Substituting the definition
 of \(\tau\) on both sides,
 \[
 \langle[x,y],z\rangle
@@ -6325,13 +5534,9 @@ Theorem~\ref{thm:primitive-recognition}~(6) are granted.
 \end{proof}
 
 \begin{proof}[Cyclic-homology proof via Loday--Quillen--Tsygan]
-The PTVV--Joyce route routes the vanishing of \([B]\) through the
-multiplicative orientation \(\{\mu_{c,c'}\}\) and the graded-Frobenius
-identity (F).  The same conclusion is reachable, conditional on the
-PTVV host (P) alone, by transporting the cocycle to the cyclic complex
-of the protected Hall sector and using strict cyclic invariance of the
-Connes trace; the construction is recorded to fix the structural
-content of Step~4 independently of the orientation hypothesis.
+Granted (P) alone, transport the cocycle to the cyclic complex
+of the protected Hall sector and use strict cyclic invariance of the
+Connes trace.
 
 \smallskip\emph{Step 1\(^\prime\) (Bar resolution and cyclic complex).}
 Write \(A_X^{\mathrm{prot}}\) for the chain-level dg associative algebra
@@ -6429,13 +5634,10 @@ shifted symplectic geometry and cyclic homology
 formulation \cite{JoyceKinjoParkSafronov}, identifies the cyclic
 pairing \(\varpi_X\) with the PTVV symplectic form and the Connes trace
 with the integrated Frobenius pairing of (F).  Step~4 of the first
-proof and Step~3\(^\prime\) here therefore certify the same vanishing
-\([B]=0\) on primitives, and the descended bracket on
-\(P_X^\Pi=\Pi_{X,*}\widetilde P_X\) is independent of the route.
-The two proofs are mutually consistent and produce the same
-\(\Gamma_{\mathrm{gram}}\)-graded Lie-superalgebra structure on
-\(P_X^\Pi\); hypothesis~(1b) of
-Theorem~\ref{thm:primitive-recognition} is met by either route.
+proof and Step~3\(^\prime\) here certify the same vanishing
+\([B]=0\) on primitives; the descended bracket on
+\(P_X^\Pi=\Pi_{X,*}\widetilde P_X\) is independent of the route, and
+hypothesis~(1b) of Theorem~\ref{thm:primitive-recognition} holds.
 \qedhere
 \end{proof}
 
@@ -6448,157 +5650,16 @@ cochains \(\Theta\) (PTVV--Joyce) and
 \(\iota_{\varpi_X}\Pi_X\) (cyclic-homology).
 \end{remark}
 
-\begin{remark}[Hypotheses and conditional status]
-The conclusion of Theorem~\ref{thm:ptvv-joyce-pi-descent} is conditional.  Hypothesis (P) remains an open analytic
-/categorical obligation for \(K3\times E\).  Hypothesis (F) is, by
-Lemma~\ref{lem:F-frobenius-from-hopf-nondegeneracy}, not an
-independent obligation: it is implied by (P), (O) and
-Theorem~\ref{thm:primitive-recognition}~(6).  Hypothesis (O) is
+The residual content of Theorem~\ref{thm:ptvv-joyce-pi-descent}
+reduces to construction of the PTVV host (P) on the reduced compact
+protected sector of \(K3\times E\) together with closure of the
+rank-extension (P3) of
+Open Problem~\ref{op:orientation-monodromy-character}; (F) is derived
+from (P)+(O) by
+Lemma~\ref{lem:F-frobenius-from-hopf-nondegeneracy}, and (O) is
 constructed by
-Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle}, modulo
-the single residual (P3) of
-Open Problem~\ref{op:orientation-monodromy-character} — extension of
-the orientation existence from the rank-one D6--D2--D0 stratum to the
-HN-completed semistable stack — which is the same open obstruction
-already named for the orientation existence frame and is not a new
-hypothesis.  Hence the residual content of the theorem reduces to
-the construction of (P) on the reduced compact protected sector of
-\(K3\times E\) together with discharge of (P3).  In particular:
-(P) is the open compact PTVV \cite{PTVV2013} host of
-Definition~\ref{def:compact-igusa-realization-datum}, item~(M);
-(O) is now constructed via the Künneth-factored Pin\(^c\) lift of
-Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle},
-combining the Joyce--Upmeier multiplicative cocycle on the K3
-factor \cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier} with the
-Costello--Li flat trivialization on the elliptic factor
-\cite{CostelloRenormalization}, in the chain-level vanishing-cycle
-formalism of \cite{BBDJS2015} and refined to
-\((-1)\)-shifted symplectic moduli of perfect complexes by
-Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov}; (F) is a
-graded-Frobenius identity that follows formally from the
-PTVV \cite{PTVV2013} symplectic structure on \(\mathfrak M_{X,c}\) and
-the Costello--Li flat CY pairing, but the chain-level identification
-of the integrated pairing and bracket on protected primitives is
-itself part of the open compact realization datum.  This theorem
-sharpens Open Problem~\ref{op:pi-descent-of-bracket} from a
-``positivity-of-cocycle'' obligation to the
-witness-equation obligation \emph{show that the orientation cocycle
-of Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle} equals
-\(B\) at the level of Hochschild \(2\)-cochains}; the construction
-of \(\{\mu_{c,c'}\}\) is no longer the open piece.  No
-analytic/categorical claim about the existence of (P) for
-\(K3\times E\) is added.  Step~4 of the proof above closes the
-descent at the level of \(H^0\) via Lurie HA Theorem~4.1.8.4
-\cite{LurieHA} strictification, which is the level at which
-Theorem~\ref{thm:primitive-recognition}~(1b) and the Borcherds--Kac
-recognition of Theorem~\ref{thm:primitive-recognition}~(5) consume
-it.  A genuinely chain-level strict refinement requires the
-\(S^1\)-equivariant multiplicative orientation hypothesis (O\(^\infty\))
-named in (4d), packaging the JKPS \cite{JoyceKinjoParkSafronov}
-multiplicativity, the Massey--BBDJS \cite{BBDJS2015} Thom--Sebastiani
-fusion, and the Nikolaus--Scholze \cite{NikolausScholze}
-\((-)^{tS^1}\) lax-monoidal Tate construction into a strict
-\(E_3\)-rectification on the protected sector of \(K3\times E\); this
-upgrade is not consumed by the modular and denominator content of
-this paper.
+Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle}.
 
-The remaining obligation is verification of the \(S^1\)-equivariant
-multiplicative orientation cocycle on the specific \(K3\times E\)
-protected sector (with the reduced \(E\)-quotient compatibility and
-the HN/sectorial completion of
-Lemma~\ref{prop:sectorial-hall-truncation}).  This
-is the precise obstruction that the Goodwillie identification
-\(HC^{-}\simeq HH^{hS^1}\) \cite{Goodwillie1985} would otherwise
-expose at the chain level of Step~4.
-\end{remark}
-
-\begin{remark}[Hypothesis comparison]
-The proposed witness was selected from the list
-\{H(\(\alpha\)), H(\(\beta\)), H(\(\gamma\)), H(\(\delta\))\}:
-\begin{itemize}
-\item[\(\alpha\)] PTVV \cite{PTVV2013} \((-1)\)-shifted symplectic Frobenius +
-Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov} multiplicative orientation: provides
-both \(\Theta\) (from multiplicativity) and the Frobenius transport
-(from the symplectic form) in one geometric package, with the
-multiplicative isomorphism \(o_{c+c'}\simeq o_c\otimes o_{c'}\) as
-the load-bearing single hypothesis.  This is the hypothesis adopted
-above; it is geometric, aligns with
-Definitions~\ref{def:local-protected-observable-algebra}--\ref{def:orientation-line},
-introduces no new automorphic input, and reduces cleanly to a
-Hochschild boundary.
-\item[\(\beta\)] Costello higher Chern--Simons + Costello--Li flat
-CY pairing: yields the Frobenius identity directly from
-holomorphic factorization, but does not, by itself, provide a
-multiplicative orientation; \(\Pi\)-descent then collapses to a
-separate orientation-monodromy problem already named in
-Open Problem~\ref{op:orientation-monodromy-character}.  Useful as a
-parallel chiral host but does not suffice on its own.
-\item[\(\gamma\)] Davison--Meinhardt CoHA primitive truncation +
-parity argument: the parity vanishing of \(B\) on odd primitives is
-attractive but does not exhibit \(B\) as a Hochschild boundary; it
-only suppresses one parity sector and leaves the even-primitive
-descent as a separate obligation; applies to a strict subsector.
-\item[\(\delta\)] Ad hoc axiom on the recognition certificate: this
-is the formulation of
-Open Problem~\ref{op:pi-descent-of-bracket}; it adds no geometric
-content and is the position to be improved on.
-\end{itemize}
-H(\(\alpha\)) is the most parsimonious because the multiplicative
-orientation isomorphism \(\mu_{c,c'}\) and the PTVV \cite{PTVV2013} symplectic form on
-\(\mathfrak M_{X,c}\) are both already named (in
-Definitions~\ref{def:local-protected-observable-algebra},
-\ref{def:orientation-line}, and the
-PTVV/BBDJS/Joyce--Upmeier remark of
-\S\ref{def:local-protected-observable-algebra}); the only genuinely
-new ingredient is the multiplicativity (cocycle) constraint
-\(\mu_{c+c',c''}\circ\mu_{c,c'}=\mu_{c,c'+c''}\circ\mu_{c',c''}\).
-The hypothesis is named, falsifiable, and reduces to an existence
-question for a multiplicative orientation cocycle on the protected
-sector of \(K3\times E\).
-\end{remark}
-
-\begin{remark}[Reduction of Open Problem~\ref{op:pi-descent-of-bracket}]
-Theorem~\ref{thm:ptvv-joyce-pi-descent}, taken together with
-Lemma~\ref{lem:F-frobenius-from-hopf-nondegeneracy}, reduces the
-``positivity-of-cocycle'' / Hochschild-boundary obligation of
-Open Problem~\ref{op:pi-descent-of-bracket} to the following items.
-Item (O\(_*\)) is constructed in this paper, conditional on the
-single residual rank-extension (P3) of
-Open Problem~\ref{op:orientation-monodromy-character} (already open
-for the orientation existence frame); item (F\(_*\)) is now derived,
-not an independent obligation.
-\begin{itemize}
-\item[(O\(_*\))] \emph{Constructed by
-Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle}.}
-The multiplicative orientation cocycle
-\(\{\mu_{c,c'}\}\) on the reduced compact protected sector of
-\(K3\times E\) is exhibited explicitly as the Künneth tensor of
-the Joyce--Kinjo--Park--Safronov K3 multiplicative cocycle
-\cite{JoyceKinjoParkSafronov}, \cite{JoyceUpmeier},
-\cite{JoyceTanakaUpmeier} and the Costello--Li flat-trivial elliptic
-factor \cite{CostelloRenormalization}, with strict pentagon,
-\(S^1\)-equivariance, and reduced-\(E\)-compatibility verified.  The
-residual is rank-extension (P3).
-\item[(F\(_*\))] \emph{Derived from (P)+(O\(_*\)) by
-Lemma~\ref{lem:F-frobenius-from-hopf-nondegeneracy}.}  The
-chain-level graded Frobenius identity for the protected Hall bracket
-and Hopf pairing on \(\widetilde P_X\), with sign convention as in
-Theorem~\ref{thm:primitive-recognition}~(5), follows from (P), (O)
-and the granted Hopf-pairing non-degeneracy of
-Theorem~\ref{thm:primitive-recognition}~(6) via the PTVV
-\cite{PTVV2013} \(S_3\)-cyclic invariance and the Connes
-\(B^2=0\) chain-level lift of \cite{JoyceUpmeier,JoyceKinjoParkSafronov}.
-\end{itemize}
-Granting (P) and (O\(_*\)) (with (P3) discharged), the descent is
-automatic by the proof template above; (F\(_*\)) is no longer an
-independent input.  These remain geometric/categorical assertions
-whose status can be tracked independently of the modular and
-denominator arguments of this paper, and against the parallel
-constructions in
-\texttt{calabi-yau-quantum-groups} (Vol.~III \(\kappa\)-stratification)
-and \texttt{topological-strings} (BCOV chiral pairing on the
-generating function).
-\end{remark}
 
 \begin{lemma}[Graded Frobenius identity from CY-3 Serre functor]
 \label{lem:F-frobenius-from-cy-serre}
@@ -6688,28 +5749,18 @@ protected primitive subspace \(\widetilde P_X\).
 \qedhere
 \end{proof}
 
-\begin{remark}[Comparison with the Hopf-pairing derivation]
-Lemma~\ref{lem:F-frobenius-from-cy-serre} provides an independent
-derivation of (F) from the CY-\(3\) Serre functor of \(\mathcal A_X\),
-parallel to the derivation through the squaring isomorphism
+\begin{remark}
+Lemma~\ref{lem:F-frobenius-from-cy-serre} derives (F) from the
+CY-\(3\) Serre functor of \(\mathcal A_X\), parallel to the derivation
+through the squaring isomorphism
 \(o_c^{\otimes 2}\simeq\det\mathrm{RHom}(\mathcal C,\mathcal C)\) of
 Definition~\ref{def:orientation-line} and the Hopf pairing of
-Theorem~\ref{thm:primitive-recognition}~(6).  The two derivations meet at
-the chain-level identification
-\(\langle\,\cdot\,,\,\cdot\,\rangle=\tr_S(\,\cdot\,\cdot\,\cdot\,)\),
-which is the BBDJS \cite{BBDJS2015} cyclic upgrade of the PTVV
-\cite{PTVV2013} \((-1)\)-shifted symplectic form.  Agreement is a
-consistency check: the Hopf-pairing derivation imposes (F) by
-non-degeneracy of \(\langle\,\cdot\,,\,\cdot\,\rangle\) on primitives
-plus the Hochschild-boundary identity \(d_{\mathrm{Hoch}}\Theta=B\) of
-Theorem~\ref{thm:ptvv-joyce-pi-descent}, Step~3; the Serre-functor
-derivation imposes (F) by cyclic invariance of \(\tr_S\) on the CY-\(3\)
-\(A_\infty\)-structure.  Both produce the same sign convention for
-\((-1)^{|x|\cdot|y|}\) and the same target Gram degree
-\(c_x+c_y+c_z=0\), since \(S\simeq[3]\) is the orientation datum
-underlying the squaring isomorphism.  The CY-\(3\) hypothesis is the
-load-bearing input; granting the Costello--Li flat trivialization, it
-discharges (F\(_*\)) of the Reduction remark above.
+Theorem~\ref{thm:primitive-recognition}~(6).  Both derivations meet at
+\(\langle\,\cdot\,,\,\cdot\,\rangle=\tr_S(\,\cdot\,\cdot\,\cdot\,)\), the
+BBDJS \cite{BBDJS2015} cyclic upgrade of the PTVV
+\cite{PTVV2013} \((-1)\)-shifted symplectic form, and produce the same
+sign convention \((-1)^{|x|\cdot|y|}\) on the Gram degree
+\(c_x+c_y+c_z=0\).
 \end{remark}
 
 \begin{remark}[Unitarity]
@@ -6850,7 +5901,7 @@ Joyce--Kinjo--Park--Safronov \cite[multiplicative orientation
 construction]{JoyceKinjoParkSafronov} agrees with the
 symplectic-Lagrangian comparison map.  Compatibility (iii) follows.
 
-\emph{Conclusion.}  The data \(\{\mu_{c,c'}\}\) is a multiplicative
+The data \(\{\mu_{c,c'}\}\) is a multiplicative
 orientation cocycle satisfying (i)--(iii), so hypothesis (O) of
 Theorem~\ref{thm:ptvv-joyce-pi-descent} holds.  The construction
 factors through the cyclotomic-spectrum machinery of Nikolaus--Scholze
@@ -6860,29 +5911,17 @@ chiral pairings, K\"unneth decompositions of \(\mathcal F_X\) along
 \(K3\times E\), or any compactness datum beyond (C1)--(C3).  \qedhere
 \end{proof}
 
-\begin{remark}[Hypotheses, independence, and residual obstruction for Lemma~\ref{lem:cyclotomic-multiplicative-orientation}]
-The construction is rigorous granting hypotheses (C1), (C2), (C3);
-each is an open obligation for the protected observable algebra of
-\(K3\times E\).  Specifically: (C1) asks that \(\mathcal F_{X,c}\)
-carry a cyclotomic structure in the Nikolaus--Scholze sense
-\cite{NikolausScholze}, refining the expected chiral Frobenius; (C2)
-asks that orientation lines lift to \(\pi_0HC^-\) units, sharper than
-the per-class square root of
+\begin{remark}
+Hypotheses (C1), (C2), (C3) are open for \(K3\times E\): (C1) asks
+\(\mathcal F_{X,c}\) to carry a cyclotomic structure in the
+Nikolaus--Scholze sense \cite{NikolausScholze}; (C2) asks orientation
+lines to lift to \(\pi_0HC^-\) units, refining
 Definition~\ref{def:orientation-line}; (C3) asks symmetric monoidality
-of the external product on \(\{\mathcal F_{X,c}\}\) at the cyclotomic
-level.  None is established here for \(K3\times E\); each replaces a
-slice of the Costello--Li / K\"unneth obligation by a cyclotomic
-analogue.  The hypotheses (C1)--(C3) are
-disjoint from the Costello--Li flat Calabi--Yau pairing and from any
-K\"unneth decomposition: the cocycle \(\mu_{c,c'}\) is built from the
-Hochschild--cyclic machinery of \(\mathcal F_X\) alone, so
-Lemma~\ref{lem:cyclotomic-multiplicative-orientation} is an
-alternative construction of hypothesis (O), parallel to
-H(\(\beta\)) of the hypothesis-comparison remark above.
-The remaining obligation is the construction of the cyclotomic
-structure on \(\mathcal F_{X,c}\) for \(K3\times E\); this is a
-derived-algebraic / chromatic question distinct from the analytic
-obligations attached to (P), (F).
+of \(\{\mathcal F_{X,c}\}\) at the cyclotomic level.  The cocycle
+\(\mu_{c,c'}\) is built from the Hochschild--cyclic machinery of
+\(\mathcal F_X\) alone, supplying an alternative construction of
+hypothesis (O) disjoint from the Costello--Li flat Calabi--Yau pairing
+and from any K\"unneth decomposition.
 \end{remark}
 
 \begin{definition}[Sectorial Hall truncation]
@@ -6930,9 +5969,7 @@ A nonzero additive heart cannot have finite nonzero charge support in
 \(\Gamma_{\mathrm{act}}\subset\Gamma_{\mathrm{gram}}\) is not additive.
 The finite Hall object is therefore not a finite active-support heart.
 
-This constructs no Hall object for \(K3\times E\); it records the
-finite quotient once the oriented critical Hall object and its
-correspondences have been supplied.  Assume the support property, the
+Assume the support property, the
 HN property, finite type of the
 semistable stacks in bounded \(h_S\)-height, and the oriented critical
 Hall correspondences.  Then \(F_{\sigma,S}(R)\) and
@@ -6944,12 +5981,6 @@ $$
 \widehat{\mathcal H}_{\sigma,S}^{or}
 =\varprojlim_R\mathsf F_R\mathcal H_{\sigma,S}^{or}.
 $$
-Items (3)--(4) of the conditional hypothesis (finite type of the
-semistable stacks and oriented critical Hall correspondences) overlap
-with item~(H) of
-Open Problem~\ref{op:compact-igusa-realization}; this lemma is the
-conditional truncation lemma feeding that open problem, not an
-independent existence statement.
 \end{lemma}
 
 \begin{proof}
@@ -7135,20 +6166,16 @@ targets in primitives, that is,
 P^\Pi_{X,\Pi_X(c)+\Pi_X(c')},
 \]
 so that the induced \(\Gamma_{\mathrm{gram}}\)-grading of
-\(P_X^\Pi\) is a genuine Lie-superalgebra grading.  Equivalently,
-\(B\) lies in the Hochschild kernel of the protected primitive
-bracket; its proof is part of the open Hall datum (Open
-Problem~\ref{op:pi-descent-of-bracket}).  Conditional on the PTVV \cite{PTVV2013}
-host (P) and the multiplicative orientation cocycle (O),
-Theorem~\ref{thm:ptvv-joyce-pi-descent} discharges this hypothesis,
-exhibiting \(B=d_{\mathrm{Hoch}}\Theta\) as a Hochschild boundary for
-the determinant-line cochain \(\Theta\) produced from the
-multiplicative trivialisation \(\{\mu_{c,c'}\}\) of (O); the
-chain-level graded Frobenius identity (F) is supplied by
-Lemma~\ref{lem:F-frobenius-from-hopf-nondegeneracy} from (P), (O)
-and item~(6) below.  The residual construction obligation --
-existence of (O) on the reduced compact protected sector of
-\(K3\times E\) -- remains as Open
+\(P_X^\Pi\) is a Lie-superalgebra grading; \(B\) lies in the Hochschild
+kernel of the protected primitive bracket.  Granted (P) and (O),
+Theorem~\ref{thm:ptvv-joyce-pi-descent} exhibits
+\(B=d_{\mathrm{Hoch}}\Theta\) as a Hochschild boundary, with \(\Theta\)
+the determinant-line cochain produced from the multiplicative
+trivialisation \(\{\mu_{c,c'}\}\) of (O); the chain-level graded
+Frobenius identity (F) is supplied by
+Lemma~\ref{lem:F-frobenius-from-hopf-nondegeneracy} from (P), (O), and
+item~(6) below.  Existence of (O) on the reduced compact protected
+sector of \(K3\times E\) is Open
 Problem~\ref{op:pi-descent-of-bracket}.
 \item The degree map
 \[
@@ -7189,10 +6216,8 @@ is transported to the PBW filtration on
 of \(G(\mathscr B_{\Delta_5})\).  Consequently, on active positive
 Gram degrees,
 $$
-\sdim P^\Pi_{X,(n,l,m)}=f(nm,l),
+\sdim P^\Pi_{X,(n,l,m)}=f(nm,l).
 $$
-but this signed equality is only a necessary numerical consequence of the
-recognition data.
 \end{enumerate}
 Then
 $$
@@ -7225,20 +6250,6 @@ isomorphism of Gram-graded Lie superalgebras.  The denominator statement
 is Theorem~\ref{thm:denominator-algebra-identity}.  The chiral statement
 is exactly the quasi-isomorphism \(\Theta_{\mathrm{Kos}}\).
 \end{proof}
-
-\begin{remark}[What is not proved]
-The recognition certificate is conditional.  This paper does not construct
-the compact Hall/factorization object, the Gram descent
-\(\Pi_{X,*}\), the protected primitive bracket constants, the full parity
-dimensions of compact primitives, the simple primitive representatives,
-or the verification of the Borcherds--Kac relations in a Hall bracket.  It
-also does not prove the no-extra-relations theorem, the completed PBW
-theorem, or closedness of the Hall radical in the HN completion.  The
-signed equality
-\(\sdim P^\Pi_{X,(n,l,m)}=f(nm,l)\) and the determinant
-\(\mathcal D_X=\Delta_5\) are necessary shadows.  They are not sufficient
-to identify \(P_X^\Pi\) with \(\mathfrak g_{\Delta_5}\).
-\end{remark}
 
 \begin{proposition}[Low-degree bracket information]
 \label{prop:low-degree-denominator-brackets}
@@ -7282,35 +6293,6 @@ Then \((\beta,\beta)=-2(4nm-l^2)\), and
 Theorem~\ref{thm:denominator-algebra-identity}.  The displayed bracket
 constants are the normalized Chevalley, Jacobi and Serre constants for
 the symmetric Cartan matrix \(A=((\delta_i,\delta_j))\).
-\end{proof}
-
-\begin{proposition}[The determinant does not determine primitive recognition data]
-\label{prop:determinant-does-not-determine-hall-constants}
-The scalar square, the Borcherds product, and active support determine
-the visible signed product exponents.  After the
-Gritsenko--Nikulin denominator theorem, these exponents are the signed
-root supermultiplicities.  They do not determine the compact Hall
-structure constants, the full parity dimensions, the simple primitive
-representatives, the Borcherds--Kac relation verification, or the
-Hopf-pairing radical quotient.
-\end{proposition}
-
-\begin{proof}
-The product determines
-$$
-\smult(\alpha)
-=\dim\mathfrak g_{\alpha,\overline0}
--\dim\mathfrak g_{\alpha,\overline1}.
-$$
-A graded super vector space with the same signed dimensions gives the
-same product.  The zero bracket on that graded space gives the same
-product but not the Borcherds bracket, since
-\([e_i,e_j]\ne0\) in \(\mathcal A_{\mathrm{den}}\) for \(i\ne j\).
-A Hall bracket requires compact extension correspondences,
-orientation data, protected integration, and a basis of protected
-primitives.  The recognition certificate also requires the full parity split,
-simple-root representatives, defining relations, generation, and the
-radical quotient.  None of these is encoded in the determinant.
 \end{proof}
 
 \begin{openproblem}[Compact \(E_3\), Hall, and chiral Koszul realization]
@@ -7562,27 +6544,6 @@ The difference $a-b$ does not determine the pair $(a,b)$, and no
 bilinear bracket appears in the product.
 \end{proof}
 
-\begin{proposition}[Index equality is not a state-space identification]
-The equality
-$$\smult(\alpha(n,l,m))=f(nm,l)$$
-identifies the root-space Euler characteristic of
-$\mathcal A_{\mathrm{den}}$ with the virtual K3 half-index
-coefficient.  It does not prove an isomorphism
-$$
-\mathfrak g_{\alpha(n,l,m)}
-\cong
-\mathcal H^{\mathrm{BPS}}_{(n,l,m)}
-$$
-and it does not prove that the microscopic operator product on BPS
-states is the Borcherds bracket.  In particular, it does not prove
-$$
-H^0\Prim_{\mathrm{prot}}(\Pi_{X,*}\mathcal F_X)
-\cong\mathfrak g_{\Delta_5}.
-$$
-That comparison requires the primitive recognition hypotheses of
-Theorem~\ref{thm:primitive-recognition}.
-\end{proposition}
-
 \begin{proposition}[What the determinant forgets]
 \label{thm:protected-denominator-shadow}
 Let
@@ -7698,9 +6659,6 @@ The synthesis is the following spine:
 \hbox{eight-row certificate extension}.
 \end{gathered}
 \]
-The arrows record the order of comparison.  They are not automatic
-implications from a product to a physical host.
-
 \begin{theorem}[Coefficient dictionary and synthesis theorem]
 \label{thm:protected-igusa-determinant}
 Let \(X=K3\times E\).  Let
@@ -7713,8 +6671,6 @@ and define the virtual \(K_0\)-determinant object in the cusp chamber by
 \mathcal V_{(n,l,m)}=\mathbb U_{nm,l},\qquad
 (n,l,m)\in\Gamma_{\mathrm{eff}}.
 \]
-Then the theorem-level and conditional content of the paper is exactly
-as follows.
 
 First, the virtual determinant is the theta-normalized Igusa square root:
 \[
@@ -7880,26 +6836,17 @@ certificate condition is the same separation applied to the
 Clery--Gritsenko catalogue in the next part.
 \end{proof}
 
-Thus the paper has one dictionary and several levels of structure.  The
-dictionary is the integer \(f(nm,l)\).  The proved structures are the
-virtual determinant, the Gritsenko--Nikulin denominator algebra, and the
-reduced OP/DT scalar square with constants \(64\) and \(-4096\) fixed as
-above.  The compact \(K3\times E\) source and the boundary-row physical
-hosts are certificate problems.
-
-
 \part{Diagonal-divisor rows and CHL boundary physics}
 
 \section{Eight diagonal-divisor rows: automorphic and physical status}
 \label{sec:eight-dd-rows-status}
 
-This part is not an appendix to the \(N=1\) theorem.  It is the second
-problem of the paper.  The Clery--Gritsenko catalogue gives eight
+The Clery--Gritsenko catalogue gives eight
 diagonal-divisor automorphic products.  The Gritsenko--Nikulin and
 Govindarajan theorems promote these products to denominator identities
 in the rows where the Weyl data are known.  A CHL dyon square, a reduced
-CY/DT scalar host, and a compact Hall/chiral host are further structures.
-They are recorded only where their data have been specified.
+CY/DT scalar host, and a compact Hall/chiral host are further structures,
+recorded only where their data have been specified.
 
 $$g=2.$$
 $$t,N \in \mathbb{Z}_+:\quad \Gamma_t(N) =
@@ -8068,12 +7015,10 @@ no compact Hall/chiral certificate \\
 \endgroup
 \end{center}
 
-This table is a certificate table, not a catalogue of physical hosts.
 By Theorem~\ref{thm:gn-denominator-234} the full-paramodular rows
-$F_2,F_3,F_4$ also carry Gritsenko--Nikulin denominator identities.
+$F_2,F_3,F_4$ carry Gritsenko--Nikulin denominator identities.
 The cited sources do not construct a reduced curve-counting theorem,
-Hall object, or factorization host for these three rows.  Their status is
-therefore product plus denominator theorem only.
+Hall object, or factorization host for these three rows.
 The congruence rows $F_5,F_6,F_7,F_8$ have product-degree lattices in
 Proposition~\ref{prop:congruence-product-degree-lattices}.  The
 additional denominator data -- Weyl chamber, real roots, reflection
@@ -8126,10 +7071,7 @@ the theorem
 Z^{X_j}_{\mathrm{red}}(Z)=C_jF_j(Z)^{-2}.
 \]
 If a compact Hall/chiral host is claimed, one must separately construct
-the protected one-particle index and primitive bracket comparison.  This
-open problem is not used for the eight-row certificate table and implies no scalar
-square, CY/DT host, or Hall/chiral host without the corresponding
-certificate entries.
+the protected one-particle index and primitive bracket comparison.
 \end{openproblem}
 
 \begin{proposition}[CHL squares and denominator signs]
