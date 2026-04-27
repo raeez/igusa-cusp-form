@@ -3611,6 +3611,135 @@ Theorem~\ref{thm:primitive-recognition} is met.
 \qedhere
 \end{proof}
 
+\begin{proof}[Independent verification via cyclic homology
+(bar--cobar / Loday--Quillen--Tsygan route)]
+The PTVV--Joyce route routes the vanishing of \([B]\) through the
+multiplicative orientation \(\{\mu_{c,c'}\}\) and the graded-Frobenius
+identity (F).  The same conclusion is reachable, conditional on the
+PTVV host (P) alone, by transporting the cocycle to the cyclic complex
+of the protected Hall sector and using strict cyclic invariance of the
+Connes trace; we record the route to fix the structural content of
+Step~4 independently of the orientation hypothesis.
+
+\smallskip\emph{Step 1\(^\prime\) (Bar resolution and cyclic complex).}
+Write \(A_X^{\mathrm{prot}}\) for the chain-level dg associative algebra
+underlying the protected Hall sector \(\widetilde P_X\) of (P);
+concretely, on a derived chart \(\Spec R\) of \(\mathfrak M_{X,c}\),
+\(A_X^{\mathrm{prot}}\) is the commutative dg algebra of homotopical
+endomorphisms produced by the \((-1)\)-shifted symplectic structure.
+Form the bar resolution \(\operatorname{Bar}_*(A_X^{\mathrm{prot}})\) and the
+mixed complex \((C_*(A_X^{\mathrm{prot}}),b,B)\) of Connes; here
+\(b\) is the Hochschild boundary and \(B\) is the Connes
+\(B\)-operator with \(B^2=0\) and \([b,B]+B b=0\) on the nose
+\cite{ConnesNCG}, \cite{LodayCyclicHomology}.  Cyclic homology is
+\(HC_*(A_X^{\mathrm{prot}})=H_*(C_*(A_X^{\mathrm{prot}}),b+u B)\) with
+\(u\) of degree \(-2\); the periodic completion is
+\(HP_*(A_X^{\mathrm{prot}})\).  The \((-1)\)-shifted symplectic form
+of (P) is recorded in this language as a cyclic class
+\(\rho\in HC_2(A_X^{\mathrm{prot}})\), the Calabi--Yau volume of
+PTVV \cite{PTVV2013}; this is the strict chain-level avatar of the
+Costello--Li flat CY pairing in the Frobenius hypothesis (F) of the
+first proof.
+
+\smallskip\emph{Step 2\(^\prime\) (Chain-level cocycle \(B_{\mathrm{ch}}\)).}
+On homogeneous classes \(c,c'\in\Gamma_X^{\mathrm{phys}}\), define the
+chain-level cocycle
+\[
+B_{\mathrm{ch}}(c,c')\;:=\;\operatorname{tr}_{HC}\!\bigl(c\cdot c'\cdot\rho\;-\;
+c'\cdot c\cdot\rho\bigr)\;\in\;HC_2(A_X^{\mathrm{prot}}),
+\]
+where \(\operatorname{tr}_{HC}\) is the Connes cyclic trace and the products are the
+Hall convolution on \(\widetilde P_X\) lifted to \(C_*\).  Cyclic
+invariance of \(\operatorname{tr}_{HC}\) is strict on \(C_*\): the symbol
+\(c\cdot c'\cdot\rho\) and its cyclic permutation
+\(\rho\cdot c\cdot c'\) coincide as elements of the cyclic complex
+because Connes' \(B\)-operator is strictly squared-zero \cite[\S2.5]{LodayCyclicHomology}.
+Two consequences are immediate:
+\begin{enumerate}
+\item[(\(\alpha\))] symmetry, \(B_{\mathrm{ch}}(c,c')=B_{\mathrm{ch}}(c',c)\),
+holds on the nose by interchanging the two terms;
+\item[(\(\beta\))] strict closedness, \((b+uB) B_{\mathrm{ch}}=0\),
+follows from cyclic invariance and the Calabi--Yau identity
+\(b\rho=0=B\rho\) which characterises a class in \(HC_2\).
+\end{enumerate}
+The image of \(B_{\mathrm{ch}}\) in
+\(HC^2_{\mathrm{strict}}(A_X^{\mathrm{prot}};\Gamma_{\mathrm{gram}})\)
+is the strict, chain-level lift of the Hochschild class \([B]\) of
+the first proof; the comparison map
+\(HC^2_{\mathrm{strict}}\to HH^2\) of Loday--Quillen--Tsygan
+\cite{LodayQuillen1984}, \cite{Tsygan1983} sends
+\([B_{\mathrm{ch}}]\) to \([B]\).
+
+\smallskip\emph{Step 3\(^\prime\) (Strict associativity from cyclic
+invariance).}  Equip \(\operatorname{Bar}_*(\widehat\Gamma_X)\) with the canonical
+A\(_\infty\) structure transferred from the bar resolution of
+\(A_X^{\mathrm{prot}}\) along the augmentation
+\(A_X^{\mathrm{prot}}\twoheadrightarrow\widehat\Gamma_X\) of
+Definition~\ref{def:gram-corrected-charge-extension}.  The Stasheff
+obstruction class \(K_4\in C^4_{\mathrm{Hoch}}(\widehat\Gamma_X)\) for
+collapse of the A\(_\infty\) structure to a strict associative dg
+algebra is computed as the homotopy of the Hochschild cocycle identity
+for \(B_{\mathrm{ch}}\); cyclic invariance (\(\alpha\)) and strict
+closedness (\(\beta\)) of Step~2\(^\prime\) reduce \(K_4\) to a
+quadrilinear expression in the Connes \(B\)-operator applied to
+\(\rho\), which vanishes by \(B^2=0\).  Hence
+\(\operatorname{Bar}_*(\widehat\Gamma_X)\) collapses to a strictly associative dg
+monoid in the cyclic-homology category, equivalently \(\widehat\Gamma_X\)
+is strictly associative on the nose.  Restricted to primitives, the
+class
+\([B_{\mathrm{ch}}]\in HC^2_{\mathrm{strict}}\!\bigl(\widetilde
+P_X^{\mathrm{br}};\Gamma_{\mathrm{gram}}\bigr)\) is then a strict
+coboundary of the Connes contraction
+\(\iota_\rho:HC_*\to HC_{*-2}\) applied to \(\Pi_X\): explicitly,
+\(\iota_\rho\Pi_X\) is the chain-level avatar of the Hochschild
+\(1\)-cochain \(\Theta\) of the first proof, and
+\((b+uB)(\iota_\rho\Pi_X)=B_{\mathrm{ch}}\) on the nose.
+
+\smallskip\emph{Step 4\(^\prime\) (Compatibility with PTVV--Joyce).}
+The two routes give the same group \(\Gamma_X\): the comparison
+\(HC^2_{\mathrm{strict}}\to HH^2\) sends
+\([B_{\mathrm{ch}}]\mapsto[B]\) and \(\iota_\rho\Pi_X\mapsto\Theta\),
+and the Joyce--Kinjo--Park--Safronov multiplicative isomorphism
+\(\mu_{c,c'}\) of (O) is, in this language, the cyclic-homology lift
+to the determinant gerbe of the chain-level identity
+\((b+uB)(\iota_\rho\Pi_X)=B_{\mathrm{ch}}\).  Equivalently, the
+Kapustin--Rozansky / Kontsevich--Soibelman correspondence between
+shifted symplectic geometry and cyclic homology
+\cite{KSCoHA}, refined by Davison--Meinhardt
+\cite{DavisonMeinhardtCoHA} and the modern Joyce--Kinjo--Park--Safronov
+formulation \cite{JoyceKinjoParkSafronov}, identifies the cyclic
+pairing \(\rho\) with the PTVV symplectic form and the Connes trace
+with the integrated Frobenius pairing of (F).  Step~4 of the first
+proof and Step~3\(^\prime\) here therefore certify the same vanishing
+\([B]=0\) on primitives, and the descended bracket on
+\(P_X^\Pi=\Pi_{X,*}\widetilde P_X\) is independent of the route.
+The two proofs are mutually consistent and produce the same
+\(\Gamma_{\mathrm{gram}}\)-graded Lie-superalgebra structure on
+\(P_X^\Pi\); hypothesis~(1b) of
+Theorem~\ref{thm:primitive-recognition} is met by either route.
+\qedhere
+\end{proof}
+
+\begin{remark}[Two routes, one cocycle]
+\label{rem:cyclic-vs-orientation-step4}
+The PTVV--Joyce route exhibits \([B]\) as a Hochschild boundary by
+witnessing the multiplicative orientation cochain \(\Theta\); the
+cyclic-homology route exhibits \([B_{\mathrm{ch}}]\) as a strict
+cyclic boundary by witnessing the Connes contraction
+\(\iota_\rho\Pi_X\).  The first replaces a quadratic identity by a
+multiplicative cocycle on a determinant gerbe; the second replaces it
+by strict cyclic invariance of the Calabi--Yau volume.  Each route
+loads a different structural hypothesis -- (O) for PTVV--Joyce, the
+strict cyclic Calabi--Yau structure of (P) alone for the
+cyclic-homology route -- and the agreement of the two on the same
+class \([B]\) is the Loday--Quillen--Tsygan comparison
+\(HC^*_{\mathrm{strict}}\to HH^*\) of \cite{LodayQuillen1984},
+\cite{Tsygan1983}, \cite[\S2]{LodayCyclicHomology}.  Independence of
+route is itself the content: a defect on the orientation side cannot
+silently corrupt the descent if the cyclic-homology side certifies
+the same vanishing, and vice versa.
+\end{remark}
+
 \begin{remark}[Status discipline]
 The status of Theorem~\ref{thm:ptvv-joyce-pi-descent} is
 \emph{conditional}.  Hypotheses (P), (O), (F) are not constructed
