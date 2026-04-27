@@ -6,7 +6,7 @@
 
 ## Repo-local
 
-This repository carries the paper *A Borcherds lift of the weak Jacobi form $\phi_{0,1}$, generalized Borcherds–Kac–Moody superalgebras and the Igusa cusp form $\Delta_5$* (2020; Raeez Lorgat). The construction ties the weight-zero index-one weak Jacobi form $\phi_{0,1}$ through a generalized BKM superalgebra to the weight-5 Igusa cusp form — a structural sibling of the $K3 \times E$ moonshine frontier held in `~/calabi-yau-quantum-groups` (Vol III) and the BCOV frontier in `~/topological-strings`.
+This repository carries the current paper *The Igusa Square Root: The Borcherds determinant of $\phi_{0,1}$, its denominator algebra, and the $K3 \times E$ realization problem* (April 2026 reconstitution of an original 2020 note by Raeez Lorgat). The construction ties the weight-zero index-one weak Jacobi form $\phi_{0,1}$ through a generalized BKM superalgebra to the weight-5 Igusa cusp form — a structural sibling of the $K3 \times E$ moonshine frontier held in `~/calabi-yau-quantum-groups` and the BCOV frontier in `~/topological-strings`.
 
 **Source layout.**
 

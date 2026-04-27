@@ -11,7 +11,10 @@
 ## What this repository is for
 
 This repository is an instrument for advancing human mathematical
-knowledge around the Borcherds lift of the weak Jacobi form
+knowledge around the current paper *The Igusa Square Root: The
+Borcherds determinant of `\phi_{0,1}`, its denominator algebra, and the
+`K3 \times E` realization problem* (April 2026 reconstitution of an
+original 2020 note), the Borcherds lift of the weak Jacobi form
 `\phi_{0,1}`, the Igusa cusp form `\Delta_5`, and the associated
 generalized Borcherds-Kac-Moody superalgebra and automorphic
 correction.
