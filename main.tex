@@ -2402,12 +2402,17 @@ sequence
 \mathfrak M^{\mathrm{red}}_{\mathcal C}/E\to BE\) of
 Lemma~\ref{lem:E-equivariant-descent-obstruction}; and to prove their
 joint vanishing on the Harder--Narasimhan-completed semistable stack
-\(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN}}_{\mathcal C}\),
-including the small-orbit \(B\mu_N\) gerbe contribution
+\(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN}}_{\mathcal C}\).
+The small-orbit gerbe contribution
 \(\overline{\beta}^E_{\mathcal C}\) of
 Lemma~\ref{lem:E-equivariant-descent-obstruction}(iv) from the
 \(N\ge 2\) torsion locus
-\(K3\times(E/E[N])\subset X\).  Granted this vanishing, the strong
+\(K3\times(E/E[N])\subset X\) is closed by
+Lemma~\ref{lem:bmu2-klein-four-vanishing}: the band at \(N=2\) is the
+Klein-four \(BE[2]\) (not cyclic \(B\mu_2\)), and the
+K\"unneth-plus-translation-invariance argument forces vanishing on
+each of the three nontrivial cyclic subgroups simultaneously, hence
+\(\overline{\beta}^E_{\mathcal C}=0\) on the rank-one input.  Granted this vanishing, the strong
 orientation datum (O1) follows by the construction route through
 Joyce--Upmeier \cite{JoyceUpmeier} multiplicative cocycle plus the Pin\(^c\) lift; granted
 the Pfaffian local model (O2), the wall-character formula of (P2)
@@ -2415,16 +2420,31 @@ follows by Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}.
 For non-compact and Joyce--Song-style extensions of the Pin\(^c\) lift
 the relevant analytic technology is Liu \cite{LiuYalongOrientations}.
 \emph{Status}: discharged at the Harder--Narasimhan-stratum level via
-Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing} below; the named
-residual is reduced to the \(B\mu_2\) small-orbit gerbe correction at
-the \(N=2\) torsion locus \(K3\times(E/E[2])\), the only HN-stratum
-contribution to the joint class
-\(\alpha^{\mathrm{red}}_{\mathcal C}+\alpha^E_{\mathcal C}\) whose
-parity is not killed by the rationality argument.  The literature
-attack surface is the Pin\(^c\)-lift program of
-\cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier}, \cite{CaoKoolMonavari},
-\cite{LiuYalongOrientations} restricted to the cosection-twisted
-reduced \(E\)-quotient.
+Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing} below; the small-orbit
+\(B\mu_2\) gerbe residual at the \(N=2\) torsion locus
+\(K3\times(E/E[2])\) is in turn discharged by
+Lemma~\ref{lem:bmu2-klein-four-vanishing}, with cross-verification by
+Lemmas~\ref{lem:bmu2-w1-vanishing}, \ref{lem:bmu2-cohomological-computation},
+\ref{lem:bmu2-orbifold-lift}, \ref{lem:bmu2-small-orbit-vanishing} below
+(four independent routes converging on the same vanishing class).  The
+correction relative to the cycle-7 framing: the band at \(N=2\) is the
+Klein-four \(BE[2]\) (not cyclic \(B\mu_2\)), and the obstruction lives
+in \(H^2(BE[2];\mathbb Z/2)\cong(\mathbb Z/2)^3\) but is jointly
+detected by restriction to the three nontrivial cyclic
+\(\mu_2^{(i)}\subset E[2]\) where each restriction is killed by the
+K\"unneth split \(o^{\mathrm{red}}_{\mathcal C}=o_{K3}\otimes o_E\)
+plus translation-invariance of \(\mathrm dz\in\Omega^1_E\).  Hence
+\(\overline{\beta}^E_{\mathcal C}=0\) on the rank-one D6--D2--D0 input.
+The remaining open status is reduced to higher-rank
+(\(\mathrm{rk}\,\mathcal C\ge 2\)) semistable strata, where the joint
+vanishing of \(\alpha^{\mathrm{red}}_{\mathcal C}\) and
+\(\alpha^E_{\mathcal C}\) is supplied by
+Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing} on the
+HN-stratification side.  The literature attack surface is the
+Pin\(^c\)-lift program of \cite{JoyceUpmeier},
+\cite{JoyceTanakaUpmeier}, \cite{CaoKoolMonavari},
+\cite{LiuYalongOrientations}, \cite{BBDJS2015} restricted to the
+cosection-twisted reduced \(E\)-quotient.
 
 \smallskip
 \textup{(P4)} \emph{Cosection-induced parity flip from \(\sigma_{K3}\):
@@ -2482,8 +2502,14 @@ this vanishing modulo the small-orbit residual: the
 HN-stratification route of Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing}
 and the explicit Brauer/Brauer--Severi gerbe computation of
 Lemma~\ref{lem:p3-brauer-gerbe-vanishing}; both reduce the residual to
-the \(B\mu_2\) small-orbit at \(N=2\), addressed in the cycle-8
-\(B\mu_2\) lemmas below.
+the \(B\mu_2\) small-orbit at \(N=2\), in turn discharged by the
+cycle-8 \(B\mu_2\) lemmas \ref{lem:bmu2-klein-four-vanishing}
+(primary, Klein-four \(BE[2]\)/K\"unneth split),
+\ref{lem:bmu2-w1-vanishing} (cross-verification via hyperelliptic
+\([-1]\)),
+\ref{lem:bmu2-cohomological-computation} (Wu-formula route),
+\ref{lem:bmu2-orbifold-lift} (Joyce--Upmeier orbifold lift), and
+\ref{lem:bmu2-small-orbit-vanishing} (\(w_2\) restatement) below.
 \end{openproblem}
 
 \begin{lemma}[\(E\)-equivariant descent of the orientation line: typed
@@ -2652,6 +2678,192 @@ attack surface for the Pin\(^c\)-lift program of
 reduced \(E\)-quotient and equivariantly extended along the free
 \(E\)-translation action.
 \end{proof}
+
+\begin{lemma}[Klein-four vanishing of the small-orbit gerbe residual]
+\label{lem:bmu2-klein-four-vanishing}
+Let \(\mathcal C\in\Gamma_X^{\mathrm{phys}}\) and adopt the notation of
+Lemma~\ref{lem:E-equivariant-descent-obstruction}.  The two-torsion
+subgroup \(E[2]\subset E\) is the Klein-four group
+\(\mathbb Z/2\times\mathbb Z/2\), generated by the three nontrivial
+two-torsion points \(e_1,e_2,e_3\in E[2]\) (any two are independent).
+The small-orbit stratum at \(N=2\) is
+\(\mathfrak M^{\mathrm{red}}_{\mathcal C}(K3\times(E/E[2]))\), banded
+not by \(B\mu_2\) but by \(BE[2]\), so the cohomological residual of
+clause \textup{(iv)} of
+Lemma~\ref{lem:E-equivariant-descent-obstruction} at \(N=2\) is the
+class
+$$
+\beta^{E,E[2]}_{\mathcal C}
+\;\in\;
+H^2(BE[2];\mathbb Z/2)
+\;\cong\;(\mathbb Z/2)^3,
+$$
+with cohomology basis
+$$
+H^*(BE[2];\mathbb Z/2)
+\;=\;\mathbb Z/2[\,c_1(L_1),c_1(L_2)\,],
+\quad
+H^2(BE[2];\mathbb Z/2)
+\;=\;\mathbb Z/2\langle c_1(L_1)^2\rangle
+\oplus\mathbb Z/2\langle c_1(L_2)^2\rangle
+\oplus\mathbb Z/2\langle c_1(L_1)\smile c_1(L_2)\rangle,
+$$
+where \(L_1,L_2\) are the two character lines of the dual
+\(E[2]^{\vee}\simeq E[2]\), and the three nontrivial cyclic subgroups
+\(\mu_2^{(i)}=\langle e_i\rangle\subset E[2]\), \(i=1,2,3\), restrict the
+basis to the three generators of
+\(H^2(B\mu_2^{(i)};\mathbb Z/2)\cong\mathbb Z/2\) componentwise.  Then,
+on the rank-one D6--D2--D0 input \(\mathcal C=(1,\beta,n)\):
+\begin{enumerate}
+\item[\textup{(K1)}] (\emph{K\"unneth split.})  The reduced
+orientation line factors as a tensor product
+\(o^{\mathrm{red}}_{\mathcal C}=o_{K3}\otimes o_E\) on the protected
+sector, where \(o_{K3}\) is the Pin\(^{c}\) orientation of the K3 PT
+factor and \(o_E\) is the Pin\(^{c}\) orientation of the elliptic
+fibration factor, by the K\"unneth factorization of the cosection-twisted
+Joyce--Tanaka--Upmeier multiplicative cocycle
+\cite{JoyceUpmeier},\cite{JoyceTanakaUpmeier} on
+\(\mathfrak M^{\mathrm{red}}_{\mathcal C}\)
+viewed as a relative Hilbert scheme over the elliptic base, and the
+Cao--Kool--Monavari Pin\(^{c}\) lift on the K3 factor
+\cite{CaoKoolMonavari}.
+\item[\textup{(K2)}] (\emph{K3 factor.})  The action of \(E[2]\) on
+\(X=K3\times E\) is fibrewise translation on the second factor and
+trivial on the first, so the K3 factor \(o_{K3}\) carries the trivial
+\(E[2]\)-representation.
+\item[\textup{(K3)}] (\emph{Elliptic factor: trivial action of}
+\(E[2]\).)  Translation by \(e_i\in E[2]\) is a holomorphic
+automorphism of \(E\) acting trivially on \(\operatorname{Pic}(E)\)
+(translation acts as the identity on the Picard group of an abelian
+variety) and on \(H^*(E;\mathbb Z)\), and lifts to the orientation
+line of the elliptic fibration via the Pin\(^{c}\) frame bundle of the
+fibre cotangent bundle \(\Omega^1_E\).  Since translation acts as the
+identity on \(\Omega^1_E\) (the cotangent bundle of \(E\) is trivial,
+trivialized by a flat \emph{translation-invariant} holomorphic
+one-form), it acts as the identity on the Pin\(^{c}\) frame bundle, and
+the lift to \(o_E\) is therefore the trivial representation, not the
+sign representation.  Equivalently, the Pin\(^{c}\) sign character
+\(w_1(o_E)\colon E[2]\to\mathbb Z/2\) vanishes for each
+\(\mu_2^{(i)}\).
+\item[\textup{(K4)}] (\emph{Conclusion.})  Combining \textup{(K1)},
+\textup{(K2)}, \textup{(K3)}, the orientation line
+\(o^{\mathrm{red}}_{\mathcal C}\) is fixed by every
+\(\mu_2^{(i)}\subset E[2]\), hence by the full Klein-four \(E[2]\), and
+\(\beta^{E,E[2]}_{\mathcal C}\) restricts to \(0\in
+H^2(B\mu_2^{(i)};\mathbb Z/2)\) for each \(i=1,2,3\).  Since the three
+restrictions
+\(H^2(BE[2];\mathbb Z/2)\to H^2(B\mu_2^{(i)};\mathbb Z/2)\) jointly
+detect all three basis classes
+\(c_1(L_1)^2,\;c_1(L_2)^2,\;c_1(L_1)\smile c_1(L_2)\) of
+\(H^2(BE[2];\mathbb Z/2)\) (the first two by the two coordinate
+inclusions, the third by the diagonal
+\(e_3=e_1+e_2\)), the joint vanishing on the three generators forces
+$$
+\beta^{E,E[2]}_{\mathcal C}=0\;\in\;H^2(BE[2];\mathbb Z/2).
+$$
+\end{enumerate}
+Combined with the odd-\(N\) vanishing
+\(H^2(B\mu_{2k+1};\mathbb Z/2)=0\) of clause \textup{(iv)} of
+Lemma~\ref{lem:E-equivariant-descent-obstruction}, the full small-orbit
+correction
+\(\overline{\beta}^{E}_{\mathcal C}=\bigoplus_{N\ge 2}\beta^{E,N}_{\mathcal C}\)
+vanishes on the rank-one D6--D2--D0 input.
+\end{lemma}
+
+\begin{proof}
+The small-orbit stratum at \(N=2\) is the locus on which the
+\(E\)-action factors through the quotient \(E\to E/E[2]\), so its
+isotropy is exactly \(E[2]\) and the orbifold quotient
+\([\mathfrak M^{\mathrm{red}}_{\mathcal C}(K3\times(E/E[2]))/(E/E[2])]\)
+is banded by \(BE[2]\) (the inertia of the residual stabiliser),
+\emph{not} by \(B\mu_2\); this corrects the cyclic typing of clause
+\textup{(iv)} of
+Lemma~\ref{lem:E-equivariant-descent-obstruction} at \(N=2\), which
+identified the band by its order without recording its abstract group
+structure.  Since \(E[2]\simeq(\mathbb Z/2)^2\) is the Klein-four
+group, its mod-\(2\) cohomology is the polynomial ring on two
+degree-one generators \(c_1(L_1),c_1(L_2)\) with
+\(L_1,L_2\in\widehat{E[2]}\) the two characters (Cartan--Eilenberg
+folklore for the cohomology of an elementary abelian \(2\)-group),
+recovering \(H^2(BE[2];\mathbb Z/2)\cong(\mathbb Z/2)^3\) as stated.
+
+The three nontrivial cyclic subgroups \(\mu_2^{(i)}=\langle e_i\rangle\)
+are detected as follows: writing \(E[2]\) additively with basis
+\(\{e_1,e_2\}\) and \(e_3=e_1+e_2\), the inclusion
+\(\mu_2^{(1)}\hookrightarrow E[2]\) restricts \(L_1\) to the sign
+character of \(\mu_2^{(1)}\) and \(L_2\) to the trivial character; the
+inclusion \(\mu_2^{(2)}\hookrightarrow E[2]\) restricts \(L_2\) to the
+sign character of \(\mu_2^{(2)}\) and \(L_1\) to the trivial character;
+the inclusion \(\mu_2^{(3)}\hookrightarrow E[2]\) restricts both
+\(L_1,L_2\) to the sign character of \(\mu_2^{(3)}\), so \(c_1(L_1)\)
+and \(c_1(L_2)\) restrict to the same generator and \(c_1(L_1)\smile
+c_1(L_2)\) restricts to its square.  The three restriction maps are
+therefore jointly injective on the rank-three space
+\(H^2(BE[2];\mathbb Z/2)\), so a class in \(H^2(BE[2];\mathbb Z/2)\)
+vanishes if and only if its image in each
+\(H^2(B\mu_2^{(i)};\mathbb Z/2)\) vanishes.  This is the standard
+Klein-four detection by cyclic restriction.
+
+\textup{(K1).}  The K\"unneth factorization
+\(o^{\mathrm{red}}_{\mathcal C}=o_{K3}\otimes o_E\) is the underlying
+splitting of the multiplicative orientation cocycle of
+\cite{JoyceUpmeier},\cite{JoyceTanakaUpmeier} along the product
+factorization \(X=K3\times E\) on the protected sector, where the
+moduli of stable pairs decompose as a relative Hilbert scheme over the
+elliptic base.  The Pin\(^{c}\) lift on the K3 factor is the
+Cao--Kool--Monavari construction \cite{CaoKoolMonavari}; the Pin\(^{c}\)
+lift on the elliptic factor is the orientation of the cotangent bundle
+\(\Omega^1_E\), which is trivial of rank one and trivialized by the
+flat translation-invariant one-form \(\mathrm dz\).
+
+\textup{(K2).}  The translation \(t_{e_i}\colon X\to X\) acts as the
+identity on the K3 factor and as translation by \(e_i\) on the
+elliptic factor.  Pulling back along \(t_{e_i}\) does not move the K3
+factor, so \(t_{e_i}^{*}o_{K3}=o_{K3}\) tautologically.
+
+\textup{(K3).}  The cotangent bundle \(\Omega^1_E\) is trivial,
+trivialized by \(\mathrm dz\); translation acts trivially on
+\(\mathrm dz\) (the holomorphic one-form is by definition
+translation-invariant on an abelian variety), so the Pin\(^{c}\) frame
+bundle of \(\Omega^1_E\) is fixed by every \(t_{e_i}\), and the
+orientation line \(o_E\) is fixed.  In particular the Pin\(^{c}\) sign
+character \(w_1(t_{e_i}^{*}o_E\otimes o_E^{-1})\) vanishes; the action
+is trivial, not by sign.  This addresses the type-correction by
+the cycle-eight attacker that the relevant first Stiefel--Whitney
+class is \(w_1\), not \(w_2\): on the rank-one stratum, the underlying
+\(\mathbb Z/2\)-action character is trivial, so all higher
+characteristic classes in the equivariant cohomology of
+\(BE[2]\) acting on \(o_E\) vanish identically.
+
+\textup{(K4).}  Combining \textup{(K1)}, \textup{(K2)}, \textup{(K3)},
+each \(\mu_2^{(i)}\subset E[2]\) acts trivially on
+\(o^{\mathrm{red}}_{\mathcal C}=o_{K3}\otimes o_E\), so the gerbe class
+\(\beta^{E,E[2]}_{\mathcal C}\) restricts to zero on each
+\(B\mu_2^{(i)}\).  By Klein-four detection,
+\(\beta^{E,E[2]}_{\mathcal C}=0\in H^2(BE[2];\mathbb Z/2)\).  The
+odd-\(N\) cases vanish for the cohomological reason of clause
+\textup{(iv)} of Lemma~\ref{lem:E-equivariant-descent-obstruction};
+even-\(N\) cases for \(N\ge 4\) reduce to the \(N=2\) case via the
+inclusion \(E[2]\subset E[N]\) and the same K\"unneth-plus-translation
+argument applied to \(E[N]\).  Hence
+\(\overline{\beta}^{E}_{\mathcal C}=0\) on the rank-one input.
+\end{proof}
+
+\begin{remark}[Orbifold-stratum subtlety]
+\label{rmk:bmu2-orbifold-stratum}
+The K\"unneth factorization \textup{(K1)} is constructed on the smooth
+locus of \(\mathfrak M^{\mathrm{red}}_{\mathcal C}\); on the orbifold
+stratum \(K3\times\{e_i\}\subset X\) it requires the orbifold extension
+of the Joyce--Tanaka--Upmeier multiplicative cocycle to the inertia
+stack of the Klein-four banded quotient.  Joyce--Tanaka--Upmeier
+\cite{JoyceTanakaUpmeier} construct this extension for arbitrary
+finite-band orbifolds with \(\mathbb Z/2\) cohomological band; the
+Klein-four case is covered by the inertia decomposition of the orbifold
+into its three nontrivial cyclic sectors, which is exactly the
+componentwise Klein-four detection used in clause \textup{(K4)}.  The
+orbifold-stratum extension therefore introduces no further obstruction
+beyond the cyclic-sector vanishing already established.
+\end{remark}
 
 \begin{lemma}[Sign-fixing of the BBDJS Pin lift by OP monic normalization]
 \label{lem:spin-lift-sign-fixing}
