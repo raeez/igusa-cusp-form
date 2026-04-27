@@ -1,0 +1,659 @@
+\section{Protected integration and the orientation character: attack--heal}
+\label{sec:agent15d-protected-integration-orientation-character}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\La}{\Lambda}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\RHom}{\operatorname{RHom}}
+\providecommand{\sdet}{\operatorname{sdet}}
+\providecommand{\CoHA}{\operatorname{CoHA}}
+\providecommand{\Hall}{\mathcal H}
+\providecommand{\BM}{\operatorname{BM}}
+\providecommand{\Crit}{\operatorname{Crit}}
+\providecommand{\MHM}{\operatorname{MHM}}
+\providecommand{\Perf}{\operatorname{Perf}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\Spch}{\mathrm{Sp}^{\mathrm{ch}}}
+\providecommand{\hCS}{\mathrm{hCS}}
+\providecommand{\BV}{\mathrm{BV}}
+\providecommand{\TS}{\mathrm{TS}}
+\providecommand{\Deltafive}{\Delta_5}
+\providecommand{\nuDelta}{\nu_{\Delta_5}}
+\providecommand{\epsor}{\epsilon_o}
+\providecommand{\gDelta}{\mathfrak g_{\Delta_5}}
+
+\subsection{Attacked claim}
+
+The attacked claim is the strongest compact-realization upgrade:
+\[
+  \hbox{generic CY}_3\hbox{ orientation technology}
+  + \hbox{OP Behrend integration}
+  + \hbox{Borcherds denominator}
+  \Longrightarrow
+  \hbox{protected integration for }K3\times E
+  \hbox{ with }\epsor=\nuDelta .
+\]
+This implication is false.
+
+The scalar OP/DT branch is theorem-level after importing
+Oberdieck--Pixton, Oberdieck--Pandharipande, and Oberdieck.  The
+automorphic character
+\[
+  \nuDelta:\Sp_4(\Z)\to\{\pm1\}
+\]
+and its type-II Weyl restriction are theorem-level in the Igusa paper.
+Generic orientability of CY\(_3\) moduli stacks is theorem-level in the
+Joyce/Kontsevich--Soibelman/PTVV/Kinjo--Park--Safronov direction, as
+used in the surrounding volumes.  None of these statements constructs:
+\[
+  I^{\mathrm{prot}}_{\sigma,S,o}:
+  \widehat{\Hall}^{\mathrm{or}}_{K3\times E,\sigma,S}
+  \longrightarrow
+  \widehat{\mathbb T}^{\mathrm{prot}}_{\Gamma,S,o},
+\]
+a lifted type-II Weyl action on its oriented source, or the
+determinant-line monodromy calculation producing
+\[
+  \epsor(w)=\nuDelta(w).
+\]
+
+The healed statement is conditional.
+
+\begin{quote}
+If a finite-first oriented compact critical Hall/CoHA atlas for the
+relevant \(K3\times E\) sector is constructed, if its vanishing-cycle
+coefficient systems admit a protected integration map compatible with
+Hall multiplication, wall crossing, HN completion, and primitive
+projection, and if the type-II Weyl group lifts to the oriented
+completed Hall object, then the equality
+\(\epsor=\nuDelta\) becomes a concrete determinant-line monodromy
+problem.  It is proved only after the three simple real-root reflections
+are computed geometrically and the Coxeter relations are checked.
+\end{quote}
+
+\subsection{Status ledger}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.34\textwidth}p{0.14\textwidth}p{0.42\textwidth}}
+\hline
+Claim & Status & Reason \\
+\hline
+\(\nuDelta\) and its type-II Weyl restriction &
+theorem &
+Maass character and exterior-square/reflection calculation in
+\texttt{main.tex:620--760}, \texttt{main.tex:1404--1786}. \\
+Reduced scalar branch
+\(-4096\Deltafive^{-2}\) &
+imported theorem &
+OP/DT reduced quotient integration; see
+\texttt{main.tex:824--1165}. \\
+Scalar Behrend quotient integration &
+theorem/imported scalar construction &
+It lands in numbers coefficientwise.  It is not a Hall product and not
+an orientation character; see \texttt{main.tex:854--888}. \\
+Generic CY\(_3\) orientability of the derived moduli stack &
+theorem elsewhere &
+The surrounding Vol. III text uses PTVV/Joyce/KPS-type orientation data;
+see
+\texttt{calabi-yau-quantum-groups/chapters/examples/k3\_chiral\_bialgebra\_platonic.tex:4130--4205}. \\
+Finite DWR/Ran oriented hCS--Hall comparison &
+conditional theorem &
+Vol. III proves sufficiency after the finite primitive package
+\((\eta_{\mathrm{MC}},\lambda_{\mathrm{or}},\eta_{\mathrm{gr}},
+H_{\mathrm{TS}},H_{\mathrm{fact}},Q)\) is supplied; see
+\texttt{cy3\_chain\_level\_bridge.tex:3554--3695}. \\
+Compact protected integration for \(K3\times E\) &
+open &
+The compact atlas, HN tower, proper pushforwards, reduced quotient
+descent, wrapped-sector compatibility, and primitive projection are not
+constructed. \\
+\(\epsor=\nuDelta\) &
+open &
+The automorphic side exists.  The Hall-side Weyl lift and
+determinant-line monodromy computation do not. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Definition candidates}
+
+\paragraph{Candidate A: scalar Behrend quotient.}
+For Hilbert schemes or stable-pair spaces the manuscript uses
+\[
+  \int_{\mathrm{Hilb}^n(X,(\beta,d))/E}\nu_{\mathrm{Hilb}}\,de,
+  \qquad
+  \int_{P_n(X,(\beta,d))/E}\nu_P\,de .
+\]
+This is a coefficientwise scalar Euler characteristic.  It is the right
+shadow for the OP/DT theorem.  It is not protected Hall integration:
+there is no extension correspondence, no multiplication, no
+orientation-line transport, no primitive projection, and no Weyl action.
+
+\paragraph{Candidate B: motivic/critical CoHA integration.}
+Let
+\[
+  \mathfrak M^\sigma_\gamma
+\]
+be the semistable compact critical/d-critical moduli stack of charge
+\(\gamma\), in an extension-closed sector \(S\).  Assume finite HN
+truncations \(L_{\le R}\), vanishing-cycle sheaves
+\(\phi_{\mathcal W_\gamma}\), and a strong orientation \(o\) with
+orientation local systems \(\mathscr L_{o,\gamma}\).  The finite-stage
+oriented Hall group is
+\[
+  \Hall^{\mathrm{or}}_{\sigma,S,\le R}
+  =
+  \bigoplus_{\gamma\in L_{\le R}}
+  H^{\BM}_{G_\gamma}
+  \left(
+    \mathfrak M^\sigma_\gamma,\,
+    \phi_{\mathcal W_\gamma}\otimes\mathscr L_{o,\gamma}
+  \right).
+\]
+The completed source is
+\[
+  \widehat{\Hall}^{\mathrm{or}}_{\sigma,S}
+  =
+  \varprojlim_R \Hall^{\mathrm{or}}_{\sigma,S,\le R}.
+\]
+Hall multiplication is the pull--push operation along
+\[
+  \mathfrak M^\sigma_\gamma\times\mathfrak M^\sigma_\eta
+  \xleftarrow{\ p_{\gamma,\eta}\ }
+  \mathfrak E^\sigma_{\gamma,\eta}
+  \xrightarrow{\ q_{\gamma,\eta}\ }
+  \mathfrak M^\sigma_{\gamma+\eta},
+\]
+with \(\TS\) for vanishing cycles and orientation-line transport.
+The map \(q_{\gamma,\eta}\) must be proper on each finite HN quotient,
+or the compactly supported pushforward is not defined.
+
+The protected integration map should be a continuous algebra map
+\[
+  I^{\mathrm{prot}}_{\sigma,S,o}:
+  \widehat{\Hall}^{\mathrm{or}}_{\sigma,S}
+  \longrightarrow
+  \widehat{\mathbb T}^{\mathrm{prot}}_{\Gamma,S,o},
+\]
+where the protected quantum torus has basis \(x^\gamma\) and product
+\[
+  x^\gamma\star_o x^\eta
+  =
+  \mathbb L^{-\langle\gamma,\eta\rangle/2}
+  c_o(\gamma,\eta)x^{\gamma+\eta}.
+\]
+Here \(c_o\) is the orientation quadratic-refinement cocycle.  Its
+Euler/Hodge specialization is the signed protected trace.  The
+compatibility equation is
+\[
+  I^{\mathrm{prot}}_{\sigma,S,o}(a*b)
+  =
+  I^{\mathrm{prot}}_{\sigma,S,o}(a)\star_o
+  I^{\mathrm{prot}}_{\sigma,S,o}(b).
+\]
+This is the first type-correct definition candidate.
+
+\paragraph{Candidate C: Hodge or spin-refined protected realization.}
+For a refined theory one can replace the Euler specialization by a
+mixed-Hodge or perverse-filtration realization:
+\[
+  I^{\mathrm{prot,Hdg}}_{\sigma,S,o}:
+  \widehat{\Hall}^{\mathrm{or}}_{\sigma,S}
+  \longrightarrow
+  \widehat{K_0(\MHM)[\Gamma]}.
+\]
+The Igusa paper currently needs only the unrefined protected
+supertrace.  A refined target is useful only if its specialization gives
+the same unrefined coefficients \(f(nm,l)\) and its orientation
+transport descends to the same Weyl character.
+
+\paragraph{Candidate D: primitive integration.}
+The expression
+\[
+  I^{\mathrm{prot}}:\Hall\to \gDelta
+\]
+is not a definition of protected integration.  It confuses integration
+with primitive recognition.  The Hall product and coproduct first define
+primitives; protected integration gives their signed numerical shadow.
+The isomorphism with \(\gDelta\) is a presentation-level theorem about
+the primitive bracket, not the codomain of integration.
+
+\subsection{Exact domain and codomain for the orientation character}
+
+There are two different signs.
+
+\paragraph{Hall product cocycle.}
+The cocycle \(c_o(\gamma,\eta)\) is a two-variable sign or motivic
+half-Tate factor attached to orientation transport for an extension
+\(\gamma\to\gamma+\eta\to\eta\).  It lives in the multiplication law of
+\(\widehat{\mathbb T}^{\mathrm{prot}}_{\Gamma,S,o}\).
+
+\paragraph{Weyl monodromy character.}
+The desired character is one-variable:
+\[
+  \epsor:
+  W^{(2)}(\La^{2,1}_{II})\longrightarrow\{\pm1\}.
+\]
+It is not defined until there is a lifted action
+\[
+  \rho_o:
+  W^{(2)}(\La^{2,1}_{II})
+  \longrightarrow
+  \operatorname{Aut}
+  \bigl(\widehat{\Hall}^{\mathrm{or}}_{\sigma,S}\bigr)
+\]
+or, more honestly before chamber identification, an action on the
+Hall wall-crossing groupoid
+\[
+  \rho_o(w):
+  \widehat{\Hall}^{\mathrm{or}}_{\sigma,S}
+  \xrightarrow{\sim}
+  \widehat{\Hall}^{\mathrm{or}}_{w\sigma,wS}.
+\]
+To get a character on a fixed base chamber one must also supply a
+wall-crossing transport
+\[
+  \mathsf{WC}_w:
+  \widehat{\Hall}^{\mathrm{or}}_{w\sigma,wS}
+  \xrightarrow{\sim}
+  \widehat{\Hall}^{\mathrm{or}}_{\sigma,S}
+\]
+compatible with protected integration.  Then the sign is the ratio by
+which \(\mathsf{WC}_w\circ\rho_o(w)\) transports the chosen orientation
+branch:
+\[
+  (\mathsf{WC}_w\circ\rho_o(w))^*\ell_{w\gamma}
+  \simeq
+  \epsor(w)\,\ell_{\gamma}.
+\]
+The codomain is \(\{\pm1\}\) only after the ratio is central and
+constant on the relevant finite HN tower.  Multiplicativity
+\(\epsor(w_1w_2)=\epsor(w_1)\epsor(w_2)\) is a theorem to prove; it is
+not a definition.
+
+\subsection{Monodromy computation requirements}
+
+The target equality is
+\[
+  \epsor
+  =
+  \nuDelta|_{W^{(2)}(\La^{2,1}_{II})}.
+\]
+The automorphic side is known.  Since the type-II Weyl group is
+generated by the simple reflections in the real roots
+\[
+  \delta_1=2f_2-f_3,\qquad
+  \delta_2=2f_{-2}-f_3,\qquad
+  \delta_3=f_3,
+\]
+it is enough, after the group action and relation check exist, to prove
+\[
+  \epsor(s_{\delta_1})
+  =
+  \epsor(s_{\delta_2})
+  =
+  \epsor(s_{\delta_3})
+  =
+  -1.
+\]
+
+The geometric computation has the following irreducible obligations.
+
+\begin{enumerate}
+\item \textbf{Wall identification.}  Identify the Hall stability wall
+crossed by \(s_{\delta_i}\) with the automorphic diagonal real-root
+wall used by the exterior-square embedding into
+\(\Sp_4(\Z)/\{\pm I\}\).  This includes the charge map
+\[
+  \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}.
+\]
+\item \textbf{Local d-critical normal form.}  Give a d-critical or
+critical-chart model near the simple real-root stratum.  The model must
+separate tangential modes from the single normal mode responsible for
+the reflection.
+\item \textbf{Orientation-line decomposition.}  Decompose
+\[
+  \ell_\gamma^{\otimes2}
+  \simeq
+  \sdet\RHom(\mathcal E_\gamma,\mathcal E_\gamma)
+\]
+into tangential and normal factors, with the same decomposition on the
+reflected charge.
+\item \textbf{Pfaffian sign.}  Prove that the reflection reverses
+exactly one oriented normal square-root factor and that all tangential,
+paired, and Tate-shift contributions cancel.  This is the expected
+Pfaffian mechanism.  It is not computed in the current compact theory.
+\item \textbf{Vanishing-cycle compatibility.}  Verify that the
+monodromy of the orientation local system commutes with the vanishing
+cycle functor and with \(\TS\) on the extension correspondence.
+\item \textbf{Compact-support pushforward.}  Check that the wall
+transport and Hall pushforwards remain proper on every finite HN
+quotient and are continuous under the inverse limit.  The
+\(\varprojlim^1\) obstruction named in Vol. III must vanish.
+\item \textbf{Coxeter relations.}  After computing the signs on simple
+reflections, verify that the transported orientation branches satisfy
+the type-II Weyl relations.  Without this, the signs are local wall
+data, not a character.
+\item \textbf{Central lift audit.}  Compare the Hall lift with the
+automorphic exterior-square lift.  A hidden metaplectic or orientation
+central sign would change the equality with \(\nuDelta\).
+\end{enumerate}
+
+\subsection{Falsified shortcuts}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.31\textwidth}p{0.59\textwidth}}
+\hline
+Shortcut & Failure \\
+\hline
+Behrend-weighted OP integration is protected Hall integration &
+False.  OP integration is scalar and coefficientwise.  It has no Hall
+product, no primitive projection, and no orientation-monodromy action. \\
+\([q^{1/2}r^{1/2}s^{1/2}]\Deltafive=64\) fixes orientation &
+False.  The factor \(64\) is the theta-leading coefficient.  Rescaling
+does not change the Maass character and constructs no orientation line. \\
+\(-4096\Deltafive^{-2}\) fixes the Hall sign &
+False.  The square has forgotten \(\nuDelta\).  The minus sign is the
+OP scalar convention. \\
+Generic CY\(_3\) orientability implies \(\epsor=\nuDelta\) &
+False.  Orientability supplies square roots.  It does not supply the
+Weyl action or compute monodromy. \\
+The Hall-side orientation torsor trivializes on a DWR cover, hence the
+relative sign is fixed &
+False.  Vol. III explicitly separates Hall-side torsor triviality from
+the relative hCS--Hall obstruction \(o_{\mathrm{or}}\). \\
+The determinant product determines primitive parity and bracket signs &
+False.  The product gives signed superdimensions.  It does not determine
+even/odd dimensions separately, Hall structure constants, or
+Borcherds--Kac relations. \\
+Quotienting by \(E\) before Hall multiplication is harmless &
+False.  Relative \(E\)-position is needed for local, wrapped, and mixed
+extension correspondences.  Quotient-first loses data needed by
+protected integration. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Gate-by-gate attack and heal}
+
+\paragraph{Gate 1: compact finite-first holomorphic \(E_3\) source.}
+Attack: protected integration has no source until a compact
+finite-first \(E_3\) or Hall object exists.  A BV/\(\hCS\) local model
+and a scalar partition function do not give a compact charge-completed
+factorization algebra on \(K3\times E\).
+
+Heal: require a supplied
+\[
+  \mathcal A^{E_3}_{K3\times E}
+\]
+with QME, anomaly cancellation, descent, charge/HN completion, and a
+comparison to the compact critical Hall atlas.  Protected integration
+starts after this source exists.
+
+\paragraph{Gate 2: Ran(\(E\)) elliptic-degree obstruction.}
+Attack: ordinary support-local factorization on \(\Ran(E)\) only sees
+projection-finite sectors.  Positive elliptic degree projects onto all
+of \(E\), so the \(s\)-direction of the Igusa product is invisible to
+finite Ran support.
+
+Heal: protected integration must be built on a hybrid local/global
+source.  Local projection-finite correspondences and wrapped global
+correspondences must be formed before reduced quotienting by \(E\).  The
+integration map must be continuous for the mixed completion and
+compatible with the local-wrapped \(\TS\) orientation transport.
+
+\paragraph{Gate 3: oriented compact Hall/CoHA atlas.}
+Attack: one cannot define \(I^{\mathrm{prot}}\) from moduli spaces
+alone.  The domain requires extension-closed stacks, critical charts,
+vanishing cycles, orientations, HN finite quotients, and proper Hall
+pushforwards.
+
+Heal: construct finite quotients
+\[
+  \Hall^{\mathrm{or}}_{\sigma,S,\le R}
+\]
+with saturated Hall-lower charge sets, then pass to the inverse limit.
+This matches the finite-first positive-geometry language in Vol. III.
+The compact \(K3\times E\) atlas remains open.
+
+\paragraph{Gate 4: protected integration and orientation character.}
+Attack: the manuscript's \(\epsor\) comparison is meaningful only after
+the integration map and the oriented Weyl action exist.  The current
+paper correctly marks this as open.  No prior report or cross-volume
+anchor computes the determinant-line monodromy on the three real-root
+walls.
+
+Heal: define \(I^{\mathrm{prot}}_{\sigma,S,o}\) as the continuous
+vanishing-cycle Hall integration map above; define \(\epsor\) as the
+orientation-branch monodromy of the lifted type-II Weyl action; prove
+the three simple-reflection signs by the Pfaffian normal-mode
+calculation; then check Coxeter relations.
+
+\paragraph{Gate 5: comparison \(\epsor=\nuDelta\).}
+Attack: equality cannot be chosen by normalization.  The automorphic
+side is a character of \(\Sp_4(\Z)\), while the Hall side is a
+geometric orientation character that is not yet constructed.
+
+Heal: use the exterior-square embedding to put both characters on
+\(W^{(2)}(\La^{2,1}_{II})\).  Since \(\nuDelta(s_{\delta_i})=-1\) for
+the simple type-II reflections, the comparison reduces to the geometric
+sign computation above plus the relation and central-lift audits.
+
+\paragraph{Gate 6: primitive recognition.}
+Attack: protected integration can verify signed traces, but it does not
+by itself prove
+\[
+  H^0\Prim_{\mathrm{prot}}(\mathcal F_X)/\operatorname{Rad}
+  \cong
+  \gDelta .
+\]
+The denominator fixes superdimensions, not parity splits, simple
+primitive representatives, Hall bracket constants, or the radical
+quotient.
+
+Heal: after protected integration, one must still construct the
+primitive bracket, parity dimensions, Chevalley/Serre/Borcherds
+relations, generation, Hopf pairing, and radical quotient.  The
+orientation character enters this theorem by fixing the super sign and
+reflection-character compatibility, but it does not replace the
+presentation proof.
+
+\subsection{Healed conditional theorem}
+
+\begin{theorem}[conditional protected integration and orientation character]
+\label{thm:agent15d-conditional-protected-integration}
+Let \(X=K3\times E\).  Assume the following data are supplied.
+\begin{enumerate}
+\item A compact finite-first holomorphic \(E_3\) source
+\(\mathcal A^{E_3}_X\) and a chain-level specialization to a compact
+factorization object \(\mathcal F_X\) over \(\Ran(E)\), including the
+hybrid wrapped-sector repair.
+\item An extension-closed oriented compact critical Hall/CoHA atlas
+\[
+  \mathfrak M^\sigma_\gamma,\quad
+  \mathfrak E^\sigma_{\gamma,\eta},\quad
+  \phi_{\mathcal W_\gamma},\quad
+  \ell_\gamma^{\otimes2}\simeq
+  \sdet\RHom(\mathcal E_\gamma,\mathcal E_\gamma)
+\]
+with HN finite quotients, proper Hall pushforwards, and
+Thom--Sebastiani orientation coherence.
+\item A continuous protected integration map
+\[
+  I^{\mathrm{prot}}_{\sigma,S,o}:
+  \widehat{\Hall}^{\mathrm{or}}_{X,\sigma,S}
+  \to
+  \widehat{\mathbb T}^{\mathrm{prot}}_{\Gamma,S,o}
+\]
+compatible with Hall product, wall crossing, HN completion, primitive
+projection, and reduced \(E\)-quotient only after the Hall
+correspondences are formed.
+\item A lifted type-II Weyl action on the oriented Hall wall-crossing
+groupoid, preserving the charge map
+\[
+  \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
+\]
+and compatible with \(I^{\mathrm{prot}}_{\sigma,S,o}\).
+\item For the three simple real-root reflections
+\[
+  s_{\delta_1},\quad s_{\delta_2},\quad s_{\delta_3},
+  \qquad
+  \delta_1=2f_2-f_3,\quad
+  \delta_2=2f_{-2}-f_3,\quad
+  \delta_3=f_3,
+\]
+the determinant-line normal-mode calculation gives
+\[
+  \epsor(s_{\delta_i})=-1.
+\]
+\item The orientation transports satisfy the Coxeter relations and the
+Hall lift agrees with the exterior-square automorphic lift without an
+extra central sign.
+\end{enumerate}
+Then the lifted Hall orientation monodromy defines a character
+\[
+  \epsor:W^{(2)}(\La^{2,1}_{II})\to\{\pm1\}
+\]
+and
+\[
+  \epsor
+  =
+  \nuDelta|_{W^{(2)}(\La^{2,1}_{II})}.
+\]
+\end{theorem}
+
+\begin{proof}
+The first three hypotheses define the oriented completed Hall algebra
+and the continuous protected integration map.  The fourth hypothesis
+lets the type-II Weyl group act on the oriented wall-crossing groupoid,
+so the ratio of transported orientation square roots is defined.  The
+fifth hypothesis computes this ratio as \(-1\) on the simple
+reflections.  The sixth hypothesis makes the local signs into a
+character and identifies the group element with the automorphic
+reflection.  The Igusa manuscript computes
+\(\nuDelta(s_{\delta_i})=-1\) on the same simple reflections.  Since
+both characters agree on the generators and satisfy the same relations,
+they agree on \(W^{(2)}(\La^{2,1}_{II})\).
+\end{proof}
+
+Every hypothesis is load-bearing.  The theorem is not an existence
+theorem for the compact datum.
+
+\subsection{Anchors}
+
+\begin{itemize}
+\item \texttt{main.tex:57--114}: abstract separates protected index,
+virtual determinant, scalar branch, and compact realization problem.
+\item \texttt{main.tex:824--960}: reduced scalar quotient integration,
+protected Hall integration criterion, and open orientation monodromy
+problem.
+\item \texttt{main.tex:1143--1165}: constants \(64\), \(4096\), and the
+OP minus sign are not orientation data.
+\item \texttt{main.tex:2014--2087}: positive elliptic-degree
+locality obstruction and repair alternatives.
+\item \texttt{main.tex:2179--2237}: compact Igusa datum, oriented Hall
+object, protected integration maps, and \(\epsor=\nuDelta\) as a
+geometric condition.
+\item \texttt{main.tex:2265--2361}: primitive recognition is conditional
+on presentation-level Hall data.
+\item \texttt{main.tex:2880--3000}: final synthesis records the three
+compact consequences, including orientation monodromy.
+\item \texttt{proj.bib}: Behrend 2009, Kontsevich--Soibelman CoHA, and
+Davison--Meinhardt CoHA are the local bibliography anchors for
+Behrend functions and critical CoHA language.
+\item
+\texttt{agent\_material/14\_orientations\_protected\_integration\_from\_volumes\_attack\_heal.tex}:
+prior orientation report; it isolates the need for \(\rho_o\) and the
+simple-reflection sign computation.
+\item
+\texttt{agent\_material/14\_ranE\_hybrid\_wrapping\_from\_volumes\_attack\_heal.tex}:
+ordinary Ran locality misses positive elliptic degree.
+\item
+\texttt{agent\_material/14\_primitive\_borcherds\_recognition\_from\_volumes\_attack\_heal.tex}:
+primitive recognition needs parity, relations, Hopf pairing, and
+radical quotient.
+\item
+\texttt{calabi-yau-quantum-groups/chapters/theory/cy3\_chain\_level\_bridge.tex:522--700}:
+oriented hCS--Hall comparison datum and sufficiency theorem.
+\item
+\texttt{calabi-yau-quantum-groups/chapters/theory/cy3\_chain\_level\_bridge.tex:1099--1211}:
+relative obstruction tuple
+\((o_{\mathrm{MC}},o_{\mathrm{or}},o_{\mathrm{gr}},
+o_{\mathrm{TS}},o_{\mathrm{fact}})\).
+\item
+\texttt{calabi-yau-quantum-groups/chapters/theory/cy3\_chain\_level\_bridge.tex:3452--3695}:
+Hall-side orientation torsor and finite DWR/Ran comparison; compact
+inverse-limit compatibility remains.
+\item
+\texttt{calabi-yau-quantum-groups/chapters/theory/bps\_positive\_geometry\_closure.tex:1--180}:
+finite-first oriented motivic Hall cosheaf and protected/motivic
+integration template.
+\item
+\texttt{calabi-yau-quantum-groups/chapters/theory/bps\_positive\_geometry\_closure.tex:284--390}:
+Igusa Hall--Borcherds quotient boundary and hCS--Hall obstruction.
+\item
+\texttt{calabi-yau-quantum-groups/chapters/examples/k3e\_bkm\_chapter.tex:13929--14145}:
+\(-\Delta_5^{-2}\) character is numerical theorem-grade; compact CoHA
+reading and full bialgebra parent are conditional.
+\item
+\texttt{chiral-bar-cobar/chapters/theory/theorem\_B\_scope\_platonic.tex:1150--1265}:
+Humbert-wall monodromy and strict/weight-completed chiral bar--cobar
+scope for the target \(\mathbf H_{\Delta_5}\).
+\item
+\texttt{chiral-bar-cobar/chapters/theory/theorem\_B\_scope\_platonic.tex:1618--1738}:
+monodromy-refined bar filtration; useful as a target-side warning, not
+a compact Hall orientation calculation.
+\item
+\texttt{chiral-bar-cobar-vol2/chapters/theory/factorization\_swiss\_cheese.tex:4286--4448}:
+bi-based \(K3\times E\) architecture and conjectural CoHA-character
+reading.
+\item
+\texttt{topological-strings/main.tex:2400--2490}: Costello BV package
+and specialization problem; local BV graph technology does not prove the
+compact Igusa Hall orientation.
+\end{itemize}
+
+\subsection{Open questions}
+
+\begin{enumerate}
+\item Which compact moduli problem supplies the correct
+extension-closed Hall atlas before the reduced \(E\)-quotient:
+ideal sheaves, stable pairs, a perverse heart, or a derived category
+sector?
+\item What is the precise finite-first HN height controlling positive
+elliptic degree and mixed local/wrapped extension stacks?
+\item Does the orientation line descend through the reduced \(E\)-quotient
+after Hall correspondences are formed, and what is the residual
+\(\Z/2\)-gerbe?
+\item What is the local d-critical normal form at each type-II real-root
+wall?
+\item Does the reflected normal determinant line contribute exactly one
+Pfaffian sign, or are there additional metaplectic, Tate, or chamber
+transport signs?
+\item Can the finite DWR/Ran primitive packages be chosen compatibly in
+the \((N,r,L,m)\)-inverse system so that the Vol. III
+\(\varprojlim^1\) obstruction vanishes?
+\item Does the Hall-side Weyl lift coincide with the
+\(\Sp_4(\Z)/\{\pm I\}\) exterior-square lift, or is there a central
+orientation extension?
+\item After \(\epsor=\nuDelta\), can the same orientation data be used in
+the primitive recognition theorem without changing the Gritsenko--Nikulin
+parity split?
+\end{enumerate}
+
+\subsection{Files changed and checks}
+
+Only this file was written:
+\[
+  \texttt{agent\_material/15\_protected\_integration\_orientation\_character\_attack\_heal.tex}.
+\]
+Files read include \(\texttt{CLAUDE.md}\), \(\texttt{AGENTS.md}\),
+\(\texttt{main.tex}\), \(\texttt{proj.bib}\), the six
+\(\texttt{agent\_material/14\_*}\) reports, and the cross-volume anchors
+listed above.  No branch switch, checkout, stash, reset, revert, commit,
+or out-of-scope edit was performed.  A repository build was not run:
+this is a standalone report and is not included by \(\texttt{main.tex}\).

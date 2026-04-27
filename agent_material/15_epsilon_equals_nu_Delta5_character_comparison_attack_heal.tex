@@ -1,0 +1,672 @@
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\La}{\Lambda}
+\providecommand{\Sp}{\operatorname{Sp}}
+\providecommand{\Orth}{\operatorname{O}}
+\providecommand{\Aut}{\operatorname{Aut}}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\CoHA}{\operatorname{CoHA}}
+\providecommand{\Hall}{\mathcal H}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\sdet}{\operatorname{sdet}}
+\providecommand{\RHom}{\operatorname{RHom}}
+\providecommand{\nuDelta}{\nu_{\Delta_5}}
+\providecommand{\epsor}{\epsilon_o}
+\providecommand{\gDelta}{\mathfrak g_{\Delta_5}}
+\providecommand{\WII}{W^{(2)}(\La^{2,1}_{II})}
+\providecommand{\KX}{\mathfrak K_X}
+\providecommand{\FX}{\mathcal F_X}
+\providecommand{\HX}{\mathcal H_X}
+
+\section{Agent 15-E: the character comparison
+\texorpdfstring{\(\epsilon_o=\nu_{\Delta_5}\)}{epsilon equals nu Delta5}}
+\label{sec:agent15-epsilon-nu-delta5}
+
+\subsection{Attacked equality}
+
+The attacked statement is the strongest possible gate-5 assertion:
+\[
+        \epsor=\nuDelta .
+\]
+In this form it is not a theorem and not even a typed assertion.  The
+right side is the Maass automorphic character of the Siegel modular form
+\(\Delta_5\).  It is already defined on \(\Sp_4(\Z)\), and its
+restriction to the type-II Weyl group is theorem-level.  The left side
+is supposed to be the monodromy character of a chosen square root of the
+virtual determinant line in an oriented compact \(K3\times E\)
+Hall/CoHA theory.  That character is not defined until the compact
+source, hybrid \(\Ran(E)\) object, oriented Hall atlas, protected
+integration, and Weyl lift have been constructed.
+
+The false shortcut is:
+\[
+\hbox{the scalar determinant is } \Delta_5
+\quad\Longrightarrow\quad
+\hbox{the compact orientation character is } \nuDelta .
+\]
+This implication fails.  The scalar determinant supplies a modular form
+and a product.  It does not supply a determinant-line square root on the
+compact Hall stack, a loop in the oriented Hall moduli problem, or the
+transport sign of that square root around the loop.
+
+\subsection{Status after attacking all six gates}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.34\textwidth}p{0.38\textwidth}}
+\hline
+Gate & attack & healed status \\
+\hline
+1. compact \(E_3\) source &
+No constructed compact finite-first holomorphic \(E_3\) source on
+\(K3\times E\) is present in the inspected material. &
+The source must be supplied with charge completion, QME/anomaly control,
+descent, and the Lorentzian degree map
+\(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\).  Without this, there is no
+source-side action on charges to compare with a Weyl reflection. \\
+2. hybrid \(\Ran(E)\) wrapping &
+Ordinary finite-support Ran locality misses positive elliptic degree:
+a curve of positive elliptic degree projects onto all of \(E\). &
+Gate 5 must be computed on the eventual hybrid local/global wrapped
+object, not on a naive support-local Ran algebra.  Mixed local-wrapped
+extension stacks are part of the sign problem. \\
+3. oriented compact Hall/CoHA atlas &
+The orientation character is undefined without a strong orientation
+system and oriented extension correspondences. &
+One needs square roots of determinant lines, vanishing cycles,
+Thom--Sebastiani transport, finite HN completions, and a lifted
+\(\WII\)-action on the oriented completed Hall object. \\
+4. protected integration &
+A scalar protected trace can forget the square-root monodromy. &
+The protected integration map must be equivariant for the lifted Weyl
+action and must preserve the orientation branch before taking the scalar
+shadow. \\
+5. character comparison &
+The equality is not produced by normalizing \(\Delta_5\), by
+\(\Delta_5^2\), or by OP/DT constants. &
+The correct theorem is conditional: after gates 1--4 supply the
+Hall-side domain and the three type-II reflection signs are computed,
+\(\epsor=\nuDelta|_{\WII}\). \\
+6. primitive recognition &
+The equality of characters does not identify a BKM bracket. &
+If gate 5 closes, it supplies the reflection-character compatibility
+needed by the primitive recognition theorem.  The bracket, parity split,
+simple primitive representatives, Hopf pairing, and radical quotient
+remain separate hypotheses. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Domain problem}
+
+The automorphic character is
+\[
+        \nuDelta:\Sp_4(\Z)\longrightarrow \{\pm1\},
+        \qquad
+        \Delta_5|_5 g=\nuDelta(g)\Delta_5 .
+\]
+In the manuscript it is given by Maass's formulas on the standard
+generators:
+\[
+\nuDelta(J)=1,\qquad
+\nuDelta(T(B))=(-1)^{b_1+b_2+b_3},
+\]
+\[
+\nuDelta(g(A))
+=(-1)^{(1+a_1+a_4)(1+a_2+a_3)+a_1a_4}.
+\]
+The central element \(-I\) has Maass value \(+1\) in this normalization,
+so the character descends to \(\Sp_4(\Z)/\{\pm I\}\) for the present
+orthogonal comparison.
+
+The Hall-side character would have the form
+\[
+        \epsor:\WII\longrightarrow \{\pm1\}.
+\]
+It is not a scalar extracted from the partition function.  It is the
+sign of orientation-line transport.  A type-correct definition requires
+the following typed package:
+\[
+(\HX^{\mathrm{or}},o,I^{\mathrm{prot}},\rho_o),
+\]
+where \(o\) is a strong square-root orientation system, \(I^{\mathrm{prot}}\)
+is protected integration compatible with the Hall product and HN
+completion, and
+\[
+        \rho_o:\WII\longrightarrow
+        \Aut(\HX^{\mathrm{or}},o,I^{\mathrm{prot}})
+\]
+is a lifted Weyl action preserving the charge-to-root map.  Then
+\[
+        \rho_o(w)^*\ell_{\gamma}
+        \simeq
+        \epsor(w)\,\ell_{w\gamma}
+\]
+defines \(\epsor(w)\).  Without \(\rho_o\) the symbol \(\epsor(w)\) has
+no argument.  Without \(o\) it has no line on which to act.  Without
+protected integration it is not tied to the protected BPS trace.  Without
+the charge map it is not the same reflection seen by the automorphic
+form.
+
+\subsection{Exact comparison diagram}
+
+The comparison is an equality of two characters on one group after both
+vertical maps are constructed:
+\[
+\begin{array}{ccc}
+\WII
+& \xrightarrow{\ \iota_{\mathrm{ext}}\ } &
+\Sp_4(\Z)/\{\pm I\}
+\\[0.7em]
+\rho_o \downarrow
+&&
+\downarrow \overline{\nuDelta}
+\\[0.7em]
+\Aut(\HX^{\mathrm{or}},o,I^{\mathrm{prot}})
+    /\Aut^+(\HX^{\mathrm{or}},o,I^{\mathrm{prot}})
+& \xrightarrow{\ \operatorname{sgn}_o\ } &
+\{\pm1\}.
+\end{array}
+\]
+Here \(\iota_{\mathrm{ext}}\) is the exterior-square/orthogonal
+identification used by the manuscript:
+\[
+\WII\subset \Orth(\La^{2,1})_+
+\hookrightarrow \Orth(\La^{3,2})_+
+\simeq \Sp_4(\Z)/\{\pm I\}.
+\]
+The bottom character is
+\[
+        \epsor=\operatorname{sgn}_o\circ\rho_o.
+\]
+The target equality is therefore
+\[
+        \operatorname{sgn}_o\circ\rho_o
+        =
+        \overline{\nuDelta}\circ\iota_{\mathrm{ext}}
+        \qquad\hbox{on }\WII .
+\]
+This diagram is the minimum type-correct form of gate 5.
+
+\subsection{Automorphic side: theorem-level computation}
+
+The type-II chamber has simple real walls
+\[
+        \delta_1=2f_2-f_3,\qquad
+        \delta_2=2f_{-2}-f_3,\qquad
+        \delta_3=f_3 .
+\]
+The manuscript computes
+\[
+        \nuDelta(s_{\delta_i})=-1,\qquad i=1,2,3,
+\]
+and
+\[
+        \nuDelta(s_{f_{-2}-f_2})
+        =
+        \nuDelta(s_{f_2-f_3})
+        =
+        \nuDelta(s_{f_2+f_3})=1 .
+\]
+Consequently, in the type-II Levi decomposition
+\[
+        \Orth(\La^{2,1})_+
+        \simeq
+        \WII\rtimes\Aut(\Poly_{II}),
+        \qquad \Aut(\Poly_{II})\simeq S_3,
+\]
+one has
+\[
+        \Delta_5(w\cdot a Z)=\det(w)\Delta_5(Z),
+        \qquad
+        w\in \WII,\ a\in\Aut(\Poly_{II}).
+\]
+Thus the automorphic side of the desired equality is:
+\[
+        \overline{\nuDelta}\circ\iota_{\mathrm{ext}}
+        =
+        \det|_{\WII}.
+\]
+This is a theorem-level statement from Maass's character, Nikulin's
+reflection group, and the exterior-square identification.  It is not a
+Hall orientation statement.
+
+\subsection{Generator-level tests for the Hall side}
+
+The compact orientation comparison must pass the following tests before
+gate 5 can be promoted from conjecture to theorem.
+
+\begin{enumerate}
+\item \textbf{Domain test.}  Construct
+\[
+\rho_o:\WII\to\Aut(\HX^{\mathrm{or}},o,I^{\mathrm{prot}})
+\]
+on the completed Hall object, not merely on its scalar partition
+function.  The action must preserve the HN completion and the mixed
+local/global wrapped sectors.
+
+\item \textbf{Charge test.}  The action must intertwine the compact
+charge grading with
+\[
+        \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}.
+\]
+The reflection \(s_{\delta_i}\) on the Hall side must be the same
+reflection that \(\iota_{\mathrm{ext}}\) sends to the Maass generator on
+the automorphic side.
+
+\item \textbf{Three real-wall tests.}  For each type-II real wall
+\[
+\delta_1,\delta_2,\delta_3,
+\]
+transport the chosen determinant-line square root around the corresponding
+simple diagonal wall loop and prove
+\[
+        \epsor(s_{\delta_1})
+        =
+        \epsor(s_{\delta_2})
+        =
+        \epsor(s_{\delta_3})
+        =
+        -1 .
+\]
+The expected local model is Pfaffian: the simple real-root reflection
+reverses one oriented normal mode.  This is a geometric lemma, not a
+theta-normalization convention.
+
+\item \textbf{Involution test.}  The transported orientation around
+\(s_{\delta_i}^2\) must be \(+1\).  A sign \(-1\) on the square would
+show that \(\rho_o\) is only a projective action or that the orientation
+line has been transported through the wrong cover.
+
+\item \textbf{Relation test.}  The computed signs must respect the
+relations in Nikulin's reflection group.  Equivalently, the orientation
+transport must be an honest character
+\[
+        \epsor:\WII\to\{\pm1\},
+\]
+not a \(2\)-cocycle on a projective Weyl action.
+
+\item \textbf{\(S_3\)-chamber automorphism test.}  The chamber
+automorphisms generated by \(s_{f_2-f_3}\) and \(s_{f_{-2}-f_2}\) have
+automorphic sign \(+1\).  The Hall orientation must not introduce a
+spurious sign when these elements merely permute the three null vertices
+of \(\Poly_{II}\).
+
+\item \textbf{Type-I control test.}  Do not test the equality on the
+wrong generators.  In the type-I decomposition the sign is carried by
+\(\Aut(\Poly_I)\), while type-I reflections lie in the Maass kernel.
+Confusing type I and type II gives the wrong character.
+
+\item \textbf{OP chamber/source normalization test.}  The OP scalar
+branch uses
+\[
+        D_5=64^{-1}\Delta_5,\qquad
+        Z^{K3\times E}_{\mathrm{OP}}
+        =
+        -4096\,\Delta_5^{-2}.
+\]
+These constants must not enter the orientation computation.  They fix
+the scalar branch and the theta-to-monic normalization, not the
+Hall-side square-root monodromy.
+
+\item \textbf{Wrapped-sector test.}  For positive elliptic degree, the
+object dominates \(E\).  The sign must therefore be computed after the
+hybrid local/global wrapped extension correspondence exists.  A
+projection-finite Ran test alone cannot decide the full Igusa
+\(s\)-direction.
+
+\item \textbf{Protected integration equivariance test.}  The protected
+integration map must satisfy
+\[
+        I^{\mathrm{prot}}(\rho_o(w)x)
+        =
+        \epsor(w)\,w\cdot I^{\mathrm{prot}}(x)
+\]
+on the oriented completed Hall object.  A scalar equality after
+forgetting orientation is too weak.
+\end{enumerate}
+
+\subsection{Sign and normalization failure modes}
+
+\begin{enumerate}
+\item \textbf{Scalar-rescaling failure.}
+Multiplying \(\Delta_5\) by \(64^{-1}\), or by any nonzero scalar,
+does not change \(\nuDelta\).  It cannot construct \(\epsor\).
+
+\item \textbf{Square failure.}
+\(\Delta_5^2=\Delta_{10}\) is scalar.  The square forgets the sign
+being tested.  The OP/DT identity
+\[
+        Z_{\mathrm{OP}}^{K3\times E}
+        =
+        Z_{\mathrm{DT}}^{K3\times E}
+        =
+        -4096\,\Delta_5^{-2}
+\]
+is a scalar branch, not an orientation monodromy computation.
+
+\item \textbf{Behrend-sign failure.}
+The Behrend-weighted Euler characteristic gives a protected scalar
+shadow.  It does not by itself produce the square-root orientation line
+or its Weyl monodromy.
+
+\item \textbf{Exterior-square lift failure.}
+The automorphic side lives on \(\Sp_4(\Z)\) and descends through
+\(\{\pm I\}\) in the Maass normalization.  A Hall-side Weyl action must
+choose the same exterior-square lift.  A hidden central sign would change
+the comparison diagram.
+
+\item \textbf{Orientation-twist failure.}
+A strong orientation is a torsor.  Even after orientability is known,
+an equivariant orientation can be twisted by a character unless a base
+branch and its Weyl transport are fixed.  Therefore orientability of
+\(\operatorname{RPerf}(K3\times E)\) is not the equality
+\(\epsor=\nuDelta\).
+
+\item \textbf{Quotient-first failure.}
+Reducing by the elliptic translation before Hall correspondences are
+formed can erase the relative \(E\)-position needed to define mixed
+extension stacks and their determinant-line transports.
+
+\item \textbf{Analogy failure.}
+The theta-characteristic explanation of the Maass sign is a guide to the
+answer.  It is not a proof of determinant-line monodromy for the compact
+Hall orientation.
+\end{enumerate}
+
+\subsection{Strongest healed theorem}
+
+\begin{theorem}[conditional character comparison]
+Let \(X=K3\times E\).  Assume the compact Igusa package supplies:
+\begin{enumerate}
+\item a finite-first charge-completed holomorphic \(E_3\)-source
+\(\mathcal A_X^{E_3}\) with anomaly/QME/descent control;
+\item a chain-level \(K3\)-to-\(E\) specialization to a hybrid
+local/global wrapped factorization object \(\FX\);
+\item an oriented compact critical Hall/CoHA object \(\HX^{\mathrm{or}}\)
+with vanishing cycles, extension correspondences, HN completion, and
+Thom--Sebastiani orientation transport;
+\item a protected integration map \(I^{\mathrm{prot}}\) compatible with
+the completed Hall product and wall crossing;
+\item a lifted Weyl action
+\[
+        \rho_o:\WII\to
+        \Aut(\HX^{\mathrm{or}},o,I^{\mathrm{prot}})
+\]
+preserving the charge map \(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\);
+\item exterior-square compatibility
+\[
+        \iota_{\mathrm{ext}}\circ\rho_o
+\]
+with the automorphic reflection action used to compute
+\(\nuDelta\);
+\item the three Pfaffian normal-mode computations
+\[
+        \operatorname{sgn}_o(\rho_o(s_{\delta_i}))=-1,
+        \qquad i=1,2,3,
+\]
+and the relation/cocycle check showing that these signs define an honest
+character of \(\WII\).
+\end{enumerate}
+Then
+\[
+        \epsor
+        =
+        \nuDelta|_{\WII}.
+\]
+\end{theorem}
+
+\begin{proof}
+By Maass's formula and the exterior-square/lattice identification,
+\(\nuDelta|_{\WII}=\det|_{\WII}\), with value \(-1\) on the three
+simple type-II reflections.  By the hypotheses, the Hall-side
+orientation transport gives an honest character \(\epsor\) of the same
+group, for the same reflections, with the same values on the three
+simple type-II reflections.  Since the lifted action satisfies the
+reflection-group relations, the two characters agree on the group
+generated by these reflections, namely \(\WII\).
+\end{proof}
+
+This is the strongest proved-form statement available after the attack.
+Its hypotheses are not all constructed in the current paper or in the
+surrounding volumes.
+
+\subsection{Healed conjecture for the compact programme}
+
+\begin{conjecture}[compact orientation monodromy]
+For the actual compact \(K3\times E\) Hall/CoHA realization, once gates
+1--4 have been constructed, the Pfaffian normal-mode computation holds:
+transporting the strong orientation around each simple type-II diagonal
+wall reflection reverses exactly one oriented normal factor.  Hence
+\[
+        \epsor(s_{\delta_i})=-1,\qquad i=1,2,3,
+\]
+and therefore
+\[
+        \epsor=\nuDelta|_{\WII}.
+\]
+\end{conjecture}
+
+This conjecture is sharp.  It names the missing geometric computation.
+It does not infer the orientation character from the scalar determinant.
+
+\subsection{Dependence on gates 1--4}
+
+Gate 5 depends on gates 1--4 in a strict order.
+
+\begin{enumerate}
+\item Gate 1 supplies the compact charge-completed \(E_3\) source and
+the charge lattice.  Without it there is no compact object on which
+reflections can act.
+\item Gate 2 supplies the hybrid wrapped factorization object over
+\(E\).  Without it the positive elliptic-degree part of the Igusa
+product has no locality domain.
+\item Gate 3 supplies the orientation lines and extension
+correspondences.  Without it \(\epsor\) is undefined.
+\item Gate 4 supplies protected integration and equivariance.  Without
+it the sign is not tied to the protected BPS trace or to wall crossing.
+\end{enumerate}
+
+Thus gate 5 cannot be made theorem-level by strengthening only the
+automorphic section of the paper.  The missing work is geometric.
+
+\subsection{Consequence for gate 6}
+
+If gate 5 is proved, it gives the reflection-character compatibility
+needed by primitive recognition:
+\[
+        \epsor|_{\WII}=\nuDelta|_{\WII}.
+\]
+This is necessary for the compact primitive denominator to transform as
+the Gritsenko--Nikulin denominator.  It is not sufficient for
+\[
+        H^0\Prim_{\mathrm{prot}}(\FX)/\operatorname{Rad}
+        \cong \gDelta .
+\]
+Gate 6 still needs:
+\begin{enumerate}
+\item the compact protected primitive functor;
+\item full parity dimensions, not only signed superdimensions;
+\item simple primitive representatives for the real and imaginary simple
+roots;
+\item the Chevalley, real Serre, Borcherds orthogonality, and super sign
+relations;
+\item generation by simple primitives and the Cartan;
+\item a completed Hopf pairing with the same radical quotient as the
+Gritsenko--Nikulin/Kac construction.
+\end{enumerate}
+The character comparison can certify the denominator anti-invariance.
+It cannot manufacture the Hall bracket.
+
+\subsection{Local and cross-volume anchors}
+
+\begin{itemize}
+\item \verb|CLAUDE.md:1--39| and \verb|AGENTS.md:1--118| fix the
+repository role, no-destructive-git rule, proof-grade claim discipline,
+and cross-volume consistency requirement.
+
+\item \verb|main.tex:656--686| defines \(\Delta_5\), the Maass character
+\(\nuDelta\), and the scalar square \(\Delta_5^2=\Delta_{10}\).
+
+\item \verb|main.tex:722--735| records the diagonal divisor and names
+\(\epsilon_{\det}:=\nuDelta\) as the automorphic determinant sign.
+
+\item \verb|main.tex:906--933| states the protected Hall integration
+criterion and requires the orientation character to match \(\nuDelta\) on
+the type-II Weyl group.
+
+\item \verb|main.tex:936--955| states the orientation-monodromy open
+problem and explicitly says the character is not produced by normalizing
+\(\Delta_5\).
+
+\item \verb|main.tex:1436--1458| computes the Maass signs on the simple
+reflection classes.
+
+\item \verb|main.tex:1485--1545| records Nikulin's reflection group,
+the type-I/type-II chamber decomposition, and the multiplier restriction.
+
+\item \verb|main.tex:2258--2342| defines the compact Igusa realization
+datum, including the \(E_3\) source, specialization, oriented Hall
+object, chiral coalgebra, Koszul comparison, and primitive recognition
+certificate.
+
+\item \verb|main.tex:2935--2998| separates the denominator theorem, the
+OP/DT scalar branch, and the compact realization consequences.
+
+\item \verb|proj.bib:15--21| is Maass 1964 for the Siegel multiplier.
+\verb|proj.bib:64--98| are the Gritsenko--Nikulin automorphic
+correction references.  \verb|proj.bib:253--274| are the
+Kontsevich--Soibelman and Davison--Meinhardt CoHA references.
+
+\item
+\verb|agent_material/14_orientations_protected_integration_from_volumes_attack_heal.tex:21--148|
+is the immediate predecessor report: it distinguishes the automorphic
+character from the undefined geometric orientation character and gives
+the type-correct diagram.
+
+\item
+\verb|agent_material/14_ranE_hybrid_wrapping_from_volumes_attack_heal.tex:23--88|
+is the locality obstruction for positive elliptic degree.
+
+\item
+\verb|agent_material/14_compact_E3_source_from_volumes_attack_heal.tex:16--33|
+states that no compact \(E_3\) source theorem is present in the volumes.
+
+\item
+\verb|agent_material/14_primitive_borcherds_recognition_from_volumes_attack_heal.tex:18--37|
+and
+\verb|agent_material/14_primitive_borcherds_recognition_from_volumes_attack_heal.tex:140--246|
+separate primitive recognition from signed determinant data.
+
+\item
+\verb|agent_material/14_chiral_bar_cobar_Koszul_realization_attack_heal.tex:23--95|
+states that bar--cobar inversion starts after the chiral object has been
+supplied.
+
+\item
+\verb|/Users/raeez/calabi-yau-quantum-groups/FRONTIER.md:27--31|
+states the two-stage \(\Phi_d=\mathrm{Sp}\circ\Phi_d^{FA}\)
+architecture; \verb|FRONTIER.md:81--88| records bracket-level
+BPS--BKM comparison as open.
+
+\item
+\verb|/Users/raeez/calabi-yau-quantum-groups/chapters/examples/cy_d_kappa_stratification.tex:3750--3784|
+checks the Maass multiplier through Steinberg, Weil, and orthogonal
+routes; \verb|:4061--4090| records the type-I/type-II sign asymmetry.
+
+\item
+\verb|/Users/raeez/calabi-yau-quantum-groups/chapters/theory/cy3_chain_level_bridge.tex:522--701|
+defines the oriented hCS--Hall comparison datum and says the theorem
+starts only after orientation, trace, twist, completion, product, and
+coherence data exist.
+
+\item
+\verb|/Users/raeez/calabi-yau-quantum-groups/chapters/theory/cy3_chain_level_bridge.tex:1099--1211|
+defines the hCS--Hall descent obstruction, including the determinant-line
+square-root mismatch \(o_{\mathrm{or}}\).
+
+\item
+\verb|/Users/raeez/calabi-yau-quantum-groups/chapters/theory/cy3_chain_level_bridge.tex:3452--3695|
+proves Hall-side orientation torsor triviality and a finite DWR/Ran
+comparison only after finite primitive packages are supplied; the
+pro-limit obstruction remains.
+
+\item
+\verb|/Users/raeez/calabi-yau-quantum-groups/chapters/examples/k3e_bkm_chapter.tex:14082--14106|
+separates theorem-grade numerical \(-\Delta_5^{-2}\) from the conditional
+compact critical CoHA reading.
+
+\item
+\verb|/Users/raeez/chiral-bar-cobar/CLAUDE.md:56--63| says Vol. I's
+bar--cobar theorem is the \(E_1\)-chiral shadow after Stage-2
+specialization, not the compact \(E_3\) source.
+
+\item
+\verb|/Users/raeez/chiral-bar-cobar-vol2/chapters/theory/factorization_swiss_cheese.tex:35--56|
+states the local operad is the formal-disc shadow of global
+factorization data, not an inverse construction.
+
+\item
+\verb|/Users/raeez/chiral-bar-cobar-vol2/chapters/connections/ht_bulk_boundary_line_core.tex:1030--1049|
+proves a boundary Thom--Sebastiani multiplicativity theorem; it is not a
+compact \(K3\times E\) orientation-monodromy computation.
+
+\item
+\verb|/Users/raeez/topological-strings/main.tex:2434--2479|
+imports Costello/Costello--Li BV technology but records the
+specialization problem; \verb|:2624--2646| separates algebraic product
+targets from analytic graph construction.
+\end{itemize}
+
+\subsection{Files changed}
+
+Only this file was written:
+\verb|agent_material/15_epsilon_equals_nu_Delta5_character_comparison_attack_heal.tex|.
+
+\subsection{Checks run}
+
+Checks run:
+\begin{verbatim}
+git diff --no-index --check -- /dev/null agent_material/15_epsilon_equals_nu_Delta5_character_comparison_attack_heal.tex
+git diff --cached --check -- agent_material/15_epsilon_equals_nu_Delta5_character_comparison_attack_heal.tex
+rg -n "(Attacked equality|Domain problem|Exact comparison diagram|Generator-level tests|Sign and normalization failure modes|Strongest healed theorem|Dependence on gates 1--4|Consequence for gate 6|Local and cross-volume anchors|Files changed|Checks run|Open questions)" agent_material/15_epsilon_equals_nu_Delta5_character_comparison_attack_heal.tex
+\end{verbatim}
+The whitespace checks reported no diagnostics, and the heading scan found
+all required report sections.  No full
+manuscript build is required for this single agent report unless the
+main thread integrates it into \texttt{main.tex}.
+
+\subsection{Open questions}
+
+\begin{enumerate}
+\item What is the exact compact moduli problem whose determinant line
+will carry the orientation?  Stable pairs, sheaves, objects of
+\(\operatorname{Perf}(K3\times E)\), or a hybrid Hall heart give
+different determinant-line loops.
+
+\item Does the type-II Weyl group act by actual autoequivalences or
+correspondences on the compact oriented Hall object, or only on the
+automorphic/root lattice shadow?
+
+\item Which loop in the compact Hall stack represents the simple
+reflection \(s_{\delta_i}\)?  The answer must be stated before the
+Pfaffian normal-mode sign can be computed.
+
+\item Does the determinant-line transport around \(s_{\delta_i}\) reverse
+exactly one normal mode, or is there an additional contribution from
+wrapped elliptic-degree sectors, the \(E\)-quotient, or the HN
+completion?
+
+\item Does the orientation transport satisfy the Nikulin reflection-group
+relations strictly, or only projectively?  A projective defect would
+replace \(\epsor\) by a \(2\)-cocycle and break the comparison.
+
+\item Can the finite DWR/Ran oriented comparison packages in Vol. III be
+made compatible under the \(N,r,L,m\) inverse systems, killing the
+displayed \(\varprojlim^1\) obstruction?
+
+\item Once gate 5 is closed, can gate 6 exhibit the actual primitive
+generators and Borcherds--Kac relations, rather than only the
+denominator anti-invariance?
+\end{enumerate}

@@ -1,0 +1,608 @@
+\section{Agent 15-B: Ran(\(E\)) elliptic-degree hybrid attack--heal}
+\label{sec:agent15b-rane-elliptic-degree-hybrid}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\Supp}{\operatorname{Supp}}
+\providecommand{\Ext}{\operatorname{Ext}}
+\providecommand{\RHom}{\operatorname{RHom}}
+\providecommand{\Fact}{\mathsf{Fact}}
+\providecommand{\CoHA}{\operatorname{CoHA}}
+\providecommand{\Hall}{\mathcal H}
+\providecommand{\Perf}{\operatorname{Perf}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\smult}{\operatorname{smult}}
+\providecommand{\Spch}{\mathrm{Sp}^{\mathrm{ch}}}
+\providecommand{\PhiFA}{\Phi^{\mathrm{FA}}}
+\providecommand{\hCS}{\mathrm{hCS}}
+\providecommand{\BV}{\mathrm{BV}}
+\providecommand{\TS}{\mathrm{TS}}
+\providecommand{\gDelta}{\mathfrak g_{\Delta_5}}
+\providecommand{\nuDelta}{\nu_{\Delta_5}}
+\providecommand{\epsor}{\epsilon_o}
+\providecommand{\Mloc}{\mathcal M^{\mathrm{loc}}}
+\providecommand{\Mwr}{\mathcal M^{\mathrm{wr}}}
+\providecommand{\Mhyb}{\mathcal M^{\mathrm{hyb}}}
+\providecommand{\Eloc}{\mathfrak E^{\mathrm{loc}}}
+\providecommand{\Ewr}{\mathfrak E^{\mathrm{wr}}}
+\providecommand{\Ehyb}{\mathfrak E^{\mathrm{hyb}}}
+\providecommand{\Flaghyb}{\mathfrak{Flag}^{\mathrm{hyb}}}
+\providecommand{\Den}{\mathsf{Den}}
+
+\subsection{Claim attacked}
+
+The attacked six-gate assertion is the unconditional compact construction
+\[
+\begin{gathered}
+\mathcal A_X^{E_3}\ \hbox{on }X=K3\times E
+\longrightarrow
+\mathcal F_X\in\Fact(\Ran(E))
+\longrightarrow
+\Hall_X^{\mathrm{or}}
+\\
+\longrightarrow
+I^{\mathrm{prot}},\ \epsor=\nuDelta,\quad
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)/\operatorname{Rad}
+\cong \gDelta ,
+\end{gathered}
+\]
+with the hope that ordinary finite Ran locality on \(E\), perhaps with a
+Fock product appended, supports the full Igusa product.
+
+This assertion is false in its unconditional form.  The obstruction is
+not a numerical mismatch.  It is a support-locality mismatch.  Ordinary
+\(\Ran(E)\) factorization is a finite-support calculus.  Positive
+elliptic degree is global over \(E\).  A compact source for the full
+Igusa product must therefore use either a genuinely coupled
+projection-finite/local plus global-mode theory, or a two-colour
+local/global wrapped Hall factorization theory.  The second is the
+stronger correct target.  It keeps the mixed extension problem visible.
+
+The healed statement is:
+
+\begin{quote}
+If a compact \(K3\times E\) theory supplies a finite-first
+holomorphic \(E_3\) source, a chain-level \(K3\)-to-\(E\)
+specialization, and a hybrid Hall/factorization datum whose local,
+wrapped, and mixed extension stacks are formed before the reduced
+\(E\)-quotient, then its protected trace may be tested against the
+Igusa determinant and its primitives may be tested against
+\(\gDelta\).  No surveyed local or cross-volume source constructs this
+datum.
+\end{quote}
+
+\subsection{Exact obstruction}
+
+Let \(p_E:X=K3\times E\to E\).  Let \(C\subset X\) be a
+one-dimensional subscheme with positive elliptic degree:
+\[
+        (p_E)_*[C]=b[E],\qquad b>0.
+\]
+Then \(p_E(C)=E\).  If \(p_E(C)\) were zero-dimensional, the pushforward
+of the one-cycle \([C]\) would vanish.  Since \(E\) is irreducible, the
+remaining possibility is the whole curve.
+
+Consequences:
+\begin{enumerate}
+\item A projection-finite object can be localized over a finite subset
+of \(E\), hence can live on \(\Ran(E)\).
+\item A positive elliptic-degree object dominates \(E\), hence cannot
+be inserted at finitely many Ran points.
+\item The Borcherds \(s\)-variable records the OP elliptic-degree
+direction after the variable conversion in the manuscript.  Therefore
+the full \(s\)-direction is not a consequence of finite support on
+\(\Ran(E)\).
+\item If one reduces by the translation action of \(E\) before forming
+extension correspondences, the relative \(E\)-position needed by mixed
+Hall convolution has been destroyed.
+\end{enumerate}
+
+Thus ordinary disjoint-open factorization on \(\Ran(E)\) is only the
+projection-finite part of the desired compact theory.  It cannot by
+itself support the full product
+\[
+\Delta_5
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{f(nm,l)}.
+\]
+
+\subsection{Failed shortcuts}
+
+\begin{enumerate}
+\item \textbf{Finite Ran locality for the full product.}  False.
+Finite Ran support cannot contain a class with positive pushforward to
+\(E\).
+
+\item \textbf{Projection-finite factorization plus a decoupled Fock
+factor.}  Insufficient.  It can reproduce a product character while
+leaving the mixed brackets between projection-finite charges and wrapped
+elliptic-degree charges undefined or wrong.
+
+\item \textbf{DMVV/Hecke exponents as Hall operators.}  Unsupported.
+The formula \(f(nm,l)\) gives the \(K_0\)-level virtual exponent used by
+the determinant.  A compact theorem needs actual Hecke or Fock functors,
+their trace identity, and their compatibility with Hall convolution and
+primitive projection.
+
+\item \textbf{Reduced OP/DT quotient first, Hall algebra second.}
+False as a construction principle.  The OP/DT quotient integration is
+scalar.  Hall products require extension stacks before quotienting,
+because mixed extensions remember relative position along \(E\).
+
+\item \textbf{Formal current envelope as compact source.}  False.
+\(\Den_{\Delta_5,E}\) is the target current envelope attached to the
+known denominator algebra.  It does not construct \(K3\times E\)
+moduli stacks, orientations, or collision maps.
+
+\item \textbf{Bar--cobar inversion as source construction.}  False.
+The chiral bar--cobar theorem inverts a supplied curve-level object in
+the proper completed category.  It does not build the compact object
+\(\mathcal F_X\) or the coalgebra \(C_X\).
+
+\item \textbf{Borcherds product determines primitive recognition.}
+False.  The product determines signed root supermultiplicities.  It
+does not determine parity dimensions, simple representatives, Hall
+structure constants, Serre/Borcherds relations, Hopf pairing, or the
+radical quotient.
+
+\item \textbf{Vol. III \(\PhiFA_3\) notation as an existence theorem
+for this \(X\).}  False in this context.  Vol. III gives a two-stage
+architecture and conditional comparison criteria.  The witnessed compact
+Hall/factorization package for the Igusa realization remains open.
+\end{enumerate}
+
+\subsection{Strongest hybrid construction candidate}
+
+Fix a compact stability/HN sector for a candidate \(K3\times E\) Hall
+category \(\mathcal C_\sigma\), with charge lattice \(\Gamma\) and an
+elliptic-degree map
+\[
+        b:\Gamma\to\Z_{\geq0}.
+\]
+Let \(\Gamma_{\mathrm{loc}}\) be the charges representable by
+projection-finite objects over \(E\), and let
+\(\Gamma_{\mathrm{wr}}\) be the charges with \(b(\eta)>0\).
+
+\paragraph{Local stacks.}
+For a small open \(U\subset E\) and
+\(\alpha\in\Gamma_{\mathrm{loc}}\), define
+\[
+        \Mloc_\alpha(U)
+        =
+        \{A\in\mathcal C_\sigma\mid
+        [A]=\alpha,\ \Supp A\subset p_E^{-1}(U)\}.
+\]
+For disjoint opens \(U_i\), the local Hall correspondence is
+\[
+\prod_i\Mloc_{\alpha_i}(U_i)
+\xleftarrow{\ p\ }
+\Eloc_{\alpha_1,\ldots,\alpha_r}(U_1,\ldots,U_r)
+\xrightarrow{\ q\ }
+\Mloc_{\alpha_1+\cdots+\alpha_r}(U_1\cup\cdots\cup U_r).
+\]
+This is the ordinary Ran/factorization sector.
+
+\paragraph{Wrapped stacks.}
+For \(\eta\in\Gamma_{\mathrm{wr}}\), define
+\[
+        \Mwr_\eta
+        =
+        \{W\in\mathcal C_\sigma\mid
+        [W]=\eta,\ p_E(\Supp W)=E\},
+\]
+with a rigidified pre-quotient version \(\Mwr_\eta^{\mathrm{rig}}\)
+whenever the \(E\)-translation action is present.  The rigidification
+may be a chosen Abel--Jacobi center, determinant trivialization, or other
+named device; the report does not assert that one is constructed.  It
+records that some such pre-quotient memory is necessary.
+
+The wrapped-wrapped Hall correspondence is global:
+\[
+\Mwr_{\eta_1}^{\mathrm{rig}}\times \Mwr_{\eta_2}^{\mathrm{rig}}
+\xleftarrow{\ p\ }
+\Ewr_{\eta_1,\eta_2}
+\xrightarrow{\ q\ }
+\Mwr_{\eta_1+\eta_2}^{\mathrm{rig}}.
+\]
+It is not a disjoint-open factorization operation.
+
+\paragraph{Mixed stacks.}
+For disjoint \(U_1,\ldots,U_r\subset E\), local charges
+\(\alpha_i\), and one wrapped charge \(\eta\), define
+\[
+\prod_i\Mloc_{\alpha_i}(U_i)\times\Mwr_\eta^{\mathrm{rig}}
+\xleftarrow{\ p\ }
+\Ehyb_{\alpha_1,\ldots,\alpha_r;\eta}(U_1,\ldots,U_r)
+\xrightarrow{\ q\ }
+\Mwr_{\eta+\alpha_1+\cdots+\alpha_r}^{\mathrm{rig}}.
+\]
+Points of \(\Ehyb\) are exact triangles or exact sequences in
+\(\mathcal C_\sigma\) with associated graded pieces the local
+\(\alpha_i\)-objects and one wrapped \(\eta\)-object.  The output is
+wrapped as soon as one input is wrapped.
+
+Associativity requires flag stacks
+\[
+        \Flaghyb_{\alpha_1,\ldots,\alpha_r;\eta}
+\]
+classifying two-step and multi-step filtrations with the same associated
+graded pieces.  The two pull-push composites attached to different
+parenthesizations must agree after vanishing cycles, Thom--Sebastiani
+transport, orientation signs, Tate shifts, and HN completion.
+
+\paragraph{Hybrid factorization object.}
+The candidate object is not an ordinary \(D\)-module on
+\(\Ran(E)\).  It is a two-colour completed Hall/factorization datum
+\[
+\mathcal F_X^{\mathrm{hyb}}
+=
+\left(
+\mathcal F_X^{\mathrm{loc}},
+\mathcal G_X^{\mathrm{wr}},
+\Eloc,\Ehyb,\Ewr,\Flaghyb,
+o,\ I^{\mathrm{prot}}
+\right),
+\]
+where \(\mathcal F_X^{\mathrm{loc}}\) is local on \(\Ran(E)\),
+\(\mathcal G_X^{\mathrm{wr}}\) is global in the elliptic direction, and
+\(\Ehyb\) is the mixed action/collision datum.  This is the minimal
+shape that can support both the \(s\)-direction and a nontrivial
+primitive Lie bracket.
+
+\subsection{Maps, functors, and coherences needed}
+
+The construction requires the following typed maps and functors.
+
+\begin{enumerate}
+\item A Stage-1 compact source
+\[
+        \mathcal A_X^{E_3}\in E_3\hbox{-}\mathrm{HolFA}(X)
+\]
+with QME, anomaly, descent, and charge-completion witnesses.
+
+\item A Stage-2 specialization
+\[
+        \Spch_{K3,E}(\mathcal A_X^{E_3})
+        \simeq (p_E)_*\mathcal A_X^{E_3}
+\]
+with Beck--Chevalley, Fubini/envelope, Tor-independence,
+proper-support, compact-support, and completion data.
+
+\item A support classifier
+\[
+        \operatorname{supp}_E:\mathcal C_\sigma
+        \longrightarrow
+        \{\hbox{projection-finite},\hbox{wrapped}\}
+\]
+compatible with exact triangles: an extension with a wrapped subquotient
+is wrapped.
+
+\item Compact extension correspondences \(\Eloc,\Ehyb,\Ewr\) and flag
+correspondences \(\Flaghyb\), all finite type after sectorial HN
+truncation and continuous after inverse limit.
+
+\item Vanishing-cycle functors on all local, wrapped, and mixed critical
+charts, with Thom--Sebastiani isomorphisms compatible with triple
+extensions.
+
+\item A strong orientation system \(o\), i.e. square roots of virtual
+determinant lines for every local, wrapped, and mixed chart, with
+coherent transport under restriction, direct sum, exact triangle, and
+two-step flag composition.
+
+\item A protected integration map
+\[
+        I^{\mathrm{prot}}:
+        \widehat{\Hall}^{\mathrm{hyb},o}_{X,\sigma,S}
+        \longrightarrow
+        \widehat{\C[\Gamma_{\mathrm{eff}}]}
+\]
+compatible with product, coproduct, primitive projection, wall crossing,
+and the reduced \(E\)-quotient.
+
+\item If the global-mode route is used inside the hybrid datum, actual
+Hecke/Fock functors \(\mathsf H_m\), not only formal exponents, with
+\[
+        [\mathsf H_m(\mathbb U)]_{n,l}=[\mathbb U_{nm,l}]
+\]
+in the relevant finite stage and with a trace whose determinant shadow is
+the Igusa product.  These functors must act on, or be acted on by, the
+projection-finite Hall sector through \(\Ehyb\).
+
+\item A primitive functor
+\[
+        \Prim_{\mathrm{prot}}
+        \left(\mathcal F_X^{\mathrm{hyb}}\right)
+\]
+defined after coproduct and completion, not merely after decategorified
+trace.
+\end{enumerate}
+
+\subsection{Tests}
+
+The following tests are necessary before promotion from programme to
+theorem.
+
+\begin{enumerate}
+\item \textbf{Projection test.}  Prove that every local input has finite
+image in \(E\), and that every positive elliptic-degree input is routed
+to the wrapped colour.
+
+\item \textbf{No illegal Ran insertion test.}  Any operation placing a
+positive elliptic-degree object at finitely many Ran points is invalid
+unless it factors through the wrapped colour.
+
+\item \textbf{Quotient-order test.}  Construct \(\Eloc,\Ehyb,\Ewr\)
+before quotienting by \(E\).  Then prove descent or equivariant
+integration.  A quotient-first construction fails this test.
+
+\item \textbf{Mixed \(\Ext\)-support test.}  For
+\(A_i\in\Mloc_{\alpha_i}(U_i)\) and \(W\in\Mwr_\eta^{\mathrm{rig}}\),
+compute the support of \(\RHom(A_i,W)\) and \(\RHom(W,A_i)\).  The
+mixed correspondence must identify which local collisions are measured
+and which global terms survive.
+
+\item \textbf{Associativity test.}  Compare the two pull-push maps
+through
+\[
+        \Flaghyb_{\alpha,\beta;\eta}.
+\]
+First combine \(\alpha,\beta\), then act on \(\eta\); compare with first
+acting by \(\beta\), then by \(\alpha\).  Repeat for two wrapped legs.
+
+\item \textbf{Orientation test.}  Verify square-root determinant-line
+transport on local-local, local-wrapped, and wrapped-wrapped extension
+stacks.  The signs must be compatible with Thom--Sebastiani
+associativity.
+
+\item \textbf{Hecke/Fock trace test.}  In finite HN boxes, compute the
+trace of the proposed global modes and verify the exponent rule
+\(f(nm,l)\).  A scalar equality after infinite completion is not enough.
+
+\item \textbf{Scalar shadow test.}  The decategorified protected trace
+must recover the theorem-level scalar identities:
+\[
+        \operatorname{den}(\gDelta)=64^{-1}\Delta_5(2Z),
+        \qquad
+        Z^{K3\times E}_{DT}=Z^{K3\times E}_{OP}
+        =-4096\Delta_5^{-2}.
+\]
+
+\item \textbf{Primitive low-degree test.}  In the first finite charge
+box, exhibit the compact primitive representatives corresponding to
+\[
+\delta_i,\qquad \delta_i+\delta_j,\qquad
+\delta_1+\delta_2+\delta_3,
+\]
+and verify the signed dimensions \(1,10,-64\) in the manuscript's
+normalization, then check the brackets.  Dimensions alone do not pass.
+
+\item \textbf{Borcherds relations test.}  Verify Cartan, Chevalley, real
+Serre, imaginary orthogonality, generation, Hopf pairing, and radical
+quotient for the compact primitive bracket.
+\end{enumerate}
+
+\subsection{Interaction with the six gates}
+
+\paragraph{Gate 1: compact finite-first holomorphic \(E_3\) source.}
+The hybrid repair cannot begin from the determinant.  It needs the
+Stage-1 object \(\mathcal A_X^{E_3}\) and its charge/HN completion.
+Vol. III's two-stage formalism supplies the correct grammar, but the
+Igusa paper correctly treats \(\PhiFA_3(X)\) as a placeholder unless the
+chain-level object, QME, anomaly, descent, and completion witnesses are
+supplied.
+
+\paragraph{Gate 2: Ran(\(E\)) elliptic-degree obstruction.}
+Ordinary Ran locality is false for the full object.  The best correct
+repair is the hybrid datum above.  Projection-finite plus global
+Fock/Hecke modes is acceptable only if those modes are coupled to the
+local sector through mixed Hall correspondences.  A decoupled product is
+only a determinant-level repair.
+
+\paragraph{Gate 3: oriented compact Hall/CoHA atlas.}
+The Hall atlas must be built before reduction by \(E\) and must include
+local, wrapped, and mixed stacks.  A Hall atlas only for scalar reduced
+OP/DT invariants is insufficient.  The mixed extension stacks are part
+of the atlas, not an optional comparison map.
+
+\paragraph{Gate 4: protected integration and orientation character.}
+Protected integration must be a morphism out of the hybrid completed
+Hall object.  It must preserve product, coproduct, primitive projection,
+and wall crossing.  The orientation character is defined only after a
+strong orientation and a lifted Weyl action on this oriented completed
+object have been constructed.
+
+\paragraph{Gate 5: \(\epsor=\nuDelta\).}
+The equality is type-correct only after the Hall-side character
+\(\epsor\) exists.  The hybrid construction contributes the relevant
+normal modes: local real-root walls, wrapped elliptic-degree movement,
+and mixed extension signs.  The constants \(64\) and \(-4096\) do not
+compute these signs.
+
+\paragraph{Gate 6: primitive recognition.}
+The hybrid mixed brackets are essential.  Without them one may recover
+the signed product exponents while producing the wrong Lie
+superalgebra.  The primitive theorem needs full parity dimensions,
+simple representatives, Borcherds--Kac relations, Hopf pairing, and the
+same radical quotient as the Gritsenko--Nikulin algebra.
+
+\subsection{Local anchors}
+
+\begin{itemize}
+\item \verb|main.tex:167--186|: compact/hybrid factorization is stated
+as open; positive elliptic degree requires global Fock/Hecke or hybrid
+wrapped data.
+\item \verb|main.tex:329--364|: the physical-question section gives the
+projection-finite versus wrapped obstruction.
+\item \verb|main.tex:511--631|: the Fock trace and virtual determinant
+are \(K_0\)-level constructions and do not supply locality or operator
+products.
+\item \verb|main.tex:906--933|: protected Hall integration is a
+criterion requiring oriented extension correspondences, HN completion,
+primitive projection, and Weyl action.
+\item \verb|main.tex:960--1051|: the OP elliptic-degree variable maps to
+the Borcherds \(s\)-variable and the scalar square is an OP theorem.
+\item \verb|main.tex:1911--1983|: the holomorphic \(E_3\) source and
+chain-level \(K3\)-to-\(E\) specialization are open data.
+\item \verb|main.tex:2073--2166|: projection-finite/wrapped sectors,
+elliptic-degree locality obstruction, repair alternatives, and the
+hybrid wrapped factorization open problem.
+\item \verb|main.tex:2182--2256|: sectorial HN truncation gives finite
+quotients only after the Hall object and correspondences are supplied.
+\item \verb|main.tex:2258--2342|: compact Igusa realization datum.
+\item \verb|main.tex:2344--2440|: primitive recognition is conditional;
+signed dimensions are necessary shadows, not sufficient data.
+\item \verb|agent_material/14_ranE_hybrid_wrapping_from_volumes_attack_heal.tex|:
+ordinary Ran locality for the full product is false; hybrid wrapping is
+the correct target shape, open.
+\item \verb|agent_material/14_compact_E3_source_from_volumes_attack_heal.tex|:
+the compact \(E_3\) source is not constructed by the surrounding
+volumes.
+\item \verb|agent_material/14_orientations_protected_integration_from_volumes_attack_heal.tex|:
+\(\epsor=\nuDelta\) is an open orientation-monodromy comparison.
+\item \verb|agent_material/14_primitive_borcherds_recognition_from_volumes_attack_heal.tex|:
+primitive recognition requires presentation-level data.
+\item \verb|agent_material/14_chiral_bar_cobar_Koszul_realization_attack_heal.tex|:
+bar--cobar technology is target-internal unless the compact source
+coalgebra is supplied.
+\item \verb|agent_material/14_boundary_rows_physical_hosts_from_volumes_attack_heal.tex|:
+automorphic and denominator row data do not give compact physical hosts.
+\end{itemize}
+
+\subsection{Cross-volume anchors}
+
+\begin{itemize}
+\item \verb|calabi-yau-quantum-groups/chapters/theory/cy_to_chiral.tex:4--23|:
+Vol. III states the two-stage assignment
+\(\Phi_d=\Spch\circ\PhiFA_d\).
+\item \verb|calabi-yau-quantum-groups/chapters/theory/cy_to_chiral.tex:90--104|:
+Stage 2 needs Beck--Chevalley, Fubini/envelope, proper-support,
+Tor-independence, compact-support, and completion witnesses.
+\item \verb|calabi-yau-quantum-groups/chapters/theory/cy_to_chiral.tex:128--165|:
+CY-A\(_3\) existence is conditional on witnessed formality, framing,
+anomaly-completion, and specialization data.
+\item \verb|calabi-yau-quantum-groups/chapters/theory/bps_positive_geometry_closure.tex:231--247|:
+compact chamber existence requires stability, support, HN control,
+orientation, critical atlas, motivic integration, and realization maps.
+\item \verb|calabi-yau-quantum-groups/chapters/theory/bps_positive_geometry_closure.tex:286--330|:
+the Igusa boundary statement is a quotient theorem by an automorphic
+radical, not the raw compact Hall theorem.
+\item \verb|calabi-yau-quantum-groups/chapters/theory/bps_positive_geometry_closure.tex:334--385|:
+hCS--Hall descent has explicit MC, orientation, grading,
+Thom--Sebastiani, Ran, compact-support, and completion obstructions.
+\item \verb|calabi-yau-quantum-groups/chapters/theory/cy3_chain_level_bridge.tex:437--490|:
+the Hall-valued factorization-cosheaf target is a full DWR/Ran nerve
+object with orientation and TS coherences.
+\item \verb|calabi-yau-quantum-groups/chapters/theory/cy3_chain_level_bridge.tex:522--700|:
+the oriented hCS--Hall comparison theorem constructs no datum; it proves
+sufficiency after orientation, trace, twist, completion, product, and
+coherence are supplied.
+\item \verb|calabi-yau-quantum-groups/chapters/examples/k3e_bkm_chapter.tex:13977--14054|:
+the six \(K3\times E\) routes converge only conditionally through a
+completed Hall--Drinfeld/Borcherds package.
+\item \verb|calabi-yau-quantum-groups/chapters/examples/k3e_bkm_chapter.tex:14082--14106|:
+the character \(-\Delta_5^{-2}\) is numerical theorem-grade; its compact
+critical-CoHA interpretation is conditional.
+\item \verb|chiral-bar-cobar/CLAUDE.md:56--63|:
+Vol. I bar--cobar is the \(E_1\)-chiral shadow after Stage-2
+specialization, not the compact \(E_3\) source.
+\item \verb|chiral-bar-cobar/compute/lib/theorem_universal_chiral_genus_extension_engine.py:735--747|:
+factorization-envelope methods start from a Lie conformal algebra and do
+not directly produce higher-genus/global data.
+\item \verb|chiral-bar-cobar-vol2/CLAUDE.md:348--385|:
+Stage 2 is specialization, never inversion.
+\item \verb|chiral-bar-cobar-vol2/chapters/theory/factorization_swiss_cheese.tex:35--58|:
+the local operadic shadow does not determine the global Ran object,
+periods, monodromy, or factorization pattern.
+\item \verb|topological-strings/main.tex:625--633|:
+the local exact Fukaya model explicitly contains no wrapped generators
+at infinity.
+\item \verb|topological-strings/main.tex:2469--2475|:
+Costello--Li flat anomaly cancellation is a source theorem and model,
+not an automatic compact transfer.
+\end{itemize}
+
+\subsection{Status recommendation for \texttt{main.tex}}
+
+The current manuscript direction is correct: theorem-level content is
+the virtual determinant, the Gritsenko--Nikulin/Borcherds denominator
+identity, and the OP scalar square; compact realization remains a
+recognition programme.
+
+The recommended sharpening is to state the gate-2 repair as a definition
+or open problem, not as an informal alternative:
+
+\begin{quote}
+A hybrid wrapped factorization datum for \(K3\times E\) consists of
+projection-finite local moduli \(\Mloc\), wrapped elliptic-degree moduli
+\(\Mwr\), mixed extension stacks \(\Ehyb\), wrapped-wrapped stacks
+\(\Ewr\), flag stacks \(\Flaghyb\), strong orientations, and protected
+integration, all formed before the reduced \(E\)-quotient and continuous
+for the sectorial HN completion.  It is a compact realization input.
+It is not constructed by the Igusa determinant or by the OP scalar
+square.
+\end{quote}
+
+The projection-finite plus global Fock/Hecke route should be presented
+as a weaker determinant-level architecture unless mixed action stacks
+are included.  The hybrid route is the canonical programme for a
+future primitive theorem because it can see the local-wrapped brackets.
+
+\subsection{Claim-status conclusion}
+
+\[
+\boxed{
+\begin{array}{l}
+\text{Finite Ran locality for the full Igusa product: false.}\\
+\text{Projection-finite local sector: plausible only after the Hall
+source is supplied.}\\
+\text{Decoupled global Fock/Hecke factor: determinant-level only.}\\
+\text{Coupled global modes through mixed Hall action: conditional.}\\
+\text{Hybrid local/global wrapped factorization: correct target shape,
+open.}\\
+\text{Compact primitive realization of }\gDelta\text{: open.}
+\end{array}}
+\]
+
+\subsection{Open questions}
+
+\begin{enumerate}
+\item What is the correct compact category \(\mathcal C_\sigma\) whose
+objects realize both projection-finite vertical sectors and wrapped
+elliptic-degree sectors?
+\item What rigidification of \(\Mwr_\eta\) retains enough relative
+\(E\)-position before reduced quotienting?
+\item Are mixed \(\Ext\)-groups between projection-finite and wrapped
+objects finite type after sectorial HN truncation?
+\item Does the wrapped-wrapped Hall product admit a continuous
+completion compatible with the Borcherds chamber
+\(0<|s|\ll |q|\ll |r|^{-1}\ll1\)?
+\item Can actual Hecke/Fock functors be constructed whose \(K_0\)
+trace gives \(f(nm,l)\), and do they act through the mixed extension
+stacks?
+\item Does the determinant-line orientation on \(\Ehyb\) produce the
+Maass sign on the type-II real-root reflections?
+\item In the first nontrivial wrapped box, can one compute compact
+primitive brackets and see the Gritsenko--Nikulin constants rather than
+only the signed dimensions?
+\end{enumerate}
+
+\subsection{Files changed}
+
+Only this file was written:
+\verb|agent_material/15_RanE_elliptic_degree_hybrid_attack_heal.tex|.
+
+\subsection{Checks run}
+
+Read local instructions, \verb|main.tex|, \verb|proj.bib|, all six
+\verb|agent_material/14_*| reports, and the cross-volume anchors listed
+above.  Ran
+\begin{verbatim}
+git diff --check -- agent_material/15_RanE_elliptic_degree_hybrid_attack_heal.tex
+\end{verbatim}
+with clean output.  Checked the assigned-file worktree status; the file
+is untracked and no manuscript source or generated PDF was edited by this
+agent.
