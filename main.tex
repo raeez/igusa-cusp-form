@@ -60,7 +60,7 @@ Z_{\mathrm{K3}}=2\phi_{0,1},\qquad
 \phi_{0,1}=\sum f(n,l)q^nr^l.
 \]
 Replacing the protected K3 index by its Borcherds half produces only a
-virtual one-particle determinant.  It does not produce a microscopic
+virtual \(K_0\)-determinant package.  It does not produce a microscopic
 Hilbert space.  For virtual super vector spaces
 \(\mathbb U_{n,l}\) with \(\sdim\mathbb U_{n,l}=f(n,l)\), set
 \(\mathcal V_{(n,l,m)}=\mathbb U_{nm,l}\).  In the Borcherds cusp
@@ -107,19 +107,22 @@ The factor \(4096=64^2\) is a normalization conversion; the minus sign is
 the OP scalar convention.  Neither fixes the automorphic reflection
 character or the compact orientation monodromy.
 
-A compact realization would have to begin with a holomorphic
-\(E_3\)-factorization algebra on \(K3\times E\), with a specified
-formality point, \(S^3\)-framing, quantum master equation, anomaly
-control, descent, and finite-first HN completion.  It would then
+A compact realization would have to begin with an additive physical
+charge lattice \(\Gamma_X^{\mathrm{phys}}\), the Gram map
+\(\Pi_X:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{gram}}\), and a
+holomorphic \(E_3\)-factorization algebra on \(K3\times E\), with a
+specified formality point, \(S^3\)-framing, quantum master equation,
+anomaly control, descent, and finite-first HN completion.  It would then
 specialize along the K3 direction to a chiral object on
-\(\operatorname{Ran}(E)\), solve the positive-elliptic-degree locality
-obstruction by mixed local/wrapped correspondences, and identify the
-protected primitive bracket with \(\mathfrak g_{\Delta_5}\).  This paper
-proves the virtual determinant, records the imported scalar and
-denominator theorems, and formulates that compact Hall/factorization
-realization as an open recognition problem.  The final part records the
-eight Clery--Gritsenko diagonal-divisor rows and the certificate required
-before any boundary row becomes a physical host.
+\(\operatorname{Ran}(E)\), solve the positive-elliptic-degree
+projection-to-\(E\) support-locality obstruction by mixed local/wrapped
+correspondences, and identify the Gram-descended protected primitive
+bracket with \(\mathfrak g_{\Delta_5}\).  This paper proves the virtual
+determinant, records the imported scalar and denominator theorems, and
+formulates that compact Hall/factorization realization as an open
+recognition problem.  The final part records the eight Clery--Gritsenko
+diagonal-divisor rows and the certificate required before any boundary
+row becomes a physical host.
 \end{abstract}
 
 \bigskip
@@ -170,8 +173,10 @@ superdimensions, not dimensions of a constructed compact D-brane Hilbert
 space.
 
 \paragraph{Compact and hybrid factorization.}
-A compact realization would first supply a charge-completed holomorphic
-\(E_3\)-factorization algebra
+A compact realization would first supply the additive physical charge
+lattice \(\Gamma_X^{\mathrm{phys}}\), the non-additive Gram map
+\(\Pi_X:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{gram}}\), and a
+charge-completed holomorphic \(E_3\)-factorization algebra
 \[
 \mathcal A^{E_3}_X,\qquad X=K3\times E,
 \]
@@ -193,22 +198,23 @@ sector by mixed Hall actions and then tested at the primitive bracket
 level.  This is open.
 
 \paragraph{Primitive recognition.}
-The microscopic algebra sought from such a compact realization is the
-protected primitive bracket
+The microscopic algebra sought from such a compact realization is first
+the upstairs protected primitive bracket
 \[
-[\ ,\ ]:\Prim_{\gamma}^{\mathrm{prot}}(\mathcal F_X)
+[\ ,\ ]:\Prim_{c}^{\mathrm{prot}}(\mathcal F_X)
 \otimes
-\Prim_{\eta}^{\mathrm{prot}}(\mathcal F_X)
+\Prim_{c'}^{\mathrm{prot}}(\mathcal F_X)
 \longrightarrow
-\Prim_{\gamma+\eta}^{\mathrm{prot}}(\mathcal F_X).
+\Prim_{c+c'}^{\mathrm{prot}}(\mathcal F_X),
+\qquad c,c'\in\Gamma_X^{\mathrm{phys}}.
 \]
-The recognition theorem proved later is conditional: if the compact
+The recognition certificate proved later is conditional: if the compact
 Igusa datum \(\mathfrak K_X\) exists, including the oriented Hall object,
-protected integration, chiral bar-cobar comparison, presentation-level
-primitive Lie comparison, no-extra-relations theorem, completed PBW
-compatibility, and radical quotient, then
+protected integration, Gram descent \(\Pi_{X,*}\), chiral bar-cobar
+comparison, presentation-level primitive Lie comparison, no-extra-relations
+theorem, completed PBW compatibility, and radical quotient, then
 \[
-H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+H^0\Prim_{\mathrm{prot}}(\Pi_{X,*}\mathcal F_X)
 \cong
 \mathfrak g_{\Delta_5}
 \]
@@ -270,8 +276,8 @@ denominator theorems; \(F_7=\nabla_{3/2}\) is on the required
 \(\mu_4\)-multiplier cover.  A physical host for any boundary row
 requires a certificate fixing the modular group or cover, character,
 divisor, cusp Jacobi inputs, product lattice, Weyl vector, real roots,
-reflection character, physical charge lattice, one-particle protected
-index, orientation, reduced scalar theorem if one is claimed, and
+reflection character, physical charge lattice, protected Gram-index,
+orientation, reduced scalar theorem if one is claimed, and
 primitive algebra comparison.  Without that certificate the row is only
 an automorphic product plus any separately proved denominator theorem.
 
@@ -340,7 +346,7 @@ $$
 \mathcal A^{E_3}_X,\qquad X=K3\times E.
 $$
 The auxiliary notation \(\Phi^{\mathrm{FA}}_3(X)\), when used, is only a
-placeholder for this Stage-1 datum; no such functor is constructed in
+placeholder for this source datum; no such functor is constructed in
 this paper.  No external \(\Phi^{\mathrm{FA}}_3\) formalism is used here
 as an existence theorem unless it supplies the chain-level local
 observables, factorization maps, descent, anomaly/QME control, and
@@ -361,17 +367,17 @@ one-dimensional closed subset of the irreducible curve \(E\), and so
 \(p_E(C)=E\).  Such a class is wrapped or global over \(E\), not
 localized at finitely many points of \(E\).
 
-This is the elliptic-degree locality obstruction.  Naive support-local
-factorization on \(\operatorname{Ran}(E)\) sees projection-finite
-sectors, but by itself it misses the positive \(s\)-direction of the
-Igusa product, the direction which records elliptic degree after the
-OP/Borcherds variable conversion.  A compact realization must therefore
-choose at least one repair of the following kind: projection-finite local
-factorization together with separate global Fock/Hecke modes for the
-wrapped elliptic-degree sector, or a hybrid local/global wrapped
-factorization theory.  This is a realization obstruction.  It is not a
-defect in the Borcherds determinant or in the Gritsenko--Nikulin
-denominator identity.
+This is the projection-to-\(E\) support-locality obstruction.  Naive
+support-local factorization on \(\operatorname{Ran}(E)\) sees
+projection-finite sectors, but by itself it misses the positive
+\(s\)-direction of the Igusa product, the direction which records
+elliptic degree after the OP/Borcherds variable conversion.  A compact
+realization must therefore choose at least one repair of the following
+kind: projection-finite local factorization together with separate global
+Fock/Hecke modes for the wrapped elliptic-degree sector, or a hybrid
+local/global wrapped factorization theory.  This is a realization
+obstruction.  It is not a defect in the Borcherds determinant or in the
+Gritsenko--Nikulin denominator identity.
 
 Thus, in a realization, the curve-level rule is not imposed externally.
 It is the one-dimensional chiral shadow of the holomorphic
@@ -380,26 +386,27 @@ multiply, while collisions remember extension and bound-state data.  In
 primitive form this is the expected bracket
 $$
 [\ ,\ ]:
-\Prim_{\gamma}^{\mathrm{prot}}(\mathcal F_X)
+\Prim_{c}^{\mathrm{prot}}(\mathcal F_X)
 \otimes
-\Prim_{\eta}^{\mathrm{prot}}(\mathcal F_X)
+\Prim_{c'}^{\mathrm{prot}}(\mathcal F_X)
 \longrightarrow
-\Prim_{\gamma+\eta}^{\mathrm{prot}}(\mathcal F_X).
+\Prim_{c+c'}^{\mathrm{prot}}(\mathcal F_X),
+\qquad c,c'\in\Gamma_X^{\mathrm{phys}}.
 $$
 
 The Igusa square-root problem is to construct or recognize this
-primitive protected algebra.  The determinant below gives the
-decategorified signed one-particle index that such a realization would
-have:
+primitive protected algebra and its Gram descent.  The determinant below
+gives the decategorified signed Gram-index shadow that such a realization
+would have:
 $$
-\sdim\Prim_{\gamma}^{\mathrm{prot}}(\mathcal F_X)
+\sdim\Prim_{\gamma}^{\mathrm{prot}}(\Pi_{X,*}\mathcal F_X)
 =f(nm,l),
 \qquad \gamma=(n,l,m).
 $$
 The Borcherds--Kac--Moody denominator algebra gives the algebraic
 candidate:
 $$
-H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+H^0\Prim_{\mathrm{prot}}(\Pi_{X,*}\mathcal F_X)
 \stackrel{?}{\cong}
 \mathfrak g_{\Delta_5}.
 $$
@@ -495,17 +502,17 @@ determine the two parity dimensions without an additional Hilbert-space
 or denominator-algebra parity datum.
 \end{remark}
 
-\begin{definition}[Half-K3 index object]
+\begin{definition}[Grothendieck half-index representative]
 Eichler--Zagier normalization \cite{EZ:1}:
 $$Z_{\mathrm{K3}}(\tau,z)=2\phi_{0,1}(\tau,z),$$
 $$\phi_{0,1}(\tau,z)
 =\sum_{n\geq 0,\;l\in\Z}f(n,l)q^nr^l.$$
 Thus
 $$\sdim\mathcal H^{\mathrm{BPS}}_{n,l}(S)=2f(n,l).$$
-The class
+The arbitrary Grothendieck representative
 $$\mathbb U_{n,l}\in K_0(\mathrm{sVect}_{\mathrm{fd}}),
 \qquad \sdim\mathbb U_{n,l}=f(n,l),$$
-is the normalized half-index object used by the Borcherds lift.  It is
+is the normalized half-index class used by the Borcherds lift.  It is
 not asserted to be a canonical half of
 $\mathcal H^{\mathrm{BPS}}_{n,l}(S)$ as a Hilbert space.
 As a \(K_0\)-model one may take \(\mathbb U_{n,l}\) to be
@@ -545,18 +552,31 @@ cusp-completed semigroup algebra determined by
 finitely many contributions in this completion.
 
 $$x^{(n,l,m)}=q^nr^ls^m.$$
-We now form the virtual Borcherds one-particle object.  The third index
-\(m\) is the second-quantized/Borcherds degree.  For \(m>0\), the
-Hecke--DMVV exponent depends on \(nm\); for \(m=0\), the factors are
-cusp-boundary terms \(f(0,l)\).  This is a definition in \(K_0\), not a
-microscopic state space.
-$$\mathcal V=\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}\mathcal V_\gamma,
+We now form the virtual Borcherds determinant package.  The third index
+\(m\) is the second-quantized/Borcherds degree.  The positive \(m\)
+sector carries the Hecke--DMVV exponents \(f(nm,l)\).  The \(m=0\)
+sector is a cusp/Weyl boundary package carrying the repeated boundary
+indices \(f(0,l)\).  Neither sector is a microscopic one-particle Hilbert
+space.
+\[
+\mathcal V^{\mathrm{bulk}}
+:=\bigoplus_{\substack{(n,l,m)\in\Gamma_{\mathrm{eff}}\\m>0}}
+\mathbb U_{nm,l},
+\qquad
+\mathcal V^{\mathrm{cusp}}
+:=\bigoplus_{\substack{(n,l,0)\in\Gamma_{\mathrm{eff}}}}
+\mathbb U_{0,l}.
+\]
+\[
+\mathcal V=\mathcal V^{\mathrm{bulk}}\oplus\mathcal V^{\mathrm{cusp}},
 \qquad
 \mathcal V_{(n,l,m)}=\mathcal V_{n,l,m}:=\mathbb U_{nm,l},\qquad
-\sdim\mathcal V_{n,l,m}=f(nm,l).$$
-The $m>0$ sector is the $K_0$-level virtual half of the DMVV product
+\sdim\mathcal V_{n,l,m}=f(nm,l).
+\]
+This is a definition in \(K_0\), not a microscopic state space.  The
+\(m>0\) sector is the \(K_0\)-level virtual half of the DMVV product
 \cite{DMVV}, obtained by replacing
-$Z_{\mathrm{K3}}=2\phi_{0,1}$ by $\phi_{0,1}$.  The normalized Fock
+\(Z_{\mathrm{K3}}=2\phi_{0,1}\) by \(\phi_{0,1}\).  The normalized Fock
 character in the Borcherds chamber is
 $$\sch\mathcal F(\mathcal V)
 =\prod_{\gamma\in\Gamma_{\mathrm{eff}}}(1-x^\gamma)^{-\sdim\mathcal V_\gamma}
@@ -575,24 +595,24 @@ which fixes the Weyl monomial
 $$v_0(Z)=64q^{1/2}r^{1/2}s^{1/2}.$$
 $$v_0\notin\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}\mathcal V_\gamma.$$
 
-\begin{definition}[Virtual protected determinant]
+\begin{definition}[Normalized \(K_0\)-determinant]
 $$\mathcal{D}_X(Z)
 =v_0(Z)\sdet_{\mathcal V}(1-x)
 =64q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}.$$
-$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}(Z)
+$$\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}(Z)
 =\mathcal D_X(Z)^{-1}
 =\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{-f(nm,l)}.$$
-The word \(BPS\) in this notation is mnemonic for the realization
-problem; the object constructed here is the virtual \(K_0\)-determinant.
+The object constructed here is the virtual \(K_0\)-determinant; compact
+BPS meaning is part of the separate realization problem.
 \end{definition}
 
 \begin{proposition}[Determinant normalization]
 $$[q^{1/2}r^{1/2}s^{1/2}]\,\mathcal D_X=64,$$
-$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}
+$$\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}
 =\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V),$$
 $$\mathcal D_X
 =64q^{1/2}r^{1/2}s^{1/2}\sdet_{\mathcal V}(1-x).$$
@@ -607,7 +627,7 @@ $$\sch\mathcal F(\mathcal V)
 (1-q^nr^ls^m)^{f(nm,l)}.$$
 $$v_0(Z)\sdet_{\mathcal V}(1-x)=\mathcal D_X,\qquad
 v_0(Z)^{-1}\sch\mathcal F(\mathcal V)
-=\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}.$$
+=\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}.$$
 \end{proof}
 
 \begin{proposition}[Virtuality of the square root]
@@ -619,7 +639,7 @@ $$
 together with its Fock determinant.  By itself this determinant does not
 construct a Hilbert space, a vertex algebra, a holomorphic
 \(E_3\)-factorization algebra, or a chiral factorization algebra whose
-character is $\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}$.
+character is $\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}$.
 
 All denominator statements use only the equalities
 $$\sdim\mathcal V_{(n,l,m)}=f(nm,l),\qquad
@@ -638,8 +658,8 @@ operation in the construction supplies composition maps, operator
 products, locality, or a Hilbert completion.
 \end{proof}
 
-\begin{openproblem}[Honest protected one-particle lift]
-Construct, if it exists, an honest protected one-particle object with a
+\begin{openproblem}[Honest protected lift]
+Construct, if it exists, an honest protected object with a
 \(\Gamma_{\mathrm{eff}}\)-graded super-vector-space decomposition
 $$
 \mathcal H^{\mathrm{1p,ch}}
@@ -755,7 +775,7 @@ $$64q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}.$$
 $$\mathrm{wt}=f(0,0)/2=5,\qquad c_\Delta(1,1,1)=64.$$
-Gritsenko--Nikulin \cite{GN}:
+Gritsenko--Nikulin \cite[Theorem~4.1]{GN}:
 $$64q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}(1-q^nr^ls^m)^{f(nm,l)}
 =\Delta_5(Z).$$
@@ -786,14 +806,14 @@ Determinant normalization &
 \(\mathcal D_X=\Delta_5,\quad
 v_0=64q^{1/2}r^{1/2}s^{1/2}\) \\
 Virtual inverse &
-\(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}
+\(\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}
 =64^{-1}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V)\) \\
 BKM denominator &
 \(\operatorname{den}(\autcor)=D_5(2Z)=64^{-1}\Delta_5(2Z)\) \\
 Scalar square &
 \(Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\);
 in general \(Z^X_{\square}=C_{\square}\Delta_5^{-2}\), hence
-\((\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}})^2=Z^X_{\square}/C_{\square}\) \\
+\((\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}})^2=Z^X_{\square}/C_{\square}\) \\
 \hline
 \end{tabular}
 \end{center}
@@ -814,7 +834,7 @@ cover is needed for the weight factor.
 The Borcherds singular-theta regularisation of \(\phi_{0,1}\) produces
 a meromorphic Siegel modular form of weight \(f(0,0)/2\); at \(N=1\)
 the paramodular group is \(\Sp_4(\Z)\) by Gritsenko--Nikulin
-\cite{GN}.  The input Jacobi form has \(f(0,0)=10\)
+\cite[Theorem~4.1]{GN}.  The input Jacobi form has \(f(0,0)=10\)
 (Eichler--Zagier, elliptic genus of K3), hence the output weight is
 \(5\).  Identifying
 \(\operatorname{Borch}_{\theta}(\phi_{0,1})\) with \(\Delta_5\) via the
@@ -1130,10 +1150,10 @@ $$Z^X_{\mathfrak s}(Z)=-4096\,\Delta_5(Z)^{-2}.$$
 Thus
 $$\mathcal{D}_X(Z)^2=\frac{-4096}{Z^X_{\mathfrak s}(Z)},
 \qquad \mathcal D_X(Z)=\Delta_5(Z).$$
-$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}:=\mathcal D_X^{-1}.$$
+$$\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}:=\mathcal D_X^{-1}.$$
 $$Z^X_{\mathfrak s}
-=-4096\,(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}})^2,$$
-$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}
+=-4096\,(\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}})^2,$$
+$$\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}
 =\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V).$$
 \end{proposition}
 
@@ -1252,6 +1272,94 @@ Fourier character attached to the chemical potential \(Z\).  The
 Harvey--Moore and Dijkgraaf--Verlinde--Verlinde interpretation of this
 Fourier character as a physical charge grading is additional physical
 input \cite{HM}, \cite{DVV}.
+\end{proof}
+
+\begin{definition}[Additive physical charge lattice and Gram shadow]
+\label{def:additive-physical-charge-lattice}
+Let \(X=S\times E\), with \(S\) a K3 surface, and let
+\[
+\Lambda_S:=\widetilde H(S,\Z)
+=H^0(S,\Z)\oplus H^2(S,\Z)\oplus H^4(S,\Z)
+\]
+with Mukai pairing
+\[
+(r,D,s)\cdot(r',D',s')=D\cdot D'-rs'-r's.
+\]
+In the even \(K3\times E\) Mukai sector, every charge decomposes as
+\[
+v_X=P\otimes 1_E+Q\otimes\omega_E,\qquad Q,P\in\Lambda_S,
+\]
+where \(\int_E\omega_E=1\).  The additive physical charge lattice is
+\[
+\Gamma_X^{\mathrm{phys}}:=\Lambda_S\oplus\Lambda_S,\qquad c=(Q,P).
+\]
+For exact triangles or Hall extensions the class \(c\) is additive.  The
+Igusa variables are the Gram shadow
+\[
+\Pi_X:\Gamma_X^{\mathrm{phys}}\longrightarrow\Gamma_{\mathrm{gram}},
+\qquad
+\Pi_X(Q,P)=\left(\frac{Q^2}{2},\,Q\cdot P,\,\frac{P^2}{2}\right).
+\]
+The map \(\Pi_X\) is an invariant map to Fourier/root degrees; it is not
+the Hall charge lattice.
+\end{definition}
+
+\begin{lemma}[Gram additivity defect]
+\label{lem:gram-additivity-defect}
+For \(c_i=(Q_i,P_i)\in\Gamma_X^{\mathrm{phys}}\),
+\[
+\Pi_X(c_1+c_2)=\Pi_X(c_1)+\Pi_X(c_2)+B(c_1,c_2),
+\]
+where
+\[
+B(c_1,c_2)=
+\bigl(Q_1\cdot Q_2,\ Q_1\cdot P_2+Q_2\cdot P_1,\ P_1\cdot P_2\bigr)
+\in\Gamma_{\mathrm{gram}}.
+\]
+\end{lemma}
+
+\begin{proof}
+Expand
+\[
+\frac{(Q_1+Q_2)^2}{2},\qquad
+(Q_1+Q_2)\cdot(P_1+P_2),\qquad
+\frac{(P_1+P_2)^2}{2}.
+\]
+The three cross terms are exactly the three components of \(B(c_1,c_2)\).
+\end{proof}
+
+\begin{definition}[Gram-corrected charge extension]
+\label{def:gram-corrected-charge-extension}
+Set
+\[
+\widehat\Gamma_X:=\Gamma_X^{\mathrm{phys}}\oplus\Gamma_{\mathrm{gram}}.
+\]
+For \(c,c'\in\Gamma_X^{\mathrm{phys}}\) and
+\(T,T'\in\Gamma_{\mathrm{gram}}\), define
+\[
+(c,T)\star(c',T')
+:=(c+c',\,T+T'+B(c,c')).
+\]
+The section
+\[
+s:\Gamma_X^{\mathrm{phys}}\longrightarrow\widehat\Gamma_X,\qquad
+s(c)=(c,\Pi_X(c))
+\]
+is additive for \(\star\).  Thus the compact Hall object, if constructed,
+is graded upstairs by \(\Gamma_X^{\mathrm{phys}}\); the
+\(\Gamma_{\mathrm{gram}}\)-graded Igusa object is obtained only after
+Gram pushforward or an equivalent cocycle-corrected descent.
+\end{definition}
+
+\begin{proof}
+The map \(B\) is symmetric bilinear, hence \(\star\) is associative and
+commutative.  The identity is \((0,0)\), and the inverse of \((c,T)\) is
+\((-c,-T+B(c,c))\).  Finally,
+\[
+s(c)\star s(c')=(c+c',\,\Pi_X(c)+\Pi_X(c')+B(c,c'))
+=s(c+c')
+\]
+by Lemma~\ref{lem:gram-additivity-defect}.
 \end{proof}
 
 \begin{definition}[Gram-index pairing]
@@ -1411,6 +1519,15 @@ $$
 
 \section{The Weyl chamber and the Weyl vector}
 
+Fix the primitive hyperbolic sublattice
+$$\La^{2,1} = \HypPlan \oplus [2] \simeq \Z f_2 \oplus \Z f_3 \oplus \Z
+f_{-2} \subset \La^{3,2}$$
+and its type-II sublattice
+$$
+\La^{2,1}_{II}=
+\{mf_2+lf_3+nf_{-2}\in\La^{2,1}\mid m\equiv n\equiv0\pmod2\}.
+$$
+
 Change polarization on the same Gram-index lattice:
 $$
 \Gamma_{\mathrm{ind}}\xrightarrow{\ \alpha\ }\La^{2,1}_{II},\qquad
@@ -1418,10 +1535,6 @@ $$
 $$
 The cusp polarization gives the Fock determinant.  The denominator
 polarization gives the Borcherds chamber.
-
-Fix the primitive hyperbolic sublattice
-$$\La^{2,1} = \HypPlan \oplus [2] \simeq \Z f_2 \oplus \Z f_3 \oplus \Z
-f_{-2} \subset \La^{3,2}$$
 
 Extend $\phi\in\Orth(\La^{2,1})$ by the identity on
 $(\La^{2,1})^\perp$:
@@ -1506,8 +1619,7 @@ Each $\delta\in\Delta^{(2)}(\La^{2,1})$ has one of two divisibilities:
 The type sublattices are
 $$\La^{2,1}_I=
 \{mf_2+lf_3+nf_{-2}\in\La^{2,1}\mid m+l+n\equiv0\pmod2\},$$
-$$\La^{2,1}_{II}=
-\{mf_2+lf_3+nf_{-2}\in\La^{2,1}\mid m\equiv n\equiv0\pmod2\}.$$
+and the already defined \(\La^{2,1}_{II}\).
 Type I roots lie in $\La^{2,1}_I$; type II roots lie in
 $\La^{2,1}_{II}$.  The reflection subgroups are normal, with indices
 $$[W^{(2)}(\La^{2,1}):W^{(2)}(\La^{2,1}_I)]=2,\qquad
@@ -1699,7 +1811,7 @@ For nonzero terms, $(\lambda,\delta_i)<0$.  Since
 $(\rho,\delta_i)=-1$,
 $$(a,\delta_i)\leq0,\qquad
 a\in\Delta(\La^{2,1}_{II})^*_+.$$
-$$a \in \R_{\geq 0} \Cone(\La^{2,1}_{II})_+^* \cap
+$$a \in \R_{\geq 0} \Delta(\La^{2,1}_{II})_+^* \cap
 \overline{\Cone(\La^{2,1})_+} = \R_{\geq 0} \Poly_{II}.$$
 The congruences $m\equiv n\equiv l\equiv1\pmod2$ imply
 $$a\in 2(\La^{2,1})^*=\La^{2,1}_{II}.$$
@@ -1758,10 +1870,13 @@ with Gram matrix
 
 $$(\delta_i,\delta_j) = \begin{pmatrix}2 & -2 & -2\\-2 & 2 & -2\\-2 & -2 & 2\end{pmatrix}$$
 
-\begin{definition}[Perturbative walls]
-$$\Delta^{re}=\{\delta_1,\delta_2,\delta_3\},\qquad
+\begin{definition}[Simple real roots and perturbative walls]
+$$\Delta^{re}_{\mathrm{simp}}=\{\delta_1,\delta_2,\delta_3\},\qquad
+\Delta^{re}=W^{(2)}(\La^{2,1}_{II})\Delta^{re}_{\mathrm{simp}},$$
+$$
 \mathcal W_{\mathrm{pert}}
-=\bigcup_{\delta\in\Delta^{re}}\Hpl_\delta.$$
+=\bigcup_{\delta\in\Delta^{re}_{\mathrm{simp}}}\Hpl_\delta.
+$$
 \end{definition}
 
 \section{The denominator algebra}
@@ -1771,9 +1886,10 @@ $$A=((\delta_i,\delta_j))_{1\leq i,j\leq3}
 $$A\ \hbox{symmetric generalized Cartan},\qquad
 \bkm(A)\ \hbox{Kac--Moody}.$$
 $$\mathcal A_{\mathrm{den}}:=\autcor.$$
-This is the algebraic denominator square root.  It is the automorphic
-correction of $\bkm(A)$ constructed by Gritsenko--Nikulin \cite{GN},
-with root spaces graded by the Gram-degree map
+This is the target-internal algebraic denominator square root.  It is the
+automorphic correction of $\bkm(A)$ constructed by
+Gritsenko--Nikulin \cite[Sections~3--4]{GN}, with root spaces graded by the Gram-degree
+map
 $$
 \gamma=(n,l,m)\longmapsto
 \alpha(\gamma)=2nf_2-lf_3+2mf_{-2}.
@@ -1851,6 +1967,10 @@ Gritsenko--Nikulin construct $\autcor$ as the generalized
 Borcherds--Kac--Moody superalgebra whose real simple roots are
 $\delta_1,\delta_2,\delta_3$ and whose imaginary simple-root
 multiplicities are read from the Borcherds correction character.  A
+product exponent gives the signed multiplicity of a visible positive
+root; the simple imaginary-root datum is Gritsenko--Nikulin's \(m(a)\)
+for negative-norm \(a\) and \(\tau(a)\) on isotropic rays.  These are
+different pieces of the denominator construction.  A
 root-graded Lie superalgebra has
 $$
 [\mathfrak g_{\Delta_5,\alpha},\mathfrak g_{\Delta_5,\beta}]
@@ -1925,7 +2045,7 @@ $$
 \mathcal A^{E_3}_X,\qquad X=K3\times E.
 $$
 This symbol, and the placeholder \(\Phi^{\mathrm{FA}}_3(X)\), denote
-the Stage-1 object required in the Calabi--Yau-to-chiral construction;
+the source object required in the Calabi--Yau-to-chiral construction;
 they are not a constructed functor evaluated on \(X\).
 A compact holomorphic-Chern--Simons/BV model, if constructed with the
 required descent, quantum master equation, and anomaly cancellation,
@@ -1935,8 +2055,8 @@ a chain-level \(S^3\)-framing witness, compact-support control, and
 finite-stage HN quotients on which all operations are defined before
 passing to the completed inverse system.
 
-The curve-level BPS algebra would be obtained only after a supplied Stage-2
-specialization along the \(K3\)-direction:
+The curve-level BPS algebra would be obtained only after a supplied
+chain-level specialization along the \(K3\)-direction:
 $$
 \mathcal F_X
 \simeq
@@ -1956,7 +2076,7 @@ dualities are then operations on \(\mathcal A^{E_3}_X\) and on its
 After these data have been constructed, the required Igusa statement is
 the pair of comparisons
 $$
-H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+H^0\Prim_{\mathrm{prot}}(\Pi_{X,*}\mathcal F_X)
 \stackrel{?}{\cong}
 \mathfrak g_{\Delta_5},
 \qquad
@@ -1972,7 +2092,7 @@ data beyond the scalar square and beyond the formal current envelope.
 
 \begin{openproblem}[Compact holomorphic \(E_3\) source]
 \label{op:compact-e3-source}
-Construct the Stage-1 object \(\mathcal A^{E_3}_X\) for
+Construct the source object \(\mathcal A^{E_3}_X\) for
 \(X=K3\times E\).  A candidate compact holomorphic-Chern--Simons/BV
 construction must prove, before any comparison with \(\Delta_5\), the
 following finite-chain data:
@@ -1997,7 +2117,7 @@ source for \(K3\times E\).
 \end{openproblem}
 
 \begin{remark}[Where the quantum comparison would live]
-Assume the Stage-1 algebra \(\mathcal A^{E_3}_X\), the specialization
+Assume the source algebra \(\mathcal A^{E_3}_X\), the specialization
 \(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\), a conilpotent coalgebra
 \(C_X\stackrel{?}{\simeq}\bar B_E^{\mathrm{ch}}(\mathcal F_X)\), and a
 quasi-isomorphism
@@ -2019,7 +2139,7 @@ square or from the denominator identity alone.
 \end{remark}
 
 \begin{remark}[Pushforward, restriction, Koszul duality]
-Stage 2 is specialization, not inversion.  A restriction to a chamber
+The second step is specialization, not inversion.  A restriction to a chamber
 or sector is a restriction of \(\mathcal A^{E_3}_X\) before, or of
 \(\mathcal F_X\) after, the \(K3\)-specialization.  Pushforward along
 \(p_E\) is the geometric notation for the same specialization.  A
@@ -2096,8 +2216,8 @@ wrapped over \(E\) if its curve class has positive elliptic degree, i.e.
 if the pushforward of its one-cycle to \(E\) is \(b[E]\) with \(b>0\).
 \end{definition}
 
-\begin{lemma}[The elliptic-degree locality obstruction]
-\label{lem:elliptic-degree-locality-obstruction}
+\begin{lemma}[Projection-to-\(E\) support-locality obstruction]
+\label{lem:projection-e-support-locality-obstruction}
 Let \(C\subset K3\times E\) be a one-dimensional subscheme whose curve
 class has positive elliptic degree:
 \[
@@ -2127,7 +2247,7 @@ the projection-finite sector.  It does not by itself realize the full
 \begin{proof}
 The variable \(s\) is the Borcherds variable corresponding to the
 OP elliptic-degree direction in Proposition~\ref{prop:op-normalization}.
-By Lemma~\ref{lem:elliptic-degree-locality-obstruction}, positive
+By Lemma~\ref{lem:projection-e-support-locality-obstruction}, positive
 elliptic degree projects onto all of \(E\).  Such objects cannot be
 separated by choosing disjoint opens in \(E\).  Therefore ordinary
 support-local factorization on \(\operatorname{Ran}(E)\) has no
@@ -2196,34 +2316,37 @@ denominator theorem.
 \end{remark}
 
 \begin{definition}[Sectorial Hall truncation]
-Suppose an extension-closed compact Hall category with numerical
-Gram-index lattice \(\Gamma_{\mathrm{ind}}\), a stability/HN/support
-datum \(\sigma=(Z_\sigma,\mathcal P_\sigma)\), and semistable stacks
-\(\mathfrak M_{\sigma,S,\gamma}^{ss}\) has been supplied.  Fix a strict
+Suppose an extension-closed compact Hall category graded by the additive
+physical lattice \(\Gamma_X^{\mathrm{phys}}\) of
+Definition~\ref{def:additive-physical-charge-lattice}, together with the
+Gram map \(\Pi_X\), a stability/HN/support datum
+\(\sigma=(Z_\sigma,\mathcal P_\sigma)\), and semistable stacks
+\(\mathfrak M_{\sigma,S,c}^{ss}\) for \(c\in\Gamma_X^{\mathrm{phys}}\).
+Fix a strict
 sector \(S\subset\C^\times\) of angular width \(<\pi\), with no active
 semistable ray on its boundary.  Choose \(\vartheta\) so that
 $$
-h_S(\gamma):=\Re(e^{-i\vartheta}Z_\sigma(\gamma))>0
+h_S(c):=\Re(e^{-i\vartheta}Z_\sigma(c))>0
 $$
 on every nonzero semistable class with central charge in \(S\).
 For \(R>0\), set
 $$
 F_{\sigma,S}(R)
-=\{\gamma\mid \mathfrak M_{\sigma,S,\gamma}^{ss}\ne\varnothing,\
-0<h_S(\gamma)\le R\},
+=\{c\mid \mathfrak M_{\sigma,S,c}^{ss}\ne\varnothing,\
+0<h_S(c)\le R\},
 $$
 and
 $$
 \Gamma_{\sigma,S}^{HN}(R)
-=\left\{\gamma_1+\cdots+\gamma_k\ \middle|\
-\gamma_i\in F_{\sigma,S}(R),\
-\sum_i h_S(\gamma_i)\le R\right\}.
+=\left\{c_1+\cdots+c_k\ \middle|\
+c_i\in F_{\sigma,S}(R),\
+\sum_i h_S(c_i)\le R\right\}.
 $$
 If an oriented critical Hall object
 \(\mathcal H_{\sigma,S}^{or}\) has been constructed, put
 $$
 \mathcal H_{\sigma,S}^{>R}
-=\prod_{h_S(\gamma)>R}\mathcal H_{\sigma,S,\gamma}^{or},
+=\prod_{h_S(c)>R}\mathcal H_{\sigma,S,c}^{or},
 \qquad
 \mathsf F_R\mathcal H_{\sigma,S}^{or}
 =\mathcal H_{\sigma,S}^{or}/\mathcal H_{\sigma,S}^{>R}.
@@ -2233,9 +2356,9 @@ $$
 \begin{proposition}[Conditional finite Hall quotient]
 \label{prop:sectorial-hall-truncation}
 A nonzero additive heart cannot have finite nonzero charge support in
-\(\Gamma_{\mathrm{ind}}\).  The active support
-\(\Gamma_{\mathrm{act}}\) is not additive.  The finite Hall object is
-therefore not a finite active-support heart.
+\(\Gamma_X^{\mathrm{phys}}\).  The pushed-forward active support
+\(\Gamma_{\mathrm{act}}\subset\Gamma_{\mathrm{gram}}\) is not additive.
+The finite Hall object is therefore not a finite active-support heart.
 
 This constructs no Hall object for \(K3\times E\); it records the
 finite quotient once the oriented critical Hall object and its
@@ -2254,15 +2377,15 @@ $$
 \end{proposition}
 
 \begin{proof}
-If a heart contains an object of nonzero charge \(\gamma\), it contains
-all finite direct sums of that object, hence all charges \(k\gamma\).
-Since \(\Gamma_{\mathrm{ind}}\) is torsion-free, the charge support is
+If a heart contains an object of nonzero charge \(c\), it contains
+all finite direct sums of that object, hence all charges \(kc\).
+Since \(\Gamma_X^{\mathrm{phys}}\) is torsion-free, the charge support is
 infinite.  Also \((0,-1,0)\in\Gamma_{\mathrm{act}}\), while
 \((0,-2,0)\notin\Gamma_{\mathrm{act}}\), so active support is not
 additive.
 
 For semistable classes in \(S\), the strict-sector condition gives
-\(h_S(\gamma)\ge c|Z_\sigma(\gamma)|\) for some \(c>0\).  The support
+\(h_S(c)\ge \kappa|Z_\sigma(c)|\) for some \(\kappa>0\).  The support
 property and discreteness of the numerical lattice make
 \(F_{\sigma,S}(R)\) finite.  The function \(h_S\) is positive and
 additive on extensions in the sector; hence HN sums of total height
@@ -2276,12 +2399,20 @@ completion.
 A compact realization of the Igusa square root is a package
 $$
 \mathfrak K_X
-=\left(\mathcal A^{E_3}_X,\mathrm{Sp}^{\mathrm{ch}}_{K3,E},
+=\left(\Gamma_X^{\mathrm{phys}},\Pi_X,
+\mathcal A^{E_3}_X,\mathrm{Sp}^{\mathrm{ch}}_{K3,E},
 \mathcal F_X,\mathcal H_X,C_X,\Theta_{\mathrm{Kos}},
 \Pi_{\mathrm{rec}}\right)
 $$
 with the following data.
 \begin{enumerate}
+\item[\((\Gamma)\)] The additive physical charge lattice
+\(\Gamma_X^{\mathrm{phys}}\), the Gram map
+\(\Pi_X:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{gram}}\), and the
+cocycle \(B\) of
+Definition~\ref{def:additive-physical-charge-lattice} and
+Lemma~\ref{lem:gram-additivity-defect}.  The Hall category is graded by
+\(\Gamma_X^{\mathrm{phys}}\), not by \(\Gamma_{\mathrm{gram}}\) itself.
 \item[\((E_3)\)] A supplied charge-completed holomorphic
 \(E_3\)-factorization algebra, denoted \(\mathcal A^{E_3}_X\), on
 \(X=K3\times E\), finite-first after the sectorial HN quotients of
@@ -2310,13 +2441,14 @@ only if it acts through mixed local/wrapped Hall correspondences before
 the reduced \(E\)-quotient.  These equivalences and wrapped-sector data
 are part of the datum, not operations constructed from the determinant.
 \item[\((\mathrm H)\)] An oriented compact Hall factorization object \(\mathcal H_X\)
-with finite-type sectorial moduli stacks and extension correspondences
+graded by \(c\in\Gamma_X^{\mathrm{phys}}\), with finite-type sectorial
+moduli stacks and extension correspondences
 $$
-\mathfrak M_\gamma^\sigma\times\mathfrak M_\eta^\sigma
-\xleftarrow{\ p_{\gamma,\eta}\ }
-\mathfrak E_{\gamma,\eta}^\sigma
-\xrightarrow{\ q_{\gamma,\eta}\ }
-\mathfrak M_{\gamma+\eta}^\sigma,
+\mathfrak M_c^\sigma\times\mathfrak M_{c'}^\sigma
+\xleftarrow{\ p_{c,c'}\ }
+\mathfrak E_{c,c'}^\sigma
+\xrightarrow{\ q_{c,c'}\ }
+\mathfrak M_{c+c'}^\sigma,
 $$
 perfect reduced obstruction theories or critical
 \((-1)\)-shifted symplectic structures, vanishing-cycle coefficients,
@@ -2339,6 +2471,18 @@ orientation-monodromy condition on the Hall side; it requires computing
 the determinant-line signs on the three type-II simple reflections and
 checking the reflection relations.  It is not obtained by choosing the
 scalar normalization of \(\Delta_5\).
+\item[\((\Pi_*)\)] A Gram-pushforward or cocycle-corrected descent
+datum
+\[
+\Pi_{X,*}\mathcal F_X
+\]
+whose protected primitives are \(\Gamma_{\mathrm{gram}}\)-graded and
+whose bracket is induced from the upstairs
+\(\Gamma_X^{\mathrm{phys}}\)-graded Hall bracket.  Before this descent,
+the protected primitives of \(\mathcal F_X\) are graded by the upstairs
+additive charge \(c\), not by a Gram triple.  The comparison with
+\(\mathfrak g_{\Delta_5,\alpha(n,l,m)}\) is made after passing to
+\((n,l,m)=\Pi_X(c)\).
 \item[\((\mathrm C)\)] A conilpotent chiral coalgebra \(C_X\) and a charge-preserving
 quasi-isomorphism
 $$
@@ -2355,10 +2499,10 @@ $$
 \item[\((\Pi)\)] A primitive recognition certificate
 \(\Pi_{\mathrm{rec}}\) for
 $$
-P_X:=H^0\Prim_{\mathrm{prot}}(\mathcal F_X).
+P_X^\Pi:=H^0\Prim_{\mathrm{prot}}(\Pi_{X,*}\mathcal F_X).
 $$
 This certificate is not a determinant datum.  It consists of the
-charge-graded Lie superalgebra structure on \(P_X\), the parity split of
+Gram-descended Lie superalgebra structure on \(P_X^\Pi\), the parity split of
 each homogeneous primitive piece, simple primitive representatives for
 the Gritsenko--Nikulin real and imaginary simple roots, verification of
 the Borcherds--Kac defining relations in the protected bracket, the
@@ -2369,7 +2513,7 @@ correction.
 \end{enumerate}
 \end{definition}
 
-\begin{theorem}[Primitive recognition theorem]
+\begin{theorem}[Primitive recognition certificate]
 \label{prop:compact-igusa-realization-criterion}
 \label{thm:primitive-recognition}
 Let \(\mathscr B_{\Delta_5}\) be the Borcherds--Cartan superdatum used by
@@ -2382,28 +2526,32 @@ corresponding Borcherds--Kac Lie superalgebra modulo the standard radical
 of the completed invariant pairing; this is
 \(\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}\).
 
-Suppose a compact Hall/factorization construction supplies
+Suppose a compact Hall/factorization construction supplies the
+Gram-descended primitive algebra
 $$
-P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+P_X^\Pi=H^0\Prim_{\mathrm{prot}}(\Pi_{X,*}\mathcal F_X)
 $$
 after its completed Hopf-pairing radical quotient, with the following
 data.
 \begin{enumerate}
-\item A \(\Gamma_{\mathrm{ind}}\)-graded Lie superalgebra structure on
-\(P_X\), finite dimensional in each homogeneous parity piece, and a
+\item A \(\Gamma_{\mathrm{gram}}\)-graded Lie superalgebra structure on
+\(P_X^\Pi\), finite dimensional in each homogeneous parity piece, and a
 Cartan identification
-$$P_{X,0}\simeq\La^{2,1}_{II}\otimes\C.$$
+$$P^\Pi_{X,0}\simeq\La^{2,1}_{II}\otimes\C.$$
 \item The degree map
 \[
 \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
 \]
-identifies the charge grading with the Gritsenko--Nikulin root grading.
+identifies the Gram-descended grading with the Gritsenko--Nikulin root
+grading.  The upstairs Hall bracket is graded by
+\(\Gamma_X^{\mathrm{phys}}\); this item is a statement after the descent
+datum \(\Pi_{X,*}\).
 \item For every simple-root index \(i\) of
 \(\mathscr B_{\Delta_5}\), primitive representatives
 \[
-e_i^X\in P_{X,\alpha_i},\qquad
-f_i^X\in P_{X,-\alpha_i},\qquad
-h_i^X\in P_{X,0}
+e_i^X\in P^\Pi_{X,\alpha_i},\qquad
+f_i^X\in P^\Pi_{X,-\alpha_i},\qquad
+h_i^X\in P^\Pi_{X,0}
 \]
 are supplied, preserving the real/imaginary distinction, multiplicity
 fibres, and parity map.
@@ -2420,28 +2568,28 @@ construction of \(G(\mathscr B_{\Delta_5})\).
 after the standard radical quotient, the kernel of the map from the
 Borcherds--Kac presentation is exactly the Borcherds--Serre ideal and no
 additional completed relation survives.
-\item \(P_X\) is generated by \(P_{X,0}\) and the simple primitive
+\item \(P_X^\Pi\) is generated by \(P^\Pi_{X,0}\) and the simple primitive
 representatives \(e_i^X,f_i^X\).
-\item A completed PBW theorem holds for \(P_X\), and its PBW filtration
+\item A completed PBW theorem holds for \(P_X^\Pi\), and its PBW filtration
 is transported to the PBW filtration on
 \(U(\mathfrak g_{\Delta_5})\) under the comparison map.
-\item The full root-space parity dimensions in \(P_X\) agree with those
+\item The full root-space parity dimensions in \(P_X^\Pi\) agree with those
 of \(G(\mathscr B_{\Delta_5})\).  Consequently, on active positive
 Gram degrees,
 $$
-\sdim P_{X,(n,l,m)}=f(nm,l),
+\sdim P^\Pi_{X,(n,l,m)}=f(nm,l),
 $$
 but this signed equality is only a necessary numerical consequence of the
 recognition data.
 \end{enumerate}
 Then
 $$
-H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+H^0\Prim_{\mathrm{prot}}(\Pi_{X,*}\mathcal F_X)
 \cong
 \mathcal A_{\mathrm{den}}
 =\mathfrak g_{\Delta_5}
 $$
-as charge-graded Lie superalgebras, and its Weyl--Kac--Borcherds
+as Gram-graded Lie superalgebras, and its Weyl--Kac--Borcherds
 denominator is \(64^{-1}\Delta_5(2Z)\).  If in addition
 \(\Theta_{\mathrm{Kos}}\) is supplied, then
 $$
@@ -2453,7 +2601,7 @@ $$
 The simple primitive representatives and the displayed relations give a
 homomorphism
 $$
-G(\mathscr B_{\Delta_5})\longrightarrow P_X
+G(\mathscr B_{\Delta_5})\longrightarrow P_X^\Pi
 $$
 from the universal Borcherds--Kac presentation.  Generation gives
 surjectivity.  The no-extra-relations hypothesis identifies the kernel
@@ -2461,22 +2609,23 @@ with the standard Borcherds--Serre ideal after the completed radical
 quotient; the completed PBW compatibility promotes the finite-stage
 identification to the inverse limit.  The full parity dimensions rule out
 additional zero-superdimension root spaces.  Hence the homomorphism is an
-isomorphism of charge-graded Lie superalgebras.  The denominator statement
+isomorphism of Gram-graded Lie superalgebras.  The denominator statement
 is Theorem~\ref{thm:denominator-algebra-identity}.  The chiral statement
 is exactly the quasi-isomorphism \(\Theta_{\mathrm{Kos}}\).
 \end{proof}
 
 \begin{remark}[What is not proved]
-The recognition theorem is conditional.  This paper does not construct
-the compact Hall/factorization object, the protected primitive bracket
-constants, the full parity dimensions of compact primitives, the simple
-primitive representatives, or the verification of the Borcherds--Kac
-relations in a Hall bracket.  It also does not prove the no-extra-
-relations theorem, the completed PBW theorem, or closedness of the Hall
-radical in the HN completion.  The signed equality
-\(\sdim P_{X,(n,l,m)}=f(nm,l)\) and the determinant
+The recognition certificate is conditional.  This paper does not construct
+the compact Hall/factorization object, the Gram descent
+\(\Pi_{X,*}\), the protected primitive bracket constants, the full parity
+dimensions of compact primitives, the simple primitive representatives,
+or the verification of the Borcherds--Kac relations in a Hall bracket.  It
+also does not prove the no-extra-relations theorem, the completed PBW
+theorem, or closedness of the Hall radical in the HN completion.  The
+signed equality
+\(\sdim P^\Pi_{X,(n,l,m)}=f(nm,l)\) and the determinant
 \(\mathcal D_X=\Delta_5\) are necessary shadows.  They are not sufficient
-to identify \(P_X\) with \(\mathfrak g_{\Delta_5}\).
+to identify \(P_X^\Pi\) with \(\mathfrak g_{\Delta_5}\).
 \end{remark}
 
 \begin{proposition}[Low-degree bracket information]
@@ -2547,7 +2696,7 @@ product but not the Borcherds bracket, since
 \([e_i,e_j]\ne0\) in \(\mathcal A_{\mathrm{den}}\) for \(i\ne j\).
 A Hall bracket requires compact extension correspondences,
 orientation data, protected integration, and a basis of protected
-primitives.  The recognition theorem also requires the full parity split,
+primitives.  The recognition certificate also requires the full parity split,
 simple-root representatives, defining relations, generation, and the
 radical quotient.  None of these is encoded in the determinant.
 \end{proof}
@@ -2606,11 +2755,12 @@ This is notation inside the denominator algebra; it is not a BPS state
 space.
 \end{definition}
 The real simple roots are
-$$\Delta_{\overline0}^{re}=\Delta^{re}=\Poly_{II,prim}
+$$\Delta_{\overline0}^{re,\mathrm{simp}}
+=\Delta^{re}_{\mathrm{simp}}=\Poly_{II,prim}
 =\{\delta_1,\delta_2,\delta_3\},\qquad
-\Delta_{\overline1}^{re}=\varnothing.$$
+\Delta_{\overline1}^{re,\mathrm{simp}}=\varnothing.$$
 Put
-$$\Delta_{\overline p}=\Delta_{\overline p}^{re}\cup
+$$\Delta_{\overline p}=\Delta_{\overline p}^{re,\mathrm{simp}}\cup
 \Delta_{\overline p}^{im}\qquad(p=0,1),\qquad
 \Delta=\Delta_{\overline0}\cup\Delta_{\overline1}.$$
 The Cartan data satisfy $(\alpha,\alpha)>0$ for
@@ -2638,7 +2788,7 @@ $h_i\mapsto\alpha_i$.  Relations:
 \item $[h_i,e_j]=(\alpha_i,\alpha_j)e_j$ and
 $[h_i,f_j]=-(\alpha_i,\alpha_j)f_j$
 \item $[e_i,f_j]=\delta_{ij}h_i$
-\item if $\alpha_i \in \Delta^{re}$ and $i\neq j$, then
+\item if $\alpha_i \in \Delta^{re}_{\mathrm{simp}}$ and $i\neq j$, then
 $$
 (\operatorname{ad} e_i)^{1-2(\alpha_i,\alpha_j)/(\alpha_i,\alpha_i)}
 e_j=
@@ -2777,7 +2927,7 @@ $$
 \mathfrak g_{\alpha+\beta}.
 $$
 Thus signed root multiplicity is necessary input for primitive
-recognition, but it is not a recognition theorem.
+recognition, but it is not a recognition certificate.
 \end{proposition}
 
 \begin{proof}
@@ -2814,7 +2964,8 @@ $$
 and it does not prove that the microscopic operator product on BPS
 states is the Borcherds bracket.  In particular, it does not prove
 $$
-H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\cong\mathfrak g_{\Delta_5}.
+H^0\Prim_{\mathrm{prot}}(\Pi_{X,*}\mathcal F_X)
+\cong\mathfrak g_{\Delta_5}.
 $$
 That comparison requires the primitive recognition hypotheses of
 Theorem~\ref{thm:primitive-recognition}.
@@ -2909,7 +3060,7 @@ the paper:
 $$
 \begin{array}{c|c}
 \hbox{object} & \hbox{meaning of }f(nm,l) \\ \hline
-\mathcal V_{(n,l,m)} & \hbox{virtual one-particle superdimension} \\
+\mathcal V_{(n,l,m)} & \hbox{virtual \(K_0\)-superdimension} \\
 \mathcal D_X & \hbox{Borcherds product exponent} \\
 \mathfrak g_{\Delta_5,\alpha(n,l,m)} &
 \hbox{signed root supermultiplicity on active support}
@@ -2945,7 +3096,7 @@ Let \(X=K3\times E\).  Let
 \mathbb U_{n,l}\in K_0(\mathrm{sVect}_{\mathrm{fd}}),\qquad
 \sdim\mathbb U_{n,l}=f(n,l),
 \]
-and define the virtual one-particle object in the cusp chamber by
+and define the virtual \(K_0\)-determinant object in the cusp chamber by
 \[
 \mathcal V_{(n,l,m)}=\mathbb U_{nm,l},\qquad
 (n,l,m)\in\Gamma_{\mathrm{eff}}.
@@ -3005,17 +3156,17 @@ hence \(-4096=-(64)^2\) is the OP scalar sign together with the
 theta-to-monic normalization.  It is not an orientation character.
 Thus, with
 \[
-\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}=\mathcal D_X^{-1},
+\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}=\mathcal D_X^{-1},
 \]
 one has
 \[
 Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}
-=-4096\,(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}})^2.
+=-4096\,(\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}})^2.
 \]
 
 Fourth, the stronger microscopic comparison
 \[
-H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+H^0\Prim_{\mathrm{prot}}(\Pi_{X,*}\mathcal F_X)
 \cong
 \mathfrak g_{\Delta_5}
 \]
@@ -3048,7 +3199,7 @@ orientation-monodromy problem.  The Hall-side proof must compute the
 three simple type-II determinant-line signs and check the reflection
 relations.
 \item A primitive comparison with \(\mathfrak g_{\Delta_5}\) is a
-presentation-level recognition theorem, not a consequence of signed
+presentation-level recognition certificate, not a consequence of signed
 dimensions.  One must supply primitive representatives for the real and
 imaginary simple roots, their parities, the Chevalley, real Serre and
 orthogonality relations, generation, the completed Hopf pairing and the
@@ -3151,7 +3302,7 @@ a,b\in\mathbb{H}_1\right\}\subset\mathbb{H}_2.$$
 \begin{definition}[Physical-host certificate]
 \label{def:physical-host-certificate}
 For a diagonal-divisor row \(F_j\), a physical-host certificate is a
-five-level ledger
+five-level certificate table
 \[
 \mathfrak C_j=
 \left(
@@ -3255,23 +3406,23 @@ open; the formal determinant is not a compact Hall/chiral source \\
 2 &
 \(F_2=\Delta_2\); Clery--Gritsenko product &
 Gritsenko--Nikulin denominator row \(\mathfrak g^{\mathrm{GN}}_2\) &
-no audited CHL/dyon row map &
-no audited curve-counting scalar theorem &
-no audited Hall or factorization host \\
+no certified CHL/dyon row map &
+no certified curve-counting scalar theorem &
+no certified Hall or factorization host \\
 3 &
 \(F_3=\Delta_1\); Clery--Gritsenko product &
 Gritsenko--Nikulin denominator row \(\mathfrak g^{\mathrm{GN}}_3\) &
-no audited CHL/dyon row map &
-no audited curve-counting scalar theorem &
-no audited Hall or factorization host \\
+no certified CHL/dyon row map &
+no certified curve-counting scalar theorem &
+no certified Hall or factorization host \\
 4 &
 \(F_4=\Delta_{1/2}\); Clery--Gritsenko product on the degree-eight
 multiplier cover &
 Gritsenko--Nikulin denominator row on the same cover
 \(\mathfrak g^{\mathrm{GN}}_4\) &
-no audited CHL/dyon row map &
-no audited curve-counting scalar theorem &
-no audited Hall or factorization host \\
+no certified CHL/dyon row map &
+no certified curve-counting scalar theorem &
+no certified Hall or factorization host \\
 5 &
 \(F_5=\nabla_3\); Clery--Gritsenko product &
 Govindarajan \(\mathcal G_1(2)\) CHL/WKB denominator theorem &
@@ -3305,10 +3456,10 @@ no compact Hall/chiral certificate \\
 \endgroup
 \end{center}
 
-This table is a certificate ledger, not a catalogue of physical hosts.
+This table is a certificate table, not a catalogue of physical hosts.
 By Theorem~\ref{thm:gn-denominator-234} the full-paramodular rows
 $F_2,F_3,F_4$ also carry Gritsenko--Nikulin denominator identities.
-The audited sources do not construct a reduced curve-counting theorem,
+The cited sources do not construct a reduced curve-counting theorem,
 Hall object, or factorization host for these three rows.  Their status is
 therefore product plus denominator theorem only.
 The congruence rows $F_5,F_6,F_7,F_8$ have product-degree lattices in
@@ -3364,7 +3515,7 @@ Z^{X_j}_{\mathrm{red}}(Z)=C_jF_j(Z)^{-2}.
 \]
 If a compact Hall/chiral host is claimed, one must separately construct
 the protected one-particle index and primitive bracket comparison.  This
-open problem is not used for the eight-row ledger and implies no scalar
+open problem is not used for the eight-row certificate table and implies no scalar
 square, CY/DT host, or Hall/chiral host without the corresponding
 certificate entries.
 \end{openproblem}
@@ -4835,9 +4986,9 @@ formal branch.  It does not define a modular form until the relevant
 metaplectic or multiplier-cover character has been constructed.
 \end{definition}
 
-\begin{proposition}[Reconstituted fractional-power comparison test]
+\begin{proposition}[Fractional-power comparison test]
 \label{prop:fractional-power-comparison-test}
-The earlier fractional-power comparison symbols
+The formal fractional-power comparison symbols
 \[
 \Phi^{\mathrm{cmp}}_5,\qquad
 \Phi^{\mathrm{cmp}}_7,\qquad
