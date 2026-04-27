@@ -1,0 +1,604 @@
+\section{Agent 15-F: primitive recognition modulo radical, attack--heal}
+\label{sec:agent15f-primitive-recognition-mod-radical}
+
+\providecommand{\Deltafive}{\Delta_5}
+\providecommand{\gDelta}{\mathfrak g_{\Delta_5}}
+\providecommand{\Aden}{\mathcal A_{\mathrm{den}}}
+\providecommand{\Den}{\mathsf{Den}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\Primprot}{\operatorname{Prim}_{\mathrm{prot}}}
+\providecommand{\Rad}{\operatorname{Rad}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\smult}{\operatorname{smult}}
+\providecommand{\CoHA}{\operatorname{CoHA}}
+\providecommand{\Hall}{\mathcal H}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\Spch}{\mathrm{Sp}^{\mathrm{ch}}}
+\providecommand{\PhiFA}{\Phi^{\mathrm{FA}}}
+\providecommand{\epsor}{\epsilon_o}
+\providecommand{\nuDelta}{\nu_{\Delta_5}}
+
+\subsection{Claim attacked}
+
+The attacked theorem is the strongest compact-recognition shortcut:
+\[
+   \hbox{compact Igusa determinant and signed primitive dimensions}
+   \quad\Longrightarrow\quad
+   H^0\Primprot(\mathcal F_X)/\Rad \cong \gDelta ,
+   \qquad X=K3\times E.
+\]
+In an even stronger false form, the shortcut says that the surrounding
+volumes already supply the compact primitive Lie superalgebra and the
+radical quotient because they contain Hall--Drinfeld, bar--cobar, BCOV,
+and Borcherds technology.
+
+The attack succeeds.  The determinant, the OP scalar square, the
+Gritsenko--Nikulin denominator identity, the formal current envelope, and
+the chiral bar--cobar inversion theorem do not construct the compact
+primitive bracket.  They also do not determine full parity dimensions,
+simple primitive representatives, Chevalley--Serre--orthogonality
+relations, a Hopf pairing, or the radical quotient.  Equality of the
+denominator is therefore only a necessary numerical shadow.  It is not a
+Lie-superalgebra recognition theorem.
+
+\subsection{Local anchors}
+
+\begin{enumerate}
+\item \verb|main.tex:188--209| states that primitive recognition is
+conditional on a compact Igusa datum and is not an existence theorem.
+\item \verb|main.tex:906--934| lists the protected Hall integration
+criterion: compact Hall/CoHA sector, oriented extension
+correspondences, vanishing cycles, HN completions, protected
+integration, primitive projection, and lifted Weyl action.
+\item \verb|main.tex:1759--1864| defines the target denominator algebra
+\(\Aden=\gDelta\), its root grading, signed root supermultipities, and
+denominator \(64^{-1}\Deltafive(2Z)\).
+\item \verb|main.tex:1911--1960| makes the \(E_3\)-source and
+\(K3\)-to-\(E\) specialization supplied data, then asks for
+\[
+H^0\Primprot(\mathcal F_X)\stackrel{?}{\cong}\gDelta,\qquad
+\Omega_E^{\mathrm{ch}}C_X\stackrel{?}{\simeq}\Den_{\Delta_5,E}.
+\]
+\item \verb|main.tex:2017--2089| proves the positive-elliptic-degree
+locality obstruction and names the two repair paths: projection-finite
+locality plus global modes, or a hybrid local/global wrapped
+factorization theory.
+\item \verb|main.tex:2182--2266| defines the compact Igusa datum
+\(\mathfrak K_X\); its \((\Pi)\)-entry is exactly the primitive
+recognition certificate.
+\item \verb|main.tex:2344--2430| proves only a conditional primitive
+recognition theorem: if the presentation-level data, parity dimensions,
+generation, and radical quotient are supplied, then the compact
+primitive quotient is \(\gDelta\).
+\item \verb|main.tex:2605--2752| proves that the denominator determines
+signed exponents after the GN root datum is fixed, but forgets
+zero-superdimension root spaces, parity dimensions, structure constants,
+simple representatives, relation constants, and Hopf-pairing radical.
+\item \verb|main.tex:2833--2882| fixes the coefficient dictionary:
+\(f(nm,l)\) has three readings, but none is an equality of Hilbert
+spaces, brackets, or Hall constants.
+\end{enumerate}
+
+The preceding local reports used here are
+\[
+\begin{gathered}
+\verb|agent_material/14_compact_E3_source_from_volumes_attack_heal.tex|,\\
+\verb|agent_material/14_ranE_hybrid_wrapping_from_volumes_attack_heal.tex|,\\
+\verb|agent_material/14_orientations_protected_integration_from_volumes_attack_heal.tex|,\\
+\verb|agent_material/14_primitive_borcherds_recognition_from_volumes_attack_heal.tex|,\\
+\verb|agent_material/14_chiral_bar_cobar_Koszul_realization_attack_heal.tex|,\\
+\verb|agent_material/14_boundary_rows_physical_hosts_from_volumes_attack_heal.tex|.
+\end{gathered}
+\]
+
+\subsection{Cross-volume anchors}
+
+\begin{enumerate}
+\item \verb|calabi-yau-quantum-groups/FRONTIER.md:31| states the
+two-stage architecture
+\[
+\Phi_d=\Spch_{\Sigma_{d-1},C}\circ\PhiFA_d,
+\]
+with Stage 2 a specialization, not an inversion.
+\item \verb|calabi-yau-quantum-groups/FRONTIER.md:81| states that
+bracket-level BPS \(\cong\) BKM remains open beyond the abelian
+Heisenberg--Miki core.
+\item \verb|calabi-yau-quantum-groups/FRONTIER.md:98--110| fixes the
+Hall--Drinfeld double language and says the plain K3 Yangian language is
+retracted; it also warns that BKM non-abelianity appears only after the
+vertex-operator closure lane.
+\item \verb|calabi-yau-quantum-groups/FRONTIER.md:197--205| keeps the
+Hall--Drinfeld/BKM-side object as a genuine open frontier: real-root
+completion and comparison data remain open.
+\item \verb|calabi-yau-quantum-groups/chapters/examples/k3e_bkm_chapter.tex:15--74|
+marks the compact Hall realization and completed double as conditional;
+the theorem-grade part is the reduced DT character and the
+Gritsenko--Nikulin--Borcherds target.
+\item \verb|calabi-yau-quantum-groups/chapters/examples/k3e_bkm_chapter.tex:733--753|
+records the GN target simple-root and parity convention, including real
+even roots and imaginary roots.
+\item \verb|calabi-yau-quantum-groups/chapters/examples/k3e_bkm_chapter.tex:970--1022|
+records the denominator identity and explicitly separates the primitive
+denominator statement from the bar Euler/product bridge problem.
+\item \verb|calabi-yau-quantum-groups/notes/compact_k3e_hall_construction_package_20260424.md:63--74|
+says the compact Hall--Drinfeld double exists only after the negative
+half, Cartan completion, continuous Hopf pairing, radical quotient,
+bracket comparison, and centre compatibility are supplied.
+\item \verb|calabi-yau-quantum-groups/notes/compact_k3e_hall_construction_package_20260424.md:97--113|
+states the same obstruction vector: the positive cone and denominator
+normalization do not construct the double.
+\item \verb|calabi-yau-quantum-groups/notes/bps_positive_geometry_total_resolution_20260424/agent_06_k3xe_hall_bkm_autborch.md:315--346|
+sets a positive-half target whose character follows only after a
+PBW-level isomorphism is supplied.
+\item \verb|calabi-yau-quantum-groups/notes/bps_positive_geometry_total_resolution_20260424/agent_06_k3xe_hall_bkm_autborch.md:407--451|
+keeps positive half separate from Cartan, negative half, pairing,
+radical, and the full double.
+\item \verb|calabi-yau-quantum-groups/notes/bps_positive_geometry_total_resolution_20260424/agent_06_k3xe_hall_bkm_autborch.md:840--883|
+lists finite-height numerical tests and immediately says they do not
+prove the bracket.
+\item \verb|calabi-yau-quantum-groups/notes/bps_positive_geometry_total_resolution_20260424/agent_06_k3xe_hall_bkm_autborch.md:885--912|
+isolates the surviving bracket obstruction \(o_{HB}^{\mathrm{bracket}}\).
+\item \verb|chiral-bar-cobar/CLAUDE.md:56--63| and
+\verb|chiral-bar-cobar-vol2/CLAUDE.md:348--383| state the
+CY-to-chiral direction: Stage 2 is specialization from the CY
+factorization object to a curve, never inversion.
+\item \verb|chiral-bar-cobar/CLAUDE.md:293--300| forbids conflating
+\(A\), \(B(A)\), \(A^!\), and the derived centre; \(\Omega B(A)=A\) is
+inversion, not a compact source construction.
+\item \verb|chiral-bar-cobar/worldview_synthesis_2026_04_17.tex:239--259|
+gives the bar--cobar adjunction and inversion theorem on its proper
+domain.  It starts after a curve-level chiral algebra or coalgebra is
+given.
+\item \verb|chiral-bar-cobar-vol2/FRONTIER.md:58--68| imports the
+Hall--Drinfeld double presentation but retains the abelian-at-Lie
+discipline.
+\item \verb|topological-strings/CLAUDE.md:20--22| says the BCOV volume
+is motivation and convention-checking, not a compact CY\(_3\)/BKM
+theorem without a matched proof.
+\item \verb|topological-strings/main.tex:1194--1250| gives an analogous
+source-convention obstruction: a Hamiltonian/PBW source is not the same
+as a closed CE-cochain source.
+\item \verb|topological-strings/main.tex:2426--2440| states that
+Costello's BV formalism supplies a general construction package, while
+the paper must still identify the Hamiltonian input and coefficients in
+the desired specialization.
+\end{enumerate}
+
+\subsection{Attack on the six compact-construction gates}
+
+\paragraph{Gate 1: compact finite-first holomorphic \(E_3\) source.}
+Without a supplied charge-completed holomorphic \(E_3\)-factorization
+algebra \(\mathcal A^{E_3}_X\), the object
+\(\mathcal F_X=\Spch_{K3,E}(\mathcal A^{E_3}_X)\) is only a symbol.
+Then \(H^0\Primprot(\mathcal F_X)\) has no source category, no
+coproduct, no augmentation, no protected differential, and no completed
+topology.  A theorem about its primitives is therefore ill-typed.  The
+Vol III \(E_3\) and hCS language is architectural input, not a compact
+source construction with finite-first HN quotients in this paper.
+
+\paragraph{Gate 2: Ran(\(E\)) elliptic-degree obstruction.}
+Positive elliptic degree dominates \(E\), so ordinary finite-support
+\(\Ran(E)\) locality cannot see the full \(s\)-direction.  For primitive
+recognition this is more serious than losing a product variable: if the
+repair is a decoupled global Fock factor, then it may reproduce the
+determinant while giving zero or wrong mixed brackets between vertical
+projection-finite primitives and wrapped primitives.  The hybrid repair
+must therefore construct mixed extension stacks and prove their
+associativity and primitive brackets.  A scalar Fock mode is not a
+Borcherds bracket.
+
+\paragraph{Gate 3: oriented compact Hall/CoHA atlas.}
+The primitive functor is only defined after a Hall or factorization
+object has multiplication, comultiplication, unit, counit, and a
+completion compatible with charge.  The reduced \(E\)-quotient cannot be
+taken before extension correspondences are built: quotienting too early
+erases relative \(E\)-position and can destroy the convolution source of
+the bracket.  The compact atlas must therefore live before reduction,
+with finite-type HN truncations, vanishing-cycle coefficients, and
+Thom--Sebastiani orientation transport.
+
+\paragraph{Gate 4: protected integration and orientation character.}
+Protected integration must be a structure-preserving functor, not merely
+a scalar trace.  It must commute with Hall product, coproduct,
+wall-crossing, primitive projection, parity, and completion.  Otherwise
+it can produce the right signed Euler characteristic while forgetting
+the primitive Lie bracket and the Hopf pairing.  Constants such as
+\(64\) and \(4096\) are normalizations, not orientation-line monodromy.
+
+\paragraph{Gate 5: \(\epsor=\nuDelta\).}
+The automorphic character \(\nuDelta\) is theorem-level data of
+\(\Deltafive\).  The geometric character \(\epsor\) is undefined until
+an oriented Hall object and a lifted Weyl action exist.  Even after
+\(\epsor=\nuDelta\) is proved, that equality fixes the sign character
+needed by the denominator comparison; it does not by itself construct
+simple primitive representatives, Serre relations, imaginary-root
+parities, or the Hopf radical quotient.
+
+\paragraph{Gate 6: primitive recognition modulo radical.}
+This is the primary obstruction.  Let
+\[
+   P_X := H^0\Primprot(\mathcal F_X).
+\]
+The desired object is not \(P_X\) as a graded vector space, but the
+radical quotient
+\[
+   P_X^{\mathrm{red}}
+   :=
+   P_X/\Rad\langle-,-\rangle
+\]
+as a charge-graded Lie superalgebra with Cartan, positive and negative
+halves, invariant Hopf pairing, and completed topology.  Its
+recognition requires a presentation theorem, not a character theorem.
+
+\subsection{First-principles failure modes for gate 6}
+
+\begin{enumerate}
+\item \textbf{Grothendieck shadow failure.}  The determinant lives in
+the Grothendieck group of graded super vector spaces:
+\[
+   \prod_\gamma (1-x^\gamma)^{\sdim P_\gamma}.
+\]
+It is invariant under adding an even and an odd cancelling pair in the
+same charge.  Such a pair changes the state space, the possible
+brackets, the primitive functor, and the radical, while leaving the
+determinant unchanged.
+
+\item \textbf{Zero-bracket failure.}  Give a graded super vector space
+the correct \(\sdim P_\gamma=f(nm,l)\) and put the zero bracket on all
+positive charges.  Its Fock determinant is still the Igusa product, but
+its Lie superalgebra is not \(\gDelta\).
+
+\item \textbf{Wrong-parity failure.}  A signed multiplicity \(a-b\)
+does not determine \((a,b)\).  If an imaginary root has signed
+multiplicity \(-64\), the determinant cannot distinguish
+\((0,64)\) from \((1,65)\).  BKM recognition needs the GN parity split,
+not only the superdimension.
+
+\item \textbf{Primitive-versus-PBW failure.}  A product coefficient can
+come from a primitive generator or from a PBW monomial in lower
+generators after logarithmic/Mobius inversion on rays.  The compact Hall
+object must identify which classes are simple primitives and which are
+composites.
+
+\item \textbf{Serre-kernel failure.}  A map from the abstract
+Borcherds--Kac presentation to \(P_X\) can satisfy the displayed
+relations on generators but still have an additional kernel in higher
+root degree.  Root superdimensions alone cannot exclude a hidden
+zero-superdimension kernel.
+
+\item \textbf{Radical-mismatch failure.}  The completed Hopf pairing can
+have a larger radical than the GN/Kac radical, killing target root
+spaces, or a smaller radical, leaving extra central primitives.  Either
+case gives the same low-order determinant if the additional classes have
+zero signed dimension.
+
+\item \textbf{Completion failure.}  Finite-height truncations may have
+nondegenerate pairings and PBW bases while the inverse limit develops
+\(\varprojlim^1\) cohomology, nonclosed radicals, or discontinuous
+brackets.  Recognition is a statement in the completed category.
+
+\item \textbf{Source-convention failure.}  The topological-strings CE
+obstruction is the same structural warning in another fabric: a
+Hamiltonian/PBW source and a CE-cochain source are not interchangeable.
+For Igusa, the Hall commutator source must be fixed before comparing it
+with the Borcherds bracket.
+\end{enumerate}
+
+\subsection{Exact proof obligations for primitive recognition}
+
+The following obligations are necessary and, together with gates 1--5,
+sufficient for the desired recognition statement.
+
+\begin{enumerate}
+\item \textbf{Primitive functor.}  Construct a completed, augmented,
+charge-graded Hopf or factorization-Hopf object \(\mathcal F_X\) and
+define
+\[
+\Prim(\mathcal F_X)_\gamma
+=
+\ker\left(
+\Delta_\gamma-1\otimes(-)-(-)\otimes1:
+(\mathcal F_X)_\gamma\to
+\prod_{\gamma_1+\gamma_2=\gamma}
+(\mathcal F_X)_{\gamma_1}\widehat\otimes
+(\mathcal F_X)_{\gamma_2}
+\right)
+\]
+in the protected completed category.
+
+\item \textbf{Bracket source.}  Prove that the supercommutator of the
+oriented Hall product, or equivalently the binary chiral collision
+residue, preserves protected primitives after projection:
+\[
+[-,-]_X:
+P_{X,\gamma}\otimes P_{X,\eta}\to P_{X,\gamma+\eta}.
+\]
+
+\item \textbf{Cartan and degree map.}  Identify
+\[
+P_{X,0}\cong \Lambda^{2,1}_{II}\otimes\mathbb C,\qquad
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},
+\]
+and prove that \(\alpha\) sends Hall charge addition to GN root
+addition and transports the Euler/BPS pairing to the Lorentzian form
+with the manuscript's sign convention.
+
+\item \textbf{Simple representatives.}  Exhibit compact primitive
+classes
+\[
+e_i^X,\quad f_i^X,\quad h_i^X
+\]
+for the three real simple roots and for every imaginary simple-root
+fibre in the GN datum, preserving multiplicity fibres and parity.
+
+\item \textbf{Chevalley relations.}  Prove
+\[
+[h,e_i^X]=(\alpha_i,h)e_i^X,\qquad
+[h,f_i^X]=-(\alpha_i,h)f_i^X,\qquad
+[e_i^X,f_j^X]=\delta_{ij}h_i^X
+\]
+with the correct super signs and normalization of \(h_i^X\).
+
+\item \textbf{Real Serre relations.}  For the even real simple roots,
+prove
+\[
+(\operatorname{ad}e_i^X)^{1-a_{ij}}e_j^X=0,\qquad
+(\operatorname{ad}f_i^X)^{1-a_{ij}}f_j^X=0
+\]
+for \(i\ne j\).  In the visible rank-three real subsystem,
+\((\delta_i,\delta_i)=2\) and \((\delta_i,\delta_j)=-2\) for
+\(i\ne j\), so \(a_{ij}=-2\) and the visible Serre exponent is \(3\).
+
+\item \textbf{Borcherds orthogonality.}  If \((\alpha_i,\alpha_j)=0\)
+and at least one of \(\alpha_i,\alpha_j\) is imaginary, prove
+\[
+[e_i^X,e_j^X]=0,\qquad [f_i^X,f_j^X]=0
+\]
+with the super sign rule.
+
+\item \textbf{Parity dimensions.}  Prove equality of full parity
+dimensions, not only of superdimensions:
+\[
+\left(\dim P_{X,\alpha,\overline 0},
+      \dim P_{X,\alpha,\overline 1}\right)
+=
+\left(\dim\gDelta_{\alpha,\overline 0},
+      \dim\gDelta_{\alpha,\overline 1}\right)
+\]
+for all simple imaginary roots and then for all roots after PBW and
+radical quotient.
+
+\item \textbf{Generation.}  Prove that \(P_X^{\mathrm{red}}\) is
+generated by the Cartan and the simple primitive representatives.
+
+\item \textbf{No extra relations.}  Let
+\[
+\pi:G(\mathscr B_{\Delta_5})\longrightarrow P_X^{\mathrm{red}}
+\]
+be the map from the universal Borcherds--Kac superalgebra attached to
+the GN datum.  Prove that \(\ker\pi\) is exactly the standard
+Borcherds--Serre/radical ideal.
+
+\item \textbf{Hopf pairing.}  Construct positive and negative halves and
+a continuous Hopf pairing
+\[
+\langle-,-\rangle:
+P_X^+\widehat\otimes P_X^-\to\mathbb C
+\]
+compatible with coproduct, Cartan, super signs, and completion.
+
+\item \textbf{Radical quotient.}  Prove
+\[
+\Rad\langle-,-\rangle=\Rad_{\mathrm{GN/Kac}}
+\]
+degree by degree and after completion.  The quotient must kill no target
+root space and leave no extra central primitive.
+
+\item \textbf{PBW compatibility.}  Prove a completed PBW theorem for the
+Hall primitive algebra and show that its PBW filtration is transported
+to the PBW filtration on \(U(\gDelta)\).
+
+\item \textbf{Chiral compatibility.}  If the chiral statement is also
+claimed, prove that the conilpotent chiral coalgebra \(C_X\) and the
+cobar map \(\Omega_E^{\mathrm{ch}}C_X\to\Den_{\Delta_5,E}\) use the
+same completion, charge grading, primitive bracket, and radical
+quotient.
+\end{enumerate}
+
+\subsection{Worked tests needed}
+
+The proof should be attacked at finite height before any pro-limit
+claim is made.  For a finite truncation \(T=(N,R)\), define
+\[
+P_{X,\le T}^{\mathrm{red}}
+=
+P_{X,\le T}/\Rad_{\le T}.
+\]
+The required tests are:
+
+\begin{enumerate}
+\item \textbf{Coefficient normalization.}  Recompute
+\[
+\phi_{0,1}=(r^{-1}+10+r)
++q(10r^{-2}-64r^{-1}+108-64r+10r^2)+O(q^2)
+\]
+and check \(f(0,-1)=1\), \(f(0,0)=10\), \(f(1,1)=-64\),
+\(f(1,0)=108\).
+
+\item \textbf{Degree and chamber test.}  Check that every charge in the
+finite compact sector maps by \(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\) to
+the chosen positive GN cone, and that no active root is represented by
+two inequivalent compact charges unless that multiplicity is part of the
+GN fibre.
+
+\item \textbf{Primitive/composite split.}  Compute the finite coproduct
+matrix and identify primitive classes as the kernel of the reduced
+coproduct.  Compare this list with the GN simple root fibres, not with
+the product exponents alone.
+
+\item \textbf{Low real-root bracket test.}  For the three real simple
+roots \(\delta_1,\delta_2,\delta_3\), compute the compact Hall brackets
+\([e_i^X,f_j^X]\) and verify Chevalley normalization.  Then compute the
+length-three real Serre brackets
+\[
+(\operatorname{ad}e_i^X)^3e_j^X,\qquad
+(\operatorname{ad}f_i^X)^3f_j^X.
+\]
+
+\item \textbf{Imaginary orthogonality test.}  Pick the lowest imaginary
+simple roots orthogonal to a real or imaginary simple root and verify
+the zero bracket directly in the compact Hall bracket.
+
+\item \textbf{Parity test.}  For the charges with coefficients
+\[
+f(0,-1)=1,\quad f(0,0)=10,\quad f(1,1)=-64,\quad f(1,0)=108,
+\]
+compute the actual protected even and odd dimensions, not only their
+difference, and compare with the GN parity convention.
+
+\item \textbf{Zero-superdimension audit.}  Search finite height for
+nonzero primitive pairs with equal even and odd dimensions.  These are
+invisible to the determinant but fatal unless killed by the same
+radical as in the GN/Kac construction.
+
+\item \textbf{Pairing-radical matrix test.}  Compute the finite
+positive-negative Hopf pairing matrix, its radical, and the induced
+Cartan form.  Compare its rank with the GN/Kac quotient at the same
+root height.
+
+\item \textbf{PBW Hilbert test.}  After quotienting by the finite
+radical, compute the PBW supercharacter from the compact primitives and
+compare with the truncation of
+\[
+\prod_{\gamma}(1-x^\gamma)^{-f(nm,l)}.
+\]
+Passing this test is necessary but not sufficient; it must be paired
+with the bracket and radical tests above.
+
+\item \textbf{Continuity test.}  Verify that the finite radicals,
+brackets, and pairings form a Mittag--Leffler inverse system and that
+the completed radical is closed.
+\end{enumerate}
+
+\subsection{Healed conditional theorem}
+
+\begin{theorem}[Primitive recognition modulo radical, conditional]
+Let \(X=K3\times E\).  Assume gates \(1\)--\(5\) have been constructed:
+a finite-first charge-completed holomorphic \(E_3\)-source, a
+projection-finite plus wrapped or hybrid \(\Ran(E)\) specialization, an
+oriented compact Hall/CoHA atlas, protected integration compatible with
+Hall product and coproduct, and a lifted Weyl action whose orientation
+character satisfies \(\epsor=\nuDelta\) on the type-II Weyl group.
+
+Assume furthermore the gate-\(6\) primitive certificate listed above:
+the primitive functor, Hall bracket, Cartan and degree map, simple
+representatives, Chevalley relations, real Serre relations, Borcherds
+orthogonality, full parity dimensions, generation, no-extra-relations
+statement, continuous Hopf pairing, GN/Kac radical quotient, completed
+PBW theorem, and completion compatibility.
+
+Then the induced map from the Gritsenko--Nikulin/Borcherds--Kac
+presentation is an isomorphism
+\[
+   H^0\Primprot(\mathcal F_X)/\Rad\langle-,-\rangle
+   \cong
+   \Aden
+   =
+   \gDelta
+\]
+of completed charge-graded Lie superalgebras.  Consequently
+\[
+   \operatorname{den}
+   \bigl(H^0\Primprot(\mathcal F_X)/\Rad\bigr)
+   =
+   64^{-1}\Deltafive(2Z).
+\]
+If, in addition, the chiral coalgebra \(C_X\) and the Koszul comparison
+\(\Theta_{\mathrm{Kos}}\) are supplied in the same completed category,
+then
+\[
+   \Omega_E^{\mathrm{ch}} C_X
+   \simeq
+   \Den_{\Delta_5,E}.
+\]
+\end{theorem}
+
+\begin{proof}[Proof skeleton]
+The compact simple representatives define a homomorphism from the
+universal Borcherds--Kac Lie superalgebra
+\[
+G(\mathscr B_{\Delta_5})\longrightarrow P_X^{\mathrm{red}}.
+\]
+The Cartan, Chevalley, real Serre, orthogonality, and super sign
+relations put the Borcherds--Serre ideal in the kernel.  Generation
+gives surjectivity after quotient.  The no-extra-relations theorem and
+the equality of Hopf radicals identify the kernel exactly with the
+standard GN/Kac radical.  Equality of full parity dimensions rules out
+invisible zero-superdimension root spaces.  PBW compatibility and
+closedness of the completed radical promote the finite-height
+identification to the completed algebra.  The denominator statement is
+then the existing GN denominator identity for the target algebra, not
+the input from which the isomorphism was inferred.
+\end{proof}
+
+\subsection{Decision and claim-status recommendation}
+
+The paper should keep
+\[
+H^0\Primprot(\mathcal F_X)/\Rad \cong \gDelta
+\]
+as a conditional recognition theorem.  It may state the theorem above
+because the assumptions are exactly the missing construction data.  It
+should not state or imply that the compact primitive algebra has been
+constructed.
+
+The right programme statement is:
+\[
+\hbox{construct compact primitives and prove the presentation}
+\quad\Longrightarrow\quad
+\hbox{recover the GN/Borcherds denominator algebra}.
+\]
+The wrong statement is:
+\[
+\hbox{recover the Igusa product}
+\quad\Longrightarrow\quad
+\hbox{compact primitives are the GN/Borcherds algebra}.
+\]
+
+\subsection{Open questions}
+
+\begin{enumerate}
+\item What is the exact compact category or stability sector whose
+objects give \(\mathcal F_X\) before quotienting by \(E\)?
+\item Which hybrid local/global extension stacks carry mixed brackets
+between projection-finite and wrapped elliptic-degree sectors?
+\item Can the strong orientation be made compatible with the Hall
+coproduct, not only with multiplication?
+\item What is the compact definition of the protected parity split for
+imaginary simple roots, including possible zero-superdimension pairs?
+\item Does the Hall commutator satisfy the length-three real Serre
+relations for \((\delta_i,\delta_j)=-2\) in the visible rank-three
+subsystem?
+\item Is the Hopf radical closed in the HN/charge completion, and does
+it agree degreewise with the GN/Kac radical?
+\item Does the inverse system of finite radical quotients have vanishing
+\(\varprojlim^1\) obstruction?
+\item Is the chiral cobar comparison using the same radical quotient as
+the Hall primitive comparison, or only the same denominator character?
+\end{enumerate}
+
+\subsection{Files changed and checks}
+
+Files changed by this agent:
+\[
+\verb|agent_material/15_primitive_recognition_mod_radical_attack_heal.tex|.
+\]
+No manuscript source, bibliography, generated PDF, branch pointer, or
+other agent report was edited.  Checks run before writing: targeted
+\verb|rg| and \verb|sed|/line-number reads of \verb|CLAUDE.md|,
+\verb|AGENTS.md|, \verb|main.tex|, \verb|proj.bib|, the six
+\verb|agent_material/14_*| reports, and the cross-volume anchors listed
+above.  Post-write checks run: \verb|git diff --check --| on this file,
+targeted readback with \verb|sed|, keyword coverage with \verb|rg|, line
+count with \verb|wc -l|, and an ASCII audit.  No global build was run,
+since the report is standalone and is not included from \verb|main.tex|.
