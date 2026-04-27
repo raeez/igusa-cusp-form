@@ -817,6 +817,19 @@ along the Weyl action transported by Gram-projection
 \(\Pi:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{ind}}\).
 
 \smallskip
+\textup{(O1)\(^+\)} \emph{Weyl-equivariant cocycle extension.}  The
+Weyl-equivariant lift of (O1) is an honest \(1\)-cocycle on
+\(W^{(2)}(\La^{2,1}_{II})\) with values in \(\{\pm 1\}\), descending
+to a sign character
+\(\varepsilon_o:W^{(2)}(\La^{2,1}_{II})\to\{\pm 1\}\) (the orientation
+monodromy character of
+Open Problem~\ref{op:orientation-monodromy-character}).  Equivalently,
+the restriction of the Joyce--Upmeier multiplicative orientation
+cocycle \cite{JoyceUpmeier,JoyceTanakaUpmeier} to wall-reflection
+generators is a homomorphism on all of \(W^{(2)}(\La^{2,1}_{II})\),
+not merely on its Coxeter generators.
+
+\smallskip
 \textup{(O2)} \emph{Pfaffian local model on type-II walls.}  The
 geometric reflection sign
 $$
@@ -986,13 +999,19 @@ is \(1\) for \(i=1,2,3\), giving \(\varepsilon_o(s_{\delta_i})=-1\).
 The same lemma computes the
 \(\Aut(\Poly_{II})\simeq S_3\) reflections to even normal-mode count,
 giving \(\varepsilon_o=+1\) on those.  The displayed values match
-Lemma~\ref{lem:maass-multiplier-restriction} on the same six elements,
-which by the chamber decomposition
+Lemma~\ref{lem:maass-multiplier-restriction} on the same six elements.
+The chamber decomposition
 \(\Orth(\La^{2,1})_+
 \simeq W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II})\) of
-Section~\textup{The Weyl chamber and the Weyl vector} generate the
-restriction: \(\varepsilon_o=\nu_{\Delta_5}\) on
-\(W^{(2)}(\La^{2,1}_{II})\).
+Section~\textup{The Weyl chamber and the Weyl vector} reduces the
+character to its values on these six generators \emph{provided}
+\(\varepsilon_o\) is an honest homomorphism on the infinite Coxeter
+group \(W^{(2)}(\La^{2,1}_{II})\); this is exactly the strengthened
+hypothesis (O1)\(^+\), supplied by
+Lemma~\ref{lem:weyl-equivariant-orientation-cocycle} from (O1) plus the
+\((\Z/2)^3\) abelianization of \(W^{(2)}(\La^{2,1}_{II})\).  Two
+homomorphisms agreeing on a generating set agree, so
+\(\varepsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\).
 
 \emph{Step 5 (Categorical upgrade (iii)).}  Steps 1--4 promote each
 ingredient of Proposition~\ref{prop:virtuality-of-the-square-root}: the
@@ -1106,12 +1125,69 @@ Lemma~\ref{lem:maass-multiplier-restriction}: there
 W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II})\)
 of Section~\textup{The Weyl chamber and the Weyl vector} reduces the
 character to its values on these six generators.  Six checks done; the
-multiplicative property of orientation data (the
-\(o_{\mathcal C\oplus\mathcal C'}\simeq o_{\mathcal C}\otimes o_{\mathcal C'}\)
-clause of (O1)) guarantees \(\varepsilon_o\) is a homomorphism, and
-the Maass character is a homomorphism by construction.  Two
-homomorphisms agreeing on a generating set agree, so
+strengthened multiplicative hypothesis (O1)\(^+\), supplied by
+Lemma~\ref{lem:weyl-equivariant-orientation-cocycle} from the direct-sum
+clause of (O1) plus the \((\Z/2)^3\) abelianization of
+\(W^{(2)}(\La^{2,1}_{II})\), guarantees \(\varepsilon_o\) is a
+homomorphism on all of \(W^{(2)}(\La^{2,1}_{II})\), and the Maass
+character is a homomorphism by construction.  Two homomorphisms
+agreeing on a generating set agree, so
 \(\varepsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\).
+\end{proof}
+
+\begin{lemma}[Weyl-equivariant orientation cocycle: \textup{(O1)}
+implies \textup{(O1)}\(^+\)]
+\label{lem:weyl-equivariant-orientation-cocycle}
+The direct-sum-multiplicative orientation datum \textup{(O1)} of
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}, together with
+the Pfaffian local model \textup{(O2)}, implies the strengthened
+hypothesis \textup{(O1)}\(^+\): the wall-reflection action on
+\(o_{\mathcal C}\) defines an honest sign homomorphism
+\(\varepsilon_o:W^{(2)}(\La^{2,1}_{II})\to\{\pm 1\}\).
+\end{lemma}
+
+\begin{proof}
+The Cartan matrix of the type-II simple reflections, by
+\((\delta_i,\delta_i)=2\) and \((\delta_i,\delta_j)=-2\) for \(i\ne j\)
+(Section~\textup{The Weyl chamber and the Weyl vector}), is
+\([[2,-2,-2],[-2,2,-2],[-2,-2,2]]\); each off-diagonal pair gives
+\(s_{\delta_i}s_{\delta_j}\) of infinite order, so no braid relation
+collapses \(W^{(2)}(\La^{2,1}_{II})\) below the rank-three Coxeter
+group on three involutions with no further identifications.  The
+abelianization is therefore
+$$
+W^{(2)}(\La^{2,1}_{II})\big/[W^{(2)},W^{(2)}]
+\;\simeq\;(\Z/2)^3,
+$$
+one \(\Z/2\) per Coxeter generator \(s_{\delta_i}\).
+
+By (O2), each \(s_{\delta_i}\) acts on the orientation line
+\(o_{\mathcal C}\) by \((-1)^{N_{\delta_i}}\in\{\pm 1\}\), squaring to
+the identity on \(\det\operatorname{RHom}\); the direct-sum-multiplicative clause
+of (O1), restricted to the wall-correspondence Hall extension at
+\(\Hpl_{\delta_i}\), promotes this to the Joyce--Upmeier multiplicative
+orientation cocycle of \cite{JoyceUpmeier} (multiplicative on stacky
+extension correspondences) and \cite{JoyceTanakaUpmeier} (compatibility
+with derived enhancements), and the descent under the reduced
+\(E\)-quotient is the orientation-cocycle pullback of
+\cite{JoyceKinjoParkSafronov} (orientation cocycles on shifted
+symplectic stacks).  Concretely, on each generator \(s_{\delta_i}\) the
+cocycle returns the scalar \((-1)^{N_{\delta_i}}\), and the cocycle
+condition on the relation \(s_{\delta_i}^2=1\) is the squaring
+\((\pm 1)^2=+1\), which is automatic for any \(\{\pm 1\}\)-valued
+function on involutions.
+
+The remaining cocycle conditions are the commutator relations
+\([s_{\delta_i},s_{\delta_j}]\), \(i\ne j\); a \(\{\pm 1\}\)-valued
+character of an abelian quotient sends every commutator to \(+1\)
+trivially, so
+\(\varepsilon_o([s_{\delta_i},s_{\delta_j}])=+1\) is automatic for any
+function \(W^{(2)}\to\{\pm 1\}\) factoring through abelianization.
+There are no further braid-class relations to check (the Coxeter
+matrix carries no finite-order off-diagonal entries).  Hence
+\(\varepsilon_o\) factors through
+\(W^{(2)}/[W^{(2)},W^{(2)}]\simeq(\Z/2)^3\) as a sign character, which
+is the content of (O1)\(^+\).
 \end{proof}
 
 \begin{remark}[Honest epistemic status of
@@ -1125,17 +1201,30 @@ of \(\nu_{\Delta_5}\) on the six generators
 identity \(\mathcal D_X=\Delta_5\)
 (Proposition~\ref{prop:bgn-identification}); the OP scalar value
 \(-4096\,\Delta_5^{-2}\) (Proposition~\ref{prop:op-normalization}).
-\item \emph{Proved conditionally on \textup{(O1)} and \textup{(O2)}}:
-the Pfaffian recognition (i), the orientation-character
-identity (ii), and the categorical upgrade (iii).
+\item \emph{Proved conditionally on \textup{(O1)}, \textup{(O1)}\(^+\),
+and \textup{(O2)}}: the Pfaffian recognition (i), the
+orientation-character identity (ii), and the categorical upgrade (iii).
+The Step 4 / Theorem 3 argument \emph{uses} the Weyl-equivariant
+strengthening (O1)\(^+\) — the direct-sum clause of (O1) alone gives
+multiplicativity on Hall direct sums but not on the infinite Coxeter
+group \(W^{(2)}(\La^{2,1}_{II})\); the upgrade is supplied by
+Lemma~\ref{lem:weyl-equivariant-orientation-cocycle} (Joyce--Upmeier
+multiplicative cocycle \cite{JoyceUpmeier,JoyceTanakaUpmeier} restricted
+to wall-reflection generators, plus the
+\((\Z/2)^3\) abelianization of \(W^{(2)}(\La^{2,1}_{II})\)).
 \item \emph{Open}:  (O1) for the reduced \(E\)-quotiented, Weyl-equivariant
 compact critical \(K3\times E\) Hall/CoHA sector
 (literature has unreduced Joyce--Upmeier \cite{JoyceUpmeier} /
 Joyce--Tanaka--Upmeier \cite{JoyceTanakaUpmeier} /
-Borisov--Joyce--Bojko \cite{BorisovJoyce} orientations on \(\mathrm{Perf}(X)\), not the
+Borisov--Joyce--Bojko \cite{BorisovJoyce} orientations on \(\mathrm{Perf}(X)\),
+and the orientation-cocycle pullback of
+\cite{JoyceKinjoParkSafronov} on shifted symplectic stacks, but not the
 reduced \(E\)-quotient with type-II Weyl-equivariant lift);
 (O2) the Pfaffian local model on type-II walls of that sector
 (folklore on simple critical loci, not stated for this case).
+The strengthening (O1)\(\Rightarrow\)(O1)\(^+\) is proved in
+Lemma~\ref{lem:weyl-equivariant-orientation-cocycle} and is no longer
+open.
 \item \emph{Heuristic but consistent}:  the three rows of the table
 match Borcherds simple-root multiplicity; the
 \(\Aut(\Poly_{II})\)-row matches paired-mode parity; both are
