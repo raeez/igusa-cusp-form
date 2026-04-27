@@ -1613,7 +1613,8 @@ exists and is constructed by the Cao--Kool--Monavari Pin\(^c\) lift
 \cite{CaoKoolMonavari} on \(\mathrm{Hilb}^n(X)\), twisted by the
 cosection determinant of the Maulik--Toda / Oberdieck reduced
 obstruction theory \cite{OberdieckReducedPT}, with sign normalization
-fixed by the monic stable-pair series.  The obstruction class
+fixed by the monic stable-pair series as pinned down in
+Lemma~\ref{lem:spin-lift-sign-fixing} below.  The obstruction class
 $$
 \alpha^{\mathrm{red}}_{\mathcal C}
 :=w_2\bigl(\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)\bigr)
@@ -1685,6 +1686,121 @@ the literature attack surface is the Pin\(^c\)-lift program of
 \cite{LiuYalongOrientations} restricted to the cosection-twisted
 reduced \(E\)-quotient.
 \end{openproblem}
+
+\begin{lemma}[Sign-fixing of the BBDJS Pin lift by OP monic normalization]
+\label{lem:spin-lift-sign-fixing}
+The BBDJS Pin\(^c\) lift \cite{BBDJS2015} of the \(\SO\)-frame bundle
+of \(\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)\) on
+\(\mathfrak M^{\mathrm{red},(1)}_{(1,\beta,n)}\) is determined by its
+underlying \(\SO\)-bundle only up to a global \(\mathbb Z/2\) ambiguity
+\(\eta_{\mathcal C}\in H^0(\mathfrak M^{\mathrm{red},(1)}_{(1,\beta,n)};
+\mathbb Z/2)\), the kernel of the surjection
+\(\mathrm{Pin}^c\twoheadrightarrow\SO\) acting on global sections of the lift.
+On the rank-one D6--D2--D0 stratum, \(\eta_{\mathcal C}\) is rigidified
+to a determinate element by the following data, jointly:
+\begin{enumerate}
+\item[(S1)] the Joyce--Upmeier orientability cocycle
+\cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier} on the Hall extension
+correspondences, which forces a multiplicative compatibility
+\(\eta_{\mathcal C\oplus\mathcal C'}=
+\eta_{\mathcal C}\,\eta_{\mathcal C'}\,
+(-1)^{\langle\mathcal C,\mathcal C'\rangle_{\mathrm{Mukai}}}\)
+under direct sum on the rank-one locus;
+\item[(S2)] the requirement that the Pfaffian section
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)\) of
+\(\mathcal L^5\otimes\nu_{\Delta_5}\) constructed in
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} restricts at
+the unique top-cohomology generator of the isotropic-cusp expansion to
+the monic Borcherds normalization \(D_5=64^{-1}\Delta_5\) of
+Proposition~\ref{prop:bgn-identification}; equivalently, the leading
+Fourier coefficient of \(\operatorname{Pf}_{\mathrm{prot}}\) at the
+isotropic cusp \(\mathfrak c_\infty\) equals \(+1\) (positive
+orientation, monic);
+\item[(S3)] compatibility, after squaring, with the OP/DT scalar sign
+\(C_X=-4096\) of Proposition~\ref{prop:op-normalization}, i.e.\
+\((\operatorname{Pf}_{\mathrm{prot}})^{2}\!|_{\mathrm{rank\textnormal{-}one}}
+=\Delta_5^{2}\) with positive leading coefficient
+\(c_\Delta(1,1,1)^2=64^2=4096\), the absolute value of \(C_X\), and
+the OP scalar sign \(\operatorname{sign}(C_X)=-1\) absorbed into the
+fermionic shift \((-p_{\mathrm{DT}})^n\) of the OP/DT chamber, not into
+the orientation line.
+\end{enumerate}
+Then \(\eta_{(1,\beta,n)}=+1\), the BBDJS Pin\(^c\) lift on
+\(\mathfrak M^{\mathrm{red},(1)}_{(1,\beta,n)}\) is uniquely
+determined, and the orientation line
+\(o^{\mathrm{red},(1)}_{(1,\beta,n)}\) is the unique square root of
+\(\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)\) whose
+Pfaffian section is monic at \(\mathfrak c_\infty\).
+\end{lemma}
+
+\begin{proof}
+The \(\mathrm{Pin}^c\twoheadrightarrow\SO\) sequence has kernel \(\mathbb Z/2\),
+so on a connected component the global lift is unique up to multiplying
+by a constant element of this kernel; on the disconnected components of
+\(\mathfrak M^{\mathrm{red},(1)}_{(1,\beta,n)}\) (indexed by the
+discrete Mukai-charge label \((1,\beta,n)\), connected within each
+fixed charge by the Beauville--Mukai construction of
+\cite{CaoKoolMonavari}) the ambiguity is the function
+\(\eta\colon\pi_0\mathfrak M^{\mathrm{red},(1)}\to\{\pm 1\}\).
+
+\emph{(S1)} fixes the multiplicative behaviour of \(\eta\) under direct
+sum: by Joyce--Upmeier
+\cite[Theorem~5.1]{JoyceUpmeier}, the orientation cocycle on the
+extension correspondence
+\(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C}\times
+\mathfrak M^{\mathrm{red},(1)}_{\mathcal C'}\to
+\mathfrak M^{\mathrm{red},(1)}_{\mathcal C+\mathcal C'}\) is the Mukai
+parity \((-1)^{\langle\mathcal C,\mathcal C'\rangle_{\mathrm{Mukai}}}\),
+and the BBDJS Pin\(^c\) lift respects this cocycle by
+\cite[\S5.4]{BBDJS2015} together with the cosection-twist compatibility
+of \cite{CaoKoolMonavari}.  Hence \(\eta\) is a \emph{group}
+homomorphism modulo the Mukai parity, and is determined by its value on
+a single generating component.
+
+\emph{(S2)} fixes \(\eta\) on that generator: the Pfaffian section is a
+section of \(\mathcal L^5\otimes\nu_{\Delta_5}\), and
+Proposition~\ref{prop:bgn-identification} together with the
+square-root normalization table of
+Remark~\textup{Normalization of the square root} require the leading
+Fourier coefficient of \(\operatorname{Pf}_{\mathrm{prot}}\) at
+\(\mathfrak c_\infty\) to be \(+1\) (the monic
+\(D_5=64^{-1}\Delta_5\) being the canonical Borcherds output, and the
+factor of \(64\) being the scalar square of the orientation line,
+absorbed in \(\det\operatorname{RHom}\), not in
+\(o_{\mathcal C}\)).  This pins
+\(\eta_{(1,\beta,n)}\in\{+1,-1\}\) to a specific value.
+
+\emph{(S3)} verifies consistency: squaring an orientation line forgets
+\(\eta\), so the only sign data surviving after squaring are
+\((c_\Delta(1,1,1))^2=4096\) (positive, automatic) and the
+fermionic-shift sign \(\operatorname{sign}(C_X)=-1\), which lives in
+the OP/DT chamber of Proposition~\ref{prop:op-normalization} (the
+\((-p_{\mathrm{DT}})^n\) factor) and does not constrain \(\eta\).  So
+(S3) is consistent with (S2) but does not refine it.  Combining (S1)
+and (S2), \(\eta_{(1,\beta,n)}=+1\) on the generating component;
+multiplicatively extended via Mukai parity, this determines \(\eta\) on
+all components of the rank-one stratum.
+
+The choice is determinate.  This is the analogue, on the
+cosection-twisted reduced \((E\)-quotient of\()\) \(K3\times E\), of
+the BBDJS Pin lift sign convention of \cite[\S5.4]{BBDJS2015} and the
+Joyce--Kinjo--Park--Safronov rigidification by Pfaffian normalization
+data \cite{JoyceKinjoParkSafronov}.
+\end{proof}
+
+\begin{remark}[Higher-rank lift of the sign rigidification]
+\label{rmk:sign-fixing-higher-rank}
+The same three data \textup{(S1)}, \textup{(S2)}, \textup{(S3)} would
+rigidify \(\eta_{\mathcal C}\) on higher-rank semistable strata once
+the orientation line \(o^{\mathrm{red}}_{\mathcal C}\) itself exists,
+i.e.\ once the higher-rank obstruction class
+\(\alpha^{\mathrm{red}}_{\mathcal C}\) of \textup{(P3)} above
+vanishes.  The sign-fixing data are not the obstruction; the obstruction
+to existence is the Pin\(^c\)-lift gerbe class.  Hence
+Lemma~\ref{lem:spin-lift-sign-fixing} closes the rank-one
+\(\mathbb Z/2\)-ambiguity completely, and reduces to the same closure
+on every higher-rank stratum where \textup{(P3)} is granted.
+\end{remark}
 
 \section{The scalar square}
 
