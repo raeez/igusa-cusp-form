@@ -3712,6 +3712,118 @@ and \texttt{topological-strings} (BCOV chiral pairing on the
 generating function).
 \end{remark}
 
+\begin{lemma}[Graded Frobenius identity from CY-3 Serre functor]
+\label{lem:F-frobenius-from-cy-serre}
+Suppose that the protected observable algebra
+\(\mathcal A_X\) of
+Definition~\ref{def:local-protected-observable-algebra}, after the
+reduced \(E\)-quotient and the Costello--Li flat trivialization
+\cite{CostelloRenormalization} along the elliptic factor, is realized
+as a Calabi--Yau \(A_\infty\)-category of dimension \(d=3\),
+i.e.~it carries a Serre functor \(S\simeq[3]\) and a
+non-degenerate cyclically invariant pairing
+\[
+\langle\,\cdot\,,\,\cdot\,\rangle_S
+:\Hom_{\mathcal A_X}(X,Y)\otimes
+\Hom_{\mathcal A_X}(Y,X[3])\longrightarrow k,
+\]
+in the sense of Kontsevich--Soibelman \cite{KSCoHA} (cyclic
+\(A_\infty\)-structure) and PTVV
+\cite{PTVV2013}/BBDJS \cite{BBDJS2015} (orientation data realising the
+shift \([3]\) on the moduli of objects of \(\mathcal A_X\)).  Let
+\(\widetilde P_X\subset H_*(\mathcal A_X)\) be the protected primitive
+subspace, equipped with the Hall bracket \([\,\cdot\,,\,\cdot\,]\) and
+the Hopf pairing \(\langle\,\cdot\,,\,\cdot\,\rangle\) of
+Theorem~\ref{thm:primitive-recognition}.  Then the graded Frobenius
+identity holds:
+\[
+\langle[x,y],z\rangle
++(-1)^{|x|\cdot|y|}\langle y,[x,z]\rangle=0,
+\qquad x,y,z\in\widetilde P_X\ \mathrm{homogeneous},
+\]
+i.e.~hypothesis (F) of Theorem~\ref{thm:ptvv-joyce-pi-descent} is met.
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1 (Serre pairing and cyclic trace).}
+A CY-\(d\) \(A_\infty\)-category \(\mathcal A_X\) is, by
+\cite{KSCoHA} (\S~10), an \(A_\infty\)-category equipped with a
+quasi-isomorphism \(S\xrightarrow{\sim}[d]\) of bimodules and a
+non-degenerate cyclically symmetric pairing
+\(\langle\,\cdot\,,\,\cdot\,\rangle_S\) on
+\(\Hom_{\mathcal A_X}(-,-)\), of total degree \(-d\).  Equivalently,
+there is a chain-level cyclic trace
+\(\tr_S:\Hom_{\mathcal A_X}(X,X)\to k[-d]\) satisfying
+\(\tr_S(f\circ g)=(-1)^{|f|\cdot|g|}\tr_S(g\circ f)\) for composable
+homogeneous \(f,g\) (loc.~cit., Lemma~10.2.4).  PTVV
+\cite{PTVV2013} produce the underlying \((-d)\)-shifted symplectic
+form on \(\mathfrak M_{X,c}\); BBDJS \cite{BBDJS2015} extend the
+orientation/d-critical datum that realises \(S\simeq[d]\) at chain
+level on the perfect-complex moduli.  Costello--Li
+\cite{CostelloRenormalization} flat trivialization along the elliptic
+factor reduces \(d=4\) to \(d=3\), so we work with \(d=3\) and the
+identification \(\langle x,y\rangle=\tr_S(x\cdot y)\), where
+\(\cdot\) is the cup product on the protected primitive subspace.
+
+\emph{Step 2 (Frobenius from cyclic invariance).}
+Specialise to homogeneous primitives \(x,y,z\in\widetilde P_X\) and
+expand the Hall bracket as the graded commutator
+\([x,y]=x\cdot y-(-1)^{|x|\cdot|y|}y\cdot x\) (the bracket on
+primitives in a connected graded Hopf algebra is the antisymmetrised
+product, by Theorem~\ref{thm:primitive-recognition}~(5)).  Then
+\begin{align*}
+\langle[x,y],z\rangle
+&=\tr_S\bigl((x\cdot y-(-1)^{|x|\cdot|y|}y\cdot x)\cdot z\bigr)\\
+&=\tr_S(x\cdot y\cdot z)-(-1)^{|x|\cdot|y|}\tr_S(y\cdot x\cdot z).
+\end{align*}
+Cyclic invariance of \(\tr_S\) applied to the second term gives
+\(\tr_S(y\cdot x\cdot z)=(-1)^{|y|\cdot(|x|+|z|)}\tr_S(x\cdot z\cdot y)\),
+and applied to the first gives
+\(\tr_S(x\cdot y\cdot z)=(-1)^{|x|\cdot(|y|+|z|)}\tr_S(y\cdot z\cdot x)\).
+Substituting and re-collecting,
+\[
+\langle[x,y],z\rangle=
+-(-1)^{|x|\cdot|y|}\tr_S\bigl(y\cdot(x\cdot z-(-1)^{|x|\cdot|z|}z\cdot x)\bigr)
+=-(-1)^{|x|\cdot|y|}\langle y,[x,z]\rangle,
+\]
+which is (F).
+
+\emph{Step 3 (Chain-level lift).}
+The cyclic trace \(\tr_S\) is a strict invariant on the
+\(A_\infty\)-homotopy category by \cite{KSCoHA}, \S~10.2; on
+\(d\)-critical thickenings it lifts to perfect-complex chain level by
+\cite{BBDJS2015} (the cyclic structure on the vanishing-cycle dg
+algebra) and PTVV \cite{PTVV2013} (the shifted symplectic form
+descends to the cotangent complex of \(\mathfrak M_{X,c}\)).  The
+identity of Step~2 therefore holds at chain level, hence on the
+protected primitive subspace \(\widetilde P_X\).
+\qedhere
+\end{proof}
+
+\begin{remark}[Cross-verification with the Hopf-pairing route]
+Lemma~\ref{lem:F-frobenius-from-cy-serre} provides an independent
+derivation of (F) from the CY-\(3\) Serre functor of \(\mathcal A_X\),
+parallel to the route through the squaring isomorphism
+\(o_c^{\otimes 2}\simeq\det\mathrm{RHom}(\mathcal C,\mathcal C)\) of
+Definition~\ref{def:orientation-line} and the Hopf pairing of
+Theorem~\ref{thm:primitive-recognition}~(6).  The two routes meet at
+the chain-level identification
+\(\langle\,\cdot\,,\,\cdot\,\rangle=\tr_S(\,\cdot\,\cdot\,\cdot\,)\),
+which is the BBDJS \cite{BBDJS2015} cyclic upgrade of the PTVV
+\cite{PTVV2013} \((-1)\)-shifted symplectic form.  Agreement is a
+consistency check: the Hopf-pairing route imposes (F) by
+non-degeneracy of \(\langle\,\cdot\,,\,\cdot\,\rangle\) on primitives
+plus the Hochschild-boundary identity \(d_{\mathrm{Hoch}}\Theta=B\) of
+Theorem~\ref{thm:ptvv-joyce-pi-descent}, Step~3; the Serre-functor
+route imposes (F) by cyclic invariance of \(\tr_S\) on the CY-\(3\)
+\(A_\infty\)-structure.  Both produce the same sign convention for
+\((-1)^{|x|\cdot|y|}\) and the same target Gram degree
+\(c_x+c_y+c_z=0\), since \(S\simeq[3]\) is the orientation datum
+underlying the squaring isomorphism.  The CY-\(3\) hypothesis is the
+load-bearing input; granting the Costello--Li flat trivialization, it
+discharges (F\(_*\)) of the Reduction remark above.
+\end{remark}
+
 \begin{remark}[Unitarity]
 The present paper uses the protected index, the virtual determinant, and
 the Borcherds denominator algebra.  A holomorphic \(E_3\)-factorization
