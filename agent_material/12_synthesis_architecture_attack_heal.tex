@@ -22,8 +22,13 @@ The harness self-reflection section of
 \(\texttt{/Users/raeez/ecosystem/AGENTS-HARNESS.md}\) was also read.
 At the start of this pass no other
 \(\texttt{agent\_material/12\_*}\) file was present.  During
-verification two parallel \(12\)-packets appeared; both were read and
-their row-host constraints are incorporated here:
+verification five parallel \(12\)-packets appeared; all were read and
+their constraints are incorporated here:
+\[
+\texttt{12\_compact\_hall\_ranE\_attack\_heal.tex},\qquad
+\texttt{12\_primitive\_comparison\_attack\_heal.tex},\qquad
+\texttt{12\_protected\_integration\_orientation\_attack\_heal.tex},
+\]
 \[
 \texttt{12\_eight\_rows\_hosts\_F1\_F4\_attack\_heal.tex},\qquad
 \texttt{12\_eight\_rows\_hosts\_F5\_F8\_attack\_heal.tex}.
@@ -46,6 +51,9 @@ row hosts:
 \texttt{10\_boundary\_row\_physical\_hosts.tex},\quad
 \texttt{11\_chl\_boundary\_primary\_source\_audit.tex},\quad
 \texttt{11\_factorization\_koszul\_minimal\_data.tex},\\
+\texttt{12\_compact\_hall\_ranE\_attack\_heal.tex},\quad
+\texttt{12\_primitive\_comparison\_attack\_heal.tex},\quad
+\texttt{12\_protected\_integration\_orientation\_attack\_heal.tex},\\
 \texttt{12\_eight\_rows\_hosts\_F1\_F4\_attack\_heal.tex},\quad
 \texttt{12\_eight\_rows\_hosts\_F5\_F8\_attack\_heal.tex}.
 \end{gathered}
@@ -95,6 +103,13 @@ series and the Borcherds product do not supply these maps.  Pushforward
 along \(p_E\), restriction to sectors, and chiral Koszul duality are
 operations on a supplied \(\mathcal A^{E_3}_X\) or \(\mathcal F_X\);
 they do not reconstruct the source.
+
+There is a further locality obstruction.  A one-dimensional subscheme of
+positive elliptic degree projects onto all of \(E\).  Thus naive
+support-local factorization on \(\operatorname{Ran}(E)\) sees only the
+projection-finite sector.  A compact realization must either recover the
+elliptic-degree direction by a separate global Hecke/Fock mode, or build
+a hybrid local/global factorization theory with wrapped \(E\)-sectors.
 
 \paragraph{Primitives.}
 The theorem-level object is the virtual class
@@ -149,8 +164,8 @@ physical D-brane protected-index dictionary remains conjectural:
 The Clery--Gritsenko catalogue supplies eight diagonal-divisor
 automorphic products.  Rows \(1\)--\(4\) have Gritsenko--Nikulin
 denominator theorems.  Row \(1\) also has the theorem-level
-Oberdieck--Oberdieck--Pandharipande--Oberdieck--Pixton scalar host for
-the Igusa square, but still no compact Hall/chiral host.  Rows
+Oberdieck, Oberdieck--Pandharipande, and Oberdieck--Pixton scalar host
+for the Igusa square, but still no compact Hall/chiral host.  Rows
 \(2\)--\(4\) should be treated as denominator rows only until a row-map
 certificate is constructed.  Rows \(5\)--\(8\) have Govindarajan
 CHL/WKB denominator theorems in the CHL normalization, with \(F_7\)
@@ -205,9 +220,18 @@ Sectorial Hall completion &
 conditional proposition &
 Use only after a stability sector, HN property, support property,
 finite type, and oriented critical correspondences are supplied. \\
+Projection-local \(\operatorname{Ran}(E)\) factorization &
+obstruction/criterion &
+Positive elliptic degree is global over \(E\).  Require either a
+projection-finite restriction plus global-mode reconstruction, or a
+hybrid local/global collision theory. \\
 \(\mathfrak K_X\) compact realization datum &
 criterion/open problem &
 Consequences may be stated conditionally.  No existence language. \\
+\(\epsilon_o=\nu_{\Delta_5}\) &
+open orientation comparison &
+\(\nu_{\Delta_5}\) is automorphic theorem-level data.  The geometric
+orientation character is not fixed by scalar normalization. \\
 Rows \(F_2,F_3,F_4\) &
 GN denominator theorems &
 Use in the \(e_t^{(n,l,m)}=q^nr^ls^{tm}\) normalization.  Do not import
@@ -271,6 +295,11 @@ Oberdieck's reduced DT/PT theorem and the primitive OP/GW/PT comparison
 give the same constant for the reduced Hilbert-scheme DT branch.  The
 factor \(4096=64^2\) is only a normalization conversion.  The sign is
 the sign in the OP theorem.
+
+None of these constants is an orientation constant.  The automorphic
+reflection character \(\nu_{\Delta_5}\) is unchanged by rescaling
+\(\Delta_5\), and the OP minus sign is a scalar curve-counting
+convention, not the Weyl reflection sign.
 
 \subsection{Exact main-text integration instructions}
 
@@ -355,6 +384,17 @@ Keep the finite-first HN replacement.  The key repaired claim is:
 not a finite active-support heart.  Do not remove the obstruction that
 \(\Gamma_{\mathrm{act}}\) is not additive.
 
+Add, or preserve if already present after integration, the locality
+obstruction:
+\[
+\hbox{positive elliptic degree}\quad\Rightarrow\quad
+p_E(\operatorname{Supp}C)=E.
+\]
+Therefore a support-local \(\operatorname{Ran}(E)\) Hall object cannot
+by itself see the full \(s\)-direction of the Igusa product.  The compact
+realization must be stated as either projection-finite plus global
+mode reconstruction, or hybrid local/global wrapped factorization.
+
 The criterion at lines \(1981\)--\(2003\) may be promoted only as:
 \[
 \hbox{if }\mathfrak K_X\hbox{ exists, then the primitive comparison
@@ -413,6 +453,11 @@ virtual \(K_0\) determinant.  The word ``BPS'' may appear only as
 \item Promote the denominator algebra and its low-degree constants as
 Gritsenko--Nikulin/Borcherds algebra facts.  Label every such constant
 ``not a compact Hall constant'' until a Hall correspondence computes it.
+\item Keep the primitive comparison conditional on the full
+Borcherds--Kac presentation data: simple primitive representatives,
+parities, Chevalley and Serre relations, imaginary orthogonality,
+generation, completed Hopf pairing, radical quotient, and full root
+parity dimensions.  Signed superdimension is insufficient.
 \item Promote \(\mathsf{Den}_{\Delta_5,E}\) as a formal current
 envelope.  Refuse ``compact chiral Koszul theorem'' unless
 \((\mathcal F_X,\mathcal H_X,C_X,\Theta_{\mathrm{Kos}},\Pi_{\mathrm{prim}})\)
@@ -422,6 +467,9 @@ HN descent, Thom--Sebastiani orientation transport, equivariant or
 reduced \(E\)-descent retaining relative position, protected
 integration, and orientation character comparison
 \(\epsilon_o=\nu_{\Delta_5}\).
+\item Treat \(\epsilon_o=\nu_{\Delta_5}\) as an open orientation
+comparison.  The theta-leading coefficient \(64\), the square \(4096\),
+and the OP sign do not construct the strong orientation or its monodromy.
 \item Keep physical row maps for \(F_5,\ldots,F_8\) open.  The
 Govindarajan theorem proves denominator data, not a CY/DT scalar theorem
 or compact host.
@@ -455,9 +503,19 @@ realization?
 rows \(2\)--\(8\)?
 \item Does any finite Hall object rely on a finite active-support heart?
 If yes, delete and replace by HN height quotients.
+\item Does any \(\operatorname{Ran}(E)\) locality claim include positive
+elliptic degree without a global wrapping or Hecke/Fock mechanism?  If
+yes, downgrade: naive support-locality cannot see that sector.
 \item Does any Hall bracket constant appear without a compact extension
 correspondence, orientation cocycle, protected integration, basis, and
 parity split?  If yes, downgrade to denominator constant.
+\item Does any primitive comparison use only signed root
+supermultiplicities?  If yes, require full parity dimensions, simple
+primitive representatives, defining relations, generation, Hopf pairing,
+and radical quotient.
+\item Does any orientation-character claim derive
+\(\epsilon_o=\nu_{\Delta_5}\) from normalizing \(\Delta_5\)?  If yes,
+delete: character matching is a separate geometric monodromy problem.
 \item Does any chiral Koszul assertion construct only
 \(\Omega_E^{\mathrm{ch}}\bar B_E^{\mathrm{ch}}(\mathsf{Den})\to
 \mathsf{Den}\)?  If yes, call it target-internal inversion, not compact
@@ -489,6 +547,10 @@ The remaining mathematical obligations are exact:
 finite-first charge completion.
 \item Construct the chain-level \(K3\)-to-\(E\) specialization and the
 compact chiral shadow on \(\operatorname{Ran}(E)\).
+\item Resolve the \(\operatorname{Ran}(E)\) global-wrapping obstruction:
+prove the compact BPS sector is projection-finite and reconstruct the
+elliptic-degree modes separately, or build a hybrid local/global
+collision stack with associativity and orientation compatibility.
 \item Construct the oriented critical Hall atlas: extension-closed
 heart, stability sector, HN property, support property, finite-type
 semistable stacks, vanishing-cycle coefficients, and strong orientation.
@@ -504,6 +566,9 @@ the constructed orientation domain.
 Gritsenko--Nikulin/Borcherds relations, including real Serre,
 imaginary-root parity, orthogonality, Hopf pairing, and radical
 quotient.
+\item Strengthen the primitive comparison from signed superdimensions to
+full root-space parity dimensions and a presentation-level isomorphism
+with the same radical quotient.
 \item Construct \(C_X\), prove conilpotence in the completed chiral bar
 category, and construct
 \[
@@ -538,7 +603,10 @@ Only this file was created:
 \item \(\texttt{rg --files agent\_material}\) and
 \(\texttt{find agent\_material -maxdepth 1 -name '12\_*' -print}\).
 \item \(\texttt{sed -n}\) reads of the late-arriving
-\(\texttt{12\_eight\_rows\_hosts\_F1\_F4\_attack\_heal.tex}\) and
+\(\texttt{12\_compact\_hall\_ranE\_attack\_heal.tex}\),
+\(\texttt{12\_primitive\_comparison\_attack\_heal.tex}\),
+\(\texttt{12\_protected\_integration\_orientation\_attack\_heal.tex}\),
+\(\texttt{12\_eight\_rows\_hosts\_F1\_F4\_attack\_heal.tex}\), and
 \(\texttt{12\_eight\_rows\_hosts\_F5\_F8\_attack\_heal.tex}\) packets.
 \item Targeted \(\texttt{rg}\) scans of \(\texttt{main.tex}\) for
 \(\texttt{4096}\), \(\texttt{64}\), \(\texttt{Borcherds}\),
@@ -550,7 +618,10 @@ denominator/current section, synthesis theorem, and eight-row section.
 \item Post-write \(\texttt{sed -n}\) reads of this dossier and targeted
 \(\texttt{rg}\) scans for stale source-ledger language and forbidden
 attribution strings.
-\item \(\texttt{git status --short}\) before writing.
+\item \(\texttt{git status --short}\) before writing and after the final
+verification pass.
+\item \(\texttt{git diff --no-index --check /dev/null}\) against this
+dossier; no whitespace diagnostics were printed.
 \end{itemize}
 
 No manuscript build was run.  This file is an internal synthesis dossier

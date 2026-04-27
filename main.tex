@@ -248,18 +248,18 @@ deformation.  The index remembers the cancellation law of a unitary
 theory, not its positive inner product.
 
 For \(X=K3\times E\) the expected local object in a compact realization
-is a holomorphic \(E_3\)-factorization algebra
+is a supplied holomorphic \(E_3\)-factorization algebra
 $$
-\mathcal A^{E_3}_X=\Phi^{\mathrm{FA}}_3(X).
+\mathcal A^{E_3}_X,\qquad X=K3\times E.
 $$
-The symbol names the required Stage-1 datum; it is not constructed in
-this paper.  In a compact realization it is the object whose disjoint
-holomorphic insertions factorize.  The elliptic curve \(E\) enters only
-after a chain-level \(K3\)-specialization
+The auxiliary notation \(\Phi^{\mathrm{FA}}_3(X)\), when used, is only a
+placeholder for this Stage-1 datum; no such functor is constructed in
+this paper.  In a compact realization \(\mathcal A^{E_3}_X\) is the
+object whose disjoint holomorphic insertions factorize.  The elliptic
+curve \(E\) enters only after a supplied chain-level
+\(K3\)-specialization whose output is denoted
 $$
-\mathrm{Sp}^{\mathrm{ch}}_{K3,E}(\mathcal A^{E_3}_X)
-=:\mathcal F_X
-\in\mathrm{Fact}(\operatorname{Ran}(E)).
+\mathcal F_X\in\mathrm{Fact}(\operatorname{Ran}(E)).
 $$
 Thus, in a realization, the curve-level rule is not imposed externally.
 It is the one-dimensional chiral shadow of the holomorphic
@@ -333,6 +333,9 @@ Let $\mathcal H_{\mathrm{RR}}(S)$ be the Ramond--Ramond Hilbert space of
 a unitary $\mathcal N=(4,4)$ sigma model on a K3 surface $S$.  Its
 central charges are
 $$c=\overline c=6.$$
+This Hilbert space is a supplied worldsheet input for the protected K3
+index.  It is not a construction of the compact \(K3\times E\)
+D-brane Hilbert space.
 Choose a right-moving Ramond supercharge $Q_R$ with
 $$Q_R^2=0,\qquad
 \{Q_R,Q_R^\dagger\}=
@@ -374,8 +377,10 @@ Unitarity is used here before the index is taken: it gives the adjoint
 relation which pairs positive right-moving energy states and makes the
 supertrace localize.  After passing to the protected index, the object is
 virtual.  A coefficient \(f(n,l)\) is a superdimension, not a positive
-dimension.  Negative coefficients record odd protected states in a
-supertrace.  They are not negative probabilities.
+dimension.  Negative coefficients record an odd excess in the protected
+supertrace, or in the chosen \(K_0\)-representative.  They do not
+determine the two parity dimensions without an additional Hilbert-space
+or denominator-algebra parity datum.
 \end{remark}
 
 \begin{definition}[Half-K3 index object]
@@ -727,8 +732,9 @@ $$\beta_h=s_1+hF,\qquad h\geq 0.$$
 
 Type IIA D6--D2--D0 charge:
 $$\gamma(h,d,n)=(1;\,(\beta_h,d);\,n).$$
-Write $\Omega_X(h,d,n)$ for the protected D6--D2--D0 index attached to
-this charge.  The microscopic lift is open:
+Write $\Omega_X(h,d,n)$ for the putative protected D6--D2--D0 index
+attached to this charge in a compact physical realization.  The
+microscopic lift is open:
 $$
 \exists\,\mathcal H_{\gamma(h,d,n)},\qquad
 \operatorname{Tr}_{\mathcal H_{\gamma(h,d,n)}}(-1)^F
@@ -1718,26 +1724,26 @@ Theorem \ref{thm:denominator-algebra-identity}.
 \begin{definition}[Holomorphic \(E_3\) quantum upgrade]
 The determinant and denominator results above are protected
 Euler-characteristic statements.  The expected quantum upgrade does not
-start from the scalar determinant.  It would start from a holomorphic
-\(E_3\)-factorization algebra on the Calabi--Yau threefold
+start from the scalar determinant.  It would start from a supplied
+holomorphic \(E_3\)-factorization algebra on the Calabi--Yau threefold
 $$
-\mathcal A^{E_3}_X
-:=\Phi^{\mathrm{FA}}_3(X),
-\qquad X=K3\times E.
+\mathcal A^{E_3}_X,\qquad X=K3\times E.
 $$
-This symbol denotes the Stage-1 object required in the
-Calabi--Yau-to-chiral construction.
+This symbol, and the placeholder \(\Phi^{\mathrm{FA}}_3(X)\), denote
+the Stage-1 object required in the Calabi--Yau-to-chiral construction;
+they are not a constructed functor evaluated on \(X\).
 A compact holomorphic-Chern--Simons/BV model, if constructed with the
 required descent, quantum master equation, and anomaly cancellation,
 would be a candidate source for this datum in the completed charge
 category.
 
-The curve-level BPS algebra would be obtained only after Stage-2
+The curve-level BPS algebra would be obtained only after a supplied Stage-2
 specialization along the \(K3\)-direction:
 $$
+\mathcal F_X
+\simeq
 \mathrm{Sp}^{\mathrm{ch}}_{K3,E}
 \bigl(\mathcal A^{E_3}_X\bigr)
-=:\mathcal F_X
 \in \mathrm{Fact}(\operatorname{Ran}(E)).
 $$
 The intended comparison with
@@ -1824,11 +1830,13 @@ The present paper uses the protected index, the virtual determinant, and
 the Borcherds denominator algebra.  A holomorphic \(E_3\)-factorization
 algebra in cochains is part of the open compact realization datum, not a
 positive Hilbert-space construction already in hand.  Negative
-coefficients \(f(nm,l)\) record odd protected states in a supertrace,
-not negative probabilities.  If the untwisted compactification is
-unitary, the statement that survives the twist is right-moving
-cohomology, protected integration, and the signed index.  Reflection
-positivity is not a hypothesis of the Borcherds denominator theorem.
+coefficients \(f(nm,l)\) record an odd excess in a protected supertrace
+or in a \(K_0\)-representative; actual parity dimensions require an
+additional Hilbert-space or denominator-algebra parity datum.  If the
+untwisted compactification is unitary, the statement that survives the
+twist is right-moving cohomology, protected integration, and the signed
+index.  Reflection positivity is not a hypothesis of the Borcherds
+denominator theorem.
 \end{remark}
 
 \begin{definition}[Sectorial Hall truncation]
@@ -1922,7 +1930,7 @@ Proposition~\ref{prop:sectorial-hall-truncation}.  A compact
 holomorphic-Chern--Simons/BV construction, if it satisfies descent, the
 quantum master equation, and anomaly cancellation in the completed charge
 category, is a candidate source for this datum.
-\item[\((\mathrm{Sp})\)] A chain-level \(K3\)-to-\(E\) specialization
+\item[\((\mathrm{Sp})\)] A supplied chain-level \(K3\)-to-\(E\) specialization
 \(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\), together with a specified
 admissible pushforward comparison along \(p_E:K3\times E\to E\), with
 $$
@@ -1933,9 +1941,10 @@ $$
 (p_E)_*\mathcal A^{E_3}_X
 $$
 a charge-completed compact observable factorization algebra on
-\(\operatorname{Ran}(E)\).
+\(\operatorname{Ran}(E)\).  These equivalences are part of the datum,
+not operations constructed from the determinant.
 \item[\((\mathrm H)\)] An oriented compact Hall factorization object \(\mathcal H_X\)
-with extension correspondences
+with finite-type sectorial moduli stacks and extension correspondences
 $$
 \mathfrak M_\gamma^\sigma\times\mathfrak M_\eta^\sigma
 \xleftarrow{\ p_{\gamma,\eta}\ }
@@ -1943,15 +1952,19 @@ $$
 \xrightarrow{\ q_{\gamma,\eta}\ }
 \mathfrak M_{\gamma+\eta}^\sigma,
 $$
-vanishing-cycle coefficients, Thom--Sebastiani orientation transport,
-protected integration, and an orientation character \(\epsilon_o\) on
-the induced symmetry/reflection action, together with a specified
-comparison
+perfect reduced obstruction theories or critical
+\((-1)\)-shifted symplectic structures, vanishing-cycle coefficients,
+orientation lines with chosen square roots, Thom--Sebastiani orientation
+transport coherent for triple extensions, protected integration maps
+compatible with HN completion and wall crossing, and a lifted action of
+\(W^{(2)}(\La^{2,1}_{II})\) on the oriented completed Hall object.  The
+induced orientation character \(\epsilon_o\) is required to satisfy
 \[
 \epsilon_o|_{W^{(2)}(\La^{2,1}_{II})}
 =\nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})}.
 \]
-Constructing the domain of this comparison is part of the datum.
+Constructing the domain of this comparison and the character
+\(\epsilon_o\) is part of the datum.
 \item[\((\mathrm C)\)] A conilpotent chiral coalgebra \(C_X\) and a charge-preserving
 quasi-isomorphism
 $$
@@ -2577,7 +2590,7 @@ $$F_1=\Delta_5,\qquad
 \scriptsize
 \begin{tabular}{c p{0.13\textwidth} p{0.20\textwidth} p{0.20\textwidth} p{0.18\textwidth} p{0.17\textwidth}}
 \hline
-row & form & product & denominator & scalar square & physical host \\
+row & form & product & denominator & scalar status & physical host \\
 \hline
 1 & \(\Delta_5\) &
 Clery--Gritsenko product; Borcherds--Gritsenko--Nikulin lift of
@@ -2604,22 +2617,23 @@ open \\
 5 & \(\nabla_3\) &
 Clery--Gritsenko product &
 Govindarajan \(G_1(2)\) CHL/WKB denominator theorem &
-CHL scalar square in the dyon literature; no CY/DT theorem here &
+CHL dyon square only; no reduced CY/DT theorem here &
 compact row host open \\
 6 & \(\nabla_2\) &
 Clery--Gritsenko product &
 Govindarajan \(G_1(3)\) CHL/WKB denominator theorem &
-CHL scalar square in the dyon literature; no CY/DT theorem here &
+CHL dyon square only; no reduced CY/DT theorem here &
 compact row host open \\
 7 & \(\nabla_{3/2}\) &
 Clery--Gritsenko product with order-four multiplier &
 Govindarajan \(G_1(4)\) CHL/WKB theorem on the \(\mu_4\)-cover &
-CHL scalar square only after fixing the cover and branch &
+CHL dyon square only after fixing the cover and branch; no reduced
+CY/DT theorem here &
 compact row host open \\
 8 & \(Q_1\) &
 Clery--Gritsenko product &
 Govindarajan \(G_2(4)\) CHL/WKB denominator theorem &
-CHL scalar square in the dyon literature; no CY/DT theorem here &
+CHL dyon square only; no reduced CY/DT theorem here &
 compact row host open \\
 \hline
 \end{tabular}
@@ -2651,15 +2665,18 @@ alternating sum.
 \begin{openproblem}[Future denominator extensions beyond the known rows]
 For any future diagonal-divisor or boundary product not already covered
 by the Gritsenko--Nikulin denominator theorems or by the Govindarajan
-CHL/WKB denominator theorem, whose datum
+CHL/WKB denominator theorem, first construct the product datum
 $$
 \mathscr P_j=(\phi_j,\Gamma_{j,\mathrm{prod}}^+,
 \Gamma_{j,\mathrm{mod}},\rho_j,\nu_j,L_j,\alpha_j)
 $$
-has been constructed, with
+with
 $$\phi^{(j)}(\tau,z)=\sum c_j(n,l)q^nr^l,$$
-there is a positive product cone $\Gamma_{j,\mathrm{prod}}^+$, a Weyl vector $\rho_j$, and a
-generalized Borcherds--Kac--Moody superalgebra $\mathfrak g_j$ such that
+and then construct, if possible, the additional denominator data:
+positive product cone, Weyl chamber, simple real roots, reflection
+character, Weyl vector, Weyl alternating sum, imaginary simple-root
+coefficients, and a generalized Borcherds--Kac--Moody superalgebra
+\(\mathfrak g_j\) such that
 $$F_j(Z)=C_j e^{2\pi i(\rho_j,Z)}
 \prod_{\gamma\in\Gamma_{j,\mathrm{prod}}^+}(1-e^{2\pi i(\gamma,Z)})^{c_j(\gamma)},$$
 $$\operatorname{den}(\mathfrak g_j)=C'_jF_j(a_jZ),\qquad
@@ -4086,8 +4103,9 @@ The Clery--Gritsenko weights are
 \[
 (5,2,1,\tfrac12,3,2,\tfrac32,1),
 \]
-and no Clery--Gritsenko row has weight \(1/4\) or weight \(0\).  Also
-\(F_4=\Delta_{1/2}\), so \(F_4\) has half-integral weight.  A physical
+and no row in the eight Clery--Gritsenko diagonal-divisor catalogue has
+weight \(1/4\) or weight \(0\).  Also \(F_4=\Delta_{1/2}\), so \(F_4\)
+has half-integral weight.  A physical
 \(\Phi^{\mathrm{cmp}}_4\) identification requires a row map.  A boundary
 partition identity requires the row map, the reduced theory, and the
 duality signs.
@@ -4131,6 +4149,10 @@ Jacobi seed at every cusp, product-degree lattice, Weyl vector, real
 simple roots, reflection character, and, on the physical side, the
 CY/DT/chiral host and reduced partition identity.  This paper contains
 no such datum.
+A comparison symbol is a Clery--Gritsenko form only after a certificate
+fixes the exact \(F_i^{\mathrm{CG}}\), weight, group or cover,
+character or multiplier order, divisor multiplicity, cusp Jacobi inputs,
+product normalization, and any denominator datum used.
 
 Consequently the direct identifications
 $$
@@ -4138,8 +4160,8 @@ $$
 \Phi^{\mathrm{cmp}}_7=F_7,\qquad
 \Phi^{\mathrm{cmp}}_8=F_8
 $$
-are false already by weight.  The Clery--Gritsenko catalogue contains
-no weight-\(1/4\) row and no weight-\(0\) row.  The CHL square
+are false already by weight.  The eight-row Clery--Gritsenko catalogue
+contains no weight-\(1/4\) row and no weight-\(0\) row.  The CHL square
 identities, such as \(\nabla_3^2=\Phi_6\) and
 \(\nabla_2^2=\Phi_4\), are scalar square identities; they are not row
 maps and do not by themselves carry the denominator sign, parity, or
@@ -4210,8 +4232,11 @@ If the comparison symbol \(\Phi^{\mathrm{cmp}}_7\) is supplied with its
 displayed comparison weight \(1/4\), then it must be a genuine
 quarter-integral-weight form on a multiplier cover.  If it is presented
 as a fourth root of a parent form with exact order-four character, an
-order-eight cover is not forced by character theory; without an
-additional relation the minimal root character has order \(16\).
+order-eight cover is not forced by character theory.  If a character
+root \(\psi\) with \(\psi^4=\chi\) exists after pullback and \(\chi\)
+has exact order \(4\), then the character part has order divisible by
+\(16\), unless an explicit automorphy-cocycle relation reduces it.  No
+such relation is constructed here.
 
 If a comparison form \(\Phi^{\mathrm{cmp}}_8\) has weight \(0\), the
 canonical branch of Definition~\ref{def:canonical-fractional-branch}
@@ -4220,14 +4245,16 @@ finite-order modular multiplier and no chiral square-root theorem.
 \end{proposition}
 
 \begin{proof}
-The first two assertions are the standard metaplectic obstruction for
-half-integral and quarter-integral weights: a fractional power of an
-automorphic product is modular only after the automorphy factor,
-character, and divisor multiplicities lift to a genuine character on a
-cover \cite{Weil1964}, \cite{Shimura1973}.  If
-\(\chi\) has exact order \(4\) and \(\psi^4=\chi\), then \(\psi\) cannot
-have order \(8\), since \(\psi^4\) would have order at most \(2\);
-order \(16\) is the first possible order.  The weight-zero case has no
+The first two assertions are necessary metaplectic-cover conditions:
+a fractional power of an automorphic product is modular only after the
+automorphy factor, character, and divisor multiplicities lift to a
+genuine character on a cover; Weil and Shimura give the classical
+background for such metaplectic phenomena \cite{Weil1964},
+\cite{Shimura1973}.  The stated character-order obstruction is
+elementary: if \(\chi\) has exact order \(4\) and \(\psi^4=\chi\), then
+\(\psi\) cannot have order \(8\), since \(\psi^4\) would have order at
+most \(2\); absent a further cocycle relation, order \(16\) is the first
+possible character order.  The weight-zero case has no
 automorphy weight to absorb the logarithmic branch; a formal root can be
 chosen in a chamber, but this is not a modular or chiral construction.
 \end{proof}
@@ -4237,7 +4264,7 @@ chosen in a chamber, but this is not a modular or chiral construction.
 For a fractional comparison row, construct a physical-host certificate
 consisting of:
 $$
-X_j,\quad
+\mathscr R_j,\quad X_j,\quad
 \Gamma_j^{\mathrm{BPS}},\quad
 \widetilde\Gamma_j,\quad
 \theta_j,\quad
@@ -4245,8 +4272,11 @@ Z_j^{\mathrm{red}},\quad
 \mathcal H_{j,\kappa}^{1p},\quad
 \mathsf C_j.
 $$
-Here \(X_j\) is a compact Calabi--Yau, orbifold Calabi--Yau, or CHL
-background with an oriented reduced obstruction theory;
+Here \(\mathscr R_j\) is the modular-root certificate: it fixes the
+parent form, root exponent, exact group or cover, multiplier character
+and its order, automorphy cocycle, divisor multiplicities, branch, and
+source theorem.  The symbol \(X_j\) is a compact Calabi--Yau, orbifold
+Calabi--Yau, or CHL background with an oriented reduced obstruction theory;
 \(\widetilde\Gamma_j\) is the modular group or multiplier cover on
 which the fractional root is genuine; \(\theta_j\) fixes the
 orientation, Behrend sign, chamber, and possible gerbe holonomy; and
@@ -4263,6 +4293,11 @@ Borcea--Voisin and higher-dimensional curve-counting constructions
 \cite{BORCEA}, \cite{VOISIN}, \cite{OhThomasI}, \cite{OhThomasII},
 \cite{BOPY} are possible sources for such a certificate.  This paper
 does not assert that they supply it.
+Until \(\mathscr R_j\) and the physical host are constructed, the
+symbols \(\Phi^{\mathrm{cmp}}_5,\Phi^{\mathrm{cmp}}_7,\Phi^{\mathrm{cmp}}_8\)
+are formal comparison symbols only: no Clery--Gritsenko row, finite-order
+multiplier, denominator identity, CY/DT partition theorem, or chiral
+power follows.
 \end{openproblem}
 
 The following comparison table is restricted to the $N=1$ Igusa
