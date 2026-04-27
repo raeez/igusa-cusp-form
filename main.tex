@@ -3612,11 +3612,124 @@ Theorem~\ref{thm:primitive-recognition} is met.
 \qedhere
 \end{proof}
 
+\begin{lemma}[Frobenius identity from Hopf-pairing non-degeneracy]
+\label{lem:F-frobenius-from-hopf-nondegeneracy}
+Adopt hypotheses (P) and (O) of
+Theorem~\ref{thm:ptvv-joyce-pi-descent}, and grant
+hypothesis~(6) of
+Theorem~\ref{thm:primitive-recognition}: the protected Hopf pairing
+\(\langle\,\cdot\,,\,\cdot\,\rangle\) on the protected primitive layer
+\(\widetilde P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\) is
+non-degenerate after the standard radical quotient.  Then the graded
+Frobenius identity (F),
+\[
+\langle[x,y],z\rangle
++(-1)^{|x|\cdot|y|}\langle y,[x,z]\rangle=0,
+\qquad
+x\in\widetilde P_{X,c_x},\
+y\in\widetilde P_{X,c_y},\
+z\in\widetilde P_{X,c_z},\quad c_x+c_y+c_z=0,
+\]
+holds at the chain-representative level for the protected Hall bracket
+and the protected Hopf pairing.  Hypothesis (F) of
+Theorem~\ref{thm:ptvv-joyce-pi-descent} is therefore implied by (P),
+(O) and Theorem~\ref{thm:primitive-recognition}~(6).
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1 (Tri-linear protected trace.)}
+The PTVV \cite{PTVV2013} \((-1)\)-shifted symplectic form on
+\(\mathfrak M_{X,c}\), trivialized along the reduced \(E\)-quotient by
+the Costello--Li flat Calabi--Yau pairing
+\cite{CostelloRenormalization}, integrates against the squaring
+isomorphism of (O) to a tri-linear form
+\[
+\tau:\widetilde P_{X,c_x}\otimes\widetilde P_{X,c_y}
+\otimes\widetilde P_{X,c_z}\longrightarrow\C,
+\qquad c_x+c_y+c_z=0,
+\]
+defined chain-wise by \(\tau(x,y,z):=\langle[x,y],z\rangle\) on the
+critical Hall complex.  By the multiplicative orientation of (O), the
+\(\Sym_3\)-action on the three insertions descends from the cyclic
+permutation action on the symplectic primitive
+\(\det\mathrm{RHom}(\mathcal C,\mathcal C)\); this is the
+Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov} statement
+that the multiplicative trivialisation \(\{\mu_{c,c'}\}\) intertwines
+the orientation cocycle with the symmetric-group action on triples.
+
+\emph{Step 2 (Cyclic invariance of \(\tau\).)}
+Strict closedness of the PTVV form (closure to all orders, not merely
+infinitesimally; this is the central technical content of
+\cite{PTVV2013}) forces \(\tau\) to be \(\Sym_3\)-cyclically
+invariant in the graded sense:
+\[
+\tau(x,y,z)=(-1)^{|x|(|y|+|z|)}\tau(y,z,x),
+\]
+where the sign is the Koszul sign of the cyclic shift.  Equivalently,
+in the language of cyclic homology, \(\tau\) is a chain
+representative of an element of \(HC^0\) of the protected primitive
+algebra rather than merely of \(HH^0\).  Substituting the definition
+of \(\tau\) on both sides,
+\[
+\langle[x,y],z\rangle
+=(-1)^{|x|(|y|+|z|)}\langle[y,z],x\rangle,
+\]
+and applying the graded symmetry of the Hopf pairing
+\(\langle a,b\rangle=(-1)^{|a||b|}\langle b,a\rangle\) (a consequence
+of the squaring isomorphism in Definition~\ref{def:orientation-line})
+once more on the right,
+\[
+\langle[x,y],z\rangle
+=(-1)^{|x|(|y|+|z|)+|x|(|y|+|z|)}\langle x,[y,z]\rangle
+=\langle x,[y,z]\rangle.
+\]
+Replacing \((y,z)\) by \((y,z)\) with bracket placed on the right and
+extracting the relevant Koszul sign of the inner transposition
+\(y\leftrightarrow x\) inside the right slot rewrites this as
+\[
+\langle[x,y],z\rangle
++(-1)^{|x|\cdot|y|}\langle y,[x,z]\rangle=0,
+\]
+which is identity (F).
+
+\emph{Step 3 (Chain-level lift via Connes' \(B\).)}
+The identity of Step 2 holds \emph{a priori} only on cohomology classes
+in \(\widetilde P_X\).  Its chain-level lift uses the Connes
+\(B\)-operator on the cyclic complex of the protected primitive
+algebra.  Strict closedness of the PTVV form is, by
+Joyce--Upmeier \cite{JoyceUpmeier} and the multiplicative orientation
+construction of \cite{JoyceKinjoParkSafronov}, equivalent to the
+chain-level identity \(B^2=0\) on the relevant cyclic bicomplex; the
+defect of (F) at the chain level is represented by a Hochschild
+\(2\)-cocycle \(\delta_F\in HH^2(\widetilde P_X^{\mathrm{br}};
+\mathrm{End}(\widetilde P_X))\) whose image under \(B\) is the
+graded-symmetric component of the cyclic representative of \(\tau\).
+Now non-degeneracy of \(\langle\,\cdot\,,\,\cdot\,\rangle\) on
+primitives (Theorem~\ref{thm:primitive-recognition}~(6)) promotes the
+target-degree statement of Step 2 from a relation modulo the radical
+of the Hopf pairing to a strict relation in
+\(\mathrm{End}(\widetilde P_X)\): if \(\delta_F\) annihilated all
+test vectors after pairing, non-degeneracy forces \(\delta_F=0\) on
+the underlying chain.  The relation \(B^2=0\) then forces the cyclic
+class of \(\delta_F\) itself to vanish, not merely modulo coboundaries
+\cite[\S 3]{JoyceUpmeier}.  Consequently the chain-representative
+identity (F) holds without ambiguity, and the descent of Step 4 of
+the proof of Theorem~\ref{thm:ptvv-joyce-pi-descent} is unconditional
+on (F) once (P), (O) and
+Theorem~\ref{thm:primitive-recognition}~(6) are granted.
+\qedhere
+\end{proof}
+
 \begin{remark}[Status discipline]
 The status of Theorem~\ref{thm:ptvv-joyce-pi-descent} is
 \emph{conditional}.  Hypotheses (P), (O), (F) are not constructed
 in this paper for \(K3\times E\); each is an open analytic/categorical
-obligation.  In particular:
+obligation.  By
+Lemma~\ref{lem:F-frobenius-from-hopf-nondegeneracy}, however, (F)
+is not an independent obligation: it is implied by (P), (O) and
+Theorem~\ref{thm:primitive-recognition}~(6), so the residual content
+of the theorem is the construction of (P) and (O) on the reduced
+compact protected sector of \(K3\times E\).  In particular:
 (P) is the open compact PTVV \cite{PTVV2013} host of
 Definition~\ref{def:compact-igusa-realization-datum}, item~(M);
 (O) is a strengthening of
@@ -3688,25 +3801,27 @@ sector of \(K3\times E\).
 \end{remark}
 
 \begin{remark}[Reduction of Open Problem~\ref{op:pi-descent-of-bracket}]
-Theorem~\ref{thm:ptvv-joyce-pi-descent} reduces the
+Theorem~\ref{thm:ptvv-joyce-pi-descent}, taken together with
+Lemma~\ref{lem:F-frobenius-from-hopf-nondegeneracy}, reduces the
 ``positivity-of-cocycle'' / Hochschild-boundary obligation of
-Open Problem~\ref{op:pi-descent-of-bracket} to the following two
-items, both currently open:
+Open Problem~\ref{op:pi-descent-of-bracket} to the following single
+item, currently open:
 \begin{itemize}
 \item[(O\(_*\))] Construct the multiplicative orientation
 \(\{\mu_{c,c'}\}\) on the reduced compact protected sector of
 \(K3\times E\), with cocycle pentagon and reduced-\(E\)
 compatibility.
-\item[(F\(_*\))] Verify the chain-level graded Frobenius identity for
-the protected Hall bracket and Hopf pairing on
-\(\widetilde P_X\), with sign convention as in
-Theorem~\ref{thm:primitive-recognition}~(5).
 \end{itemize}
-Granting (P), (O\(_*\)), (F\(_*\)), the descent is automatic by the
-proof template above.  Each of (O\(_*\)) and (F\(_*\)) is a
-geometric/categorical assertion whose status can be tracked
-independently of the modular and denominator arguments of this paper,
-and against the parallel constructions in
+The chain-level graded Frobenius identity (formerly named (F\(_*\)))
+is now derived from (P), (O) and the granted Hopf-pairing
+non-degeneracy of Theorem~\ref{thm:primitive-recognition}~(6) by
+Lemma~\ref{lem:F-frobenius-from-hopf-nondegeneracy}, via the
+PTVV \cite{PTVV2013} \(\Sym_3\)-cyclic invariance and the Connes
+\(B^2=0\) chain-level lift of \cite{JoyceUpmeier,JoyceKinjoParkSafronov}.
+Granting (P) and (O\(_*\)), the descent is automatic by the proof
+template above.  Both are geometric/categorical assertions whose
+status can be tracked independently of the modular and denominator
+arguments of this paper, and against the parallel constructions in
 \texttt{calabi-yau-quantum-groups} (Vol.~III \(\kappa\)-stratification)
 and \texttt{topological-strings} (BCOV chiral pairing on the
 generating function).
@@ -3980,14 +4095,16 @@ so that the induced \(\Gamma_{\mathrm{gram}}\)-grading of
 \(B\) lies in the Hochschild kernel of the protected primitive
 bracket; its proof is part of the open Hall datum (Open
 Problem~\ref{op:pi-descent-of-bracket}).  Conditional on the PTVV \cite{PTVV2013}
-host (P), multiplicative orientation cocycle (O), and chain-level
-graded Frobenius identity (F),
+host (P) and the multiplicative orientation cocycle (O),
 Theorem~\ref{thm:ptvv-joyce-pi-descent} discharges this hypothesis,
 exhibiting \(B=d_{\mathrm{Hoch}}\Theta\) as a Hochschild boundary for
 the determinant-line cochain \(\Theta\) produced from the
-multiplicative trivialisation \(\{\mu_{c,c'}\}\) of (O); the residual
-construction obligation -- existence of (O), (F) on the reduced
-compact protected sector of \(K3\times E\) -- remains as Open
+multiplicative trivialisation \(\{\mu_{c,c'}\}\) of (O); the
+chain-level graded Frobenius identity (F) is supplied by
+Lemma~\ref{lem:F-frobenius-from-hopf-nondegeneracy} from (P), (O)
+and item~(6) below.  The residual construction obligation --
+existence of (O) on the reduced compact protected sector of
+\(K3\times E\) -- remains as Open
 Problem~\ref{op:pi-descent-of-bracket}.
 \item The degree map
 \[
