@@ -420,6 +420,81 @@ virtual protected one-particle index.  The scalar square forgets the
 automorphic reflection character; a compact Hall orientation realizing
 that character is part of the open datum.
 
+\subsection*{Schema of the local protected observable algebra}
+\label{sec:local-protected-observable-algebra}
+
+The candidate local source object is the following proposal-only schema,
+marked here as an external assumption.  All ingredients are taken from
+existing literature; no part of the construction is the deliverable of
+this paper.
+
+\begin{definition}[Local protected observable algebra; proposal-only schema]
+\label{def:local-protected-observable-algebra}
+For an open \(U\subset X=K3\times E\), let
+\(\mathfrak M_c(U)\) denote the derived moduli stack of compactly
+supported B-branes on \(U\) of physical Mukai charge
+\(c\in\Gamma_X^{\mathrm{phys}}=\La_S\oplus\La_S\), in the sense of
+Pantev--Toen--Vaquie--Vezzosi (2013), so that
+\(\mathfrak M_c(U)\) carries a \((-1)\)-shifted symplectic structure;
+let \(\Phi_c\) denote the perverse sheaf of vanishing cycles of any
+local d-critical chart, in the sense of
+Brav--Bussi--Dupont--Joyce--Szendroi (2015) (BPS sheaf, alias
+DT sheaf), well defined globally as a pre-D-critical structure on
+\(\mathfrak M_c(U)\); let \(o_c\) denote the orientation line, a
+square root of the determinant line of the cotangent complex of
+\(\mathfrak M_c(U)\), supplied as part of the Hall datum.  The
+\emph{local protected observable algebra of \(X\) on \(U\)} is the
+proposal
+\[
+\mathcal A_X(U)
+:=\bigoplus_{c\in\Gamma_X^{\mathrm{phys}}}
+H_*^{\mathrm{BM}}\!\bigl(\mathfrak M_c(U),\,
+\Phi_c\otimes o_c\bigr),
+\]
+graded by physical charge.  For disjoint
+\(U_1,\ldots,U_k\subset X\), the proposed factorization map is
+\[
+\mathcal A_X(U_1)\otimes\cdots\otimes\mathcal A_X(U_k)
+\longrightarrow
+\mathcal A_X(U_1\sqcup\cdots\sqcup U_k),
+\]
+defined chain-level by Massey--Saito Thom--Sebastiani for vanishing
+cycles
+\[
+\Phi_{F_1\oplus\cdots\oplus F_k}\simeq
+\Phi_{F_1}\boxtimes\cdots\boxtimes\Phi_{F_k}
+\]
+on disjoint d-critical charts, together with the Ext-vanishing
+\(\operatorname{Ext}^*(\mathcal F,\mathcal G)=0\) for branes
+\(\mathcal F,\mathcal G\) with disjoint supports.  This is the
+proposed compact \(E_3\) source \(\mathcal A^{E_3}_X\) of the present
+paper, in the sense that its disjoint-supports factorization on opens
+of \(X=K3\times E\) is the holomorphic \(E_3\)-factorization datum.
+\end{definition}
+
+\begin{remark}[Status of Definition~\ref{def:local-protected-observable-algebra}]
+The components are external assumptions:
+PTVV \((-1)\)-shifted symplectic structure on derived moduli of
+B-branes; BBDJS vanishing-cycle perverse sheaf and its
+Thom--Sebastiani isomorphism (extending Massey 2001 and Saito 1990 to
+the d-critical setting); orientation lines as in the
+Joyce--Upmeier orientation theory or in
+Kontsevich--Soibelman \cite{KSCoHA}.  The factorization map relies on
+disjoint-supports Ext-vanishing for compactly supported branes (a
+classical statement; absent for non-compact supports, where one
+recovers chiral algebra structure rather than commutative
+factorization).  Compactness on \(K3\times E\) is itself an open
+problem because \(E\) is compact but the relevant moduli of branes are
+typically non-quasicompact in \(\La_S\)-charge; the sectorial
+truncation of
+Proposition~\ref{prop:sectorial-hall-truncation} is the proposed
+mechanism for cutting it down.  None of this construction is supplied
+in the present paper; the schema is named here so that the
+\((E_3)\)-slot of
+Definition~\ref{def:compact-igusa-realization-datum} has an explicit
+candidate to point at.
+\end{remark}
+
 \section{The one-particle index and its determinant}
 
 For the determinant calculation set
@@ -1196,6 +1271,72 @@ Open Problem~\ref{op:orientation-monodromy-character}.
 \section{The duality principle}
 \label{sec:duality-principle}
 
+\begin{definition}[Dyonic Mukai lattice and quadratic Gram projection]
+\label{def:dyonic-mukai-lattice}
+Let \(S\) be a complex K3 surface and put
+\[
+\La_S:=H^*(S,\Z)
+=H^0(S,\Z)\oplus H^2(S,\Z)\oplus H^4(S,\Z),
+\]
+the Mukai lattice in the sense of
+Mukai (1987) -- even, unimodular, signature \((4,20)\), rank \(24\),
+equipped with the Mukai pairing
+\(\langle (r,c,s),(r',c',s')\rangle_{\mathrm{Muk}}=c\cdot c'-rs'-r's\).
+The physical microscopic charge lattice for the type-II compactification
+on \(X=S\times E\) is the additive abelian group
+\[
+\Gamma_X^{\mathrm{phys}}:=\La_S\oplus\La_S,\qquad
+c=(Q,P)\in\Gamma_X^{\mathrm{phys}},
+\]
+graded electric \(\oplus\) magnetic.  The Gram-index map is the
+quadratic projection
+\[
+\Pi:\Gamma_X^{\mathrm{phys}}\longrightarrow\Gamma_{\mathrm{ind}}=\Z^3,
+\qquad
+(Q,P)\longmapsto\bigl(\tfrac{(Q,Q)}2,(Q,P),\tfrac{(P,P)}2\bigr).
+\]
+The bilinear obstruction to additivity of \(\Pi\) is the symmetric
+cocycle
+\[
+B:\Gamma_X^{\mathrm{phys}}\times\Gamma_X^{\mathrm{phys}}
+\longrightarrow\Gamma_{\mathrm{ind}},\qquad
+B(c,c')=\bigl((Q,Q'),(Q,P')+(Q',P),(P,P')\bigr),
+\]
+satisfying
+\(\Pi(c+c')=\Pi(c)+\Pi(c')+B(c,c')\) and
+\(B(c,c)=2\Pi(c)\).  The central extension
+\[
+\Gamma_X:=\Gamma_X^{\mathrm{phys}}\oplus_B\Gamma_{\mathrm{ind}},
+\qquad
+(c,T)\star(c',T'):=\bigl(c+c',\,T+T'+B(c,c')\bigr),
+\]
+is the additive abelian group on which a Hall product graded by physical
+charge \emph{and} Gram invariants is well defined.
+\end{definition}
+
+\begin{remark}[Status]
+The lattice \(\La_S\) and the Mukai pairing are classical
+(Mukai 1987, Huybrechts \emph{Lectures on K3 Surfaces}).  The
+quadratic-projection identity
+\(\Pi(c+c')=\Pi(c)+\Pi(c')+B(c,c')\) is an arithmetic identity in
+\(\Z^3\); proof: expand \((Q+Q',Q+Q')/2\),
+\((Q+Q',P+P')\), \((P+P',P+P')/2\).
+The central extension \(\Gamma_X\) is the standard Heisenberg-type
+correction needed because \(\Pi\) is quadratic, not linear; without it
+the bracket \([\mathcal A_{\mathrm{den},\Pi(c)},
+\mathcal A_{\mathrm{den},\Pi(c')}]
+\subset\mathcal A_{\mathrm{den},\Pi(c+c')}\) fails by the cocycle
+correction \(B(c,c')\).  Compatibility of \(\Pi\) with the chamber
+ordering of \(\Gamma_{\mathrm{eff}}\) is automatic: the BPS positivity
+conditions on \((Q,P)\) (electric/magnetic primitivity, chamber-positive
+central charge) restrict to the Borcherds-positive cone in
+\(\Gamma_{\mathrm{ind}}\) on the active locus, but the converse fails
+because \(\Pi\) is many-to-one.  In particular, dyonic charges with
+distinct \((Q,P)\) but identical \((n,l,m)\) sit in the same Gram
+sector; the Hall bracket distinguishes them through the physical grading
+on \(\Gamma_X^{\mathrm{phys}}\) before passing to Gram invariants.
+\end{remark}
+
 The preceding determinant was constructed in one cusp chamber.  Duality
 does not preserve the displayed chamber inequalities in the same
 coordinates; it transports the chamber, the Fourier expansion, and the
@@ -1238,7 +1379,20 @@ $$
 Here \(\Gamma_{\mathrm{eff}}\) is the cusp-positive semigroup and
 \(\Gamma_{\mathrm{act}}\) is the non-zero Jacobi-support locus.  This is
 notation for Gram invariants and Fourier indices.  It is not the
-construction of a microscopic charge lattice.
+microscopic charge lattice; the latter is
+\(\Gamma_X^{\mathrm{phys}}=\La_S\oplus\La_S\) of
+Definition~\ref{def:dyonic-mukai-lattice}, and the Gram-index lattice is
+the image of the quadratic projection
+\(\Pi:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{ind}}\).  A Hall
+algebra cannot be graded by \(\Gamma_{\mathrm{ind}}\) directly because
+\(\Pi\) is quadratic; the correct grading lattice is the central
+extension
+\(\Gamma_X=\Gamma_X^{\mathrm{phys}}\oplus_B\Gamma_{\mathrm{ind}}\)
+(Definition~\ref{def:dyonic-mukai-lattice}).  The grading on
+\(\mathcal A_{\mathrm{den}}\) by \(\Gamma_{\mathrm{ind}}\) is then the
+\(\Pi\)-image of a physical \(\Gamma_X^{\mathrm{phys}}\)-grading on a
+hypothetical Hall source, after quotient by the cocycle \(B\) on bracket
+targets.  Both refinements are part of the open Hall datum.
 \end{definition}
 
 \begin{proposition}[Gram matrix convention for protected charges]
@@ -1976,8 +2130,25 @@ $$
 [\mathfrak g_{\Delta_5,\alpha},\mathfrak g_{\Delta_5,\beta}]
 \subset\mathfrak g_{\Delta_5,\alpha+\beta}.
 $$
-The degree map $\alpha(\gamma)$ is additive, hence the bracket conserves
-the Gram-degree grading.  The denominator identity reads
+Here \(\alpha\in\La^{2,1}_{II}\otimes\C\), and the addition
+\(\alpha+\beta\) is linear inside the Cartan; this is the linear root
+grading of a Borcherds--Kac superalgebra.  The Gram-degree map
+\[
+\gamma=(n,l,m)\longmapsto\alpha(\gamma)=2nf_2-lf_3+2mf_{-2}
+\in\La^{2,1}_{II}\otimes\C
+\]
+is the inverse correspondence of root indexing: it is additive in
+\((n,l,m)\) and recovers the linear addition in
+\(\La^{2,1}_{II}\otimes\C\).  This linear additivity is the relevant
+statement for the denominator algebra of \(\Delta_5\), where the grading
+lattice is \(\La^{2,1}_{II}\) and \(\Gamma_{\mathrm{ind}}=\Z^3\) is the
+Gram parametrization of that grading.  In a hypothetical Hall source,
+the underlying lattice is the physical
+\(\Gamma_X^{\mathrm{phys}}=\La_S\oplus\La_S\), the Hall bracket is
+graded by \(\Gamma_X^{\mathrm{phys}}\) (additive), and the
+\(\Gamma_{\mathrm{ind}}\)-grading of the denominator algebra is the
+\(\Pi\)-image, well defined modulo the cocycle \(B\) of
+Definition~\ref{def:dyonic-mukai-lattice}.  The denominator identity reads
 $$
 \frac1{64}\Delta_5(2Z)
 =e^{-2\pi i(\rho,z)}
@@ -2044,9 +2215,21 @@ holomorphic \(E_3\)-factorization algebra on the Calabi--Yau threefold
 $$
 \mathcal A^{E_3}_X,\qquad X=K3\times E.
 $$
-This symbol, and the placeholder \(\Phi^{\mathrm{FA}}_3(X)\), denote
-the source object required in the Calabi--Yau-to-chiral construction;
-they are not a constructed functor evaluated on \(X\).
+By a holomorphic \(E_3\)-factorization algebra here we mean: a
+factorization algebra on \(X\) in the sense of Costello--Gwilliam
+(\cite{CostelloGwilliam1}, \cite{CostelloGwilliam2} esp.~vol.~II
+\S10--11), locally constant in real directions and holomorphic in three
+complex directions, whose factorization structure maps are governed by
+holomorphic polydiscs in \(\C^3\); equivalently a factorization algebra
+in the holomorphic \(E_3\)-operadic sense, with the framed
+\(E_3\)-structure encoding the \(SO(6)\)-rotational symmetry of
+\(\C^3\).  This symbol, and the placeholder \(\Phi^{\mathrm{FA}}_3(X)\),
+denote the Stage-1 object required in the Calabi--Yau-to-chiral
+construction; they are not a constructed functor evaluated on \(X\).
+The candidate concrete realization, supplied as proposal-only schema, is
+the local protected observable algebra
+\(\mathcal A_X(U)\) of
+Definition~\ref{def:local-protected-observable-algebra}.
 A compact holomorphic-Chern--Simons/BV model, if constructed with the
 required descent, quantum master equation, and anomaly cancellation,
 would be a candidate source for this datum in the completed charge
@@ -2055,19 +2238,45 @@ a chain-level \(S^3\)-framing witness, compact-support control, and
 finite-stage HN quotients on which all operations are defined before
 passing to the completed inverse system.
 
-The curve-level BPS algebra would be obtained only after a supplied
-chain-level specialization along the \(K3\)-direction:
-$$
-\mathcal F_X
-\simeq
-\mathrm{Sp}^{\mathrm{ch}}_{K3,E}
-\bigl(\mathcal A^{E_3}_X\bigr)
-\in \mathrm{Fact}(\operatorname{Ran}(E)).
-$$
-The intended comparison with
-\(\int_{K3}\mathcal A^{E_3}_X\) and
-\((p_E)_*\mathcal A^{E_3}_X\) is part of the required specialization
-datum; constructing it chain-level is part of the quantum problem.
+The curve-level BPS algebra would be obtained only after a supplied Stage-2
+specialization along the \(K3\)-direction.  We split the triple
+identification into three named pieces, each carrying a separately
+labelled comparison map:
+\[
+\mathcal A^{E_3}_X
+\xrightarrow{\ \mathrm{Sp}^{\mathrm{ch}}_{K3,E}\ }
+\mathcal F_X^{(0)}
+\xrightarrow{\ \kappa_E\ }
+\mathcal F_X^{(1)}
+\xrightarrow{\ \pi_*^{\mathrm{ch}}\ }
+(p_E)_*\mathcal A^{E_3}_X.
+\]
+Here:
+\(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\) is the
+Beilinson--Drinfeld chiral pushforward along the \(K3\)-fibration
+\(p_E:K3\times E\to E\) with K3-integration in the Costello--Gwilliam
+sense -- pointwise on \(E\), the fibre \(K3\)-direction of the
+factorization algebra is integrated to a chiral shadow on \(E\); its
+output \(\mathcal F_X^{(0)}\) is a chiral algebra on \(E\) (equivalently
+a factorization algebra on \(\operatorname{Ran}(E)\)).
+\(\kappa_E\) is the
+chiral-Koszul comparison \(\mathcal F_X^{(0)}\to\mathcal F_X^{(1)}\),
+where \(\mathcal F_X^{(1)}\) is the candidate identification of the
+chiral pushforward with the ordinary derived pushforward
+\((p_E)_*\mathcal A^{E_3}_X\) regarded as a sheaf-of-cochain factorization
+algebra on \(\operatorname{Ran}(E)\); identification of
+chiral and ordinary pushforward is the open chiral-Koszul comparison.
+\(\pi_*^{\mathrm{ch}}\) is the closing identification of
+\(\mathcal F_X^{(1)}\) with \((p_E)_*\mathcal A^{E_3}_X\) as
+factorization data, comparing the Costello--Gwilliam push along a
+proper holomorphic submersion with the topological pushforward; this
+comparison reduces to the standard fact in the projection-finite
+sectors and is open in the wrapped sectors.  The convenient shorthand
+\(\mathcal F_X\) refers to any one of \(\mathcal F_X^{(0)}\),
+\(\mathcal F_X^{(1)}\), or \((p_E)_*\mathcal A^{E_3}_X\) once
+\(\kappa_E\) and \(\pi_*^{\mathrm{ch}}\) have been supplied.  Without
+the chiral-Koszul comparison and the proper-pushforward identification,
+the three names are distinct objects.
 Restrictions to chambers, pushforwards to \(E\), and chiral Koszul
 dualities are then operations on \(\mathcal A^{E_3}_X\) and on its
 \(E_1\)-chiral shadow \(\mathcal F_X\), not replacements for the
@@ -2099,8 +2308,15 @@ following finite-chain data:
 \begin{enumerate}
 \item descent for local observables on \(X\) and a quantum master
 equation after compact charge completion;
-\item anomaly cancellation, a fixed \(E_3\)-formality point, a
-chain-level \(S^3\)-framing witness, and compact-support control;
+\item anomaly cancellation, a fixed \(E_3\)-formality point (in the
+sense of Tamarkin formality for \(E_n\)-operads;
+Tamarkin (1998), Kontsevich (1999); the framed-\(E_3\) refinement is
+Severa--Willwacher (2011)), a chain-level \(S^3\)-framing witness (a
+chain-level lift of the \(E_3\)-framed-vs.-unframed comparison
+witnessed by the \(SO(3)\)-action on \(S^2=\partial D^3\), giving the
+\(SO(3)\)-rotational symmetry data; equivalently a chain-level
+\(SO(3)\)-equivariance of the local observable algebra), and
+compact-support control;
 \item a finite-first sectorial completion compatible with
 Harder--Narasimhan quotients, with all operations defined on finite
 stages before completion;
@@ -2113,7 +2329,16 @@ recognition certificate.
 \end{enumerate}
 Existing BV, CoHA, and chiral-algebra formalisms give the language for
 these requirements.  They do not, by themselves, construct this compact
-source for \(K3\times E\).
+source for \(K3\times E\).  The named external open data are: the
+\(E_3\)-formality point (Tamarkin/Kontsevich formality at a chosen
+associator, of which the Drinfeld--Kontsevich associator is the
+canonical choice; rationality of formality is open over \(\Q\) but
+known over \(\R\)), and the chain-level \(S^3\)-framing witness for the
+holomorphic \(E_3\)-structure (existence at the level of homotopy types
+follows from framed-\(E_n\) formality; chain-level constructibility for
+the candidate concrete realization
+\(\mathcal A_X(U)\) of
+Definition~\ref{def:local-protected-observable-algebra} is open).
 \end{openproblem}
 
 \begin{remark}[Where the quantum comparison would live]
@@ -2160,16 +2385,26 @@ These are not procedures for reconstructing the holomorphic
 
 \begin{proposition}[Target-internal bar--cobar inversion]
 \label{prop:target-internal-bar-cobar-inversion}
-The formal target \(\mathsf{Den}_{\Delta_5,E}\) has its own
-bar--cobar inversion:
+In the conilpotent / augmented chiral setting where Francis--Gaitsgory
+chiral Koszul duality applies, the formal target
+\(\mathsf{Den}_{\Delta_5,E}\) has its own bar--cobar inversion:
 \[
 \Omega_E^{\mathrm{ch}}\bar B_E^{\mathrm{ch}}
 (\mathsf{Den}_{\Delta_5,E})
 \longrightarrow
 \mathsf{Den}_{\Delta_5,E}.
 \]
-This is an internal reconstruction of the already defined current
-envelope.  It is not the compact Koszul comparison
+The conilpotency hypothesis is satisfied here because
+\(\mathcal A_{\mathrm{den}}\) carries a charge filtration with finite
+dimensional graded pieces in each \(\Gamma_{\mathrm{ind}}\)-degree, and
+this filtration lifts to the chiral envelope
+\(\mathsf{Den}_{\Delta_5,E}\); the augmentation is the constant-current
+Cartan trace.  Cf.\ Kac \cite{KACVA} for the underlying vertex
+algebra structure, Beilinson--Drinfeld \cite{BD} \S3.7 for the chiral
+bar--cobar formalism, and Francis--Gaitsgory (2012) Chiral Koszul
+Duality, Theorem 6.2.2, for the inversion in the conilpotent setting.
+This inversion is an internal reconstruction of the already defined
+current envelope.  It is not the compact Koszul comparison
 \[
 \Omega_E^{\mathrm{ch}}C_X
 \stackrel{?}{\simeq}
@@ -2183,11 +2418,14 @@ source coalgebra and the comparison map, not the target-side inversion.
 
 \begin{proof}
 Beilinson--Drinfeld bar--cobar formalism is an adjunction on chiral
-algebras and conilpotent chiral coalgebras on the curve.  Applying it to
-the known target \(\mathsf{Den}_{\Delta_5,E}\) produces a tautological
-counit map back to that target.  No moduli stack of compact objects,
-collision coproduct, orientation system, or protected integration map
-enters this construction.  Those are precisely the extra data in
+algebras and conilpotent chiral coalgebras on the curve
+\cite[\S3.7]{BD}.  Applying it to the known target
+\(\mathsf{Den}_{\Delta_5,E}\) produces a tautological counit map back to
+that target; conilpotency comes from the charge filtration with finite
+graded pieces, in the form required by the Francis--Gaitsgory inversion
+theorem.  No moduli stack of compact objects, collision coproduct,
+orientation system, or protected integration map enters this
+construction.  Those are precisely the extra data in
 Definition~\ref{def:compact-igusa-realization-datum}.
 \end{proof}
 
@@ -2284,7 +2522,18 @@ No theorem in this paper supplies either repair.
 \begin{openproblem}[Hybrid wrapped factorization]
 \label{op:hybrid-wrapped-factorization}
 Construct the second repair path in the preceding remark.  The datum
-should consist of projection-finite local moduli
+should consist of: (i) a stratification of \(\operatorname{Ran}(E)\) by
+total elliptic degree \(b\ge0\), refining the stratification by finite
+support; (ii) a source category factorization-on-\(\operatorname{Ran}(E)\)
+which is constructible along this stratification, with
+projection-finite stratum carrying the Costello--Gwilliam local
+factorization theory and positive-\(b\) strata carrying wrapped legs;
+(iii) an explicitly named hybrid object \(\mathcal F_X^{\mathrm{hyb}}\)
+restricting on the \(b=0\) stratum to the local
+\(\operatorname{Ran}(E)\)-factorization algebra, and on the \(b>0\)
+strata to chiral modules over the projection-finite part with mixed
+extension correspondences carrying relative position in \(E\) before the
+reduced \(E\)-quotient; (iv) projection-finite local moduli
 \(\mathcal M^{\mathrm{loc}}\), wrapped elliptic-degree moduli
 \(\mathcal M^{\mathrm{wr}}\), and mixed extension correspondences
 \[
@@ -2292,13 +2541,38 @@ should consist of projection-finite local moduli
 \mathfrak E^{\mathrm{wr}},\qquad
 \mathfrak E^{\mathrm{hyb}}
 \]
-which remember relative position in \(E\) before the reduced
-\(E\)-quotient is taken.  The correspondences must be associative over
-two-step flags, carry Thom--Sebastiani-compatible orientations, admit
-protected integration after completion, and recover the \(s\)-direction
-of the Igusa product in the decategorified trace.  Ordinary disjoint-open
-factorization on \(\operatorname{Ran}(E)\) is only the
-projection-finite part of such a theory.
+remembering relative position in \(E\) before the reduced
+\(E\)-quotient.  The correspondences must be associative over two-step
+flags, carry Thom--Sebastiani-compatible orientations, admit protected
+integration after completion, and recover the \(s\)-direction of the
+Igusa product in the decategorified trace.  This object
+\(\mathcal F_X^{\mathrm{hyb}}\) is the candidate filling the
+(\(\mathrm{Sp}\)) slot of
+Definition~\ref{def:compact-igusa-realization-datum}.  Ordinary
+disjoint-open factorization on \(\operatorname{Ran}(E)\) is only the
+projection-finite (\(b=0\)) part of such a theory.
+\end{openproblem}
+
+\begin{openproblem}[\(\Pi\)-descent of the protected bracket]
+\label{op:pi-descent-of-bracket}
+Let \(\Gamma_X^{\mathrm{phys}}=\La_S\oplus\La_S\),
+\(\Pi:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{ind}}\),
+\(B:\Gamma_X^{\mathrm{phys}}\times\Gamma_X^{\mathrm{phys}}
+\to\Gamma_{\mathrm{ind}}\) be as in
+Definition~\ref{def:dyonic-mukai-lattice}.  Suppose a Hall lift
+\(\widetilde P_X\) of the protected primitive algebra is supplied with a
+\(\Gamma_X^{\mathrm{phys}}\)-graded bracket.  Prove that the cocycle
+\(B\) acts trivially on bracket targets in primitives, that is, that
+\([\widetilde P_{X,c},\widetilde P_{X,c'}]\) is concentrated in physical
+charge \(c+c'\) and that the
+\(\Gamma_{\mathrm{ind}}\)-degree of \([x,y]\) for
+\(x\in\widetilde P_{X,c}\), \(y\in\widetilde P_{X,c'}\) is
+\(\Pi(c)+\Pi(c')\), not the cocycle-corrected value
+\(\Pi(c+c')=\Pi(c)+\Pi(c')+B(c,c')\).  Equivalently, identify the
+generator on which \(B\) is exhibited as a Hochschild boundary in the
+Hall bracket category.  This is a positivity-of-cocycle statement on the
+critical-Hall side; it is required for hypothesis~(1b) of
+Theorem~\ref{thm:primitive-recognition}.
 \end{openproblem}
 
 \begin{remark}[Unitarity]
@@ -2424,22 +2698,28 @@ a fixed \(E_3\)-formality point, a chain-level \(S^3\)-framing witness,
 compact-support control, and continuity of the \(E_3\) operations across
 the finite HN inverse system.
 \item[\((\mathrm{Sp})\)] A supplied chain-level \(K3\)-to-\(E\) specialization
-\(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\), together with a specified
-admissible pushforward comparison along \(p_E:K3\times E\to E\), with
+\(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\) and named comparison maps
+\(\kappa_E\) (chiral-Koszul) and \(\pi_*^{\mathrm{ch}}\)
+(proper-pushforward identification), with the triple zigzag
 $$
-\mathcal F_X
-\simeq
-\mathrm{Sp}^{\mathrm{ch}}_{K3,E}(\mathcal A^{E_3}_X)
-\simeq
+\mathcal A^{E_3}_X
+\xrightarrow{\ \mathrm{Sp}^{\mathrm{ch}}_{K3,E}\ }
+\mathcal F_X^{(0)}
+\xrightarrow{\ \kappa_E\ }
+\mathcal F_X^{(1)}
+\xrightarrow{\ \pi_*^{\mathrm{ch}}\ }
 (p_E)_*\mathcal A^{E_3}_X
 $$
-a charge-completed compact observable factorization object on
-\(\operatorname{Ran}(E)\) in the projection-finite sectors, together
-with the global Fock/Hecke or hybrid wrapped-sector data carrying
-positive elliptic degree.  A global Fock/Hecke sector is acceptable here
-only if it acts through mixed local/wrapped Hall correspondences before
-the reduced \(E\)-quotient.  These equivalences and wrapped-sector data
-are part of the datum, not operations constructed from the determinant.
+of equivalences in the projection-finite sectors.  In the wrapped
+elliptic-degree sectors, the candidate filling is the hybrid object
+\(\mathcal F_X^{\mathrm{hyb}}\) of
+Open Problem~\ref{op:hybrid-wrapped-factorization}, namely a
+charge-completed compact observable factorization object on
+\(\operatorname{Ran}(E)\) constructible along the elliptic-degree
+stratification.  A global Fock/Hecke sector is acceptable here only if
+it acts through mixed local/wrapped Hall correspondences before the
+reduced \(E\)-quotient.  These equivalences and wrapped-sector data are
+part of the datum, not operations constructed from the determinant.
 \item[\((\mathrm H)\)] An oriented compact Hall factorization object \(\mathcal H_X\)
 graded by \(c\in\Gamma_X^{\mathrm{phys}}\), with finite-type sectorial
 moduli stacks and extension correspondences
@@ -2534,10 +2814,29 @@ $$
 after its completed Hopf-pairing radical quotient, with the following
 data.
 \begin{enumerate}
-\item A \(\Gamma_{\mathrm{gram}}\)-graded Lie superalgebra structure on
-\(P_X^\Pi\), finite dimensional in each homogeneous parity piece, and a
-Cartan identification
+\item[(1a)] A \(\Gamma_X^{\mathrm{phys}}\)-graded Lie superalgebra
+structure on a Hall lift \(\widetilde P_X\) with
+\(P_X^\Pi=\Pi_{X,*}\widetilde P_X\), where \(\Pi_{X,*}\) is the descent
+along \(\Pi_X:\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{gram}}\) of
+Definition~\ref{def:dyonic-mukai-lattice}, finite dimensional in each
+homogeneous parity piece, and a Cartan identification
 $$P^\Pi_{X,0}\simeq\La^{2,1}_{II}\otimes\C.$$
+\item[(1b)] \(\Pi_X\)-descent of the bracket: the cocycle
+\(B(c,c')\in\Gamma_{\mathrm{gram}}\) of
+Definition~\ref{def:dyonic-mukai-lattice} acts trivially on bracket
+targets in primitives, that is,
+\[
+[\widetilde P_{X,c},\widetilde P_{X,c'}]
+\subset\widetilde P_{X,c+c'}\cap
+\Pi_X^{-1}\bigl(\Pi_X(c)+\Pi_X(c')+B(c,c')\bigr)
+\xrightarrow{\ \Pi_{X,*}\ }
+P^\Pi_{X,\Pi_X(c)+\Pi_X(c')},
+\]
+so that the induced \(\Gamma_{\mathrm{gram}}\)-grading of
+\(P_X^\Pi\) is a genuine Lie-superalgebra grading.  Equivalently,
+\(B\) lies in the Hochschild kernel of the protected primitive
+bracket; its proof is part of the open Hall datum (Open
+Problem~\ref{op:pi-descent-of-bracket}).
 \item The degree map
 \[
 \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
