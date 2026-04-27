@@ -1,0 +1,522 @@
+\subsection{\texorpdfstring{Rows \(F_5\)--\(F_8\): CHL denominator hosts versus physical row maps}
+{Rows F5-F8: CHL denominator hosts versus physical row maps}}
+
+\subsubsection*{Claim attacked}
+
+The claim under attack is:
+\[
+\mathrm{Clery\mbox{--}Gritsenko\ product}
+\quad+\quad
+\mathrm{Govindarajan\ CHL/WKB\ denominator}
+\quad\Longrightarrow\quad
+\mathrm{compact\ physical\ host}.
+\]
+The implication is false at the present level of data.  The left hand
+side is theorem-level automorphic and denominator information.  The
+right hand side requires a charge lattice, a protected one-particle
+index, an orientation character, a reduced scalar integration theorem
+when a scalar square is claimed, and a primitive Hall/chiral comparison.
+None of those physical-row-map data is constructed in the audited
+sources for \(F_5,F_6,F_7,F_8\).
+
+\begin{definition}[Boundary-row status labels]
+Use the following labels for \(j=5,6,7,8\).
+\begin{description}
+\item[\(\mathrm{CG}\)] the Clery--Gritsenko diagonal-divisor product and
+divisor theorem.
+\item[\(\mathrm{CHL/WKB}\)] the Weyl--Kac--Borcherds denominator theorem
+for the corresponding Govindarajan twisted CHL row.
+\item[\(\mathrm{scalar\ square}\)] a dyon-counting identity
+\(F_j^2=\Phi\) for a scalar Siegel modular form.
+\item[\(\mathrm{physical\ host}\)] a compact Calabi--Yau, orbifold
+Calabi--Yau, CHL, Hall, or chiral construction with an oriented
+protected theory whose one-particle index and primitives are the same
+row.
+\end{description}
+A scalar square is not a denominator theorem.  A denominator theorem is
+not a compact physical host.
+\end{definition}
+
+\begin{theorem}[Pinned automorphic and denominator ledger]
+\label{thm:agent12-f5-f8-ledger}
+The source-compatible ledger for the four boundary rows is:
+\[
+\begin{array}{c|c|c|c|c|c}
+j&F_j&\Gamma_j,\nu_j&\mathrm{wt}&\mathrm{CHL/WKB\ denominator}
+&\mathrm{physical\ host}\\ \hline
+5&\nabla_3&
+\Gamma_0^{(2)}(2),\ \chi_2^{(2)}\times v_H
+&3&\mathcal G_1(2)&\mathrm{not\ constructed}\\
+6&\nabla_2&
+\Gamma_0^{(2)}(3),\ \chi_2^{(3)}\times v_H
+&2&\mathcal G_1(3)&\mathrm{not\ constructed}\\
+7&\nabla_{3/2}&
+\Gamma_0^{(2)}(4),\ \chi_4^{(4)}\times v_H
+&\frac32&\mathcal G_1(4)\ \mathrm{on\ the\ }\mu_4\mathrm{\ cover}
+&\mathrm{not\ constructed}\\
+8&Q_1&
+\Gamma_2(2),\ \chi_4^{(2)}\times v_H
+&1&\mathcal G_2(4)&\mathrm{not\ constructed}
+\end{array}
+\]
+The product-degree lattices are
+\[
+L^{\mathrm{prod}}_5=L^{\mathrm{prod}}_6=L^{\mathrm{prod}}_7=M_1
+=U(4)\oplus\langle2\rangle,\qquad
+L^{\mathrm{prod}}_8=M_2=U(8)\oplus\langle2\rangle,
+\]
+with
+\[
+e^{\alpha_1(n,l,m)}=q^nr^ls^m,\qquad
+e^{\alpha_2(n,l,m)}=q^nr^ls^{2m}.
+\]
+The product prefactors are
+\[
+\rho_5=\rho_6=\rho_7=\alpha_1(\tfrac12,\tfrac12,\tfrac12),
+\qquad
+\rho_8=\alpha_2(\tfrac14,\tfrac12,\tfrac14).
+\]
+The cusp-labelled degree maps are
+\[
+\alpha_5(n,l,m;\infty)=\alpha_1(n,l,m),\quad
+\alpha_5(n,l,m;S)=\alpha_1(2n,2l,2m),
+\]
+\[
+\alpha_6(n,l,m;\infty)=\alpha_1(n,l,m),\quad
+\alpha_6(n,l,m;S)=\alpha_1(3n,3l,3m),
+\]
+\[
+\alpha_7(n,l,m;\infty)=\alpha_1(n,l,m),\quad
+\alpha_7(n,l,m;M)=\alpha_1(2n,2l,2m),\quad
+\alpha_7(n,l,m;S)=\alpha_1(4n,4l,4m),
+\]
+\[
+\alpha_8(n,l,m;\infty)=\alpha_2(n,l,m),\quad
+\alpha_8(n,l,m;S)=\alpha_2(2n,2l,2m).
+\]
+Thus the signed product exponents are the cusp sums
+\[
+\widetilde c_{5,\infty}=c_5,\quad
+\widetilde c_{5,S}=c_{5,S},\qquad
+\widetilde c_{6,\infty}=c_6,\quad
+\widetilde c_{6,S}=c_{6,S},
+\]
+\[
+\widetilde c_{7,\infty}=c_7,\quad
+\widetilde c_{7,M}=\frac12c_{7,M},\quad
+\widetilde c_{7,S}=c_{7,S},\qquad
+\widetilde c_{8,\infty}=c_8,\quad
+\widetilde c_{8,S}=c_{8,S}.
+\]
+For \(F_7\) the half exponent belongs to the sourced
+\(\mu_4\)-multiplier-cover product datum.  It is not a physical
+half-Hilbert-space statement.
+\end{theorem}
+
+\begin{proof}
+The group, weight, character, diagonal divisor, and product displays are
+the Clery--Gritsenko diagonal-divisor classification and Borcherds
+product theorem \cite{GC}.  The product-degree maps are forced by the
+monomials in the four displayed products in
+Proposition~\(\ref{prop:gc-row-data}\) and
+Proposition~\(\ref{prop:congruence-product-degree-lattices}\).
+Govindarajan's twisted CHL table identifies
+\[
+\nabla_3\leftrightarrow\mathcal G_1(2),\qquad
+\nabla_2\leftrightarrow\mathcal G_1(3),\qquad
+\nabla_{3/2}\leftrightarrow\mathcal G_1(4),\qquad
+Q_1\leftrightarrow\mathcal G_2(4),
+\]
+and proves the WKB denominator identity for these rows
+\cite{Gov11BKM}, with the Cheng--Dabholkar and
+Govindarajan--Gopala Krishna CHL denominator analyses as input
+\cite{CD09BKM,GK09CHL,GK10Composite}.  This proves the denominator
+column and no more.
+\end{proof}
+
+\begin{theorem}[CHL/WKB denominator data]
+\label{thm:agent12-chl-wkb-denominator-data}
+The nonabelian data imported from the CHL/WKB theorem are:
+\[
+P^{(1)}=\{(0,-1,0),(1,1,0),(0,1,1)\}\subset M_1,
+\]
+\[
+P^{(2)}=\{(0,-1,0),(1,1,0),(1,3,1),(0,1,1)\}\subset M_2.
+\]
+Rows \(F_5,F_6,F_7\) use \(P^{(1)}\), and \(F_8\) uses \(P^{(2)}\).
+The Weyl chambers and Weyl groups are
+\[
+\mathcal M_j=\{x\in L_j\otimes\R\mid (x,\delta)\le0
+\ \mathrm{for\ all}\ \delta\in P_j\},\qquad
+W_j=\langle s_\delta\mid\delta\in P_j\rangle,
+\]
+and the reflection character is
+\[
+\epsilon_j(w)=\det(w).
+\]
+The Cartan matrices are
+\[
+A^{(1)}=
+\begin{pmatrix}
+2&-2&-2\\
+-2&2&-2\\
+-2&-2&2
+\end{pmatrix},
+\qquad
+A^{(2)}=
+\begin{pmatrix}
+2&-2&-6&-2\\
+-2&2&-2&-6\\
+-6&-2&2&-2\\
+-2&-6&-2&2
+\end{pmatrix}.
+\]
+There are integral imaginary simple-root coefficients \(N_j(a)\) such
+that
+\[
+\begin{aligned}
+F_j(Z)
+&=\sum_{w\in W_j}\det(w)
+\left(e^{w(\rho_j)}
++\sum_{a\in L_j\cap\R_{>0}\mathcal M_j}
+N_j(a)e^{w(\rho_j+a)}\right)\\
+&=e^{\rho_j}
+\prod_{\lambda\in\alpha_j(\mathcal D_j)}
+(1-e^\lambda)^{\mu_j(\lambda)}.
+\end{aligned}
+\]
+This is a denominator theorem.  It is not a compact enumerative theorem.
+\end{theorem}
+
+\begin{proof}
+In the pairing
+\[
+((n,l,m),(n',l',m'))_t=2ll'-4t(nm'+n'm),
+\]
+each displayed simple real root has square \(2\), and the displayed
+Weyl vectors satisfy
+\[
+(\alpha_1(\tfrac12,\tfrac12,\tfrac12),\delta)=-1
+\quad(\delta\in P^{(1)}),
+\]
+\[
+(\alpha_2(\tfrac14,\tfrac12,\tfrac14),\delta)=-1
+\quad(\delta\in P^{(2)}).
+\]
+Hence the Weyl-vector equations are
+\((\rho,\delta)=-(\delta,\delta)/2\).  The root systems and the
+Weyl-denominator interpretation are the CHL/WKB data of
+\cite{CD09BKM,GK09CHL,GK10Composite,Gov11BKM}, translated into the
+product-degree notation of the manuscript.  For \(F_7\), the statement
+is made only after pullback to the order-four multiplier cover.
+\end{proof}
+
+\begin{remark}[Scalar-square audit]
+The scalar square identities have only scalar status:
+\[
+\nabla_3^2=\Phi_6,\qquad
+\nabla_2^2=\Phi_4,\qquad
+\nabla_{3/2}^2=\Phi_3,\qquad
+Q_1^2=\Phi_2^{(2,4)}
+\]
+in the CHL/twisted-dyon normalisations recorded in the manuscript.
+They do not remember the denominator sign, the Weyl chamber, the parity
+of simple real roots, the additive Weyl sum, or the physical
+orientation data.  They therefore cannot be used as row maps.
+\end{remark}
+
+\begin{theorem}[Physical-host obstruction from the audited sources]
+\label{thm:agent12-physical-host-obstruction}
+The audited sources do not construct a physical host for any of
+\(F_5,F_6,F_7,F_8\).  More precisely, none of the audited sources
+constructs a datum
+\[
+\mathfrak H_j=
+\left(
+X_j,\Gamma_j^{\mathrm{BPS}},\mathscr D_j,
+\alpha_j^{\mathrm{phys}},
+\widetilde\Gamma_j,
+\mathcal H^{1\mathrm p}_{j,\kappa},
+Z_j^{\mathrm{red}},
+\mathsf C_j
+\right)
+\]
+such that
+\[
+\alpha_j^{\mathrm{phys}}:\Gamma_j^{\mathrm{BPS}}\longrightarrow L_j
+\]
+matches the cusp-labelled degree maps of
+Theorem~\ref{thm:agent12-f5-f8-ledger},
+\[
+\sdim\mathcal H^{1\mathrm p}_{j,\kappa}(n,l)
+=\widetilde c_{j,\kappa}(n,l),
+\]
+\[
+Z_j^{\mathrm{red}}(Z)=C_jF_j(Z)^{-2}
+\]
+in the same chamber and cover, and
+\[
+\Prim_{\mathrm{prot}}(\mathsf C_j)\cong \mathcal G_N(M)
+\]
+for the corresponding Govindarajan denominator algebra.
+\end{theorem}
+
+\begin{proof}
+The Clery--Gritsenko source proves the automorphic product, character,
+and diagonal divisor.  It does not define
+\(X_j,\Gamma_j^{\mathrm{BPS}},\mathscr D_j\), a protected
+one-particle Hilbert space, or a reduced obstruction theory.
+
+The CHL sources prove denominator identities for twisted dyon
+generating functions.  They supply the Weyl chamber, simple real roots,
+reflection sign, additive Weyl side, and integral imaginary
+simple-root coefficients.  They do not prove a compact
+Calabi--Yau/DT/PT/OP identity \(Z_j^{\mathrm{red}}=C_jF_j^{-2}\), and
+they do not construct a Hall or factorization algebra whose protected
+primitives are the same BKM algebra.
+
+The formal product current envelope in the manuscript is deliberately
+abelian and non-unique: any virtual super vector space with the same
+signed dimensions has the same determinant.  It cannot reconstruct a
+physical Hilbert space, orientation, Behrend sign, or nonabelian
+primitive bracket.
+\end{proof}
+
+\begin{proposition}[Candidate-host attack table]
+\label{prop:agent12-candidate-host-attack}
+The following candidate interpretations fail unless additional row-map
+data are supplied:
+\begin{center}
+\small
+\begin{tabular}{p{0.23\textwidth}|p{0.35\textwidth}|p{0.32\textwidth}}
+route&available theorem&obstruction\\ \hline
+CHL/Govindarajan&
+twisted helicity trace forms, scalar squares, and WKB denominator
+identities for \(\mathcal G_1(2),\mathcal G_1(3),\mathcal G_1(4),
+\mathcal G_2(4)\)&
+no compact reduced CY/DT theorem, no Hall/chiral primitive comparison,
+no row map from a physical charge lattice to the cusp-labelled CG degree
+maps\\
+Borcea--Voisin&
+K3-involution constructions of Calabi--Yau threefolds and mirror pairs
+\cite{BORCEA,VOISIN}&
+no formula identifying the protected index with
+\(c_5,c_{5,S},c_6,c_{6,S},c_7,\frac12c_{7,M},c_{7,S},c_8,c_{8,S}\);
+no denominator algebra comparison\\
+\(K3\times E\) reduced counting&
+Oberdieck--Pandharipande/Oberdieck--Pixton and reduced DT/PT theory give
+the \(N=1\) Igusa scalar branch \cite{OPand,OB,OberdieckReducedPT}&
+the theorem is \(\Delta_5^{-2}\), not
+\(\nabla_3^{-2},\nabla_2^{-2},\nabla_{3/2}^{-2},Q_1^{-2}\)\\
+BOPY&
+curve-counting on abelian surfaces and threefolds, with Jacobi and
+quasimodular generating series \cite{BOPY}&
+no exact CG row map, no CHL WKB denominator comparison, no
+cusp-labelled one-particle index equality\\
+Oh--Thomas&
+Calabi--Yau fourfold sheaf-counting and algebraic virtual cycles
+\cite{OhThomasI,OhThomasII}&
+different dimension and obstruction theory; no genus-two
+diagonal-divisor row and no BKM denominator identity\\
+Vol.~III comparison tuple&
+the theorem file records the triple-indexed GC catalogue and the
+\(\kappa_{\mathrm{BKM}}\) weight identity&
+any tuple with weights \((5,2,1,1,\frac12,1,\frac14,0)\) is a separate
+comparison system; direct identifications with \(F_5,F_7,F_8\) are false
+by weight
+\end{tabular}
+\end{center}
+\end{proposition}
+
+\begin{proof}
+Each route lacks at least one load-bearing piece of the physical-row-map
+certificate in Theorem~\ref{thm:agent12-physical-host-obstruction}.
+Borcea--Voisin supplies geometry but not the row exponents.  Reduced
+\(K3\times E\) curve-counting supplies the Igusa square and no boundary
+row square.  BOPY and Oh--Thomas supply enumerative technology in
+different geometries or dimensions but no equality with the four
+Clery--Gritsenko/Govindarajan products.  Vol.~III's theorem-level
+triple-indexed catalogue agrees with the weights
+\[
+(5,2,3,1,2,\tfrac12,\tfrac32,1)
+\]
+in the GC order; the older comparison tuple is not a row map.
+\end{proof}
+
+\begin{definition}[Minimal physical row-map theorem]
+\label{def:agent12-minimal-row-map}
+A physical row-map theorem for \(F_j\), \(j=5,6,7,8\), is a theorem
+constructing the following data.
+\begin{enumerate}
+\item A physical charge lattice and duality group
+\[
+\Gamma_j^{\mathrm{BPS}},\qquad \mathscr D_j\curvearrowright
+\Gamma_j^{\mathrm{BPS}},
+\]
+together with a degree map
+\[
+\alpha_j^{\mathrm{phys}}:\Gamma_j^{\mathrm{BPS}}\to L_j
+\]
+which equals the cusp-labelled maps
+\(\alpha_j(n,l,m;\kappa)\) on the charges counted by the product.
+\item A protected one-particle index satisfying
+\[
+\sdim\mathcal H^{1\mathrm p}_{j,\kappa}(n,l)
+=\widetilde c_{j,\kappa}(n,l)
+\]
+for every cusp label \(\kappa\).  For \(F_7\), this equality is on the
+\(\mu_4\)-multiplier cover and includes
+\(\widetilde c_{7,M}=c_{7,M}/2\).
+\item An orientation character
+\[
+\operatorname{or}_j:\mathscr D_j\to\C^\times
+\]
+whose automorphic pullback is \(\nu_j\) and whose restriction to the
+Weyl subgroup is \(\det\).
+\item If a scalar square is claimed, an oriented reduced integration
+theorem
+\[
+Z_j^{\mathrm{red}}(Z)=C_jF_j(Z)^{-2}
+\]
+in the same chamber, Fourier variables, branch, and multiplier cover.
+\item A primitive algebra comparison
+\[
+\Prim_{\mathrm{prot}}(\mathsf C_j)
+\cong\mathcal G_1(2),\mathcal G_1(3),\mathcal G_1(4),
+\mathcal G_2(4)
+\]
+row by row, preserving \(P_j,\mathcal M_j,W_j,\epsilon_j,\rho_j\), the
+product multiplicity \(\mu_j\), and the imaginary simple-root
+coefficients \(N_j(a)\).
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Minimal row-map status]
+No row \(F_5,F_6,F_7,F_8\) currently satisfies
+Definition~\ref{def:agent12-minimal-row-map} in the manuscript or in
+the audited primary-source chain.  Therefore every physical-host claim
+for these rows must be written as conjectural or as an explicit future
+construction problem.
+\end{theorem}
+
+\begin{proof}
+The first three items require physical charge, duality, protected state,
+and orientation data.  The audited automorphic and CHL denominator
+sources do not contain such a compact row-map construction.  The fourth
+item is known in this manuscript only for the \(N=1\) Igusa branch
+\(\Delta_5^{-2}\).  The fifth item is stronger than the imported
+denominator theorem: it asks that the denominator algebra arise as
+protected primitives of the same physical object.  No audited source
+proves that comparison for rows \(5\)--\(8\).
+\end{proof}
+
+\begin{proposition}[Paper-safe replacement language]
+\label{prop:agent12-paper-safe-language}
+The following language preserves all theorem-level physics and removes
+the overclaim.
+
+\begin{quote}
+Rows \(F_5,F_6,F_7,F_8\) carry Clery--Gritsenko diagonal-divisor
+automorphic products.  In the CHL/twisted-dyon normalization of
+Cheng--Dabholkar, Govindarajan--Gopala Krishna, and Govindarajan, they
+also carry Weyl--Kac--Borcherds denominator identities:
+\[
+F_5=\nabla_3=\operatorname{den}\mathcal G_1(2),\quad
+F_6=\nabla_2=\operatorname{den}\mathcal G_1(3),
+\]
+\[
+F_7=\nabla_{3/2}=\operatorname{den}\mathcal G_1(4)
+\ \hbox{on the }\mu_4\hbox{-multiplier cover},\quad
+F_8=Q_1=\operatorname{den}\mathcal G_2(4).
+\]
+These are theorem-level automorphic and denominator statements.  They
+do not construct compact CY/DT partition functions, Ramond-sector
+one-particle Hilbert spaces, or chiral Hall hosts.  Any identity
+\[
+Z_j^{\mathrm{red}}=C_jF_j^{-2}
+\]
+for \(j=5,6,7,8\) is a separate physical-host theorem or a stated
+conjecture.
+\end{quote}
+
+For \(Q_1\), add:
+\begin{quote}
+The row \(F_8=Q_1\) is the \((t,N)=(2,2)\) Clery--Gritsenko row and the
+\(\mathcal G_2(4)\) Govindarajan denominator row.  It is not an
+\(N=1\) boundary row in disguise.
+\end{quote}
+
+For Vol.~III comparison language, add:
+\begin{quote}
+The Clery--Gritsenko boundary weights are
+\[
+\mathrm{wt}(F_5,F_6,F_7,F_8)=(3,2,\tfrac32,1).
+\]
+Any physical or chiral tuple with different weights is a separate row
+system.  A comparison with \(F_5,\ldots,F_8\) requires an explicit row
+map preserving group or cover, multiplier, cusp-labelled product
+degrees, protected one-particle index, orientation character, and
+primitive algebra.
+\end{quote}
+\end{proposition}
+
+\begin{remark}[Local and primary-source anchors]
+The local manuscript anchors audited here are
+\(\texttt{main.tex:2519--2720}\),
+\(\texttt{main.tex:2869--3492}\),
+\(\texttt{main.tex:3520--4058}\), and
+\(\texttt{main.tex:4071--4273}\), together with
+\(\texttt{agent\_material/07\_nonabelian\_promotion\_f5\_f8.tex}\),
+\(\texttt{agent\_material/08\_physical\_row\_map\_boundary\_extensions.tex}\),
+\(\texttt{agent\_material/10\_boundary\_row\_physical\_hosts.tex}\), and
+\(\texttt{agent\_material/11\_chl\_boundary\_primary\_source\_audit.tex}\).
+The Vol.~III theorem anchors are
+\(\texttt{~/calabi-yau-quantum-groups/FRONTIER.md}\) and
+\(\texttt{chapters/examples/cy\_d\_kappa\_stratification.tex}\),
+especially the triple-indexed Gritsenko--Clery catalogue and the
+\(\kappa_{\mathrm{BKM}}\)-weight corollary.  The audited
+\(\texttt{~/calabi-yau-quantum-groups/CLAUDE.md}\) still contains an
+older comparison tuple with weights \((5,2,1,1,\frac12,1,\frac14,0)\);
+that tuple must not be imported as the Clery--Gritsenko catalogue.
+
+The primary-source anchors are Clery--Gritsenko Theorems \(1.4\) and
+\(3.1\) \cite{GC}; Cheng--Dabholkar Sections \(4\)--\(5\)
+\cite{CD09BKM}; Govindarajan--Gopala Krishna Sections \(4.3\)--\(4.4\)
+\cite{GK09CHL}; Govindarajan--Gopala Krishna composite \(N=4\)
+\cite{GK10Composite}; Govindarajan Sections \(4.2\)--\(4.3\), Table
+\(3\), and Appendices C--D \cite{Gov11BKM}; and the enumerative
+comparison sources \cite{OPand,OB,OberdieckReducedPT,BOPY,OhThomasI,
+OhThomasII,BORCEA,VOISIN}.
+\end{remark}
+
+\begin{remark}[Files, checks, and remaining obligations]
+Files changed:
+\[
+\texttt{agent\_material/12\_eight\_rows\_hosts\_F5\_F8\_attack\_heal.tex}.
+\]
+Checks run for this audit: local rule and source reads by \(\texttt{sed}\)
+and \(\texttt{rg}\); cross-repo reads of the Vol.~III anchors; primary
+arXiv/source-title checks for \cite{GC,Gov11BKM,GK09CHL,GK10Composite,
+CD09BKM,OPand,BOPY,OhThomasI,OhThomasII}; \(\texttt{git diff --check}\)
+on this file; weak-phrasing and non-ASCII scans.  A full
+\(\texttt{make}\) build is not required for this standalone
+agent-material file.
+
+The open obligations are exact:
+\[
+\begin{array}{c|l}
+F_5&\mathrm{construct\ a\ compact\ row\ map\ for\ }
+\mathcal G_1(2)\ \mathrm{and}\ \nabla_3\\
+F_6&\mathrm{construct\ a\ compact\ row\ map\ for\ }
+\mathcal G_1(3)\ \mathrm{and}\ \nabla_2\\
+F_7&\mathrm{construct\ the\ same\ datum\ on\ the\ }\mu_4
+\mathrm{\ cover\ for\ }\mathcal G_1(4)\ \mathrm{and}\ \nabla_{3/2}\\
+F_8&\mathrm{construct\ the\ level\ }2,\ \mathrm{twist\ }4
+\mathrm{\ row\ map\ for\ }\mathcal G_2(4)\ \mathrm{and}\ Q_1
+\end{array}
+\]
+Each obligation must prove the five conditions of
+Definition~\ref{def:agent12-minimal-row-map}.  Until then, the correct
+paper status is: automorphic product proved, CHL/WKB denominator proved,
+scalar square recorded where sourced, compact physical host open.
+\end{remark}

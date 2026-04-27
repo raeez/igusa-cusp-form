@@ -1,0 +1,607 @@
+\section{Compact Hall and Ran(\(E\)) attack-heal}
+\label{sec:compact-hall-ranE-attack-heal}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\Supp}{\operatorname{Supp}}
+\providecommand{\Coh}{\operatorname{Coh}}
+\providecommand{\Perf}{\operatorname{Perf}}
+\providecommand{\Hilb}{\operatorname{Hilb}}
+\providecommand{\Ext}{\operatorname{Ext}}
+\providecommand{\RHom}{\operatorname{RHom}}
+\providecommand{\BM}{\operatorname{BM}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\smult}{\operatorname{smult}}
+\providecommand{\Hall}{\mathcal H}
+\providecommand{\Fact}{\mathsf{Fact}}
+\providecommand{\Den}{\mathsf{Den}}
+\providecommand{\Spch}{\mathrm{Sp}^{\mathrm{ch}}}
+\providecommand{\hCS}{\mathrm{hCS}}
+\providecommand{\van}{\varphi}
+
+\subsection{Claim attacked}
+
+The attacked claim is:
+\[
+\begin{gathered}
+\hbox{the reduced OP/DT moduli problem on }X=S\times E\\
+\Longrightarrow
+\hbox{a compact Hall/factorization object on }\Ran(E)\\
+\Longrightarrow
+H^0\Prim_{\mathrm{prot}}\cong \mathfrak g_{\Delta_5}.
+\end{gathered}
+\]
+This implication is false from the data presently in the manuscript.
+The scalar quotient theory and the denominator algebra give the expected
+Euler-characteristic shadow.  They do not construct the compact
+Hall/factorization source.
+
+The strongest honest statement available now is conditional.  If one
+supplies an \(E\)-equivariant oriented critical Hall atlas before taking
+the reduced \(E\)-quotient, a stability-sector HN completion, and a
+projection-local or globally-wrapped Ran(\(E\)) locality theorem, then
+one obtains an \(E\)-equivariant completed Hall factorization object on
+\(\Ran(E)\).  If, in addition, protected integration gives
+\[
+\sdim\Prim_{\mathrm{prot},(a,k,b)}=f(ab,k)
+\]
+and the primitive Hall bracket satisfies the Gritsenko--Nikulin
+Borcherds relations, then the resulting primitive Lie superalgebra has
+denominator
+\[
+\operatorname{den}=64^{-1}\Delta_5(2Z).
+\]
+Those additional hypotheses are exactly the missing construction.
+
+\subsection{Scalar moduli and the Hall moduli problem}
+
+Let \(S\) be the elliptically fibered K3 surface used in the scalar
+branch, let \(E\) be an elliptic curve, and set
+\[
+X=S\times E,\qquad p_E:X\longrightarrow E.
+\]
+For a primitive K3 class \(\beta_h\) with
+\[
+\langle\beta_h,\beta_h\rangle=2h-2
+\]
+and elliptic degree \(d\ge0\), the scalar coefficient spaces are
+\[
+\Hilb^\ell(X,(\beta_h,d))
+=\{Z\subset X\mid [Z]=(\beta_h,d),\ \chi(\mathcal O_Z)=\ell\}
+\]
+and the stable-pair moduli spaces
+\[
+P_\ell(X,(\beta_h,d)).
+\]
+The elliptic curve acts by translation on the second factor:
+\[
+e\cdot(s,e')=(s,e+e').
+\]
+The reduced scalar invariants used in the manuscript are quotient
+integrals
+\[
+\mathbf{DT}^{X}_{\ell,(\beta_h,d)}
+=\int_{\Hilb^\ell(X,(\beta_h,d))/E}\nu\,de,
+\qquad
+\mathsf P^{X}_{\ell,(\beta_h,d)}
+=\int_{P_\ell(X,(\beta_h,d))/E}\nu\,de,
+\]
+with \(\nu\) the Behrend function.  Oberdieck--Pixton,
+Oberdieck--Pandharipande, and Oberdieck give the scalar chain recorded in
+the manuscript:
+\[
+Z^X_{\mathrm{DT}}(T,Q,P)=Z^X_{\mathrm{OP}}(P,Q,T)
+=-4096\,\Delta_5(Z)^{-2}.
+\]
+
+The Hall moduli problem is different.  It must be an extension-closed
+derived stack of objects in a heart
+\[
+\mathcal A_\sigma\subset \Perf(X)
+\]
+with a stability condition \(\sigma\), HN property, support property, and
+a charge map
+\[
+\operatorname{cl}:K_0(\mathcal A_\sigma)\longrightarrow
+\Gamma_{\mathrm{ind}}=\Z^3.
+\]
+Write the Igusa charge as
+\[
+\gamma=(a,k,b),\qquad x^\gamma=q^a r^k s^b,
+\]
+so that the Borcherds degree is
+\[
+\alpha(a,k,b)=2a f_2-k f_3+2b f_{-2}
+\]
+and the expected signed primitive multiplicity is
+\[
+f(ab,k),\qquad
+\phi_{0,1}(\tau,z)=\sum_{n,l}f(n,l)q^n r^l.
+\]
+The scalar variables identify \(a\) with the K3 norm exponent,
+\(k\) with the D0/Fourier exponent, and \(b\) with the elliptic-degree
+exponent after the OP chamber conversion.
+
+\begin{proposition}[The scalar coefficient spaces are not the Hall stack]
+\label{prop:scalar-spaces-not-ranE-hall}
+The Hilbert-scheme and stable-pair quotient spaces used in the OP/DT
+scalar theorem do not, by themselves, define an honest compact Hall
+convolution object on \(\Ran(E)\).
+\end{proposition}
+
+\begin{proof}
+Hall multiplication is defined by extension correspondences in an
+extension-closed category:
+\[
+\mathfrak M_\gamma\times\mathfrak M_\eta
+\xleftarrow{\ p\ }
+\mathfrak E_{\gamma,\eta}
+\xrightarrow{\ q\ }
+\mathfrak M_{\gamma+\eta}.
+\]
+The class of ideal sheaves is not closed under arbitrary extensions:
+an extension of two ideal sheaves need not be an ideal sheaf.  Likewise,
+the stable-pair moduli space is a stable locus inside a larger tilted
+heart; the stable-pair coefficient space is not itself the Hall stack on
+which all extensions live.  Thus the scalar spaces are coefficient
+spaces for a trace, not the extension-closed source of a Hall product.
+
+The quotient by \(E\) creates a second obstruction.  The unreduced
+extension stack is equivariant for simultaneous translation of the
+subobject, quotient object, and middle object.  The product
+\[
+(\mathfrak M_\gamma/E)\times(\mathfrak M_\eta/E)
+\]
+has forgotten the relative \(E\)-position of the two inputs.  Extensions
+depend on that relative position.  Therefore convolution on the separate
+reduced quotients is not obtained by formal descent.  The Hall object
+must be constructed equivariantly before reduced integration, or one must
+construct an explicit reduced convolution kernel retaining the relative
+position parameter.
+\end{proof}
+
+\subsection{The correct Ran(\(E\)) object}
+
+The correct object is not a bare vector space and not the quotient scalar
+series.  It is an \(E\)-equivariant, charge-completed, finite-first
+factorization cosheaf or algebra on \(\Ran(E)\), built from an oriented
+critical Hall stack before reduced integration.
+
+For an open \(U\subset E\), the support-local candidate is
+\[
+\mathfrak M_{\sigma,S,\gamma}(U)
+=
+\{A\in\mathfrak M_{\sigma,S,\gamma}\mid
+p_E(\Supp A)\subset U\}.
+\]
+At finite HN height \(R\), assuming critical charts and a strong
+orientation \(o\), put
+\[
+\mathsf F_R\Hall^{\mathrm{or}}_{\sigma,S}(U)
+=
+\bigoplus_{\gamma\in\Gamma_{\sigma,S}^{HN}(R)}
+H^{\BM}\!\left(
+\mathfrak M_{\sigma,S,\gamma}(U),
+\van_\gamma\otimes\mathscr L_{o,\gamma}
+\right).
+\]
+The completed object is
+\[
+\widehat{\Hall}^{\mathrm{or}}_{\sigma,S}(U)
+=
+\varprojlim_R \mathsf F_R\Hall^{\mathrm{or}}_{\sigma,S}(U).
+\]
+Translation gives isomorphisms
+\[
+t_e^*\widehat{\Hall}^{\mathrm{or}}_{\sigma,S}(U)
+\simeq
+\widehat{\Hall}^{\mathrm{or}}_{\sigma,S}(U+e),
+\]
+so the object is naturally \(E\)-equivariant.  Reduced integration is a
+final operation on this equivariant object.  It is not part of the
+definition of the local factorization products.
+
+\begin{theorem}[Conditional Ran(\(E\)) Hall construction]
+\label{thm:conditional-ranE-hall-construction}
+Assume the following data.
+\begin{enumerate}
+\item An extension-closed heart \(\mathcal A_\sigma\subset\Perf(X)\) with
+a stability condition \(\sigma\), HN property, support property, and
+bounded semistable substacks in strict sectors.
+\item A charge map to \(\Gamma_{\mathrm{ind}}=\Z^3\) compatible with
+\(\alpha(a,k,b)=2af_2-kf_3+2bf_{-2}\).
+\item For every \(\gamma\), a derived critical stack
+\(\mathfrak M_{\sigma,\gamma}\) with vanishing-cycle coefficients.
+\item An \(E\)-equivariant strong orientation \(o\), compatible with
+exact triangles and Thom--Sebastiani transport.
+\item Extension correspondences
+\[
+\mathfrak M_\gamma\times\mathfrak M_\eta
+\xleftarrow{\ p\ }
+\mathfrak E_{\gamma,\eta}
+\xrightarrow{\ q\ }
+\mathfrak M_{\gamma+\eta}
+\]
+whose pull-push operations are admissible for the chosen
+Borel--Moore/vanishing-cycle theory.
+\item A projection-locality theorem: for disjoint opens
+\(U,V\subset E\), objects supported over \(U\) have no extensions with
+objects supported over \(V\), except through the direct-sum stratum.
+\item A collision atlas over the diagonals in \(\Ran(E)\), identifying
+the extension stacks in \(p_E^{-1}(D)\simeq S\times D\) with the chiral
+collision operations.
+\end{enumerate}
+Then the assignment
+\[
+U\longmapsto \widehat{\Hall}^{\mathrm{or}}_{\sigma,S}(U)
+\]
+is an \(E\)-equivariant \(h_S\)-adically completed Hall factorization
+object on \(\Ran(E)\).
+\end{theorem}
+
+\begin{proof}
+At finite height \(R\), the support property and HN boundedness give a
+finite set of surviving charges.  The \(h_S\)-height \(>R\) part is a
+two-sided Hall ideal because \(h_S\) is positive and additive in the
+strict sector.  Therefore \(\mathsf F_R\Hall^{\mathrm{or}}\) is a finite
+Hall quotient and the transition maps form an inverse system.
+
+For disjoint opens \(U,V\), projection-locality gives
+\[
+\Ext_X^*(A,B)=0
+\]
+whenever \(p_E(\Supp A)\subset U\) and \(p_E(\Supp B)\subset V\), apart
+from the split direct-sum operation.  Thus the external product over
+disjoint opens is the factorization product.  When points collide, the
+extension stack over the diagonal supplies the chiral operation; the
+strong orientation transports vanishing cycles by Thom--Sebastiani.
+Associativity is the usual comparison over the stack of two-step
+filtrations.  Passing to the inverse limit gives the completed object.
+The \(E\)-equivariance follows from translation of supports and of the
+extension correspondences.
+\end{proof}
+
+\subsection{Global-wrapping obstruction}
+
+The preceding theorem is support-local.  The full OP scalar class is not
+automatically support-local on \(E\).
+
+\begin{lemma}[Positive elliptic degree is not Ran-support-local]
+\label{lem:positive-e-degree-not-ran-local}
+Let \(C\subset S\times E\) be a one-dimensional subscheme whose curve
+class has positive \(E\)-degree.  Then \(p_E(C)\) is one-dimensional,
+hence equals \(E\).  In particular \(C\) cannot be assigned to a proper
+open \(U\subsetneq E\) by the condition \(p_E(C)\subset U\).
+\end{lemma}
+
+\begin{proof}
+The pushforward of the fundamental one-cycle of \(C\) to \(E\) has
+positive degree.  Hence the image of \(C\) under \(p_E\) is a closed
+one-dimensional subset of the irreducible curve \(E\).  Therefore
+\(p_E(C)=E\).
+\end{proof}
+
+\begin{corollary}[Naive support factorization misses the \(s\)-direction]
+\label{cor:ranE-misses-s-direction}
+The naive support-local Hall factorization object on \(\Ran(E)\) can
+only see sectors whose support over \(E\) is contained in finite
+subsets.  It does not directly realize the full Igusa product over
+\[
+(a,k,b)\in\Gamma_{\mathrm{eff}}
+\]
+when \(b\) is the OP elliptic-degree exponent and \(b>0\).
+\end{corollary}
+
+\begin{proof}
+The \(s^b\)-direction records the elliptic-degree exponent in the OP
+normalization.  By Lemma~\ref{lem:positive-e-degree-not-ran-local}, a
+curve with positive elliptic degree dominates \(E\), so it is global from
+the viewpoint of \(\Ran(E)\).  Disjoint-open factorization on
+\(\Ran(E)\) cannot be defined by support separation for such objects.
+\end{proof}
+
+This is the sharp new obstruction.  A compact realization must choose one
+of two routes.
+\begin{enumerate}
+\item Restrict the Hall factorization source to the projection-finite
+sector and prove that the missing \(s\)-direction is produced by a
+separate Fock/Hecke/global mode construction compatible with the
+Borcherds product.
+\item Enlarge the Ran(\(E\)) object to a hybrid factorization object:
+local vertical insertions on \(\Ran(E)\), together with global
+\(E\)-wrapping coefficient sectors.  The collision theory must then prove
+that local collisions commute correctly with the global wrapped sector.
+\end{enumerate}
+Neither route is constructed in the present manuscript or the local
+agent material.
+
+\subsection{Collision locality}
+
+For the projection-finite sector, locality is clean.  If
+\(U_1,\ldots,U_r\subset E\) are pairwise disjoint, the factorization map
+is induced by direct sum:
+\[
+\bigotimes_i
+\widehat{\Hall}^{\mathrm{or}}_{\sigma,S}(U_i)
+\longrightarrow
+\widehat{\Hall}^{\mathrm{or}}_{\sigma,S}\!\left(\bigcup_iU_i\right).
+\]
+The reason is first-principles support separation: coherent objects with
+disjoint supports on the smooth threefold have no nonzero local
+\(\mathcal Ext\)-sheaves between them, hence no non-split extensions.
+
+When points collide, the direct-sum stratum is replaced by the stack of
+extensions
+\[
+\mathfrak E_{\gamma_1,\ldots,\gamma_r}(D)
+\]
+inside the formal tube \(p_E^{-1}(D)\simeq S\times D\), where \(D\) is a
+small disc around the collision point.  The collision operation is the
+pull-push with vanishing cycles and orientation transport:
+\[
+p^*(-)\xrightarrow{\mathrm{TS}_o}
+\van_{\mathfrak E}\otimes\mathscr L_{o,\mathfrak E}
+\xrightarrow{q_!}
+\van_{\gamma_1+\cdots+\gamma_r}\otimes
+\mathscr L_{o,\gamma_1+\cdots+\gamma_r}.
+\]
+Associativity is the comparison between the two ways of projecting from
+the stack of two-step flags.  This is exactly the Hall source of the
+chiral collision maps.  It is conditional on the critical atlas,
+orientation, and admissible pull-push theory.
+
+For globally \(E\)-wrapping sectors the locality statement is absent.
+Such objects meet every nonempty open in \(E\).  They cannot be separated
+by disjoint opens, and their extensions with local vertical objects are
+not controlled by the usual Ran diagonal alone.  A compact realization
+must supply an extension stack with one global leg and several local
+legs, plus a proof that this hybrid operation satisfies the factorization
+associativity constraints.
+
+\subsection{Protected integration and denominator shadow}
+
+Assume the conditional Ran(\(E\)) Hall object has been constructed.  A
+protected integration is not just the Behrend-weighted scalar integral.
+It must be a continuous character on the completed Hall object, compatible
+with products, orientation, and the reduced \(E\)-integration:
+\[
+\chi^{\mathrm{prot}}:
+K_0\Prim_{\mathrm{prot}}
+\widehat{\Hall}^{\mathrm{or}}_{\sigma,S}
+\longrightarrow
+\widehat{\mathbb T}_{\Gamma_{\mathrm{eff}}}.
+\]
+The Igusa determinant follows only after the primitive equality
+\[
+\chi^{\mathrm{prot}}(\gamma)
+=
+\sdim\Prim_{\mathrm{prot},\gamma}
+=f(ab,k),
+\qquad \gamma=(a,k,b),
+\]
+and the orientation character comparison
+\[
+\epsilon_o=\nu_{\Delta_5}
+\]
+have been proved in the same normalization as the Borcherds product.
+Then
+\[
+64(qrs)^{1/2}
+\prod_{(a,k,b)\in\Gamma_{\mathrm{eff}}}
+(1-q^a r^k s^b)^{f(ab,k)}
+=\Delta_5(Z),
+\]
+and, in denominator variables,
+\[
+e^{-2\pi i(\rho,z)}
+\prod_{\gamma\in\Gamma_{\mathrm{eff}}}
+\left(1-e^{-2\pi i(\alpha(\gamma),z)}\right)^{f(ab,k)}
+=64^{-1}\Delta_5(2Z).
+\]
+This proves only the determinant shadow.  The bracket theorem remains
+separate:
+\[
+H^0\Prim_{\mathrm{prot}}
+\widehat{\Hall}^{\mathrm{or}}_{\sigma,S}
+\stackrel{?}{\cong}
+\mathfrak g_{\Delta_5}.
+\]
+It requires the real simple primitives, Serre relations, imaginary
+simple-root parities and multiplicities, imaginary orthogonality,
+continuous Hopf pairing, and radical quotient.
+
+\subsection{Failure theorem}
+
+\begin{theorem}[Present obstruction]
+\label{thm:ranE-present-obstruction}
+The current manuscript and local agent material do not construct the
+compact Hall/factorization object on \(\Ran(E)\) whose protected
+primitive bracket is \(\mathfrak g_{\Delta_5}\).
+\end{theorem}
+
+\begin{proof}
+The obstruction has five independent parts.
+
+First, the OP/DT scalar branch is a quotient-by-\(E\) trace.  It is not
+an extension-closed Hall stack.
+
+Second, Hall convolution is equivariant before reduction.  Taking the
+quotient by \(E\) separately on each input forgets relative position, so
+the scalar quotient does not inherit convolution by formal descent.
+
+Third, naive support-local factorization on \(\Ran(E)\) sees only
+objects whose support projects to finite subsets of \(E\).  Positive
+elliptic degree is global over \(E\), by
+Lemma~\ref{lem:positive-e-degree-not-ran-local}.  Thus the full
+\(s\)-direction of the Igusa product requires either a global-wrapping
+enhancement or a separate Hecke/Fock construction.
+
+Fourth, reduced obstruction theory and Behrend weighting compute scalar
+Euler characteristics.  They do not by themselves supply a strong
+orientation compatible with Hall extensions, reduced integration, and the
+automorphic character \(\nu_{\Delta_5}\).
+
+Fifth, the denominator identity determines signed root
+supermultiplicities.  It does not determine the Hall primitive bracket or
+the Borcherds defining relations.
+\end{proof}
+
+\subsection{Exact missing lemmas}
+
+The compact construction closes only after the following statements are
+proved.
+\begin{enumerate}
+\item \textbf{Heart and stability.}  Construct an extension-closed heart
+\(\mathcal A_\sigma\subset\Perf(S\times E)\) with HN property, support
+property, bounded semistable stacks, and charge map
+\(\operatorname{cl}:K_0(\mathcal A_\sigma)\to\Z^3\) matching the Igusa
+variables \((a,k,b)\).
+\item \textbf{Projection-locality or global wrapping.}  Either prove that
+the relevant compact BPS sector is projection-finite over \(E\), or build
+the hybrid Ran(\(E\)) factorization object with global \(E\)-wrapping
+coefficient sectors.
+\item \textbf{Equivariant-before-reduction Hall descent.}  Construct the
+\(E\)-equivariant Hall object before quotienting and the reduced
+integration map after convolution.  Equivalently, construct the reduced
+relative-position kernel.
+\item \textbf{Critical atlas.}  Give local critical charts for the
+derived moduli stacks and prove descent over the Cech/Ran nerve.
+\item \textbf{Strong orientation.}  Construct an \(E\)-equivariant strong
+orientation compatible with exact triangles and Thom--Sebastiani maps,
+then prove \(\epsilon_o=\nu_{\Delta_5}\).
+\item \textbf{HN finite-first completion.}  Prove the finite HN quotient
+system and continuity of Hall multiplication in the \(h_S\)-adic topology.
+\item \textbf{Reduced obstruction compatibility.}  Prove that the
+reduced obstruction theory and Behrend/protected integration define a
+Hall character, not merely scalar coefficients.
+\item \textbf{Primitive multiplicities.}  Prove from the compact object
+that
+\[
+\sdim\Prim_{\mathrm{prot},(a,k,b)}=f(ab,k),
+\]
+not by substituting the desired denominator.
+\item \textbf{Borcherds bracket.}  Identify the real simple primitives
+and prove the Serre relations, imaginary simple-root relations,
+orthogonality relations, Hopf pairing, and radical quotient which give
+\(\mathfrak g_{\Delta_5}\).
+\item \textbf{Chiral comparison.}  Construct the conilpotent chiral bar
+coalgebra \(C_X\simeq\bar B_E^{\mathrm{ch}}(\mathcal F_X)\) and a
+quasi-isomorphism
+\[
+\Omega_E^{\mathrm{ch}}C_X\simeq
+\Den_{\Delta_5,E}.
+\]
+\end{enumerate}
+
+\subsection{Claim-status recommendation}
+
+Keep the compact \(E_3\)/Hall/chiral realization as an open problem.
+Strengthen the formulation by adding two precise obstructions:
+\[
+\hbox{Hall before }E\hbox{-reduction},
+\qquad
+\hbox{projection-local Ran(\(E\)) versus global \(E\)-wrapping sectors}.
+\]
+The conditional theorem
+\ref{thm:conditional-ranE-hall-construction} is safe to use as the
+maximal construction statement.  It is a theorem only from the named
+atlas, orientation, locality, and completion hypotheses.  The full
+compact Igusa realization is not proved.
+
+\subsection{Anchors}
+
+Local manuscript anchors:
+\begin{itemize}
+\item \verb|main.tex:55--117|: abstract status; determinant and
+denominator proved, compact Hall/chiral source isolated as realization
+problem.
+\item \verb|main.tex:250--302|: expected \(E_3\)-source,
+\(\Spch_{K3,E}\), \(\mathcal F_X\in\Fact(\Ran(E))\), and primitive
+comparison with \(\mathfrak g_{\Delta_5}\).
+\item \verb|main.tex:721--743|: scalar Hilbert-scheme quotient by \(E\)
+and Behrend weighting.
+\item \verb|main.tex:840--887|: reduced Hilbert-scheme DT/PT/OP scalar
+square and constant \(-4096\).
+\item \verb|main.tex:1673--1716|: formal
+\(\Den_{\Delta_5,E}=U_E^{\mathrm{ch}}(\mathfrak g_{\Delta_5}\otimes
+\mathcal O_E)\).
+\item \verb|main.tex:1718--1808|: \(E_3\)-to-chiral specialization and
+Koszul comparison are required data, not consequences.
+\item \verb|main.tex:1834--1905|: sectorial HN truncation and finite
+Hall quotient.
+\item \verb|main.tex:1907--2096|: compact Igusa realization datum,
+criterion, determinant-does-not-determine-Hall-constants, and open
+problem.
+\item \verb|main.tex:2436--2516|: main theorem; determinant and
+denominator are proved, compact microscopic comparison remains open.
+\item \verb|agent_material/10_compact_hall_atlas_attack_heal.tex:220|:
+the reduced \(E\)-quotient does not automatically carry Hall convolution.
+\item \verb|agent_material/11_compact_hall_finite_heart_and_hn.tex:293|:
+the correct finite-first object is the HN quotient system.
+\item \verb|agent_material/11_factorization_koszul_minimal_data.tex:427|:
+the five compact source/comparison blocks are not presently built.
+\end{itemize}
+
+Primary source anchors already present in \verb|proj.bib|:
+\begin{itemize}
+\item \cite{OB}, Theorem 1 and product (3): OP scalar branch and Igusa
+product normalization.
+\item \cite{OPand}: reduced GW/PT comparison for primitive K3 classes on
+\(S\times E\).
+\item \cite{OberdieckReducedPT}, Theorem 3(i): reduced DT/PT comparison.
+\item \cite{BRYAN}, Definition 2.1 and Conjecture 2.3: quotient
+Hilbert-scheme DT normalization and Bryan variable convention.
+\item \cite{DT}, \cite{BEHREND}: DT obstruction theory and Behrend
+function.
+\item \cite{KSCoHA}, \cite{DavisonMeinhardtCoHA}: critical/cohomological
+Hall technology once the moduli, orientation, and correspondences are
+supplied.
+\item \cite{BD}: chiral envelope and chiral collision formalism on a
+curve.
+\item \cite{CostelloRenormalization}, \cite{CostelloGwilliam1},
+\cite{CostelloGwilliam2}: BV observables give factorization algebras
+after QME, locality, descent, and anomaly hypotheses.
+\item \cite{B}, \cite{GN}: Borcherds product and
+Gritsenko--Nikulin denominator algebra.
+\end{itemize}
+
+\subsection{Files changed and checks}
+
+Files changed:
+\begin{center}
+\texttt{agent\_material/12\_compact\_hall\_ranE\_attack\_heal.tex}.
+\end{center}
+
+Checks run in this attack-heal pass:
+\begin{itemize}
+\item Read \verb|CLAUDE.md|, \verb|AGENTS.md|,
+\verb|/Users/raeez/ecosystem/INVARIANTS.md|, and the relevant
+\verb|main.tex| loci before writing.
+\item Grepped \verb|main.tex|, \verb|proj.bib|, and existing
+\verb|agent_material| files for Hall, Ran, compact realization,
+reduced quotient, Behrend, factorization, and denominator anchors.
+\item Ran \verb|git diff --no-index --check /dev/null| on this file;
+no whitespace errors were reported.
+\item Ran \verb|git diff --cached --check| after staging this file; no
+whitespace errors were reported.
+\item No manuscript build was run: \verb|main.tex| was not edited, and
+this file is not included in the TeX root.
+\end{itemize}
+
+\subsection{Remaining open questions}
+
+The decisive open question is not whether the scalar square is correct;
+it is correct in the OP/DT normalization recorded in the manuscript.  The
+decisive question is whether one can construct a compact
+\(E\)-equivariant Hall/factorization source whose reduced protected trace
+is that scalar square and whose primitive bracket is
+\(\mathfrak g_{\Delta_5}\).
+
+The first obstruction to attack next is the global-wrapping problem:
+positive elliptic degree is global over \(E\), while naive
+Ran(\(E\))-factorization is support-local.  A proof must either remove
+that sector from the local Hall source and recover it by a separate
+Hecke/Fock mechanism, or construct the hybrid local/global collision
+stack and prove its associativity and orientation compatibility.

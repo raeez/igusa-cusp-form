@@ -1,0 +1,517 @@
+\section{Primitive comparison with \texorpdfstring{\(\mathfrak g_{\Delta_5}\)}{gDelta5}: attack--heal}
+\label{sec:primitive-comparison-attack-heal}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\La}{\Lambda}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\smult}{\operatorname{smult}}
+\providecommand{\autcor}{\mathfrak g_{\Delta_5}}
+\providecommand{\Hall}{\mathcal H}
+\providecommand{\BM}{\operatorname{BM}}
+\providecommand{\Fact}{\mathsf{Fact}}
+\providecommand{\Den}{\mathsf{Den}}
+
+\subsection{Claim attacked}
+
+The attacked implication is
+\[
+\begin{gathered}
+\hbox{compact }E_3/\hbox{Hall/factorization source for }K3\times E,\\
+\sdim H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_{(n,l,m)}=f(nm,l),\\
+\operatorname{den}(\autcor)=64^{-1}\Delta_5(2Z)
+\end{gathered}
+\quad\Longrightarrow\quad
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\cong\autcor .
+\]
+This implication is not proved.  The manuscript proves the virtual
+determinant and the Gritsenko--Nikulin/Borcherds denominator algebra.  It
+does not construct the primitive Hall/factorization bracket, nor the map
+identifying that bracket with the Borcherds bracket.
+
+Local anchors read before this note:
+\[
+\begin{array}{ll}
+\texttt{main.tex:250--296} & \hbox{primitive bracket and comparison marked as realization problem},\\
+\texttt{main.tex:496--522} & \hbox{virtual determinant has no products or locality},\\
+\texttt{main.tex:1566--1671} & \hbox{definition and proof of the denominator algebra identity},\\
+\texttt{main.tex:1907--2003} & \hbox{compact Igusa realization datum and primitive comparison},\\
+\texttt{main.tex:2059--2082} & \hbox{determinant does not determine Hall constants},\\
+\texttt{main.tex:2117--2243} & \hbox{Borcherds simple-root parity, relations, denominator},\\
+\texttt{main.tex:2283--2380} & \hbox{what the denominator and determinant forget},\\
+\texttt{agent\_material/10\_bps\_bracket\_constants\_attack\_heal.tex} &
+\hbox{low-degree constants and first Hall gap},\\
+\texttt{agent\_material/11\_factorization\_koszul\_minimal\_data.tex} &
+\hbox{five-object compact realization dossier},\\
+\texttt{agent\_material/08\_compact\_hall\_factorization\_object.tex} &
+\hbox{compact Hall atlas obstruction},\\
+\texttt{/Users/raeez/calabi-yau-quantum-groups/FRONTIER.md:197--205} &
+\hbox{Vol.~III Hall--Drinfeld/BKM comparison remains open}.
+\end{array}
+\]
+
+\subsection{What determines primitive brackets}
+
+A factorization or Hall object determines primitive Lie brackets only when
+the chain-level multiplication and primitive projection are present.  For a
+compact Hall realization this means extension correspondences
+\[
+\mathfrak M_\gamma^\sigma\times\mathfrak M_\eta^\sigma
+\xleftarrow{\ p_{\gamma,\eta}\ }
+\mathfrak E_{\gamma,\eta}^\sigma
+\xrightarrow{\ q_{\gamma,\eta}\ }
+\mathfrak M_{\gamma+\eta}^\sigma ,
+\]
+vanishing-cycle coefficients, Thom--Sebastiani orientation transport, and
+proper pull-push maps
+\[
+m_{\gamma,\eta}=q_{\gamma,\eta!}p_{\gamma,\eta}^{*}.
+\]
+After a coproduct or factorization coalgebra has supplied a primitive
+projection, the primitive bracket is the supercommutator of this product:
+\[
+[u_{\gamma,a},u_{\eta,b}]_{\Hall}
+=
+\sum_c C^c_{(\gamma,a),(\eta,b)}u_{\gamma+\eta,c}.
+\]
+The constants \(C^c_{(\gamma,a),(\eta,b)}\) depend on the extension stack,
+orientation cocycle, protected integration, and chosen primitive bases.  The
+Euler number
+\[
+\sum_a(-1)^{|a|}=\sdim \Prim_{\mathrm{prot},\gamma}
+\]
+does not contain any of this bilinear data.
+
+In a curve-level chiral factorization object the same statement is phrased
+as collision data.  The bracket is extracted from the singular/collision
+part of the factorization product on disjoint opens, after passing to
+protected primitives.  Beilinson--Drinfeld's chiral enveloping construction
+constructs a chiral algebra from a supplied Lie-* algebra; it does not
+construct the compact \(K3\times E\) Lie-* algebra from a scalar
+determinant.
+
+Thus the determinant controls only a Grothendieck class:
+\[
+[H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_\gamma]\in K_0(\mathrm{sVect}),
+\qquad
+\sdim=f(nm,l).
+\]
+It does not determine products, coproducts, commutators, Jacobi constants,
+or the radical quotient of a Hall--Drinfeld double.
+
+\subsection{Borcherds--Gritsenko--Nikulin datum}
+
+The denominator algebra used in the manuscript is fixed by the
+Gritsenko--Nikulin automorphic correction \cite{GN}.  The real roots are
+\[
+\delta_1=2f_2-f_3,\qquad
+\delta_2=2f_{-2}-f_3,\qquad
+\delta_3=f_3,
+\]
+with Gram matrix
+\[
+A=((\delta_i,\delta_j))=
+\begin{pmatrix}
+2&-2&-2\\
+-2&2&-2\\
+-2&-2&2
+\end{pmatrix}.
+\]
+The Weyl vector is
+\[
+\rho=\frac12(\delta_1+\delta_2+\delta_3)
+=f_2-\frac12f_3+f_{-2},
+\qquad
+(\rho,\delta_i)=-1 .
+\]
+The charge-to-root map is
+\[
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
+=n\delta_1+m\delta_2+(n+m-l)\delta_3,
+\]
+and
+\[
+(\alpha(n,l,m),\alpha(n,l,m))=-2(4nm-l^2).
+\]
+
+Gritsenko--Nikulin's product theorem gives
+\[
+\frac1{64}\Delta_5(Z)
+=
+q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)>0}
+(1-q^nr^ls^m)^{f(nm,l)}
+\]
+and the Weyl--Kac--Borcherds denominator normalization used in the paper is
+\[
+\operatorname{den}(\autcor)
+=
+\frac1{64}\Delta_5(2Z)
+=
+e^{-2\pi i(\rho,z)}
+\prod_{\alpha\in\mathcal R_+}
+\left(1-e^{-2\pi i(\alpha,z)}\right)^{\smult(\alpha)}.
+\]
+The visible active multiplicities satisfy
+\[
+\smult(\alpha(n,l,m))=f(nm,l).
+\]
+
+The presentation contains more than these exponents.  One chooses an index
+set \(I\) over the real and imaginary simple roots, with parity map
+\(p:I\to\Z/2\Z\).  The real roots are even.  The imaginary simple roots are
+read from the correction character
+\[
+1-\sum_{a\in\La^{2,1}_{II}\cap\R_{>0}\mathcal P_{II}}
+m(a)e^{-2\pi i(a,z)}
+\]
+together with the isotropic ray coefficients
+\[
+1-\sum_{t\ge1}m(ta_0)q^t
+=\prod_{t\ge1}(1-q^t)^{\tau(ta_0)},\qquad
+\tau(ta_0)=9.
+\]
+The parity split is the Gritsenko--Nikulin BKM datum, not a consequence of
+the scalar product alone:
+\[
+\smult(\alpha)
+=\dim\mathfrak g_{\alpha,\overline0}
+-\dim\mathfrak g_{\alpha,\overline1}.
+\]
+
+The generators are \(h_i,e_i,f_i\) for \(i\in I\), with
+\[
+[h_i,e_j]=(\alpha_i,\alpha_j)e_j,\qquad
+[h_i,f_j]=-(\alpha_i,\alpha_j)f_j,\qquad
+[e_i,f_j]=\delta_{ij}h_i,
+\]
+the real Serre relations
+\[
+(\operatorname{ad}e_i)^{1-2(\alpha_i,\alpha_j)/(\alpha_i,\alpha_i)}e_j=0
+\quad(\alpha_i\ \mathrm{real},\ i\ne j),
+\]
+and the orthogonality relations
+\[
+(\alpha_i,\alpha_j)=0
+\quad\Longrightarrow\quad
+[e_i,e_j]=[f_i,f_j]=0.
+\]
+These are the Borcherds/Kac defining relations used by
+Gritsenko--Nikulin, Appendix~\S6; Borcherds' 1988 definition gives the
+same generators-and-relations universal object.
+
+\subsection{Uniqueness: what is true}
+
+There is no uniqueness theorem saying that a denominator identity, signed
+root multiplicities, and real-root Serre relations force a compact Hall
+primitive algebra to be \(\autcor\).
+
+The available uniqueness theorem is the presentation theorem.  Fix the full
+Borcherds-Cartan superdatum
+\[
+\mathscr B_{\Delta_5}
+=
+\left(
+\La^{2,1}_{II}\otimes\C,\ I,\ p,\ i\mapsto\alpha_i,
+(\alpha_i,\alpha_j)
+\right),
+\]
+including the multiplicity fibres over imaginary simple roots and their
+parities.  The generalized Borcherds--Kac--Moody superalgebra
+\(G(\mathscr B_{\Delta_5})\) is the universal Lie superalgebra generated
+by \(H\) and \(e_i,f_i\) with the relations above, modulo the standard
+radical/maximal ideal required in the Kac formulation.  It is unique by
+this universal property.
+
+Consequently, a compact primitive Lie superalgebra \(P\) is identified with
+\(\autcor\) if the following data are supplied:
+\begin{enumerate}
+\item a Cartan identification
+\[
+P_0\simeq\La^{2,1}_{II}\otimes\C;
+\]
+\item primitive classes \(e_i^P,f_i^P\) for every real and imaginary simple
+root index \(i\in I\), preserving parity and multiplicity fibres;
+\item the Chevalley, real Serre, and orthogonality relations above inside
+the Hall/factorization bracket;
+\item generation of \(P\) by these primitive classes and the Cartan;
+\item the same radical quotient, or equivalently a proof that the
+presentation map
+\[
+G(\mathscr B_{\Delta_5})\longrightarrow P
+\]
+has zero kernel after the completed Hall--Drinfeld pairing quotient;
+\item equality of full root-space parity dimensions, not only signed
+Euler characteristics.
+\end{enumerate}
+Under these hypotheses the induced map
+\[
+\autcor=G(\mathscr B_{\Delta_5})
+\xrightarrow{\ \sim\ }
+P
+\]
+is an isomorphism of charge-graded Lie superalgebras.  This is a
+presentation-level recognition theorem.  It is not a consequence of the
+determinant.
+
+Even full root dimensions would not by themselves determine the brackets.
+A graded Hilbert series is not a multiplication table.  The first concrete
+place where the missing constants appear is the degree
+\[
+\delta_{123}:=\delta_1+\delta_2+\delta_3=\alpha(1,1,1).
+\]
+For \(a_{ij}=\delta_i+\delta_j\), the denominator algebra has one
+real-real commutator direction \(E_{ij}=[e_i,e_j]\) and nine isotropic
+simple directions \(u_{ij,r}\), so
+\[
+\smult(a_{ij})=10=1+9.
+\]
+The brackets
+\[
+[e_k,u_{ij,r}]\in\mathfrak g_{\delta_{123}}
+\qquad(\{i,j,k\}=\{1,2,3\})
+\]
+are not numbers until a basis and parity split of
+\(\mathfrak g_{\delta_{123}}\) have been supplied.  The determinant gives
+only
+\[
+\smult(\delta_{123})=f(1,1)=-64.
+\]
+It gives no basis, no parity split, and no expression of
+\([e_k,u_{ij,r}]\) in that basis.
+
+\subsection{Attack on determinant-to-algebra}
+
+The determinant-to-algebra implication fails for elementary reasons.
+
+First, let
+\[
+B=\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}B_\gamma
+\]
+be any charge-graded finite-dimensional super vector space with
+\[
+\sdim B_{(n,l,m)}=f(nm,l).
+\]
+Then
+\[
+64q^{1/2}r^{1/2}s^{1/2}
+\prod_{\gamma\in\Gamma_{\mathrm{eff}}}(1-x^\gamma)^{\sdim B_\gamma}
+=\Delta_5(Z).
+\]
+Putting the zero bracket on \(B\) gives the same determinant.  It is not
+\(\autcor\), since in the denominator algebra
+\[
+[e_i,e_j]=E_{ij}\ne0\qquad(i\ne j).
+\]
+
+Second, even after fixing \(\autcor\), let \(M\) be any nonzero
+root-graded \(\autcor\)-module with finite-dimensional weight spaces.
+The abelian ideal
+\[
+M\oplus \Pi M
+\]
+has zero signed character.  The semidirect product
+\[
+\autcor\ltimes (M\oplus\Pi M)
+\]
+has the same signed denominator as \(\autcor\), but is not isomorphic to
+\(\autcor\).  Thus signed denominator data do not exclude invisible
+zero-superdimension root spaces or abelian ideals.
+This is exactly the warning in the manuscript at
+\texttt{main.tex:2274--2277} and \texttt{main.tex:2291--2303}.
+
+Third, the OP/DT scalar square is still farther from the bracket.  It
+computes a reduced scalar partition function
+\[
+Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}.
+\]
+It does not construct an extension-closed heart, an oriented critical Hall
+atlas, an \(E\)-equivariant/reduced Hall convolution, or a primitive
+projection.  Therefore it supplies no Hall constants.
+
+\subsection{Strongest conditional theorem}
+
+\begin{theorem}[Conditional primitive comparison]
+\label{thm:conditional-primitive-comparison-gdelta5}
+Let \(X=K3\times E\).  Suppose the following objects have been constructed.
+\begin{enumerate}
+\item A charge-completed holomorphic \(E_3\)-factorization algebra
+\(\mathcal A_X^{E_3}\) on \(X\), finite-first after sectorial
+Harder--Narasimhan truncation.
+\item A chain-level \(K3\)-to-\(E\) specialization
+\[
+\mathcal F_X\simeq
+\mathrm{Sp}^{\mathrm{ch}}_{K3,E}(\mathcal A_X^{E_3})
+\in\Fact(\operatorname{Ran}(E)).
+\]
+\item An oriented compact critical Hall factorization object
+\(\Hall_X\) with extension correspondences, vanishing cycles,
+Thom--Sebastiani orientation transport, support property, HN descent, and
+an \(E\)-equivariant or reduced convolution retaining relative
+\(E\)-position.
+\item A protected primitive functor and supercommutator
+\[
+[-,-]_{\mathrm{prot}}:
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_\gamma
+\otimes
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_\eta
+\to
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_{\gamma+\eta}.
+\]
+\item A protected integration and parity splitting identifying the full
+Gritsenko--Nikulin root-space parity dimensions, and in particular
+\[
+\sdim H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_{(n,l,m)}
+=f(nm,l).
+\]
+\item An orientation character satisfying
+\[
+\epsilon_o|_{W^{(2)}(\La^{2,1}_{II})}
+=
+\nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})}.
+\]
+\item Primitive representatives for every real and imaginary simple root
+of \(\mathscr B_{\Delta_5}\), preserving multiplicities, parities, and
+the degree map \(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\).
+\item A proof that the protected primitive bracket satisfies the full
+Borcherds/Kac defining relations for \(\mathscr B_{\Delta_5}\): Cartan,
+Chevalley, real Serre, imaginary orthogonality, parity signs, and the
+same completed Hopf pairing and radical quotient.
+\item Generation of
+\(H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\) by these simple primitive
+classes and the Cartan.
+\end{enumerate}
+Then
+\[
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+\cong
+\autcor
+\]
+as charge-graded Lie superalgebras.  Its Weyl--Kac--Borcherds
+denominator is \(64^{-1}\Delta_5(2Z)\).
+\end{theorem}
+
+\begin{proof}
+The listed simple primitive classes and relations give a homomorphism from
+the universal Borcherds--Kac--Moody superalgebra
+\(G(\mathscr B_{\Delta_5})=\autcor\) to
+\(H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\).  Generation gives
+surjectivity.  Equality of full root-space parity dimensions together with
+the same completed radical quotient gives injectivity on every root space
+and on the Cartan.  Hence the homomorphism is an isomorphism.  The
+denominator statement is then Theorem~\ref{thm:denominator-algebra-identity}.
+\end{proof}
+
+\subsection{Claim-status recommendation}
+
+The manuscript should keep
+\[
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+\stackrel{?}{\cong}
+\autcor
+\]
+as the compact \(E_3\)/Hall/chiral realization problem.  It may state
+Theorem~\ref{thm:conditional-primitive-comparison-gdelta5} as a conditional
+recognition criterion.  It must not say that the determinant, the scalar
+square, or the denominator identity proves the primitive comparison.
+
+The precise missing geometric hypotheses are:
+\[
+\begin{gathered}
+\mathcal A_X^{E_3},\quad
+\mathrm{Sp}^{\mathrm{ch}}_{K3,E},\quad
+\mathcal F_X,\quad
+\Hall_X,\quad
+\mathfrak M_\gamma^\sigma,\quad
+\mathfrak E_{\gamma,\eta}^\sigma,\quad
+o,\quad
+\epsilon_o=\nu_{\Delta_5},\\
+\Prim_{\mathrm{prot}},\quad
+\chi^{\mathrm{prot}},\quad
+\hbox{full parity split},\quad
+\hbox{simple primitive representatives},\quad
+\hbox{Borcherds relations in the Hall bracket},\quad
+\hbox{completed Hopf pairing/radical quotient}.
+\end{gathered}
+\]
+
+\subsection{Source anchors}
+
+Primary source anchors:
+\begin{enumerate}
+\item Gritsenko--Nikulin \cite{GN}, Introduction and Theorem~4.1:
+\(\Delta_5\) is the correcting Siegel modular form for the rank-three
+matrix \(G_1=A\), and
+\[
+64^{-1}\Delta_5(Z)
+=e^{\pi i(z_1+z_2+z_3)}
+\prod_{(n,l,m)>0}
+\left(1-e^{2\pi i(nz_1+lz_2+mz_3)}\right)^{f(nm,l)}.
+\]
+\item Gritsenko--Nikulin \cite{GN}, Appendix~\S6: generalized
+Kac--Moody superalgebras without odd real simple roots have the
+Chevalley, real Serre, and orthogonality relations used in
+\texttt{main.tex:2149--2174}.
+\item Borcherds, \emph{Generalized Kac--Moody algebras}, Journal of
+Algebra 115 (1988), \S1: the algebra associated to a symmetrized
+Cartan datum is generated by \(H,e_i,f_i\) with relations (1)--(5).
+\item Borcherds \cite{B}, Theorem~13.3: the singular theta lift gives
+automorphic forms with infinite product expansions; at singular weight
+these products supply denominator formulae for generalized Kac--Moody
+superalgebras.
+\item Kontsevich--Soibelman \cite{KSCoHA} and Davison--Meinhardt
+\cite{DavisonMeinhardtCoHA}: Hall products require critical stacks,
+vanishing cycles, orientations, and extension correspondences.  These
+are the sources of Hall structure constants, not the scalar determinant.
+\item Beilinson--Drinfeld \cite{BD} and Costello--Gwilliam
+\cite{CostelloGwilliam1,CostelloGwilliam2}: factorization/chiral
+products are chain-level local operations.  A global trace or determinant
+is their decategorified shadow.
+\end{enumerate}
+
+\subsection{Files changed, checks, open problems}
+
+Files changed:
+\[
+\texttt{agent\_material/12\_primitive\_comparison\_attack\_heal.tex}.
+\]
+
+Checks run:
+\[
+\begin{array}{l}
+\texttt{rg -n "denominator|Hall|factorization|determinant|Prim|primitive" main.tex},\\
+\texttt{nl -ba main.tex | sed -n '230,310p'},\\
+\texttt{nl -ba main.tex | sed -n '1560,2100p'},\\
+\texttt{nl -ba main.tex | sed -n '2110,2385p'},\\
+\texttt{nl -ba agent\_material/10\_bps\_bracket\_constants\_attack\_heal.tex},\\
+\texttt{nl -ba agent\_material/11\_factorization\_koszul\_minimal\_data.tex},\\
+\texttt{nl -ba agent\_material/08\_compact\_hall\_factorization\_object.tex},\\
+\texttt{nl -ba /Users/raeez/calabi-yau-quantum-groups/FRONTIER.md | sed -n '1,260p'},\\
+\texttt{rg -n <forbidden-register-scan> agent\_material/12\_primitive\_comparison\_attack\_heal.tex},\\
+\texttt{rg -n "\textbackslash\textbackslash(begin|end|cite|ref)" agent\_material/12\_primitive\_comparison\_attack\_heal.tex},\\
+\texttt{git diff --no-index -- /dev/null agent\_material/12\_primitive\_comparison\_attack\_heal.tex},\\
+\texttt{git status --short -- agent\_material/12\_primitive\_comparison\_attack\_heal.tex}.
+\end{array}
+\]
+No manuscript build was run.  This file is standalone agent material and
+is not included from \texttt{main.tex}.
+
+Open problems:
+\begin{enumerate}
+\item Construct the compact \(E_3\)-factorization algebra
+\(\mathcal A_X^{E_3}\) and its chain-level specialization to \(E\).
+\item Construct the compact oriented Hall atlas with HN finite-first
+completion and reduced/equivariant \(E\)-descent.
+\item Prove the orientation character comparison
+\(\epsilon_o=\nu_{\Delta_5}\).
+\item Construct protected primitives and prove their full parity
+dimensions, not only their signed Euler characteristics.
+\item Identify primitive representatives of all real and imaginary
+simple roots, including the \(9\) isotropic simple directions on each
+primitive isotropic ray.
+\item Prove the Chevalley, real Serre, orthogonality, and imaginary-root
+relations inside the Hall/factorization supercommutator.
+\item Construct the continuous Hopf pairing, negative half, Cartan
+completion, and radical quotient giving the Hall--Drinfeld double.
+\end{enumerate}

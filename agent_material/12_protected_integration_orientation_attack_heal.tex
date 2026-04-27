@@ -1,0 +1,544 @@
+\section{Protected integration and orientation character attack--heal}
+\label{sec:protected-integration-orientation-attack-heal}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\Hilb}{\operatorname{Hilb}}
+\providecommand{\Ext}{\operatorname{Ext}}
+\providecommand{\RHom}{\operatorname{RHom}}
+\providecommand{\Perf}{\operatorname{Perf}}
+\providecommand{\Crit}{\operatorname{Crit}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\BPS}{\mathrm{BPS}}
+\providecommand{\DT}{\mathrm{DT}}
+\providecommand{\PT}{\mathrm{PT}}
+\providecommand{\OP}{\mathrm{OP}}
+\providecommand{\nuDelta}{\nu_{\Delta_5}}
+\providecommand{\Gammaeff}{\Gamma_{\mathrm{eff}}}
+\providecommand{\Hall}{\mathcal H}
+
+\subsection{Claim attacked}
+
+The scalar theorem gives
+\[
+  Z_{K3\times E}^{\OP}
+  =
+  Z_{K3\times E}^{\DT}
+  =
+  -4096\,\Delta_5^{-2},
+\]
+and the denominator normalization gives
+\[
+  \operatorname{den}(\mathfrak g_{\Delta_5})
+  =
+  64^{-1}\Delta_5(2Z).
+\]
+The attacked upgrade is stronger:
+
+\begin{quote}
+There is a protected Hall or cohomological integration map for
+\(K3\times E\), with an orientation datum whose automorphic/reflection
+character is exactly \(\nuDelta\).
+\end{quote}
+
+This upgrade is not a consequence of the scalar OP/DT theorem.  The
+correct healing is to separate three objects:
+
+\begin{enumerate}
+\item the theorem-level scalar reduced integration map;
+\item the theorem-level automorphic character of the Borcherds
+determinant \(\Delta_5\);
+\item the open protected-orientation datum which would identify the two
+inside a compact Hall or cohomological Hall realization.
+\end{enumerate}
+
+\subsection{Source and local anchors}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.31\textwidth}p{0.60\textwidth}}
+\hline
+Anchor & Load-bearing content \\
+\hline
+\texttt{main.tex:547--577} &
+\(\Delta_5\) has weight \(5\), \(\Delta_5^2=\Delta_{10}\), and
+\(\Delta_5|_5g=\nuDelta(g)\Delta_5\). \\
+\texttt{main.tex:581--585} &
+The theta-normalization is
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64\); all coefficients lie in
+\(64\Z\). \\
+\texttt{main.tex:613--625} &
+\(\Delta_5\) has the diagonal divisor with multiplicity one and is
+anti-invariant under the three diagonal real-root reflections:
+\(\Delta_5(s_{\delta_i}Z)=-\Delta_5(Z)\). \\
+\texttt{main.tex:1228--1350} &
+On \(W^{(2)}(\Lambda^{2,1}_{II})\),
+\[
+  \Delta_5(w\cdot Z)=\det(w)\Delta_5(Z),
+\]
+and the simple type-II real-root reflections have
+\(\nuDelta(s_{\delta_i})=-1\). \\
+\texttt{main.tex:1834--1954} &
+The compact Hall construction is conditional on a compact Hall category,
+HN finiteness, vanishing-cycle coefficients, Thom--Sebastiani
+orientation transport, protected integration, and an orientation
+character \(\epsilon_o\) satisfying
+\(\epsilon_o|_{W^{(2)}}=\nuDelta|_{W^{(2)}}\). \\
+\texttt{main.tex:2059--2095} &
+The determinant/scalar square fixes signed exponents, not compact Hall
+brackets, compact extension correspondences, or orientation constants. \\
+\texttt{/tmp/igusa-cell8-sources/bryan/K3xE.tex:264--285} &
+Reduced DT invariants are Behrend-weighted Euler characteristics of
+\(\Hilb(X)/E\). \\
+\texttt{/tmp/igusa-cell8-sources/bryan/K3xE.tex:333--364} &
+The Bryan generating series uses
+\(\widetilde q^{h-1}q^{d-1}(-p)^n\) and conjecturally gives
+\(-1/\chi_{10}\). \\
+\texttt{/tmp/igusa-cell8-sources/obred/reducedK3xE.tex:288--322} &
+Reduced stable-pair invariants are Behrend-weighted orbifold Euler
+characteristics of \(P_n(X,(\beta,d))/E\), equal to the reduced
+virtual-class incidence invariants. \\
+\texttt{/tmp/igusa-cell8-sources/obred/reducedK3xE.tex:432--466} &
+Reduced DT invariants are defined by Behrend-weighted Euler
+characteristics of Hilbert quotients, and
+\(\DT_{(\beta,d)}(q)=\PT_{(\beta,d)}(q)\) for nonzero \(\beta\). \\
+\texttt{/tmp/igusa-cell8-sources/op/main.tex:3212--3260} &
+The OP/PT branch uses the reduced PT Behrend-weighted quotient
+normalization and the GW/PT change \(y=-e^{iu}\). \\
+\texttt{/tmp/igusa-cell8-sources/bridgeland/hall.tex:1588--1743} &
+Joyce--Bridgeland semi-classical Hall integration maps weighted Euler
+characteristics to a Poisson torus; Behrend weighting gives the DT sign
+\(\sigma=-1\).  This is general Hall technology, not a constructed
+compact \(K3\times E\) Hall atlas here. \\
+\texttt{agent\_material/05\_normalization\_chain.tex} &
+\(D_5=64^{-1}\Delta_5\),
+\(\chi_{10}^{\OP}=D_5^2=4096^{-1}\Delta_5^2\), hence
+\(Z^{\OP}=-4096\Delta_5^{-2}\). \\
+\texttt{agent\_material/10\_compact\_hall\_atlas\_attack\_heal.tex} &
+The compact Hall atlas, strong orientation, and character comparison
+\(\epsilon_o=\nuDelta\) are still construction data, not established
+consequences of the reduced quotient scalar theory. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{The integration map that actually exists}
+
+\begin{proposition}[Reduced scalar integration]
+\label{prop:reduced-scalar-integration-only}
+For \(X=S\times E\), \(S\) a K3 surface, the OP/DT/PT theorem uses a
+coefficientwise scalar integration map
+\[
+  [M]\longmapsto \int_M \nu_M\,de,
+\]
+applied to the reduced quotient spaces or quotient stacks
+\[
+  \Hilb^n(X,(\beta,d))/E,
+  \qquad
+  P_n(X,(\beta,d))/E.
+\]
+It lands in integers coefficient by coefficient.  It is the
+Behrend-weighted, reduced, quotient Euler characteristic; in the
+stable-pair branch it agrees with the reduced virtual-class incidence
+definition of Oberdieck.
+\end{proposition}
+
+\begin{proof}
+Bryan defines the reduced Hilbert-scheme DT invariant by
+\[
+  \DT_{h,d,n}^{\mathrm{red}}
+  =
+  \int_{\Hilb^{\beta_h+dE,n}(X)/E}\nu\,de,
+\]
+because the unreduced invariant on \(\Hilb(X)\) vanishes under the free
+translation action of \(E\).  Oberdieck defines the stable-pair quotient
+invariant by the Behrend-weighted orbifold Euler characteristic of
+\(P_n(X,(\beta,d))/E\), proves that it equals the reduced incidence
+invariant, and proves the reduced DT/PT equality
+\[
+  \DT_{(\beta,d)}(q)=\PT_{(\beta,d)}(q)
+\]
+for nonzero \(\beta\).  These statements are coefficientwise scalar
+identities.  They do not require, and do not construct, a primitive
+Hall algebra object.
+\end{proof}
+
+\begin{corollary}[What is not supplied]
+\label{cor:what-is-not-supplied}
+The scalar theorem does not supply any of the following objects:
+\[
+\begin{gathered}
+  \Hall_{K3\times E}^{\mathrm{comp}},\qquad
+  \text{compact extension correspondences},\qquad
+  \text{HN-finite sector truncations},\\
+  \text{a critical CoHA with vanishing-cycle coefficients},\qquad
+  \text{a protected primitive projection }\Pi_{\Prim},\\
+  \text{an orientation character }\epsilon_o
+  \text{ with }\epsilon_o=\nuDelta .
+\end{gathered}
+\]
+Thus the theorem-level conclusion is scalar:
+\[
+  Z_{K3\times E}^{\DT}=Z_{K3\times E}^{\OP}
+  =-4096\Delta_5^{-2}.
+\]
+It is not a theorem-level construction of
+\(\mathfrak g_{\Delta_5}\) from compact protected BPS primitives.
+\end{corollary}
+
+\begin{proof}
+Joyce--Bridgeland Hall integration gives, in a suitable Calabi--Yau
+threefold Hall setting, a semi-classical map from Hall elements to a
+Poisson torus by weighted Euler characteristic, with \(\sigma=-1\) for
+Behrend-weighted DT integration.  The local source itself treats the
+motivic vanishing-cycle enhancement as additional technology, and its
+simplified hypotheses do not by themselves give the reduced
+\(E\)-quotient compact atlas needed here.  The manuscript also records
+the missing inputs explicitly: compact extension correspondences,
+Thom--Sebastiani orientation transport, protected integration, and
+primitive extraction.  Hence the scalar quotient integration cannot be
+rebranded as protected Hall integration.
+\end{proof}
+
+\subsection{Orientation character: theorem, criterion, open part}
+
+\begin{proposition}[Automorphic character is proved]
+\label{prop:automorphic-character-proved}
+The character \(\nuDelta\) is theorem-level automorphic data of the
+normalized Borcherds/Maass form \(\Delta_5\).  On the type-II Weyl
+subgroup recorded in the manuscript,
+\[
+  \nuDelta(s_{\delta_i})=-1
+  \qquad (i=1,2,3),
+\]
+and
+\[
+  \Delta_5(w\cdot Z)=\det(w)\Delta_5(Z)
+  \qquad
+  \bigl(w\in W^{(2)}(\Lambda^{2,1}_{II})\bigr).
+\]
+The scalar square \(\Delta_5^2=\Delta_{10}\) forgets this sign.
+\end{proposition}
+
+\begin{proof}
+This is the Maass/Borcherds character statement recorded in
+\texttt{main.tex:547--577} and the reflection computation recorded in
+\texttt{main.tex:1228--1350}.  The simple diagonal reflections are
+anti-invariant for \(\Delta_5\), while the square is scalar.  No
+enumerative orientation input is used in this proof.
+\end{proof}
+
+\begin{definition}[Protected orientation matching datum]
+\label{def:protected-orientation-matching-datum}
+A compact protected integration/orientation datum realizing the
+\(\Delta_5\) denominator would consist of:
+
+\begin{enumerate}
+\item an extension-closed compact Hall or critical CoHA object
+\(\Hall_{K3\times E}^{\mathrm{comp}}\) in a strict stability sector,
+with HN-finite truncations and support property;
+\item derived critical charts
+\[
+  \mathfrak M_\gamma|_U\simeq[\Crit(f_{\gamma,U})/G_{\gamma,U}]
+\]
+for the relevant charge stacks;
+\item a strong orientation datum \(o\), namely a square root of the
+determinant line
+\[
+  o_\gamma^{\otimes 2}
+  \simeq
+  \operatorname{sdet}\RHom(\mathcal E_\gamma,\mathcal E_\gamma)
+\]
+with exact-triangle and Thom--Sebastiani coherences;
+\item equivariant descent through the reduced \(E\)-quotient;
+\item a protected integration map
+\[
+  I^{\mathrm{prot}}_{\sigma,o}:
+  \Hall_{K3\times E}^{\mathrm{comp}}
+  \longrightarrow
+  \widehat{\C[\Gammaeff]}
+\]
+or its semi-classical/protected primitive shadow;
+\item a primitive projection satisfying
+\[
+  \sdim \Prim_\gamma=f(nm,l)
+  \qquad
+  \text{for }\gamma=(n,l,m);
+\]
+\item a symmetry action on the oriented theory whose induced
+orientation character
+\[
+  \epsilon_o:W^{(2)}(\Lambda^{2,1}_{II})\longrightarrow\{\pm1\}
+\]
+satisfies the comparison
+\[
+  \epsilon_o=\nuDelta
+  \quad\text{on }W^{(2)}(\Lambda^{2,1}_{II}).
+\]
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Orientation match is not a normalization choice]
+\label{prop:not-normalization-choice}
+The equality \(\epsilon_o=\nuDelta\) is not obtained merely by choosing
+the leading sign of \(\Delta_5\).  Multiplying \(\Delta_5\) by a nonzero
+constant changes neither its automorphic character nor its reflection
+anti-invariance.  The normalization
+\[
+  [q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64
+\]
+chooses the theta-product section.  It does not construct a strong
+orientation on the Hall side and does not prove that the orientation
+monodromy is \(\nuDelta\).
+\end{proposition}
+
+\begin{proof}
+Characters are ratios:
+\[
+  \frac{(c\Delta_5)|_5g}{c\Delta_5}
+  =
+  \frac{\Delta_5|_5g}{\Delta_5}
+  =
+  \nuDelta(g).
+\]
+Thus the scalar constant \(c\) cancels.  A geometric orientation
+character instead comes from transporting a chosen square root of a
+determinant line around symmetries or wall reflections.  That
+transport has not been built for the compact \(K3\times E\) Hall object.
+\end{proof}
+
+\subsection{How the diagonal reflection sign should arise}
+
+The automorphic fact is exact:
+\[
+  \operatorname{div}(\Delta_5)
+  =
+  \operatorname{Sp}_4(\Z)\cdot H_{\mathrm{diag}}
+  \quad\text{with multiplicity }1,
+\]
+and each simple diagonal real-root reflection \(s_{\delta_i}\) satisfies
+\[
+  \Delta_5(s_{\delta_i}Z)=-\Delta_5(Z).
+\]
+
+The expected orientation mechanism is the following.  The diagonal
+Humbert divisor is the wall where a single real-root normal mode becomes
+massless.  A square root of the determinant of the self-dual deformation
+complex behaves like a Pfaffian line.  Reflection in the normal direction
+should reverse that oriented one-dimensional normal factor, giving a
+sign \(-1\) on the square root and no sign on its square.  This is the
+geometric shape of
+\[
+  \epsilon_o(s_{\delta_i})=-1,
+  \qquad
+  \epsilon_o^2(s_{\delta_i})=1.
+\]
+
+This paragraph is a criterion, not a proof.  A proof would have to
+construct the oriented critical Hall atlas, identify the diagonal
+wall-crossing normal mode with the simple type-II real root
+\(\delta_i\), and compute the induced monodromy of the orientation line.
+The current paper proves the automorphic sign of \(\Delta_5\); it does
+not prove this Pfaffian-orientation computation from \(K3\times E\)
+geometry.
+
+\subsection{Attack on the constants}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.20\textwidth}p{0.69\textwidth}}
+\hline
+Constant/sign & Status \\
+\hline
+\(64\) &
+Theta-product normalization:
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64\).  The monic denominator
+section is
+\[
+  D_5=64^{-1}\Delta_5.
+\]
+This constant is not a Hall integration constant, not an orientation
+sign, and not produced by the Weyl vector. \\
+\(-4096\) &
+\[
+  \chi_{10}^{\OP}=D_5^2=4096^{-1}\Delta_5^2,
+  \qquad
+  Z^{\OP}=-(\chi_{10}^{\OP})^{-1}.
+\]
+Thus
+\[
+  Z^{\OP}=-4096\Delta_5^{-2}.
+\]
+Oberdieck's DT/PT theorem transfers this same constant to reduced DT.
+The minus sign is the OP curve-counting convention, not the reflection
+character of \(\Delta_5\). \\
+\(64^{-1}\Delta_5(2Z)\) &
+The denominator uses the monic section \(D_5\) and the doubled
+exponential convention for the root lattice:
+\[
+  \operatorname{den}(\mathfrak g_{\Delta_5})
+  =
+  D_5(2Z)
+  =
+  64^{-1}\Delta_5(2Z).
+\]
+The factor \(64^{-1}\) removes the theta leading coefficient; the
+argument \(2Z\) is the root-coordinate normalization. \\
+Weyl vector &
+The Weyl vector fixes the leading monomial
+\[
+  q^{1/2}r^{1/2}s^{1/2}
+\]
+or its doubled-coordinate version.  It does not create the numerical
+coefficient \(64\), and it does not explain the OP sign. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Exact paper language}
+
+The theorem-level statement should be:
+
+\begin{quote}
+For \(X=K3\times E\), the reduced DT/PT/OP scalar integration is the
+Behrend-weighted reduced quotient Euler characteristic on
+\(\Hilb(X)/E\) and \(P_n(X,\beta)/E\).  With the theta normalization
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64\), the primitive scalar partition
+function is
+\[
+  Z_{X}^{\DT}=Z_X^{\OP}=-4096\Delta_5^{-2}.
+\]
+\end{quote}
+
+The automorphic theorem should be:
+
+\begin{quote}
+The Borcherds determinant \(\Delta_5=\operatorname{Borch}(\phi_{0,1})\)
+has Maass character \(\nuDelta\).  Its divisor is the diagonal Humbert
+divisor with multiplicity one, and on the type-II Weyl subgroup
+\[
+  \Delta_5(w\cdot Z)=\det(w)\Delta_5(Z).
+\]
+In particular \(\nuDelta(s_{\delta_i})=-1\) for the simple diagonal
+real-root reflections.
+\end{quote}
+
+The protected realization should not be stated as a theorem.  It should
+be stated as the following criterion/open problem:
+
+\begin{quote}
+A compact protected \(K3\times E\) realization of
+\(\mathfrak g_{\Delta_5}\) is an oriented critical Hall or CoHA object
+with reduced \(E\)-quotient descent, protected integration
+\(I^{\mathrm{prot}}_{\sigma,o}\), primitive extraction, and a strong
+orientation datum \(o\) whose induced reflection character
+\(\epsilon_o\) satisfies
+\[
+  \epsilon_o|_{W^{(2)}(\Lambda^{2,1}_{II})}
+  =
+  \nuDelta|_{W^{(2)}(\Lambda^{2,1}_{II})}.
+\]
+If such a datum is constructed and if
+\(\sdim\Prim_{(n,l,m)}=f(nm,l)\), then its denominator is
+\[
+  \operatorname{den}(\mathfrak g_{\Delta_5})
+  =
+  64^{-1}\Delta_5(2Z).
+\]
+The existence of this oriented compact protected integration datum is
+not proved by the scalar OP/DT theorem and remains a realization
+problem.
+\end{quote}
+
+\subsection{Claim-status recommendation}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.37\textwidth}p{0.13\textwidth}p{0.39\textwidth}}
+\hline
+Claim & Status & Reason \\
+\hline
+Reduced OP/DT scalar square
+\(-4096\Delta_5^{-2}\) &
+Theorem &
+Oberdieck DT/PT plus OP/PT/GW comparison and OP
+\(-1/\chi_{10}\), with the manuscript's \(64\)-normalization. \\
+Behrend-weighted reduced quotient integration exists &
+Theorem &
+Defined on \(\Hilb(X)/E\) and \(P_n(X,\beta)/E\); stable-pair quotient
+equals reduced virtual-class incidence. \\
+Motivic/CoHA/perverse-sheaf protected integration for this compact
+realization &
+Open datum &
+General Hall and CoHA technologies exist, but the compact
+\(K3\times E\) Hall atlas, quotient descent, primitive projection, and
+orientation transport are not constructed here. \\
+\(\nuDelta\) is the automorphic/reflection character of \(\Delta_5\) &
+Theorem &
+Maass/Borcherds character and reflection computation in the manuscript. \\
+There is a geometric orientation datum with
+\(\epsilon_o=\nuDelta\) &
+Open problem /
+criterion &
+Requires a strong orientation and a monodromy computation on the
+oriented compact Hall theory.  Scalar normalization cannot supply it. \\
+The diagonal reflection sign comes from orientation &
+Expected mechanism &
+The Pfaffian-line explanation is the right local model, but it has not
+been derived from a constructed \(K3\times E\) orientation datum. \\
+Constants \(64\), \(4096\), and \(-\) are Hall-orientation constants &
+False &
+\(64\) is theta normalization, \(4096=64^2\), and the minus sign is the
+OP scalar convention. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Files changed, checks run, remaining questions}
+
+Files changed:
+\[
+  \texttt{agent\_material/12\_protected\_integration\_orientation\_attack\_heal.tex}.
+\]
+
+Checks run:
+\begin{enumerate}
+\item Loaded the required repository discipline files:
+\(\texttt{CLAUDE.md}\), \(\texttt{AGENTS.md}\), and
+\(\texttt{\string~/ecosystem/INVARIANTS.md}\).
+\item Read \(\texttt{main.tex}\), \(\texttt{proj.bib}\), and the local
+OP/DT/Hall agent-material notes named in the mission scope.
+\item Checked the local primary-source TeX for Bryan, Oberdieck,
+Oberdieck--Pandharipande/Oberdieck--Pixton, and Joyce--Bridgeland Hall
+integration anchors listed above.
+\item Ran an \(\texttt{rg}\) sanity scan for overclaiming and attribution
+trigger phrases in this report; no hits.
+\item No full paper build was run: this report is not included by
+\(\texttt{main.tex}\), and no main manuscript file was edited.
+\end{enumerate}
+
+Remaining open questions:
+\begin{enumerate}
+\item Construct an extension-closed compact Hall or critical CoHA object
+for the reduced \(K3\times E\) sector, with HN-finite sector
+truncations.
+\item Prove \(E\)-equivariant descent of the strong orientation and the
+vanishing-cycle coefficient system through the reduced quotient.
+\item Construct the protected primitive projection and prove
+\[
+  \sdim\Prim_{(n,l,m)}=f(nm,l).
+\]
+\item Compute the orientation-line monodromy under the simple diagonal
+reflections and prove
+\[
+  \epsilon_o(s_{\delta_i})=-1.
+\]
+\item Extend that computation from the simple reflections to the full
+comparison
+\[
+  \epsilon_o|_{W^{(2)}(\Lambda^{2,1}_{II})}
+  =
+  \nuDelta|_{W^{(2)}(\Lambda^{2,1}_{II})}.
+\]
+\end{enumerate}

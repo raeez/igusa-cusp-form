@@ -1,0 +1,557 @@
+\section{Synthesis architecture and theorem-strength attack-heal}
+\label{sec:synthesis-architecture-attack-heal}
+
+\subsection{Scope and source packet}
+
+This dossier owns only
+\[
+\texttt{agent\_material/12\_synthesis\_architecture\_attack\_heal.tex}.
+\]
+It proposes integration policy for \(\texttt{main.tex}\); it does not
+edit \(\texttt{main.tex}\).
+
+The required local controls were read:
+\[
+\texttt{CLAUDE.md},\quad
+\texttt{AGENTS.md},\quad
+\texttt{/Users/raeez/ecosystem/INVARIANTS.md},\quad
+\texttt{main.tex},\quad
+\texttt{proj.bib}.
+\]
+The harness self-reflection section of
+\(\texttt{/Users/raeez/ecosystem/AGENTS-HARNESS.md}\) was also read.
+At the start of this pass no other
+\(\texttt{agent\_material/12\_*}\) file was present.  During
+verification two parallel \(12\)-packets appeared; both were read and
+their row-host constraints are incorporated here:
+\[
+\texttt{12\_eight\_rows\_hosts\_F1\_F4\_attack\_heal.tex},\qquad
+\texttt{12\_eight\_rows\_hosts\_F5\_F8\_attack\_heal.tex}.
+\]
+
+The synthesis incorporates the successful repairs recorded in the local
+packets on compact Hall truncations, protected integration and
+orientation, primitive bracket constants, OP/DT comparison, and boundary
+row hosts:
+\[
+\begin{gathered}
+\texttt{08\_compact\_hall\_factorization\_object.tex},\quad
+\texttt{10\_compact\_hall\_atlas\_attack\_heal.tex},\quad
+\texttt{11\_compact\_hall\_finite\_heart\_and\_hn.tex},\\
+\texttt{05\_normalization\_chain.tex},\quad
+\texttt{10\_bps\_bracket\_constants\_attack\_heal.tex},\quad
+\texttt{11\_denominator\_low\_degree\_computation\_table.tex},\\
+\texttt{10\_reduced\_dt\_pt\_op\_comparison\_theorem.tex},\quad
+\texttt{11\_op\_dt\_theorem\_integration\_patch.tex},\\
+\texttt{10\_boundary\_row\_physical\_hosts.tex},\quad
+\texttt{11\_chl\_boundary\_primary\_source\_audit.tex},\quad
+\texttt{11\_factorization\_koszul\_minimal\_data.tex},\\
+\texttt{12\_eight\_rows\_hosts\_F1\_F4\_attack\_heal.tex},\quad
+\texttt{12\_eight\_rows\_hosts\_F5\_F8\_attack\_heal.tex}.
+\end{gathered}
+\]
+
+\subsection{North-star architecture}
+
+The paper should read in the order forced by the physics, not in the
+order in which the automorphic technology is easiest to state:
+\[
+\hbox{protected locality}
+\longrightarrow
+\hbox{factorization}
+\longrightarrow
+\hbox{primitives}
+\longrightarrow
+\hbox{denominator}
+\longrightarrow
+\hbox{scalar square}
+\longrightarrow
+\hbox{eight-row boundary physics}.
+\]
+
+\paragraph{Protected locality.}
+The only physical object used at theorem level is the protected index.
+Right-moving localization of the K3 Ramond sector gives the signed
+Euler characteristic \(Z_{\mathrm{K3}}=2\phi_{0,1}\).  The compact
+local theory on \(K3\times E\) is not constructed.  Its required first
+datum is a holomorphic \(E_3\)-factorization algebra
+\[
+\mathcal A^{E_3}_X
+\]
+with descent, quantum master equation, anomaly cancellation, charge
+completion, and finite-first control.  Until this datum is built,
+locality is an open realization requirement, not a theorem.
+
+\paragraph{Factorization.}
+If the \(E_3\)-source exists, a chain-level \(K3\)-to-\(E\)
+specialization must produce the curve-level chiral shadow
+\[
+\mathcal F_X\simeq
+\mathrm{Sp}^{\mathrm{ch}}_{K3,E}(\mathcal A^{E_3}_X)
+\in \mathrm{Fact}(\operatorname{Ran}(E)).
+\]
+This is the first place where collision maps can live.  The scalar
+series and the Borcherds product do not supply these maps.  Pushforward
+along \(p_E\), restriction to sectors, and chiral Koszul duality are
+operations on a supplied \(\mathcal A^{E_3}_X\) or \(\mathcal F_X\);
+they do not reconstruct the source.
+
+\paragraph{Primitives.}
+The theorem-level object is the virtual class
+\[
+\mathbb U_{n,l}\in K_0(\mathrm{sVect}_{\mathrm{fd}}),\qquad
+\sdim\mathbb U_{n,l}=f(n,l),
+\]
+and the virtual one-particle determinant
+\[
+\mathcal V_{(n,l,m)}=\mathbb U_{nm,l}.
+\]
+This is a \(K_0\)-model.  It does not construct a canonical half of the
+K3 Hilbert space, a one-particle Hilbert space on \(K3\times E\), or a
+primitive bracket.
+
+\paragraph{Denominator.}
+The Gritsenko--Nikulin theorem constructs the denominator Lie
+superalgebra
+\[
+\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}
+\]
+with real simple roots \(\delta_1,\delta_2,\delta_3\), Weyl vector
+\(\rho\), degree map
+\[
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},
+\]
+visible signed root supermultiplicities \(f(nm,l)\) on
+\(\Gamma_{\mathrm{act}}\), and denominator
+\[
+\operatorname{den}(\mathcal A_{\mathrm{den}})
+=64^{-1}\Delta_5(2Z).
+\]
+This is a theorem about the denominator algebra.  It is not a theorem
+about compact Hall constants.
+
+\paragraph{Scalar square.}
+The enumerative scalar branch is now theorem-level:
+\[
+Z^X_{\mathrm{DT}}(T,Q,P)
+=Z^X_{\mathrm{OP}}(P,Q,T)
+=-4096\,\Delta_5(Z)^{-2}.
+\]
+It uses Oberdieck's reduced DT/PT comparison, the primitive
+Oberdieck--Pandharipande GW/PT comparison, and Oberdieck--Pixton.  The
+physical D-brane protected-index dictionary remains conjectural:
+\[
+\Omega_X(h,d,n)\stackrel{\mathrm{phys}}{=}
+\mathbf{DT}^X_{n,(\beta_h,d)}.
+\]
+
+\paragraph{Eight-row boundary physics.}
+The Clery--Gritsenko catalogue supplies eight diagonal-divisor
+automorphic products.  Rows \(1\)--\(4\) have Gritsenko--Nikulin
+denominator theorems.  Row \(1\) also has the theorem-level
+Oberdieck--Oberdieck--Pandharipande--Oberdieck--Pixton scalar host for
+the Igusa square, but still no compact Hall/chiral host.  Rows
+\(2\)--\(4\) should be treated as denominator rows only until a row-map
+certificate is constructed.  Rows \(5\)--\(8\) have Govindarajan
+CHL/WKB denominator theorems in the CHL normalization, with \(F_7\)
+only on the \(\mu_4\)-multiplier cover.  No row \(5\)--\(8\) physical
+host, reduced CY/DT scalar theorem, or compact chiral/Hall source is
+constructed in the current manuscript.
+
+\subsection{Theorem-strength ledger}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.23\textwidth}p{0.19\textwidth}p{0.46\textwidth}}
+\hline
+Claim & Status & Integration rule \\
+\hline
+\(Z_{\mathrm{K3}}=2\phi_{0,1}\) and right-moving localization &
+proved under the unitary K3 sigma-model input &
+Use as protected Euler characteristic.  Do not call
+\(\phi_{0,1}\) an honest half-Hilbert-space character. \\
+\(\mathbb U_{n,l}\) and \(\mathcal V_{(n,l,m)}=\mathbb U_{nm,l}\) &
+constructed in \(K_0\) &
+Promote only to virtual one-particle determinant.  Refuse Hilbert-space
+or operator-product language. \\
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64\) &
+proved normalization &
+Explain from the theta-constant product before using \(D_5=64^{-1}\Delta_5\). \\
+\(\mathcal D_X=\Delta_5\) &
+theorem, by Borcherds--Gritsenko--Nikulin product &
+State as normalized virtual Fock determinant.  It is not an analytic
+branch and not a microscopic BPS space. \\
+\(Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\) &
+theorem in the quotient-by-\(E\), Behrend-weighted primitive setting &
+Promote fully as enumerative scalar theorem.  Keep the protected
+D-brane dictionary conjectural. \\
+\(\alpha(\Gamma_{\mathrm{act}})\) gives the type-II cone &
+proved lattice/Jacobi-support computation &
+Use to enter the Weyl chamber.  Do not infer absence of zero
+superdimension roots or absence of microscopic states. \\
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\) &
+theorem, Gritsenko--Nikulin &
+Promote as denominator algebra.  It determines signed root
+superdimensions, not compact Hall constants. \\
+Low-degree Chevalley--Serre constants &
+denominator-algebra constants &
+May be displayed as algebra constants after choosing Chevalley
+generators.  Must be labelled not Hall constants. \\
+\(\mathsf{Den}_{\Delta_5,E}\) &
+formal BD current envelope &
+Promote as formal current algebra on \(E\).  Refuse compact source or
+Koszul realization without the five-object datum. \\
+Sectorial Hall completion &
+conditional proposition &
+Use only after a stability sector, HN property, support property,
+finite type, and oriented critical correspondences are supplied. \\
+\(\mathfrak K_X\) compact realization datum &
+criterion/open problem &
+Consequences may be stated conditionally.  No existence language. \\
+Rows \(F_2,F_3,F_4\) &
+GN denominator theorems &
+Use in the \(e_t^{(n,l,m)}=q^nr^ls^{tm}\) normalization.  Do not import
+the doubled \(N=1\) normalization.  Physical hosts and row maps are
+open. \\
+Rows \(F_5,F_6,F_7,F_8\) &
+CG products plus Govindarajan CHL/WKB denominator theorems &
+Use as denominator rows only.  \(F_7\) always carries the
+\(\mu_4\)-cover qualification.  Physical hosts remain open. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Constants \(64\) and \(-4096\)}
+
+The constants must be explained before they are used.
+
+\paragraph{\(64\).}
+\(\Delta_5\) is the product of the ten even genus-two theta constants.
+With
+\[
+q=e^{2\pi iz_1},\qquad r=e^{2\pi iz_2},\qquad s=e^{2\pi iz_3},
+\]
+the leading theta-constant calculation gives
+\[
+\Delta_5(Z)=64q^{1/2}s^{1/2}(r^{1/2}-r^{-1/2})+\cdots,
+\]
+and in the Fourier convention used in the manuscript
+\[
+c_\Delta(1,1,1)=64,\qquad c_\Delta(1,-1,1)=-64.
+\]
+Therefore the monic Borcherds product is
+\[
+D_5=64^{-1}\Delta_5
+=q^{1/2}r^{1/2}s^{1/2}
+\prod_{\Gamma_{\mathrm{eff}}}(1-q^nr^ls^m)^{f(nm,l)}.
+\]
+Here ``monic'' refers to the vacuum monomial before expanding the
+boundary factor \((1-r^{-1})\).
+
+\paragraph{\(-4096\).}
+Oberdieck--Pixton use the K3 elliptic genus as product input:
+\[
+Z_{\mathrm{K3}}=2\phi_{0,1}.
+\]
+Hence their monic product is the square of \(D_5\):
+\[
+\chi_{10}^{\mathrm{OP}}=D_5^2
+=(64^{-1}\Delta_5)^2
+=4096^{-1}\Delta_5^2.
+\]
+Their theorem gives
+\[
+Z^X_{\mathrm{OP}}=-\left(\chi_{10}^{\mathrm{OP}}\right)^{-1},
+\]
+so in the theta-constant normalization
+\[
+Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}.
+\]
+Oberdieck's reduced DT/PT theorem and the primitive OP/GW/PT comparison
+give the same constant for the reduced Hilbert-scheme DT branch.  The
+factor \(4096=64^2\) is only a normalization conversion.  The sign is
+the sign in the OP theorem.
+
+\subsection{Exact main-text integration instructions}
+
+The current \(\texttt{main.tex}\) has already absorbed most successful
+repairs.  The main thread should avoid a wholesale rewrite and apply
+only local theorem-strength polish unless new reports from Agents
+\(1\)--\(5\) add contradictions.
+
+\paragraph{A. Introduction, lines 55--118 and 123--229.}
+Keep the current abstract and claim-strength table.  They already state
+OP/DT as theorem-level, the determinant as virtual, the denominator
+algebra as known, and the compact realization as open.
+
+Recommended local addition after the table at current lines
+\(187\)--\(222\):
+\[
+\begin{minipage}{0.92\textwidth}
+\small
+\emph{Literature versus synthesis.}
+Oberdieck--Pixton and Oberdieck supply the scalar OP/DT theorem.
+Borcherds--Gritsenko--Nikulin supply the product and denominator
+algebra.  Beilinson--Drinfeld supplies only the formal current envelope.
+The synthesis in this paper is the normalization comparison and the
+realization criterion; it is not a new construction of the compact
+local theory.
+\end{minipage}
+\]
+
+\paragraph{B. Honest one-particle lift, lines 524--543.}
+Replace the phrase
+\[
+\hbox{``the same charge grading and the same signed multiplicities''}
+\]
+at current lines \(539\)--\(540\) by
+\[
+\hbox{``the same Gram-index grading and the same signed
+supermultiplicities''}.
+\]
+Patch block:
+\begin{verbatim}
+The determinant construction uses only the virtual classes
+\(\mathbb U_{n,l}\) and their signed dimensions.  The algebraic object
+constructed from the same Gram-index grading and the same signed
+supermultiplicities is the Borcherds denominator algebra.
+\end{verbatim}
+
+\paragraph{C. Normalization chain, lines 545--714 and 762--887.}
+Keep the current structure.  It explains \(64\), \(D_5=64^{-1}\Delta_5\),
+the substitution \(Z\mapsto2Z\), and \(-4096\).  Do not move the
+normalization proof into an appendix; it is load-bearing.
+
+If space is tightened, do not delete:
+\[
+[q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64,\qquad
+\chi_{10}^{\mathrm{OP}}=(64^{-1}\Delta_5)^2,\qquad
+Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}.
+\]
+
+\paragraph{D. Duality and Gram-index section, lines 975--1074.}
+Keep the current ``Gram-index notation'' and ``Gram matrix convention''
+language.  It correctly says the physical charge grading is supplied
+input.  Before inscription, scan for any reintroduced
+\(\Gamma_{\mathrm{BPS}}=\Z^3\) claim.  None should survive outside a
+conditional physical-realization hypothesis.
+
+\paragraph{E. Denominator and current section, lines 1566--1767.}
+Keep the current theorem title ``Denominator algebra identity''.  The
+theorem is correctly denominator-level.  Preserve the sentence:
+\[
+\hbox{``A microscopic BPS Hilbert space and its operator product require
+separate construction.''}
+\]
+It is a guardrail, not exposition padding.
+
+\paragraph{F. Compact realization, lines 1834--2096.}
+Keep the finite-first HN replacement.  The key repaired claim is:
+\[
+\hbox{finite object}=
+\varprojlim_R
+\left(\mathcal H_{\sigma,S}^{or}/\mathcal H_{\sigma,S}^{>R}\right),
+\]
+not a finite active-support heart.  Do not remove the obstruction that
+\(\Gamma_{\mathrm{act}}\) is not additive.
+
+The criterion at lines \(1981\)--\(2003\) may be promoted only as:
+\[
+\hbox{if }\mathfrak K_X\hbox{ exists, then the primitive comparison
+holds.}
+\]
+It must never read as an existence theorem.
+
+\paragraph{G. Main synthesis theorem, lines 2382--2516.}
+Keep this theorem as the local summit.  If the title is changed, use:
+\[
+\hbox{Virtual Igusa determinant and reduced OP/DT scalar square}.
+\]
+Do not use ``BPS theorem'' in the title.  Its last paragraph must keep
+the compact \(E_3\)/Hall/chiral comparison as an open problem.
+
+\paragraph{H. Eight-row part, lines 2521--4275.}
+Separate the first row from the rest.  For \(F_1=\Delta_5\), the
+scalar square is theorem-level by the reduced \(K3\times E\) OP/DT
+comparison, and the denominator algebra is theorem-level by
+Gritsenko--Nikulin.  The compact Hall/chiral host remains open.
+
+For \(F_2,F_3,F_4\), the manuscript may use the Gritsenko--Nikulin
+denominator algebras in their stated normalization.  It may not claim a
+CHL identification, CY/DT scalar host, or compact physical realization
+without a row-map certificate.  The same-weight collision
+\(\Delta_2\) versus \(\nabla_2\) is not such a certificate.
+
+Keep rows \(5\)--\(8\) as:
+\[
+\hbox{CG product}+\hbox{Govindarajan CHL/WKB denominator}
+\not\Rightarrow
+\hbox{physical host}.
+\]
+For \(F_7=\nabla_{3/2}\), every denominator statement must carry the
+\(\mu_4\)-cover qualification.  Any row-map claim must name the group or
+cover, character, divisor, Jacobi seed at every cusp, product-degree
+lattice, Weyl vector, real roots, reflection character, CY/DT/chiral
+host, and reduced scalar identity.
+
+The minimal theorem-level row-map certificate for any boundary row is:
+physical charge lattice, one-particle protected index, orientation
+character, scalar theorem if a scalar square is claimed, and primitive
+algebra comparison.  Without all five pieces the row remains a
+denominator row plus an open physical-host problem.
+
+\subsection{Claim-status recommendations}
+
+\begin{enumerate}
+\item Promote the reduced Hilbert-scheme DT branch to theorem-level,
+with the hypotheses explicit: primitive non-zero \(\beta_h\), \(d\ge0\),
+quotient-by-\(E\), Behrend-weighted invariants, and no MacMahon factor
+because \(\chi(K3\times E)=0\).
+\item Promote the determinant \(\mathcal D_X=\Delta_5\) only as a
+virtual \(K_0\) determinant.  The word ``BPS'' may appear only as
+``virtual BPS'' or inside the realization problem.
+\item Promote the denominator algebra and its low-degree constants as
+Gritsenko--Nikulin/Borcherds algebra facts.  Label every such constant
+``not a compact Hall constant'' until a Hall correspondence computes it.
+\item Promote \(\mathsf{Den}_{\Delta_5,E}\) as a formal current
+envelope.  Refuse ``compact chiral Koszul theorem'' unless
+\((\mathcal F_X,\mathcal H_X,C_X,\Theta_{\mathrm{Kos}},\Pi_{\mathrm{prim}})\)
+are constructed.
+\item Keep the compact Hall atlas as conditional.  The missing maps are:
+HN descent, Thom--Sebastiani orientation transport, equivariant or
+reduced \(E\)-descent retaining relative position, protected
+integration, and orientation character comparison
+\(\epsilon_o=\nu_{\Delta_5}\).
+\item Keep physical row maps for \(F_5,\ldots,F_8\) open.  The
+Govindarajan theorem proves denominator data, not a CY/DT scalar theorem
+or compact host.
+\item Keep physical row maps for \(F_2,F_3,F_4\) open as well.  Their
+Gritsenko--Nikulin denominator theorems do not provide CY/DT scalar
+hosts or compact Hall/chiral sources.
+\item Keep external scalar-square branches separate:
+\[
+Z^X_{\square,\mathrm{ext}}=C_{\square,\mathrm{ext}}\Delta_5^{-2}.
+\]
+Do not call such a branch \(Z^X_{\mathrm{DT}}\) or assign it
+\(-4096\) without an enumerative theorem.
+\end{enumerate}
+
+\subsection{Adversarial checklist before inscription}
+
+Before the main thread writes any theorem-level sentence into
+\(\texttt{main.tex}\), check:
+\begin{enumerate}
+\item Does every use of ``charge lattice'' distinguish the microscopic
+compactification lattice from \(\Gamma_{\mathrm{gram}}=\Z^3\)?
+\item Does every use of ``BPS'' have status: protected index,
+conjectural D-brane dictionary, virtual \(K_0\) determinant, or open
+realization?
+\item Are \(64\) and \(-4096\) both explained before use?
+\item Is \(D_5=64^{-1}\Delta_5\) kept distinct from
+\(\Delta_5\), and is \(D_5(2Z)\) kept distinct from \(D_5(Z)\)?
+\item Does every denominator identity specify its normalization:
+\(64^{-1}\Delta_5(2Z)\) for the \(N=1\) doubled convention, and
+\(a_j=1\) in the Gritsenko--Nikulin/Govindarajan product convention for
+rows \(2\)--\(8\)?
+\item Does any finite Hall object rely on a finite active-support heart?
+If yes, delete and replace by HN height quotients.
+\item Does any Hall bracket constant appear without a compact extension
+correspondence, orientation cocycle, protected integration, basis, and
+parity split?  If yes, downgrade to denominator constant.
+\item Does any chiral Koszul assertion construct only
+\(\Omega_E^{\mathrm{ch}}\bar B_E^{\mathrm{ch}}(\mathsf{Den})\to
+\mathsf{Den}\)?  If yes, call it target-internal inversion, not compact
+realization.
+\item Does any boundary-row scalar square imply a denominator theorem?
+If yes, require Weyl chamber, simple real roots, reflection character,
+parity, and Weyl alternating sum.
+\item Does any row \(F_7\) statement omit the \(\mu_4\)-cover?  If yes,
+the statement is false as written.
+\item Does any comparison tuple with weights
+\((5,2,1,1,\tfrac12,1,\tfrac14,0)\) get identified with the
+Clery--Gritsenko row system?  If yes, stop: it is a different indexing
+system until a row map is built.
+\item Does any row \(F_2,F_3,F_4\) statement claim a physical host from
+the Gritsenko--Nikulin denominator theorem alone?  If yes, downgrade to
+denominator-row status.
+\item Are primary-source attributions present for all load-bearing
+claims: Oberdieck--Pixton, Oberdieck, Oberdieck--Pandharipande,
+Borcherds, Gritsenko--Nikulin, Clery--Gritsenko, Govindarajan,
+Beilinson--Drinfeld?
+\end{enumerate}
+
+\subsection{Residual open obligations}
+
+The remaining mathematical obligations are exact:
+\begin{enumerate}
+\item Construct the compact holomorphic \(E_3\)-factorization algebra on
+\(K3\times E\), with QME, descent, anomaly cancellation, and
+finite-first charge completion.
+\item Construct the chain-level \(K3\)-to-\(E\) specialization and the
+compact chiral shadow on \(\operatorname{Ran}(E)\).
+\item Construct the oriented critical Hall atlas: extension-closed
+heart, stability sector, HN property, support property, finite-type
+semistable stacks, vanishing-cycle coefficients, and strong orientation.
+\item Prove reduced or equivariant \(E\)-descent for Hall convolution,
+retaining the relative \(E\)-position lost by the scalar quotient.
+\item Prove \(\epsilon_o=\nu_{\Delta_5}\) on the reflection action for
+the constructed orientation domain.
+\item Prove protected primitive integration:
+\[
+\sdim\Prim_{\mathrm{prot},(n,l,m)}=f(nm,l).
+\]
+\item Prove the primitive Hall/factorization bracket satisfies the
+Gritsenko--Nikulin/Borcherds relations, including real Serre,
+imaginary-root parity, orthogonality, Hopf pairing, and radical
+quotient.
+\item Construct \(C_X\), prove conilpotence in the completed chiral bar
+category, and construct
+\[
+\Theta_{\mathrm{Kos}}:\Omega_E^{\mathrm{ch}}C_X
+\xrightarrow{\simeq}
+\mathsf{Den}_{\Delta_5,E}.
+\]
+\item For rows \(2\)--\(8\), construct a physical-host certificate
+\[
+(X_j,\Gamma_j^{\mathrm{BPS}},\widetilde\Gamma_j,\theta_j,
+Z_j^{\mathrm{red}},\mathcal H^{1p}_{j,\kappa},\mathsf C_j)
+\]
+before writing \(Z_j^{\mathrm{red}}=C_jF_j^{-2}\) as theorem.  For row
+\(1\), the scalar host is known, but the analogous compact Hall/chiral
+certificate is still open.
+\end{enumerate}
+
+\subsection{Files changed}
+
+Only this file was created:
+\[
+\texttt{agent\_material/12\_synthesis\_architecture\_attack\_heal.tex}.
+\]
+
+\subsection{Checks run}
+
+\begin{itemize}
+\item \(\texttt{sed -n}\) reads of \(\texttt{CLAUDE.md}\),
+\(\texttt{AGENTS.md}\), \(\texttt{/Users/raeez/ecosystem/INVARIANTS.md}\),
+\(\texttt{/Users/raeez/ecosystem/AGENTS-HARNESS.md}\),
+\(\texttt{main.tex}\), and \(\texttt{proj.bib}\).
+\item \(\texttt{rg --files agent\_material}\) and
+\(\texttt{find agent\_material -maxdepth 1 -name '12\_*' -print}\).
+\item \(\texttt{sed -n}\) reads of the late-arriving
+\(\texttt{12\_eight\_rows\_hosts\_F1\_F4\_attack\_heal.tex}\) and
+\(\texttt{12\_eight\_rows\_hosts\_F5\_F8\_attack\_heal.tex}\) packets.
+\item Targeted \(\texttt{rg}\) scans of \(\texttt{main.tex}\) for
+\(\texttt{4096}\), \(\texttt{64}\), \(\texttt{Borcherds}\),
+\(\texttt{Oberdieck}\), \(\texttt{Gritsenko}\), \(\texttt{Govindarajan}\),
+\(\texttt{compact}\), \(\texttt{Hall}\), \(\texttt{realization}\),
+\(\texttt{conject}\), and \(\texttt{open}\).
+\item Targeted \(\texttt{nl -ba main.tex}\) reads around the abstract,
+denominator/current section, synthesis theorem, and eight-row section.
+\item Post-write \(\texttt{sed -n}\) reads of this dossier and targeted
+\(\texttt{rg}\) scans for stale source-ledger language and forbidden
+attribution strings.
+\item \(\texttt{git status --short}\) before writing.
+\end{itemize}
+
+No manuscript build was run.  This file is an internal synthesis dossier
+and is not included by \(\texttt{main.tex}\).
