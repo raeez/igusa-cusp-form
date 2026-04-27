@@ -1,0 +1,416 @@
+\section{Primitive Borcherds recognition from the volumes: attack--heal}
+\label{sec:primitive-borcherds-recognition-from-volumes-attack-heal}
+
+\providecommand{\Deltafive}{\Delta_{5}}
+\providecommand{\gDelta}{\mathfrak g_{\Delta_{5}}}
+\providecommand{\HDelta}{H_{\Delta_{5}}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\Primprot}{\operatorname{Prim}_{\mathrm{prot}}}
+\providecommand{\Rad}{\operatorname{Rad}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\smult}{\operatorname{smult}}
+\providecommand{\CoHA}{\operatorname{CoHA}}
+\providecommand{\Hall}{\operatorname{Hall}}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\Bch}{B^{\operatorname{ch}}}
+\providecommand{\OmegaCh}{\Omega^{\operatorname{ch}}}
+
+\subsection{Question attacked}
+
+The proposed shortcut is:
+\[
+   H^0\Primprot(F_X)\stackrel{?}{\simeq}\gDelta ,
+\]
+with the hope that the Hall--Drinfeld, chiral bar--cobar, and Koszul
+machinery spread across the surrounding volumes already supplies a
+presentation-level recognition theorem for the compact object attached to
+\(K3\times E\).
+
+The attack succeeds against the unconditional form of the claim.  The
+cross-volume machinery supplies recognition criteria and target-internal
+bar--cobar inversions for a supplied object \(\HDelta\), but it does not
+construct the compact protected primitive Lie superalgebra with all
+Borcherds--Kac defining relations, parity dimensions, Hopf pairing, and
+radical quotient.  The healed statement is a conditional recognition theorem:
+if the compact Hall/factorization package produces the listed presentation
+data, then the primitive algebra is canonically \(\gDelta\).  Without those
+data the comparison remains open.
+
+\subsection{Source anchors used}
+
+Local anchors in this repository:
+\[
+\begin{gathered}
+\texttt{CLAUDE.md},\quad \texttt{AGENTS.md},\quad
+\texttt{main.tex},\quad \texttt{proj.bib},\\
+\texttt{agent\_material/12\_primitive\_comparison\_attack\_heal.tex},\quad
+\texttt{agent\_material/13\_primitive\_recognition\_attack\_repair.tex},\\
+\texttt{agent\_material/12\_compact\_hall\_ranE\_attack\_heal.tex},\quad
+\texttt{agent\_material/13\_ranE\_obstruction\_attack\_repair.tex},\\
+\texttt{agent\_material/12\_protected\_integration\_orientation\_attack\_heal.tex},\quad
+\texttt{agent\_material/13\_integration\_orientation\_attack\_repair.tex},\\
+\texttt{agent\_material/12\_synthesis\_architecture\_attack\_heal.tex},\quad
+\texttt{agent\_material/13\_synthesis\_coherence\_attack\_repair.tex}.
+\end{gathered}
+\]
+Cross-volume anchors:
+\[
+\begin{gathered}
+\texttt{calabi-yau-quantum-groups/FRONTIER.md},\\
+\texttt{calabi-yau-quantum-groups/chapters/examples/k3e\_bkm\_chapter.tex},\\
+\texttt{calabi-yau-quantum-groups/chapters/examples/k3\_chiral\_bialgebra\_platonic.tex},\\
+\texttt{calabi-yau-quantum-groups/chapters/theory/cy\_to\_chiral.tex},\\
+\texttt{calabi-yau-quantum-groups/chapters/theory/e1\_chiral\_algebras.tex},\\
+\texttt{calabi-yau-quantum-groups/chapters/theory/gluing/sec\_8\_k3xe\_master.tex},\\
+\texttt{calabi-yau-quantum-groups/chapters/theory/gluing/sec\_10\_unifying.tex},\\
+\texttt{chiral-bar-cobar/worldview\_synthesis\_2026\_04\_17.tex},\\
+\texttt{chiral-bar-cobar/chapters/theory/theorem\_B\_scope\_platonic.tex},\\
+\texttt{chiral-bar-cobar-vol2/FRONTIER.md},\\
+\texttt{chiral-bar-cobar-vol2/appendices/cfg\_side\_by\_side.tex},\\
+\texttt{chiral-bar-cobar-vol2/chapters/theory/axioms.tex},\\
+\texttt{topological-strings/CLAUDE.md}.
+\end{gathered}
+\]
+Primary literature frame, via \(\texttt{proj.bib}\): Borcherds on automorphic
+forms with singularities and generalized Kac--Moody algebras,
+Gritsenko--Nikulin on automorphic corrections and Lorentzian Kac--Moody
+algebras, Kac on the presentation and radical quotient formalism,
+Beilinson--Drinfeld on chiral envelopes, and the
+Kontsevich--Soibelman/Davison--Meinhardt critical CoHA technology.  These
+sources support the target-side and formal-recognition machinery; they do not
+remove the compact \(K3\times E\) Hall-data obligations listed below.
+
+\subsection{Primitive functor}
+
+The notation \(H^0\Primprot(F_X)\) is meaningful only after supplying more
+than the scalar Igusa determinant.  One needs a charge-completed
+factorization/Hall object \(F_X\) over the elliptic direction, an augmentation
+and coproduct, and a protected integration functor compatible with the
+critical structure.  The primitive functor must be the equalizer
+\[
+   \Prim(F_X)_\gamma
+   =
+   \ker\left(
+      \Delta_\gamma -
+      1\otimes(-)-(-)\otimes1:
+      (F_X)_\gamma\to
+      \bigoplus_{\gamma_1+\gamma_2=\gamma}(F_X)_{\gamma_1}\otimes(F_X)_{\gamma_2}
+   \right)
+\]
+inside the protected, parity-graded, completed category.  The superscript
+\(H^0\) must then select the cohomological degree-zero protected primitive
+part after the chosen integration and after the prescribed radical quotient.
+
+Thus the compact datum must include:
+\[
+   (F_X,\Delta,\epsilon,\Primprot,\Gamma\text{-grading},\deg:\Gamma\to
+   \Lambda^{2,1}_{II},H_X,C_X,\Theta_{\operatorname{Kos}}).
+\]
+Here \(C_X\) is the chiral coalgebra expected to be
+\(\Bch_E(F_X)\), and \(\Theta_{\operatorname{Kos}}\) is the bar--cobar
+comparison.  The present paper has the virtual determinant and the
+Borcherds--Gritsenko--Nikulin target algebra.  It does not yet contain the
+compact protected primitive functor as a constructed object.
+
+\subsection{Bracket source}
+
+The bracket on \(H^0\Primprot(F_X)\) must come from the compact Hall or
+factorization product, not from the target denominator algebra.  Concretely,
+the missing source is an oriented critical Hall package:
+\[
+   \mathcal M_{\gamma_1}\times \mathcal M_{\gamma_2}
+   \xleftarrow{\ p\ }
+   \mathcal E_{\gamma_1,\gamma_2}
+   \xrightarrow{\ q\ }
+   \mathcal M_{\gamma_1+\gamma_2},
+\]
+with vanishing cycles, Thom--Sebastiani compatibility, stability/HN
+completion, and equivariant or reduced descent along \(E\).  The product
+\(q_!p^*(-\boxtimes-)\), with its orientation signs, gives a
+supercommutator.  The primitive projection then gives the candidate Lie
+superbracket.  In a chiral model the same bracket should appear as the
+binary collision residue of the factorization product.
+
+The Beilinson--Drinfeld current envelope of \(\gDelta\) verifies what the
+target bracket is once \(\gDelta\) is already supplied.  It does not verify
+that the compact Hall bracket has the same structure constants.  The Hall
+extension correspondences, the orientation character, and the primitive
+projection are therefore load-bearing.
+
+\subsection{Chevalley, Serre, and orthogonality checks}
+
+The target algebra \(\gDelta\) is the Borcherds--Kac--Moody superalgebra
+with real and imaginary simple roots determined by the
+Borcherds--Gritsenko--Nikulin denominator.  A presentation-level recognition
+of \(H^0\Primprot(F_X)\) must exhibit compact primitive classes
+\[
+   e_i^X,\quad f_i^X,\quad h_i^X
+\]
+and prove the defining relations in the compact bracket.
+
+The required checks are:
+\begin{enumerate}
+\item Cartan action and Chevalley relation:
+\[
+   [h,e_i^X]=(\alpha_i,h)e_i^X,\qquad
+   [h,f_i^X]=-(\alpha_i,h)f_i^X,\qquad
+   [e_i^X,f_j^X]=\delta_{ij}h_i^X .
+\]
+\item Real-root Serre relations for every even real simple root:
+\[
+   (\operatorname{ad}e_i^X)^{1-a_{ij}}e_j^X=0,\qquad
+   (\operatorname{ad}f_i^X)^{1-a_{ij}}f_j^X=0
+\]
+for \(i\neq j\), with \(a_{ij}=2(\alpha_i,\alpha_j)/(\alpha_i,\alpha_i)\).
+In the \(\Deltafive\) rank-three real subsystem the distinct real simple
+roots have square \(2\) and mutual pairing \(-2\), so the visible real
+Serre exponent is \(3\).
+\item Borcherds orthogonality:
+\[
+   [e_i^X,e_j^X]=0,\qquad [f_i^X,f_j^X]=0
+\]
+whenever \(\alpha_i\) and \(\alpha_j\) are imaginary simple roots, or one is
+imaginary and one is real, with \((\alpha_i,\alpha_j)=0\), subject to the
+usual super sign convention.
+\item Generation: these simple primitive classes generate the full compact
+primitive Lie superalgebra after radical quotient.
+\item No extra relations: the kernel of the map from the abstract
+Borcherds--Kac presentation to \(H^0\Primprot(F_X)/\Rad\) is exactly the
+Borcherds--Serre ideal.
+\end{enumerate}
+
+None of these checks follows from equality of the determinant.  They are
+bracket-level facts.  The existing local reports already isolate this as the
+central obstruction, and the cross-volume Hall--Drinfeld criteria repeat the
+same requirement rather than eliminating it.
+
+\subsection{Imaginary simple root parity and multiplicity}
+
+The compact primitive theorem must match not only the signed root
+multiplicities but the full parity dimensions
+\[
+   \bigl(\dim P_{\alpha,\bar 0},\dim P_{\alpha,\bar 1}\bigr)
+\]
+for every simple imaginary root and, by generation and PBW, for every root
+space.  The denominator determines the superdimension
+\[
+   \sdim P_\alpha=
+   \dim P_{\alpha,\bar0}-\dim P_{\alpha,\bar1},
+\]
+not the two dimensions separately.
+
+For this paper the canonical parity convention is the
+Gritsenko--Nikulin split used in \(\texttt{main.tex}\).  If \(m(a)\) denotes
+the signed multiplicity attached to a negative-norm imaginary simple root,
+then \(m(a)>0\) contributes even multiplicity \(m(a)\), and \(m(a)<0\)
+contributes odd multiplicity \(-m(a)\).  For isotropic simple roots the
+\(\tau(a)\)-term supplies the even isotropic multiplicity in the stated
+normalization.  Real simple roots are even.
+
+This convention is not replaceable by a cross-volume slogan such as
+``negative norm is fermionic''.  Some surrounding files use different
+coordinates or a target-side shorthand.  Those statements are not directly
+portable into this paper without a basis and parity-normalization audit.
+The compact theorem therefore needs an explicit parity map
+\[
+   P^X_\alpha\longrightarrow
+   \mathbb C^{\mu_0(\alpha)}\oplus \Pi\mathbb C^{\mu_1(\alpha)}
+\]
+for every imaginary simple \(\alpha\), including the isotropic ray.
+
+\subsection{Hopf pairing and radical quotient}
+
+Recognition of the double is stronger than recognition of a positive signed
+character.  The compact package must supply a negative half, Cartan part, and
+continuous Hopf pairing
+\[
+   \langle -,-\rangle:
+   H_X^+\widehat\otimes H_X^-\longrightarrow \mathbb C
+\]
+compatible with coproduct, super signs, grading, and completion.  The radical
+must be exactly the radical used in the Borcherds--Kac quotient:
+\[
+   P_X^{\operatorname{red}}
+   =
+   H^0\Primprot(F_X)/\Rad\langle-,-\rangle .
+\]
+The quotient must introduce no extra central primitives and kill no target
+root space.  Finite-height truncations are the right test objects: the pairing
+has to be non-degenerate after quotient at each height, and the inverse limit
+must be complete for the Hall product, coproduct, and Lie bracket.
+
+The Vol III Hall--Drinfeld equivalence criterion requires precisely these
+data: positive half, Serre-dual negative half, Cartan completion, continuous
+Hopf pairing, radical quotient, centre control, PBW flatness, and
+compatibility with the chosen completion.  It is a criterion, not a
+construction of the compact \(K3\times E\) object.
+
+\subsection{Healed conditional theorem}
+
+\begin{theorem}[conditional primitive recognition]
+Assume the compact \(K3\times E\) package supplies the following data.
+\begin{enumerate}
+\item A protected charge-completed Hall/factorization object \(F_X\) with
+coproduct, augmentation, primitive functor, and degree map to the
+\(\Deltafive\) root lattice.
+\item An oriented critical Hall bracket on \(H^0\Primprot(F_X)\), compatible
+with the protected integration and super parity.
+\item A Cartan subalgebra identified with
+\(\Lambda^{2,1}_{II}\otimes\mathbb C\) and compact primitive representatives
+\(e_i^X,f_i^X,h_i^X\) for every real and imaginary simple root in the
+Gritsenko--Nikulin \(\Deltafive\) simple system.
+\item The Cartan, Chevalley, real Serre, Borcherds orthogonality, and super
+sign relations hold for these classes.
+\item The full parity dimensions of the compact root spaces agree with the
+Gritsenko--Nikulin parity split, including all imaginary simple root
+multiplicities and the isotropic \(\tau\)-multiplicities.
+\item The compact primitives are generated by the simple classes, and the
+kernel of the map from the abstract Borcherds--Kac presentation is exactly
+the Borcherds--Serre ideal.
+\item The Hall double has a continuous Hopf pairing, Cartan completion, and
+radical quotient matching the denominator-algebra quotient, with no extra
+central or stability-wall primitives.
+\end{enumerate}
+Then there is a canonical isomorphism of graded Lie superalgebras
+\[
+   H^0\Primprot(F_X)/\Rad \;\cong\; \gDelta .
+\]
+Consequently the denominator of the compact primitive algebra is the
+normalized Borcherds product
+\[
+   \operatorname{den}\bigl(H^0\Primprot(F_X)/\Rad\bigr)
+   =
+   64^{-1}\Deltafive(2Z).
+\]
+If, in addition, the chiral Koszul comparison
+\(\Theta_{\operatorname{Kos}}:C_X\simeq \Bch_E(F_X)\) is supplied and
+\(\OmegaCh_EC_X\) is complete on the same charge topology, then
+\[
+   \OmegaCh_E C_X\simeq \operatorname{Den}_{\Delta_5,E}
+\]
+as the current/chiral enveloping object attached to \(\gDelta\).
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The assumptions define a surjective homomorphism from the abstract
+Borcherds--Kac--Moody superalgebra with the Gritsenko--Nikulin simple root
+datum to the compact primitive quotient.  The Chevalley, Serre, orthogonality,
+and parity hypotheses put the Borcherds--Serre ideal in the kernel.  The
+``no extra relations'' and Hopf radical hypotheses identify the kernel with
+that ideal and identify the Cartan quotient.  The parity-dimension hypothesis
+rules out invisible zero-superdimension changes.  Hence the compact primitive
+quotient is \(\gDelta\).  The denominator follows from the already verified
+Borcherds--Gritsenko--Nikulin product normalization in the paper.  The last
+assertion is the standard chiral bar--cobar inversion, applied only after the
+compact object and its completion have been supplied.
+\end{proof}
+
+\subsection{Impossible shortcuts}
+
+The following implications are false or presently unsupported.
+\begin{enumerate}
+\item The equality of scalar determinants does not determine the primitive
+Lie superalgebra.  A zero bracket on the same signed graded vector space has
+the same signed character and the wrong algebra.
+\item The Oberdieck--Pandharipande scalar square does not construct the Hall
+bracket, coproduct, primitive projection, or Hopf pairing.
+\item The Gritsenko--Nikulin denominator identifies the target
+\(\gDelta\).  It does not prove that compact protected primitives realize
+that target.
+\item The formal current envelope of \(\gDelta\) is target-internal.  It
+cannot replace the compact Hall extension correspondences.
+\item Chiral bar--cobar inversion recovers an algebra from its supplied
+Koszul coalgebra.  It does not identify an unknown compact \(F_X\) with
+\(\HDelta\).
+\item The Vol III Hall--Drinfeld/Super-Yangian theorem is a recognition
+criterion with hypotheses.  It is not an unconditional compact
+\(K3\times E\) primitive theorem.
+\item A homotopy colimit of the twenty-four curve-stalk positive halves does
+not by itself supply the negative half, Cartan completion, Hopf pairing,
+Serre ideal, centre control, or compact bracket comparison.
+\item The eight-row diagonal-divisor catalogue gives the correct product row
+and normalization frame.  It does not give compact primitive generators and
+relations.
+\item A claim that \(H^0\Primprot(F_X)\) has the right superdimension cannot
+separate an honest even generator from an even-plus-odd cancelling pair.
+\item Quotienting by the elliptic translation direction before constructing
+projection-finite and globally wrapped sectors can erase the relative-position
+data needed for Hall products.
+\end{enumerate}
+
+\subsection{Compact data still missing}
+
+The smallest remaining data packet needed for an actual proof is:
+\begin{enumerate}
+\item An extension-closed compact heart or stability condition for the
+relevant \(K3\times E\) objects, with HN completion and charge grading.
+\item A projection-finite/global-wrapping repair of the naive \(\Ran(E)\)
+model, so positive elliptic degree sectors are not lost.
+\item A critical atlas, vanishing-cycle sheaves, Thom--Sebastiani
+isomorphisms, and a strong orientation character compatible with the
+\(\Deltafive\) signs.
+\item A protected integration functor whose scalar shadow is the established
+Igusa product and whose categorified output still carries Hall product,
+coproduct, and parity.
+\item The primitive functor and primitive projection on the completed
+protected Hall object.
+\item Compact representatives for all real and imaginary simple roots, with
+the full parity dimensions \((\mu_0,\mu_1)\), not merely signed
+multiplicities.
+\item Direct Hall-bracket computations proving Cartan, Chevalley, real Serre,
+Borcherds orthogonality, and generation.
+\item A negative half, Cartan completion, continuous Hopf pairing, radical
+quotient, PBW theorem, finite-height completion, and centre-control theorem.
+\item The chiral coalgebra \(C_X\), conilpotence/completion checks, and the
+Koszul comparison \(\Theta_{\operatorname{Kos}}\).
+\end{enumerate}
+
+\subsection{Normalization warnings}
+
+The denominator normalization in this repository is
+\[
+   \operatorname{den}(\gDelta)=64^{-1}\Deltafive(2Z).
+\]
+The scalar Oberdieck--Pandharipande form is the square in the monic
+normalization, so statements phrased in terms of the Igusa form
+\(\Phi_{10}\) must be translated before being imported into this paper.
+Likewise, surrounding files that call \(\HDelta\) a completed
+Hall--Drinfeld double generally work after imposing a criterion or after
+supplying the target object.  They should not be cited as constructing
+\(H^0\Primprot(F_X)\) unless the compact data listed above have been
+provided.
+
+\subsection{Status}
+
+The primitive comparison
+\[
+   H^0\Primprot(F_X)\stackrel{?}{=}\gDelta
+\]
+is not presently a theorem of the cross-volume machinery.  The correct
+statement is conditional presentation-level recognition.  The missing compact
+data are small in description but large in proof: the protected Hall bracket,
+the imaginary simple parity and multiplicity lift, the Chevalley--Serre--
+orthogonality verification, and the Hopf pairing/radical quotient.  These are
+exactly the data that determinant, row-catalogue, and bar--cobar shortcuts
+forget.
+
+\subsection{Claim status recommendation}
+
+The line \(H^0\Primprot(F_X)=\gDelta\) should remain
+\emph{conditional}.  A theorem may be stated only in the presentation-level
+form above, with all primitive, bracket, parity, relation, pairing, radical,
+and completion hypotheses visible.  It should not be cited as an established
+compact realization theorem until the missing data packet has been supplied.
+
+\subsection{Files changed and checks}
+
+Files changed by this report:
+\[
+   \texttt{agent\_material/14\_primitive\_borcherds\_recognition\_from\_volumes\_attack\_heal.tex}.
+\]
+No manuscript source or generated PDF was edited.  The working tree already
+contained unrelated modifications outside this file; they were not touched.
+Checks run: \(\texttt{git diff --check}\) on this file, targeted readback with
+\(\texttt{sed}\), and keyword audit with \(\texttt{rg}\).  No global build was
+run, since this is a standalone agent report and is not included in
+\(\texttt{main.tex}\).

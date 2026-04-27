@@ -1,0 +1,505 @@
+\section{Agent 14-E: chiral bar--cobar/Koszul realization attack--heal}
+\label{sec:agent14-chiral-bar-cobar-koszul-realization}
+
+\providecommand{\C}{\mathbb C}
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\Fact}{\mathsf{Fact}}
+\providecommand{\Coalg}{\mathsf{Coalg}}
+\providecommand{\ChAlg}{\mathsf{ChAlg}}
+\providecommand{\Cur}{\operatorname{Cur}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\Den}{\mathsf{Den}}
+\providecommand{\Aut}{\operatorname{Aut}}
+\providecommand{\Bch}{B^{\mathrm{ch}}}
+\providecommand{\Och}{\Omega^{\mathrm{ch}}}
+\providecommand{\Spch}{\mathrm{Sp}^{\mathrm{ch}}}
+\providecommand{\Aden}{\mathcal A_{\mathrm{den}}}
+\providecommand{\gDelta}{\mathfrak g_{\Delta_5}}
+\providecommand{\DDelta}{\Den_{\Delta_5,E}}
+\providecommand{\Hall}{\mathcal H}
+
+\subsection{Question attacked}
+
+The claim under attack is
+\[
+        \Och_E C_X \simeq \DDelta ,
+\]
+where \(X=K3\times E\), \(C_X\) is supposed to be the compact chiral
+bar coalgebra produced by the \(K3\times E\) geometry, and
+\(\DDelta\) is the denominator current algebra attached to the
+Borcherds--Kac--Moody superalgebra whose denominator is the Igusa square
+root \(\Delta_5\).
+
+The attack conclusion is negative in its unconditional form.  The
+available chiral bar--cobar theorem proves an inversion statement once a
+valid chiral algebra or conilpotent chiral coalgebra on the curve has
+already been constructed.  It does not construct the compact object
+\(C_X\), it does not identify compact BPS primitives with
+\(\gDelta\), and it does not turn the scalar Borcherds product into a
+Hall factorization algebra.  The correct manuscript statement is a
+conditional theorem, with explicit compact construction lemmas still
+missing.
+
+\subsection{The chiral bar--cobar theorem that exists}
+
+The theorem available from the chiral bar--cobar papers is the following
+curve-level statement.  Let \(E\) be a smooth complex curve.  In the
+appropriate finite-type, completed, or coderived category of
+\(\mathcal D\)-modules on \(\Ran(E)\) there is an adjunction
+\[
+        \Och_E :
+        \Coalg^{\mathrm{conil}}_{\mathrm{ch}}(E)
+        \rightleftarrows
+        \ChAlg^{\mathrm{aug}}_{\mathrm{ch}}(E) :
+        \Bch_E .
+\]
+For an augmented chiral algebra \(A\) there is a counit
+\[
+        \epsilon_A:\Och_E\Bch_E(A)\longrightarrow A ,
+\]
+and for a coaugmented conilpotent chiral coalgebra \(C\) there is a unit
+\[
+        \eta_C:C\longrightarrow \Bch_E\Och_E(C).
+\]
+On the strict Koszul locus, or after passing to the prescribed
+conilpotent-complete/coderived setting, these maps are quasi-isomorphisms
+in the relevant homotopy category.
+
+This is an inversion theorem.  It is not the statement that the Koszul
+dual algebra of \(A\) is \(\Och_E\Bch_E(A)\).  In the Vol. I language,
+\(\Och_E\Bch_E(A)\to A\) reconstructs the original chiral algebra.  The
+Koszul-dual or Verdier-dual object is obtained by the Ran Verdier-dual
+bar construction, not by confusing the cobar inverse with a new compact
+algebra.  Vol. II keeps this distinction explicit:
+\[
+        A,\qquad \Bch_E(A),\qquad
+        A^!=\bigl(H^\ast\Bch_E(A)\bigr)^\vee,\qquad
+        Z^{\mathrm{der}}_{\mathrm{ch}}(A)
+\]
+are different objects.  The equality
+\(\Och_E\Bch_E(A)\simeq A\) is not a construction of \(A^!\) and is not
+a compact \(K3\times E\) realization.
+
+For the present paper this theorem can be used in exactly two ways.
+First, if a compact coalgebra \(C_X\) is already constructed and lies in
+the conilpotent-complete domain, then \(\Och_E C_X\) is a well-defined
+chiral algebra.  Second, if \(\DDelta\) is put in the augmented completed
+domain, then
+\[
+        \Och_E\Bch_E(\DDelta)\longrightarrow \DDelta
+\]
+is a target-internal bar--cobar resolution.  This second statement is
+tautological for the target and does not exhibit any compact source.
+
+\subsection{Inputs needed on a curve}
+
+A genuine curve-level input for \(\Och_E C_X\) consists of the following
+data.
+
+\begin{enumerate}
+\item A smooth curve \(E\) and a precise category, usually a category of
+constructible or holonomic \(\mathcal D\)-modules on \(\Ran(E)\), with
+the required completed or coderived enhancement.
+
+\item A coaugmented chiral coalgebra \(C_X\) on \(\Ran(E)\), or an
+augmented chiral algebra \(F_X\) together with a bar equivalence
+\[
+        C_X \simeq \Bch_E(F_X).
+\]
+The coalgebra structure must include the collision coproducts, signs,
+differential, and factorization descent.
+
+\item A square-zero total differential in the ordinary DG case.  In the
+curved case one must instead work in the CDG/coderived category and
+state the curvature and coacyclic equivalences.  Genus-one input is not
+automatically ordinary-DG; the prime-form/curvature terms in the
+bar--cobar formalism have to be killed by a total differential or kept
+in the coderived category.
+
+\item Conilpotence.  With \(\bar C_X=\ker(C_X\to{\bf 1})\), every local
+section must be killed by a sufficiently high iterated reduced
+coproduct.  Equivalently, the coaugmentation filtration must be
+exhaustive at finite level, or pro-exhaustive after completion.
+
+\item Finite-first control.  Each finite charge, conformal-weight, or
+Harder--Narasimhan truncation must have finite-dimensional graded
+pieces and a well-defined bar/cobar complex.  The completed object must
+be an inverse limit of such finite stages with Mittag--Leffler control
+on the transition maps and on the cones of the finite-stage
+quasi-isomorphisms.
+
+\item For a compact \(K3\times E\) source, a chain-level specialization
+\[
+        \Spch_{K3,E}: A_X^{E_3}\longmapsto F_X\in \Fact(\Ran(E))
+\]
+from the compact \(E_3\)-factorization algebra on \(X\) to a chiral
+factorization algebra on \(E\).  This is extra geometry.  It is not a
+formal consequence of the Borcherds product.
+
+\item A Hall-theoretic or BPS construction of \(F_X\): stability
+condition, extension stacks, orientations, vanishing cycles, protected
+integration, and product compatibility.  The Oprea--Pandharipande scalar
+spaces used in the manuscript are not by themselves an extension-stack
+Hall object.
+\end{enumerate}
+
+The prior Agent 12 and 13 reports correctly isolate the main obstruction
+for the compact \(K3\times E\) problem.  A sector of positive elliptic
+degree does not stay in a small open interval of \(E\); its projection
+wraps all of \(E\).  Therefore a local Ran algebra on \(E\) cannot be
+obtained merely by cutting compact curve classes into small elliptic
+arcs.  One needs either a global Fock/Hecke factorization object, a
+hybrid local/global wrapped sector theory, or a different compact
+specialization mechanism.
+
+\subsection{How \(\DDelta\) fits}
+
+The manuscript already contains a formal target object.  Let
+\(\Aden=\gDelta\) be the Gritsenko--Nikulin denominator Lie superalgebra
+attached to the automorphic correction whose denominator is
+\[
+        64^{-1}\Delta_5(2Z).
+\]
+On the elliptic curve \(E\) form the level-zero BD current algebra
+\[
+        \Cur_E(\Aden)=\Aden\otimes \mathcal O_E
+\]
+with the current bracket induced by the bracket of \(\Aden\).  Then
+\[
+        \DDelta
+        :=
+        U_E^{\mathrm{ch}}\bigl(\Cur_E(\Aden)\bigr)
+\]
+is the BD chiral enveloping algebra of the current algebra.
+
+This construction is legitimate as a formal completed ind-object.  Its
+constant-current primitives recover \(\Aden=\gDelta\), and its
+denominator identity is the Borcherds denominator identity already
+recorded in the manuscript.  Thus \(\DDelta\) is the right target for a
+chiral realization of the Igusa denominator algebra.
+
+It is not a compact source.  The current-envelope construction supplies
+neither the compact \(E_3\)-factorization algebra \(A_X^{E_3}\), nor the
+specialization to \(\Ran(E)\), nor the Hall extension product, nor the
+compact coalgebra \(C_X\).  Applying bar--cobar to \(\DDelta\) gives
+\(\Och_E\Bch_E(\DDelta)\to\DDelta\), which is the bar--cobar theorem
+applied to the target itself.  It cannot be cited as the desired
+compact \(K3\times E\) realization.
+
+\subsection{Conilpotence and completion requirements}
+
+The object \(C_X\) must be more than a symbolic coalgebra.  It must be a
+coaugmented conilpotent chiral coalgebra or a completed pro-object built
+from conilpotent finite stages.  A usable completion has the form
+\[
+        C_X=\varprojlim_R C_{X,\leq R},
+\]
+where \(R\) may be a charge bound, a Harder--Narasimhan bound, a
+conformal-weight bound, or a combined sectorial bound.  Each
+\(C_{X,\leq R}\) must be conilpotent, and all chiral coproducts must be
+continuous for the inverse-limit topology.
+
+The cobar algebra is then defined continuously:
+\[
+        \widehat{\Och}_E(C_X)
+        :=
+        \varprojlim_R \Och_E(C_{X,\leq R}),
+\]
+provided the finite-stage cobar complexes are compatible under the
+transition maps.  The finite-stage quasi-isomorphisms must pass to the
+limit.  A sufficient condition is the Mittag--Leffler condition for
+cohomology and for the mapping cones of the comparison maps.  Without
+this control an infinite product of acyclic finite-stage cones may
+acquire derived inverse-limit cohomology.
+
+Curvature is a separate issue.  If the chiral bar differential contains
+a curvature term, then ordinary quasi-isomorphism is not the correct
+notion.  One must work in the Positselski coderived category of CDG
+coalgebras/algebras and prove coacyclicity of the cone.  Only when the
+total differential is square-zero after adding all geometric
+corrections may the comparison be read as an ordinary chain-level
+quasi-isomorphism.
+
+The same warning applies to \(\DDelta\).  It has infinitely many root
+spaces, though finite multiplicity in each root predicted by the Jacobi
+coefficients.  To compare it with a compact source one must choose a
+charge completion on the current envelope compatible with the completion
+used for \(C_X\).  Otherwise the expression
+\(\Och_E C_X\simeq\DDelta\) has no fixed category in which it can be
+true.
+
+\subsection{Whether a compact \(C_X\) is constructed anywhere}
+
+No compact \(C_X\) is constructed in the material read.
+
+In the present Igusa manuscript, the compact realization datum is stated
+as a target problem.  The manuscript defines the formal denominator
+current envelope and then asks for a compact chiral Koszul realization.
+It also records the elliptic-degree locality obstruction and the need
+for a primitive-comparison theorem.  These are open obligations, not
+completed constructions.
+
+In \texttt{/Users/raeez/chiral-bar-cobar}, the general bar--cobar
+adjunction and the chiral Positselski/Koszul inversion theorem are
+developed.  These results say what happens after a curve-level algebra
+or conilpotent coalgebra is supplied.  They do not supply the compact
+\(K3\times E\) Hall object.
+
+In \texttt{/Users/raeez/chiral-bar-cobar-vol2}, the two-stage
+CY-to-chiral architecture is explained: first a compact or Calabi--Yau
+factorization object, then a specialization to a curve.  The text
+emphasizes that the chiral shadow is a CY-to-chiral construction and is
+not the same thing as bar--cobar inversion.  No chain-level
+\(K3\times E\) coalgebra \(C_X\) with
+\(\Och_E C_X\simeq\DDelta\) is constructed there.
+
+In \texttt{/Users/raeez/calabi-yau-quantum-groups}, the
+\(K3\times E\) and \(\Delta_5\) bridge is part of the frontier
+architecture.  It supplies the organizing frame and the expected
+compatibility with the \(\kappa\)-stratification, but it also treats the
+non-abelian compact-to-BKM comparison as a frontier target.  It is not a
+proof of the compact realization required here.
+
+\subsection{Exact conditional theorem}
+
+\begin{theorem}[conditional compact chiral Koszul realization]
+\label{thm:agent14-conditional-compact-chiral-koszul}
+Let \(X=K3\times E\).  Assume the following compact Igusa realization
+datum exists.
+\begin{enumerate}
+\item A finite-first compact \(E_3\)-factorization algebra
+\(A_X^{E_3}\) of protected compact BPS states on \(X\), with a
+square-zero differential or a specified CDG/coderived curvature theory.
+
+\item A chain-level curve specialization
+\[
+        \Spch_{K3,E}(A_X^{E_3})=F_X\in\Fact(\Ran(E))
+\]
+with factorization descent, collision products, and compatibility with
+the compact orientation data.
+
+\item A Hall model for \(F_X\): an extension-closed compact heart or
+stability theory, finite-type Harder--Narasimhan truncations, extension
+stacks, vanishing-cycle sheaves, a strong orientation, and a protected
+integration map compatible with Hall multiplication.
+
+\item A coaugmented conilpotent completed chiral coalgebra \(C_X\) on
+\(\Ran(E)\), with finite stages \(C_{X,\le R}\), continuous coproducts,
+and a bar comparison
+\[
+        b_X:C_X\xrightarrow{\sim}\Bch_E(F_X)
+\]
+in the completed or coderived chiral coalgebra category.
+
+\item A chiral twisting cochain or Koszul comparison map
+\[
+        \Theta_{\mathrm{Kos}}:\Och_E C_X\longrightarrow \DDelta
+\]
+which is a quasi-isomorphism in the same completed or coderived chiral
+algebra category.
+
+\item A primitive-recognition certificate identifying the protected
+primitive Lie superalgebra of \(F_X\) with \(\gDelta\), including the
+real simple roots, imaginary simple roots with multiplicities and
+parities prescribed by the coefficients of \(\phi_{0,1}\), the
+Borcherds--Kac relations, generation, and quotient by the radical of
+the Hopf pairing.
+
+\item A compatible charge completion on \(\DDelta\) and on
+\(\Och_E C_X\), so that \(\Theta_{\mathrm{Kos}}\) is a morphism in a
+single fixed category.
+\end{enumerate}
+Then
+\[
+        \Och_E C_X\simeq \DDelta
+\]
+in the completed/coderived category of chiral algebras on \(E\).  The
+constant-current primitive Lie superalgebra is \(\gDelta\), and its
+denominator is \(64^{-1}\Delta_5(2Z)\).
+\end{theorem}
+
+\begin{proof}
+By hypothesis \(C_X\) is an object of the domain of the chiral cobar
+functor, so \(\Och_E C_X\) is defined in the chosen completed or
+coderived category.  The map \(\Theta_{\mathrm{Kos}}\) is, by
+hypothesis, a quasi-isomorphism from this cobar algebra to the BD
+current envelope \(\DDelta\).  The formal target calculation identifies
+\(\DDelta\) with
+\[
+        U_E^{\mathrm{ch}}\bigl(\Cur_E(\gDelta)\bigr).
+\]
+The primitive-recognition certificate identifies the compact primitive
+Lie superalgebra with \(\gDelta\).  The Borcherds--Gritsenko--Nikulin
+denominator identity for \(\gDelta\) gives the denominator
+\(64^{-1}\Delta_5(2Z)\).  No additional inference from the scalar
+determinant is used.
+\end{proof}
+
+The theorem is intentionally conditional.  Hypothesis (5) is not a
+cosmetic assumption: it is the missing Koszul comparison.  Without it,
+the bar--cobar adjunction gives only
+\[
+        \Och_E\Bch_E(F_X)\simeq F_X
+\]
+once \(F_X\) has already been built and lies in the Koszul domain.  It
+does not identify \(F_X\), or \(\Och_E C_X\), with the Igusa current
+envelope.
+
+\subsection{Missing construction lemmas}
+
+The compact realization requires the following construction lemmas.
+They are not present in the material read.
+
+\begin{enumerate}
+\item \textbf{Compact curve-specialization lemma.}
+Construct the functor
+\(\Spch_{K3,E}:A_X^{E_3}\to\Fact(\Ran(E))\) at chain level, with
+factorization descent, collision maps, anomaly cancellation, and
+finite-first completion.
+
+\item \textbf{Wrapped elliptic-sector lemma.}
+Repair the positive elliptic-degree obstruction.  Either build a global
+Fock/Hecke factorization object over \(E\), or build a hybrid
+local/global wrapped sector whose convolution remains associative over
+flags of collisions.
+
+\item \textbf{Compact Hall heart and HN lemma.}
+Produce an extension-closed compact heart or stability condition on the
+relevant compact category, prove the support property, and construct
+finite-type semistable/HN stacks with a charge map compatible with the
+\(\Lambda^{3,2}\) root variables.
+
+\item \textbf{Critical atlas and orientation lemma.}
+Construct derived critical charts, vanishing-cycle sheaves, and a
+strong orientation for the compact extension stacks.  The orientation
+character must match the denominator parity character used for
+\(\Delta_5\).
+
+\item \textbf{Protected integration lemma.}
+Build a Hall character from compact vanishing-cycle cohomology to the
+completed chiral algebra on \(E\), compatible with Hall convolution and
+with any reduced \(E\)-translation quotient.  Scalar generating
+functions alone do not give this map.
+
+\item \textbf{Relative-position descent lemma.}
+If one quotients by translation along \(E\), retain enough relative
+position data to define chiral collision products.  A fully reduced
+scalar theory has forgotten the geometry needed by a BD current
+envelope.
+
+\item \textbf{Chiral bar coalgebra lemma.}
+Construct \(C_X\), prove coaugmentation, conilpotence of finite stages,
+continuity of coproducts, and the comparison
+\[
+        C_X\simeq \Bch_E(F_X)
+\]
+in the completed or coderived category.
+
+\item \textbf{Koszul comparison lemma.}
+Construct the twisting cochain
+\[
+        C_X\longrightarrow \DDelta
+\]
+whose induced cobar map is \(\Theta_{\mathrm{Kos}}\), verify its
+Maurer--Cartan equation including signs and curvature terms, prove
+finite-stage quasi-isomorphism, and pass to the completed limit.
+
+\item \textbf{Primitive generators lemma.}
+Construct compact primitive classes for the real and imaginary simple
+roots, with multiplicities and parities matching the Fourier
+coefficients of \(\phi_{0,1}\).
+
+\item \textbf{Primitive relations lemma.}
+Prove the Borcherds--Kac relations, generation, and quotient by the
+radical of the Hopf pairing.  The determinant alone does not determine
+these Hall constants.
+
+\item \textbf{Current-envelope augmentation/completion lemma.}
+Choose an augmentation and charge completion for \(\DDelta\) compatible
+with the compact charge completion of \(C_X\), so that bar--cobar
+comparison lives in a single fixed category.
+
+\item \textbf{Cross-volume compatibility lemma.}
+Check that the compact construction agrees with the Vol. III
+\(\kappa\)-stratification row containing the \(\Delta_5\) Borcherds
+product, without importing Vol. III frontier expectations as proof.
+\end{enumerate}
+
+\subsection{Claim-status recommendation}
+
+The manuscript should not state
+\[
+        \Och_E C_X \simeq \DDelta
+\]
+as a proved compact theorem.  The strongest correct status is:
+
+\begin{quote}
+The BD current envelope \(\DDelta\) is a formal chiral target whose
+constant primitives are the Gritsenko--Nikulin denominator algebra
+\(\gDelta\).  If a compact \(K3\times E\) Hall/factorization object
+produces a conilpotent completed chiral coalgebra \(C_X\) and a Koszul
+comparison \(\Och_E C_X\to\DDelta\) satisfying the primitive-recognition
+and completion hypotheses above, then the compact chiral Koszul
+realization follows.  The construction of such \(C_X\) and of the
+comparison map remains open.
+\end{quote}
+
+This is the precise attack-healed form.  It preserves the useful
+target, prevents false transfer from the scalar Borcherds product to a
+compact Hall algebra, and isolates the construction lemmas needed for a
+future proof.
+
+\subsection{Local anchors checked}
+
+The conclusion above uses the following local anchors.
+
+\begin{itemize}
+\item \texttt{main.tex:1780--1906}: denominator Lie superalgebra,
+denominator identity, formal current envelope, and quantum upgrade
+problem.
+\item \texttt{main.tex:1908--1999}, \texttt{main.tex:2001--2087},
+\texttt{main.tex:2179--2353}, and \texttt{main.tex:2437--2453}:
+elliptic-degree locality obstruction, projection-finite repair
+language, sectorial Hall truncations, compact Igusa realization datum,
+primitive-recognition theorem, and open chiral-Koszul realization
+problem.
+\item
+\texttt{agent\_material/12\_compact\_hall\_ranE\_attack\_heal.tex:165--235}
+and
+\texttt{agent\_material/12\_compact\_hall\_ranE\_attack\_heal.tex:266--451}:
+scalar spaces versus Hall stacks, conditional Ran construction, and
+global-wrapping obstruction.
+\item
+\texttt{agent\_material/13\_ranE\_obstruction\_attack\_repair.tex:16--87}:
+positive elliptic-degree wrapping obstruction and conditional Ran
+factorization repairs.
+\item
+\texttt{agent\_material/12\_primitive\_comparison\_attack\_heal.tex:1--240}
+and
+\texttt{agent\_material/13\_primitive\_recognition\_attack\_repair.tex:1--210}:
+determinant-to-primitive insufficiency and primitive-recognition
+hypotheses.
+\item
+\texttt{/Users/raeez/chiral-bar-cobar/chapters/theory/bar\_construction.tex:1--220},
+\texttt{/Users/raeez/chiral-bar-cobar/chapters/theory/cobar\_construction.tex:1--220},
+\texttt{/Users/raeez/chiral-bar-cobar/chapters/theory/bar\_cobar\_adjunction\_curved.tex:1--220},
+and
+\texttt{/Users/raeez/chiral-bar-cobar/chapters/theory/coderived\_models.tex}:
+bar--cobar adjunction, conilpotence, completion, and coderived caveats.
+\item
+\texttt{/Users/raeez/chiral-bar-cobar-vol2/CLAUDE.md:250--390} and
+\texttt{/Users/raeez/chiral-bar-cobar-vol2/chapters/connections/bar-cobar-review.tex:4518--4536}:
+separation of
+bar--cobar inversion, Verdier/Koszul duality, and CY-to-chiral
+specialization.
+\item
+\texttt{/Users/raeez/calabi-yau-quantum-groups/FRONTIER.md},
+\texttt{/Users/raeez/calabi-yau-quantum-groups/chapters/connections/bar\_cobar\_bridge.tex},
+and
+\texttt{/Users/raeez/calabi-yau-quantum-groups/chapters/theory/cy\_to\_chiral.tex}:
+Vol. III architecture and
+the status of the \(K3\times E\) comparison as a frontier target rather
+than a completed compact construction.
+\end{itemize}

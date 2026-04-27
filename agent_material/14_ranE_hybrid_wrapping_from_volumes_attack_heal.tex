@@ -1,0 +1,392 @@
+\section{Ran(\(E\)) locality, global modes, and hybrid wrapping}
+\label{sec:agent-14-ranE-hybrid-wrapping}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\Supp}{\operatorname{Supp}}
+\providecommand{\Ext}{\operatorname{Ext}}
+\providecommand{\RHom}{\operatorname{RHom}}
+\providecommand{\Fact}{\mathsf{Fact}}
+\providecommand{\Perf}{\operatorname{Perf}}
+\providecommand{\Coh}{\operatorname{Coh}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\Spch}{\mathrm{Sp}^{\mathrm{ch}}}
+\providecommand{\Hall}{\mathcal H}
+\providecommand{\Mloc}{\mathcal M^{\mathrm{loc}}}
+\providecommand{\Mwr}{\mathcal M^{\mathrm{wr}}}
+\providecommand{\Eloc}{\mathfrak E^{\mathrm{loc}}}
+\providecommand{\Ewr}{\mathfrak E^{\mathrm{wr}}}
+\providecommand{\Ehyb}{\mathfrak E^{\mathrm{hyb}}}
+
+\subsection{Claim attacked}
+
+The attacked implication is:
+\[
+\begin{gathered}
+\hbox{there is a compact Hall/chiral object on }\Ran(E)\\
+\Longrightarrow
+\hbox{ordinary support-local factorization on }\Ran(E)
+\hbox{ carries the full Igusa }(q,r,s)\hbox{-product}.
+\end{gathered}
+\]
+This implication is false.  Ordinary Ran locality over \(E\) is a
+finite-support statement.  The positive elliptic-degree sector of
+\(K3\times E\) is not finite over \(E\).  Hence the \(s\)-direction of
+the Igusa product cannot be recovered from the usual disjoint-open
+factorization calculus unless one adds extra global data.
+
+The checked local anchors are \verb|main.tex|,
+\verb|lem:elliptic-degree-locality-obstruction|,
+\verb|cor:ranE-locality-misses-elliptic-degree|,
+\verb|rem:Repair alternatives|,
+\verb|def:compact-igusa-realization-datum|, and
+\verb|thm:primitive-recognition|.  The preceding local reports used
+here are
+\verb|agent_material/12_compact_hall_ranE_attack_heal.tex|,
+\verb|agent_material/13_ranE_obstruction_attack_repair.tex|,
+\verb|agent_material/12_protected_integration_orientation_attack_heal.tex|,
+\verb|agent_material/13_integration_orientation_attack_repair.tex|,
+\verb|agent_material/12_primitive_comparison_attack_heal.tex|, and
+\verb|agent_material/13_primitive_recognition_attack_repair.tex|.
+
+\subsection{Exact obstruction}
+
+Let \(X=K3\times E\), and let \(p_E:X\to E\) be projection.  If
+\[
+(p_E)_*[C]=b[E],\qquad b>0,
+\]
+for a one-dimensional subscheme \(C\subset X\), then \(p_E(C)=E\).
+Indeed, if \(p_E(C)\) were zero-dimensional, the pushforward of the
+one-cycle \([C]\) would be zero.  Since \(E\) is irreducible, any
+one-dimensional closed image is all of \(E\).  Thus positive elliptic
+degree is a wrapped or global condition over \(E\), not a finite-support
+condition.
+
+Consequences:
+\begin{enumerate}
+\item A projection-finite object, with \(p_E(\Supp A)\subset F\) for
+finite \(F\subset E\), can be assigned to a point of \(\Ran(E)\).
+\item A positive elliptic-degree object has support dominating \(E\);
+it cannot be assigned to any finite subset of \(E\).
+\item The reduced OP/DT quotient by translation on \(E\) is a scalar
+operation.  If one quotients before forming Hall extension
+correspondences, the relative \(E\)-position needed for convolution has
+already been forgotten.
+\item Therefore a naive compact Hall object on \(\Ran(E)\) can see the
+projection-finite part, but misses the full \(s\)-direction of
+\[
+\Delta_5
+=64\,q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)>0}(1-q^n r^l s^m)^{f(nm,l)}.
+\]
+\end{enumerate}
+
+This is not a failure of the Borcherds product or of the OP scalar
+square.  It is a locality failure for the proposed compact
+Hall/factorization source.
+
+\subsection{What the other volumes already provide}
+
+\paragraph{Vol. I: \texttt{chiral-bar-cobar}.}
+The first volume provides curve-level bar-cobar technology and a
+Heisenberg determinant-line/Fock mechanism in a controlled setting.  Its
+working notes explicitly separate scalar Fock amplitudes from a full
+dg-categorical modular cooperad.  They also record the finite-Fock
+obstruction: no finite dg-category with finite-dimensional total
+Hochschild trace can recover the full infinite product.  The honest lift
+there is pro-nuclear or completed Fock data, built as an inverse limit of
+finite-energy truncations.
+
+Vol. I therefore supplies a useful template for a global Fock leg, but
+not an Igusa \(K3\times E\) wrapped elliptic-degree construction.  It
+also refuses the automatic Hecke conclusion: a Hecke decomposition is
+available only when an actual Hecke-compatible decomposition has been
+constructed.  A weight-defective or scalar sewing identity does not by
+itself create Hecke modes.
+
+\paragraph{Vol. II: \texttt{chiral-bar-cobar-vol2}.}
+The second volume retracts the naive statement that an \(E_2\)- or
+ordinary Ran-factorization object on a genus-one curve already sees
+global modular structure.  Its higher-genus integration notes say the
+local chiral algebra lives on small disks, while modular information
+lives in factorization/chiral homology or in extra global structure.
+
+For the Igusa/BKM problem Vol. II points to a bi-based architecture:
+smooth Ran data on a discriminant curve, nearby-cycle data at singular
+points, and parameter-side factorization on \(\overline{\mathcal A}_2\).
+It also states that the BKM-side object is a Hall--Drinfeld double, not
+a plain Yangian, and retracts direct nodal BD chirality.  This is an
+architectural model for a hybrid base, not a constructed
+\(K3\times E\) local/global extension stack.
+
+\paragraph{Vol. III: \texttt{calabi-yau-quantum-groups}.}
+The third volume distinguishes the native \(E_d\)-factorization algebra
+of a Calabi--Yau category from the Stage-2 curve specialization
+\(\Spch_{\Sigma,C}\).  For \(K3\times E\), the chain-level object
+\[
+\Spch_{K3,E}(\Phi^{FA}_3(K3\times E))\simeq H_{\Delta_5}
+\]
+is a target or conjectural bridge, not a theorem.  The same volume says
+that comparison with a global Hall--Borcherds/Drinfeld object is an
+additional bridge requiring a positive half, Hopf pairing, completion,
+descent, and bracket comparison.
+
+Thus Vol. III supplies the correct status discipline: the
+Gritsenko--Nikulin denominator is the theorem-grade value shadow, while
+the compact Hall--Drinfeld or chiral-Borcherds source remains
+conditional.  It does not construct the missing wrapped elliptic-degree
+locality.
+
+\paragraph{\texttt{topological-strings}.}
+The topological-strings volume separates local topological or
+holomorphic factorization on small disks from global BPS/GV
+resummations.  Its local Fukaya model near a compact interval explicitly
+does not include wrapped generators at infinity.  Its MNOP/BCOV framing
+records a global trans-series/BPS completion, but that is a scalar
+global summation, not a local collision factorization operation.
+
+This is the same structural warning: local factorization and global
+wrapped sectors are different data.
+
+\subsection{First repair: projection-finite local factorization plus global modes}
+
+The first proposed repair is:
+\[
+\mathcal F^{\mathrm{loc}}\in\Fact(\Ran(E))
+\quad\hbox{for projection-finite sectors}
+\]
+together with a separate completed Fock/Hecke object
+\(\mathcal G^{\mathrm{glob}}\) carrying positive elliptic degree.
+
+\paragraph{Attack.}
+This repair is not automatic from any existing volume.  Vol. I has
+Heisenberg Fock technology and a pro-nuclear completion template, but
+not the Igusa \(K3\times E\) elliptic-degree modes.  Vol. II and Vol.
+III treat the relevant BKM object as Hall--Drinfeld or
+chiral-Borcherds data still requiring completion and bracket comparison.
+The OP/DT scalar series proves a coefficient shadow, not a Hall action.
+
+Moreover, if \(\mathcal G^{\mathrm{glob}}\) is simply appended as an
+external Fock factor, then one may recover a product formula while still
+failing the primitive-recognition theorem.  A decoupled product has no
+reason to carry the mixed brackets between vertical projection-finite
+charges and positive elliptic-degree charges.  It can have the correct
+signed dimensions and the wrong Lie superalgebra.
+
+\paragraph{Healed conditional form.}
+This repair becomes mathematically usable only after supplying the
+following data:
+\begin{enumerate}
+\item a projection-finite oriented critical Hall/chiral object
+\(\mathcal F^{\mathrm{loc}}\) on \(\Ran(E)\);
+\item a completed global object \(\mathcal G^{\mathrm{glob}}\) graded by
+positive elliptic degree \(b>0\) and by the remaining Igusa charges;
+\item actual Hecke or Fock operators \(T_m\) whose trace identity gives
+the exponents \(f(nm,l)\), not merely a scalar equality after the fact;
+\item an action or module structure of the local Hall object on the
+global object, retaining relative \(E\)-position before reduction;
+\item orientation and protected integration compatible with both the
+local product and the global-mode action;
+\item primitive recognition:
+\[
+\sdim \Prim_{\mathrm{prot},(n,l,m)}=f(nm,l),
+\]
+with the Gritsenko--Nikulin/Borcherds bracket and radical quotient
+identified, not only the determinant.
+\end{enumerate}
+
+Under only items (1)--(3), this is at best a determinant-level repair.
+For the manuscript's compact realization problem, items (4)--(6) are
+load-bearing.
+
+\subsection{Second repair: hybrid local/global wrapped factorization}
+
+The second proposed repair is a two-sorted or coloured factorization
+object.  Local colours are projection-finite and live over
+\(\Ran(E)\).  Wrapped colours dominate \(E\) and live globally.  The
+operation spaces are not ordinary disjoint-open products alone; they are
+extension stacks with local and global legs.
+
+\paragraph{Attack.}
+No surveyed volume already constructs this hybrid object for
+\(K3\times E\).  Vol. II gives a bi-based Ran/nearby-cycle/parameter
+architecture, and Vol. III gives the Hall--Drinfeld target.  These are
+models for the shape of the answer, not the answer.  In particular, no
+existing text supplies the mixed extension correspondences, their
+Thom--Sebastiani orientation transport, their associativity over
+two-step flags, or their compatibility with reduced OP integration.
+
+\paragraph{Healed conditional form.}
+The hybrid construction should be formulated through the following
+stacks and correspondences.
+
+For a finite subset or disjoint opens \(U_1,\ldots,U_r\subset E\), let
+\(\Mloc_{\alpha_i}(U_i)\) classify projection-finite objects of charge
+\(\alpha_i\) supported over \(U_i\).  Let \(\Mwr_{\eta}\) classify
+wrapped objects of charge \(\eta\), with positive elliptic-degree
+component \(b(\eta)>0\), so that their support dominates \(E\).
+
+The local-only correspondence is the usual projection-finite Hall
+correspondence
+\[
+\prod_{i=1}^r \Mloc_{\alpha_i}(U_i)
+\longleftarrow
+\Eloc_{\alpha_1,\ldots,\alpha_r}(U_1,\ldots,U_r)
+\longrightarrow
+\Mloc_{\alpha_1+\cdots+\alpha_r}(U_1\cup\cdots\cup U_r).
+\]
+
+The mixed correspondence must be a stack
+\[
+\prod_{i=1}^r \Mloc_{\alpha_i}(U_i)\times \Mwr_{\eta}
+\longleftarrow
+\Ehyb_{\alpha_1,\ldots,\alpha_r;\eta}(U_1,\ldots,U_r)
+\longrightarrow
+\Mwr_{\eta+\alpha_1+\cdots+\alpha_r},
+\]
+whose points are exact sequences or exact triangles with local
+subquotients of charges \(\alpha_i\) and one wrapped leg of charge
+\(\eta\).  The output is wrapped as soon as one input is wrapped.
+
+The wrapped-wrapped correspondence is
+\[
+\Mwr_{\eta_1}\times\Mwr_{\eta_2}
+\longleftarrow
+\Ewr_{\eta_1,\eta_2}
+\longrightarrow
+\Mwr_{\eta_1+\eta_2}.
+\]
+
+For associativity, one also needs flag stacks
+\[
+\mathfrak{Flag}^{\mathrm{hyb}}_{\alpha_1,\ldots,\alpha_r;\eta}
+\]
+classifying two-step filtrations whose associated graded pieces are the
+specified local and wrapped legs.  The two push-pull composites attached
+to different parenthesizations must agree after the chosen orientation
+and completion.
+
+The reduced \(E\)-quotient must not be taken before these
+correspondences are formed.  The stacks must first remember relative
+\(E\)-position, carry the determinant-line orientation, and only then
+descend or integrate to the reduced protected theory.
+
+\subsection{Required orientation, completion, and integration data}
+
+Both repairs need the same missing structural layers:
+\begin{enumerate}
+\item an extension-closed heart or stable \(\infty\)-categorical sector
+for the compact \(K3\times E\) objects used in the Hall construction;
+\item a critical or shifted-symplectic atlas on local, wrapped, and
+mixed extension stacks;
+\item a strong orientation: compatible square roots of determinant
+lines for local-local, local-wrapped, and wrapped-wrapped
+correspondences;
+\item a Harder--Narasimhan or energy completion making all infinite
+charge sums continuous and coefficientwise finite;
+\item equivariant construction before translation reduction by \(E\);
+\item a protected integration map whose scalar shadow is the OP/DT
+series and whose primitive shadow is the Borcherds denominator algebra;
+\item a primitive recognition certificate proving the root
+multiplicities, parity, bracket, Serre/Borcherds relations, and radical
+quotient for \(\mathfrak g_{\Delta_5}\).
+\end{enumerate}
+
+\subsection{Tests}
+
+The following tests are required before either repair can be promoted to
+a manuscript theorem.
+
+\begin{enumerate}
+\item \textbf{Projection test.}  Verify that the local sector has
+elliptic degree \(b=0\) or otherwise finite projection to \(E\), while
+each positive \(b\) sector is classified as wrapped.
+\item \textbf{Support locality test.}  For local objects supported over
+disjoint opens of \(E\), prove the required vanishing or splitting of
+cross-\(\Ext\) terms used by the factorization product.  Identify the
+collision stack when the opens meet.
+\item \textbf{Wrapped obstruction test.}  For every proposed operation
+placing a positive elliptic-degree object at a finite Ran point, check it
+against \(p_E(C)=E\).  Such an operation is invalid unless it is part of
+the global or hybrid leg.
+\item \textbf{Quotient-order test.}  Construct Hall correspondences
+\(E\)-equivariantly before reduced quotienting.  A quotient-first
+construction fails if it cannot recover relative \(E\)-position in a
+mixed extension.
+\item \textbf{Mixed associativity test.}  Compare the two push-pull
+maps through
+\(\mathfrak{Flag}^{\mathrm{hyb}}_{\alpha,\beta;\eta}\):
+first combine \(\alpha\) with \(\beta\), then act on \(\eta\), versus
+first act by \(\beta\), then by \(\alpha\).  The same test is required
+for two wrapped legs.
+\item \textbf{Orientation test.}  Check determinant-line square roots
+and Thom--Sebastiani signs on local-local, local-wrapped, and
+wrapped-wrapped extension stacks.  This is where the open
+orientation-monodromy character must be decided.
+\item \textbf{Determinant shadow test.}  After protected integration,
+the Euler-characteristic shadow must recover the normalized denominator
+\[
+\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)
+\]
+and the scalar OP/DT square
+\[
+Z^{K3\times E}_{DT}=Z^{K3\times E}_{OP}=-4096\,\Delta_5^{-2}.
+\]
+\item \textbf{Primitive test.}  In a finite charge box, for example
+\(0\le n,m\le 2\) and \(|l|\le 4\), compute the protected primitives and
+verify
+\[
+\sdim \Prim_{\mathrm{prot},(n,l,m)}=f(nm,l).
+\]
+Then check the bracket relations, not only the dimensions.
+\end{enumerate}
+
+\subsection{Recommendation for the manuscript}
+
+The manuscript should keep the current compact realization statement
+conditional and obstruction-aware.  The theorem-grade facts are the
+Borcherds product, the denominator identification imported from
+Gritsenko--Nikulin/Borcherds, and the OP/DT scalar square.  They do not
+construct the compact Hall/factorization source.
+
+The cleanest manuscript language is:
+\[
+\begin{gathered}
+\hbox{projection-finite sectors may form a local object on }\Ran(E),\\
+\hbox{positive elliptic-degree sectors require either global Fock/Hecke
+modes}\\
+\hbox{with mixed Hall action, or a hybrid local/global wrapped
+factorization theory.}
+\end{gathered}
+\]
+The first repair is acceptable as a determinant-level architecture only
+after actual completed global modes are supplied.  It becomes a compact
+realization architecture only after mixed local/global action and
+primitive recognition are proved.
+
+The second repair is the geometrically better target, because it keeps
+the extension problem visible: local vertical legs and wrapped
+elliptic-degree legs must interact through explicit mixed extension
+stacks.  No other volume presently constructs those stacks for
+\(K3\times E\).  The manuscript should therefore state hybrid wrapping
+as required future data, not as an available theorem.
+
+\subsection{Claim-status conclusion}
+
+\[
+\boxed{
+\begin{array}{l}
+\text{Ordinary }\Ran(E)\text{ locality for the full Igusa product:
+false.}\\
+\text{Projection-finite local factorization: conditional and plausible.}\\
+\text{Separate global Fock/Hecke repair: not yet constructed for
+}K3\times E.\\
+\text{Hybrid local/global wrapped repair: correct target shape, open.}\\
+\text{Compact Hall realization of }\mathfrak g_{\Delta_5}\text{: open.}
+\end{array}}
+\]
+
+Files changed by this report: only
+\verb|agent_material/14_ranE_hybrid_wrapping_from_volumes_attack_heal.tex|.
