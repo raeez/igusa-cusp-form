@@ -106,14 +106,17 @@ the OP scalar convention.  Neither fixes the automorphic reflection
 character or the compact orientation monodromy.
 
 A compact realization would have to begin with a holomorphic
-\(E_3\)-factorization algebra on \(K3\times E\), specialize it along the
-K3 direction to a chiral object on \(\operatorname{Ran}(E)\), solve the
-positive-elliptic-degree locality obstruction, and identify the protected
-primitive bracket with \(\mathfrak g_{\Delta_5}\).  This paper proves the
-virtual determinant, records the imported scalar and denominator
-theorems, and formulates that compact Hall/factorization realization as
-an open recognition problem.  The final part records the eight
-Clery--Gritsenko diagonal-divisor rows and the certificate required
+\(E_3\)-factorization algebra on \(K3\times E\), with a specified
+formality point, \(S^3\)-framing, quantum master equation, anomaly
+control, descent, and finite-first HN completion.  It would then
+specialize along the K3 direction to a chiral object on
+\(\operatorname{Ran}(E)\), solve the positive-elliptic-degree locality
+obstruction by mixed local/wrapped correspondences, and identify the
+protected primitive bracket with \(\mathfrak g_{\Delta_5}\).  This paper
+proves the virtual determinant, records the imported scalar and
+denominator theorems, and formulates that compact Hall/factorization
+realization as an open recognition problem.  The final part records the
+eight Clery--Gritsenko diagonal-divisor rows and the certificate required
 before any boundary row becomes a physical host.
 \end{abstract}
 
@@ -181,9 +184,11 @@ Borcherds product.  There is also a geometric obstruction: a
 one-dimensional subscheme with positive elliptic degree projects onto
 all of \(E\).  Hence a naive support-local object on
 \(\operatorname{Ran}(E)\) sees only projection-finite sectors.  The full
-Igusa \(s\)-direction requires either projection-finite locality plus a
-separate global Hecke/Fock mode, or a hybrid local/global factorization
-theory for wrapped \(E\)-sectors.  This is open.
+Igusa \(s\)-direction requires hybrid local/global factorization for
+wrapped \(E\)-sectors.  A separate global Hecke/Fock mode is only a
+determinant-level repair unless it is coupled to the projection-finite
+sector by mixed Hall actions and then tested at the primitive bracket
+level.  This is open.
 
 \paragraph{Primitive recognition.}
 The microscopic algebra sought from such a compact realization is the
@@ -197,8 +202,9 @@ protected primitive bracket
 \]
 The recognition theorem proved later is conditional: if the compact
 Igusa datum \(\mathfrak K_X\) exists, including the oriented Hall object,
-protected integration, chiral bar-cobar comparison, and presentation-level
-primitive Lie comparison, then
+protected integration, chiral bar-cobar comparison, presentation-level
+primitive Lie comparison, no-extra-relations theorem, completed PBW
+compatibility, and radical quotient, then
 \[
 H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
 \cong
@@ -1922,7 +1928,10 @@ they are not a constructed functor evaluated on \(X\).
 A compact holomorphic-Chern--Simons/BV model, if constructed with the
 required descent, quantum master equation, and anomaly cancellation,
 would be a candidate source for this datum in the completed charge
-category.
+category.  Such a source also requires a chosen \(E_3\)-formality point,
+a chain-level \(S^3\)-framing witness, compact-support control, and
+finite-stage HN quotients on which all operations are defined before
+passing to the completed inverse system.
 
 The curve-level BPS algebra would be obtained only after a supplied Stage-2
 specialization along the \(K3\)-direction:
@@ -1968,8 +1977,11 @@ following finite-chain data:
 \begin{enumerate}
 \item descent for local observables on \(X\) and a quantum master
 equation after compact charge completion;
-\item anomaly cancellation and a finite-first sectorial completion
-compatible with Harder--Narasimhan quotients;
+\item anomaly cancellation, a fixed \(E_3\)-formality point, a
+chain-level \(S^3\)-framing witness, and compact-support control;
+\item a finite-first sectorial completion compatible with
+Harder--Narasimhan quotients, with all operations defined on finite
+stages before completion;
 \item the chain-level \(K3\)-to-\(E\) specialization
 \(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\);
 \item the projection-finite or hybrid wrapped repair for positive
@@ -2132,9 +2144,11 @@ Two honest repair paths visible in the present architecture are these.
 \begin{enumerate}
 \item Construct the projection-finite local Hall/chiral factorization
 object on \(\operatorname{Ran}(E)\), then prove that the missing
-positive elliptic-degree direction is supplied by separate global
-Fock/Hecke modes compatible with protected integration, the product
-variable \(s\), and the primitive denominator comparison.
+positive elliptic-degree direction is supplied by global Fock/Hecke
+modes coupled to the local sector through mixed Hall actions.  A
+decoupled Fock/Hecke factor can reproduce a product character, but it
+does not define the mixed primitive brackets needed for a compact
+realization.
 \item Construct a hybrid local/global wrapped factorization theory:
 local vertical insertions live on \(\operatorname{Ran}(E)\), while
 positive elliptic-degree sectors are global wrapped legs.  This requires
