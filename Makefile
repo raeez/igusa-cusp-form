@@ -5,7 +5,7 @@
 #  Usage:
 #    make            Full paper build -> out/main.pdf
 #    make fast       Single pdflatex pass -> out/main.pdf
-#    make release    Full rebuild -> out/main.pdf + standalones + iCloud
+#    make release    Full rebuild -> out/main.pdf + release PDF + standalones + iCloud
 #    make standalone Build standalone documents -> out/
 #    make icloud     Copy latest PDFs to iCloud Drive
 #    make clean      Remove LaTeX build debris
@@ -24,6 +24,7 @@ TEXFLAGS  := -interaction=nonstopmode -file-line-error -synctex=0
 LOG_DIR   := .build_logs
 OUT_DIR   := out
 PDF       := $(OUT_DIR)/$(MAIN).pdf
+RELEASE_PDF := raeez.lorgat.automorphic-corrections.pdf
 PASSES    := 4
 TEX_SOURCES := $(MAIN).tex $(wildcard appendices/*.tex)
 
@@ -81,15 +82,20 @@ release:
 	@echo "  -- RELEASE BUILD (Igusa cusp form) --"
 	@echo "  =========================================="
 	@echo ""
-	@echo "  [1/2] Paper"
+	@echo "  [1/3] Paper"
 	@$(MAKE) --no-print-directory -B $(PDF)
 	@echo ""
-	@echo "  [2/2] Standalone documents and iCloud"
+	@echo "  [2/3] Release PDF"
+	@cp $(PDF) "$(RELEASE_PDF)"
+	@echo "    ok  $(RELEASE_PDF)"
+	@echo ""
+	@echo "  [3/3] Standalone documents and iCloud"
 	@$(MAKE) --no-print-directory icloud
 	@echo ""
 	@echo "  =========================================="
 	@echo "  Release complete. Canonical output:"
 	@echo "    $(PDF)"
+	@echo "    $(RELEASE_PDF)"
 	@if [ -n "$(strip $(STANDALONE_TEX))" ]; then \
 		echo "  Standalone output:"; \
 		for pdf in $(STANDALONE_PDFS); do \
@@ -198,7 +204,7 @@ help:
 	@echo "  --------------------------------"
 	@echo "  make            Full paper build -> out/main.pdf"
 	@echo "  make fast       Single pdflatex pass -> out/main.pdf"
-	@echo "  make release    Full rebuild -> out/main.pdf + standalones + iCloud"
+	@echo "  make release    Full rebuild -> out/main.pdf + release PDF + standalones + iCloud"
 	@echo "  make standalone Build standalone documents -> out/"
 	@echo "  make icloud     Copy latest PDFs to iCloud Drive"
 	@echo "  make clean      Remove build debris"
