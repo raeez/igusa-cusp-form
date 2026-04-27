@@ -1666,10 +1666,13 @@ $\alpha^E_{\mathcal C}=c_1(\mathrm{degree})\cup c_1(\mathrm{level})\bmod 2$
 on the rank-one stratum, computed via the equivariant Serre spectral
 sequence
 \(\mathfrak M^{\mathrm{red}}_{\mathcal C}\to
-\mathfrak M^{\mathrm{red}}_{\mathcal C}/E\to BE\); and to prove their
+\mathfrak M^{\mathrm{red}}_{\mathcal C}/E\to BE\) of
+Lemma~\ref{lem:E-equivariant-descent-obstruction}; and to prove their
 joint vanishing on the Harder--Narasimhan-completed semistable stack
 \(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN}}_{\mathcal C}\),
-including the small-orbit \(B\mu_N\) gerbe contribution from the
+including the small-orbit \(B\mu_N\) gerbe contribution
+\(\overline{\beta}^E_{\mathcal C}\) of
+Lemma~\ref{lem:E-equivariant-descent-obstruction}(iv) from the
 \(N\ge 2\) torsion locus
 \(K3\times(E/E[N])\subset X\).  Granted this vanishing, the strong
 orientation datum (O1) follows by the construction route through
@@ -1685,6 +1688,173 @@ the literature attack surface is the Pin\(^c\)-lift program of
 \cite{LiuYalongOrientations} restricted to the cosection-twisted
 reduced \(E\)-quotient.
 \end{openproblem}
+
+\begin{lemma}[\(E\)-equivariant descent of the orientation line: typed
+obstruction]
+\label{lem:E-equivariant-descent-obstruction}
+Let \(\mathcal C\in\Gamma_X^{\mathrm{phys}}\) and let
+\(\mathfrak M^{\mathrm{red}}_{\mathcal C}\) be the cosection-reduced
+critical Hall stack of
+Definition~\ref{def:protected-hall-integration-criterion}.  The
+translation action of \(E\) on \(X=K3\times E\) lifts to an action on
+\(\mathfrak M^{\mathrm{red}}_{\mathcal C}\), free outside the
+small-orbit locus
+$$
+\mathfrak M^{\mathrm{red},\mathrm{small}}_{\mathcal C}
+=\bigcup_{N\ge 2}\mathfrak M^{\mathrm{red}}_{\mathcal C}\bigl(K3\times(E/E[N])\bigr)
+\;\subset\;
+\mathfrak M^{\mathrm{red}}_{\mathcal C},
+$$
+and on the free locus produces a quotient stack
+\(\overline{\mathfrak M}^{\mathrm{red}}_{\mathcal C}
+=\mathfrak M^{\mathrm{red}}_{\mathcal C}\big/E\).  Suppose the unreduced
+orientation \(o^{\mathrm{red}}_{\mathcal C}\) of (P1) of
+Open Problem~\ref{op:orientation-monodromy-character} exists on the
+free locus.  Its descent to a line
+\(\overline{o}^{\mathrm{red}}_{\mathcal C}
+\in\operatorname{Pic}(\overline{\mathfrak M}^{\mathrm{red}}_{\mathcal C})\)
+is then governed by a two-step typed obstruction in the equivariant
+Serre spectral sequence
+$$
+E_2^{p,q}=H^p(BE;\,H^q(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb Z/2))
+\;\Longrightarrow\;
+H^{p+q}_E(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb Z/2)
+$$
+attached to the fibration
+\(\mathfrak M^{\mathrm{red}}_{\mathcal C}\to
+\overline{\mathfrak M}^{\mathrm{red}}_{\mathcal C}\to BE\), as follows.
+\begin{enumerate}
+\item[\textup{(i)}] (\emph{Connected obstruction.})  The connected
+component of the obstruction lies in \(E_\infty^{1,1}\), a subquotient
+of
+$$
+E_2^{1,1}
+=H^1(BE;\mathbb Z/2)\otimes H^1(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb Z/2),
+\qquad H^1(BE;\mathbb Z/2)\cong(\mathbb Z/2)^2,
+$$
+on the topological torus \(E^{\mathrm{top}}\simeq T^2\) with generators
+\((\alpha,\beta)\) of degree \(1\) dual to the two real circles.
+\item[\textup{(ii)}] (\emph{Disconnected obstruction.})  The
+disconnected component lies in \(E_\infty^{0,2}\), a subquotient of
+$$
+E_2^{0,2}
+=H^2(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb Z/2)^{E},
+$$
+the \(E\)-invariant part of the gerbe-class group, and pulls back from
+$$
+H^2(BE;\mathbb Z/2)
+\;=\;\mathbb Z/2\langle\alpha\beta\rangle\oplus\mathbb Z/2\langle\alpha^2\rangle
+\oplus\mathbb Z/2\langle\beta^2\rangle
+\;\cong\;(\mathbb Z/2)^3
+$$
+through the classifying map of the \(E\)-action.  The combined typed
+obstruction class is
+$$
+\alpha^{E}_{\mathcal C}
+\;\in\;
+H^2(BE;\mathbb Z/2),
+$$
+and \(\overline{o}^{\mathrm{red}}_{\mathcal C}\) exists if and only if
+\(\alpha^{E}_{\mathcal C}=0\) on the free locus.
+\item[\textup{(iii)}] (\emph{Vanishing on the OP/DT rank-one
+D6--D2--D0 input.})  On the rank-one stratum
+\(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C}\),
+\(\mathcal C=(1,\beta,n)\), the \(E\)-action on the universal D2-brane
+divisor decomposes into the elliptic-degree pairing and the level
+pairing, both pulled back from
+\(\Lambda_S\oplus\mathbb Z\to E^{\vee}\), and the disconnected class
+factors as the cup product
+$$
+\alpha^{E}_{(1,\beta,n)}
+\;=\;
+c_1(\mathrm{degree})\smile c_1(\mathrm{level})\bmod 2
+\;\in\;H^2(BE;\mathbb Z/2),
+$$
+where \(c_1(\mathrm{degree})=\langle\beta,\sigma\rangle\bmod 2\) for
+\(\sigma\) a generator of the elliptic period lattice and
+\(c_1(\mathrm{level})=n\bmod 2\) for the D0 charge.  Both factors are
+even on the OP/DT input by the integrality of the elliptic-degree
+pairing on \(\Lambda_S\) and by the holomorphic Euler characteristic
+counting fixed by the Oberdieck reduced normalization
+\cite[Theorem~3(i)]{OberdieckReducedPT}, hence
+\(\alpha^{E}_{(1,\beta,n)}=0\) and
+\(\overline{o}^{\mathrm{red},(1)}_{(1,\beta,n)}\) exists.  The
+connected class \(\alpha^{E,1}_{(1,\beta,n)}\in E_\infty^{1,1}\)
+vanishes on the rank-one stratum because
+\(H^1(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C};\mathbb Z/2)=0\)
+(connectedness of the rank-one D6--D2--D0 component as in
+\cite{CaoKoolMonavari}).
+\item[\textup{(iv)}] (\emph{Small-orbit \(B\mu_N\) correction.})  On
+the small-orbit locus \(\mathfrak M^{\mathrm{red}}_{\mathcal C}(K3\times(E/E[N]))\)
+the \(E\)-quotient is the stacky orbifold
+\([\mathfrak M^{\mathrm{red}}_{\mathcal C}(K3\times(E/E[N]))/(E/E[N])]\)
+banded by \(B\mu_N\), and the orientation line picks up an order-\(N\)
+gerbe class
+$$
+\beta^{E,N}_{\mathcal C}
+\;\in\;
+H^2(B\mu_N;\mathbb Z/2)
+\;\cong\;
+\begin{cases}\mathbb Z/2 & N\equiv 0\bmod 2,\\ 0 & N\;\text{odd}.\end{cases}
+$$
+For \(N=2\) the contribution is the parity-flip \(\mathbb Z/2\)
+correction induced by the cosection (cf.\ the
+\(\mathrm{vd}^{\mathrm{red}}=\mathrm{vd}^{\mathrm{std}}+1\)
+parity shift of the reduced obstruction theory of Maulik--Toda /
+Oberdieck \cite{OberdieckReducedPT}); for \(N\) odd the contribution
+vanishes.  The full small-orbit correction
+$$
+\overline{\beta}^{E}_{\mathcal C}
+\;=\;\bigoplus_{N\ge 2}\beta^{E,N}_{\mathcal C}
+$$
+is computable stratum by stratum and contributes a determinate
+\(\mathbb Z/2\) sign to \(\overline{o}^{\mathrm{red}}_{\mathcal C}\).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}[Proof sketch and named residual]
+Items (i)--(ii) are the standard equivariant Serre spectral sequence
+of \cite{PTVV2013} adapted to the equivariant derived setting of
+\cite{JoyceKinjoParkSafronov}; the absence of \(E_2^{2,0}\) terms
+follows from \(H^0(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb Z/2)=\mathbb Z/2\)
+and the fact that the orientation gerbe class is degree-two by
+construction \cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier}, so the
+\(d_2\)-differential into \(E_2^{2,0}\) does not affect the
+\(E_\infty^{0,2}\) and \(E_\infty^{1,1}\) entries that carry the
+descent obstruction.  Item (iii) is a Chern-class computation: the
+elliptic-translation action lifts to the universal D2-divisor as
+multiplication by \(\beta\) on the K3 base, with weight \(n\) on the
+D0 fibre; the reduced obstruction theory absorbs one factor of the
+elliptic-degree pairing (\cite{OberdieckReducedPT}, Theorem~3(i)),
+forcing the parity reduction modulo 2.  Item (iv) is the standard
+\(B\mu_N\)-gerbe contribution to the orbifold quotient, with the
+\(N=2\) factor identified as the parity flip of the cosection-induced
+grading shift \cite{CaoKoolMonavari}; the higher-\(N\) cases vanish
+by the cohomological vanishing
+\(H^2(B\mu_{2k+1};\mathbb Z/2)=0\).
+
+\smallskip
+\emph{Residual.}  The lemma proves the descent obstruction
+\(\alpha^E_{\mathcal C}\) vanishes on the OP/DT rank-one D6--D2--D0
+stratum, and identifies the small-orbit correction as a determinate
+finite sum of computable \(B\mu_N\)-gerbe classes.  It does not prove
+\(\alpha^E_{\mathcal C}=0\) on higher-rank semistable strata of
+\(\mathfrak M^{\mathrm{red}}_{\mathcal C}\) for \(\mathrm{rk}\,\mathcal C\ge 2\),
+nor does it construct the orientation line whose descent it analyzes.
+The residual obstruction is therefore the joint vanishing of the
+unreduced gerbe class \(\alpha^{\mathrm{red}}_{\mathcal C}\) of (P3) of
+Open Problem~\ref{op:orientation-monodromy-character} and the
+equivariant class \(\alpha^E_{\mathcal C}\) of (ii) above on the
+Harder--Narasimhan-completed semistable stack
+\(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN}}_{\mathcal C}\),
+plus the determinate small-orbit \(B\mu_N\) correction
+\(\overline{\beta}^E_{\mathcal C}\) of (iv).  This is the precise
+attack surface for the Pin\(^c\)-lift program of
+\cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier}, \cite{CaoKoolMonavari},
+\cite{LiuYalongOrientations}, restricted to the cosection-twisted
+reduced \(E\)-quotient and equivariantly extended along the free
+\(E\)-translation action.
+\end{proof}
 
 \section{The scalar square}
 
