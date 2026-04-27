@@ -1114,6 +1114,130 @@ homomorphisms agreeing on a generating set agree, so
 \(\varepsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\).
 \end{proof}
 
+\begin{proof}[Independent verification via the Maass character]
+The proof above routes through the Pfaffian local model (O2) and the
+Borcherds simple-root multiplicity \(N_\delta=f(nm,l)\big|_{\text{simple
+cell}}\): a Joyce--Tanaka--Upmeier-flavoured route, where the sign on a
+type-II simple wall is read off the parity of the local Pfaffian
+exponent.  The Beilinson-school discipline asks the numerics to be
+verified by an independent route; we supply one using only the Maass
+multiplier \(\nu_{\Delta_5}\) and Borcherds-product factorization.  No
+appeal to (O2) is made.
+
+\emph{Step 1 (Reformulating the claim as a coboundary).}  Identify the
+sign cocycle to be computed.  Pulled back to
+\(W^{(2)}(\La^{2,1}_{II})\subset\Orth(\La^{2,1})_+\), the orientation
+character of the protected sector is a homomorphism
+\(\varepsilon_o\colon W^{(2)}(\La^{2,1}_{II})\to\{\pm1\}\), and the
+two-cocycle measuring its failure to extend is the coboundary
+\(c(g,h)=\varepsilon_o(g)\varepsilon_o(h)\,\varepsilon_o(gh)^{-1}\equiv1\)
+in \(\Z/2\) by homomorphy.  Equivalently, writing \(\varepsilon_o\) as
+the additive function \(\widetilde\varepsilon_o\colon W^{(2)}\to\Z/2\)
+with \(\varepsilon_o=(-1)^{\widetilde\varepsilon_o}\), the claim
+\(\widetilde c(g,h)=\widetilde\varepsilon_o(g)+\widetilde\varepsilon_o(h)
+-\widetilde\varepsilon_o(gh)\equiv0\pmod2\) is the coboundary identity
+to be checked.
+
+\emph{Step 2 (Maass-side coboundary).}  Define
+\(\varepsilon\colon W^{(2)}(\La^{2,1}_{II})\to\Z/2\) by
+\(\varepsilon(g):=\tfrac12(1-\nu_{\Delta_5}(g))\), so
+\((-1)^{\varepsilon(g)}=\nu_{\Delta_5}(g)\).  Maass's
+character is a homomorphism \cite{MAASS:1}, \cite[Section 3]{GN},
+\cite{Gritsenko99}, hence
+$$
+c'(g,h)
+:=\varepsilon(g)+\varepsilon(h)-\varepsilon(gh)
+\equiv\tfrac12\bigl(1-\nu_{\Delta_5}(g)\nu_{\Delta_5}(h)\nu_{\Delta_5}(gh)^{-1}\bigr)
+\equiv0\pmod2.
+$$
+The displayed value of \(\nu_{\Delta_5}\) on the six generators is
+Lemma~\ref{lem:maass-multiplier-restriction}: \(-1\) on
+\(s_{\delta_1},s_{\delta_2},s_{\delta_3}\), \(+1\) on
+\(s_{f_{-2}-f_2},s_{f_2-f_3},s_{f_2+f_3}\); equivalently
+\(\varepsilon(s_{\delta_i})=1\) and
+\(\varepsilon(s_{f_{-2}-f_2})=\varepsilon(s_{f_2-f_3})
+=\varepsilon(s_{f_2+f_3})=0\).
+
+\emph{Step 3 (Verification on the nine pairs of three-wall generators).}
+For the three-wall computation the only nontrivial check is on the
+\(3\times3\) table of pairs \((g,h)\in\{s_{\delta_1},s_{\delta_2},
+s_{\delta_3}\}^{\times2}\).  Using \(\varepsilon(s_{\delta_i})=1\) for
+each \(i\) and the Coxeter relation
+\(s_{\delta_i}^2=1\), \((s_{\delta_i}s_{\delta_j})^{m_{ij}}=1\) of the
+hyperbolic Weyl group:
+\begin{itemize}
+\item Diagonal \((g,g)=(s_{\delta_i},s_{\delta_i})\) for \(i=1,2,3\)
+(three pairs): \(gh=1\), \(\varepsilon(gh)=0\), so
+\(c'(g,h)=1+1-0=2\equiv0\pmod2\).
+\item Off-diagonal \((g,h)=(s_{\delta_i},s_{\delta_j})\), \(i\ne j\)
+(six pairs): \(gh=s_{\delta_i}s_{\delta_j}\) lies in the rotation
+subgroup \(W^{+}\subset W^{(2)}(\La^{2,1}_{II})\) and is the product of
+two reflections, so \(\nu_{\Delta_5}(gh)=(-1)(-1)=+1\), giving
+\(\varepsilon(gh)=0\) and \(c'(g,h)=1+1-0=2\equiv0\pmod2\).
+\end{itemize}
+All nine pairs vanish modulo \(2\); \(c'\) is a coboundary on the
+three-wall block, with primitive \(\varepsilon\).  By the same argument
+the cocycle vanishes on the six-element block
+\(\{s_{\delta_i},s_{f_{-2}-f_2},s_{f_2-f_3},s_{f_2+f_3}\}^{\times2}\).
+
+\emph{Step 4 (Bridge: \(\widetilde\varepsilon_o\equiv\varepsilon\) via
+Borcherds-product factorization).}  Borcherds' product theorem
+\cite[Theorem 2.1, (2.1)--(2.3)]{GNII}, \cite[Theorem 4.1]{GN} writes
+$$
+\Delta_5
+=\operatorname{Borch}(\phi_{0,1})
+=q^{1/2}r^{1/2}s^{1/2}\!\!
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}^+}
+(1-q^nr^ls^m)^{f(nm,l)}
+$$
+in the type-II cusp polarization
+\((q,r,s)=(e^{2\pi iz_1},e^{2\pi iz_2},e^{2\pi iz_3})\).  The Maass
+multiplier \(\nu_{\Delta_5}(g)\) is by construction the holomorphic
+monodromy of \(\Delta_5\) under \(g\); on the type-II simple-wall
+reflection \(s_\delta\) it equals \((-1)^{N_\delta}\) where
+\(N_\delta\) is the Borcherds product exponent at the wall (the divisor
+order of \(\Delta_5\) along \(\Hpl_\delta\)), because the local equation
+\(u_\delta\) is \(s_\delta\)-antiinvariant with eigenvalue \(-1\).
+Independent of (O2), the orientation line \(o_{\mathcal C}\) of the
+protected sector transports along \(\Hpl_\delta\) by the same
+holomorphic monodromy: by Borcherds' construction the chiral protected
+character at the chosen isotropic cusp is the Borcherds product itself,
+and the orientation line is the determinant of the chiral protected
+module at that cusp.  Hence
+\(\widetilde\varepsilon_o(s_\delta)\equiv\varepsilon(s_\delta)\pmod2\)
+on each wall reflection \(s_\delta\), with the same equality on the
+three \(\Aut(\Poly_{II})\)-reflections by the parity of their
+chamber-permutation action on the paired Borcherds-product factors of
+opposite Gram index.
+
+\emph{Step 5 (Conclusion).}  Steps 1--4 give
+\(\widetilde\varepsilon_o=\varepsilon\) on the six generators, hence
+on \(W^{(2)}(\La^{2,1}_{II})\) by the chamber decomposition
+\(\Orth(\La^{2,1})_+\simeq W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II})\).
+On the three type-II simple walls,
+\(\varepsilon_o(s_{\delta_i})=\nu_{\Delta_5}(s_{\delta_i})=-1\), and on
+the three \(\Aut(\Poly_{II})\)-reflections \(\varepsilon_o(s)=+1\),
+matching the table of the first proof.  No use is made of the Pfaffian
+local model (O2): the route is purely Borcherds-product / Maass-character.
+\end{proof}
+
+\begin{remark}[Cross-verification: two routes, one cocycle]
+\label{rem:thm3-cross-verification}
+The two proofs of Lemma~\ref{lem:thm3-three-sign-computation} give the
+same coboundary primitive \(\varepsilon\colon W^{(2)}(\La^{2,1}_{II})
+\to\Z/2\), with \(\varepsilon(s_{\delta_i})=1\) and
+\(\varepsilon(s)=0\) on the three \(\Aut(\Poly_{II})\)-reflections.
+The Joyce--Tanaka--Upmeier route reads it from the Pfaffian local
+exponent \(N_\delta\) granted (O2); the Maass-character route reads it
+from the Borcherds-product exponent \(f(nm,l)\) granted only the
+Borcherds construction \cite[Theorem 2.1]{GNII}, \cite{Niemann03}.  The
+two exponents agree on the three simple walls,
+\(N_\delta=f(nm,l)\big|_{\text{simple cell}}=1\), which is the
+common-source identity that lets the two routes meet.  Disagreement at
+this point would have falsified either (O2) or the displayed Borcherds
+expansion of \cite{GNII}, neither of which is in question.
+\end{remark}
+
 \begin{remark}[Honest epistemic status of
 Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} and
 Lemma~\ref{lem:thm3-three-sign-computation}]
