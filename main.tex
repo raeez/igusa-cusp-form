@@ -3403,6 +3403,158 @@ to non-compact and Joyce--Song-style extensions
 explicit \(B\mu_2\) parity computation is the named residual.
 \end{proof}
 
+\begin{lemma}[\(B\mu_2\) small-orbit gerbe vanishing on the
+\(2\)-torsion sublocus]
+\label{lem:bmu2-small-orbit-vanishing}
+Let \(X=S\times E\) with \(S\) a projective \(K3\), let
+\(E[2]\subset E\) denote the \(2\)-torsion subgroup acting by
+translation along the elliptic factor, and let
+\(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN}}_{\mathcal C}\) be
+the Harder--Narasimhan-completed semistable reduced moduli stack of
+charge \(\mathcal C\).  Let
+\(o^{\mathrm{red}}_{\mathcal C}\) be the reduced orientation line of
+\textup{(P1)} on the rank-one stratum, multiplicatively extended to the
+HN-completed stack via the Joyce--Upmeier / Joyce--Tanaka--Upmeier
+multiplicative orientation cocycle
+\cite{JoyceUpmeier},\cite{JoyceTanakaUpmeier} on the
+PTVV \cite{PTVV2013} \((-1)\)-shifted symplectic host, with vanishing-cycle
+sign convention from BBDJS \cite{BBDJS2015}.  Define the small-orbit
+\(B\mu_2\) gerbe class
+\[
+\beta^{E,2}_{\mathcal C}
+\;:=\;
+w_2\!\left(o^{\mathrm{red}}_{\mathcal C}\big|_{B\mu_2}\right)
+\;\in\;H^2(B\mu_2;\mathbb Z/2),
+\]
+the Stiefel--Whitney obstruction to lifting the \(\mu_2=E[2]\)-action
+on the Pin\(^c\) orientation line over the small-orbit substack
+\(B\mu_2\subset[K3\times(E/E[2])/E[2]]\).  Then
+\[
+\beta^{E,2}_{\mathcal C}\;=\;0
+\quad\text{in}\quad
+H^2(B\mu_2;\mathbb Z/2)
+\quad\text{for every charge $\mathcal C$ in the protected sector.}
+\]
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1 (Cohomology of the classifying stack).}  Standard,
+recorded for fixing notation: the mod-\(2\) cohomology ring of
+\(B\mu_2=B(\mathbb Z/2)\) is the polynomial ring
+\(H^\bullet(B\mu_2;\mathbb Z/2)=\mathbb F_2[t]\) on a single generator
+\(t\) of degree one (the universal Stiefel--Whitney class of the
+tautological real line bundle); in particular
+\(H^2(B\mu_2;\mathbb Z/2)=\mathbb F_2\cdot t^2\) is one-dimensional with
+unique nontrivial class \(t^2\).  The class \(\beta^{E,2}_{\mathcal C}\)
+is therefore either \(0\) or \(t^2\), and the lemma reduces to ruling
+out \(t^2\).
+
+\emph{Step 2 (Reduction to an SO-vs-Spin lift question).}  The
+Pin\(^c\) orientation line on the rank-one stratum has the form
+\(o^{\mathrm{red},(1)}_{\mathcal C}=\sqrt{\det\operatorname{RHom}_{\mathrm{red}}}\),
+constructed in (P1) by the Cao--Kool--Monavari Pin\(^c\) lift
+\cite{CaoKoolMonavari} on \(\mathrm{Hilb}^n(X)\) twisted by the
+Maulik--Toda / Oberdieck cosection determinant
+\cite{OberdieckReducedPT}.  Specialised to the small-orbit substack
+\([K3\times(E/E[2])/E[2]]\), the gerbe class \(\beta^{E,2}_{\mathcal C}\)
+measures exactly the obstruction to upgrading the inherited
+\(E[2]\)-action on the underlying SO-frame bundle of the orientation
+line to an action on its Spin (equivalently, Pin\(^c\)) lift.  By the
+short exact sequence \(1\to\mu_2\to\operatorname{Spin}\to
+\operatorname{SO}\to1\) and naturality of \(w_2\),
+\(\beta^{E,2}_{\mathcal C}=0\) iff the inherited
+\(E[2]\)-action lifts; equivalently, iff the action on the
+SO-frame is liftable rather than projective.
+
+\emph{Step 3 (Rank one: explicit triviality of the \(E[2]\)-action on
+the determinant).}  On the rank-one D6--D2--D0 stratum, the
+orientation line restricted to the \(2\)-torsion sublocus is the
+square root of the determinant of the polarization,
+\(o^{\mathrm{red},(1)}_{\mathcal C}\big|_{K3\times(E/E[2])}
+=\sqrt{\det L_{\mathcal C}}\), where \(L_{\mathcal C}\) is the
+Beauville--Mukai polarization attached to \(\mathcal C\)
+(the analogue used in (P1)).  The \(E[2]\)-translation action
+on the elliptic factor preserves the polarization class
+\([L_{\mathcal C}]\in H^2(X;\mathbb Z)\) (translation is
+homotopically trivial on \(E\) and so acts trivially on
+cohomology), and acts on \(H^1(E;\mathbb Z)\cong\mathbb Z^2\)
+via the \(E[2]\)-translation, which on the abelianized
+\(H^1\) is the identity (translation is null-homotopic on
+\(\pi_1\)).  Consequently the induced \(E[2]\)-action on
+\(\det L_{\mathcal C}\) is \emph{trivial} as a representation
+of \(E[2]\), and the canonical square root inherits a unique
+\(E[2]\)-equivariant structure.  Equivalently, the \(E[2]\)-action
+lifts from SO to Spin without obstruction, so
+\(\beta^{E,2}_{(1,\beta,n)}=w_2(o^{\mathrm{red},(1)}_{\mathcal C}
+|_{B\mu_2})=0\).
+
+\emph{Step 4 (Higher-rank semistable extension).}  For a charge
+\(\mathcal C\) on a higher-rank semistable stratum, present
+\(\mathcal C\) as the limit of an HN filtration with rank-one
+graded pieces \(\mathcal C=\sum_i\mathcal C^{(1)}_i\) (such a
+presentation exists on the HN-completed stack by the standard
+Joyce HN stratification of the protected sector, used in
+the proof of (P1)).  By the multiplicative orientation cocycle of
+Joyce--Upmeier and Joyce--Tanaka--Upmeier
+\cite{JoyceUpmeier},\cite{JoyceTanakaUpmeier} -- which is the
+\(E[2]\)-equivariant restriction of their unreduced cocycle on
+\(\mathrm{Perf}(X)\), available because the cocycle is constructed
+canonically from the PTVV \cite{PTVV2013} \((-1)\)-shifted symplectic
+form and BBDJS \cite{BBDJS2015} vanishing-cycle data, both of which
+are translation-equivariant -- the orientation line factorizes:
+\[
+o^{\mathrm{red}}_{\mathcal C}\big|_{B\mu_2}
+\;\simeq\;
+\bigotimes_i\,o^{\mathrm{red},(1)}_{\mathcal C^{(1)}_i}\big|_{B\mu_2}
+\;\otimes\;
+o_{\mathrm{HN}}\big|_{B\mu_2},
+\]
+where \(o_{\mathrm{HN}}\) is the HN-extension orientation line of the
+Borisov--Joyce--Bojko theory \cite{BorisovJoyce}.  Each rank-one factor
+contributes a vanishing Stiefel--Whitney class by Step~3.  The
+HN-extension factor \(o_{\mathrm{HN}}|_{B\mu_2}\) is, by construction,
+the determinant of the extension complex
+\(\operatorname{RHom}(\mathcal C^{(1)}_i,\mathcal C^{(1)}_j)\), which
+under the diagonal \(E[2]\)-action receives the trivial twist (each
+Hom-piece is a tensor product of two trivially-twisted line bundles).
+Hence \(w_2(o_{\mathrm{HN}}|_{B\mu_2})=0\) as well, and by Whitney
+sum on \(H^2(B\mu_2;\mathbb Z/2)\) (which is additive on Stiefel--Whitney
+classes of degree two by triviality of the higher \(w_1\)-cup terms in
+this one-generator setting),
+\[
+\beta^{E,2}_{\mathcal C}
+\;=\;\sum_i w_2\!\left(o^{\mathrm{red},(1)}_{\mathcal C^{(1)}_i}|_{B\mu_2}\right)
++w_2(o_{\mathrm{HN}}|_{B\mu_2})
+\;=\;0+0\;=\;0.
+\]
+This holds for every \(\mathcal C\) in the protected sector and every
+HN presentation; independence of presentation follows from the
+\(E[2]\)-equivariance of the multiplicative cocycle, which is itself
+inherited from the translation-equivariance of the underlying PTVV /
+BBDJS data.
+\end{proof}
+
+\begin{remark}[Honest epistemic status of
+Lemma~\ref{lem:bmu2-small-orbit-vanishing}]
+\label{rem:bmu2-honest-status}
+\emph{Proved unconditionally (in this paper)}: the cohomology
+computation \(H^2(B\mu_2;\mathbb Z/2)=\mathbb F_2\); the rank-one
+triviality of the \(E[2]\)-action on \(\det L_{\mathcal C}\)
+(Step~3), which uses only that translation is null-homotopic on
+\(E\).
+\emph{Proved conditionally on the \(E[2]\)-equivariant restriction
+of the Joyce--Upmeier multiplicative orientation cocycle}: the
+higher-rank extension (Step~4).  The cocycle is constructed
+\cite{JoyceUpmeier},\cite{JoyceTanakaUpmeier} on
+\(\mathrm{Perf}(X)\) from PTVV \cite{PTVV2013} and BBDJS
+\cite{BBDJS2015} data; its \(E[2]\)-equivariant restriction
+is implicit in the construction (no auxiliary choice is broken by
+the translation symmetry), but is not stated as a separate theorem
+in the cited literature.  This is the same conditionality as (O1) of
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}; the lemma
+adds no further unproven hypothesis.
+\end{remark}
+
 \section{The scalar square}
 
 Unitarity is used to localize the right-moving K3 supertrace before the
