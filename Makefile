@@ -9,7 +9,7 @@
 #    make standalone Build standalone documents -> out/
 #    make icloud     Copy latest PDFs to iCloud Drive
 #    make clean      Remove LaTeX build debris
-#    make veryclean  Remove build debris and generated PDFs
+#    make veryclean  Remove build debris and untracked generated PDFs
 #    make help       Show available targets
 #
 # ============================================================================
@@ -182,15 +182,16 @@ clean:
 
 veryclean: clean
 	@echo "  Removing generated PDFs..."
-	@rm -f $(MAIN).pdf $(BIB).pdf $(PDF) $(OUT_DIR)/$(BIB).pdf $(STANDALONE_PDFS)
+	@rm -f $(MAIN).pdf $(BIB).pdf $(OUT_DIR)/$(BIB).pdf $(STANDALONE_PDFS)
 	@rmdir $(OUT_DIR) 2>/dev/null || true
 	@echo "  ok  Clean."
 
 count:
 	@echo ""
 	@echo "  -- Igusa paper statistics --"
-	@printf "  Source files:   %s .tex files\n" "$$(find . -name '*.tex' -not -path './out/*' | wc -l | tr -d ' ')"
-	@printf "  Total lines:    %s\n" "$$(find . -name '*.tex' -not -path './out/*' -exec cat {} + | wc -l | tr -d ' ')"
+	@printf "  Active sources: %s .tex files\n" "$(words $(TEX_SOURCES))"
+	@printf "  Active lines:   %s\n" "$$(cat $(TEX_SOURCES) | wc -l | tr -d ' ')"
+	@printf "  Agent material: %s .tex files\n" "$$(find agent_material -name '*.tex' 2>/dev/null | wc -l | tr -d ' ')"
 	@if [ -f $(PDF) ]; then \
 		printf "  PDF size:       %s\n" "$$(du -h $(PDF) | cut -f1)"; \
 	else \
@@ -208,7 +209,7 @@ help:
 	@echo "  make standalone Build standalone documents -> out/"
 	@echo "  make icloud     Copy latest PDFs to iCloud Drive"
 	@echo "  make clean      Remove build debris"
-	@echo "  make veryclean  Remove build debris and generated PDFs"
+	@echo "  make veryclean  Remove build debris and untracked generated PDFs"
 	@echo "  make count      Paper statistics"
 	@echo "  make help       This message"
 	@echo ""
