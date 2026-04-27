@@ -1,0 +1,431 @@
+\section{Finite hearts and Harder--Narasimhan truncations}
+\label{sec:compact-hall-finite-heart-and-hn}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\R}{\mathbb R}
+\providecommand{\C}{\mathbb C}
+\providecommand{\GammaBPS}{\Gamma_{\mathrm{BPS}}}
+\providecommand{\Gammaeff}{\Gamma_{\mathrm{eff}}}
+\providecommand{\Gammaact}{\Gamma_{\mathrm{act}}}
+\providecommand{\Hall}{\mathcal H}
+\providecommand{\Perf}{\operatorname{Perf}}
+\providecommand{\Coh}{\operatorname{Coh}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+
+The compact Hall atlas cannot be repaired by looking for a finite
+extension-closed heart whose charges are the active Igusa charges.  This
+is the wrong finite object.  A heart is closed under finite direct sums,
+and Hall multiplication is closed under extensions.  Finiteness enters
+only after one chooses a stability sector and takes finite
+Harder--Narasimhan quotients of the Hall algebra.
+
+\subsection{The Igusa charge data}
+
+The boundary charge lattice and product chamber are
+\[
+  \GammaBPS=\Z^3,\qquad \gamma=(n,l,m),
+\]
+\[
+  \Gammaeff=
+  \{m>0,\ n\ge0,\ l\in\Z\}
+  \cup
+  \{m=0,\ n>0,\ l\in\Z\}
+  \cup
+  \{m=n=0,\ l<0\}.
+\]
+The Lorentzian degree is
+\[
+  \alpha(n,l,m)=2n f_2-l f_3+2m f_{-2},
+  \qquad
+  (\alpha(\gamma),\alpha(\gamma))=-2(4nm-l^2).
+\]
+The active support is
+\[
+  \Gammaact=
+  \{\gamma=(n,l,m)\in\Gammaeff\mid f(nm,l)\ne0\},
+\]
+where
+\[
+  \phi_{0,1}(\tau,z)=\sum f(n,l)q^n r^l
+  =
+  r^{-1}+10+r
+  +q(10r^{-2}-64r^{-1}+108-64r+10r^2)+O(q^2).
+\]
+Thus
+\[
+  f(0,-1)=f(0,1)=1,\qquad f(1,0)=108.
+\]
+The denominator normalization remains
+\[
+  \operatorname{den}(\mathfrak g_{\Delta_5})
+  =
+  64^{-1}\Delta_5(2Z).
+\]
+
+\subsection{No finite active heart}
+
+\begin{lemma}[Active support is not additive]
+\label{lem:active-support-not-additive}
+\(\Gammaact\) is not closed under addition.
+\end{lemma}
+
+\begin{proof}
+The charge
+\[
+  \gamma_0=(0,-1,0)
+\]
+is active because \(f(0,-1)=1\).  But
+\[
+  2\gamma_0=(0,-2,0)\in\Gammaeff
+\]
+has \(f(0,-2)=0\), since for \(n=0\) the weak Jacobi support condition
+forces \(l^2\le1\) when \(f(0,l)\ne0\).  Hence
+\(2\gamma_0\notin\Gammaact\).
+\end{proof}
+
+\begin{proposition}[No nonzero finite charge-support heart]
+\label{prop:no-nonzero-finite-charge-heart}
+Let \(\mathcal A\) be an additive heart and let
+\[
+  \operatorname{cl}\colon K_0(\mathcal A)\longrightarrow\GammaBPS
+  \]
+be an additive charge map.  If \(\mathcal A\) contains an object
+\(E\) with nonzero charge \(\gamma=\operatorname{cl}(E)\), then the
+charge support of \(\mathcal A\) is infinite.
+\end{proposition}
+
+\begin{proof}
+For every \(k\ge1\), the finite direct sum \(E^{\oplus k}\) lies in
+\(\mathcal A\), and
+\[
+  \operatorname{cl}(E^{\oplus k})=k\gamma .
+\]
+The group \(\GammaBPS=\Z^3\) is torsion-free, so the charges
+\(\{k\gamma\}_{k\ge1}\) are distinct.  Thus the charge support is
+infinite.
+\end{proof}
+
+\begin{corollary}[No finite heart for active Igusa charges]
+\label{cor:no-finite-active-heart}
+There is no nonzero extension-closed finite heart whose charge support
+is exactly \(\Gammaact\), or any finite subset of \(\Gammaact\) containing
+a nonzero charge and closed under finite direct sums.
+\end{corollary}
+
+\begin{proof}
+Proposition~\ref{prop:no-nonzero-finite-charge-heart} rules out finite
+charge support for any nonzero heart.  Lemma~\ref{lem:active-support-not-additive}
+shows separately that \(\Gammaact\) is not even an additive support:
+the direct sum of two objects of charge \((0,-1,0)\), if such an object
+exists, has charge \((0,-2,0)\), which is inactive.
+\end{proof}
+
+\subsection{No raw finite lower set}
+
+\begin{lemma}[Interior active charges have infinite raw lower hull]
+\label{lem:active-interior-infinite-lower-hull}
+Let \(L\subset\Gammaeff\) satisfy
+\[
+  \gamma+\eta\in L,\qquad \gamma,\eta\in\Gammaeff
+  \quad\Longrightarrow\quad \gamma,\eta\in L .
+\]
+If \(L\) contains \((1,0,1)\), then \(L\) is infinite.
+\end{lemma}
+
+\begin{proof}
+The charge \((1,0,1)\) is active because \(f(1,0)=108\).  For every
+\(a\in\Z\),
+\[
+  (1,0,1)=(1,a,0)+(0,-a,1).
+\]
+Both summands lie in \(\Gammaeff\).  Hence the lower-set property forces
+\((1,a,0),(0,-a,1)\in L\) for all \(a\in\Z\), giving infinitely many
+charges.
+\end{proof}
+
+\begin{proposition}[Raw Igusa lower sets cannot be the finite
+Hall truncations]
+\label{prop:raw-lower-sets-not-finite-hall}
+Finite Hall truncations for \(K3\times E\) cannot be finite lower
+subsets of the raw Borcherds chamber \(\Gammaeff\).
+\end{proposition}
+
+\begin{proof}
+Any finite system cofinal for the Igusa product must eventually contain
+the active interior charge \((1,0,1)\).  By
+Lemma~\ref{lem:active-interior-infinite-lower-hull}, its raw lower hull
+inside \(\Gammaeff\) is infinite.  Thus raw lower closure and finite
+truncation are incompatible.
+\end{proof}
+
+\begin{remark}[What the active cone does]
+The active support is the correct support for the Borcherds cone after
+decategorification.  It is not the charge support of a Hall heart.  Zero
+protected index does not mean absence of semistable objects, absence of
+extensions, or absence of HN factors.
+\end{remark}
+
+\subsection{The replacement filtration}
+
+The finite object is a stability-sector quotient.  Fix a Bridgeland
+stability condition
+\[
+  \sigma=(Z_\sigma,\mathcal P_\sigma)
+  \quad\hbox{on}\quad \Perf(X),
+  \qquad X=K3\times E,
+\]
+with support property and HN property.  Let \(S\subset\C^\times\) be a
+strict sector of angular width \(<\pi\), with no active BPS ray on its
+boundary.  Choose \(\vartheta\) with
+\[
+  h_S(\gamma):=\Re(e^{-i\vartheta}Z_\sigma(\gamma))>0
+\]
+for every nonzero semistable class with \(Z_\sigma(\gamma)\in S\).
+Let
+\[
+  \Gamma_{\sigma,S}^{ss}
+  =
+  \{\gamma\in K_0^{num}(X)\mid
+  \mathfrak M_{\sigma,S,\gamma}^{ss}\ne\varnothing,
+  Z_\sigma(\gamma)\in S\}.
+\]
+
+\begin{definition}[Finite HN charge set]
+\label{def:finite-hn-charge-set}
+For \(R>0\), set
+\[
+  F_{\sigma,S}(R)
+  =
+  \{\gamma\in\Gamma_{\sigma,S}^{ss}\mid 0<h_S(\gamma)\le R\}.
+\]
+The finite HN charge set is
+\[
+  \Gamma_{\sigma,S}^{HN}(R)
+  =
+  \left\{
+  \gamma=\gamma_1+\cdots+\gamma_k\ \middle|
+  \gamma_i\in F_{\sigma,S}(R),\
+  \sum_{i=1}^k h_S(\gamma_i)\le R
+  \right\}.
+\]
+\end{definition}
+
+\begin{proposition}[Finiteness from support property]
+\label{prop:hn-charge-set-finite}
+Assume the support property and local finiteness for \(\sigma\).  Then
+\(F_{\sigma,S}(R)\) and \(\Gamma_{\sigma,S}^{HN}(R)\) are finite for
+every \(R\).
+\end{proposition}
+
+\begin{proof}
+Since \(S\) has angular width \(<\pi\), there is a constant
+\(c_S>0\) such that
+\[
+  h_S(\gamma)\ge c_S|Z_\sigma(\gamma)|
+\]
+for all semistable classes with central charge in \(S\).  Hence
+\[
+  |Z_\sigma(\gamma)|\le c_S^{-1}R
+  \qquad(\gamma\in F_{\sigma,S}(R)).
+\]
+The support property bounds a fixed norm of \(\gamma\) by a constant
+multiple of \(|Z_\sigma(\gamma)|\) on semistable classes.  The lattice
+\(K_0^{num}(X)\) is discrete.  Therefore \(F_{\sigma,S}(R)\) is finite.
+
+The function \(h_S\) is strictly positive on nonzero classes in
+\(F_{\sigma,S}(R)\).  Let
+\[
+  h_{\min}(R)=\min_{\gamma\in F_{\sigma,S}(R)}h_S(\gamma)>0
+\]
+when \(F_{\sigma,S}(R)\ne\varnothing\).  A sum in
+\(\Gamma_{\sigma,S}^{HN}(R)\) has length at most \(R/h_{\min}(R)\).
+There are only finitely many such sums from the finite set
+\(F_{\sigma,S}(R)\).
+\end{proof}
+
+\begin{definition}[\(h\)-adic Hall quotient]
+\label{def:h-adic-hall-quotient}
+Let \(\Hall_{\sigma,S}^{or}\) be the oriented critical Hall object in
+the strict sector \(S\), assuming the critical atlas and orientation have
+been supplied.  Put
+\[
+  \Hall_{\sigma,S}^{>R}
+  =
+  \prod_{h_S(\gamma)>R}
+  \Hall_{\sigma,S,\gamma}^{or}.
+\]
+The finite \(R\)-truncation is the quotient
+\[
+  \mathsf F_R\Hall_{\sigma,S}^{or}
+  =
+  \Hall_{\sigma,S}^{or}/\Hall_{\sigma,S}^{>R}.
+\]
+\end{definition}
+
+\begin{proposition}[The \(h\)-adic quotient is a finite Hall truncation]
+\label{prop:h-adic-quotient-finite-hall}
+The subspace \(\Hall_{\sigma,S}^{>R}\) is a two-sided Hall ideal.  The
+quotient \(\mathsf F_R\Hall_{\sigma,S}^{or}\) has finite charge support
+contained in \(\Gamma_{\sigma,S}^{HN}(R)\).
+\end{proposition}
+
+\begin{proof}
+For objects in the sector \(S\), \(h_S\) is additive on exact sequences:
+\[
+  h_S(\gamma+\eta)=h_S(\gamma)+h_S(\eta).
+\]
+If \(h_S(\gamma)>R\) and \(h_S(\eta)>0\), then
+\[
+  h_S(\gamma+\eta)>R.
+\]
+Thus multiplication by a class of \(h_S\)-height \(>R\) remains in
+height \(>R\).  This proves the ideal statement.
+
+Every object surviving the quotient has total \(h_S\)-height \(\le R\).
+Its HN factors are semistable, lie in \(S\), and have positive
+\(h_S\)-height whose sum is \(\le R\).  Hence their classes lie in
+\(F_{\sigma,S}(R)\), and the total class lies in
+\(\Gamma_{\sigma,S}^{HN}(R)\).  Proposition~\ref{prop:hn-charge-set-finite}
+gives finiteness.
+\end{proof}
+
+\begin{theorem}[Correct finite-first object]
+\label{thm:correct-finite-first-object}
+Assume a stability condition \(\sigma\) with support property, finite
+HN-sector control, an oriented critical Hall atlas, and admissible
+Borel--Moore/vanishing-cycle coefficients.  Then the compact
+\(K3\times E\) Hall object in a strict sector is the completed inverse
+system
+\[
+  \widehat{\Hall}_{\sigma,S}^{or}
+  =
+  \varprojlim_R
+  \mathsf F_R\Hall_{\sigma,S}^{or}.
+\]
+The transition maps are the quotient maps
+\[
+  \mathsf F_{R'}\Hall_{\sigma,S}^{or}
+  \longrightarrow
+  \mathsf F_R\Hall_{\sigma,S}^{or},
+  \qquad R'\ge R.
+\]
+\end{theorem}
+
+\begin{proof}
+The preceding proposition constructs each finite quotient and proves
+finite charge support.  The ideals are nested:
+\[
+  R'\ge R\quad\Longrightarrow\quad
+  \Hall_{\sigma,S}^{>R'}\subset\Hall_{\sigma,S}^{>R}.
+\]
+Hence the quotient maps form an inverse system.  The inverse limit is
+the \(h_S\)-adic Hall completion.  Hall multiplication is continuous
+because \(h_S\) is additive and positive on the sector.
+\end{proof}
+
+\subsection{HN descent requirements}
+
+For an ordered sector decomposition
+\[
+  S=S_1*\cdots*S_k
+\]
+listed by decreasing phase, the finite HN descent statement required by
+the compact atlas is the following.  Let
+\[
+  \mathfrak M_{\sigma,S}^{\le R}
+  =
+  \{E\in\mathfrak M_{\sigma,S}\mid h_S(\operatorname{cl}(E))\le R\}.
+\]
+Use the same height \(h_S\) on each subsector \(S_i\subset S\).  Then
+\[
+  \mathfrak M_{\sigma,S}^{\le R}
+  \simeq
+  \bigsqcup_{\substack{\gamma_i\in\Gamma_{\sigma,S_i}^{HN,S}(R)\\
+  \sum h_S(\gamma_i)\le R}}
+  \mathfrak E_{\sigma}(\gamma_1,\ldots,\gamma_k),
+\]
+where \(\Gamma_{\sigma,S_i}^{HN,S}(R)\) is defined as in
+Definition~\ref{def:finite-hn-charge-set}, using semistables in
+\(S_i\) but the height \(h_S\), and
+\(\mathfrak E_{\sigma}(\gamma_1,\ldots,\gamma_k)\) is the stack of
+objects with HN factors of ordered charges \(\gamma_i\).  On
+Borel--Moore vanishing-cycle coefficients this must induce
+\[
+  \mathsf F_R\Hall_{\sigma,S}^{or}
+  \cong
+  \widehat{\bigotimes}_{i=1}^k
+  \mathsf F_R\Hall_{\sigma,S_i}^{or}
+  \quad\hbox{modulo total \(h\)-height \(>R\)}.
+\]
+The proof obligations are:
+\[
+\begin{array}{ll}
+\mathrm{HN1} & \hbox{existence and uniqueness of HN filtrations in }S,\\
+\mathrm{HN2} & \hbox{bounded finite type of semistable stacks in }F_{\sigma,S}(R),\\
+\mathrm{HN3} & \hbox{compatibility of critical charts with extension stacks},\\
+\mathrm{HN4} & \hbox{orientation transport along HN filtrations},\\
+\mathrm{HN5} & \hbox{continuity of Hall product for the \(h\)-adic topology},\\
+\mathrm{HN6} & \hbox{compatibility of protected integration with the quotient maps}.
+\end{array}
+\]
+
+\subsection{Failure statement for the present manuscript}
+
+\begin{theorem}[Finite-heart obstruction]
+\label{thm:finite-heart-obstruction}
+The present manuscript does not construct a finite extension-closed
+heart realizing the active Igusa charges.  Such a heart cannot exist in
+the literal sense.  The only viable finite-first construction is the
+\(h\)-adic HN quotient system of
+Theorem~\ref{thm:correct-finite-first-object}, conditional on a
+stability condition and the HN descent requirements above.
+\end{theorem}
+
+\begin{proof}
+The literal finite-heart construction is ruled out by
+Proposition~\ref{prop:no-nonzero-finite-charge-heart}.  The active
+support construction is ruled out by
+Lemma~\ref{lem:active-support-not-additive}.  The raw lower-set
+construction is ruled out by
+Proposition~\ref{prop:raw-lower-sets-not-finite-hall}.  The
+\(h\)-adic HN construction avoids all three obstructions: the heart is
+infinite, the finite object is a quotient, and lower closure is taken
+only for HN factors in a strict sector with positive height.
+\end{proof}
+
+\subsection{Manuscript replacement block}
+
+\begin{quote}
+The finite object is not a finite heart.  A heart containing one
+nonzero charge contains all finite direct sums of that charge.  The
+active Igusa support is not additive, and raw lower closure in
+\(\Gamma_{\mathrm{eff}}\) is infinite already below the active charge
+\((1,0,1)\).
+
+Choose instead a stability condition \(\sigma\) and a strict sector
+\(S\).  Rotate the central charge so that
+\[
+  h_S(\gamma)=\Re(e^{-i\vartheta}Z_\sigma(\gamma))>0
+\]
+on nonzero semistable classes in \(S\).  The finite Hall object at
+height \(R\) is the quotient by charges of \(h_S\)-height \(>R\):
+\[
+  \mathsf F_R\Hall_{\sigma,S}^{or}
+  =
+  \Hall_{\sigma,S}^{or}/\Hall_{\sigma,S}^{>R}.
+\]
+The support property and HN finiteness make this quotient finite.  The
+completed compact Hall object is
+\[
+  \widehat{\Hall}_{\sigma,S}^{or}
+  =
+  \varprojlim_R \mathsf F_R\Hall_{\sigma,S}^{or}.
+\]
+Only after this construction may one apply protected integration and
+ask whether
+\[
+  \sdim\Prim_\gamma=f(nm,l),\qquad
+  \epsilon_o=\nu_{\Delta_5}.
+\]
+\end{quote}

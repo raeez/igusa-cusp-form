@@ -1,0 +1,407 @@
+\section{BPS bracket constants: second attack and repair}
+\label{sec:bps-bracket-constants-attack-heal}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\R}{\mathbb R}
+\providecommand{\La}{\Lambda}
+\providecommand{\autcor}{\mathfrak g_{\Delta_5}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\smult}{\operatorname{smult}}
+\providecommand{\Prim}{\operatorname{Prim}}
+
+\subsection{Claim attacked}
+
+The attacked claim is stronger than the denominator theorem:
+the Borcherds bracket on
+$$
+\mathcal A_{\mathrm{den}}=\autcor
+$$
+is claimed to be recoverable as an honest compact
+Hall/CoHA/Drinfeld bracket on protected BPS primitives from the
+determinant and active-support data alone.  This is false.  The
+denominator presentation gives many low-degree algebra constants.  It
+does not give compact Hall extension constants.
+
+\subsection{Low-degree active roots}
+
+Write a positive denominator degree as
+$$
+\beta=c_1\delta_1+c_2\delta_2+c_3\delta_3,\qquad
+\operatorname{ht}(\beta)=c_1+c_2+c_3.
+$$
+The charge corresponding to \((c_1,c_2,c_3)\) is
+$$
+\gamma(\beta)=(n,l,m)=(c_1,\ c_1+c_2-c_3,\ c_2).
+$$
+Indeed
+$$
+\alpha(n,l,m)=n\delta_1+m\delta_2+(n+m-l)\delta_3.
+$$
+For heights at most three the active denominator degrees are:
+$$
+\begin{array}{c|c|c|c}
+\beta & \gamma(\beta) & (\beta,\beta) & 4nm-l^2\\
+\hline
+\delta_i & \gamma_i & 2 & -1\\
+\delta_i+\delta_j\ (i<j) & (1,2,1),(1,0,0),(0,0,1) & 0 & 0\\
+2\delta_i+\delta_j\ (i\neq j) & \hbox{six real charges} & 2 & -1\\
+\delta_1+\delta_2+\delta_3 & (1,1,1) & -6 & 3 .
+\end{array}
+$$
+The six charges in the third row are
+$$
+(2,3,1),\ (1,3,2),\ (2,1,0),\ (1,-1,0),\
+(0,1,2),\ (0,-1,1),
+$$
+all with discriminant \(-1\).  The Jacobi coefficients used here are
+$$
+f(0,\pm1)=1,\qquad f(0,0)=10,\qquad
+f(1,\pm2)=10,\qquad f(1,\pm1)=-64.
+$$
+Thus the signed denominator multiplicities in these degrees are
+$$
+\smult(\delta_i)=1,\qquad
+\smult(\delta_i+\delta_j)=10,\qquad
+\smult(2\delta_i+\delta_j)=1,\qquad
+\smult(\delta_1+\delta_2+\delta_3)=-64.
+$$
+
+\subsection{Constants forced by the Borcherds presentation}
+
+Let \(A=((\delta_i,\delta_j))\), so
+$$
+A=
+\begin{pmatrix}
+2&-2&-2\\
+-2&2&-2\\
+-2&-2&2
+\end{pmatrix}.
+$$
+Choose even Chevalley generators for the real simple roots:
+$$
+e_i\in\mathfrak g_{\delta_i},\qquad
+f_i\in\mathfrak g_{-\delta_i},\qquad
+h_i=[e_i,f_i]\qquad(1\leq i\leq3).
+$$
+The presentation constants are
+$$
+[h_i,h_j]=0,\qquad
+[h_i,e_j]=A_{ij}e_j,\qquad
+[h_i,f_j]=-A_{ij}f_j,\qquad
+[e_i,f_j]=\delta_{ij}h_i.
+$$
+Since all \(e_i\) are even,
+$$
+[e_i,e_i]=0,\qquad [f_i,f_i]=0.
+$$
+For \(i\neq j\), define the height-two real-commutator vector
+$$
+E_{ij}:=[e_i,e_j]\in\mathfrak g_{\delta_i+\delta_j}.
+$$
+Then
+$$
+E_{ji}=-E_{ij}.
+$$
+The Cartan constants are
+$$
+[h_i,E_{ij}]=0,\qquad [h_j,E_{ij}]=0,\qquad
+[h_k,E_{ij}]=-4E_{ij}\quad(\{i,j,k\}=\{1,2,3\}).
+$$
+The lowering constants are forced by Jacobi:
+$$
+[f_i,E_{ij}]=2e_j,\qquad [f_j,E_{ij}]=-2e_i,\qquad
+[f_k,E_{ij}]=0.
+$$
+
+For ordered \(i\neq j\), define the height-three real-root vector
+$$
+E_{iij}:=[e_i,E_{ij}]
+=[e_i,[e_i,e_j]]
+\in \mathfrak g_{2\delta_i+\delta_j}.
+$$
+The real Serre relation is exactly
+$$
+[e_i,E_{iij}]=(\operatorname{ad}e_i)^3e_j=0.
+$$
+The Cartan constants are
+$$
+[h_i,E_{iij}]=2E_{iij},\qquad
+[h_j,E_{iij}]=-2E_{iij},\qquad
+[h_k,E_{iij}]=-6E_{iij}.
+$$
+The lowering constants are
+$$
+[f_i,E_{iij}]=2E_{ij},\qquad
+[f_j,E_{iij}]=0,\qquad
+[f_k,E_{iij}]=0.
+$$
+All constants in this subsection are denominator-algebra constants.
+They are fixed after the displayed Chevalley and commutator
+normalizations are chosen.  Rescaling the original simple generators
+rescales the named composite vectors, but not the displayed normalized
+relations.
+
+\subsection{The first isotropic spaces}
+
+For \(i<j\), set
+$$
+a_{ij}:=\delta_i+\delta_j.
+$$
+The real commutator \(E_{ij}\) gives one even vector in
+\(\mathfrak g_{a_{ij}}\).  The Gritsenko--Nikulin correction supplies
+nine additional even simple imaginary generators on the same primitive
+isotropic ray:
+$$
+u_{ij,1},\ldots,u_{ij,9}\in\mathfrak g_{a_{ij}},
+\qquad
+\tau(ta_{ij})=9\quad(t\geq1).
+$$
+Hence
+$$
+\smult(a_{ij})=1+9=10.
+$$
+The presentation gives
+$$
+[h_i,u_{ij,r}]=[h_j,u_{ij,r}]=0,\qquad
+[h_k,u_{ij,r}]=-4u_{ij,r}.
+$$
+Since \(a_{ij}\) is orthogonal to \(\delta_i\) and \(\delta_j\),
+the Borcherds orthogonality relations give
+$$
+[e_i,u_{ij,r}]=[e_j,u_{ij,r}]=0,
+\qquad
+[f_i,u_{ij,r}]=[f_j,u_{ij,r}]=0.
+$$
+For the remaining real simple root \(\delta_k\),
+$$
+(\delta_k,a_{ij})=-4,
+$$
+so the only real Serre vanishing forced at the simple-generator level is
+$$
+(\operatorname{ad}e_k)^5u_{ij,r}=0.
+$$
+The first bracket
+$$
+[e_k,u_{ij,r}]
+\in \mathfrak g_{\delta_1+\delta_2+\delta_3}
+$$
+is not a numerical constant until a basis in that height-three root
+space is chosen.
+
+The isotropic simple generators commute with the real-commutator vector
+on the same ray:
+$$
+[u_{ij,r},E_{ij}]
+=[u_{ij,r},[e_i,e_j]]
+=[[u_{ij,r},e_i],e_j]+[e_i,[u_{ij,r},e_j]]
+=0.
+$$
+They also commute among themselves on the same ray:
+$$
+[u_{ij,r},u_{ij,s}]=0.
+$$
+These vanishings are denominator presentation constants, not Hall
+vanishing theorems.
+
+\subsection{The first hyperbolic height-three root}
+
+There are three natural real-simple bracketings in degree
+$$
+\delta_{123}:=\delta_1+\delta_2+\delta_3=\alpha(1,1,1).
+$$
+Put
+$$
+T_1:=[e_1,E_{23}],\qquad
+T_2:=[e_2,E_{31}],\qquad
+T_3:=[e_3,E_{12}].
+$$
+Jacobi gives the single forced relation
+$$
+T_1+T_2+T_3=0.
+$$
+Moreover
+$$
+[h_i,T_r]=-2T_r\qquad(1\leq i,r\leq3).
+$$
+The denominator product gives only the signed total
+$$
+\smult(\delta_{123})=f(1,1)=-64.
+$$
+It does not choose a basis of \(\mathfrak g_{\delta_{123}}\), does not
+split even and odd dimensions, and does not give the constants expressing
+\([e_k,u_{ij,r}]\) or \(T_r\) in such a basis.  This is the first place
+where a bracket table cannot be continued from the determinant and the
+presentation constants alone.
+
+\subsection{Candidate Hall derivation and failure}
+
+If a compact Hall realization existed, the constants would come from
+extension correspondences
+$$
+\mathfrak M_\gamma^\sigma\times\mathfrak M_\eta^\sigma
+\xleftarrow{\ p_{\gamma,\eta}\ }
+\mathfrak E_{\gamma,\eta}^\sigma
+\xrightarrow{\ q_{\gamma,\eta}\ }
+\mathfrak M_{\gamma+\eta}^\sigma
+$$
+and an oriented pull-push product
+$$
+m_{\gamma,\eta}
+=q_{\gamma,\eta!}p_{\gamma,\eta}^{*}.
+$$
+For protected primitive bases \(u_{\gamma,a}\), the Hall constants would
+be
+$$
+[u_{\gamma,a},u_{\eta,b}]_{\mathrm{Hall}}
+=
+\sum_c C^c_{(\gamma,a),(\eta,b)}u_{\gamma+\eta,c}.
+$$
+The determinant supplies only
+$$
+\sum_a(-1)^{|a|}
+=
+\sdim\Prim_{\mathrm{prot},\gamma}
+=f(nm,l).
+$$
+It supplies no moduli stacks \(\mathfrak M_\gamma^\sigma\), no extension
+stack \(\mathfrak E_{\gamma,\eta}^\sigma\), no orientation sign, and no
+pull-push class.  Therefore it supplies no \(C^c_{(\gamma,a),(\eta,b)}\).
+
+The simplest attempted replacement is the symmetric Euler rule
+$$
+[x_\gamma,x_\eta]_{\mathrm{trial}}
+=\langle\gamma,\eta\rangle_{\mathrm{BPS}}\,x_{\gamma+\eta}.
+$$
+It fails before geometry enters.  For a real simple charge
+\(\gamma_i\),
+$$
+\langle\gamma_i,\gamma_i\rangle_{\mathrm{BPS}}=-1,
+$$
+but \(x_{\gamma_i}\) is even, so super-skew symmetry forces
+$$
+[x_{\gamma_i},x_{\gamma_i}]=0.
+$$
+For \(i\neq j\), the symmetric rule gives the same scalar in both
+orders, while an even Lie bracket requires opposite signs:
+$$
+[x_{\gamma_i},x_{\gamma_j}]
+=-[x_{\gamma_j},x_{\gamma_i}].
+$$
+Thus the symmetric BPS pairing is the Cartan form after the
+anti-isometry \(\alpha\).  It is not the Hall commutator kernel.  Any
+honest Hall derivation must retain an antisymmetric Euler form or
+orientation cocycle before passing to the three Gram invariants
+\((n,l,m)\).
+
+\subsection{Why the determinant cannot recover constants}
+
+\begin{quote}
+\textbf{Proposition.}
+The Borcherds product for \(64^{-1}\Delta_5(2Z)\), even together with
+the active support \(\Gamma_{\mathrm{act}}\), cannot determine the
+Hall or denominator structure constants.
+\end{quote}
+
+\noindent
+\textit{Proof.}
+The product records the integers
+$$
+\smult(\alpha(\gamma))
+=\dim\mathfrak g_{\alpha(\gamma),\overline0}
+-\dim\mathfrak g_{\alpha(\gamma),\overline1}.
+$$
+It is unchanged if one replaces a homogeneous root space by another
+super vector space with the same signed dimension.  It is also unchanged
+if one puts the zero bracket on the same graded super vector spaces.
+The zero bracket and the Borcherds bracket have the same determinant but
+different structure constants, since in the Borcherds algebra
+$$
+[e_i,e_j]=E_{ij}\neq0\qquad(i\neq j).
+$$
+Therefore no operation on the determinant can recover the constants.
+\(\square\)
+
+\subsection{Replacement theorem language}
+
+The following theorem is the exact replacement for any manuscript
+sentence asserting a constructed microscopic BPS bracket.
+
+\begin{quote}
+\textbf{Theorem.}
+The Borcherds--Gritsenko--Nikulin construction determines a
+charge-graded denominator Lie superalgebra
+\[
+\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}
+=\bigoplus_{\gamma\in\Gamma_{\mathrm{BPS}}}
+\mathcal A_{\mathrm{den},\gamma}
+\]
+with
+\[
+[\mathcal A_{\mathrm{den},\gamma},
+\mathcal A_{\mathrm{den},\eta}]
+\subset
+\mathcal A_{\mathrm{den},\gamma+\eta},
+\qquad
+\operatorname{den}(\mathcal A_{\mathrm{den}})
+=64^{-1}\Delta_5(2Z).
+\]
+After choosing Chevalley generators for the three real simple roots,
+the low-degree constants are the Cartan, Chevalley, Serre, and
+orthogonality constants displayed in
+Section~\ref{sec:bps-bracket-constants-attack-heal}.  These are
+denominator-algebra constants.  They are not compact Hall constants.
+
+An identification
+\[
+\Prim_{\mathrm{prot}}
+\mathcal P^{\mathrm{Hall}}_{K3\times E,\sigma,o}
+\cong
+\mathcal A_{\mathrm{den}}
+\]
+as Lie superalgebras requires, in addition, a compact oriented critical
+Hall correspondence, a protected integration functor, an orientation
+cocycle descending to \(\nu_{\Delta_5}\), and a proof that the Hall
+primitive commutator satisfies the Borcherds relations above.  The
+determinant and scalar square prove only the signed Euler
+characteristics; they do not determine the Hall structure constants.
+\end{quote}
+
+\subsection{Check table}
+
+\begin{center}
+\begingroup
+\small
+\begin{tabular}{p{0.23\textwidth}|p{0.36\textwidth}|p{0.25\textwidth}}
+\textbf{Object} & \textbf{Computed formula} & \textbf{Status}\\
+\hline
+Cartan matrix &
+\(A_{ii}=2,\ A_{ij}=-2\ (i\neq j)\) &
+denominator constant\\
+Chevalley brackets &
+\([h_i,e_j]=A_{ij}e_j,\ [e_i,f_j]=\delta_{ij}h_i\) &
+denominator constant\\
+height-two real bracket &
+\(E_{ij}=[e_i,e_j]=-E_{ji}\) &
+constant after naming \(E_{ij}\)\\
+height-two lowering &
+\([f_i,E_{ij}]=2e_j,\ [f_j,E_{ij}]=-2e_i\) &
+Jacobi consequence\\
+height-three real root &
+\(E_{iij}=[e_i,E_{ij}],\ [e_i,E_{iij}]=0\) &
+Serre consequence\\
+first isotropic space &
+\(\mathfrak g_{\delta_i+\delta_j}\) has signed size \(10=1+9\) &
+denominator multiplicity\\
+triple real bracketing &
+\(T_1+T_2+T_3=0\), \(\smult(\delta_{123})=-64\) &
+Jacobi; determinant only\\
+trial Euler bracket &
+\(\langle\gamma,\eta\rangle_{\mathrm{BPS}}x_{\gamma+\eta}\) &
+false: violates super-skew\\
+Hall constants &
+\(C^c_{(\gamma,a),(\eta,b)}\) &
+open: need compact correspondence
+\end{tabular}
+\endgroup
+\end{center}

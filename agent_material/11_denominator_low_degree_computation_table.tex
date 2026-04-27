@@ -1,0 +1,361 @@
+\section{Low-degree denominator computation table}
+\label{sec:denominator-low-degree-computation-table}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\R}{\mathbb R}
+\providecommand{\La}{\Lambda}
+\providecommand{\autcor}{\mathfrak g_{\Delta_5}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\smult}{\operatorname{smult}}
+\providecommand{\ad}{\operatorname{ad}}
+\providecommand{\Prim}{\operatorname{Prim}}
+
+\subsection{Claim attacked}
+
+The attacked claim is that the low-degree table of the Borcherds
+denominator algebra already gives the microscopic Hall/CoHA bracket
+constants.  The computation below gives a sharper statement.  The
+active support and the Borcherds presentation determine the listed
+denominator roots, signed supermultiplicities, and the normalized
+Chevalley--Serre constants.  They do not determine compact Hall
+extension constants.
+
+\subsection{First-principles conversion}
+
+Write a positive denominator degree as
+$$
+\beta=c_1\delta_1+c_2\delta_2+c_3\delta_3,
+\qquad c_i\in\Z_{\geq0}.
+$$
+The manuscript degree map is
+$$
+\alpha(n,l,m)=n\delta_1+m\delta_2+(n+m-l)\delta_3.
+$$
+Hence the charge attached to \(\beta\) is
+$$
+\gamma(\beta)=(n,l,m)=(c_1,\ c_1+c_2-c_3,\ c_2).
+$$
+With
+$$
+A=((\delta_i,\delta_j))_{i,j}=
+\begin{pmatrix}
+2&-2&-2\\
+-2&2&-2\\
+-2&-2&2
+\end{pmatrix},
+$$
+one computes
+$$
+(\beta,\beta)
+=2(c_1^2+c_2^2+c_3^2)
+-4(c_1c_2+c_1c_3+c_2c_3).
+$$
+For \(D(\gamma)=4nm-l^2\),
+$$
+(\beta,\beta)=-2D(\gamma).
+$$
+The denominator identity gives the signed root supermultiplicity
+$$
+\smult(\beta)=f(nm,l)
+$$
+for every active row \(f(nm,l)\neq0\).
+
+\subsection{Jacobi coefficients used}
+
+The coefficient computation of \(\phi_{0,1}\) through \(q^2\) gives
+$$
+f(0,-1)=1,\qquad f(0,0)=10,\qquad f(0,1)=1,
+$$
+$$
+f(1,-2)=10,\quad f(1,-1)=-64,\quad f(1,0)=108,
+\quad f(1,1)=-64,\quad f(1,2)=10,
+$$
+$$
+f(2,-3)=1,\quad f(2,-2)=108,\quad f(2,-1)=-513,
+\quad f(2,0)=808,\quad f(2,1)=-513,\quad
+f(2,2)=108,\quad f(2,3)=1.
+$$
+
+\subsection{Active denominator rows through height three}
+
+\begin{center}
+\begingroup
+\small
+\begin{tabular}{c|c|c|c|c|c}
+\(\operatorname{ht}\beta\) &
+\(\beta\) &
+\(\gamma(\beta)=(n,l,m)\) &
+\((\beta,\beta)\) &
+\(D=4nm-l^2\) &
+\(f(nm,l)=\smult(\beta)\)\\
+\hline
+1 & \(\delta_1\) & \((1,1,0)\) & \(2\) & \(-1\) & \(f(0,1)=1\)\\
+1 & \(\delta_2\) & \((0,1,1)\) & \(2\) & \(-1\) & \(f(0,1)=1\)\\
+1 & \(\delta_3\) & \((0,-1,0)\) & \(2\) & \(-1\) & \(f(0,-1)=1\)\\
+\hline
+2 & \(\delta_1+\delta_2\) & \((1,2,1)\) & \(0\) & \(0\) & \(f(1,2)=10\)\\
+2 & \(\delta_1+\delta_3\) & \((1,0,0)\) & \(0\) & \(0\) & \(f(0,0)=10\)\\
+2 & \(\delta_2+\delta_3\) & \((0,0,1)\) & \(0\) & \(0\) & \(f(0,0)=10\)\\
+\hline
+3 & \(2\delta_1+\delta_2\) & \((2,3,1)\) & \(2\) & \(-1\) & \(f(2,3)=1\)\\
+3 & \(\delta_1+2\delta_2\) & \((1,3,2)\) & \(2\) & \(-1\) & \(f(2,3)=1\)\\
+3 & \(2\delta_1+\delta_3\) & \((2,1,0)\) & \(2\) & \(-1\) & \(f(0,1)=1\)\\
+3 & \(\delta_1+2\delta_3\) & \((1,-1,0)\) & \(2\) & \(-1\) & \(f(0,-1)=1\)\\
+3 & \(2\delta_2+\delta_3\) & \((0,1,2)\) & \(2\) & \(-1\) & \(f(0,1)=1\)\\
+3 & \(\delta_2+2\delta_3\) & \((0,-1,1)\) & \(2\) & \(-1\) & \(f(0,-1)=1\)\\
+3 & \(\delta_1+\delta_2+\delta_3\) & \((1,1,1)\) & \(-6\) & \(3\) & \(f(1,1)=-64\)
+\end{tabular}
+\endgroup
+\end{center}
+
+The inactive pure multiples in the same range are a useful sign check:
+$$
+\begin{array}{c|c|c|c|c}
+\beta & \gamma(\beta) & (\beta,\beta)&D&f(nm,l)\\
+\hline
+2\delta_1&(2,2,0)&8&-4&f(0,2)=0\\
+2\delta_2&(0,2,2)&8&-4&f(0,2)=0\\
+2\delta_3&(0,-2,0)&8&-4&f(0,-2)=0\\
+3\delta_1&(3,3,0)&18&-9&f(0,3)=0\\
+3\delta_2&(0,3,3)&18&-9&f(0,3)=0\\
+3\delta_3&(0,-3,0)&18&-9&f(0,-3)=0 .
+\end{array}
+$$
+
+\subsection{Denominator bracket status}
+
+Choose even Chevalley generators for the real simple roots:
+$$
+e_i\in\mathfrak g_{\delta_i},\qquad
+f_i\in\mathfrak g_{-\delta_i},\qquad
+h_i=[e_i,f_i].
+$$
+The normalized denominator constants are
+$$
+[h_i,h_j]=0,\qquad
+[h_i,e_j]=A_{ij}e_j,\qquad
+[h_i,f_j]=-A_{ij}f_j,\qquad
+[e_i,f_j]=\delta_{ij}h_i.
+$$
+For \(i\neq j\), put
+$$
+E_{ij}:=[e_i,e_j]\in\mathfrak g_{\delta_i+\delta_j},
+\qquad E_{ji}=-E_{ij}.
+$$
+If \(\{i,j,k\}=\{1,2,3\}\), then Jacobi gives
+$$
+[h_i,E_{ij}]=[h_j,E_{ij}]=0,\qquad
+[h_k,E_{ij}]=-4E_{ij},
+$$
+$$
+[f_i,E_{ij}]=2e_j,\qquad
+[f_j,E_{ij}]=-2e_i,\qquad
+[f_k,E_{ij}]=0.
+$$
+For ordered \(i\neq j\), put
+$$
+E_{iij}:=[e_i,E_{ij}]=[e_i,[e_i,e_j]]
+\in\mathfrak g_{2\delta_i+\delta_j}.
+$$
+The real Serre relation is
+$$
+[e_i,E_{iij}]=(\ad e_i)^3e_j=0,
+$$
+and the lowering constants are
+$$
+[f_i,E_{iij}]=2E_{ij},\qquad
+[f_j,E_{iij}]=0,\qquad
+[f_k,E_{iij}]=0.
+$$
+
+For \(i<j\), the primitive isotropic degree
+$$
+a_{ij}:=\delta_i+\delta_j
+$$
+has signed denominator multiplicity \(10\).  One even direction is the
+real-real commutator \(E_{ij}\).  The correction character gives nine
+additional even isotropic simple generators on the same primitive ray:
+$$
+u_{ij,1},\ldots,u_{ij,9}\in\mathfrak g_{a_{ij}},
+\qquad \tau(ta_{ij})=9\quad(t\geq1),
+$$
+so
+$$
+\smult(a_{ij})=1+9=10.
+$$
+The orthogonality relations are
+$$
+[e_i,u_{ij,r}]=[e_j,u_{ij,r}]=0,\qquad
+[f_i,u_{ij,r}]=[f_j,u_{ij,r}]=0,
+$$
+and the non-orthogonal real root only forces
+$$
+(\ad e_k)^5u_{ij,r}=0.
+$$
+Thus
+$$
+[e_k,u_{ij,r}]
+\in\mathfrak g_{\delta_1+\delta_2+\delta_3}
+$$
+is not a numerical structure constant until a basis of that root space
+has been constructed.
+
+In degree \(\delta_{123}:=\delta_1+\delta_2+\delta_3\), set
+$$
+T_1=[e_1,E_{23}],\qquad
+T_2=[e_2,E_{31}],\qquad
+T_3=[e_3,E_{12}].
+$$
+Jacobi gives
+$$
+T_1+T_2+T_3=0.
+$$
+The denominator product gives only the signed total
+$$
+\smult(\delta_{123})=f(1,1)=-64.
+$$
+It does not choose a basis of
+\(\mathfrak g_{\delta_{123}}\), split even and odd dimensions, or give
+the constants expressing \([e_k,u_{ij,r}]\) in such a basis.
+
+\subsection{Replacement tables for \texttt{proj.tex}}
+
+The following two tables are the exact low-degree replacement material.
+They separate denominator-algebra facts from the unproved Hall
+realization.
+
+\begin{center}
+\begingroup
+\small
+\begin{tabular}{c|c|c|c|c|c}
+\(\operatorname{ht}\) & active charge \(\gamma\) & root \(\beta\) &
+norm & discriminant & expected \(\smult\)\\
+\hline
+1 & \((1,1,0)\) & \(\delta_1\) & \(2\) & \(-1\) & \(1\)\\
+1 & \((0,1,1)\) & \(\delta_2\) & \(2\) & \(-1\) & \(1\)\\
+1 & \((0,-1,0)\) & \(\delta_3\) & \(2\) & \(-1\) & \(1\)\\
+2 & \((1,2,1)\) & \(\delta_1+\delta_2\) & \(0\) & \(0\) & \(10\)\\
+2 & \((1,0,0)\) & \(\delta_1+\delta_3\) & \(0\) & \(0\) & \(10\)\\
+2 & \((0,0,1)\) & \(\delta_2+\delta_3\) & \(0\) & \(0\) & \(10\)\\
+3 & \((2,3,1)\) & \(2\delta_1+\delta_2\) & \(2\) & \(-1\) & \(1\)\\
+3 & \((1,3,2)\) & \(\delta_1+2\delta_2\) & \(2\) & \(-1\) & \(1\)\\
+3 & \((2,1,0)\) & \(2\delta_1+\delta_3\) & \(2\) & \(-1\) & \(1\)\\
+3 & \((1,-1,0)\) & \(\delta_1+2\delta_3\) & \(2\) & \(-1\) & \(1\)\\
+3 & \((0,1,2)\) & \(2\delta_2+\delta_3\) & \(2\) & \(-1\) & \(1\)\\
+3 & \((0,-1,1)\) & \(\delta_2+2\delta_3\) & \(2\) & \(-1\) & \(1\)\\
+3 & \((1,1,1)\) & \(\delta_1+\delta_2+\delta_3\) & \(-6\) & \(3\) & \(-64\)
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{center}
+\begingroup
+\small
+\begin{tabular}{p{0.19\textwidth}|p{0.38\textwidth}|p{0.33\textwidth}}
+\textbf{Degree} & \textbf{Denominator bracket status} & \textbf{Hall status}\\
+\hline
+\(\delta_i\) &
+Real simple generator \(e_i\); Chevalley constants fixed by \(A\). &
+Requires a compact primitive class in charge \(\gamma_i\); not supplied by the determinant.\\
+\hline
+\(\delta_i+\delta_j\) &
+\(E_{ij}=[e_i,e_j]\) plus nine isotropic simple directions
+\(u_{ij,r}\); \(10=1+9\). &
+Requires the oriented compact extension correspondence for the two
+simple charges; determinant gives only signed size \(10\).\\
+\hline
+\(2\delta_i+\delta_j\) &
+\(E_{iij}=[e_i,[e_i,e_j]]\), with
+\((\ad e_i)^3e_j=0\) and
+\([f_i,E_{iij}]=2E_{ij}\). &
+Requires Hall Serre and lowering constants; not derived from the Euler
+pairing or the Fock determinant.\\
+\hline
+\(\delta_1+\delta_2+\delta_3\) &
+Real bracketings \(T_1,T_2,T_3\) satisfy \(T_1+T_2+T_3=0\);
+\(\smult=-64\).  Constants involving \([e_k,u_{ij,r}]\) need a basis. &
+First fatal Hall gap: no compact correspondence, orientation cocycle,
+protected integration, basis, or parity split has been constructed.
+\end{tabular}
+\endgroup
+\end{center}
+
+\subsection{Why the Hall constants are not derivable here}
+
+A compact Hall derivation would have to start from extension
+correspondences
+$$
+\mathfrak M_\gamma^\sigma\times\mathfrak M_\eta^\sigma
+\xleftarrow{\ p_{\gamma,\eta}\ }
+\mathfrak E_{\gamma,\eta}^\sigma
+\xrightarrow{\ q_{\gamma,\eta}\ }
+\mathfrak M_{\gamma+\eta}^\sigma
+$$
+with vanishing cycles and an orientation line, producing
+$$
+m_{\gamma,\eta}
+=q_{\gamma,\eta!}p_{\gamma,\eta}^{*}
+$$
+and then a protected primitive supercommutator
+$$
+[u_{\gamma,a},u_{\eta,b}]_{\mathrm{Hall}}
+=
+\sum_c C^c_{(\gamma,a),(\eta,b)}u_{\gamma+\eta,c}.
+$$
+The denominator product supplies only
+$$
+\sum_a(-1)^{|a|}
+=\sdim\Prim_{\mathrm{prot},\gamma}
+=f(nm,l).
+$$
+It supplies no stacks \(\mathfrak M_\gamma^\sigma\), no compact
+extension stack \(\mathfrak E_{\gamma,\eta}^\sigma\), no orientation
+cocycle, no pull-push class, and no basis of protected primitives.
+Therefore it supplies no integers
+\(C^c_{(\gamma,a),(\eta,b)}\).
+
+The determinant cannot recover the missing constants.  Any graded super
+vector space with the same signed dimensions gives the same product, and
+the zero bracket on that graded space gives the same determinant as the
+Borcherds bracket.  Since the Borcherds denominator algebra has
+\([e_i,e_j]=E_{ij}\neq0\) for \(i\neq j\), the determinant is strictly
+weaker than the bracket.
+
+\subsection{Verification record}
+
+The lattice calculation checks the Gram matrix
+$$
+((\delta_i,\delta_j))=
+\begin{pmatrix}
+2&-2&-2\\
+-2&2&-2\\
+-2&-2&2
+\end{pmatrix},
+$$
+the Weyl vector
+$$
+\rho=\frac12(\delta_1+\delta_2+\delta_3),
+$$
+and the anti-isometry
+$$
+(\alpha(n,l,m),\alpha(n,l,m))=-2(4nm-l^2).
+$$
+The Jacobi-form calculation checks the coefficients of \(\phi_{0,1}\)
+through \(q^2\) and the eta-product coefficient list for
+\(\prod_{k\geq1}(1-q^k)^9\).  A one-off height enumeration produced all
+active rows in the displayed table and the inactive pure multiples.
+
+\subsection{Remaining obligations}
+
+The denominator table is closed through height three.  The microscopic
+Hall table is not closed.  The missing inputs are:
+$$
+(\mathfrak M_\gamma^\sigma,\mathfrak E_{\gamma,\eta}^\sigma,
+o,\varepsilon_{\gamma,\eta},\mathrm{Int}_{\mathrm{prot}})
+$$
+for the compact \(K3\times E\) problem, with proof that the protected
+primitive supercommutator satisfies the Chevalley, Serre,
+orthogonality, and imaginary-root relations of \(\autcor\).  In degree
+\(\delta_1+\delta_2+\delta_3\) one must additionally construct a basis
+and parity split of the protected primitive space and compute the
+constants expressing \([e_k,u_{ij,r}]\) in that basis.

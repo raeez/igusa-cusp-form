@@ -1,0 +1,275 @@
+\section{Chiral Koszul boundary for the Igusa current envelope}
+\label{sec:chiral-koszul-boundary}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\autcor}{\mathfrak g_{\Delta_5}}
+\providecommand{\Poly}{\mathcal P}
+\providecommand{\smult}{\operatorname{smult}}
+
+This note fixes the logical boundary between the factorization envelope
+constructed in the paper and the chiral Koszul-duality programme in the
+Vol.~I--III ecosystem.  It is a manuscript-level refusal of an unbuilt
+Koszul theorem, not a weakening of the Borcherds construction.
+
+\begin{definition}[The current envelope used here]
+\label{def:current-envelope-boundary}
+Let
+$$
+\mathfrak g_\Delta:=\mathcal A_{\mathrm{den}}
+=\mathfrak g_{\Delta_5}
+$$
+be the charge-graded generalized Borcherds--Kac--Moody Lie superalgebra
+constructed from the Igusa denominator.  On the elliptic curve \(E\) set
+$$
+\operatorname{Cur}_E(\mathfrak g_\Delta)
+:=\mathfrak g_\Delta\otimes\mathcal O_E,\qquad
+[a\otimes f,b\otimes g]=[a,b]\otimes fg.
+$$
+Its Beilinson--Drinfeld chiral enveloping algebra is
+$$
+\mathsf A_{\Delta,E}
+:=
+U_E^{\mathrm{ch}}\!\left(\operatorname{Cur}_E(\mathfrak g_\Delta)\right)
+=
+U_E^{\mathrm{ch}}\!\left(\mathfrak g_{\Delta_5}\otimes\mathcal O_E\right).
+$$
+This is the object denoted \(\mathsf{Den}_{\Delta_5,E}\) in
+the current factorization-envelope definition preceding
+Theorem~\ref{thm:factorization-square-root}.
+\end{definition}
+
+\begin{theorem}[What is proved: BD current envelope]
+\label{thm:bd-current-envelope-only}
+Assume only the data already present in the paper:
+\begin{enumerate}
+\item the charge-graded Lie superalgebra
+\(\mathfrak g_\Delta=\mathfrak g_{\Delta_5}\);
+\item its degree map
+\(\alpha:\Gamma_{\mathrm{BPS}}\to\Lambda^{2,1}_{II}\);
+\item the Borcherds denominator identity
+\[
+\operatorname{den}(\mathfrak g_\Delta)=64^{-1}\Delta_5(2Z);
+\]
+\item the Beilinson--Drinfeld chiral enveloping functor for Lie-* algebras
+on a smooth curve.
+\end{enumerate}
+Then \(\mathsf A_{\Delta,E}\) is a chiral algebra, equivalently a
+factorization algebra on the Ran space of \(E\) in the usual smooth-curve
+sense.  Its constant-mode primitive Lie superalgebra is
+\(\mathfrak g_\Delta\), and its denominator is inherited from
+\(\mathfrak g_\Delta\):
+$$
+\operatorname{den}\bigl(\mathrm{Prim}_{\mathrm{const}}\mathsf A_{\Delta,E}\bigr)
+=64^{-1}\Delta_5(2Z).
+$$
+\end{theorem}
+
+\begin{proof}
+The current construction sends any Lie superalgebra \(\mathfrak g\) to the
+Lie-* algebra \(\mathfrak g\otimes\mathcal O_E\) with bracket
+\([a\otimes f,b\otimes g]=[a,b]\otimes fg\).  Beilinson--Drinfeld then
+apply the chiral enveloping functor \(U_E^{\mathrm{ch}}\) to produce a
+chiral algebra.  Constant sections of
+\(\mathfrak g_\Delta\otimes\mathcal O_E\) recover \(\mathfrak g_\Delta\),
+so the primitive constant-mode bracket is the Borcherds bracket already
+constructed in Theorem~\ref{thm:bracket-level-square-root}.  The displayed
+denominator is therefore exactly the denominator identity of
+\(\mathfrak g_\Delta\).  No bar construction, cobar construction,
+conilpotent coalgebra, shifted dual, or compact \(K3\times E\) state space
+is used in this proof.
+\end{proof}
+
+\begin{proposition}[What is not proved: no automatic chiral Koszul theorem]
+\label{prop:no-automatic-koszul}
+The implication
+$$
+\begin{gathered}
+U_E^{\mathrm{ch}}\!\left(\mathfrak g_{\Delta_5}\otimes\mathcal O_E\right)
+\ \hbox{exists}\\
+\Longrightarrow\quad
+\hbox{a chiral Koszul-duality theorem for compact }K3\times E
+\end{gathered}
+$$
+is not valid in the present manuscript.
+\end{proposition}
+
+\begin{proof}
+The source of the left side is a Lie-* algebra
+\(\mathfrak g_{\Delta_5}\otimes\mathcal O_E\).  The output is its chiral
+enveloping algebra.  A chiral Koszul theorem has different input data: a
+coaugmented conilpotent chiral coalgebra, or a chiral algebra in a
+specified Koszul locus together with its bar coalgebra, a cobar functor,
+and a counit or twisting morphism which is proved to be a quasi-isomorphism.
+None of these objects is determined by the existence of the current
+envelope.
+
+Moreover, the compact \(K3\times E\) claim would require a microscopic
+factorization object whose protected primitives are compared with
+\(\mathfrak g_{\Delta_5}\).  The determinant identity and the scalar square
+control Euler characteristics:
+$$
+\smult(\alpha(n,l,m))=f(nm,l),\qquad
+Z^X_\square=C_\square\Delta_5^{-2}.
+$$
+They do not construct a chain-level factorization algebra, a Koszul dual,
+or the Hall/BKM structure constants.  Hence the current envelope may be
+the target of a future Koszul realization, but it is not itself evidence
+that such a realization has been built.
+\end{proof}
+
+\begin{definition}[Koszul realization datum]
+\label{def:koszul-realization-datum}
+A chiral Koszul realization of the Igusa current envelope from compact
+\(K3\times E\) consists of the following data.
+\begin{enumerate}
+\item A chain-level, charge-completed factorization object
+\[
+\mathcal F^{\mathrm{BPS}}_{K3\times E,\sigma,o}
+\]
+on the Ran space of \(E\), built from the compact \(K3\times E\) theory
+with orientation \(o\), stability chamber \(\sigma\), and finite-first
+filtration.
+\item A coaugmented conilpotent chiral coalgebra
+\[
+C_{K3\times E}
+\]
+or, equivalently after choosing a bar construction in the Vol.~I sense,
+\[
+C_{K3\times E}\simeq
+\bar B^{\mathrm{ch}}_E
+\left(\mathcal F^{\mathrm{BPS}}_{K3\times E,\sigma,o}\right).
+\]
+\item A specified shifted Koszul dual
+\[
+\left(\mathcal F^{\mathrm{BPS}}_{K3\times E,\sigma,o}\right)^!
+\]
+and a cobar object
+\[
+\Omega^{\mathrm{ch}}_E C_{K3\times E}.
+\]
+\item A charge-preserving twisting morphism, equivalently a chiral algebra
+morphism,
+\[
+\Phi_{\mathrm{Kos}}:
+\Omega^{\mathrm{ch}}_E C_{K3\times E}
+\longrightarrow
+\mathsf A_{\Delta,E},
+\]
+which is a quasi-isomorphism in the completed finite-first category.
+\item Compatibility of protected primitives:
+\[
+H^0\mathrm{Prim}_{\mathrm{prot}}
+\left(\mathcal F^{\mathrm{BPS}}_{K3\times E,\sigma,o}\right)_\gamma
+\xrightarrow{\ \alpha\ }
+\mathfrak g_{\Delta,\alpha(\gamma)}
+\]
+as a charge-graded Lie superalgebra, not only after taking signed Euler
+characteristics.
+\item The Vol.~III comparison data
+\[
+\Theta^{\mathrm{or}}_{\mathrm{hCS}\to\mathrm{Hall}},
+\qquad
+\mathcal D_\hbar,
+\qquad
+\Psi^+_{\mathrm{Hall}\to\mathrm{BKM}},
+\]
+together with the orientation character
+\(\epsilon_o=\nu_{\Delta_5}\) and the completed Hall--Drinfeld pairing.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Conditional Koszul statement with exact hypotheses]
+\label{thm:conditional-koszul}
+If a Koszul realization datum in the sense of
+Definition~\ref{def:koszul-realization-datum} is supplied, then
+\(\mathsf A_{\Delta,E}\) is the chiral cobar realization of
+\(C_{K3\times E}\):
+$$
+\Omega^{\mathrm{ch}}_E C_{K3\times E}
+\xrightarrow{\ \simeq\ }
+\mathsf A_{\Delta,E}.
+$$
+Under the primitive compatibility hypothesis, the protected primitive
+bracket of the compact \(K3\times E\) factorization object is
+\[
+\mathfrak g_{\Delta_5}
+\]
+and its denominator is \(64^{-1}\Delta_5(2Z)\).
+\end{theorem}
+
+\begin{proof}
+This is the formal content of the stated hypotheses.  The morphism
+\(\Phi_{\mathrm{Kos}}\) is required to be a quasi-isomorphism from the
+chiral cobar construction to the current envelope, so the first displayed
+isomorphism is exactly its conclusion.  The primitive compatibility
+hypothesis identifies the protected primitive Lie superalgebra with
+\(\mathfrak g_{\Delta_5}\); applying the already proved Borcherds
+denominator identity gives \(64^{-1}\Delta_5(2Z)\).  Without
+\(\Phi_{\mathrm{Kos}}\), the conilpotent coalgebra \(C_{K3\times E}\),
+and the primitive bracket comparison, the theorem has no content and must
+not be cited as proved.
+\end{proof}
+
+\begin{center}
+\begingroup
+\small
+\begin{tabular}{p{0.25\textwidth}|p{0.34\textwidth}|p{0.22\textwidth}}
+\textbf{Object} & \textbf{Meaning} & \textbf{Status here}\\ \hline
+\(\mathfrak g_{\Delta_5}\) &
+Gritsenko--Nikulin/Borcherds denominator Lie superalgebra with charge
+grading through \(\alpha\). &
+Proved denominator algebra.\\
+\(\mathsf A_{\Delta,E}=
+U_E^{\mathrm{ch}}(\mathfrak g_{\Delta_5}\otimes\mathcal O_E)\) &
+BD current envelope on the elliptic curve \(E\). &
+Proved current factorization envelope.\\
+\(\bar B^{\mathrm{ch}}_E(\mathsf A_{\Delta,E})\) &
+The formal bar coalgebra of the already constructed current envelope,
+when placed in a category where the Vol.~I bar construction applies. &
+Formal only; not a compact BPS source.\\
+\(\mathcal F^{\mathrm{BPS}}_{K3\times E,\sigma,o}\) &
+Microscopic compact BPS factorization object on \(\operatorname{Ran}(E)\). &
+Open construction.\\
+\(\Omega^{\mathrm{ch}}_E C_{K3\times E}\simeq\mathsf A_{\Delta,E}\) &
+Chiral Koszul realization of the Igusa current envelope from compact
+\(K3\times E\). &
+Conditional on Definition~\ref{def:koszul-realization-datum}.\\
+\(Z^X_\square=C_\square\Delta_5^{-2}\) &
+Scalar-square partition function. &
+Euler data only; not a Koszul theorem.
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{remark}[Compatibility with the Vol.~III note]
+\label{rem:vol3-koszul-compatibility}
+The Vol.~III compatibility dictionary records
+$$
+\Gamma_{\mathrm{eff}}\xrightarrow{\alpha}\Poly_{II},\qquad
+\epsilon_o=\nu_{\Delta_5},\qquad
+\operatorname{Borch}(\phi_{0,1})=\Delta_5,
+$$
+and
+$$
+\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z),
+\qquad
+Z^X_\square=C_\square\Delta_5^{-2}.
+$$
+This is normalization-preserving propagation.  It does not add a new BKM
+theorem and it does not construct the compact Hall cosheaf.  The open
+frontier remains
+$$
+\hbox{compact }K3\times E\hbox{ Hall cosheaf},\qquad
+\Theta^{\mathrm{or}}_{\mathrm{hCS}\to\mathrm{Hall}},\qquad
+\mathcal D_\hbar,\qquad
+\Psi^+_{\mathrm{Hall}\to\mathrm{BKM}}.
+$$
+Therefore the correct manuscript sentence is:
+
+\emph{The Igusa current factorization envelope is the Beilinson--Drinfeld
+enveloping algebra of the automorphic Borcherds bracket.  It is a possible
+target of a future compact \(K3\times E\) chiral Koszul realization; it is
+not itself the result of applying chiral Koszul duality to a constructed
+microscopic BPS factorization algebra.}
+\end{remark}

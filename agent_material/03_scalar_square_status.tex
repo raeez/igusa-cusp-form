@@ -1,0 +1,232 @@
+\section{The scalar square: theorem and physics}
+\label{sec:scalar-square-status}
+
+Let
+$$X=S\times E,$$
+where $S$ is a nonsingular projective K3 surface and $E$ is an elliptic
+curve.  Fix primitive classes
+$$\beta_h\in H_2(S,\Z),\qquad \langle \beta_h,\beta_h\rangle=2h-2,$$
+and write
+$$(\beta_h,d)=\iota_{S*}\beta_h+\iota_{E*}(d[E])\in H_2(X,\Z).$$
+All reciprocal Siegel-form identities below are identities of Laurent
+expansions in the Fourier chamber fixed by the Borcherds product.
+Constants $C_*$ are nonzero complex scalars; they absorb only the
+normalization of \(\chi_{10}^{\mathrm{OP}}\) versus \(\Delta_5^2\) and
+never a nonconstant factor.
+
+Put
+$$\Delta_{10}^{\theta}(Z):=\Delta_5(Z)^2,\qquad
+\chi_{10}^{\mathrm{OP}}:=2^{-12}\Delta_{10}^{\theta}.$$
+
+\begin{definition}[Oberdieck--Pixton primitive reduced series]
+Let $\beta_h^\vee\in H^2(S,\Q)$ satisfy
+$$\langle \beta_h,\beta_h^\vee\rangle=1.$$
+Define the disconnected reduced Gromov--Witten invariant
+$$
+\mathsf N^X_{g,h,d}
+=
+\int_{[\overline M^{\bullet}_{g,1}(X,(\beta_h,d))]^{\mathrm{red}}}
+\operatorname{ev}_1^*
+\left(\pi_1^*\beta_h^\vee\cup \pi_2^*[\mathrm{pt}]\right).
+$$
+The primitive reduced curve-counting partition function is
+$$
+Z^X_{\mathrm{OP}}(u,Q,T)
+=\sum_{g\geq0}\sum_{h\geq0}\sum_{d\geq0}
+\mathsf N^X_{g,h,d}\,u^{2g-2}Q^{h-1}T^{d-1}.
+$$
+With $P=e^{iu}$, the notation $Z^X_{\mathrm{OP}}(P,Q,T)$ means this
+Laurent expansion under the change of variables $P=e^{iu}$.
+\end{definition}
+
+\begin{theorem}[Oberdieck--Pixton primitive theorem]
+\label{thm:op-primitive-square-status}
+Oberdieck--Pixton prove the primitive Igusa cusp-form conjecture
+\cite{OB}; this is Theorem~1 of their paper:
+$$
+Z^X_{\mathrm{OP}}(P,Q,T)
+=-\frac{1}{\chi_{10}^{\mathrm{OP}}(P,T,Q)}.
+$$
+Equivalently, after the fixed normalization
+$$\chi_{10}^{\mathrm{OP}}(P,T,Q)=2^{-12}\Delta_5(Z(P,Q,T))^2,$$
+one has the scalar square
+$$
+Z^X_{\mathrm{OP}}(P,Q,T)
+=\frac{C_{\mathrm{OP}}}{\Delta_5(Z(P,Q,T))^2},
+\qquad C_{\mathrm{OP}}\in\C^\times.
+$$
+This is the primitive reduced curve-counting theorem.  The
+Hilbert-scheme DT equality below uses it after the reduced DT/PT
+comparison and the primitive GW/PT comparison have fixed the
+quotient-by-\(E\) normalization.
+\end{theorem}
+
+\begin{definition}[Reduced Hilbert-scheme DT series]
+Let
+$$
+\operatorname{Hilb}^n(X,(\beta_h,d))
+=
+\{Y\subset X\mid [Y]=(\beta_h,d),\ \chi(\mathcal O_Y)=n\}.
+$$
+The translation action of $E$ on the second factor acts on this Hilbert
+scheme.  Define the Behrend-weighted quotient invariant
+$$
+\mathbf{DT}^{X,\mathrm{Hilb}}_{n,h,d}
+=
+\int_{\operatorname{Hilb}^n(X,(\beta_h,d))/E}\nu_{\mathrm{Hilb}}\,de,
+$$
+where $\nu_{\mathrm{Hilb}}$ is Behrend's constructible function
+\cite{BEHREND} and $de$ denotes orbifold topological Euler
+characteristic.  The corresponding Hilbert-scheme DT partition function
+in the manuscript normalization is
+$$
+Z^X_{\mathrm{DT}}(T,Q,P)
+=
+\sum_{h\geq0}\sum_{d\geq0}\sum_{n\in\Z}
+\mathbf{DT}^{X,\mathrm{Hilb}}_{n,h,d}\,
+T^{d-1}Q^{h-1}(-P)^n.
+$$
+This definition is the Donaldson--Thomas normalization attached to
+ideal sheaves on $X$ \cite{DT}.  The equality with \(\Delta_5^{-2}\)
+requires the comparison theorem below.
+\end{definition}
+
+\begin{theorem}[Reduced Hilbert-scheme DT scalar square]
+\label{thm:hilb-dt-scalar-normalization-status}
+In the quotient-by-\(E\) normalization,
+$$
+Z^X_{\mathrm{DT}}(T,Q,P)
+=Z^X_{\mathrm{OP}}(P,Q,T)
+=-4096\,\Delta_5(Z)^{-2}.
+$$
+\end{theorem}
+
+\begin{proof}
+Oberdieck's reduced DT/PT comparison for \(S\times E\),
+\cite{OberdieckReducedPT}*{Theorem 3(i)}, gives equality of reduced
+Hilbert-scheme DT and stable-pairs series for every non-zero curve
+class.  The degree-zero factor is \(M(-P)^{\chi(S\times E)}=1\).  For
+primitive \(\beta_h\), the GW/PT comparison used in
+\cite{OB}*{Section 7.1, equation (GWPTcorr)} and
+\cite{OPand}*{Proposition 5} identifies the stable-pairs series with
+the Oberdieck--Pixton reduced series after \(P=e^{iu}\).  The
+Oberdieck--Pixton theorem then gives the displayed Igusa reciprocal.
+\end{proof}
+
+\begin{remark}[Low-degree checks]
+Bryan's topological-vertex computation of the Behrend-weighted
+Hilbert-scheme theory for primitive classes of square $-2$ and $0$
+\cite{BRYAN} gives low-degree checks of the same quotient-by-\(E\)
+normalization.
+\end{remark}
+
+\begin{definition}[Scalar-square branch]
+\label{def:scalar-square-branch-status}
+A scalar-square branch is the datum of a source
+$$\mathfrak s\in\{\mathrm{OP},\mathrm{DT}\}$$
+and a partition function $Z^X_{\mathfrak s}$ satisfying
+$$
+Z^X_{\mathfrak s}(Z)=\frac{C_{\mathfrak s}}{\Delta_5(Z)^2},
+\qquad C_{\mathfrak s}\in\C^\times.
+$$
+The unconditional branches are
+$$
+Z^X_{\square,\mathrm{uncond}}:=Z^X_{\mathrm{OP}},
+\qquad
+Z^X_{\square,\mathrm{DT}}:=Z^X_{\mathrm{DT}},
+$$
+$$
+C_{\square,\mathrm{uncond}}=C_{\square,\mathrm{DT}}=-4096.
+$$
+If the source is not displayed, $Z^X_\square$ denotes an arbitrary
+branch satisfying the displayed scalar-square identity; it must not be
+identified with a protected D-brane trace without the conjectural
+physics dictionary below.
+\end{definition}
+
+\begin{theorem}[Square-root consequence]
+\label{thm:scalar-square-consequence-status}
+For every scalar-square branch
+$$Z^X_\square=\frac{C_\square}{\Delta_5^2},$$
+and for the Borcherds determinant
+$$\mathcal D_X(Z):=\Delta_5(Z),$$
+one has
+$$
+\mathcal D_X(Z)^2=\frac{C_\square}{Z^X_\square(Z)}.
+$$
+With
+$$\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}(Z):=\mathcal D_X(Z)^{-1},$$
+this is equivalently
+$$
+Z^X_\square(Z)
+=C_\square\left(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}(Z)\right)^2.
+$$
+\end{theorem}
+
+\begin{proof}
+The branch identity gives
+$$C_\square/Z^X_\square=\Delta_5^2.$$
+The chosen square root is not arbitrary: it is the Borcherds product
+already denoted by $\mathcal D_X=\Delta_5$.  Inverting gives
+$$Z^X_\square=C_\square(\mathcal D_X^{-1})^2.$$
+\end{proof}
+
+\begin{conjecture}[Protected-index dictionary]
+\label{conj:protected-index-dictionary-status}
+For D6--D2--D0 charge
+$$\gamma(h,d,n)=(1;\,(\beta_h,d);\,n),$$
+the physical protected index is expected to be represented by the
+Behrend-weighted Hilbert-scheme DT invariant:
+$$
+\Omega_X(h,d,n)
+=\operatorname{Tr}_{\mathcal H_{\gamma(h,d,n)}}(-1)^F
+\ \stackrel{\mathrm{phys}}{=}\ 
+\mathbf{DT}^{X,\mathrm{Hilb}}_{n,h,d}.
+$$
+Consequently the physical D-brane partition function is expected to be
+$$
+Z^X_{\mathrm{phys}}(T,Q,P)
+\ \stackrel{\mathrm{phys}}{=}\ 
+Z^X_{\mathrm{DT}}(T,Q,P).
+$$
+Combining this conjectural dictionary with
+Theorem~\ref{thm:hilb-dt-scalar-normalization-status} gives the physical
+scalar square
+$$
+Z^X_{\mathrm{phys}}
+\ \stackrel{\mathrm{phys}}{=}\ 
+\frac{C_{\mathrm{phys}}}{\Delta_5^2}.
+$$
+The protected-index dictionary is not used in
+Theorem~\ref{thm:op-primitive-square-status} or
+Theorem~\ref{thm:scalar-square-consequence-status}.
+\end{conjecture}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.20\textwidth}p{0.42\textwidth}p{0.28\textwidth}}
+\hline
+Object & Equation & Status \\
+\hline
+OP primitive reduced curve-counting &
+\(Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}
+=C_{\mathrm{OP}}\Delta_5^{-2}\) &
+Proved by Oberdieck--Pixton for primitive K3 classes. \\
+Hilbert-scheme DT normalization &
+\(Z^X_{\mathrm{DT}}
+=\sum \mathbf{DT}^{X,\mathrm{Hilb}}_{n,h,d}
+T^{d-1}Q^{h-1}(-P)^n\) &
+Definition.  Equality with \(-4096\Delta_5^{-2}\) follows from
+Oberdieck reduced DT/PT and Oberdieck--Pixton. \\
+Protected D-brane index &
+\(\Omega_X(h,d,n)\stackrel{\mathrm{phys}}{=}
+\mathbf{DT}^{X,\mathrm{Hilb}}_{n,h,d}\) &
+Conjectural physics dictionary. \\
+Scalar-square branch &
+\(Z^X_\square=C_\square\Delta_5^{-2}\) &
+Unconditional for \(Z^X_\square=Z^X_{\mathrm{OP}}\) and
+\(Z^X_\square=Z^X_{\mathrm{DT}}\) in the reduced quotient
+normalization. \\
+\hline
+\end{tabular}
+\end{center}

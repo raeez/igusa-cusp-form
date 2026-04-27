@@ -1,0 +1,222 @@
+\subsection{Nonabelian promotion test for the congruence rows}
+
+\begin{definition}[Promotion datum]
+For a congruence product row $F_j$ a nonabelian denominator promotion is
+the following datum:
+$$
+\mathscr W_j=(L_j,P_j,\mathcal M_j,W_j,\epsilon_j,\rho_j,N_j(a)).
+$$
+Here $L_j$ is the Lorentzian degree lattice,
+$$
+P_j\subset L_j,\qquad (\delta,\delta)=2\quad(\delta\in P_j),
+$$
+is the set of simple real roots,
+$$
+\mathcal M_j=\{x\in L_j\otimes\R\mid (x,\delta)\leq0
+\hbox{ for every }\delta\in P_j\},
+$$
+$$
+W_j=\langle s_\delta\mid \delta\in P_j\rangle,
+\qquad
+\epsilon_j:W_j\to\{\pm1\}
+$$
+is the reflection character,
+$$
+(\rho_j,\delta)=-1\qquad(\delta\in P_j),
+$$
+and $N_j(a)$ are the imaginary simple-root coefficients on the
+Weyl-sum side.  A product formula supplies only the exponent function in
+the Euler product.  It does not supply $\mathscr W_j$.
+\end{definition}
+
+\begin{definition}[Degree lattices and pairing]
+For $t\in\Z_{>0}$ set
+$$
+M_t=U(4t)\oplus\langle2\rangle.
+$$
+Write an element of $M_t$ as $(n,l,m)$.  The pairing is
+$$
+((n,l,m),(n',l',m'))_t
+=2ll'-4t(nm'+n'm).
+$$
+The exponential convention is
+$$
+e_t^{(n,l,m)}=q^nr^ls^{tm}.
+$$
+Thus
+$$
+((n,l,m),(n,l,m))_t=-2(4tnm-l^2).
+$$
+\end{definition}
+
+\begin{lemma}[Arithmetic real-root check]
+Set
+$$
+P^{(1)}=\{(0,-1,0),(1,1,0),(0,1,1)\}\subset M_1,
+\qquad
+\rho^{(1)}=(\tfrac12,\tfrac12,\tfrac12),
+$$
+and
+$$
+P^{(2)}=\{(0,-1,0),(1,1,0),(1,3,1),(0,1,1)\}\subset M_2,
+\qquad
+\rho^{(2)}=(\tfrac14,\tfrac12,\tfrac14).
+$$
+Then
+$$
+((\delta,\delta'))_{\delta,\delta'\in P^{(1)}})
+=
+\begin{pmatrix}
+2&-2&-2\\
+-2&2&-2\\
+-2&-2&2
+\end{pmatrix},
+$$
+$$
+((\delta,\delta'))_{\delta,\delta'\in P^{(2)}})
+=
+\begin{pmatrix}
+2&-2&-6&-2\\
+-2&2&-2&-6\\
+-6&-2&2&-2\\
+-2&-6&-2&2
+\end{pmatrix},
+$$
+and
+$$
+(\rho^{(1)},\delta)_1=-1\quad(\delta\in P^{(1)}),
+\qquad
+(\rho^{(2)},\delta)_2=-1\quad(\delta\in P^{(2)}).
+$$
+\end{lemma}
+
+\begin{proof}
+Substitution into
+$$
+((n,l,m),(n',l',m'))_t=2ll'-4t(nm'+n'm)
+$$
+gives the two displayed Gram matrices.  The same substitution gives
+the Weyl-vector equations.  All displayed real roots have square $2$,
+so these equations are exactly
+$$
+(\rho,\delta)=-(\delta,\delta)/2.
+$$
+\end{proof}
+
+\begin{proposition}[Row-by-row promotion status]
+For the four congruence rows of Clery--Gritsenko \cite{GC}, the
+nonabelian promotion test gives:
+$$
+\begin{array}{c|c|c|c|c}
+j&F_j&\mathrm{CG\ row}&\mathrm{CHL/WKB\ host}&\mathrm{status}\\ \hline
+5&\nabla_3&(t,N)=(1,2)&\mathcal G_1(2)&\mathrm{promoted}\\
+6&\nabla_2&(t,N)=(1,3)&\mathcal G_1(3)&\mathrm{promoted}\\
+7&\nabla_{3/2}&(t,N)=(1,4)&\mathcal G_1(4)&
+\mathrm{promoted\ on\ the\ order\ }4\ \mathrm{cover}\\
+8&Q_1&(t,N)=(2,2)&\mathcal G_2(4)&\mathrm{promoted}
+\end{array}
+$$
+The data are:
+$$
+L_5=L_6=L_7=M_1,\qquad
+P_5=P_6=P_7=P^{(1)},\qquad
+\rho_5=\rho_6=\rho_7=\rho^{(1)},
+$$
+and
+$$
+L_8=M_2,\qquad P_8=P^{(2)},\qquad \rho_8=\rho^{(2)}.
+$$
+The chambers and Weyl groups are
+$$
+\mathcal M_j=\{x\in L_j\otimes\R\mid(x,\delta)\leq0
+\hbox{ for all }\delta\in P_j\},
+\qquad
+W_j=\langle s_\delta\mid\delta\in P_j\rangle.
+$$
+All simple real roots are even, and
+$$
+\epsilon_j(w)=\det(w)\qquad(j=5,6,7,8).
+$$
+\end{proposition}
+
+\begin{proof}
+Clery--Gritsenko construct the automorphic products
+$$
+F_5=\nabla_3,\qquad F_6=\nabla_2,\qquad
+F_7=\nabla_{3/2},\qquad F_8=Q_1
+$$
+as diagonal-divisor forms on the indicated congruence groups
+\cite{GC}.  This gives the product exponents and divisors, but not the
+Weyl-sum side.
+
+Govindarajan's periodic table of twisted CHL denominator algebras
+\cite{Gov11BKM} identifies
+$$
+\nabla_3\leftrightarrow\mathcal G_1(2),\qquad
+\nabla_2\leftrightarrow\mathcal G_1(3),\qquad
+\nabla_{3/2}\leftrightarrow\mathcal G_1(4),
+$$
+and
+$$
+Q_1\leftrightarrow\mathcal G_2(4).
+$$
+For fixed CHL level $N$, the algebras $\mathcal G_N(M)$ have the same
+real simple roots, Weyl vector, and Cartan matrix; the imaginary simple
+roots depend on $M$.  Thus the three $N=1$ rows use $P^{(1)}$ and
+$A^{(1)}$, while $Q_1$ uses $P^{(2)}$ and $A^{(2)}$.
+Cheng--Dabholkar identify the same real-root systems and prove the
+Weyl-denominator interpretation for the CHL levels $N=1,2,3$
+\cite{CD09BKM}.  The arithmetic lemma translates their real-root
+matrices into the $M_t$ notation used here.
+
+For $F_7$ the multiplier has order $4$ in the Clery--Gritsenko
+classification.  The promotion is therefore a statement on the
+$\mu_4$-multiplier cover.  It is not a statement that an ordinary
+scalar product on $\Gamma_0^{(2)}(4)$ determines a denominator algebra.
+\end{proof}
+
+\begin{theorem}[Imported Weyl--Kac--Borcherds identities]
+For $j=5,6,7,8$ there are integral imaginary simple-root coefficients
+$N_j(a)$, imported from the CHL/WKB denominator theorem, such that
+$$
+\begin{aligned}
+F_j(Z)
+&=\sum_{w\in W_j}\det(w)
+\left(
+e^{w(\rho_j)}
++\sum_{a\in L_j\cap\R_{>0}\mathcal M_j}
+N_j(a)e^{w(\rho_j+a)}
+\right)\\
+&=e^{\rho_j}
+\prod_{\lambda>0}
+\left(1-e^\lambda\right)^{\mu_j(\lambda)}.
+\end{aligned}
+$$
+For $j=5,6,7$ the exponential is $e=e_1$; for $j=8$ it is $e=e_2$.
+The product exponent $\mu_j(\lambda)$ is the sum of the
+Clery--Gritsenko cusp-labelled exponents landing at $\lambda$.
+\end{theorem}
+
+\begin{proof}
+The product side is Clery--Gritsenko's Borcherds product, with the
+cusp-labelled exponent function.  The Weyl-sum side is not reconstructed
+from that product.  It is the additional CHL theorem:
+Govindarajan proves that the square-root dd-forms in the displayed
+table are the Weyl--Kac--Borcherds denominator formulae of the
+rank-three Lorentzian BKM Lie superalgebras $\mathcal G_N(M)$
+\cite{Gov11BKM}.  Cheng--Dabholkar supply the underlying real-root and
+Weyl-chamber construction for the relevant CHL levels \cite{CD09BKM}.
+\end{proof}
+
+\begin{remark}[What remains outside the promotion]
+This promotion does not assert a denominator algebra from product data
+alone.  It also does not construct a microscopic BPS Hilbert-space
+bracket, and it does not build a row map from the Vol.~III physical
+symbols $\Phi^{\mathrm{V3}}_j$ to the Clery--Gritsenko rows $F_j$.  In particular,
+the promoted Clery--Gritsenko row
+$$
+F_7=\nabla_{3/2}
+$$
+must not be identified with a separate physical boundary row
+$\Phi^{\mathrm{V3}}_7$ unless that row map has first been constructed.
+\end{remark}

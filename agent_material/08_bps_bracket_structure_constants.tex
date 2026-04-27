@@ -1,0 +1,380 @@
+\section{BPS bracket structure constants: denominator theorem and Hall obstruction}
+\label{sec:bps-bracket-structure-constants}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\La}{\Lambda}
+\providecommand{\autcor}{\mathfrak g_{\Delta_5}}
+\providecommand{\smult}{\operatorname{smult}}
+\providecommand{\rootmult}{\operatorname{mult}}
+\providecommand{\Prim}{\operatorname{Prim}}
+
+\subsection{Claim attacked}
+
+The denominator algebra
+$$
+\mathcal A_{\mathrm{den}}=\autcor
+$$
+has a genuine Borcherds--Kac--Moody Lie superbracket.  The present
+manuscript proves this algebraic bracket and its denominator identity.
+The stronger physical claim is different:
+$$
+\Prim_{\mathrm{prot}}\mathcal P^{\mathrm{Hall}}_{K3\times E,\sigma,o}
+\stackrel{?}{\cong}
+\mathcal A_{\mathrm{den}}
+$$
+as charge-graded Lie superalgebras, with the bracket coming from compact
+Hall/CoHA/Drinfeld correspondences.  This stronger statement is not
+proved by the denominator product, by the scalar square, or by equality
+of protected Euler characteristics.
+
+\subsection{The constants fixed by the denominator presentation}
+
+Let
+$$
+\gamma_1=(1,1,0),\qquad
+\gamma_2=(0,1,1),\qquad
+\gamma_3=(0,-1,0).
+$$
+Then
+$$
+\delta_1=\alpha(\gamma_1)=2f_2-f_3,\qquad
+\delta_2=\alpha(\gamma_2)=2f_{-2}-f_3,\qquad
+\delta_3=\alpha(\gamma_3)=f_3.
+$$
+The BPS pairing on these three charges is
+$$
+\bigl(\langle\gamma_i,\gamma_j\rangle_{\mathrm{BPS}}\bigr)_{i,j}
+=
+\begin{pmatrix}
+-1&1&1\\
+1&-1&1\\
+1&1&-1
+\end{pmatrix},
+$$
+and the Lorentzian anti-isometry gives
+$$
+A=(\delta_i,\delta_j)_{i,j}
+=-2\bigl(\langle\gamma_i,\gamma_j\rangle_{\mathrm{BPS}}\bigr)_{i,j}
+=
+\begin{pmatrix}
+2&-2&-2\\
+-2&2&-2\\
+-2&-2&2
+\end{pmatrix}.
+$$
+Since \(f(0,1)=f(0,-1)=1\), the three real simple root spaces are
+one-dimensional and even.  Choose Chevalley generators
+$$
+e_i\in\mathfrak g_{\delta_i},\qquad
+f_i\in\mathfrak g_{-\delta_i},\qquad
+h_i=[e_i,f_i]\qquad(1\leq i\leq3).
+$$
+The derivable structure constants are exactly
+$$
+[h_i,h_j]=0,\qquad
+[h_i,e_j]=A_{ij}e_j,\qquad
+[h_i,f_j]=-A_{ij}f_j,\qquad
+[e_i,f_j]=\delta_{ij}h_i.
+$$
+Equivalently,
+$$
+[h_i,e_i]=2e_i,\qquad
+[h_i,e_j]=-2e_j\quad(i\neq j),
+$$
+and the same formula with the opposite sign holds on \(f_j\).
+The real Serre constants are
+$$
+(\operatorname{ad}e_i)^3e_j=0,\qquad
+(\operatorname{ad}f_i)^3f_j=0
+\qquad(i\neq j),
+$$
+because \(1-A_{ij}=3\).
+
+For a positive imaginary simple root \(a\in
+\La^{2,1}_{II}\cap\mathbb R_{>0}\mathcal P_{II}\), let
+\(u=1,\ldots,\mu_{\bar p}(a)\) index the simple generators of parity
+\(\bar p\):
+$$
+e_{a,u}\in\mathfrak g_a,\qquad
+f_{a,u}\in\mathfrak g_{-a},\qquad
+h_{a,u}=[e_{a,u},f_{a,u}].
+$$
+The denominator construction fixes
+$$
+[h_i,e_{a,u}]=(\delta_i,a)e_{a,u},\qquad
+[h_i,f_{a,u}]=-(\delta_i,a)f_{a,u},
+$$
+and, for every real \(i\),
+$$
+(\operatorname{ad}e_i)^{1-(\delta_i,a)}e_{a,u}=0,\qquad
+(\operatorname{ad}f_i)^{1-(\delta_i,a)}f_{a,u}=0.
+$$
+If two simple roots in the Borcherds generating set are orthogonal, then
+$$
+(\alpha_i,\alpha_j)=0
+\quad\Longrightarrow\quad
+[e_i,e_j]=[f_i,f_j]=0.
+$$
+These are presentation constants.  They are not compact Hall
+correspondence counts.
+
+\subsection{A low-root test}
+
+The three pairwise sums of real simple roots are the primitive isotropic
+rays:
+$$
+\delta_1+\delta_2=\alpha(1,2,1),\qquad
+\delta_1+\delta_3=\alpha(1,0,0),\qquad
+\delta_2+\delta_3=\alpha(0,0,1).
+$$
+Their signed root multiplicities are
+$$
+f(1,2)=10,\qquad f(0,0)=10,\qquad f(0,0)=10.
+$$
+The real-real commutators
+$$
+[e_1,e_2],\qquad [e_1,e_3],\qquad [e_2,e_3]
+$$
+give one named vector on each corresponding isotropic ray.  The
+Gritsenko--Nikulin correction supplies the remaining simple imaginary
+directions: on every primitive isotropic ray \(a\),
+$$
+\tau(ta)=9\qquad(t\geq1).
+$$
+Thus, for \(a=\delta_i+\delta_j\), the first isotropic root space has
+one direction forced by the real-root commutator and nine imaginary
+simple directions from the correction character.  This explains the
+numerical equality
+$$
+1+9=10=f(0,0)\quad\hbox{or}\quad f(1,2),
+$$
+but it does not determine a Hall multiplication table.  It determines a
+Borcherds presentation.
+
+\subsection{Jacobi and Serre checks}
+
+The Cartan--root Jacobi identity is forced by additivity of the degree:
+for homogeneous \(x_\beta\in\mathfrak g_\beta\) and
+\(x_\eta\in\mathfrak g_\eta\),
+$$
+[h_i,[x_\beta,x_\eta]]
+=[ [h_i,x_\beta],x_\eta]+[x_\beta,[h_i,x_\eta]]
+=((\delta_i,\beta)+(\delta_i,\eta))[x_\beta,x_\eta].
+$$
+Hence
+$$
+[x_\beta,x_\eta]\in\mathfrak g_{\beta+\eta}.
+$$
+For the real roots, the rank-two Serre check is
+$$
+(\operatorname{ad}e_i)^3e_j=0,\qquad
+(\operatorname{ad}e_i)^2e_j\ \hbox{not forced to vanish}
+\qquad(i\neq j),
+$$
+and similarly for the \(f_i\).  This is exactly the rank-three
+symmetric generalized Cartan matrix with off-diagonal entries \(-2\).
+The Jacobi identity for all higher constants is then a theorem of the
+universal Borcherds--Kac--Moody presentation modulo the displayed
+relations \cite{KAC:1,GN}.
+
+\subsection{Why the naive protected Euler bracket fails}
+
+The symmetric BPS form
+$$
+\langle\gamma,\eta\rangle_{\mathrm{BPS}}
+=2(nm'+n'm)-ll'
+$$
+is the discriminant polarization and, through \(\alpha\), the Cartan
+form.  It cannot by itself be the Hall supercommutator coefficient.
+
+Indeed, the tempting rule
+$$
+[x_\gamma,x_\eta]_{\mathrm{naive}}
+=\langle\gamma,\eta\rangle_{\mathrm{BPS}}\,x_{\gamma+\eta}
+$$
+already fails on the real simple roots.  Since \(e_i\) is even,
+super-skew symmetry requires
+$$
+[e_i,e_i]=0.
+$$
+But
+$$
+\langle\gamma_i,\gamma_i\rangle_{\mathrm{BPS}}=-1,
+$$
+so the naive rule gives a nonzero multiple of \(x_{2\gamma_i}\).  For
+\(i\neq j\) the same rule gives equal constants in both orders, while
+an even Lie bracket requires
+$$
+[e_i,e_j]=-[e_j,e_i].
+$$
+Thus an honest Hall/CoHA realization must contain an orientation sign,
+a skew Euler form, or an equivalent antisymmetrizing Drinfeld-double
+datum.  The symmetric BPS pairing may grade the Cartan matrix; it is not
+the commutator kernel.
+
+\subsection{The Hall constants that would be needed}
+
+A compact Hall realization would have to construct, for every active
+charge \(\gamma\), an oriented critical moduli object
+\(\mathfrak M_\gamma^\sigma\) and extension correspondences
+$$
+\mathfrak M_\gamma^\sigma\times\mathfrak M_\eta^\sigma
+\xleftarrow{\ p_{\gamma,\eta}\ }
+\mathfrak E_{\gamma,\eta}^\sigma
+\xrightarrow{\ q_{\gamma,\eta}\ }
+\mathfrak M_{\gamma+\eta}^\sigma.
+$$
+After vanishing cycles and the orientation line are fixed, the Hall
+product has the form
+$$
+m_{\gamma,\eta}
+=q_{\gamma,\eta!}\,p_{\gamma,\eta}^{\,*}
+:
+H^{\mathrm{crit}}(\mathfrak M_\gamma^\sigma)
+\otimes
+H^{\mathrm{crit}}(\mathfrak M_\eta^\sigma)
+\longrightarrow
+H^{\mathrm{crit}}(\mathfrak M_{\gamma+\eta}^\sigma),
+$$
+with the usual cohomological Hall modifications of
+Kontsevich--Soibelman and Davison--Meinhardt \cite{KSCoHA,DavisonMeinhardtCoHA}.
+The protected primitive bracket would then be
+$$
+[u,v]_{\mathrm{Hall}}
+=m_{\gamma,\eta}(u,v)
+-(-1)^{|u||v|}\,\varepsilon(\gamma,\eta)\,
+m_{\eta,\gamma}(v,u),
+$$
+where \(\varepsilon(\gamma,\eta)\) is the orientation/Drinfeld sign
+compatible with the completed Hopf pairing.
+
+Choose protected primitive bases
+$$
+u_{\gamma,a}\in
+\left(\Prim_{\mathrm{prot}}
+\mathcal P^{\mathrm{Hall}}_{K3\times E,\sigma,o}\right)_\gamma .
+$$
+The required structure constants are the integers
+$$
+[u_{\gamma,a},u_{\eta,b}]_{\mathrm{Hall}}
+=
+\sum_c
+C^{\,c}_{(\gamma,a),(\eta,b)}
+u_{\gamma+\eta,c}.
+$$
+The comparison with the denominator algebra requires bases
+\(v_{\alpha(\gamma),a}\in\mathfrak g_{\alpha(\gamma)}\) such that
+$$
+C^{\,c}_{(\gamma,a),(\eta,b)}
+=
+N^{\,c}_{(\alpha(\gamma),a),(\alpha(\eta),b)}
+$$
+for the Borcherds structure constants
+$$
+[v_{\alpha(\gamma),a},v_{\alpha(\eta),b}]
+=
+\sum_c
+N^{\,c}_{(\alpha(\gamma),a),(\alpha(\eta),b)}
+v_{\alpha(\gamma+\eta),c}.
+$$
+The denominator product determines only
+$$
+\sum_a(-1)^{|a|}
+=\smult(\alpha(\gamma))=f(nm,l).
+$$
+It does not determine either side of the displayed equality of
+structure constants.
+
+\subsection{Exact obstruction}
+
+There is no unconditional derivation in the present manuscript of an
+honest Hall/CoHA/Drinfeld bracket realizing
+\(\mathcal A_{\mathrm{den}}\).  The missing compact correspondence is
+the following single package.
+
+\begin{enumerate}
+\item Compact finite-first moduli objects
+\(\mathfrak M_\gamma^\sigma\) for the \(K3\times E\) BPS sector, with
+the \(E\)-translation quotient and reduced/critical obstruction theory
+fixed.
+\item Oriented vanishing-cycle complexes on these moduli objects, with
+orientation character descending to \(\nu_{\Delta_5}\).
+\item Proper extension correspondences
+\(\mathfrak E_{\gamma,\eta}^\sigma\) whose pull-push product is defined
+before completing in charge.
+\item A protected integration functor sending compact critical
+cohomology to finite-dimensional super vector spaces and preserving the
+Hall supercommutator on primitives.
+\item A primitive/Hopf-pairing theorem identifying the Drinfeld double
+with the denominator polarization, not merely with the scalar Fock
+determinant.
+\item A support theorem:
+$$
+f((n+n')(m+m'),l+l')=0
+\quad\Longrightarrow\quad
+[u_\gamma,u_{\gamma'}]_{\mathrm{Hall}}=0
+$$
+after projection to protected primitives.
+\item The real and imaginary Borcherds relations inside the Hall
+supercommutator:
+$$
+(\operatorname{ad}u_i)^3u_j=0\quad(i\neq j),
+$$
+the orthogonality relations for simple imaginary roots, and the
+isotropic-ray multiplicity split \(1+9=10\) in the first root spaces.
+\end{enumerate}
+
+Supplying these seven items would prove the bracket comparison.  Without
+them the strongest correct statement is conditional:
+$$
+\begin{gathered}
+\Prim_{\mathrm{prot}}\mathcal P^{\mathrm{Hall}}_{K3\times E,\sigma,o}
+\cong
+\mathcal A_{\mathrm{den}},\\
+\text{only if the compact Hall correspondence above exists}\\
+\text{and satisfies the Borcherds relations.}
+\end{gathered}
+$$
+
+\subsection{Check table}
+
+\begin{center}
+\begingroup
+\small
+\begin{tabular}{p{0.18\textwidth}|p{0.30\textwidth}|p{0.14\textwidth}|p{0.18\textwidth}}
+\textbf{Datum} & \textbf{Formula} & \textbf{Status} & \textbf{Source}\\
+\hline
+real charges &
+\(\gamma_1=(1,1,0),\ \gamma_2=(0,1,1),\ \gamma_3=(0,-1,0)\) &
+proved &
+active-support cone\\
+Cartan matrix &
+\((\delta_i,\delta_j)=
+\left(\begin{smallmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{smallmatrix}\right)\) &
+proved &
+\(\alpha\) anti-isometry\\
+Chevalley constants &
+\([h_i,e_j]=A_{ij}e_j,\ [e_i,f_j]=\delta_{ij}h_i\) &
+proved &
+BKM presentation\\
+real Serre &
+\((\operatorname{ad}e_i)^3e_j=0\ (i\neq j)\) &
+proved &
+\(A_{ij}=-2\)\\
+first isotropic roots &
+\(\delta_i+\delta_j,\quad \smult=10=1+9\) &
+proved in denominator algebra &
+\(\phi_{0,1},\eta^9\)\\
+naive Euler bracket &
+\([x_\gamma,x_\eta]=
+\langle\gamma,\eta\rangle_{\mathrm{BPS}}x_{\gamma+\eta}\) &
+false &
+super-skew test\\
+compact Hall constants &
+\(C^{\,c}_{(\gamma,a),(\eta,b)}\) &
+open &
+missing compact correspondence
+\end{tabular}
+\endgroup
+\end{center}

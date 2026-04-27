@@ -1,0 +1,546 @@
+\section{OP--DT theorem integration patch dossier}
+\label{sec:op-dt-theorem-integration-patch}
+
+\subsection{Claim attacked}
+
+The scalar-square block currently separates the Oberdieck--Pixton
+theorem from the Hilbert-scheme Donaldson--Thomas series:
+\[
+Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2},
+\qquad
+Z^X_{\mathrm{DT}}=C_{\mathrm{DT}}\Delta_5^{-2}
+\quad\hbox{under an assumption.}
+\]
+The assumption is no longer the strongest true statement.  In the
+quotient-by-\(E\), Behrend-weighted normalization used in the manuscript,
+Oberdieck's reduced DT/PT theorem identifies the Hilbert-scheme DT series
+with the reduced stable-pairs series, and the primitive
+Oberdieck--Pandharipande comparison identifies that stable-pairs series
+with the Oberdieck--Pixton partition function.  Therefore
+\begin{equation}
+\label{eq:cell14-main}
+Z^X_{\mathrm{DT}}(T,Q,P)
+=Z^X_{\mathrm{OP}}(P,Q,T)
+=-4096\Delta_5(Z)^{-2},
+\qquad
+C_{\mathrm{DT}}=-4096.
+\end{equation}
+This is an enumerative theorem.  It does not construct the microscopic
+BPS Hilbert space \(\mathcal H_{\gamma(h,d,n)}\), nor a physical operator
+product on it.
+
+\subsection{Primary-source anchors}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.25\textwidth}p{0.66\textwidth}}
+\hline
+Source & Load-bearing assertion \\
+\hline
+Oberdieck, \emph{On reduced stable pair invariants},
+arXiv:1605.04631, local source
+\texttt{/tmp/igusa-cell8-sources/obred/reducedK3xE.tex:289--322}
+&
+Defines quotient stable-pairs invariants by the Behrend-weighted
+orbifold Euler characteristic of \(P_n(X,(\beta,d))/E\), and proves
+their equality with the incidence/reduced-virtual-class invariants. \\
+Oberdieck, official bibliographic pages
+\texttt{https://arxiv.org/abs/1605.04631} and
+\texttt{https://link.springer.com/article/10.1007/s00209-017-1953-5}
+&
+The arXiv page records the 2016 source and abstract.  Springer records
+the final publication as Mathematische Zeitschrift 289, pages 323--353,
+published in 2018. \\
+Oberdieck, arXiv:1605.04631, local source
+\texttt{/tmp/igusa-cell8-sources/obred/reducedK3xE.tex:432--465}
+&
+Defines reduced Hilbert-scheme DT invariants
+\(\mathsf{DT}_{n,(\beta,d)}
+=\int_{\operatorname{Hilb}_X((\beta,d),n)/E}\nu\,de\),
+defines the fixed-class series
+\(\mathsf{DT}_{(\beta,d)}(q)\) and \(\mathsf{PT}_{(\beta,d)}(q)\), and
+proves Theorem~2(i):
+\[
+\mathsf{DT}_{(\beta,d)}(q)=\mathsf{PT}_{(\beta,d)}(q).
+\]
+The same passage records that the degree-zero factor is absent because
+\(\chi(S\times E)=0\). \\
+Oberdieck--Pandharipande, arXiv:1411.1514, local source
+\texttt{/tmp/igusa-cell8-sources/opand/K3TJul15.tex:1488--1523}
+&
+For primitive \(\beta_h\), the reduced stable-pairs series equals the
+reduced Gromov--Witten series after
+\[
+y=-\exp(iu).
+\]
+The proof explicitly obtains the reduced correspondence for
+\(S\times E\). \\
+Oberdieck--Pixton, arXiv:1706.10100, local source
+\texttt{/tmp/igusa-cell8-sources/op/main.tex:326--360,376--386}
+&
+Defines
+\[
+\mathcal Z_{\mathrm{OP}}(u,q,\widetilde q)
+=\sum N_{g,h,d}u^{2g-2}q^{h-1}\widetilde q^{d-1}
+\]
+and proves
+\[
+\mathcal Z_{\mathrm{OP}}(u,q,\widetilde q)
+=-\chi_{10}(p,q,\widetilde q)^{-1},
+\qquad p=e^{iu}.
+\]
+\\
+Bryan, arXiv:1504.02920, local source
+\texttt{/tmp/igusa-cell8-sources/bryan/K3xE.tex:282--363}
+&
+Uses the same quotient-by-\(E\), Behrend-weighted Hilbert-scheme DT
+normalization and the sign
+\[
+\widetilde q^{\,h-1}q^{d-1}(-p)^n.
+\]
+It records that Bryan's \(q,\widetilde q\) are opposite to
+Oberdieck--Pandharipande's variables. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Variable map}
+
+Use the Oberdieck--Pixton variables
+\[
+P=e^{iu}=e^{2\pi iz},\qquad
+Q=e^{2\pi i\tau},\qquad
+T=e^{2\pi i\widetilde\tau}.
+\]
+The manuscript's Borcherds variables are
+\begin{equation}
+\label{eq:cell14-borch-vars}
+q_{\mathrm{Bch}}=Q,\qquad r_{\mathrm{Bch}}=P,\qquad
+s_{\mathrm{Bch}}=T.
+\end{equation}
+The displayed DT variables in \texttt{proj.tex:567--570} are
+\[
+Z^X_{\mathrm{DT}}(q,t,p)
+=\sum_{h,d,n}
+\mathbf{DT}^X_{n,(\beta_h,d)}
+q^{d-1}t^{h-1}(-p)^n,
+\qquad h-1=\frac12\langle\beta_h,\beta_h\rangle.
+\]
+Bryan's DT series uses \(\widetilde q^{\,h-1}q^{d-1}(-p)^n\) and
+records that his \(q,\widetilde q\) are opposite to the
+Oberdieck--Pandharipande variables.  Therefore
+\begin{equation}
+\label{eq:cell14-dt-vars}
+q_{\mathrm{DT}}=T,\qquad
+t_{\mathrm{DT}}=Q,\qquad
+p_{\mathrm{DT}}=P.
+\end{equation}
+The stable-pairs sign is the same sign:
+\[
+y=-\exp(iu)=-P,
+\qquad
+(-p_{\mathrm{DT}})^n=(-P)^n.
+\]
+
+\subsection{Constants}
+
+The manuscript normalization in \texttt{proj.tex:572--635} gives
+\[
+D_5=64^{-1}\Delta_5,
+\qquad
+\chi_{10}^{\mathrm{OP}}=D_5^2=4096^{-1}\Delta_5^2.
+\]
+Oberdieck--Pixton gives
+\[
+Z^X_{\mathrm{OP}}
+=-\left(\chi_{10}^{\mathrm{OP}}\right)^{-1}.
+\]
+Consequently
+\begin{equation}
+\label{eq:cell14-constant}
+Z^X_{\mathrm{OP}}
+=-4096\Delta_5^{-2}.
+\end{equation}
+Oberdieck's reduced DT/PT theorem has no residual degree-zero factor for
+\(X=S\times E\):
+\[
+\mathsf{DT}_0(x)=M(-x)^{\chi(X)}
+=M(-x)^{\chi(S)\chi(E)}
+=M(-x)^0
+=1.
+\]
+Combining the DT/PT theorem, the primitive GW/PT comparison, and
+\eqref{eq:cell14-constant} gives the fixed constant
+\[
+C_{\mathrm{DT}}=C_{\mathrm{OP}}=-4096.
+\]
+
+\subsection{Bibliography insertion}
+
+Insert the following entry in \texttt{proj.bib} after
+\texttt{proj.bib:190--196} and before the Thomas DT entry.  The entry is
+the final-published bibliographic form of the 2016 arXiv source used in
+the proof.  Springer records Mathematische Zeitschrift 289, pages
+323--353, DOI \texttt{10.1007/s00209-017-1953-5}.
+
+\begin{verbatim}
+@ARTICLE{OberdieckReducedPT,
+AUTHOR="G. Oberdieck",
+TITLE="On reduced stable pair invariants",
+JOURNAL="Mathematische Zeitschrift",
+VOLUME="289",
+NUMBER="1--2",
+PAGES="323--353",
+YEAR="2018",
+DOI="10.1007/s00209-017-1953-5",
+EPRINT="arXiv:1605.04631",
+}
+\end{verbatim}
+
+\subsection{Normalization-table replacement}
+
+Replace the scalar-square row in \texttt{proj.tex:534--537} by:
+\begin{center}
+\small
+\begin{tabular}{p{0.25\textwidth}p{0.62\textwidth}}
+\hbox{Scalar square} &
+\(Z^X_{\mathrm{DT}}(T,Q,P)=Z^X_{\mathrm{OP}}(P,Q,T)
+=-4096\Delta_5^{-2}\);
+for the OP/DT branch,
+\((\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}})^2
+=-Z^X_{\mathrm{DT}}/4096\).
+If an external scalar-square branch is later introduced, write it
+separately as \(Z^X_{\square}=C_{\square}\Delta_5^{-2}\). \\
+\end{tabular}
+\end{center}
+
+\subsection{Theorem replacement}
+
+Replace \texttt{proj.tex:638--654} by the following theorem.  The label
+\texttt{thm:op-square} is retained because downstream references already
+point to it.
+
+\begin{theorem}[Oberdieck--Pixton/Oberdieck reduced DT square]
+\label{thm:op-square}
+Let \(X=S\times E\), and let
+\(\beta_h\in H_2(S,\mathbb Z)\) be primitive and non-zero with
+\[
+\langle\beta_h,\beta_h\rangle=2h-2.
+\]
+Define
+\[
+\mathbf{DT}^X_{n,(\beta_h,d)}
+=\int_{\operatorname{Hilb}^n(X,(\beta_h,d))/E}\nu\,de
+\]
+and
+\[
+Z^X_{\mathrm{DT}}(q,t,p)
+=\sum_{h,d,n}\mathbf{DT}^X_{n,(\beta_h,d)}
+q^{d-1}t^{h-1}(-p)^n.
+\]
+Under the variable map
+\[
+p=P=e^{iu},\qquad t=Q,\qquad q=T,
+\qquad
+(q_{\mathrm{Bch}},r_{\mathrm{Bch}},s_{\mathrm{Bch}})=(Q,P,T),
+\]
+one has
+\begin{equation}
+\label{eq:dt-op-square}
+Z^X_{\mathrm{DT}}(T,Q,P)
+=Z^X_{\mathrm{OP}}(P,Q,T)
+=-4096\,\Delta_5(Z)^{-2}.
+\end{equation}
+Equivalently,
+\[
+C_{\mathrm{DT}}=C_{\mathrm{OP}}=-4096.
+\]
+\end{theorem}
+
+\begin{proof}
+Oberdieck's reduced DT/PT theorem for \(S\times E\),
+\cite{OberdieckReducedPT}*{Theorem 3(i)}, gives, for every non-zero
+\(\beta\in H_2(S,\mathbb Z)\),
+\[
+\sum_n\mathbf{DT}^X_{n,(\beta,d)}x^n
+=
+\sum_n\mathsf P^X_{n,(\beta,d)}x^n.
+\]
+Set \(x=-P\).  The degree-zero factor is
+\[
+M(-P)^{\chi(S\times E)}=M(-P)^0=1.
+\]
+For primitive \(\beta_h\), the reduced GW/pairs comparison of
+Oberdieck--Pandharipande \cite{OPand} gives
+\[
+\sum_n\mathsf P^X_{n,(\beta_h,d)}(-P)^n
+=
+\sum_g\mathsf N^X_{g,h,d}u^{2g-2},
+\qquad P=e^{iu}.
+\]
+Multiplying by \(Q^{h-1}T^{d-1}\) and summing over \(h,d\) gives
+\[
+Z^X_{\mathrm{DT}}(T,Q,P)
+=\mathcal Z_{\mathrm{OP}}(u,Q,T).
+\]
+Oberdieck--Pixton \cite{OB}*{Theorem 1} proves
+\[
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=-\left(\chi_{10}^{\mathrm{OP}}(P,Q,T)\right)^{-1}.
+\]
+The normalization proposition gives
+\[
+\chi_{10}^{\mathrm{OP}}(P,Q,T)
+=D_5(Z)^2
+=4096^{-1}\Delta_5(Z)^2.
+\]
+Therefore \eqref{eq:dt-op-square} follows.  The sign is fixed by the
+common variable \(y=-e^{iu}=-P\) in the pairs comparison and by Bryan's
+DT convention \((-p)^n\).
+\end{proof}
+
+\subsection{Protected-index replacement}
+
+Replace \texttt{proj.tex:657--669} by:
+
+\begin{conjecture}[Protected D-brane index dictionary]
+For the D6--D2--D0 charge
+\[
+\gamma(h,d,n)=(1;\,(\beta_h,d);\,n),
+\]
+the physical protected index is expected to be represented by the
+Behrend-weighted Hilbert-scheme invariant:
+\[
+\Omega_X(h,d,n)
+=\operatorname{Tr}_{\mathcal H_{\gamma(h,d,n)}}(-1)^F
+\stackrel{\mathrm{phys}}{=}
+\mathbf{DT}^X_{n,(\beta_h,d)}.
+\]
+This conjectural dictionary is separate from
+Theorem~\ref{thm:op-square}.  The theorem identifies the
+quotient-by-\(E\), Behrend-weighted Hilbert-scheme generating series with
+the primitive OP curve-counting series.  It does not construct
+\(\mathcal H_{\gamma(h,d,n)}\), and it does not identify a microscopic
+operator product with the Borcherds bracket.
+\end{conjecture}
+
+\subsection{Scalar-branch replacement}
+
+Replace \texttt{proj.tex:672--685} by:
+
+\begin{definition}[Scalar-square branch]
+The OP/DT scalar-square branch is the Laurent expansion
+\[
+Z^X_{\square}
+:=Z^X_{\mathrm{OP}}(P,Q,T)
+=Z^X_{\mathrm{DT}}(T,Q,P)
+=\frac{-4096}{\Delta_5(Z)^2}.
+\]
+Thus
+\[
+C_{\square}=C_{\mathrm{OP}}=C_{\mathrm{DT}}=-4096.
+\]
+If a later argument uses a scalar-square branch from a source other than
+the OP/DT theorem, that source must be named separately and may be
+written
+\[
+Z^X_{\square,\mathfrak s}=C_{\square,\mathfrak s}\Delta_5^{-2}.
+\]
+The symbol \(C_{\mathrm{DT}}\) is not available for such a branch.
+\end{definition}
+
+\subsection{Square-root consequence replacement}
+
+Replace \texttt{proj.tex:688--709} by:
+
+\begin{theorem}[Square-root consequence]
+For the OP/DT branch,
+\[
+Z^X_{\square}
+=Z^X_{\mathrm{OP}}
+=Z^X_{\mathrm{DT}}
+=-4096\,\Delta_5(Z)^{-2}.
+\]
+The normalized Borcherds determinant is
+\[
+\mathcal D_X(Z)=\Delta_5(Z).
+\]
+Hence
+\[
+\mathcal D_X(Z)^2
+=\frac{-4096}{Z^X_{\square}},
+\qquad
+\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}:=\mathcal D_X^{-1},
+\]
+and
+\begin{equation}
+\label{eq:cell14-square-root}
+\left(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}\right)^2
+=-\frac{Z^X_{\square}}{4096}
+=-\frac{Z^X_{\mathrm{DT}}}{4096}
+=-\frac{Z^X_{\mathrm{OP}}}{4096}.
+\end{equation}
+Equivalently,
+\[
+\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}
+=\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}
+\sch\mathcal F(\mathcal V).
+\]
+\end{theorem}
+
+\begin{proof}
+The OP/DT theorem gives \(Z^X_{\square}=-4096\Delta_5^{-2}\), and the
+normalization theorem gives \(\mathcal D_X=\Delta_5\).  Therefore
+\[
+(\mathcal D_X^{-1})^2=\Delta_5^{-2}
+=-\frac{Z^X_{\square}}{4096}.
+\]
+The last displayed product is the already normalized inverse
+Borcherds determinant.
+\end{proof}
+
+\subsection{Status-table replacement}
+
+Replace the four rows in \texttt{proj.tex:720--736} by:
+
+\begin{center}
+\small
+\begin{tabular}{p{0.25\textwidth}p{0.34\textwidth}p{0.31\textwidth}}
+\hline
+Object & Equation & Status \\
+\hline
+Primitive reduced curve counting &
+\(Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\) &
+proved by Oberdieck--Pixton after the normalization
+\(\chi_{10}^{\mathrm{OP}}=4096^{-1}\Delta_5^2\) \\
+Reduced Hilbert-scheme DT series &
+\(Z^X_{\mathrm{DT}}(T,Q,P)=Z^X_{\mathrm{OP}}(P,Q,T)
+=-4096\Delta_5^{-2}\) &
+proved by Oberdieck's reduced DT/PT theorem, the primitive
+Oberdieck--Pandharipande GW/PT comparison, and Oberdieck--Pixton \\
+Protected D-brane index &
+\(\Omega_X(h,d,n)\stackrel{\mathrm{phys}}{=}
+\mathbf{DT}^X_{n,(\beta_h,d)}\) &
+conjectural physics dictionary; no microscopic Hilbert space is
+constructed here \\
+Scalar-square branch &
+\(Z^X_{\square}=Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}\),
+\(C_{\square}=-4096\) &
+theorem for the OP/DT branch; any other scalar-square branch requires
+its own named source and constant \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{\(C_{\mathrm{DT}}\) replacement ledger}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.22\textwidth}p{0.68\textwidth}}
+\hline
+Anchor & Required integration action \\
+\hline
+\texttt{proj.tex:646--654} &
+Delete the Hilbert-scheme DT scalar-normalization assumption and replace
+it by Theorem~\ref{thm:op-square} above.  The value becomes
+\[
+C_{\mathrm{DT}}=-4096.
+\]
+\\
+\texttt{proj.tex:669} &
+Remove the reference to \texttt{ass:dt-square}.  The physical
+dictionary remains conjectural, but its separation is now from the
+enumerative theorem, not from an assumption. \\
+\texttt{proj.tex:681--684} &
+Replace \(C_{\square,\mathrm{DT}}:=C_{\mathrm{DT}}\) by
+\[
+C_{\square,\mathrm{DT}}:=-4096.
+\]
+Remove ``exists under Assumption~\texttt{ass:dt-square}''. \\
+\texttt{proj.tex:693--694} &
+Replace the two branch lines by
+\[
+Z^X_{\square}=Z^X_{\mathrm{OP}}=Z^X_{\mathrm{DT}}
+\quad\hbox{by Theorem~\ref{thm:op-square}}.
+\]
+\\
+\texttt{proj.tex:724--728} &
+Replace the DT table row by the theorem-level row in the
+status-table replacement above. \\
+\texttt{proj.tex:733--736} &
+Replace ``conditional for \(Z^X_{\mathrm{DT}}\)'' by
+``theorem for the OP/DT branch''. \\
+\texttt{proj.tex:1857--1868,1887--1889} &
+Keep \(C_{\square}\) only if the theorem is intentionally about an
+arbitrary scalar-square branch.  Add the specialization
+\[
+\hbox{for the OP/DT branch}\qquad
+C_{\square}=-4096,\qquad
+(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}})^2
+=-Z^X_{\mathrm{DT}}/4096.
+\]
+Do not write \(C_{\mathrm{DT}}\in\mathbb C^\times\). \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Physical separation ledger}
+
+The following manuscript passages must remain physically separated from
+the enumerative theorem:
+\begin{center}
+\small
+\begin{tabular}{p{0.24\textwidth}p{0.66\textwidth}}
+\texttt{proj.tex:553--556} &
+Keep: no microscopic Hilbert space is constructed.\\
+\texttt{proj.tex:657--669} &
+Replace as above: the protected-index dictionary remains conjectural.\\
+\texttt{proj.tex:1278--1280} &
+Keep: the denominator algebra is not a microscopic BPS Hilbert space or
+operator product.\\
+\texttt{proj.tex:1689--1701} &
+Keep: index equality is not a state-space identification.\\
+\texttt{proj.tex:3397--3418} &
+Keep: boundary rows do not inherit CY/DT partition identities or physical
+BPS factorization.
+\end{tabular}
+\end{center}
+The integration rule is:
+\[
+\hbox{DT/PT/OP equality is enumerative;}
+\qquad
+\hbox{BPS Hilbert-space interpretation is physical and separate.}
+\]
+
+\subsection{Commands run}
+
+\begin{itemize}
+\item \texttt{nl -ba CLAUDE.md}
+\item \texttt{nl -ba /Users/raeez/ecosystem/INVARIANTS.md}
+\item \texttt{nl -ba /Users/raeez/ecosystem/AGENTS-HARNESS.md}
+\item \texttt{nl -ba proj.tex} around the normalization, scalar-square,
+denominator, and physical-separation anchors.
+\item \texttt{nl -ba proj.bib} around the OP/DT bibliography block.
+\item \texttt{nl -ba agent\_material/10\_reduced\_dt\_pt\_op\_comparison\_theorem.tex}
+\item \texttt{nl -ba} on local primary-source TeX files under
+\texttt{/tmp/igusa-cell8-sources}.
+\item \texttt{rg -n "thm:op-square|ass:dt-square|Protected D-brane index dictionary|Scalar-square branch|Square-root consequence|C\_" proj.tex}
+\item Official source lookup: \texttt{https://arxiv.org/abs/1605.04631}
+and \texttt{https://link.springer.com/article/10.1007/s00209-017-1953-5}.
+\item \texttt{pdflatex -halt-on-error -interaction=nonstopmode} on an
+isolated wrapper inputting this dossier.
+\item \texttt{rg -n} forbidden-language scan on this dossier.
+\item \texttt{git status --short agent\_material/11\_op\_dt\_theorem\_integration\_patch.tex}
+\end{itemize}
+
+\subsection{Remaining obligations}
+
+The theorem-level comparison is proved from the cited sources in the
+owned dossier.  The remaining obligations are integration obligations:
+\begin{enumerate}
+\item Insert the bibliography entry in \texttt{proj.bib}.
+\item Apply the replacement blocks to \texttt{proj.tex}.
+\item Run the manuscript build after integration.
+\item Keep generic \(C_{\square}\) only for explicitly named non-OP/DT
+branches.
+\end{enumerate}

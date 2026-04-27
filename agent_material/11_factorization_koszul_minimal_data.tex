@@ -1,0 +1,639 @@
+\section{Factorization--Koszul minimal construction dossier}
+\label{sec:factorization-koszul-minimal-data}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\Cur}{\operatorname{Cur}}
+\providecommand{\Obs}{\operatorname{Obs}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\Fact}{\mathsf{Fact}}
+\providecommand{\ChAlg}{\mathsf{ChAlg}}
+\providecommand{\Coalg}{\mathsf{Coalg}}
+\providecommand{\LieSAlg}{\mathsf{LieSAlg}}
+\providecommand{\Hall}{\mathcal H}
+\providecommand{\hCS}{\mathrm{hCS}}
+\providecommand{\BKM}{\mathrm{BKM}}
+\providecommand{\barB}{\bar B}
+\providecommand{\Omegach}{\Omega^{\mathrm{ch}}}
+\providecommand{\Den}{\mathsf{Den}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\id}{\operatorname{id}}
+\providecommand{\BM}{\operatorname{BM}}
+\providecommand{\Crit}{\operatorname{Crit}}
+\providecommand{\van}{\varphi}
+
+This dossier refines the no-promotion theorem into a finite construction
+problem.  The output already constructed in the manuscript is
+$$
+\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5},\qquad
+\Den_{\Delta_5,E}
+=U_E^{\mathrm{ch}}
+\left(\mathcal A_{\mathrm{den}}\otimes\mathcal O_E\right),
+$$
+with charge map
+$$
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
+$$
+and denominator
+$$
+\operatorname{den}(\mathcal A_{\mathrm{den}})
+=64^{-1}\Delta_5(2Z).
+$$
+The compact factorization/Koszul theorem is a different assertion.  It
+requires the five data below.
+
+\subsection{Ambient categories}
+\label{subsec:cell-eleven-ambient-categories}
+
+Let \(X=K3\times E\), let
+\(\Gamma=\Gamma_{\mathrm{BPS}}=\Z^3\), and let
+\(\Gamma_{\mathrm{eff}}\subset\Gamma\) be the Igusa effective chamber.
+All completions are finite-first:
+$$
+M=\varprojlim_{N,R} M_{N,R},
+$$
+where \(M_{N,R}\) is formed only after the product, coproduct,
+descent maps, and transition maps have been constructed at the finite
+Harder--Narasimhan truncation.  The raw cone is not enough; the finite
+sets must come from a stability sector with HN finiteness and support
+property.
+
+The five data live in the following typed categories:
+$$
+\begin{array}{ccl}
+\Fact^{\mathrm{ff}}_{\Ran(E),\Gamma}
+&=&
+\hbox{charge-completed factorization algebras on }\Ran(E),\\[2pt]
+\Hall^{\mathrm{or,ff}}_{X,\sigma,o}
+&=&
+\hbox{oriented critical Hall factorization cosheaves},\\[2pt]
+\Coalg^{\mathrm{conil,ff}}_{E,\Gamma}
+&=&
+\hbox{coaugmented conilpotent chiral coalgebras},\\[2pt]
+\ChAlg^{\mathrm{ff}}_{E,\Gamma}
+&=&
+\hbox{charge-completed chiral algebras on }E,\\[2pt]
+\LieSAlg_{\Gamma}
+&=&
+\hbox{charge-graded Lie superalgebras}.
+\end{array}
+$$
+The bar-cobar functors are used only on their typed domain:
+$$
+\Omegach_E:
+\Coalg^{\mathrm{conil,ff}}_{E,\Gamma}
+\rightleftarrows
+\ChAlg^{\mathrm{aug,ff}}_{E,\Gamma}:\barB_E^{\mathrm{ch}}.
+$$
+On the Koszul locus, the counit
+$$
+\varepsilon_{\mathcal A}:
+\Omegach_E\barB_E^{\mathrm{ch}}(\mathcal A)
+\longrightarrow
+\mathcal A
+$$
+is a quasi-isomorphism.  This is an inversion theorem for a supplied
+chiral algebra \(\mathcal A\).  It is not a construction of compact
+observables.
+
+\subsection{The five required objects}
+\label{subsec:cell-eleven-five-objects}
+
+\begin{definition}[The finite construction datum]
+\label{def:cell-eleven-five-datum}
+A compact factorization--Koszul realization of the Igusa current
+envelope is a quintuple
+$$
+\mathfrak K_X
+=
+\left(
+\mathcal F_X,\mathcal H_X,C_X,\Theta_{\mathrm{Kos}},
+\Pi_{\mathrm{prim}}
+\right),
+\qquad X=K3\times E,
+$$
+with the following typed contents.
+
+\smallskip
+\noindent
+\textbf{(F) Compact observable factorization algebra.}
+\[
+\mathcal F_X\in\Fact^{\mathrm{ff}}_{\Ran(E),\Gamma}.
+\]
+It is the \(E\)-pushforward of compact quantum observables of a BV
+theory on \(X\), equipped with:
+$$
+\mathcal F_X=\varprojlim_{N,R}\mathcal F_{X,N,R},
+\qquad
+\mathcal F_{X,N,R}
+=\bigoplus_{\gamma\in\Gamma_{\sigma}(N,R)}
+\mathcal F_{X,\gamma},
+$$
+factorization products
+$$
+\mu^{\mathcal F}_{\gamma,\eta}:
+\mathcal F_{X,\gamma}\boxtimes\mathcal F_{X,\eta}
+\longrightarrow
+\mathcal F_{X,\gamma+\eta}
+$$
+on disjoint configurations in \(\Ran(E)\), an augmentation
+\(\epsilon_{\mathcal F}:\mathcal F_X\to\omega_E\), and a proof of
+locality, descent, QME, anomaly cancellation, and finite-first
+compatibility.
+
+\smallskip
+\noindent
+\textbf{(H) Oriented compact Hall factorization object.}
+\[
+\mathcal H_X\in\Hall^{\mathrm{or,ff}}_{X,\sigma,o}.
+\]
+At finite stage it has the form
+$$
+\mathcal H_{X,N,R}
+=
+\bigoplus_{\gamma\in\Gamma_{\sigma}(N,R)}
+H^{\BM}_{E,G_\gamma}
+\left(
+\mathfrak M_{\sigma,\gamma},
+\van_\gamma\otimes\mathcal L_{o,\gamma}
+\right),
+$$
+where \(\mathfrak M_{\sigma,\gamma}\) is a derived critical moduli
+stack of compact objects, \(\mathcal L_{o,\gamma}\) is a strong
+orientation line, and Hall multiplication is the pull-push
+$$
+\mu^{\mathcal H}_{\gamma,\eta}:
+\mathcal H_{X,\gamma}\otimes\mathcal H_{X,\eta}
+\xrightarrow{\,p^*,\,\mathrm{TS}_o,\,q_!\,}
+\mathcal H_{X,\gamma+\eta}
+$$
+along extension correspondences
+$$
+\mathfrak M_{\sigma,\gamma}\times\mathfrak M_{\sigma,\eta}
+\xleftarrow{\ p\ }
+\mathfrak E_{\gamma,\eta}
+\xrightarrow{\ q\ }
+\mathfrak M_{\sigma,\gamma+\eta}.
+$$
+It also contains the three comparison maps
+$$
+\Theta^{\mathrm{or}}_{\hCS\to\Hall}:
+\mathcal F_X\longrightarrow\mathcal H_X,
+\qquad
+\mathcal D_\hbar:
+\mathcal H_X^+\widehat{\otimes}\mathcal H_X^-
+\longrightarrow
+\mathcal D_\hbar(\mathcal H_X),
+$$
+and
+$$
+\Psi^+_{\Hall\to\BKM}:
+\Prim_{\mathrm{prot}}(\mathcal H_X)^+
+\longrightarrow
+\mathfrak n_+(\mathcal A_{\mathrm{den}}).
+$$
+The orientation character is required to be
+$$
+\epsilon_o=\nu_{\Delta_5}.
+$$
+
+\smallskip
+\noindent
+\textbf{(C) Chiral bar coalgebra.}
+\[
+C_X\in\Coalg^{\mathrm{conil,ff}}_{E,\Gamma}.
+\]
+It is supplied with a charge-preserving quasi-isomorphism of conilpotent
+coalgebras
+$$
+b_X:
+C_X\xrightarrow{\ \simeq\ }
+\barB_E^{\mathrm{ch}}(\mathcal F_X),
+$$
+or, if the two-colour Vol.~II route is used,
+$$
+b_X:
+C_X\xrightarrow{\ \simeq\ }
+\barB_{\mathsf{SC}^{\mathrm{ch,top}}}
+\left(
+Z^{\mathrm{der}}_{\mathrm{ch}}(\mathcal F_X),\mathcal F_X
+\right).
+$$
+The second line is legitimate only after the derived-centre pair is
+constructed.  For a single chiral algebra, the promotion to the
+two-colour \(\mathsf{SC}^{\mathrm{ch,top}}\)-algebra is additional
+structure, not notation.
+
+\smallskip
+\noindent
+\textbf{(Theta) Koszul comparison map.}
+\[
+\Theta_{\mathrm{Kos}}:
+\Omegach_E C_X
+\longrightarrow
+\Den_{\Delta_5,E}
+\]
+is a morphism in \(\ChAlg^{\mathrm{ff}}_{E,\Gamma}\), equivalently a
+twisting cochain
+$$
+\tau_{\mathrm{Kos}}:
+C_X\longrightarrow \Den_{\Delta_5,E}[1],
+$$
+satisfying the chiral Maurer--Cartan equation.  It is required to be a
+quasi-isomorphism after every finite truncation and after passage to the
+finite-first inverse limit.
+
+\smallskip
+\noindent
+\textbf{(Pi) Primitive Lie comparison.}
+\[
+\Pi_{\mathrm{prim}}:
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+\xrightarrow{\ \sim\ }
+\mathcal A_{\mathrm{den}}
+\]
+is an isomorphism in \(\LieSAlg_{\Gamma}\), with components
+$$
+\Pi_{\mathrm{prim},\gamma}:
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_\gamma
+\xrightarrow{\ \sim\ }
+\mathcal A_{\mathrm{den},\alpha(\gamma)}.
+$$
+It must identify the Hall/factorization super-commutator with the
+Borcherds bracket, including real Serre relations, imaginary simple-root
+parities and multiplicities, orthogonality relations, and the radical
+quotient in the completed Hall--Drinfeld double.
+\end{definition}
+
+\subsection{Compatibility diagrams}
+\label{subsec:cell-eleven-diagrams}
+
+The five objects are not independent decorations.  They must satisfy
+the following diagrams.
+
+\begin{enumerate}
+\item \textbf{Finite-first transition compatibility.}  For
+\((N,R)\leq(N',R')\),
+$$
+\begin{array}{ccc}
+\Omegach_E C_{X,N',R'} & \xrightarrow{\Theta_{\mathrm{Kos},N',R'}}
+& \Den_{\Delta_5,E,N',R'}\\
+\downarrow && \downarrow\\
+\Omegach_E C_{X,N,R} & \xrightarrow{\Theta_{\mathrm{Kos},N,R}}
+& \Den_{\Delta_5,E,N,R}.
+\end{array}
+$$
+The vertical arrows are transition maps in the completed category.
+Quasi-isomorphism is first checked at finite stage and then passed to
+the limit by the stated completeness argument.
+
+\item \textbf{Bar-cobar compatibility with the compact source.}
+$$
+\begin{array}{ccc}
+\Omegach_E C_X
+& \xrightarrow{\Theta_{\mathrm{Kos}}}
+& \Den_{\Delta_5,E}\\
+\downarrow{\scriptstyle \Omegach_E b_X}
+&&
+\uparrow{\scriptstyle \Theta_{\mathcal F}}\\
+\Omegach_E\barB_E^{\mathrm{ch}}(\mathcal F_X)
+& \xrightarrow{\varepsilon_{\mathcal F}}
+& \mathcal F_X
+\end{array}
+$$
+Here \(\varepsilon_{\mathcal F}\) is the Vol.~I counit.  The right-hand
+map \(\Theta_{\mathcal F}\) is not an extra theorem: it is the induced
+factorization realization map, and it exists only if the diagram is
+constructed.  Without this square, \(\Theta_{\mathrm{Kos}}\) is merely a
+map from an abstract coalgebra to the current envelope.
+
+\item \textbf{Primitive bracket compatibility.}  For all
+\(\gamma,\eta\in\Gamma_{\mathrm{eff}}\),
+$$
+\begin{array}{ccc}
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_\gamma
+\otimes
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_\eta
+& \xrightarrow{[-,-]_{\mathcal F}}
+& H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_{\gamma+\eta}\\
+\downarrow{\scriptstyle \Pi_{\mathrm{prim},\gamma}\otimes
+\Pi_{\mathrm{prim},\eta}}
+&&
+\downarrow{\scriptstyle \Pi_{\mathrm{prim},\gamma+\eta}}\\
+\mathcal A_{\mathrm{den},\alpha(\gamma)}
+\otimes
+\mathcal A_{\mathrm{den},\alpha(\eta)}
+& \xrightarrow{[-,-]_{\BKM}}
+& \mathcal A_{\mathrm{den},\alpha(\gamma+\eta)}
+\end{array}
+$$
+This square is the bracket theorem.  The equality of signed dimensions
+does not imply it.
+
+\item \textbf{Protected integration and denominator compatibility.}
+$$
+\begin{array}{ccc}
+K_0 H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_\gamma
+& \xrightarrow{\chi^{\mathrm{prot}}}
+& \Z\\
+\downarrow{\scriptstyle K_0\Pi_{\mathrm{prim},\gamma}}
+&&
+\Vert\\
+K_0\mathcal A_{\mathrm{den},\alpha(\gamma)}
+& \xrightarrow{\sdim}
+& \Z
+\end{array}
+$$
+The common value must be
+$$
+\chi^{\mathrm{prot}}(\gamma)
+=\sdim\mathcal A_{\mathrm{den},\alpha(\gamma)}
+=f(nm,l),
+\qquad \gamma=(n,l,m).
+$$
+Consequently the protected determinant is
+$$
+e^{-2\pi i(\rho,z)}
+\prod_{\gamma\in\Gamma_{\mathrm{eff}}}
+\left(1-e^{-2\pi i(\alpha(\gamma),z)}\right)^{
+\chi^{\mathrm{prot}}(\gamma)}
+=64^{-1}\Delta_5(2Z).
+$$
+
+\item \textbf{Hall--Drinfeld/BKM compatibility.}
+The positive-half comparison must commute with Hall brackets:
+$$
+\begin{array}{ccc}
+\Prim_{\mathrm{prot}}(\mathcal H_X)^+_\gamma
+\otimes
+\Prim_{\mathrm{prot}}(\mathcal H_X)^+_\eta
+& \xrightarrow{[-,-]_{\Hall}}
+& \Prim_{\mathrm{prot}}(\mathcal H_X)^+_{\gamma+\eta}\\
+\downarrow{\scriptstyle \Psi^+_{\Hall\to\BKM}\otimes
+\Psi^+_{\Hall\to\BKM}}
+&&
+\downarrow{\scriptstyle \Psi^+_{\Hall\to\BKM}}\\
+\mathfrak n_{+,\alpha(\gamma)}(\mathcal A_{\mathrm{den}})
+\otimes
+\mathfrak n_{+,\alpha(\eta)}(\mathcal A_{\mathrm{den}})
+& \xrightarrow{[-,-]_{\BKM}}
+& \mathfrak n_{+,\alpha(\gamma+\eta)}(\mathcal A_{\mathrm{den}}).
+\end{array}
+$$
+The completed pairing and radical quotient are required to make
+\(\mathcal D_\hbar(\mathcal H_X)\) descend to the Borcherds double with
+orientation character \(\nu_{\Delta_5}\).
+\end{enumerate}
+
+\subsection{Sufficiency theorem}
+\label{subsec:cell-eleven-sufficiency}
+
+\begin{theorem}[Finite dossier suffices]
+\label{thm:cell-eleven-dossier-suffices}
+If the five objects of Definition~\ref{def:cell-eleven-five-datum}
+exist and satisfy the diagrams of
+Section~\ref{subsec:cell-eleven-diagrams}, then
+\(\Den_{\Delta_5,E}\) is the compact \(K3\times E\)
+factorization--Koszul realization of the Igusa denominator algebra:
+$$
+\Omegach_E C_X\xrightarrow{\ \simeq\ }\Den_{\Delta_5,E}.
+$$
+Moreover,
+$$
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+\cong
+\mathfrak g_{\Delta_5}
+$$
+as charge-graded Lie superalgebras, and its denominator is
+\(64^{-1}\Delta_5(2Z)\).
+\end{theorem}
+
+\begin{proof}
+The first assertion is exactly the quasi-isomorphism
+\(\Theta_{\mathrm{Kos}}\).  The primitive bracket square identifies the
+protected primitive bracket with the Borcherds bracket of
+\(\mathcal A_{\mathrm{den}}\).  The protected integration square gives
+the signed multiplicity equality \(f(nm,l)\).  Substitution into the
+Borcherds product gives \(64^{-1}\Delta_5(2Z)\).  No scalar identity is
+used to manufacture the chain-level data; it enters only after the
+primitive comparison has been proved.
+\end{proof}
+
+\subsection{Attack on existing material}
+\label{subsec:cell-eleven-attack-status}
+
+\begin{theorem}[No object is presently built from Vol.~I--III]
+\label{thm:cell-eleven-none-built}
+The present manuscript, the local agent material, and the locally
+available Vol.~I--III anchors do not construct the five-object datum
+\(\mathfrak K_X\).
+\end{theorem}
+
+\begin{proof}
+The check is object by object.
+
+For \(\mathcal F_X\), Vol.~III records the two-stage
+factorization architecture and lists the chain-level
+\(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\) and non-abelian
+\(\Obs^{\mathrm q,E}_{\hCS}(K3\times E)\simeq\mathfrak g_{\Delta_5}\)
+as frontier targets.  This is not a constructed compact BV observable
+factorization algebra on \(\Ran(E)\) with QME, descent, anomaly
+cancellation, charge completion, and augmentation.
+
+For \(\mathcal H_X\), the local compact Hall notes construct a finite
+Hall object only after an Igusa compact Hall atlas is supplied.  The
+atlas itself requires an extension-closed heart, stability condition,
+HN finiteness, critical charts, strong orientation, extension
+correspondences, and reduced or equivariant \(E\)-descent.  The OP
+Hilbert-scheme scalar branch is proper and Behrend-weighted, but it is
+not an extension-closed Hall stack.  The reduced \(E\)-quotient does not
+carry Hall convolution without a relative-position or equivariant
+descent kernel.
+
+For \(C_X\), Vol.~I--II supply \(\barB_E^{\mathrm{ch}}(\mathcal A)\)
+once an admissible chiral algebra \(\mathcal A\) is supplied.  Taking
+\(\mathcal A=\Den_{\Delta_5,E}\) gives only the target-internal bar
+coalgebra.  It does not produce a coalgebra identified with compact
+\(K3\times E\) observables, because \(\mathcal F_X\) is not constructed
+and its Koszul-locus hypotheses are not verified.
+
+For \(\Theta_{\mathrm{Kos}}\), the only available map is the formal
+counit
+$$
+\Omegach_E\barB_E^{\mathrm{ch}}(\Den_{\Delta_5,E})
+\longrightarrow
+\Den_{\Delta_5,E}
+$$
+under the usual Koszul-locus assumptions.  This is inversion of the
+already constructed target, not a compact source comparison.
+
+For \(\Pi_{\mathrm{prim}}\), the manuscript proves the denominator
+Lie superalgebra and the signed multiplicities.  It does not construct
+physical protected primitives or prove the Hall super-commutator
+satisfies the Gritsenko--Nikulin/Borcherds defining relations.
+
+Thus all five compact source/comparison blocks remain open.  Existing
+material supplies a precise template, not a theorem.
+\end{proof}
+
+\begin{center}
+\begingroup
+\small
+\begin{tabular}{p{0.19\textwidth}|p{0.18\textwidth}|p{0.49\textwidth}}
+\textbf{Datum} & \textbf{Status} & \textbf{Reason}\\ \hline
+\(\mathcal F_X\) & refused & Vol.~III has architecture and frontier
+targets; no compact \(K3\times E\) BV observable pushforward on
+\(\Ran(E)\).\\
+\(\mathcal H_X\) & refused & Conditional Hall technology exists only
+after the compact Hall atlas, HN sector, strong orientation, and
+reduced/equivariant convolution data.\\
+\(C_X\) & target-formal only & \(\barB(\Den)\) is available
+conditionally as target inversion; no compact bar coalgebra
+\(\barB(\mathcal F_X)\).\\
+\(\Theta_{\mathrm{Kos}}\) & refused & No compact cobar-to-current
+quasi-isomorphism; only the target counit exists conditionally.\\
+\(\Pi_{\mathrm{prim}}\) & refused & No protected primitive state space
+or Hall bracket comparison with \(\mathfrak g_{\Delta_5}\).
+\end{tabular}
+\endgroup
+\end{center}
+
+\subsection{Finite proof checklist}
+\label{subsec:cell-eleven-checklist}
+
+A proof of the compact factorization--Koszul theorem is finite.  It is
+complete exactly when the following checks are complete.
+
+\begin{enumerate}
+\item Construct a stability sector \((\mathcal A_\sigma,\sigma,S)\) for
+compact \(K3\times E\) objects with HN property, support property, and
+bounded semistable substacks.
+\item Construct finite HN truncations \(\Gamma_\sigma(N,R)\) and prove
+transition compatibility.  Do not use raw finite lower subsets of
+\(\Gamma_{\mathrm{eff}}\).
+\item Construct \(\mathcal F_X\) as a charge-completed factorization
+algebra on \(\Ran(E)\): BV fields, differential, quantum master
+equation, anomaly cancellation, locality, descent, augmentation, and
+finite-first completion.
+\item Construct \(\mathcal H_X\): critical charts
+\(\mathfrak M_{\sigma,\gamma}|_U\simeq[\Crit(f_{\gamma,U})/G_{\gamma,U}]\),
+vanishing-cycle coefficients, strong orientation lines, Hall extension
+correspondences, proper pull-push, Thom--Sebastiani transport, and
+associativity over two-step flags.
+\item Prove \(E\)-equivariant or reduced Hall descent.  In particular,
+retain the relative \(E\)-position lost by the scalar quotient.
+\item Prove the orientation character identity
+\(\epsilon_o=\nu_{\Delta_5}\).
+\item Construct
+\(\Theta^{\mathrm{or}}_{\hCS\to\Hall}\), prove it preserves products,
+coproducts, charge, orientation, and protected integration.
+\item Construct the protected primitive functor
+\(\Prim_{\mathrm{prot}}\), its super-commutator, and its charge
+conservation.
+\item Prove
+\[
+\sdim\Prim_{\mathrm{prot}}(\mathcal F_X)_{(n,l,m)}=f(nm,l)
+\]
+from protected integration, not by substituting the desired
+denominator.
+\item Construct \(C_X\) in
+\(\Coalg^{\mathrm{conil,ff}}_{E,\Gamma}\), prove conilpotence, and
+place any curvature in the declared coderived/completed category.
+\item Prove \(b_X:C_X\simeq\barB_E^{\mathrm{ch}}(\mathcal F_X)\), or
+construct the two-colour
+\(\mathsf{SC}^{\mathrm{ch,top}}\)-pair and its bar coalgebra.
+\item Verify the Koszul-locus hypotheses for \(\mathcal F_X\) at every
+finite stage and after completion.
+\item Construct the twisting cochain
+\(\tau_{\mathrm{Kos}}:C_X\to\Den_{\Delta_5,E}[1]\) and check the chiral
+Maurer--Cartan equation.
+\item Prove
+\(\Theta_{\mathrm{Kos}}:\Omegach_E C_X\to\Den_{\Delta_5,E}\) is a
+quasi-isomorphism at finite stages and in the inverse limit.
+\item Identify the three real simple protected primitives with
+\(\delta_1,\delta_2,\delta_3\).
+\item Prove the real Serre relations, imaginary simple-root parity and
+multiplicity rules, imaginary orthogonality relations, Weyl-vector
+normalization, and radical quotient.
+\item Construct the continuous Hopf pairing and the completed
+Hall--Drinfeld double \(\mathcal D_\hbar(\mathcal H_X)\).
+\item Prove the primitive bracket square for
+\(\Pi_{\mathrm{prim}}\).  This is the non-scalar bracket theorem.
+\item Only after the previous items, apply the Borcherds denominator
+identity to obtain \(64^{-1}\Delta_5(2Z)\) as the protected
+denominator.
+\end{enumerate}
+
+\subsection{Source anchors used}
+\label{subsec:cell-eleven-source-anchors}
+
+The refusal above uses the following local anchors.
+\begin{itemize}
+\item \verb|proj.tex:1304|--\verb|1333|: formal current envelope and
+formal current square root.
+\item \verb|proj.tex:1347|--\verb|1475|: microscopic Hall--Drinfeld
+criterion, open problem, and chiral Koszul refusal.
+\item \verb|agent_material/10_chiral_koszul_construction_or_refusal.tex:67|:
+five-block compact Koszul datum.
+\item \verb|agent_material/08_compact_hall_factorization_object.tex:88|:
+missing compact Hall atlas.
+\item \verb|agent_material/10_compact_hall_atlas_attack_heal.tex:130|:
+finite-first means HN-first; raw lower sets are not enough.
+\item \verb|agent_material/10_compact_hall_atlas_attack_heal.tex:220|:
+reduced \(E\)-quotient does not automatically carry Hall convolution.
+\item \verb|agent_material/06_vol3_homotopy_positive_cone_dictionary.tex:84|:
+Vol.~III is a microscopic descent source only after the comparison data.
+\item \verb|/Users/raeez/chiral-bar-cobar-vol2/main.tex:1536|--\verb|1554|:
+Vol.~I notation, bar-cobar adjunction, and Koszul-locus inversion.
+\item \verb|/Users/raeez/chiral-bar-cobar-vol2/CLAUDE.md:262|:
+\(\Omega B(A)=A\) is inversion, not Koszul duality.
+\item \verb|/Users/raeez/chiral-bar-cobar/compute/audit/forgetful_e_infty_to_e1_report.md:112|:
+\(\mathsf{SC}^{\mathrm{ch,top}}\) bar-cobar requires conilpotent
+coalgebras and a two-colour pair.
+\item \verb|/Users/raeez/calabi-yau-quantum-groups/FRONTIER.md:9| and
+\verb|:17|: chain-level \(K3,E\) specialization and non-abelian hCS
+observable pushforward are open frontier targets.
+\item \verb|/Users/raeez/calabi-yau-quantum-groups/main.tex:790|--\verb|798|:
+\(\mathbf H_{\Delta_5}\) is expected after oriented hCS--Hall and
+protected trace comparison data are supplied.
+\end{itemize}
+
+\subsection{Replacement block for the manuscript}
+\label{subsec:cell-eleven-replacement-block}
+
+The following block is safe replacement language for the chiral
+factorization/Koszul discussion in the manuscript.
+
+\begin{quote}
+\itshape
+The object constructed here is the denominator algebra
+\(\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}\) and its
+Beilinson--Drinfeld current envelope
+\[
+\Den_{\Delta_5,E}
+=U_E^{\mathrm{ch}}
+\left(\mathcal A_{\mathrm{den}}\otimes\mathcal O_E\right).
+\]
+This is a formal chiral algebra on \(E\).  Its constant-mode primitive
+Lie superalgebra is the Gritsenko--Nikulin/Borcherds denominator
+algebra, with denominator \(64^{-1}\Delta_5(2Z)\).  It is not, by
+itself, the compact \(K3\times E\) BPS factorization algebra and it is
+not a chiral Koszul-duality theorem.
+
+A compact factorization--Koszul theorem would require five additional
+chain-level data: a compact observable factorization algebra
+\(\mathcal F_X\) on \(\Ran(E)\); an oriented compact Hall object
+\(\mathcal H_X\) with protected integration and
+\(\epsilon_o=\nu_{\Delta_5}\); a conilpotent chiral bar coalgebra
+\(C_X\simeq\bar B_E^{\mathrm{ch}}(\mathcal F_X)\) in the completed
+Vol.~I--II category; a cobar quasi-isomorphism
+\(\Theta_{\mathrm{Kos}}:\Omega_E^{\mathrm{ch}}C_X\simeq
+\Den_{\Delta_5,E}\); and a primitive Lie comparison
+\(\Pi_{\mathrm{prim}}:H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\simeq
+\mathfrak g_{\Delta_5}\) preserving all Borcherds relations.  The
+Oberdieck--Pixton scalar square and the formal current construction do
+not supply these data.  Until they are constructed, the physical
+statement is a conditional realization problem, not a proved compact
+Koszul theorem.
+\end{quote}

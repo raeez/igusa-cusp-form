@@ -1,0 +1,279 @@
+\section{Physical charge lattice and denominator polarization}
+\label{sec:physical-charge-lattice-duality}
+
+The compactification supplies a charge problem before one chooses a
+Siegel cusp.  The cusp product is obtained after three reductions:
+pass from microscopic charges to their rank-two Gram invariants, choose
+the standard Fock polarization, and retain only the active Jacobi
+support.  The Lorentzian denominator lattice then appears by an explicit
+anti-isometry.  The bracket-level BPS algebra is not part of this
+derivation.
+
+\begin{assumption}[Physical two-charge input]
+The protected sector is indexed, at the level of the index, by pairs of
+charges $(Q,P)$ in an even integral charge lattice.  The protected
+index depends on the pair only through the three T-duality invariants
+$$
+n=\frac{(Q,Q)}2,\qquad l=(Q,P),\qquad m=\frac{(P,P)}2.
+$$
+Equivalently, it factors through the half-integral symmetric matrix
+$$
+T(\gamma)=T(n,l,m)=
+\begin{pmatrix}n&l/2\\ l/2&m\end{pmatrix},
+\qquad \gamma=(n,l,m)\in\Z^3.
+$$
+This is the Harvey--Moore/Dijkgraaf--Verlinde--Verlinde charge
+grading input \cite{HM,DVV}.  It is physical input, not a theorem
+proved from the curve-counting geometry in this paper.
+\end{assumption}
+
+\begin{proposition}[Gram-invariant index lattice]
+After passing to rank-two Gram invariants, the universal index lattice is
+$$
+\Gamma_{\mathrm{BPS}}=\Z^3
+=\{(n,l,m)\mid T(n,l,m)\in\operatorname{Sym}_2(\tfrac12\Z),
+\ T_{11},T_{22}\in\Z,\ 2T_{12}\in\Z\}.
+$$
+Its discriminant is
+$$
+\Delta(\gamma)=\det(2T(\gamma))=4nm-l^2.
+$$
+The polarized bilinear form is
+$$
+\langle\gamma,\gamma'\rangle_{\mathrm{BPS}}
+=2(nm'+n'm)-ll',
+\qquad \gamma'=(n',l',m').
+$$
+\end{proposition}
+
+\begin{proof}
+Evenness of the charge lattice gives
+$(Q,Q)/2,(P,P)/2\in\Z$ and $(Q,P)\in\Z$.  Hence the Gram matrix of
+$(Q,P)$ maps to $2T(n,l,m)$ in the displayed lattice.  The Borcherds
+product uses the full automorphic completion of this Gram-invariant
+lattice; no assertion is made here that every triple is realized by a
+microscopic pair in a fixed compactification.  The determinant is
+$4nm-l^2$.  The displayed pairing is one half of the polarization of
+this quadratic form:
+$$
+\Delta(\gamma+\gamma')-\Delta(\gamma)-\Delta(\gamma')
+=2\langle\gamma,\gamma'\rangle_{\mathrm{BPS}}.
+$$
+\end{proof}
+
+\begin{proposition}[Anti-isometry to the type-II Lorentzian lattice]
+Let
+$$
+\La^{2,1}_{II}=2\Z f_2\oplus\Z f_3\oplus 2\Z f_{-2},
+\qquad
+(f_2,f_{-2})=-1,\qquad (f_3,f_3)=2.
+$$
+Define
+$$
+\alpha:\Gamma_{\mathrm{BPS}}\longrightarrow\La^{2,1}_{II},
+\qquad
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}.
+$$
+Then
+$$
+(\alpha(\gamma),\alpha(\gamma'))
+=-2\langle\gamma,\gamma'\rangle_{\mathrm{BPS}},
+\qquad
+(\alpha(\gamma),\alpha(\gamma))=-2(4nm-l^2).
+$$
+For $z=z_1f_{-2}+z_2f_3+z_3f_2$,
+$$
+q^nr^ls^m
+=\exp(2\pi i(nz_1+lz_2+mz_3))
+=\exp(-\pi i(\alpha(\gamma),z)).
+$$
+\end{proposition}
+
+\begin{proof}
+For $\gamma=(n,l,m)$ and $\gamma'=(n',l',m')$,
+$$
+(\alpha(\gamma),\alpha(\gamma'))
+=2ll'-4nm'-4n'm
+=-2\{2(nm'+n'm)-ll'\}.
+$$
+The character identity follows from
+$$
+(\alpha(n,l,m),z)=-2(nz_1+lz_2+mz_3).
+$$
+\end{proof}
+
+\begin{remark}[What this proves physically]
+The charge lattice, discriminant, and Lorentzian degree map are not
+modular-form conventions.  They follow from the even two-charge Gram
+matrix and from the chosen genus-two chemical potentials after passage
+to the universal Gram-invariant index lattice.  What is not proved here
+is the microscopic assertion that the full compactification index
+factors through these three invariants for every physical sector of
+$K3\times E$ curve counting, or that every formal triple in $\Z^3$ is
+realized by an actual charge pair in the chosen compactification.
+\end{remark}
+
+\begin{proposition}[The duality group is mathematical; its physical
+identification is input]
+Let $\La^4=\Z e_1\oplus\cdots\oplus\Z e_4$, put
+$$
+q_0=e_1\wedge e_3+e_2\wedge e_4,
+\qquad
+\La^{3,2}=q_0^\perp\subset\wedge^2\La^4,
+$$
+and use the Pfaffian pairing on $\wedge^2\La^4$.  Then the
+exterior-square representation gives
+$$
+\PSp_4(\Z)\simeq\SO_+(\La^{3,2})
+\simeq\Orth(\La^{3,2})_+/\{\pm\Id_5\}.
+$$
+This identifies the Siegel period domain $\Hpl_2$ with the type-IV
+domain of $\La^{3,2}$.
+\end{proposition}
+
+\begin{proof}
+The subgroup of $\SL(\La^4)$ fixing $q_0$ under $\wedge^2$ is the
+symplectic group of the alternating form
+$$
+B_{q_0}(x,y)\operatorname{vol}:=-x\wedge y\wedge q_0.
+$$
+The Pfaffian form on $\wedge^2\La^4$ has signature $(3,3)$, and
+$q_0^\perp$ has signature $(3,2)$.  The exterior-square action preserves
+$q_0^\perp$ and the positive type-IV component.  Its kernel on
+$q_0^\perp$ is $\{\pm\Id_4\}$, giving the displayed exceptional
+isomorphism.  The computation is the lattice calculation in the
+exterior-square section; it is independent of the Borcherds product.
+\end{proof}
+
+\begin{remark}[Physical status of duality]
+The preceding proposition is a theorem about integral lattices.  The
+identification of this group with the physical duality group of the
+compactification is an additional physical input.  The paper uses it
+only in the following restricted sense: the protected determinant is an
+automorphic section for this group, and the standard cusp is one
+polarization of the same charge lattice.
+\end{remark}
+
+\begin{definition}[Active charge support]
+Let
+$$
+\Gamma_{\mathrm{act}}
+=\{\gamma=(n,l,m)\in\Gamma_{\mathrm{eff}}\mid f(nm,l)\neq0\}.
+$$
+By the weak-Jacobi support condition for $\phi_{0,1}\in J^{\mathrm{weak}}_{0,1}$,
+$$
+\gamma\in\Gamma_{\mathrm{act}}
+\quad\Longrightarrow\quad
+4nm-l^2\geq -1.
+$$
+The inactive triples in $\Gamma_{\mathrm{eff}}\setminus\Gamma_{\mathrm{act}}$
+are ordering data only; their product exponents are zero.
+\end{definition}
+
+\begin{lemma}[Active support lands in the simple-root cone]
+Let
+$$
+\delta_1=2f_2-f_3,\qquad
+\delta_2=2f_{-2}-f_3,\qquad
+\delta_3=f_3.
+$$
+For every $\gamma=(n,l,m)\in\Gamma_{\mathrm{act}}$,
+$$
+\alpha(\gamma)=n\delta_1+m\delta_2+(n+m-l)\delta_3,
+$$
+with
+$$
+n\geq0,\qquad m\geq0,\qquad n+m-l\geq0.
+$$
+Therefore
+$$
+\alpha(\Gamma_{\mathrm{act}})
+\subset
+\Z_{\geq0}\delta_1+\Z_{\geq0}\delta_2+\Z_{\geq0}\delta_3.
+$$
+\end{lemma}
+
+\begin{proof}
+The displayed decomposition is immediate:
+$$
+n(2f_2-f_3)+m(2f_{-2}-f_3)+(n+m-l)f_3
+=2nf_2-lf_3+2mf_{-2}.
+$$
+The standard effective chamber gives $n,m\geq0$.  It remains to prove
+$n+m-l\geq0$.  If $n=0$ or $m=0$, the support condition gives
+$l^2\leq1$, and the three boundary cases in $\Gamma_{\mathrm{eff}}$
+give $l\leq n+m$.  If $n,m>0$ and $l\geq n+m+1$, then
+$$
+l^2\geq(n+m+1)^2
+=4nm+(n-m)^2+2(n+m)+1>4nm+1,
+$$
+contradicting $l^2\leq4nm+1$.  Hence $l\leq n+m$ in all cases.
+\end{proof}
+
+\begin{proposition}[Borcherds cone from active support]
+The proof-grade Borcherds cone in the standard cusp is
+$$
+\Cone_{\mathrm{Borch}}
+=\R_{\geq0}\,\alpha(\Gamma_{\mathrm{act}})
+=\R_{\geq0}\delta_1+\R_{\geq0}\delta_2+\R_{\geq0}\delta_3.
+$$
+The three extremal rays are active:
+$$
+\delta_1=\alpha(1,1,0),\qquad
+\delta_2=\alpha(0,1,1),\qquad
+\delta_3=\alpha(0,-1,0),
+$$
+and each has discriminant $-1$ and square $2$.
+\end{proposition}
+
+\begin{proof}
+The lemma gives the inclusion ``$\subset$''.  The three displayed
+charges lie in $\Gamma_{\mathrm{eff}}$ and have
+$$
+f(0,1)=1,\qquad f(0,-1)=1,
+$$
+so they lie in $\Gamma_{\mathrm{act}}$.  Hence the three generators
+$\delta_i$ lie in $\alpha(\Gamma_{\mathrm{act}})$, proving the reverse
+inclusion of cones.  Since
+$$
+4nm-l^2=-1
+$$
+for the three displayed charges, the anti-isometry gives
+$(\delta_i,\delta_i)=2$.
+\end{proof}
+
+\begin{remark}[Attack on the full-semigroup cone]
+One must not define the Borcherds cone using all of
+$\alpha(\Gamma_{\mathrm{eff}})$ unless zero-exponent triples are
+removed.  For example
+$$
+\gamma=(0,2,1)\in\Gamma_{\mathrm{eff}},
+\qquad
+4nm-l^2=-4,
+\qquad
+f(0,2)=0,
+$$
+and
+$$
+\alpha(\gamma)=2f_{-2}-2f_3
+=0\cdot\delta_1+1\cdot\delta_2-1\cdot\delta_3
+\notin\R_{\geq0}\delta_1+\R_{\geq0}\delta_2+\R_{\geq0}\delta_3.
+$$
+Thus the chamber is forced by the active Jacobi support, not by the
+lexicographic ordering alone.
+\end{remark}
+
+\begin{remark}[Residual physical assumption]
+The derivation above proves the lattice algebra, the discriminant
+pairing, the anti-isometry to $\La^{2,1}_{II}$, the exterior-square
+duality group, and the active-support cone.  It does not prove from
+first principles that the compactification produces the physical
+duality group $\PSp_4(\Z)$, that every protected BPS index is a function
+only of $(Q^2/2,Q\cdot P,P^2/2)$, that every formal Gram triple in
+$\Gamma_{\mathrm{BPS}}$ is realized by a microscopic charge pair, or
+that the automorphic real-root walls are microscopic walls of marginal
+stability.  Those are the remaining physical assumptions.  This agrees
+with the Vol.~III status: the Igusa boundary supplies the
+decategorified denominator and positive half; the bracket-level
+Hall--Drinfeld/BPS realization remains open.
+\end{remark}

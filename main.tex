@@ -6,7 +6,7 @@
 
 \title{\texorpdfstring{\textit{The Square Root of the Igusa Partition Function}\\[0.5em]\small A Borcherds lift of the weak Jacobi form $\phi_{0,1}$, generalized Borcherds--Kac--Moody superalgebras, and the Igusa cusp form $\Delta_5$}{The Square Root of the Igusa Partition Function: A Borcherds lift of the weak Jacobi form phi 0,1, generalized Borcherds--Kac--Moody superalgebras, and the Igusa cusp form Delta 5}}
 \author{Raeez Lorgat}
-\date{April 2, 2020}
+\date{Original note: April 2020. Current revision: April 2026.}
 
 %\usepackage{natbib}
 % theorem environments provided by raeez-math-template
@@ -53,56 +53,150 @@
 \maketitle
 
 \begin{abstract}
-For \(X=S\times E\),
-$$
+For \(X=S\times E\), Oberdieck--Pixton's primitive reduced
+curve-counting theorem, with the monic Igusa normalization used here,
+reads
+\[
 Z^X_{\mathrm{OP}}
 =-\left(\chi_{10}^{\mathrm{OP}}\right)^{-1}
-=-4096\,\Delta_5^{-2}.
-$$
-With Eichler--Zagier normalization $Z_{\mathrm{K3}}=2\phi_{0,1}$, write
-$$\phi_{0,1}=\sum f(n,l)q^nr^l.$$
-Set
-$$
-[\mathbb U_{n,l}]\in K_0(\mathrm{sVect}_{\mathrm{fd}}),\qquad
-\sdim\mathbb U_{n,l}=f(n,l),\qquad
-\mathcal V_{(n,l,m)}:=\mathbb U_{nm,l}.
-$$
-$$
+=-4096\,\Delta_5(Z)^{-2}.
+\]
+This paper identifies the canonical automorphic square root of this
+scalar identity.  It is not an analytic branch.  It is the Borcherds
+product of the half-normalized K3 elliptic genus:
+\[
+Z_{\mathrm{K3}}=2\phi_{0,1},\qquad
+\phi_{0,1}=\sum f(n,l)q^nr^l,\qquad
+\operatorname{Borch}(\phi_{0,1})=\Delta_5.
+\]
+Equivalently, for a virtual super vector space
+\(\mathbb U_{n,l}\) with
+\(\sdim\mathbb U_{n,l}=f(n,l)\), the Fock superdeterminant
+\[
 \mathcal D_X
 =64q^{1/2}r^{1/2}s^{1/2}
-\prod_{\gamma=(n,l,m)\in\Gamma_{\mathrm{eff}}}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}
-=\Delta_5,\qquad
-\mathcal D_X^2=-4096/Z^X_{\mathrm{OP}}.
-$$
-$$
-\langle\gamma,\gamma'\rangle_{\mathrm{ind}}
-=2(nm'+n'm)-ll',\qquad
-\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},
-$$
-$$
-(\alpha(\gamma),\alpha(\gamma'))
-=-2\langle\gamma,\gamma'\rangle_{\mathrm{ind}},\qquad
-\Cone_{\mathrm{Borch}}=\R_{\ge0}\alpha(\Gamma_{\mathrm{act}}).
-$$
-$$
-\mathcal A_{\mathrm{den}}:=\mathfrak g_{\Delta_5},\qquad
-\operatorname{den}(\mathcal A_{\mathrm{den}})
-=64^{-1}\Delta_5(2Z).
-$$
-For \(\gamma=(n,l,m)\in\Gamma_{\mathrm{act}}\),
-$$
-\smult(\alpha(\gamma))=f(nm,l).
-$$
-The microscopic comparison problem is
-$$
-\Prim_{\mathrm{prot}}\mathcal P^{\mathrm{Hall}}_{X,\sigma,o}
-\stackrel{?}{\cong}\mathcal A_{\mathrm{den}}.
-$$
+\]
+is \(\Delta_5\).
+
+The same coefficients are the signed root multiplicities in the
+Gritsenko--Nikulin denominator algebra.  Under
+\[
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
+\]
+one has
+\[
+\operatorname{den}(\mathfrak g_{\Delta_5})
+=64^{-1}\Delta_5(2Z),\qquad
+\smult\mathfrak g_{\Delta_5,\alpha(n,l,m)}=f(nm,l)
+\]
+on the active support.  Thus the square-root ladder is
+\[
+Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2},\qquad
+\Delta_5=\operatorname{Borch}(\phi_{0,1}),\qquad
+\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z).
+\]
+
+The construction is a normalization and denominator-algebra comparison.
+It does not construct a microscopic BPS Hilbert space or a compact
+Hall/chiral factorization algebra.  Those data are isolated as the
+realization problem.  The final part records the eight
+Clery--Gritsenko diagonal-divisor rows, the Gritsenko--Nikulin and
+Govindarajan CHL/Weyl--Kac--Borcherds denominator theorems attached to
+them, and the still-open physical row-map problem.
 \end{abstract}
 
 \bigskip
 \tableofcontents
+
+\section{Introduction and claim strength}
+\label{sec:introduction-claim-strength}
+
+The paper has two arcs.
+
+First, the \(N=1\) Igusa arc fixes the square-root normalization of the
+primitive \(K3\times E\) scalar partition function:
+\[
+Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2},\qquad
+\Delta_5=\operatorname{Borch}(\phi_{0,1}),\qquad
+\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z).
+\]
+The input is the half-normalized K3 elliptic genus
+\[
+Z_{\mathrm{K3}}=2\phi_{0,1}.
+\]
+The output is a virtual Fock determinant and the known
+Gritsenko--Nikulin denominator algebra.  No canonical half of the K3
+Hilbert space is constructed.
+
+Second, the diagonal-divisor arc records the eight Clery--Gritsenko
+forms
+\[
+\Delta_5,\Delta_2,\Delta_1,\Delta_{1/2},
+\nabla_3,\nabla_2,\nabla_{3/2},Q_1
+\]
+and separates four levels of structure:
+\[
+\hbox{automorphic product}
+\quad<\quad
+\hbox{Weyl--Kac--Borcherds denominator}
+\quad<\quad
+\hbox{scalar square}
+\quad<\quad
+\hbox{physical Hall/chiral host}.
+\]
+Rows \(1\)--\(4\) are governed by the Gritsenko--Nikulin denominator
+theorems.  Rows \(5\)--\(8\) have Clery--Gritsenko products and
+Govindarajan CHL/WKB denominator identities.  A physical row map, a
+reduced enumerative partition theorem, and a compact Hall/chiral source
+remain additional data.
+
+\begin{center}
+\small
+\begin{tabular}{p{0.25\textwidth}p{0.30\textwidth}p{0.34\textwidth}}
+\hline
+Object & Status & Source of the status \\
+\hline
+\(Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\) &
+proved scalar identity &
+Oberdieck--Pixton, with the normalization checked here \\
+\(\mathcal D_X=\Delta_5\) &
+virtual Fock determinant, not a Hilbert space &
+the \(K_0\)-class \(\mathbb U_{n,l}\) and
+Borcherds--Gritsenko--Nikulin product theorem \\
+\(\mathfrak g_{\Delta_5}\) &
+known denominator algebra &
+Gritsenko--Nikulin automorphic correction \\
+\(\mathsf{Den}_{\Delta_5,E}\) &
+formal current envelope &
+Beilinson--Drinfeld current construction applied to
+\(\mathfrak g_{\Delta_5}\) \\
+compact Hall/chiral BPS realization &
+open problem &
+requires orientation, protected integration, sectorial Hall completion,
+and primitive bracket comparison \\
+eight diagonal-divisor rows &
+automorphic and denominator catalogue &
+Clery--Gritsenko products; Gritsenko--Nikulin rows \(1\)--\(4\);
+Govindarajan CHL/WKB rows \(5\)--\(8\) \\
+physical row maps for rows \(5\)--\(8\) &
+conjectural/open &
+requires a CHL/CY/DT/chiral host and a reduced scalar theorem
+\(Z_j=C_jF_j^{-2}\) \\
+\hline
+\end{tabular}
+\end{center}
+
+All super vector spaces in the representation-theoretic constructions
+are over \(\C\).  Real vector spaces occur only after tensoring
+lattices with \(\R\) to discuss cones, chambers, and period domains.
+Products may be written over \(\Gamma_{\mathrm{eff}}\); the active
+factors are exactly the triples in \(\Gamma_{\mathrm{act}}\), where
+the exponent \(f(nm,l)\) is non-zero.
+
+\part{\texorpdfstring{The \(N=1\) Igusa square root}
+{The N=1 Igusa square root}}
 
 \section{The duality principle}
 \label{sec:duality-principle}
@@ -1431,6 +1525,89 @@ superalgebra.  The denominator statement is exactly
 Theorem \ref{thm:bracket-level-square-root}.
 \end{proof}
 
+\begin{definition}[Quantum upgrade problem]
+The determinant and denominator results above are protected
+Euler-characteristic statements.  The quantum upgrade asks for the
+chain-level source whose Euler shadow is that determinant.
+
+For \(X=K3\times E\), a quantum source for the Igusa square root is a
+local BV quantum theory on \(X\), with action
+$$
+I=I_{\mathrm{cl}}+\hbar I_1+\hbar^2I_2+\cdots
+$$
+satisfying the quantum master equation, descent, and anomaly
+cancellation in the completed charge category.  Its quantum observables
+are then pushed forward along
+$$
+p_E:X\longrightarrow E
+$$
+to a charge-completed factorization algebra on \(\operatorname{Ran}(E)\):
+$$
+\mathcal F_X
+\simeq
+(p_E)_*\operatorname{Obs}^q(X).
+$$
+The expected holomorphic/topological model is the compact
+holomorphic-Chern--Simons source
+\(\operatorname{Obs}^{q,E}_{\mathrm{hCS}}(K3\times E)\), but this paper
+does not construct it.
+
+The required quantum statement is the pair of comparisons
+$$
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+\cong
+\mathfrak g_{\Delta_5},
+\qquad
+\Omega_E^{\mathrm{ch}}C_X
+\simeq
+\mathsf{Den}_{\Delta_5,E}.
+$$
+The first comparison is the bracket theorem.  The second is the chiral
+Koszul theorem.  Both require microscopic data beyond the scalar square
+and beyond the formal current envelope.
+\end{definition}
+
+\begin{proposition}[Why factorization is the natural quantum form]
+Assume the local BV source in the preceding definition has been
+constructed.  Then the quantum observables form a Costello--Gwilliam
+factorization algebra \cite{CostelloRenormalization},
+\cite{CostelloGwilliam1}, \cite{CostelloGwilliam2}.  After pushforward
+to \(E\), disjoint opens of \(E\) carry independent observable algebras,
+and collision along the diagonal gives the chiral operation.  Protected
+primitives therefore form the natural receptacle for the BPS bracket.
+\end{proposition}
+
+\begin{proof}
+Locality of the BV action gives factorization products for disjoint
+opens.  The quantum master equation makes the differential square to
+zero and makes the products compatible with descent.  Pushing forward
+along \(p_E\) integrates the \(K3\)-direction and leaves a
+factorization algebra on the curve \(E\).  On a smooth curve,
+Beilinson--Drinfeld chiral operations are the algebraic form of the
+collision maps.  The primitive part of a Hopf/factorization object
+carries the induced Lie superbracket.  Identifying that primitive bracket
+with \(\mathfrak g_{\Delta_5}\) is exactly the missing comparison datum.
+\end{proof}
+
+\begin{remark}[Locality]
+The local object is the finite-stage observable algebra on
+\(\operatorname{Ran}(E)\).  The automorphic product is its protected
+global trace after charge completion, wall-chamber choice, and summation
+over compact \(K3\)-modes.  Duality monodromy and the Borcherds chamber
+are therefore global features of the trace.  They do not replace the
+local factorization maps on disjoint opens.
+\end{remark}
+
+\begin{remark}[Unitarity]
+The quantum object used here is a BV/BRST cochain theory.  It is not a
+positive Hilbert-space construction.  Negative coefficients
+\(f(nm,l)\) record odd protected states in a supertrace, not negative
+probabilities.  If the untwisted compactification is unitary, the
+statement that survives the twist is right-moving cohomology, protected
+integration, and the signed index.  Reflection positivity is not a
+hypothesis of the Borcherds denominator theorem.
+\end{remark}
+
 \begin{definition}[Sectorial Hall truncation]
 Let \(X=K3\times E\).  Fix a Bridgeland stability condition
 \(\sigma=(Z_\sigma,\mathcal P_\sigma)\) on the compact category and a
@@ -1514,7 +1691,10 @@ with the following data.
 \begin{enumerate}
 \item A charge-completed compact observable factorization algebra
 \(\mathcal F_X\) on \(\operatorname{Ran}(E)\), finite-first with respect to the
-sectorial HN quotients of Proposition~\ref{prop:sectorial-hall-truncation}.
+sectorial HN quotients of Proposition~\ref{prop:sectorial-hall-truncation},
+and obtained from a local BV quantum source on \(K3\times E\) satisfying
+descent, the quantum master equation, and anomaly cancellation in the
+completed charge category.
 \item An oriented compact Hall factorization object \(\mathcal H_X\)
 with extension correspondences
 $$

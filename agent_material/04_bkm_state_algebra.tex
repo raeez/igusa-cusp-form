@@ -1,0 +1,238 @@
+\section{Denominator algebra versus physical BPS algebra}
+
+The Borcherds correction algebra constructed here is a denominator algebra.
+The construction proves a denominator identity and a signed-index equality.
+A bracket-level physical BPS algebra is a further object.
+
+\begin{definition}[The four levels of structure]
+Let
+$$
+\alpha:\Gamma_{\mathrm{BPS}}\longrightarrow \La^{2,1}_{II},\qquad
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},
+$$
+so that
+$$
+q^nr^ls^m=\exp(-\pi i(\alpha(n,l,m),z)).
+$$
+For $\gamma=(n,l,m)\in\Gamma_{\mathrm{eff}}$ put
+$$
+I_{\mathrm{BPS}}(\gamma):=f(nm,l).
+$$
+If $\beta\notin\mathcal R_+$, use the convention
+$$
+\mathfrak g_\beta=0,\qquad \smult(\beta)=0.
+$$
+There are four different assertions.
+
+\begin{enumerate}
+\item \textbf{Proved: denominator identity.}
+The generalized Borcherds--Kac--Moody superalgebra $\autcor$ constructed
+from the real simple roots $\delta_1,\delta_2,\delta_3$ and the imaginary
+simple-root multiplicities has denominator
+$$
+\operatorname{den}(\autcor)(z)
+=e^{-2\pi i(\rho,z)}
+\prod_{\beta\in\mathcal R_+}
+\left(1-e^{-2\pi i(\beta,z)}\right)^{\smult(\beta)}
+=\frac1{64}\Delta_5(2Z).
+$$
+This is the Weyl--Kac--Borcherds denominator identity, in the normalization
+used here; it is the automorphic correction statement of
+Borcherds and Gritsenko--Nikulin, written in Kac denominator form
+\cite{KAC:1,B,GN}.
+
+\item \textbf{Proved: signed root superdimensions are BPS-index
+coefficients.}
+For every $\gamma=(n,l,m)\in\Gamma_{\mathrm{eff}}$,
+$$
+\smult(\alpha(\gamma))
+=\rootmult_{\overline0}(\alpha(\gamma))
+-\rootmult_{\overline1}(\alpha(\gamma))
+=f(nm,l)=I_{\mathrm{BPS}}(\gamma).
+$$
+This is an equality of signed dimensions, or Euler characteristics.  It is
+not an isomorphism of state spaces.
+
+\item \textbf{Interpretive: Harvey--Moore charge grading.}
+Following Harvey--Moore \cite{HM}, the charge lattice is the natural grading
+lattice for a candidate algebra of BPS states:
+$$
+\gamma+\gamma'\quad\hbox{is the degree of a bracket of degrees }
+\gamma,\gamma'.
+$$
+In the present paper this physical principle is used only through the
+degree map $\alpha$ and the compatibility
+$$
+\alpha(\gamma+\gamma')=\alpha(\gamma)+\alpha(\gamma').
+$$
+Thus $\autcor$ is a charge-graded denominator algebra.  The word
+``charge-graded'' records the Harvey--Moore interpretation; it does not
+construct the physical bracket on BPS states.
+
+\item \textbf{Not proved here: bracket-level physical BPS algebra.}
+A physical BPS algebra would require actual protected state spaces
+$$
+\mathcal H_{\gamma,\overline0}^{\mathrm{BPS}},\qquad
+\mathcal H_{\gamma,\overline1}^{\mathrm{BPS}},
+\qquad \gamma\in\Gamma_{\mathrm{eff}},
+$$
+with
+$$
+\mathcal H_{\gamma}^{\mathrm{BPS}}
+=\mathcal H_{\gamma,\overline0}^{\mathrm{BPS}}
+\oplus
+\mathcal H_{\gamma,\overline1}^{\mathrm{BPS}},
+$$
+and bilinear brackets
+$$
+[-,-]_{\mathrm{BPS}}:
+\mathcal H_{\gamma}^{\mathrm{BPS}}\otimes
+\mathcal H_{\gamma'}^{\mathrm{BPS}}
+\longrightarrow
+\mathcal H_{\gamma+\gamma'}^{\mathrm{BPS}}
+$$
+satisfying the super Jacobi identity and compatible with the physical
+charge addition.  It would also require a comparison, at least after
+passing through $\alpha$, with the root-space bracket of $\autcor$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[What the denominator determines]
+The identity
+$$
+\frac1{64}\Delta_5(2Z)
+=e^{-2\pi i(\rho,z)}
+\prod_{\beta\in\mathcal R_+}
+\left(1-e^{-2\pi i(\beta,z)}\right)^{\smult(\beta)}
+$$
+determines the signed root superdimensions $\smult(\beta)$ appearing in
+the product expansion.  It does not determine the separate dimensions
+$\rootmult_{\overline0}(\beta)$ and $\rootmult_{\overline1}(\beta)$, and it
+does not determine the structure constants
+$$
+[\mathfrak g_\beta,\mathfrak g_{\beta'}]\longrightarrow
+\mathfrak g_{\beta+\beta'}.
+$$
+\end{proposition}
+
+\begin{proof}
+The logarithm of the product determines only the exponent attached to each
+monomial $e^{-2\pi i(\beta,z)}$.  That exponent is the integer
+$\smult(\beta)$.  For $c\in\Z$, the equality $c=a-b$ has infinitely many
+solutions $(a,b)\in\Z_{\geq0}^2$: use $(c+k,k)$ if $c\geq0$ and
+$(k,k-c)$ if $c<0$.  Thus the product does not recover the two parity
+dimensions separately.  No bracket appears in the product:
+the denominator contains the graded Euler characteristics of root spaces,
+not the bilinear maps between them.  Hence the denominator is insufficient
+to construct a physical BPS-state Lie superalgebra.
+\end{proof}
+
+\begin{proposition}[Index equality is not a state-space identification]
+The equality
+$$
+\smult(\alpha(n,l,m))=f(nm,l)
+$$
+proves that the root-space Euler characteristic of $\autcor$ in degree
+$\alpha(n,l,m)$ equals the one-particle BPS index coefficient in charge
+$(n,l,m)$.  It does not prove an isomorphism
+$$
+\mathfrak g_{\alpha(n,l,m)}
+\cong
+\mathcal H_{(n,l,m)}^{\mathrm{BPS}}
+$$
+and it does not prove equality of brackets.
+\end{proposition}
+
+\begin{proof}
+The left-hand side is defined inside the algebraic Borcherds correction
+algebra:
+$$
+\smult(\alpha)=
+\dim\mathfrak g_{\alpha,\overline0}
+-\dim\mathfrak g_{\alpha,\overline1}.
+$$
+The right-hand side is the coefficient of the weak Jacobi form
+$$
+\phi_{0,1}(\tau,z)=\sum_{n\geq0,\;l\in\Z}f(n,l)q^nr^l,
+$$
+transported to three charges by $\gamma=(n,l,m)\mapsto f(nm,l)$.  Equality
+of these integers is exactly what the Borcherds product proves.  An
+isomorphism of state spaces would be a linear map preserving the two
+gradings and parities.  An isomorphism of algebras would additionally
+preserve the brackets.  Neither datum is present in the product formula.
+\end{proof}
+
+\begin{definition}[Bracket-level realization]
+A bracket-level physical realization of the denominator algebra is the
+following extra data.
+\begin{enumerate}
+\item A $\Gamma_{\mathrm{eff}}$-graded super vector space
+$$
+\mathcal H_{\mathrm{BPS}}
+=\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}
+\mathcal H_{\gamma}^{\mathrm{BPS}},
+\qquad
+\mathcal H_{\gamma}^{\mathrm{BPS}}
+=\mathcal H_{\gamma,\overline0}^{\mathrm{BPS}}
+\oplus
+\mathcal H_{\gamma,\overline1}^{\mathrm{BPS}},
+$$
+with finite-dimensional homogeneous pieces and protected index
+$$
+\dim\mathcal H_{\gamma,\overline0}^{\mathrm{BPS}}
+-\dim\mathcal H_{\gamma,\overline1}^{\mathrm{BPS}}
+=f(nm,l)
+\quad(\gamma=(n,l,m)).
+$$
+
+\item A Lie superbracket on $\mathcal H_{\mathrm{BPS}}$ satisfying
+$$
+[\mathcal H_\gamma^{\mathrm{BPS}},
+\mathcal H_{\gamma'}^{\mathrm{BPS}}]_{\mathrm{BPS}}
+\subset
+\mathcal H_{\gamma+\gamma'}^{\mathrm{BPS}}.
+$$
+
+\item A bracket-preserving comparison with $\autcor$, for example a
+graded Lie-superalgebra homomorphism whose degree map is $\alpha$, and
+which identifies the denominator root spaces after taking signed
+dimensions.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Status]
+The present manuscript constructs $\autcor$ as a generalized
+Borcherds--Kac--Moody superalgebra and proves its denominator identity.
+It also proves that the signed root superdimensions in the positive Weyl
+chamber are the Fourier coefficients $f(nm,l)$ of the K3 one-particle
+index.  It does not construct the protected state spaces
+$\mathcal H_{\gamma}^{\mathrm{BPS}}$ with a physical bracket.  Therefore
+the accurate statement is
+$$
+\autcor\ \hbox{is the Borcherds denominator algebra whose signed root
+superdimensions reproduce the BPS index,}
+$$
+not
+$$
+\autcor=\hbox{the physical algebra of BPS states}.
+$$
+\end{remark}
+
+\begin{remark}[Recommended notation]
+Use
+$$
+\mathcal A_{\mathrm{den}}:=\autcor
+$$
+for the object constructed in the paper.  Reserve
+$$
+\mathcal A_{\mathrm{BPS}}^{\mathrm{phys}}
+$$
+for a bracket-level Harvey--Moore BPS algebra if such an algebra is
+constructed.  The only unconditional comparison established here is
+$$
+\operatorname{den}(\mathcal A_{\mathrm{den}})
+=\frac1{64}\Delta_5(2Z),
+\qquad
+\smult_{\mathcal A_{\mathrm{den}}}(\alpha(n,l,m))=f(nm,l).
+$$
+\end{remark}

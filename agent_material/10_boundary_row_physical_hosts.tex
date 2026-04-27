@@ -1,0 +1,377 @@
+\subsection{\texorpdfstring{Boundary physical hosts for \(F_5\)--\(F_8\)}
+{Boundary physical hosts for F5-F8}}
+
+\begin{definition}[Physical-host certificate]
+A physical host for a Clery--Gritsenko boundary row
+\[
+F_j,\qquad j\in\{5,6,7,8\},
+\]
+is the following certificate:
+\[
+\mathfrak H_j=
+\left(
+X_j,\Gamma_j^{\mathrm{BPS}},\mathscr D_j,
+\widetilde{\Gamma}_j,\mathcal H_{j,\kappa}^{1\mathrm p},
+Z_j^{\mathrm{red}},\mathsf C_j
+\right).
+\]
+Here \(X_j\) is a compact Calabi--Yau threefold, an orbifold
+Calabi--Yau threefold, or a CHL background with an oriented reduced
+obstruction theory.  The lattice \(\Gamma_j^{\mathrm{BPS}}\) is the
+physical charge lattice.  The group \(\mathscr D_j\) is the physical
+duality group acting on \(\Gamma_j^{\mathrm{BPS}}\).  The group
+\(\widetilde{\Gamma}_j\) is the automorphic group or cover on which the
+denominator form is a scalar with its chosen character.
+
+The one-particle protected object is a cusp-labelled Ramond-sector
+index
+\[
+\mathcal H_{j,\kappa}^{1\mathrm p}(n,l)
+\]
+with
+\[
+\sdim\mathcal H_{j,\kappa}^{1\mathrm p}(n,l)
+=\widetilde c_{j,\kappa}(n,l).
+\]
+The reduced scalar partition function is required to satisfy
+\[
+Z_j^{\mathrm{red}}(Z)=C_jF_j(Z)^{-2}
+\]
+in the same Fourier chamber and cover as the denominator.  The chiral
+object \(\mathsf C_j\) is a Hall, Drinfeld, or factorization object whose
+protected primitive bracket maps to the Govindarajan denominator algebra
+and whose decategorified primitive Euler characteristics give the same
+cusp-labelled exponents.
+\end{definition}
+
+\begin{remark}[Certificate versus shadow]
+The product-degree lattice \(L_j^{\mathrm{prod}}\), the Weyl chamber of
+Proposition~\ref{prop:govindarajan-denominator-rows}, and the virtual
+product current envelope of Theorem~\ref{thm:eight-formal-current-rows}
+are shadows of such a certificate.  They are not the certificate.  They
+do not contain \(X_j\), \(\Gamma_j^{\mathrm{BPS}}\), the physical duality
+action, the reduced obstruction theory, or a Hall/chiral source.
+\end{remark}
+
+\begin{theorem}[Current no-go]
+From the data currently present in the manuscript and the cited
+Govindarajan CHL/WKB denominator theorem, no complete certificate
+\(\mathfrak H_j\) is constructed for any \(j=5,6,7,8\).
+\end{theorem}
+
+\begin{proof}
+The Clery--Gritsenko theorem \cite{GC} gives the automorphic product,
+character, divisor, and congruence group.  Proposition~\ref{prop:gc-row-data}
+and Proposition~\ref{prop:congruence-product-degree-lattices} record the
+cusp-labelled product exponents and the monomial degree maps.  These data
+determine only signed exponents in an Euler product.
+
+Proposition~\ref{prop:govindarajan-denominator-rows}, using
+\cite{CD09BKM,GK09CHL,GK10Composite,Gov11BKM}, gives the
+Weyl--Kac--Borcherds denominator data:
+\[
+L_j,\quad P_j,\quad \mathcal M_j,\quad W_j,\quad
+\epsilon_j,\quad \rho_j,\quad N_j(a).
+\]
+This proves a denominator algebra.  It does not construct a compact or
+orbifold Calabi--Yau host, a reduced DT/PT/OP partition function, a
+Ramond-sector one-particle Hilbert space, a physical charge lattice with
+duality action, or a Hall/chiral current source.
+
+The formal super vector space used in Theorem~\ref{thm:eight-formal-current-rows}
+is deliberately non-unique: any two graded virtual super vector spaces
+with the same signed dimensions have the same determinant.  Therefore
+the determinant cannot reconstruct the physical Hilbert space, parity,
+orientation data, or bracket.  This proves the stated no-go from current
+data.  It does not prove that such hosts cannot exist.
+\end{proof}
+
+\begin{definition}[Known lattice and index shadows]
+For rows \(5,6,7\) the denominator lattice shadow is
+\[
+L_5=L_6=L_7=M_1=U(4)\oplus\langle2\rangle,
+\]
+with
+\[
+e^{\alpha_1(n,l,m)}=q^nr^ls^m.
+\]
+For row \(8\) it is
+\[
+L_8=M_2=U(8)\oplus\langle2\rangle,
+\qquad
+e^{\alpha_2(n,l,m)}=q^nr^ls^{2m}.
+\]
+The cusp-labelled index shadows are:
+\[
+\begin{array}{c|c|c}
+j&\mathcal K_j&\sdim\mathcal H_{j,\kappa}^{\mathrm{virt}}\\ \hline
+5&\{\infty,S\}&c_5,\ c_{5,S}\\
+6&\{\infty,S\}&c_6,\ c_{6,S}\\
+7&\{\infty,M,S\}&c_7,\ \frac12c_{7,M},\ c_{7,S}\\
+8&\{\infty,S\}&c_8,\ c_{8,S}.
+\end{array}
+\]
+These are virtual one-particle index shadows.  They are not
+Ramond-sector Hilbert spaces unless a physical construction supplies the
+state space and proves the displayed supertrace.
+\end{definition}
+
+\begin{theorem}[Row-by-row certificate status]
+The physical-host certificate status of the four boundary rows is:
+\[
+\begin{array}{c|c|c|c}
+j&\mathrm{known\ theorem}&\mathrm{candidate\ physical\ reading}
+&\mathrm{certificate\ status}\\ \hline
+5&F_5=\nabla_3=\operatorname{den}\mathcal G_1(2)
+&N=1,\ M=2\ \mathrm{twisted\ CHL\ sector}
+&\mathrm{not\ constructed}\\
+6&F_6=\nabla_2=\operatorname{den}\mathcal G_1(3)
+&N=1,\ M=3\ \mathrm{twisted\ CHL\ sector}
+&\mathrm{not\ constructed}\\
+7&F_7=\nabla_{3/2}=\operatorname{den}\mathcal G_1(4)
+&N=1,\ M=4\ \mathrm{twisted\ CHL\ sector}
+&\mathrm{not\ constructed\ on\ the\ }\mu_4\mathrm{\ cover}\\
+8&F_8=Q_1=\operatorname{den}\mathcal G_2(4)
+&N=2,\ M=4\ \mathrm{twisted\ CHL\ sector}
+&\mathrm{not\ constructed}.
+\end{array}
+\]
+The word ``candidate'' in the third column means only compatibility with
+the Govindarajan denominator label \(\mathcal G_N(M)\).  It does not mean
+that a compact CY/DT/chiral host has been produced.
+\end{theorem}
+
+\begin{proof}
+The theorem column is exactly Proposition~\ref{prop:govindarajan-denominator-rows}
+and its proof.  Govindarajan's table identifies the four square-root
+forms with \(\mathcal G_1(2)\), \(\mathcal G_1(3)\),
+\(\mathcal G_1(4)\), and \(\mathcal G_2(4)\).  For fixed CHL level \(N\)
+the real roots and Weyl chamber are fixed; the twist \(M\) changes the
+imaginary simple-root data.  This justifies the candidate labels.
+
+The certificate data missing from the theorem are precisely \(X_j\),
+\(\Gamma_j^{\mathrm{BPS}}\), \(\mathscr D_j\), the reduced obstruction
+theory, \(Z_j^{\mathrm{red}}\), and \(\mathsf C_j\).  The proof of
+Proposition~\ref{prop:govindarajan-denominator-rows} explicitly stops at
+the denominator theorem and supplies no Vol.~III boundary partition
+identity or CY/DT/chiral host.
+\end{proof}
+
+\begin{proposition}[Row \(F_5=\nabla_3\)]
+The theorem-level data for \(F_5\) are:
+\[
+L_5=M_1,\qquad
+P_5=\{(0,-1,0),(1,1,0),(0,1,1)\},
+\qquad
+\rho_5=\alpha_1(\tfrac12,\tfrac12,\tfrac12),
+\]
+\[
+W_5=\langle s_\delta\mid \delta\in P_5\rangle,\qquad
+\epsilon_5=\det,
+\]
+\[
+\widetilde{\Gamma}_5=\Gamma_0^{(2)}(2)\ \hbox{with character}\
+\chi_2^{(2)}\times v_H,
+\]
+and
+\[
+\alpha_5^{\mathrm{prod}}(n,l,m;\infty)=\alpha_1(n,l,m),\qquad
+\alpha_5^{\mathrm{prod}}(n,l,m;S)=\alpha_1(2n,2l,2m).
+\]
+The one-particle index is only the virtual cusp-labelled class with
+signed dimensions \(c_5\) and \(c_{5,S}\).  The scalar identity
+\[
+\nabla_3^2=\Phi_6
+\]
+is a CHL scalar-square identity; it is not a reduced DT/PT/OP theorem of
+the form \(Z_5^{\mathrm{red}}=C_5\nabla_3^{-2}\).  The chiral object
+constructed from the product is the abelian
+\[
+\mathsf{Prod}_{5,E}=U_E^{\mathrm{ch}}
+(\mathcal V_5^{\mathrm{prod}}\otimes\mathcal O_E),
+\]
+while the nonabelian object is the imported denominator algebra
+\(\mathcal G_1(2)\).  No Hall/chiral source identifies them with
+protected primitives of a physical host.
+\end{proposition}
+
+\begin{proposition}[Row \(F_6=\nabla_2\)]
+The theorem-level data for \(F_6\) are:
+\[
+L_6=M_1,\qquad P_6=P_5,\qquad
+\rho_6=\alpha_1(\tfrac12,\tfrac12,\tfrac12),\qquad
+\epsilon_6=\det,
+\]
+\[
+\widetilde{\Gamma}_6=\Gamma_0^{(2)}(3)\ \hbox{with character}\
+\chi_2^{(3)}\times v_H,
+\]
+and
+\[
+\alpha_6^{\mathrm{prod}}(n,l,m;\infty)=\alpha_1(n,l,m),\qquad
+\alpha_6^{\mathrm{prod}}(n,l,m;S)=\alpha_1(3n,3l,3m).
+\]
+The one-particle index is only the virtual cusp-labelled class with
+signed dimensions \(c_6\) and \(c_{6,S}\).  The scalar identity
+\[
+\nabla_2^2=\Phi_4
+\]
+does not prove \(Z_6^{\mathrm{red}}=C_6\nabla_2^{-2}\).  The current
+object constructed in the manuscript is the abelian formal product
+current envelope; the nonabelian denominator algebra is
+\(\mathcal G_1(3)\).  The physical CY/DT/chiral host is not constructed.
+\end{proposition}
+
+\begin{proposition}[Row \(F_7=\nabla_{3/2}\)]
+The theorem-level data for \(F_7\) are:
+\[
+L_7=M_1,\qquad P_7=P_5,\qquad
+\rho_7=\alpha_1(\tfrac12,\tfrac12,\tfrac12),\qquad
+\epsilon_7=\det,
+\]
+with automorphic group
+\[
+\Gamma_0^{(2)}(4)
+\]
+and an order-four multiplier.  The denominator theorem is a statement on
+the associated \(\mu_4\)-multiplier cover:
+\[
+\widetilde{\Gamma}_7\longrightarrow\Gamma_0^{(2)}(4).
+\]
+The degree maps are
+\[
+\alpha_7^{\mathrm{prod}}(n,l,m;\infty)=\alpha_1(n,l,m),
+\]
+\[
+\alpha_7^{\mathrm{prod}}(n,l,m;M)=\alpha_1(2n,2l,2m),\qquad
+\alpha_7^{\mathrm{prod}}(n,l,m;S)=\alpha_1(4n,4l,4m).
+\]
+The one-particle index shadow has signed dimensions
+\[
+c_7,\qquad \frac12c_{7,M},\qquad c_{7,S}.
+\]
+The half coefficient is integral on the multiplier-cover support, but it
+is not a physical half-Hilbert-space construction.  The scalar square
+\[
+F_7^2=\Phi_3
+\]
+forgets the cover, reflection sign, and parity.  Thus no ordinary scalar
+denominator on \(\Gamma_0^{(2)}(4)\), no reduced partition identity
+\[
+Z_7^{\mathrm{red}}=C_7\nabla_{3/2}^{-2},
+\]
+and no chiral/Hall host follow from current data.
+\end{proposition}
+
+\begin{proposition}[Row \(F_8=Q_1\)]
+The theorem-level data for \(F_8\) are:
+\[
+L_8=M_2,\qquad
+P_8=\{(0,-1,0),(1,1,0),(1,3,1),(0,1,1)\},
+\]
+\[
+\rho_8=\alpha_2(\tfrac14,\tfrac12,\tfrac14),\qquad
+\epsilon_8=\det,
+\]
+\[
+\widetilde{\Gamma}_8=\Gamma_2(2)\ \hbox{with character}\
+\chi_4^{(2)}\times v_H,
+\]
+and
+\[
+\alpha_8^{\mathrm{prod}}(n,l,m;\infty)=\alpha_2(n,l,m),\qquad
+\alpha_8^{\mathrm{prod}}(n,l,m;S)=\alpha_2(2n,2l,2m).
+\]
+The one-particle index is only the virtual cusp-labelled class with
+signed dimensions \(c_8\) and \(c_{8,S}\).  Govindarajan identifies the
+denominator algebra as \(\mathcal G_2(4)\), but no compact
+level-\(2\), twist-\(4\) CY/DT/chiral host is constructed in this
+manuscript.  No theorem gives
+\[
+Z_8^{\mathrm{red}}=C_8Q_1^{-2}.
+\]
+\end{proposition}
+
+\begin{assumption}[What would make the candidate hosts physical]
+The candidate symbols
+\[
+\mathcal X_{1,2}^{\mathrm{CHL}},\quad
+\mathcal X_{1,3}^{\mathrm{CHL}},\quad
+\mathcal X_{1,4}^{\mathrm{CHL}},\quad
+\mathcal X_{2,4}^{\mathrm{CHL}}
+\]
+may be promoted to physical hosts only if the following data are supplied
+row by row:
+\[
+\begin{gathered}
+X_j,\quad \Gamma_j^{\mathrm{BPS}},\quad \mathscr D_j,\quad
+\Gamma_j^{\mathrm{BPS}}\to L_j,\\
+\mathcal H_{j,\kappa}^{1\mathrm p},\quad
+Z_j^{\mathrm{red}}=C_jF_j^{-2},\quad
+\mathsf C_j\to U_E^{\mathrm{ch}}(\mathcal G_N(M)\otimes\mathcal O_E),
+\end{gathered}
+\]
+with the multiplier cover included in the row \(F_7\).  The
+Oberdieck--Pixton theorem \cite{OB,OPand} proves the \(N=1\) Igusa
+scalar branch.  Bryan's Hilbert-scheme computation \cite{BRYAN} and the
+Borcea--Voisin or higher-dimensional routes \cite{BORCEA,VOISIN,CKOT,BOPY}
+do not supply these four certificates unless an explicit comparison
+theorem is added.
+\end{assumption}
+
+\begin{theorem}[Late-extension replacement text]
+The following replacement text is theorem-level and may be inserted
+where a late extension identifies the boundary rows with physical hosts:
+
+\begin{quote}
+Rows \(F_5,F_6,F_7,F_8\) have Clery--Gritsenko automorphic products and
+Govindarajan CHL/WKB Weyl--Kac--Borcherds denominator identities.  This
+is theorem-level denominator data.  It does not construct a CY/DT
+partition function, a Ramond-sector one-particle Hilbert space, or a
+chiral Hall source.  The row \(F_7\) is a theorem only after pullback to
+the \(\mu_4\)-multiplier cover.  Any identity
+\[
+Z_j^{\mathrm{red}}=C_jF_j^{-2}
+\]
+for \(j=5,6,7,8\) is a separate physical-host theorem or an explicit
+assumption, not a consequence of the product or denominator formula.
+\end{quote}
+
+The row-by-row replacement is:
+\[
+\begin{array}{c|c}
+j&\mathrm{replacement}\\ \hline
+5&\nabla_3\ \mathrm{has\ denominator\ algebra}\ \mathcal G_1(2);
+\ \mathrm{host\ open}\\
+6&\nabla_2\ \mathrm{has\ denominator\ algebra}\ \mathcal G_1(3);
+\ \mathrm{host\ open}\\
+7&\nabla_{3/2}\ \mathrm{has\ denominator\ algebra}\ \mathcal G_1(4)
+\ \mathrm{on\ the}\ \mu_4\mathrm{\ cover};\ \mathrm{host\ open}\\
+8&Q_1\ \mathrm{has\ denominator\ algebra}\ \mathcal G_2(4);
+\ \mathrm{host\ open}.
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+This is a restatement of the preceding propositions.  It preserves the
+proved automorphic and denominator claims and deletes only the unproved
+physical-host inference.
+\end{proof}
+
+\begin{remark}[Source anchors]
+The local manuscript anchors are
+Proposition~\ref{prop:gc-row-data},
+Proposition~\ref{prop:congruence-product-degree-lattices},
+Theorem~\ref{thm:eight-formal-current-rows},
+Proposition~\ref{prop:govindarajan-denominator-rows},
+Remark~\ref{rem:f7-mu4-cover}, and
+Proposition~\ref{prop:boundary-scope}.  The auxiliary attack notes
+numbered \(07\) and \(08\) in \texttt{agent\_material} are compatible
+with this certificate obstruction.  The bibliographic
+anchors are \cite{GC,CD09BKM,GK09CHL,GK10Composite,Gov11BKM} for the
+automorphic and CHL denominator data, \cite{DMVV,DVV,HM} for the BPS
+index background, \cite{OB,OPand,BRYAN} for the proved or conjectural
+\(K3\times E\) scalar-square literature, and
+\cite{KSCoHA,DavisonMeinhardtCoHA} for the Hall-algebra language.
+\end{remark}

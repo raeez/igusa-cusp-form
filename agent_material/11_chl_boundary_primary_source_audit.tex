@@ -1,0 +1,342 @@
+\subsection{\texorpdfstring{Primary-source audit for the CHL boundary rows \(F_5\)--\(F_8\)}
+{Primary-source audit for the CHL boundary rows F5-F8}}
+
+\begin{definition}[Audit labels]
+For a boundary row \(F_j\), \(j=5,6,7,8\), use the following labels.
+\begin{description}
+\item[\(\mathrm{CG\ product}\)] the Clery--Gritsenko diagonal-divisor
+automorphic product.
+\item[\(\mathrm{CHL/WKB\ denominator}\)] a Weyl--Kac--Borcherds
+denominator identity from the CHL source.
+\item[\(\mathrm{scalar\ square}\)] an identity \(F_j^2=\Phi\) for a scalar
+dyon-counting Siegel form.
+\item[\(\mathrm{physical\ host}\)] a CY/DT/CHL/chiral object whose protected
+index is the row.
+\end{description}
+The first three labels are source statements.  The fourth is a separate
+construction problem.  A scalar square is not a physical host and is not a
+denominator theorem unless the Weyl chamber, real simple roots, reflection
+character, and additive Weyl sum are also supplied.
+\end{definition}
+
+\begin{theorem}[Primary-source status ledger]
+\label{thm:chl-boundary-primary-source-ledger}
+The following table is the primary-source ledger for \(F_5,F_6,F_7,F_8\).
+\[
+\begin{array}{c|c|c|c|c}
+j&F_j&\mathrm{CG\ product}&\mathrm{CHL/WKB\ denominator}&
+\mathrm{physical\ host}\\ \hline
+5&\nabla_3&\mathrm{theorem}&\mathrm{theorem:\ }\mathcal G_1(2)&
+\mathrm{not\ constructed}\\
+6&\nabla_2&\mathrm{theorem}&\mathrm{theorem:\ }\mathcal G_1(3)&
+\mathrm{not\ constructed}\\
+7&\nabla_{3/2}&\mathrm{theorem}&
+\mathrm{theorem\ on\ the\ }\mu_4\mathrm{\ cover:\ }\mathcal G_1(4)&
+\mathrm{not\ constructed}\\
+8&Q_1&\mathrm{theorem}&\mathrm{theorem:\ }\mathcal G_2(4)&
+\mathrm{not\ constructed}
+\end{array}
+\]
+The Clery--Gritsenko theorem gives the dd-forms, weights, characters or
+multiplier systems, and product normalisations \cite{GC}.  The CHL/WKB
+denominator promotion is imported from Govindarajan's periodic table of
+twisted-dyon BKM Lie superalgebras, with the earlier CHL denominator analysis
+of Cheng--Dabholkar and Govindarajan--Gopala Krishna as input
+\cite{CD09BKM,GK09CHL,GK10Composite,Gov11BKM}.  None of these sources
+constructs a reduced \(K3\times E\), CY/DT, or chiral Hall host for these four
+rows.
+\end{theorem}
+
+\begin{proof}
+Clery--Gritsenko state that for the congruence subgroups
+\(\Gamma_0^{(2)}(N)\), \(N>1\), the three dd-forms are
+\(\nabla_3\), \(\nabla_2\), and \(\nabla_{3/2}\), of weights
+\(3,2,3/2\), with order \(2,2,4\) character/multiplier data, and that the
+eighth Hecke-congruence dd-form is \(Q_1\) of weight \(1\) for
+\(\Gamma_2(2)\) with order-four character \cite{GC}.  Their Borcherds
+product theorem gives the four products displayed below.  Govindarajan's
+Table 3 identifies the same forms as the entries
+\[
+\nabla_3\leftrightarrow \mathcal G_1(2),\qquad
+\nabla_2\leftrightarrow \mathcal G_1(3),\qquad
+\nabla_{3/2}\leftrightarrow \mathcal G_1(4),\qquad
+Q_1\leftrightarrow \mathcal G_2(4),
+\]
+and Section 4 checks precisely the conditions needed for a WKB denominator:
+additive and product formulae, integral root multiplicities, the correct
+simple real roots, and Weyl anti-invariance under simple reflections
+\cite{Gov11BKM}.  The \(N=1,2,3\) CHL denominator mechanism and the common
+Weyl vector/root-lattice logic are the Cheng--Dabholkar and
+Govindarajan--Gopala Krishna inputs \cite{CD09BKM,GK09CHL}.  The composite
+\(N=4\) square-root case is treated in \cite{GK10Composite}.  These arguments
+do not include a reduced DT moduli space, a compact CY threefold host, or a
+Beilinson--Drinfeld/factorization algebra whose primitive protected index is
+one of the four rows.
+\end{proof}
+
+\begin{theorem}[Pinned row data]
+\label{thm:chl-boundary-pinned-row-data}
+Let
+\[
+q=e^{2\pi i\tau},\qquad r=e^{2\pi iz},\qquad s=e^{2\pi i\omega}.
+\]
+For \(j=5,6,7\) use the product lattice \(M_1=U(4)\oplus\langle 2\rangle\)
+and the exponential \(e_1(n,\ell,m)=q^n r^\ell s^m\).  For \(j=8\) use
+\(M_2=U(8)\oplus\langle 2\rangle\) and
+\(e_2(n,\ell,m)=q^n r^\ell s^{2m}\).  The row data are:
+\[
+\begin{array}{c|c|c|c|c}
+j&F_j&\mathrm{group/cover}&\mathrm{weight}&\mathrm{denominator}\\ \hline
+5&\nabla_3&\Gamma_0^{(2)}(2),\ \chi_2^{(2)}\times v_H&3&
+\mathcal G_1(2)\\
+6&\nabla_2&\Gamma_0^{(2)}(3),\ \chi_2^{(3)}\times v_H&2&
+\mathcal G_1(3)\\
+7&\nabla_{3/2}&\Gamma_0^{(2)}(4),\ \mu_4\hbox{-multiplier cover}&
+\frac32&\mathcal G_1(4)\hbox{ on the cover}\\
+8&Q_1&\Gamma_2(2),\ \chi_4^{(2)}\times v_H&1&\mathcal G_2(4)
+\end{array}
+\]
+The product prefactors are
+\[
+\rho_5=\rho_6=\rho_7=\alpha_1\Bigl(\frac12,\frac12,\frac12\Bigr),
+\qquad
+\rho_8=\alpha_2\Bigl(\frac14,\frac12,\frac14\Bigr),
+\]
+so that the scalar monomials are
+\[
+q^{1/2}r^{1/2}s^{1/2}\quad (j=5,6,7),\qquad
+q^{1/4}r^{1/2}s^{1/2}\quad (j=8).
+\]
+The real simple roots and chambers imported for the WKB denominator are
+\[
+P^{(1)}=\{(0,-1,0),(1,1,0),(0,1,1)\}
+\quad\hbox{for }j=5,6,7,
+\]
+\[
+P^{(2)}=\{(0,-1,0),(1,1,0),(1,3,1),(0,1,1)\}
+\quad\hbox{for }j=8,
+\]
+with Cartan matrices
+\[
+A^{(1)}=\begin{pmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{pmatrix},
+\qquad
+A^{(2)}=
+\begin{pmatrix}
+2&-2&-6&-2\\
+-2&2&-2&-6\\
+-6&-2&2&-2\\
+-2&-6&-2&2
+\end{pmatrix}.
+\]
+The Weyl character on simple reflections is \(\det\).
+\end{theorem}
+
+\begin{proof}
+The group, weight, and multiplier entries are the Hecke-congruence
+classification entries of Clery--Gritsenko \cite{GC}.  The two lattices and
+the monomial conventions are the product-degree conventions used in the
+manuscript at Proposition~\(\ref{prop:congruence-product-degree-lattices}\).
+Govindarajan states that for fixed CHL level \(N\), the algebras
+\(\mathcal G_N(M)\) have the same real simple roots, Cartan matrix, and Weyl
+vector as \(\mathcal G_N(1)\), while the imaginary root multiplicities vary
+with \(M\).  For \(N=1\) this gives the three-root \(A^{(1)}\) system; for
+\(N=2\) it gives the four-root \(A^{(2)}\) system \cite{Gov11BKM}.  The
+\(\mu_4\) qualification for \(F_7\) is forced by the order-four multiplier in
+\cite{GC}; it is not an optional decoration.
+\end{proof}
+
+\begin{theorem}[Product normalisation audit]
+\label{thm:chl-boundary-product-normalisation-audit}
+With \(\Gamma_1^{+}\) denoting the usual Borcherds positivity condition
+\((n,\ell,m)>0\), the Clery--Gritsenko product normalisations are
+\[
+\begin{aligned}
+\nabla_3(Z)
+&=q^{1/2}r^{1/2}s^{1/2}
+\prod_{\Gamma_1^+}
+(1-q^nr^\ell s^m)^{c_5(nm,\ell)}
+(1-q^{2n}r^{2\ell}s^{2m})^{c_{5,S}(nm,\ell)},\\
+\nabla_2(Z)
+&=q^{1/2}r^{1/2}s^{1/2}
+\prod_{\Gamma_1^+}
+(1-q^nr^\ell s^m)^{c_6(nm,\ell)}
+(1-q^{3n}r^{3\ell}s^{3m})^{c_{6,S}(nm,\ell)},\\
+\nabla_{3/2}(Z)
+&=q^{1/2}r^{1/2}s^{1/2}
+\prod_{\Gamma_1^+}
+(1-q^nr^\ell s^m)^{c_7(nm,\ell)}
+(1-q^{2n}r^{2\ell}s^{2m})^{c_{7,M}(nm,\ell)/2}\\
+&\hspace{35mm}\cdot
+(1-q^{4n}r^{4\ell}s^{4m})^{c_{7,S}(nm,\ell)},\\
+Q_1(Z)
+&=q^{1/4}r^{1/2}s^{1/2}
+\prod_{\Gamma_2^+}
+(1-q^nr^\ell s^{2m})^{c_8(nm,\ell)}
+(1-q^{2n}r^{2\ell}s^{4m})^{c_{8,S}(nm,\ell)}.
+\end{aligned}
+\]
+The coefficient systems \(c_5,c_{5,S},c_6,c_{6,S},c_7,c_{7,M},c_{7,S},c_8,c_{8,S}\)
+are coefficients of the corresponding weak Jacobi forms at the relevant cusps.
+The exponent \(c_{7,M}/2\) is the literal middle-cusp exponent in the
+Clery--Gritsenko product; integrality belongs to the multiplier-cover
+normalisation.
+\end{theorem}
+
+\begin{proof}
+These are the four product displays following Clery--Gritsenko's
+Borcherds product theorem: \(N=2\) for \(\nabla_3\), \(N=3\) for
+\(\nabla_2\), the three-cusp \(N=4\) case for \(\nabla_{3/2}\), and the
+level-\((N,t)=(2,2)\) case for \(Q_1\) \cite{GC}.  Govindarajan's Appendix C
+uses the same \(Q_1\) product, with \(A=\frac14\), \(B=C=\frac12\), and records
+the first simple-real-root terms in Appendix D \cite{Gov11BKM}.
+\end{proof}
+
+\begin{remark}[Scalar-square audit]
+\label{rem:chl-boundary-scalar-square-audit}
+The scalar square identities have the following status:
+\[
+\begin{array}{rcl}
+\nabla_3^2&=&\Phi_6,\\
+\nabla_2^2&=&\Phi_4,\\
+\nabla_{3/2}^2&=&\Phi_3
+  \quad\hbox{in the composite \(N=4\) CHL sector},\\
+Q_1^2&=&\Phi_2^{(2,4)}
+  \quad\hbox{in the twisted sector}.
+\end{array}
+\]
+The first two belong to the \(N=2,3\) CHL square-root denominator analysis
+\cite{GK09CHL,CD09BKM}.  The third is the composite \(N=4\) analysis of
+\cite{GK10Composite}.  The fourth is the \(Q_1\) entry of the twisted-dyon
+periodic table and theta-product/product audit in \cite{Gov11BKM}.  These
+identities justify the phrase ``scalar square'' only.  The denominator theorem
+requires the additional WKB data of Theorem~\ref{thm:chl-boundary-pinned-row-data}.
+The physical row map would require still more data: a charge lattice, duality
+group, protected one-particle index, and chiral/current object whose index is
+the displayed row.
+\end{remark}
+
+\begin{proposition}[Physical-host no-go from the audited sources]
+\label{prop:chl-boundary-physical-host-nogo}
+From the sources \cite{GC,CD09BKM,GK09CHL,GK10Composite,Gov11BKM} alone,
+no physical host is constructed for any of \(F_5,F_6,F_7,F_8\) in the sense
+of Definition~1 of \(\texttt{agent\_material/10\_boundary\_row\_physical\_hosts.tex}\).
+More explicitly, the following objects are absent:
+\[
+\begin{array}{c|c|c|c}
+j&\mathrm{host\ one\mbox{-}particle\ index}&
+\mathrm{CY/DT\ identity}&\mathrm{current\ object}\\ \hline
+5&\mathrm{absent}&Z_5^{\mathrm{red}}=C_5\nabla_3^{-2}\ \mathrm{absent}&
+\mathrm{absent}\\
+6&\mathrm{absent}&Z_6^{\mathrm{red}}=C_6\nabla_2^{-2}\ \mathrm{absent}&
+\mathrm{absent}\\
+7&\mathrm{absent}&Z_7^{\mathrm{red}}=C_7\nabla_{3/2}^{-2}\ \mathrm{absent}&
+\mathrm{absent}\\
+8&\mathrm{absent}&Z_8^{\mathrm{red}}=C_8Q_1^{-2}\ \mathrm{absent}&
+\mathrm{absent}
+\end{array}
+\]
+Thus the strongest source-compatible statement is:
+\[
+\boxed{\mathrm{CG\ product}+\mathrm{Govindarajan\ CHL/WKB\ denominator}
+\not\Rightarrow \mathrm{CY/DT/chiral\ host}.}
+\]
+\end{proposition}
+
+\begin{proof}
+The Clery--Gritsenko paper is a classification and construction of
+diagonal-divisor automorphic products for Hecke-type congruence subgroups
+\cite{GC}.  The CHL papers construct dyon partition functions, square roots,
+Weyl chambers, Weyl vectors, and WKB denominator identities
+\cite{CD09BKM,GK09CHL,GK10Composite,Gov11BKM}.  They do not construct a
+compact oriented obstruction theory, a reduced virtual class, a DT/PT/OP
+partition function for the four rows, or a factorization algebra on a curve
+whose primitive superdimension is \(c_j\).  The standard K3 sigma-model
+and second-quantized BPS references \cite{DMVV,DVV,HM} explain the
+\(\Delta_5\)/Igusa/K3 sector, but they do not supply these boundary
+row hosts.
+\end{proof}
+
+\begin{remark}[Vol. III compatibility]
+\label{rem:chl-boundary-voliii-compatibility}
+The Vol. III \(\kappa\)-stratification now separates
+\(\kappa_{\mathrm{BKM}}\), \(\kappa_{\mathrm{cat}}\),
+\(\kappa_{\mathrm{ch}}\), and fibre/lattice witnesses.  Consequently the
+Clery--Gritsenko row weights
+\[
+(5,2,3,1,2,\tfrac12,\tfrac32,1)
+\]
+must not be replaced by a physical tuple such as
+\((5,2,1,1,\tfrac12,1,\tfrac14,0)\) without a constructed row map.  The
+present audit finds no primary-source construction of such a row map for
+\(F_5,F_6,F_7,F_8\).  The boundary rows therefore carry theorem-level
+automorphic product and WKB denominator data, but only conjectural
+physical-host status.
+\end{remark}
+
+\begin{proposition}[Replacement text for weak manuscript phrasing]
+\label{prop:chl-boundary-replacement-text}
+The following replacements are source-compatible and do not weaken any proved
+denominator statement.
+
+\smallskip
+\noindent\textbf{Replacement for \(\texttt{proj.tex:2017--2031}\).}
+\begin{quote}
+The Clery--Gritsenko catalogue and the Vol.~III physical row symbols are
+different row systems until a row map is constructed.  In the Clery--Gritsenko
+source order the weights are
+\[
+(5,2,3,1,2,\tfrac12,\tfrac32,1),
+\]
+whereas the tuple \((5,2,1,1,\tfrac12,1,\tfrac14,0)\), if used, is not the
+Clery--Gritsenko theorem table.  For the boundary rows the theorem-level data
+are exactly
+\[
+\begin{array}{rclcrcl}
+F_5&=&\nabla_3=\operatorname{den}\mathcal G_1(2),
+&&F_6&=&\nabla_2=\operatorname{den}\mathcal G_1(3),\\
+F_7&=&\nabla_{3/2}=\operatorname{den}\mathcal G_1(4),
+&&F_8&=&Q_1=\operatorname{den}\mathcal G_2(4),
+\end{array}
+\]
+with \(F_7\) understood on the order-four multiplier cover.  No
+CY/DT/chiral physical host or Vol.~III boundary partition identity follows
+from these denominator theorems.
+\end{quote}
+
+\noindent\textbf{Replacement for \(\texttt{proj.tex:3275--3280}\).}
+\begin{quote}
+If a future construction supplies a CHL/K3/CY sector for a boundary row, it
+must prove a protected one-particle index whose signed coefficients are exactly
+the exponent system appearing in the Clery--Gritsenko/Govindarajan product,
+including the non-infinity cusp terms and the \(F_7\) multiplier-cover
+normalisation.  Only after that construction is present may the row be read as
+a reduced partition identity \(Z_j^{\mathrm{red}}=C_jF_j^{-2}\) or as a
+chiral/Hall current host.
+\end{quote}
+
+\noindent\textbf{Replacement for any phrase ``the physical square-root atlas
+has boundary weights \(1/2,1,1/4,0\)''.}
+\begin{quote}
+The boundary weights in the Clery--Gritsenko catalogue are
+\[
+\mathrm{wt}(F_5,F_6,F_7,F_8)=(3,2,\tfrac32,1).
+\]
+Any physical atlas with different weights is a separate indexing system.  A
+comparison with \(F_5,\ldots,F_8\) requires an explicit row map preserving
+weight, cover/multiplier, product chamber, and protected index.
+\end{quote}
+\end{proposition}
+
+\begin{remark}[Audit anchors]
+The local manuscript anchors audited here are
+\(\texttt{proj.tex:1915--2031}\),
+\(\texttt{proj.tex:2513--3214}\), and
+\(\texttt{proj.tex:3270--3425}\), together with
+\(\texttt{agent\_material/10\_boundary\_row\_physical\_hosts.tex}\).
+The primary-source anchors are Clery--Gritsenko Theorems 0.1, 1.4, and 3.1
+\cite{GC}; Cheng--Dabholkar Sections 4--5 \cite{CD09BKM};
+Govindarajan--Gopala Krishna Sections 4.3--4.4 \cite{GK09CHL};
+Govindarajan--Gopala Krishna's composite \(N=4\) Section 5.3
+\cite{GK10Composite}; and Govindarajan Sections 4.2--4.3 plus Appendices
+C--D \cite{Gov11BKM}.
+\end{remark}

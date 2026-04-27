@@ -1,0 +1,339 @@
+\subsection{Physical row map for the boundary extensions}
+
+\begin{definition}[Three row systems]
+There are three row systems in play.
+
+First, the Clery--Gritsenko rows are the eight diagonal-divisor Siegel
+forms $F_j$ of Proposition~\ref{prop:gc-row-data} and the table preceding
+Proposition~\ref{prop:extension-quarantine}.  In the primary row labels
+used in this paper the boundary rows are
+$$
+\begin{array}{c|c|c|c|c}
+j&F_j&\Gamma_j&\mathrm{wt}(F_j)&(t_j,N_j^{\mathrm{orth}})\\ \hline
+5&\nabla_3&\Gamma_0^{(2)}(2)&3&(1,2)\\
+6&\nabla_2&\Gamma_0^{(2)}(3)&2&(1,3)\\
+7&\nabla_{3/2}&\Gamma_0^{(2)}(4)&\frac32&(1,4)\\
+8&Q_1&\Gamma_2(2)&1&(2,2).
+\end{array}
+$$
+Second, the Govindarajan--Cheng--Dabholkar CHL denominator rows are
+$$
+\mathcal G_1(2),\quad \mathcal G_1(3),\quad
+\mathcal G_1(4),\quad \mathcal G_2(4),
+$$
+in the notation of \cite{CD09BKM,Gov11BKM}.  Third, Vol.~III uses
+physical/chiral symbols only after a compact or orbifolded
+Calabi--Yau, Hall, or chiral construction has been specified.  A row
+map is not a relabelling between these three lists.  It is a construction
+which assigns the same protected object to all three sides.
+\end{definition}
+
+\begin{definition}[Physical row-map package]
+A physical row map for a boundary row $F_j$, $j=5,6,7,8$, consists of
+the following data.
+
+\[
+\mathscr R_j^{\mathrm{phys}}=
+\left(
+\mathcal X_j,\Gamma_j^{\mathrm{BPS}},
+\alpha_j^{\mathrm{phys}},
+\mathcal H_{j,\kappa}(n,l),
+Z_j^{\mathrm{red}},
+\mathsf A_j^{\mathrm{ch}},
+\kappa_{\mathrm{ch}},\kappa_{\mathrm{cat}},\kappa_{\mathrm{BKM}},
+\kappa_{\mathrm{fiber}}
+\right).
+\]
+Here:
+
+\[
+\mathcal X_j
+\]
+is a compact Calabi--Yau threefold, an oriented Calabi--Yau orbifold
+stack, or a CHL background with enough orientation data to define a
+reduced DT/PT/OP invariant;
+
+\[
+\alpha_j^{\mathrm{phys}}:\Gamma_j^{\mathrm{BPS}}\longrightarrow L_j
+\]
+is a charge-degree map to the Lorentzian lattice of the denominator
+row;
+
+\[
+\mathcal H_{j,\kappa}(n,l)
+\]
+is a Ramond-sector protected one-particle super vector space, or an
+explicit virtual replacement in the Grothendieck group, for each cusp
+label $\kappa$ occurring in the Clery--Gritsenko product; its signed
+superdimension is required to be
+$$
+\sdim \mathcal H_{j,\kappa}(n,l)=\widetilde c_{j,\kappa}(n,l).
+$$
+The coefficients $\widetilde c_{j,\kappa}$ are exactly those of
+Proposition~\ref{prop:congruence-product-degree-lattices}:
+$$
+\widetilde c_{j,\infty}=c_j,\quad
+\widetilde c_{5,S}=c_{5,S},\quad
+\widetilde c_{6,S}=c_{6,S},\quad
+\widetilde c_{7,M}=\frac12c_{7,M},\quad
+\widetilde c_{7,S}=c_{7,S},\quad
+\widetilde c_{8,S}=c_{8,S}.
+$$
+The charge map must satisfy
+$$
+\alpha_j^{\mathrm{phys}}(\gamma(n,l,m;\kappa))
+=\alpha_j^{\mathrm{prod}}(n,l,m;\kappa)
+$$
+for every labelled product degree.
+
+The scalar invariant is a reduced partition function satisfying
+$$
+Z_j^{\mathrm{red}}(Z)=C_jF_j(Z)^{-2}
+$$
+in the same chamber and normalization as the product.  The chiral object
+$\mathsf A_j^{\mathrm{ch}}$ is a Hall, Drinfeld, or factorization-algebra
+host whose protected primitives map to the denominator algebra
+$\mathcal G_N(M)$ and whose decategorified primitive superdimensions
+give the product exponents.  The four $\kappa$-entries are recorded with
+subscripts.  Only
+$$
+\kappa_{\mathrm{BKM}}(F_j)=\mathrm{wt}(F_j)
+$$
+is fixed by the Borcherds denominator row.
+\end{definition}
+
+\begin{theorem}[No physical row map from denominator data alone]
+The implication
+$$
+\left(
+\hbox{Clery--Gritsenko product for }F_j
+\quad+\quad
+\hbox{Govindarajan denominator theorem for }F_j
+\right)
+\Longrightarrow
+\mathscr R_j^{\mathrm{phys}}
+$$
+does not follow for $j=5,6,7,8$.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:gc-row-data} and
+Proposition~\ref{prop:congruence-product-degree-lattices} construct the
+automorphic products, their cusp-labelled exponents, and their product
+degree maps.  They do not construct a Ramond-sector Hilbert space, a
+Calabi--Yau or CHL enumerative theory, a reduced DT/PT/OP partition
+function, or a chiral Hall source.
+
+Proposition~\ref{prop:govindarajan-denominator-rows} supplies the
+additional Weyl--Kac--Borcherds data imported from the CHL theorem:
+$$
+P_j,\quad \mathcal M_j,\quad W_j,\quad \epsilon_j,\quad
+\rho_j,\quad N_j(a).
+$$
+This is a theorem about the denominator algebra and its Weyl alternating
+sum.  It does not identify the algebra with a microscopic BPS
+state-counting algebra, does not produce the scalar square
+$C_jF_j^{-2}$ as a reduced enumerative invariant, and does not construct
+a Vol.~III row map.  The separation is also recorded in
+Theorem~\ref{thm:eight-formal-current-rows}: the abelian product current
+algebra becomes a physical protected BPS object only after the
+one-particle index has been supplied.
+\end{proof}
+
+\begin{theorem}[The theorem-level boundary data]
+For the four boundary rows the theorem-level data currently available in
+this paper are exactly the following:
+$$
+\begin{array}{c|c|c|c|c|c}
+j&F_j&\mathrm{CG\ product}&\mathrm{CHL\ denominator}
+&\kappa_{\mathrm{BKM}}&\mathrm{physical\ row\ map}\\ \hline
+5&\nabla_3&(t,N^{\mathrm{orth}})=(1,2)&\mathcal G_1(2)&3&
+\mathrm{not\ constructed}\\
+6&\nabla_2&(t,N^{\mathrm{orth}})=(1,3)&\mathcal G_1(3)&2&
+\mathrm{not\ constructed}\\
+7&\nabla_{3/2}&(t,N^{\mathrm{orth}})=(1,4)&\mathcal G_1(4)&\frac32&
+\mathrm{not\ constructed}\\
+8&Q_1&(t,N^{\mathrm{orth}})=(2,2)&\mathcal G_2(4)&1&
+\mathrm{not\ constructed}.
+\end{array}
+$$
+For $F_7$ the denominator statement is on the $\mu_4$-multiplier cover.
+The row is not an ordinary scalar denominator on $\Gamma_0^{(2)}(4)$.
+\end{theorem}
+
+\begin{proof}
+The Clery--Gritsenko product data are
+Proposition~\ref{prop:gc-row-data}.  The product-degree lattices are
+Proposition~\ref{prop:congruence-product-degree-lattices}.  The
+nonabelian denominator data are
+Proposition~\ref{prop:govindarajan-denominator-rows}, with
+$$
+L_5=L_6=L_7=M_1,\qquad L_8=M_2,
+$$
+$$
+P_5=P_6=P_7=\{(0,-1,0),(1,1,0),(0,1,1)\},
+$$
+$$
+P_8=\{(0,-1,0),(1,1,0),(1,3,1),(0,1,1)\},
+$$
+and $\epsilon_j=\det$.  The $\kappa_{\mathrm{BKM}}$ entries are the
+weights of the corresponding denominator forms:
+$$
+\mathrm{wt}(\nabla_3)=3,\qquad
+\mathrm{wt}(\nabla_2)=2,\qquad
+\mathrm{wt}(\nabla_{3/2})=\frac32,\qquad
+\mathrm{wt}(Q_1)=1.
+$$
+Equivalently the constant terms of the controlling index shadows are
+$$
+c_5(0)=6,\qquad c_6(0)=4,\qquad c_7(0)=3,\qquad c_8(0)=2,
+$$
+so that $\kappa_{\mathrm{BKM}}=c_j(0)/2$ in the row labels used here.
+None of the cited propositions supplies an $\mathcal X_j$, a reduced
+DT/PT/OP theory, or a Hall/chiral construction.
+\end{proof}
+
+\begin{remark}[Kappa separation]
+The equality
+$$
+\kappa_{\mathrm{BKM}}(F_j)=\mathrm{wt}(F_j)=c_j(0)/2
+$$
+is a Borcherds-weight statement.  It is not an equality with
+$\kappa_{\mathrm{ch}}$, $\kappa_{\mathrm{cat}}$, or
+$\kappa_{\mathrm{fiber}}$.  For a compact Calabi--Yau threefold host,
+those invariants must be computed from the compact category, the chiral
+construction, and the fibre geometry.  The $K3\times E$ total-space
+Hodge supertrace gives $\kappa_{\mathrm{ch}}=0$, while the Igusa
+denominator has $\kappa_{\mathrm{BKM}}=5$; this is the model warning for
+all boundary rows.
+\end{remark}
+
+\begin{conjecture}[CHL boundary physical row map]
+There exist oriented CHL boundary hosts
+$$
+\mathcal X_{1,2}^{\mathrm{CHL}},\quad
+\mathcal X_{1,3}^{\mathrm{CHL}},\quad
+\mathcal X_{1,4}^{\mathrm{CHL}},\quad
+\mathcal X_{2,4}^{\mathrm{CHL}}
+$$
+with reduced protected theories and chiral Hall sources such that the
+physical row map is
+$$
+\begin{array}{c|c|c|c}
+j&F_j&\mathrm{candidate\ host}&\mathrm{denominator}\\ \hline
+5&\nabla_3&\mathcal X_{1,2}^{\mathrm{CHL}}&\mathcal G_1(2)\\
+6&\nabla_2&\mathcal X_{1,3}^{\mathrm{CHL}}&\mathcal G_1(3)\\
+7&\nabla_{3/2}&\mathcal X_{1,4}^{\mathrm{CHL}}&\mathcal G_1(4)\\
+8&Q_1&\mathcal X_{2,4}^{\mathrm{CHL}}&\mathcal G_2(4).
+\end{array}
+$$
+The first index is the CHL level $N_{\mathrm{CHL}}$ in
+$\mathcal G_N(M)$, not the orthogonal congruence parameter
+$N_j^{\mathrm{orth}}$ of the Clery--Gritsenko product.  The second index
+is the twist order $M$ in the Govindarajan row.  The conjectural reduced
+scalar identities are
+$$
+Z_{1,2}^{\mathrm{red}}=C_5\nabla_3^{-2},\qquad
+Z_{1,3}^{\mathrm{red}}=C_6\nabla_2^{-2},
+$$
+$$
+Z_{1,4}^{\mathrm{red}}=C_7\nabla_{3/2}^{-2}
+\quad\hbox{on the }\mu_4\hbox{-multiplier cover},
+\qquad
+Z_{2,4}^{\mathrm{red}}=C_8Q_1^{-2}.
+$$
+The protected one-particle indices of these hosts have cusp-labelled
+signed superdimensions
+$$
+\sdim \mathcal H_{j,\kappa}(n,l)=\widetilde c_{j,\kappa}(n,l),
+$$
+and their charge maps are the degree maps
+$\alpha_j^{\mathrm{prod}}(n,l,m;\kappa)$.
+\end{conjecture}
+
+\begin{remark}[Interpretation of the conjecture]
+For $j=5,6,7$ the conjecture is a twisted sector of the $N=1$ CHL/K3
+dyon system with twist order $M=2,3,4$.  For $j=8$ it is a level-$2$
+CHL sector with twist order $4$.  This is the maximal row map
+compatible with the Clery--Gritsenko products and the Govindarajan
+denominator rows.  It is not a theorem in this manuscript.  It also does
+not identify these rows with any separately named Vol.~III physical
+symbols unless that Vol.~III list is explicitly reindexed by the
+Clery--Gritsenko rows or an independent bijection is constructed.
+\end{remark}
+
+\begin{assumption}[Boundary enumerative lift]
+For a boundary row $F_j$ the scalar square statement
+$$
+Z_j^{\mathrm{red}}=C_jF_j^{-2}
+$$
+may be used only under the following additional assumption: the CHL
+background $\mathcal X_{N,M}^{\mathrm{CHL}}$ carries a reduced
+DT/PT/OP-type theory whose wall chamber is the Clery--Gritsenko product
+chamber, whose one-particle protected index is the cusp-labelled index
+above, and whose orientation character descends to the denominator
+character of the corresponding row.  Without this assumption the
+available theorem is only the automorphic denominator theorem.
+\end{assumption}
+
+\begin{theorem}[Exact obstruction]
+To promote the conjectural row map to a theorem for any
+$j\in\{5,6,7,8\}$ one must construct all of the following objects.
+
+First, an oriented compact or CHL Calabi--Yau host
+$\mathcal X_j$ with a reduced enumerative invariant.  Second, a
+protected Ramond-sector one-particle index whose cusp-labelled
+superdimensions are precisely the coefficients
+$\widetilde c_{j,\kappa}(n,l)$.  Third, a charge-lattice comparison
+identifying the physical charges with
+$$
+\alpha_j^{\mathrm{prod}}(n,l,m;\kappa).
+$$
+Fourth, a scalar-square theorem
+$$
+Z_j^{\mathrm{red}}=C_jF_j^{-2}
+$$
+in the same chamber and multiplier normalization as the product.
+Fifth, a chiral Hall or Drinfeld source whose protected primitive
+bracket maps to the CHL denominator algebra $\mathcal G_N(M)$ and whose
+decategorification gives the Govindarajan Weyl coefficients $N_j(a)$.
+Sixth, independent computations of
+$$
+\kappa_{\mathrm{ch}},\qquad
+\kappa_{\mathrm{cat}},\qquad
+\kappa_{\mathrm{fiber}},
+$$
+with $\kappa_{\mathrm{BKM}}$ kept separate from them.
+\end{theorem}
+
+\begin{proof}
+Each listed object is absent from the theorem-level sources cited above.
+The Clery--Gritsenko theorem gives an automorphic product and divisor.
+The Govindarajan theorem gives the denominator algebra and Weyl
+alternating side.  The Oberdieck--Pixton theorem \cite{OPand,OB} proves
+the $N=1$ scalar branch used elsewhere in this manuscript; it does not
+prove the four boundary scalar identities.  The cohomological Hall
+references \cite{KSCoHA,DavisonMeinhardtCoHA} supply the general
+language for a chiral/Hall source, not these four row identifications.
+Thus the six items are independent proof obligations, not hidden
+consequences of the existing product or denominator formulae.
+\end{proof}
+
+\begin{remark}[Source anchors]
+The manuscript anchors are:
+Proposition~\ref{prop:gc-row-data} for the four congruence products,
+Proposition~\ref{prop:congruence-product-degree-lattices} for the
+cusp-labelled degree maps, Theorem~\ref{thm:eight-formal-current-rows}
+for the formal current envelopes, and
+Proposition~\ref{prop:govindarajan-denominator-rows} for the imported
+CHL/WKB denominator data.  The auxiliary notes
+\texttt{agent\_material/06\_vol3\_homotopy\_positive\_cone\_dictionary.tex}
+and
+\texttt{agent\_material/07\_nonabelian\_promotion\_f5\_f8.tex}
+record the Vol.~III compatibility boundary and the nonabelian promotion
+data.  The bibliographic anchors are \cite{GC,CD09BKM,Gov11BKM} for the
+automorphic and CHL denominator rows, \cite{DVV,DMVV} for the dyon and
+second-quantized K3 index background, \cite{OPand,OB} for the proved
+$N=1$ scalar branch, and \cite{KSCoHA,DavisonMeinhardtCoHA} for the
+general Hall-algebra technology.
+\end{remark}

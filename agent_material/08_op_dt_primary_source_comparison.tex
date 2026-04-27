@@ -1,0 +1,387 @@
+\section{OP--DT primary-source comparison}
+\label{sec:op-dt-primary-source-comparison}
+
+\subsection{Claim attacked}
+
+The claim under attack is the unqualified identification
+\begin{equation}
+\label{eq:opdt-claim-attacked}
+Z^{X}_{\mathrm{HilbDT}}=Z^{X}_{\mathrm{OP}}.
+\end{equation}
+If \eqref{eq:opdt-claim-attacked} holds in the normalisation of this
+paper, then
+\begin{equation}
+\label{eq:opdt-cdt-value-if}
+C_{\mathrm{DT}}=C_{\mathrm{OP}}=-4096.
+\end{equation}
+The primary sources below prove \eqref{eq:opdt-cdt-value-if} only after
+replacing \(Z^{X}_{\mathrm{HilbDT}}\) by the Oberdieck--Pixton reduced
+Gromov--Witten, equivalently reduced stable-pairs, branch.
+
+\subsection{Oberdieck--Pixton branch}
+
+Let \(X=S\times E\), and let
+\begin{equation}
+\label{eq:opdt-class}
+(\beta_h,d)=\iota_{S*}\beta_h+\iota_{E*}(d[E]),
+\qquad
+\langle\beta_h,\beta_h\rangle=2h-2,
+\end{equation}
+with \(\beta_h\) primitive.  Oberdieck--Pixton use the reduced
+disconnected Gromov--Witten invariant
+\begin{equation}
+\label{eq:opdt-op-invariant}
+\mathsf N^X_{g,h,d}
+=
+\int_{[\overline M^{\bullet}_{g,1}(X,(\beta_h,d))]^{\mathrm{red}}}
+\operatorname{ev}_1^*
+\left(\pi_1^*\beta_h^\vee\cup\pi_2^*[\mathrm{pt}]\right),
+\qquad
+\langle\beta_h,\beta_h^\vee\rangle=1.
+\end{equation}
+Their primitive partition function is
+\begin{equation}
+\label{eq:opdt-op-series}
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=
+\sum_{g\geq0}\sum_{h\geq0}\sum_{d\geq0}
+\mathsf N^X_{g,h,d}\,u^{2g-2}Q^{h-1}T^{d-1}.
+\end{equation}
+Here
+\begin{equation}
+\label{eq:opdt-op-variables}
+P=e^{iu}=e^{2\pi iz},\qquad
+Q=e^{2\pi i\tau},\qquad
+T=e^{2\pi i\widetilde\tau}.
+\end{equation}
+Theorem~1 of Oberdieck--Pixton \cite{OB} states
+\begin{equation}
+\label{eq:opdt-op-theorem}
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=
+-\frac{1}{\chi_{10}^{\mathrm{OP}}(P,Q,T)}.
+\end{equation}
+
+The product in Oberdieck--Pixton \cite[(3)]{OB} is
+\begin{equation}
+\label{eq:opdt-op-chi}
+\chi_{10}^{\mathrm{OP}}(P,Q,T)
+=
+PQT
+\prod_{k,h,d}
+\left(1-P^kQ^hT^d\right)^{c_{\mathrm{K3}}(4hd-k^2)},
+\end{equation}
+where
+\begin{equation}
+\label{eq:opdt-op-product-domain}
+k\in\mathbb Z,\qquad h,d\geq0,\qquad
+(h>0\ {\rm or}\ d>0)\ {\rm or}\ (h=d=0,\ k<0).
+\end{equation}
+The coefficient function is fixed by the K3 elliptic genus
+\begin{equation}
+\label{eq:opdt-k3-coefficients}
+Z_{\mathrm{K3}}(z,\tau)
+=
+\sum_{h\geq0,\ k\in\mathbb Z}
+c_{\mathrm{K3}}(4h-k^2)P^kQ^h
+=2\phi_{0,1}(\tau,z).
+\end{equation}
+If
+\begin{equation}
+\label{eq:opdt-phi-coefficients}
+\phi_{0,1}(\tau,z)=\sum_{n\geq0,\ l\in\mathbb Z}f(n,l)q^nr^l,
+\end{equation}
+then
+\begin{equation}
+\label{eq:opdt-coeff-doubling}
+c_{\mathrm{K3}}(4hd-k^2)=2f(hd,k).
+\end{equation}
+The monic Borcherds product in this paper is
+\begin{equation}
+\label{eq:opdt-d5-product}
+D_5(Z)
+=
+q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+\left(1-q^nr^ls^m\right)^{f(nm,l)}
+=64^{-1}\Delta_5(Z),
+\end{equation}
+with
+\begin{equation}
+\label{eq:opdt-borch-vars}
+q=Q,\qquad r=P,\qquad s=T.
+\end{equation}
+Equations \eqref{eq:opdt-op-chi}--\eqref{eq:opdt-borch-vars} give
+\begin{equation}
+\label{eq:opdt-chi-delta}
+\chi_{10}^{\mathrm{OP}}(P,Q,T)
+=D_5(Z)^2
+=4096^{-1}\Delta_5(Z)^2.
+\end{equation}
+Therefore the OP branch is
+\begin{equation}
+\label{eq:opdt-op-constant}
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=-4096\,\Delta_5(Z)^{-2},
+\qquad
+C_{\mathrm{OP}}=-4096.
+\end{equation}
+
+\subsection{Reduced stable-pairs bridge already proved for OP}
+
+Oberdieck--Pandharipande use stable-pairs variables
+\begin{equation}
+\label{eq:opdt-opand-pair-vars}
+y=-P=-e^{iu}.
+\end{equation}
+For fixed \(n,\beta,d\) they define reduced stable-pairs invariants
+\begin{equation}
+\label{eq:opdt-pair-invariant}
+\mathsf P^X_{n,\beta,d}
+=
+\int_{[P_n(X,(\beta,d))]^{\mathrm{red}}}
+\tau_0\!\left(\pi_1^*\beta^\vee\cup\pi_2^*([0])\right)
+\end{equation}
+and the series
+\begin{equation}
+\label{eq:opdt-pair-series-fixed}
+\mathsf P^X_{\beta,d}(y)
+=
+\sum_{n\in\mathbb Z}\mathsf P^X_{n,\beta,d}y^n.
+\end{equation}
+For primitive \(\beta_h\), Oberdieck--Pandharipande prove the
+Gromov--Witten/pairs comparison \cite[Proposition after Conjecture D]{OPand}
+\begin{equation}
+\label{eq:opdt-gw-pair}
+\sum_{n\in\mathbb Z}\mathsf P^X_{n,\beta_h,d}y^n
+=
+\sum_g\mathsf N^{X\bullet}_{g,\beta_h,d}u^{2g-2},
+\qquad
+y=-e^{iu}.
+\end{equation}
+Oberdieck--Pixton use the same reduced stable-pairs branch
+\cite[\S4.7]{OB}; in their notation
+\begin{equation}
+\label{eq:opdt-op-pt}
+\mathsf P_{n,h,d}
+=
+\int_{P_n(X,(\beta_h,d))/E}\nu\,de,
+\qquad
+\sum_{n\in\mathbb Z}\mathsf P_{n,h,d}y^n
+=
+\sum_g\mathsf N_{g,h,d}u^{2g-2}.
+\end{equation}
+Thus the primary-source theorem is
+\begin{equation}
+\label{eq:opdt-pt-equals-op}
+Z^X_{\mathrm{PT,red}}(P,Q,T)
+:=
+\sum_{h,d,n}\mathsf P_{n,h,d}\,Q^{h-1}T^{d-1}(-P)^n
+=
+\mathcal Z_{\mathrm{OP}}(u,Q,T).
+\end{equation}
+Combining \eqref{eq:opdt-op-constant} and
+\eqref{eq:opdt-pt-equals-op},
+\begin{equation}
+\label{eq:opdt-pt-constant}
+Z^X_{\mathrm{PT,red}}(P,Q,T)
+=-4096\,\Delta_5(Z)^{-2}.
+\end{equation}
+
+\subsection{Bryan Hilbert-scheme DT branch}
+
+Bryan defines ordinary ideal-sheaf DT invariants by
+\begin{equation}
+\label{eq:opdt-bryan-ordinary-dt}
+DT_{\beta,n}(X)
+=
+\int_{\operatorname{Hilb}^{\beta,n}(X)}\nu\,de.
+\end{equation}
+For \(X=S\times E\) these invariants vanish because the \(E\)-translation
+action is fixed-point free.  Bryan therefore defines reduced quotient
+Hilbert-scheme invariants \cite[Definition 2.1]{BRYAN}
+\begin{equation}
+\label{eq:opdt-bryan-reduced-dt}
+\mathsf{DT}^{\mathrm{Hilb}}_{\beta+dE,n}(X)
+=
+\int_{\operatorname{Hilb}^{\beta+dE,n}(X)/E}\nu\,de.
+\end{equation}
+For primitive \(\beta_h\), write
+\begin{equation}
+\label{eq:opdt-bryan-index}
+\mathsf{DT}^{\mathrm{Hilb}}_{h,d,n}(X)
+:=
+\mathsf{DT}^{\mathrm{Hilb}}_{\beta_h+dE,n}(X).
+\end{equation}
+Bryan's partition function is
+\begin{equation}
+\label{eq:opdt-bryan-series}
+\mathsf{DT}^{\mathrm{Bryan}}(X)
+=
+\sum_{h\geq0}\sum_{d\geq0}\sum_{n\in\mathbb Z}
+\mathsf{DT}^{\mathrm{Hilb}}_{h,d,n}(X)\,
+\widetilde q_{\mathrm B}^{\,h-1}q_{\mathrm B}^{d-1}(-p_{\mathrm B})^n.
+\end{equation}
+Bryan states explicitly that his \(q_{\mathrm B},\widetilde q_{\mathrm B}\)
+are opposite to Oberdieck--Pandharipande's variables.  Hence
+\begin{equation}
+\label{eq:opdt-bryan-variable-map}
+p_{\mathrm B}=P,\qquad
+\widetilde q_{\mathrm B}=Q,\qquad
+q_{\mathrm B}=T.
+\end{equation}
+Equivalently, for this paper's displayed DT variables,
+\begin{equation}
+\label{eq:opdt-manuscript-dt-map}
+q_{\mathrm{DT}}=T=s,\qquad
+t_{\mathrm{DT}}=Q=q,\qquad
+p_{\mathrm{DT}}=P=r.
+\end{equation}
+
+Bryan's Donaldson--Thomas Igusa statement is Conjecture~2.3
+\cite{BRYAN}:
+\begin{equation}
+\label{eq:opdt-bryan-conjecture}
+\mathsf{DT}^{\mathrm{Bryan}}(X)
+=-\frac1{\chi_{10}(p_{\mathrm B},q_{\mathrm B},
+\widetilde q_{\mathrm B})}.
+\end{equation}
+Under \eqref{eq:opdt-bryan-variable-map} and the symmetry
+\(\chi_{10}(P,T,Q)=\chi_{10}(P,Q,T)\),
+\eqref{eq:opdt-bryan-conjecture} is exactly
+\begin{equation}
+\label{eq:opdt-bryan-conj-op-form}
+\mathsf{DT}^{\mathrm{Bryan}}(X)
+=
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=
+-4096\,\Delta_5(Z)^{-2}.
+\end{equation}
+Bryan proves only the \(h=0\) and \(h=1\) Jacobi coefficients, and the
+Behrend-weighted computation assumes the Behrend-function conjecture of
+Bryan--Kool:
+\begin{equation}
+\label{eq:opdt-bryan-h01}
+\mathsf{DT}^{\mathrm{Bryan}}_{0}(X)=\frac1{F^2\Delta},
+\qquad
+\mathsf{DT}^{\mathrm{Bryan}}_{1}(X)=-24\,\frac{\wp}{\Delta}.
+\end{equation}
+These are the \(\widetilde q_{\mathrm B}^{-1}\) and
+\(\widetilde q_{\mathrm B}^{0}\) coefficients of
+\(-\chi_{10}^{-1}\), not the full equality
+\eqref{eq:opdt-bryan-conj-op-form}.
+
+\subsection{Exact theorem needed}
+
+The missing theorem is the reduced ideal-sheaf/stable-pairs comparison
+for \(S\times E\), in the quotient-by-\(E\) Behrend-weighted
+normalisation:
+\begin{equation}
+\label{eq:opdt-needed-coeff}
+\mathsf{DT}^{\mathrm{Hilb}}_{h,d,n}(X)
+=
+\mathsf P_{n,h,d}
+\qquad
+\hbox{for all }h,d\geq0,\ n\in\mathbb Z,
+\end{equation}
+with the variable convention
+\begin{equation}
+\label{eq:opdt-needed-vars}
+y=-P,\qquad
+(p_{\mathrm B},q_{\mathrm B},\widetilde q_{\mathrm B})
+=(P,T,Q).
+\end{equation}
+Equivalently, the needed theorem is the partition identity
+\begin{equation}
+\label{eq:opdt-needed-series}
+\sum_{h,d,n}
+\mathsf{DT}^{\mathrm{Hilb}}_{h,d,n}(X)
+Q^{h-1}T^{d-1}(-P)^n
+=
+\sum_{h,d,n}
+\mathsf P_{n,h,d}Q^{h-1}T^{d-1}(-P)^n.
+\end{equation}
+No non-trivial degree-zero factor is allowed in
+\eqref{eq:opdt-needed-series}; if a DT/PT correspondence produces such
+a factor \(Z_0(P)\), the manuscript needs the corrected statement
+\begin{equation}
+\label{eq:opdt-needed-with-factor}
+Z^{X}_{\mathrm{HilbDT}}
+=
+Z_0(P)\,Z^X_{\mathrm{PT,red}},
+\qquad
+Z_0(P)=1
+\quad\hbox{in the reduced quotient normalisation}.
+\end{equation}
+Equations \eqref{eq:opdt-needed-coeff}--\eqref{eq:opdt-needed-with-factor}
+are not proved by \cite{OB}, \cite{OPand}, or \cite{BRYAN}.
+
+\subsection{Strongest true replacement}
+
+The unconditional scalar-square theorem is
+\begin{equation}
+\label{eq:opdt-true-replacement-op}
+Z^X_{\mathrm{OP}}
+=Z^X_{\mathrm{PT,red}}
+=-4096\,\Delta_5^{-2}.
+\end{equation}
+The Hilbert-scheme DT scalar square is conditional:
+\begin{equation}
+\label{eq:opdt-true-replacement-dt}
+Z^X_{\mathrm{HilbDT}}
+=C_{\mathrm{DT}}\Delta_5^{-2}
+\end{equation}
+is available only as an assumption, or as a theorem after
+\eqref{eq:opdt-needed-series} is supplied.  Under
+\eqref{eq:opdt-needed-series},
+\begin{equation}
+\label{eq:opdt-cdt-under-needed-theorem}
+C_{\mathrm{DT}}=-4096.
+\end{equation}
+Without \eqref{eq:opdt-needed-series}, the source-true statement is
+\begin{equation}
+\label{eq:opdt-final-status}
+C_{\mathrm{OP}}=-4096,
+\qquad
+C_{\mathrm{DT}}\in\mathbb C^\times\ {\rm separate}.
+\end{equation}
+
+\subsection{Audit table}
+
+\[
+\begin{array}{c|c|c}
+\hbox{object} & \hbox{equation} & \hbox{status} \\
+\hline
+\hbox{OP reduced GW}
+& \eqref{eq:opdt-op-series}
+& \hbox{definition in }\cite{OB} \\
+\hbox{OP theorem}
+& \eqref{eq:opdt-op-theorem}
+& \hbox{proved in }\cite[Theorem 1]{OB} \\
+\hbox{OP product}
+& \eqref{eq:opdt-op-chi}
+& \hbox{definition in }\cite[(3)]{OB} \\
+\hbox{normalisation conversion}
+& \eqref{eq:opdt-chi-delta}
+& \hbox{uses }Z_{\mathrm{K3}}=2\phi_{0,1},
+\ D_5=64^{-1}\Delta_5 \\
+\hbox{OP constant}
+& \eqref{eq:opdt-op-constant}
+& \hbox{proved: }C_{\mathrm{OP}}=-4096 \\
+\hbox{reduced PT branch}
+& \eqref{eq:opdt-pt-equals-op}
+& \hbox{proved for primitive }\beta_h \\
+\hbox{Bryan reduced HilbDT}
+& \eqref{eq:opdt-bryan-series}
+& \hbox{definition} \\
+\hbox{Bryan Igusa formula}
+& \eqref{eq:opdt-bryan-conjecture}
+& \hbox{conjecture; }h=0,1\hbox{ computed conditionally} \\
+\hbox{DT=OP}
+& \eqref{eq:opdt-needed-series}
+& \hbox{missing theorem} \\
+\hbox{manuscript-safe branch}
+& \eqref{eq:opdt-final-status}
+& \hbox{unconditional}
+\end{array}
+\]

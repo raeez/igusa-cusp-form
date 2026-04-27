@@ -1,0 +1,1024 @@
+\section{Dirac-standard prose attack and heal}
+
+\paragraph{Scope.}
+This dossier attacks \texttt{proj.tex} at the level of sentence order,
+phrasing, and epistemic status.  It uses
+\texttt{agent\_material/09\_physics\_first\_rewrite\_patchset.tex} as the
+physics-first input and writes no manuscript changes.  The standard is:
+a sentence may stand only if it states the object, the operation, and the
+status at the point where the derivation has earned them.
+
+\paragraph{Dirac test.}
+The sentence fails if it advertises a principle, says ``fixes'' without a
+map, says ``same charge lattice'' before the charge projection is built,
+uses ``physical'' for an automorphic or Gram-invariant object, or lets a
+late comparison theorem act as an input.  The replacement sentence should
+be shorter, should name the mathematical object, and should label
+unproved physics as input, conjecture, or open problem.
+
+\subsection{Sentence-level attack dossier}
+
+\paragraph{D1. \texttt{proj.tex:56--57}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The operation studied here is the passage from a scalar protected
+partition function to its automorphic square root.
+\end{quote}
+\textbf{Attack.}
+This sentence begins with an operation whose physical input has not yet
+been stated.  It also calls the scalar partition function protected before
+the OP/DT/protected-index distinction is made.
+\textbf{Replacement.}
+\begin{quote}\small
+For \(X=S\times E\), the proved scalar input is the
+Oberdieck--Pixton primitive reduced curve-counting series, and the
+automorphic square root is the normalized Borcherds determinant
+\(\Delta_5\).
+\end{quote}
+\textbf{Status label.} Proved scalar input; constructed automorphic
+determinant.
+
+\paragraph{D2. \texttt{proj.tex:64--65}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The square-root object used here is not an analytic branch.  It is the
+Borcherds determinant built from the virtual Ramond-sector K3 index.
+\end{quote}
+\textbf{Attack.}
+The second sentence is close, but it suppresses the crucial half-index
+status.  Dirac would name the virtual operation.
+\textbf{Replacement.}
+\begin{quote}\small
+The square-root object is not an analytic branch; it is the Borcherds
+determinant of the virtual class with superdimension
+\(\frac12 Z_{\mathrm{K3}}=\phi_{0,1}\).
+\end{quote}
+\textbf{Status label.} Constructed virtual class; no Hilbert-space half.
+
+\paragraph{D3. \texttt{proj.tex:70--71}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The Fock superdeterminant over the effective BPS charge cone is
+\end{quote}
+\textbf{Attack.}
+The phrase ``BPS charge cone'' overstates the data.  At this point only
+the product cone of Gram-invariant indices has been constructed.
+\textbf{Replacement.}
+\begin{quote}\small
+The Fock superdeterminant over the cusp-positive Gram-index cone is
+\end{quote}
+\textbf{Status label.} Constructed product cone; physical charge cone
+not proved.
+
+\paragraph{D4. \texttt{proj.tex:81--87}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The duality principle fixes the rest of the paper.  The BPS charge
+pairing has discriminant \(4nm-l^2\), and the degree map
+\(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\) satisfies
+\((\alpha(\gamma),\alpha(\gamma'))=-2\langle\gamma,\gamma'\rangle_{\mathrm{BPS}}\).
+Hence the Weyl chamber and the Borcherds cone are the denominator
+polarization of the same charge lattice, restricted to the active
+Jacobi support, whose cusp polarization produced the determinant.
+\end{quote}
+\textbf{Attack.}
+This is the central prose failure.  ``Principle fixes'' is rhetoric; the
+pairing is called BPS before the physical charge lattice has been
+constructed; ``same charge lattice'' hides the quotient from charges to
+Gram invariants.
+\textbf{Replacement.}
+\begin{quote}\small
+After the Harvey--Moore/DVV Gram-reduction input, the product variables
+are indexed by \(\Gamma_{\mathrm{gram}}\cong\mathbb Z^3\) with
+discriminant \(4nm-l^2\).  The map
+\(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\) sends this index lattice to the
+Lorentzian lattice used by the denominator identity.  The Weyl chamber is
+therefore an automorphic chamber for the Gram-indexed product, not yet a
+microscopic wall-crossing theorem.
+\end{quote}
+\textbf{Status label.} Assumption plus lattice calculation; physical
+wall-crossing open.
+
+\paragraph{D5. \texttt{proj.tex:89}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The automorphic square root also selects a denominator algebra.
+\end{quote}
+\textbf{Attack.}
+``Selects'' is not a mathematical verb here.  The source is the
+Gritsenko--Nikulin Borcherds product and denominator theorem.
+\textbf{Replacement.}
+\begin{quote}\small
+The Gritsenko--Nikulin denominator theorem attaches to this product a
+generalized Borcherds--Kac--Moody superalgebra.
+\end{quote}
+\textbf{Status label.} Cited denominator theorem.
+
+\paragraph{D6. \texttt{proj.tex:110--114}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The associated current chiral algebra on the elliptic curve \(E\) is the
+formal Beilinson--Drinfeld envelope of this denominator algebra.  The
+remaining physical problem is to construct a microscopic BPS
+factorization algebra for \(K3\times E\) and compare its protected
+primitive Euler characteristics with this denominator algebra.
+\end{quote}
+\textbf{Attack.}
+The first sentence says ``associated'' as if the current algebra is
+geometric.  It is formal.  The second sentence should say what is missing:
+states, bracket, and comparison.
+\textbf{Replacement.}
+\begin{quote}\small
+One may formally form the Beilinson--Drinfeld current envelope on \(E\)
+from the denominator algebra.  A physical BPS factorization algebra would
+require a compactification construction of states, protected integration,
+and a bracket whose primitive character and relations match
+\(\mathfrak g_{\Delta_5}\).
+\end{quote}
+\textbf{Status label.} Formal construction; physical realization open.
+
+\paragraph{D7. \texttt{proj.tex:123--125}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The square root is not first a product in a chosen coordinate system.
+It is a duality-covariant automorphic section.  The product is its
+trivialisation at the standard zero-dimensional cusp.
+\end{quote}
+\textbf{Attack.}
+The sentences assert modular primacy before the physical charge/index
+origin.  They are good after the Gram-reduction input, not before it.
+\textbf{Replacement.}
+\begin{quote}\small
+Once the protected index has been reduced to Gram invariants, the
+automorphic form is a section on the Siegel modular quotient.  Its product
+expansion is the trivialization at the standard zero-dimensional cusp.
+\end{quote}
+\textbf{Status label.} Mathematical after physical input.
+
+\paragraph{D8. \texttt{proj.tex:170--175}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The charge lattice is even, hence \((Q,Q)/2\) and \((P,P)/2\) are integral
+and \((Q,P)\in\mathbb Z\).  The displayed matrix identity is immediate
+from the definitions.  Its determinant is \(4nm-l^2\).  The last equality
+is the definition of the Fourier character attached to the chemical
+potential \(Z\).  This is the Harvey--Moore and
+Dijkgraaf--Verlinde--Verlinde charge grading used by the BPS product
+\(\cdots\).
+\end{quote}
+\textbf{Attack.}
+The first and last sentences promote an assumption to a fact.  They also
+conflate the compactification charge lattice with the product index.
+\textbf{Replacement.}
+\begin{quote}\small
+By hypothesis the compactification charge lattice is even, so the three
+Gram invariants \(n,l,m\) are integral.  The displayed matrix identity and
+the determinant \(4nm-l^2\) are then immediate.  The Fourier monomial
+\(q^nr^ls^m\) records this Gram matrix; the Harvey--Moore/DVV
+interpretation of this grading is a physical input.
+\end{quote}
+\textbf{Status label.} Assumption plus calculation.
+
+\paragraph{D9. \texttt{proj.tex:178--190}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The physical discriminant is
+\(\Delta(\gamma)=\langle\gamma,\gamma\rangle_{\mathrm{BPS}}=4nm-l^2\).
+\end{quote}
+\textbf{Attack.}
+The discriminant is a Gram discriminant at this point.  Calling it
+physical presupposes the unproved charge-lattice theorem.
+\textbf{Replacement.}
+\begin{quote}\small
+The Gram discriminant of the index triple is
+\(\Delta_{\mathrm{gram}}(\gamma)=4nm-l^2\).
+\end{quote}
+\textbf{Status label.} Definition; physical interpretation assumed
+elsewhere.
+
+\paragraph{D10. \texttt{proj.tex:196}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+It gives exactly the effective semigroup
+\end{quote}
+\textbf{Attack.}
+``Exactly'' is emphasis without content.  The semigroup is determined by
+the displayed cusp order.
+\textbf{Replacement.}
+\begin{quote}\small
+This cusp order determines the semigroup
+\end{quote}
+\textbf{Status label.} Definition from order.
+
+\paragraph{D11. \texttt{proj.tex:205--210}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The pairing \(\langle\ ,\ \rangle_{\mathrm{BPS}}\) is part of the charge
+lattice.  The order on \(\Gamma_{\mathrm{eff}}\) is a Fock polarization at
+one cusp.  A duality element transports this polarization to the
+corresponding product chamber at the transported cusp; it does not
+preserve the displayed inequalities inside the same coordinate chart.
+\end{quote}
+\textbf{Attack.}
+The first sentence is false at the stated level of proof.  The pairing is
+defined on the index lattice; its physical charge meaning is assumed.
+\textbf{Replacement.}
+\begin{quote}\small
+The bilinear form is defined on the Gram-invariant index lattice.  Under
+the Harvey--Moore/DVV input it is the image of the physical charge
+pairing.  The order on \(\Gamma_{\mathrm{eff}}\) is a Fock polarization at
+one cusp; a duality element transports the chamber, not the displayed
+inequalities in the original coordinates.
+\end{quote}
+\textbf{Status label.} Definition plus physical input.
+
+\paragraph{D12. \texttt{proj.tex:215--217}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The charge lattice is
+\(\Gamma_{\mathrm{BPS}}=\mathbb Z^3,\ \gamma=(n,l,m),\ x^\gamma=q^nr^ls^m\).
+\end{quote}
+\textbf{Attack.}
+This is the most direct overclaim.  \(\mathbb Z^3\) is the lattice of
+Gram invariants used by the product, not the microscopic charge lattice.
+\textbf{Replacement.}
+\begin{quote}\small
+The determinant is indexed by
+\(\Gamma_{\mathrm{gram}}=\mathbb Z^3\), with
+\(\gamma=(n,l,m)\) and \(x^\gamma=q^nr^ls^m\).
+\end{quote}
+\textbf{Status label.} Product indexing; microscopic charge lattice not
+constructed.
+
+\paragraph{D13. \texttt{proj.tex:400--403}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The determinant construction does not assume this object.  It uses only
+the virtual classes \(\mathbb U_{n,l}\) and their signed dimensions.  The
+algebraic object below is instead the Borcherds denominator algebra
+selected by the same charge grading and the same signed multiplicities.
+\end{quote}
+\textbf{Attack.}
+The last sentence reintroduces ``same charge grading'' after a paragraph
+that correctly avoided Hilbert-space claims.
+\textbf{Replacement.}
+\begin{quote}\small
+The determinant construction does not assume this object.  It uses only
+the virtual classes \(\mathbb U_{n,l}\) and their signed dimensions.  The
+algebraic object below is the Borcherds denominator algebra with the same
+Gram-degree coefficients.
+\end{quote}
+\textbf{Status label.} Virtual determinant; denominator coefficients.
+
+\paragraph{D14. \texttt{proj.tex:627--628}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+Therefore the Oberdieck--Pixton monic product is exactly the square of
+\end{quote}
+\textbf{Attack.}
+The word ``exactly'' is not needed.  The proof supplies the equality.
+\textbf{Replacement.}
+\begin{quote}\small
+Therefore the Oberdieck--Pixton monic product is the square of
+\end{quote}
+\textbf{Status label.} Proved equality.
+
+\paragraph{D15. \texttt{proj.tex:656--668}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+For the D6--D2--D0 charge \(\gamma(h,d,n)\), the physical protected index
+is expected to be represented by the Behrend-weighted Hilbert-scheme
+invariant.
+\end{quote}
+\textbf{Attack.}
+The status is correct but the grammar buries it.  Put the conjecture at
+the front.
+\textbf{Replacement.}
+\begin{quote}\small
+Conjecturally, the Behrend-weighted Hilbert-scheme invariant represents
+the protected D6--D2--D0 index for the charge \(\gamma(h,d,n)\).
+\end{quote}
+\textbf{Status label.} Conjectural dictionary.
+
+\paragraph{D16. \texttt{proj.tex:701--708}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The chosen square root is the Borcherds determinant already normalized as
+\(\mathcal D_X=\Delta_5\), not an arbitrary analytic branch.
+\end{quote}
+\textbf{Attack.}
+Good mathematics, but the sentence can be sharper by removing ``chosen''
+and ``already''.
+\textbf{Replacement.}
+\begin{quote}\small
+The square root used here is the normalized Borcherds determinant
+\(\mathcal D_X=\Delta_5\), not an analytic branch.
+\end{quote}
+\textbf{Status label.} Definition and normalization.
+
+\paragraph{D17. \texttt{proj.tex:840--842}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The geometric duality group is
+\(G_{\mathrm{du}}=\PSp_4(\mathbb Z)\simeq\SO_+(\Lambda^{3,2})\).
+\end{quote}
+\textbf{Attack.}
+Exterior-square linear algebra proves an arithmetic automorphic group.
+It does not prove the physical duality group of the compactification.
+\textbf{Replacement.}
+\begin{quote}\small
+The automorphic group used by the product is
+\(\PSp_4(\mathbb Z)\simeq\SO_+(\Lambda^{3,2})\); its physical-duality
+interpretation is part of the Harvey--Moore/DVV input.
+\end{quote}
+\textbf{Status label.} Proved arithmetic; physical interpretation
+assumed.
+
+\paragraph{D18. \texttt{proj.tex:866--870}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+We now change polarization on the same BPS charge lattice.  The cusp
+polarization produced the Fock determinant.  The denominator
+polarization sends a charge \(\gamma=(n,l,m)\) to a Lorentzian degree
+and makes the Borcherds chamber visible as the positive cone of that
+grading.
+\end{quote}
+\textbf{Attack.}
+The paragraph is too physical.  It assumes the same BPS lattice and calls
+the index triple a charge.
+\textbf{Replacement.}
+\begin{quote}\small
+We now pass from the Gram-index product cone to the Lorentzian lattice
+used in the denominator identity.  The cusp polarization gives the Fock
+determinant; the Lorentzian degree map gives the Borcherds chamber.
+\end{quote}
+\textbf{Status label.} Lattice construction; microscopic wall-crossing
+not asserted.
+
+\paragraph{D19. \texttt{proj.tex:1031--1038}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+\texttt{\textbackslash begin\{definition\}[BPS charge degrees in the Weyl chamber]}
+For \(\gamma=(n,l,m)\in\Gamma_{\mathrm{BPS}}\) set
+\(\alpha(\gamma)=\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\).
+With \(z=z_1f_{-2}+z_2f_3+z_3f_2\), the character of the BPS charge is
+\(x^\gamma=q^nr^ls^m=\exp(-\pi i(\alpha(\gamma),z))\).
+\end{quote}
+\textbf{Attack.}
+The title and text import BPS language before the construction earns it.
+\textbf{Replacement.}
+\begin{quote}\small
+\texttt{\textbackslash begin\{definition\}[Gram degrees in the Weyl chamber]}
+For \(\gamma=(n,l,m)\in\Gamma_{\mathrm{gram}}\), set
+\(\alpha(\gamma)=2nf_2-lf_3+2mf_{-2}\in\Lambda^{2,1}_{II}\).
+With \(z=z_1f_{-2}+z_2f_3+z_3f_2\), the product monomial is
+\(x^\gamma=q^nr^ls^m=\exp(-\pi i(\alpha(\gamma),z))\).
+\end{quote}
+\textbf{Status label.} Product character.
+
+\paragraph{D20. \texttt{proj.tex:1046--1049}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+Thus the Borcherds degree is the Lorentzian image of the BPS charge
+grading.  The Weyl chamber below is determined by the cusp polarization
+fixed in Section \ref{sec:duality-principle} together with the active
+Jacobi support, since charges with zero exponent do not generate walls.
+\end{quote}
+\textbf{Attack.}
+Again the phrase ``BPS charge grading'' overclaims.  The last clause
+should say exponents, not charges.
+\textbf{Replacement.}
+\begin{quote}\small
+Thus the Borcherds degree is the Lorentzian image of the Gram-index
+grading.  The Weyl chamber below is determined by the cusp polarization
+and the active Jacobi support; triples with zero exponent do not generate
+walls of the denominator product.
+\end{quote}
+\textbf{Status label.} Denominator support.
+
+\paragraph{D21. \texttt{proj.tex:1056--1065}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+In the standard cusp chamber, the active charge support is
+\(\Gamma_{\mathrm{act}}=\{\gamma=(n,l,m)\in\Gamma_{\mathrm{eff}}\mid
+f(nm,l)\neq0\}\).  The inactive triples in
+\(\Gamma_{\mathrm{eff}}\setminus\Gamma_{\mathrm{act}}\) are ordering data
+only; their product exponents are zero.  The proof-grade Borcherds cone
+is the real cone generated by the active positive BPS charges after the
+Lorentzian degree map.
+\end{quote}
+\textbf{Attack.}
+The computation is sound; the words ``charge'' and ``BPS charges'' are
+not.
+\textbf{Replacement.}
+\begin{quote}\small
+In the standard cusp chamber, the active Gram-index support is
+\(\Gamma_{\mathrm{act}}=\{\gamma=(n,l,m)\in\Gamma_{\mathrm{eff}}\mid
+f(nm,l)\neq0\}\).  The inactive triples have exponent zero.  The
+Borcherds cone is the real cone generated by the active Gram degrees
+\(\alpha(\Gamma_{\mathrm{act}})\).
+\end{quote}
+\textbf{Status label.} Computed support.
+
+\paragraph{D22. \texttt{proj.tex:1211}.}
+\textbf{Bad heading.}
+\begin{quote}\small
+\(\backslash\)section\{The denominator bracket\}
+\end{quote}
+\textbf{Attack.}
+The section heading makes the bracket sound like the main object.  The
+proved object is the denominator algebra; physical brackets are later.
+\textbf{Replacement.}
+\begin{quote}\small
+\(\backslash\)section\{The denominator algebra\}
+\end{quote}
+\textbf{Status label.} Denominator-level theorem.
+
+\paragraph{D23. \texttt{proj.tex:1218--1220}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+This is the algebraic denominator square root.  It is the automorphic
+correction of \(\bkm(A)\) constructed by Gritsenko--Nikulin,
+with root spaces graded by the charge map.
+\end{quote}
+\textbf{Attack.}
+``Charge map'' is too strong.  The grading map is the Gram-degree map.
+\textbf{Replacement.}
+\begin{quote}\small
+This is the denominator algebra attached to the Borcherds product.  It is
+the Gritsenko--Nikulin automorphic correction of \(\bkm(A)\),
+with root spaces indexed by the Gram-degree map.
+\end{quote}
+\textbf{Status label.} Cited construction.
+
+\paragraph{D24. \texttt{proj.tex:1231}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+Harvey--Moore charge grading:
+\end{quote}
+\textbf{Attack.}
+This label assigns physical meaning to the root-space superdimension.
+\textbf{Replacement.}
+\begin{quote}\small
+Signed root-superdimension convention:
+\end{quote}
+\textbf{Status label.} Algebraic convention.
+
+\paragraph{D25. \texttt{proj.tex:1236--1243}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+For \(\gamma\in\Gamma_{\mathrm{BPS}}\) set
+\(\mathcal A_{\mathrm{den},\gamma}:=\mathfrak g_{\Delta_5,\alpha(\gamma)}\).
+If \(\alpha(\gamma)\) is not a root, this space is zero.  The bracket is
+the Borcherds--Kac--Moody bracket of \(\mathfrak g_{\Delta_5}\).
+\end{quote}
+\textbf{Attack.}
+The construction is algebraic and should not use \(\Gamma_{\mathrm{BPS}}\).
+\textbf{Replacement.}
+\begin{quote}\small
+For \(\gamma\in\Gamma_{\mathrm{gram}}\), set
+\(\mathcal A_{\mathrm{den},\gamma}:=\mathfrak g_{\Delta_5,\alpha(\gamma)}\).
+If \(\alpha(\gamma)\) is not a root, this space is zero.  The bracket is
+the Borcherds--Kac--Moody bracket of \(\mathfrak g_{\Delta_5}\).
+\end{quote}
+\textbf{Status label.} Algebraic root grading.
+
+\paragraph{D26. \texttt{proj.tex:1254--1266}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+\(\backslash\)label\{thm:bracket-level-square-root\}
+The denominator Lie superalgebra has the following properties.
+\(\mathcal A_{\mathrm{den}}=\bigoplus_{\gamma\in\Gamma_{\mathrm{BPS}}}
+\mathcal A_{\mathrm{den},\gamma}\).
+Its signed charge multiplicities are the K3 half-index coefficients.
+\end{quote}
+\textbf{Attack.}
+The label says bracket-level; the theorem is denominator-level.  The
+grading is not \(\Gamma_{\mathrm{BPS}}\).
+\textbf{Replacement.}
+\begin{quote}\small
+\(\backslash\)label\{thm:denominator-algebra-square-root\}
+The denominator Lie superalgebra has a
+\(\Gamma_{\mathrm{gram}}\)-grading.  Its signed Gram-degree
+multiplicities are the virtual K3 half-index coefficients.
+\end{quote}
+\textbf{Status label.} Denominator algebra theorem.
+
+\paragraph{D27. \texttt{proj.tex:1323--1333}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+\(\mathsf{Den}_{\Delta_5,E}\) is a formal chiral/factorization algebra on
+\(E\) obtained from the denominator Lie superalgebra.  Its constant-mode
+primitive Lie superalgebra is \(\mathcal A_{\mathrm{den}}\), and the
+denominator of that primitive bracket is \(64^{-1}\Delta_5(2Z)\).  It is
+not, without additional microscopic input, the BPS factorization algebra
+of the compactification.
+\end{quote}
+\textbf{Attack.}
+The first sentence is acceptable, but the theorem title ``Formal current
+square root'' is too physical.  The third sentence should stand first in
+the proof of status.
+\textbf{Replacement.}
+\begin{quote}\small
+\(\mathsf{Den}_{\Delta_5,E}\) is the formal Beilinson--Drinfeld current
+envelope of the denominator Lie superalgebra.  Its constant-mode
+primitive Lie superalgebra is \(\mathcal A_{\mathrm{den}}\), whose
+denominator is \(64^{-1}\Delta_5(2Z)\).  This formal current algebra is
+not a BPS factorization algebra without a microscopic construction.
+\end{quote}
+\textbf{Status label.} Formal BD current envelope.
+
+\paragraph{D28. \texttt{proj.tex:1343--1344}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The denominator statement is exactly Theorem
+\ref{thm:bracket-level-square-root}.
+\end{quote}
+\textbf{Attack.}
+The word ``exactly'' is idle, and the referenced label is wrong in
+status.
+\textbf{Replacement.}
+\begin{quote}\small
+The denominator statement is Theorem
+\ref{thm:denominator-algebra-square-root}.
+\end{quote}
+\textbf{Status label.} Cross-reference hygiene.
+
+\paragraph{D29. \texttt{proj.tex:1381--1384}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The protected charge lattice is
+\(\Gamma_{\mathrm{BPS}}=\mathbb Z^3\), the completed positive support is
+\(\Gamma_{\mathrm{eff}}\), and the Lorentzian degree is
+\(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\).
+\end{quote}
+\textbf{Attack.}
+This line is the Hall criterion's main overclaim.  The Hall object would
+need a projection to the Gram lattice, not a declaration that the charge
+lattice is \(\mathbb Z^3\).
+\textbf{Replacement.}
+\begin{quote}\small
+The compactification charge lattice maps to
+\(\Gamma_{\mathrm{gram}}\cong\mathbb Z^3\) with positive support
+\(\Gamma_{\mathrm{eff}}\), and the projected degree is
+\(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\).
+\end{quote}
+\textbf{Status label.} Required structure for a Hall realization.
+
+\paragraph{D30. \texttt{proj.tex:1421--1424}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The first three conditions give a charge-graded Lie superalgebra whose
+Grothendieck shadow has the same exponents as the Igusa Borcherds
+product.  This is exactly the denominator/PBW shadow; by itself it is
+only a character statement.
+\end{quote}
+\textbf{Attack.}
+The first sentence should not say charge-graded.  The second sentence is
+mostly right but should lose ``exactly''.
+\textbf{Replacement.}
+\begin{quote}\small
+The first three conditions give a Gram-graded Lie superalgebra whose
+Grothendieck shadow has the exponents of the Igusa Borcherds product.
+This is the denominator/PBW character statement, not the bracket
+identification.
+\end{quote}
+\textbf{Status label.} Character-level statement.
+
+\paragraph{D31. \texttt{proj.tex:1446--1456}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The Oberdieck--Pixton scalar square fixes the protected character, and
+the present paper constructs the Borcherds denominator bracket, but
+neither result constructs the compact oriented critical Hall cosheaf, its
+global protected integration map, the Hall structure constants, the
+Borcherds relations inside the Hall super-commutator, the continuous Hopf
+pairing, or the comparison between the compactification fields and the
+Hall cosheaf.
+\end{quote}
+\textbf{Attack.}
+OP fixes a scalar curve-counting series, not the protected character
+without the physical dictionary.  ``Denominator bracket'' should be
+``denominator algebra''.
+\textbf{Replacement.}
+\begin{quote}\small
+Oberdieck--Pixton fix the primitive reduced scalar
+\(-4096\Delta_5^{-2}\).  After the Harvey--Moore/DVV dictionary this is
+expected to be the square of a protected character.  The present paper
+constructs the Borcherds denominator algebra, but it does not construct
+the compact oriented critical Hall cosheaf, protected integration, Hall
+structure constants, Borcherds relations inside a Hall super-commutator,
+continuous Hopf pairing, or comparison with compactification fields.
+\end{quote}
+\textbf{Status label.} OP theorem; physical character expected; Hall
+realization open.
+
+\paragraph{D32. \texttt{proj.tex:1459--1464}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The duality used here is automorphic BPS duality.  The same charge
+lattice is read first at a cusp as a protected Fock determinant and then
+in a Weyl chamber as a Borcherds denominator.  The formal current envelope
+above is a chiral algebra, but it is not yet a physical factorization
+algebra and not a chiral Koszul-duality theorem.
+\end{quote}
+\textbf{Attack.}
+``Automorphic BPS duality'' and ``same charge lattice'' overstate.  The
+good content is the last sentence.
+\textbf{Replacement.}
+\begin{quote}\small
+The duality used here is automorphic duality after the protected-index
+Gram reduction.  The same Gram-index lattice is read at the cusp as a
+Fock determinant and in the Weyl chamber as a Borcherds denominator.  The
+formal current envelope is a chiral algebra, but not a physical
+factorization algebra or chiral Koszul-duality theorem.
+\end{quote}
+\textbf{Status label.} Automorphic theorem plus physical input.
+
+\paragraph{D33. \texttt{proj.tex:1681--1693}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The equality \(\smult(\alpha(n,l,m))=f(nm,l)\) identifies the root-space
+Euler characteristic of \(\mathcal A_{\mathrm{den}}\) with the
+one-particle BPS index coefficient.  It does not prove an isomorphism
+\(\mathfrak g_{\alpha(n,l,m)}\cong
+\mathcal H^{\mathrm{BPS}}_{(n,l,m)}\) and it does not prove that the
+microscopic operator product on BPS states is the Borcherds bracket.
+\end{quote}
+\textbf{Attack.}
+The warning is correct but the first sentence still says BPS.  The
+coefficient is the virtual half-index coefficient.
+\textbf{Replacement.}
+\begin{quote}\small
+The equality \(\smult(\alpha(n,l,m))=f(nm,l)\) identifies the signed
+root superdimension of \(\mathcal A_{\mathrm{den}}\) with the virtual K3
+half-index coefficient.  It does not identify root spaces with
+microscopic BPS state spaces, and it does not identify a microscopic
+operator product with the Borcherds bracket.
+\end{quote}
+\textbf{Status label.} Signed dimension equality; state-space
+identification open.
+
+\paragraph{D34. \texttt{proj.tex:1711--1718}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+If \(\mathcal B\) carries a bracket compatible with charge addition, the
+determinant forgets that bracket and remembers exactly the class of
+\(\mathcal B\) in \(K_0(\cdots)\).  Thus the determinant of
+\(\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}\) is the protected
+shadow of its denominator bracket.  The bracket exists, but the
+determinant sees only its charge-graded Grothendieck class.
+\end{quote}
+\textbf{Attack.}
+The first sentence is good except for ``charge'' and ``exactly''.  The
+second sentence says ``protected shadow'' without a protected object.
+\textbf{Replacement.}
+\begin{quote}\small
+If \(\mathcal B\) carries a bracket compatible with the grading, the
+determinant forgets that bracket and remembers the class of
+\(\mathcal B\) in \(K_0\).  Thus the determinant of
+\(\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}\) is the
+Gram-graded Euler shadow of its denominator bracket.
+\end{quote}
+\textbf{Status label.} Grothendieck-class statement.
+
+\paragraph{D35. \texttt{proj.tex:1935--1943}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The congruence rows \(F_5,F_6,F_7,F_8\) have product-degree lattices in
+Proposition~\ref{prop:congruence-product-degree-lattices}.  A nonabelian
+Weyl--Borcherds promotion is additional structure: it is imported for
+\(F_5,F_6,F_7,F_8\) from the CHL denominator theorem of Govindarajan.
+\end{quote}
+\textbf{Attack.}
+This is mostly correct.  ``Promotion'' is rhetoric and hides the exact
+data.
+\textbf{Replacement.}
+\begin{quote}\small
+The congruence rows \(F_5,F_6,F_7,F_8\) have product-degree lattices in
+Proposition~\ref{prop:congruence-product-degree-lattices}.  Their
+nonabelian denominator data -- Weyl chamber, real roots, character, and
+Weyl sum -- are imported from Govindarajan's CHL denominator theorem.
+\end{quote}
+\textbf{Status label.} Product data plus imported denominator theorem.
+
+\paragraph{D36. \texttt{proj.tex:1948--1950}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+For every row the product formula itself gives a charged primitive
+product.  It gives a protected Fock determinant only after a one-particle
+index and charge-lattice interpretation have been supplied.
+\end{quote}
+\textbf{Attack.}
+``Charged'' and ``charge-lattice'' smuggle in physics.  The product gives
+degrees.
+\textbf{Replacement.}
+\begin{quote}\small
+For every row the product formula gives a primitive product indexed by
+its product-degree lattice.  It gives a protected Fock determinant only
+after a one-particle index and a physical charge projection have been
+supplied.
+\end{quote}
+\textbf{Status label.} Product-level theorem; physical interpretation
+conditional.
+
+\paragraph{D37. \texttt{proj.tex:1968--1971}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+If a future construction supplies the row by a CHL/K3 sector with
+\(\phi^{(j)}=\tfrac12Z^{(j)}_{\mathrm{K3}}\), then the scalar-square
+branch is \(Z_j=C_j/F_j^2\).
+\end{quote}
+\textbf{Attack.}
+``Future construction'' is process language.  State the mathematical
+condition.
+\textbf{Replacement.}
+\begin{quote}\small
+If a CHL/K3 sector is constructed with
+\(\phi^{(j)}=\tfrac12Z^{(j)}_{\mathrm{K3}}\), then the corresponding
+scalar-square branch has the form \(Z_j=C_j/F_j^2\).
+\end{quote}
+\textbf{Status label.} Conditional statement.
+
+\paragraph{D38. \texttt{proj.tex:2003--2008}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The physical square-root atlas used in Vol.~III has weights
+\((5,2,1,1,\tfrac12,1,\tfrac14,0)\).  That line is not the table of the
+theorem above unless a row map from the Clery--Gritsenko forms to the
+physical rows has first been built.
+\end{quote}
+\textbf{Attack.}
+``Physical square-root atlas'' is not a proved object in this paper.
+The row-map obstruction is correct and should lead.
+\textbf{Replacement.}
+\begin{quote}\small
+Vol.~III uses a separate comparison notation with weights
+\((5,2,1,1,\tfrac12,1,\tfrac14,0)\).  It is not the
+Clery--Gritsenko table unless a row map to the forms \(F_j\) has been
+constructed.
+\end{quote}
+\textbf{Status label.} Comparison notation; row map open.
+
+\paragraph{D39. \texttt{proj.tex:2380--2382}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+The displayed sets are exactly
+\(P_{t,II,\overline0}(\mathcal M_{t,II,\overline0})\) for \(t=2,3,4\).
+\end{quote}
+\textbf{Attack.}
+Here ``exactly'' is acceptable only if it is doing citation work.  Dirac
+would remove it.
+\textbf{Replacement.}
+\begin{quote}\small
+The displayed sets are
+\(P_{t,II,\overline0}(\mathcal M_{t,II,\overline0})\) for \(t=2,3,4\).
+\end{quote}
+\textbf{Status label.} Cited identification.
+
+\paragraph{D40. \texttt{proj.tex:2461--2462}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+Their formula (5.1) is exactly the displayed Weyl--Kac--Borcherds
+identity.
+\end{quote}
+\textbf{Attack.}
+Again, ``exactly'' is idle.
+\textbf{Replacement.}
+\begin{quote}\small
+Their formula (5.1) is the displayed Weyl--Kac--Borcherds identity.
+\end{quote}
+\textbf{Status label.} Source identification.
+
+\paragraph{D41. \texttt{proj.tex:2822--2830}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+In particular the product already fixes the signed root multiplicity
+function \(\mu_j\) and the product-prefactor degree \(\rho_j^{\mathrm{prod}}\),
+but it does not fix \(P_j,\mathcal M_j,W_j,\epsilon_j\), or the imaginary
+simple-root coefficients \(N_j(a)\).
+\end{quote}
+\textbf{Attack.}
+Good claim, but ``signed root multiplicity'' should be ``product
+exponent'' until the denominator data are present.
+\textbf{Replacement.}
+\begin{quote}\small
+The product fixes the exponent function \(\mu_j\) and the prefactor
+degree \(\rho_j^{\mathrm{prod}}\).  It does not fix the real roots, Weyl
+chamber, Weyl group, reflection character, or imaginary simple-root
+coefficients.
+\end{quote}
+\textbf{Status label.} Product-level data only.
+
+\paragraph{D42. \texttt{proj.tex:3235--3240}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+Thus all eight rows now have formal product/current-envelope objects.
+Rows \(1\)--\(4\) have the Gritsenko--Nikulin denominator algebras.
+Rows \(5\)--\(8\) have the Govindarajan CHL/WKB denominator algebras in
+the imported normalization.  The row \(F_7\) is imported only on the
+\(\mu_4\)-multiplier cover; it supplies no Vol.~III physical boundary
+theorem.
+\end{quote}
+\textbf{Attack.}
+``Now'' is process prose.  ``Current-envelope objects'' should not be
+automatic from products unless the formal construction has been stated
+row by row.
+\textbf{Replacement.}
+\begin{quote}\small
+Each row has the product-level formal object specified by its local data.
+Rows \(1\)--\(4\) have Gritsenko--Nikulin denominator algebras.  Rows
+\(5\)--\(8\) have Govindarajan CHL/WKB denominator algebras in the
+imported normalization.  The row \(F_7\) is imported only on the
+\(\mu_4\)-multiplier cover and supplies no Vol.~III physical boundary
+theorem.
+\end{quote}
+\textbf{Status label.} Local formal/product status; imported denominator
+status.
+
+\paragraph{D43. \texttt{proj.tex:3267--3276}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The Vol.~III physical square-root notation
+\(\Phi^{\mathrm{V3}}_1,\ldots,\Phi^{\mathrm{V3}}_8\), with weights
+\((5,2,1,1,\tfrac12,1,\tfrac14,0)\), is a different row system until a
+row map has been constructed.  In that physical row system, the integral
+rows are \(\cdots\) and the boundary rows are \(\cdots\).
+\end{quote}
+\textbf{Attack.}
+``Physical row system'' overstates.  The section only compares notation.
+\textbf{Replacement.}
+\begin{quote}\small
+The Vol.~III comparison notation
+\(\Phi^{\mathrm{V3}}_1,\ldots,\Phi^{\mathrm{V3}}_8\), with weights
+\((5,2,1,1,\tfrac12,1,\tfrac14,0)\), is a different row system until a
+row map has been constructed.  In that comparison system, the integral
+and boundary labels are as displayed below.
+\end{quote}
+\textbf{Status label.} Notational comparison; row map open.
+
+\paragraph{D44. \texttt{proj.tex:3283}.}
+\textbf{Bad sentence.}
+\begin{quote}\small
+For the physical rows the surviving boundary problem is
+\end{quote}
+\textbf{Attack.}
+``Surviving'' is audit prose.  ``Physical rows'' should be ``comparison
+rows'' unless the physical host is constructed.
+\textbf{Replacement.}
+\begin{quote}\small
+For the Vol.~III comparison rows the open boundary cases are
+\end{quote}
+\textbf{Status label.} Open comparison problem.
+
+\paragraph{D45. \texttt{proj.tex:3401--3406}.}
+\textbf{Bad sentences.}
+\begin{quote}\small
+The following compatibility dictionary is restricted to the \(N=1\) Igusa
+boundary.  The dictionary itself supplies no row map
+\(\Phi^{\mathrm{V3}}_j\longleftrightarrow F_i\)
+and no Vol.~III physical row-map denominator theorem for any congruence
+row.
+\end{quote}
+\textbf{Attack.}
+This is mostly correct, but ``compatibility dictionary'' is too broad for
+material that is only a local comparison.
+\textbf{Replacement.}
+\begin{quote}\small
+The following comparison is restricted to the \(N=1\) Igusa boundary.  It
+supplies no row map
+\(\Phi^{\mathrm{V3}}_j\longleftrightarrow F_i\)
+and no physical row-map denominator theorem for any congruence row.
+\end{quote}
+\textbf{Status label.} Restricted comparison.
+
+\subsection{Theorem-order changes}
+
+\begin{enumerate}
+\item Put the OP scalar theorem before the duality section.  The reader
+should see the proved scalar identity before seeing \(\Sp_4\),
+\(\Lambda^{3,2}\), or a Weyl chamber.
+\item Put the K3 Ramond index and virtual half-index immediately after
+the scalar theorem.  This proves that the square root is virtual before
+the denominator algebra is introduced.
+\item Put the Gram-reduction assumption after the virtual half-index.
+This is the first legitimate use of the charge pair \((Q,P)\).
+\item Put exterior-square arithmetic after the Gram-reduction assumption.
+Then \(\PSp_4(\mathbb Z)\simeq\SO_+(\Lambda^{3,2})\) is an automorphic
+group, with physical-duality status explicitly assumed.
+\item Put the Weyl chamber after the exterior-square calculation.  Its
+positive cone is an automorphic denominator chamber, not the origin of
+the charge lattice.
+\item Put the denominator algebra after the Weyl chamber and before any
+Hall language.  The denominator identity supplies signed
+superdimensions, not microscopic states.
+\item Put the Hall/factorization criterion after the denominator algebra.
+This is where a physical BPS bracket may be named, with open-problem
+status.
+\item Keep the Clery--Gritsenko and Vol.~III rows late.  They are
+comparison and extension material, not input to the \(N=1\) derivation.
+\end{enumerate}
+
+\subsection{Claims strengthened}
+
+\begin{enumerate}
+\item The OP identity becomes a proved scalar theorem, not a protected
+character theorem.
+\item \(\Delta_5\) becomes the normalized Borcherds determinant of a
+virtual half-index, not an analytic branch or Hilbert-space square root.
+\item \(\Gamma_{\mathrm{gram}}\) replaces \(\Gamma_{\mathrm{BPS}}\) until
+the compactification charge projection is constructed.
+\item The \(\PSp_4\simeq\SO(3,2)\) statement is kept as arithmetic; its
+physical-duality role is marked as input.
+\item The Weyl chamber is a denominator chamber; microscopic
+wall-crossing remains open.
+\item The BKM object is a denominator algebra; the physical BPS bracket
+requires Hall/factorization data.
+\item Late row material is quarantined as comparison or imported
+denominator material.
+\end{enumerate}
+
+\subsection{Claims refused}
+
+\begin{enumerate}
+\item Refused: ``the duality principle fixes the rest of the paper.''
+\item Refused: ``\(\mathbb Z^3\) is the BPS charge lattice.''
+\item Refused: ``the physical discriminant'' before the charge projection.
+\item Refused: ``same BPS charge lattice'' in the Weyl transition.
+\item Refused: ``OP fixes the protected character.''
+\item Refused: ``denominator bracket'' as the name for the proved object.
+\item Refused: ``product fixes signed root multiplicities'' before
+denominator data.
+\item Refused: Vol.~III comparison notation as a physical row system.
+\end{enumerate}
+
+\subsection{Commands run}
+
+\begin{verbatim}
+sed -n '1,220p' AGENTS.md
+sed -n '1,220p' CLAUDE.md
+sed -n '1,220p' /Users/raeez/ecosystem/INVARIANTS.md
+sed -n '1,220p' /Users/raeez/ecosystem/AGENTS-HARNESS.md
+test -e agent_material/10_dirac_prose_attack_heal.tex && \
+  sed -n '1,240p' agent_material/10_dirac_prose_attack_heal.tex || true
+sed -n '1,240p' agent_material/09_physics_first_rewrite_patchset.tex
+sed -n '240,520p' agent_material/09_physics_first_rewrite_patchset.tex
+sed -n '520,700p' agent_material/09_physics_first_rewrite_patchset.tex
+wc -l proj.tex agent_material/09_physics_first_rewrite_patchset.tex proj.bib
+rg -n -e "^This |^Thus |^We |^The point|not merely|exactly|canonical|..." \
+  proj.tex
+nl -ba proj.tex | sed -n '55,225p'
+nl -ba proj.tex | sed -n '250,410p'
+nl -ba proj.tex | sed -n '620,675p'
+nl -ba proj.tex | sed -n '688,736p'
+nl -ba proj.tex | sed -n '730,875p'
+nl -ba proj.tex | sed -n '1028,1088p'
+nl -ba proj.tex | sed -n '1128,1150p'
+nl -ba proj.tex | sed -n '1210,1475p'
+nl -ba proj.tex | sed -n '1678,1722p'
+nl -ba proj.tex | sed -n '1890,2015p'
+nl -ba proj.tex | sed -n '2368,2490p'
+nl -ba proj.tex | sed -n '2816,2830p'
+nl -ba proj.tex | sed -n '2898,2965p'
+nl -ba proj.tex | sed -n '3060,3220p'
+nl -ba proj.tex | sed -n '3220,3410p'
+python3 compute/verify_lattice.py
+python3 compute/verify_square_root.py
+rg -n -F -e "The duality principle fixes" \
+  -e "effective BPS charge cone" \
+  -e "same BPS charge lattice" \
+  -e "The geometric duality group is" \
+  -e "protected character" \
+  -e "The charge lattice is" \
+  -e "The physical discriminant" \
+  -e "BPS charge degrees" \
+  -e "positive BPS charges" \
+  -e "The protected charge lattice is" \
+  -e "one-particle BPS" \
+  -e "physical square-root atlas" \
+  -e "physical row system" proj.tex
+git status --short
+perl -ne 'print "$.:$_" if /[^\x00-\x7F]/' \
+  agent_material/10_dirac_prose_attack_heal.tex
+chktex -q agent_material/10_dirac_prose_attack_heal.tex || true
+sed -n '350,460p' agent_material/10_dirac_prose_attack_heal.tex
+sed -n '900,1010p' agent_material/10_dirac_prose_attack_heal.tex
+git status --short -- agent_material/10_dirac_prose_attack_heal.tex
+\end{verbatim}
+
+\subsection{Residual prose obligations}
+
+\begin{enumerate}
+\item After applying this dossier, run a zero-hit scan for
+\(\Gamma_{\mathrm{BPS}}=\mathbb Z^3\), ``same BPS charge lattice'',
+``protected character'' near the OP theorem, ``geometric duality group'',
+and ``physical row system''.
+\item Recheck every occurrence of ``exactly''.  Keep it only when it
+marks equality with a cited formula or a displayed computation.
+\item Recheck every occurrence of ``physical''.  It must refer either to
+an explicit physical assumption, a conjectural dictionary, or an open
+construction.
+\item Recheck every theorem title containing ``square root''.  The title
+must say whether the square root is scalar, virtual determinant,
+denominator, or microscopic.
+\end{enumerate}

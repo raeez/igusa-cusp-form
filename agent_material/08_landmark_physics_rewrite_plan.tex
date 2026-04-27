@@ -1,0 +1,399 @@
+\section{Landmark physics rewrite plan}
+\label{sec:landmark-physics-rewrite-plan}
+
+\subsection{Claim attacked}
+
+\textbf{Claim attacked.}  The integrated manuscript now satisfies the
+physical-first principle: charge/BPS/duality data precede the
+lattice/modular formalism, every physical assertion has the right status,
+and the construction is derived from the physical operation rather than
+from a later automorphic convention.
+
+\textbf{Attack result.}  False as written.  The integration has healed the
+largest overclaim: the Borcherds algebra is now a denominator algebra, not
+the microscopic BPS-state algebra.  The remaining violations are more
+structural.  The paper still sometimes names the universal
+Gram-invariant index lattice as the physical charge lattice; it still
+lets automorphic covariance appear before the protected-index source; and
+it still says in a few places that the physical operation fixes an object
+which is fixed only after adding an explicit physical dictionary.
+
+\subsection{Manuscript anchors}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.18\textwidth}|p{0.37\textwidth}|p{0.35\textwidth}}
+\textbf{Anchor in current \texttt{proj.tex}}&
+\textbf{Violation}&
+\textbf{Required upgrade}\\ \hline
+55--115, abstract&
+The abstract says the square root is ``singled out by the physics'' and
+then gives the automorphic denominator algebra.  This compresses three
+different levels: OP scalar square, virtual K3 half-index determinant,
+and denominator algebra.&
+Replace by a status-separated abstract: OP scalar square is proved;
+the Borcherds determinant is the normalized automorphic square root;
+the microscopic BPS factorization realization is open.\\ \hline
+82--88, abstract&
+``The BPS charge pairing'' and ``same charge lattice'' are too strong
+before the physical charge lattice has been constructed.  What is proved
+in the paper is the Gram-invariant index lattice and its anti-isometry to
+\(\Lambda^{2,1}_{II}\).&
+Use ``Gram-invariant index lattice'' until the physical realization
+assumption is stated.  Reserve ``physical charge lattice'' for the
+microscopic compactification lattice and its projection to
+\((Q^2/2,Q\cdot P,P^2/2)\).\\ \hline
+121--178, duality principle&
+The section begins with an automorphic section and only then introduces
+the charge matrix.  This is backwards for a physical-first paper.&
+Begin with the physical two-charge input as an assumption, derive
+\(T(n,l,m)\), \(4nm-l^2\), and the trace character, then state the
+automorphic section as the duality-covariant completion.\\ \hline
+167--178, charge matrix proof&
+``Thus the variables in the Borcherds product are the protected BPS
+charge invariants'' is stronger than the proof.  The proof shows this
+only after assuming the protected index factors through the two-charge
+Gram matrix.&
+Downgrade to: ``Under the Gram-invariant protected-index hypothesis,
+these are the variables of the BPS index.''\\ \hline
+195--204, cusp polarization&
+``It gives exactly the effective semigroup'' can read as a physical
+wall statement.  It is a Fourier/Fock polarization at the standard cusp.&
+State it as a convention fixed by the ordered cusp limit.  Its physical
+wall-crossing meaning is not used unless a microscopic stability
+condition is supplied.\\ \hline
+217--223, one-particle index&
+``The charge lattice is \(\Gamma_{\mathrm{BPS}}=\mathbb Z^3\)''
+overidentifies the invariant triple lattice with the compactification
+charge lattice.&
+Write \(\Gamma_{\mathrm{gram}}=\mathbb Z^3\) or
+\(\Gamma_{\mathrm{idx}}=\mathbb Z^3\).  Then state the map from physical
+charges to it as an assumption or dictionary.\\ \hline
+551--668, protected D-brane index and scalar square&
+This is the real physical scalar-square source, but it appears after the
+K3 half-index determinant and after the initial duality section.&
+Move this material before the determinant construction.  The logical
+entrance should be: protected D-brane index, OP theorem, DT/protected
+dictionary status, then square-root determinant.\\ \hline
+839--861, automorphic duality datum&
+``The geometric duality group is \(\PSp_4(\mathbb Z)\)'' is stated as
+if it has already been derived from the compactification.&
+Rename to ``automorphic duality group used here''.  Add: its
+identification with the physical duality group is physical input, not a
+consequence of the exterior-square lattice computation.\\ \hline
+865--869 and 1030--1074, Weyl chamber&
+``same BPS charge lattice'' still appears in the denominator
+polarization.  The healed statement is that the Weyl chamber is the
+denominator polarization of the same Gram-invariant index lattice,
+restricted to active Jacobi support.&
+Replace ``BPS charge lattice'' by ``Gram-invariant index lattice'' here.
+Keep the active-support lemma; it is the correct repair.\\ \hline
+1253--1277, denominator algebra square root&
+This is mostly healed.  The title still tempts the reader to hear a
+physical bracket-level square root.&
+Keep the theorem but rename internally to ``Denominator-algebra square
+root''.  In prose say ``algebraic denominator square root'', never
+``physical BPS square root''.\\ \hline
+1372--1455, Hall--Drinfeld criterion&
+The criterion correctly lists missing structures, but condition (1)
+again says the protected charge lattice is \(\mathbb Z^3\), and line
+1448 says OP fixes the protected character.&
+Change condition (1) to a projection to the Gram-invariant index lattice.
+Change ``OP fixes the protected character'' to ``OP fixes the primitive
+reduced curve-counting character; it becomes protected BPS character only
+after the protected-index dictionary.''\\ \hline
+1679--1691, index equality&
+``one-particle BPS index coefficient'' can still be heard as an honest
+state-space coefficient.&
+Use ``virtual K3 half-index coefficient'' or ``protected Euler
+coefficient''.  The following sentence may then say that a physical
+one-particle interpretation is additional.\\ \hline
+3231--3358, Vol.~III row material&
+This material is well quarantined but belongs after all \(N=1\) physics
+and denominator results.  Its physical row language should not leak into
+the main theorem.&
+Keep as appendix-only compatibility and obstruction material.  Do not
+use it to motivate the \(N=1\) construction before the actual
+charge/BPS derivation.
+\end{tabular}
+\end{center}
+
+\subsection{Replacement theorem order}
+
+The global rewrite should use this theorem order.
+
+\begin{enumerate}
+\item \textbf{Physical scalar problem.}
+State \(X=S\times E\), the D6--D2--D0 charge notation, the protected
+index \(\Omega_X\), and the status of the DT/protected dictionary.  Then
+state Oberdieck--Pixton as the unconditional primitive reduced
+curve-counting theorem:
+$$
+Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}.
+$$
+Status: proved for OP; physical DT/BPS interpretation is conjectural or
+assumptive as already recorded.
+
+\item \textbf{K3 protected one-particle input.}
+State the Ramond-sector index
+$$
+Z_{\mathrm{K3}}=2\phi_{0,1}
+$$
+and the right-moving localization lemma.  Then define the virtual
+half-index class \(\mathbb U_{n,l}\).  Status: protected index is
+physical; the half-index object is virtual and noncanonical.
+
+\item \textbf{Gram-invariant index lattice.}
+Assume the protected sector is read through two-charge Gram invariants:
+$$
+n=Q^2/2,\qquad l=Q\cdot P,\qquad m=P^2/2.
+$$
+Define \(\Gamma_{\mathrm{gram}}=\mathbb Z^3\) and
+$$
+\langle\gamma,\gamma'\rangle_{\mathrm{gram}}
+=2(nm'+n'm)-ll'.
+$$
+Status: mathematical consequence after the physical Gram-invariance
+input.  Do not call this the full physical charge lattice.
+
+\item \textbf{Cusp polarization and active support.}
+Define \(\Gamma_{\mathrm{eff}}\) from the ordered cusp limit, then define
+\(\Gamma_{\mathrm{act}}\) by \(f(nm,l)\ne0\).  Prove the active-support
+cone before introducing the Weyl chamber as a chamber:
+$$
+\alpha(\Gamma_{\mathrm{act}})
+\subset
+\mathbb Z_{\ge0}\delta_1+\mathbb Z_{\ge0}\delta_2+\mathbb Z_{\ge0}\delta_3,
+$$
+and the three simple rays are active.
+
+\item \textbf{Virtual Fock determinant.}
+Build \(\mathcal V\) from \(\mathbb U_{nm,l}\), state the Fock
+superdeterminant lemma, and prove
+$$
+\mathcal D_X
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod_{\Gamma_{\mathrm{eff}}}(1-q^nr^ls^m)^{f(nm,l)}.
+$$
+Then invoke Borcherds--Gritsenko--Nikulin to identify
+\(\mathcal D_X=\Delta_5\).  Status: determinant is virtual; equality to
+\(\Delta_5\) is the Borcherds product theorem.
+
+\item \textbf{Automorphic completion.}
+Only after the determinant is constructed, introduce the exterior-square
+model:
+$$
+\PSp_4(\mathbb Z)\simeq \SO_+(\Lambda^{3,2}).
+$$
+Status: theorem about lattices and period domains.  Its use as physical
+duality is an explicit physical assumption.
+
+\item \textbf{Weyl chamber and denominator cone.}
+Use the anti-isometry
+$$
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
+$$
+to identify the active-support cone with the type-II simple-root cone.
+Then compute the Weyl vector and multiplier restriction.  Status:
+mathematical denominator polarization of the Gram-invariant index
+lattice.
+
+\item \textbf{Denominator algebra.}
+Construct \(\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}\).  Prove
+the denominator identity and the signed superdimension equality.  Status:
+proved denominator algebra, not microscopic BPS algebra.
+
+\item \textbf{Formal current envelope.}
+Construct
+$$
+\mathsf{Den}_{\Delta_5,E}
+=U_E^{\mathrm{ch}}(\mathcal A_{\mathrm{den}}\otimes\mathcal O_E).
+$$
+Status: formal BD current envelope.  Not a compact \(K3\times E\)
+factorization algebra.
+
+\item \textbf{Microscopic realization criterion.}
+Move the Hall--Drinfeld criterion after the formal envelope.  Make it the
+only place where a physical bracket-level realization is discussed.
+Status: open until the compact Hall cosheaf, protected integration,
+orientation character, and Borcherds relations inside the Hall bracket
+are constructed.
+
+\item \textbf{Catalogue and Vol.~III row map.}
+Keep the Clery--Gritsenko and Vol.~III row material in an appendix or
+late section.  It must not supply an early physical motivation for the
+\(N=1\) theorem.
+\end{enumerate}
+
+\subsection{Sample replacements}
+
+\paragraph{Opening paragraph.}
+The scalar input is a protected enumerative partition function.  For
+\(X=S\times E\), Oberdieck--Pixton prove the primitive reduced
+curve-counting identity
+$$
+Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}.
+$$
+The Hilbert-scheme DT and microscopic BPS readings require additional
+dictionary data.  The paper constructs the canonical automorphic square
+root on the unconditional OP branch and records exactly which further
+physical data would identify it with a compact BPS factorization
+algebra.
+
+\paragraph{Square-root paragraph.}
+The square root used below is not an arbitrary analytic branch of
+\(\Delta_5^2\).  It is the normalized Borcherds determinant
+$$
+\mathcal D_X=\Delta_5,
+$$
+whose product expansion is built from the virtual half of the K3
+Ramond-sector index.  This is a protected-index construction.  It does
+not construct a canonical half of the K3 Hilbert space and does not
+construct a microscopic \(K3\times E\) BPS algebra.
+
+\paragraph{Charge-lattice paragraph.}
+Let \(\Gamma_{\mathrm{gram}}=\mathbb Z^3\) be the lattice of
+rank-two Gram invariants
+$$
+\gamma=(n,l,m)=\left(Q^2/2,\ Q\cdot P,\ P^2/2\right).
+$$
+The bilinear form
+$$
+\langle\gamma,\gamma'\rangle_{\mathrm{gram}}
+=2(nm'+n'm)-ll'
+$$
+is the polarization of the discriminant \(4nm-l^2\).  The map
+$$
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
+$$
+is an anti-isometry from this Gram-invariant index lattice to
+\(\Lambda^{2,1}_{II}\).  The assertion that every relevant protected
+BPS index of the compactification factors through this lattice is a
+physical input, not a conclusion of the lattice computation.
+
+\paragraph{Automorphic duality paragraph.}
+The exterior-square construction proves the lattice isomorphism
+$$
+\PSp_4(\mathbb Z)\simeq\SO_+(\Lambda^{3,2}).
+$$
+This is the automorphic duality group of the Siegel period domain used by
+the Igusa form.  Identifying it with the physical duality group acting on
+the protected compactification sector is a separate physical
+assumption.  The subsequent modular covariance statements use only this
+automorphic action and the stated assumption.
+
+\paragraph{Hall realization paragraph.}
+The Oberdieck--Pixton scalar square fixes a primitive reduced
+curve-counting character.  Under the protected-index dictionary it is
+expected to be the protected BPS character.  It does not construct the
+compact oriented critical Hall cosheaf, the protected integration map,
+the Hall structure constants, the orientation character
+\(\nu_{\Delta_5}\), or the comparison with the Borcherds relations.
+Those data are precisely the microscopic realization problem.
+
+\subsection{Broken statements to upgrade}
+
+\begin{enumerate}
+\item Replace every main-text occurrence of
+``the charge lattice is \(\Gamma_{\mathrm{BPS}}=\mathbb Z^3\)''
+by ``the Gram-invariant index lattice is
+\(\Gamma_{\mathrm{gram}}=\mathbb Z^3\)'', unless the sentence is inside a
+conditional physical-realization hypothesis.
+
+\item Replace ``the geometric duality group is
+\(\PSp_4(\mathbb Z)\)'' by ``the automorphic duality group used here is
+\(\PSp_4(\mathbb Z)\); its physical identification is input''.
+
+\item Replace ``the square root singled out by the physics'' by
+``the normalized Borcherds determinant selected by the protected-index
+normalization''.  Add the physical square-root interpretation only under
+the protected-index dictionary.
+
+\item Replace ``OP fixes the protected character'' by ``OP fixes the
+primitive reduced curve-counting character; it becomes protected BPS
+character under the protected-index dictionary''.
+
+\item Replace ``same BPS charge lattice'' in the Weyl section by
+``same Gram-invariant index lattice''.  Then cite the active-support
+lemma as the reason the denominator cone is the simple-root cone.
+
+\item Replace ``one-particle BPS index coefficient'' in the determinant
+forgetfulness theorem by ``virtual K3 half-index coefficient'' unless an
+honest one-particle Hilbert lift has been assumed.
+
+\item Move all Vol.~III row-map and boundary-row material after the
+\(N=1\) theorem.  It is compatibility and obstruction material, not a
+premise of the Igusa square-root construction.
+\end{enumerate}
+
+\subsection{Files changed}
+
+Only this owned file was changed:
+$$
+\texttt{agent\_material/08\_landmark\_physics\_rewrite\_plan.tex}.
+$$
+
+\subsection{Commands run}
+
+\begin{verbatim}
+sed -n '1,240p' AGENTS.md
+sed -n '1,220p' CLAUDE.md
+sed -n '128,148p' /Users/raeez/ecosystem/INVARIANTS.md
+sed -n '133,148p' /Users/raeez/ecosystem/AGENTS-HARNESS.md
+git status --short
+rg -n "^\\section|^\\subsection|physical|BPS|charge|duality|..." proj.tex
+nl -ba proj.tex | sed -n '50,122p'
+nl -ba proj.tex | sed -n '121,214p'
+nl -ba proj.tex | sed -n '215,405p'
+nl -ba proj.tex | sed -n '542,736p'
+nl -ba proj.tex | sed -n '739,862p'
+nl -ba proj.tex | sed -n '863,1125p'
+nl -ba proj.tex | sed -n '1210,1470p'
+nl -ba proj.tex | sed -n '1658,1732p'
+nl -ba proj.tex | sed -n '1900,2018p'
+nl -ba proj.tex | sed -n '2570,2768p'
+nl -ba proj.tex | sed -n '3230,3368p'
+rg -n "bracket|BKM|Igusa|Delta_5|physical|open|Hall|Drinfeld|..." \
+  /Users/raeez/calabi-yau-quantum-groups/FRONTIER.md
+sed -n '1,320p' agent_material/07_chiral_koszul_factorization_boundary.tex
+sed -n '1,260p' agent_material/07_nonabelian_promotion_f5_f8.tex
+rg -n "charge lattice is|same BPS charge lattice|physical duality|..." \
+  proj.tex agent_material -S
+\end{verbatim}
+
+\subsection{Remaining open obligations}
+
+\begin{enumerate}
+\item Construct the compactification charge lattice and prove the
+projection to \((Q^2/2,Q\cdot P,P^2/2)\) is the complete invariant of
+the protected sector used by the product.
+
+\item Prove that the physical duality group acting on the protected
+\(K3\times E\) sector is the automorphic group
+\(\PSp_4(\mathbb Z)\) used in the exterior-square model, or state the
+precise subgroup/coset actually supplied by the compactification.
+
+\item Prove the protected-index dictionary
+$$
+\Omega_X(h,d,n)=\mathbf{DT}^X_{n,(\beta_h,d)}
+$$
+in the normalization and chamber of the paper, or keep it as a
+conjecture.
+
+\item Construct an honest chiral one-particle Hilbert lift of the
+virtual half-index, or keep the determinant entirely in
+\(K_0\)-language.
+
+\item Construct the compact oriented critical Hall cosheaf for
+\(K3\times E\), its protected integration map, its Hall
+super-commutator, and the comparison of its primitive bracket with
+\(\mathfrak g_{\Delta_5}\).
+
+\item Prove that the automorphic real-root hyperplanes are microscopic
+walls of marginal stability for the compactification.  Until then, they
+are denominator walls.
+
+\item Build the Vol.~III row map
+\(\Phi^{\mathrm{V3}}_j\leftrightarrow F_i\) before using any boundary
+row as a physical partition-function theorem.
+\end{enumerate}

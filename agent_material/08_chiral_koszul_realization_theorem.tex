@@ -1,0 +1,343 @@
+\section{Second attack on the chiral Koszul realization}
+\label{sec:chiral-koszul-second-attack}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\Cur}{\operatorname{Cur}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\Obs}{\operatorname{Obs}}
+\providecommand{\BKM}{\mathrm{BKM}}
+\providecommand{\Hall}{\mathrm{Hall}}
+\providecommand{\hCS}{\mathrm{hCS}}
+\providecommand{\barB}{\bar B}
+\providecommand{\Omegach}{\Omega^{\mathrm{ch}}}
+\providecommand{\SCchtop}{\mathsf{SC}^{\mathrm{ch,top}}}
+\providecommand{\Den}{\mathsf{Den}}
+\providecommand{\smult}{\operatorname{smult}}
+\providecommand{\sdim}{\operatorname{sdim}}
+
+The attacked claim is the following implication:
+$$
+\begin{gathered}
+\Den_{\Delta_5,E}
+=U_E^{\mathrm{ch}}\!
+\left(\mathcal A_{\mathrm{den}}\otimes\mathcal O_E\right)\\
+\Longrightarrow\quad
+\text{compact}\ K3\times E\ \text{chiral Koszul realization.}
+\end{gathered}
+$$
+This implication is false as a theorem from the data now in the paper.
+The current envelope is constructed.  The compact chiral Koszul source is
+not constructed.
+
+\begin{definition}[Data actually constructed]
+\label{def:second-attack-constructed-data}
+The constructed Igusa data are
+$$
+\mathcal D_{\mathrm{cur}}=
+\left(
+E,\mathcal A_{\mathrm{den}},\alpha,
+\Den_{\Delta_5,E},
+\operatorname{den}(\mathcal A_{\mathrm{den}})
+\right),
+$$
+where
+$$
+\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5},\qquad
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},
+$$
+and
+$$
+\Den_{\Delta_5,E}
+:=U_E^{\mathrm{ch}}\!
+\left(\Cur_E(\mathcal A_{\mathrm{den}})\right),
+\qquad
+\Cur_E(\mathcal A_{\mathrm{den}})
+=\mathcal A_{\mathrm{den}}\otimes\mathcal O_E.
+$$
+The denominator identity is
+$$
+\operatorname{den}(\mathcal A_{\mathrm{den}})
+=64^{-1}\Delta_5(2Z),
+$$
+and the signed charge multiplicities are
+$$
+\sdim\mathcal A_{\mathrm{den},(n,l,m)}=f(nm,l).
+$$
+\end{definition}
+
+\begin{definition}[Strong compact chiral Koszul realization]
+\label{def:strong-compact-koszul-realization}
+A strong compact chiral Koszul realization of
+\(\Den_{\Delta_5,E}\) is a tuple
+$$
+\mathfrak R=
+\left(
+\mathcal F_{K3\times E,\sigma,o},
+C_{K3\times E},
+\tau,
+\Theta_{\mathrm{Kos}},
+\Theta_{\hCS\to\Hall}^{\mathrm{or}},
+\mathcal D_\hbar,
+\Psi^+_{\Hall\to\BKM}
+\right)
+$$
+with the following properties.
+\begin{enumerate}
+\item \(\mathcal F_{K3\times E,\sigma,o}\) is a finite-first,
+charge-completed Costello--Gwilliam factorization algebra on
+\(\Ran(E)\), constructed from the compact \(K3\times E\) theory in
+stability chamber \(\sigma\) and orientation \(o\).
+\item \(C_{K3\times E}\) is a coaugmented conilpotent chiral coalgebra in
+the completed category in which the Vol.~I--II bar-cobar formalism is
+valid, and
+$$
+C_{K3\times E}\simeq
+\barB^{\mathrm{ch}}_E
+\left(\mathcal F_{K3\times E,\sigma,o}\right).
+$$
+\item The twisting morphism
+$$
+\tau:C_{K3\times E}\longrightarrow
+\Den_{\Delta_5,E}
+$$
+has chiral cobar adjoint
+$$
+\Theta_{\mathrm{Kos}}:
+\Omegach_E C_{K3\times E}
+\longrightarrow
+\Den_{\Delta_5,E}.
+$$
+\item \(\Theta_{\mathrm{Kos}}\) is a quasi-isomorphism in the completed
+finite-first category.
+\item The protected primitive comparison is a charge-preserving
+isomorphism of Lie superalgebras:
+$$
+H^0\Prim_{\mathrm{prot}}
+\left(\mathcal F_{K3\times E,\sigma,o}\right)_\gamma
+\cong
+\mathcal A_{\mathrm{den},\gamma}
+=\mathfrak g_{\Delta_5,\alpha(\gamma)}.
+$$
+\item The maps
+$$
+\Theta_{\hCS\to\Hall}^{\mathrm{or}},\qquad
+\mathcal D_\hbar,\qquad
+\Psi^+_{\Hall\to\BKM}
+$$
+construct the oriented compact Hall source, the completed
+Hall--Drinfeld double, and the comparison with the Borcherds
+denominator algebra.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[No promotion from the current data]
+\label{thm:no-promotion-from-current-data}
+The data \(\mathcal D_{\mathrm{cur}}\) of
+Definition~\ref{def:second-attack-constructed-data} do not determine a
+strong compact chiral Koszul realization in the sense of
+Definition~\ref{def:strong-compact-koszul-realization}.
+\end{theorem}
+
+\begin{proof}
+Beilinson--Drinfeld supplies the functor
+$$
+\hbox{Lie-* algebras on }E
+\longrightarrow
+\hbox{chiral algebras on }E,
+\qquad
+\mathcal L\longmapsto U_E^{\mathrm{ch}}(\mathcal L).
+$$
+Applying it to
+\(\mathcal L=\mathcal A_{\mathrm{den}}\otimes\mathcal O_E\) constructs
+\(\Den_{\Delta_5,E}\).  This is a target chiral algebra.
+
+Chiral Koszul realization asks for different input.  One needs a
+coaugmented conilpotent chiral coalgebra
+\[
+C_{K3\times E}
+\]
+or a factorization algebra whose bar construction produces it, and a
+quasi-isomorphism
+$$
+\Omegach_E C_{K3\times E}
+\xrightarrow{\ \simeq\ }
+\Den_{\Delta_5,E}.
+$$
+No such \(C_{K3\times E}\) is part of \(\mathcal D_{\mathrm{cur}}\).
+The formal bar coalgebra
+\(\barB_E^{\mathrm{ch}}(\Den_{\Delta_5,E})\), if the current envelope is
+placed in a valid Vol.~I completed category, is the bar coalgebra of the
+already constructed target.  It is not a compact \(K3\times E\) BPS
+source.
+
+The Costello--Gwilliam input has the same logical shape.  Once a BV
+theory satisfying the quantum master equation and the required locality,
+descent, and anomaly conditions is constructed, it produces a
+factorization algebra of observables.  The compact
+\(K3\times E\) BV/Hall object with protected primitive bracket
+\(\mathfrak g_{\Delta_5}\) is not constructed by the BD current envelope.
+
+The decategorified identities do not repair this gap.  The equations
+$$
+\smult(\alpha(n,l,m))=f(nm,l),
+\qquad
+Z^X_{\square}=C_{\square}\Delta_5^{-2}
+$$
+are Euler-characteristic data.  For any fixed integer \(c\), the same
+Euler characteristic is realized by infinitely many super vector spaces:
+$$
+c=(c+r)-r\quad(c\geq0),\qquad
+c=r-(r-c)\quad(c<0),\qquad r\geq0.
+$$
+Adding acyclic pairs also changes a chain model without changing its
+Euler characteristic.  Therefore the determinant and denominator data do
+not determine a differential, a factorization product, a bar coalgebra, a
+Koszul twisting morphism, or Hall structure constants.
+
+Finally, the Vol.~III compatibility note records the same boundary as an
+open frontier:
+$$
+\begin{gathered}
+\text{compact}\ K3\times E\ \text{Hall cosheaf},\\
+\Theta_{\hCS\to\Hall}^{\mathrm{or}},\qquad
+\mathcal D_\hbar,\qquad
+\Psi^+_{\Hall\to\BKM}.
+\end{gathered}
+$$
+Thus the attempted promotion fails at the source-construction step, not
+at the BD current-envelope step.
+\end{proof}
+
+\begin{proposition}[The only tautological Koszul theorem available]
+\label{prop:tautological-bar-cobar-current}
+Assume, as an extra hypothesis, that \(\Den_{\Delta_5,E}\) belongs to a
+completed chiral category where the Vol.~I bar-cobar adjunction applies,
+and that \(\Den_{\Delta_5,E}\) lies in the corresponding Koszul locus.
+Then the counit
+$$
+\Omegach_E\barB_E^{\mathrm{ch}}
+\left(\Den_{\Delta_5,E}\right)
+\longrightarrow
+\Den_{\Delta_5,E}
+$$
+is a quasi-isomorphism.  This reconstructs the current envelope from its
+own bar coalgebra.  It does not construct a compact \(K3\times E\)
+factorization algebra and it does not identify physical BPS states with
+Borcherds root spaces.
+\end{proposition}
+
+\begin{proof}
+This is exactly the bar-cobar inversion theorem on the Koszul locus,
+applied with
+\[
+\mathcal A=\Den_{\Delta_5,E}.
+\]
+The conclusion is internal to the current envelope.  No compact source,
+Hall correspondence, BV quantization, or primitive-state comparison is
+introduced by this application.
+\end{proof}
+
+\begin{theorem}[Sharp conditional realization theorem]
+\label{thm:sharp-conditional-koszul-realization}
+If a tuple \(\mathfrak R\) satisfying
+Definition~\ref{def:strong-compact-koszul-realization} is constructed,
+then \(\Den_{\Delta_5,E}\) is the compact \(K3\times E\) chiral Koszul
+realization of the Igusa denominator algebra:
+$$
+\Omegach_E C_{K3\times E}
+\xrightarrow{\ \simeq\ }
+\Den_{\Delta_5,E},
+$$
+and the protected primitive bracket of
+\(\mathcal F_{K3\times E,\sigma,o}\) is
+$$
+H^0\Prim_{\mathrm{prot}}
+\left(\mathcal F_{K3\times E,\sigma,o}\right)
+\cong
+\mathcal A_{\mathrm{den}}
+=\mathfrak g_{\Delta_5}.
+$$
+Consequently its denominator is
+$$
+\operatorname{den}
+H^0\Prim_{\mathrm{prot}}
+\left(\mathcal F_{K3\times E,\sigma,o}\right)
+=64^{-1}\Delta_5(2Z).
+$$
+\end{theorem}
+
+\begin{proof}
+The quasi-isomorphism is part of the realization datum:
+\[
+\Theta_{\mathrm{Kos}}:
+\Omegach_E C_{K3\times E}\xrightarrow{\simeq}\Den_{\Delta_5,E}.
+\]
+The primitive comparison in
+Definition~\ref{def:strong-compact-koszul-realization} identifies the
+protected primitive Lie superalgebra with
+\(\mathcal A_{\mathrm{den}}\).  The denominator identity then follows
+from Theorem~\ref{thm:bracket-level-square-root}.  Nothing in this proof
+is automatic from the scalar square; all chain-level and Hall--Drinfeld
+maps are hypotheses.
+\end{proof}
+
+\begin{center}
+\begingroup
+\small
+\begin{tabular}{p{0.32\textwidth}|p{0.22\textwidth}|p{0.34\textwidth}}
+\textbf{Input} & \textbf{Status} & \textbf{Effect}\\ \hline
+\(\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}\) &
+proved &
+Borcherds denominator bracket.\\
+\(\Den_{\Delta_5,E}=U_E^{\mathrm{ch}}(\mathcal A_{\mathrm{den}}\otimes
+\mathcal O_E)\) &
+proved &
+BD current envelope on \(E\).\\
+\(\barB_E^{\mathrm{ch}}(\Den_{\Delta_5,E})\) &
+formal or conditional &
+Bar of the target only; no compact source.\\
+\(\mathcal F_{K3\times E,\sigma,o}\) &
+missing &
+Would be the compact Costello--Gwilliam/Hall factorization source.\\
+\(\Theta_{\mathrm{Kos}}\) &
+missing &
+Would prove \(\Omegach C\simeq\Den_{\Delta_5,E}\).\\
+Primitive bracket comparison &
+missing &
+Would turn Euler data into a state-space Lie superalgebra theorem.
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{remark}[Finite construction checklist]
+\label{rem:finite-koszul-checklist}
+The missing constructions are finite.
+\begin{enumerate}
+\item Construct the compact \(K3\times E\) Costello--Gwilliam observable
+factorization algebra on \(\Ran(E)\), including finite-first completion.
+\item Construct the oriented compact Hall cosheaf.
+\item Construct the comparison \(\Theta_{\hCS\to\Hall}^{\mathrm{or}}\).
+\item Prove protected integration and orientation character
+\(\epsilon_o=\nu_{\Delta_5}\) in the same normalization as the Igusa
+denominator.
+\item Promote the Hall object from an abstract \(E_1\)-algebra in graded
+vector spaces to an \(E_1\)-chiral or BD factorization object on the
+geometric Ran space.
+\item Construct the coaugmented conilpotent chiral coalgebra
+\(C_{K3\times E}\) and prove the bar differential squares to zero, or
+place the curved object in the correct completed/coderived category.
+\item Prove the Koszul quasi-isomorphism
+\(\Omegach_E C_{K3\times E}\simeq\Den_{\Delta_5,E}\).
+\item Prove the protected primitive bracket comparison with all
+Borcherds relations, not only
+\(\sdim=f(nm,l)\).
+\item Construct the completed Hall--Drinfeld double \(\mathcal D_\hbar\).
+\item Construct the comparison \(\Psi^+_{\Hall\to\BKM}\) compatible with
+the Hopf pairing.
+\end{enumerate}
+Until these ten constructions exist, the theorem status is:
+BD current envelope proved; compact chiral Koszul realization
+conditional; automatic realization false.
+\end{remark}

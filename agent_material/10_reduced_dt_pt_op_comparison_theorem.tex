@@ -1,0 +1,443 @@
+\section{Reduced Hilbert-scheme DT/PT/OP comparison}
+\label{sec:reduced-dt-pt-op-comparison}
+
+\subsection{Claim attacked}
+
+The claim under attack is the comparison
+\begin{equation}
+\label{eq:rdtpt-claim}
+Z^X_{\mathrm{HilbDT}}=Z^X_{\mathrm{OP}}
+\end{equation}
+in the quotient-by-\(E\), Behrend-weighted normalisation.  The attack
+has a positive outcome: \eqref{eq:rdtpt-claim} follows from
+Oberdieck's reduced stable-pair theorem for \(S\times E\), together
+with the primitive Gromov--Witten/pairs comparison used by
+Oberdieck--Pixton.
+
+\subsection{Variables and objects}
+
+Let
+\begin{equation}
+\label{eq:rdtpt-x-class}
+X=S\times E,\qquad
+(\beta_h,d)=\iota_{S*}\beta_h+\iota_{E*}(d[E]),
+\qquad
+\langle\beta_h,\beta_h\rangle=2h-2,
+\end{equation}
+where \(\beta_h\neq0\) is primitive.  Use the OP/Siegel variables
+\begin{equation}
+\label{eq:rdtpt-op-vars}
+P=e^{iu}=e^{2\pi iz},\qquad
+Q=e^{2\pi i\tau},\qquad
+T=e^{2\pi i\widetilde\tau}.
+\end{equation}
+The Borcherds variables of this manuscript are
+\begin{equation}
+\label{eq:rdtpt-borch-vars}
+q_{\mathrm Bch}=Q,\qquad r_{\mathrm Bch}=P,\qquad s_{\mathrm Bch}=T.
+\end{equation}
+The manuscript's displayed DT variables
+\[
+Z^X_{\mathrm{DT}}(q,t,p)
+=
+\sum_{h,d,n}\mathbf{DT}^X_{n,(\beta_h,d)}
+q^{d-1}t^{h-1}(-p)^n
+\]
+therefore satisfy
+\begin{equation}
+\label{eq:rdtpt-manuscript-map}
+q=T,\qquad t=Q,\qquad p=P.
+\end{equation}
+
+\subsection{Reduced Hilbert-scheme DT}
+
+Bryan defines the ordinary ideal-sheaf invariant by
+\begin{equation}
+\label{eq:rdtpt-bryan-ordinary}
+DT_{\beta,n}(X)
+=
+\int_{\operatorname{Hilb}^{\beta,n}(X)}\nu\,de,
+\end{equation}
+and observes that for \(X=S\times E\) the ordinary invariant vanishes
+because the \(E\)-translation action on
+\(\operatorname{Hilb}^{\beta+dE,n}(X)\) is fixed-point free.  The reduced
+Hilbert-scheme invariant is therefore
+\begin{equation}
+\label{eq:rdtpt-bryan-reduced}
+\mathsf{DT}^{\mathrm{Hilb}}_{\beta+dE,n}(X)
+=
+\int_{\operatorname{Hilb}^{\beta+dE,n}(X)/E}\nu\,de.
+\end{equation}
+Bryan's partition function is
+\begin{equation}
+\label{eq:rdtpt-bryan-series}
+\mathsf{DT}^{\mathrm{Bryan}}(p_{\mathrm{Br}},q_{\mathrm{Br}},
+\widetilde q_{\mathrm{Br}})
+=
+\sum_{h,d,n}
+\mathsf{DT}^{\mathrm{Hilb}}_{h,d,n}(X)\,
+\widetilde q_{\mathrm{Br}}^{\,h-1}
+q_{\mathrm{Br}}^{d-1}(-p_{\mathrm{Br}})^n.
+\end{equation}
+Bryan states that his \(q_{\mathrm{Br}},\widetilde q_{\mathrm{Br}}\)
+are opposite to Oberdieck--Pandharipande's variables.  Thus
+\begin{equation}
+\label{eq:rdtpt-bryan-map}
+p_{\mathrm{Br}}=P,\qquad
+q_{\mathrm{Br}}=T,\qquad
+\widetilde q_{\mathrm{Br}}=Q.
+\end{equation}
+Equivalently,
+\begin{equation}
+\label{eq:rdtpt-hilbdt-series}
+Z^X_{\mathrm{HilbDT}}(T,Q,P)
+:=
+\sum_{h,d,n}
+\mathsf{DT}^{\mathrm{Hilb}}_{h,d,n}(X)\,
+T^{d-1}Q^{h-1}(-P)^n
+=
+\mathsf{DT}^{\mathrm{Bryan}}(P,T,Q).
+\end{equation}
+
+\subsection{Reduced stable pairs}
+
+Let \(P_n(X,(\beta,d))\) be the moduli space of stable pairs
+\((F,s)\) on \(X\) with
+\[
+\chi(F)=n,\qquad [\operatorname{Supp}(F)]=(\beta,d).
+\]
+Oberdieck defines the quotient reduced stable-pairs invariant by
+\begin{equation}
+\label{eq:rdtpt-pt-quotient}
+\mathsf P^X_{n,(\beta,d)}
+=
+\int_{P_n(X,(\beta,d))/E}\nu\,de,
+\end{equation}
+where \(de\) is orbifold topological Euler characteristic and \(\nu\)
+is the Behrend function on the quotient stack.  Oberdieck proves that
+this quotient invariant agrees with the incidence invariant obtained
+from the reduced virtual class:
+\begin{equation}
+\label{eq:rdtpt-pt-incidence}
+\mathsf P^X_{n,(\beta,d)}
+=
+\int_{[P_n(X,(\beta,d))]^{\mathrm{red}}}
+\tau_0\!\left(\pi_1^*(\beta^\vee)\cup\pi_2^*[\mathrm{pt}]\right),
+\qquad
+\langle\beta,\beta^\vee\rangle=1.
+\end{equation}
+This is Oberdieck, \emph{On reduced stable pair invariants},
+arXiv:1605.04631, Theorem~1.  The proof constructs a symmetric perfect
+obstruction theory on an isotrivial fibre \(K=p^{-1}(0_E)\), pushes the
+resulting virtual class to \(P_n(X,(\beta,d))/E\), and compares it with
+the reduced virtual class by the Fulton--Siebert formula.
+
+\subsection{Reduced DT/PT theorem}
+
+For every non-zero class \(\beta\in H_2(S,\mathbb Z)\) and every
+\(d\geq0\), Oberdieck defines
+\begin{equation}
+\label{eq:rdtpt-fixed-series}
+\mathsf{DT}_{(\beta,d)}(x)
+=
+\sum_n\mathsf{DT}^{\mathrm{Hilb}}_{\beta+dE,n}(X)x^n,
+\qquad
+\mathsf{PT}_{(\beta,d)}(x)
+=
+\sum_n\mathsf P^X_{n,(\beta,d)}x^n.
+\end{equation}
+Oberdieck, arXiv:1605.04631, Theorem~3(i), proves
+\begin{equation}
+\label{eq:rdtpt-oberdieck-dtpt}
+\mathsf{DT}_{(\beta,d)}(x)=\mathsf{PT}_{(\beta,d)}(x).
+\end{equation}
+The same theorem records the degree-zero issue: in the local wall
+crossing one first has
+\[
+\mathsf{DT}_C(x)=\mathsf{PT}_C(x)\,\mathsf{DT}_0(x),
+\qquad
+\mathsf{DT}_0(x)=M(-x)^{\chi(X)}.
+\]
+For \(X=S\times E\),
+\[
+\chi(X)=\chi(S)\chi(E)=24\cdot0=0,
+\qquad
+\mathsf{DT}_0(x)=1.
+\]
+Hence \eqref{eq:rdtpt-oberdieck-dtpt} has no residual MacMahon factor.
+
+Substituting \(x=-P\) in \eqref{eq:rdtpt-oberdieck-dtpt} gives, for
+each primitive \(\beta_h\) and \(d\geq0\),
+\begin{equation}
+\label{eq:rdtpt-coefficient-comparison}
+\sum_n
+\mathsf{DT}^{\mathrm{Hilb}}_{h,d,n}(X)(-P)^n
+=
+\sum_n
+\mathsf P^X_{n,h,d}(-P)^n.
+\end{equation}
+Multiplying by \(Q^{h-1}T^{d-1}\) and summing over \(h,d\) gives
+\begin{equation}
+\label{eq:rdtpt-hilbdt-pt-series}
+Z^X_{\mathrm{HilbDT}}(T,Q,P)
+=
+Z^X_{\mathrm{PT,red}}(P,Q,T),
+\end{equation}
+where
+\begin{equation}
+\label{eq:rdtpt-pt-series}
+Z^X_{\mathrm{PT,red}}(P,Q,T)
+:=
+\sum_{h,d,n}
+\mathsf P^X_{n,h,d}\,Q^{h-1}T^{d-1}(-P)^n.
+\end{equation}
+
+\subsection{PT/OP bridge}
+
+Oberdieck--Pandharipande define the reduced stable-pairs series
+\[
+\mathsf P^X_{\beta,d}(y)=\sum_n\mathsf P^X_{n,\beta,d}y^n
+\]
+and prove, for primitive \(\beta_h\) and all \(d\), the reduced
+Gromov--Witten/pairs correspondence
+\begin{equation}
+\label{eq:rdtpt-gw-pt}
+\sum_n\mathsf P^X_{n,\beta_h,d}y^n
+=
+\sum_g\mathsf N^{X\bullet}_{g,h,d}u^{2g-2},
+\qquad
+y=-e^{iu}=-P.
+\end{equation}
+This is the proposition immediately following Conjecture~D in
+Oberdieck--Pandharipande, arXiv:1411.1514.  Oberdieck--Pixton use the
+same quotient stable-pairs convention:
+\begin{equation}
+\label{eq:rdtpt-op-pt}
+\mathsf P_{n,(\beta,d)}
+=
+\int_{P_n(X,(\beta,d))/E}\nu\,de,
+\qquad
+\sum_n\mathsf P_{n,h,d}y^n
+=
+\sum_g\mathsf N_{g,h,d}u^{2g-2}.
+\end{equation}
+Therefore
+\begin{equation}
+\label{eq:rdtpt-pt-op}
+Z^X_{\mathrm{PT,red}}(P,Q,T)
+=
+\mathcal Z_{\mathrm{OP}}(u,Q,T).
+\end{equation}
+Oberdieck--Pixton Theorem~1 gives
+\begin{equation}
+\label{eq:rdtpt-op-theorem}
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=
+-\frac{1}{\chi_{10}^{\mathrm{OP}}(P,Q,T)}.
+\end{equation}
+With the manuscript normalisation
+\begin{equation}
+\label{eq:rdtpt-chi-normalisation}
+\chi_{10}^{\mathrm{OP}}(P,Q,T)
+=D_5(Z)^2
+=4096^{-1}\Delta_5(Z)^2,
+\qquad
+(q_{\mathrm Bch},r_{\mathrm Bch},s_{\mathrm Bch})=(Q,P,T),
+\end{equation}
+one obtains
+\begin{equation}
+\label{eq:rdtpt-op-constant}
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=-4096\,\Delta_5(Z)^{-2}.
+\end{equation}
+
+\subsection{Comparison theorem}
+
+\begin{theorem}[Reduced Hilbert-scheme DT/PT/OP comparison]
+\label{thm:rdtpt-comparison}
+For \(X=S\times E\), primitive non-zero \(\beta_h\), \(d\geq0\), and
+the variables \eqref{eq:rdtpt-op-vars}--\eqref{eq:rdtpt-manuscript-map},
+the quotient-by-\(E\), Behrend-weighted Hilbert-scheme DT partition
+function equals the Oberdieck--Pixton primitive reduced partition
+function:
+\begin{equation}
+\label{eq:rdtpt-main}
+Z^X_{\mathrm{HilbDT}}(T,Q,P)
+=
+Z^X_{\mathrm{PT,red}}(P,Q,T)
+=
+\mathcal Z_{\mathrm{OP}}(u,Q,T).
+\end{equation}
+Consequently
+\begin{equation}
+\label{eq:rdtpt-main-constant}
+Z^X_{\mathrm{HilbDT}}(T,Q,P)
+=
+-4096\,\Delta_5(Z)^{-2},
+\qquad
+C_{\mathrm{DT}}=C_{\mathrm{OP}}=-4096.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:rdtpt-hilbdt-pt-series} is Oberdieck's reduced
+DT/PT theorem after the substitution \(x=-P\).  Equation
+\eqref{eq:rdtpt-pt-op} is the primitive reduced
+Gromov--Witten/pairs correspondence used in Oberdieck--Pixton.  Equation
+\eqref{eq:rdtpt-op-constant} is Oberdieck--Pixton Theorem~1 after
+\(\chi_{10}^{\mathrm{OP}}=4096^{-1}\Delta_5^2\).  Combining these three
+identities proves \eqref{eq:rdtpt-main} and
+\eqref{eq:rdtpt-main-constant}.  The sign \((-P)^n\) is not an
+additional convention: it is the common substitution \(y=-e^{iu}=-P\)
+in \eqref{eq:rdtpt-gw-pt} and the variable used in Bryan's reduced DT
+series \eqref{eq:rdtpt-bryan-series}.  The degree-zero factor is
+\(M(-P)^{\chi(S\times E)}=1\).
+\end{proof}
+
+\subsection{Replacement text for the manuscript}
+
+Replace the Hilbert-scheme DT scalar-normalisation assumption by the
+following theorem.
+
+\begin{theorem}[Reduced Hilbert-scheme DT scalar square]
+\label{thm:hilb-dt-op-square-replacement}
+Let \(X=S\times E\), and let
+\(\beta_h\in H_2(S,\mathbb Z)\) be primitive and non-zero with
+\(\langle\beta_h,\beta_h\rangle=2h-2\).  Define
+\[
+\mathbf{DT}^X_{n,(\beta_h,d)}
+=
+\int_{\operatorname{Hilb}^n(X,(\beta_h,d))/E}\nu\,de
+\]
+and
+\[
+Z^X_{\mathrm{DT}}(q,t,p)
+=
+\sum_{h,d,n}\mathbf{DT}^X_{n,(\beta_h,d)}
+q^{d-1}t^{h-1}(-p)^n.
+\]
+Under the variable map
+\[
+p=P=e^{iu},\qquad t=Q,\qquad q=T,
+\qquad
+(q_{\mathrm Bch},r_{\mathrm Bch},s_{\mathrm Bch})=(Q,P,T),
+\]
+one has
+\[
+Z^X_{\mathrm{DT}}(T,Q,P)
+=
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=
+-4096\,\Delta_5(Z)^{-2}.
+\]
+Equivalently,
+\[
+C_{\mathrm{DT}}=-4096.
+\]
+\end{theorem}
+
+\begin{proof}
+Oberdieck's reduced DT/PT theorem for \(S\times E\)
+(arXiv:1605.04631, Theorem~3(i)) gives
+\[
+\sum_n\mathbf{DT}^X_{n,(\beta_h,d)}(-P)^n
+=
+\sum_n\mathsf P^X_{n,(\beta_h,d)}(-P)^n.
+\]
+The usual degree-zero DT factor is
+\[
+M(-P)^{\chi(S\times E)}=M(-P)^0=1.
+\]
+Oberdieck--Pandharipande's primitive reduced
+Gromov--Witten/pairs comparison gives
+\[
+\sum_n\mathsf P^X_{n,(\beta_h,d)}(-P)^n
+=
+\sum_g\mathsf N^X_{g,h,d}u^{2g-2}.
+\]
+After multiplying by \(Q^{h-1}T^{d-1}\) and summing in \(h,d\), this is
+the OP partition function.  Oberdieck--Pixton Theorem~1 gives
+\[
+\mathcal Z_{\mathrm{OP}}(u,Q,T)
+=
+-\left(\chi_{10}^{\mathrm{OP}}(P,Q,T)\right)^{-1}.
+\]
+Finally,
+\[
+\chi_{10}^{\mathrm{OP}}(P,Q,T)=D_5(Z)^2=4096^{-1}\Delta_5(Z)^2.
+\]
+\end{proof}
+
+Replace the status table entries by:
+\[
+\begin{array}{c|c|c}
+\hbox{Object} & \hbox{Equation} & \hbox{Status} \\
+\hline
+\hbox{Primitive reduced curve counting}
+& Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}
+& \hbox{Oberdieck--Pixton theorem} \\
+\hbox{Hilbert-scheme DT series}
+& Z^X_{\mathrm{DT}}(T,Q,P)=Z^X_{\mathrm{OP}}(P,Q,T)
+& \hbox{Oberdieck reduced DT/PT plus OP primitive GW/PT} \\
+\hbox{Scalar-square constant}
+& C_{\mathrm{DT}}=C_{\mathrm{OP}}=-4096
+& \hbox{theorem; no MacMahon factor since }\chi(S\times E)=0 \\
+\hline
+\end{array}
+\]
+
+Replace every occurrence of
+\[
+Z^X_{\mathrm{DT}}=\frac{C_{\mathrm{DT}}}{\Delta_5^2},
+\qquad C_{\mathrm{DT}}\in\mathbb C^\times
+\]
+by
+\[
+Z^X_{\mathrm{DT}}(T,Q,P)
+=
+-4096\,\Delta_5(Z)^{-2}.
+\]
+Replace every occurrence of ``the Hilbert-scheme DT branch is
+conditional'' by ``the Hilbert-scheme DT branch is theorem-level after
+Oberdieck's reduced DT/PT theorem for \(S\times E\).''
+
+\subsection{Source anchors}
+
+\[
+\begin{array}{c|c|c}
+\hbox{source} & \hbox{anchor} & \hbox{use} \\
+\hline
+\hbox{Bryan, arXiv:1504.02920}
+& \hbox{Definition 2.1}
+& \eqref{eq:rdtpt-bryan-reduced},\ \eqref{eq:rdtpt-bryan-series} \\
+\hbox{Oberdieck, arXiv:1605.04631}
+& \hbox{Theorem 1}
+& \eqref{eq:rdtpt-pt-incidence} \\
+\hbox{Oberdieck, arXiv:1605.04631}
+& \hbox{Theorem 3(i)}
+& \eqref{eq:rdtpt-oberdieck-dtpt},\ \mathsf{DT}_0=1 \\
+\hbox{Oberdieck--Pandharipande, arXiv:1411.1514}
+& \hbox{Proposition after Conjecture D}
+& \eqref{eq:rdtpt-gw-pt} \\
+\hbox{Oberdieck--Pixton, arXiv:1706.10100}
+& \hbox{Theorem 1 and equation (3)}
+& \eqref{eq:rdtpt-op-theorem},\ \eqref{eq:rdtpt-chi-normalisation}
+\end{array}
+\]
+
+\subsection{Remaining obligations}
+
+The mathematical comparison gap is closed subject to the hypotheses
+explicit in the cited theorems: \(\beta_h\) is non-zero and primitive,
+\(d\geq0\), and the reduced quotient invariants use the Behrend
+function of the quotient stack.  The integration obligations are:
+\begin{enumerate}
+\item add a bibliography entry for Oberdieck, \emph{On reduced stable
+pair invariants}, arXiv:1605.04631;
+\item replace the scalar-square assumption in the manuscript by
+Theorem~\ref{thm:hilb-dt-op-square-replacement};
+\item keep the protected-index dictionary separate: the enumerative
+identity \(Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}\) is proved, while the
+identification with a microscopic D-brane Hilbert space remains
+physical.
+\end{enumerate}

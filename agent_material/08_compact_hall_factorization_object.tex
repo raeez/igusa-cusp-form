@@ -1,0 +1,432 @@
+\section{The compact Hall factorization object at the Igusa boundary}
+\label{sec:compact-hall-factorization-object}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\GammaBPS}{\Gamma_{\mathrm{BPS}}}
+\providecommand{\Gammaeff}{\Gamma_{\mathrm{eff}}}
+\providecommand{\Hall}{\mathcal H}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\BM}{\operatorname{BM}}
+\providecommand{\Crit}{\operatorname{Crit}}
+\providecommand{\van}{\varphi}
+\providecommand{\eps}{\varepsilon}
+
+This section records exactly what can be constructed from the present
+input, and exactly where the compact construction stops.  The claim
+under attack is the strongest possible one: that the compact
+\(K3\times E\) BPS Hall/factorization object itself has been constructed
+and that its protected primitive bracket is the denominator Lie
+superalgebra \(\mathfrak g_{\Delta_5}\).  The conclusion is sharper:
+there is a canonical finite-first construction once a compact oriented
+critical Hall atlas is supplied, and its protected determinant is forced
+to be the Igusa denominator once the primitive protected multiplicities
+are the coefficients of \(\phi_{0,1}\).  The atlas, the primitive
+comparison, and the bracket comparison are not consequences of the
+scalar OP/DT identity of Oberdieck--Pixton and
+Oberdieck--Pandharipande \cite{OB}, \cite{OPand}, or of the Borcherds
+denominator theorem \cite{B}, \cite{GN}.
+
+\subsection{The charge datum}
+
+The Igusa boundary uses the charge lattice
+\[
+  \GammaBPS=\Z^3,\qquad
+  \gamma=(n,l,m),
+\]
+with effective cone
+\[
+  \Gammaeff=
+  \{m>0,\ n\geq 0,\ l\in\Z\}
+  \cup
+  \{m=0,\ n>0,\ l\in\Z\}
+  \cup
+  \{m=n=0,\ l<0\}.
+\]
+The embedding into the Borcherds lattice is
+\[
+  \alpha(n,l,m)=2n f_2-l f_3+2m f_{-2},
+\]
+and the quadratic convention is
+\[
+  (\alpha(\gamma),\alpha(\gamma))=-2(4nm-l^2).
+\]
+The protected signed multiplicity prescribed by the Borcherds product is
+\[
+  I_{\Delta_5}(n,l,m)=f(nm,l),
+\]
+where
+\[
+  \phi_{0,1}(\tau,z)=\sum_{n,l} f(n,l)q^n r^l .
+\]
+With the Weyl vector
+\[
+  \rho=f_2-\frac12 f_3+f_{-2},
+\]
+the denominator normalization used in the manuscript is
+\[
+  \operatorname{den}(\mathfrak g_{\Delta_5})
+  =
+  e^{-2\pi i(\rho,z)}
+  \prod_{\gamma\in\Gammaeff}
+  \left(1-e^{-2\pi i(\alpha(\gamma),z)}\right)^{f(nm,l)}
+  =
+  \frac{1}{64}\Delta_5(2Z).
+\]
+Equivalently, in the scalar variables \(q,r,s\),
+\[
+  \Delta_5(Z)
+  =
+  64(qrs)^{1/2}
+  \prod_{\gamma=(n,l,m)\in\Gammaeff}
+  (1-q^n r^l s^m)^{f(nm,l)} .
+\]
+These formulas are the denominator input of Borcherds and
+Gritsenko--Nikulin \cite{B}, \cite{GN}.  They are not a construction of
+the compact Hall object.
+
+\subsection{The missing compact Hall atlas}
+
+A compact oriented critical Hall atlas for \(X=K3\times E\), in a
+stability sector \(\sigma\) and with orientation \(o\), consists of the
+following finite-first data.
+
+\begin{enumerate}
+\item A cofinal system of finite lower charge sets
+  \[
+    \Gamma_{N,R}\subset\Gammaeff,\qquad
+    \bigcup_{N,R}\Gamma_{N,R}=\Gammaeff,
+  \]
+  closed under passage to charges which occur in Harder--Narasimhan
+  factors inside the sector.  Equivalently, if
+  \(\gamma+\eta\in\Gamma_{N,R}\), then
+  \(\gamma,\eta\in\Gamma_{N,R}\).  Thus the complement of
+  \(\Gamma_{N,R}\) is a Hall ideal and quotient truncation is defined.
+  The parameters \(N,R\) are auxiliary cutoffs; no invariant statement
+  may depend on their particular definition.
+\item For each \(\gamma\in\Gamma_{N,R}\), a derived moduli stack
+  \(\mathfrak M_{\sigma,\gamma}\) of compact BPS objects, equipped
+  locally on a Dwyer--Weiss--Williams/Cech/Ran cover by presentations
+  \[
+    \mathfrak M_{\sigma,\gamma}|_U\simeq
+    [\Crit(f_{\gamma,U})/G_{\gamma,U}].
+  \]
+\item An orientation line \(\mathscr L_{o,\gamma}\) and compatible
+  square-root data for the virtual canonical lines, transported through
+  Thom--Sebastiani isomorphisms.
+\item Extension correspondences
+  \[
+    \mathfrak M_{\sigma,\gamma}\times\mathfrak M_{\sigma,\eta}
+    \xleftarrow{\ p\ }
+    \mathfrak E_{\gamma,\eta}
+    \xrightarrow{\ q\ }
+    \mathfrak M_{\sigma,\gamma+\eta}
+  \]
+  with the compact-support/properness and Beck--Chevalley hypotheses
+  needed for Borel--Moore pull-push on vanishing cycles.
+\item Cech/Ran descent and Harder--Narasimhan completion data making the
+  local Hall products independent of the chosen critical chart.
+\end{enumerate}
+
+This is precisely the compact input.  It is not supplied by the OP
+scalar partition function, and it is not supplied by the formal
+Borcherds algebra.
+
+In the Vol.~III positive-cone language, this atlas is the Igusa-boundary
+specialization of the finite-first oriented critical Hall cosheaf.  The
+decategorification functor there can be used only after the compact
+Hall cosheaf, orientation, and descent maps have been built; it is not a
+substitute for them.
+
+\begin{definition}[Finite compact Hall factorization object]
+\label{def:finite-compact-hall-object}
+Assume a compact oriented critical Hall atlas has been given on the
+finite charge set \(\Gamma_{N,R}\).  Define
+\[
+  \mathsf F_{N,R}\Hall^{\mathrm{or}}_{X,\sigma,o}
+  =
+  \bigoplus_{\gamma\in\Gamma_{N,R}}
+  H^{\BM}_{G_{\gamma}}
+  \bigl(\Crit(f_{\gamma}),\van_{f_\gamma}\otimes
+  \mathscr L_{o,\gamma}\bigr)[s_\gamma](t_\gamma),
+\]
+where the shift \(s_\gamma\) and Tate twist \(t_\gamma\) are the
+normalizing ones required by the chosen orientation convention.  This is
+the quotient truncation by the Hall ideal of charges outside
+\(\Gamma_{N,R}\).  For
+\(\gamma,\eta,\gamma+\eta\in\Gamma_{N,R}\), multiplication is the
+composition
+\[
+  p^*(-)\ \xrightarrow{\mathrm{TS}}\ 
+  \text{vanishing cycles on }\mathfrak E_{\gamma,\eta}
+  \ \xrightarrow{\ q_!\ }\ 
+  H^{\BM}_{G_{\gamma+\eta}}
+  \bigl(\Crit(f_{\gamma+\eta}),\van_{f_{\gamma+\eta}}\otimes
+  \mathscr L_{o,\gamma+\eta}\bigr),
+\]
+with the orientation transport inserted in the Thom--Sebastiani arrow.
+If \(\gamma+\eta\notin\Gamma_{N,R}\), the product is zero in the
+finite quotient and is computed in any larger cutoff containing
+\(\gamma+\eta\).
+\end{definition}
+
+\begin{proposition}[What the atlas constructs]
+\label{prop:compact-hall-atlas-constructs}
+Under the hypotheses in Definition~\ref{def:finite-compact-hall-object},
+\(\mathsf F_{N,R}\Hall^{\mathrm{or}}_{X,\sigma,o}\) is a finite
+critical Hall truncation in the sense of Kontsevich--Soibelman
+\cite{KSCoHA} and Davison--Meinhardt \cite{DavisonMeinhardtCoHA}.  The
+Hall products are associative up to the
+coherent homotopies supplied by the two-step extension stack.  If the
+atlas satisfies Cech/Ran descent, the finite objects assemble into a
+sectorial factorization cosheaf, and the completed compact Hall object is
+\[
+  \widehat{\Hall}^{\mathrm{or}}_{X,\sigma,o}
+  =
+  \varprojlim_{N,R}
+  \mathsf F_{N,R}\Hall^{\mathrm{or}}_{X,\sigma,o}.
+\]
+\end{proposition}
+
+\begin{proof}
+The construction is formal once the atlas is present.  The product is
+the usual Hall pull-push for extension correspondences, with
+Thom--Sebastiani identifying the vanishing-cycle sheaf of a direct sum
+with the external product of the two vanishing-cycle sheaves.  The
+lower-set condition makes the discarded charges a Hall ideal, so the
+quotient truncation inherits the product.  The
+associativity constraint is the comparison between the two projections
+from the stack of two-step flags.  The orientation line supplies the
+sign and square-root correction.  Descent is exactly the assertion that
+the local critical presentations and their extension correspondences
+glue through the Cech/Ran nerve.  No Igusa-specific identity is used in
+this proposition.
+\end{proof}
+
+\subsection{The determinant shadow}
+
+The compact Hall object must not be identified with the denominator
+algebra merely because its decategorified determinant has the same
+product.  The determinant sees only signed primitive superdimensions.
+
+\begin{definition}[Igusa protected integration]
+\label{def:igusa-protected-integration}
+An Igusa protected integration on
+\(\widehat{\Hall}^{\mathrm{or}}_{X,\sigma,o}\) is a charge-preserving map
+\[
+  \chi^{\mathrm{prot}}_{\sigma,o}\colon
+  K_0\!\left(\widehat{\Hall}^{\mathrm{or}}_{X,\sigma,o}\right)
+  \longrightarrow
+  \widehat{\mathbb T}_{\Gammaeff}
+\]
+to the completed charge torus, together with a primitive projection
+\(\Prim_{\mathrm{prot}}\), such that
+\[
+  \sdim\,
+  \Prim_{\mathrm{prot}}
+  \left(\widehat{\Hall}^{\mathrm{or}}_{X,\sigma,o}\right)_{(n,l,m)}
+  =
+  f(nm,l)
+  \qquad
+  ((n,l,m)\in\Gammaeff).
+\]
+The orientation character of this integration is required to be the
+Borcherds character \(\nu_{\Delta_5}\).
+\end{definition}
+
+\begin{proposition}[The exact determinant consequence]
+\label{prop:compact-hall-determinant-shadow}
+Assume the compact Hall object of
+Proposition~\ref{prop:compact-hall-atlas-constructs} and an Igusa
+protected integration in the sense of
+Definition~\ref{def:igusa-protected-integration}.  Then the protected
+primitive Fock determinant is the Igusa product:
+\[
+  64(qrs)^{1/2}
+  \prod_{\gamma=(n,l,m)\in\Gammaeff}
+  (1-q^n r^l s^m)^{
+  \sdim\Prim_{\mathrm{prot}}(\widehat{\Hall}^{\mathrm{or}}_{X,\sigma,o})_\gamma}
+  =
+  \Delta_5(Z).
+\]
+In the Borcherds lattice normalization, the same statement is
+\[
+  \operatorname{den}_{\mathrm{prot}}
+  \left(\widehat{\Hall}^{\mathrm{or}}_{X,\sigma,o}\right)
+  =
+  \frac1{64}\Delta_5(2Z).
+\]
+\end{proposition}
+
+\begin{proof}
+By Definition~\ref{def:igusa-protected-integration}, the exponent at
+\((n,l,m)\) is \(f(nm,l)\).  Substitution into the Borcherds product for
+\(\Delta_5\) gives the first formula.  Replacing \((q,r,s)\) by the
+exponentials of the lattice coordinates for \(\alpha(n,l,m)\) and
+including the Weyl factor gives the denominator normalization
+\(64^{-1}\Delta_5(2Z)\).
+\end{proof}
+
+\begin{corollary}[What the determinant does not prove]
+\label{cor:determinant-not-bracket}
+The hypotheses of Proposition~\ref{prop:compact-hall-determinant-shadow}
+do not identify the protected Hall primitive bracket with
+\(\mathfrak g_{\Delta_5}\).  They determine only the signed primitive
+superdimension in each charge.
+\end{corollary}
+
+\begin{proof}
+A denominator product records the integers
+\(\sdim\Prim_{\mathrm{prot}}(-)_\gamma\).  It does not record the
+even/odd dimensions separately, the structure constants of the primitive
+commutator, the real-root Serre relations, the imaginary-root
+orthogonality relations, or the radical quotient required in a
+Borcherds-Kac-Moody presentation.  These are bracket data, not
+determinant data.
+\end{proof}
+
+\subsection{The bracket-level realization criterion}
+
+The compact object realizes the Igusa denominator algebra only after the
+following extra comparison data have been constructed.
+
+\begin{definition}[Igusa Hall--Borcherds comparison datum]
+\label{def:igusa-hall-borcherds-comparison}
+An Igusa Hall--Borcherds comparison datum consists of:
+\begin{enumerate}
+\item the compact Hall object
+  \(\widehat{\Hall}^{\mathrm{or}}_{K3\times E,\sigma,o}\);
+\item an Igusa protected integration as in
+  Definition~\ref{def:igusa-protected-integration};
+\item a charge-preserving primitive commutator
+  \[
+    [-,-]_{\Hall}\colon
+    \Prim_{\mathrm{prot},\gamma}\otimes
+    \Prim_{\mathrm{prot},\eta}
+    \longrightarrow
+    \Prim_{\mathrm{prot},\gamma+\eta};
+  \]
+\item distinguished primitive classes for the three real simple roots
+  \(\delta_1,\delta_2,\delta_3\);
+\item a proof that the Hall primitive commutator satisfies the
+  Gritsenko--Nikulin/Borcherds defining relations for
+  \(\mathfrak g_{\Delta_5}\), including the real Serre relations,
+  imaginary simple-root relations, parity convention, and Weyl-vector
+  normalization;
+\item a continuous Hopf pairing, negative half, Cartan part, and
+  radical quotient producing the completed Hall--Drinfeld double;
+\item a comparison with the formal chiral current envelope
+  \(U_E^{\mathrm{ch}}(\mathfrak g_{\Delta_5}\otimes\mathcal O_E)\).
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Conditional compact Hall realization]
+\label{thm:conditional-compact-hall-realization}
+If an Igusa Hall--Borcherds comparison datum exists, then the protected
+primitive Lie superalgebra of
+\(\widehat{\Hall}^{\mathrm{or}}_{K3\times E,\sigma,o}\) is
+charge-preservingly isomorphic to the denominator algebra
+\(\mathfrak g_{\Delta_5}\).  Its protected denominator is
+\(64^{-1}\Delta_5(2Z)\), and its chiral current envelope is the formal
+factorization algebra
+\[
+  U_E^{\mathrm{ch}}(\mathfrak g_{\Delta_5}\otimes\mathcal O_E).
+\]
+\end{theorem}
+
+\begin{proof}
+The comparison datum gives a primitive Hall Lie superalgebra graded by
+\(\Gammaeff\), with signed root multiplicities \(f(nm,l)\), real simple
+roots \(\delta_i\), and exactly the Borcherds defining relations for
+\(\mathfrak g_{\Delta_5}\).  The defining presentation of the
+Gritsenko--Nikulin automorphic correction therefore identifies the two
+charge-graded Lie superalgebras.  The denominator formula follows from
+Proposition~\ref{prop:compact-hall-determinant-shadow}.  Applying the
+Beilinson--Drinfeld chiral enveloping construction \cite{BD} to the
+resulting constant Lie algebra over \(E\) gives the displayed current
+envelope.
+\end{proof}
+
+\subsection{The obstruction}
+
+\begin{theorem}[Present obstruction]
+\label{thm:compact-hall-present-obstruction}
+The sources used in the manuscript do not, by themselves, construct the
+compact Hall/factorization object for \(K3\times E\) whose protected
+primitive bracket is \(\mathfrak g_{\Delta_5}\).
+\end{theorem}
+
+\begin{proof}
+Each available theorem supplies only part of the required structure.
+The Borcherds and Gritsenko--Nikulin results \cite{B}, \cite{GN}
+construct the denominator Lie superalgebra and its automorphic product;
+they do not construct a compact BPS moduli problem, a Hall convolution,
+or a primitive BPS bracket.  The OP/DT formula \cite{OB}, \cite{OPand}
+supplies a scalar partition function and its normalization; it does not
+construct the oriented critical Hall atlas of
+Definition~\ref{def:finite-compact-hall-object}, the primitive
+projection of Definition~\ref{def:igusa-protected-integration}, or the
+Hall commutator relations in
+Definition~\ref{def:igusa-hall-borcherds-comparison}.  The
+Kontsevich--Soibelman and Davison--Meinhardt constructions
+\cite{KSCoHA}, \cite{DavisonMeinhardtCoHA} supply the local
+critical-Hall technology once the required critical charts, orientation,
+and extension correspondences are present; they do not identify the
+compact \(K3\times E\) sector with the Igusa Borcherds algebra.  The
+Beilinson--Drinfeld current envelope \cite{BD} constructs the formal
+chiral algebra attached to a known Lie algebra; it does not construct
+the compact microscopic Lie algebra.
+
+Thus the missing assertions are exactly:
+\begin{enumerate}
+\item a global compact oriented critical Hall atlas for the relevant
+  \(K3\times E\) BPS moduli problem;
+\item Harder--Narasimhan and Cech/Ran descent for its sectorial
+  completion;
+\item an orientation character equal to \(\nu_{\Delta_5}\);
+\item a protected primitive integration whose charge-\((n,l,m)\) signed
+  dimension is \(f(nm,l)\);
+\item a Hall-commutator proof of the Gritsenko--Nikulin/Borcherds
+  relations;
+\item a continuous Hopf pairing and radical quotient giving the
+  Hall--Drinfeld double;
+\item a global oriented comparison from the holomorphic Chern--Simons
+  factorization theory to the compact Hall construction.
+\end{enumerate}
+Without these data, the honest conclusion is the denominator shadow, not
+the microscopic bracket-level realization.
+\end{proof}
+
+\subsection{Monotone path to closure}
+
+The construction can be closed without weakening any claim by proving
+the following statements in order.
+
+\begin{enumerate}
+\item Construct the compact oriented critical Hall atlas of
+  Definition~\ref{def:finite-compact-hall-object} for each finite
+  charge set \(\Gamma_{N,R}\).
+\item Prove Cech/Ran and Harder--Narasimhan descent, so that the finite
+  objects assemble into
+  \(\widehat{\Hall}^{\mathrm{or}}_{K3\times E,\sigma,o}\).
+\item Compute the orientation character and prove that it is
+  \(\nu_{\Delta_5}\).
+\item Construct the protected primitive integration and prove, charge by
+  charge, that
+  \[
+    \sdim\Prim_{\mathrm{prot},(n,l,m)}=f(nm,l).
+  \]
+\item Identify the three real simple Hall primitives and prove the full
+  Borcherds relation set in the Hall commutator.
+\item Construct the completed Hopf pairing, negative half, Cartan part,
+  and radical quotient, then identify the resulting double with
+  \(\mathfrak g_{\Delta_5}\).
+\item Apply the Beilinson--Drinfeld chiral enveloping functor to obtain
+  the compactly sourced factorization algebra over \(E\).
+\end{enumerate}
+
+Items \(1\)--\(3\) produce the compact Hall/factorization object.  Item
+\(4\) produces the Igusa determinant shadow.  Items \(5\)--\(6\) produce
+the bracket-level denominator algebra.  Item \(7\) produces the chiral
+current envelope from the microscopic source rather than by formal
+postulate.

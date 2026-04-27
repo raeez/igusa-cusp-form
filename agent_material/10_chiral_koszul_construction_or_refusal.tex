@@ -1,0 +1,357 @@
+\section{Chiral Koszul construction or refusal}
+\label{sec:chiral-koszul-construction-or-refusal}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\Cur}{\operatorname{Cur}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\Obs}{\operatorname{Obs}}
+\providecommand{\BKM}{\mathrm{BKM}}
+\providecommand{\Hall}{\mathrm{Hall}}
+\providecommand{\hCS}{\mathrm{hCS}}
+\providecommand{\barB}{\bar B}
+\providecommand{\Omegach}{\Omega^{\mathrm{ch}}}
+\providecommand{\SCchtop}{\mathsf{SC}^{\mathrm{ch,top}}}
+\providecommand{\Den}{\mathsf{Den}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\smult}{\operatorname{smult}}
+
+The claim under attack is:
+$$
+\begin{gathered}
+\Den_{\Delta_5,E}
+=U_E^{\mathrm{ch}}\!
+\left(\mathcal A_{\mathrm{den}}\otimes\mathcal O_E\right)\\
+\Longrightarrow\quad
+\text{compact}\ K3\times E\ \text{chiral Koszul theorem.}
+\end{gathered}
+$$
+The implication is not a theorem.  The constructed object is the
+Beilinson--Drinfeld current envelope of the denominator Lie
+superalgebra.  The compact Costello--Gwilliam/Hall source and the
+Koszul comparison morphism are not constructed.
+
+\begin{definition}[Current-side datum]
+\label{def:cellten-current-side-datum}
+The current-side datum is
+$$
+\mathfrak C_{\Delta,E}
+=\left(E,\mathcal A_{\mathrm{den}},\alpha,\Den_{\Delta_5,E}\right),
+$$
+where
+$$
+\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5},\qquad
+\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},
+$$
+and
+$$
+\Den_{\Delta_5,E}
+:=U_E^{\mathrm{ch}}
+\left(\Cur_E(\mathcal A_{\mathrm{den}})\right),
+\qquad
+\Cur_E(\mathcal A_{\mathrm{den}})
+=\mathcal A_{\mathrm{den}}\otimes\mathcal O_E.
+$$
+The proved denominator identity is
+$$
+\operatorname{den}(\mathcal A_{\mathrm{den}})
+=64^{-1}\Delta_5(2Z),
+$$
+and the proved signed multiplicity equality is
+$$
+\sdim \mathcal A_{\mathrm{den},(n,l,m)}=f(nm,l).
+$$
+\end{definition}
+
+\begin{definition}[Compact chiral Koszul construction datum]
+\label{def:cellten-compact-koszul-datum}
+A compact chiral Koszul construction of the Igusa current envelope is a
+five-block datum
+$$
+\mathfrak K_{K3\times E}
+=
+\left(\mathcal F_X,\mathcal H_X,C_X,\Theta_{\mathrm{Kos}},\Pi_{\mathrm{prim}}\right),
+\qquad X=K3\times E,
+$$
+with the following precise contents.
+\begin{enumerate}
+\item \(\mathcal F_X\) is a finite-first, charge-completed
+Costello--Gwilliam factorization algebra of compact quantum observables
+on \(\Ran(E)\), obtained from a BV theory on \(X\) satisfying locality,
+descent, the quantum master equation, and anomaly cancellation in the
+completed category.
+\item \(\mathcal H_X\) is the oriented compact Hall enhancement:
+an oriented critical Hall cosheaf with protected integration, charge
+completion, orientation character
+$$
+\epsilon_o=\nu_{\Delta_5},
+$$
+and completed Hall--Drinfeld pairing.  It includes the comparison maps
+$$
+\Theta^{\mathrm{or}}_{\hCS\to\Hall},\qquad
+\mathcal D_\hbar,\qquad
+\Psi^+_{\Hall\to\BKM}.
+$$
+\item \(C_X\) is a coaugmented conilpotent chiral coalgebra in the
+Vol.~I--II completed/coderived category, produced from
+\(\mathcal F_X\) by the appropriate chiral or \(\SCchtop\) bar
+construction:
+$$
+C_X\simeq\barB^{\mathrm{ch}}_E(\mathcal F_X)
+\quad\hbox{or}\quad
+C_X\simeq\barB_{\SCchtop}(\mathcal F_X,\mathcal F_X).
+$$
+In particular the differential is proved to square to zero, or the
+curvature is placed in the stated coderived/completed home.
+\item \(\Theta_{\mathrm{Kos}}\) is the chiral cobar comparison
+$$
+\Theta_{\mathrm{Kos}}:
+\Omegach_E C_X
+\longrightarrow
+\Den_{\Delta_5,E},
+$$
+and is a quasi-isomorphism in the finite-first completed category.
+\item \(\Pi_{\mathrm{prim}}\) is a protected primitive comparison
+identifying state-level brackets, not only Euler characteristics:
+$$
+\Pi_{\mathrm{prim}}:
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)_\gamma
+\xrightarrow{\ \sim\ }
+\mathcal A_{\mathrm{den},\gamma}
+=\mathfrak g_{\Delta_5,\alpha(\gamma)}
+$$
+as charge-graded Lie superalgebras, including the real Serre relations,
+imaginary simple-root parities and multiplicities, and the Hall
+super-commutator.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Typed no-promotion theorem]
+\label{thm:cellten-typed-no-promotion}
+From the current-side datum \(\mathfrak C_{\Delta,E}\), together with
+the Vol.~I--II bar-cobar theorems and the Costello--Gwilliam observable
+formalism, one cannot construct the datum
+\(\mathfrak K_{K3\times E}\) of
+Definition~\ref{def:cellten-compact-koszul-datum}.
+\end{theorem}
+
+\begin{proof}
+There are three functorial machines available.
+
+First, Beilinson--Drinfeld gives
+$$
+\left\{\hbox{Lie-* algebras on }E\right\}
+\longrightarrow
+\left\{\hbox{chiral algebras on }E\right\},
+\qquad
+\mathcal L\longmapsto U_E^{\mathrm{ch}}(\mathcal L).
+$$
+Applied to
+\(\mathcal L=\mathcal A_{\mathrm{den}}\otimes\mathcal O_E\), it gives
+\(\Den_{\Delta_5,E}\).  Its output is a target chiral algebra.  It does
+not contain a compact BV theory on \(K3\times E\), a Hall cosheaf, a
+protected integration map, or a primitive state space.
+
+Second, Vol.~I--II bar-cobar theory gives a Quillen/bar-cobar
+adjunction once an admissible chiral algebra or \(\SCchtop\)-algebra is
+already supplied:
+$$
+\Omegach:\{\hbox{conilpotent chiral coalgebras}\}
+\rightleftarrows
+\{\hbox{chiral algebras}\}:\barB.
+$$
+On the Koszul locus, the counit
+$$
+\Omegach_E\barB_E^{\mathrm{ch}}(\mathcal A)
+\longrightarrow \mathcal A
+$$
+is a quasi-isomorphism.  With
+\(\mathcal A=\Den_{\Delta_5,E}\), this reconstructs the current
+envelope from its own bar coalgebra.  It does not identify that bar
+coalgebra with compact \(K3\times E\) observables.  Vol.~II explicitly
+separates the five objects
+$$
+\mathcal A,\qquad
+\barB(\mathcal A),\qquad
+H^\bullet\barB(\mathcal A),\qquad
+\mathcal A^!,\qquad
+Z^{\mathrm{der}}_{\mathrm{ch}}(\mathcal A).
+$$
+Thus \(\Omegach\barB(\mathcal A)\simeq\mathcal A\) is inversion of a
+given chiral algebra, not construction of a compact physical source.
+
+Third, Costello--Gwilliam factorization algebras produce observables
+from a specified BV theory satisfying its locality, descent, quantum
+master equation, and anomaly hypotheses.  The compact \(K3\times E\)
+BV theory with protected primitive bracket
+\(\mathfrak g_{\Delta_5}\) is precisely the missing input.  The
+formalism is not a functor from the already constructed target
+\(\Den_{\Delta_5,E}\) back to compact observables.
+
+The obstruction is not cosmetic.  The scalar and denominator identities
+are decategorified:
+$$
+\sdim \mathcal A_{\mathrm{den},(n,l,m)}=f(nm,l),
+\qquad
+Z^X_{\square}=C_{\square}\Delta_5^{-2}.
+$$
+They determine Euler characteristics and a determinant.  They do not
+determine a differential, a factorization product, a bar coalgebra, a
+twisting cochain, Hall structure constants, or a comparison of physical
+states with BKM root spaces.  An abstract CoHA \(E_1\)-product also does
+not supply an \(E_1\)-chiral algebra on a geometric Ran space; that is a
+separate factorization enhancement.
+
+Therefore the attempted construction fails at the source and comparison
+blocks \((\mathcal F_X,\mathcal H_X,C_X,\Theta_{\mathrm{Kos}},
+\Pi_{\mathrm{prim}})\).  The current envelope is proved, but it is not a
+compact chiral Koszul theorem.
+\end{proof}
+
+\begin{proposition}[The maximal theorem available without compact data]
+\label{prop:cellten-tautological-koszul}
+Assume that \(\Den_{\Delta_5,E}\) is augmented, belongs to the
+completed chiral category where the Vol.~I bar construction is defined,
+and lies in the corresponding Koszul locus.  Then the canonical counit
+$$
+\Omegach_E\barB_E^{\mathrm{ch}}(\Den_{\Delta_5,E})
+\xrightarrow{\ \simeq\ }
+\Den_{\Delta_5,E}
+$$
+is a quasi-isomorphism.  This is the tautological Koszul inversion of
+the current envelope.  It is not a compact \(K3\times E\) realization.
+\end{proposition}
+
+\begin{proof}
+Apply Vol.~I--II bar-cobar inversion on the Koszul locus to the chiral
+algebra
+$$
+\mathcal A=\Den_{\Delta_5,E}.
+$$
+The result is internal to \(\mathcal A\).  No factorization algebra
+\(\mathcal F_X\) on \(\Ran(E)\), no Hall cosheaf, and no primitive-state
+comparison appears in the hypotheses or the conclusion.
+\end{proof}
+
+\begin{theorem}[Sharp conditional compact theorem]
+\label{thm:cellten-sharp-conditional}
+If the compact chiral Koszul construction datum
+\(\mathfrak K_{K3\times E}\) of
+Definition~\ref{def:cellten-compact-koszul-datum} is constructed, then
+\(\Den_{\Delta_5,E}\) is the compact \(K3\times E\) chiral Koszul
+realization of the Igusa denominator algebra:
+$$
+\Omegach_E C_X
+\xrightarrow{\ \simeq\ }
+\Den_{\Delta_5,E}.
+$$
+Moreover,
+$$
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+\cong
+\mathcal A_{\mathrm{den}}
+=\mathfrak g_{\Delta_5}
+$$
+as charge-graded Lie superalgebras, and hence
+$$
+\operatorname{den}
+H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+=64^{-1}\Delta_5(2Z).
+$$
+\end{theorem}
+
+\begin{proof}
+The first displayed quasi-isomorphism is the datum
+\(\Theta_{\mathrm{Kos}}\).  The second displayed isomorphism is
+\(\Pi_{\mathrm{prim}}\).  The denominator identity follows from the
+already proved Borcherds denominator identity for
+\(\mathcal A_{\mathrm{den}}\).  The theorem is therefore exact and
+conditional: every compact, Hall, bar-cobar, and primitive comparison
+map is a named hypothesis.
+\end{proof}
+
+\begin{center}
+\begingroup
+\small
+\begin{tabular}{p{0.30\textwidth}|p{0.24\textwidth}|p{0.34\textwidth}}
+\textbf{Object} & \textbf{Status} & \textbf{Role}\\ \hline
+\(\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}\) &
+proved &
+Denominator Lie superalgebra.\\
+\(\Den_{\Delta_5,E}\) &
+proved &
+BD current envelope on \(E\).\\
+\(\barB_E^{\mathrm{ch}}(\Den_{\Delta_5,E})\) &
+conditional/formal &
+Bar of the target, not a compact source.\\
+\(\mathcal F_X\) &
+missing &
+Compact observable factorization algebra.\\
+\(\mathcal H_X\) &
+missing &
+Oriented Hall source and protected integration.\\
+\(C_X\) &
+missing &
+Conilpotent chiral coalgebra.\\
+\(\Theta_{\mathrm{Kos}}\) &
+missing &
+Koszul quasi-isomorphism to the current envelope.\\
+\(\Pi_{\mathrm{prim}}\) &
+missing &
+Physical primitive bracket equals BKM bracket.
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{remark}[Minimal finite construction data]
+\label{rem:cellten-minimal-data}
+The compact theorem requires exactly the five blocks in
+Definition~\ref{def:cellten-compact-koszul-datum}.  Expanded into
+checkable construction obligations, these are:
+\begin{enumerate}
+\item Construct compact quantum observables
+\(\mathcal F_X\in\mathsf{Fact}^{\mathrm{ff}}_{\Ran(E),\Gamma}\) from
+a \(K3\times E\) BV theory satisfying locality, descent, QME, and
+anomaly cancellation.
+\item Construct the oriented compact Hall cosheaf \(\mathcal H_X\),
+including protected integration, finite-first completion,
+\(\epsilon_o=\nu_{\Delta_5}\), the Hopf pairing, \(\mathcal D_\hbar\),
+and \(\Psi^+_{\Hall\to\BKM}\).
+\item Enhance the Hall object from an abstract \(E_1\)-algebra in graded
+vector spaces to a geometric \(E_1\)-chiral or BD factorization object
+on \(\Ran(E)\).
+\item Construct \(C_X\) as a coaugmented conilpotent chiral coalgebra,
+or place its curved bar object in the precise completed/coderived
+category where \(\Omegach\) is valid.
+\item Prove the quasi-isomorphism
+\(\Theta_{\mathrm{Kos}}:\Omegach_E C_X\simeq\Den_{\Delta_5,E}\) and the
+primitive Lie comparison \(\Pi_{\mathrm{prim}}\) with all Borcherds
+relations.
+\end{enumerate}
+These five blocks are independent.  Removing any one of them leaves only
+the formal current envelope and its target-internal bar-cobar inversion.
+\end{remark}
+
+\begin{remark}[Replacement language for the manuscript]
+\label{rem:cellten-replacement-language}
+The following paragraph is safe replacement language for the physical
+exposition.
+
+\begin{quote}
+\emph{The paper constructs the denominator Lie superalgebra
+\(\mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5}\) and its
+Beilinson--Drinfeld current envelope
+\(\Den_{\Delta_5,E}=U_E^{\mathrm{ch}}(\mathcal A_{\mathrm{den}}\otimes
+\mathcal O_E)\).  This is a formal chiral algebra on \(E\), with
+constant-mode primitive bracket equal to the Borcherds denominator
+bracket and denominator \(64^{-1}\Delta_5(2Z)\).  It is not yet the
+observable factorization algebra of the compact \(K3\times E\) theory.
+A compact chiral Koszul theorem would require a constructed
+Costello--Gwilliam/Hall factorization source on \(\Ran(E)\), its
+conilpotent chiral bar coalgebra, a cobar quasi-isomorphism to
+\(\Den_{\Delta_5,E}\), and a protected primitive Lie comparison with
+\(\mathfrak g_{\Delta_5}\).  These data are not supplied by the scalar
+determinant or by the BD current-envelope construction.}
+\end{quote}
+\end{remark}

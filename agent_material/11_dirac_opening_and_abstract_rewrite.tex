@@ -1,0 +1,645 @@
+\section{Dirac opening and abstract rewrite}
+
+\paragraph{Scope.}
+This file is owned by Cell 18.  It does not edit \texttt{proj.tex}.  It
+gives paste-ready replacement TeX for the abstract and the opening two
+sections.  The order is physical-first:
+\[
+\hbox{scalar branch}\rightarrow
+\hbox{square}\rightarrow
+\hbox{virtual one-particle determinant}\rightarrow
+\hbox{active-support cone}\rightarrow
+\hbox{denominator algebra}.
+\]
+The text uses only the theorem status already present in the manuscript:
+Oberdieck--Pixton is proved for the primitive reduced scalar, the
+Hilbert-scheme DT scalar is an assumption, the D-brane protected-index
+dictionary is conjectural, the one-particle square root is virtual, and
+the Hall/Koszul realization is open.
+
+\subsection{Insertion and removal anchors}
+
+\begin{enumerate}
+\item Replace \texttt{proj.tex:55--115} with the abstract below.
+\item Replace the current first two sections
+\texttt{proj.tex:120--405} with the two sections below.
+\item Remove the later scalar material at \texttt{proj.tex:543--739}
+after inserting the first replacement section, since it is absorbed into
+the new opening section.
+\item Keep the old label \texttt{sec:duality-principle} on the second
+replacement section as a temporary cross-reference target.  Later
+integration may rename references, but the replacement text below is
+pasteable without breaking existing references.
+\item Leave the detailed exterior-square, Weyl-chamber, denominator, and
+Hall sections in place for now; after this replacement they become
+expansions of the opening statements rather than hidden inputs.
+\end{enumerate}
+
+\subsection{Replacement abstract}
+
+\paragraph{Status.}
+Proved: OP scalar square; constructed: virtual determinant and
+denominator algebra; conjectural/assumed: DT and protected D-brane
+dictionary; open: microscopic Hall/Koszul realization.
+
+\begin{verbatim}
+\begin{abstract}
+Let \(X=S\times E\), with \(S\) a K3 surface and \(E\) an elliptic
+curve.  Oberdieck--Pixton prove the primitive reduced scalar identity
+\[
+        Z^X_{\mathrm{OP}}
+        =-\left(\chi_{10}^{\mathrm{OP}}\right)^{-1}
+        =-4096\,\Delta_5(Z)^{-2}.
+\]
+The Hilbert-scheme Donaldson--Thomas scalar is treated separately: its
+normalization as \(C_{\mathrm{DT}}\Delta_5^{-2}\) is an assumption, and
+its interpretation as a protected D6--D2--D0 index is a conjectural
+physics dictionary.
+
+The square root used in the paper is not an analytic branch.  It is the
+normalized Borcherds determinant of the virtual K3 half-index.  With
+\[
+        Z_{\mathrm{K3}}(\tau,z)=2\phi_{0,1}(\tau,z),\qquad
+        \phi_{0,1}=\sum_{n,l} f(n,l)q^nr^l,
+\]
+let \(\mathbb U_{n,l}\) be a virtual finite-dimensional super vector
+space with \(\sdim\mathbb U_{n,l}=f(n,l)\).  Over the cusp-positive
+Gram-index cone set
+\[
+        \mathcal V_{(n,l,m)}=\mathbb U_{nm,l}.
+\]
+Then
+\[
+\mathcal D_X(Z)
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod_{\gamma=(n,l,m)>0}(1-q^nr^ls^m)^{f(nm,l)}
+=\Delta_5(Z).
+\]
+This constructs a virtual one-particle determinant.  It does not
+construct a half of the K3 Hilbert space.
+
+The active support of the determinant is
+\[
+        \Gamma_{\mathrm{act}}
+        =\{(n,l,m)>0\mid f(nm,l)\ne0\}.
+\]
+Under the Lorentzian degree map
+\[
+        \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},
+\]
+this support generates the type-II Borcherds cone.  Gritsenko--Nikulin's
+denominator theorem attaches to the same product the denominator algebra
+\[
+        \mathcal A_{\mathrm{den}}=\mathfrak g_{\Delta_5},
+        \qquad
+        \sdim\mathcal A_{\mathrm{den},(n,l,m)}=f(nm,l),
+\]
+with denominator
+\[
+        \operatorname{den}(\mathcal A_{\mathrm{den}})
+        =64^{-1}\Delta_5(2Z).
+\]
+This is a denominator algebra.  A microscopic BPS bracket, a Hall
+factorization algebra, or a chiral Koszul realization is not proved by
+the scalar square or by the denominator identity.
+\end{abstract}
+\end{verbatim}
+
+\subsection{Replacement opening section I}
+
+\paragraph{Anchor.}
+Insert after the table of contents command.  This replaces the scalar
+material currently at \texttt{proj.tex:543--739}.
+
+\paragraph{Status.}
+This section separates the proved scalar theorem from the DT and
+protected-index assumptions.
+
+\begin{verbatim}
+\section{The scalar square}
+\label{sec:scalar-square}
+
+Let \(S\) be an elliptically fibered K3 surface
+\[
+        \pi:S\rightarrow \mathbb P^1
+\]
+with section \(s_1\), and let \(E\) be an elliptic curve.  Put
+\[
+        X=S\times E.
+\]
+Let \(F\in\mathrm{Pic}(S)\) be the fibre class and set
+\[
+        \beta_h=s_1+hF,\qquad h\ge0.
+\]
+
+\begin{definition}[D6--D2--D0 DT series]
+For the type IIA charge
+\[
+        \gamma(h,d,n)=(1;\,(\beta_h,d);\,n)
+\]
+write \(\Omega_X(h,d,n)\) for the protected D6--D2--D0 index.  This
+paper does not construct the microscopic Hilbert space
+\(\mathcal H_{\gamma(h,d,n)}\).
+
+Let
+\[
+\mathrm{Hilb}^n(X,(\beta_h,d))
+=\{Y\subset X\mid [Y]=(\beta_h,d),\ \chi(\mathcal O_Y)=n\}.
+\]
+The elliptic curve acts on \(X\) by translation in the second factor.
+Define the reduced Behrend-weighted invariant
+\[
+        \mathbf{DT}^X_{n,(\beta_h,d)}
+        =\int_{\mathrm{Hilb}^n(X,(\beta_h,d))/E}\nu\,de,
+\]
+where \(\nu\) is the Behrend function.  The DT partition series is
+\[
+Z^X_{\mathrm{DT}}(q,t,p)=
+\sum_{h,d\ge0}\sum_{n\in\mathbb Z}
+\mathbf{DT}^X_{n,(\beta_h,d)}
+q^{d-1}t^{\frac12\langle\beta_h,\beta_h\rangle}(-p)^n.
+\]
+\end{definition}
+
+\begin{proposition}[Oberdieck--Pixton normalization]
+\label{prop:op-normalization-physical-first}
+Let \(p_{\mathrm{OP}}=e^{iu}\) and let
+\((q_{\mathrm{OP}},p_{\mathrm{OP}},\widetilde q_{\mathrm{OP}})\) be the
+Oberdieck--Pixton variables.  The variables used here are
+\[
+        q=q_{\mathrm{OP}},\qquad r=p_{\mathrm{OP}},\qquad
+        s=\widetilde q_{\mathrm{OP}}.
+\]
+The product denoted \(\chi_{10}\) by Oberdieck--Pixton is
+\[
+        \chi_{10}^{\mathrm{OP}}
+        =D_5^2
+        =(64^{-1}\Delta_5)^2
+        =4096^{-1}\Delta_5^2.
+\]
+Consequently
+\[
+        Z^X_{\mathrm{OP}}
+        =-\left(\chi_{10}^{\mathrm{OP}}\right)^{-1}
+        =-4096\,\Delta_5^{-2}.
+\]
+\end{proposition}
+
+\begin{proof}
+Oberdieck--Pixton use the primitive expansion of \cite{OB}*{Theorem 1}
+and the stable-pairs variables of Oberdieck--Pandharipande
+\cite{OPand}*{Section 2}.  Their Igusa product is
+\[
+\chi_{10}^{\mathrm{OP}}(p,q,\widetilde q)
+=pq\widetilde q
+\prod(1-p^kq^h\widetilde q^d)^{c(4hd-k^2)}
+\]
+in the chamber \(h>0\), or \(d>0\), together with \(h=d=0,\ k<0\).
+The exponents are the K3 elliptic-genus coefficients.  Since
+\[
+        Z_{\mathrm{K3}}=2\phi_{0,1},\qquad
+        \phi_{0,1}=\sum f(n,l)q^nr^l,
+\]
+the OP product is the square of
+\[
+D_5=64^{-1}\Delta_5
+=q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)>0}(1-q^nr^ls^m)^{f(nm,l)}.
+\]
+Their Laurent expansion \cite{OB}*{(56)} gives
+\(Z^X_{\mathrm{OP}}=-1/\chi_{10}^{\mathrm{OP}}\).
+\end{proof}
+
+\begin{theorem}[Oberdieck--Pixton/Oberdieck reduced scalar square]
+\label{thm:op-square-physical-first}
+\[
+        Z^X_{\mathrm{DT}}(T,Q,P)
+        =Z^X_{\mathrm{OP}}(P,Q,T)
+        =-4096\,\Delta_5(Z)^{-2}.
+\]
+This is a theorem for the primitive reduced curve-counting series and
+the reduced Hilbert-scheme DT series of \(S\times E\), in the
+quotient-by-\(E\) normalization.  It is not a construction of a
+protected BPS Hilbert space.
+\end{theorem}
+
+\begin{conjecture}[Protected D-brane index dictionary]
+\label{conj:protected-dbrane-dictionary-physical-first}
+For the D6--D2--D0 charge \(\gamma(h,d,n)\), the protected index is
+represented by the reduced Behrend-weighted invariant:
+\[
+\Omega_X(h,d,n)
+=\operatorname{Tr}_{\mathcal H_{\gamma(h,d,n)}}(-1)^F
+\stackrel{\mathrm{phys}}{=}
+\mathbf{DT}^X_{n,(\beta_h,d)}.
+\]
+This conjecture is independent of
+Theorem~\ref{thm:op-square-physical-first}.
+\end{conjecture}
+
+\begin{definition}[Scalar-square branch]
+\label{def:scalar-square-branch-physical-first}
+A scalar-square branch is a source
+\[
+        \mathfrak s\in\{\mathrm{OP},\mathrm{DT}\}
+\]
+and a Laurent expansion
+\[
+        Z^X_{\mathfrak s}(Z)
+        =C_{\mathfrak s}\Delta_5(Z)^{-2},
+        \qquad C_{\mathfrak s}\in\mathbb C^\times .
+\]
+The OP and reduced DT branches have
+\(C_{\mathrm{OP}}=C_{\mathrm{DT}}=-4096\).  A branch is a protected
+scalar only after the protected-index dictionary has been supplied.
+\end{definition}
+
+\begin{theorem}[Square-root consequence for a scalar branch]
+\label{thm:scalar-square-root-consequence-physical-first}
+For every scalar-square branch,
+\[
+        \mathcal D_X(Z)^2={C_{\mathfrak s}\over Z^X_{\mathfrak s}(Z)}
+        =\Delta_5(Z)^2.
+\]
+The square root used below is
+\[
+        \mathcal D_X(Z)=\Delta_5(Z),
+\]
+the Borcherds determinant normalized in the next section.  It is not an
+analytic branch of \(Z^X_{\mathfrak s}\).
+\end{theorem}
+\end{verbatim}
+
+\subsection{Replacement opening section II}
+
+\paragraph{Anchor.}
+Insert immediately after the preceding section.  This replaces
+\texttt{proj.tex:120--404}.  The label \texttt{sec:duality-principle} is
+kept as a compatibility label.
+
+\paragraph{Status.}
+This section constructs a virtual determinant and a denominator algebra.
+It refuses an honest one-particle Hilbert space, a physical BPS bracket,
+and a Hall/Koszul realization unless additional data are built.
+
+\begin{verbatim}
+\section{The virtual determinant and the denominator gate}
+\label{sec:duality-principle}
+\label{sec:virtual-determinant-denominator-gate}
+
+\begin{definition}[K3 elliptic genus and half-index class]
+Let \(\mathcal H_{\mathrm{RR}}(S)\) be the Ramond--Ramond Hilbert space of
+a unitary \(\mathcal N=(4,4)\) sigma model on a K3 surface \(S\), and
+choose a right-moving Ramond supercharge \(Q_R\) with
+\[
+        Q_R^2=0,\qquad
+        \{Q_R,Q_R^\dagger\}
+        =2(\overline L_0-\overline c/24).
+\]
+The K3 elliptic genus is
+\[
+Z_{\mathrm{K3}}(\tau,z)
+=\operatorname{Tr}_{\mathcal H_{\mathrm{RR}}(S)}
+(-1)^{F_L+F_R}q^{L_0-c/24}
+\overline q^{\,\overline L_0-\overline c/24}r^{J_0}.
+\]
+Right-moving localization gives
+\[
+        Z_{\mathrm{K3}}(\tau,z)
+        =\sum_{n,l}\sdim\mathcal H^{\mathrm{BPS}}_{n,l}(S)q^nr^l.
+\]
+In Eichler--Zagier normalization,
+\[
+        Z_{\mathrm{K3}}=2\phi_{0,1},\qquad
+        \phi_{0,1}=\sum_{n,l}f(n,l)q^nr^l.
+\]
+Thus \(\sdim\mathcal H^{\mathrm{BPS}}_{n,l}(S)=2f(n,l)\).  Let
+\[
+        \mathbb U_{n,l}\in K_0(\mathrm{sVect}_{\mathrm{fd}}),
+        \qquad \sdim\mathbb U_{n,l}=f(n,l).
+\]
+This is a virtual half-index class.  It is not a canonical half of
+\(\mathcal H^{\mathrm{BPS}}_{n,l}(S)\).
+\end{definition}
+
+\begin{definition}[Gram-index lattice and cusp-positive cone]
+The determinant is indexed by
+\[
+        \Gamma_{\mathrm{gram}}=\mathbb Z^3,\qquad
+        \gamma=(n,l,m),\qquad x^\gamma=q^nr^ls^m.
+\]
+The cusp-positive cone is
+\[
+\Gamma_{\mathrm{eff}}
+=\{(n,l,m)\mid m>0,\ n\ge0,\ l\in\mathbb Z\}
+\cup\{(n,l,0)\mid n>0,\ l\in\mathbb Z\}
+\cup\{(0,l,0)\mid l<0\}.
+\]
+This is a product-index cone.  It is not asserted to be the full
+microscopic BPS charge lattice.
+\end{definition}
+
+\begin{lemma}[Fock trace and superdeterminant]
+Let \(V=\bigoplus_{\lambda\in P}V_\lambda\) be a \(P\)-graded finite
+super vector space with \(a_\lambda=\sdim V_\lambda\).  Then
+\[
+        \sch\mathcal F(V)
+        =\prod_{\lambda\in P}(1-x^\lambda)^{-a_\lambda},
+        \qquad
+        \sdet_V(1-x)
+        =\prod_{\lambda\in P}(1-x^\lambda)^{a_\lambda}.
+\]
+\end{lemma}
+
+\begin{definition}[Virtual one-particle determinant]
+\label{def:virtual-one-particle-determinant}
+Set
+\[
+        \mathcal V
+        =\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}\mathcal V_\gamma,
+        \qquad
+        \mathcal V_{(n,l,m)}:=\mathbb U_{nm,l}.
+\]
+Then
+\[
+        \sdim\mathcal V_{(n,l,m)}=f(nm,l).
+\]
+The normalized determinant is
+\[
+\mathcal D_X(Z)
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{f(nm,l)}.
+\]
+The inverse virtual character is
+\[
+\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}(Z)
+=\mathcal D_X(Z)^{-1}
+={1\over64}q^{-1/2}r^{-1/2}s^{-1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{-f(nm,l)}.
+\]
+\end{definition}
+
+\begin{theorem}[Virtual determinant identity]
+\label{thm:virtual-determinant-identity}
+\[
+        \mathcal D_X(Z)=\Delta_5(Z).
+\]
+Equivalently,
+\[
+        Z^X_{\mathfrak s}
+        =C_{\mathfrak s}\left(\mathcal Z_{\mathrm{BPS}}^{\mathrm{vir}}\right)^2
+\]
+for every scalar-square branch \(Z^X_{\mathfrak s}\).  The determinant
+uses only the virtual classes \(\mathbb U_{n,l}\) and their signed
+dimensions.
+\end{theorem}
+
+\begin{proof}
+The product formula for \(\Delta_5\) gives
+\[
+\Delta_5(Z)
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{f(nm,l)}.
+\]
+This is the displayed \(\mathcal D_X\).  The scalar-square identity in
+Theorem~\ref{thm:scalar-square-root-consequence-physical-first} gives the
+second assertion.
+\end{proof}
+
+\begin{openproblem}[Honest one-particle square root]
+\label{op:honest-one-particle-square-root-opening}
+Construct, if it exists, a Hilbert, vertex, or factorization object
+\[
+        \mathcal H^{\mathrm{1p}}
+        =\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}
+        \mathcal H^{\mathrm{1p}}_\gamma
+\]
+with
+\[
+        \operatorname{Tr}_{\mathcal H^{\mathrm{1p}}_{(n,l,m)}}(-1)^F
+        =f(nm,l).
+\]
+The determinant construction does not assume such an object.
+\end{openproblem}
+
+\begin{definition}[Active support and Borcherds cone]
+\label{def:active-support-opening}
+The active support is
+\[
+        \Gamma_{\mathrm{act}}
+        =\{(n,l,m)\in\Gamma_{\mathrm{eff}}\mid f(nm,l)\ne0\}.
+\]
+Let
+\[
+        \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
+        \in\Lambda^{2,1}_{II}.
+\]
+The Borcherds cone is
+\[
+        \Cone_{\mathrm{Borch}}
+        :=\mathbb R_{\ge0}\,\alpha(\Gamma_{\mathrm{act}})
+        \subset \Lambda^{2,1}_{II}\otimes\mathbb R.
+\]
+Put
+\[
+        \delta_1=2f_2-f_3,\qquad
+        \delta_2=2f_{-2}-f_3,\qquad
+        \delta_3=f_3.
+\]
+\end{definition}
+
+\begin{lemma}[Active support gives the type-II cone]
+\label{lem:active-support-opening}
+\[
+        \Cone_{\mathrm{Borch}}
+        =\mathbb R_{\ge0}\delta_1
+        +\mathbb R_{\ge0}\delta_2
+        +\mathbb R_{\ge0}\delta_3.
+\]
+\end{lemma}
+
+\begin{proof}
+For \(\gamma=(n,l,m)\in\Gamma_{\mathrm{act}}\),
+\[
+        \alpha(\gamma)
+        =n\delta_1+m\delta_2+(n+m-l)\delta_3.
+\]
+The effective chamber gives \(n,m\ge0\).  Since \(\phi_{0,1}\) is weak
+of index one, \(f(nm,l)\ne0\) implies \(4nm-l^2\ge-1\), hence
+\(n+m-l\ge0\) in the chamber.  The reverse inclusion follows from the
+active triples
+\[
+        (1,1,0),\qquad (0,1,1),\qquad (0,-1,0),
+\]
+whose degrees are \(\delta_1,\delta_2,\delta_3\).
+\end{proof}
+
+\begin{definition}[Denominator algebra]
+\label{def:denominator-algebra-opening}
+Let
+\[
+A=((\delta_i,\delta_j))_{1\le i,j\le3}
+=\begin{pmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{pmatrix}.
+\]
+Let
+\[
+        \mathcal A_{\mathrm{den}}:=\mathfrak g_{\Delta_5}
+\]
+be the Gritsenko--Nikulin automorphic correction of \(\bkm(A)\).  For
+\(\gamma\in\Gamma_{\mathrm{gram}}\), set
+\[
+        \mathcal A_{\mathrm{den},\gamma}
+        :=\mathfrak g_{\Delta_5,\alpha(\gamma)}.
+\]
+If \(\alpha(\gamma)\) is not a root, this space is zero.  The bracket is
+the Borcherds--Kac--Moody bracket of \(\mathfrak g_{\Delta_5}\).
+\end{definition}
+
+\begin{theorem}[Denominator algebra identity]
+\label{thm:denominator-algebra-identity-opening}
+The denominator algebra is \(\Gamma_{\mathrm{gram}}\)-graded:
+\[
+\mathcal A_{\mathrm{den}}
+=\bigoplus_{\gamma\in\Gamma_{\mathrm{gram}}}
+\mathcal A_{\mathrm{den},\gamma},
+\qquad
+[\mathcal A_{\mathrm{den},\gamma},\mathcal A_{\mathrm{den},\gamma'}]
+\subset
+\mathcal A_{\mathrm{den},\gamma+\gamma'}.
+\]
+Its signed Gram-degree multiplicities are
+\[
+        \sdim\mathcal A_{\mathrm{den},(n,l,m)}=f(nm,l),
+\]
+and its Weyl--Kac--Borcherds denominator is
+\[
+        \operatorname{den}(\mathcal A_{\mathrm{den}})
+        =64^{-1}\Delta_5(2Z).
+\]
+This is a theorem about the denominator algebra.  It is not a theorem
+constructing a microscopic BPS state algebra.
+\end{theorem}
+
+\begin{definition}[Formal current envelope]
+\label{def:formal-current-envelope-opening}
+Let \(E\) be the elliptic curve in \(X=S\times E\).  The formal current
+Lie-* algebra is
+\[
+        \operatorname{Cur}_E(\mathcal A_{\mathrm{den}})
+        :=\mathcal A_{\mathrm{den}}\otimes\mathcal O_E.
+\]
+Its Beilinson--Drinfeld chiral envelope is
+\[
+        \mathsf{Den}_{\Delta_5,E}
+        :=U_E^{\mathrm{ch}}
+        \left(\operatorname{Cur}_E(\mathcal A_{\mathrm{den}})\right).
+\]
+This is a formal chiral algebra attached to the denominator algebra.
+\end{definition}
+
+\begin{openproblem}[Hall and Koszul realization gate]
+\label{op:hall-koszul-realization-gate-opening}
+Construct a physical BPS factorization algebra only after the following
+data have been supplied:
+\begin{enumerate}
+\item a compactification charge lattice and a projection to
+\(\Gamma_{\mathrm{gram}}\);
+\item a Hall or factorization object with protected integration;
+\item a proof that its primitive signed character is \(f(nm,l)\);
+\item a proof that its primitive bracket satisfies the same
+Gritsenko--Nikulin Borcherds relations as
+\(\mathcal A_{\mathrm{den}}\);
+\item an orientation character and Hopf pairing compatible with
+\(\nu_{\Delta_5}\).
+\end{enumerate}
+Until these data are built, \(\mathsf{Den}_{\Delta_5,E}\) is not the
+physical BPS factorization algebra and no chiral Koszul-duality theorem
+has been proved.
+\end{openproblem}
+\end{verbatim}
+
+\subsection{Claims strengthened}
+
+\begin{enumerate}
+\item The opening starts from the OP scalar theorem, not from a modular
+or duality principle.
+\item The DT scalar is marked as an assumption, and the D-brane protected
+index interpretation is marked as a conjecture.
+\item The square root is a normalized Borcherds determinant of a virtual
+half-index class.
+\item \(\Gamma_{\mathrm{gram}}\) is an index lattice, not the microscopic
+BPS charge lattice.
+\item The active-support cone is computed from nonzero exponents
+\(f(nm,l)\), not from unconstructed BPS states.
+\item The BKM object is introduced as a denominator algebra with signed
+root superdimensions \(f(nm,l)\).
+\item The Hall/Koszul realization is stated as an open construction gate.
+\end{enumerate}
+
+\subsection{Claims refused}
+
+\begin{enumerate}
+\item Refused: the scalar square constructs a protected Hilbert space.
+\item Refused: the virtual half-index is a canonical half of the K3
+Hilbert space.
+\item Refused: \(\Gamma_{\mathrm{gram}}\cong\mathbb Z^3\) is the full
+physical BPS charge lattice.
+\item Refused: the denominator identity is a microscopic BPS bracket.
+\item Refused: the formal current envelope is already the physical BPS
+factorization algebra.
+\item Refused: a chiral Koszul-duality theorem follows from the scalar
+determinant.
+\end{enumerate}
+
+\subsection{Commands run}
+
+\begin{verbatim}
+sed -n '1,220p' AGENTS.md
+sed -n '1,220p' CLAUDE.md
+sed -n '1,220p' /Users/raeez/ecosystem/INVARIANTS.md
+sed -n '1,220p' /Users/raeez/ecosystem/AGENTS-HARNESS.md
+test -e agent_material/11_dirac_opening_and_abstract_rewrite.tex && \
+  sed -n '1,240p' agent_material/11_dirac_opening_and_abstract_rewrite.tex || true
+sed -n '1,260p' agent_material/09_physics_first_rewrite_patchset.tex
+sed -n '1,320p' agent_material/10_dirac_prose_attack_heal.tex
+sed -n '320,760p' agent_material/10_dirac_prose_attack_heal.tex
+nl -ba proj.tex | sed -n '55,225p'
+nl -ba proj.tex | sed -n '542,709p'
+nl -ba proj.tex | sed -n '222,410p'
+nl -ba proj.tex | sed -n '1028,1126p'
+nl -ba proj.tex | sed -n '1210,1475p'
+rg -n "newtheorem|declaretheorem|begin\\{assumption\\}|..." \
+  raeez-math-template.sty proj.tex
+rg -n "AUTHOR=|TITLE=|HM|DVV|DMVV|OB|OPand|GN|..." proj.bib
+python3 compute/verify_lattice.py
+python3 compute/verify_square_root.py
+rg -n -F -e "The duality principle fixes" \
+  -e "effective BPS charge cone" \
+  -e "same BPS charge lattice" \
+  -e "The geometric duality group is" \
+  -e "protected character" \
+  -e "The charge lattice is" \
+  -e "The physical discriminant" \
+  -e "BPS charge degrees" \
+  -e "positive BPS charges" \
+  -e "The protected charge lattice is" \
+  -e "one-particle BPS" \
+  -e "physical square-root atlas" \
+  -e "physical row system" \
+  proj.tex agent_material/09_physics_first_rewrite_patchset.tex \
+  agent_material/10_dirac_prose_attack_heal.tex
+git status --short
+nl -ba proj.tex | sed -n '50,130p'
+nl -ba proj.tex | sed -n '120,430p'
+nl -ba proj.tex | sed -n '530,790p'
+sed -n '1,220p' agent_material/11_dirac_opening_and_abstract_rewrite.tex
+sed -n '220,520p' agent_material/11_dirac_opening_and_abstract_rewrite.tex
+sed -n '520,900p' agent_material/11_dirac_opening_and_abstract_rewrite.tex
+perl -ne 'print "$.:$_" if /[^\x00-\x7F]/' \
+  agent_material/11_dirac_opening_and_abstract_rewrite.tex
+chktex -q agent_material/11_dirac_opening_and_abstract_rewrite.tex || true
+git status --short -- agent_material/11_dirac_opening_and_abstract_rewrite.tex
+\end{verbatim}

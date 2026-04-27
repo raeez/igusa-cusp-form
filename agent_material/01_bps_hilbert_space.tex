@@ -1,0 +1,255 @@
+\subsection{The Ramond-sector index behind the determinant}
+
+\begin{definition}[Ramond-sector protected index]
+Let $\mathcal H_{\mathrm{RR}}(S)$ be the Hilbert space of a unitary
+$\mathcal N=(4,4)$ sigma model on a K3 surface $S$, in the
+Ramond--Ramond sector.  Its central charges are
+$$c=\overline c=6.$$
+Choose a right-moving Ramond supercharge $Q_R$ with
+$$Q_R^2=0,\qquad
+\{Q_R,Q_R^\dagger\}=2\left(\overline L_0-\frac{\overline c}{24}\right).$$
+The K3 elliptic genus is the protected supertrace
+$$
+Z_{\mathrm{K3}}(\tau,z)=
+\operatorname{Tr}_{\mathcal H_{\mathrm{RR}}(S)}
+(-1)^{F_L+F_R}q^{L_0-c/24}\overline q^{\,\overline L_0-\overline c/24}
+r^{J_0},
+$$
+where
+$$q=e^{2\pi i\tau},\qquad r=e^{2\pi iz}.$$
+The $Q_R$-cohomological BPS space in degree $(n,l)$ is
+$$
+\mathcal H^{\mathrm{BPS}}_{n,l}(S):=
+H^\bullet\!\left(
+\{\psi\in\mathcal H_{\mathrm{RR}}(S)\mid
+(L_0-c/24)\psi=n\psi,\ J_0\psi=l\psi\},Q_R
+\right).
+$$
+\end{definition}
+
+\begin{theorem}[Right-moving localization]
+The protected trace localizes to $Q_R$-cohomology:
+$$
+Z_{\mathrm{K3}}(\tau,z)=
+\sum_{n\geq0,\ l\in\Z}
+\sdim\mathcal H^{\mathrm{BPS}}_{n,l}(S)\,q^nr^l.
+$$
+Equivalently,
+$$
+\sdim\mathcal H^{\mathrm{BPS}}_{n,l}(S)
+=[q^nr^l]\,Z_{\mathrm{K3}}(\tau,z).
+$$
+\end{theorem}
+
+\begin{proof}
+If $\overline L_0-\overline c/24>0$, the identity
+$$
+\{Q_R,Q_R^\dagger\}=2\left(\overline L_0-\frac{\overline c}{24}\right)
+$$
+pairs the corresponding states by opposite $(-1)^{F_R}$ parity.  Their
+contribution to the supertrace is zero.  The unpaired states are exactly
+the harmonic representatives for $Q_R$-cohomology, hence have
+$$\overline L_0=\overline c/24.$$
+The supertrace is therefore independent of $\overline q$ and equals the
+graded superdimension of the displayed cohomology.
+\end{proof}
+
+\begin{definition}[Half-K3 index object]
+Use the Eichler--Zagier normalization already fixed in the manuscript,
+\cite{EZ:1},
+$$
+Z_{\mathrm{K3}}(\tau,z)=2\phi_{0,1}(\tau,z),\qquad
+\phi_{0,1}(\tau,z)=\sum_{n\geq0,\ l\in\Z}f(n,l)q^nr^l.
+$$
+Thus
+$$
+\sdim\mathcal H^{\mathrm{BPS}}_{n,l}(S)=2f(n,l).
+$$
+The class
+$$
+\mathbb U_{n,l}\in K_0(\mathrm{sVect}_{\mathrm{fd}})
+$$
+defined by
+$$
+\sdim\mathbb U_{n,l}=f(n,l)
+$$
+is the normalized half-index object.  It is not a canonical half of
+$\mathcal H^{\mathrm{BPS}}_{n,l}(S)$ as a Hilbert space.  It is the
+integral virtual super vector space whose signed dimension is the
+Borcherds input coefficient.
+\end{definition}
+
+\begin{remark}[Status of the half-index]
+The Ramond-sector space
+$\mathcal H^{\mathrm{BPS}}_{n,l}(S)$ is a physical protected Hilbert
+object.  The class $\mathbb U_{n,l}$ is an index shadow.  Its existence
+uses only the integrality of $f(n,l)$:
+$$
+f(n,l)\geq0:\quad \mathbb U_{n,l}\simeq\C_{\overline0}^{\,f(n,l)},
+\qquad
+f(n,l)<0:\quad \mathbb U_{n,l}\simeq\C_{\overline1}^{\,-f(n,l)}
+$$
+is one possible representative.  No construction of a canonical
+square-root Hilbert space is asserted here.
+\end{remark}
+
+\begin{theorem}[DMVV index and normalized shadow]
+Let
+$$
+Z_{\mathrm{K3}}(\tau,z)=\sum_{n\geq0,\ l\in\Z}c(n,l)q^nr^l,
+\qquad c(n,l)=2f(n,l).
+$$
+Dijkgraaf--Moore--Verlinde--Verlinde \cite{DMVV} prove the
+second-quantized elliptic-genus identity
+$$
+\sum_{N\geq0}p^N Z_{\mathrm{ell}}\!\left(\operatorname{Sym}^N S;\tau,z\right)
+=
+\prod_{\substack{m>0,\ n\geq0\\ l\in\Z}}
+\left(1-p^m q^n r^l\right)^{-c(nm,l)}.
+$$
+Replacing $c(n,l)$ by $f(n,l)$ gives the normalized virtual coefficient
+system used by the Borcherds lift:
+$$
+\operatorname{PE}\!\left(\sum_{\substack{m>0,\ n\geq0\\ l\in\Z}}
+f(nm,l)p^mq^nr^l\right)
+=
+\prod_{\substack{m>0,\ n\geq0\\ l\in\Z}}
+\left(1-p^m q^n r^l\right)^{-f(nm,l)}.
+$$
+\end{theorem}
+
+\begin{remark}[Boundary factors]
+The DMVV theorem accounts for the sector $m>0$.  The Borcherds product
+for $\Delta_5$ uses the larger positive semigroup
+$$
+\Gamma_{\mathrm{eff}}=
+\{(n,l,m)\mid m>0,\ n\geq0,\ l\in\Z\}
+\cup
+\{(n,l,0)\mid n>0,\ l\in\Z\}
+\cup
+\{(0,l,0)\mid l<0\}.
+$$
+The $m=0$ terms are cusp and Weyl-chamber boundary terms of the
+automorphic product, not additional Hilbert spaces supplied by DMVV.
+They may be encoded in the same virtual index notation because the
+determinant only reads the numbers $f(0,l)$.
+\end{remark}
+
+\begin{definition}[One-particle virtual super vector space]
+For $\gamma=(n,l,m)\in\Gamma_{\mathrm{eff}}$ put
+$$x^\gamma=q^nr^ls^m.$$
+Define a $\Gamma_{\mathrm{eff}}$-graded virtual super vector space
+$$
+\mathcal V=\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}\mathcal V_\gamma
+$$
+in $K_0(\mathrm{sVect}_{\mathrm{fd}})$ by
+$$
+\mathcal V_{n,l,m}:=\mathbb U_{nm,l},\qquad
+\sdim\mathcal V_{n,l,m}=f(nm,l).
+$$
+This is the precise sense in which the manuscript uses a one-particle
+BPS space.  It is a protected-index object.  It is not, by itself, a
+construction of all microscopic BPS states, nor a construction of the
+Lie bracket of $\mathfrak g_{\Delta_5}$.
+\end{definition}
+
+\begin{lemma}[Determinants see only signed dimensions]
+Let
+$$V=V_{\overline0}\oplus V_{\overline1}$$
+be a finite-dimensional super vector space, and let $x$ be a scalar
+formal monomial.  Then
+$$
+\sdet_V(1-x)
+=
+\frac{\det(1-x\mid V_{\overline0})}
+{\det(1-x\mid V_{\overline1})}
+=
+(1-x)^{\dim V_{\overline0}-\dim V_{\overline1}}
+=(1-x)^{\sdim V}.
+$$
+Consequently two virtual super vector spaces with the same signed
+dimension define the same determinant factor.
+\end{lemma}
+
+\begin{proof}
+The endomorphism $1-x$ acts by the same scalar on every homogeneous
+basis vector.  The even basis vectors contribute $\det(1-x)$ to the
+numerator, the odd basis vectors contribute $\det(1-x)$ to the
+denominator.  The exponent is therefore
+$$\dim V_{\overline0}-\dim V_{\overline1}=\sdim V.$$
+\end{proof}
+
+\begin{theorem}[Index determinant]
+For the virtual one-particle object above, the formal Fock character is
+$$
+\sch\mathcal F(\mathcal V)
+=
+\prod_{\gamma\in\Gamma_{\mathrm{eff}}}
+\left(1-x^\gamma\right)^{-\sdim\mathcal V_\gamma}
+=
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+\left(1-q^nr^ls^m\right)^{-f(nm,l)},
+$$
+and
+$$
+\sdet_{\mathcal V}(1-x)
+=
+\prod_{\gamma\in\Gamma_{\mathrm{eff}}}
+\left(1-x^\gamma\right)^{\sdim\mathcal V_\gamma}
+=
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+\left(1-q^nr^ls^m\right)^{f(nm,l)}.
+$$
+Hence the determinant used in the manuscript is
+$$
+\mathcal D_X(Z)
+=64q^{1/2}r^{1/2}s^{1/2}\sdet_{\mathcal V}(1-x)
+$$
+$$
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+\left(1-q^nr^ls^m\right)^{f(nm,l)}.
+$$
+\end{theorem}
+
+\begin{proof}
+For one even generator of charge $\gamma$,
+$$\sch\operatorname{Sym}(\C_{\overline0}x^\gamma)
+=(1-x^\gamma)^{-1}.$$
+For one odd generator of charge $\gamma$,
+$$\sch\bigwedge(\C_{\overline1}x^\gamma)=1-x^\gamma.$$
+Multiplication over a homogeneous basis gives the Fock character, and
+the preceding lemma gives the inverse superdeterminant.  Since each
+factor depends only on $\sdim\mathcal V_\gamma=f(nm,l)$, the determinant
+is well-defined for the virtual class $\mathcal V_\gamma$.
+\end{proof}
+
+\begin{assumption}[Genuine chiral square-root Hilbert lift]
+A stronger physical assertion is the existence of an honest
+one-particle Hilbert space
+$$
+\mathcal H^{\mathrm{1p,ch}}=
+\bigoplus_{\gamma\in\Gamma_{\mathrm{eff}}}
+\mathcal H^{\mathrm{1p,ch}}_\gamma
+$$
+whose protected superdimensions are
+$$
+\operatorname{Tr}_{\mathcal H^{\mathrm{1p,ch}}_\gamma}(-1)^F
+=f(nm,l),\qquad \gamma=(n,l,m).
+$$
+This is an additional physical lift.  DMVV proves the
+second-quantized index for the full K3 elliptic genus.  It does not
+construct a canonical Hilbert-space square root realizing
+$\phi_{0,1}=Z_{\mathrm{K3}}/2$ state by state.
+\end{assumption}
+
+\begin{remark}[Relation to BPS algebras]
+Harvey--Moore \cite{HM} give the physical framework in which BPS
+states carry charge gradings and form algebraic structures.  The
+Dijkgraaf--Verlinde--Verlinde dyon-counting formula \cite{DVV} explains
+where Igusa-type products occur in the $N=4$ BPS index problem.
+The present determinant statement uses only the protected supertrace and
+the Borcherds product coefficients.  It proves equality of signed
+graded dimensions.  It does not prove an isomorphism between a
+microscopic BPS Hilbert algebra and $\mathfrak g_{\Delta_5}$.
+\end{remark}

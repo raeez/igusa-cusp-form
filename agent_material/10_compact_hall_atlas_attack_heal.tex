@@ -1,0 +1,453 @@
+\section{The compact Hall atlas obstruction}
+\label{sec:compact-hall-atlas-obstruction}
+
+\providecommand{\Z}{\mathbb Z}
+\providecommand{\C}{\mathbb C}
+\providecommand{\GammaBPS}{\Gamma_{\mathrm{BPS}}}
+\providecommand{\Gammaeff}{\Gamma_{\mathrm{eff}}}
+\providecommand{\Gammaact}{\Gamma_{\mathrm{act}}}
+\providecommand{\Hall}{\mathcal H}
+\providecommand{\Perf}{\operatorname{Perf}}
+\providecommand{\Coh}{\operatorname{Coh}}
+\providecommand{\Hilb}{\operatorname{Hilb}}
+\providecommand{\Ext}{\operatorname{Ext}}
+\providecommand{\RHom}{\operatorname{RHom}}
+\providecommand{\BM}{\operatorname{BM}}
+\providecommand{\Crit}{\operatorname{Crit}}
+\providecommand{\Prim}{\operatorname{Prim}}
+\providecommand{\sdim}{\operatorname{sdim}}
+\providecommand{\BPS}{\mathrm{BPS}}
+
+The object under attack is the compact oriented critical Hall atlas
+postulated in the compact Hall factorization note.  The
+question is whether it can be constructed directly for
+\(X=S\times E\), \(S\) a K3 surface, from the curve-counting geometry
+which gives the Oberdieck--Pixton scalar square.
+
+The answer is negative at the present level of input.  One can write the
+candidate moduli problem and the conditional Hall atlas.  One cannot yet
+descend the reduced \(E\)-quotient scalar theory to a Hall convolution
+atlas whose protected primitive bracket has denominator
+\(\mathfrak g_{\Delta_5}\).
+
+\subsection{The candidate scalar moduli problem}
+
+Let \(\beta_h\in H_2(S,\Z)\) be primitive with
+\(\langle \beta_h,\beta_h\rangle=2h-2\).  The Hilbert-scheme DT branch
+uses the projective moduli space
+\[
+  \Hilb^{\ell}\bigl(X,(\beta_h,d)\bigr)
+\]
+of one-dimensional subschemes \(Z\subset X\) with
+\([Z]=(\beta_h,d)\) and \(\chi(\mathcal O_Z)=\ell\), together with the
+translation action of \(E\) on the second factor of \(X=S\times E\).
+The numerical invariant displayed in the manuscript is
+\[
+  \mathbf{DT}^{X}_{\ell,(\beta_h,d)}
+  =
+  \int_{\Hilb^{\ell}(X,(\beta_h,d))/E}\nu\,de ,
+\]
+where \(\nu\) is Behrend's constructible function
+\cite{BEHREND}, \cite{DT}.  In the OP variables,
+\[
+  q=q_{\mathrm{OP}}=t_{\mathrm{DT}},\qquad
+  r=p_{\mathrm{OP}}=p_{\mathrm{DT}},\qquad
+  s=\widetilde q_{\mathrm{OP}}=q_{\mathrm{DT}},
+\]
+and
+\[
+  \chi_{10}^{\mathrm{OP}}
+  =
+  4096^{-1}\Delta_5^2,\qquad
+  Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}
+\]
+\cite{OB}, \cite{OPand}.  The Igusa product uses the charge
+\(\gamma=(n,l,m)\) in
+\[
+  q^n r^l s^m,\qquad
+  \alpha(n,l,m)=2n f_2-l f_3+2m f_{-2}.
+\]
+
+\begin{proposition}[Scalar critical geometry]
+\label{prop:scalar-critical-geometry-only}
+The Hilbert-scheme branch supplies a proper scalar DT moduli problem,
+with symmetric obstruction theory and Behrend weighting.  It does not,
+by itself, supply a Hall atlas.
+\end{proposition}
+
+\begin{proof}
+The Hilbert scheme is the moduli space of ideal sheaves
+\(I_Z\subset\mathcal O_X\) with fixed curve and Euler data.  It is
+proper because \(X\) is projective.  The Calabi--Yau threefold
+obstruction theory is symmetric, and the Behrend function gives the
+Euler realization of the local critical structure.
+
+Hall convolution needs an extension-closed moduli problem.  The class of
+ideal sheaves, or stable pairs in a fixed chamber, is not closed under
+arbitrary extensions in \(\Coh(X)\).  An exact sequence
+\[
+  0\longrightarrow I_{Z_1}\longrightarrow F\longrightarrow I_{Z_2}
+  \longrightarrow 0
+\]
+need not have \(F\) an ideal sheaf.  Thus the Hilbert scheme is a scalar
+DT coefficient space, not the Hall stack on which the primitive
+commutator is defined.  A Hall atlas must be built on an abelian or
+derived heart containing these objects and closed under extensions.
+\end{proof}
+
+\subsection{The raw finite-truncation obstruction}
+
+The previous Hall note used finite lower charge sets
+\(\Gamma_{N,R}\subset\Gammaeff\).  This is correct only after a stability
+sector and Harder--Narasimhan finiteness have been supplied.  It is false
+as a statement about the raw Igusa cone.
+
+\begin{lemma}[No raw finite lower sets]
+\label{lem:no-raw-finite-lower-sets}
+Let \(L\subset\Gammaeff\) have the lower-set property
+\[
+  \gamma+\eta\in L,\qquad \gamma,\eta\in\Gammaeff
+  \quad\Longrightarrow\quad
+  \gamma,\eta\in L .
+\]
+If \(L\) contains any charge \((n,l,m)\) with \(n>0\) and \(m>0\), then
+\(L\) is infinite.
+\end{lemma}
+
+\begin{proof}
+For every \(a\in\Z\),
+\[
+  (n,l,m)=(n,a,0)+(0,l-a,m).
+\]
+Both summands lie in \(\Gammaeff\): the first has \(m=0,n>0\), and the
+second has \(m>0,n=0\).  Hence a lower set containing \((n,l,m)\) must
+contain \((n,a,0)\) and \((0,l-a,m)\) for all \(a\in\Z\).  It is
+therefore infinite.
+\end{proof}
+
+\begin{corollary}[Finite-first means HN-first]
+\label{cor:finite-first-means-hn-first}
+The finite-first Hall construction cannot be indexed by finite lower
+subsets of the raw cone \(\Gammaeff\).  It must be indexed by finite
+Harder--Narasimhan sector truncations
+\[
+  \Gamma_{\sigma,S}(N,R)
+  =
+  \{\gamma\in\Gamma^{ss}_{\sigma,S}\mid
+  \|\gamma\|\le N,\ |Z_\sigma(\gamma)|\le R\},
+\]
+enlarged by the actual HN factors of objects in the truncation.  The
+finiteness of these sets is a consequence of a stability condition,
+boundedness, and the support property.  It is not a consequence of the
+Borcherds product chamber alone.
+\end{corollary}
+
+\begin{proof}
+Lemma~\ref{lem:no-raw-finite-lower-sets} rules out raw finite lower
+sets.  In a genuine Hall construction, only decompositions which occur
+as HN factors in a strict stability sector must be included.  The
+support property bounds the charge norm in bounded central-charge
+radius, and boundedness of semistable moduli makes the truncation
+finite.  These are stability-theoretic hypotheses, not modular-form
+data.
+\end{proof}
+
+\begin{remark}[Active support is not a Hall truncation]
+The active denominator support
+\[
+  \Gammaact=\{\gamma=(n,l,m)\in\Gammaeff\mid f(nm,l)\ne0\}
+\]
+is finite in the \(l\)-direction after fixing \(n,m\), because
+\(\phi_{0,1}\) is weak of index one and
+\[
+  f(nm,l)\ne0\quad\Longrightarrow\quad 4nm-l^2\ge -1.
+\]
+This controls the Borcherds cone.  It does not control the Hall stack:
+inactive charges may occur as extensions and may be needed before
+primitive extraction kills their protected index.
+\end{remark}
+
+\subsection{The orientation datum}
+
+Let \(\mathfrak M\) be a derived moduli stack of objects in a chosen
+heart inside \(\Perf(X)\).  The Calabi--Yau structure gives a
+\((-1)\)-shifted symplectic form on \(\mathfrak M\).  Locally on the
+classical truncation this gives critical charts
+\[
+  \mathfrak M_\gamma|_U\simeq [\Crit(f_{\gamma,U})/G_{\gamma,U}].
+\]
+The determinant line is
+\[
+  \mathcal L_\gamma
+  =
+  \operatorname{sdet}\RHom_X(\mathcal E_\gamma,\mathcal E_\gamma),
+\]
+for the universal object when it exists, or its descent on the moduli
+stack otherwise.  A strong orientation is a square root
+\[
+  \mathscr L_{o,\gamma}^{\otimes2}\simeq\mathcal L_\gamma
+\]
+together with exact-triangle coherences on the extension stacks.
+
+\begin{proposition}[Orientation needed for Igusa]
+\label{prop:orientation-needed-for-igusa}
+An oriented critical atlas for \(K3\times E\) requires more than the
+existence of local square roots.  It requires an \(E\)-equivariant strong
+orientation compatible with Hall convolution, reduced \(E\)-quotient
+integration, and the automorphic character
+\[
+  \epsilon_o=\nu_{\Delta_5}.
+\]
+\end{proposition}
+
+\begin{proof}
+The local square root orients the vanishing-cycle coefficient.  Hall
+multiplication also uses Thom--Sebastiani transport on the stack of
+extensions, hence needs exact-triangle compatibility of the square
+roots.  The OP scalar theory then divides by the translation action of
+\(E\), so the orientation must be equivariant for that action.  Finally,
+the Borcherds denominator carries the character \(\nu_{\Delta_5}\).  No
+local square-root theorem identifies its induced boundary character with
+\(\nu_{\Delta_5}\); this is an additional comparison datum.
+\end{proof}
+
+\subsection{The reduced quotient obstruction}
+
+The \(E\)-quotient is the geometric operation which makes the OP scalar
+nonzero.  It is also the point at which Hall convolution stops being
+automatic.
+
+\begin{proposition}[The reduced quotient is not automatically Hall]
+\label{prop:reduced-quotient-not-hall}
+Let \(\mathfrak M_\gamma\) be an \(E\)-equivariant moduli stack and let
+\[
+  \mathfrak E_{\gamma,\eta}
+  \longrightarrow
+  \mathfrak M_{\gamma+\eta}
+\]
+be the extension stack defining Hall multiplication before reduction.
+The scalar quotient stacks \(\mathfrak M_\gamma/E\) do not inherit a
+Hall product unless one constructs a relative-position or equivariant
+descent map comparing the diagonal \(E\)-action on extensions with the
+two independent \(E\)-actions on the input factors.
+\end{proposition}
+
+\begin{proof}
+The unreduced Hall correspondence is equivariant for simultaneous
+translation of the subobject, quotient object, and middle object.  Thus
+it sees the diagonal \(E\)-action.  The product of reduced scalar
+quotients,
+\[
+  (\mathfrak M_\gamma/E)\times(\mathfrak M_\eta/E),
+\]
+has forgotten the relative \(E\)-position of the two input objects.  But
+extensions depend on this relative position.  Therefore the convolution
+map on reduced quotient spaces is not obtained by formal descent from
+the unreduced Hall correspondence.  One must either keep the
+\(E\)-equivariant Hall algebra until after convolution, or construct an
+explicit reduced convolution kernel which retains the relative-position
+parameter.  The manuscript has neither construction.
+\end{proof}
+
+\subsection{Conditional construction}
+
+\begin{definition}[Igusa compact Hall atlas datum]
+\label{def:igusa-compact-hall-atlas-datum}
+An Igusa compact Hall atlas datum for \(X=S\times E\) consists of:
+\begin{enumerate}
+\item an extension-closed heart \(\mathcal A_\sigma\subset\Perf(X)\)
+  with a stability condition \(\sigma\), HN property, support property,
+  and bounded semistable moduli;
+\item a charge map
+  \[
+    \operatorname{cl}\colon K_0(\mathcal A_\sigma)\longrightarrow
+    \GammaBPS=\Z^3
+  \]
+  whose Igusa chamber is \(\Gammaeff\) and whose Borcherds degree is
+  \(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\);
+\item for each strict sector \(S\), finite HN truncations
+  \(\Gamma_{\sigma,S}(N,R)\) as in
+  Corollary~\ref{cor:finite-first-means-hn-first};
+\item derived Artin substacks
+  \(\mathfrak M_{\sigma,S,\gamma}\) of \(\sigma\)-semistable objects,
+  with local critical presentations and vanishing-cycle coefficients;
+\item an \(E\)-equivariant strong orientation
+  \(o=\{\mathscr L_{o,\gamma}\}\) compatible with exact triangles;
+\item extension correspondences
+  \[
+    \mathfrak M_{\gamma}\times\mathfrak M_{\eta}
+    \xleftarrow{\ p\ }
+    \mathfrak E_{\gamma,\eta}
+    \xrightarrow{\ q\ }
+    \mathfrak M_{\gamma+\eta}
+  \]
+  for the chosen sector, with compact-support pull-push and
+  Thom--Sebastiani transport;
+\item Cech/Ran descent for the local critical charts and HN sector
+  descent for ordered sector decompositions;
+\item an \(E\)-equivariant or reduced integration map compatible with
+  Hall convolution and inducing the OP scalar normalization.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Conditional compact Hall atlas]
+\label{thm:conditional-compact-hall-atlas}
+If an Igusa compact Hall atlas datum in the sense of
+Definition~\ref{def:igusa-compact-hall-atlas-datum} is supplied, then
+for each \((N,R)\) there is a finite critical Hall truncation
+\[
+  \mathsf F_{N,R}\Hall^{\mathrm{or}}_{X,\sigma,S,o}
+  =
+  \bigoplus_{\gamma\in\Gamma_{\sigma,S}(N,R)}
+  H^{\BM}_{E,G_\gamma}
+  \bigl(\mathfrak M_{\sigma,S,\gamma},
+  \varphi_{\gamma}\otimes\mathscr L_{o,\gamma}\bigr),
+\]
+with product defined by Hall pull-push and oriented
+Thom--Sebastiani transport.  These truncations form a completed
+sectorial Hall factorization cosheaf
+\[
+  \widehat{\Hall}^{\mathrm{or}}_{X,\sigma,S,o}
+  =
+  \varprojlim_{N,R}
+  \mathsf F_{N,R}\Hall^{\mathrm{or}}_{X,\sigma,S,o}.
+\]
+\end{theorem}
+
+\begin{proof}
+All operations are finite at fixed \((N,R)\) by the HN truncation and
+boundedness hypotheses.  The local critical presentations and strong
+orientation glue the vanishing-cycle coefficients.  The extension
+correspondences define the Hall pull-push.  Thom--Sebastiani and the
+orientation coherences identify the coefficient systems under
+extensions.  Associativity is the equality of the two projections from
+the stack of two-step filtrations.  Cech/Ran descent and HN uniqueness
+assemble the finite products over strict sector decompositions.  Passing
+to the inverse limit gives the completed cosheaf.
+\end{proof}
+
+\subsection{Failure theorem}
+
+\begin{theorem}[What is not yet constructed for \(K3\times E\)]
+\label{thm:k3e-atlas-not-yet-constructed}
+The present manuscript, together with the current local agent material
+and Vol.~III anchors, does not construct the Igusa compact Hall atlas
+datum of Definition~\ref{def:igusa-compact-hall-atlas-datum}.
+\end{theorem}
+
+\begin{proof}
+The missing points are independent.
+
+First, the OP theorem constructs a scalar reduced curve-counting series.
+It does not choose an extension-closed heart whose semistable objects are
+the objects counted by that scalar theory.  The Hilbert-scheme spaces
+are proper coefficient spaces, but Proposition~\ref{prop:scalar-critical-geometry-only}
+shows that they are not themselves the Hall stack.
+
+Second, finite lower truncations cannot be read from
+\(\Gammaeff\) alone.  Lemma~\ref{lem:no-raw-finite-lower-sets} proves
+that raw lower sets containing an interior charge are infinite.  Hence
+the finite-first construction requires a stability condition with HN
+finiteness and support control.
+
+Third, the reduced \(E\)-quotient used in the scalar invariant does not
+automatically preserve Hall convolution.  Proposition~\ref{prop:reduced-quotient-not-hall}
+identifies the missing relative-position or equivariant descent map.
+
+Fourth, the strong orientation required for vanishing cycles is not the
+same statement as the automorphic character comparison
+\(\epsilon_o=\nu_{\Delta_5}\).  The latter is a boundary comparison with
+the Borcherds denominator character.
+
+Fifth, the Vol.~III compact-CY3 Hall construction supplies a conditional
+template over a realized stability chamber, strong orientation, and
+admissible motivic coefficients.  It does not, in the local sources
+read here, prove that the \(K3\times E\) OP chamber supplies those
+inputs or that the resulting protected primitives have signed
+dimensions \(f(nm,l)\).
+
+Therefore the constructed object remains conditional.  The scalar square
+and the denominator algebra determine the expected boundary character;
+they do not construct the compact oriented critical Hall atlas.
+\end{proof}
+
+\subsection{The missing maps}
+
+The construction closes only after the following maps are written and
+checked.
+\[
+\begin{gathered}
+  \mathrm{HN}_{\sigma,S}:
+  \mathfrak M_{\sigma,S}
+  \longrightarrow
+  \mathfrak M_{\sigma,S_1}\widetilde{\times}\cdots
+  \widetilde{\times}\mathfrak M_{\sigma,S_k},\\
+  \mathrm{TS}_{o,\gamma,\eta}:
+  \varphi_{\gamma}\boxtimes\varphi_{\eta}\otimes
+  \mathscr L_{o,\gamma}\boxtimes\mathscr L_{o,\eta}
+  \longrightarrow
+  \varphi_{\gamma+\eta}\otimes\mathscr L_{o,\gamma+\eta},\\
+  \mu^{E}_{\gamma,\eta}:
+  H^{\BM}_{E}(\mathfrak M_\gamma,\varphi_\gamma\otimes\mathscr L_{o,\gamma})
+  \otimes_{H^\bullet(BE)}
+  H^{\BM}_{E}(\mathfrak M_\eta,\varphi_\eta\otimes\mathscr L_{o,\eta})
+  \longrightarrow
+  H^{\BM}_{E}(\mathfrak M_{\gamma+\eta},
+  \varphi_{\gamma+\eta}\otimes\mathscr L_{o,\gamma+\eta}),\\
+  \mathrm{Red}_E:
+  H^{\BM}_{E}(\mathfrak M_\gamma,\varphi_\gamma\otimes\mathscr L_{o,\gamma})
+  \longrightarrow
+  H^{\BM}(\mathfrak M_\gamma/E,
+  \varphi_\gamma^{\mathrm{red}}\otimes\mathscr L_{o,\gamma}^{\mathrm{red}}),\\
+  \chi^{\mathrm{prot}}:
+  K_0\Prim
+  \widehat{\Hall}^{\mathrm{or}}_{X,\sigma,S,o}
+  \longrightarrow
+  \widehat{\mathbb T}_{\Gammaeff},
+  \qquad
+  \sdim\Prim_\gamma=f(nm,l),\\
+  \epsilon_o:\{\hbox{strong orientations}\}\longrightarrow
+  \{\hbox{Borcherds characters}\},
+  \qquad
+  \epsilon_o(o)=\nu_{\Delta_5}.
+\end{gathered}
+\]
+The first two maps are local-to-global atlas maps.  The third and
+fourth are the equivariant/reduced Hall maps.  The fifth is the
+protected primitive integration.  The last is the automorphic boundary
+orientation comparison.
+
+\subsection{Dirac-standard rewrite block}
+
+The manuscript presentation is:
+
+\begin{quote}
+Fix \(X=S\times E\).  The OP theorem computes a reduced scalar series on
+the \(E\)-quotient of the curve-counting moduli.  A Hall algebra is not
+formed on that quotient.  It is formed before reduction, on a
+charge-graded oriented critical stack of objects closed under
+extensions.
+
+Thus the missing object is precise.  Choose a stability condition
+\(\sigma\) on an extension-closed heart in \(\Perf(X)\), with HN
+finiteness and support property.  Choose an \(E\)-equivariant strong
+orientation of the induced \((-1)\)-shifted critical stack.  Construct
+the extension correspondences and their Thom--Sebastiani orientation
+transport.  Only then take the finite HN completion and the reduced
+integration.
+
+If the protected primitive integration gives
+\[
+  \sdim\Prim_\gamma=f(nm,l),
+  \qquad \gamma=(n,l,m)\in\Gammaeff,
+\]
+and if the orientation character is \(\nu_{\Delta_5}\), the protected
+determinant is \(64^{-1}\Delta_5(2Z)\).  The bracket is still a further
+claim: it requires the Hall commutator to satisfy the
+Gritsenko--Nikulin Borcherds relations.
+\end{quote}
+
+This is the whole physics at this point.  The scalar theory is the
+measured shadow.  The Hall atlas is the mechanism.  The denominator
+algebra is obtained from the mechanism only after the primitive and
+bracket comparisons are proved.
