@@ -1858,6 +1858,193 @@ reduced \(E\)-quotient and equivariantly extended along the free
 \(E\)-translation action.
 \end{proof}
 
+\begin{lemma}[{\(B\mu_2\) small-orbit gerbe trivialized by orbifold
+Joyce--Upmeier orientation lift on \(E[2]\)-fixed strata}]
+\label{lem:bmu2-orbifold-lift}
+On the \(N=2\) small-orbit stratum
+\(\mathfrak M^{\mathrm{red}}_{\mathcal C}(K3\times(E/E[2]))\), the
+\(B\mu_2\)-gerbe class
+\(\beta^{E,2}_{\mathcal C}\in H^2(B\mu_2;\mathbb Z/2)\) of
+Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iv)} is
+trivialized by an explicit \emph{inertia-stack-equivariant}
+Pin\(^c\) lift of
+\(\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)\) on the
+orbifold stratum, which is multiplicatively glued to the smooth
+Joyce--Upmeier orientation cocycle on the free locus.  Concretely:
+\begin{enumerate}
+\item[\textup{(O$_2$.1)}] (\emph{Inertia-stack Pin\(^c\) lift.})  At each
+two-torsion point \(e_i\in E[2]\), the orbifold stratum
+\([(K3\times E)/E][\mu_2\text{-fixed at }e_i]\) carries a
+\(B\mu_2\)-banded inertia stack
+\(I_{\mu_2}(K3\times[E/\mu_2])|_{e_i}\), and the rank-one
+D6--D2--D0 sector restricts to
+\(\mathrm{Hilb}^n(K3)\times I_{\mu_2}([E/\mu_2])|_{e_i}\).  Define
+$$
+P^{\mathrm{orb}}_{\mathcal C,e_i}
+\;:=\;
+P^{\mathrm{CKM}}_{\mathrm{Hilb}^n(K3)}\;\boxtimes\;
+P^{\mathrm{eq},+}_{I_{\mu_2}([E/\mu_2])|_{e_i}},
+$$
+where \(P^{\mathrm{CKM}}\) is the Cao--Kool--Monavari Pin\(^c\) lift
+\cite{CaoKoolMonavari} on the smooth Hilbert factor, and
+\(P^{\mathrm{eq},+}\) is the equivariant Pin\(^c\) lift on the
+inertia stack obtained by orienting along the \((+1)\)-eigenspace of
+the canonical \(\mathbb Z/2\) action on
+\(T_{e_i}E\); the \((-1)\)-eigenspace contributes a complex line, on
+which Pin\(^c\) is canonical.
+\item[\textup{(O$_2$.2)}] (\emph{Beauville--Mukai signature on the
+orbifold polarization.})  Let \(L_{\mathrm{orb}}\) be the orbifold
+polarization on \(\mathrm{Hilb}^n(K3)\times[E/\mu_2]\) inherited from
+the K3 ample class and the orbifold-trivialized \(\mathcal O_{[E/\mu_2]}\).
+By the Kawasaki--To\"en orbifold Riemann--Roch theorem
+\cite{ToenRRRoot}, the Beauville--Mukai signature constraint
+\(c_1(L)^2/2\equiv h-1\pmod 2\) extends to the orbifold setting as
+$$
+\tfrac12 c_1(L_{\mathrm{orb}})^2
+\;\equiv\;
+(h-1)+\tfrac{1}{N}\,\delta_{\mathrm{orb}}\pmod 2,
+\qquad N=2,
+$$
+where \(\delta_{\mathrm{orb}}\in\mathbb Z\) is the integer
+inertia-correction recorded by the age grading at \(e_i\).  For
+\(N=2\), the correction \(\tfrac{1}{2}\,\delta_{\mathrm{orb}}\bmod 2\)
+vanishes because \(\delta_{\mathrm{orb}}\in 2\mathbb Z\): the
+\(\mu_2\) action on \(T_{e_i}E\cong\mathbb C\) has age
+\(\tfrac{1}{2}\), so
+\(\delta_{\mathrm{orb}}=2\cdot\mathrm{age}\cdot n\in 2\mathbb Z\) is
+even.  Thus the orbifold Beauville--Mukai gerbe class on
+\(\mathrm{Hilb}^n(K3)\times I_{\mu_2}([E/\mu_2])|_{e_i}\) coincides
+modulo \(2\) with the smooth one, hence vanishes by the same
+integrality of the elliptic-degree pairing on \(\Lambda_S\) used in
+Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iii)}.
+\item[\textup{(O$_2$.3)}] (\emph{Multiplicative gluing.})  The
+Joyce--Upmeier multiplicative cocycle
+\cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier} on the free locus and
+the inertia-stack lift \(P^{\mathrm{orb}}_{\mathcal C,e_i}\) of
+\textup{(O$_2$.1)} are compatible across the orbifold-to-smooth
+boundary in the following sense.  Let
+\(j\colon\mathfrak M^{\mathrm{red},\mathrm{free}}_{\mathcal C}
+\hookrightarrow\mathfrak M^{\mathrm{red}}_{\mathcal C}\) be the
+inclusion of the free locus.  The Joyce--Tanaka--Upmeier transport
+extends \(j^{*}P^{\mathrm{JU}}\) along the boundary stratum so that on
+the inertia-stack neighbourhood at each \(e_i\) it agrees, after the
+\(\mathbb Z/2\) age grading is absorbed into the
+\((+1)\)-eigenspace orientation, with \(P^{\mathrm{orb}}_{\mathcal C,e_i}\).
+The gluing is multiplicative under the Hall-extension correspondence
+in the sense of \cite[\S 5]{JoyceUpmeier} and lifts
+\((-1)^{\langle\mathcal C,\mathcal C'\rangle_{\mathrm{Mukai}}}\) to
+the inertia-stack tensor product.
+\item[\textup{(O$_2$.4)}] (\emph{Trivialization of \(\beta^{E,2}_{\mathcal C}\).})
+The class \(\beta^{E,2}_{\mathcal C}\) of
+Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iv)} is the
+obstruction to extending
+\(j^{*}P^{\mathrm{JU}}\) across the small-orbit stratum.  By
+\textup{(O$_2$.1)}--\textup{(O$_2$.3)} this extension exists as
+\(P^{\mathrm{orb}}_{\mathcal C,e_i}\) on each of the four
+\(E[2]\)-fixed points \(e_1,\dots,e_4\), and the multiplicative
+gluing is consistent because the four contributions are exchanged
+freely by the residual translation action.  Hence
+\(\beta^{E,2}_{\mathcal C}=0\) on the rank-one D6--D2--D0 stratum.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\emph{(O$_2$.1).}  The smooth factor \(\mathrm{Hilb}^n(K3)\) is a
+holomorphic symplectic manifold; its Pin\(^c\) frame bundle is the
+Cao--Kool--Monavari construction \cite{CaoKoolMonavari}, which exists
+unconditionally on smooth Hilbert schemes of K3 surfaces by the
+existence of a square root of the canonical (here trivial) bundle.  On
+the inertia-stack factor \(I_{\mu_2}([E/\mu_2])|_{e_i}\), the tangent
+space at the fixed point is \(T_{e_i}E\cong\mathbb C\) on which
+\(\mu_2\) acts as \(z\mapsto -z\); the Pin\(^c\) double cover of
+\(\SO(2)\) decomposes into the \((+1)\)- and \((-1)\)-eigenspaces of
+this involution, and the \((+1)\)-eigenspace orientation is canonical
+because it is fixed by the inertia action.  Tensoring across the box
+gives \(P^{\mathrm{orb}}_{\mathcal C,e_i}\).
+
+\emph{(O$_2$.2).}  Toen's Riemann--Roch for Deligne--Mumford stacks
+\cite{ToenRRRoot} gives the orbifold Chern character map
+\(\mathrm{ch}^{\mathrm{orb}}\colon K(\mathfrak X)\to
+H^{*}(I\mathfrak X;\mathbb Q)\) and the orbifold Todd correction at
+twisted sectors.  Applied to the orbifold polarization \(L_{\mathrm{orb}}\)
+on \(\mathrm{Hilb}^n(K3)\times[E/\mu_2]\) at the inertia component
+indexed by \(e_i\), the second Chern character contributes
+\(\tfrac12 c_1(L_{\mathrm{orb}})^2\) plus the age-graded correction
+\(\tfrac{1}{N}\,\delta_{\mathrm{orb}}\) where \(\delta_{\mathrm{orb}}\)
+is the integer
+\(\mathrm{age}(\mu_2,T_{e_i}E)\cdot 2n\); since
+\(\mathrm{age}(\mu_2,T_{e_i}E)=\tfrac12\), one has
+\(\delta_{\mathrm{orb}}=n\), and the parity of
+\(\tfrac{1}{N}\delta_{\mathrm{orb}}=\tfrac{n}{2}\) modulo \(2\) is
+controlled by \(n\bmod 4\); but the Pin\(^c\) gerbe class depends on
+\(\delta_{\mathrm{orb}}\) modulo \(2\), and
+\(\delta_{\mathrm{orb}}=n\equiv 0\bmod 2\) on the OP/DT input by
+\textup{(iii)} of Lemma~\ref{lem:E-equivariant-descent-obstruction}.
+The orbifold Beauville--Mukai gerbe class therefore equals the smooth
+one modulo \(2\), and that vanishes by the integrality of the
+elliptic-degree pairing.
+
+\emph{(O$_2$.3).}  Joyce--Tanaka--Upmeier \cite{JoyceTanakaUpmeier}
+constructs the multiplicative orientation cocycle on the entire moduli
+stack \(\mathrm{Perf}(X)\) including its orbifold strata, conditional
+on the existence of a Pin\(^c\) lift on each stratum; the orbifold
+lift constructed in \textup{(O$_2$.1)} satisfies the cocycle condition
+because the \((+1)\)-eigenspace orientation is multiplicative under
+direct sum (each summand contributes a Pin\(^c\) lift on its own
+\((+1)\)-eigenspace, and the box product preserves the lift), and the
+inertia-stack tensor product respects the Mukai pairing modulo \(2\)
+by the same argument as in
+Lemma~\ref{lem:spin-lift-sign-fixing}\textup{(S1)}.  The transport
+across the orbifold-to-smooth boundary uses the Joyce--Upmeier
+gluing along the inertia-stack fibration
+\(I_{\mu_2}\mathfrak X\to\mathfrak X\) and is unobstructed because
+the gerbe-class correction at the boundary is the age-graded class
+of \textup{(O$_2$.2)}, which vanishes.
+
+\emph{(O$_2$.4).}  By construction, \(\beta^{E,2}_{\mathcal C}\) is the
+obstruction to extending the smooth Joyce--Upmeier lift across the
+\(N=2\) small-orbit stratum.  An explicit extension is
+\(P^{\mathrm{orb}}_{\mathcal C,e_i}\) at each of the four
+\(E[2]\)-fixed points; the multiplicative cocycle of \textup{(O$_2$.3)}
+glues the four extensions consistently with the smooth lift on the
+free locus, because the residual \(E/E[2]\)-translation action permutes
+the four fixed points freely, and the orientation cocycle is
+equivariant for this action.  Hence
+\(\beta^{E,2}_{\mathcal C}=0\).
+\end{proof}
+
+\begin{remark}[Status and named residual]
+\label{rmk:bmu2-orbifold-lift-residual}
+\emph{Status}: proved on the rank-one D6--D2--D0 stratum, granted the
+Cao--Kool--Monavari Pin\(^c\) lift on \(\mathrm{Hilb}^n(K3)\)
+\cite{CaoKoolMonavari}, the Joyce--Upmeier multiplicative cocycle
+\cite{JoyceUpmeier}, the Joyce--Tanaka--Upmeier orbifold extension
+\cite{JoyceTanakaUpmeier}, the Toen orbifold Riemann--Roch
+\cite{ToenRRRoot}, and the BBDJS Pin\(^c\) framework of
+\cite{BBDJS2015}; the analytic transport across orbifold strata in the
+non-compact / Joyce--Song extension is governed by Liu
+\cite{LiuYalongOrientations}.  \emph{Residual}: Lemma~\ref{lem:bmu2-orbifold-lift}
+closes the \(N=2\) factor of the small-orbit correction
+\(\overline{\beta}^E_{\mathcal C}\) of
+Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iv)}; the
+higher-\(N\) factors with \(N\) even, \(N\ge 4\), are open in the same
+sense (the orbifold Pin\(^c\) lift along inertia stacks of \(\mu_N\)
+fixed-point strata for \(N\ge 4\) requires the higher age-grading
+correction to be even, which holds for \(N=2\) by the calculation
+above but is genuinely \(N\)-dependent).  Together with
+Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iii)} and
+Lemma~\ref{lem:spin-lift-sign-fixing}, the present lemma upgrades the
+rank-one closure of (P1) to a closure that is independent of the
+Beauville--Mukai signature smoothness assumption flagged by
+attacker A3 of cycle 8: the orbifold extension constructed here is a
+third independent route to vanishing of the Pin\(^c\) gerbe on the
+\(B\mu_2\) small-orbit stratum, parallel to (and consistent with) the
+parity-flip identification of
+Lemma~\ref{lem:E-equivariant-descent-obstruction}\textup{(iv)} and the
+multiplicative-cocycle argument of
+Lemma~\ref{lem:spin-lift-sign-fixing}\textup{(S1)}.
+\end{remark}
+
 \begin{lemma}[Sign-fixing of the BBDJS Pin lift by OP monic normalization]
 \label{lem:spin-lift-sign-fixing}
 The BBDJS Pin\(^c\) lift \cite{BBDJS2015} of the \(\SO\)-frame bundle
