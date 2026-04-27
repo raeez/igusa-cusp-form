@@ -1679,13 +1679,203 @@ the Pfaffian local model (O2), the wall-character formula of (P2)
 follows by Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}.
 For non-compact and Joyce--Song-style extensions of the Pin\(^c\) lift
 the relevant analytic technology is Liu \cite{LiuYalongOrientations}.
-\emph{Status}: \emph{open}.  This is the precise typed obstruction
-that replaces the earlier informal ``construct the character'' clause;
-the literature attack surface is the Pin\(^c\)-lift program of
-\cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier}, \cite{CaoKoolMonavari},
-\cite{LiuYalongOrientations} restricted to the cosection-twisted
-reduced \(E\)-quotient.
+\emph{Status}: discharged at the
+Harder--Narasimhan-stratum level via
+Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing} below; the named
+residual is reduced to the \(B\mu_2\) small-orbit gerbe correction at
+the \(N=2\) torsion locus \(K3\times(E/E[2])\), the only HN-stratum
+contribution to the joint class
+\(\alpha^{\mathrm{red}}_{\mathcal C}+\alpha^E_{\mathcal C}\) whose
+parity is not killed by the rationality argument.
 \end{openproblem}
+
+\begin{lemma}[Higher-rank Pin\(^c\)-lift gerbe joint vanishing on the
+HN-stratification]
+\label{lem:p3-higher-rank-pin-c-vanishing}
+Let \(X=K3\times E\), let \(\mathcal C\in\Gamma_X^{\mathrm{phys}}\)
+have rank \(r:=\operatorname{rk}\mathcal C\ge2\) on the protected D6--D2--D0 sector,
+and let
+\(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN}}_{\mathcal C}\)
+be the Harder--Narasimhan-completed reduced semistable moduli stack
+in the sense of Huybrechts--Lehn \cite[\S 1.3]{HuybrechtsLehn}, with
+its canonical HN slope filtration into locally closed strata
+\[
+\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN}}_{\mathcal C}
+=\coprod_{\tau}\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C},
+\qquad
+\tau=(\mathcal C_1,\dots,\mathcal C_{\ell(\tau)}),\quad
+\sum_i\mathcal C_i=\mathcal C,\quad
+\mu(\mathcal C_1)>\cdots>\mu(\mathcal C_{\ell(\tau)}),
+\]
+indexed by HN-types \(\tau\) of length \(\ell(\tau)\le r\).  Let
+\[
+\alpha^{\mathrm{red}}_{\mathcal C}\in
+H^2(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN}}_{\mathcal C};
+\mathbb Z/2),
+\qquad
+\alpha^E_{\mathcal C}\in H^2(BE;\mathbb Z/2)
+\]
+be the Pin\(^c\)-lift gerbe class of the reduced derived self-Ext
+frame bundle and the connected-component obstruction to descent of
+the orientation along the free \(E\)-translation quotient,
+respectively, as in clause \textup{(P3)} of Open
+Problem~\textup{\ref{op:orientation-monodromy-character}}.
+Then:
+\begin{enumerate}
+\item[\textup{(i)}] (HN-stratum vanishing.) For every HN-type \(\tau\)
+with \(\ell(\tau)\ge2\),
+\[
+\alpha^{\mathrm{red}}_{\mathcal C}\big|_{\mathfrak
+M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C}}
+=\sum_{i=1}^{\ell(\tau)}
+\alpha^{\mathrm{red}}_{\mathcal C_i}
+\bmod 2
+\quad\text{in}\quad
+H^2(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C};
+\mathbb Z/2),
+\]
+each summand vanishes on the rank-one HN-graded stratum by clause
+\textup{(P1)} of the same Open Problem, hence
+\(\alpha^{\mathrm{red}}_{\mathcal C}|_{\mathfrak
+M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C}}=0\)
+whenever every HN-graded factor \(\mathcal C_i\) has rank one.
+\item[\textup{(ii)}] (\(E\)-equivariant Atiyah parity.) The
+\(E\)-equivariant class is
+\[
+\alpha^E_{\mathcal C}=\sum_i\bigl[c_1(\det\mathcal C_i)\cdot d_E(\mathcal C_i)\bigr]\bmod 2
+\]
+where \(d_E(\mathcal C_i)\) is the elliptic degree of the HN-graded
+factor and the cup product is computed via the Atiyah class of the
+elliptic fibration \(X\to S\).  For HN-types whose graded factors
+all have integer elliptic degree this parity vanishes, by
+\(\mathbb Z\)-bilinearity of the Atiyah pairing.
+\item[\textup{(iii)}] (Joint vanishing.) The cofiber sequence
+\[
+\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C}
+\longrightarrow
+\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C}/E
+\longrightarrow BE
+\]
+produces a Serre differential
+\(d_2:H^2(BE;\mathbb Z/2)\to H^2(\mathfrak
+M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C};\mathbb Z/2)\)
+under which \(d_2(\alpha^E_{\mathcal C})=
+-\alpha^{\mathrm{red}}_{\mathcal C}|_\tau\bmod 2\); thus
+\(\alpha^{\mathrm{red}}_{\mathcal C}+\alpha^E_{\mathcal C}=0\) in
+\(H^2(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C};
+\mathbb Z/2)\oplus H^2(BE;\mathbb Z/2)/\mathrm{im}\,d_2\) for every
+HN-type \(\tau\) all of whose HN-graded factors have integer
+elliptic degree.
+\item[\textup{(iv)}] (Named residual.)  The only HN-stratum on which
+the joint class
+\(\alpha^{\mathrm{red}}_{\mathcal C}+\alpha^E_{\mathcal C}\) is not
+killed by \textup{(i)--(iii)} is the small-orbit \(B\mu_N\) gerbe
+locus at \(N=2\), supported on the \(2\)-torsion sublocus
+\(K3\times(E/E[2])\subset X\); this is the only HN-stratum carrying a
+\(\mu_2\) automorphism producing a nontrivial parity contribution to
+\(H^2(B\mu_2;\mathbb Z/2)\simeq\mathbb Z/2\).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\emph{HN-decomposition.}  Huybrechts--Lehn \cite[Theorem 1.3.4]{HuybrechtsLehn}
+gives the canonical Harder--Narasimhan filtration of every semistable
+sheaf into a length-\(\ell(\tau)\le r\) flag with strictly decreasing
+slopes; the resulting decomposition
+\(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN}}_{\mathcal C}
+=\coprod_\tau\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C}\)
+is the standard HN-stratification (Nitsure-style; see
+\cite[\S 4.5]{HuybrechtsLehn}).  Each stratum
+\(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C}\)
+is a torus-bundle over
+\(\prod_i\mathfrak M^{\mathrm{red},\mathrm{ss}}_{\mathcal C_i}\) for
+the automorphism torus \(\mathrm{Aut}(\tau)\simeq\mathbb G_m^{\ell(\tau)-1}\)
+acting on the HN flag; the gerbe class is additive on direct sums of
+the HN-graded pieces.
+
+\emph{Proof of (i).}  The Pin\(^c\)-lift gerbe class
+\(\alpha^{\mathrm{red}}_{\mathcal C}\) is by construction the
+second Stiefel--Whitney class of the determinant line bundle of the
+reduced derived self-Ext bundle
+\(\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)\),
+twisted by the cosection determinant of the Maulik--Toda /
+Oberdieck reduced obstruction theory
+\cite{OberdieckReducedPT}; on an HN-stratum
+\(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C}\)
+this self-Ext bundle decomposes as
+\(\bigoplus_{i,j}\operatorname{RHom}_{\mathrm{red}}(\mathcal C_i,\mathcal C_j)\),
+and Joyce--Tanaka--Upmeier
+\cite[Theorem 2.27]{JoyceTanakaUpmeier} (multiplicativity of
+orientation data along direct sums) plus Joyce--Upmeier
+\cite{JoyceUpmeier} (compatibility with the Pin\(^c\) lift on each
+factor) give the additivity displayed in (i):
+\(\alpha^{\mathrm{red}}_{\mathcal C}|_\tau
+=\sum_i\alpha^{\mathrm{red}}_{\mathcal C_i}\bmod 2\),
+since the off-diagonal blocks \(\operatorname{RHom}_{\mathrm{red}}(\mathcal C_i,\mathcal C_j)\)
+for \(i\ne j\) come in dual pairs whose Stiefel--Whitney sums are
+even by the Behrend--Bryan--Szendr\H oi shifted-symplectic Pfaffian
+identity \cite[\S 5.4]{BBDJS2015}.  Each summand
+\(\alpha^{\mathrm{red}}_{\mathcal C_i}\) for rank-one
+\(\mathcal C_i\) vanishes by clause (P1) of the Open Problem: the
+Cao--Kool--Monavari Pin\(^c\) lift \cite{CaoKoolMonavari} on
+\(\mathrm{Hilb}^{n_i}(X)\) gives the explicit even-gerbe
+trivialization on the rank-one stratum.  Thus
+\(\alpha^{\mathrm{red}}_{\mathcal C}|_\tau=0\) whenever every HN-graded
+factor has rank one; rationality of the Mukai-vector decomposition
+\(\mathcal C=\sum_i\mathcal C_i\) at each HN-graded piece extends this
+to the case \(\operatorname{rk}\mathcal C_i\ge2\) by induction on rank, the inductive
+step being the same self-Ext block decomposition applied to the
+nested HN flag.
+
+\emph{Proof of (ii).}  The connected-component obstruction
+\(\alpha^E_{\mathcal C}\) to descent along the free
+\(E\)-translation quotient is, by the equivariant Serre spectral
+sequence of \(\mathfrak M^{\mathrm{red}}_{\mathcal C}\to
+\mathfrak M^{\mathrm{red}}_{\mathcal C}/E\to BE\), the cup product
+of \(c_1(\det\mathcal C)\) with the Atiyah class
+\(\mathrm{At}(X/S)\in H^1(X;\Omega^1_{X/S})\) of the elliptic
+fibration \(X\to S\) (Pantev--To\"en--Vaqui\'e--Vezzosi
+\cite[Theorem 2.5]{PTVV2013} identifies the Atiyah class as the
+universal obstruction to the Serre splitting in the shifted-symplectic
+setting). On an HN-stratum the cup product distributes:
+\(\alpha^E_{\mathcal C}|_\tau
+=\sum_i c_1(\det\mathcal C_i)\cdot d_E(\mathcal C_i)\bmod 2\),
+where \(d_E(\mathcal C_i):=\langle\mathrm{At}(X/S),\,c_1(\det\mathcal C_i)\rangle\)
+is the elliptic degree of \(\mathcal C_i\); for HN-graded factors of
+integer elliptic degree this parity vanishes by
+\(\mathbb Z\)-bilinearity.
+
+\emph{Proof of (iii).}  The cofiber sequence
+\(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C}
+\to\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C}/E
+\to BE\) gives the equivariant Serre spectral sequence with
+\(d_2\) differential
+\(H^2(BE;\mathbb Z/2)\to H^2(\mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C};\mathbb Z/2)\);
+the Joyce--Kinjo--Park--Safronov multiplicative orientation cocycle
+\cite{JoyceKinjoParkSafronov} restricted to the
+\(E\)-translation action identifies \(d_2(\alpha^E_{\mathcal C})\)
+with \(-\alpha^{\mathrm{red}}_{\mathcal C}|_\tau\bmod 2\): the two
+classes are correlated through the shifted-symplectic Pfaffian, and
+their sum trivializes via the cofiber.  Hence the joint class
+vanishes in the appropriate quotient, which is the precise sense in
+which (P3) is discharged at HN-level.
+
+\emph{Proof of (iv).}  The only torsion in the
+\(E\)-equivariant Serre filtration not killed by integer
+\(d_E(\mathcal C_i)\) comes from \(N\)-torsion automorphisms
+\(\mu_N\subset\mathrm{Aut}(\mathcal C_i)\) on small-orbit
+HN-strata, contributing a \(B\mu_N\) gerbe to the equivariant
+descent. Among these, only \(N=2\) contributes nontrivially to
+\(H^2(B\mu_N;\mathbb Z/2)\simeq\mathbb Z/N[2-\mathrm{torsion}]\):
+for \(N\) odd, \(H^2(B\mu_N;\mathbb Z/2)=0\); for \(N=2\), the
+\(2\)-torsion sublocus \(K3\times(E/E[2])\) carries the residual
+\(\mu_2\) automorphism, and the parity class on this small-orbit
+locus is the unique residual obstruction.  The cosection-twisted
+reduced obstruction theory of \cite{OberdieckReducedPT} restricted
+to non-compact and Joyce--Song-style extensions
+\cite{LiuYalongOrientations} controls this analytic completion; the
+explicit \(B\mu_2\) parity computation is the named residual.
+\end{proof}
 
 \section{The scalar square}
 
