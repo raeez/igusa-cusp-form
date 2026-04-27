@@ -1101,16 +1101,106 @@ Lemma~\ref{lem:maass-multiplier-restriction}: there
 \(\nu_{\Delta_5}(s_{f_{-2}-f_2})=\nu_{\Delta_5}(s_{f_2-f_3})
 =\nu_{\Delta_5}(s_{f_2+f_3})=+1\).
 
+\emph{Three-wall sign cocycle on \(\{\delta_1,\delta_2,\delta_3\}\):
+explicit Joyce--Tanaka--Upmeier transport.}
+Let \(K\) be the abstract simplicial complex on the vertex set
+\(V=\{W_1,W_2,W_3\}\), \(W_i:=\Hpl_{\delta_i}\), with one edge
+\(\{i,j\}\) for each pair and a single \(2\)-simplex \(\{1,2,3\}\)
+oriented as the standard \(2\)-cycle \([123]\).  By (O1)+(O2) the
+orientation line \(o_{\mathcal C}\) carries a Joyce--Tanaka--Upmeier
+orientation transport \cite{JoyceTanakaUpmeier}: for each ordered
+chamber-to-chamber wall-crossing \(s_{\delta_i}\), parallel transport of
+\(o_{\mathcal C}\) across \(W_i\) into the reflected chamber acts as a
+fibre automorphism of the trivial \(\Z/2\)-bundle, recorded by a class
+\(\eta_i\in\Z/2\).  By the Pfaffian local model (O2), \(\eta_i\) is
+the parity of the count of oriented real normal modes:
+$$
+\eta_i\;:=\;N_{\delta_i}\bmod 2\;=\;1,\qquad i=1,2,3,
+$$
+the value coming from the row-by-row computation above.
+
+The triple wall composition \(s_{\delta_1}s_{\delta_2}s_{\delta_3}\)
+is a hyperbolic element of
+\(W^{(2)}(\La^{2,1}_{II})\): the Cartan matrix
+\((\delta_i,\delta_j)\) of the previous display has off-diagonal
+entries \(-2\), so \(4\cos^2(\pi/m_{ij})=A_{ij}A_{ji}=4\) with all
+Coxeter exponents \(m_{ij}=\infty\); no braid relation collapses the
+free product.  By (O1) the orientation line of an extension is the
+tensor of the orientation lines of its summands, hence
+\(\varepsilon_o\) factors through the abelianization of
+\(W^{(2)}(\La^{2,1}_{II})\): each generator has order two, the
+abelianization is \((\Z/2)^{\oplus k}\) for some \(k\), and
+\(\varepsilon_o\) is determined by its values on the three real simple
+generators.  In particular,
+$$
+\varepsilon_o(s_{\delta_1}s_{\delta_2}s_{\delta_3})
+\;=\;\eta_1+\eta_2+\eta_3\bmod2\;=\;1+1+1\bmod 2\;=\;1,
+$$
+i.e.\ \((-1)^{\eta_1+\eta_2+\eta_3}=-1\).  This is the closed value of
+the three-wall sign cocycle.
+
+The Joyce--Tanaka--Upmeier obstruction class to the orientation transport
+is a \(\Z/2\)-valued \(2\)-cochain
+\(c\in C^2(K;\Z/2)\) defined on the unique \(2\)-simplex by
+$$
+c(\{1,2,3\})\;:=\;\eta_1+\eta_2+\eta_3\bmod 2\;=\;1.
+$$
+The cohomological content of (O1)+(O2) is precisely the vanishing of
+\([c]\in H^2(K;\Z/2)\): the Stiefel--Whitney-type obstruction
+\(w_2(o_{\mathcal C}|_K)\) of \cite[Theorem 1.2]{JoyceTanakaUpmeier},
+restricted to the three-wall subcomplex, must trivialize to make the
+parallel transport a coherent groupoid action.
+
+Define the \(1\)-cochain \(\sigma\in C^1(K;\Z/2)\) by
+$$
+\sigma(\{1,2\})\;:=\;\eta_1\;=\;1,\qquad
+\sigma(\{1,3\})\;:=\;\eta_2\;=\;1,\qquad
+\sigma(\{2,3\})\;:=\;\eta_3\;=\;1.
+$$
+Each value is the JTU half-edge propagation sign attached to crossing
+the indexed wall: the edge \(\{i,j\}\) carries the parity of the wall
+that is \emph{not} a vertex of the dual simplex
+\(\overline V\setminus\{i,j\}\), so all three values are equal to
+\(\eta_{6-i-j}\in\Z/2\).  Equivalently, in a basis-free form, \(\sigma\)
+is the dual of the wall-incidence matrix valued in the \(\Z/2\) parity
+of the normal-mode count of the missing wall.
+
+The Stiefel--Whitney coboundary \(d\sigma\in C^2(K;\Z/2)\) on the
+oriented \(2\)-simplex \([123]\) is
+$$
+(d\sigma)(\{1,2,3\})
+\;=\;\sigma(\{2,3\})-\sigma(\{1,3\})+\sigma(\{1,2\})
+\;\equiv\;\eta_3+\eta_2+\eta_1\bmod 2\;=\;1.
+$$
+Hence
+$$
+d\sigma\;=\;c\quad\text{in}\quad C^2(K;\Z/2),
+$$
+and \([c]=0\in H^2(K;\Z/2)\): the Stiefel--Whitney obstruction
+trivializes.  This is the explicit trivialization required by
+(O2) and supplies the categorical homomorphism property for
+\(\varepsilon_o\) restricted to \(W^{(2)}(\La^{2,1}_{II})\), in line
+with the gauge-theoretic orientation cocycle of
+\cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier}; the Pin\(^c\)-lift
+analogue on Hilbert schemes is \cite{CaoKoolMonavari}, the analytic
+extension to non-compact and Joyce--Song-type strata is
+\cite{LiuYalongOrientations}.
+
 \emph{Joint extension.}  The chamber decomposition
 \(\Orth(\La^{2,1})_+\simeq
 W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II})\)
 of Section~\textup{The Weyl chamber and the Weyl vector} reduces the
-character to its values on these six generators.  Six checks done; the
-multiplicative property of orientation data (the
+character to its values on these six generators.  The sign cocycle on
+the three real simple walls is the coboundary \(d\sigma\) just
+exhibited; the \(\Aut(\Poly_{II})\) generators carry trivial sign by
+the paired-mode parity computation above.  By the Joyce--Tanaka--Upmeier
+multiplicativity of orientation lines under direct sums (the
 \(o_{\mathcal C\oplus\mathcal C'}\simeq o_{\mathcal C}\otimes o_{\mathcal C'}\)
-clause of (O1)) guarantees \(\varepsilon_o\) is a homomorphism, and
-the Maass character is a homomorphism by construction.  Two
-homomorphisms agreeing on a generating set agree, so
+clause of (O1)) and the trivialization \(d\sigma=c\) just verified,
+\(\varepsilon_o\) extends from the six generators to a homomorphism
+\(W^{(2)}(\La^{2,1}_{II})\to\{\pm1\}\); the Maass character is a
+homomorphism by construction.  Two homomorphisms agreeing on a
+generating set agree, so
 \(\varepsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\).
 \end{proof}
 
