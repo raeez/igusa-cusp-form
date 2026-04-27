@@ -1313,6 +1313,72 @@ Open Problem~\ref{op:orientation-monodromy-character}.  No such line is
 constructed here.
 \end{definition}
 
+\begin{remark}[Bott-element sign normalization for the squaring isomorphism]
+\label{rem:bott-sign-normalization}
+The squaring isomorphism
+\(o_{\mathcal C}^{\otimes 2}\simeq\det\operatorname{RHom}(\mathcal C,\mathcal C)\)
+of Definition~\ref{def:orientation-line} is the Bott-periodicity
+isomorphism for \(\mathbb Z/2\)-graded super \(K\)-theory in the form
+established by Schlichting \cite{Schlichting2010} for
+Grothendieck--Witt groups of schemes (Mayer--Vietoris and the
+Bott element \(\beta\) in degree \(2\)) and used in the orientation
+formalism of Joyce--Tanaka--Upmeier \cite{JoyceTanakaUpmeier} and
+Joyce--Upmeier \cite{JoyceUpmeier} for moduli of coherent sheaves on
+Calabi--Yau \(3\)-folds, with the Calabi--Yau \(4\)-fold extension by
+Cao--Kool--Monavari \cite{CaoKoolMonavari} and Liu
+\cite{LiuYalongOrientations}.  Because the squaring is degree-\(2\),
+its sign on \(\mathbb Z/2\)-graded sectors is not pinned down by the
+isomorphism alone; it is fixed by a convention on the Bott element
+\(\beta\), separately on the even and odd parity sectors.
+\emph{Sign convention adopted in this manuscript.}
+\begin{enumerate}
+\item[(i)] On the \emph{even-parity} sector, the Bott element acts by
+\(\beta_{\mathrm{even}}=+1\).  This is the standard convention of
+Schlichting \cite{Schlichting2010} and is the one used in
+Joyce--Tanaka--Upmeier \cite{JoyceTanakaUpmeier}.
+\item[(ii)] On the \emph{odd-parity} sector, the Bott element acts by
+\(\beta_{\mathrm{odd}}=+1\), the Joyce--Upmeier \cite{JoyceUpmeier}
+Calabi--Yau \(3\)-fold convention.  For the
+Calabi--Yau \(4\)-fold extension of Cao--Kool--Monavari
+\cite{CaoKoolMonavari} and Liu \cite{LiuYalongOrientations} the choice
+\(\beta_{\mathrm{odd}}=+1\) is one of two admissible normalizations and
+is the one adopted here; the alternative \(\beta_{\mathrm{odd}}=-1\)
+would flip the sign of every odd-parity contribution to the squaring,
+and is incompatible with the Frobenius identity (F) of
+Theorem~\ref{thm:ptvv-joyce-pi-descent} as written.
+\item[(iii)] All later uses of the squaring isomorphism --- in
+particular the chain-level identity
+\(B(c,c)=2\Pi_X(c)\) of Lemma~\ref{lem:gram-additivity-defect}
+(Definition~\ref{def:dyonic-mukai-lattice}), the Hochschild
+\(2\)-cocycle representation of \(B\) in
+Theorem~\ref{thm:ptvv-joyce-pi-descent}, Step~1, and the Pfaffian
+square-root construction of Step~1 of the proof of
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} --- are read
+under the convention \(\beta_{\mathrm{even}}=\beta_{\mathrm{odd}}=+1\).
+\end{enumerate}
+\emph{Verification of \(B(c,c)=2\Pi_X(c)\) on both parity sectors.}
+On a homogeneous class \(c\) of even parity, the squaring
+\(o_c^{\otimes 2}\simeq\det\operatorname{RHom}(\mathcal C,\mathcal C)\)
+contributes degree \(2\Pi_X(c)\) directly: the Bott element
+\(\beta_{\mathrm{even}}=+1\) acts trivially, the determinant degree is
+the Mukai pairing \(\langle c,c\rangle=2\Pi_X(c)\) of
+Definition~\ref{def:dyonic-mukai-lattice}, and the diagonal value
+\(B(c,c)=2\Pi_X(c)\) follows by Hochschild evaluation.  On a
+homogeneous class \(c\) of odd parity, the same identity holds because
+\(\beta_{\mathrm{odd}}=+1\) under the chosen convention; the
+sign-flip alternative \(\beta_{\mathrm{odd}}=-1\) would give
+\(B(c,c)=-2\Pi_X(c)\) on the odd sector and break the symmetric
+quadratic-obstruction conclusion of clause (vi) of
+Lemma~\ref{lem:b-cocycle-central-extension}.  The convention chosen here is therefore
+load-bearing, not cosmetic.
+The convention propagates to the multiplicative isomorphisms
+\(\mu_{c,c'}\) of (O) in
+Theorem~\ref{thm:ptvv-joyce-pi-descent} via the cocycle pentagon, and
+to the Pfaffian sign of
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} via the
+\(o_{\mathcal C}\)-section choice.
+\end{remark}
+
 \begin{proposition}[Borcherds--Gritsenko--Nikulin identification]
 \label{prop:bgn-identification}
 By the Borcherds--Gritsenko--Nikulin product formula for
