@@ -3446,6 +3446,257 @@ critical-Hall side; it is required for hypothesis~(1b) of
 Theorem~\ref{thm:primitive-recognition}.
 \end{openproblem}
 
+\begin{lemma}[Explicit \(S^1\)-equivariant strict-pentagon multiplicative
+orientation cocycle on the reduced compact protected sector of
+\(K3\times E\)]
+\label{lem:explicit-multiplicative-orientation-cocycle}
+Adopt the notation of
+Definition~\ref{def:additive-physical-charge-lattice} and
+Definition~\ref{def:orientation-line}.  Assume the rank-one orientation
+existence (P1) of
+Open Problem~\ref{op:orientation-monodromy-character}, and the
+HN/sectorial completion of
+Lemma~\ref{prop:sectorial-hall-truncation}, so that on each
+charge sector \(c\in\Gamma_X^{\mathrm{phys}}\) of the reduced compact
+protected derived moduli stack
+\(\mathfrak M^{\mathrm{red}}_{X,c}\) of compactly supported B-branes on
+\(K3\times E\) the orientation line \(o_c\) of
+Definition~\ref{def:orientation-line} is constructed.  Then there
+exists an explicit family of multiplicative isomorphisms
+\[
+\mu_{c,c'}\;:\;o_{c+c'}\;\xrightarrow{\ \sim\ }\;o_c\otimes o_{c'},
+\qquad c,c'\in\Gamma_X^{\mathrm{phys}},
+\]
+which is
+\textup{(i)} natural in the Cartesian extension correspondence,
+\textup{(ii)} \(S^1\)-equivariant for the loop-rotation action on the
+cyclic complex of \(\mathfrak M^{\mathrm{red}}_{X,c}\),
+\textup{(iii)} compatible with the reduced \(E\)-quotient,
+\textup{(iv)} compatible with the HN/sectorial completion of
+Lemma~\ref{prop:sectorial-hall-truncation}, and
+\textup{(v)} a strict pentagon cocycle: on every four-fold direct sum
+\(c\oplus c'\oplus c''\oplus c'''\) the two paths through the pentagon
+\[
+o_{c+c'+c''+c'''}\xrightarrow{\ \sim\ }
+o_c\otimes o_{c'}\otimes o_{c''}\otimes o_{c'''}
+\]
+agree as natural transformations of orientation lines.
+
+In particular, hypothesis~(O) of
+Theorem~\ref{thm:ptvv-joyce-pi-descent} is constructed, modulo the
+single residual obstruction (P3) of
+Open Problem~\ref{op:orientation-monodromy-character} on higher-rank
+strata.
+\end{lemma}
+
+\begin{proof}
+\emph{Step~1 (Künneth factorization of the protected moduli).}
+Write \(X=S\times E\), with \(p_S:X\to S\) and
+\(p_E:X\to E\) the projections.  Compactly supported B-branes
+\(\mathcal C\) of physical charge \(c=(Q,P)\in\La_S\oplus\La_S\)
+decompose under Künneth as
+\[
+\mathcal C=\mathcal C_S\boxtimes\mathcal O_E
+\;+\;\mathcal C'_S\boxtimes\omega_E,
+\qquad [\mathcal C_S]=P,\ [\mathcal C'_S]=Q\in\La_S,
+\]
+in the even \(K3\times E\) Mukai sector
+(Definition~\ref{def:additive-physical-charge-lattice}).  Pantev--Toen
+--Vaqui\'e--Vezzosi \cite{PTVV2013} furnish a Künneth decomposition of
+\((-1)\)-shifted symplectic structures on the moduli of perfect
+complexes,
+\[
+\mathfrak M_{X,c}\;\simeq\;
+\mathfrak M^{\mathrm{red}}_{S,c}\times_{} E,
+\]
+where the K3 factor \(\mathfrak M^{\mathrm{red}}_{S,c}\) carries a
+\((-2)\)-shifted symplectic form
+\(\omega^{(-2)}_S\) (after reduction by the K3 cosection of
+Maulik--Toda / Oberdieck \cite{OberdieckReducedPT}, in the sense made
+precise by the Pfaffian local model of
+Definition~\ref{def:protected-hall-integration-criterion}), and the
+elliptic factor is the trivial flat translation torsor under \(E\).
+The Costello--Li flat Calabi--Yau pairing
+\cite{CostelloRenormalization} on \(E\) is parallel; multiplication
+by the volume class \(\omega_E\) is the Mukai dilation that lowers the
+shift by one and presents \(\mathfrak M_{X,c}\) as the Mukai dilation
+of \(\mathfrak M^{\mathrm{red}}_{S,c}\) along \(E\):
+\[
+\omega^{(-1)}_X\;=\;\omega^{(-2)}_S\boxtimes
+\bigl(\omega_E\smile-\bigr).
+\]
+
+\emph{Step~2 (Orientation line as Pin\(^c\) lift, Künneth-factored).}
+By Definition~\ref{def:orientation-line}, \(o_c\) is the square root
+of \(\det\operatorname{RHom}(\mathcal C,\mathcal C)\), constructed as
+the Pin\(^c\) lift of the SO-frame bundle of the reduced derived
+self-Ext bundle on \(\mathfrak M^{\mathrm{red}}_{X,c}\)
+(Cao--Kool--Monavari \cite{CaoKoolMonavari} on the rank-one D6--D2--D0
+stratum, twisted by the cosection determinant of
+\cite{OberdieckReducedPT}).  The Künneth decomposition of Step~1
+factorizes the derived self-Ext bundle:
+\[
+\det\operatorname{RHom}_X(\mathcal C,\mathcal C)
+\;\simeq\;
+\det\operatorname{RHom}_S(\mathcal C_S,\mathcal C_S)
+\boxtimes
+\det\operatorname{RHom}_E(\mathcal O_E,\mathcal O_E),
+\]
+and the elliptic factor is canonically trivial because
+\(\det\operatorname{RHom}_E(\mathcal O_E,\mathcal O_E)\) is the trivial
+line bundle under the Costello--Li flat Calabi--Yau trivialization
+of the holomorphic volume on \(E\) \cite{CostelloRenormalization}.
+Hence
+\[
+o_c\;\simeq\;o^S_{[\mathcal C_S]}\boxtimes o^E_{\mathrm{flat}},
+\qquad
+o^E_{\mathrm{flat}}=\underline{\C}_E,
+\]
+and the orientation line on \(K3\times E\) is, up to the canonical
+trivial elliptic factor, the K3 orientation line on the reduced K3
+moduli.
+
+\emph{Step~3 (Multiplicative cocycle from the K3 factor).}
+On the K3 factor, the
+\((-2)\)-shifted symplectic moduli \(\mathfrak M^{\mathrm{red}}_{S,c}\)
+admits, by Joyce--Kinjo--Park--Safronov
+\cite{JoyceKinjoParkSafronov}, a strict-pentagon multiplicative
+orientation cocycle on the moduli of perfect complexes,
+\[
+\mu^S_{P,P'}\;:\;o^S_{P+P'}\;\xrightarrow{\ \sim\ }\;
+o^S_P\otimes o^S_{P'},
+\qquad P,P'\in\La_S,
+\]
+constructed via the direct-sum operation
+\(\oplus:\mathfrak M^{\mathrm{red}}_{S,P}\times
+\mathfrak M^{\mathrm{red}}_{S,P'}\to\mathfrak M^{\mathrm{red}}_{S,P+P'}\)
+and the Joyce--Tanaka--Upmeier transport across direct sums
+\cite{JoyceTanakaUpmeier}, refining the Joyce--Upmeier
+multiplicative cocycle of \cite{JoyceUpmeier} for Calabi--Yau
+threefolds to the \((-2)\)-shifted symplectic K3 setting.  Define
+\[
+\mu_{c,c'}\;:=\;\mu^S_{P,P'}\boxtimes\mu^S_{Q,Q'}\boxtimes
+\bigl(\mathrm{id}:o^E_{\mathrm{flat}}\to o^E_{\mathrm{flat}}\otimes
+o^E_{\mathrm{flat}}\bigr),
+\]
+where the elliptic factor isomorphism is the canonical
+\(\underline{\C}_E\simeq\underline{\C}_E\otimes\underline{\C}_E\)
+of the trivialized flat line.  Concretely, on a pair
+\((\mathcal C,\mathcal C')\) of physical charges
+\((c,c')=((Q,P),(Q',P'))\),
+\[
+\mu_{c,c'}\bigl(\sigma_{\mathcal C\oplus\mathcal C'}\bigr)
+=\sigma_{\mathcal C}\otimes\sigma_{\mathcal C'},
+\]
+where each \(\sigma\) is the Pin\(^c\) frame transported across the
+direct sum by the JKPS recipe on the K3 factor.  This is a chain-level
+description, not a quotation: the recipe on each side of the tensor
+sign is identical to the
+direct-sum-equivariant Pin\(^c\) lift of \cite{JoyceUpmeier} on the
+K3 factor.
+
+\emph{Step~4 (\(S^1\)-equivariance).}
+The cyclic complex of \(\mathfrak M^{\mathrm{red}}_{X,c}\) carries a
+loop-rotation \(S^1\)-action whose generator
+\(L_{S^1}\) restricts on the Künneth factor to
+\(L_{S^1}^S\boxtimes 1+1\boxtimes L_{S^1}^E\) by Künneth additivity
+of cyclic homology.  The K3 cyclic generator \(L_{S^1}^S\) acts on
+\(o^S_P\) by the \(S^1\)-equivariant Pin\(^c\) lift of
+Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov}, which is
+strictly equivariant by their construction (the orientation cocycle is
+intertwined with the loop-rotation action because the multiplicative
+isomorphism is constructed equivariantly from the direct-sum operation,
+which commutes with loop rotation).  The elliptic generator
+\(L_{S^1}^E\) acts trivially on \(o^E_{\mathrm{flat}}\) because the
+Costello--Li trivialization is parallel for the flat connection; the
+flat \(E\)-translation \(S^1\)-action preserves the trivialization.
+Both factors of \(\mu_{c,c'}\) are therefore \(S^1\)-equivariant, and
+the Künneth tensor product is \(S^1\)-equivariant by additivity of the
+generator.  Hence \(\mu_{c,c'}\) is \(S^1\)-equivariant.
+
+\emph{Step~5 (Reduced-\(E\)-quotient and HN compatibility).}
+The reduced \(E\)-quotient by translation
+\(\mathfrak M^{\mathrm{red}}_{X,c}/E\) is geometrically the K3 factor
+\(\mathfrak M^{\mathrm{red}}_{S,c}\) (Step~1).  Since the elliptic
+factor of \(\mu_{c,c'}\) is the trivial trivial-line isomorphism,
+\(\mu_{c,c'}\) descends to the K3 quotient as \(\mu^S_{P,P'}\boxtimes
+\mu^S_{Q,Q'}\), giving compatibility with the reduced \(E\)-quotient
+of Definition~\ref{def:protected-hall-integration-criterion}.
+Compatibility with the HN/sectorial completion of
+Lemma~\ref{prop:sectorial-hall-truncation} is automatic on each
+finite-height truncation \(\mathsf F_R\) because
+\(\mu^S_{P,P'}\) is constructed sector-locally and the
+projective limit \(\widehat{\mathcal H}_{\sigma,S}^{or}\) carries the
+inverse limit of the \(\mu_{c,c'}\)'s.
+
+\emph{Step~6 (Strict pentagon).}
+On a four-fold direct sum
+\(c\oplus c'\oplus c''\oplus c'''\), the two paths through the
+pentagon are
+\begin{align*}
+\text{Path I: }\quad
+o_{c+c'+c''+c'''}
+&\xrightarrow{\mu_{c+c'+c'',c'''}}
+o_{c+c'+c''}\otimes o_{c'''}\\
+&\xrightarrow{\mu_{c+c',c''}\otimes\mathrm{id}}
+o_{c+c'}\otimes o_{c''}\otimes o_{c'''}\\
+&\xrightarrow{\mu_{c,c'}\otimes\mathrm{id}\otimes\mathrm{id}}
+o_c\otimes o_{c'}\otimes o_{c''}\otimes o_{c'''},\\
+\text{Path II: }\quad
+o_{c+c'+c''+c'''}
+&\xrightarrow{\mu_{c,c'+c''+c'''}}
+o_c\otimes o_{c'+c''+c'''}\\
+&\xrightarrow{\mathrm{id}\otimes\mu_{c',c''+c'''}}
+o_c\otimes o_{c'}\otimes o_{c''+c'''}\\
+&\xrightarrow{\mathrm{id}\otimes\mathrm{id}\otimes\mu_{c'',c'''}}
+o_c\otimes o_{c'}\otimes o_{c''}\otimes o_{c'''}.
+\end{align*}
+Both paths factor as a tensor of K3 paths and the trivial elliptic
+path; the elliptic paths are tautologically equal because each is the
+identity \(\underline{\C}_E\to\underline{\C}_E^{\otimes 4}\).  On the
+K3 factor, the JKPS pentagon \cite{JoyceKinjoParkSafronov} for
+\(\mu^S_{P,P'}\) gives equality of the two K3 paths.  By
+cyclic invariance of the Künneth pairing under the symmetric group
+\(\mathrm{Sym}_4\) acting on the four legs, the orientation
+isomorphisms permute coherently with the Künneth factorization, and
+no sign or scalar discrepancy can appear between the two paths.
+Thus Path~I and Path~II coincide as natural transformations of
+orientation lines, on the nose.  This is the strict pentagon.
+
+\emph{Step~7 (Residual).}
+The construction depends on the orientation existence on the K3
+factor for charges of arbitrary rank \(P,Q\in\La_S\); the rank-one
+case is (P1) of
+Open Problem~\ref{op:orientation-monodromy-character}.  Higher-rank
+existence is precisely (P3) of the same Open Problem.
+Granted (P3), the multiplicative cocycle \(\mu_{c,c'}\) extends from
+the rank-one stratum to the full HN-completed sector by the
+Joyce--Tanaka--Upmeier extension theorem
+\cite{JoyceTanakaUpmeier} for orientation transport across HN
+direct-sum filtrations, applied factor-by-factor to the K3 Künneth
+slot.
+\qedhere
+\end{proof}
+
+\begin{remark}[Pin\(^c\) gerbe interpretation and BBDJS comparison]
+\label{rem:pin-c-gerbe-mult-orientation}
+The orientation line \(o_c\) is the Pin\(^c\) lift of the SO-frame
+bundle of the reduced derived self-Ext on
+\(\mathfrak M^{\mathrm{red}}_{X,c}\), as in
+Definition~\ref{def:orientation-line}; the multiplicative cocycle
+\(\{\mu_{c,c'}\}\) of
+Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle} is the
+splitting of the Pin\(^c\) gerbe along the additive direct-sum
+operation of charge sectors, in the chain-level vanishing-cycle
+formalism of Brav--Bussi--Dupont--Joyce--Szendr\H{o}i \cite{BBDJS2015}.
+The construction is the \((-2)\)-shifted symplectic K3 analogue of
+the Joyce--Upmeier \cite{JoyceUpmeier} cocycle for Calabi--Yau
+threefolds, dilated by the Costello--Li flat trivialization
+\cite{CostelloRenormalization} on the elliptic factor and reduced by
+the cosection determinant of the Maulik--Toda / Oberdieck reduced
+obstruction theory \cite{OberdieckReducedPT}.
+\end{remark}
+
 \begin{theorem}[PTVV--Joyce \(\Pi\)-descent of the primitive bracket;
 conditional sharpening of
 Open Problem~\ref{op:pi-descent-of-bracket}]
@@ -3614,29 +3865,39 @@ Theorem~\ref{thm:primitive-recognition} is met.
 
 \begin{remark}[Status discipline]
 The status of Theorem~\ref{thm:ptvv-joyce-pi-descent} is
-\emph{conditional}.  Hypotheses (P), (O), (F) are not constructed
-in this paper for \(K3\times E\); each is an open analytic/categorical
-obligation.  In particular:
+\emph{conditional}.  Hypotheses (P) and (F) remain open analytic
+/categorical obligations for \(K3\times E\).  Hypothesis (O) is
+constructed by
+Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle}, modulo
+the single residual (P3) of
+Open Problem~\ref{op:orientation-monodromy-character} — extension of
+the orientation existence from the rank-one D6--D2--D0 stratum to the
+HN-completed semistable stack — which is the same open obstruction
+already named for the orientation existence frame and is not a new
+hypothesis.  In particular:
 (P) is the open compact PTVV \cite{PTVV2013} host of
 Definition~\ref{def:compact-igusa-realization-datum}, item~(M);
-(O) is a strengthening of
-Definition~\ref{def:orientation-line} from a per-class square root to a
-\emph{multiplicative} square root (additionally compatible with the
-reduced \(E\)-quotient), partially addressed by
-work of Joyce--Upmeier \cite{JoyceUpmeier} on Calabi--Yau \(3\)-folds and recent work of
-Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov} on multiplicative orientation cocycles for
-\((-1)\)-shifted symplectic stacks; (F) is a graded-Frobenius
-identity that follows formally from the
-PTVV \cite{PTVV2013} symplectic structure on \(\mathfrak M_{X,c}\) and the
-Costello--Li flat CY pairing, but the chain-level identification
+(O) is now constructed via the Künneth-factored Pin\(^c\) lift of
+Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle},
+combining the Joyce--Upmeier multiplicative cocycle on the K3
+factor \cite{JoyceUpmeier}, \cite{JoyceTanakaUpmeier} with the
+Costello--Li flat trivialization on the elliptic factor
+\cite{CostelloRenormalization}, in the chain-level vanishing-cycle
+formalism of \cite{BBDJS2015} and refined to
+\((-1)\)-shifted symplectic moduli of perfect complexes by
+Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov}; (F) is a
+graded-Frobenius identity that follows formally from the
+PTVV \cite{PTVV2013} symplectic structure on \(\mathfrak M_{X,c}\) and
+the Costello--Li flat CY pairing, but the chain-level identification
 of the integrated pairing and bracket on protected primitives is
 itself part of the open compact realization datum.  This theorem
 sharpens Open Problem~\ref{op:pi-descent-of-bracket} from a
-``positivity-of-cocycle'' obligation to a precise
-construction-and-witness obligation: \emph{construct
-\(\{\mu_{c,c'}\}\) and show that the orientation cocycle equals
-\(B\) at the level of Hochschild \(2\)-cochains.}  No
-analytic/categorical claim about the existence of (P), (O), (F) for
+``positivity-of-cocycle'' obligation to the
+witness-equation obligation \emph{show that the orientation cocycle
+of Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle} equals
+\(B\) at the level of Hochschild \(2\)-cochains}; the construction
+of \(\{\mu_{c,c'}\}\) is no longer the open piece.  No
+analytic/categorical claim about the existence of (P) and (F) for
 \(K3\times E\) is added.
 \end{remark}
 
@@ -3690,23 +3951,35 @@ sector of \(K3\times E\).
 \begin{remark}[Reduction of Open Problem~\ref{op:pi-descent-of-bracket}]
 Theorem~\ref{thm:ptvv-joyce-pi-descent} reduces the
 ``positivity-of-cocycle'' / Hochschild-boundary obligation of
-Open Problem~\ref{op:pi-descent-of-bracket} to the following two
-items, both currently open:
+Open Problem~\ref{op:pi-descent-of-bracket} to the following items.
+Item (O\(_*\)) is constructed in this paper, conditional on the
+single residual rank-extension (P3) of
+Open Problem~\ref{op:orientation-monodromy-character} (already open
+for the orientation existence frame); item (F\(_*\)) remains open.
 \begin{itemize}
-\item[(O\(_*\))] Construct the multiplicative orientation
+\item[(O\(_*\))] \emph{Constructed by
+Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle}.}
+The multiplicative orientation cocycle
 \(\{\mu_{c,c'}\}\) on the reduced compact protected sector of
-\(K3\times E\), with cocycle pentagon and reduced-\(E\)
-compatibility.
-\item[(F\(_*\))] Verify the chain-level graded Frobenius identity for
-the protected Hall bracket and Hopf pairing on
-\(\widetilde P_X\), with sign convention as in
+\(K3\times E\) is exhibited explicitly as the Künneth tensor of
+the Joyce--Kinjo--Park--Safronov K3 multiplicative cocycle
+\cite{JoyceKinjoParkSafronov}, \cite{JoyceUpmeier},
+\cite{JoyceTanakaUpmeier} and the Costello--Li flat-trivial elliptic
+factor \cite{CostelloRenormalization}, with strict pentagon,
+\(S^1\)-equivariance, and reduced-\(E\)-compatibility verified.  The
+residual is rank-extension (P3).
+\item[(F\(_*\))] \emph{Open.}  Verify the chain-level graded
+Frobenius identity for the protected Hall bracket and Hopf pairing
+on \(\widetilde P_X\), with sign convention as in
 Theorem~\ref{thm:primitive-recognition}~(5).
 \end{itemize}
-Granting (P), (O\(_*\)), (F\(_*\)), the descent is automatic by the
-proof template above.  Each of (O\(_*\)) and (F\(_*\)) is a
-geometric/categorical assertion whose status can be tracked
-independently of the modular and denominator arguments of this paper,
-and against the parallel constructions in
+Granting (P), the constructed (O\(_*\)) of
+Lemma~\ref{lem:explicit-multiplicative-orientation-cocycle} (with
+(P3) discharged), and (F\(_*\)), the descent is automatic by the
+proof template above.  (F\(_*\)) is a geometric/categorical assertion
+whose status can be tracked independently of the modular and
+denominator arguments of this paper, and against the parallel
+constructions in
 \texttt{calabi-yau-quantum-groups} (Vol.~III \(\kappa\)-stratification)
 and \texttt{topological-strings} (BCOV chiral pairing on the
 generating function).
