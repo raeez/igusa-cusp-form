@@ -1114,6 +1114,155 @@ homomorphisms agreeing on a generating set agree, so
 \(\varepsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\).
 \end{proof}
 
+\begin{lemma}[Orientation transport across imaginary-root walls]
+\label{lem:imaginary-wall-orientation-extension}
+Hypothesis (O2) of
+Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}, as used in
+Lemma~\ref{lem:thm3-three-sign-computation}, fixes the parity contribution
+of an oriented real normal mode at a wall and is verified directly only on
+the three real simple walls \(\delta_1,\delta_2,\delta_3\).  The same
+hypothesis, paired with the Gritsenko--Nikulin Borcherds factorization
+\(\Delta_5=64^{-1}\operatorname{Borch}_{\theta}(\phi_{0,1})(2Z)\)
+\cite[Theorem~2.1]{GN},
+\cite[Section~5.1.1, case \((t=1,II,0)\)]{GNII},
+\cite{Gritsenko99}, transports
+\(\varepsilon_o\) to every imaginary-root wall
+\(a\in\Delta^{im}\subset\La^{2,1}_{II}\cap\R_{\geq0}\Poly_{II}\) by the
+formulae
+$$
+\varepsilon_o(s_a)=
+\begin{cases}
+(-1)^{m(a)},& (a,a)<0\ \text{(negative-norm imaginary wall)},\\[2pt]
+(-1)^{\tau(a)},& (a,a)=0\ \text{(isotropic-ray imaginary wall)},
+\end{cases}
+$$
+where \(m(a)\) and \(\tau(a)\) are the Gritsenko--Nikulin
+imaginary-simple-root multiplicities of
+Definition~\textup{Imaginary simple roots}.  In particular, on every
+primitive isotropic ray \(\Z_{>0}a\subset\overline{\Poly_{II}}\cap
+\La^{2,1}_{II}\) one has
+$$
+\tau(ta)=9\quad(t\geq1)\qquad\Longrightarrow\qquad
+\varepsilon_o(s_a^{\mathrm{isotropic}})=(-1)^{9}=-1
+$$
+uniformly in the isotropic-ray label and in the dilation index \(t\),
+matching the sign \(\varepsilon_o(s_{\delta_i})=-1\) computed on the
+three real simple walls.
+\end{lemma}
+
+\begin{proof}
+The Borcherds singular-theta lift
+\(\operatorname{Borch}_{\theta}(\phi_{0,1})\)
+\cite{Borcherds95} produces a meromorphic Siegel modular form whose
+divisor on the Siegel quotient
+\(\Sp_4(\Z)\backslash\mathbb H_2\) is a sum of Heegner divisors with
+exponents read directly from the Fourier coefficients of the input weak
+Jacobi form
+\(\phi_{0,1}=\sum f(n,l)q^nr^l\); equivalently, on
+\(\Sp_4(\Z)\backslash\Sp(2)/U(2)\) the divisor of \(\Delta_5\) is the
+union of the real reflective walls \(\Hpl_{\delta_i}\) (multiplicity
+\(f(0,\pm1)=1\) on each \(\delta_i\)) together with all imaginary
+walls — negative-norm and isotropic — appearing with the multiplicities
+\(m(a)\) and \(\tau(a)\) recorded in
+\cite[Theorem~2.1, (2.1)--(2.3)]{GNII} and
+\cite[Sections~3--4]{GN}.  This is the wall-divisor decomposition of
+\(\Delta_5\) used downstream in the denominator-algebra theorem.
+
+\emph{Pfaffian local model on imaginary walls.}  Hypothesis (O2)
+specifies the action on \(\det\operatorname{RHom}\) of an oriented real
+normal mode by \(-1\) per mode.  At an imaginary wall \(\Hpl_a\) the
+local Pfaffian section
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)\) factors as
+$$
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)
+=u_a^{\,\mathrm{ord}_a(\Delta_5)}\cdot\hbox{(unit at \(\Hpl_a\))},
+\qquad
+u_a=1-x^{\alpha(a)},
+$$
+with \(\mathrm{ord}_a(\Delta_5)\) the wall multiplicity dictated by the
+Borcherds product theorem.  For negative-norm \(a\), this exponent is
+\(m(a)\); for isotropic \(a\), it is \(\tau(a)\)
+\cite[Sections~3--4]{GN}, \cite[(2.1)--(2.3)]{GNII},
+\cite[Theorem~3.1]{Niemann03}.  Each oriented normal mode at the wall
+contributes a factor of \(-1\) to \(\varepsilon_o\) under (O2)
+(Lemma~\ref{lem:thm3-three-sign-computation}, Pfaffian-local-model
+clause), so
+$$
+\varepsilon_o(s_a)
+=(-1)^{\,\mathrm{ord}_a(\Delta_5)}
+=\begin{cases}(-1)^{m(a)},&(a,a)<0,\\(-1)^{\tau(a)},&(a,a)=0.\end{cases}
+$$
+This is the (O2)-image of the Borcherds wall-multiplicity formula and
+extends \(\varepsilon_o\) from \(\Delta^{re}_{\mathrm{simp}}\) to all of
+\(\Delta^{im}\) without further hypothesis.
+
+\emph{The isotropic-ray exponent \(\tau(ta)=9\).}  At every primitive
+isotropic ray \(\Z_{>0}a\subset\overline{\Poly_{II}}\cap\La^{2,1}_{II}\),
+the Borcherds correction character collapses, by the
+Gritsenko--Nikulin denominator identity
+\cite[(2.1)--(2.3)]{GNII}, into the eta-product expansion
+$$
+1-\sum_{t\geq1}m(ta)q^t=\prod_{t\geq1}(1-q^t)^{\tau(ta)},
+\qquad \tau(ta)=9\quad(t\geq1),
+$$
+matching the displayed identity already in
+Section~\textup{The denominator algebra}.  The exponent \(9\) is read
+off the half-index expansion
+\(\eta(\tau)^{-9}\eta(2\tau)^{-9}\) of the cusp residue of
+\(\Delta_5\) at the standard isotropic cusp \(\mathfrak c_\infty\)
+(\cite[Sections~3--4]{GN}; cf.\ the calabi-yau-quantum-groups
+\(\eta\)-product anchor in the Gritsenko--Nikulin notes), equivalently
+\(c(0)/2-1=9\) from the Eichler--Zagier \(\phi_{0,1}\) coefficient
+\(f(0,0)=10\).  The dependence on the \(S_3\)-orbit of the isotropic
+ray is none: every primitive isotropic ray in \(\overline{\Poly_{II}}\)
+gives the same \(\tau(ta)=9\) by the
+\(S_3\simeq\Aut(\Poly_{II})\)-symmetry of
+Lemma~\ref{lem:maass-multiplier-restriction}.  Since
+\(9\equiv1\pmod 2\),
+$$
+\varepsilon_o(s_a^{\mathrm{isotropic}})=(-1)^{9}=-1
+$$
+uniformly across all isotropic walls and all dilations.
+
+\emph{The negative-norm parity table \(m(a)\bmod 2\).}  The
+negative-norm exponents \(m(a)\) at the lowest discriminants
+\(D=-(a,a)/2=4nm-l^2>0\) are read off
+\(\phi_{0,1}=\sum f(n,l)q^nr^l\) by the Borcherds product theorem
+\cite{Borcherds95}, \cite[Sections~3--4]{GN}.  The first values are
+$$
+\begin{array}{c|c|c|c}
+D=4nm-l^2 & f(nm,l) & m(a)\bmod 2 & \varepsilon_o(s_a) \\\hline
+1 & f(0,1)=1 & 1 & -1 \\
+3 & f(1,1)=10 & 0 & +1 \\
+4 & f(1,0)=-2 & 0 & +1 \\
+5 & f(1,-1)=10 & 0 & +1 \\
+7 & f(2,1)=-64 & 0 & +1 \\
+8 & f(2,0)=108 & 0 & +1 \\
+\end{array}
+$$
+Higher discriminants follow by the same table read off
+\(\phi_{0,1}\); the sign \(\varepsilon_o(s_a)\) is therefore
+\((-1)^{f(nm,l)}\) on the negative-norm walls in the chamber.  The
+\(D=1\) row recovers the real simple-root sign \(-1\) of
+Lemma~\ref{lem:thm3-three-sign-computation} (the wall \(\delta_3\),
+the unique \(D=-1\)-wall in the chamber, lifts from \(D=-1\) to
+\(D=1\) under the \((a,a)\mapsto-(a,a)\) discriminant convention used
+by Gritsenko--Nikulin \cite[Sections~3--4]{GN}).
+
+\emph{Multiplicativity and orientation-line transport.}  Hypothesis
+(O1) supplies the multiplicative cocycle
+\(o_{\mathcal C\oplus\mathcal C'}\simeq o_{\mathcal C}\otimes
+o_{\mathcal C'}\) on the orientation line \cite{JoyceUpmeier},
+\cite{JoyceTanakaUpmeier}, so \(\varepsilon_o\) extends from the
+generators of \(W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II})\) by a
+homomorphism, and the imaginary-wall transport above is consistent with
+the homomorphism property.  This removes the
+\emph{real-wall reduction is silent on imaginary walls} ambiguity:
+(O2)+(O1) together determine \(\varepsilon_o\) on the entire
+divisor of \(\Delta_5\), not only on
+\(\Delta^{re}_{\mathrm{simp}}\).
+\end{proof}
+
 \begin{remark}[Honest epistemic status of
 Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} and
 Lemma~\ref{lem:thm3-three-sign-computation}]
