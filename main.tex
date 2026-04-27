@@ -1507,10 +1507,8 @@ Section~\textup{The denominator algebra}.  The exponent \(9\) is read
 off the half-index expansion
 \(\eta(\tau)^{-9}\eta(2\tau)^{-9}\) of the cusp residue of
 \(\Delta_5\) at the standard isotropic cusp \(\mathfrak c_\infty\)
-(\cite[Sections~3--4]{GN}; cf.\ the calabi-yau-quantum-groups
-\(\eta\)-product anchor in the Gritsenko--Nikulin notes), equivalently
-\(c(0)/2-1=9\) from the Eichler--Zagier \(\phi_{0,1}\) coefficient
-\(f(0,0)=10\).  The dependence on the \(S_3\)-orbit of the isotropic
+(\cite[Sections~3--4]{GN}; the explicit Gritsenko--Nikulin
+\(\eta\)-product computation of the cusp residue).  The dependence on the \(S_3\)-orbit of the isotropic
 ray is none: every primitive isotropic ray in \(\overline{\Poly_{II}}\)
 gives the same \(\tau(ta)=9\) by the
 \(S_3\simeq\Aut(\Poly_{II})\)-symmetry of
@@ -1525,26 +1523,26 @@ uniformly across all isotropic walls and all dilations.
 negative-norm exponents \(m(a)\) at the lowest discriminants
 \(D=-(a,a)/2=4nm-l^2>0\) are read off
 \(\phi_{0,1}=\sum f(n,l)q^nr^l\) by the Borcherds product theorem
-\cite{Borcherds95}, \cite[Sections~3--4]{GN}.  The first values are
+\cite{Borcherds95}, \cite[Sections~3--4]{GN}.  Since \(4nm\equiv0\pmod 4\)
+and \(l^2\equiv0\) or \(1\pmod 4\), the admissible negative-norm
+discriminants are \(D\equiv0\) or \(3\pmod 4\); the smallest are
+\(D=3,4,7,8,11,12,\dots\).  The first values are
 $$
 \begin{array}{c|c|c|c}
 D=4nm-l^2 & f(nm,l) & m(a)\bmod 2 & \varepsilon_o(s_a) \\\hline
-1 & f(0,1)=1 & 1 & -1 \\
 3 & f(1,1)=10 & 0 & +1 \\
 4 & f(1,0)=-2 & 0 & +1 \\
-5 & f(1,-1)=10 & 0 & +1 \\
 7 & f(2,1)=-64 & 0 & +1 \\
-8 & f(2,0)=108 & 0 & +1 \\
+8 & f(2,0)=-12 & 0 & +1 \\
 \end{array}
 $$
 Higher discriminants follow by the same table read off
 \(\phi_{0,1}\); the sign \(\varepsilon_o(s_a)\) is therefore
 \((-1)^{f(nm,l)}\) on the negative-norm walls in the chamber.  The
-\(D=1\) row recovers the real simple-root sign \(-1\) of
-Lemma~\ref{lem:thm3-three-sign-computation} (the wall \(\delta_3\),
-the unique \(D=-1\)-wall in the chamber, lifts from \(D=-1\) to
-\(D=1\) under the \((a,a)\mapsto-(a,a)\) discriminant convention used
-by Gritsenko--Nikulin \cite[Sections~3--4]{GN}).
+type-II simple walls \(\delta_1,\delta_2,\delta_3\) sit at \(D=-1\)
+(positive norm \((\delta_i,\delta_i)=2\)) and lie outside the
+negative-norm parity table; their sign \(\varepsilon_o(s_{\delta_i})=-1\)
+is supplied by Lemma~\ref{lem:thm3-three-sign-computation}.
 
 \emph{Multiplicativity and orientation-line transport.}  Hypothesis
 (O1) supplies the multiplicative cocycle
@@ -3452,16 +3450,19 @@ each summand vanishes on the rank-one HN-graded stratum by clause
 \(\alpha^{\mathrm{red}}_{\mathcal C}|_{\mathfrak
 M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C}}=0\)
 whenever every HN-graded factor \(\mathcal C_i\) has rank one.
-\item[\textup{(ii)}] (\(E\)-equivariant Atiyah parity.) The
-\(E\)-equivariant class is
+\item[\textup{(ii)}] (\(E\)-equivariant parity.) The
+\(E\)-equivariant gerbe class is the parity of the equivariant
+rotation numbers of the determinant line under the
+\(E\)-translation action on the HN-graded factors,
 \[
-\alpha^E_{\mathcal C}=\sum_i\bigl[c_1(\det\mathcal C_i)\cdot d_E(\mathcal C_i)\bigr]\bmod 2
+\alpha^E_{\mathcal C}\;=\;\Bigl[\sum_i d_E(\mathcal C_i)\cdot
+\mathrm{rk}(\det\mathcal C_i)\Bigr]\bmod 2
+\;\in\;H^2(BE;\mathbb Z/2),
 \]
 where \(d_E(\mathcal C_i)\) is the elliptic degree of the HN-graded
-factor and the cup product is computed via the Atiyah class of the
-elliptic fibration \(X\to S\).  For HN-types whose graded factors
-all have integer elliptic degree this parity vanishes, by
-\(\mathbb Z\)-bilinearity of the Atiyah pairing.
+factor.  For HN-types whose graded factors all have integer elliptic
+degree the rotation numbers are integer scalars, and the parity
+vanishes whenever the integer data on each factor is even.
 \item[\textup{(iii)}] (Joint vanishing.) The cofiber sequence
 \[
 \mathfrak M^{\mathrm{red},\mathrm{ss},\mathrm{HN},\tau}_{\mathcal C}
@@ -3615,7 +3616,12 @@ w_2\!\left(o^{\mathrm{red}}_{\mathcal C}\big|_{B\mu_2}\right)
 \]
 the Stiefel--Whitney obstruction to lifting the \(\mu_2=E[2]\)-action
 on the Pin\(^c\) orientation line over the small-orbit substack
-\(B\mu_2\subset[K3\times(E/E[2])/E[2]]\).  Then
+\(B\mu_2\subset[K3\times(E/E[2])/E[2]]\).  Here \(w_2\) is computed on
+the underlying real rank-two form of the complex orientation line; on
+\(B\mu_2\) this equals \(w_1(\rho_{\mathrm{or}})^{2}\) for the sign
+character \(\rho_{\mathrm{or}}\colon E[2]\to\Aut(o^{\mathrm{red}}_{\mathcal C}|_{B\mu_2})\),
+matching the formulation of
+Lemma~\ref{lem:bmu2-w1-vanishing}.  Then
 \[
 \beta^{E,2}_{\mathcal C}\;=\;0
 \quad\text{in}\quad
@@ -3644,14 +3650,16 @@ constructed in (P1) by the Cao--Kool--Monavari Pin\(^c\) lift
 Maulik--Toda / Oberdieck cosection determinant
 \cite{OberdieckReducedPT}.  Specialised to the small-orbit substack
 \([K3\times(E/E[2])/E[2]]\), the gerbe class \(\beta^{E,2}_{\mathcal C}\)
-measures exactly the obstruction to upgrading the inherited
+measures the obstruction to upgrading the inherited
 \(E[2]\)-action on the underlying SO-frame bundle of the orientation
-line to an action on its Spin (equivalently, Pin\(^c\)) lift.  By the
-short exact sequence \(1\to\mu_2\to\operatorname{Spin}\to
-\operatorname{SO}\to1\) and naturality of \(w_2\),
-\(\beta^{E,2}_{\mathcal C}=0\) iff the inherited
-\(E[2]\)-action lifts; equivalently, iff the action on the
-SO-frame is liftable rather than projective.
+line to an equivariant Spin lift.  By the short exact sequence
+\(1\to\mu_2\to\operatorname{Spin}\to\operatorname{SO}\to1\) and
+naturality of \(w_2\), \(\beta^{E,2}_{\mathcal C}=0\) iff the inherited
+\(E[2]\)-action lifts; equivalently, iff the action on the SO-frame
+is liftable rather than projective.  The Pin\(^{c}\)-bundle datum
+of (P1) decomposes as the SO-frame plus a \(U(1)\)-line; the
+obstruction to extending an \(E[2]\)-action through Pin\(^{c}\to\SO\)
+factors through the same \(w_2\), so the Spin reduction is sufficient.
 
 \emph{Step 3 (Rank one: explicit triviality of the \(E[2]\)-action on
 the determinant).}  On the rank-one D6--D2--D0 stratum, the
@@ -5756,16 +5764,25 @@ the Pin\(^c\) lift of the SO-frame bundle of the reduced derived
 self-Ext bundle on \(\mathfrak M^{\mathrm{red}}_{X,c}\)
 (Cao--Kool--Monavari \cite{CaoKoolMonavari} on the rank-one D6--D2--D0
 stratum, twisted by the cosection determinant of
-\cite{OberdieckReducedPT}).  The Künneth decomposition of Step~1
-factorizes the derived self-Ext bundle:
+\cite{OberdieckReducedPT}).  On the rank-one D6--D2--D0 stratum the
+sheaf \(\mathcal C\) is a single Künneth summand
+\(\mathcal C_S\boxtimes\mathcal O_E\), and the Künneth decomposition
+of Step~1 factorizes the derived self-Ext bundle as
 \[
 \det\operatorname{RHom}_X(\mathcal C,\mathcal C)
 \;\simeq\;
 \det\operatorname{RHom}_S(\mathcal C_S,\mathcal C_S)
 \boxtimes
-\det\operatorname{RHom}_E(\mathcal O_E,\mathcal O_E),
+\det\operatorname{RHom}_E(\mathcal O_E,\mathcal O_E)
 \]
-and the elliptic factor is canonically trivial because
+on this stratum.  (For non-Künneth-pure
+\(\mathcal C=\bigoplus_i\mathcal C_S^{(i)}\boxtimes\mathcal C_E^{(i)}\)
+the right-hand side is the determinant of the full
+\(\bigoplus_{i,j}\operatorname{RHom}_S(\mathcal C_S^{(i)},\mathcal C_S^{(j)})
+\boxtimes\operatorname{RHom}_E(\mathcal C_E^{(i)},\mathcal C_E^{(j)})\)
+including all \(i\ne j\) cross-terms; on the rank-one stratum the
+single summand collapses this to the displayed product.)  The elliptic
+factor is canonically trivial because
 \(\det\operatorname{RHom}_E(\mathcal O_E,\mathcal O_E)\) is the trivial
 line bundle under the Costello--Li flat Calabi--Yau trivialization
 of the holomorphic volume on \(E\) \cite{CostelloRenormalization}.
@@ -5798,13 +5815,13 @@ and the Joyce--Tanaka--Upmeier transport across direct sums
 multiplicative cocycle of \cite{JoyceUpmeier} for Calabi--Yau
 threefolds to the \((-2)\)-shifted symplectic K3 setting.  Define
 \[
-\mu_{c,c'}\;:=\;\mu^S_{P,P'}\boxtimes\mu^S_{Q,Q'}\boxtimes
-\bigl(\mathrm{id}:o^E_{\mathrm{flat}}\to o^E_{\mathrm{flat}}\otimes
-o^E_{\mathrm{flat}}\bigr),
+\mu_{c,c'}\;:=\;\mu^S_{P,P'}\boxtimes\mu^S_{Q,Q'}\boxtimes m^E,
 \]
-where the elliptic factor isomorphism is the canonical
-\(\underline{\C}_E\simeq\underline{\C}_E\otimes\underline{\C}_E\)
-of the trivialized flat line.  Concretely, on a pair
+where \(m^E\colon o^E_{\mathrm{flat}}\xrightarrow{\sim}o^E_{\mathrm{flat}}
+\otimes o^E_{\mathrm{flat}}\) is the canonical multiplication
+isomorphism of the trivialized flat line
+\(o^E_{\mathrm{flat}}=\underline{\C}_E\), induced by the unit
+\(1\in\C\), \(\C\xrightarrow{\sim}\C\otimes\C\).  Concretely, on a pair
 \((\mathcal C,\mathcal C')\) of physical charges
 \((c,c')=((Q,P),(Q',P'))\),
 \[
@@ -6336,23 +6353,25 @@ mixed complex \((C_*(A_X^{\mathrm{prot}}),b,B)\) of Connes; here
 \(u\) of degree \(-2\); the periodic completion is
 \(HP_*(A_X^{\mathrm{prot}})\).  The \((-1)\)-shifted symplectic form
 of (P) is recorded in this language as a cyclic class
-\(\rho\in HC_2(A_X^{\mathrm{prot}})\), the Calabi--Yau volume of
+\(\varpi_X\in HC_2(A_X^{\mathrm{prot}})\), the Calabi--Yau volume of
 PTVV \cite{PTVV2013}; this is the strict chain-level avatar of the
 Costello--Li flat CY pairing in the Frobenius hypothesis (F) of the
-first proof.
+first proof.  (The notation \(\varpi_X\) is reserved for this cyclic
+class to avoid collision with the Weyl vector
+\(\rho\in\La^{2,1}_{II}\otimes\Q\) of the denominator algebra section.)
 
 \smallskip\emph{Step 2\(^\prime\) (Chain-level cocycle \(B_{\mathrm{ch}}\)).}
 On homogeneous classes \(c,c'\in\Gamma_X^{\mathrm{phys}}\), define the
 chain-level cocycle
 \[
-B_{\mathrm{ch}}(c,c')\;:=\;\operatorname{tr}_{HC}\!\bigl(c\cdot c'\cdot\rho\;-\;
-c'\cdot c\cdot\rho\bigr)\;\in\;HC_2(A_X^{\mathrm{prot}}),
+B_{\mathrm{ch}}(c,c')\;:=\;\operatorname{tr}_{HC}\!\bigl(c\cdot c'\cdot\varpi_X\;-\;
+c'\cdot c\cdot\varpi_X\bigr)\;\in\;HC_2(A_X^{\mathrm{prot}}),
 \]
 where \(\operatorname{tr}_{HC}\) is the Connes cyclic trace and the products are the
 Hall convolution on \(\widetilde P_X\) lifted to \(C_*\).  Cyclic
 invariance of \(\operatorname{tr}_{HC}\) is strict on \(C_*\): the symbol
-\(c\cdot c'\cdot\rho\) and its cyclic permutation
-\(\rho\cdot c\cdot c'\) coincide as elements of the cyclic complex
+\(c\cdot c'\cdot\varpi_X\) and its cyclic permutation
+\(\varpi_X\cdot c\cdot c'\) coincide as elements of the cyclic complex
 because Connes' \(B\)-operator is strictly squared-zero \cite[\S2.5]{LodayCyclicHomology}.
 Two consequences are immediate:
 \begin{enumerate}
@@ -6360,7 +6379,7 @@ Two consequences are immediate:
 holds on the nose by interchanging the two terms;
 \item[(\(\beta\))] strict closedness, \((b+uB) B_{\mathrm{ch}}=0\),
 follows from cyclic invariance and the Calabi--Yau identity
-\(b\rho=0=B\rho\) which characterises a class in \(HC_2\).
+\(b\varpi_X=0=B\varpi_X\) which characterises a class in \(HC_2\).
 \end{enumerate}
 The image of \(B_{\mathrm{ch}}\) in
 \(HC^2_{\mathrm{strict}}(A_X^{\mathrm{prot}};\Gamma_{\mathrm{gram}})\)
@@ -6382,7 +6401,7 @@ algebra is computed as the homotopy of the Hochschild cocycle identity
 for \(B_{\mathrm{ch}}\); cyclic invariance (\(\alpha\)) and strict
 closedness (\(\beta\)) of Step~2\(^\prime\) reduce \(K_4\) to a
 quadrilinear expression in the Connes \(B\)-operator applied to
-\(\rho\), which vanishes by \(B^2=0\).  Hence
+\(\varpi_X\), which vanishes by \(B^2=0\).  Hence
 \(\operatorname{Bar}_*(\widehat\Gamma_X)\) collapses to a strictly associative dg
 monoid in the cyclic-homology category, equivalently \(\widehat\Gamma_X\)
 is strictly associative on the nose.  Restricted to primitives, the
@@ -6390,25 +6409,25 @@ class
 \([B_{\mathrm{ch}}]\in HC^2_{\mathrm{strict}}\!\bigl(\widetilde
 P_X^{\mathrm{br}};\Gamma_{\mathrm{gram}}\bigr)\) is then a strict
 coboundary of the Connes contraction
-\(\iota_\rho:HC_*\to HC_{*-2}\) applied to \(\Pi_X\): explicitly,
-\(\iota_\rho\Pi_X\) is the chain-level avatar of the Hochschild
+\(\iota_{\varpi_X}:HC_*\to HC_{*-2}\) applied to \(\Pi_X\): explicitly,
+\(\iota_{\varpi_X}\Pi_X\) is the chain-level avatar of the Hochschild
 \(1\)-cochain \(\Theta\) of the first proof, and
-\((b+uB)(\iota_\rho\Pi_X)=B_{\mathrm{ch}}\) on the nose.
+\((b+uB)(\iota_{\varpi_X}\Pi_X)=B_{\mathrm{ch}}\) on the nose.
 
 \smallskip\emph{Step 4\(^\prime\) (Compatibility with PTVV--Joyce).}
 The two routes give the same group \(\Gamma_X\): the comparison
 \(HC^2_{\mathrm{strict}}\to HH^2\) sends
-\([B_{\mathrm{ch}}]\mapsto[B]\) and \(\iota_\rho\Pi_X\mapsto\Theta\),
+\([B_{\mathrm{ch}}]\mapsto[B]\) and \(\iota_{\varpi_X}\Pi_X\mapsto\Theta\),
 and the Joyce--Kinjo--Park--Safronov multiplicative isomorphism
 \(\mu_{c,c'}\) of (O) is, in this language, the cyclic-homology lift
 to the determinant gerbe of the chain-level identity
-\((b+uB)(\iota_\rho\Pi_X)=B_{\mathrm{ch}}\).  Equivalently, the
+\((b+uB)(\iota_{\varpi_X}\Pi_X)=B_{\mathrm{ch}}\).  Equivalently, the
 Kapustin--Rozansky / Kontsevich--Soibelman correspondence between
 shifted symplectic geometry and cyclic homology
 \cite{KSCoHA}, refined by Davison--Meinhardt
 \cite{DavisonMeinhardtCoHA} and the modern Joyce--Kinjo--Park--Safronov
 formulation \cite{JoyceKinjoParkSafronov}, identifies the cyclic
-pairing \(\rho\) with the PTVV symplectic form and the Connes trace
+pairing \(\varpi_X\) with the PTVV symplectic form and the Connes trace
 with the integrated Frobenius pairing of (F).  Step~4 of the first
 proof and Step~3\(^\prime\) here therefore certify the same vanishing
 \([B]=0\) on primitives, and the descended bracket on
@@ -6426,7 +6445,7 @@ The PTVV--Joyce route exhibits \([B]\) as a Hochschild boundary by
 witnessing the multiplicative orientation cochain \(\Theta\); the
 cyclic-homology route exhibits \([B_{\mathrm{ch}}]\) as a strict
 cyclic boundary by witnessing the Connes contraction
-\(\iota_\rho\Pi_X\).  The first replaces a quadratic identity by a
+\(\iota_{\varpi_X}\Pi_X\).  The first replaces a quadratic identity by a
 multiplicative cocycle on a determinant gerbe; the second replaces it
 by strict cyclic invariance of the Calabi--Yau volume.  Each route
 loads a different structural hypothesis -- (O) for PTVV--Joyce, the
