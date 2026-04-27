@@ -61,7 +61,9 @@ Z_{\mathrm{K3}}=2\phi_{0,1},\qquad
 \]
 Replacing the protected K3 index by its Borcherds half produces only a
 virtual \(K_0\)-determinant package.  It does not produce a microscopic
-Hilbert space.  For virtual super vector spaces
+Hilbert space.  Unitarity is used to localize the right-moving K3
+supertrace before the index is taken; the index itself is a charge-graded
+virtual object that no longer requires Hilbert positivity.  For virtual super vector spaces
 \(\mathbb U_{n,l}\) with \(\sdim\mathbb U_{n,l}=f(n,l)\), set
 \(\mathcal V_{(n,l,m)}=\mathbb U_{nm,l}\).  In the Borcherds cusp
 chamber the determinant is
@@ -93,6 +95,21 @@ It does not supply a compact BPS Hilbert space, compact Hall
 correspondences, an orientation, or a BPS operator product/local
 collision map.
 
+The square root in the title is meant in Dirac's sense.  The scalar
+OP/DT branch \(Z^X_{\mathrm{OP/DT}}=-4096\,\Delta_5^{-2}\) is
+orientation-forgetful: the sign character is squared away.  The
+recognition target is a first-order protected operator/algebra
+\(\mathfrak D_X\) with protected Pfaffian
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X)=\Delta_5\) and scalar trace
+\(\operatorname{Tr}_{\mathrm{prot}}((-1)^F\mathfrak D_X^{-2})
+=-4096\,\Delta_5^{-2}\); the orientation/Pfaffian datum is the
+algebraic input that distinguishes \(\Delta_5\) from \(-\Delta_5\) and
+that the squared scalar cannot recover.  Constructing
+\(\mathfrak D_X\) is the open recognition problem; this paper formulates
+the target and the orientation-character constraint
+\(\varepsilon_o=\nu_{\Delta_5}\) on
+\(W^{(2)}(\Lambda_{II}^{2,1})\).
+
 The scalar Behrend-weighted branch is imported from
 Oberdieck--Pixton, Oberdieck--Pandharipande, and Oberdieck.  In OP's
 normalization \(\chi_{10}^{\mathrm{OP}}=D_5^2\), so
@@ -114,10 +131,11 @@ holomorphic \(E_3\)-factorization algebra on \(K3\times E\), with a
 specified formality point, \(S^3\)-framing, quantum master equation,
 anomaly control, descent, and finite-first HN completion.  It would then
 specialize along the K3 direction to a chiral object on
-\(\operatorname{Ran}(E)\), solve the positive-elliptic-degree
-projection-to-\(E\) support-locality obstruction by mixed local/wrapped
-correspondences, and identify the Gram-descended protected primitive
-bracket with \(\mathfrak g_{\Delta_5}\).  This paper proves the virtual
+\(\operatorname{Ran}(E)\), solve the
+\(\operatorname{Ran}(E)\)-support-locality obstruction in the
+K3-integrated chiral shadow by mixed local/wrapped correspondences, and
+identify the Gram-descended protected primitive bracket with
+\(\mathfrak g_{\Delta_5}\).  This paper proves the virtual
 determinant, records the imported scalar and denominator theorems, and
 formulates that compact Hall/factorization realization as an open
 recognition problem.  The final part records the eight Clery--Gritsenko
@@ -367,17 +385,17 @@ one-dimensional closed subset of the irreducible curve \(E\), and so
 \(p_E(C)=E\).  Such a class is wrapped or global over \(E\), not
 localized at finitely many points of \(E\).
 
-This is the projection-to-\(E\) support-locality obstruction.  Naive
-support-local factorization on \(\operatorname{Ran}(E)\) sees
-projection-finite sectors, but by itself it misses the positive
-\(s\)-direction of the Igusa product, the direction which records
-elliptic degree after the OP/Borcherds variable conversion.  A compact
-realization must therefore choose at least one repair of the following
-kind: projection-finite local factorization together with separate global
-Fock/Hecke modes for the wrapped elliptic-degree sector, or a hybrid
-local/global wrapped factorization theory.  This is a realization
-obstruction.  It is not a defect in the Borcherds determinant or in the
-Gritsenko--Nikulin denominator identity.
+This is the \(\operatorname{Ran}(E)\)-support-locality obstruction in
+the K3-integrated chiral shadow.  Naive support-local factorization on
+\(\operatorname{Ran}(E)\) sees projection-finite sectors, but by itself
+it misses the positive \(s\)-direction of the Igusa product, the
+direction which records elliptic degree after the OP/Borcherds variable
+conversion.  A compact realization must therefore choose at least one
+repair of the following kind: projection-finite local factorization
+together with separate global Fock/Hecke modes for the wrapped
+elliptic-degree sector, or a hybrid local/global wrapped factorization
+theory.  This is a realization obstruction.  It is not a defect in the
+Borcherds determinant or in the Gritsenko--Nikulin denominator identity.
 
 Thus, in a realization, the curve-level rule is not imposed externally.
 It is the one-dimensional chiral shadow of the holomorphic
@@ -706,6 +724,7 @@ v_0(Z)^{-1}\sch\mathcal F(\mathcal V)
 \end{proof}
 
 \begin{proposition}[Virtuality of the square root]
+\label{prop:virtuality-of-the-square-root}
 The displayed construction produces a class
 $$
 [\mathcal V]\in
@@ -733,8 +752,47 @@ operation in the construction supplies composition maps, operator
 products, locality, or a Hilbert completion.
 \end{proof}
 
-\begin{openproblem}[Honest protected lift]
-Construct, if it exists, an honest protected object with a
+\begin{proposition}[Dirac/Pfaffian recognition target]
+\label{prop:dirac-pfaffian-recognition-target}
+The class \([\mathcal V]\in K_0\) and its Fock determinant
+\(\mathcal D_X=v_0\sdet_{\mathcal V}(1-x)=\Delta_5\) are cosmetic in the
+following sense: they record signed Gram-degree multiplicities and a
+formal infinite-product, but they do not produce an operator with a
+spectrum.  The structural upgrade demanded by the protected-locality
+side of the constellation is an
+\emph{open recognition target}, not a theorem of this paper:
+\begin{quote}
+construct on the compact \(K3\times E\) factorization datum of
+Definition~\ref{def:compact-igusa-realization-datum} a first-order
+protected operator/algebra
+\(\mathbb D_X\) acting on a chiral protected module, whose
+charge-graded Pfaffian satisfies
+$$
+\operatorname{Pf}_{\mathrm{prot}}(\mathbb D_X)
+=\mathcal D_X=\Delta_5,
+$$
+and whose scalar trace, in the OP normalization of
+Definition~\ref{def:op-normalization-branch} below, satisfies
+$$
+\operatorname{Tr}_{\mathrm{prot}}
+\bigl((-1)^F(\mathbb D_X)^{-2}\bigr)
+=-4096\,\Delta_5^{-2}.
+$$
+\end{quote}
+This is the Dirac/Pfaffian recognition target.  Its existence is open;
+it is the structural witness that would convert the cosmetic \(K_0\)
+identity of Proposition~\ref{prop:virtuality-of-the-square-root}
+into a first-order protected statement.  The target carries the
+sign-square ambiguity flagged in
+Conjecture~\ref{conj:protected-d-brane-index} and the orientation
+monodromy of Open Problem~\ref{op:orientation-monodromy-character};
+choosing a square root of \((\mathbb D_X)^{-2}\) requires the
+orientation datum of that open problem and is not fixed by the OP
+scalar.
+\end{proposition}
+
+\begin{openproblem}[Honest protected one-particle lift]
+Construct, if it exists, an honest protected one-particle object with a
 \(\Gamma_{\mathrm{eff}}\)-graded super-vector-space decomposition
 $$
 \mathcal H^{\mathrm{1p,ch}}
@@ -835,6 +893,48 @@ $$\mathcal M_{\mathrm{massless}}
 \epsilon_{\det}:=\nu_{\Delta_5}.$$
 $$\Delta_5|_5g=\nu_{\Delta_5}(g)\Delta_5,\qquad
 \Delta_5(s_{\delta_i}Z)=-\Delta_5(Z).$$
+The displayed sign on the type-II diagonal reflections \(s_{\delta_i}\),
+\(i=1,2,3\), is the Maass-character verification carried out in
+Lemma~\ref{lem:maass-multiplier-restriction} below; the
+\(\nu_{\Delta_5}(s_{\delta_i})=-1\) line of that lemma is the input used
+here.
+\end{definition}
+
+\begin{definition}[Orientation line of the protected sector]
+\label{def:orientation-line}
+Let \(\mathcal C\) be a stable object in the reduced compact critical
+Hall/CoHA sector envisaged in
+Definition~\ref{def:protected-hall-integration-criterion}, with derived
+self-Ext line
+$$
+\det\operatorname{RHom}(\mathcal C,\mathcal C)
+\in\operatorname{Pic}(\mathfrak M^{or}_X).
+$$
+By an \emph{orientation line} of the protected sector we mean a line
+bundle
+$$
+o_{\mathcal C}\in\operatorname{Pic}(\mathfrak M^{or}_X)
+$$
+together with the squaring isomorphism
+$$
+o_{\mathcal C}^{\otimes 2}
+\;\simeq\;
+\det\operatorname{RHom}(\mathcal C,\mathcal C),
+$$
+fitting into a strong orientation datum compatible with the extension
+correspondences of
+Definition~\ref{def:protected-hall-integration-criterion}.  This is the
+existence frame for orientations on critical and \((-1)\)-shifted
+symplectic moduli; on Calabi--Yau threefolds the orientation-data
+formalism is Joyce--Song \cite{JoyceSong}, and on Calabi--Yau fourfolds
+it is the Borisov--Joyce / Oh--Thomas construction
+\cite{BorisovJoyce}, \cite{OhThomasI}, \cite{OhThomasII}.  The
+\(K3\times E\) case is neither of these: its reduced compact critical
+sector is not constructed in this paper, and the existence of a
+square-root line \(o_{\mathcal C}\) for that sector is one of the
+unresolved data items of
+Open Problem~\ref{op:orientation-monodromy-character}.  No such line is
+constructed here.
 \end{definition}
 
 \begin{proposition}[Borcherds--Gritsenko--Nikulin identification]
@@ -845,12 +945,15 @@ $$\mathcal D_X(Z)=\Delta_5(Z).$$
 \end{proposition}
 
 \begin{proof}
-The product theorem gives
+The singular-theta product theorem of Borcherds \cite{Borcherds95} gives
 $$64q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
-(1-q^nr^ls^m)^{f(nm,l)}.$$
+(1-q^nr^ls^m)^{f(nm,l)}$$
+as the theta-normalized lift of \(\phi_{0,1}\), with
 $$\mathrm{wt}=f(0,0)/2=5,\qquad c_\Delta(1,1,1)=64.$$
-Gritsenko--Nikulin \cite[Theorem~4.1]{GN}:
+The Lorentzian Kac--Moody identification of this product with the
+Igusa cusp form is the corrected denominator identity of
+Gritsenko--Nikulin \cite{GN}:
 $$64q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}(1-q^nr^ls^m)^{f(nm,l)}
 =\Delta_5(Z).$$
@@ -909,8 +1012,9 @@ cover is needed for the weight factor.
 The Borcherds singular-theta regularisation of \(\phi_{0,1}\) produces
 a meromorphic Siegel modular form of weight \(f(0,0)/2\); at \(N=1\)
 the paramodular group is \(\Sp_4(\Z)\) by Gritsenko--Nikulin
-\cite[Theorem~4.1]{GN}.  The input Jacobi form has \(f(0,0)=10\)
-(Eichler--Zagier, elliptic genus of K3), hence the output weight is
+\cite{GN}.  The input Jacobi form has \(f(0,0)=10\)
+(Eichler--Zagier \cite{EZ:1}, elliptic genus of K3), hence the output
+weight is
 \(5\).  Identifying
 \(\operatorname{Borch}_{\theta}(\phi_{0,1})\) with \(\Delta_5\) via the
 Igusa identification \((\mathcal D_X=\Delta_5)\) fixes
@@ -950,6 +1054,69 @@ $$
 $$\mathrm{Hilb}^n(X,(\beta_h,d))
 =\{Y\subset X\mid [Y]=(\beta_h,d),\ \chi(\mathcal O_Y)=n\}.$$
 $$E\curvearrowright X,\qquad (x,e')\mapsto (x,e+e').$$
+
+\begin{lemma}[Mukai vector of an ideal sheaf on $S\times E$]
+\label{lem:mukai-vector-ideal-sheaf-sxe}
+Let $X=S\times E$ with $S$ K3 and $E$ elliptic.  Let
+$Y\subset X$ be a one-dimensional subscheme with class
+$[Y]=(\beta_h,d)\in H_2(S,\Z)\oplus H_2(E,\Z)$ and
+$\chi(\mathcal O_Y)=n\in\Z$.  Let
+$\mathcal I_Y\in D^b(X)$ be its ideal sheaf.  Decompose the Mukai vector
+$$
+v_X(\mathcal I_Y)=\ch(\mathcal I_Y)\cdot\sqrt{\td(X)}
+$$
+against the K\"unneth basis
+\(\Lambda_S\otimes\{1_E,\omega_E\}\) where
+\(\Lambda_S=H^*(S,\Z)\) and \(\omega_E\in H^2(E,\Z)\) is the
+fundamental class.  Then, with
+\(\beta_h^2=2h-2\) and the K3-side notation
+\((Q^2/2,\,Q\cdot P,\,P^2/2)\),
+$$
+v_X(\mathcal I_Y)
+=(1,\,0,\,1-d)\otimes 1_E
++(0,\,-\beta_h,\,-k)\otimes\omega_E,
+$$
+where
+$$
+k=n-\bigl(\text{Todd correction from }\td(X)\bigr),
+$$
+and the resulting Gram-degree triple is
+$$
+(Q^2/2,\,Q\cdot P,\,P^2/2)=(h-1,\,k,\,d-1).
+$$
+\end{lemma}
+
+\begin{proof}
+On a smooth projective fourfold the Chern character of an ideal sheaf
+is
+$$\ch(\mathcal I_Y)=1-\ch(\mathcal O_Y).$$
+For \(X=S\times E\), the Todd class factorizes as
+$$
+\td(X)=\pi_S^*\td(S)\cup\pi_E^*\td(E)=\pi_S^*(1,0,1)\cup 1,
+$$
+since \(\td(E)=1\) for an elliptic curve and \(\td(S)=(1,0,1)\) on a
+K3 surface.  Decomposing
+$\ch(\mathcal O_Y)$ against the K\"unneth basis
+\(H^*(S)\otimes(\Z\cdot 1_E\oplus\Z\cdot\omega_E)\) and using
+\([Y]=(\beta_h,d)\) gives
+$$
+\ch(\mathcal O_Y)
+=(0,\,0,\,d)\otimes 1_E + (0,\,\beta_h,\,k')\otimes \omega_E
+$$
+with the zero-cycle weight \(k'\) determined by
+\(\chi(\mathcal O_Y)=n\) through Hirzebruch--Riemann--Roch on \(X\).
+Subtracting from \(1\) and pairing with \(\sqrt{\td(X)}\) gives the
+displayed Mukai vector with \(k=n-(\text{Todd correction})\).  Using
+\(\beta_h^2=2h-2\) gives the displayed Gram-degree triple.
+\end{proof}
+
+The Gram-degree triple
+\((Q^2/2,\,Q\cdot P,\,P^2/2)=(h-1,\,k,\,d-1)\)
+identifies the Hilbert/PT charge with a triple in the Mukai lattice of
+\(X\); this is the Gram-index data used by the Borcherds product and
+by the OP normalization of Theorem~\ref{thm:op-square}.  The hypothesis
+\(\beta_h^2=2h-2\) of Theorem~\ref{thm:op-square} is exactly the
+\(Q^2/2=h-1\) line of this lemma.
 
 \begin{proposition}[Reduced scalar quotient integration]
 \label{prop:reduced-scalar-quotient-integration}
@@ -1060,6 +1227,12 @@ constructed for \(K3\times E\).
 \end{openproblem}
 
 \section{The scalar square}
+
+Unitarity is used to localize the right-moving K3 supertrace before the
+index is taken; the index itself is a charge-graded virtual object that
+no longer requires Hilbert positivity, so the OP/DT scalar series below
+records charge-graded coefficients of a virtual character, not
+dimensions of a positive Hilbert space.
 
 $$Z^X_{\mathrm{DT}}(q,t,p)=
 \sum_{h=0}^{\infty}\sum_{d=0}^{\infty}\sum_{n\in\mathbb{Z}}
@@ -1202,15 +1375,27 @@ Proposition~\ref{prop:op-normalization} give
 $$Z^X_{\mathrm{OP}}(P,Q,T)=-4096\,\Delta_5(Z)^{-2}.$$
 \end{proof}
 
-\begin{definition}[Scalar-square branch]
-The OP/DT scalar-square branch is the proved enumerative branch
+\begin{definition}[OP normalization branch]
+\label{def:op-normalization-branch}
+The OP/DT normalization branch is the proved enumerative series of
+Theorem~\ref{thm:op-square}, displayed as a square in the OP convention:
 $$
 Z^X_{\square,\mathrm{OP/DT}}
-:=Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}},
+:=Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}
+=-4096\,\Delta_5^{-2},
 \qquad
 C_{\square,\mathrm{OP/DT}}:=-4096.
 $$
-An external scalar-square branch, if introduced later, is a Laurent
+The numerical constant \(C_{\square,\mathrm{OP/DT}}=-4096\) is a
+\emph{normalization} datum, not an enumerative invariant beyond the
+identification of the series itself: it factors as
+\(-4096=(-1)\times 64^2\), where the \(64^2\) is the squared theta-leading
+coefficient \(([q^{1/2}r^{1/2}s^{1/2}]\Delta_5)^2\) and the leading
+\(-1\) is the OP scalar convention
+\(Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}\).  No additional
+enumerative content beyond the identification of \(Z^X_{\mathrm{OP}}\)
+with \(D_5^{-2}\) is carried by the constant.
+An external scalar-square series, if introduced later, is a Laurent
 expansion of the form
 $$Z^X_{\square,\mathrm{ext}}(Z)
 =\frac{C_{\square,\mathrm{ext}}}{\Delta_5(Z)^2},
@@ -1225,22 +1410,31 @@ $$Z^X_{\mathfrak s}(Z)=-4096\,\Delta_5(Z)^{-2}.$$
 Thus
 $$\mathcal{D}_X(Z)^2=\frac{-4096}{Z^X_{\mathfrak s}(Z)},
 \qquad \mathcal D_X(Z)=\Delta_5(Z).$$
-$$\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}:=\mathcal D_X^{-1}.$$
+A choice of virtual square root is then
+$$\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}:=\pm\mathcal D_X^{-1};$$
+the sign is the orientation datum sought in
+Open Problem~\ref{op:orientation-monodromy-character} and is not
+determined by the OP scalar.  The squared scalar
+\(Z^X_{\mathfrak s}=-4096(\mathcal D_X^{-1})^2\) does not fix this
+square-root sign because squaring kills it.  With either sign choice,
 $$Z^X_{\mathfrak s}
 =-4096\,(\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}})^2,$$
-$$\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}
-=\frac{1}{64}q^{-1/2}r^{-1/2}s^{-1/2}\sch\mathcal F(\mathcal V).$$
+$$|\mathcal Z_{\mathrm{Borch}}^{\mathrm{vir}}|
+=\frac{1}{64}|q|^{-1/2}|r|^{-1/2}|s|^{-1/2}|\sch\mathcal F(\mathcal V)|.$$
 \end{proposition}
 
 \begin{proof}
 Theorem~\ref{thm:op-square} gives the first display for
 \(\mathfrak s=\mathrm{OP}\) and \(\mathfrak s=\mathrm{DT}\).  Hence
 $$-4096/Z^X_{\mathfrak s}=\Delta_5^2.$$
-The chosen square root is the Borcherds determinant already normalized
-as
-$$\mathcal D_X=\Delta_5,$$
-not an arbitrary analytic branch.  Inverting gives
-$$Z^X_{\mathfrak s}=-4096(\mathcal D_X^{-1})^2.$$
+The Borcherds determinant
+\(\mathcal D_X=\Delta_5\) is one analytic root of \(\Delta_5^2\); the
+opposite-sign root is also a root.  Squaring this choice gives
+$$Z^X_{\mathfrak s}=-4096(\mathcal D_X^{-1})^2
+=-4096(\pm\mathcal D_X^{-1})^2,$$
+and in particular the square-root sign is invisible to the scalar.
+Selecting the sign requires an orientation datum, deferred to
+Open Problem~\ref{op:orientation-monodromy-character}.
 \end{proof}
 
 \begin{remark}[Constants are not orientation data]
@@ -1256,6 +1450,16 @@ The monic denominator section is \(D_5=64^{-1}\Delta_5\).  The number
 $$
 \chi_{10}^{\mathrm{OP}}=D_5^2=4096^{-1}\Delta_5^2.
 $$
+Read as a normalization conversion, the OP scalar constant factors as
+$$
+-4096 \;=\; (\text{sign})^2 \times (\text{theta normalization})^2
+\;=\; -1\times 64^2,
+$$
+where the leading \(-1\) is the OP scalar convention and \(64^2\) is the
+squared theta-leading coefficient
+\(([q^{1/2}r^{1/2}s^{1/2}]\Delta_5)^2\); the \((\text{sign})^2=-1\)
+notation makes visible that any square-root sign is absorbed in the OP
+scalar prefactor.
 The minus sign in
 $$
 Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}
@@ -1799,6 +2003,7 @@ $$\Orth(\La^{2,1})_+
 \simeq W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II}).$$
 
 \begin{lemma}[Multiplier restriction]
+\label{lem:maass-multiplier-restriction}
 \begin{itemize}
   \item for $w \in W^{(2)}(\La^{2,1}_I)$ and $a \in \Aut(\Poly_{I})$,
   $$\Delta_5(w \cdot a Z) = \text{det}(a) \Delta_5(Z)$$
@@ -2095,11 +2300,25 @@ $$
 =\mathcal A_{\mathrm{den},0}\oplus
 \bigoplus_{\substack{\gamma\in\Gamma_{\mathrm{ind}}\\
 \alpha(\gamma)\in\mathcal R}}
-\mathcal A_{\mathrm{den},\gamma},
+\mathcal A_{\mathrm{den},\gamma}
+=\mathcal A_{\mathrm{den},0}
+\oplus\mathcal A_{\mathrm{den}}^{\mathrm{bulk}}
+\oplus\mathcal A_{\mathrm{den}}^{\mathrm{cusp}},
 \qquad
 [\mathcal A_{\mathrm{den},\gamma},\mathcal A_{\mathrm{den},\gamma'}]
-\subset \mathcal A_{\mathrm{den},\gamma+\gamma'}.
+\subset \mathcal A_{\mathrm{den},\gamma+\gamma'},
 $$
+where
+$\mathcal A_{\mathrm{den}}^{\mathrm{bulk}}
+=\bigoplus_{\alpha(\gamma)\in\mathcal R,\,m(\gamma)>0}
+\mathcal A_{\mathrm{den},\gamma}$
+records the $m>0$ Borcherds bulk and
+$\mathcal A_{\mathrm{den}}^{\mathrm{cusp}}
+=\bigoplus_{\alpha(\gamma)\in\mathcal R,\,m(\gamma)=0}
+\mathcal A_{\mathrm{den},\gamma}$
+records the $m=0$ Weyl-chamber cusp boundary, in parallel with the
+$\mathcal V=\mathcal V_{\mathrm{bulk}}\oplus\mathcal V_{\mathrm{cusp}}$
+splitting at the determinant level above.
 Its visible positive signed Gram-degree multiplicities are the K3 half-index
 coefficients:
 $$
@@ -2627,7 +2846,7 @@ $$
 $$
 \end{definition}
 
-\begin{proposition}[Conditional finite Hall quotient]
+\begin{lemma}[Conditional finite Hall quotient]
 \label{prop:sectorial-hall-truncation}
 A nonzero additive heart cannot have finite nonzero charge support in
 \(\Gamma_X^{\mathrm{phys}}\).  The pushed-forward active support
@@ -2648,7 +2867,13 @@ $$
 \widehat{\mathcal H}_{\sigma,S}^{or}
 =\varprojlim_R\mathsf F_R\mathcal H_{\sigma,S}^{or}.
 $$
-\end{proposition}
+Items (3)--(4) of the conditional hypothesis (finite type of the
+semistable stacks and oriented critical Hall correspondences) overlap
+with item~(H) of
+Open Problem~\ref{op:compact-igusa-realization}; this lemma is the
+conditional truncation lemma feeding that open problem, not an
+independent existence statement.
+\end{lemma}
 
 \begin{proof}
 If a heart contains an object of nonzero charge \(c\), it contains
@@ -4151,9 +4376,14 @@ $N=1$ normalization of the main $\Delta_5$ denominator.
 \end{lemma}
 
 \begin{proof}
-The first product is Gritsenko--Nikulin \cite[Theorem 4.1]{GN}.
-Their Proposition 3.1 identifies $D_5(2Z)$ with the denominator
-function of the corrected Lorentzian BKM superalgebra.  The rows
+The first product is the singular-theta lift of Borcherds
+\cite{Borcherds95} together with the explicit paramodular product
+identity of Gritsenko--Nikulin
+\cite[Theorem 2.1, (2.21)]{GNII}; the Lorentzian Kac--Moody
+correction and the identification of $D_5(2Z)$ with the denominator
+function of the corrected Lorentzian BKM superalgebra is the content
+of \cite{GN}, in particular the corrected denominator identity for
+\(\mathfrak g_{\Delta_5}\).  The rows
 $F_2,F_3,F_4$ are the separate $e_t^{(n,l,m)}=q^nr^ls^{tm}$
 denominator identities of Gritsenko--Nikulin
 \cite[Theorem 2.1, (2.3), (2.11), Lemma 2.5, (2.18), (2.19),
@@ -4839,7 +5069,8 @@ Govindarajan WKB denominator theorem, not a consequence of the
 Clery--Gritsenko product alone; this manuscript does not construct an
 independent row-by-row embedding of the CHL Weyl group into each
 Clery--Gritsenko modular group or multiplier cover.
-The Cartan matrices are
+The Cartan matrices are, in the CHL/WKB BKM normalization of
+\cite{CD09BKM,Gov11BKM},
 $$
 A^{(1)}=\left(\begin{array}{rrr}
 2&-2&-2\\
@@ -4868,7 +5099,8 @@ $$
 $$
 
 There are integral imaginary simple-root coefficients $N_j(a)$,
-depending on the CHL twist, such that
+depending on the CHL twist
+\cite{CD09BKM,Gov11BKM}, such that
 $$
 \begin{aligned}
 F_j(Z)
