@@ -3080,25 +3080,193 @@ Suppose \(B=\delta L\) for some additive
 \(B(c,c)=0\), contradicting \(B(c,c)=2\Pi_X(c)\) for any
 \(c=(Q,P)\) with \((Q,Q),(Q,P),(P,P)\) not all zero.  Hence no linear
 trivialisation exists; the quadratic primitive \(\Pi_X\) is necessary.
+
+\smallskip\emph{Step 4 (Chain-level lift; strict associativity in the
+PTVV/Joyce host).}
+Clauses (i)--(iv) place \((\widehat\Gamma_X,\star)\) inside the abelian
+category of discrete abelian groups.  The construction of the central
+extension is, however, used downstream not as a discrete group but as a
+strict monoid in the chain-level host of
+Definition~\ref{def:local-protected-observable-algebra}: the bracket on
+\(\widetilde P_X\) and the bilinear cocycle \(B\) act on the
+critical-Hall complex of compactly supported B-branes, which lives in
+chain complexes of \(\Q\)-vector spaces (or, with orientation lines
+included, in the dg-category of \((-1)\)-shifted symplectic perfect
+modules of \cite{PTVV2013}).  We must therefore lift (iv) from H\(^0\)
+to the chain level.
+
+\smallskip\emph{Chain-level data.}  Let \(C_*:=C_*(-,\Z)\) denote the
+normalised bar/Eilenberg--Mac Lane chain complex functor.  Apply
+\(C_*\) to the discrete abelian groups \(\Gamma_X^{\mathrm{phys}}\),
+\(\Gamma_{\mathrm{gram}}\), \(\widehat\Gamma_X\), placing them in
+homological degree zero.  The bilinear cocycle \(B\) of (i) is
+already a discrete chain map
+\[
+\mathbf B:\;C_*(\Gamma_X^{\mathrm{phys}})\otimes
+C_*(\Gamma_X^{\mathrm{phys}})\longrightarrow
+C_*(\Gamma_{\mathrm{gram}}),
+\]
+with no higher components, since \(B\) is \emph{strictly} bilinear in
+each slot by (i) (no chain-level corrections survive because the
+source and target are concentrated in degree zero).  The star product
+extends to a degree-zero chain map
+\[
+\mu:\;C_*(\widehat\Gamma_X)\otimes C_*(\widehat\Gamma_X)
+\longrightarrow C_*(\widehat\Gamma_X),
+\qquad
+\mu\bigl((c,T)\otimes(c',T')\bigr)
+=\bigl(c+c',\,T+T'+\mathbf B(c,c')\bigr).
+\]
+Coupled with the orientation lines \(o_c\) of
+Definition~\ref{def:orientation-line} and the multiplicative
+isomorphisms \(\mu_{c,c'}:o_{c+c'}\xrightarrow\sim o_c\otimes o_{c'}\)
+of Joyce--Upmeier \cite{JoyceUpmeier} and
+Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov}, the same
+formula promotes to a degree-zero chain map of
+\((-1)\)-shifted symplectic perfect complexes on the Cartesian
+extension correspondence
+\(\mathfrak M_{X,c}\times\mathfrak M_{X,c'}\to\mathfrak M_{X,c+c'}\)
+of \cite{PTVV2013}, with \(\mathbf B\) acting on the
+\(\Gamma_{\mathrm{gram}}\)-grading factor and \(\mu_{c,c'}\) on the
+orientation-line factor.
+
+\smallskip\emph{The associator vanishes pointwise.}
+By (iv) the associator of \(\mu\) at \(H^0\) is
+\[
+\alpha(c,c',c'')\;:=\;
+\mathbf B(c,c')+\mathbf B(c+c',c'')
+-\mathbf B(c',c'')-\mathbf B(c,c'+c'')
+\;=\;-(\delta\mathbf B)(c,c',c'')\;=\;0,
+\]
+\emph{strictly} as an element of \(C_0(\Gamma_{\mathrm{gram}})\), not
+merely up to a boundary.  The bounding homotopy
+\(h:\mu\circ(\mu\otimes\id)\Rightarrow\mu\circ(\id\otimes\mu)\)
+required by step~(ii) of the proof skeleton is therefore the
+\emph{canonical zero homotopy}: \(h\equiv 0\) bounds
+\(\alpha\equiv 0\).  No nontrivial chain-level homotopy is needed
+because the obstruction itself vanishes on the nose.  The PTVV
+\((-1)\)-shifted symplectic Frobenius pairing on
+\(\mathfrak M_{X,c}\times\mathfrak M_{X,c'}\) of \cite{PTVV2013}
+contributes to \(\mu\) only through its integrated bilinear class
+\(\mathbf B\) on \(\Gamma_{\mathrm{gram}}\); the Joyce--Upmeier
+orientation cocycle \cite{JoyceUpmeier} contributes only through the
+discrete multiplicative isomorphism \(\mu_{c,c'}\); and (i) pins both
+contributions to a strictly bilinear function of \((c,c')\).  In
+particular the BBDJS vanishing-cycle Thom--Sebastiani isomorphism
+\cite{BBDJS2015} on disjoint d-critical charts is monoidal at the
+chain level, so it carries no associator correction beyond what
+\(\mathbf B\) already records.
+
+\smallskip\emph{Pentagon identity.}
+The four-fold associator measures the discrepancy between two
+bracketings of \((c_1,T_1)\star(c_2,T_2)\star(c_3,T_3)\star(c_4,T_4)\)
+along the two pentagon paths.  In the centre component this is
+\(\bigl(\delta\delta\mathbf B\bigr)(c_1,c_2,c_3,c_4)\), which vanishes
+identically because \(\delta^2=0\) on the Hochschild complex.  Term by
+term: each pentagon edge is a single application of the associator
+\(\alpha\) of the previous paragraph; the associator vanishes
+pointwise, hence its iterates do as well.  In the orientation
+component the pentagon is the cocycle pentagon
+\[
+\mu_{c+c',c''}\circ\mu_{c,c'}=\mu_{c,c'+c''}\circ\mu_{c',c''}
+\]
+of Joyce--Upmeier \cite{JoyceUpmeier} and
+Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov}, recorded
+in hypothesis (O) of
+Theorem~\ref{thm:ptvv-joyce-pi-descent}.  Multiplicativity is precisely
+the strict pentagon for \(\{\mu_{c,c'}\}\); under (O) the pentagon
+holds on the nose, with no bounding 2-cell required.
+
+\smallskip\emph{Higher Stasheff coherences collapse.}
+Stasheff's associahedra organise the higher coherences of an
+\(A_\infty\)-monoid as polytopes
+\(K_n\) for \(n\ge 4\), with \((n-2)\)-cells parametrising
+\(n\)-fold reassociations.  For \((\widehat\Gamma_X,\mu)\) every cell
+of \(K_n\) is computed by an iterated comparison of bracketings of
+\((c_1,T_1)\star\cdots\star(c_n,T_n)\); on the centre component each
+such comparison is a sum of values of \(\mathbf B\) evaluated on
+sums and differences of subsets of \(\{c_1,\ldots,c_n\}\), and by
+strict bilinearity (i) every such sum collapses to a single multilinear
+expression independent of the bracketing.  Equivalently, the bar
+construction \(B_*(\widehat\Gamma_X)\) of the discrete monoid
+\((\widehat\Gamma_X,\star)\) is acyclic in positive degrees because
+\(\widehat\Gamma_X\) is a discrete abelian group (this is the standard
+fact that the Eilenberg--Mac Lane bar complex of a discrete abelian
+group has trivial higher homotopy groups), so every higher Stasheff
+coherence \(h_n\) (\(n\ge 3\)) admits the canonical zero bounding
+chain.  No additional choice is required.  On the orientation factor
+the same conclusion holds: a multiplicative system
+\(\{\mu_{c,c'}\}\) satisfying the strict pentagon is, by Mac Lane's
+coherence theorem, a strict monoidal natural transformation; all
+higher coherences are uniquely determined by the strict pentagon and
+identity, and they all hold strictly.  Combining the two factors,
+\((\widehat\Gamma_X,\mu)\), enriched in the chain category of the
+PTVV/Joyce host, is a strictly associative monoid: an
+\(A_\infty\)-monoid whose Stasheff coherences \(h_n\) are all
+identically zero, not merely homotopic to zero.
+
+\smallskip\emph{Conclusion.}
+The H\(^0\)-level associativity of (iv) lifts to strict associativity
+at the chain level of the PTVV/Joyce host of
+Definition~\ref{def:local-protected-observable-algebra}, conditional on
+the strict-pentagon multiplicative orientation of (O) in
+Theorem~\ref{thm:ptvv-joyce-pi-descent}.  Equivalently: for the
+discrete bookkeeping monoid \((\widehat\Gamma_X,\star)\), no
+homotopy-coherent correction is required; the chain-level lift is
+canonical and the higher Stasheff cells are bounded by the canonical
+zero.  The chain-level statement therefore inherits its precise
+residual obligation from (O): construct the multiplicative orientation
+cocycle \(\{\mu_{c,c'}\}\) on the reduced compact protected sector of
+\(K3\times E\) so that the strict pentagon holds.  This is the
+single named obstruction; absent (O), the chain-level lift is
+\(A_\infty\)-coherent rather than strict, but the
+\(A_\infty\)-coherences are still controlled by a Hochschild
+\(2\)-cocycle representative of \([B]\), which is cohomologically trivial
+by (v).
 \end{proof}
 
 \begin{remark}[Status]
 \label{rem:b-cocycle-status}
-\emph{Proved.}  All six clauses are arithmetic identities in \(\Z^3\)
-over the even unimodular Mukai lattice \(\La_S\); the proof uses no
-automorphic input.  Structurally the lemma fixes the bookkeeping
-content of the extension \(\widehat\Gamma_X\): cohomologically the
-extension is split (clause~(v)), but the double grading it records --
-physical charge upstairs, Borcherds Fourier index downstairs -- is the
-device by which a hypothetical \(\Gamma_X^{\mathrm{phys}}\)-graded Hall
-source descends to the \(\Gamma_{\mathrm{gram}}\)-graded denominator
-algebra.  Clause~(vi) records the precise sense in which
-trivialisation \emph{requires} the quadratic refinement \(\Pi_X\): without
-it, \(B\) carries the standard Heisenberg extension class and the
-descent is obstructed.  The remaining content of the construction
-(positivity of the Gram pushforward on the chamber semigroup
-\(\Gamma_{\mathrm{eff}}\); compatibility with the multiplicities
-\(f(nm,l)\)) is the subject of the subsequent obstruction lemmas.
+\emph{Proved.}  Clauses (i)--(vi) are arithmetic identities in
+\(\Z^3\) over the even unimodular Mukai lattice \(\La_S\); the proof
+uses no automorphic input.  Structurally the lemma fixes the
+bookkeeping content of the extension \(\widehat\Gamma_X\):
+cohomologically the extension is split (clause~(v)), but the double
+grading it records -- physical charge upstairs, Borcherds Fourier
+index downstairs -- is the device by which a hypothetical
+\(\Gamma_X^{\mathrm{phys}}\)-graded Hall source descends to the
+\(\Gamma_{\mathrm{gram}}\)-graded denominator algebra.  Clause~(vi)
+records the precise sense in which trivialisation \emph{requires} the
+quadratic refinement \(\Pi_X\): without it, \(B\) carries the standard
+Heisenberg extension class and the descent is obstructed.
+
+\emph{Step 4: chain-level strict associativity, conditional on the
+multiplicative orientation hypothesis.}  The chain-level lift of (iv)
+constructed in Step 4 above is \emph{strict}, not merely
+\(A_\infty\)-coherent, conditional on hypothesis (O) of
+Theorem~\ref{thm:ptvv-joyce-pi-descent} (the strict pentagon for the
+multiplicative orientation cocycle \(\{\mu_{c,c'}\}\) of
+Joyce--Upmeier \cite{JoyceUpmeier} and
+Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov}).  The
+collapse argument is: \(\widehat\Gamma_X\) is a discrete abelian
+group, so its bar complex is acyclic in positive degrees; the higher
+Stasheff coherences are computed by iterated values of the strictly
+bilinear cocycle \(B\) and vanish on the nose by the cocycle identity
+of (iii); the orientation factor contributes only the strict pentagon
+of (O).  Absent (O), the lift is \(A_\infty\)-coherent rather than
+strict, controlled by a Hochschild \(2\)-cocycle representative of
+\([B]\) which is cohomologically trivial by (v).  The single named
+chain-level residual is therefore the construction of \(\{\mu_{c,c'}\}\)
+with strict pentagon on the reduced compact protected sector of
+\(K3\times E\); absent that construction the chain-level monoid
+structure is \(A_\infty\) rather than strict, with all
+\(A_\infty\)-coherences canonically bounded by \(\Theta\) (the
+determinant-line Hochschild \(1\)-cochain of
+Theorem~\ref{thm:ptvv-joyce-pi-descent}, Step 2).  The remaining
+content of the construction (positivity of the Gram pushforward on the
+chamber semigroup \(\Gamma_{\mathrm{eff}}\); compatibility with the
+multiplicities \(f(nm,l)\)) is the subject of the subsequent
+obstruction lemmas.
 \end{remark}
 
 \begin{definition}[Gram-corrected charge extension]
