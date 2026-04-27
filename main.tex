@@ -4655,21 +4655,34 @@ physical charge \(c\in\Gamma_X^{\mathrm{phys}}\), with reduced
 \(E\)-quotient compatible with the projection
 \(p_E:K3\times E\to E\) of
 Definition~\ref{def:protected-hall-integration-criterion}.
-\item[(O)] \emph{(Multiplicative orientation.)}  An orientation datum
-\(\{o_c\}_{c\in\Gamma_X^{\mathrm{phys}}}\) in the sense of
+\item[(O)] \emph{(\(S^1\)-equivariant multiplicative orientation cocycle.)}
+The collection \(\{\mu_{c,c'}\}\) is an \(S^1\)-equivariant
+multiplicative orientation cocycle on \((-1)\)-shifted symplectic
+stacks satisfying the strict pentagon.  Concretely: an orientation
+datum \(\{o_c\}_{c\in\Gamma_X^{\mathrm{phys}}}\) in the sense of
 Definition~\ref{def:orientation-line} is supplied with
 \emph{Joyce--Kinjo--Park--Safronov multiplicative isomorphisms} \cite{JoyceKinjoParkSafronov}
 \[
 \mu_{c,c'}\,:\;o_{c+c'}\;\xrightarrow{\ \sim\ }\;o_c\otimes o_{c'},
 \qquad c,c'\in\Gamma_X^{\mathrm{phys}},
 \]
-satisfying the cocycle pentagon
+satisfying the strict cocycle pentagon
 \(\mu_{c+c',c''}\circ\mu_{c,c'}=\mu_{c,c'+c''}\circ\mu_{c',c''}\)
-on the Cartesian extension correspondence and compatible with the
+on the Cartesian extension correspondence, compatible with the
 reduced \(E\)-quotient and with the HN/sectorial completion of
-Lemma~\ref{prop:sectorial-hall-truncation}.  Equivalently, the
-collection \(\{o_c\}\) is a multiplicative section of the determinant
-gerbe over the moduli of objects in the protected sector.
+Lemma~\ref{prop:sectorial-hall-truncation}, and \emph{equivariant
+under the loop-rotation \(S^1\)-action on the cyclic complex of
+\(\mathfrak M_{X,c}\)}.  This last condition lifts the orientation
+cocycle from a Hochschild trivialization to a \emph{cyclic}
+trivialization, and is exactly what
+Joyce--Kinjo--Park--Safronov \cite{JoyceKinjoParkSafronov} construct
+on \((-1)\)-shifted symplectic stacks via the loop-rotation symmetry
+of the cyclic complex (the \(S^1\)-equivariance is intrinsic to the
+PTVV \cite{PTVV2013} \((-1)\)-shifted symplectic structure, which
+arises from the negative-cyclic refinement of the trace pairing).
+Equivalently, the collection \(\{o_c\}\) is an \(S^1\)-equivariant
+multiplicative section of the determinant gerbe over the moduli of
+objects in the protected sector.
 \item[(F)] \emph{(Frobenius pairing.)}  The protected Hall bracket
 \([\,\cdot\,,\,\cdot\,]\) and the protected Hopf pairing
 \(\langle\,\cdot\,,\,\cdot\,\rangle\) on \(\widetilde P_X\) (the latter
@@ -4874,6 +4887,29 @@ strictification of (4a) lifts to a strict $E_3$-rectification on
 $\mathcal F_X$ itself, and the descent of (4b)--(4c) holds at chain
 level.  Without (O$^\infty$), the descent holds at $H^0$, which is
 all that the modular and denominator arguments of this paper consume.
+
+\emph{Remark on the Goodwillie obstruction.}
+The chain-level passage from the Hochschild boundary
+\(d_{\mathrm{Hoch}}\Theta=B\) of Step~2 to the cohomological
+vanishing \([B]=0\) in the bracket category proceeds via Goodwillie's
+identification \(HC^{-}\simeq HH^{hS^1}\) of negative cyclic homology
+with the \(S^1\)-homotopy fixed points of Hochschild homology
+\cite{Goodwillie1985}.  The obstruction to lifting a Hochschild
+trivialization to a cyclic (i.e.\ \(S^1\)-equivariant) trivialization
+sits in the Connes \(B\)-operator and obstructs the chain-level
+identification of \(d_{\mathrm{Hoch}}\Theta\) with \(B\) at the cyclic
+level.  This obstruction is absorbed into the \(S^1\)-equivariance
+clause of (O): the Joyce--Kinjo--Park--Safronov multiplicative
+orientation cocycle, by construction \(S^1\)-equivariant for the
+loop-rotation action on the cyclic complex \cite{JoyceKinjoParkSafronov},
+furnishes \(\Theta\) as a class in \(HC^{-,1}\), not merely
+\(HH^1\); the differential \(d_{\mathrm{Hoch}}\Theta=B\) of Step~2
+is then equivariantly closed and the cohomological vanishing argument
+above is well-defined at the chain level.  Without (O)'s
+\(S^1\)-equivariance the Goodwillie obstruction obstructs the chain
+lift and Step~4 stops at a mere \(HH^2\)-vanishing without the
+cyclic refinement that the Hopf-Frobenius identity (F) actually
+sees.
 \qedhere
 \end{proof}
 
@@ -5168,6 +5204,15 @@ fusion, and the Nikolaus--Scholze \cite{NikolausScholze}
 \(E_3\)-rectification on the protected sector of \(K3\times E\); this
 upgrade is not consumed by the modular and denominator content of
 this paper.
+
+\emph{Named residual.}  Verification of the \(S^1\)-equivariant
+multiplicative orientation cocycle on the specific \(K3\times E\)
+protected sector (with the reduced \(E\)-quotient compatibility and
+the HN/sectorial completion of
+Lemma~\ref{prop:sectorial-hall-truncation}) is named residual.  This
+is the precise obstruction that the Goodwillie identification
+\(HC^{-}\simeq HH^{hS^1}\) \cite{Goodwillie1985} would otherwise
+expose at the chain level of Step~4.
 \end{remark}
 
 \begin{remark}[Hypothesis comparison]
