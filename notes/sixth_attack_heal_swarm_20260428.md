@@ -71,7 +71,7 @@ the main worktree where the mathematical content survived direct attack.
   correspondence system, with the `delta_2` wall exposing the positive
   elliptic-degree wrapped obstruction.
 - S04 entered as the formal-vs-geometric distinction for
-  `Theta_Pi` and the finite verification diagrams `(NO1)--(NO7)` for
+  \(\Theta_{\Pi,R}\) and the finite verification diagrams `(NO1)--(NO7)` for
   topological, Hochschild, triple, Jacobi, Frobenius, cyclic, and radical
   normal-ordering defects.
 - S05 entered as the canonical finite source-bar coalgebra conditional on

@@ -71,7 +71,7 @@ content was semantically merged into `main.tex` and
 - H05 `Chain/Koszul`: merged the coaugmented finite source coalgebra,
   finite filtration, collision coproduct, coassociativity, counit,
   conilpotence, and transition-continuity defects.
-- H06 `Recognition/PBW`: merged the finite `W_{<=3}` primitive
+- H06 `Recognition/PBW`: merged the finite \(W_{\le3}\) primitive
   recognition window and the general monic `D_5/(qrs)^{1/2}` coefficient
   engine with the next timelike additive checks
   `90,90,90,-540`.

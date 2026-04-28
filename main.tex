@@ -269,15 +269,18 @@ the upstairs protected primitive bracket
 \Prim_{c+c'}^{\mathrm{prot}}(\mathcal F_X),
 \qquad c,c'\in\Gamma_X^{\mathrm{phys}}.
 \]
-The recognition certificate proved later is conditional: if the
+The recognition criterion proved later is conditional: it specifies the
+certificate and its consequences.  If the
 Dirac--Igusa certificate \(\mathfrak K_X\) exists, including the oriented Hall object,
 protected integration, cocycle-corrected Gram descent
 \(\overline\Pi_{X,*}^{\Theta}\), a conilpotent source coalgebra \(C_X\)
 with finite source filtration and collision coproduct, the bar comparison
 \(b_X\), the cobar map
-\(\Theta_{\mathrm{Kos}}\), presentation-level primitive Lie comparison,
-no-extra-relations theorem, completed PBW compatibility, and radical
-quotient, then
+\(\Theta_{\mathrm{Kos}}\), Koszul Mittag--Leffler exactness for the
+completed bar/cobar inverse system, presentation-level primitive Lie
+comparison, no-extra-relations theorem, completed PBW compatibility,
+exact triangular completion/\(\lim^1\)-vanishing, and radical quotient,
+then
 \[
 H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^{\Theta}\mathcal F_X)
 \cong
@@ -427,8 +430,9 @@ certificate/conditional/open &
 The \(D_0\)-stage, strong orientation, Weyl cocycle, type-II Pfaffian
 wall model, hybrid wrapped factorization, source Koszul comparison, and
 primitive recognition are certificate data.  The consequences are
-conditional on these data and compatible transitions; the compact
-state-side construction is open. \\
+conditional on these data, Koszul Mittag--Leffler exactness, exact
+triangular completion, and compatible transitions; the compact state-side
+construction is open. \\
 Scalar OP/DT square &
 imported/check &
 Oberdieck--Pixton, Oberdieck--Pandharipande, and Oberdieck identify the
@@ -598,7 +602,7 @@ cycles
 \Phi_{F_1\oplus\cdots\oplus F_k}\simeq
 \Phi_{F_1}\boxtimes\cdots\boxtimes\Phi_{F_k}
 \]
-on disjoint d-critical charts, together with the Ext-vanishing
+on disjoint d-critical charts \cite{MasseyST,SaitoMHM}, together with the Ext-vanishing
 \(\operatorname{Ext}^*(\mathcal F,\mathcal G)=0\) for branes
 \(\mathcal F,\mathcal G\) with disjoint supports.  This is the
 local protected-observable pre-interface schema for the present paper.
@@ -614,7 +618,7 @@ The components are external assumptions:
 PTVV \((-1)\)-shifted symplectic structure on derived moduli of
 B-branes \cite{PTVV2013}; BBDJS vanishing-cycle perverse sheaf and its
 Thom--Sebastiani isomorphism (extending Massey 2001 and Saito 1990 to
-the d-critical setting) \cite{BBDJS2015}; orientation lines from the
+the d-critical setting \cite{MasseyST,SaitoMHM}) \cite{BBDJS2015}; orientation lines from the
 Joyce--Upmeier orientation theory \cite{JoyceUpmeier} or
 Kontsevich--Soibelman \cite{KSCoHA}.  The factorization map relies on
 disjoint-supports Ext-vanishing for compactly supported branes
@@ -765,6 +769,9 @@ sector carries the Hecke--DMVV exponents \(f(nm,l)\).  The \(m=0\)
 sector is a cusp/Weyl boundary package carrying the repeated boundary
 indices \(f(0,l)\).  Neither sector is a microscopic one-particle Hilbert
 space.
+The compact Hall \(s=0\) cusp is therefore a separate boundary
+certificate: it is controlled by the Borcherds chamber data only after
+the corresponding source-side boundary operations are supplied.
 \[
 \mathcal V^{\mathrm{bulk}}
 :=\bigoplus_{\substack{(n,l,m)\in\Gamma_{\mathrm{eff}}\\m>0}}
@@ -1501,9 +1508,11 @@ on Calabi--Yau threefolds (O1) is Joyce--Song \cite{JoyceSong},
 the multiplicative orientation cocycle on
 \(\mathrm{Perf}(X)\) is Joyce--Upmeier \cite{JoyceUpmeier} and
 Joyce--Tanaka--Upmeier \cite{JoyceTanakaUpmeier}, on Calabi--Yau
-\(4\)-fold analogues the unreduced orientation exists by Borisov--Joyce /
-Cao--Gross--Joyce / Bojko--Borisov--Joyce
-\cite{BorisovJoyce}, \cite{OhThomasI}, \cite{OhThomasII}, and rank-one
+\(4\)-fold analogues the unreduced orientation exists by Borisov--Joyce
+\cite{BorisovJoyce}, Cao--Gross--Joyce \cite{CaoGrossJoyce}, and
+Bojko's quasi-projective Borisov--Joyce extension \cite{Bojko};
+the virtual-cycle constructions of Oh--Thomas \cite{OhThomasI},
+\cite{OhThomasII} and rank-one
 Pin\(^c\)-orientation sign conventions in DT/PT Hilbert-scheme models
 are compatible with the BBDJS/Joyce--Upmeier framework and with the
 Cao--Kool--Monavari Calabi--Yau \(4\)-fold orientation package
@@ -1515,7 +1524,8 @@ cosection-reduced \(K3\times E\) quotient orientation, its
 cosection-induced
 parity flip
 \(\mathrm{vd}^{\mathrm{red}}=\mathrm{vd}^{\mathrm{std}}+1\) of the
-Maulik--Toda / Oberdieck reduced obstruction theory is absorbed into
+Maulik--Toda / Oberdieck reduced obstruction theory
+\cite{MaulikTodaGV,OberdieckReducedPT} is absorbed into
 (O1) as a \(\mathbb Z/2\)-grading shift
 \(o^{\mathrm{red}}_{\mathcal C}=o^{\mathrm{std}}_{\mathcal C}\otimes\Pi\)
 of the BBDJS \cite{BBDJS2015} line under cosection contraction of
@@ -2942,7 +2952,8 @@ extensions are Bojko \cite{Bojko}.
 \textup{(P4)} \emph{Cosection-induced parity flip from \(\sigma_{K3}\):
 \(\mathrm{vd}^{\mathrm{red}}=\mathrm{vd}^{\mathrm{std}}+1\); absorbed
 into (O1) as a \(\mathbb Z/2\)-grading shift on \(o_{\mathcal C}\).}
-The Maulik--Toda / Oberdieck reduced obstruction theory contracts the
+The Maulik--Toda / Oberdieck reduced obstruction theory
+\cite{MaulikTodaGV,OberdieckReducedPT} contracts the
 PTVV \cite{PTVV2013} \((-1)\)-shifted symplectic form
 \(\omega_{\mathfrak M}\) on \(\mathfrak M_{\mathcal C}(X)\) against the
 cosection
@@ -2963,12 +2974,13 @@ o^{\mathrm{red}}_{\mathcal C}
 \;=\;o^{\mathrm{std}}_{\mathcal C}\otimes\Pi,
 $$
 where \(\Pi\) is the parity-flip line generated by the cosection cokernel.
-This shift is \emph{coherent} in the sense that it commutes with the
-extension correspondences of
-Definition~\ref{def:protected-hall-integration-criterion} and so does
-not perturb the Joyce--Upmeier multiplicative cocycle of (P2) once the
-parity is fixed once-and-for-all by the Oberdieck monic normalization
-\cite{OberdieckReducedPT}.  The parity-flip is absorbed into (O1):
+The strong orientation certificate \textup{(O1)} includes the coherence
+datum that makes this shift commute with the extension correspondences of
+Definition~\ref{def:protected-hall-integration-criterion} and preserves
+the Joyce--Upmeier multiplicative cocycle of (P2).  The Oberdieck monic
+normalization \cite{OberdieckReducedPT} fixes the scalar parity branch,
+and the Hall extension coherence is the corresponding \textup{(O1)}
+residual.  The parity-flip is absorbed into (O1):
 the strong orientation line
 \(o_{\mathcal C}\) demanded by
 Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} is, on the
@@ -3965,7 +3977,7 @@ Proposition~\ref{prop:bgn-identification}; equivalently, the leading
 Fourier coefficient of \(\operatorname{Pf}_{\mathrm{prot}}\) at the
 isotropic cusp \(\mathfrak c_\infty\) equals \(+1\) (positive
 orientation, monic);
-\item[(S3)] compatibility, after squaring, with the OP/DT scalar sign
+\item[(S3)] scalar consistency, after squaring, with the OP/DT scalar sign
 \(C_{\square,X}=-4096\) of Proposition~\ref{prop:op-normalization}, i.e.\
 \((\operatorname{Pf}_{\mathrm{prot}})^{2}\!|_{\mathrm{rank\textnormal{-}one}}
 =\Delta_5^{2}\) with positive leading coefficient
@@ -3973,7 +3985,8 @@ orientation, monic);
 \(C_{\square,X}\), and
 the OP scalar sign \(\operatorname{sign}(C_{\square,X})=-1\) absorbed into the
 fermionic shift \((-p_{\mathrm{DT}})^n\) of the OP/DT chamber, not into
-the orientation line.
+the orientation line; this is a scalar compatibility check, not a
+rigidifying input for \(\eta_{\mathcal C}\).
 \end{enumerate}
 Then, on any connected rank-one component for which the supplied
 \(\iota_{\mathrm{aut}}\) identifies the Pfaffian section with the monic
@@ -3991,8 +4004,8 @@ so on a connected component the global lift is unique up to multiplying
 by a constant element of this kernel; on the disconnected components of
 \(\mathfrak M^{\mathrm{red},(1)}_{(1,\beta,n)}\) (indexed by the
 discrete Mukai-charge label \((1,\beta,n)\), connected within each
-fixed charge by the Beauville--Mukai construction of
-\cite{CaoKoolMonavari}) the ambiguity is the function
+fixed charge by the Beauville--Mukai moduli construction
+\cite{Mukai1984,Mukai1987,HuybrechtsLehn}) the ambiguity is the function
 \(\eta\colon\pi_0\mathfrak M^{\mathrm{red},(1)}\to\{\pm 1\}\).
 
 \emph{(S1)} fixes the multiplicative compatibility that any extension of
@@ -4120,8 +4133,8 @@ Let \(S\) be a complex K3 surface and put
 =H^0(S,\Z)\oplus H^2(S,\Z)\oplus H^4(S,\Z),
 \]
 the Mukai lattice in the sense of
-Mukai (1987): even, unimodular, signature \((4,20)\), rank \(24\),
-equipped with the Mukai pairing
+Mukai \cite{Mukai1984,Mukai1987}: even, unimodular, signature
+\((4,20)\), rank \(24\), equipped with the Mukai pairing
 \(\langle (r,c,s),(r',c',s')\rangle_{\mathrm{Muk}}=c\cdot c'-rs'-r's\).
 The formal full-Mukai dyonic lattice is the additive abelian group
 \[
@@ -5501,6 +5514,10 @@ that observable algebra.  A genuine Dirac--Igusa realization must supply
 the state-side Hall object, the orientation/Pfaffian line, the
 normal-ordered Gram descent, and the chiral Koszul comparison before
 one may identify its primitives with \(\mathfrak g_{\Delta_5}\).
+Throughout this compact realization problem, \(S\) is a smooth complex
+K3 surface and \(E\) is a smooth elliptic curve; singular K3 limits and
+nodal or cuspidal elliptic degenerations belong to the boundary
+certificate, not to the standing compact source datum.
 
 \begin{definition}[Formal current envelope]
 Let $E$ be the elliptic curve in $X=S\times E$.  Put
@@ -5730,8 +5747,9 @@ comparison with \(\Delta_5\), the following finite-chain data:
 \item descent for local observables on \(X\) and a quantum master
 equation after compact charge completion;
 \item anomaly cancellation, a fixed \(E_3\)-formality point in the
-sense of Tamarkin/Kontsevich formality for \(E_n\)-operads, and a
-chain-level homotopy/framing datum for the chosen holomorphic
+sense of Tamarkin--Kontsevich formality for \(E_n\)-operads
+\cite{TamarkinLittleDisks,KontsevichOperadsMotives,LambrechtsVolicLittleDisks},
+and a chain-level homotopy/framing datum for the chosen holomorphic
 \(E_3\)-operadic model; compact-support control;
 \item a finite-first sectorial completion compatible with
 Harder--Narasimhan quotients, with all operations defined on finite
@@ -5746,9 +5764,10 @@ recognition certificate.
 Existing BV, CoHA, and chiral-algebra formalisms give the language for
 these requirements.  They do not, by themselves, construct this compact
 source for \(K3\times E\).  The external open data are: the
-\(E_3\)-formality point (Tamarkin/Kontsevich formality at a chosen
-associator, regarded here as a chosen torsor point; rationality of
-formality is open over \(\Q\) but known over \(\R\)), and the chain-level
+\(E_3\)-formality point (Tamarkin--Kontsevich formality at a chosen
+associator, regarded here as a chosen torsor point
+\cite{TamarkinLittleDisks,KontsevichOperadsMotives,LambrechtsVolicLittleDisks};
+rationality of formality is open over \(\Q\) but known over \(\R\)), and the chain-level
 homotopy/framing datum for the
 chosen holomorphic \(E_3\)-operadic model; chain-level constructibility
 for the candidate concrete realization
@@ -6378,7 +6397,7 @@ compatible transition maps, in particular with
 also the Koszul Mittag--Leffler condition: \(R^1\varprojlim=0\) for the
 inverse systems of source coalgebras, completed chiral bar and cobar
 constructions, target truncations, and the cones of \(b_{X,R}\) and
-\(\Theta_{\mathrm{Kos},R}\).  Then the inverse limit
+\(\Theta_{\mathrm{Kos},R}\) \cite[\S3.5]{WeibelHA}.  Then the inverse limit
 \[
 C_X:=\varprojlim_R C_{X,R}
 \]
@@ -6431,6 +6450,9 @@ summation over compact \(K3\)-modes.  Duality monodromy, elliptic-degree
 wrapping, and the Borcherds chamber are therefore global features of the
 trace.  They do not replace the local factorization maps on disjoint
 opens.
+Singular \(K3\) surfaces and nodal or cuspidal elliptic curves require
+the boundary degeneration certificate; the Ran-local statement here is
+the smooth-\(S\), smooth-\(E\) compact-stage assertion.
 \end{remark}
 
 \begin{definition}[Projection-finite, wrapped, and hybrid Ran strata]
@@ -7014,7 +7036,10 @@ I_R^{\mathrm{prot}}(Q_{E,R}x)
 s^{\,b_R(\gamma)}\C[q^{\pm1},r^{\pm1}]
 \]
 under the OP/Borcherds variable convention of
-Proposition~\ref{prop:op-normalization}.  Thus positive powers of the
+Proposition~\ref{prop:op-normalization}.  More precisely,
+\(I_R^{\mathrm{prot}}\) is homogeneous for the full Gram label
+\(\overline\Pi_X(\gamma)=(n,l,m)\), and the displayed condition records
+the elliptic degree \(m=b_R(\gamma)\).  Thus positive powers of the
 Igusa \(s\)-variable can only come from the wrapped colour \(b_R>0\).
 This is a source-support condition, not a consequence of the target
 product.  If a target window contains a degree with \(m>0\), and in
@@ -7705,7 +7730,8 @@ also that on this substack:
 \item the full self-Ext determinant admits a functorial Kunneth
 decomposition, including the cross terms for direct sums;
 \item the elliptic factor carries a chosen Costello--Li flat
-trivialization compatible with the reduced \(E\)-quotient;
+trivialization compatible with the reduced \(E\)-quotient
+\cite{CostelloLiBCOV,CostelloLiOpenClosedBCOV};
 \item the K3 factors carry supplied Joyce--Upmeier
 multiplicative orientation isomorphisms with strict pentagon; and
 \item these choices are \(S^1\)-equivariant on the cyclic complexes.
@@ -7727,7 +7753,8 @@ On the supplied Kunneth-pure substack, the full self-Ext determinant
 has the assumed factorization into K3 factors and the flat elliptic
 factor, including all direct-sum cross terms.  Tensor the supplied
 factorwise Joyce--Upmeier multiplicative orientation maps with the
-chosen Costello--Li trivialization on the elliptic factor.  This gives
+chosen Costello--Li trivialization
+\cite{CostelloLiBCOV,CostelloLiOpenClosedBCOV} on the elliptic factor.  This gives
 the displayed maps \(\mu_{c,c'}\) on precisely that restricted sector.
 
 
@@ -7943,7 +7970,7 @@ Definition~\ref{def:orientation-line} and the PTVV \cite{PTVV2013}
 \((-1)\)-shifted symplectic form on
 \(\mathfrak M_{X,c}\), trivialized along the reduced \(E\)-quotient via
 the Costello--Li flat Calabi--Yau pairing
-\cite{CostelloRenormalization}) satisfy the
+\cite{CostelloRenormalization,CostelloLiBCOV,CostelloLiOpenClosedBCOV}) satisfy the
 graded-Frobenius identity
 \[
 \langle[x,y],z\rangle
@@ -8537,6 +8564,8 @@ with the tensor pairing induced from \(\langle\,\cdot\,,\,\cdot\,\rangle_R\).
 \]
 is non-degenerate.
 \end{enumerate}
+Together with the supplied finite Hopf pairing, coproduct, and radical
+matrices, this is the algebraic finite-stage test for \textup{(NO7)}.
 Then the finite coideal square in \textup{(NO7)} commutes:
 \[
 (\bar q_{\Pi,R}\otimes\bar q_{\Pi,R})\Delta_R^\Theta(r)=0
@@ -8652,7 +8681,8 @@ Suppose that the protected observable algebra
 \(\mathcal A_X\) of
 Definition~\ref{def:local-protected-observable-algebra}, after the
 reduced \(E\)-quotient and the Costello--Li flat trivialization
-\cite{CostelloRenormalization} along the elliptic factor, is realized
+\cite{CostelloRenormalization,CostelloLiBCOV,CostelloLiOpenClosedBCOV}
+along the elliptic factor, is realized
 as a Calabi--Yau \(A_\infty\)-category of dimension \(d=3\),
 i.e.~it carries a Serre functor \(S\simeq[3]\) and a
 non-degenerate cyclically invariant pairing
@@ -8698,7 +8728,8 @@ homogeneous \(f,g\) (loc.~cit., Lemma~10.2.4).  PTVV
 form on \(\mathfrak M_{X,c}\); BBDJS \cite{BBDJS2015} extend the
 orientation/d-critical datum that realises \(S\simeq[d]\) at chain
 level on the perfect-complex moduli.  Costello--Li
-\cite{CostelloRenormalization} flat trivialization along the elliptic
+\cite{CostelloRenormalization,CostelloLiBCOV,CostelloLiOpenClosedBCOV}
+flat trivialization along the elliptic
 factor reduces \(d=4\) to \(d=3\), so the discussion takes \(d=3\) and the
 identification \(\langle x,y\rangle=\tr_S(x\cdot y)\), where
 \(\cdot\) is the cup product on the protected primitive subspace.
@@ -9075,7 +9106,10 @@ property and discreteness of the numerical lattice make
 additive on extensions in the sector; hence HN sums of total height
 \(\le R\) form a finite set and the subspace of height \(>R\) is a
 two-sided Hall ideal.  The inverse limit is the \(h_S\)-adic Hall
-completion.
+completion.  This supplies the charge-index finiteness part of the
+finite Hall package; the full certificate also includes finite-type
+d-critical substacks, finite-dimensional protected cohomology, and
+proper/admissible pull-push geometry.
 \end{proof}
 
 \begin{definition}[First-order Dirac--Igusa \(D_0\)-certificate]
@@ -9175,19 +9209,21 @@ R'\ge R\Rightarrow N_{R'}^\Delta\ge N_R^\Delta,\qquad
 \sup_R N_R^\Delta=\infty .
 \]
 This schedule is finite-window bookkeeping, not a relation between HN
-height and automorphic height.  To keep the stage data genuinely finite,
-fix a cofinal discrete subsystem
+height and automorphic height.  To make each transition-obstruction
+stage a finite datum, fix a cofinal discrete subsystem
 \[
 \mathcal R=\{R_0<R_1<R_2<\cdots\}\subset\mathbb R_{>0},
 \qquad R_\nu\to\infty,
 \]
 and take all inverse limits below over \(\mathcal R\).  Cofinality does
-not change the completed HN object or the target exhaustion.  For
+not change the completed HN object or the target exhaustion; the
+finite-type substack and proper-correspondence assertions are the
+separate geometric entries of the same certificate.  For
 \(R=R_\nu\) write \(R^+=R_{\nu+1}\).  Transition maps for non-successor
 arrows are composites of the successor maps.  Thus the independent
 transition obstruction at a stage is a finite obstruction, not an
-infinite product of defects over all larger heights.  We continue to
-write \(R\) for an element of this cofinal subsystem.
+infinite product of defects over all larger heights.  In what follows,
+\(R\) denotes an element of this cofinal subsystem.
 
 Define the finite target and test windows
 \[
@@ -9738,7 +9774,9 @@ test after such line-comparison data have been supplied.
 \begin{remark}[Chamber dependence and wall-crossing]
 \label{rem:chamber-conditional-wall-crossing}
 The certificate is indexed by a Bridgeland-type supplied stability/HN sector
-\((\sigma,S)\).  The lattice cocycle \(B(c,c')\) is chamber-independent: it
+\((\sigma,S)\), in the K3-surface lineage of
+\cite{BridgelandK3Stability,BayerMacriProjectivity}.  The lattice cocycle
+\(B(c,c')\) is chamber-independent: it
 records only Mukai pairings of fixed lattice vectors.  The compact
 Hall/factorization side \(D_0(X;\sigma,S)\) is chamber-dependent: the
 finite-type semistable substacks change under wall-crossing, and the
@@ -10023,7 +10061,8 @@ isomorphisms, identifies the vanishing-cycle coefficients on the source
 of the correspondence with the coefficient system on the target.  The
 properness/admissibility in \textup{(S2)} therefore makes the displayed
 pull-push maps defined.  The zero convention for charges outside
-\(\widehat\Gamma_R\) is exactly the finite Hall quotient convention.
+\(\widehat\Gamma_R\) is exactly the finite charge-support Hall quotient
+convention.
 The two-step flag isomorphisms in \textup{(S3)} identify the two
 parenthesized pull-push composites, hence give associativity and the
 dual coproduct coherence at height \(R\).  Clause \textup{(S0)} supplies
@@ -10899,7 +10938,9 @@ $$
 \xrightarrow{\ \simeq\ }
 \mathsf{Den}_{\Delta_5,E,\le R},
 $$
-compatibly in \(R\).  In the inverse limit this gives
+compatibly in \(R\), and the Koszul Mittag--Leffler exactness hypothesis
+of Proposition~\ref{prop:chiral-koszul-source-certificate-consequence}.
+In the inverse limit this gives
 $$
 b_X:C_X\xrightarrow{\ \simeq\ }
 \bar B_E^{\mathrm{ch}}(\mathcal F_X^{\mathrm{hyb}}),
@@ -10919,7 +10960,10 @@ source-side compact data.  Their finite residual is the vanishing of
 source has been built with all correspondences, quotient, and integration
 laws, \(\mathfrak o^{\Delta,\mathrm{ch}}_R\) and
 \(\mathfrak o^{C,\mathrm{tr}}_{R'R}\), the finite collision-coproduct and
-transition-continuity assertions, \(\mathfrak o^\Omega_R\), the split
+transition-continuity assertions, the Koszul
+\(R^1\varprojlim=0\) condition for the source coalgebras, completed
+bar/cobar systems, target truncations, and cones of \(b_{X,R}\) and
+\(\Theta_{\mathrm{Kos},R}\), \(\mathfrak o^\Omega_R\), the split
 cobar residual
 \[
 \mathfrak o^\Omega_R
@@ -11266,7 +11310,9 @@ $$
 as Gram-graded Lie superalgebras, and its Weyl--Kac--Borcherds
 denominator is \(64^{-1}\Delta_5(2Z)\).  If in addition the chiral
 Koszul source certificate of
-Definition~\ref{def:chiral-koszul-source-certificate} is supplied, then
+Definition~\ref{def:chiral-koszul-source-certificate} is supplied,
+including the Koszul Mittag--Leffler exactness hypothesis of
+Proposition~\ref{prop:chiral-koszul-source-certificate-consequence}, then
 $$
 \Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}.
 $$
@@ -11790,6 +11836,9 @@ parity dimensions in this window are
 \delta_{123} & 29&93 .
 \end{array}
 \]
+The parity entries use the imported Gritsenko--Nikulin/Kac parity
+convention; the target computation checks signed coefficients and
+presentation counts, not source parity bases.
 Consequently a compact source passes primitive recognition on
 \(W_{\le3}\) only after supplying the following finite certificate:
 parity-homogeneous representatives with the displayed dimensions; the
@@ -12039,7 +12088,10 @@ of Definition~\ref{def:chiral-koszul-source-certificate}, with
 \[
 \mathfrak O_{\mathrm{Kos},R}=0
 \]
-compatibly in \(R\), including
+compatibly in \(R\), together with the Koszul
+\(R^1\varprojlim=0\) condition for the source coalgebras, completed
+bar/cobar systems, target truncations, and cones of \(b_{X,R}\) and
+\(\Theta_{\mathrm{Kos},R}\), including
 \(\mathfrak O_{\mathrm{hyb},R}=0\) for the hybrid source.  Equivalently,
 construct the full finite local/wrapped correspondence atlas, the
 properness/admissibility residuals for its pull-push operations, the
@@ -12488,6 +12540,9 @@ OP/DT/PT scalar branch attached to the Behrend-weighted quotient
 integration of Proposition~\ref{prop:reduced-scalar-quotient-integration}.
 The physical protected-index identification is
 Conjecture~\ref{conj:protected-d-brane-index}.
+Imprimitive K3 curve classes require the separate imprimitive
+multiple-cover certificate; the displayed OP scalar-square theorem is the
+primitive-class branch used for the present square-root comparison.
 \end{theorem}
 
 \begin{proof}
@@ -12839,7 +12894,9 @@ imaginary simple roots, their parities, the Chevalley, real Serre and
 orthogonality relations, generation, full root-space parity dimensions,
 the completed Hopf pairing and the same closed radical quotient, a
 no-extra-relations theorem, and completed PBW compatibility in the
-finite-height inverse system.  Under these hypotheses the
+finite-height inverse system, including exact triangular
+completion/\(\lim^1\)-vanishing and Koszul Mittag--Leffler exactness for
+the chiral cobar comparison.  Under these hypotheses the
 Borcherds--Kac universal presentation gives the isomorphism with
 \(\mathfrak g_{\Delta_5}\); without them the determinant fixes only a
 Grothendieck class.

@@ -278,7 +278,7 @@ This avoids defining p_! and instead uses flag structures. The manuscript's term
 **Conditional healing:**
 Supply a finite computation:
 
-1. At R=R_min (lowest height with nontrivial primitives), compute Rad_R explicitly on a basis of primitive generators at low degrees (e.g., degrees α(1,0,0), α(0,1,0), α(0,0,1), and products).
+1. At the first saturated primitive-recognition window \(W_{\le3}\), compute \(\operatorname{Rad}_R\) explicitly on a basis of primitive generators at low degrees (e.g., degrees \(\alpha(1,0,0)\), \(\alpha(0,1,0)\), \(\alpha(0,0,1)\), and products).
 2. Verify [Rad_R, P_R] ⊆ Rad_R by checking bracket relations on this basis.
 3. Verify Δ_R(Rad_R) ⊆ (Rad_R ⊗ H_R) + (H_R ⊗ Rad_R) by inspecting the coproduct on basis elements.
 

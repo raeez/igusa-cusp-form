@@ -39,7 +39,7 @@ For K3 surfaces, Bayer-Macri prove Bridgeland stability and hence finitude of Ha
 **Consequence:** If semistable stacks at fixed height R fail to be finite-type over the base (or their restricted stacks under compactness cuts are not finite-type), then:
 - F_{σ,S}(R) may be infinite,
 - Γ_R^{HN} and Γ̂_R may not be finite,
-- The "finite Hall quotient" $\mathsf F_R\mathcal H_{\sigma,S}^{or}$ is not finite,
+- The finite charge-support Hall quotient $\mathsf F_R\mathcal H_{\sigma,S}^{or}$ is not geometrically finite by charge support alone,
 - The inverse limit does not proceed by a cofinal finite system; it becomes a dense filtering, and Mittag-Leffler fails.
 
 ---

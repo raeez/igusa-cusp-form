@@ -137,7 +137,7 @@ Primary anchors:
 
 Stable core already present:
 
-- `Theta_Pi(c)=T_{-Pi_X(c)}` is formal only after the coefficient dg
+- The finite normal-ordering lift \(\Theta_{\Pi,R}(c)=T_{-\Pi_X(c)}\) is formal only after the coefficient dg
   category exists;
 - finite fibres are inverse-limit data, not uncontrolled infinite
   products;

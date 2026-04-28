@@ -11,8 +11,8 @@ Obligation (6): realize chain-level normal ordering on compact Hall
 correspondences and kill the finite tests `(NO1)--(NO7)` where the
 mathematics permits it:
 
-- Picard normal-ordering lift for `Theta_Pi`;
-- negative-cyclic lift `Theta_Pi^-`;
+- Picard normal-ordering lift for the finite \(\Theta_{\Pi,R}\);
+- negative-cyclic lift \(\Theta_{\Pi,R}^{-}\);
 - finite-fibre HN topology;
 - product, coproduct, pairing, Hochschild, triple, Jacobi, Frobenius,
   cyclic trace, and Hopf-radical compatibility.
@@ -25,13 +25,13 @@ mathematics permits it:
    complexes, or HN transitions.
 2. The Hochschild equation is partly formal.  Once the finite coefficient
    dg category exists,
-   `Theta_Pi(c)=T_{-Pi_X(c)}` satisfies
-   `d_Hoch Theta_Pi = B_ch`.  Treating this as still open was too coarse.
+   \(\Theta_{\Pi,R}(c)=T_{-\Pi_X(c)}\) satisfies
+   \(d_{\mathrm{Hoch}}\Theta_{\Pi,R}=B_{\mathrm{ch},R}\).  Treating this as still open was too coarse.
 3. Finite fibres split from transition compatibility.  Finite support
    makes each fibre of `overline Pi_X` finite; the non-formal part is
    compatibility of transition maps, product, coproduct, and pairing.
 4. Negative-cyclic normal ordering is not a Hochschild consequence.  The
-   lift `(b+uB_C)Theta_Pi^- = B_ch^-` remains source-side cyclic data.
+   lift \((b+uB_C)\Theta_{\Pi,R}^{-}=B_{\mathrm{ch},R}^{-}\) remains source-side cyclic data.
 5. Frobenius kills the Lie-ideal half of the radical, but not the coideal
    half.  The coideal half is killed by finite Hopf adjointness plus
    non-degeneracy of the quotient tensor pairing.
@@ -55,9 +55,9 @@ mathematics permits it:
 - Added `lem:finite-picard-normal-ordering-lift`.
   It proves:
   `B_ch,R(c,c')=T_{B(c,c')}` is a normalized Hochschild 2-cocycle;
-  `d_Hoch Theta_Pi,R^phys=B_ch,R`;
+  \(d_{\mathrm{Hoch}}\Theta_{\Pi,R}^{\mathrm{phys}}=B_{\mathrm{ch},R}\);
   the extended cochain
-  `hat Theta_Pi,R(c,T)=T_{-\overline Pi_X(c,T)}=T_{T-Pi_X(c)}`
+  \(\widehat\Theta_{\Pi,R}(c,T)=T_{-\overline\Pi_X(c,T)}=T_{T-\Pi_X(c)}\)
   has zero Hochschild boundary on allowed finite channels; and degree
   truncation kills the finite-fibre square `(NO1)`.
 - Added `lem:finite-hopf-adjointness-radical-test`.

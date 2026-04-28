@@ -203,7 +203,7 @@ main-thread semantic merge, with all reports copied to
   transition-continuity defects; the full certificate now propagates
   `mathfrak o_Theta^top`.
 - `agent/igusa-fifth-recognition-pbw-20260428`: added the first saturated
-  primitive-recognition window `W_{<=3}`, its parity table, finite
+  primitive-recognition window \(W_{\le3}\), its parity table, finite
   kernel/radical/PBW requirements, and the next monic-product checks
   `m(2delta_1+delta_2+delta_3)=90`,
   `m(delta_1+2delta_2+delta_3)=90`,
