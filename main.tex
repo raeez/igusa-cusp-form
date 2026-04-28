@@ -2539,7 +2539,7 @@ beyond the cyclic-sector vanishing already established.
 \begin{remark}[Three additional routes]
 \label{rmk:bmu2-three-additional-routes}
 The vanishing \(\beta^{E,2}_{\mathcal C}=0\) admits three further routes,
-each independent of the K"unneth detection above and producing the
+each independent of the K\"unneth detection above and producing the
 same class.
 First, the hyperelliptic involution \([-1]\colon E\to E\) generates the
 inertia of the small-orbit quotient stack and acts trivially on
@@ -3242,8 +3242,8 @@ coboundary of any \emph{linear} \(1\)-cochain
 \(B(c,c')=L(c)+L(c')-L(c+c')\) for an additive \(L\), then setting
 \(c'=c\) and using \textup{(ii)} gives \(2\Pi_X(c)=2L(c)-L(2c)=0\),
 i.e.\ \(\Pi_X\equiv 0\), contradiction.  Trivialising \([B]\) requires the
-quadratic refinement \(\Pi_X\); the defect is a polarization
-bookkeeping class, not a separate Heisenberg extension datum.
+quadratic refinement \(\Pi_X\); the defect is a polarization-correction
+class, not a separate Heisenberg extension datum.
 \end{enumerate}
 \end{lemma}
 
@@ -3348,14 +3348,14 @@ construction of a discrete abelian group records group homology, and
 cannot be used to kill Stasheff coherences.  Chain-level strictness of
 the Hall product therefore remains part of the orientation/coherence
 hypotheses in Theorem~\ref{thm:ptvv-joyce-pi-descent}; what this lemma
-supplies is only the explicit quadratic polarization bookkeeping
+supplies is only the explicit quadratic polarization correction
 \(B=-\delta\Pi_X\) and the split degree monoid on which a later
 cocycle-corrected descent can act.
 \end{proof}
 
 \begin{remark}
 \label{rem:b-cocycle-status}
-The preceding lemma is a degree-bookkeeping statement.  It proves that
+The preceding lemma records the additive degree correction.  It proves that
 the Gram defect is the coboundary of the quadratic refinement
 \(\Pi_X\), and that the corrected degree monoid is split.  It does not
 strictify the Hall chain complex.  A chain-level Hall product still
@@ -4721,7 +4721,7 @@ primitive subspace
 $\widetilde P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X^{\mathrm{str}})$,
 the kernel of the reduced coproduct, on which the Hopf pairing
 $\langle\,\cdot\,,\,\cdot\,\rangle$ is non-degenerate
-(Theorem~\ref{thm:primitive-recognition}~(6)).  Non-degeneracy
+(Theorem~\ref{thm:primitive-recognition}~(iv)).  Non-degeneracy
 converts the Frobenius identity (F) from a target-degree statement
 into the strict relation that the bracket-target cocycle action of
 $B$ equals the pairing-target cocycle action of $B$, both equal to
@@ -4780,7 +4780,7 @@ cyclic refinement seen by the Hopf--Frobenius identity~(F).
 \label{lem:F-frobenius-from-hopf-nondegeneracy}
 Adopt hypotheses (P) and (O) of
 Theorem~\ref{thm:ptvv-joyce-pi-descent}, and grant
-hypothesis~(6) of
+hypothesis~(iv) of
 Theorem~\ref{thm:primitive-recognition}: the protected Hopf pairing
 \(\langle\,\cdot\,,\,\cdot\,\rangle\) on the protected primitive layer
 \(\widetilde P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X)\) is
@@ -4797,7 +4797,7 @@ z\in\widetilde P_{X,c_z},\quad c_x+c_y+c_z=0,
 holds at the chain-representative level for the protected Hall bracket
 and the protected Hopf pairing.  Hypothesis (F) of
 Theorem~\ref{thm:ptvv-joyce-pi-descent} is therefore implied by (P),
-(O) and Theorem~\ref{thm:primitive-recognition}~(6).
+(O) and Theorem~\ref{thm:primitive-recognition}~(iv).
 \end{lemma}
 
 \begin{proof}
@@ -4869,7 +4869,7 @@ defect of (F) at the chain level is represented by a Hochschild
 \mathrm{End}(\widetilde P_X))\) whose image under \(B\) is the
 graded-symmetric component of the cyclic representative of \(\tau\).
 Now non-degeneracy of \(\langle\,\cdot\,,\,\cdot\,\rangle\) on
-primitives (Theorem~\ref{thm:primitive-recognition}~(6)) promotes the
+primitives (Theorem~\ref{thm:primitive-recognition}~(iv)) promotes the
 target-degree statement of Step 2 from a relation modulo the radical
 of the Hopf pairing to a strict relation in
 \(\mathrm{End}(\widetilde P_X)\): if \(\delta_F\) annihilated all
@@ -4880,7 +4880,7 @@ class of \(\delta_F\) itself to vanish, not merely modulo coboundaries
 identity (F) holds without ambiguity, and the descent of Step 4 of
 the proof of Theorem~\ref{thm:ptvv-joyce-pi-descent} is unconditional
 on (F) once (P), (O) and
-Theorem~\ref{thm:primitive-recognition}~(6) are granted.
+Theorem~\ref{thm:primitive-recognition}~(iv) are granted.
 \qedhere
 \end{proof}
 
@@ -4995,7 +4995,7 @@ Specialise to homogeneous primitives \(x,y,z\in\widetilde P_X\) and
 expand the Hall bracket as the graded commutator
 \([x,y]=x\cdot y-(-1)^{|x|\cdot|y|}y\cdot x\) (the bracket on
 primitives in a connected graded Hopf algebra is the antisymmetrised
-product, by Theorem~\ref{thm:primitive-recognition}~(5)).  Then
+product, by Theorem~\ref{thm:primitive-recognition}~(iii)).  Then
 \begin{align*}
 \langle[x,y],z\rangle
 &=\tr_S\bigl((x\cdot y-(-1)^{|x|\cdot|y|}y\cdot x)\cdot z\bigr)\\
@@ -5031,7 +5031,7 @@ CY-\(3\) Serre functor of \(\mathcal A_X\), parallel to the derivation
 through the squaring isomorphism
 \(o_c^{\otimes 2}\simeq\det\mathrm{RHom}(\mathcal C,\mathcal C)\) of
 Definition~\ref{def:orientation-line} and the Hopf pairing of
-Theorem~\ref{thm:primitive-recognition}~(6).  Both derivations meet at
+Theorem~\ref{thm:primitive-recognition}~(iv).  Both derivations meet at
 \(\langle\,\cdot\,,\,\cdot\,\rangle=\tr_S(\,\cdot\,\cdot\,\cdot\,)\), the
 BBDJS \cite{BBDJS2015} cyclic upgrade of the PTVV
 \cite{PTVV2013} \((-1)\)-shifted symplectic form, and produce the same
@@ -5449,7 +5449,7 @@ so that the induced \(\Gamma_{\mathrm{gram}}\)-grading of
 is the conditional construction of this descent from (P), (O),
 \((\Theta)\), and (F); the chain-level graded Frobenius identity (F)
 is supplied by Lemma~\ref{lem:F-frobenius-from-hopf-nondegeneracy}
-from (P), (O), and item~(6) below.  Constructing \((\Theta)\) and (O)
+from (P), (O), and item~(iv) below.  Constructing \((\Theta)\) and (O)
 on the reduced compact protected sector of \(K3\times E\) is precisely
 the content of Open Problem~\ref{op:pi-descent-of-bracket} and
 Open Problem~\ref{op:orientation-monodromy-character}.
@@ -6455,8 +6455,8 @@ $$\Lambda(g,s)=-\Lambda(g,18-s),\qquad L(9,g)=0.$$
 Hence the possible pole of $\zeta(s-8)L(s,g)$ at $s=9$ is cancelled.
 At $s=10$ the residue is
 $$\operatorname*{Res}_{s=10}L_{\mathrm{spin}}(s,\Delta_{10}^{\theta})
-=\zeta(2)L(10,g)=\frac{\pi^2}{6}L(10,g).$$
-Moreover \(L(10,g)\ne0\).  Thus
+=\zeta(2)L(10,g)=\frac{\pi^2}{6}L(10,g),$$
+with \(L(10,g)\ne0\), so
 \(L_{\mathrm{spin}}(s,\Delta_{10}^{\theta})\) has a simple pole at
 \(s=10\) with non-zero residue.
 \end{proposition}
@@ -7916,6 +7916,21 @@ $$\Phi^{\mathrm{cmp}}_j\longleftrightarrow F_i$$
 and no physical row-map denominator theorem for any congruence
 row.  The separate Govindarajan CHL/WKB denominator theorem remains
 Theorem~\ref{thm:govindarajan-denominator-rows}.
+
+For \(X=K3\times E\) the protected one-particle index is theorem-level,
+the virtual \(K_0\)-determinant is \(\Delta_5\) in the theta
+normalization, and the same active half-coefficients are the visible
+signed root supermultiplicities of the Gritsenko--Nikulin denominator
+algebra \(\mathfrak g_{\Delta_5}\); the reduced scalar branch is
+\(-4096\,\Delta_5^{-2}\) by Oberdieck--Pixton.  The compact observable
+algebra realizing these on \(K3\times E\), with orientation character
+\(\epsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\), is the
+open recognition target.  The seven other Clery--Gritsenko
+diagonal-divisor rows extend the same separation: each row carries its
+automorphic product, and the levels
+\(\mathscr A_j,\mathscr D_j,\mathscr S_j,\mathscr Z_j,\mathscr H_j\) of
+physical-host certificate are filled only where the cited literature
+supplies them.
 
 \input{appendices/boundary_compatibility_conditions}
 
