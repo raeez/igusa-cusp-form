@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Exact lattice checks for the Delta_5 denominator construction."""
+"""Exact lattice checks for the Delta_5 denominator construction.
+
+This is a target-side lattice and normal-form check only; its pairings
+are Gram/Pfaffian lattice pairings, not compact Hall Hopf pairings.
+"""
 
 from __future__ import annotations
 
