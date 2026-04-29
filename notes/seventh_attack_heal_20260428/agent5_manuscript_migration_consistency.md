@@ -44,7 +44,8 @@
   - Lines 139–143 (abstract): $\overline\Pi_X(c,T)=\Pi_X(c)-T$ stated as additive.
   - Lines 4418–4443: Theorem `thm:raw-gram-descent-no-go` proves raw descent fails; requires normal-ordered extension.
   - Line 4442 proof: homomorphism explicitly stated.
-- **Status:** CLEAN. Normal ordering is theorem-level and central.
+- **Status:** CLEAN at the formal lattice level. Compact Hall descent
+  remains an open construction problem.
 
 ### S-8: Mukai–Gram Dictionary Corrected
 - **Evidence:**
@@ -122,8 +123,15 @@ were constructed, then [...]
 3. ✓ **Compact realization is open:** Lines 156–159: "formulates that compact Hall/factorization realization as an open recognition problem." CLEAR.
 
 **Problem:** Thesis (ii) could be clearer. The abstract does not say "the Gram descent is a new construction/theorem" in a headline way.
-**Demanded fix:** None explicitly stated in reconstitution plan for abstract. But the done-criteria (line 5) says "Normal-ordered descent is theorem-level and central," which is satisfied. The abstract does mention it, but could emphasize its novelty.
-**Healing:** Optional. If the abstract is considered complete, no change needed. If novelty-emphasis is desired, add a sentence after line 153: "The normal-ordered extension and its homomorphic map are proved here as central theorems; their role in converting quadratic Gram descent into additive lattice descent is new."
+**Demanded fix:** None explicitly stated in reconstitution plan for abstract.
+The formal normal-ordered lattice descent is theorem-level and central;
+compact Hall descent is not closed by this statement. The abstract does
+mention it, but could emphasize its novelty.
+**Healing:** Optional. If the abstract is considered complete, no change
+needed. If novelty-emphasis is desired, add a sentence after line 153:
+"The normal-ordered extension and its homomorphic map are proved here as
+central formal lattice theorems; their role in converting quadratic Gram
+descent into additive lattice descent is new."
 
 ---
 

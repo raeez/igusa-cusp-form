@@ -135,14 +135,15 @@ However, the abstract does *not* use the word "open" until line 156, and a speed
 1. ✓ CY3 Mukai-Gram dictionary (no "fourfold" or vague "Todd")
 2. ✓ Connected BE and finite E[N] descent separated
 3. ✓ Bott-periodicity removed from polarization proof
-4. ✓ Normal-ordered descent is theorem-level and central
+4. ✓ Formal normal-ordered lattice descent is theorem-level and central;
+   compact Hall descent remains open
 5. ✓ Raw descent no-go proven (Theorem 4.1)
 6. ✓ OP scalar stated as imported and orientation-forgetful (with caveat A6-5-06)
 7. ✓ Compact realization is a certificate, not a construction
 8. ✓ Terminology "Dirac–Igusa realization certificate" adopted
 9. ✓ Physical charge ($\Gamma_X^{\mathrm{phys}}$) and Gram ($\Gamma_{\mathrm{gram}}$) distinguished
 
-### Remaining Gaps (Mostly Exposition, Not Mathematical Error)
+### Remaining Gaps (Mathematical Construction And Exposition)
 1. **A6-5-06 (MEDIUM):** OP sign still risks implicit confusion with orientation source in reading order.
 2. **A6-5-07 (LOW-MED):** Gram non-additivity vs. physical additivity is stated but not foregrounded.
 3. **A6-5-08 (LOW):** Recognition target framing is conditional but could be clearer.

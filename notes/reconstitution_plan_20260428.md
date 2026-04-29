@@ -670,7 +670,9 @@ The reconstitution is done only when all of the following hold.
 3. \((n,l,m)\) is never treated as a microscopic Hall charge.
 4. \(\Gamma_X^{\mathrm{phys}}\), \(\Gamma_X\), and
    \(\Gamma_{\mathrm{gram}}\) are distinct and consistently named.
-5. Normal-ordered descent is theorem-level and central.
+5. Formal normal-ordered lattice descent is theorem-level and central;
+   compact Hall realization remains an explicit open construction
+   problem.
 6. Raw descent is ruled out by a precise no-go theorem.
 7. The scalar OP/DT square is stated as imported and
    orientation-forgetful.

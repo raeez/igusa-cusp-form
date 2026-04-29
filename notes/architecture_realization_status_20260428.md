@@ -17,8 +17,9 @@ this note.
    extension are separated:
    `Gamma_X^phys`, `Gamma_gram`, and
    `widehat Gamma_X=Gamma_X^phys oplus_B Gamma_gram`.
-4. The normal-ordered map
-   `overline Pi_X(c,T)=Pi_X(c)-T` is theorem-level and central.
+4. The formal normal-ordered lattice map
+   `overline Pi_X(c,T)=Pi_X(c)-T` is theorem-level and central; its
+   compact Hall realization remains an open construction problem.
 5. Raw Gram descent is ruled out by
    `thm:raw-gram-descent-no-go`.
 6. The chain-level descent notation is now
