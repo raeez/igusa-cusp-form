@@ -12958,7 +12958,717 @@ each \(W_\nu\).  The finite restriction is the construction visible in
 the window; the determinant is its signed trace.
 \end{proof}
 
-\begin{theorem}[Universal finite Hall--Dirac source on a root window]
+\begin{theorem}[Finite retained \(K3\times E\) Hall stacks]
+\label{thm:finite-geometric-k3xe-hall-dirac-source}
+Let \(X=S\times E\), where \(S\) is a smooth projective \(K3\) surface,
+and fix Liu's product stability condition \(\sigma_{s,t}\) on the
+Abramovich--Polishchuk heart in \(D^b\operatorname{Coh}(X)\).  Fix a
+finite HN height \(R\).  Let \(C_R\) be a finite set of full effective Liu
+classes, closed under every retained Hall sum, and let
+\[
+\ell_R:\Gamma_R^\Pi\longrightarrow C_R
+\]
+be a lift with \(\Pi_X(\ell_R(\gamma))=\gamma\) on the retained active
+root degrees.  For \(\widehat c=(c,T)\), with \(c\in C_R\), let
+\[
+\mathfrak M^{ss}_{R,c}:=
+\mathfrak M^{ss}_{\sigma_{s,t}}(X,c)_{\le R}
+\]
+be the derived Artin stack of \(\sigma_{s,t}\)-semistable perfect
+complexes of full Liu numerical class \(c\) and HN height \(\le R\).
+Assume this finite retained sector has fixed-class boundedness, scalar
+rigidification, finite residual inertia after the wrapped anchors below,
+BBDJS d-critical charts, reduced orientations, and compact-support
+six-functor admissibility for the extension and flag maps.  Then the
+following stacks and correspondences form an actual finite Hall source
+kernel on \(K3\times E\).
+
+Its tangent complex at \(A\) is
+\[
+T_A\mathfrak M^{ss}_{R,c}\simeq
+\operatorname{RHom}_X(A,A)[1],
+\]
+and the PTVV \(3\)-Calabi--Yau pairing gives a \((-1)\)-shifted
+symplectic form.  The reduced tangent complex is the cone
+\[
+\operatorname{RHom}_{\mathrm{red}}(A,A)
+:=
+\operatorname{Cone}\!\left(
+\operatorname{RHom}_X(A,A)
+\xrightarrow{(\operatorname{tr},\,\operatorname{cs})}
+R\Gamma(X,\mathcal O_X)\oplus H^2(S,\mathcal O_S)[-1]
+\right)[-1],
+\]
+where \(\operatorname{cs}\) is the K3 semiregularity cosection pulled back
+along \(p_S:X\to S\).  Let
+\[
+\mathfrak M^{\mathrm{sc}}_{R,c}
+\]
+be the scalar-rigidified truncation of the corresponding oriented
+d-critical stack, with BBDJS vanishing-cycle complex
+\(\Phi_{R,c}\) and reduced orientation line
+\[
+o_{R,c}:=\det\operatorname{Ext}^1_{\mathrm{red}}(A,A)^{-1}
+\quad\hbox{on Darboux charts}.
+\]
+The \(3\)-Calabi--Yau duality
+\(\operatorname{Ext}^2_{\mathrm{red}}(A,A)\simeq
+\operatorname{Ext}^1_{\mathrm{red}}(A,A)^\vee\) identifies
+\[
+o_{R,c}^{\otimes2}
+\simeq
+\det\operatorname{RHom}_{\mathrm{red}}(A,A).
+\]
+
+For projection-finite charge \(c\), define the actual local stack over
+closed configurations by
+\[
+\mathfrak M^{\mathrm{loc}}_{R,\widehat c,I}:=
+\left\{
+(A,\mathbf e)\in\mathfrak M^{\mathrm{sc}}_{R,c}\times E^I
+\ \middle|\
+p_E(\operatorname{Supp}A)\subset
+\bigcup_{i\in I}S\times\{e_i\}
+\right\}\times\{T\}.
+\]
+For wrapped charge \(c\), define the rigidified wrapped stack by
+\[
+\mathfrak M^{\mathrm{wr}}_{R,\widehat c}:=
+\left\{
+(A,\ell)\ \middle|\
+A\in\mathfrak M^{\mathrm{sc}}_{R,c},\
+\ell:\det Rp_{E,*}A\otimes\mathcal O_E(-\chi(A)\cdot0_E)
+\xrightarrow{\sim}\mathcal O_E
+\right\}\times\{T\}.
+\]
+The first construction remembers finite support over \(E\); the second
+fixes the translation anchor of a full-support wrapped object.  Put
+\[
+\mathfrak M^{\mathrm{geom}}_{R,\widehat c}
+:=
+\left(\coprod_I\mathfrak M^{\mathrm{loc}}_{R,\widehat c,I}\right)
+\sqcup
+\mathfrak M^{\mathrm{wr}}_{R,\widehat c},
+\]
+with the summand selected by the elliptic degree of \(c\).
+
+For \(\widehat c,\widehat c'\in\widehat\Gamma_R\), define
+\[
+\mathfrak E^{\mathrm{geom}}_{R,\widehat c,\widehat c'}
+\]
+to be the derived stack of exact triangles
+\[
+A\longrightarrow C\longrightarrow B\longrightarrow A[1]
+\]
+with
+\[
+A\in\mathfrak M^{\mathrm{geom}}_{R,\widehat c},\qquad
+B\in\mathfrak M^{\mathrm{geom}}_{R,\widehat c'},\qquad
+C\in\mathfrak M^{\mathrm{geom}}_{R,\widehat c\star\widehat c'}.
+\]
+The maps
+\[
+\mathfrak M^{\mathrm{geom}}_{R,\widehat c}
+\times
+\mathfrak M^{\mathrm{geom}}_{R,\widehat c'}
+\xleftarrow{\ p\ }
+\mathfrak E^{\mathrm{geom}}_{R,\widehat c,\widehat c'}
+\xrightarrow{\ q\ }
+\mathfrak M^{\mathrm{geom}}_{R,\widehat c\star\widehat c'}
+\]
+send a triangle to \((A,B)\) and \(C\).  The two-step flag stack
+\(\mathfrak F^{(2),\mathrm{geom}}_{R,\widehat c,\widehat c',\widehat c''}\)
+classifies filtrations with three associated graded factors.  All maps
+are finite type in the finite Liu-bounded sector, and the six-functor
+operation \(q_!\) is the exceptional compact-support pushforward.
+
+The finite geometric Hall object is
+\[
+\mathcal H^{\mathrm{geom}}_{R,\widehat c}:=
+H_c^\bullet\!\left(
+\mathfrak M^{\mathrm{geom}}_{R,\widehat c},
+\Phi_{R,c}\otimes o_{R,c}
+\right),
+\qquad
+\mathcal H^{\mathrm{geom}}_R:=
+\bigoplus_{\widehat c\in\widehat\Gamma_R}
+\mathcal H^{\mathrm{geom}}_{R,\widehat c}.
+\]
+Its product and coproduct are
+\[
+m_R=q_!\operatorname{TS}^{\mathrm{red}}p^*,
+\qquad
+\Delta_R=p_!(\operatorname{TS}^{\mathrm{red}})^{-1}q^*.
+\]
+The two-step flag stack identifies the two parenthesized products, hence
+\((\mathcal H^{\mathrm{geom}}_R,m_R,\Delta_R)\) is a finite Hall
+bialgebra.  The primitive part
+\[
+P_R^{\mathrm{geom}}:=
+\ker\bigl(\Delta_R-1\otimes\operatorname{id}
+-\operatorname{id}\otimes1\bigr)\cap\ker\epsilon_R
+\]
+has normal-ordered Gram descent
+\[
+P_R^{\Pi,\mathrm{geom}}:=
+\overline\Pi_{X,*}^{\Theta_R}P_R^{\mathrm{geom}},
+\]
+and its supercommutator is a finite
+\(\Gamma_R^\Pi\)-graded Hall Lie bracket.
+\end{theorem}
+
+\begin{proof}
+The PTVV theorem gives the \((-1)\)-shifted symplectic structure on the
+derived stack of perfect complexes on the Calabi--Yau threefold
+\(X\).  The trace and K3 semiregularity maps are additive in exact
+triangles, so the displayed cone is compatible with extension and flag
+stacks.  On Darboux charts, the reduced obstruction theory has tangent
+half \(\operatorname{Ext}^1_{\mathrm{red}}\) and cotangent half
+\(\operatorname{Ext}^2_{\mathrm{red}}\); Serre duality identifies these
+halves as duals and gives the displayed square root of the determinant
+line.
+
+The local stacks are closed incidence substacks over \(E^I\), hence
+finite type in the fixed HN sector.  The wrapped stack is the fibre of
+the determinant anchor over \(0_E\), with a chosen trivialization of the
+anchor line; this removes the free translation direction and leaves only
+finite torsion stabilizers.  The extension and flag stacks are the usual
+derived stacks of exact triangles and filtered objects in
+\(\operatorname{Perf}(X)\), intersected with the finite charge window.
+Their tangent complexes are computed by the filtered endomorphism
+complexes, and the cosection equation follows from additivity of trace
+and semiregularity on filtrations.
+
+The BBDJS Thom--Sebastiani isomorphism transports
+\(\Phi_{R,c}\boxtimes\Phi_{R,c'}\) to the vanishing-cycle complex on the
+extension stack with the reduced orientation factors included.  Therefore
+\(q_!\operatorname{TS}^{\mathrm{red}}p^*\) and
+\(p_!(\operatorname{TS}^{\mathrm{red}})^{-1}q^*\) are defined in the
+compact-support six-functor theory.  The two parenthesized products are
+pull-pushes from the same two-step flag stack, so associativity follows
+from base change and Thom--Sebastiani coherence.  Coassociativity is the
+dual statement.  The supercommutator of primitives is primitive by the
+bialgebra identity, and normal-ordering additivity of
+\(\overline\Pi_X\) gives the displayed Gram grading.
+\end{proof}
+
+\begin{proposition}[Type-II rank-one normal self-Ext criterion]
+\label{prop:type-ii-wall-reduced-normal-self-ext}
+Let \(\delta\in\{\delta_1,\delta_2,\delta_3\}\).  On a generic
+type-II wall of the finite geometric source, let
+\[
+C=A\oplus B
+\]
+be the polystable object with stable factors on the two adjacent
+chambers and with reduced normal Ext groups
+\[
+L_\delta:=\operatorname{Ext}^1_{\mathrm{red}}(B,A),\qquad
+L_\delta^\vee:=\operatorname{Ext}^1_{\mathrm{red}}(A,B),
+\qquad
+\dim L_\delta=1.
+\]
+Assume the remaining off-diagonal reduced Ext groups vanish in degree
+\(1\) at the generic wall point.  Then the normal slice to the wall in
+\(\mathfrak M^{\mathrm{geom}}_{R,\widehat c_\delta}\) is the critical
+chart
+\[
+\operatorname{Crit}(uv)\subset L_\delta\oplus L_\delta^\vee ,
+\]
+with \(u\) the extension coordinate and \(v\) the coextension coordinate.
+After the reduced quotient and the wall orientation convention, the
+normal Dirac block is
+\[
+D_\delta(u)=
+\begin{pmatrix}
+0&u\\
+-u&0
+\end{pmatrix},
+\qquad
+K^{\mathrm{cross}}_\delta=[\C\xrightarrow{u}\C],
+\qquad
+\operatorname{pf}_\delta=u .
+\]
+The wall reflection interchanges the two chambers and sends
+\[
+u\longmapsto -u,\qquad
+\operatorname{pf}_\delta\longmapsto-\operatorname{pf}_\delta .
+\]
+Thus the rank-one type-II Pfaffian crossing of
+Definition~\ref{def:rank-one-type-ii-pfaffian-crossing} is obtained
+from the reduced normal self-Ext complex at every generic type-II wall
+with the displayed one-dimensional normal splitting.
+\end{proposition}
+
+\begin{proof}
+The reduced self-Ext complex of \(C=A\oplus B\) splits into diagonal and
+off-diagonal blocks:
+\[
+\operatorname{RHom}_{\mathrm{red}}(C,C)
+\simeq
+\operatorname{RHom}_{\mathrm{red}}(A,A)\oplus
+\operatorname{RHom}_{\mathrm{red}}(B,B)\oplus
+\operatorname{RHom}_{\mathrm{red}}(A,B)\oplus
+\operatorname{RHom}_{\mathrm{red}}(B,A).
+\]
+The diagonal summands are tangent to the wall stratum.  The normal
+deformation directions are
+\(L_\delta\oplus L_\delta^\vee\).  The \(3\)-Calabi--Yau pairing
+identifies the two factors as duals and the Kuranishi potential has
+quadratic term \(uv\); higher terms have order at least three and do not
+alter the rank-one Pfaffian normal form at the generic crossing.  The
+linearized odd operator in the normal direction is therefore the skew
+matrix \(D_\delta(u)\).  Its Pfaffian is \(u\).  Crossing the wall swaps
+extension and coextension chambers; with the chosen orientation of
+\(L_\delta\), this sends the oriented coordinate to \(-u\).  The sign
+calculation is exactly the local sign used in
+Proposition~\ref{prop:rank-one-crossing-o2-sign}.
+\end{proof}
+
+\begin{theorem}[Global quotient orientation descent]
+\label{prop:geometric-quotient-orientation-en-characters}
+Fix a cofinal finite HN subsystem.  For every finite stage \(R\), let
+\(\mathsf{Str}^{or}_R\) be the finite set of object, extension, mixed,
+wrapped, and two-step flag strata entering the geometric Hall source.
+For \(S\in\mathsf{Str}^{or}_R\), let \(G=E[N]\) be a finite stabilizer on
+a connected stabilizer component.  The quotient orientation descends on
+the finite stage if the following classes vanish with compatible
+null-trivializations:
+\[
+\alpha^{\mathrm{red}}_{R,S}\in H^2(S;\mathbb F_2),
+\qquad
+\alpha^{E,\mathrm{free}}_{R,S}=a_1u_1+a_2u_2\in H^2(BE;\mathbb F_2),
+\]
+\[
+\widetilde\beta^{E,N}_{R,S}\in H^2_G(S;\mathbb F_2),
+\qquad
+\lambda^{E,N}_{R,S}\in H^1_G(S;\mathbb F_2).
+\]
+Here
+\[
+E_2^{p,q}=H^p(BG;H^q(S;\mathbb F_2))
+\Rightarrow H^{p+q}_G(S;\mathbb F_2)
+\]
+is the Borel spectral sequence.  The point-stabilizer edge class in
+\(H^2(BG;\mathbb F_2)\) is used only after the ordinary term
+\(E_\infty^{0,2}\), the mixed term \(E_\infty^{1,1}\), the stabilizer
+action on \(H^\bullet(S;\mathbb F_2)\), and all total-degree-two
+differentials have been killed.
+
+The edge calculation is:
+\[
+N\ \mathrm{odd}\quad\Longrightarrow\quad
+H^{>0}(BE[N];\mathbb F_2)=0,
+\]
+\[
+N=2:\quad
+\beta=b_{20}x_1^2+b_{11}x_1x_2+b_{02}x_2^2,\qquad
+(b_{20},b_{11},b_{02})=(r_1,r_1+r_2+r_3,r_2),
+\]
+so degree-two vanishing is equivalent to
+\[
+r_1=r_2=r_3=0.
+\]
+If \(2^a\parallel N\), \(a\ge2\), then
+\[
+H^2(B(\mathbb Z/2^a)^2;\mathbb F_2)
+=\mathbb F_2\langle y_1,x_1x_2,y_2\rangle
+\]
+and
+\[
+\beta=A_1^{(N)}y_1+A_{12}^{(N)}x_1x_2+A_2^{(N)}y_2;
+\]
+the coefficient \(A_{12}^{(N)}\) is checked on the full rank-two
+two-primary stabilizer.  After \(\widetilde\beta^{E,N}_{R,S}=0\), the
+linearizations form an \(H^1_G(S;\mathbb F_2)\)-torsor, and the quotient
+orientation chooses the zero character
+\[
+\lambda^{E,N}_{R,S}=0.
+\]
+The null-trivializations are required to agree on overlaps, on Hall
+correspondence pullbacks, on two-step flag stacks, and under successor
+maps \(R'\to R\).  Then the finite-stage quotient orientation lines glue
+to a quotient orientation system
+\[
+\mathfrak Q^{or}_R
+\]
+and a compatible cofinal family gives the strong reduced orientation
+datum \((O1)\) on the HN-completed compact/wrapped Hall sector.
+
+In the geometric source above, the stabilizer action on a self-Ext
+complex is by conjugation:
+\[
+x\longmapsto \phi_g\circ t_g^*x\circ\phi_g^{-1}.
+\]
+Thus, after the Borel class itself has been killed, the determinant
+character of the square-root line is trivial on the conjugation part; no
+extra finite \(H^1\)-character is introduced by the Ext determinant.
+\end{theorem}
+
+\begin{proof}
+The equivariant square-root gerbe of the reduced determinant complex is a
+class in \(H^2_G(S;\mathbb F_2)\).  The Borel spectral sequence filters
+this class by ordinary, mixed, and point-stabilizer pieces.  Vanishing of
+\(\alpha^{\mathrm{red}}\), \(\alpha^{E,\mathrm{free}}\), the mixed
+Borel term, and the total-degree-two differentials identifies the
+remaining edge with a class in \(H^2(BG;\mathbb F_2)\).  The displayed
+cohomology calculations for odd \(N\), \(N=2\), and \(2^a\parallel N\)
+are the standard mod-two group cohomology of \(E[N]\) and its
+two-primary subgroup.  Vanishing of this edge class gives an equivariant
+square root.  The possible linearizations of that square root form an
+\(H^1_G(S;\mathbb F_2)\)-torsor; choosing the zero element gives
+\(\lambda^{E,N}=0\).
+
+The overlap, correspondence, flag, and transition conditions say exactly
+that these local equivariant square roots form a cocycle in the finite
+Cech--Borel total complex.  Since the total degree-one defect vanishes,
+the local lines glue.  Thom--Sebastiani is functorial on extension and
+flag stacks, so the glued quotient orientation is multiplicative for the
+Hall product and compatible with the HN transition maps.  Finally, on
+self-Ext determinant factors a stabilizer acts by conjugation, and
+conjugation has determinant \(1\); the trace and semiregularity summands
+are trivial representations.  Hence the determinant character contributes
+no further \(H^1\)-term after the Borel gerbe has been null-trivialized.
+\end{proof}
+
+\begin{proposition}[Geometric hybrid local/wrapped/mixed atlas]
+\label{prop:geometric-hybrid-local-wrapped-mixed-atlas}
+The finite geometric stacks of
+Theorem~\ref{thm:finite-geometric-k3xe-hall-dirac-source} define a
+hybrid correspondence functor
+\[
+\mathcal B_{R}^{E,\mathrm{geom}}:
+\mathsf{Corr}^{E,\mathrm{hyb}}_{R,\mathrm{geom}}
+\longrightarrow\mathrm{Ch}_{\C}.
+\]
+Its objects are the closed-configuration local stacks
+\(\mathfrak M^{\mathrm{loc}}_{R,\widehat c,I}\) and the anchored wrapped
+stacks \(\mathfrak M^{\mathrm{wr}}_{R,\widehat c}\).  Its generating
+arrows are the exact-triangle stacks
+\[
+\mathfrak E^{\mathrm{loc}}_{\alpha,\beta,R},\qquad
+\mathfrak E^{\mathrm{mix}}_{\alpha_-;\eta;\beta_+,R},\qquad
+\mathfrak E^{\mathrm{wr}}_{\eta_1,\eta_2,R},
+\]
+formed before quotienting by \(E\).  For a generator
+\[
+e=(Y\xleftarrow p\mathfrak E_e\xrightarrow q Z)
+\]
+the operation is
+\[
+\mathcal B_{R}^{E,\mathrm{geom}}(e)
+=q_!\operatorname{TS}^{\mathrm{red}}_{e}p^* .
+\]
+The eight two-step words
+\[
+\mathrm{LLL},\mathrm{LLW},\mathrm{LWL},\mathrm{WLL},
+\mathrm{LWW},\mathrm{WLW},\mathrm{WWL},\mathrm{WWW}
+\]
+are represented by the corresponding geometric flag stacks of filtered
+objects.  These flag stacks identify the two pull-push composites, so
+the local, mixed, and wrapped products are associative at height \(R\).
+The quotient-after-correspondence functor
+\[
+Q_{E,R}:\mathcal B_{R}^{E,\mathrm{geom}}
+\longrightarrow
+\mathcal B_{R}^{\mathrm{red},\mathrm{geom}}
+\]
+is obtained by applying \(E\)-equivariant compactly supported
+vanishing-cycle chains and the orientation descent of
+Theorem~\ref{prop:geometric-quotient-orientation-en-characters}.
+\end{proposition}
+
+\begin{proof}
+The local closed-configuration stacks are closed substacks of finite-type
+semistable moduli over powers of \(E\).  The wrapped stacks are fibres of
+the determinant-anchor map.  The exact-triangle and filtered-object
+stacks are finite type because all three input, intermediate, and output
+charges lie in the finite HN window.  Thus \(p^*\) and \(q_!\) are defined
+in the constructible six-functor formalism, with compact support carried
+by the exceptional pushforward.  Thom--Sebastiani applies to the
+d-critical functions on the extension charts.  The two parenthesizations
+of a triple product are the two maps from the same geometric flag stack,
+and base change identifies their pull-push maps.  Quotienting after the
+correspondence preserves these equalities because the orientation gerbes
+and finite stabilizer characters vanish by
+Theorem~\ref{prop:geometric-quotient-orientation-en-characters}.
+\end{proof}
+
+\begin{proposition}[Source chiral Koszul coalgebra from the geometric atlas]
+\label{prop:geometric-source-chiral-koszul-coalgebra}
+Let
+\[
+\mathcal F^{\mathrm{geom}}_{X,\sigma,S,\le R}:=
+Q_{E,R}\mathcal B_{R}^{E,\mathrm{geom}}
+\]
+be the reduced geometric hybrid factorization algebra on \(E\), placed
+in the Beilinson--Drinfeld/Francis--Gaitsgory conilpotent completed
+domain.  Its augmentation is the projection to the vacuum charge.  Define
+\[
+C^{\mathrm{geom}}_{X,R}:=
+\bar B_E^{\mathrm{ch}}
+\bigl(\mathcal F^{\mathrm{geom}}_{X,\sigma,S,\le R}\bigr).
+\]
+Let
+\[
+\overline{\mathcal F}^{\mathrm{geom}}_{X,R}
+:=\ker(\varepsilon^{\mathrm{hyb}}_{X,R})
+\]
+be the augmentation ideal.  If \(N_R\) is the maximal length of a
+non-vacuum word of total HN height \(\le R\), then
+\[
+C^{\mathrm{geom}}_{X,R}
+=
+\C\mathbf 1\oplus
+\bigoplus_{1\le p\le N_R}
+\bar B^{\mathrm{ch},p}_E
+(\overline{\mathcal F}^{\mathrm{geom}}_{X,R}).
+\]
+The bar-length filtration is
+\[
+F^{\mathrm{co}}_{R,p}C^{\mathrm{geom}}_{X,R}
+=
+\C\mathbf 1\oplus
+\bigoplus_{1\le j\le p}
+\bar B^{\mathrm{ch},j}_E
+(\overline{\mathcal F}^{\mathrm{geom}}_{X,R}),
+\]
+and the reduced coproduct satisfies
+\[
+(\overline\Delta^{\mathrm{bar}}_R)^{N_R+1}=0.
+\]
+Its collision coproduct is the cut map over Ran collision strata:
+\[
+\Delta^{\mathrm{ch}}[x_1|\cdots|x_k]
+=
+\mathbf1\otimes[x_1|\cdots|x_k]
++[x_1|\cdots|x_k]\otimes\mathbf1
++\sum_{i=1}^{k-1}
+[x_1|\cdots|x_i]\otimes[x_{i+1}|\cdots|x_k],
+\]
+with the usual Koszul signs.  Each cut is represented by the finite
+collision/flag pull-push map in
+\(\mathsf{Corr}^{E,\mathrm{hyb}}_{R,\mathrm{geom}}\).  The chiral cobar
+counit gives a source-internal
+quasi-isomorphism
+\[
+\varepsilon^{\mathrm{geom}}_{R}:
+\Omega_E^{\mathrm{ch}}C^{\mathrm{geom}}_{X,R}
+\xrightarrow{\ \simeq\ }
+\mathcal F^{\mathrm{geom}}_{X,\sigma,S,\le R}.
+\]
+This is the Francis--Gaitsgory chiral Koszul equivalence applied to the
+geometric source; no denominator-algebra presentation is used in the
+definition or proof of \(\varepsilon^{\mathrm{geom}}_{R}\).
+
+If a source-to-target quasi-isomorphism
+\[
+\vartheta_R:
+\mathcal F^{\mathrm{geom}}_{X,\sigma,S,\le R}
+\xrightarrow{\ \simeq\ }
+\mathsf{Den}_{\Delta_5,E,\le R}
+\]
+is constructed from the geometric primitive representatives, Hall
+products, coproducts, pairings, and transition maps, then the finite
+Koszul comparison is the composite
+\[
+\Theta_{\mathrm{Kos},R}
+=
+\vartheta_R\circ\varepsilon^{\mathrm{geom}}_{R}.
+\]
+\end{proposition}
+
+\begin{proof}
+The HN window is finite, and every non-vacuum surviving color has
+positive HN height.  Hence a nonzero bar word of total height \(\le R\)
+has length at most \(N_R\).  The reduced coproduct lowers bar length on
+each branch, so the \((N_R+1)\)-fold reduced coproduct vanishes.
+Coassociativity is the equality of the two iterated cut maps on the
+finite collision flag stack; the four-input pentagon supplies the higher
+coherence, and the vacuum collision flags give the counit.  The
+Francis--Gaitsgory theorem applies in the stated conilpotent completed
+domain and gives the source cobar counit quasi-isomorphism.  The map
+\(\vartheta_R\), when present, is a separate geometric comparison; it is
+not defined by the target bar--cobar counit or by the Borcherds--Kac
+presentation.
+\end{proof}
+
+\begin{proposition}[Primitive matrices from the compact Hall source]
+\label{prop:geometric-primitive-matrix-computation}
+Let
+\[
+P^{\Pi,\mathrm{geom}}_R=
+H^0\Prim_{\mathrm{prot}}
+\bigl(\overline\Pi_{X,*}^{\Theta_R}
+\mathcal F^{\mathrm{geom}}_{X,\sigma,S,\le R}\bigr).
+\]
+For every \(\gamma\in\Gamma_R^\Pi\), choose a homogeneous
+vanishing-cycle Borel--Moore basis
+\[
+\mathcal E_{\gamma,\bar p}
+=\{e_{\gamma,\bar p,a}\}_a
+\subset P^{\Pi,\mathrm{geom}}_{R,\gamma,\bar p}
+\]
+represented by oriented irreducible critical cycles or IC summands of
+\(\mathfrak M^{\mathrm{geom}}_{R,\widehat c}\) with
+\(\overline\Pi_X(\widehat c)=\gamma\).  Write
+\[
+P_\gamma:=\bigoplus_{\bar p}
+P^{\Pi,\mathrm{geom}}_{R,\gamma,\bar p}.
+\]
+The Hall product matrices are
+the compact-support integrals
+\[
+e_{\alpha,a}*e_{\beta,b}
+=
+\sum_c
+M^{\alpha+\beta,c}_{\alpha,a;\beta,b}\,e_{\alpha+\beta,c},
+\]
+\[
+M^{\alpha+\beta,c}_{\alpha,a;\beta,b}
+=
+\int_{\mathfrak E^{\mathrm{geom}}_{\alpha,\beta;\alpha+\beta}}
+q^!(e_{\alpha+\beta,c}^{\vee})\cap
+\operatorname{TS}^{\mathrm{red}}\bigl(p^*(e_{\alpha,a}\boxtimes
+e_{\beta,b})\bigr).
+\]
+Write \(M_{\alpha,\beta}:P_\alpha\otimes P_\beta\to P_{\alpha+\beta}\)
+for this matrix and let \(\tau\) be the ordinary flip.  On homogeneous
+tensors the primitive bracket matrix is
+\[
+B_{\alpha,\beta}(x\otimes y)
+=
+M_{\alpha,\beta}(x\otimes y)
+-(-1)^{|x||y|}M_{\beta,\alpha}\tau(x\otimes y).
+\]
+The coproduct matrices are computed from the source splitting
+correspondences:
+\[
+\Delta(e_{\rho,d})
+=
+\sum_{\mu+\nu=\rho}
+\sum_{a,b}
+D^{\mu,a;\nu,b}_{\rho,d}\,
+e_{\mu,a}\otimes e_{\nu,b},
+\]
+\[
+D^{\mu,a;\nu,b}_{\rho,d}
+=
+\int_{\mathfrak C^{\mathrm{geom}}_{\rho;\mu,\nu}}
+(e_{\mu,a}^{\vee}\boxtimes e_{\nu,b}^{\vee})\cap
+\operatorname{TS}^{\mathrm{red}}\bigl(q^*(e_{\rho,d})\bigr),
+\]
+where \(\mathfrak C^{\mathrm{geom}}_{\rho;\mu,\nu}\) is the compact
+geometric coproduct correspondence dual to the extension stack.
+Let
+\[
+\mathfrak P^{\mathrm{geom}}_{\gamma,-\gamma;0}
+\]
+be the positive-negative pairing correspondence with output the vacuum
+charge, and let \(\operatorname{tr}_0\) be the compact-support trace on
+the vacuum summand.  The Hopf pairing matrix is
+\[
+G_{\gamma,ab}
+=
+\operatorname{tr}_0\!\left(
+q_!\operatorname{TS}^{\mathrm{red}}p^*
+(e_{\gamma,a}\boxtimes e_{-\gamma,b})
+\right),
+\]
+and, in each parity block, the finite radical is
+\[
+K_{\gamma,\bar p}
+:=\ker G_{\gamma,\bar p}\cap\ker G_{-\gamma,\bar p}^{t}.
+\]
+Choose splittings
+\[
+P^{\Pi,\mathrm{geom}}_{R,\gamma,\bar p}
+=K_{\gamma,\bar p}\oplus L_{\gamma,\bar p},
+\qquad
+Q_{\gamma,\bar p}=[\,0\ \ I\,]:
+P^{\Pi,\mathrm{geom}}_{R,\gamma,\bar p}\twoheadrightarrow
+L_{\gamma,\bar p}.
+\]
+Put \(K_\gamma=\bigoplus_{\bar p}K_{\gamma,\bar p}\),
+\(L_\gamma=\bigoplus_{\bar p}L_{\gamma,\bar p}\), and
+\(Q_\gamma=\bigoplus_{\bar p}Q_{\gamma,\bar p}\).  The quotient
+bracket and coproduct are the source matrices
+\[
+[\,\bar x,\bar y\,]_{\mathrm{red}}
+=Q_{\alpha+\beta}B_{\alpha,\beta}(x\otimes y),
+\qquad
+\Delta_{\mathrm{red}}(\bar z)
+=(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}(z),
+\]
+and they are independent of the lifts because
+\[
+Q_{\alpha+\beta}B_{\alpha,\beta}
+\bigl(P_\alpha\otimes K_\beta\bigr)=0,\qquad
+Q_{\alpha+\beta}B_{\alpha,\beta}
+\bigl(K_\alpha\otimes P_\beta\bigr)=0,
+\]
+\[
+(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}K_\rho=0.
+\]
+Product, coproduct, and pairing are adjoint in the source:
+\[
+M_{\alpha,\beta}^{t}G_{\alpha+\beta}
+=
+(G_\alpha\otimes G_\beta)D_{\alpha+\beta}^{\alpha,\beta}.
+\]
+The reduced primitive block is
+\[
+P^{\Pi,\mathrm{red,geom}}_{R,\gamma}
+=
+L_\gamma
+\simeq
+P^{\Pi,\mathrm{geom}}_{R,\gamma}/K_\gamma .
+\]
+The PBW filtration on
+\[
+U(P^{\Pi,\mathrm{red,geom}}_R)
+\]
+is tensor length:
+\[
+F^d_{\mathrm{PBW}}U(P^{\Pi,\mathrm{red,geom}}_R)
+=
+\operatorname{im}\left(
+\bigoplus_{0\le k\le d}
+(P^{\Pi,\mathrm{red,geom}}_R)^{\otimes k}
+\longrightarrow U(P^{\Pi,\mathrm{red,geom}}_R)\right).
+\]
+Its associated graded is the super-symmetric algebra on the reduced
+primitive blocks:
+\[
+\operatorname{gr}_{\mathrm{PBW}}
+U(P^{\Pi,\mathrm{red,geom}}_R)
+\simeq
+\operatorname{Sym}\bigl(P^{\Pi,\mathrm{red,geom}}_{R,\bar0}\bigr)
+\otimes
+\Lambda\bigl(P^{\Pi,\mathrm{red,geom}}_{R,\bar1}\bigr).
+\]
+Thus primitive representatives, pairing, radical, PBW filtration, and
+structure constants are computed from the compact \(K3\times E\) Hall
+correspondences themselves.
+\end{proposition}
+
+\begin{proof}
+The chosen basis lies in compactly supported vanishing-cycle
+Borel--Moore homology of the geometric moduli stacks.  The bracket is
+the supercommutator of the Hall product, and the Hall product is the
+pull-push along \(\mathfrak E^{\mathrm{geom}}\); pairing with the dual
+basis gives the displayed \(M\)-matrix.  The coproduct matrix is the
+same construction on the dual flag correspondence.  Verdier duality and
+the orientation line give the Hopf pairing integral, and base change on
+the product-pairing square gives the displayed adjunction identity.
+Hence the two-sided Hopf radical is a Lie ideal and a coideal; the three
+vanishing identities are exactly this statement after projection by
+\(Q\).  Quotienting by the kernel gives the reduced primitive blocks and
+well-defined source bracket and coproduct matrices.  PBW is the ordinary
+PBW theorem for the resulting finite-dimensional Lie superalgebra over
+\(\C\), with parity inherited from the vanishing-cycle grading.
+\end{proof}
+
+\begin{theorem}[Universal finite Dirac--Igusa normal form on a root window]
 \label{thm:universal-finite-hall-dirac-source-window}
 Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.
 Put
@@ -13010,7 +13720,7 @@ bialgebra, and
 \]
 The same construction applied to \(\mathfrak n^-_W\) gives
 \(\mathcal H_W^-\).  Together with the Cartan and the pairing above,
-these two halves form the finite Hall source primitive double \(P_W\).
+these two halves form the finite algebraic primitive double \(P_W\).
 
 Choose a homogeneous PBW basis \(\mathcal B_W\) of \(\mathcal H_W^+\).
 For \(a,b,c\in\mathcal B_W\), write
@@ -13018,7 +13728,7 @@ For \(a,b,c\in\mathcal B_W\), write
 a\cdot_W b=\sum_c m_{ab}^{c}c,\qquad
 \Delta_W(c)=\sum_{a,b}d^{ab}_{c}\,a\otimes b .
 \]
-The finite Hall atlas \(\mathfrak S_W\) is the \(\C\)-linear finite
+The finite algebraic atlas \(\mathfrak S_W\) is the \(\C\)-linear finite
 correspondence atlas with one oriented point \(M_a=\operatorname{Spec}\C\)
 for each \(a\in\mathcal B_W\), coefficient sheaf \(\Phi_a=\C_{M_a}\),
 orientation line \(o_a=\C\), and product and coproduct correspondences
@@ -13084,7 +13794,7 @@ the local Weyl transports satisfy
 and extend to the type-II Weyl group by
 Proposition~\ref{prop:local-weyl-transport-rank-one-crossings}.
 
-The finite hybrid wrapped source is the following colored factorization
+The finite colored normal form is the following factorization
 object over \(E\).  A positive degree
 \(\beta=\alpha(n,l,m)\) has local color when \(m=0\) and wrapped color
 when \(m>0\).  Local colors are placed on ordinary finite configurations
@@ -13152,7 +13862,7 @@ the involution \(u_i\mapsto-u_i\) gives the sign \(-1\).  The Weyl
 transport assertion is then exactly
 Proposition~\ref{prop:local-weyl-transport-rank-one-crossings}.
 
-The hybrid object is closed under the four displayed color products
+The colored normal form is closed under the four displayed color products
 because the third Gram coordinate is additive under
 \(\overline\Pi_X\).  Hence the trace exponent of a product is the sum of
 the trace exponents, and \(I_W^{\mathrm{prot}}\) is multiplicative on
@@ -13162,11 +13872,11 @@ the identity on the finite primitive presentation and carries the
 Borcherds--Kac relations and the invariant-pairing radical to the same
 relations on the denominator current algebra; hence it is a
 quasi-isomorphism.  Primitive recognition is therefore the identity
-identification of the constructed finite source primitive quotient with
-the Gritsenko--Nikulin window.
+identification of the algebraic normal-form quotient with the
+Gritsenko--Nikulin window.
 \end{proof}
 
-\begin{proposition}[\(K3\times E\)-labelled finite Hall atlas]
+\begin{proposition}[Central normal-ordering point normal form]
 \label{prop:k3xe-labelled-finite-hall-atlas}
 Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.
 For every \(\beta\in W\), use the multiplicative normal-ordering lift
@@ -13185,9 +13895,9 @@ word \(a=v_{\beta_1}\cdots v_{\beta_k}\in\mathcal B_W\), set
 =(0,-\deg a)
 \in\widehat\Gamma_X .
 \]
-Then the universal source of
+Then the universal normal form of
 Theorem~\ref{thm:universal-finite-hall-dirac-source-window} is realized
-by the following finite \(K3\times E\)-labelled Hall atlas.  For each
+by the following finite central-label point atlas.  For each
 \(\widehat c\in\widehat\Gamma_X\), define
 \[
 \mathfrak M_{W,\widehat c}
@@ -13230,9 +13940,13 @@ and the pull-push product and coproduct are exactly the matrices
 a\otimes b\longmapsto\sum_c m_{ab}^{c}c,\qquad
 c\longmapsto\sum_{a,b}d^{ab}_{c}\,a\otimes b .
 \]
-Thus the finite point-stack atlas realizes the finite Hall kernel
+Thus the finite point atlas realizes the algebraic normal form
 \(\mathfrak S_W\), its primitive bracket, and the normal-ordered
-charge map \(\overline\Pi_X\) on \(K3\times E\) charge labels.
+central charge map \(\overline\Pi_X\).  A geometric \(K3\times E\)
+realization is a morphism from the retained Hall stacks of
+Theorem~\ref{thm:finite-geometric-k3xe-hall-dirac-source} to this normal
+form, preserving products, coproducts, orientations, Pfaffian blocks,
+bar coalgebras, pairings, and primitive matrices.
 \end{proposition}
 
 \begin{proof}
@@ -13258,17 +13972,31 @@ give the product matrix.  The coproduct is identical with the coefficients
 \(d^{ab}_{c}\).  The two-step flag identities are matrix associativity
 and coassociativity from
 Theorem~\ref{thm:universal-finite-hall-dirac-source-window}; therefore
-the point-stack atlas realizes the same finite Hall bialgebra and
-primitive supercommutator, now labelled by lifted \(K3\times E\) charges.
+the point atlas realizes the same finite algebraic bialgebra and
+primitive supercommutator with central normal-ordering labels.
 \end{proof}
 
-\begin{theorem}[Cofinal compact Dirac--Igusa source construction]
+\begin{theorem}[Compact Dirac--Igusa source from geometric finite stages]
 \label{thm:cofinal-compact-dirac-igusa-source-construction}
 Fix a cofinal HN schedule \(R\in\mathcal R_{\mathrm{HN}}\) and a cofinal
-downward-saturated root-window schedule \(W_{\nu(R)}\).  For every
-height \(R\), apply
-Theorem~\ref{thm:universal-finite-hall-dirac-source-window} to the
-window \(W_{\nu(R)}\).  Denote the resulting finite objects by
+downward-saturated root-window schedule \(W_{\nu(R)}\).  For every height
+\(R\), assume the finite hybrid atlas has verified properness or
+exceptional compact-support admissibility for every local, mixed, wrapped,
+and flag correspondence; equivalently the entries of
+\(\mathfrak O_{\mathrm{hyb},R}\) vanish with the stated
+null-trivializations.  Take the retained geometric \(K3\times E\) Hall stacks of
+Theorem~\ref{thm:finite-geometric-k3xe-hall-dirac-source}, the quotient
+orientation system of
+Proposition~\ref{prop:geometric-quotient-orientation-en-characters}, the
+type-II normal self-Ext charts of
+Proposition~\ref{prop:type-ii-wall-reduced-normal-self-ext}, the hybrid
+correspondence functor of
+Proposition~\ref{prop:geometric-hybrid-local-wrapped-mixed-atlas}, the
+source chiral coalgebra of
+Proposition~\ref{prop:geometric-source-chiral-koszul-coalgebra}, and the
+primitive matrices of
+Proposition~\ref{prop:geometric-primitive-matrix-computation}.  Denote
+the resulting finite geometric objects by
 \[
 \mathfrak S_R,\qquad
 \mathfrak A_R,\qquad
@@ -13281,31 +14009,33 @@ C_{X,R},\qquad
 \]
 Concretely,
 \[
-\mathfrak S_R:=\mathfrak S_{W_{\nu(R)}},\qquad
+\mathfrak S_R:=\mathfrak S_R^{\mathrm{geom}},\qquad
 \mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}
-:=\mathcal F_{W_{\nu(R)}}^{\mathrm{hyb}},\qquad
-C_{X,R}:=C_{W_{\nu(R)}} ,
+:=\mathcal F^{\mathrm{geom}}_{X,\sigma,S,\le R},\qquad
+C_{X,R}:=C^{\mathrm{geom}}_{X,R} ,
 \]
 \[
 \mathfrak A_R:=
-\bigl(\mathfrak S_{W_{\nu(R)}},\mathfrak D_{W_{\nu(R)}},
-\operatorname{Pf}^{\mathrm{vir}}(\mathfrak D_{W_{\nu(R)}}),
-\operatorname{pf}_{W_{\nu(R)}}\bigr),
+\bigl(\mathfrak S_R^{\mathrm{geom}},\mathfrak D_{X,R}^{\mathrm{geom}},
+\operatorname{Pf}(\mathfrak D_{X,R}^{\mathrm{geom}}),
+\operatorname{pf}_{X,R}^{\mathrm{geom}}\bigr),
 \]
 \[
 O_R^{\mathrm{quot}}
 :=
-\bigl(\operatorname{Pf}^{\mathrm{vir}}(\mathfrak D_{W_{\nu(R)}}),
+\bigl(o_{R,c},\mathfrak Q_R^{or},
 \{\tau_i\}_{i=1}^3\bigr),
 \qquad
 \Pi_{\mathrm{rec},R}:=
-P_{W_{\nu(R)}}^{\mathrm{red}}
-\xrightarrow{\ \mathrm{id}\ }
+P_{R}^{\Pi,\mathrm{red,geom}}\big|_{W_{\nu(R)}}
+\xrightarrow{\ \vartheta_R^{\Prim}\ }
 \mathfrak g_{\Delta_5}\big|_{W_{\nu(R)}} .
 \]
-The successor map \(R'\to R\) is the root-degree projection
-\(W_{\nu(R')}\to W_{\nu(R)}\) on all PBW, bar, Dirac, Pfaffian, and
-primitive-recognition terms.
+The successor map \(R'\to R\) is induced by the HN truncation functor on
+geometric object, extension, flag, quotient, bar, Dirac, Pfaffian, and
+primitive matrix terms.  The map \(\vartheta_R^{\Prim}\) is the
+source-to-target primitive comparison computed from the geometric Hall
+matrices, not from the target presentation.
 
 Define the finite compact source at height \(R\) by
 \[
@@ -13382,6 +14112,14 @@ b_{X,R}:C_{X,R}\xrightarrow{\ \simeq\ }
 \xrightarrow{\ \simeq\ }
 \mathsf{Den}_{\Delta_5,E,\le R}.
 \]
+Here
+\[
+\Theta_{\mathrm{Kos},R}
+=
+\vartheta_R\circ\varepsilon^{\mathrm{geom}}_{R}
+\]
+with \(\varepsilon^{\mathrm{geom}}_R\) the source-internal cobar counit
+and \(\vartheta_R\) the geometric source-to-target quasi-isomorphism.
 The finite primitive quotient satisfies
 \[
 P_{R}^{\Pi,\mathrm{red}}\big|_{W_{\nu(R)}}
@@ -13431,13 +14169,13 @@ part \(P_R\), the normal-ordered primitive object \(P_R^\Pi\), and the
 finite Lie bracket on primitives.  Its Chevalley--Eilenberg derivation is
 the displayed \(d_{\mathrm{CE},R}\).
 
-The finite hybrid term \(H_{X,R}\) is
-Definition~\ref{def:hybrid-wrapped-factorization-datum} restricted to
-height \(R\).  The local, wrapped, and mixed products are the three
-operation families
-\(\mu_R^{\mathrm{loc}},\mu_R^{\mathrm{hyb}},\mu_R^{\mathrm{wr}}\); the
-reduced \(E\)-quotient is applied by \(Q_{E,R}\) after the extension
-correspondences are formed; and the protected integration
+The finite hybrid term \(H_{X,R}\) is the geometric correspondence
+functor of
+Proposition~\ref{prop:geometric-hybrid-local-wrapped-mixed-atlas}.  The
+local, wrapped, and mixed products are the pull-push maps
+\(q_!\operatorname{TS}^{\mathrm{red}}p^*\) on the verified geometric
+extension stacks; the reduced \(E\)-quotient is applied by \(Q_{E,R}\)
+after those correspondences are formed; and the protected integration
 \(I_R^{\mathrm{prot}}\) records the normal-ordered trace degree
 \(\operatorname{pr}_3\overline\Pi_X\).
 
@@ -13455,18 +14193,19 @@ the displayed equality with the Maass character on
 The finite Hall--Dirac atlas \(\mathfrak A_R\), together with the
 normal-ordering cochains, gives the protected first-order object
 \(\mathfrak D_{X,R}\), its Pfaffian line, and its finite Pfaffian
-section by
-Proposition~\ref{prop:finite-d0-atlas-parity-obstruction}.  The source
-coalgebra \(C_{X,R}\), the bar comparison \(b_{X,R}\), and the cobar map
-\(\Theta_{\mathrm{Kos},R}\) are the finite terms of
-Definition~\ref{def:chiral-koszul-source-datum}; their exact inverse
-limit is Proposition~\ref{prop:chiral-koszul-source-datum-consequence}.
+section.  The source coalgebra \(C_{X,R}\), the bar comparison \(b_{X,R}\),
+and the source cobar counit \(\varepsilon_R^{\mathrm{geom}}\) are
+constructed in
+Proposition~\ref{prop:geometric-source-chiral-koszul-coalgebra}; the map
+\(\Theta_{\mathrm{Kos},R}\) is obtained only after composing that counit
+with \(\vartheta_R\).
 
-The primitive-recognition object \(R_{X,R}\) is the finite window
-\(\Pi_{\mathrm{rec},R}\).  Proposition~\ref{prop:global-recognition-cofinal-datum}
-identifies the finite radical quotient with the corresponding
-Gritsenko--Nikulin window and proves compatibility with the cofinal
-transition maps.  Passing to the inverse limit gives
+The primitive-recognition object \(R_{X,R}\) is the finite matrix system
+of Proposition~\ref{prop:geometric-primitive-matrix-computation}.  The
+map \(\vartheta_R^{\Prim}\) identifies the geometric radical quotient
+with the corresponding Gritsenko--Nikulin window after the displayed
+source matrices satisfy the Chevalley, Serre, orthogonality,
+Hopf-radical, and PBW identities.  Passing to the inverse limit gives
 \(P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5}\).
 
 Strictness of the HN transitions and exactness of the listed inverse
