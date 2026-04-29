@@ -12958,7 +12958,7 @@ each \(W_\nu\).  The finite restriction is the construction visible in
 the window; the determinant is its signed trace.
 \end{proof}
 
-\begin{theorem}[Finite retained \(K3\times E\) Hall stacks from a sector datum]
+\begin{theorem}[Finite retained \(K3\times E\) Hall stacks from a supplied sector datum]
 \label{thm:finite-geometric-k3xe-hall-dirac-source}
 Let \(X=S\times E\), where \(S\) is a smooth projective \(K3\) surface,
 and fix Liu's product stability condition \(\sigma_{s,t}\) on the
@@ -13142,6 +13142,10 @@ and its supercommutator is a finite
 \end{theorem}
 
 \begin{proof}
+The theorem is not a fixed-class boundedness theorem for Liu semistable
+objects.  It constructs the finite Hall source after
+\(\mathrm{(Bnd)}\), \(\mathrm{(Rig)}\), \(\mathrm{(dCrit)}\),
+\(\mathrm{(RedOr)}\), and \(\mathrm{(Six)}\) have been supplied.
 The PTVV theorem gives the ambient \((-1)\)-shifted symplectic structure
 on the derived stack of perfect complexes on the Calabi--Yau threefold
 \(X\) \cite{PTVV2013}.  Liu's construction supplies the product stability
@@ -13186,6 +13190,77 @@ bialgebra identity, and normal-ordering additivity of
 \(\overline\Pi_X\) gives the displayed Gram grading.
 \end{proof}
 
+\begin{proposition}[Fixed-class boundedness gives the finite Hall stack]
+\label{prop:fixed-class-boundedness-gives-finite-hall-stack}
+Keep the notation of
+Theorem~\ref{thm:finite-geometric-k3xe-hall-dirac-source}.  Assume the
+following geometric facts for the finite class set \(C_R\).
+\begin{enumerate}
+\item For every \(c\in C_R\), the semistable stack
+\(\mathfrak M^{ss}_{R,c}\) is a finite-type quasi-smooth derived Artin
+substack of \(\operatorname{Perf}(X)\), with universal perfect complexes
+after passing to a smooth atlas.
+\item For every retained pair \(c,c'\), cones of retained extensions with
+ends in \(c,c'\) have class \(c+c'\in C_R\), and the relative complexes
+\[
+R\pi_*\mathcal RHom_{X}(\mathcal B,\mathcal A[1])
+\]
+on
+\(\mathfrak M^{ss}_{R,c}\times\mathfrak M^{ss}_{R,c'}\) have bounded
+Tor-amplitude on the retained charts.
+\item The reduced obstruction complexes, vanishing-cycle coefficients,
+orientation lines, and compact-support six-functor formalism are fixed on
+these finite-type charts.
+\end{enumerate}
+Then the retained extension stacks and two-step flag stacks are finite-type
+quasi-smooth derived Artin stacks, and the Hall maps \(p^*,q_!,p_!\) used in
+Theorem~\ref{thm:finite-geometric-k3xe-hall-dirac-source} are defined in
+the chosen compact-support theory.
+
+If, in addition, the stable factors are scalar-simple and every wrapped
+anchor has translation law
+\[
+\lambda_\eta(t\cdot A)=\lambda_\eta(A)+N_\eta t,\qquad N_\eta>0,
+\]
+then scalar rigidification and the anchor leave only finite connected
+translation stabilizers, contained in \(E[N_\eta]\).
+\end{proposition}
+
+\begin{proof}
+Let \(\mathcal A\) and \(\mathcal B\) be the universal perfect complexes on
+\(X\times\mathfrak M^{ss}_{R,c}\times\mathfrak M^{ss}_{R,c'}\).  Since
+\(X\) is proper and \(\mathcal A,\mathcal B\) are perfect, the complex
+\[
+\mathcal E_{B,A}:=R\pi_*\mathcal RHom_X(\mathcal B,\mathcal A[1])
+\]
+is perfect on the finite-type base.  The derived vector stack
+\(\mathbb V(\mathcal E_{B,A}^{\vee})\) classifies extension classes
+\(\xi:B\to A[1]\).  The cone construction gives a morphism from this vector
+stack to \(\operatorname{Perf}(X)\).  The retained extension stack is the
+derived fibre product of this vector stack with the finite-type substack
+\(\mathfrak M^{ss}_{R,c+c'}\subset\operatorname{Perf}(X)\).  Hence it is
+finite type; the asserted Tor-amplitude gives quasi-smoothness on the
+retained charts.  A two-step flag stack is obtained by applying the same
+construction twice, or equivalently by using the perfect complex of
+filtered endomorphisms.  It is again finite type and quasi-smooth.
+
+The coefficient and orientation systems are constructible on finite-type
+d-critical truncations by the third assumption.  Therefore exceptional
+compact-support pushforward and the corresponding pullbacks are legitimate
+operations in the chosen six-functor theory.  This proves the finite stack
+and pull-push part; ordinary properness is not asserted for the raw
+exact-triangle map \(q\).
+
+For a scalar-simple stable object the connected automorphism group is the
+scalar \(\mathbb G_m\), which is removed by scalar rigidification.  If a
+translation \(t\in E\) stabilizes a wrapped anchored object, then
+\(\lambda_\eta(t\cdot A)=\lambda_\eta(A)\), hence \(N_\eta t=0\).  Thus the
+connected translation stabilizer is contained in the finite group scheme
+\(E[N_\eta]\), of order \(N_\eta^2\) over \(\C\).  Polystable retained
+strata contribute only the finite residual component groups already
+recorded in the retained stratification.
+\end{proof}
+
 \begin{proposition}[Type-II rank-one normal self-Ext criterion]
 \label{prop:type-ii-wall-reduced-normal-self-ext}
 Let \(\delta\in\{\delta_1,\delta_2,\delta_3\}\).  Suppose the retained
@@ -13209,19 +13284,28 @@ B\in\mathfrak M^{\mathrm{geom}}_{R,\widehat b_\delta},
 C\in\mathfrak M^{\mathrm{geom}}_{R,\widehat c_\delta}.
 \]
 Assume \(A\) and \(B\) are stable factors in the two adjacent chambers and
-the reduced normal Ext groups satisfy
+that the reduced off-diagonal normal tangent is
 \[
-L_\delta:=\operatorname{Ext}^1_{\mathrm{red}}(B,A),\qquad
-L_\delta^\vee:=\operatorname{Ext}^1_{\mathrm{red}}(A,B),
-\qquad
-\dim L_\delta=1.
+N^{\mathrm{tan}}_\delta
+=L^+_\delta\oplus L^-_\delta,\qquad
+L^+_\delta\subset\operatorname{Ext}^1_{\mathrm{red}}(B,A),\quad
+L^-_\delta\subset\operatorname{Ext}^1_{\mathrm{red}}(A,B),
 \]
-Assume the remaining off-diagonal reduced Ext groups vanish in degree
-\(1\) at the generic wall point.  Then the normal slice to the wall in
-\(\mathfrak M^{\mathrm{geom}}_{R,\widehat c_\delta}\) is the critical
-chart
+with
 \[
-\operatorname{Crit}(uv)\subset L_\delta\oplus L_\delta^\vee ,
+\dim L^+_\delta=\dim L^-_\delta=1.
+\]
+Assume the remaining off-diagonal reduced tangent directions vanish in the
+normal quotient and that the reduced Kuranishi quadratic form induces a
+nonzero pairing
+\[
+q_\delta:L^+_\delta\otimes L^-_\delta\longrightarrow\C .
+\]
+Choose the resulting identification \(L^-_\delta\simeq (L^+_\delta)^\vee\).
+Then the normal slice to the wall in
+\(\mathfrak M^{\mathrm{geom}}_{R,\widehat c_\delta}\) is the critical chart
+\[
+\operatorname{Crit}(uv)\subset L^+_\delta\oplus L^-_\delta ,
 \]
 with \(u\) the extension coordinate and \(v\) the coextension coordinate.
 After the reduced quotient and the wall orientation convention, the
@@ -13242,7 +13326,10 @@ The wall reflection interchanges the two chambers and sends
 u\longmapsto -u,\qquad
 \operatorname{pf}_\delta\longmapsto-\operatorname{pf}_\delta .
 \]
-Thus the rank-one type-II Pfaffian crossing of
+For \(\delta=\delta_2\), the hypotheses are hypotheses on the anchored
+wrapped or mixed local/wrapped stratum of
+Lemma~\ref{lem:middle-type-ii-wall-is-wrapped}, not on a projection-finite
+local Ran stratum.  Thus the rank-one type-II Pfaffian crossing of
 Definition~\ref{def:rank-one-type-ii-pfaffian-crossing} is obtained
 from the reduced normal self-Ext complex of every retained type-II wall
 object with the displayed one-dimensional normal splitting.
@@ -13259,21 +13346,60 @@ off-diagonal blocks:
 \operatorname{RHom}_{\mathrm{red}}(A,B)\oplus
 \operatorname{RHom}_{\mathrm{red}}(B,A).
 \]
-The diagonal summands are tangent to the wall stratum.  The normal
-deformation directions are
-\(L_\delta\oplus L_\delta^\vee\).  The \(3\)-Calabi--Yau pairing
-identifies the two factors as duals and the Kuranishi potential has
-quadratic term \(uv\); higher terms have order at least three and do not
-alter the rank-one Pfaffian normal form at the generic crossing.  The
-linearized odd operator in the normal direction is therefore the skew
-matrix \(D_\delta(u)\).  Its Pfaffian is \(u\).  Crossing the wall swaps
-extension and coextension chambers; with the chosen orientation of
-\(L_\delta\), this sends the oriented coordinate to \(-u\).  The sign
-calculation is exactly the local sign used in
+The diagonal summands are tangent to the wall stratum.  By hypothesis the
+normal tangent quotient is \(L^+_\delta\oplus L^-_\delta\), and all other
+off-diagonal tangent directions have been removed from the normal quotient.
+The nonzero reduced Kuranishi pairing \(q_\delta\) identifies
+\(L^-_\delta\) with \((L^+_\delta)^\vee\) after a choice of orientation.
+This is an extra wall-chart condition; it is not bare \(3\)-Calabi--Yau
+Serre duality, which pairs \(\operatorname{Ext}^1\) with
+\(\operatorname{Ext}^2\) in the opposite direction.  In the resulting Darboux
+coordinates the quadratic part of the reduced potential is \(uv\).  Higher
+terms have order at least three and do not alter the rank-one Pfaffian
+normal form at the generic crossing.  The linearized odd operator in the
+normal direction is therefore the skew matrix \(D_\delta(u)\).  Its Pfaffian
+is \(u\).  Crossing the wall swaps extension and coextension chambers; with
+the chosen orientation of \(L^+_\delta\), this sends the oriented coordinate
+to \(-u\).  The sign calculation is exactly the local sign used in
 Proposition~\ref{prop:rank-one-crossing-o2-sign}.
 \end{proof}
 
-\begin{theorem}[Global quotient orientation descent]
+\begin{lemma}[The middle type-II wall is wrapped]
+\label{lem:middle-type-ii-wall-is-wrapped}
+The type-II wall for
+\[
+\delta_2\leftrightarrow(n,l,m)=(0,1,1)
+\]
+cannot be represented by a projection-finite local object over \(E\).  In
+the rank-one OP normalization of Proposition~\ref{prop:op-normalization}
+the geometric elliptic degree is \(d=m+1=2\).  Therefore every geometric
+representative of the \(\delta_2\)-wall has positive elliptic degree and
+its one-dimensional support dominates \(E\).  The wall object
+\[
+C_{\delta_2}=A_{\delta_2}\oplus B_{\delta_2}
+\]
+must lie in the anchored wrapped or mixed local/wrapped stratum before the
+reduced \(E\)-quotient is taken.
+\end{lemma}
+
+\begin{proof}
+For a one-dimensional subscheme \(C\subset S\times E\), positive elliptic
+degree means
+\[
+(p_E)_*[C]=d[E]\qquad(d>0).
+\]
+Lemma~\ref{lem:projection-e-support-locality-obstruction} then gives
+\(p_E(C)=E\).  Such a support is not contained in
+\(\bigcup_{i\in I}S\times\{e_i\}\) for any finite set \(I\).  Since
+\(\delta_2\) has \(m=1\), the OP normalization gives \(d=2\).  Hence the
+middle wall cannot be supplied by the projection-finite local stack
+\(\mathfrak M^{\mathrm{loc}}_{R,\widehat c,I}\).  Its normal self-Ext
+calculation, quotient orientation, and Pfaffian sign must be computed in
+the anchored wrapped or mixed stratum where the relative \(E\)-position is
+still present.
+\end{proof}
+
+\begin{theorem}[Global quotient orientation descent criterion]
 \label{prop:geometric-quotient-orientation-en-characters}
 Fix a cofinal finite HN subsystem.  For every finite stage \(R\), let
 \(\mathsf{Str}^{or}_R\) be the finite set of object, extension, mixed,
@@ -13314,6 +13440,12 @@ classes vanish with compatible null-trivializations:
 \qquad
 \lambda^{E,N}_{R,S}\in H^1_G(S;\mathbb F_2).
 \]
+Thus the descent calculation on an actual retained stratum is the
+evaluation of these four classes from the reduced determinant complex and
+the stabilizer action on it.  The quotient orientation exists on the
+finite stage exactly on the locus where all four classes vanish and the
+chosen null-trivializations agree with pullback to extension, mixed,
+wrapped, and flag strata.
 Here
 \[
 E_2^{p,q}=H^p(BG;H^q(S;\mathbb F_2))
@@ -13438,7 +13570,13 @@ anchor, framing, Thom--Sebastiani, and flag signs are the displayed
 
 \begin{proposition}[Geometric hybrid local/wrapped/mixed atlas]
 \label{prop:geometric-hybrid-local-wrapped-mixed-atlas}
-The finite geometric stacks of
+Assume the finite geometric sector datum of
+Theorem~\ref{thm:finite-geometric-k3xe-hall-dirac-source}, including
+\textup{(Six)}, and assume the hybrid properness/admissibility,
+Thom--Sebastiani, and quotient-after-correspondence conditions of
+Definition~\ref{def:hybrid-wrapped-factorization-datum} hold for the
+retained local, mixed, wrapped, and flag generators.  Then the finite
+geometric stacks of
 Theorem~\ref{thm:finite-geometric-k3xe-hall-dirac-source} define a
 hybrid correspondence functor
 \[
@@ -13510,7 +13648,9 @@ is a projective flag-Quot map.  In the geometric exact-triangle model the
 two parenthesized products are the two exceptional pull-pushes from the
 same finite-type, finite-inertia, oriented, Thom--Sebastiani coherent
 flag stack.  Base change identifies them in the compact-support
-six-functor theory.  Quotienting after the correspondence preserves these
+six-functor theory; this base-change assertion is part of the stated
+compact-support admissibility, not a consequence of raw exact-triangle
+properness.  Quotienting after the correspondence preserves these
 equalities because the orientation gerbes and finite stabilizer characters
 vanish by
 Theorem~\ref{prop:geometric-quotient-orientation-en-characters}.
@@ -13803,7 +13943,7 @@ PBW theorem for the resulting finite-dimensional Lie superalgebra over
 \(\C\), with parity inherited from the vanishing-cycle grading.
 \end{proof}
 
-\begin{proposition}[Geometric construction of the finite comparison maps]
+\begin{proposition}[Finite comparison maps from source matrix data]
 \label{prop:geometric-finite-comparison-maps}
 Fix \(R\) and the downward-saturated window \(W_{\nu(R)}\).  Let
 \[
@@ -13814,7 +13954,10 @@ be the source splitting obtained from the compact Hall pairing matrices,
 with quotient \(Q_{\gamma,\bar p}\), source bracket matrices
 \(B^X_{\alpha,\beta}\), source coproduct matrices
 \(D^{X,\mu,\nu}_{\rho}\), and source pairing matrices \(G^X_\gamma\) of
-Proposition~\ref{prop:geometric-primitive-matrix-computation}.  Suppose
+Proposition~\ref{prop:geometric-primitive-matrix-computation}.  The compact
+Hall representatives produce these source matrices and radical splittings.
+They do not by themselves choose an identification with the
+Gritsenko--Nikulin target.  Assume, as part of the source matrix data, that
 there is a parity-preserving family of finite linear isomorphisms
 \[
 A_{\gamma,\bar p}:L_{\gamma,\bar p}
@@ -13849,8 +13992,9 @@ P^{\Pi,\mathrm{geom}}_R\big|_{W_{\nu(R)}}
 \mathfrak g_{\Delta_5}\big|_{W_{\nu(R)}}
 \]
 is the finite primitive source-to-target comparison.  It is computed from
-the geometric representatives and compact Hall matrices.  The
-Gritsenko--Nikulin presentation is only the comparison object.
+the supplied source matrix isomorphisms \(A_R=\{A_{\gamma,\bar p}\}\) and the
+compact Hall matrices.  The Gritsenko--Nikulin presentation is the target
+against which the compact Hall matrices are checked.
 
 If the finite hybrid source is generated by these reduced primitive
 representatives and satisfies the PBW and no-extra-relations clauses of
@@ -13917,7 +14061,7 @@ and the Francis--Gaitsgory source counit give
 \xrightarrow{\ \simeq\ }
 \mathcal F^{\mathrm{geom}}_{X,\sigma,S,\le R}.
 \]
-Composing with the geometric comparison \(\vartheta_R\) gives
+Composing with the supplied geometric comparison \(\vartheta_R\) gives
 \(\Theta_{\mathrm{Kos},R}\).  Neither factor is obtained from
 \(\Omega_E^{\mathrm{ch}}\bar B_E^{\mathrm{ch}}
 (\mathsf{Den}_{\Delta_5,E,\le R})\to
@@ -14377,7 +14521,8 @@ Here
 \vartheta_R\circ\varepsilon^{\mathrm{geom}}_{R}
 \]
 with \(\varepsilon^{\mathrm{geom}}_R\) the source-internal cobar counit
-and \(\vartheta_R\) the geometric source-to-target quasi-isomorphism.
+and \(\vartheta_R\) the supplied geometric source-to-target
+quasi-isomorphism.
 The finite primitive quotient satisfies
 \[
 P_{R}^{\Pi,\mathrm{red}}\big|_{W_{\nu(R)}}
@@ -15054,7 +15199,7 @@ the exponent is \(3\).  All displayed numerical checks are asserted in
 \texttt{compute/verify\_square\_root.py}.
 \end{proof}
 
-\begin{theorem}[Executable finite source matrix criterion]
+\begin{theorem}[Finite source matrix recognition criterion]
 \label{thm:executable-finite-source-matrix-criterion}
 Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.  A
 compact Hall stage \(R\) evaluates primitive recognition on \(W\) exactly
@@ -15153,6 +15298,10 @@ scripts \texttt{compute/verify\_lattice.py} and
 Borcherds--Gritsenko--Nikulin arithmetic in this window; they do not
 provide compact source bases, source pairings, radicals, coproducts, or
 PBW matrices.
+Thus the criterion is finite-matrix-checkable after a compact Hall stage
+has supplied the source bases and matrices.  The present computations
+supply only the target lattice and Borcherds--Gritsenko--Nikulin
+arithmetic.
 \end{proof}
 
 \begin{proposition}[Finite \(W_{\le3}\) NO7 source protocol]
