@@ -55,8 +55,8 @@
 \maketitle
 
 \begin{abstract}
-For \(X=K3\times E\) the theorem-level physical input used here is the
-protected index.  Right-moving localization in the K3 Ramond sector gives
+For \(X=K3\times E\) the physical input used here is the protected
+index.  Right-moving localization in the K3 Ramond sector gives
 \[
 Z_{\mathrm{K3}}=2\phi_{0,1},\qquad
 \phi_{0,1}=\sum f(n,l)q^nr^l.
@@ -96,23 +96,29 @@ algebraic square root target and its target-internal Borcherds bracket.
 It does not supply a compact BPS Hilbert space, compact Hall
 correspondences, an orientation, or a BPS operator product/local
 collision map.
+Equivalently, one may package finite windows of this imported target as
+an algebraic Dirac--Igusa target reference tower.  Such a tower has PBW
+bases, the standard target invariant form, the target radical quotient,
+formal first-order blocks, and a formal Pfaffian product by construction
+from \(\mathfrak g_{\Delta_5}\).  It is not a compact \(K3\times E\)
+Hall source.
 
-The square root in the title is meant in Dirac's sense.  The scalar
-OP/DT branch \(Z^X_{\mathrm{OP/DT}}=-4096\,\Delta_5^{-2}\) is
-orientation-forgetful: the sign character is squared away.  The
-recognition target is a first-order protected operator/algebra
+The square root in the title is meant in Dirac's sense.  The primitive
+OP/DT scalar branch \(Z^X_{\mathrm{OP/DT}}=-4096\,\Delta_5^{-2}\) is
+orientation-forgetful: the sign character is squared away.  The missing
+compact object is a first-order protected operator/algebra
 \(\mathfrak D_X\) whose protected Pfaffian, after a supplied
 Pfaffian-to-automorphic line comparison, is \(\Delta_5\), and whose scalar trace
 \(\operatorname{Tr}_{\mathrm{prot}}((-1)^F\mathfrak D_X^{-2})
 =-4096\,\Delta_5^{-2}\); the orientation/Pfaffian datum is the
 algebraic input that distinguishes \(\Delta_5\) from \(-\Delta_5\) and
-that the squared scalar cannot recover.  Constructing
-	\(\mathfrak D_X\) is the open recognition problem; this paper formulates
-	the target and the conditional orientation-character constraint
-	\(\epsilon_o=\nu_{\Delta_5}\) on
-	\(W^{(2)}(\Lambda_{II}^{2,1})\), to be proved only after the compact
-	orientation system, Weyl transport, and type-II Pfaffian wall atlas have
-	been supplied.
+that the squared scalar cannot recover.  A compact realization must
+construct \(\mathfrak D_X\), the orientation system, Weyl transport, and
+the type-II Pfaffian wall atlas, and must prove
+\[
+\epsilon_o=\nu_{\Delta_5}
+\]
+on \(W^{(2)}(\Lambda_{II}^{2,1})\).
 
 The scalar Behrend-weighted branch is imported from
 Oberdieck--Pixton, Oberdieck--Pandharipande, and Oberdieck.  In OP's
@@ -160,22 +166,27 @@ specialize along the K3 direction to a chiral object on
 \(\operatorname{Ran}(E)\)-support-locality obstruction in the
 K3-integrated chiral shadow by mixed local/wrapped correspondences, and
 identify the Gram-descended protected primitive bracket with
-\(\mathfrak g_{\Delta_5}\).  This paper computes the virtual determinant
-and identifies it with \(\Delta_5\) by imported Borcherds theory; proves
-the formal lattice normal-ordering theorem and the strict fixed-lift
-raw-descent obstruction; records the imported scalar and denominator
-theorems; and
-formulates that compact Hall/factorization realization as an open
-recognition problem.  The final part records the eight Cl\'ery--Gritsenko
-diagonal-divisor rows and the certificate required before any boundary
-row becomes a physical host.
+\(\mathfrak g_{\Delta_5}\).  Equivalently, the compact realization
+problem is finite-stage: construct geometric Hall--Dirac source
+data and a compatible functor into the algebraic target reference tower,
+preserving degrees, Hall products and coproducts, orientation-gerbe
+twists, source coalgebras, first-order blocks, Pfaffian lines, primitive
+representatives, radical/PBW data, and transitions.  This paper computes
+the virtual determinant and identifies it with \(\Delta_5\) by imported
+Borcherds theory; proves the formal lattice normal-ordering theorem and
+the strict fixed-lift raw-descent obstruction; records the imported scalar
+and denominator theorems; constructs only the target-side reference tower;
+and leaves the compact Hall/factorization realization as the remaining
+geometric problem.  The final part records the eight
+Cl\'ery--Gritsenko diagonal-divisor rows and the data required before any
+boundary row becomes a physical host.
 \end{abstract}
 
 \bigskip
 \tableofcontents
 
-\section{Introduction and claim strength}
-\label{sec:introduction-claim-strength}
+\section{Introduction}
+\label{sec:introduction}
 
 The local object comes first.  A compact BPS theory on
 \(X=K3\times E\), if it exists in the form needed here, should produce
@@ -191,29 +202,15 @@ the \(s=0\) compact Hall cusp, multi-component charge closures, and
 boundary closures of Hall correspondences are deferred boundary problems,
 not standing hypotheses.
 
-Thus the exposition follows the dependency chain
-\[
-\begin{array}{rcl}
-\hbox{protected K3 index} & \rightsquigarrow_{\mathrm{computes}} &
-\hbox{virtual }K_0\hbox{-determinant},\\
-\hbox{Borcherds--Gritsenko--Nikulin} & \rightsquigarrow_{\mathrm{imports}} &
-\hbox{denominator target},\\
-\hbox{formal Mukai charge and }B & \rightsquigarrow_{\mathrm{proves}} &
-\hbox{normal-ordered Gram map},\\
-\hbox{supplied finite Hall--Dirac source} & \rightsquigarrow_{\mathrm{conditional}} &
-\hbox{primitive recognition},\\
-\hbox{Oberdieck--Pixton/Oberdieck} & \rightsquigarrow_{\mathrm{checks}} &
-\hbox{orientation-forgetful scalar square},\\
-\hbox{Cl\'ery--Gritsenko rows} & \rightsquigarrow_{\mathrm{certificate}} &
-\hbox{boundary host tests}.
-\end{array}
-\]
-The scalar OP/DT equality is a check on the square of a supplied
-first-order Pfaffian object.  It is not an input to the compact Hall
-source, the Pfaffian line, or primitive recognition.
+The calculation begins with the protected K3 index, passes through the
+Borcherds product and the Gritsenko--Nikulin denominator algebra, and
+then asks for a compact \(K3\times E\) Hall object whose primitive bracket
+descends to that denominator algebra.  The scalar OP/DT equality is only
+the square of such a first-order Pfaffian object.  It is not an input to
+the compact Hall source, the Pfaffian line, the orientation character, or
+primitive recognition.
 \paragraph{Protected locality.}
-The protected index is theorem-level.  Right-moving localization of the
-unitary K3 sigma model gives
+Right-moving localization of the unitary K3 sigma model gives
 \[
 Z_{\mathrm{K3}}=2\phi_{0,1},\qquad
 \phi_{0,1}=\sum f(n,l)q^nr^l.
@@ -240,18 +237,20 @@ then a chain-level \(K3\)-to-\(E\) specialization
 This projection-finite chiral shadow is not reconstructed from the
 scalar partition function or from the Borcherds product.  The full
 object is the hybrid \(\mathcal F_X^{\mathrm{hyb}}\) only after the
-finite hybrid certificate is supplied.  There is also a geometric
+finite local/wrapped correspondence data exist.  There is also a geometric
 obstruction: a
 one-dimensional subscheme with positive elliptic degree projects onto
 all of \(E\).  Hence a naive support-local object on
 \(\operatorname{Ran}(E)\) sees only projection-finite sectors.  The full
 Igusa \(s\)-direction requires finite-stage local/wrapped correspondence
-data for positive elliptic degree: the elliptic-degree map \(b_R\),
-rigidified wrapped prequotients with anchors, local-local, ordered
+data and a separated degree convention: the geometric elliptic-degree map
+\(b_R^{\mathrm{geom}}\), the Gram trace exponent
+\(m_R=\operatorname{pr}_3\overline\Pi_X\), rigidified wrapped prequotients
+with anchors, local-local, ordered
 local/wrapped, and wrapped-wrapped extension stacks, the eight-word
 two-step binary flag atlas,
 quotient-after-correspondence descent, and protected integration with
-trace degree \(s^{b_R}\).  A detached global Hecke/Fock factor is only a
+trace degree \(s^{m_R}\).  A detached global Hecke/Fock factor is only a
 determinant-level repair.  It becomes relevant to the compact
 realization only after it is represented by those wrapped prequotients
 and acts through mixed Hall correspondences before the reduced
@@ -260,7 +259,7 @@ and acts through mixed Hall correspondences before the reduced
 \paragraph{Primitive recognition.}
 Until Definition~\ref{def:dyonic-mukai-lattice}, the notation
 \(\Gamma_X^{\mathrm{phys}}\) denotes the same formal full-Mukai
-bookkeeping lattice later written
+lattice later written
 \(\Gamma_X^{\mathrm{form}}\); the superscript is mnemonic and not the
 four-dimensional \(\mathcal N=4\) electric--magnetic charge lattice.
 The microscopic algebra sought from such a compact realization is first
@@ -273,27 +272,28 @@ the upstairs protected primitive bracket
 \Prim_{c+c'}^{\mathrm{prot}}(\mathcal F_X),
 \qquad c,c'\in\Gamma_X^{\mathrm{phys}}.
 \]
-The recognition criterion proved later is conditional: it specifies the
-certificate and its consequences.  If the
-Dirac--Igusa certificate \(\mathfrak K_X\) exists, including the oriented Hall object,
-protected integration, cocycle-corrected Gram descent
+The desired comparison is a theorem only after the following geometric
+objects have been constructed: an oriented Hall object, protected
+integration, cocycle-corrected Gram descent
 \(\overline\Pi_{X,*}^{\Theta}\), a conilpotent source coalgebra \(C_X\)
 with finite source filtration and collision coproduct, the bar comparison
 \(b_X\), the cobar map
 \(\Theta_{\mathrm{Kos}}\), Koszul Mittag--Leffler exactness for the
 completed bar/cobar inverse system, presentation-level primitive Lie
 comparison, no-extra-relations theorem, completed PBW compatibility,
-exact triangular completion/\(\lim^1\)-vanishing, and radical quotient,
-then
+exact triangular completion/\(\lim^1\)-vanishing, and radical quotient.
+With these data one obtains
 \[
 H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^{\Theta}\mathcal F_X)
+/
+\overline{\operatorname{Rad}\langle\, ,\,\rangle_X}
 \cong
 \mathfrak g_{\Delta_5}
 \]
-and the supplied chiral cobar comparison identifies
+and the chiral cobar comparison identifies
 \(\Omega_E^{\mathrm{ch}}C_X\) with the formal current envelope
-\(\mathsf{Den}_{\Delta_5,E}\).  This is a recognition criterion, not an
-existence theorem and not a reconstruction from the determinant.
+\(\mathsf{Den}_{\Delta_5,E}\).  The determinant alone does not construct
+any of these objects.
 
 \paragraph{Borcherds denominator.}
 The target algebra is imported from the Borcherds--Gritsenko--Nikulin
@@ -310,7 +310,7 @@ This determines signed root supermultiplicities and the denominator
 identity.  It does not determine compact Hall constants.
 
 \paragraph{OP scalar square.}
-The reduced scalar branch is imported from
+The primitive reduced scalar branch is imported from
 Oberdieck--Pixton, Oberdieck--Pandharipande, and Oberdieck:
 \[
 Z^X_{\mathrm{DT}}(T,Q,P)=Z^X_{\mathrm{OP}}(P,Q,T)
@@ -334,9 +334,9 @@ orientation character.  The comparison
 \epsilon_o=\nu_{\Delta_5}
 \]
 between geometric orientation monodromy and the automorphic reflection
-character remains part of the open Dirac--Igusa realization certificate.
+character remains a geometric condition on the compact realization.
 
-\paragraph{Eight-row host certificates.}
+\paragraph{Eight-row boundary rows.}
 The diagonal-divisor boundary problem concerns the eight
 Cl\'ery--Gritsenko forms
 \[
@@ -347,110 +347,12 @@ Rows \(1\)--\(4\) have Gritsenko--Nikulin denominator theorems.  Rows
 \(5\)--\(8\) have Cl\'ery--Gritsenko products and Govindarajan CHL/WKB
 denominator theorems; \(F_7=\nabla_{3/2}\) is on the required
 \(\mu_4\)-multiplier cover.  A physical host for any boundary row
-requires a certificate fixing the modular group or cover, character,
+requires data fixing the modular group or cover, character,
 divisor, cusp Jacobi inputs, product lattice, Weyl vector, real roots,
 reflection character, physical charge lattice, protected Gram-index,
 orientation, reduced scalar theorem if one is claimed, and
-primitive algebra comparison.  Without that certificate the row is only
+primitive algebra comparison.  Without those data the row is only
 an automorphic product plus any separately proved denominator theorem.
-
-\begin{center}
-\small
-\begin{tabular}{p{0.23\textwidth}p{0.25\textwidth}p{0.41\textwidth}}
-\hline
-Structural level & Claim strength & Content \\
-\hline
-Virtual determinant &
-computed/imported from \(K_0\) data plus the Borcherds product &
-\(\mathcal D_X=\Delta_5\).  No canonical half-Hilbert space or operator
-product is constructed. \\
-Scalar Behrend square &
-imported theorem &
-Oberdieck--Pixton, Oberdieck--Pandharipande, and Oberdieck give
-\(Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\) in the
-reduced quotient-by-\(E\), Behrend-weighted setting. \\
-BKM denominator &
-imported theorem &
-Gritsenko--Nikulin give \(\mathfrak g_{\Delta_5}\) and
-\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\). \\
-Compact Hall/factorization realization &
-conditional/open &
-If \(\mathfrak K_X\) exists, the primitive and chiral comparisons follow
-by the recognition criterion.  Existence, \(\operatorname{Ran}(E)\)
-hybrid locality,
-protected integration, and orientation monodromy are open. \\
-Eight-row host certificates &
-framework; mostly open &
-The catalogue and denominator rows are imported where cited.  Physical
-row maps and scalar squares require row-by-row certificates. \\
-\hline
-\end{tabular}
-\end{center}
-
-\paragraph{Status and dependencies of results.}
-The manuscript uses the words proved, computed, imported, certificate,
-conditional, conjectural, open, and obstructed in the following strict
-sense.  A proved statement is established in the paper; a computed
-statement is verified by the displayed calculation or script; an imported
-statement is a cited theorem; a certificate is a finite list of data and
-tests; a conditional statement follows after the certificate is supplied;
-an open statement names missing construction data.
-
-\begin{center}
-\small
-\begin{tabular}{p{0.20\textwidth}p{0.18\textwidth}p{0.52\textwidth}}
-\hline
-Result & Status & Dependencies and exclusions \\
-\hline
-Protected K3 index and \(K_0\) half-index &
-proved/imported/defined &
-Right-moving localization gives
-\(Z_{\mathrm{K3}}=2\phi_{0,1}\).  The half-index
-\(\mathbb U_{n,l}\) is an arbitrary \(K_0\)-representative with
-\(\sdim\mathbb U_{n,l}=f(n,l)\), not a canonical half-Hilbert space,
-operator product, or compact D-brane state space. \\
-Virtual determinant \(\mathcal D_X=\Delta_5\) &
-computed/imported &
-Computed from the \(K_0\)-half-index and identified with the
-theta-normalized Borcherds product by the imported
-Borcherds--Gritsenko--Nikulin theorem.  No compact Hilbert space,
-operator product, or Pfaffian line is supplied. \\
-Lattice normal ordering &
-proved &
-The formal Mukai lattice, cocycle \(B\), central extension
-\(\widehat\Gamma_X\), and homomorphism \(\overline\Pi_X\) are proved
-lattice algebra.  Algebraic/effective Hall support is open. \\
-Raw Gram descent &
-proved obstruction &
-Strict homogeneous fixed-lift raw \(\Pi_X\)-pushforward cannot realize
-the type-II real-root strings.  Fibre-summed raw descent over different
-lifts is open. \\
-Denominator algebra &
-imported &
-Gritsenko--Nikulin give \(\mathfrak g_{\Delta_5}\) and
-\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\). \\
-Compact Dirac--Igusa source &
-certificate/conditional/open &
-The \(D_0\)-stage, strong orientation, Weyl cocycle, type-II Pfaffian
-wall model, hybrid wrapped factorization, source Koszul comparison, and
-primitive recognition are certificate data.  The consequences are
-conditional on these data, Koszul Mittag--Leffler exactness, exact
-triangular completion, and compatible transitions; the compact state-side
-construction is open. \\
-Scalar OP/DT square &
-imported/check &
-Oberdieck--Pixton, Oberdieck--Pandharipande, and Oberdieck identify the
-Behrend-weighted reduced scalar branch with
-\(-4096\Delta_5^{-2}\).  This checks the orientation-forgetful square and
-does not construct \(\mathfrak D_X\) or \(\epsilon_o\). \\
-Eight-row host certificates &
-certificate/open &
-The automorphic products and denominator rows are imported where cited.
-Physical row maps and scalar squares require row-by-row host
-certificates. \\
-\hline
-\end{tabular}
-\end{center}
 
 All super vector spaces in the representation-theoretic constructions
 are over \(\C\).  Real vector spaces occur only after tensoring
@@ -515,7 +417,9 @@ rigidified wrapped prequotients, local-local, ordered local/wrapped, and
 wrapped-wrapped extension correspondences, the eight-word two-step binary
 flag atlas with higher factorization separate,
 quotient-after-correspondence descent, and protected integration whose
-\(s\)-degree is the elliptic degree.  A separate
+\(s\)-degree is the trace exponent \(m_R=\operatorname{pr}_3\overline\Pi_X\);
+the geometric elliptic degree records wrapped support rather than the
+Borcherds exponent.  A separate
 global Fock/Hecke mode is insufficient unless it is realized by these
 wrapped prequotients and coupled to the local sector by mixed Hall
 actions before the reduced \(E\)-quotient.  This is a realization
@@ -537,11 +441,10 @@ $$
 \qquad c,c'\in\Gamma_X^{\mathrm{phys}}.
 $$
 
-The Igusa square-root problem is to construct or recognize this
-primitive protected algebra and its Gram descent.  The determinant below
-gives the decategorified signed Gram-index shadow that such a realization
-would have as a recognition target, not as a source-derived
-multiplicity:
+The Igusa square-root problem is to construct this primitive protected
+algebra and its Gram descent.  The determinant below gives the
+decategorified signed Gram-index shadow that such a realization would
+have, not a source-derived multiplicity:
 $$
 \sdim\Prim_{\gamma}^{\mathrm{prot}}(\overline\Pi_{X,*}^{\Theta}\mathcal F_X)
 =f(nm,l),
@@ -554,20 +457,20 @@ H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^{\Theta}\mathcal F_X)
 \stackrel{?}{\cong}
 \mathfrak g_{\Delta_5}.
 $$
-The theorem-level content of the paper is the determinant and
-denominator comparison.  The displayed isomorphism is the compact
-\(E_3\)/Hall/chiral realization problem.
+The determinant and denominator comparison are established below.  The
+displayed isomorphism is the compact \(E_3\)/Hall/chiral realization
+problem.
 
 The square root is therefore not an analytic ambiguity in
 \(\Delta_5^2\).  It is the normalized automorphic determinant of the
 virtual protected one-particle index.  The scalar square forgets the
 automorphic reflection character; a compact Hall orientation realizing
-that character is part of the open Dirac--Igusa certificate.
+that character is part of the open Dirac--Igusa datum.
 
 \subsection*{Schema of the local protected observable algebra}
 \label{sec:local-protected-observable-algebra}
 
-\begin{definition}[Conditional local protected observable algebra schema]
+\begin{definition}[Local protected observable algebra schema]
 \label{def:local-protected-observable-algebra}
 For an open \(U\subset X=K3\times E\), let
 \(\Gamma_{X,\sigma}^{\mathrm{eff}}(U)\subset
@@ -585,8 +488,8 @@ when such a d-critical structure and square-root orientation have been
 supplied \cite[Theorem~6.9]{BBDJS2015}.  Let \(o_c\) denote the
 orientation line, a square root of the determinant line of the cotangent
 complex of \(\mathfrak M_c(U)\), supplied as part of the Hall datum.  The
-\emph{local protected observable algebra of \(X\) on \(U\)} is the
-conditional source object
+\emph{local protected observable algebra of \(X\) on \(U\)} is the source
+object
 \[
 \mathcal A_X(U)
 :=\bigoplus_{c\in\Gamma_{X,\sigma}^{\mathrm{eff}}(U)}
@@ -776,7 +679,7 @@ sector is a cusp/Weyl boundary package carrying the repeated boundary
 indices \(f(0,l)\).  Neither sector is a microscopic one-particle Hilbert
 space.
 The compact Hall \(s=0\) cusp is therefore a separate boundary
-certificate: it is controlled by the Borcherds chamber data only after
+datum: it is controlled by the Borcherds chamber data only after
 the corresponding source-side boundary operations are supplied.
 \[
 \mathcal V^{\mathrm{bulk}}
@@ -884,11 +787,10 @@ products, locality, or a Hilbert completion.
 The class \([\mathcal V]\in K_0\) and its Fock determinant
 \(\mathcal D_X=v_0\sdet_{\mathcal V}(1-x)=\Delta_5\) record signed
 Gram-degree multiplicities and a formal infinite-product; they do not
-produce an operator with a spectrum.  The structural upgrade demanded
-by the protected-locality side of the constellation is an
-\emph{open recognition target}:
+produce an operator with a spectrum.  The protected-locality side of
+the constellation requires the following construction:
 \begin{quote}
-construct from the compact \(K3\times E\) Dirac--Igusa certificate of
+construct from the compact \(K3\times E\) Dirac--Igusa datum of
 Definition~\ref{def:compact-igusa-realization-datum} a first-order
 protected operator/algebra
 \(\mathfrak D_X\) acting on a chiral protected module, whose
@@ -917,9 +819,9 @@ orientation datum of that open problem and is not fixed by the OP
 scalar.
 \end{proposition}
 
-\begin{definition}[Finite generic type-II local-sign subcertificate]
-\label{def:type-ii-pfaffian-wall-certificate}
-A finite generic local-sign subcertificate for the type-II Pfaffian model consists, for
+\begin{definition}[Finite generic type-II local-sign datum]
+\label{def:type-ii-pfaffian-wall-datum}
+A finite generic local-sign datum for the type-II Pfaffian model consists, for
 each of the three simple type-II walls
 \(\Hpl_{\delta_i}\), \(i=1,2,3\), of the following data.
 \begin{enumerate}
@@ -953,18 +855,18 @@ In the induced trivialization the normal Pfaffian section is
 N_1^{\mathrm{Pf}}=N_2^{\mathrm{Pf}}=N_3^{\mathrm{Pf}}=1 .
 \]
 \end{enumerate}
-This is a finite generic local-sign subcertificate: three wall charts, three
+This is a finite generic local-sign datum: three wall charts, three
 anti-invariance checks \(s_{\delta_i}(u_i)=-u_i\), three tangent-factor
 compatibility checks, and three odd Pfaffian normal-mode ranks.  These
 ranks are local Dirac/Pfaffian data; they are not read from the
-automorphic divisor.  The subcertificate constructs neither the global
+automorphic divisor.  These local data construct neither the global
 reduced orientation line nor the Weyl lift, and it is not the full O2 wall
 atlas with component, boundary, and overlap compatibility.  It uses no scalar
 normalization of \(\Delta_5\), no factor \(64\), and no OP/DT scalar sign.
 \end{definition}
 
-\begin{proposition}[Local obstruction certificate for \textup{(O2)}]
-\label{prop:o2-local-obstruction-certificate}
+\begin{proposition}[Local obstruction datum for \textup{(O2)}]
+\label{prop:o2-local-obstruction-datum}
 Fix one of the three simple type-II roots
 \(\delta\in\{\delta_1,\delta_2,\delta_3\}\).  A geometric proof of the
 rank-one Pfaffian model at \(\Hpl_\delta\) is not a consequence of
@@ -1039,9 +941,9 @@ multiplies the displayed sign and belongs to the orientation-transport
 datum \(\textup{(O1)}^+\).  If the splitting obstruction
 \(\eta_\delta\) does not vanish, the tangent and normal determinants cannot
 be separated and no rank-one normal sign has been computed.  If
-\(N_\delta^{\mathrm{Pf}}\ne1\), the order-one automorphic divisor is at
-best a target check and the local Hall model required by \textup{(O2)} is
-false or incomplete.  Thus the exact missing inputs are the three charts,
+\(N_\delta^{\mathrm{Pf}}\ne1\), the order-one automorphic divisor does not
+supply the local Hall model required by \textup{(O2)}.  Thus the exact
+missing inputs are the three charts,
 the three reduced self-Ext complexes, the three equivariant splittings, the
 three invariant Pfaffian units, and the three rank computations
 \(N_{\delta_i}^{\mathrm{Pf}}=1\).  In any compact source claim these
@@ -1051,12 +953,11 @@ compatibility obstruction of
 Proposition~\ref{prop:o2-hybrid-compatibility-obstruction}.
 \end{proposition}
 
-\begin{theorem}[Conditional finite type-II local-sign computation]
+\begin{theorem}[Finite type-II local-sign computation]
 \label{thm:stable-finite-type-ii-local-theorem}
 Fix a finite HN height \(R\) and a simple type-II wall
-\(\Hpl_{\delta_i}\), \(i\in\{1,2,3\}\).  The following is a conditional
-local-sign computation: it applies only after the residual tuple below
-has been trivialized.  A finite geometric computation of the generic
+\(\Hpl_{\delta_i}\), \(i\in\{1,2,3\}\).  The computation applies after the
+residual tuple below has been trivialized.  A finite geometric computation of the generic
 local sign required by \textup{(O2)} at this wall is the vanishing of the
 residual
 \[
@@ -1101,7 +1002,7 @@ s_{\delta_i}^*\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_i,R})^{2}
 =\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_i,R})^{2}.
 \]
 Vanishing of these residuals for \(i=1,2,3\) gives the three finite
-generic type-II local-sign subcertificates at height \(R\), and the computed local
+generic type-II local-sign data at height \(R\), and the computed local
 wall-chart signs are
 \[
 \varepsilon^{\mathrm{loc}}_{\delta_i,R}=-1,\qquad i=1,2,3.
@@ -1110,14 +1011,14 @@ The theorem computes only the sign from the local chart after the residuals
 vanish.  It does not construct the wall charts, the reduced self-Ext
 complexes, the splittings, the quotient orientation trivializations, or
 the transition null-homotopies, and no global character is defined by
-this theorem.  The full O2 wall-atlas certificate also requires the
+this theorem.  The full O2 wall-atlas datum also requires the
 component, boundary, and overlap data of
 Proposition~\ref{prop:o2-hybrid-compatibility-obstruction}.  If, in
 addition, (O1) descends the reduced orientation and
 (O1)\(^+\) supplies an honest HN-compatible Weyl action on the quotient
 orientation, these local signs induce the global values
 \(\epsilon_o(s_{\delta_i})=-1\).  The automorphic divisor order
-\(d_{\delta_i}^{\mathrm{aut}}=1\) is only the target check recorded in
+\(d_{\delta_i}^{\mathrm{aut}}=1\) is the independent divisor computation recorded in
 Lemma~\ref{lem:thm3-three-sign-computation}.
 \end{theorem}
 
@@ -1136,17 +1037,17 @@ with one odd rank-one crossing.  Hence the normal Pfaffian is
 the same computation survives restriction from \(R'\) to \(R\).
 \end{proof}
 
-\begin{theorem}[Conditional Dirac--Pfaffian normalization and
+\begin{theorem}[Dirac--Pfaffian normalization and
 orientation character]
-\label{thm:dirac-pfaffian-recognition-conditional}
+\label{thm:dirac-pfaffian-recognition}
 Suppose the following data items are granted on the reduced compact
 critical Hall/CoHA sector of \(X=K3\times E\) of
 Definition~\ref{def:protected-hall-integration-criterion}.
 
 \smallskip
-\textup{(D0)} \emph{Compact first-order certificate.}  A finite-stage
-first-order \(D_0\)-certificate in the sense of
-Definition~\ref{def:first-order-d0-certificate} is supplied.  Thus, for
+\textup{(D0)} \emph{Compact first-order datum.}  A finite-stage
+first-order \(D_0\)-datum in the sense of
+Definition~\ref{def:first-order-d0-datum} is supplied.  Thus, for
 every \(R\) in the chosen cofinal HN subsystem, the datum contains a
 finite Hall/factorization stage \(D_{0,R}\) on the finite support
 \(\widehat\Gamma_R\), a finite target test window
@@ -1156,7 +1057,7 @@ vanishing stage residual tuple \(\mathfrak O_{D_0,R}\).  Only after these
 finite data, transition cocycles, and support/parity residuals vanish may
 one form the
 HN-completed state object.  The completed object is part of the supplied
-certificate: it carries its charge completion by \(\widehat\Gamma_X\), a
+datum: it carries its charge completion by \(\widehat\Gamma_X\), a
 source observable shadow on \(\operatorname{Ran}^{\mathrm{hyb}}(E)\), a
 protected first-order operator/algebra \(\mathfrak D_X\), a Pfaffian line
 with normalized section, and a \(\Theta_\Pi\)-corrected descent whose
@@ -1171,7 +1072,7 @@ normal-ordered homomorphism \(\overline\Pi_X\); the imported target part is
 the Borcherds--Gritsenko--Nikulin denominator algebra; the compact
 state-side construction remains open unless the finite stages, transition
 maps, source/observable comparison, and residual trivializations of
-Definition~\ref{def:first-order-d0-certificate} are supplied.
+Definition~\ref{def:first-order-d0-datum} are supplied.
 
 \smallskip
 \textup{(O1)} \emph{Strong multiplicative reduced orientation datum.}
@@ -1405,9 +1306,9 @@ global datum is the compatible cofinal inverse system of those splittings.
 
 \smallskip
 \textup{(O2)} \emph{Pfaffian local model and wall atlas on type-II
-walls.}  The finite generic local-sign subcertificate of
-Definition~\ref{def:type-ii-pfaffian-wall-certificate} is supplied.
-Proposition~\ref{prop:o2-local-obstruction-certificate} records the
+walls.}  The finite generic local-sign datum of
+Definition~\ref{def:type-ii-pfaffian-wall-datum} is supplied.
+Proposition~\ref{prop:o2-local-obstruction-datum} records the
 geometric computation required to remove this hypothesis.  The
 local wall-chart signs which feed the geometric reflection character
 $$
@@ -1463,7 +1364,7 @@ N_{\delta_1}^{\mathrm{Pf}}=N_{\delta_2}^{\mathrm{Pf}}
 	=(-1)^{N^{\mathrm{Pf}}_{\delta_i,R}} .
 	\]
 		For the supplied rank-one type-II normal models this gives the
-		certificate implication
+		datum implication
 		\(\epsilon_{o,R}(s_{\delta_i})=-1\).  It becomes compact Hall
 		monodromy only after the quotient-orientation classes, the projective
 		cocycle \([c_o]\), the torsor defects \(\omega_{i,\mathcal C}\), the
@@ -1598,7 +1499,8 @@ maps must agree after a zero Cech sign class.  The middle wall
 wrapped wall object
 \[
 x_{\delta_2,R}\in\mathcal M_{\eta,R}^{\mathrm{wr,rig}},
-\qquad b_R(\eta)=1,\qquad \overline\Pi_X(\eta)=(0,1,1),
+\qquad b_R^{\mathrm{geom}}(\eta)>0,\qquad
+\overline\Pi_X(\eta)=(0,1,1),
 \]
 together with its rigidifying anchor, unreduced and reduced deformation
 complexes, quotient-compatible tangent/normal splitting, and protected
@@ -1629,13 +1531,11 @@ s_{\delta_i}^*(\upsilon_{\delta_i,R}u_{\delta_i,R})
 Squaring removes the sign.
 \end{proof}
 
-\(D_0\) has the status split of
-Theorem~\ref{thm:first-order-d0-certificate}: the normal-ordered lattice
-part is proved and the denominator target is imported, but the compact
-finite stages, transition maps, and obstruction trivializations of \(D_0\)
-are open on the reduced \(K3\times E\) sector.  The orientation clauses
-(O1), (O1)\(^+\), and (O2) are likewise
-open on that sector;
+\(D_0\) contains the normal-ordered lattice part and the imported
+denominator target.  On the reduced \(K3\times E\) sector its compact
+finite stages, transition maps, and obstruction trivializations must be
+constructed.  The orientation clauses (O1), (O1)\(^+\), and (O2) require
+the corresponding geometric construction;
 on Calabi--Yau threefolds (O1) is Joyce--Song \cite{JoyceSong},
 the multiplicative orientation cocycle on
 \(\mathrm{Perf}(X)\) is Joyce--Upmeier \cite{JoyceUpmeier} and
@@ -1669,11 +1569,11 @@ with the fermionic grading used in the protected supertrace.  It is not
 the source of the OP scalar minus sign and it does not determine the
 Hall reflection character.  The latter must be computed from monodromy
 of the orientation line around the type-II walls.  The theorem therefore
-has certificate form: granted \textup{(D0)}, \textup{(O1)},
+has datum form: granted \textup{(D0)}, \textup{(O1)},
 \textup{(O1)}\(^+\), and \textup{(O2)}, the normalization and character
 follow.
 
-\begin{proof}[Proof of Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}]
+\begin{proof}[Proof of Theorem~\ref{thm:dirac-pfaffian-recognition}]
 
 \emph{Step 1 (Pfaffian product from the supplied first-order datum).}
 By \textup{(D0)}, the compact first-order object \(\mathfrak D_X\) and
@@ -1794,15 +1694,15 @@ character equality is the orientation-character identity of (ii).  At
 the chosen isotropic cusp \(\mathfrak c_\infty\) this decategorification
 is the Borcherds product.  The supplied O1/O1\(^+\)/O2 character is
 \(\nu_{\Delta_5}\) on the type-II Weyl group.  Without those supplied
-data, the Maass character remains an automorphic target check.
+data, the Maass character remains an automorphic character computation.
 \end{proof}
 
-\begin{lemma}[Conditional Pfaffian signs on the type-II simple walls]
+\begin{lemma}[Pfaffian signs on the type-II simple walls]
 \label{lem:thm3-three-sign-computation}
-Under the compact first-order certificate (D0), the strong orientation
+Under the compact first-order datum (D0), the strong orientation
 datum (O1), the Weyl-equivariant extension (O1)\(^+\), and the
 Pfaffian local model (O2) of
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}, for each
+Theorem~\ref{thm:dirac-pfaffian-recognition}, for each
 \(\delta_i\in\{\delta_1,\delta_2,\delta_3\}\) the
 orientation-monodromy reflection sign is
 $$
@@ -1871,7 +1771,7 @@ The computation is:
 \begin{tabular}{p{0.16\textwidth}p{0.31\textwidth}p{0.13\textwidth}p{0.13\textwidth}p{0.12\textwidth}}
 \hline
 \(\delta_i\) & Gram label & \(N_{\delta_i}^{\mathrm{Pf}}\) &
-\(d_{\delta_i}^{\mathrm{aut}}\) & conditional Hall sign \\
+\(d_{\delta_i}^{\mathrm{aut}}\) & Hall sign from the supplied model \\
 \hline
 \(\delta_1=2f_2-f_3\) &
 \((n,l,m)=(1,1,0)\), \(f(0,1)=1\) & \(1\) & \(1\) & \(-1\) \\
@@ -1884,7 +1784,7 @@ The computation is:
 \end{center}
 \end{proof}
 
-\begin{remark}[Automorphic target check via the Maass character]
+\begin{remark}[Maass character on the type-II Weyl group]
 The argument below verifies the target character
 \(\nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})}\) using only the Maass
 multiplier and the Borcherds product.  It does not construct the Hall
@@ -1943,7 +1843,7 @@ coboundary on the three-wall block, with primitive
 \(\varepsilon_{\Delta}^{\mathrm{aut}}\).  This is an automorphic
 calculation only.
 
-\emph{Step 3 (Divisor-exponent target check).}  The Gritsenko--Nikulin
+\emph{Step 3 (Divisor exponent).}  The Gritsenko--Nikulin
 specialization of Borcherds' product theorem \cite{Borcherds95},
 \cite[Theorem~2.1, (2.1)--(2.3), Example~2.4]{GNII}, together with the
 theta normalization \cite[Theorem~4.1]{GN}, writes
@@ -1951,7 +1851,7 @@ $$
 D_5=64^{-1}\Delta_5
 =\operatorname{Borch}(\phi_{0,1})
 =q^{1/2}r^{1/2}s^{1/2}\!\!
-\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}^+}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}
 $$
 in the type-II cusp polarization
@@ -2246,7 +2146,7 @@ generators, together with the square normalizations, propagates to every
 retained word in the finite action groupoid; on a genuine \(W\)-orbit
 this is the free product \(C_2*C_2*C_2\).  Compatibility in \(R\) is
 exactly the finite-stage inverse-system requirement in the compact/wrapped
-certificate.  No Maass character or scalar normalization enters the
+datum.  No Maass character or scalar normalization enters the
 construction.
 \end{proof}
 
@@ -2317,8 +2217,8 @@ quotient-torsor classes.
 \end{proof}
 
 \begin{remark}
-\label{rem:thm3-honest-status}
-\label{rem:thm3-status}
+\label{rem:thm3-honest-hypotheses}
+\label{rem:thm3-hypotheses}
 \label{rem:thm3-deliverable}
 The table values of \(\nu_{\Delta_5}\) on the six generators
 (Lemma~\ref{lem:maass-multiplier-restriction}), the determinant
@@ -2328,7 +2228,7 @@ identity \(\mathcal D_X=\Delta_5\)
 independent of the compact Hall hypotheses; they are imported or proved
 under the cited source hypotheses, normalizations, and chamber
 conventions.  The Pfaffian recognition (i), the orientation-character
-identity (ii), and the categorical upgrade (iii) are conditional on
+identity (ii), and the categorical upgrade (iii) use
 (O1), (O1)\(^+\), and (O2).  Lemma~\ref{lem:weyl-equivariant-orientation-cocycle}
 identifies the strongest algebraic consequence of a supplied
 Weyl-equivariant lift: the sign factors through the
@@ -2346,8 +2246,8 @@ Borisov--Joyce--Bojko \cite{BorisovJoyce} cover the unreduced
 symplectic stacks, but the reduced \(E\)-quotient with type-II
 Weyl-equivariant lift is not in the literature; (O2) is the supplied
 Pfaffian local normal form on type-II walls of that sector, not a
-consequence of the automorphic product.  The local obstruction certificate
-of Proposition~\ref{prop:o2-local-obstruction-certificate} names the
+consequence of the automorphic product.  The local obstruction datum
+of Proposition~\ref{prop:o2-local-obstruction-datum} names the
 missing chart, splitting, invariant-unit, and rank-one normal-mode
 computations.  The squared scalar branch
 \(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\) is orientation-forgetful;
@@ -2517,7 +2417,7 @@ is the polarization identity for the quadratic Gram map
 \(\Pi_X\).  It is independent of the parity split of a protected
 cohomology representative and independent of the choice of an
 orientation line.  Orientation data
-enters later, when one tries to promote a determinant section to a
+enter later, when one tries to promote a determinant section to a
 Pfaffian section and to compute its monodromy under wall reflections.
 It does not change the Gram polarization.  In particular no
 Bott-periodicity convention, Grothendieck--Witt sign convention, or
@@ -2658,8 +2558,8 @@ $$\mathrm{Hilb}^n(X,(\beta_h,d))
 =\{Y\subset X\mid [Y]=(\beta_h,d),\ \chi(\mathcal O_Y)=n\}.$$
 $$E\curvearrowright X,\qquad (x,e')\mapsto (x,e+e').$$
 
-\begin{lemma}[D6--D2--D0 Mukai--Gram dictionary]
-\label{lem:mukai-vector-ideal-sheaf-sxe}
+\begin{theorem}[D6--D2--D0 Mukai--Gram dictionary]
+\label{thm:d6-d2-d0-mukai-gram-dictionary}
 Let $X=S\times E$ with $S$ K3 and $E$ elliptic.  Let
 $Y\subset X$ be a one-dimensional subscheme with class
 $[Y]=(\beta,d)\in H_2(S,\Z)\oplus H_2(E,\Z)$ and
@@ -2669,9 +2569,13 @@ $$
 v_X(\mathcal I_Y)=\ch(\mathcal I_Y)\cdot\sqrt{\td(X)}
 $$
 against the K\"unneth basis
-\(\Lambda_S\otimes\{1_E,\omega_E\}\) where
-\(\Lambda_S=H^*(S,\Z)\) and \(\omega_E\in H^2(E,\Z)\) is the
-fundamental class.  Then
+\(\widetilde H(S,\Z)\otimes\{1_E,\omega_E\}\), where
+\(\widetilde H(S,\Z)=H^0(S,\Z)\oplus H^2(S,\Z)\oplus H^4(S,\Z)\)
+carries the Mukai pairing
+\[
+(r,D,s)\cdot(r',D',s')=D\cdot D'-rs'-r's
+\]
+and \(\omega_E\in H^2(E,\Z)\) is the fundamental class.  Then
 $$
 v_X(\mathcal I_Y)
 =(1,\,0,\,1-d)\otimes 1_E
@@ -2691,7 +2595,7 @@ In particular, for \(\beta=\beta_h=s_1+hF\) with
 \[
 \Pi_X(Q_Y,P_Y)=(h-1,n,d-1).
 \]
-\end{lemma}
+\end{theorem}
 
 \begin{proof}
 Since \(X=S\times E\) is a Calabi--Yau threefold,
@@ -2730,7 +2634,7 @@ v_X(\mathcal I_Y)
 \]
 because \(\beta^\vee[\mathrm{pt}_S]=0\) on the K3 surface.
 
-The Mukai pairing on \(\Lambda_S\) is
+The Mukai pairing on \(\widetilde H(S,\Z)\) is
 \[
 (r,D,s)\cdot(r',D',s')=D\cdot D'-rs'-r's.
 \]
@@ -2751,11 +2655,12 @@ For \(\beta=\beta_h\), \(\beta_h^2=2h-2\), this gives
 
 The Gram-degree triple
 \((Q^2/2,\,Q\cdot P,\,P^2/2)=(h-1,\,n,\,d-1)\)
-identifies the Hilbert/PT charge with a triple in the Mukai lattice of
-\(X\); this is the Gram-index data used by the Borcherds product and
+is the Gram-index shadow of the Hilbert/PT charge.  It is not itself an
+additive Hall charge in the Mukai lattice of \(X\).  This is the
+Gram-index data used by the Borcherds product and
 by the OP normalization of Theorem~\ref{thm:op-square}.  The hypothesis
 \(\beta_h^2=2h-2\) of Theorem~\ref{thm:op-square} is exactly the
-\(Q^2/2=h-1\) line of this lemma.
+\(Q^2/2=h-1\) line of this theorem.
 
 \begin{proposition}[Reduced scalar quotient integration]
 \label{prop:reduced-scalar-quotient-integration}
@@ -2929,7 +2834,7 @@ must instead be produced by transporting the square root of the
 determinant line around the simple diagonal wall reflections; the
 expected local model is Pfaffian, in the sense made precise as
 hypothesis (O2) of
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}: a simple
+Theorem~\ref{thm:dirac-pfaffian-recognition}: a simple
 real-root reflection reverses one oriented normal mode, so its square is
 scalar while the square root changes sign.
 
@@ -3012,15 +2917,14 @@ Higher-rank semistable strata remain open except where the HN criteria
 below reduce them to already-oriented factors.
 
 \smallskip
-\textup{(P2)} \emph{Type-II diagonal reflections: wall-character formula
-conditional on the orientation existence.}  Conditional on (P1) and on
-the multiplicative orientation cocycle of Joyce--Upmeier
+\textup{(P2)} \emph{Type-II diagonal reflections: wall-character formula.}
+Assume (P1), the multiplicative orientation cocycle of Joyce--Upmeier
 \cite{JoyceUpmeier} and Joyce--Tanaka--Upmeier
 \cite{JoyceTanakaUpmeier} extending equivariantly across the reduced
-\(E\)-quotient, and on the Pfaffian local model (O2) of
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}, equivalently
+\(E\)-quotient, and the Pfaffian local model (O2) of
+Theorem~\ref{thm:dirac-pfaffian-recognition}, equivalently
 the three local calculations isolated in
-Proposition~\ref{prop:o2-local-obstruction-certificate}, the induced
+Proposition~\ref{prop:o2-local-obstruction-datum}, the induced
 orientation character satisfies
 \(\epsilon_o(s_{\delta_i})=-1=\nu_{\Delta_5}(s_{\delta_i})\),
 \(i=1,2,3\), so \(\epsilon_o=\nu_{\Delta_5}\) on
@@ -3028,10 +2932,9 @@ orientation character satisfies
 \(\Aut(\Poly_{II})\simeq S_3\) chamber-permuting reflections have Maass
 value \(+1\), but Hall signs on them require a separately supplied
 semidirect-product lift.  This is exactly conclusion (ii) of
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}, with the
-explicit row-by-row calculation in
-Lemma~\ref{lem:thm3-three-sign-computation}; conditional on (O1),
-(O1)\(^+\), and (O2).
+Theorem~\ref{thm:dirac-pfaffian-recognition}, under (O1),
+(O1)\(^+\), and (O2), with the explicit row-by-row calculation in
+Lemma~\ref{lem:thm3-three-sign-computation}.
 
 \smallskip
 \textup{(P3)} \emph{Higher-rank obstruction.}
@@ -3070,7 +2973,7 @@ Granted the ordinary Pin\(^c\) gerbe vanishing, the connected
 (O1) would follow from the Joyce--Upmeier \cite{JoyceUpmeier}
 multiplicative cocycle plus the supplied Pin\(^c\) lift; granted (O2),
 the wall-character formula of (P2) would follow by
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}.  On
+Theorem~\ref{thm:dirac-pfaffian-recognition}.  On
 higher-rank semistable strata the joint vanishing of
 \(\alpha^{\mathrm{red}}_{\mathcal C}\) and \(\alpha^E_{\mathcal C}\) is
 reduced by Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing} to HN strata
@@ -3112,7 +3015,7 @@ o^{\mathrm{red}}_{\mathcal C}
 \;=\;o^{\mathrm{std}}_{\mathcal C}\otimes\Pi,
 $$
 where \(\Pi\) is the parity-flip line generated by the cosection cokernel.
-The strong orientation certificate \textup{(O1)} includes the coherence
+The strong orientation datum \textup{(O1)} includes the coherence
 datum that makes this shift commute with the extension correspondences of
 Definition~\ref{def:protected-hall-integration-criterion} and preserves
 the Joyce--Upmeier multiplicative cocycle of (P2).  Oberdieck proves the
@@ -3123,7 +3026,7 @@ PT/DT comparison, not an orientation branch.  The parity-flip is absorbed
 into (O1):
 the strong orientation line
 \(o_{\mathcal C}\) demanded by
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} is, on the
+Theorem~\ref{thm:dirac-pfaffian-recognition} is, on the
 reduced sector, \(o^{\mathrm{red}}_{\mathcal C}\), not the unreduced
 BBDJS line, and the squaring isomorphism is to the reduced derived
 self-Ext
@@ -3186,7 +3089,7 @@ The (P3) residual is the joint vanishing of
 HN-completed semistable stack with \(\mathrm{rk}\,\mathcal C\ge 2\) and
 on the small-orbit \(BE[N]\) finite-stabilizer strata.
 Lemma~\ref{lem:p3-higher-rank-pin-c-vanishing} and
-Lemma~\ref{lem:p3-brauer-gerbe-vanishing} give conditional reductions
+Lemma~\ref{lem:p3-brauer-gerbe-vanishing} reduce the computation
 for the HN-reducible and rank-two parity pieces;
 Lemma~\ref{lem:bmu2-klein-four-vanishing} gives the \(N=2\)
 Klein-four detection criterion.  Stable higher-rank length-one strata
@@ -3657,7 +3560,7 @@ cyclic-sector criterion.
 \label{lem:bmu2-cohomological-computation}
 \label{lem:bmu2-orbifold-lift}
 \label{rmk:bmu2-cross-check}
-\label{rem:bmu2-honest-status}
+\label{rem:bmu2-honest-vanishing}
 \label{rmk:bmu2-orbifold-lift-residual}
 There are three natural attempts to turn the \(N=2\) small-orbit
 calculation into a direct vanishing theorem.  They are useful checks, but
@@ -3693,8 +3596,7 @@ the inertia stack of the four \(E[2]\)-fixed sectors by combining the
 K3 Pin\(^c\) package of Cao--Kool--Monavari \cite{CaoKoolMonavari}, the
 Joyce--Upmeier/Joyce--Tanaka--Upmeier orientation cocycle
 \cite{JoyceUpmeier,JoyceTanakaUpmeier}, and To\"en's orbifold
-Riemann--Roch \cite{ToenRRRoot}.  This is a legitimate conditional
-construction target, not a completed proof here.  It requires an
+Riemann--Roch \cite{ToenRRRoot}.  This route requires an
 inertia-stack Pin\(^c\) lift on each cyclic sector, an age-correction
 parity calculation, multiplicative gluing across the smooth and
 orbifold strata, and trivial residual character under the whole
@@ -3706,8 +3608,8 @@ two-primary class \(A_{12}^{(N)}x_1x_2\) and the degree-one characters
 Thus the stable theorem in the manuscript is the finite
 Klein-four criterion: degree-two gerbe bits and degree-one
 linearization characters are both named and must both vanish.  The
-three routes above are cross-checks or conditional construction
-programmes for those entries.  They are not used as unconditional
+three routes above are cross-checks or construction programmes for those
+entries.  They are not used as
 vanishing theorems.
 \end{remark}
 
@@ -4020,8 +3922,8 @@ higher even case is Lemma~\ref{lem:even-finite-stabilizer-residuals}.
 
 \begin{proposition}[Finite-stage quotient-orientation character system]
 \label{prop:finite-stage-quotient-orientation-character-system}
-Fix a finite HN height \(R\) in the compact/wrapped certificate of
-Definition~\ref{def:hybrid-wrapped-factorization-certificate}.  Let
+Fix a finite HN height \(R\) in the compact/wrapped datum of
+Definition~\ref{def:hybrid-wrapped-factorization-datum}.  Let
 \(\mathsf{Str}^{or}_R\) be the finite set of reduced object, extension,
 and flag strata of \(\mathsf{Corr}^{E,\mathrm{hyb}}_R\) on which
 vanishing-cycle coefficients and orientation lines are pulled, pushed, or
@@ -4127,7 +4029,7 @@ are the displayed Borel-equivariant \(H^2\) and \(H^1\) groups, whereas a
 scalar automorphic character is not a class in them.
 \end{proof}
 
-\begin{lemma}[Rank-one orientation-sign rigidification conditional on a supplied lift]
+\begin{lemma}[Rank-one orientation-sign rigidification from a supplied lift]
 \label{lem:spin-lift-sign-fixing}
 Assume that, after the ordinary reduced gerbe class has vanished, a
 square-root orientation lift of
@@ -4363,9 +4265,14 @@ B(c,c')=\bigl((Q,Q'),(Q,P')+(Q',P),(P,P')\bigr),
 \]
 satisfying
 \(\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c')\) and
-\(B(c,c)=2\Pi_X(c)\); \([B]=0\) in
-\(H^2_{\mathrm{sym}}(\Gamma_X^{\mathrm{phys}};\Gamma_{\mathrm{gram}})\)
-via Lemma~\ref{lem:b-cocycle-central-extension}.  The central extension
+\(B(c,c)=2\Pi_X(c)\).  As an ordinary additive cochain identity,
+\[
+B=-\delta\Pi_X,\qquad
+(\delta q)(c,c')=q(c)+q(c')-q(c+c').
+\]
+The obstruction used below is therefore not a nonzero ordinary cohomology
+class; it is the absence of an additive linear trivialization compatible
+with raw bracket degrees.  The central extension
 \[
 \widehat\Gamma_X:=\Gamma_X^{\mathrm{phys}}\oplus_B\Gamma_{\mathrm{gram}},
 \qquad
@@ -4386,7 +4293,7 @@ The quadratic-projection identity
 \(\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c')\) expands
 \((Q+Q',Q+Q')/2\), \((Q+Q',P+P')\), \((P+P',P+P')/2\).
 Cohomologically the central extension is split
-(\([B]=0\), Remark~\ref{rem:b-cocycle-status}), but the splitting
+(\([B]=0\), Remark~\ref{rem:b-cocycle-lift}), but the splitting
 requires the quadratic primitive \(\Pi_X\), not a linear cochain.
 Dyonic charges with distinct \((Q,P)\) but identical \((n,l,m)\) sit in
 the same Gram sector; the Hall bracket distinguishes them through the
@@ -4639,14 +4546,13 @@ integral values: \(B\in\Hom_\Z\!\bigl(S^2\Gamma_X^{\mathrm{phys}},
 \Gamma_X^{\mathrm{phys}},\Gamma_{\mathrm{gram}}\bigr)\).
 \item[\textup{(ii)}] (Polarisation.)  \(B(c,c)=2\Pi_X(c)\) for every
 \(c\in\Gamma_X^{\mathrm{phys}}\).
-\item[\textup{(iii)}] (Symmetric Hochschild $2$-cocycle.) \(B\) is
+\item[\textup{(iii)}] (Bilinear cocycle identity.) \(B\) is
 normalised, \(B(c,0)=B(0,c)=0\), and the additive coboundary
 \[
 (\delta B)(a,b,c):=B(b,c)-B(a+b,c)+B(a,b+c)-B(a,b)
 \]
-vanishes identically.  Hence
-\([B]\in H^2_{\mathrm{sym}}\!\bigl(\Gamma_X^{\mathrm{phys}};
-\Gamma_{\mathrm{gram}}\bigr)\) is well defined.
+vanishes identically.  We use this identity to define the extension below;
+no nonzero ordinary cohomology class is asserted.
 \item[\textup{(iv)}] (Star-associativity on the nose.) The product on
 \(\widehat\Gamma_X:=\Gamma_X^{\mathrm{phys}}\oplus\Gamma_{\mathrm{gram}}\),
 \[
@@ -4669,13 +4575,21 @@ is a central extension of abelian groups with cocycle \(B\).
 \]
 is a homomorphism from \((\widehat\Gamma_X,\star)\) to the additive
 group \(\Gamma_{\mathrm{gram}}\).
-\item[\textup{(vi)}] (Splitting; \([B]=0\).)  The Gram-shadow section
-\(s:\Gamma_X^{\mathrm{phys}}\to\widehat\Gamma_X\), \(s(c):=(c,\Pi_X(c))\),
-is a homomorphism for \(\star\); equivalently
-\(B=-\delta\Pi_X\) in
-\(B^2_{\mathrm{sym}}(\Gamma_X^{\mathrm{phys}};\Gamma_{\mathrm{gram}})\),
-where \((\delta\Pi_X)(c,c')=\Pi_X(c)+\Pi_X(c')-\Pi_X(c+c')\).  In particular
-\([B]=0\), the extension is split as an extension of abelian groups, and
+\item[\textup{(vi)}] (Raw placement and splitting.)  There are two maps
+from the physical charge group into the normal-ordered extension:
+\[
+i_0(c):=(c,0),\qquad s(c):=(c,\Pi_X(c)).
+\]
+The map \(i_0\) is the raw Hall placement of a generator with visible Gram
+degree \(\Pi_X(c)\); it is not additive for \(\star\) unless \(B\equiv0\).
+The map \(s\) is the split additive section: it is a homomorphism for
+\(\star\), but
+\[
+\overline\Pi_X(i_0(c))=\Pi_X(c),\qquad
+\overline\Pi_X(s(c))=0.
+\]
+Equivalently \(B=-\delta\Pi_X\) for the quadratic cochain \(\Pi_X\).  The
+extension is split as an abstract extension of abelian groups, and
 \((c,T)\mapsto(c,T-\Pi_X(c))\) is an isomorphism
 \(\widehat\Gamma_X\xrightarrow{\sim}
 \Gamma_X^{\mathrm{phys}}\oplus\Gamma_{\mathrm{gram}}\) of abelian
@@ -4730,8 +4644,9 @@ Substituting into
 (\delta\beta)(a,b,c)=
 \beta(b,c)-\beta(a,c)-\beta(b,c)+\beta(a,b)+\beta(a,c)-\beta(a,b)=0.
 \]
-Applied componentwise to \(B\), this yields \(\delta B=0\).  Hence
-\(B\in Z^2_{\mathrm{sym}}(\Gamma_X^{\mathrm{phys}};\Gamma_{\mathrm{gram}})\).
+Applied componentwise to \(B\), this yields \(\delta B=0\).  Hence \(B\)
+is a normalized symmetric bilinear additive \(2\)-cocycle with values in
+\(\Gamma_{\mathrm{gram}}\) in the displayed sense.
 
 \smallskip\emph{(iv) Associativity, identity, inverse.}
 Compute the two bracketings of
@@ -4809,18 +4724,17 @@ cocycle-corrected descent can act.
 \end{proof}
 
 \begin{remark}
-\label{rem:b-cocycle-status}
+\label{rem:b-cocycle-lift}
 The preceding lemma records the additive degree correction.  It proves that
-the Gram defect is the coboundary of the quadratic refinement
-\(\Pi_X\), and that the corrected degree monoid is split.  Equivalently,
-the cohomology class \([B]\in H^2_{\mathrm{sym}}(\Gamma_X^{\mathrm{phys}};
-\Gamma_{\mathrm{gram}})\) is nontrivial as a class in linear cochains
-because \(\Pi_X\) is genuinely quadratic, not linear; so \(B\) is not the
-symmetric coboundary of any linear map
-\(\Gamma_X^{\mathrm{phys}}\to\Gamma_{\mathrm{gram}}\).  The class becomes
-trivial only after passing to the quadratic refinement \(\Pi_X\), which is
-exactly the polarization \(\Pi_X\to-\delta\Pi_X=B\) recorded above.  The
-lemma does not
+the Gram defect is the coboundary of the quadratic refinement \(\Pi_X\):
+\[
+d_{\mathrm{Hoch}}(-\Pi_X)=B
+\]
+in \(\Gamma_{\mathrm{gram}}\)-valued additive cochains.  The no-go statement
+below is not a claim that \(B\) defines a nonzero ordinary cohomology class.
+It is the narrower statement that raw bracket recognition needs an additive
+degree target, while \(c\mapsto\Pi_X(c)\) is genuinely quadratic and has no
+additive linear trivialization.  The lemma does not
 strictify the Hall chain complex.  A chain-level Hall product still
 requires the multiplicative orientation, cyclic equivariance, and
 associator data listed in
@@ -4846,7 +4760,18 @@ The section
 s:\Gamma_X^{\mathrm{phys}}\longrightarrow\widehat\Gamma_X,\qquad
 s(c)=(c,\Pi_X(c))
 \]
-is additive for \(\star\).  The normal-ordered Gram map is
+is additive for \(\star\).  The raw placement
+\[
+i_0:\Gamma_X^{\mathrm{phys}}\longrightarrow\widehat\Gamma_X,\qquad
+i_0(c)=(c,0)
+\]
+is the placement of a generator before composite normal-ordering
+counterterms have been accumulated.  Thus
+\[
+\overline\Pi_X(i_0(c))=\Pi_X(c),\qquad
+\overline\Pi_X(s(c))=0.
+\]
+The normal-ordered Gram map is
 \[
 \overline\Pi_X:\widehat\Gamma_X\longrightarrow\Gamma_{\mathrm{gram}},
 \qquad
@@ -4880,7 +4805,55 @@ of clause~(vi).  Clause~(v) of the same lemma proves that
 \(\overline\Pi_X\) is a homomorphism.
 \end{proof}
 
-\begin{theorem}[Strict fixed-lift raw Gram descent cannot realize the
+\begin{lemma}[Normal-ordering flag formula]
+\label{lem:normal-ordering-flag-formula}
+For \(c_1,\ldots,c_k\in\Gamma_X^{\mathrm{phys}}\), multiplication of raw
+placements in \(\widehat\Gamma_X\) gives
+\[
+i_0(c_1)\star\cdots\star i_0(c_k)
+=
+\left(\sum_i c_i,\ \sum_{i<j}B(c_i,c_j)\right).
+\]
+Consequently
+\[
+\overline\Pi_X\!\left(i_0(c_1)\star\cdots\star i_0(c_k)\right)
+=
+\sum_i\Pi_X(c_i).
+\]
+\end{lemma}
+
+\begin{proof}
+Induct on \(k\).  The case \(k=2\) is the definition of \(\star\).  The
+induction step adds
+\[
+B\!\left(\sum_{i\le k}c_i,c_{k+1}\right)
+=\sum_{i\le k}B(c_i,c_{k+1})
+\]
+by bilinearity.  Applying \(\overline\Pi_X\) subtracts the accumulated
+pairwise \(B\)-term from
+\(\Pi_X(\sum_i c_i)=\sum_i\Pi_X(c_i)+\sum_{i<j}B(c_i,c_j)\).
+\end{proof}
+
+\begin{definition}[Raw homogeneous and fixed-lift \(\Pi_X\)-pushforwards]
+\label{def:raw-homogeneous-pi-pushforward}
+Let \(P=\bigoplus_{c\in\Gamma_X^{\mathrm{phys}}}P_c\) be a
+\(\Gamma_X^{\mathrm{phys}}\)-graded primitive object.  The raw homogeneous
+\(\Pi_X\)-pushforward attempts to grade by the quadratic value alone:
+\[
+\left(\Pi_{X,*}^{\mathrm{raw}}P\right)_\gamma
+:=
+\bigoplus_{\Pi_X(c)=\gamma}P_c.
+\]
+It records no \(T\)-coordinate and no normal-ordering counterterm.  A strict
+fixed-lift raw pushforward is the narrower operation obtained by choosing
+one lift \(L(\gamma)\in\Gamma_X^{\mathrm{phys}}\) for every retained
+\(\gamma\) and setting
+\[
+\left(\Pi_{X,*}^{\mathrm{raw},L}P\right)_\gamma:=P_{L(\gamma)}.
+\]
+\end{definition}
+
+\begin{theorem}[Raw homogeneous fixed-lift \(\Pi_X\)-pushforward cannot realize the
 type-II real-root strings]
 \label{thm:raw-gram-descent-no-go}
 Let
@@ -5682,12 +5655,14 @@ is the inverse correspondence of root indexing: it is additive in
 statement for the denominator algebra of \(\Delta_5\), where the grading
 lattice is \(\La^{2,1}_{II}\) and \(\Gamma_{\mathrm{ind}}=\Z^3\) is the
 Gram parametrization of that grading.  In a hypothetical Hall source,
-the underlying lattice is the physical
-\(\Gamma_X^{\mathrm{phys}}=\La_S\oplus\La_S\), the Hall bracket is
-graded by \(\Gamma_X^{\mathrm{phys}}\) (additive), and the
-\(\Gamma_{\mathrm{ind}}\)-grading of the denominator algebra is the
-\(\Pi\)-image, well defined modulo the cocycle \(B\) of
-Definition~\ref{def:dyonic-mukai-lattice}.  The denominator identity reads
+the underlying additive lattice is the formal Mukai lattice
+\(\Gamma_X^{\mathrm{form}}=\La_S\oplus\La_S\), restricted further by actual
+algebraic support.  The comparison with the denominator grading is made
+only after passing to the normal-ordered extension
+\(\widehat\Gamma_X\) and the additive homomorphism \(\overline\Pi_X\), or
+on isolated raw bracket channels where the \(B\)-defect vanishes.  The raw
+quadratic map \(\Pi_X\) is not itself a bracket-recognition grading target.
+The denominator identity reads
 $$
 \frac1{64}\Delta_5(2Z)
 =e^{-2\pi i(\rho,z)}
@@ -5718,21 +5693,33 @@ Throughout this compact realization problem, \(S\) is a smooth complex
 K3 surface and \(E\) is a smooth elliptic curve; singular K3 limits,
 nodal or cuspidal elliptic degenerations, imprimitive curve-class
 contributions, the \(s=0\) compact Hall cusp, and multi-component charge
-closures belong to separate boundary certificates, not to the standing
+closures belong to separate boundary data, not to the standing
 compact source datum.
 
 \begin{definition}[Formal current envelope]
-Let $E$ be the elliptic curve in $X=S\times E$.  Put
+Let \(C\) be a smooth complex curve.  Put
+\[
+\operatorname{Cur}_C(\mathcal A_{\mathrm{den}})
+:=\mathcal A_{\mathrm{den}}\otimes\mathcal O_C
+\]
+with the level-zero current bracket
+\[
+[a\otimes f,b\otimes g]=[a,b]\otimes fg.
+\]
+Its chiral enveloping algebra in the sense of Beilinson--Drinfeld
+\cite{BD} is
+\[
+\mathsf{Den}_{\Delta_5,C}
+:=U_C^{\mathrm{ch}}\!
+\left(\operatorname{Cur}_C(\mathcal A_{\mathrm{den}})\right).
+\]
+For the compact realization problem one specializes \(C=E\), the
+elliptic curve in \(X=S\times E\):
 $$
 \operatorname{Cur}_E(\mathcal A_{\mathrm{den}})
 :=\mathcal A_{\mathrm{den}}\otimes\mathcal O_E
 $$
-with the level-zero current bracket
-$$
-[a\otimes f,b\otimes g]=[a,b]\otimes fg.
-$$
-Its chiral enveloping algebra in the sense of Beilinson--Drinfeld
-\cite{BD} is
+and
 $$
 \mathsf{Den}_{\Delta_5,E}
 :=U_E^{\mathrm{ch}}\!
@@ -5743,11 +5730,12 @@ $$
 \begin{proposition}[Formal current envelope]
 \label{prop:formal-current-envelope}
 \label{thm:factorization-square-root}
-\(\mathsf{Den}_{\Delta_5,E}\) is the formal completed ind
-Beilinson--Drinfeld current envelope on \(E\) obtained from the
-denominator Lie superalgebra.  Its constant-current Lie superalgebra is
-\(\mathcal A_{\mathrm{den}}\), and the denominator of that
-constant-current bracket is
+\(\mathsf{Den}_{\Delta_5,C}\) is the formal completed ind
+Beilinson--Drinfeld current envelope on \(C\) obtained from the
+denominator Lie superalgebra.  For \(C=E\) this gives the target chiral
+object used in the \(K3\times E\) realization problem.  Its
+constant-current Lie superalgebra is \(\mathcal A_{\mathrm{den}}\), and
+the denominator of that constant-current bracket is
 $$
 64^{-1}\Delta_5(2Z).
 $$
@@ -5766,6 +5754,148 @@ $\mathcal A_{\mathrm{den}}\otimes\mathcal O_E$ recover the original Lie
 superalgebra.  The denominator statement is exactly
 Theorem \ref{thm:denominator-algebra-identity}.
 \end{proof}
+
+\begin{definition}[Finite algebraic Dirac--Igusa target reference tower]
+\label{def:finite-algebraic-dirac-igusa-target-reference-tower}
+Fix a finite nonzero cusp-positive active window
+\(A_R\subset\Gamma_{\mathrm{gram}}\) in the positive/root side of the
+Borcherds product, downward-saturated only with respect to the fixed
+finite cofinal target-window order used below, and a group homomorphism
+\[
+L:\Gamma_{\mathrm{gram}}\longrightarrow\Gamma_X^{\mathrm{form}}
+\]
+used only to choose normal-ordered target labels
+\[
+s_L(\gamma):=\bigl(L\gamma,\Pi_X(L\gamma)-\gamma\bigr)
+\in\widehat\Gamma_X.
+\]
+Let
+\[
+\mathfrak g^{\mathrm{tar}}_R
+:=
+\bigoplus_{\gamma\in A_R}
+\mathfrak g_{\Delta_5,\alpha(\gamma)}
+\]
+be the corresponding finite degree-selected target piece of the imported
+Gritsenko--Nikulin denominator algebra, with the globally defined target
+invariant form, radical quotient, and Borcherds--Kac bracket restricted to
+the selected degrees.  Let
+\[
+\mathsf U^{\mathrm{PBW}}_{\Delta_5,R}
+\subset U(\mathfrak g_{\Delta_5})
+\]
+be the finite positive-window PBW filtration piece spanned by monomials in
+allowed nonzero root letters from \(A_R\), with Cartan powers and
+positive-negative cancellations excluded from this finite truncation
+piece.  Its role is target filtration data, not a finite Hopf quotient of
+the full enveloping algebra.
+Multiplication is a tower operation
+\[
+\mathsf U^{\mathrm{PBW}}_{\Delta_5,R}\otimes
+\mathsf U^{\mathrm{PBW}}_{\Delta_5,R'}
+\longrightarrow
+\mathsf U^{\mathrm{PBW}}_{\Delta_5,R+R'},
+\]
+not necessarily an endomorphism of one fixed window.
+
+For \(\gamma=(n,l,m)\in A_R\), choose a finite formal super vector space
+\(V_\gamma\) with \(\sdim V_\gamma=f(nm,l)\) and put
+\(x^\gamma=q^nr^ls^m\).  This choice records only the signed target
+exponent in the algebraic reference tower; it is not a compact primitive
+space, parity lift, Pfaffian line, or source root representative.  The
+formal algebraic first-order block attached to \(\gamma\) is the odd
+endomorphism of
+\[
+K_\gamma:=V_\gamma\oplus \Pi V_\gamma^\vee
+\]
+given, after choosing the displayed splitting, by
+\[
+D_\gamma=
+\begin{pmatrix}
+0&1-x^\gamma\\
+1&0
+\end{pmatrix},
+\qquad
+D_\gamma^2=(1-x^\gamma)\operatorname{id}_{K_\gamma}.
+\]
+After a finite algebraic super-Pfaffian convention is fixed, define the
+formal finite product
+\[
+\operatorname{sPf}^{\mathrm{alg}}_R(D)
+:=
+\prod_{\gamma\in A_R}(1-x^\gamma)^{\sdim V_\gamma}.
+\]
+The data
+\[
+\mathsf{DI}^{\mathrm{alg}}_{\Delta_5,E,L;R}
+:=
+\left(
+\mathfrak g^{\mathrm{tar}}_R,\,
+\mathsf U^{\mathrm{PBW}}_{\Delta_5,R},\,
+s_L,\,
+\{K_\gamma,D_\gamma\}_{\gamma\in A_R},\,
+\operatorname{sPf}^{\mathrm{alg}}_R
+\right)
+\]
+are the finite algebraic Dirac--Igusa target reference tower.  They are
+constructed from the target algebra.  They are not a compact
+\(K3\times E\) Hall source, not a geometric orientation gerbe, not a
+source coalgebra, and not protected integration.
+\end{definition}
+
+\begin{proposition}[Target reference normalization]
+\label{prop:target-reference-normalization}
+For the positive-window pro-target reference tower
+\(\mathsf{DI}^{\mathrm{alg}}_{\Delta_5,E,L}:=
+\{\mathsf{DI}^{\mathrm{alg}}_{\Delta_5,E,L;R}\}_R\), the normalized
+formal product is
+\[
+64q^{1/2}r^{1/2}s^{1/2}
+\lim_R\operatorname{sPf}^{\mathrm{alg}}_R(D)
+=\Delta_5(Z),
+\]
+in the Borcherds cusp chamber, whenever the windows exhaust the active
+support.
+\end{proposition}
+
+\begin{proof}
+By construction,
+\[
+\operatorname{sPf}^{\mathrm{alg}}_R(D)
+=
+\prod_{\gamma=(n,l,m)\in A_R}
+(1-q^nr^ls^m)^{f(nm,l)}.
+\]
+Passing through an exhausting compatible sequence of finite windows gives
+the monic Borcherds product \(D_5=64^{-1}\Delta_5\) by the imported
+Borcherds--Gritsenko--Nikulin product formula.  Multiplying by the
+theta-normalizing Weyl monomial
+\(64q^{1/2}r^{1/2}s^{1/2}\) gives \(\Delta_5\).
+
+This is a target-reference normalization.  It proves no compact
+\(K3\times E\) Hall source, no geometric Pfaffian line, no orientation
+monodromy, no source coalgebra, and no primitive recognition theorem.
+\end{proof}
+
+\begin{openproblem}[Compact realization of the target reference tower]
+\label{op:compact-realization-target-reference-tower}
+Construct finite geometric Hall--Dirac source data
+\(\mathfrak H^{\mathrm{geom}}_{X,R}\) and compatible realization functors
+\[
+\mathsf{Real}_{X,R}:
+\mathfrak H^{\mathrm{geom}}_{X,R}
+\longrightarrow
+\mathsf{DI}^{\mathrm{alg}}_{\Delta_5,E,L;R}
+\]
+preserving the normal-ordered \(\widehat\Gamma_X\)-degree, Hall product
+and coproduct correspondences, quotient-after-correspondence data,
+orientation-gerbe twists, hybrid local/wrapped operations, source
+coalgebras, first-order blocks, Pfaffian lines with leading cusp
+trivialization, primitive representatives, Hopf pairings, radical
+kernels, PBW filtrations, and finite-window transitions.  The existence of
+such compatible functors, and of the geometric source domain itself, is
+the compact \(K3\times E\) Dirac--Igusa realization problem.
+\end{openproblem}
 
 \begin{definition}[Holomorphic \(E_3\) quantum upgrade]
 The determinant and denominator results above are protected
@@ -5788,7 +5918,7 @@ operad is asserted here.  This symbol, and the placeholder
 \(\Phi^{\mathrm{FA}}_3(X)\), denote the source object required in the
 Calabi--Yau-to-chiral construction; they are not a constructed functor
 evaluated on \(X\).
-The candidate concrete realization, supplied as a conditional schema, is
+The candidate concrete realization, supplied as a schema, is
 the local protected observable algebra
 \(\mathcal A_X(U)\) of
 Definition~\ref{def:local-protected-observable-algebra}.
@@ -5925,7 +6055,7 @@ comparison is required to reduce to the standard projection-finite
 			must be null-trivialized.  Only after this null-trivialization may the
 			displayed zigzag be read as a strict finite zigzag in the
 			projection-finite sector; in positive elliptic degree it is replaced by
-			the hybrid certificate \(\mathfrak O_{\mathrm{hyb},R}=0\).  The forward map
+			the hybrid datum \(\mathfrak O_{\mathrm{hyb},R}=0\).  The forward map
 		\(\kappa_{E,R}\) is especially not the canonical bar--cobar counit:
 	the canonical source-side map has the direction
 	\[
@@ -5970,7 +6100,7 @@ H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^{\Theta}\mathcal F_X)
 \mathsf{Den}_{\Delta_5,E}.
 $$
 Here \(C_X\) is the source coalgebra later formalized in
-Definition~\ref{def:chiral-koszul-source-certificate}; in wrapped
+Definition~\ref{def:chiral-koszul-source-datum}; in wrapped
 degree it is attached to the hybrid object
 \(\mathcal F_X^{\mathrm{hyb}}\), not merely to the projection-finite
 Ran shadow.  The first comparison would be the bracket theorem.  The
@@ -6127,7 +6257,7 @@ structure map \(m_{\mathcal U,R}\) descended from higher stages;
 \(\operatorname{Ran}(E)\)-factorization object only on the
 projection-finite part; positive elliptic degree must be routed through
 the hybrid wrapped datum of
-Definition~\ref{def:hybrid-wrapped-factorization-certificate}.
+Definition~\ref{def:hybrid-wrapped-factorization-datum}.
 \end{enumerate}
 If all finite stages and transition maps are supplied, the completed
 source is the inverse limit
@@ -6169,10 +6299,12 @@ window
 \delta_2\leftrightarrow(0,1,1),\qquad
 \delta_3\leftrightarrow(0,-1,0),
 \]
-one has \(b_R(\delta_1)=b_R(\delta_3)=0\) and
-\(b_R(\delta_2)=1\).  Thus the \(\delta_2\) primitive cannot live in the
-projection-finite Ran sector.  A compact source certificate must instead
-exhibit
+one has \(m_R(\delta_1)=m_R(\delta_3)=0\) and
+\(m_R(\delta_2)=1\), where \(m_R=\operatorname{pr}_3\overline\Pi_X\) is
+the Borcherds trace exponent.  In the rank-one D6--D2--D0 dictionary this
+is geometric elliptic degree \(d=m_R+1=2\), so a geometric representative
+of the middle wall cannot live in the projection-finite Ran sector.  A
+compact source datum must instead exhibit
 \[
 x_{\delta_2,R}\in \mathcal M_{\eta,R}^{\mathrm{wr,rig}},\qquad
 \overline\Pi_X(x_{\delta_2,R})=(0,1,1),
@@ -6189,8 +6321,8 @@ square is not defined, and
 \]
 \end{lemma}
 
-\begin{definition}[Finite compact \(E_3\)-source obstruction certificate]
-\label{def:finite-compact-e3-source-obstruction-certificate}
+\begin{definition}[Finite compact \(E_3\)-source obstruction datum]
+\label{def:finite-compact-e3-source-obstruction-datum}
 Fix \((\sigma,S,R)\).  A finite compact \(E_3\)-source candidate is the
 finite datum of Definition~\ref{def:compact-e3-source-interface}, together
 with the finite Hall support, finite-type substacks, quotient-orientation
@@ -6219,14 +6351,14 @@ cancellation; the chosen \(E_3\)-formality point; the chain-level
 framing/homotopy witness for the holomorphic operadic model; finite-first
 HN quotient and transition control; the finite \(K3\)-to-\(E\) specialization
 diagram; the full hybrid local/wrapped obstruction tuple of
-Definition~\ref{def:hybrid-wrapped-factorization-certificate}; and
+Definition~\ref{def:hybrid-wrapped-factorization-datum}; and
 successor transition compatibility.  The zero groupoid
 \[
 Z(\mathfrak O^{E_3\mathrm{-src}}_{R})
 \]
 is the full subgroupoid of finite candidates for which every entry
 vanishes with a specified null-trivialization compatible with the
-successor transition maps.  This is a typed certificate zero locus, not a
+successor transition maps.  This is a typed datum zero locus, not a
 single derived obstruction complex; no such complex is asserted before the
 finite Hall/stability/moduli problem has itself been solved.
 \end{definition}
@@ -6239,15 +6371,15 @@ finite compact holomorphic \(E_3\)-source interfaces at height \(R\) with
 the finite Hall, orientation, hybrid, and specialization data required in
 Definition~\ref{def:compact-e3-source-interface}.  A compatible cofinal
 system of such zeroes, satisfying the Mittag--Leffler exactness condition
-of Definition~\ref{def:first-order-d0-certificate}, constructs the
+of Definition~\ref{def:first-order-d0-datum}, constructs the
 completed source
 \[
 \mathcal A^{E_3}_{X}
 =
 \varprojlim_R\mathcal A^{E_3}_{X,\sigma,S,\le R}.
 \]
-This is an equivalence of certificate data.  It is not a proof that the
-zero groupoid is nonempty.
+This identifies the finite entries whose simultaneous vanishing gives the
+interface.  It is not a proof that the zero groupoid is nonempty.
 \end{proposition}
 
 \begin{proof}
@@ -6266,8 +6398,8 @@ Mittag--Leffler exactness added to prevent the completed comparison from
 weakening to a pro-comparison.
 \end{proof}
 
-\begin{corollary}[No nonemptiness from the finite source certificate]
-\label{cor:no-nonemptiness-from-finite-source-certificate}
+\begin{corollary}[No nonemptiness from the finite source datum]
+\label{cor:no-nonemptiness-from-finite-source-datum}
 The formal BV skeleton of
 Lemma~\ref{lem:formal-bv-skeleton-compact-source-obstruction} and the
 zero-source equivalence of Proposition~\ref{prop:zero-source-equivalence}
@@ -6338,7 +6470,7 @@ stages before completion;
 \item the projection-finite local sector and the hybrid wrapped repair
 for positive elliptic degree;
 \item a strong orientation, protected integration, and primitive
-recognition certificate.
+recognition datum.
 \end{enumerate}
 Existing BV, CoHA, and chiral-algebra formalisms give the language for
 these requirements.  They do not, by themselves, construct this compact
@@ -6460,7 +6592,7 @@ Fix a finite height \(R\).  The target counit
 \mathsf{Den}_{\Delta_5,E,\le R}
 \]
 is a morphism internal to the imported current envelope.  A source
-Koszul certificate is different data: it must first construct
+Koszul datum is different data: it must first construct
 \[
 \mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}},\qquad
 C_{X,R},\qquad
@@ -6483,7 +6615,7 @@ b_{X,R}:C_{X,R}\simeq
 \]
 Thus setting \(C_{X,R}=\bar B_E^{\mathrm{ch}}
 (\mathsf{Den}_{\Delta_5,E,\le R})\), or choosing a homotopy inverse to
-\(\varepsilon_{\Delta,R}\), does not produce a source certificate.  It
+\(\varepsilon_{\Delta,R}\), does not produce a source datum.  It
 sets the separation residual \(\mathfrak o^{\mathrm{sep}}_R\) to zero
 only after an independent source construction of \(C_{X,R}\),
 \(F^{\mathrm{co}}_{R,\bullet}\), \(\Delta_R^{\mathrm{ch}}\), and
@@ -6503,8 +6635,8 @@ coalgebra exists; it cannot define the source coalgebra or its primitive
 restriction.
 \end{proof}
 
-\begin{definition}[Chiral Koszul source certificate]
-\label{def:chiral-koszul-source-certificate}
+\begin{definition}[Chiral Koszul source datum]
+\label{def:chiral-koszul-source-datum}
 Fix \((\sigma,S,R)\), the finite HN support
 \(\widehat\Gamma_R\), and the Gram image \(\Gamma_R^\Pi\).  Let
 \[
@@ -6512,7 +6644,7 @@ Fix \((\sigma,S,R)\), the finite HN support
 \]
 denote the charge-truncation of the formal current envelope
 \(\mathsf{Den}_{\Delta_5,E}\) to the finite set of Gram degrees
-\(\Gamma_R^\Pi\).  A finite-stage chiral Koszul source certificate is a
+\(\Gamma_R^\Pi\).  A finite-stage chiral Koszul source datum is a
 datum
 \[
 \mathfrak K^{\mathrm{Kos}}_{X,R}
@@ -6537,9 +6669,9 @@ Lemma~\ref{lem:source-target-koszul-separation}.
 \begin{enumerate}
 \item \emph{Source chiral object.}
 \(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\) is the finite hybrid
-object of Definition~\ref{def:hybrid-wrapped-factorization-certificate}.
-Its \(b_R=0\) part comes from the \(K3\)-specialized
-\(E_3\)-source; its \(b_R>0\) part is present only through the rigidified
+object of Definition~\ref{def:hybrid-wrapped-factorization-datum}.
+Its \(b_R^{\mathrm{geom}}=0\) part comes from the \(K3\)-specialized
+\(E_3\)-source; its \(b_R^{\mathrm{geom}}>0\) part is present only through the rigidified
 wrapped prequotient, the ordered two-sided mixed operations, the full
 flag atlas, quotient-after-correspondence descent, and protected
 integration.  Equivalently, the hybrid residual
@@ -6635,7 +6767,7 @@ imported Beilinson--Drinfeld current envelope of the
 Gritsenko--Nikulin denominator algebra.  The map does not construct the
 compact source and is not obtained from the scalar square.  Its direction
 is source-to-target.  A chosen homotopy inverse, if one exists after
-localization or completion, is not part of the certificate and cannot be
+localization or completion, is not part of the datum and cannot be
 used to define the source coalgebra or its primitive representatives.
 The displayed primitive restriction is a condition on already supplied
 source primitives after the closed Hopf-radical quotient.
@@ -6722,7 +6854,7 @@ the reduced \(E\)-quotient; source/target separation, meaning that the
 source coalgebra, filtration, coproduct, and bar comparison are supplied
 before the target comparison and are not reconstructed from the target
 counit; and the primitive restriction after the closed Hopf-radical
-quotient.  A full Koszul certificate is the compatible vanishing and
+quotient.  A full Koszul datum is the compatible vanishing and
 trivialization of \(\mathfrak O_{\mathrm{Kos},R}\) for all \(R\), followed
 by passage to the HN inverse limit.
 \end{enumerate}
@@ -6733,7 +6865,7 @@ by passage to the HN inverse limit.
 Fix \(R\) and assume the finite hybrid residual
 \(\mathfrak O_{\mathrm{hyb},R}\) vanishes, with the transition and
 properness data of
-Definition~\ref{def:hybrid-wrapped-factorization-certificate}.  Assume
+Definition~\ref{def:hybrid-wrapped-factorization-datum}.  Assume
 also that the finite hybrid stage supplies an integer \(N_R\) such that
 every nonzero ordered word of non-vacuum hybrid inputs of total HN height
 \(\le R\) has length at most \(N_R\).  Equivalently, the HN height is
@@ -6749,7 +6881,7 @@ augmentation
 \]
 Under these hypotheses
 there is a canonical source-side choice of the finite coalgebra in
-Definition~\ref{def:chiral-koszul-source-certificate}:
+Definition~\ref{def:chiral-koszul-source-datum}:
 \[
 C^{\mathrm{bar}}_{X,R}
 :=
@@ -6967,9 +7099,9 @@ inverse to
 enters this construction.
 \end{corollary}
 
-\begin{proposition}[Consequence of the chiral Koszul source certificate]
-\label{prop:chiral-koszul-source-certificate-consequence}
-Assume the finite-stage certificates
+\begin{proposition}[Consequence of the chiral Koszul source datum]
+\label{prop:chiral-koszul-source-datum-consequence}
+Assume the finite-stage data
 \(\mathfrak K^{\mathrm{Kos}}_{X,R}\) are supplied for all \(R\), with
 compatible transition maps, in particular with
 \(\mathfrak o^{C,\mathrm{tr}}_{R'R}=0\) for every \(R'\ge R\).  Assume
@@ -7002,7 +7134,7 @@ recognition data, or \(C_X\) itself from the target-internal counit.
 \begin{proof}
 The inverse limit exists by the transition compatibility, bounded
 exhaustive finite charge filtration, finite coassociative and counital
-collision coproduct, and continuity hypotheses in the certificate.  The
+collision coproduct, and continuity hypotheses in the datum.  The
 coradical filtration is finite on every \(\Gamma_R^\Pi\)-truncation and
 continuous in the HN completion; the limit is therefore pro-conilpotent,
 with finite-stage conilpotence preserved.  The coproduct on \(C_X\) is the
@@ -7013,7 +7145,7 @@ the \(R^1\varprojlim\) obstruction on their cones, hence these compatible
 finite quasi-isomorphisms pass to completed quasi-isomorphisms.  Without
 that exactness one obtains only a compatible pro-quasi-isomorphism.  The
 final sentence is the
-definition of the certificate: the source object, mixed correspondences,
+definition of the datum: the source object, mixed correspondences,
 orientation, primitive presentation, and source/target-separation datum
 are separate entries of \(\mathfrak K_X\).
 \end{proof}
@@ -7032,7 +7164,7 @@ opens.
 Singular \(K3\) surfaces, nodal or cuspidal elliptic curves, imprimitive
 curve-class contributions, the \(s=0\) compact Hall cusp, and
 multi-component charge closures require boundary-degeneration
-certificates; the Ran-local statement here is the smooth-\(S\),
+data; the Ran-local statement here is the smooth-\(S\),
 smooth-\(E\) compact-stage assertion.
 \end{remark}
 
@@ -7057,7 +7189,7 @@ wrapped objects have \(b(A)>0\).
 
 The hybrid base used below is a finite-stage coloured correspondence
 base, not an ordinary Ran space with one scalar attached.  At height
-\(R\), after the certificate below is supplied, an object consists of a
+\(R\), after the datum below is supplied, an object consists of a
 finite projection-local support \(F\subset E\), finitely many wrapped
 colours \(\eta_j\in\Gamma_R^{\mathrm{wr}}\), and rigidified wrapped
 objects \(W_j\) carrying anchor values
@@ -7110,7 +7242,8 @@ the projection-finite sector.  It does not by itself realize the full
 
 \begin{proof}
 The variable \(s\) is the Borcherds variable corresponding to the
-OP elliptic-degree direction in Proposition~\ref{prop:op-normalization}.
+OP elliptic-degree direction after the \(m=d-1\) variable shift of
+Proposition~\ref{prop:op-normalization}.
 By Lemma~\ref{lem:projection-e-support-locality-obstruction}, positive
 elliptic degree projects onto all of \(E\).  Such objects cannot be
 separated by choosing disjoint opens in \(E\).  Therefore ordinary
@@ -7118,17 +7251,17 @@ support-local factorization on \(\operatorname{Ran}(E)\) has no
 locality mechanism for the wrapped elliptic-degree sector.
 \end{proof}
 
-\begin{definition}[Finite hybrid local/wrapped factorization certificate]
-\label{def:hybrid-wrapped-factorization-certificate}
+\begin{definition}[Finite hybrid local/wrapped factorization datum]
+\label{def:hybrid-wrapped-factorization-datum}
 Fix \((\sigma,S,R)\) as in
 Definition~\ref{def:compact-e3-source-interface}.  A finite-stage hybrid
-local/wrapped factorization certificate is a datum
+local/wrapped factorization datum is a datum
 \[
 \mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}
 =
 \left(
 \mathcal C_{\sigma,S,\le R},\,
-b_R,\,
+b_R^{\mathrm{geom}},\,
 \mathcal F_{R}^{\mathrm{loc}},\,
 \mathcal G_{R}^{\mathrm{wr}},\,
 \mathfrak E_R^{\mathrm{loc}},\,
@@ -7157,17 +7290,20 @@ charge substacks
 \(\gamma\in\Gamma_{\sigma,S}^{HN}(R)\), vanishing-cycle coefficients
 \(\Phi_{\gamma,R}\), and orientation lines \(o_{\gamma,R}\).  The map
 \[
-b_R:\Gamma_{\sigma,S}^{HN}(R)\longrightarrow \Z_{\ge0}
+b_R^{\mathrm{geom}}:\Gamma_{\sigma,S}^{HN}(R)\longrightarrow \Z_{\ge0}
 \]
-is the elliptic-degree component.  Write
-\(\Gamma_R^{\mathrm{loc}}=\{\alpha\mid b_R(\alpha)=0\}\) and
-\(\Gamma_R^{\mathrm{wr}}=\{\eta\mid b_R(\eta)>0\}\).  The ideal of height
+is the geometric elliptic-degree component.  Write
+\(\Gamma_R^{\mathrm{loc}}=\{\alpha\mid b_R^{\mathrm{geom}}(\alpha)=0\}\)
+and
+\(\Gamma_R^{\mathrm{wr}}=\{\eta\mid b_R^{\mathrm{geom}}(\eta)>0\}\).
+The ideal of height
 \(>R\) is already killed at this stage, and all operations below are
 understood to be zero when their output has height \(>R\).  The map
-\(b_R\) is additive on extensions that remain in the quotient:
+\(b_R^{\mathrm{geom}}\) is additive on extensions that remain in the quotient:
 \[
-b_R(0)=0,\qquad
-b_R(\gamma+\gamma')=b_R(\gamma)+b_R(\gamma')
+b_R^{\mathrm{geom}}(0)=0,\qquad
+b_R^{\mathrm{geom}}(\gamma+\gamma')
+=b_R^{\mathrm{geom}}(\gamma)+b_R^{\mathrm{geom}}(\gamma')
 \]
 whenever \(\gamma,\gamma',\gamma+\gamma'\in
 \Gamma_{\sigma,S}^{HN}(R)\); if the sum has height \(>R\), the
@@ -7258,7 +7394,7 @@ is supplied, together with a fixed origin \(0_E\in E\) and an
 \]
 where \(+\) is the group law on \(E\) with respect to the chosen origin.
 The origin \(0_E\) is part of the supplied datum and is fixed once globally
-in the certificate; a different choice of origin shifts \(\lambda_{\eta,R}\)
+in the datum; a different choice of origin shifts \(\lambda_{\eta,R}\)
 by a constant and the anchor descends to a \(\mathrm{Pic}^0(E)\)-torsor whose
 zero point is the fixed datum.  Its objects have support dominating \(E\).
 The pair \((\rho_{\eta,R},\lambda_{\eta,R})\) is a supplied
@@ -7313,7 +7449,7 @@ prequotient and anchor; unit translation law, possibly after a specified
 finite cover; losslessness of the anchor on the relative \(E\)-position
 needed by wrapped correspondences; compatibility of the input,
 intermediate, and output anchors on mixed and wrapped flag stacks; and
-compatibility under successor HN transitions.  The certificate requires
+compatibility under successor HN transitions.  The datum requires
 the chosen anchor, its translation law, and the vanishing of all components
 of \(\mathfrak o^\lambda_R\) as finite data.  Put
 \[
@@ -7328,7 +7464,7 @@ H_*^{\mathrm{BM}}\!\left(
 \mathcal G_{\eta,R}^{\mathrm{wr}}.
 \]
 If no such prequotient memory is supplied, the wrapped part of the
-certificate is absent.
+datum is absent.
 
 \item \emph{Local, mixed, and wrapped extension correspondences.}  For
 disjoint opens
@@ -7376,7 +7512,7 @@ with local inputs on both sides of one wrapped input, correspondences
 \]
 The displayed mixed correspondence above is the case \(I_+=\varnothing\).
 The case \(I_-=\varnothing\) is the right local action on a wrapped
-input.  Both are part of the certificate.  Similarly
+input.  Both are part of the datum.  Similarly
 \(\mathfrak E_{\eta_1,\eta_2,R}^{\mathrm{wr}}\) is ordered in
 \((\eta_1,\eta_2)\); no symmetry of wrapped inputs is assumed unless an
 extra symmetry datum is supplied.
@@ -7425,8 +7561,8 @@ stacks are likewise anchored: before quotienting they carry the map
 \lambda_{\eta_1+\eta_2,R}(W)\bigr),
 \]
 where \(W_1,W_2,W\) are the two inputs and the output of \(\xi\).  The
-finite correspondence keeps this relation, not only the total degree
-\(b_R(\eta_1+\eta_2)\).
+finite correspondence keeps this relation, not only the total geometric
+degree \(b_R^{\mathrm{geom}}(\eta_1+\eta_2)\).
 
 These object stacks, extension stacks, and flag stacks generate a finite
 \(E\)-equivariant correspondence category
@@ -7559,10 +7695,10 @@ The defect class of this equality for the word \(w\) is denoted
 \[
 \mathfrak o^{\mathrm{assoc}}_{w,R}.
 \]
-The certificate requires \(\mathfrak o^{\mathrm{assoc}}_{w,R}=0\) for all
+The datum requires \(\mathfrak o^{\mathrm{assoc}}_{w,R}=0\) for all
 eight words, with the chosen \(2\)-morphisms satisfying the usual
 four-input pentagon on the finite flag-of-flags stacks.
-This eight-word atlas is the binary associativity subcertificate.  Full
+This eight-word atlas gives binary associativity.  Full
 hybrid factorization still requires the higher colored configuration
 atlas, units, symmetry or ordering conventions, refinement maps, descent,
 and overlap coherences for all finite HN windows.  None of these follows
@@ -7630,7 +7766,7 @@ The four quotient residuals are
 They record, respectively, existence of the functor \(Q_{E,R}\) on the
 finite correspondence category, admissibility/properness after quotient,
 compatibility with all flag \(2\)-morphisms, and compatibility with HN
-transition maps.  The certificate requires their vanishing and chosen
+transition maps.  The datum requires their vanishing and chosen
 null-homotopies.
 
 \item \emph{Protected integration and the Igusa \(s\)-direction.}  The
@@ -7683,29 +7819,32 @@ height \(>R\), both sides are zero in the finite quotient.  If a
 homogeneous class \(x\) has charge \(\gamma\), and
 \(\mathcal F_{\gamma,R}^{\mathrm{hyb}}\) denotes the corresponding local
 or wrapped summand, then every nonzero monomial in
-\(I_R^{\mathrm{prot}}(Q_{E,R}x)\) has \(s\)-degree \(b_R(\gamma)\):
+\(I_R^{\mathrm{prot}}(Q_{E,R}x)\) has \(s\)-degree \(m_R(\gamma)\):
 \[
 I_R^{\mathrm{prot}}(Q_{E,R}x)
 \in
-s^{\,b_R(\gamma)}\C[q^{\pm1},r^{\pm1}]
+s^{\,m_R(\gamma)}\C[q^{\pm1},r^{\pm1}]
 \]
 under the OP/Borcherds variable convention of
 Proposition~\ref{prop:op-normalization}.  More precisely,
 \(I_R^{\mathrm{prot}}\) is homogeneous for the full Gram label
 \(\overline\Pi_X(\gamma)=(n,l,m)\), and the displayed condition records
-the elliptic degree \(m=b_R(\gamma)\).  Thus positive powers of the
-Igusa \(s\)-variable can only come from the wrapped colour \(b_R>0\).
+the Gram trace exponent \(m_R(\gamma)=m\), while
+\(b_R^{\mathrm{geom}}(\gamma)\) records geometric elliptic support degree.
+Thus positive powers of the Igusa \(s\)-variable require positive Gram trace
+exponent, and the wrapped colour records the geometric support needed to
+realize such sectors.
 This is a source-support condition, not a consequence of the target
 product.  If a target window contains a degree with \(m>0\), and in
 particular the test degree \(\delta_2\leftrightarrow(0,1,1)\), the finite
 stage must contain a wrapped source summand mapping to that degree under
 \(\overline\Pi_X\).  Otherwise the coefficient lies outside the verified
 compact source image.
-For products, the displayed character law and additivity of \(b_R\) give
+For products, the displayed character law and additivity of \(m_R\) give
 \[
-s^{b_R(\gamma_1+\cdots+\gamma_k)}
+s^{m_R(\gamma_1+\cdots+\gamma_k)}
 =
-\prod_i s^{b_R(\gamma_i)}
+\prod_i s^{m_R(\gamma_i)}
 \]
 inside the finite HN quotient.  Hence the \(s\)-direction is coupled to
 the actual local/wrapped operation, not appended as an external Fock
@@ -7729,7 +7868,7 @@ I_R^{\mathrm{prot}}\bar\tau^{\mathrm{hyb}}_{R'R}
 \]
 It is required to vanish.  Thus protected integration is compatible
 with the HN inverse system, not merely with one finite trace.
-The coefficient of a monomial \(q^nr^ls^{b_R(\gamma)}\) is a protected
+The coefficient of a monomial \(q^nr^ls^{m_R(\gamma)}\) is a protected
 finite-stage trace coefficient.  Equality of these coefficients with the
 Borcherds exponents \(f(nm,l)\), and the primitive
 Borcherds--Kac--Moody bracket test, are additional recognition
@@ -7780,7 +7919,7 @@ The exact finite obstruction tuple for the hybrid lane is
 	residual, quotient formation/admissibility/flag and transition descent,
 	chain/product/colored-refinement/coproduct/primitive integration laws, integration
 	transition compatibility, and HN transition compatibility.  A finite
-	hybrid certificate means the compatible vanishing and trivialization of
+	hybrid datum means the compatible vanishing and trivialization of
 	this tuple for every \(R'\ge R\).  Without
 	\(\mathfrak O_{\mathrm{hyb},R}=0\), the notation
 	\(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\) names an obstruction
@@ -7789,13 +7928,13 @@ The exact finite obstruction tuple for the hybrid lane is
 	removes at most the common \(\mathbb G_m\), while direct sums and flags
 	can retain \(\mathbb G_m\), \(PGL_n\), or parabolic stabilizers.  Their
 	vanishing is the finite-stack condition used later in
-	Proposition~\ref{prop:conditional-finite-dcritical-hall-product}.
+	Proposition~\ref{prop:finite-dcritical-hall-product}.
 	The entry \(\mathfrak o^{\mathrm{col}}_R\) records the higher colored
 	configuration atlas, unit and vacuum maps, symmetry or ordering
 	conventions, refinement maps, descent, and overlap coherences not detected
 by the eight length-three words.  If this entry is not supplied, vanishing
 of the remaining binary terms gives only the two-step Hall/module
-certificate, not a full hybrid factorization object.
+datum, not a full hybrid factorization object.
 The entry \(\mathfrak o^{I,\mathrm{col}}_R\) records compatibility of
 protected integration with the higher colored configuration atlas and its
 refinement maps; binary product compatibility does not imply this
@@ -7815,12 +7954,12 @@ must be induced by functors
 \mathsf{Corr}^{E,\mathrm{hyb}}_R\) compatible with all three kinds of
 correspondences, with the flag associativity constraints, with the
 rigidifying anchors, with \(Q_{E,R}\), with the comparison isomorphisms
-\(\theta^Q_R\), and with protected integration.  They preserve elliptic
+\(\theta^Q_R\), and with protected integration.  They preserve geometric elliptic
 degree: if a homogeneous
 summand of charge \(\gamma'\) at height \(R'\) maps to a nonzero summand
 of charge \(\gamma\) at height \(R\), then
 \[
-b_R(\gamma)=b_{R'}(\gamma').
+b_R^{\mathrm{geom}}(\gamma)=b_{R'}^{\mathrm{geom}}(\gamma').
 \]
 The transition residual
 \(\mathfrak o^{\mathrm{tr}}_{\mathrm{hyb},R'R}\) is the joint defect of
@@ -7841,13 +7980,13 @@ hybrid object is
 \varprojlim_R\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}.
 \]
 It is the charge-completed hybrid source specified by those finite
-certificates over \(\operatorname{Ran}^{\mathrm{hyb}}(E)\).  Its
+data over \(\operatorname{Ran}^{\mathrm{hyb}}(E)\).  Its
 restriction to
 \(\operatorname{Ran}(E)_{[0]}\) is ordinary projection-finite Ran
 factorization.  Its \(b>0\) strata are wrapped modules acted on by the
 local sector through the mixed Hall correspondences.  This inverse-limit
-	formula is a construction from the displayed finite certificates; it is
-	not an existence theorem for those certificates.
+	formula is a construction from the displayed finite data; it is
+	not an existence theorem for those data.
 	\end{definition}
 
 	\begin{proposition}[Closed-configuration local-local properness in a coherent heart]
@@ -7912,8 +8051,8 @@ local sector through the mixed Hall correspondences.  This inverse-limit
 		is the required input.
 		\end{proposition}
 
-		\begin{proposition}[Conditional finite d-critical Hall product]
-		\label{prop:conditional-finite-dcritical-hall-product}
+\begin{proposition}[Finite d-critical Hall product]
+		\label{prop:finite-dcritical-hall-product}
 		Fix \(R\) and closed-configuration substacks
 		\(\mathfrak M_{c,R,I}^{\mathrm{loc,cl}}\) in a noetherian abelian Hall
 		heart as in
@@ -7967,10 +8106,10 @@ local sector through the mixed Hall correspondences.  This inverse-limit
 			\(\mathcal O_x\subset\mathcal O_x^{\oplus2}\).
 			\end{proposition}
 
-		\begin{proposition}[Finite consequences of the hybrid certificate]
-\label{prop:hybrid-certificate-scope}
+		\begin{proposition}[Finite consequences of the hybrid datum]
+\label{prop:hybrid-datum-scope}
 Assume the finite-stage data of
-Definition~\ref{def:hybrid-wrapped-factorization-certificate} are
+Definition~\ref{def:hybrid-wrapped-factorization-datum} are
 supplied for all \(R\), with compatible transition maps.  Then:
 \begin{enumerate}
 \item the \(b=0\) restriction is an ordinary support-local factorization
@@ -8010,11 +8149,12 @@ defects
 \(x\in Q_{E,R}\mathcal F_{\gamma,R}^{\mathrm{hyb}}\),
 \[
 I_R^{\mathrm{prot}}(x)\in
-s^{b_R(\gamma)}\C[q^{\pm1},r^{\pm1}],
+s^{m_R(\gamma)}\C[q^{\pm1},r^{\pm1}],
 \]
 hence the positive \(s\)-direction cannot be supplied by the
 projection-finite Ran stratum; on products this law is multiplicative
-because \(b_R\) is additive inside the finite quotient.
+because \(m_R\) is additive under \(\overline\Pi_X\) inside the finite
+quotient.
 \end{enumerate}
 A decoupled global Fock or Hecke factor without
 \(\mathsf{Corr}^{E,\mathrm{hyb}}_R\), anchored mixed correspondences,
@@ -8054,14 +8194,14 @@ Fix \(R\).  A candidate finite correspondence category for the
 wrapped sector gives the source object
 \(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\) only if it contains the
 unreduced local, wrapped, and ordered mixed source stacks of
-Definition~\ref{def:hybrid-wrapped-factorization-certificate}, their
+Definition~\ref{def:hybrid-wrapped-factorization-datum}, their
 anchors, the eight-word flag atlas, the quotient functor \(Q_{E,R}\)
 formed after those correspondences, the comparison maps
 \(\theta^Q_{\mu,R}\), and protected integration with all entries of
 \(\mathfrak O_{\mathrm{hyb},R}\), including its transition entries,
 trivialized.  A quotient of object stacks formed before the mixed and
 wrapped correspondences, or a determinant/Fock category carrying only
-the trace degree \(s^{b_R}\), does not define the hybrid source.
+the trace degree \(s^{m_R}\), does not define the hybrid source.
 \end{corollary}
 
 \begin{proof}
@@ -8077,7 +8217,7 @@ anchors are no longer available as source data for
 product, coproduct, primitive, and transition integration residuals are
 not defined as finite source data.  A scalar determinant or Fock trace
 can record coefficients after decategorification; it cannot supply the
-correspondence-level primitive brackets required by the certificate.
+correspondence-level primitive brackets required by the datum.
 \end{proof}
 
 \begin{proposition}[\textup{(O2)}/hybrid compatibility obstruction]
@@ -8096,9 +8236,9 @@ Under the degree map
 \]
 A finite compact construction which claims both the hybrid source
 \(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\) of
-Definition~\ref{def:hybrid-wrapped-factorization-certificate} and the
+Definition~\ref{def:hybrid-wrapped-factorization-datum} and the
 type-II Pfaffian wall model of
-Definition~\ref{def:type-ii-pfaffian-wall-certificate} must supply a
+Definition~\ref{def:type-ii-pfaffian-wall-datum} must supply a
 compatibility package at the same height \(R\).  It consists of:
 \begin{enumerate}
 \item a wall object \(x_{\delta_i,R}\) in the finite local or rigidified
@@ -8133,7 +8273,7 @@ K^{\mathrm{nor}}_{\delta_i,R},
 \end{tikzcd}
 \]
 where the bottom row is the reduced wall chart of
-Proposition~\ref{prop:o2-local-obstruction-certificate};
+Proposition~\ref{prop:o2-local-obstruction-datum};
 \item an invariant normal Pfaffian unit and rank-one normal model
 \[
 \operatorname{Pf}(K^{\mathrm{nor}}_{\delta_i,R})
@@ -8186,12 +8326,13 @@ component, charts on retained boundary strata, and agreement of normal
 	Pfaffian units, tangent/normal splittings, quotient orientations, and
 	protected integration maps on chart overlaps, compatibly with HN
 	transitions.
-	For the middle wall this means, concretely, the certificate must contain
+	For the middle wall this means, concretely, the datum must contain
 	a finite-height object
-	\[
-	x_{\delta_2,R}\in\mathcal M_{\eta,R}^{\mathrm{wr,rig}},\qquad
-	\overline\Pi_X(x_{\delta_2,R})=(0,1,1),\qquad b_R(\eta)=1,
-	\]
+\[
+x_{\delta_2,R}\in\mathcal M_{\eta,R}^{\mathrm{wr,rig}},\qquad
+\overline\Pi_X(x_{\delta_2,R})=(0,1,1),\qquad
+b_R^{\mathrm{geom}}(\eta)>0,
+\]
 	with a unit-weight lossless anchor; an unreduced hybrid deformation
 	complex \(K^E_{\delta_2,R}\), K3 semiregularity cosection, and reduced
 	quotient complex \(K^{\mathrm{red}}_{\delta_2,R}\); an
@@ -8231,7 +8372,7 @@ type-II root section:
 \]
 The local Pfaffian proposition requires a reduced wall chart, a reduced
 self-Ext complex, a tangent/normal splitting, an invariant normal unit,
-and \(N_{\delta_i}^{\mathrm{Pf}}=1\).  The hybrid certificate requires
+and \(N_{\delta_i}^{\mathrm{Pf}}=1\).  The hybrid datum requires
 unreduced local, wrapped, and ordered mixed correspondences, followed
 only then by \(Q_{E,R}\) and by protected integration.  If both claims
 are claims about the same compact source, the wall complex must be the
@@ -8253,9 +8394,9 @@ calculation with the hybrid \(s\)-direction.
 
 \begin{openproblem}[Hybrid wrapped factorization]
 \label{op:hybrid-wrapped-factorization}
-Construct the finite-stage certificates
+Construct the finite-stage data
 \(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\) of
-Definition~\ref{def:hybrid-wrapped-factorization-certificate} and prove
+Definition~\ref{def:hybrid-wrapped-factorization-datum} and prove
 that their inverse limit exists in the completed Hall/factorization
 category.  The exact obstruction is the simultaneous construction of:
 \begin{enumerate}
@@ -8284,9 +8425,11 @@ correspondences, including the finite-stabilizer gerbe checks and the
 \mathfrak o^{Q,\mathrm{adm}}_R=
 \mathfrak o^{Q,\mathrm{flag}}_R=
 \mathfrak o^{Q,\mathrm{tr}}_{R'R}=0\);
-\item protected integration whose decategorified trace sends elliptic
-degree \(b\) to \(s^b\), recovers the Igusa \(s\)-direction
-coefficientwise, vanishes on the chain/product/coproduct/primitive
+\item protected integration whose decategorified trace has \(s\)-degree
+\(m_R=\operatorname{pr}_3\overline\Pi_X\), while
+\(b_R^{\mathrm{geom}}\) records geometric wrapped support, recovers the
+Igusa \(s\)-direction coefficientwise, vanishes on the
+chain/product/coproduct/primitive
 defects \(\mathfrak o^{I,\bullet}_R\), has
 \(\mathfrak o^{I,\mathrm{tr}}_{R'R}=0\) for all \(R'\ge R\), and whose
 primitive bracket passes the Borcherds--Kac--Moody presentation test.
@@ -8327,11 +8470,12 @@ The coefficient category, central translations, Hochschild cocycle
 \(B_{\mathrm{ch}}\), and cochain
 \(\Theta_\Pi(c)=\mathsf T_{-\Pi_X(c)}\) are those of
 Definition~\ref{def:normal-ordering-coefficient-dg-category}.  The datum
-\(\Theta_\Pi\) must lift the lattice identity
+\(\Theta_\Pi\) must lift the lattice cochain identity
 \[
-d_{\mathrm{Hoch}}\Theta_\Pi=B
+d_{\mathrm{Hoch}}(-\Pi_X)=B
 \]
-to the chain identity
+in \(\Gamma_{\mathrm{gram}}\)-valued additive cochains to the Picard dg
+chain identity
 \[
 d_{\mathrm{Hoch}}\Theta_\Pi=B_{\mathrm{ch}}
 \]
@@ -8568,7 +8712,7 @@ No assertion is made here for the full compact or wrapped
 \end{lemma}
 
 \begin{proof}
-\emph{Conditional tensor product.}
+\emph{Tensor product.}
 On the supplied Kunneth-pure substack, the full self-Ext determinant
 has the assumed factorization into K3 factors and the flat elliptic
 factor, including all direct-sum cross terms.  Tensor the supplied
@@ -8590,17 +8734,17 @@ full compact/wrapped orientation problem remains the open obligation
 recorded in Open Problem~\ref{op:orientation-monodromy-character}.
 \end{proof}
 
-\begin{remark}[Conditional orientation comparison]
+\begin{remark}[Orientation comparison on the supplied sector]
 \label{rem:pin-c-gerbe-mult-orientation}
 The criterion above explains how a multiplicative orientation would
 factor after one has already supplied the projection-finite Kunneth-pure
 sector and all factorwise orientation data.  It does not construct the
 reduced compact \(K3\times E\) orientation gerbe, its cyclic
 equivariance, or its HN-completed higher-rank extension.  Those remain
-part of the Dirac--Igusa realization certificate.
+part of the Dirac--Igusa realization datum.
 \end{remark}
 
-\begin{theorem}[Conditional normal-ordered Hall descent certificate and
+\begin{theorem}[Normal-ordered Hall descent datum and
 obstruction]
 \label{thm:ptvv-joyce-pi-descent}
 Adopt the notation of Definition~\ref{def:dyonic-mukai-lattice} and
@@ -8613,7 +8757,7 @@ satisfying \(\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c')\).  Suppose:
 In the Hall-geometric clauses below, quantifiers over charges mean charges
 in the supplied effective support or in the finite normal-ordered support
 of the relevant stage.  The formal lattice \(\Gamma_X^{\mathrm{form}}\)
-is only the ambient bookkeeping lattice; it is not asserted to be fully
+is only the ambient lattice for the obstruction; it is not asserted to be fully
 realized by compact moduli.
 At each finite stage the theorem uses the supplied normal-ordered
 refinement of the primitive layer,
@@ -8628,7 +8772,7 @@ whose bracket lands in
 \widetilde P_{R,(c,T)\star(c',T')}.
 \]
 The no-overcount residual of
-Definition~\ref{def:first-order-d0-certificate} is required to vanish, so
+Definition~\ref{def:first-order-d0-datum} is required to vanish, so
 these labels refine rather than duplicate the \(c\)-graded primitive
 source.  The completed object is the inverse limit of these finite
 normal-ordered stages.
@@ -8810,7 +8954,11 @@ sector, and the lifted equation
 holds, where \(B_{\mathrm C}\) is the Connes operator and
 \(B_{\mathrm{ch}}^{-}\) is a negative-cyclic representative whose
 forgetful image in Hochschild cochains is \(B_{\mathrm{ch}}\).  The
-forgetful map sends the cyclic equation to the Hochschild equation in
+symbol \(B_{\mathrm C}\) is unrelated to the Gram-defect cocycle \(B\);
+the former is the mixed-complex operator and the latter is the symmetric
+bilinear normal-ordering defect
+\((c,c')\mapsto(Q\!\cdot\!Q',Q\!\cdot\!P'+Q'\!\cdot\!P,P\!\cdot\!P')\).
+The forgetful map sends the cyclic equation to the Hochschild equation in
 \((\Theta)\), so the cyclic lift is a refinement, not a replacement, of
 normal ordering.
 \end{enumerate}
@@ -8844,6 +8992,9 @@ is therefore a \(\Gamma_{\mathrm{gram}}\)-graded Lie superalgebra at
 the stated \(H^0\) level, and hypothesis~(1b) of
 Theorem~\ref{thm:primitive-recognition} is satisfied with the
 \(\Theta\)-corrected descent.
+This conclusion asserts what follows after the source Hall stages, finite transition compatibilities,
+Frobenius and cyclic lifts, and radical ideal/coideal stability have
+been supplied; it is not a construction of those source data.
 
 If the finite-fibre HN topology of (E), \((\Theta)\), its triple
 coherence, (F), (Cyc), and radical ideal/coideal stability are not
@@ -9132,7 +9283,7 @@ radical quotient.
 \begin{proposition}[Finite verification diagrams for normal ordering]
 \label{prop:finite-normal-ordering-verification-diagrams}
 Fix a successor arrow \(R^+\to R\) in the cofinal HN subsystem of
-Definition~\textup{\ref{def:first-order-d0-certificate}}.  Let
+Definition~\textup{\ref{def:first-order-d0-datum}}.  Let
 \(P_R^\Pi=\overline\Pi_{R,*}^{\Theta_R}\widetilde P_R\) be a finite
 normal-ordered primitive stage, with transition
 \(\rho^\Pi_{R^+R}:P_{R^+}^\Pi\to P_R^\Pi\).  A supplied finite system kills
@@ -9190,13 +9341,20 @@ these are
 \mathfrak o^{\langle\, ,\,\rangle}_{\Theta,R^+R}=0\).
 
 \textup{(NO3) Hochschild and negative-cyclic equations.}
-For every finite charge pair \(c,c'\in\widehat\Gamma_{R^+}\), the
-Hochschild boundary and its cyclic refinement are the finite equations
+For every finite physical charge pair \(c,c'\) whose normal-ordered
+channels occur in \(\widehat\Gamma_{R^+}\), the physical cochain has
+the finite equations
 \[
-d_{\mathrm{Hoch}}\Theta_{\Pi,R}(c,c')=B_{\mathrm{ch},R}(c,c'),
+d_{\mathrm{Hoch}}\Theta_{\Pi,R}^{\mathrm{phys}}(c,c')=B_{\mathrm{ch},R}(c,c'),
 \qquad
 (b+uB_{\mathrm C})\Theta_{\Pi,R}^{-}=B_{\mathrm{ch},R}^{-}.
 \]
+Equivalently, on a normal-ordered label \((c,T)\) one may use
+\[
+\widehat\Theta_{\Pi,R}(c,T)=\mathsf T_{T-\Pi_X(c)},\qquad
+d_{\mathrm{Hoch}}\widehat\Theta_{\Pi,R}=0,
+\]
+and not mix this domain with the physical \(B_{\mathrm{ch},R}\)-cochain.
 They kill
 \(\mathfrak o^{\mathrm{Hoch}}_{\Theta,R}\) and
 \(\mathfrak o^{\mathrm{cyc}}_{\Theta,R}\).  The second equation is imposed
@@ -9257,12 +9415,12 @@ and the finite coideal square
 \otimes(P_R^\Pi/\operatorname{Rad}_R^\Pi).
 \end{tikzcd}
 \]
-	These are the finite Lie-ideal and coideal parts of
-	\(\mathfrak o^{\mathrm{rad}}_{\Theta,R}=0\).  Closedness of the inverse
-	limit radical is the additional HN topological assertion that the kernels
-	\(\operatorname{Rad}_R^\Pi\) form a transition-compatible closed subsystem.
-	Equivalently, on any downward-saturated finite root window \(W\), after
-	choosing homogeneous bases of the finite primitive pieces, \textup{(NO7)}
+These are the finite Lie-ideal and coideal parts of
+\(\mathfrak o^{\mathrm{rad}}_{\Theta,R}=0\).  Closedness of the inverse
+limit radical is the additional HN topological assertion that the kernels
+\(\operatorname{Rad}_R^\Pi\) form a transition-compatible closed subsystem.
+Equivalently, on any downward-saturated finite root window \(W\), after
+choosing homogeneous bases of the finite primitive pieces, \textup{(NO7)}
 	is the following matrix computation.  Let
 	\[
 	G_\beta:P^\Pi_{R,\beta}\times P^\Pi_{R,-\beta}\to\C,\qquad
@@ -9318,7 +9476,7 @@ Borcherds determinant removes \textup{(NO3)}, \textup{(NO6)}, or the
 coideal part of \textup{(NO7)}.
 \end{proposition}
 
-\begin{lemma}[Hopf--Frobenius certificate and obstruction]
+\begin{lemma}[Hopf--Frobenius datum and obstruction]
 \label{lem:F-frobenius-from-hopf-nondegeneracy}
 Adopt hypotheses (P) and (O) of
 Theorem~\ref{thm:ptvv-joyce-pi-descent}, and grant
@@ -9388,7 +9546,7 @@ the coproduct must separately satisfy
 \qquad(r\in\operatorname{Rad}_X^\Pi),
 \]
 with \(\bar q_\Pi\) the quotient by the closed radical.  Lemma
-\ref{lem:F-frobenius-from-cy-serre} is one conditional source for
+\ref{lem:F-frobenius-from-cy-serre} is one source for
 \(\mathfrak o_F=0\); it is not a source for coideal stability unless the
 cyclic/Serre datum is also proved compatible with the Hopf coproduct.
 \qedhere
@@ -9510,10 +9668,9 @@ cochains \(\Theta\) (PTVV--Joyce) and
 and comparison cochain are supplied.
 \end{remark}
 
-\begin{remark}[Status of the descent criterion]
-\label{rem:ptvv-joyce-pi-status}
-Theorem~\ref{thm:ptvv-joyce-pi-descent} is a conditional descent
-criterion.  Its inputs are the PTVV host (P), the reduced quotient and
+\begin{remark}[Descent criterion]
+\label{rem:ptvv-joyce-pi-descent}
+Theorem~\ref{thm:ptvv-joyce-pi-descent} uses the PTVV host (P), the reduced quotient and
 HN completion (E), including finite-fibre compatibility of
 \(\overline\Pi_{*}^{\Theta}\) and continuity of \(\widehat{\otimes}\), the
 supplied \(S^1\)-equivariant multiplicative orientation cocycle (O), the
@@ -9647,7 +9804,7 @@ sign convention \((-1)^{|x|\cdot|y|}\) on the Gram degree
 \(c_x+c_y+c_z=0\).  It proves only \(\mathfrak o_F=0\); it does not
 prove \(\mathfrak o_{\Theta}^{\mathrm{top}}=0\), coideal stability of the
 Hopf radical, a no-extra-relations theorem, or PBW compatibility.  It is
-therefore one input to the full Dirac--Igusa realization certificate, not
+therefore one input to the full Dirac--Igusa realization datum, not
 a substitute for it.
 \end{remark}
 
@@ -9725,7 +9882,7 @@ closedness condition needed before passing to the inverse limit.
 This paper uses the protected index, the virtual determinant, and
 the Borcherds denominator algebra.  A holomorphic \(E_3\)-factorization
 algebra in cochains is part of the open Dirac--Igusa realization
-certificate, not a positive Hilbert-space construction already in hand.  Negative
+datum, not a positive Hilbert-space construction already in hand.  Negative
 coefficients \(f(nm,l)\) record an odd excess in a protected supertrace
 or in a \(K_0\)-representative; actual parity dimensions require an
 additional Hilbert-space or denominator-algebra parity datum.  If the
@@ -9926,7 +10083,7 @@ $$
 $$
 \end{definition}
 
-\begin{lemma}[Conditional finite charge-support Hall quotient]
+\begin{lemma}[Finite charge-support Hall quotient]
 \label{prop:sectorial-hall-truncation}
 A nonzero additive heart cannot have finite nonzero charge support in
 \(\Gamma_X^{\mathrm{form}}\).  The pushed-forward active support
@@ -9965,13 +10122,13 @@ additive on extensions in the sector; hence HN sums of total height
 \(\le R\) form a finite set and the subspace of height \(>R\) is a
 two-sided Hall ideal.  The inverse limit is the \(h_S\)-adic Hall
 completion.  This supplies the charge-index finiteness part of the
-finite Hall package; the full certificate also includes finite-type
+finite Hall package; the full datum also includes finite-type
 d-critical substacks, finite-dimensional protected cohomology, and
 proper/admissible pull-push geometry.
 \end{proof}
 
-\begin{definition}[First-order Dirac--Igusa \(D_0\)-certificate]
-\label{def:first-order-d0-certificate}
+\begin{definition}[First-order Dirac--Igusa \(D_0\)-datum]
+\label{def:first-order-d0-datum}
 Fix a stability/HN sector \((\sigma,S)\) as in
 Definition~\textup{\ref{def:sectorial-hall-truncation}}.  Fix also a
 countable cofinal HN subsystem
@@ -9979,7 +10136,7 @@ countable cofinal HN subsystem
 \mathcal R_{\mathrm{HN}}=\{R_0<R_1<R_2<\cdots\}\subset\mathbb R_{>0},
 \qquad R_\nu\to\infty.
 \]
-The certificate operates under two explicit standing hypotheses:
+The datum operates under three explicit standing hypotheses:
 \begin{itemize}
 \item[\textup{[K3$\times$E-fin]}] \emph{Finite-type semistable substacks
 at bounded HN height.}  For every \(R>0\), the substack of
@@ -10089,8 +10246,8 @@ at bounded HN height.}  For every \(R>0\), the substack of
 		\textup{[K3\(\times\)E-fin]}.
 		\item[\textup{[ML]}] \emph{Mittag--Leffler descent for the HN inverse
 		system.}  The transition maps \(\rho_{R'R}\) of clauses (D0-F)--(D0-S) below
-	satisfy the finite-slice Mittag--Leffler certificate of
-	Definition~\ref{def:finite-slice-mittag-leffler-certificate} on every
+	satisfy the finite-slice Mittag--Leffler datum of
+	Definition~\ref{def:finite-slice-mittag-leffler-datum} on every
 	finite \(\Gamma_R^{\mathrm{test}}\)-supported piece.  Equivalently, the
 	relevant \(\lim^1\) terms vanish there.  The operative finite-dimensional
 	criterion is Mittag--Leffler:
@@ -10120,9 +10277,9 @@ at bounded HN height.}  For every \(R>0\), the substack of
 	pro-Lie object.
 \end{itemize}
 The recognition theorem of
-Theorem~\textup{\ref{thm:dirac-pfaffian-recognition-conditional}} reads as
-a strict isomorphism only after both hypotheses are granted.  If [ML] fails,
-the recognition statement weakens to a pro-comparison.
+Theorem~\textup{\ref{thm:dirac-pfaffian-recognition}} reads as
+a strict isomorphism only after all three standing hypotheses are granted.
+If [ML] fails, the recognition statement weakens to a pro-comparison.
 
 Write
 \(\Gamma_R^{HN}:=\Gamma_{\sigma,S}^{HN}(R)\).  For
@@ -10152,7 +10309,7 @@ system.  The same underlying total charge \(c\) may appear with several
 such labels before a no-overcount theorem is supplied.  Thus
 \(\widehat\Gamma_R\) is finite coefficient-system data; functorial
 descent of these labels through the finite Hall correspondences is part
-of the \(D_0\)-certificate.
+of the \(D_0\)-datum.
 The coefficient label must also be lossless.  For a label \((c,T)\), let
 \(\mathcal W_R(c,T)\) be the finite set of HN words whose normal-ordering
 label is \((c,T)\), let \(\mathcal H^{or}_{R,w}\) denote the iterated
@@ -10187,21 +10344,21 @@ h_\Delta:\Gamma_{\mathrm{gram}}\longrightarrow\Z_{\ge0},
 \qquad
 h_\Delta(n,l,m)=|n|+|l|+|m|
   \]
-on the Gram-index lattice.  The \(D_0\) bookkeeping also fixes a
+on the Gram-index lattice.  The \(D_0\) finite-window construction also fixes a
 nondecreasing cofinal target-window schedule
 \[
 N_R^\Delta\in\Z_{\ge0},\qquad
 R'\ge R\Rightarrow N_{R'}^\Delta\ge N_R^\Delta,\qquad
 \sup_R N_R^\Delta=\infty .
 \]
-This schedule is finite-window bookkeeping, not a relation between HN
+This schedule is a finite-window choice, not a relation between HN
 height and automorphic height.  To make each transition-obstruction
 stage a finite datum, take all inverse limits below over the fixed
 cofinal subsystem \(\mathcal R_{\mathrm{HN}}\).
 Cofinality does
 not change the completed HN object or the target exhaustion; the
 finite-type substack and proper-correspondence assertions are the
-separate geometric entries of the same certificate.  For
+separate geometric entries of the same datum.  For
 \(R=R_\nu\) write \(R^+=R_{\nu+1}\).  Transition maps for non-successor
 arrows are composites of the successor maps.  Thus the independent
 transition obstruction at a stage is a finite obstruction, not an
@@ -10246,7 +10403,7 @@ inclusions
 \Gamma_R^\Pi\subset\Gamma_{R'}^\Pi,\qquad
 \Gamma_{\Delta,R}\subset\Gamma_{\Delta,R'}
 \]
-hold.  A first-order Dirac--Igusa \(D_0\)-certificate for
+hold.  A first-order Dirac--Igusa \(D_0\)-datum for
 \(X=K3\times E\) is the choice of the schedule \(N_R^\Delta\) above,
 together with a compatible inverse system of finite-stage
 state/observable packages
@@ -10328,7 +10485,7 @@ I_R^{\mathrm{prot}}\rho^F_{R^+R}
 \rho^{\mathrm{Pf}}_{R^+R}(\operatorname{pf}_{X,R^+})
 -\operatorname{pf}_{X,R}.
 \]
-The certificate requires
+The datum requires
 \(\mathfrak o^{\mathrm{tr}}_{R^+R}=0\) for every successor arrow.  The
 zero means a chosen finite equality or null-homotopy in the indicated Hom
 complex.  Non-successor compatibility is then the corresponding composite
@@ -10337,9 +10494,8 @@ cocycle identity for \(R''\ge R'\ge R\) is also part of the finite
 transition datum.  These equalities are finite-stage data, not formal
 consequences of the inverse-limit notation.
 
-\item[\textup{(D0-S)}] \emph{State object; conditional datum, open
-construction.}
-A certificate supplies an oriented critical Hall/factorization inverse
+\item[\textup{(D0-S)}] \emph{State object and completed inverse system.}
+A datum supplies an oriented critical Hall/factorization inverse
 system whose completed state side is
 \[
 \widehat{\mathcal H}^{or}_{\sigma,S}
@@ -10351,18 +10507,17 @@ carries finite-type semistable substacks, extension correspondences,
 vanishing-cycle coefficients, orientation lines, Hall product and
 coproduct maps, and protected integration.  All products, coproducts,
 brackets, pairings, and comparison maps are defined on the finite
-quotients and are continuous for the inverse limit.  This clause is a
-conditional datum; Lemma~\ref{prop:sectorial-hall-truncation}
-proves only the finite-first formal shape once the Hall object and the
-HN/support hypotheses are supplied.
+quotients and are continuous for the inverse limit.
+Lemma~\ref{prop:sectorial-hall-truncation} proves the finite-first formal
+shape once the Hall object and the HN/support hypotheses are supplied.
 
 \item[\textup{(D0-Q)}] \emph{Reduced quotient and orientation obstruction
-classes; conditional trivializations.}
+classes.}
 Let \(\mathsf{St}_R\) be the finite stable-stratum index set in the
 chosen finite-type atlas at height \(R\).  For every
 \(\mathcal C\in\mathsf{St}_R\), with stable stratum
 \(\mathfrak M^{\mathrm{st}}_{R,\mathcal C}\subset\mathcal H_R^{or}\), the
-certificate includes the computed obstruction
+datum includes the computed obstruction
 tuple
 \[
 \mathfrak o^{or}_{R,\mathcal C}=
@@ -10392,11 +10547,11 @@ Its point-stabilizer restriction is a class
 mixed Borel terms, stabilizer action on stratum cohomology, and
 spectral-sequence differentials have vanished.  After
 \(\widetilde\beta^{E,N}_{R,\mathcal C}\) has been null-trivialized, the
-certificate also records the finite linearization character
+datum also records the finite linearization character
 \[
 \lambda^{E,N}_{R,\mathcal C}\in H^1(BE[N];\mathbb F_2)
 \]
-and requires the zero character.  The certificate supplies
+and requires the zero character.  The datum supplies
 null-trivializations of all degree-two classes and zero finite
 degree-one characters, compatible with the transition maps.  These are
 exactly the ordinary reduced gerbe, connected \(BE\)-linearization,
@@ -10409,7 +10564,7 @@ Proposition~\ref{prop:finite-stage-quotient-orientation-character-system}
 for the local, wrapped, mixed, and flag strata at height \(R\).  It does
 not compute the Weyl monodromy character; that is the separate content of
 (O1)\(^+\) and (O2) in
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}.
+Theorem~\ref{thm:dirac-pfaffian-recognition}.
 
 \item[\textup{(D0-C)}] \emph{Charge completion; proved lattice input.}
 The finite quotients are graded by the normal-ordered charge extension
@@ -10439,9 +10594,8 @@ additivity of \(\overline\Pi_X\) follows from
 Lemma~\ref{lem:b-cocycle-central-extension}; no chain-level Hall
 strictification is claimed by this lattice statement.
 
-\item[\textup{(D0-O)}] \emph{State/observable interface; imported target,
-conditional source.}
-A certificate supplies, at finite height \(R\), source observable shadows
+\item[\textup{(D0-O)}] \emph{State/observable interface with imported target.}
+A datum supplies, at finite height \(R\), source observable shadows
 \(\mathcal F_R^{D_0}\).  Their compatible inverse limit
 \(\mathcal F_X^{D_0}\) is obtained from
 \(\widehat{\mathcal H}^{or}_{\sigma,S}\) by the supplied
@@ -10464,7 +10618,7 @@ H^0\Prim_{\mathrm{prot}}
 \mathfrak g_{\Delta_5}.
 \]
 The target side is imported from Gritsenko--Nikulin; the source and the
-comparison morphism are conditional data.  The finite observable residual
+comparison morphism are supplied data.  The finite observable residual
 \[
 \mathfrak o^{obs}_R
 \]
@@ -10486,26 +10640,32 @@ operations induced from \(\mathsf{Den}_{\Delta_5,E}\).  Thus
 \qquad
 I_R^{\mathrm{prot}}-\operatorname{tr}_{\Delta_5}\iota_R^{obs}.
 \]
-The certificate requires \(\mathfrak o^{obs}_R=0\).  This is a finite
+The datum requires \(\mathfrak o^{obs}_R=0\).  This is a finite
 comparison with the imported observable target.  It is not the
 presentation-level primitive isomorphism, injectivity, surjectivity, or
 no-extra-relations theorem; those belong to the full recognition
-certificate.  No target truncation, target bar--cobar counit, or
+datum.  No target truncation, target bar--cobar counit, or
 homotopy inverse to \(\iota_R^{obs}\) is allowed to define
 \(\mathcal F_R^{D_0}\).  The source object is supplied first, and the
 arrow points source-to-target.
 
-\item[\textup{(D0-N)}] \emph{Exact normal-ordered descent; conditional
-finite-topology, Hochschild, triple, Jacobi, Frobenius, cyclic, and radical
+\item[\textup{(D0-N)}] \emph{Exact normal-ordered descent; finite-topology,
+Hochschild, triple, Jacobi, Frobenius, cyclic, and radical
 trivializations.}
-At finite height \(R\), the datum \(\Theta_{\Pi,R}\) is the central
-translation cochain
+At finite height \(R\), the datum \(\Theta_{\Pi,R}^{\mathrm{phys}}\) is the
+central translation cochain
 \[
-\Theta_{\Pi,R}(c)=\mathsf T_{-\Pi_X(c)}
+\Theta_{\Pi,R}^{\mathrm{phys}}(c)=\mathsf T_{-\Pi_X(c)}
 \]
 in the coefficient dg category of
 Definition~\ref{def:normal-ordering-coefficient-dg-category}, and
-\(\Theta_{\Pi,R}^{-}\) is its negative-cyclic lift.  For
+\(\Theta_{\Pi,R}^{-}\) is its negative-cyclic lift.  On normal-ordered
+labels we use the induced character
+\[
+\widehat\Theta_{\Pi,R}(c,T)=\mathsf T_{T-\Pi_X(c)},
+\qquad d_{\mathrm{Hoch}}\widehat\Theta_{\Pi,R}=0.
+\]
+For
 \((c,T),(c',T')\in\widehat\Gamma_R\), it gives coherent degree-shift
 quasi-isomorphisms
 \[
@@ -10522,7 +10682,7 @@ on primitive bracket targets.  Equivalently,
 \]
 and turns the upstairs physical Hall bracket into a
 \(\Gamma_{\mathrm{gram}}\)-graded bracket after
-\(\overline\Pi_{X,*}^{\Theta}\).  This is exactly the conditional input of
+\(\overline\Pi_{X,*}^{\Theta}\).  This is exactly the input of
 Theorem~\ref{thm:ptvv-joyce-pi-descent}; constructing
 \(\Theta_\Pi\) on the reduced compact/wrapped sector is open.
 The finite coefficient pieces are
@@ -10555,7 +10715,7 @@ Equivalently, with
 \[
 B_{\mathrm{ch},R}(c,c'):=\mathsf T_{B(c,c')},
 \]
-the certificate supplies trivializations
+the datum supplies trivializations
 \[
 d_{\mathrm{Hoch}}\Theta_{\Pi,R}=B_{\mathrm{ch},R},
 \qquad
@@ -10589,7 +10749,7 @@ dg category and degree-truncation topology are supplied, while the cyclic
 lift, two-step flag coherence, Frobenius trace, and Hopf-adjoint radical
 tests remain source-side data.
 
-\item[\textup{(D0-D)}] \emph{First-order object; conditional.}
+\item[\textup{(D0-D)}] \emph{First-order object.}
 There are perfect finite-stage \(\Gamma_R^\Pi\)-graded supercomplexes
 \(K_R^\Pi\), compatible under \(\rho^K_{R^+R}\), with finite-dimensional
 parity pieces.  At each finite stage there is a \(\Z/2\)-odd skew-adjoint
@@ -10620,9 +10780,13 @@ bracket.  The term
 ``first-order'' means the Pfaffian/primitive object before scalar
 squaring; it does not assert an analytic Dirac operator on an already
 constructed Hilbert space.
+Here ``primitive symbol'' means the principal symbol with respect to the
+finite CE/Koszul filtration on \(K_R^\Pi\); the bracket carries the
+Koszul signs and \(\Gamma_R^\Pi\)-degree convention of the finite Hall
+product in \textup{(D0-F)}.
 
 \item[\textup{(D0-Pf)}] \emph{Pfaffian line, finite support, and
-normalization; conditional datum, imported automorphic target.}
+normalization with imported automorphic target.}
 For every \(R\) there is a Pfaffian line
 \(\mathscr L_{\mathrm{Pf},R}\) attached to \(\mathfrak D_{X,R}\) and to the
 finite reduced orientation line of the stage, with a finite squaring
@@ -10738,11 +10902,11 @@ coverage theorem only after the supplied finite Hall stages prove
 \(A_R\subset\Gamma_R^{\Pi,+}\) compatibly in \(R\).
 The equality of the resulting product with \(\Delta_5\) is imported from
 the Borcherds--Gritsenko--Nikulin product.  The compact parity pieces
-realizing these signed dimensions are conditional data, not a consequence
+realizing these signed dimensions are supplied data, not a consequence
 of the scalar OP square.  No source computation of the primitive
 exponents is claimed here.  The equalities
 \(\sdim P^\Pi_{X,(n,l,m)}=f(nm,l)\) are part of the supplied
-\(D_0\)-certificate, tested against the imported Borcherds product.  A
+\(D_0\)-datum, tested against the imported Borcherds product.  A
 source computation would derive these signed dimensions from the compact
 Hall correspondences, orientation data, and protected integration before
 comparison with the target denominator algebra.  A section-level statement
@@ -10754,8 +10918,8 @@ test after such line-comparison data have been supplied.
 \end{enumerate}
 \end{definition}
 
-\begin{definition}[Finite-slice Mittag--Leffler certificate]
-\label{def:finite-slice-mittag-leffler-certificate}
+\begin{definition}[Finite-slice Mittag--Leffler datum]
+\label{def:finite-slice-mittag-leffler-datum}
 Fix a countable cofinal HN subsystem
 \(\mathcal R_{\mathrm{HN}}=\{R_0<R_1<\cdots\}\).  For each finite downward-saturated
 root window \(W\), each cohomological degree \(j\), and each tower
@@ -10766,7 +10930,7 @@ associated gradeds, and cones of \(b_{X,R}\) and
 \[
 V_{\nu,W}^j=(V_{R_\nu})^j_W .
 \]
-A finite-slice Mittag--Leffler certificate consists of
+A finite-slice Mittag--Leffler datum consists of
 finite-dimensional vector spaces \(V_{\nu,W}^j\), transition maps
 \(\rho_{\mu\nu}:V_{\mu,W}^j\to V_{\nu,W}^j\), and stable images: for every
 \(\nu,W,j\) there is \(\mu_0\ge\nu\) such that
@@ -10778,7 +10942,7 @@ V_{\nu,W}^j\right)
 \qquad(\mu\ge\mu_0).
 \]
 Strictness for the HN topology and closedness of radical images are part of
-the certificate.  By the standard Mittag--Leffler criterion
+the datum.  By the standard Mittag--Leffler criterion
 \cite[\S3.5]{WeibelHA}, this finite-dimensional stable-image condition
 implies \(R^1\varprojlim_\nu V_{\nu,W}^j=0\).  It does not construct the
 towers \(V_R\); it is a condition on the finite Hall, Koszul, radical, and
@@ -10789,7 +10953,7 @@ PBW systems after those systems have been supplied.
 \label{def:matrix-finite-slice-mittag-leffler-data}
 For each declared tower \(\mathcal V\), finite window \(W\), and
 cohomological degree \(j\), the finite-slice
-Mittag--Leffler certificate includes bases of the finite-dimensional spaces
+Mittag--Leffler datum includes bases of the finite-dimensional spaces
 \[
 V^{\mathcal V,j}_{\nu,W}
 \]
@@ -10829,13 +10993,13 @@ M^{\mathcal V,j}_{\mu_0\nu,W}
 \]
 For filtered, radical, and PBW towers the bases are filtration-adapted, and
 strictness is recorded by the corresponding block-rank equalities.  This
-matrix certificate is void until the finite source spaces and transition
+matrix datum is void until the finite source spaces and transition
 matrices have actually been supplied.
 \end{definition}
 
 \begin{remark}[Chamber dependence and wall-crossing]
-\label{rem:chamber-conditional-wall-crossing}
-The certificate is indexed by a Bridgeland-type supplied stability/HN sector
+\label{rem:chamber-wall-crossing}
+The datum is indexed by a Bridgeland-type supplied stability/HN sector
 \((\sigma,S)\), in the K3-surface lineage of
 \cite{BridgelandK3Stability,BayerMacriProjectivity}.  The lattice cocycle
 \(B(c,c')\) is chamber-independent: it
@@ -10845,7 +11009,7 @@ finite-type semistable substacks change under wall-crossing, and the
 Kontsevich--Soibelman wall-crossing formula relates Hall counts in
 adjacent chambers.
 
-If the certificate
+If the datum
 \(D_0(X;\sigma,S)\) is supplied in chamber \(\sigma\), then the
 normal-ordered map \(\overline\Pi_X\) remains a homomorphism and the
 recognition target is \(\mathfrak g_{\Delta_5}\) provided the chamber
@@ -10959,7 +11123,8 @@ the imported Borcherds product.  In the first wrapped channel
 \]
 this asks for a wrapped charge \(\eta_2\in\Gamma_R^{\mathrm{wr}}\) with
 \[
-b_R(\eta_2)=1,\qquad \overline\Pi_X(\eta_2)=(0,1,1),
+b_R^{\mathrm{geom}}(\eta_2)>0,\qquad
+\overline\Pi_X(\eta_2)=(0,1,1),
 \]
 and a computation
 \[
@@ -10983,11 +11148,12 @@ I_R^{\mathrm{prot}}(Q_{E,R}v_{\delta_2})=q^0r^1s^1,
 with no quotient-orientation or finite-stabilizer sign changing it.  The
 corresponding product factor is \((1-rs)^{+1}\), so its linear product
 coefficient is \(-rs\); the exponent and the product coefficient are not
-the same datum.  A projection-finite source has \(b_R=0\), hence cannot
-produce this \(s\)-degree.  A detached one-dimensional \(K_0\) shadow in
+the same datum.  A projection-finite source has
+\(b_R^{\mathrm{geom}}=0\), hence cannot produce this positive trace
+\(s\)-degree \(m_R=1\).  A detached one-dimensional \(K_0\) shadow in
 degree \((0,1,1)\) has the right signed dimension but supplies no wrapped
 moduli, vanishing cycles, quotient descent, protected primitive, or Hall
-bracket.  The present certificate only tests a supplied source object
+bracket.  The present datum only tests a supplied source object
 against the target exponents.
 \end{openproblem}
 
@@ -11006,7 +11172,7 @@ p_{R,\widehat c,\widehat c'},q_{R,\widehat c,\widehat c'},
 o_{R,\widehat c},\mu^{or}_{R}
 \bigr)_{\widehat c,\widehat c'\in\widehat\Gamma_R}.
 \]
-The finite source package used by the \(D_0\)-certificate is
+The finite source package used by the \(D_0\)-datum is
 \[
 \mathfrak S_R=
 \bigl(
@@ -11017,7 +11183,7 @@ I_R^{\mathrm{prot}},
 \]
 	Only \(\mathfrak S^{\mathrm{geom}}_R\) is the common finite geometric
 	kernel.  The protected integration map and the normal-ordering cochains
-	are downstream finite data; they are part of the certificate, not
+	are downstream finite data; they are part of the datum, not
 	consequences of the geometric kernel alone.  The requirements are finite
 	and source-internal.  All pull-push operations below are taken in one
 	fixed constructible compact-support six-functor theory on the
@@ -11283,10 +11449,10 @@ last assertion.
 \label{prop:finite-d0-atlas-parity-obstruction}
 Fix \(R\in\mathcal R_{\mathrm{HN}}\).  The finite Hall source core is constructed from
 the source kernel of Definition~\ref{def:finite-hall-source-kernel} by
-Proposition~\ref{prop:finite-d0-hall-source-construction}.  A genuine
-construction of the full finite stage \(D_{0,R}\), including the Dirac
-operator and Pfaffian line, is equivalent to supplying in addition a
-finite Hall--Dirac atlas
+Proposition~\ref{prop:finite-d0-hall-source-construction}.  In this
+manuscript, a full finite stage \(D_{0,R}\), including the Dirac operator
+and Pfaffian line, is represented by the following supplied finite
+Hall--Dirac atlas data:
 \[
 \mathfrak A_R=
 \bigl(
@@ -11365,7 +11531,10 @@ P_R^\Pi=H^0\Prim_{\mathrm{prot}}
 (\overline\Pi_{R,*}^{\Theta}\mathcal F_R^{D_0})
 \]
 is the Hall bracket of \textup{(A3)}.
-\item[\textup{(A5)}] \emph{Pfaffian square.}
+Here ``primitive symbol'' means the principal symbol for the finite
+CE/Koszul filtration on \(K_R^\Pi\), with the Koszul signs and
+\(\Gamma_R^\Pi\)-degree convention induced by the finite Hall product.
+\item[\textup{(A5)}] \emph{Pfaffian square-root datum.}
 On the reduced finite quotient
 \(\mathfrak Q_R:=(\mathfrak M_R/E)^{\mathrm{red}}\) there is a determinant
 line \(\mathscr L_{\det,R}\) attached to \(K_R^\Pi\), a square root
@@ -11443,7 +11612,7 @@ If \(\mathfrak A_R\) is supplied and
 \(\mathfrak o^{\mathrm{atlas}}_{R^+R}=0\), then the pull-push operations,
 orientation square, first-order operator, Pfaffian line, and parity lift
 construct the finite package \(D_{0,R}\) of
-Definition~\ref{def:first-order-d0-certificate}.  Conversely, every
+Definition~\ref{def:first-order-d0-datum}.  Conversely, every
 constructed \(D_{0,R}\) gives such finite atlas data after forgetting to
 the finite support and reduced quotient.  Thus the missing object is not
 the target determinant; it is the finite atlas \(\mathfrak A_R\) and its
@@ -11489,7 +11658,7 @@ BBDJS vanishing-cycle coefficients and Joyce--Upmeier orientation
 transport.  Finiteness of the index set makes all sums and products
 finite, and the two-step flag isomorphisms are precisely the associativity
 and coproduct-coherence diagrams.  Clause \textup{(A4)} gives
-\textup{(D0-D)}.  Clause \textup{(A5)} gives the finite Pfaffian square
+\textup{(D0-D)}.  Clause \textup{(A5)} gives the finite Pfaffian square-root datum
 and the leading coefficient condition in \textup{(D0-Pf)}.  Clause
 \textup{(A6)} is exactly the vanishing of the support and parity residuals
 on \(\Gamma_R^{\mathrm{test},+}\), with active-window coverage as in
@@ -11515,21 +11684,20 @@ does not determine compact parity pieces unless the extra condition
 \(\min(u,v)=0\) is supplied.
 \end{proof}
 
-\begin{theorem}[Finite \(D_0\)-certificate: proved, imported,
-conditional, and open parts]
-\label{thm:first-order-d0-certificate}
-This first-order certificate separates finite objects obtained from
+\begin{theorem}[Finite \(D_0\)-datum]
+\label{thm:first-order-d0-datum}
+This first-order datum separates finite objects obtained from
 supplied kernels and atlases from the open existence of those kernels and
 atlases.
 \begin{enumerate}
-\item[\textup{(lattice/finite bookkeeping, conditional on supplied HN support)}]
+\item[\textup{(lattice and finite windows from supplied HN support)}]
 For every \(R\in\mathcal R_{\mathrm{HN}}\), the
 normal-ordered support
 \(\widehat\Gamma_R\), its image \(\Gamma_R^\Pi\), the target window
 \(\Gamma_{\Delta,R}\), the ambient test window
 \(\Gamma_R^{\mathrm{test}}\), and the positive Pfaffian test window
 \(\Gamma_R^{\mathrm{test},+}\) of
-Definition~\ref{def:first-order-d0-certificate} are finite; by
+Definition~\ref{def:first-order-d0-datum} are finite; by
 cofinality of the target-window schedule, the windows
 \(\Gamma_{\Delta,R}\) exhaust
 \(\Gamma_{\mathrm{eff}}\setminus\{0\}\).  The lattice charge completion
@@ -11572,9 +11740,9 @@ no-hidden-cancellation test recorded there.
 Proposition~\ref{prop:finite-d0-atlas-parity-obstruction} is supplied,
 including the finite semistable stacks, extension correspondences,
 vanishing-cycle pull-push maps, protected integration maps, source
-comparison, first-order complex, Pfaffian square, and compact parity
+comparison, first-order complex, Pfaffian square-root datum, and compact parity
 lifts at height \(R\), the obstruction tuple recorded by the finite-stage
-\(D_0\) certificate is the vanishing, with compatible trivializations, of
+\(D_0\) datum is the vanishing, with compatible trivializations, of
 \[
 \mathfrak O_{D_0,R}:=
 \left(
@@ -11597,7 +11765,7 @@ lifts at height \(R\), the obstruction tuple recorded by the finite-stage
 \right).
 \]
 These classes are typed in
-Definition~\ref{def:first-order-d0-certificate}, the no-overcount label
+Definition~\ref{def:first-order-d0-datum}, the no-overcount label
 paragraph following \(\widehat\Gamma_R\), and
 Theorem~\ref{thm:ptvv-joyce-pi-descent}.  They are not determined by
 \(\Delta_5\), by the denominator algebra, or by the OP scalar square.
@@ -11609,10 +11777,10 @@ The Pfaffian part has the sharp finite consequence recorded in
 Proposition~\ref{prop:finite-pfaffian-window-obstruction}: active target
 degrees in \(\Gamma_R^{\mathrm{test},+}\) must lie in the source image, but
 the compact parity dimensions themselves remain extra source data.
-\item[\textup{(conditional)}] If a tuple satisfying
-Definition~\ref{def:first-order-d0-certificate} is supplied, then it
+\item[\textup{(consequence)}] If a tuple satisfying
+Definition~\ref{def:first-order-d0-datum} is supplied, then it
 supplies hypothesis \textup{(D0)} of
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}.  Its primitive
+Theorem~\ref{thm:dirac-pfaffian-recognition}.  Its primitive
 bracket is compatible with normal-ordered descent on the nose:
 \[
 [P^\Pi_{X,\gamma},P^\Pi_{X,\gamma'}]_{\Theta}
@@ -11631,11 +11799,11 @@ the normalized \(\Delta_5\) product at \(\mathfrak c_\infty\).  This is
 not a section-level equality in the automorphic line; that conclusion
 requires the supplied Pfaffian-to-automorphic comparison
 \(\iota_{\mathrm{aut}}\) of
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}.
-\item[\textup{(usage certificate)}] Every use of \textup{(D0)} in
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} factors through
+Theorem~\ref{thm:dirac-pfaffian-recognition}.
+\item[\textup{(use of \(D_0\))}] Every use of \textup{(D0)} in
+Theorem~\ref{thm:dirac-pfaffian-recognition} factors through
 one of the displayed clauses of
-Definition~\ref{def:first-order-d0-certificate}: finite state and
+Definition~\ref{def:first-order-d0-datum}: finite state and
 transition data through \textup{(D0-F)}--\textup{(D0-S)}, reduced
 orientation descent through \textup{(D0-Q)}, source/observable comparison
 through \textup{(D0-O)}, normal-ordered grading through \textup{(D0-C)}
@@ -11710,9 +11878,9 @@ required in the Pfaffian line.  Their vanishing is therefore necessary
 for the finite stage to be a \(D_0\)-stage, and, once the finite stacks,
 correspondences, first-order complex, comparison map, and Pfaffian line
 have been supplied, is precisely the extra trivialization data demanded by
-Definition~\ref{def:first-order-d0-certificate}.
+Definition~\ref{def:first-order-d0-datum}.
 
-Assume the \(D_0\)-certificate.  Clause \textup{(D0-F)} gives the finite
+Assume the \(D_0\)-datum.  Clause \textup{(D0-F)} gives the finite
 stages and transition maps.  Clause \textup{(D0-S)} gives the HN-completed
 state object on which the Hall operations are defined.  Clause
 \textup{(D0-Q)} supplies the reduced quotient and orientation line used in
@@ -11728,8 +11896,8 @@ leading-coefficient conditions in \textup{(D0-Pf)}, combined with the
 imported Borcherds product, give the normalized
 \(\Delta_5\) cusp expansion for \(\operatorname{pf}_X\).
 
-It remains to check the stated usage certificate in
-Theorem~\ref{thm:dirac-pfaffian-recognition-conditional}.  Step 1 uses
+It remains to check the stated use of \textup{(D0)} in
+Theorem~\ref{thm:dirac-pfaffian-recognition}.  Step 1 uses
 only the supplied first-order object, the normal-ordered primitive
 multiplicities, and the leading Pfaffian normalization; these are
 \textup{(D0-D)} and \textup{(D0-Pf)}.  Step 2 uses the imported
@@ -11739,23 +11907,23 @@ imported Oberdieck--Pixton scalar normalization.  Step 5 uses only the
 supplied chiral protected first-order theory and its decategorification,
 supplied by \textup{(D0-F)}--\textup{(D0-Pf)}.  Step 4 is independent of \(D_0\)
 except for the existence of the Pfaffian object; its signs come from
-(O1), (O1)\(^+\), and (O2).  Thus the certificate implies every use of
+(O1), (O1)\(^+\), and (O2).  Thus the datum implies every use of
 \textup{(D0)} and no stronger compact existence claim is made.
 
-The final item is a status statement: none of the source-side objects or
+The final item follows because none of the source-side objects or
 trivializations named there is constructed by the lattice calculation, by
 the denominator algebra, or by the scalar OP square.
 \end{proof}
 
-\begin{definition}[Dirac--Igusa realization certificate]
+\begin{definition}[Dirac--Igusa realization datum]
 \label{def:compact-igusa-realization-datum}
 A compact realization of the Igusa square root is a
-Dirac--Igusa realization certificate
+Dirac--Igusa realization datum
 $$
 \mathfrak K_X=(L_X,H_X,O_X,D_X,R_X).
 $$
-Its first-order truncation is the \(D_0\)-certificate of
-Definition~\ref{def:first-order-d0-certificate}.  The full certificate
+Its first-order truncation is the \(D_0\)-datum of
+Definition~\ref{def:first-order-d0-datum}.  The full datum
 adds the orientation-monodromy, chiral Koszul, and primitive-recognition
 data needed to identify the compact state-side algebra with the
 Gritsenko--Nikulin target.  It is not a consequence of the Borcherds
@@ -11821,7 +11989,7 @@ the finite HN inverse system.
 	In the wrapped elliptic-degree sectors, the required filling is the
 	finite-HN inverse system whose limit is the hybrid object
 	\(\mathcal F_X^{\mathrm{hyb}}\) of
-	Definition~\ref{def:hybrid-wrapped-factorization-certificate}.  Thus
+	Definition~\ref{def:hybrid-wrapped-factorization-datum}.  Thus
 \((H_X)\) includes the hybrid Ran base
 \(\operatorname{Ran}^{\mathrm{hyb}}(E)\), projection-finite local
 sectors \(\mathcal F_{\alpha,R}^{\mathrm{loc}}(U)\), rigidified wrapped
@@ -11843,8 +12011,9 @@ properness/admissibility residuals which make
 functor, the quotient operation \(Q_{E,R}\) applied only after the
 extension correspondences are formed, the quotient comparison
 isomorphisms \(\theta^Q_{\mu,R}\), and protected integration maps
-\(I_R^{\mathrm{prot}}\) whose homogeneous \(s\)-degree is the elliptic
-degree \(b_R\).  Equivalently,
+\(I_R^{\mathrm{prot}}\) whose homogeneous \(s\)-degree is the Gram trace
+exponent \(m_R=\operatorname{pr}_3\overline\Pi_X\), while
+\(b_R^{\mathrm{geom}}\) records geometric wrapped support.  Equivalently,
 \[
 \mathfrak O_{\mathrm{hyb},R}=0
 \]
@@ -12046,8 +12215,8 @@ additive normal-ordered labels \((c,T)\), not by a Gram triple.  The
 comparison with \(\mathfrak g_{\Delta_5,\alpha(n,l,m)}\) is made after
 passing to \((n,l,m)=\overline\Pi_X(c,T)\); the shorthand
 \(\Pi_X(c)\) is legitimate only on labels with \(T=0\).
-\((D_X)\) also includes the full chiral Koszul source certificate of
-Definition~\ref{def:chiral-koszul-source-certificate}.  Thus, at every
+\((D_X)\) also includes the full chiral Koszul source datum of
+Definition~\ref{def:chiral-koszul-source-datum}.  Thus, at every
 finite HN height \(R\), one must supply a conilpotent chiral coalgebra
 \(C_{X,R}\) attached to the hybrid source
 \(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\), a finite source
@@ -12066,7 +12235,7 @@ $$
 \mathsf{Den}_{\Delta_5,E,\le R},
 $$
 compatibly in \(R\), and the Koszul Mittag--Leffler exactness hypothesis
-of Proposition~\ref{prop:chiral-koszul-source-certificate-consequence}.
+of Proposition~\ref{prop:chiral-koszul-source-datum-consequence}.
 In the inverse limit this gives
 $$
 b_X:C_X\xrightarrow{\ \simeq\ }
@@ -12103,12 +12272,12 @@ filtration, collision coproduct, bar comparison, and primitive restriction
 were supplied independently of the target counit.
 
 \item[\((R_X)\)] \emph{Primitive recognition.}
-This entry is a primitive recognition certificate
+This entry is a primitive recognition datum
 \(\Pi_{\mathrm{rec}}\) for
 $$
 P_X^\Pi:=H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^{\Theta}\mathcal F_X).
 $$
-This certificate is not a determinant datum and is not the
+This datum is not a determinant datum and is not the
 Gritsenko--Nikulin target itself.  It consists of a source-side
 Gram-descended Lie superalgebra structure on \(P_X^\Pi\), the parity split
 of each homogeneous primitive piece, compact representatives for the real
@@ -12121,7 +12290,7 @@ standard Gritsenko--Nikulin/Kac radical after completion.
 \end{enumerate}
 \end{definition}
 
-\begin{theorem}[Primitive recognition certificate; no source construction]
+\begin{theorem}[Primitive recognition datum; no source construction]
 \label{prop:compact-igusa-realization-criterion}
 \label{thm:primitive-recognition}
 \label{thm:microscopic-hall-drinfeld-criterion}
@@ -12165,7 +12334,8 @@ G(\mathscr B_{\Delta_5})
 Here \(\operatorname{Rad}_{\mathrm{GN}}\) denotes the preimage in the
 completed presentation of the standard radical.
 This target-side statement is imported from the Gritsenko--Nikulin/Kac
-construction; it is not a compact Hall construction.
+construction \cite{GN,GNPartI,GNII,KAC:1}; it is not a compact Hall
+construction.
 
 Suppose a compact Hall/factorization construction supplies a completed
 \(\widehat\Gamma_X\)-graded primitive Hall Lie superalgebra
@@ -12305,7 +12475,12 @@ root \(\{i,j,k\}=\{1,2,3\}\) the real-string relations
 (\operatorname{ad}f_k^X)^5u^{-,X}_{ij,r}=0.
 \]
 These are relation checks in the compact bracket.  They are not
-consequences of the equality \(\sdim=f(nm,l)\).
+consequences of the equality \(\sdim=f(nm,l)\).  The number \(9\) is the
+Gritsenko--Nikulin/Kac target multiplicity in the first finite window
+computed in
+Proposition~\ref{prop:first-saturated-primitive-recognition-window}; the
+compact source must supply representatives with these ranks rather than
+read them from the determinant.
 
 \item[(S5)] \emph{Completed Hopf pairing and radical quotient.}
 The completed Hopf pairing on the positive and negative primitive halves
@@ -12317,13 +12492,14 @@ coproduct, and has closed homogeneous radical
 =\{x\mid \langle x,y\rangle_X=0\ \text{for all }y\}
 \]
 which is a Lie ideal and a coideal.  After quotienting by
-\(\overline{\operatorname{Rad}_X}\), the source radical quotient is the
-same as the Gritsenko--Nikulin/Kac quotient by
+\(\overline{\operatorname{Rad}_X}\), the source radical quotient is
+supplied with an isomorphism to the Gritsenko--Nikulin/Kac quotient by
 \(\overline{\operatorname{Rad}_{\mathrm{GN}}}\).  Equivalently, on every
 finite-height saturated set of roots the positive-negative pairing
-matrices have the same parity-block ranks as the target invariant
-pairing matrices, their kernels are carried by the transition maps, and
-the inverse-limit kernel is exactly \(\operatorname{Rad}_X\).  At every
+matrices are supplied with the same parity-block ranks as the target
+invariant pairing matrices, their kernels are carried by the transition
+maps, and the inverse-limit kernel is exactly \(\operatorname{Rad}_X\).
+At every
 finite stage one has
 \[
 [P^\Pi_{R},\operatorname{Rad}_{X,R}]
@@ -12436,10 +12612,10 @@ P_X^{\Pi,\mathrm{red}}
 $$
 as Gram-graded Lie superalgebras, and its Weyl--Kac--Borcherds
 denominator is \(64^{-1}\Delta_5(2Z)\).  If in addition the chiral
-Koszul source certificate of
-Definition~\ref{def:chiral-koszul-source-certificate} is supplied,
+Koszul source datum of
+Definition~\ref{def:chiral-koszul-source-datum} is supplied,
 including the Koszul Mittag--Leffler exactness hypothesis of
-Proposition~\ref{prop:chiral-koszul-source-certificate-consequence}, then
+Proposition~\ref{prop:chiral-koszul-source-datum-consequence}, then
 $$
 \Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}.
 $$
@@ -12470,14 +12646,14 @@ determinant.  Hence the descended map
 is an isomorphism of Gram-graded Lie superalgebras.  The denominator
 statement is
 Theorem~\ref{thm:denominator-algebra-identity}.  The chiral statement is
-Proposition~\ref{prop:chiral-koszul-source-certificate-consequence}; it
+Proposition~\ref{prop:chiral-koszul-source-datum-consequence}; it
 uses the supplied \(C_X\), \(b_X\), \(\Theta_{\mathrm{Kos}}\), and the
 Koszul Mittag--Leffler exactness hypothesis of that proposition, not the
 target-internal bar--cobar counit.
 \end{proof}
 
-\begin{definition}[Cofinal finite-window primitive-recognition certificate]
-\label{def:cofinal-primitive-recognition-certificate}
+\begin{definition}[Cofinal finite-window primitive-recognition datum]
+\label{def:cofinal-primitive-recognition-datum}
 A finite set \(W\subset Q_+\setminus\{0\}\) is
 \emph{downward saturated} if
 \[
@@ -12488,14 +12664,14 @@ A finite set \(W\subset Q_+\setminus\{0\}\) is
 \]
 Thus every positive presentation word whose total degree lies in \(W\)
 uses only positive degrees already in \(W\).  For the full BKM double,
-each finite certificate below is triangular: positive and negative
+each finite datum below is triangular: positive and negative
 letters are separately restricted to \(W_\nu\) and \(-W_\nu\), mixed
 Chevalley and pairing checks are made only for the supplied letters in
 \(W_\nu\cup(-W_\nu)\cup\{0\}\), and words whose total degree enters the
 window only by cancellation are deferred to the exact-completion clause
 below.
 A cofinal finite-window
-primitive-recognition certificate for \(P_X^{\Pi,\mathrm{red}}\) is an
+primitive-recognition datum for \(P_X^{\Pi,\mathrm{red}}\) is an
 increasing sequence of finite downward-saturated windows
 \[
 W_1\subset W_2\subset\cdots,\qquad
@@ -12547,7 +12723,7 @@ Let
 \]
 be the finite presentation map obtained by projecting to words whose
 letters lie in the triangular finite span generated by
-\(W_\nu\cup(-W_\nu)\cup\{0\}\).  The certificate
+\(W_\nu\cup(-W_\nu)\cup\{0\}\).  The datum
 requires the finite kernel equality
 \[
 \ker\pi_\nu=
@@ -12581,27 +12757,27 @@ finite kernels, cokernels, radicals, PBW associated gradeds, and parity
 pieces supplied in \textup{(R3)--(R7)}.  Equivalently, the relevant
 \(\lim^1\) terms vanish for these triangular finite-window systems.
 \end{enumerate}
-The certificate is finite at each \(\nu\), but it is not numerical: it
+The datum is finite at each \(\nu\), but it is not numerical: it
 contains representatives, relation verifications, pairing matrices,
 kernel equalities, and PBW transition data.  The Borcherds product and
 the OP scalar square provide none of these source-side objects.
 \end{definition}
 
-\begin{proposition}[Global recognition is exactly the cofinal certificate]
-\label{prop:global-recognition-cofinal-certificate}
+\begin{proposition}[Global recognition is exactly the cofinal datum]
+\label{prop:global-recognition-cofinal-datum}
 Assume \textup{(S1)}--\textup{(S4)} of
 Theorem~\ref{thm:primitive-recognition}.  Then the remaining global
 source-side assertions \textup{(S5)}--\textup{(S10)} are supplied by a
-cofinal finite-window primitive-recognition certificate in the sense of
-Definition~\ref{def:cofinal-primitive-recognition-certificate}.  Under
-that certificate,
+cofinal finite-window primitive-recognition datum in the sense of
+Definition~\ref{def:cofinal-primitive-recognition-datum}.  Under
+that datum,
 \[
 P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5}
 \]
 as completed Gram-graded Lie superalgebras.  Conversely, any proposed
 global proof of this isomorphism, with the chosen
 Gritsenko--Nikulin presentation and source Hopf pairing, must restrict to
-such finite certificates on every downward-saturated window.
+such finite data on every downward-saturated window.
 \end{proposition}
 
 \begin{proof}
@@ -13031,7 +13207,7 @@ parity dimensions in this window are
 	after quotienting by its own radical; the target package with
 	zero radical is only a consistency check.
 		Consequently a compact source passes primitive recognition on
-		\(W_{\le3}\) only after supplying the following finite certificate:
+		\(W_{\le3}\) only after supplying the following finite datum:
 		parity-homogeneous representatives with the displayed dimensions; the
 Chevalley, real-Serre, orthogonality, and super-sign relations restricted
 to \(W_{\le3}\); the Jacobi relation
@@ -13049,7 +13225,7 @@ finite transition maps; the finite kernel equality
 \bigr)_{W_{\le3}};
 \]
 	and the associated-graded PBW isomorphism on the truncated enveloping
-	algebras.  If this finite certificate is supplied, the restricted map
+	algebras.  If this finite datum is supplied, the restricted map
 \[
 G(\mathscr B_{\Delta_5})_{W_{\le3}}
 \longrightarrow
@@ -13071,7 +13247,7 @@ kernel equality, the Hopf-radical ideal/coideal assertion, and the PBW
 	\]
 	where \(K_{\beta,\bar p}\) is the radical block and
 	\(L_{\beta,\bar p}\) maps to the corresponding target basis above.  The
-	certificate further requires positive-negative pairing matrices
+	datum further requires positive-negative pairing matrices
 	in every displayed degree, radical kernel bases and quotient maps, the
 	Chevalley, real-Serre, isotropic, Jacobi, and \(27\) mixed bracket
 	constants, coproduct matrices for every retained decomposition, product
@@ -13128,7 +13304,7 @@ height-four residual
 coming from lower presentation words after the Borcherds--Kac relations
 and radical quotient are imposed.  This number is a signed residual, not
 a count of compact PBW basis vectors.  It says precisely that the
-height-four window cannot be certified by appending the additive
+height-four window cannot be obtained by appending the additive
 coefficients alone.
 
 The same phenomenon is visible on the doubled isotropic boundary rays:
@@ -13155,7 +13331,7 @@ and the target presentation contains
 (\operatorname{ad}f_i)^3w_s^-=0.
 \]
 The first brackets \([e_i,w_s]\) land in the three height-four timelike
-degrees above and are odd.  A height-four compact recognition certificate
+degrees above and are odd.  A height-four compact recognition datum
 must therefore supply those odd maps, the even simple generators of
 multiplicity \(90\), the lower-word relations producing the signed
 residual \(18\), the positive-negative pairing matrices, the radical
@@ -13171,7 +13347,7 @@ even one-dimensional, each primitive isotropic degree has one real-real
 commutator and nine even isotropic simple directions, the six height-three
 real roots are even one-dimensional, and
 \(\delta_{123}\) has presentation dimensions \(29|93\).  The finite
-certificate is the restriction of clauses \textup{(S3)}--\textup{(S10)} of
+datum is the restriction of clauses \textup{(S3)}--\textup{(S10)} of
 Theorem~\ref{thm:primitive-recognition} to the downward-saturated window
 \(W_{\le3}\).  The same proof as the theorem then gives the restricted
 isomorphism.  The height-four additive coefficients are computed from the
@@ -13206,7 +13382,7 @@ the exponent is \(3\).  All displayed numerical checks are asserted in
 \label{prop:finite-wlethree-no7-source-protocol}
 For a finite Hall stage \(R\) whose source image contains
 \(W_{\le3}\cup(-W_{\le3})\cup\{0\}\), a compact source verifies the
-\textup{(NO7)} part of the \(W_{\le3}\)-recognition certificate only after
+\textup{(NO7)} part of the \(W_{\le3}\)-recognition datum only after
 supplying parity-homogeneous source splittings
 \[
 P^X_{R,\beta,\bar p}=K_{\beta,\bar p}\oplus L_{\beta,\bar p},
@@ -13274,11 +13450,11 @@ condition in the HN inverse system.
 \end{proof}
 
 \begin{openproblem}[State-side construction of \(D_0\) and the
-Dirac--Igusa certificate]
+Dirac--Igusa datum]
 \label{op:compact-igusa-realization}
-Construct first the \(D_0\)-certificate of
-Definition~\ref{def:first-order-d0-certificate}, and then the full
-certificate \(\mathfrak K_X\) of
+Construct first the \(D_0\)-datum of
+Definition~\ref{def:first-order-d0-datum}, and then the full
+datum \(\mathfrak K_X\) of
 Definition~\ref{def:compact-igusa-realization-datum}.  The exact open
 obligations are:
 \begin{enumerate}
@@ -13293,7 +13469,7 @@ finite CE differential.  Then construct the full finite stage
 \(D_{0,R}\) on \(\widehat\Gamma_R\), equivalently the finite
 Hall--Dirac atlas \(\mathfrak A_R\) of
 Proposition~\ref{prop:finite-d0-atlas-parity-obstruction}, including the
-Dirac complex, source observable shadow, Pfaffian square, compact parity
+Dirac complex, source observable shadow, Pfaffian square-root datum, compact parity
 lifts, protected integration, and successor transition maps with
 \(\mathfrak o^{\mathrm{atlas}}_{R^+R}=
 \mathfrak o^{\mathrm{tr}}_{R^+R}=0\), whose composites give the
@@ -13348,11 +13524,11 @@ lifts \(\ell_R(\gamma)\in\mathscr P_R(\gamma)\) on every
 \]
 including absence of actual primitive support in target-zero degrees,
 coverage of every nonzero Borcherds target degree in the exhausting
-windows \(\Gamma_{\Delta,R}\), finite Pfaffian square
+windows \(\Gamma_{\Delta,R}\), finite Pfaffian square-root datum
 \(\mathscr L_{\mathrm{Pf},R}^{\otimes2}\simeq\mathscr L_{\det,R}\),
 and normalized leading coefficient \(\mathfrak o^{\mathrm{lead}}_R=0\).
 Negative representatives are supplied only in the primitive-recognition
-certificate, through the full positive-negative pairing and Chevalley
+datum, through the full positive-negative pairing and Chevalley
 data.
 The minimal target-window parity model
 \(\mathsf P^{\min}_{\Delta,R}\) is already constructed in
@@ -13360,15 +13536,15 @@ Proposition~\ref{prop:cofinal-target-window-parity-model}; the open
 compact task is to identify it, or a non-minimal lift in
 \(\mathscr P_R(\gamma)\), with actual source primitive spaces and to
 prove the no-hidden-cancellation condition if the minimal lift is used;
-\item[\textup{(open full certificate)}] construct the strong
-orientation monodromy and the chiral Koszul source certificate
+\item[\textup{(open full datum)}] construct the strong
+orientation monodromy and the chiral Koszul source datum
 \[
 \mathfrak K^{\mathrm{Kos}}_{X,R}
 =(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}},C_{X,R},
 F^{\mathrm{co}}_{R,\bullet},\Delta_R^{\mathrm{ch}},
 b_{X,R},\Theta_{\mathrm{Kos},R})
 \]
-of Definition~\ref{def:chiral-koszul-source-certificate}, with
+of Definition~\ref{def:chiral-koszul-source-datum}, with
 \[
 \mathfrak O_{\mathrm{Kos},R}=0
 \]
@@ -13398,8 +13574,8 @@ Borcherds--Kac relation verification, the full compact parity
 dimensions, the completed Hopf pairing with its closed radical quotient,
 the no-extra-relations theorem, and completed PBW compatibility of
 Theorem~\ref{thm:primitive-recognition}; equivalently, construct the
-cofinal finite-window certificate of
-Definition~\ref{def:cofinal-primitive-recognition-certificate}.  The
+cofinal finite-window datum of
+Definition~\ref{def:cofinal-primitive-recognition-datum}.  The
 first finite bracket test is
 the \(\delta_1+\delta_2+\delta_3\) channel of
 Propositions~\ref{prop:low-degree-denominator-brackets} and
@@ -13410,7 +13586,7 @@ constants, Jacobi/Serre checks, pairing matrices, and radical quotient.
 The proved lattice normal-ordering theorem and the imported denominator
 algebra are inputs to this problem.  The scalar square is an
 orientation-forgetful check.  None of the three constructs the compact
-state-side certificate.
+state-side datum.
 \end{openproblem}
 
 \begin{definition}[Imaginary simple roots]
@@ -13625,7 +13801,7 @@ It also does not determine simple primitive representatives, the
 no-extra-relations statement, completed PBW compatibility, or the closed
 radical of the positive-negative Hopf pairing.
 Thus signed root multiplicity is necessary input for primitive
-recognition, but it is not a recognition certificate.
+recognition, but it is not a recognition datum.
 \end{proposition}
 
 \begin{proof}
@@ -13716,7 +13892,7 @@ q^{d-1}t^{\frac{1}{2}\langle\beta_h,\beta_h\rangle}(-p)^n.$$
 \begin{tabular}{c|c|c|c}
 role & OP variable & DT variable & Borcherds variable \\ \hline
 \(K3\) norm \(h-1\) & \(q_{\mathrm{OP}}\) & \(t_{\mathrm{DT}}\) & \(q_{\mathrm{Bch}}\) \\
-elliptic degree \(d-1\) & \(\widetilde q_{\mathrm{OP}}\) & \(q_{\mathrm{DT}}\) & \(s_{\mathrm{Bch}}\) \\
+Borcherds/Gram exponent \(m=d-1\) from elliptic degree \(d\) & \(\widetilde q_{\mathrm{OP}}\) & \(q_{\mathrm{DT}}\) & \(s_{\mathrm{Bch}}\) \\
 D0/Fourier index \(n\) & \(p_{\mathrm{OP}}=e^{iu}\) & \(p_{\mathrm{DT}}\) with \((-p_{\mathrm{DT}})^n\) & \(r_{\mathrm{Bch}}\)
 \end{tabular}
 \end{center}
@@ -13819,13 +13995,13 @@ Z^X_{\mathrm{DT}}(T,Q,P)
 =-4096\,\Delta_5(Z)^{-2}.
 $$
 The equality is an equality of Laurent expansions in the OP chamber of
-Proposition~\ref{prop:op-normalization}.  It is the theorem-level
-OP/DT/PT scalar branch attached to the Behrend-weighted quotient
+Proposition~\ref{prop:op-normalization}.  It is the OP/DT/PT scalar
+branch attached to the Behrend-weighted quotient
 integration of Proposition~\ref{prop:reduced-scalar-quotient-integration}.
 The physical protected-index identification is
 Conjecture~\ref{conj:protected-d-brane-index}.
 Imprimitive K3 curve classes require the separate imprimitive
-multiple-cover certificate; the displayed OP scalar-square theorem is the
+multiple-cover datum; the displayed OP scalar-square theorem is the
 primitive-class branch used for the present square-root comparison.
 \end{theorem}
 
@@ -13879,7 +14055,7 @@ expansion of the form
 $$Z^X_{\square,\mathrm{ext}}(Z)
 =\frac{C_{\square,\mathrm{ext}}}{\Delta_5(Z)^2},
 \qquad C_{\square,\mathrm{ext}}\in\C^\times,$$
-and carries no OP/DT enumerative status unless its source is specified.
+and carries no OP/DT enumerative content unless its source is specified.
 \end{definition}
 
 \begin{proposition}[Square-root consequence]
@@ -14025,10 +14201,10 @@ The synthesis is the following spine:
 \longrightarrow
 \hbox{compact realization problem}
 \longrightarrow
-\hbox{eight-row certificate extension}.
+\hbox{eight-row datum extension}.
 \end{gathered}
 \]
-\begin{theorem}[Coefficient dictionary and claim-strength synthesis]
+\begin{theorem}[Coefficient dictionary and compact realization]
 \label{thm:protected-igusa-determinant}
 Let \(X=S\times E\), where \(S\) is a smooth complex K3 surface and
 \(E\) is a smooth elliptic curve.  Boundary-degeneration cases--singular
@@ -14139,11 +14315,11 @@ H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^{\Theta}\mathcal F_X)/
 \cong
 \mathfrak g_{\Delta_5}
 \]
-is open unless a Dirac--Igusa realization certificate in the sense of
+is open unless a Dirac--Igusa realization datum in the sense of
 Definition~\ref{def:compact-igusa-realization-datum} is supplied.
-If such a certificate were supplied, Theorem~\ref{thm:primitive-recognition}
+If such a datum were supplied, Theorem~\ref{thm:primitive-recognition}
 would identify its primitive denominator with \(64^{-1}\Delta_5(2Z)\); no
-such certificate is constructed in this paper.
+such datum is constructed in this paper.
 
 Sixth, any claimed compact realization must also satisfy three
 consequences.
@@ -14153,20 +14329,22 @@ consequences.
 one-dimensional subscheme of \(K3\times E\) has positive elliptic
 degree, its projection to \(E\) is all of \(E\).  Thus the full
 \(s\)-direction of the Igusa product requires finite-stage
-local/wrapped data: \(b_R\), rigidified wrapped prequotients, mixed
+local/wrapped data: a geometric elliptic-degree map
+\(b_R^{\mathrm{geom}}\), a Gram trace exponent
+\(m_R=\operatorname{pr}_3\overline\Pi_X\), rigidified wrapped prequotients, mixed
 extension correspondences in both local/wrapped orders,
 wrapped/wrapped correspondences, the eight-word two-step binary flag atlas in
 \(\mathsf{Corr}^{E,\mathrm{hyb}}_R\), the higher colored residual
 \(\mathfrak o^{\mathrm{col}}_R\), properness/admissibility residuals
 for the pull-push operations, quotient-after-correspondence
 \(Q_{E,R}\)-compatibility, and protected integration with trace degree
-\(s^{b_R}\).  Equivalently,
+\(s^{m_R}\).  Equivalently,
 \(\mathfrak O_{\mathrm{hyb},R}=0\) for every finite \(R\).  A separate
 global Fock/Hecke mode is only
 determinant-level unless it is coupled to the local sector by mixed Hall
 actions before the reduced \(E\)-quotient.
-\item The automorphic character \(\nu_{\Delta_5}\) is theorem-level
-data of \(\Delta_5\), and \(\Delta_5^2\) forgets it.  A compact Hall
+\item The automorphic character \(\nu_{\Delta_5}\) belongs to
+\(\Delta_5\), and \(\Delta_5^2\) forgets it.  A compact Hall
 orientation must construct a strong orientation character
 \(\epsilon_o\) and prove
 \[
@@ -14178,7 +14356,7 @@ orientation-monodromy problem.  The Hall-side proof must compute the
 three simple type-II determinant-line signs and check the reflection
 relations.
 \item A primitive comparison with \(\mathfrak g_{\Delta_5}\) is a
-presentation-level recognition certificate, not a consequence of signed
+presentation-level recognition datum, not a consequence of signed
 dimensions.  One must supply primitive representatives for the real and
 imaginary simple roots, their parities, the Chevalley, real Serre and
 orthogonality relations, generation, full root-space parity dimensions,
@@ -14193,7 +14371,7 @@ Grothendieck class.
 \end{enumerate}
 
 Finally, the diagonal-divisor rows extend this same logic.  A row is
-promoted beyond its automorphic product only by a row certificate fixing
+promoted beyond its automorphic product only by a row datum fixing
 the modular group or cover, character, divisor, Jacobi seed, product
 lattice, Weyl chamber, reflection character, scalar theorem if one is
 claimed, orientation data, one-particle index, and primitive algebra
@@ -14260,14 +14438,14 @@ Borcherds--Kac presentation recorded in the denominator-algebra section,
 together with the closed Hopf-radical and completed PBW hypotheses in
 Theorem~\ref{thm:primitive-recognition}.  The determinant and scalar
 square do not contain the missing presentation, orientation, radical, PBW,
-or Hall correspondence data.  The row certificate condition is the same
+or Hall correspondence data.  The row datum condition is the same
 separation applied to the Cl\'ery--Gritsenko catalogue in the next part.
 \end{proof}
 
 \part{Diagonal-divisor rows and CHL boundary physics}
 
-\section{Eight diagonal-divisor rows: automorphic and physical status}
-\label{sec:eight-dd-rows-status}
+\section{Eight diagonal-divisor rows: automorphic products and physical hosts}
+\label{sec:eight-dd-rows}
 
 The Cl\'ery--Gritsenko catalogue gives eight
 diagonal-divisor automorphic products.  The Gritsenko--Nikulin and
@@ -14286,10 +14464,9 @@ $$\mathcal H_{\mathrm{diag}}
 =\left\{\begin{pmatrix}a&0\\0&b\end{pmatrix}\mid
 a,b\in\mathbb{H}_1\right\}\subset\mathbb{H}_2.$$
 
-\begin{definition}[Physical-host certificate]
-\label{def:physical-host-certificate}
-For a diagonal-divisor row \(F_j\), a physical-host certificate is a
-five-level certificate table
+\begin{definition}[Physical-host datum]
+\label{def:physical-host-datum}
+For a diagonal-divisor row \(F_j\), a physical-host datum is a tuple
 \[
 \mathfrak C_j=
 \left(
@@ -14298,29 +14475,29 @@ five-level certificate table
 \]
 The entries have the following meanings.
 \begin{enumerate}
-\item \(\mathscr A_j\) is the automorphic product certificate: the form
+\item \(\mathscr A_j\) is the automorphic product datum: the form
 \(F_j\), the group or multiplier cover, the automorphy cocycle, the
 character or multiplier with exact order, the diagonal divisor with
 multiplicities, the product chamber and branch, the Jacobi input at
 every cusp, the product-degree map, the product normalization, and the
 source theorem.
-\item \(\mathscr D_j\) is the denominator certificate: a
+\item \(\mathscr D_j\) is the denominator datum: a
 Weyl--Kac--Borcherds denominator algebra with root lattice, Weyl vector,
 simple real roots, Weyl chamber, Weyl group, reflection character,
 imaginary simple-root coefficients, product side, and Weyl alternating
 side.
-\item \(\mathscr S_j\) is a CHL/dyon-square certificate: a sourced
+\item \(\mathscr S_j\) is a CHL/dyon-square datum: a sourced
 dyon-counting scalar form \(\Phi_j\), a row map to the same automorphic
 row and cover, and an identity \(F_j^2=\Phi_j\) in the stated chamber.
 This is not a denominator theorem and not a CY/DT partition theorem.
-\item \(\mathscr Z_j\) is a reduced CY/DT scalar-host certificate: a
+\item \(\mathscr Z_j\) is a reduced CY/DT scalar-host datum: a
 compact Calabi--Yau threefold, orbifold Calabi--Yau, or CHL background
 with oriented reduced obstruction theory, fixed variables and chamber,
 and a proved identity
 \[
 Z^{X_j}_{\mathrm{red}}(Z)=C_jF_j(Z)^{-2}.
 \]
-\item \(\mathscr H_j\) is a compact Hall/chiral certificate: an oriented
+\item \(\mathscr H_j\) is a compact Hall/chiral datum: an oriented
 compact Hall, Drinfeld, or factorization object whose protected
 one-particle index gives the product exponents and whose protected
 primitive bracket identifies the denominator algebra with the same
@@ -14330,7 +14507,7 @@ The product row, denominator row, dyon square, reduced scalar host, and
 compact Hall/chiral host are separate structures.  None of the five
 entries implies another unless a cited theorem constructs the implication.
 In particular, matching a weight, a square root, or a comparison symbol
-does not fill a certificate.  A row-map theorem must name the host,
+does not fill a datum.  A row-map theorem must name the host,
 charge lattice, effective chamber, modular group or cover, product
 lattice, orientation character, one-particle index, scalar identity when
 claimed, and primitive Hall/chiral comparison.
@@ -14386,42 +14563,42 @@ Borcherds--Gritsenko--Nikulin lift of \(\phi_{0,1}\) &
 Gritsenko--Nikulin denominator algebra \(\mathfrak g_{\Delta_5}\);
 \(64^{-1}\Delta_5(2Z)\) normalization &
 no CHL row map used; \(\Delta_5^2\) is the Igusa scalar square, not a
-boundary dyon certificate &
+boundary dyon datum &
 proved OP/DT \(K3\times E\) scalar host:
 \(-4096\Delta_5^{-2}\) &
 open; the formal determinant is not a compact Hall/chiral source \\
 2 &
 \(F_2=\Delta_2\); Cl\'ery--Gritsenko product &
 Gritsenko--Nikulin denominator row \(\mathfrak g^{\mathrm{GN}}_2\) &
-no certified CHL/dyon row map &
-no certified curve-counting scalar theorem &
-no certified Hall or factorization host \\
+no CHL/dyon row map &
+no curve-counting scalar theorem &
+no Hall or factorization host \\
 3 &
 \(F_3=\Delta_1\); Cl\'ery--Gritsenko product &
 Gritsenko--Nikulin denominator row \(\mathfrak g^{\mathrm{GN}}_3\) &
-no certified CHL/dyon row map &
-no certified curve-counting scalar theorem &
-no certified Hall or factorization host \\
+no CHL/dyon row map &
+no curve-counting scalar theorem &
+no Hall or factorization host \\
 4 &
 \(F_4=\Delta_{1/2}\); Cl\'ery--Gritsenko product on the degree-eight
 multiplier cover &
 Gritsenko--Nikulin denominator row on the same cover
 \(\mathfrak g^{\mathrm{GN}}_4\) &
-no certified CHL/dyon row map &
-no certified curve-counting scalar theorem &
-no certified Hall or factorization host \\
+no CHL/dyon row map &
+no curve-counting scalar theorem &
+no Hall or factorization host \\
 5 &
 \(F_5=\nabla_3\); Cl\'ery--Gritsenko product &
 Govindarajan \(\mathcal G_1(2)\) CHL/WKB denominator theorem &
 sourced scalar dyon square \(\nabla_3^2=\Phi_6^{(1,2)}\) &
-no reduced CY/DT certificate &
-no compact Hall/chiral certificate \\
+no reduced CY/DT datum &
+no compact Hall/chiral datum \\
 6 &
 \(F_6=\nabla_2\); Cl\'ery--Gritsenko product &
 Govindarajan \(\mathcal G_1(3)\) CHL/WKB denominator theorem &
 sourced scalar dyon square \(\nabla_2^2=\Phi_4^{(1,3)}\) &
-no reduced CY/DT certificate &
-no compact Hall/chiral certificate \\
+no reduced CY/DT datum &
+no compact Hall/chiral datum \\
 7 &
 \(F_7=\nabla_{3/2}\); Cl\'ery--Gritsenko product on the order-four
 multiplier cover &
@@ -14429,15 +14606,15 @@ Govindarajan \(\mathcal G_1(4)\) CHL/WKB denominator theorem on the
 \(\mu_4\)-cover &
 sourced scalar dyon square \(F_7^2=\Phi_3\) for the composite \(N=4\)
 scalar form, only after fixing the cover and branch &
-no reduced CY/DT certificate &
-no compact Hall/chiral certificate \\
+no reduced CY/DT datum &
+no compact Hall/chiral datum \\
 8 &
 \(F_8=Q_1\); Cl\'ery--Gritsenko \((t,N)=(2,2)\) product &
 Govindarajan \(\mathcal G_2(4)\) CHL/WKB denominator theorem &
 sourced twisted dyon square \(Q_1^2=\Phi_2^{(2,4)}\); \(Q_1\) is the
 special \(\mathcal G_2(4)\) row &
-no reduced CY/DT certificate &
-no compact Hall/chiral certificate \\
+no reduced CY/DT datum &
+no compact Hall/chiral datum \\
 \hline
 \end{tabular}
 \endgroup
@@ -14456,7 +14633,7 @@ For \(F_7\) the theorem lives on the
 $\mu_4$-multiplier cover determined by the Cl\'ery--Gritsenko order-four
 multiplier.  For \(Q_1\) the row is the special \(\mathcal G_2(4)\)
 twisted CHL denominator row.  Neither statement supplies a reduced
-CY/DT scalar host or compact Hall/chiral certificate.
+CY/DT scalar host or compact Hall/chiral datum.
 
 \begin{proposition}[Extension separation]
 \label{prop:extension-quarantine}
@@ -14470,10 +14647,10 @@ Weyl chamber, real simple roots, a reflection character, and a Weyl
 alternating sum.
 \end{proposition}
 
-\begin{openproblem}[Certificates beyond the known rows]
+\begin{openproblem}[Data beyond the known rows]
 For any diagonal-divisor or boundary product not already covered
 by the Gritsenko--Nikulin denominator theorems or by the Govindarajan
-CHL/WKB denominator theorem, first construct the product certificate
+CHL/WKB denominator theorem, first construct the product datum
 $$
 \mathscr P_j=(\phi_j,\Gamma_{j,\mathrm{prod}}^+,
 \Gamma_{j,\mathrm{mod}},\rho_j,\nu_j,L_j,\alpha_j)
@@ -14491,7 +14668,7 @@ $$\operatorname{den}(\mathfrak g_j)=C'_jF_j(a_jZ),\qquad
 \sdim(\mathfrak g_{j,\gamma})=c_j(\gamma).$$
 If a CHL/K3 sector supplies a dyon-counting scalar square, it fills only
 the \(\mathscr S_j\) level of
-Definition~\ref{def:physical-host-certificate}.  If a reduced CY/DT
+Definition~\ref{def:physical-host-datum}.  If a reduced CY/DT
 scalar identity is claimed, one must separately construct \(X_j\), the
 reduced obstruction theory, orientation, Fourier chamber, variables, and
 the theorem
@@ -14537,7 +14714,7 @@ $$
 $$
 It is not the Cl\'ery--Gritsenko table.  A comparison with the
 Cl\'ery--Gritsenko forms requires the relevant entries of
-Definition~\ref{def:physical-host-certificate}.
+Definition~\ref{def:physical-host-datum}.
 Thus
 $$\hbox{Cl\'ery--Gritsenko classification}\neq
 \hbox{CHL realisation theorem}.$$
@@ -14548,7 +14725,7 @@ $$F_5,F_6,F_7,F_8:
 with $F_7$ understood on the $\mu_4$-multiplier cover determined by its
 order-four multiplier.  Dijkgraaf--Verlinde--Verlinde and Borcherds
 give the \(N=1\) physical and automorphic background
-\cite{DVV,B}; they do not construct physical-host certificates for the
+\cite{DVV,B}; they do not construct physical-host data for the
 other seven rows.
 
 \appendix
@@ -15859,11 +16036,11 @@ Thus all eight rows have formal product/current-envelope objects.
 Rows \(1\)--\(4\) have the Gritsenko--Nikulin denominator algebras.
 Rows \(5\)--\(8\) have the Govindarajan CHL/WKB denominator algebras in
 the CHL normalization.  The row \(F_7\) lives on the
-\(\mu_4\)-multiplier cover and fills no physical-host certificate beyond
+\(\mu_4\)-multiplier cover and fills no physical-host datum beyond
 the sourced denominator level.
 \end{remark}
 
-\begin{openproblem}[Physical-host certificates and row maps]
+\begin{openproblem}[Physical-host data and row maps]
 \label{conj:nonabelian-row-extension}
 Construct, for every claimed physical realization of a
 Cl\'ery--Gritsenko row, a datum
@@ -15881,12 +16058,12 @@ Jacobi seed at every cusp, product-degree lattice, chamber, branch,
 normalization, and source theorem.  The
 entries
 \((\mathscr A_j,\mathscr D_j,\mathscr S_j,\mathscr Z_j,\mathscr H_j)\)
-are the five levels of Definition~\ref{def:physical-host-certificate}.
+are the five levels of Definition~\ref{def:physical-host-datum}.
 For rows \(F_5,\ldots,F_8\), the Govindarajan CHL/WKB theorem fills
 \(\mathscr D_j\), and the sourced scalar square fills \(\mathscr S_j\)
 where stated.  It does not fill \(\mathscr Z_j\) or
 \(\mathscr H_j\).  A boundary partition identity and a compact
-Hall/chiral source remain open until these certificate entries are
+Hall/chiral source remain open until these datum entries are
 constructed.
 \end{openproblem}
 
@@ -15922,7 +16099,7 @@ $$
 \Phi^{\mathrm{cmp}}_j\longleftrightarrow F_i
 $$
 requires the relevant entries of
-Definition~\ref{def:physical-host-certificate}.  Consequently the direct
+Definition~\ref{def:physical-host-datum}.  Consequently the direct
 identifications
 $$
 \Phi^{\mathrm{cmp}}_5=F_5,\qquad
@@ -15945,7 +16122,7 @@ comparison tuple is not that theorem table.  The Borcea--Voisin route
 \cite{OhThomasI}, \cite{OhThomasII}, \cite{BOPY} require separate
 construction of \(X_j\), the reduced theory, the protected index, and the
 product identity.  None is constructed here.  Thus the comparison symbols
-remain external labels until a certificate identifies them with
+remain external labels until a datum identifies them with
 Cl\'ery--Gritsenko rows.
 \end{proof}
 
@@ -15977,15 +16154,15 @@ The formal fractional-power comparison symbols
 \Phi^{\mathrm{cmp}}_7,\qquad
 \Phi^{\mathrm{cmp}}_8
 \]
-do not label Cl\'ery--Gritsenko rows.  The only source-compatible
-statement retained here is the following conditional test.
+do not label Cl\'ery--Gritsenko rows.  The source-compatible statement is
+the following test.
 
 The displayed comparison weight of \(\Phi^{\mathrm{cmp}}_5\) is
 \(1/2\).  If it is presented as a square root, the parent form must have
 weight \(1\), and the root must live on the pullback of the parent group
 to the genus-two metaplectic cover with a genuine half-integral
 multiplier.  A weight-\(5\) parent would produce a weight-\(5/2\) square
-root and does not certify this displayed comparison slot.
+root and does not produce this displayed comparison slot.
 
 If the comparison symbol \(\Phi^{\mathrm{cmp}}_7\) is supplied with its
 displayed comparison weight \(1/4\), then it must be a genuine
@@ -15998,7 +16175,7 @@ has exact order \(4\), then the character part has exact order
 such relation is constructed here.
 The \(\mu_4\)-cover of the Cl\'ery--Gritsenko row
 \(F_7=\nabla_{3/2}\), whose weight is \(3/2\), is not a modular-root
-certificate for a comparison object \(\Phi^{\mathrm{cmp}}_7\) of weight
+datum for a comparison object \(\Phi^{\mathrm{cmp}}_7\) of weight
 \(1/4\).  That comparison object needs its own parent, cover, cocycle,
 and character-root computation.
 
@@ -16025,11 +16202,11 @@ cocycle root.  A formal root can be chosen in a chamber, but this is not
 a modular or chiral construction.
 \end{proof}
 
-\begin{openproblem}[Fractional comparison-row physical-host certificate]
+\begin{openproblem}[Fractional comparison-row physical-host datum]
 \label{op:fractional-comparison-row-host}
-For a fractional comparison row, construct a modular-root certificate
-\(\mathscr R_j\) and the five-level physical-host certificate of
-Definition~\ref{def:physical-host-certificate}.  The root certificate
+For a fractional comparison row, construct a modular-root datum
+\(\mathscr R_j\) and the five-level physical-host datum of
+Definition~\ref{def:physical-host-datum}.  The root datum
 must fix the parent form, root exponent, exact group or cover,
 multiplier character and its order, automorphy cocycle, divisor
 multiplicities, branch, product normalization, and source theorem.
@@ -16045,9 +16222,9 @@ comparison for the same row.
 
 Borcea--Voisin and higher-dimensional curve-counting constructions
 \cite{BORCEA}, \cite{VOISIN}, \cite{OhThomasI}, \cite{OhThomasII},
-\cite{BOPY} are possible sources for such a certificate.  This paper
+\cite{BOPY} are possible sources for such a datum.  This paper
 does not assert that they supply it.  Until \(\mathscr R_j\) and the
-relevant certificate entries are constructed, the symbols
+relevant datum entries are constructed, the symbols
 \(\Phi^{\mathrm{cmp}}_5,\Phi^{\mathrm{cmp}}_7,\Phi^{\mathrm{cmp}}_8\)
 are formal comparison symbols only: no Cl\'ery--Gritsenko row,
 finite-order multiplier, denominator identity, CY/DT partition theorem,
@@ -16061,21 +16238,22 @@ and no physical row-map denominator theorem for any congruence
 row.  The separate Govindarajan CHL/WKB denominator theorem remains
 Theorem~\ref{thm:govindarajan-denominator-rows}.
 
-For \(X=K3\times E\) the protected one-particle index is theorem-level,
-the virtual \(K_0\)-determinant is \(\Delta_5\) in the theta
-normalization, and the same active half-coefficients are the visible
-signed root supermultiplicities of the Gritsenko--Nikulin denominator
-algebra \(\mathfrak g_{\Delta_5}\); the reduced scalar branch is
-\(-4096\,\Delta_5^{-2}\) by Oberdieck--Pixton.  The compact observable
-algebra realizing these on \(K3\times E\), with orientation character
+For \(X=K3\times E\) the protected K3 index input and the virtual
+\(K_0\)-determinant identify \(\Delta_5\) in the theta normalization, and
+the same active half-coefficients are the visible signed root
+supermultiplicities of the Gritsenko--Nikulin denominator algebra
+\(\mathfrak g_{\Delta_5}\); the primitive reduced scalar branch is
+\(-4096\,\Delta_5^{-2}\) by Oberdieck--Pixton.  The open recognition
+target is a compact protected one-particle object and observable algebra
+realizing these on \(K3\times E\), with orientation character
 \(\epsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\) after the
-finite orientation, Weyl transport, and type-II Pfaffian wall certificates
-are supplied, is the open recognition target.  The seven other
+finite orientation, Weyl transport, and type-II Pfaffian wall data
+are supplied.  The seven other
 Cl\'ery--Gritsenko
 diagonal-divisor rows extend the same separation: each row carries its
 automorphic product, and the levels
 \(\mathscr A_j,\mathscr D_j,\mathscr S_j,\mathscr Z_j,\mathscr H_j\) of
-physical-host certificate are filled only where the cited literature
+physical-host datum are filled only where the cited literature
 supplies them.
 
 \input{appendices/boundary_compatibility_conditions}
