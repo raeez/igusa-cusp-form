@@ -45,3 +45,14 @@
 - Processed text SHA-256: `c2035d6ce0f995ad41b16ad295d2bba1d110612385aea3a7d6197f8d1f7e5b17`
 - Prior 2026-04-29 source relation: distinct binary from `materials/raw/2026-04-29-attack-whitepaper-analysis.pdf` (`cmp` returned nonzero); 396 pages versus the prior 329-page intake.
 - Processing: copied into the repository before analysis; extracted with `pdftotext -layout`; assigned to the second-wave attack-heal swarm for interweaving into the platonic-ideal rewrite plan and manuscript hardening pass.
+
+## 2026-04-30 01:14:30 SAST Attack Whitepaper Analysis
+
+- Raw source: `materials/raw/2026-04-30-attack-whitepaper-analysis.pdf`
+- Processed text: `materials/processed/2026-04-30-attack-whitepaper-analysis.txt`
+- Origin supplied by principal: `/Users/raeez/Desktop/Attack Whitepaper Analysis.pdf`
+- PDF metadata creation time: 2026-04-30 01:14:30 SAST
+- PDF page count: 496
+- Source SHA-256: `23a0b7bb6dbc5952acc16b7ec4775cf153ce86bd1a11ba02e430f89687593d5f`
+- Processed text SHA-256: `86d1d15be4ba732d1e99495a871b6cce6efef2ee6f65f43af68dbcb250a60b4c`
+- Processing: copied into the repository before analysis; extracted with `pdftotext -layout`; assigned to the 2026-04-30 attack-heal swarm and cross-checked against the compact \(K3\times E\) realization constraints in `~/calabi-yau-quantum-groups`.

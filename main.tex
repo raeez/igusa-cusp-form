@@ -188,7 +188,7 @@ boundary row becomes a physical host.
 \section{Introduction}
 \label{sec:introduction}
 
-The local object comes first.  A compact BPS theory on
+The local object comes first.  A compact protected theory on
 \(X=K3\times E\), if it exists in the form needed here, should produce
 protected local observables before any trace is taken.  After twisting
 and passing to the protected index, the positive Hilbert space has
@@ -463,7 +463,7 @@ problem.
 
 The square root is therefore not an analytic ambiguity in
 \(\Delta_5^2\).  It is the normalized automorphic determinant of the
-virtual protected one-particle index.  The scalar square forgets the
+virtual protected index package.  The scalar square forgets the
 automorphic reflection character; a compact Hall orientation realizing
 that character is part of the open Dirac--Igusa datum.
 
@@ -540,7 +540,7 @@ Proposition~\ref{prop:sectorial-hall-truncation} is the candidate
 truncation.
 \end{remark}
 
-\section{The one-particle index and its determinant}
+\section{The virtual K3 index and its determinant}
 
 For the determinant calculation set
 $$
@@ -586,7 +586,7 @@ Z_{\mathrm{K3}}(\tau,z)=
 (-1)^{F_L+F_R}q^{L_0-c/24}
 \overline q^{\,\overline L_0-\overline c/24}r^{J_0}.
 $$
-The BPS space in degree $(n,l)$ is
+The protected right-moving cohomology in degree $(n,l)$ is
 $$
 \mathcal H^{\mathrm{BPS}}_{n,l}(S):=
 H^\bullet\!\left(
@@ -676,8 +676,8 @@ Form now the virtual Borcherds determinant package.  The third index
 \(m\) is the second-quantized/Borcherds degree.  The positive \(m\)
 sector carries the Hecke--DMVV exponents \(f(nm,l)\).  The \(m=0\)
 sector is a cusp/Weyl boundary package carrying the repeated boundary
-indices \(f(0,l)\).  Neither sector is a microscopic one-particle Hilbert
-space.
+indices \(f(0,l)\).  Neither sector is a microscopic Hilbert space of
+particles.
 The compact Hall \(s=0\) cusp is therefore a separate boundary
 datum: it is controlled by the Borcherds chamber data only after
 the corresponding source-side boundary operations are supplied.
@@ -1194,16 +1194,18 @@ correspondences, of
 \]
 and of the finite-stabilizer classes
 \[
-\beta^{E,N}_{\mathcal C}\in H^2(BE[N];\mathbb F_2).
+\beta^{H}_{\mathcal C}\in H^2(BH;\mathbb F_2),
+\qquad H\subset E_{\mathrm{tors}}.
 \]
-The displayed finite-stabilizer groups are the point-stabilizer
-restrictions of the actual Borel equivariant obstruction classes.  For a
-finite-stabilizer stratum \(S\) with stabilizer \(E[N]\), the primary
+These point-stabilizer groups are restrictions of the actual Borel
+equivariant obstruction classes.  For a finite-stabilizer stratum \(S\)
+with stabilizer \(H\subset E_{\mathrm{tors}}\), the primary
 class is
 \[
-\widetilde\beta^{E,N}_{R,S}
-\in H^2_{E[N]}(S;\mathbb F_2).
+\widetilde\beta^{H}_{R,S}
+\in H^2_{H}(S;\mathbb F_2).
 \]
+The notation \(E[N]\) below is the full-level coordinate specialization.
 A point-stabilizer calculation closes (O1) only after the mixed Borel
 terms, the stabilizer action on \(H^\bullet(S;\mathbb F_2)\), and the
 spectral-sequence differentials on the corresponding stratum are shown to
@@ -1211,7 +1213,7 @@ vanish.  These are degree-two gerbe obstruction classes.  Their vanishing
 is not the same datum as a trivial finite-stabilizer action on an already
 linearized line.  After the degree-two class has been null-trivialized,
 the residual choices of finite-stabilizer linearization form an
-\(H^1(BE[N];\mathbb F_2)\)-torsor; the trivial quotient orientation
+\(H^1(BH;\mathbb F_2)\)-torsor; the trivial quotient orientation
 requires the zero point of this torsor.  This \(H^1\)-choice is part of
 the quotient-orientation package transported in (O1)\(^+\).  Thus (O1)
 is not merely an ordinary Picard-line assertion: it consists of an
@@ -1219,7 +1221,7 @@ ordinary square root in \(\operatorname{Pic}\), null-trivializations of
 the reduced and equivariant degree-two gerbes, and an equivariant line
 whose finite-stabilizer degree-one characters
 \[
-\lambda_{\mathcal C}^{E,N}\in H^1(BE[N];\mathbb F_2)
+\lambda_{\mathcal C}^{H}\in H^1(BH;\mathbb F_2)
 \]
 are all chosen to be zero after the corresponding gerbes have vanished.
 On finite compact/wrapped HN stages this is precisely the
@@ -1347,25 +1349,29 @@ formula;
 \mathfrak q_{\mathcal C}:=
 \left(\alpha^{\mathrm{red}}_{\mathcal C},
 \alpha^{E,\mathrm{free}}_{\mathcal C},
-\{(\beta^{E,N}_{\mathcal C},
-\lambda^{E,N}_{\mathcal C})\}_{N\ge2}\right)
+\{(\beta^{H}_{\mathcal C},
+\lambda^{H}_{\mathcal C})\}_{H\in\mathcal H(\mathcal C)}\right)
 \]
-and the chosen trivializations of these classes between the charge strata
+where \(\mathcal H(\mathcal C)\) is the finite set of residual
+translation stabilizers appearing on the retained small-orbit components
+of \(\mathcal C\).  The transports carry this package and the chosen
+trivializations of these classes between the charge strata
 lying over Weyl-related Gram degrees.  Equivalently, after the
 degree-two classes in \(\mathfrak q_{\mathcal C}\) vanish and the zero
-finite characters \(\lambda^{E,N}_{\mathcal C}=0\) are selected, choose
+finite characters \(\lambda^{H}_{\mathcal C}=0\) are selected, choose
 null-trivializations
 \[
 \theta_{\mathcal C}=
 \left(\theta^{\mathrm{red}}_{\mathcal C},
 \theta^{E,\mathrm{free}}_{\mathcal C},
-\{\theta^{E,N}_{\mathcal C}\}_{N\ge2}\right).
+\{\theta^{H}_{\mathcal C}\}_{H\in\mathcal H(\mathcal C)}\right).
 \]
-For finite stabilizers \(\theta^{E,N}_{\mathcal C}\) includes the
+For finite stabilizers \(\theta^{H}_{\mathcal C}\) includes the
 null-trivialization of the finite Borel class and, after the mixed Borel
 terms and differentials vanish, its point-stabilizer restriction
-\(\beta^{E,N}_{\mathcal C}\in H^2(BE[N])\), together with the choice of
-the zero \(H^1(BE[N])\)-linearization character.
+\(\beta^{H}_{\mathcal C}\in H^2(BH)\), together with the choice of
+the zero \(H^1(BH)\)-linearization character.  The formulas with
+\(H=E[N]\) below are the full-level specialization.
 For a simple type-II reflection \(s_{\delta_i}\), the failure of
 \(\tau_i\) to preserve the quotient trivialization is the torsor
 difference
@@ -1374,7 +1380,7 @@ difference
 \in
 H^1(\mathfrak M^{\mathrm{red}}_{s_{\delta_i}\mathcal C};\mathbb F_2)
 \oplus
-\bigoplus_{N\ge2}H^1(BE[N];\mathbb F_2).
+\bigoplus_{H\in\mathcal H(\mathcal C)}H^1(BH;\mathbb F_2).
 \]
 Here \(s_{\delta_i}\mathcal C\) denotes the chosen target stratum over
 the Weyl-reflected Gram degree.  The connected \(BE\)-linearization
@@ -1458,7 +1464,7 @@ N_{\delta_1}^{\mathrm{Pf}}=N_{\delta_2}^{\mathrm{Pf}}
 		\(\epsilon_{o,R}(s_{\delta_i})=-1\).  It becomes compact Hall
 		monodromy only after the quotient-orientation classes, the projective
 		cocycle \([c_o]\), the torsor defects \(\omega_{i,\mathcal C}\), the
-		finite-stabilizer characters \(\lambda^{E,N}\), the O2/hybrid residuals,
+		finite-stabilizer characters \(\lambda^{H}\), the O2/hybrid residuals,
 		and \(\mathfrak O_{\mathrm{hyb},R}\) vanish compatibly in \(R\).
 	For the global orientation-character conclusion below, \textup{(O2)} also
 	includes the component, boundary, overlap, quotient, and protected
@@ -1532,7 +1538,8 @@ and its orientation monodromy character is the Maass character
 \begin{definition}[Finite orientation construction target]
 \label{def:finite-orientation-construction-target}
 Fix a finite HN height \(R\).  A finite construction of
-\textup{(O1)}, \textup{(O1)}\(^+\), and \textup{(O2)} is the vanishing of
+\textup{(O1)}, \textup{(O1)}\(^+\), and \textup{(O2)} is the following
+vanishing datum:
 \[
 \mathfrak O_R^{\mathrm{or}}
 =
@@ -1548,12 +1555,17 @@ extension, and flag stratum \(S\),
 \[
 \alpha^{\mathrm{red}}_{R,S}=0,\qquad
 \alpha^{E,\mathrm{free}}_{R,S}=0,\qquad
-\widetilde\beta^{E,N}_{R,S}=0,\qquad
-\lambda^{E,N}_{R,S}=0,
+\widetilde\beta^{H}_{R,S}=0,\qquad
+\lambda^{H}_{R,S}=0,
 \]
-with the odd, \(N=2\), and higher even \(E[N]\)-cases computed as in
-Corollary~\ref{cor:finite-stabilizer-o1-obstruction}, and with all
-Thom--Sebastiani orientation transports and flag coherences trivialized.
+for every finite residual translation stabilizer
+\(H\subset E_{\mathrm{tors}}\) appearing on \(S\).  The full-level cases
+\(H=E[N]\), including odd \(N\), \(N=2\), and higher even \(N\), are
+computed as in
+Corollary~\ref{cor:finite-stabilizer-o1-obstruction}; cyclic and proper
+two-primary subgroups are obtained by restriction to \(H\).  All
+Thom--Sebastiani orientation transports and flag coherences are
+trivialized.
 The condition \(\mathfrak O_R^{\mathrm{O1+}}=0\) means that the retained
 type-II wall transports define a finite action-groupoid cocycle
 \(c_{o,R}\), that
@@ -2164,11 +2176,13 @@ orientation line together with the full reduced quotient package
 \theta_{\mathcal C}=
 \left(\theta^{\mathrm{red}}_{\mathcal C},
 \theta^{E,\mathrm{free}}_{\mathcal C},
-\{(\theta^{E,N}_{\mathcal C},\lambda^{E,N}_{\mathcal C}=0)\}_{N\ge2}
+\{(\theta^{H}_{\mathcal C},\lambda^{H}_{\mathcal C}=0)\}_{H\in\mathcal H(\mathcal C)}
 \right)
 \]
 on every charge stratum used by the compact/wrapped Hall
-correspondences.  A choice of simple wall transports \(\tau_i\) gives an
+correspondences, where \(\mathcal H(\mathcal C)\) is the finite set of
+residual translation stabilizers on that stratum.  A choice of simple
+wall transports \(\tau_i\) gives an
 honest Weyl-equivariant orientation on the reduced quotient if and only
 if the following two independent obstructions vanish.
 
@@ -2184,7 +2198,7 @@ renormalized lifts
 \omega_{i,\mathcal C}=0\in
 H^1(\mathfrak M^{\mathrm{red}}_{s_{\delta_i}\mathcal C};\mathbb F_2)
 \oplus
-\bigoplus_{N\ge2}H^1(BE[N];\mathbb F_2)
+\bigoplus_{H\in\mathcal H(\mathcal C)}H^1(BH;\mathbb F_2)
 \]
 for every simple reflection and every relevant charge stratum, with the
 word defects obeying their natural torsor cocycle law.  Since the
@@ -2219,7 +2233,7 @@ After the ordinary line action is honest, the quotient
 null-trivializations form torsors under
 \[
 H^1(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb F_2)
-\oplus\bigoplus_{N\ge2}H^1(BE[N];\mathbb F_2).
+\oplus\bigoplus_{H\in\mathcal H(\mathcal C)}H^1(BH;\mathbb F_2).
 \]
 The difference between the transported trivialization and the chosen
 trivialization on the reflected stratum is exactly
@@ -2265,7 +2279,7 @@ quotient-trivialization defect
 \omega_{w,R,\mathcal C}
 \in
 H^1(\mathfrak M^{\mathrm{red}}_{w\mathcal C};\mathbb F_2)
-\oplus\bigoplus_{N\ge2}H^1(BE[N];\mathbb F_2)
+\oplus\bigoplus_{H\in\mathcal H_R(\mathcal C)}H^1(BH;\mathbb F_2)
 \]
 satisfies
 \[
@@ -2328,14 +2342,14 @@ cochain normalizes the Coxeter relations in \(W\) and the \(S_3\)-relations in
 \[
 \omega_{g,\mathcal C}\in
 H^1(\mathfrak M^{\mathrm{red}}_{g\mathcal C};\mathbb F_2)
-\oplus\bigoplus_{N\ge2}H^1(BE[N];\mathbb F_2)
+\oplus\bigoplus_{H\in\mathcal H(\mathcal C)}H^1(BH;\mathbb F_2)
 \]
 vanish for the chosen generators \(g\) of \(G\).  The \(S_3\)-part must
 transport the full quotient package
 \[
 \left(\alpha^{\mathrm{red}},
 \alpha^{E,\mathrm{free}},
-\{(\beta^{E,N},\lambda^{E,N}=0)\}_{N\ge2}\right)
+\{(\beta^{H},\lambda^{H}=0)\}_{H\in\mathcal H(\mathcal C)}\right)
 \]
 between chamber-permuted strata.
 
@@ -2413,8 +2427,8 @@ three chamber-permuting type-I roots yields divisor order \(0\) from the
 explicit support of \(\phi_{0,1}\) \cite[\S2.2]{EZ:1}.
 \end{remark}
 
-\begin{openproblem}[Protected one-particle lift]
-Construct, if it exists, a protected one-particle object with a
+\begin{openproblem}[Protected lift of the virtual index]
+Construct, if it exists, a protected primitive object with a
 \(\Gamma_{\mathrm{eff}}\)-graded super-vector-space decomposition
 $$
 \mathcal H^{\mathrm{1p,ch}}
@@ -2450,6 +2464,14 @@ $$\Delta_5 =
 $$\nu_{a,b}(z)=
 \sum_{l\in\Z^2}\exp\bigl(\pi i(z[l+\tfrac12a]+{}^tbl)\bigr),
 \qquad z[x]={}^txzx.$$
+In the cusp chamber \(0<|s|\ll |q|\ll |r|^{-1}\ll1\), the four factors
+with \(a=(0,0)\) start with \(1\), the two factors with \(a=(1,0)\) start
+with \(2q^{1/8}\), the two factors with \(a=(0,1)\) start with
+\(2s^{1/8}\), and the two factors with \(a=(1,1)\) start with
+\(2q^{1/8}r^{1/4}s^{1/8}\).  Therefore
+\[
+[q^{1/2}r^{1/2}s^{1/2}]\Delta_5=2^6=64.
+\]
 
 For $M = \begin{pmatrix} A & B\\ C & D\end{pmatrix}
 \in \Sp_4(\Z)$, Maass's character \cite{MAASS:1}
@@ -3062,9 +3084,10 @@ residuals, and the finite degree-one character have all been computed to
 vanish.  None of these vanishing statements is
 implied by ordinary translation invariance or by the OP scalar square.
 Full rank-one descent through all small-orbit strata also requires
-\(\beta^{E,N}_{\mathcal C}=0\) and the trivial \(H^1(BE[N];\mathbb F_2)\)
-linearization character for every even \(N\ge4\), with the
-two-primary residual described in
+\(\beta^{H}_{\mathcal C}=0\) and the trivial \(H^1(BH;\mathbb F_2)\)
+linearization character for every finite residual stabilizer \(H\) with
+non-trivial two-primary part.  In the full-level case \(H=E[N]\), \(N\)
+even and \(N\ge4\), the residual is the one described in
 Lemma~\ref{lem:even-finite-stabilizer-residuals}; the \(E[2]\) bits do
 not imply those vanishings.
 Higher-rank semistable strata remain open except where the HN criteria
@@ -3116,12 +3139,13 @@ their joint vanishing on the Harder--Narasimhan-completed semistable stack
 The small-orbit gerbe contribution
 \(\overline{\beta}^E_{\mathcal C}\) of
 Lemma~\ref{lem:E-equivariant-descent-obstruction}(iv) from the
-\(N\ge 2\) torsion locus
-\(K3\times(E/E[N])\subset X\) is governed by the finite-stabilizer
-criterion of Lemma~\ref{lem:bmu2-klein-four-vanishing}: the band at
-\(N=2\) is the Klein-four \(BE[2]\) (not cyclic \(B\mu_2\)), and
-vanishing requires a trivial \(E[2]\)-equivariant linearization of the
-orientation line, detected on the three nontrivial cyclic subgroups.
+\(H\)-torsion small-orbit strata is governed by the finite-stabilizer
+criterion of Lemma~\ref{lem:bmu2-klein-four-vanishing}.  In the full
+two-torsion case the band is the Klein-four \(BE[2]\) (not cyclic
+\(B\mu_2\)), and vanishing requires a trivial \(E[2]\)-equivariant
+linearization of the orientation line, detected on the three nontrivial
+cyclic subgroups.  For a general finite subgroup \(H\subset E_{\mathrm{tors}}\),
+the classes live in \(H^\bullet(BH;\mathbb F_2)\).
 Granted the ordinary Pin\(^c\) gerbe vanishing, the connected
 \(BE\)-linearization vanishing, and this finite-stabilizer vanishing,
 (O1) would follow from the Joyce--Upmeier \cite{JoyceUpmeier}
@@ -3263,7 +3287,9 @@ translation action of \(E\) on \(X=K3\times E\) lifts to an action on
 small-orbit locus
 $$
 \mathfrak M^{\mathrm{red},\mathrm{small}}_{\mathcal C}
-=\bigcup_{N\ge 2}\mathfrak M^{\mathrm{red}}_{\mathcal C}\bigl(K3\times(E/E[N])\bigr)
+=
+\bigcup_{\substack{H\subset E_{\mathrm{tors}}\\ |H|>1}}
+\mathfrak M^{\mathrm{red}}_{\mathcal C}(E\to E/H)
 \;\subset\;
 \mathfrak M^{\mathrm{red}}_{\mathcal C},
 $$
@@ -3344,23 +3370,24 @@ then the class vanishes exactly when those two mod-\(2\) coefficients
 vanish.  The OP scalar normalization by itself does not prove this
 equivariant linearization statement; it is a separate orientation
 calculation.
-\item[\textup{(iii)}] (\emph{Finite stabilizer descent.})  On
-the small-orbit locus \(\mathfrak M^{\mathrm{red}}_{\mathcal C}(K3\times(E/E[N]))\)
-the \(E\)-quotient is the stacky orbifold
-\([\mathfrak M^{\mathrm{red}}_{\mathcal C}(K3\times(E/E[N]))/(E/E[N])]\)
-banded by \(BE[N]\), not by \(B\mu_N\) unless a cyclic subgroup has
-been chosen.  The orientation line may pick up a finite-stabilizer
-descent class
+\item[\textup{(iii)}] (\emph{Finite stabilizer descent.})  Finite
+translation stabilizers are finite subgroups
+\(H\subset E_{\mathrm{tors}}\).  The full subgroup \(E[N]\) is only the
+full-level case.  A small-orbit stratum with stabilizer \(H\) is described
+by descent along the quotient isogeny \(E\to E/H\), together with the
+required \(H\)-linearization data; it is not a literal subvariety
+\(K3\times(E/H)\subset K3\times E\).  The orientation line may pick up a
+finite-stabilizer descent class
 $$
-\widetilde\beta^{E,N}_{\mathcal C,S}
+\widetilde\beta^{H}_{\mathcal C,S}
 \;\in\;
-H^2_{E[N]}(S;\mathbb F_2).
+H^2_H(S;\mathbb F_2).
 $$
 Its point-stabilizer restriction is a class in
-\(H^2(BE[N];\mathbb F_2)\) only after the mixed Borel terms, stabilizer
+\(H^2(BH;\mathbb F_2)\) only after the mixed Borel terms, stabilizer
 action on \(H^\bullet(S;\mathbb F_2)\), and spectral-sequence
 differentials have vanished.
-For \(N=2\),
+For the full-level case \(H=E[2]\),
 $$
 E[2]\simeq(\mathbb Z/2)^2,\qquad
 H^*(BE[2];\mathbb F_2)=\mathbb F_2[x_1,x_2],
@@ -3373,12 +3400,12 @@ H^2(BE[2];\mathbb F_2)
 \]
 This rank-three group is the point-stabilizer reduction of the finite
 two-torsion calculation; it is not the full Borel descent class and it is
-not connected \(BE\).  If \(N\) is odd, the positive-degree
-mod-\(2\) cohomology of \(BE[N]\) vanishes because \(E[N]\) has odd
-order.  For even \(N\), the residual class is detected on the
-\(2\)-primary part and must be computed stratum by stratum from the
-equivariant linearization of the orientation line.  More precisely, if
-\(2^a\parallel N\) and \(a\ge2\), then
+not connected \(BE\).  If \(H\) has odd order, the positive-degree
+mod-\(2\) cohomology of \(BH\) vanishes.  For even \(H\), the residual
+class is detected on the \(2\)-primary subgroup \(H_{(2)}\) and must be
+computed stratum by stratum from the equivariant linearization of the
+orientation line.  In the full rank-two case
+\(H_{(2)}\simeq(\Z/2^a)^2\), \(a\ge2\), one has
 \[
 H^*\!\left(B(\Z/2^a)^2;\mathbb F_2\right)
 =\Lambda(x_1,x_2)\otimes\mathbb F_2[y_1,y_2],
@@ -3390,15 +3417,18 @@ so
 =A_1^{(N)}y_1+A_{12}^{(N)}x_1x_2+A_2^{(N)}y_2.
 \]
 This is not determined by the \(N=2\) Klein-four vector.
+For a cyclic two-primary stabilizer \(H_{(2)}\simeq \Z/2^a\), the
+degree-two point-stabilizer group is instead
+\(\mathbb F_2\langle y\rangle\); there is no mixed \(x_1x_2\) term.
 \item[\textup{(iv)}] (\emph{Combined criterion.})  The orientation line
 descends over the full reduced quotient only if the ordinary reduced
 orientation gerbe, the connected-torus equivariant linearization class,
 and every finite Borel class
-\(\widetilde\beta^{E,N}_{\mathcal C,S}\) vanish on the relevant strata.
+\(\widetilde\beta^{H}_{\mathcal C,S}\) vanish on the relevant strata.
 After each finite Borel class has been null-trivialized, the chosen stabilizer
 linearization has a residual character
 \[
-\lambda^{E,N}_{\mathcal C}\in H^1(BE[N];\mathbb F_2),
+\lambda^{H}_{\mathcal C}\in H^1(BH;\mathbb F_2),
 \]
 and the quotient orientation requires this character to be zero.
 Translation invariance of the underlying ordinary line is not enough: a
@@ -4083,8 +4113,10 @@ and flag strata of \(\mathsf{Corr}^{E,\mathrm{hyb}}_R\) on which
 vanishing-cycle coefficients and orientation lines are pulled, pushed, or
 compared.  For \(S\in\mathsf{Str}^{or}_R\), write
 \(\mathcal C(S)\) for its charge label and
-\(\mathcal N_R(S)\) for the finite stabilizers \(E[N]\) appearing on its
-small-orbit components.
+\(\mathcal H_R(S)\) for the finite subgroups
+\(H\subset E_{\mathrm{tors}}\) appearing as translation stabilizers on
+its small-orbit components.  The notation \(E[N]\) below denotes only the
+full-level specialization.
 
 A finite-stage quotient-orientation character system is the datum
 \[
@@ -4094,7 +4126,7 @@ A finite-stage quotient-orientation character system is the datum
 \{o_{R,S}\}_{S\in\mathsf{Str}^{or}_R},
 \{\theta^{\mathrm{red}}_{R,S}\},
 \{\theta^{E,\mathrm{free}}_{R,S}\},
-\{\theta^{E,N}_{R,S},\,\lambda^{E,N}_{R,S}=0\}_{N\in\mathcal N_R(S)},
+\{\theta^{H}_{R,S},\,\lambda^{H}_{R,S}=0\}_{H\in\mathcal H_R(S)},
 \{\mu^{or}_{R,e}\},
 \{\Theta^{or}_{R,\mathrm{flag}}\}
 \right).
@@ -4104,19 +4136,19 @@ line on object strata and with the corresponding pulled-back coefficient
 determinant on extension and flag strata;
 \(\theta^{\mathrm{red}}_{R,S}\) null-trivializes the ordinary reduced
 gerbe, \(\theta^{E,\mathrm{free}}_{R,S}\) null-trivializes the connected
-\(BE\)-class, and \(\theta^{E,N}_{R,S}\) null-trivializes the finite
+\(BE\)-class, and \(\theta^{H}_{R,S}\) null-trivializes the finite
 Borel class
 \[
-\widetilde\beta^{E,N}_{R,S}\in H^2_{E[N]}(S;\mathbb F_2).
+\widetilde\beta^{H}_{R,S}\in H^2_H(S;\mathbb F_2).
 \]
 Its point-stabilizer restriction is a class
-\(\beta^{E,N}_{R,S}\in H^2(BE[N];\mathbb F_2)\) only after the mixed
+\(\beta^{H}_{R,S}\in H^2(BH;\mathbb F_2)\) only after the mixed
 Borel terms, stabilizer action on \(H^\bullet(S;\mathbb F_2)\), and
 spectral-sequence differentials have been killed.  After this finite
 Borel class has been null-trivialized, the chosen
 finite-stabilizer linearization has character
 \[
-\lambda^{E,N}_{R,S}\in H^1(BE[N];\mathbb F_2),
+\lambda^{H}_{R,S}\in H^1(BH;\mathbb F_2),
 \]
 and the quotient system selects the zero character.  The maps
 \(\mu^{or}_{R,e}\) are the Thom--Sebastiani orientation transports along
@@ -4152,7 +4184,7 @@ are compatible with the transition maps, their inverse limit is exactly
 the strong reduced orientation datum (O1) on the compact/wrapped Hall
 sector.  Conversely, any (O1) datum restricts to such a compatible
 finite-stage system.  No automorphic scalar, Borcherds divisor order, or
-Maass target character detects any of the finite \(H^1(BE[N])\)
+Maass target character detects any of the finite \(H^1(BH)\)
 characters.
 \end{proposition}
 
@@ -5893,7 +5925,7 @@ the denominator of that constant-current bracket is
 $$
 64^{-1}\Delta_5(2Z).
 $$
-A compact \(E_3\)/Hall/chiral BPS realization requires additional
+A compact \(E_3\)/Hall/chiral protected realization requires additional
 microscopic input.
 \end{proposition}
 
@@ -6051,7 +6083,7 @@ such compatible functors, and of the geometric source domain itself, is
 the compact \(K3\times E\) Dirac--Igusa realization problem.
 \end{openproblem}
 
-\begin{definition}[Holomorphic \(E_3\) quantum upgrade]
+\begin{definition}[Holomorphic factorization source interface]
 The determinant and denominator results above are protected
 Euler-characteristic statements.  The expected quantum upgrade does not
 start from the scalar determinant.  It would start from a supplied
@@ -8510,8 +8542,9 @@ b_R^{\mathrm{geom}}(\eta)>0,
 	\(\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_2,R})
 	=\upsilon_{\delta_2,R}u_{\delta_2,R}\); and vanishing of the
 	ordinary reduced orientation gerbe, the connected \(BE\)-class, all
-	finite Borel classes, and all residual \(H^1(BE[N])\) orientation
-	characters on the object, extension, and flag strata entering this
+	finite Borel classes, and all residual \(H^1(BH)\) orientation
+	characters for the actual finite stabilizers \(H\) on the object,
+	extension, and flag strata entering this
 	chart.  Without this list the \(\delta_2\) wall is not a constructed
 	rank-one Pfaffian wall.
 	\end{proposition}
@@ -10390,7 +10423,8 @@ at bounded HN height.}  For every \(R>0\), the substack of
 		two-step and colored flag coherences, and the reduced \(E\)-quotient is
 		formed as a functor on the finite correspondence category.  All
 		finite-stabilizer gerbes are killed and all characters
-		\(\lambda^{E,N}\) are chosen zero.  Under these hypotheses the finite
+		\(\lambda^{H}\) are chosen zero for the actual residual finite
+		stabilizers \(H\subset E_{\mathrm{tors}}\).  Under these hypotheses the finite
 		reduced product is
 		\[
 		m_R^{\mathrm{red}}=
@@ -10678,11 +10712,15 @@ tuple
 \left(
 \alpha^{\mathrm{red}}_{R,\mathcal C},\
 \alpha^{E,\mathrm{free}}_{R,\mathcal C},\
-\{(\widetilde\beta^{E,N}_{R,\mathcal C},
-\lambda^{E,N}_{R,\mathcal C})\}_{N\in\mathcal N_R(\mathcal C)}
+\{(\widetilde\beta^{H}_{R,\mathcal C},
+\lambda^{H}_{R,\mathcal C})\}_{H\in\mathcal H_R(\mathcal C)}
 \right),
 \]
-where
+where \(\mathcal H_R(\mathcal C)\) is the finite set of residual
+translation stabilizer subgroups
+\(H\subset E_{\mathrm{tors}}\) appearing on the small-orbit components of
+the stratum and on the retained correspondence strata attached to it.
+The classes satisfy
 \[
 \alpha^{\mathrm{red}}_{R,\mathcal C}
 \in H^2(\mathfrak M^{\mathrm{red}}_{R,\mathcal C};\mathbb F_2),
@@ -10692,18 +10730,19 @@ where
 \]
 and
 \[
-\widetilde\beta^{E,N}_{R,\mathcal C}
-\in H^2_{E[N]}(\mathfrak M^{\mathrm{st}}_{R,\mathcal C};\mathbb F_2)
+\widetilde\beta^{H}_{R,\mathcal C}
+\in H^2_H(\mathfrak M^{\mathrm{st}}_{R,\mathcal C};\mathbb F_2)
 \]
-is present for each finite stabilizer \(E[N]\) appearing at height \(R\).
+is present for each finite stabilizer \(H\subset E_{\mathrm{tors}}\)
+appearing at height \(R\).
 Its point-stabilizer restriction is a class
-\(\beta^{E,N}_{R,\mathcal C}\in H^2(BE[N];\mathbb F_2)\) only after the
+\(\beta^{H}_{R,\mathcal C}\in H^2(BH;\mathbb F_2)\) only after the
 mixed Borel terms, stabilizer action on stratum cohomology, and
 spectral-sequence differentials have vanished.  After
-\(\widetilde\beta^{E,N}_{R,\mathcal C}\) has been null-trivialized, the
+\(\widetilde\beta^{H}_{R,\mathcal C}\) has been null-trivialized, the
 datum also records the finite linearization character
 \[
-\lambda^{E,N}_{R,\mathcal C}\in H^1(BE[N];\mathbb F_2)
+\lambda^{H}_{R,\mathcal C}\in H^1(BH;\mathbb F_2)
 \]
 and requires the zero character.  The datum supplies
 null-trivializations of all degree-two classes and zero finite
@@ -10731,7 +10770,7 @@ and the observable Gram degree is
 \[
 \overline\Pi_X(c,T)=\Pi_X(c)-T.
 \]
-A semistable one-particle generator of charge \(c\) is placed in
+A semistable primitive generator of charge \(c\) is placed in
 \((c,0)\); composite HN words are labelled by the corresponding
 \((c,T)\in\widehat\Gamma_R\).  Thus \(T=0\) is not asserted for every
 normal-ordered composite.
@@ -12214,20 +12253,22 @@ stratum \(\mathcal C\) used by the Hall correspondences one must specify
 =a_1(\mathcal C)u_1+a_2(\mathcal C)u_2
 \in H^2(BE;\mathbb F_2),
 \]
-and, for every finite-stabilizer stratum \(S\) with stabilizer \(E[N]\),
+and, for every finite-stabilizer stratum \(S\) with stabilizer
+\(H\subset E_{\mathrm{tors}}\),
 \[
-\widetilde\beta^{E,N}_{\mathcal C,S}
-\in H^2_{E[N]}(S;\mathbb F_2).
+\widetilde\beta^{H}_{\mathcal C,S}
+\in H^2_{H}(S;\mathbb F_2).
 \]
 The point-stabilizer class
 \[
-\beta^{E,N}_{\mathcal C,S}\in H^2(BE[N];\mathbb F_2)
+\beta^{H}_{\mathcal C,S}\in H^2(BH;\mathbb F_2)
 \]
 is used only after the mixed Borel terms, the stabilizer action on
 \(H^\bullet(S;\mathbb F_2)\), and the Borel spectral-sequence
 differentials have vanished.  One must prove these Borel classes, and
 then their point-stabilizer restrictions, vanish on the corresponding
-free and small-orbit strata.  At \(N=2\), after this restriction,
+free and small-orbit strata.  The formulas below are the full-level
+specializations \(H=E[N]\).  At \(N=2\), after this restriction,
 \[
 \beta^{E,2}_{\mathcal C,S}
 =b_{20}x_1^2+b_{11}x_1x_2+b_{02}x_2^2
@@ -12252,7 +12293,7 @@ degree-one character
 =\lambda_1x_1+\lambda_2x_2\in H^1(BE[2];\mathbb F_2),
 \]
 and the quotient orientation requires \(\lambda_1=\lambda_2=0\).
-Odd \(N\) finite stabilizers
+Full-level odd \(N\) finite stabilizers
 have no positive-degree mod-\(2\) obstruction; even \(N\ge4\) is
 detected on the \(2\)-primary stabilizer
 \((\Z/2^a)^2\), \(2^a\parallel N\), where for \(a\ge2\)
@@ -12289,11 +12330,11 @@ coefficients does this reduce to
 \]
 The relevant groupoid or group class must vanish, the generator lifts
 must satisfy \(s_{\delta_i}^2=1\), and the full quotient package,
-including the zero finite characters \(\lambda^{E,N}_{\mathcal C}=0\),
+including the zero finite characters \(\lambda^{H}_{\mathcal C}=0\),
 must be transported with zero
 \[
 H^1(\mathfrak M^{\mathrm{red}}_{s_{\delta_i}\mathcal C};\mathbb F_2)
-\oplus\bigoplus_{N\ge2}H^1(BE[N];\mathbb F_2)
+\oplus\bigoplus_{H\in\mathcal H_R(\mathcal C)}H^1(BH;\mathbb F_2)
 \]
 torsor defect, as in
 Lemma~\ref{lem:weyl-quotient-orientation-obstruction}.  Only then does
@@ -12958,7 +12999,7 @@ each \(W_\nu\).  The finite restriction is the construction visible in
 the window; the determinant is its signed trace.
 \end{proof}
 
-\begin{theorem}[Finite retained \(K3\times E\) Hall stacks from a supplied sector datum]
+\begin{theorem}[Finite retained \(K3\times E\) Hall kernel from a supplied sector datum]
 \label{thm:finite-geometric-k3xe-hall-dirac-source}
 Let \(X=S\times E\), where \(S\) is a smooth projective \(K3\) surface,
 and fix Liu's product stability condition \(\sigma_{s,t}\) on the
@@ -13005,7 +13046,8 @@ The finite stabilizer linearization characters in \(\mathrm{(Rig)}\) and
 Theorem~\ref{prop:geometric-quotient-orientation-en-characters}; they are
 chosen to be zero after the Borel class is killed.  Under
 \(\mathfrak C_R^{K3\times E}\), the following stacks and correspondences
-form an actual finite Hall source kernel on \(K3\times E\).
+define a finite Hall source kernel on \(K3\times E\) conditional on that
+datum.
 
 Its tangent complex at \(A\) is
 \[
@@ -13302,6 +13344,12 @@ nonzero pairing
 q_\delta:L^+_\delta\otimes L^-_\delta\longrightarrow\C .
 \]
 Choose the resulting identification \(L^-_\delta\simeq (L^+_\delta)^\vee\).
+Assume further that the reduced d-critical normal chart is equipped with a
+real anti-invariant wall coordinate \(u_\delta\), a quotient-compatible
+orientation of the normal Pfaffian line, and reflection transport satisfying
+\[
+s_\delta(u_\delta)=-u_\delta .
+\]
 Then the normal slice to the wall in
 \(\mathfrak M^{\mathrm{geom}}_{R,\widehat c_\delta}\) is the critical chart
 \[
@@ -13353,14 +13401,18 @@ The nonzero reduced Kuranishi pairing \(q_\delta\) identifies
 \(L^-_\delta\) with \((L^+_\delta)^\vee\) after a choice of orientation.
 This is an extra wall-chart condition; it is not bare \(3\)-Calabi--Yau
 Serre duality, which pairs \(\operatorname{Ext}^1\) with
-\(\operatorname{Ext}^2\) in the opposite direction.  In the resulting Darboux
-coordinates the quadratic part of the reduced potential is \(uv\).  Higher
-terms have order at least three and do not alter the rank-one Pfaffian
-normal form at the generic crossing.  The linearized odd operator in the
-normal direction is therefore the skew matrix \(D_\delta(u)\).  Its Pfaffian
-is \(u\).  Crossing the wall swaps extension and coextension chambers; with
-the chosen orientation of \(L^+_\delta\), this sends the oriented coordinate
-to \(-u\).  The sign calculation is exactly the local sign used in
+\(\operatorname{Ext}^2\) in the opposite direction.  The complex Ext
+splitting supplies only the candidate tangent chart.  The rank-one Pfaffian
+crossing follows after the real anti-invariant coordinate, the oriented
+normal Pfaffian line, and the reflection transport have been supplied.  In
+the resulting Darboux coordinates the quadratic part of the reduced
+potential is \(uv\).  Higher terms have order at least three and do not
+alter the rank-one Pfaffian normal form at the generic crossing.  The
+linearized odd operator in the normal direction is therefore the skew matrix
+\(D_\delta(u)\).  Its Pfaffian is \(u\).  Crossing the wall swaps extension
+and coextension chambers; with the supplied reflection transport this sends
+the oriented coordinate to \(-u\).  The sign calculation is exactly the
+local sign used in
 Proposition~\ref{prop:rank-one-crossing-o2-sign}.
 \end{proof}
 
@@ -13399,13 +13451,18 @@ the anchored wrapped or mixed stratum where the relative \(E\)-position is
 still present.
 \end{proof}
 
-\begin{theorem}[Global quotient orientation descent criterion]
+\begin{theorem}[Finite quotient-orientation descent criterion]
 \label{prop:geometric-quotient-orientation-en-characters}
 Fix a cofinal finite HN subsystem.  For every finite stage \(R\), let
 \(\mathsf{Str}^{or}_R\) be the finite set of object, extension, mixed,
 wrapped, and two-step flag strata entering the geometric Hall source.
-For \(S\in\mathsf{Str}^{or}_R\), let \(G=E[N]\) be a finite stabilizer on
-a connected stabilizer component, and let \(\mathscr D_{R,S}\) be the
+For \(S\in\mathsf{Str}^{or}_R\), let
+\[
+H_S\subset E_{\mathrm{tors}}
+\]
+be the finite translation stabilizer on a connected stabilizer component,
+and put \(G=H_S\).  The full subgroup \(E[N]\) is only a special
+full-level case.  Let \(\mathscr D_{R,S}\) be the
 reduced determinant line of the perfect complex controlling the stratum.
 For object strata,
 \[
@@ -13435,17 +13492,19 @@ classes vanish with compatible null-trivializations:
 =a_1u_1+a_2u_2\in H^2(BE;\mathbb F_2),
 \]
 \[
-\widetilde\beta^{E,N}_{R,S}
+\widetilde\beta^{H}_{R,S}
 =w_2^G(\mathscr D_{R,S})\in H^2_G(S;\mathbb F_2),
 \qquad
-\lambda^{E,N}_{R,S}\in H^1_G(S;\mathbb F_2).
+\lambda^{H}_{R,S}\in H^1_G(S;\mathbb F_2).
 \]
 Thus the descent calculation on an actual retained stratum is the
 evaluation of these four classes from the reduced determinant complex and
-the stabilizer action on it.  The quotient orientation exists on the
-finite stage exactly on the locus where all four classes vanish and the
-chosen null-trivializations agree with pullback to extension, mixed,
-wrapped, and flag strata.
+the stabilizer action on it.  The quotient orientation exists on the finite
+stage under this criterion only after the Cech--Borel total obstruction has
+split into the displayed ordinary, connected-free, finite-stabilizer, and
+linearization pieces; then those pieces must vanish with
+null-trivializations compatible with pullback to extension, mixed, wrapped,
+and flag strata.
 Here
 \[
 E_2^{p,q}=H^p(BG;H^q(S;\mathbb F_2))
@@ -13457,7 +13516,7 @@ is the Borel spectral sequence.  The point-stabilizer edge class in
 action on \(H^\bullet(S;\mathbb F_2)\), and all total-degree-two
 differentials have been killed.
 
-The edge calculation is:
+For the full-level stabilizer \(G=E[N]\), the edge calculation is:
 \[
 N\ \mathrm{odd}\quad\Longrightarrow\quad
 H^{>0}(BE[N];\mathbb F_2)=0,
@@ -13498,15 +13557,20 @@ and
 \beta=A_1^{(N)}y_1+A_{12}^{(N)}x_1x_2+A_2^{(N)}y_2;
 \]
 the coefficient \(A_{12}^{(N)}\) is checked on the full rank-two
-two-primary stabilizer.  The residual point-stabilizer character is
+two-primary stabilizer.  For a cyclic two-primary stabilizer
+\(\Z/2^a\), the degree-two point-stabilizer group is
+\(\mathbb F_2\langle y\rangle\), and no mixed \(x_1x_2\) coefficient
+exists.  The residual point-stabilizer character in the full-level case is
 \[
 \lambda=\lambda_1^{(N)}x_1+\lambda_2^{(N)}x_2 .
 \]
-After \(\widetilde\beta^{E,N}_{R,S}=0\), the linearizations form an
+For a general finite stabilizer \(H\), the same calculation is performed on
+the two-primary decomposition of \(H\).  After
+\(\widetilde\beta^{H}_{R,S}=0\), the linearizations form an
 \(H^1_G(S;\mathbb F_2)\)-torsor, and the quotient orientation chooses the
 zero character
 \[
-\lambda^{E,N}_{R,S}=0.
+\lambda^{H}_{R,S}=0.
 \]
 The null-trivializations are required to agree on overlaps, on Hall
 correspondence pullbacks, on two-step flag stacks, and under successor
@@ -13515,20 +13579,21 @@ to a quotient orientation system
 \[
 \mathfrak Q^{or}_R
 \]
-and a compatible cofinal family gives the strong reduced orientation
+and a compatible cofinal family would supply the strong reduced orientation
 datum \((O1)\) on the HN-completed compact/wrapped Hall sector.
 
-In the geometric source above, the stabilizer action on a self-Ext
-complex is by conjugation:
+In the geometric source above, the stabilizer action on a reduced self-Ext
+complex has the form
 \[
 x\longmapsto \phi_g\circ t_g^*x\circ\phi_g^{-1}.
 \]
-Thus, after the Borel class itself has been killed, the determinant
-character of the square-root line is trivial on the inner-conjugation part.
-The remaining anchor, framing, Thom--Sebastiani, and flag coherence signs
-are exactly the class
+Pure inner conjugation on an endomorphism vector space has determinant one,
+but the displayed action also includes translation pullback on the reduced
+derived complex, trace and semiregularity reductions, anchors, framings,
+Thom--Sebastiani identifications, and flag coherences.  Their residual
+determinant sign is not discarded; it is the class
 \[
-\lambda^{E,N}_{R,S}(g)=
+\lambda^{H}_{R,S}(g)=
 \begin{cases}
 0,&g\hbox{ acts by }+1\hbox{ on }o_{R,S},\\
 1,&g\hbox{ acts by }-1\hbox{ on }o_{R,S}.
@@ -13552,20 +13617,21 @@ square root.  The possible linearizations of that square root form an
 is killed, the point-stabilizer character lies in \(H^1(BG;\mathbb F_2)\);
 the formulas for \(N=2\) and \(2^a\parallel N\) are the two-primary edge
 coordinates of this character.  Choosing the zero element gives
-\(\lambda^{E,N}=0\).
+\(\lambda^{H}=0\) on the actual finite stabilizer; the displayed
+\(E[N]\)-coordinates are only the full-level specialization.
 
 The overlap, correspondence, flag, and transition conditions say exactly
 that these local equivariant square roots form a cocycle in the finite
 Cech--Borel total complex.  Since the total degree-one defect vanishes,
 the local lines glue.  Thom--Sebastiani is functorial on extension and
 flag stacks, so the glued quotient orientation is multiplicative for the
-Hall product and compatible with the HN transition maps.  Finally, on
-self-Ext determinant factors a stabilizer acts by conjugation, and
-conjugation has determinant \(1\); the trace and semiregularity summands
-are trivial representations.  Hence inner conjugation contributes no
-further \(H^1\)-term after the Borel gerbe has been null-trivialized.  The
-anchor, framing, Thom--Sebastiani, and flag signs are the displayed
-\(\lambda\)-class and are killed by the zero-character choice.
+Hall product and compatible with the HN transition maps.  Finally, pure
+inner conjugation on an endomorphism vector space has determinant \(1\).
+The action on a retained orientation line also contains translation
+pullback on the reduced complex, trace and semiregularity reductions,
+anchors, framings, Thom--Sebastiani transports, and flag coherences.
+These residual signs are precisely the displayed \(\lambda^H\)-class, and
+the descent datum kills them by the zero-character choice.
 \end{proof}
 
 \begin{proposition}[Geometric hybrid local/wrapped/mixed atlas]
@@ -14068,7 +14134,7 @@ Composing with the supplied geometric comparison \(\vartheta_R\) gives
 \mathsf{Den}_{\Delta_5,E,\le R}\).
 \end{proof}
 
-\begin{theorem}[Universal finite Dirac--Igusa normal form on a root window]
+\begin{theorem}[Finite target Dirac--Igusa normal form on a root window]
 \label{thm:universal-finite-hall-dirac-source-window}
 Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.
 Put
@@ -14194,15 +14260,15 @@ the local Weyl transports satisfy
 and extend to the type-II Weyl group by
 Proposition~\ref{prop:local-weyl-transport-rank-one-crossings}.
 
-The finite colored normal form is the following factorization
-object over \(E\).  A positive degree
+The finite colored normal form is the following formal target object over
+\(E\).  A positive degree
 \(\beta=\alpha(n,l,m)\) has local color when \(m=0\) and wrapped color
 when \(m>0\).  Local colors are placed on ordinary finite configurations
 of \(E\); wrapped colors are represented by a rigidified full-support
 symbol \(w_\beta=(E,0_E,\beta)\).  Products are the matrices
 \(m_{ab}^{c}\) above, with color rule local-local, local-wrapped,
 wrapped-local, and wrapped-wrapped according to addition of the third
-Gram coordinate.  The protected trace is
+Gram coordinate.  The formal trace weight is
 \[
 I_W^{\mathrm{prot}}(a_\beta)=\operatorname{str}(a_\beta)\,q^nr^ls^m,
 \qquad
@@ -14340,7 +14406,7 @@ and the pull-push product and coproduct are exactly the matrices
 a\otimes b\longmapsto\sum_c m_{ab}^{c}c,\qquad
 c\longmapsto\sum_{a,b}d^{ab}_{c}\,a\otimes b .
 \]
-Thus the finite point atlas realizes the algebraic normal form
+Thus the finite point atlas models the algebraic target normal form
 \(\mathfrak S_W\), its primitive bracket, and the normal-ordered
 central charge map \(\overline\Pi_X\).  A geometric \(K3\times E\)
 realization is a morphism from the retained Hall stacks of
@@ -14372,11 +14438,11 @@ give the product matrix.  The coproduct is identical with the coefficients
 \(d^{ab}_{c}\).  The two-step flag identities are matrix associativity
 and coassociativity from
 Theorem~\ref{thm:universal-finite-hall-dirac-source-window}; therefore
-the point atlas realizes the same finite algebraic bialgebra and
+the point atlas models the same finite algebraic bialgebra and
 primitive supercommutator with central normal-ordering labels.
 \end{proof}
 
-\begin{theorem}[Compact Dirac--Igusa source from geometric finite stages]
+\begin{theorem}[Conditional Dirac--Igusa source datum from supplied finite stages]
 \label{thm:cofinal-compact-dirac-igusa-source-construction}
 Fix a cofinal HN schedule \(R\in\mathcal R_{\mathrm{HN}}\) and a cofinal
 downward-saturated root-window schedule \(W_{\nu(R)}\).  For every height
@@ -14486,7 +14552,7 @@ R_{X,R}
 P_R^\Pi,\langle\,\cdot\,,\,\cdot\,\rangle_{X,R},
 \operatorname{Rad}_{X,R}\bigr).
 \]
-Then \(\mathfrak K_{X,R}\) is a finite Dirac--Igusa source over the
+Then, conditional on these supplied stages, \(\mathfrak K_{X,R}\) is a finite Dirac--Igusa source datum over the
 height-\(R\) charge quotient.  Its Hall product, coproduct, primitive
 bracket, and first-order Chevalley--Eilenberg differential are the maps
 constructed from \(\mathfrak S_R\).  Its protected Dirac operator and
@@ -15405,8 +15471,9 @@ non-successor transitions and whose inverse limit is
 orientation and quotient obstruction tuple
 \(\mathfrak o^{or}_{R,\mathcal C}\) for every stable charge stratum and
 finite stabilizer appearing at height \(R\), including the zero
-\(H^1(BE[N];\mathbb F_2)\)-linearization characters after finite gerbe
-null-trivialization, compatibly in \(R\);
+\(H^1(BH;\mathbb F_2)\)-linearization characters for the actual
+stabilizers \(H\) after finite gerbe null-trivialization, compatibly in
+\(R\);
 \item[\textup{(\(D_0\)-observable)}] construct the chain-level
 \(K3\)-to-\(E\) specialization, the projection-finite chiral shadow, and
 the hybrid wrapped sector \(\mathcal F_X^{D_0}\) that recovers positive
@@ -16131,7 +16198,7 @@ The synthesis is the following spine:
 \hbox{eight-row datum extension}.
 \end{gathered}
 \]
-\begin{theorem}[Coefficient dictionary and compact realization]
+\begin{theorem}[Coefficient dictionary, scalar square, and compact-realization obligations]
 \label{thm:protected-igusa-determinant}
 Let \(X=S\times E\), where \(S\) is a smooth complex K3 surface and
 \(E\) is a smooth elliptic curve.  Boundary-degeneration cases--singular
@@ -16243,13 +16310,13 @@ H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^{\Theta}\mathcal F_X)/
 \mathfrak g_{\Delta_5}
 \]
 is the primitive part of a Dirac--Igusa realization datum in the sense of
-Definition~\ref{def:compact-igusa-realization-datum}.  The cofinal source
-construction of
+Definition~\ref{def:compact-igusa-realization-datum}.  The conditional
+cofinal source statement in
 Theorem~\ref{thm:cofinal-compact-dirac-igusa-source-construction},
-together with Theorem~\ref{thm:primitive-recognition}, identifies its
+together with Theorem~\ref{thm:primitive-recognition}, would identify its
 primitive denominator with \(64^{-1}\Delta_5(2Z)\).
 
-Sixth, the compact realization satisfies three consequences.
+Sixth, any compact realization datum must satisfy three consequences.
 \begin{enumerate}
 \item A naive support-local factorization object on
 \(\operatorname{Ran}(E)\) sees only projection-finite sectors.  If a
@@ -16272,7 +16339,7 @@ determinant-level unless it is coupled to the local sector by mixed Hall
 actions before the reduced \(E\)-quotient.
 \item The automorphic character \(\nu_{\Delta_5}\) belongs to
 \(\Delta_5\), and \(\Delta_5^2\) forgets it.  A compact Hall
-orientation constructs a strong orientation character
+orientation datum must supply a strong orientation character
 \(\epsilon_o\) and prove
 \[
 \epsilon_o|_{W^{(2)}(\Lambda^{2,1}_{II})}
@@ -16301,7 +16368,7 @@ Finally, the diagonal-divisor rows extend this same logic.  A row is
 promoted beyond its automorphic product only by a row datum fixing
 the modular group or cover, character, divisor, Jacobi seed, product
 lattice, Weyl chamber, reflection character, scalar theorem if one is
-claimed, orientation data, one-particle index, and primitive algebra
+claimed, orientation data, protected index package, and primitive algebra
 comparison.
 \end{theorem}
 
@@ -16407,13 +16474,13 @@ The entries have the following meanings.
 character or multiplier with exact order, the diagonal divisor with
 multiplicities, the product chamber and branch, the Jacobi input at
 every cusp, the product-degree map, the product normalization, and the
-source theorem.
+cited product theorem.
 \item \(\mathscr D_j\) is the denominator datum: a
 Weyl--Kac--Borcherds denominator algebra with root lattice, Weyl vector,
 simple real roots, Weyl chamber, Weyl group, reflection character,
 imaginary simple-root coefficients, product side, and Weyl alternating
 side.
-\item \(\mathscr S_j\) is a CHL/dyon-square datum: a sourced
+\item \(\mathscr S_j\) is a CHL/dyon-square datum: a cited
 dyon-counting scalar form \(\Phi_j\), a row map to the same automorphic
 row and cover, and an identity \(F_j^2=\Phi_j\) in the stated chamber.
 This is not a denominator theorem and not a CY/DT partition theorem.
@@ -16426,7 +16493,7 @@ Z^{X_j}_{\mathrm{red}}(Z)=C_jF_j(Z)^{-2}.
 \]
 \item \(\mathscr H_j\) is a compact Hall/chiral datum: an oriented
 compact Hall, Drinfeld, or factorization object whose protected
-one-particle index gives the product exponents and whose protected
+index package gives the product exponents and whose protected
 primitive bracket identifies the denominator algebra with the same
 orientation/reflection character.
 \end{enumerate}
@@ -16436,7 +16503,7 @@ entries implies another unless a cited theorem constructs the implication.
 In particular, matching a weight, a square root, or a comparison symbol
 does not fill a datum.  A row-map theorem must name the host,
 charge lattice, effective chamber, modular group or cover, product
-lattice, orientation character, one-particle index, scalar identity when
+lattice, orientation character, protected index package, scalar identity when
 claimed, and primitive Hall/chiral comparison.
 \end{definition}
 
@@ -16517,13 +16584,13 @@ no Hall or factorization host \\
 5 &
 \(F_5=\nabla_3\); Cl\'ery--Gritsenko product &
 Govindarajan \(\mathcal G_1(2)\) CHL/WKB denominator theorem &
-sourced scalar dyon square \(\nabla_3^2=\Phi_6^{(1,2)}\) &
+cited scalar dyon square \(\nabla_3^2=\Phi_6^{(1,2)}\) &
 no reduced CY/DT datum &
 no compact Hall/chiral datum \\
 6 &
 \(F_6=\nabla_2\); Cl\'ery--Gritsenko product &
 Govindarajan \(\mathcal G_1(3)\) CHL/WKB denominator theorem &
-sourced scalar dyon square \(\nabla_2^2=\Phi_4^{(1,3)}\) &
+cited scalar dyon square \(\nabla_2^2=\Phi_4^{(1,3)}\) &
 no reduced CY/DT datum &
 no compact Hall/chiral datum \\
 7 &
@@ -16531,14 +16598,14 @@ no compact Hall/chiral datum \\
 multiplier cover &
 Govindarajan \(\mathcal G_1(4)\) CHL/WKB denominator theorem on the
 \(\mu_4\)-cover &
-sourced scalar dyon square \(F_7^2=\Phi_3\) for the composite \(N=4\)
+cited scalar dyon square \(F_7^2=\Phi_3\) for the composite \(N=4\)
 scalar form, only after fixing the cover and branch &
 no reduced CY/DT datum &
 no compact Hall/chiral datum \\
 8 &
 \(F_8=Q_1\); Cl\'ery--Gritsenko \((t,N)=(2,2)\) product &
 Govindarajan \(\mathcal G_2(4)\) CHL/WKB denominator theorem &
-sourced twisted dyon square \(Q_1^2=\Phi_2^{(2,4)}\); \(Q_1\) is the
+cited twisted dyon square \(Q_1^2=\Phi_2^{(2,4)}\); \(Q_1\) is the
 special \(\mathcal G_2(4)\) row &
 no reduced CY/DT datum &
 no compact Hall/chiral datum \\
@@ -16567,7 +16634,7 @@ CY/DT scalar host or compact Hall/chiral datum.
 No statement in this section is used in the $N=1$ theorem for
 $\Delta_5$.  For every row the product formula itself gives a
 Gram-indexed primitive product.  It gives a Gram-graded Euler/Fock determinant only
-after a one-particle index and a charge-invariant interpretation have
+after a protected index package and a charge-invariant interpretation have
 been supplied.
 A nonabelian denominator theorem is stronger: it additionally requires a
 Weyl chamber, real simple roots, a reflection character, and a Weyl
@@ -16603,7 +16670,7 @@ the theorem
 Z^{X_j}_{\mathrm{red}}(Z)=C_jF_j(Z)^{-2}.
 \]
 If a compact Hall/chiral host is claimed, one must separately construct
-the protected one-particle index and primitive bracket comparison.
+the protected index package and primitive bracket comparison.
 \end{openproblem}
 
 \begin{proposition}[CHL squares and denominator signs]
@@ -16663,8 +16730,18 @@ other seven rows.
 {Spin L-factor normalisation for Delta5 squared}}
 \label{app:sk-shadow}
 
+This appendix is independent of the Dirac--Igusa construction.  No result
+in the paper uses it to prove the Borcherds product, the denominator
+identity, the orientation character, or the compact Hall/Pfaffian
+realization problem.  It records only the scalar Saito--Kurokawa
+normalization of the Hecke eigenline \(\C\Delta_5^2\).
+
 Set the theta-constant normalisation
 $$\Delta_{10}^{\theta}:=\Delta_5^2.$$
+This is the usual Igusa \(\Phi_{10}\) line in the theta normalization:
+\[
+\Phi_{10}^{\theta}=\Delta_{10}^{\theta}=\Delta_5^2.
+\]
 The Oberdieck--Pixton monic normalisation is
 $$\chi_{10}^{\mathrm{OP}}:=2^{-12}\Delta_{10}^{\theta}
 =4096^{-1}\Delta_5^2.$$
@@ -17369,9 +17446,9 @@ For \(j=7\) this is a product datum on the \(\mu_4\)-multiplier cover;
 the integrality of the displayed half-exponents is part of the
 Cl\'ery--Gritsenko product theorem in that cover.  Until one proves that
 integrality directly from the Jacobi seed, the row is used only with
-this sourced cover datum.
+this cited cover datum.
 The product is therefore used as an integral automorphic product only in
-the sourced multiplier-cover normalization.
+the cited multiplier-cover normalization.
 Let
 $$
 \mathcal K_5=\mathcal K_6=\mathcal K_8=\{\infty,S\},\qquad
@@ -17464,7 +17541,7 @@ also supplies a nonabelian CHL/WKB denominator algebra; the abelian
 product algebra in this theorem is the part constructed directly from
 the Cl\'ery--Gritsenko product exponents.
 For $j=5,6,7,8$ this is only the tautological virtual product object
-realizing the Cl\'ery--Gritsenko exponents.  Its Beilinson--Drinfeld
+encoding the Cl\'ery--Gritsenko exponents.  Its Beilinson--Drinfeld
 envelope is abelian; it carries no Weyl-sum side, no BKM bracket, and no
 physical protected BPS interpretation.
 
@@ -17687,8 +17764,25 @@ Lemma~\ref{lem:two-denominator-normalizations}.
 \label{rem:f7-mu4-cover}
 The row \(F_7=\nabla_{3/2}\) is the Cl\'ery--Gritsenko
 diagonal-divisor form of type \((t,N)=(1,4)\), weight \(3/2\), on
-\(\Gamma_0^{(2)}(4)\) with an order-four multiplier.  After pullback to
-the associated \(\mu_4\)-multiplier cover, Govindarajan's CHL/WKB
+\(\Gamma_0^{(2)}(4)\) with multiplier
+\[
+\nu_7=\chi_4^{(4)}\times v_H .
+\]
+Let
+\[
+\Gamma_7^\circ:=\ker\nu_7,\qquad
+\widetilde{\mathcal A}_7:=\Gamma_7^\circ\backslash\mathbb H_2 .
+\]
+Then
+\[
+\widetilde{\mathcal A}_7\longrightarrow
+\Gamma_0^{(2)}(4)\backslash\mathbb H_2
+\]
+is the finite multiplier cover with deck group
+\(\operatorname{im}\nu_7\simeq\mu_4\), and \(F_7\) is an honest
+single-valued automorphic form on \(\widetilde{\mathcal A}_7\).  The deck
+action retains the tautological \(\mu_4\)-character \(\nu_7\).  After
+pullback to this multiplier cover, Govindarajan's CHL/WKB
 theorem identifies it with the Weyl--Kac--Borcherds denominator of
 \(\mathcal G_1(4)\).  It is the \(\mu_4\)-cover denominator identity,
 with no physical comparison-row identification, no
@@ -17884,7 +17978,7 @@ $$
 Govindarajan identifies $Q_1$ with the row $\mathcal G_2(4)$ and gives
 both the product formula and the first Fourier terms.  In that CHL
 normalization the square-root form is anti-invariant under the Weyl
-reflections.  This is the sourced denominator anti-invariance, not an
+reflections.  This is the cited denominator anti-invariance, not an
 independently constructed restriction of the Cl\'ery--Gritsenko character
 through a physical row map.
 \end{proof}
@@ -17964,7 +18058,7 @@ Rows \(1\)--\(4\) have the Gritsenko--Nikulin denominator algebras.
 Rows \(5\)--\(8\) have the Govindarajan CHL/WKB denominator algebras in
 the CHL normalization.  The row \(F_7\) lives on the
 \(\mu_4\)-multiplier cover and fills no physical-host datum beyond
-the sourced denominator level.
+the cited denominator level.
 \end{remark}
 
 \begin{openproblem}[Physical-host data and row maps]
@@ -17982,12 +18076,12 @@ $$
 fixes the exact row, parent form when a root is used, group or cover,
 automorphy cocycle, multiplier and its order, divisor multiplicities,
 Jacobi seed at every cusp, product-degree lattice, chamber, branch,
-normalization, and source theorem.  The
+normalization, and cited product theorem.  The
 entries
 \((\mathscr A_j,\mathscr D_j,\mathscr S_j,\mathscr Z_j,\mathscr H_j)\)
 are the five levels of Definition~\ref{def:physical-host-datum}.
 For rows \(F_5,\ldots,F_8\), the Govindarajan CHL/WKB theorem fills
-\(\mathscr D_j\), and the sourced scalar square fills \(\mathscr S_j\)
+\(\mathscr D_j\), and the cited scalar square fills \(\mathscr S_j\)
 where stated.  It does not fill \(\mathscr Z_j\) or
 \(\mathscr H_j\).  A boundary partition identity and a compact
 Hall/chiral source remain open until these datum entries are
@@ -18136,7 +18230,10 @@ For a fractional comparison row, construct a modular-root datum
 Definition~\ref{def:physical-host-datum}.  The root datum
 must fix the parent form, root exponent, exact group or cover,
 multiplier character and its order, automorphy cocycle, divisor
-multiplicities, branch, product normalization, and source theorem.
+multiplicities, branch, product normalization, and cited product theorem.
+When the parent form is only cited from the automorphic or CHL
+literature, this entry is a cited product theorem, not a constructed
+physical source.
 The reduced scalar level, if claimed, must produce a compact
 Calabi--Yau, orbifold Calabi--Yau, or CHL background with oriented
 reduced obstruction theory and prove
@@ -18144,7 +18241,7 @@ $$
 Z_j^{\mathrm{red}}=C_j(\Phi^{\mathrm{cmp}}_j)^{-2}
 $$
 in the fixed chamber and cover.  The compact Hall/chiral level must
-construct the protected one-particle index and primitive bracket
+construct the protected index package and primitive bracket
 comparison for the same row.
 
 Borcea--Voisin and higher-dimensional curve-counting constructions
@@ -18171,7 +18268,7 @@ the same active half-coefficients are the visible signed root
 supermultiplicities of the Gritsenko--Nikulin denominator algebra
 \(\mathfrak g_{\Delta_5}\); the primitive reduced scalar branch is
 \(-4096\,\Delta_5^{-2}\) by Oberdieck--Pixton.  The open recognition
-target is a compact protected one-particle object and observable algebra
+target is a compact protected primitive object and observable algebra
 realizing these on \(K3\times E\), with orientation character
 \(\epsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\) after the
 finite orientation, Weyl transport, and type-II Pfaffian wall data
