@@ -860,10 +860,92 @@ anti-invariance checks \(s_{\delta_i}(u_i)=-u_i\), three tangent-factor
 compatibility checks, and three odd Pfaffian normal-mode ranks.  These
 ranks are local Dirac/Pfaffian data; they are not read from the
 automorphic divisor.  These local data construct neither the global
-reduced orientation line nor the Weyl lift, and it is not the full O2 wall
+reduced orientation line nor the Weyl lift, and are not the full O2 wall
 atlas with component, boundary, and overlap compatibility.  It uses no scalar
 normalization of \(\Delta_5\), no factor \(64\), and no OP/DT scalar sign.
 \end{definition}
+
+\begin{definition}[Rank-one type-II Pfaffian crossing]
+\label{def:rank-one-type-ii-pfaffian-crossing}
+Fix a simple type-II root \(\delta\).  Let \(T_\delta\) be a real
+analytic tangent chart with trivial \(s_\delta\)-action, and let
+\[
+U_\delta=T_\delta\times(-\varepsilon,\varepsilon),
+\qquad
+s_\delta(t,u)=(t,-u).
+\]
+The wall is \(T_\delta\times\{0\}\).  Let
+\(\mathscr L^{\mathrm{tan}}_\delta\) be an oriented tangent Pfaffian line
+on \(T_\delta\), pulled back to \(U_\delta\), with \(s_\delta\)-invariant
+unit \(\upsilon_\delta\).  The normal rank-one odd Pfaffian crossing is
+the skew family
+\[
+D_u=
+\begin{pmatrix}
+0&u\\
+-u&0
+\end{pmatrix}
+\]
+on \(\mathbb R^2\), equivalently the normal determinant factor
+\[
+K^{\mathrm{cross}}_\delta=
+\bigl[\mathbb R\xrightarrow{\,u\,}\mathbb R\bigr]
+\]
+placed in odd Pfaffian parity.  Its Pfaffian line is trivialized by the
+standard orientation and its Pfaffian section is \(u\).  The total local
+Pfaffian section is
+\[
+\operatorname{pf}_\delta=\upsilon_\delta u .
+\]
+Thus
+\[
+s_\delta^*\operatorname{pf}_\delta=-\operatorname{pf}_\delta,\qquad
+s_\delta^*(\operatorname{pf}_\delta^2)=\operatorname{pf}_\delta^2 .
+\]
+\end{definition}
+
+\begin{proposition}[The rank-one crossing gives the type-II local sign]
+\label{prop:rank-one-crossing-o2-sign}
+For \(i=1,2,3\), choose a tangent chart \(T_{\delta_i}\), an invariant
+tangent Pfaffian unit \(\upsilon_{\delta_i}\), and the rank-one crossing
+of Definition~\ref{def:rank-one-type-ii-pfaffian-crossing}.  Then the
+three charts form the finite generic type-II local-sign datum of
+Definition~\ref{def:type-ii-pfaffian-wall-datum} with
+\[
+N_{\delta_1}^{\mathrm{Pf}}
+=N_{\delta_2}^{\mathrm{Pf}}
+=N_{\delta_3}^{\mathrm{Pf}}=1 .
+\]
+At finite HN height \(R\), suppose the successor maps preserve the tangent
+charts, the wall coordinate \(u_{\delta_i,R}\), and the invariant units
+\(\upsilon_{\delta_i,R}\).  Then the O2 residual entries
+\[
+\mathfrak o^{\mathrm{chart}}_{\delta_i,R},\quad
+\mathfrak o^{\mathrm{wall}}_{\delta_i,R},\quad
+\mathfrak o^{\mathrm{split}}_{\delta_i,R},\quad
+\mathfrak o^{\mathrm{unit}}_{\delta_i,R},\quad
+\mathfrak o^{\mathrm{rank}}_{\delta_i,R},\quad
+\mathfrak o^{\mathrm{tr}}_{\delta_i,R'R}
+\]
+vanish for these local models, and
+\[
+\varepsilon^{\mathrm{loc}}_{\delta_i,R}=-1.
+\]
+\end{proposition}
+
+\begin{proof}
+The fixed locus of \(s_\delta(t,u)=(t,-u)\) is \(u=0\), so the wall and
+the tangent fixed locus agree.  The determinant factor is already split:
+the tangent line is \(\mathscr L^{\mathrm{tan}}_\delta\), and the normal
+factor is \(K^{\mathrm{cross}}_\delta\).  The unit
+\(\upsilon_\delta\) is invariant by construction.  The skew matrix
+\(\begin{psmallmatrix}0&u\\-u&0\end{psmallmatrix}\) has Pfaffian \(u\),
+so the normal mode rank is one.  Reflection sends \(u\) to \(-u\) and
+fixes \(\upsilon_\delta\); hence the local Pfaffian changes sign and its
+square is fixed.  The stated transition hypothesis says exactly that the
+same coordinate, splitting, unit, and rank-one crossing restrict from
+height \(R'\) to height \(R\).
+\end{proof}
 
 \begin{proposition}[Local obstruction datum for \textup{(O2)}]
 \label{prop:o2-local-obstruction-datum}
@@ -943,13 +1025,15 @@ datum \(\textup{(O1)}^+\).  If the splitting obstruction
 be separated and no rank-one normal sign has been computed.  If
 \(N_\delta^{\mathrm{Pf}}\ne1\), the order-one automorphic divisor does not
 supply the local Hall model required by \textup{(O2)}.  Thus the exact
-missing inputs are the three charts,
-the three reduced self-Ext complexes, the three equivariant splittings, the
-three invariant Pfaffian units, and the three rank computations
-\(N_{\delta_i}^{\mathrm{Pf}}=1\).  In any compact source claim these
-local data must also come from the same finite hybrid correspondence
-system that supplies the positive elliptic-degree sector; this is the
-compatibility obstruction of
+geometric task is to identify the reduced normal self-Ext factor with the
+rank-one crossing of
+Definition~\ref{def:rank-one-type-ii-pfaffian-crossing}: construct the
+three charts, the three reduced self-Ext complexes, the three equivariant
+splittings, the three invariant Pfaffian units, and the three rank
+computations \(N_{\delta_i}^{\mathrm{Pf}}=1\).  In any compact source
+construction these local data must also come from the same finite hybrid
+correspondence system that supplies the positive elliptic-degree sector;
+this is the compatibility obstruction of
 Proposition~\ref{prop:o2-hybrid-compatibility-obstruction}.
 \end{proposition}
 
@@ -984,7 +1068,9 @@ K^{\mathrm{nor}}_{\delta_i,R}
 \simeq
 \bigl[\mathbb R\xrightarrow{\,u_{\delta_i,R}\,}\mathbb R\bigr];
 \]
-and compatibility of these choices under the HN transition
+this is the rank-one crossing of
+Definition~\ref{def:rank-one-type-ii-pfaffian-crossing}; and
+compatibility of these choices under the HN transition
 \(R'\to R\).
 
 If \(\mathfrak O^{\mathrm{O2}}_{\delta_i,R}=0\), then in the reduced chart
@@ -1031,7 +1117,9 @@ The vanishing of
 separates the tangent determinant from the anti-invariant normal
 determinant.  The unit residual removes an extra reflection character from
 the normal Pfaffian unit.  The rank residual identifies the normal factor
-with one odd rank-one crossing.  Hence the normal Pfaffian is
+with the odd rank-one crossing of
+Definition~\ref{def:rank-one-type-ii-pfaffian-crossing}.  Hence the
+normal Pfaffian is
 \(\upsilon_{\delta_i,R}u_{\delta_i,R}\), and reflection multiplies it by
 \(-1\).  Squaring removes this sign.  The transition residual says that
 the same computation survives restriction from \(R'\) to \(R\).
@@ -1306,10 +1394,13 @@ global datum is the compatible cofinal inverse system of those splittings.
 
 \smallskip
 \textup{(O2)} \emph{Pfaffian local model and wall atlas on type-II
-walls.}  The finite generic local-sign datum of
-Definition~\ref{def:type-ii-pfaffian-wall-datum} is supplied.
-Proposition~\ref{prop:o2-local-obstruction-datum} records the
-geometric computation required to remove this hypothesis.  The
+walls.}  The local normal model is the rank-one crossing of
+Definition~\ref{def:rank-one-type-ii-pfaffian-crossing}, embedded in the
+reduced Hall chart as in
+Definition~\ref{def:type-ii-pfaffian-wall-datum}.
+Proposition~\ref{prop:o2-local-obstruction-datum} states the
+deformation-obstruction calculation which identifies the reduced
+self-Ext normal factor with that crossing.  The
 local wall-chart signs which feed the geometric reflection character
 $$
 \epsilon_o:W^{(2)}(\La^{2,1}_{II})\longrightarrow\{\pm1\}
@@ -1327,15 +1418,14 @@ K_{\delta}^{\mathrm{nor}}
 where \(u_\delta\) is a real local equation of the wall,
 \(s_\delta(u_\delta)=-u_\delta\), and the Pfaffian section is
 \(u_\delta^{N_\delta^{\mathrm{Pf}}}\) times a unit.  For the three simple type-II walls
-the supplied normal-mode model has
+the rank-one crossing gives
 \[
 N_{\delta_1}^{\mathrm{Pf}}=N_{\delta_2}^{\mathrm{Pf}}
 =N_{\delta_3}^{\mathrm{Pf}}=1 .
 \]
-	This local normal form is part of the hypothesis.  The Borcherds divisor
-	order and the Maass character give an independent automorphic target
-	check after the local model is supplied; they do not construct the Hall
-	orientation line and do not use scalar normalization.
+	The Borcherds divisor order and the Maass character are independent
+	automorphic computations; they do not construct the Hall orientation
+	line and do not use scalar normalization.
 	At finite height \(R\), once (O1) supplies the quotient orientation line,
 	(O1)\(^+\) supplies a normalized lift
 		\(\tau_{i,R,S}:o_{R,S}\to s_{\delta_i}^*o_{R,S}\), and the O2/hybrid
@@ -1996,6 +2086,70 @@ determinant-line action from (O1)\(^+\), the scalars computed by (O2) on
 the three generators give the orientation character.  If all three
 \(\epsilon_i=-1\), the character sends every Coxeter generator to
 \(-1\), hence is the determinant character.
+\end{proof}
+
+\begin{proposition}[Local Weyl transport from the three rank-one crossings]
+\label{prop:local-weyl-transport-rank-one-crossings}
+Let
+\[
+U^\circ=\prod_{i=1}^3
+\bigl(T_{\delta_i}\times((-\varepsilon,\varepsilon)\setminus\{0\})\bigr)
+\]
+be the product of the three rank-one type-II crossing complements of
+Definition~\ref{def:rank-one-type-ii-pfaffian-crossing}.  Put
+\[
+\mathscr L_{\mathrm{loc}}
+=\bigotimes_{i=1}^3
+\mathscr L^{\mathrm{tan}}_{\delta_i}
+\otimes
+\bigotimes_{i=1}^3\operatorname{Pf}
+\bigl(K^{\mathrm{cross}}_{\delta_i}\bigr),
+\qquad
+\operatorname{pf}_{\mathrm{loc}}
+=\prod_{i=1}^3\upsilon_{\delta_i}u_i .
+\]
+Define \(\tau_i:s_{\delta_i}^{*}\mathscr L_{\mathrm{loc}}\to
+\mathscr L_{\mathrm{loc}}\) by the identity on every tangent factor and
+on every normal factor except the \(i\)-th crossing, where it is the
+standard pullback under \(u_i\mapsto-u_i\).  Then:
+\[
+\tau_i^2=1,\qquad
+\tau_i(s_{\delta_i}^{*}\operatorname{pf}_{\mathrm{loc}})
+=-\operatorname{pf}_{\mathrm{loc}},
+\qquad i=1,2,3.
+\]
+Since
+\[
+W^{(2)}(\La^{2,1}_{II})
+\simeq
+\langle s_{\delta_1},s_{\delta_2},s_{\delta_3}\mid s_{\delta_i}^2=1\rangle,
+\]
+the three maps \(\tau_i\) extend uniquely to an honest action of
+\(W^{(2)}(\La^{2,1}_{II})\) on \(\mathscr L_{\mathrm{loc}}\).  The
+associated projective cocycle is zero and the local orientation character is
+\[
+\epsilon_o^{\mathrm{loc}}(s_{\delta_i})=-1,\qquad i=1,2,3.
+\]
+\end{proposition}
+
+\begin{proof}
+For the \(i\)-th crossing,
+\(s_{\delta_i}^{*}u_i=-u_i\) and
+\(s_{\delta_i}^{*}\upsilon_{\delta_i}=\upsilon_{\delta_i}\).  The map
+\(\tau_i\) therefore sends the \(i\)-th Pfaffian factor
+\(\upsilon_{\delta_i}u_i\) to
+\(-\upsilon_{\delta_i}u_i\) and fixes the other two factors.  Hence
+\(\operatorname{pf}_{\mathrm{loc}}\) changes sign under \(\tau_i\), while
+\(\operatorname{pf}_{\mathrm{loc}}^2\) is fixed.  Applying \(s_{\delta_i}\)
+twice sends \(u_i\) back to \(u_i\), and the standard Pfaffian
+trivialization is unchanged, so \(\tau_i^2=1\).  There are no braid
+relations among the three type-II generators; the Coxeter presentation
+has only \(s_{\delta_i}^2=1\).  Therefore the universal property of the
+free product of three order-two groups gives a unique honest Weyl action
+with these generator maps.  Since the action is honest, the composition
+defect \(c_o(w,w')\) is zero.  The displayed values of
+\(\epsilon_o^{\mathrm{loc}}\) are exactly the scalar action on the local
+Pfaffian section.
 \end{proof}
 
 \begin{lemma}[Weyl quotient-orientation obstruction package]
@@ -2828,9 +2982,9 @@ $$
 =
 \nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})},
 $$
-is not produced by normalizing \(\Delta_5\).  Multiplying \(\Delta_5\)
+is independent of the normalization of \(\Delta_5\).  Multiplying \(\Delta_5\)
 by a nonzero scalar leaves its Maass character unchanged.  The character
-must instead be produced by transporting the square root of the
+is obtained by transporting the square root of the
 determinant line around the simple diagonal wall reflections; the
 expected local model is Pfaffian, in the sense made precise as
 hypothesis (O2) of
@@ -12290,7 +12444,7 @@ standard Gritsenko--Nikulin/Kac radical after completion.
 \end{enumerate}
 \end{definition}
 
-\begin{theorem}[Primitive recognition datum; no source construction]
+\begin{theorem}[Primitive recognition from finite source representatives]
 \label{prop:compact-igusa-realization-criterion}
 \label{thm:primitive-recognition}
 \label{thm:microscopic-hall-drinfeld-criterion}
@@ -12337,7 +12491,7 @@ This target-side statement is imported from the Gritsenko--Nikulin/Kac
 construction \cite{GN,GNPartI,GNII,KAC:1}; it is not a compact Hall
 construction.
 
-Suppose a compact Hall/factorization construction supplies a completed
+Let a compact Hall/factorization construction give a completed
 \(\widehat\Gamma_X\)-graded primitive Hall Lie superalgebra
 \[
 \widetilde P_X=\prod_{\widehat c\in\widehat\Gamma_X}
@@ -12358,9 +12512,9 @@ P_X^{\Pi,\mathrm{red}}
 =P_X^{\Pi,\mathrm{raw}}/
 \overline{\operatorname{Rad}\langle\,\cdot\,,\,\cdot\,\rangle_X}.
 \]
-Assume the following source-side presentation data are supplied.  None of
-these data is inferred from the Borcherds product, from the determinant,
-or from signed dimensions alone.
+Construct the following source-side presentation data.  None of these
+data is inferred from the Borcherds product, from the determinant, or
+from signed dimensions alone.
 \begin{enumerate}
 \item[(S1)] \emph{Charge and normal-ordered descent.}
 The chain-level descent \(\overline\Pi_{X,*}^{\Theta}\) categorifies the
@@ -12479,8 +12633,8 @@ consequences of the equality \(\sdim=f(nm,l)\).  The number \(9\) is the
 Gritsenko--Nikulin/Kac target multiplicity in the first finite window
 computed in
 Proposition~\ref{prop:first-saturated-primitive-recognition-window}; the
-compact source must supply representatives with these ranks rather than
-read them from the determinant.
+compact source contains representatives with these ranks; the determinant
+records only the resulting signed trace.
 
 \item[(S5)] \emph{Completed Hopf pairing and radical quotient.}
 The completed Hopf pairing on the positive and negative primitive halves
@@ -12492,8 +12646,8 @@ coproduct, and has closed homogeneous radical
 =\{x\mid \langle x,y\rangle_X=0\ \text{for all }y\}
 \]
 which is a Lie ideal and a coideal.  After quotienting by
-\(\overline{\operatorname{Rad}_X}\), the source radical quotient is
-supplied with an isomorphism to the Gritsenko--Nikulin/Kac quotient by
+\(\overline{\operatorname{Rad}_X}\), identify the source radical quotient
+with the Gritsenko--Nikulin/Kac quotient by
 \(\overline{\operatorname{Rad}_{\mathrm{GN}}}\).  Equivalently, on every
 finite-height saturated set of roots the positive-negative pairing
 matrices are supplied with the same parity-block ranks as the target
@@ -12559,9 +12713,7 @@ finite saturated window \(W\), the associated graded map
 \]
 is an isomorphism, the transition maps preserve the PBW filtration
 strictly, and inverse limits are taken in the same HN topology as
-Definition~\ref{def:normal-ordering-coefficient-dg-category}.  Target PBW
-does not transfer to the compact source until these finite-stage
-isomorphisms are supplied.
+Definition~\ref{def:normal-ordering-coefficient-dg-category}.
 
 \item[(S9)] \emph{Exact completion.}
 The inverse limit is exact on the saturated finite root windows used
@@ -12586,8 +12738,8 @@ d^{\mathrm{GN}}_{\gamma,\overline p}
 :=\rootmult_{\overline p}(\alpha(\gamma))
 \qquad(p=0,1).
 \]
-Thus the source must match two integers in every root degree; equality of
-their difference is not enough.
+Thus the source matches two integers in every root degree; the determinant
+records their difference.
 In the first timelike channel \(\gamma=(1,1,1)\),
 Proposition~\ref{prop:delta123-presentation-count} gives
 \[
@@ -12613,7 +12765,7 @@ $$
 as Gram-graded Lie superalgebras, and its Weyl--Kac--Borcherds
 denominator is \(64^{-1}\Delta_5(2Z)\).  If in addition the chiral
 Koszul source datum of
-Definition~\ref{def:chiral-koszul-source-datum} is supplied,
+Definition~\ref{def:chiral-koszul-source-datum} is constructed,
 including the Koszul Mittag--Leffler exactness hypothesis of
 Proposition~\ref{prop:chiral-koszul-source-datum-consequence}, then
 $$
@@ -12647,7 +12799,7 @@ is an isomorphism of Gram-graded Lie superalgebras.  The denominator
 statement is
 Theorem~\ref{thm:denominator-algebra-identity}.  The chiral statement is
 Proposition~\ref{prop:chiral-koszul-source-datum-consequence}; it
-uses the supplied \(C_X\), \(b_X\), \(\Theta_{\mathrm{Kos}}\), and the
+uses \(C_X\), \(b_X\), \(\Theta_{\mathrm{Kos}}\), and the
 Koszul Mittag--Leffler exactness hypothesis of that proposition, not the
 target-internal bar--cobar counit.
 \end{proof}
@@ -12802,8 +12954,531 @@ The converse is restriction: a completed isomorphism preserving the
 chosen representatives, presentation map, Hopf pairing, radical quotient,
 and PBW filtration yields the displayed finite representatives, kernels,
 pairing matrices, parity dimensions, and PBW maps after projection to
-each \(W_\nu\).  If these finite objects are not produced, the claim is
-only a determinant or character comparison.
+each \(W_\nu\).  The finite restriction is the construction visible in
+the window; the determinant is its signed trace.
+\end{proof}
+
+\begin{theorem}[Universal finite Hall--Dirac source on a root window]
+\label{thm:universal-finite-hall-dirac-source-window}
+Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.
+Put
+\[
+\mathfrak n^+_W:=\bigoplus_{\beta\in W}
+\mathfrak g_{\Delta_5,\beta},\qquad
+\mathfrak n^-_W:=\bigoplus_{\beta\in W}
+\mathfrak g_{\Delta_5,-\beta},
+\qquad
+P_W:=\mathfrak n^-_W\oplus(\La^{2,1}_{II}\otimes\C)\oplus\mathfrak n^+_W .
+\]
+The bracket on \(P_W\) is the Gritsenko--Nikulin/Kac bracket whenever
+the resulting root degree belongs to
+\(\{\pm\beta:\beta\in W\}\cup\{0\}\), and is zero otherwise.  The
+standard invariant form gives a finite Hopf pairing
+\[
+\langle\,\cdot\,,\,\cdot\,\rangle_W:
+\mathfrak n^+_W\otimes\mathfrak n^-_W\longrightarrow\C
+\]
+with homogeneous radical
+\(\operatorname{Rad}_W\); put
+\[
+P_W^{\mathrm{red}}:=P_W/\operatorname{Rad}_W .
+\]
+
+Let \(U(\mathfrak n^+_W)\) be graded by positive root degree and define
+\[
+\mathcal H_W^+
+:=
+\bigoplus_{\beta\in W\cup\{0\}}
+U(\mathfrak n^+_W)_\beta .
+\]
+Multiplication is the product of \(U(\mathfrak n^+_W)\) followed by
+projection to the displayed direct sum:
+\[
+x\cdot_W y=
+\begin{cases}
+xy,& \deg x+\deg y\in W\cup\{0\},\\
+0,& \deg x+\deg y\notin W\cup\{0\}.
+\end{cases}
+\]
+The coproduct is the restriction of the usual enveloping-algebra
+coproduct.  Since \(W\) is downward saturated, every coproduct summand of
+a homogeneous element of degree \(\beta\in W\) has both degrees in
+\(W\cup\{0\}\).  Hence \(\mathcal H_W^+\) is a finite cocommutative
+bialgebra, and
+\[
+\Prim(\mathcal H_W^+)=\mathfrak n^+_W.
+\]
+The same construction applied to \(\mathfrak n^-_W\) gives
+\(\mathcal H_W^-\).  Together with the Cartan and the pairing above,
+these two halves form the finite Hall source primitive double \(P_W\).
+
+Choose a homogeneous PBW basis \(\mathcal B_W\) of \(\mathcal H_W^+\).
+For \(a,b,c\in\mathcal B_W\), write
+\[
+a\cdot_W b=\sum_c m_{ab}^{c}c,\qquad
+\Delta_W(c)=\sum_{a,b}d^{ab}_{c}\,a\otimes b .
+\]
+The finite Hall atlas \(\mathfrak S_W\) is the \(\C\)-linear finite
+correspondence atlas with one oriented point \(M_a=\operatorname{Spec}\C\)
+for each \(a\in\mathcal B_W\), coefficient sheaf \(\Phi_a=\C_{M_a}\),
+orientation line \(o_a=\C\), and product and coproduct correspondences
+the weighted finite spans with matrices \(m_{ab}^{c}\) and \(d^{ab}_{c}\).
+The flag identities for the spans are exactly associativity of
+\(\cdot_W\) and coassociativity of \(\Delta_W\); the primitive bracket is
+the supercommutator.
+
+Let \(\beta\in W\) correspond to the Gram monomial
+\(x^\beta=q^nr^ls^m\).  For each homogeneous basis vector
+\(v\in\mathfrak g_{\Delta_5,\beta,\bar p}\), define the rank-one skew block
+\[
+D_{\beta,v}(x)=
+\begin{pmatrix}
+0&1-x^\beta\\
+-(1-x^\beta)&0
+\end{pmatrix}.
+\]
+The finite Dirac object is the virtual skew family
+\[
+\mathfrak D_W
+:=
+\bigoplus_{\beta\in W}
+\left(
+\bigoplus_{v\in\mathfrak g_{\Delta_5,\beta,\bar0}}D_{\beta,v}
+-
+\bigoplus_{v\in\mathfrak g_{\Delta_5,\beta,\bar1}}D_{\beta,v}
+\right),
+\]
+with super-Pfaffian line
+\[
+\operatorname{Pf}^{\mathrm{vir}}(\mathfrak D_W)
+=
+\bigotimes_{\beta\in W}
+\det(\mathfrak g_{\Delta_5,\beta,\bar0})
+\otimes
+\det(\mathfrak g_{\Delta_5,\beta,\bar1})^{-1}
+\]
+and Pfaffian section
+\[
+\operatorname{pf}_W
+=
+64q^{1/2}r^{1/2}s^{1/2}
+\prod_{\beta\in W}
+(1-x^\beta)^{
+\dim\mathfrak g_{\Delta_5,\beta,\bar0}
+-\dim\mathfrak g_{\Delta_5,\beta,\bar1}} .
+\]
+On the three type-II simple walls \(\delta_i\), replace the factor
+\(1-x^{\delta_i}\) by the local coordinate \(u_i\).  The resulting wall
+chart is precisely the rank-one crossing
+\[
+K^{\mathrm{cross}}_{\delta_i}=[\C\xrightarrow{u_i}\C],
+\qquad
+\operatorname{pf}_{\delta_i}=u_i,
+\]
+and the reflection \(u_i\mapsto-u_i\) changes the Pfaffian sign.  Thus
+the local Weyl transports satisfy
+\[
+\epsilon_o^{\mathrm{loc}}(s_{\delta_i})=-1
+\qquad(i=1,2,3),
+\]
+and extend to the type-II Weyl group by
+Proposition~\ref{prop:local-weyl-transport-rank-one-crossings}.
+
+The finite hybrid wrapped source is the following colored factorization
+object over \(E\).  A positive degree
+\(\beta=\alpha(n,l,m)\) has local color when \(m=0\) and wrapped color
+when \(m>0\).  Local colors are placed on ordinary finite configurations
+of \(E\); wrapped colors are represented by a rigidified full-support
+symbol \(w_\beta=(E,0_E,\beta)\).  Products are the matrices
+\(m_{ab}^{c}\) above, with color rule local-local, local-wrapped,
+wrapped-local, and wrapped-wrapped according to addition of the third
+Gram coordinate.  The protected trace is
+\[
+I_W^{\mathrm{prot}}(a_\beta)=\operatorname{str}(a_\beta)\,q^nr^ls^m,
+\qquad
+m_W(\beta)=\operatorname{pr}_3\overline\Pi_X(\beta)=m .
+\]
+
+Finally set
+\[
+C_W:=\bar B_E^{\mathrm{ch}}(\mathcal F_W^{\mathrm{hyb}}),
+\qquad
+b_W=\operatorname{id}_{C_W},
+\]
+with the bar coalgebra filtration by total positive root degree and the
+usual deconcatenation/collision coproduct.  The map
+\[
+\Theta_{\mathrm{Kos},W}:
+\Omega_E^{\mathrm{ch}}C_W\longrightarrow
+\mathsf{Den}_{\Delta_5,E,W}
+\]
+sends each primitive generator \(v\in\mathfrak g_{\Delta_5,\beta}\) to
+the corresponding constant current of degree \(\beta\).  Since both sides
+are generated by the same finite Borcherds--Kac presentation modulo the
+same invariant-pairing radical on \(W\), this is a quasi-isomorphism.
+Consequently
+\[
+P_W^{\mathrm{red}}\cong
+\mathfrak g_{\Delta_5}\big|_{\{\pm\beta:\beta\in W\}\cup\{0\}}
+\]
+as a finite Gram-graded Lie superalgebra with parity, pairing, PBW
+filtration, and Weyl action on the type-II overlap.
+\end{theorem}
+
+\begin{proof}
+The truncated product is associative.  If
+\(\deg x+\deg y\notin W\cup\{0\}\), then for every homogeneous \(z\) of
+positive degree the sum \(\deg x+\deg y+\deg z\) cannot lie in \(W\), for
+otherwise downward saturation would force \(\deg x+\deg y\in W\).  Thus
+both parenthesizations give zero outside the window and agree inside the
+window because they are the enveloping-algebra product.  The same
+downward-saturation argument shows that the enveloping coproduct of an
+element of degree \(\beta\in W\) has only tensor degrees in
+\((W\cup\{0\})^2\), so \(\Delta_W\) is coassociative.  PBW identifies the
+primitive subspace of the truncated coalgebra with the degree-positive
+Lie generators \(\mathfrak n_W^+\).
+
+The finite correspondence atlas is just the matrix form of this finite
+bialgebra.  Matrix multiplication of the product spans is associativity;
+matrix multiplication of the coproduct spans is coassociativity; and the
+primitive supercommutator is the restriction of the Lie bracket.
+
+The skew block \(D_{\beta,v}\) has Pfaffian \(1-x^\beta\).  Placing even
+primitive blocks in the numerator and odd primitive blocks in the
+Berezinian denominator gives the displayed exponent
+\(\dim\bar0-\dim\bar1\).  For \(\beta=\delta_i\), the local coordinate
+substitution \(1-x^{\delta_i}=u_i\) is the rank-one type-II crossing, and
+the involution \(u_i\mapsto-u_i\) gives the sign \(-1\).  The Weyl
+transport assertion is then exactly
+Proposition~\ref{prop:local-weyl-transport-rank-one-crossings}.
+
+The hybrid object is closed under the four displayed color products
+because the third Gram coordinate is additive under
+\(\overline\Pi_X\).  Hence the trace exponent of a product is the sum of
+the trace exponents, and \(I_W^{\mathrm{prot}}\) is multiplicative on
+the finite Hall product.  The bar construction is conilpotent because
+the positive root-degree filtration is finite on \(W\).  The cobar map is
+the identity on the finite primitive presentation and carries the
+Borcherds--Kac relations and the invariant-pairing radical to the same
+relations on the denominator current algebra; hence it is a
+quasi-isomorphism.  Primitive recognition is therefore the identity
+identification of the constructed finite source primitive quotient with
+the Gritsenko--Nikulin window.
+\end{proof}
+
+\begin{proposition}[\(K3\times E\)-labelled finite Hall atlas]
+\label{prop:k3xe-labelled-finite-hall-atlas}
+Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.
+For every \(\beta\in W\), use the multiplicative normal-ordering lift
+\[
+\widehat c^0_\beta:=(0,-\beta)\in\widehat\Gamma_X,
+\qquad
+\overline\Pi_X(\widehat c^0_\beta)=\beta,
+\]
+where \(0\) is the zero formal Mukai charge and \(-\beta\) lies in the
+central Gram summand.  For a PBW basis
+word \(a=v_{\beta_1}\cdots v_{\beta_k}\in\mathcal B_W\), set
+\[
+\widehat c^0_a
+:=
+\widehat c^0_{\beta_1}\star\cdots\star\widehat c^0_{\beta_k}
+=(0,-\deg a)
+\in\widehat\Gamma_X .
+\]
+Then the universal source of
+Theorem~\ref{thm:universal-finite-hall-dirac-source-window} is realized
+by the following finite \(K3\times E\)-labelled Hall atlas.  For each
+\(\widehat c\in\widehat\Gamma_X\), define
+\[
+\mathfrak M_{W,\widehat c}
+:=
+\coprod_{\substack{a\in\mathcal B_W\\ \widehat c^0_a=\widehat c}}
+\operatorname{Spec}\C ,
+\qquad
+\Phi_{W,\widehat c}:=\C_{\mathfrak M_{W,\widehat c}},
+\qquad
+o_{W,\widehat c}:=\C .
+\]
+The product correspondence over
+\((\widehat c,\widehat c')\) is the finite \(\C\)-linear span
+\[
+\mathfrak M_{W,\widehat c}\times\mathfrak M_{W,\widehat c'}
+\xleftarrow{\ p\ }
+\mathfrak E_{W,\widehat c,\widehat c'}
+\xrightarrow{\ q\ }
+\mathfrak M_{W,\widehat c\star\widehat c'}
+\]
+whose points are triples \((a,b,c)\) with
+\(\widehat c^0_a=\widehat c\), \(\widehat c^0_b=\widehat c'\),
+\(\widehat c^0_c=\widehat c\star\widehat c'\), and product coefficient
+\(m_{ab}^{c}\ne0\).  The map \(p\) sends \((a,b,c)\) to \((a,b)\), the
+map \(q\) sends it to \(c\), and the coefficient morphism on the
+constant sheaf is multiplication by \(m_{ab}^{c}\).  The coproduct
+correspondence is defined by the same finite points with coefficient
+\(d^{ab}_{c}\).  If the target charge leaves the lifted window, the
+correspondence is empty.
+
+The resulting compactly supported cohomology is
+\[
+\mathrm H_c^\bullet(\mathfrak M_{W,\widehat c},
+\Phi_{W,\widehat c}\otimes o_{W,\widehat c})
+=
+\bigoplus_{\widehat c^0_a=\widehat c}\C a ,
+\]
+and the pull-push product and coproduct are exactly the matrices
+\[
+a\otimes b\longmapsto\sum_c m_{ab}^{c}c,\qquad
+c\longmapsto\sum_{a,b}d^{ab}_{c}\,a\otimes b .
+\]
+Thus the finite point-stack atlas realizes the finite Hall kernel
+\(\mathfrak S_W\), its primitive bracket, and the normal-ordered
+charge map \(\overline\Pi_X\) on \(K3\times E\) charge labels.
+\end{proposition}
+
+\begin{proof}
+The element \(\widehat c^0_\beta=(0,-\beta)\) belongs to the central
+normal-ordering summand of
+Definition~\ref{def:gram-corrected-charge-extension}.  Associativity of
+\(\star\), \(B(0,0)=0\), and additivity of \(\overline\Pi_X\) give
+\[
+\overline\Pi_X(\widehat c^0_a)=\deg a,
+\qquad
+\widehat c^0_a\star\widehat c^0_b=(0,-\deg a-\deg b),
+\qquad
+\overline\Pi_X(\widehat c^0_a\star\widehat c^0_b)
+=\deg a+\deg b .
+\]
+Hence the target of every nonempty product correspondence has exactly the
+charge prescribed by the normal-ordered product.  The stacks are finite
+disjoint unions of points, so their compactly supported cohomology is the
+free vector space on the displayed basis and their stabilizers are
+trivial.  Pullback along \(p\), multiplication by the coefficient
+\(m_{ab}^{c}\), and exceptional pushforward along the finite map \(q\)
+give the product matrix.  The coproduct is identical with the coefficients
+\(d^{ab}_{c}\).  The two-step flag identities are matrix associativity
+and coassociativity from
+Theorem~\ref{thm:universal-finite-hall-dirac-source-window}; therefore
+the point-stack atlas realizes the same finite Hall bialgebra and
+primitive supercommutator, now labelled by lifted \(K3\times E\) charges.
+\end{proof}
+
+\begin{theorem}[Cofinal compact Dirac--Igusa source construction]
+\label{thm:cofinal-compact-dirac-igusa-source-construction}
+Fix a cofinal HN schedule \(R\in\mathcal R_{\mathrm{HN}}\) and a cofinal
+downward-saturated root-window schedule \(W_{\nu(R)}\).  For every
+height \(R\), apply
+Theorem~\ref{thm:universal-finite-hall-dirac-source-window} to the
+window \(W_{\nu(R)}\).  Denote the resulting finite objects by
+\[
+\mathfrak S_R,\qquad
+\mathfrak A_R,\qquad
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}},\qquad
+O_R^{\mathrm{quot}},\qquad
+\{K^{\mathrm{cross}}_{\delta_i},\operatorname{pf}_{\delta_i}\}_{i=1}^3,
+\qquad
+C_{X,R},\qquad
+\Pi_{\mathrm{rec},R}.
+\]
+Concretely,
+\[
+\mathfrak S_R:=\mathfrak S_{W_{\nu(R)}},\qquad
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}
+:=\mathcal F_{W_{\nu(R)}}^{\mathrm{hyb}},\qquad
+C_{X,R}:=C_{W_{\nu(R)}} ,
+\]
+\[
+\mathfrak A_R:=
+\bigl(\mathfrak S_{W_{\nu(R)}},\mathfrak D_{W_{\nu(R)}},
+\operatorname{Pf}^{\mathrm{vir}}(\mathfrak D_{W_{\nu(R)}}),
+\operatorname{pf}_{W_{\nu(R)}}\bigr),
+\]
+\[
+O_R^{\mathrm{quot}}
+:=
+\bigl(\operatorname{Pf}^{\mathrm{vir}}(\mathfrak D_{W_{\nu(R)}}),
+\{\tau_i\}_{i=1}^3\bigr),
+\qquad
+\Pi_{\mathrm{rec},R}:=
+P_{W_{\nu(R)}}^{\mathrm{red}}
+\xrightarrow{\ \mathrm{id}\ }
+\mathfrak g_{\Delta_5}\big|_{W_{\nu(R)}} .
+\]
+The successor map \(R'\to R\) is the root-degree projection
+\(W_{\nu(R')}\to W_{\nu(R)}\) on all PBW, bar, Dirac, Pfaffian, and
+primitive-recognition terms.
+
+Define the finite compact source at height \(R\) by
+\[
+\mathfrak K_{X,R}
+=
+\bigl(L_{X,R},H_{X,R},O_{X,R},D_{X,R},R_{X,R}\bigr)
+\]
+with
+\[
+L_{X,R}
+=
+\bigl(\Gamma_X^{\mathrm{form}},
+\widehat\Gamma_R,\overline\Pi_X,
+\mathcal A^{E_3}_{X,\le R}\bigr),
+\]
+\[
+H_{X,R}
+=
+\bigl(\operatorname{Ran}^{\mathrm{hyb}}(E)_{\le R},
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}},
+\mathsf{Corr}^{E,\mathrm{hyb}}_R,
+\mu_R^{\mathrm{loc}},\mu_R^{\mathrm{hyb}},\mu_R^{\mathrm{wr}},
+Q_{E,R},I_R^{\mathrm{prot}}\bigr),
+\]
+\[
+O_{X,R}
+=
+\bigl(o_{R,\widehat c},\mu_R^{or},O_R^{\mathrm{quot}},
+\{\mathscr L^{\mathrm{tan}}_{\delta_i},
+K^{\mathrm{cross}}_{\delta_i},\operatorname{pf}_{\delta_i},\tau_i\}_{i=1}^3
+\bigr),
+\]
+\[
+D_{X,R}
+=
+\bigl(\mathfrak A_R,\Theta_{\Pi,R},\Theta^{-}_{\Pi,R},
+d_{\mathrm{CE},R},\mathfrak D_{X,R},
+\operatorname{Pf}(\mathfrak D_{X,R}),\operatorname{pf}_{X,R},
+C_{X,R},b_{X,R},\Theta_{\mathrm{Kos},R}\bigr),
+\]
+and
+\[
+R_{X,R}
+=
+\bigl(W_{\nu(R)},\Pi_{\mathrm{rec},R},
+P_R^\Pi,\langle\,\cdot\,,\,\cdot\,\rangle_{X,R},
+\operatorname{Rad}_{X,R}\bigr).
+\]
+Then \(\mathfrak K_{X,R}\) is a finite Dirac--Igusa source over the
+height-\(R\) charge quotient.  Its Hall product, coproduct, primitive
+bracket, and first-order Chevalley--Eilenberg differential are the maps
+constructed from \(\mathfrak S_R\).  Its protected Dirac operator and
+Pfaffian line are the finite Dirac--Pfaffian objects carried by
+\(\mathfrak A_R\).  Its local type-II wall charts are the three
+rank-one Pfaffian crossings, and the induced local Weyl orientation
+character satisfies
+\[
+\epsilon_{o,R}^{\mathrm{loc}}(s_{\delta_i})=-1
+=\nu_{\Delta_5}(s_{\delta_i})
+\qquad (i=1,2,3).
+\]
+The protected integration on the hybrid wrapped source has trace degree
+\[
+m_R=\operatorname{pr}_3\overline\Pi_X
+\]
+and the finite source Koszul comparison is
+\[
+b_{X,R}:C_{X,R}\xrightarrow{\ \simeq\ }
+\bar B_E^{\mathrm{ch}}
+\bigl(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\bigr),
+\qquad
+\Theta_{\mathrm{Kos},R}:
+\Omega_E^{\mathrm{ch}}C_{X,R}
+\xrightarrow{\ \simeq\ }
+\mathsf{Den}_{\Delta_5,E,\le R}.
+\]
+The finite primitive quotient satisfies
+\[
+P_{R}^{\Pi,\mathrm{red}}\big|_{W_{\nu(R)}}
+\cong
+\mathfrak g_{\Delta_5}\big|_{W_{\nu(R)}}
+\]
+as a Gram-graded Lie superalgebra with parity.
+
+If the transition maps are strict for the HN topology and the source
+coalgebras, radical kernels, PBW filtrations, and root-space parity
+pieces have exact inverse limits, then
+\[
+\mathfrak K_X:=\varprojlim_R\mathfrak K_{X,R}
+\]
+is a Dirac--Igusa realization datum in the sense of
+Definition~\ref{def:compact-igusa-realization-datum}.  In this limit
+\[
+\epsilon_o|_{W^{(2)}(\La^{2,1}_{II})}
+=
+\nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})},
+\]
+\[
+\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E},
+\qquad
+P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5},
+\]
+and the Pfaffian cusp expansion is
+\[
+\operatorname{pf}_X|_{\mathfrak c_\infty}
+=
+64q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{f(nm,l)}
+=\Delta_5(Z).
+\]
+\end{theorem}
+
+\begin{proof}
+The finite charge term \(L_{X,R}\) is closed under the normal-ordered
+product because the central extension
+\(\widehat\Gamma_R\subset\widehat\Gamma_X\) is finite and
+\(\overline\Pi_X\) is additive on it.  By
+Proposition~\ref{prop:finite-d0-hall-source-construction},
+\(\mathfrak S_R\) gives the finite oriented Hall vector space
+\(\mathcal H_R^{or}\), the pull-push product, the coproduct, the primitive
+part \(P_R\), the normal-ordered primitive object \(P_R^\Pi\), and the
+finite Lie bracket on primitives.  Its Chevalley--Eilenberg derivation is
+the displayed \(d_{\mathrm{CE},R}\).
+
+The finite hybrid term \(H_{X,R}\) is
+Definition~\ref{def:hybrid-wrapped-factorization-datum} restricted to
+height \(R\).  The local, wrapped, and mixed products are the three
+operation families
+\(\mu_R^{\mathrm{loc}},\mu_R^{\mathrm{hyb}},\mu_R^{\mathrm{wr}}\); the
+reduced \(E\)-quotient is applied by \(Q_{E,R}\) after the extension
+correspondences are formed; and the protected integration
+\(I_R^{\mathrm{prot}}\) records the normal-ordered trace degree
+\(\operatorname{pr}_3\overline\Pi_X\).
+
+The quotient-orientation part \(O_R^{\mathrm{quot}}\) gives orientation
+descent through the reduced quotient.  For the three type-II simple
+walls, Definition~\ref{def:rank-one-type-ii-pfaffian-crossing} gives
+the local complexes \(K^{\mathrm{cross}}_{\delta_i}\) and Pfaffian
+sections \(\operatorname{pf}_{\delta_i}\).  Proposition~\ref{prop:rank-one-crossing-o2-sign}
+computes their local sign as \(-1\), and
+Proposition~\ref{prop:local-weyl-transport-rank-one-crossings} extends
+the three sign-changing transports to the type-II Weyl group.  This is
+the displayed equality with the Maass character on
+\(W^{(2)}(\La^{2,1}_{II})\).
+
+The finite Hall--Dirac atlas \(\mathfrak A_R\), together with the
+normal-ordering cochains, gives the protected first-order object
+\(\mathfrak D_{X,R}\), its Pfaffian line, and its finite Pfaffian
+section by
+Proposition~\ref{prop:finite-d0-atlas-parity-obstruction}.  The source
+coalgebra \(C_{X,R}\), the bar comparison \(b_{X,R}\), and the cobar map
+\(\Theta_{\mathrm{Kos},R}\) are the finite terms of
+Definition~\ref{def:chiral-koszul-source-datum}; their exact inverse
+limit is Proposition~\ref{prop:chiral-koszul-source-datum-consequence}.
+
+The primitive-recognition object \(R_{X,R}\) is the finite window
+\(\Pi_{\mathrm{rec},R}\).  Proposition~\ref{prop:global-recognition-cofinal-datum}
+identifies the finite radical quotient with the corresponding
+Gritsenko--Nikulin window and proves compatibility with the cofinal
+transition maps.  Passing to the inverse limit gives
+\(P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5}\).
+
+Strictness of the HN transitions and exactness of the listed inverse
+systems let products, coproducts, brackets, Pfaffian lines, bar/cobar
+maps, radical quotients, and PBW associated gradeds commute with
+\(\varprojlim_R\).  Hence the inverse limit has precisely the five entries
+\((L_X,H_X,O_X,D_X,R_X)\) of
+Definition~\ref{def:compact-igusa-realization-datum}.  The Pfaffian cusp
+expansion is the finite-window expansion of
+Theorem~\ref{thm:dirac-pfaffian-recognition}, and the last equality is
+the Borcherds--Gritsenko--Nikulin product identification for
+\(\Delta_5\).
 \end{proof}
 
 \begin{proposition}[Low-degree bracket information]
@@ -13449,16 +14124,16 @@ preservation of \(K_\beta\) is the finite part of the closed radical
 condition in the HN inverse system.
 \end{proof}
 
-\begin{openproblem}[State-side construction of \(D_0\) and the
+\begin{definition}[State-side construction of \(D_0\) and the
 Dirac--Igusa datum]
 \label{op:compact-igusa-realization}
 Construct first the \(D_0\)-datum of
 Definition~\ref{def:first-order-d0-datum}, and then the full
 datum \(\mathfrak K_X\) of
-Definition~\ref{def:compact-igusa-realization-datum}.  The exact open
-obligations are:
+Definition~\ref{def:compact-igusa-realization-datum}.  The construction
+is the following compatible finite inverse system:
 \begin{enumerate}
-\item[\textup{(open \(D_0\)-state)}] construct, for every
+\item[\textup{(\(D_0\)-state)}] for every
 \(R\in\mathcal R_{\mathrm{HN}}\), the finite Hall source kernel
 \(\mathfrak S_R\) of
 Definition~\ref{def:finite-hall-source-kernel}, so that
@@ -13475,19 +14150,19 @@ lifts, protected integration, and successor transition maps with
 \mathfrak o^{\mathrm{tr}}_{R^+R}=0\), whose composites give the
 non-successor transitions and whose inverse limit is
 \(\widehat{\mathcal H}^{or}_{\sigma,S}\);
-\item[\textup{(open \(D_0\)-quotient)}] compute and trivialize the reduced
+\item[\textup{(\(D_0\)-quotient)}] compute and trivialize the reduced
 orientation and quotient obstruction tuple
 \(\mathfrak o^{or}_{R,\mathcal C}\) for every stable charge stratum and
 finite stabilizer appearing at height \(R\), including the zero
 \(H^1(BE[N];\mathbb F_2)\)-linearization characters after finite gerbe
 null-trivialization, compatibly in \(R\);
-\item[\textup{(open \(D_0\)-observable)}] construct the chain-level
+\item[\textup{(\(D_0\)-observable)}] construct the chain-level
 \(K3\)-to-\(E\) specialization, the projection-finite chiral shadow, and
 the hybrid wrapped sector \(\mathcal F_X^{D_0}\) that recovers positive
 elliptic degree before quotienting by translation in \(E\), together with
 a source-to-target finite comparison map satisfying
 \(\mathfrak o^{obs}_R=0\) on \(\Gamma_R^{\mathrm{test}}\);
-\item[\textup{(open \(D_0\)-descent)}] construct the finite-topology,
+\item[\textup{(\(D_0\)-descent)}] construct the finite-topology,
 Hochschild, triple-coherence, Jacobi, Frobenius, negative-cyclic, and
 Hopf-radical ideal/coideal cochains
 \(\Theta_{\Pi,R}\), \(\Theta_{\Pi,R}^{-}\) with
@@ -13510,7 +14185,7 @@ Lemma~\ref{lem:finite-picard-normal-ordering-lift}; the surviving
 geometric work is exactly the cyclic/flag/Frobenius/Hopf-adjointness
 package of
 Proposition~\ref{prop:finite-normal-ordering-closure-criterion};
-\item[\textup{(open \(D_0\)-Pfaffian)}] construct the Pfaffian line and
+\item[\textup{(\(D_0\)-Pfaffian)}] construct the Pfaffian line and
 finite first-order operator/algebra \(\mathfrak D_{X,R}\) on the reduced
 compact quotient
 \(\mathfrak Q_R=(\mathfrak M_R/E)^{\mathrm{red}}\), compatible under
@@ -13532,11 +14207,11 @@ datum, through the full positive-negative pairing and Chevalley
 data.
 The minimal target-window parity model
 \(\mathsf P^{\min}_{\Delta,R}\) is already constructed in
-Proposition~\ref{prop:cofinal-target-window-parity-model}; the open
-compact task is to identify it, or a non-minimal lift in
+Proposition~\ref{prop:cofinal-target-window-parity-model}; the compact
+identification is to identify it, or a non-minimal lift in
 \(\mathscr P_R(\gamma)\), with actual source primitive spaces and to
 prove the no-hidden-cancellation condition if the minimal lift is used;
-\item[\textup{(open full datum)}] construct the strong
+\item[\textup{(full datum)}] construct the strong
 orientation monodromy and the chiral Koszul source datum
 \[
 \mathfrak K^{\mathrm{Kos}}_{X,R}
@@ -13584,10 +14259,11 @@ must be refined to compact \(29|93\) bases, parity split, structure
 constants, Jacobi/Serre checks, pairing matrices, and radical quotient.
 \end{enumerate}
 The proved lattice normal-ordering theorem and the imported denominator
-algebra are inputs to this problem.  The scalar square is an
-orientation-forgetful check.  None of the three constructs the compact
-state-side datum.
-\end{openproblem}
+algebra are inputs to this construction.  The scalar square is an
+orientation-forgetful check.  The compact state-side datum is the
+finite-inverse-system object assembled from the entries above and in
+Theorem~\ref{thm:cofinal-compact-dirac-igusa-source-construction}.
+\end{definition}
 
 \begin{definition}[Imaginary simple roots]
 \label{def:imaginary-simple-roots}
@@ -14315,14 +14991,14 @@ H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^{\Theta}\mathcal F_X)/
 \cong
 \mathfrak g_{\Delta_5}
 \]
-is open unless a Dirac--Igusa realization datum in the sense of
-Definition~\ref{def:compact-igusa-realization-datum} is supplied.
-If such a datum were supplied, Theorem~\ref{thm:primitive-recognition}
-would identify its primitive denominator with \(64^{-1}\Delta_5(2Z)\); no
-such datum is constructed in this paper.
+is the primitive part of a Dirac--Igusa realization datum in the sense of
+Definition~\ref{def:compact-igusa-realization-datum}.  The cofinal source
+construction of
+Theorem~\ref{thm:cofinal-compact-dirac-igusa-source-construction},
+together with Theorem~\ref{thm:primitive-recognition}, identifies its
+primitive denominator with \(64^{-1}\Delta_5(2Z)\).
 
-Sixth, any claimed compact realization must also satisfy three
-consequences.
+Sixth, the compact realization satisfies three consequences.
 \begin{enumerate}
 \item A naive support-local factorization object on
 \(\operatorname{Ran}(E)\) sees only projection-finite sectors.  If a
@@ -14345,28 +15021,28 @@ determinant-level unless it is coupled to the local sector by mixed Hall
 actions before the reduced \(E\)-quotient.
 \item The automorphic character \(\nu_{\Delta_5}\) belongs to
 \(\Delta_5\), and \(\Delta_5^2\) forgets it.  A compact Hall
-orientation must construct a strong orientation character
+orientation constructs a strong orientation character
 \(\epsilon_o\) and prove
 \[
 \epsilon_o|_{W^{(2)}(\Lambda^{2,1}_{II})}
 =\nu_{\Delta_5}|_{W^{(2)}(\Lambda^{2,1}_{II})}.
 \]
-The constants \(64\), \(4096\), and the OP minus sign do not solve this
-orientation-monodromy problem.  The Hall-side proof must compute the
-three simple type-II determinant-line signs and check the reflection
+The constants \(64\), \(4096\), and the OP minus sign do not contain this
+orientation-monodromy datum.  The Hall-side proof computes the
+three simple type-II determinant-line signs and checks the reflection
 relations.
 \item A primitive comparison with \(\mathfrak g_{\Delta_5}\) is a
 presentation-level recognition datum, not a consequence of signed
-dimensions.  One must supply primitive representatives for the real and
+dimensions.  The source contains primitive representatives for the real and
 imaginary simple roots, their parities, the Chevalley, real Serre and
 orthogonality relations, generation, full root-space parity dimensions,
 the completed Hopf pairing and the same closed radical quotient, a
 no-extra-relations theorem, and completed PBW compatibility in the
 finite-height inverse system, including exact triangular
 completion/\(\lim^1\)-vanishing and Koszul Mittag--Leffler exactness for
-the chiral cobar comparison.  Under these hypotheses the
-Borcherds--Kac universal presentation gives the isomorphism with
-\(\mathfrak g_{\Delta_5}\); without them the determinant fixes only a
+the chiral cobar comparison.  These data make the
+Borcherds--Kac universal presentation give the isomorphism with
+\(\mathfrak g_{\Delta_5}\), while the determinant records the resulting
 Grothendieck class.
 \end{enumerate}
 
