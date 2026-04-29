@@ -107,10 +107,12 @@ Pfaffian-to-automorphic line comparison, is \(\Delta_5\), and whose scalar trace
 =-4096\,\Delta_5^{-2}\); the orientation/Pfaffian datum is the
 algebraic input that distinguishes \(\Delta_5\) from \(-\Delta_5\) and
 that the squared scalar cannot recover.  Constructing
-\(\mathfrak D_X\) is the open recognition problem; this paper formulates
-the target and the orientation-character constraint
-\(\epsilon_o=\nu_{\Delta_5}\) on
-\(W^{(2)}(\Lambda_{II}^{2,1})\).
+	\(\mathfrak D_X\) is the open recognition problem; this paper formulates
+	the target and the conditional orientation-character constraint
+	\(\epsilon_o=\nu_{\Delta_5}\) on
+	\(W^{(2)}(\Lambda_{II}^{2,1})\), to be proved only after the compact
+	orientation system, Weyl transport, and type-II Pfaffian wall atlas have
+	been supplied.
 
 The scalar Behrend-weighted branch is imported from
 Oberdieck--Pixton, Oberdieck--Pandharipande, and Oberdieck.  In OP's
@@ -158,12 +160,13 @@ specialize along the K3 direction to a chiral object on
 \(\operatorname{Ran}(E)\)-support-locality obstruction in the
 K3-integrated chiral shadow by mixed local/wrapped correspondences, and
 identify the Gram-descended protected primitive bracket with
-\(\mathfrak g_{\Delta_5}\).  This paper proves the virtual
-determinant, the lattice normal-ordering theorem, and the fixed-lift
+\(\mathfrak g_{\Delta_5}\).  This paper computes the virtual determinant
+and identifies it with \(\Delta_5\) by imported Borcherds theory; proves
+the formal lattice normal-ordering theorem and the strict fixed-lift
 raw-descent obstruction; records the imported scalar and denominator
 theorems; and
 formulates that compact Hall/factorization realization as an open
-recognition problem.  The final part records the eight Clery--Gritsenko
+recognition problem.  The final part records the eight Cl\'ery--Gritsenko
 diagonal-divisor rows and the certificate required before any boundary
 row becomes a physical host.
 \end{abstract}
@@ -183,9 +186,10 @@ disappeared: disjoint insertions must still factorize and collisions
 must remember extensions.
 Throughout the compact-realization problem, \(S\) is a smooth complex
 K3 surface and \(E\) is a smooth elliptic curve; singular K3 limits,
-nodal elliptic limits, imprimitive curve-class contributions, the
-\(s=0\) compact Hall cusp, and multi-component charge closures are
-deferred boundary problems, not standing hypotheses.
+nodal or cuspidal elliptic limits, imprimitive curve-class contributions,
+the \(s=0\) compact Hall cusp, multi-component charge closures, and
+boundary closures of Hall correspondences are deferred boundary problems,
+not standing hypotheses.
 
 Thus the exposition follows the dependency chain
 \[
@@ -200,7 +204,7 @@ Thus the exposition follows the dependency chain
 \hbox{primitive recognition},\\
 \hbox{Oberdieck--Pixton/Oberdieck} & \rightsquigarrow_{\mathrm{checks}} &
 \hbox{orientation-forgetful scalar square},\\
-\hbox{Clery--Gritsenko rows} & \rightsquigarrow_{\mathrm{certificate}} &
+\hbox{Cl\'ery--Gritsenko rows} & \rightsquigarrow_{\mathrm{certificate}} &
 \hbox{boundary host tests}.
 \end{array}
 \]
@@ -227,7 +231,7 @@ charge-completed holomorphic \(E_3\)-factorization algebra
 \[
 \mathcal A^{E_3}_X,\qquad X=K3\times E,
 \]
-then a chain-level K3-to-\(E\) specialization
+then a chain-level \(K3\)-to-\(E\) specialization
 \[
 \mathcal F_X^{(0)}\simeq
 \mathrm{Sp}^{\mathrm{ch}}_{K3,E}(\mathcal A^{E_3}_X)
@@ -334,13 +338,13 @@ character remains part of the open Dirac--Igusa realization certificate.
 
 \paragraph{Eight-row host certificates.}
 The diagonal-divisor boundary problem concerns the eight
-Clery--Gritsenko forms
+Cl\'ery--Gritsenko forms
 \[
 \Delta_5,\Delta_2,\Delta_1,\Delta_{1/2},
 \nabla_3,\nabla_2,\nabla_{3/2},Q_1 .
 \]
 Rows \(1\)--\(4\) have Gritsenko--Nikulin denominator theorems.  Rows
-\(5\)--\(8\) have Clery--Gritsenko products and Govindarajan CHL/WKB
+\(5\)--\(8\) have Cl\'ery--Gritsenko products and Govindarajan CHL/WKB
 denominator theorems; \(F_7=\nabla_{3/2}\) is on the required
 \(\mu_4\)-multiplier cover.  A physical host for any boundary row
 requires a certificate fixing the modular group or cover, character,
@@ -357,7 +361,7 @@ an automorphic product plus any separately proved denominator theorem.
 Structural level & Claim strength & Content \\
 \hline
 Virtual determinant &
-proved here from \(K_0\) data plus imported Borcherds product &
+computed/imported from \(K_0\) data plus the Borcherds product &
 \(\mathcal D_X=\Delta_5\).  No canonical half-Hilbert space or operator
 product is constructed. \\
 Scalar Behrend square &
@@ -570,17 +574,17 @@ For an open \(U\subset X=K3\times E\), let
 \Gamma_X^{\mathrm{alg}}\subset\Gamma_X^{\mathrm{form}}\) be the supplied
 algebraic/effective charge support.  For
 \(c\in\Gamma_{X,\sigma}^{\mathrm{eff}}(U)\), let
-\(\mathfrak M_c(U)\) denote the derived moduli stack of compactly
-supported B-branes on \(U\) of Mukai charge \(c\), in the sense of
-Pantev--Toen--Vaquie--Vezzosi \cite{PTVV2013}, so that
-\(\mathfrak M_c(U)\) carries a \((-1)\)-shifted symplectic structure;
-let \(\Phi_c\) denote the perverse sheaf of vanishing cycles of any
-local d-critical chart, in the sense of
-Brav--Bussi--Dupont--Joyce--Szendroi \cite{BBDJS2015} (BPS sheaf, alias
-DT sheaf), well defined globally as a pre-D-critical structure on
-\(\mathfrak M_c(U)\); let \(o_c\) denote the orientation line, a
-square root of the determinant line of the cotangent complex of
-\(\mathfrak M_c(U)\), supplied as part of the Hall datum.  The
+\(\mathfrak M_c(U)\) denote the supplied derived moduli stack of
+compactly supported B-branes on \(U\) of Mukai charge \(c\).  The PTVV
+theorem supplies the ambient \((-1)\)-shifted symplectic structure on the
+CY3 perfect-complex moduli problem \cite{PTVV2013}; the compactly
+supported, reduced, equivariant Hall object used here is additional
+protected-sector input.  Let \(\Phi_c\) denote the BBDJS perverse sheaf
+\(P^\bullet_{\mathfrak M_c,s_c}\) on an oriented d-critical truncation,
+when such a d-critical structure and square-root orientation have been
+supplied \cite[Theorem~6.9]{BBDJS2015}.  Let \(o_c\) denote the
+orientation line, a square root of the determinant line of the cotangent
+complex of \(\mathfrak M_c(U)\), supplied as part of the Hall datum.  The
 \emph{local protected observable algebra of \(X\) on \(U\)} is the
 conditional source object
 \[
@@ -618,8 +622,10 @@ The components are external assumptions:
 PTVV \((-1)\)-shifted symplectic structure on derived moduli of
 B-branes \cite{PTVV2013}; BBDJS vanishing-cycle perverse sheaf and its
 Thom--Sebastiani isomorphism (extending Massey 2001 and Saito 1990 to
-the d-critical setting \cite{MasseyST,SaitoMHM}) \cite{BBDJS2015}; orientation lines from the
-Joyce--Upmeier orientation theory \cite{JoyceUpmeier} or
+the d-critical setting \cite{MasseyST,SaitoMHM})
+\cite[Theorem~6.9]{BBDJS2015}; orientation lines and
+Joyce--Upmeier-compatible multiplicative orientation data supplied
+separately \cite[Theorem~4.1]{JoyceUpmeier} or
 Kontsevich--Soibelman \cite{KSCoHA}.  The factorization map relies on
 disjoint-supports Ext-vanishing for compactly supported branes
 (absent for non-compact supports, where one recovers chiral algebra
@@ -1425,13 +1431,47 @@ the supplied normal-mode model has
 N_{\delta_1}^{\mathrm{Pf}}=N_{\delta_2}^{\mathrm{Pf}}
 =N_{\delta_3}^{\mathrm{Pf}}=1 .
 \]
-This local normal form is part of the hypothesis.  The Borcherds divisor
-order and the Maass character give an independent automorphic target
-check after the local model is supplied; they do not construct the Hall
-orientation line and do not use scalar normalization.
-For the global orientation-character conclusion below, \textup{(O2)} also
-includes the component, boundary, overlap, quotient, and protected
-integration compatibility package of
+	This local normal form is part of the hypothesis.  The Borcherds divisor
+	order and the Maass character give an independent automorphic target
+	check after the local model is supplied; they do not construct the Hall
+	orientation line and do not use scalar normalization.
+	At finite height \(R\), once (O1) supplies the quotient orientation line,
+	(O1)\(^+\) supplies a normalized lift
+		\(\tau_{i,R,S}:o_{R,S}\to s_{\delta_i}^*o_{R,S}\), and the O2/hybrid
+		residual for \(\delta_i\) vanishes, the supplied finite-stage sign is
+		the monodromy of the Pfaffian section along the wall-reflection loop.
+		In a local chart
+	with
+	\[
+	K^{\mathrm{nor}}_{\delta_i,R}\simeq
+	[\mathbb R\xrightarrow{\,u_i\,}\mathbb R],
+	\qquad
+	\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_i,R})=\upsilon_i u_i,
+	\qquad s_{\delta_i}(\upsilon_i)=\upsilon_i,
+	\]
+	let \(\ell_{\delta_i,R,S}\) be the path in the reduced quotient
+	wall-complement carrying \(u_i=\epsilon\) to \(u_i=-\epsilon\), closed by
+	the Weyl lift \(\tau_{i,R,S}\).  Then
+	\[
+	M_{\ell_{\delta_i,R,S}}(\upsilon_i u_i)
+	=\upsilon_i(-u_i)
+	=-\upsilon_i u_i,
+	\]
+	so
+	\[
+	\epsilon_{o,R}(s_{\delta_i})
+	=(-1)^{N^{\mathrm{Pf}}_{\delta_i,R}} .
+	\]
+		For the supplied rank-one type-II normal models this gives the
+		certificate implication
+		\(\epsilon_{o,R}(s_{\delta_i})=-1\).  It becomes compact Hall
+		monodromy only after the quotient-orientation classes, the projective
+		cocycle \([c_o]\), the torsor defects \(\omega_{i,\mathcal C}\), the
+		finite-stabilizer characters \(\lambda^{E,N}\), the O2/hybrid residuals,
+		and \(\mathfrak O_{\mathrm{hyb},R}\) vanish compatibly in \(R\).
+	For the global orientation-character conclusion below, \textup{(O2)} also
+	includes the component, boundary, overlap, quotient, and protected
+	integration compatibility package of
 Proposition~\ref{prop:o2-hybrid-compatibility-obstruction}; the generic
 wall sign by itself is not a global Weyl-transport datum.
 
@@ -1459,7 +1499,8 @@ $$
 \operatorname{Tr}_{\mathrm{prot}}\bigl((-1)^F\,\mathfrak D_X^{-2}\bigr)
 \;=\;-4096\,\Delta_5^{-2}.
 $$
-\item[\textup{(ii)}] (\emph{Three-sign identification and Weyl character.})  For the three
+\item[\textup{(ii)}] (\emph{Three-sign identification and Weyl character.})  For the supplied
+orientation character and for the three
 type-II simple reflections \(\delta_i\) of the Weyl chamber
 \(\Poly_{II}\) of Section~\textup{The Weyl chamber and the Weyl vector}
 (notation \(\delta_1=2f_2-f_3\), \(\delta_2=2f_{-2}-f_3\),
@@ -1496,6 +1537,97 @@ and its orientation monodromy character is the Maass character
 \(\nu_{\Delta_5}\) restricted to \(W^{(2)}(\La^{2,1}_{II})\).
 \end{enumerate}
 \end{theorem}
+
+\begin{definition}[Finite orientation construction target]
+\label{def:finite-orientation-construction-target}
+Fix a finite HN height \(R\).  A finite construction of
+\textup{(O1)}, \textup{(O1)}\(^+\), and \textup{(O2)} is the vanishing of
+\[
+\mathfrak O_R^{\mathrm{or}}
+=
+\left(
+\mathfrak O_R^{\mathrm{O1}},
+\mathfrak O_R^{\mathrm{O1+}},
+\{\mathfrak O_{\delta_i,R}^{\mathrm{O2/hyb}}\}_{i=1}^3,
+\mathfrak o_{R'R}^{\mathrm{or,tr}}
+\right).
+\]
+Here \(\mathfrak O_R^{\mathrm{O1}}=0\) means that, on every object,
+extension, and flag stratum \(S\),
+\[
+\alpha^{\mathrm{red}}_{R,S}=0,\qquad
+\alpha^{E,\mathrm{free}}_{R,S}=0,\qquad
+\widetilde\beta^{E,N}_{R,S}=0,\qquad
+\lambda^{E,N}_{R,S}=0,
+\]
+with the odd, \(N=2\), and higher even \(E[N]\)-cases computed as in
+Corollary~\ref{cor:finite-stabilizer-o1-obstruction}, and with all
+Thom--Sebastiani orientation transports and flag coherences trivialized.
+The condition \(\mathfrak O_R^{\mathrm{O1+}}=0\) means that the retained
+type-II wall transports define a finite action-groupoid cocycle
+\(c_{o,R}\), that
+\[
+c_{o,R}=\delta a_R^{\mathrm{or}},\qquad
+\widetilde\tau_{i,R}^{\,2}=1,\qquad
+\omega_{i,R,S}=0,
+\]
+and that these choices are compatible with successor maps \(R'\to R\).
+For each \(i\), the condition
+\(\mathfrak O_{\delta_i,R}^{\mathrm{O2/hyb}}=0\) means that the wall
+object lies in the same finite hybrid correspondence system, that the
+reduced wall complex splits
+\[
+K^{\mathrm{red}}_{\delta_i,R}
+\simeq K^{\mathrm{tan}}_{\delta_i,R}\oplus K^{\mathrm{nor}}_{\delta_i,R},
+\qquad
+K^{\mathrm{nor}}_{\delta_i,R}\simeq
+[\mathbb R\xrightarrow{u_{\delta_i,R}}\mathbb R],
+\]
+and that
+\[
+s_{\delta_i}(u_{\delta_i,R})=-u_{\delta_i,R},\qquad
+\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_i,R})
+=\upsilon_{\delta_i,R}u_{\delta_i,R},\qquad
+s_{\delta_i}(\upsilon_{\delta_i,R})=\upsilon_{\delta_i,R}.
+\]
+The wall charts must cover every retained component and boundary stratum
+of \(\Hpl_{\delta_i}\), and on overlaps the tangent/normal splittings,
+normal Pfaffian units, quotient orientations, and protected integration
+maps must agree after a zero Cech sign class.  The middle wall
+\(\delta_2\leftrightarrow(0,1,1)\) must be represented by a retained
+wrapped wall object
+\[
+x_{\delta_2,R}\in\mathcal M_{\eta,R}^{\mathrm{wr,rig}},
+\qquad b_R(\eta)=1,\qquad \overline\Pi_X(\eta)=(0,1,1),
+\]
+together with its rigidifying anchor, unreduced and reduced deformation
+complexes, quotient-compatible tangent/normal splitting, and protected
+integration compatibility in the sense of
+Proposition~\ref{prop:o2-hybrid-compatibility-obstruction}.
+No Maass character or scalar normalization is part of this construction.
+\end{definition}
+
+\begin{lemma}[Local Pfaffian wall sign]
+\label{lem:local-pfaffian-wall-sign}
+Assume the \(\delta_i\)-chart in
+Definition~\ref{def:finite-orientation-construction-target}.  Then
+\[
+s_{\delta_i}^*\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_i,R})
+=-\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_i,R}),\qquad
+s_{\delta_i}^*\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_i,R})^2
+=\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_i,R})^2.
+\]
+\end{lemma}
+
+\begin{proof}
+The invariant unit is fixed by \(s_{\delta_i}\), while
+\(u_{\delta_i,R}\) is anti-invariant.  Hence
+\[
+s_{\delta_i}^*(\upsilon_{\delta_i,R}u_{\delta_i,R})
+=-\upsilon_{\delta_i,R}u_{\delta_i,R}.
+\]
+Squaring removes the sign.
+\end{proof}
 
 \(D_0\) has the status split of
 Theorem~\ref{thm:first-order-d0-certificate}: the normal-ordered lattice
@@ -1660,8 +1792,9 @@ decategorified primitive content, the formal product
 \(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)\), and the formal
 character equality is the orientation-character identity of (ii).  At
 the chosen isotropic cusp \(\mathfrak c_\infty\) this decategorification
-is the Borcherds product, and the orientation monodromy character is
-\(\nu_{\Delta_5}\) on the type-II Weyl group as computed.
+is the Borcherds product.  The supplied O1/O1\(^+\)/O2 character is
+\(\nu_{\Delta_5}\) on the type-II Weyl group.  Without those supplied
+data, the Maass character remains an automorphic target check.
 \end{proof}
 
 \begin{lemma}[Conditional Pfaffian signs on the type-II simple walls]
@@ -1738,7 +1871,7 @@ The computation is:
 \begin{tabular}{p{0.16\textwidth}p{0.31\textwidth}p{0.13\textwidth}p{0.13\textwidth}p{0.12\textwidth}}
 \hline
 \(\delta_i\) & Gram label & \(N_{\delta_i}^{\mathrm{Pf}}\) &
-\(d_{\delta_i}^{\mathrm{aut}}\) & \(\epsilon_o\) \\
+\(d_{\delta_i}^{\mathrm{aut}}\) & conditional Hall sign \\
 \hline
 \(\delta_1=2f_2-f_3\) &
 \((n,l,m)=(1,1,0)\), \(f(0,1)=1\) & \(1\) & \(1\) & \(-1\) \\
@@ -2320,7 +2453,7 @@ $$1+\frac1{64}\sum_{t\geq1}c_\Delta(1+2t,1,1)q^t
 $$\mathcal H_{\mathrm{diag}}
 =\left\{\begin{pmatrix}a&0\\0&b\end{pmatrix}\mid
 a,b\in\mathbb H_1\right\}.$$
-Gritsenko--Cl\'ery \cite{GC}, $N=1$:
+Cl\'ery--Gritsenko \cite{GC}, $N=1$:
 $$\operatorname{supp}\operatorname{div}(\Delta_5)
 =\Sp_4(\Z)\cdot\mathcal H_{\mathrm{diag}},\qquad
 \operatorname{mult}_{\mathcal H_{\mathrm{diag}}}(\Delta_5)=1.$$
@@ -2487,9 +2620,9 @@ weight is
 \(\operatorname{Borch}_{\theta}(\phi_{0,1})\) with \(\Delta_5\) via the
 Igusa identification \((\mathcal D_X=\Delta_5)\) fixes
 $\operatorname{wt}(\Delta_5)=5$.  Setting $c_1(0):=f(0,0)$ exhibits the
-row $(N=1,\,\operatorname{wt}=5,\,c_1(0)=10)$ of the Gritsenko--Cl\'ery
+row $(N=1,\,\operatorname{wt}=5,\,c_1(0)=10)$ of the Cl\'ery--Gritsenko
 catalogue \cite{GC}; the remaining integral and half-integral
-Clery--Gritsenko rows are listed in \cite[Theorem 1.4]{GC}.  Integrality
+Cl\'ery--Gritsenko rows are listed in \cite[Theorem 1.4]{GC}.  Integrality
 \(\operatorname{wt}(\Delta_5)\in\Z\) means that no metaplectic cover is
 required for the weight factor.  The Hodge automorphic line
 \(\mathcal L^5\) remains nontrivial, and the Maass character
@@ -2657,8 +2790,10 @@ the quotient by \(E\).  Bryan's Hilbert-scheme normalization and
 Oberdieck's stable-pair normalization are exactly the quotient
 Behrend-weighted Euler characteristics \cite{BRYAN},
 \cite{OberdieckReducedPT}.  Oberdieck proves the quotient stable-pair
-definition equals the reduced incidence invariant and proves the
-reduced DT/PT comparison for nonzero K3 class.  These statements produce
+definition equals the reduced incidence invariant
+\cite[Theorem~1]{OberdieckReducedPT} and proves the reduced DT/PT
+comparison for nonzero K3 class \cite[Theorem~3(i)]{OberdieckReducedPT}.
+These statements produce
 integers indexed by \((\beta,d,n)\); no algebra object or primitive
 projection is constructed.
 \end{proof}
@@ -2965,10 +3100,13 @@ to the cosection vanishing locus
 \mathfrak M_{\mathcal C}\) is non-degenerate on the OP/DT
 D6--D2--D0 stratum, with virtual dimension shifted by one,
 \(\mathrm{vd}^{\mathrm{red}}_{\mathcal C}=\mathrm{vd}^{\mathrm{std}}_{\mathcal C}+1\).
-Under the BBDJS \cite{BBDJS2015} Pin-to-Spin lift of
-the BBDJS line of Definition~\ref{def:orientation-line}, this dimension
-shift propagates as a \(\mathbb Z/2\)-grading shift on the orientation
-line:
+After a reduced square-root orientation datum has been supplied, this
+dimension shift would propagate as a \(\mathbb Z/2\)-grading shift on the
+orientation line.  This is the analogue, in the reduced \(K3\times E\)
+rank-one sector, of the square-root sign choice in the BBDJS oriented
+d-critical formalism \cite[Theorem~6.9]{BBDJS2015}, together with a
+separately supplied Joyce--Upmeier-compatible multiplicative orientation
+datum \cite[Theorem~4.1]{JoyceUpmeier}:
 $$
 o^{\mathrm{red}}_{\mathcal C}
 \;=\;o^{\mathrm{std}}_{\mathcal C}\otimes\Pi,
@@ -2977,21 +3115,66 @@ where \(\Pi\) is the parity-flip line generated by the cosection cokernel.
 The strong orientation certificate \textup{(O1)} includes the coherence
 datum that makes this shift commute with the extension correspondences of
 Definition~\ref{def:protected-hall-integration-criterion} and preserves
-the Joyce--Upmeier multiplicative cocycle of (P2).  The Oberdieck monic
-normalization \cite{OberdieckReducedPT} fixes the scalar parity branch,
-and the Hall extension coherence is the corresponding \textup{(O1)}
-residual.  The parity-flip is absorbed into (O1):
+the Joyce--Upmeier multiplicative cocycle of (P2).  Oberdieck proves the
+quotient/incidence comparison in \cite[Theorem~1]{OberdieckReducedPT} and
+the reduced DT/PT comparison for nonzero K3 class in
+\cite[Theorem~3(i)]{OberdieckReducedPT}.  This fixes the scalar reduced
+PT/DT comparison, not an orientation branch.  The parity-flip is absorbed
+into (O1):
 the strong orientation line
 \(o_{\mathcal C}\) demanded by
 Theorem~\ref{thm:dirac-pfaffian-recognition-conditional} is, on the
 reduced sector, \(o^{\mathrm{red}}_{\mathcal C}\), not the unreduced
 BBDJS line, and the squaring isomorphism is to the reduced derived
 self-Ext
-\(\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)
-=\operatorname{cofib}(\sigma_{K3}\colon
-\operatorname{RHom}(\mathcal C,\mathcal C)[-2]\to\operatorname{RHom}(\mathcal C,\mathcal C))\).
-Operationally this parity shift belongs to the reduced orientation
-datum and to any eventual Berezinian convention for a compact
+	\(\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)
+	=\operatorname{cofib}(\sigma_{K3}\colon
+	\operatorname{RHom}(\mathcal C,\mathcal C)[-2]\to\operatorname{RHom}(\mathcal C,\mathcal C))\).
+	On \(X=S\times E\), with \(\sigma=\operatorname{pr}_S^*\sigma_S\), the
+	chain-level cosection on a perfect object \(F\) is the semiregularity map
+	\[
+	\operatorname{cs}_F(\xi)=
+	\int_X\sigma\wedge
+	\operatorname{Tr}\bigl((\xi\otimes1_{\Omega_X^1})
+	\circ\operatorname{At}(F)\bigr),
+	\qquad
+	\xi\in\operatorname{Ext}^2(F,F),
+	\]
+	or equivalently a degree-one map
+	\[
+	\operatorname{CS}_F:
+	R\Gamma R\mathcal Hom(F,F)[1]\longrightarrow\mathbb C[1].
+	\]
+	For a universal exact triangle \(A\to C\to B\to A[1]\), this cosection is
+	additive on the filtered Hall deformation complex:
+	\[
+	q^*\operatorname{CS}_C
+	=
+	p_1^*\operatorname{CS}_A+p_2^*\operatorname{CS}_B .
+	\]
+	Consequently the cosection part of reduced Thom--Sebastiani descent
+	vanishes on the actual exact-triangle and two-step flag stacks.  This is
+	not an equality on the unrestricted obstruction complex of the middle
+	object.  With a local splitting of the extension,
+	\[
+	\operatorname{At}(C)=
+	\begin{pmatrix}
+	\operatorname{At}(A)&\nabla e\\
+	0&\operatorname{At}(B)
+	\end{pmatrix},
+	\]
+	a lower off-filtration obstruction
+	\(\zeta\in\operatorname{Ext}^2(A,B)\) gives the residual
+	\[
+	\mathcal R_{A,B}(\zeta)=
+	\int_X\sigma\wedge\operatorname{Tr}(\zeta\circ\nabla e).
+	\]
+	For \(A=B=k_x\), an \(E\)-direction extension class \(e\), and K3-plane
+	\(\zeta\) with \(\sigma_S(\zeta)=1\), this residual is nonzero.  Thus
+	reduced TS is healed precisely by restricting to the filtered Hall
+	correspondence; an unrestricted middle-object statement is false.
+	Operationally this parity shift belongs to the reduced orientation
+	datum and to any eventual Berezinian convention for a compact
 first-order object.  The overall minus in
 \(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\) is the scalar OP/DT branch
 convention.  It may be compatible with a chosen fermionic grading, but
@@ -3944,20 +4127,22 @@ are the displayed Borel-equivariant \(H^2\) and \(H^1\) groups, whereas a
 scalar automorphic character is not a class in them.
 \end{proof}
 
-\begin{lemma}[Rank-one Pin-lift sign rigidification conditional on a supplied lift]
+\begin{lemma}[Rank-one orientation-sign rigidification conditional on a supplied lift]
 \label{lem:spin-lift-sign-fixing}
-Assume the BBDJS Pin\(^c\) lift \cite{BBDJS2015} of the \(\SO\)-frame
-bundle of
+Assume that, after the ordinary reduced gerbe class has vanished, a
+square-root orientation lift of
 \(\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)\) on
-\(\mathfrak M^{\mathrm{red},(1)}_{(1,\beta,n)}\) has been constructed
-after the ordinary reduced gerbe class has vanished.  Its underlying
-\(\SO\)-bundle determines it only up to a global \(\mathbb Z/2\)
-ambiguity
+\(\mathfrak M^{\mathrm{red},(1)}_{(1,\beta,n)}\) has been constructed in
+the reduced \(K3\times E\) Hall datum.  This is the analogue, in the
+reduced rank-one sector, of the square-root sign choice in the BBDJS
+oriented d-critical formalism \cite[Theorem~6.9]{BBDJS2015}, together
+with a separately supplied Joyce--Upmeier-compatible multiplicative
+orientation datum \cite[Theorem~4.1]{JoyceUpmeier}; it is not supplied by
+those theorems alone.  The lift determines the orientation only up to a
+global \(\mathbb Z/2\) ambiguity
 \(\eta_{\mathcal C}\in
-H^0(\mathfrak M^{\mathrm{red},(1)}_{(1,\beta,n)};\mathbb Z/2)\), the
-kernel of the surjection
-\(\mathrm{Pin}^c\twoheadrightarrow\SO\) acting on global sections of the
-lift.  On the rank-one D6--D2--D0 stratum, this residual sign is
+H^0(\mathfrak M^{\mathrm{red},(1)}_{(1,\beta,n)};\mathbb Z/2)\).  On the
+rank-one D6--D2--D0 stratum, this residual sign is
 rigidified by the following data, jointly:
 \begin{enumerate}
 \item[(S1)] the Joyce--Upmeier orientability cocycle
@@ -3999,9 +4184,9 @@ are part of \textup{(O1)} and \textup{(O1)}\(^+\), including the connected
 \end{lemma}
 
 \begin{proof}
-The \(\mathrm{Pin}^c\twoheadrightarrow\SO\) sequence has kernel \(\mathbb Z/2\),
-so on a connected component the global lift is unique up to multiplying
-by a constant element of this kernel; on the disconnected components of
+On a connected component the supplied square-root orientation lift is
+unique up to multiplying by a constant sign; on the disconnected
+components of
 \(\mathfrak M^{\mathrm{red},(1)}_{(1,\beta,n)}\) (indexed by the
 discrete Mukai-charge label \((1,\beta,n)\), connected within each
 fixed charge by the Beauville--Mukai moduli construction
@@ -4009,17 +4194,20 @@ fixed charge by the Beauville--Mukai moduli construction
 \(\eta\colon\pi_0\mathfrak M^{\mathrm{red},(1)}\to\{\pm 1\}\).
 
 \emph{(S1)} fixes the multiplicative compatibility that any extension of
-\(\eta\) to Hall direct-sum or HN correspondence strata must satisfy: by
-Joyce--Upmeier
-\cite[Theorem~5.1]{JoyceUpmeier}, the orientation cocycle on the
-extension correspondence
-\(\mathfrak M^{\mathrm{red},(1)}_{\mathcal C}\times
-\mathfrak M^{\mathrm{red},(1)}_{\mathcal C'}\to
-\mathfrak M^{\mathrm{red},(1)}_{\mathcal C+\mathcal C'}\) is the Mukai
-parity \((-1)^{\langle\mathcal C,\mathcal C'\rangle_{\mathrm{Mukai}}}\),
-and the BBDJS Pin\(^c\) lift respects this cocycle by
-\cite[\S5.4]{BBDJS2015} together with the cosection-twist compatibility
-of \cite{CaoKoolMonavari}.  Hence an already supplied extension of
+\(\eta\) to Hall direct-sum or HN correspondence strata must satisfy: the
+supplied Joyce--Upmeier-type multiplicative orientation isomorphism on the
+retained exact-triangle correspondence is required to have the Mukai parity
+sign
+\[
+(-1)^{\langle\mathcal C,\mathcal C'\rangle_{\mathrm{Mukai}}}.
+\]
+This is a convention and compatibility condition in the reduced Hall datum,
+not a consequence of Joyce--Upmeier alone on the \(K3\times E\) quotient.
+The BBDJS oriented d-critical formalism and the cosection-twist
+compatibility of \cite{BBDJS2015,CaoKoolMonavari} are background
+orientation technologies; the reduced quotient multiplicative sign is
+still part of the supplied \textup{(O1)} datum.  Hence an already supplied
+extension of
 \(\eta\) must be multiplicative modulo the Mukai parity.  This does not
 show that all rank-one charge components are generated by one component.
 
@@ -4052,11 +4240,11 @@ extension to other rank-one charge components or to HN sums remains a
 separate orientation datum.
 
 The choice is determinate once the ordinary lift and quotient
-linearizations have been supplied.  This is the analogue, on the
-cosection-twisted reduced \(K3\times E\) rank-one sector, of the BBDJS
-Pin lift sign convention of \cite[\S5.4]{BBDJS2015} and the
-Joyce--Upmeier rigidification by Pfaffian normalization data
-\cite{JoyceUpmeier}.  It is not a proof that
+linearizations have been supplied.  This is a reduced Hall orientation
+sign convention informed by the BBDJS oriented d-critical formalism
+\cite[Theorem~6.9]{BBDJS2015} and by a separately supplied
+Joyce--Upmeier-compatible multiplicative orientation datum
+\cite[Theorem~4.1]{JoyceUpmeier}.  It is not a proof that
 \(\alpha^{E,\mathrm{free}}_{\mathcal C}\) or
 \(\beta^{E,E[2]}_{\mathcal C}\) vanishes.
 \end{proof}
@@ -4671,6 +4859,18 @@ The \(\Gamma_{\mathrm{gram}}\)-graded Igusa object is obtained only
 after normal-ordered Gram pushforward along \(\overline\Pi_X\), or by a
 chain-level categorification of the same subtraction.
 \end{definition}
+
+\begin{lemma}[Group law of the normal-ordered charge extension]
+\label{lem:normal-ordered-extension-group-law}
+The operation \(\star\) of
+Definition~\ref{def:gram-corrected-charge-extension} makes
+\(\widehat\Gamma_X\) an abelian group with identity \((0,0)\) and inverse
+\[
+(c,T)^{-1}=(-c,-T+B(c,c)).
+\]
+The section \(s(c)=(c,\Pi_X(c))\) is additive for \(\star\), and
+\(\overline\Pi_X\) is a homomorphism.
+\end{lemma}
 
 \begin{proof}
 By Lemma~\ref{lem:b-cocycle-central-extension}(i),(iii),(iv), \(\star\) is
@@ -5515,9 +5715,11 @@ the state-side Hall object, the orientation/Pfaffian line, the
 normal-ordered Gram descent, and the chiral Koszul comparison before
 one may identify its primitives with \(\mathfrak g_{\Delta_5}\).
 Throughout this compact realization problem, \(S\) is a smooth complex
-K3 surface and \(E\) is a smooth elliptic curve; singular K3 limits and
-nodal or cuspidal elliptic degenerations belong to the boundary
-certificate, not to the standing compact source datum.
+K3 surface and \(E\) is a smooth elliptic curve; singular K3 limits,
+nodal or cuspidal elliptic degenerations, imprimitive curve-class
+contributions, the \(s=0\) compact Hall cusp, and multi-component charge
+closures belong to separate boundary certificates, not to the standing
+compact source datum.
 
 \begin{definition}[Formal current envelope]
 Let $E$ be the elliptic curve in $X=S\times E$.  Put
@@ -5610,7 +5812,7 @@ labelled comparison map:
 \xrightarrow{\ \kappa_E\ }
 \mathcal F_X^{(1)}
 \xrightarrow{\ \pi_*^{\mathrm{ch}}\ }
-(p_E)_*\mathcal A^{E_3}_X.
+(p_E)_!^{\mathrm{fact}}\mathcal A^{E_3}_X.
 \]
 Here:
 \(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\) is required to be a chain-level
@@ -5625,23 +5827,134 @@ transition squares are part of the supplied datum; its output
 \(\mathcal F_X^{(0)}\to\mathcal F_X^{(1)}\), not the source cobar
 comparison \(\Theta_{\mathrm{Kos}}\),
 where \(\mathcal F_X^{(1)}\) is the candidate identification of the
-chiral pushforward with the ordinary derived pushforward
-\((p_E)_*\mathcal A^{E_3}_X\) regarded as a sheaf-of-cochain factorization
-algebra on \(\operatorname{Ran}(E)\); identification of
-chiral and ordinary pushforward is the open chiral-Koszul comparison.
-\(\pi_*^{\mathrm{ch}}\) is required to be the closing identification of
-\(\mathcal F_X^{(1)}\) with \((p_E)_*\mathcal A^{E_3}_X\) as
-factorization data, comparing the Costello--Gwilliam push along a
-proper holomorphic submersion with the topological pushforward; this
+chiral pushforward with the ordinary factorization pushforward
+\((p_E)_!^{\mathrm{fact}}\mathcal A^{E_3}_X\) regarded as a
+sheaf-of-cochain factorization algebra on \(\operatorname{Ran}(E)\);
+ordinary \(*\)- and exceptional \(!\)-pushforward agree only after the
+finite constructibility and proper-support defects vanish.  Identification
+of chiral and ordinary factorization pushforward is the open rectification
+comparison.
+		\(\pi_*^{\mathrm{ch}}\) is required to be the closing identification of
+		\(\mathcal F_X^{(1)}\) with
+		\((p_E)_!^{\mathrm{fact}}\mathcal A^{E_3}_X\) as
+	factorization data, comparing the Costello--Gwilliam push along a
+	proper holomorphic submersion with the topological pushforward; this
 comparison is required to reduce to the standard projection-finite
-comparison and is open in the wrapped sectors.  The convenient shorthand
-\(\mathcal F_X\) refers to any one of \(\mathcal F_X^{(0)}\),
-\(\mathcal F_X^{(1)}\), or \((p_E)_*\mathcal A^{E_3}_X\) once
-\(\kappa_E\) and \(\pi_*^{\mathrm{ch}}\) have been supplied.  Without
-the chiral-Koszul comparison and the proper-pushforward identification,
-the three names are distinct objects.
-Restrictions to chambers, pushforwards to \(E\), and chiral Koszul
-dualities are then operations on \(\mathcal A^{E_3}_X\) and on its
+	comparison and is open in the wrapped sectors.  The words ``chiral
+	algebra on \(E\), equivalently factorization algebra on
+	\(\operatorname{Ran}(E)\)'' always mean a chosen Beilinson--Drinfeld /
+	Costello--Gwilliam / formality comparison inside the supplied model
+	categories, not an unqualified equality of theories.  The convenient shorthand
+		\(\mathcal F_X\) refers to any one of \(\mathcal F_X^{(0)}\),
+		\(\mathcal F_X^{(1)}\), or
+		\((p_E)_!^{\mathrm{fact}}\mathcal A^{E_3}_X\) once
+		\(\kappa_E\) and \(\pi_*^{\mathrm{ch}}\) have been supplied.  Without
+		the rectification comparison and the factorization-pushforward identification,
+		the three names are distinct objects.
+	At finite height this means a diagram, for every successor \(R^+\to R\),
+	\[
+	\begin{tikzcd}
+	\mathcal A^{E_3}_{X,R^+}
+	\arrow[r,"\mathrm{Sp}_{R^+}"]
+	\arrow[d,"\rho_{R^+R}"']
+	&
+	\mathcal F^{(0)}_{X,R^+}
+	\arrow[r,"\kappa_{E,R^+}"]
+	\arrow[d,"\tau^{(0)}_{R^+R}"']
+	&
+	\mathcal F^{(1)}_{X,R^+}
+	\arrow[r,"\pi^{\mathrm{ch}}_{*,R^+}"]
+	\arrow[d,"\tau^{(1)}_{R^+R}"']
+	&
+	(p_E)_!^{\mathrm{fact}}\mathcal A^{E_3}_{X,R^+}
+	\arrow[d,"(p_E)_!^{\mathrm{fact}}\rho_{R^+R}"]
+	\\
+	\mathcal A^{E_3}_{X,R}
+	\arrow[r,"\mathrm{Sp}_{R}"]
+	&
+	\mathcal F^{(0)}_{X,R}
+	\arrow[r,"\kappa_{E,R}"]
+	&
+	\mathcal F^{(1)}_{X,R}
+	\arrow[r,"\pi^{\mathrm{ch}}_{*,R}"]
+	&
+	(p_E)_!^{\mathrm{fact}}\mathcal A^{E_3}_{X,R}
+	\end{tikzcd}
+		\]
+		commuting up to specified homotopy.  Concretely, the finite datum must
+		fix dg/enriched model categories, or stable \(\infty\)-categories with
+		an equivalent rectification calculus,
+		\[
+		\mathcal C_R^X,\qquad
+		\mathcal C_R^0,\qquad
+		\mathcal C_R^1,\qquad
+		\mathcal C_R^{\mathrm{hyb}},
+		\]
+		for the height-\(R\) holomorphic \(E_3\)-source, the BD/CG
+		projection-finite chiral shadow on \(\operatorname{Ran}(E)\), the
+		ordinary factorization pushforward, and the hybrid correspondence-module
+			category with \(Q_{E,R}\), together with chosen cofibrant-fibrant
+			representatives in the model-category case.  The displayed finite
+			diagram category must carry a projective/Reedy-type model structure,
+			or the stable \(\infty\)-categorical replacement must supply the same
+			rectification and coherence calculus.  The transition identities
+		\[
+		\tau^{(0)}_{R^+R}\mathrm{Sp}_{R^+}
+		=\mathrm{Sp}_{R}\rho_{R^+R},\qquad
+		\tau^{(1)}_{R^+R}\kappa_{E,R^+}
+		=\kappa_{E,R}\tau^{(0)}_{R^+R},
+		\]
+		\[
+		(p_E)_!^{\mathrm{fact}}\rho_{R^+R}\,\pi^{\mathrm{ch}}_{*,R^+}
+		=
+		\pi^{\mathrm{ch}}_{*,R}\tau^{(1)}_{R^+R}
+		\]
+			and the product and unit squares for \(\mathrm{Sp}\), \(\kappa_E\), and
+			\(\pi_*^{\mathrm{ch}}\) are then part of one rectified finite diagram,
+			not separate informal homotopies.  Equivalently the finite obstruction
+			tuple
+			\[
+			\mathfrak O^{K3\to E}_{R}
+			=
+			(\mathfrak o^{\mathrm{Sp}}_R,\,
+			\mathfrak o^\kappa_R,\,
+			\mathfrak o^\pi_R,\,
+			\mathfrak o^{\mu,u}_R,\,
+			\mathfrak o^{\mathrm{tr}}_{R^+R})
+			\]
+			must be null-trivialized.  Only after this null-trivialization may the
+			displayed zigzag be read as a strict finite zigzag in the
+			projection-finite sector; in positive elliptic degree it is replaced by
+			the hybrid certificate \(\mathfrak O_{\mathrm{hyb},R}=0\).  The forward map
+		\(\kappa_{E,R}\) is especially not the canonical bar--cobar counit:
+	the canonical source-side map has the direction
+	\[
+	\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}:
+	\Omega_E^{\mathrm{ch}}\bar B_E^{\mathrm{ch}}
+	(\mathcal F^{(0)}_{X,R})
+	\longrightarrow
+	\mathcal F^{(0)}_{X,R}.
+	\]
+	A forward \(\kappa_{E,R}\) requires a chosen cofibrant/fibrant model and
+	homotopy inverse in the Francis--Gaitsgory bar--cobar domain.  Turning
+	the displayed homotopy-commutative rectangle into strict finite maps
+	requires a model structure on the full finite diagram category and a
+	coherent rectification compatible with HN transitions, quotient
+	orientation, and wrapped correspondences.  Such a rectification is not
+	supplied by cofibrant/fibrant replacement alone: replacement can choose a
+	homotopy inverse after the hybrid object is already in the bar--cobar
+	domain, but it does not construct the wrapped prequotient, anchors,
+	mixed correspondences, or the \((0,1,1)\) primitive.  The first
+	multiplicative square to prove is already
+	\[
+	\mathrm{Sp}_R\,m_{\mathcal U,R}
+	=
+	\mu^{\mathrm{loc}}_R(\mathrm{Sp}_R\otimes\mathrm{Sp}_R)
+	\]
+	on the projection-finite local-local sector, and the first wrapped test is
+	the \(m>0\) degree \((0,1,1)\).
+	Restrictions to chambers, pushforwards to \(E\), and chiral Koszul
+	dualities are then operations on \(\mathcal A^{E_3}_X\) and on its
 \(E_1\)-chiral shadow \(\mathcal F_X\), not replacements for the
 \(E_3\)-source.
 
@@ -5665,6 +5978,49 @@ second would be the chiral Koszul theorem.  Both require microscopic data
 beyond the scalar square and beyond the formal current envelope.
 \end{definition}
 
+\begin{definition}[Rectified finite \(K3\)-to-\(E\) specialization]
+\label{def:rectified-finite-k3-e-specialization}
+Fix a finite HN height \(R\).  A rectified finite \(K3\)-to-\(E\)
+specialization is not the displayed zigzag alone, but a homotopy-coherent
+finite diagram together with a chosen rectification: either a specified
+projective/Reedy-type model structure and a cofibrant-fibrant strict
+representative presenting that diagram, or a stable
+\(\infty\)-categorical rectification calculus supplying the same
+coherences.  The finite diagram contains
+\[
+\mathcal A^{E_3}_{X,R},\qquad
+\mathcal F^{(0)}_{X,R},\qquad
+\mathcal F^{(1)}_{X,R},\qquad
+(p_E)^{\mathrm{fact}}_!\mathcal A^{E_3}_{X,R}.
+\]
+In the projection-finite sector
+\(\mathrm{Sp}^{\mathrm{ch}}_{K3,E,R}\) is defined by the supplied finite
+closed-configuration \(!\)-pushforward along the \(K3\)-fibre incidence
+stacks, with the local-local Hall correspondences supplying the
+factorization products.  The map \(\kappa_{E,R}\) is a chosen
+Beilinson--Drinfeld/Costello--Gwilliam rectification equivalence between
+the chiral and ordinary factorization presentations.  The map
+\(\pi^{\mathrm{ch}}_{*,R}\) is the comparison from this ordinary
+presentation to the finite factorization pushforward
+\((p_E)^{\mathrm{fact}}_!\mathcal A^{E_3}_{X,R}\).
+
+The obstruction tuple \(\mathfrak O^{K3\to E}_R\) records precisely the
+failure of these three arrows, their product and unit squares, and their
+HN transition squares to be null-homotopic in this finite diagram
+category.  Thus the displayed zigzag is a constructed finite
+specialization only after \(\mathfrak O^{K3\to E}_R=0\).
+
+For positive elliptic degree this construction has no target in ordinary
+\(\operatorname{Fact}(\operatorname{Ran}(E))\).  The replacement datum is
+the hybrid correspondence-module object
+\[
+\mathcal B^{E,\mathrm{hyb}}_R:
+\mathsf{Corr}^{E,\mathrm{hyb}}_R\longrightarrow\mathsf{Ch}_{\mathbb C}
+\]
+together with \(Q_{E,R}\), and the additional condition is
+\(\mathfrak O_{\mathrm{hyb},R}=0\).
+\end{definition}
+
 \begin{definition}[Compact holomorphic \(E_3\) source interface]
 \label{def:compact-e3-source-interface}
 Fix a stability sector \((\sigma,S)\) and the finite HN height
@@ -5677,11 +6033,12 @@ chain datum:
 =\left\{
 \mathcal A_{X,\sigma,S,\le R}^{E_3},\,
 \rho_{R'R},\,m_{\mathcal U,R},\,
-S_R,\{-,-\}_R,\Delta_R^{\mathrm{BV}},\,
-\eta_{\mathcal V,R},\omega_{\mathrm{QME},R},
-\omega_{\mathrm{anom},R},\,
-\mathrm{Sp}^{\mathrm{ch}}_{K3,E,R}
-\right\}_{R>0,\ R'\ge R}.
+	S_R,\{-,-\}_R,\Delta_R^{\mathrm{BV}},\,
+	\eta_{\mathcal V,R},\omega_{\mathrm{QME},R},
+	\omega_{\mathrm{anom},R},\,
+	\varphi^{E_3}_R,\tau^{\mathrm{fr}}_R,\,
+	\mathrm{Sp}^{\mathrm{ch}}_{K3,E,R}
+	\right\}_{R>0,\ R'\ge R}.
 \]
 Here \(\mathcal A_{X,\sigma,S,\le R}^{E_3}\) is a charge-supported
 cochain-level holomorphic \(E_3\)-factorization object with charges in
@@ -5691,25 +6048,72 @@ disjoint holomorphic polydiscs \(\mathcal U\subset X\);
 \(S_R,\{-,-\}_R,\Delta_R^{\mathrm{BV}}\) are the finite BV action,
 antibracket, and BV Laplacian conventions used to formulate the finite
 classical or quantum master equation; \(\eta_{\mathcal V,R}\) are
-Cech--Weiss descent cochains for the chosen holomorphic-polydisc cover
-\(\mathcal V\); \(\omega_{\mathrm{QME},R}\) and
-\(\omega_{\mathrm{anom},R}\) are the finite QME and anomaly cocycles with
-specified null-homotopies; and
-\(\mathrm{Sp}^{\mathrm{ch}}_{K3,E,R}\) is the finite-stage K3-to-\(E\)
+	Cech--Weiss descent cochains for the chosen holomorphic-polydisc cover
+	\(\mathcal V\); \(\omega_{\mathrm{QME},R}\) and
+	\(\omega_{\mathrm{anom},R}\) are the finite QME and anomaly cocycles with
+	specified null-homotopies; \(\varphi_R^{E_3}\) is the chosen
+	Tamarkin--Kontsevich \(E_3\)-formality torsor point and
+	\(\tau_R^{\mathrm{fr}}\) is the chain-level framing/homotopy witness for
+	the holomorphic operadic model; and
+	\(\mathrm{Sp}^{\mathrm{ch}}_{K3,E,R}\) is the finite-stage \(K3\)-to-\(E\)
 specialization datum, including source, target, support, charge grading,
 wrapped-sector compatibility, and transition squares.  The interface is
 required to carry:
-\begin{enumerate}
-\item descent, QME, and anomaly-cancellation witnesses at every finite
-height \(R\), i.e.
-\[
-d_R S_R+\frac12\{S_R,S_R\}_R
-\quad\hbox{or}\quad
-d_R S_R+\frac12\{S_R,S_R\}_R+\hbar\Delta_R^{\mathrm{BV}}S_R
-\]
-is killed by the supplied finite homotopy
-\(\omega_{\mathrm{QME},R}\), and the local anomaly cocycle is killed by
-\(\omega_{\mathrm{anom},R}\), compatibly with \(\rho_{R'R}\);
+	\begin{enumerate}
+	\item descent, QME, and anomaly-cancellation witnesses at every finite
+	height \(R\).  Concretely, a finite BV presentation consists, at least
+	locally on \(\mathcal V\), of a finite charge-supported cyclic
+	\(L_\infty\)-algebra
+	\[
+	(L_R,\ell_{k,R},\langle-,-\rangle_R),
+	\qquad
+	E_R=L_R[1],\qquad
+	\operatorname{Obs}_R=\widehat{\operatorname{Sym}}(E_R^\vee),
+	\]
+	and a total BV complex
+	\[
+	C_R^{\mathrm{BV}}
+	=
+	\operatorname{Tot}C^\bullet(\mathcal V,\operatorname{Obs}_R[[\hbar]]) .
+	\]
+	The pairing gives the bracket and, after a Berezinian/orientation
+	choice, \(\Delta_R^{\mathrm{BV}}\).  The classical action is
+	\[
+	S_R^{(0)}(a)=
+	\sum_{k\ge1}\frac{1}{(k+1)!}
+	\langle a,\ell_{k,R}(a,\ldots,a)\rangle_R,
+	\]
+	and cyclicity plus the \(L_\infty\)-relations give the finite classical
+	master equation
+	\[
+	d_RS_R^{(0)}+\frac12\{S_R^{(0)},S_R^{(0)}\}_R=0.
+	\]
+	The quantum equation is the recursive equation for
+	\(S_R=S_R^{(0)}+\hbar S_R^{(1)}+\cdots\),
+	\[
+	d_R S_R+\frac12\{S_R,S_R\}_R
+	\quad\hbox{or}\quad
+	d_R S_R+\frac12\{S_R,S_R\}_R+\hbar\Delta_R^{\mathrm{BV}}S_R
+	\]
+	is killed by the supplied finite homotopy
+	\(\omega_{\mathrm{QME},R}\).  The first anomaly is
+	\[
+	\mathfrak a_R:=\Delta_R^{\mathrm{BV}}S_R^{(0)}
+	\in Z^1(C_R^{\mathrm{BV}},Q_R),\qquad
+	Q_R=d_R+\{S_R^{(0)},-\}_R,
+	\]
+	with obstruction class
+	\[
+	[\mathfrak a_R]\in H^1(C_R^{\mathrm{BV}},Q_R).
+	\]
+	An anomaly cancellation cochain is \(S_R^{(1)}\) satisfying
+	\(Q_RS_R^{(1)}+\mathfrak a_R=0\); in the dg Lie case this includes the
+	modular/unimodularity class
+	\[
+	\chi_R(x)=\operatorname{str}_{L_R}(\operatorname{ad}_x),\qquad
+	[\chi_R]\in H^1_{\mathrm{CE}}(L_R).
+	\]
+	All of these data are required to be compatible with \(\rho_{R'R}\);
 \item a fixed \(E_3\)-formality point and a homotopy/framing witness for
 the chosen holomorphic \(E_3\)-operadic model, treated as a chosen
 torsor point rather than a canonical equality;
@@ -5719,7 +6123,7 @@ transition maps \(\rho_{R'R}\);
 with \(\mathcal A_{X,\sigma,S,\le R}^{E_3}\) a quotient by a
 factorization ideal killing outputs of height \(>R\), and with every
 structure map \(m_{\mathcal U,R}\) descended from higher stages;
-\item the rule that the K3-to-\(E\) specialization is an ordinary
+\item the rule that the \(K3\)-to-\(E\) specialization is an ordinary
 \(\operatorname{Ran}(E)\)-factorization object only on the
 projection-finite part; positive elliptic degree must be routed through
 the hybrid wrapped datum of
@@ -5734,6 +6138,181 @@ source is the inverse limit
 This equation is a construction from the displayed finite data, not an
 existence theorem for those data.
 \end{definition}
+
+\begin{lemma}[Formal finite BV skeleton versus compact source]
+\label{lem:formal-bv-skeleton-compact-source-obstruction}
+In a finite window containing the three real simple roots there is a
+nonempty formal BV chain skeleton.  For example, put
+\[
+\Gamma_R^{\mathrm{win}}=\{0,\delta_1,\delta_2,\delta_3\},\qquad
+L_R=V\oplus V^\vee[-1],\qquad
+V=\C x_1\oplus\C x_2\oplus\C x_3,
+\]
+with \(x_i\) even, \(\deg x_i=\delta_i\), the standard odd symplectic
+pairing \(\langle x_i,\xi_j\rangle=\delta_{ij}\), and all
+\(L_\infty\)-brackets equal to zero.  Then
+\[
+S_R^{(0)}=0,\qquad
+d_RS_R+\frac12\{S_R,S_R\}_R+\hbar\Delta_R^{\mathrm{BV}}S_R=0,
+\qquad
+\mathfrak a_R=\Delta_R^{\mathrm{BV}}S_R^{(0)}=0,
+\]
+so the finite QME and anomaly cocycles are killed by the zero
+homotopies, after choosing the same \(E_3\)-formality and framing
+torsor data as in Definition~\ref{def:compact-e3-source-interface}.
+
+This proves only nonemptiness of the formal finite chain language.  It
+does not construct the compact Hall/hybrid source.  In the first Igusa
+window
+\[
+\delta_1\leftrightarrow(1,1,0),\qquad
+\delta_2\leftrightarrow(0,1,1),\qquad
+\delta_3\leftrightarrow(0,-1,0),
+\]
+one has \(b_R(\delta_1)=b_R(\delta_3)=0\) and
+\(b_R(\delta_2)=1\).  Thus the \(\delta_2\) primitive cannot live in the
+projection-finite Ran sector.  A compact source certificate must instead
+exhibit
+\[
+x_{\delta_2,R}\in \mathcal M_{\eta,R}^{\mathrm{wr,rig}},\qquad
+\overline\Pi_X(x_{\delta_2,R})=(0,1,1),
+\]
+together with its anchor, unreduced and quotient deformation complexes,
+mixed local/wrapped correspondences, \(s_{\delta_2}\)-equivariant
+d-critical chart, normal Pfaffian wall, and quotient-orientation
+trivializations.  Without this wrapped datum the O2/hybrid comparison
+square is not defined, and
+\[
+\mathfrak o_R^{\lambda,\mathrm{loss}}\ne0
+\quad\Longrightarrow\quad
+\mathfrak O_{\delta_2,R}^{\mathrm{O2/hyb}}\ne0.
+\]
+\end{lemma}
+
+\begin{definition}[Finite compact \(E_3\)-source obstruction certificate]
+\label{def:finite-compact-e3-source-obstruction-certificate}
+Fix \((\sigma,S,R)\).  A finite compact \(E_3\)-source candidate is the
+finite datum of Definition~\ref{def:compact-e3-source-interface}, together
+with the finite Hall support, finite-type substacks, quotient-orientation
+data, and \(K3\)-to-\(E\) specialization source and target categories required
+there.  Its typed obstruction tuple is
+\[
+\mathfrak O^{E_3\mathrm{-src}}_{R}
+=
+\left(
+\mathfrak o^{\mathrm{fin}}_{R},\,
+\mathfrak o^{\mathrm{desc}}_{R},\,
+\mathfrak o^{\mathrm{QME}}_{R},\,
+\mathfrak o^{\mathrm{anom}}_{R},\,
+\mathfrak o^{E_3\mathrm{-form}}_{R},\,
+\mathfrak o^{\mathrm{fr}}_{R},\,
+\mathfrak o^{\mathrm{HN}}_{R},\,
+\mathfrak o^{\mathrm{Sp}}_{R},\,
+\mathfrak O_{\mathrm{hyb},R},\,
+\mathfrak o^{\mathrm{tr}}_{R^+R}
+\right).
+\]
+The entries record, respectively, finite-type Hall support and
+finite-dimensional protected chain spaces; Cech--Weiss descent for local
+observables; the finite classical/quantum master equation; anomaly
+cancellation; the chosen \(E_3\)-formality point; the chain-level
+framing/homotopy witness for the holomorphic operadic model; finite-first
+HN quotient and transition control; the finite \(K3\)-to-\(E\) specialization
+diagram; the full hybrid local/wrapped obstruction tuple of
+Definition~\ref{def:hybrid-wrapped-factorization-certificate}; and
+successor transition compatibility.  The zero groupoid
+\[
+Z(\mathfrak O^{E_3\mathrm{-src}}_{R})
+\]
+is the full subgroupoid of finite candidates for which every entry
+vanishes with a specified null-trivialization compatible with the
+successor transition maps.  This is a typed certificate zero locus, not a
+single derived obstruction complex; no such complex is asserted before the
+finite Hall/stability/moduli problem has itself been solved.
+\end{definition}
+
+\begin{proposition}[Zero-source equivalence]
+\label{prop:zero-source-equivalence}
+For fixed \((\sigma,S,R)\), the zero groupoid
+\(Z(\mathfrak O^{E_3\mathrm{-src}}_{R})\) is equivalent to the groupoid of
+finite compact holomorphic \(E_3\)-source interfaces at height \(R\) with
+the finite Hall, orientation, hybrid, and specialization data required in
+Definition~\ref{def:compact-e3-source-interface}.  A compatible cofinal
+system of such zeroes, satisfying the Mittag--Leffler exactness condition
+of Definition~\ref{def:first-order-d0-certificate}, constructs the
+completed source
+\[
+\mathcal A^{E_3}_{X}
+=
+\varprojlim_R\mathcal A^{E_3}_{X,\sigma,S,\le R}.
+\]
+This is an equivalence of certificate data.  It is not a proof that the
+zero groupoid is nonempty.
+\end{proposition}
+
+\begin{proof}
+The definition of
+\(\mathfrak O^{E_3\mathrm{-src}}_{R}\) lists exactly the finite entries
+whose vanishing turns the candidate data into the interface of
+Definition~\ref{def:compact-e3-source-interface}: finite Hall support,
+descent, BV master equation, anomaly null-homotopy, formality/framing,
+HN continuity, specialization, hybrid local/wrapped operations, and
+transition compatibility.  Thus an object in the zero groupoid is
+precisely a finite interface with those null-trivializations, and any
+finite interface determines such a zero by reading off its defining
+witnesses.  The inverse-limit assertion is the finite-first construction
+of Definition~\ref{def:compact-e3-source-interface}, with
+Mittag--Leffler exactness added to prevent the completed comparison from
+weakening to a pro-comparison.
+\end{proof}
+
+\begin{corollary}[No nonemptiness from the finite source certificate]
+\label{cor:no-nonemptiness-from-finite-source-certificate}
+The formal BV skeleton of
+Lemma~\ref{lem:formal-bv-skeleton-compact-source-obstruction} and the
+zero-source equivalence of Proposition~\ref{prop:zero-source-equivalence}
+do not imply that \(Z(\mathfrak O^{E_3\mathrm{-src}}_{R})\) is nonempty for
+any finite height \(R\), and do not construct a cofinal compatible system
+of zeroes.  Consequently they do not construct
+\(\mathcal A_X^{E_3}\).  They define the finite obstruction problem whose
+solution is Open Problem~\ref{op:compact-e3-source}.
+\end{corollary}
+
+\begin{proposition}[Finite-\(R\) compact \(E_3\)-source construction protocol]
+\label{prop:finite-r-compact-e3-source-construction-protocol}
+Fix \((\sigma,S,R)\).  A nonempty compact holomorphic \(E_3\)-source
+interface at height \(R\) is constructed only after the following finite
+source-side data are constructed and their residuals vanish:
+\[
+\mathfrak S_R,\quad
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}},\quad
+Q_{E,R},\quad I_R^{\mathrm{prot}},\quad
+(S_R,\{-,-\}_R,\Delta_R^{\mathrm{BV}}),\quad
+\eta_{\mathcal V,R},
+\]
+\[
+\omega_{\mathrm{QME},R},\quad
+\omega_{\mathrm{anom},R},\quad
+\varphi_R^{E_3},\quad
+\tau_R^{\mathrm{fr}},\quad
+\mathrm{Sp}^{\mathrm{ch}}_{K3,E,R},
+\]
+together with successor transition maps.  The data must include the
+wrapped primitive in degree \((0,1,1)\), its rigidified anchor, unreduced
+and reduced deformation complexes, mixed local/wrapped correspondences,
+quotient-orientation trivializations, and the finite O2/hybrid comparison
+square.  If the displayed data are supplied as components of the full
+finite interface datum of
+Definition~\ref{def:compact-e3-source-interface}, including the finite
+\(E_3\)-source object, the product maps \(m_{\mathcal U,R}\),
+finite-type, properness, and admissibility witnesses, and if every entry
+of \(\mathfrak O^{E_3\mathrm{-src}}_R\) is supplied with a compatible
+null-trivialization, then they determine an object of
+\(Z(\mathfrak O^{E_3\mathrm{-src}}_R)\).  Conversely, every object of this
+zero groupoid forgets to such source-side data, together with the
+additional finite interface, admissibility, product, and transition
+coherences recorded in the definition.
+\end{proposition}
 
 \begin{openproblem}[Compact holomorphic \(E_3\) source]
 \label{op:compact-e3-source}
@@ -6450,9 +7029,11 @@ summation over compact \(K3\)-modes.  Duality monodromy, elliptic-degree
 wrapping, and the Borcherds chamber are therefore global features of the
 trace.  They do not replace the local factorization maps on disjoint
 opens.
-Singular \(K3\) surfaces and nodal or cuspidal elliptic curves require
-the boundary degeneration certificate; the Ran-local statement here is
-the smooth-\(S\), smooth-\(E\) compact-stage assertion.
+Singular \(K3\) surfaces, nodal or cuspidal elliptic curves, imprimitive
+curve-class contributions, the \(s=0\) compact Hall cusp, and
+multi-component charge closures require boundary-degeneration
+certificates; the Ran-local statement here is the smooth-\(S\),
+smooth-\(E\) compact-stage assertion.
 \end{remark}
 
 \begin{definition}[Projection-finite, wrapped, and hybrid Ran strata]
@@ -6592,28 +7173,73 @@ whenever \(\gamma,\gamma',\gamma+\gamma'\in
 \Gamma_{\sigma,S}^{HN}(R)\); if the sum has height \(>R\), the
 corresponding operation is zero in the finite quotient.
 
-\item \emph{Projection-finite local sector.}  For \(U\subset E\) open and
-\(\alpha\in\Gamma_R^{\mathrm{loc}}\),
-\[
-\mathcal M_{\alpha,R}^{\mathrm{loc}}(U)
-=
-\left\{
-A\in\mathfrak M_{\alpha,R}\ \middle|\
-p_E(\operatorname{Supp}A)\subset U
-\right\}
-\]
-is supplied as an open substack of \(\mathfrak M_{\alpha,R}\), and
-\[
-\mathcal F_{\alpha,R}^{\mathrm{loc}}(U)
-:=
-H_*^{\mathrm{BM}}\!\left(
-\mathcal M_{\alpha,R}^{\mathrm{loc}}(U),
-\Phi_{\alpha,R}^{\mathrm{loc}}\otimes o_{\alpha,R}^{\mathrm{loc}}
-\right).
-\]
-The direct sum over \(\alpha\in\Gamma_R^{\mathrm{loc}}\) is
-\(\mathcal F_R^{\mathrm{loc}}(U)\).  For disjoint opens this is an ordinary
-projection-finite Ran factorization object.
+	\item \emph{Projection-finite local sector through closed configurations.}
+	The finite local datum is not the open-support substack alone.  For a
+	finite set \(I\), let
+	\[
+	Z_I\subset E\times E^I,\qquad
+	Z_I=\bigcup_{i\in I}\{(e,(e_j))\mid e=e_i\}.
+	\]
+	For \(\alpha\in\Gamma_R^{\mathrm{loc}}\) the stage supplies a
+	closed-support incidence stack
+	\[
+	\mathfrak M_{\alpha,R,I}^{\mathrm{loc,cl}}
+	=
+	\left\{
+	(A,\mathbf e)\in\mathfrak M_{\alpha,R}\times E^I
+	\ \middle|\
+	p_E(\operatorname{Supp}A)\subset Z_I(\mathbf e)
+	\right\},
+	\]
+	compatible with diagonals \(E^J\to E^I\), symmetric-group descent, and
+	the d-critical/vanishing-cycle structure.  The open notation
+	\[
+	\mathcal M_{\alpha,R}^{\mathrm{loc}}(U)
+	=
+	\{A\in\mathfrak M_{\alpha,R}\mid p_E(\operatorname{Supp}A)\subset U\}
+	\]
+	is recovered only after finite arity and support comparison have been
+	supplied:
+	\[
+	\mathcal M_{\alpha,R}^{\mathrm{loc}}(U)
+	\simeq
+	\operatorname*{colim}_{I}
+	\left(
+	\mathfrak M_{\alpha,R,I}^{\mathrm{loc,cl}}
+	\times_{E^I}U^I
+	\right).
+	\]
+	Let
+	\[
+	\pi_{\alpha,R,I}:
+	\mathfrak M_{\alpha,R,I}^{\mathrm{loc,cl}}\longrightarrow E^I
+	\]
+	be the configuration map and put
+	\[
+	\mathscr H_{\alpha,R,I}^{\mathrm{loc}}
+	:=
+	(\pi_{\alpha,R,I})_!
+	(\Phi_{\alpha,R,I}^{\mathrm{loc}}\otimes
+	o_{\alpha,R,I}^{\mathrm{loc}}).
+	\]
+	Here \((\pi_{\alpha,R,I})_!\) is the exceptional direct image in the
+	chosen compact-support or Borel--Moore six-functor theory; it is not
+	licensed by the displayed formula until the finite constructibility and
+	proper-support defects vanish.  For \(U\subset E\) open,
+	\[
+	\mathcal F_{\alpha,R}^{\mathrm{loc}}(U)
+	:=
+	\bigoplus_{I/S_I}
+	R\Gamma_c\!\left(
+	U^I,\,
+	j_{U,I}^{!}\mathscr H_{\alpha,R,I}^{\mathrm{loc}}
+	\right),
+	\]
+	and the direct sum over \(\alpha\in\Gamma_R^{\mathrm{loc}}\) is
+	\(\mathcal F_R^{\mathrm{loc}}(U)\).  Thus locality is
+	\(!\)-restriction on closed configuration spaces; the old open-support
+	Borel--Moore formula is a theorem to be proved from this atlas, not the
+	primary finite datum.
 
 \item \emph{Wrapped prequotient sector and rigidification.}  For
 \(\eta\in\Gamma_R^{\mathrm{wr}}\), a prequotient stack
@@ -6646,12 +7272,32 @@ This candidate has translation weight \(\chi(A)\):
 \[
 \lambda(t\cdot A)=\lambda(A)+\chi(A)t .
 \]
-Thus it gives the required unit-weight anchor only on strata where this
-weight has been rigidified, divided by a chosen finite cover, or replaced
-by an equivalent Abel--Jacobi/framing datum.  In particular, on
-\(\chi(A)=0\) strata it does not by itself remember the relative
-\(E\)-position.  The anchor residual is therefore a typed finite datum,
-not a name:
+	Thus it gives the required unit-weight anchor only on strata where this
+	weight has been rigidified, divided by a chosen finite cover, or replaced
+	by an equivalent Abel--Jacobi/framing datum.  In particular, on
+	\(\chi(A)=0\) strata it does not by itself remember the relative
+	\(E\)-position.  Nor does a finite divisor or Abel--Jacobi shadow by
+	itself remember the wrapped Hall geometry.  If
+	\(i_s:E\hookrightarrow K3\times E\) is the elliptic fibre over
+	\(s\in K3\), then
+	\[
+	W_0=i_{s,*}(\mathcal O_E\oplus\mathcal O_E),
+	\qquad
+	W_L=i_{s,*}(L\oplus L^{-1}),\quad L\in\operatorname{Pic}^0(E),
+	\quad L^2\ne\mathcal O_E,
+	\]
+	can have the same rank, determinant, charge shadow, and prescribed
+	finite divisor anchor, while their wrapped self-extension dimensions on
+	the elliptic factor differ:
+	\[
+	\dim\operatorname{Ext}^1_E(\mathcal O_E\oplus\mathcal O_E,
+	\mathcal O_E\oplus\mathcal O_E)=4,\qquad
+	\dim\operatorname{Ext}^1_E(L\oplus L^{-1},L\oplus L^{-1})=2.
+	\]
+	Thus any anchor advertised as lossless must remember enough of the
+	wrapped correspondence data to recover these Ext stacks, not only a
+	finite multiset on \(E\).  The anchor residual is therefore a typed finite datum,
+	not a name:
 \[
 \mathfrak o^\lambda_R=
 \left(
@@ -6734,30 +7380,38 @@ input.  Both are part of the certificate.  Similarly
 \(\mathfrak E_{\eta_1,\eta_2,R}^{\mathrm{wr}}\) is ordered in
 \((\eta_1,\eta_2)\); no symmetry of wrapped inputs is assumed unless an
 extra symmetry datum is supplied.
-The middle stacks classify exact triangles or exact sequences with the
-displayed associated graded pieces.  They are constructed in the
-unreduced \(E\)-equivariant theory, with proper-support or compact-support
-witnesses for \(q\), admissibility witnesses for \(p^*\) and \(q_!\) on
-the chosen vanishing-cycle/Borel--Moore theory, and Thom--Sebastiani
-identifications for the coefficient systems.  For every generator
+	The middle stacks classify exact triangles or exact sequences with the
+	displayed associated graded pieces.  They are constructed in the
+	unreduced \(E\)-equivariant theory.  In the local legs the displayed open
+	correspondences are shorthand for the closed-configuration
+	correspondences over \(E^I\), \(E^J\), and \(E^{I\sqcup J}\), followed by
+	\(!\)-restriction to the chosen opens.  The stage supplies
+	closed-support finite-type witnesses, exceptional-pushforward
+	admissibility witnesses for \(q_!\), pullback/Gysin admissibility
+	witnesses for \(p\), and Thom--Sebastiani identifications for the
+	coefficient systems.  Properness is allowed as the special case
+	\(q_!=q_*\) on the protected support; affine Ext directions are handled
+	only through compact-support integration in the fixed six-functor
+	formalism.  For every generator
 \(e\) among the local-local, ordered mixed, and wrapped-wrapped
 correspondences, write
 \[
-\mathfrak o^{\mathrm{prop}}_{e,R},\qquad
-\mathfrak o^{\mathrm{adm}}_{e,R},\qquad
-\mathfrak o^{\mathrm{TS}}_{e,R}
-\]
-for the defects of proper-support, pull-push admissibility, and
-Thom--Sebastiani compatibility.  Their aggregate defects in the three
+	\mathfrak o^{\mathrm{prop}}_{e,R},\qquad
+	\mathfrak o^{\mathrm{adm}}_{e,R},\qquad
+	\mathfrak o^{\mathrm{TS}}_{e,R}
+	\]
+	for the defects of closed-configuration/proper-support control,
+	pull-push admissibility, and Thom--Sebastiani compatibility.  Their
+	aggregate defects in the three
 families are
 \[
 \mathfrak o^{\mathrm{prop},\mathrm{LL}}_R,\qquad
 \mathfrak o^{\mathrm{prop},\mathrm{mix}}_R,\qquad
 \mathfrak o^{\mathrm{prop},\mathrm{WW}}_R.
 \]
-They vanish exactly when all pull-push maps used below are honest
-finite-stage operations, not formal correspondences without a defined
-pushforward.  The mixed stacks use the
+	They vanish exactly when all pull-push maps used below are honest
+	finite-stage operations, not formal correspondences without a defined
+	pushforward.  The mixed stacks use the
 anchor \(\lambda_{\eta,R}\) to remember the relative position between the
 finite local supports \(U_i\) and the wrapped leg; replacing this memory
 by a scalar Fock coefficient is not this datum.  The wrapped-wrapped
@@ -7089,11 +7743,16 @@ The exact finite obstruction tuple for the hybrid lane is
 \left(
 \mathfrak o^{\mathrm{stage}}_R,\,
 \mathfrak o^{\lambda}_R,\,
-\mathfrak o^{\mathrm{corr},\mathrm{LL}}_R,\,
-\mathfrak o^{\mathrm{corr},\mathrm{mix}}_R,\,
-\mathfrak o^{\mathrm{corr},\mathrm{WW}}_R,\,
-\mathfrak o^{\mathrm{prop},\mathrm{LL}}_R,\,
-\mathfrak o^{\mathrm{prop},\mathrm{mix}}_R,\,
+	\mathfrak o^{\mathrm{corr},\mathrm{LL}}_R,\,
+	\mathfrak o^{\mathrm{corr},\mathrm{mix}}_R,\,
+	\mathfrak o^{\mathrm{corr},\mathrm{WW}}_R,\,
+	\mathfrak o^{\mathrm{conf}}_R,\,
+	\mathfrak o^{\mathrm{inert},\mathrm{obj}}_R,\,
+	\mathfrak o^{\mathrm{inert},\mathrm{corr}}_R,\,
+	\mathfrak o^{\mathrm{inert},\mathrm{flag}}_R,\,
+	\mathfrak o^{\mathrm{conf\text{-}prop}}_R,\,
+	\mathfrak o^{\mathrm{prop},\mathrm{LL}}_R,\,
+	\mathfrak o^{\mathrm{prop},\mathrm{mix}}_R,\,
 \mathfrak o^{\mathrm{prop},\mathrm{WW}}_R,\,
 \{\mathfrak o^{\mathrm{assoc}}_{w,R}\}_{w\in\{\mathrm L,\mathrm W\}^3},\,
 \mathfrak o^{\mathrm{col}}_R,\,
@@ -7109,23 +7768,31 @@ The exact finite obstruction tuple for the hybrid lane is
 \mathfrak o^{I,\mathrm{tr}}_{R'R},\,
 \mathfrak o^{\mathrm{tr}}_{\mathrm{hyb},R'R}
 \right).
-\]
-These entries record finite HN existence, anchor rigidification,
-local-local correspondences, all ordered mixed correspondences,
-wrapped-wrapped correspondences, properness/admissibility and
-Thom--Sebastiani validity for the pull-push operations, the eight-word
-two-step binary flag coherence, the higher colored configuration
-residual, quotient formation/admissibility/flag and transition descent,
-chain/product/colored-refinement/coproduct/primitive integration laws, integration
-transition compatibility, and HN transition compatibility.  A finite
-hybrid certificate means the compatible vanishing and trivialization of
-this tuple for every \(R'\ge R\).  Without
-\(\mathfrak O_{\mathrm{hyb},R}=0\), the notation
-\(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\) names an obstruction
-problem, not a source object.
-The entry \(\mathfrak o^{\mathrm{col}}_R\) records the higher colored
-configuration atlas, unit and vacuum maps, symmetry or ordering
-conventions, refinement maps, descent, and overlap coherences not detected
+	\]
+		These entries record finite HN existence, anchor rigidification,
+	local-local correspondences, all ordered mixed correspondences,
+	wrapped-wrapped correspondences, the closed finite-configuration atlas,
+	finite residual inertia for object, correspondence, and flag stacks,
+	closed-support Hall admissibility over configuration spaces,
+	properness/admissibility and Thom--Sebastiani validity for the pull-push
+	operations, the eight-word
+	two-step binary flag coherence, the higher colored configuration
+	residual, quotient formation/admissibility/flag and transition descent,
+	chain/product/colored-refinement/coproduct/primitive integration laws, integration
+	transition compatibility, and HN transition compatibility.  A finite
+	hybrid certificate means the compatible vanishing and trivialization of
+	this tuple for every \(R'\ge R\).  Without
+	\(\mathfrak O_{\mathrm{hyb},R}=0\), the notation
+	\(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\) names an obstruction
+	problem, not a source object.
+	The inertia entries are not formalities: diagonal scalar rigidification
+	removes at most the common \(\mathbb G_m\), while direct sums and flags
+	can retain \(\mathbb G_m\), \(PGL_n\), or parabolic stabilizers.  Their
+	vanishing is the finite-stack condition used later in
+	Proposition~\ref{prop:conditional-finite-dcritical-hall-product}.
+	The entry \(\mathfrak o^{\mathrm{col}}_R\) records the higher colored
+	configuration atlas, unit and vacuum maps, symmetry or ordering
+	conventions, refinement maps, descent, and overlap coherences not detected
 by the eight length-three words.  If this entry is not supplied, vanishing
 of the remaining binary terms gives only the two-step Hall/module
 certificate, not a full hybrid factorization object.
@@ -7165,8 +7832,8 @@ anchor compatibility, and the induced chain map
 \longrightarrow
 \mathcal B_R^{\mathrm{red},\mathrm{hyb}} .
 \]
-\end{enumerate}
-When all finite stages and transitions have been supplied, the completed
+	\end{enumerate}
+	When all finite stages and transitions have been supplied, the completed
 hybrid object is
 \[
 \mathcal F_X^{\mathrm{hyb}}
@@ -7179,11 +7846,128 @@ restriction to
 \(\operatorname{Ran}(E)_{[0]}\) is ordinary projection-finite Ran
 factorization.  Its \(b>0\) strata are wrapped modules acted on by the
 local sector through the mixed Hall correspondences.  This inverse-limit
-formula is a construction from the displayed finite certificates; it is
-not an existence theorem for those certificates.
-\end{definition}
+	formula is a construction from the displayed finite certificates; it is
+	not an existence theorem for those certificates.
+	\end{definition}
 
-\begin{proposition}[Finite consequences of the hybrid certificate]
+	\begin{proposition}[Closed-configuration local-local properness in a coherent heart]
+	\label{prop:closed-configuration-local-properness}
+	Fix \(R\), local charges \(\alpha,\beta\in\Gamma_R^{\mathrm{loc}}\), and
+	finite sets \(I,J\).  Suppose the finite local sector is realized inside a
+	noetherian abelian Hall heart
+	\[
+	\mathcal A_{\sigma,R}\subset D^b(\operatorname{Coh}(K3\times E))
+	\]
+	whose finite HN substacks \(\mathfrak M_{\alpha,R}\) are finite type,
+	specialization closed, closed under the subobjects and quotients entering
+	the local-local Hall correspondence, and have a bounded nilpotent
+	thickness in the \(E\)-direction on the finite window.  Then the closed
+	configuration incidence stack
+	\[
+	\mathfrak M_{\alpha,R,I}^{\mathrm{loc,cl}}
+	=
+	\{(A,\mathbf e)\mid p_E(\operatorname{Supp}A)\subset Z_I(\mathbf e)\}
+	\]
+	is a closed finite-type substack of
+	\(\mathfrak M_{\alpha,R}\times E^I\).  The local-local extension stack
+	of short exact sequences
+	\[
+	0\to A\to B\to C\to0,
+	\qquad
+	A\in\mathfrak M_{\alpha,R,I}^{\mathrm{loc,cl}},\quad
+	C\in\mathfrak M_{\beta,R,J}^{\mathrm{loc,cl}},\quad
+	B\in\mathfrak M_{\alpha+\beta,R,I\sqcup J}^{\mathrm{loc,cl}},
+	\]
+	has
+	\[
+	q:
+	\mathfrak E_{\alpha,\beta,R,I,J}^{\mathrm{loc,cl}}
+	\longrightarrow
+	\mathfrak M_{\alpha+\beta,R,I\sqcup J}^{\mathrm{loc,cl}}
+	\]
+	projective, hence proper and finite type.  Over a fixed \(B\) this fibre
+	is a closed subfunctor of the relative Quot scheme of \(B\); it need not
+	be finite.  For instance subobjects
+	\(\mathcal O_x\subset\mathcal O_x^{\oplus2}\) form \(\mathbb P^1\).
+	With BBDJS coefficients restricted by \(!\)-pullback to the closed
+	incidence stacks, proper base-change gives the local-local
+	closed-support Hall pull-push, still subject to the independent
+	Thom--Sebastiani and orientation coherences.
+
+	The same assertion is false for raw exact triangles in
+	\(\operatorname{Perf}(K3\times E)\).  For
+	\(x\in K3\times\{e\}\) and a DVR \(R_0\) with uniformizer \(t\), the map
+	\[
+	t:\mathcal O_x\otimes R_0\longrightarrow \mathcal O_x\otimes R_0
+	\]
+	is an isomorphism on the generic fibre, so its cone is the vacuum, while
+	the special fibre has cone
+	\[
+	\mathcal O_x\oplus\mathcal O_x[1].
+	\]
+		If the finite window excludes nonzero zero-charge objects, the valuative
+		criterion for the corresponding \(q\)-map fails.  Closed support does
+		not repair this; an abelian Quot compactification, or an explicit
+		compact-support six-functor replacement for constructible coefficients,
+		is the required input.
+		\end{proposition}
+
+		\begin{proposition}[Conditional finite d-critical Hall product]
+		\label{prop:conditional-finite-dcritical-hall-product}
+		Fix \(R\) and closed-configuration substacks
+		\(\mathfrak M_{c,R,I}^{\mathrm{loc,cl}}\) in a noetherian abelian Hall
+		heart as in
+		Proposition~\ref{prop:closed-configuration-local-properness}.  Assume,
+		in addition, the following finite data:
+		\begin{enumerate}
+		\item finite-type quasi-smooth derived Artin enhancements of the selected
+		object, extension, and two-step flag stacks, with perfect obstruction
+		theories;
+		\item finite residual inertia after scalar, \(E\)-translation, and
+		wrapped rigidifications;
+		\item finite-type extension and flag stacks for the retained charges,
+		with \(p^*\) and \(q_!\) admissible;
+		\item the PTVV \((-1)\)-shifted symplectic structures restrict to these
+		finite substacks, so that their classical truncations carry Joyce
+		d-critical structures \cite{PTVV2013,BBDJS2015};
+		\item the K3 semiregularity cosections are surjective on the reduced
+		strata and satisfy the displayed filtered Hall additivity of
+		\textup{(P4)};
+		\item BBDJS orientation lines and Joyce--Upmeier orientation transports
+		are supplied, with all finite-stabilizer characters trivialized
+		\cite{JoyceUpmeier};
+		\item Thom--Sebastiani transports for the reduced vanishing-cycle
+		sheaves satisfy the two-step flag pentagons and the higher colored
+		configuration coherences.
+		\end{enumerate}
+		Then the finite reduced local-local product
+		\[
+		m_R^{\mathrm{red}}=
+		q_!\circ \operatorname{TS}^{\mathrm{red}}_R\circ p^*
+		\]
+		is an honest morphism on
+		\[
+		H_c^\bullet\!\left(
+		\mathfrak M_{c,R,I}^{\mathrm{loc,cl}},
+		\Phi_{c,R,I}^{\mathrm{red}}\otimes o_{c,R,I}^{\mathrm{red}}
+		\right),
+		\]
+			and is associative on the finite stage.  The first obstruction to
+			removing the hypotheses is finite inertia: proper finite-type
+			correspondences do not by themselves eliminate residual
+			\(\mathbb G_m\), direct-sum, or parabolic automorphisms, and a residual
+			\(\mathbb G_m\) already contributes
+			\(H^\bullet(B\mathbb G_m)=\C[u]\) to protected cohomology.
+			Here ``finite stage'' means finite charge support, finite-type
+			stacks, and finite-dimensional protected cohomology after the stated
+			quotients and admissibility hypotheses.  It does not mean that the
+			Hall correspondence maps are finite morphisms: even in the local-local
+			abelian Quot model the \(q\)-fibres may be positive-dimensional, as in
+			the \(\mathbb P^1\)-family of subobjects
+			\(\mathcal O_x\subset\mathcal O_x^{\oplus2}\).
+			\end{proposition}
+
+		\begin{proposition}[Finite consequences of the hybrid certificate]
 \label{prop:hybrid-certificate-scope}
 Assume the finite-stage data of
 Definition~\ref{def:hybrid-wrapped-factorization-certificate} are
@@ -7197,9 +7981,12 @@ object on \(\operatorname{Ran}(E)\);
 available Hall actions of projection-finite insertions on wrapped
 elliptic-degree sectors in
 \(\mathsf{Corr}^{E,\mathrm{hyb}}_R\) before the reduced \(E\)-quotient;
-\item vanishing of the properness/admissibility defects
-\(\mathfrak o^{\mathrm{prop},\mathrm{LL}}_R\),
-\(\mathfrak o^{\mathrm{prop},\mathrm{mix}}_R\), and
+	\item vanishing of the closed-configuration and properness/admissibility
+	defects
+	\(\mathfrak o^{\mathrm{conf}}_R\),
+	\(\mathfrak o^{\mathrm{conf\text{-}prop}}_R\),
+	\(\mathfrak o^{\mathrm{prop},\mathrm{LL}}_R\),
+	\(\mathfrak o^{\mathrm{prop},\mathrm{mix}}_R\), and
 \(\mathfrak o^{\mathrm{prop},\mathrm{WW}}_R\) makes the Borel--Moore
 pull-push functor \(\mathcal B_R^{E,\mathrm{hyb}}\) and its reduced
 quotient \(\mathcal B_R^{\mathrm{red},\mathrm{hyb}}\) well-defined;
@@ -7381,14 +8168,14 @@ Equivalently, the finite residual
 \mathfrak o^{I,\mathrm{wall}}_{\delta_i,R}
 \right)
 \]
-must be trivialized.  The \(\delta_2\) row has \(m=1\), hence its wall
-object cannot be supplied by the projection-finite Ran stratum alone.
-It must pass through the rigidified wrapped prequotient and the ordered
-mixed correspondences before the reduced \(E\)-quotient.  A local
-rank-one chart detached from
-\(\mathsf{Corr}^{E,\mathrm{hyb}}_R\), or a Fock/Hecke factor carrying only
-the scalar \(s\)-degree, does not make this residual vanish.  For O2 this
-compatibility must be imposed as a wall atlas: at finite height \(R\),
+	must be trivialized.  The \(\delta_2\) row has \(m=1\), hence its wall
+	object cannot be supplied by the projection-finite Ran stratum alone.
+	It must pass through the rigidified wrapped prequotient and the ordered
+	mixed correspondences before the reduced \(E\)-quotient.  A local
+	rank-one chart detached from
+	\(\mathsf{Corr}^{E,\mathrm{hyb}}_R\), or a Fock/Hecke factor carrying only
+	the scalar \(s\)-degree, does not make this residual vanish.  For O2 this
+	compatibility must be imposed as a wall atlas: at finite height \(R\),
 each retained component and boundary stratum of \(\Hpl_{\delta_i}\) needs
 a chart of the above form, and the normal Pfaffian units, tangent/normal
 splittings, quotient orientations, and protected integration maps must
@@ -7396,10 +8183,43 @@ agree on chart overlaps.  A single generic chart computes only a local
 sign.
 The atlas entries record, respectively, charts on every retained wall
 component, charts on retained boundary strata, and agreement of normal
-Pfaffian units, tangent/normal splittings, quotient orientations, and
-protected integration maps on chart overlaps, compatibly with HN
-transitions.
-\end{proposition}
+	Pfaffian units, tangent/normal splittings, quotient orientations, and
+	protected integration maps on chart overlaps, compatibly with HN
+	transitions.
+	For the middle wall this means, concretely, the certificate must contain
+	a finite-height object
+	\[
+	x_{\delta_2,R}\in\mathcal M_{\eta,R}^{\mathrm{wr,rig}},\qquad
+	\overline\Pi_X(x_{\delta_2,R})=(0,1,1),\qquad b_R(\eta)=1,
+	\]
+	with a unit-weight lossless anchor; an unreduced hybrid deformation
+	complex \(K^E_{\delta_2,R}\), K3 semiregularity cosection, and reduced
+	quotient complex \(K^{\mathrm{red}}_{\delta_2,R}\); an
+	\(s_{\delta_2}\)-equivariant real d-critical chart
+	\[
+	(U_{\delta_2,R},x_{\delta_2,R},u_{\delta_2,R},
+	K^{\mathrm{red}}_{\delta_2,R}),\qquad
+	U_{\delta_2,R}\cap\Hpl_{\delta_2}=\{u_{\delta_2,R}=0\},\qquad
+	s_{\delta_2}(u_{\delta_2,R})=-u_{\delta_2,R};
+	\]
+	a quotient-compatible splitting
+	\[
+	K^{\mathrm{red}}_{\delta_2,R}
+	\simeq
+	K^{\mathrm{tan}}_{\delta_2,R}\oplus K^{\mathrm{nor}}_{\delta_2,R},
+	\qquad
+	K^{\mathrm{nor}}_{\delta_2,R}\simeq
+	[\mathbb R\xrightarrow{\,u_{\delta_2,R}\,}\mathbb R];
+	\]
+	an invariant unit
+	\(\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_2,R})
+	=\upsilon_{\delta_2,R}u_{\delta_2,R}\); and vanishing of the
+	ordinary reduced orientation gerbe, the connected \(BE\)-class, all
+	finite Borel classes, and all residual \(H^1(BE[N])\) orientation
+	characters on the object, extension, and flag strata entering this
+	chart.  Without this list the \(\delta_2\) wall is not a constructed
+	rank-one Pfaffian wall.
+	\end{proposition}
 
 \begin{proof}
 The three Gram labels are the inverse calculation recorded in the
@@ -7780,8 +8600,8 @@ equivariance, or its HN-completed higher-rank extension.  Those remain
 part of the Dirac--Igusa realization certificate.
 \end{remark}
 
-\begin{theorem}[PTVV--Joyce normal-ordered descent of the primitive bracket;
-certificate and obstruction]
+\begin{theorem}[Conditional normal-ordered Hall descent certificate and
+obstruction]
 \label{thm:ptvv-joyce-pi-descent}
 Adopt the notation of Definition~\ref{def:dyonic-mukai-lattice} and
 Definition~\ref{def:additive-physical-charge-lattice}: formal lattice
@@ -8437,10 +9257,48 @@ and the finite coideal square
 \otimes(P_R^\Pi/\operatorname{Rad}_R^\Pi).
 \end{tikzcd}
 \]
-These are the finite Lie-ideal and coideal parts of
-\(\mathfrak o^{\mathrm{rad}}_{\Theta,R}=0\).  Closedness of the inverse
-limit radical is the additional HN topological assertion that the kernels
-\(\operatorname{Rad}_R^\Pi\) form a transition-compatible closed subsystem.
+	These are the finite Lie-ideal and coideal parts of
+	\(\mathfrak o^{\mathrm{rad}}_{\Theta,R}=0\).  Closedness of the inverse
+	limit radical is the additional HN topological assertion that the kernels
+	\(\operatorname{Rad}_R^\Pi\) form a transition-compatible closed subsystem.
+	Equivalently, on any downward-saturated finite root window \(W\), after
+	choosing homogeneous bases of the finite primitive pieces, \textup{(NO7)}
+	is the following matrix computation.  Let
+	\[
+	G_\beta:P^\Pi_{R,\beta}\times P^\Pi_{R,-\beta}\to\C,\qquad
+	K_\beta=\ker G_\beta\cap\ker G_{-\beta}^{t},
+	\qquad
+	Q_\beta:P^\Pi_{R,\beta}\to P^\Pi_{R,\beta}/K_\beta
+	\]
+	be the positive-negative pairing, two-sided radical block, and quotient
+	map.  Let \(B_{\alpha,\beta}\) be the bracket matrix, let
+	\(M_{\alpha,\beta}\) be the product matrix, and let
+	\(D^{\mu,\nu}_{\rho}\) be the coproduct matrix
+	\(P^\Pi_{R,\rho}\to P^\Pi_{R,\mu}\otimes P^\Pi_{R,\nu}\).  The finite
+	test is:
+	\[
+	\langle [x,y]_\Theta,z\rangle_R
+	+(-1)^{|x||y|}\langle y,[x,z]_\Theta\rangle_R=0,
+	\]
+	for all retained triples; the Hopf adjointness matrices
+	\[
+	\langle M_{\alpha,\beta}(x\otimes y),z\rangle_R
+	=
+	\langle x\otimes y,D^{\alpha,\beta}_{\alpha+\beta}z\rangle_R;
+	\]
+	the quotient-tensor nondegeneracy of
+	\(\bar G_\mu\otimes\bar G_\nu\); and the direct containments
+	\[
+	Q_{\alpha+\beta}B_{\alpha,\beta}(P^\Pi_{R,\alpha}\otimes K_\beta)=0,
+	\qquad
+	Q_{\alpha+\beta}B_{\alpha,\beta}(K_\alpha\otimes P^\Pi_{R,\beta})=0,
+	\qquad
+	(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}K_\rho=0,
+	\]
+	together with transition preservation
+	\(\rho^P_{R^+R}(K_{R^+,\beta})\subset K_{R,\beta}\).  Frobenius gives the
+	Lie-ideal half; Hopf adjointness plus quotient-tensor nondegeneracy gives
+	the coideal half.  The scalar determinant supplies none of these matrices.
 
 Consequently, if \textup{(NO1)--(NO7)} hold for every successor arrow and
 the non-successor transition maps are their composites, the inverse limit
@@ -9115,23 +9973,151 @@ proper/admissible pull-push geometry.
 \begin{definition}[First-order Dirac--Igusa \(D_0\)-certificate]
 \label{def:first-order-d0-certificate}
 Fix a stability/HN sector \((\sigma,S)\) as in
-Definition~\textup{\ref{def:sectorial-hall-truncation}}.  The certificate
-operates under two explicit standing hypotheses:
+Definition~\textup{\ref{def:sectorial-hall-truncation}}.  Fix also a
+countable cofinal HN subsystem
+\[
+\mathcal R_{\mathrm{HN}}=\{R_0<R_1<R_2<\cdots\}\subset\mathbb R_{>0},
+\qquad R_\nu\to\infty.
+\]
+The certificate operates under two explicit standing hypotheses:
 \begin{itemize}
 \item[\textup{[K3$\times$E-fin]}] \emph{Finite-type semistable substacks
 at bounded HN height.}  For every \(R>0\), the substack of
 \(\sigma\)-semistable objects in \(\mathsf{D}^b(\mathrm{Coh}(K3\times E))\)
-of HN height \(\le R\) and active charge in
-\(F_{\sigma,S}(R)\) is of finite type over \(\mathbb C\).
-K3-surface finite-wall and HN technology motivates this hypothesis; the
-\(K3\times E\) threefold case is not in the cited literature and is taken
-as part of the supplied datum.
-\item[\textup{[ML]}] \emph{Mittag--Leffler descent for the HN inverse
-system.}  The transition maps \(\rho_{R'R}\) of clauses (D0-F)--(D0-S) below
-satisfy \(\lim^1=0\) on every finite \(\Gamma_R^{\mathrm{test}}\)-supported
-piece.  Equivalently, the inverse system is uniformly surjective on each
-finite charge slice; the completed Dirac--Igusa state is then a Lie object
-in the strict sense rather than only a pro-Lie object.
+	of HN height \(\le R\) and active charge in
+	\(F_{\sigma,S}(R)\) is of finite type over \(\mathbb C\).
+	K3-surface finite-wall and HN technology motivates this hypothesis; the
+	\(K3\times E\) threefold case is not in the cited literature and is taken
+	as part of the supplied datum.  Any proof of this datum must control the
+	base \(E\)-direction, not only the fibrewise K3 moduli problem.  For
+	example, if \(A\) is a stable K3 object and the proposed height or charge
+	forgets base line-bundle degree, the objects
+	\[
+	p_S^*A\otimes p_E^*L,\qquad L\in\operatorname{Pic}(E),
+	\]
+	have constant K3 fibre and constant coarse map to the K3 moduli space
+	while carrying unbounded Picard data.  In the semistable case
+	\(p_S^*A\otimes p_E^*V\), with \(V\) a vector bundle on \(E\), imports
+	unbounded \(\operatorname{Bun}_r(E)\)-HN data unless it is bounded,
+		rigidified, or included in the numerical charge.  Thus
+		\textup{[K3\(\times\)E-fin]} includes one of the following explicit
+		controls: the full \(K3\times E\) numerical charge and central charge
+		bound the base Picard/Bun HN types; or the finite stage quotients and
+		rigidifies these factors with a finite degree window; or an equivalent
+		closed finite-type replacement is supplied.
+		A precise candidate for the first alternative is the
+		Abramovich--Polishchuk/Liu product stability construction
+		\cite{AbramovichPolishchukTStructures,LiuProductStability}.  For a
+		rational K3 stability condition
+		\(\sigma_S=(\mathcal A_S,Z_S)\), a degree-one line bundle \(H\) on
+		\(E\), and \(F\) in the AP global heart, Liu writes
+		\cite[\S3]{LiuProductStability}
+		\[
+		L_F(n)=
+		Z_S\!\left(Rp_{S,*}(F\otimes p_E^*H^n)\right)
+		=a(F)n+b(F)+i(c(F)n+d_L(F)),
+		\]
+		and, for \(s,t>0\),
+		\[
+		Z_{s,t}(F)=c(F)s+b(F)+i(-a(F)t+d_L(F)).
+		\]
+		For a product object \(F=A\boxtimes V\), with
+		\(Z_S(A)=x+iy\), \(\operatorname{rk}V=r\), and \(\deg V=d\), this gives
+		\[
+		Z_{s,t}(A\boxtimes V)=r(ys-ixt)+d(x+iy).
+		\]
+		The determinant of the map from \((r,d)\) to this complex number is
+		\(s y^2+t x^2\), nonzero for \(A\ne0\) after the usual rotation.  Thus
+		the full Liu charge sees the elliptic degree.  Moreover a subbundle
+		\(W\subset V\) has slope term
+		\[
+		\nu_t(A\boxtimes W)=-x/y+\mu_E(W)/t,
+		\]
+		so the product stability detects the \(E\)-bundle HN slopes.  This
+		heals the Pic/Bun counterfamily only if a boundedness theorem for
+		\(\sigma_{s,t}\)-semistable objects of fixed Liu charge is supplied;
+		Piyaratne--Toda boundedness for their threefold Bridgeland/BMT setting
+		\cite{PiyaratneTodaModuli3folds} is not automatically this theorem.
+		The exact missing input is the following product-boundedness theorem:
+		for \(S\) a complex K3 surface, \(E\) a smooth elliptic curve, a
+		rational K3 stability condition \(\sigma_S\), and Liu's product
+		stability
+		\(\sigma_{s,t}=(\mathcal A_E^t,Z_{s,t})\) on
+		\(D^b(\operatorname{Coh}(S\times E))\), the stack
+		\[
+		\mathfrak M^{ss}_{\sigma_{s,t}}(\gamma)
+		\]
+		of \(\sigma_{s,t}\)-semistable objects of every fixed full Liu
+		numerical class \(\gamma=(v_1,v_2)\in\Lambda_S\oplus\Lambda_S\), or of
+		any stronger full numerical class with finite fibres over the active
+		charge, is an algebraic stack of finite type over \(\C\).  Together with
+		Liu's support property, this fixed-class boundedness would imply
+			\textup{[K3\(\times\)E-fin]} for bounded \(h_S\)-windows because
+			\(F_{\sigma,S}(R)\) is finite.
+			Fibrewise Bayer--Macri boundedness by itself is not this theorem.
+		\item[\textup{[K3\(\times\)E-atlas]}] \emph{Finite d-critical/cosection
+		Hall atlas.}  For every \(R\in\mathcal R_{\mathrm{HN}}\) and retained full numerical
+		class \(\widehat c\), the finite stage supplies finite-type
+		quasi-smooth derived Artin stacks
+		\[
+		\mathfrak M_{R,\widehat c},\qquad
+		\mathfrak E_{R,\widehat c,\widehat c'},\qquad
+		\mathfrak F^{(2)}_{R,\widehat c,\widehat c',\widehat c''}
+		\]
+		of objects, extensions, and two-step flags; finite residual inertia
+		after scalar, \(E\)-translation, and wrapped rigidifications; BBDJS
+		vanishing-cycle complexes; orientation lines; and surjective K3
+		semiregularity cosections.  On the extension and flag stacks the
+		cosections satisfy the filtered Hall additivity equation
+		\[
+		q^*\operatorname{CS}_{C}
+		=
+		p_1^*\operatorname{CS}_{A}+p_2^*\operatorname{CS}_{B}.
+		\]
+		The maps \(p^*,q_!,p_!\) are admissible in the chosen compact-support
+		six-functor theory, the reduced Thom--Sebastiani transports satisfy the
+		two-step and colored flag coherences, and the reduced \(E\)-quotient is
+		formed as a functor on the finite correspondence category.  All
+		finite-stabilizer gerbes are killed and all characters
+		\(\lambda^{E,N}\) are chosen zero.  Under these hypotheses the finite
+		reduced product is
+		\[
+		m_R^{\mathrm{red}}=
+		q_!\circ\operatorname{TS}^{\mathrm{red}}_R\circ p^* .
+		\]
+		This is an atlas hypothesis, not a consequence of
+		\textup{[K3\(\times\)E-fin]}.
+		\item[\textup{[ML]}] \emph{Mittag--Leffler descent for the HN inverse
+		system.}  The transition maps \(\rho_{R'R}\) of clauses (D0-F)--(D0-S) below
+	satisfy the finite-slice Mittag--Leffler certificate of
+	Definition~\ref{def:finite-slice-mittag-leffler-certificate} on every
+	finite \(\Gamma_R^{\mathrm{test}}\)-supported piece.  Equivalently, the
+	relevant \(\lim^1\) terms vanish there.  The operative finite-dimensional
+	criterion is Mittag--Leffler:
+	for a countable cofinal subsystem \(R_0\le R_1\le\cdots\), and for every
+	fixed finite charge/root window \(W\), the descending chain
+	\[
+	\operatorname{im}\!\left(V_{R_m,W}\to V_{R_n,W}\right),
+	\qquad m\ge n,
+	\]
+	eventually stabilizes for each \(n\).  Uniform surjectivity is a
+	sufficient strict model, and every ML system is pro-isomorphic to one
+	with surjective transition maps after replacing stages by stable images,
+		but surjectivity is not part of the definition.  In particular, once the
+		finite Hall kernels supply finite-dimensional protected Hall, primitive,
+		chiral bar/cobar, cone, radical, quotient, PBW-graded, kernel, cokernel,
+		and parity pieces on each \(W\), and the transition maps are compatible
+		with the product, coproduct, pairing, bracket, normal ordering, source
+		chiral coproduct, bar/cobar comparison, and closed radical data, the ML
+		condition follows on that window.  If any object called a finite window
+		still contains an infinite fibre or infinite bar/cobar piece, the
+		stable-image argument does not apply; the model tower
+		\(\C[x]\xleftarrow{x}\C[x]\xleftarrow{x}\cdots\) has images
+		\(x^m\C[x]\) that never stabilize.  Strictness of the PBW
+		filtration and closedness of the completed radicals remain additional
+		topological requirements.  Under these hypotheses the completed
+	Dirac--Igusa state is a Lie object in the strict sense rather than only a
+	pro-Lie object.
 \end{itemize}
 The recognition theorem of
 Theorem~\textup{\ref{thm:dirac-pfaffian-recognition-conditional}} reads as
@@ -9210,12 +10196,9 @@ R'\ge R\Rightarrow N_{R'}^\Delta\ge N_R^\Delta,\qquad
 \]
 This schedule is finite-window bookkeeping, not a relation between HN
 height and automorphic height.  To make each transition-obstruction
-stage a finite datum, fix a cofinal discrete subsystem
-\[
-\mathcal R=\{R_0<R_1<R_2<\cdots\}\subset\mathbb R_{>0},
-\qquad R_\nu\to\infty,
-\]
-and take all inverse limits below over \(\mathcal R\).  Cofinality does
+stage a finite datum, take all inverse limits below over the fixed
+cofinal subsystem \(\mathcal R_{\mathrm{HN}}\).
+Cofinality does
 not change the completed HN object or the target exhaustion; the
 finite-type substack and proper-correspondence assertions are the
 separate geometric entries of the same certificate.  For
@@ -9273,7 +10256,7 @@ D_{0,R}=
 P_R^\Pi,m_R,\Delta_R,[\,\cdot\,,\,\cdot\,]_R,I_R^{\mathrm{prot}},
 \Theta_{\Pi,R},\Theta_{\Pi,R}^{-},\mathfrak D_{X,R},
 \mathscr L_{\mathrm{Pf},R},\operatorname{pf}_{X,R},\iota_R^{obs}\bigr),
-\qquad R\in\mathcal R,
+\qquad R\in\mathcal R_{\mathrm{HN}},
 \]
 together with successor transition maps whose composites give every
 non-successor arrow.  If the transition residuals below vanish and the
@@ -9771,6 +10754,85 @@ test after such line-comparison data have been supplied.
 \end{enumerate}
 \end{definition}
 
+\begin{definition}[Finite-slice Mittag--Leffler certificate]
+\label{def:finite-slice-mittag-leffler-certificate}
+Fix a countable cofinal HN subsystem
+\(\mathcal R_{\mathrm{HN}}=\{R_0<R_1<\cdots\}\).  For each finite downward-saturated
+root window \(W\), each cohomological degree \(j\), and each tower
+\(V_R\) occurring among the supplied source coalgebras, bar/cobar
+constructions, target truncations, kernels, cokernels, radicals, PBW
+associated gradeds, and cones of \(b_{X,R}\) and
+\(\Theta_{\mathrm{Kos},R}\), put
+\[
+V_{\nu,W}^j=(V_{R_\nu})^j_W .
+\]
+A finite-slice Mittag--Leffler certificate consists of
+finite-dimensional vector spaces \(V_{\nu,W}^j\), transition maps
+\(\rho_{\mu\nu}:V_{\mu,W}^j\to V_{\nu,W}^j\), and stable images: for every
+\(\nu,W,j\) there is \(\mu_0\ge\nu\) such that
+\[
+\operatorname{im}\!\left(\rho_{\mu\nu}:V_{\mu,W}^j\to V_{\nu,W}^j\right)
+=
+\operatorname{im}\!\left(\rho_{\mu_0\nu}:V_{\mu_0,W}^j\to
+V_{\nu,W}^j\right)
+\qquad(\mu\ge\mu_0).
+\]
+Strictness for the HN topology and closedness of radical images are part of
+the certificate.  By the standard Mittag--Leffler criterion
+\cite[\S3.5]{WeibelHA}, this finite-dimensional stable-image condition
+implies \(R^1\varprojlim_\nu V_{\nu,W}^j=0\).  It does not construct the
+towers \(V_R\); it is a condition on the finite Hall, Koszul, radical, and
+PBW systems after those systems have been supplied.
+\end{definition}
+
+\begin{definition}[Matrix form of finite-slice Mittag--Leffler data]
+\label{def:matrix-finite-slice-mittag-leffler-data}
+For each declared tower \(\mathcal V\), finite window \(W\), and
+cohomological degree \(j\), the finite-slice
+Mittag--Leffler certificate includes bases of the finite-dimensional spaces
+\[
+V^{\mathcal V,j}_{\nu,W}
+\]
+and transition matrices
+\[
+M^{\mathcal V,j}_{\mu\nu,W}:V^{\mathcal V,j}_{\mu,W}
+\longrightarrow V^{\mathcal V,j}_{\nu,W}\qquad(\mu\ge\nu),
+\]
+satisfying the cocycle identities
+\[
+M^{\mathcal V,j}_{\lambda\nu,W}
+=
+M^{\mathcal V,j}_{\mu\nu,W}
+M^{\mathcal V,j}_{\lambda\mu,W}
+\qquad(\lambda\ge\mu\ge\nu).
+\]
+The stable-image entry is the finite linear-algebra assertion that for
+each \((\mathcal V,W,j,\nu)\) there is \(\mu_0\ge\nu\) such that
+\[
+\operatorname{im}M^{\mathcal V,j}_{\mu\nu,W}
+=
+\operatorname{im}M^{\mathcal V,j}_{\mu_0\nu,W}
+\subset V^{\mathcal V,j}_{\nu,W}
+\qquad(\mu\ge\mu_0).
+\]
+Equivalently, after fixing the codomain basis, the column spaces agree;
+in matrix form this can be recorded by
+\[
+\operatorname{rank} M^{\mathcal V,j}_{\mu\nu,W}
+=
+\operatorname{rank} M^{\mathcal V,j}_{\mu_0\nu,W}
+=
+\operatorname{rank}\!\left[
+M^{\mathcal V,j}_{\mu\nu,W}\;
+M^{\mathcal V,j}_{\mu_0\nu,W}
+\right].
+\]
+For filtered, radical, and PBW towers the bases are filtration-adapted, and
+strictness is recorded by the corresponding block-rank equalities.  This
+matrix certificate is void until the finite source spaces and transition
+matrices have actually been supplied.
+\end{definition}
+
 \begin{remark}[Chamber dependence and wall-crossing]
 \label{rem:chamber-conditional-wall-crossing}
 The certificate is indexed by a Bridgeland-type supplied stability/HN sector
@@ -9797,7 +10859,7 @@ target; that is an open conjecture.
 
 \begin{proposition}[Finite Pfaffian window obstruction]
 \label{prop:finite-pfaffian-window-obstruction}
-Fix \(R\in\mathcal R\), and put
+Fix \(R\in\mathcal R_{\mathrm{HN}}\), and put
 \[
 A_R:=\{\gamma\in\Gamma_R^{\mathrm{test},+}\mid a_\Delta(\gamma)\ne0\},
 \qquad
@@ -9891,14 +10953,48 @@ Derive the equalities
 \]
 from the compact Hall correspondences, orientation data, quotient descent,
 and protected integration at finite height \(R\), before comparison with
-the imported Borcherds product.  The present certificate only tests a
-supplied source object against the target exponents.
+the imported Borcherds product.  In the first wrapped channel
+\[
+\delta_2=2f_{-2}-f_3\leftrightarrow(0,1,1),
+\]
+this asks for a wrapped charge \(\eta_2\in\Gamma_R^{\mathrm{wr}}\) with
+\[
+b_R(\eta_2)=1,\qquad \overline\Pi_X(\eta_2)=(0,1,1),
+\]
+and a computation
+\[
+P^{\Pi,+}_{R,(0,1,1)}
+=
+H^0\Prim_{\mathrm{prot}}
+(\overline\Pi_{R,*}^{\Theta}Q_{E,R}
+\mathcal G_{\eta_2,R}^{\mathrm{wr}})
+\]
+with parity dimensions
+\[
+\dim P^{\Pi,+}_{R,(0,1,1),\overline0}=1,\qquad
+\dim P^{\Pi,+}_{R,(0,1,1),\overline1}=0.
+\]
+Equivalently, the source exponent is
+\(\sdim P^{\Pi,+}_{R,(0,1,1)}=f(0,1)=1\).  A protected primitive generator
+\(v_{\delta_2}\) must satisfy the trace normalization
+\[
+I_R^{\mathrm{prot}}(Q_{E,R}v_{\delta_2})=q^0r^1s^1,
+\]
+with no quotient-orientation or finite-stabilizer sign changing it.  The
+corresponding product factor is \((1-rs)^{+1}\), so its linear product
+coefficient is \(-rs\); the exponent and the product coefficient are not
+the same datum.  A projection-finite source has \(b_R=0\), hence cannot
+produce this \(s\)-degree.  A detached one-dimensional \(K_0\) shadow in
+degree \((0,1,1)\) has the right signed dimension but supplies no wrapped
+moduli, vanishing cycles, quotient descent, protected primitive, or Hall
+bracket.  The present certificate only tests a supplied source object
+against the target exponents.
 \end{openproblem}
 
 \begin{definition}[Finite Hall source kernel and downstream normal-ordering
 package]
 \label{def:finite-hall-source-kernel}
-Fix \(R\in\mathcal R\).  A finite Hall source kernel at height \(R\) is
+Fix \(R\in\mathcal R_{\mathrm{HN}}\).  A finite Hall source kernel at height \(R\) is
 first the following source-side geometric datum, before normal-ordering,
 protected integration, or comparison with the Borcherds target:
 \[
@@ -9919,11 +11015,20 @@ I_R^{\mathrm{prot}},
 \Theta_{\Pi,R},\Theta_{\Pi,R}^{-}
 \bigr).
 \]
-Only \(\mathfrak S^{\mathrm{geom}}_R\) is the common finite geometric
-kernel.  The protected integration map and the normal-ordering cochains
-are downstream finite data; they are part of the certificate, not
-consequences of the geometric kernel alone.  The requirements are finite
-and source-internal.
+	Only \(\mathfrak S^{\mathrm{geom}}_R\) is the common finite geometric
+	kernel.  The protected integration map and the normal-ordering cochains
+	are downstream finite data; they are part of the certificate, not
+	consequences of the geometric kernel alone.  The requirements are finite
+	and source-internal.  All pull-push operations below are taken in one
+	fixed constructible compact-support six-functor theory on the
+	finite-type Artin stacks under discussion.  The symbol \(f_!\) means
+	exceptional direct image; proper pushforward is only the special case
+	\(f_!=f_*\) on a proper protected support.  On an affine Ext stratum of
+	rank \(d\), the normalization includes
+	\[
+	R\Gamma_c(\mathbb A^d,\mathbb C)=\mathbb C(-d)[-2d],
+	\]
+	and this shift/Tate twist is absorbed into the orientation transport.
 \begin{enumerate}
 \item[\textup{(S0)}] The finite direct sum of protected cohomology groups
 has a supplied unit, counit, multiplication, and coproduct, making it a
@@ -9934,11 +11039,22 @@ denoted \(\epsilon_R\), the coproduct \(\Delta_R\), and
 -(\mathrm{id}\otimes1)\bigr)\cap\ker(\epsilon_R)
 \]
 is the finite primitive subobject.
-\item[\textup{(S1)}] Each
-\(\mathfrak M_{R,\widehat c}\) is a finite-type d-critical stack with
-compactly supported BBDJS vanishing-cycle complex
-\(\Phi_{R,\widehat c}\), orientation line \(o_{R,\widehat c}\), and
-finite-dimensional protected cohomology.
+	\item[\textup{(S1)}] Each
+	\(\mathfrak M_{R,\widehat c}\) is a finite-type d-critical Artin stack
+	with finite residual inertia after the prescribed scalar,
+	\(E\)-translation, and wrapped rigidifications, with
+	compactly supported BBDJS vanishing-cycle complex
+	\(\Phi_{R,\widehat c}\), orientation line \(o_{R,\widehat c}\), and
+	finite-dimensional protected cohomology.  The finite-inertia clause is
+	load-bearing: a residual \(\mathbb G_m\)-stabilizer already gives
+	\[
+	H^\bullet(B\mathbb G_m,\mathbb C)\simeq\mathbb C[u],
+	\]
+	so finite type of the coarse support and \(E\)-rigidification alone do
+	not imply finite protected cohomology.  Finite stabilizers are harmless
+	for characteristic-zero constructible cohomology, while their mod-\(2\)
+	orientation characters remain part of the quotient-orientation
+	obstruction data.
 \item[\textup{(S2)}] For every product whose target charge remains in
 \(\widehat\Gamma_R\), the extension correspondence
 \[
@@ -9948,9 +11064,13 @@ finite-dimensional protected cohomology.
 \xrightarrow{\ q_{R,\widehat c,\widehat c'}\ }
 \mathfrak M_{R,\widehat c\star\widehat c'}
 \]
-is admissible for vanishing-cycle pull-push, proper on the protected
-support used by \(I_R^{\mathrm{prot}}\), and equipped with the oriented
-Thom--Sebastiani transport \(\mu_R^{or}\).  If
+	is admissible for vanishing-cycle pull-push in that six-functor theory,
+	has either proper support for \(q\) or a specified exceptional
+	pushforward \(q_!\) with finite compact-support realization, has the
+	dual \(p_!\) needed for the coproduct, and is equipped with the oriented
+	Thom--Sebastiani transport \(\mu_R^{or}\).  The notation \(p^*\) below
+	denotes the supplied pullback or Gysin-normalized pullback appropriate
+	to the Borel--Moore convention.  If
 \(\widehat c\star\widehat c'\notin\widehat\Gamma_R\), the projected
 correspondence is declared zero in the finite quotient.
 \item[\textup{(S3)}] The two-step extension stacks carry the usual flag
@@ -10059,8 +11179,9 @@ finite-dimensionality imposed in \textup{(S1)}.  The BBDJS
 Thom--Sebastiani isomorphism, transported through the orientation
 isomorphisms, identifies the vanishing-cycle coefficients on the source
 of the correspondence with the coefficient system on the target.  The
-properness/admissibility in \textup{(S2)} therefore makes the displayed
-pull-push maps defined.  The zero convention for charges outside
+	six-functor admissibility in \textup{(S2)} therefore makes the displayed
+	pull-push maps defined; properness is only one way to identify the
+	exceptional pushforward with ordinary pushforward.  The zero convention for charges outside
 \(\widehat\Gamma_R\) is exactly the finite charge-support Hall quotient
 convention.
 The two-step flag isomorphisms in \textup{(S3)} identify the two
@@ -10080,7 +11201,7 @@ to the supplied truncation morphisms.
 
 \begin{proposition}[Cofinal target-window \(K_0\) parity shadow]
 \label{prop:cofinal-target-window-parity-model}
-For every \(R\in\mathcal R\), the target exponents construct a canonical
+For every \(R\in\mathcal R_{\mathrm{HN}}\), the target exponents construct a canonical
 minimal finite super-vector-space model on the test window:
 \[
 \mathsf P^{\min}_{\Delta,R,\gamma}:=
@@ -10160,7 +11281,7 @@ last assertion.
 
 \begin{proposition}[Finite Hall--Dirac atlas and parity-lift obstruction]
 \label{prop:finite-d0-atlas-parity-obstruction}
-Fix \(R\in\mathcal R\).  The finite Hall source core is constructed from
+Fix \(R\in\mathcal R_{\mathrm{HN}}\).  The finite Hall source core is constructed from
 the source kernel of Definition~\ref{def:finite-hall-source-kernel} by
 Proposition~\ref{prop:finite-d0-hall-source-construction}.  A genuine
 construction of the full finite stage \(D_{0,R}\), including the Dirac
@@ -10402,7 +11523,7 @@ supplied kernels and atlases from the open existence of those kernels and
 atlases.
 \begin{enumerate}
 \item[\textup{(lattice/finite bookkeeping, conditional on supplied HN support)}]
-For every \(R\in\mathcal R\), the
+For every \(R\in\mathcal R_{\mathrm{HN}}\), the
 normal-ordered support
 \(\widehat\Gamma_R\), its image \(\Gamma_R^\Pi\), the target window
 \(\Gamma_{\Delta,R}\), the ambient test window
@@ -10674,27 +11795,33 @@ for the chosen operadic model, compact-support control, and continuity
 of the \(E_3\) operations across
 the finite HN inverse system.
 
-\item[\((H_X)\)] \emph{Hybrid \(K3\)-to-\(E\) factorization shadow.}
-This entry consists of a supplied finite-first
-K3-to-\(E\) source interface in the sense of
-Definition~\ref{def:compact-e3-source-interface}, a chain-level
-specialization \(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\), and named comparison
-maps \(\kappa_E\) (chiral-Koszul) and \(\pi_*^{\mathrm{ch}}\)
-(proper-pushforward identification), with the triple zigzag
-$$
-\mathcal A^{E_3}_X
-\xrightarrow{\ \mathrm{Sp}^{\mathrm{ch}}_{K3,E}\ }
-\mathcal F_X^{(0)}
-\xrightarrow{\ \kappa_E\ }
-\mathcal F_X^{(1)}
-\xrightarrow{\ \pi_*^{\mathrm{ch}}\ }
-(p_E)_*\mathcal A^{E_3}_X
-$$
-of equivalences in the projection-finite sectors.  In the wrapped
-elliptic-degree sectors, the required filling is the finite-HN inverse
-system whose limit is the hybrid object
-\(\mathcal F_X^{\mathrm{hyb}}\) of
-Definition~\ref{def:hybrid-wrapped-factorization-certificate}.  Thus
+	\item[\((H_X)\)] \emph{Hybrid \(K3\)-to-\(E\) factorization shadow.}
+	This entry consists of a supplied finite-first
+	\(K3\)-to-\(E\) source interface in the sense of
+	Definition~\ref{def:compact-e3-source-interface}, a chain-level
+	specialization \(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}\), and named comparison
+	maps \(\kappa_E\) (chiral/factorization rectification comparison) and
+	\(\pi_*^{\mathrm{ch}}\) (factorization pushforward identification), with
+	the required rectified finite-chain zigzag
+	$$
+	\mathcal A^{E_3}_X
+	\xrightarrow{\ \mathrm{Sp}^{\mathrm{ch}}_{K3,E}\ }
+	\mathcal F_X^{(0)}
+	\xrightarrow{\ \kappa_E\ }
+	\mathcal F_X^{(1)}
+	\xrightarrow{\ \pi_*^{\mathrm{ch}}\ }
+	(p_E)_!^{\mathrm{fact}}\mathcal A^{E_3}_X
+	$$
+	in the projection-finite sectors.  These arrows are supplied finite-chain
+	comparison data; they are not constructed by the determinant, by the
+	Francis--Gaitsgory chiral Koszul theorem, or by ordinary properness of
+	\(p_E\).  They become strict equivalences only after the finite
+	obstruction tuple \(\mathfrak O^{K3\to E}_{R}\) of the finite
+	\(K3\)-to-\(E\) square above vanishes compatibly in \(R\).
+	In the wrapped elliptic-degree sectors, the required filling is the
+	finite-HN inverse system whose limit is the hybrid object
+	\(\mathcal F_X^{\mathrm{hyb}}\) of
+	Definition~\ref{def:hybrid-wrapped-factorization-certificate}.  Thus
 \((H_X)\) includes the hybrid Ran base
 \(\operatorname{Ran}^{\mathrm{hyb}}(E)\), projection-finite local
 sectors \(\mathcal F_{\alpha,R}^{\mathrm{loc}}(U)\), rigidified wrapped
@@ -11836,12 +12963,76 @@ parity dimensions in this window are
 \delta_{123} & 29&93 .
 \end{array}
 \]
-The parity entries use the imported Gritsenko--Nikulin/Kac parity
-convention; the target computation checks signed coefficients and
-presentation counts, not source parity bases.
-Consequently a compact source passes primitive recognition on
-\(W_{\le3}\) only after supplying the following finite certificate:
-parity-homogeneous representatives with the displayed dimensions; the
+	The parity entries use the imported Gritsenko--Nikulin/Kac parity
+	convention; the target computation checks signed coefficients and
+	presentation counts, not source parity bases.
+	Writing \(a_{ij}=\delta_i+\delta_j\) and
+	\(\tau=\delta_1+\delta_2+\delta_3\), the target-side ordered binary
+	decompositions in \(W_{\le3}\) are exactly
+	\[
+	a_{ij}=\delta_i+\delta_j=\delta_j+\delta_i,
+	\]
+	\[
+	2\delta_i+\delta_j=\delta_i+a_{ij}=a_{ij}+\delta_i,\qquad
+	\delta_i+2\delta_j=\delta_j+a_{ij}=a_{ij}+\delta_j,
+	\]
+	and
+	\[
+	\tau=\delta_1+a_{23}=a_{23}+\delta_1
+	=\delta_2+a_{13}=a_{13}+\delta_2
+	=\delta_3+a_{12}=a_{12}+\delta_3.
+	\]
+	Choose target bases
+	\[
+	e_i\in\mathfrak g_{\delta_i},\qquad
+	E_{ij}=[e_i,e_j],\quad
+	u_{ij,1},\ldots,u_{ij,9}\in\mathfrak g_{a_{ij}},
+	\]
+	\[
+	Y_{i;ij}=[e_i,E_{ij}],\qquad
+	Y_{j;ij}=[e_j,E_{ij}],
+	\]
+	and, in the even part of \(\mathfrak g_\tau\),
+	\[
+	T_1=[e_1,E_{23}],\qquad
+	T_2=[e_2,E_{31}],\qquad
+	M_{12,r}=[e_3,u_{12,r}],\quad
+	M_{13,r}=[e_2,u_{13,r}],\quad
+	M_{23,r}=[e_1,u_{23,r}],
+	\]
+	with \(E_{31}=-E_{13}\) and
+	\(T_3=[e_3,E_{12}]=-T_1-T_2\); let
+	\(w_1,\ldots,w_{93}\) be odd simple generators in degree \(\tau\).
+	With \(c_0=(1,0,\ldots,0)^t\in\C^{10}\), the target bracket matrices
+	start as
+	\[
+	B_{\delta_i,\delta_j}=c_0,\qquad
+	B_{\delta_j,\delta_i}=-c_0,
+	\]
+	and the adjacent simple-isotropic maps
+	\(B_{\delta_p,a_{ij}}\colon\C^{10}\to\C\), \(p=i,j\), are
+	\((1,0,\ldots,0)\), killing the \(u_{ij,r}\)-columns.  The complementary
+	simple-isotropic maps to the even \(\tau\)-block are
+	\[
+	B_{\delta_1,a_{23}}(E_{23})=T_1,\quad
+	B_{\delta_1,a_{23}}(u_{23,r})=M_{23,r},
+	\]
+	\[
+	B_{\delta_2,a_{13}}(E_{13})=-T_2,\quad
+	B_{\delta_2,a_{13}}(u_{13,r})=M_{13,r},
+	\]
+	\[
+	B_{\delta_3,a_{12}}(E_{12})=-T_1-T_2,\quad
+	B_{\delta_3,a_{12}}(u_{12,r})=M_{12,r},
+	\]
+	and their odd \(\tau\)-rows are zero.  With dual positive-negative
+	target pairings, the target coproduct templates are the transposes of
+	these matrices.  A compact Hall source must reproduce these templates
+	after quotienting by its own radical; the target package with
+	zero radical is only a consistency check.
+		Consequently a compact source passes primitive recognition on
+		\(W_{\le3}\) only after supplying the following finite certificate:
+		parity-homogeneous representatives with the displayed dimensions; the
 Chevalley, real-Serre, orthogonality, and super-sign relations restricted
 to \(W_{\le3}\); the Jacobi relation
 \[
@@ -11857,8 +13048,8 @@ finite transition maps; the finite kernel equality
 \bigl(\overline{J_{\mathrm{BK}}+\operatorname{Rad}_{\mathrm{GN}}}
 \bigr)_{W_{\le3}};
 \]
-and the associated-graded PBW isomorphism on the truncated enveloping
-algebras.  If this finite certificate is supplied, the restricted map
+	and the associated-graded PBW isomorphism on the truncated enveloping
+	algebras.  If this finite certificate is supplied, the restricted map
 \[
 G(\mathscr B_{\Delta_5})_{W_{\le3}}
 \longrightarrow
@@ -11866,10 +13057,32 @@ P^{\Pi,\mathrm{red}}_{X,W_{\le3}}
 \]
 is an isomorphism of finite Gram-graded Lie superalgebras.  Without the
 kernel equality, the Hopf-radical ideal/coideal assertion, and the PBW
-associated-graded isomorphism, equality of the displayed dimensions is
-not recognition.
+	associated-graded isomorphism, equality of the displayed dimensions is
+	not recognition.
+	In the notation of \textup{(NO7)}, this first window requires, at minimum,
+	explicit compact primitive bases for
+	\(W_{\le3}\cup(-W_{\le3})\cup\{0\}\).  Equivalently, for each retained
+	parity block one must exhibit a source splitting
+	\[
+	P^X_{R,\beta,\bar p}=
+	K_{\beta,\bar p}\oplus L_{\beta,\bar p},
+	\qquad
+	Q_{\beta,\bar p}=[0\ I],
+	\]
+	where \(K_{\beta,\bar p}\) is the radical block and
+	\(L_{\beta,\bar p}\) maps to the corresponding target basis above.  The
+	certificate further requires positive-negative pairing matrices
+	in every displayed degree, radical kernel bases and quotient maps, the
+	Chevalley, real-Serre, isotropic, Jacobi, and \(27\) mixed bracket
+	constants, coproduct matrices for every retained decomposition, product
+	matrices or equivalent Hopf-adjointness data, and successor transition
+	matrices preserving the kernels.  The \(29|93\) block in degree
+	\(\delta_{123}\) is the first place where signed dimension alone is
+	especially weak: the compact source must exhibit the two parity
+	vector spaces, the pairing/radical matrices, and the bracket/coproduct
+	operations on them.
 
-The next coefficient checks already lie outside this window.  The exact
+	The next coefficient checks already lie outside this window.  The exact
 finite product computation in \texttt{compute/verify\_square\_root.py}
 is target-only: it verifies Borcherds/Gritsenko--Nikulin arithmetic, not
 compact Hall representatives, Hopf-pairing matrices, coproduct matrices,
@@ -11989,6 +13202,77 @@ the exponent is \(3\).  All displayed numerical checks are asserted in
 \texttt{compute/verify\_square\_root.py}.
 \end{proof}
 
+\begin{proposition}[Finite \(W_{\le3}\) NO7 source protocol]
+\label{prop:finite-wlethree-no7-source-protocol}
+For a finite Hall stage \(R\) whose source image contains
+\(W_{\le3}\cup(-W_{\le3})\cup\{0\}\), a compact source verifies the
+\textup{(NO7)} part of the \(W_{\le3}\)-recognition certificate only after
+supplying parity-homogeneous source splittings
+\[
+P^X_{R,\beta,\bar p}=K_{\beta,\bar p}\oplus L_{\beta,\bar p},
+\qquad
+Q_{\beta,\bar p}=[0\ I],
+\]
+positive-negative pairing matrices \(G_\beta\), radical bases
+\[
+K_\beta=\ker G_\beta\cap\ker G_{-\beta}^{t},
+\]
+product matrices \(M_{\alpha,\beta}\), coproduct matrices
+\(D^{\mu,\nu}_{\rho}\), bracket matrices \(B_{\alpha,\beta}\), and
+successor matrices \(\rho^P_{R^+R}\) preserving \(K_\beta\).  Let
+\(\mathrm{Pair}^{\pm}_{\le3}(R)\) be the finite set of ordered pairs
+\((\alpha,\beta)\) with
+\(\alpha,\beta,\alpha+\beta\in W_{\le3}\cup(-W_{\le3})\cup\{0\}\)
+whose product component is not killed by the height-\(R\) quotient, and
+let \(\mathrm{Dec}^{\pm}_{\le3}(R)\) be the finite set of ordered triples
+\((\rho;\mu,\nu)\) with
+\(\rho,\mu,\nu\in W_{\le3}\cup(-W_{\le3})\cup\{0\}\),
+\(\rho=\mu+\nu\), and whose reduced coproduct component is not killed by
+the height-\(R\) quotient.  For every
+\((\alpha,\beta)\in\mathrm{Pair}^{\pm}_{\le3}(R)\) one must verify
+\[
+Q_{\alpha+\beta}B_{\alpha,\beta}
+(P^X_{R,\alpha}\otimes K_\beta)=0,\qquad
+Q_{\alpha+\beta}B_{\alpha,\beta}
+(K_\alpha\otimes P^X_{R,\beta})=0,
+\]
+and, for every \((\rho;\mu,\nu)\in\mathrm{Dec}^{\pm}_{\le3}(R)\),
+\[
+(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}K_\rho=0.
+\]
+For every retained pair whose product degree also carries the displayed
+reduced coproduct component, one must verify Frobenius compatibility
+\[
+\langle M_{\alpha,\beta}(x\otimes y),z\rangle_R
+=
+\langle x\otimes y,D^{\alpha,\beta}_{\alpha+\beta}z\rangle_R,
+\]
+and the quotient-tensor pairing must be non-degenerate.  These are
+source-side matrix equalities.  The target denominator algebra and the
+script \texttt{compute/verify\_square\_root.py} do not supply them.
+Indeed a source can have the same quotient bracket templates as
+\(G(\mathscr B_{\Delta_5})_{W_{\le3}}\) and still fail \textup{(NO7)}:
+there may be \(k\in K_\rho\) with
+\[
+(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}(k)\ne0.
+\]
+Then the quotient target table sees no discrepancy, but the radical is not
+a coideal and the Hopf quotient is not defined.  This is the finite
+tensor-Hopf obstruction hidden by signed determinant data.
+\end{proposition}
+
+\begin{proof}
+This is \textup{(NO7)} and
+Lemma~\ref{lem:finite-hopf-adjointness-radical-test} restricted to the
+first downward-saturated window.  The two \(QB\)-containments are the
+finite Lie-ideal tests for the radical, the \(QD\)-containment is the
+finite coideal square, and Hopf adjointness together with
+quotient-tensor non-degeneracy is the finite algebraic condition forcing
+the coproduct to descend through the radical quotient.  Transition
+preservation of \(K_\beta\) is the finite part of the closed radical
+condition in the HN inverse system.
+\end{proof}
+
 \begin{openproblem}[State-side construction of \(D_0\) and the
 Dirac--Igusa certificate]
 \label{op:compact-igusa-realization}
@@ -11999,7 +13283,7 @@ Definition~\ref{def:compact-igusa-realization-datum}.  The exact open
 obligations are:
 \begin{enumerate}
 \item[\textup{(open \(D_0\)-state)}] construct, for every
-\(R\in\mathcal R\), the finite Hall source kernel
+\(R\in\mathcal R_{\mathrm{HN}}\), the finite Hall source kernel
 \(\mathfrak S_R\) of
 Definition~\ref{def:finite-hall-source-kernel}, so that
 Proposition~\ref{prop:finite-d0-hall-source-construction} produces the
@@ -12681,7 +13965,9 @@ Z_{\mathrm{K3}}=2\phi_{0,1},\qquad
 $$
 Equivalently, if \(\phi_{12,1}\) is the first Fourier--Jacobi
 coefficient of Igusa's weight-\(12\) form \(F_{12}\)
-\cite{Igusa1962,Igusa1964II}, and if
+\cite{Igusa1962,Igusa1964II}, equivalently in the
+Gritsenko--Nikulin normalization
+\cite[Example~2.4, (2.15)]{GNII}, and if
 $$
 \delta_{12}(\tau)=q\prod_{n\ge1}(1-q^n)^{24},
 $$
@@ -12742,9 +14028,13 @@ The synthesis is the following spine:
 \hbox{eight-row certificate extension}.
 \end{gathered}
 \]
-\begin{theorem}[Coefficient dictionary and synthesis theorem]
+\begin{theorem}[Coefficient dictionary and claim-strength synthesis]
 \label{thm:protected-igusa-determinant}
-Let \(X=K3\times E\).  Let
+Let \(X=S\times E\), where \(S\) is a smooth complex K3 surface and
+\(E\) is a smooth elliptic curve.  Boundary-degeneration cases--singular
+K3 limits, nodal or cuspidal elliptic limits, imprimitive classes, the
+compact Hall \(s=0\) cusp, multi-component charge closures, and boundary
+closures of Hall correspondences--are not hypotheses of this theorem.  Let
 \[
 \mathbb U_{n,l}\in K_0(\mathrm{sVect}_{\mathrm{fd}}),\qquad
 \sdim\mathbb U_{n,l}=f(n,l),
@@ -12971,7 +14261,7 @@ together with the closed Hopf-radical and completed PBW hypotheses in
 Theorem~\ref{thm:primitive-recognition}.  The determinant and scalar
 square do not contain the missing presentation, orientation, radical, PBW,
 or Hall correspondence data.  The row certificate condition is the same
-separation applied to the Clery--Gritsenko catalogue in the next part.
+separation applied to the Cl\'ery--Gritsenko catalogue in the next part.
 \end{proof}
 
 \part{Diagonal-divisor rows and CHL boundary physics}
@@ -12979,7 +14269,7 @@ separation applied to the Clery--Gritsenko catalogue in the next part.
 \section{Eight diagonal-divisor rows: automorphic and physical status}
 \label{sec:eight-dd-rows-status}
 
-The Clery--Gritsenko catalogue gives eight
+The Cl\'ery--Gritsenko catalogue gives eight
 diagonal-divisor automorphic products.  The Gritsenko--Nikulin and
 Govindarajan theorems promote these products to denominator identities
 in the rows where the Weyl data are known.  A CHL dyon square, a reduced
@@ -13046,7 +14336,7 @@ lattice, orientation character, one-particle index, scalar identity when
 claimed, and primitive Hall/chiral comparison.
 \end{definition}
 
-\begin{theorem}[Clery--Gritsenko]
+\begin{theorem}[Cl\'ery--Gritsenko]
 In the class of Siegel modular forms with character or multiplier system
 for the Hecke-type congruence subgroups $\Gamma_t(N)$ whose divisor is
 the union of the $\Gamma_t(N)$-translates of $\mathcal H_{\mathrm{diag}}$
@@ -13091,7 +14381,7 @@ row & automorphic product & denominator theorem & CHL/dyon square &
 reduced CY/DT scalar host & compact Hall/chiral host \\
 \hline
 1 &
-\(F_1=\Delta_5\); Clery--Gritsenko product and
+\(F_1=\Delta_5\); Cl\'ery--Gritsenko product and
 Borcherds--Gritsenko--Nikulin lift of \(\phi_{0,1}\) &
 Gritsenko--Nikulin denominator algebra \(\mathfrak g_{\Delta_5}\);
 \(64^{-1}\Delta_5(2Z)\) normalization &
@@ -13101,19 +14391,19 @@ proved OP/DT \(K3\times E\) scalar host:
 \(-4096\Delta_5^{-2}\) &
 open; the formal determinant is not a compact Hall/chiral source \\
 2 &
-\(F_2=\Delta_2\); Clery--Gritsenko product &
+\(F_2=\Delta_2\); Cl\'ery--Gritsenko product &
 Gritsenko--Nikulin denominator row \(\mathfrak g^{\mathrm{GN}}_2\) &
 no certified CHL/dyon row map &
 no certified curve-counting scalar theorem &
 no certified Hall or factorization host \\
 3 &
-\(F_3=\Delta_1\); Clery--Gritsenko product &
+\(F_3=\Delta_1\); Cl\'ery--Gritsenko product &
 Gritsenko--Nikulin denominator row \(\mathfrak g^{\mathrm{GN}}_3\) &
 no certified CHL/dyon row map &
 no certified curve-counting scalar theorem &
 no certified Hall or factorization host \\
 4 &
-\(F_4=\Delta_{1/2}\); Clery--Gritsenko product on the degree-eight
+\(F_4=\Delta_{1/2}\); Cl\'ery--Gritsenko product on the degree-eight
 multiplier cover &
 Gritsenko--Nikulin denominator row on the same cover
 \(\mathfrak g^{\mathrm{GN}}_4\) &
@@ -13121,19 +14411,19 @@ no certified CHL/dyon row map &
 no certified curve-counting scalar theorem &
 no certified Hall or factorization host \\
 5 &
-\(F_5=\nabla_3\); Clery--Gritsenko product &
+\(F_5=\nabla_3\); Cl\'ery--Gritsenko product &
 Govindarajan \(\mathcal G_1(2)\) CHL/WKB denominator theorem &
 sourced scalar dyon square \(\nabla_3^2=\Phi_6^{(1,2)}\) &
 no reduced CY/DT certificate &
 no compact Hall/chiral certificate \\
 6 &
-\(F_6=\nabla_2\); Clery--Gritsenko product &
+\(F_6=\nabla_2\); Cl\'ery--Gritsenko product &
 Govindarajan \(\mathcal G_1(3)\) CHL/WKB denominator theorem &
 sourced scalar dyon square \(\nabla_2^2=\Phi_4^{(1,3)}\) &
 no reduced CY/DT certificate &
 no compact Hall/chiral certificate \\
 7 &
-\(F_7=\nabla_{3/2}\); Clery--Gritsenko product on the order-four
+\(F_7=\nabla_{3/2}\); Cl\'ery--Gritsenko product on the order-four
 multiplier cover &
 Govindarajan \(\mathcal G_1(4)\) CHL/WKB denominator theorem on the
 \(\mu_4\)-cover &
@@ -13142,7 +14432,7 @@ scalar form, only after fixing the cover and branch &
 no reduced CY/DT certificate &
 no compact Hall/chiral certificate \\
 8 &
-\(F_8=Q_1\); Clery--Gritsenko \((t,N)=(2,2)\) product &
+\(F_8=Q_1\); Cl\'ery--Gritsenko \((t,N)=(2,2)\) product &
 Govindarajan \(\mathcal G_2(4)\) CHL/WKB denominator theorem &
 sourced twisted dyon square \(Q_1^2=\Phi_2^{(2,4)}\); \(Q_1\) is the
 special \(\mathcal G_2(4)\) row &
@@ -13163,7 +14453,7 @@ additional denominator data (Weyl chamber, real roots, reflection
 character, Weyl sum) are supplied by the CHL denominator theorem
 of Govindarajan for \(F_5,F_6,F_7,F_8\).
 For \(F_7\) the theorem lives on the
-$\mu_4$-multiplier cover determined by the Clery--Gritsenko order-four
+$\mu_4$-multiplier cover determined by the Cl\'ery--Gritsenko order-four
 multiplier.  For \(Q_1\) the row is the special \(\mathcal G_2(4)\)
 twisted CHL denominator row.  Neither statement supplies a reduced
 CY/DT scalar host or compact Hall/chiral certificate.
@@ -13231,7 +14521,7 @@ as recorded in Theorem~\ref{thm:govindarajan-denominator-rows}.
 \end{proposition}
 
 \begin{proof}
-Clery--Gritsenko record the dd-forms $\nabla_3$ and $\nabla_2$ and note
+Cl\'ery--Gritsenko record the dd-forms $\nabla_3$ and $\nabla_2$ and note
 that their squares were constructed in the CHL papers as
 \(\Phi_6^{(1,2)}\) and \(\Phi_4^{(1,3)}\).  The square forgets the sign character which a denominator
 identity needs on simple real reflections.  Thus the scalar CHL product
@@ -13245,12 +14535,12 @@ A separate comparison tuple has weights
 $$
 (5,2,1,1,\tfrac12,1,\tfrac14,0).
 $$
-It is not the Clery--Gritsenko table.  A comparison with the
-Clery--Gritsenko forms requires the relevant entries of
+It is not the Cl\'ery--Gritsenko table.  A comparison with the
+Cl\'ery--Gritsenko forms requires the relevant entries of
 Definition~\ref{def:physical-host-certificate}.
 Thus
-$$\mathrm{Clery\mbox{--}Gritsenko\ classification}\neq
-\mathrm{CHL\ realisation\ theorem}.$$
+$$\hbox{Cl\'ery--Gritsenko classification}\neq
+\hbox{CHL realisation theorem}.$$
 $$F_1:\ \mathrm{theorem},\qquad
 F_2,F_3,F_4:\ \mathrm{GN\ denominator\ theorem},$$
 $$F_5,F_6,F_7,F_8:
@@ -13400,7 +14690,7 @@ facts is a BKM denominator proof or a compact Hall/Pfaffian construction.
 \label{app:eight-row-boundary}
 
 Let $F_j$ denote the diagonal-divisor forms in the present \(F\)-order.
-The Clery--Gritsenko source order is
+The Cl\'ery--Gritsenko source order is
 $$
 \Delta_5,\Delta_2,\nabla_3,\Delta_1,\nabla_2,\Delta_{1/2},
 \nabla_{3/2},Q_1.
@@ -13421,14 +14711,14 @@ j&F_j&(t,N)&\Gamma_j&\mathrm{wt}\\ \hline
 $$
 The plus-groups \(\Gamma_t^+\) used below for \(t=2,3,4\) are the
 Fricke/Gritsenko--Nikulin denominator normalizations; they are not the
-source-group labels in the Clery--Gritsenko table.
+source-group labels in the Cl\'ery--Gritsenko table.
 $$
 \operatorname{supp}\operatorname{div}_{\mathbb H_2}(F_j)=
 \bigcup_{\gamma\in\Gamma_j}\gamma\langle\mathcal H_{\mathrm{diag}}\rangle,
 \qquad
 \operatorname{mult}_{\mathcal H_{\mathrm{diag}}}(F_j)=1.
 $$
-Here $F_7=\nabla_{3/2}$ is the Clery--Gritsenko row at
+Here $F_7=\nabla_{3/2}$ is the Cl\'ery--Gritsenko row at
 $(t,N)=(1,4)$.  It is not a physical comparison slot until a separate
 row map has been constructed.
 
@@ -13807,7 +15097,7 @@ argument rescaling in the $e_t$ normalization.
 
 \begin{proposition}[Congruence products]
 \label{prop:gc-row-data}
-For $j=5,6,7,8$ Clery--Gritsenko construct the following Borcherds
+For $j=5,6,7,8$ Cl\'ery--Gritsenko construct the following Borcherds
 products \cite{GC}.  The weak Jacobi inputs are
 $$
 \begin{array}{c|c|c}
@@ -13903,7 +15193,7 @@ do not construct a BKM chamber, parity function, or Weyl-sum identity.
 \end{proposition}
 
 \begin{proof}
-The formulae are Clery--Gritsenko \cite[Theorem 3.1]{GC} and the four
+The formulae are Cl\'ery--Gritsenko \cite[Theorem 3.1]{GC} and the four
 product displays for $\nabla_3,\nabla_2,\nabla_{3/2}$, and $Q_1$ at
 the end of Section 3.  The second factors in $F_5,F_6,F_8$ and the
 second and third factors in $F_7$ come from the non-infinity cusps of
@@ -13917,7 +15207,7 @@ $$
 (t_5,N_5)=(1,2),\qquad (t_6,N_6)=(1,3),\qquad
 (t_7,N_7)=(1,4),\qquad (t_8,N_8)=(2,2).
 $$
-The Clery--Gritsenko modular host is the orthogonal lattice
+The Cl\'ery--Gritsenko modular host is the orthogonal lattice
 $$
 \mathcal O_j=U\oplus U(N_j)\oplus\langle-2t_j\rangle
 $$
@@ -13973,7 +15263,7 @@ $$
 $$
 For \(j=7\) this is a product datum on the \(\mu_4\)-multiplier cover;
 the integrality of the displayed half-exponents is part of the
-Clery--Gritsenko product theorem in that cover.  Until one proves that
+Cl\'ery--Gritsenko product theorem in that cover.  Until one proves that
 integrality directly from the Jacobi seed, the row is used only with
 this sourced cover datum.
 The product is therefore used as an integral automorphic product only in
@@ -14011,14 +15301,14 @@ $q^{2n}r^{2l}s^{2m}$, hence degree $\alpha_1(2n,2l,2m)$.  For $F_6$
 the corresponding monomial is $q^{3n}r^{3l}s^{3m}$, hence degree
 $\alpha_1(3n,3l,3m)$.  For $F_7$ the two non-infinity factors have
 monomials $q^{2n}r^{2l}s^{2m}$ and $q^{4n}r^{4l}s^{4m}$; the first
-has half exponent $c_{7,M}/2$ exactly as in the Clery--Gritsenko
+has half exponent $c_{7,M}/2$ exactly as in the Cl\'ery--Gritsenko
 product.  For $F_8$ the product has index $t=2$:
 $e^{\alpha_2(n,l,m)}=q^nr^ls^{2m}$ and the non-infinity cusp contributes
 $e^{\alpha_2(2n,2l,2m)}=q^{2n}r^{2l}s^{4m}$.  If two labelled cusp
 contributions land on the same lattice degree, exponents add; this is
 precisely the definition of $\mu_j$.
 
-Clery--Gritsenko \cite[Theorem 3.1]{GC} realize these products as
+Cl\'ery--Gritsenko \cite[Theorem 3.1]{GC} realize these products as
 orthogonal Borcherds products for
 $U\oplus U(N_j)\oplus\langle-2t_j\rangle$.  That theorem supplies the
 automorphic product and the divisor.  It does not supply a Weyl chamber,
@@ -14058,7 +15348,7 @@ $$
 \begin{proposition}[Eight formal current rows]
 \label{prop:eight-formal-current-rows}
 \label{thm:eight-formal-current-rows}
-Every Clery--Gritsenko diagonal-divisor row has a formal determinant
+Every Cl\'ery--Gritsenko diagonal-divisor row has a formal determinant
 object.  For $j=1$ this is
 $\mathsf{Den}_{\Delta_5,E}$ from
 Proposition~\ref{prop:formal-current-envelope}.  For $j=2,3,4$ it is the
@@ -14068,9 +15358,9 @@ product algebra \(\mathsf{Prod}_{j,E}\).
 For $j=5,6,7,8$, Theorem~\ref{thm:govindarajan-denominator-rows}
 also supplies a nonabelian CHL/WKB denominator algebra; the abelian
 product algebra in this theorem is the part constructed directly from
-the Clery--Gritsenko product exponents.
+the Cl\'ery--Gritsenko product exponents.
 For $j=5,6,7,8$ this is only the tautological virtual product object
-realizing the Clery--Gritsenko exponents.  Its Beilinson--Drinfeld
+realizing the Cl\'ery--Gritsenko exponents.  Its Beilinson--Drinfeld
 envelope is abelian; it carries no Weyl-sum side, no BKM bracket, and no
 physical protected BPS interpretation.
 
@@ -14081,7 +15371,7 @@ e^{\rho_j}\sdet_{\mathcal V_j}(1-e)
 =D_j(Z),
 $$
 where $D_1=64^{-1}\Delta_5$ and $D_j=F_j$ for the displayed
-Clery--Gritsenko product normalizations $j>1$,
+Cl\'ery--Gritsenko product normalizations $j>1$,
 with the normalizations stated in
 Propositions~\ref{prop:gn-paramodular-row-data},
 \ref{prop:gc-row-data}, and
@@ -14168,7 +15458,7 @@ The Gritsenko--Nikulin chambers for $M_1$ and $M_2$ do not follow by
 notation.  The forms $\nabla_3$, $\nabla_2$, $\nabla_{3/2}$, and
 $Q_1$ are congruence products with non-infinity cusp factors, whereas
 $\Delta_5$ and $\Delta_2$ are full-paramodular denominator forms.
-Clery--Gritsenko construct the automorphic product, character, and
+Cl\'ery--Gritsenko construct the automorphic product, character, and
 diagonal divisor on
 $$U\oplus U(N_j)\oplus\langle-2t_j\rangle,$$
 but their product theorem does not identify the simple real roots or
@@ -14186,7 +15476,7 @@ F_5=\nabla_3,\qquad F_6=\nabla_2,\qquad
 F_7=\nabla_{3/2},\qquad F_8=Q_1
 $$
 are Weyl--Kac--Borcherds denominator forms.  The row $F_7$ is taken on
-the $\mu_4$-multiplier cover determined by the Clery--Gritsenko
+the $\mu_4$-multiplier cover determined by the Cl\'ery--Gritsenko
 order-four multiplier.  Thus \(F_7\) is a denominator on the
 \(\mu_4\)-cover, with no physical row map, metaplectic boundary theorem,
 or CY/DT/chiral host.  In the
@@ -14226,9 +15516,9 @@ In Govindarajan's CHL normalization the corresponding square-root form
 is anti-invariant under the Weyl reflections, with character
 \(\epsilon_j(w)=\det(w)\).  This anti-invariance is part of the
 Govindarajan WKB denominator theorem, not a consequence of the
-Clery--Gritsenko product alone; this manuscript does not construct an
+Cl\'ery--Gritsenko product alone; this manuscript does not construct an
 independent row-by-row embedding of the CHL Weyl group into each
-Clery--Gritsenko modular group or multiplier cover.
+Cl\'ery--Gritsenko modular group or multiplier cover.
 The Cartan matrices are, in the CHL/WKB BKM normalization of
 \cite{CD09BKM,Gov11BKM},
 $$
@@ -14279,8 +15569,8 @@ $$
 (P_j,\mathcal M_j,W_j,\epsilon_j,\rho_j,N_j(a))
 $$
 are constructed for $j=5,6,7,8$ by the CHL denominator theorem.  They are
-not consequences of the Clery--Gritsenko product formula alone.
-In the monic Clery--Gritsenko/Govindarajan product variables of
+not consequences of the Cl\'ery--Gritsenko product formula alone.
+In the monic Cl\'ery--Gritsenko/Govindarajan product variables of
 Proposition~\ref{prop:gc-row-data}, the identities have
 $$
 C'_j=1,\qquad a_j=1\qquad(j=5,6,7,8).
@@ -14291,7 +15581,7 @@ Lemma~\ref{lem:two-denominator-normalizations}.
 
 \begin{remark}[$F_7$ on the \(\mu_4\)-multiplier cover]
 \label{rem:f7-mu4-cover}
-The row \(F_7=\nabla_{3/2}\) is the Clery--Gritsenko
+The row \(F_7=\nabla_{3/2}\) is the Cl\'ery--Gritsenko
 diagonal-divisor form of type \((t,N)=(1,4)\), weight \(3/2\), on
 \(\Gamma_0^{(2)}(4)\) with an order-four multiplier.  After pullback to
 the associated \(\mu_4\)-multiplier cover, Govindarajan's CHL/WKB
@@ -14384,7 +15674,7 @@ No Maass divisor-sum formula for $N_7$ is asserted here.
 \end{lemma}
 
 \begin{proof}
-Clery--Gritsenko construct $\nabla_{3/2}$ as the order-four
+Cl\'ery--Gritsenko construct $\nabla_{3/2}$ as the order-four
 multiplier row.  Govindarajan--Gopala Krishna identify the square-root
 theta product and the square relation
 $$
@@ -14491,7 +15781,7 @@ Govindarajan identifies $Q_1$ with the row $\mathcal G_2(4)$ and gives
 both the product formula and the first Fourier terms.  In that CHL
 normalization the square-root form is anti-invariant under the Weyl
 reflections.  This is the sourced denominator anti-invariance, not an
-independently constructed restriction of the Clery--Gritsenko character
+independently constructed restriction of the Cl\'ery--Gritsenko character
 through a physical row map.
 \end{proof}
 
@@ -14576,7 +15866,7 @@ the sourced denominator level.
 \begin{openproblem}[Physical-host certificates and row maps]
 \label{conj:nonabelian-row-extension}
 Construct, for every claimed physical realization of a
-Clery--Gritsenko row, a datum
+Cl\'ery--Gritsenko row, a datum
 $$
 (\iota_j,\mathscr R_j,
 \mathscr A_j,\mathscr D_j,\mathscr S_j,\mathscr Z_j,\mathscr H_j)
@@ -14602,7 +15892,7 @@ constructed.
 
 \begin{proposition}[Comparison row systems]
 \label{prop:boundary-weights}
-The Clery--Gritsenko rows in the present \(F_i\)-order have weights
+The Cl\'ery--Gritsenko rows in the present \(F_i\)-order have weights
 $$
 (5,2,1,\tfrac12,3,2,\tfrac32,1).
 $$
@@ -14626,7 +15916,7 @@ $$
 The comparison notation
 $$\Phi^{\mathrm{cmp}}_1,\ldots,\Phi^{\mathrm{cmp}}_8,\qquad
 \mathrm{wt}(\Phi^{\mathrm{cmp}}_j)=(5,2,1,1,\tfrac12,1,\tfrac14,0),$$
-does not define the Clery--Gritsenko row system and defines no physical
+does not define the Cl\'ery--Gritsenko row system and defines no physical
 atlas in this paper.  A row map
 $$
 \Phi^{\mathrm{cmp}}_j\longleftrightarrow F_i
@@ -14639,7 +15929,7 @@ $$
 \Phi^{\mathrm{cmp}}_7=F_7,\qquad
 \Phi^{\mathrm{cmp}}_8=F_8
 $$
-are false already by weight.  The eight-row Clery--Gritsenko catalogue
+are false already by weight.  The eight-row Cl\'ery--Gritsenko catalogue
 contains no weight-\(1/4\) row and no weight-\(0\) row.  The CHL square
 identities, such as \(\nabla_3^2=\Phi_6^{(1,2)}\) and
 \(\nabla_2^2=\Phi_4^{(1,3)}\), are scalar square identities; they are not row
@@ -14648,7 +15938,7 @@ Weyl alternating side.
 \end{proposition}
 
 \begin{proof}
-The Clery--Gritsenko theorem gives the exact weights, groups, characters,
+The Cl\'ery--Gritsenko theorem gives the exact weights, groups, characters,
 and divisors of the eight diagonal-divisor rows \cite{GC}.  The displayed
 comparison tuple is not that theorem table.  The Borcea--Voisin route
 \cite{BORCEA}, \cite{VOISIN} and higher-dimensional curve-counting routes
@@ -14656,7 +15946,7 @@ comparison tuple is not that theorem table.  The Borcea--Voisin route
 construction of \(X_j\), the reduced theory, the protected index, and the
 product identity.  None is constructed here.  Thus the comparison symbols
 remain external labels until a certificate identifies them with
-Clery--Gritsenko rows.
+Cl\'ery--Gritsenko rows.
 \end{proof}
 
 \begin{definition}[Canonical fractional branch]
@@ -14687,7 +15977,7 @@ The formal fractional-power comparison symbols
 \Phi^{\mathrm{cmp}}_7,\qquad
 \Phi^{\mathrm{cmp}}_8
 \]
-do not label Clery--Gritsenko rows.  The only source-compatible
+do not label Cl\'ery--Gritsenko rows.  The only source-compatible
 statement retained here is the following conditional test.
 
 The displayed comparison weight of \(\Phi^{\mathrm{cmp}}_5\) is
@@ -14706,7 +15996,7 @@ root \(\psi\) with \(\psi^4=\chi\) exists after pullback and \(\chi\)
 has exact order \(4\), then the character part has exact order
 \(16\), unless an explicit automorphy-cocycle relation reduces it.  No
 such relation is constructed here.
-The \(\mu_4\)-cover of the Clery--Gritsenko row
+The \(\mu_4\)-cover of the Cl\'ery--Gritsenko row
 \(F_7=\nabla_{3/2}\), whose weight is \(3/2\), is not a modular-root
 certificate for a comparison object \(\Phi^{\mathrm{cmp}}_7\) of weight
 \(1/4\).  That comparison object needs its own parent, cover, cocycle,
@@ -14759,7 +16049,7 @@ Borcea--Voisin and higher-dimensional curve-counting constructions
 does not assert that they supply it.  Until \(\mathscr R_j\) and the
 relevant certificate entries are constructed, the symbols
 \(\Phi^{\mathrm{cmp}}_5,\Phi^{\mathrm{cmp}}_7,\Phi^{\mathrm{cmp}}_8\)
-are formal comparison symbols only: no Clery--Gritsenko row,
+are formal comparison symbols only: no Cl\'ery--Gritsenko row,
 finite-order multiplier, denominator identity, CY/DT partition theorem,
 or chiral power follows.
 \end{openproblem}
@@ -14778,8 +16068,10 @@ signed root supermultiplicities of the Gritsenko--Nikulin denominator
 algebra \(\mathfrak g_{\Delta_5}\); the reduced scalar branch is
 \(-4096\,\Delta_5^{-2}\) by Oberdieck--Pixton.  The compact observable
 algebra realizing these on \(K3\times E\), with orientation character
-\(\epsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\), is the
-open recognition target.  The seven other Clery--Gritsenko
+\(\epsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\) after the
+finite orientation, Weyl transport, and type-II Pfaffian wall certificates
+are supplied, is the open recognition target.  The seven other
+Cl\'ery--Gritsenko
 diagonal-divisor rows extend the same separation: each row carries its
 automorphic product, and the levels
 \(\mathscr A_j,\mathscr D_j,\mathscr S_j,\mathscr Z_j,\mathscr H_j\) of
