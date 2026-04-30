@@ -8,12 +8,12 @@ assigned an isolated worktree.
 
 | Agent | Runtime id | Nickname | Scope | Status |
 |---|---|---|---|---|
-| A102 | `019ddc32-d174-7ae2-84e2-278394e3eaa9` | Banach the 2nd | Recognition patch verifier rerun after build prep | live |
-| A103 | `019ddc35-6404-7ae1-b79d-aaf8bc8df541` | Zeno the 2nd | Vol III coefficient-recognition patch worker | live |
-| A104 | `019ddc35-6d0a-7cd2-8c5c-31d03c9b239a` | Tesla the 2nd | Recognition criterion A-map audit | live |
-| A105 | `019ddc35-75f3-71a3-a947-ac3ce13442f3` | Bernoulli the 2nd | A071 target-presentation theorem draft | live |
-| A106 | `019ddc35-7ee6-7c42-a715-48ff54aac535` | Faraday the 2nd | Post-patch static/build verifier | live |
-| A107 | `019ddc36-5931-7272-a1f3-39862fe22993` | Linnaeus the 2nd | Vol III modular-trace dependency patch worker | live |
+| A115 | `019ddc40-2cbc-7b53-9383-5655fddc7995` | Gauss the 2nd | Post-proof Igusa build verifier | live |
+| A116 | `019ddc42-abc2-7ba0-9929-07babd443587` | Kuhn the 2nd | CYQG BKM signed-coefficient dimension patch | live |
+| A117 | `019ddc42-b4e8-79f3-9a0b-772908683eeb` | Hubble the 2nd | CYQG `cy_to_chiral` recognition-gate patch | live |
+| A118 | `019ddc42-bdcb-7c20-8e89-d2a3076e4036` | Laplace the 2nd | CYQG lattice automorphic coefficient firewall patch | live |
+| A119 | `019ddc42-c6bd-7a90-acbf-2812d826a9f5` | Pauli the 2nd | CYQG BPS Hall--Borcherds criterion patch | live |
+| A120 | `019ddc42-d054-79c2-8cd7-bff6d3e14c77` | McClintock the 2nd | CYQG unifying Borcherds positive-half gate patch | live |
 
 ## Completed Agents
 
@@ -53,6 +53,19 @@ The latest completed files are:
 | A099 | `notes/swarm_20260430/reports/A099_recognition_patch_verifier.md` |
 | A100 | `notes/swarm_20260430/reports/A100_certificate_verifier_worker_scope.md` |
 | A101 | `notes/swarm_20260430/reports/A101_vol3_patch_safety_report.md` |
+| A102 | `notes/swarm_20260430/reports/A102_recognition_patch_static_verifier.md` |
+| A103 | `notes/swarm_20260430/reports/A103_vol3_coefficient_recognition_patch.md` |
+| A104 | `notes/swarm_20260430/reports/A104_recognition_criterion_a_map_audit.md` |
+| A105 | `notes/swarm_20260430/reports/A105_a071_target_presentation_theorem_draft.md` |
+| A106 | `notes/swarm_20260430/reports/A106_post_patch_static_build_verifier.md` |
+| A107 | `notes/swarm_20260430/reports/A107_vol3_modular_trace_dependency_patch.md` |
+| A108 | `notes/swarm_20260430/reports/A108_a_map_criterion_post_patch_verifier.md` |
+| A109 | `notes/swarm_20260430/reports/A109_cyqg_cache_propagation_audit.md` |
+| A110 | `notes/swarm_20260430/reports/A110_vol3_modular_trace_verifier.md` |
+| A111 | `notes/swarm_20260430/reports/A111_target_presentation_reducer_scope.md` |
+| A112 | `notes/swarm_20260430/reports/A112_global_theorem_strength_audit.md` |
+| A113 | `notes/swarm_20260430/reports/A113_provenance_gate_proof_verifier.md` |
+| A114 | `notes/swarm_20260430/reports/A114_cyqg_cross_file_recognition_audit.md` |
 
 ## Queued Next
 
@@ -62,8 +75,11 @@ The latest completed files are:
 | A096 | Vol III patch verifier after master-thread edit |
 | A097 | Target parity computation lane after A091 |
 | A104 | Certificate verifier implementation worker |
-| A107 | Vol III modular-trace dependency patch scope |
-| A108 | Igusa target presentation reducer worker scope |
+| A121 | Igusa Pfaffian-lane wording patch |
+| A122 | CYQG programme chapter Stage-2 / motivic recognition patch |
+| A123 | Target presentation reducer implementation worker |
+| A124 | Source verifier schema implementation worker |
+| A125 | Cross-repo post-patch recognition audit |
 
 ## Master-Thread Rule
 

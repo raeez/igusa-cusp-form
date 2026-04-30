@@ -15460,6 +15460,29 @@ Mittag--Leffler clauses of that theorem are source-side clauses; when they
 pass, finite primitive recognition holds on \(W\).
 \end{theorem}
 
+\begin{proof}
+The assertion is the finite restriction of the compact Hall source
+construction.  A homogeneous source vector in \(P^X_{R,\beta,\bar p}\) is
+not an abstract target coordinate: by construction it is a compactly
+supported vanishing-cycle class on a retained \(K3\times E\) stack stratum,
+with the orientation, quotient, Thom--Sebastiani, stabilizer, protected
+integration, and transition data needed to define pull-push operations.
+The product, coproduct, pairing, and comparison matrices are therefore
+computed from the retained compact correspondences described in the finite
+Hall source kernel and primitive matrix construction; without these
+choices there is no compact source row to which the matrix criterion can
+apply.
+
+The target labels belong to \(G(\mathscr B_{\Delta_5})\).  They can enter
+only after a comparison map \(A_{\beta,\bar p}\) has been chosen from the
+source quotient block to the target block.  If a packet is populated by
+the target labels themselves, or by a mock finite algebra with no compact
+provenance, it may test target arithmetic or matrix plumbing, but it is
+not a compact \(K3\times E\) source.  Thus the provenance gate is a
+necessary admissibility condition for the finite source matrix recognition
+criterion.
+\end{proof}
+
 \begin{theorem}[Finite source matrix recognition criterion]
 \label{thm:executable-finite-source-matrix-criterion}
 Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.  A
@@ -15474,13 +15497,17 @@ product matrices \(M_{\alpha,\beta}\), coproduct matrices
 \(D^{\mu,\nu}_\rho\), positive-negative pairing matrices
 \(G_{\beta,\bar p}\), HN transition matrices, and geometric provenance for
 every basis vector.
-Define
+For homogeneous \(x\in P^X_{R,\alpha}\) and
+\(y\in P^X_{R,\beta}\), define
 \[
-B_{\alpha,\beta}
+B_{\alpha,\beta}(x\otimes y)
 =
-M_{\alpha,\beta}
--(-1)^{|x||y|}M_{\beta,\alpha}\mathsf{sw}_{\alpha,\beta},
-\qquad
+M_{\alpha,\beta}(x\otimes y)
+-(-1)^{|x||y|}M_{\beta,\alpha}
+\mathsf{sw}_{\alpha,\beta}(x\otimes y).
+\]
+For each parity block set
+\[
 K_{\beta,\bar p}
 =
 \ker G_{\beta,\bar p}\cap\ker G_{-\beta,\bar p}^{t}.
