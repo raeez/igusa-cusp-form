@@ -96,12 +96,16 @@ algebraic square root target and its target-internal Borcherds bracket.
 It does not supply a compact BPS Hilbert space, compact Hall
 correspondences, an orientation, or a BPS operator product/local
 collision map.
-Equivalently, one may package finite windows of this imported target as
-an algebraic Dirac--Igusa target reference tower.  Such a tower has PBW
-bases, the standard target invariant form, the target radical quotient,
-formal first-order blocks, and a formal Pfaffian product by construction
-from \(\mathfrak g_{\Delta_5}\).  It is not a compact \(K3\times E\)
-Hall source.
+For every downward-saturated finite root window \(W\), the same
+Gritsenko--Nikulin datum gives a finite target quotient
+\[
+G(\mathscr B_{\Delta_5})_W.
+\]
+A compact \(K3\times E\) source can be identified with it only after the
+source supplies primitive representatives, the Hall bracket, the Hopf
+pairing, the radical quotient, the no-extra-relations theorem, PBW, full
+parity dimensions, and exact transition maps on \(W\).  The target
+quotient is algebraic.  It is not a compact Hall source.
 
 The square root in the title is meant in Dirac's sense.  The primitive
 OP/DT scalar branch \(Z^X_{\mathrm{OP/DT}}=-4096\,\Delta_5^{-2}\) is
@@ -141,8 +145,8 @@ support, the Gram map
 holomorphic \(E_3\)-factorization algebra on \(K3\times E\).  The formal
 lattice is \(\Lambda_S\oplus\Lambda_S\).  The algebraic even Mukai sector
 relevant to the OP/DT D6--D2--D0 branch, and its stability-dependent
-effective semigroup, are smaller inputs; the present construction does
-not assert that every formal full-Mukai class is a compact Hall state.
+effective semigroup, are smaller inputs; not every formal full-Mukai
+class is asserted to be a compact Hall state.
 The triple \((n,l,m)\in\Gamma_{\mathrm{gram}}\) records Gram-degree
 invariants \((Q^2/2,Q\cdot P,P^2/2)\) of a formal pair \(c=(Q,P)\); it is
 not the additive Hall grading itself.  The Gram map is quadratic:
@@ -168,17 +172,18 @@ K3-integrated chiral shadow by mixed local/wrapped correspondences, and
 identify the Gram-descended protected primitive bracket with
 \(\mathfrak g_{\Delta_5}\).  Equivalently, the compact realization
 problem is finite-stage: construct geometric Hall--Dirac source
-data and a compatible functor into the algebraic target reference tower,
+data and a compatible functor into the algebraic target system,
 preserving degrees, Hall products and coproducts, orientation-gerbe
 twists, source coalgebras, first-order blocks, Pfaffian lines, primitive
-representatives, radical/PBW data, and transitions.  This paper computes
-the virtual determinant and identifies it with \(\Delta_5\) by imported
+representatives, radical/PBW data, and transitions.  The construction
+computes the virtual determinant and identifies it with \(\Delta_5\) by imported
 Borcherds theory; proves the formal lattice normal-ordering theorem and
-the strict fixed-lift raw-descent obstruction; records the imported scalar
-and denominator theorems; constructs only the target-side reference tower;
-and leaves the compact Hall/factorization realization as the remaining
-geometric problem.  The final part records the eight
-Cl\'ery--Gritsenko diagonal-divisor rows and the data required before any
+the strict fixed-lift raw-descent obstruction; states the imported scalar
+and denominator theorems; constructs the algebraic target system; and
+proves the finite primitive-recognition criterion for any compact
+Hall/factorization source.  The final part gives the eight
+Cl\'ery--Gritsenko diagonal-divisor rows and the additional modular,
+orientation, scalar, and primitive-algebra data required before a
 boundary row becomes a physical host.
 \end{abstract}
 
@@ -369,8 +374,9 @@ the exponent \(f(nm,l)\) is non-zero.
 A charged BPS state is not, in the first instance, a local field.  It
 lies in a superselection sector.  Its charge is measured at infinity,
 and its existence depends on a stability chamber.  Thus the ordinary
-local operator algebra of an untwisted four-dimensional theory is not
-the primary object of this paper.
+local operator algebra of an untwisted four-dimensional theory is not the
+primary object.  The primary object is the protected charge-graded
+observable algebra.
 
 At the level of the protected index the situation is different.  After
 taking the cohomology of the chosen supercharge, long multiplets cancel.
@@ -385,8 +391,8 @@ $$
 \mathcal A^{E_3}_X,\qquad X=K3\times E.
 $$
 The auxiliary notation \(\Phi^{\mathrm{FA}}_3(X)\), when used, is only a
-placeholder for this source datum; no such functor is constructed in
-this paper.  No external \(\Phi^{\mathrm{FA}}_3\) formalism is used here
+placeholder for this source datum, not a constructed functor.  No
+external \(\Phi^{\mathrm{FA}}_3\) formalism is used here
 as an existence theorem unless it supplies the chain-level local
 observables, factorization maps, descent, anomaly/QME control, and
 compact charge completion required below.  In a compact realization
@@ -467,10 +473,10 @@ virtual protected index package.  The scalar square forgets the
 automorphic reflection character; a compact Hall orientation realizing
 that character is part of the open Dirac--Igusa datum.
 
-\subsection*{Schema of the local protected observable algebra}
+\subsection*{Local protected observable algebra}
 \label{sec:local-protected-observable-algebra}
 
-\begin{definition}[Local protected observable algebra schema]
+\begin{definition}[Local protected observable algebra]
 \label{def:local-protected-observable-algebra}
 For an open \(U\subset X=K3\times E\), let
 \(\Gamma_{X,\sigma}^{\mathrm{eff}}(U)\subset
@@ -511,9 +517,8 @@ cycles
 \]
 on disjoint d-critical charts \cite{MasseyST,SaitoMHM}, together with the Ext-vanishing
 \(\operatorname{Ext}^*(\mathcal F,\mathcal G)=0\) for branes
-\(\mathcal F,\mathcal G\) with disjoint supports.  This is the
-local protected-observable pre-interface schema for the present paper.
-It becomes a compact \(E_3\) source \(\mathcal A_X^{E_3}\) only after
+\(\mathcal F,\mathcal G\) with disjoint supports.  This construction
+becomes a compact \(E_3\) source \(\mathcal A_X^{E_3}\) only after
 the finite witnesses of
 Definition~\ref{def:compact-e3-source-interface} are supplied; the
 disjoint-supports factorization on opens of \(X=K3\times E\) is only the
@@ -2361,8 +2366,8 @@ Consequently the Maass values
 \]
 are only automorphic target values.  They do not construct a Hall
 orientation sign on the semidirect-product generators.  Without the
-vanishing above, the manuscript asserts the Hall orientation character
-only on \(W^{(2)}(\La^{2,1}_{II})\), under (O1), (O1)\(^+\), and (O2).
+vanishing above, the Hall orientation character is defined only on
+\(W^{(2)}(\La^{2,1}_{II})\), under (O1), (O1)\(^+\), and (O2).
 \end{corollary}
 
 \begin{proof}
@@ -2575,9 +2580,8 @@ formalism is Joyce--Song \cite{JoyceSong}, and on Calabi--Yau \(4\)-folds
 it is the Borisov--Joyce / Oh--Thomas construction
 \cite{BorisovJoyce}, \cite{OhThomasI}, \cite{OhThomasII}.  The
 \(K3\times E\) case is neither of these: its reduced compact critical
-sector is not constructed in this paper, and the existence of a
-square-root line \(o_{\mathcal C}\) for that sector is one of the
-unresolved data items of
+sector has not been constructed, and the existence of a square-root line
+\(o_{\mathcal C}\) for that sector is one of the unresolved data items of
 Open Problem~\ref{op:orientation-monodromy-character}.  No such line is
 constructed here.
 \end{definition}
@@ -2620,8 +2624,8 @@ $$D_5(Z)
 =q^{1/2}r^{1/2}s^{1/2}
 \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 (1-q^nr^ls^m)^{f(nm,l)}.$$
-GNII denotes this monic product by \(\Delta_5\).  This paper reserves
-\(\Delta_5\) for the theta-constant normalization.  In that convention,
+GNII denotes this monic product by \(\Delta_5\).  Here
+\(\Delta_5\) denotes the theta-constant normalization.  In that convention,
 \cite[Theorem~4.1]{GN} gives
 \[
 D_5(Z)=64^{-1}\Delta_5(Z).
@@ -2648,7 +2652,7 @@ Borcherds input &
 \(Z_{\mathrm{K3}}=2\phi_{0,1}\) \\
 Borcherds product normalization &
 \(D_5^{\mathrm{mon}}=D_5^{\mathrm{GNII}}
-=64^{-1}\Delta_5^{\theta}\), and this paper writes
+=64^{-1}\Delta_5^{\theta}\), with
 \(\Delta_5=\Delta_5^{\theta}\) \\
 Weight &
 \(\mathrm{wt}\,\operatorname{Borch}_{\theta}(\phi_{0,1})=f(0,0)/2=5\) \\
@@ -2840,7 +2844,7 @@ by the OP normalization of Theorem~\ref{thm:op-square}.  The hypothesis
 
 \begin{proposition}[Reduced scalar quotient integration]
 \label{prop:reduced-scalar-quotient-integration}
-The reduced DT/PT side used in this paper is the coefficientwise scalar
+The reduced DT/PT side used below is the coefficientwise scalar
 Behrend-weighted quotient integration
 $$
 \mathbf{DT}^X_{n,(\beta,d)}
@@ -3252,7 +3256,7 @@ self-Ext
 	\]
 	For \(A=B=k_x\), an \(E\)-direction extension class \(e\), and K3-plane
 	\(\zeta\) with \(\sigma_S(\zeta)=1\), this residual is nonzero.  Thus
-	reduced TS is healed precisely by restricting to the filtered Hall
+	reduced TS is valid precisely after restriction to the filtered Hall
 	correspondence; an unrestricted middle-object statement is false.
 	Operationally this parity shift belongs to the reduced orientation
 	datum and to any eventual Berezinian convention for a compact
@@ -3789,7 +3793,7 @@ higher even \(E[N]\) calculation; for \(N\ge4\) the mixed
 two-primary class \(A_{12}^{(N)}x_1x_2\) and the degree-one characters
 \(\lambda_i^{(N)}\) remain separate obstructions.
 
-Thus the stable theorem in the manuscript is the finite
+Thus the stable theorem is the finite
 Klein-four criterion: degree-two gerbe bits and degree-one
 linearization characters are both named and must both vanish.  The
 three routes above are cross-checks or construction programmes for those
@@ -3866,7 +3870,7 @@ both vectors vanish:
 (r_1,r_2,r_3)=(0,0,0),\qquad
 (\rho_1,\rho_2,\rho_3)=(0,0,0).
 \]
-The present manuscript computes neither vector; the proposition is the
+Neither vector is computed here; the proposition is the
 finite obstruction and linearization target, not a vanishing theorem.
 \end{proposition}
 
@@ -4417,8 +4421,7 @@ The formal full-Mukai dyonic lattice is the additive abelian group
 \Gamma_X^{\mathrm{form}}:=\La_S\oplus\La_S,\qquad
 c=(Q,P)\in\Gamma_X^{\mathrm{form}},
 \]
-graded electric \(\oplus\) magnetic.  Throughout the formulae below in
-this paper,
+graded electric \(\oplus\) magnetic.  In the formulae below,
 \[
 \Gamma_X^{\mathrm{phys}}:=\Gamma_X^{\mathrm{form}}.
 \]
@@ -4963,7 +4966,7 @@ The normal-ordered Gram map is
 \qquad
 \overline\Pi_X(c,T)=\Pi_X(c)-T.
 \]
-Thus the compact Hall object, if constructed, is graded upstairs by
+Thus any supplied compact Hall object is graded upstairs by
 \(\Gamma_X^{\mathrm{phys}}\), or by the refinement
 \(\widehat\Gamma_X\) after the normal-ordering counterterm is recorded.
 The \(\Gamma_{\mathrm{gram}}\)-graded Igusa object is obtained only
@@ -5944,8 +5947,8 @@ superalgebra.  The denominator statement is exactly
 Theorem \ref{thm:denominator-algebra-identity}.
 \end{proof}
 
-\begin{definition}[Finite algebraic Dirac--Igusa target reference tower]
-\label{def:finite-algebraic-dirac-igusa-target-reference-tower}
+\begin{definition}[Finite algebraic Dirac--Igusa target system]
+\label{def:finite-algebraic-dirac-igusa-target-system}
 Fix a finite nonzero cusp-positive active window
 \(A_R\subset\Gamma_{\mathrm{gram}}\) in the positive/root side of the
 Borcherds product, downward-saturated only with respect to the fixed
@@ -5990,7 +5993,7 @@ not necessarily an endomorphism of one fixed window.
 For \(\gamma=(n,l,m)\in A_R\), choose a finite formal super vector space
 \(V_\gamma\) with \(\sdim V_\gamma=f(nm,l)\) and put
 \(x^\gamma=q^nr^ls^m\).  This choice records only the signed target
-exponent in the algebraic reference tower; it is not a compact primitive
+exponent in the algebraic target system; it is not a compact primitive
 space, parity lift, Pfaffian line, or source root representative.  The
 formal algebraic first-order block attached to \(\gamma\) is the odd
 endomorphism of
@@ -6026,15 +6029,15 @@ s_L,\,
 \operatorname{sPf}^{\mathrm{alg}}_R
 \right)
 \]
-are the finite algebraic Dirac--Igusa target reference tower.  They are
+are the finite algebraic Dirac--Igusa target system.  They are
 constructed from the target algebra.  They are not a compact
 \(K3\times E\) Hall source, not a geometric orientation gerbe, not a
 source coalgebra, and not protected integration.
 \end{definition}
 
-\begin{proposition}[Target reference normalization]
+\begin{proposition}[Target-system normalization]
 \label{prop:target-reference-normalization}
-For the positive-window pro-target reference tower
+For the positive-window target system
 \(\mathsf{DI}^{\mathrm{alg}}_{\Delta_5,E,L}:=
 \{\mathsf{DI}^{\mathrm{alg}}_{\Delta_5,E,L;R}\}_R\), the normalized
 formal product is
@@ -6061,13 +6064,13 @@ Borcherds--Gritsenko--Nikulin product formula.  Multiplying by the
 theta-normalizing Weyl monomial
 \(64q^{1/2}r^{1/2}s^{1/2}\) gives \(\Delta_5\).
 
-This is a target-reference normalization.  It proves no compact
+This is a target-system normalization.  It proves no compact
 \(K3\times E\) Hall source, no geometric Pfaffian line, no orientation
 monodromy, no source coalgebra, and no primitive recognition theorem.
 \end{proof}
 
-\begin{openproblem}[Compact realization of the target reference tower]
-\label{op:compact-realization-target-reference-tower}
+\begin{openproblem}[Compact realization of the target system]
+\label{op:compact-realization-target-system}
 Construct finite geometric Hall--Dirac source data
 \(\mathfrak H^{\mathrm{geom}}_{X,R}\) and compatible realization functors
 \[
@@ -6107,8 +6110,7 @@ operad is asserted here.  This symbol, and the placeholder
 \(\Phi^{\mathrm{FA}}_3(X)\), denote the source object required in the
 Calabi--Yau-to-chiral construction; they are not a constructed functor
 evaluated on \(X\).
-The candidate concrete realization, supplied as a schema, is
-the local protected observable algebra
+The concrete candidate source is the local protected observable algebra
 \(\mathcal A_X(U)\) of
 Definition~\ref{def:local-protected-observable-algebra}.
 A compact holomorphic-Chern--Simons/BV model, if constructed with the
@@ -8630,7 +8632,7 @@ including the quotient, integration, and HN transition components for
 every \(R'\ge R\).
 Until these six items are supplied, \(\mathcal F_X^{\mathrm{hyb}}\) is a
 finite categorical datum whose existence remains open, not a compact QFT
-constructed in this paper and not a detached determinant factor.
+constructed from the determinant and not a detached determinant factor.
 Ordinary disjoint-open factorization on \(\operatorname{Ran}(E)\) is only
 the projection-finite \(b=0\) part.
 \end{openproblem}
@@ -8974,7 +8976,7 @@ critical Hall/factorization object \(\mathcal F_X\) on a
 \((-1)\)-shifted symplectic derived moduli stack
 \(\mathfrak M_{X,c}\) of compactly supported B-branes on \(K3\times E\)
 in the sense of
-Pantev--Toen--Vaquie--Vezzosi \cite{PTVV2013} (cf.\ the local schema of
+Pantev--Toen--Vaquie--Vezzosi \cite{PTVV2013} (cf.\ the local construction of
 Definition~\ref{def:local-protected-observable-algebra}), graded by
 supplied algebraic/effective charge
 \(c\in\Gamma_{X,\sigma}^{\mathrm{eff}}\subset
@@ -9610,19 +9612,25 @@ These are the finite Lie-ideal and coideal parts of
 limit radical is the additional HN topological assertion that the kernels
 \(\operatorname{Rad}_R^\Pi\) form a transition-compatible closed subsystem.
 Equivalently, on any downward-saturated finite root window \(W\), after
-choosing homogeneous bases of the finite primitive pieces, \textup{(NO7)}
+choosing Gram lifts \(\gamma_\beta\) of the retained root labels and
+homogeneous bases of the corresponding finite primitive pieces,
+\textup{(NO7)}
 	is the following matrix computation.  Let
-	\[
-	G_\beta:P^\Pi_{R,\beta}\times P^\Pi_{R,-\beta}\to\C,\qquad
-	K_\beta=\ker G_\beta\cap\ker G_{-\beta}^{t},
-	\qquad
-	Q_\beta:P^\Pi_{R,\beta}\to P^\Pi_{R,\beta}/K_\beta
-	\]
+		\[
+		G_{\gamma_\beta}:P^\Pi_{R,\gamma_\beta}\times
+		P^\Pi_{R,\gamma_{-\beta}}\to\C,\qquad
+		K_{\gamma_\beta}=\ker G_{\gamma_\beta}\cap
+		\ker G_{\gamma_{-\beta}}^{t},
+		\qquad
+		Q_{\gamma_\beta}:P^\Pi_{R,\gamma_\beta}\to
+		P^\Pi_{R,\gamma_\beta}/K_{\gamma_\beta}
+		\]
 	be the positive-negative pairing, two-sided radical block, and quotient
 	map.  Let \(B_{\alpha,\beta}\) be the bracket matrix, let
 	\(M_{\alpha,\beta}\) be the product matrix, and let
-	\(D^{\mu,\nu}_{\rho}\) be the coproduct matrix
-	\(P^\Pi_{R,\rho}\to P^\Pi_{R,\mu}\otimes P^\Pi_{R,\nu}\).  The finite
+		\(D^{\mu,\nu}_{\rho}\) be the coproduct matrix
+		\(P^\Pi_{R,\gamma_\rho}\to P^\Pi_{R,\gamma_\mu}\otimes
+		P^\Pi_{R,\gamma_\nu}\).  The finite
 	test is:
 	\[
 	\langle [x,y]_\Theta,z\rangle_R
@@ -9637,14 +9645,18 @@ choosing homogeneous bases of the finite primitive pieces, \textup{(NO7)}
 	the quotient-tensor nondegeneracy of
 	\(\bar G_\mu\otimes\bar G_\nu\); and the direct containments
 	\[
-	Q_{\alpha+\beta}B_{\alpha,\beta}(P^\Pi_{R,\alpha}\otimes K_\beta)=0,
-	\qquad
-	Q_{\alpha+\beta}B_{\alpha,\beta}(K_\alpha\otimes P^\Pi_{R,\beta})=0,
-	\qquad
-	(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}K_\rho=0,
-	\]
-	together with transition preservation
-	\(\rho^P_{R^+R}(K_{R^+,\beta})\subset K_{R,\beta}\).  Frobenius gives the
+		Q_{\gamma_{\alpha+\beta}}B_{\alpha,\beta}
+		(P^\Pi_{R,\gamma_\alpha}\otimes K_{\gamma_\beta})=0,
+		\qquad
+		Q_{\gamma_{\alpha+\beta}}B_{\alpha,\beta}
+		(K_{\gamma_\alpha}\otimes P^\Pi_{R,\gamma_\beta})=0,
+		\qquad
+		(Q_{\gamma_\mu}\otimes Q_{\gamma_\nu})
+		D^{\mu,\nu}_{\rho}K_{\gamma_\rho}=0,
+		\]
+		together with transition preservation
+		\(\rho^P_{R^+R}(K_{R^+,\gamma_\beta})\subset
+		K_{R,\gamma_\beta}\).  Frobenius gives the
 	Lie-ideal half; Hopf adjointness plus quotient-tensor nondegeneracy gives
 	the coideal half.  The scalar determinant supplies none of these matrices.
 
@@ -10069,7 +10081,7 @@ closedness condition needed before passing to the inverse limit.
 \end{proof}
 
 \begin{remark}[Unitarity]
-This paper uses the protected index, the virtual determinant, and
+The argument uses the protected index, the virtual determinant, and
 the Borcherds denominator algebra.  A holomorphic \(E_3\)-factorization
 algebra in cochains is part of the open Dirac--Igusa realization
 datum, not a positive Hilbert-space construction already in hand.  Negative
@@ -10381,7 +10393,7 @@ at bounded HN height.}  For every \(R>0\), the substack of
 		\nu_t(A\boxtimes W)=-x/y+\mu_E(W)/t,
 		\]
 		so the product stability detects the \(E\)-bundle HN slopes.  This
-		heals the Pic/Bun counterfamily only if a boundedness theorem for
+		removes the Pic/Bun counterfamily only if a boundedness theorem for
 		\(\sigma_{s,t}\)-semistable objects of fixed Liu charge is supplied;
 		Piyaratne--Toda boundedness for their threefold Bridgeland/BMT setting
 		\cite{PiyaratneTodaModuli3folds} is not automatically this theorem.
@@ -11190,7 +11202,7 @@ M^{\mathcal V,j}_{\mu_0\nu,W}
 For filtered, radical, and PBW towers the bases are filtration-adapted, and
 strictness is recorded by the corresponding block-rank equalities.  This
 matrix datum is void until the finite source spaces and transition
-matrices have actually been supplied.
+matrices have been supplied.
 \end{definition}
 
 \begin{remark}[Chamber dependence and wall-crossing]
@@ -11213,8 +11225,8 @@ identifications hold for the OP/DT scalar import of
 Proposition~\textup{\ref{prop:op-normalization}}; that the chosen
 \(\sigma\) lies in the OP/DT chamber, or that the wall-crossing transport
 is compatible with \(\overline\Pi_X\), is a separate conjectural input.
-The manuscript does not assert chamber-independence of the recognition
-target; that is an open conjecture.
+No chamber-independence of the recognition target is asserted; that is an
+open conjecture.
 \end{remark}
 
 \begin{proposition}[Finite Pfaffian window obstruction]
@@ -11590,7 +11602,7 @@ and gives the formal Pfaffian section
 \(\operatorname{pf}^{K_0}_{\Delta,R}\) of
 Proposition~\ref{prop:finite-pfaffian-window-obstruction}.
 This is the split representative of an Euler/superdimension class only:
-it is not the target root-space parity fixture of
+it is not the target root-space parity presentation of
 \(\mathfrak g_{\Delta_5}\), and it must not be used to replace target
 presentation rows such as the \(29|93\) block.
 
@@ -11639,8 +11651,9 @@ vanishing residuals, active-window source coverage, and the stated
 Proposition~\ref{prop:finite-pfaffian-window-obstruction}, with the
 support residual remembering actual source spaces in target-zero degrees.
 For an active \(\gamma\), two finite super vector spaces of signed
-dimension \(a_\Delta(\gamma)\) are isomorphic to the minimal model
-precisely when one parity has dimension zero.  Adding
+dimension \(a_\Delta(\gamma)\) are isomorphic to the split representative
+\(\mathsf P^{\min}_{\Delta,R,\gamma}\) precisely when one parity has
+dimension zero.  Adding
 \(W_\gamma\oplus\Pi W_\gamma\) changes neither signed dimension nor any
 superdeterminant depending only on signed dimension.  This proves the
 last assertion.
@@ -11650,10 +11663,9 @@ last assertion.
 \label{prop:finite-d0-atlas-parity-obstruction}
 Fix \(R\in\mathcal R_{\mathrm{HN}}\).  The finite Hall source core is constructed from
 the source kernel of Definition~\ref{def:finite-hall-source-kernel} by
-Proposition~\ref{prop:finite-d0-hall-source-construction}.  In this
-manuscript, a full finite stage \(D_{0,R}\), including the Dirac operator
-and Pfaffian line, is represented by the following supplied finite
-Hall--Dirac atlas data:
+Proposition~\ref{prop:finite-d0-hall-source-construction}.  A full finite
+stage \(D_{0,R}\), including the Dirac operator and Pfaffian line, is
+represented by the following supplied finite Hall--Dirac atlas data:
 \[
 \mathfrak A_R=
 \bigl(
@@ -12023,7 +12035,7 @@ the Pfaffian line on the reduced compact quotient, and the compact parity
 pieces
 \(P^{\Pi,+}_{R,\gamma,\bar0}\), \(P^{\Pi,+}_{R,\gamma,\bar1}\) on
 \(\Gamma_R^{\mathrm{test},+}\), including vanishing in target-zero degrees,
-are not constructed in this paper.  The target \(K_0\)-shadow supplies
+remain hypotheses.  The target \(K_0\)-shadow supplies
 only the signed differences; it does not trivialize the Pfaffian
 square-root torsor or select a compact parity lift.
 \end{enumerate}
@@ -12474,7 +12486,7 @@ of Corollary~\ref{cor:source-bar-remaining-cobar-obstruction}, and
 filtration, collision coproduct, bar comparison, and primitive restriction
 were supplied independently of the target counit.
 
-\item[\((R_X)\)] \emph{Primitive-recognition certificate.}
+\item[\((R_X)\)] \emph{Primitive-recognition datum.}
 This entry is a primitive recognition datum
 \(\Pi_{\mathrm{rec}}\) for
 $$
@@ -12553,14 +12565,14 @@ Let a compact Hall/factorization construction give a completed
 \]
 and a completed Hopf pairing.  Its normal-ordered Gram descent is
 \[
-P_X^{\Pi,\mathrm{raw}}
+P_X^{\Pi,\mathrm{desc}}
 =H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^{\Theta}\mathcal F_X)
 =\overline\Pi_{X,*}^{\Theta}\widetilde P_X
 \]
 and
 \[
 P_X^{\Pi,\mathrm{red}}
-=P_X^{\Pi,\mathrm{raw}}/
+=P_X^{\Pi,\mathrm{desc}}/
 \overline{\operatorname{Rad}\langle\,\cdot\,,\,\cdot\,\rangle_X}.
 \]
 Construct the following source-side presentation data.  None of these
@@ -12586,7 +12598,7 @@ so the descended bracket is a \(\Gamma_{\mathrm{gram}}\)-graded bracket:
 [\widetilde P_{X,\widehat c},\widetilde P_{X,\widehat c'}]
 \subset\widetilde P_{X,\widehat c\star\widehat c'}
 \xrightarrow{\ \overline\Pi_{X,*}^{\Theta}\ }
-P^{\Pi,\mathrm{raw}}_{X,\overline\Pi_X(\widehat c)+\overline\Pi_X(\widehat c')}.
+P^{\Pi,\mathrm{desc}}_{X,\overline\Pi_X(\widehat c)+\overline\Pi_X(\widehat c')}.
 \]
 Equivalently, the raw quadratic shadow
 \(\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c')\) has been corrected by the
@@ -12855,18 +12867,17 @@ Koszul Mittag--Leffler exactness hypothesis of that proposition, not the
 target-internal bar--cobar counit.
 \end{proof}
 
-\subsection{Primitive-recognition proof ledger}
-\label{subsec:primitive-recognition-proof-ledger}
+\subsection{Cofinal finite-window primitive recognition}
+\label{subsec:cofinal-finite-window-primitive-recognition}
 
-The primitive-recognition theorem has six logically separate stages.  The
-Borcherds product fixes target signed superdimensions.  The
-Gritsenko--Nikulin/Kac presentation fixes target parity dimensions only in
-the degrees where that presentation has been computed.  A compact
-\(K3\times E\) source is recognized only after finite source
-representatives, pairings, radicals, relations, PBW, and transitions have
-been supplied.
+The Borcherds product fixes signed target superdimensions.  The
+Gritsenko--Nikulin/Kac presentation fixes full target parity dimensions
+only in the degrees where the presentation has been computed.  A compact
+\(K3\times E\) source is identified with the denominator algebra only by
+source representatives, pairings, radicals, relation ideals, PBW, and
+exact transition maps.
 
-First, the imported target is
+The imported target is
 \[
 G(\mathscr B_{\Delta_5})=\mathfrak g_{\Delta_5},
 \]
@@ -12882,48 +12893,47 @@ so \(29-93=-64=f(1,1)\).  These are target data.  They do not construct
 compact source primitives, source pairings, radical kernels, or source
 bracket constants.
 
-Second, a source fixture on a finite window \(W\), with
-\(S_W=W\cup(-W)\cup\{0\}\), consists of neutral compact-source bases
-\(b^X_{R,\beta,\bar p,a}\), parity pieces, matrices \(M,D,B,G,K,Q\),
-comparison maps \(A_{\beta,\bar p}\), relation rows, no-extra kernel
-equality, PBW associated gradeds, and strict transition/Mittag--Leffler
-rows.  The target labels \(e_i,E_{ij},u_{ij,r},T_i,M_{ij,r},w_s\) may
-occur only in the target reference fixture or in the codomain coordinates
-of \(A_{\beta,\bar p}\).
+For a finite window \(W\) with \(S_W=W\cup(-W)\cup\{0\}\), a compact
+source datum consists of compact-source bases
+\(b^X_{R,\gamma_\beta,\bar p,a}\), parity pieces, product, coproduct,
+bracket, pairing, radical, and quotient matrices \(M,D,B,G,K,Q\),
+comparison maps \(A_{\beta,\bar p}\), relation identities, the no-extra
+kernel equality, PBW associated gradeds, and strict
+Mittag--Leffler transition maps.  The target labels
+\(e_i,E_{ij},u_{ij,r},T_i,M_{ij,r},w_s\) occur only in target blocks or
+as codomain coordinates of \(A_{\beta,\bar p}\).
 
-Third, the finite verifier is a theorem, not a table of dimensions:
-NO7 proves radical descent for the bracket and coproduct, the relation
-rows put \(J_{\mathrm{BK}}\) in the kernel, the no-extra equality computes
-the whole kernel, PBW compares associated gradeds, and the strict
-Mittag--Leffler condition transports these finite statements through the
-inverse system.  NO7 alone does not imply no-extra-relations, PBW, full
-parity matching, or source-to-target recognition.
+The finite theorem is not a table of dimensions.  The radical identities
+make the bracket and coproduct descend through the Hopf radical.  The
+Borcherds--Kac relations put \(J_{\mathrm{BK}}\) in the kernel.  The
+no-extra equality computes the whole kernel.  PBW compares associated
+gradeds.  The strict Mittag--Leffler condition transports these finite
+statements through the inverse system.  Radical descent alone does not
+imply no-extra-relations, PBW, full parity matching, or source-to-target
+recognition.
 
-Fourth, \(W_{\le3}\) is the first arithmetic window, not the first
-relation-closed window.  The first relation-closed test must add the
+The window \(W_{\le3}\) is the first arithmetic window, not the first
+relation-closed window.  A relation-closed test must include the
 real-Serre terminal rows, doubled isotropic rows, \(\delta_{123}\)-real
 strings, odd--odd \(\delta_{123}\) rows, and complementary height-seven
-strings, or else pass to a downward-saturated closure when the cofinal
-definition is invoked literally.  Rows whose target parity is still
-signed-only remain proof obligations for the target presentation, not
-source-recognition theorems.
+strings, or pass to the downward-saturated closure required below.  Rows
+whose target parity is still signed-only remain target-presentation
+problems.  They are not source-recognition theorems.
 
-Fifth, a cofinal compatible system of such finite certificates passes to
+A cofinal compatible system of finite source data gives
 \[
 P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5}
 \]
 only when exactness says that no generator, relation, radical element, or
-parity-cancelling summand appears only after completion.  The target
-reference tower does not supply the compact source transition system.
+parity-cancelling summand appears only after completion.  The compact
+theorem also requires the geometric source: retained Hall stacks and
+correspondences, quotient orientations, Pfaffian wall data, protected
+integration, source chiral coalgebra, Koszul comparison, and the finite
+primitive data above.  Until these are constructed, the compact
+Dirac--Igusa realization is an open theorem, not a consequence of the
+target product.
 
-Sixth, the compact theorem still requires the geometric source: retained
-Hall stacks and correspondences, quotient orientations, Pfaffian wall
-data, protected integration, source chiral coalgebra, Koszul comparison,
-and the primitive fixtures above.  Until these are constructed, the
-compact Dirac--Igusa realization remains an open theorem target, not a
-consequence of the target product.
-
-\begin{definition}[Cofinal finite-window primitive-recognition certificate]
+\begin{definition}[Cofinal finite-window primitive-recognition datum]
 \label{def:cofinal-primitive-recognition-datum}
 A finite set \(W\subset Q_+\setminus\{0\}\) is
 \emph{downward saturated} if
@@ -12952,11 +12962,12 @@ together with the following finite data for every \(W_\nu\), compatible
 under \(W_\nu\subset W_{\nu+1}\).
 
 \begin{enumerate}
-\item[\textup{(R0)}] \emph{Source provenance and target firewall.}
+\item[\textup{(R0)}] \emph{Compact source labels.}
 Every finite source basis vector in
-\(W_\nu\cup(-W_\nu)\cup\{0\}\) satisfies the compact provenance gate of
-Theorem~\ref{thm:finite-compact-source-provenance-gate}.  Target labels
-from \(G(\mathscr B_{\Delta_5})\) are used only in target reference rows
+\(W_\nu\cup(-W_\nu)\cup\{0\}\) satisfies the compact source-admissibility
+condition of
+Theorem~\ref{thm:finite-source-admissibility}.  Target labels
+from \(G(\mathscr B_{\Delta_5})\) are used only in target rows
 or in comparison-map codomains, never as names for compact source vectors.
 
 \item[\textup{(R1)}] \emph{Representatives and parities.}
@@ -13299,7 +13310,7 @@ finite type in the retained finite sector.  The wrapped stack is the fibre
 of the determinant anchor over \(0_E\), with a chosen trivialization of the
 anchor line; by \(\mathrm{(Rig)}\) this removes the free translation
 direction and leaves only finite torsion stabilizers.  The extension and
-flag stacks are the certified retained stacks of exact triangles and
+flag stacks are the retained source-datum stacks of exact triangles and
 filtered objects.  Their tangent complexes are computed by filtered
 endomorphism complexes, and the cosection equation follows from additivity
 of trace and semiregularity on filtrations.
@@ -13941,6 +13952,10 @@ represented by oriented irreducible critical cycles or IC summands of
 P_\gamma:=\bigoplus_{\bar p}
 P^{\Pi,\mathrm{geom}}_{R,\gamma,\bar p}.
 \]
+In this proposition \(\alpha,\beta,\mu,\nu,\rho\) denote Gram degrees in
+\(\Gamma_R^\Pi\), not BKM root labels.  The root-label convention below
+uses an explicit lift \(\beta\mapsto\gamma_\beta\) before any source block
+is named.
 The Hall product matrices are
 the compact-support integrals
 \[
@@ -14023,26 +14038,26 @@ Put \(K_\gamma=\bigoplus_{\bar p}K_{\gamma,\bar p}\),
 bracket and coproduct are the source matrices
 \[
 [\,\bar x,\bar y\,]_{\mathrm{red}}
-=Q_{\alpha+\beta}B_{\alpha,\beta}(x\otimes y),
+=Q_{\eta+\xi}B_{\eta,\xi}(x\otimes y),
 \qquad
 \Delta_{\mathrm{red}}(\bar z)
-=(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}(z),
+=(Q_\eta\otimes Q_\xi)D^{\eta,\xi}_{\zeta}(z),
 \]
 and they are independent of the lifts because
 \[
-Q_{\alpha+\beta}B_{\alpha,\beta}
-\bigl(P_\alpha\otimes K_\beta\bigr)=0,\qquad
-Q_{\alpha+\beta}B_{\alpha,\beta}
-\bigl(K_\alpha\otimes P_\beta\bigr)=0,
+Q_{\eta+\xi}B_{\eta,\xi}
+\bigl(P_\eta\otimes K_\xi\bigr)=0,\qquad
+Q_{\eta+\xi}B_{\eta,\xi}
+\bigl(K_\eta\otimes P_\xi\bigr)=0,
 \]
 \[
-(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}K_\rho=0.
+(Q_\eta\otimes Q_\xi)D^{\eta,\xi}_{\zeta}K_\zeta=0.
 \]
 Product, coproduct, and pairing are adjoint in the source:
 \[
-M_{\alpha,\beta}^{t}G_{\alpha+\beta}
+M_{\eta,\xi}^{t}G_{\eta+\xi}
 =
-(G_\alpha\otimes G_\beta)D_{\alpha+\beta}^{\alpha,\beta}.
+(G_\eta\otimes G_\xi)D_{\eta+\xi}^{\eta,\xi}.
 \]
 The reduced primitive block is
 \[
@@ -14106,8 +14121,8 @@ P^{\Pi,\mathrm{geom}}_{R,\gamma,\bar p}
 \]
 be the source splitting obtained from the compact Hall pairing matrices,
 with quotient \(Q_{\gamma,\bar p}\), source bracket matrices
-\(B^X_{\alpha,\beta}\), source coproduct matrices
-\(D^{X,\mu,\nu}_{\rho}\), and source pairing matrices \(G^X_\gamma\) of
+\(B^X_{\eta,\xi}\), source coproduct matrices
+\(D^{X,\eta,\xi}_{\zeta}\), and source pairing matrices \(G^X_\gamma\) of
 Proposition~\ref{prop:geometric-primitive-matrix-computation}.  The compact
 Hall representatives produce these source matrices and radical splittings.
 They do not by themselves choose an identification with the
@@ -14122,16 +14137,16 @@ A_0=\iota_H,
 \]
 compatible with HN transitions and satisfying, for every retained degree,
 \[
-A_{\alpha+\beta}Q_{\alpha+\beta}B^X_{\alpha,\beta}
+A_{\eta+\xi}Q_{\eta+\xi}B^X_{\eta,\xi}
 =
-B^\Delta_{\alpha,\beta}
-(A_\alpha Q_\alpha\otimes A_\beta Q_\beta),
+B^\Delta_{\eta,\xi}
+(A_\eta Q_\eta\otimes A_\xi Q_\xi),
 \]
 \[
-(A_\mu\otimes A_\nu)(Q_\mu\otimes Q_\nu)
-D^{X,\mu,\nu}_{\rho}
+(A_\eta\otimes A_\xi)(Q_\eta\otimes Q_\xi)
+D^{X,\eta,\xi}_{\zeta}
 =
-D^{\Delta,\mu,\nu}_{\rho}A_\rho Q_\rho,
+D^{\Delta,\eta,\xi}_{\zeta}A_\zeta Q_\zeta,
 \]
 and
 \[
@@ -14350,18 +14365,29 @@ and extend to the type-II Weyl group by
 Proposition~\ref{prop:local-weyl-transport-rank-one-crossings}.
 
 The finite colored normal form is the following formal target object over
-\(E\).  A positive degree
-\(\beta=\alpha(n,l,m)\) has local color when \(m=0\) and wrapped color
-when \(m>0\).  Local colors are placed on ordinary finite configurations
-of \(E\); wrapped colors are represented by a rigidified full-support
-symbol \(w_\beta=(E,0_E,\beta)\).  Products are the matrices
-\(m_{ab}^{c}\) above, with color rule local-local, local-wrapped,
+\(E\).  For a positive root \(\beta\in W\), write
+\[
+\gamma_\beta=(n,l,m)\in\Gamma_{\mathrm{gram}},
+\qquad
+\alpha(\gamma_\beta)=\beta,
+\]
+for its target Gram label.  The sign of \(m=\operatorname{pr}_3
+\gamma_\beta\) defines only a target Borcherds coordinate color: local
+target color when \(m=0\), wrapped target color when \(m>0\).  It is not
+the source local/wrapped color.  A compact source stage must instead
+supply a geometric color \(b_R^{\mathrm{geom}}\), retained support and
+anchor data, and the quotient/transition maps that prove this target
+color is realised.  In the target normal form, local colors are placed on
+ordinary finite configurations of \(E\); wrapped colors are represented
+by a rigidified full-support symbol
+\(w_{\gamma_\beta}=(E,0_E,\gamma_\beta)\).  Products are the matrices
+\(m_{ab}^{c}\) above, with target color rule local-local, local-wrapped,
 wrapped-local, and wrapped-wrapped according to addition of the third
 Gram coordinate.  The formal trace weight is
 \[
 I_W^{\mathrm{prot}}(a_\beta)=\operatorname{str}(a_\beta)\,q^nr^ls^m,
 \qquad
-m_W(\beta)=\operatorname{pr}_3\overline\Pi_X(\beta)=m .
+m_W^{\mathrm{tar}}(\beta)=\operatorname{pr}_3\gamma_\beta=m .
 \]
 
 Finally set
@@ -14417,11 +14443,13 @@ the involution \(u_i\mapsto-u_i\) gives the sign \(-1\).  The Weyl
 transport assertion is then exactly
 Proposition~\ref{prop:local-weyl-transport-rank-one-crossings}.
 
-The colored normal form is closed under the four displayed color products
-because the third Gram coordinate is additive under
-\(\overline\Pi_X\).  Hence the trace exponent of a product is the sum of
-the trace exponents, and \(I_W^{\mathrm{prot}}\) is multiplicative on
-the finite Hall product.  The bar construction is conilpotent because
+The target colored normal form is closed under the four displayed color
+products because the third coordinate in \(\Gamma_{\mathrm{gram}}\) is
+additive.  Hence the trace exponent of a target product is the sum of
+the trace exponents.  A source Hall product carries this color only after
+the geometric color \(b_R^{\mathrm{geom}}\), retained support, anchor
+transport, and quotient compatibility data are supplied.  The bar
+construction is conilpotent because
 the positive root-degree filtration is finite on \(W\).  The cobar map is
 the identity on the finite primitive presentation and carries the
 Borcherds--Kac relations and the invariant-pairing radical to the same
@@ -14434,20 +14462,28 @@ Gritsenko--Nikulin window.
 \begin{proposition}[Central-label target point atlas]
 \label{prop:k3xe-labelled-finite-hall-atlas}
 Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.
-For every \(\beta\in W\), use the multiplicative normal-ordering lift
+For every \(\beta\in W\), choose a target Gram label
 \[
-\widehat c^0_\beta:=(0,-\beta)\in\widehat\Gamma_X,
+\gamma_\beta\in\Gamma_{\mathrm{gram}},
 \qquad
-\overline\Pi_X(\widehat c^0_\beta)=\beta,
+\alpha(\gamma_\beta)=\beta .
 \]
-where \(0\) is the zero formal Mukai charge and \(-\beta\) lies in the
+Use the multiplicative normal-ordering lift
+\[
+\widehat c^0_\beta:=(0,-\gamma_\beta)\in\widehat\Gamma_X,
+\qquad
+\overline\Pi_X(\widehat c^0_\beta)=\gamma_\beta,
+\]
+where \(0\) is the zero formal Mukai charge and \(-\gamma_\beta\) lies in the
 central Gram summand.  For a PBW basis
 word \(a=v_{\beta_1}\cdots v_{\beta_k}\in\mathcal B_W\), set
 \[
+\gamma_a:=\gamma_{\beta_1}+\cdots+\gamma_{\beta_k},
+\qquad
 \widehat c^0_a
 :=
 \widehat c^0_{\beta_1}\star\cdots\star\widehat c^0_{\beta_k}
-=(0,-\deg a)
+=(0,-\gamma_a)
 \in\widehat\Gamma_X .
 \]
 Then the universal normal form of
@@ -14505,17 +14541,17 @@ bar coalgebras, pairings, and primitive matrices.
 \end{proposition}
 
 \begin{proof}
-The element \(\widehat c^0_\beta=(0,-\beta)\) belongs to the central
+The element \(\widehat c^0_\beta=(0,-\gamma_\beta)\) belongs to the central
 normal-ordering summand of
 Definition~\ref{def:gram-corrected-charge-extension}.  Associativity of
 \(\star\), \(B(0,0)=0\), and additivity of \(\overline\Pi_X\) give
 \[
-\overline\Pi_X(\widehat c^0_a)=\deg a,
+\overline\Pi_X(\widehat c^0_a)=\gamma_a,
 \qquad
-\widehat c^0_a\star\widehat c^0_b=(0,-\deg a-\deg b),
+\widehat c^0_a\star\widehat c^0_b=(0,-\gamma_a-\gamma_b),
 \qquad
 \overline\Pi_X(\widehat c^0_a\star\widehat c^0_b)
-=\deg a+\deg b .
+=\gamma_a+\gamma_b .
 \]
 Hence the target of every nonempty product correspondence has exactly the
 charge prescribed by the normal-ordered product.  The stacks are finite
@@ -15215,18 +15251,19 @@ is an isomorphism of finite Gram-graded Lie superalgebras.  Without the
 kernel equality, the Hopf-radical ideal/coideal assertion, and the PBW
 	associated-graded isomorphism, equality of the displayed dimensions is
 	not recognition.
-	In the notation of \textup{(NO7)}, this first window requires, at minimum,
-	explicit compact primitive bases for
-	\(W_{\le3}\cup(-W_{\le3})\cup\{0\}\).  Equivalently, for each retained
-	parity block one must exhibit a source splitting
-	\[
-	P^X_{R,\beta,\bar p}=
-	K_{\beta,\bar p}\oplus L_{\beta,\bar p},
-	\qquad
-	Q_{\beta,\bar p}=[0\ I],
-	\]
-	where \(K_{\beta,\bar p}\) is the radical block and
-	\(L_{\beta,\bar p}\) maps to the corresponding target basis above.  The
+		In the notation of \textup{(NO7)}, this first window requires, at minimum,
+		explicit compact primitive bases for
+		\(W_{\le3}\cup(-W_{\le3})\cup\{0\}\).  Equivalently, for each retained
+		root label \(\beta\) with Gram lift \(\gamma_\beta\), one must exhibit a
+		source splitting
+		\[
+		P^X_{R,\gamma_\beta,\bar p}=
+		K_{\gamma_\beta,\bar p}\oplus L_{\gamma_\beta,\bar p},
+		\qquad
+		Q_{\gamma_\beta,\bar p}=[0\ I],
+		\]
+		where \(K_{\gamma_\beta,\bar p}\) is the radical block and
+		\(L_{\gamma_\beta,\bar p}\) maps to the corresponding target basis above.  The
 	datum further requires positive-negative pairing matrices
 	in every displayed degree, radical kernel bases and quotient maps, the
 	Chevalley, real-Serre, isotropic, Jacobi, and \(27\) mixed bracket
@@ -15239,8 +15276,8 @@ kernel equality, the Hopf-radical ideal/coideal assertion, and the PBW
 	operations on them.
 
 	The next coefficient checks already lie outside this window.  The exact
-finite product computation in \texttt{compute/verify\_square\_root.py}
-is target-only: it verifies Borcherds/Gritsenko--Nikulin arithmetic, not
+finite product calculation is target arithmetic: it gives
+Borcherds/Gritsenko--Nikulin coefficients, not
 compact Hall representatives, Hopf-pairing matrices, coproduct matrices,
 or radical kernels.  It gives
 \[
@@ -15333,7 +15370,7 @@ Theorem~\ref{thm:primitive-recognition} to the downward-saturated window
 isomorphism.  The height-four additive coefficients are computed from the
 monic Borcherds product and converted to Gritsenko--Nikulin \(m(a)\) by
 the coefficient formula \(m(a)=-64^{-1}c_\Delta(n,l,m)\) of
-\cite[Theorem~2.1]{GN}; the script performs this conversion with
+\cite[Theorem~2.1]{GN}; this conversion uses
 \(\alpha(n,l,m)=n\delta_1+m\delta_2+(n+m-l)\delta_3\).  The full signed
 height-four target multiplicities are read from the same denominator
 theorem:
@@ -15354,8 +15391,8 @@ chambers, while the isotropic simple-root multiplicity is the
 Gritsenko--Nikulin constant \(\tau(2(\delta_i+\delta_j))=9\).  Finally,
 the real-string exponents follow directly from the Gram matrix:
 	\((\delta_i,\delta_{123})=-2\), \((\delta_i,\delta_i)=2\), and therefore
-	the exponent is \(3\).  All displayed numerical checks are asserted in
-	\texttt{compute/verify\_square\_root.py}.
+	the exponent is \(3\).  These numerical checks are direct coefficient
+	computations in the Borcherds product.
 	\end{proof}
 
 \begin{proposition}[A071 target-presentation parity rows]
@@ -15427,51 +15464,61 @@ and \(2\tau_{123}\) has only signed target data
 \smult(2\tau_{123})=4016,\qquad m(2\tau_{123})=-540.
 \]
 Their full parity splits require a finite target presentation reducer.
+Only the parity rows displayed above enter the target basis and PBW
+comparison in this proposition; \(C_{k,2}\) and \(2\tau_{123}\) remain
+signed-only target degrees.
 This proposition is target-presentation arithmetic only; it supplies no
 compact Hall representatives, source pairings, radicals, \(M,D,B,G,K,Q\)
 matrices, no-extra theorem, or PBW comparison.
 \end{proposition}
 
-\begin{theorem}[Finite compact-source provenance gate]
-\label{thm:finite-compact-source-provenance-gate}
+\begin{theorem}[Finite compact-source admissibility]
+\label{thm:finite-source-admissibility}
 Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated, and
 put
 \[
 S_W=W\cup(-W)\cup\{0\}.
 \]
+For each \(\beta\in S_W\), choose a Gram label
+\(\gamma_\beta\in\Gamma_{\mathrm{gram}}\), extending the positive-window
+choices by \(\gamma_{-\beta}=-\gamma_\beta\) and \(\gamma_0=0\), with
+\(\alpha(\gamma_\beta)=\beta\) on nonzero labels.
 A compact Hall stage \(R\) is source-admissible on \(S_W\) only after every
 basis vector
 \[
-b^X_{R,\beta,\bar p,a}\in P^X_{R,\beta,\bar p},
+b^X_{R,\gamma_\beta,\bar p,a}\in P^X_{R,\gamma_\beta,\bar p},
 \qquad
 \beta\in S_W,
 \]
-has compact source provenance: a retained charge lift \(\widehat c\) with
-\(\overline\Pi_X(\widehat c)=\beta\), a retained stack stratum or
+has compact geometric origin: a retained charge lift \(\widehat c\) with
+\(\overline\Pi_X(\widehat c)=\gamma_\beta\) and
+\(\alpha(\gamma_\beta)=\beta\), a retained stack stratum or
 vanishing-cycle/IC summand representative, reduced orientation and
 quotient-orientation data, Thom--Sebastiani transport, finite-stabilizer
 linearization, protected integration data, and successor-transition
-compatibility.  Product, coproduct, pairing, and comparison rows must be
+compatibility.  Product, coproduct, pairing, and comparison identities must be
 computed from these source representatives and their compact
 correspondences.
 
 The target labels \(e_i,E_{ij},u_{ij,r},T_i,M_{ij,r},w_s\) may occur only
-in target reference tables or in the codomain coordinates of
-\(A_{\beta,\bar p}\).  If the provenance gate fails, the packet is a
-target or mock fixture and cannot serve as the compact-source hypothesis
-in Theorem~\ref{thm:executable-finite-source-matrix-criterion}.  After the
-gate passes, the matrix, relation, no-extra, PBW, and
-Mittag--Leffler clauses of that theorem are source-side clauses; when they
-pass, finite primitive recognition holds on \(W\).
+in target tables or in the codomain coordinates of
+\(A_{\beta,\bar p}\).  If this source-admissibility condition fails, the
+finite data do not define a compact-source hypothesis for
+Theorem~\ref{thm:finite-source-matrix-recognition}.  Once it holds, the
+matrix, relation, no-extra, PBW, and Mittag--Leffler clauses of that
+theorem are source-side clauses; when they hold, finite primitive
+recognition holds on \(W\).
 \end{theorem}
 
 \begin{proof}
 The assertion is the finite restriction of the compact Hall source
-construction.  A homogeneous source vector in \(P^X_{R,\beta,\bar p}\) is
-not an abstract target coordinate: by construction it is a compactly
-supported vanishing-cycle class on a retained \(K3\times E\) stack stratum,
-with the orientation, quotient, Thom--Sebastiani, stabilizer, protected
-integration, and transition data needed to define pull-push operations.
+construction.  A homogeneous source vector in
+\(P^X_{R,\gamma_\beta,\bar p}\) is not an abstract target coordinate: by
+construction it is a compactly supported vanishing-cycle class on a
+retained \(K3\times E\) stack stratum whose charge lift projects to
+\(\gamma_\beta\) and then to \(\beta\), with the orientation, quotient,
+Thom--Sebastiani, stabilizer, protected integration, and transition data
+needed to define pull-push operations.
 The product, coproduct, pairing, and comparison matrices are therefore
 computed from the retained compact correspondences described in the finite
 Hall source kernel and primitive matrix construction; without these
@@ -15480,30 +15527,38 @@ apply.
 
 The target labels belong to \(G(\mathscr B_{\Delta_5})\).  They can enter
 only after a comparison map \(A_{\beta,\bar p}\) has been chosen from the
-source quotient block to the target block.  If a packet is populated by
-the target labels themselves, or by a mock finite algebra with no compact
-provenance, it may test target arithmetic or matrix plumbing, but it is
-not a compact \(K3\times E\) source.  Thus the provenance gate is a
-necessary admissibility condition for the finite source matrix recognition
-criterion.
+source quotient block to the target block.  If the chosen vectors are the
+target basis itself, or an abstract finite algebra with no compact
+geometric representatives, the data may reproduce target arithmetic but
+do not define a compact \(K3\times E\) source.  Thus compact
+source-admissibility is a necessary hypothesis for the finite source
+matrix recognition criterion.  In the presence of the
+source-faithfulness theorem, compact source-admissible matrices satisfying
+the finite radical, relation, centre, associator, and PBW identities force
+injectivity into the quotient.
 \end{proof}
 
 \begin{theorem}[Finite source matrix recognition criterion]
-\label{thm:executable-finite-source-matrix-criterion}
-Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.  A
-source-admissible compact Hall stage \(R\) in the sense of
-Theorem~\ref{thm:finite-compact-source-provenance-gate} evaluates
-primitive recognition on \(W\) exactly when it supplies, for every
+\label{thm:finite-source-matrix-recognition}
+Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated, put
+\(S_W=W\cup(-W)\cup\{0\}\), and choose Gram labels
+\(\gamma_\beta\in\Gamma_{\mathrm{gram}}\) for \(\beta\in S_W\) as in
+Theorem~\ref{thm:finite-source-admissibility}.  A
+source-admissible compact Hall stage \(R\) evaluates primitive recognition
+on \(W\) exactly when it supplies, for every
 \[
-\beta\in W\cup(-W)\cup\{0\},
+\beta\in S_W,
 \]
-parity-homogeneous compact source bases of \(P^X_{R,\beta,\bar p}\),
-product matrices \(M_{\alpha,\beta}\), coproduct matrices
-\(D^{\mu,\nu}_\rho\), positive-negative pairing matrices
-\(G_{\beta,\bar p}\), HN transition matrices, and geometric provenance for
-every basis vector.
-For homogeneous \(x\in P^X_{R,\alpha}\) and
-\(y\in P^X_{R,\beta}\), define
+parity-homogeneous compact source bases of
+\(P^X_{R,\gamma_\beta,\bar p}\), product matrices \(M_{\alpha,\beta}\),
+coproduct matrices \(D^{\mu,\nu}_\rho\), positive-negative pairing matrices
+\(G_{\gamma_\beta,\bar p}\), HN transition matrices, and a compact
+geometric representative for every basis vector.  The matrix subscripts
+\(\alpha,\beta,\rho\) are root labels; their source domains and codomains
+are the retained charge blocks
+\(\gamma_\alpha,\gamma_\beta,\gamma_\rho\).  For homogeneous
+\(x\in P^X_{R,\gamma_\alpha}\) and
+\(y\in P^X_{R,\gamma_\beta}\), define
 \[
 B_{\alpha,\beta}(x\otimes y)
 =
@@ -15513,24 +15568,24 @@ M_{\alpha,\beta}(x\otimes y)
 \]
 For each parity block set
 \[
-K_{\beta,\bar p}
+K_{\gamma_\beta,\bar p}
 =
-\ker G_{\beta,\bar p}\cap\ker G_{-\beta,\bar p}^{t}.
+\ker G_{\gamma_\beta,\bar p}\cap\ker G_{\gamma_{-\beta},\bar p}^{t}.
 \]
 Here \(\mathsf{sw}_{\alpha,\beta}\) is the ordinary tensor flip from the
 \((\alpha,\beta)\)-ordered tensor product to the \((\beta,\alpha)\)-ordered
 one.
 Choose splittings
 \[
-P^X_{R,\beta,\bar p}
-=K_{\beta,\bar p}\oplus L_{\beta,\bar p},
+P^X_{R,\gamma_\beta,\bar p}
+=K_{\gamma_\beta,\bar p}\oplus L_{\gamma_\beta,\bar p},
 \qquad
-Q_{\beta,\bar p}=[\,0\ \ I\,].
+Q_{\gamma_\beta,\bar p}=[\,0\ \ I\,].
 \]
 Choose, as part of the finite source matrix datum, parity-preserving
 source-to-target isomorphisms
 \[
-A_{\beta,\bar p}:L_{\beta,\bar p}
+A_{\beta,\bar p}:L_{\gamma_\beta,\bar p}
 \xrightarrow{\ \sim\ }
 G(\mathscr B_{\Delta_5})_{\beta,\bar p},
 \qquad
@@ -15539,10 +15594,11 @@ A_0=\iota_H,
 for every retained \(\beta\in W\cup(-W)\cup\{0\}\), compatible with the
 HN/window transition matrices:
 \[
-A^R_{\beta,\bar p}Q^R_{\beta,\bar p}T^X_{R^+R,\beta,\bar p}
+A^R_{\beta,\bar p}Q^R_{\gamma_\beta,\bar p}
+T^X_{R^+R,\gamma_\beta,\bar p}
 =
 T^\Delta_{R^+R,\beta,\bar p}
-A^{R^+}_{\beta,\bar p}Q^{R^+}_{\beta,\bar p}.
+A^{R^+}_{\beta,\bar p}Q^{R^+}_{\gamma_\beta,\bar p}.
 \]
 All row and column labels of the source bases, \(K,L,M,D,B,G,Q\), and
 relation matrices are compact-source labels.  The target labels
@@ -15554,33 +15610,35 @@ The data pass the finite source test if and only if the comparison maps
 are parity-preserving isomorphisms onto the target blocks and the following
 matrix identities hold:
 \[
-Q_{\alpha+\beta}B_{\alpha,\beta}
-(P^X_{R,\alpha}\otimes K_\beta)=0,\qquad
-Q_{\alpha+\beta}B_{\alpha,\beta}
-(K_\alpha\otimes P^X_{R,\beta})=0,
+Q_{\gamma_{\alpha+\beta}}B_{\alpha,\beta}
+(P^X_{R,\gamma_\alpha}\otimes K_{\gamma_\beta})=0,\qquad
+Q_{\gamma_{\alpha+\beta}}B_{\alpha,\beta}
+(K_{\gamma_\alpha}\otimes P^X_{R,\gamma_\beta})=0,
 \]
 \[
-(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}K_\rho=0,\qquad
-M_{\alpha,\beta}^{t}G_{\alpha+\beta}
+(Q_{\gamma_\mu}\otimes Q_{\gamma_\nu})
+D^{\mu,\nu}_{\rho}K_{\gamma_\rho}=0,\qquad
+M_{\alpha,\beta}^{t}G_{\gamma_{\alpha+\beta}}
 =
-(G_\alpha\otimes G_\beta)D_{\alpha+\beta}^{\alpha,\beta}.
+(G_{\gamma_\alpha}\otimes G_{\gamma_\beta})D_{\alpha+\beta}^{\alpha,\beta}.
 \]
 For the induced bracket, coproduct, and pairing on the quotient blocks,
 the same maps \(A_{\beta,\bar p}\) must intertwine the compact source with
 the Gritsenko--Nikulin/Kac target matrices:
 \[
-A_{\alpha+\beta}Q_{\alpha+\beta}B_{\alpha,\beta}
+A_{\alpha+\beta}Q_{\gamma_{\alpha+\beta}}B_{\alpha,\beta}
 =
 B^\Delta_{\alpha,\beta}
-(A_\alpha Q_\alpha\otimes A_\beta Q_\beta),
+(A_\alpha Q_{\gamma_\alpha}\otimes A_\beta Q_{\gamma_\beta}),
 \]
 \[
-(A_\mu\otimes A_\nu)(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}
+(A_\mu\otimes A_\nu)(Q_{\gamma_\mu}\otimes Q_{\gamma_\nu})
+D^{\mu,\nu}_{\rho}
 =
-D^{\Delta,\mu,\nu}_{\rho}A_\rho Q_\rho,
+D^{\Delta,\mu,\nu}_{\rho}A_\rho Q_{\gamma_\rho},
 \]
 \[
-G^\Delta_\gamma(A_\gamma x,A_{-\gamma}y)=G_\gamma(x,y).
+G^\Delta_\beta(A_\beta x,A_{-\beta}y)=G_{\gamma_\beta}(x,y).
 \]
 The same matrices satisfy the Chevalley, real-Serre, orthogonality,
 super-sign, Jacobi, and real-string relation rows in the retained window.
@@ -15635,37 +15693,33 @@ parity pieces commute with the inverse limit.
 
 The first window statement is the specialization of the criterion to
 Proposition~\ref{prop:first-saturated-primitive-recognition-window}.  The
-scripts \texttt{compute/verify\_lattice.py} and
-\texttt{compute/verify\_square\_root.py} verify the target lattice and
-Borcherds--Gritsenko--Nikulin arithmetic in this window; they do not
-provide compact source bases, source pairings, radicals, coproducts, or
-PBW matrices.
-Thus the criterion is finite-matrix-checkable after a compact Hall stage
-has supplied the source bases and matrices.  The present computations
-supply only the target lattice and Borcherds--Gritsenko--Nikulin
-arithmetic.
+target lattice and Borcherds--Gritsenko--Nikulin arithmetic in this
+window do not provide compact source bases, source pairings, radicals,
+coproducts, or PBW matrices.  Thus the criterion applies only after a
+compact Hall stage has supplied the source bases and matrices.
 \end{proof}
 
-\begin{corollary}[\(W_{\le3}\) NO7 sub-verifier]
-\label{prop:finite-wlethree-no7-source-protocol}
-\label{cor:wlethree-no7-subverifier}
+\begin{corollary}[\(W_{\le3}\) NO7 radical test]
+\label{cor:wlethree-no7-radical-test}
 For a finite Hall stage \(R\) whose source image contains
 \(W_{\le3}\cup(-W_{\le3})\cup\{0\}\), a compact source verifies the
 \textup{(NO7)} radical-descent part of the \(W_{\le3}\)-recognition datum
-only after
+only after choosing Gram labels \(\gamma_\beta\) for the retained roots and
 supplying parity-homogeneous source splittings
 \[
-P^X_{R,\beta,\bar p}=K_{\beta,\bar p}\oplus L_{\beta,\bar p},
+P^X_{R,\gamma_\beta,\bar p}
+=K_{\gamma_\beta,\bar p}\oplus L_{\gamma_\beta,\bar p},
 \qquad
-Q_{\beta,\bar p}=[0\ I],
+Q_{\gamma_\beta,\bar p}=[0\ I],
 \]
-positive-negative pairing matrices \(G_\beta\), radical bases
+positive-negative pairing matrices \(G_{\gamma_\beta}\), radical bases
 \[
-K_\beta=\ker G_\beta\cap\ker G_{-\beta}^{t},
+K_{\gamma_\beta}=\ker G_{\gamma_\beta}\cap
+\ker G_{\gamma_{-\beta}}^{t},
 \]
 product matrices \(M_{\alpha,\beta}\), coproduct matrices
 \(D^{\mu,\nu}_{\rho}\), bracket matrices \(B_{\alpha,\beta}\), and
-successor matrices \(\rho^P_{R^+R}\) preserving \(K_\beta\).  Let
+successor matrices \(\rho^P_{R^+R}\) preserving \(K_{\gamma_\beta}\).  Let
 \(\mathrm{Pair}^{\pm}_{\le3}(R)\) be the finite set of ordered pairs
 \((\alpha,\beta)\) with
 \(\alpha,\beta,\alpha+\beta\in W_{\le3}\cup(-W_{\le3})\cup\{0\}\)
@@ -15677,14 +15731,15 @@ let \(\mathrm{Dec}^{\pm}_{\le3}(R)\) be the finite set of ordered triples
 the height-\(R\) quotient.  For every
 \((\alpha,\beta)\in\mathrm{Pair}^{\pm}_{\le3}(R)\) one must verify
 \[
-Q_{\alpha+\beta}B_{\alpha,\beta}
-(P^X_{R,\alpha}\otimes K_\beta)=0,\qquad
-Q_{\alpha+\beta}B_{\alpha,\beta}
-(K_\alpha\otimes P^X_{R,\beta})=0,
+Q_{\gamma_{\alpha+\beta}}B_{\alpha,\beta}
+(P^X_{R,\gamma_\alpha}\otimes K_{\gamma_\beta})=0,\qquad
+Q_{\gamma_{\alpha+\beta}}B_{\alpha,\beta}
+(K_{\gamma_\alpha}\otimes P^X_{R,\gamma_\beta})=0,
 \]
 and, for every \((\rho;\mu,\nu)\in\mathrm{Dec}^{\pm}_{\le3}(R)\),
 \[
-(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}K_\rho=0.
+(Q_{\gamma_\mu}\otimes Q_{\gamma_\nu})
+D^{\mu,\nu}_{\rho}K_{\gamma_\rho}=0.
 \]
 For every retained pair whose product degree also carries the displayed
 reduced coproduct component, one must verify Frobenius compatibility
@@ -15695,17 +15750,17 @@ reduced coproduct component, one must verify Frobenius compatibility
 \]
 and the quotient-tensor pairing must be non-degenerate.  These are
 source-side matrix equalities.  The target denominator algebra and the
-script \texttt{compute/verify\_square\_root.py} do not supply them.
+target product calculation do not supply them.
 Indeed a source can have the same quotient bracket templates as
 \(G(\mathscr B_{\Delta_5})_{W_{\le3}}\) and still fail \textup{(NO7)}:
-there may be \(k\in K_\rho\) with
+there may be \(k\in K_{\gamma_\rho}\) with
 \[
-(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}(k)\ne0.
+(Q_{\gamma_\mu}\otimes Q_{\gamma_\nu})D^{\mu,\nu}_{\rho}(k)\ne0.
 \]
 Then the quotient target table sees no discrepancy, but the radical is not
 a coideal and the Hopf quotient is not defined.  This is the finite
 tensor-Hopf obstruction hidden by signed determinant data.
-This sub-verifier does not prove no-extra-relations, PBW compatibility,
+This radical test does not prove no-extra-relations, PBW compatibility,
 full parity matching, or source-to-target recognition.
 \end{corollary}
 
@@ -15717,7 +15772,7 @@ finite Lie-ideal tests for the radical, the \(QD\)-containment is the
 finite coideal square, and Hopf adjointness together with
 quotient-tensor non-degeneracy is the finite algebraic condition forcing
 the coproduct to descend through the radical quotient.  Transition
-preservation of \(K_\beta\) is the finite part of the closed radical
+preservation of \(K_{\gamma_\beta}\) is the finite part of the closed radical
 condition in the HN inverse system.
 \end{proof}
 
@@ -15803,12 +15858,13 @@ and normalized leading coefficient \(\mathfrak o^{\mathrm{lead}}_R=0\).
 Negative representatives are supplied only in the primitive-recognition
 datum, through the full positive-negative pairing and Chevalley
 data.
-The minimal target-window \(K_0\) signed-shadow model
+The split target-window \(K_0\) signed-shadow representative
 \(\mathsf P^{\min}_{\Delta,R}\) is already constructed in
-Proposition~\ref{prop:cofinal-target-window-parity-model}; the compact
-identification is to identify it, or a non-minimal lift in
-\(\mathscr P_R(\gamma)\), with actual source primitive spaces and to
-prove the no-hidden-cancellation condition if the minimal lift is used;
+Proposition~\ref{prop:cofinal-target-window-parity-model}; the remaining
+compact-source recognition task is to supply actual source primitive
+spaces whose signed class is this representative, or a non-minimal lift
+in \(\mathscr P_R(\gamma)\), and to prove the no-hidden-cancellation
+condition if the split minimal representative is used;
 \item[\textup{(full datum)}] construct the strong
 orientation monodromy and the chiral Koszul source datum
 \[
@@ -17981,8 +18037,8 @@ In Govindarajan's CHL normalization the corresponding square-root form
 is anti-invariant under the Weyl reflections, with character
 \(\epsilon_j(w)=\det(w)\).  This anti-invariance is part of the
 Govindarajan WKB denominator theorem, not a consequence of the
-Cl\'ery--Gritsenko product alone; this manuscript does not construct an
-independent row-by-row embedding of the CHL Weyl group into each
+Cl\'ery--Gritsenko product alone; the product does not construct an
+independent row-by-row embedding of the CHL Weyl group into a
 Cl\'ery--Gritsenko modular group or multiplier cover.
 The Cartan matrices are, in the CHL/WKB BKM normalization of
 \cite{CD09BKM,Gov11BKM},
@@ -18399,7 +18455,7 @@ The comparison notation
 $$\Phi^{\mathrm{cmp}}_1,\ldots,\Phi^{\mathrm{cmp}}_8,\qquad
 \mathrm{wt}(\Phi^{\mathrm{cmp}}_j)=(5,2,1,1,\tfrac12,1,\tfrac14,0),$$
 does not define the Cl\'ery--Gritsenko row system and defines no physical
-atlas in this paper.  A row map
+atlas.  A row map
 $$
 \Phi^{\mathrm{cmp}}_j\longleftrightarrow F_i
 $$
@@ -18530,8 +18586,8 @@ comparison for the same row.
 
 Borcea--Voisin and higher-dimensional curve-counting constructions
 \cite{BORCEA}, \cite{VOISIN}, \cite{OhThomasI}, \cite{OhThomasII},
-\cite{BOPY} are possible sources for such a datum.  This paper
-does not assert that they supply it.  Until \(\mathscr R_j\) and the
+\cite{BOPY} are possible sources for such a datum.  They are not asserted
+to supply it.  Until \(\mathscr R_j\) and the
 relevant datum entries are constructed, the symbols
 \(\Phi^{\mathrm{cmp}}_5,\Phi^{\mathrm{cmp}}_7,\Phi^{\mathrm{cmp}}_8\)
 are formal comparison symbols only: no Cl\'ery--Gritsenko row,
