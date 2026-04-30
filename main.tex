@@ -5815,9 +5815,12 @@ construction.
 \end{theorem}
 
 \begin{proof}
-Gritsenko--Nikulin \cite[Theorem 2.1, (2.1)--(2.3)]{GNII} construct $\autcor$ as the generalized
-Borcherds--Kac--Moody superalgebra whose real simple roots are
-$\delta_1,\delta_2,\delta_3$ and whose imaginary simple-root
+The explicit product and correction coefficients are those of
+Gritsenko--Nikulin \cite[Theorem 2.1, (2.1)--(2.3)]{GNII}; the
+Lorentzian automorphic correction algebra \(\autcor\) and its
+denominator identity are the corrected algebra of
+\cite[Sections~3--4, Proposition~3.1]{GN}.  Its real simple roots are
+$\delta_1,\delta_2,\delta_3$, and its imaginary simple-root
 multiplicities are read from the Borcherds correction character.  A
 product exponent gives the signed multiplicity of a visible positive
 root; the simple imaginary-root datum is Gritsenko--Nikulin's \(m(a)\)
@@ -12466,7 +12469,7 @@ of Corollary~\ref{cor:source-bar-remaining-cobar-obstruction}, and
 filtration, collision coproduct, bar comparison, and primitive restriction
 were supplied independently of the target counit.
 
-\item[\((R_X)\)] \emph{Primitive recognition.}
+\item[\((R_X)\)] \emph{Primitive-recognition certificate.}
 This entry is a primitive recognition datum
 \(\Pi_{\mathrm{rec}}\) for
 $$
@@ -12528,8 +12531,10 @@ G(\mathscr B_{\Delta_5})
 \]
 Here \(\operatorname{Rad}_{\mathrm{GN}}\) denotes the preimage in the
 completed presentation of the standard radical.
-This target-side statement is imported from the Gritsenko--Nikulin/Kac
-construction \cite{GN,GNPartI,GNII,KAC:1}; it is not a compact Hall
+This target-side statement is imported from the Gritsenko--Nikulin
+automorphic correction, the Borcherds generalized Kac--Moody
+presentation conventions, and the Kac PBW conventions
+\cite{GN,GNPartI,GNII,BorcherdsGKM88,KAC:1}; it is not a compact Hall
 construction.
 
 Let a compact Hall/factorization construction give a completed
@@ -12845,7 +12850,75 @@ Koszul Mittag--Leffler exactness hypothesis of that proposition, not the
 target-internal bar--cobar counit.
 \end{proof}
 
-\begin{definition}[Cofinal finite-window primitive-recognition datum]
+\subsection{Primitive-recognition proof ledger}
+\label{subsec:primitive-recognition-proof-ledger}
+
+The primitive-recognition theorem has six logically separate stages.  The
+Borcherds product fixes target signed superdimensions.  The
+Gritsenko--Nikulin/Kac presentation fixes target parity dimensions only in
+the degrees where that presentation has been computed.  A compact
+\(K3\times E\) source is recognized only after finite source
+representatives, pairings, radicals, relations, PBW, and transitions have
+been supplied.
+
+First, the imported target is
+\[
+G(\mathscr B_{\Delta_5})=\mathfrak g_{\Delta_5},
+\]
+with denominator \(64^{-1}\Delta_5(2Z)\).  On the first window
+\(W_{\le3}\) the target parity table is
+\[
+\delta_i:1|0,\qquad
+a_{ij}:10|0,\qquad
+2\delta_i+\delta_j:1|0,\qquad
+\delta_{123}:29|93,
+\]
+so \(29-93=-64=f(1,1)\).  These are target data.  They do not construct
+compact source primitives, source pairings, radical kernels, or source
+bracket constants.
+
+Second, a source fixture on a finite window \(W\), with
+\(S_W=W\cup(-W)\cup\{0\}\), consists of neutral compact-source bases
+\(b^X_{R,\beta,\bar p,a}\), parity pieces, matrices \(M,D,B,G,K,Q\),
+comparison maps \(A_{\beta,\bar p}\), relation rows, no-extra kernel
+equality, PBW associated gradeds, and strict transition/Mittag--Leffler
+rows.  The target labels \(e_i,E_{ij},u_{ij,r},T_i,M_{ij,r},w_s\) may
+occur only in the target reference fixture or in the codomain coordinates
+of \(A_{\beta,\bar p}\).
+
+Third, the finite verifier is a theorem, not a table of dimensions:
+NO7 proves radical descent for the bracket and coproduct, the relation
+rows put \(J_{\mathrm{BK}}\) in the kernel, the no-extra equality computes
+the whole kernel, PBW compares associated gradeds, and the strict
+Mittag--Leffler condition transports these finite statements through the
+inverse system.  NO7 alone does not imply no-extra-relations, PBW, full
+parity matching, or source-to-target recognition.
+
+Fourth, \(W_{\le3}\) is the first arithmetic window, not the first
+relation-closed window.  The first relation-closed test must add the
+real-Serre terminal rows, doubled isotropic rows, \(\delta_{123}\)-real
+strings, odd--odd \(\delta_{123}\) rows, and complementary height-seven
+strings, or else pass to a downward-saturated closure when the cofinal
+definition is invoked literally.  Rows whose target parity is still
+signed-only remain proof obligations for the target presentation, not
+source-recognition theorems.
+
+Fifth, a cofinal compatible system of such finite certificates passes to
+\[
+P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5}
+\]
+only when exactness says that no generator, relation, radical element, or
+parity-cancelling summand appears only after completion.  The target
+reference tower does not supply the compact source transition system.
+
+Sixth, the compact theorem still requires the geometric source: retained
+Hall stacks and correspondences, quotient orientations, Pfaffian wall
+data, protected integration, source chiral coalgebra, Koszul comparison,
+and the primitive fixtures above.  Until these are constructed, the
+compact Dirac--Igusa realization remains an open theorem target, not a
+consequence of the target product.
+
+\begin{definition}[Cofinal finite-window primitive-recognition certificate]
 \label{def:cofinal-primitive-recognition-datum}
 A finite set \(W\subset Q_+\setminus\{0\}\) is
 \emph{downward saturated} if
@@ -12874,6 +12947,13 @@ together with the following finite data for every \(W_\nu\), compatible
 under \(W_\nu\subset W_{\nu+1}\).
 
 \begin{enumerate}
+\item[\textup{(R0)}] \emph{Source provenance and target firewall.}
+Every finite source basis vector in
+\(W_\nu\cup(-W_\nu)\cup\{0\}\) satisfies the compact provenance gate of
+Theorem~\ref{thm:finite-compact-source-provenance-gate}.  Target labels
+from \(G(\mathscr B_{\Delta_5})\) are used only in target reference rows
+or in comparison-map codomains, never as names for compact source vectors.
+
 \item[\textup{(R1)}] \emph{Representatives and parities.}
 All simple-root representatives \(e_i^X,f_i^X,h_i^X\) whose roots lie in
 \(W_\nu\) are supplied in the compact source, with the
@@ -13873,13 +13953,16 @@ q^!(e_{\alpha+\beta,c}^{\vee})\cap
 e_{\beta,b})\bigr).
 \]
 Write \(M_{\alpha,\beta}:P_\alpha\otimes P_\beta\to P_{\alpha+\beta}\)
-for this matrix and let \(\tau\) be the ordinary flip.  On homogeneous
+for this matrix and let
+\(\mathsf{sw}_{\alpha,\beta}:P_\alpha\otimes P_\beta\to
+P_\beta\otimes P_\alpha\) be the ordinary flip.  On homogeneous
 tensors the primitive bracket matrix is
 \[
 B_{\alpha,\beta}(x\otimes y)
 =
 M_{\alpha,\beta}(x\otimes y)
--(-1)^{|x||y|}M_{\beta,\alpha}\tau(x\otimes y).
+-(-1)^{|x||y|}M_{\beta,\alpha}
+\mathsf{sw}_{\alpha,\beta}(x\otimes y).
 \]
 The coproduct matrices are computed from the source splitting
 correspondences:
@@ -14137,6 +14220,7 @@ Composing with the supplied geometric comparison \(\vartheta_R\) gives
 \begin{theorem}[Finite target Dirac--Igusa normal form on a root window]
 \label{thm:universal-finite-hall-dirac-source-window}
 Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.
+This is a target normal form, not a compact \(K3\times E\) source.
 Put
 \[
 \mathfrak n^+_W:=\bigoplus_{\beta\in W}
@@ -14342,7 +14426,7 @@ identification of the algebraic normal-form quotient with the
 Gritsenko--Nikulin window.
 \end{proof}
 
-\begin{proposition}[Central normal-ordering point normal form]
+\begin{proposition}[Central-label target point atlas]
 \label{prop:k3xe-labelled-finite-hall-atlas}
 Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.
 For every \(\beta\in W\), use the multiplicative normal-ordering lift
@@ -14442,7 +14526,7 @@ the point atlas models the same finite algebraic bialgebra and
 primitive supercommutator with central normal-ordering labels.
 \end{proof}
 
-\begin{theorem}[Conditional Dirac--Igusa source datum from supplied finite stages]
+\begin{theorem}[Conditional Dirac--Igusa source datum from supplied verified finite stages]
 \label{thm:cofinal-compact-dirac-igusa-source-construction}
 Fix a cofinal HN schedule \(R\in\mathcal R_{\mathrm{HN}}\) and a cofinal
 downward-saturated root-window schedule \(W_{\nu(R)}\).  For every height
@@ -14505,7 +14589,8 @@ primitive matrix terms.  The map \(\vartheta_R^{\Prim}\) is the
 source-to-target primitive comparison computed from the geometric Hall
 matrices, not from the target presentation.
 
-Define the finite compact source at height \(R\) by
+Assemble the finite compact-source datum at height \(R\) from the supplied
+verified stages by
 \[
 \mathfrak K_{X,R}
 =
@@ -14693,7 +14778,7 @@ the Borcherds--Gritsenko--Nikulin product identification for
 \(\Delta_5\).
 \end{proof}
 
-\begin{proposition}[Low-degree bracket information]
+\begin{proposition}[Low-degree target bracket templates]
 \label{prop:low-degree-denominator-brackets}
 The denominator algebra gives the following target-side low-degree checks.
 With
@@ -14990,9 +15075,11 @@ orthogonality relations kill only the adjacent brackets with
 \(\delta_i\) and \(\delta_j\), and the real-string relation occurs first
 at \((\operatorname{ad}e_k)^5u_{ij,r}\).  There are
 \(3\cdot9=27\) such even words.  No other simple-root decomposition has
-total degree \(\delta_{123}\).  The Borcherds--Kac presentation and PBW
-therefore give \(2+27=29\) even and \(93\) odd target directions in this
-degree.  Their signed difference is
+total degree \(\delta_{123}\).  The Borcherds--Kac presentation and PBW,
+after the standard target radical quotient, therefore give \(2+27=29\)
+even and \(93\) odd target directions in this degree.  This is a
+target-side presentation count, not a consequence of the denominator
+product alone.  Their signed difference is
 \[
 29-93=-64=f(1,1),
 \]
@@ -15030,7 +15117,7 @@ parity dimensions in this window are
 	convention; the target computation checks signed coefficients and
 	presentation counts, not source parity bases.
 	Writing \(a_{ij}=\delta_i+\delta_j\) and
-	\(\tau=\delta_1+\delta_2+\delta_3\), the target-side ordered binary
+	\(\delta_{123}=\delta_1+\delta_2+\delta_3\), the target-side ordered binary
 	decompositions in \(W_{\le3}\) are exactly
 	\[
 	a_{ij}=\delta_i+\delta_j=\delta_j+\delta_i,
@@ -15041,7 +15128,7 @@ parity dimensions in this window are
 	\]
 	and
 	\[
-	\tau=\delta_1+a_{23}=a_{23}+\delta_1
+	\delta_{123}=\delta_1+a_{23}=a_{23}+\delta_1
 	=\delta_2+a_{13}=a_{13}+\delta_2
 	=\delta_3+a_{12}=a_{12}+\delta_3.
 	\]
@@ -15055,7 +15142,7 @@ parity dimensions in this window are
 	Y_{i;ij}=[e_i,E_{ij}],\qquad
 	Y_{j;ij}=[e_j,E_{ij}],
 	\]
-	and, in the even part of \(\mathfrak g_\tau\),
+	and, in the even part of \(\mathfrak g_{\delta_{123}}\),
 	\[
 	T_1=[e_1,E_{23}],\qquad
 	T_2=[e_2,E_{31}],\qquad
@@ -15065,7 +15152,8 @@ parity dimensions in this window are
 	\]
 	with \(E_{31}=-E_{13}\) and
 	\(T_3=[e_3,E_{12}]=-T_1-T_2\); let
-	\(w_1,\ldots,w_{93}\) be odd simple generators in degree \(\tau\).
+	\(w_1,\ldots,w_{93}\) be odd simple generators in degree
+	\(\delta_{123}\).
 	With \(c_0=(1,0,\ldots,0)^t\in\C^{10}\), the target bracket matrices
 	start as
 	\[
@@ -15075,7 +15163,7 @@ parity dimensions in this window are
 	and the adjacent simple-isotropic maps
 	\(B_{\delta_p,a_{ij}}\colon\C^{10}\to\C\), \(p=i,j\), are
 	\((1,0,\ldots,0)\), killing the \(u_{ij,r}\)-columns.  The complementary
-	simple-isotropic maps to the even \(\tau\)-block are
+	simple-isotropic maps to the even \(\delta_{123}\)-block are
 	\[
 	B_{\delta_1,a_{23}}(E_{23})=T_1,\quad
 	B_{\delta_1,a_{23}}(u_{23,r})=M_{23,r},
@@ -15088,7 +15176,7 @@ parity dimensions in this window are
 	B_{\delta_3,a_{12}}(E_{12})=-T_1-T_2,\quad
 	B_{\delta_3,a_{12}}(u_{12,r})=M_{12,r},
 	\]
-	and their odd \(\tau\)-rows are zero.  With dual positive-negative
+	and their odd \(\delta_{123}\)-rows are zero.  With dual positive-negative
 	target pairings, the target coproduct templates are the transposes of
 	these matrices.  A compact Hall source must reproduce these templates
 	after quotienting by its own radical; the target package with
@@ -15260,16 +15348,124 @@ denominator exponent is \(f(4,4)=f(0,0)=10\) in the three symmetric
 chambers, while the isotropic simple-root multiplicity is the
 Gritsenko--Nikulin constant \(\tau(2(\delta_i+\delta_j))=9\).  Finally,
 the real-string exponents follow directly from the Gram matrix:
-\((\delta_i,\delta_{123})=-2\), \((\delta_i,\delta_i)=2\), and therefore
-the exponent is \(3\).  All displayed numerical checks are asserted in
-\texttt{compute/verify\_square\_root.py}.
-\end{proof}
+	\((\delta_i,\delta_{123})=-2\), \((\delta_i,\delta_i)=2\), and therefore
+	the exponent is \(3\).  All displayed numerical checks are asserted in
+	\texttt{compute/verify\_square\_root.py}.
+	\end{proof}
+
+\begin{proposition}[A071 target-presentation parity rows]
+\label{prop:a071-target-presentation-parity-rows}
+Write
+\[
+a_{ij}=\delta_i+\delta_j,\qquad
+\tau_{123}=\delta_{123}=\delta_1+\delta_2+\delta_3,\qquad
+C_{k,s}=a_{ij}+s\delta_k
+\quad(\{i,j,k\}=\{1,2,3\}).
+\]
+In the Gritsenko--Nikulin target denominator algebra
+\(\mathfrak g_{\Delta_5}\), with the generalized Borcherds--Kac
+presentation and Kac real-root conventions
+\cite[Sections~3--4, Proposition~3.1]{GN}, \cite{BorcherdsGKM88,KAC:1},
+the following target parity rows are fixed:
+\[
+\rootmult_{\overline0}(2a_{ij})=10,\qquad
+\rootmult_{\overline1}(2a_{ij})=0,
+\]
+\[
+\rootmult_{\overline0}(C_{k,3})=29,\qquad
+\rootmult_{\overline1}(C_{k,3})=93,
+\]
+\[
+\rootmult_{\overline0}(C_{k,4})=10,\qquad
+\rootmult_{\overline1}(C_{k,4})=0,
+\]
+and
+\[
+\rootmult_{\overline0}(C_{k,5})=
+\rootmult_{\overline1}(C_{k,5})=0.
+\]
+The row \(2a_{ij}\) consists of the even multiplicity-one null-root space
+in the rank-two \(A_1^{(1)}\) real subalgebra generated by
+\(\delta_i,\delta_j\), together with the nine even
+Gritsenko--Nikulin isotropic simple directions on the ray
+\(\mathbb Z_{>0}a_{ij}\).  Thus it is \(10|0\), not merely a signed value
+\(10\).
+
+For the complementary real root \(\delta_k\), Kac reflection gives
+\[
+s_k(x)=x-2\frac{(x,\delta_k)}{(\delta_k,\delta_k)}\delta_k .
+\]
+Since \((\tau_{123},\delta_k)=-2\) and \((a_{ij},\delta_k)=-4\), one has
+\[
+s_k(\tau_{123})=\tau_{123}+2\delta_k=C_{k,3},\qquad
+s_k(a_{ij})=a_{ij}+4\delta_k=C_{k,4}.
+\]
+Because the Gritsenko--Nikulin real simple roots are even, Kac's Weyl
+operators are even automorphisms of the adapted GN superalgebra; hence
+Weyl transport preserves the two root-space parities
+\cite[Lemma~3.8, Proposition~3.7]{KAC:1},
+\cite[Appendix, Statement~6.4]{GN}.  The already computed rows
+\(\delta_{123}:29|93\) and \(a_{ij}:10|0\) therefore transport to
+\(C_{k,3}:29|93\) and \(C_{k,4}:10|0\).  Finally, Kac's real-root string
+theorem gives \(p=0\), \(q=4\) for the \(\delta_k\)-string through
+\(a_{ij}\); hence the string terminates at \(C_{k,4}\) and
+\(C_{k,5}=a_{ij}+5\delta_k\) is not a target root
+\cite[Proposition~5.1(c)]{KAC:1}.
+
+No full target parity row is asserted here for \(C_{k,2}\) or
+\(2\tau_{123}\).  At present \(C_{k,2}\) has only signed target data
+\[
+\smult(C_{k,2})=108,\qquad m(C_{k,2})=90,
+\]
+and \(2\tau_{123}\) has only signed target data
+\[
+\smult(2\tau_{123})=4016,\qquad m(2\tau_{123})=-540.
+\]
+Their full parity splits require a finite target presentation reducer.
+This proposition is target-presentation arithmetic only; it supplies no
+compact Hall representatives, source pairings, radicals, \(M,D,B,G,K,Q\)
+matrices, no-extra theorem, or PBW comparison.
+\end{proposition}
+
+\begin{theorem}[Finite compact-source provenance gate]
+\label{thm:finite-compact-source-provenance-gate}
+Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated, and
+put
+\[
+S_W=W\cup(-W)\cup\{0\}.
+\]
+A compact Hall stage \(R\) is source-admissible on \(S_W\) only after every
+basis vector
+\[
+b^X_{R,\beta,\bar p,a}\in P^X_{R,\beta,\bar p},
+\qquad
+\beta\in S_W,
+\]
+has compact source provenance: a retained charge lift \(\widehat c\) with
+\(\overline\Pi_X(\widehat c)=\beta\), a retained stack stratum or
+vanishing-cycle/IC summand representative, reduced orientation and
+quotient-orientation data, Thom--Sebastiani transport, finite-stabilizer
+linearization, protected integration data, and successor-transition
+compatibility.  Product, coproduct, pairing, and comparison rows must be
+computed from these source representatives and their compact
+correspondences.
+
+The target labels \(e_i,E_{ij},u_{ij,r},T_i,M_{ij,r},w_s\) may occur only
+in target reference tables or in the codomain coordinates of
+\(A_{\beta,\bar p}\).  If the provenance gate fails, the packet is a
+target or mock fixture and cannot serve as the compact-source hypothesis
+in Theorem~\ref{thm:executable-finite-source-matrix-criterion}.  After the
+gate passes, the matrix, relation, no-extra, PBW, and
+Mittag--Leffler clauses of that theorem are source-side clauses; when they
+pass, finite primitive recognition holds on \(W\).
+\end{theorem}
 
 \begin{theorem}[Finite source matrix recognition criterion]
 \label{thm:executable-finite-source-matrix-criterion}
 Let \(W\subset Q_+\setminus\{0\}\) be finite and downward saturated.  A
-compact Hall stage \(R\) evaluates primitive recognition on \(W\) exactly
-when it supplies, for every
+source-admissible compact Hall stage \(R\) in the sense of
+Theorem~\ref{thm:finite-compact-source-provenance-gate} evaluates
+primitive recognition on \(W\) exactly when it supplies, for every
 \[
 \beta\in W\cup(-W)\cup\{0\},
 \]
@@ -15277,17 +15473,21 @@ parity-homogeneous compact source bases of \(P^X_{R,\beta,\bar p}\),
 product matrices \(M_{\alpha,\beta}\), coproduct matrices
 \(D^{\mu,\nu}_\rho\), positive-negative pairing matrices
 \(G_{\beta,\bar p}\), HN transition matrices, and geometric provenance for
-every basis vector.  Define
+every basis vector.
+Define
 \[
 B_{\alpha,\beta}
 =
 M_{\alpha,\beta}
--(-1)^{|x||y|}M_{\beta,\alpha}\tau,
+-(-1)^{|x||y|}M_{\beta,\alpha}\mathsf{sw}_{\alpha,\beta},
 \qquad
 K_{\beta,\bar p}
 =
 \ker G_{\beta,\bar p}\cap\ker G_{-\beta,\bar p}^{t}.
 \]
+Here \(\mathsf{sw}_{\alpha,\beta}\) is the ordinary tensor flip from the
+\((\alpha,\beta)\)-ordered tensor product to the \((\beta,\alpha)\)-ordered
+one.
 Choose splittings
 \[
 P^X_{R,\beta,\bar p}
@@ -15295,8 +15495,32 @@ P^X_{R,\beta,\bar p}
 \qquad
 Q_{\beta,\bar p}=[\,0\ \ I\,].
 \]
-The data pass the finite source test if and only if the following matrix
-identities hold:
+Choose, as part of the finite source matrix datum, parity-preserving
+source-to-target isomorphisms
+\[
+A_{\beta,\bar p}:L_{\beta,\bar p}
+\xrightarrow{\ \sim\ }
+G(\mathscr B_{\Delta_5})_{\beta,\bar p},
+\qquad
+A_0=\iota_H,
+\]
+for every retained \(\beta\in W\cup(-W)\cup\{0\}\), compatible with the
+HN/window transition matrices:
+\[
+A^R_{\beta,\bar p}Q^R_{\beta,\bar p}T^X_{R^+R,\beta,\bar p}
+=
+T^\Delta_{R^+R,\beta,\bar p}
+A^{R^+}_{\beta,\bar p}Q^{R^+}_{\beta,\bar p}.
+\]
+All row and column labels of the source bases, \(K,L,M,D,B,G,Q\), and
+relation matrices are compact-source labels.  The target labels
+\(e_i,E_{ij},u_{ij,r},T_i,M_{ij,r},w_s\) occur only in
+\(B^\Delta,D^\Delta,G^\Delta\) or as codomain coordinates of
+\(A_{\beta,\bar p}\).  The PBW comparison below is the associated-graded
+map induced by the family \(A_R=\{A_{\beta,\bar p}\}\).
+The data pass the finite source test if and only if the comparison maps
+are parity-preserving isomorphisms onto the target blocks and the following
+matrix identities hold:
 \[
 Q_{\alpha+\beta}B_{\alpha,\beta}
 (P^X_{R,\alpha}\otimes K_\beta)=0,\qquad
@@ -15308,6 +15532,23 @@ Q_{\alpha+\beta}B_{\alpha,\beta}
 M_{\alpha,\beta}^{t}G_{\alpha+\beta}
 =
 (G_\alpha\otimes G_\beta)D_{\alpha+\beta}^{\alpha,\beta}.
+\]
+For the induced bracket, coproduct, and pairing on the quotient blocks,
+the same maps \(A_{\beta,\bar p}\) must intertwine the compact source with
+the Gritsenko--Nikulin/Kac target matrices:
+\[
+A_{\alpha+\beta}Q_{\alpha+\beta}B_{\alpha,\beta}
+=
+B^\Delta_{\alpha,\beta}
+(A_\alpha Q_\alpha\otimes A_\beta Q_\beta),
+\]
+\[
+(A_\mu\otimes A_\nu)(Q_\mu\otimes Q_\nu)D^{\mu,\nu}_{\rho}
+=
+D^{\Delta,\mu,\nu}_{\rho}A_\rho Q_\rho,
+\]
+\[
+G^\Delta_\gamma(A_\gamma x,A_{-\gamma}y)=G_\gamma(x,y).
 \]
 The same matrices satisfy the Chevalley, real-Serre, orthogonality,
 super-sign, Jacobi, and real-string relation rows in the retained window.
@@ -15341,9 +15582,9 @@ For \(W=W_{\le3}\), this demands compact bases on
 W_{\le3}\cup(-W_{\le3})\cup\{0\},
 \]
 including \(29\) even and \(93\) odd source primitives in degree
-\(\delta_{123}\), together with all \(M,D,B,G,K,Q\) matrices, the \(27\)
-real-isotropic mixed maps, Jacobi, real-string, Hopf-radical,
-no-extra-relations, PBW, and transition matrices.
+\(\delta_{123}\), together with all \(M,D,B,G,K,Q,A\) matrices, the
+\(27\) real-isotropic mixed maps, Jacobi, real-string, Hopf-radical,
+comparison-map, no-extra-relations, PBW, and transition matrices.
 \end{theorem}
 
 \begin{proof}
@@ -15352,8 +15593,11 @@ The \(QD\)-identity makes the quotient coproduct independent of lifts.
 Hopf adjointness and nondegeneracy of the quotient tensor pairing give the
 coideal half of the radical descent; Frobenius and Jacobi give the
 Lie-ideal half.  The finite kernel equality is the no-extra-relations
-assertion.  PBW is checked on associated gradeds after the radical
-quotient.  The stable-image Mittag--Leffler condition gives
+assertion.  The \(A\)-intertwining identities identify the descended
+source bracket, coproduct, and pairing with the target
+Gritsenko--Nikulin/Kac matrices on the retained quotient blocks.  PBW is
+checked on associated gradeds after the radical quotient.  The
+stable-image Mittag--Leffler condition gives
 \(R^1\varprojlim=0\), so kernels, radicals, PBW associated gradeds, and
 parity pieces commute with the inverse limit.
 
@@ -15370,11 +15614,13 @@ supply only the target lattice and Borcherds--Gritsenko--Nikulin
 arithmetic.
 \end{proof}
 
-\begin{proposition}[Finite \(W_{\le3}\) NO7 source protocol]
+\begin{corollary}[\(W_{\le3}\) NO7 sub-verifier]
 \label{prop:finite-wlethree-no7-source-protocol}
+\label{cor:wlethree-no7-subverifier}
 For a finite Hall stage \(R\) whose source image contains
 \(W_{\le3}\cup(-W_{\le3})\cup\{0\}\), a compact source verifies the
-\textup{(NO7)} part of the \(W_{\le3}\)-recognition datum only after
+\textup{(NO7)} radical-descent part of the \(W_{\le3}\)-recognition datum
+only after
 supplying parity-homogeneous source splittings
 \[
 P^X_{R,\beta,\bar p}=K_{\beta,\bar p}\oplus L_{\beta,\bar p},
@@ -15427,7 +15673,9 @@ there may be \(k\in K_\rho\) with
 Then the quotient target table sees no discrepancy, but the radical is not
 a coideal and the Hopf quotient is not defined.  This is the finite
 tensor-Hopf obstruction hidden by signed determinant data.
-\end{proposition}
+This sub-verifier does not prove no-extra-relations, PBW compatibility,
+full parity matching, or source-to-target recognition.
+\end{corollary}
 
 \begin{proof}
 This is \textup{(NO7)} and
@@ -15637,6 +15885,10 @@ $$2\frac{(\alpha,\alpha')}{(\alpha,\alpha)} \in \Z,$$
 since $(\alpha,\alpha)=2$ and
 $\La^{2,1}_{II}=\Z\delta_1+\Z\delta_2+\Z\delta_3$.
 \begin{definition}[Generators and relations]
+\label{def:gn-kac-generators-relations}
+We use the generalized Kac--Moody presentation conventions of
+\cite{BorcherdsGKM88} and the standard Kac sign conventions
+\cite{KAC:1}.
 Let $I$ be an index set equipped with a parity map $p:I\to\Z/2\Z$ and a
 root map $i\mapsto\alpha_i\in\Delta$, with fibres over an imaginary root
 of cardinality $\mu_{\overline p}(a)$ in parity $p$.  If

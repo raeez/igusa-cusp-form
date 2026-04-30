@@ -137,7 +137,7 @@ The multiplicity is the sign of the symplectic product, evaluated in the chamber
 In topological quantum field theory with defects, chambers are Bridgeland stability conditions on the derived category. The BPS spectrum (and OPE structure constants) jump at walls. The orientation (sign conventions) must be **consistent** across the jump.
 
 **The problem:**
-- The manuscript constructs a compact Hall object (projected). The definition (D0) in main.tex references "finite HN height R" and "height R."
+- The manuscript defines a conditional compact Hall interface, not a constructed compact Hall object.  The definition (D0) in main.tex references "finite HN height R" and "height R."
 - But it does not prove: **If the compact Hall object is built in one stability chamber, does its quadratic Gram descent (normal-ordered) remain valid after crossing a wall?**
 - Wall-crossing changes which 2-cycles are marginal. The BKM denominator changes. But π_X(Q,P) = (n,l,m) is a lattice invariant, independent of chamber.
 - So the microscopic charges (Q,P) ∈ Γ_X^phys do not chamber-jump, but their **BPS index** f(nm,l) does.
