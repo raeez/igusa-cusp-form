@@ -30,6 +30,8 @@ PASSES    := 4
 # Mathematics publish dir -- release binary copied here under canonical name
 MATHEMATICS_DIR := $(HOME)/mathematics
 PUBLISHED_PDF   := raeez.lorgat.automorphic-corrections.pdf
+VOLUME_KEY      := igusa
+PYTHON_BIN      ?= python3
 TEX_SOURCES := $(MAIN).tex $(wildcard appendices/*.tex)
 
 ICLOUD_DIR := /Users/raeez/Library/Mobile Documents/com~apple~CloudDocs/research
@@ -42,7 +44,7 @@ AUX_EXTS := aux bbl blg idx ilg ind log out toc synctex.gz fdb_latexmk fls
 
 .DEFAULT_GOAL := all
 
-.PHONY: all fast release standalone icloud view watch clean veryclean count help mathematics-publish
+.PHONY: all fast release standalone icloud view watch clean veryclean count help mathematics-publish root-publish architecture unified-architecture
 
 all: $(PDF)
 
@@ -95,11 +97,18 @@ release:
 	@cp $(PDF) "$(RELEASE_PDF)"
 	@echo "    ok  $(RELEASE_PDF)"
 	@echo ""
-	@echo "  [3/4] Standalone documents and iCloud"
+	@echo "  [3/6] Standalone documents and iCloud"
 	@$(MAKE) --no-print-directory icloud
 	@echo ""
-	@echo "  [4/4] Publish to ~/mathematics"
+	@echo "  [4/6] Publish to repo root (canonical PDF name)"
+	@$(MAKE) --no-print-directory root-publish
+	@echo ""
+	@echo "  [5/6] Publish to ~/mathematics + per-volume architecture"
 	@$(MAKE) --no-print-directory mathematics-publish
+	@$(MAKE) --no-print-directory architecture
+	@echo ""
+	@echo "  [6/6] Cross-volume architecture aggregation"
+	@$(MAKE) --no-print-directory unified-architecture
 	@echo ""
 	@echo "  =========================================="
 	@echo "  Release complete. Canonical output:"
@@ -114,6 +123,15 @@ release:
 	fi
 	@echo "  =========================================="
 
+## root-publish: Copy the release binary to repo root under its canonical name
+root-publish:
+	@if [ -f "$(PDF)" ]; then \
+		cp "$(PDF)" "$(PUBLISHED_PDF)"; \
+		echo "    ok  $(PUBLISHED_PDF) (in repo root)"; \
+	else \
+		echo "    fail  $(PDF) missing -- skipping root publish"; \
+	fi
+
 ## mathematics-publish: Copy the release binary to ~/mathematics under its canonical name
 mathematics-publish:
 	@mkdir -p "$(MATHEMATICS_DIR)"
@@ -123,6 +141,19 @@ mathematics-publish:
 	else \
 		echo "    fail  $(PDF) missing -- skipping ~/mathematics publish"; \
 	fi
+
+## architecture: Build interactive HTML + JSON of the manuscript architecture
+architecture:
+	@$(PYTHON_BIN) scripts/build_architecture.py --root . --volume $(VOLUME_KEY) --out $(OUT_DIR) --quiet
+	@mkdir -p "$(MATHEMATICS_DIR)/architecture"
+	@cp "$(OUT_DIR)/architecture.json" "$(MATHEMATICS_DIR)/architecture/$(VOLUME_KEY).json"
+	@echo "    ok  $(OUT_DIR)/architecture.html + .json"
+	@echo "    ok  $(MATHEMATICS_DIR)/architecture/$(VOLUME_KEY).json"
+
+## unified-architecture: Aggregate all per-volume architecture.json into the cross-volume HTML+JSON
+unified-architecture:
+	@$(PYTHON_BIN) scripts/build_unified_architecture.py --mathematics-dir "$(MATHEMATICS_DIR)" --quiet
+	@echo "    ok  $(MATHEMATICS_DIR)/architecture.html + .json"
 
 standalone:
 	@echo "  -- Building standalone documents --"
