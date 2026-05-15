@@ -26,6 +26,10 @@ OUT_DIR   := out
 PDF       := $(OUT_DIR)/$(MAIN).pdf
 RELEASE_PDF := raeez.lorgat.automorphic-corrections.pdf
 PASSES    := 4
+
+# Mathematics publish dir -- release binary copied here under canonical name
+MATHEMATICS_DIR := $(HOME)/mathematics
+PUBLISHED_PDF   := raeez.lorgat.automorphic-corrections.pdf
 TEX_SOURCES := $(MAIN).tex $(wildcard appendices/*.tex)
 
 ICLOUD_DIR := /Users/raeez/Library/Mobile Documents/com~apple~CloudDocs/research
@@ -38,7 +42,7 @@ AUX_EXTS := aux bbl blg idx ilg ind log out toc synctex.gz fdb_latexmk fls
 
 .DEFAULT_GOAL := all
 
-.PHONY: all fast release standalone icloud view watch clean veryclean count help
+.PHONY: all fast release standalone icloud view watch clean veryclean count help mathematics-publish
 
 all: $(PDF)
 
@@ -68,12 +72,14 @@ $(PDF): $(TEX_SOURCES) $(BIB).bib Makefile
 fast:
 	@echo "  -- Fast build --"
 	@mkdir -p $(OUT_DIR) $(LOG_DIR)
-	@$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-fast.log 2>&1 || { \
+	@$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-fast.log 2>&1 || true
+	@if [ -f $(PDF) ] && ! grep -qE '^!|^Fatal error|^.+Emergency stop' $(LOG_DIR)/$(MAIN)-fast.log; then \
+		echo "  ok  $(PDF)"; \
+	else \
 		echo "  fail  Fast build failed. See $(LOG_DIR)/$(MAIN)-fast.log"; \
 		tail -n 40 $(LOG_DIR)/$(MAIN)-fast.log; \
 		exit 1; \
-	}
-	@echo "  ok  $(PDF)"
+	fi
 
 release:
 	@mkdir -p $(OUT_DIR) $(LOG_DIR)
@@ -89,13 +95,17 @@ release:
 	@cp $(PDF) "$(RELEASE_PDF)"
 	@echo "    ok  $(RELEASE_PDF)"
 	@echo ""
-	@echo "  [3/3] Standalone documents and iCloud"
+	@echo "  [3/4] Standalone documents and iCloud"
 	@$(MAKE) --no-print-directory icloud
+	@echo ""
+	@echo "  [4/4] Publish to ~/mathematics"
+	@$(MAKE) --no-print-directory mathematics-publish
 	@echo ""
 	@echo "  =========================================="
 	@echo "  Release complete. Canonical output:"
 	@echo "    $(PDF)"
 	@echo "    $(RELEASE_PDF)"
+	@echo "    $(MATHEMATICS_DIR)/$(PUBLISHED_PDF)"
 	@if [ -n "$(strip $(STANDALONE_TEX))" ]; then \
 		echo "  Standalone output:"; \
 		for pdf in $(STANDALONE_PDFS); do \
@@ -103,6 +113,16 @@ release:
 		done; \
 	fi
 	@echo "  =========================================="
+
+## mathematics-publish: Copy the release binary to ~/mathematics under its canonical name
+mathematics-publish:
+	@mkdir -p "$(MATHEMATICS_DIR)"
+	@if [ -f "$(PDF)" ]; then \
+		cp "$(PDF)" "$(MATHEMATICS_DIR)/$(PUBLISHED_PDF)"; \
+		echo "    ok  $(MATHEMATICS_DIR)/$(PUBLISHED_PDF)"; \
+	else \
+		echo "    fail  $(PDF) missing -- skipping ~/mathematics publish"; \
+	fi
 
 standalone:
 	@echo "  -- Building standalone documents --"
