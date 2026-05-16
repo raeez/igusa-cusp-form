@@ -1,0 +1,980 @@
+\section{Lattice computations}
+\label{app:lattices}
+
+The seven integral lattices used in the manuscript are recorded here in
+one place: the hyperbolic plane $U=\mathrm{II}_{1,1}$, the Lorentzian
+root lattice $\La_{II}^{2,1}$ of the Borcherds--Kac--Moody algebra
+$\autcor$, the K3 cohomology lattice $\La_{K3}=\mathrm{II}_{3,19}$, the
+lattice-polarized K3 sublattice $\La_S$, the Mukai lattice
+$\widetilde H(S,\Z)\simeq\mathrm{II}_{4,20}$, the formal dyonic charge
+lattice $\Gamma_X^{\mathrm{form}}=\La_S\oplus\La_S$, and the
+signature-$(3,2)$ lattice $\La^{3,2}$ that bridges $\Sp_4(\Z)$ to
+$\SO_+(3,2)$ via $\PSp_4(\Z)\simeq\SO_+(\La^{3,2})$.  Each is given by
+its Gram matrix or root data, signature, discriminant, and
+automorphism group, with primary citations (Conway--Sloane
+1999~\S2.5,~\S4,~\S16; Nikulin 1980 Theorem~1.1.2 and
+Theorem~1.14.4; Mukai 1984; Gritsenko--Nikulin 1998
+Part~II~\S2,~\S5).  Ranks, signatures, and the Cartan matrix of the
+type-II simple roots are verified against the rational computation
+\texttt{compute/verify\_lattice.py}.
+
+This appendix is upstream of every chapter: load-bearing identities
+about $\Delta_5$, $\autcor$, the orientation character $\nu_{\Delta_5}$,
+and the Pfaffian wall normal form on
+$W^{(2)}(\La_{II}^{2,1})$ refer back to the lattice data fixed
+here, not to a sign or scaling chosen in the body.
+
+\begin{convention}[Sign of the bilinear form; orientation of the
+time-like cone]
+\label{conv:lattice-signs}
+The standard mathematical convention for the hyperbolic plane $U$ is
+$U=(\Z^2,((0,1),(1,0)))$, even unimodular of signature $(1,1)$ and
+discriminant $-1$ (Conway--Sloane 1999~\S2.5).  This appendix takes
+this convention as primary.
+
+The Borcherds--Gritsenko--Nikulin packaging used in
+\S\ref{ssec:exceptional-iso} of the body and the exterior-square
+model of $\Sp_4(\Z)$ employs the negated form
+\[
+\HypPlan=\Big(\Z^2,\begin{pmatrix}0&-1\\-1&0\end{pmatrix}\Big),
+\]
+so that the time-like cone $\Cone(\La^{2,1})_+\subset
+\La^{2,1}\otimes\R$ has \emph{negative} square $(x,x)<0$.  The
+relation is $\HypPlan=U(-1)$.  Every Gram matrix below is given in the
+standard convention; a sign flip transports it to the body
+convention without changing rank, discriminant absolute value, or
+automorphism group.
+\end{convention}
+
+\subsection{The hyperbolic plane $U=\mathrm{II}_{1,1}$}
+\label{app:lattice-U}
+
+The hyperbolic plane is the unique even unimodular indefinite lattice
+of signature $(1,1)$ (Conway--Sloane 1999~\S2.5; Nikulin 1980
+Theorem~1.1.2).
+
+\begin{definition}[$U=\mathrm{II}_{1,1}$]
+\label{def:hyperbolic-plane}
+\textnormal{[definitional, $\alpha$]}
+Let $U:=\Z e\oplus\Z f$ with Gram matrix
+\[
+G_U=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\qquad e^2=f^2=0,\quad e\cdot f=1.
+\]
+\end{definition}
+
+\begin{verification}[Rank, signature, discriminant of $U$]
+\label{ver:U-invariants}
+\textnormal{[computed, $\gamma$]}
+$\rk U=2$.  The eigenvalues of $G_U$ are $\pm1$, so the signature is
+$(1,1)$.  The discriminant is
+\[
+\operatorname{disc} U=\det G_U=-1.
+\]
+$U$ is even (every $G_U$-diagonal entry is $0\equiv 0\pmod2$) and
+unimodular ($|\det G_U|=1$).  These are the defining invariants of
+$\mathrm{II}_{1,1}$ in the Conway--Sloane classification (Conway--Sloane
+1999~\S2.5, Theorem~2.5.1).
+\end{verification}
+
+\begin{proposition}[$\mathrm{Aut}(U)$]
+\label{prop:U-aut}
+\textnormal{[proved, $\alpha$]}
+The orthogonal group of $U$ is
+\[
+\mathrm{O}(U)=\{\pm\Id\}\times\langle\sigma\rangle
+\simeq(\Z/2)^{2},
+\qquad \sigma:e\leftrightarrow f.
+\]
+The proper subgroup $\mathrm{O}^+(U)\simeq\Z/2$ swaps $e$ and $f$ but
+fixes the spinor norm.
+\end{proposition}
+
+\begin{proof}
+An isometry $\phi\in\mathrm{O}(U)$ preserves the isotropic vectors of
+$U$.  In rank $2$ over $\Z$, the isotropic primitive vectors are
+exactly $\pm e,\pm f$, so $\phi$ permutes these four vectors.  The
+permutations preserving the bilinear form give the four-element group
+above (Conway--Sloane 1999~\S4.1).
+\end{proof}
+
+\begin{remark}[Standard sign convention versus body convention]
+\label{rem:U-vs-HypPlan}
+The body of the manuscript uses
+$\HypPlan=U(-1)$
+in the cusp polarization of \S\ref{ssec:exceptional-iso} and in the
+exterior-square model of the automorphic group, where the time-like
+cone of $\La^{2,1}$ has negative square.
+The map
+$U\to U(-1)$, $(e,f)\mapsto(e,f)$
+is a bijection of underlying $\Z$-modules; only the bilinear form
+flips sign.  Lattices that occur in the body
+($\La^{2,1}$, $\La^{3,2}$) are presented in body coordinates so that
+the Gram matrices match line-for-line with the manuscript text;
+even-unimodular ambient lattices ($\La_{K3}$, $\widetilde H(S,\Z)$)
+are presented in the standard Conway--Sloane convention.  Each
+section flags its choice explicitly.
+\end{remark}
+
+\subsection{The Lorentzian root lattice $\La_{II}^{2,1}$}
+\label{app:lattice-II21}
+
+The Borcherds--Kac--Moody algebra $\autcor$ of
+\cite[Theorem~2.1, Section~5.1.1, case $(t=1,II,\overline 0)$]{GNII}
+is graded by an integral lattice of signature $(2,1)$.  This is the
+lattice on which the type-II simple-root Cartan matrix is
+$2(\Id_3-\J_3)$ where $\J_3$ is the all-ones matrix.
+
+\begin{definition}[Ambient $\La^{2,1}=U(-1)\oplus\langle 2\rangle$]
+\label{def:lambda-21-ambient}
+\textnormal{[definitional, $\alpha$]}
+Set
+\[
+\La^{2,1}:=U(-1)\oplus\langle 2\rangle
+=\Z e\oplus\Z f\oplus\Z h,
+\qquad e\cdot f=-1,\ e^2=f^2=0,\ h^2=2.
+\]
+The Gram matrix in the basis $(e,f,h)$ is
+\[
+G_{2,1}=\begin{pmatrix}0&-1&0\\ -1&0&0\\ 0&0&2\end{pmatrix},
+\qquad \det G_{2,1}=-2,\qquad
+\operatorname{disc}\La^{2,1}=-2.
+\]
+The body's lattice $\La^{2,1}=\HypPlan\oplus[2]$ in
+$(f_2,f_3,f_{-2})$-coordinates uses exactly this Gram, with
+$\HypPlan=U(-1)$ on the $(f_2,f_{-2})$-block and $[2]=\langle 2\rangle$
+on the $f_3$-axis.
+\end{definition}
+
+\begin{definition}[$\La_{II}^{2,1}$ as the index-four type-II sublattice of $\La^{2,1}$]
+\label{def:lambda-II-21}
+\textnormal{[definitional, $\alpha$]}
+The type-II sublattice
+\[
+\La_{II}^{2,1}\;:=\;
+\{m f_2+l f_3+n f_{-2}\in\La^{2,1}\mid m\equiv 0\,(2),\ n\equiv 0\,(2)\}
+\;\subset\;\La^{2,1}
+\]
+is the index-$4$ sublattice on which the type-II Cartan matrix
+$2(\Id_3-\J_3)$ is the Gram of the simple roots
+$(\delta_1,\delta_2,\delta_3)$ of
+Proposition~\ref{prop:type-II-cartan}.  Abstractly it is the lattice
+\[
+\La_{II}^{2,1}\;\simeq\;U(4)\oplus\langle 2\rangle,\qquad
+\operatorname{disc}\La_{II}^{2,1}=-32,
+\]
+matching the body terminology of Chapter~\ref{ch:pentadic} and the
+type-II sublattice convention of Chapter~\ref{ch:view2-bkm}.
+\end{definition}
+
+\begin{verification}[Rank, signature, discriminant of $\La_{II}^{2,1}$]
+\label{ver:II21-invariants}
+\textnormal{[computed, $\gamma$]}
+$\rk\La_{II}^{2,1}=3$.  The Gram of $\La_{II}^{2,1}$ in
+$(\delta_1,\delta_2,\delta_3)$ of
+Proposition~\ref{prop:type-II-cartan} is the Cartan matrix
+$2(\Id_3-\J_3)$ of equation~\eqref{eq:bkm-cartan-matrix}; its
+determinant is
+\[
+\det\bigl(2(\Id_3-\J_3)\bigr)=-32.
+\]
+The hyperbolic-plus-rank-one block of the ambient $\La^{2,1}$ has
+signature $(2,1)$; the index-$4$ sublattice $\La_{II}^{2,1}$ inherits
+this signature, so
+\[
+\sigma(\La_{II}^{2,1})=(2,1).
+\]
+The discriminant group $(\La_{II}^{2,1})^*/\La_{II}^{2,1}$ has order
+$32$ as required.  The lattice $\La_{II}^{2,1}$ is even because every
+$\delta_i^2=2$ and the off-diagonal couplings $(\delta_i,\delta_j)=-2$
+are integral.  Switching to the standard hyperbolic-plane convention
+$U=((0,1),(1,0))$ on the ambient $\La^{2,1}$ presents
+$\La^{2,1}\simeq U\oplus\langle -2\rangle$ and
+$\La_{II}^{2,1}\simeq U(4)\oplus\langle 2\rangle$; rank, signature,
+discriminant group order, automorphism group, and Cartan datum are
+unchanged.
+\end{verification}
+
+\begin{remark}[Identification with the body lattice]
+\label{rem:II21-vs-La21}
+The body uses
+$\La^{2,1}=\HypPlan\oplus[2]
+=\Z f_2\oplus\Z f_3\oplus\Z f_{-2}$
+with Gram in $(f_2,f_3,f_{-2})$
+\[
+\begin{pmatrix}0&0&-1\\ 0&2&0\\ -1&0&0\end{pmatrix},
+\]
+matching $G_{2,1}$ of Definition~\ref{def:lambda-21-ambient} up to
+the basis swap $e\mapsto f_2$, $f\mapsto f_{-2}$, $h\mapsto f_3$.
+The type-II sublattice $\La_{II}^{2,1}\subset\La^{2,1}$ of
+Definition~\ref{def:lambda-II-21} is the index-$4$ sublattice on
+which the simple roots $\delta_1=2f_2-f_3$, $\delta_2=2f_{-2}-f_3$,
+$\delta_3=f_3$ of Proposition~\ref{prop:type-II-cartan} live; it is
+the even Lorentzian root lattice of $\autcor$.
+\end{remark}
+
+\begin{proposition}[Type-II simple-root Cartan]
+\label{prop:type-II-cartan}
+\textnormal{[proved, $\gamma$]}
+In the body coordinates fixed at the start of the Weyl-chamber
+section, set
+\[
+\delta_1=2f_2-f_3,\qquad
+\delta_2=2f_{-2}-f_3,\qquad
+\delta_3=f_3.
+\]
+Then $\delta_i^2=2$ for $i=1,2,3$ and
+\[
+\bigl((\delta_i,\delta_j)\bigr)_{i,j=1,2,3}
+=\begin{pmatrix} 2&-2&-2\\ -2&2&-2\\ -2&-2&2\end{pmatrix}
+=2(\Id_3-\J_3),
+\]
+where $\J_3$ is the $3\times 3$ all-ones matrix.  Each $\delta_i$ is
+type-II in the sense that $(\delta_i,\La^{2,1})=2\Z$.
+\end{proposition}
+
+\begin{proof}
+Direct computation in the body Gram.  The companion script
+\texttt{compute/verify\_lattice.py} at lines 92--97 verifies the matrix
+$2(\Id_3-\J_3)$ from the same data; the print output records
+\texttt{Type-II simple-root Gram matrix} equal to the displayed Cartan.
+The type-II divisibility statement follows because each $\delta_i$
+pairs against $\La^{2,1}$ with even values: $(\delta_i,f_2)$,
+$(\delta_i,f_3)$, $(\delta_i,f_{-2})\in 2\Z$ for each $i$.
+This is the GN root datum of \cite[Section 5.1.1, case
+$(1,II,\overline0)$]{GNII}.
+\end{proof}
+
+\begin{proposition}[Weyl vector $\rho$]
+\label{prop:weyl-vector-II21}
+\textnormal{[proved, $\gamma$]}
+The Weyl vector
+\[
+\rho:=\tfrac12(\delta_1+\delta_2+\delta_3)
+=f_2-\tfrac12 f_3+f_{-2}\in\La^{2,1}\otimes\Q
+\]
+satisfies $(\rho,\delta_i)=-1$ for $i=1,2,3$ and
+\[
+(\rho,\rho)=-\tfrac32,\qquad \rho\in\Cone(\La^{2,1})_+.
+\]
+In particular $\rho$ lies in the time-like cone, so the chamber
+$\Poly_{II}=\{x\mid(x,\delta_i)\le 0,\,i=1,2,3\}$ has finite hyperbolic
+volume.
+\end{proposition}
+
+\begin{proof}
+The simple-root condition $(\rho,\delta_i)=-(\delta_i^2)/2=-1$
+follows from Kac~\cite[\S2.5, Lemma~2.5]{KAC:1} for any choice of
+simple roots of square $2$; for the GN type-II datum see
+\cite[(2.7)]{GNII}.  The script
+\texttt{compute/verify\_lattice.py} asserts $\rho=(1,-1/2,1)$ in
+$(f_2,f_3,f_{-2})$ coordinates (line~99) and
+$(\rho,\delta_i)=-1$ at line~100.  Direct computation in the body
+Gram of Definition~\ref{def:lambda-II-21}:
+\[
+(\rho,\rho)
+=2(f_2,f_{-2})+\tfrac14(f_3,f_3)
+=2(-1)+\tfrac14(2)=-\tfrac32.
+\]
+Since $(\rho,\rho)<0$, $\rho\in\Cone(\La^{2,1})_+$.
+\end{proof}
+
+\begin{proposition}[Reflection group; Nikulin's theorem]
+\label{prop:nikulin-II21-reflection}
+\textnormal{[proved, $\alpha$; Nikulin 1980 Theorem~1.4.1]}
+Let $W^{(2)}(\La^{2,1})$ be the subgroup of $\Orth(\La^{2,1})$
+generated by reflections in primitive roots of square $2$.  Then
+\[
+\Orth(\La^{2,1})_+=W^{(2)}(\La^{2,1}),
+\]
+where the subscript $+$ denotes the index-two subgroup preserving the
+time-like cone $\Cone(\La^{2,1})_+$.  Equivalently, every isometry of
+$\La^{2,1}$ preserving the chosen positive cone is a product of
+square-$2$ reflections.
+\end{proposition}
+
+\begin{proof}
+Nikulin~\cite[Theorem~1.4.1]{NIKULIN} establishes for the rank-three
+hyperbolic lattice $\HypPlan\oplus[2]$ the equality
+$\Orth(\La^{2,1})_+=W^{(2)}(\La^{2,1})$; see also
+Gritsenko--Nikulin~\cite[Proposition 1.5]{GN}.  The body of the
+manuscript invokes this at line~5408--5410.
+\end{proof}
+
+\begin{verification}[Type-II reflection orbit]
+\label{ver:type-II-reflection-orbit}
+\textnormal{[computed, $\gamma$]}
+For each $\delta\in\{\delta_1,\delta_2,\delta_3\}$, the reflection
+$s_\delta:x\mapsto x-(x,\delta)\delta$ satisfies
+$s_\delta(\delta)=-\delta$ and preserves the Cartan matrix on the
+$\delta$-orbit (\texttt{compute/verify\_lattice.py} lines~103--108).
+Concretely, $s_{\delta_1}(\delta_1)=-\delta_1$,
+$s_{\delta_1}(\delta_2)=\delta_2+2\delta_1$, etc.; the bilinear form
+on $\{\delta_1,\delta_2,\delta_3\}$ is reflection-invariant by direct
+matrix computation.
+\end{verification}
+
+\begin{remark}[The two type-$2$ divisibility classes]
+\label{rem:type-I-type-II}
+Each $\delta\in\La^{2,1}$ with $\delta^2=2$ has divisibility
+$(\delta,\La^{2,1})\in\{\Z,2\Z\}$.  The two cases are recorded as
+\emph{type I} ($(\delta,\La^{2,1})=\Z$) and \emph{type II}
+($(\delta,\La^{2,1})=2\Z$); both classes generate index-finite normal
+subgroups of $W^{(2)}(\La^{2,1})$:
+\[
+[W^{(2)}(\La^{2,1}):W^{(2)}(\La^{2,1}_I)]=2,\qquad
+[W^{(2)}(\La^{2,1}):W^{(2)}(\La^{2,1}_{II})]=6,
+\]
+following \cite[Sections 4--5]{GN}.  The denominator algebra
+$\autcor$ uses the type-II reflection chamber.
+\end{remark}
+
+\subsection{The K3 lattice $\La_{K3}=\mathrm{II}_{3,19}$}
+\label{app:lattice-K3}
+
+For $S$ a complex K3 surface, the integral cohomology
+$H^2(S,\Z)$ with cup-product pairing is the unique even unimodular
+indefinite lattice of signature $(3,19)$
+(Conway--Sloane 1999~\S16.4; Nikulin 1980 Theorem~1.1.4).
+
+\begin{definition}[$\La_{K3}=\mathrm{II}_{3,19}$]
+\label{def:K3-lattice}
+\textnormal{[definitional, $\alpha$]}
+The K3 cohomology lattice is
+\[
+\La_{K3}:=H^2(S,\Z)\simeq -E_8\oplus -E_8\oplus U\oplus U\oplus U
+\equiv -2E_8\oplus 3U,
+\]
+where $E_8$ is the rank-$8$ root lattice with the standard positive-
+definite Cartan pairing (Conway--Sloane 1999~\S4.8) and $-E_8$
+denotes $E_8$ with bilinear form negated.
+\end{definition}
+
+\begin{verification}[Rank, signature, discriminant of $\La_{K3}$]
+\label{ver:K3-invariants}
+\textnormal{[computed, $\alpha$]}
+\[
+\rk\La_{K3}=8+8+2+2+2=22,
+\qquad
+\sigma(\La_{K3})=(3,19).
+\]
+The three $U$-summands contribute signature $(3,3)$ and the two
+$-E_8$-summands contribute signature $(0,16)$; total $(3,19)$.  The
+discriminant is
+\[
+\operatorname{disc}\La_{K3}=
+(\det -E_8)^2\cdot(\det U)^3=1\cdot(-1)^3=-1,
+\]
+so $|\operatorname{disc}|=1$ and the lattice is unimodular
+(Conway--Sloane 1999~\S16.4, Theorem~16.4.1).  Even unimodularity
+follows because each summand is even unimodular.
+\end{verification}
+
+\begin{proposition}[Aut and Hodge data on $\La_{K3}$]
+\label{prop:K3-aut}
+\textnormal{[proved, $\alpha$]}
+The orthogonal group $\Orth(\La_{K3})$ acts transitively on the set
+of primitive vectors of any fixed square (Eichler 1952;
+Nikulin~\cite[Theorem 1.14.4]{Nikulin1980}).  For a polarized K3 with
+period $\omega\in H^{2,0}(S)\subset\La_{K3}\otimes\C$, the
+transcendental and algebraic sublattices fit into the orthogonal
+splitting
+\[
+\La_{K3}=\NS(S)\oplus T(S),
+\]
+where $\NS(S)\subset H^{1,1}(S,\Z)$ is the N\'eron--Severi
+(algebraic) sublattice of signature $(1,\rho-1)$ and $T(S)$ is the
+transcendental lattice of signature $(2,20-\rho)$, with
+$\rho=\operatorname{rk}\NS(S)$ the Picard rank
+(Beauville--Bourguignon--Demazure 1985~\S6;
+\cite[\S2]{Nikulin1980}).
+\end{proposition}
+
+\begin{proof}
+The transitivity statement is Eichler's theorem on indefinite
+unimodular lattices, sharpened by
+Nikulin~\cite[Theorem~1.14.4]{Nikulin1980}: for an even unimodular
+indefinite lattice $L$ of rank $\ge 3$, $\Orth(L)$ acts transitively
+on primitive vectors of fixed square in each squared-class.
+Decomposition by Hodge type partitions $\La_{K3}\otimes\C$ into
+$H^{2,0}\oplus H^{1,1}\oplus H^{0,2}$; intersecting with $\La_{K3}$
+gives the transcendental--algebraic splitting at the integral level.
+\end{proof}
+
+\subsection{The lattice-polarized K3 sublattice $\La_S$}
+\label{app:lattice-Lambda-S}
+
+A lattice polarization is a primitive embedding of an integral
+lattice $\La_S$ into $\La_{K3}$ whose orthogonal complement carries
+period structure.
+
+\begin{definition}[Lattice polarization $\La_S\hookrightarrow\La_{K3}$]
+\label{def:lattice-polarization}
+\textnormal{[definitional, $\alpha$]}
+A \emph{lattice polarization} of signature $(1,\rho-1)$ on a K3
+surface $S$ is a primitive embedding
+\[
+\La_S\hookrightarrow\La_{K3}=\mathrm{II}_{3,19},\qquad
+\sigma(\La_S)=(1,\rho-1),\quad 1\le\rho\le 19,
+\]
+where $\La_S\subset H^{1,1}(S,\Z)$ contains an ample class.  The
+orthogonal complement
+\[
+\La_S^\perp\subset\La_{K3},\qquad \sigma(\La_S^\perp)=(2,20-\rho),
+\]
+is the lattice on which the period map of the family
+$\mathcal F_{\La_S}\to\mathcal D_{\La_S^\perp}$ is defined
+(Dolgachev~1996; Nikulin 1980~Proposition~1.6.1).
+\end{definition}
+
+\begin{verification}[Numerics of $\La_S$ and $\La_S^\perp$]
+\label{ver:lambda-S-invariants}
+\textnormal{[computed, $\alpha$]}
+\[
+\rk\La_S=\rho,\quad \sigma(\La_S)=(1,\rho-1),\quad
+\rk\La_S^\perp=22-\rho,\quad \sigma(\La_S^\perp)=(2,20-\rho).
+\]
+The discriminant pairs:
+\[
+\operatorname{disc}\La_S\cdot\operatorname{disc}\La_S^\perp
+=\operatorname{disc}\La_{K3}=-1,
+\]
+so $\operatorname{disc}\La_S^\perp=-\operatorname{disc}\La_S^{-1}\cdot
+\det A^2$ for $A$ the change-of-basis matrix realizing the primitive
+embedding (Nikulin 1980~Corollary~1.6.2).  In particular
+$\La_S^\perp/\La_S^*$ and $\La_{K3}/\La_S\oplus\La_S^\perp$ are
+isomorphic as discriminant groups.
+\end{verification}
+
+\begin{proposition}[Nikulin embedding criterion]
+\label{prop:nikulin-embedding}
+\textnormal{[proved; Nikulin 1980 Theorem~1.14.4]}
+A primitive embedding $\La_S\hookrightarrow\La_{K3}$ exists if and
+only if there is an isomorphism
+\[
+(A_{\La_S},q_{\La_S})\simeq(A_{\La_S^\perp},-q_{\La_S^\perp})
+\]
+of finite quadratic forms, where $A_L:=L^*/L$ is the discriminant
+group and $q_L$ its quadratic form (Nikulin 1980 Definition~1.3.1
+and Theorem~1.14.4; Conway--Sloane 1999~\S15.5).  The embedding is
+unique up to $\Orth(\La_{K3})$ when
+\[
+\rk\La_S+\ell(A_{\La_S})\le 22-\rk\La_S
+\]
+and the discriminant form satisfies the Nikulin uniqueness criterion
+(Nikulin 1980 Theorem~1.14.4).
+\end{proposition}
+
+\begin{proof}
+This is the gluing-via-discriminant-form theorem
+(\cite[\S1.14]{Nikulin1980}; \cite[\S15.5]{ConwaySloane}).  An
+embedding into $\La_{K3}$ exists iff the discriminant form on
+$\La_S^*/\La_S$ is realized by the orthogonal complement; uniqueness
+is the Nikulin orbit-uniqueness statement under the corank
+inequality.
+\end{proof}
+
+\begin{remark}[Mirror lattice convention]
+\label{rem:mirror-lattice-convention}
+The Aspinwall--Morrison mirror to a $\La_S$-polarized K3 family is the
+$\check\La_S$-polarized family with
+\[
+\check\La_S=U\oplus(\La_S^\perp\ominus U),
+\]
+the splitting depending on a choice of isotropic primitive
+$U\hookrightarrow\La_S^\perp$ (Dolgachev 1996~\S5; Aspinwall 1997).
+The two factors $\La_S$ and $\La_S^\perp\ominus U$ play the roles of
+algebraic--symplectic exchange under mirror symmetry.  No mirror
+identification is asserted at this lattice level; the assertion that
+$\Delta_5^{-2}$ is the discriminant of the mirror period family
+(View~\textcircled{4}) is conjectural and not used in
+Chapter~\ref{chap:dirac-igusa-pro-object}.
+\end{remark}
+
+\subsection{The Mukai lattice $\widetilde H(S,\Z)=\mathrm{II}_{4,20}$}
+\label{app:lattice-Mukai}
+
+For $S$ a complex K3 surface, the full integral cohomology
+$H^*(S,\Z)$ with the Mukai pairing is an even unimodular lattice of
+signature $(4,20)$ (Mukai 1984~Theorem~1.5; Mukai 1987).
+
+\begin{definition}[Mukai lattice $\widetilde H(S,\Z)$]
+\label{def:mukai-lattice-appA}
+\textnormal{[definitional, $\alpha$]}
+The Mukai lattice of $S$ is
+\[
+\widetilde H(S,\Z)
+:=H^0(S,\Z)\oplus H^2(S,\Z)\oplus H^4(S,\Z),
+\qquad
+\widetilde H(S,\Z)\simeq U\oplus U\oplus U\oplus U\oplus -2E_8
+\equiv 4U\oplus 2(-E_8),
+\]
+graded by even cohomological degree.  The Mukai pairing is
+\[
+\langle (r,D,s),(r',D',s')\rangle_{\mathrm{Muk}}
+:=D\cdot D'-rs'-r's
+\]
+for $(r,D,s),(r',D',s')\in
+\Z\oplus H^2(S,\Z)\oplus\Z$
+(Mukai 1984~Theorem~1.5).  The pairing of an $H^0$-class with an
+$H^4$-class carries a minus sign relative to the cup product, so that
+the rank-$4$ component of $H^*(S,\Z)\otimes H^*(S,\Z)$ contributes
+$-rs'-r's$.
+\end{definition}
+
+\begin{verification}[Rank, signature, discriminant of
+$\widetilde H(S,\Z)$]
+\label{ver:mukai-invariants}
+\textnormal{[computed, $\alpha$]}
+\[
+\rk\widetilde H(S,\Z)
+=1+22+1=24,
+\qquad
+\sigma(\widetilde H(S,\Z))=(4,20).
+\]
+The four $U$-summands give signature $(4,4)$ and the $-2E_8$ pieces
+give signature $(0,16)$, total $(4,20)$.  Discriminant
+\[
+\operatorname{disc}\widetilde H(S,\Z)
+=(\det U)^4\cdot(\det -E_8)^2
+=(-1)^4\cdot 1=1,
+\]
+so $\widetilde H(S,\Z)$ is even unimodular, denoted
+$\mathrm{II}_{4,20}$ (Conway--Sloane 1999~\S16.4).  The body uses the
+notation $\La_S=\widetilde H(S,\Z)$ at line~4589 and~4714 of
+\texttt{main.tex}; this is consistent with the convention here.
+\end{verification}
+
+\begin{proposition}[Mukai vector]
+\label{prop:mukai-vector}
+\textnormal{[proved, $\alpha$; Mukai 1987]}
+For $F$ a coherent sheaf on $S$, the Mukai vector is
+\[
+v(F):=\ch(F)\sqrt{\td(S)}
+=(\rk F,\,c_1(F),\,\ch_2(F)+\rk F\cdot[\mathrm{pt}])
+\in\widetilde H(S,\Z),
+\]
+where $\sqrt{\td(S)}=(1,0,1)$ in Mukai notation on a K3 surface
+(\cite[Theorem~3]{Mukai1987}).  The Mukai pairing on
+$\widetilde H(S,\Z)$ recovers the Euler characteristic of $\Hom$:
+\[
+\langle v(F),v(G)\rangle_{\mathrm{Muk}}
+=-\chi(F,G)
+=-\sum_i(-1)^i\dim\Ext^i(F,G).
+\]
+\end{proposition}
+
+\begin{proof}
+Mukai~\cite[Theorem~3]{Mukai1987} computes $\sqrt{\td(S)}$ for K3
+surfaces.  The Hirzebruch--Riemann--Roch formula gives
+$\chi(F,G)=\int_S\ch(F^\vee)\ch(G)\td(S)
+=-\langle v(F),v(G)\rangle_{\mathrm{Muk}}$ once the sign of the
+$H^0$--$H^4$ pairing is taken into account; see Mukai 1984~\S2.
+\end{proof}
+
+\begin{remark}[Sign of the Mukai pairing on rank--$0$ components]
+\label{rem:mukai-rank-0-sign}
+The Mukai pairing
+$\langle(r,D,s),(r',D',s')\rangle_{\mathrm{Muk}}
+=D\cdot D'-rs'-r's$
+restricts to the cup-product pairing on the middle $H^2$-component
+\[
+\langle(0,D,0),(0,D',0)\rangle_{\mathrm{Muk}}=D\cdot D',
+\]
+and to the negative cup-product on the rank--Euler component
+\[
+\langle(r,0,s),(r',0,s')\rangle_{\mathrm{Muk}}=-rs'-r's.
+\]
+The relative minus sign is forced by Hirzebruch--Riemann--Roch
+\cite[Theorem~5.1.1]{HuybrechtsLehn}: $-\chi(F,G)$ contains a
+$-\rk F\cdot\chi(\O,G)-\rk G\cdot\chi(\O,F)$ term coming from
+$\sqrt{\td(S)}=(1,0,1)$.  An apparent attack route is to negate the
+$H^0$--$H^4$ pairing or to drop the minus sign; this would convert
+the Mukai lattice to an isotropic-rank-$2$ unimodular form not of
+signature $(4,20)$, in disagreement with the Mukai 1984 classification
+(\cite[Theorem~1.5]{Mukai1984}) and the unique even unimodular
+type II$_{4,20}$.  The sign as stated is forced by these
+requirements.
+\end{remark}
+
+\begin{proposition}[Aut of the Mukai lattice]
+\label{prop:mukai-aut}
+\textnormal{[proved, $\alpha$]}
+$\Orth(\widetilde H(S,\Z))$ acts transitively on the set of primitive
+vectors of any fixed square (Eichler 1952; Nikulin 1980
+Theorem~1.14.4).  In particular, the Mukai vector $v=(1,0,1)$
+(corresponding to the structure sheaf $\mathcal O_S$) and the
+generator $(0,0,1)$ of $H^4(S,\Z)\cap\widetilde H(S,\Z)$ are
+$\Orth(\widetilde H(S,\Z))$-conjugate to any other primitive vector
+of the same square.  The derived autoequivalence group of $D^b(S)$
+maps to $\Orth(\widetilde H(S,\Z))$ via the action on Mukai vectors
+(Mukai 1987~\S2; Orlov 1997).
+\end{proposition}
+
+\begin{proof}
+Eichler's theorem (\cite[Theorem~1.14.4]{Nikulin1980}) gives the
+transitivity statement.  Mukai~\cite[\S2]{Mukai1987} constructs the
+representation of derived autoequivalences on
+$\widetilde H(S,\Z)$ via Fourier--Mukai kernels.
+\end{proof}
+
+\subsection{The formal dyonic charge lattice
+$\Gamma_X^{\mathrm{form}}=\La_S\oplus\La_S$}
+\label{app:lattice-formal-dyonic}
+
+The formal additive dyonic lattice on $X=S\times E$ packages the
+electric--magnetic charge data on which the Gram-shadow projection
+$\Pi_X$ is defined.  Throughout $\La_S=\widetilde H(S,\Z)$ in the
+sense of \S\ref{app:lattice-Mukai}.
+
+\begin{definition}[$\Gamma_X^{\mathrm{form}}$ and its Gram pairing]
+\label{def:gamma-X-form}
+\textnormal{[definitional, $\alpha$; from
+Definition~\ref{def:mukai-lattice}]}
+For $X=S\times E$ with $S$ a K3 surface and $E$ an elliptic curve,
+\[
+\Gamma_X^{\mathrm{form}}:=\La_S\oplus\La_S,\qquad
+c=(Q,P)\in\Gamma_X^{\mathrm{form}},\quad Q,P\in\La_S.
+\]
+The Gram pairing
+$\langle\,,\,\rangle_{\Gamma}:\Gamma_X^{\mathrm{form}}
+\times\Gamma_X^{\mathrm{form}}\to\Z$ is inherited from the Mukai
+pairing on each factor:
+\[
+\langle (Q,P),(Q',P')\rangle_\Gamma
+:=\langle Q,Q'\rangle_{\mathrm{Muk}}
++\langle P,P'\rangle_{\mathrm{Muk}}.
+\]
+The Gram-index projection
+\[
+\Pi_X:\Gamma_X^{\mathrm{form}}\to\Gamma_{\mathrm{gram}}=\Z^3,\qquad
+(Q,P)\mapsto\Big(\tfrac{Q^2}{2},\,Q\cdot P,\,\tfrac{P^2}{2}\Big),
+\]
+records the genus-two Gram triple of the dyonic class.  This map is
+quadratic, not additive: the obstruction is the symmetric bilinear
+$2$-cocycle $B$ of Lemma~\ref{lem:gram-additivity-defect}.
+\end{definition}
+
+\begin{verification}[Rank, signature of $\Gamma_X^{\mathrm{form}}$]
+\label{ver:gamma-X-form-invariants}
+\textnormal{[computed, $\alpha$]}
+\[
+\rk\Gamma_X^{\mathrm{form}}=2\cdot\rk\La_S=48,
+\qquad
+\sigma(\Gamma_X^{\mathrm{form}})=2\cdot(4,20)=(8,40).
+\]
+The discriminant is
+\[
+\operatorname{disc}\Gamma_X^{\mathrm{form}}
+=(\operatorname{disc}\La_S)^2=1,
+\]
+so $\Gamma_X^{\mathrm{form}}$ is even unimodular.  In Conway--Sloane
+notation it is $\mathrm{II}_{8,40}$ (Conway--Sloane 1999~\S16.4).
+\end{verification}
+
+\begin{remark}[Relation to the K3$\times$E Mukai geometry]
+\label{rem:gamma-X-vs-K3E}
+Under the K\"unneth decomposition for $X=S\times E$, the integral
+even cohomology decomposes as
+\[
+H^{\mathrm{ev}}(X,\Z)
+=H^*(S,\Z)\otimes H^*(E,\Z)
+=H^*(S,\Z)\otimes(\Z[1]\oplus\Z[\omega_E]),
+\]
+where $\omega_E$ is the fundamental class of $E$.  Every Mukai vector
+on $X$ in the formal even sector decomposes as
+$v_X=P\otimes 1_E+Q\otimes\omega_E$ with $Q,P\in\La_S$, and
+$\Gamma_X^{\mathrm{form}}=\La_S\oplus\La_S$ is the additive lattice
+on which the $(P,Q)$-grading lives
+(Definition~\ref{def:gram-index-lattice}).
+The Mukai pairing on $\widetilde H(X,\Z)$ pairs against the elliptic
+$U$-summand $H^0(E,\Z)\oplus H^2(E,\Z)\simeq U$, giving
+\[
+\langle v_X,v_X'\rangle_{\widetilde H(X)}
+=Q\cdot P'+Q'\cdot P,
+\]
+where each summand is the Mukai pairing on $\La_S$.  The resulting
+genus-two Gram triple $(Q^2/2,Q\cdot P,P^2/2)$ is the Gram-index
+data $\Pi_X(Q,P)$ used in the Borcherds product
+(Theorem~\ref{thm:d6-d2-d0-dictionary-appendixC}).
+\end{remark}
+
+\begin{lemma}[Two orthogonal hyperbolic planes inside $\La_S$]
+\label{lem:two-hyperbolic-planes-appA}
+\textnormal{[proved, $\alpha$]}
+$\La_S=\widetilde H(S,\Z)\simeq 4U\oplus 2(-E_8)$ contains four
+mutually orthogonal copies of $U$.  In particular, two of them give
+\[
+U_1\oplus U_2\subset\La_S,\qquad U_i\simeq U,\ U_1\perp U_2,
+\]
+which is the hypothesis of the formal primitive lift
+Lemma~\ref{lem:primitive-lift-every-gram-triple}: every
+Gram triple $(n,l,m)\in\Z^3$ has a primitive saturated formal lift
+$c=(Q,P)\in\Gamma_X^{\mathrm{form}}$ with $\Pi_X(Q,P)=(n,l,m)$.
+\end{lemma}
+
+\begin{proof}
+By Definition~\ref{def:mukai-lattice}, $\La_S\simeq 4U\oplus 2(-E_8)$
+contains four mutually orthogonal $U$-summands.  Selecting any two of
+them gives the displayed sublattice, which is itself isomorphic to
+$U\oplus U\simeq\mathrm{II}_{2,2}$ as a sublattice of $\La_S$.  The
+Gram-triple lift then follows from
+Lemma~\ref{lem:primitive-lift-every-gram-triple}: take
+$Q=e_1+nf_1$, $P=lf_1+e_2+mf_2$ in $U_1\oplus U_2$ to obtain
+$\Pi_X(Q,P)=(n,l,m)$.
+\end{proof}
+
+\subsection{The signature-$(3,2)$ lattice $\La^{3,2}$ and the
+$\Sp_4\simeq\Spin(3,2)$ bridge}
+\label{app:lattice-32}
+
+The exceptional isomorphism $\PSp_4(\R)\simeq\SO_+(3,2)$ identifies
+the Siegel modular variety with the fourth-orthogonal modular variety
+of an integral lattice $\La^{3,2}$ of signature $(3,2)$
+(\cite[Section~3]{GN}; Borcherds 1995~\S5).  The Igusa cusp form
+$\Delta_5$ lives on the Siegel side; the Borcherds product expansion
+lives on the orthogonal side.
+
+\begin{definition}[$\La^{3,2}$ in the exterior-square model]
+\label{def:lambda-32}
+\textnormal{[definitional, $\alpha$]}
+Let $\La^4=\Z e_1\oplus\Z e_2\oplus\Z e_3\oplus\Z e_4$ and consider
+the exterior square $\wedge^2\La^4$ with the symmetric pairing
+\[
+u\wedge v\cdot u'\wedge v'=
+[\det(u,v,u',v')]_{e_1\wedge e_2\wedge e_3\wedge e_4}\in\Z.
+\]
+Then $(\wedge^2\La^4,(\,,\,))\simeq\mathrm{II}_{3,3}$ as an even
+unimodular lattice of signature $(3,3)$.  Fix
+$q_0:=e_1\wedge e_3+e_2\wedge e_4\in\wedge^2\La^4$ and define
+\[
+\La^{3,2}:=q_0^\perp\subset\wedge^2\La^4.
+\]
+\end{definition}
+
+\begin{verification}[Rank, signature, discriminant of $\La^{3,2}$]
+\label{ver:lambda-32-invariants}
+\textnormal{[computed, $\alpha$; verified by
+\texttt{compute/verify\_lattice.py}]}
+$\rk\wedge^2\La^4=\binom{4}{2}=6$.  Removing one isotropic ray from
+$q_0$ gives $\rk\La^{3,2}=5$.  The \texttt{expected\_gram} array of
+\texttt{compute/verify\_lattice.py} at lines~82--88 is the explicit Gram
+matrix of $\La^{3,2}$ in the basis $(f_1,f_2,f_3,f_{-2},f_{-1})$:
+\[
+G_{3,2}=\begin{pmatrix}
+0&0&0&0&-1\\
+0&0&0&-1&0\\
+0&0&2&0&0\\
+0&-1&0&0&0\\
+-1&0&0&0&0
+\end{pmatrix},
+\]
+where $f_1=e_1\wedge e_2$, $f_2=e_2\wedge e_3$,
+$f_3=e_1\wedge e_3-e_2\wedge e_4$, $f_{-2}=e_4\wedge e_1$,
+$f_{-1}=e_4\wedge e_3$.  Direct computation: the matrix is
+antidiagonal except for the central $h^2=2$ entry, with off-diagonal
+entries $-1,-1,-1,-1$.  Expansion gives
+\[
+\det G_{3,2}=2\cdot(-1)^4\cdot\operatorname{sgn}(1,2,3,4\mapsto4,3,2,1)
+=2\cdot 1\cdot(+1)=+2,
+\]
+since the permutation $(1,2,3,4)\mapsto(4,3,2,1)$ has six inversions
+and even parity.  Therefore
+\[
+\sigma(\La^{3,2})=(3,2),\qquad
+\operatorname{disc}\La^{3,2}=2.
+\]
+The script asserts
+\texttt{gram == expected\_gram} at line~89.
+\end{verification}
+
+\begin{proposition}[$\La^{3,2}\simeq U\oplus U\oplus\langle 2\rangle$
+in the manuscript convention; $\La^{3,2}\simeq U(-1)\oplus
+U(-1)\oplus\langle 2\rangle$ in the standard convention]
+\label{prop:lambda-32-decomposition}
+\textnormal{[proved, $\alpha$]}
+In the body convention of the exterior-square model,
+\[
+\La^{3,2}\simeq\HypPlan\oplus\HypPlan\oplus[2],
+\]
+with $\HypPlan=U(-1)$ and $[2]$ the rank-$1$ lattice with Gram
+$(2)$.  The Gram presentation displayed in
+Verification~\ref{ver:lambda-32-invariants} arises from the
+$f$-basis: $(f_1,f_{-1})$ pairs as a copy of $\HypPlan$
+($(f_1,f_{-1})=-1$), $(f_2,f_{-2})$ pairs as a second copy of
+$\HypPlan$ ($(f_2,f_{-2})=-1$), and $f_3$ contributes
+$(f_3,f_3)=2$.
+\end{proposition}
+
+\begin{proof}
+The pairings $(f_1,f_{-1})=-1$, $(f_2,f_{-2})=-1$, $(f_3,f_3)=2$ are
+read off from $G_{3,2}$.  The orthogonal decomposition is direct:
+$\Z f_1+\Z f_{-1}\perp\Z f_2+\Z f_{-2}\perp\Z f_3$ inside
+$\La^{3,2}$ because every cross-pair vanishes in $G_{3,2}$.  The
+identification with $\HypPlan\oplus\HypPlan\oplus[2]$ follows
+because each rank-$2$ block has Gram $((0,-1),(-1,0))=\HypPlan$
+and the rank-$1$ block has Gram $(2)=[2]$.
+\end{proof}
+
+\begin{proposition}[$\PSp_4(\Z)\simeq\SO_+(\La^{3,2})$]
+\label{prop:psp4-iso-so32}
+\textnormal{[proved, $\alpha$; exterior-square model of $\Sp_4(\Z)$]}
+The exterior-square representation
+$\wedge^2:\Sp_4(\Z)/\{\pm\Id_4\}\to\SO_+(\La^{3,2})\simeq
+\Orth(\La^{3,2})_+/\{\pm\Id_5\}$
+is an isomorphism.  Concretely, the integral generators
+\[
+g_0=\begin{pmatrix}0&\Id_2\\-\Id_2&0\end{pmatrix},\quad
+g_M=\begin{pmatrix}\Id_2&M\\ 0&\Id_2\end{pmatrix},\quad
+g_A=\begin{pmatrix}{}^tA^{-1}&0\\ 0&A\end{pmatrix}
+\quad(A\in\GL_2(\Z))
+\]
+of $\Sp_4(\Z)$ map under $\wedge^2$ to integral isometries of
+$\La^{3,2}$, displayed as the three explicit $5\times 5$ matrices
+$\wedge^2(g_0)$, $\wedge^2(g_M)$, $\wedge^2(g_A)$ in the body's
+exterior-square model.  The full image is $\SO_+(\La^{3,2})$.
+The Siegel space $\Hpl_2$ embeds into the type-IV upper half-space
+$\Hpl^{\IV}_+\subset\Proj(\La^{3,2}\otimes\C)$ via
+\[
+Z=\begin{pmatrix}z_1&z_2\\ z_2&z_3\end{pmatrix}
+\mapsto
+{}^t(z_2^2-z_1z_3,\,z_3,\,z_2,\,z_1,\,1)z_0,
+\]
+and the action of $\Sp_4(\Z)$ on $\Hpl_2$ corresponds to the action
+of $\SO_+(\La^{3,2})$ on $\Hpl^{\IV}_+$.
+\end{proposition}
+
+\begin{proof}
+The Pfaffian pairing on $\wedge^2\La^4$ is preserved by
+$\wedge^2\SL_4$.  The subgroup fixing $q_0$ is $\Sp_4(\Z)$ by
+definition of the symplectic form
+$B_{q_0}(x,y)e_1\wedge e_2\wedge e_3\wedge e_4=-x\wedge y\wedge q_0$.
+The kernel on $q_0^\perp=\La^{3,2}$ is $\{\pm\Id_4\}$.  The
+exceptional Lie-algebra isomorphism $\mathfrak{sp}_4(\R)\simeq\mathfrak{so}(3,2)$
+extends to the integral form on the displayed generators; this is
+the content of \cite[Section~3]{GN} and the manuscript's
+exterior-square model of the automorphic group.
+\end{proof}
+
+\begin{remark}[Embedding $\La_{II}^{2,1}\subset\La^{3,2}$]
+\label{rem:II21-in-32}
+The primitive sublattice
+\[
+\La^{2,1}=\HypPlan\oplus[2]
+=\Z f_2\oplus\Z f_3\oplus\Z f_{-2}\subset\La^{3,2}
+\]
+of the body's Weyl-chamber section is the BKM root lattice: discarding the
+$(f_1,f_{-1})$-block of $\La^{3,2}\simeq\HypPlan\oplus\HypPlan\oplus
+[2]$ leaves $\HypPlan\oplus[2]\simeq\La^{2,1}$.  The type-II
+sublattice $\La_{II}^{2,1}=\{mf_2+lf_3+nf_{-2}\mid
+m,n\equiv 0\!\pmod 2\}$ is the lattice of even integral type-II
+classes, on which the simple-root Cartan
+\[
+\bigl((\delta_i,\delta_j)\bigr)
+=\begin{pmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{pmatrix}
+\]
+of Proposition~\ref{prop:type-II-cartan} is realized via
+$\delta_1=2f_2-f_3$, $\delta_2=2f_{-2}-f_3$, $\delta_3=f_3$.  Every
+isometry of $\La^{2,1}$ extends to an isometry of $\La^{3,2}$ by
+the identity on $(\La^{2,1})^\perp\subset\La^{3,2}$.
+\end{remark}
+
+\subsection{Cross-references and consistency check}
+\label{app:lattice-cross-refs}
+
+The lattices recorded above sit in the manuscript as follows.
+
+\begin{itemize}
+\item $U=\mathrm{II}_{1,1}$: every $U$-summand of
+$\La^{3,2}$, $\La_{K3}$, and $\widetilde H(S,\Z)$.  The relation
+$\HypPlan=U(-1)$ packages the body's negated convention.
+\item $\La_{II}^{2,1}\simeq U(-1)\oplus\langle 2\rangle\simeq
+U\oplus\langle-2\rangle$ (sign flip on the rank-$2$ hyperbolic block):
+the BKM root lattice on which the type-II simple-root Cartan
+$2(\Id_3-\J_3)$ and the Weyl vector
+$\rho=\frac12(\delta_1+\delta_2+\delta_3)$ are realized.  The
+denominator algebra
+$\autcor=\mathfrak g_{\Delta_5}$ is graded by $\La_{II}^{2,1}$
+(\cite[Theorem~2.1]{GNII}).
+\item $\La_{K3}=\mathrm{II}_{3,19}$: K3 cohomology with
+intersection pairing.  Polarized K3 sublattices $\La_S$ embed
+primitively into $\La_{K3}$.
+\item $\La_S$: signature $(1,\rho-1)$ for $\rho\le 19$ (the
+algebraic Picard rank).  Used in
+Definition~\ref{def:mukai-lattice} as the K3 factor of
+$\Gamma_X^{\mathrm{form}}$ and in the lattice-polarization setup of
+the body.
+\item $\widetilde H(S,\Z)=\mathrm{II}_{4,20}$: the Mukai lattice on
+which the D6--D2--D0 Mukai vectors $v_X(\mathcal I_Y)$ live; the
+Gram-index map $\Pi_X$ is computed via this pairing
+(Theorem~\ref{thm:d6-d2-d0-dictionary-appendixC}).
+\item $\Gamma_X^{\mathrm{form}}=\La_S\oplus\La_S$: the formal
+additive dyonic charge lattice of $X=S\times E$, on which the
+quadratic Gram-shadow projection $\Pi_X$ and the symmetric bilinear
+$2$-cocycle $B$ are defined
+(Definition~\ref{def:mukai-lattice}).
+\item $\La^{3,2}\simeq U(-1)\oplus U(-1)\oplus\langle 2\rangle$:
+the signature-$(3,2)$ orthogonal lattice that bridges
+$\PSp_4(\Z)$ to $\SO_+(3,2)$ via the exterior-square
+representation; on this lattice the Borcherds product expansion of
+$\Delta_5$ is written.
+\end{itemize}
+
+\begin{verification}[End-to-end computation check]
+\label{ver:lattice-script-check}
+\textnormal{[computed, $\gamma$]}
+The script \texttt{compute/verify\_lattice.py} verifies, in one
+self-contained $\Q$-arithmetic computation:
+(i) the rank-$5$ Gram matrix $G_{3,2}$ in the
+$(f_1,f_2,f_3,f_{-2},f_{-1})$-basis (lines~82--89);
+(ii) the orthogonality of the symplectic invariant
+$q_0=e_1\wedge e_3+e_2\wedge e_4$ to the basis (line~90);
+(iii) the type-II simple-root Cartan
+$2(\Id_3-\J_3)$ at lines~92--97;
+(iv) the Weyl vector $\rho=(1,-1/2,1)$ in $(f_2,f_3,f_{-2})$
+coordinates and the $(\rho,\delta_i)=-1$ relation
+(lines~99--101);
+(v) the type-II reflection action and Cartan invariance under each
+$s_{\delta_i}$ (lines~103--108).
+The \texttt{All lattice checks passed.} line printed at the end of the
+script's output confirms agreement of the Gram, Cartan, and
+Weyl-vector data of \S\ref{app:lattice-II21} and \S\ref{app:lattice-32}
+with the $\Q$-arithmetic computation.
+\end{verification}
+
+\begin{remark}[Discriminant convention; sign of $\La^{3,2}$]
+\label{rem:discriminant-conventions}
+In the body convention $\HypPlan\oplus\HypPlan\oplus[2]$, both
+hyperbolic-plane summands have Gram determinant $-1$ and the $[2]$
+summand contributes $+2$, so
+$\operatorname{disc}\La^{3,2}=(-1)^2\cdot 2=+2$.  In the standard
+convention $U\oplus U\oplus\langle-2\rangle$, the two $U$-summands
+contribute determinant $-1$ each and $\langle-2\rangle$ contributes
+$-2$, so $\operatorname{disc}\La^{3,2}=(-1)^2\cdot(-2)=-2$.  The two
+presentations differ by an overall sign on the rank-$2$ hyperbolic
+blocks; both carry an order-$2$ discriminant group with single
+nontrivial generator $f_3/2\in(\La^{3,2})^*/\La^{3,2}$.  The same
+analysis applies to $\La_{II}^{2,1}$: discriminant $-2$ (body) or
+$+2$ (standard), discriminant group $\Z/2$ generated by $h/2$.  In
+every case the order of the discriminant group is $2$ and the
+type-II divisibility statement
+$(\delta,\La^{2,1})\in\{\Z,2\Z\}$ depends on the order, not the sign
+of the determinant.
+\end{remark}
+
+\begin{remark}[Cited primary literature]
+\label{rem:lattice-primary-lit}
+The primary references behind every load-bearing lattice claim above
+are: Conway--Sloane 1999~\S2.5,~\S4.8,~\S15.5,~\S16.4 (classification
+of even unimodular indefinite lattices, $E_8$ root system,
+discriminant-form gluing, K3 lattice as $\mathrm{II}_{3,19}$);
+Nikulin 1980~Theorem~1.1.2,~Theorem~1.4.1 (= \cite{NIKULIN}
+Theorem~1.4.1 in the K3-paper version),
+Theorem~1.6.1,~Theorem~1.14.4 (signature classification, reflection
+group of square-$2$ vectors, primitive embeddings, discriminant-form
+uniqueness); Mukai 1984~Theorem~1.5 (Mukai pairing, signature
+$(4,20)$), Mukai 1987~Theorem~3 ($\sqrt{\td(S)}=(1,0,1)$ on K3);
+Gritsenko--Nikulin 1998 Part~II~Theorem~2.1, Section~5.1.1, case
+$(t=1,II,\overline 0)$ (BKM root datum for $\autcor$, Weyl vector,
+type-II simple-root Cartan).
+\end{remark}

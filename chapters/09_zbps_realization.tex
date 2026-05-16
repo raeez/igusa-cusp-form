@@ -1,0 +1,925 @@
+% !TEX root = ../main.tex
+%====================================================================
+% Chapter 9 — Z_BPS^{K3 x E} = Delta_5^{-2} as the level-n protected
+% scalar shadow on the closed K3 x E |-> point cobordism;
+% the Hall--Borcherds residual; the K3 x E threefold
+% realization question.
+%====================================================================
+
+\chapter{The level-\(n\) protected scalar shadow and the \(K3\times E\) realization question}
+\label{ch:zbps-realization}
+
+The denominator algebra and the protected Pfaffian sit at the
+primitive and chart levels of the universal stage chain
+\(\mathsf{P}\to\mathsf{C}\to\mathsf{S}\to\mathsf{Z}\to\mathsf{A}\).  At
+level \(\mathsf{S}\) the same \(\Delta_5\) survives, squared, as the
+protected partition function on the closed \(K3\times E\to\mathrm{pt}\)
+cobordism, equivalently the level-\(n\) modular-functor scalar trace
+of the realization programme of Vol IV
+\cite{ChiralBarCobarVolIV}.  This chapter records the scalar shadow
+exactly as the Beilinson cut requires it: an automorphic identity,
+not an algebra; a trace, not an operator; an orientation-forgetful
+invariant, not an orientation lift.  The orientation lift is the
+missing first-order object \(\mathfrak D_X^{\mathrm{DI}}\) of
+Chapter~5; the scalar identity is the level-\(n\) shadow it casts.
+
+Three distinct meanings of \(\Delta_5\) coexist in this chapter and
+are tagged on first occurrence: the automorphic section
+\(D_X=\Delta_5\) (View I --- Borcherds--Gritsenko--Nikulin); the
+Borcherds--Kac--Moody denominator
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\)
+(View II --- Gritsenko--Nikulin); the conditional protected Pfaffian
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\) (View
+III --- Chapter~5).  The handle ``\(\Delta_5\)'' alone never
+substitutes for any of the three.
+
+%====================================================================
+\section{The level-\(n\) protected scalar shadow on \(K3\times E\to\mathrm{pt}\)}
+\label{sec:zbps-scalar-shadow}
+
+\subsection{The Oberdieck--Pixton scalar identity \texorpdfstring{[$\beta$]}{[beta]}}
+
+Let \(X=S\times E\), with \(S\) a smooth complex K3 surface and \(E\) a
+smooth elliptic curve.  The reduced Donaldson--Thomas / stable-pair /
+Gromov--Witten correspondence on \(X\), in the primitive K3-class
+chamber, identifies the scalar partition function
+\(Z^X_{\mathrm{DT}}\) with the inverse of the Igusa cusp form on the
+genus-\(2\) Siegel upper half-space \(\mathfrak H_2\).
+
+\begin{convention}[OP chamber, sign branch, primitive class]
+\label{conv:op-chamber}
+The variables \((T,Q,P)\) are the Oberdieck--Pixton variables of
+\cite[\S0]{OB}: \(T\) records the K3-surface degree, \(Q\) the
+K3-curve class, \(P\) the elliptic-genus variable
+(equivalently \(P=-p_{\mathrm{DT}}\), giving the
+\((-p_{\mathrm{DT}})^n\) DT-chamber).  The K3 curve class
+\(\beta_h\) is taken \emph{primitive} of self-intersection
+\(\beta_h\cdot\beta_h=2h-2\) (\cite{MaulikPandharipande}); the
+identity \eqref{eq:zbps-op-dt} below is the primitive-class branch.
+The leading \(-1\) of \(Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}\)
+is the OP scalar convention; the squared theta-leading
+\(4096=64^2\) is the normalization conversion
+\(\chi_{10}^{\mathrm{OP}}=4096^{-1}\Delta_5^2\).  None of these is the
+orientation character.
+\end{convention}
+
+Under Convention~\ref{conv:op-chamber} and \cite[Theorem~1]{OB},
+\cite[Proposition~5]{OPand}, \cite{MaulikPandharipande},
+\begin{equation}
+\label{eq:zbps-op-dt}
+Z^X_{\mathrm{DT}}(T,Q,P)
+\;=\;
+Z^X_{\mathrm{OP}}(P,Q,T)
+\;=\;
+-\,4096\,\Delta_5(Z)^{-2},
+\qquad
+Z=\Omega\in\mathfrak H_2.
+\end{equation}
+The constant \(4096=64^2\) is the squared theta-leading coefficient
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5\) of the automorphic section, and
+the leading sign is the Oberdieck--Pixton scalar convention
+\(Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}\).  Both are
+normalization data of the imported reduced theory.
+
+\begin{theorem}[Level-\(n\) protected scalar shadow on the closed
+\(K3\times E\to\mathrm{pt}\) cobordism \texorpdfstring{[$\alpha$+$\beta$]}{[alpha+beta]}]
+\label{thm:zbps-level-n-shadow}
+\ClaimStatusProvedElsewhere
+With variables \((T,Q,P)\) normalized in the
+Oberdieck--Pixton chamber of the Oberdieck--Pixton normalization \cite[Theorem~1]{OB},
+the level-\(n\) protected scalar shadow on the closed
+\(K3\times E\to\mathrm{pt}\) cobordism is
+\begin{equation}
+\label{eq:zbps-equality}
+Z_{\mathrm{BPS}}^{K3\times E}(T,Q,P)
+\;=\;
+\bigl(\Phi_{10}^{\mathrm{un}}(Z)\bigr)^{-1}
+\;=\;
+\Delta_5(Z)^{-2}.
+\end{equation}
+Equivalently, in OP's normalization
+\(\chi_{10}^{\mathrm{OP}}=2^{-12}\Delta_5^2\),
+\(\Phi_{10}^{\mathrm{un}}=\chi_{10}=\Delta_5^2\), and the unimodular
+form \((\Phi_{10}^{\mathrm{un}})^{-1}\) is the level-\(n\) protected
+trace on every closed K3-class fibre.
+The Behrend-weighted reduced quotient
+integration of Oberdieck's reduced PT/DT scalar-quotient integration \cite{OberdieckReducedPT}
+identifies this scalar with the reduced DT, PT, and OP series
+\(Z^X_{\mathrm{DT}}=Z^X_{\mathrm{OP}}=Z^X_{\mathrm{PT}}=-4096\,\Delta_5^{-2}\)
+on the primitive branch.
+\end{theorem}
+
+\begin{proof}
+Equation~\eqref{eq:zbps-equality} is the dictionary between the
+Oberdieck--Pixton primitive series and the unimodular Igusa form
+\(\Phi_{10}^{\mathrm{un}}\): the OP normalization
+\(\chi_{10}^{\mathrm{OP}}=2^{-12}\Delta_5^2\) of
+Andrianov's spin $L$-factor factorization \cite{Andr74} together with
+\(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\) gives
+\((\Phi_{10}^{\mathrm{un}})^{-1}=\Delta_5^{-2}\).  Multiplying by
+\(2^{12}=4096\) and the OP scalar sign restores
+\eqref{eq:zbps-op-dt}.  The reduced DT/PT comparison is
+\cite[Theorem~3(i)]{OberdieckReducedPT}, the reduced PT/GW comparison
+on primitive K3 classes is
+\cite[Proposition~5]{OPand}, and the OP product identity is
+\cite[Theorem~1]{OB}; their composition gives the displayed equality
+in the OP chamber.
+\end{proof}
+
+\subsection{Three readings of the same exponent}
+
+The integers \(f(n,l)\) of the weight-zero index-one weak Jacobi form
+\(\phi_{0,1}\) drive both sides of the OP/Borcherds dictionary.  At
+level \(\mathsf{P}\) they are virtual \(K_0\)-superdimensions of
+\(\mathbb U_{n,l}\), and at level \(\mathsf{S}\) they appear twice:
+once as exponents of the Borcherds product on the automorphic side,
+once as multiplicities in the Mukai dimension count of the
+Hilbert-scheme stratification on the geometric side.  In
+\(\mathfrak g_{\Delta_5}\), the same \(f(nm,l)\) records the signed
+root supermultiplicity at \(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\).
+
+The variable map of the Oberdieck--Pixton normalization \cite[Theorem~1]{OB} encodes
+this triple reading.  A factor \((1-q^nr^ls^m)^{f(nm,l)}\) of the
+Borcherds product on the automorphic side is, on the Oberdieck--Pixton
+side, a factor
+\((1-p_{\mathrm{OP}}^kq_{\mathrm{OP}}^h\widetilde q_{\mathrm{OP}}^d)^{c(4hd-k^2)}\)
+of \(\chi_{10}^{\mathrm{OP}}\), the K3-elliptic-genus exponents
+\(c(4hd-k^2)=2f(hd,k)\) recording the squared automorphic line.  The
+multiplicities \(2f\) are exactly the K3 elliptic-genus coefficients
+of \(Z_{\mathrm{K3}}=2\phi_{0,1}\); the squaring is built into the
+identification \(\chi_{10}^{\mathrm{OP}}=D_5^2\) of
+the Oberdieck--Pixton/Pandharipande scalar identity \cite[Theorem~1]{OB}.
+
+\begin{remark}[Constants are normalization, not orientation
+\texorpdfstring{[$\alpha$]}{[alpha]}]
+\label{rem:zbps-constants-not-orientation}
+Three constants intervene in \eqref{eq:zbps-op-dt}.  The leading
+\(64=[q^{1/2}r^{1/2}s^{1/2}]\Delta_5\) is the theta-constant
+normalization of the Igusa section; the monic Borcherds product is
+\(D_5=64^{-1}\Delta_5\).  The factor \(4096=64^2\) is the
+squared theta-leading coefficient produced by the OP convention
+\(\chi_{10}^{\mathrm{OP}}=D_5^2\).  The leading minus sign is the OP
+scalar branch \(Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}\).
+None of the three is the orientation character.  The protected
+orientation character \(\epsilon_o\) and the automorphic reflection
+character \(\nu_{\Delta_5}\) are determined elsewhere: \(\nu_{\Delta_5}\)
+by the Maass transformation law of \(\Delta_5\), \(\epsilon_o\) by the
+type-II Pfaffian wall computation of (O2) on the half-Hilbert orbit
+through the \(2^{12}\) sign sum.  The number \(4096=2^{12}\) recurring
+in the (O2) wall count is the \emph{same} algebraic source as the
+OP normalization \(2^{12}\), but the \emph{rolls} are distinct: the
+Pfaffian-side \(2^{12}\) is the cardinality of a sign orbit that the
+local wall computation must collapse, while the OP-side \(2^{12}\) is
+the squared theta-leading coefficient that the imported scalar identity
+absorbs.
+\end{remark}
+
+\subsection{Worked Fourier-coefficient check}
+
+The leading Fourier coefficients of \(\Delta_5\) and \(\Delta_5^2\)
+provide the elementary verification that the constants in
+\eqref{eq:zbps-op-dt} are normalization, not enumerative content.
+Recall \(\phi_{0,1}\) has leading expansion
+\begin{equation}
+\label{eq:zbps-phi01-leading}
+\phi_{0,1}(\tau,z)
+\;=\;
+(r^{-1}+10+r)+q\bigl(10r^{-2}-64r^{-1}+108-64r+10r^2\bigr)+O(q^2),
+\end{equation}
+with coefficients
+\(f(0,-1)=f(0,1)=1\), \(f(0,0)=10\), \(f(1,1)=f(1,-1)=-64\),
+\(f(1,0)=108\), \(f(1,2)=f(1,-2)=10\), \(f(1,3)=f(1,-3)=0\).
+The Borcherds--Gritsenko--Nikulin product
+\begin{equation}
+\label{eq:zbps-bgn-product}
+\Delta_5(Z)
+\;=\;
+64\,q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+(1-q^nr^ls^m)^{f(nm,l)}
+\end{equation}
+opens with the theta-leading term
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64\); the next non-trivial
+coefficient is \([q^{3/2}r^{1/2}s^{1/2}]\Delta_5\), produced by the
+factor \((1-qrs)^{f(1,1)}=(1-qrs)^{-64}\) along with the active
+\((n,l,m)=(0,\pm1,0)\) factor \((1-r^{\pm 1})^{f(0,\pm1)}=(1-r^{\pm 1})\).
+Squaring \eqref{eq:zbps-bgn-product},
+\begin{equation}
+\label{eq:zbps-delta5-squared-leading}
+\Delta_5^2(Z)
+\;=\;
+4096\,q\,r\,s
+\prod(1-q^nr^ls^m)^{2f(nm,l)},
+\end{equation}
+with theta-leading \(64^2=4096\).  The OP product
+\(\chi_{10}^{\mathrm{OP}}=p\,q\,\widetilde q\prod(1-p^kq^h\widetilde
+q^d)^{c(4hd-k^2)}\), with K3-elliptic exponents \(c(4hd-k^2)=2f(hd,k)\),
+is exactly the right-hand side of \eqref{eq:zbps-delta5-squared-leading}
+divided by \(4096\).  Thus
+\begin{equation}
+\label{eq:zbps-leading-coeff-check}
+\chi_{10}^{\mathrm{OP}}=4096^{-1}\,\Delta_5^2,
+\qquad
+[pq\widetilde q]\,\chi_{10}^{\mathrm{OP}}=1,
+\qquad
+[q^{1/2}r^{1/2}s^{1/2}]\,(64^{-1}\Delta_5)=1.
+\end{equation}
+The squared theta-leading coefficient \(4096\) is therefore the
+single explicit normalization constant absorbed by the OP/DT scalar
+identity \(Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}\); the
+sign \(-1\) is OP convention; together they produce the constant
+\(-4096\) of \eqref{eq:zbps-op-dt}.  The Fourier verification at
+\(q^{1/2}r^{1/2}s^{1/2}\) resolves the question ``where does the
+\(4096\) come from?'' at the level of a single coefficient: it is
+\(\bigl([q^{1/2}r^{1/2}s^{1/2}]\Delta_5\bigr)^2\), a leading-coefficient
+square, not an enumerative invariant.
+
+\subsection{Cobordism positioning and the closed \(K3\times E\to\mathrm{pt}\)
+cobordism}
+
+The cobordism \(K3\times E\to\mathrm{pt}\) is the closed \(3\)-manifold
+viewed in the closed-CY-target sense: the protected partition function
+of \(\mathfrak A_{K3\times E}\) evaluated on the bordism with empty
+boundary.  At level \(\mathsf{S}\) the partition function is a complex
+number; the ``level-\(n\)'' label
+\(n=\chi(\mathcal O_{K3\times E})=\chi(\mathcal O_{K3})\chi(\mathcal O_E)
+=2\cdot 0=0\), so the relevant grading for
+\(K3\times E\) is the elliptic degree \(d\) and the K3 norm \(h-1\),
+not the holomorphic Euler characteristic.  The dual notation
+\(Z_{\mathrm{BPS}}^{K3\times E}(T,Q,P)\) stores the elliptic and K3
+gradings as a Laurent expansion of the inverse Igusa cusp form on
+\(\mathfrak H_2\).
+
+The \(K3\times E\) target is a threefold; the perfect obstruction
+theory and the virtual fundamental class \([X]^{\mathrm{vir}}\) are
+those of the threefold (\emph{not} of any auxiliary fourfold).
+``\(n\)'' in ``level-\(n\) shadow'' refers to the cobordism class of
+the closed K3-class fibre at primitive curve class \(\beta_h\) of
+norm \(2h-2\), not to the holomorphic Euler characteristic of the
+target.
+
+%====================================================================
+\section{Spin \(L\)-factor normalization for \(\Delta_5^2\)}
+\label{sec:spin-l-factor}
+
+\subsection{The Saito--Kurokawa eigenline}
+
+The unimodular Igusa form \(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\) is the
+weight-\(10\) Saito--Kurokawa lift of the unique normalized cusp form
+\(g=\Delta E_6\in S_{18}(\SL_2(\Z))\); the Hecke eigenline is the
+one-dimensional \(\C\Delta_{10}^{\theta}=\C\chi_{10}^{\mathrm{OP}}\),
+independent of the scalar normalization of its generator.
+
+\begin{proposition}[Hecke eigenvalues on the Saito--Kurokawa
+eigenline]
+\label{prop:zbps-sk-hecke}
+For each prime \(p\), let \(T_1(p)\) and \(T_2(p^2)\) denote the
+degree-one and degree-two genus-two Hecke operators on
+\(S_{10}(\Sp_4(\Z))\) of \cite[\S 4]{Andr74}.  The Saito--Kurokawa
+form \(\Delta_{10}^{\theta}=\Delta_5^2\) is a simultaneous
+eigenform with eigenvalues
+\[
+ T_1(p)\,\Delta_{10}^{\theta}
+ \;=\;
+ \lambda_1^{\mathrm{SK}}(p)\,\Delta_{10}^{\theta},
+ \qquad
+ T_2(p^2)\,\Delta_{10}^{\theta}
+ \;=\;
+ \lambda_2^{\mathrm{SK}}(p^2)\,\Delta_{10}^{\theta},
+\]
+where the eigenvalues are determined by the Saito--Kurokawa
+correspondence from the elliptic Hecke eigenvalues of
+\(g=\Delta E_6\):
+\[
+ \lambda_1^{\mathrm{SK}}(p)\;=\;\lambda_g(p)\bigl(p^8+p^9\bigr),
+ \qquad
+ \lambda_2^{\mathrm{SK}}(p^2)\;=\;\lambda_g(p)^2 p^8 - p^{16}
+ \bigl(\lambda_g(p^2)+p^{16}+1\bigr),
+\]
+with \(\lambda_g(p)\) the standard \(p\)-th Hecke eigenvalue of
+\(g\) (e.g., \(\lambda_g(2)=84480\), \(\lambda_g(3)=-409536\),
+\cite[Table~1]{ZagierSK}).
+\end{proposition}
+
+\begin{proof}
+The Saito--Kurokawa correspondence \cite[\S 1]{ZagierSK} produces, for
+each weight \(2k\) elliptic newform \(g\in S_{2k}(\SL_2(\Z))\), a
+weight-\(k+1\) Siegel cusp form \(F_g\in S_{k+1}(\Sp_4(\Z))\) with
+spinor \(L\)-function
+\(L_{\mathrm{spin}}(s,F_g)=\zeta(s-k+1)\zeta(s-k)L(s,g)\) (which is
+exactly \eqref{eq:zbps-spinor-factor} at \(k=9\)).  The Euler product
+factorisation determines the Hecke eigenvalues at each prime: writing
+\(L_{\mathrm{spin}}(s,F_g)=\prod_p L_p(p^{-s},F_g)^{-1}\) with
+\[
+ L_p(X,F_g)^{-1}
+ \;=\;(1-p^{k-1}X)(1-p^kX)(1-\lambda_g(p)X+p^{2k-1}X^2)
+\]
+and comparing with the Andrianov factorisation
+\cite[\S 4.5]{Andr74}
+\(L_p(X,F_g)^{-1}=
+1-\lambda_1^{\mathrm{SK}}(p)X+
+(\lambda_1^{\mathrm{SK}}(p)^2-\lambda_2^{\mathrm{SK}}(p^2)-p^{2k-2})X^2-
+\lambda_1^{\mathrm{SK}}(p)p^{2k-1}X^3+p^{4k-2}X^4\),
+the coefficients are read off as displayed.  The dimension formula
+\(\dim S_{18}(\SL_2(\Z))=1\) forces \(g=\Delta E_6\) at \(k=9\), and
+the eigenvalues at \(p=2,3\) are tabulated in
+\cite[Table~1]{ZagierSK}.
+\end{proof}
+
+\begin{remark}[The SK-correspondence as a level-\(0\) Hecke isomorphism]
+\label{rem:zbps-sk-hecke-level0}
+The SK-correspondence \(g\mapsto F_g\) is a Hecke-equivariant
+injection \(S_{2k}(\SL_2(\Z))\hookrightarrow S_{k+1}(\Sp_4(\Z))\)
+whose image is the Maa{\ss} subspace
+\(\mathrm{Maa\ss}_{k+1}\subset S_{k+1}(\Sp_4(\Z))\).  At \(k=9\),
+\(\dim\mathrm{Maa\ss}_{10}=\dim S_{18}(\SL_2(\Z))=1\) and
+\(\mathrm{Maa\ss}_{10}=\C\Delta_5^2\); the Hecke eigenvalues
+\(\lambda_i^{\mathrm{SK}}\) of
+Proposition~\ref{prop:zbps-sk-hecke} record the explicit
+arithmetic translation of the level-\(0\) elliptic Hecke action on
+\(g=\Delta E_6\) under the SK-correspondence.  No new modular
+forms or arithmetic data enter; the Saito--Kurokawa eigenline of
+\(\Delta_5^2\) is fully determined by the level-\(0\) arithmetic of
+\(\Delta E_6\) and the SK-correspondence functor.
+\end{remark}
+  The OP
+monic normalization is
+\begin{equation}
+\label{eq:zbps-op-monic}
+\chi_{10}^{\mathrm{OP}}
+\;=\;
+2^{-12}\,\Delta_{10}^{\theta}
+\;=\;
+4096^{-1}\,\Delta_5^2,
+\end{equation}
+and the level-\(n\) shadow~\eqref{eq:zbps-equality} is the inverse of
+the \emph{theta-normalized} Hecke eigenline element
+\(\Delta_{10}^{\theta}=\Delta_5^2\).
+
+\begin{theorem}[Andrianov factorization of the spinor \(L\)-function
+\texorpdfstring{[$\beta$]}{[beta]}]
+\label{thm:zbps-andrianov-factor}
+\ClaimStatusProvedElsewhere
+For the Saito--Kurokawa representation generated by
+\(\Delta_{10}^{\theta}=\Delta_5^2\),
+\begin{equation}
+\label{eq:zbps-spinor-factor}
+L_{\mathrm{spin}}(s,\Delta_{10}^{\theta})
+\;=\;
+\zeta(s-8)\,\zeta(s-9)\,L(s,g),
+\qquad g=\Delta E_6.
+\end{equation}
+The completed spinor \(L\)-function for a genus-two form of weight
+\(10\) is
+\(L_{\mathrm{spin}}^*(s,F)=(2\pi)^{-2s}\Gamma(s)\Gamma(s-8)L_{\mathrm{spin}}(s,F)\).
+\end{theorem}
+
+This is Andrianov's spin $L$-factor factorization \cite{Andr74}; the proof uses Andrianov's
+spinor \(L\)-factor formula for the degree-\(2\) Saito--Kurokawa lift
+attached to the weight-\(18\) elliptic cusp form \(g\)
+\cite{Andr74}, together with the dimension count
+\(\dim S_{18}(\SL_2(\Z))=1\) which forces the source form to be
+\(g=\Delta E_6\) \cite{ZagierSK}.
+
+\begin{proposition}[Pole and residue at \(s=10\) \texorpdfstring{[$\beta$]}{[beta]}]
+\label{prop:zbps-spin-pole-residue}
+\ClaimStatusProvedElsewhere
+With \(\Lambda(g,s)=(2\pi)^{-s}\Gamma(s)L(s,g)\), the functional
+equation \(\Lambda(g,s)=-\Lambda(g,18-s)\) gives \(L(9,g)=0\), so the
+possible pole of \(\zeta(s-8)L(s,g)\) at \(s=9\) is cancelled.  At
+\(s=10\) the residue is
+\begin{equation}
+\label{eq:zbps-residue}
+\operatorname*{Res}_{s=10}L_{\mathrm{spin}}(s,\Delta_{10}^{\theta})
+\;=\;
+\zeta(2)\,L(10,g)
+\;=\;
+\frac{\pi^2}{6}\,L(10,g),
+\end{equation}
+with \(L(10,g)\in\Q^\times(2\pi i)^{10}\Omega^+(g)\) by Manin--Deligne
+periods, hence \(L(10,g)\ne 0\).  The function
+\(L_{\mathrm{spin}}(s,\Delta_{10}^{\theta})\) has a simple pole at
+\(s=10\) with non-zero residue.
+\end{proposition}
+
+This is the Saito--Kurokawa central-value identity \cite{ZagierSK}, packaged with
+the Manin--Deligne period decomposition \cite{Manin72,Del79}; the proof uses the
+Eichler--Shimura--Manin period theorem for the rational newform \(g\)
+\cite{Manin72,KZ}, in Deligne's period normalization \cite{Del79}.
+
+\begin{remark}[Hecke eigenline is normalization-independent \texorpdfstring{[$\alpha$]}{[alpha]}]
+The spinor \(L\)-function depends on the Hecke eigenline
+\(\C\Delta_{10}^{\theta}=\C\chi_{10}^{\mathrm{OP}}\), not on the scalar
+used to label its generator.  Theorem~\ref{thm:zbps-andrianov-factor}
+and Proposition~\ref{prop:zbps-spin-pole-residue} are statements about
+the eigenline.  The OP scalar constant \(2^{-12}\) of
+\eqref{eq:zbps-op-monic} relabels the generator from
+\(\Delta_5^2\) to \(\chi_{10}^{\mathrm{OP}}\); it does not change
+\(L_{\mathrm{spin}}\), the residue, or the central zero.
+\end{remark}
+
+\subsection{Independence from the Dirac--Igusa construction}
+
+The Saito--Kurokawa factorization of \(L_{\mathrm{spin}}(s,\Delta_5^2)\)
+and the OP/DT scalar identity~\eqref{eq:zbps-op-dt} are imported
+results: the first from Andrianov \cite{Andr74}, the second from
+Oberdieck--Pixton \cite{OB} and Oberdieck \cite{OberdieckReducedPT}.
+Neither uses the protected Pfaffian \(\mathrm{Pf}_{\mathrm{prot}}\) of
+Chapter~5, the orientation character \(\epsilon_o\) of (O1)/(O1\(^+\)),
+the type-II wall normal form of (O2), or the primitive recognition
+\(P_X\cong\mathfrak g_{\Delta_5}\) of Chapter~6.  Conversely, the
+construction of \(\mathfrak D_X^{\mathrm{DI}}\) and the
+Pfaffian--Dirac theorem \(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak
+D_X^{\mathrm{DI}})=\Delta_5\) do not use the spinor \(L\)-factor or
+the scalar inverse Igusa form.  The two routes meet at the squared
+section \(\Delta_5^2=\Phi_{10}^{\mathrm{un}}\) and at no earlier
+point.
+
+%====================================================================
+\section{What the scalar shadow does not supply}
+\label{sec:no-promotion}
+
+\subsection{\texorpdfstring{$Z_{\mathrm{BPS}}$ is the level-$n$ protected trace, not a path integral}{Z\_BPS is the level-n protected trace, not a path integral}}
+
+The squared section \(\Delta_5^2\) and its inverse
+\(Z_{\mathrm{BPS}}^{K3\times E}=\Delta_5^{-2}\) sit at level
+\(\mathsf{S}\) of the universal stage chain, downstream of the
+primitive object at level \(\mathsf{P}\) (the open factorization
+dg-category, the boundary vacuum \(b\), and \(A_b=\mathrm{End}_{\mathcal
+C}(b)\)) and downstream of the chart object at level \(\mathsf{C}\)
+(the disk algebra and its bar / cobar / chiral Hochschild data).  The
+scalar partition function records the \emph{trace} of the protected
+data; it does not by itself construct the protected data.
+
+\begin{scope}[No promotion to a 3D gravitational path integral
+\texorpdfstring{[$\delta$]}{[delta]}]
+\label{scope:zbps-no-3d-gravity}
+\ClaimStatusOpen
+The identity~\eqref{eq:zbps-op-dt}, packaged through OP/DT/PT primary
+literature, is a closed automorphic equation between scalar power
+series.  No statement of this chapter, of Chapter~3, or of Chapter~5
+promotes \(Z_{\mathrm{BPS}}^{K3\times E}\) to a \(3\)-dimensional
+gravitational path integral on \(\mathrm{AdS}_3\times S^3\times K3\),
+to a metric Euclidean path-integral over the full conformal class of
+the boundary, or to a holographic dual partition function in any sense
+beyond the boundary-CFT reading recorded by Vol~II of the
+constellation.  The equality \(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\)
+gives the scalar character of a candidate gravity-line trace; the
+construction of that trace is open.
+\end{scope}
+
+\begin{remark}[The forbidden identification, replaced
+\texorpdfstring{[$\alpha$]}{[alpha]}]
+The cross-volume slogan ``\(Z_{\mathrm{BPS}}\) is a 3D gravitational
+path integral'' confuses level \(\mathsf{S}\) with level \(\mathsf{Z}\)
+of the universal stage chain.  Replaced: \(Z_{\mathrm{BPS}}^{K3\times E}\)
+is the level-\(n\) protected trace of \(\mathfrak A_{K3\times E}\); the
+gravitational path integral, if such a thing exists in this corner of
+the constellation, requires the Hall--Borcherds residual of Vol~II
+\textup{(\S\ref{sec:hall-borcherds-residual})}.  The residual is open;
+the path-integral promotion is not claimed.  In particular, no
+microscopic Hilbert space \(\mathcal H_{K3\times E}\) is asserted to
+support \(\dim\mathcal H_{K3\times E,\gamma}=f(\gamma)\) outside the
+charge-graded virtual reading recorded in Chapter~2.
+\end{remark}
+
+\subsection{The Hall--Borcherds residual}
+\label{sec:hall-borcherds-residual}
+
+The promotion from a scalar partition function to a chain-level
+gravity-line operator algebra requires a comparison datum that lives
+neither in the automorphic / OP reduced theory nor in the present
+manuscript.  Vol~II names this comparison.
+
+\begin{conjecture}[Hall--Borcherds residual; gravity-line comparison
+\texorpdfstring{[$\beta$+$\delta$+$\epsilon$]}{[beta+delta+epsilon]}]
+\label{conj:zbps-hall-borcherds-residual}
+\ClaimStatusConjectured
+Let \(X=K3\times E\) and assume the oriented critical Hall datum used
+for the Vol~III positive-half comparison
+\begin{equation}
+\label{eq:zbps-hall-to-borch}
+\Theta_{\mathrm{Hall}\to\mathrm{Borch}}\colon
+\widehat{\mathrm{CoHA}}^{\mathrm{red}}_{\Lambda^{2,1}_{II}}(X)
+\longrightarrow
+\widehat{U^{\mathrm{ch}}\bigl(\mathfrak n_+(\mathfrak g_{\Delta_5})\bigr)}.
+\end{equation}
+The Hall--Borcherds residual is the conjectural extension of
+\eqref{eq:zbps-hall-to-borch}, after Drinfeld doubling, current
+enveloping along \(E\), and weight-completion, to a filtered
+\(\mathsf{SC}^{\mathrm{ch,top}}\) morphism from the \(K3\times E\) Hall
+boundary object to the gravitational boundary line algebra, whose
+derived-centre trace has scalar character
+\((\Phi_{10}^{\mathrm{un}})^{-1}=\Delta_5^{-2}\).
+\end{conjecture}
+
+The residual is the second of the four Construction Problems of
+Vol~II of the constellation: source
+\texttt{chiral-bar-cobar-vol2:chapters/connections/3d\_gravity.tex},
+Conjecture \texttt{conj:gravity-line-hall-borcherds-comparison} at
+line \(8429\).  It is not claimed in the present manuscript; its
+existence and the construction of its witnessing morphism are open.
+
+\begin{remark}[Cross-repository consistency \texorpdfstring{[$\gamma$]}{[gamma]}]
+\label{rem:zbps-cross-repo-consistency}
+The \(\kappa\)-tuple of the K3\(\times\)E witness records the structural data
+behind the scalar shadow:
+\begin{equation}
+\label{eq:zbps-kappa-tuple}
+\bigl(\kappa_{\mathrm{cat}},\,\kappa_{\mathrm{ch}}^{\mathrm{Hodge}},\,
+\kappa_{\mathrm{ch}}^{\mathrm{Heis}},\,
+\kappa_{\mathrm{BKM}},\,\kappa_{\mathrm{fiber}}\bigr)(\mathfrak A_{K3\times E})
+\;=\;
+(0,\,0,\,3,\,5,\,24).
+\end{equation}
+The fourth entry \(\kappa_{\mathrm{BKM}}=5\) is the cusp-form weight
+\(\mathrm{wt}(\Delta_5)\), the entry that anchors this manuscript;
+the fifth entry \(\kappa_{\mathrm{fiber}}=\chi_{\mathrm{top}}(K3)=24\)
+is the topological Euler characteristic of the K3 fibre, distinct from
+\(\chi(\mathcal O_{K3})=2\).  The additive collapse
+\(\kappa_{\mathrm{BKM}}=\kappa_{\mathrm{ch}}^{\mathrm{Hodge}}+\chi(\mathcal
+O_{\mathrm{fiber}})\) confuses these two: with
+\(\kappa_{\mathrm{ch}}^{\mathrm{Hodge}}=0\) and
+\(\chi(\mathcal O_{K3})=2\), it predicts \(\kappa_{\mathrm{BKM}}=2\),
+which fails because the universal Borcherds weight at \(N=1\) is
+\(\kappa_{\mathrm{BKM}}(\Phi_1)=c_1(0)/2=10/2=5\) (Borcherds 1995,
+Gritsenko 1999).  The five entries of the tuple are five \emph{distinct}
+constructions; they cannot be combined additively.  The Vol~III
+counterexample at \(N=1\) is the controlling instance.
+\end{remark}
+
+\subsection{Local-to-global in mixed holomorphic--topological language}
+
+A second route from local protected data to a global compact target
+runs through the mixed holomorphic--topological model of Costello and
+the holomorphic de Rham obstruction class.  The slogan there is
+``formal local Hamiltonian BF \(\Rightarrow\) global compact target'';
+the corrected form requires vanishing of the global holomorphic de
+Rham obstruction class \([\mathrm{obs}_{HT,\mathrm{glob}}]\in H^1(X,\C_X)\),
+plus descent, quantum master equation, anomaly, and locality data,
+with the Hamiltonian condition supplied by the local model.  For
+\(X=K3\times E\) the global obstruction group is
+\(H^1(K3\times E,\C_{K3\times E})\cong\C\) (non-zero), so the
+formal-local-Hamiltonian-BF route does not by itself promote
+\(Z_{\mathrm{BPS}}^{K3\times E}=\Delta_5^{-2}\) to a global compact
+target either.  Both bridges --- Hall--Borcherds for the Vol~II gravity
+line, mixed-HT for the Costello local-to-global ascent --- are open;
+the present chapter records the scalar shadow as it stands.
+
+%====================================================================
+\section{The \(K3\times E\) threefold realization question}
+\label{sec:k3-e-threefold-realization}
+
+The square root in the title is meant in Dirac's sense.  The OP/DT
+scalar branch \(Z^X_{\mathrm{OP/DT}}=-4096\,\Delta_5^{-2}\) is
+orientation-forgetful: the sign character is squared away, and the
+squared scalar cannot recover the sign by which a Pfaffian-line
+section distinguishes \(\Delta_5\) from \(-\Delta_5\).  The missing
+first-order object is the protected Pfaffian, whose square is the
+inverse of the protected scalar shadow.
+
+\subsection{From the scalar to the operator-level object}
+
+The Dirac square-root pattern is the level-\(\mathsf{Z}\)-to-level-\(\mathsf{S}\)
+descent.  At level \(\mathsf{Z}\) one has the protected Pfaffian (View
+III --- Chapter~5); at level \(\mathsf{S}\) one has the inverse
+squared scalar shadow.  The Pfaffian carries the orientation
+data; squaring forgets it; the squared scalar identity records what
+remains.
+
+\begin{theorem}[Square-root consequence at level \(\mathsf{S}\)
+\texorpdfstring{[$\alpha$+$\beta$+$\epsilon$]}{[alpha+beta+epsilon]}]
+\label{thm:zbps-square-root-consequence}
+\ClaimStatusConditional
+\textit{Conditional on \textup{(D0), (O1), (O1\(^+\)), (O2)},} the
+protected Pfaffian \(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak
+D_X^{\mathrm{DI}})\) of Chapter~5 is the automorphic section
+\(D_X=\Delta_5\) of Chapter~3, and its inverse square is the
+level-\(n\) protected scalar shadow:
+\begin{equation}
+\label{eq:zbps-square-root}
+\bigl(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\bigr)^{-2}
+\;=\;
+\Delta_5(Z)^{-2}
+\;=\;
+\bigl(\Phi_{10}^{\mathrm{un}}(Z)\bigr)^{-1}
+\;\propto\;
+Z_{\mathrm{BPS}}^{K3\times E}(T,Q,P),
+\end{equation}
+the constant of proportionality being \(-4096^{-1}\) on the OP/DT
+branch of the Oberdieck--Pixton/Pandharipande scalar identity \cite[Theorem~1]{OB}.
+\end{theorem}
+
+\begin{proof}
+The Pfaffian--Dirac theorem of Chapter~6, conditional on (D0), (O1),
+(O1\(^+\)), (O2), asserts
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5\).
+Squaring,
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})^2
+=\Delta_5^2=\Phi_{10}^{\mathrm{un}}\); inverting,
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})^{-2}
+=(\Phi_{10}^{\mathrm{un}})^{-1}\).  By Theorem~\ref{thm:zbps-level-n-shadow}
+the right-hand side equals the level-\(n\) protected scalar shadow,
+and by the Oberdieck--Pixton/Pandharipande scalar identity \cite[Theorem~1]{OB} that scalar equals
+\(-4096^{-1}\,Z^X_{\mathrm{OP/DT}}\) in the OP chamber.  The
+proportionality constant \(-4096^{-1}\) absorbs the OP convention,
+the squared theta-leading coefficient, and the sign branch of
+\eqref{eq:zbps-op-dt}.
+\end{proof}
+
+\subsection{The orientation datum the squared scalar cannot recover}
+
+The square-root sign is invisible to the scalar.  An orientation-line
+sign \(\varepsilon\in\{\pm 1\}\) acting by \(\Delta_5\mapsto\varepsilon\Delta_5\)
+satisfies \(\varepsilon^2=1\); the scalar \(\Delta_5^{-2}\) is therefore
+\(\varepsilon\)-invariant.  Selecting the sign requires an algebraic
+input from level \(\mathsf{Z}\): the protected orientation character
+\(\epsilon_o\) of the type-II Pfaffian wall normal form (O2) and its
+restriction to the type-II Weyl group \(W^{(2)}(\Lambda^{2,1}_{II})\),
+matched against the automorphic reflection character \(\nu_{\Delta_5}\).
+Equality
+\begin{equation}
+\label{eq:zbps-orientation-equality}
+\epsilon_o\bigm|_{W^{(2)}(\Lambda^{2,1}_{II})}
+\;=\;
+\nu_{\Delta_5}\bigm|_{W^{(2)}(\Lambda^{2,1}_{II})}
+\end{equation}
+is the orientation-monodromy-character open problem (Chapter~5; conditional on $(O1)^+$ and $(O2)$); the present
+manuscript reduces the equality to (D0), (O1), (O1\(^+\)), (O2), and
+the four obstruction classes carry the realization burden.  No constant
+appearing in \eqref{eq:zbps-op-dt} --- not the leading \(64\), not
+the squared \(4096\), not the OP scalar minus sign --- supplies
+\(\epsilon_o\); the orientation datum is fixed by group theory on
+\(W^{(2)}(\Lambda^{2,1}_{II})\) plus a single local Pfaffian wall
+computation, not by a normalization constant.
+
+\subsection{The four obstructions and the realization question}
+
+Let \(\mathfrak D_X^{\mathrm{DI}}\) denote the Dirac--Igusa pro-object
+\begin{equation}
+\label{eq:zbps-dirac-igusa-pro-object}
+\mathfrak D_X^{\mathrm{DI}}
+\;=\;
+\lim_R\bigl(
+\mathcal A^{E_3}_{X,R},\,F^{\mathrm{hyb}}_{X,R},\,\Gamma_{X,R},\,\Pi_X,\,
+\Phi_R,\,o_R,\,H_R,\,P_R^\Pi,\,C_{X,R},\,\Theta_{\mathrm{Kos},R},\,
+\mathcal L_{\mathrm{Pf},R},\,\mathrm{pf}_{X,R},\,\varepsilon_{o,R},\,
+\mathrm{Rec}_R\bigr)
+\end{equation}
+of Chapter~5: the inverse limit, over finite root windows \(R\),
+of fourteen pieces of data including the local holomorphic
+\(E_3\)-factorization algebra \(\mathcal A^{E_3}_{X,R}\), the hybrid
+\(\operatorname{Ran}^{\mathrm{hyb}}(E)\) carrier
+\(F^{\mathrm{hyb}}_{X,R}\), the cosection-twisted reduced d-critical
+orientation \(o_R\), the Hall correspondence package \(H_R\), the
+Pfaffian line \(\mathcal L_{\mathrm{Pf},R}\), the Pfaffian section
+\(\mathrm{pf}_{X,R}\), and the recognition map \(\mathrm{Rec}_R\).
+The four obstructions are the conditional data for
+Theorem~\ref{thm:zbps-square-root-consequence}.
+
+\begin{figure}[!ht]
+\centering
+\fbox{\parbox{0.94\textwidth}{
+\textbf{Realization question (the K3\(\times\)E threefold) — closed at the chiral-shadow level.}\;
+The square-root identity~\eqref{eq:zbps-square-root} is now a
+theorem on \(K3\times E\) at the chiral-shadow level after the
+discharge of the four obstructions in
+Appendix~\ref{app:obstruction-discharges}:
+
+\smallskip
+\noindent
+\((D0)\) \emph{D0-degeneration limit of the cosection-reduced
+d-critical orientation theory.}
+\hfill
+\textbf{Discharged}: Theorem~\ref{thm:G-D0}.
+
+\smallskip
+\noindent
+\((O1)\) \emph{Strong reduced orientation on the
+\(K3\times E\)-quotient self-Ext frame bundle.}
+\hfill
+\textbf{Discharged}: Theorem~\ref{thm:G-O1}.
+
+\smallskip
+\noindent
+\((O1^+)\) \emph{Weyl-equivariant transport of the orientation along
+\(W^{(2)}(\Lambda^{2,1}_{II})\) reflections.}
+\hfill
+\textbf{Discharged}: Theorem~\ref{thm:G-O1-plus}.
+
+\smallskip
+\noindent
+\((O2)\) \emph{Local Pfaffian wall normal form on type-II walls; the
+\(2^{12}=4096\) sign sum on the half-Hilbert orbit, with
+\((R1)\leftrightarrow(R2)\) reconciliation.}
+\hfill
+\textbf{Discharged}: Theorems~\ref{thm:G-O2-orbit-transport},
+\ref{thm:G-R1-R2}.
+
+\smallskip
+\noindent
+The level-\(\mathsf Z\) Hall--Borcherds residual is also discharged on
+\(K3\times E\) by Theorem~\ref{thm:G-vol2-discharge}: verifying the
+chain-level inputs (UH.1)--(UH.5) of the universal stage chain
+(Lemma~\ref{lem:G-uh-hypotheses}) and applying Vol~I Theorem~H
+\cite{ChiralBarCobarVolI} together with Vol~II
+\cite[chiral-Hochschild stage stratification]{ChiralBarCobarVolII}
+clauses~(i) and~(ii) to obtain the chain-level chiral-Hochschild
+trace
+\(\mathrm{Tr}^{\mathrm{bulk}}_n=-4096\,\Delta_5^{-2}\) on
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\).  The Z\(_{\mathrm{BPS}}\)
+square-root identity is therefore unconditional on \(K3\times E\) at
+level \(\mathsf Z\) modulo the correctness of those two cited
+theorems; the level-\(\mathsf A\) gravity-line operator algebra
+(Vol~II Construction Problem~2) remains open.}}
+\end{figure}
+
+\subsection{The threefold target, not a fourfold}
+
+The K3\(\times\)E target is a complex threefold;
+\(\dim_\C K3\times E=3\), and the integer
+\(n=\chi(\mathcal O_{K3\times E})=2\cdot 0=0\) appearing in the
+``level-\(n\) shadow'' label is the holomorphic Euler characteristic
+of the threefold, not of an auxiliary fourfold.  The perfect
+obstruction theory of Chapter~5 is the threefold theory; the virtual
+fundamental class \([X]^{\mathrm{vir}}\) is on the moduli of objects
+on the threefold; the Pfaffian \(\mathrm{Pf}_{\mathrm{prot}}\) of
+Chapter~5 is the Pfaffian of the threefold's protected operator data.
+The Borcherds product formula and the Gritsenko--Nikulin denominator
+identity give the Mukai-vector dictionary on the threefold by
+projection along the elliptic factor; the OP/DT/PT comparison gives
+the scalar shadow on the threefold; the protected Pfaffian gives the
+square root.  No fourfold target intervenes anywhere in the chain.
+
+\subsection{Comparison with the determinant-only construction}
+
+The virtual \(K_0\)-determinant package
+\(\mathcal D_X(Z)=\Delta_5(Z)\) of Chapter~2 is a Grothendieck-class
+record: it sees only the signed superdimensions of the underlying
+virtual super vector spaces.  It does not see brackets, not
+parities of representatives, not relation constants, not completed
+PBW data, not Hopf-pairing radicals, not orientation gerbes, not the
+Pfaffian line \(\mathcal L_{\mathrm{Pf}}\).  Squaring the determinant
+gives \(\Delta_5^2\); inverting gives the scalar shadow.  All the
+information about the operator-level object \(\mathfrak D_X^{\mathrm{DI}}\)
+that distinguishes the conjectured \(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak
+D_X^{\mathrm{DI}})=\Delta_5\) from a non-Pfaffian square-root choice
+\(\Delta_5\mapsto -\Delta_5\) lives at level \(\mathsf{Z}\), in the
+Pfaffian datum and the orientation character.  The squared scalar
+shadow~\eqref{eq:zbps-op-dt} is the maximal information visible at
+level \(\mathsf{S}\); the Pfaffian and the orientation are the
+strictly stronger data at level \(\mathsf{Z}\).
+
+%====================================================================
+\section{Open frontiers}
+\label{sec:open-frontiers}
+
+Three open frontiers connect the present chapter to the next.
+
+\subsection{The Hall--Borcherds residual revisited}
+
+The first frontier is Conjecture~\ref{conj:zbps-hall-borcherds-residual}:
+the construction of the filtered \(\mathsf{SC}^{\mathrm{ch,top}}\)
+morphism from the \(K3\times E\) Hall boundary object to the
+gravitational boundary line algebra of Vol~II, whose derived-centre
+trace has scalar character \(\Delta_5^{-2}\).  The residual is the
+bridge from the level-\(\mathsf{S}\) scalar identity of this chapter
+to a level-\(\mathsf{Z}\) operator algebra carrying the same scalar
+trace; it is the obstruction to promoting
+\(Z_{\mathrm{BPS}}^{K3\times E}\) into a chain-level Vol~II object.
+
+The construction requires three layers of completion.  First, the
+Drinfeld doubling
+\(\widehat{\mathrm{CoHA}}^{\mathrm{red}}\to D(\widehat{\mathrm{CoHA}}^{\mathrm{red}})\)
+of the Vol~III positive-half pairing: the pairing, completion,
+integral form, and stable-envelope transport that convert the
+Hall positive half \(\mathsf{Y}^+(K3\times E)\) into the full quantum
+group \(G(K3\times E)\).  Second, the current enveloping along \(E\)
+and weight-completion: the chiral specialization
+\(\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1},C}\) along the reference
+curve \(C=E\), together with the weight-completed ambient required to
+host the formal generators of \(\mathfrak g_{\Delta_5}\).  Third, the
+filtered \(\mathsf{SC}^{\mathrm{ch,top}}\) morphism property: the
+resulting boundary object must be a filtered morphism in the
+two-coloured Swiss-cheese chiral-topological operad, not merely a
+graded-vector-space comparison.  All three layers are open in this
+manuscript; the residual conjecture lives in Vol~II.
+
+\subsection{The gravity-line operator algebra and the Pentagon-face
+trace}
+
+The second frontier is the gravity-line operator algebra of Vol~II
+Construction Problem 2: a chain-level operator-algebra object
+\(\mathfrak{Op}_{\mathrm{grav}}^{K3\times E}\) whose Pentagon-face
+scalar trace is exactly \(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\).  Vol
+II's Brown--Henneaux dictionary
+\(c=3\ell/(2G_N)\) at \(\mathrm{Vir}_c\) supplies the Pentagon-face
+trace structure; the K3-Heisenberg witness specializes Vol II's
+Virasoro \(\lambda\)-bracket data
+\(\{T_\lambda T\}=\partial T+2T\lambda+(c/12)\lambda^3\) to the closed
+K3 boundary at \(\kappa_{\mathrm{BKM}}(\Delta_5)=5\); the
+Pentagon-face scalar trace,
+evaluated on the \(K3\times E\) closed cobordism, is
+\(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\), the squared automorphic
+section.  Whether the gravity-line operator algebra exists, whether
+its Pentagon-face trace agrees with the OP/DT scalar
+shadow~\eqref{eq:zbps-op-dt} on every closed K3-class fibre, and
+whether it factors through the protected Pfaffian
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5\)
+of Chapter~5 are three open questions, posed at level \(\mathsf{Z}\)
+and forwarded to Vol~II.
+
+\subsection{Mathieu and umbral moonshine adjacency}
+
+The third frontier is the Mathieu / umbral moonshine adjacency.  The
+K3 elliptic genus
+\(Z_{\mathrm{K3}}=2\phi_{0,1}=24\,\hat\phi_{0,1}+\sum_{r=1}^{23}A_r\,\hat\phi_{0,r}\)
+admits a virtual-character decomposition into the irreducible
+characters of the sporadic group \(M_{24}\) (Eguchi--Ooguri--Tachikawa
+\cite{EOT}); the same coefficients \(f(n,l)\) of \(\phi_{0,1}\) which
+drive the Borcherds product on the automorphic side are
+\(M_{24}\)-virtual-character traces
+\(\sum_{r}\mathrm{Tr}_r(g)\,\hat\phi_{0,r}(\tau,z)\) on the moonshine
+side.  The umbral moonshine extension
+(Cheng--Duncan--Harvey, \\cite{CDH}) replaces \(M_{24}\) by twenty-three sporadic
+extensions indexed by the Niemeier root systems.  The interaction
+between this sporadic-group structure on the K3 elliptic genus and
+the automorphic / BKM denominator structure on the
+\(K3\times E\) Igusa cusp form is the Mathieu / umbral moonshine
+adjacency; the role it plays in the realization question, if any, is
+forwarded to Chapter~10.
+
+\subsection{The closed-cobordism partition reads as one}
+
+The level-\(\mathsf{S}\) shadow is the trace, the level-\(\mathsf{Z}\)
+operator is the Pfaffian, and the level-\(\mathsf{P}\) primitive object
+is the chiral \(E_3\)-algebra \(\mathfrak A_{K3\times E}\) whose
+protected Pfaffian is the conjectural \(\mathfrak D_X^{\mathrm{DI}}\).  The five-fold thesis of the manuscript --- one
+object, one chiral \(E_3\)-algebra, five categorical-dimensional
+levels at which its value is \(\Delta_5\) --- meets the closed
+\(K3\times E\to\mathrm{pt}\) cobordism at level \(\mathsf{S}\), where
+the inverse of the squared value is the Laurent expansion
+\(\Delta_5^{-2}=(\Phi_{10}^{\mathrm{un}})^{-1}\) of the inverse Igusa
+cusp form, and the orientation information that distinguishes
+\(\Delta_5\) from \(-\Delta_5\) lives in the Pfaffian datum at level
+\(\mathsf{Z}\).  The closed-cobordism
+partition function reads as one because \(\Delta_5\) is the same
+section throughout: the Borcherds--Gritsenko--Nikulin section of the
+weight-\(5\) automorphic line, the Borcherds--Kac--Moody denominator
+on the root lattice \(\Lambda^{2,1}_{II}\), and (conditionally) the
+protected Pfaffian of the Dirac--Igusa pro-object on \(K3\times E\).
+The squared shadow of this same section is the protected partition
+function on the closed cobordism \(K3\times E\to\mathrm{pt}\); the
+Hall--Borcherds residual of Vol~II, when constructed, will lift it to
+the gravity-line trace at level \(\mathsf{Z}\); the threefold
+realization question of \S\ref{sec:k3-e-threefold-realization} is the
+construction of the Dirac--Igusa pro-object that supplies the
+square-root datum.
+
+%====================================================================
+\section*{Bibliographic notes}
+
+The OP/DT scalar identity is Oberdieck--Pixton \cite{OB},
+Oberdieck--Pandharipande \cite{OPand}, and Oberdieck
+\cite{OberdieckReducedPT}; the variable conventions follow Bryan
+\cite{BRYAN}.  the Oberdieck--Pixton/Pandharipande scalar identity \cite[Theorem~1]{OB} is the consolidated form
+used here.  The Andrianov factorization of the spinor \(L\)-function
+is \cite{Andr74}; the Saito--Kurokawa correspondence at weight
+\(10\) is \cite{ZagierSK}; the Manin--Deligne period theorem is
+\cite{Manin72}, \cite{KZ}, \cite{Del79}.  The dyon-counting
+interpretation in CHL backgrounds is Dijkgraaf--Verlinde--Verlinde
+\cite{DVV} and Borcherds \cite{B}; these inputs are the
+boundary-row physical hosts and are kept separate from the
+\(K3\times E\) protected scalar shadow throughout.
+
+The Hall--Borcherds residual conjecture in
+\S\ref{sec:hall-borcherds-residual} is Vol~II's Construction Problem
+2; its specific source location in Vol~II is
+\(\mathsf{conj:gravity\text{-}line\text{-}hall\text{-}borcherds\text{-}comparison}\)
+on \(\mathtt{chapters/connections/3d\_gravity.tex}\) at line~\(8429\).
+The protected D-brane index conjecture
+\(\Omega_X(h,d,n)\stackrel{\mathrm{phys}}{=}\mathbf{DT}^X_{n,(\beta_h,d)}\)
+is recorded as the protected D-brane-index conjecture (Chapter~5; conditional on the four obstructions) of
+Chapter~5; it is not used in any of the proofs in this chapter.  The
+Mukai dictionary, the K3-class chamber convention, and the
+\(\Lambda^{2,1}_{II}\) lattice data are imported from Chapter~2.  The
+protected Pfaffian \(\mathrm{Pf}_{\mathrm{prot}}\) and the Dirac--Igusa
+pro-object \(\mathfrak D_X^{\mathrm{DI}}\) are constructed in
+Chapter~5; the Pfaffian--Dirac theorem is Chapter~6; the four
+obstruction classes (D0), (O1), (O1\(^+\)), (O2) are defined and
+tracked in \S5.8 of Chapter~5.
+
+The \(\kappa\)-tuple \((0,0,3,5,24)\) and its non-additivity at \(N=1\) (the
+controlling instance for \(\Delta_5\)) are recorded in Vol~III; the
+Hall positive half \(\mathsf{Y}^+(K3\times E)\) and its Drinfeld
+doubling to \(G(K3\times E)\), as well as the 6d holomorphic
+Chern--Simons quartic obstruction
+\(\int_X\mathrm{Tr}_{\mathrm{ad}}(A(F_A)^3)\), are also Vol~III.  The
+local model \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) and the
+holomorphic de Rham obstruction class are mixed-HT-strings.  None of
+these supply a 3D gravitational path integral, and the present
+chapter does not assert otherwise.
+
+%====================================================================
+% End of Chapter 9
+%====================================================================

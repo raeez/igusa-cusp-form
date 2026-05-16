@@ -1,0 +1,1290 @@
+% !TEX root = ../main.tex
+%
+% Appendix F — Eight build algorithms in pseudocode for the Dirac--Igusa
+% pro-object \mathfrak D_X^{\mathrm{DI}}.  Authored from main.tex line
+% ranges 5887--7460 (compact realization opening; finite algebraic
+% Dirac--Igusa target system; chiral Koszul source datum) and
+% 12147--14346 (Dirac--Igusa realization datum; primitive recognition
+% theorem; cofinal finite-window primitive-recognition datum; finite
+% retained K3 \times E Hall kernel; geometric hybrid local/wrapped/mixed
+% atlas; geometric source chiral Koszul coalgebra).  Cross-repo anchors:
+% \texttt{chiral-bar-cobar-vol2} Construction Problem 1 (the source of
+% \operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X) = \Delta_5); \texttt{calabi-yau-quantum-groups}
+% Hall--Drinfeld correspondence-programme remark (the K3-side BKM
+% Hall--Drinfeld double).
+%
+% Loaded from main.tex via \input{appendices/F_build_algorithms} after
+% \appendix has been opened at main.tex line 17081, so that
+% \thesection = \Alph{section}.  No \chapter, no second \appendix.
+
+\section{Eight build algorithms for the Dirac--Igusa pro-object}
+\label{app:eight-build-algorithms}
+
+The Dirac--Igusa pro-object
+\[
+\mathfrak D_X^{\mathrm{DI}}
+=\varprojlim_R
+\bigl(
+\mathcal A^{E_3}_{X,R},
+\mathcal F_{X,R}^{\mathrm{hyb}},
+\Gamma_{X,R},
+\Pi_X,
+\Phi_R,
+o_R,
+\mathcal H_R,
+P_R^\Pi,
+C_{X,R},
+\Theta_{\mathrm{Kos},R},
+\mathscr L_{\mathrm{Pf},R},
+\operatorname{pf}_{X,R},
+\epsilon_{o,R},
+\mathrm{Rec}_R
+\bigr)
+\]
+of Definition~\ref{thm:finite-stage-dirac-igusa-pro-object} and
+Definition~\ref{def:O1-strong-reduced-orientation} is the conditional source
+operator-level package whose protected Pfaffian, after the four
+obstructions \((D_0)\), \((O1)\), \((O1)^+\), \((O2)\) are discharged,
+realizes the Igusa cusp form,
+\[
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5,\qquad
+\epsilon_o=\nu_{\Delta_5}\big|_{W^{(2)}(\La^{2,1}_{II})},\qquad
+P_X^{\Pi,\mathrm{red}}\cong\fg_{\Delta_5}.
+\]
+Construction at finite Harder--Narasimhan height \(R\) proceeds through
+eight construction steps.  Each step is a procedure on input data
+already supplied by earlier steps and feeds named output data into the
+next.  The eight steps stratify the realization datum
+\(\mathfrak K_X=(L_X,H_X,O_X,D_X,R_X)\) of
+Definition~\ref{thm:finite-stage-dirac-igusa-pro-object}: steps 1--3
+realize \((L_X)\) and \((H_X)\); step 4 realizes the local content of
+\((O_X)\); step 5 produces the Hall correspondence object; step 6 fixes
+the Pfaffian--Dirac line and feeds the orientation character; steps 7--8
+realize \((D_X)\) and \((R_X)\).
+
+Throughout, \(X=S\times E\) with \(S\) a smooth complex K3 surface and
+\(E\) a smooth elliptic curve.  \(\sigma=\sigma_{s,t}\) is Liu's product
+stability condition on the Abramovich--Polishchuk heart in
+\(\mathsf{D}^b(\mathrm{Coh}(X))\)
+\cite{AbramovichPolishchukTStructures,LiuProductStability}.  The HN
+sector \((\sigma,S)\) is fixed and the cofinal subsystem
+\(\mathcal R_{\mathrm{HN}}=\{R_0<R_1<\cdots\}\) is the one of
+Definition~\ref{def:O1-strong-reduced-orientation}, governed by
+\textup{[K3$\times$E-fin]}, \textup{[K3$\times$E-atlas]}, and
+\textup{[ML]}.
+
+Each construction step carries a licensing tag pulled from the
+five-type universal stage chain
+\(\mathsf P\to\mathsf C\to\mathsf S\to\mathsf Z\to\mathsf A\) of
+\texttt{chiral-bar-cobar-vol2:CLAUDE.md~§9}: \(\alpha\) primitive,
+\(\beta\) functorial passage, \(\gamma\) shadow specialization,
+\(\delta\) endpoint convergence, \(\epsilon\) terminal scalar.  The
+ordering charge\(\to\)moduli\(\to\)hybrid\(\to\)orientation\(\to\)Hall
+\(\to\)Dirac+Pfaffian\(\to\)Koszul\(\to\)recognition is the unique
+ordering compatible with input/output type discipline; reordering any
+two adjacent steps fails an input check.
+
+The four obstructions are attributed to specific steps:
+\((D_0)\) is the cofinal-trivialization datum of the entire eight-step
+construction at every finite \(R\) (steps 1--6 supply its components);
+\((O1)\) lives at step 4; \((O1)^+\) lives at step 4 with a Coxeter
+coherence check feeding step 6; \((O2)\) lives at step 6.  Step 8
+inherits the obstruction tower discharged by steps 1--7 and adds the
+exact-completion residual \textup{(R8)} of
+Definition~\ref{def:cofinal-primitive-recognition-datum}.
+
+\subsection{Construction~1 — Charge window}
+\label{app:build-charge-window}
+
+\paragraph{Tag.} \(\alpha\)-primitive (lattice datum).
+
+\paragraph{Input.}
+HN height \(R\in\mathcal R_{\mathrm{HN}}\); the formal dyonic Mukai
+lattice \(\Gamma_X^{\mathrm{form}}\) of
+Definition~\ref{def:gram-index-lattice}; the Gram map
+\(\Pi_X:\Gamma_X^{\mathrm{form}}\to\Gamma_{\mathrm{gram}}\) and the
+cocycle \(B\) of Lemma~\ref{lem:gram-additivity-defect}; the active
+support \(\Gamma_{\mathrm{act}}=\{\gamma\in\Gamma_{\mathrm{eff}}\mid
+f(nm,l)\ne0\}\) of the Igusa Jacobi form \(\phi_{0,1}\); the cofinal
+subsystem \(\mathcal R_{\mathrm{HN}}\).
+
+\paragraph{Output.}
+A finite cusp-positive active window
+\[
+A_R\subset\Gamma_{\mathrm{act}}\subset\Gamma_{\mathrm{gram}},
+\qquad
+A_R\hbox{ downward saturated for the cofinal target-window order},
+\]
+together with the normal-ordered extension
+\[
+\widehat\Gamma_R=
+\{(c,T)\mid c\in\Gamma_R^{HN},\ T\in\mathcal T_R(c)\}
+\subset\widehat\Gamma_X,
+\qquad
+\Gamma_R^\Pi=\overline\Pi_X(\widehat\Gamma_R)\subset\Gamma_{\mathrm{gram}},
+\]
+the lift \(L:\Gamma_{\mathrm{gram}}\to\Gamma_X^{\mathrm{form}}\) of
+Lemma~\ref{lem:primitive-lift-every-gram-triple}, and the finite test
+window \(\Gamma_R^{\mathrm{test}}\) of
+Definition~\ref{def:O1-strong-reduced-orientation}.
+
+\paragraph{Procedure.}
+\begin{enumerate}
+\item Compute the active support cone
+\[
+\Gamma_{\mathrm{act}}=\{(n,l,m)\in\Gamma_{\mathrm{eff}}\mid f(nm,l)\ne 0\}
+\]
+from the Fourier expansion of the index-one weak Jacobi form
+\(\phi_{0,1}(\tau,z)=\sum_{n,l}c(n,l)q^nr^l\) of
+\cite{EZ:1}, with the index substitution
+\(f(nm,l):=c(nm,l)\) tabulated in
+Appendix~\ref{sec:n1-boundary-compatibility-conditions} for the
+\(N=1\) Igusa boundary.
+
+\item Set
+\[
+A_R^{\circ}
+=\{\gamma=(n,l,m)\in\Gamma_{\mathrm{act}}\mid n+|l|+m\le R\}.
+\]
+Form its downward saturation
+\[
+A_R
+=\{\gamma'\in\Gamma_{\mathrm{act}}\mid
+\exists\gamma\in A_R^{\circ},\ 0<\gamma'\le\gamma,\
+\gamma-\gamma'\in Q_+\},
+\]
+in the sense of Definition~\ref{def:cofinal-primitive-recognition-datum}.
+
+\item Normal-ordered lift.  For each \(c\in\Gamma_R^{HN}\) compute the
+\(B\)-translate orbit
+\[
+\mathcal T_R(c)
+=\Bigl\{\sum_{i<j}B(c_i,c_j)\Bigm|c=\sum_i c_i,\
+c_i\in F_{\sigma,S}(R),\ \sum_i h_S(c_i)\le R\Bigr\}.
+\]
+Set \(\widehat\Gamma_R=\{(c,T):c\in\Gamma_R^{HN},\ T\in\mathcal T_R(c)\}\).
+
+\item Finite target test window:
+\(\Gamma_R^{\mathrm{test}}=\overline\Pi_X(\widehat\Gamma_R)\), compatibly
+with \(R\to R'\) by inclusion.
+
+\item Output \((A_R,\widehat\Gamma_R,\Gamma_R^\Pi,\Gamma_R^{\mathrm{test}},L)\).
+\end{enumerate}
+
+\paragraph{Type checks.}
+\(A_R\) is finite and downward saturated;
+\(\overline\Pi_X(\widehat\Gamma_R)=\Gamma_R^\Pi\) lies in
+\(\Gamma_{\mathrm{gram}}\); \(\Gamma_R^{HN}\subset
+F_{\sigma,S}(R)\) is finite by \textup{[K3$\times$E-fin]}; the cocycle
+identity
+\(\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c')\) is an axiom of the cocycle.
+
+\paragraph{Obstructions discharged or invoked.}
+None; this step is purely lattice combinatorics from the imported
+Gritsenko--Nikulin Borcherds product
+\cite{GN,GNPartI,GNII,BorcherdsGKM88,Borcherds95}.
+The downward saturation is the input requirement of \textup{(R0)} in
+Definition~\ref{def:cofinal-primitive-recognition-datum}.
+
+\subsection{Construction~2 — Finite moduli}
+\label{app:build-finite-moduli}
+
+\paragraph{Tag.} \(\alpha\)-primitive (geometric source).
+
+\paragraph{Input.}
+The active window \(A_R\) and lift \(L\) of
+Construction~\ref{app:build-charge-window}; Liu's product stability
+condition \(\sigma_{s,t}\); the standing hypotheses
+\textup{[K3$\times$E-fin]} and \textup{[K3$\times$E-atlas]}.
+
+\paragraph{Output.}
+A finite class set \(C_R\) and lift
+\(\ell_R:\Gamma_R^\Pi\to C_R\) with
+\(\Pi_X(\ell_R(\gamma))=\gamma\); the family of finite-type quasi-smooth
+derived Artin substacks
+\[
+\mathfrak M^{ss}_{R,c}
+=\mathfrak M^{ss}_{\sigma_{s,t}}(X,c)_{\le R}
+\subset\operatorname{Perf}(X),
+\qquad c\in C_R,
+\]
+of \(\sigma_{s,t}\)-semistable objects of full Liu numerical class
+\(c\) and HN height \(\le R\); the scalar-rigidified truncation
+\(\mathfrak M^{\mathrm{sc}}_{R,c}\); the universal perfect complex
+\(\mathcal A_{R,c}\) on \(X\times\mathfrak M^{\mathrm{sc}}_{R,c}\); the
+finite stratification by retained closed substacks of finite residual
+inertia.
+
+\paragraph{Procedure.}
+\begin{enumerate}
+\item Form \(C_R=\{c=L\gamma:\gamma\in A_R\}\) closed under retained
+extension sums (taken in \(\Gamma_X^{\mathrm{form}}\)).
+
+\item For each \(c\in C_R\) cut the substack of
+\(\sigma_{s,t}\)-semistable objects of class \(c\) by HN height \(\le
+R\):
+\[
+\mathfrak M^{ss}_{R,c}=
+\bigl\{[A]\in\operatorname{Perf}(X)\mid
+\sigma_{s,t}\hbox{-semistable},\
+\hn(A)\le R,\
+\nu(A)=c\bigr\}.
+\]
+
+\item Verify finite-typeness: \textup{[K3$\times$E-fin]} (Liu product
+stability + product-boundedness theorem at fixed full Liu charge with
+finite fibres over the active charge) gives the finite-type assertion.
+PTVV \cite{PTVV2013} on the Calabi--Yau threefold \(X\) gives the
+\((-1)\)-shifted symplectic structure on
+\(\operatorname{Perf}(X)\), restricted to the retained semistable
+sector.
+
+\item Quasi-smoothness: the universal perfect complex
+\(\mathcal A_{R,c}\) supplies a relative cotangent complex of bounded
+Tor-amplitude on the retained charts.  Tangent at \(A\) is
+\(T_A\mathfrak M^{ss}_{R,c}\simeq\operatorname{RHom}_X(A,A)[1]\).
+
+\item Scalar rigidification: form \(\mathfrak M^{\mathrm{sc}}_{R,c}\) by
+killing the scalar \(\mathbb G_m\)-automorphism of
+\(c\)-stable factors.
+
+\item Two-step flag stack
+\(\mathfrak F^{(2)}_{R,c,c',c''}\) and extension stack
+\(\mathfrak E_{R,c,c'}\) constructed as iterated derived vector stacks
+of \(R\pi_*\mathcal RHom_X(\mathcal B,\mathcal A[1])\); both finite type
+and quasi-smooth in the retained sector by
+Proposition~\ref{prop:finite-dcritical-hall-product}.
+
+\item Output \((C_R,\ell_R,\{\mathfrak M^{ss}_{R,c}\},
+\{\mathfrak E_{R,c,c'}\},\{\mathfrak F^{(2)}_{R,c,c',c''}\})\) with
+universal perfect complexes and the finite stratification.
+\end{enumerate}
+
+\paragraph{Type checks.}
+\(\mathfrak M^{ss}_{R,c}\) is a finite-type quasi-smooth derived Artin
+substack of \(\operatorname{Perf}(X)\); the scalar rigidification leaves
+only finite residual inertia
+\(H_S\subset E_{\mathrm{tors}}\) on each connected stabilizer
+component, by
+Proposition~\ref{prop:finite-dcritical-hall-product};
+PTVV \((-1)\)-shifted symplectic structure restricts.
+
+\paragraph{Obstructions discharged or invoked.}
+\textup{[K3$\times$E-fin]} is invoked here in its product-boundedness
+form and supplies the finite-type assertion not in the cited literature
+for the K3\(\times\)E threefold; it is part of the standing datum.
+\textup{[K3$\times$E-atlas]} supplies the quasi-smooth d-critical
+charts.  These enter \((D_0)\) at the level of the finite Hall atlas
+of Theorem~\ref{thm:finite-stage-dirac-igusa-pro-object}.
+
+\subsection{Construction~3 — Hybrid wrapped factorization carrier}
+\label{app:build-hybrid-wrapped}
+
+\paragraph{Tag.} \(\beta\)-functorial passage (Stage-1 carrier).
+
+\paragraph{Input.}
+The finite moduli stacks
+\(\{\mathfrak M^{\mathrm{sc}}_{R,c}\}\) of
+Construction~\ref{app:build-finite-moduli}; the
+projection-finite/wrapped split by elliptic degree
+\(b_R^{\mathrm{geom}}:\Gamma_{\sigma,S}^{HN}(R)\to\Z_{\ge0}\) of
+Definition~\ref{def:hybrid-wrapped-factorization-datum}; a fixed
+origin \(0_E\in E\); the Abramovich--Polishchuk/Liu wrapped anchor
+candidate.
+
+\paragraph{Output.}
+The finite hybrid local/wrapped factorization datum
+\[
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}
+=
+(\mathcal C_{\sigma,S,\le R},
+b_R^{\mathrm{geom}},
+\mathcal F_R^{\mathrm{loc}},
+\mathcal G_R^{\mathrm{wr}},
+\mathfrak E_R^{\mathrm{loc}},
+\mathfrak E_R^{\mathrm{hyb}},
+\mathfrak E_R^{\mathrm{wr}},
+\mathfrak{Flag}_R^{\mathrm{hyb}},
+\mathsf{Corr}_R^{E,\mathrm{hyb}},
+\lambda_R,
+Q_{E,R},
+\theta^Q_R,
+o_R,
+I_R^{\mathrm{prot}})
+\]
+of Definition~\ref{def:hybrid-wrapped-factorization-datum},
+together with the hybrid Ran base
+\(\operatorname{Ran}^{\mathrm{hyb}}(E)\), the eight-word two-step
+binary flag atlas \(\{w\in\{\mathrm L,\mathrm W\}^3\}\), and the
+quotient-after-correspondence functor \(Q_{E,R}\).
+
+\paragraph{Procedure.}
+\begin{enumerate}
+\item \emph{Elliptic-degree split.}  Decompose
+\(\Gamma_{\sigma,S}^{HN}(R)
+=\Gamma_R^{\mathrm{loc}}\sqcup\Gamma_R^{\mathrm{wr}}\) where
+\(\Gamma_R^{\mathrm{loc}}=\{b_R^{\mathrm{geom}}=0\}\) and
+\(\Gamma_R^{\mathrm{wr}}=\{b_R^{\mathrm{geom}}>0\}\).  Verify additivity
+\(b_R^{\mathrm{geom}}(\gamma+\gamma')
+=b_R^{\mathrm{geom}}(\gamma)+b_R^{\mathrm{geom}}(\gamma')\) on retained
+extensions remaining in the quotient.
+
+\item \emph{Projection-finite local sector.}  For
+\(\alpha\in\Gamma_R^{\mathrm{loc}}\) and finite index set \(I\), build
+the closed-support incidence stack over \(E^I\):
+\[
+\mathfrak M^{\mathrm{loc,cl}}_{\alpha,R,I}
+=
+\Bigl\{(A,\mathbf e)\in\mathfrak M^{\mathrm{sc}}_{R,L\alpha}\times E^I
+\Bigm|p_E(\mathrm{Supp}\,A)\subset\bigcup_{i\in I}S\times\{e_i\}\Bigr\}.
+\]
+Form
+\(\mathscr H^{\mathrm{loc}}_{\alpha,R,I}=
+(\pi_{\alpha,R,I})_!(\Phi_{\alpha,R,I}^{\mathrm{loc}}\otimes
+o_{\alpha,R,I}^{\mathrm{loc}})\) and the open-support sheaf
+\(\mathcal F_{\alpha,R}^{\mathrm{loc}}(U)\) over \(U\subset E\) by
+restricted Borel--Moore configuration sums.
+
+\item \emph{Wrapped prequotient sector.}  For
+\(\eta\in\Gamma_R^{\mathrm{wr}}\), form the rigidified prequotient
+\(\mathcal M_{\eta,R}^{\mathrm{wr,rig}}\to\mathcal M_{\eta,R}^{\mathrm{wr}}\)
+by the Abramovich--Polishchuk / determinant anchor
+\[
+\lambda_\eta:\mathcal M_{\eta,R}^{\mathrm{wr,rig}}\longrightarrow E,
+\qquad
+\lambda_\eta(A)=\det Rp_{E,*}A
+\otimes\mathcal O_E(-\chi(A)\cdot 0_E),
+\]
+divided by a finite cover when \(\chi(A)\ne 1\) so that
+\(\lambda_\eta(t\cdot A)=\lambda_\eta(A)+t\) holds.  Verify the
+losslessness residual \(\mathfrak o^{\lambda,\mathrm{loss}}_R=0\) by
+the Ext-distinguishing test of
+Definition~\ref{def:hybrid-wrapped-factorization-datum}, separating
+\(W_0=i_{s,*}(\mathcal O_E\oplus\mathcal O_E)\) from
+\(W_L=i_{s,*}(L\oplus L^{-1})\).
+
+\item \emph{Mixed local/wrapped correspondences.}  For an ordered
+hybrid input
+\(\alpha_-\in\Gamma_R^{\mathrm{loc}}\),
+\(\eta\in\Gamma_R^{\mathrm{wr}}\),
+\(\beta_+\in\Gamma_R^{\mathrm{loc}}\), form
+\(\mathfrak E^{\mathrm{mix}}_{\alpha_-;\eta;\beta_+,R}\) before the
+reduced \(E\)-quotient.
+
+\item \emph{Eight-word two-step flag atlas.}  Build flag stacks
+\(\mathfrak F^{(2),w}_R\) for each
+\(w\in\{\mathrm L,\mathrm W\}^3=
+\{\mathrm{LLL},\mathrm{LLW},\mathrm{LWL},\mathrm{WLL},\mathrm{LWW},
+\mathrm{WLW},\mathrm{WWL},\mathrm{WWW}\}\), classifying filtrations
+with three associated graded factors of those types.  Verify the
+four-input pentagon coherence and the quotient-after-correspondence
+descent.
+
+\item \emph{Hybrid correspondence-module functor.}  Assemble the
+correspondence category
+\(\mathsf{Corr}^{E,\mathrm{hyb}}_R\) and the functor
+\(\mathcal B_R^{E,\mathrm{hyb}}:\mathsf{Corr}^{E,\mathrm{hyb}}_R
+\to\mathsf{Ch}_{\C}\) by
+\(\mathcal B_R^{E,\mathrm{hyb}}(e)=q_!\,\mathrm{TS}^{\mathrm{red}}_e\,p^*\)
+for every generating arrow
+\(e=(Y\xleftarrow{p}\mathfrak E_e\xrightarrow{q}Z)\).
+
+\item \emph{Quotient functor \(Q_{E,R}\).}  Apply
+\(E\)-equivariant compactly supported vanishing-cycle chains and the
+orientation descent of step~4 to produce the reduced object
+\[
+\mathcal F^{\mathrm{geom}}_{X,\sigma,S,\le R}
+=Q_{E,R}\circ\mathcal B_R^{E,\mathrm{hyb}}.
+\]
+
+\item Output the hybrid datum with all coherences and the protected
+integration map \(I_R^{\mathrm{prot}}\), with homogeneous
+\(s\)-degree the Borcherds trace exponent
+\(m_R=\operatorname{pr}_3\overline\Pi_X\).
+\end{enumerate}
+
+\paragraph{Type checks.}
+The carrier
+\(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\) is a hybrid
+correspondence-module functor on
+\(\mathsf{Corr}^{E,\mathrm{hyb}}_R\) with values in
+\(\mathsf{Ch}_{\C}\); the four-input pentagon is supplied by
+the eight-word two-step flag atlas; the anchor residual tuple
+\(\mathfrak o^\lambda_R=
+(\mathfrak o^{\lambda,\mathrm{ex}}_R,
+\mathfrak o^{\lambda,\mathrm{unit}}_R,
+\mathfrak o^{\lambda,\mathrm{loss}}_R,
+\mathfrak o^{\lambda,\mathrm{multi}}_R,
+\mathfrak o^{\lambda,\mathrm{tr}}_{R'R})\) vanishes; the hybrid
+residual \(\mathfrak O_{\mathrm{hyb},R}=0\) at every height \(R\),
+compatibly with transition maps.
+
+\paragraph{Obstructions discharged or invoked.}
+The middle type-II wall lies in
+\(\delta_2\leftrightarrow(0,1,1)\), elliptic degree
+\(d=m+1=2\) by Lemma~\ref{app:pfaffian-wall-three-walls}; it
+cannot be represented by a projection-finite local stack and demands
+the wrapped prequotient.  This step's correctness — the existence of
+the wrapped representative
+\(x_{\delta_2,R}\in\mathcal M_{\eta,R}^{\mathrm{wr,rig}}\) with
+\(\overline\Pi_X(x_{\delta_2,R})=(0,1,1)\) and its compatible anchor
+\(\lambda_{\eta,R}\) — is precisely the hybrid input to \((O2)\) at
+the middle wall.
+
+\subsection{Construction~4 — Reduced d-critical orientation
+and Joyce--Upmeier transport}
+\label{app:build-orientation}
+
+\paragraph{Tag.} \(\beta\)-functorial passage (oriented carrier).
+
+\paragraph{Input.}
+The hybrid carrier
+\(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\) of
+Construction~\ref{app:build-hybrid-wrapped}; the K3 holomorphic
+\(2\)-form \(\sigma_S\) on \(S\); BBDJS d-critical chart machinery
+\cite{BBDJS2015}; the Joyce--Upmeier multiplicative orientation
+formalism \cite{JoyceUpmeier,JoyceTanakaUpmeier}; the cosection
+localization machinery of Kiem--Li and the cosection-reduced
+obstruction theory; the type-II Weyl group
+\(W^{(2)}(\La^{2,1}_{II})\) generated by
+\(s_{\delta_1},s_{\delta_2},s_{\delta_3}\).
+
+\paragraph{Output.}
+The cosection
+\(\sigma=p_S^*\sigma_S\); the reduced tangent complex
+\[
+\operatorname{RHom}_{\mathrm{red}}(A,A)
+=
+\operatorname{Cone}\!\Bigl(
+\operatorname{RHom}_X(A,A)
+\xrightarrow{(\mathrm{tr},\mathrm{cs})}
+R\Gamma(X,\mathcal O_X)\oplus H^2(S,\mathcal O_S)[-1]
+\Bigr)[-1];
+\]
+the BBDJS vanishing-cycle complex \(\Phi_{R,c}\); the reduced
+orientation line
+\[
+o_{R,c}
+=\det\operatorname{Ext}^1_{\mathrm{red}}(A,A)^{-1}
+\quad\text{on Darboux charts},\qquad
+o_{R,c}^{\otimes 2}\simeq\det\operatorname{RHom}_{\mathrm{red}}(A,A);
+\]
+the Joyce--Upmeier multiplicative transport
+\(o_{c\oplus c'}\simeq o_c\otimes o_{c'}\) compatible with the reduced
+extension correspondences; the quotient orientation
+\(\mathfrak Q^{or}_R\) of
+Theorem~\ref{prop:generic-local-sign-orientation-character}; the
+Weyl-equivariant lifts
+\(\tau_{i,R,S}:o_{R,S}\to s_{\delta_i}^*o_{R,S}\) for \(i=1,2,3\) of
+\((O1)^+\); the local generic wall-sign data \(\epsilon_{o,R}^{\mathrm{loc}}\).
+
+\paragraph{Procedure.}
+\begin{enumerate}
+\item \emph{Cosection.}  Pull back the K3 semiregularity cosection
+\(\mathrm{cs}\) along \(p_S:X\to S\) to obtain the 2-step cosection
+\(\sigma=p_S^*\sigma_S\) on the K3 factor; verify additivity in exact
+triangles by \textup{(RedOr)} of
+Theorem~\ref{thm:finite-stage-dirac-igusa-pro-object}.
+
+\item \emph{Reduced obstruction.}  Form the reduced tangent complex by
+the displayed cone above (Kiem--Li cosection localization).  PTVV
+\cite{PTVV2013} \((-1)\)-shifted symplectic on
+\(\operatorname{RHom}_X(A,A)\) descends, after the cosection
+contraction, to the reduced complex.
+
+\item \emph{BBDJS d-critical chart.}  On each Darboux chart of
+\(\mathfrak M^{\mathrm{sc}}_{R,c}\), build the BBDJS vanishing-cycle
+complex \(\Phi_{R,c}\) \cite{BBDJS2015}; verify reduced
+Thom--Sebastiani transport coherent on two-step flag stacks of
+Construction~\ref{app:build-hybrid-wrapped}.
+
+\item \emph{Reduced orientation line.}  Define
+\(o_{R,c}=\det\operatorname{Ext}^1_{\mathrm{red}}(A,A)^{-1}\); verify
+the squared isomorphism
+\(o_{R,c}^{\otimes 2}\simeq\det\operatorname{RHom}_{\mathrm{red}}(A,A)\)
+by \(3\)-Calabi--Yau Serre duality
+\(\operatorname{Ext}^2_{\mathrm{red}}(A,A)
+\simeq\operatorname{Ext}^1_{\mathrm{red}}(A,A)^\vee\).
+
+\item \emph{Quotient-orientation descent on the K3\(\times\)E-quotient
+self-Ext frame bundle.}  Compute the four Cech--Borel obstruction
+classes for every retained stratum \(S\):
+\[
+\alpha^{\mathrm{red}}_{R,S}=w_2(\mathscr D_{R,S}),
+\quad
+\alpha^{E,\mathrm{free}}_{R,S}=
+\mathrm{edge}_{2,0}(w_2^E(\mathscr D_{R,S})),
+\quad
+\widetilde\beta^H_{R,S}=w_2^G(\mathscr D_{R,S}),
+\quad
+\lambda^H_{R,S}\in H^1_G(S;\mathbb F_2),
+\]
+and verify simultaneous vanishing with compatible
+null-trivializations on overlaps, on Hall correspondence pullbacks,
+on two-step flag stacks, and under successor maps.  The full
+calculation proceeds primary stabilizer by stabilizer; for cyclic
+\(\Z/2^a\) the absent mixed coefficient requires the rank-two
+two-primary check.  Output the descended quotient orientation system
+\(\mathfrak Q^{or}_R\).
+
+\item \emph{Multiplicative Joyce--Upmeier transport.}  Transport
+\(o_{c\oplus c'}\simeq o_c\otimes o_{c'}\) coherently across two-step
+flag stacks
+\cite{JoyceUpmeier,JoyceTanakaUpmeier}; verify the reduced
+Thom--Sebastiani identification on three-input flags.
+
+\item \emph{Weyl-equivariant lifts \((O1)^+\).}  For each
+\(i\in\{1,2,3\}\) construct the lift
+\(\tau_{i,R,S}:o_{R,S}\to s_{\delta_i}^*o_{R,S}\); verify the
+projective Weyl cocycle
+\(c_{o,R}\in Z^2(\mathcal G_R;\underline{\mathbb F}_2)\) on the
+retained action groupoid; null-trivialize \([c_{o,R}]\) and choose a
+\(1\)-cochain killing it; verify \(\tau_{i,R,S}^2=1\); verify the
+Coxeter relations
+\((s_{\delta_i}s_{\delta_j})^3=1\) for \(i\ne j\) (the
+\((3,3,3)\)-hyperbolic triangle relations of
+Appendix~\ref{app:pfaffian-wall-three-walls}); verify that the torsor
+defects \(\omega_{i,\mathcal C}\) of
+Definition~\ref{thm:finite-stage-dirac-igusa-pro-object}~$(O_X)$ vanish.
+
+\item \emph{Local wall-sign datum.}  At each generic type-II wall point
+\(\Hpl_{\delta_i}\), with the rank-one local model
+\(K_{\delta_i}^{\mathrm{cross}}=[\R\xrightarrow{u_i}\R]\), record the
+local generic sign \(\epsilon_{o,R}^{\mathrm{loc}}(s_{\delta_i})=-1\)
+of Proposition~\ref{prop:rank-one-crossing-o2-sign}.
+
+\item Output
+\((o_R,\mathfrak Q^{or}_R,\{\tau_{i,R,S}\},\epsilon_{o,R}^{\mathrm{loc}})\).
+\end{enumerate}
+
+\paragraph{Type checks.}
+\(o_R\) is a Picard-line section squaring to the reduced determinant;
+the four Cech--Borel classes vanish with compatible
+null-trivializations; the lifts \(\tau_{i,R}\) satisfy
+\(\tau_{i,R}^2=1\) and the \((3,3,3)\)-Coxeter relations; multiplicative
+transport agrees on flag stacks.
+
+\paragraph{Obstructions discharged or invoked.}
+This step is the entire site of \((O1)\) (strong reduced orientation
+on the K3\(\times\)E-quotient self-Ext frame bundle) and of
+\((O1)^+\) (Weyl-equivariant transport along
+\(W^{(2)}(\La^{2,1}_{II})\) reflections).  Discharging \((O1)\)
+requires the simultaneous vanishing and compatible
+null-trivialization of the four Cech--Borel classes on every retained
+stratum; discharging \((O1)^+\) requires \([c_{o,R}]=0\), the
+Coxeter coherence, and the vanishing of all torsor defects
+\(\omega_{i,\mathcal C}\).  The local wall-sign datum is the input to
+\((O2)\) at step~6.
+
+\subsection{Construction~5 — Hall correspondences and primitive part}
+\label{app:build-hall}
+
+\paragraph{Tag.} \(\gamma\)-shadow specialization
+(Stage-2 chiral Hall shadow).
+
+\paragraph{Input.}
+The oriented hybrid carrier from
+Construction~\ref{app:build-orientation}; the extension stack
+\(\mathfrak E^{\mathrm{geom}}_{R,\widehat c,\widehat c'}\); the
+two-step flag stack
+\(\mathfrak F^{(2),\mathrm{geom}}_{R,\widehat c,\widehat c',\widehat c''}\);
+the BBDJS reduced Thom--Sebastiani transport; six-functor admissibility
+of \(p^*,q_!,p_!\) (Construction~\ref{app:build-finite-moduli}~step
+\textup{(Six)}).
+
+\paragraph{Output.}
+The finite Hall object
+\[
+\mathcal H_R^{\mathrm{geom}}
+=\bigoplus_{\widehat c\in\widehat\Gamma_R}
+H_c^\bullet\!\bigl(
+\mathfrak M^{\mathrm{geom}}_{R,\widehat c},
+\Phi_{R,c}\otimes o_{R,c}\bigr);
+\]
+the Hall product \(m_R=q_!\,\mathrm{TS}^{\mathrm{red}}\,p^*\) and Hall
+coproduct \(\Delta_R=p_!\,(\mathrm{TS}^{\mathrm{red}})^{-1}\,q^*\); the
+finite Hall bialgebra
+\((\mathcal H_R^{\mathrm{geom}},m_R,\Delta_R,\eta_R,\epsilon_R)\); the
+primitive part
+\[
+P_R^{\mathrm{geom}}
+=\ker(\Delta_R-1\otimes\mathrm{id}-\mathrm{id}\otimes 1)\cap\ker\epsilon_R;
+\]
+the normal-ordered Gram descent
+\(P_R^{\Pi,\mathrm{geom}}
+=\overline\Pi_{X,*}^{\Theta_R}P_R^{\mathrm{geom}}\); the
+\(\Gamma_R^\Pi\)-graded super-Lie bracket
+\([\,\bar x,\bar y\,]_{\mathrm{red}}\) of
+Proposition~\ref{thm:hall-primitives-formal};
+the Hopf pairing matrix \(G_{\gamma,ab}\) and radical \(K_\gamma\).
+
+\paragraph{Procedure.}
+\begin{enumerate}
+\item \emph{Pullback.}  For
+\(\widehat c,\widehat c'\in\widehat\Gamma_R\), pull back along
+\(p:\mathfrak E^{\mathrm{geom}}_{R,\widehat c,\widehat c'}
+\to\mathfrak M^{\mathrm{geom}}_{R,\widehat c}
+\times\mathfrak M^{\mathrm{geom}}_{R,\widehat c'}\); apply reduced
+Thom--Sebastiani \(\mathrm{TS}^{\mathrm{red}}\) to combine vanishing
+cycle data \cite{BBDJS2015}; pushforward exceptionally along
+\(q:\mathfrak E^{\mathrm{geom}}_{R,\widehat c,\widehat c'}
+\to\mathfrak M^{\mathrm{geom}}_{R,\widehat c\star\widehat c'}\) to
+obtain
+\(m_R(x\otimes y)=q_!\,\mathrm{TS}^{\mathrm{red}}\,p^*(x\boxtimes y)\).
+
+\item \emph{Coproduct.}  Dually pull back along \(q\), apply
+inverse reduced Thom--Sebastiani, pushforward along \(p\) to obtain
+\(\Delta_R(z)=p_!\,(\mathrm{TS}^{\mathrm{red}})^{-1}\,q^*(z)\).
+The compact geometric coproduct correspondence
+\(\mathfrak C^{\mathrm{geom}}_{\rho;\mu,\nu}\) of
+Proposition~\ref{thm:hall-primitives-formal} is the
+support data for splitting.
+
+\item \emph{Bialgebra check.}  Verify associativity of \(m_R\) and
+coassociativity of \(\Delta_R\) on the two-step flag stack
+\(\mathfrak F^{(2),\mathrm{geom}}_{R,\widehat c,\widehat c',\widehat c''}\)
+by base change and Thom--Sebastiani coherence.  Verify the bialgebra
+identity (Hopf compatibility) via the Massey--Saito Joyce--Upmeier
+multiplicative orientation transport.
+
+\item \emph{Primitive extraction.}  Compute
+\(P_R^{\mathrm{geom}}=\ker(\Delta_R-1\otimes\mathrm{id}
+-\mathrm{id}\otimes 1)\cap\ker\epsilon_R\); since
+\(\Delta_R-1\otimes\mathrm{id}-\mathrm{id}\otimes 1\) is degree-graded
+on \(\widehat\Gamma_R\), this reduces to a finite linear computation
+in each charge.
+
+\item \emph{Normal-ordered descent.}  Apply
+\(\overline\Pi_{X,*}^{\Theta_R}\) of
+Theorem~\ref{thm:hall-product} to obtain the
+\(\Gamma_R^\Pi\)-graded
+\(P_R^{\Pi,\mathrm{geom}}\); verify additivity
+\(\overline\Pi_X(\widehat c\star\widehat c')
+=\overline\Pi_X(\widehat c)+\overline\Pi_X(\widehat c')\).
+
+\item \emph{Bracket and pairing matrices.}  Compute the matrices
+\[
+M^{\alpha+\beta,c}_{\alpha,a;\beta,b}
+=\int_{\mathfrak E^{\mathrm{geom}}_{\alpha,\beta;\alpha+\beta}}
+q^!(e_{\alpha+\beta,c}^\vee)\cap
+\mathrm{TS}^{\mathrm{red}}(p^*(e_{\alpha,a}\boxtimes e_{\beta,b})),
+\quad
+B_{\alpha,\beta}(x\otimes y)
+=M_{\alpha,\beta}(x\otimes y)
+-(-1)^{|x||y|}M_{\beta,\alpha}\mathsf{sw}(x\otimes y),
+\]
+\[
+G_{\gamma,ab}=
+\mathrm{tr}_0(q_!\,\mathrm{TS}^{\mathrm{red}}\,p^*
+(e_{\gamma,a}\boxtimes e_{-\gamma,b}))
+\quad\hbox{on}\quad
+\mathfrak P^{\mathrm{geom}}_{\gamma,-\gamma;0}.
+\]
+Form the radical
+\(K_{\gamma,\bar p}
+=\ker G_{\gamma,\bar p}\cap\ker G_{-\gamma,\bar p}^t\) and the
+quotient \(L_{\gamma,\bar p}\); fix splittings.
+
+\item Output
+\((\mathcal H_R^{\mathrm{geom}},m_R,\Delta_R,P_R^{\mathrm{geom}},
+P_R^{\Pi,\mathrm{geom}},
+\{B_{\alpha,\beta}\},\{G_{\gamma,ab}\},\{K_\gamma\},\{L_\gamma\})\).
+\end{enumerate}
+
+\paragraph{Type checks.}
+\(\mathcal H_R^{\mathrm{geom}}\) is a finite \(\widehat\Gamma_R\)-graded
+Hall bialgebra; \(m_R\) is associative on the two-step flag stack;
+\(\Delta_R\) is coassociative; the supercommutator of primitives is
+primitive (the bialgebra identity); the descended bracket is
+\(\Gamma_R^\Pi\)-graded after \(\overline\Pi_{X,*}^{\Theta_R}\);
+finite-dimensional in each homogeneous parity piece by
+finite-typeness.
+
+\paragraph{Obstructions discharged or invoked.}
+\((D_0)\) is partially discharged: the finite Hall package
+\((\mathcal H_R^{\mathrm{geom}},m_R,\Delta_R,P_R)\) is constructed.
+The seven obstruction classes
+\(\mathfrak o_\Theta^{\mathrm{top}},
+\mathfrak o_\Theta^{\mathrm{Hoch}},
+\mathfrak o_\Theta^{\mathrm{tri}},
+\mathfrak o_\Theta^{\mathrm{Jac}},
+\mathfrak o_F,
+\mathfrak o_\Theta^{\mathrm{cyc}},
+\mathfrak o_\Theta^{\mathrm{rad}}\) of
+Theorem~\ref{thm:hall-product} are required to vanish on
+this finite Hall stage and compatibly in the inverse limit.
+
+\paragraph{Cross-volume anchor.}  The output
+\((\mathcal H_R^{\mathrm{geom}},m_R)\) is the finite-stage realization
+of the K3-side BKM Hall--Drinfeld double
+\(\mathcal D_\hbar(\mathrm{CoHA}_{K3\times E})\) of
+\texttt{calabi-yau-quantum-groups:CLAUDE.md~§6.7}.  In the universal
+stage chain \(\mathsf P\to\mathsf C\to\mathsf S\) the Hall positive half
+\(Y^+(X)\) is precisely \(P_R^{\mathrm{geom}}\) at finite \(R\); the
+Drinfeld double \(G(X)=D(Y^+(X))\) requires Hopf pairing, completion,
+integral form, and stable-envelope transport which are supplied by
+\(G_{\gamma,ab}\) and \((\mathrm{ML})\).  The κ-tuple coordinate
+\(\kappa_{\mathrm{BKM}}=5\) is the weight of \(\Delta_5\) and the
+output of the level-4 scalar trace; it is not a level-2 invariant of
+the carrier itself.
+
+\subsection{Construction~6 — Dirac operator and Pfaffian line}
+\label{app:build-dirac-pfaffian}
+
+\paragraph{Tag.} \(\gamma\)-shadow specialization
+(orientation gerbe + Pfaffian).
+
+\paragraph{Input.}
+The oriented Hall package
+\((\mathcal H_R^{\mathrm{geom}},o_R,\{\tau_{i,R,S}\})\) of
+Constructions~\ref{app:build-orientation}--\ref{app:build-hall}; the
+local wall-sign datum
+\(\epsilon_{o,R}^{\mathrm{loc}}\) of
+Construction~\ref{app:build-orientation}; the rank-one type-II
+Pfaffian crossing datum of
+Definition~\ref{def:rank-one-type-ii-crossing} and
+Appendix~\ref{app:pfaffian-wall-rank-one}; the half-Hilbert orbit
+under \(W^{(2)}(\La^{2,1}_{II})\) of size \(2^{12}=4096\).
+
+\paragraph{Output.}
+The Dirac operator on the orientation gerbe
+\(D_R\); the Pfaffian line
+\(\mathscr L_{\mathrm{Pf},R}=
+\det\operatorname{Ext}^1_{\mathrm{red}}(A,A)^{-1}\) (squaring to the
+reduced determinant); the protected Pfaffian section
+\(\operatorname{pf}_{X,R}\); the global wall-sign character
+\(\epsilon_{o,R}:W^{(2)}(\La^{2,1}_{II})\to\{\pm1\}\); the Pfaffian
+section asymptotic
+\[
+\operatorname{pf}_{X,R}
+=
+64q^{1/2}r^{1/2}s^{1/2}
+\prod_{\gamma=(n,l,m)\in A_R}
+(1-q^nr^ls^m)^{f(nm,l)}+\hbox{higher-window correction},
+\]
+which exhausts to \(\Delta_5\) as \(R\to\infty\).
+
+\paragraph{Procedure.}
+\begin{enumerate}
+\item \emph{Dirac operator.}  On each Darboux chart of
+\(\mathfrak M^{\mathrm{sc}}_{R,c}\), with reduced normal self-Ext
+splitting \(K^{\mathrm{nor}}_{R,c}\), build the odd Dirac operator
+\(D_{R,c}\) acting on \(\Omega^{\mathrm{sp}}\otimes o_{R,c}\)
+(spinors on the orientation gerbe); verify that, at a generic
+type-II wall point, the local rank-one normal block is
+\(D_{\delta_i}=\begin{psmallmatrix}0&u\\-u&0\end{psmallmatrix}\) with
+\(\operatorname{Pf}(D_{\delta_i})=u\)
+(Definition~\ref{def:rank-one-type-ii-crossing}).
+
+\item \emph{Pfaffian line.}  Set
+\(\mathscr L_{\mathrm{Pf},R}=
+\det\operatorname{Ext}^1_{\mathrm{red}}(A,A)^{-1}\); verify
+\(\mathscr L_{\mathrm{Pf},R}^{\otimes 2}\simeq
+\det\operatorname{RHom}_{\mathrm{red}}(A,A)\) by
+\(3\)-Calabi--Yau Serre duality.
+
+\item \emph{Local wall sign.}  At each generic point of
+\(\Hpl_{\delta_i}\) with normal model
+\(K^{\mathrm{nor}}_{\delta_i,R}=[\R\xrightarrow{u_i}\R]\), compute
+the monodromy of the Pfaffian section
+\(\operatorname{pf}_{\delta_i,R}=\upsilon_iu_i\) along the
+wall-reflection loop \(\ell_{\delta_i,R,S}\) closed by the
+\((O1)^+\) lift \(\tau_{i,R,S}\):
+\[
+M_{\ell_{\delta_i,R,S}}(\upsilon_iu_i)
+=\upsilon_i(-u_i)=-\upsilon_iu_i,
+\qquad
+\epsilon_{o,R}^{\mathrm{loc}}(s_{\delta_i})
+=(-1)^{N^{\mathrm{Pf}}_{\delta_i,R}}=-1.
+\]
+
+\item \emph{Half-Hilbert orbit transport.}  The reflection
+\(s_{\delta_i}\) acts on the half-Hilbert orbit (compact source labels
+of size \(2^{12}=4096\) parametrized by 12 binary parities tied to the
+\(2^{12}\) odd-spin structures on the lattice
+\(\La^{2,1}_{II}/2\La^{2,1}_{II}\)).  Sum the local rank-one
+contributions over the orbit:
+\[
+\epsilon_{o,R}(s_{\delta_i})
+=\prod_{x\in\hbox{orbit}/2^{12}}
+\epsilon_{o,R}^{\mathrm{loc}}(s_{\delta_i};x).
+\]
+The output is the global character
+\(\epsilon_{o,R}:W^{(2)}(\La^{2,1}_{II})\to\{\pm 1\}\).
+
+\item \emph{Compatibility package.}  Verify the component, boundary,
+overlap, quotient, and protected integration compatibility package of
+Proposition~\ref{prop:appE-local-pfaffian-sign} on every
+retained type-II wall stratum.
+
+\item \emph{Pfaffian section.}  Define
+\(\operatorname{pf}_{X,R}\) as the protected integration of the
+oriented Hall product over
+\(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\):
+\[
+\operatorname{pf}_{X,R}
+=
+64q^{1/2}r^{1/2}s^{1/2}
+I_R^{\mathrm{prot}}\!\left(
+\bigotimes_{\gamma\in A_R}\operatorname{pf}_{\gamma,R}\right),
+\qquad
+\operatorname{pf}_{\gamma,R}=(1-q^nr^ls^m)^{f(nm,l)}.
+\]
+
+\item Output
+\((D_R,\mathscr L_{\mathrm{Pf},R},\operatorname{pf}_{X,R},
+\epsilon_{o,R})\), with the protected integration compatibility data.
+\end{enumerate}
+
+\paragraph{Type checks.}
+\(\mathscr L_{\mathrm{Pf},R}\) is a Picard-line whose square
+isomorphism is supplied by reduced Serre duality;
+\(\operatorname{pf}_{X,R}\) is a section of
+\(\mathscr L_{\mathrm{Pf},R}\) with the displayed cusp expansion; the
+character \(\epsilon_{o,R}\) takes values in \(\{\pm 1\}\) and
+satisfies the Coxeter relations of
+\(W^{(2)}(\La^{2,1}_{II})\); on each simple type-II reflection
+\(\epsilon_{o,R}(s_{\delta_i})=-1\) by the rank-one local model.
+
+\paragraph{Obstructions discharged or invoked.}
+This step is the entire site of \((O2)\) (local Pfaffian wall normal
+form on type-II walls; the \(2^{12}=4096\) sign sum on the
+half-Hilbert orbit transport).  The local rank-one Pfaffian crossing
+of Appendix~\ref{app:pfaffian-wall-rank-one} discharges \((O2)\)
+generically; the global half-Hilbert orbit transport remains the open
+\((O2)\) component of
+Open~Problem~\ref{def:O1-plus-weyl-transport}.  The character
+identity
+\(\epsilon_o=\nu_{\Delta_5}\big|_{W^{(2)}(\La^{2,1}_{II})}\) becomes a
+theorem only after \((D_0)\), \((O1)\), \((O1)^+\), and \((O2)\) are
+discharged compatibly in \(R\).
+
+\subsection{Construction~7 — Chiral Koszul source coalgebra}
+\label{app:build-koszul}
+
+\paragraph{Tag.} \(\gamma\)-shadow specialization
+(\emph{Bar = twisting; not bulk}; the bulk is
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(\mathcal F_X^{\mathrm{hyb}})\),
+constructed elsewhere).
+
+\paragraph{Input.}
+The oriented Hall primitives
+\(P_R^{\Pi,\mathrm{geom}}\) of
+Construction~\ref{app:build-hall}; the hybrid carrier
+\(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\) of
+Construction~\ref{app:build-hybrid-wrapped}; the augmentation
+\(\varepsilon_{X,R}^{\mathrm{hyb}}:
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\to k\mathbf 1\); the
+hybrid residual \(\mathfrak O_{\mathrm{hyb},R}=0\); the bounded
+length \(N_R\) (positivity of HN height on every non-vacuum colour);
+the Beilinson--Drinfeld/Francis--Gaitsgory bar-cobar formalism
+\cite{BD,FrancisGaitsgoryCKD}; the conilpotent completed domain on
+the elliptic curve \(E\).
+
+\paragraph{Output.}
+The conilpotent chiral coalgebra on \(E\):
+\[
+C_{X,R}^{\mathrm{geom}}
+=\bar B_E^{\mathrm{ch}}
+(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}},
+\varepsilon_{X,R}^{\mathrm{hyb}})
+=k\mathbf 1\oplus\bigoplus_{1\le p\le N_R}
+\bar B_E^{\mathrm{ch},p}(\overline{\mathcal F}_{X,R}^{\mathrm{geom}});
+\]
+the bar-length filtration
+\(F^{\mathrm{co}}_{R,p}\); the chiral collision coproduct
+\(\Delta_R^{\mathrm{ch}}\); the bar comparison
+\(b_{X,R}=\mathrm{id}_{\bar B_E^{\mathrm{ch}}(\cdot)}\); the source
+cobar counit
+\(\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}:
+\Omega_E^{\mathrm{ch}}C_{X,R}^{\mathrm{geom}}
+\xrightarrow{\simeq}
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\); after a separate
+source-to-target quasi-isomorphism
+\(\vartheta_R:\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}
+\xrightarrow{\simeq}\mathsf{Den}_{\Delta_5,E,\le R}\), the cobar
+comparison
+\(\Theta_{\mathrm{Kos},R}=\vartheta_R\circ\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}\).
+
+\paragraph{Procedure.}
+\begin{enumerate}
+\item \emph{Augmentation kernel.}  Set
+\(\overline{\mathcal F}_{X,R}^{\mathrm{geom}}
+=\ker(\varepsilon_{X,R}^{\mathrm{hyb}})\); verify the bounded-length
+hypothesis (positivity of HN height on every non-vacuum surviving
+colour, hence at most \(N_R\) factors in any non-zero word).
+
+\item \emph{Bar coalgebra.}  Form the reduced chiral bar
+\[
+C_{X,R}^{\mathrm{geom}}
+=k\mathbf 1\oplus\bigoplus_{1\le p\le N_R}
+\bar B_E^{\mathrm{ch},p}
+(\overline{\mathcal F}_{X,R}^{\mathrm{geom}}),
+\]
+length \(p\) summand generated by ordered \(p\)-fold inputs from the
+augmentation ideal of total HN height \(\le R\) (height \(>R\) outputs
+zero); coaugmentation by the inclusion of the vacuum summand; counit by
+projection.
+
+\item \emph{Bar-length filtration.}
+\[
+F^{\mathrm{co}}_{R,p}C_{X,R}^{\mathrm{geom}}
+=k\mathbf 1\oplus\bigoplus_{1\le j\le p}
+\bar B_E^{\mathrm{ch},j}
+(\overline{\mathcal F}_{X,R}^{\mathrm{geom}}),\qquad
+0\le p\le N_R.
+\]
+
+\item \emph{Collision coproduct.}  For
+\(x=[x_1|\cdots|x_p]\), define the cut-map coproduct
+\[
+\Delta_R^{\mathrm{ch}}(x)
+=\mathbf1\otimes x+x\otimes\mathbf1
++\sum_{i=1}^{p-1}[x_1|\cdots|x_i]\otimes[x_{i+1}|\cdots|x_p],
+\]
+with each cut realized by the corresponding finite collision/flag
+pull-push map in
+\(\mathsf{Corr}^{E,\mathrm{hyb}}_{R,\mathrm{geom}}\) of
+Construction~\ref{app:build-hybrid-wrapped}.  Verify
+coassociativity by the four-input pentagon and the eight-word flag
+coherences; verify counit identities via vacuum collision flags.
+
+\item \emph{Conilpotence.}  Verify
+\((\overline\Delta_R^{\mathrm{bar}})^{N_R+1}=0\): each reduced cut
+strictly lowers bar length on each branch.
+
+\item \emph{Bar comparison.}  Take \(b_{X,R}\) to be the identity of
+\(\bar B_E^{\mathrm{ch}}
+(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}},
+\varepsilon_{X,R}^{\mathrm{hyb}})\), eliminating the coalgebra-side
+finite Koszul residuals
+\(\mathfrak o^C_R, \mathfrak o^{\mathrm{fil}}_R,
+\mathfrak o^{\mathrm{conil}}_R, \mathfrak o^{\Delta,\mathrm{ch}}_R\)
+of Definition~\ref{def:chiral-koszul-source-datum}.
+
+\item \emph{Source cobar counit.}  Apply Francis--Gaitsgory chiral
+Koszul duality
+\cite[Theorem~6.2.2]{FrancisGaitsgoryCKD} in the conilpotent completed
+domain to obtain
+\(\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}:
+\Omega_E^{\mathrm{ch}}C_{X,R}^{\mathrm{geom}}
+\xrightarrow{\simeq}
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\); verify it is a
+source-internal quasi-isomorphism of chiral algebras on \(E\), not a
+homotopy inverse of the target counit.
+
+\item \emph{Source-to-target identification.}  Construct
+\(\vartheta_R\) from the geometric primitive representatives, Hall
+products, coproducts, pairings, and HN transition compatibility;
+verify the residual
+\(\mathfrak o^\vartheta_R\) of
+Corollary~\ref{cor:source-bar-remaining-cobar-obstruction} vanishes;
+set \(\Theta_{\mathrm{Kos},R}=\vartheta_R\circ
+\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}\).
+
+\item \emph{Inverse limit.}  Verify the Koszul Mittag--Leffler
+condition \(R^1\varprojlim=0\) for the inverse systems of source
+coalgebras, completed chiral bar/cobar constructions, target
+truncations, and the cones of \(b_{X,R}\) and
+\(\Theta_{\mathrm{Kos},R}\) \cite[\S3.5]{WeibelHA}.  Form
+\[
+C_X^{\mathrm{geom}}
+=\varprojlim_R C_{X,R}^{\mathrm{geom}},\qquad
+\Theta_{\mathrm{Kos}}:
+\Omega_E^{\mathrm{ch}}C_X^{\mathrm{geom}}
+\xrightarrow{\simeq}\mathsf{Den}_{\Delta_5,E}.
+\]
+
+\item Output
+\((C_{X,R}^{\mathrm{geom}},F^{\mathrm{co}}_{R,\bullet},
+\Delta_R^{\mathrm{ch}},b_{X,R},\Theta_{\mathrm{Kos},R})\) at every
+\(R\), with successor compatibility.
+\end{enumerate}
+
+\paragraph{Type checks.}
+\(C_{X,R}^{\mathrm{geom}}\) is a coaugmented conilpotent chiral
+coalgebra on \(E\) with bounded bar-length filtration of length at
+most \(N_R\); \(\Delta_R^{\mathrm{ch}}\) is coassociative and counital
+on the chosen flag stacks; the bar-cobar inversion is supplied by
+Francis--Gaitsgory chiral Koszul; the cobar comparison
+\(\Theta_{\mathrm{Kos},R}\) is source-internal, not the target
+bar-cobar counit (the source/target separation of
+Lemma~\ref{lem:source-target-koszul-separation}).
+
+\paragraph{Obstructions discharged or invoked.}
+The Koszul Mittag--Leffler exactness hypothesis is the
+\textup{(D0)}-component for the chiral Koszul lane.  The total finite
+Koszul residual
+\(\mathfrak O_{\mathrm{Kos},R}=
+(\mathfrak o^C_R,\mathfrak o^{\mathrm{fil}}_R,
+\mathfrak o^{\mathrm{conil}}_R,\mathfrak o^{\Delta,\mathrm{ch}}_R,
+\{\mathfrak o^{C,\mathrm{tr}}_{R'R}\},\mathfrak o^b_R,
+\mathfrak o^\Omega_R,\mathfrak o^{\mathrm{hyb}}_R,
+\mathfrak o^\Pi_R,\mathfrak o^{\mathrm{sep}}_R,
+\mathfrak o^{\Prim}_R)\)
+vanishes after this step.
+
+\paragraph{Cross-volume firewall.}  The bar coalgebra
+\(\bar B_E^{\mathrm{ch}}
+(\mathcal F_{X,R}^{\mathrm{hyb}})\) is a \emph{twisting / coupling}
+coalgebra (Maurer--Cartan classification), \emph{not} the bulk
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(\mathcal F_X^{\mathrm{hyb}})
+=\mathrm{ChirHoch}^\bullet(\mathcal F_X^{\mathrm{hyb}},
+\mathcal F_X^{\mathrm{hyb}})\); cf.\
+\texttt{chiral-bar-cobar-vol2:CLAUDE.md~§6} (universal stage chain
+\(\mathsf P\to\mathsf C\to\mathsf S\to\mathsf Z\)).
+The chiral Koszul comparison
+\(\Theta_{\mathrm{Kos}}:\Omega_E^{\mathrm{ch}}C_X^{\mathrm{geom}}
+\xrightarrow{\simeq}\mathsf{Den}_{\Delta_5,E}\) is a comparison
+between two algebras of the same level; the homotopy inverse to the
+target-internal counit
+\(\Omega_E^{\mathrm{ch}}\bar B_E^{\mathrm{ch}}
+(\mathsf{Den}_{\Delta_5,E})\to\mathsf{Den}_{\Delta_5,E}\) is not used
+in either direction.
+
+\subsection{Construction~8 — Primitive recognition}
+\label{app:build-recognition}
+
+\paragraph{Tag.} \(\delta\)-endpoint convergence
+(source-to-target identification).
+
+\paragraph{Input.}
+The descended source primitive Lie superalgebra
+\(P_X^{\Pi,\mathrm{red}}\) of
+Construction~\ref{app:build-hall} (after the radical quotient
+\(\overline{\mathrm{Rad}\langle\,\cdot,\cdot\rangle_X}\)); the imported
+target denominator algebra
+\(\fg_{\Delta_5}=G(\mathscr B_{\Delta_5})\) on
+\(\La^{2,1}_{II}\) of Definition~\ref{def:bkm-imaginary-simple-roots} and
+Definition~\ref{def:bkm-relations}; the increasing cofinal
+sequence of finite downward-saturated windows
+\(W_1\subset W_2\subset\cdots\) with
+\(\bigcup_\nu W_\nu=\mathcal R_+\); the Borcherds--Kac--Moody data
+\((H,I,p,\alpha_i,(\,,\,))\) of
+Theorem~\ref{thm:primitive-recognition}.
+
+\paragraph{Output.}
+The cofinal finite-window primitive-recognition datum
+\(\{\textup{(R0),(R1),(R2),(R3),(R4),(R5),(R6),(R7),(R8)}\}\) of
+Definition~\ref{def:cofinal-primitive-recognition-datum} for every
+\(W_\nu\), compatible under \(W_\nu\subset W_{\nu+1}\); the source
+representatives
+\(e_i^X,f_i^X,h_i^X\); the source presentation map
+\(\pi_W:\widehat{\mathfrak F}(\mathscr B_{\Delta_5})_W
+\to P_X^{\Pi,\mathrm{red}}\big|_W\); the kernel equality
+\(\ker\pi_W=
+(\overline{J_{\mathrm{BK}}+\mathrm{Rad}_{\mathrm{GN}}})_W\); the
+isomorphism
+\[
+\boxed{\quad
+P_X^{\Pi,\mathrm{red}}\cong\fg_{\Delta_5},\quad
+\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}.
+\quad}
+\]
+
+\paragraph{Procedure.}
+For every cofinal \(W_\nu\):
+\begin{enumerate}
+\item[\textup{(R0)}] \emph{Compact source labels.}  Verify every
+finite source basis vector in \(W_\nu\cup(-W_\nu)\cup\{0\}\) satisfies
+the compact source-admissibility condition of
+Theorem~\ref{thm:finite-stage-dirac-igusa-pro-object}.
+
+\item[\textup{(R1)}] \emph{Representatives and parities.}  Supply
+parity-homogeneous primitive representatives
+\(e_i^X\in P^{\Pi,\mathrm{red}}_{X,\alpha_i}\),
+\(f_i^X\in P^{\Pi,\mathrm{red}}_{X,-\alpha_i}\),
+\(h_i^X=\iota_H^{-1}(\alpha_i)\) for every simple-root index \(i\) with
+\(\alpha_i\in W_\nu\), with the Gritsenko--Nikulin parity fibres
+\(\mu_{\overline 0}(a),\mu_{\overline 1}(a)\) for imaginary simple
+roots and even real representatives for \(\delta_1,\delta_2,\delta_3\).
+
+\item[\textup{(R2)}] \emph{Relations.}  Verify in the protected Hall
+super-bracket the Cartan, Chevalley, real Serre, Borcherds
+orthogonality, and super sign relations for every relation whose
+displayed source and target degrees lie in
+\(W_\nu\cup(-W_\nu)\cup\{0\}\).  In the real rank-three subsystem the
+Cartan matrix is
+\(((\delta_i,\delta_j))=\mathrm{diag}(2)-2(J-\mathrm{diag}(1))\) with
+real Serre exponent~3.
+
+\item[\textup{(R3)}] \emph{Full finite parity dimensions.}  For every
+\(\beta\in W_\nu\) verify
+\(\dim P^{\Pi,\mathrm{red}}_{X,\beta,\overline p}
+=\rootmult_{\overline p}^{\mathrm{GN}}(\beta)\) for both parities
+\(p=0,1\).  In the first timelike channel
+\(\beta=\delta_{123}\),
+Proposition~\ref{prop:bkm-delta123-presentation-count} requires
+\((d^{\mathrm{GN}}_{(1,1,1),\overline 0},
+d^{\mathrm{GN}}_{(1,1,1),\overline 1})=(29,93)\).  Determinant
+information \(29-93=-64=f(1,1)\) is consistent but not the
+recognition.
+
+\item[\textup{(R4)}] \emph{Hopf pairing and radical.}  Compute the
+positive-negative pairing matrices in parity blocks; verify the
+kernel agrees with the
+Gritsenko--Nikulin/Kac invariant-pairing kernel; verify Lie-ideal and
+coideal stability under all finite brackets; verify carrying under
+HN transitions to the next window.
+
+\item[\textup{(R5)}] \emph{No extra relations.}  Verify the kernel
+equality
+\(\ker\pi_\nu=(\overline{J_{\mathrm{BK}}+\mathrm{Rad}_{\mathrm{GN}}})_{\le W_\nu}\) on the finite triangular span generated by
+\(W_\nu\cup(-W_\nu)\cup\{0\}\).
+
+\item[\textup{(R6)}] \emph{Generation.}  Verify that every source
+primitive root space in \(W_\nu\cup(-W_\nu)\), after the finite
+radical quotient, is generated by the Cartan and the supplied
+simple-root representatives through brackets whose intermediate
+positive degrees stay in \(W_\nu\).
+
+\item[\textup{(R7)}] \emph{Completed PBW compatibility.}  Verify the
+PBW-graded isomorphism
+\(\mathrm{gr}_{\mathrm{PBW}}U(P_X^{\Pi,\mathrm{red}})_{\le W_\nu}
+\xrightarrow{\sim}
+\mathrm{gr}_{\mathrm{PBW}}U(\fg_{\Delta_5})_{\le W_\nu}\); verify
+strict preservation under \(W_{\nu+1}\to W_\nu\) transition maps.
+
+\item[\textup{(R8)}] \emph{Exact triangular completion.}  Verify
+strictness of the transition maps and closedness of images on every
+finite window, so that passage to the inverse limit commutes with the
+finite kernels, cokernels, radicals, PBW associated gradeds, and
+parity pieces.  Equivalently the relevant \(\lim^1\) terms vanish for
+these triangular finite-window systems.
+
+\item Output the global isomorphism
+\(P_X^{\Pi,\mathrm{red}}\cong\fg_{\Delta_5}\) by passage to the inverse
+limit (compatible cofinal datum); together with the chiral Koszul
+comparison of Construction~\ref{app:build-koszul} this gives
+\(\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}\) and hence
+the protected Pfaffian identification
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5\).
+\end{enumerate}
+
+\paragraph{Type checks.}
+The source presentation map \(\pi:\widehat{\mathfrak F}(\mathscr B_{\Delta_5})\to P_X^{\Pi,\mathrm{red}}\) is
+continuous and degree-preserving; \textup{(R5)} gives injectivity
+after the completed radical quotient; \textup{(R6)} gives
+surjectivity; \textup{(R7)} gives PBW compatibility; \textup{(R8)}
+gives exactness in the inverse-limit step.  No claim on signed
+superdimensions \(\sdim=f(nm,l)\) substitutes for the two-integer
+parity dimensions of \textup{(R3)}.
+
+\paragraph{Obstructions discharged or invoked.}
+This step inherits the obstruction tower discharged by
+Constructions~1--7 and adds the cofinal exact-completion residual
+\textup{(R8)}.  The Beilinson--Drinfeld bar-cobar firewall is
+respected throughout: \textup{(R5)} is a source kernel-equality
+theorem, not an inversion of the target bar-cobar counit;
+\textup{(R7)} is a PBW graded comparison of source and target
+enveloping algebras, not a graph-equality argument from the scalar
+square.
+
+\paragraph{Cross-volume anchor.}  The output is
+\texttt{chiral-bar-cobar-vol2:CLAUDE.md~§9} Construction
+Problem~1: the operator-level construction of
+\(\mathfrak D_X^{\mathrm{DI}}\) for \(K3\times E\) with
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5\), under the
+four obstructions \((D_0),(O1),(O1)^+,(O2)\).  The Drinfeld doubling
+\(Y^+(X)\to G(X)=D(Y^+(X))\) of
+\texttt{calabi-yau-quantum-groups:CLAUDE.md} requires the Hopf
+pairing of \textup{(R4)}, completion by \textup{(R8)}, integral form,
+and stable-envelope transport which are supplied by the same
+data.  The κ-tuple coordinate \(\kappa_{\mathrm{BKM}}=5\) is the
+weight of \(\Delta_5\) and lives at level~4 of the universal stage
+chain; it is a consequence of the construction, not an input to it.
+
+\subsection{The eight-step audit}
+\label{app:build-audit}
+
+The eight construction steps form a strict ordered sequence of
+input/output type discipline.  An audit of any candidate construction of
+\(\mathfrak D_X^{\mathrm{DI}}\) reduces to verifying, for every
+\(R\in\mathcal R_{\mathrm{HN}}\):
+\begin{enumerate}
+\item the lattice combinatorics of
+Construction~\ref{app:build-charge-window};
+\item the finite-type quasi-smooth derived stacks of
+Construction~\ref{app:build-finite-moduli};
+\item the hybrid local/wrapped factorization datum and the eight-word
+two-step flag atlas of Construction~\ref{app:build-hybrid-wrapped};
+\item the four Cech--Borel orientation classes and the
+\((O1)^+\)~Coxeter coherence of
+Construction~\ref{app:build-orientation};
+\item the finite Hall bialgebra and primitive matrices of
+Construction~\ref{app:build-hall};
+\item the rank-one Pfaffian crossing and the half-Hilbert orbit
+transport of Construction~\ref{app:build-dirac-pfaffian};
+\item the bar coalgebra, conilpotent collision coproduct, and the
+Francis--Gaitsgory cobar quasi-isomorphism of
+Construction~\ref{app:build-koszul};
+\item the cofinal datum
+\(\textup{(R0)}\)--\(\textup{(R8)}\) of
+Construction~\ref{app:build-recognition};
+\end{enumerate}
+together with the compatible vanishing of the obstruction tuples
+\((\mathfrak O^{E_3-\mathrm{src}}_R,
+\mathfrak O_{\mathrm{hyb},R},
+\mathfrak O_{\mathrm{Kos},R},
+\mathfrak O^{\mathrm{O1}}_R,
+\mathfrak O^{\mathrm{O1}^+}_R,
+\mathfrak O^{\mathrm{O2}}_R,
+\mathfrak O_R^{D_0})\) at every height \(R\), and the
+Mittag--Leffler exactness condition \textup{[ML]} of
+Definition~\ref{def:O1-strong-reduced-orientation} on the cofinal HN inverse
+system.  Each obstruction is attributable to the unique step
+in which its components are constructed.
+
+\paragraph{Order rigidity.}  Each of the seven adjacent input/output
+dependencies fails type-checking under exchange:
+\begin{enumerate}
+\item charge window $\to$ finite moduli: $\Lambda_{\mathrm{ample}}$
+  parametrises the HN strata; without the window, the moduli stack
+  has no finite cofinal subsystem.
+\item finite moduli $\to$ hybrid carrier: $\mathrm{Ran}^{\mathrm{hyb}}(E)$
+  needs the finite Hall stack as factor on which to graft the
+  wrapped/local atlas.
+\item hybrid carrier $\to$ reduced orientation: the cosection-twisted
+  Joyce--Upmeier line bundle is defined on the carrier, not on the
+  raw moduli (the cosection lives on $\mathrm{Ran}^{\mathrm{hyb}}$).
+\item reduced orientation $\to$ Hall correspondences: the Pfaffian
+  line bundle on the Hall stack is the orientation-twisted sign data;
+  without orientation, the Hall product is unsigned.
+\item Hall correspondences $\to$ Pfaffian line + Dirac operator: the
+  primitive Hall bracket $[-,-]_X$ defines the Hall--Drinfeld
+  correspondence whose Pfaffian section is the Dirac--Igusa Pfaffian.
+\item Pfaffian line $\to$ chiral Koszul source coalgebra: the source
+  $C_X$ is the bar of the augmented hybrid factorization algebra
+  pulled back along the Pfaffian comparison
+  $\iota_{\mathrm{aut}}$.
+\item chiral Koszul source $\to$ primitive recognition: the primitive
+  part $P_X^{\Pi,\mathrm{red}}$ is the Frobenius--Serre primitive
+  filtration on the source, which the recognition theorem matches to
+  $\mathfrak g_{\Delta_5}$.
+\end{enumerate}
+Two diagnostic exchanges: orientation before hybrid leaves the middle
+type-II wall \(\delta_2\leftrightarrow(0,1,1)\) without a
+representative, by
+Lemma~\ref{app:pfaffian-wall-three-walls}; recognition before the
+Koszul cobar leaves the identification
+\(\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}\)
+unconstructed.  All other adjacent exchanges fail by the same
+input/output type criterion.
+
+\paragraph{Conditional theorem.}  Granted the eight constructions and
+the four obstructions \((D_0),(O1),(O1)^+,(O2)\),
+Theorem~\ref{thm:pfaffian-dirac-finite-stage} reads
+\[
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5,\qquad
+\epsilon_o=\nu_{\Delta_5}\big|_{W^{(2)}(\La^{2,1}_{II})},\qquad
+P_X^{\Pi,\mathrm{red}}\cong\fg_{\Delta_5}.
+\]
+The scalar square
+\(Z_{\mathrm{BPS}}^{K3\times E}=
+(\Phi_{10}^{\mathrm{un}})^{-1}=\Delta_5^{-2}\) is the level-4 trace
+of the constructed protected algebra; promotion to the 3d
+gravitational path integral is not claimed and requires the
+Hall--Borcherds residual of
+\texttt{chiral-bar-cobar-vol2}.
+
+%%% End of Appendix F.

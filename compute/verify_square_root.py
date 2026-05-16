@@ -411,9 +411,72 @@ def first_timelike_presentation_split(
     return even, odd_imaginary_simple
 
 
+def eichler_zagier_invariant_check(
+    phi: dict[tuple[int, int], Fraction],
+    n_max: int,
+) -> dict[tuple[int, int], int]:
+    """For a weak Jacobi form of weight 0 and index 1, the Fourier coefficient
+    f(n,r) depends only on the discriminant Delta=4n-r^2 and the parity of r.
+    Returns a Delta->value map for Delta in [-1, 4*n_max], collected from the
+    most-stable (largest n) (n,r) realising that discriminant; raises on any
+    inconsistency.
+    """
+
+    by_discriminant: dict[int, set[int]] = {}
+    for (n, r), value in phi.items():
+        if value == 0:
+            continue
+        if n < 0 or n > n_max:
+            continue
+        discriminant = 4 * n - r * r
+        by_discriminant.setdefault(discriminant, set()).add(int(value))
+    representative: dict[tuple[int, int], int] = {}
+    for discriminant, values in sorted(by_discriminant.items()):
+        if len(values) != 1:
+            raise AssertionError(
+                f"Eichler-Zagier invariant fails at Delta={discriminant}: "
+                f"values {sorted(values)}"
+            )
+        (value,) = values
+        representative[(discriminant, 0)] = value
+    return representative
+
+
+CHL_TWIST_KAPPA_BKM_TABLE: dict[int, tuple[int, int]] = {
+    1: (10, 5),
+    2: (8, 4),
+    3: (6, 3),
+    4: (4, 2),
+    6: (2, 1),
+}
+
+
+def kappa_bkm_universal_check(table: dict[int, tuple[int, int]]) -> None:
+    """Verify kappa_BKM(Phi_N) = c_N(0)/2 across the CHL frame N in {1,2,3,4,6}.
+
+    For each N, table[N] = (c_N(0), kappa_BKM). The identity is integer-level
+    arithmetic; the test catches typos or transcription drift between this
+    fixture, Ch.4 Theorem thm:bkm-kappa-universal, and KICKSTART Section 6.
+    """
+
+    for level, (c_zero, kappa_value) in sorted(table.items()):
+        expected_kappa = c_zero // 2
+        if expected_kappa * 2 != c_zero:
+            raise AssertionError(
+                f"c_{level}(0) = {c_zero} is not even; kappa_BKM must be a "
+                f"half-integer count"
+            )
+        if expected_kappa != kappa_value:
+            raise AssertionError(
+                f"kappa_BKM(Phi_{level}) = {kappa_value} disagrees with "
+                f"c_{level}(0)/2 = {expected_kappa}"
+            )
+
+
 def main() -> None:
     phi = phi_01_coefficients()
     expected_phi = {
+        # Depths 0--4 (the established verification table).
         (0, -1): 1, (0, 0): 10, (0, 1): 1,
         (1, -2): 10, (1, -1): -64, (1, 0): 108,
         (1, 1): -64, (1, 2): 10,
@@ -424,9 +487,49 @@ def main() -> None:
         (4, -4): 10, (4, -3): -513, (4, -2): 4016,
         (4, -1): -11775, (4, 0): 16524, (4, 1): -11775,
         (4, 2): 4016, (4, 3): -513, (4, 4): 10,
+        # Depth 5 (verified by Eichler-Zagier Delta-orbit consistency:
+        # f(5,4)=f(2,2)=f(1,0)=108; f(5,2)=f(4,0)=16524; f(5,3)=f(3,1)=-2752).
+        (5, -4): 108, (5, -3): -2752, (5, -2): 16524,
+        (5, -1): -43200, (5, 0): 58640, (5, 1): -43200,
+        (5, 2): 16524, (5, 3): -2752, (5, 4): 108,
+        # Depth 6 (Delta-orbit cross-checks: f(6,5)=f(2,3)=f(0,1)=1;
+        # f(6,4)=f(3,2)=f(2,0)=808; f(6,3)=f(4,1)=-11775;
+        # f(6,2)=f(5,0)=58640).
+        (6, -5): 1, (6, -4): 808, (6, -3): -11775,
+        (6, -2): 58640, (6, -1): -141826, (6, 0): 188304,
+        (6, 1): -141826, (6, 2): 58640, (6, 3): -11775,
+        (6, 4): 808, (6, 5): 1,
     }
     for key, expected in expected_phi.items():
         assert phi[key] == expected, (key, phi[key], expected)
+    discriminant_map = eichler_zagier_invariant_check(phi, n_max=6)
+    expected_discriminants = {
+        (-1, 0): 1,
+        (0, 0): 10,
+        (3, 0): -64,
+        (4, 0): 108,
+        (7, 0): -513,
+        (8, 0): 808,
+        (11, 0): -2752,
+        (12, 0): 4016,
+        (15, 0): -11775,
+        (16, 0): 16524,
+        (19, 0): -43200,
+        (20, 0): 58640,
+        (23, 0): -141826,
+        (24, 0): 188304,
+    }
+    for key, expected in expected_discriminants.items():
+        assert discriminant_map[key] == expected, (
+            key, discriminant_map[key], expected
+        )
+    kappa_bkm_universal_check(CHL_TWIST_KAPPA_BKM_TABLE)
+    # Anchor the table to the theta computation at N=1: c_1(0) is the
+    # leading [q^0 r^0] of phi_{0,1}, which we compute directly.
+    c_one_zero_from_phi = int(phi[(0, 0)])
+    assert c_one_zero_from_phi == CHL_TWIST_KAPPA_BKM_TABLE[1][0], (
+        c_one_zero_from_phi, CHL_TWIST_KAPPA_BKM_TABLE[1][0]
+    )
 
     eta9 = eta_power_coefficients(9, 9)
     assert eta9[:10] == [1, -9, 27, -12, -90, 135, 54, -99, -189, -85]
@@ -467,10 +570,17 @@ def main() -> None:
         "timelike_delta123_exponent": 3,
     }
 
-    print("phi_{0,1} coefficients through q^2:")
-    for q_exp in range(3):
+    print("phi_{0,1} coefficients through q^6:")
+    for q_exp in range(7):
         row = sorted((l, phi[(q_exp, l)]) for (q, l) in phi if q == q_exp)
         print(f"q^{q_exp}: {row}")
+    print("Eichler-Zagier Delta-invariants through Delta=24:")
+    for (discriminant, _), value in sorted(discriminant_map.items()):
+        if discriminant <= 24:
+            print(f"Delta={discriminant}: {value}")
+    print("kappa_BKM universality across CHL frame N in {1,2,3,4,6}:")
+    for level, (c_zero, kappa_value) in sorted(CHL_TWIST_KAPPA_BKM_TABLE.items()):
+        print(f"N={level}: c_N(0)={c_zero}, kappa_BKM=c_N(0)/2={kappa_value}")
     print("prod_{k>=1}(1-q^k)^9 through q^9:")
     print(eta9[:10])
     print("[q*r*s] 64^{-1} Delta_5 / (q*r*s)^{1/2}:")

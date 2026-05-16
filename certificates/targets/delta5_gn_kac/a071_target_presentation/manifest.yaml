@@ -1,0 +1,49 @@
+schema: a071_target_presentation_fixture
+target: delta5_gn_kac
+window: A071_Wle7_relation_closed_target_rows
+generator: compute/build_target_presentation_fixture.py
+deterministic: true
+target_only: true
+compact_source_firewall:
+  imports_compact_source_packets: false
+  provides_compact_source_verification: false
+  feeds_compact_source_comparison: false
+scope:
+  active_target_parity_rows: 12
+  signed_only_blocked_rows: 4
+  target_basis_vectors: 426
+  simple_generator_entries_total_count: 837
+active_rows:
+  doubled_isotropic: 2a_ij:10|0
+  complementary_weyl_delta123: C_{k,3}:29|93
+  complementary_weyl_isotropic: C_{k,4}:10|0
+  complementary_terminal_zero: C_{k,5}:0|0
+blocked_rows:
+  C_{k,2}: signed_only_blocked
+  2delta123: signed_only_blocked
+provenance_sources:
+  gn_kac_base: GN/Kac target presentation arithmetic
+  weyl_transport: parity-preserving even real-root Weyl transport
+  serre_zero: Kac real-root string terminal zero
+  signed_only_blocked: signed Delta_5/GN data only, no parity fixture
+citations:
+  - GN Sections 3--4, Proposition 3.1
+  - Kac 1990 real-root Weyl action, root strings, PBW
+  - Borcherds GKM presentation conventions
+limitations:
+  - no compact Hall representatives
+  - no compact source pairings
+  - no compact source radicals
+  - no source PBW or no-extra theorem
+  - C_{k,2} and 2delta123 do not feed target basis or PBW rows
+files:
+  - manifest.yaml
+  - target_degrees.csv
+  - target_simple_generators.csv
+  - target_hall_lie_basis.csv
+  - target_relation_rows.csv
+  - target_pairing_blocks.csv
+  - target_radicals.csv
+  - target_dimensions.csv
+  - target_pbw.csv
+  - hashes.sha256

@@ -1,0 +1,319 @@
+\subsection{Dirac operator and protected Pfaffian}
+\label{subsec:dirac-pfaffian}
+
+The fourth entry of the Dirac--Igusa pro-object is the protected
+Pfaffian line and its first-order Dirac block decomposition.  Two
+constructions are at work.  The geometric construction starts from
+the cosection-reduced d-critical heart, builds a Joyce--Upmeier
+orientation, descends to the reduced quotient, and associates a
+Pfaffian line to the determinant of the reduced obstruction theory in
+the Brav--Bussi--Dupont--Joyce--Szendr\H{o}i framework
+\cite{BBDJS2015}.  The algebraic construction starts from the imported
+Borcherds--Kac--Moody denominator algebra, fixes a positive window in
+$\Gamma_{\mathrm{gram}}$, and writes the algebraic super-Pfaffian
+\[
+\operatorname{sPf}^{\mathrm{alg}}_R(D)
+=\prod_{\gamma\in A_R}(1-x^\gamma)^{\sdim V_\gamma}
+\]
+of the trivial first-order block decomposition $D_\gamma$ on the
+target side.  The Pfaffian--Dirac theorem of Chapter~6 is the
+identification, conditional on (D0), (O1), (O1)$^+$, (O2), of these
+two Pfaffian sections after the chosen line-comparison
+$\iota_{\mathrm{aut}}$.
+
+\subsubsection*{Pfaffian line and squaring isomorphism}
+
+\begin{definition}[Pfaffian line on the cosection-reduced quotient]
+\label{def:pfaffian-line}
+Let $K^{\mathrm{red}}_{\mathcal C}$ denote the cosection-reduced
+self-Ext complex on a charge stratum, with reduced determinant
+$\det K^{\mathrm{red}}_{\mathcal C}$ and Joyce--Upmeier orientation
+$o_{\mathcal C}$.  The Pfaffian line at finite stage is
+\[
+\mathscr L_{\mathrm{Pf},R}=
+\bigotimes_{\mathcal C}\operatorname{Pf}(K^{\mathrm{red}}_{\mathcal C,R})
+\]
+on the reduced moduli, with squaring isomorphism
+\[
+\mathscr L_{\mathrm{Pf},R}^{\otimes 2}\simeq\mathscr L_{\det,R}
+\]
+in the Brav--Bussi--Dupont--Joyce--Szendr\H{o}i sense
+\cite{BBDJS2015}.  The successor maps
+$\rho^{\mathrm{Pf}}_{R^+R}$ commute with these squaring isomorphisms,
+identifying the inverse limit with a Pfaffian line
+$\mathscr L_{\mathrm{Pf},X}$ on the inverse-limit object.  A
+normalized section $\operatorname{pf}_{X,R}$ at finite stage and
+$\operatorname{pf}_X=\varprojlim_R\operatorname{pf}_{X,R}$ are part
+of the datum.
+\end{definition}
+
+\subsubsection*{Pfaffian-to-automorphic comparison}
+
+The recognition statement is read on the automorphic line.  A
+section-level identification $\operatorname{pf}_X=\Delta_5$ requires
+a comparison of $\mathscr L_{\mathrm{Pf},X}$ with the pullback of the
+automorphic weight-five line to the moduli base.
+
+\begin{definition}[Pfaffian-to-automorphic line comparison]
+\label{def:pfaffian-to-automorphic-line-comparison}
+A section-level Pfaffian-to-automorphic comparison is a chosen
+isomorphism of line bundles
+\[
+\iota_{\mathrm{aut}}:\mathscr L_{\mathrm{Pf},X}
+\xrightarrow{\sim}\mathcal L^5\otimes\nu_{\Delta_5}
+\]
+to the pullback of the automorphic weight-five line, twisted by the
+multiplier $\nu_{\Delta_5}$, compatible with cusp trivialization at
+$\mathfrak c_\infty$ and with the squaring map
+$\mathscr L_{\mathrm{Pf},X}^{\otimes 2}\simeq\mathscr L_{\det,X}$.
+\end{definition}
+
+\subsubsection*{First-order Dirac block decomposition}
+
+\begin{definition}[First-order Dirac block]
+\label{def:first-order-dirac-block}
+For $\gamma\in\Gamma_R^{\Pi,+}$, write $P^{\Pi,+}_{R,\gamma}$ for the
+cusp-positive primitive piece in degree $\gamma$ and put
+$x^\gamma=q^nr^ls^m$ for $\gamma=(n,l,m)$.  The two-term
+Pfaffian/Koszul block on
+$P^{\Pi,+}_{R,\gamma}\oplus(P^{\Pi,+}_{R,\gamma})^\vee[1]$ is the
+skew operator
+\[
+J_\gamma=
+\begin{pmatrix}0&1-x^\gamma\\-(1-x^\gamma)&0\end{pmatrix},
+\qquad
+\operatorname{Pf}(J_\gamma)=(1-x^\gamma)^{\sdim P^{\Pi,+}_{R,\gamma}}.
+\]
+For $\gamma\notin\Gamma_R^{\Pi,+}$, set $P^{\Pi,+}_{R,\gamma}=0$.
+The first-order block of $\mathfrak D_X^{D_0}$ at height $R$ is the
+direct sum
+\[
+\mathfrak D_{X,R}^{D_0}=\bigoplus_{\gamma\in\Gamma_R^{\Pi,+}\setminus\{0\}}
+J_\gamma,
+\]
+acting on
+$\bigoplus_\gamma P^{\Pi,+}_{R,\gamma}\oplus
+(P^{\Pi,+}_{R,\gamma})^\vee[1]$.
+\end{definition}
+
+The principal symbol of $\mathfrak D_{X,R}^{D_0}$ with respect to the
+finite Chevalley--Eilenberg/Koszul filtration is the normal-ordered
+Hall bracket of \S\ref{subsec:hall-correspondences}: the Pfaffian
+line is the determinant detector, and the symbol carries the Lie
+data.  The phrase \emph{first-order} means the Pfaffian/primitive
+object before scalar squaring; no analytic Dirac operator on a
+constructed Hilbert space is asserted.
+
+\subsubsection*{The Pfaffian product at finite stage}
+
+\begin{proposition}[Pfaffian product at finite stage;
+\textit{conditional on (D0-Pf)}]
+\label{prop:pfaffian-product-finite-stage}
+Suppose the orientation lane $(\textup{O1},\textup{O1}^+)$ has
+descended to the reduced quotient, the first-order block
+decomposition is supplied, and the support and parity residuals
+\[
+\mathfrak o^{\mathrm{supp}}_{R,\gamma}=
+\begin{cases}
+P^{\Pi,+}_{R,\gamma},&a_\Delta(\gamma)=0\\
+0,&a_\Delta(\gamma)\ne0
+\end{cases},
+\qquad
+\mathfrak o^{\mathrm{par}}_{R,\gamma}
+=p^{\bar0}_{R,\gamma}-p^{\bar1}_{R,\gamma}-a_\Delta(\gamma)\in\Z,
+\]
+together with the leading-coefficient residual
+$\mathfrak o^{\mathrm{lead}}_R=\operatorname{lc}_{\mathfrak c_\infty}
+(\operatorname{pf}_{X,R})-64$, all vanish on the test window, where
+$a_\Delta(\gamma)$ is the Borcherds exponent and
+$p^{\bar p}_{R,\gamma}=\dim P^{\Pi,+}_{R,\gamma,\overline p}$.  Then
+the Pfaffian section at finite stage has expansion
+\[
+\operatorname{pf}_{X,R}|_{\mathfrak c_\infty}
+=64q^{1/2}r^{1/2}s^{1/2}
+\prod_{\substack{\gamma\in\Gamma_R^{\Pi,+}\\\gamma\ne 0}}
+(1-x^\gamma)^{\sdim P^{\Pi,+}_{R,\gamma}}.
+\]
+The cusp-positive Pfaffian half is recorded; negative root
+representatives and the Cartan/imaginary completion enter the Lie
+recognition statement of \S\ref{subsec:primitive-recognition}.
+\end{proposition}
+
+The support residual is a super-vector-space residual, not a $K_0$
+class: its vanishing excludes invisible even--odd cancelling
+primitive pieces in target-zero degrees.  The parity residual is a
+signed superdimension residual.  These finite-stage residuals on the
+test window do not by themselves prove compact source coverage; the
+inclusion $A_R\subset\Gamma_R^{\Pi,+}$ of active target degrees in the
+source image is itself a residual condition, not a consequence of
+the Borcherds product.
+
+\subsubsection*{Local Pfaffian wall on type-II walls}
+
+The (O2) obstruction concerns the local Pfaffian normal form on the
+three simple type-II walls $\Hpl_{\delta_i}$, $i=1,2,3$, of the
+Borcherds--Cartan datum $\mathscr B_{\Delta_5}$.
+
+\begin{definition}[Rank-one type-II Pfaffian crossing]
+\label{def:rank-one-type-ii-crossing}
+For a simple type-II root $\delta$, let $T_\delta$ be a real analytic
+tangent chart with trivial $s_\delta$-action, set
+$U_\delta=T_\delta\times(-\varepsilon,\varepsilon)$ with
+$s_\delta(t,u)=(t,-u)$, and let
+$\mathscr L^{\mathrm{tan}}_\delta$ be an oriented tangent Pfaffian
+line with $s_\delta$-invariant unit $\upsilon_\delta$.  The rank-one
+odd Pfaffian crossing is the skew family
+\[
+D_u=\begin{pmatrix}0&u\\-u&0\end{pmatrix},
+\qquad K^{\mathrm{cross}}_\delta=
+[\R\xrightarrow{u}\R],
+\]
+in odd Pfaffian parity.  The total local Pfaffian section is
+\[
+\operatorname{pf}_\delta=\upsilon_\delta\,u,
+\qquad
+s_\delta^*\operatorname{pf}_\delta=-\operatorname{pf}_\delta,
+\qquad
+s_\delta^*(\operatorname{pf}_\delta^2)=\operatorname{pf}_\delta^2.
+\]
+\end{definition}
+
+\begin{proposition}[Rank-one crossing gives the type-II local sign;
+\textit{proved}]
+\label{prop:rank-one-crossing-o2-sign}
+For $i=1,2,3$, the rank-one crossing of
+Definition~\ref{def:rank-one-type-ii-crossing} forms the finite
+generic type-II local-sign datum with
+$N^{\mathrm{Pf}}_{\delta_i}=1$, and at finite HN height $R$, with
+successor maps preserving the tangent charts, the wall coordinate
+$u_{\delta_i,R}$, and the invariant units, the (O2) residual entries
+\[
+\mathfrak o^{\mathrm{chart}}_{\delta_i,R},\
+\mathfrak o^{\mathrm{wall}}_{\delta_i,R},\
+\mathfrak o^{\mathrm{split}}_{\delta_i,R},\
+\mathfrak o^{\mathrm{unit}}_{\delta_i,R},\
+\mathfrak o^{\mathrm{rank}}_{\delta_i,R},\
+\mathfrak o^{\mathrm{tr}}_{\delta_i,R'R}
+\]
+vanish for these local models, and
+$\varepsilon^{\mathrm{loc}}_{\delta_i,R}=-1$.
+\end{proposition}
+
+\begin{proof}
+The fixed locus of $s_\delta(t,u)=(t,-u)$ is $u=0$, so the wall and
+the tangent fixed locus agree.  The determinant factor is split: the
+tangent line is $\mathscr L^{\mathrm{tan}}_\delta$, and the normal
+factor is $K^{\mathrm{cross}}_\delta$.  The unit $\upsilon_\delta$ is
+invariant by construction.  The skew matrix has Pfaffian $u$, so the
+normal-mode rank is one.  Reflection sends $u\mapsto -u$ and fixes
+$\upsilon_\delta$; hence the local Pfaffian section changes sign and
+its square is fixed.  The transition hypothesis is exactly
+preservation of these data under successor maps.
+\end{proof}
+
+\subsubsection*{Half-Hilbert orbit and the type-II sign sum}
+
+The (O2) obstruction also requires a wall \emph{atlas}: at finite
+HN height $R$, each retained component and boundary stratum of
+$\Hpl_{\delta_i}$ needs a chart of the rank-one form, and the
+normal Pfaffian units, tangent/normal splittings, quotient
+orientations, and protected integration maps must agree on chart
+overlaps.  A single generic chart computes only a local sign.
+
+The half-Hilbert orbit of the type-II reflection group on the
+relevant retained stratum carries a sign sum of size $4096=2^{12}$,
+counting the supplied finite-window normal Pfaffian signs across the
+twelve retained components and boundary strata of the type-II wall
+configuration; this sum is the signature of the (O2) wall
+normal-form theorem.  Local rank-one charts contribute the local
+factors; the global sum reads as the orientation character on the
+$W^{(2)}(\Lambda_{II}^{2,1})$-orbit.  The full normal-form
+theorem with overlap, boundary, and component coherence is the
+content of Appendix~E and probes A047, A092, A100; the present
+section sketches the local model only.
+
+\begin{proposition}[Generic local sign and the orientation
+character; \textit{conditional on (O1)$^+$ and the (O2) wall atlas}]
+\label{prop:generic-local-sign-orientation-character}
+Suppose (O1)$^+$ supplies a normalized lift
+$\tau_{i,R,S}:o_{R,S}\to s_{\delta_i}^* o_{R,S}$ of the simple
+type-II reflection on every retained orbit, and the (O2)/hybrid
+residual for $\delta_i$ vanishes.  In a local chart with
+$K^{\mathrm{nor}}_{\delta_i,R}\simeq[\R\xrightarrow{u_i}\R]$, with
+normal Pfaffian unit $\upsilon_i$ and $s_{\delta_i}(\upsilon_i)
+=\upsilon_i$, let $\ell_{\delta_i,R,S}$ be the path in the reduced
+quotient wall-complement carrying $u_i=\epsilon$ to $u_i=-\epsilon$,
+closed by $\tau_{i,R,S}$.  Then
+\[
+M_{\ell_{\delta_i,R,S}}(\upsilon_i u_i)=\upsilon_i(-u_i)
+=-\upsilon_i u_i,
+\qquad
+\epsilon_{o,R}(s_{\delta_i})=(-1)^{N^{\mathrm{Pf}}_{\delta_i,R}}.
+\]
+For the rank-one type-II model
+$\epsilon_{o,R}(s_{\delta_i})=-1=\nu_{\Delta_5}(s_{\delta_i})$.  The
+global statement
+$\epsilon_o|_{W^{(2)}(\Lambda_{II}^{2,1})}=\nu_{\Delta_5}|
+_{W^{(2)}(\Lambda_{II}^{2,1})}$
+is the chamber-permuting half of the Pfaffian--Dirac orientation
+identity, conditional on the (O2) wall atlas.
+\end{proposition}
+
+\subsubsection*{Pfaffian normalization and trace}
+
+The supplied Pfaffian-to-automorphic comparison
+$\iota_{\mathrm{aut}}$ then gives, on the imported Borcherds product
+side,
+\[
+\iota_{\mathrm{aut}}\bigl(\operatorname{Pf}_{\mathrm{prot}}
+(\mathfrak D_X)\bigr)=\mathcal D_X=\Delta_5,
+\]
+with cusp-side expansion
+\[
+\operatorname{pf}_X|_{\mathfrak c_\infty}
+=64q^{1/2}r^{1/2}s^{1/2}\prod_{\gamma=(n,l,m)\in
+\Gamma_{\mathrm{eff}}}(1-q^nr^ls^m)^{f(nm,l)},
+\]
+matching the imported Borcherds--Gritsenko--Nikulin product.  The
+scalar trace is the Oberdieck--Pixton normalization
+\[
+\operatorname{Tr}_{\mathrm{prot}}\bigl((-1)^F\mathfrak D_X^{-2}\bigr)
+=-4096\,\Delta_5^{-2},
+\]
+which carries the negative sign and the $4096=2^{12}$ overall
+multiplicity attached to the half-Hilbert orbit.  This sign and
+multiplicity are not chosen branch conventions; they are computed by
+the (O2) wall atlas after (O1)$^+$ has supplied the Weyl
+transports.
+
+\subsubsection*{Cross-repo anchor and status}
+
+Vol II's Construction Problem~1 isolates the protected Pfaffian
+$\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)=\Delta_5$ as the
+target identity for the chiral $E_3$-algebra $\mathfrak A_{K3\times E}$;
+the present section supplies the $K3\times E$-side construction.
+BBDJS \cite{BBDJS2015} provides the orientation-line and Pfaffian
+calculus on the cosection-reduced d-critical heart; Joyce--Upmeier
+\cite{JoyceUpmeier} provides multiplicativity under reduced
+extension correspondences; Joyce--Tanaka--Upmeier
+\cite{JoyceTanakaUpmeier} extends the framework to $4$-fold
+analogues but is not used directly here.  The constants $4096=2^{12}$
+and $-1$ are fixed by group theory plus one local rank-one Pfaffian
+wall computation; the Oberdieck--Pixton minus sign is a scalar branch
+convention, not the source of the orientation character.  No
+identification of the Pfaffian $\Delta_5$ with a compact BPS Hilbert
+space is asserted: $\Delta_5$ is the protected scalar shadow of
+$\mathfrak A_{K3\times E}$, and the operator-level package is the
+pro-object $\mathfrak D_X^{\mathrm{DI}}$ conditional on (D0), (O1),
+(O1)$^+$, (O2).
+
+The Pfaffian recovers $\Delta_5$ at the target scalar level, but
+the cross-level recognition that identifies the primitive Hopf
+algebra of \S\ref{subsec:hall-correspondences} with the Borcherds--Kac--Moody
+target $\autcor$ requires a separately constructed source coalgebra
+and an explicit chiral-Koszul cobar comparison.  The bar of the
+augmented hybrid factorization algebra is the source coalgebra
+$C_X$; the cobar map $\Theta_{\mathrm{Kos},R}$ is the quasi-isomorphism
+to the imported current envelope $\mathsf{Den}_{\Delta_5,E}$.  This
+Koszul lane $(\mathrm L 5)$ is the content of
+\S\ref{subsec:koszul-source}.

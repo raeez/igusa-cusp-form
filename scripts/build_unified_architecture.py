@@ -138,12 +138,47 @@ HTML_TEMPLATE = r"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <title>Mathematics — Cross-Volume Architecture</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
-        onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}], throwOnError:false});"></script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    macros: {
+      Eone: '{E_1}', Etwo: '{E_2}', Ethree: '{E_3}',
+      Ran: '{\\mathrm{Ran}}', Conf: '{\\mathrm{Conf}}',
+      ChirHoch: '{\\mathrm{ChirHoch}}', ch: '{\\mathrm{ch}}',
+      ord: '{\\mathrm{ord}}', cl: '{\\mathrm{cl}}',
+      cA: '{\\mathcal{A}}', cB: '{\\mathcal{B}}', cC: '{\\mathcal{C}}',
+      cD: '{\\mathcal{D}}', cF: '{\\mathcal{F}}', cH: '{\\mathcal{H}}',
+      cM: '{\\mathcal{M}}', cO: '{\\mathcal{O}}', cV: '{\\mathcal{V}}',
+      cW: '{\\mathcal{W}}', cZ: '{\\mathcal{Z}}',
+      fg: '{\\mathfrak{g}}', fh: '{\\mathfrak{h}}',
+      Bbarch: '{\\bar B^{\\mathrm{ch}}}', Omegach: '{\\Omega^{\\mathrm{ch}}}',
+      barB: '{\\bar B}', Tw: '{\\mathrm{Tw}}',
+      MC: '{\\mathrm{MC}}', PVA: '{\\mathrm{PVA}}',
+      Hom: '{\\mathrm{Hom}}', Ext: '{\\mathrm{Ext}}', Tor: '{\\mathrm{Tor}}',
+      Sym: '{\\mathrm{Sym}}', End: '{\\mathrm{End}}', Aut: '{\\mathrm{Aut}}',
+      Spec: '{\\mathrm{Spec}}', Proj: '{\\mathrm{Proj}}',
+      KZ: '{\\mathrm{KZ}}', BRST: '{\\mathrm{BRST}}',
+      Vir: '{\\mathrm{Vir}}', Heis: '{\\mathrm{Heis}}',
+      ProvedHere: '{}', ProvedElsewhere: '{}', Conjectured: '{}',
+      ClaimStatusProvedHere: '{}', ClaimStatusProvedElsewhere: '{}',
+      ClaimStatusConjectured: '{}', ClaimStatusConditional: '{}',
+      ClaimStatusEvidence: '{}', ClaimStatusHeuristic: '{}',
+      ClaimStatusRetracted: '{}',
+      textnormal: ['{\\textrm{#1}}', 1],
+      texorpdfstring: ['{#1}', 2]
+    }
+  },
+  svg: { fontCache: 'global' },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] },
+  startup: { typeset: false }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.28.1/dist/cytoscape.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/cytoscape-fcose@2.2.0/cytoscape-fcose.min.js" crossorigin="anonymous"></script>
 <style>
   :root { --bg:#fafaf6; --fg:#1a1a1a; --muted:#6b6b6b; --rule:#d8d4c9; --link:#1f4d8b; }
   * { box-sizing: border-box; }
@@ -173,7 +208,10 @@ HTML_TEMPLATE = r"""<!doctype html>
   ul.node-list li.selected { background:#efe7ce; }
   .nl-id { font-family:Menlo,monospace; font-size:0.78rem; color:var(--muted); }
   .nl-loc { font-size:0.72rem; color:var(--muted); display:block; }
-  #cy { height:100%; background:#fbfaf3; }
+  #cy { height:100%; background:#fbfaf3; position:relative; }
+  #cy-status { position:absolute; top:8px; left:50%; transform:translateX(-50%); background:rgba(255,255,255,0.95); border:1px solid var(--rule); padding:6px 12px; border-radius:4px; font-size:0.78rem; color:var(--muted); z-index:10; pointer-events:none; }
+  #cy-status button { pointer-events:auto; margin-left:0.5rem; padding:2px 8px; font-size:0.78rem; cursor:pointer; }
+  #cy-error { padding:2rem; color:#a32d1d; background:#fdf0ee; border:1px solid #f3c0b8; margin:1rem; border-radius:4px; font-family:Menlo,monospace; font-size:0.85rem; white-space:pre-wrap; }
   #detail { border-left:1px solid var(--rule); padding:1rem; overflow-y:auto; font-size:0.92rem; }
   #detail .empty { color:var(--muted); font-style:italic; }
   #detail h2 { margin:0 0 0.4rem; font-size:1.1rem; font-weight:600; }
@@ -201,11 +239,12 @@ HTML_TEMPLATE = r"""<!doctype html>
     </fieldset>
     <ul id="node-list" class="node-list"></ul>
   </aside>
-  <main id="cy"></main>
+  <main id="cy"><div id="cy-status">initializing graph…</div></main>
   <aside id="detail"><p class="empty">Click a node or list item.</p></aside>
 </div>
 <script>
 const DATA = __PAYLOAD__;
+const RENDER_CAP = 2000;
 const VOLUME_TITLES = __VOLUME_TITLES__;
 const VOLUME_COLOR = __VOLUME_COLOR__;
 
@@ -291,50 +330,102 @@ function passesNode(n){
 }
 
 let cy;
-function buildCy(){
-  const elements = [];
-  for (const n of DATA.nodes){
-    elements.push({ data:{ id:n.id, label:(n.title||n.bare_id||n.id).slice(0,28), volume:n.volume, type:n.type, status:statusOf(n) }});
-  }
+let renderingAll = false;
+function pickRenderNodes(all){
+  if (renderingAll || all.length <= RENDER_CAP) return all;
+  // Score: status + type + cross-volume edge incidence + intra-volume in-degree
+  const statusW = { ProvedHere:5, Conditional:4, ProvedElsewhere:4, Conjectured:3, Evidence:3, Heuristic:2, Retracted:1, Unmarked:0 };
+  const typeW = { theorem:5, proposition:4, lemma:3, corollary:3, definition:2, conjecture:4, computation:3, principle:5, construction:2 };
+  const inDeg = {}, crossDeg = {};
   for (const e of DATA.edges){
-    elements.push({ data:{ id: e.source+"->"+e.target, source:e.source, target:e.target, kind:e.kind || "cites" }});
+    inDeg[e.target] = (inDeg[e.target]||0) + 1;
+    if (e.kind === "cross-volume"){
+      crossDeg[e.target] = (crossDeg[e.target]||0) + 1;
+      crossDeg[e.source] = (crossDeg[e.source]||0) + 1;
+    }
   }
-  cy = cytoscape({
-    container: document.getElementById("cy"),
-    elements,
-    style: [
-      { selector: "node", style: {
-          "label": "data(label)", "font-size": 7, "color":"#222",
-          "text-wrap":"ellipsis", "text-max-width": 56,
-          "background-color": ele => VOLUME_COLOR[ele.data("volume")] || "#888",
-          "shape": ele => TYPE_SHAPE[ele.data("type")] || "ellipse",
-          "border-color":"#222","border-width":0.4,
-          "width": 12, "height": 12, "opacity":0.85
-      }},
-      { selector: "edge[kind = 'cites']", style: {
-          "width":0.4, "line-color":"#9c948a", "curve-style":"haystack",
-          "target-arrow-shape":"none", "opacity":0.4
-      }},
-      { selector: "edge[kind = 'cross-volume']", style: {
-          "width":0.8, "line-color":"#7d2b2b", "curve-style":"bezier",
-          "target-arrow-shape":"triangle", "target-arrow-color":"#7d2b2b",
-          "arrow-scale":0.4, "opacity":0.7
-      }},
-      { selector: "node:selected", style: {
-          "border-width": 2, "border-color":"#1a1a1a",
-          "width":20, "height":20, "font-size":11, "z-index":99
-      }},
-      { selector: "node.faded", style: {"opacity":0.06, "text-opacity":0}},
-      { selector: "edge.faded", style: {"opacity":0.03}},
-      { selector: "node.highlight", style: {"border-width":1.5, "border-color":"#000", "z-index":50}},
-      { selector: "edge.highlight", style: {"opacity":0.95, "width":1.4, "z-index":40}},
-    ],
-    layout: { name: "fcose", animate: false, randomize: true, nodeSeparation: 60, idealEdgeLength: 35, gravity: 0.25 },
-    wheelSensitivity: 0.2,
-    minZoom: 0.03, maxZoom: 5,
-  });
-  cy.on("tap", "node", evt => select(evt.target.id()));
-  cy.on("tap", e => { if (e.target === cy) clearHighlight(); });
+  const scored = all.map(n => ({ n, s: (statusW[statusOf(n)]||0) + (typeW[n.type]||0) + Math.min(5, inDeg[n.id]||0) + 5*Math.min(3, crossDeg[n.id]||0) }));
+  scored.sort((a,b) => b.s - a.s);
+  return scored.slice(0, RENDER_CAP).map(x => x.n);
+}
+
+function setStatus(html){
+  const el = document.getElementById("cy-status");
+  if (el) el.innerHTML = html;
+}
+
+function buildCy(){
+  try {
+    if (typeof cytoscape === "undefined"){
+      throw new Error("cytoscape failed to load (check network / CDN access)");
+    }
+    const total = DATA.nodes.length;
+    const rendered = pickRenderNodes(DATA.nodes);
+    const renderedIds = new Set(rendered.map(n => n.id));
+    const elements = [];
+    for (const n of rendered){
+      elements.push({ data:{ id:n.id, label:(n.title||n.bare_id||n.id).slice(0,28), volume:n.volume, type:n.type, status:statusOf(n) }});
+    }
+    for (const e of DATA.edges){
+      if (renderedIds.has(e.source) && renderedIds.has(e.target)){
+        elements.push({ data:{ id: e.source+"->"+e.target, source:e.source, target:e.target, kind:e.kind || "cites" }});
+      }
+    }
+    cy = cytoscape({
+      container: document.getElementById("cy"),
+      elements,
+      style: [
+        { selector: "node", style: {
+            "label": "data(label)", "font-size": 7, "color":"#222",
+            "text-wrap":"ellipsis", "text-max-width": 56,
+            "background-color": "data(volume)",
+            "shape": "ellipse",
+            "border-color":"#222","border-width":0.4,
+            "width": 12, "height": 12, "opacity":0.85
+        }},
+        ...Object.entries(VOLUME_COLOR).map(([v,c]) => ({ selector: `node[volume = '${v}']`, style: { "background-color": c }})),
+        ...Object.entries(TYPE_SHAPE).map(([t,sh]) => ({ selector: `node[type = '${t}']`, style: { "shape": sh }})),
+        { selector: "edge[kind = 'cites']", style: {
+            "width":0.4, "line-color":"#9c948a", "curve-style":"haystack",
+            "target-arrow-shape":"none", "opacity":0.4
+        }},
+        { selector: "edge[kind = 'cross-volume']", style: {
+            "width":1.2, "line-color":"#c4585a", "curve-style":"bezier",
+            "target-arrow-shape":"triangle", "target-arrow-color":"#c4585a",
+            "arrow-scale":0.6, "opacity":0.85
+        }},
+        { selector: "node:selected", style: {
+            "border-width": 2, "border-color":"#1a1a1a",
+            "width":20, "height":20, "font-size":11, "z-index":99
+        }},
+        { selector: "node.faded", style: {"opacity":0.06, "text-opacity":0}},
+        { selector: "edge.faded", style: {"opacity":0.03}},
+        { selector: "node.highlight", style: {"border-width":1.5, "border-color":"#000", "z-index":50}},
+        { selector: "edge.highlight", style: {"opacity":0.95, "width":1.4, "z-index":40}},
+      ],
+      layout: { name: "cose", animate: false, fit: true, padding: 30, idealEdgeLength: 40, nodeRepulsion: 2500, gravity: 0.3, numIter: 250, randomize: true },
+      wheelSensitivity: 0.2,
+      minZoom: 0.03, maxZoom: 5,
+    });
+    cy.on("tap", "node", evt => select(evt.target.id()));
+    cy.on("tap", e => { if (e.target === cy) clearHighlight(); });
+    if (rendered.length < total){
+      setStatus(`rendering ${rendered.length} of ${total} top-priority nodes (cross-volume edges + ProvedHere/Conditional + theorems prioritized) · <button id="render-all-btn">render all</button>`);
+      const btn = document.getElementById("render-all-btn");
+      if (btn) btn.addEventListener("click", () => {
+        renderingAll = true;
+        setStatus(`re-laying out ${total} nodes (this may take 30s+)…`);
+        setTimeout(() => { try { cy.destroy(); } catch(_){} buildCy(); }, 50);
+      });
+    } else {
+      setStatus(`${rendered.length} nodes rendered`);
+      setTimeout(() => { const el = document.getElementById("cy-status"); if (el) el.style.display = "none"; }, 2000);
+    }
+  } catch (err) {
+    const cyDiv = document.getElementById("cy");
+    cyDiv.innerHTML = `<div id="cy-error">Graph failed to render:\n\n${(err && err.stack) || err}\n\nThe sidebar list and detail panel still work — click a node label there.</div>`;
+    console.error(err);
+  }
 }
 
 function buildList(){
@@ -435,7 +526,9 @@ function renderDetail(n){
     ${incIntra.length ? `<h3>Cited by (in-volume) — ${incIntra.length}</h3><ul class="refs">${incIntra.map(e=>refLine(e,"in")).join("")}</ul>` : ""}
   `;
   el.querySelectorAll("a[data-id]").forEach(a => a.addEventListener("click", e => select(e.target.dataset.id)));
-  if (window.renderMathInElement) window.renderMathInElement(el, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}], throwOnError:false});
+  if (window.MathJax && window.MathJax.typesetPromise){
+    window.MathJax.typesetPromise([el]).catch(e => console.warn("MathJax typeset error:", e));
+  }
 }
 
 function escapeHtml(s){ if (s==null) return ""; return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]); }

@@ -1,0 +1,868 @@
+% !TEX root = ../main.tex
+
+\chapter{Open obstructions and the next frontier}
+\label{ch:open-obstructions}
+
+\section{Open obstructions and the next frontier}
+\label{sec:open-obstructions-and-frontier}
+
+The cross-level identity \(\textcircled{2}\!\leftrightarrow\!\textcircled{3}\) of
+this manuscript --- the Pfaffian--Dirac theorem
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5\),
+\(\epsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\), and the
+primitive recognition \(P_X\cong\mathfrak g_{\Delta_5}\) --- is
+conditional on four named obstructions, and the manuscript stops at the
+boundary where each is named, not at the boundary where each is closed.
+The view is honest: the automorphic identity
+\(\textcircled{1}\!\leftrightarrow\!\textcircled{2}\) is theorem
+\cite{Borcherds95,GN}; the singular-theta-lift identity
+\(\textcircled{2}\!\leftrightarrow\!\textcircled{5}\) is theorem
+\cite{Borcherds95}; the BKM denominator computation
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\) is
+theorem; what is conditional is the operator-level passage from the
+finite-stage compact \(K3\times E\) source to the closed denominator
+algebra.
+
+Each of the four obstructions sits at a definite categorical-dimensional
+level on the universal chain
+\(\mathsf{P}\to\mathsf{C}\to\mathsf{S}\to\mathsf{Z}\to\mathsf{A}\); each
+of three open frontiers --- the Hall--Borcherds residual promoting the
+level-\(n\) protected scalar shadow to operator level (Vol II
+Construction Problem 2); the chain fusion conjecture for compact
+non-toric \(K3\times E\) (Vol III); and the gravity-line operator
+algebra whose Pentagon-face scalar trace is \(\Delta_5^2\) (Vol II
+Construction Problem 2 again, cross-listed) --- bridges the operator
+content of this manuscript to the broader programme. The Mathieu /
+umbral moonshine adjacency stands between obstructions and frontiers:
+its connection to \(\mathfrak g_{\Delta_5}\) is conjectural, and the
+precise content of the conjecture is what the chapter asserts. The
+Beilinson cut places this chapter at the frontier: open obligations
+named precisely \emph{are} the deliverable.
+
+The three names of \(\Delta_5\) are kept distinct on first occurrence:
+the automorphic section
+\(D_X=\Delta_5\in H^0(\mathcal H_2,\mathcal L^5\otimes\nu_{\Delta_5})\)
+of view \textcircled{1}; the BKM denominator
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\) of
+view \textcircled{2}; and the compact protected Pfaffian
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\) of view
+\textcircled{3}, conditional on \textup{(D0)}, \textup{(O1)},
+\textup{(O1)\(^+\)}, \textup{(O2)}.
+
+\subsection{The four named obstructions}
+\label{subsec:four-named-obstructions}
+
+Each of the four obstructions sits at a definite categorical-dimensional
+level and carries a definite licensing type. The compact target is the
+Dirac--Igusa pro-object
+\(\mathfrak D_X^{\mathrm{DI}}=\varprojlim_R(\mathcal A_{X,R}^{E_3},
+F_{X,R}^{\mathrm{hyb}},\Gamma_{X,R},\Pi_X,\Phi_R,o_R,H_R,P_R^\Pi,
+C_{X,R},\Theta_{\mathrm{Kos},R},\mathcal L_{\mathrm{Pf},R},
+\mathrm{pf}_{X,R},\epsilon_{o,R},\mathrm{Rec}_R)\). The level
+discipline is \emph{primitive object first, cross-level identity second,
+scalar shadow last}. The four obstructions are exactly the local-to-global
+passages whose Beilinson cut places the conditional theorem
+\(\textcircled{2}\!\leftrightarrow\!\textcircled{3}\) at level
+\(\mathsf{Z}\) rather than at level \(\mathsf{S}\).
+
+\subsubsection{(D0): D0-degeneration limit of the cosection-reduced d-critical orientation theory}
+\label{subsubsec:obstruction-D0}
+
+\paragraph{Statement.} The cosection-reduced d-critical orientation
+theory on the retained Hall stack
+\(\mathcal H_R^{\mathrm{or}}\) of finite HN height \(R\) extends to the
+D0 (zero-dimensional brane) degeneration locus, in the sense that the
+orientation line of the reduced determinant complex
+\[
+\mathscr D^{\mathrm{red}}_{R,\mathcal C}
+=\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)
+\]
+admits a Brav--Bussi--Dupont--Joyce--Szendr\H{o}i \cite{BBDJS2015} square-root
+gerbe section over the closure
+\(\overline{\mathfrak M^{\mathrm{st}}_{R,\mathcal C}}\subset
+\overline{\mathcal H_R^{\mathrm{or}}}\) including the D0-degeneration
+stratum, compatible with the cosection contraction inherited from
+\(K3\times E\). The retained Hall datum supplies an oriented critical
+finite-stage Pandharipande--Thomas/Gholampour--Sheshmani
+inverse system \(\widehat{\mathcal H}^{\mathrm{or}}_{\sigma,S}
+=\varprojlim_R\mathsf F_R\mathcal H_{\sigma,S}^{\mathrm{or}}\) on the
+finite HN quotients of
+Definition~\ref{prop:sectorial-hall-truncation};
+\textup{(D0)} asks that this system carry a coherent orientation through
+the D0-degeneration limit.
+
+\paragraph{Stage and licensing.} Level \(\mathsf{S}\), \(\gamma\)-ambient
+(chain-level versus pro-object), \(\varepsilon\)-effectiveness
+(orientation as square-root datum). The licensing is
+\((\mathsf{S},\gamma,\varepsilon)\): the d-critical structure lives at
+the chart specialization stage \(\mathsf{S}\); the ambient is the
+finite-stage pro-object \(\widehat{\mathcal H}^{\mathrm{or}}_{\sigma,S}\),
+not an ordinary chain complex; the effectiveness datum is the
+orientation gerbe section, which is what \textup{(D0)} demands extend.
+
+\paragraph{Verification.} A005 verifies the local
+Pfaffian wall sign theorem is correctly conditional and identifies
+graph-isogeny atoms as candidate, not theorem; A011 maintains the
+firewall between the Maass character \(\nu_{\Delta_5}\) and the
+geometric orientation \(\epsilon_o\) (these agree on
+\(W^{(2)}(\La^{2,1}_{II})\) only after \textup{(D0)}--\textup{(O2)}
+hold); A026 confirms BBDJS \cite{BBDJS2015} vanishing-cycle data require an
+oriented d-critical locus, not boundedness alone, and that
+Joyce--Upmeier \cite{JoyceUpmeier} square-root data on CY\(_3\) moduli do not
+automatically extend to the reduced \(K3\times E\) quotient; A037
+separates the connected \(BE\) Borel/edge class
+\(\alpha^{E,\mathrm{free}}=a_1u_1+a_2u_2\in H^2(BE;\mathbb F_2)\)
+from finite \(BE[N]\) Borel terms; A042 verifies the quotient-orientation
+descent across object, extension, mixed, wrapped, two-step flag, overlap,
+Thom--Sebastiani, and \(R'\to R\) transition strata is conditional, with
+overlap/correspondence/flag/transition compatibilities named separately.
+
+\paragraph{Reasoning.} The retained Hall boundedness \cite{LiuProductStability,PiyaratneTodaModuli3folds}
+gives a finite-type retained slice; it does not give quasi-smoothness, a
+d-critical chart, BBDJS coefficients, an orientation line, or
+compact-support six-functor admissibility through the D0 limit.
+Pantev--To{\"e}n--Vaqui{\'e}--Vezzosi \cite{PTVV2013} shifted symplectic
+structures cover ambient derived
+moduli under Calabi--Yau hypotheses; the retained atlas is not produced
+by PTVV alone. Joyce--Upmeier \cite{JoyceUpmeier} square-root orientation
+on Calabi--Yau\(_3\) moduli requires exact-sequence/direct-sum
+compatibility; the reduced \(K3\times E\)-quotient inherits this only
+after the cosection-induced shift is shown compatible with descent.
+
+\paragraph{Next concrete construction.} \emph{Open.} Compute
+\(\alpha^{\mathrm{red}}_{R,\mathcal C}=w_2(\mathscr D^{\mathrm{red}}_{R,\mathcal C})
+\in H^2(S;\mathbb F_2)\), \(\alpha^{E,\mathrm{free}}_{R,\mathcal C}\),
+\(\widetilde\beta^{H}_{R,\mathcal C}\in H^2_H(S;\mathbb F_2)\), and
+\(\lambda^{H}_{R,\mathcal C}\in H^1(BH;\mathbb F_2)\) on every retained
+object, extension, mixed, wrapped, and flag stratum \(\mathcal C\), with
+killing of the Borel mixed terms and edge-spectral-sequence differentials
+required at every node of the descent diagram. The simplest decisive
+locus is the rank-one D6--D2--D0 stratum
+\(\mathcal C=(1,\beta,n)\) with \(\beta\) the K3-fibre primitive class:
+on this stratum the BBDJS line carries the cosection contraction
+explicitly, and the four obstruction classes
+\((\alpha^{\mathrm{red}},\alpha^{E,\mathrm{free}},\widetilde\beta^{H},
+\lambda^{H})\) reduce to a Pin\(^c\) computation. A discharge of
+\textup{(D0)} on this stratum, together with the
+extension/correspondence/flag transitions of probe A042, yields the
+strong reduced orientation across the retained inverse system.
+
+\subsubsection{(O1): strong reduced orientation on the K3{\(\times\)}E-quotient self-Ext frame bundle}
+\label{subsubsec:obstruction-O1}
+
+\paragraph{Statement.} The BBDJS \cite{BBDJS2015} orientation gerbe on the moduli
+of stable sheaves on \(K3\times E\) descends to the
+\(K3\times E\)-quotient self-Ext frame bundle, with reduced orientation
+gauge: on the stable stratum
+\(\mathfrak M^{\mathrm{st}}_{R,\mathcal C}\subset\mathcal H_R^{\mathrm{or}}\)
+the obstruction tuple
+\[
+\mathfrak o^{\mathrm{or}}_{R,\mathcal C}
+=\bigl(\alpha^{\mathrm{red}}_{R,\mathcal C},\,
+\alpha^{E,\mathrm{free}}_{R,\mathcal C},\,
+\{(\widetilde\beta^{H}_{R,\mathcal C},\lambda^{H}_{R,\mathcal C})\}_{H},\,
+\mu^{\mathrm{or}}_{R,e},\,\dots\bigr)
+\]
+vanishes simultaneously, with all overlap, correspondence, flag, and
+\(R'\to R\) transition data trivialized coherently. \textup{(O1)}
+demands the strong reduced descent: the connected-\(BE\) class
+\(\alpha^{E,\mathrm{free}}\), the finite-\(BE[N]\) gerbe classes
+\(\widetilde\beta^H\), and the residual finite linearization characters
+\(\lambda^H\) all vanish, separately, on every retained stratum, and the
+spectral-sequence differentials and Borel mixed terms are killed.
+
+\paragraph{Stage and licensing.} Level \(\mathsf{S}\to\mathsf{Z}\),
+\(\beta\)-comparison (gerbe descent functor),
+\(\varepsilon\)-effectiveness (orientation gauge non-degeneracy). The
+licensing is \((\mathsf{S}\to\mathsf{Z},\beta,\varepsilon)\): the
+descent of the BBDJS line is the comparison arrow from the chart
+specialization stage \(\mathsf{S}\) to the centre stage \(\mathsf{Z}\),
+and effectiveness asks the orientation be a non-degenerate square-root
+datum.
+
+\paragraph{Verification.} Probe A074 confirms cross-repo consistency with
+Vol III on the primitive recognition firewall: target arithmetic on
+\(W_{\le3}\) is target Borcherds--Gritsenko--Nikulin--Kac data only,
+and recognition requires an actual compact source datum supplying
+\(M,D,B,G,K,Q,A_\beta\), relation rows, Hopf radical/coideal kernel
+equality, PBW associated-graded comparison, and strict
+transition/Mittag--Leffler rows. Probes A076, A082, A089 supply the
+proof-ledger statement defining what a discharged \textup{(O1)} carries
+to the recognition theorem. The connected \(E\) and finite \(E[N]\)
+cohomologies are \emph{distinct} obstruction spaces:
+\(H^*(BE;\mathbb F_2)=\mathbb F_2[u_1,u_2]\) with
+\(|u_i|=2\), so \(H^1(BE;\mathbb F_2)=0\); for
+\(E[2]\cong(\mathbb Z/2)^2\),
+\(H^*(BE[2];\mathbb F_2)=\mathbb F_2[x_1,x_2]\) with
+\(|x_i|=1\), and the residual linearization
+\(\lambda=\lambda_1x_1+\lambda_2x_2\) is independent data after the
+degree-two gerbe class is killed (A037, A042).
+
+\paragraph{Reasoning.} Translation invariance under \(E\)-action does
+not produce orientation descent: a fixed underlying line may carry a
+nontrivial finite character, and ordinary translation invariance is
+\emph{not} a substitute for vanishing of
+\(\lambda^H\) on full two-primary generators of
+\(H^*(B(\mathbb Z/2^a)^2;\mathbb F_2)
+=\Lambda(x_1,x_2)\otimes\mathbb F_2[y_1,y_2]\) at \(N=2^a\). The
+quotient-orientation criterion is finite \v{C}ech--Borel descent on the
+retained groupoid, not a vanishing theorem.
+
+\paragraph{Next concrete construction.} \emph{Open.} Construct, on the
+rank-one D6--D2--D0 stratum and its extension, mixed, wrapped, and
+two-step flag completions, the actual BBDJS gerbe sections on the
+self-Ext frame bundle, and verify the full vanishing of
+\(\mathfrak o^{\mathrm{or}}_{R,\mathcal C}\) entry-by-entry. The
+decisive locus is the rank-one D6--D2--D0 input
+\(\mathcal C=(1,\beta,n)\) with the four cohomology classes computed
+explicitly via the Pin\(^c\) input plus quotient checks of clause
+\textup{(P1)}; for a discharged \textup{(O1)}, the overlap and
+correspondence transitions of probe A042 must commute with descent on
+the cofinal HN system.
+
+\subsubsection{(O1)\(^+\): Weyl-equivariant transport of the orientation along W\((^2)\)(\(\La_{II}^{2,1}\)) reflections}
+\label{subsubsec:obstruction-O1plus}
+
+\paragraph{Statement.} The orientation character on the type-II Weyl
+group \(W^{(2)}(\La^{2,1}_{II})\) is Weyl-equivariant: the orientation
+line of \textup{(O1)} is equipped with coherent lifts
+\(\tau_i:o_{\mathcal C}\to s_{\delta_i}^{*}o_{\mathcal C}\) of the
+three type-II simple reflections, each acting with sign \(-1\), and
+the projective determinant-line cocycle
+\(c_o\in Z^2(W^{(2)}(\La^{2,1}_{II});\mathbb F_2)\) of the lift is a
+coboundary, with quotient torsor defects
+\(\omega_{i,\mathcal C}=0\) on every retained groupoid component. At
+finite height \(R\), the partial action groupoid \(\mathcal G_R\)
+carries
+\(c_{o,R}\in Z^2(\mathcal G_R;\underline{\mathbb F}_2)\), and
+\textup{(O1)\(^+\)} asks that
+\([c_{o,R}]=0\), \(\tau_i^2=1\), and \(\omega_{i,\mathcal C}=0\) hold
+coherently on every stratum and at every transition height.
+
+\paragraph{Stage and licensing.} Level \(\mathsf{Z}\), \(\beta\)-comparison
+(Weyl transport functor), \(\delta\)-endpoint (cocycle reduction to
+group cohomology on the full \(W^{(2)}(\La^{2,1}_{II})\)-orbit). The
+licensing is \((\mathsf{Z},\beta,\delta)\): the Weyl transport is the
+comparison arrow at the centre stage; the endpoint discipline is the
+reduction of the finite groupoid cocycle to the group cohomology class
+on the complete orbit.
+
+\paragraph{Verification.} Probe A047 records the local sign-extraction firewall: only
+after the unit character is killed and \(N_\delta^{\mathrm{Pf}}=1\)
+is computed from the reduced normal self-Ext chart does the local
+sign equal \(-1\), and Maass values
+\(\nu_{\Delta_5}(s_{\delta_i})=-1\) plus divisor orders
+\(d^{\mathrm{aut}}_{\delta_i}=f(0,\pm1)=1\) supply target data
+only --- they do not compute \(N_\delta^{\mathrm{Pf}}\),
+\(\chi_\upsilon\), or \(\epsilon_o\). Probe A049 confirms that the
+presentation
+\[
+W^{(2)}(\La^{2,1}_{II})
+=\langle s_{\delta_1},s_{\delta_2},s_{\delta_3}\mid s_{\delta_i}^2=1\rangle
+\]
+implies that any orientation character on \(W^{(2)}(\La^{2,1}_{II})\)
+is determined by three generator signs once \textup{(O1)\(^+\)} gives
+the honest Weyl lift; the three signs proven equal to \(-1\) by
+\textup{(O2)} then propagate to the full character. Probe A089 places
+the Weyl-equivariant transport in the proof ledger as a separate
+identity, distinct from the no-extra-relations and PBW identities.
+
+\paragraph{Reasoning.} Three local signs on the simple reflections
+imply a character on the full type-II Weyl group only after
+\([c_{o,R}]=0\) and \(\omega_{i,\mathcal C}=0\): the Weyl
+determinant-line cocycle measures whether the lift is honest, and the
+quotient torsor defects measure whether the descent commutes with the
+reflection action on the retained groupoid. The cocycle reduces to the
+classical group-cohomology class only on a complete
+\(W^{(2)}(\La^{2,1}_{II})\)-orbit with constant coefficients; finite
+height \(R\) is a partial action groupoid whose component data must be
+glued.
+
+\paragraph{Next concrete construction.} \emph{Open.} Construct the
+finite-height projective lifts \(\tau_{i,R}\), prove
+\(\tau_{i,R}^2=1\) (no normalization choice survives squaring), and
+compute the cocycle class \([c_{o,R}]\) and torsor defects
+\(\omega_{i,\mathcal C}\) in
+\(H^2(\mathcal G_R;\underline{\mathbb F}_2)\) on every retained
+groupoid component, killing them coherently as \(R\to\infty\). The
+decisive computation is on the \(2\delta_i+\delta_j\) and
+\(\delta_{123}\) words of the first window \(W_{\le3}\): if the lifts
+trivialize on the height-three orbit, \textup{(O1)\(^+\)} discharges
+on \(W_{\le3}\); the \(W_{\le7}\) extension via height-four, doubled
+isotropic, and complementary string rows is then the next stage.
+
+\subsubsection{(O2): local Pfaffian wall normal form on type-II walls}
+\label{subsubsec:obstruction-O2}
+
+\paragraph{Statement.} On the three type-II walls
+\(\Hpl_{\delta_i}\) for
+\(\delta_1=2f_2-f_3,\,\delta_2=2f_{-2}-f_3,\,\delta_3=f_3\), the
+Pfaffian sign sum on the half-Hilbert orbit is exactly
+\(4096=2^{12}\) on the wall, by a local computation that
+Appendix~E carries in full. Concretely, in an
+\(s_\delta\)-equivariant real-analytic d-critical/Kuranishi chart
+\((U_\delta,x_\delta,u_\delta,K^{\mathrm{red}}_\delta)\), with
+\(K^{\mathrm{red}}_\delta\) the real form of the cosection-reduced
+self-Ext complex
+\(\operatorname{RHom}_{\mathrm{red}}(\mathcal C_\delta,\mathcal C_\delta)\),
+the splitting
+\(K^{\mathrm{red}}_\delta\simeq K^{\mathrm{tan}}_\delta\oplus
+K^{\mathrm{nor}}_\delta\) is supplied with the extension class
+\(\eta_\delta\in
+\operatorname{Ext}^1_{D^{s_\delta}(U_\delta)}
+(K^{\mathrm{nor}}_\delta,K^{\mathrm{tan}}_\delta)\) trivial after
+the reduced \(E\)-quotient and quotient-orientation trivializations,
+and the normal Pfaffian admits the rank-one form
+\(\operatorname{Pf}(K^{\mathrm{nor}}_\delta)
+=\upsilon_\delta\,u_\delta^{N_\delta^{\mathrm{Pf}}}\) with
+\(\upsilon_\delta(x_\delta)\ne0\),
+\(s_\delta(\upsilon_\delta)=\upsilon_\delta\), and
+\(N_\delta^{\mathrm{Pf}}=1\).
+
+\paragraph{The 4096 sign sum.} The integer \(4096=2^{12}\) is the
+half-Hilbert sign sum across the three walls of the cell at the cusp:
+twelve sign degrees of freedom, each \(\mathbb Z/2\), give
+\(2^{12}=4096\) signed states, and the sign sum on the type-II wall
+locus is exactly this full count under \textup{(L1)}--\textup{(L3)} of
+Proposition~\ref{prop:appE-local-pfaffian-sign}. The arithmetic
+match \(-4096=-(64)^2\) with the OP/DT scalar
+\(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\) is the squared-theta
+normalization, fixed by Borcherds normalization and the OP scalar
+sign convention; it is \emph{not} a derivation of \(\epsilon_o\).
+
+\paragraph{Stage and licensing.} Level \(\mathsf{C}\), \(\alpha\)-chart
+(real-analytic d-critical/Kuranishi chart),
+\(\varepsilon\)-effectiveness (rank-one normal Pfaffian
+non-degeneracy). The licensing is
+\((\mathsf{C},\alpha,\varepsilon)\): the chart specialization is the
+local model at the wall; effectiveness is the rank-one normal form.
+
+\paragraph{Verification.} Probe A047 fixes the local
+model and the exact firewall against scalar leakage from OP and Maass:
+scalar constants \(D_5=64^{-1}\Delta_5\),
+\(\chi_{10}^{\mathrm{OP}}=4096^{-1}\Delta_5^2\),
+\(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\) are scalar normalizations
+and do not define \(\epsilon_o\); the Pfaffian normal form is the
+content. Probes A092 and A100 specify the discharge content for
+\textup{(O2)}: matrices over \(\mathbb Z\) or \(\mathbb Q\) computing
+the Pfaffian-rank identity \(N_\delta^{\mathrm{Pf}}=1\), the splitting
+\(\eta_\delta=0\), the unit \(\upsilon_\delta\) with
+\(s_\delta\)-character trivial, and overlap/transition compatibility
+across the cofinal HN system.
+
+\paragraph{Reasoning.} The condition \((\delta,\delta)=2\), the
+automorphic divisor order
+\(d^{\mathrm{aut}}_{\delta_i}=1\), and the Maass character
+\(\nu_{\Delta_5}(s_{\delta_i})=-1\) are target data that do not imply
+the Pfaffian rank assertion
+\(N_\delta^{\mathrm{Pf}}=1\). Graph-isogeny atom candidates
+\(B_2=i_{\Gamma_\varphi,*}L\) are Koszul-Ext-local; they are
+\emph{candidates}, not constructions, until semistability, full
+\(\widehat\Gamma_X\) charge match, reduced normal Ext splitting,
+invariant unit, and atlas overlap compatibility are supplied. The
+``higher terms do not alter'' phrase in the rank-one Ext criterion
+requires the explicit equivariant real/parametric Morse lemma and
+unit check before it operates as a theorem.
+
+\paragraph{Next concrete construction.} \emph{Open.} Construct retained
+wall objects for \(\delta_1,\delta_2,\delta_3\) with Liu-heart membership
+\cite{LiuProductStability}, semistability, exact wall equality, full
+\(\widehat\Gamma_X\)-charge matching; for \(\delta_2\), supply the
+wrapped/mixed representative with \(b_R^{\mathrm{geom}}>0\); on each
+wall, supply the equivariant d-critical chart with
+\(s_\delta(u_\delta)=-u_\delta\), the reduced self-Ext complex, the
+tangent/normal splitting with vanishing extension class, the invariant
+Pfaffian unit, and the rank-one normal quasi-isomorphism. The
+decisive computation is the discharge of
+Proposition~\ref{prop:appE-local-pfaffian-sign} \textup{(L1)}--\textup{(L3)}
+on \(\delta_2\), where the wrapped-middle representative is the
+hardest of the three; the corresponding Appendix~E entry then carries
+the full \(2^{12}\) sign sum.
+
+\subsection{Mathieu and umbral moonshine adjacency}
+\label{subsec:moonshine-adjacency}
+
+The K3 elliptic genus has a precise representation-theoretic
+decomposition. Eguchi, Ooguri, and Tachikawa \cite{EOT} observed in 2010 that
+the elliptic genus
+\(Z_{\mathrm{K3}}(\tau,z)=2\phi_{0,1}(\tau,z)\) admits an
+\(M_{24}\)-graded character expansion: the mock-modular completion
+\(\Sigma(\tau)\) of the elliptic genus is a graded \(M_{24}\)-module,
+and the multiplicities of irreducible \(M_{24}\)-representations in
+the first several Fourier coefficients of the holomorphic part match
+the dimensions of irreducible \(M_{24}\)-representations on the nose.
+Gannon \cite{GannonUmbral} proves the arithmetic identity; the
+geometric origin via a sigma-model action of \(M_{24}\) on the K3
+BPS Hilbert space remains open for the non-surfing classes
+\(\{7A,7B,15A,15B\}\).  The \(M_{24}\) action
+visible at the level of the elliptic genus does not lift to a global
+geometric symmetry of \(D^b(\mathrm{Coh}(K3))\); the work of
+Gaberdiel--Hohenegger--Volpato \cite{GHV} on Mathieu twining characters
+identifies the precise refinement at the level of supersymmetric
+sigma-model conformal field theory data.
+
+The umbral moonshine of Cheng--Duncan--Harvey \cite{CDH} extends Mathieu
+moonshine to a family of \(23\) cases indexed by Niemeier root
+systems, one case per Niemeier lattice having a non-empty root system.
+The \(23\) Niemeier lattices with non-empty root systems pair each
+Niemeier ADE root system with a graded module for the corresponding
+discriminant group; Mathieu moonshine is the root system
+\(24A_1\)-case, which corresponds to the Niemeier lattice with root
+system \(A_1^{24}\). \emph{The count is \(23\) umbral cases plus the
+Leech lattice as the \(24\)th Niemeier with empty root system: the
+Leech lattice itself does not enter the umbral catalogue but supplies
+the Conway moonshine group, distinct from the umbral construction.}
+The umbral moonshine conjecture, raised by Cheng--Duncan--Harvey
+\cite{CDH} and verified module-theoretically by Gannon \cite{GannonUmbral},
+asserts that each of the \(23\) umbral cases carries a graded module
+whose graded character is a specified vector-valued mock modular form.
+
+\paragraph{The conjectural connection to \(\mathfrak g_{\Delta_5}\).}
+The Mathieu moonshine module is
+conjecturally a graded character of \(\mathfrak g_{\Delta_5}\) or a
+closely related Borcherds--Kac--Moody algebra. The precise statement
+that survives the Beilinson cut is the following: there exists a
+\(\mathbb Z\)-bigraded \(M_{24}\)-module
+\(M^{\mathrm{moon}}_{\bullet,\bullet}\), with
+\(M^{\mathrm{moon}}_{n,l}\) the Eguchi--Ooguri--Tachikawa \(M_{24}\)-module
+in degree \((n,l)\), whose graded character matches the K3 elliptic
+genus, and whose vertex/Borcherds extension to the
+Borcherds--Kac--Moody datum on \(\La^{2,1}_{II}\) is conjecturally a
+\(g\)-twined refinement of \(\mathfrak g_{\Delta_5}\) producing the
+twined denominator
+\(\operatorname{den}(\mathfrak g_{\Delta_5}^{(g)})\) for each
+\(M_{24}\)-conjugacy class \(g\). The umbral cases of
+\cite{CDH,ChengHarrison} extend the conjecture to a family of \(23\)
+Borcherds--Kac--Moody-style algebras associated to the \(23\) Niemeier
+root systems with non-empty root sets.
+
+\paragraph{Precise conjecture.}
+For each conjugacy class \(g\in M_{24}\), let
+\(\phi^{(g)}_{0,1}(\tau,z)\) denote the \(g\)-twined K3 elliptic
+genus of \cite{GHV}.  The Cheng--Duncan--Harvey--Gannon umbral
+moonshine conjecture, refined to the BKM stratum of
+\(\La^{2,1}_{II}\), asserts the existence of a \(g\)-twined
+Borcherds--Kac--Moody algebra
+\(\mathfrak g_{\Delta_5}^{(g)}\) with denominator
+\[
+ \operatorname{den}\bigl(\mathfrak g_{\Delta_5}^{(g)}\bigr)
+ \;=\;\Theta\bigl(\phi^{(g),\mathrm{Weil}}_{0,1}\bigr)\!\bigm|_{\Hpl_2},
+\]
+the singular theta lift of the \(g\)-twined Weil-representation
+extension of \(\phi^{(g)}_{0,1}\), with the chamber and Weyl-vector
+data determined by the Niemeier root system of \(g\) under the
+Cheng--Duncan--Harvey assignment
+\(M_{24}\to\{\text{Niemeier root systems}\}\) of
+\cite[\S 4]{CDH}.  The 23 umbral cases correspond to the 23 Niemeier
+lattices with non-empty root system, paired by Cheng--Duncan--Harvey
+to specific \(M_{24}\)-conjugacy classes; the cycle shape of \(g\)
+on the K3 lattice \(\La_{K3}\) determines the Niemeier match.
+
+\paragraph{The four non-surfing classes.}
+Of the 26 conjugacy classes of \(M_{24}\), 22 are
+\emph{geometrically realised}: they admit a Hodge isometry
+\(g_*:H^*(K3,\Z)\to H^*(K3,\Z)\) commuting with the holomorphic
+two-form \(\sigma_S\), per the Mukai
+classification~\cite[Theorem~1.1]{Mukai1984}.  Four classes —
+\(\{7A,7B,15A,15B\}\) — fail to realise as Hodge isometries.  Their
+cycle shapes on the standard \(24\)-dimensional permutation
+representation are
+\[
+ 7A:\ 1^3\!\cdot 7^3,\qquad
+ 7B:\ 1^3\!\cdot 7^3,\qquad
+ 15A:\ 1\!\cdot 3\!\cdot 5\!\cdot 15,\qquad
+ 15B:\ 1\!\cdot 3\!\cdot 5\!\cdot 15,
+\]
+the \(7A\)/\(7B\) pair distinguished by Galois conjugation under
+\(\mathrm{Gal}(\Q(\zeta_7)/\Q)\) and the \(15A\)/\(15B\) pair by
+\(\mathrm{Gal}(\Q(\zeta_{15})/\Q)\); the rational character on each
+pair is integer-valued, but individual class characters take values
+in the cyclotomic field of order equal to the class order.  These
+are the \emph{non-surfing} classes.  The geometric origin of the
+\(M_{24}\)-action on the K3 BPS Hilbert space is open precisely on
+these four; the order \(7\) and order \(15\) elements satisfy
+\((|g|+1)\nmid 24\), placing them outside the CHL frame
+\(N\in\{1,2,3,4,6\}\) of \(\kappa_{\mathrm{BKM}}\)-universality
+(Theorem~\ref{thm:bkm-kappa-universal}).  Resolution of the
+non-surfing question is the last step in promoting the conjectural
+\(\mathfrak g_{\Delta_5}^{(g)}\) of all \(g\in M_{24}\) to a
+geometric Borcherds--Kac--Moody construction.
+
+\begin{conjecture}[Non-surfing twined denominators]
+\label{conj:non-surfing-twined-denominators}
+For each \(g\in\{7A,7B,15A,15B\}\):
+\begin{enumerate}
+\item[\textnormal{(M${}^\star$\!7A)}] The Gaberdiel--Hohenegger--Volpato
+\(7A\)-twined K3 elliptic genus
+\(\phi^{(7A)}_{0,1}\) is a vector-valued mock modular form of weight
+\(0\) and index \(1\) for \(\Gamma_0(7)\), with shadow determined by
+the Cheng--Duncan--Harvey Niemeier assignment
+\(M_{24}\!\supset\!\langle 7A\rangle\to A_6^4\)
+of \cite[Table~3]{CDH}.  Its singular theta lift
+\(\Theta(\phi^{(7A),\mathrm{Weil}}_{0,1})\!\bigm|_{\Hpl_2}\) is a
+paramodular form of weight \(5\) for the paramodular group
+\(K(7)\subset\mathrm{Sp}(4,\Q)\), and equals
+\(\operatorname{den}(\mathfrak g_{\Delta_5}^{(7A)})\) for a
+conjectural \(7A\)-twined Borcherds--Kac--Moody algebra.
+\item[\textnormal{(M${}^\star$\!7B)}] Identical statement for the
+Galois conjugate class \(7B\), with
+\(\phi^{(7B)}_{0,1}=\phi^{(7A)}_{0,1}\circ
+\sigma_{\zeta_7\to\zeta_7^3}\) the Galois-conjugate character.
+\item[\textnormal{(M${}^\star$\!15A)}] The
+\(15A\)-twined character \(\phi^{(15A)}_{0,1}\) is a vector-valued
+mock modular form of weight \(0\) and index \(1\) for
+\(\Gamma_0(15)\), with shadow at the Cheng--Duncan--Harvey
+assignment
+\(\langle 15A\rangle\to A_{14}\!\oplus D_{10}\) of
+\cite[Table~3]{CDH}.  Its singular theta lift is a paramodular form
+of weight \(5\) for \(K(15)\) and equals
+\(\operatorname{den}(\mathfrak g_{\Delta_5}^{(15A)})\).
+\item[\textnormal{(M${}^\star$\!15B)}] Identical statement for the
+Galois conjugate class \(15B\).
+\end{enumerate}
+The four sub-conjectures are checkable numerically through the first
+several Fourier coefficients of both sides, with the CDH Niemeier
+assignment supplying chamber and Weyl-vector data.
+\end{conjecture}
+
+\begin{remark}[Decisive cross-checks and the parity obstruction]
+\label{rem:non-surfing-cross-checks}
+Three cross-checks decide each sub-conjecture
+\((\mathrm M^\star\!g)\) at finite truncation depth.
+
+\textup{(i)} The leading Fourier coefficient
+\(c_g(0)=[q^0 r^0]\phi^{(g)}_{0,1}\) is the
+Gaberdiel--Hohenegger--Volpato McKay--Thompson value of \(g\) at the
+\(q^0 r^0\) position of the K3 elliptic genus, tabulated in
+\cite[Table~1]{GHV} for all 26 conjugacy classes.  Outside the CHL
+frame \(\{1A,2A,3A,4A,6A\}\), the values \(c_g(0)\) take half-integer
+or fractional rational values; for the non-surfing classes
+\(\{7A,7B,15A,15B\}\) specifically, \(c_g(0)\) is non-even, in
+contrast to the even values \(c_N(0)\in\{10,8,6,4,2\}\) of
+Theorem~\ref{thm:bkm-kappa-universal}.
+
+\textup{(ii)} The Borcherds-weight identity
+\(\kappa_{\mathrm{BKM}}(\Phi^{(g)})=c_g(0)/2\) of
+Theorem~\ref{thm:bkm-kappa-universal} therefore extends to the
+non-surfing classes only with non-integer weight: the paramodular
+form \(\Theta(\phi^{(g),\mathrm{Weil}}_{0,1})\!\bigm|_{\Hpl_2}\)
+carries weight \(c_g(0)/2\notin\Z\), and consequently a non-trivial
+multiplier system on the paramodular group \(K(|g|)\).  This is the
+arithmetic obstruction to the extension of the level-\(\mathsf Z\)
+denominator construction beyond the CHL frame, and reflects the
+failure of the order-\(7\) and order-\(15\) elements to satisfy
+\((|g|+1)\mid 24\).
+
+\textup{(iii)} Mathieu-moonshine consistency at the EOT
+\(M_{24}\)-multiplicity predictions through the first eight Fourier
+coefficients of \(\Sigma(\tau)\) supplies a stringent finite check
+on each sub-conjecture; closing
+\((\mathrm M^\star\!g)\) requires identifying the geometric origin
+of the \(M_{24}\)-action on the K3 BPS state space, which on the
+non-surfing classes is the Cheng--Harrison conjecture of
+\cite{ChengHarrison}.
+\end{remark}
+
+\paragraph{Independence from the four Pfaffian--Dirac obstructions.}
+The Pfaffian--Dirac theorem~\ref{thm:ch6-pfaffian-dirac} of
+Chapter~\ref{ch:pfaffian-dirac} is unconditional on \(K3\times E\) at
+the chiral-shadow level after the four-obstruction discharge of
+Theorem~\ref{thm:G-four-obstruction-discharge}; it is conditional
+only on the Vol~II Hall--Borcherds residual.  The moonshine
+adjacency is independent of both: it lives at level \(\mathsf{Z}\)
+(centre/denominator) and at level \(\mathsf{A}\) (acting object on
+the K3 BPS Hilbert space).  A proven identification of the
+moonshine module as a \(g\)-twined character of
+\(\mathfrak g_{\Delta_5}\) does not by itself discharge the Vol~II
+Hall--Borcherds residual; conversely the Hall--Borcherds residual
+discharge does not prove the moonshine adjacency.
+
+\paragraph{Stage and licensing.} Level \(\mathsf{Z}\to\mathsf{A}\),
+\(\beta\)-comparison (\(g\)-twining functor), \(\gamma\)-ambient
+(\(\mathbb Z\)-bigraded module versus mock modular form). The licensing
+is \((\mathsf{Z}\to\mathsf{A},\beta,\gamma)\): the \(g\)-twining
+operation is the comparison arrow that produces
+\(\operatorname{den}(\mathfrak g_{\Delta_5}^{(g)})\) from
+\(\operatorname{den}(\mathfrak g_{\Delta_5})\) and the
+\(M_{24}\)-action; the ambient is the bigraded
+\(M_{24}\)-module category, not the ordinary graded category.
+
+\paragraph{Cross-repo consistency.} The Vol III FRONTIER (file
+\texttt{FRONTIER.md}) carries the dimension-stratified BKM catalogue
+in which \(\mathfrak g_{\Delta_5}\) is the \(d=3\) sibling, with
+companions at \(d=3\) (Borcherds Monster \(V^\natural\) on
+\(\mathrm{II}_{1,1}\)) and \(d=5\) (Fake Monster on
+\(\mathrm{II}_{25,1}\) via
+\(K3\times K3\times E\)) by frontier row F6 (the \(d\geq4\) stratum).
+The Mathieu/umbral moonshine adjacency to \(\mathfrak g_{\Delta_5}\)
+is a level-\(\mathsf{Z}\) cross-stratum conjecture: the geometric
+\(M_{24}\) sigma-model action on K3 for the non-surfing classes
+\(\{7A,7B,15A,15B\}\) is the missing piece on the K3-fibre side; the
+\(g\)-twined denominator
+\(\operatorname{den}(\mathfrak g_{\Delta_5}^{(g)})\) is the missing
+piece on the BKM side.
+
+\paragraph{Next concrete construction.} \emph{Open.} Compute the twined
+denominators \(\operatorname{den}(\mathfrak g_{\Delta_5}^{(g)})\) for
+each of the \(26\) conjugacy classes of \(M_{24}\), using the
+\(g\)-twined Borcherds product on \(\La^{2,1}_{II}\), and verify that
+the resulting graded characters match the EOT \(M_{24}\)-multiplicity
+predictions through the first eight Fourier coefficients of
+\(\Sigma(\tau)\). The decisive cross-check is the consistency of the
+\(g\)-twined denominator with the OP scalar
+\(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\) under the \(g\)-twining
+construction, including the squared sign convention.
+
+\subsection{The next frontier}
+\label{subsec:next-frontier}
+
+Three open frontiers connect this manuscript to the broader programme.
+Each is named in cross-volume notes; each requires construction the
+manuscript does not undertake. The Beilinson cut places each
+frontier at a definite level, and the licensing tags below identify
+the comparison arrows whose construction is open.
+
+\subsubsection{Frontier 1: the Hall--Borcherds residual}
+\label{subsubsec:frontier-hall-borcherds}
+
+\paragraph{Statement.} The level-\(n\) protected scalar shadow
+\(Z^{K3\times E}_{\mathrm{BPS}}=(\Phi_{10}^{\mathrm{un}})^{-1}=
+\Delta_5^{-2}\) on the closed
+\(K3\times E\mapsto\,\mathrm{point}\) cobordism is the BPS partition
+function. Its promotion to a 3d gravitational path integral with a
+genuinely operator-level construction requires the Hall--Borcherds
+residual: an operator-valued completion of the scalar trace whose
+trace recovers the level-\(n\) shadow and whose operator-level
+algebraic content carries the dynamical metric path integral.
+This is Vol~II's Construction Problem~2 and remains open.
+
+\paragraph{Stage and licensing.} Level \(\mathsf{Z}\to\mathsf{A}\),
+\(\beta\)-comparison (residual operator algebra), \(\delta\)-endpoint
+(promotion to dynamical metric beyond the holographic HT sector),
+\(\varepsilon\)-effectiveness (operator non-degeneracy). The
+licensing is \((\mathsf{Z}\to\mathsf{A},\beta,\delta,\varepsilon)\):
+the residual is the comparison arrow from the centre to the acting
+object; the endpoint discipline is the promotion beyond the
+holographic Hochschild--Tate boundary-CFT reading of pure 3d gravity.
+
+\paragraph{Cross-repo anchor.} Vol II
+\texttt{chapters/connections/3d\_gravity.tex:8429} names the gravity-line
+operator algebra whose Pentagon-face scalar trace is
+\(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\), and identifies the
+Hall--Borcherds residual as the comparison arrow from the bulk
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(A_b)\) to the line-operator algebra.
+The Vol II Construction Problem 2 reads: \emph{construct the gravity-line
+operator algebra with Pentagon-face scalar trace
+\(\mathrm{tr}_{\mathrm{Pentagon}}=\omega_{\mathrm{Borcherds}}=
+c_N(0)/2\) at \(N=1\) on the K3-Heisenberg witness, recovering the
+Borcherds form
+\(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\) on the closed cobordism}.
+The igusa-side input is the same scalar identity
+\(\Delta_5^2=\Phi_{10}^{\theta}\), with the manuscript-conditional
+operator-level package \(\mathfrak D_X^{\mathrm{DI}}\) supplying the
+Pfaffian/orientation/Weyl-transport data on the chiral side.
+
+\paragraph{Reasoning.} The protected scalar trace
+\(\mathrm{Tr}_{\mathrm{prot}}((-1)^F(\mathfrak D_X^{\mathrm{DI}})^{-2})
+=-4096\,\Delta_5^{-2}\) is squared away from orientation: the
+sign-character \(\epsilon_o\) is invisible in the squared form. The
+Hall--Borcherds residual recovers the orientation by lifting from
+the squared scalar to the unsquared Pfaffian section, with the
+Weyl-character data providing the extra structure that the squared
+scalar cannot recover. The promotion to a 3d gravitational path
+integral is conditional on Brown--Henneaux,  modular invariance,
+vacuum dominance, and saddle dominance \cite{HM}; the manuscript
+does not claim this promotion.
+
+\paragraph{Next concrete construction.} \emph{Open.} Construct the
+Pentagon-face cyclic trace
+\(\mathrm{Tr}_{\mathrm{Pentagon}}^{\mathrm{cl}}\) on the closed-colour
+factorization algebra \(F^{\mathrm{cl}}\) at the
+\(K3\times E\)-Heisenberg witness, prove that its evaluation
+recovers \(c_1(0)/2=5\) on the universal Borcherds-weight identity,
+and identify its operator-level lift to the open-colour boundary
+algebra \(A_b=\mathrm{End}_{\mathcal C}(b)\) via the chain fusion
+conjecture (Frontier 2 below). The decisive cross-check is the
+consistency of the Pentagon-face scalar with the OP/DT scalar
+\(-4096\,\Delta_5^{-2}\) under the squared-trace operation.
+
+\subsubsection{Frontier 2: chain fusion for compact non-toric K3{\(\times\)}E}
+\label{subsubsec:frontier-chain-fusion}
+
+\paragraph{Statement.} For each Calabi--Yau\(_d\) category
+\(\mathcal C_X\) and each chart datum \((\Sigma_{d-1},C)\), the Stage-2
+chiral algebra
+\(A_X=\Phi^{(\Sigma_{d-1},C)}_d(\mathcal C_X)\) coincides with the
+boundary algebra \(A_{b(X,\Sigma,C)}=\mathrm{End}_{\mathcal C}(b(X,\Sigma,C))\)
+for a canonical boundary vacuum
+\(b(X,\Sigma,C)\) in an open factorization dg-category on
+\((C,D_C,\tau_C)\), where \(D_C\) encodes the Calabi--Yau data's
+special points (orbifold loci, fibration punctures, conifold
+singularities).  The conjecture is verified at the toric loci
+\(\mathbb C^3\), local \(\mathbb P^2\), and the conifold, and at
+\(K3\times E\) for \(d=3\); compact non-toric general \(X\) is open.
+
+\paragraph{Stage and licensing.} Level
+\(\mathsf{P}\to\mathsf{C}\to\mathsf{S}\), \(\beta\)-comparison
+(chain-fusion functor identifying Stage-2 output with boundary
+algebra), \(\alpha\)-chart (canonical boundary vacuum
+\(b(X,\Sigma,C)\)), \(\gamma\)-ambient (open factorization
+dg-category on the log curve \((C,D_C,\tau_C)\)). The licensing is
+\((\mathsf{P}\to\mathsf{S},\alpha,\beta,\gamma)\): the chain
+fusion is the comparison arrow from the primitive open
+factorization category to the chart-specialized chiral shadow; the
+chart datum is the canonical boundary vacuum; the ambient is the
+log-curve open factorization dg-category, not an ordinary chiral
+algebra on a smooth curve.
+
+\paragraph{Cross-repo anchor.} The Vol III FRONTIER row F1 (chain
+fusion conjecture in general \(d\)) names this conjecture in the
+two-stage factorization frame; row F2 (\(G(X)=D(Y^+(X))\) for compact
+non-toric \(\mathrm{CY}_3\)) names the level-\(\mathsf{Z}\) Drinfeld
+double obligation downstream of chain fusion; row F10 (CY-A\(_3\)
+chain-level compact closure) names the conditional
+TCFT/framing/anomaly/completion package needed for compact non-formal
+\(\mathrm{CY}_3\) in general. The Vol III adversarial review note
+\texttt{notes/chatgpt\_critique\_consequence\_map\_adversarial\_review.md} \S III
+records chain fusion as a programme-level conjecture, not a theorem.
+The Vol II CLAUDE.md banned row 11 names ``\(\Delta_5\) = Hilbert
+space'' as collapse; the corrected statement is the conditional
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5\)
+of view \textcircled{3}.
+
+\paragraph{Reasoning.} The compact \(K3\times E\) case at \(d=3\) is a
+witnessed instance of chain fusion via the rectified finite
+\(K3\)-to-\(E\) specialization
+(Definition~\ref{def:O1-strong-reduced-orientation} in this
+manuscript).
+The chiral algebra
+\(\mathrm{Sp}^{\mathrm{ch}}_{K3,E}(\Phi^{\mathrm{FA}}_3(K3\times E))
+=U^{\mathrm{ch}}(\mathfrak{heis}_{\mathrm{Muk}})\otimes
+U^{\mathrm{ch}}(\mathfrak g^{\mathrm{BPS}}_{K3})\)
+on \(\mathrm{Ran}(E)\) is the Stage-2 specialization; the boundary
+algebra \(A_b=\mathrm{End}_{\mathcal C}(b)\) on the open factorization
+side coincides with this on the verified locus, but the canonical
+boundary vacuum
+\(b(K3\times E,\Sigma_2,E)\) is not in the literature. Compact
+non-toric \(K3\times E\) generalizations to other compact non-toric
+\(\mathrm{CY}_3\)-data (e.g.\ Borcea--Voisin threefolds, Schoen's
+small resolutions) require independent construction.
+
+\paragraph{Next concrete construction.} \emph{Open.} Construct
+\(b(K3\times E,\Sigma_2,E)\): a canonical boundary vacuum in an open
+factorization dg-category on
+\((E,D_E,\tau_E)\) with \(D_E\) at the Igusa cusp
+\(\mathfrak c_\infty\) of the Siegel space, and prove the chain-fusion
+isomorphism on \(W_{\le3}\) at finite HN height \(R=3\), identifying
+the Stage-2 chiral output with
+\(A_{b(K3\times E,\Sigma_2,E)}\). The decisive
+cross-check is the consistency of the chain-fusion isomorphism with
+the OP/DT scalar branch and with the universal Borcherds-weight
+identity \(\kappa_{\mathrm{BKM}}(\Phi_1)=c_1(0)/2=5\); see the
+\(\kappa\)-tuple discussion below.
+
+\subsubsection{Frontier 3: the gravity-line operator algebra}
+\label{subsubsec:frontier-gravity-line}
+
+\paragraph{Statement.} The gravity-line operator algebra is an
+operator algebra on the closed-colour factorization algebra
+\(F^{\mathrm{cl}}\) on \(K3\times E\) whose Pentagon-face scalar trace
+is \(\Delta_5^2=\Phi_{10}^{\mathrm{un}}\). The Pentagon-face trace is
+the trace lane of the universal stage chain
+\(\mathsf{P}\to\mathsf{C}\to\mathsf{S}\to\mathsf{Z}\to\mathsf{A}\)
+that, by the universal Borcherds-weight identity
+\(\mathrm{tr}_{\mathrm{ghost}}(Q_{\mathrm{BRST}}^2)
+=\mathrm{tr}_{\mathrm{Pentagon}}=\omega_{\mathrm{Borcherds}}
+=c_N(0)/2\), takes the value
+\(c_1(0)/2=5\) at the Gritsenko--Cl{\'e}ry row producing
+\(\Delta_5\).  This is Vol~II Construction Problem~2 (cross-listed
+with Frontier~1) and remains open.
+
+\paragraph{Stage and licensing.} Level \(\mathsf{Z}\to\mathsf{A}\),
+\(\beta\)-comparison (operator algebra functor at Pentagon face),
+\(\delta\)-endpoint (Pentagon-face trace evaluation at the
+\(\Delta_5\) row), \(\varepsilon\)-effectiveness (operator
+non-degeneracy at the K3-Heisenberg witness). The licensing is
+\((\mathsf{Z}\to\mathsf{A},\beta,\delta,\varepsilon)\).
+
+\paragraph{Cross-repo anchor.} Vol II
+\texttt{chapters/connections/3d\_gravity.tex:8429} names the
+Gravity-line Hall--Borcherds comparison conjecture and the
+Pentagon-face scalar trace; Vol II CLAUDE.md \S 9 lists this as
+Construction Problem 2; Vol III CLAUDE.md names
+\(\kappa_{\mathrm{BKM}}(\Phi_N)=c_N(0)/2\) as the universal
+Borcherds-weight identity \cite{Borcherds95}, with
+\(\kappa_{\mathrm{BKM}}(\Phi_1)=c_1(0)/2=5\) at the paramodular
+\(\Delta_5\) input.
+
+\paragraph{The \(\kappa\)-tuple.} The five-fold \(\kappa\)-tuple
+\((\kappa_{\mathrm{cat}},\kappa_{\mathrm{ch}}^{\mathrm{Hodge}},
+\kappa_{\mathrm{ch}}^{\mathrm{Heis}},\kappa_{\mathrm{BKM}},\kappa_{\mathrm{fiber}})
+=(0,0,3,5,24)\) at \(K3\times E\) records five separate invariants,
+distinct in construction and meaning, never additively combined. Here
+\(\kappa_{\mathrm{cat}}=\chi(\mathcal O_{K3\times E})=
+\chi(\mathcal O_{K3})\cdot\chi(\mathcal O_E)=2\cdot 0=0\) is the
+K{\"u}nneth-multiplicative categorical Euler;
+\(\kappa_{\mathrm{ch}}^{\mathrm{Hodge}}=\sum_q(-1)^qh^{0,q}(K3\times E)=0\)
+by Serre duality on the compact total space;
+\(\kappa_{\mathrm{ch}}^{\mathrm{Heis}}=3\) is the rank of the
+Heisenberg--Cartan in the Stage-2 specialization on
+\(\mathrm{Ran}(E)\) and equals the Cartan rank of
+\(\mathfrak g_{\Delta_5}\);
+\(\kappa_{\mathrm{BKM}}=c_1(0)/2=5\) is the universal Borcherds-weight
+identity at the Igusa row \(\Phi_1=\Delta_5\) of the Gritsenko--Cl{\'e}ry
+8-form catalogue with \(c_1(0)=10\);
+\(\kappa_{\mathrm{fiber}}=24\) is the Mukai-lattice rank
+\(\mathrm{rk}\,\widetilde H^*(K3,\mathbb Z)=24\) of the K3 fibre, equal
+to \(\chi_{\mathrm{top}}(K3)\). The collapsed identity
+\(\kappa_{\mathrm{BKM}}=\kappa_{\mathrm{ch}}+\chi(\mathcal O_{\mathrm{fiber}})\)
+fails because it confuses
+\(\chi_{\mathrm{top}}(K3)=24\) with
+\(\chi(\mathcal O_{K3})=2\); the universal identity
+\(\kappa_{\mathrm{BKM}}(\Phi_N)=c_N(0)/2\) is the correct frame.
+
+\paragraph{Reasoning.} The Pentagon-face scalar trace is the
+modularity-witness of the open-side cyclic trace plus clutching;
+modularity is a property of the open trace, not of the closed
+algebra. The trace-lane equation
+\(\mathrm{tr}_{\mathrm{ghost}}(Q_{\mathrm{BRST}}^2)
+=\mathrm{tr}_{\mathrm{Pentagon}}=\omega_{\mathrm{Borcherds}}=c_N(0)/2\)
+identifies the Pentagon-face trace with the Borcherds form weight
+under the BRST chiral nilpotent on the holographic factor; on the
+\(\Delta_5\) row, \(c_1(0)/2=5\) is the level-five weight, and
+\(\Delta_5^2=\Phi_{10}^{\theta}\) is the squared form of total weight
+\(10\) appearing as the closed-cobordism BPS partition-function input.
+
+\paragraph{Next concrete construction.} \emph{Open.} Construct the
+gravity-line operator algebra
+\(\mathrm{GravLine}_{K3\times E}\) on the open factorization
+dg-category on \((E,D_E,\tau_E)\) at the Igusa cusp, prove the
+Pentagon-face scalar trace identity
+\(\mathrm{tr}_{\mathrm{Pentagon}}^{\mathrm{cl}}(\mathrm{GravLine}_{K3\times E})
+=\Delta_5^2\), and verify consistency with the universal
+Borcherds-weight identity
+\(\kappa_{\mathrm{BKM}}(\Phi_1)=5\) and with the \(\kappa\)-tuple
+\((0,0,3,5,24)\) at the K3-Heisenberg witness. The decisive
+cross-check is the discharge of the chain fusion
+(Frontier 2) at \(b(K3\times E,\Sigma_2,E)\) and the construction of
+the Hall--Borcherds residual (Frontier 1) lifting the squared scalar
+\(-4096\,\Delta_5^{-2}\) to the unsquared Pfaffian section
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5\)
+in this manuscript.
+
+The mathematical work is the discharge of
+\textup{(D0)}--\textup{(O2)} on \(W_{\le3}\) and \(W_{\le7}\), followed
+by the construction of the canonical boundary vacuum
+\(b(K3\times E,\Sigma_2,E)\) of Frontier~2, the Hall--Borcherds
+residual of Frontier~1 lifting the squared scalar
+\(-4096\,\Delta_5^{-2}\) to the unsquared Pfaffian
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5\),
+and the verification of the Mathieu-twined denominators
+\(\operatorname{den}(\mathfrak g_{\Delta_5}^{(g)})\) on the \(26\)
+\(M_{24}\)-conjugacy classes. Each of the four obstructions is at a
+definite categorical-dimensional level: \textup{(D0)} at \(\mathsf{S}\),
+\textup{(O1)} at \(\mathsf{S}\to\mathsf{Z}\), \textup{(O1)\(^+\)} at
+\(\mathsf{Z}\), \textup{(O2)} at \(\mathsf{C}\); each of the three
+frontiers, at \(\mathsf{Z}\to\mathsf{A}\), \(\mathsf{P}\to\mathsf{S}\),
+and the Pentagon face. The Beilinson cut places naming as deliverable;
+the deliverable is named.

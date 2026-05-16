@@ -1,0 +1,524 @@
+\section{Borcherds-product expansion: \texorpdfstring{$\phi_{0,1}$}{phi01}, the
+\texorpdfstring{$\Delta_5$}{Delta5} infinite product, and the
+Gritsenko--Cl\'ery eight-row catalogue}
+\label{app:borcherds-product-expansion}
+
+This appendix records, in one place, the Fourier expansion of the
+weight-zero index-one weak Jacobi form $\phi_{0,1}$, the
+Borcherds--Gritsenko--Nikulin product expansion of the Igusa cusp form
+$\Delta_5$ in the type-II cusp chamber, the theta-constant normalization
+constant $64=2^{6}$, the doubling identity that turns the monic Borcherds
+product into the denominator of the Lorentzian Borcherds--Kac--Moody
+algebra $\autcor$, and the full eight-row Gritsenko--Cl\'ery catalogue of
+diagonal-divisor Siegel modular forms.  Every numerical Fourier
+coefficient quoted below is produced by an exact rational computation in
+\texttt{compute/verify\_square\_root.py}; every load-bearing identity is
+attributed to author, year, and theorem of the primary literature.  No
+construction in this appendix uses orientation data, Pfaffian wall
+normal forms, or compact Hall input; the appendix lives entirely on the
+automorphic / target side, prior to the geometric content of (D0),
+(O1), (O1)\(^+\), and (O2).
+
+Three names for $\Delta_5$ appear and are kept distinct: the
+theta-constant automorphic section $D_X=\Delta_5$ (View \textcircled{\scriptsize 1}); the
+Borcherds--Kac--Moody denominator
+$\operatorname{den}(\autcor)=64^{-1}\Delta_5(2Z)$
+(View \textcircled{\scriptsize 2}); and the protected Pfaffian
+$\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{DI})$ of the
+pro-object $\mathfrak D_X^{DI}$ (View \textcircled{\scriptsize 3}, conditional on (D0), (O1),
+(O1)\(^+\), (O2)).  All three coincide on Fourier coefficients in the
+cusp polarization; the orientation character that distinguishes
+$\Delta_5$ from $-\Delta_5$ enters only at View \textcircled{\scriptsize 3}.
+
+\subsection*{B.1 The weak Jacobi form \texorpdfstring{$\phi_{0,1}$}{phi01}}
+
+The K3 elliptic genus is the modular input.  Eichler--Zagier
+\cite[\S2.2 and Theorem~9.3]{EZ:1} fix the weight-zero index-one
+weak-Jacobi normalization
+\[
+\phi_{0,1}(\tau,z)\in J_{0,1}^{\mathrm w},
+\qquad
+\phi_{0,1}(\tau,z)=\sum_{n\ge0,\;l\in\Z}f(n,l)\,q^n r^l,
+\qquad
+q=e^{2\pi i\tau},\ r=e^{2\pi iz}.
+\]
+The relation to the K3 right-moving elliptic genus is
+$Z_{\mathrm{K3}}(\tau,z)=2\phi_{0,1}(\tau,z)$ \cite[\S2.2]{EZ:1};
+the half is the Borcherds-lift representative used below.  The Jacobi
+weak-form support is
+$f(n,l)=0$ whenever $4n-l^{2}<-1$, with isolated extreme entries
+$f(0,\pm1)=1$ on the discriminant hyperbola $4n-l^{2}=-1$.
+\emph{(proved; \cite[\S2.2, Theorem~9.3]{EZ:1}; \cite[Example~2.4]{GNII};
+licensing $\beta$.)}
+
+\paragraph{Verified Fourier table.}
+The exact coefficients $f(n,l)$ for $n\le2$ are the rational integers
+listed below, computed by the theta-quotient identity
+\(\phi_{0,1}=4\sum_{i=2,3,4}\theta_i(\tau,z)^2/\theta_i(\tau,0)^2\) of
+\cite[\S2.2]{EZ:1} and verified bit-for-bit against
+\texttt{compute/verify\_square\_root.py} (rational arithmetic, no
+floating-point):
+\[
+\begin{array}{c|ccccccc}
+& l=-3 & l=-2 & l=-1 & l=0 & l=1 & l=2 & l=3 \\ \hline
+n=0 & 0 & 0 & 1 & 10 & 1 & 0 & 0 \\
+n=1 & 0 & 10 & -64 & 108 & -64 & 10 & 0 \\
+n=2 & 1 & 108 & -513 & 808 & -513 & 108 & 1
+\end{array}
+\]
+\emph{(computed; cross-checked with \cite[Example~2.4]{GNII} and
+\cite[Theorem~4.1]{GN}; licensing $\delta$.)}
+The negative entries reflect the index-one Jacobi-form theta-decomposition
+$\phi_{0,1}=\theta_{1,0}h_0+\theta_{1,1}h_1$ with theta-coefficient
+expansions $h_0=2(45 E_4 E_{4,1}-50 E_6 E_{6,1})/\eta^{24}+\cdots$ in
+\cite[\S2.2]{EZ:1}; the integer values are not target signs but signed
+multiplicities of the Borcherds source.
+
+\paragraph{Banked identities used below.}
+\[
+\begin{aligned}
+f(0,0)&=10,&\qquad f(0,\pm1)&=1,&\qquad f(0,l)&=0\ \ (|l|\ge2),\\
+f(1,0)&=108,&\qquad f(1,\pm1)&=-64,&\qquad f(1,\pm2)&=10,\\
+f(2,0)&=808,&\qquad f(2,\pm1)&=-513,&\qquad f(2,\pm2)&=108,\\
+&&\qquad f(2,\pm3)&=1,&\qquad f(1,\pm3)&=0.
+\end{aligned}
+\]
+The diagonal entry $f(0,0)=10$ controls the Borcherds-lift weight
+\(\operatorname{wt}(\Delta_5)=f(0,0)/2=5\); the entries $f(0,\pm1)=1$
+control the simple type-II divisor orders
+$d_{\delta_i}^{\mathrm{aut}}=1$; the entry $f(1,1)=-64$ controls the
+multiplicity of the first timelike imaginary root, computed and used
+below.
+
+\subsection*{B.2 The cusp chamber and the effective semigroup}
+
+Set $Z=\bigl(\begin{smallmatrix}z_1&z_2\\z_2&z_3\end{smallmatrix}\bigr)
+\in\Hpl_2$, $q=e^{2\pi iz_1}$, $r=e^{2\pi iz_2}$, $s=e^{2\pi iz_3}$.
+The standard type-II cusp polarization is the ordered limit
+\[
+0<|s|\ll|q|\ll|r|^{-1}\ll1,
+\]
+which determines the effective semigroup
+\[
+\Gamma_{\mathrm{eff}}
+=\{(n,l,m)\in\Z^3\mid m>0,\ n\ge0\}
+\cup\{(n,l,0)\mid n>0\}
+\cup\{(0,l,0)\mid l<0\}.
+\]
+Inside the Gram-index lattice $\Gamma_{\mathrm{ind}}=\Z^3$, the
+\emph{active support}
+\[
+\Gamma_{\mathrm{act}}
+:=\{(n,l,m)\in\Gamma_{\mathrm{eff}}\mid f(nm,l)\ne0\}
+\]
+is the set of triples that contribute a visible product factor; the
+remaining triples in $\Gamma_{\mathrm{eff}}$ have zero exponent and fix
+ordering only.  The signed Gram pairing
+\((\alpha(n,l,m),\alpha(n,l,m))=-2(4nm-l^{2})\)
+under
+\[
+\alpha:(n,l,m)\longmapsto 2nf_2-lf_3+2mf_{-2}\in\La^{2,1}_{II}
+\]
+restricts to the Lorentzian root lattice of $\autcor$.
+
+\subsection*{B.3 The Borcherds product formula for
+\texorpdfstring{$\Delta_5$}{Delta5}}
+
+\begin{theorem}[Borcherds--Gritsenko--Nikulin product expansion]
+\label{thm:borcherds-product-delta5}
+On the type-II cusp polarization $0<|s|\ll|q|\ll|r|^{-1}\ll1$, the
+weight-five Igusa cusp form admits the absolutely convergent infinite
+product
+\[
+\Delta_5(Z)
+=64\,q^{1/2}r^{1/2}s^{1/2}
+\!\!\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}\!\!
+(1-q^n r^l s^m)^{f(nm,l)},
+\]
+with theta-leading coefficient
+\[
+[q^{1/2}r^{1/2}s^{1/2}]\Delta_5\;=\;64\;=\;2^{6}.
+\]
+The monic product is $D_5:=64^{-1}\Delta_5$; the constant $64$ is the
+theta-constant Igusa normalization, not a separately chosen scalar.
+\emph{(proved; \cite[Theorem~10.1]{Borcherds95},
+\cite[Theorem~2.1, Example~2.4, equations (2.15)--(2.16)]{GNII},
+\cite[Theorem~4.1]{GN}; licensing $\beta$ for the Borcherds singular
+theta-lift, $\alpha$ for the explicit paramodular form.)}
+\end{theorem}
+
+\begin{proof}
+The general Borcherds singular theta-lift sends a weakly holomorphic
+modular form of negative weight on $O(2,n)$ to a meromorphic automorphic
+form on $O(2,n)$ realized as an infinite product
+\cite[Theorem~10.1]{Borcherds95}; the regularisation and convergence on
+divisors with singularities in higher rank is in
+\cite[\S\S6--13]{B}.  The genus-two specialization at the
+Sp(4)-cusp uses the exceptional isomorphism
+$\operatorname{Sp}(4)\simeq\operatorname{Spin}(3,2)$ and the
+Eichler--Zagier dictionary $J^{\mathrm w}_{0,1}\leftrightarrow$
+vector-valued Mp$_{2}$-modular forms \cite[\S5]{EZ:1};
+the ordered limit $0<|s|\ll|q|\ll|r|^{-1}\ll1$ selects the type-II cusp
+\cite[\S2, Example~2.4]{GNII}.  Gritsenko--Nikulin \cite[(2.15)--(2.16)]{GNII}
+write the resulting product in the unnormalized form
+\[
+D_5(Z)
+=q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}(1-q^n r^l s^m)^{f(nm,l)},
+\]
+and identify $D_5$ with $64^{-1}$ times the theta-constant cusp form
+$\Delta_5$ of Igusa \cite[Theorem~4.1]{GN}, \cite{Igusa1962},
+\cite{Igusa1964II}; the leading constant $2^{6}=64$ is the explicit
+theta-product coefficient, computed below.
+\end{proof}
+
+\paragraph{The constant $2^{6}$ as a theta-product leading coefficient.}
+Igusa's classical product formula displays $\Delta_5$ as the product of
+the ten even theta constants of genus two,
+\[
+\Delta_5(Z)
+=\prod_{\substack{a,b\in(\Z/2\Z)^2\\{}^{t}\!ab\equiv0\pmod2}}
+\nu_{a,b}(Z),
+\qquad
+\nu_{a,b}(Z)
+=\sum_{l\in\Z^{2}}\!\!\exp\!\bigl(\pi i(Z[l+\tfrac12 a]+{}^{t}\!bl)\bigr),
+\]
+\cite{Igusa1962}, \cite[Theorem~4.1]{GN}, \cite[\S6]{FREITAG:1}.
+In the type-II cusp polarization, with $z_2$ the off-diagonal modulus,
+the four characteristics $a=(0,0)$ start with $1$, the two
+characteristics $a=(1,0)$ start with $2q^{1/8}$, the two
+characteristics $a=(0,1)$ start with $2s^{1/8}$, and the two
+characteristics $a=(1,1)$ start with $2q^{1/8}r^{1/4}s^{1/8}$; the
+total leading monomial is $q^{1/2}r^{1/2}s^{1/2}$ with constant
+$1\cdot 2^{2}\cdot 2^{2}\cdot 2^{2}=2^{6}=64$
+\emph{(proved; \cite{Igusa1962}, \cite[Theorem~4.1]{GN}; licensing
+$\alpha$.)}
+This is not a normalization choice: the constant $64$ is read off the
+theta product, with no scalar freedom.  Replacing $\Delta_5$ by
+$c\Delta_5$, $c\in\C^{\times}$, would change neither the Maass character
+\(\nu_{\Delta_5}\) nor the divisor orders
+\(d_{\delta}^{\mathrm{aut}}\) of \cite[Theorem~4.1]{GN}.
+
+\subsection*{B.4 Sample exponent verifications}
+
+The exponent $f(nm,l)$ in the product formula is read directly from the
+Jacobi-coefficient table of B.1.  The following sample is verified
+exactly by \texttt{compute/verify\_square\_root.py}:
+
+\begin{center}
+\small
+\begin{tabular}{c|cccccc|c}
+\hline
+factor $(n,l,m)$ & \multicolumn{6}{c|}{Lorentzian Gram label
+$\alpha=2nf_{2}-lf_{3}+2mf_{-2}$} & exponent $f(nm,l)$ \\
+\hline
+$(1,1,0)$ & \multicolumn{6}{c|}{$\delta_{1}=2f_{2}-f_{3}$} & $f(0,1)=1$ \\
+$(0,1,1)$ & \multicolumn{6}{c|}{$\delta_{2}=2f_{-2}-f_{3}$} & $f(0,1)=1$ \\
+$(0,-1,0)$ & \multicolumn{6}{c|}{$\delta_{3}=f_{3}$} & $f(0,-1)=1$ \\
+$(0,0,m)\ (m\ge1)$ & \multicolumn{6}{c|}{cusp ray
+$2mf_{-2}$} & $f(0,0)=10$ \\
+$(1,0,1)$ & \multicolumn{6}{c|}{$2f_{2}+2f_{-2}$ (timelike,
+$(\alpha,\alpha)=-8$)} & $f(1,0)=108$ \\
+$(1,1,1)$ & \multicolumn{6}{c|}{$2f_{2}-f_{3}+2f_{-2}$ (timelike,
+$(\alpha,\alpha)=-6$)} & $f(1,1)=-64$ \\
+$(1,2,1)$ & \multicolumn{6}{c|}{$2f_{2}-2f_{3}+2f_{-2}$ (timelike,
+$(\alpha,\alpha)=0$ on the boundary)} & $f(1,2)=10$ \\
+$(1,3,1)$ & \multicolumn{6}{c|}{$2f_{2}-3f_{3}+2f_{-2}$
+(spacelike, $(\alpha,\alpha)=10$)} & $f(1,3)=0$ \\
+$(2,1,1)$ & \multicolumn{6}{c|}{$4f_{2}-f_{3}+2f_{-2}$
+($(\alpha,\alpha)=-14$)} & $f(2,1)=-513$ \\
+$(1,2,2)$ & \multicolumn{6}{c|}{$2f_{2}-2f_{3}+4f_{-2}$
+($(\alpha,\alpha)=-12$)} & $f(2,2)=108$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The triple $(1,1,1)$ gives the first timelike imaginary root: its
+exponent $f(1,1)=-64$ is the signed superdimension of the root space
+$\mathfrak g_{\Delta_5,\alpha(1,1,1)}$ on the active support, and is the
+content of the lattice cross-check
+$f(1,1)=29-93=-64$ from the
+free-Lie/imaginary-simple split computed by
+\texttt{compute/verify\_square\_root.py}.  The triple $(1,3,1)$ has
+exponent zero because $f(1,3)=0$: this triple lies in
+$\Gamma_{\mathrm{eff}}\setminus\Gamma_{\mathrm{act}}$ and contributes
+ordering, not a visible factor.  These are signed superdimensions, not
+positive dimensions; negative entries record an odd excess in the
+Borcherds source, and only after the (O1), (O1)\(^+\), (O2) orientation
+data become available do they translate to operator parities.
+
+\paragraph{Theta-leading sanity check.}
+Combining the leading $q^{1/2}r^{1/2}s^{1/2}$ prefactor with the
+factor $(1-qrs)^{f(1,1)}=(1-qrs)^{-64}$, the next two coefficients of
+the geometric expansion of $(1-qrs)^{-64}$ are $1$ (constant) and
+$64\,qrs$ (linear).  Consistency with Igusa's leading expansion
+\(\Delta_5(Z)=c_\Delta(1,1,1)\,q^{1/2}r^{1/2}s^{1/2}+\cdots\) with
+$c_\Delta(1,1,1)=64$ \cite{Igusa1964II}, \cite[Theorem~4.1]{GN} is
+immediate.  \emph{(computed; verified to the same exact rational
+arithmetic in \texttt{compute/verify\_square\_root.py}; licensing
+$\delta$.)}
+
+\subsection*{B.5 The doubling identity
+\texorpdfstring{$\operatorname{den}(\autcor)=64^{-1}\Delta_5(2Z)$}
+{den(g\_Delta5)=64\^{}-1 Delta5(2Z)}}
+
+\begin{lemma}[Two exponential normalizations]
+\label{lem:appB-doubling}
+The product chamber convention writes monomials as $q^{n}r^{l}s^{m}$
+with $q^{n}r^{l}s^{m}=\exp(-\pi i(\alpha(n,l,m),z))$, while the standard
+denominator-side convention of a Borcherds--Kac--Moody algebra writes
+formal characters as $\exp(-2\pi i(\alpha,z))$.  Replacing $Z$ by $2Z$
+converts the first character to the second, so
+\[
+\operatorname{den}(\autcor)
+\;=\;D_{5}(2Z)
+\;=\;64^{-1}\Delta_{5}(2Z).
+\]
+\emph{(proved; \cite[Proposition~3.1]{GN}, \cite[Section~5.1.1]{GNII}
+together with Theorem~\ref{thm:borcherds-product-delta5}; licensing
+$\alpha$.)}
+\end{lemma}
+
+\begin{proof}
+The product side of Theorem~\ref{thm:borcherds-product-delta5} gives
+\(D_{5}(Z)=q^{1/2}r^{1/2}s^{1/2}\prod(1-q^{n}r^{l}s^{m})^{f(nm,l)}\)
+with leading monomial $q^{1/2}r^{1/2}s^{1/2}$.  Doubling
+$Z\mapsto 2Z$ replaces $q^{n}r^{l}s^{m}$ by $q^{2n}r^{2l}s^{2m}$ and
+hence $\exp(-\pi i(\alpha,z))$ by $\exp(-2\pi i(\alpha,z))$.  The
+Lorentzian Borcherds--Kac--Moody algebra $\autcor$ of
+Gritsenko--Nikulin \cite[Sections~3--4, Proposition~3.1]{GN} carries the
+denominator identity
+\[
+\operatorname{den}(\autcor)
+=\sum_{w\in W^{(2)}(\La^{2,1}_{II})}\det(w)\,
+\Bigl(e^{-2\pi i(w\rho,z)}+\sum_{a}\tau(a)\,e^{-2\pi i(w(\rho+a),z)}\Bigr)
+\]
+on the imaginary-positive cone, with the right-hand side equal to
+$D_{5}(2Z)$ in the doubled exponential.  Equivalently
+$\operatorname{den}(\autcor)=64^{-1}\Delta_{5}(2Z)$.
+\end{proof}
+
+The factor $64$ in $\operatorname{den}(\autcor)=64^{-1}\Delta_{5}(2Z)$
+is the same theta-constant $2^{6}$ from B.3, transported through
+$Z\mapsto 2Z$; it is not a separate normalization, an integration
+constant, or a fudge factor.  In the body of the manuscript, the three
+identifications
+\(D_{X}=\Delta_{5}\),
+\(\operatorname{den}(\autcor)=64^{-1}\Delta_{5}(2Z)\),
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_{X}^{DI})\) are kept
+distinct on first occurrence per chapter; the doubling lemma above is the
+analytic glue.
+
+\subsection*{B.6 The eight-row Gritsenko--Cl\'ery catalogue}
+
+Gritsenko and Cl\'ery \cite[Theorem~1.4]{GC} classify all Siegel modular
+forms of genus two, with character or multiplier system on a
+Hecke-type congruence subgroup $\Gamma_{t}(N)\subset\operatorname{Sp}(4,\Q)$,
+whose divisor is supported on the $\Gamma_{t}(N)$-translates of the
+diagonal Humbert surface
+$\mathcal H_{\mathrm{diag}}=\{Z=\operatorname{diag}(a,b):a,b\in\mathbb H_{1}\}$
+with multiplicity one.  The classification produces exactly eight rows.
+\emph{(proved; \cite[Theorem~1.4 and Theorem~3.1]{GC}; licensing
+$\alpha$.)}
+
+The rows are:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.16}
+\small
+\begin{tabular}{c|c|c|c|c|c|c}
+\hline
+$j$ & $F_{j}$ & $(t,N)$ & $\Gamma_{j}$ &
+$\operatorname{wt}(F_{j})$ & multiplier $\nu_{j}$ & $c_{N}(0)$ \\ \hline
+$1$ & $\Delta_{5}$ & $(1,1)$ & $\Gamma_{1}=\operatorname{Sp}(4,\Z)$ & $5$ &
+$v_{\eta}^{12}\times v_{H}$ & $10$ \\
+$2$ & $\Delta_{2}$ & $(2,1)$ & $\Gamma_{2}^{+}$ & $2$ &
+$v_{\eta}^{6}\times v_{H}$ & $4$ \\
+$3$ & $\Delta_{1}$ & $(3,1)$ & $\Gamma_{3}^{+}$ & $1$ &
+$v_{\eta}^{4}\times v_{H}$ & $2$ \\
+$4$ & $\Delta_{1/2}$ & $(4,1)$ & $\Gamma_{4}^{+}$ & $\tfrac12$ &
+$v_{\eta}^{3}\times v_{H}$ (degree 8) & $1$ \\
+$5$ & $\nabla_{3}$ & $(1,2)$ & $\Gamma_{0}^{(2)}(2)$ & $3$ &
+$\chi_{2}^{(2)}\times v_{H}$ & $6$ \\
+$6$ & $\nabla_{2}$ & $(1,3)$ & $\Gamma_{0}^{(2)}(3)$ & $2$ &
+$\chi_{2}^{(3)}\times v_{H}$ & $4$ \\
+$7$ & $\nabla_{3/2}$ & $(1,4)$ & $\Gamma_{0}^{(2)}(4)$ & $\tfrac32$ &
+$\chi_{4}^{(4)}\times v_{H}$ (order 4) & $3$ \\
+$8$ & $Q_{1}$ & $(2,2)$ & $\Gamma_{2}(2)$ & $1$ &
+$\chi_{4}^{(2)}\times v_{H}$ & $2$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The weights $(5,2,3,1,2,\tfrac12,\tfrac32,1)$ and constant Fourier
+coefficients $c_{N}(0)\in\{10,4,6,2,4,1,3,2\}$ in the present row order
+satisfy the Borcherds--Gritsenko universal weight identity
+\[
+\operatorname{wt}(F_{j})\;=\;\frac{c_{N}(0)}{2}
+\;=\;\kappa_{\mathrm{BKM}}(F_{j}),
+\qquad j=1,\ldots,8 .
+\]
+\emph{(proved; \cite{Borcherds95},
+\cite[Theorem~3.1]{GC}; the $\kappa_{\mathrm{BKM}}$ relabelling is the
+universal Borcherds-weight identity used in the cross-volume Calabi--Yau
+quantum-groups $\kappa$-stratification; licensing $\beta$.)}
+
+The half-integer weights $\tfrac12$ (row $4$) and $\tfrac32$ (row $7$)
+are realized by multiplier systems $v_{\eta}^{k}\times v_{H}$ on the
+ambient paramodular cover, not by passing to a metaplectic double
+cover.  The multiplier $v_{\eta}$ is the Dedekind eta multiplier on
+$\operatorname{SL}_{2}(\Z)$; the multiplier $v_{H}$ is the Heisenberg
+multiplier on the Heisenberg lift of $\operatorname{Sp}(4,\Z)$; and
+$v_{\eta}^{3}\times v_{H}$ has order $8$ on the row-$4$ cover, while
+$\chi_{4}^{(4)}\times v_{H}$ has order $4$ on the row-$7$ cover.
+\emph{(proved; \cite[Theorem~3.1]{GC}; licensing $\alpha$.)}
+
+\paragraph{Denominator content of the rows.}
+Rows $1$--$4$ carry Gritsenko--Nikulin denominator theorems
+\cite[Theorem~2.1, equations (2.11), (2.20), (2.21)]{GNII}; in the
+$e_{t}^{(n,l,m)}=q^{n}r^{l}s^{tm}$ exponential normalization of
+\cite[\S5.1.1]{GNII}, the products are
+\[
+\begin{aligned}
+\Delta_{2}(Z)&=q^{1/4}r^{1/2}s^{1/2}\!\!
+\prod_{(n,l,m)\in\Gamma_{2}^{\mathrm{prod}}}\!\!
+(1-q^{n}r^{l}s^{2m})^{f_{2}(nm,l)},\\
+\Delta_{1}(Z)&=q^{1/6}r^{1/2}s^{1/2}\!\!
+\prod_{(n,l,m)\in\Gamma_{3}^{\mathrm{prod}}}\!\!
+(1-q^{n}r^{l}s^{3m})^{f_{3}(nm,l)},\\
+\Delta_{1/2}(Z)&=q^{1/8}r^{1/2}s^{1/2}\!\!
+\prod_{(n,l,m)\in\Gamma_{4}^{\mathrm{prod}}}\!\!
+(1-q^{n}r^{l}s^{4m})^{f_{4}(nm,l)},
+\end{aligned}
+\]
+with cusp Jacobi inputs $\phi_{0,2},\phi_{0,3},\phi_{0,4}$ supplied
+explicitly by \cite[\S5]{GNII}.  Rows $5$--$8$ carry Cl\'ery--Gritsenko
+products on the corresponding congruence covers, with cusp Jacobi inputs
+$\phi_{j}$ as in \cite[Theorem~3.1]{GC}, and the additional
+denominator data (Weyl chamber, simple real roots, reflection character,
+Weyl alternating sum) supplied by Govindarajan's twisted-CHL theorem
+\cite{Gov11BKM}, \cite{GK09CHL}, \cite{CD09BKM} for $F_{5}=\nabla_{3}$,
+$F_{6}=\nabla_{2}$, $F_{7}=\nabla_{3/2}$, $F_{8}=Q_{1}$.  For $F_{7}$ the
+denominator theorem lives on the order-four multiplier cover
+$\Gamma_{0}^{(2)}(4)\langle\chi_{4}^{(4)}\times v_{H}\rangle$.
+\emph{(proved; \cite{Gov11BKM},
+\cite[Theorem~2.1]{GNII}, \cite[Theorem~3.1]{GC}; licensing $\alpha$.)}
+
+\paragraph{Banned identification quarantine.}
+The eight-row catalogue is a list of \emph{automorphic products plus
+denominator theorems on the rows where the data have been supplied}.
+It is not a list of compact Hall sources, reduced curve-counting
+backgrounds, or chiral hosts: the row-by-row physical-host data slots
+$(\mathscr A_{j},\mathscr D_{j},\mathscr S_{j},\mathscr Z_{j},\mathscr H_{j})$
+of the body of the manuscript are filled in only on a row-by-row
+case basis.  In the present manuscript the row $j=1$
+($F_{1}=\Delta_{5}$) is the only row with a proved reduced CY/DT scalar
+host (Oberdieck--Pixton, Oberdieck--Pandharipande:
+$Z^{X}_{\mathrm{OP}}=-4096\Delta_{5}^{-2}$); even row $1$ has open
+compact Hall/chiral host, conditional on (D0), (O1), (O1)\(^+\), (O2).
+
+\subsection*{B.7 Cross-volume consistency: \texorpdfstring{$\kappa_{\mathrm{BKM}}=5$}{kappa\_BKM=5}}
+
+The cross-volume universal Borcherds-weight identity
+\(\kappa_{\mathrm{BKM}}(\Phi_{N})=c_{N}(0)/2\) is the row-by-row
+specialization of the Borcherds singular-theta-lift weight formula
+\cite[Theorem~10.1]{Borcherds95} together with the Gritsenko--Nikulin
+unification \cite[\S2]{GN}, \cite{Gritsenko99}.  In the present
+manuscript the relevant row is $j=1$, with
+\[
+\kappa_{\mathrm{BKM}}(\Delta_{5})=\operatorname{wt}(\Delta_{5})=5
+=\frac{c_{1}(0)}{2}=\frac{f(0,0)}{2}=\frac{10}{2}.
+\]
+\emph{(proved; \cite[Theorem~10.1]{Borcherds95},
+\cite[\S2.2]{EZ:1}, \cite[Theorem~3.1]{GC}; licensing $\beta$.)}
+
+This is the load-bearing cross-volume invariant: the same integer
+$\kappa_{\mathrm{BKM}}=5$ identifies the manuscript's row inside the
+companion Calabi--Yau quantum-groups $\kappa$-stratification, and it
+is the entry that distinguishes
+$\kappa_{\mathrm{BKM}}=\operatorname{wt}(\Delta_{5})$ (the
+Igusa cusp-form weight) from the unrelated quantities
+$\kappa_{\mathrm{ch}}^{\mathrm{Hodge}}=0$,
+$\kappa_{\mathrm{ch}}^{\mathrm{Heis}}=3$, $\kappa_{\mathrm{cat}}=0$,
+$\kappa_{\mathrm{fiber}}=24=\chi_{\mathrm{top}}(\mathrm{K3})$.  The
+additive collapse $\kappa_{\mathrm{BKM}}=\kappa_{\mathrm{ch}}+
+\chi(\mathcal O_{\mathrm{fiber}})$ would identify
+$24=\chi_{\mathrm{top}}(\mathrm{K3})$ with
+$2=\chi(\mathcal O_{\mathrm{K3}})$ and fails at $N=1$; the appendix
+asserts $\kappa_{\mathrm{BKM}}=5$ as the row entry of the
+Borcherds-weight identity, not as the value of any additive collapse.
+
+\subsection*{B.8 Adversarial loop and residual obstructions}
+
+The following targeted attacks were sustained on this appendix; each
+heal references the verified primary source or fixture.
+
+\begin{itemize}
+\item \emph{Theta-constant normalization.}  The constant $64$ might
+appear to be a free scalar on $\Delta_{5}$.  Heal: $64=2^{6}$ is the
+explicit theta-product leading coefficient
+\cite{Igusa1962}, \cite[Theorem~4.1]{GN}; with the theta normalization
+fixed, no residual scalar freedom remains.  Cross-checked against
+\texttt{compute/verify\_square\_root.py} via the consistency
+$f(1,1)=-64$ and the qrs sanity check $c_{\Delta}(1,1,1)=64$
+\cite[Theorem~4.1]{GN}.
+\item \emph{Cusp chamber definition $\Gamma_{\mathrm{eff}}$.}
+The semigroup $\Gamma_{\mathrm{eff}}$ is the ordered-limit semigroup of
+the type-II cusp polarization $0<|s|\ll|q|\ll|r|^{-1}\ll1$
+\cite[Example~2.4]{GNII}; not a free choice.  Triples in
+$\Gamma_{\mathrm{eff}}\setminus\Gamma_{\mathrm{act}}$ have zero exponent
+and therefore contribute no visible product factor.
+\item \emph{Multiplier system for half-integer weights.}
+Half-integer weights $\tfrac12$ and $\tfrac32$ are realized by
+$v_{\eta}^{k}\times v_{H}$, not by the Weil-representation metaplectic
+double cover; the integer weight $5$ of $\Delta_{5}$ uses the abelian
+multiplier $v_{\eta}^{12}\times v_{H}$ (which is automorphic-trivial
+modulo the Maass character $\nu_{\Delta_{5}}$ on the type-II Weyl
+generators).  No metaplectic factor enters the Borcherds weight
+identity.  See \cite[Theorem~3.1]{GC} for the full classification.
+\item \emph{Doubling factor $64^{-1}\Delta_{5}(2Z)$.}
+The factor $64^{-1}$ in $\operatorname{den}(\autcor)=64^{-1}
+\Delta_{5}(2Z)$ is the same theta-constant $2^{6}$ from
+Theorem~\ref{thm:borcherds-product-delta5}, transported through
+$Z\mapsto 2Z$; no new constant.  See
+Lemma~\ref{lem:appB-doubling}.
+\item \emph{Cross-volume $\kappa_{\mathrm{BKM}}=5$ consistency.}
+The integer $\kappa_{\mathrm{BKM}}=5$ is the row entry of the
+Borcherds-weight identity $\operatorname{wt}(F_{j})=c_{N}(0)/2$ in the
+catalogue of \cite[Theorem~3.1]{GC}; it agrees with
+$\operatorname{wt}(\Delta_{5})=f(0,0)/2=5$ from
+\cite[\S2.2]{EZ:1}; it agrees with the entry
+$(c_{1}(0),\operatorname{wt})=(10,5)$ in the companion Calabi--Yau
+quantum-groups $\kappa$-stratification.
+\item \emph{Eichler--Zagier vs Gritsenko--Nikulin convention.}  The
+present appendix uses the Eichler--Zagier convention
+$\phi_{0,1}=Z_{\mathrm{K3}}/2$ \cite[\S2.2]{EZ:1}; this matches the
+Gritsenko--Nikulin Jacobi convention in
+\cite[Example~2.4]{GNII} and \cite[\S5.1.1]{GNII} on the
+$(n,l)$-coefficient table given in B.1, and matches the singular
+theta-lift normalization \cite[Theorem~10.1]{Borcherds95} after the
+Mp$_{2}$-vector-valued bridge.  No residual factor of $2$ enters the
+exponent $f(nm,l)$ of the Borcherds product.
+\end{itemize}
+
+\paragraph{Residual obstructions.}
+The four obstruction classes (D0), (O1), (O1)\(^+\), (O2) of the
+manuscript body are not addressed in this appendix; they are geometric
+content on the source side of $\Delta_{5}$.  Within the appendix, no
+residual obstruction survives the adversarial loop.  The cross-volume
+universal identity $\operatorname{wt}(F_{j})=c_{N}(0)/2$ commits the
+present manuscript to the row $j=1$, $\kappa_{\mathrm{BKM}}=5$, and any
+disagreement with the Vol~III catalogue, the Borcherds singular
+theta-lift weight formula, or the Gritsenko--Cl\'ery classification
+would be reportable, not silently reconcilable.
+
+\paragraph{File anchors.}
+Numerical Fourier-coefficient verification is in
+\texttt{compute/verify\_square\_root.py};
+lattice/Gram-pairing verification is in
+\texttt{compute/verify\_lattice.py};
+the body of the manuscript records the type-II cusp chamber, the active
+support, and the Borcherds product in
+Proposition~\ref{prop:bgn-identification-recap}; the doubling identity is
+Lemma~\ref{rem:bkm-doubling-Z}; the catalogue tables
+are in Appendix~\ref{app:eight-build-algorithms}.

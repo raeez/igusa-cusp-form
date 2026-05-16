@@ -1,0 +1,172 @@
+\chapter{The Dirac--Igusa pro-object $\mathfrak D_X^{\mathrm{DI}}$
+on $K3\times E$ (View ③)}
+\label{chap:dirac-igusa-pro-object}
+
+The Igusa cusp form $\Delta_5$ of weight $5$ on
+$\mathrm{Sp}(2,\Z)\backslash\mathcal H_2$ has three established
+identities: the Borcherds--Gritsenko--Nikulin section (View ①), the
+denominator of a generalized Borcherds--Kac--Moody Lie superalgebra
+$\mathfrak g_{\Delta_5}$ on the root lattice $\Lambda_{II}^{2,1}$
+(View ②), and the singular theta lift of the weight-zero index-one
+weak Jacobi form $\phi_{0,1}$ (View ⑤).  This chapter constructs the
+fourth side of the same object: the protected Pfaffian of a chiral
+$E_3$-algebra $\mathfrak A_{K3\times E}$ on the $K3\times E$ formal
+target, presented at finite stage as the Dirac--Igusa pro-object
+\[
+\mathfrak D_X^{\mathrm{DI}}
+=\varprojlim_R\bigl(
+\mathcal A_{X,R}^{E_3},
+F_{X,R}^{\mathrm{hyb}},
+\Gamma_{X,R},
+\Pi_X,
+\Phi_R,
+o_R,
+H_R,
+P_R^\Pi,
+C_{X,R},
+\Theta_{\mathrm{Kos},R},
+\mathscr L_{\mathrm{Pf},R},
+\operatorname{pf}_{X,R},
+\varepsilon_{o,R},
+\mathrm{Rec}_R\bigr)
+\]
+with eight build algorithms and four named obstructions.
+
+Throughout the chapter $S$ is a smooth complex K3 surface and $E$ is a
+smooth elliptic curve; singular K3 limits, nodal or cuspidal elliptic
+degenerations, imprimitive curve-class contributions, the $s=0$
+compact Hall cusp, and multi-component charge closures belong to
+separate boundary data.  The three standing finite-stage hypotheses
+are $[\textup{K3$\times$E-fin}]$ (finite-type semistable substacks at
+bounded HN height), $[\textup{K3$\times$E-atlas}]$ (finite
+d-critical/cosection Hall atlas), and $[\textup{ML}]$
+(Mittag--Leffler descent for the HN inverse system).
+
+The bar coalgebra is MC twisting, not bulk; the bulk is the imported
+Borcherds--Kac--Moody current envelope $\mathsf{Den}_{\Delta_5, E}$,
+and the cobar comparison $\Theta_{\mathrm{Kos}, R}$ is the
+source-to-target theorem on the hybrid source, not a target-internal
+counit.
+
+\section*{The climax theorem}
+
+\begin{theorem}[Construction of the Dirac--Igusa pro-object on $K3\times E$]
+\label{thm:ch5-construction-of-dirac-igusa-pro-object}
+Granted the four-obstruction discharge of
+Theorem~\ref{thm:G-four-obstruction-discharge} and the three standing
+finite-stage hypotheses
+$[\textup{K3$\times$E-fin}]$, $[\textup{K3$\times$E-atlas}]$, $[\textup{ML}]$,
+there exists a finite-stage Dirac--Igusa pro-object
+\[
+\mathfrak D_X^{\mathrm{DI}}
+=\varprojlim_{R\in\mathcal R_{\mathrm{HN}}}\!\bigl(
+\mathcal A_{X,R}^{E_3},
+F_{X,R}^{\mathrm{hyb}},
+\Gamma_{X,R},
+\Pi_X,
+\Phi_R,
+o_R,
+H_R,
+P_R^\Pi,
+C_{X,R},
+\Theta_{\mathrm{Kos},R},
+\mathscr L_{\mathrm{Pf},R},
+\operatorname{pf}_{X,R},
+\varepsilon_{o,R},
+\mathrm{Rec}_R\bigr)
+\]
+on the moduli stack $\mathfrak M^{\mathrm{red},+}_c(X)$ of effective
+dyonic-class objects in the Bridgeland heart of
+Chapter~\ref{ch:k3xe-setup}, with the following typed structure:
+\begin{enumerate}
+\item[\textnormal{(L1)}] (\emph{Hybrid carrier},
+\S\ref{subsec:hybrid-ran-carrier}.)  $F_{X,R}^{\mathrm{hyb}}$ is the
+hybrid wrapped factorization carrier on
+$\mathrm{Ran}^{\mathrm{hyb}}(E)$ over the elliptic factor, with
+local/wrapped/mixed atlas matching the type-II wall structure
+$\{(0,0,1),(0,1,1),(0,1,0)\}$ on $\Lambda^{2,1}_{II}$.
+\item[\textnormal{(L2)}] (\emph{Reduced d-critical orientation},
+\S\ref{subsec:cosection-twisted-orientation}.)
+$o_R\in H^1(\mathfrak M^{\mathrm{red},+}_{c,R}(X),\Z/2)$ is the
+cosection-twisted multiplicative Joyce--Upmeier orientation cocycle of
+Bojko \cite[Theorem~1.4]{Bojko}, surviving the strong reduced
+orientation conditions of
+Definition~\ref{def:O1-strong-reduced-orientation}.
+\item[\textnormal{(L3)}] (\emph{Hall correspondences},
+\S\ref{subsec:hall-correspondences}.)
+$H_R$ is the protected Hall product on
+$H^\bullet_c(\mathfrak M^{\mathrm{red},+}_{c,R}(X),
+\Phi_W\otimes o_R)$, supplying the Hall--Drinfeld correspondence to
+the level-3 object $G(X)$.
+\item[\textnormal{(L4)}] (\emph{Dirac operator and Pfaffian line},
+\S\ref{subsec:dirac-pfaffian}.)
+$\mathscr L_{\mathrm{Pf},R}$ is the Pfaffian line bundle on
+$\mathfrak Q_R=(\mathfrak M^{\mathrm{red},+}_{c,R}(X)/E)^{\mathrm{red}}$
+with finite Pfaffian sections $\operatorname{pf}_{X,R}$ assembled
+into the inverse limit by Mittag--Leffler descent.
+\item[\textnormal{(L5)}] (\emph{Chiral Koszul source coalgebra},
+\S\ref{subsec:koszul-source}.)
+$C_{X,R}$ is the bar of the augmented hybrid factorization algebra,
+with chiral Koszul cobar map
+$\Theta_{\mathrm{Kos},R}:\Omega_E^{\mathrm{ch}}C_X\xrightarrow{\sim}
+\mathsf{Den}_{\Delta_5,E}$ the source-to-target identification.
+\item[\textnormal{(L6)}] (\emph{Primitive recognition},
+\S\ref{sec:ch6-primitive-recognition}.)
+$\mathrm{Rec}_R$ is the cofinal-window primitive recognition
+criterion (S1)--(S10) of
+Definition~\ref{def:cofinal-primitive-recognition-datum}, supplying
+the primitive part
+$P_X^{\Pi,\mathrm{red}}\simeq\mathfrak g_{\Delta_5}$.
+\item[\textnormal{(L7)}] (\emph{Eight build algorithms},
+\S\ref{subsec:eight-build-algorithms}.)
+The pro-object is computed by the eight finite-stage algorithms
+A1--A8 of Appendix~\ref{app:eight-build-algorithms}, run in order,
+with input/output/obstruction tuples typed at each step.
+\item[\textnormal{(L8)}] (\emph{Obstruction package},
+\S\ref{subsec:ch6-obstructions}.)
+The four named obstructions $(D0)$, $(O1)$, $(O1)^+$, $(O2)$ are
+discharged on $K3\times E$ by
+Theorem~\ref{thm:G-four-obstruction-discharge}.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The pro-object is the inverse limit of the finite-stage data on the
+HN system $\mathcal R_{\mathrm{HN}}$.  Each finite-stage entry is
+constructed by one of the eight algorithms A1--A8 of
+Appendix~\ref{app:eight-build-algorithms}, and the inverse limit
+exists by the standing data
+$[\textup{K3$\times$E-fin}]$, $[\textup{K3$\times$E-atlas}]$,
+$[\textup{ML}]$ together with the four-obstruction discharge of
+Theorem~\ref{thm:G-four-obstruction-discharge}.  The eight numbered
+data items $(\mathrm{L1})$--$(\mathrm{L8})$ are exactly the eight
+build algorithms in the input/output convention; the chapter's eight
+sections \S~\ref{subsec:hybrid-ran-carrier} through
+\S\ref{subsec:eight-build-algorithms} supply the technical content
+of each.
+\end{proof}
+
+\medskip
+
+Entries $(\mathrm L 1)$--$(\mathrm L 8)$ are developed in turn.
+Each section supplies the typed input/output data, the local
+algorithm, and the obstruction class.  The full pseudocode is in
+Appendix~\ref{app:eight-build-algorithms}; the discharges are in
+Appendix~\ref{app:obstruction-discharges}.
+
+\input{chapters/05_subsections/05_1_hybrid}
+
+\input{chapters/05_subsections/05_2_orientation}
+
+\input{chapters/05_subsections/05_3_hall}
+
+\input{chapters/05_subsections/05_4_dirac_pfaffian}
+
+\input{chapters/05_subsections/05_5_koszul}
+
+\input{chapters/05_subsections/05_6_primitive_recognition}
+
+\input{chapters/05_subsections/05_7_build_algorithms}
+
+\input{chapters/05_subsections/05_8_obstructions}
+

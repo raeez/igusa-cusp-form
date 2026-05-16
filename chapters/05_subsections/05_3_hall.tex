@@ -1,0 +1,319 @@
+\subsection{Hall correspondences: product, coproduct, primitives}
+\label{subsec:hall-correspondences}
+
+The third entry of the Dirac--Igusa pro-object is the Hall structure
+on the cosection-reduced d-critical heart.  It is the algebraic
+content that the orientation lane equips and the hybrid carrier
+indexes.  Three operations live here: the Hall product
+$m_R^{\mathrm{red}}$, the collision coproduct $\Delta_R^{\mathrm{ch}}$,
+and the primitive projection $P_R^{\Prim}$.  After normal-ordered
+Gram descent these form a graded Hopf datum on the protected
+primitive layer; recognition of this Hopf datum with the
+Borcherds--Kac--Moody target is the §5.6 obligation.
+
+The Kontsevich--Soibelman cohomological Hall algebra of a
+$3$-Calabi--Yau category \cite{KSCoHA} is the prototype; on
+$K3\times E$ the cosection reduction \cite{JoyceSong,JoyceUpmeier}
+replaces the unreduced critical CoHA, and the wrapped sector is the
+residual the hybrid carrier of \S\ref{subsec:hybrid-ran-carrier}
+retains.  The Maulik--Okounkov stable-envelope construction and the
+Schiffmann--Vasserot theorems on Drinfeld doubles of CoHA operate
+on the same input; their integral form is the Hall side of the
+present construction.
+
+\subsubsection*{The compact Hall product}
+
+\begin{definition}[Compact Hall product on the cosection-reduced
+heart]
+\label{def:compact-hall-product}
+Let $\mathcal C_{\sigma,S,\le R}$ be the finite HN quotient of
+\S\ref{subsec:hybrid-ran-carrier}.  The compact Hall product at
+height $R$ is the operation
+\[
+m_R^{\mathrm{red}}=
+q_{c,c'}{}_!\circ\operatorname{TS}^{\mathrm{red}}_{c,c'}\circ p_{c,c'}^*:
+H_*^{\mathrm{BM}}\!\bigl(\mathfrak M_c^\sigma\times\mathfrak M_{c'}^\sigma,
+\Phi_c^{\mathrm{red}}\boxtimes\Phi_{c'}^{\mathrm{red}}
+\otimes o_c\boxtimes o_{c'}\bigr)
+\to
+H_*^{\mathrm{BM}}\!\bigl(\mathfrak M_{c+c'}^\sigma,
+\Phi_{c+c'}^{\mathrm{red}}\otimes o_{c+c'}\bigr)
+\]
+attached to the extension correspondence
+\[
+\mathfrak M_c^\sigma\times\mathfrak M_{c'}^\sigma
+\xleftarrow{p_{c,c'}}\mathfrak E_{c,c'}^\sigma
+\xrightarrow{q_{c,c'}}\mathfrak M_{c+c'}^\sigma,
+\]
+in the cosection-reduced d-critical heart, with vanishing-cycle
+coefficients $\Phi^{\mathrm{red}}$, Joyce--Upmeier orientation lines
+$o$, and Thom--Sebastiani transport
+$\operatorname{TS}^{\mathrm{red}}_{c,c'}$.  Associativity on the
+finite stage is the eight-word two-step binary flag pentagon of
+\S\ref{subsec:hybrid-ran-carrier}, axiom (5).
+\end{definition}
+
+For local-only inputs and ordered mixed and wrapped inputs, the same
+construction produces the three operation families
+$\mu_R^{\mathrm{loc}}$, $\mu_R^{\mathrm{hyb}}$, $\mu_R^{\mathrm{wr}}$
+of \S\ref{subsec:hybrid-ran-carrier}.  Existence of the product as a
+genuine morphism on Borel--Moore chains requires the
+admissibility/properness residuals of that section to vanish.
+
+\subsubsection*{The collision coproduct on the source coalgebra}
+
+The collision coproduct is defined on the same correspondence
+geometry, read in the opposite direction: instead of contracting an
+extension to a single output, one expands an object into the pairs of
+its sub/quotient extensions.  At finite stage, this is the
+$2$-step flag stack already supplied as part of the hybrid datum.
+
+\begin{definition}[Collision coproduct]
+\label{def:collision-coproduct}
+The finite collision coproduct
+\[
+\Delta_R^{\mathrm{ch}}:C_{X,R}\longrightarrow C_{X,R}\otimes C_{X,R}
+\]
+is the chain-level pull-push along the $2$-step flag stack
+$\mathfrak{Flag}^{(2)}_{c,c',R}$ of subobjects of charge $c$ and
+quotients of charge $c'$ in $\mathfrak M_{c+c',R}^\sigma$, computed
+in the cosection-reduced d-critical heart, before the reduced
+$E$-quotient.  After $Q_{E,R}$ it satisfies the coalgebra identities
+\[
+(\Delta_R^{\mathrm{ch}}\otimes 1)\Delta_R^{\mathrm{ch}}
+=(1\otimes\Delta_R^{\mathrm{ch}})\Delta_R^{\mathrm{ch}},
+\qquad
+(\varepsilon_R^C\otimes 1)\Delta_R^{\mathrm{ch}}
+=(1\otimes\varepsilon_R^C)\Delta_R^{\mathrm{ch}}=\mathrm{id},
+\]
+which are the dual of the Hall pentagon on the same flag stack.  For
+$R'\ge R$ the transition map $\rho^C_{R'R}$ commutes with
+$\Delta^{\mathrm{ch}}$.
+\end{definition}
+
+This is the source coalgebra of \S\ref{subsec:koszul-source}; its
+identification with the bar construction
+$\bar B_E^{\mathrm{ch}}(\mathcal F_X^{\mathrm{hyb}})$ is the bar
+comparison there.
+
+\subsubsection*{Primitive projection and the Hopf datum}
+
+The primitive projection on a graded conilpotent Hopf object is
+unique once the augmentation, product, and coproduct are supplied.
+
+\begin{definition}[Primitive Hall sub-bracket]
+\label{def:primitive-hall-bracket}
+Write
+\[
+\widetilde P_X=H^0\Prim_{\mathrm{prot}}(\mathcal F_X)
+=\ker\bigl(\widetilde\Delta:
+\mathcal F_X\to\mathcal F_X\otimes\mathcal F_X\bigr)
+\]
+for the primitive layer of the protected Hall Hopf object, where
+$\widetilde\Delta=\Delta-(\eta\varepsilon\otimes\mathrm{id}+
+\mathrm{id}\otimes\eta\varepsilon)$.  The Hall product restricts to
+a $\widehat\Gamma_X$-graded bracket
+\[
+[\,\cdot\,,\,\cdot\,]_X:\widetilde P_{X,\widehat c}\otimes
+\widetilde P_{X,\widehat c'}
+\longrightarrow\widetilde P_{X,\widehat c\star\widehat c'},
+\]
+the protected primitive Hall bracket.  After normal-ordered Gram
+descent (\S\ref{subsec:hybrid-ran-carrier}) and the Hopf-radical
+quotient, the descended bracket is $\Gamma_{\mathrm{gram}}$-graded
+and the descended primitive layer is the candidate $P_X^{\Pi,\mathrm{red}}$
+to be identified with $\mathfrak g_{\Delta_5}$.
+\end{definition}
+
+\begin{lemma}[Primitive bracket lifting; \textit{conditional on the
+Frobenius defect $\mathfrak o_F=0$}]
+\label{lem:primitive-bracket-lifting}
+Let $\langle\cdot,\cdot\rangle_X$ be the protected Hopf pairing on
+$\widetilde P_X$, non-degenerate on the radical quotient.  The
+trilinear Frobenius defect
+\[
+\mathfrak o_F(x,y,z):=\langle[x,y],z\rangle
++(-1)^{|x|\cdot|y|}\langle y,[x,z]\rangle,
+\quad
+x,y,z\in\widetilde P_X,\quad c_x+c_y+c_z=0,
+\]
+viewed as a class in
+$C^3_{\mathrm{cyc}}(\widetilde P_X;k)$ after the reduced $E$-quotient
+and radical quotient, vanishes precisely when the bracket is
+graded-symmetric for the Hopf pairing.  Vanishing is the cyclic-CY-3
+Serre-functor identity of
+Lemma~\ref{thm:hall-product}.  Non-degeneracy of the
+Hopf pairing alone does \emph{not} force $\mathfrak o_F=0$; it only
+detects the vanishing once supplied.
+\end{lemma}
+
+\begin{lemma}[Hopf radical is a Lie ideal and a coideal;
+\textit{conditional on $\mathfrak o_F=0$ and Hopf adjointness}]
+\label{lem:hopf-radical-ideal-coideal}
+Let $P_R^\Pi$ be a finite normal-ordered primitive stage with
+transported product $m_R^\Theta$, coproduct $\Delta_R^\Theta$, graded
+symmetric Hopf pairing $\langle\cdot,\cdot\rangle_R$, and radical
+$\operatorname{Rad}_R^\Pi$.  Assume Hopf adjointness
+$\langle m_R^\Theta(x,y),z\rangle_R
+=\langle x\otimes y,\Delta_R^\Theta z\rangle_R$
+and non-degeneracy on
+$P_R^\Pi/\operatorname{Rad}_R^\Pi\otimes
+P_R^\Pi/\operatorname{Rad}_R^\Pi$.  Then
+\[
+(\bar q_{\Pi,R}\otimes\bar q_{\Pi,R})\Delta_R^\Theta(r)=0
+\quad(r\in\operatorname{Rad}_R^\Pi),
+\]
+i.e.\ $\operatorname{Rad}_R^\Pi$ is a coideal.  If, in addition,
+$\mathfrak o_{F,R}=0$, then $\operatorname{Rad}_R^\Pi$ is a Lie
+ideal.
+\end{lemma}
+
+\begin{proof}
+For $r\in\operatorname{Rad}_R^\Pi$ and $x,y\in P_R^\Pi$, Hopf
+adjointness gives
+$\langle x\otimes y,\Delta_R^\Theta(r)\rangle_R
+=\langle m_R^\Theta(x,y),r\rangle_R=0$;
+non-degeneracy of the quotient tensor pairing then kills the class.
+The Lie-ideal half is direct: if $\mathfrak o_{F,R}=0$ then
+$\langle[x,r]_\Theta,z\rangle_R
+=-(-1)^{|x||r|}\langle r,[x,z]_\Theta\rangle_R=0$ for every $z$,
+so $[x,r]_\Theta\in\operatorname{Rad}_R^\Pi$.
+\end{proof}
+
+\subsubsection*{Integral form and stable-envelope transport}
+
+Two parallel constructions act on the same compact Hall heart:
+\begin{enumerate}
+\item the integral form of the Schiffmann--Vasserot
+elliptic Hall algebra, whose $K3\times E$-specialization carries the
+Maulik--Okounkov stable envelope;
+\item the Drinfeld double $\mathcal D_\hbar(\textup{CoHA}_{K3\times E})$
+of Vol III, whose positive half is the protected primitive Hopf
+algebra above and whose Drinfeld pairing is the Hopf pairing.
+\end{enumerate}
+The compatibility datum between these two constructions is part of
+the cross-repo consistency check between this manuscript and the
+Calabi--Yau quantum-groups constellation.  Disagreement on a
+load-bearing constant or sign is the deliverable; the Drinfeld
+double is not asserted here as a black box.
+
+\subsubsection*{Conilpotent source coalgebra and Hopf radical
+quotient}
+
+\begin{definition}[Conilpotent source coalgebra]
+\label{def:conilpotent-source-coalgebra}
+At finite stage, $C_{X,R}$ is the conilpotent chiral coalgebra on
+$E$ obtained from the collision coproduct on $\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}$
+after the reduced $E$-quotient: it is filtered by a finite increasing
+source charge filtration
+\[
+0=F^{\mathrm{co}}_{R,-1}\subset F^{\mathrm{co}}_{R,0}\subset
+\cdots\subset F^{\mathrm{co}}_{R,N_R}=C_{X,R}
+\]
+whose associated graded pieces are finite dimensional in each
+$\Gamma_R^\Pi$-degree, and whose reduced iterated coproduct is
+nilpotent on each finite stage.  Conilpotence is recorded by the
+defect $(\overline\Delta_R^{\mathrm{ch}})^{N_R+1}$, required to
+vanish.  Inverse-limit completion gives the source coalgebra
+$C_X=\varprojlim_R C_{X,R}$.
+\end{definition}
+
+\begin{proposition}[Sectorial Hall truncation and inverse limit;
+\textit{conditional on
+$[\textup{K3$\times$E-fin}]$, $[\textup{K3$\times$E-atlas}]$,
+and $[\textup{ML}]$}]
+\label{prop:sectorial-hall-truncation}
+Under the three standing hypotheses
+$[\textup{K3$\times$E-fin}]$ (finite-type semistable
+substacks at bounded HN height),
+$[\textup{K3$\times$E-atlas}]$ (finite d-critical/cosection
+Hall atlas with Joyce--Upmeier orientation lines), and
+$[\textup{ML}]$ (Mittag--Leffler descent for the HN inverse system),
+the finite Hall product, coproduct, primitive projection, and Hopf
+pairing are compatible with the transition maps $\rho_{R'R}$, and
+their inverse limits define the completed Hall Hopf datum
+$\widetilde P_X$, $C_X$.  The Mittag--Leffler hypothesis controls
+the $R^1\varprojlim$ obstruction on every finite-window slice; without
+it, only a compatible pro-object is obtained.
+\end{proposition}
+
+The hypothesis $[\textup{K3$\times$E-fin}]$ is not a
+consequence of fibrewise K3 boundedness alone.  A precise sufficient
+input is product-stability boundedness in the
+Abramovich--Polishchuk/Liu sense
+\cite{AbramovichPolishchukTStructures,LiuProductStability}: for a
+rational K3 stability condition $\sigma_S=(\mathcal A_S,Z_S)$ and
+Liu's product stability $\sigma_{s,t}$ on
+$D^b(\operatorname{Coh}(S\times E))$, fixed-class boundedness
+\[
+\mathfrak M^{ss}_{\sigma_{s,t}}(\gamma)\text{ is finite type over }\C
+\]
+together with Liu's support property would imply
+$[\textup{K3$\times$E-fin}]$ for bounded $h_S$-windows.
+Piyaratne--Toda boundedness for threefold Bridgeland/BMT
+\cite{PiyaratneTodaModuli3folds} does not automatically supply this
+theorem; fibrewise Bayer--Macri boundedness alone does not either.
+
+\subsubsection*{Wall-crossing and chamber dependence}
+
+The lattice cocycle $B(c,c')$ of the dyonic Mukai construction is
+chamber-independent.  The compact Hall side $D_0(X;\sigma,S)$ is
+chamber-dependent: finite-type semistable substacks change under
+wall-crossing, and the Kontsevich--Soibelman wall-crossing formula
+\cite{KSCoHA} relates Hall counts in adjacent chambers.  If the
+datum $D_0(X;\sigma,S)$ is supplied in chamber $\sigma$, then
+$\overline\Pi_X$ remains a homomorphism and the recognition target
+is $\mathfrak g_{\Delta_5}$ provided the chamber identifications hold
+for the OP/DT scalar import; that the chosen $\sigma$ lies in the
+OP/DT chamber, or that the wall-crossing transport is compatible
+with $\overline\Pi_X$, is a separate conjectural input.  No
+chamber-independence of the recognition target is asserted.
+
+\subsubsection*{Status under the obstruction tuple}
+
+The Hall lane carries the residuals
+\[
+\mathfrak O_{\mathrm{Hall},R}
+=(\mathfrak o^{\mathrm{stage}}_R,\,
+\mathfrak o^{\mathrm{conf}}_R,\,
+\mathfrak o^{\mathrm{prop}}_R,\,
+\mathfrak o^{\mathrm{TS}}_R,\,
+\mathfrak o^{\mathrm{assoc}}_R,\,
+\mathfrak o_{F,R},\,
+\mathfrak o^{\mathrm{coid}}_R,\,
+\mathfrak o^{\mathrm{ML}}_{R'R}).
+\]
+Discharge of the wrapped product on the projection-finite stratum is
+classical d-critical CoHA after cosection reduction; on the wrapped
+stratum the construction is open and tracked by the (D0)
+obstruction.  Hopf adjointness, Frobenius vanishing, and PBW
+compatibility are independent constructions on the descended primitive
+layer.
+
+\subsubsection*{Cross-repo anchor}
+
+Vol III's Drinfeld doubling $Y^+(X)\to G(X)$ produces the BKM target
+of the present manuscript on the source side; the integral form is
+the chiral lift of the Schiffmann--Vasserot elliptic Hall algebra.
+Maulik--Okounkov stable-envelope transport supplies the integral
+form on the projection-finite Ran stratum; the wrapped stratum is
+the stratum-completion that this manuscript and the chiral-bar-cobar
+volumes reconstruct.  No black-box equality $\mathrm{CoHA}=W_\infty$
+is asserted: $\mathrm{CoHA}(\C^3)=Y^+(\mathfrak{gl}_1)$ in Vol III,
+and $W_{1+\infty}$ appears only after Drinfeld doubling, centre,
+vacuum evaluation.  The same discipline applies here: the protected
+primitive Hopf algebra of $K3\times E$ becomes the BKM target only
+after the Hopf radical quotient, the Frobenius identity, and the
+no-extra-relations theorem of \S\ref{subsec:primitive-recognition}.
+
+The Hall correspondences produce a protected primitive Hopf algebra
+on the cosection-twisted heart, but they live at the operator level
+and have no automatic comparison to the scalar denominator
+$\mathrm{den}(\autcor)=64^{-1}\Delta_5(2Z)$ imported in
+Chapter~\ref{ch:view2-bkm}.  Closing the cross-level identity
+\textcircled{2}$\leftrightarrow$\textcircled{3} requires a chain-level
+scalar incarnation of the primitive structure: a Pfaffian line
+$\mathscr L_{\mathrm{Pf},R}$ on the reduced moduli, a Dirac block
+decomposition, and a first-order Pfaffian section whose
+$\Sp_4(\Z)$-pullback recovers $\Delta_5$.  This is the fourth entry
+$(\mathrm L 4)$, constructed in \S\ref{subsec:dirac-pfaffian}.

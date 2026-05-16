@@ -1,0 +1,301 @@
+\subsection{Cosection-twisted reduced d-critical orientation}
+\label{subsec:cosection-twisted-orientation}
+
+The d-critical structure of the compact Hall sector on $K3\times E$ is
+the second entry of the pro-object.  It supplies a vanishing-cycle
+coefficient system, a Joyce--Upmeier--type orientation line, and a
+quotient-descent package for the reduced $E$-quotient.  These are the
+finite-stage operands of the Hall product.  Before any Pfaffian wall
+or Weyl transport can be discussed, the orientation line must descend
+through the cosection-reduced moduli.
+
+The compact Hall heart is built from a Bridgeland-type stability
+sector $(\sigma,S)$ on $D^b(\operatorname{Coh}(K3\times E))$ in the K3
+lineage of \cite{BridgelandK3Stability,BayerMacriProjectivity}.  The
+PTVV $(-1)$-shifted symplectic structures
+\cite{PTVV2013} restrict to the finite-type stacks selected by the HN
+quotient and give Joyce d-critical structures
+\cite{BBDJS2015} after classical truncation.  The K3 fibre
+direction supplies a semiregularity cosection
+$\operatorname{CS}_{\mathcal C}$, surjective on reduced strata, whose
+filtered Hall additivity on extension stacks
+\[
+q^*\operatorname{CS}_C
+=p_1^*\operatorname{CS}_A+p_2^*\operatorname{CS}_B
+\]
+is the input to Kiem--Li cosection localization
+\cite{JoyceSong,JoyceUpmeier}.
+
+\subsubsection*{The reduced determinant complex}
+
+For an object $\mathcal C$ in the chosen finite stage, write
+\[
+K^{\mathrm{red}}_{\mathcal C}
+=\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C),
+\]
+the cosection-reduced self-Ext complex.  The reduced orientation line
+is supplied with a chosen square root,
+\[
+o_{\mathcal C}\in\operatorname{Pic}(\mathfrak M^{\mathrm{or}}_X),
+\qquad
+o_{\mathcal C}^{\otimes 2}\simeq\det K^{\mathrm{red}}_{\mathcal C},
+\]
+in the sense of \cite{JoyceUpmeier}, and is multiplicative under the
+reduced extension correspondences:
+$o_{\mathcal C\oplus\mathcal C'}\simeq
+o_{\mathcal C}\otimes o_{\mathcal C'}$ compatibly with the Hall
+additivity above.  This is the data on which Thom--Sebastiani
+transport is supplied for the vanishing-cycle coefficient sheaves.
+
+\subsubsection*{(O1) Strong reduced orientation through the
+quotient-orientation tower}
+
+The compact Hall product on $X=K3\times E$ is built only after the
+reduced $E$-quotient.  The orientation line must descend through this
+quotient, and descent is detected by a tower of mod-$2$
+Borel-equivariant gerbes.  For a charge stratum $\mathcal C$:
+
+\begin{enumerate}
+\item the reduced gerbe class
+\[
+\alpha^{\mathrm{red}}_{\mathcal C}
+=w_2(\det K^{\mathrm{red}}_{\mathcal C})
++\mathrm{cs}^{*}w_2(\det\operatorname{coker}\mathrm{cs})
+\in H^2(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb F_2);
+\]
+\item the free $E$-class
+\[
+\alpha^{E,\mathrm{free}}_{\mathcal C}
+=a_1(\mathcal C)u_1+a_2(\mathcal C)u_2
+\in H^2(BE;\mathbb F_2);
+\]
+\item for each finite-stabilizer stratum $S$ with stabilizer
+$H\subset E_{\mathrm{tors}}$, the equivariant class
+$\widetilde\beta^{H}_{\mathcal C,S}\in H^2_H(S;\mathbb F_2)$, whose
+point-stabilizer restriction $\beta^H_{\mathcal C,S}\in H^2(BH;\mathbb F_2)$
+is read only after the mixed Borel terms, the stabilizer action on
+$H^\bullet(S;\mathbb F_2)$, and the spectral-sequence differentials
+have vanished.
+\end{enumerate}
+
+\begin{definition}[(O1) Strong multiplicative reduced orientation]
+\label{def:O1-strong-reduced-orientation}
+The (O1) datum at finite HN height $R$ consists of:
+the reduced orientation line $o_{\mathcal C}$ with chosen square root;
+its multiplicativity under reduced extension correspondences with
+chosen Thom--Sebastiani transport;
+null-trivializations of $\alpha^{\mathrm{red}}_{\mathcal C}$,
+$\alpha^{E,\mathrm{free}}_{\mathcal C}$,
+$\widetilde\beta^{H}_{\mathcal C,S}$ and
+$\beta^{H}_{\mathcal C,S}$ on every charge stratum
+used by the Hall correspondences;
+and a choice of zero $H^1(BH;\mathbb F_2)$-linearization character
+$\lambda^{H}_{\mathcal C,S}=0$ for each finite stabilizer.
+
+The full-level specialization at $H=E[2]$ is the Klein-four condition
+\[
+\beta^{E,2}_{\mathcal C,S}
+=b_{20}x_1^2+b_{11}x_1x_2+b_{02}x_2^2,
+\quad
+(b_{20},b_{11},b_{02})=(r_1,r_1+r_2+r_3,r_2),
+\]
+\[
+\operatorname{res}_{\langle e_i\rangle}\beta^{E,2}_{\mathcal C,S}
+=r_i\tau_i^2,
+\]
+with vanishing $r_1=r_2=r_3=0$ on every retained two-torsion
+stratum.  For full-level $H=E[N]$ with $2^a\parallel N$, $a\ge2$, the
+two-primary residual takes value in
+$H^2(B(\Z/2^a)^2;\mathbb F_2)=\mathbb F_2\langle y_1,x_1x_2,y_2\rangle$
+and contains the mixed coefficient $A_{12}^{(N)}$ \emph{not} detected
+by cyclic restrictions.
+\end{definition}
+
+(O1) is therefore not a single Picard-line assertion: it is the
+ordinary square root, the null-trivialization of the reduced and
+equivariant degree-two gerbes, and the choice of zero degree-one
+linearization characters for the actual finite stabilizers.  At
+finite HN height this is the cocycle system of
+\cite{JoyceUpmeier} restricted to $K3\times E$.
+
+\subsubsection*{(O1)$^+$ Weyl-equivariant transport along
+$W^{(2)}(\Lambda_{II}^{2,1})$}
+
+The orientation gerbe descends through the reduced $E$-quotient, but
+the Igusa structure also requires it to be compatible with the Weyl
+group of the BKM target.  For each of the three type-II simple
+reflections $s_{\delta_i}$ ($i=1,2,3$), the $K3\times E$ side carries
+a wall transport
+\[
+\tau_i:o_{\mathcal C}\longrightarrow s_{\delta_i}^{*}o_{\mathcal C}.
+\]
+The word \emph{coherent} is load-bearing.  At finite height, the
+first object is the finite partial action groupoid $\mathcal G_R$
+whose objects are retained oriented quotient strata and whose arrows
+are the retained type-II wall transports; a choice of
+determinant-line lifts gives a $2$-cocycle
+$c_{o,R}\in Z^2(\mathcal G_R;\underline{\mathbb F}_2)$.  Only on a
+complete $W^{(2)}(\Lambda_{II}^{2,1})$-orbit with constant
+coefficients does this reduce to the group cohomology class
+\[
+[c_o]\in H^2\bigl(W^{(2)}(\Lambda_{II}^{2,1});\mathbb F_2\bigr).
+\]
+
+\begin{definition}[(O1)$^+$ Weyl-equivariant determinant-line
+transport]
+\label{def:O1-plus-weyl-transport}
+The (O1)$^+$ datum is the supplied set of lifts $\{\tau_i\}$
+satisfying $[c_o]=0$ with chosen $1$-cochain killing $c_o$, the
+normalization $\tau_i^2=1$, and the transport of the
+quotient-orientation package
+\[
+\mathfrak q_{\mathcal C}=\bigl(\alpha^{\mathrm{red}}_{\mathcal C},
+\alpha^{E,\mathrm{free}}_{\mathcal C},
+\{(\beta^H_{\mathcal C},\lambda^H_{\mathcal C})\}_{H\in
+\mathcal H(\mathcal C)}\bigr)
+\]
+along $\tau_i$ between charge strata over Weyl-related Gram degrees.
+The torsor defect of this transport is
+\[
+\omega_{i,\mathcal C}\in
+H^1(\mathfrak M^{\mathrm{red}}_{s_{\delta_i}\mathcal C};\mathbb F_2)
+\oplus
+\bigoplus_{H\in\mathcal H(\mathcal C)}H^1(BH;\mathbb F_2),
+\]
+required to vanish.  The Coxeter presentation of
+$W^{(2)}(\Lambda_{II}^{2,1})$ then promotes these lifts to an honest
+action on the oriented Pfaffian line over the wall-complement of the
+reduced compact Hall sector.
+\end{definition}
+
+(O1)$^+$ is a determinant-line monodromy datum.  No scalar formula
+enters; the transports must move the entire null-trivialization
+package, not only the underlying line.  The (O1)$^+$ ledger comprises
+$[c_o]=0$, the chosen cochain, the unitarity $\tau_i^2=1$, and the
+torsor vanishing $\omega_{i,\mathcal C}=0$ on every retained orbit.
+
+\subsubsection*{Cosection localization and the cosection-reduced
+heart}
+
+The K3 semiregularity cosection $\operatorname{CS}_{\mathcal C}$
+selects a reduced obstruction theory; the corresponding Behrend
+constructible function $\nu^{\mathrm{red}}$ produces the reduced
+vanishing-cycle complex $\Phi^{\mathrm{red}}$ used in the Hall
+product \cite{BEHREND,JoyceSong}.  The filtered Hall additivity
+$q^*\operatorname{CS}_C=p_1^*\operatorname{CS}_A+p_2^*\operatorname{CS}_B$
+on extension stacks is the cosection-localization compatibility
+required by the Hall correspondence; the Joyce--Upmeier
+orientation lines are required to be Thom--Sebastiani-coherent on
+the resulting two-step and four-input flag stacks.
+
+\begin{proposition}[Finite d-critical Hall product;
+\textit{conditional on the (O1) and atlas data}]
+\label{prop:finite-dcritical-hall-product}
+Fix $R$ and closed-configuration substacks
+$\mathfrak M_{c,R,I}^{\mathrm{loc,cl}}$ in a noetherian abelian Hall
+heart, and assume:
+\begin{enumerate}
+\item finite-type quasi-smooth derived Artin enhancements of the
+selected object, extension, and two-step flag stacks, with perfect
+obstruction theories;
+\item finite residual inertia after scalar, $E$-translation, and
+wrapped rigidifications;
+\item finite-type extension and flag stacks with admissible $p^*$
+and $q_!$;
+\item PTVV $(-1)$-shifted symplectic structures restricting to these
+substacks, classical truncations carrying Joyce d-critical
+structures \cite{PTVV2013,BBDJS2015};
+\item surjective K3 semiregularity cosections with filtered Hall
+additivity;
+\item Joyce--Upmeier orientation lines and orientation transports
+\cite{JoyceUpmeier} with all finite-stabilizer characters
+trivialized;
+\item Thom--Sebastiani transport for the reduced vanishing-cycle
+sheaves satisfying two-step flag pentagons and higher coloured
+configuration coherences.
+\end{enumerate}
+Then the finite reduced local-local product
+\[
+m_R^{\mathrm{red}}=q_!\circ\operatorname{TS}^{\mathrm{red}}_R\circ p^*
+\]
+is an honest morphism on
+$H_c^{\bullet}(\mathfrak M_{c,R,I}^{\mathrm{loc,cl}},
+\Phi_{c,R,I}^{\mathrm{red}}\otimes o_{c,R,I}^{\mathrm{red}})$
+and is associative on the finite stage.
+\end{proposition}
+
+The first obstruction to removing these hypotheses is finite inertia:
+proper finite-type correspondences do not by themselves eliminate
+residual $\mathbb G_m$, direct-sum, or parabolic automorphisms, and a
+residual $\mathbb G_m$ already contributes
+$H^\bullet(B\mathbb G_m)=\C[u]$ to protected cohomology.  The phrase
+\emph{finite stage} here means finite charge support, finite-type
+stacks, and finite-dimensional protected cohomology after the stated
+quotients and admissibility hypotheses; it does not mean that the
+Hall correspondence morphisms are themselves finite morphisms.
+
+\subsubsection*{Quotient-after-correspondence ordering}
+
+The $E$-quotient is taken \emph{after} the extension correspondences,
+not before.  A pseudofunctor
+$\mathsf{Corr}^{E,\mathrm{hyb}}_R\to
+\mathsf{Corr}^{\mathrm{red},\mathrm{hyb}}_R$ supplies the descent;
+applying the vanishing-cycle Borel--Moore functor with orientation
+lines included gives $Q_{E,R}$ between the corresponding finite
+correspondence module categories.  For each operation
+$\mu_R^\bullet=q_!\operatorname{TS}p^*$ a chosen comparison
+isomorphism
+\[
+\theta^Q_{\mu,R}:Q_{E,R}\,q_!\operatorname{TS}p^*
+\xrightarrow{\sim}
+\overline q_!\overline{\operatorname{TS}}\,\overline p^*
+(Q_{E,R}^{\boxtimes k})
+\]
+is part of the datum.  Its compatibility with the eight-word flag
+$2$-morphisms and HN transitions is the (O1) descent calculus.  A
+quotient-first construction (object-stack quotient followed by a new
+Hall product) is not the same datum.
+
+\subsubsection*{Status of the obstruction tuple}
+
+The orientation lane carries the residual
+\[
+\mathfrak O_{\mathrm{or},R}
+=\bigl(
+\mathfrak o^{\mathrm{red}}_{\mathcal C},
+\mathfrak o^{E,\mathrm{free}}_{\mathcal C},
+\{\mathfrak o^{H}_{\mathcal C,S}\}_{H,S},
+\{\mathfrak o^{\lambda^H}_{\mathcal C,S}\}_{H,S},
+[c_o]_R,\,\xi_{c_o,R},\,
+\{\mathfrak o^{\tau,2}_{i,R}\}_i,\,
+\{\omega_{i,\mathcal C,R}\}_i\bigr)
+\]
+required to vanish at every finite HN height, with chosen
+null-trivializations.  Probes A074, A076, A082 audit the (O1) tower;
+probes A047, A049, A089 audit (O1)$^+$.  Discharge of (O1) under
+$K3\times E$-specific finite-stabilizer hypotheses is open in
+generality; the K3-fibrewise framework of
+\cite{JoyceSong,JoyceUpmeier} reduces (O1) on the projection-finite
+stratum to the finite-stabilizer linearization choice and the mixed
+Borel computation, and the wrapped stratum is the open piece tracked
+by the Hall--Borcherds residual in the parallel Vol II constellation.
+
+\subsubsection*{Cross-repo anchor}
+
+Vol III's Calabi--Yau quantum-groups stratification observes that
+$K3\times E$ admits no global non-commutative crepant resolution, so
+the orientation lane cannot be supplied by a global NCCR-induced
+heart; the cosection-twisted reduced d-critical structure is forced
+on the chosen Bridgeland heart instead.  The displayed Borel
+calculation at $E[2]$ is the smallest finite stabilizer detected by
+the cosection-reduced determinant; even $N\ge4$ stabilizers carry the
+mixed coefficient $A_{12}^{(N)}$, which the displayed cyclic
+restrictions miss, and which (O1) requires to be null-trivialized as
+part of the full degree-two gerbe.
+
+The orientation $o_R$ trivializes the Joyce--Upmeier obstruction to
+a compatible Hall product on the cosection-twisted heart.  Once
+$o_R$ is in place, the Hall product, the collision coproduct, and
+the protected primitive extraction are unambiguous.  Entry
+$(\mathrm L 3)$ is the Hall apparatus of
+\S\ref{subsec:hall-correspondences}.

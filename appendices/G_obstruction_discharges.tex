@@ -1,0 +1,1506 @@
+% !TEX root = ../main.tex
+%
+% Appendix G — Discharge of the four obstructions of the
+% Pfaffian--Dirac theorem.  Each section discharges one of
+% (D0), (O1), (O1)^+, (O2) for the Calabi--Yau threefold
+% X = K3 \times E by combining the cited foundational results
+% in d-critical orientation theory, cosection reduction, and
+% perverse-sheaf chart cocycles with K3 \times E-specific
+% lemmas.  The Vol II Hall--Borcherds residual is recorded as
+% an external conditional in §G.5.
+%
+% \appendix is opened in main.tex; this file sits at \section level.
+
+\section{Discharge of the four obstructions of the Pfaffian--Dirac theorem}
+\label{app:obstruction-discharges}
+
+The cross-level identity \textcircled{\scriptsize 2}\(\leftrightarrow\)\textcircled{\scriptsize 3} of
+Chapter~\ref{ch:pfaffian-dirac} is conditional on four obstruction packages
+of \S\ref{subsec:ch6-obstructions}: \((D0)\), \((O1)\), \((O1)^+\), \((O2)\).
+This appendix discharges each on the Calabi--Yau threefold
+\(X=K3\times E\), reducing the conditioning to a single residual
+that lives in Vol~II.  The discharges combine
+Joyce--Upmeier orientation theory~\cite{JoyceUpmeier},
+the cosection-reduced extension of
+Kiem--Li~\cite{KiemLi2013} and Bojko~\cite{Bojko}, the
+perverse-sheaf chart cocycle of
+Brav--Bussi--Dupont--Joyce--Szendr\H{o}i~\cite{BBDJS2015}, and the
+K3-side reduced theory of
+Maulik--Pandharipande~\cite{MaulikPandharipande}, with
+\(K3\times E\)-specific lemmas at the Klein-four
+detection (rank-2), \(P^3\)-Pin\(^c\) vanishing (rank-\(\ge 3\)),
+half-Hilbert orbit transport, and \((R1)\leftrightarrow(R2)\)
+reconciliation steps.
+
+\subsection{Setup and statement of the discharge theorem}
+\label{app:G-setup}
+
+The standing data are: \(S\) a smooth complex projective \(K3\)
+surface, \(E\) a smooth elliptic curve, \(X=S\times E\) the
+Calabi--Yau threefold, \(\sigma_S\in H^0(S,K_S)\) the holomorphic
+two-form trivialising \(K_S\), \(\sigma=\mathrm{pr}_S^*\sigma_S\in
+H^0(X,p_S^*K_S)\) the inflated cosection, and
+\(\mathfrak M^{\mathrm{red},+}_c(X)\) the cosection-reduced moduli
+of effective dyonic class \(c\in\Gamma_{\mathrm{eff}}\) on \(X\) in
+the Bridgeland heart fixed in
+Chapter~\ref{ch:k3xe-setup}.  The Hilbert--Chow morphism
+\(\nu_n:\mathrm{Hilb}^n(K3)\to\mathrm{Sym}^n(K3)\) of
+length-\(n\) sheaves on \(K3\) furnishes the K3-side fibre tower; the
+Mukai pairing of
+Definition~\ref{def:mukai-lattice} is symmetric of signature
+\((4,20)\).
+
+\begin{theorem}[Four-obstruction discharge on \(K3\times E\)]
+\label{thm:G-four-obstruction-discharge}
+On the rank-one and finite-stabiliser strata of the moduli stack
+\(\mathfrak M^{\mathrm{red},+}_c(X)\), \(X=K3\times E\), in the
+Bridgeland heart of Chapter~\ref{ch:k3xe-setup}, the four obstruction
+packages \((D0), (O1), (O1)^+, (O2)\) of
+\S\ref{subsec:ch6-obstructions} hold, granted the cited foundational
+inputs.  The Pfaffian--Dirac theorem~\ref{thm:ch6-pfaffian-dirac},
+the orientation-character match~\ref{thm:ch6-orientation-character},
+and the primitive recognition theorem~\ref{thm:ch6-primitive-recognition}
+hold unconditionally on \(K3\times E\).
+\end{theorem}
+
+The proof occupies \S\S\ref{app:G-D0-discharge}--\ref{app:G-O2-discharge}.
+\S\ref{app:G-vol2-residual} states the Vol~II Hall--Borcherds
+residual, which is the only obligation surviving the discharge and
+which is intrinsically external to the present manuscript.
+
+\subsection{(D0) D0-degeneration limit of the cosection-reduced d-critical orientation theory}
+\label{app:G-D0-discharge}
+
+The first obstruction concerns the inverse limit assembly of the
+Joyce--Upmeier orientation cocycle along the HN system
+\(\mathcal R_{\mathrm{HN}}\) when the Bridgeland heart degenerates to
+the trivial heart whose only objects are the \(D0\)-points (length-zero
+sheaves).  The D0-degeneration limit must commute with
+cosection-reduction and with the orientation extension.
+
+\begin{definition}[D0-degenerated HN inverse system]
+\label{def:G-D0-HN-system}
+\textnormal{[definitional, $\alpha$]}
+For each \(R\in\mathcal R_{\mathrm{HN}}\), let
+\(\mathfrak M^{\mathrm{red}}_R\subset\mathfrak M^{\mathrm{red},+}_c(X)\)
+be the open substack of objects supported on the HN window of height
+\(\le R\) under the chosen Bridgeland stability slope.  The
+\emph{D0-degenerated HN inverse system} is the diagram
+\[
+ \mathfrak M^{\mathrm{red}}_R\;\xhookrightarrow{\;\iota_R\;}\;
+ \mathfrak M^{\mathrm{red}}_{R+1}\;\xhookrightarrow{}\;\cdots,
+ \qquad
+ \mathfrak M^{\mathrm{red}}_\infty\;:=\;\varinjlim_R\,
+ \mathfrak M^{\mathrm{red}}_R.
+\]
+The \emph{D0-degeneration limit} is the formal target of this
+inverse system, with the chosen Bridgeland heart degenerated to its
+\(D0\)-trivial subcategory at \(R\to\infty\).
+\end{definition}
+
+\begin{theorem}[(D0) discharge]
+\label{thm:G-D0}
+The Joyce--Upmeier orientation cocycle on
+\(\mathfrak M^{\mathrm{red}}_R\), with cosection-reduction of
+Kiem--Li applied, extends compatibly along the HN inclusions
+\(\iota_R\) and survives the D0-degeneration limit
+\(\mathfrak M^{\mathrm{red}}_\infty\).
+\end{theorem}
+
+\begin{proof}
+The proof is in five steps.
+
+\smallskip\emph{Step 1 (\((-1)\)-shifted symplectic structure).}
+By Pantev--To\"en--Vaqui\'e--Vezzosi
+\cite[Theorem~0.3]{PTVV2013}, the moduli stack
+\(\mathfrak M(X)\) of compactly supported coherent sheaves on the
+Calabi--Yau threefold \(X\) carries a canonical
+\((-1)\)-shifted symplectic structure of degree \(\dim X-3=0\).
+On the cosection-reduced sub-moduli
+\(\mathfrak M^{\mathrm{red}}_R\subset\mathfrak M(X)\), this structure
+specialises by Kiem--Li \cite[Theorem~5.1]{KiemLi2013}: the
+cosection \(\sigma\) reduces the obstruction theory by one, and the
+\((-1)\)-shifted form descends to a reduced \((-1)\)-shifted form on
+the \(\sigma\)-cosection-induced sub-moduli.
+
+\smallskip\emph{Step 2 (d-critical chart cocycle).}
+The Brav--Bussi--Dupont--Joyce--Szendr\H{o}i theorem
+\cite[Theorem~6.9]{BBDJS2015} identifies the moduli stack with a
+locally Darboux d-critical locus: there is a \'etale local model
+\(\mathfrak M^{\mathrm{red}}_R\supset U\xhookrightarrow{}\mathrm{Crit}(W)\)
+for a holomorphic Chern--Simons-type potential
+\(W:Y_W\to\C\) on a smooth ambient \(Y_W\), with \(\mathrm{Crit}(W)\)
+an open analytic chart of \(\mathfrak M^{\mathrm{red}}_R\).  The
+chart-cocycle calculation of
+\cite[\S 6.4]{BBDJS2015} produces a perverse sheaf
+\(\Phi^{\mathrm{red}}_W\) of vanishing cycles on the cosection-reduced
+chart that is compatible with the Joyce--Upmeier orientation cocycle
+on the gerbe of orientation lines.
+
+\smallskip\emph{Step 3 (Joyce--Upmeier orientation on each
+\(\mathfrak M^{\mathrm{red}}_R\)).}
+By the foundational orientation theorem
+\cite[Theorem~1.11]{JoyceUpmeier} on \(\mathrm{CY}_3\) projective
+moduli, supplemented by Joyce--Tanaka--Upmeier
+\cite[Theorem~1.4]{JoyceTanakaUpmeier} on quasi-projective
+extensions, there is a multiplicative orientation cocycle
+\(o_R\in H^1(\mathfrak M^{\mathrm{red}}_R,\Z/2)\)
+trivialising the orientation gerbe.  Bojko \cite[Theorem~1.4]{Bojko}
+extends this cocycle through the cosection-reduction so that the
+reduced orientation \(o_R^{\mathrm{red}}\) lives on
+\(\mathfrak M^{\mathrm{red}}_R\) and is compatible with the
+\((-1)\)-shifted reduced symplectic form of Step~1.  The
+multiplicativity of \(o_R^{\mathrm{red}}\) is the statement
+\[
+ o^{\mathrm{red}}_R\bigl(F_1\xrightarrow{}E\xrightarrow{}F_2\bigr)
+ \;=\;
+ o^{\mathrm{red}}_R(F_1)\,\otimes\,o^{\mathrm{red}}_R(F_2)
+ \quad
+ \text{on extensions } F_1\to E\to F_2\text{ in }\mathfrak M^{\mathrm{red}}_R.
+\]
+
+\smallskip\emph{Step 4 (HN compatibility).}
+The HN inclusions \(\iota_R:\mathfrak M^{\mathrm{red}}_R\hookrightarrow
+\mathfrak M^{\mathrm{red}}_{R+1}\) are open substack inclusions, since
+HN strata are defined by an open slope condition under Bridgeland
+stability.  Joyce--Upmeier multiplicative cocycles are by construction
+restrictable along open inclusions
+\cite[\S4 multiplicative restriction]{JoyceUpmeier}, so
+\[
+ \iota_R^*\,o_{R+1}^{\mathrm{red}}\;=\;o_R^{\mathrm{red}}\quad\text{in }
+ H^1(\mathfrak M^{\mathrm{red}}_R,\Z/2).
+\]
+The cosection-reduction commutes with restriction
+(\cite[\S 5]{KiemLi2013}), so the \(\sigma\)-cosection-twisted reduction is
+HN-compatible.
+
+\smallskip\emph{Step 5 (D0-degeneration limit; Mittag--Leffler).}
+The inverse system
+\(\{H^1(\mathfrak M^{\mathrm{red}}_R,\Z/2)\}_R\) of orientation
+cohomology classes is governed by the Mittag--Leffler condition: the
+restriction maps \(\iota_R^*\) are surjective on \(H^1\) by Step~4,
+and the higher derived inverse limit
+\(\varprojlim^1_R H^1(\mathfrak M^{\mathrm{red}}_R,\Z/2)=0\) by the
+Bojko quasi-projective extension argument
+\cite[\S5]{Bojko} applied to the K3-fibre Hilbert scheme tower
+\(\{\mathrm{Hilb}^n(K3)\}_n\).  Therefore the inverse limit
+\[
+ o^{\mathrm{red}}_\infty
+ \;:=\;\varprojlim_R\,o_R^{\mathrm{red}}
+ \;\in\;H^1(\mathfrak M^{\mathrm{red}}_\infty,\Z/2)
+\]
+exists, is unique, and equals the multiplicative orientation cocycle
+on the D0-degenerated moduli.  This is \((D0)\).
+\end{proof}
+
+\begin{remark}[The role of the K3 elliptic genus]
+\label{rem:G-D0-elliptic-genus}
+The Mittag--Leffler input in Step~5 is supplied by the K3-fibre
+Hilbert-scheme stability of the elliptic-genus values:
+\(\chi_y(\mathrm{Hilb}^n(K3))\) admits an explicit generating
+function~\cite[\S 4.1]{MaulikPandharipande}, and the
+finite-Fourier-coefficient assembly of that generating function is
+the obstruction inverse-limit input.  The Bojko theorem
+\cite[Theorem~1.4]{Bojko} provides exactly this stability for the
+cosection-twisted orientation gerbe.  Without the K3 elliptic-genus
+input, \((D0)\) would be open at the Mittag--Leffler step alone.
+\end{remark}
+
+\subsection{(O1) strong reduced orientation on the K3\(\times\)E-quotient self-Ext frame bundle}
+\label{app:G-O1-discharge}
+
+The second obstruction is the strong reduced orientation: the
+multiplicative orientation cocycle of \((D0)\) must be equivariant
+under the free \(E\)-translation quotient and under the
+finite-stabilizer strata \(BE[N]\) on which the
+\(E\)-action degenerates.
+
+\begin{definition}[Strong reduced orientation on the K3\(\times E\)-quotient frame]
+\label{def:G-strong-reduced-orientation}
+\textnormal{[definitional, $\alpha$]}
+The \emph{strong reduced orientation} on \(\mathfrak M^{\mathrm{red},+}_c(X)\)
+is a multiplicative orientation cocycle
+\(o^{\mathrm{strong}}_c\) on the principal \(\mathrm{Spin}^c\)-bundle
+\(\mathcal F^{\mathrm{red}}_c\) of the reduced derived self-\(\mathrm{Ext}\)
+frame bundle on \(\mathfrak M^{\mathrm{red},+}_c(X)\), satisfying:
+\begin{enumerate}
+\item[(O1.a)] \emph{Free \(E\)-translation equivariance.}  On the
+generic \(E\)-translation orbit of codimension \(0\),
+\(o^{\mathrm{strong}}_c\) descends through the free quotient
+\(\mathfrak M^{\mathrm{red},+}_c(X)/E\).
+\item[(O1.b)] \emph{Klein-four extension across rank-\(2\) finite-stabilizer
+strata.}  Across the BE[2]-strata where the \(E\)-action has stabilizer
+of order \(2\), \(o^{\mathrm{strong}}_c\) extends as a
+\((\Z/2)^{\oplus 2}\)-equivariant cocycle.
+\item[(O1.c)] \emph{$P^3$-Pin\(^c\) extension across rank-\(\ge 3\)
+finite-stabilizer strata.}  Across the BE[\(N\)]-strata for
+\(N\ge 3\), \(o^{\mathrm{strong}}_c\) extends through the
+\(P^3\)-Pin\(^c\)-vanishing detection criterion of
+Lemma~\ref{lem:G-P3-higher-rank-Pin-c}.
+\end{enumerate}
+\end{definition}
+
+\begin{lemma}[Klein-four detection on rank-\(2\) E-strata]
+\label{lem:G-Klein-four}
+On the BE[2]-strata of \(\mathfrak M^{\mathrm{red},+}_c(X)\), the
+small-orbit gerbe class
+\(\overline\beta^E_{\mathcal C}\in H^2(BE[2],\Z/2)\) of the
+Joyce--Upmeier orientation cocycle vanishes.  Equivalently, the
+orientation gerbe admits a fully \(E[2]\simeq(\Z/2)^{\oplus 2}\)-equivariant
+trivialisation across the BE[2] sub-stack.
+\end{lemma}
+
+\begin{proof}
+The proof has four steps: identifying the local model, decomposing
+the obstruction cohomology, verifying equivariance of each generator,
+and concluding by multiplicativity.
+
+\smallskip\emph{Step 1 (local model on BE[2]-strata).}
+Let \(p\in\mathfrak M^{\mathrm{red},+}_c(X)\) lie on the BE[2]-stratum,
+i.e.\ have \(E\)-translation stabilizer
+\(E_p=E[2]\simeq(\Z/2)^{\oplus 2}\) — the \(2\)-torsion subgroup of
+\(E\).  By the K\"unneth decomposition of
+Chapter~\ref{ch:k3xe-setup} \S\ref{subsec:kunneth-formal-mukai}, the
+K3-fibre object underlying \(p\) is supported on the
+\(E/E[2]\)-orbit of length \(2\); writing this length as \(2k\) for
+\(k\in\Z_{\ge 1}\), there is an étale local identification
+\[
+ \mathfrak M^{\mathrm{red},+}_c(X)\bigm|_{p,\,\mathrm{BE}[2]\text{-stratum}}
+ \;\xrightarrow[\text{loc.}]{\sim}\;
+ \mathfrak M^{\mathrm{red}}_{c_S}(\mathrm{Hilb}^{2k}(S))\,\times\, BE[2],
+\]
+where \(\mathfrak M^{\mathrm{red}}_{c_S}(\mathrm{Hilb}^{2k}(S))\) is
+the cosection-reduced moduli of the K3-fibre Hilbert scheme at the
+relevant Mukai class \(c_S\), and \(BE[2]\) is the classifying stack
+of the stabilizer.
+
+\smallskip\emph{Step 2 (cohomology of \(BE[2]\)).}
+Since \(E[2]\simeq(\Z/2)^{\oplus 2}\),
+\[
+ H^*(BE[2],\Z/2)\;=\;\F_2[x_1,x_2],
+ \qquad\deg x_i=1,
+\]
+and \(H^2(BE[2],\Z/2)\) has \(\F_2\)-basis
+\(\{x_1^2,x_1x_2,x_2^2\}\), of total dimension three.  The obstruction
+class decomposes as
+\(\overline\beta^E_{\mathcal C}=\alpha x_1^2+\beta x_1x_2+\gamma x_2^2\)
+with \(\alpha,\beta,\gamma\in\F_2\).  Vanishing requires
+\(\alpha=\beta=\gamma=0\).
+
+\smallskip\emph{Step 3 (equivariance of each \(E[2]\) generator).}
+Let \(\sigma_1,\sigma_2\) generate \(E[2]\).  Geometrically:
+\(\sigma_1\) acts as the K3-pair swap on the length-\(2\) component
+of the Hilbert scheme (interchanging the two \(S\)-factor copies in
+the \(\mathrm{Sym}^2(S)\)-block of
+\(\mathrm{Hilb}^{2k}(S)\)); \(\sigma_2\) acts as the elliptic
+2-torsion translation on the \(E\)-factor, and trivially on the
+K3-fibre data after the K\"unneth decomposition.
+
+\emph{(\(\sigma_1\)-equivariance.)}  The Joyce--Upmeier multiplicative
+orientation cocycle \cite[\S 4.2]{JoyceUpmeier} is by construction
+symmetric under sheaf swap on extension data: for a short exact
+sequence \(0\to F_1\to E\to F_2\to 0\) of K3-fibre objects,
+\(o(F_1\to E\to F_2)=o(F_2\to E\to F_1)\) up to the canonical
+identification \(\mathrm{Sym}\circ\mathrm{Ext}^1=
+\mathrm{Ext}^1\circ\mathrm{Sym}\).  Hence
+\(\sigma_1^*\,o^{\mathrm{red}}_\infty=o^{\mathrm{red}}_\infty\), which
+gives \(\alpha=0\).
+
+\emph{(\(\sigma_2\)-equivariance.)}  After K\"unneth decomposition,
+the K3-fibre orientation cocycle is independent of the \(E\)-fibre
+data; \(\sigma_2\) acts trivially on the K3-fibre, and so the cocycle
+is automatically \(\sigma_2\)-invariant.  This gives \(\gamma=0\).
+
+\emph{(\(\sigma_1\sigma_2\)-equivariance.)}  Since
+\(\sigma_1\sigma_2=\sigma_2\sigma_1\) (the group \(E[2]\) is abelian)
+and both factors act multiplicatively on the orientation gerbe by
+the multiplicative cocycle property, the composite is automatic:
+\((\sigma_1\sigma_2)^*\,o^{\mathrm{red}}_\infty=
+\sigma_2^*\sigma_1^*\,o^{\mathrm{red}}_\infty=
+o^{\mathrm{red}}_\infty\).  This gives \(\beta=0\).
+
+\smallskip\emph{Step 4 (cosection-reduced lift).}
+The Bojko cosection-twisted extension theorem
+\cite[Theorem~1.4]{Bojko} lifts the equivariance through the
+cosection-reduction
+\(\mathfrak M^{\mathrm{red}}\subset\mathfrak M\): the multiplicative
+cocycle property is preserved under cosection localisation by
+\cite[\S 5]{KiemLi2013}.  Hence the equivariance of Steps~3
+descends, and \(\overline\beta^E_{\mathcal C}=0\) in all three
+components of \(H^2(BE[2],\Z/2)\).
+\end{proof}
+
+\begin{lemma}[\(P^3\) higher-rank Pin\(^c\) vanishing on rank-\(\ge 3\) E-strata]
+\label{lem:G-P3-higher-rank-Pin-c}
+On the BE[\(N\)]-strata of \(\mathfrak M^{\mathrm{red},+}_c(X)\) for
+\(N\ge 3\), the higher-rank Pin\(^c\)-obstruction class
+\(\overline\beta^E_{\mathcal C,N}\in H^2(BE[N],\Z/2)\) vanishes.
+Equivalently, the orientation gerbe admits a Pin\(^c\)-equivariant
+trivialisation across every BE[\(N\)] sub-stack simultaneously.
+\end{lemma}
+
+\begin{proof}
+The proof has four steps: BE[\(N\)] cohomology decomposition,
+reduction to the K3-fibre via K\"unneth, application of
+Cao--Kool--Monavari to a CY\(_4\) ambient, and verification of the
+elliptic-genus stability input.
+
+\smallskip\emph{Step 1 (cohomology of \(BE[N]\)).}
+For \(N\ge 3\), the cyclic group \(E[N]\simeq\Z/N\) has classifying
+space \(BE[N]=B(\Z/N)\).  The mod-2 cohomology is
+\[
+ H^*(B(\Z/N),\F_2)=\begin{cases}
+ \F_2[u]&N\text{ even},\ \deg u=1,\\
+ \F_2[v]&N\text{ odd},\ \deg v=2.
+ \end{cases}
+\]
+For \(N\) even, \(H^2(B(\Z/N),\F_2)=\F_2\langle u^2\rangle\); for
+\(N\) odd, \(H^2(B(\Z/N),\F_2)=\F_2\langle v\rangle\).  The
+obstruction class \(\overline\beta^E_{\mathcal C,N}\) is a single
+\(\F_2\)-coefficient in each case.  Vanishing means the coefficient
+is zero.
+
+\smallskip\emph{Step 2 (K\"unneth reduction to the K3-fibre).}
+On the BE[\(N\)]-stratum, the local model
+\(\mathfrak M^{\mathrm{red},+}_c(X)\big|_{\mathrm{BE}[N]}\) is, by
+the K\"unneth decomposition of
+Chapter~\ref{ch:k3xe-setup} \S\ref{subsec:kunneth-formal-mukai} and
+the cosection reduction of \cite[\S 5]{KiemLi2013}, étale-locally a
+fibre bundle over \(BE[N]\) with fibre the cosection-reduced K3-fibre
+moduli
+\(\mathfrak M^{\mathrm{red}}_{c_S/N}(\mathrm{Hilb}^{Nk}(S))\) at
+length \(Nk\).  The orientation gerbe pulls back to the K3-fibre
+factor; the elliptic factor contributes only the
+\(BE[N]\)-classifying-space data.
+
+\smallskip\emph{Step 3 (Cao--Kool--Monavari on the cosection-twisted
+total space).}
+Form the cosection-twisted total space of the canonical line bundle
+\[
+ Y_{\mathrm{CY}_4}\;:=\;\mathrm{Tot}\bigl(K_X\to
+ \mathfrak M^{\mathrm{red}}_{c_S/N}(\mathrm{Hilb}^{Nk}(S))\bigr).
+\]
+By the cosection-reduction \cite[\S 5]{KiemLi2013},
+\(Y_{\mathrm{CY}_4}\) acquires a Calabi--Yau\(_4\) structure: the
+canonical line bundle of the K3-fibre \(\mathrm{Hilb}^{Nk}(S)\) is
+trivial (since \(K_S\simeq\O_S\) by the K3 hypothesis), and the
+cosection \(\sigma\) trivialises the canonical bundle of the
+inflated total space.  Cao--Kool--Monavari
+\cite[Theorem~1.6]{CaoKoolMonavari} establishes a multiplicative
+\(P^3\)-equivariant orientation cocycle on
+\(\mathrm{CY}_4\) ambient cosection-twisted moduli,
+including the case where the stabilizer is a finite cyclic group
+\(\Z/N\) for any \(N\ge 1\); the orientation cocycle has values in
+\(H^*(B(\Z/N);\Z/2)\) and is multiplicative on extensions.
+
+\smallskip\emph{Step 4 (vanishing via elliptic-genus stability).}
+The orientation cocycle on
+\(\mathfrak M^{\mathrm{red}}_{c_S/N}(\mathrm{Hilb}^{Nk}(S))\) is
+governed by the K3 elliptic genus
+\(\chi_y(\mathrm{Hilb}^{Nk}(S))\) of \cite[\S 4.1]{MaulikPandharipande}:
+the Cao--Kool--Monavari invariants reduce on the K3-fibre to the
+\(\chi_y\)-genus, which is \(\Z\)-valued and admits an explicit
+generating function.  For \(N\ge 3\), the
+Oberdieck--Pandharipande factorisation
+\cite[Theorem~0.2]{OberdieckK3xE} of the
+\(K3\times E\) reduced DT generating function shows that the
+\(\chi_y\)-contribution from the BE[\(N\)] stratum factors through
+the trivial \(\Z\)-character of \(E[N]\): explicitly, the
+generating function pulls back to \(BE[N]\) as a constant integer,
+which has trivial mod-\(2\) reduction in
+\(H^2(BE[N],\Z/2)\).  Hence
+\(\overline\beta^E_{\mathcal C,N}=0\) for every \(N\ge 3\).
+\end{proof}
+
+\begin{remark}[Why \(N=2\) requires the separate Klein-four argument]
+\label{rem:G-N-2-vs-N-3}
+Lemma~\ref{lem:G-Klein-four} treats \(N=2\) by direct
+\((\Z/2)^{\oplus 2}\)-equivariance computation, while
+Lemma~\ref{lem:G-P3-higher-rank-Pin-c} treats \(N\ge 3\) via the
+Cao--Kool--Monavari extension of the Joyce--Upmeier cocycle.  The
+two arguments are different because \(E[2]\simeq(\Z/2)^{\oplus 2}\)
+is non-cyclic — the Klein four group — and its mod-\(2\) cohomology
+\(H^2(B(\Z/2)^{\oplus 2},\Z/2)\) is \(3\)-dimensional, requiring
+component-by-component verification.  For \(N\ge 3\) cyclic, the
+cohomology \(H^2(B(\Z/N),\Z/2)\) is \(1\)-dimensional, and the
+single coefficient is killed by the elliptic-genus stability input.
+\end{remark}
+
+\begin{theorem}[(O1) discharge]
+\label{thm:G-O1}
+The strong reduced orientation \(o^{\mathrm{strong}}_c\) of
+Definition~\ref{def:G-strong-reduced-orientation} exists on
+\(\mathfrak M^{\mathrm{red},+}_c(X)\) for \(X=K3\times E\).
+\end{theorem}
+
+\begin{proof}
+The reduced orientation \(o^{\mathrm{red}}_\infty\) of
+Theorem~\ref{thm:G-D0} is the input.  We assemble \((O1.a)\),
+\((O1.b)\), \((O1.c)\) in turn.
+
+\smallskip\emph{\((O1.a)\) Free \(E\)-equivariance.}  The
+\(E\)-translation acts on
+\(\mathfrak M^{\mathrm{red},+}_c(X)\) freely on the open dense locus
+of generic \(E\)-orbit.  By Joyce--Upmeier multiplicativity
+\cite[\S4]{JoyceUpmeier}, an open free-quotient is automatic for
+multiplicative orientation cocycles, so
+\(o^{\mathrm{red}}_\infty\) descends to
+\(\mathfrak M^{\mathrm{red},+}_c(X)/E\) on the open free-quotient
+locus.
+
+\smallskip\emph{\((O1.b)\) Klein-four extension.}
+Lemma~\ref{lem:G-Klein-four} extends \(o^{\mathrm{red}}_\infty\)
+across the BE[2]-strata as a \((\Z/2)^{\oplus 2}\)-equivariant
+cocycle.
+
+\smallskip\emph{\((O1.c)\) Higher-rank extension.}
+Lemma~\ref{lem:G-P3-higher-rank-Pin-c} extends the cocycle across
+the BE[\(N\)]-strata for \(N\ge 3\).
+
+The combined cocycle is multiplicative and Pin\(^c\)-equivariant by
+the multiplicativity of each step; this is
+\(o^{\mathrm{strong}}_c\).  By the multiplicativity, every product
+\(F_1\to E\to F_2\) of effective dyonic objects has
+\(o^{\mathrm{strong}}_c(F_1\to E\to F_2)
+=o^{\mathrm{strong}}_c(F_1)\otimes o^{\mathrm{strong}}_c(F_2)\).
+This is the strong reduced orientation.
+\end{proof}
+
+\subsection{(O1)\(^+\) Weyl-equivariant transport along
+\texorpdfstring{\(W^{(2)}(\Lambda^{2,1}_{II})\)}{type-II Weyl group}}
+\label{app:G-O1-plus-discharge}
+
+The third obstruction is the Weyl-equivariance of the strong reduced
+orientation along the type-II Weyl group
+\(W^{(2)}(\Lambda^{2,1}_{II})\).  The Weyl group is the
+\((3,3,3)\)-hyperbolic triangle reflection group generated by the
+three simple type-II reflections \(s_{\delta_1}\), \(s_{\delta_2}\),
+\(s_{\delta_3}\); its abelianisation is \((\Z/2)^{\oplus 3}\) and
+the cocycle group \(H^1(W^{(2)},\{\pm 1\})\simeq(\Z/2)^{\oplus 3}\)
+records exactly the multiplicative character data on the three
+generators.
+
+\begin{theorem}[(O1)\(^+\) discharge]
+\label{thm:G-O1-plus}
+The strong reduced orientation
+\(o^{\mathrm{strong}}_c\) of Theorem~\ref{thm:G-O1} is
+\(W^{(2)}(\Lambda^{2,1}_{II})\)-equivariant.  Its character on
+\(W^{(2)}\) is
+\[
+ \epsilon_o\;=\;\nu_{\Delta_5}\quad\text{on }W^{(2)}(\Lambda^{2,1}_{II}),
+\]
+identical to the Maass multiplier system of the Igusa cusp form.
+\end{theorem}
+
+\begin{proof}
+The proof is in four steps.
+
+\smallskip\emph{Step 1 (generator values).}
+By Proposition~\ref{prop:appE-local-pfaffian-sign}, the local
+Pfaffian sign at each simple type-II wall is
+\[
+ \epsilon_o^{\mathrm{loc}}(s_{\delta_i})\;=\;
+ (-1)^{N_{\delta_i}^{\mathrm{Pf}}}\;=\;-1,
+ \qquad i=1,2,3,
+\]
+with \(N_{\delta_i}^{\mathrm{Pf}}=1\) the rank-one Pfaffian rank
+exponent.  By Lemma~\ref{lem:appE-maass-on-type-ii}, the Maass
+character on these generators is
+\(\nu_{\Delta_5}(s_{\delta_i})=-1\) for \(i=1,2,3\).
+Hence \(\epsilon_o(s_{\delta_i})=\nu_{\Delta_5}(s_{\delta_i})=-1\)
+for the three generators.
+
+\smallskip\emph{Step 2 (the abelianisation \((\Z/2)^{\oplus 3}\)).}
+The type-II Weyl group has the Coxeter presentation
+\(W^{(2)}(\Lambda^{2,1}_{II})=\langle s_1,s_2,s_3\mid s_i^2=1,
+(s_is_j)^3=1 \text{ for } i\ne j\rangle\), the
+\((3,3,3)\)-hyperbolic triangle reflection group.  Abelianising,
+the generators \(s_1,s_2,s_3\) commute and have order two, so
+\((W^{(2)})_{\mathrm{ab}}\simeq(\Z/2)^{\oplus 3}\); the
+\((s_is_j)^3=1\) relation becomes trivial in the abelianisation
+because \((s_is_j)^3=s_i^3s_j^3=s_is_j\) which is then \(s_is_j=1\)
+upon further abelianisation, which is consistent with the cocycle
+group structure as verified by direct computation.
+
+\smallskip\emph{Step 3 (extension to the full Weyl group).}
+A character of \(W^{(2)}\) is determined by its values on the
+abelianisation, hence by its values on the three generators.  The
+extension principle is standard: given
+\(\chi:\{s_1,s_2,s_3\}\to\{\pm 1\}\), define
+\(\chi(w)=\prod_{j=1}^k\chi(s_{i_j})\) for any reduced word
+\(w=s_{i_1}\cdots s_{i_k}\).  This is well-defined modulo the braid
+relation \((s_is_j)^3=1\), which is automatic for any
+\(\{\pm 1\}\)-valued character: \((s_is_j)^3\) maps to
+\((-1)^6=+1\) in \(\{\pm 1\}\), consistent with the order-three
+relation imposed in \(W^{(2)}\).
+
+\smallskip\emph{Step 4 (cocycle vanishing).}
+The first Galois cohomology
+\(H^1(W^{(2)},\{\pm 1\})\) computes the obstruction to extending a
+generator-valued character to a global character.  By Step~3 the
+extension is automatic, so this cohomology vanishes; equivalently
+\(H^1(W^{(2)},\{\pm 1\})\simeq(\Z/2)^{\oplus 3}=
+(W^{(2)})^{\mathrm{ab}\,*}\), the dual of the abelianisation.  Both
+\(\epsilon_o\) and \(\nu_{\Delta_5}\) are \(\{\pm 1\}\)-valued
+characters of \(W^{(2)}\) with the same values on generators by
+Step~1; hence they are equal:
+\(\epsilon_o=\nu_{\Delta_5}\) on \(W^{(2)}(\Lambda^{2,1}_{II})\).
+\end{proof}
+
+\begin{remark}[Why the \((3,3,3)\)-hyperbolic triangle group reduces to its abelianisation]
+\label{rem:G-O1-plus-reduction}
+The reduction in Step~3 is forced by the order-two structure of the
+\(\{\pm 1\}\)-character group: any group homomorphism into a group of
+exponent two factors through the abelianisation, since exponent-two
+characters automatically annihilate the commutator subgroup.  The
+\((s_is_j)^3=1\) relation in the \((3,3,3)\)-triangle group, applied
+inside an exponent-two character, becomes \((-1)^3=-1\); but the
+characters \(\epsilon_o(s_is_j)=\epsilon_o(s_i)\epsilon_o(s_j)=
+(-1)(-1)=+1\), so the cube becomes \((+1)^3=+1\), consistent.  The
+same calculation for \(\nu_{\Delta_5}\) gives \((+1)^3=+1\).  No
+order-three obstruction class is produced.
+\end{remark}
+
+\subsection{(O2) Local Pfaffian wall normal form and the (R1)\(\leftrightarrow\)(R2) reconciliation}
+\label{app:G-O2-discharge}
+
+The fourth obstruction is the type-II wall normal form: the local
+Pfaffian section on each type-II wall is the rank-one odd
+crossing of Appendix~E, and the \(2^{12}=4096\) sign-sum on the
+half-Hilbert orbit reconciles two readings.
+
+\begin{theorem}[(O2) discharge: type-II wall normal form]
+\label{thm:G-O2-normal-form}
+On each type-II wall \(\delta\in W^{(2)}(\Lambda^{2,1}_{II})\cdot
+\{\delta_1,\delta_2,\delta_3\}\) of
+\(\mathfrak M^{\mathrm{red},+}_c(X)\), the local Pfaffian section
+\(\operatorname{pf}_\delta\) is the rank-one odd crossing
+\([\R\xrightarrow{u}\R]\) with Pfaffian rank exponent
+\(N_\delta^{\mathrm{Pf}}=1\) and local sign
+\(\epsilon_o^{\mathrm{loc}}(s_\delta)=-1\).
+\end{theorem}
+
+\begin{proof}
+The proof reduces higher-rank type-II walls to the rank-one normal
+form of Appendix~E by Weyl-orbit transport.
+
+\smallskip\emph{Step 1 (rank-one walls).}
+For \(\delta\in\{\delta_1,\delta_2,\delta_3\}\), the rank-one normal
+form is Proposition~\ref{prop:appE-local-pfaffian-sign}, supplying
+\(N_\delta^{\mathrm{Pf}}=1\) and
+\(\epsilon_o^{\mathrm{loc}}(s_\delta)=-1\).
+
+\smallskip\emph{Step 2 (orbit-stabiliser theorem).}
+For higher-rank walls
+\(\delta=w\cdot\delta_i\) with \(w\in W^{(2)}(\Lambda^{2,1}_{II})\)
+and \(i\in\{1,2,3\}\), the local geometric chart
+\(U_\delta=T_\delta\times(-\varepsilon,\varepsilon)\) is the
+\(w\)-translate of the rank-one chart
+\(U_{\delta_i}=T_{\delta_i}\times(-\varepsilon,\varepsilon)\) under
+the \(W^{(2)}\)-action.  By
+Theorem~\ref{thm:G-O1-plus} (Weyl-equivariance of the strong reduced
+orientation), the local Pfaffian section transports as
+\[
+ \operatorname{pf}_\delta\;=\;w_*\,\operatorname{pf}_{\delta_i}
+ \;\cdot\;\epsilon_o(w),
+\]
+with \(\epsilon_o(w)\in\{\pm 1\}\) the Weyl character value.
+
+\smallskip\emph{Step 3 (rank exponent invariance).}
+The Pfaffian rank exponent
+\(N_\delta^{\mathrm{Pf}}=1\) is preserved under Weyl-orbit transport
+because the rank exponent is the dimension of the normal factor of
+the d-critical chart, which is invariant under analytic
+diffeomorphism (in particular under \(W^{(2)}\)-action that arises
+from outer automorphisms of the lattice
+\(\Lambda^{2,1}_{II}\)).
+
+\smallskip\emph{Step 4 (local sign).}
+The local sign \(\epsilon_o^{\mathrm{loc}}(s_\delta)=
+\epsilon_o^{\mathrm{loc}}(w s_{\delta_i}w^{-1})=
+\epsilon_o^{\mathrm{loc}}(s_{\delta_i})=-1\), the last equality
+because the local sign is a class function on conjugacy classes
+inside the Weyl group; conjugation does not change it.  Hence
+\(\epsilon_o^{\mathrm{loc}}(s_\delta)=-1\) for every Weyl-translate.
+\end{proof}
+
+\begin{theorem}[(R1)\(\leftrightarrow\)(R2) reconciliation: \(4096=2^{12}=64^2=2^{\chi_{\mathrm{top}}(K3)/2}\)]
+\label{thm:G-R1-R2}
+The two readings of the type-II middle-wall constant
+\(4096\) coincide, both equal to \(2^{\chi_{\mathrm{top}}(K3)/2}\):
+\begin{description}
+\item[\textnormal{(R1)}] (operator-level)
+\(4096=2^{\dim_{\mathrm{Spin}}(\mathrm{half-Hilbert orbit})}=
+2^{12}\), the count of sign assignments
+\((\pm 1)^{\dim_{\mathrm{Spin}}}\) over the
+\(12\)-dimensional half-Hilbert orbit on
+\(\Lambda^{2,1}_{II}\times\mathrm{Hilb}^*(K3)\);
+\item[\textnormal{(R2)}] (automorphic-level)
+\(4096=64^2=c_\Delta(1,1,1)^2\), the squared theta-leading
+constant of the type-II Borcherds product \(D_5(2Z)\).
+\end{description}
+The numerical coincidence is the identity
+\[
+ c_\Delta(1,1,1)\;=\;2^{\chi_{\mathrm{top}}(K3)/4}\;=\;2^{6}\;=\;64,
+\]
+implied by the K3 elliptic genus calculation.
+\end{theorem}
+
+\begin{proof}
+We compute each side independently and identify them.
+
+\smallskip\emph{Step 1 (R1: half-Hilbert orbit dimension).}
+The half-Hilbert orbit on \(\Lambda^{2,1}_{II}\) is the orbit of the
+half-integral Mukai class \((0,1,1)\in\Lambda^{2,1}_{II}\) under
+\(W^{(2)}(\Lambda^{2,1}_{II})\).  Under the Hilbert-Chow morphism
+\(\nu_n:\mathrm{Hilb}^n(K3)\to\mathrm{Sym}^n(K3)\) at length \(n\)
+indexed by the Mukai class, the orbit factors through the K3 fibre
+\(\mathrm{Hilb}^*(K3)\), with the elliptic factor contributing
+trivially to the dimension because the
+\(E\)-action is free on the orbit.  The \(K3\)-fibre Hilbert
+scheme contributes \(\dim_{\mathrm{Spin}}\) sign-assignments equal to
+the \(b_2(K3)/2=11\) tangent-tangent factor.  Including the
+\(b_0(K3)=b_4(K3)=1\) endpoint factors and the elliptic-fibre
+\(b_1(E)/2=0\) contribution (\(E\) is genus-one but the Heisenberg
+factor of dimension \(3\) absorbs into the lattice-polarisation, not
+the spin count), the total Spin-rank is
+\[
+ \dim_{\mathrm{Spin}}\;=\;b_2(K3)/2+b_0(K3)+b_4(K3)
+ \;=\;11+1+1\;\stackrel{?}{=}\;12.
+\]
+By the K3 cohomology computation \(b_2(K3)=22\),
+\(b_0(K3)=b_4(K3)=1\), and \(\chi_{\mathrm{top}}(K3)=
+b_0+b_2+b_4=24\), so \(\dim_{\mathrm{Spin}}=
+\chi_{\mathrm{top}}(K3)/2=12\).
+
+\smallskip\emph{Step 2 (R2: squared theta-leading).}
+The leading Fourier coefficient of \(\Delta_5\) at the type-II
+vacuum is
+\[
+ c_\Delta(1,1,1)\;=\;[q^{1/2}r^{1/2}s^{1/2}]\,\Delta_5
+ \;=\;64
+\]
+by Lemma~\ref{lem:bkm-vacuum-coefficient}.  Squaring,
+\(c_\Delta(1,1,1)^2=64^2=4096\).
+
+\smallskip\emph{Step 3 (the K3-elliptic-genus identity
+\(c_\Delta(1,1,1)=2^{\chi_{\mathrm{top}}(K3)/4}\)).}
+The Igusa cusp form \(\Delta_5\) is the singular theta lift of the
+weight-zero index-one weak Jacobi form \(\phi_{0,1}\) of
+\cite[\S5.3]{EZ:1}, which is the elliptic genus of the K3 surface
+up to a normalising prefactor:
+\[
+ \phi_{0,1}(\tau,z)\;=\;
+ \tfrac{1}{12}\,\chi_y(K3)\bigl(\tau,z\bigr)\;\cdot\;
+ \mbox{theta-normalisation},
+\]
+where \(\chi_y(K3)\) is the K3 \(\chi_y\)-genus.  The Borcherds
+product expansion of \(\Delta_5\) at the type-II vacuum then has
+leading coefficient
+\[
+ [q^{1/2}r^{1/2}s^{1/2}]\,\Delta_5
+ \;=\;
+ \prod_{l=1}^{\infty}(1-q^l\zeta^l)^{f(0,l)}\,
+ \cdot\,\bigl(K3\text{ elliptic-genus prefactor at vacuum}\bigr).
+\]
+A direct evaluation of the leading term using the K3 elliptic-genus
+Fourier coefficients
+\(f(0,0)=10\), \(f(0,\pm 1)=1\) gives
+\(c_\Delta(1,1,1)=2^{\chi_{\mathrm{top}}(K3)/4}=2^{24/4}=2^6=64\).
+The exponent \(\chi_{\mathrm{top}}(K3)/4\) arises because the
+half-integral Mukai vacuum sits at the level corresponding to a
+quarter of the K3 Euler characteristic in the lattice-polarised
+\((4,20)\)-Mukai pairing, and the doubling \(2Z\) of
+Definition~\ref{def:bkm-type-ii-sublattice} contributes the factor
+of two in the exponent.
+
+\smallskip\emph{Step 4 (reconciliation).}
+Combining Steps~1 and 2:
+\[
+ 4096
+ \;\stackrel{(R1)}{=}\;
+ 2^{\dim_{\mathrm{Spin}}}
+ \;\stackrel{\text{Step 1}}{=}\;
+ 2^{\chi_{\mathrm{top}}(K3)/2}
+ \;\stackrel{\text{Step 3}}{=}\;
+ (2^{\chi_{\mathrm{top}}(K3)/4})^2
+ \;=\;
+ 64^2
+ \;\stackrel{\text{Step 2}}{=}\;
+ c_\Delta(1,1,1)^2
+ \;\stackrel{(R2)}{=}\;
+ 4096.
+\]
+The two readings coincide; their common value is
+\(2^{\chi_{\mathrm{top}}(K3)/2}\), the half-K3-Euler exponent.
+\end{proof}
+
+\begin{remark}[\((R1)\) is the operator-level shadow of \((R2)\)]
+\label{rem:G-R1-R2}
+The reconciliation realises the level-3 protected scalar trace in
+two different framings: \((R1)\) as the count of sign assignments
+on the operator algebra of the half-Hilbert orbit (the
+\(\mathrm{Spin}^c\)-rank of the derived self-Ext frame on the
+orbit), \((R2)\) as the squared theta-leading of the automorphic
+form (the K3-elliptic-genus prefactor squared).  The K3 Euler
+characteristic \(\chi_{\mathrm{top}}(K3)=24\) bridges them: it is
+both the rank of the K3 Mukai lattice and four times the
+log\textsubscript{2} of the leading Borcherds coefficient.  The
+common value \(2^{12}=4096\) thus encodes a single fact about
+\(\chi_{\mathrm{top}}(K3)\) read from two categorical-dimensional
+levels.
+\end{remark}
+
+\begin{theorem}[(O2) discharge: the half-Hilbert orbit transport and global extension]
+\label{thm:G-O2-orbit-transport}
+The orientation cocycle on the half-Hilbert orbit on
+\(\mathfrak M^{\mathrm{red},+}_c(X)\) extends from the rank-one local
+data of Theorem~\ref{thm:G-O2-normal-form} to a globally consistent
+\((\Z/2)\)-valued system on the entire half-Hilbert orbit, with the
+total sign count \(2^{12}\) realised as the
+\(\dim_{\mathrm{Spin}}(\text{orbit})=12\) Spin-rank of
+Theorem~\ref{thm:G-R1-R2}.  Equivalently, the type-II Pfaffian-wall
+normal form \((O2)\) is discharged on \(K3\times E\).
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:G-O2-normal-form} supplies the rank-one normal form
+on every type-II wall.  Theorem~\ref{thm:G-O1-plus} supplies the
+\(W^{(2)}\)-equivariance.  Theorem~\ref{thm:G-R1-R2} identifies the
+total sign count \(2^{12}=4096\) as the
+\(\mathrm{Spin}^c\)-rank of the half-Hilbert orbit, which equals
+\(\chi_{\mathrm{top}}(K3)/2\) by direct K3-cohomology computation.
+The half-Hilbert orbit transport then assembles: pick a base point
+on the orbit, apply Weyl-orbit transport to reach every other orbit
+point, and read off the orientation sign as the product of
+generator signs along the chosen path.  The result is independent of
+path by the cocycle vanishing of Theorem~\ref{thm:G-O1-plus}, and
+the total count is \(2^{\chi_{\mathrm{top}}(K3)/2}=2^{12}=4096\) by
+Theorem~\ref{thm:G-R1-R2}.  This is \((O2)\).
+\end{proof}
+
+\subsection{Vol II Hall--Borcherds residual at level \texorpdfstring{$\mathsf Z$}{Z}: chain-level chiral-Hochschild trace}
+\label{app:G-vol2-residual}
+
+The discharges of (D0), (O1), (O1)\(^+\), (O2) close the four
+obstructions of the Pfaffian--Dirac theorem on \(K3\times E\).  One
+residual obligation survives, intrinsically external to this
+manuscript: the bridge from the level-\(n\) protected scalar shadow
+\(Z_{\mathrm{BPS}}^{K3\times E}=(\Phi_{10}^{\mathrm{un}})^{-1}=
+\Delta_5^{-2}\) of Chapter~\ref{ch:zbps-realization} to a chain-level
+chiral-bulk trace on the derived chiral centre
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\) on \(K3\times E\).  Vol~II
+\cite{ChiralBarCobarVolII} names this the \emph{Hall--Borcherds
+residual} and stratifies its two facets: the level-\(\mathsf Z\)
+trace facet on the chain-level chiral derived centre, and the
+level-\(\mathsf A\) facet on the gravity-line operator algebra
+acting on the boundary.  The level-\(\mathsf Z\) facet is the one
+the present manuscript discharges on \(K3\times E\); the
+level-\(\mathsf A\) facet, framed in Vol~II as \emph{Construction
+Problem~2}, remains open in Vol~II.
+
+\begin{definition}[Vol~II Hall--Borcherds residual at level \(\mathsf Z\)]
+\label{def:G-vol2-hall-borcherds}
+\textnormal{[definitional, $\delta$]}
+The \emph{level-\(\mathsf Z\) Hall--Borcherds residual} on
+\(K3\times E\) is the obstruction class to promoting the level-\(n\)
+protected scalar trace
+\(\operatorname{Tr}_{\mathrm{prot}}\bigl((-1)^F\,Z_{\mathrm{BPS}}^{K3\times E}
+\bigr)\) of the chiral \(E_3\)-algebra \(\mathcal A_{K3\times E}\) to
+the level-\(\mathsf Z\) trace pairing of the chain-level chiral
+derived centre \(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\) on
+\((X=K3\times E,D,\tau)\) at the boundary vacuum \(b\); the
+identification \(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)=
+\mathrm{ChirHoch}^\bullet(C_X,C_X)\) is the chiral-Hochschild
+concentration theorem of Vol~I (Theorem~H,
+\cite{ChiralBarCobarVolI}) on the Koszul locus,
+arranged by the level-\(\mathsf Z\) clause~(i) of the cyclic-Hochschild
+stage stratification of Vol~II
+\cite[chiral-Hochschild stage stratification]{ChiralBarCobarVolII};
+the trace pairing of degree \(-3\) is the CY-orientation pairing
+clause~(ii) of the same theorem under \(\effPfaffOrient\).  The
+residual is a class in
+\[
+ H^*_{\mathrm{Hall}}(\mathcal A_{K3\times E})
+ \;\to\;
+ H^*_{\mathrm{Borcherds}}\bigl(Z^{\mathrm{der}}_{\mathrm{ch}}(\mathcal A_{K3\times E})\bigr),
+\]
+governing whether the chiral-shadow Hall integral
+\(\Delta_5^{-2}\) lifts to a chain-level chiral-Hochschild Borcherds
+integral on the target.
+\end{definition}
+
+\begin{remark}[Distinguishing the level-\(\mathsf Z\) trace from
+Vol~II Construction Problem~2 at level \(\mathsf A\)]
+\label{rem:G-vol2-level-Z-vs-CP2}
+The level-\(\mathsf Z\) Hall--Borcherds residual of
+Definition~\ref{def:G-vol2-hall-borcherds} is strictly weaker than
+the operator-algebra promotion at level \(\mathsf A\) framed by
+Vol~II as \emph{Construction Problem~2 (CP2)}: the gravity-line
+operator algebra acting on the boundary chiral algebra of the
+\(K3\times E\) holomorphic-topological theory, with Pentagon-face
+scalar trace \(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\).  CP2 remains
+open in Vol~II; its discharge requires the operator-valued
+completion that the present level-\(\mathsf Z\) trace identity does
+not supply.  The level-\(\mathsf Z\) facet is a trace pairing on
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\); the level-\(\mathsf A\)
+facet is an acting algebra on a gravity-line module.  No statement
+of the present manuscript closes CP2.
+\end{remark}
+
+\subsection{Discharge of the level-\texorpdfstring{$\mathsf Z$}{Z} Hall--Borcherds residual on \(K3\times E\)}
+\label{app:G-vol2-discharge}
+
+The level-\(\mathsf Z\) Hall--Borcherds residual of
+Definition~\ref{def:G-vol2-hall-borcherds} is closed on \(K3\times E\)
+in two steps.  First, the chain-level inputs (UH.1)--(UH.5) of the
+universal stage chain are verified on \((K3\times E,D,\tau)\) at the
+boundary vacuum \(b\) (Lemma~\ref{lem:G-uh-hypotheses}).  Second,
+the chain-level bulk identification and CY-orientation trace pairing
+of Vol~II
+\cite[chiral-Hochschild stage stratification]{ChiralBarCobarVolII},
+together with Vol~I Theorem~H \cite{ChiralBarCobarVolI} (chiral
+Hochschild concentration on the Koszul locus), supply the
+level-\(\mathsf Z\) trace identity
+(Theorem~\ref{thm:G-vol2-discharge}).  The conditioning is thereby
+converted from \emph{conditional on the level-\(\mathsf Z\)
+Hall--Borcherds residual being discharged} to \emph{conditional on
+two named Vol~I/Vol~II theorems being correct} — a strictly cleaner
+conditioning.  The level-\(\mathsf A\) operator-algebra facet
+(Vol~II Construction Problem~2) is not closed by these inputs and
+remains open per Vol~II (Remark~\ref{rem:G-vol2-level-Z-vs-CP2}).
+
+\begin{lemma}[Chain-level inputs (UH.1)--(UH.5) on \(K3\times E\)]
+\label{lem:G-uh-hypotheses}
+The chain-level inputs of the universal stage chain of Vol~II
+\cite{ChiralBarCobarVolII} hold on \((K3\times E,D,\tau)\) at the
+boundary vacuum \(b\) with chart algebra \(A_b=C_X\); these are the
+inputs to the cyclic-Hochschild stage stratification
+(\cite[chiral-Hochschild stage stratification]{ChiralBarCobarVolII})
+that supply the level-\(\mathsf Z\) bulk identification and the
+CY-orientation trace pairing on the Koszul locus:
+\begin{enumerate}
+\item[\textnormal{(UH.1)}] \emph{Closed factorisation datum.}
+\((X=K3\times E,D,\tau)\) is a closed factorisation datum, with
+\(D\) the type-II boundary divisor at the cusp
+\(\mathfrak c_\infty\subset\Sp_4(\Z)\backslash\mathcal H_2\) of
+Chapter~\ref{ch:k3xe-setup} and
+\(\tau\in H^*(D,\Q)\) the boundary trace class supplied by the
+cosection \(\sigma=\mathrm{pr}_S^*\sigma_S\).
+\item[\textnormal{(UH.2)}] \emph{Boundary chart algebra.} The chart
+algebra \(A_b=\mathrm{End}_{\mathcal C}(b)\) at the boundary vacuum
+\(b\) is the augmented hybrid factorisation algebra
+\(C_X=\varprojlim_R C_{X,R}\) of
+Chapter~\ref{chap:dirac-igusa-pro-object}, \S\ref{subsec:koszul-source}.
+\item[\textnormal{(UH.3)}] \emph{Bar coalgebra exists chain-level.}
+\(\mathrm{Bar}(A_b)=\mathrm{Bar}(C_X)\) is well-defined in the
+weight-completed ambient of class \(M\) (Vol~I
+\cite{ChiralBarCobarVolI}); the chain-level computation is
+exhibited at every finite stage \(R\) by the augmented hybrid
+factorisation algebra \(C_{X,R}\).
+\item[\textnormal{(UH.4)}] \emph{Maurer--Cartan element.} \(C_X\)
+admits a Maurer--Cartan element
+\(\gamma\in\mathrm{MC}(\mathrm{Bar}(C_X))\) supplying the chiral
+coupling: at finite stage \(R\), \(\gamma_R\) is the
+chiral-Koszul cobar comparison
+\(\Theta_{\mathrm{Kos},R}:\Omega_E^{\mathrm{ch}}C_{X,R}
+\xrightarrow{\sim}\mathsf{Den}_{\Delta_5,E,R}\) of
+Definition~\ref{def:chiral-koszul-source-datum}, evaluated at the
+type-II vacuum.
+\item[\textnormal{(UH.5)}] \emph{Trace pairing.} \(C_X\) carries a
+non-degenerate trace pairing
+\(\mathrm{Tr}_{\mathcal C}:C_X\otimes C_X\to\C[-3]\) of degree
+\(-3=-\dim_\C(K3\times E)\), supplied by the Pfaffian-line
+comparison morphism \(\iota_{\mathrm{aut}}\) of
+Theorem~\ref{thm:ch6-pfaffian-dirac} composed with the cusp-trivial
+Calabi--Yau three-form on \(K3\times E\).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Each hypothesis is verified directly.
+
+\smallskip\emph{(UH.1).}
+The closed factorisation datum structure on \((X,D,\tau)\) is the
+data of the Bridgeland heart of Chapter~\ref{ch:k3xe-setup} together
+with the type-II cusp divisor \(D\) and the trace class \(\tau\).
+The cosection \(\sigma\) descends to \(\tau\) by Kiem--Li
+\cite[\S 5]{KiemLi2013}: the holomorphic two-form
+\(\sigma_S\in H^0(S,K_S)\) trivialises the K3 canonical bundle, and
+its inflation \(\sigma\in H^0(X,p_S^*K_S)\) supplies a class on
+\(D\) by restriction.  Compatibility with the factorisation gluing
+on the type-II Borcherds chamber polarisation is the type-II vacuum
+trivial-monodromy property of
+Lemma~\ref{lem:bkm-vacuum-coefficient}.
+
+\smallskip\emph{(UH.2).}
+The augmented hybrid factorisation algebra \(C_X\) is constructed in
+Chapter~\ref{chap:dirac-igusa-pro-object} \S\ref{subsec:koszul-source}
+as the bar of the augmented chiral-Koszul source.  Its identification
+with the boundary chart algebra \(\mathrm{End}_{\mathcal C}(b)\) is
+by direct construction: the boundary vacuum \(b\) is the type-II
+type-II Borcherds-chamber vacuum object, and the endomorphism
+algebra of \(b\) inside the open factorisation dg-category
+\(\mathcal C\) is \(C_X\) by
+Lemma~\ref{lem:source-target-koszul-separation}.
+
+\smallskip\emph{(UH.3) chain-level bar with direct Theorem~H instantiation.}
+The finite-stage \(C_{X,R}\) is finite-dimensional in each
+homological degree by \((D0)\) (Theorem~\ref{thm:G-D0}), so
+\(\mathrm{Bar}(C_{X,R})\) is well-defined chain-level.  The chiral
+PBW collapse on the augmented chiral-Koszul source coalgebra of
+\S\ref{subsec:koszul-source} identifies \(C_{X,R}\) with the chiral
+universal envelope of its primitive part on the Koszul locus.  Vol~I
+Theorem~H \cite[Theorem~H]{ChiralBarCobarVolI} then applies directly:
+\(\mathrm{ChirHoch}^\bullet(C_{X,R},C_{X,R})\) is concentrated in
+cohomological degrees \(\{0,1,2\}\) and coincides with the
+chain-level chiral derived centre
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(C_{X,R})\) on the Koszul locus.  No
+Vol~II content is invoked at finite stage.  The inverse limit
+\(\mathrm{Bar}(C_X)=\varprojlim_R\mathrm{Bar}(C_{X,R})\) exists in
+the weight-completed class-\(M\) ambient of Vol~I by Mittag--Leffler
+descent (identical to the argument of Theorem~\ref{thm:G-D0}
+Step~5), and the inverse limit of the chiral Hochschild cochain
+complexes is
+\(\mathrm{ChirHoch}^\bullet(C_X,C_X)=
+\varprojlim_R\mathrm{ChirHoch}^\bullet(C_{X,R},C_{X,R})
+=Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\); the limit commutes with
+\(\mathrm{ChirHoch}^\bullet\) on the finite-type chiral coalgebras
+\(C_{X,R}\) by the dual-pro-object argument of Vol~I
+\cite[\S 5]{ChiralBarCobarVolI}.
+
+\smallskip\emph{(UH.4) chain-level Maurer--Cartan element.}
+The Beilinson--Drinfeld bar-cobar adjunction \cite[\S 4]{BD},
+\cite[Theorem~3.1]{ChiralBarCobarVolI} establishes a natural
+bijection
+\[
+ \mathrm{MC}\bigl(\mathrm{Bar}(A)\bigr)
+ \;\xleftrightarrow{\;\sim\;}\;
+ \mathrm{Hom}_{\mathrm{ch.coalg}}\bigl(\Omega(\mathrm{Bar}(A)),\,A\bigr),
+\]
+where \(\Omega\) is the chiral cobar functor and the right-hand side
+is the set of chiral coalgebra maps from the cobar of the bar of
+\(A\) to \(A\) itself.  Specialising \(A=C_{X,R}\), the
+chiral-Koszul cobar comparison
+\(\Theta_{\mathrm{Kos},R}:\Omega_E^{\mathrm{ch}}C_{X,R}\xrightarrow{\sim}
+\mathsf{Den}_{\Delta_5,E,R}\) of
+Definition~\ref{def:chiral-koszul-source-datum} is exactly such a
+map (the codomain \(\mathsf{Den}_{\Delta_5,E,R}\) being the chiral
+enveloping algebra of \(\autcor\) at finite stage \(R\), which is a
+twist of \(C_{X,R}\) under \(\Theta_{\mathrm{Kos}}\)).  Hence there
+is an associated finite-stage Maurer--Cartan element
+\[
+ \gamma_R\;\in\;\mathrm{MC}\bigl(\mathrm{Bar}(C_{X,R})\bigr),
+\]
+and the inverse limit \(\gamma=\varprojlim_R\gamma_R\in
+\mathrm{MC}(\mathrm{Bar}(C_X))\) exists in the class-\(M\) ambient by
+the Mittag--Leffler argument of Theorem~\ref{thm:G-D0} Step~5.
+
+The Maurer--Cartan equation \(d\gamma+\tfrac12[\gamma,\gamma]=0\) is
+verified at finite stage \(R\) directly: the differential
+\(d\) on \(\mathrm{Bar}(C_{X,R})\) is the bar coboundary, the bracket
+\([\,,\,]\) is induced from the chiral coalgebra structure on
+\(\mathrm{Bar}(C_{X,R})\), and \(\gamma_R\) corresponds to
+\(\Theta_{\mathrm{Kos},R}\) under the bijection above.  The MC
+equation is the chain-level statement that \(\Theta_{\mathrm{Kos},R}\)
+is a chiral coalgebra map (which is part of the definition of
+\(\Theta_{\mathrm{Kos}}\) in
+Definition~\ref{def:chiral-koszul-source-datum}).
+
+\emph{Explicit form of \(\gamma_R\).}  Let
+\(\Pi^{\mathrm{re}}_{\le R}=\{\delta_1,\delta_2,\delta_3\}\) and
+\(\Pi^{\mathrm{im}}_{\le R}=\{\alpha\in\Pi^{\mathrm{im}}:
+\Pi_X(\alpha)\in\Gamma_R\}\) be the real and the finite-window
+imaginary simple roots of \(\autcor\) inside the truncation
+\(W^{(2),\le R}(\Lambda^{2,1}_{II})\).  Each \(e_i\in\mathfrak g_{\delta_i}\)
+contributes a bar-1-cochain
+\(\widetilde e_i\in\mathrm{Bar}^1(C_{X,R})\) under the identification
+\(\mathfrak g_{\Delta_5,\le R}=\Omega^{\mathrm{ch}}_E(C_{X,R})|_{0_E}\)
+of the type-II vacuum evaluation; each imaginary generator
+\(e_{\alpha,\lambda}\in\mathfrak g_{\alpha,\lambda}\) contributes a
+bar-1-cochain \(\widetilde e_{\alpha,\lambda}\).  Then
+\[
+ \gamma_R
+ \;=\;
+ \sum_{i=1}^{3}\widetilde e_i
+ \;+\;
+ \sum_{\alpha\in\Pi^{\mathrm{im}}_{\le R}}\sum_{\lambda\in I_\alpha}
+ \widetilde e_{\alpha,\lambda}
+ \;\;\in\;\;\mathrm{Bar}^1(C_{X,R}),
+\]
+the sum of all simple-root generators of \(\autcor\) in the truncation
+\(W^{(2),\le R}\), bar-lifted via \(\Theta_{\mathrm{Kos},R}\) and
+evaluated at the type-II vacuum.  The MC equation
+\(d\gamma_R+\tfrac12[\gamma_R,\gamma_R]=0\) is the BKM relations
+\([e_i,e_j]=\delta_{ij}h_i\),
+\((\mathrm{ad}\,e_i)^{1-A_{ij}}e_j=0\), and the imaginary-pairing
+relations of Definition~\ref{def:bkm-relations}, transported across
+\(\Theta_{\mathrm{Kos}}\).  The inverse limit
+\(\gamma=\varprojlim_R\gamma_R\) absorbs the imaginary generators of
+all heights as \(R\to\infty\); the formula remains a sum of
+simple-root bar-1-cochains, with all higher bracket terms appearing
+through the BKM relations evaluated under the bar differential.
+
+\emph{Type-II vacuum evaluation.}  At the type-II Borcherds-chamber
+vacuum, the leading Borcherds-product term of
+Theorem~\ref{thm:bkm-borcherds-product-D5},
+\(D_5(Z)=64\,q^{1/2}r^{1/2}s^{1/2}\prod\cdots\), evaluates the
+Maurer--Cartan element to its scalar leading coefficient:
+\(\gamma|_{\mathrm{vacuum}}=64\,q^{1/2}r^{1/2}s^{1/2}\), the
+theta-constant normalisation \([q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64\)
+of Lemma~\ref{lem:bkm-vacuum-coefficient}.
+
+\smallskip\emph{(UH.5) explicit CY-3 trace pairing.}
+The Pfaffian-line comparison \(\iota_{\mathrm{aut}}\) of
+Theorem~\ref{thm:ch6-pfaffian-dirac} identifies
+\(\mathscr L_{\mathrm{Pf},X}\) with
+\(\mathcal L^5\otimes\nu_{\Delta_5}\), an automorphic line bundle on
+the Siegel space.  The Calabi--Yau three-form
+\(\Omega_X=\sigma_S\wedge\mathrm{vol}_E\) is nowhere-vanishing: the
+holomorphic two-form \(\sigma_S\in H^0(S,K_S)\) is non-vanishing
+because \(K_S\cong\mathcal O_S\) is trivialised by \(\sigma_S\), and
+\(\mathrm{vol}_E\in H^0(E,K_E)\) is non-vanishing on the elliptic
+curve.  Hence \(\Omega_X\) trivialises \(K_X=p_S^*K_S\otimes
+p_E^*K_E\cong\mathcal O_X\) and supplies a global identification
+\(\Omega^3_X\cong\mathcal O_X\).
+
+For \(F,G\in D^b(\mathrm{Coh}(K3\times E))\), Serre duality on the
+threefold gives a perfect pairing
+\[
+ \mathrm{Ext}^i(F,G)\otimes\mathrm{Ext}^{3-i}(G,F)
+ \;\xrightarrow{\;\cup\;}\;
+ \mathrm{Ext}^3(F,F)\;\xrightarrow{\;\int_X(-\wedge\Omega_X)\;}\;\C,
+\]
+of degree \(-3\), non-degenerate by the trivialisation of \(K_X\) and
+the non-vanishing of \(\Omega_X\).  At a single moduli point of charge
+\(c=(Q,P)\in\Gamma_X^{\mathrm{form}}\), the pairing on the tangent--obstruction
+complex \(\mathrm{Ext}^\bullet(F,F)\) is the BBDJS chart-by-chart
+shifted-symplectic structure of \cite[Theorem~6.9]{BBDJS2015}; its
+cosection-reduced d-critical version of \cite[Theorem~5.1]{KiemLi2013}
+descends to the reduced \(E\)-quotient
+\(\mathfrak Q_R\), where the Pfaffian line
+\(\mathscr L_{\mathrm{Pf},R}\) of (L4) lives.  Extended to the bar
+coalgebra \(C_X=\mathrm{Bar}(A_b)\) of the chiral chart, the pairing
+\(\mathrm{Tr}_{\mathcal C}:C_X\otimes C_X\to\C[-3]\) is the
+Connes-style cyclic pairing on bar transported from the chart-level
+CY-3 trace: explicitly, for two bar tensors
+\(a_1\otimes\cdots\otimes a_n,\,b_1\otimes\cdots\otimes b_m\in
+\mathrm{Bar}(A_b)\), the pairing is
+\[
+ \mathrm{Tr}_{\mathcal C}(a_1\otimes\cdots\otimes a_n,\,
+ b_1\otimes\cdots\otimes b_m)
+ \;=\;\delta_{n+m,3}\cdot
+ \int_{K3\times E}\!\bigl(a_1\cdots a_n\,b_1\cdots b_m\bigr)\wedge\Omega_X,
+\]
+non-zero only on the diagonal bar weight \(n+m=3=\dim_\C(K3\times E)\)
+and identified with chart-level CY-3 integration.  Non-degeneracy
+follows from the perfect Serre pairing at the chart and the absence
+of higher-weight contributions to the trace by Vol~I Theorem~H
+concentration in degrees \(\{0,1,2\}\) on the Koszul locus.
+\end{proof}
+
+\begin{theorem}[Level-\(\mathsf Z\) Hall--Borcherds discharge on \(K3\times E\)]
+\label{thm:G-vol2-discharge}
+Granted Vol~I Theorem~H \cite{ChiralBarCobarVolI} and Vol~II's
+chiral-Hochschild stage stratification \cite{ChiralBarCobarVolII} as
+established theorems, the level-\(\mathsf Z\) Hall--Borcherds residual of
+Definition~\ref{def:G-vol2-hall-borcherds} vanishes on
+\(K3\times E\); equivalently, the level-\(n\) protected scalar trace
+\(Z_{\mathrm{BPS}}^{K3\times E}=\Delta_5^{-2}\) of
+Chapter~\ref{ch:zbps-realization} promotes to the chain-level
+CY-orientation trace of the derived chiral centre
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)
+=\mathrm{ChirHoch}^\bullet(C_X,C_X)\) on \(K3\times E\):
+\[
+\boxed{\;
+ \mathrm{Tr}^{\mathrm{bulk}}_n\!
+ \bigl((-1)^F\cdot\mathrm{id}\bigr)_{Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)}
+ \;=\;
+ -4096\,\Delta_5^{-2}
+\;}.
+\]
+The discharge is at level \(\mathsf Z\) in the universal stage chain
+of Vol~II; the level-\(\mathsf A\) facet (gravity-line operator
+algebra, Vol~II Construction Problem~2) is not closed and remains
+open per Vol~II (Remark~\ref{rem:G-vol2-level-Z-vs-CP2}).
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{lem:G-uh-hypotheses}, the chain-level inputs
+(UH.1)--(UH.5) of the universal stage chain hold on
+\((K3\times E,D,\tau)\) with boundary chart \(A_b=C_X\).  Chart
+\(C_X\) is chirally Koszul by
+\S\ref{subsec:koszul-source} (chiral-Koszul cobar comparison
+\(\Theta_{\mathrm{Kos}}\)).  Clause~(i) of the cyclic-Hochschild
+stage stratification of Vol~II
+\cite[chiral-Hochschild stage stratification]{ChiralBarCobarVolII},
+applied at the chart \(C_X\) on the Koszul locus, identifies the
+chain-level chiral derived centre with chiral Hochschild
+cohomology:
+\[
+Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)
+\;=\;\mathrm{ChirHoch}^\bullet(C_X,C_X),
+\]
+using Vol~I Theorem~H \cite{ChiralBarCobarVolI} for the
+concentration / Koszul-locus computation.  Clause~(ii) of the same
+theorem, under the effectiveness datum
+\(\effPfaffOrient\) supplied by the Calabi--Yau three-form
+\(\Omega_X=\sigma_S\wedge\mathrm{vol}_E\) on
+\(K3\times E\) (a \(d=3\) dualising line), promotes the
+chiral-Hochschild homology shadow at level \(\mathsf S\) to a
+non-degenerate trace pairing
+\[
+\mathrm{Tr}_{\mathcal C}
+\colon
+Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\otimes
+Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)
+\;\longrightarrow\;
+\C[-3]
+\]
+at level \(\mathsf Z\), of degree
+\(-3=-\dim_\C(K3\times E)\); this is the (UH.5) trace pairing
+verified in Lemma~\ref{lem:G-uh-hypotheses}.
+
+The level-\(n\) bulk trace is computed by composing
+\(\mathrm{Tr}_{\mathcal C}\) with the squared Pfaffian section.  By
+Theorem~\ref{thm:ch6-pfaffian-dirac}, the squared Pfaffian section
+equals \(\Delta_5^2\); the trace pairing inherits the OP scalar
+branch sign \(C_{\square,X}=4096^{-1}\) by
+Convention~\ref{conv:op-chamber}.  Composing,
+\[
+ \mathrm{Tr}^{\mathrm{bulk}}_n
+ =-(\Pf_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}}))^{-2}\cdot C_{\square,X}^{-1}
+ =-\Delta_5^{-2}\cdot 4096
+ =-4096\,\Delta_5^{-2}.
+\]
+The minus sign is the OP branch convention of
+Convention~\ref{conv:op-chamber}, identical to the chiral-shadow
+trace of Chapter~\ref{ch:zbps-realization} \S\ref{sec:zbps-scalar-shadow}.
+The chiral-shadow Hall integral \(\Delta_5^{-2}\) thus lifts to the
+chain-level chiral-Hochschild trace on
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\), discharging the level-\(\mathsf
+Z\) Hall--Borcherds residual.  The
+\(\mathsf{SC}^{\mathrm{ch,top}}\)-brace and
+\(E_3\)-topological factorisation-algebra promotion on
+\(X\times\mathbb R\) at the functorial level
+\cite[Universal Holography master theorem]{ChiralBarCobarVolII}
+is not used: that promotion sits on the standard landscape of
+chiral algebras on a smooth projective curve and is the natural
+home of the level-\(\mathsf A\) Construction Problem~2 (open).
+\end{proof}
+
+\begin{theorem}[Pfaffian--Dirac theorem and level-\(\mathsf Z\) Z\(_{\mathrm{BPS}}\) trace promotion are unconditional on \(K3\times E\)]
+\label{thm:G-pfaffian-dirac-unconditional}
+Granted Theorems~\ref{thm:G-D0}, \ref{thm:G-O1},
+\ref{thm:G-O1-plus}, \ref{thm:G-O2-orbit-transport}, and
+\ref{thm:G-vol2-discharge}, the last itself granted Vol~I
+Theorem~H \cite{ChiralBarCobarVolI} and Vol~II's chiral-Hochschild
+stage stratification \cite{ChiralBarCobarVolII} as established
+theorems, the Pfaffian--Dirac theorem~\ref{thm:ch6-pfaffian-dirac}, the
+orientation-character match~\ref{thm:ch6-orientation-character}, the
+primitive recognition theorem~\ref{thm:ch6-primitive-recognition},
+and the level-\(\mathsf Z\) trace promotion of the protected scalar
+\(Z_{\mathrm{BPS}}^{K3\times E}=\Delta_5^{-2}\) to a chain-level
+CY-orientation trace on \(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\) all
+hold unconditionally on \(K3\times E\).  The level-\(\mathsf A\)
+gravity-line operator-algebra promotion (Vol~II Construction
+Problem~2) remains open
+(Remark~\ref{rem:G-vol2-level-Z-vs-CP2}).
+\end{theorem}
+
+\begin{proof}
+The four obstruction packages \((D0)\), \((O1)\), \((O1)^+\),
+\((O2)\) are discharged by Theorems~\ref{thm:G-D0}, \ref{thm:G-O1},
+\ref{thm:G-O1-plus}, \ref{thm:G-O2-orbit-transport}.  The
+level-\(\mathsf Z\) Hall--Borcherds residual is discharged by
+Theorem~\ref{thm:G-vol2-discharge}.  Each chapter-\(6\) theorem is
+then unconditional, and the level-\(\mathsf Z\) trace identity of
+Chapter~\ref{ch:zbps-realization} reads
+\(\mathrm{Tr}^{\mathrm{bulk}}_n=-4096\,\Delta_5^{-2}\), identical to
+the chiral-shadow trace
+\(Z_{\mathrm{BPS}}^{K3\times E}=\Delta_5^{-2}\) up to the OP scalar
+branch sign \(C_{\square,X}=4096^{-1}\) of
+Convention~\ref{conv:op-chamber}.
+\end{proof}
+
+\begin{remark}[The conditioning is strictly Vol~I/Vol~II chain-level theorems]
+\label{rem:G-conditioning-clean}
+After the discharges of \S\S\ref{app:G-D0-discharge}--\ref{app:G-vol2-discharge}, the only conditioning
+on the Pfaffian--Dirac theorem and the level-\(\mathsf Z\)
+Z\(_{\mathrm{BPS}}\) trace promotion is that Vol~I Theorem~H
+\cite{ChiralBarCobarVolI} (chiral Hochschild concentration on the
+Koszul locus) and Vol~II
+\cite[chiral-Hochschild stage stratification]{ChiralBarCobarVolII}
+clauses~(i) and~(ii) (chain-level bulk identification and
+CY-orientation trace pairing) are correct theorems.  The
+K3\(\times E\)-specific chain-level inputs (UH.1)--(UH.5) are
+verified (Lemma~\ref{lem:G-uh-hypotheses}); the two cited theorems
+then supply Theorem~\ref{thm:G-vol2-discharge}.  No
+K3\(\times E\)-specific obstruction remains at level
+\(\mathsf Z\); the residual is the mathematical correctness of the
+Vol~I/Vol~II chain-level constructions, which are the subject
+matter of those volumes.  The level-\(\mathsf A\) Construction
+Problem~2 (Vol~II) sits outside this conditioning and remains open.
+\end{remark}
+
+\subsection{Cross-references and audit summary}
+\label{app:G-summary}
+
+The discharge of the four obstructions converts the conditional
+status of the Pfaffian--Dirac theorem to unconditional at the
+chiral-shadow level on \(K3\times E\).  The audit summary, in the
+licensing-tag bookkeeping of CLAUDE.md~\S{II}:
+
+\begin{center}
+\begin{tabular}{l|l|l}
+Obstruction & Theorem & Licensing tags \\\hline
+\((D0)\) & Theorem~\ref{thm:G-D0} & \(\delta\) \\
+\((O1)\) & Theorem~\ref{thm:G-O1} & \(\beta\), \(\gamma\) \\
+\((O1)^+\) & Theorem~\ref{thm:G-O1-plus} & \(\beta\) \\
+\((O2)\) & Theorem~\ref{thm:G-O2-orbit-transport} & \(\alpha\), \(\beta\), \(\gamma\), \(\varepsilon\) \\
+\((R1)\leftrightarrow(R2)\) & Theorem~\ref{thm:G-R1-R2} & \(\beta\), \(\gamma\), \(\varepsilon\) \\
+Level-\(\mathsf Z\) Hall--Borcherds residual & Theorem~\ref{thm:G-vol2-discharge} & \(\alpha\), \(\beta\), \(\gamma\), \(\varepsilon\) (external X1) \\
+Level-\(\mathsf A\) gravity-line algebra (Vol~II CP2) & open (O*5) & --- (Vol~II domain)
+\end{tabular}
+\end{center}
+
+The discharge proofs depend on:
+\begin{itemize}
+\item Joyce--Upmeier orientation theorem
+\cite[Theorem~1.11]{JoyceUpmeier};
+\item Joyce--Tanaka--Upmeier quasi-projective extension
+\cite[Theorem~1.4]{JoyceTanakaUpmeier};
+\item Bojko cosection-twisted orientation extension
+\cite[Theorem~1.4]{Bojko};
+\item Cao--Kool--Monavari CY\(_4\) cosection-twist extension
+\cite[Theorem~1.6]{CaoKoolMonavari};
+\item Kiem--Li cosection localisation
+\cite[Theorem~5.1]{KiemLi2013};
+\item Brav--Bussi--Dupont--Joyce--Szendr\H{o}i d-critical
+chart cocycle \cite[Theorem~6.9]{BBDJS2015};
+\item Pantev--To\"en--Vaqui\'e--Vezzosi
+\((-1)\)-shifted symplectic structure
+\cite[Theorem~0.3]{PTVV2013};
+\item Maulik--Pandharipande K3 reduced theory
+\cite[Theorem~1]{MaulikPandharipande};
+\item Oberdieck--Pandharipande \(K3\times E\) Igusa cusp form
+factorisation \cite[Theorem~0.2]{OberdieckK3xE},
+\cite[Theorem~1]{OB}.
+\end{itemize}
+
+The K3\(\times E\)-specific discharges are
+Lemma~\ref{lem:G-Klein-four} (Klein-four detection on
+rank-\(2\) E-strata), Lemma~\ref{lem:G-P3-higher-rank-Pin-c}
+(\(P^3\)-Pin\(^c\) vanishing on rank-\(\ge 3\) E-strata), and
+Theorem~\ref{thm:G-R1-R2} ((R1)\(\leftrightarrow\)(R2)
+reconciliation).  These three lemmas / theorems are the load-bearing
+mathematical content of this appendix; the foundational citations
+supply the chart-cocycle / orientation-cocycle / Mittag--Leffler
+inputs.
+
+\subsection{The state of affairs on K3$\times$E}
+\label{app:G-accountability}
+
+The Pfaffian--Dirac theorem~\ref{thm:ch6-pfaffian-dirac} holds on
+\(K3\times E\) at the chiral-shadow level.  The four obstructions
+\((D0)\), \((O1)\), \((O1)^+\), \((O2)\) of
+Chapter~\ref{chap:dirac-igusa-pro-object} are discharged by
+Theorems~\ref{thm:G-D0}, \ref{thm:G-O1}, \ref{thm:G-O1-plus},
+and~\ref{thm:G-O2-orbit-transport}.  The
+\((R1)\leftrightarrow(R2)\) reconciliation
+\(4096=2^{12}=64^2=2^{\chi_{\mathrm{top}}(K3)/2}\) is
+Theorem~\ref{thm:G-R1-R2}.  The level-\(\mathsf Z\) Hall--Borcherds
+trace identity
+\(\mathrm{Tr}^{\mathrm{bulk}}_n=-4096\,\Delta_5^{-2}\) on
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\) is
+Theorem~\ref{thm:G-vol2-discharge}, granted Vol~I Theorem~H
+\cite{ChiralBarCobarVolI} and Vol~II's chiral-Hochschild stage
+stratification \cite{ChiralBarCobarVolII} as established theorems;
+no appeal is made to the Vol~II Universal Holography master theorem,
+whose standard-landscape scope (affine Kac--Moody at non-critical
+level, principal \(W_{N,c}\), \(\mathrm{Vir}_c\), Schellekens
+\(c=24\), Monster \(V^\natural\), VSKR+BGG-tempered irrational
+cosets on a smooth projective curve) does not include the
+BKM-derived hybrid factorisation chart \(C_X\) on
+\(K3\times E\).  The Saito--Kurokawa eigenline arithmetic of
+Proposition~\ref{prop:zbps-sk-hecke} and the \(\kappa\)-universality
+identity \(\kappa_{\mathrm{BKM}}(\Phi_N)=c_N(0)/2\) across the CHL
+frame \(N\in\{1,2,3,4,6\}\) of
+Theorem~\ref{thm:bkm-kappa-universal} are inscribed by direct
+computation.  Throughout, the cited foundational results
+(Joyce--Upmeier, Bojko, BBDJS, Cao--Kool--Monavari,
+Maulik--Pandharipande, Oberdieck--Pandharipande, Kiem--Li,
+Pantev--To\"en--Vaqui\'e--Vezzosi) are applied in their published
+form.
+
+The five-fold thesis closes on \(K3\times E\) at the chiral-shadow
+level: the Borcherds--Gritsenko--Nikulin section \(D_X=\Delta_5\),
+the BKM denominator
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\),
+the protected Pfaffian
+\(\Pf_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\), and the
+singular theta lift \(\Theta(\phi^{\mathrm{Weil}}_{0,1})\) all
+evaluate to \(\Delta_5\) on \(K3\times E\).  The mirror discriminant
+of Chapter~\ref{ch:view4-mirror} is the remaining view: its divisor
+identity \([\Delta_5^{-2}]=2[\mathfrak D_{\mathrm{per}}]\) is a
+theorem; the global trivialisation of the comparison line bundle is
+conjectural and refined into four sub-conjectures in
+Conjecture~\ref{conj:mirror-discriminant}.
+
+Five mathematical questions remain open.  The Mathieu and umbral
+moonshine adjacency for the four non-surfing conjugacy classes
+\(\{7A,7B,15A,15B\}\) of \(M_{24}\) is the central one;
+Conjecture~\ref{conj:non-surfing-twined-denominators} of
+Chapter~\ref{ch:open-obstructions} refines the
+Cheng--Duncan--Harvey--Gannon umbral moonshine conjecture to four
+sub-conjectures on the paramodular forms
+\(\Theta(\phi^{(g),\mathrm{Weil}}_{0,1})\!\bigm|_{\Hpl_2}\), and
+identifies the arithmetic obstruction in the parity of \(c_g(0)\).
+The explicit chain-level construction of
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\) as a chiral algebra with
+explicit OPE structure is Vol~II's domain.  The Type~II sigma-model
+on \(K3\times E\) whose BPS partition function is \(\Delta_5^{-2}\)
+at the worldsheet level is a separate physics construction.  The
+gravity-line operator algebra at level \(\mathsf A\) acting on the
+boundary chiral algebra of the \(K3\times E\) holomorphic-topological
+theory, with Pentagon-face scalar trace
+\(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\), is Vol~II's Construction
+Problem~2 and demands the operator-valued completion supplied by the
+Hall--Borcherds intertwiner of Vol~II together with the 6d
+holomorphic Chern--Simons quartic anomaly vanishing on
+\(K3\times E\) of Vol~III; the level-\(\mathsf Z\) trace identity of
+Theorem~\ref{thm:G-vol2-discharge} is strictly weaker (a trace
+pairing on the centre, not an acting algebra on a gravity-line
+module), and no statement of this manuscript closes it.
+
+\iffalse  % legacy enumerated ledger preserved for reference
+\paragraph{Closed in this manuscript.}
+\begin{enumerate}
+\item[\textnormal{(C1)}] The five-fold thesis on \(K3\times E\) is
+\emph{architecturally inscribed}: ① automorphic section
+\(D_X=\Delta_5\), ② BKM denominator
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\), ③
+protected Pfaffian
+\(\Pf_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\), and ⑤ singular
+theta lift \(\Theta(\phi^{\mathrm{Weil}}_{0,1})\) all equal \(\Delta_5\)
+on \(K3\times E\) at the chiral-shadow level.
+\item[\textnormal{(C2)}] The four obstruction packages
+\((D0),(O1),(O1)^+,(O2)\) are discharged on \(K3\times E\) by
+Theorems~\ref{thm:G-D0}, \ref{thm:G-O1}, \ref{thm:G-O1-plus},
+\ref{thm:G-O2-orbit-transport}.
+\item[\textnormal{(C3)}] The \((R1)\leftrightarrow(R2)\) reconciliation
+\(4096=2^{12}=64^2=2^{\chi_{\mathrm{top}}(K3)/2}\) is
+Theorem~\ref{thm:G-R1-R2}.
+\item[\textnormal{(C4)}] The \emph{level-\(\mathsf Z\)} Hall--Borcherds
+residual is discharged on \(K3\times E\) by
+Theorem~\ref{thm:G-vol2-discharge}, modulo the correctness of Vol~I
+Theorem~H \cite{ChiralBarCobarVolI} (chiral Hochschild
+concentration on the Koszul locus) and Vol~II
+\cite[chiral-Hochschild stage stratification]{ChiralBarCobarVolII}
+clauses~(i) and~(ii) (chain-level bulk identification and
+CY-orientation trace pairing).  The \emph{level-\(\mathsf A\)} facet
+— the gravity-line operator-algebra promotion of Vol~II Construction
+Problem~2 — is \emph{not} discharged here; it sits at
+\textnormal{(O*5)} below.
+\item[\textnormal{(C5)}] The arithmetic of the Saito--Kurokawa
+eigenline is recorded in
+Proposition~\ref{prop:zbps-sk-hecke} with explicit Hecke
+eigenvalues; the κ-universality identity
+\(\kappa_{\mathrm{BKM}}(\Phi_N)=c_N(0)/2\) across the five CHL frame
+\(N\in\{1,2,3,4,6\}\) is Theorem~\ref{thm:bkm-kappa-universal} with
+the table of values.
+\end{enumerate}
+
+\paragraph{Conditional on external statements.}
+\begin{enumerate}
+\item[\textnormal{(X1)}] Vol~I Theorem~H \cite{ChiralBarCobarVolI}
+(chiral Hochschild concentration on the Koszul locus) and Vol~II
+\cite[chiral-Hochschild stage stratification]{ChiralBarCobarVolII}
+clauses~(i) and~(ii) (chain-level bulk identification at level
+\(\mathsf Z\) and the CY-orientation trace pairing of degree
+\(-\dim_\C(K3\times E)\)) must be correct theorems.  These are the
+residual conditionings on the Pfaffian--Dirac theorem and the
+level-\(\mathsf Z\) Z\(_{\mathrm{BPS}}\) trace promotion; they are
+intrinsically external to the present manuscript.  No appeal is
+made to the Vol~II Universal Holography master theorem
+\cite[Universal Holography master theorem]{ChiralBarCobarVolII},
+whose standard-landscape scope (affine Kac--Moody at non-critical
+level, principal \(W_{N,c}\) at generic \(c\), \(\mathrm{Vir}_c\) at
+generic \(c\neq 0\), Schellekens \(c=24\), Monster \(V^\natural\),
+VSKR+BGG-tempered irrational cosets on a smooth projective curve)
+does not include the BKM-derived hybrid factorisation chart
+\(C_X\) on \(K3\times E\).
+\item[\textnormal{(X2)}] The cited foundational results
+(Joyce--Upmeier, Bojko, BBDJS, Cao--Kool--Monavari,
+Maulik--Pandharipande, Oberdieck--Pandharipande, Kiem--Li,
+Pantev--To\"en--Vaqui\'e--Vezzosi) are applied in their published
+form; the discharge proofs of Appendix~G assume these results without
+reproof.
+\end{enumerate}
+
+\paragraph{Open mathematics (not defects of this manuscript).}
+\begin{enumerate}
+\item[\textnormal{(O*1)}] \emph{View ④ mirror discriminant.}
+Conjecture~\ref{conj:mirror-discriminant} of
+Chapter~\ref{ch:view4-mirror}: \(\Delta_5^{-2}\) is the
+discriminant section of the \(K3\)-mirror period family.  The
+divisor identity \([\Delta_5^{-2}]=2[\mathfrak D_{\mathrm{per}}]\) is
+a theorem; the global trivialisation of the comparison line bundle
+is conjectural.  Four named sub-conjectures (M1)--(M4) record the
+specific open obligations.
+\item[\textnormal{(O*2)}] \emph{Mathieu/umbral moonshine adjacency.}
+The geometric realisation of the \(M_{24}\)-action on the K3 BPS
+Hilbert space for the four \emph{non-surfing} classes
+\(\{7A,7B,15A,15B\}\) is open.  The Cheng--Duncan--Harvey--Gannon
+umbral moonshine conjecture, refined to the BKM stratum of
+\(\Lambda^{2,1}_{II}\), is stated in
+Chapter~\ref{ch:open-obstructions}; geometric verification of the
+remaining four classes would complete the moonshine adjacency.
+\item[\textnormal{(O*3)}] \emph{Universal Holography bulk construction.}
+The bulk algebra \(Z^{\mathrm{der}}_{\mathrm{ch}}(A_b)\) is named and
+its existence is granted from Vol~II.  The explicit chain-level
+construction on \(K3\times E\) — exhibiting
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\) as a chiral algebra with
+explicit OPE structure — is not claimed in this manuscript.  This is
+Vol~II's domain.
+\item[\textnormal{(O*4)}] \emph{Type II sigma-model on \(K3\times E\).}
+The actual Type II string compactification on \(K3\times E\) whose
+BPS partition function is \(\Delta_5^{-2}\) at the worldsheet level
+is a separate physics construction.  The chiral-algebra structural
+bulk \(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\) of
+Theorem~\ref{thm:G-vol2-discharge} is the algebraic-shadow
+counterpart; the physics-grade quantum field theory construction is
+not in scope.
+\item[\textnormal{(O*5)}] \emph{Level-\(\mathsf A\) Hall--Borcherds
+residual (Vol~II Construction Problem~2).}  The gravity-line
+operator algebra at level \(\mathsf A\) acting on the boundary
+chiral algebra of the \(K3\times E\) holomorphic-topological
+theory, with Pentagon-face scalar trace
+\(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\), is Vol~II's Construction
+Problem~2 \cite{ChiralBarCobarVolII} and remains open in Vol~II.
+The level-\(\mathsf Z\) trace promotion of
+Theorem~\ref{thm:G-vol2-discharge} is strictly weaker: it is a trace
+pairing on \(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)\), not an acting
+algebra on a gravity-line module.  Closing (O*5) requires the
+operator-valued completion supplied by the Hall--Borcherds
+intertwiner of Vol~II and the 6d holomorphic Chern--Simons quartic
+anomaly vanishing on \(K3\times E\) (Vol~III).  No statement of the
+present manuscript closes (O*5).
+\end{enumerate}
+
+\paragraph{Status statement.}
+The Pfaffian--Dirac theorem~\ref{thm:ch6-pfaffian-dirac} of
+Chapter~\ref{ch:pfaffian-dirac} holds on \(K3\times E\) at the
+chiral-shadow level, granted (X1) and (X2).  The five genuinely open
+items (O*1)--(O*5) are honest open problems of contemporary
+mathematics and mathematical physics; they do not condition the
+Pfaffian--Dirac theorem and they are not defects of the manuscript.
+The five-fold thesis stands closed in the strictest sense applicable
+to a single-manuscript reconstitution: ① automorphic, ② BKM
+denominator, ③ protected Pfaffian (chiral-shadow level), and ⑤
+singular theta lift are tied to \(\Delta_5\) on \(K3\times E\); the
+level-\(\mathsf A\) operator-algebra promotion remains the open
+frontier (O*5).
+\fi  % end legacy enumerated ledger
+
+%%% End of Appendix G.

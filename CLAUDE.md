@@ -216,23 +216,38 @@ granted the four-obstruction discharge of Appendix G:
 | (O1⁺) | Weyl-equivariant transport along W^{(2)}(Λ_{II}^{2,1}) reflections | Theorem G.4 ((3,3,3) abelianisation + Maass character match) |
 | (O2) | Local Pfaffian wall normal form + (R1)↔(R2) reconciliation | Theorems G.5–G.7 (rank-one App E + Weyl-orbit transport + 4096 = 2^{χ_top(K3)/2}) |
 
-The Vol II Hall–Borcherds residual is also discharged on K3×E (Theorem G.10): the
-Vol II Universal Holography master-theorem hypotheses (UH.1)–(UH.5) are verified on
-(K3×E, D, τ) at boundary vacuum b (Lemma G.9), and the master theorem
-`[\S 9, Theorem A]{ChiralBarCobarVolII}` is applied to obtain the bulk trace
-`Tr^{bulk}_n((-1)^F · id)_{Z^{der}_{ch}(C_X)} = -4096 Δ_5^{-2}`.
+The Vol II Hall–Borcherds residual splits by level on the universal stage chain.
+The **level-𝖹 facet** — chain-level CY-orientation trace pairing on
+Z^{der}_{ch}(C_X) — is discharged on K3×E (Theorem G.10): the chain-level inputs
+(UH.1)–(UH.5) of the universal stage chain are verified on (K3×E, D, τ) at boundary
+vacuum b with chart A_b = C_X (Lemma G.9); Vol I Theorem H (chiral Hochschild
+concentration on the Koszul locus) and Vol II's cyclic-Hochschild stage stratification
+clauses (i)+(ii) (chain-level bulk identification and CY-orientation trace pairing of
+degree -dim_ℂ(K3×E)) then supply
+`Tr^{bulk}_n((-1)^F · id)_{Z^{der}_{ch}(C_X)} = -4096 Δ_5^{-2}`. No appeal is made to
+the Vol II Universal Holography master theorem, whose standard-landscape scope
+(affine KM at non-critical level, W_{N,c} at generic c, Vir_c at generic c ≠ 0,
+Schellekens, Monster, VSKR+BGG-tempered cosets on a smooth projective curve) does
+not include the BKM-derived hybrid factorisation chart C_X on K3×E.
+
+The **level-𝖠 facet** — gravity-line operator algebra acting on the boundary with
+Pentagon-face scalar trace Φ_{10}^{un} = Δ_5^2 — is Vol II's Construction Problem 2
+and **remains open in Vol II**. No statement of this manuscript closes CP2; the
+level-𝖹 trace pairing is strictly weaker than the level-𝖠 acting algebra.
 
 The Pfaffian–Dirac theorem `thm:ch6-pfaffian-dirac`, the orientation-character match
 `thm:ch6-orientation-character`, the primitive recognition theorem
-`thm:ch6-primitive-recognition`, and the Z_BPS bulk promotion all hold
-**unconditionally on K3×E** modulo the correctness of the Vol II master theorem
-itself — a strictly cleaner conditioning than the original four-obstruction-plus-residual
-status.
+`thm:ch6-primitive-recognition`, and the level-𝖹 Z_BPS trace promotion all hold
+**unconditionally on K3×E** modulo the correctness of Vol I Theorem H and Vol II's
+cyclic-Hochschild stage stratification clauses (i)+(ii) as established theorems. The
+level-𝖠 gravity-line operator algebra (Vol II CP2) is the open frontier (App G O*5).
 
-The five-fold thesis is closed on K3×E: ① ↔ ② proved (Borcherds–Gritsenko–Nikulin);
-② ↔ ③ proved at the chiral-shadow level (Theorem G.10); ② ↔ ⑤ proved (Borcherds 1995);
-③ ↔ ⑤ chained through ② via the singular-theta lift (Theorem 7.x); ④ remains
-conjectural per CLAUDE.md §I (mirror discriminant).
+The five-fold thesis is closed on K3×E at the chiral-shadow / level-𝖹 stage: ① ↔ ②
+proved (Borcherds–Gritsenko–Nikulin); ② ↔ ③ proved at the chiral-shadow level
+(Theorem G.10 with level-𝖹 conditioning above); ② ↔ ⑤ proved (Borcherds 1995); ③ ↔ ⑤
+chained through ② via the singular-theta lift (Theorem 7.x); ④ remains conjectural
+per CLAUDE.md §I (mirror discriminant). The level-𝖠 operator-algebra promotion to a
+gravity-line module remains open as Vol II CP2.
 
 ## VIII. Source layout and build
 

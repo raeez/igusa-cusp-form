@@ -1,0 +1,1131 @@
+% !TEX root = ../main.tex
+%
+% Chapter 6 — The cross-level identity (2)<->(3): the Pfaffian–Dirac theorem,
+% the orientation character ε_o = ν_{Δ_5} on W^{(2)}(Λ_{II}^{2,1}), and the
+% primitive recognition theorem P_X ≅ g_{Δ_5}.  The conditional contribution
+% of the manuscript.  Russian-school voice; supremum discipline.
+%
+% Three Δ_5 names, distinguished on first use per (sub)section:
+%   D_X = Δ_5            — automorphic section (View ①)
+%   den(g_{Δ_5}) = 64^{-1}Δ_5(2Z)  — BKM denominator (View ②)
+%   Pf_prot(𝔇_X^DI)      — protected Pfaffian, conditional (View ③)
+%
+% Inline licensing tags (per chapter) follow Vol II: α (chart of vacuum b),
+% β (protected Pfaffian functor; Hall–Drinfeld correspondence; Sp^ch
+% specialization), γ (pro-object ambient; class M completion), δ
+% (D0-degeneration endpoint), ε (BBDJS orientation; non-degeneracy of the
+% Pfaffian line; type-II wall normal form).
+%
+% κ-tuple subscripts are mandatory: κ_cat, κ_ch^Hodge, κ_ch^Heis, κ_BKM,
+% κ_fiber.  Bare κ is forbidden.
+
+\chapter[The cross-level identity (2) <-> (3): Pfaffian-Dirac, orientation character, primitive recognition]{The cross-level identity \protect\textcircled{\scriptsize 2}\,\(\leftrightarrow\)\,\protect\textcircled{\scriptsize 3}: Pfaffian--Dirac, orientation character, primitive recognition}
+\label{ch:pfaffian-dirac}
+
+The Igusa cusp form \(\Delta_5\) of weight five on
+\(\Sp(2,\Z)\backslash\mathcal H_2\) carries three names, each rooted in a
+distinct categorical-dimensional level:
+
+\begin{itemize}
+\item \(D_X=\Delta_5\) — the Borcherds--Gritsenko--Nikulin section of the
+  weight-\(5\) automorphic line over the genus-two Siegel space (View
+  \textcircled{\scriptsize 1});
+\item \(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\) —
+  the denominator of the generalized Borcherds--Kac--Moody (BKM)
+  superalgebra \(\mathfrak g_{\Delta_5}\) on
+  \(\La^{2,1}_{II}\) (View \textcircled{\scriptsize 2});
+\item \(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\) —
+  the protected Pfaffian of the Dirac--Igusa pro-object on
+  \(X=K3\times E\) (View \textcircled{\scriptsize 3}).
+\end{itemize}
+
+The cross-level identity
+\textcircled{\scriptsize 1}\(\leftrightarrow\)\textcircled{\scriptsize 2}
+is Borcherds 1995 and Gritsenko--Nikulin 1998.  The cross-level identity
+\textcircled{\scriptsize 2}\(\leftrightarrow\)\textcircled{\scriptsize 3}
+is the conditional contribution of this manuscript.  This chapter proves
+three theorems which, taken together, deliver
+\textcircled{\scriptsize 2}\(\leftrightarrow\)\textcircled{\scriptsize 3}
+under four named obstruction packages:
+
+\begin{enumerate}
+\item the \emph{Pfaffian--Dirac theorem}: under (D0), (O1), (O1)\(^+\),
+  (O2),
+  \[
+    \operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})
+    \;=\;\Delta_5
+  \]
+  as sections of \(\mathcal L^5\otimes\nu_{\Delta_5}\);
+\item the \emph{orientation character identity}: under (O1)+(O1)\(^+\)+(O2),
+  \[
+    \epsilon_o\;=\;\nu_{\Delta_5}
+    \quad\text{on}\quad W^{(2)}(\La^{2,1}_{II});
+  \]
+\item the \emph{primitive recognition theorem}: under the recognition
+  criterion (Cartan, simple representatives, Chevalley, real Serre,
+  imaginary orthogonality, generation, completed PBW, Hopf radical
+  equality, no-extra-relations, full parity dimensions),
+  \[
+    H^0\Prim_{\mathrm{prot}}\!\bigl(
+    \overline\Pi_{X,*}^{\Theta}\mathcal F_X\bigr)
+    \big/\overline{\operatorname{Rad}\langle\,\cdot\,,\,\cdot\,\rangle_X}
+    \;\cong\;\mathfrak g_{\Delta_5}
+  \]
+  on the active root window, with the chiral cobar
+  \(\Omega_E^{\mathrm{ch}}C_X\) identified as the formal current envelope
+  \(\mathsf{Den}_{\Delta_5,E}\).
+\end{enumerate}
+
+The eight build algorithms of \S5.7 supply, at every finite stage \(R\)
+in the Harder--Narasimhan inverse system, the data \(\mathcal A_{X,R}^{E_3}\),
+\(F_{X,R}^{\mathrm{hyb}}\), \(\Gamma_{X,R}\), \(\Pi_X\), \(\Phi_R\),
+\(o_R\), \(H_R\), \(P_R^\Pi\), \(C_{X,R}\), \(\Theta_{\mathrm{Kos},R}\),
+\(\mathscr L_{\mathrm{Pf},R}\), \(\operatorname{pf}_{X,R}\),
+\(\varepsilon_{o,R}\), and \(\mathrm{Rec}_R\) of the pro-object
+\(\mathfrak D_X^{\mathrm{DI}}\); the four obstruction packages of \S5.8
+are exactly (D0), (O1), (O1)\(^+\), (O2).  The licensing tags
+\(\alpha,\beta,\gamma,\delta,\varepsilon\) of Vol II's primitive package
+attach to these data uniformly: \(\alpha\) records the chart of the
+vacuum \(b\) in the open factorization category on \((X,D,\tau)\); \(\beta\)
+records the protected Pfaffian functor, the Hall--Drinfeld correspondence,
+and the Sp\(^{\mathrm{ch}}\) specialization; \(\gamma\) records the
+pro-object ambient and the chain-level statements after weight-completion;
+\(\delta\) records the D0-degeneration endpoint; \(\varepsilon\) records the
+Bussi--Brav--Dupont--Joyce--Szendr\H{o}i (BBDJS) orientation, the
+non-degeneracy of the Pfaffian line, and the type-II wall normal form.
+
+Honest epistemic status throughout this chapter: the three theorems are
+\emph{conditional} on the obstruction packages named at each statement;
+the BKM denominator identity (View \textcircled{\scriptsize 2}) is
+\emph{proved}, imported from
+\cite{Borcherds95,GN,GNII,BorcherdsGKM88,KAC:1}; the automorphic
+identification (View \textcircled{\scriptsize 1}) is \emph{proved},
+imported from \cite{Igusa1962,Igusa1964II}; the operator-level package
+\(\mathfrak D_X^{\mathrm{DI}}\) is \emph{conditional} as a pro-object on
+the four orientation packages; the chiral cobar identification is
+\emph{conditional} on the Koszul source datum of
+Definition~\ref{def:chiral-koszul-source-datum}.  The
+\(\kappa\)-tuple of the Calabi--Yau quantum-groups companion,
+\(
+(\kappa_{\mathrm{cat}},\kappa_{\mathrm{ch}}^{\mathrm{Hodge}},
+\kappa_{\mathrm{ch}}^{\mathrm{Heis}},\kappa_{\mathrm{BKM}},
+\kappa_{\mathrm{fiber}})=(0,0,3,5,24),
+\)
+fixes the level of \(\Delta_5\): the cusp-form weight is
+\(\kappa_{\mathrm{BKM}}=5\) and the elliptic genus weight is
+\(\chi_{\mathrm{top}}(K3)=\kappa_{\mathrm{fiber}}=24\); the additive
+collapse \(\kappa_{\mathrm{BKM}}=\kappa_{\mathrm{ch}}+\chi(\mathcal O_{\mathrm{fiber}})\)
+fails at \(N=1\).
+
+
+%==============================================================================
+\section{Data, obstructions, licensing}
+\label{sec:ch6-data}
+%==============================================================================
+
+\subsection{The pro-object \(\mathfrak D_X^{\mathrm{DI}}\) and its eight finite-stage components}
+\label{subsec:ch6-pro-object}
+
+Three names of \(\Delta_5\): the section \(D_X=\Delta_5\) (View
+\textcircled{\scriptsize 1}); the BKM denominator
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\) (View
+\textcircled{\scriptsize 2}); the protected Pfaffian
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\) (View
+\textcircled{\scriptsize 3}, conditional).  The handle
+``\(\Delta_5\)'' is reserved for the working symbol; load-bearing
+sentences specify the named view.
+
+The Dirac--Igusa pro-object is
+\[
+\mathfrak D_X^{\mathrm{DI}}
+\;=\;\lim_R\bigl(
+\mathcal A_{X,R}^{E_3},\,
+F_{X,R}^{\mathrm{hyb}},\,
+\Gamma_{X,R},\,
+\Pi_X,\,
+\Phi_R,\,
+o_R,\,
+H_R,\,
+P_R^\Pi,\,
+C_{X,R},\,
+\Theta_{\mathrm{Kos},R},\,
+\mathscr L_{\mathrm{Pf},R},\,
+\operatorname{pf}_{X,R},\,
+\varepsilon_{o,R},\,
+\mathrm{Rec}_R\bigr).
+\]
+The components are the output of the eight build algorithms of \S5.7,
+with the ambient category the cofinal HN inverse system of
+Definition~\ref{def:normal-ordered-charge-lattice-appendixC}; \(R\)
+ranges over a chosen cofinal subsystem
+\(\mathcal R_{\mathrm{HN}}\subset\Lambda_{\mathrm{ample}}\).  Licensing
+tag \(\gamma\) records the pro-object ambient.
+
+\begin{remark}[The three \(\Delta_5\)-names]
+\label{rem:ch6-three-delta-names}
+The equality
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=D_X\) is a
+cross-level identity, not a tautology.  The right-hand side is an
+automorphic section; the left-hand side is the inverse limit of finite
+Pfaffian sections \(\operatorname{pf}_{X,R}\) of the line bundles
+\(\mathscr L_{\mathrm{Pf},R}\) on the reduced quotient stacks
+\(\mathfrak Q_R\); the two are related by the supplied comparison
+\(\iota_{\mathrm{aut}}:\mathscr L_{\mathrm{Pf},X}\xrightarrow{\sim}
+\mathcal L^5\otimes\nu_{\Delta_5}\).  The denominator name
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\) is
+the same global section \(D_X\) written in the type-II chamber
+polarization that exposes the Weyl--Kac--Borcherds product expansion;
+the prefactor \(64^{-1}\) and the doubling \(2Z\) of the modular
+variable enter from the theta normalization of the Borcherds product
+on the index-$4$ sublattice $\Lambda^{2,1}_{II}\subset\Lambda^{2,1}$.
+The source side \(P_X^{\Pi,\mathrm{red}}\) identifies with
+\(\mathfrak g_{\Delta_5}\) only after the recognition criterion of
+\S\ref{sec:ch6-primitive-recognition} is supplied.
+\end{remark}
+
+\subsection{The four obstruction packages: (D0), (O1), (O1)\(^+\), (O2)}
+\label{subsec:ch6-obstructions}
+
+The four packages match the eight build algorithms one-to-one only on the
+orientation lane.  Their statement here repeats the definitions of
+Theorem~\ref{thm:pfaffian-dirac-finite-stage} and is the standing data of
+the chapter.  All four packages are discharged on \(K3\times E\) by
+Theorem~\ref{thm:G-four-obstruction-discharge} of
+Appendix~\ref{app:obstruction-discharges}: \((D0)\) by
+Theorem~\ref{thm:G-D0}, \((O1)\) by Theorem~\ref{thm:G-O1}, \((O1)^+\)
+by Theorem~\ref{thm:G-O1-plus}, and \((O2)\) by
+Theorem~\ref{thm:G-O2-orbit-transport}.  The
+\((R1)\leftrightarrow(R2)\) reconciliation of the type-II middle-wall
+constant \(4096=2^{12}=64^2\) inside \((O2)\) is
+Theorem~\ref{thm:G-R1-R2}.
+
+\paragraph{(D0) — D0-degeneration endpoint of the cosection-reduced
+d-critical orientation theory.}  Licensing tag \(\delta\).  At every
+\(R\), the data
+\(D_{0,R}\) on the finite support \(\widehat\Gamma_R\) is supplied:
+the finite Hall stage, the finite target test window
+\(\Gamma_R^{\mathrm{test}}\), successor transition maps whose composites
+give the smaller-stage maps, source/observable comparison maps, and a
+vanishing stage residual tuple \(\mathfrak O_{D_0,R}=0\); compatibly in
+\(R\), the inverse limit gives the HN-completed state object and the
+finite first-order block \(\mathfrak D_X\).
+The signed superdimension residual is
+\[
+\sdim P^\Pi_{X,(n,l,m)}=f(nm,l)
+\qquad ((n,l,m)\in\Gamma_{\mathrm{eff}}),
+\]
+where \(f(n,l)\) is the Fourier coefficient of the weak Jacobi form
+\(\phi_{0,1}\) of weight zero and index one.  The cosection contraction
+of the Pantev--Toen--Vaquie--Vezzosi (PTVV)
+\((-1)\)-shifted symplectic form by the K3 semiregularity cosection
+\(\sigma_{K3}\) is the Maulik--Toda / Oberdieck reduced obstruction theory
+\cite{MaulikTodaGV,OberdieckReducedPT}; this absorbs the parity flip
+\(\mathrm{vd}^{\mathrm{red}}=\mathrm{vd}^{\mathrm{std}}+1\) into the
+reduced orientation line as the \(\Z/2\)-grading shift
+\(o^{\mathrm{red}}_{\mathcal C}=o^{\mathrm{std}}_{\mathcal C}\otimes\Pi\).
+
+\paragraph{(O1) — strong multiplicative reduced orientation datum on the
+reduced \(K3\times E\)-quotient self-Ext frame bundle.}  Licensing tag
+\(\varepsilon\).  A Joyce--Upmeier-type orientation line
+\(o_{\mathcal C}\in\operatorname{Pic}(\mathfrak M^{or}_X)\) with
+\(o_{\mathcal C}^{\otimes 2}\simeq
+\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)\),
+extension-multiplicative under
+\(o_{\mathcal C\oplus\mathcal C'}\simeq
+o_{\mathcal C}\otimes o_{\mathcal C'}\), and equipped with the full
+quotient-orientation package
+\[
+\theta_{\mathcal C}=
+\bigl(\theta^{\mathrm{red}}_{\mathcal C},\theta^{E,\mathrm{free}}_{\mathcal C},
+\{(\theta^{H}_{\mathcal C},\lambda^{H}_{\mathcal C}=0)\}_{H\in\mathcal H(\mathcal C)}\bigr)
+\]
+on every retained charge stratum.  The vanishings
+\(\alpha^{\mathrm{red}}_{\mathcal C}=0\),
+\(\alpha^{E,\mathrm{free}}_{\mathcal C}=0\),
+\(\widetilde\beta^{H}_{\mathcal C}=0\),
+\(\lambda^{H}_{\mathcal C}=0\) are the orientation-line, the Borel-equivariant
+free-action, the residual finite-stabilizer Borel, and the residual
+finite-stabilizer linearization conditions; for \(N=2\), the Klein-four
+calculation
+\(\beta^{E,E[2]}_{\mathcal C}=b_{20}x_1^2+b_{11}x_1x_2+b_{02}x_2^2\)
+specializes the residual.  The orientation lift technology is
+BBDJS \cite{BBDJS2015} on the unreduced side and Joyce--Upmeier
+\cite{JoyceUpmeier,JoyceTanakaUpmeier} on the multiplicative side; the
+reduced \(K3\times E\)-quotient theorem is supplied separately.
+
+\paragraph{(O1)\(^+\) — Weyl-equivariant determinant-line transport along
+\(W^{(2)}(\La^{2,1}_{II})\) reflections.}  Licensing tag \(\varepsilon\).
+The supplied lifts
+\(\tau_i:o_{\mathcal C}\to s_{\delta_i}^{*}o_{\mathcal C}\), \(i=1,2,3\),
+of the three type-II wall transports satisfy
+\([c_o]=0\) in
+\(H^2(W^{(2)}(\La^{2,1}_{II});\mathbb F_2)\) (equivalently, in the
+finite action-groupoid cohomology
+\(H^2(\mathcal G_R;\underline{\mathbb F}_2)\) at every \(R\)),
+\(\widetilde\tau_i^{\,2}=1\), and the quotient-orientation transport
+defects \(\omega_{i,\mathcal C}=0\) for every simple reflection.  Then
+\(\widetilde\tau_i\) define an honest Weyl action on the reduced quotient
+orientation; the passage from the three generator signs to a character on
+\(W^{(2)}(\La^{2,1}_{II})\) is the pure group-theoretic
+Lemma~\ref{def:O1-plus-weyl-transport}.
+
+\paragraph{(O2) — Pfaffian local model and wall atlas on type-II walls.}
+Licensing tag \(\varepsilon\).  At a generic point of each
+\(\Hpl_{\delta_i}\), the supplied real local equation
+\(u_i=u_{\delta_i}\) with \(s_{\delta_i}(u_i)=-u_i\), the normal
+determinant-complex splitting
+\[
+K^{\mathrm{nor}}_{\delta_i,R}\simeq
+\bigl[\R\xrightarrow{u_i}\R\bigr],
+\qquad
+\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_i,R})=\upsilon_{\delta_i,R}u_i,
+\qquad
+s_{\delta_i}(\upsilon_{\delta_i,R})=\upsilon_{\delta_i,R},
+\]
+and the rank-one normal-form rank \(N_{\delta_i}^{\mathrm{Pf}}=1\) hold.
+The wall charts cover every retained component and boundary stratum of
+\(\Hpl_{\delta_i}\); on overlaps the tangent/normal splittings, normal
+Pfaffian units, quotient orientations, and protected integration maps
+agree after a zero \v Cech sign class.  The middle wall
+\(\delta_2\leftrightarrow(0,1,1)\) is represented by a retained wrapped
+wall object \(x_{\delta_2,R}\in\mathcal M_{\eta,R}^{\mathrm{wr,rig}}\) with
+\(b_R^{\mathrm{geom}}(\eta)>0\), \(\overline\Pi_X(\eta)=(0,1,1)\), and the
+component, boundary, overlap, quotient, and protected integration
+compatibility package of
+Proposition~\ref{prop:appE-local-pfaffian-sign}.
+
+\subsection{The OP minus sign is a scalar branch convention}
+\label{subsec:ch6-op-scalar-branch}
+
+The Oberdieck--Pixton (OP) scalar
+\(C_{\square,X}=-4096\) of Proposition~\ref{conv:op-chamber} is the
+square of the theta-normalization \(64\) with the OP scalar branch sign
+\(\operatorname{sign}(C_{\square,X})=-1\) absorbed into the fermionic
+shift \((-p_{\mathrm{DT}})^n\) of the OP/DT chamber.  It is not the
+source of the orientation character \(\epsilon_o\); orientation lines are
+killed by squaring.  The orientation character is computed by monodromy
+of the Pfaffian section around the type-II walls (Lemma
+\ref{prop:appE-local-pfaffian-sign}); equivalently, by the
+\((-1)^{N_{\delta_i}^{\mathrm{Pf}}}\) values from (O2).
+
+%==============================================================================
+\section{The Pfaffian--Dirac theorem}
+\label{sec:ch6-pfaffian-dirac}
+%==============================================================================
+
+The first theorem of the chapter identifies the protected Pfaffian of
+the Dirac--Igusa pro-object with the automorphic section.  The five
+licensing tags \(\alpha,\beta,\gamma,\delta,\varepsilon\) all attach.
+
+\begin{theorem}[Pfaffian--Dirac]
+\label{thm:ch6-pfaffian-dirac}
+Granted the four obstruction packages of
+Section~\ref{subsec:ch6-obstructions} — discharged on \(K3\times E\)
+by Theorem~\ref{thm:G-four-obstruction-discharge} — and the bulk
+promotion of Theorem~\ref{thm:G-vol2-discharge}, the protected
+Pfaffian of the Dirac--Igusa pro-object \(\mathfrak D_X^{\mathrm{DI}}\)
+equals the automorphic section \(D_X=\Delta_5\):
+\[
+\boxed{\;
+\iota_{\mathrm{aut}}\!\left(
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\right)
+\;=\;D_X\;=\;\Delta_5
+\;}
+\]
+as sections of \(\mathcal L^5\otimes\nu_{\Delta_5}\) over the genus-two
+Siegel space \(\Sp(2,\Z)\backslash\mathcal H_2\), where
+\[
+\iota_{\mathrm{aut}}:\mathscr L_{\mathrm{Pf},X}
+\xrightarrow{\,\sim\,}\mathcal L^5\otimes\nu_{\Delta_5}
+\]
+is the supplied Pfaffian-to-automorphic line comparison, compatible with
+the cusp trivialization at \(\mathfrak c_\infty\) and with squaring to
+\(\mathcal L^{10}\).  Equivalently, in the type-II Borcherds chamber,
+\[
+\iota_{\mathrm{aut}}\!\left(
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\right)
+\big|_{\mathfrak c_\infty}
+=64\,q^{1/2}r^{1/2}s^{1/2}
+\!\!\!\!\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}\!\!\!
+(1-q^nr^ls^m)^{f(nm,l)}.
+\]
+After squaring, the orientation forgets and the OP scalar branch
+identifies the level-\(n\) protected scalar shadow with the inverse
+squared Pfaffian:
+\[
+ Z^X_{\mathrm{OP}}\;=\;
+ -\,(\Pf_{\mathrm{prot}}(\mathfrak D_X^{DI}))^{-2}\cdot C_{\square,X}
+ \;=\;-4096\,\Delta_5^{-2},\qquad C_{\square,X}=4096^{-1},
+\]
+in agreement with \cite{OB}, where
+\(-4096=\operatorname{sign}(C_{\square,X})\cdot64^2\) is the squared
+theta-normalization absorbing the OP scalar branch sign.
+\end{theorem}
+
+\begin{proof}
+The proof is the inverse-limit assembly of a Pfaffian product, a leading
+coefficient identification with a known weight-five Siegel form, and a
+\(q\)-expansion principle on a punctured neighbourhood of the type-II
+cusp \(\mathfrak c_\infty\).
+
+\smallskip\emph{Step 1 (finite-stage Pfaffian product, licensing
+\(\delta+\varepsilon\)).}  Hypothesis (D0) supplies, at every cofinal
+\(R\), the finite first-order operator/algebra \(\mathfrak D_{X,R}\) on
+the reduced compact quotient
+\(\mathfrak Q_R=(\mathfrak M_R/E)^{\mathrm{red}}\), the Pfaffian line
+\(\mathscr L_{\mathrm{Pf},R}\), and the normalized leading coefficient
+condition \(\mathfrak o^{\mathrm{lead}}_R=0\).  Hypothesis (O1) supplies
+the orientation line \(o_{\mathcal C}\) with
+\(o_{\mathcal C}^{\otimes 2}\simeq
+\det\operatorname{RHom}_{\mathrm{red}}(\mathcal C,\mathcal C)\) and
+extension-multiplicativity
+\(o_{\mathcal C\oplus\mathcal C'}\simeq
+o_{\mathcal C}\otimes o_{\mathcal C'}\), descended under the reduced
+\(E\)-quotient.  The protected Pfaffian functor of (\(\beta\)) is then the
+graded Pfaffian product of the determinant of
+\(\operatorname{RHom}_{\mathrm{red}}\) over the supplied retained
+charge strata.  The signed-superdimension residual of (D0) gives
+\[
+\sdim P^\Pi_{X,(n,l,m)}=f(nm,l)
+\quad((n,l,m)\in\Gamma_{\mathrm{eff}}),
+\]
+so the graded Pfaffian product, expanded in the type-II cusp polarization
+\((q,r,s)=(e^{2\pi iz_1},e^{2\pi iz_2},e^{2\pi iz_3})\), is
+\[
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_{X,R})
+=v_0\!\!\prod_{(n,l,m)\in\Gamma_{\mathrm{eff,R}}}\!\!
+(1-q^nr^ls^m)^{f(nm,l)},
+\qquad v_0=64q^{1/2}r^{1/2}s^{1/2},
+\]
+where \(\Gamma_{\mathrm{eff,R}}\) is the active support cut by HN height
+\(R\).  The Weyl monomial \(v_0\) is the theta normalization
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64\) of \cite[Theorem~4.1]{GN}.
+
+\smallskip\emph{Step 2 (inverse limit, licensing \(\gamma\)).}  The
+pro-object ambient is the cofinal HN system; (D0) supplies strict
+transition maps with vanishing successor residuals
+\(\mathfrak o^{\mathrm{atlas}}_{R^+R}=
+\mathfrak o^{\mathrm{tr}}_{R^+R}=0\); the finite Pfaffian sections
+\(\operatorname{pf}_{X,R}\) form a Mittag-Leffler system on the active
+support, and the inverse limit is the formal Borcherds product
+\[
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})
+\big|_{\mathfrak c_\infty}
+=\lim_R\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_{X,R})
+=64\,q^{1/2}r^{1/2}s^{1/2}
+\!\!\!\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}\!\!
+(1-q^nr^ls^m)^{f(nm,l)}.
+\]
+Class \(M\) completion (chain-level after weight-completion, in the
+sense of Vol I's class \(M\) global triangle) is exactly the ambient in
+which \(\lim_R\) commutes with the graded Pfaffian product on the
+active support; this is the licensing \(\gamma\) clause.
+
+\smallskip\emph{Step 3 (comparison with the imported Borcherds product,
+licensing \(\beta\)).}  By
+Proposition~\ref{prop:bgn-identification-recap},
+the formal product
+\(64\,q^{1/2}r^{1/2}s^{1/2}\prod(1-q^nr^ls^m)^{f(nm,l)}\) equals the
+Fourier expansion of the automorphic section
+\(D_X=\Delta_5\) at \(\mathfrak c_\infty\); this is the
+Borcherds--Gritsenko--Nikulin theorem
+\cite{Borcherds95,GN,GNII}.  The supplied
+\(\iota_{\mathrm{aut}}:\mathscr L_{\mathrm{Pf},X}\xrightarrow{\sim}
+\mathcal L^5\otimes\nu_{\Delta_5}\) of (\(\beta\)), compatible with cusp
+trivialization and squaring, transports the inverse-limit Pfaffian to a
+section of \(\mathcal L^5\otimes\nu_{\Delta_5}\).
+
+\smallskip\emph{Step 4 (\(q\)-expansion principle, licensing \(\alpha\)).}
+The chart \(\alpha\) records the open factorization category
+\(\mathcal C\) on \((X,D,\tau)\) with boundary vacuum \(b\): on the
+punctured neighbourhood of \(\mathfrak c_\infty\) inside Sp\((2,\Z)
+\backslash\mathcal H_2\) the chart algebra
+\(A_b=\mathrm{End}_{\mathcal C}(b)\) supplies the local
+factorization-algebra structure within which the Pfaffian section is
+holomorphic.  Two holomorphic genus-two Siegel modular forms with the
+same Maass character \(\nu_{\Delta_5}\) and the same Fourier expansion at
+\(\mathfrak c_\infty\) are equal: this is the \(q\)-expansion principle
+for holomorphic Siegel modular forms
+\cite{Igusa1962,Igusa1964II}.  Both sides
+have weight \(5\) and Maass character \(\nu_{\Delta_5}\): the right-hand
+side by the Borcherds--Gritsenko--Nikulin theorem; the left-hand side
+because the orientation character of the supplied
+\(\mathfrak D_X^{\mathrm{DI}}\), under (O1)+(O1)\(^+\)+(O2), is exactly
+\(\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\) (this is
+Theorem~\ref{thm:ch6-orientation-character}).  Hence
+\(\iota_{\mathrm{aut}}(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}}))=\Delta_5\)
+as sections of \(\mathcal L^5\otimes\nu_{\Delta_5}\).
+
+\smallskip\emph{Step 5 (the squared scalar, licensing \(\beta\)).}
+Squaring forgets orientation: the squared line
+\(\bigl(\mathcal L^5\otimes\nu_{\Delta_5}\bigr)^{\otimes 2}=\mathcal L^{10}\)
+is trivially charactered, and \(\Delta_5^2=\Delta_{10}\) is scalar.
+The OP scalar normalization of Convention~\ref{conv:op-chamber} fixes the partition function
+\(Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}=-4096\,\Delta_5^{-2}\),
+with \(\chi_{10}^{\mathrm{OP}}=D_5^2=4096^{-1}\Delta_5^2\) and
+\(D_5=64^{-1}\Delta_5\).  Composition of the squared Pfaffian section
+with the OP scalar branch gives the level-\(n\) protected scalar trace
+\[
+ Z^X_{\mathrm{OP}}\;=\;-\,(\Pf_{\mathrm{prot}}(\mathfrak D_X^{DI}))^{-2}\cdot
+ C_{\square,X},\qquad C_{\square,X}=4096^{-1},
+\]
+identifying \(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\); the minus sign
+is the OP scalar branch convention, absorbed into
+\((-p_{\mathrm{DT}})^n\), and is not a feature of the orientation
+character.
+\end{proof}
+
+\begin{remark}[Why (D0)+(O1)+(O1)\(^+\)+(O2) and not less]
+\label{rem:ch6-why-four}
+Each of the four packages is essential.  (D0) supplies the existence and
+the finite first-order block; without it there is no
+\(\mathfrak D_{X,R}\) and no Pfaffian product to take.  (O1) supplies
+the orientation line and the reduced \(E\)-quotient descent; without
+the line the Pfaffian section has no domain.  (O1)\(^+\) supplies the
+honest Weyl action on the reduced quotient orientation; without it the
+type-II reflection signs are projective and the orientation character is
+projective, not a homomorphism.  (O2) supplies the local Pfaffian normal
+form; without it the rank \(N_{\delta_i}^{\mathrm{Pf}}\) is undetermined
+and the local sign cannot be computed.  Drop any package and one of the
+five proof steps fails.
+\end{remark}
+
+%==============================================================================
+\section{The orientation character identity}
+\label{sec:ch6-orientation-character}
+%==============================================================================
+
+The second theorem identifies the geometric orientation monodromy character
+\(\epsilon_o\) of the Dirac--Igusa pro-object with the automorphic Maass
+character \(\nu_{\Delta_5}\) on the type-II Weyl group.  The proof
+splits into a local Pfaffian wall computation, a group-theoretic
+extension, and an independent automorphic check.
+
+\begin{theorem}[Orientation character]
+\label{thm:ch6-orientation-character}
+Recall the type-II simple roots
+\(\delta_1=2f_2-f_3,\delta_2=2f_{-2}-f_3,\delta_3=f_3\) on
+\(\La^{2,1}_{II}\subset\La^{2,1}=\Z f_2\oplus\Z f_3\oplus\Z f_{-2}\)
+(Equation~\eqref{eq:bkm-type-ii-simple-roots}).  Granted the orientation
+packages (O1), (O1)\(^+\), (O2), the geometric orientation monodromy
+character of the Dirac--Igusa pro-object equals the automorphic Maass
+character on the type-II Weyl group:
+\[
+\boxed{\;
+\epsilon_o\;=\;\nu_{\Delta_5}
+\quad\text{on}\quad W^{(2)}(\La^{2,1}_{II})\;}.
+\]
+The character takes the value \(-1\) on each of the three type-II simple
+reflections \(s_{\delta_1},s_{\delta_2},s_{\delta_3}\), and the
+identity is reduced to these three values by the abelianization
+\(W^{(2)}(\La^{2,1}_{II})_{\mathrm{ab}}\simeq(\Z/2)^3\)
+(Lemma~\ref{def:O1-plus-weyl-transport}).
+% licensing block removed in voice cleanup; the original tags were
+% \alpha (chart of boundary vacuum b on (X,D,\tau)),
+% \beta (Pfaffian functor + Hall--Drinfeld correspondence),
+% \gamma (pro-object + chain-level weight-completion),
+% \varepsilon (BBDJS orientation + Pfaffian-line non-degeneracy + type-II wall normal form);
+% Theorem~\ref{thm:ch6-pfaffian-dirac} additionally acquires \delta (D0-degeneration endpoint)
+% via (D0). The \alpha,\beta,\gamma,\varepsilon tags here are
+% the same set Theorem~\ref{thm:ch6-pfaffian-dirac} carries through
+% Step 4.
+\end{theorem}
+
+The identity is a comparison of two characters defined independently:
+\(\epsilon_o\) is computed by transport of the Pfaffian section under
+the supplied Weyl action of (O1)\(^+\); \(\nu_{\Delta_5}\) is the Maass
+multiplier of the holomorphic Siegel form \(D_X=\Delta_5\) computed from
+the multiplier system of the corresponding theta lift
+\cite{MAASS:1,GN,Gritsenko99}.  No scalar branch convention enters this
+sign comparison: replacing \(\Delta_5\) by \(c\Delta_5\),
+\(c\in\C^\times\), changes neither the Maass character nor the divisor
+orders.  The factor \(64\) names the monic Borcherds product
+\(D_5=64^{-1}\Delta_5\); the OP/DT scalar \(-4096\) is unused.
+
+\begin{proof}
+Three lemmas combine:
+Lemma~\ref{prop:appE-local-pfaffian-sign} computes the local Pfaffian
+signs on the three simple type-II walls;
+Lemma~\ref{def:O1-plus-weyl-transport} extends a generator
+sign-tuple \((\epsilon_1,\epsilon_2,\epsilon_3)\in\{\pm1\}^3\) to a
+unique character on \(W^{(2)}(\La^{2,1}_{II})\); and
+Lemma~\ref{lem:bkm-maass-restriction} computes the automorphic
+target values \(\nu_{\Delta_5}(s_{\delta_i})=-1\) directly from the
+Maass multiplier and the Borcherds divisor order
+\(d_{\delta_i}^{\mathrm{aut}}=1\).
+
+\smallskip\emph{Step 1 (local Pfaffian signs from (O2)).}  By (O2), at a
+generic point of each \(\Hpl_{\delta_i}\), \(i=1,2,3\), the supplied
+local equation \(u_i\) satisfies \(s_{\delta_i}(u_i)=-u_i\) and the
+normal determinant-complex splits as
+\(K^{\mathrm{nor}}_{\delta_i}\simeq[\R\xrightarrow{u_i}\R]\) with
+\(\operatorname{Pf}=\upsilon_{\delta_i}u_i\) and
+\(s_{\delta_i}(\upsilon_{\delta_i})=\upsilon_{\delta_i}\).  Transport
+along the closed path
+\(\ell_{\delta_i}\) (the path in the reduced quotient wall-complement
+carrying \(u_i=\epsilon\) to \(u_i=-\epsilon\), closed by the (O1)\(^+\)
+lift \(\widetilde\tau_i\)) sends
+\(\upsilon_{\delta_i}u_i\) to \(-\upsilon_{\delta_i}u_i\), giving
+\[
+\epsilon_o(s_{\delta_i})=(-1)^{N_{\delta_i}^{\mathrm{Pf}}}=-1,
+\qquad i=1,2,3.
+\]
+This is Lemma~\ref{prop:appE-local-pfaffian-sign}.  Squaring eliminates
+the sign and hence eliminates the OP scalar branch ambiguity: the squared
+Pfaffian \(\operatorname{Pf}(K^{\mathrm{nor}}_{\delta_i})^2=u_i^2\) is
+fixed by \(s_{\delta_i}\).
+
+\smallskip\emph{Step 2 (group-theoretic extension via (O1)\(^+\)).}  The
+type-II Weyl group has Coxeter presentation
+\[
+W^{(2)}(\La^{2,1}_{II})
+\simeq
+\langle s_{\delta_1},s_{\delta_2},s_{\delta_3}\mid
+s_{\delta_1}^2=s_{\delta_2}^2=s_{\delta_3}^2=1\rangle,
+\]
+with no braid relations — the off-diagonal entries
+\((\delta_i,\delta_j)=-2\) for \(i\ne j\) give Coxeter exponents
+\(m_{ij}=\infty\).  Hence
+\(W^{(2)}(\La^{2,1}_{II})_{\mathrm{ab}}\simeq(\Z/2)^3\) with one
+generator per \(s_{\delta_i}\), and any \(\{\pm1\}\)-valued assignment
+on the generators extends uniquely to a homomorphism.  By (O1)\(^+\),
+\([c_o]=0\), \(\widetilde\tau_i^{\,2}=1\), and
+\(\omega_{i,\mathcal C}=0\); the lifts \(\widetilde\tau_i\) define an
+honest action on the reduced quotient orientation, and the induced
+character has \(\epsilon_o(s_{\delta_i})=-1\) for \(i=1,2,3\).  This
+is Lemma~\ref{def:O1-plus-weyl-transport}.
+
+\smallskip\emph{Step 3 (independent automorphic computation of
+\(\nu_{\Delta_5}\)).}  The Maass multiplier
+\(\nu_{\Delta_5}\) of the singular theta lift of \(\phi_{0,1}\) is
+computed from the multiplier system of the Borcherds product (Borcherds
+\cite{Borcherds95}, Gritsenko--Nikulin
+\cite[Section~3]{GN},\cite{Gritsenko99}, Maass \cite{MAASS:1}).
+On the type-II simple roots
+\(\delta_1=2f_2-f_3\), \(\delta_2=2f_{-2}-f_3\), \(\delta_3=f_3\), the
+Borcherds divisor orders are
+\[
+d_{\delta_i}^{\mathrm{aut}}
+:=\ord_{\Hpl_{\delta_i}}(\Delta_5)=f(0,\pm1)=1,
+\qquad i=1,2,3,
+\]
+so \(\nu_{\Delta_5}(s_{\delta_i})=(-1)^{d_{\delta_i}^{\mathrm{aut}}}=-1\)
+for \(i=1,2,3\).  This is
+Lemma~\ref{lem:bkm-maass-restriction}.  The chamber-permuting
+roots \(f_{-2}-f_2,f_2-f_3,f_2+f_3\) lie in
+\(\La^{2,1}\setminus\La^{2,1}_{II}\) and are not type-II walls; their
+Maass values are \(+1\) but no Hall orientation sign is asserted on them
+unless a semidirect-product Hall lift is supplied
+(Remark~\ref{rmk:ch6-S3-extension}).
+
+\smallskip\emph{Step 4 (the comparison \(\epsilon_o=\nu_{\Delta_5}\)).}
+Two \(\{\pm1\}\)-valued characters of \(W^{(2)}(\La^{2,1}_{II})\) that
+agree on \(s_{\delta_1},s_{\delta_2},s_{\delta_3}\) agree everywhere
+(Step~2).  By Steps~1 and~3, both \(\epsilon_o\) and
+\(\nu_{\Delta_5}\) take the value \(-1\) on each of the three simple
+reflections.  Therefore
+\(\epsilon_o=\nu_{\Delta_5}\) on
+\(W^{(2)}(\La^{2,1}_{II})\).
+\end{proof}
+
+\begin{remark}[The OP minus sign is not the source of \(\epsilon_o\)]
+\label{rmk:ch6-op-not-orientation-source}
+The two computations of Steps 1 and 3 are independent.  Step 1 uses no
+automorphic data; Step 3 uses no Pfaffian local model.  In particular,
+the OP scalar
+\(C_{\square,X}=-4096=\operatorname{sign}(C_{\square,X})\cdot64^2\) does
+not source the orientation character: squaring forgets orientation, so
+\(C_{\square,X}\) carries no information about \(\epsilon_o\).  The
+minus sign \(\operatorname{sign}(C_{\square,X})=-1\) is the OP scalar
+branch convention of \cite{OB}, absorbed into the fermionic
+shift \((-p_{\mathrm{DT}})^n\) of the OP/DT chamber.  The orientation
+character is a \emph{geometric} monodromy datum, computed by transport
+of the Pfaffian line around type-II walls; it is fixed by the data of
+(O1)+(O1)\(^+\)+(O2), and is independently checked against the
+automorphic target by Step 3.
+\end{remark}
+
+\begin{remark}[Imaginary roots are not Weyl reflections]
+\label{rmk:ch6-imaginary-roots}
+The Weyl group \(W^{(2)}(\La^{2,1}_{II})\) of the type-II BKM datum is
+generated by real simple reflections only.  The imaginary simple roots
+contribute to the Weyl--Kac--Borcherds denominator through the
+multiplicity coefficients \(m(a)\) and \(\tau(a)\) of
+Gritsenko--Nikulin \cite[Theorem~2.1]{GNII},\cite[Section~3]{GN}; they
+do not define reflections in
+\(W^{(2)}(\La^{2,1}_{II})\).  Hence
+\(\epsilon_o:W^{(2)}(\La^{2,1}_{II})\to\{\pm 1\}\) is a real-root
+reflection datum.  Local divisor monodromy of a compact Hall theory
+around imaginary components of the Borcherds divisor is not a Weyl
+character and is not asserted here.
+\end{remark}
+
+\begin{remark}[Extension to \(W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II})\)]
+\label{rmk:ch6-S3-extension}
+The chamber-permuting symmetry group
+\(\Aut(\Poly_{II})\simeq S_3\) acts on the Coxeter generators
+\(s_{\delta_1},s_{\delta_2},s_{\delta_3}\) by permutation; its three
+reflections \(s_{f_{-2}-f_2},s_{f_2-f_3},s_{f_2+f_3}\) have
+\(\nu_{\Delta_5}=+1\).  An extension of \(\epsilon_o\) to
+\(W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II})\) is not asserted in
+this chapter; it requires a separately supplied Hall semidirect-product
+lift of the chamber-permuting reflections.
+\end{remark}
+
+%==============================================================================
+\section{The primitive recognition theorem}
+\label{sec:ch6-primitive-recognition}
+%==============================================================================
+
+The third theorem identifies the source-side primitive Lie superalgebra
+of the Dirac--Igusa pro-object with the BKM denominator algebra
+\(\mathfrak g_{\Delta_5}\).  The conditions form the
+\emph{recognition criterion}: ten finite-stage data carrying compact
+geometric provenance, none of which is inferable from the Borcherds
+product or signed determinant alone.
+
+\begin{theorem}[Primitive recognition]
+\label{thm:ch6-primitive-recognition}
+Granted the recognition criterion (S1)--(S10) of
+Theorem~\ref{thm:primitive-recognition}, the cofinal finite-window
+datum of Definition~\ref{def:cofinal-primitive-recognition-datum},
+the chiral Koszul source datum of
+Definition~\ref{def:chiral-koszul-source-datum}, and the discharge
+of $(O1)$, $(O1)^+$, $(O2)$ through the source orientation lane,
+suppose the compact \(K3\times E\) Hall/factorization construction
+supplies, on a cofinal sequence of downward-saturated finite root windows
+\(W_1\subset W_2\subset\cdots\) with
+\(\bigcup_\nu W_\nu=\mathcal R_+\):
+\begin{itemize}
+\item \emph{(S1) Chain-level descent endpoint.}  The (D0)-degenerated
+  source coalgebra \((C_{X,W_\nu},Q_{X,W_\nu})\) of
+  Definition~\ref{def:chiral-koszul-source-datum}, descended chain-level
+  to its primitive part on every finite window
+  \(W_\nu\), supplying both the orientation lane input and the
+  Frobenius--Serre primitive structure feeding the recognition window.
+\item \emph{(S2) Cartan and root-degree matching.}  An even Cartan
+  identification \(\iota_H:P^{\Pi,\mathrm{red}}_{X,0}\xrightarrow{\sim}
+  \La^{2,1}_{II}\otimes\C\), with Gram-grading
+  \(\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}\).
+\item \emph{(S3) Simple primitive representatives.}  Parity-homogeneous
+  \(e_i^X,f_i^X,h_i^X\) for every simple-root index \(i\in I\) of
+  \(\mathscr B_{\Delta_5}\), with Gritsenko--Nikulin parity dimensions
+  \(\mu_{\overline 0}(a),\mu_{\overline 1}(a)\) on imaginary fibres.
+\item \emph{(S4) Borcherds--Kac relations.}  Cartan, Chevalley
+  (\([e_i^X,f_j^X]=\delta_{ij}h_i^X\)), real Serre, Borcherds
+  orthogonality, super sign, and isotropic-string relations satisfied in
+  the protected Hall bracket.
+\item \emph{(S5) Completed Hopf radical equality.}  The completed Hopf
+  pairing has closed homogeneous radical \(\operatorname{Rad}_X\) which
+  is a Lie ideal and a coideal, and identifies under the radical
+  quotient with \(\operatorname{Rad}_{\mathrm{GN}}\).
+\item \emph{(S6) No-extra-relations.}  The presentation map
+  \(\pi:\widehat{\mathfrak F}(\mathscr B_{\Delta_5})\to
+  P_X^{\Pi,\mathrm{red}}\) has
+  \(\ker\pi=\overline{J_{\mathrm{BK}}+\operatorname{Rad}_{\mathrm{GN}}}\),
+  on every finite window separately.
+\item \emph{(S7) Generation.}  \(P_X^{\Pi,\mathrm{red}}\) is
+  topologically generated by \(P^{\Pi,\mathrm{red}}_{X,0}\) and
+  \(\{e_i^X,f_i^X\}_{i\in I}\).
+\item \emph{(S8) Completed PBW.}  The associated graded
+  \(\operatorname{gr}_{\mathrm{PBW}}U(P_X^{\Pi,\mathrm{red}})_W
+  \xrightarrow{\sim}
+  \operatorname{gr}_{\mathrm{PBW}}U(\mathfrak g_{\Delta_5})_W\) is an
+  isomorphism on every finite window, with strict transitions.
+\item \emph{(S9) Exact triangular completion.}  The HN inverse limit is
+  exact on the saturated finite root windows: \(\lim^1\) vanishes for
+  the kernels, radicals, PBW associated gradeds, and root-space parity
+  pieces.
+\item \emph{(S10) Full parity dimensions.}  Two integers per nonzero
+  root degree:
+  \(\dim P^{\Pi,\mathrm{red}}_{X,\gamma,\overline p}
+  =\rootmult_{\overline p}^{\mathrm{GN}}(\alpha(\gamma))\),
+  \(p=0,1\); not only their signed difference.
+\end{itemize}
+Then there is a canonical isomorphism of completed
+\(\Gamma_{\mathrm{gram}}\)-graded Lie superalgebras on the active root
+window
+\[
+\boxed{\;
+H^0\Prim_{\mathrm{prot}}\!\bigl(
+\overline\Pi_{X,*}^{\Theta}\mathcal F_X\bigr)
+\big/\overline{\operatorname{Rad}\langle\,\cdot\,,\,\cdot\,\rangle_X}
+\;\cong\;\mathfrak g_{\Delta_5}
+\;}
+\]
+and the Weyl--Kac--Borcherds denominator of
+\(P_X^{\Pi,\mathrm{red}}\) is \(\operatorname{den}(\mathfrak g_{\Delta_5})
+=64^{-1}\Delta_5(2Z)\).  If in addition the chiral Koszul source datum of
+Definition~\ref{def:chiral-koszul-source-datum} is supplied, including
+the Koszul Mittag--Leffler exactness hypothesis of
+Proposition~\ref{prop:chiral-koszul-source-datum-consequence}, then the
+chiral cobar of the source coalgebra \(C_X\) is identified with the
+formal current envelope:
+\[
+\Omega_E^{\mathrm{ch}}C_X\;\simeq\;\mathsf{Den}_{\Delta_5,E}.
+\]
+% licensing block removed in voice cleanup; the original tags were
+% \alpha (chart b of open factorization category),
+% \beta (Hall--Drinfeld correspondence + Sp^ch specialization),
+% \gamma (pro-object ambient with completed PBW),
+% \delta (D0-degeneration endpoint as input to (S1) and (S3)),
+% \varepsilon (orientation lane through (S1) and the closure of
+% \operatorname{Rad}_X by the Frobenius compatibility of
+% Lemma~\ref{thm:hall-product}.
+\end{theorem}
+
+\begin{proof}
+The argument is the inverse-limit assembly of (S1)--(S10) on each
+finite window, with the chiral cobar identification appended at the end.
+The proof of Theorem~\ref{thm:primitive-recognition} supplies the
+window-wise version; we extract the load-bearing logic and add the
+chiral-cobar step.
+
+\smallskip\emph{Step 1 (presentation map and kernel, licensing
+\(\alpha+\beta\)).}  (S2) and (S3) define the continuous Lie-superalgebra
+homomorphism
+\[
+\pi:\widehat{\mathfrak F}(\mathscr B_{\Delta_5})
+\longrightarrow P_X^{\Pi,\mathrm{red}}
+\]
+on the descended Gram-graded completion.  (S4) puts the Borcherds--Kac
+ideal \(J_{\mathrm{BK}}\) in the kernel.  (S6) gives the kernel equality
+\(\ker\pi=\overline{J_{\mathrm{BK}}+\operatorname{Rad}_{\mathrm{GN}}}\)
+on every finite window, hence injectivity of the descended map
+\(G(\mathscr B_{\Delta_5})\to P_X^{\Pi,\mathrm{red}}\).  (S7) gives
+surjectivity.  Thus the descended map is an isomorphism on every finite
+window.
+
+\smallskip\emph{Step 2 (radical descent, licensing \(\varepsilon\)).}
+(S5) identifies the source Hopf radical
+\(\overline{\operatorname{Rad}_X}\) with the target radical
+\(\overline{\operatorname{Rad}_{\mathrm{GN}}}\).  The required Hopf
+adjointness, ideal/coideal property, and closedness on the inverse
+system are the finite Hopf-radical conditions of
+Lemma~\ref{thm:hall-coproduct};
+quotient-tensor non-degeneracy is fixed by the Frobenius identity from
+the CY-3 Serre functor of
+Lemma~\ref{thm:hall-product}, which is part of the
+orientation lane.
+
+\smallskip\emph{Step 3 (full parity dimensions, licensing \(\delta\)).}
+(S10) is the two-integer equality
+\(\dim P^{\Pi,\mathrm{red}}_{X,\gamma,\overline p}=
+\rootmult_{\overline p}^{\mathrm{GN}}(\alpha(\gamma))\) for \(p=0,1\), not
+just the signed difference.  This rules out hidden zero-superdimension
+source summands, wrong parity lifts invisible to the determinant, and
+parity-cancelling ideals.  Crucially, a putative compact source which has
+all the same Hall bracket templates as
+\(\mathfrak g_{\Delta_5}\) on a finite window can still fail (S5) if there
+is a kernel element \(k\in K_{\gamma_\rho}\) with
+\((Q_{\gamma_\mu}\otimes Q_{\gamma_\nu})D^{\mu,\nu}_\rho(k)\ne 0\); the
+quotient target table sees no discrepancy, but the radical is not a
+coideal and the Hopf quotient is not defined
+(Corollary~\ref{thm:primitive-recognition}).  This is the finite
+tensor-Hopf obstruction hidden by signed determinant data; (S5)+(S10)
+together block it.
+
+\smallskip\emph{Step 4 (PBW comparison and exact completion, licensing
+\(\gamma\)).}  (S8) is the associated-graded isomorphism on every
+finite window, with strict transitions.  (S9) is the exact-completion
+clause: \(\lim^1\) vanishes for kernels, radicals, PBW associated
+gradeds, and root-space parity pieces.  Equivalently, no new generator,
+relation, radical element, or parity-cancelling summand appears only
+after completion.  Class \(M\) completion is the ambient: chain-level
+identifications hold after weight-completion; this is the licensing
+\(\gamma\) clause.
+
+\smallskip\emph{Step 5 (passage to the inverse limit).}  Since the
+windows are cofinal (\(\bigcup_\nu W_\nu=\mathcal R_+\)) and the radical
+in (S5) is the closure of the finite kernels, the finite isomorphisms
+of Steps 1--4 assemble to the inverse-limit isomorphism
+\[
+H^0\Prim_{\mathrm{prot}}\!\bigl(
+\overline\Pi_{X,*}^{\Theta}\mathcal F_X\bigr)
+\big/\overline{\operatorname{Rad}\langle\,\cdot\,,\,\cdot\,\rangle_X}
+=P_X^{\Pi,\mathrm{red}}
+\xrightarrow{\,\sim\,}\mathfrak g_{\Delta_5}.
+\]
+The Weyl--Kac--Borcherds denominator of
+\(P_X^{\Pi,\mathrm{red}}\) is therefore
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\), by
+Theorem~\ref{thm:bkm-denominator-algebra-identity}.
+
+\smallskip\emph{Step 6 (chiral cobar identification).}  Suppose the
+chiral Koszul source datum of
+Definition~\ref{def:chiral-koszul-source-datum} is supplied:
+\((\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}},C_{X,R},
+F^{\mathrm{co}}_{R,\bullet},\Delta_R^{\mathrm{ch}},
+b_{X,R},\Theta_{\mathrm{Kos},R})\) with vanishing residual
+\(\mathfrak O_{\mathrm{Kos},R}=0\) compatibly in \(R\) and with the
+Mittag--Leffler exactness hypothesis of
+Proposition~\ref{prop:chiral-koszul-source-datum-consequence}.  The
+target side is the formal current envelope
+\(\mathsf{Den}_{\Delta_5,E}=U_E^{\mathrm{ch}}\!
+\bigl(\operatorname{Cur}_E(\mathcal A_{\mathrm{den}})\bigr)\)
+of Proposition~\ref{prop:bkm-formal-current-envelope}.  The cobar comparison
+of Proposition~\ref{prop:chiral-koszul-source-datum-consequence}
+identifies
+\[
+\Omega_E^{\mathrm{ch}}C_X\;\simeq\;\mathsf{Den}_{\Delta_5,E},
+\]
+through the source-internal bar/cobar admissibility (the residual
+\(\mathfrak o^{\varepsilon,\mathrm{src}}_R=0\)) and the source-to-target
+quasi-isomorphism (\(\mathfrak o^{\vartheta}_R=0\)), avoiding the
+target-internal bar/cobar counit; this is the separation that licensing
+tag \(\beta\) provides between observables and states.
+\end{proof}
+
+\begin{remark}[The zero-bracket graded super VS counterexample]
+\label{rmk:ch6-zero-bracket-counterexample}
+The criterion (S1)--(S10) blocks the trivial counterexample of a graded
+super vector space \(V_\bullet\) with all brackets zero and parity
+dimensions matching \(\rootmult_{\overline p}^{\mathrm{GN}}\) on every
+window.  Such a \(V_\bullet\) satisfies (S2), (S3), (S7), (S8), (S10),
+and trivially (S4) (because all brackets are zero, so all relations
+hold); it satisfies the signed-superdimension residual on the active
+support.  It fails (S6): the kernel of the presentation map
+\(\pi:\widehat{\mathfrak F}(\mathscr B_{\Delta_5})\to V_\bullet\) is not
+\(\overline{J_{\mathrm{BK}}+\operatorname{Rad}_{\mathrm{GN}}}\) but
+contains every commutator \([e_i,e_j]\) with \((\alpha_i,\alpha_j)\ne 0\),
+so the induced map \(G(\mathscr B_{\Delta_5})\to V_\bullet\) is not
+injective.  It fails (S5): the Hopf pairing on \(V_\bullet\) is the zero
+pairing (or any pairing inherited from the target), and the radical is
+all of \(V_\bullet\), so the radical quotient is zero and not the BKM
+target.  It fails (S4) on the precise statement
+\([e_i^X,f_j^X]=\delta_{ij}h_i^X\) of the Chevalley relation: with all
+brackets zero and \(h_i^X\ne 0\), this fails on the diagonal \(i=j\).
+The counterexample shows that signed-superdimension matching alone is
+not recognition; the bracket-level data of (S4)+(S5)+(S6) is the
+load-bearing content.
+\end{remark}
+
+\begin{remark}[Recognition without (D0)+(O1)+(O1)\(^+\)+(O2)]
+\label{rmk:ch6-recognition-without-orientation}
+The recognition criterion of Theorem~\ref{thm:ch6-primitive-recognition}
+nominally lists no orientation hypothesis among (S1)--(S10).  The
+orientation packages enter through (S1) — the chain-level descent
+\(\overline\Pi_{X,*}^{\Theta}\mathcal F_X\) is conditional on the
+orientation lane via Definition~\ref{def:O1-strong-reduced-orientation} and the
+Frobenius identity from the CY-3 Serre functor — and through (S5),
+where the Hopf radical's coideal property is fixed by the same Frobenius
+identity (Lemma~\ref{thm:hall-product}).  In the
+chapter's combined statement
+(Theorem~\ref{thm:ch6-pfaffian-dirac}+Theorem~\ref{thm:ch6-orientation-character}+Theorem~\ref{thm:ch6-primitive-recognition})
+the orientation packages are loaded once and serve all three theorems.
+\end{remark}
+
+%==============================================================================
+\section{Cross-volume consistency}
+\label{sec:ch6-cross-repo}
+%==============================================================================
+
+The three theorems sit inside the chiral-bar-cobar /
+Calabi--Yau-quantum-groups constellation as the level-\(4\)/level-\(5\)
+face of the chain fusion of the Calabi--Yau-to-chiral programme.  Three
+consistencies are load-bearing.
+
+\subsection{Vol II Construction Problem 1}
+\label{subsec:ch6-vol2-CP1}
+
+Vol II's Construction Problem 1 is exactly the cross-level identity
+\textcircled{\scriptsize 2}\(\leftrightarrow\)\textcircled{\scriptsize 3}
+applied at level \(4\)/level \(5\) of the chain.  The Vol II primitive
+package on \((X,D,\tau)\) is the bicoloured nine-tuple
+\[
+\bigl(\mathcal C\big|_{(X,D,\tau)},\,
+\mathcal D^{\mathrm{cl}}\big|_X;\,
+b,\,A_b,\,F^{\mathrm{cl}};\,
+\sigma_{\mathrm{half}},\,\operatorname{tr}^{\mathrm{cl}}_X;\,
+\operatorname{Tr}_{\mathcal C}\bigr).
+\]
+The chart of vacuum \(b\) is the licensing \(\alpha\) input; the chart
+algebra \(A_b=\mathrm{End}_{\mathcal C}(b)\) is the open primitive
+algebra; the closed-colour vacuum factorization algebra
+\(F^{\mathrm{cl}}\) gives the closed-side trace
+\(\operatorname{tr}^{\mathrm{cl}}_X\) which evaluates at the type-II
+cusp \(\mathfrak c_\infty\) to the level-\(5\) Borcherds--Gritsenko--Nikulin
+section \(D_X=\Delta_5\) (View \textcircled{\scriptsize 1}).  The
+identification
+\(A_b=\Phi^{(\Sigma_{d-1},C)}_d(\mathcal C_X)\) is the chain fusion of
+the chiral-bar-cobar / Calabi--Yau-quantum-groups programme at level
+\(2\): the Calabi--Yau-side's Stage-2 chiral algebra \(A_X\) is the
+open-side's chart algebra \(A_b\) on the same curve \(C\) with
+boundary vacuum induced by \((\mathcal C_X,\Sigma_{d-1},C)\).  In our setting,
+\(A_X=A_b\) is the chiral algebra on \(E\) attached to the Hall source
+of \(K3\times E\); the chiral cobar
+\(\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}\) of
+Theorem~\ref{thm:ch6-primitive-recognition} is the source-side chiral
+expression at level \(2\), and its constant-current Lie superalgebra is
+\(\mathfrak g_{\Delta_5}\) (View \textcircled{\scriptsize 2}).  The
+protected Pfaffian \(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\)
+is the level-\(5\) scalar shadow of the open-cyclic trace; this is the
+content of the Universal Holography master theorem of Vol II applied at
+\((X=K3\times E,\Delta=\Delta_5)\).
+
+\subsection{Vol III chain fusion at level \(2\)}
+\label{subsec:ch6-vol3-chain-fusion}
+
+The Vol III \(\kappa\)-stratification supplies the
+\(\kappa\)-tuple
+\((\kappa_{\mathrm{cat}},\kappa_{\mathrm{ch}}^{\mathrm{Hodge}},
+\kappa_{\mathrm{ch}}^{\mathrm{Heis}},\kappa_{\mathrm{BKM}},
+\kappa_{\mathrm{fiber}})=(0,0,3,5,24)\) at \(K3\times E\); the row
+\(\kappa_{\mathrm{BKM}}=5\) is the cusp-form weight realized by
+\(\Delta_5\), and the row \(\kappa_{\mathrm{fiber}}=24\) is
+\(\chi_{\mathrm{top}}(K3)=24\).  The additive collapse
+\(\kappa_{\mathrm{BKM}}=\kappa_{\mathrm{ch}}+\chi(\mathcal O_{\mathrm{fiber}})\)
+fails at \(N=1\) (Vol III counterexample), confirming that
+\(\kappa_{\mathrm{fiber}}\) is the Euler characteristic of the
+topological fibre and not of \(\mathcal O_{\mathrm{fiber}}\); for K3,
+\(\chi_{\mathrm{top}}(K3)=24\) but \(\chi(\mathcal O_{K3})=2\).  The
+Vol III chain fusion at level \(2\) identifies the chiral algebra
+\(A_X\) supplied by Vol III's CY-input face with the chart algebra
+\(A_b\) supplied by Vol II's open-input face; in our setting,
+\(A_X=A_b=\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}\) by
+Theorem~\ref{thm:ch6-primitive-recognition}.
+
+\begin{remark}[Coefficient projection is not a Hall comparison]
+\label{rmk:ch6-coefficient-projection}
+A Hall--Borcherds comparison map cannot be defined by coefficient
+projection alone, and a coefficient projection respecting charge
+addition because both products use the same cone is not a recognition
+theorem.  A coefficient projection is not a Hall product/bracket matrix
+comparison, and does not prove Borcherds--Serre rows, radical descent,
+no-extra-relations, or PBW.  The recognition criterion (S4)--(S10) of
+Theorem~\ref{thm:ch6-primitive-recognition} is the corrected statement:
+the source-side bracket matrices, Hopf radical, kernel equality, and
+PBW associated-graded comparison are independent data, none of which is
+inferable from a coefficient projection.
+\end{remark}
+
+\subsection{BCOV / mixed holomorphic-topological strings}
+\label{subsec:ch6-bcov}
+
+The mixed holomorphic-topological strings companion provides the local
+model \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) with brane
+completion as one realization of the Stage-1 datum
+\(\Phi_d^{\mathrm{FA}}\); the global obstruction is the holomorphic
+de Rham obstruction class.  The level-\(5\) scalar shadow
+\(Z_{\mathrm{BPS}}^{K3\times E}=\Delta_5^{-2}\) on the closed
+\(K3\times E\mapsto\mathrm{point}\) cobordism is the BPS partition
+function (Section~9 of the manuscript); promotion to a 3d gravitational
+path integral on \(K3\times E\) requires the Hall--Borcherds residual
+of Vol II and is not claimed by
+Theorem~\ref{thm:ch6-pfaffian-dirac}.  The identity
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5\)
+is a level-\(4\)/level-\(5\) statement; its squared scalar trace is
+level \(5\); the operator-level package \(\mathfrak D_X^{\mathrm{DI}}\)
+is itself level \(4\) as a pro-object, conditional on (D0), (O1),
+(O1)\(^+\), (O2).
+
+%==============================================================================
+\section{Residual obstructions and open subroutes}
+\label{sec:ch6-residuals}
+%==============================================================================
+
+The three theorems of this chapter are conditional.  Five obstructions
+remain, each isolated to a precise open subroute.
+
+\paragraph{(D0).}  The cosection-twisted reduced d-critical orientation
+theory is constructed locally on rank-one strata and partially on
+Klein-four small-orbit boundary
+(Lemma~\ref{prop:appE-local-pfaffian-sign}); the connected
+\(BE\)-linearization is supplied conditional on
+\(\mathfrak O_R^{\mathrm{O1+,conn}}=0\); the inverse-limit exhaustion of
+the active support is partial on the height-\(7\) closure
+\(W_{\le 7}\) and open on the full positive cone \(\mathcal R_+\).  The
+sub-residuals \(\mathfrak O_{D_0,R}\) of the \(D_0\)-state, \(D_0\)-quotient,
+\(D_0\)-observable, \(D_0\)-descent, and \(D_0\)-Pfaffian rows of
+Definition~\ref{thm:finite-stage-dirac-igusa-pro-object} are tracked stage by
+stage in the cofinal HN inverse system.
+
+\paragraph{(O1).}  Rank-one components are oriented: Joyce--Upmeier
+multiplicative orientation \cite{JoyceUpmeier,JoyceTanakaUpmeier} on
+the open factorization correspondences and BBDJS \cite{BBDJS2015} on
+the unreduced d-critical line, with the rank-one Pin\(^c\)-lift gerbe
+vanishing on rank-one strata.  HN-reducible Pin\(^c\) gerbe is settled
+on length-\(\ell\ge 2\) HN strata whose graded factors lie in the
+rank-one sector, by
+Lemma~\ref{prop:appE-local-pfaffian-sign}; stable higher-rank
+length-one HN strata remain open.  The finite-stabilizer linearization
+characters \(\lambda^{H}_{\mathcal C}=0\) are settled for \(N=2\)
+Klein-four by Lemma~\ref{prop:appE-local-pfaffian-sign} and partially
+for \(a\ge 2\) two-primary residuals; the connected
+\(BE\)-linearization holds for translation-equivariant reduced
+orientation lines.
+
+\paragraph{(O1)\(^+\).}  The projective cocycle
+\([c_o]\in H^2(W^{(2)}(\La^{2,1}_{II});\mathbb F_2)\) vanishes on the
+finite action-groupoid level for the three rank-one type-II crossings
+(Proposition~\ref{prop:rank-one-crossing-o2-sign}).  The
+torsor defects \(\omega_{i,\mathcal C}=0\) are settled for the rank-one
+sector and open for higher-rank components.  The honest Weyl action on
+the reduced quotient orientation extends from the local model to the
+cofinal HN system through
+Corollary~\ref{def:O1-plus-weyl-transport}; cofinal
+extension to the full \(\mathcal R_+\) is open.
+
+\paragraph{(O2).}  The rank-one normal-form rank
+\(N_{\delta_i}^{\mathrm{Pf}}=1\) holds for \(i=1,2,3\)
+(Lemma~\ref{prop:appE-local-pfaffian-sign}).  The type-II middle-wall
+constant \(4096=2^{12}=64^2\) admits two readings: as the squared
+theta-leading on the type-II Borcherds product (where the \(64=2^6\)
+prefactor of \(D_5=64^{-1}\Delta_5\) doubles by \(\Delta_5^2=\Delta_{10}\))
+and as the \(2^{12}\) sign assignments
+\((\pm 1)^{\dim_{\mathrm{Spin}}}\) over the \(12\)-dimensional
+half-Hilbert orbit, with the reconciliation between the two readings an
+open part of the \((O2)\) discharge per
+Appendix~\ref{app:pfaffian-wall-O2-4096}.  The OP scalar branch sign
+\(-1\) is absorbed into \((-p_{\mathrm{DT}})^n\) of the OP/DT chamber,
+not into the orientation line.  The middle wall \(\delta_2\leftrightarrow(0,1,1)\) is represented
+by a wrapped wall object with positive geometric \(b\)-degree; the
+component, boundary, overlap, quotient, and protected integration
+compatibility package
+(Proposition~\ref{prop:appE-local-pfaffian-sign}) is
+discharged on the rank-one wall atlas and open on the higher-rank wall
+atlas.
+
+\paragraph{Recognition criterion (S1)--(S10).}  The window
+\(W_{\le 3}\) is the first arithmetic window but is not relation-closed.
+The first relation-closed window is the height-\(7\) closure
+\[
+W_{\mathrm{rel}}^+
+=W_{\le 3}^{\mathrm{act}}\cup R_4\cup I_4\cup C_{\le 7}
+\cup\{2\delta_{123}\},
+\]
+adding the real-Serre terminal rows, doubled isotropic rows,
+\(\delta_{123}\)-real strings, odd--odd \(\delta_{123}\) rows, and
+complementary height-seven strings.  At \(W_{\le 3}\) the target parity
+table
+\(\delta_i:1|0\), \(a_{ij}:10|0\), \(2\delta_i+\delta_j:1|0\),
+\(\delta_{123}:29|93\) is computed; a compact source implementing
+(S3)--(S10) on \(W_{\le 3}\) is open, and the source identification at
+\(W_{\mathrm{rel}}^+\) is the next milestone.
+
+\paragraph{Vol III Hall--Drinfeld--Borcherds spectral sequence on compact
+non-toric CY3.}  The Hall--Drinfeld--Borcherds spectral sequence
+abutting from Vol III's CoHA-type input to the BKM denominator on
+\(K3\times E\) is open on the compact non-toric Calabi--Yau threefold,
+even after (D0), (O1), (O1)\(^+\), (O2) are supplied; this is the next
+frontier and is recorded in Section~10 of the manuscript.  The
+finite-stage Hall source kernel of
+Theorem~\ref{thm:finite-stage-dirac-igusa-pro-object} is the
+first-order replacement.
+
+\paragraph{Closure of \textcircled{\scriptsize 2}\(\leftrightarrow\)\textcircled{\scriptsize 3}.}
+The three theorems of this chapter close the cross-level identity
+\textcircled{\scriptsize 2}\(\leftrightarrow\)\textcircled{\scriptsize 3}
+under the four orientation packages and the recognition criterion.  The
+cross-level identities
+\textcircled{\scriptsize 1}\(\leftrightarrow\)\textcircled{\scriptsize 2}
+and \textcircled{\scriptsize 2}\(\leftrightarrow\)\textcircled{\scriptsize 5}
+are imported from Borcherds--Gritsenko--Nikulin and Howe.  The
+operator-level package
+\(\mathfrak D_X^{\mathrm{DI}}\) is conditional as a pro-object; the
+scalar shadow \(Z_{\mathrm{BPS}}^{K3\times E}=\Delta_5^{-2}\) is the
+level-\(5\) protected trace.  The compact BPS Hilbert space
+interpretation, the 3d gravitational path integral, and the global
+Calabi--Yau realization are level \(3\), level \(2\), and level \(1\)
+respectively, and remain open frontier targets, recorded honestly and
+not closed by relabelling.

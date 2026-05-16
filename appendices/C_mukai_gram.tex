@@ -1,0 +1,567 @@
+\section{Mukai--Gram dictionary on \texorpdfstring{$K3\times E$}{K3 x E}}
+\label{appendix:mukai-gram-dictionary}
+
+Let \(X=S\times E\) be the Calabi--Yau threefold, with \(S\) a smooth
+complex K3 surface and \(E\) a smooth complex elliptic curve. The
+Mukai vector and Mukai pairing on \(\widetilde H(S,\Z)\), together with
+the K\"unneth decomposition on \(H^*(X,\Z)\), produce the Gram-degree
+projection \(\Pi_X:\Gamma_X^{\mathrm{form}}\to\Gamma_{\mathrm{gram}}\)
+and its normal-ordered companion \(\overline\Pi_X\) on the central
+extension \(\widehat\Gamma_X\). The Borcherds expansion variables
+\(q^nr^ls^m\) of every Igusa cusp expansion in the body are the
+Gram-degree shadow of a dyonic charge \(c=(Q,P)\) on a
+one-dimensional subscheme \(Y\subset X\). For \(Y\) of class
+\([Y]=(\beta_h,d)\) and \(\chi(\mathcal O_Y)=n\),
+\[
+\Pi_X(Q_Y,P_Y)=(h-1,\,n,\,d-1).
+\]
+The threefold Euler characteristic
+\(n=\chi(\mathcal O_Y)\) is the direct topological invariant; no
+``Todd correction'' enters, and no ambient fourfold appears.
+
+The constructions of this appendix sit at Beilinson chart layer
+\(\alpha\) (intrinsic charge data) plus
+\(\gamma\) (ambient Mukai/Gram lattice). The
+\(\kappa\)-tuple, orientation character \(\epsilon_o\), Pfaffian
+section, and recognition theorem live above; this appendix supplies the
+chart data they consume.
+
+\subsection{Mukai vector and Mukai pairing on a K3 surface}
+\label{subsec:mukai-vector-pairing}
+
+\begin{definition}[Mukai lattice and Mukai vector]
+\label{def:mukai-lattice-vector-appendixC}
+\ClaimStatusDefinition\
+Let \(S\) be a smooth complex K3 surface. The Mukai lattice is the
+total cohomology
+\[
+\widetilde H(S,\Z)
+:=H^0(S,\Z)\oplus H^2(S,\Z)\oplus H^4(S,\Z),
+\]
+graded by even cohomological degree, an even unimodular lattice of
+signature \((4,20)\) and rank \(24\) when equipped with the Mukai
+pairing below. For a coherent sheaf \(F\in\mathrm{Coh}(S)\),
+respectively for an object \(F\in D^b(S)\), the Mukai vector is
+\[
+v_S(F)
+:=\ch(F)\cdot\sqrt{\td(S)}
+=\bigl(\rk F,\;c_1(F),\;\ch_2(F)+\rk F\cdot[\mathrm{pt}]\bigr)
+\;\in\;\widetilde H(S,\Z).
+\]
+The square root \(\sqrt{\td(S)}=(1,0,1)\) on the K3 surface uses the
+Todd class \(\td(S)=(1,0,2[\mathrm{pt}])\), so
+\(\sqrt{\td(S)}=(1,0,[\mathrm{pt}])\); identifying
+\([\mathrm{pt}]\) with the integer \(1\) in the displayed coordinates
+gives the displayed vector. The triple
+\(v_S(F)=(r,D,s)\) records the rank \(r\in H^0\), the first Chern class
+\(D\in H^2\), and the Mukai-corrected second component
+\(s=\ch_2(F)+r\in H^4\). Mukai introduced this lattice and pairing in
+\cite[Theorem~1.5]{Mukai1987}, with the symplectic structure of the
+moduli space of sheaves established in \cite{Mukai1984}.
+\end{definition}
+
+\begin{proposition}[Mukai pairing on the K3 surface]
+\label{prop:mukai-pairing-appendixC}
+\ClaimStatusProvedElsewhere\
+The Mukai pairing on \(\widetilde H(S,\Z)\) is the symmetric \(\Z\)-bilinear
+form
+\[
+\bigl\langle(r,D,s),(r',D',s')\bigr\rangle_{\mathrm{Muk}}
+=D\cdot D'-rs'-r's,
+\]
+equivalently
+\[
+\bigl\langle v,w\bigr\rangle_{\mathrm{Muk}}
+=-\int_S v^{\vee}\cup w,
+\qquad
+v^\vee:=(r,-D,s),
+\]
+where \(v_2\cup w_2\) is the K3 cup product on \(H^2(S,\Z)\) and
+\(v_0\cup w_4\), \(v_4\cup w_0\) record the cross-degree pairings.
+The form is symmetric, even, unimodular, of signature \((4,20)\); its
+hyperbolic-plane summands are
+\[
+\widetilde H(S,\Z)
+\simeq U^{\oplus4}\oplus E_8(-1)^{\oplus2}
+\]
+as integral lattices, with the algebraic part
+\(\widetilde H^{1,1}_{\mathrm{alg}}(S,\Z)\) of signature \((1,\rho-1)\)
+on a polarized K3 of Picard rank \(\rho\). This is Mukai
+\cite[Theorem~1.5(ii)]{Mukai1987}; see also Huybrechts--Lehn
+\cite[Chapter~6]{HuybrechtsLehn}.
+\end{proposition}
+
+\begin{proof}
+The bilinear identity is the definition; its symmetry is immediate from
+the symmetry of the K3 cup product and the identification of degree-zero
+and degree-four components. Even unimodularity follows from the K3
+intersection lattice on \(H^2\) (even unimodular of signature
+\((3,19)\)) and the unimodular pairing
+\(H^0\times H^4\to\Z\) under \(rs'\mapsto rs'\). The signature
+\((4,20)\) follows by Hodge index plus the two extra signs from the
+hyperbolic factor on \(H^0\oplus H^4\). The lattice isomorphism is
+\cite[Theorem~1.5(ii)]{Mukai1987}.
+\end{proof}
+
+\begin{remark}[Mukai pairing is symmetric on both parts]
+\label{rem:mukai-symmetric-both-parts}
+\ClaimStatusProved\
+The Mukai pairing on \(\widetilde H(S,\Z)\) is symmetric in both the
+algebraic and transcendental parts. There is no orthosymplectic
+\(\mathfrak{osp}\) refinement at the level of the lattice. The
+Hodge \(\Z/2\)-super-extension \((\mathbb C,\omega_S)\mapsto
+\mathbb C\oplus\omega_S\) used in cross-volume Mukai self-mirror
+language imposes a separate \(\Z/2\)-grading on a Yangian-type quantum
+group constructed from this lattice; that grading does not change the
+underlying lattice pairing, which remains symmetric. The classical Lie
+limit of the Mukai-form Yangian is the orthogonal Lie algebra
+\(\mathfrak{so}(4,20)\), not \(\mathfrak{osp}(4\mid20)\); see
+\cite[\S2]{SchiffmannVasserot2013} for the Mukai-side Yangian
+classical limit and \cite{KSCoHA} for the cohomological Hall algebra
+realization.
+\end{remark}
+
+\begin{example}[Mukai vector of a point and of an ideal sheaf]
+\label{ex:mukai-vector-point-and-ideal}
+\ClaimStatusDerivation\
+\(v_S(\mathcal O_p)=(0,0,1)\) for the structure sheaf of a point
+\(p\in S\); \(v_S(\mathcal O_S)=(1,0,1)\) for the trivial line bundle;
+\(v_S(L)=(1,c_1(L),c_1(L)^2/2+1)\) for a line bundle \(L\). For an ideal
+sheaf \(\mathcal I_C\) of a curve \(C\subset S\) of degree
+\(\deg C=c_1(\mathcal O_S(C))\cdot c_1(\mathcal O_S(C))=2g-2\),
+\[
+v_S(\mathcal I_C)=(1,-c_1(\mathcal O_S(C)),\ch_2(\mathcal I_C)+1).
+\]
+The Mukai pairing
+\(\langle v_S(\mathcal O_p),v_S(\mathcal O_p)\rangle_{\mathrm{Muk}}
+=0-0\cdot1-0\cdot1=0\), recording that points have zero self-pairing in
+the Mukai form. The pairing
+\(\langle v_S(\mathcal O_S),v_S(\mathcal O_p)\rangle_{\mathrm{Muk}}
+=0-1\cdot1-0\cdot0=-1\) records the Euler characteristic
+\(\chi(\mathcal O_S,\mathcal O_p)=1\) up to the Mukai sign convention
+\(\chi(F,G)=-\langle v_S(F),v_S(G)\rangle_{\mathrm{Muk}}\) of
+\cite[Proposition~2.2]{Mukai1987}.
+\end{example}
+
+\subsection{K\"unneth on \texorpdfstring{$K3\times E$}{K3 x E} and the rank-3 Gram lattice}
+\label{subsec:kunneth-k3-times-e-appendixC}
+
+\begin{proposition}[K\"unneth for \(X=K3\times E\)]
+\label{prop:kunneth-k3-times-e-appendixC}
+\ClaimStatusProvedElsewhere\
+Let \(S\) be a smooth complex K3 surface and \(E\) a smooth complex
+elliptic curve. The integral cohomology of \(X=S\times E\) splits as
+\[
+H^*(X,\Z)
+\simeq H^*(S,\Z)\otimes_{\Z}H^*(E,\Z),
+\]
+both factors free \(\Z\)-modules and \(H^*(E,\Z)\) torsion-free. Fixing a
+generator \(\omega_E\in H^2(E,\Z)\) with \(\int_E\omega_E=1\),
+\(H^*(E,\Z)=\Z\cdot1_E\oplus\Z\cdot\omega_E\), and every class on \(X\)
+decomposes uniquely as
+\[
+v_X=v^{(0)}\otimes 1_E+v^{(\omega)}\otimes\omega_E,
+\qquad v^{(0)},v^{(\omega)}\in H^*(S,\Z).
+\]
+The total integral lattice carries the K\"unneth pairing
+\(\widetilde H(X,\Z)=\widetilde H(S,\Z)\otimes H^*(E,\Z)\), of rank
+$48$ and signature $(24,24)$ — the K\"unneth tensor of the
+$(4,20)$-Mukai pairing on $\widetilde H(S,\Z)$ with the
+$(1,1)$-hyperbolic pairing on $H^*(E,\Z)$.  The hyperbolic-plane decomposition
+gives \(\widetilde H(S,\Z)\otimes H^*(E,\Z)\simeq
+U^{\oplus4}\oplus E_8(-1)^{\oplus2}\) tensored with the rank-2 hyperbolic
+plane \(U_E=H^0(E,\Z)\oplus H^2(E,\Z)\). This is the standard K\"unneth
+formula on smooth product manifolds; see Huybrechts \cite[Chapter~3]{HuybrechtsLehn}.
+\end{proposition}
+
+\begin{proof}
+\(E\) and \(S\) have torsion-free integral cohomology, so K\"unneth holds
+integrally and produces the displayed tensor decomposition. The pairing
+factorization is bilinearity of the cup product over the K\"unneth
+isomorphism. The lattice signature comes from
+\((4,20)\) on \(\widetilde H(S,\Z)\) (Proposition~\ref{prop:mukai-pairing-appendixC})
+tensored with \((1,1)\) on \(U_E\).
+\end{proof}
+
+\begin{definition}[Gram-degree projection on \(X=K3\times E\)]
+\label{def:gram-degree-projection-appendixC}
+\ClaimStatusDefinition\
+The formal additive even-Mukai sector of
+Definition~\ref{def:gram-index-lattice} is
+\[
+\Gamma_X^{\mathrm{form}}
+:=\Lambda_S\oplus\Lambda_S,\qquad
+c=(Q,P)\in\Gamma_X^{\mathrm{form}},
+\]
+where \(\Lambda_S=\widetilde H(S,\Z)\). The Gram-index lattice is
+\[
+\Gamma_{\mathrm{gram}}:=\Z^3,
+\]
+and the Gram-degree projection is the quadratic map
+\[
+\Pi_X:\Gamma_X^{\mathrm{form}}\longrightarrow\Gamma_{\mathrm{gram}},
+\qquad
+(Q,P)\longmapsto
+\Bigl(\tfrac{(Q,Q)_{\mathrm{Muk}}}2,\,
+(Q,P)_{\mathrm{Muk}},\,
+\tfrac{(P,P)_{\mathrm{Muk}}}2\Bigr).
+\]
+The triple \((n,l,m)=\Pi_X(Q,P)\) is the Gram-degree shadow; it is the
+target of the Igusa Fourier expansion at the standard cusp. It is
+\emph{not} an additive Hall grading: the additivity defect is the
+symmetric bilinear cocycle \(B\) of \S\ref{subsec:gram-cocycle-appendixC}
+below.
+\end{definition}
+
+\subsection{D6--D2--D0 dictionary}
+\label{subsec:d6-d2-d0-dictionary-appendixC}
+
+The K\"unneth decomposition of \(v_X(\mathcal I_Y)\) on the threefold
+\(X=K3\times E\) produces the D6--D2--D0 dictionary
+\(\Pi_X(Q_Y,P_Y)=(h-1,n,d-1)\) of
+Theorem~\ref{thm:d6-d2-d0-dictionary-appendixC} as a chart-data
+identity. The Mukai-vector calculation isolates the K3-fibre rank-one
+component \(P_Y=(1,0,1-d)\) on the \(1_E\)-summand and the curve-class
+component \(Q_Y=(0,-\beta,-n)\) on the \(\omega_E\)-summand; the
+Mukai pairing on the K3 components delivers the Gram-degree shadow.
+
+\begin{theorem}[Mukai vector of an ideal sheaf on the threefold $K3\times E$]
+\label{thm:mukai-vector-ideal-sheaf-threefold}
+\ClaimStatusProvedHere\
+Let \(X=S\times E\) with \(S\) a smooth complex K3 surface and \(E\) a
+smooth complex elliptic curve, so \(X\) is a smooth Calabi--Yau
+threefold. Let \(Y\subset X\) be a one-dimensional closed subscheme of
+class \([Y]=(\beta,d)\in H_2(S,\Z)\oplus H_2(E,\Z)\) and Euler
+characteristic \(n=\chi(\mathcal O_Y)\in\Z\). The Mukai vector of the
+ideal sheaf \(\mathcal I_Y\in D^b(X)\) decomposes against the K\"unneth
+basis as
+\[
+v_X(\mathcal I_Y)
+=(1,0,1-d)\otimes1_E
++(0,-\beta,-n)\otimes\omega_E.
+\]
+\end{theorem}
+
+\begin{proof}
+The threefold Calabi--Yau condition gives
+\(\sqrt{\td(X)}=\pi_S^*\sqrt{\td(S)}\,\pi_E^*\sqrt{\td(E)}=(1,0,1)\otimes1\),
+since the elliptic curve is one-dimensional with trivial Todd class
+\(\td(E)=1\). The ideal-sheaf identity is
+\(\ch(\mathcal I_Y)=1-\ch(\mathcal O_Y)\). For the structure sheaf of a
+one-dimensional subscheme of a Calabi--Yau threefold,
+\(\ch_0(\mathcal O_Y)=0\), \(\ch_1(\mathcal O_Y)=0\),
+\(\ch_2(\mathcal O_Y)=\operatorname{PD}[Y]\), and
+\(\int_X\ch_3(\mathcal O_Y)=\chi(\mathcal O_Y)=n\). Decomposing
+\([Y]=(\beta,d)\) on the K\"unneth basis,
+\(\operatorname{PD}[Y]=\beta\otimes\omega_E+d[\mathrm{pt}_S]\otimes 1_E\),
+where \([\mathrm{pt}_S]\) is the K3 point class and the duality
+\(H_2(S)\to H^2(S)\) sends \(\beta\) to \(\beta^\vee\); the fibrewise
+elliptic-degree component \(d[\mathrm{pt}_S]\otimes 1_E\) records the
+elliptic degree. Hence
+\[
+\ch(\mathcal O_Y)
+=(0,0,d)\otimes1_E+(0,\beta,n)\otimes\omega_E,
+\]
+and
+\(1-\ch(\mathcal O_Y)
+=(1,0,-d)\otimes1_E+(0,-\beta,-n)\otimes\omega_E\).
+Multiplying by
+\(\sqrt{\td(X)}=(1,0,1)\otimes1_E\) using the K3 cup product on each
+K\"unneth summand,
+\((1,0,1)\cup(1,0,-d)=(1,0,1-d)\) since \([\mathrm{pt}_S]\cup1=[\mathrm{pt}_S]\),
+and \((1,0,1)\cup(0,-\beta,-n)=(0,-\beta,-n)\) since
+\(\beta\cup[\mathrm{pt}_S]=0\) in \(H^*(S,\Z)\), yields the displayed
+Mukai vector
+\(v_X(\mathcal I_Y)=(1,0,1-d)\otimes1_E+(0,-\beta,-n)\otimes\omega_E\).
+\end{proof}
+
+\begin{remark}[Threefold Euler characteristic, no Todd correction]
+\label{rem:threefold-euler-characteristic-no-todd-correction}
+\ClaimStatusDerivation\
+The integer \(n=\chi(\mathcal O_Y)\in\Z\) is the topological Euler
+characteristic of the structure sheaf \(\mathcal O_Y\) on the threefold
+\(X=S\times E\); the threefold Calabi--Yau condition makes
+\(\sqrt{\td(X)}\) act as identity on the third Chern character so that
+\(\int_X\ch_3(\mathcal O_Y)=n\) directly. There is no auxiliary
+``Todd correction'' to install on top of \(n\); the Mukai vector
+\((0,-\beta,-n)\otimes\omega_E\) records \(n\) as the second-degree K3
+component on the elliptic \(\omega_E\)-summand. The sign is fixed by
+\(\ch(\mathcal I_Y)=1-\ch(\mathcal O_Y)\) and the K\"unneth orientation
+\(\int_E\omega_E=+1\).
+\end{remark}
+
+\begin{theorem}[D6--D2--D0 Mukai--Gram dictionary, restated as chart data]
+\label{thm:d6-d2-d0-dictionary-appendixC}
+\ClaimStatusProvedHere\
+With the standing data of
+Theorem~\ref{thm:mukai-vector-ideal-sheaf-threefold}, set
+\[
+P_Y:=(1,0,1-d),\qquad
+Q_Y:=(0,-\beta,-n)\;\in\;\widetilde H(S,\Z),
+\]
+the K\"unneth components of \(v_X(\mathcal I_Y)\). Then the Gram-degree
+projection of Definition~\ref{def:gram-degree-projection-appendixC} reads
+\[
+\Pi_X(Q_Y,P_Y)
+=\Bigl(\tfrac{(Q_Y,Q_Y)_{\mathrm{Muk}}}2,\,
+(Q_Y,P_Y)_{\mathrm{Muk}},\,
+\tfrac{(P_Y,P_Y)_{\mathrm{Muk}}}2\Bigr)
+=\Bigl(\tfrac{\beta^2}2,\,n,\,d-1\Bigr).
+\]
+For the elliptically fibered K3 surface \(S\to\mathbb P^1\) with section
+\(s_1\) and curve class
+\(\beta=\beta_h=s_1+hF\) (\(h\in\Z_{\ge0}\), \(F\) the fibre class), the
+self-intersection
+\(\beta_h^2=2h-2\) gives
+\[
+\Pi_X(Q_Y,P_Y)=(h-1,\,n,\,d-1).
+\]
+\end{theorem}
+
+\begin{proof}
+Apply the Mukai pairing of
+Proposition~\ref{prop:mukai-pairing-appendixC} component by component:
+\begin{align*}
+(Q_Y,Q_Y)_{\mathrm{Muk}}
+&=(-\beta)\cdot(-\beta)-0\cdot(-n)-0\cdot(-n)=\beta^2,\\
+(Q_Y,P_Y)_{\mathrm{Muk}}
+&=(-\beta)\cdot 0-0\cdot(1-d)-1\cdot(-n)=n,\\
+(P_Y,P_Y)_{\mathrm{Muk}}
+&=0\cdot0-1\cdot(1-d)-1\cdot(1-d)=2(d-1),
+\end{align*}
+giving the half-pairings \((\beta^2/2,n,d-1)\). For the elliptic class
+\(\beta_h=s_1+hF\), the K3 intersection \(s_1^2=-2\) on a section of an
+elliptic K3 surface (genus formula \(2g(s_1)-2=s_1^2+s_1\cdot K_S=-2+0\),
+giving \(g(s_1)=0\)), \(s_1\cdot F=1\), \(F^2=0\), so
+\(\beta_h^2=s_1^2+2h(s_1\cdot F)+h^2 F^2=-2+2h=2h-2\). The Gram-degree
+shadow follows. The cross-level identity with the OP/DT scalar
+normalization is the
+\(Q_Y^2/2=h-1\) line of Theorem~\ref{thm:d6-d2-d0-dictionary-appendixC}.
+\end{proof}
+
+\begin{remark}[Algebraic vs primitive D2 charges]
+\label{rem:algebraic-versus-primitive-d2-charges}
+\ClaimStatusDerivation\
+The K3 curve class \(\beta\in H_2(S,\Z)\) appearing in
+\(Q_Y=(0,-\beta,-n)\) is algebraic: it lies in
+\(H_2(S,\Z)_{\mathrm{alg}}=\mathrm{NS}(S)\), since \(Y\subset X\) is a
+closed subscheme. Primitivity of \(\beta\) — that \(\beta\) is not a
+non-trivial integer multiple of another effective class — is a separate
+condition; the dictionary holds for any algebraic \(\beta\), not only
+primitive ones. The Mukai-pairing formula
+\((Q_Y,Q_Y)_{\mathrm{Muk}}=\beta^2\) records the
+\(\mathrm{NS}(S)\)-self-intersection regardless of primitivity. The
+Bryan--Oberdieck--Pandharipande--Yin/Maulik--Pandharipande conventions
+\cite{OPand,BRYAN,MaulikTodaGV} take \(\beta\) algebraic; the elliptic
+degree \(d\in\Z_{\ge0}\) is unconstrained beyond non-negativity in the
+effective semigroup.
+\end{remark}
+
+\begin{remark}[Chart-data layer; not the additive Hall grading]
+\label{rem:chart-data-not-additive-hall-grading}
+\ClaimStatusProved\
+The triple \((n,l,m)=\Pi_X(Q_Y,P_Y)\) records the Gram-degree
+invariants of the dyonic charge \(c=(Q,P)\). It is the target of the
+Igusa Fourier expansion and the Borcherds product variables
+\(q^nr^ls^m\). It is \emph{not} the additive Hall grading on a
+hypothetical compact \(K3\times E\) Hall sector; the additive grading is
+the upstairs charge \(c\in\Gamma_X^{\mathrm{form}}\) (or its
+normal-ordered lift \(\widehat\Gamma_X\) below), and \(\Pi_X\) is a
+quadratic map onto Gram invariants. The polarization defect that obstructs
+the upstairs additive grading from descending directly is the symmetric
+bilinear cocycle \(B\) of \S\ref{subsec:gram-cocycle-appendixC}.
+\end{remark}
+
+\subsection{Symmetric bilinear Gram cocycle}
+\label{subsec:gram-cocycle-appendixC}
+
+\begin{lemma}[Gram additivity defect, restated as chart structure]
+\label{lem:gram-additivity-defect-appendixC}
+\ClaimStatusProvedElsewhere\
+For \(c_i=(Q_i,P_i)\in\Gamma_X^{\mathrm{form}}\), \(i=1,2\),
+\[
+\Pi_X(c_1+c_2)
+=\Pi_X(c_1)+\Pi_X(c_2)+B(c_1,c_2),
+\]
+where the symmetric bilinear cocycle \(B\) is
+\[
+B(c,c')
+:=\bigl((Q,Q')_{\mathrm{Muk}},\;
+(Q,P')_{\mathrm{Muk}}+(Q',P)_{\mathrm{Muk}},\;
+(P,P')_{\mathrm{Muk}}\bigr).
+\]
+The map \(B\) is symmetric and \(\Z\)-bilinear with values in
+\(\Gamma_{\mathrm{gram}}=\Z^3\), satisfies the polarization identity
+\[
+B(c,c)=2\Pi_X(c),
+\]
+and equals \(-\delta\Pi_X\) as an additive coboundary,
+\((\delta\Pi_X)(c,c'):=\Pi_X(c)+\Pi_X(c')-\Pi_X(c+c')\). Thus the
+ordinary additive cohomology class \([B]=0\); the obstruction recorded
+here is the impossibility of an \emph{additive linear} trivialization,
+not a non-zero additive cohomology class.
+\end{lemma}
+
+\begin{proof}
+This is Lemma~\ref{lem:gram-additivity-defect} of the body. Symmetry,
+bilinearity, integrality, polarization, and \(\delta\)-cocycle property
+are Lemma~\ref{lem:gram-additivity-defect-appendixC}(i)--(iii). The
+splitting \(B=-\delta\Pi_X\) by the quadratic refinement \(\Pi_X\) is
+clause~(vi) of the same lemma; clause~(vii) shows no additive linear
+\(L:\Gamma_X^{\mathrm{form}}\to\Gamma_{\mathrm{gram}}\) can satisfy
+\(B=\delta L\), since \(B(c,c)=2\Pi_X(c)\) is non-zero on charges with
+non-trivial Mukai self-pairings.
+\end{proof}
+
+\begin{remark}[Cleanly stated polarization identity]
+\label{rem:cleanly-stated-polarization-identity}
+\ClaimStatusDerivation\
+The polarization identity
+\(B(c,c)=2\Pi_X(c)\) is the symmetric companion to
+\(\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c')\); evaluated at
+\(c=c'\) the latter gives
+\(\Pi_X(2c)=2\Pi_X(c)+B(c,c)\), and \(\Pi_X(2c)=4\Pi_X(c)\) by
+quadraticity of \(\Pi_X\), hence \(B(c,c)=2\Pi_X(c)\). This is purely
+chart-data structure; no Heisenberg or central extension hypothesis on
+the source is invoked.
+\end{remark}
+
+\subsection{Normal-ordered Gram map}
+\label{subsec:normal-ordered-gram-map-appendixC}
+
+\begin{definition}[Normal-ordered charge lattice]
+\label{def:normal-ordered-charge-lattice-appendixC}
+\ClaimStatusDefinition\
+Set
+\[
+\widehat\Gamma_X
+:=\Gamma_X^{\mathrm{form}}\oplus_B\Gamma_{\mathrm{gram}},
+\]
+the underlying set
+\(\Gamma_X^{\mathrm{form}}\times\Gamma_{\mathrm{gram}}\) equipped with
+the abelian-group law
+\[
+(c,T)\star(c',T'):=\bigl(c+c',\,T+T'+B(c,c')\bigr).
+\]
+The identity is \((0,0)\); the inverse of \((c,T)\) is
+\((-c,\,-T+B(c,c))=(-c,\,-T+2\Pi_X(c))\). The split section
+\[
+s:\Gamma_X^{\mathrm{form}}\longrightarrow\widehat\Gamma_X,
+\qquad s(c):=(c,\Pi_X(c)),
+\]
+is a homomorphism of abelian groups; the raw placement
+\[
+i_0:\Gamma_X^{\mathrm{form}}\longrightarrow\widehat\Gamma_X,
+\qquad i_0(c):=(c,0),
+\]
+is not a homomorphism unless \(B\equiv0\).
+\end{definition}
+
+\begin{proposition}[Normal-ordered Gram homomorphism]
+\label{prop:normal-ordered-gram-homomorphism-appendixC}
+\ClaimStatusProvedElsewhere\
+The map
+\[
+\overline\Pi_X:\widehat\Gamma_X\longrightarrow\Gamma_{\mathrm{gram}},
+\qquad
+\overline\Pi_X(c,T):=\Pi_X(c)-T,
+\]
+is a homomorphism of abelian groups, \(\overline\Pi_X\colon
+(\widehat\Gamma_X,\star)\to(\Gamma_{\mathrm{gram}},+)\); equivalently,
+\[
+\overline\Pi_X\bigl((c,T)\star(c',T')\bigr)
+=\overline\Pi_X(c,T)+\overline\Pi_X(c',T').
+\]
+On the split section,
+\(\overline\Pi_X(s(c))=0\); on the raw placement,
+\(\overline\Pi_X(i_0(c))=\Pi_X(c)\).
+\end{proposition}
+
+\begin{proof}
+Direct calculation,
+\begin{align*}
+\overline\Pi_X((c,T)\star(c',T'))
+&=\overline\Pi_X(c+c',T+T'+B(c,c'))\\
+&=\Pi_X(c+c')-T-T'-B(c,c')\\
+&=\bigl(\Pi_X(c)+\Pi_X(c')+B(c,c')\bigr)-T-T'-B(c,c')\\
+&=\bigl(\Pi_X(c)-T\bigr)+\bigl(\Pi_X(c')-T'\bigr)\\
+&=\overline\Pi_X(c,T)+\overline\Pi_X(c',T'),
+\end{align*}
+using Lemma~\ref{lem:gram-additivity-defect-appendixC}. The split-section
+and raw-placement identities are the definitions.
+\end{proof}
+
+\begin{remark}[Resolution of the polarization defect]
+\label{rem:resolution-polarization-defect-appendixC}
+\ClaimStatusProved\
+The composite
+\(\overline\Pi_X\circ i_0=\Pi_X\) records the quadratic Gram-degree
+shadow of the bare upstairs charge; the composite
+\(\overline\Pi_X\circ s\equiv0\) records the split-section convention
+that absorbs the entire Gram-degree into the central coordinate
+\(T\). The choice of section is the choice of normal ordering: bare
+placements collect cross-pairing \(B(c_i,c_j)\) in the central
+coordinate (Lemma~\ref{lem:gram-additivity-defect-appendixC}), while
+\(s\)-placements record \(\overline\Pi_X=0\) on every component and the
+Gram-degree information lives entirely in the upstairs \(\Pi_X(c)\). The
+two presentations agree on the homomorphism \(\overline\Pi_X\). This is
+the additive group law on which a hypothetical compact Hall product can
+descend without a chain-level associator at the lattice level.
+\end{remark}
+
+\begin{remark}[Chart data, not Hall support]
+\label{rem:chart-data-not-hall-support-appendixC}
+\ClaimStatusProved\
+The lattice \(\widehat\Gamma_X\) is the formal additive group on which
+charges and their Gram-degree shadows are tracked. It is not the
+algebraic effective semigroup \(\Gamma_X^{\mathrm{eff}}\) of curve
+classes representable by closed subschemes \(Y\subset X\); membership
+in the effective sub-semigroup is a separate algebraic-effective
+condition (Definition~\ref{def:gram-index-lattice}). The
+Beilinson chart layer \(\alpha\) (charge data) and \(\gamma\) (Mukai
+lattice) license \(\widehat\Gamma_X\) as ambient; the Hall-support
+restriction is part of the categorical-input layer at higher Beilinson
+level, not the chart data of this appendix.
+\end{remark}
+
+\subsection{Three Igusa names; chart-data licensing}
+\label{subsec:three-igusa-names-chart-data}
+
+Three Igusa names live distinctly in the body and remain distinct under
+the chart-data of this appendix:
+\begin{itemize}
+\item the automorphic section \(\mathcal D_X=\Delta_5\), a section of
+  the weight-\(5\) automorphic line over the genus-\(2\) Siegel space
+  with Maass character \(\nu_{\Delta_5}\);
+\item the BKM denominator
+  \(\mathrm{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\)
+  on the root lattice \(\Lambda_{II}^{2,1}\); and
+\item the compact protected Pfaffian
+  \(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)\), a section of
+  \(\mathcal L^5\otimes\nu_{\Delta_5}\) on the conditional pro-object
+  \(\mathfrak D_X^{\mathrm{DI}}\) of \S5.
+\end{itemize}
+The Mukai--Gram dictionary supplies the Gram-degree shadow
+\(\Pi_X:\Gamma_X^{\mathrm{form}}\to\Gamma_{\mathrm{gram}}\) on which
+the cusp-Fourier expansion of \(\Delta_5\), the root-degree map of
+\(\mathrm{den}(\mathfrak g_{\Delta_5})\), and the wall data of
+\(\operatorname{Pf}_{\mathrm{prot}}\) all read.
+The Mukai pairing on \(\widetilde H(S,\Z)\) is symmetric in both
+algebraic and transcendental parts; the ungraded Mukai-form classical
+limit of an associated Yangian-type construction is the orthogonal Lie
+algebra \(\mathfrak{so}(4,20)\), not the orthosymplectic
+\(\mathfrak{osp}(4\mid20)\). The Hodge \(\Z/2\)-super-extension that
+appears in cross-volume Yangian conventions imposes a separate
+\(\Z/2\)-grading on the algebraic side; it does not enter the lattice
+pairing of this appendix. The Bryan/Oberdieck--Pandharipande/
+Maulik--Toda conventions \cite{OPand,BRYAN,MaulikTodaGV} take \(\beta\)
+algebraic and \(d\) elliptic-degree, agreeing with
+Theorem~\ref{thm:d6-d2-d0-dictionary-appendixC}.
+
+The constructions here do not touch the orientation character
+\(\epsilon_o\) of
+Open Problem~\ref{def:O1-plus-weyl-transport}, the Pfaffian
+section \(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)\), or the
+recognition theorem of
+Theorem~\ref{thm:pfaffian-dirac-finite-stage}; those structures live
+above this appendix and consume the chart data supplied here.

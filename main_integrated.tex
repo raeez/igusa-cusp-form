@@ -1,0 +1,284 @@
+% !TEX root = main_integrated.tex
+%
+% Integrated main file for the Platonic reconstitution of
+% "The Igusa Square Root". The ten-chapter pentadic spine of CLAUDE.md §II
+% is composed by \input from the chapter and appendix files in chapters/
+% and appendices/, each authored as a standalone load-bearing artifact
+% and integrated here by deep semantic merge of the legacy main.tex
+% content (now distributed across the chapter files).
+%
+% The legacy monolithic main.tex (18,629 lines) is preserved on disk
+% pending integration verification. This integrated build produces the
+% full pentadic-spine PDF directly from the chapter/appendix files.
+
+\documentclass[11pt,oldfontcommands]{memoir}
+\usepackage{raeez-math-template}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\theHsection}{\arabic{section}}
+
+\title{\texorpdfstring{\textit{The Igusa Square Root}\\[0.5em]\small The Borcherds determinant of \(\phi_{0,1}\), its denominator algebra, and the \(K3\times E\) realization problem}{The Igusa Square Root: The Borcherds determinant of phi\_0,1, its denominator algebra, and the K3 x E realization problem}}
+\author{Raeez Lorgat}
+\date{April 2026}
+
+% ------------------------------------------------------------------
+% Standard symbols (preserved verbatim from legacy main.tex preamble)
+% ------------------------------------------------------------------
+\newcommand{\Imag}{\mathrm{Im}}
+\newcommand{\Real}{\mathrm{Re}}
+\newcommand{\Proj}{\mathbb{P}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}} \newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}} \newcommand{\La}{\Lambda}
+\newcommand{\HypPlan}{\Lambda^{(1,1)}}
+\newcommand{\Sp}{\mathbf{Sp}}
+\newcommand{\PSp}{\mathbf{PSp}}
+\newcommand{\GL}{\mathbf{GL}}
+\newcommand{\SL}{\mathbf{SL}}
+\newcommand{\Orth}{\mathbf{O}}
+\newcommand{\SO}{\mathbf{SO}}
+\newcommand{\Hpl}{\mathbb{H}}
+\newcommand{\IV}{\mathbf{IV}}
+\newcommand{\fbasis}{(f_i)_{\{1,2,3,-2,-1\}}}
+\newcommand{\Id}{\mathbf{I}}
+\newcommand{\Cone}{\mathcal{C}}
+\newcommand{\Poly}{\mathcal{P}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\bkm}{\mathfrak{g}}
+\newcommand{\sdim}{\operatorname{sdim}}
+\newcommand{\sch}{\operatorname{sch}}
+\newcommand{\sdet}{\operatorname{sdet}}
+\newcommand{\rootmult}{\operatorname{mult}}
+\newcommand{\smult}{\operatorname{smult}}
+\newcommand{\Prim}{\operatorname{Prim}}
+% Outer braces wrap the subscripted symbol so that further subscripts
+% (\autcor_0, \autcor^{\mathrm{bulk}}, etc.) attach without double-subscript error.
+\newcommand{\autcor}{{\mathfrak{g}_{\Delta_5}}}
+
+% Chapter-specific symbols introduced by individual chapter agents and
+% promoted to main preamble for cross-chapter use.
+\providecommand{\Mp}{\mathbf{Mp}}
+\providecommand{\Spin}{\mathbf{Spin}}
+\providecommand{\Pf}{\operatorname{Pf}}
+\providecommand{\Un}{\mathbf{U}}
+\providecommand{\J}{\mathbf{J}}
+\providecommand{\hn}{\operatorname{hn}}
+\providecommand{\Pic}{\operatorname{Pic}}
+\providecommand{\NS}{\operatorname{NS}}
+\providecommand{\Ext}{\operatorname{Ext}}
+\providecommand{\Tor}{\operatorname{Tor}}
+\providecommand{\End}{\operatorname{End}}
+\providecommand{\codim}{\operatorname{codim}}
+\providecommand{\rk}{\operatorname{rk}}
+\providecommand{\Spec}{\operatorname{Spec}}
+\providecommand{\Span}{\operatorname{Span}}
+\providecommand{\Sym}{\operatorname{Sym}}
+\providecommand{\Coh}{\operatorname{Coh}}
+\providecommand{\Perf}{\operatorname{Perf}}
+\providecommand{\sgn}{\operatorname{sgn}}
+\providecommand{\Stab}{\operatorname{Stab}}
+\providecommand{\Lie}{\operatorname{Lie}}
+\providecommand{\GW}{\operatorname{GW}}
+\providecommand{\PT}{\operatorname{PT}}
+\providecommand{\DT}{\operatorname{DT}}
+
+% Unicode circled digits used as view-tags ① ② ③ ④ ⑤ across chapters.
+\DeclareUnicodeCharacter{2460}{\textcircled{1}}
+\DeclareUnicodeCharacter{2461}{\textcircled{2}}
+\DeclareUnicodeCharacter{2462}{\textcircled{3}}
+\DeclareUnicodeCharacter{2463}{\textcircled{4}}
+\DeclareUnicodeCharacter{2464}{\textcircled{5}}
+\DeclareUnicodeCharacter{2465}{\textcircled{6}}
+\DeclareUnicodeCharacter{2466}{\textcircled{7}}
+\DeclareUnicodeCharacter{2467}{\textcircled{8}}
+
+% Greek letters used inline in chapter prose (template declares some;
+% these extend the set for the integrated build).
+\newunicodechar{α}{$\alpha$}
+\newunicodechar{δ}{$\delta$}
+\newunicodechar{ε}{$\varepsilon$}
+\newunicodechar{ζ}{$\zeta$}
+\newunicodechar{η}{$\eta$}
+\newunicodechar{θ}{$\theta$}
+\newunicodechar{ι}{$\iota$}
+\newunicodechar{λ}{$\lambda$}
+\newunicodechar{ν}{$\nu$}
+\newunicodechar{ξ}{$\xi$}
+\newunicodechar{π}{$\pi$}
+\newunicodechar{ρ}{$\rho$}
+\newunicodechar{σ}{$\sigma$}
+\newunicodechar{τ}{$\tau$}
+\newunicodechar{υ}{$\upsilon$}
+\newunicodechar{φ}{$\varphi$}
+\newunicodechar{ϕ}{$\phi$}
+\newunicodechar{χ}{$\chi$}
+\newunicodechar{ψ}{$\psi$}
+\newunicodechar{ω}{$\omega$}
+\newunicodechar{Δ}{$\Delta$}
+\newunicodechar{Λ}{$\Lambda$}
+\newunicodechar{Σ}{$\Sigma$}
+\newunicodechar{Ψ}{$\Psi$}
+\newunicodechar{Γ}{$\Gamma$}
+\newunicodechar{Π}{$\Pi$}
+\newunicodechar{Θ}{$\Theta$}
+\newunicodechar{Ξ}{$\Xi$}
+\newunicodechar{Υ}{$\Upsilon$}
+
+% Math symbols used inline in chapter prose.
+\newunicodechar{×}{$\times$}
+\newunicodechar{·}{$\cdot$}
+\newunicodechar{±}{$\pm$}
+\newunicodechar{⊂}{$\subset$}
+\newunicodechar{⊃}{$\supset$}
+\newunicodechar{⊆}{$\subseteq$}
+\newunicodechar{⊇}{$\supseteq$}
+\newunicodechar{∉}{$\notin$}
+\newunicodechar{∀}{$\forall$}
+\newunicodechar{∃}{$\exists$}
+\newunicodechar{∅}{$\emptyset$}
+\newunicodechar{∞}{$\infty$}
+\newunicodechar{→}{$\to$}
+\newunicodechar{←}{$\leftarrow$}
+\newunicodechar{⇒}{$\Rightarrow$}
+\newunicodechar{⇐}{$\Leftarrow$}
+\newunicodechar{⇔}{$\Leftrightarrow$}
+\newunicodechar{↦}{$\mapsto$}
+\newunicodechar{↪}{$\hookrightarrow$}
+\newunicodechar{∧}{$\wedge$}
+\newunicodechar{∪}{$\cup$}
+\newunicodechar{∩}{$\cap$}
+\newunicodechar{⨁}{$\bigoplus$}
+\newunicodechar{⨂}{$\bigotimes$}
+\newunicodechar{⊥}{$\perp$}
+\newunicodechar{⟨}{$\langle$}
+\newunicodechar{⟩}{$\rangle$}
+\newunicodechar{∂}{$\partial$}
+\newunicodechar{∇}{$\nabla$}
+\newunicodechar{∘}{$\circ$}
+\newunicodechar{∗}{$\ast$}
+\newunicodechar{ℝ}{$\mathbb{R}$}
+\newunicodechar{ℂ}{$\mathbb{C}$}
+\newunicodechar{ℤ}{$\mathbb{Z}$}
+\newunicodechar{ℕ}{$\mathbb{N}$}
+\newunicodechar{ℚ}{$\mathbb{Q}$}
+\newunicodechar{ℋ}{$\mathcal{H}$}
+\newunicodechar{ℒ}{$\mathcal{L}$}
+\newunicodechar{𝓗}{$\mathcal{H}$}
+\newunicodechar{𝓟}{$\mathcal{P}$}
+\newunicodechar{𝓒}{$\mathcal{C}$}
+\newunicodechar{𝓕}{$\mathcal{F}$}
+\newunicodechar{𝔄}{$\mathfrak{A}$}
+\newunicodechar{𝔇}{$\mathfrak{D}$}
+\newunicodechar{𝔤}{$\mathfrak{g}$}
+\newunicodechar{𝔥}{$\mathfrak{h}$}
+\newunicodechar{𝔪}{$\mathfrak{m}$}
+\newunicodechar{𝔫}{$\mathfrak{n}$}
+\newunicodechar{₄}{$_4$}
+\newunicodechar{₅}{$_5$}
+\newunicodechar{₆}{$_6$}
+\newunicodechar{₇}{$_7$}
+\newunicodechar{₈}{$_8$}
+\newunicodechar{₉}{$_9$}
+\newunicodechar{¹}{$^1$}
+\newunicodechar{²}{$^2$}
+\newunicodechar{³}{$^3$}
+\newunicodechar{⁴}{$^4$}
+\newunicodechar{⁵}{$^5$}
+\newunicodechar{⁻}{$^-$}
+\newunicodechar{⁺}{$^+$}
+
+% ------------------------------------------------------------------
+% Licensing-type system (Vol II §5; cited as established prior-art per
+% STANDARDS §III standard-terminology rule, not coined here).
+%
+% Every load-bearing theorem statement carries inline tags from the
+% set {α (chart/scope/log), β (comparison/functor), γ (ambient
+% declaration), δ (endpoint/convergence), ε (descent/completion)}.
+% The system harmonises Chs. 1, 2, 4, 5, 6, 7, 8, 9, 10 and Appendices
+% A, B, D, E, F; Ch. 3 uses epistemic-status tags only and is healed
+% inline with explicit references.
+%
+% Chain location every theorem identifies its position on the universal
+% stage chain (Vol II §4):
+%   P → C → S → Z → A
+% (primitive → chart → shadow → centre/bulk → acting object).
+%
+% Three Δ_5 names tagged distinctly on first use per chapter:
+%   D_X = Δ_5                     (View ①, automorphic section)
+%   den(g_{Δ_5}) = 64⁻¹ Δ_5(2Z)   (View ②, BKM denominator)
+%   Pf_prot(𝔇_X^DI)                (View ③, conditional protected Pfaffian)
+% Conjectural fourth and fifth handles are introduced in Chs. 7–8.
+% ------------------------------------------------------------------
+
+\ifdefined\mainpreambleonly
+  \expandafter\endinput
+\fi
+
+\begin{document}
+
+\maketitle
+
+% ------------------------------------------------------------------
+% Frontispiece + Chapter 1 (AC01)
+% ------------------------------------------------------------------
+\input{chapters/01_pentadic.tex}
+
+\bigskip
+\tableofcontents
+
+% ------------------------------------------------------------------
+% Part I: Given — the inputs of the construction
+% ------------------------------------------------------------------
+\part{Given}
+
+\input{chapters/02_k3xe_setup.tex}
+\input{chapters/03_view1_automorphic.tex}
+\input{chapters/04_view2_bkm.tex}
+\input{chapters/07_view5_theta_lift.tex}
+
+% ------------------------------------------------------------------
+% Part II: Built — the Dirac–Igusa pro-object
+% ------------------------------------------------------------------
+\part{Built}
+
+\input{chapters/05_view3_dirac_igusa.tex}
+% Chapter 5 internally \input's chapters/05_subsections/05_1_hybrid.tex
+% through chapters/05_subsections/05_8_obstructions.tex.
+
+% ------------------------------------------------------------------
+% Part III: Certified — the cross-level identity ②↔③
+% ------------------------------------------------------------------
+\part{Certified}
+
+\input{chapters/06_pfaffian_dirac.tex}
+
+% ------------------------------------------------------------------
+% Part IV: Shadowed — scalar shadows and frontiers
+% ------------------------------------------------------------------
+\part{Shadowed}
+
+\input{chapters/08_view4_mirror.tex}
+\input{chapters/09_zbps_realization.tex}
+\input{chapters/10_open_obstructions.tex}
+
+% ------------------------------------------------------------------
+% Appendices
+% ------------------------------------------------------------------
+\appendix
+
+\input{appendices/A_lattices.tex}
+\input{appendices/B_borcherds_product.tex}
+\input{appendices/C_mukai_gram.tex}
+\input{appendices/D_hall_correspondences.tex}
+\input{appendices/E_pfaffian_wall.tex}
+\input{appendices/F_build_algorithms.tex}
+
+% ------------------------------------------------------------------
+% Bibliography
+% ------------------------------------------------------------------
+\bibliographystyle{alpha}
+\bibliography{proj}
+
+\end{document}

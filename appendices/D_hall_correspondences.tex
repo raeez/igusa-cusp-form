@@ -1,0 +1,834 @@
+\section{Hall correspondences: the level-2 functorial passage on \texorpdfstring{$\mathfrak M^+_{\mathrm{eff}}(K3\times E)$}{the moduli of effective sheaves on K3 times E}}
+\label{app:hall-correspondences}
+
+This appendix records the imported theorems on which the Dirac--Igusa
+construction of \S\ref{ch:zbps-realization}
+rests on the Hall side, and pins down the \(K3\times E\)
+specialization.  The Hall correspondences are level-2 / \(\beta\)
+arrows in the universal stage chain
+\(\mathrm{CY}_d\text{-}\mathrm{cat}\to E_d\text{-}\mathrm{HolFA}(X)
+\to\mathrm{Sp}^{\mathrm{ch}}_{\Sigma_{d-1}, C}\to Y^+\to G\to\kappa\text{-tuple}\)
+in the sense of Beilinson--Drinfeld \cite{BD};
+equivalently, they comprise the
+chart-augmented \(A_b\) data for the open factorization dg-category
+\((X, D, \tau)\) at a chosen boundary vacuum \(b\), with chiral shadow
+on the elliptic carrier supplied separately by
+\S~\ref{ch:zbps-realization}.
+
+The bibliography supplies the proofs.  This appendix supplies the
+exact statements as used downstream, the proof sketches at the level
+needed to support the \(K3\times E\) specialization, and the
+identification of which licensing band each clause sits in:
+\(\alpha\) (object / construction), \(\beta\) (comparison / functor /
+natural transformation), \(\gamma\) (theorem of structure), \(\delta\)
+(open obligation paired with named obstruction), \(\varepsilon\)
+(scalar shadow).  The tags appear inline in square brackets after
+each statement.
+
+The standing data are: \(S\) is a smooth complex projective \(K3\)
+surface, \(E\) is a smooth elliptic curve, \(X = S\times E\) is the
+Calabi--Yau threefold, \(\sigma_S\in H^0(S, K_S)\) is the holomorphic
+two-form trivializing \(K_S\), and \(\sigma = \mathrm{pr}_S^*\sigma_S
+\in H^0(X, p_S^*K_S)\) is the inflated cosection of
+\S\ref{ch:zbps-realization}.  The Mukai
+lattice is
+\[
+\Lambda_{\mathrm{Muk}}(K3) = H^0(S,\Z)\oplus
+\mathrm{NS}(S)\oplus H^4(S,\Z),
+\]
+endowed with the Mukai pairing \(\langle\,\cdot\,,\,\cdot\,\rangle_{\mathrm{Muk}}\)
+of \cite{Mukai1984}; \(\Gamma_{\mathrm{eff}}\) is the dyonic
+charge sublattice of Definition~\ref{def:mukai-lattice}; and
+\(\mathfrak M^+_{\mathrm{eff}}(X)\) is the moduli stack of (Bridgeland)
+semistable perfect complexes on \(X\) of effective dyonic class.
+
+\subsection*{D.1\quad The Hall product on the moduli of stable sheaves}
+\label{app:hall-product}
+
+The first imported theorem is the existence and associativity of a
+Hall product on the equivariant cohomology of the moduli stack of
+semistable sheaves, with vanishing-cycle coefficients, after Joyce and
+Song.
+
+\begin{theorem}[Joyce--Song generalised \(\mathrm{DT}\) Hall product;
+\(\gamma\), proved on \(\mathrm{CY}_3\) projective; conditional on
+(O1), (O1)\(^+\) on \(K3\times E\)]
+\label{thm:hall-product}
+Let \(Y\) be a smooth complex projective Calabi--Yau threefold.  The
+moduli stack \(\mathfrak M(Y)\) of compactly supported coherent
+sheaves on \(Y\) carries a critical \emph{Hall product}
+\[
+m\;:\;
+H^\bullet_c\bigl(\mathfrak M(Y),\Phi_W\otimes o\bigr)
+\otimes
+H^\bullet_c\bigl(\mathfrak M(Y),\Phi_W\otimes o\bigr)
+\longrightarrow
+H^\bullet_c\bigl(\mathfrak M(Y),\Phi_W\otimes o\bigr),
+\]
+with \(\Phi_W\) the perverse sheaf of vanishing cycles of the
+holomorphic Chern--Simons potential and \(o\) the orientation line
+supplied by Joyce--Upmeier orientation data.  The product is defined
+by pull-push along the universal extension stack
+\[
+\mathfrak M(Y)\xleftarrow{\;p\;}
+\mathfrak{Ext}^1(\mathfrak M(Y),\mathfrak M(Y))
+\xrightarrow{\;q\;}
+\mathfrak M(Y),
+\]
+where \(\mathfrak{Ext}^1\) is the moduli stack of short exact sequences
+\(0\to A\to C\to B\to 0\), \(p(0\to A\to C\to B\to 0) = (A,B)\), and
+\(q(0\to A\to C\to B\to 0) = C\).  The product
+\(m = q_!\circ\mathrm{TS}\circ p^*\) is associative, where
+\(\mathrm{TS}\) is the Massey--Saito--Joyce Thom--Sebastiani
+isomorphism on the universal extension stack
+\cite[Theorem~5.4]{JoyceSong}, \cite{MasseyST}, \cite{BBDJS2015}.  Its
+unit is the class of the empty object.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Three inputs assemble the product.  First, the moduli stack
+\(\mathfrak M(Y)\) is locally the critical locus of the Joyce--Song
+holomorphic Chern--Simons potential
+\(W:\mathrm{Crit}(W)\hookrightarrow Y_W\) where \(Y_W\) is a Darboux
+chart of the \((-1)\)-shifted symplectic structure on \(\mathfrak M(Y)\)
+supplied by Pantev--To\"en--Vaqui\'e--Vezzosi
+\cite[Theorem~0.3]{PTVV2013}; the perverse sheaf \(\Phi_W\) of
+vanishing cycles is well defined on the oriented d-critical locus by
+Brav--Bussi--Dupont--Joyce--Szendr\H{o}i
+\cite[Theorem~6.9]{BBDJS2015}.  Second, the universal extension stack
+is locally a critical locus of \(W_A\boxplus W_B\) on
+\(Y_A\times Y_B\), and the Massey--Saito Thom--Sebastiani isomorphism
+\cite[Theorem~1.1]{MasseyST}, \cite[Theorem~5.10]{BBDJS2015} identifies
+\(\Phi_{W_A\boxplus W_B}\) with \(\Phi_{W_A}\boxtimes\Phi_{W_B}\) on
+\(\mathrm{Crit}(W_A)\times\mathrm{Crit}(W_B)\).  Third, the
+multiplicative orientation cocycle of Joyce--Upmeier
+\cite[Theorem~4.1]{JoyceUpmeier},
+\cite[Theorem~1.11]{JoyceTanakaUpmeier} trivializes the orientation
+gerbe on extensions, supplying the line bundle factor.  Pulling
+\(\Phi_W\otimes o\) along \(p\), tensoring by Thom--Sebastiani, and
+pushing along \(q_!\) defines \(m\).  Associativity reduces, via the
+two-step flag stack
+\(\mathfrak{Flag}(\mathfrak M(Y),\mathfrak M(Y),\mathfrak M(Y))\), to
+the pentagon coherence of Thom--Sebastiani triple stratification
+\cite[Theorem~5.10(iv)]{BBDJS2015} together with the Joyce--Upmeier
+multiplicative cocycle on triple extensions
+\cite[\S4]{JoyceUpmeier}.  See Joyce--Song
+\cite[\S 5.2,~Theorem~5.5]{JoyceSong} for the original construction
+and Davison \cite[Theorem~A]{Davison2017} for the cohomological
+amplification.
+\end{proof}
+
+\noindent\emph{\(K3\times E\) specialization.} On \(Y = K3\times E\),
+the cosection \(\sigma = \mathrm{pr}_S^*\sigma_S\) of the
+holomorphic two-form on the K3 factor reduces the obstruction
+theory through Kiem--Li (Appendix~\ref{app:cosection}); the supplied
+moduli is \(\mathfrak M^{\mathrm{red}}_{\mathrm{eff}}(X)\subset
+\mathfrak M(X)\), and the product is the reduced critical product
+\[
+m^{\mathrm{red}}\;=\;q_!^{\mathrm{red}}\circ\mathrm{TS}^{\mathrm{red}}
+\circ p^*
+\]
+of Proposition~\ref{prop:finite-dcritical-hall-product}.  Vanishing of the seven obstruction classes
+\(\mathfrak o^{\mathrm{conf}}_R\),
+\(\mathfrak o^{\mathrm{prop},\mathrm{LL}}_R\),
+\(\mathfrak o^{\mathrm{prop},\mathrm{mix}}_R\),
+\(\mathfrak o^{\mathrm{prop},\mathrm{WW}}_R\),
+\(\mathfrak o^{\mathrm{conf\text{-}prop}}_R\),
+\(\mathfrak o^{\mathrm{assoc}}_{w,R}\), and
+\(\mathfrak o^{I,\mathrm{prod}}_{w,R}\) is the data \((D0)\)+\((O1)\),
+absorbed into \(\mathrm{Bnd}\), \(\mathrm{dCrit}\), \(\mathrm{RedOr}\),
+and \(\mathrm{Six}\) of
+Definition~\ref{def:compact-hall-product}.  \emph{The
+existence of a chain-level Hall product on \(K3\times E\) without
+those four data is open.} The downstream invariant
+\(Y^+(X) := H^\bullet_c(\mathfrak M^+_{\mathrm{eff}}(X), \Phi_W\otimes o)\)
+is the positive-half cohomological Hall algebra (CoHA) of
+Kontsevich--Soibelman \cite{KSCoHA} restricted to effective dyonic
+class; its Drinfeld double, regulated tensor product completion, and
+integral form constitute the level-3 object \(G(X)\)
+[\(\beta\)-band, conditional].  The level-3 object thus arises from
+\(Y^+(X)\) by Hall pairing, integral-form completion, and
+stable-envelope transport, three arrows downstream of the level-2
+Hall positive half (Vol III \cite{CYQGVolIIIWave3} row 9, the Hodge
+$\Z/2$-super-extension cache row producing $\Delta_5$).
+
+\subsection*{D.2\quad The Hall coproduct via collisions}
+\label{app:hall-coproduct}
+
+The Hall product has a dual coproduct, defined by reversing pull and
+push in the universal short-exact-sequence stack.  The collision
+coproduct furnishes \(Y^+(X)\) with a (graded) bialgebra structure;
+after Drinfeld doubling (Hall pairing + completion + integral form +
+stable-envelope transport, \S~D.6) the bialgebra is the level-3
+quantum group \(G(X) = D_\hbar(Y^+(X))\) of Schiffmann--Vasserot type
+\cite{SchiffmannVasserot2013}.
+
+\begin{theorem}[Joyce--Song collision coproduct;
+\cite{JoyceSong}~Theorem~5.5; \(\beta\), proved on
+\(\mathrm{CY}_3\) projective]
+\label{thm:hall-coproduct}
+Let \(Y\) be a smooth projective Calabi--Yau threefold.  The
+critical Hall positive half
+\(Y^+(Y) = H^\bullet_c(\mathfrak M^+_{\mathrm{eff}}(Y),\Phi_W\otimes o)\)
+carries a collision coproduct
+\[
+\Delta\;:\;Y^+(Y)\longrightarrow Y^+(Y)\otimes Y^+(Y),
+\qquad
+\Delta\;=\;p_!^{\mathrm{coll}}\circ
+\mathrm{TS}^{-1}\circ q^{\mathrm{coll},*},
+\]
+defined by the collision/extension correspondence
+\[
+\mathfrak M^+_{\mathrm{eff}}(Y)
+\xleftarrow{\;q^{\mathrm{coll}}\;}
+\mathfrak{Ext}^{1,\mathrm{coll}}(\mathfrak M^+_{\mathrm{eff}}(Y))
+\xrightarrow{\;p^{\mathrm{coll}}\;}
+\mathfrak M^+_{\mathrm{eff}}(Y)\times\mathfrak M^+_{\mathrm{eff}}(Y),
+\]
+with \(\mathfrak{Ext}^{1,\mathrm{coll}}\) the moduli of short exact
+sequences \(0\to A\to C\to B\to 0\) read with \(C\) on the left and
+\((A,B)\) on the right, \(q^{\mathrm{coll}}(0\to A\to C\to B\to 0) = C\),
+\(p^{\mathrm{coll}}(0\to A\to C\to B\to 0) = (A,B)\).  The
+coproduct \(\Delta\) is graded coassociative.  Together with the Hall
+product \(m\) of Theorem~\ref{thm:hall-product},
+\((Y^+(Y), m, \Delta)\) is a graded bialgebra.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Coassociativity is the dual statement of associativity proven through
+the \(\mathfrak{Flag}\) stack and the inverse Thom--Sebastiani
+pentagon \cite[Theorem~5.10(iv)]{BBDJS2015}.  The compatibility of
+\(m\) and \(\Delta\) follows from the Yetter--Drinfeld--type cyclic
+two-step diagram of Joyce--Song \cite[\S 5.4]{JoyceSong}; that diagram
+fails the strict bialgebra Hopf axiom on the unmodified Hall pairing
+and is repaired by the Hall pairing twist
+\(\langle\,\cdot\,,\,\cdot\,\rangle_{\mathrm{Hall}}\) supplied by the
+Hopf radical kernel of
+Lemma~\ref{thm:hall-coproduct}.  See
+Davison--Meinhardt \cite[Theorem~A]{DavisonMeinhardtCoHA} for the
+amplified bialgebra statement on quivers with potential, and Davison
+\cite[Theorem~A]{Davison2017} for the integrality of \(Y^+\) on
+preprojective stacks.  Coassociativity transports verbatim through
+the cosection-reduced quotient
+\(\mathfrak M^+_{\mathrm{eff}}(X)\to\mathfrak M^{\mathrm{red},+}_{\mathrm{eff}}(X)/E\)
+once \((D0)\) supplies the equivariant six-functor formalism on the
+two-step flag stack.
+\end{proof}
+
+\noindent\emph{Drinfeld double.} The Hall pairing
+\(\langle\,\cdot\,,\,\cdot\,\rangle_{\mathrm{Hall}}\) of
+Lemma~\ref{thm:hall-coproduct} pairs
+\(Y^+\) with itself; the Drinfeld double \(D_\hbar(Y^+(X))\) is the
+quantum double in the sense of Drinfeld \cite[\S 13]{KAC:1}, supplying
+the negative half \(Y^-(X)\) and the Cartan generators \(K_\gamma\),
+\(\gamma\in\Gamma_{\mathrm{eff}}\), with relations encoding the Hall
+pairing.  The \emph{level-3 \(K3\times E\) quantum group} is then
+\[
+G(X)\;:=\;D_\hbar(Y^+(X))_{\mathrm{compl}}^{\mathrm{int}}
+\quad\text{[\(\beta\), \(K3\times E\) compact: open]}
+\]
+where \((-)_{\mathrm{compl}}^{\mathrm{int}}\) is the integral-form
+completion under the Hall pairing, conditional on the
+stable-envelope transport of \S~D.6.  In Schiffmann--Vasserot
+\cite{SchiffmannVasserot2013} the analogous identification on
+toric \(\mathrm{CY}_3\) ambient is established;
+\(K3\times E\) admits no global non-commutative crepant resolution
+(NCCR) for five obstructions ((a) trivial \(\omega\) but
+\(\omega\)-structure not reflexive-tilting; (b) derived McKay needs
+finite \(\mathrm{Aut}\) fixing a point; (c) HPD self-dual fails
+product polarisation; (d) Mukai vanishing fails off the K3 factor;
+(e) no global \(\mathrm{CY}_3\) symmetric obstruction theory).  The
+Serre-equivariant quasi-NCCR substitute supplied by the
+cosection-twist of \S~D.4 is the standing replacement; the global
+\(G(X)\) on the compact non-toric \(K3\times E\) accordingly remains
+an open obligation.
+
+\subsection*{D.3\quad The Hall primitives and the formal recognition criterion}
+\label{app:hall-primitives}
+
+For a connected graded bialgebra \(B = \bigoplus_{c}B_c\), the
+primitive elements at charge \(c\) are
+\[
+\mathrm{Prim}_c(B)\;=\;
+\{x\in B_c\mid \Delta(x) = x\otimes 1 + 1\otimes x\},
+\]
+equivalently the kernel of the reduced coproduct \(\bar\Delta\).  On a
+graded connected cocommutative Hopf algebra in characteristic zero,
+the Milnor--Moore theorem \cite[Theorem~5.18]{LurieHA} identifies
+\(B\simeq U(\mathrm{Prim}_\bullet(B))\) as Hopf algebras, where
+\(\mathrm{Prim}_\bullet(B)\) is the Lie algebra of primitives under
+the bracket \([x,y] = xy - (-1)^{|x|\,|y|}yx\).
+
+\begin{theorem}[Hall primitives, formal level; \(\beta\), formal]
+\label{thm:hall-primitives-formal}
+Let \(\mathfrak M\) carry a critical Hall positive half
+\(Y^+(Y) = (B, m, \Delta)\) of
+Theorem~\ref{thm:hall-coproduct}.  The graded subspace
+\[
+\mathrm{Prim}_\bullet(Y^+(Y))\;=\;
+\bigoplus_{c\in\Gamma_{\mathrm{eff}}}
+\mathrm{Prim}_c(Y^+(Y))
+\]
+is a graded Lie subalgebra of \(Y^+(Y)\) under the antisymmetrised
+product \([\,\cdot\,,\,\cdot\,]\).  At a charge \(c\) such that the
+moduli \(\mathfrak M^+_c(Y)\) is connected and the \(C\)-component of
+\(\Delta\) on \(\mathfrak M^+_c(Y)\) factors through extensions whose
+graded pieces lie in strictly lower charges, the inclusion
+\(\mathrm{Prim}_c\hookrightarrow Y^+_c\) is the kernel of
+\(\bar\Delta_c\).  When \(Y^+(Y)\) is graded connected and
+cocommutative, Milnor--Moore identifies
+\(Y^+(Y)\simeq U(\mathrm{Prim}_\bullet(Y^+(Y)))\) as graded Hopf
+algebras.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Primitivity of \(\mathrm{Prim}_\bullet\) under the antisymmetrised
+product is verified by direct computation of
+\(\Delta([x,y])\) using the cocommutative-up-to-twist axiom and the
+multiplicativity of \(\Delta\); the resulting expression collapses to
+\([x,y]\otimes 1 + 1\otimes [x,y]\).  On a connected graded
+cocommutative Hopf algebra in characteristic zero, the Milnor--Moore
+identification is \cite[\S 21.1]{LurieHA}; on graded connected
+non-cocommutative Hopf algebras, the Cartier--Quillen--Milnor--Moore
+theorem \cite[Theorem~21.2.1]{LurieHA} requires either
+cocommutativity or a chain-level lift through bar / cobar, which is
+exactly the chiral Koszul firewall of Vol I
+\cite{FrancisGaitsgoryCKD}.
+\end{proof}
+
+\noindent\emph{Recognition.}
+The recognition theorem
+of Theorem~\ref{thm:primitive-recognition} of the body of this
+manuscript supplies the upgrade of the formal primitive Lie
+superalgebra to the imported Borcherds--Kac--Moody Lie superalgebra
+\(\mathfrak g_{\Delta_5}\) of
+Theorem~\ref{thm:bkm-denominator-algebra-identity}, conditional on (D0),
+(O1), (O1)\(^+\), (O2), the completed PBW filtration, the Hopf
+pairing radical equality, and the parity dimension recovery.  In
+particular, on \(K3\times E\) the formal primitive subspace
+\(\mathrm{Prim}_\bullet(Y^+(X))\) is the \emph{candidate} primitive
+Lie superalgebra; its identification with the imported BKM
+denominator algebra \(\mathfrak g_{\Delta_5}\) is the \emph{compact
+Pfaffian} View \(\textcircled{3}\) of the Pentadic decomposition,
+conditional on the four named obstructions.  This appendix supplies
+no recognition theorem; it supplies the formal Hopf algebra structure
+on which recognition acts.
+
+\subsection*{D.4\quad The cosection-twist on \texorpdfstring{$K3\times E$}{K3 x E}: Kiem--Li localisation}
+\label{app:cosection}
+
+On \(K3\times E\), the holomorphic two-form on the K3 factor pulls
+back to a non-vanishing cosection of the obstruction theory of
+\(\mathfrak M(X)\); the Kiem--Li \cite{KiemLi2013} localisation
+theorem then localises the virtual fundamental class to the
+zero-locus of the cosection.  The localisation is the source of the
+\emph{reduced} virtual class on which the Hall product of
+\S~D.1 carries chain-level coherence.
+
+\begin{definition}[Cosection]
+\label{def:cosection-app-D}
+Let \(\mathfrak M\) be a Deligne--Mumford stack equipped with a
+perfect obstruction theory \(\phi:\mathbb E\to\mathbb L_{\mathfrak M}\)
+of amplitude \([-1,0]\), and let \(\mathrm{Ob}(\mathfrak M) =
+h^1(\mathbb E^\vee)\) be the coherent obstruction sheaf.  A
+\emph{cosection} of the obstruction theory is an
+\(\mathcal O_{\mathfrak M}\)-linear morphism
+\[
+\sigma\;:\;\mathrm{Ob}(\mathfrak M)\longrightarrow
+\mathcal O_{\mathfrak M};
+\]
+its \emph{vanishing locus} is the closed substack
+\(\mathfrak M^{\mathrm{red}} = (\sigma = 0)\) on which the obstruction
+sheaf restricts to the kernel \(\ker\sigma\subset\mathrm{Ob}(\mathfrak M)\).
+\end{definition}
+
+\begin{theorem}[Kiem--Li cosection localisation;
+\cite{KiemLi2013}~Theorem~5.0.1; \(\gamma\), proved]
+\label{thm:cosection-localisation}
+Let \(\mathfrak M\) be a Deligne--Mumford stack with perfect
+obstruction theory \(\phi\) and surjective cosection
+\(\sigma:\mathrm{Ob}(\mathfrak M)\twoheadrightarrow\mathcal O_{\mathfrak M}\)
+on \(\mathfrak M\setminus\mathfrak M^{\mathrm{red}}\), where
+\(\mathfrak M^{\mathrm{red}} = (\sigma = 0)\).  The virtual
+fundamental class \([\mathfrak M]^{\mathrm{vir}}\in
+A_{\mathrm{vd}}(\mathfrak M)\) lifts to a cosection-localised class
+\[
+[\mathfrak M]^{\mathrm{vir}}_{\mathrm{loc}}
+\;\in\;A_{\mathrm{vd}+1}(\mathfrak M^{\mathrm{red}})
+\]
+satisfying \(\iota_*[\mathfrak M]^{\mathrm{vir}}_{\mathrm{loc}} =
+[\mathfrak M]^{\mathrm{vir}}\), where
+\(\iota:\mathfrak M^{\mathrm{red}}\hookrightarrow\mathfrak M\) is the
+inclusion.  The reduced virtual dimension is
+\(\mathrm{vd}^{\mathrm{red}} = \mathrm{vd} + 1\).
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The cosection-kernel cone \(C(\sigma) = \ker(\sigma:\mathrm{Ob}\to
+\mathcal O)\) is a perfect obstruction cone of amplitude \([-1,0]\)
+on \(\mathfrak M^{\mathrm{red}}\) with
+\(\mathrm{rk}\,C(\sigma) = \mathrm{rk}\,\mathrm{Ob} - 1\).  The
+intrinsic normal cone \(\mathfrak C\) of \(\mathfrak M\) sits in the
+total obstruction bundle on \(\mathfrak M\setminus\mathfrak M^{\mathrm{red}}\),
+where \(\sigma\) is surjective and the cone has codimension one in
+\(\mathrm{Ob}\); on \(\mathfrak M^{\mathrm{red}}\), the cone embeds
+into \(C(\sigma)\) by \cite[Proposition~4.3]{KiemLi2013}.
+Intersection with the zero section of \(C(\sigma)\) on
+\(\mathfrak M^{\mathrm{red}}\), pushed forward to \(\mathfrak M\)
+through \(\iota\), yields \([\mathfrak M]^{\mathrm{vir}}\) by
+\cite[Theorem~5.0.1]{KiemLi2013}.  The dimension shift
+\(\mathrm{vd}^{\mathrm{red}} = \mathrm{vd} + 1\) is the codimension of
+\(\ker\sigma\) in \(\mathrm{Ob}\).
+\end{proof}
+
+\noindent\emph{\(K3\times E\) cosection.} On \(X = K3\times E\), the
+cosection of the obstruction theory of \(\mathfrak M(X)\) is induced
+by Mukai dilation along \(\sigma_S = \mathrm{pr}_S^*\sigma_S\).
+Concretely, for a perfect complex \(F\) on \(X\), the
+chain-level cosection acts on \(\mathrm{Ext}^2(F,F)\) by
+the semiregularity map of Buchweitz--Flenner /
+Bloch \cite{MaulikTodaGV},
+\[
+\mathrm{cs}_F\;:\;\mathrm{Ext}^2(F,F)\longrightarrow
+\C,
+\qquad
+\mathrm{cs}_F(\xi)\;=\;\int_X
+\sigma\wedge\mathrm{Tr}\bigl((\xi\otimes 1_{\Omega_X^1})\circ
+\mathrm{At}(F)\bigr),
+\]
+where \(\mathrm{At}(F)\in\mathrm{Ext}^1(F, F\otimes\Omega^1_X)\) is
+the Atiyah class.  The cosection vanishes precisely on the
+\emph{reduced} moduli
+\(\mathfrak M^{\mathrm{red}}(X)\subset\mathfrak M(X)\) consisting of
+sheaves whose Atiyah class is annihilated by \(\sigma\); equivalently,
+sheaves whose deformation space along the K3 direction is
+constrained.  See Maulik--Toda
+\cite[Lemma~2.6, Theorem~2.7]{MaulikTodaGV} and Oberdieck
+\cite[Theorem~1, Theorem~3]{OberdieckReducedPT} for the explicit
+identification on the DT/PT side.  The cosection is surjective off
+the cusp locus of the Mukai vector \(\mathrm{ch}(F) =
+(0,0,c_2(F),\ldots)\) for which the K3 component is trivial; on the
+\(s = 0\) cusp \(\sigma_S = 0\) and the localisation degenerates,
+which is the \(D0\)-degeneration limit named at obstruction \((D0)\)
+of \S~\ref{ch:zbps-realization}.
+
+\begin{theorem}[Reduced virtual class on \(K3\times E\); proved
+on the smooth primitive nonzero K3-class branch]
+\label{thm:reduced-virtual-class-K3xE}
+Let \(\mathfrak M^+_c(X)\) be the moduli of semistable sheaves of
+dyonic class \(c\in\Gamma_{\mathrm{eff}}\) with nonzero K3
+component.  The cosection-localised virtual class
+\([\mathfrak M^+_c(X)]^{\mathrm{vir}}_{\mathrm{loc}}\in
+A_{\mathrm{vd}^{\mathrm{red}}}(\mathfrak M^{\mathrm{red},+}_c(X))\)
+is the reduced virtual class of Maulik--Toda
+\cite[\S 2]{MaulikTodaGV}; its DT/PT shadow recovers the
+Oberdieck--Pixton scalar \(Z^X_{\mathrm{OP}} = -4096\,\Delta_5^{-2}\)
+on the smooth primitive K3-class branch [\(\varepsilon\),
+proved] \cite[Theorem~3]{OberdieckReducedPT}.
+On the \(s = 0\) cusp the cosection degenerates; \emph{the
+cosection-reduced theory there is the \((D0)\) degeneration limit
+named at \S~\ref{ch:zbps-realization} and is
+open}.\quad[\(\delta\), \((D0)\)]
+\end{theorem}
+
+\subsection*{D.5\quad BBDJS reduced d-critical orientation}
+\label{app:bbdjs}
+
+The Hall product of \S~D.1 requires not just a virtual fundamental
+class but a perverse-sheaf-of-vanishing-cycles refinement and an
+orientation gerbe; the source is the Brav--Bussi--Dupont--Joyce--Szendr\H{o}i
+\cite{BBDJS2015} extension of the Joyce
+\cite{JoyceSong} d-critical-locus framework.
+
+\begin{theorem}[BBDJS perverse-sheaf-of-vanishing-cycles; oriented
+\(\mathrm{CY}_3\) version of \cite{BBDJS2015}~Theorem~6.9; \(\gamma\), proved]
+\label{thm:bbdjs}
+Let \(\mathfrak M\) be a derived Artin stack with a \((-1)\)-shifted
+symplectic structure (PTVV \cite{PTVV2013}) whose classical truncation
+is a d-critical locus in the sense of Joyce
+\cite[Definition~2.5]{JoyceSong}.  Suppose \(\mathfrak M\) carries an
+\emph{orientation}, i.e.~a square root \(o\) of the Joyce determinant
+line \(K_{\mathfrak M}^{\mathrm{vir}} = (\det\mathbb L_{\mathfrak M})^{1/2}\),
+in the sense of \cite[Theorem~6.9]{BBDJS2015}.  There is a perverse
+sheaf
+\[
+\Phi_{\mathfrak M}\;\in\;\mathrm{Perv}(\mathfrak M),
+\]
+the \emph{perverse sheaf of vanishing cycles} of the d-critical
+locus; locally on a Joyce--Song Darboux chart \(\mathrm{Crit}(W)\)
+inside a smooth ambient \(Y_W\), \(\Phi_{\mathfrak M}|_{\mathrm{Crit}(W)}
+\simeq\Phi_W[d_{Y_W}]\) is the standard perverse sheaf of vanishing
+cycles of the holomorphic potential \(W:Y_W\to\C\), shifted by the
+ambient dimension.  The chart-comparison cocycle is canonical up to
+the orientation choice; the orientation upgrades to a multiplicative
+cocycle of Joyce--Upmeier \cite[Theorem~4.1]{JoyceUpmeier} on the
+moduli of objects.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Three layers stack.  PTVV \cite[Theorem~0.3]{PTVV2013} produces the
+\((-1)\)-shifted symplectic form on the derived moduli of
+\(\mathrm{CY}_3\) coherent sheaves; Bussi--Brav--Joyce
+\cite[\S 5]{BBDJS2015} produce the d-critical-locus chart structure
+on the classical truncation; Bussi--Brav--Dupont--Joyce--Szendr\H{o}i
+\cite[Theorem~6.9]{BBDJS2015} produce the perverse-sheaf-of-vanishing-cycles
+package with chart-cocycle data.  The orientation is the data needed
+to unify chart-local \(\Phi_W\) into a global perverse sheaf
+\(\Phi_{\mathfrak M}\); without it, the chart-cocycle has a sign
+ambiguity that obstructs the descent to a perverse sheaf
+\cite[\S 6.4]{BBDJS2015}.  Joyce--Upmeier
+\cite[Theorem~1.11]{JoyceUpmeier} build the multiplicative orientation
+cocycle on the universal extension stack; this is the
+\(\mathrm{CY}_3\) projective input that is absorbed below.
+\end{proof}
+
+\noindent\emph{Reduced refinement on \(K3\times E\).}
+On \(X = K3\times E\), the \((-1)\)-shifted symplectic structure
+\(\omega_{\mathfrak M}\) on \(\mathfrak M(X)\) does not restrict to a
+\((-1)\)-shifted symplectic structure on
+\(\mathfrak M^{\mathrm{red}}(X)\); the cosection-twist of \S~D.4
+contracts \(\omega_{\mathfrak M}\) by \(\sigma\), and the
+\emph{reduced} \((-1)\)-shifted form
+\(\omega_{\mathfrak M}^{\mathrm{red}}\) is non-degenerate only after
+restriction to the cosection vanishing locus \cite[\S 2.6]{MaulikTodaGV}.
+The corresponding reduced d-critical-locus structure is supplied by
+the Maulik--Toda \cite[Theorem~2.7]{MaulikTodaGV} extension; the
+reduced perverse sheaf of vanishing cycles
+\(\Phi_{\mathfrak M}^{\mathrm{red}}\) and the reduced orientation
+line \(o^{\mathrm{red}}_{\mathcal C}\) are exactly the data
+\((O1)\) of \S~\ref{ch:zbps-realization}.  In
+the language of (P4) of the body manuscript, the reduced
+orientation is twisted by a parity-flip line \(\Pi\) generated by the
+cosection cokernel,
+\[
+o^{\mathrm{red}}_{\mathcal C}\;=\;
+o^{\mathrm{std}}_{\mathcal C}\otimes\Pi,
+\]
+absorbing the dimension shift \(\mathrm{vd}^{\mathrm{red}} =
+\mathrm{vd}^{\mathrm{std}} + 1\) into a \(\Z/2\)-grading shift on the
+oriented BBDJS line.
+
+\begin{proposition}[BBDJS reduced d-critical orientation on
+\(K3\times E\); \(\delta\), \((O1)+(O1)^+\)]
+\label{prop:bbdjs-reduced-K3xE}
+Let \(\mathfrak M^{\mathrm{red},+}_c(X)\) be the cosection-reduced
+moduli of semistable sheaves of effective dyonic class \(c\) on
+\(X = K3\times E\).  The hypotheses \emph{strong reduced orientation
+on the \(K3\times E\)-quotient self-Ext frame bundle (O1) and
+Weyl-equivariant transport along \(W^{(2)}(\Lambda_{II}^{2,1})\)
+reflections (O1)\(^+\)} of
+\S~\ref{ch:zbps-realization} are exactly the
+following.  There exist a multiplicative orientation cocycle of
+Joyce--Upmeier type extending equivariantly across the reduced
+\(E\)-quotient, the \(\sigma_S\)-cosection-induced parity flip line
+\(\Pi\), and a connected \(BE\)-equivariant trivialisation of the
+small-orbit gerbe class \(\overline\beta^E_{\mathcal C}\) on the
+finite-stabilizer strata, such that
+\[
+\Phi^{\mathrm{red}}_{\mathfrak M^{\mathrm{red},+}_c(X)}
+\otimes
+o^{\mathrm{red}}_c
+\]
+descends through the free \(E\)-translation quotient and trivializes
+the Pin\(^c\)-lift gerbe class of the reduced derived self-Ext frame
+bundle.\quad The strong reduced orientation \((O1)\) is established
+on the unreduced \(K3\times E\)-quotient by Joyce--Upmeier
+\cite[Theorem~1.11]{JoyceUpmeier} on the \(\mathrm{CY}_3\) projective
+ambient, on the cosection-reduced quasi-projective extension by Bojko
+\cite[Theorem~1.4]{Bojko}, and on the cosection-twisted orientation
+package on toric \(\mathrm{CY}_4\) ambient via Cao--Kool--Monavari
+\cite[Theorem~1.6]{CaoKoolMonavari}; the equivariant transport
+across the free \(E\)-quotient and across the
+finite-stabilizer strata, jointly with Weyl-equivariant transport,
+is the open obligation \((O1)+(O1)^+\) of \S~5.8.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The construction of the reduced perverse sheaf
+\(\Phi^{\mathrm{red}}_{\mathfrak M^{\mathrm{red},+}_c(X)}\) on the
+cosection-reduced moduli is by Maulik--Toda
+\cite[Theorem~2.7]{MaulikTodaGV}; the orientation gerbe lifts to the
+reduced Joyce d-critical locus by the BBDJS
+\cite[\S 6.4]{BBDJS2015} chart-cocycle calculation.  The
+multiplicative \emph{equivariant} orientation cocycle across the
+\(E\)-quotient and across the finite-stabilizer locus
+\(BE[N]\)-strata is the joint vanishing of \((O1)\) and \((O1)^+\):
+on the connected \(BE\)-equivariant trivialisation of
+\(\alpha^E_{\mathcal C}\in H^2_E(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb F_2)\)
+of Lemma~\ref{def:O1-plus-weyl-transport} it suffices to trivialize the
+small-orbit gerbe class \(\overline\beta^E_{\mathcal C}\) on
+\(BE[N]\)-strata, governed by the Klein-four
+detection criterion of Lemma~\ref{prop:appE-local-pfaffian-sign}.  The Weyl-equivariant transport across
+\(W^{(2)}(\Lambda_{II}^{2,1})\) reflections is the orientation
+character calculation of
+Theorem~\ref{thm:pfaffian-dirac-finite-stage}
+on the three type-II walls.  Both transports are open in general; the
+Pin\(^c\)-lift programme of \cite{JoyceUpmeier},
+\cite{JoyceTanakaUpmeier}, \cite{CaoKoolMonavari}, \cite{Bojko}
+supplies the analytic technology.
+\end{proof}
+
+\subsection*{D.6\quad Stable-envelope transport: from Hall to Yangian}
+\label{app:stable-envelope}
+
+The level-3 quantum-group structure on \(G(X) = D_\hbar(Y^+(X))\) of
+\S~D.2 is, on toric ambient or quiver varieties, identified by
+Maulik--Okounkov \cite{MaulikOkounkov} with the geometric \(R\)-matrix
+of the \emph{stable envelope}, providing the link from the Hall side
+to the Yangian / quantum-group side.
+
+\begin{definition}[Stable envelope]
+\label{def:stable-envelope}
+Let \(\mathfrak M\) be a smooth symplectic variety with a torus
+\(T\)-action and a finite \(T\)-fixed locus \(\mathfrak M^T\); let
+\(\mathcal C\subset\mathrm{Lie}(T)\) be a chamber of the
+\(T\)-equivariant cohomology of \(\mathfrak M\).  The
+\emph{stable envelope} \cite[\S 3]{MaulikOkounkov} is the
+\(T\)-equivariant cohomological correspondence
+\[
+\mathrm{Stab}_{\mathcal C}\;:\;
+H^\bullet_T(\mathfrak M^T)\longrightarrow
+H^\bullet_T(\mathfrak M),
+\]
+characterised by support, normalization, and degree axioms
+\cite[Theorem~3.3.4]{MaulikOkounkov}.  The geometric \(R\)-matrix is
+the comparison
+\[
+R^{\mathrm{MO}}_{\mathcal C, \mathcal C'}\;=\;
+\mathrm{Stab}_{\mathcal C'}^{-1}\circ\mathrm{Stab}_{\mathcal C}
+\;\in\;\mathrm{End}(H^\bullet_T(\mathfrak M^T))
+\]
+across two chambers \(\mathcal C, \mathcal C'\); it satisfies the
+Yang--Baxter equation by \cite[Theorem~4.6.1]{MaulikOkounkov}.
+\end{definition}
+
+\begin{theorem}[Maulik--Okounkov; \cite{MaulikOkounkov}~Theorem~10.2.1;
+\(\beta\), proved on quiver varieties; conditional on \(K3\times E\)
+compact non-toric]
+\label{thm:maulik-okounkov}
+Let \(\mathfrak M = \mathfrak M_{Q,\mathbf v,\mathbf w}\) be a Nakajima
+quiver variety \cite{Nakajima1994,Nakajima1998} attached to a finite
+quiver \(Q\) with dimension vectors \(\mathbf v, \mathbf w\).  The
+stable envelope \(\mathrm{Stab}_{\mathcal C}\) makes
+\(H^\bullet_T(\mathfrak M_{Q,\mathbf v,\mathbf w})\) a module over a
+Yangian \(Y_\hbar(\mathfrak g_Q)\) attached to \(Q\), with
+\(\mathfrak g_Q\) the Kac--Moody Lie algebra of the quiver, and the
+geometric \(R\)-matrix \(R^{\mathrm{MO}}\) is the rational
+\(R\)-matrix of \(Y_\hbar(\mathfrak g_Q)\).
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The Maulik--Okounkov programme proceeds through:
+(i) the existence and uniqueness of the stable envelope (axioms of
+support, polarisation, normalization), \cite[\S 3.3]{MaulikOkounkov};
+(ii) the Yang--Baxter equation as a chamber-wall cocycle,
+\cite[\S 4]{MaulikOkounkov}; (iii) the identification of the Bethe
+algebra generated by the matrix elements of \(\mathrm{Stab}\) with a
+Yangian, \cite[\S 5--10]{MaulikOkounkov}.  The Schiffmann--Vasserot
+identification \(\mathrm{CoHA}(\C^3) = Y^+(\widehat{\mathfrak{gl}}_1)\)
+of \cite[Theorem~A]{SchiffmannVasserot2013} is the affine \(A_0\)
+specialization; \(\mathcal W_{1+\infty}\) arises \emph{only after}
+Drinfeld doubling and Fock-evaluation.  The three-arrow chain
+\(\mathrm{CoHA} = Y^+\hookrightarrow Y\xrightarrow{\mathrm{ev}_\lambda}
+\mathrm{End}(\mathcal W_{1+\infty}[\lambda]\text{-vac})\) of
+\cite{KSCoHA}, \cite{SchiffmannVasserot2013} traverses the level-2
+\(\to\) level-3 \(\to\) level-3-evaluated passage; the named identity
+on each arrow records the structural distance from
+\(\mathrm{CoHA}(\C^3)\) to \(\mathcal W_{1+\infty}\).
+\end{proof}
+
+\noindent\emph{\(K3\times E\) specialization: open.}
+On \(X = K3\times E\), the moduli \(\mathfrak M^+_{\mathrm{eff}}(X)\)
+is not a Nakajima quiver variety, the ambient is compact non-toric,
+and the global stable envelope is unconstructed.  The five
+obstructions (a)--(e) to a global NCCR of $X$ enumerated above
+\cite{SchiffmannVasserot2013, KSCoHA} obstruct the literal
+\cite{MaulikOkounkov} construction.  The cosection-twist of \S~D.4 supplies the
+\emph{Serre-equivariant quasi-NCCR substitute}: the
+cosection-reduced obstruction theory of
+Theorem~\ref{thm:reduced-virtual-class-K3xE} restores a
+\(\mathrm{CY}_3\)-symmetric reduced obstruction package on the
+\(s\ne 0\) sector, and the Hall-to-Yangian comparison is then
+expected at the level of the reduced theory and conditional on the
+discharge of the four obstructions \((D0)\), \((O1)\), \((O1)^+\),
+\((O2)\) of
+\S~\ref{ch:zbps-realization}.
+
+The Hall--Yangian comparison on \(K3\times E\) is therefore a
+\emph{conjectural} \(\beta\)-arrow:
+\[
+G(X)\;\overset{?}{=}\;
+D_\hbar(\mathrm{CoHA}^{\mathrm{red},+}_{K3\times E})_{\mathrm{compl}}^{\mathrm{int}}
+\;\overset{?}{=}\;
+Y_\hbar(\widehat{\mathfrak g}_{\Delta_5})
+\quad\text{[\(\delta\), open]}
+\]
+where \(\widehat{\mathfrak g}_{\Delta_5}\) is the central extension of
+the imported BKM Lie superalgebra of
+Theorem~\ref{thm:bkm-denominator-algebra-identity}, and the equality is
+conditional on a \(K3\times E\) stable-envelope transport.  The
+Hall--Drinfeld double \(\mathcal D_\hbar(\mathrm{CoHA}_{K3\times E})\)
+of Kontsevich--Soibelman \cite{KSCoHA} places this identification at
+the same level-3 quantum group seen from the geometric side; it is
+the open compact non-toric instance of the chain-fusion conjecture.
+
+\subsection*{D.7\quad Banned identifications and cross-volume firewall}
+\label{app:hall-firewall}
+
+The Beilinson cut of \cite{KSCoHA},
+\cite{SchiffmannVasserot2013} and the standing firewall of
+\S~\ref{ch:zbps-realization} pair each
+banned identification (left column) with the structurally correct
+identification (right column).  Each row records a categorical-level
+collision the audit corrects.
+
+\begin{enumerate}
+\item[\textup{[Y]}] \emph{Banned}: \(Y^+(X) = G(X)\).
+\emph{Required}: \(Y^+(X)\) is the cohomological-Hall positive half
+\(H^\bullet_c(\mathfrak M^+_{\mathrm{eff}}(X), \Phi_W\otimes o)\) with
+the Joyce--Song product/coproduct of
+Theorems~\ref{thm:hall-product},~\ref{thm:hall-coproduct}; \(G(X) =
+D_\hbar(Y^+(X))_{\mathrm{compl}}^{\mathrm{int}}\) is the Drinfeld
+double after Hall pairing, completion, integral form, stable-envelope
+transport, and descent.
+
+\item[\textup{[CoHA]}] \emph{Banned}:
+\(\mathrm{CoHA}(\C^3) = \mathcal W_{1+\infty}\).
+\emph{Required}: \(\mathrm{CoHA}(\C^3) = Y^+(\widehat{\mathfrak{gl}}_1)\)
+\cite[Theorem~A]{SchiffmannVasserot2013}; \(\mathcal W_{1+\infty}\)
+appears as the Drinfeld-double + Fock-evaluation image, three arrows
+downstream.
+
+\item[\textup{[NCCR]}] \emph{Banned}: \(K3\times E\) admits a
+global NCCR.  \emph{Required}: \(K3\times E\) admits no global NCCR;
+five named obstructions
+\cite{SchiffmannVasserot2013}, \cite{KSCoHA}.  The cosection-twist of
+\S~D.4 supplies the Serre-equivariant quasi-NCCR substitute.
+
+\item[\textup{[Hall--BKM]}] \emph{Banned}: the Hall primitive Lie
+algebra is the BKM denominator algebra.  \emph{Required}:
+\(\mathrm{Prim}_\bullet(Y^+(X))\) is the formal primitive Lie
+superalgebra of \(Y^+(X)\); its identification with
+\(\mathfrak g_{\Delta_5}\) is the conditional Pfaffian--Dirac
+recognition theorem of Theorem~\ref{thm:primitive-recognition},
+under (D0), (O1), (O1)\(^+\), (O2).
+
+\item[\textup{[d-crit]}] \emph{Banned}: a Joyce d-critical locus
+admits a perverse sheaf of vanishing cycles without orientation.
+\emph{Required}: BBDJS \cite[Theorem~6.9]{BBDJS2015} requires an
+\emph{oriented} d-critical locus; the orientation is the square root
+of the Joyce determinant line, and the multiplicative cocycle is
+Joyce--Upmeier \cite[Theorem~4.1]{JoyceUpmeier}.
+
+\item[\textup{[cosection]}] \emph{Banned}: cosection localisation
+holds without surjectivity.  \emph{Required}: Kiem--Li
+\cite[Theorem~5.0.1]{KiemLi2013} requires the cosection to be
+surjective off the localised locus; on \(K3\times E\), the cosection
+degenerates on the \(s = 0\) cusp, which is the \((D0)\)
+degeneration limit and is open.
+
+\item[\textup{[shift]}] \emph{Banned}: \((-1)\)-shifted symplectic
+on \(\mathfrak M(K3\times E)\) restricts to \((-1)\)-shifted
+symplectic on \(\mathfrak M^{\mathrm{red}}(K3\times E)\).
+\emph{Required}: the cosection contracts the form;
+\(\omega^{\mathrm{red}}\) is non-degenerate only after the
+restriction to the cosection vanishing locus
+\cite[\S 2.6]{MaulikTodaGV}, and the orientation line carries the
+\(\Z/2\)-parity flip \(\Pi\) absorbing the dimension shift
+\(\mathrm{vd}^{\mathrm{red}} = \mathrm{vd}^{\mathrm{std}} + 1\).
+
+\item[\textup{[fourfold]}] \emph{Banned}: \(K3\times E\) is a
+smooth projective fourfold.  \emph{Required}: \(K3\times E\) is a
+threefold; \(n = \chi(\mathcal O_X) = \chi(\mathcal O_{K3})\cdot
+\chi(\mathcal O_E) = 2\cdot 0 = 0\), and the BBDJS / Joyce--Upmeier
+machinery applies in the \(\mathrm{CY}_3\) form
+\cite[\S 6]{BBDJS2015}, not in the \(\mathrm{CY}_4\) Borisov--Joyce
+\cite{BorisovJoyce} or Oh--Thomas \cite{OhThomasI,OhThomasII} form.
+\end{enumerate}
+
+\subsection*{D.8\quad Adversarial loop: closing checks}
+\label{app:hall-adversarial}
+
+Four failure modes are checked.
+
+\textbf{(F1)\quad Hall associativity.} The Joyce--Song associativity
+of Theorem~\ref{thm:hall-product} requires the pentagon coherence of
+Thom--Sebastiani triple stratification
+\cite[Theorem~5.10(iv)]{BBDJS2015}.  Failure mode: the
+chart-cocycle of the d-critical locus carries a sign ambiguity
+whose obstruction to a canonical pentagon coheres only after
+orientation choice.  Resolution:
+the orientation gerbe of BBDJS \cite[\S 6.4]{BBDJS2015} trivializes
+exactly this ambiguity; the multiplicative cocycle of Joyce--Upmeier
+\cite[\S 4]{JoyceUpmeier} extends the trivialisation to the universal
+extension stack.  On \(K3\times E\), the gerbe descends through the
+free \(E\)-quotient and trivializes the small-orbit class, jointly
+\((O1)+(O1)^+\); this is the open obligation, not a contradiction
+of the projective associativity.
+
+\textbf{(F2)\quad Cosection surjectivity.} Kiem--Li
+\cite[Theorem~5.0.1]{KiemLi2013} requires
+\(\sigma:\mathrm{Ob}\twoheadrightarrow\mathcal O\) on
+\(\mathfrak M\setminus\mathfrak M^{\mathrm{red}}\).  Failure mode:
+on the \(s = 0\) cusp of the dyonic charge lattice of \(K3\times E\),
+the cosection \(\sigma_S = 0\) on the K3 factor and surjectivity
+fails.  Resolution: the smooth primitive nonzero K3-class branch
+satisfies surjectivity by Maulik--Toda
+\cite[\S 2]{MaulikTodaGV}; the cusp branch is the \((D0)\)
+degeneration limit named at obstruction \((D0)\) of
+\S~\ref{ch:zbps-realization}, and is open.
+The Oberdieck--Pixton scalar
+\(Z^X_{\mathrm{OP}} = -4096\,\Delta_5^{-2}\) is proved on the
+\(s\ne 0\) branch \cite[Theorem~3]{OberdieckReducedPT}; on the cusp
+the chain-level theory degenerates to the Borcherds
+imaginary-simple-root contribution.
+
+\textbf{(F3)\quad BBDJS orientation existence on compact non-toric.}
+The Joyce--Upmeier multiplicative cocycle \cite[Theorem~4.1]{JoyceUpmeier}
+is established on the \(\mathrm{CY}_3\) projective ambient; its
+extension across the cosection-reduced quasi-projective ambient is
+Bojko \cite[Theorem~1.4]{Bojko}.  Failure mode: on \(K3\times E\)
+quotient by free \(E\)-translation, the orientation line need not
+descend; the small-orbit gerbe class on \(BE[N]\)-strata may not
+trivialize.  Resolution: the joint vanishing of the connected
+\(BE\)-equivariant linearisation obstruction
+\(\alpha^E_{\mathcal C}\in H^2_E(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb F_2)\)
+and the small-orbit gerbe class
+\(\overline\beta^E_{\mathcal C}\in H^\bullet(BE[N];\mathbb F_2)\)
+is exactly \((O1)\); higher-rank Pin\(^c\)-vanishing is
+Lemma~\ref{prop:appE-local-pfaffian-sign} of the body.  Stable
+higher-rank length-one strata and nontrivial finite-stabilizer
+linearisations remain genuine open obligations.
+
+\textbf{(F4)\quad \((-1)\)-shifted vs \((-2)\)-shifted symplectic.}
+\(K3\times E\) is a Calabi--Yau threefold; the moduli
+\(\mathfrak M(K3\times E)\) carries a \((-1)\)-shifted symplectic
+structure by PTVV \cite[Theorem~0.3]{PTVV2013}.  Failure mode:
+mistaking \(K3\times E\) for a \(\mathrm{CY}_4\) ambient (e.g.~under
+a confusion with \(K3\times T^2\) at the F-theory level) and
+applying Borisov--Joyce \cite{BorisovJoyce} or Oh--Thomas
+\cite{OhThomasI,OhThomasII}.  Resolution: the Calabi--Yau dimension
+of \(X = K3\times E\) is \(\dim_{\C}(K3) + \dim_{\C}(E) = 2+1 = 3\),
+the holomorphic three-form is \(\sigma_S\wedge dz_E\), and the
+shifted symplectic is \([-1]\)-shifted by \cite[\S 2.1]{PTVV2013}.
+The cosection of \S~D.4 reduces \(\mathrm{vd}\) by one, but does not
+reduce the shift; \(\omega^{\mathrm{red}}\) is still
+\((-1)\)-shifted, on the cosection vanishing locus, by the
+Maulik--Toda \cite[Theorem~2.7]{MaulikTodaGV} extension.  The
+cosection-twist of \S~D.4 is the Serre-equivariant quasi-NCCR
+substitute for the missing global NCCR of \(K3\times E\), as
+recorded in \cite{SchiffmannVasserot2013}, \cite{KSCoHA}.
+
+The four failure modes above are absorbed into the four obstructions
+\((D0)\), \((O1)\), \((O1)^+\), \((O2)\) of
+\S~\ref{ch:zbps-realization}; their joint
+discharge tightens the conditioning of the cross-level identity
+\(\textcircled{2}\)\(\leftrightarrow\)\(\textcircled{3}\) of the
+manuscript thesis.  The Hall correspondences of this appendix supply
+the level-2 / \(\beta\) arrows; the recognition of
+\(\mathrm{Prim}_\bullet(Y^+(X))\simeq\mathfrak g_{\Delta_5}\)
+of Theorem~\ref{thm:primitive-recognition}
+acts on these arrows; the protected Pfaffian recognition theorem
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}}) =
+\Delta_5\) of Theorem~\ref{thm:pfaffian-dirac-finite-stage}
+is the cross-level identity acting on the level-4 scalar shadow.

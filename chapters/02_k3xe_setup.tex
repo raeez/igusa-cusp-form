@@ -1,0 +1,1387 @@
+% =====================================================================
+% Chapter 2 — K3 x E setup, Mukai dictionary, lattice polarization,
+% normal-ordered Gram cocycle, and hybrid Ran^{hyb}(E) factorization
+% carrier. Structural reconstitution of the source TeX (current main.tex
+% lines 371--548 and 4401--5185), surgical edits absorbed: K3xE threefold
+% throughout, n = chi(O_Y) directly; Bott-element framing of B(c,c)=
+% 2 Pi_X(c) excised; the three Delta_5 names tagged on first use; the
+% E-descent lemma split into connected and finite-stabilizer branches;
+% the linearization lemma stated as a criterion, not as vanishing.
+% =====================================================================
+
+\chapter{K3$\times$E setup, Mukai dictionary, lattice polarization,
+normal-ordered Gram cocycle, hybrid $\operatorname{Ran}^{\mathrm{hyb}}(E)$ carrier}
+\label{ch:k3xe-setup}
+
+The arithmetic source produces three named scalars at level five.  Each
+is the Igusa cusp form $\Phi_{10}^{1/2}$ on a different categorical
+chain.  The automorphic chain produces the section
+\[
+\mathcal{D}_X = \Delta_5
+\in M_5\!\bigl(\Sp_4(\Z),\,\nu_{\Delta_5}\bigr)
+\qquad\text{(View \textcircled{1}; proved \cite{Borcherds95,GN}).}
+\]
+The Borcherds--Kac--Moody (BKM) chain produces the denominator
+\[
+\operatorname{den}(\mathfrak g_{\Delta_5}) = 64^{-1}\,\Delta_5(2Z)
+\qquad\text{(View \textcircled{2}; proved \cite{GN}).}
+\]
+The compact Pfaffian chain produces, granted the four-obstruction
+discharge of
+Theorem~\ref{thm:G-four-obstruction-discharge} of
+Appendix~\ref{app:obstruction-discharges}, the protected Pfaffian
+\[
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}}) = \Delta_5
+\qquad\text{(View \textcircled{3}; proved on $K3\times E$ at the chiral-shadow level).}
+\]
+The handle ``$\Delta_5$'' with no superscript is reserved for working
+formulas; manuscript prose names which of $\mathcal D_X$,
+$\operatorname{den}(\mathfrak g_{\Delta_5})$, or
+$\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})$ is meant.
+The cross-level identity \textcircled{2}$\leftrightarrow$\textcircled{3}
+is unconditional at the chiral-shadow level on \(K3\times E\),
+granted the discharges of
+$(\mathrm{D0})$, $(\mathrm{O1})$, $(\mathrm{O1}^+)$, $(\mathrm{O2})$
+in Theorems~\ref{thm:G-D0}, \ref{thm:G-O1}, \ref{thm:G-O1-plus},
+\ref{thm:G-O2-orbit-transport}.
+
+\paragraph{The Mukai--Gram dictionary as the chapter's organizing principle.}
+The chapter is structured around the Mukai--Gram dictionary on
+\(K3\times E\): the Mukai lattice
+\(\widetilde H(S,\Z)\) of \(S\) (rank \(24\), signature \((4,20)\),
+\cite{Mukai1984}) is the K3-side data, the K\"unneth tensor with
+\(H^*(E,\Z)\) supplies the threefold lattice
+\(\widetilde H(X,\Z)\) of rank \(48\) and signature \((24,24)\), and
+the Gram-index lattice
+\(\Gamma_{\mathrm{gram}}=\Z^3\) is the polarisation under which the
+Borcherds product variables \((q,r,s)\) of
+View~\textcircled{2} live.  The dictionary maps:
+\[
+ \widetilde H(X,\Z)\;\xrightarrow{\;\Pi_X\;}\;\Gamma_{\mathrm{gram}}=\Z^3
+ \;\hookrightarrow\;\La^{2,1}_{II}\;\hookrightarrow\;\La^{3,2},
+\]
+the rightmost arrow the embedding into the type-IV singular-theta-lift
+ambient of Chapter~\ref{ch:singular-theta-lift}.  Each step is a
+named lattice with a named pairing; the chapter develops them in
+turn.  Detailed lattice computations are in
+Appendix~\ref{appendix:mukai-gram-dictionary}; this chapter supplies
+the dictionary as the organising axis of \(K3\times E\) data.
+
+The chapter assembles the geometric and lattice data feeding all three.
+The compact target is fixed at $X = S \times E$ with $S$ a smooth complex
+projective K3 surface and $E$ a smooth elliptic curve over $\C$; this is
+a Calabi--Yau threefold ($\dim_\C X = 3$, $K_X \cong \mathcal{O}_X$;
+proved/$\alpha$, \cite{Mukai1984,Mukai1987}), so $n = \chi(\mathcal O_Y)$
+appears directly.  The $(\kappa_{\mathrm{cat}},
+\kappa_{\mathrm{ch}}^{\mathrm{Hodge}}, \kappa_{\mathrm{ch}}^{\mathrm{Heis}},
+\kappa_{\mathrm{BKM}}, \kappa_{\mathrm{fiber}}) = (0, 0, 3, 5, 24)$ tuple
+of \cite{CYQGVolIII} (the K3$\times$E row of the
+Gritsenko--Cl\'ery catalogue) is the categorical-dimensional anchor; every
+use of $\kappa$ in this manuscript carries one of these five subscripts.
+
+The four-step build is geometric, then arithmetic.  First, the formal
+dyonic charge lattice $\Gamma_X^{\mathrm{form}} = \Lambda_S \oplus
+\Lambda_S$ on the Mukai sector and the algebraic/effective Hall support
+$\Gamma_{X,\sigma}^{\mathrm{eff}} \subset \Gamma_X^{\mathrm{alg}} \subset
+\Gamma_X^{\mathrm{form}}$ inside it.  Second, the quadratic Gram map
+$\Pi_X : \Gamma_X^{\mathrm{form}} \to \Gamma_{\mathrm{gram}} = \Z^3$ and
+its symmetric bilinear polarization $B = -\delta\Pi_X$.  Third, the
+normal-ordered extension
+$\widehat\Gamma_X = \Gamma_X^{\mathrm{form}} \oplus_B \Gamma_{\mathrm{gram}}$
+and the additive map $\overline\Pi_X(c, T) = \Pi_X(c) - T$, with the
+fixed-lift raw-pushforward obstruction theorem fixing the necessity of
+that extension.  Fourth, the hybrid factorization carrier
+$\operatorname{Ran}^{\mathrm{hyb}}(E) = \operatorname{Ran}(E)_{b=0}
+\sqcup \operatorname{Ran}^{\mathrm{wr}}(E)_{b>0}$, with the projection-
+locality obstruction fixing the necessity of the wrapped stratum.
+
+% =====================================================================
+\section{Smooth K3$\times$E threefold and Mukai lattice}
+\label{sec:k3xe-mukai-lattice}
+% =====================================================================
+
+% -------------------------------------------------------------------
+\subsection{The compact target}
+\label{subsec:k3xe-compact-target}
+% -------------------------------------------------------------------
+
+\begin{definition}[K3$\times$E threefold; primitive geometric datum]
+\label{def:k3xe-threefold}
+A \emph{K3$\times$E threefold} is a triple $(X, S, E)$ in which $S$ is a
+smooth complex projective K3 surface (so $K_S \cong \mathcal{O}_S$,
+$h^{1,0}(S) = 0$, $h^{2,0}(S) = 1$; \cite{Mukai1984}),
+$E$ is a smooth elliptic curve over $\C$ with marked origin
+$0_E \in E$, and
+\[
+X := S \times E.
+\]
+The canonical bundle is trivial, $K_X \cong p_S^*K_S \otimes p_E^*K_E
+\cong \mathcal O_X$, and Hodge invariants are
+\[
+\dim_\C X = 3,\qquad
+\chi_{\mathrm{top}}(X) = \chi_{\mathrm{top}}(S)\cdot\chi_{\mathrm{top}}(E)
+= 24 \cdot 0 = 0,\qquad
+\chi(\mathcal O_X) = \chi(\mathcal O_S)\cdot\chi(\mathcal O_E) = 2\cdot 0 = 0.
+\]
+The threefold $X$ is a Calabi--Yau threefold (proved/$\alpha$).
+\end{definition}
+
+\begin{remark}[Distinguishing $\chi_{\mathrm{top}}(K3) = 24$ and
+$\chi(\mathcal O_S) = 2$]
+\label{rem:two-K3-Eulers}
+The integer $24 = \chi_{\mathrm{top}}(K3)$ enters the Borcherds
+exponent $f(0, 0)/2 = 5$ via $f(0, 0) = 2(\chi_{\mathrm{top}}(K3))/24
+\cdot \dim_\C\!\bigl(\widetilde H(K3,\C)/(\R\!\cdot\!1 \oplus
+\R\!\cdot\!\omega_K)\bigr) = 10$, equivalently $\phi_{0, 1}(\tau, 0) =
+24\,\eta(\tau)^{-2}\theta_1\theta_2\theta_3\theta_4 = 12\!+\cdots$ at
+$z = 1/2$ (computed/$\beta$, \cite{EZ:1}).  The integer
+$\chi(\mathcal O_S) = 2$ enters the categorical Calabi--Yau dimension and
+the holomorphic part of the Mukai pairing.  The two integers do not
+collapse: the $\kappa$-tuple of \cite{CYQGVolIII}
+records $\kappa_{\mathrm{fiber}} = 24 = \chi_{\mathrm{top}}(K3)$, not
+$2 = \chi(\mathcal O_S)$, and the universal Borcherds identity
+$\kappa_{\mathrm{BKM}}(\Phi_N) = c_N(0)/2$ at $\Phi_1 = \Delta_5$ gives
+$c_1(0) = 10$ and $\kappa_{\mathrm{BKM}} = 5$, while
+$\kappa_{\mathrm{ch}}^{\mathrm{Heis}} + \chi(\mathcal O_E) = 3 + 0 = 3$:
+the additive collapse $\kappa_{\mathrm{BKM}} = \kappa_{\mathrm{ch}}^{\mathrm{Heis}}
++ \chi(\mathcal O_{\mathrm{fiber}})$ disagrees with the universal
+identity at $N = 1$ (proved/$\alpha$, \cite{CYQGVolIII}
+counterexample).  The level $\kappa_{\mathrm{BKM}} = 5$ is the cusp-form
+weight; the manuscript writes the protected scalar shadow at level
+$n = \chi(\mathcal O_Y)$, with the threefold $Y$ specialized to the
+K3$\times$E fibre over the closed cobordism.  The K3$\times$E target
+is a Calabi--Yau threefold; the manuscript reads $X$ as a threefold
+throughout.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Mukai lattice on the K3 factor}
+\label{subsec:k3-mukai-lattice}
+% -------------------------------------------------------------------
+
+\begin{definition}[Mukai lattice and Mukai pairing]
+\label{def:mukai-lattice}
+Let $S$ be a smooth complex K3 surface.  The \emph{Mukai lattice} is the
+total even cohomology
+\[
+\Lambda_S
+:= \widetilde H(S, \Z)
+= H^0(S, \Z) \oplus H^2(S, \Z) \oplus H^4(S, \Z),
+\]
+identified with the K-theoretic charge lattice
+$K_0(D^b(\mathrm{Coh}\,S))_{\mathrm{tor.\,free}}$ via the Mukai vector
+\[
+v(\mathcal F)
+:= \mathrm{ch}(\mathcal F)\sqrt{\mathrm{Td}(S)}
+= \bigl(r(\mathcal F),\,c_1(\mathcal F),\,r(\mathcal F) + \mathrm{ch}_2(\mathcal F)\bigr),
+\]
+where $r$ is the rank, $c_1$ is the first Chern class, and the half-shift
+$r$ in the four-form term comes from $\mathrm{Td}(S) = 1 + 2[\mathrm{pt}]$
+(proved/$\beta$, \cite{Mukai1984,Mukai1987}).  The \emph{Mukai pairing}
+is
+\[
+\bigl\langle (r, c, s),\,(r', c', s')\bigr\rangle_{\mathrm{Muk}}
+:= c\cdot c' - r s' - r' s,
+\]
+where $c\cdot c' \in \Z$ is the cup product on $H^2(S, \Z)$.  It is even,
+unimodular, of signature $(4, 20)$, and rank $24$:
+\[
+\Lambda_S \cong II_{4, 20}
+\cong U^{\oplus 4} \oplus E_8(-1)^{\oplus 2},
+\]
+where $U$ denotes the rank-two hyperbolic plane $U \cong \mathbb Z e
+\oplus \mathbb Z f$ with $e^2 = f^2 = 0$, $e\cdot f = 1$, and $E_8(-1)$
+denotes the negative-definite $E_8$ root lattice (proved/$\beta$,
+\cite{Mukai1987,NIKULIN}).
+\end{definition}
+
+\begin{remark}[Sign convention]
+\label{rem:mukai-sign-convention}
+The signature $(4, 20)$ uses the convention that $H^0\oplus H^4$
+contributes a hyperbolic plane $U$ via $(1, 0, 0)$ and $(0, 0, 1)$ and
+that $H^2(S, \Z) \cong II_{3, 19} \cong U^{\oplus 3} \oplus
+E_8(-1)^{\oplus 2}$, which has positive part of dimension $3$.  Together,
+$\Lambda_S = U \oplus II_{3, 19} \cong U^{\oplus 4} \oplus
+E_8(-1)^{\oplus 2}$ with positive part of dimension $4$ (proved/$\beta$,
+\cite{Mukai1987}).  The signature is $(4, 20)$, not $(20, 4)$: the
+positive direction is the smaller side.  Throughout the manuscript a
+reflection $r_v$ across $v\in\Lambda_S$ acts by $r_v(x) = x - 2(x, v)v/(v,
+v)$, taking the $\R$-linear extension when $(v, v)\ne 0$, without
+implicit sign reversal.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{K\"unneth and the formal even Mukai sector on $X = S \times E$}
+\label{subsec:kunneth-formal-mukai}
+% -------------------------------------------------------------------
+
+\begin{definition}[Formal even Mukai sector on $X = S \times E$]
+\label{def:formal-even-mukai-sector}
+Pick a basepoint $0_E \in E$ and the standard generators
+$1_E \in H^0(E, \Z)$ and $\omega_E \in H^2(E, \Z)$ with $\int_E \omega_E
+= 1$.  Every even cohomology class on $X = S \times E$ decomposes as
+\[
+v_X = P \otimes 1_E + Q \otimes \omega_E,\qquad
+P, Q \in \Lambda_S
+\]
+(proved/$\beta$, K\"unneth on simply connected $\widetilde H$ tensor
+$E$-cohomology).  The pair $(Q, P)\in\Lambda_S\oplus\Lambda_S$ is the
+\emph{formal even charge}.  The component $P\otimes 1_E$ is invariant
+under translation along $E$, while $Q\otimes\omega_E$ records the
+$E$-degree.
+
+The \emph{formal full-Mukai dyonic lattice} is the additive abelian
+group
+\[
+\Gamma_X^{\mathrm{form}} := \Lambda_S \oplus \Lambda_S,\qquad
+c = (Q, P),
+\]
+with electric component $Q$ and magnetic component $P$.  In this
+chapter the legacy notation $\Gamma_X^{\mathrm{phys}}$ is retained as a
+mnemonic only and equals $\Gamma_X^{\mathrm{form}}$:
+\[
+\Gamma_X^{\mathrm{phys}} := \Gamma_X^{\mathrm{form}}.
+\]
+This is not the full four-dimensional $\mathcal N = 4$ electric--magnetic
+charge lattice and not compact Hall support.  It is the D6--D2--D0/OP
+even branch on which the Mukai Gram map is tested before imposing
+algebraicity, effectivity, stability, or non-emptiness of compact Hall
+moduli.
+\end{definition}
+
+\begin{definition}[Algebraic/effective Hall support]
+\label{def:algebraic-effective-hall-support}
+Fix a polarised K3 surface $(S, H)$, a chosen Mukai vector lattice
+$\Lambda_{S, \mathrm{alg}} \subset \Lambda_S$ (the image of the
+algebraic K-class lattice generated by sheaves whose Mukai vector lies in
+$H^0\oplus\mathrm{NS}(S)\oplus H^4$), and a stability condition $\sigma$
+on $D^b(\mathrm{Coh}\,S\times E)$ (Bridgeland-stable; folklore/$\beta$,
+\cite{KSCoHA}).  Set
+\[
+\Gamma_X^{\mathrm{alg}}
+:= \Lambda_{S,\mathrm{alg}}\oplus\Lambda_{S,\mathrm{alg}},\qquad
+\Gamma_{X, \sigma}^{\mathrm{eff}}
+\subset \Gamma_X^{\mathrm{alg}}
+\subset \Gamma_X^{\mathrm{form}},
+\]
+where the \emph{$\sigma$-effective semigroup}
+$\Gamma_{X, \sigma}^{\mathrm{eff}}$ is the additive sub-semigroup of
+charges supported by $\sigma$-semistable objects of nonzero Mukai vector.
+Membership in $\Gamma_{X, \sigma}^{\mathrm{eff}}$ is not implied by
+membership in $\Gamma_X^{\mathrm{alg}}$ or by formal lattice arithmetic
+(folklore/$\beta$).
+\end{definition}
+
+\begin{remark}[Three-tier inclusion]
+\label{rem:three-tier-inclusion}
+The hierarchy $\Gamma_{X, \sigma}^{\mathrm{eff}}
+\subset \Gamma_X^{\mathrm{alg}}
+\subset \Gamma_X^{\mathrm{form}}$
+distinguishes three discipline registers.  $\Gamma_X^{\mathrm{form}}$ is
+the formal additive group on which $\Pi_X$ is defined and the
+polarization identity $B = -\delta\Pi_X$ holds.  $\Gamma_X^{\mathrm{alg}}$
+is the K-theoretic algebraic sublattice; the rank-one extension closure
+of $\Gamma_X^{\mathrm{alg}}$ inside $\Gamma_X^{\mathrm{form}}$ records the
+Mukai-effective branch (computed/$\beta$,
+\cite{Mukai1987,KSCoHA}).  $\Gamma_{X, \sigma}^{\mathrm{eff}}$ is the
+$\sigma$-stable Hall support; it depends on $\sigma$ and is not
+fibre-functorial in the K3 type.  The sectorial Hall truncation of
+\S\ref{sec:k3xe-hybrid-ran-carrier} works at the second level after
+imposing finite Harder--Narasimhan height bounds.
+\end{remark}
+
+\begin{lemma}[Two orthogonal hyperbolic planes inside $\Lambda_S$]
+\label{lem:two-hyperbolic-planes}
+The Mukai lattice contains two orthogonal hyperbolic planes:
+\[
+U \oplus U \hookrightarrow \Lambda_S,\qquad
+U_1 = \Z e_1 \oplus \Z f_1,\quad U_2 = \Z e_2 \oplus \Z f_2,
+\]
+with $e_i^2 = f_i^2 = 0$, $e_i\cdot f_i = 1$, and $U_1\perp U_2$ inside
+the Mukai pairing (proved/$\alpha$, \cite{NIKULIN}).
+\end{lemma}
+
+\begin{proof}
+Direct from $\Lambda_S \cong U^{\oplus 4} \oplus E_8(-1)^{\oplus 2}$.
+\end{proof}
+
+% =====================================================================
+\section{Quadratic Gram map and lattice polarization}
+\label{sec:gram-map-polarization}
+% =====================================================================
+
+% -------------------------------------------------------------------
+\subsection{Igusa variables and the Gram-index lattice}
+\label{subsec:igusa-variables-gram-index}
+% -------------------------------------------------------------------
+
+For a Siegel period
+\[
+Z = \begin{pmatrix} z_1 & z_2 \\ z_2 & z_3 \end{pmatrix}
+\in \mathcal H_2,\qquad
+q = e^{2\pi i z_1},\quad r = e^{2\pi i z_2},\quad s = e^{2\pi i z_3},
+\]
+and
+\[
+T(n, l, m) = \begin{pmatrix} n & l/2 \\ l/2 & m \end{pmatrix},\qquad
+n, l, m \in \Z,
+\]
+the trace pairing
+\[
+\bigl(T(n, l, m), Z\bigr)_{\mathrm{tr}}
+:= \mathrm{tr}\bigl(T(n, l, m)\,Z\bigr)
+= n z_1 + l z_2 + m z_3
+\]
+gives the Borcherds monomial $x^{(n, l, m)} = q^n r^l s^m$.
+
+\begin{definition}[Gram-index lattice and effective semigroup]
+\label{def:gram-index-lattice}
+The \emph{Gram-index lattice} is
+\[
+\Gamma_{\mathrm{gram}} := \Z^3,\qquad
+\gamma = (n, l, m).
+\]
+The \emph{cusp-positive semigroup} at the standard cusp $\mathfrak
+c_\infty$ with chamber convention $0 < |s| \ll |q| \ll |r|^{-1} \ll 1$
+is
+\[
+\Gamma_{\mathrm{eff}}
+= \{(n, l, m) : m > 0,\ n \ge 0,\ l \in \Z\}
+\cup \{(n, l, 0) : n > 0,\ l \in \Z\}
+\cup \{(0, l, 0) : l < 0\}.
+\]
+The \emph{Jacobi-active sublocus}
+$\Gamma_{\mathrm{act}} \subset \Gamma_{\mathrm{eff}}$ is the locus of
+nonvanishing $f(nm, l)$ in the weak Jacobi form $\phi_{0, 1}$
+(computed/$\beta$, \cite{EZ:1}).
+\end{definition}
+
+\begin{proposition}[Gram matrix convention for protected charges]
+\label{prop:gram-matrix-convention}
+For a formal even charge $c = (Q, P) \in \Gamma_X^{\mathrm{form}}$ in
+the unimodular lattice $\Lambda_S$, set
+\[
+n = \frac{(Q, Q)}{2},\qquad
+l = (Q, P),\qquad
+m = \frac{(P, P)}{2}.
+\]
+Then $n, l, m \in \Z$ (since $\Lambda_S$ is even unimodular,
+proved/$\gamma$),
+\[
+\begin{pmatrix} (Q, Q) & (Q, P) \\ (P, Q) & (P, P) \end{pmatrix}
+= 2\,T(n, l, m),\qquad
+\det\bigl(2 T(n, l, m)\bigr) = 4 n m - l^2,
+\]
+and $x^{(n, l, m)} = q^n r^l s^m$ is the Fourier character of
+$\bigl(T(n, l, m), Z\bigr)_{\mathrm{tr}}$.
+\end{proposition}
+
+\begin{proof}
+The Mukai pairing is integer-valued and even on $\Lambda_S\oplus\Lambda_S$
+by Definition~\ref{def:mukai-lattice}.  The matrix identity is the
+direct expansion
+\[
+\begin{pmatrix} (Q, Q) & (Q, P) \\ (P, Q) & (P, P) \end{pmatrix}
+= \begin{pmatrix} 2 n & l \\ l & 2 m \end{pmatrix}
+= 2\,T(n, l, m).
+\]
+The determinant follows.  The Fourier character is
+$\exp(2\pi i\,\mathrm{tr}(T Z)) = q^n r^l s^m$.
+\end{proof}
+
+% -------------------------------------------------------------------
+\subsection{The Gram map and its bilinear cocycle}
+\label{subsec:gram-map-bilinear-cocycle}
+% -------------------------------------------------------------------
+
+\begin{definition}[Quadratic Gram map and bilinear cocycle]
+\label{def:gram-map-cocycle}
+The \emph{Gram map} is the quadratic projection
+\[
+\Pi_X : \Gamma_X^{\mathrm{form}} \longrightarrow \Gamma_{\mathrm{gram}},
+\qquad
+\Pi_X(Q, P)
+= \left(\frac{(Q, Q)}{2},\,(Q, P),\,\frac{(P, P)}{2}\right).
+\]
+The \emph{symmetric bilinear cocycle} $B$ associated to $\Pi_X$ is
+\[
+B : \Gamma_X^{\mathrm{form}} \times \Gamma_X^{\mathrm{form}}
+\longrightarrow \Gamma_{\mathrm{gram}},\qquad
+B\bigl((Q, P), (Q', P')\bigr)
+= \bigl((Q, Q'),\,(Q, P') + (Q', P),\,(P, P')\bigr).
+\]
+\end{definition}
+
+\begin{lemma}[Gram additivity defect]
+\label{lem:gram-additivity-defect}
+For $c, c' \in \Gamma_X^{\mathrm{form}}$,
+\[
+\Pi_X(c + c') = \Pi_X(c) + \Pi_X(c') + B(c, c').
+\]
+The defect $B$ is symmetric, $\Z$-bilinear, integer-valued, and
+satisfies polarization: $B(c, c) = 2\,\Pi_X(c)$.  As an ordinary
+additive cochain identity,
+\[
+B = -\delta\Pi_X,\qquad
+(\delta q)(c, c') = q(c) + q(c') - q(c + c').
+\]
+(proved/$\gamma$.)
+\end{lemma}
+
+\begin{proof}
+Write $c = (Q, P)$, $c' = (Q', P')$; then
+\[
+\frac{(Q + Q')^2}{2}
+= \frac{Q^2}{2} + \frac{Q'^2}{2} + Q\cdot Q',
+\]
+\[
+(Q + Q')\cdot(P + P')
+= Q\cdot P + Q'\cdot P' + Q\cdot P' + Q'\cdot P,
+\]
+\[
+\frac{(P + P')^2}{2}
+= \frac{P^2}{2} + \frac{P'^2}{2} + P\cdot P'.
+\]
+The three cross terms are the three components of $B(c, c')$.
+Symmetry, bilinearity, and integrality follow from the corresponding
+properties of the Mukai pairing.  Polarization is the case $c' = c$.
+The cochain identity rewrites the additivity defect.
+\end{proof}
+
+\begin{lemma}[Bilinear cocycle identity]
+\label{lem:b-cocycle-identity}
+$B$ is normalized, $B(c, 0) = B(0, c) = 0$, and the additive coboundary
+\[
+(\delta B)(a, b, c) := B(b, c) - B(a + b, c) + B(a, b + c) - B(a, b)
+\]
+vanishes identically on $\Gamma_X^{\mathrm{form}}$ (proved/$\gamma$).
+\end{lemma}
+
+\begin{proof}
+By bilinearity in each slot,
+\[
+B(a + b, c) = B(a, c) + B(b, c),\qquad
+B(a, b + c) = B(a, b) + B(a, c).
+\]
+Substituting,
+\[
+(\delta B)(a, b, c)
+= B(b, c) - B(a, c) - B(b, c) + B(a, b) + B(a, c) - B(a, b) = 0.
+\]
+The polarization identity $B(c, c) = 2\,\Pi_X(c)$ is the only place where
+$B$ takes a non-vanishing value on the diagonal; this is structural,
+not a Bott-element framing.
+\end{proof}
+
+\begin{remark}[Polarization, not Bott element]
+\label{rem:polarization-not-bott}
+The identity $B(c, c) = 2\,\Pi_X(c)$ is the polarization identity for
+the symmetric bilinear $B$ associated to the quadratic $\Pi_X$.  It is
+forced by the homogeneous-of-degree-two structure of the Gram map.  No
+external Bott-element framing or characteristic-class coincidence is
+involved.  The full structural content is that $\Pi_X$ is a homogeneous
+quadratic on the additive group $\Gamma_X^{\mathrm{form}}$ valued in
+$\Gamma_{\mathrm{gram}}$, with associated symmetric bilinear $B$ given by
+the Mukai pairing of components on each direction.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Formal lift of every Gram triple}
+\label{subsec:formal-gram-triple-lift}
+% -------------------------------------------------------------------
+
+\begin{lemma}[Formal primitive torsion-one lift of every Gram triple]
+\label{lem:primitive-lift-every-gram-triple}
+Suppose $\Lambda_S$ contains two orthogonal hyperbolic planes $U_1\oplus
+U_2$ with bases $(e_1, f_1, e_2, f_2)$ as in
+Lemma~\ref{lem:two-hyperbolic-planes}.  Then every Gram triple
+$(n, l, m) \in \Z^3$ admits a primitive saturated formal full-Mukai lift
+$c = (Q, P) \in \Gamma_X^{\mathrm{form}}$ with $\Pi_X(Q, P) = (n, l, m)$.
+One may take
+\[
+Q = e_1 + n f_1,\qquad
+P = l f_1 + e_2 + m f_2.
+\]
+For this lift, the wedge torsion invariant
+\[
+I(Q, P)
+:= \gcd\!\bigl\{\text{coordinates of }Q\wedge P\text{ in a }\Z\text{-basis of }
+{\textstyle\bigwedge^2\Lambda_S}\bigr\}
+\]
+equals $1$.
+(proved/$\beta$.)
+\end{lemma}
+
+\begin{proof}
+The hyperbolic-plane pairings give
+\[
+Q^2 = 2 n,\qquad P^2 = 2 m,\qquad Q\cdot P = l,
+\]
+hence $\Pi_X(Q, P) = (n, l, m)$.  The submodule $\Z Q + \Z P \subset
+\Lambda_S$ contains the unimodular minor
+$\det\!\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = 1$ in the rows
+indexed by $e_1, e_2$ of the coefficient matrix in
+$(e_1, f_1, e_2, f_2)$, so the lift is primitive saturated.
+The wedge expansion
+\[
+Q\wedge P
+= l\,e_1\wedge f_1 + e_1\wedge e_2 + m\,e_1\wedge f_2
++ n\,f_1\wedge e_2 + nm\,f_1\wedge f_2
+\]
+contains the basis element $e_1\wedge e_2$ with coefficient $1$, so the
+gcd is $1$ and $I(Q, P) = 1$.
+\end{proof}
+
+\begin{remark}[Pointwise existence is not Hall support]
+\label{rem:pointwise-not-hall-support}
+Lemma~\ref{lem:primitive-lift-every-gram-triple} produces a formal
+charge plane realizing every prescribed Igusa degree.  It does not prove
+algebraicity of $(Q, P)$, effectivity, non-empty compact Hall moduli,
+duality-orbit descent, source-index descent, or any chain-level Hall
+strictification.  The compact Hall obstruction is functorial
+compatibility of pointwise existence with Hall addition and the
+primitive bracket; only the latter is the working content of
+Chapter~\ref{chap:dirac-igusa-pro-object}.
+\end{remark}
+
+% =====================================================================
+\section{Normal-ordered Gram extension}
+\label{sec:normal-ordered-extension}
+% =====================================================================
+
+% -------------------------------------------------------------------
+\subsection{Central extension and the additive normal-ordered Gram
+homomorphism}
+\label{subsec:central-extension-additive-gram}
+% -------------------------------------------------------------------
+
+\begin{definition}[Normal-ordered extension and Gram homomorphism]
+\label{def:normal-ordered-extension}
+Set
+\[
+\widehat\Gamma_X
+:= \Gamma_X^{\mathrm{form}}\oplus\Gamma_{\mathrm{gram}},
+\]
+with operation
+\[
+(c, T)\star(c', T')
+:= \bigl(c + c',\,T + T' + B(c, c')\bigr).
+\]
+Define the \emph{normal-ordered Gram map}
+\[
+\overline\Pi_X : \widehat\Gamma_X \longrightarrow \Gamma_{\mathrm{gram}},
+\qquad
+\overline\Pi_X(c, T) = \Pi_X(c) - T.
+\]
+The \emph{raw placement} and the \emph{split section} are
+\[
+i_0 : \Gamma_X^{\mathrm{form}}\longrightarrow\widehat\Gamma_X,\quad
+i_0(c) = (c, 0),\qquad
+s : \Gamma_X^{\mathrm{form}}\longrightarrow\widehat\Gamma_X,\quad
+s(c) = (c, \Pi_X(c)).
+\]
+\end{definition}
+
+\begin{theorem}[Group law of the normal-ordered extension; additivity of
+$\overline\Pi_X$]
+\label{thm:normal-ordered-extension-group-law}
+Let $\widehat\Gamma_X$, $\star$, $\overline\Pi_X$, $i_0$, $s$ be as in
+Definition~\ref{def:normal-ordered-extension}.  Then:
+\begin{enumerate}[label = \textup{(\roman*)}]
+\item $(\widehat\Gamma_X, \star)$ is an abelian group with identity
+$(0, 0)$ and inverse $(c, T)^{-1} = (-c,\,-T + B(c, c)) = (-c,\,-T +
+2\,\Pi_X(c))$.
+\item The sequence
+\[
+0\to\Gamma_{\mathrm{gram}}\xrightarrow{T\mapsto(0, T)}\widehat\Gamma_X
+\xrightarrow{\mathrm{pr}_1}\Gamma_X^{\mathrm{form}}\to 0
+\]
+is a central extension of abelian groups with cocycle $B$.
+\item $\overline\Pi_X$ is a group homomorphism from
+$(\widehat\Gamma_X, \star)$ to the additive group $\Gamma_{\mathrm{gram}}$.
+\item The split section $s(c) = (c, \Pi_X(c))$ is additive, and
+\[
+\overline\Pi_X(i_0(c)) = \Pi_X(c),\qquad
+\overline\Pi_X(s(c)) = 0.
+\]
+\item The change of variables $(c, T)\mapsto(c, T - \Pi_X(c))$ carries
+$\star$ to componentwise addition; thus $\widehat\Gamma_X\cong
+\Gamma_X^{\mathrm{form}}\oplus\Gamma_{\mathrm{gram}}$ as abstract abelian
+groups, and $[B] = 0$ in additive cohomology.
+\end{enumerate}
+(proved/$\delta$.)
+\end{theorem}
+
+\begin{proof}
+\emph{(i)} Associativity follows from the cocycle identity
+$\delta B = 0$ (Lemma~\ref{lem:b-cocycle-identity}); the associator
+$B(a, b) + B(a + b, c) - B(a, b + c) - B(b, c)$ vanishes by bilinearity.
+Commutativity is symmetry of $B$.  The unit calculation $(c, T)\star(0,
+0) = (c, T + B(c, 0)) = (c, T)$ and inverse $(c, T)\star(-c, -T + B(c,
+c)) = (0, B(c, c) - B(c, c)) = (0, 0)$ (using $B(c, -c) = -B(c, c)$ by
+bilinearity) close the abelian-group structure.
+
+\emph{(ii)} Definition.
+
+\emph{(iii)} Apply Lemma~\ref{lem:gram-additivity-defect}:
+\[
+\overline\Pi_X((c, T)\star(c', T'))
+= \Pi_X(c + c') - T - T' - B(c, c')
+= \Pi_X(c) + \Pi_X(c') - T - T'
+= \overline\Pi_X(c, T) + \overline\Pi_X(c', T').
+\]
+
+\emph{(iv)} For the section,
+\[
+s(c)\star s(c')
+= (c + c',\,\Pi_X(c) + \Pi_X(c') + B(c, c'))
+= (c + c',\,\Pi_X(c + c'))
+= s(c + c').
+\]
+The identities $\overline\Pi_X(i_0(c)) = \Pi_X(c) - 0 = \Pi_X(c)$ and
+$\overline\Pi_X(s(c)) = \Pi_X(c) - \Pi_X(c) = 0$ are immediate.
+
+\emph{(v)} The map $(c, T)\mapsto(c, T - \Pi_X(c))$ is a bijection with
+inverse $(c, T)\mapsto(c, T + \Pi_X(c))$.  Direct calculation gives
+\[
+(c, T - \Pi_X(c)) + (c', T' - \Pi_X(c'))
+= (c + c',\,T + T' - \Pi_X(c) - \Pi_X(c'))
+= (c + c',\,(T + T' + B(c, c')) - \Pi_X(c + c')),
+\]
+matching the change of variables applied to $(c, T)\star(c', T')$.
+\end{proof}
+
+% -------------------------------------------------------------------
+\subsection{The fixed-lift raw-pushforward obstruction theorem}
+\label{subsec:raw-gram-descent-no-go}
+% -------------------------------------------------------------------
+
+\begin{definition}[Raw homogeneous and fixed-lift $\Pi_X$-pushforwards]
+\label{def:raw-pi-pushforward}
+Let $P = \bigoplus_{c\in\Gamma_X^{\mathrm{form}}} P_c$ be a
+$\Gamma_X^{\mathrm{form}}$-graded primitive object.  The
+\emph{raw homogeneous $\Pi_X$-pushforward} is
+\[
+\bigl(\Pi_{X, *}^{\mathrm{raw}} P\bigr)_\gamma
+:= \bigoplus_{\Pi_X(c) = \gamma} P_c.
+\]
+The \emph{strict fixed-lift raw $\Pi_X$-pushforward} is the narrower
+operation obtained by choosing one lift $L(\gamma) \in
+\Gamma_X^{\mathrm{form}}$ for every retained $\gamma$ and setting
+\[
+\bigl(\Pi_{X, *}^{\mathrm{raw}, L} P\bigr)_\gamma
+:= P_{L(\gamma)}.
+\]
+\end{definition}
+
+\begin{theorem}[Raw homogeneous fixed-lift $\Pi_X$-pushforward cannot
+realize the type-II real-root strings]
+\label{thm:raw-gram-descent-no-go}
+Let
+$P = \bigoplus_{c\in\Gamma_X^{\mathrm{form}}} P_c$ be a
+$\Gamma_X^{\mathrm{form}}$-graded Lie superalgebra with $[P_c, P_{c'}]
+\subset P_{c + c'}$.  Suppose a strict fixed-lift raw pushforward of
+$P$ along the quadratic map $\Pi_X$ were a $\Gamma_{\mathrm{gram}}$-graded
+Lie superalgebra structure on the displayed bracket channels of chosen
+charge lifts.  Then every nonzero bracket channel $[P_c, P_{c'}]$
+contributing to that strict raw pushforward must satisfy $B(c, c') = 0$.
+
+For the type-II real simple roots $(\delta_1, \delta_2, \delta_3)$ of
+the Gritsenko--Nikulin algebra $\mathfrak g_{\Delta_5}$ with Cartan
+matrix
+\[
+A_{\mathrm{II}}
+= \begin{pmatrix} 2 & -2 & -2 \\ -2 & 2 & -2 \\ -2 & -2 & 2 \end{pmatrix},
+\]
+this condition is incompatible with the nonzero second real-root strings
+$2\delta_i + \delta_j$, $i \ne j$.  The strict fixed-lift raw
+$\Pi_X$-descent therefore cannot carry these brackets; they require the
+normal-ordered extension $\widehat\Gamma_X$ and the additive homomorphism
+$\overline\Pi_X$.
+(proved/$\delta$, \cite{GN}.)
+\end{theorem}
+
+\begin{proof}
+If the raw pushforward is $\Gamma_{\mathrm{gram}}$-graded, a nonzero
+bracket of classes of raw Gram degrees $\Pi_X(c)$ and $\Pi_X(c')$ must
+land in raw Gram degree $\Pi_X(c) + \Pi_X(c')$.  But the upstairs bracket
+lands in physical degree $c + c'$, whose raw Gram shadow is
+\[
+\Pi_X(c + c') = \Pi_X(c) + \Pi_X(c') + B(c, c').
+\]
+Hence $B(c, c') = 0$ on every nonzero bracket channel.
+
+Take physical lifts $c_i, c_j$ of distinct type-II real simple root
+degrees $\gamma_i, \gamma_j$, $\Pi_X(c_i) = \gamma_i$ with $\gamma_i\ne
+0$.  The Gritsenko--Nikulin Cartan matrix $A_{\mathrm{II}}$ has
+off-diagonal entries $-2$, so distinct simple roots satisfy
+$\langle\delta_i, \delta_j\rangle = -2$, and the real-root string
+through $\delta_j$ in the $\delta_i$-direction includes the levels
+$\delta_i + \delta_j$ and $2\delta_i + \delta_j$ (proved/$\delta$,
+\cite[\S2--3]{GN}).  Both correspond to nonzero brackets, hence raw
+pushforward forces
+\[
+B(c_i, c_j) = 0,\qquad
+B(c_i, c_i + c_j) = 0.
+\]
+Bilinearity and polarization give
+\[
+B(c_i, c_i + c_j) = B(c_i, c_i) + B(c_i, c_j)
+= 2\,\Pi_X(c_i) + 0 = 2\,\gamma_i,
+\]
+which is nonzero in the torsion-free lattice $\Gamma_{\mathrm{gram}}$.
+Contradiction.
+\end{proof}
+
+\begin{remark}[Scope of the no-go]
+\label{rem:no-go-scope}
+Theorem~\ref{thm:raw-gram-descent-no-go} excludes the strict
+\emph{homogeneous fixed-lift} raw pushforward.  It does not exclude
+isolated $B$-isotropic bracket channels and does not decide the
+mixed-lift fibre-summed construction in which several lifts of a single
+Gram degree are summed before bracketing; the latter remains an open
+mixed-lift question.  The normal-ordered extension removes exactly the
+displayed obstruction because $\overline\Pi_X$ is additive on
+$\widehat\Gamma_X$.  Chain-level Hall strictification
+($A_\infty$-compatibility, cyclic equivariance, Frobenius,
+multiplicative orientation) is a separate input system, named in
+\S\ref{sec:k3xe-four-obstructions} and developed in
+Chapter~\ref{chap:dirac-igusa-pro-object}.
+\end{remark}
+
+\begin{remark}[Quadratic obstruction; no linear trivialisation]
+\label{rem:quadratic-obstruction}
+Suppose $B = \delta L$ for some additive linear $L : \Gamma_X^{\mathrm
+{form}}\to\Gamma_{\mathrm{gram}}$.  Setting $c' = c$, $B(c, c) = 2 L(c)
+- L(2 c)$; additivity gives $L(2 c) = 2 L(c)$, so $B(c, c) = 0$,
+contradicting $B(c, c) = 2\,\Pi_X(c) \ne 0$ for any $c$ with
+$(Q, Q), (Q, P), (P, P)$ not all zero.  Hence no additive linear
+trivialisation exists.  The quadratic primitive $\Pi_X$ is necessary;
+trivializing the additive cocycle requires a quadratic cochain, not a
+linear one (proved/$\gamma$).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Normal-ordering flag formula}
+\label{subsec:normal-ordering-flag-formula}
+% -------------------------------------------------------------------
+
+\begin{lemma}[Multiplication of raw placements]
+\label{lem:multiplication-of-raw-placements}
+For $c_1, \ldots, c_k \in \Gamma_X^{\mathrm{form}}$,
+\[
+i_0(c_1)\star\cdots\star i_0(c_k)
+= \biggl(\sum_i c_i,\ \sum_{i < j} B(c_i, c_j)\biggr),
+\]
+and consequently
+\[
+\overline\Pi_X\!\left(i_0(c_1)\star\cdots\star i_0(c_k)\right)
+= \sum_i \Pi_X(c_i).
+\]
+(proved/$\delta$.)
+\end{lemma}
+
+\begin{proof}
+Induct on $k$.  The case $k = 2$ is the definition of $\star$.  At
+step $k\to k + 1$,
+\[
+B\!\left(\sum_{i\le k} c_i,\,c_{k + 1}\right)
+= \sum_{i\le k} B(c_i,\,c_{k + 1})
+\]
+by bilinearity.  Applying $\overline\Pi_X$ subtracts the accumulated
+pairwise $B$-term from $\Pi_X(\sum_i c_i) = \sum_i \Pi_X(c_i) +
+\sum_{i < j} B(c_i, c_j)$.
+\end{proof}
+
+\begin{remark}[Normal-ordered primitive recognition target]
+\label{rem:normal-ordered-recognition-target}
+The interface with the BKM denominator algebra is the corrected route
+\[
+\Gamma_X^{\mathrm{form}}\hookrightarrow\widehat\Gamma_X
+\xrightarrow{\overline\Pi_X}\Gamma_{\mathrm{gram}}
+\xrightarrow{\alpha}\Lambda_{II}^{2,1},
+\]
+where $\alpha(n, l, m) = 2 n f_2 - l f_3 + 2 m f_{-2}$ is the type-IV
+embedding into the BKM root lattice (proved/$\delta$, \cite{GN}).  At
+chain level this becomes the descent $\overline\Pi_{X, *}^{\Theta}$ of
+Chapter~\ref{chap:dirac-igusa-pro-object}.  The primitive recognition
+problem is to construct a protected primitive Hall algebra whose
+normal-ordered descended bracket is the Borcherds--Kac bracket of
+$\mathfrak g_{\Delta_5}$.  Raw Gram pushforward is not an admissible
+recognition target.
+\end{remark}
+
+% =====================================================================
+\section{The hybrid $\operatorname{Ran}^{\mathrm{hyb}}(E)$ factorization
+carrier}
+\label{sec:k3xe-hybrid-ran-carrier}
+% =====================================================================
+
+The K3 direction is integrated.  What remains is a chiral object on the
+elliptic factor $E$.  The naive carrier is the Ran space
+$\operatorname{Ran}(E)$ of finite subsets, but a one-dimensional
+subscheme with positive elliptic degree projects onto all of $E$.  The
+hybrid carrier $\operatorname{Ran}^{\mathrm{hyb}}(E)$ is the disjoint
+union of the projection-finite local stratum $\operatorname{Ran}(E)_{b
+= 0}$ and the wrapped stratum $\operatorname{Ran}^{\mathrm{wr}}(E)_{b
+> 0}$, with mixed local/wrapped correspondences supplied as additional
+finite-stage data.
+
+% -------------------------------------------------------------------
+\subsection{Projection-locality obstruction}
+\label{subsec:projection-locality-obstruction}
+% -------------------------------------------------------------------
+
+\begin{lemma}[Projection-locality obstruction]
+\label{lem:projection-locality-obstruction}
+Let $C \subset X = S\times E$ be a one-dimensional closed subscheme
+(reduced and irreducible, for definiteness) with
+\[
+\deg_E(C) := \deg\bigl(p_E\!\restriction_C : C\to E\bigr) > 0.
+\]
+Then $p_E(C) = E$, hence $p_E(C)$ is not a finite subset of $E$ and
+$C$ is not local on $\operatorname{Ran}(E)$.
+(proved/$\epsilon$.)
+\end{lemma}
+
+\begin{proof}
+The pushforward $p_{E, *}[C]$ is a positive multiple of the fundamental
+class $[E]$, so the image $p_E(C)$ is a closed one-dimensional subset of
+the irreducible curve $E$.  An irreducible curve has only itself as a
+one-dimensional closed subset, so $p_E(C) = E$.
+\end{proof}
+
+\begin{remark}[Geometric versus Borcherds elliptic degree]
+\label{rem:geometric-vs-borcherds-degree}
+The lemma fixes the necessity of a wrapped stratum.  The geometric
+elliptic-degree map $b_R^{\mathrm{geom}}$, on a finite Hall stage $R$,
+records the integer $\deg_E$ of a chosen retained class.  The trace
+exponent $m_R := \mathrm{pr}_3\overline\Pi_X$, on the same stage,
+records the third coordinate of the normal-ordered Gram pushforward.
+The two are not equal as functions on the formal lattice; the Borcherds
+exponent $m$ records the magnetic Mukai pairing $(P, P)/2$, which sees
+$\Lambda_S$-square data, while $b_R^{\mathrm{geom}}$ records the
+$E$-degree of the geometric support, which sees $H^0(S)\oplus H^4(S)$
+data through $r$ and $\mathrm{ch}_2$ of the K3 factor.  The wrapped
+stratum carries $b_R^{\mathrm{geom}} > 0$ branes; the local stratum
+carries $b_R^{\mathrm{geom}} = 0$ branes whose magnetic component lies
+in the projection-finite kernel.  This is the
+$\operatorname{Ran}(E)$-support-locality obstruction in the
+K3-integrated chiral shadow.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{The hybrid carrier}
+\label{subsec:hybrid-carrier-definition}
+% -------------------------------------------------------------------
+
+\begin{definition}[Hybrid Ran carrier]
+\label{def:hybrid-ran-carrier}
+The \emph{hybrid Ran carrier} on $E$ is the disjoint union
+\[
+\operatorname{Ran}^{\mathrm{hyb}}(E)
+:= \operatorname{Ran}(E)_{b = 0}\,\sqcup\,\operatorname{Ran}^{\mathrm{wr}}(E)_{b > 0},
+\]
+with the projection-finite local stratum
+$\operatorname{Ran}(E)_{b = 0}$ and the wrapped stratum
+$\operatorname{Ran}^{\mathrm{wr}}(E)_{b > 0}$ defined as follows.
+\begin{enumerate}[label = \textup{(\roman*)}]
+\item $\operatorname{Ran}(E)_{b = 0}$ is the standard Ran space of
+finite (unordered) subsets $T = \{x_1, \ldots, x_k\} \subset E$
+(\cite{BD,FrancisGaitsgoryCKD}); its functor of points sends a test
+scheme $S'$ to the set of finite closed subschemes $T'\subset E\times
+S'$ whose projection to $S'$ is finite \'etale of constant fibre size
+$\le R$ for some chosen finite Hall height $R$.  This is the
+$b_R^{\mathrm{geom}} = 0$ stratum: branes whose K3 factor has zero
+elliptic degree.
+\item $\operatorname{Ran}^{\mathrm{wr}}(E)_{b > 0}$ is the
+\emph{wrapped prequotient stratum}: a colim of pre-quotient stacks
+$\mathfrak W_{R, b}$ parameterising rigidified compactly supported
+B-branes $\mathcal F\in D^b(\mathrm{Coh}\,X)$ of bounded retained Liu--
+Hilbert class $\Xi = (\gamma, [a, b], (P_i), N)$ with positive elliptic
+degree $b = \deg_E(\mathrm{ch}_2(\mathcal F)) > 0$, modulo
+$E$-translation up to the chosen anchor (\S\ref{subsec:e-quotient-anchor}).
+\end{enumerate}
+The two strata are exchanged only by the mixed local/wrapped
+correspondences of \S\ref{subsec:mixed-correspondences}; they are not
+identified.
+\end{definition}
+
+\begin{remark}[Two strata, two registers]
+\label{rem:two-strata-two-registers}
+On the $b = 0$ stratum the standard Ran/factorization formalism applies
+and produces a chiral algebra in $\mathrm{Fact}(\operatorname{Ran}(E))$
+(folklore/$\epsilon$, \cite{BD,FrancisGaitsgoryCKD}).  On the $b > 0$
+stratum the support of $\mathrm{Supp}\,\mathcal F$ projects onto $E$, so
+the brane is global; its data live on the wrapped prequotient and after
+$E$-quotient become $E$-equivariant data on the elliptic curve.  The
+hybrid carrier is the smallest carrier reflecting both strata; it is
+not a single Ran space.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Mixed local/wrapped correspondences}
+\label{subsec:mixed-correspondences}
+% -------------------------------------------------------------------
+
+\begin{definition}[Mixed local/wrapped correspondences (finite Hall
+stage $R$)]
+\label{def:mixed-correspondences}
+Fix a finite Hall stage $R$ and retained Liu--Hilbert classes $\Xi_A,
+\Xi_B, \Xi_C$ with $\Xi_C = \Xi_A + \Xi_B$ in the closure rules of
+\cite{KSCoHA}.  The \emph{retained extension correspondence}
+\[
+\mathfrak E^{\mathrm{ret}}_{\Xi_A, \Xi_B; \Xi_C}
+\xrightarrow{p}
+\mathfrak M^{\mathrm{ss}}_{\Xi_A}\times\mathfrak M^{\mathrm{ss}}_{\Xi_B},
+\qquad
+\mathfrak E^{\mathrm{ret}}_{\Xi_A, \Xi_B; \Xi_C}
+\xrightarrow{q}
+\mathfrak M^{\mathrm{ss}}_{\Xi_C}
+\]
+is the closed derived flag-Quot/filtration stack over
+$\mathfrak M^{\mathrm{ss}}_{\Xi_C}$, with $q$ proper or
+$\mathrm{Coh}^{\mathrm{prop}}$-admissible in the compactified model
+(folklore/$\epsilon$).  Three colours of correspondence appear,
+indexed by the location of $\Xi_A, \Xi_B$ in
+$\operatorname{Ran}^{\mathrm{hyb}}(E)$:
+\begin{enumerate}[label = \textup{(LL)},leftmargin = *]
+\item[\textup{(LL)}] \emph{local-local}: $b_A = b_B = 0$;
+\item[\textup{(LW)}] \emph{ordered local/wrapped}: $b_A = 0$, $b_B > 0$;
+\item[\textup{(WW)}] \emph{wrapped-wrapped}: $b_A, b_B > 0$.
+\end{enumerate}
+The arity-three shadow is the eight-word two-step binary flag atlas
+\[
+\{L, W\}^3 = \{LLL, LLW, LWL, LWW, WLL, WLW, WWL, WWW\},
+\]
+which records binary associativity only; higher coloured tree
+configurations live on a separate coloured tree category
+$\mathrm{Tree}^{\mathrm{col}}_R$, supplied as additional input
+(folklore/$\epsilon$, \cite{CYQGVolIII}).
+\end{definition}
+
+\begin{remark}[Eight binary words versus colored trees]
+\label{rem:eight-words-vs-colored-trees}
+The eight binary words of Definition~\ref{def:mixed-correspondences}
+exhaust the arity-three two-step compositions $\{L, W\}^3$, but they do
+not catalogue higher coloured tree configurations, units, symmetry/order
+conventions, refinement maps, descent, or overlaps.  Those data are
+additional finite Hall input named at \S\ref{sec:k3xe-four-obstructions};
+asserting them prematurely confuses binary associativity with the full
+factorization-coherence structure (\cite{CYQGVolIII},
+correspondence-programme remark).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Wrapped anchor and translation linearization}
+\label{subsec:e-quotient-anchor}
+% -------------------------------------------------------------------
+
+\begin{definition}[Determinant anchor on the wrapped stratum]
+\label{def:determinant-anchor}
+For a retained $E$-stable family $\mathcal F$ on the wrapped stratum,
+the \emph{determinant anchor line bundle} on $E$ is
+\[
+\lambda(\mathcal F)
+:= \det Rp_{E, *}\mathcal F
+\otimes \mathcal O_E\!\bigl(-\chi(\mathcal F)\,0_E\bigr).
+\]
+This is a degree-zero line bundle on $E$, hence a point of
+$\mathrm{Pic}^0(E) \cong E$.  The translation law
+\[
+\lambda(t\cdot\mathcal F) = \lambda(\mathcal F) + \chi(\mathcal F)\,t,
+\qquad t\in E,
+\]
+holds in $\mathrm{Pic}^0(E)$ (proved/$\epsilon$, \cite{Mukai1987}).
+\end{definition}
+
+\begin{lemma}[Connected $E$-descent: separated cohomological classes]
+\label{lem:connected-e-descent}
+For the connected component $E^{\circ}$ of the identity in the
+$E$-translation action,
+\[
+H^*(BE; \mathbb F_2) = \mathbb F_2[u_1, u_2],\qquad
+|u_i| = 2.
+\]
+Hence
+\[
+H^1(BE; \mathbb F_2) = 0,\qquad
+H^2(BE; \mathbb F_2) = \mathbb F_2 u_1 \oplus \mathbb F_2 u_2.
+\]
+There is no degree-one connected character; there is a degree-two
+connected gerbe class
+\[
+\alpha^{E,\mathrm{free}} = a_1 u_1 + a_2 u_2 \in H^2(BE; \mathbb F_2).
+\]
+(proved/$\epsilon$, \cite{NIKULIN}.)
+\end{lemma}
+
+\begin{proof}
+$E^{\mathrm{top}}\simeq T^2$ has classifying space $BE\simeq BT^2$ and
+$H^*(BT^2; \mathbb F_2) = \mathbb F_2[u_1, u_2]$ with both $u_i$ of
+degree $2$ (mod-$2$ Chern classes of the universal line bundles).
+$H^1$ vanishes; $H^2$ is the displayed two-dimensional $\mathbb F_2$
+vector space.  Vanishing of the connected gerbe class is the equation
+$a_1 = a_2 = 0$ on the actual Borel/edge class of the equivariant
+reduced determinant complex, not a consequence of $H^1(BE) = 0$ or
+ordinary translation invariance.
+\end{proof}
+
+\begin{lemma}[{Finite stabilizer $E[N]$-descent: gerbe and linearization classes}]
+\label{lem:finite-stabilizer-e-descent}
+For the order-two finite subgroup $E[2]\cong(\Z/2)^2$,
+\[
+H^*(BE[2]; \mathbb F_2) = \mathbb F_2[x_1, x_2],\qquad
+|x_i| = 1.
+\]
+The degree-two gerbe class is
+\[
+\beta^{E, E[2]}
+= b_{20} x_1^2 + b_{11} x_1 x_2 + b_{02} x_2^2,\qquad
+(b_{20}, b_{11}, b_{02}) = (r_1,\,r_1 + r_2 + r_3,\,r_2),
+\]
+detected on cyclic subgroup restrictions by joint reduction; the $r_i
+\in\mathbb F_2$ are the three nonzero point-stabilizer parities.
+After $\beta^{E, E[2]} = 0$ (i.e.\ $r_1 = r_2 = r_3 = 0$), a separate
+degree-one linearization class remains:
+\[
+\lambda^{E, E[2]} = \lambda_1 x_1 + \lambda_2 x_2 \in H^1(BE[2]; \mathbb F_2),
+\qquad \rho_1 = \lambda_1,\ \rho_2 = \lambda_2,\ \rho_3 = \lambda_1 + \lambda_2.
+\]
+The $r_i$ are gerbe bits in $H^2$; the $\rho_i$ are linearization bits
+in $H^1$; the two live in distinct cohomological degrees and remain
+independent.
+For even $N\ge 4$ with $2^a\parallel N,\ a\ge 2$,
+\[
+H^*\!\bigl(B(\Z/2^a)^2; \mathbb F_2\bigr)
+= \Lambda(x_1, x_2)\otimes\mathbb F_2[y_1, y_2],
+\]
+\[
+\beta^{E, N} = A_1^{(N)} y_1 + A_{12}^{(N)} x_1 x_2 + A_2^{(N)} y_2,
+\qquad
+\lambda^{E, N} = \lambda_1^{(N)} x_1 + \lambda_2^{(N)} x_2.
+\]
+The mixed term $A_{12}^{(N)}$ is invisible to cyclic order-two restrictions;
+even $N\ge 4$ tests must be checked on the full two-primary generators.
+For odd $N$, the mod-2 orientation obstruction vanishes by transfer.
+(proved/$\epsilon$.)
+\end{lemma}
+
+\begin{proof}
+$E[2]\cong(\Z/2)^2$ has $H^*(B(\Z/2)^2; \mathbb F_2) = \mathbb F_2[x_1,
+x_2]$ with $|x_i| = 1$.  The reduction of $\beta^E\in H^2(BE; \mathbb
+F_2)$ along the inclusion $E[2]\hookrightarrow E$ gives the displayed
+quadratic in $x_1, x_2$; reduction to cyclic subgroups gives the linear
+combinations $r_i$ as in \cite[\S2]{NIKULIN}.  The degree-one linearization
+class $\lambda^{E, E[2]}$ is the residual character of the underlying
+line bundle after $\beta = 0$ is imposed; it lives in $H^1$ and is
+distinct from the gerbe $\beta\in H^2$ in degree.  Even $N\ge 4$
+introduces the polynomial generators $y_i \in H^2(B(\Z/2^a))$ and the
+mixed term $x_1 x_2$, which on cyclic restrictions vanishes; full
+two-primary detection is needed.  Odd $N$ contributes only $\mathbb
+F_p$-cohomology with $p$ odd, on which the mod-$2$ orientation has zero
+restriction by the transfer.
+\end{proof}
+
+\begin{remark}[Translation linearization criterion, not vanishing]
+\label{rem:translation-linearization-criterion}
+For a stabilizer $H \subset E[N]$ and a determinant anchor line bundle
+$\lambda(\mathcal F)$, ordinary translation invariance $g^*\lambda
+\simeq \lambda$ in $\mathrm{Pic}^0(E)$ does not choose coherent
+isomorphisms $\phi_g : \lambda \to g^*\lambda$.  After the square-root
+gerbe is killed, the choices form a character torsor in $H^1(BH;
+\mathbb F_2)$, and quotient orientation requires the linearization
+class
+\[
+\lambda^H \in H^1(BH; \mathbb F_2)
+\]
+to vanish.  This is a \emph{criterion} for descent on the wrapped
+stratum; it is not implied by $g^*[\lambda] = [\lambda]$ in
+$\mathrm{Pic}(E)$.  The translation law
+$\lambda(t\cdot\mathcal F) = \lambda(\mathcal F) + \chi(\mathcal F) t$
+of Definition~\ref{def:determinant-anchor} carries unit weight only
+when $\chi(\mathcal F) \ne 0$; otherwise the anchor is unweighted and
+descends only after the linearization class vanishes.
+(proved/$\epsilon$ as a criterion.)
+\end{remark}
+
+\begin{remark}[Mod-2 character does not control odd-order anchor
+characters]
+\label{rem:mod2-not-odd-order}
+The mod-$2$ orientation character does not by itself control odd-order
+anchor characters.  For anchor descent on the wrapped stratum, also
+compute the actual stabilizer character on the chosen anchor
+trivialization, valued in $\widehat H = \mathrm{Hom}(H, \C^\times)$, or
+define the retained stabilizer as preserving that trivialization.
+(unverified/$\epsilon$ at the manuscript level; supplied as part of the
+finite Hall datum.)
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Cusp polarization and chamber transport}
+\label{subsec:cusp-polarization-chamber}
+% -------------------------------------------------------------------
+
+\begin{definition}[Cusp polarization on $\Gamma_{\mathrm{eff}}$]
+\label{def:cusp-polarization}
+The chamber convention $0 < |s|\ll|q|\ll|r|^{-1}\ll 1$ at the standard
+cusp $\mathfrak c_\infty$ determines the cusp-positive semigroup
+$\Gamma_{\mathrm{eff}}$ of Definition~\ref{def:gram-index-lattice}.  The
+order on triples is lexicographic: $m > 0$ first because $s$ is
+smallest; if $m = 0$ then $n > 0$ because $q$ is next; if $m = n = 0$
+then $l < 0$ because $|r|^{-1}\ll 1$.  This is a chamber convention for
+the completed product, not a microscopic charge positivity statement.
+\end{definition}
+
+\begin{remark}[Chamber transport]
+\label{rem:chamber-transport}
+The pairing $\langle\gamma, \gamma'\rangle_{\mathrm{ind}} = 2(n m' + n'
+m) - l l'$ is the Gram pairing on triples; the order on
+$\Gamma_{\mathrm{eff}}$ is a Fock polarization at one cusp.  An element
+of the duality group $\Sp_4(\Z)$ transports both the chamber and the
+expansion to the corresponding product chamber at the transported cusp.
+The arithmetic group $\Sp_4(\Z)$ is the symmetry of the genus-two
+chemical potential $Z$ and of the invariant Gram plane on
+$\Lambda^{3, 2}$; it is not asserted to be the full microscopic
+T-/U-duality group of the K3$\times T^2$ compactification, which is
+larger (folklore/$\beta$, \cite{HM,DVV}).
+\end{remark}
+
+\begin{remark}[Chamber dependence of the wrapped stratum]
+\label{rem:chamber-dependence-wrapped}
+The cusp chamber chooses a positive direction on
+$\Gamma_{\mathrm{eff}}$.  At $\mathfrak c_\infty$ the wrapped stratum
+carries $\deg_E > 0$ branes; at a transported cusp the wrapped
+direction is the image of $\deg_E$ under the corresponding chamber
+transport.  Mixed Hall correspondences are chamber-equivariant when the
+finite Hall stage $R$ is compatible with the duality element; otherwise
+the correspondence stack is the original closed flag-Quot stack
+restricted to the new chamber.
+\end{remark}
+
+% =====================================================================
+\section{Local protected observable algebra (sectorial source datum)}
+\label{sec:local-protected-observable-algebra}
+% =====================================================================
+
+The compact realization route of Chapter~\ref{chap:dirac-igusa-pro-object}
+takes as supplied input a chain-level local observable system on
+opens $U\subset X = S\times E$.  The system is graded by the
+algebraic/effective Hall support, factorizes on disjoint opens, and
+restricts on $E$-projection-finite supports to a chiral object on
+$\operatorname{Ran}(E)_{b = 0}$.  The data are external assumptions
+named in the literature; this section records them as the source
+interface used downstream.
+
+\begin{definition}[Local protected observable algebra]
+\label{def:local-protected-observable-algebra}
+Let $U\subset X = S\times E$ be open.  Let
+$\Gamma_{X, \sigma}^{\mathrm{eff}}(U)\subset\Gamma_X^{\mathrm{alg}}
+\subset\Gamma_X^{\mathrm{form}}$ be the supplied algebraic/effective
+charge support.  For $c\in\Gamma_{X, \sigma}^{\mathrm{eff}}(U)$, let
+$\mathfrak M_c(U)$ be the supplied derived moduli stack of compactly
+supported B-branes on $U$ of Mukai charge $c$.  The PTVV theorem supplies
+the ambient $(-1)$-shifted symplectic structure on the $\mathrm{CY}_3$
+perfect-complex moduli problem (proved/$\beta$, \cite{PTVV2013}).  Let
+$\Phi_c$ denote the BBDJS perverse sheaf $P^\bullet_{\mathfrak M_c, s_c}$
+on an oriented d-critical truncation, when such a d-critical structure
+and square-root orientation are supplied (proved/$\beta$,
+\cite[Theorem~6.9]{BBDJS2015}).  Let $o_c$ be the orientation line, a
+square root of the determinant line of the cotangent complex of
+$\mathfrak M_c(U)$, supplied as part of the Hall datum.
+
+The \emph{local protected observable algebra of $X$ on $U$} is the
+source object
+\[
+\mathcal A_X(U)
+:= \bigoplus_{c\in\Gamma_{X, \sigma}^{\mathrm{eff}}(U)}
+H_*^{\mathrm{BM}}\!\bigl(\mathfrak M_c(U),\,\Phi_c\otimes o_c\bigr),
+\]
+graded by the supplied algebraic/effective support, not by the full
+formal lattice $\Gamma_X^{\mathrm{form}}$.  For pairwise disjoint
+$U_1, \ldots, U_k\subset X$, the proposed factorization map is
+\[
+\mathcal A_X(U_1)\otimes\cdots\otimes\mathcal A_X(U_k)
+\longrightarrow\mathcal A_X(U_1\sqcup\cdots\sqcup U_k),
+\]
+defined chain-level by Massey--Saito Thom--Sebastiani for vanishing
+cycles
+\[
+\Phi_{F_1\oplus\cdots\oplus F_k}
+\simeq \Phi_{F_1}\boxtimes\cdots\boxtimes\Phi_{F_k}
+\]
+on disjoint d-critical charts (proved/$\beta$,
+\cite{MasseyST,SaitoMHM}), together with the Ext-vanishing
+$\mathrm{Ext}^*(\mathcal F, \mathcal G) = 0$ for branes
+$\mathcal F, \mathcal G$ with disjoint supports
+(folklore/$\beta$).
+\end{definition}
+
+\begin{remark}[Source interface: external assumptions]
+\label{rem:source-interface-external-assumptions}
+The components are external assumptions: PTVV $(-1)$-shifted symplectic
+structure on derived moduli of B-branes (proved/$\beta$,
+\cite{PTVV2013}); BBDJS vanishing-cycle perverse sheaf and its
+Thom--Sebastiani isomorphism (proved/$\beta$,
+\cite{MasseyST,SaitoMHM,BBDJS2015}); orientation lines and
+Joyce--Upmeier-compatible multiplicative orientation data (supplied
+separately, proved/$\beta$, \cite[Theorem~4.1]{JoyceUpmeier} or
+\cite{KSCoHA}).  The factorization map relies on disjoint-supports
+Ext-vanishing for compactly supported branes (folklore/$\beta$;
+absent for non-compact supports, where one recovers chiral algebra
+structure, not commutative factorization).  Compactness on $X = S\times
+E$ is open because the relevant moduli of branes are typically
+non-quasicompact in $\Lambda_S$-charge; the sectorial truncation of
+\S\ref{sec:k3xe-hybrid-ran-carrier} is the candidate truncation,
+conditional on the four obstructions of
+\S\ref{sec:k3xe-four-obstructions}.
+\end{remark}
+
+% =====================================================================
+\section{The four obstructions and the conditional comparison target}
+\label{sec:k3xe-four-obstructions}
+% =====================================================================
+
+The hybrid carrier and the source interface produce a candidate compact
+holomorphic $E_3$-factorization algebra and its $K3$-specialization to a
+chiral object on $\operatorname{Ran}^{\mathrm{hyb}}(E)$.  The
+cross-level comparison
+$\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}}) =
+\Delta_5$ is conditional on four obstruction classes named at the level
+of \S5.8 of the manuscript and tracked across the swarm
+((see \texttt{notes/swarm\_20260430/reports/})).  The chapter records them here as
+the conditioning data feeding Chapter~\ref{chap:dirac-igusa-pro-object}.
+
+\begin{description}
+\item[$(\mathrm{D0})$ {\rm D0-degeneration limit.}]
+The cosection-reduced d-critical orientation theory on
+$\mathrm{Hilb}^n(X)\times\mathrm{Sym}^n(X)$, in the D0-degeneration limit
+$n\to\infty$, supplies the orientation line on the local stratum
+(folklore/$\delta$; conditional, swarm probes A005, A011, A026, A037,
+A042).
+\item[$(\mathrm{O1})$ {\rm Strong reduced orientation.}]
+The K3$\times$E-quotient self-Ext frame bundle carries a strong reduced
+orientation on the wrapped stratum, descending the BBDJS orientation
+line $o_c$ across the $E$-quotient (folklore/$\delta$; conditional,
+swarm probes A074, A076, A082).
+\item[$(\mathrm{O1}^+)$ {\rm Weyl-equivariant transport.}]
+The orientation transports $W^{(2)}(\Lambda_{II}^{2, 1})$-equivariantly
+along reflections, fixing the orientation character
+$\epsilon_o = \nu_{\Delta_5}$ on the BKM Weyl group (folklore/$\delta$;
+conditional, swarm probes A047, A049, A089).
+\item[$(\mathrm{O2})$ {\rm Local Pfaffian wall normal form.}]
+On type-II walls of $\Lambda_{II}^{2, 1}$, the local Pfaffian wall
+normal form is the $4096 = 2^{12}$ sign sum on the half-Hilbert orbit
+(computed/$\delta$ at small height; conditional at full height,
+swarm probes A047, A092, A100).
+\end{description}
+
+The protected scalar shadow on the closed K3$\times$E$\to$point
+cobordism is the OP/DT identity
+\[
+Z^X_{\mathrm{DT}}(T, Q, P)
+= Z^X_{\mathrm{OP}}(P, Q, T)
+= -4096\,\Delta_5(Z)^{-2}
+\qquad\text{(proved/$\beta$, \cite{OB,OPand,DT}).}
+\]
+Equivalently $\chi_{10}^{\mathrm{OP}} = (64^{-1}\Delta_5)^2 = 4096^{-1}\Delta_5^2$
+and $Z^X_{\mathrm{OP}} = -(\chi_{10}^{\mathrm{OP}})^{-1}$; the factor
+$4096 = 64^2$ is a theta-leading normalization conversion and the minus
+sign is the OP scalar convention.  The orientation-forgetful shadow
+\[
+Z_{\mathrm{BPS}}^{K3\times E}
+= (\Phi_{10}^{\mathrm{un}})^{-1}
+= \Delta_5^{-2}
+\]
+is the level-$n$ protected trace of $\mathfrak A_{K3\times E}$ on the
+closed cobordism in the unnormalized convention $\Phi_{10}^{\mathrm{un}}
+= \Delta_5^2$; the squared scalar cannot recover the orientation
+character that distinguishes $\Delta_5$ from $-\Delta_5$.  Promotion to a
+$3d$ gravitational path integral requires the Hall--Borcherds residual
+of \cite{ChiralBarCobarVolII} and is not claimed.  The conditional
+cross-level identity
+$\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}}) =
+\Delta_5$ supplies the orientation/Pfaffian datum under
+$(\mathrm{D0}), (\mathrm{O1}), (\mathrm{O1}^+), (\mathrm{O2})$.
+
+\begin{remark}[Cross-volume consistency]
+\label{rem:cross-volume-consistency}
+The $\kappa$-tuple $(0, 0, 3, 5, 24)$ is consistent across
+\cite{CYQGVolIII} (Vol III), the Hall--Borcherds
+residual of \cite{ChiralBarCobarVolII} (Vol II), and the
+Beilinson--Drinfeld factorization framework of \cite{BD} via Vol I
+\cite{ChiralBarCobarVolI}.  The local model
+$\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$ + brane completion of
+\cite{MixedHTSCompanion} contributes the
+holomorphic de Rham obstruction class on the global target; the
+identity $Z_{\mathrm{BPS}}^{K3\times E} = \Delta_5^{-2}$ does not
+promote to the global target via formal Hamiltonian BF, and the
+Hall--Borcherds residual is the cross-volume bridge.
+\end{remark}
+
+% =====================================================================
+\section{Notation summary and chapter outputs}
+\label{sec:k3xe-notation-summary}
+% =====================================================================
+
+\begin{description}
+\item[$X = S\times E$.]
+Smooth complex projective Calabi--Yau threefold; $S$ is a K3 surface,
+$E$ a smooth elliptic curve.  $\dim_\C X = 3$.
+\item[$\Lambda_S$.]
+Mukai lattice; even unimodular signature $(4, 20)$.
+$\Lambda_S\cong U^{\oplus 4}\oplus E_8(-1)^{\oplus 2}\cong II_{4, 20}$.
+\item[$\Gamma_X^{\mathrm{form}}, \Gamma_X^{\mathrm{phys}}$.]
+Formal full-Mukai dyonic lattice $\Lambda_S\oplus\Lambda_S$.  The
+superscript ``$\mathrm{phys}$'' is mnemonic only; not the
+$\mathcal N = 4$ charge lattice.
+\item[$\Gamma_X^{\mathrm{alg}},\Gamma_{X, \sigma}^{\mathrm{eff}}$.]
+Algebraic K-class lattice $\subset\Gamma_X^{\mathrm{form}}$; supplied
+$\sigma$-effective semigroup $\subset\Gamma_X^{\mathrm{alg}}$.
+\item[$\Gamma_{\mathrm{gram}} = \Z^3$.]
+Gram-index lattice, $(n, l, m)$.
+\item[$\Pi_X$.]
+Quadratic Gram map, $\Pi_X(Q, P) = ((Q, Q)/2,\,(Q, P),\,(P, P)/2)$.
+\item[$B$.]
+Symmetric bilinear cocycle, $B(c, c') = (Q\cdot Q',\,Q\cdot P' + Q'\cdot
+P,\,P\cdot P')$; satisfies $B = -\delta\Pi_X$ and $B(c, c) = 2\Pi_X(c)$.
+\item[$\widehat\Gamma_X$.]
+Normal-ordered extension $\Gamma_X^{\mathrm{form}}\oplus_B\Gamma_{\mathrm
+{gram}}$; abelian under $\star$.
+\item[$\overline\Pi_X$.]
+Additive normal-ordered Gram homomorphism $\overline\Pi_X(c, T) =
+\Pi_X(c) - T$.
+\item[$\operatorname{Ran}^{\mathrm{hyb}}(E)$.]
+Hybrid carrier $\operatorname{Ran}(E)_{b = 0}\sqcup\operatorname{Ran}^{\mathrm{wr}}(E)_{b > 0}$
+on the elliptic factor.
+\item[$\mathcal D_X = \Delta_5$, $\mathrm{den}(\mathfrak g_{\Delta_5})$,
+$\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})$.]
+Three named scalars at level five: automorphic section, BKM denominator,
+compact Pfaffian (View \textcircled{1}, \textcircled{2}, \textcircled{3}).
+\end{description}
+
+The chapter outputs are: (a) the formal Mukai sector
+$\Gamma_X^{\mathrm{form}} = \Lambda_S\oplus\Lambda_S$ and its three-tier
+support hierarchy; (b) the lattice polarization $B = -\delta\Pi_X$ as the
+full structural content of the Gram defect; (c) the normal-ordered
+extension $\widehat\Gamma_X$ with additive homomorphism
+$\overline\Pi_X$, fixed by the fixed-lift raw-pushforward obstruction
+theorem; (d) the hybrid Ran carrier
+$\operatorname{Ran}^{\mathrm{hyb}}(E)$, fixed by the projection-locality
+obstruction; (e) the connected/finite split of the $E$-descent classes,
+with the linearization criterion separated from the gerbe class; (f)
+the local protected observable algebra source interface, supplied as
+external assumption; (g) the four obstructions
+$(\mathrm{D0}), (\mathrm{O1}), (\mathrm{O1}^+), (\mathrm{O2})$
+conditioning the cross-level identity ②$\leftrightarrow$③.
+
+Chapter~\ref{chap:dirac-igusa-pro-object} consumes these outputs as fixed
+input data and constructs the Dirac--Igusa pro-object $\mathfrak D_X^{
+\mathrm{DI}} = \lim_R(\mathcal A_{X, R}^{E_3}, F_{X, R}^{\mathrm{hyb}},
+\Gamma_{X, R}, \Pi_X, \Phi_R, o_R, H_R, P_R^\Pi, C_{X, R},
+\Theta_{\mathrm{Kos}, R}, \mathcal L_{\mathrm{Pf}, R}, \mathrm{pf}_{X, R},
+\epsilon_{o, R}, \mathrm{Rec}_R)$.
+
+% =====================================================================
+% End of Chapter 2.
+% =====================================================================

@@ -1,0 +1,711 @@
+% chapters/03_view1_automorphic.tex
+% Chapter 3 -- View I (automorphic).  The Borcherds--Gritsenko--Nikulin
+% section D_X = Delta_5 of the weight-5 automorphic line on
+% Sp(2,Z)\HH_2.  Reconstitution of main.tex lines 548-2456 (selective:
+% virtual K3 index, theta-constant normalization 64, weight-5
+% automorphic line, Borcherds product chamber, Gritsenko lift) and
+% 2456-2714 (the normalized cusp form), with the Beilinson-cut scope
+% for View I as the scalar modular shadow stated explicitly.
+
+\chapter{View I: the Borcherds--Gritsenko--Nikulin section}
+\label{ch:view1-automorphic}
+
+\section{The pentadic level and the Beilinson cut}
+\label{sec:view1-pentadic-level}
+
+The first of the five categorical-dimensional levels at which the chiral
+\(E_3\)-algebra \(\mathfrak A_{K3\times E}\) of the formal target
+\(K3\times E\) takes the value \(\Delta_5\) is the automorphic level.  At
+this level \(\Delta_5\) is read as a holomorphic section of the
+weight-\(5\) automorphic line on the genus-two Siegel modular space
+\(\Sp_4(\Z)\backslash\mathbb H_2\): the Borcherds--Gritsenko--Nikulin lift of the
+weight-zero index-one weak Jacobi form \(\phi_{0,1}\), normalized at the
+isotropic cusp \(\mathfrak c_\infty\) by the theta-constant leading
+coefficient \(64\).  The \(\Sp_4(\Z)\)-equivariant data — multiplier
+system \(\nu_{\Delta_5}\), Borcherds chamber, divisor support, and
+weight — constitute the View~I package.
+
+\paragraph{Three names.}
+The handle ``\(\Delta_5\)'' is shared among three structurally distinct
+objects in the manuscript and must be tagged on first use per chapter:
+\begin{itemize}
+\item \emph{the Borcherds--Gritsenko--Nikulin section}
+\(D_X=\Delta_5\) of \(\mathcal L^{5}\otimes\nu_{\Delta_5}\) on
+\(\Sp_4(\Z)\backslash\mathbb H_2\), View~I, the subject of this chapter;
+\item \emph{the BKM denominator}
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=64^{-1}\Delta_5(2Z)\), View~II,
+constructed in the chapter on Borcherds--Kac--Moody algebras;
+\item \emph{the protected Pfaffian}
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\),
+View~III, constructed in the Dirac--Igusa chapter as a section on the
+Pfaffian line of the cosection-reduced compact Hall datum, conditional
+on the four obstruction classes \((D_0)\), \((O_1)\), \((O_1)^+\),
+\((O_2)\).
+\end{itemize}
+The bare label \(\Delta_5\) never substitutes for any of the three: it
+is the protected scalar shadow of the chiral \(E_3\)-algebra, while
+\(D_X\), \(\operatorname{den}(\mathfrak g_{\Delta_5})\), and
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\) live at
+distinct categorical-dimensional levels.
+
+\paragraph{Beilinson cut: scope of View~I.}
+View~I is the scalar modular shadow.  In the reconstitution order
+``primitive objects first, cross-level identities second, scalar
+shadows last'' the contents of this chapter sit at the bottom: a single
+holomorphic section of an automorphic line on a Shimura variety, with
+its multiplier system and its weight.  No operator-level package is
+asserted at View~I.  In particular, the equality
+\(D_X=\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\) of
+View~I and View~III is the Pfaffian--Dirac theorem of
+Chapter~\ref{ch:pfaffian-dirac}, conditional on \((D_0)\),
+\((O_1)\), \((O_1)^+\), \((O_2)\); it is not asserted in this chapter.
+The shadows are \(\Delta_5\), \(\chi_{10}\), the level-\(n\) BPS partition function
+\(Z_{\mathrm{BPS}}^{K3\times E}=\Delta_5^{-2}\), and the
+Oberdieck--Pixton scalar branch
+\(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\); none of them is a Hilbert
+space, a Hall pairing, an orientation line, or a BPS operator product.
+
+\section{The genus-two Siegel space and the Borcherds chamber}
+\label{sec:view1-siegel-and-chamber}
+
+Let \(\mathbb H_2\) be the genus-two Siegel upper half space.  An element
+\(Z\in\mathbb H_2\) is a complex symmetric \(2\times 2\) matrix with
+positive-definite imaginary part,
+\[
+Z=\begin{pmatrix}z_1&z_2\\z_2&z_3\end{pmatrix},
+\qquad
+\Im Z>0.
+\]
+Set Fourier variables
+\[
+q=e^{2\pi i z_1},\qquad
+r=e^{2\pi i z_2},\qquad
+s=e^{2\pi i z_3}.
+\]
+The fixed cusp polarization at the rational isotropic boundary
+\(\mathfrak c_\infty\) of \(\Sp_4(\Z)\backslash\mathbb H_2\) — the standard
+type-II cusp polarization used throughout the manuscript — is the
+ordered limit
+\[
+0<|s|\ll|q|\ll|r|^{-1}\ll1.
+\]
+Equivalently, \(\Im z_3\) goes to \(+\infty\) faster than \(\Im z_1\)
+goes to \(+\infty\), and \(\Im z_2\) is bounded.  This polarization
+selects a Weyl chamber on the \(O(3,2)\) symmetric domain through the
+Sp(4)$\,\simeq\,$Spin(3,2) bridge of Chapter~\ref{ch:singular-theta-lift}, and
+hence selects a positive cone — the effective semigroup
+\[
+\Gamma_{\mathrm{eff}}
+=\{(n,l,m)\mid m>0,\ n\ge0,\ l\in\Z\}
+\cup\{(n,l,0)\mid n>0,\ l\in\Z\}
+\cup\{(0,l,0)\mid l<0\}
+\subset\Z^3,
+\]
+and a corresponding completed Fourier expansion ring.  In this completion every
+Fourier coefficient of every formal product receives only finitely many
+contributions: the chamber walls are the inequalities defining the
+ordering, and the chamber-completed product is the only product
+considered.
+
+\paragraph{Choices fixed once and for all.}
+The cusp \(\mathfrak c_\infty\), the Fourier variables \((q,r,s)\), the
+polarization \((0<|s|\ll|q|\ll|r|^{-1}\ll1)\), and the effective semigroup
+\(\Gamma_{\mathrm{eff}}\subset\Z^3\) are fixed.  Every product expansion
+in this chapter is the product expansion in the cusp-completed
+semigroup algebra of \(\Gamma_{\mathrm{eff}}\).  The cusp expansion at any
+other rational isotropic cusp is obtained by an
+\(\Sp_4(\Z)\)-translate of these data.
+
+\section{The weak Jacobi input and the K3 elliptic genus}
+\label{sec:view1-jacobi-input}
+
+The Borcherds input is the \emph{weight-zero index-one weak Jacobi form}
+\(\phi_{0,1}\in J^{\mathrm{weak}}_{0,1}\) of Eichler--Zagier
+\cite[\S2.2]{EZ:1}, normalized so that the K3 elliptic genus is
+\[
+Z_{K3}(\tau,z)=2\,\phi_{0,1}(\tau,z).
+\]
+Write the Fourier expansion as
+\[
+\phi_{0,1}(\tau,z)=\sum_{n\ge 0,\;l\in\Z}f(n,l)\,q^nr^l,
+\qquad q=e^{2\pi i\tau},\quad r=e^{2\pi iz}.
+\]
+The first Fourier coefficients are
+\begin{equation}
+\label{eq:view1-phi01-coefficients}
+\begin{aligned}
+f(0,-1)&=1,&\quad f(0,0)&=10,&\quad f(0,1)&=1,\\
+f(1,-2)&=10,&\quad f(1,-1)&=-64,&\quad f(1,0)&=108,&\quad f(1,1)&=-64,&\quad f(1,2)&=10,\\
+f(2,-3)&=1,&\quad f(2,-2)&=108,&\quad f(2,-1)&=-513,&\quad f(2,0)&=808,
+\end{aligned}
+\end{equation}
+extending in the standard way by hyperbolic symmetry
+\(f(n,l)=f(n,-l)\) and Eichler--Zagier support
+\(f(n,l)=0\) for \(4n-l^2<-1\) \cite[\S2.2]{EZ:1}.  The values in
+\eqref{eq:view1-phi01-coefficients} are computed in the local fixture
+\texttt{compute/verify\_square\_root.py} from the standard theta-quotient
+expression
+\(\phi_{0,1}=4\sum_{i=2,3,4}\theta_i(\tau,z)^2/\theta_i(\tau,0)^2\)
+[\textit{computed}; cross-checked against \cite[Theorem~9.2]{EZ:1}].
+
+\paragraph{Borcherds-weight handle.}
+Following the universal Borcherds-weight identity
+\(\kappa_{\mathrm{BKM}}(\Phi_N)=c_N(0)/2\) (Borcherds 1995
+\cite[Theorem~10.1]{Borcherds95}; Gritsenko 2018
+\cite{Gritsenko2018Reflective}), the input row \(N=1\) of the
+Cl\'ery--Gritsenko catalogue \cite[Theorem~1.4]{GC} is named by
+\[
+c_1(0):=f(0,0)=10,\qquad
+\kappa_{\mathrm{BKM}}(\Delta_5)=\frac{c_1(0)}{2}=5,
+\]
+to be matched in
+Proposition~\ref{prop:view1-borcherds-gritsenko-weight-identity} below
+with the geometric weight of the Borcherds lift.  The notation
+\(\kappa_{\mathrm{BKM}}\) is the BKM cusp-form-weight entry of the
+\(\kappa\)-tuple \((\kappa_{\mathrm{cat}},\kappa^{\mathrm{Hodge}}_{\mathrm{ch}},
+\kappa^{\mathrm{Heis}}_{\mathrm{ch}},\kappa_{\mathrm{BKM}},\kappa_{\mathrm{fiber}})
+=(0,0,3,5,24)\) of the \(K3\times E\) target.  The bare symbol
+\(\kappa\) is forbidden — every entry carries its semantic subscript;
+the additive collapse
+\(\kappa_{\mathrm{BKM}}=\kappa_{\mathrm{ch}}+\chi(\mathcal O_{\mathrm{fiber}})\)
+fails on the CHL rows beyond \(N=1\) and is replaced by the universal
+weight identity (Vol~III).
+
+\section{The theta-constant normalization}
+\label{sec:view1-theta-normalization}
+
+The theta-constant Igusa form \(\Delta_5\) is fixed by its leading
+Fourier monomial at \(\mathfrak c_\infty\).  Writing the theta-constant
+representation of Igusa \cite[\S5]{Igusa1962}, \cite[\S2]{Igusa1964II}
+\[
+\Delta_5(Z)
+=\!\!\!\!\prod_{\substack{a,b\in(\Z/2\Z)^2\\{}^t\!ab\equiv 0\bmod 2}}\!\!\!
+\nu_{a,b}(Z),
+\qquad
+\nu_{a,b}(Z)=\!\sum_{l\in\Z^2}\exp\!\bigl(\pi i\bigl(z[l+\tfrac12 a]+{}^tbl\bigr)\bigr),
+\]
+the four characteristics with \(a=(0,0)\) start with the constant \(1\),
+the two factors with \(a=(1,0)\) start with \(2q^{1/8}\), the two factors
+with \(a=(0,1)\) start with \(2s^{1/8}\), and the two factors with
+\(a=(1,1)\) start with \(2q^{1/8}r^{1/4}s^{1/8}\); multiplying gives
+
+\begin{proposition}[Theta-constant leading coefficient]
+\label{prop:view1-theta-constant-leading-coefficient}
+\[
+[q^{1/2}r^{1/2}s^{1/2}]\Delta_5\;=\;2^6\;=\;64.
+\]
+\end{proposition}
+
+\noindent
+[\textit{proved}; Igusa 1962 \cite[Theorem~3]{Igusa1962}, Gritsenko
+1999 \cite[Theorem~4.1]{GN}; cross-checked numerically in
+\texttt{compute/verify\_square\_root.py}.]
+
+\begin{definition}[Monic Borcherds--Gritsenko form]
+\label{def:view1-monic-Borcherds-Gritsenko-form}
+The \emph{monic genus-two Borcherds--Gritsenko form} is
+\[
+D_5(Z)\;:=\;64^{-1}\Delta_5(Z).
+\]
+By Proposition~\ref{prop:view1-theta-constant-leading-coefficient},
+\(D_5=q^{1/2}r^{1/2}s^{1/2}+\ldots\) at \(\mathfrak c_\infty\).
+\end{definition}
+
+\noindent
+This is the normalization used by Gritsenko--Nikulin
+\cite[Theorem~2.1, (2.15)--(2.16)]{GNII}: their Borcherds product is the
+monic form \(D_5\); the theta-constant convention restores the prefactor
+\(64\).
+
+\section{The Borcherds--Gritsenko--Nikulin section}
+\label{sec:view1-borcherds-gritsenko-nikulin-section}
+
+\subsection{The product expansion}
+\label{ssec:view1-product-expansion}
+
+Borcherds's automorphic product theorem
+\cite[Theorem~10.1]{Borcherds95}, specialized to the genus-two Siegel
+modular variety \(\Sp_4(\Z)\backslash\mathbb H_2\) by Gritsenko--Nikulin
+\cite[Theorem~2.1, Example~2.4]{GNII} via the
+exceptional isomorphism \(\Sp_4\simeq\Spin(3,2)\) of
+Chapter~\ref{ch:singular-theta-lift}, lifts the weak Jacobi form
+\(\phi_{0,1}\) to a meromorphic Siegel modular form of weight
+\(f(0,0)/2=5\) and multiplier system \(\nu_{\Delta_5}\) with infinite
+product expansion in the cusp chamber.
+
+\begin{theorem}[Borcherds--Gritsenko--Nikulin lift, monic form]
+\label{thm:view1-borcherds-gritsenko-nikulin-lift}
+In the cusp chamber \(0<|s|\ll|q|\ll|r|^{-1}\ll1\),
+\[
+D_5(Z)
+\;=\;q^{1/2}r^{1/2}s^{1/2}\!\!
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}\!\!
+(1-q^nr^ls^m)^{f(nm,l)},
+\]
+the product converging absolutely on a neighborhood of \(\mathfrak
+c_\infty\) and continuing meromorphically to all of
+\(\mathbb H_2\) as a holomorphic Siegel modular form of weight \(5\) on
+\(\Sp_4(\Z)\) with character \(\nu_{\Delta_5}\) of order two.
+\end{theorem}
+
+\noindent
+[\textit{proved}; Borcherds 1995 \cite[Theorem~10.1]{Borcherds95},
+Gritsenko--Nikulin 1998 \cite[Theorem~2.1, (2.15)--(2.16)]{GNII},
+Gritsenko 1999 \cite[Theorem~4.1]{GN}.]
+
+\begin{corollary}[Theta-normalized section]
+\label{cor:view1-theta-normalized-section}
+\[
+\Delta_5(Z)
+\;=\;64\,q^{1/2}r^{1/2}s^{1/2}\!\!
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}\!\!
+(1-q^nr^ls^m)^{f(nm,l)}.
+\]
+\end{corollary}
+
+\noindent
+The exponent \(f(nm,l)\) of the \((n,l,m)\)-factor depends only on the
+Hecke--Verlinde--DMVV product \(nm\) and on the Jacobi index \(l\),
+reflecting the second-quantized structure of the Borcherds lift; the
+combinatorial origin of this exponent is the Dijkgraaf--Moore--Verlinde--Verlinde
+elliptic genus of symmetric products \cite{DMVV}.
+
+\subsection{The View~I package}
+\label{ssec:view1-package}
+
+\begin{definition}[The Borcherds--Gritsenko--Nikulin section]
+\label{def:view1-borcherds-gritsenko-nikulin-section}
+The \emph{Borcherds--Gritsenko--Nikulin section} of the weight-\(5\)
+automorphic line is the View~I representative
+\[
+D_X\;:=\;\Delta_5
+\]
+on \(\Sp_4(\Z)\backslash\mathbb H_2\), with Borcherds product expansion
+at \(\mathfrak c_\infty\) given by Corollary~\ref{cor:view1-theta-normalized-section}.
+\end{definition}
+
+\begin{remark}[\(D_X\) is the View~I name]
+\label{rem:view1-D-X-naming}
+The handle \(D_X\) is the View~I name of the section.  It coincides as
+a holomorphic Siegel modular form with the theta-constant Igusa cusp
+form \(\Delta_5\); the renaming records the role: View~I scalar
+shadow, the determinant of the virtual K3 index in
+\(K_0(\mathrm{sVect}_{\mathrm{fd}})\) (the
+\(K_0\)-determinant package proved at
+Proposition~\ref{prop:bgn-identification-recap}; the operator
+upgrade is View~III), and the input section of the Pfaffian--Dirac
+theorem of Chapter~\ref{ch:pfaffian-dirac}.  The compact
+operator-level package \(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak
+D_X^{\mathrm{DI}})\) of View~III is asserted equal to \(D_X\) under
+\((D_0)\), \((O_1)\), \((O_1)^+\), \((O_2)\); without these obstruction
+trivializations, only \(D_X\) is rigorously available.
+\end{remark}
+
+\section{Weight, multiplier, and divisor}
+\label{sec:view1-weight-multiplier-divisor}
+
+\subsection{The Borcherds weight}
+\label{ssec:view1-borcherds-weight}
+
+\begin{proposition}[Borcherds--Gritsenko weight identity at \(N=1\)]
+\label{prop:view1-borcherds-gritsenko-weight-identity}
+\[
+\operatorname{wt}(D_X)
+\;=\;\frac{f(0,0)}{2}
+\;=\;5
+\;=\;\frac{c_1(0)}{2}
+\;=\;\kappa_{\mathrm{BKM}}(\Delta_5).
+\]
+The weight is integral; no metaplectic cover enters the weight factor.
+\end{proposition}
+
+\noindent
+[\textit{proved}; Borcherds 1995 \cite[Theorem~10.1, weight
+formula]{Borcherds95}; Gritsenko--Nikulin 1998
+\cite[Example~2.4]{GNII}; Gritsenko 1999 \cite[Theorem~4.1, weight]{GN};
+universal Borcherds-weight identity \(\kappa_{\mathrm{BKM}}(\Phi_N)=c_N(0)/2\)
+across the Cl\'ery--Gritsenko ladder \cite{GC}, Vol~III.]
+
+\noindent
+The row \((N,\operatorname{wt},c_N(0))=(1,5,10)\) is the leading entry of
+the eight-row Cl\'ery--Gritsenko catalogue \cite[Theorem~1.4]{GC}; the
+remaining seven rows
+\((t,N;k)\) carry weights \((2,3,1,2,1/2,3/2,1)\) with input zero
+coefficients \(c_N(0)\in\{4,6,2,4,1,3,2\}\) and reproduce
+\(\kappa_{\mathrm{BKM}}(\Phi_N)=c_N(0)/2\) row-by-row.  The half-integer
+weights are realized via multiplier systems \((v_\eta^3\times v_H)\) and
+not via metaplectic covers.  The Vol~III universal Borcherds-weight
+identity replaces the false additive collapse
+\(\kappa_{\mathrm{BKM}}=\kappa_{\mathrm{ch}}+\chi(\mathcal O_{\mathrm{fiber}})\)
+that was once written for the \(K3\times E\) row alone (where it
+holds by the \(N=1\) accident \(5=3+2\)) and fails at every other CHL
+row \cite[FRONTIER, eq.~(72), eq.~(118)]{GN}; the corrected entry of the
+\(\kappa\)-tuple of \(K3\times E\) is precisely \(\kappa_{\mathrm{BKM}}=5\).
+
+\subsection{The Maass multiplier system}
+\label{ssec:view1-maass-multiplier}
+
+The character \(\nu_{\Delta_5}\colon\Sp_4(\Z)\to\C^\times\) of Maass
+\cite{MAASS:1} has order two,
+\(\nu_{\Delta_5}^{2}=1\), and is determined on the standard generators
+of \(\Sp_4(\Z)\) by
+\[
+\nu_{\Delta_5}\!
+\begin{pmatrix}0&\Id_2\\-\Id_2&0\end{pmatrix}=1,
+\quad
+\nu_{\Delta_5}\!
+\begin{pmatrix}\Id_2&B\\0&\Id_2\end{pmatrix}=(-1)^{b_1+b_2+b_3},
+\]
+\[
+\nu_{\Delta_5}\!
+\begin{pmatrix}{}^tA^{-1}&0\\0&A\end{pmatrix}
+=(-1)^{(1+a_1+a_4)(1+a_2+a_3)+a_1a_4},
+\]
+with
+\(B=\bigl(\begin{smallmatrix}b_1&b_2\\b_2&b_3\end{smallmatrix}\bigr)\)
+and \(A=\bigl(\begin{smallmatrix}a_1&a_2\\a_3&a_4\end{smallmatrix}\bigr)\)
+\cite{MAASS:1}.  The square \(\Delta_5^2=\Delta_{10}\) is scalar.  The
+multiplier records the obstruction to identifying \(\Delta_5\) with an
+ordinary modular form on \(\Sp_4(\Z)\): \(\Delta_5\) is a section of
+\(\mathcal L^5\otimes\nu_{\Delta_5}\), where \(\mathcal L\) is the Hodge
+automorphic line and \(\nu_{\Delta_5}\) is the order-two character; the
+section \(\Delta_5\) does not descend to a section of the bare Hodge
+line \(\mathcal L^5\), but its square \(\Delta_5^2\) is a scalar
+section of \(\mathcal L^{10}\).
+
+\subsection{The diagonal divisor}
+\label{ssec:view1-diagonal-divisor}
+
+Let
+\[
+\mathcal H_{\mathrm{diag}}
+=\Bigl\{\bigl(\begin{smallmatrix}a&0\\0&b\end{smallmatrix}\bigr)\;\Big|\;
+a,b\in\mathbb H_1\Bigr\}
+\subset\mathbb H_2
+\]
+be the locus of diagonal genus-two periods.  The Cl\'ery--Gritsenko
+classification \cite{GC} records
+\[
+\operatorname{supp}\operatorname{div}(\Delta_5)
+=\Sp_4(\Z)\cdot\mathcal H_{\mathrm{diag}},\qquad
+\operatorname{mult}_{\mathcal H_{\mathrm{diag}}}(\Delta_5)=1,
+\]
+so the divisor of \(\Delta_5\) is the simple paramodular Humbert
+divisor.  In the cusp-chamber language, the type-II reflective walls
+\(\mathcal H_{\delta_i}\), \(i=1,2,3\), of the lattice
+\(\Lambda^{2,1}_{II}\) (the type-II sublattice of the Borcherds even
+lattice \(\Lambda^{2,1}\)) are the components of
+\(\Sp_4(\Z)\cdot\mathcal H_{\mathrm{diag}}\) that meet the chosen
+fundamental Weyl chamber \(\Pi_{II}\) (Chapter~\ref{ch:view2-bkm}); the
+corresponding simple roots
+\(\delta_1=2f_2-f_3\), \(\delta_2=2f_{-2}-f_3\), \(\delta_3=f_3\)
+have Gram pairings
+\((\delta_i,\delta_i)=2\) and \((\delta_i,\delta_j)=-2\) for \(i\ne j\)
+\cite[Example~2.4]{GNII}, and the corresponding Borcherds divisor
+orders are
+\[
+d_{\delta_1}^{\mathrm{aut}}=f(0,1)=1,\qquad
+d_{\delta_2}^{\mathrm{aut}}=f(0,1)=1,\qquad
+d_{\delta_3}^{\mathrm{aut}}=f(0,-1)=1.
+\]
+[\textit{proved}; Cl\'ery--Gritsenko 2011 \cite[Theorem~1.4]{GC};
+Gritsenko--Nikulin 1998 \cite[Example~2.4]{GNII}; lattice computation in
+\texttt{compute/verify\_lattice.py}.]
+
+\subsection{Maass-character values on the type-II walls}
+\label{ssec:view1-maass-character-walls}
+
+\begin{lemma}[Maass-character values on the type-II reflections]
+\label{lem:view1-maass-multiplier-restriction}
+With the simple type-II roots
+\(\delta_1=2f_2-f_3\), \(\delta_2=2f_{-2}-f_3\), \(\delta_3=f_3\)
+and chamber-permuting type-I roots
+\(\alpha_1=f_{-2}-f_2\), \(\alpha_2=f_2-f_3\), \(\alpha_3=f_2+f_3\),
+\[
+\nu_{\Delta_5}(s_{\delta_i})\;=\;-1,\qquad
+\nu_{\Delta_5}(s_{\alpha_i})\;=\;+1,\qquad i=1,2,3.
+\]
+Equivalently,
+\(\Delta_5(s_{\delta_i}Z)=-\Delta_5(Z)\) and
+\(\Delta_5(s_{\alpha_i}Z)=+\Delta_5(Z)\).
+\end{lemma}
+
+\noindent
+[\textit{proved}; Maass \cite{MAASS:1}; Gritsenko--Nikulin
+\cite[\S3]{GN}; Gritsenko \cite{Gritsenko99}; the type-II values follow
+from \(d_{\delta_i}^{\mathrm{aut}}=1\) and the type-I values from
+\(d_{\alpha_i}^{\mathrm{aut}}=0\) (vanishing of \(f(0,\pm 2)\) by the
+support of \(\phi_{0,1}\) at \(q=0\)).  The detailed cocycle calculation
+sits in Chapter~\ref{ch:view2-bkm}, Lemma~\ref{lem:bkm-maass-restriction}.]
+
+The chamber-permuting reflections
+\(s_{f_{-2}-f_2},s_{f_2-f_3},s_{f_2+f_3}\) act trivially on
+\(\Delta_5\) because the corresponding type-I roots
+\(\alpha_i\) are not \(\Sp_4\)-images of timelike short roots in the
+cusp chamber; their Borcherds divisor order vanishes by the support
+\(f(0,l)=0\) for \(|l|\ge 2\) of \(\phi_{0,1}\) at \(q=0\)
+\cite[\S2.2]{EZ:1}.
+
+\section{Identification with the virtual \(K_0\)-determinant}
+\label{sec:view1-K0-determinant-identification}
+
+The Fock superdeterminant of the Borcherds-graded super vector space
+\(\mathcal V=\bigoplus_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+\mathbb U_{nm,l}\) — the \(K_0\)-class of the second-quantized
+Hecke--DMVV half of the K3 elliptic genus, with the \(m=0\) cusp/Weyl
+boundary factors carrying the input multiplicities \(f(0,l)\) (the
+construction
+\(\mathcal V=\mathcal V^{\mathrm{bulk}}\oplus\mathcal V^{\mathrm{cusp}}\)
+of Chapter~\ref{ch:k3xe-setup}, Definition~\ref{def:gram-index-lattice}) — is
+
+\begin{lemma}[\(K_0\)-Fock superdeterminant]
+\label{lem:view1-K0-Fock-superdeterminant}
+\[
+\sdet_{\mathcal V}(1-x)
+\;=\;\!\!\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}\!\!
+(1-q^nr^ls^m)^{f(nm,l)},
+\qquad x^{(n,l,m)}=q^nr^ls^m.
+\]
+\end{lemma}
+
+\noindent
+[\textit{proved}; Fock-trace lemma of Chapter~\ref{ch:k3xe-setup},
+Lemma~\ref{thm:bgn-three-way}.]
+
+\begin{proposition}[BGN identification of the virtual determinant]
+\label{prop:bgn-identification-recap}
+With \(v_0(Z):=64\,q^{1/2}r^{1/2}s^{1/2}\) the cusp/Weyl monomial of
+Chapter~\ref{ch:k3xe-setup}, the normalized \(K_0\)-determinant agrees with
+the View~I section,
+\[
+\mathcal D_X(Z)
+\;:=\;v_0(Z)\,\sdet_{\mathcal V}(1-x)
+\;=\;D_X(Z)
+\;=\;\Delta_5(Z),
+\]
+in the cusp-chamber expansion at \(\mathfrak c_\infty\) and hence as
+sections of \(\mathcal L^5\otimes\nu_{\Delta_5}\).
+\end{proposition}
+
+\begin{proof}
+Combine
+Theorem~\ref{thm:view1-borcherds-gritsenko-nikulin-lift}, the
+theta-constant prefactor
+Proposition~\ref{prop:view1-theta-constant-leading-coefficient},
+Lemma~\ref{lem:view1-K0-Fock-superdeterminant}, and Cohen's
+\(q\)-expansion principle for genus-two Siegel modular forms with
+half-integral character: a meromorphic Siegel form is determined by its
+expansion at one isotropic cusp.  Both sides have the same Borcherds
+product expansion at \(\mathfrak c_\infty\) by direct comparison of
+exponents, and \(D_X\) is holomorphic of weight \(5\) by
+Theorem~\ref{thm:view1-borcherds-gritsenko-nikulin-lift}.
+\end{proof}
+
+\noindent
+[\textit{proved}; Borcherds 1995 \cite[Theorem~10.1]{Borcherds95},
+Gritsenko--Nikulin 1998 \cite[Theorem~2.1]{GNII}, Igusa 1962/1964
+\cite{Igusa1962,Igusa1964II}.]
+
+\begin{remark}[Scope of the BGN identification]
+\label{rem:view1-bgn-scope}
+Proposition~\ref{prop:bgn-identification-recap} is an equality of
+holomorphic sections of an automorphic line bundle.  The carrier
+\(\mathcal V\) is a class in
+\(K_0(\Gamma_{\mathrm{eff}}\text{-graded super vector spaces})\); it is
+not a Hilbert space, not a vertex algebra, not a holomorphic
+\(E_3\)-factorization algebra, and not a chiral factorization algebra.
+The operator-level upgrade — promotion of the \(K_0\)-Fock determinant
+to a section of an oriented Pfaffian line over the cosection-reduced
+compact Hall datum, and identification of that Pfaffian with
+\(D_X\) — is the Pfaffian--Dirac theorem of
+Chapter~\ref{ch:pfaffian-dirac}, conditional on \((D_0)\),
+\((O_1)\), \((O_1)^+\), \((O_2)\).  At View~I, no such promotion is
+asserted.
+\end{remark}
+
+\section{The squared scalar shadow and OP normalization}
+\label{sec:view1-squared-scalar}
+
+The Maass character has order two, so the square
+\(\Delta_5^2=\Delta_{10}\) is a scalar weight-\(10\) Igusa form on
+\(\Sp_4(\Z)\), with no multiplier system.
+
+\begin{proposition}[The square is the Oberdieck--Pandharipande $\chi_{10}$]
+\label{prop:view1-square-chi-10}
+\[
+\Delta_5^2\;=\;\Delta_{10}\;=\;\Phi_{10}\;=\;\chi_{10}.
+\]
+\end{proposition}
+
+\noindent
+[\textit{proved}; Igusa \cite{Igusa1962,Igusa1964II}; the symbol
+\(\Phi_{10}\) is Borcherds's name for the squared theta-constant Igusa
+form, \(\chi_{10}\) is the Oberdieck--Pandharipande
+\cite{OPand,OB} name; both equal \(\Delta_5^2\).  The naming is
+\(\Phi_{10}=\chi_{10}=\Delta_5^2\), with the Oberdieck--Pixton OP
+normalization \(\chi_{10}^{\mathrm{OP}}=D_5^{\,2}=4096^{-1}\Delta_5^2\)
+the monic-on-\(D_5\) variant.]
+
+\paragraph{The OP scalar branch.}
+With the OP normalization \(\chi_{10}^{\mathrm{OP}}=D_5^2\), the
+Oberdieck--Pixton scalar partition function on \(K3\times E\) is
+\cite[(0.4) and Theorem~1]{OB}
+\[
+Z_{\mathrm{OP}}^{X}\;=\;-\,(\chi_{10}^{\mathrm{OP}})^{-1}
+\;=\;-\,4096\,\Delta_5^{-2}.
+\]
+The factor \(-4096=-(64)^2\) records the squared theta-constant leading
+coefficient and the OP scalar sign convention.  At View~I this
+is the protected scalar shadow of the chiral \(E_3\)-algebra of
+\(K3\times E\); the operator package whose protected trace it is
+remains conditional on \((D_0)\), \((O_1)\), \((O_1)^+\), \((O_2)\).
+
+\paragraph{Three names for the squared form, distinguished.}
+The notation here is fixed once for the manuscript:
+\(\Delta_5^2=\Delta_{10}\) is the Igusa convention (theta-constant
+square); \(\Phi_{10}=\Delta_5^2\) is the Borcherds-Eisenstein convention;
+\(\chi_{10}=\Delta_5^2\) is the Oberdieck--Pandharipande convention; and
+\(\chi_{10}^{\mathrm{OP}}=4096^{-1}\Delta_5^2=D_5^{\,2}\) is the
+Oberdieck--Pixton variant in which \(D_5\) is the monic Borcherds form
+(Definition~\ref{def:view1-monic-Borcherds-Gritsenko-form}).
+
+\section{The View~II shadow: the \texorpdfstring{\(2Z\)}{2Z} denominator}
+\label{sec:view1-2Z-denominator}
+
+The Gritsenko--Nikulin denominator algebra of the
+Borcherds--Kac--Moody Lie superalgebra \(\mathfrak g_{\Delta_5}\)
+arises as the View~II shadow of \(\Delta_5\) under the doubling
+\(Z\mapsto 2Z\):
+
+\begin{proposition}[Gritsenko--Nikulin doubled denominator]
+\label{prop:view1-GN-doubled-denominator}
+\[
+\operatorname{den}(\mathfrak g_{\Delta_5})\;=\;D_5(2Z)\;=\;64^{-1}\Delta_5(2Z).
+\]
+\end{proposition}
+
+\noindent
+[\textit{proved}; Gritsenko--Nikulin 1998 \cite[Theorem~2.1,
+(2.15)--(2.16); \S5]{GNII}; Gritsenko 1999 \cite[Theorem~4.1]{GN}.]
+
+\noindent
+The doubling reflects the level-\(2\) structure of the BKM root lattice
+\(\Lambda^{2,1}_{II}\) inside \(\Lambda^{2,1}\): the type-II walls of the
+denominator side carry roots of length-square \(2\) and live on a sublattice
+of index \(2\); the substitution \(Z\mapsto 2Z\) on the modular side
+restricts the Fourier expansion to the corresponding sublattice
+\cite[Theorem~2.1, (2.15)]{GNII}.  At View~I this is a pointer; the
+Cartan, Chevalley, real-and-imaginary roots, and Weyl--Kac--Borcherds
+denominator identity of \(\mathfrak g_{\Delta_5}\) sit in
+Chapter~\ref{ch:view2-bkm}.
+
+\section{The Sp(4)$\,\simeq\,$Spin(3,2) bridge to View~V}
+\label{sec:view1-Sp-Spin-bridge}
+
+The Borcherds construction is most naturally written on the orthogonal
+side: \(\Delta_5\) is the singular theta lift of \(\phi_{0,1}\) under
+the Howe correspondence \(\Mp(4,\R)\leftrightarrow O(3,2)\), bridged by
+the exceptional isomorphism
+\[
+\Sp_4\;\simeq\;\Spin(3,2)
+\]
+of low-dimensional spin geometry.  At the symbolic level View~I
+(\(\Delta_5\) on \(\Sp_4(\Z)\backslash\mathbb H_2\)) and View~V
+(\(\Delta_5\) as the singular theta lift on
+\(O(3,2)\backslash D_{O(3,2)}\)) are the two sides of this bridge: the
+weight-\(5\) automorphic line on \(\Sp_4(\Z)\backslash\mathbb H_2\) is
+the pullback of the weight-\(5\) orthogonal modular line on
+\(O(3,2)\backslash D_{O(3,2)}\), and the multiplier \(\nu_{\Delta_5}\)
+restricts to the orthogonal Maass character.  The full theta-lift
+construction — Borcherds' \emph{singular theta correspondence}
+\cite{Borcherds95}, \cite{B} — is presented in
+Chapter~\ref{ch:singular-theta-lift}; this chapter uses only the
+Sp(4)-side of the bridge.
+
+\section{Summary of View~I}
+\label{sec:view1-summary}
+
+\begin{theorem}[View~I package]
+\label{thm:view1-package}
+The genus-two Igusa cusp form \(\Delta_5\) is the Borcherds--Gritsenko--Nikulin
+section
+\[
+D_X\;:=\;\Delta_5
+\]
+of the weight-\(5\) automorphic line \(\mathcal L^{5}\otimes\nu_{\Delta_5}\)
+over \(\Sp_4(\Z)\backslash\mathbb H_2\):
+
+\smallskip
+\begin{enumerate}
+\item[\textup{(i)}]
+At the rational isotropic cusp \(\mathfrak c_\infty\) with cusp polarization
+\(0<|s|\ll|q|\ll|r|^{-1}\ll1\), \(D_X\) admits the Borcherds product
+expansion
+\[
+D_X(Z)
+\;=\;64\,q^{1/2}r^{1/2}s^{1/2}\!\!
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}\!\!
+(1-q^nr^ls^m)^{f(nm,l)},
+\]
+with leading theta-constant coefficient
+\([q^{1/2}r^{1/2}s^{1/2}]D_X=64\), and exponents \(f(nm,l)\) the Fourier
+coefficients of the K3 weight-zero index-one weak Jacobi form
+\(\phi_{0,1}=\frac12 Z_{K3}\) (Eichler--Zagier \cite[\S2.2]{EZ:1}).
+\item[\textup{(ii)}]
+\(D_X\) has weight
+\(\operatorname{wt}(D_X)=f(0,0)/2=5=c_1(0)/2=\kappa_{\mathrm{BKM}}(\Delta_5)\),
+the leading entry \((N,\operatorname{wt},c_N(0))=(1,5,10)\) of the
+Cl\'ery--Gritsenko catalogue \cite[Theorem~1.4]{GC}.  The multiplier is
+the Maass character \(\nu_{\Delta_5}\) of order two.
+\item[\textup{(iii)}]
+The divisor of \(D_X\) is the simple paramodular Humbert divisor
+\(\Sp_4(\Z)\cdot\mathcal H_{\mathrm{diag}}\); the type-II reflective
+walls \(\mathcal H_{\delta_i}\) (\(i=1,2,3\)) carry order
+\(d_{\delta_i}^{\mathrm{aut}}=1\), and
+\(\nu_{\Delta_5}(s_{\delta_i})=-1=(-1)^{d_{\delta_i}^{\mathrm{aut}}}\),
+while the chamber-permuting roots \(\alpha_i\) carry order \(0\) and
+\(\nu_{\Delta_5}(s_{\alpha_i})=+1\) (Lemma~\ref{lem:view1-maass-multiplier-restriction}).
+\item[\textup{(iv)}]
+The square \(D_X^{\,2}=\Delta_{10}=\Phi_{10}=\chi_{10}\) is a scalar
+weight-\(10\) Igusa form, and the Oberdieck--Pixton scalar branch is
+\(Z_{\mathrm{OP}}^X=-(\chi_{10}^{\mathrm{OP}})^{-1}=-4096\,\Delta_5^{-2}\).
+\item[\textup{(v)}]
+The View~II shadow is the doubled denominator
+\(\operatorname{den}(\mathfrak g_{\Delta_5})=D_5(2Z)=64^{-1}\Delta_5(2Z)\)
+(Proposition~\ref{prop:view1-GN-doubled-denominator}); the View~III
+operator-level package
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\) is the
+subject of Chapter~\ref{chap:dirac-igusa-pro-object}, conditional on \((D_0)\), \((O_1)\),
+\((O_1)^+\), \((O_2)\).
+\end{enumerate}
+\end{theorem}
+
+\noindent
+[\textit{proved}; assembled from
+Borcherds 1995 \cite[Theorem~10.1]{Borcherds95},
+Borcherds 1998 \cite{B},
+Gritsenko--Nikulin 1998 \cite[Theorem~2.1, Example~2.4]{GNII},
+Gritsenko 1999 \cite[Theorem~4.1]{GN},
+Igusa 1962 \cite[Theorem~3]{Igusa1962},
+Igusa 1964 \cite[\S2]{Igusa1964II},
+Cl\'ery--Gritsenko 2011 \cite[Theorem~1.4]{GC},
+Maass 1964 \cite{MAASS:1},
+Eichler--Zagier 1985 \cite[\S2.2]{EZ:1},
+Oberdieck--Pixton 2018 \cite[(0.4) and Theorem~1]{OB},
+Oberdieck--Pandharipande 2016 \cite{OPand};
+numerical checks in
+\texttt{compute/verify\_lattice.py} and
+\texttt{compute/verify\_square\_root.py}.]
+
+\paragraph{What View~I does not assert.}
+View~I does not assert any operator-level package on \(K3\times E\),
+does not construct the Borcherds--Kac--Moody algebra
+\(\mathfrak g_{\Delta_5}\) (Chapter~\ref{ch:view2-bkm}), does not
+construct the protected first-order operator \(\mathfrak D_X^{\mathrm{DI}}\)
+or the Pfaffian line \(\mathscr L_{\mathrm{Pf},X}\)
+(Chapter~\ref{chap:dirac-igusa-pro-object}), and does not commit to the
+\(K3\times E\) realization of the chiral \(E_3\)-algebra
+\(\mathfrak A_{K3\times E}\) at any level above the scalar shadow.  In
+the language of the Beilinson cut, View~I is the bottom of the
+reconstitution order: a holomorphic Siegel cusp form, with its weight,
+multiplier, divisor, and Borcherds product, and nothing more.

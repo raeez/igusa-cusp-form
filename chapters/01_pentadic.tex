@@ -1,0 +1,651 @@
+% !TEX root = ../main.tex
+%
+% Chapter 1 — Pentadic Δ_5: road map.
+% Preceded by the frontispiece thesis. Both files supply the five-fold
+% reading of Δ_5 as the values of the chiral E_3-algebra 𝔄_{K3×E} at
+% five categorical-dimensional levels, and state the cross-level
+% identities on which the chapter spine is organized: ①↔②, ②↔⑤, ①↔⑤
+% (proved); ②↔③ (the Pfaffian–Dirac theorem of this manuscript,
+% conditional on (D0), (O1), (O1⁺), (O2)); ④ (mirror discriminant,
+% conjectural); the level-n scalar shadow Z_BPS^{K3×E} = Δ_5^{-2}.
+
+\chapter*{Frontispiece}
+\addcontentsline{toc}{chapter}{Frontispiece}
+\label{ch:frontispiece}
+
+The Igusa cusp form \(\Delta_5\) is one object. The genus-two automorphic
+section, the denominator of a generalized Borcherds--Kac--Moody
+superalgebra on \(\La^{2,1}_{II}\), the protected Pfaffian of a chiral
+\(E_3\)-algebra of \(K3\times E\), the discriminant of a one-parameter
+\(K3\)-mirror period family, and the singular theta lift of the weak
+Jacobi form \(\phi_{0,1}\) under the Howe correspondence
+\(\Sp_4(\R)\leftrightarrow\Orth(3,2)\) are five readings of one chiral
+\(E_3\)-algebra
+\[
+  \mathfrak A_{K3\times E}
+  \;\in\; E_3\text{-}\mathrm{HolFA}(K3\times E),
+\]
+and on each of these five levels its value is \(\Delta_5\).
+
+\paragraph{The five views.}
+\begin{enumerate}
+\item[\textcircled{1}]
+\textsl{Automorphic.}
+The Borcherds--Gritsenko--Nikulin section
+\[
+  D_X \;=\; \Delta_5
+  \;\in\; H^0\bigl(\Sp(2,\Z)\backslash\mathcal H_2,\;\mathcal L^{\otimes 5}
+  \otimes\nu_{\Delta_5}\bigr)
+\]
+of the weight-\(5\) automorphic line on Siegel upper-half space, with
+multiplier \(\nu_{\Delta_5}\) of \cite{MAASS:1, Borcherds95}.
+
+\item[\textcircled{2}]
+\textsl{Borcherds--Kac--Moody denominator.}
+The denominator of the generalized BKM Lie superalgebra
+\(\mathfrak g_{\Delta_5}\) on the rank-three Lorentzian root lattice
+\(\La^{2,1}_{II}\subset\La^{2,1}=\HypPlan\oplus\langle 2\rangle\) of
+signature \((2,1)\), the index-four sublattice with even \(f_{\pm 2}\)
+coordinates, abstractly \(U(4)\oplus\langle 2\rangle\) (discriminant
+\(-32\), the index-four scaling of \(U\)), in the basis
+\((f_2,f_3,f_{-2})\) with bilinear form \((f_2,f_{-2}) = -1\),
+\((f_3,f_3) = 2\); the type-II Cartan matrix on simple roots
+\(\delta_1 = 2f_2 - f_3\), \(\delta_2 = 2f_{-2} - f_3\),
+\(\delta_3 = f_3\) is
+\((\delta_i, \delta_j) = 4\Id_3 - 2\mathbf{J}_3 = \bigl(\begin{smallmatrix}
+2 & -2 & -2\\ -2 & 2 & -2\\ -2 & -2 & 2 \end{smallmatrix}\bigr)\),
+\[
+  \operatorname{den}(\mathfrak g_{\Delta_5})
+  \;=\; 64^{-1}\,\Delta_5(2Z),
+\]
+with signed root supermultiplicities
+\(\smult\,\mathfrak g_{\Delta_5,\alpha(n,l,m)} = f(nm,l)\) on the
+active support \(\Gamma_{\mathrm{act}} = \{(n,l,m)\in\Gamma_{\mathrm{eff}}
+\mid f(nm,l)\ne 0\}\), with
+\(\alpha(n,l,m) = 2nf_2 - lf_3 + 2mf_{-2}\)
+\cite{Borcherds95, GN, GNPartI, GNII}.
+
+\item[\textcircled{3}]
+\textsl{Compact Pfaffian.}
+The protected Pfaffian of the chiral
+\(E_3\)-algebra \(\mathfrak A_{K3\times E}\) of the \(K3\times E\)
+formal target, presented at finite stage \(R\) by the Dirac--Igusa
+pro-object
+\[
+  \mathfrak D^{DI}_X \;=\;
+  \varprojlim_R\;
+  \bigl(\mathcal A^{E_3}_{X,R},\,F^{\mathrm{hyb}}_{X,R},\,\Gamma_{X,R},
+  \,\Pi_X,\,\Phi_R,\,o_R,\,H_R,\,P^{\Pi}_R,\,C_{X,R},\,
+  \Theta_{\mathrm{Kos},R},\,\mathcal L_{\mathrm{Pf},R},\,\mathrm{pf}_{X,R},
+  \,\epsilon_{o,R},\,\mathrm{Rec}_R\bigr)
+\]
+(the chiral \(E_3\)-source \(\mathcal A^{E_3}\), the hybrid factorization
+carrier \(F^{\mathrm{hyb}}\) of \(\mathrm{Ran}^{\mathrm{hyb}}(E)\), the
+Mukai charge lattice \(\Gamma\), the Gram projection \(\Pi_X\), the
+specialization functor \(\Phi\), the orientation \(o\), the Hall datum
+\(H\), the Gram-descended primitive \(P^\Pi\), the source coalgebra
+\(C\), the Koszul cobar \(\Theta_{\mathrm{Kos}}\), the Pfaffian line
+\(\mathcal L_{\mathrm{Pf}}\), the Pfaffian section \(\mathrm{pf}\), the
+orientation character \(\epsilon_o\), and the recognition map
+\(\mathrm{Rec}\); each component is constructed in Chapter~5).
+The four named obstructions \((D0),(O1),(O1)^+,(O2)\) condition the
+Pfaffian--Dirac theorem
+\[
+  \mathrm{Pf}_{\mathrm{prot}}(\mathfrak D^{DI}_X) \;=\; \Delta_5,
+  \qquad
+  \epsilon_o \;=\; \nu_{\Delta_5},
+  \qquad
+  \mathcal P_X \;\cong\; \mathfrak g_{\Delta_5}
+\]
+where \(\mathcal P_X\) is the protected primitive Lie superalgebra
+\(P_X^{\Pi,\mathrm{red}}\) of Chapter~5.6 (the \(H^0\) of the protected
+primitives of the assembled hybrid factorization sheaf
+\(\mathcal F_X\) after Gram-projection pushforward
+\(\overline\Pi^\Theta_{X,*}\) and Hopf-radical quotient
+\(\overline{\operatorname{Rad}\langle\,,\,\rangle_X}\)),
+\(\epsilon_o\) is the orientation character of the Pfaffian line on
+\(W^{(2)}(\La^{2,1}_{II})\), and \(\nu_{\Delta_5}\) is the Maass
+multiplier of \cite{MAASS:1} on \(\Sp_4(\Z)\), pulled back along the
+exceptional isomorphism \(\Sp_4 \simeq \mathrm{Spin}(3,2)\) and the
+inclusion \(\La^{2,1}_{II}\hookrightarrow\La^{3,2}\) to a character on
+\(W^{(2)}(\La^{2,1}_{II})\) taking value \(-1\) on each of the three
+simple type-II reflections \(s_{\delta_i}\); see
+Theorem~\ref{thm:pentadic-pfaffian-dirac}.
+
+\item[\textcircled{4}]
+\textsl{Mirror discriminant.}
+\textsl{Conjectural.} On the one-parameter \(K3\)-mirror period family
+\(\mathcal P\to\mathbb D\) the discriminant divisor equals the polar
+divisor of \(\Delta_5^{-2}\), itself twice the zero divisor of
+\(\Delta_5\); the Igusa cusp form then encodes the period-family
+discriminant of mirror symmetry on \(K3\times E\) (Chapter~\ref{ch:view4-mirror}).
+
+\item[\textcircled{5}]
+\textsl{Singular theta lift.}
+The lift of the weight-zero index-one weak Jacobi form
+\(\phi_{0,1}\) under the Howe correspondence
+\(\mathrm{Mp}(4,\R)\leftrightarrow\Orth(3,2)\), equivalently under the
+exceptional isomorphism \(\Sp_4\simeq\mathrm{Spin}(3,2)\):
+\[
+  \Theta_{\mathrm{sing}}^{\mathrm{Howe}}(\phi_{0,1}) \;=\; \Delta_5
+\]
+\cite{Borcherds95, B}.
+\end{enumerate}
+
+\paragraph{The cross-level identities.}
+The four edges
+\(\textcircled{1}\!\leftrightarrow\!\textcircled{2}\),
+\(\textcircled{2}\!\leftrightarrow\!\textcircled{5}\),
+\(\textcircled{1}\!\leftrightarrow\!\textcircled{5}\) are theorems
+(Borcherds 1995; Gritsenko--Nikulin 1998); they relate the views in the
+\(\textsl{Given}\) part of the manuscript. The edge
+\(\textcircled{2}\!\leftrightarrow\!\textcircled{3}\) is the
+Pfaffian--Dirac theorem of this manuscript, conditional on
+\((D0)\), \((O1)\), \((O1)^+\), \((O2)\); it relates the
+\(\textsl{Given}\) part to the \(\textsl{Built}\) part. The edge
+\(\textcircled{1}\!\leftrightarrow\!\textcircled{3}\) is the
+two-step composite \(D_X = \Delta_5 = \mathrm{Pf}_{\mathrm{prot}}
+(\mathfrak D^{DI}_X)\), with the orientation match
+\(\epsilon_o = \nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\) supplying
+the multiplier; the protected primitive Lie superalgebra \(\mathcal P_X\)
+recovers the BKM target by \(\mathcal P_X\cong\mathfrak g_{\Delta_5}\).
+
+\paragraph{The level-\(n\) scalar shadow.}
+On the closed cobordism \(K3\times E\mapsto\mathrm{pt}\),
+\[
+  Z^{K3\times E}_{\mathrm{BPS}}
+  \;=\; \bigl(\Delta_{10}\bigr)^{-1}
+  \;=\; \Delta_5^{-2},
+  \qquad
+  \Delta_{10} \;=\; \Delta_5^2
+  \;\in\; M_{10}\bigl(\Sp_4(\Z)\bigr).
+\]
+Here \(\Delta_{10} = \Delta_5^2\) is the theta-normalized weight-ten
+cusp form on \(\Sp_4(\Z)\), equivalently \(\Phi_{10}^{\mathrm{un}} =
+\chi_{10} = \Delta_5^2\) in the unimodular Igusa convention
+(\cite{Igusa1962}; the multiplier \(\nu_{\Delta_5}\) squares to
+trivial \cite{MAASS:1}); the Oberdieck--Pixton-monic normalization
+\(\chi_{10}^{\mathrm{OP}} := D_5^2 = 4096^{-1}\Delta_5^2\) (with
+\(D_5 := 64^{-1}\Delta_5\) the Borcherds-monic form so that
+\([q^{1/2}r^{1/2}s^{1/2}]D_5 = 1\)) gives the equivalent form
+\(Z^X_{\mathrm{OP}} = -(\chi_{10}^{\mathrm{OP}})^{-1} =
+-4096\,\Delta_5^{-2}\), where \(4096 = 64^2\) is the squared
+theta-leading constant
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5 = 64\) of the Igusa
+form and the minus sign is the OP scalar branch convention
+\cite{OB, OPand}.
+\(Z^{K3\times E}_{\mathrm{BPS}}\) is the level-\(n\) protected trace of
+\(\mathfrak A_{K3\times E}\); promotion to a 3d gravitational path
+integral on \(K3\times E\) requires the Hall--Borcherds residual of
+Vol II, and is not claimed here.
+
+\paragraph{The \(\kappa\)-tuple of \(K3\times E\).}
+\(\Delta_5\) sits in a five-coordinate invariant of the chiral
+\(E_3\)-algebra \(\mathfrak A_{K3\times E}\),
+\[
+  \kappa(\mathfrak A_{K3\times E})
+  \;=\;
+  \bigl(\kappa_{\mathrm{cat}},\;\kappa^{\mathrm{Hodge}}_{\mathrm{ch}},
+  \;\kappa^{\mathrm{Heis}}_{\mathrm{ch}},\;\kappa_{\mathrm{BKM}},
+  \;\kappa_{\mathrm{fiber}}\bigr)
+  \;=\; (0,\,0,\,3,\,5,\,24).
+\]
+The categorical Euler is \(\kappa_{\mathrm{cat}} =
+\chi(\mathcal O_{K3\times E}) = \chi(\mathcal O_{K3})\,\chi(\mathcal O_E)
+= 2\cdot 0 = 0\). The Hodge supertrace
+\(\kappa^{\mathrm{Hodge}}_{\mathrm{ch}}(K3\times E) =
+\sum_q (-1)^q h^{0,q}(K3\times E) = 0\). The Heisenberg rank
+\(\kappa^{\mathrm{Heis}}_{\mathrm{ch}} = 3\) is the rank of the
+Heisenberg vertex algebra obtained from the polarised \(K3\) Mukai
+sublattice \(H^{0,0}(K3)\oplus\mathrm{NS}(S)\oplus H^{2,2}(K3)\) of
+the rank-\(24\) Mukai lattice \(\widetilde H(K3,\Z) = H^{2*}(K3,\Z)\)
+after restriction to the rank-three type-II quotient. The BKM coordinate
+\[
+  \kappa_{\mathrm{BKM}}(\Phi_N) \;=\; c_N(0)/2
+\]
+(Borcherds 1995; Gritsenko 1999) reads, at the paramodular input
+\(N=1\), \(c_1(0) = 10\), giving
+\(\kappa_{\mathrm{BKM}}(\Delta_5) = 5\). The fibre coordinate
+\(\kappa_{\mathrm{fiber}} = \chi_{\mathrm{top}}(K3) = 24\). The additive
+identity
+\(\kappa_{\mathrm{BKM}} = \kappa^{\mathrm{Hodge}}_{\mathrm{ch}}
++ \chi(\mathcal O_{\mathrm{fiber}})\) fails at every
+\(N\in\{1,2,3,4,6\}\): the Lefschetz Euler \(\chi_{\mathrm{top}}(K3) =
+24\) and the holomorphic Euler \(\chi(\mathcal O_{K3}) = 2\) are
+distinct invariants of the K3 fibre, and \(\kappa_{\mathrm{BKM}}\) sees
+the \(c_N(0)/2\) data of the Borcherds input rather than either of
+them. Each subscript on \(\kappa\) records a distinct invariant;
+the unsubscripted handle leaves the categorical dimension
+unspecified, and is replaced on first use by the named coordinate.
+
+\chapter{Pentadic \texorpdfstring{\(\Delta_5\)}{Delta\_5}}
+\label{ch:pentadic}
+
+\section{The one chiral \texorpdfstring{\(E_3\)}{E\_3}-algebra and its
+five values}
+\label{sec:one-chiral-e3-five-values}
+
+The frontispiece names \(\Delta_5\) at five categorical-dimensional
+levels.  A single underlying object is required, on which the five
+readings are different evaluations.  The Calabi--Yau threefold
+\(K3\times E\) supplies it: the Stage-1 holomorphic factorization
+algebra of Kontsevich--Tamarkin and Costello--Gwilliam--Li at the
+CY-\(3\) category of coherent sheaves (status: established
+cross-volume, ambient: chiral \(E_3\)-prefactorisation algebra
+associated to a CY-\(3\) dg-category, \cite{KontsevichOperadsMotives,
+CostelloGwilliam1, CostelloGwilliam2}),
+\[
+  \mathfrak A_{K3\times E}
+  \;=\; \Phi^{\mathrm{FA}}_3\bigl(D^b\mathrm{Coh}(K3\times E)\bigr)
+  \;\in\; E_3\text{-}\mathrm{HolFA}(K3\times E)
+\]
+\cite{KontsevichOperadsMotives, TamarkinLittleDisks,
+LambrechtsVolicLittleDisks, CostelloGwilliam1, CostelloGwilliam2}.
+The protected sector cuts down
+\(\mathfrak A_{K3\times E}\) to the index-graded piece on which the
+Borcherds determinant is a single line; that single line is
+\(\Delta_5\), and the five views of the frontispiece are five distinct
+evaluations of \(\mathfrak A_{K3\times E}\) at five categorical-
+dimensional levels.
+
+\begin{definition}[Pentadic \(\Delta_5\)]
+\label{def:pentadic-delta5}
+The five-tuple
+\[
+  \bigl(D_X,\;
+  \operatorname{den}(\mathfrak g_{\Delta_5}),\;
+  \mathrm{Pf}_{\mathrm{prot}}(\mathfrak D^{DI}_X),\;
+  \mathrm{Disc}(\mathcal P\to\Delta),\;
+  \Theta_{\mathrm{sing}}^{\mathrm{Howe}}(\phi_{0,1})\bigr)
+\]
+of values of \(\mathfrak A_{K3\times E}\) at the five categorical-
+dimensional levels enumerated in the frontispiece is the
+\emph{pentadic \(\Delta_5\)}. The reading of \(\Delta_5\) is
+fixed by the level: at level \textcircled{1}, \(\Delta_5\) is
+\(D_X\); at level \textcircled{2}, \(\Delta_5\) is the function whose
+value at \(2Z\) is \(64\,\operatorname{den}(\mathfrak g_{\Delta_5})\);
+at level \textcircled{3}, \(\Delta_5\) is the protected Pfaffian
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D^{DI}_X)\) under
+\((D0)\), \((O1)\), \((O1)^+\), \((O2)\); at level
+\textcircled{4}, \(\Delta_5^{-2}\) is the mirror discriminant
+section, conjecturally; at level \textcircled{5}, \(\Delta_5\) is the
+Howe lift of \(\phi_{0,1}\).
+\end{definition}
+
+\section{The \texorpdfstring{$\textcircled{1}\!\leftrightarrow\!
+\textcircled{2}$}{1-2} edge: Borcherds--Gritsenko--Nikulin}
+\label{sec:edge-1-2}
+
+The Borcherds product expansion of the weight-zero index-one weak
+Jacobi form \(\phi_{0,1}\) is the genus-two cusp form
+\[
+  \Delta_5(Z)
+  \;=\; 64\,q^{1/2}r^{1/2}s^{1/2}
+  \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+  \bigl(1 - q^n r^l s^m\bigr)^{f(nm,l)},
+\]
+where \(Z = \bigl(\begin{smallmatrix} z_1 & z_2 \\ z_2 & z_3 \end{smallmatrix}\bigr)\),
+\(q = e^{2\pi i z_1}\), \(r = e^{2\pi i z_2}\), \(s = e^{2\pi i z_3}\),
+and \(f(n,l)\) are the Fourier coefficients of \(\phi_{0,1}\) (the
+weak Jacobi form whose discriminant decomposition records
+\(f(0,0) = 10\), \(f(0,\pm 1) = 1\), \(f(1,0) = 108\),
+\(f(1,\pm 1) = -64\), \(f(1,\pm 2) = 10\), \dots\,;
+verified arithmetically by \texttt{compute/verify\_square\_root.py})
+\cite{Borcherds95, GN, EZ:1}. The leading constant
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5 = 64 = 2^6\) is the theta-leading
+coefficient (Igusa); the chamber
+\(0 < |s| \ll |q| \ll |r|^{-1} \ll 1\) fixes the active semigroup
+\(\Gamma_{\mathrm{eff}}\) of cusp-completed exponents.
+
+The Gritsenko--Nikulin denominator identity converts the same product
+into the Weyl--Kac form on the type-II sublattice
+\(\La^{2,1}_{II} \subset \La^{2,1} = \HypPlan\oplus\langle 2\rangle\):
+\[
+  \operatorname{den}(\mathfrak g_{\Delta_5})
+  \;=\; \sum_{w\in W^{(2)}(\La^{2,1}_{II})}
+  \mathrm{sgn}(w)\;w\bigl(e^{\rho}\bigr)
+  \;=\; 64^{-1}\,\Delta_5(2Z),
+\]
+with Weyl vector
+\[
+  \rho \;=\; \tfrac{1}{2}\bigl(\delta_1 + \delta_2 + \delta_3\bigr)
+       \;=\; f_2 - \tfrac{1}{2}\,f_3 + f_{-2}
+\]
+on the three simple type-II reflections
+\(\delta_1 = 2f_2 - f_3\), \(\delta_2 = 2f_{-2} - f_3\),
+\(\delta_3 = f_3\) (Cartan matrix
+\((\delta_i,\delta_j) = 4\Id_3 - 2\mathbf{J}_3 = \bigl(\begin{smallmatrix}
+2 & -2 & -2\\ -2 & 2 & -2\\ -2 & -2 & 2 \end{smallmatrix}\bigr)\),
+\(\mathbf{J}_3\) the all-ones matrix, verified by
+\texttt{compute/verify\_lattice.py}); index-two subgroup
+\(W^{(2)}(\La^{2,1}_{II})\) generated by these three reflections
+\cite{GN, GNPartI, GNII}. The signed root supermultiplicities recover
+the Fourier coefficients of \(\phi_{0,1}\) under the doubling
+\(\alpha(n,l,m) = 2nf_2 - lf_3 + 2mf_{-2}\):
+\[
+  \smult\,\mathfrak g_{\Delta_5,\alpha(n,l,m)}
+  \;=\; f(nm,l) \qquad \text{on } (n,l,m)\in\Gamma_{\mathrm{act}}
+  =\{(n,l,m)\in\Gamma_{\mathrm{eff}}\mid f(nm,l)\ne 0\}.
+\]
+
+The edge \(\textcircled{1}\!\leftrightarrow\!\textcircled{2}\) is the
+joint statement: the automorphic section \(D_X = \Delta_5\) of
+\(\mathcal L^{\otimes 5}\otimes\nu_{\Delta_5}\) on Siegel space
+\textsl{equals} the BKM denominator (after the constant \(64^{-1}\) and
+the variable doubling \(Z\mapsto 2Z\)). The proof is Borcherds 1995
+plus the Gritsenko--Nikulin identification of the underlying lattice
+with \(\La^{2,1}_{II}\) and the Weyl-group action with
+\(W^{(2)}(\La^{2,1}_{II})\) \cite{Borcherds95, GN}.
+
+\section{The \texorpdfstring{$\textcircled{1}\!\leftrightarrow\!
+\textcircled{5}$}{1-5} and \texorpdfstring{$\textcircled{2}\!
+\leftrightarrow\!\textcircled{5}$}{2-5} edges: the singular theta lift}
+\label{sec:edge-1-5}
+
+The Borcherds product expansion of the previous section converts
+\(\phi_{0,1}\) into \(\Delta_5\) by an arithmetic identity in
+\(\Gamma_{\mathrm{eff}}\); the question of \emph{where} this identity
+comes from has a single answer.  The exceptional isomorphism
+\(\Sp_4\simeq\mathrm{Spin}(3,2)\) identifies the genus-two Siegel
+space \(\Sp(2,\Z)\backslash\mathcal H_2\) with the type-IV symmetric
+domain
+\(\Orth(3,2)_+\backslash\mathcal D_{\Orth(3,2)}\) attached to the
+signature-\((3,2)\) lattice
+\(\La^{3,2} = \HypPlan\oplus\HypPlan\oplus\langle 2\rangle\); the
+Howe correspondence
+\(\mathrm{Mp}_4(\R)\leftrightarrow\Orth(3,2)\) of the dual reductive
+pair lifts modular forms in genus one onto this domain
+\cite{Weil1964, Shimura1973}.  Borcherds's regularisation of the
+Howe correspondence on the principal part of a weak Jacobi-form input
+produces a meromorphic Siegel modular form whose divisor is
+prescribed by the principal part:
+\[
+  \Theta_{\mathrm{sing}}^{\mathrm{Howe}}(\phi)
+  \;=\;
+  \int^{\mathrm{reg}}_{\mathrm{SL}_2(\Z)\backslash\Hpl}
+  \bigl\langle \phi(\tau),\,
+  \Theta_{\La^{3,2}}(\tau, Z)\bigr\rangle\,
+  \frac{du\,dv}{v^2},
+  \qquad \tau = u + iv,
+\]
+on the Weil-representation pairing of the vector-valued
+weakly-holomorphic input \(\phi\) (the theta decomposition of
+\(\phi_{0,1}\) into the discriminant form of \(\La^{3,2}\)) against
+the Siegel theta series of the signature-\((3,2)\) lattice
+\(\La^{3,2}\) — not the rank-three target lattice \(\La^{2,1}_{II}\),
+which receives the BKM root structure under doubling — together with
+the antiholomorphic dependence required for absolute convergence after
+regularisation; the explicit construction is Chapter~\ref{ch:singular-theta-lift},
+Definition~\ref{def:siegel-theta} and
+Theorem~\ref{thm:singular-theta-lift} \cite{Borcherds95, B}.  At the input \(\phi = \phi_{0,1}\) the
+regularised integral computes
+\[
+  \Theta_{\mathrm{sing}}^{\mathrm{Howe}}\colon
+  J^{\mathrm{wk}}_{0,1}
+  \;\longrightarrow\;
+  M_5\bigl(\Sp_4(\Z),\,\nu_{\Delta_5}\bigr),
+  \qquad
+  \phi_{0,1} \;\longmapsto\; \Delta_5,
+\]
+giving the edge \(\textcircled{1}\!\leftrightarrow\!\textcircled{5}\).
+Reading the same lift through the Gritsenko--Nikulin denominator
+identity, \(\phi_{0,1}\) is the character of the index-one Heisenberg
+sector and the multiplicative lift over \(\La^{2,1}_{II}\) is exactly
+\(\operatorname{den}(\mathfrak g_{\Delta_5}) = 64^{-1}\Delta_5(2Z)\),
+giving the edge \(\textcircled{2}\!\leftrightarrow\!\textcircled{5}\)
+\cite{Borcherds95, GN, GNPartI, GNII}.
+
+\section{The \texorpdfstring{$\textcircled{2}\!\leftrightarrow\!
+\textcircled{3}$}{2-3} edge: the Pfaffian--Dirac theorem}
+\label{sec:edge-2-3}
+
+The four edges proved by Borcherds and Gritsenko--Nikulin assemble
+\(\Delta_5\) on the automorphic and BKM-denominator sides; the chiral
+\(E_3\)-algebra \(\mathfrak A_{K3\times E}\) of \S\ref{sec:one-chiral-e3-five-values}
+is the candidate operator-level origin from which both sides
+descend.  The structural question of the manuscript is whether the
+protected primitive sector of \(\mathfrak A_{K3\times E}\), after
+finite-stage Hall reconstruction with cosection-reduced d-critical
+orientation, hybrid \(\mathrm{Ran}^{\mathrm{hyb}}(E)\) carrier,
+Pfaffian line, source coalgebra, Koszul cobar, and the recognition
+map, recovers the BKM denominator algebra \(\mathfrak g_{\Delta_5}\)
+on the nose.  The answer is the Pfaffian--Dirac theorem, conditional
+on four named obstructions \((D0)\), \((O1)\), \((O1)^+\), \((O2)\)
+named at \S5.8 of the manuscript and tracked across the
+\texttt{notes/swarm\_*} ledgers.
+
+\begin{theorem}[Pfaffian--Dirac]
+\label{thm:pentadic-pfaffian-dirac}
+\textsl{Conditional on \((D0)\), \((O1)\), \((O1)^+\), \((O2)\);
+ambient: cosection-twisted reduced d-critical chart on \(K3\times E\)
+at finite cusp-truncation height \(R\), with chain-level pro-object,
+Mittag--Leffler vanishing of the inverse system in \(R\), and Pfaffian
+orientation \(o\) with Weyl character \(\epsilon_o\).} The
+protected Pfaffian of the chiral \(E_3\)-algebra
+\(\mathfrak A_{K3\times E}\), presented as the limit
+\(\mathfrak D^{DI}_X = \varprojlim_R\,\mathfrak D^{DI}_{X,R}\), satisfies
+\[
+  \mathrm{Pf}_{\mathrm{prot}}(\mathfrak D^{DI}_X)
+  \;=\; \Delta_5,
+  \qquad
+  \epsilon_o
+  \;=\; \nu_{\Delta_5}\quad\text{on}\quad
+  W^{(2)}(\La^{2,1}_{II}),
+\]
+and the protected primitive Lie superalgebra is
+\[
+  \mathcal P_X
+  \;:=\;
+  H^0\,\Prim_{\mathrm{prot}}\bigl(\overline\Pi^{\Theta}_{X,*}
+  \mathcal F_X\bigr) /
+  \overline{\operatorname{Rad}\langle\,,\rangle_X}
+  \;\cong\; \mathfrak g_{\Delta_5}.
+\]
+\end{theorem}
+
+The four obstructions name the exact conditioning. \((D0)\) is the
+\(D0\)-degeneration limit of the cosection-reduced d-critical
+orientation theory: the limiting orientation in the \(D0\)-degenerate
+fibre is constructed and matches the orientation of the generic fibre
+under the cosection-twist
+\cite{BBDJS2015, JoyceUpmeier, JoyceTanakaUpmeier}. \((O1)\) is the
+strong reduced orientation on the \(K3\times E\)-quotient self-Ext
+frame bundle: the square root of the determinant line of the cotangent
+complex extends across the cusp boundary
+\cite{CaoGrossJoyce, Bojko}. \((O1)^+\) is the Weyl-equivariant
+transport of the orientation along reflections in the index-two
+reflection subgroup \(W^{(2)}(\La^{2,1}_{II})\): the orientation cocycle
+\(c_o\in Z^2(W^{(2)}(\La^{2,1}_{II});\mathbb F_2)\) trivializes in
+\(H^2\), and the resulting character
+\(\epsilon_o:W^{(2)}(\La^{2,1}_{II})\to\{\pm1\}\) is well-defined on
+generators. \((O2)\) is the local Pfaffian wall normal form on type-II
+walls: at each simple type-II wall \(s_{\delta_i}\) the rank-one normal
+Pfaffian crossing of Definition~\ref{def:rank-one-type-ii-crossing}
+gives the local sign
+\((-1)^{N^{\mathrm{Pf}}_{\delta_i}} = -1\), and the Hall-side sign
+sum on the half-Hilbert orbit of the self-Ext stack — of size
+\(2^{12} = 4096\), arithmetically the squared theta-leading
+\(([q^{1/2}r^{1/2}s^{1/2}]\Delta_5)^2 = 64^2\) of the Oberdieck--Pixton
+scalar normalization — collects into the single character value
+\(\epsilon_o(s_{\delta_i}) = \nu_{\Delta_5}(s_{\delta_i})\) on each
+generator (Appendix~E).
+
+\begin{remark}[The conditioning is named precisely]
+\label{rem:conditioning-named}
+The four obstruction classes \((D0)\), \((O1)\), \((O1)^+\), \((O2)\)
+are the exact proof obligations the Built part of the manuscript
+reduces to; discharging any of them tightens the conditioning of
+Theorem \ref{thm:pentadic-pfaffian-dirac}. Two readings of \(\Delta_5\)
+attach to two distinct categorical dimensions: at the scalar-shadow level (the level-\(n\) trace of \(\mathfrak A_{K3\times E}\)) \(\Delta_5\) is a charge-graded
+virtual section of the modular line, the protected scalar shadow of
+the chiral \(E_3\)-algebra \(\mathfrak A_{K3\times E}\); at the
+operator level \textcircled{3} it is the protected Pfaffian
+\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D^{DI}_X)\) of the
+operator-level pro-object, conditional on the four obstructions. The
+distinction is structural, not nominal: the operator-level package
+carries the orientation character \(\epsilon_o\) that the scalar
+shadow has squared away, by view \textcircled{3}, and recovers it as
+\(\nu_{\Delta_5}\) on \(W^{(2)}(\La^{2,1}_{II})\) by \((O1)^+\) and
+\((O2)\).
+\end{remark}
+
+% ---------------------------------------------------------------
+% Section "edge 1-3 composite" deleted in chriss-ginzburg-rectify
+% v2 Phase 2.  The composite identification
+%   D_X = Delta_5 = Pf_prot(D_X^DI)
+% is the corollary of edge 1-2 (proved) plus edge 2-3 (Pfaffian-Dirac
+% theorem, conditional).  Stating it as its own section is duplication;
+% the corollary is folded into the closing of section "edge 2-3"
+% above as a single clause.
+% ---------------------------------------------------------------
+\section{View \texorpdfstring{$\textcircled{4}$}{4}: mirror
+discriminant}
+\label{sec:view-4-mirror}
+
+\textsl{Conjectural} (ambient: variation of Hodge structure on a
+one-parameter \(K3\)-mirror period family).
+On the one-parameter \(K3\)-mirror period family
+\(\mathcal P\to\Delta\) — the mirror of \(K3\times E\) restricted to
+its rank-one polarised subvariation — the discriminant locus is cut by
+\[
+  \mathrm{Disc}(\mathcal P\to\Delta) \;=\; \Delta_5^{-2}\;\big|_{\Delta},
+\]
+in the conjectural identification of the mirror period family with the
+\(\Sp(4,\Z)\)-quotient of Siegel space restricted along the Mukai
+self-mirror branch. The reading is heuristic in the body of this
+manuscript and does not enter as a hypothesis of any theorem; it is
+recorded because the identification, when proved, would equate the
+discriminant divisor of the K3-mirror period family with the polar
+divisor of \(\Delta_5^{-2}\), itself twice the zero divisor of
+\(\Delta_5\); see Conjecture~\ref{conj:mirror-discriminant}.
+
+\section{The level-\texorpdfstring{$n$}{n} scalar shadow}
+\label{sec:level-n-scalar-shadow}
+
+The scalar partition function on the closed cobordism
+\(K3\times E\mapsto\mathrm{pt}\) is the Borcherds determinant of the
+protected K3 index, computed by Oberdieck--Pixton 2018 and
+Oberdieck--Pandharipande 2018 \cite{OB, OPand}: the OP partition
+function \(Z^X_{\mathrm{OP}} = -4096\,\Delta_5^{-2}\) is the virtual
+count of Hilbert schemes of \(K3\times E\) in the
+\((-p_{\mathrm{DT}})^n\) DT-chamber, and the BPS normalization
+\(Z^{K3\times E}_{\mathrm{BPS}} = \Delta_5^{-2}\) rescales by
+\(-4096^{-1}\).
+Two normalizations of the same weight-ten cusp form on \(\Sp_4(\Z)\)
+are in use, and naming them is necessary because both appear in the
+manuscript:
+\begin{itemize}
+\item \emph{Theta-normalized.}
+\(\Delta_{10}(Z) := \Delta_5(Z)^2 \in M_{10}(\Sp_4(\Z))\) (the
+multiplier \(\nu_{\Delta_5}\) squares to trivial; the leading
+coefficient \([q\,r\,s]\Delta_{10} = 64^2 = 4096\)).
+\item \emph{Oberdieck--Pixton-monic.}
+\(\chi_{10}^{\mathrm{OP}}(Z) := D_5(Z)^2 = 64^{-2}\Delta_5(Z)^2 =
+4096^{-1}\Delta_{10}(Z)\) (so \([q\,r\,s]\chi_{10}^{\mathrm{OP}} = 1\)).
+\end{itemize}
+Oberdieck--Pixton and Oberdieck--Pandharipande prove
+\cite{OB, OPand}
+\[
+  Z^X_{\mathrm{OP}}
+  \;=\; -\bigl(\chi_{10}^{\mathrm{OP}}\bigr)^{-1}
+  \;=\; -4096\,\Delta_5^{-2},
+\]
+and the level-\(n\) protected scalar shadow is
+\[
+  Z^{K3\times E}_{\mathrm{BPS}}
+  \;=\; \bigl(\Delta_{10}\bigr)^{-1}
+  \;=\; \Delta_5^{-2}
+  \;=\; -\tfrac{1}{4096}\,Z^X_{\mathrm{OP}}.
+\]
+The factor \(4096 = 64^2\) is the squared theta-leading constant of
+\(\Delta_5\); the OP minus sign is a scalar branch convention absorbed
+into the OP \((-p_{\mathrm{DT}})^n\) chamber and is independent of the
+orientation character \(\epsilon_o\) of view~\textcircled{3}.
+
+\(Z^{K3\times E}_{\mathrm{BPS}}\) is the level-\(n\) protected trace of
+\(\mathfrak A_{K3\times E}\): a charge-graded virtual partition
+function, not the graded dimension of any Hilbert space. Promotion of the
+scalar shadow to a 3d gravitational path integral on \(K3\times E\)
+requires the Hall--Borcherds residual of Vol II, supplied by the
+universal-stage chain of Vol II (primitive factorization dg-category
+\(\mathcal C\) → boundary chart \(A_b = \End_{\mathcal C}(b)\) → bar
+twisting \(\mathrm{Bar}(A_b)\) → derived chiral centre
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(A_b)\) → ambient operator algebra
+\(\mathcal A\)) at the boundary vacuum \(b\) of the open
+factorization dg-category on
+\((K3\times E,\,D,\,\tau)\); promotion lies beyond this manuscript.
+The local witness is the formal-Darboux stalk plus the holomorphic
+de Rham obstruction class of the mixed-holomorphic-topological strings
+programme \cite{KontsevichOperadsMotives, CostelloLiBCOV,
+CostelloLiOpenClosedBCOV}, with global compactness of the path
+integral conditional on the obstruction class vanishing on
+\(K3\times E\).
+
+% ---------------------------------------------------------------
+% Section "The chapter spine" deleted in chriss-ginzburg-rectify
+% v2 Phase 2 as meta-narrative.  The chapter spine is in main.tex's
+% \tableofcontents; the reader does not need it inscribed twice.
+% Part I/II/III/IV organization lives in the \part directives of
+% main_integrated.tex and is materially identical to CLAUDE.md §II.
+% ---------------------------------------------------------------
+\begin{remark}[Reconstitution order]
+\label{rem:beilinson-cut-delta5}
+The five views are ordered: primitive objects (the chiral
+\(E_3\)-algebra \(\mathfrak A_{K3\times E}\) and its four obstructions
+\((D0),(O1),(O1)^+,(O2)\); the Cartan datum of \(\mathfrak g_{\Delta_5}\))
+first; cross-level identities ((②↔③) Pfaffian--Dirac, (\(\epsilon_o
+=\nu_{\Delta_5}\)) orientation match, \((\mathcal P_X\cong\mathfrak
+g_{\Delta_5})\) primitive recognition) second; scalar modular forms
+last (the section \(D_X\), the BKM denominator
+\(64^{-1}\Delta_5(2Z)\), the partition function \(\Delta_5^{-2}\)).
+A statement is not primitive if it is true only after passing to a
+trace, choosing a chamber, completing a category, or installing
+descent data.  On each first appearance the scalar reading is named:
+the theta-normalized form \(\Delta_5\) with leading
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5 = 64\); the BKM denominator
+\(64^{-1}\Delta_5(2Z)\) with the doubling \(2Z\) on the type-II
+sublattice; the OP-monic form \(D_5 = 64^{-1}\Delta_5\) with
+\(\chi_{10}^{\mathrm{OP}} = D_5^2 = 4096^{-1}\Delta_5^2\) the
+Oberdieck--Pixton normalization of the squared scalar shadow.
+\end{remark}
+
+% ---------------------------------------------------------------
+% Section "Where the seven lines of force enter" deleted in
+% chriss-ginzburg-rectify v2 Phase 2 as catalogue / structural
+% bookkeeping.  Each "line of force" is individually motivated and
+% inscribed in the chapter where it is exact:
+%   lattice polarisation      -> chapters/02_k3xe_setup.tex
+%   normal-ordered Gram        -> chapters/02_k3xe_setup.tex
+%   hybrid carrier             -> chapters/05_subsections/05_1_hybrid.tex
+%   cosection-twisted d-crit   -> chapters/05_subsections/05_2_orientation.tex
+%   Hall correspondences       -> chapters/05_subsections/05_3_hall.tex
+%   Koszul source coalgebra    -> chapters/05_subsections/05_5_koszul.tex
+%   primitive recognition      -> chapters/05_subsections/05_6_primitive_recognition.tex
+% A catalogue of these lines belongs in a methods note, not in
+% Chapter 1.
+% ---------------------------------------------------------------
+\section{Cross-volume placement}
+\label{sec:cross-volume-coherence}
+
+The pentadic \(\Delta_5\) is one identification at one specific level
+of the Beilinson tower of the wider research constellation: the
+level-\(5\) chiral shadow of Vol I's bar \(B(A_b)\) on the tangential
+log curve \((K3\times E, D, \tau)\); the closed-colour shadow of the
+bicoloured primitive package of Vol II's Universal Holography
+master theorem with terminal value
+\(c_1(0)/2 = 5 = \kappa_{\mathrm{BKM}}(\Delta_5)\); the
+\((d=3,\,\text{rank }3)\) chamber of Vol III's cross-stratum sibling
+census, populated by the BKM target \(\mathfrak g_{\Delta_5}\) under
+the universal identity \(\kappa_{\mathrm{BKM}}(\Phi_N) = c_N(0)/2\)
+applied at the paramodular row \((t,N;k) = (1,1;5)\) of the
+Gritsenko--Cl\'ery catalogue \cite{GC, GN}; the formal-Darboux stalk
+\(A^{\mathrm{cl}}_{\partial,N} = C^\bullet_{\mathrm{CE}}(\mathfrak{gl}_N,
+\,\mathrm{Kosz}([\phi_1,\phi_2]))\) of the chiral Hochschild cochain
+of mixed-holomorphic-topological strings at the Dirac brane vacuum.
+Promotion of the level-\(n\) scalar shadow \(Z^{K3\times E}_{
+\mathrm{BPS}} = \Delta_5^{-2}\) to a global compact 3d gravitational
+path integral on \(K3\times E\) requires both the holomorphic
+de Rham obstruction class
+\(\mathrm{ob}^{\mathrm{hol}}_{\mathrm{dR}}(K3\times E)\) to vanish and
+Vol II's Hall--Borcherds residual to discharge the dynamical-metric
+content; both conditions are open.

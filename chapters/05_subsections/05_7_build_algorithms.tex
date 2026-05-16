@@ -1,0 +1,453 @@
+\subsection{Eight build algorithms}
+\label{subsec:eight-build-algorithms}
+
+The seventh entry of the Dirac--Igusa pro-object is the explicit
+construction calculus: eight finite-stage algorithms which, run in
+sequence, take the chosen Bridgeland heart on
+$D^b(\operatorname{Coh}(K3\times E))$ and the imported BKM target
+$\mathfrak g_{\Delta_5}$ as inputs and produce the pro-object
+$\mathfrak D_X^{\mathrm{DI}}$.  Each algorithm has a typed input,
+a typed output, and a finite obstruction tuple; the pro-object is the
+inverse limit when every obstruction tuple vanishes compatibly with
+HN transitions.  The full pseudocode and per-algorithm
+input/output/obstruction tables are
+Appendix~\ref{app:eight-build-algorithms}.
+
+The discipline is finite-first.  Every operation acts on
+finite-type stacks and finite-dimensional Borel--Moore chains at
+fixed HN height; the inverse limit is taken only after every finite
+stage is supplied with compatible transition maps.  The eight
+algorithms are mutually dependent only in the order listed.  For
+$R\in\mathcal R_{\mathrm{HN}}$, the algorithms assume:
+$[\textup{K3$\times$E-fin}]$ (finite-type semistable substacks
+at bounded HN height),
+$[\textup{K3$\times$E-atlas}]$ (finite d-critical/cosection
+Hall atlas with Joyce--Upmeier orientation lines), and
+$[\textup{ML}]$ (Mittag--Leffler descent).
+
+\subsubsection*{Algorithm A1: charge window}
+
+\textit{Input.} Stability sector $(\sigma,S)$, finite charge window
+$\Gamma_R^{\mathrm{test}}\subset\Gamma_X^{\mathrm{form}}$.
+
+\textit{Output.} Finite saturated downward window
+$F_{\sigma,S}(R)\subset\Gamma_X^{\mathrm{HN}}(R)$, the dyonic
+formal Mukai/effective-charge support, the Gram map
+$\Pi_X:\Gamma_X^{\mathrm{form}}\to\Gamma_{\mathrm{gram}}$, the cocycle
+$B$, and the normal-ordered extension
+$\widehat\Gamma_R=\Gamma_X^{\mathrm{form}}\oplus_B\Gamma_{\mathrm{gram}}$.
+
+\textit{Procedure.}
+\begin{enumerate}
+\item Form the Liu charge $L_F(n)=Z_S(Rp_{S,*}(F\otimes p_E^*H^n))$
+\cite{LiuProductStability} for $\sigma_S$ a rational K3 stability
+condition and a degree-one line bundle $H$ on $E$.  Restrict to
+charges with bounded $h_S$-height $\le R$; the resulting set is
+$F_{\sigma,S}(R)$.
+\item Compute the Gram map and cocycle $B(c,c')$ on
+$F_{\sigma,S}(R)\times F_{\sigma,S}(R)$ via the Mukai dictionary of
+\S\ref{subsec:d6-d2-d0-dictionary-appendixC}; check the symmetric
+bilinear $2$-cocycle condition.
+\item Form $\widehat\Gamma_R$ as the central extension by
+$B$-cocycle.
+\end{enumerate}
+
+\textit{Finite obstructions.}
+$[\textup{K3$\times$E-fin}]$ on the Liu charge bound; $B$
+cocycle property.
+
+\subsubsection*{Algorithm A2: finite Hall stage and atlas}
+
+\textit{Input.} Output of A1, plus the cosection-twisted reduced
+d-critical heart of \S\ref{subsec:cosection-twisted-orientation}.
+
+\textit{Output.} The finite Hall stage
+$\mathcal C_{\sigma,S,\le R}$, finite-type derived Artin enhancements
+$\mathfrak M_{\widehat c,R},
+\mathfrak E_{\widehat c,\widehat c',R},
+\mathfrak F^{(2)}_{\widehat c,\widehat c',\widehat c'',R}$ of object,
+extension, and two-step flag stacks; reduced cosections; reduced
+vanishing cycles $\Phi^{\mathrm{red}}$; orientation lines
+$o^{\mathrm{red}}$.
+
+\textit{Procedure.}
+\begin{enumerate}
+\item Restrict the Bridgeland heart to charges in $F_{\sigma,S}(R)$;
+form the finite-type derived enhancements with PTVV $(-1)$-shifted
+symplectic structures \cite{PTVV2013} on the truncations; descend to
+Joyce d-critical structures \cite{BBDJS2015}.
+\item Compute the K3 semiregularity cosection
+$\operatorname{CS}_{\mathcal C}$ on each retained charge stratum;
+verify surjectivity on reduced strata and filtered Hall additivity
+on extension stacks.
+\item Build Joyce--Upmeier orientation lines \cite{JoyceUpmeier} with
+chosen square roots, multiplicative under reduced extension
+correspondences.
+\end{enumerate}
+
+\textit{Finite obstructions.}
+$[\textup{K3$\times$E-atlas}]$; finite residual inertia after
+scalar, $E$-translation, and wrapped rigidifications.
+
+\subsubsection*{Algorithm A3: hybrid wrapped factorization datum}
+
+\textit{Input.} Output of A2.
+
+\textit{Output.} The hybrid factorization carrier
+$\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}$ of
+\S\ref{subsec:hybrid-ran-carrier}: rigidified wrapped prequotients
+$\mathcal M_{\eta,R}^{\mathrm{wr,rig}}$ with anchors
+$\lambda_{\eta,R}$; closed-configuration local sectors
+$\mathcal F_R^{\mathrm{loc}}$; wrapped sectors
+$\mathcal G_R^{\mathrm{wr}}$; the eight-word two-step binary flag
+atlas; the higher coloured residual
+$\mathfrak o^{\mathrm{col}}_R$; quotient functor $Q_{E,R}$ and
+comparison isomorphisms $\theta^Q_{\mu,R}$; protected integration
+$I_R^{\mathrm{prot}}$.
+
+\textit{Procedure.}
+\begin{enumerate}
+\item Split $\Gamma_R$ into $\Gamma_R^{\mathrm{loc}}$
+($b_R^{\mathrm{geom}}=0$) and $\Gamma_R^{\mathrm{wr}}$
+($b_R^{\mathrm{geom}}>0$).
+\item For $\alpha\in\Gamma_R^{\mathrm{loc}}$: form the
+closed-configuration incidence stacks
+$\mathfrak M_{\alpha,R,I}^{\mathrm{loc,cl}}$ and the configuration
+maps $\pi_{\alpha,R,I}:\mathfrak M_{\alpha,R,I}^{\mathrm{loc,cl}}
+\to E^I$, with vanishing-cycle/orientation pushforwards
+$\mathscr H_{\alpha,R,I}^{\mathrm{loc}}$.  Define
+$\mathcal F_{\alpha,R}^{\mathrm{loc}}(U)$ by symmetric-group descent
+on $E^I$.
+\item For $\eta\in\Gamma_R^{\mathrm{wr}}$: form the rigidified
+prequotient $\mathcal M_{\eta,R}^{\mathrm{wr,rig}}\to
+\mathcal M_{\eta,R}^{\mathrm{wr}}$; choose anchor
+$\lambda_{\eta,R}$ with translation weight one; verify the typed
+finite anchor residual $\mathfrak o^\lambda_R=0$ on each component.
+\item Build the local-local, ordered local-wrapped, and
+wrapped-wrapped extension correspondences with closed-support
+finite-type witnesses, exceptional-pushforward admissibility, and
+Thom--Sebastiani identifications.
+\item Build the eight-word two-step binary flag stacks
+$\mathfrak{Flag}^w_{\xi_1,\xi_2,\xi_3,R}$ for
+$w\in\{\mathrm L,\mathrm W\}^3$ and verify
+$\mathfrak o^{\mathrm{assoc}}_{w,R}=0$ on the four-input pentagon.
+\item Build the quotient pseudofunctor
+$\mathsf{Corr}^{E,\mathrm{hyb}}_R\to
+\mathsf{Corr}^{\mathrm{red},\mathrm{hyb}}_R$ and the comparison
+isomorphisms $\theta^Q_{\mu,R}$; verify the four quotient residuals.
+\item Build $I_R^{\mathrm{prot}}$ on the reduced functor; verify the
+five integration defects vanish and the Gram-trace exponent law
+$I_R^{\mathrm{prot}}(Q_{E,R}x)\in s^{m_R(\gamma)}\C[q^{\pm1},r^{\pm1}]$
+with $m_R(\gamma)=\operatorname{pr}_3\overline\Pi_X(\gamma)$.
+\end{enumerate}
+
+\textit{Finite obstructions.}  $\mathfrak O_{\mathrm{hyb},R}$
+(\S\ref{subsec:hybrid-ran-carrier}).
+
+\subsubsection*{Algorithm A4: orientation descent and Weyl transport}
+
+\textit{Input.} Output of A3.
+
+\textit{Output.} The (O1) and (O1)$^+$ data: null-trivializations of
+the reduced and equivariant orientation gerbes,
+$E[N]$-linearizations with vanishing degree-one characters, and
+Weyl-equivariant lifts $\tau_i$ ($i=1,2,3$) compatible with the
+quotient-orientation package $\mathfrak q_{\mathcal C}$.
+
+\textit{Procedure.}
+\begin{enumerate}
+\item For each charge stratum $\mathcal C$: compute the reduced
+gerbe $\alpha^{\mathrm{red}}_{\mathcal C}$, free $E$-class
+$\alpha^{E,\mathrm{free}}_{\mathcal C}$, and equivariant
+finite-stabilizer classes $\widetilde\beta^{H}_{\mathcal C,S}$ for
+the actual stabilizers $H\subset E_{\mathrm{tors}}$ on
+finite-stabilizer strata.
+\item Verify the Klein-four condition at $H=E[2]$:
+$(b_{20},b_{11},b_{02})=(r_1,r_1+r_2+r_3,r_2)$ with
+$r_1=r_2=r_3=0$; for full-level even $N\ge 4$, verify the
+two-primary residual on $E[N]_{(2)}$ including the mixed coefficient
+$A_{12}^{(N)}$.
+\item Choose zero $H^1(BH;\mathbb F_2)$-linearization characters
+$\lambda^H_{\mathcal C,S}=0$.
+\item For each simple type-II reflection $s_{\delta_i}$, supply the
+lift $\tau_i:o_{\mathcal C}\to s_{\delta_i}^* o_{\mathcal C}$ on the
+finite partial action groupoid $\mathcal G_R$; compute the
+$2$-cocycle $c_{o,R}\in Z^2(\mathcal G_R;\underline{\mathbb F}_2)$
+and verify $[c_{o,R}]=0$ with chosen $1$-cochain.
+\item Verify $\tau_i^2=1$ and the Coxeter relations on the
+$W^{(2)}(\Lambda_{II}^{2,1})$-orbit; verify
+$\omega_{i,\mathcal C}=0$ for each torsor defect of the
+quotient-orientation transport.
+\end{enumerate}
+
+\textit{Finite obstructions.}  $\mathfrak O_{\mathrm{or},R}$
+(\S\ref{subsec:cosection-twisted-orientation}); the (O2) wall-atlas
+is built next.
+
+\subsubsection*{Algorithm A5: Hall product, coproduct, and primitive
+projection}
+
+\textit{Input.} Outputs of A2--A4.
+
+\textit{Output.} The compact Hall product $m_R^{\mathrm{red}}$,
+collision coproduct $\Delta_R^{\mathrm{ch}}$, primitive projection
+$P_R^{\Prim}$, and Hopf pairing $\langle\,,\,\rangle_R$ on the
+cosection-reduced d-critical heart, with normal-ordered Gram descent
+$\overline\Pi_{X,*}^\Theta$.
+
+\textit{Procedure.}
+\begin{enumerate}
+\item Form $m_R^{\mathrm{red}}=q_!\circ\operatorname{TS}^{\mathrm{red}}_R
+\circ p^*$ on each binary correspondence (LL, LW, WL, WW); verify
+two-step pentagon coherence on the eight-word atlas.
+\item Form $\Delta_R^{\mathrm{ch}}$ by pull-push on the $2$-step flag
+stack; verify coassociativity and counitality after $Q_{E,R}$.
+\item Form $\langle\,,\,\rangle_R$ on the primitive layer; verify
+Hopf adjointness with the coproduct on the radical quotient.
+\item Compute the Frobenius defect $\mathfrak o_{F,R}$ via the
+CY-3 Serre-functor identity \cite{KSCoHA}; verify
+$\mathfrak o_{F,R}=0$.
+\item Compute the radical $\operatorname{Rad}_R^\Pi$; verify
+Hopf-coideal and Lie-ideal stability.
+\item Form the chain-level normal-ordered Gram descent
+$\overline\Pi_{X,*}^\Theta$ via the negative-cyclic
+Loday--Quillen--Tsygan route or the PTVV--Joyce orientation route
+\cite{LodayQuillen1984,Tsygan1983,LodayCyclicHomology,PTVV2013};
+verify the triple homotopy compatibility
+$d_{\mathrm{Hoch}}\Theta_\Pi=B_{\mathrm{ch}}$ and the
+$\widehat\Gamma_R$-grading absorption.
+\end{enumerate}
+
+\textit{Finite obstructions.}  $\mathfrak O_{\mathrm{Hall},R}$,
+including $\mathfrak o_{F,R}$, the Hopf-coideal residual, and the
+$\Theta$-pentagon residual.
+
+\subsubsection*{Algorithm A6: Dirac block, Pfaffian line, type-II
+wall atlas}
+
+\textit{Input.} Outputs of A4 and A5.
+
+\textit{Output.} The first-order Dirac block decomposition
+$\mathfrak D_{X,R}^{D_0}=\bigoplus_\gamma J_\gamma$, the Pfaffian
+line $\mathscr L_{\mathrm{Pf},R}$ with squaring isomorphism, the
+Pfaffian-to-automorphic comparison $\iota_{\mathrm{aut},R}$, the
+normalized section $\operatorname{pf}_{X,R}$, and the type-II wall
+atlas (rank-one normal model on every retained component, boundary
+stratum, and overlap).
+
+\textit{Procedure.}
+\begin{enumerate}
+\item Form the Pfaffian line
+$\mathscr L_{\mathrm{Pf},R}=\bigotimes_{\mathcal C}
+\operatorname{Pf}(K^{\mathrm{red}}_{\mathcal C,R})$ on the
+cosection-reduced quotient \cite{BBDJS2015}; verify the squaring
+isomorphism.
+\item Form $J_\gamma$ on
+$P^{\Pi,+}_{R,\gamma}\oplus(P^{\Pi,+}_{R,\gamma})^\vee[1]$ for each
+$\gamma\in\Gamma_R^{\Pi,+}\setminus\{0\}$; verify Pfaffian
+contribution $(1-x^\gamma)^{\sdim P^{\Pi,+}_{R,\gamma}}$.
+\item Verify the support, parity, and leading-coefficient residuals
+$\mathfrak o^{\mathrm{supp}}_{R,\gamma}=
+\mathfrak o^{\mathrm{par}}_{R,\gamma}=
+\mathfrak o^{\mathrm{lead}}_R=0$ on the test window.
+\item For each simple type-II wall $\Hpl_{\delta_i}$ ($i=1,2,3$):
+build the rank-one Pfaffian crossing chart on every retained
+component and boundary stratum; verify
+$N_{\delta_i}^{\mathrm{Pf}}=1$ and the local sign
+$\varepsilon^{\mathrm{loc}}_{\delta_i,R}=-1$; verify chart-overlap
+agreement of the normal Pfaffian units, tangent/normal splittings,
+quotient orientations, and protected integration maps; verify the
+half-Hilbert orbit sign sum (size $4096=2^{12}$).
+\item Supply the Pfaffian-to-automorphic comparison
+$\iota_{\mathrm{aut},R}:\mathscr L_{\mathrm{Pf},R}\to\mathcal L^5
+\otimes\nu_{\Delta_5}$ compatible with cusp trivialization and
+squaring.
+\end{enumerate}
+
+\textit{Finite obstructions.}  (D0-Pf), (O2)/hybrid compatibility
+residuals, and the Pfaffian-to-automorphic comparison residuals.
+
+\subsubsection*{Algorithm A7: Koszul source coalgebra and cobar
+comparison}
+
+\textit{Input.} Outputs of A3 and A5.
+
+\textit{Output.} The conilpotent chiral source coalgebra $C_{X,R}$,
+finite filtration $F^{\mathrm{co}}_{R,\bullet}$, collision coproduct
+$\Delta_R^{\mathrm{ch}}$, bar comparison $b_{X,R}$, and cobar
+comparison $\Theta_{\mathrm{Kos},R}$.
+
+\textit{Procedure.}
+\begin{enumerate}
+\item Choose an augmentation
+$\varepsilon_{X,R}^{\mathrm{hyb}}:\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}
+\to k\mathbf 1$ and verify bounded length $N_R$.
+\item Form the canonical source-bar coalgebra
+$C^{\mathrm{bar}}_{X,R}=\bar B_E^{\mathrm{ch}}(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}})$
+\cite[\S3.7]{BD} with bar-length filtration and deconcatenation
+collision coproduct.
+\item Verify the eight-word coassociativity, bar-length conilpotence,
+and transition compatibility; set $b_{X,R}=\mathrm{id}$.
+\item Verify the source-internal counit
+$\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}:\Omega_E^{\mathrm{ch}}
+C^{\mathrm{bar}}_{X,R}\to\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}$
+is a quasi-isomorphism in the chosen completed/coderived category
+\cite[Theorem~6.2.2]{FrancisGaitsgoryCKD}.
+\item Construct the source-to-target chiral algebra
+quasi-isomorphism $\vartheta_R:
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\xrightarrow{\simeq}
+\mathsf{Den}_{\Delta_5,E,\le R}$ preserving differential, product,
+unit, transition maps, and primitive restriction.
+\item Set $\Theta_{\mathrm{Kos},R}=
+\vartheta_R\circ\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}$;
+verify the Koszul Mittag--Leffler condition on the cones of $b$ and
+$\Theta_{\mathrm{Kos}}$.
+\end{enumerate}
+
+\textit{Finite obstructions.}  $\mathfrak O_{\mathrm{Kos},R}$,
+including $\mathfrak o^\Omega_R=
+(\mathfrak o^{\varepsilon,\mathrm{src}}_R,
+\mathfrak o^\vartheta_R)$.
+
+\subsubsection*{Algorithm A8: primitive recognition (cofinal
+finite-window)}
+
+\textit{Input.} Outputs of A5--A7, plus the imported Borcherds--Kac
+target datum $\mathscr B_{\Delta_5}$.
+
+\textit{Output.} For every cofinal saturated finite window $W_\nu$,
+the recognition data (R0)--(R8); inverse-limit isomorphism
+$P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5}$ and chiral
+identification $\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}$.
+
+\textit{Procedure.}
+\begin{enumerate}
+\item For each $\nu$, identify the saturated downward window $W_\nu$
+in $\mathcal R_+$.
+\item Build the simple-root representatives $e_i^X,f_i^X,h_i^X$ in
+$P^{\Pi,\mathrm{red}}_{X,\pm\alpha_i}$ for $\alpha_i\in W_\nu$; verify
+parity assignments via the GN multiplicity fibres.
+\item Verify the Borcherds--Kac relations (Cartan, Chevalley, real
+Serre, orthogonality, super sign) on every relation whose source and
+target degrees lie in $W_\nu\cup(-W_\nu)\cup\{0\}$.
+\item Compute the full finite parity dimensions
+$\dim P^{\Pi,\mathrm{red}}_{X,\beta,\overline p}$ ($p=0,1$) for
+$\beta\in W_\nu$; verify two-integer equality with
+$\rootmult_{\overline p}^{\mathrm{GN}}(\beta)$.
+\item Compute the Hopf pairing matrices in parity blocks; verify
+kernel agreement with GN/Kac, coideal stability, and transition
+compatibility.
+\item Verify the no-extra-relations equality
+$\ker\pi_\nu=
+(\overline{J_{\mathrm{BK}}+\operatorname{Rad}_{\mathrm{GN}}})_{\le W_\nu}$.
+\item Verify generation by Cartan and simple representatives;
+compute PBW associated gradeds and verify strict transition
+preservation.
+\item Verify exact triangular completion: $\lim^1=0$ on the
+triangular finite-window systems.
+\end{enumerate}
+
+\textit{Finite obstructions.}  $\mathfrak O_{\mathrm{Rec},\nu}$
+(\S\ref{subsec:primitive-recognition}); for the chiral
+identification, the inverse-limit Koszul Mittag--Leffler condition
+of \S\ref{subsec:koszul-source}.
+
+\subsubsection*{Construction summary}
+
+The eight-step calculus reads
+\[
+\begin{array}{rcl}
+(\sigma,S,R) & \xrightarrow{\textrm{A1}} &
+F_{\sigma,S}(R),\widehat\Gamma_R\\
+& \xrightarrow{\textrm{A2}} &
+\mathcal C_{\sigma,S,\le R},\Phi^{\mathrm{red}},o^{\mathrm{red}}\\
+& \xrightarrow{\textrm{A3}} &
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\\
+& \xrightarrow{\textrm{A4}} &
+\textup{(O1)},\textup{(O1)}^+\\
+& \xrightarrow{\textrm{A5}} &
+m_R^{\mathrm{red}},\Delta_R^{\mathrm{ch}},
+\langle\,,\,\rangle_R,\overline\Pi_{X,*}^\Theta\\
+& \xrightarrow{\textrm{A6}} &
+\mathfrak D_{X,R}^{D_0},\mathscr L_{\mathrm{Pf},R},
+\operatorname{pf}_{X,R},\textup{(O2)}\\
+& \xrightarrow{\textrm{A7}} &
+C_{X,R},b_{X,R},\Theta_{\mathrm{Kos},R}\\
+& \xrightarrow{\textrm{A8}} &
+\textup{(R0)\text{--}(R8)\ on\ }W_\nu
+\end{array}
+\]
+The pro-object
+\[
+\mathfrak D_X^{\mathrm{DI}}
+=\varprojlim_R\bigl(
+\mathcal A_{X,R}^{E_3},
+F_{X,R}^{\mathrm{hyb}},
+\Gamma_{X,R},
+\Pi_X,
+\Phi_R,
+o_R,
+H_R,
+P_R^\Pi,
+C_{X,R},
+\Theta_{\mathrm{Kos},R},
+\mathscr L_{\mathrm{Pf},R},
+\operatorname{pf}_{X,R},
+\varepsilon_{o,R},
+\mathrm{Rec}_R\bigr)
+\]
+is the inverse limit when every finite obstruction tuple vanishes
+compatibly.
+
+\subsubsection*{Theorem statements at finite stage}
+
+\begin{theorem}[Finite-stage Dirac--Igusa pro-object;
+\textit{conditional on the finite obstruction tuples}]
+\label{thm:finite-stage-dirac-igusa-pro-object}
+Suppose Algorithms A1--A8 are run at heights
+$R\in\mathcal R_{\mathrm{HN}}$ with all finite obstruction tuples
+vanishing and HN transitions strict.  Then the eight outputs assemble
+into a finite-stage Dirac--Igusa datum
+$\mathfrak D_{X,R}^{\mathrm{DI}}$ at every $R$, with strict
+transition maps to $\mathfrak D_{X,R'}^{\mathrm{DI}}$ for $R'\le R$,
+and the inverse limit $\mathfrak D_X^{\mathrm{DI}}=\varprojlim_R
+\mathfrak D_{X,R}^{\mathrm{DI}}$ exists in the completed
+chiral/Hall framework.
+\end{theorem}
+
+\begin{theorem}[Pfaffian--Dirac identification at finite stage;
+\textit{conditional on (D0), (O1), (O1)$^+$, (O2) at $R$}]
+\label{thm:pfaffian-dirac-finite-stage}
+Suppose the finite stage outputs of A1--A8 vanish on every relevant
+obstruction tuple at height $R$.  Then on the cusp expansion
+\[
+\operatorname{pf}_{X,R}|_{\mathfrak c_\infty}
+=64q^{1/2}r^{1/2}s^{1/2}\prod_{\gamma\in\Gamma_R^{\Pi,+}\setminus\{0\}}
+(1-x^\gamma)^{\sdim P^{\Pi,+}_{R,\gamma}},
+\]
+the Pfaffian section matches the Borcherds product on the test
+window, with the orientation character
+$\varepsilon_{o,R}|_{W^{(2),\le R}}=\nu_{\Delta_5}|_{W^{(2),\le R}}$
+on the type-II reflection truncation.  The recognition map
+$\iota_R^{\Prim}:H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^\Theta
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}})\to\mathfrak g_{\Delta_5,\le R}$
+is an isomorphism on the saturated finite window.
+\end{theorem}
+
+\subsubsection*{Status under the cross-volume probes}
+
+Probes A005, A011, A026, A037, A042 verify components of A2--A4 at
+the test window; probes A074, A076, A082 verify components of A4 at
+the (O1) descent; A047, A049, A089 verify components of A4--A6 at
+(O1)$^+$; A047, A092, A100 verify components of A6 at (O2).  The
+A8 cofinal recognition ledger is the recognition probes
+A049--A089.  Discharge of A1--A6 at the relation-closed window
+beyond $W_{\le 3}$ is the open frontier of the cross-volume Master
+Critique.
+
+Algorithms A1--A8 run cleanly only when four obstruction classes
+vanish.  Entry $(\mathrm L 8)$ names these obstructions $(D0)$,
+$(O1)$, $(O1)^+$, $(O2)$, locates each in the construction, and
+tracks the discharges through
+Appendix~\ref{app:obstruction-discharges} in
+\S\ref{subsec:four-named-obstructions-ch5}.
