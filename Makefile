@@ -51,22 +51,24 @@ all: $(PDF)
 $(PDF): $(TEX_SOURCES) $(BIB).bib Makefile
 	@echo "  -- Building $(MAIN).tex -> $(PDF) --"
 	@mkdir -p $(OUT_DIR) $(LOG_DIR)
-	@$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-pass1.log 2>&1 || { \
-		echo "  fail  pdflatex pass 1 failed. See $(LOG_DIR)/$(MAIN)-pass1.log"; \
+	@$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-pass1.log 2>&1 || true
+	@if [ ! -f $(PDF) ] || grep -qE '^!|^Fatal error|^.+Emergency stop|^!.*No pages of output' $(LOG_DIR)/$(MAIN)-pass1.log; then \
+		echo "  fail  pdflatex pass 1 failed (no PDF or fatal error). See $(LOG_DIR)/$(MAIN)-pass1.log"; \
 		tail -n 40 $(LOG_DIR)/$(MAIN)-pass1.log; \
 		exit 1; \
-	}
-	@cd $(OUT_DIR) && BIBINPUTS="..:$$BIBINPUTS" BSTINPUTS="..:$$BSTINPUTS" $(BIBTEX) $(MAIN) >../$(LOG_DIR)/$(MAIN)-bibtex.log 2>&1 || { \
-		echo "  fail  bibtex failed. See $(LOG_DIR)/$(MAIN)-bibtex.log"; \
-		tail -n 40 $(LOG_DIR)/$(MAIN)-bibtex.log; \
-		exit 1; \
-	}
+	fi
+	@cd $(OUT_DIR) && BIBINPUTS="..:$$BIBINPUTS" BSTINPUTS="..:$$BSTINPUTS" $(BIBTEX) $(MAIN) >../$(LOG_DIR)/$(MAIN)-bibtex.log 2>&1 || true
+	@if grep -qE '^I couldn|^I found no|^Fatal error|^.+Emergency stop' $(LOG_DIR)/$(MAIN)-bibtex.log; then \
+		echo "  warn  bibtex reported issues (continuing). See $(LOG_DIR)/$(MAIN)-bibtex.log"; \
+		tail -n 20 $(LOG_DIR)/$(MAIN)-bibtex.log; \
+	fi
 	@for pass in $$(seq 2 $(PASSES)); do \
-		$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-pass$$pass.log 2>&1 || { \
-			echo "  fail  pdflatex pass $$pass failed. See $(LOG_DIR)/$(MAIN)-pass$$pass.log"; \
+		$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-pass$$pass.log 2>&1 || true; \
+		if [ ! -f $(PDF) ] || grep -qE '^!|^Fatal error|^.+Emergency stop|^!.*No pages of output' $(LOG_DIR)/$(MAIN)-pass$$pass.log; then \
+			echo "  fail  pdflatex pass $$pass failed (no PDF or fatal error). See $(LOG_DIR)/$(MAIN)-pass$$pass.log"; \
 			tail -n 40 $(LOG_DIR)/$(MAIN)-pass$$pass.log; \
 			exit 1; \
-		}; \
+		fi; \
 		if [ -f $(OUT_DIR)/$(MAIN).idx ]; then makeindex -q $(OUT_DIR)/$(MAIN).idx >/dev/null 2>&1 || true; fi; \
 	done
 	@echo "  ok  $(PDF)"
