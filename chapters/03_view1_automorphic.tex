@@ -21,9 +21,9 @@ weight-\(5\) automorphic line on the genus-two Siegel modular space
 \(\Sp_4(\Z)\backslash\mathbb H_2\): the Borcherds--Gritsenko--Nikulin lift of the
 weight-zero index-one weak Jacobi form \(\phi_{0,1}\), normalized at the
 isotropic cusp \(\mathfrak c_\infty\) by the theta-constant leading
-coefficient \(64\).  The \(\Sp_4(\Z)\)-equivariant data — multiplier
-system \(\nu_{\Delta_5}\), Borcherds chamber, divisor support, and
-weight — constitute the View~I package.
+coefficient \(64\).  The \(\Sp_4(\Z)\)-equivariant data of the View~I
+package are the multiplier system \(\nu_{\Delta_5}\), the Borcherds
+chamber, the divisor support, and the weight.
 
 \paragraph{Three names.}
 The handle ``\(\Delta_5\)'' is shared among three structurally distinct
@@ -92,8 +92,8 @@ ordered limit
 Equivalently, \(\Im z_3\) goes to \(+\infty\) faster than \(\Im z_1\)
 goes to \(+\infty\), and \(\Im z_2\) is bounded.  This polarization
 selects a Weyl chamber on the \(O(3,2)\) symmetric domain through the
-Sp(4)$\,\simeq\,$Spin(3,2) bridge of Chapter~\ref{ch:singular-theta-lift}, and
-hence selects a positive cone — the effective semigroup
+\(\Sp_4\simeq\Spin(3,2)\) bridge of Chapter~\ref{ch:singular-theta-lift},
+and hence selects a positive cone, the effective semigroup
 \[
 \Gamma_{\mathrm{eff}}
 =\{(n,l,m)\mid m>0,\ n\ge0,\ l\in\Z\}
@@ -266,8 +266,8 @@ Gritsenko 1999 \cite[Theorem~4.1]{GN}.]
 \noindent
 The exponent \(f(nm,l)\) of the \((n,l,m)\)-factor depends only on the
 Hecke--Verlinde--DMVV product \(nm\) and on the Jacobi index \(l\),
-reflecting the second-quantized structure of the Borcherds lift; the
-combinatorial origin of this exponent is the Dijkgraaf--Moore--Verlinde--Verlinde
+reflecting the second-quantized structure of the Borcherds lift, whose
+combinatorial origin is the Dijkgraaf--Moore--Verlinde--Verlinde
 elliptic genus of symmetric products \cite{DMVV}.
 
 \subsection{The View~I package}
@@ -339,7 +339,7 @@ identity replaces the false additive collapse
 \(\kappa_{\mathrm{BKM}}=\kappa_{\mathrm{ch}}+\chi(\mathcal O_{\mathrm{fiber}})\)
 that was once written for the \(K3\times E\) row alone (where it
 holds by the \(N=1\) accident \(5=3+2\)) and fails at every other CHL
-row \cite[FRONTIER, eq.~(72), eq.~(118)]{GN}; the corrected entry of the
+row \cite{CYQGVolIII}; the corrected entry of the
 \(\kappa\)-tuple of \(K3\times E\) is precisely \(\kappa_{\mathrm{BKM}}=5\).
 
 \subsection{The Maass multiplier system}
@@ -393,10 +393,10 @@ classification \cite{GC} records
 so the divisor of \(\Delta_5\) is the simple paramodular Humbert
 divisor.  In the cusp-chamber language, the type-II reflective walls
 \(\mathcal H_{\delta_i}\), \(i=1,2,3\), of the lattice
-\(\Lambda^{2,1}_{II}\) (the type-II sublattice of the Borcherds even
-lattice \(\Lambda^{2,1}\)) are the components of
+\(\La^{2,1}_{II}\) (the type-II sublattice of the Borcherds even
+lattice \(\La^{2,1}\)) are the components of
 \(\Sp_4(\Z)\cdot\mathcal H_{\mathrm{diag}}\) that meet the chosen
-fundamental Weyl chamber \(\Pi_{II}\) (Chapter~\ref{ch:view2-bkm}); the
+fundamental Weyl chamber \(\Poly_{II}\) (Chapter~\ref{ch:view2-bkm}); the
 corresponding simple roots
 \(\delta_1=2f_2-f_3\), \(\delta_2=2f_{-2}-f_3\), \(\delta_3=f_3\)
 have Gram pairings
@@ -420,7 +420,7 @@ Gritsenko--Nikulin 1998 \cite[Example~2.4]{GNII}; lattice computation in
 With the simple type-II roots
 \(\delta_1=2f_2-f_3\), \(\delta_2=2f_{-2}-f_3\), \(\delta_3=f_3\)
 and chamber-permuting type-I roots
-\(\alpha_1=f_{-2}-f_2\), \(\alpha_2=f_2-f_3\), \(\alpha_3=f_2+f_3\),
+\(\alpha_1=f_{-2}-f_2\), \(\alpha_2=f_2-f_3\), \(\alpha_3=f_{-2}-f_3\),
 \[
 \nu_{\Delta_5}(s_{\delta_i})\;=\;-1,\qquad
 \nu_{\Delta_5}(s_{\alpha_i})\;=\;+1,\qquad i=1,2,3.
@@ -432,18 +432,23 @@ Equivalently,
 
 \noindent
 [\textit{proved}; Maass \cite{MAASS:1}; Gritsenko--Nikulin
-\cite[\S3]{GN}; Gritsenko \cite{Gritsenko99}; the type-II values follow
-from \(d_{\delta_i}^{\mathrm{aut}}=1\) and the type-I values from
+\cite[\S3]{GN}; Gritsenko \cite{Gritsenko99}.  The type-II values
+follow from \(d_{\delta_i}^{\mathrm{aut}}=1\) and the chamber-wall
+cocycle calculation of
+Lemma~\ref{lem:bkm-maass-restriction}, which fixes
+\(\nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})}=\det\) on the three
+type-II generators; the type-I values follow from
 \(d_{\alpha_i}^{\mathrm{aut}}=0\) (vanishing of \(f(0,\pm 2)\) by the
-support of \(\phi_{0,1}\) at \(q=0\)).  The detailed cocycle calculation
-sits in Chapter~\ref{ch:view2-bkm}, Lemma~\ref{lem:bkm-maass-restriction}.]
+support of \(\phi_{0,1}\) at \(q=0\)).]
 
 The chamber-permuting reflections
-\(s_{f_{-2}-f_2},s_{f_2-f_3},s_{f_2+f_3}\) act trivially on
+\(s_{f_{-2}-f_2},s_{f_2-f_3},s_{f_{-2}-f_3}\) act trivially on
 \(\Delta_5\) because the corresponding type-I roots
 \(\alpha_i\) are not \(\Sp_4\)-images of timelike short roots in the
-cusp chamber; their Borcherds divisor order vanishes by the support
-\(f(0,l)=0\) for \(|l|\ge 2\) of \(\phi_{0,1}\) at \(q=0\)
+cusp chamber: type-I square-$2$ vectors are outside the type-II
+sublattice $\La^{2,1}_{II}$ on which the Borcherds product
+expansion of $\Delta_5$ is supported, so their walls do not appear
+in $\operatorname{div}(\Delta_5)$ at all
 \cite[\S2.2]{EZ:1}.
 
 \section{Identification with the virtual \(K_0\)-determinant}
@@ -452,11 +457,10 @@ cusp chamber; their Borcherds divisor order vanishes by the support
 The Fock superdeterminant of the Borcherds-graded super vector space
 \(\mathcal V=\bigoplus_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
 \mathbb U_{nm,l}\) — the \(K_0\)-class of the second-quantized
-Hecke--DMVV half of the K3 elliptic genus, with the \(m=0\) cusp/Weyl
-boundary factors carrying the input multiplicities \(f(0,l)\) (the
-construction
-\(\mathcal V=\mathcal V^{\mathrm{bulk}}\oplus\mathcal V^{\mathrm{cusp}}\)
-of Chapter~\ref{ch:k3xe-setup}, Definition~\ref{def:gram-index-lattice}) — is
+Hecke--DMVV half of the K3 elliptic genus, with the cusp/Weyl boundary
+factors at \(m=0\) carrying the input multiplicities \(f(0,l)\) and
+the bulk factors at \(m>0\) carrying \(f(nm,l)\) on
+\(\Gamma_{\mathrm{eff}}\) (Definition~\ref{def:gram-index-lattice}) — is
 
 \begin{lemma}[\(K_0\)-Fock superdeterminant]
 \label{lem:view1-K0-Fock-superdeterminant}
@@ -469,8 +473,12 @@ of Chapter~\ref{ch:k3xe-setup}, Definition~\ref{def:gram-index-lattice}) — is
 \end{lemma}
 
 \noindent
-[\textit{proved}; Fock-trace lemma of Chapter~\ref{ch:k3xe-setup},
-Lemma~\ref{thm:bgn-three-way}.]
+[\textit{proved}; the Fock-trace lemma is the three-way comparison
+\(\sdet_\mathcal V(1-x)=\prod(1-x^\gamma)^{\sdim\mathcal V_\gamma}\)
+under the Borcherds-graded second-quantization; the full Sp(4)/Mp(4)/Howe
+three-way crystallization sits in
+Theorem~\ref{thm:bgn-three-way} of
+Chapter~\ref{ch:singular-theta-lift}.]
 
 \begin{proposition}[BGN identification of the virtual determinant]
 \label{prop:bgn-identification-recap}
@@ -514,10 +522,10 @@ holomorphic sections of an automorphic line bundle.  The carrier
 \(K_0(\Gamma_{\mathrm{eff}}\text{-graded super vector spaces})\); it is
 not a Hilbert space, not a vertex algebra, not a holomorphic
 \(E_3\)-factorization algebra, and not a chiral factorization algebra.
-The operator-level upgrade — promotion of the \(K_0\)-Fock determinant
+The operator-level upgrade, promotion of the \(K_0\)-Fock determinant
 to a section of an oriented Pfaffian line over the cosection-reduced
-compact Hall datum, and identification of that Pfaffian with
-\(D_X\) — is the Pfaffian--Dirac theorem of
+compact Hall datum together with identification of that Pfaffian with
+\(D_X\), is the Pfaffian--Dirac theorem of
 Chapter~\ref{ch:pfaffian-dirac}, conditional on \((D_0)\),
 \((O_1)\), \((O_1)^+\), \((O_2)\).  At View~I, no such promotion is
 asserted.
@@ -590,7 +598,7 @@ arises as the View~II shadow of \(\Delta_5\) under the doubling
 
 \noindent
 The doubling reflects the level-\(2\) structure of the BKM root lattice
-\(\Lambda^{2,1}_{II}\) inside \(\Lambda^{2,1}\): the type-II walls of the
+\(\La^{2,1}_{II}\) inside \(\La^{2,1}\): the type-II walls of the
 denominator side carry roots of length-square \(2\) and live on a sublattice
 of index \(2\); the substitution \(Z\mapsto 2Z\) on the modular side
 restricts the Fourier expansion to the corresponding sublattice
@@ -599,7 +607,7 @@ Cartan, Chevalley, real-and-imaginary roots, and Weyl--Kac--Borcherds
 denominator identity of \(\mathfrak g_{\Delta_5}\) sit in
 Chapter~\ref{ch:view2-bkm}.
 
-\section{The Sp(4)$\,\simeq\,$Spin(3,2) bridge to View~V}
+\section{The \(\Sp_4\simeq\Spin(3,2)\) bridge to View~V}
 \label{sec:view1-Sp-Spin-bridge}
 
 The Borcherds construction is most naturally written on the orthogonal

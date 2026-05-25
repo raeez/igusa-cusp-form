@@ -354,12 +354,15 @@ identifies the level-\(n\) protected scalar shadow with the inverse
 squared Pfaffian:
 \[
  Z^X_{\mathrm{OP}}\;=\;
- -\,(\Pf_{\mathrm{prot}}(\mathfrak D_X^{DI}))^{-2}\cdot C_{\square,X}
- \;=\;-4096\,\Delta_5^{-2},\qquad C_{\square,X}=4096^{-1},
+ -\,64^2\,(\Pf_{\mathrm{prot}}(\mathfrak D_X^{DI}))^{-2}
+ \;=\;-4096\,\Delta_5^{-2},
 \]
-in agreement with \cite{OB}, where
-\(-4096=\operatorname{sign}(C_{\square,X})\cdot64^2\) is the squared
-theta-normalization absorbing the OP scalar branch sign.
+in agreement with \cite{OB}, where \(4096 = 64^2 =
+([q^{1/2}r^{1/2}s^{1/2}]\Delta_5)^2\) is the squared theta-normalization
+and the leading minus sign is the OP scalar branch convention.  The
+BPS normalization rescales by \(-4096^{-1}\):
+\(Z^{K3\times E}_{\mathrm{BPS}} = -4096^{-1}Z^X_{\mathrm{OP}}
+= \Delta_5^{-2}\).
 \end{theorem}
 
 \begin{proof}
@@ -612,7 +615,7 @@ d_{\delta_i}^{\mathrm{aut}}
 so \(\nu_{\Delta_5}(s_{\delta_i})=(-1)^{d_{\delta_i}^{\mathrm{aut}}}=-1\)
 for \(i=1,2,3\).  This is
 Lemma~\ref{lem:bkm-maass-restriction}.  The chamber-permuting
-roots \(f_{-2}-f_2,f_2-f_3,f_2+f_3\) lie in
+roots \(f_{-2}-f_2,f_2-f_3,f_{-2}-f_3\) lie in
 \(\La^{2,1}\setminus\La^{2,1}_{II}\) and are not type-II walls; their
 Maass values are \(+1\) but no Hall orientation sign is asserted on them
 unless a semidirect-product Hall lift is supplied
@@ -665,7 +668,7 @@ character and is not asserted here.
 The chamber-permuting symmetry group
 \(\Aut(\Poly_{II})\simeq S_3\) acts on the Coxeter generators
 \(s_{\delta_1},s_{\delta_2},s_{\delta_3}\) by permutation; its three
-reflections \(s_{f_{-2}-f_2},s_{f_2-f_3},s_{f_2+f_3}\) have
+reflections \(s_{f_{-2}-f_2},s_{f_2-f_3},s_{f_{-2}-f_3}\) have
 \(\nu_{\Delta_5}=+1\).  An extension of \(\epsilon_o\) to
 \(W^{(2)}(\La^{2,1}_{II})\rtimes\Aut(\Poly_{II})\) is not asserted in
 this chapter; it requires a separately supplied Hall semidirect-product
@@ -814,13 +817,12 @@ orientation lane.
 \rootmult_{\overline p}^{\mathrm{GN}}(\alpha(\gamma))\) for \(p=0,1\), not
 just the signed difference.  This rules out hidden zero-superdimension
 source summands, wrong parity lifts invisible to the determinant, and
-parity-cancelling ideals.  Crucially, a putative compact source which has
-all the same Hall bracket templates as
-\(\mathfrak g_{\Delta_5}\) on a finite window can still fail (S5) if there
-is a kernel element \(k\in K_{\gamma_\rho}\) with
-\((Q_{\gamma_\mu}\otimes Q_{\gamma_\nu})D^{\mu,\nu}_\rho(k)\ne 0\); the
-quotient target table sees no discrepancy, but the radical is not a
-coideal and the Hopf quotient is not defined
+parity-cancelling ideals.  A putative compact source matching every
+Hall bracket template of \(\mathfrak g_{\Delta_5}\) on a finite window
+can still fail (S5): a kernel element \(k\in K_{\gamma_\rho}\) with
+\((Q_{\gamma_\mu}\otimes Q_{\gamma_\nu})D^{\mu,\nu}_\rho(k)\ne 0\) is
+invisible to the quotient target table yet breaks the radical
+coideal property, so the Hopf quotient is not defined
 (Corollary~\ref{thm:primitive-recognition}).  This is the finite
 tensor-Hopf obstruction hidden by signed determinant data; (S5)+(S10)
 together block it.
@@ -959,9 +961,16 @@ Theorem~\ref{thm:ch6-primitive-recognition} is the source-side chiral
 expression at level \(2\), and its constant-current Lie superalgebra is
 \(\mathfrak g_{\Delta_5}\) (View \textcircled{\scriptsize 2}).  The
 protected Pfaffian \(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\)
-is the level-\(5\) scalar shadow of the open-cyclic trace; this is the
-content of the Universal Holography master theorem of Vol II applied at
-\((X=K3\times E,\Delta=\Delta_5)\).
+is the level-\(\mathsf S\) scalar shadow of the open-cyclic trace on
+\((X=K3\times E,\,\Delta_5)\), supplied at the chain level by Vol~I
+Theorem~H (chiral-Hochschild concentration on the Koszul locus) and
+Vol~II's cyclic-Hochschild stage stratification \textnormal{(i)+(ii)}
+(chain-level bulk identification and CY-orientation trace pairing of
+degree \(-\dim_\C(K3\times E)\)); the level-\(\mathsf A\) promotion
+to a gravity-line operator algebra acting on the boundary is
+Vol~II's Construction Problem~2 and is open
+(Appendix~\ref{app:obstruction-discharges},
+Theorem~\ref{thm:G-vol2-discharge}).
 
 \subsection{Vol III chain fusion at level \(2\)}
 \label{subsec:ch6-vol3-chain-fusion}

@@ -112,10 +112,11 @@ on the primitive branch.
 \begin{proof}
 Equation~\eqref{eq:zbps-equality} is the dictionary between the
 Oberdieck--Pixton primitive series and the unimodular Igusa form
-\(\Phi_{10}^{\mathrm{un}}\): the OP normalization
-\(\chi_{10}^{\mathrm{OP}}=2^{-12}\Delta_5^2\) of
-Andrianov's spin $L$-factor factorization \cite{Andr74} together with
-\(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\) gives
+\(\Phi_{10}^{\mathrm{un}}\): the Oberdieck--Pixton normalization
+\(\chi_{10}^{\mathrm{OP}}=D_5^2=64^{-2}\Delta_5^2=2^{-12}\Delta_5^2\)
+of \cite[\S0]{OB} together with the Igusa identification
+\(\Phi_{10}^{\mathrm{un}}=\chi_{10}=\Delta_5^2\) of
+\cite{Igusa1962,Igusa1964II} gives
 \((\Phi_{10}^{\mathrm{un}})^{-1}=\Delta_5^{-2}\).  Multiplying by
 \(2^{12}=4096\) and the OP scalar sign restores
 \eqref{eq:zbps-op-dt}.  The reduced DT/PT comparison is
@@ -291,14 +292,20 @@ where the eigenvalues are determined by the Saito--Kurokawa
 correspondence from the elliptic Hecke eigenvalues of
 \(g=\Delta E_6\):
 \[
- \lambda_1^{\mathrm{SK}}(p)\;=\;\lambda_g(p)\bigl(p^8+p^9\bigr),
+ \lambda_1^{\mathrm{SK}}(p)\;=\;\lambda_g(p)+p^8+p^9,
  \qquad
- \lambda_2^{\mathrm{SK}}(p^2)\;=\;\lambda_g(p)^2 p^8 - p^{16}
- \bigl(\lambda_g(p^2)+p^{16}+1\bigr),
+ \lambda_2^{\mathrm{SK}}(p^2)\;=\;\lambda_g(p)^2+\lambda_g(p)\bigl(p^8+p^9\bigr)+p^{18},
 \]
-with \(\lambda_g(p)\) the standard \(p\)-th Hecke eigenvalue of
-\(g\) (e.g., \(\lambda_g(2)=84480\), \(\lambda_g(3)=-409536\),
-\cite[Table~1]{ZagierSK}).
+read off the \(X\)- and \(X^2\)-coefficients of the spin Euler factor
+below, with \(\lambda_g(p)\) the normalized \(p\)-th Hecke eigenvalue of
+\(g=\Delta E_6\), the unique normalized cusp form in
+\(S_{18}(\SL_2(\Z))\): from \(\Delta E_6 = q-528q^2-4284q^3+\cdots\),
+\(\lambda_g(2)=-528\), \(\lambda_g(3)=-4284\) \cite[Table~1]{ZagierSK}.
+Concretely \(\lambda_1^{\mathrm{SK}}(2)=-528+2^8+2^9=240\) and
+\(\lambda_1^{\mathrm{SK}}(3)=-4284+3^8+3^9=21960\); the
+Ramanujan bound is violated (\(\lvert\lambda_1^{\mathrm{SK}}(p)\rvert
+\sim p^9\), not \(p^{9/2}\)), the signature of the
+Saito--Kurokawa CAP form.
 \end{proposition}
 
 \begin{proof}
@@ -513,12 +520,10 @@ derived-centre trace has scalar character
 \((\Phi_{10}^{\mathrm{un}})^{-1}=\Delta_5^{-2}\).
 \end{conjecture}
 
-The residual is the second of the four Construction Problems of
-Vol~II of the constellation: source
-\texttt{chiral-bar-cobar-vol2:chapters/connections/3d\_gravity.tex},
-Conjecture \texttt{conj:gravity-line-hall-borcherds-comparison} at
-line \(8429\).  It is not claimed in the present manuscript; its
-existence and the construction of its witnessing morphism are open.
+The residual is Vol~II's Construction Problem~2
+\cite{ChiralBarCobarVolII}, the gravity-line operator algebra
+acting on the boundary. It is not claimed here; its existence and
+the construction of its witnessing morphism are open.
 
 \begin{remark}[Cross-repository consistency \texorpdfstring{[$\gamma$]}{[gamma]}]
 \label{rem:zbps-cross-repo-consistency}
@@ -893,10 +898,9 @@ boundary-row physical hosts and are kept separate from the
 \(K3\times E\) protected scalar shadow throughout.
 
 The Hall--Borcherds residual conjecture in
-\S\ref{sec:hall-borcherds-residual} is Vol~II's Construction Problem
-2; its specific source location in Vol~II is
-\(\mathsf{conj:gravity\text{-}line\text{-}hall\text{-}borcherds\text{-}comparison}\)
-on \(\mathtt{chapters/connections/3d\_gravity.tex}\) at line~\(8429\).
+\S\ref{sec:hall-borcherds-residual} is Vol~II's Construction
+Problem~2 \cite{ChiralBarCobarVolII}, the gravity-line Hall--Borcherds
+comparison.
 The protected D-brane index conjecture
 \(\Omega_X(h,d,n)\stackrel{\mathrm{phys}}{=}\mathbf{DT}^X_{n,(\beta_h,d)}\)
 is recorded as the protected D-brane-index conjecture (Chapter~5; conditional on the four obstructions) of

@@ -123,7 +123,7 @@ The Borcherds--Kac--Moody algebra $\autcor$ of
 \cite[Theorem~2.1, Section~5.1.1, case $(t=1,II,\overline 0)$]{GNII}
 is graded by an integral lattice of signature $(2,1)$.  This is the
 lattice on which the type-II simple-root Cartan matrix is
-$2(\Id_3-\J_3)$ where $\J_3$ is the all-ones matrix.
+$2(2\Id_3-\J_3)$ where $\J_3$ is the all-ones matrix.
 
 \begin{definition}[Ambient $\La^{2,1}=U(-1)\oplus\langle 2\rangle$]
 \label{def:lambda-21-ambient}
@@ -156,7 +156,7 @@ The type-II sublattice
 \;\subset\;\La^{2,1}
 \]
 is the index-$4$ sublattice on which the type-II Cartan matrix
-$2(\Id_3-\J_3)$ is the Gram of the simple roots
+$2(2\Id_3-\J_3)$ is the Gram of the simple roots
 $(\delta_1,\delta_2,\delta_3)$ of
 Proposition~\ref{prop:type-II-cartan}.  Abstractly it is the lattice
 \[
@@ -173,10 +173,10 @@ type-II sublattice convention of Chapter~\ref{ch:view2-bkm}.
 $\rk\La_{II}^{2,1}=3$.  The Gram of $\La_{II}^{2,1}$ in
 $(\delta_1,\delta_2,\delta_3)$ of
 Proposition~\ref{prop:type-II-cartan} is the Cartan matrix
-$2(\Id_3-\J_3)$ of equation~\eqref{eq:bkm-cartan-matrix}; its
+$2(2\Id_3-\J_3)$ of equation~\eqref{eq:bkm-cartan-matrix}; its
 determinant is
 \[
-\det\bigl(2(\Id_3-\J_3)\bigr)=-32.
+\det\bigl(2(2\Id_3-\J_3)\bigr)=-32.
 \]
 The hyperbolic-plus-rank-one block of the ambient $\La^{2,1}$ has
 signature $(2,1)$; the index-$4$ sublattice $\La_{II}^{2,1}$ inherits
@@ -227,7 +227,7 @@ Then $\delta_i^2=2$ for $i=1,2,3$ and
 \[
 \bigl((\delta_i,\delta_j)\bigr)_{i,j=1,2,3}
 =\begin{pmatrix} 2&-2&-2\\ -2&2&-2\\ -2&-2&2\end{pmatrix}
-=2(\Id_3-\J_3),
+=2(2\Id_3-\J_3),
 \]
 where $\J_3$ is the $3\times 3$ all-ones matrix.  Each $\delta_i$ is
 type-II in the sense that $(\delta_i,\La^{2,1})=2\Z$.
@@ -236,7 +236,7 @@ type-II in the sense that $(\delta_i,\La^{2,1})=2\Z$.
 \begin{proof}
 Direct computation in the body Gram.  The companion script
 \texttt{compute/verify\_lattice.py} at lines 92--97 verifies the matrix
-$2(\Id_3-\J_3)$ from the same data; the print output records
+$2(2\Id_3-\J_3)$ from the same data; the print output records
 \texttt{Type-II simple-root Gram matrix} equal to the displayed Cartan.
 The type-II divisibility statement follows because each $\delta_i$
 pairs against $\La^{2,1}$ with even values: $(\delta_i,f_2)$,
@@ -678,7 +678,7 @@ Under the K\"unneth decomposition for $X=S\times E$, the integral
 even cohomology decomposes as
 \[
 H^{\mathrm{ev}}(X,\Z)
-=H^*(S,\Z)\otimes H^*(E,\Z)
+=H^*(S,\Z)\otimes H^{\mathrm{even}}(E,\Z)
 =H^*(S,\Z)\otimes(\Z[1]\oplus\Z[\omega_E]),
 \]
 where $\omega_E$ is the fundamental class of $E$.  Every Mukai vector
@@ -891,7 +891,7 @@ $\HypPlan=U(-1)$ packages the body's negated convention.
 \item $\La_{II}^{2,1}\simeq U(-1)\oplus\langle 2\rangle\simeq
 U\oplus\langle-2\rangle$ (sign flip on the rank-$2$ hyperbolic block):
 the BKM root lattice on which the type-II simple-root Cartan
-$2(\Id_3-\J_3)$ and the Weyl vector
+$2(2\Id_3-\J_3)$ and the Weyl vector
 $\rho=\frac12(\delta_1+\delta_2+\delta_3)$ are realized.  The
 denominator algebra
 $\autcor=\mathfrak g_{\Delta_5}$ is graded by $\La_{II}^{2,1}$
@@ -930,7 +930,7 @@ $(f_1,f_2,f_3,f_{-2},f_{-1})$-basis (lines~82--89);
 (ii) the orthogonality of the symplectic invariant
 $q_0=e_1\wedge e_3+e_2\wedge e_4$ to the basis (line~90);
 (iii) the type-II simple-root Cartan
-$2(\Id_3-\J_3)$ at lines~92--97;
+$2(2\Id_3-\J_3)$ at lines~92--97;
 (iv) the Weyl vector $\rho=(1,-1/2,1)$ in $(f_2,f_3,f_{-2})$
 coordinates and the $(\rho,\delta_i)=-1$ relation
 (lines~99--101);

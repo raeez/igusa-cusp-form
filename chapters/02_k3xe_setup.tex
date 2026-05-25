@@ -49,8 +49,11 @@ in Theorems~\ref{thm:G-D0}, \ref{thm:G-O1}, \ref{thm:G-O1-plus},
 The chapter is structured around the Mukai--Gram dictionary on
 \(K3\times E\): the Mukai lattice
 \(\widetilde H(S,\Z)\) of \(S\) (rank \(24\), signature \((4,20)\),
-\cite{Mukai1984}) is the K3-side data, the K\"unneth tensor with
-\(H^*(E,\Z)\) supplies the threefold lattice
+\cite{Mukai1984}) is the K3-side data; tensoring with the even
+cohomology \(H^{\mathrm{even}}(E,\Z)=H^0(E,\Z)\oplus H^2(E,\Z)\)
+(a hyperbolic plane under \(\langle 1_E,\omega_E\rangle=1\), the odd
+K\"unneth term absent because \(S\) carries no odd cohomology) supplies
+the even threefold lattice
 \(\widetilde H(X,\Z)\) of rank \(48\) and signature \((24,24)\), and
 the Gram-index lattice
 \(\Gamma_{\mathrm{gram}}=\Z^3\) is the polarisation under which the
@@ -129,14 +132,21 @@ The threefold $X$ is a Calabi--Yau threefold (proved/$\alpha$).
 \begin{remark}[Distinguishing $\chi_{\mathrm{top}}(K3) = 24$ and
 $\chi(\mathcal O_S) = 2$]
 \label{rem:two-K3-Eulers}
-The integer $24 = \chi_{\mathrm{top}}(K3)$ enters the Borcherds
-exponent $f(0, 0)/2 = 5$ via $f(0, 0) = 2(\chi_{\mathrm{top}}(K3))/24
-\cdot \dim_\C\!\bigl(\widetilde H(K3,\C)/(\R\!\cdot\!1 \oplus
-\R\!\cdot\!\omega_K)\bigr) = 10$, equivalently $\phi_{0, 1}(\tau, 0) =
-24\,\eta(\tau)^{-2}\theta_1\theta_2\theta_3\theta_4 = 12\!+\cdots$ at
-$z = 1/2$ (computed/$\beta$, \cite{EZ:1}).  The integer
-$\chi(\mathcal O_S) = 2$ enters the categorical Calabi--Yau dimension and
-the holomorphic part of the Mukai pairing.  The two integers do not
+The two integers enter the construction by different routes.  The
+Borcherds weight is $f(0,0)/2 = 5$, where $f(0,0) = 10$ is the
+constant Fourier coefficient of the weight-zero index-one weak Jacobi
+form $\phi_{0,1} = r^{-1} + 10 + r + O(q)$ in the Eichler--Zagier
+normalization (computed/$\beta$, \cite{EZ:1}).  The topological Euler
+number $\chi_{\mathrm{top}}(K3) = 24$ enters one step removed, through
+the elliptic-genus specialization: at $z = 0$ the $\phi_{0,1}$ support
+$4n - l^2 \ge -1$ leaves only $l \in \{-1,0,1\}$ at $n = 0$, so the
+constant term is $\sum_l f(0,l) = f(0,-1) + f(0,0) + f(0,1) = 12$, and
+$Z_{K3}(\tau,0) = 2\,\phi_{0,1}(\tau,0)$ has constant term
+$2 \cdot 12 = 24 = \chi_{\mathrm{top}}(K3)$.  Thus $\chi_{\mathrm{top}}(K3)
+= 2\sum_l f(0,l)$, not $f(0,0)$; the Borcherds weight $5$ sees only the
+single coefficient $f(0,0) = 10$.  The integer
+$\chi(\mathcal O_S) = 2$ enters by a third route, the categorical
+Calabi--Yau dimension and the holomorphic part of the Mukai pairing.  The two integers do not
 collapse: the $\kappa$-tuple of \cite{CYQGVolIII}
 records $\kappa_{\mathrm{fiber}} = 24 = \chi_{\mathrm{top}}(K3)$, not
 $2 = \chi(\mathcal O_S)$, and the universal Borcherds identity
@@ -1247,33 +1257,32 @@ holomorphic $E_3$-factorization algebra and its $K3$-specialization to a
 chiral object on $\operatorname{Ran}^{\mathrm{hyb}}(E)$.  The
 cross-level comparison
 $\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}}) =
-\Delta_5$ is conditional on four obstruction classes named at the level
-of \S5.8 of the manuscript and tracked across the swarm
-((see \texttt{notes/swarm\_20260430/reports/})).  The chapter records them here as
-the conditioning data feeding Chapter~\ref{chap:dirac-igusa-pro-object}.
+\Delta_5$ is conditional on four obstruction classes, each named and
+discharged on $K3\times E$ in Appendix~\ref{app:obstruction-discharges}
+(Theorems~\ref{thm:G-D0}, \ref{thm:G-O1}, \ref{thm:G-O1-plus},
+\ref{thm:G-O2-orbit-transport}).  The chapter records them here as the
+conditioning data feeding Chapter~\ref{chap:dirac-igusa-pro-object}.
 
 \begin{description}
 \item[$(\mathrm{D0})$ {\rm D0-degeneration limit.}]
 The cosection-reduced d-critical orientation theory on
 $\mathrm{Hilb}^n(X)\times\mathrm{Sym}^n(X)$, in the D0-degeneration limit
 $n\to\infty$, supplies the orientation line on the local stratum
-(folklore/$\delta$; conditional, swarm probes A005, A011, A026, A037,
-A042).
+(proved on $K3\times E$, Theorem~\ref{thm:G-D0}).
 \item[$(\mathrm{O1})$ {\rm Strong reduced orientation.}]
 The K3$\times$E-quotient self-Ext frame bundle carries a strong reduced
 orientation on the wrapped stratum, descending the BBDJS orientation
-line $o_c$ across the $E$-quotient (folklore/$\delta$; conditional,
-swarm probes A074, A076, A082).
+line $o_c$ across the $E$-quotient (proved on $K3\times E$,
+Theorem~\ref{thm:G-O1}).
 \item[$(\mathrm{O1}^+)$ {\rm Weyl-equivariant transport.}]
 The orientation transports $W^{(2)}(\Lambda_{II}^{2, 1})$-equivariantly
 along reflections, fixing the orientation character
-$\epsilon_o = \nu_{\Delta_5}$ on the BKM Weyl group (folklore/$\delta$;
-conditional, swarm probes A047, A049, A089).
+$\epsilon_o = \nu_{\Delta_5}$ on the BKM Weyl group (proved on
+$K3\times E$, Theorem~\ref{thm:G-O1-plus}).
 \item[$(\mathrm{O2})$ {\rm Local Pfaffian wall normal form.}]
 On type-II walls of $\Lambda_{II}^{2, 1}$, the local Pfaffian wall
 normal form is the $4096 = 2^{12}$ sign sum on the half-Hilbert orbit
-(computed/$\delta$ at small height; conditional at full height,
-swarm probes A047, A092, A100).
+(proved on $K3\times E$, Theorem~\ref{thm:G-O2-orbit-transport}).
 \end{description}
 
 The protected scalar shadow on the closed K3$\times$E$\to$point

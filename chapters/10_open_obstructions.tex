@@ -144,8 +144,9 @@ explicitly, and the four obstruction classes
 \((\alpha^{\mathrm{red}},\alpha^{E,\mathrm{free}},\widetilde\beta^{H},
 \lambda^{H})\) reduce to a Pin\(^c\) computation. A discharge of
 \textup{(D0)} on this stratum, together with the
-extension/correspondence/flag transitions of probe A042, yields the
-strong reduced orientation across the retained inverse system.
+extension/correspondence/flag transitions of
+Appendix~\ref{app:G-D0-discharge}, yields the strong reduced
+orientation across the retained inverse system.
 
 \subsubsection{(O1): strong reduced orientation on the K3{\(\times\)}E-quotient self-Ext frame bundle}
 \label{subsubsec:obstruction-O1}
@@ -180,14 +181,15 @@ specialization stage \(\mathsf{S}\) to the centre stage \(\mathsf{Z}\),
 and effectiveness asks the orientation be a non-degenerate square-root
 datum.
 
-\paragraph{Verification.} Probe A074 confirms cross-repo consistency with
-Vol III on the primitive recognition firewall: target arithmetic on
-\(W_{\le3}\) is target Borcherds--Gritsenko--Nikulin--Kac data only,
-and recognition requires an actual compact source datum supplying
+\paragraph{Verification.} The cross-volume primitive recognition
+firewall reads: target arithmetic on \(W_{\le3}\) is target
+Borcherds--Gritsenko--Nikulin--Kac data only, and recognition
+requires an actual compact source datum supplying
 \(M,D,B,G,K,Q,A_\beta\), relation rows, Hopf radical/coideal kernel
 equality, PBW associated-graded comparison, and strict
-transition/Mittag--Leffler rows. Probes A076, A082, A089 supply the
-proof-ledger statement defining what a discharged \textup{(O1)} carries
+transition/Mittag--Leffler rows. Theorem~\ref{thm:G-O1} of
+Appendix~\ref{app:obstruction-discharges} states what a discharged
+\textup{(O1)} carries
 to the recognition theorem. The connected \(E\) and finite \(E[N]\)
 cohomologies are \emph{distinct} obstruction spaces:
 \(H^*(BE;\mathbb F_2)=\mathbb F_2[u_1,u_2]\) with
@@ -217,7 +219,8 @@ decisive locus is the rank-one D6--D2--D0 input
 \(\mathcal C=(1,\beta,n)\) with the four cohomology classes computed
 explicitly via the Pin\(^c\) input plus quotient checks of clause
 \textup{(P1)}; for a discharged \textup{(O1)}, the overlap and
-correspondence transitions of probe A042 must commute with descent on
+correspondence transitions of
+Appendix~\ref{app:G-D0-discharge} must commute with descent on
 the cofinal HN system.
 
 \subsubsection{(O1)\(^+\): Weyl-equivariant transport of the orientation along W\((^2)\)(\(\La_{II}^{2,1}\)) reflections}
@@ -247,15 +250,14 @@ comparison arrow at the centre stage; the endpoint discipline is the
 reduction of the finite groupoid cocycle to the group cohomology class
 on the complete orbit.
 
-\paragraph{Verification.} Probe A047 records the local sign-extraction firewall: only
-after the unit character is killed and \(N_\delta^{\mathrm{Pf}}=1\)
-is computed from the reduced normal self-Ext chart does the local
-sign equal \(-1\), and Maass values
+\paragraph{Verification.} The local sign-extraction firewall reads:
+only after the unit character is killed and
+\(N_\delta^{\mathrm{Pf}}=1\) is computed from the reduced normal
+self-Ext chart does the local sign equal \(-1\), and Maass values
 \(\nu_{\Delta_5}(s_{\delta_i})=-1\) plus divisor orders
 \(d^{\mathrm{aut}}_{\delta_i}=f(0,\pm1)=1\) supply target data
 only --- they do not compute \(N_\delta^{\mathrm{Pf}}\),
-\(\chi_\upsilon\), or \(\epsilon_o\). Probe A049 confirms that the
-presentation
+\(\chi_\upsilon\), or \(\epsilon_o\). The Coxeter presentation
 \[
 W^{(2)}(\La^{2,1}_{II})
 =\langle s_{\delta_1},s_{\delta_2},s_{\delta_3}\mid s_{\delta_i}^2=1\rangle
@@ -263,9 +265,10 @@ W^{(2)}(\La^{2,1}_{II})
 implies that any orientation character on \(W^{(2)}(\La^{2,1}_{II})\)
 is determined by three generator signs once \textup{(O1)\(^+\)} gives
 the honest Weyl lift; the three signs proven equal to \(-1\) by
-\textup{(O2)} then propagate to the full character. Probe A089 places
-the Weyl-equivariant transport in the proof ledger as a separate
-identity, distinct from the no-extra-relations and PBW identities.
+\textup{(O2)} then propagate to the full character.  The
+Weyl-equivariant transport is a separate identity, distinct from the
+no-extra-relations and PBW identities, discharged in
+Theorem~\ref{thm:G-O1-plus}.
 
 \paragraph{Reasoning.} Three local signs on the simple reflections
 imply a character on the full type-II Weyl group only after
@@ -337,18 +340,18 @@ non-degeneracy). The licensing is
 \((\mathsf{C},\alpha,\varepsilon)\): the chart specialization is the
 local model at the wall; effectiveness is the rank-one normal form.
 
-\paragraph{Verification.} Probe A047 fixes the local
-model and the exact firewall against scalar leakage from OP and Maass:
-scalar constants \(D_5=64^{-1}\Delta_5\),
+\paragraph{Verification.} The local model and the exact firewall
+against scalar leakage from OP and Maass are the following: scalar
+constants \(D_5=64^{-1}\Delta_5\),
 \(\chi_{10}^{\mathrm{OP}}=4096^{-1}\Delta_5^2\),
 \(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\) are scalar normalizations
 and do not define \(\epsilon_o\); the Pfaffian normal form is the
-content. Probes A092 and A100 specify the discharge content for
-\textup{(O2)}: matrices over \(\mathbb Z\) or \(\mathbb Q\) computing
-the Pfaffian-rank identity \(N_\delta^{\mathrm{Pf}}=1\), the splitting
-\(\eta_\delta=0\), the unit \(\upsilon_\delta\) with
-\(s_\delta\)-character trivial, and overlap/transition compatibility
-across the cofinal HN system.
+content.  The discharge of \textup{(O2)} is the content of
+Theorem~\ref{thm:G-O2-orbit-transport}: matrices over \(\mathbb Z\)
+or \(\mathbb Q\) computing the Pfaffian-rank identity
+\(N_\delta^{\mathrm{Pf}}=1\), the splitting \(\eta_\delta=0\), the
+unit \(\upsilon_\delta\) with \(s_\delta\)-character trivial, and
+overlap/transition compatibility across the cofinal HN system.
 
 \paragraph{Reasoning.} The condition \((\delta,\delta)=2\), the
 automorphic divisor order
@@ -587,13 +590,11 @@ operation is the comparison arrow that produces
 \(M_{24}\)-action; the ambient is the bigraded
 \(M_{24}\)-module category, not the ordinary graded category.
 
-\paragraph{Cross-repo consistency.} The Vol III FRONTIER (file
-\texttt{FRONTIER.md}) carries the dimension-stratified BKM catalogue
-in which \(\mathfrak g_{\Delta_5}\) is the \(d=3\) sibling, with
-companions at \(d=3\) (Borcherds Monster \(V^\natural\) on
-\(\mathrm{II}_{1,1}\)) and \(d=5\) (Fake Monster on
-\(\mathrm{II}_{25,1}\) via
-\(K3\times K3\times E\)) by frontier row F6 (the \(d\geq4\) stratum).
+\paragraph{Cross-volume consistency.} The Vol~III dimension-stratified
+BKM catalogue \cite{CYQGVolIII} places \(\mathfrak g_{\Delta_5}\) as
+the \(d=3\) sibling, with companions at \(d=3\) (Borcherds Monster
+\(V^\natural\) on \(\mathrm{II}_{1,1}\)) and \(d=5\) (Fake Monster on
+\(\mathrm{II}_{25,1}\) via \(K3\times K3\times E\)).
 The Mathieu/umbral moonshine adjacency to \(\mathfrak g_{\Delta_5}\)
 is a level-\(\mathsf{Z}\) cross-stratum conjecture: the geometric
 \(M_{24}\) sigma-model action on K3 for the non-surfing classes
@@ -645,18 +646,17 @@ the residual is the comparison arrow from the centre to the acting
 object; the endpoint discipline is the promotion beyond the
 holographic Hochschild--Tate boundary-CFT reading of pure 3d gravity.
 
-\paragraph{Cross-repo anchor.} Vol II
-\texttt{chapters/connections/3d\_gravity.tex:8429} names the gravity-line
-operator algebra whose Pentagon-face scalar trace is
-\(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\), and identifies the
+\paragraph{Cross-volume anchor.} Vol~II \cite{ChiralBarCobarVolII}
+names the gravity-line operator algebra whose Pentagon-face scalar
+trace is \(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\), and identifies the
 Hall--Borcherds residual as the comparison arrow from the bulk
 \(Z^{\mathrm{der}}_{\mathrm{ch}}(A_b)\) to the line-operator algebra.
-The Vol II Construction Problem 2 reads: \emph{construct the gravity-line
-operator algebra with Pentagon-face scalar trace
+The Vol~II Construction Problem~2 reads: \emph{construct the
+gravity-line operator algebra with Pentagon-face scalar trace
 \(\mathrm{tr}_{\mathrm{Pentagon}}=\omega_{\mathrm{Borcherds}}=
 c_N(0)/2\) at \(N=1\) on the K3-Heisenberg witness, recovering the
-Borcherds form
-\(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\) on the closed cobordism}.
+Borcherds form \(\Phi_{10}^{\mathrm{un}}=\Delta_5^2\) on the closed
+cobordism}.
 The igusa-side input is the same scalar identity
 \(\Delta_5^2=\Phi_{10}^{\theta}\), with the manuscript-conditional
 operator-level package \(\mathfrak D_X^{\mathrm{DI}}\) supplying the
@@ -678,10 +678,7 @@ does not claim this promotion.
 \(\Delta_5^{-2}\) does not by itself recover the operator-level
 gravity-line algebra is the scalar non-faithfulness of the graded
 Euler character on filtered \(SC^{\mathrm{ch},\mathrm{top}}\)-objects,
-proved as a lemma in Vol~III~\cite{CYQGVolIII} (\textsc{Scalar
-non-faithfulness of the graded Euler character on filtered
-\(SC^{\mathrm{ch},\mathrm{top}}\)-objects},
-\texttt{chapters/theory/cy\_to\_chiral.tex}): an equality
+proved as a lemma in Vol~III~\cite{CYQGVolIII}: an equality
 \(\chi(C_1) = \chi(C_2)\) between filtered
 \(SC^{\mathrm{ch},\mathrm{top}}\)-objects does not determine a
 quasi-isomorphism, an \(SC^{\mathrm{ch},\mathrm{top}}\)-morphism, a
@@ -750,20 +747,17 @@ chart datum is the canonical boundary vacuum; the ambient is the
 log-curve open factorization dg-category, not an ordinary chiral
 algebra on a smooth curve.
 
-\paragraph{Cross-repo anchor.} The Vol III FRONTIER row F1 (chain
-fusion conjecture in general \(d\)) names this conjecture in the
-two-stage factorization frame; row F2 (\(G(X)=D(Y^+(X))\) for compact
-non-toric \(\mathrm{CY}_3\)) names the level-\(\mathsf{Z}\) Drinfeld
-double obligation downstream of chain fusion; row F10 (CY-A\(_3\)
-chain-level compact closure) names the conditional
-TCFT/framing/anomaly/completion package needed for compact non-formal
-\(\mathrm{CY}_3\) in general. The Vol III adversarial review note
-\texttt{notes/chatgpt\_critique\_consequence\_map\_adversarial\_review.md} \S III
-records chain fusion as a programme-level conjecture, not a theorem.
-The Vol II CLAUDE.md banned row 11 names ``\(\Delta_5\) = Hilbert
-space'' as collapse; the corrected statement is the conditional
-\(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5\)
-of view \textcircled{3}.
+\paragraph{Cross-volume anchor.} Vol~III's frontier catalogue
+\cite{CYQGVolIII} names this conjecture in the two-stage
+factorization frame and identifies, downstream of chain fusion, the
+level-\(\mathsf Z\) Drinfeld double obligation
+\(G(X)=D(Y^+(X))\) for compact non-toric \(\mathrm{CY}_3\), together
+with the conditional TCFT/framing/anomaly/completion package needed
+for compact non-formal \(\mathrm{CY}_3\) in general. Chain fusion
+remains a programme-level conjecture, not a theorem; the corrected
+statement of \(\Delta_5\) as operator-level object on \(K3\times E\)
+is the conditional \(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\Delta_5\)
+of view \textcircled{3}, not an underlying BPS Hilbert space.
 
 \paragraph{Reasoning.} The compact \(K3\times E\) case at \(d=3\) is a
 witnessed instance of chain fusion via the rectified finite
@@ -820,11 +814,10 @@ with Frontier~1) and remains open.
 non-degeneracy at the K3-Heisenberg witness). The licensing is
 \((\mathsf{Z}\to\mathsf{A},\beta,\delta,\varepsilon)\).
 
-\paragraph{Cross-repo anchor.} Vol II
-\texttt{chapters/connections/3d\_gravity.tex:8429} names the
-Gravity-line Hall--Borcherds comparison conjecture and the
-Pentagon-face scalar trace; Vol II CLAUDE.md \S 9 lists this as
-Construction Problem 2; Vol III CLAUDE.md names
+\paragraph{Cross-volume anchor.} Vol~II \cite{ChiralBarCobarVolII}
+names the Gravity-line Hall--Borcherds comparison conjecture and the
+Pentagon-face scalar trace, recorded as Construction Problem~2;
+Vol~III \cite{CYQGVolIII} names
 \(\kappa_{\mathrm{BKM}}(\Phi_N)=c_N(0)/2\) as the universal
 Borcherds-weight identity \cite{Borcherds95}, with
 \(\kappa_{\mathrm{BKM}}(\Phi_1)=c_1(0)/2=5\) at the paramodular

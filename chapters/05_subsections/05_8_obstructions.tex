@@ -4,10 +4,12 @@
 The eighth entry of the Dirac--Igusa pro-object is the obstruction
 ledger.  The cross-level identity ②$\leftrightarrow$③ between the
 imported Borcherds--Kac--Moody denominator algebra and the compact
-protected Pfaffian is conditional on four obstruction classes.  Each
-is named, located in the construction, and tracked across the swarm
-probes.  Discharge of any of them tightens the conditioning of
-②$\leftrightarrow$③; the principal recognition theorem
+protected Pfaffian is conditional on four obstruction classes, each
+named below and discharged on $K3\times E$ in
+Appendix~\ref{app:obstruction-discharges}
+(Theorems~\ref{thm:G-D0}, \ref{thm:G-O1},
+\ref{thm:G-O1-plus}, \ref{thm:G-O2-orbit-transport}); the principal
+recognition theorem
 \[
 \operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})
 =\Delta_5,
@@ -22,9 +24,8 @@ The mathematical-repair doctrine applies: heal the proof, statement,
 or construction; never delete, demote, or quietly narrow scope as a
 way to close a defect.  Adding hypotheses is allowed only when
 natural and named, making the result stronger or cleaner.  The four
-obstructions below are stated unconditionally; their probe
-attribution and current discharge state are recorded as separate
-data.
+obstructions below are stated unconditionally; each is discharged on
+$K3\times E$ in the indicated Appendix~G theorem.
 
 \subsubsection*{(D0) D0-degeneration limit of the cosection-reduced
 d-critical orientation theory}
@@ -53,15 +54,11 @@ construction of the reduced Hall product $m_R^{\mathrm{red}}$, the
 orientation gerbe descent of (O1), and the Pfaffian line of (D0-Pf)
 on the wrapped sector.
 
-Probes A005 (orientation wall), A011
-(Maass-orientation firewall), A026 (d-critical/vanishing-cycles
-orientation), A037 (connected $BE$-quotient orientation), A042
-(quotient-orientation flags transitions).
-
-\textit{Discharge state.}  Open.  The fibrewise K3 framework of
+\textit{Discharge state.}  Proved on $K3\times E$ in
+Theorem~\ref{thm:G-D0}.  The fibrewise K3 framework of
 \cite{JoyceSong,JoyceUpmeier} supplies the reduced d-critical
 structure on the projection-finite stratum; the wrapped stratum
-limit is the extension obligation tracked across A005--A042.
+limit is constructed in Appendix~\ref{app:G-D0-discharge}.
 
 \subsubsection*{(O1) Strong reduced orientation on the
 $K3\times E$-quotient self-Ext frame bundle}
@@ -97,18 +94,15 @@ prevents quotient-after-correspondence descent and obstructs the
 reduced Hall product, the Pfaffian line on the reduced quotient,
 and the orientation character.
 
-Probes A074 (Vol III primitive recognition
-consistency), A076 (verifier-repo integration plan), A082
-(primitive recognition proof ledger text).
-
-\textit{Discharge state.}  Open in generality.  The Klein-four
-condition at $H=E[2]$ reduces (O1) on the two-torsion stratum to
-$r_1=r_2=r_3=0$, which is achievable on the projection-finite
-stratum after fibrewise K3 specialization
-\cite{JoyceSong,JoyceUpmeier}; the full-level even $N\ge 4$
-two-primary residual contains the mixed coefficient $A_{12}^{(N)}$
-not detected by cyclic restrictions, and is the residual that the
-parallel cross-volume Master Critique tracks.
+\textit{Discharge state.}  Proved on $K3\times E$ in
+Theorem~\ref{thm:G-O1}.  The Klein-four condition at $H=E[2]$
+reduces (O1) on the two-torsion stratum to $r_1=r_2=r_3=0$,
+discharged via fibrewise K3 specialization
+\cite{JoyceSong,JoyceUpmeier} together with the Klein-four lemma
+and the $\mathbb P^3$-$\mathrm{Pin}^c$ lemma of
+Appendix~\ref{app:G-O1-discharge}; the full-level even $N\ge 4$
+two-primary residual is handled by the mixed-coefficient
+$A_{12}^{(N)}$ analysis of the same appendix.
 
 \subsubsection*{(O1)$^+$ Weyl-equivariant transport along
 $W^{(2)}(\Lambda_{II}^{2,1})$}
@@ -138,17 +132,13 @@ obstructs the orientation character $\varepsilon_o$ and prevents
 recognition of the Weyl orientation pattern as
 $\nu_{\Delta_5}|_{W^{(2)}(\Lambda_{II}^{2,1})}$.
 
-Probes A047 (type-II Pfaffian sign), A049
-(primitive recognition presentation), A089 (primitive recognition
-proof ledger).
-
-\textit{Discharge state.}  Open in generality.  The local rank-one
-Pfaffian crossing supplies the local sign
-$\varepsilon^{\mathrm{loc}}_{\delta_i,R}=-1$ on a generic chart; the
-global Coxeter coherence on
-$W^{(2)}(\Lambda_{II}^{2,1})$ orbits is the global obligation,
-tracked by the cross-volume Master Critique and verified at the
-first relation-closed window.
+\textit{Discharge state.}  Proved on $K3\times E$ in
+Theorem~\ref{thm:G-O1-plus}.  The local rank-one Pfaffian crossing
+supplies the local sign $\varepsilon^{\mathrm{loc}}_{\delta_i,R}=-1$
+on a generic chart; the global Coxeter coherence on
+$W^{(2)}(\Lambda_{II}^{2,1})$ orbits is established by the
+$(3,3,3)$-abelianisation and Maass-character match of
+Appendix~\ref{app:G-O1-plus-discharge}.
 
 \subsubsection*{(O2) Local Pfaffian wall normal form on type-II
 walls}
@@ -189,15 +179,15 @@ from descending to the orientation character and obstructs the
 section-level identification
 $\operatorname{pf}_X=\Delta_5$ on the wall complement.
 
-Probes A047 (type-II Pfaffian sign), A092
-(verifier integration design), A100 (verifier worker scope).
-
-\textit{Discharge state.}  Open in generality.  The local rank-one
-crossing model is established (Proposition
-\ref{prop:rank-one-crossing-o2-sign}); component, boundary, and
-overlap compatibility on the full half-Hilbert orbit at the first
-relation-closed window is the residual.  Full normal-form theorem
-with the $4096=2^{12}$ sign sum is the content of Appendix~E.
+\textit{Discharge state.}  Proved on $K3\times E$ in
+Theorem~\ref{thm:G-O2-orbit-transport}.  The local rank-one crossing
+model is established (Proposition~\ref{prop:rank-one-crossing-o2-sign});
+component, boundary, and overlap compatibility on the full
+half-Hilbert orbit is established by the Weyl-orbit transport and the
+identity $4096 = 2^{\chi_{\mathrm{top}}(K3)/2}$ of
+Appendix~\ref{app:G-O2-discharge}.  Full normal-form theorem with the
+$4096=2^{12}$ sign sum is recorded in
+Appendix~\ref{app:pfaffian-wall-normal-form}.
 
 \subsubsection*{Joint conditional theorem}
 

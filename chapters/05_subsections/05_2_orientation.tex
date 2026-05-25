@@ -15,15 +15,26 @@ lineage of \cite{BridgelandK3Stability,BayerMacriProjectivity}.  The
 PTVV $(-1)$-shifted symplectic structures
 \cite{PTVV2013} restrict to the finite-type stacks selected by the HN
 quotient and give Joyce d-critical structures
-\cite{BBDJS2015} after classical truncation.  The K3 fibre
-direction supplies a semiregularity cosection
-$\operatorname{CS}_{\mathcal C}$, surjective on reduced strata, whose
-filtered Hall additivity on extension stacks
+\cite{BBDJS2015} after classical truncation.  The holomorphic
+symplectic two-form on the K3 fibre makes the unreduced
+Donaldson--Thomas theory of $K3\times E$ vanish identically: it
+generates trivial first-order deformations that obstruct the virtual
+class.  The standard remedy, as in reduced K3 enumerative geometry
+\cite{MaulikPandharipande}, is to quotient these out by a
+semiregularity cosection.  The K3 fibre direction accordingly supplies
+a semiregularity cosection $\operatorname{CS}_{\mathcal C}$, surjective
+on reduced strata, whose kernel is the reduced obstruction theory.  On
+the extension stack $\mathfrak E_{A,B}$ of short exact sequences
+$0\to A\to C\to B\to 0$ — with projections $p_1,p_2$ to the substacks
+$\mathfrak M_A,\mathfrak M_B$ of sub- and quotient-object and $q$ to
+$\mathfrak M_C$, the correspondence set up in
+\S\ref{subsec:hall-correspondences} — the cosections of the three
+charge strata satisfy filtered Hall additivity
 \[
 q^*\operatorname{CS}_C
-=p_1^*\operatorname{CS}_A+p_2^*\operatorname{CS}_B
+=p_1^*\operatorname{CS}_A+p_2^*\operatorname{CS}_B,
 \]
-is the input to Kiem--Li cosection localization
+the input to Kiem--Li cosection localization
 \cite{JoyceSong,JoyceUpmeier}.
 
 \subsubsection*{The reduced determinant complex}
@@ -60,7 +71,7 @@ Borel-equivariant gerbes.  For a charge stratum $\mathcal C$:
 \[
 \alpha^{\mathrm{red}}_{\mathcal C}
 =w_2(\det K^{\mathrm{red}}_{\mathcal C})
-+\mathrm{cs}^{*}w_2(\det\operatorname{coker}\mathrm{cs})
++\operatorname{CS}_{\mathcal C}^{*}w_2(\det\operatorname{coker}\operatorname{CS}_{\mathcal C})
 \in H^2(\mathfrak M^{\mathrm{red}}_{\mathcal C};\mathbb F_2);
 \]
 \item the free $E$-class
@@ -271,14 +282,15 @@ The orientation lane carries the residual
 \{\omega_{i,\mathcal C,R}\}_i\bigr)
 \]
 required to vanish at every finite HN height, with chosen
-null-trivializations.  Probes A074, A076, A082 audit the (O1) tower;
-probes A047, A049, A089 audit (O1)$^+$.  Discharge of (O1) under
-$K3\times E$-specific finite-stabilizer hypotheses is open in
-generality; the K3-fibrewise framework of
-\cite{JoyceSong,JoyceUpmeier} reduces (O1) on the projection-finite
-stratum to the finite-stabilizer linearization choice and the mixed
-Borel computation, and the wrapped stratum is the open piece tracked
-by the Hall--Borcherds residual in the parallel Vol II constellation.
+null-trivializations.  Discharge of (O1) and (O1)$^+$ on
+$K3\times E$ is the content of Theorems~\ref{thm:G-O1}
+and~\ref{thm:G-O1-plus} of
+Appendix~\ref{app:obstruction-discharges}; the K3-fibrewise framework
+of \cite{JoyceSong,JoyceUpmeier} together with the Klein-four lemma
+and $\mathbb P^3$-$\mathrm{Pin}^c$ lemma there reduces (O1) on the
+projection-finite stratum, and the wrapped-stratum Weyl-equivariant
+transport along $W^{(2)}(\La^{2,1}_{II})$ is established by the
+$(3,3,3)$-abelianisation and Maass-character match.
 
 \subsubsection*{Cross-repo anchor}
 

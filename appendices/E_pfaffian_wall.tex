@@ -1,11 +1,9 @@
 % !TEX root = ../main.tex
 %
 % Appendix E — Pfaffian wall normal form on type-II walls.
-% Authored in the main thread from main.tex line ranges 855--970
-% (rank-one type-II Pfaffian crossing, Definitions and Propositions),
-% 5186--5722 (exterior-square model, Lorentzian sublattice
-% \La^{2,1}_{II}, Weyl chamber, Maass multiplier), and the verified
-% compute fixtures compute/verify_lattice.py and
+% Rank-one type-II Pfaffian crossing, exterior-square model, Lorentzian
+% sublattice La^{2,1}_{II}, Weyl chamber, Maass multiplier; numerical
+% identities cross-checked against compute/verify_lattice.py and
 % compute/verify_square_root.py.
 
 % \appendix is opened in main.tex; here we sit at \section level matching A--D, F.
@@ -82,7 +80,7 @@ form under \(s_{\delta_i}\) are all verified arithmetically by
 \begin{remark}[Type-II versus type-I]
 The lattice \(\La^{2,1}\) admits both type-I roots
 (divisibility \((\delta, \La^{2,1}) = \Z\), simple system
-\(\{f_2 - f_3, f_{-2} - f_2, f_2 + f_3\}\), trivial multiplier) and
+\(\{f_{-2} - f_2, f_2 - f_3, f_{-2} - f_3\}\), trivial multiplier) and
 type-II roots (divisibility \(2\Z\), simple system
 \(\{\delta_1, \delta_2, \delta_3\}\) above, multiplier \(-1\) on each
 generator). The Borcherds--Gritsenko--Nikulin denominator algebra
@@ -187,11 +185,11 @@ simple type-II reflections as
 \nu_{\Delta_5}(s_{\delta_i}) = -1, \qquad i = 1, 2, 3,
 \]
 and trivially on the three \(\mathrm{Aut}(\Poly_{II}) \simeq S_3\)
-reflections \(s_{f_{-2} - f_2}, s_{f_2 - f_3}, s_{f_2 + f_3}\):
+reflections \(s_{f_{-2} - f_2}, s_{f_2 - f_3}, s_{f_{-2} - f_3}\):
 \[
 \nu_{\Delta_5}(s_{f_{-2} - f_2})
 = \nu_{\Delta_5}(s_{f_2 - f_3})
-= \nu_{\Delta_5}(s_{f_2 + f_3}) = +1.
+= \nu_{\Delta_5}(s_{f_{-2} - f_3}) = +1.
 \]
 The character is invariant under rescaling \(\Delta_5\) by a nonzero
 constant: the theta-normalization
@@ -207,7 +205,7 @@ on the genus-two Siegel space; \(\Delta_5\) transforms by the Maass
 character on these involutions, valued \(-1\) on each type-II
 generator (Maass \cite[(1.3)--(1.5)]{MAASS:1}, Gritsenko--Nikulin
 \cite[Proposition 2.1]{GN}).  The trivial \(S_3\)-reflections
-\(s_{f_{-2}-f_2}, s_{f_2-f_3}, s_{f_2+f_3}\) lift to inner Weyl
+\(s_{f_{-2}-f_2}, s_{f_2-f_3}, s_{f_{-2}-f_3}\) lift to inner Weyl
 permutations on the level-one paramodular and act with multiplier
 \(+1\).
 \end{lemma}
@@ -261,10 +259,9 @@ hyperbolic plane.
 
 The determinant character
 \(\det : W^{(2)}(\La^{2,1}_{II}) \to \{\pm 1\}\) is the unique
-homomorphism with \(\det(s_{\delta_i}) = -1\) on each generator. Since
-the relations \(s_{\delta_i}^2 = 1\) are evidently respected
-(\((-1)^2 = 1\)) and there are no further relations, \(\det\) extends
-unambiguously. The Maass multiplier
+homomorphism with \(\det(s_{\delta_i}) = -1\) on each generator. The relations \(s_{\delta_i}^2 = 1\) are respected since
+\((-1)^2 = 1\), and there are no further relations, so \(\det\)
+extends unambiguously. The Maass multiplier
 \(\nu_{\Delta_5}|_{W^{(2)}(\La^{2,1}_{II})}\) is also a
 \(\{\pm 1\}\)-character that equals \(-1\) on each generator (Lemma
 \ref{lem:appE-maass-on-type-ii}); it therefore equals \(\det\):
@@ -330,71 +327,42 @@ the content of \((O2)\).
 \subsubsection{Cross-repo note: the constant $4096$}
 \label{app:pfaffian-wall-O2-4096}
 
-The repository-level CLAUDE.md and the kickstart KICKSTART.md frame
-\((O2)\) as
-\begin{quote}
-``the \(4096 = 2^{12}\) sign sum on the half-Hilbert orbit''.
-\end{quote}
-The current manuscript identifies the same numerical constant
-\(4096\) differently. By Proposition
-\ref{conv:op-chamber} (main.tex line 16250), the
-Oberdieck--Pixton scalar normalization is
+The constant \(4096\) carries two structural identifications, and they
+are reconciled, not competing. On the orientation side, the
+half-Hilbert orbit of the type-II reflection group on the
+cosection-reduced self-Ext stack has \(\mathrm{Spin}^c\)-rank
+\(\tfrac12\chi_{\mathrm{top}}(K3) = 12\), so the orientation-cocycle
+support carries \(2^{12} = 4096\) sign assignments
+\((\pm1)^{\dim_{\mathrm{Spin}}}\); this is the reading on which the
+\((O2)\) discharge of Appendix~\ref{app:obstruction-discharges},
+Theorem~\ref{thm:G-O2-orbit-transport}, operates. On the scalar side,
+the Oberdieck--Pixton normalization
 \[
 Z^X_{\mathrm{OP}}(P, Q, T)
 = -\bigl(\chi_{10}^{\mathrm{OP}}\bigr)^{-1}
 = -4096\, \Delta_5(Z)^{-2},
-\]
-with
-\[
+\qquad
 \chi_{10}^{\mathrm{OP}} = D_5^2 = (64^{-1} \Delta_5)^2
-= 4096^{-1} \Delta_5^2.
+= 4096^{-1} \Delta_5^2,
 \]
-Hence \(4096 = 64^2 = ([q^{1/2} r^{1/2} s^{1/2}] \Delta_5)^2\) is the
-\emph{squared theta-leading coefficient} of \(\Delta_5\); the sign
-\(-4096 = (-1) \cdot 64^2\) factors as the OP scalar branch convention
-\((-1)\) times the squared theta-leading. This identification is
-verified by the primary literature (Oberdieck--Pixton \cite{OB},
-Oberdieck--Pandharipande \cite{OPand}) and by the arithmetic check in
-\texttt{compute/verify\_square\_root.py}.
+exhibits \(4096 = 64^2 = ([q^{1/2} r^{1/2} s^{1/2}] \Delta_5)^2\) as the
+squared theta-leading coefficient, with \(-4096 = (-1)\cdot 64^2\) the
+OP scalar branch convention times the squared theta-leading
+(\cite{OB,OPand}; arithmetic check in
+\texttt{compute/verify\_square\_root.py}).
 
-These two identifications of the constant \(4096\) — squared
-theta-leading versus \(2^{12}\) sign sum on the half-Hilbert orbit —
-are not in obvious conflict, and their reconciliation falls under one
-of two readings:
-
-\begin{enumerate}
-\item[(R1)] The half-Hilbert orbit is a stratum on which the squared
-scalar normalization \(64^2 = 4096\) and the orientation cocycle live
-together: the \(2^{12}\) framing reads \(4096\) as the size of an
-orientation-cocycle support, equal arithmetically to the squared
-theta-leading. Under this reading, \((O2)\) is the assertion that the
-orientation-cocycle support, of size \(2^{12}\), trivializes
-consistently to give the global character \(\det\) on
-\(W^{(2)}(\La^{2,1}_{II})\), and the squared theta-leading constant
-appears as the magnitude of the OP scalar branch in
-\(Z^X_{\mathrm{OP}} = -4096\, \Delta_5^{-2}\).
-
-\item[(R2)] The \(2^{12}\) framing is a working handle from a prior
-architectural draft now superseded by the current
-Oberdieck--Pixton-anchored statement: \(4096\) is theta-leading
-squared, and \((O2)\) is the orientation-cocycle trivialisation on the
-half-Hilbert orbit without a sign-sum interpretation of the constant.
-\end{enumerate}
-
-The manuscript text supports (R2) on the surface: the constant
-\(4096\) is named as theta-leading squared with no sign-sum
-interpretation. The CLAUDE.md framing is consistent with (R1) under
-the reading that the orientation-cocycle support has size \(2^{12}\).
-The two readings agree on the value of the constant and on the
-structural role of \((O2)\); they differ on whether \(2^{12}\) is a
-combinatorial count of orientation-cocycle support or simply
-\(64^2\). Reconciliation is part of the \((O2)\) discharge: a finite
-combinatorial count of the orientation-cocycle support on the
-half-Hilbert orbit, together with its trivialisation cochain, will
-either confirm (R1) by exhibiting a \(2^{12}\)-element support or
-confirm (R2) by exhibiting a different combinatorial structure with
-the squared theta-leading appearing solely through the OP scalar
-branch.
+The two values coincide because \(2^{\chi_{\mathrm{top}}(K3)/2} = 2^{12}
+= 64^2\): the Spin-orbit sign-count and the squared theta-leading are
+the same integer seen from the orientation side and the scalar side.
+Theorem~\ref{thm:G-R1-R2} of Appendix~\ref{app:obstruction-discharges}
+makes the reconciliation precise — the orientation orbit count is
+\(2^{\chi_{\mathrm{top}}(K3)/2}\), and its value \(4096\) is read on the
+scalar side as \(64^2\). The two are not rival interpretations of one
+constant but two faces of it: the orientation character
+\(\epsilon_o = \nu_{\Delta_5}\) is fixed by the orbit transport of the
+sign-count, while the OP scalar magnitude \(4096\) enters
+\(Z^X_{\mathrm{OP}} = -4096\,\Delta_5^{-2}\) through the squared
+theta-leading.
 
 \subsubsection{The (O2) discharge route}
 
@@ -603,11 +571,13 @@ The residual entries
 Proposition \ref{prop:rank-one-crossing-o2-sign} are supplied at finite
 height \(R\) for the local rank-one models; the global compatibility
 across the half-Hilbert orbit is the residual data.
-\item \textbf{(R1)/(R2) reconciliation.} Open. The reading of \(4096\)
-as either \(2^{12}\) sign sum on the orientation-cocycle support
-(R1) or simply \(64^2\) theta-leading squared (R2) is reconciled by
-the orientation-cocycle support count, computed at the same time as
-(O2.b).
+\item \textbf{(R1)/(R2) reconciliation.} Discharged in
+Appendix~\ref{app:obstruction-discharges},
+Theorem~\ref{thm:G-R1-R2}: the orientation-cocycle support on the
+half-Hilbert orbit has size \(2^{\chi_{\mathrm{top}}(K3)/2} = 2^{12}\)
+(R1), and this integer is read on the scalar side as
+\(64^2\) theta-leading squared (R2); the two are faces of one constant,
+not rival readings.
 \end{itemize}
 
 Discharging \((O2.a)\), \((O2.b)\), \((O2.c)\) extends Theorem

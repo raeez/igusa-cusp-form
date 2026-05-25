@@ -314,16 +314,19 @@ K\"unneth decomposition. The Mukai lattice
 pairing
 \(\langle (r, c, s), (r', c', s') \rangle_{\mathrm{Muk}} = c \cdot c' - r s' - r' s\)
 (Definition~\ref{def:mukai-lattice}); the elliptic factor
-contributes \(\Lambda_E = H^*(E, \Z) = U\) with the standard hyperbolic
-form. The total integral cohomology is
+contributes its Mukai lattice
+\(\Lambda_E = H^{\mathrm{even}}(E, \Z) = H^0(E,\Z)\oplus H^2(E,\Z) = U\)
+with the standard hyperbolic form. The even integral cohomology is
 \[
-H^*(K3 \times E, \Z)
+H^{\mathrm{even}}(K3 \times E, \Z)
 \;=\;
 \Lambda_S \otimes \Lambda_E
 \;=\;
 \Lambda_S \otimes U,
 \]
-a lattice of rank \(48\); the relevant Hodge filtration is controlled,
+a lattice of rank \(48\) (the odd K\"unneth term
+\(H^{\mathrm{odd}}(S)\otimes H^{\mathrm{odd}}(E)\) is absent because
+\(S\) carries no odd cohomology); the relevant Hodge filtration is controlled,
 on each weight, by the K3 polarisation \(M\) and the \(\tau\)-modulus
 of \(E\). The component of the period stack parametrising
 \((K3 \times E)\)-pairs \((S, E_\tau)\) with \(S\) lattice-polarised
@@ -535,16 +538,19 @@ comparison line bundle
 admits no obstruction, and the identification of the two sides extends
 across the discriminant divisor.
 
-A separate piece of evidence is the precedent set by
-Gritsenko--Nikulin~\cite[Thm.~4.1]{GNII}: at rank \(4\), with
-polarisation \(L = U \oplus U\), the analogous Borcherds product is
-the Igusa cusp form \(\Phi_{12}\) on the type-IV symmetric domain of
-signature \((2, 4)\); Gritsenko--Nikulin proved that
-\(\Phi_{12}\) is the quasi-pull-back of the discriminant section of
-the universal lattice-polarised Hodge bundle on \(\Omega_L / \Gamma_L\).
-Conjecture~\ref{conj:mirror-discriminant} is the rank-3 analogue of
-the same identification, evaluated at the lattice
-\(M = U \oplus \langle -2 \rangle\).
+A separate piece of evidence is the rank-\(4\) precedent set by
+Gritsenko--Nikulin~\cite[Thm.~4.1]{GNII} in the lattice-polarised
+setting at the polarisation \(L\) producing a Borcherds product
+identified with the quasi-pull-back of the discriminant section of
+the universal lattice-polarised Hodge bundle on
+\(\Omega_L / \Gamma_L\). Conjecture~\ref{conj:mirror-discriminant} is
+the rank-\(3\) analogue of the same identification, evaluated at the
+type-II rank-\(3\) Mukai sublattice
+\(M = U \oplus \langle -2 \rangle\) of \(\Lambda^{2,1}\)
+(see Appendix~\ref{appendix:mukai-gram-dictionary}); the Fake-Monster Borcherds
+product \(\Phi_{12}\) on the Leech-extension lattice
+\(\mathrm{II}_{25,1}\) of \cite{BorcherdsGKM88, Borcherds95} is a
+distinct, signature-\((26,2)\) object and is not invoked here.
 
 \paragraph{Status.}
 \ClaimStatusConjectured\ The identification claim of
@@ -578,7 +584,9 @@ the period side, complementing the curve-counting derivation.
 \subsection{What the conjecture does not assert}
 \label{subsec:view4-not-asserted}
 
-The Beilinson cut (\(\mathrm{CLAUDE.md}\)\,\S\,III) is in force.
+The Beilinson cut is in force: a statement is not primitive if it
+holds only after passing to a trace, choosing a chamber, completing a
+category, or installing descent data.
 The conjectural identification is on the period side: it concerns
 the section \(\Delta_5^{-2}\) of an automorphic line bundle and the
 discriminant divisor of the K3-mirror period family. It is not a

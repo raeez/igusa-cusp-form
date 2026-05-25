@@ -51,7 +51,8 @@ coordinates, abstractly \(U(4)\oplus\langle 2\rangle\) (discriminant
 \((f_2,f_3,f_{-2})\) with bilinear form \((f_2,f_{-2}) = -1\),
 \((f_3,f_3) = 2\); the type-II Cartan matrix on simple roots
 \(\delta_1 = 2f_2 - f_3\), \(\delta_2 = 2f_{-2} - f_3\),
-\(\delta_3 = f_3\) is
+\(\delta_3 = f_3\) is, with \(\mathbf{J}_3\) the \(3\times 3\)
+all-ones matrix,
 \((\delta_i, \delta_j) = 4\Id_3 - 2\mathbf{J}_3 = \bigl(\begin{smallmatrix}
 2 & -2 & -2\\ -2 & 2 & -2\\ -2 & -2 & 2 \end{smallmatrix}\bigr)\),
 \[
@@ -82,7 +83,7 @@ pro-object
 (the chiral \(E_3\)-source \(\mathcal A^{E_3}\), the hybrid factorization
 carrier \(F^{\mathrm{hyb}}\) of \(\mathrm{Ran}^{\mathrm{hyb}}(E)\), the
 Mukai charge lattice \(\Gamma\), the Gram projection \(\Pi_X\), the
-specialization functor \(\Phi\), the orientation \(o\), the Hall datum
+vanishing-cycle coefficient sheaf \(\Phi\), the orientation \(o\), the Hall datum
 \(H\), the Gram-descended primitive \(P^\Pi\), the source coalgebra
 \(C\), the Koszul cobar \(\Theta_{\mathrm{Kos}}\), the Pfaffian line
 \(\mathcal L_{\mathrm{Pf}}\), the Pfaffian section \(\mathrm{pf}\), the
@@ -102,7 +103,10 @@ where \(\mathcal P_X\) is the protected primitive Lie superalgebra
 primitives of the assembled hybrid factorization sheaf
 \(\mathcal F_X\) after Gram-projection pushforward
 \(\overline\Pi^\Theta_{X,*}\) and Hopf-radical quotient
-\(\overline{\operatorname{Rad}\langle\,,\,\rangle_X}\)),
+\(\overline{\operatorname{Rad}\langle\,,\,\rangle_X}\); the three
+notations \(\mathcal P_X = P_X^{\Pi,\mathrm{red}} = P_X\) denote one
+object, abbreviated \(P_X\) where the construction data are not in
+play),
 \(\epsilon_o\) is the orientation character of the Pfaffian line on
 \(W^{(2)}(\La^{2,1}_{II})\), and \(\nu_{\Delta_5}\) is the Maass
 multiplier of \cite{MAASS:1} on \(\Sp_4(\Z)\), pulled back along the
@@ -141,7 +145,13 @@ The four edges
 \(\textsl{Given}\) part of the manuscript. The edge
 \(\textcircled{2}\!\leftrightarrow\!\textcircled{3}\) is the
 Pfaffian--Dirac theorem of this manuscript, conditional on
-\((D0)\), \((O1)\), \((O1)^+\), \((O2)\); it relates the
+\((D0)\), \((O1)\), \((O1)^+\), \((O2)\) and discharged on the
+\(K3\times E\) specialization in
+Appendix~\ref{app:obstruction-discharges}
+(Theorems~\ref{thm:G-D0}, \ref{thm:G-O1}, \ref{thm:G-O1-plus},
+\ref{thm:G-O2-orbit-transport}), making
+\(\textcircled{2}\!\leftrightarrow\!\textcircled{3}\) unconditional at
+the chiral-shadow level on \(K3\times E\); it relates the
 \(\textsl{Given}\) part to the \(\textsl{Built}\) part. The edge
 \(\textcircled{1}\!\leftrightarrow\!\textcircled{3}\) is the
 two-step composite \(D_X = \Delta_5 = \mathrm{Pf}_{\mathrm{prot}}
@@ -255,7 +265,7 @@ The five-tuple
   \bigl(D_X,\;
   \operatorname{den}(\mathfrak g_{\Delta_5}),\;
   \mathrm{Pf}_{\mathrm{prot}}(\mathfrak D^{DI}_X),\;
-  \mathrm{Disc}(\mathcal P\to\Delta),\;
+  \mathrm{Disc}(\mathcal P\to\mathbb D),\;
   \Theta_{\mathrm{sing}}^{\mathrm{Howe}}(\phi_{0,1})\bigr)
 \]
 of values of \(\mathfrak A_{K3\times E}\) at the five categorical-
@@ -410,9 +420,8 @@ orientation, hybrid \(\mathrm{Ran}^{\mathrm{hyb}}(E)\) carrier,
 Pfaffian line, source coalgebra, Koszul cobar, and the recognition
 map, recovers the BKM denominator algebra \(\mathfrak g_{\Delta_5}\)
 on the nose.  The answer is the Pfaffian--Dirac theorem, conditional
-on four named obstructions \((D0)\), \((O1)\), \((O1)^+\), \((O2)\)
-named at \S5.8 of the manuscript and tracked across the
-\texttt{notes/swarm\_*} ledgers.
+on four named obstructions \((D0)\), \((O1)\), \((O1)^+\), \((O2)\),
+each discharged on \(K3\times E\) in Appendix~\ref{app:obstruction-discharges}.
 
 \begin{theorem}[Pfaffian--Dirac]
 \label{thm:pentadic-pfaffian-dirac}
@@ -463,10 +472,10 @@ walls: at each simple type-II wall \(s_{\delta_i}\) the rank-one normal
 Pfaffian crossing of Definition~\ref{def:rank-one-type-ii-crossing}
 gives the local sign
 \((-1)^{N^{\mathrm{Pf}}_{\delta_i}} = -1\), and the Hall-side sign
-sum on the half-Hilbert orbit of the self-Ext stack — of size
-\(2^{12} = 4096\), arithmetically the squared theta-leading
-\(([q^{1/2}r^{1/2}s^{1/2}]\Delta_5)^2 = 64^2\) of the Oberdieck--Pixton
-scalar normalization — collects into the single character value
+sum on the half-Hilbert orbit of the self-Ext stack of size
+\(64^2 = 4096\), the squared theta-leading
+\(([q^{1/2}r^{1/2}s^{1/2}]\Delta_5)^2\) of the Oberdieck--Pixton
+scalar normalization, collects into the single character value
 \(\epsilon_o(s_{\delta_i}) = \nu_{\Delta_5}(s_{\delta_i})\) on each
 generator (Appendix~E).
 
@@ -476,8 +485,7 @@ The four obstruction classes \((D0)\), \((O1)\), \((O1)^+\), \((O2)\)
 are the exact proof obligations the Built part of the manuscript
 reduces to; discharging any of them tightens the conditioning of
 Theorem \ref{thm:pentadic-pfaffian-dirac}. Two readings of \(\Delta_5\)
-attach to two distinct categorical dimensions: at the scalar-shadow level (the level-\(n\) trace of \(\mathfrak A_{K3\times E}\)) \(\Delta_5\) is a charge-graded
-virtual section of the modular line, the protected scalar shadow of
+attach to two distinct categorical dimensions: at the scalar-shadow level (the level-\(n\) trace of \(\mathfrak A_{K3\times E}\)) \(\Delta_5\) is the protected scalar shadow of
 the chiral \(E_3\)-algebra \(\mathfrak A_{K3\times E}\); at the
 operator level \textcircled{3} it is the protected Pfaffian
 \(\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D^{DI}_X)\) of the
@@ -489,15 +497,6 @@ shadow has squared away, by view \textcircled{3}, and recovers it as
 \((O2)\).
 \end{remark}
 
-% ---------------------------------------------------------------
-% Section "edge 1-3 composite" deleted in chriss-ginzburg-rectify
-% v2 Phase 2.  The composite identification
-%   D_X = Delta_5 = Pf_prot(D_X^DI)
-% is the corollary of edge 1-2 (proved) plus edge 2-3 (Pfaffian-Dirac
-% theorem, conditional).  Stating it as its own section is duplication;
-% the corollary is folded into the closing of section "edge 2-3"
-% above as a single clause.
-% ---------------------------------------------------------------
 \section{View \texorpdfstring{$\textcircled{4}$}{4}: mirror
 discriminant}
 \label{sec:view-4-mirror}
@@ -505,10 +504,10 @@ discriminant}
 \textsl{Conjectural} (ambient: variation of Hodge structure on a
 one-parameter \(K3\)-mirror period family).
 On the one-parameter \(K3\)-mirror period family
-\(\mathcal P\to\Delta\) — the mirror of \(K3\times E\) restricted to
-its rank-one polarised subvariation — the discriminant locus is cut by
+\(\mathcal P\to\mathbb D\), the mirror of \(K3\times E\) restricted to
+its rank-one polarised subvariation, the discriminant locus is cut by
 \[
-  \mathrm{Disc}(\mathcal P\to\Delta) \;=\; \Delta_5^{-2}\;\big|_{\Delta},
+  \mathrm{Disc}(\mathcal P\to\mathbb D) \;=\; \Delta_5^{-2}\;\big|_{\mathbb D},
 \]
 in the conjectural identification of the mirror period family with the
 \(\Sp(4,\Z)\)-quotient of Siegel space restricted along the Mukai
@@ -581,13 +580,6 @@ CostelloLiOpenClosedBCOV}, with global compactness of the path
 integral conditional on the obstruction class vanishing on
 \(K3\times E\).
 
-% ---------------------------------------------------------------
-% Section "The chapter spine" deleted in chriss-ginzburg-rectify
-% v2 Phase 2 as meta-narrative.  The chapter spine is in main.tex's
-% \tableofcontents; the reader does not need it inscribed twice.
-% Part I/II/III/IV organization lives in the \part directives of
-% main_integrated.tex and is materially identical to CLAUDE.md §II.
-% ---------------------------------------------------------------
 \begin{remark}[Reconstitution order]
 \label{rem:beilinson-cut-delta5}
 The five views are ordered: primitive objects (the chiral
@@ -609,43 +601,45 @@ sublattice; the OP-monic form \(D_5 = 64^{-1}\Delta_5\) with
 Oberdieck--Pixton normalization of the squared scalar shadow.
 \end{remark}
 
-% ---------------------------------------------------------------
-% Section "Where the seven lines of force enter" deleted in
-% chriss-ginzburg-rectify v2 Phase 2 as catalogue / structural
-% bookkeeping.  Each "line of force" is individually motivated and
-% inscribed in the chapter where it is exact:
-%   lattice polarisation      -> chapters/02_k3xe_setup.tex
-%   normal-ordered Gram        -> chapters/02_k3xe_setup.tex
-%   hybrid carrier             -> chapters/05_subsections/05_1_hybrid.tex
-%   cosection-twisted d-crit   -> chapters/05_subsections/05_2_orientation.tex
-%   Hall correspondences       -> chapters/05_subsections/05_3_hall.tex
-%   Koszul source coalgebra    -> chapters/05_subsections/05_5_koszul.tex
-%   primitive recognition      -> chapters/05_subsections/05_6_primitive_recognition.tex
-% A catalogue of these lines belongs in a methods note, not in
-% Chapter 1.
-% ---------------------------------------------------------------
 \section{Cross-volume placement}
 \label{sec:cross-volume-coherence}
 
 The pentadic \(\Delta_5\) is one identification at one specific level
-of the Beilinson tower of the wider research constellation: the
-level-\(5\) chiral shadow of Vol I's bar \(B(A_b)\) on the tangential
-log curve \((K3\times E, D, \tau)\); the closed-colour shadow of the
-bicoloured primitive package of Vol II's Universal Holography
-master theorem with terminal value
-\(c_1(0)/2 = 5 = \kappa_{\mathrm{BKM}}(\Delta_5)\); the
-\((d=3,\,\text{rank }3)\) chamber of Vol III's cross-stratum sibling
-census, populated by the BKM target \(\mathfrak g_{\Delta_5}\) under
-the universal identity \(\kappa_{\mathrm{BKM}}(\Phi_N) = c_N(0)/2\)
-applied at the paramodular row \((t,N;k) = (1,1;5)\) of the
-Gritsenko--Cl\'ery catalogue \cite{GC, GN}; the formal-Darboux stalk
+of the Beilinson chain of the wider research constellation. The
+chiral source coalgebra \(C_X\) of Chapter~5.5 is chirally Koszul on
+the log target \((K3\times E, D, \tau)\); Vol I's Theorem H supplies
+the chain-level identification
+\(Z^{\mathrm{der}}_{\mathrm{ch}}(C_X) = \mathrm{ChirHoch}^\bullet(C_X,C_X)\)
+on the Koszul locus, and Vol II's chiral-Hochschild stage
+stratification \textnormal{(i)+(ii)} supplies the CY-orientation trace
+pairing of degree \(-\dim_{\mathbb C}(K3\times E) = -3\); these two
+inputs together supply the level-\(\mathsf Z\) trace identity
+\(\mathrm{Tr}^{\mathrm{bulk}}_n((-1)^F\cdot\mathrm{id})_{Z^{\mathrm{der}}_{\mathrm{ch}}(C_X)}
+= -4096\,\Delta_5^{-2}\) of Appendix~\ref{app:obstruction-discharges},
+Theorem~\ref{thm:G-vol2-discharge}. The level-\(\mathsf A\) promotion
+to a gravity-line operator algebra acting on the boundary is Vol II's
+Construction Problem~2, open. The Vol III census places
+\(\mathfrak g_{\Delta_5}\) at the \((d=3,\,\text{rank }3)\) chamber
+through the identity \(\kappa_{\mathrm{BKM}}(\Phi_N) = c_N(0)/2\),
+where \(c_N(0)\) is the constant Fourier coefficient of the input
+Jacobi form or Borcherds lift. Applied at the paramodular row
+\((t,N;k) = (1,1;5)\) of the Gritsenko--Cl\'ery catalogue
+\cite{GC, GN}, with input \(\Delta_5\), the identity reads
+\(\kappa_{\mathrm{BKM}}(\Delta_5) = c_1(0)/2 = 5\). The cross-volume
+companion at input \(\Phi_{12}\), the Fake-Monster Borcherds product
+on the Leech-extension lattice \(\mathrm{II}_{25,1}\)
+\cite{BorcherdsGKM88, Borcherds95}, reads
+\(\kappa_{\mathrm{BKM}}(\Phi_{12}) = c_{\Phi_{12}}(0)/2 = 12\); the
+two values are different rows of one universal \(c_N(0)/2\) rule,
+indexed by different input denominators, not in contradiction.
+The mixed holomorphic-topological strings companion supplies the
+formal-Darboux stalk
 \(A^{\mathrm{cl}}_{\partial,N} = C^\bullet_{\mathrm{CE}}(\mathfrak{gl}_N,
 \,\mathrm{Kosz}([\phi_1,\phi_2]))\) of the chiral Hochschild cochain
-of mixed-holomorphic-topological strings at the Dirac brane vacuum.
-Promotion of the level-\(n\) scalar shadow \(Z^{K3\times E}_{
-\mathrm{BPS}} = \Delta_5^{-2}\) to a global compact 3d gravitational
-path integral on \(K3\times E\) requires both the holomorphic
-de Rham obstruction class
+at the Dirac brane vacuum; promotion of the level-\(n\) scalar shadow
+\(Z^{K3\times E}_{\mathrm{BPS}} = \Delta_5^{-2}\) to a global compact
+3d gravitational path integral on \(K3\times E\) requires both the
+holomorphic de Rham obstruction class
 \(\mathrm{ob}^{\mathrm{hol}}_{\mathrm{dR}}(K3\times E)\) to vanish and
-Vol II's Hall--Borcherds residual to discharge the dynamical-metric
-content; both conditions are open.
+the discharge of Vol II's Construction Problem~2; both conditions are
+open.

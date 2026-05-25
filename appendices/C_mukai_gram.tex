@@ -150,28 +150,33 @@ the Mukai form. The pairing
 \label{prop:kunneth-k3-times-e-appendixC}
 \ClaimStatusProvedElsewhere\
 Let \(S\) be a smooth complex K3 surface and \(E\) a smooth complex
-elliptic curve. The integral cohomology of \(X=S\times E\) splits as
+elliptic curve. The even integral cohomology of \(X=S\times E\) splits as
 \[
-H^*(X,\Z)
-\simeq H^*(S,\Z)\otimes_{\Z}H^*(E,\Z),
+H^{\mathrm{even}}(X,\Z)
+\simeq H^*(S,\Z)\otimes_{\Z}H^{\mathrm{even}}(E,\Z),
 \]
-both factors free \(\Z\)-modules and \(H^*(E,\Z)\) torsion-free. Fixing a
-generator \(\omega_E\in H^2(E,\Z)\) with \(\int_E\omega_E=1\),
-\(H^*(E,\Z)=\Z\cdot1_E\oplus\Z\cdot\omega_E\), and every class on \(X\)
-decomposes uniquely as
+the odd--odd K\"unneth term \(H^{\mathrm{odd}}(S)\otimes H^{\mathrm{odd}}(E)\)
+absent because \(S\) carries no odd cohomology, both factors free
+\(\Z\)-modules. Fixing a generator \(\omega_E\in H^2(E,\Z)\) with
+\(\int_E\omega_E=1\),
+\(H^{\mathrm{even}}(E,\Z)=\Z\cdot1_E\oplus\Z\cdot\omega_E\), and every
+even class on \(X\) decomposes uniquely as
 \[
 v_X=v^{(0)}\otimes 1_E+v^{(\omega)}\otimes\omega_E,
 \qquad v^{(0)},v^{(\omega)}\in H^*(S,\Z).
 \]
-The total integral lattice carries the K\"unneth pairing
-\(\widetilde H(X,\Z)=\widetilde H(S,\Z)\otimes H^*(E,\Z)\), of rank
-$48$ and signature $(24,24)$ — the K\"unneth tensor of the
+The even integral lattice carries the K\"unneth pairing
+\(\widetilde H(X,\Z)=\widetilde H(S,\Z)\otimes H^{\mathrm{even}}(E,\Z)\),
+of rank $48$ and signature $(24,24)$ — the K\"unneth tensor of the
 $(4,20)$-Mukai pairing on $\widetilde H(S,\Z)$ with the
-$(1,1)$-hyperbolic pairing on $H^*(E,\Z)$.  The hyperbolic-plane decomposition
-gives \(\widetilde H(S,\Z)\otimes H^*(E,\Z)\simeq
-U^{\oplus4}\oplus E_8(-1)^{\oplus2}\) tensored with the rank-2 hyperbolic
-plane \(U_E=H^0(E,\Z)\oplus H^2(E,\Z)\). This is the standard K\"unneth
-formula on smooth product manifolds; see Huybrechts \cite[Chapter~3]{HuybrechtsLehn}.
+$(1,1)$-hyperbolic pairing on the rank-2 lattice
+\(U_E=H^{\mathrm{even}}(E,\Z)=H^0(E,\Z)\oplus H^2(E,\Z)\).  The
+hyperbolic-plane decomposition gives
+\(\widetilde H(S,\Z)\otimes U_E\simeq
+U^{\oplus4}\oplus E_8(-1)^{\oplus2}\) tensored with \(U_E\); the odd
+K\"unneth term \(H^{\mathrm{odd}}(S)\otimes H^{\mathrm{odd}}(E)\) is
+absent because the K3 surface \(S\) carries no odd cohomology. See
+Huybrechts \cite[Chapter~3]{HuybrechtsLehn}.
 \end{proposition}
 
 \begin{proof}
