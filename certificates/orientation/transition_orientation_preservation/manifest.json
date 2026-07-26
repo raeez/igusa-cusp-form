@@ -1,0 +1,31 @@
+{
+  "schema_version": "transition_orientation_preservation_obstruction.v1",
+  "fixture_name": "transition_orientation_preservation",
+  "orientation_kind": "transition_orientation_preservation_obstruction",
+  "coefficient_ring": "F2",
+  "status": "TRANSITION_ORIENTATION_PRESERVATION_OBSTRUCTION_VERIFIED",
+  "orientation_transition_certification": false,
+  "mathematical_certification": false,
+  "orientation_packet_imported": true,
+  "transition_geometry_packet_imported": true,
+  "imports": [
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/moduli/finite_moduli_transition_geometry",
+    "certificates/moduli/k3e_finite_moduli"
+  ],
+  "tables": [
+    "orientation_transition_maps.csv",
+    "null_trivialization_transport.csv",
+    "multiplicative_weyl_transport.csv",
+    "transition_defects.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet verifies the obstruction ledger for transition preservation of Joyce-Upmeier orientations.",
+    "The reduced-orientation packet does not yet supply orientation line, quotient Borel, Weyl lift, Coxeter, strict transition, or Mittag-Leffler rows.",
+    "The finite-moduli transition-geometry packet does not yet supply stack transition morphisms.",
+    "The core transition-orientation tables are intentionally empty until Picard-groupoid transport rows and zero-defect rows are supplied.",
+    "It does not prove that transition maps preserve orientations."
+  ]
+}

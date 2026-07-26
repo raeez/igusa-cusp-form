@@ -1,0 +1,43 @@
+{
+  "schema_version": "rhomred_weyl_tau_square_obstruction.v1",
+  "fixture_name": "rhomred_weyl_tau_square",
+  "orientation_kind": "rhomred_weyl_tau_square_obstruction",
+  "status": "RHOMRED_WEYL_TAU_SQUARE_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "tau_transport_imported": true,
+  "orientation_obstruction_imported": true,
+  "type_ii_chamber_imported": true,
+  "maass_character_imported": true,
+  "tau_square_criterion_recorded": true,
+  "target_reflection_square_available": true,
+  "maass_square_available": true,
+  "tau_transport_rows_supplied": false,
+  "tau_square_rows_supplied": false,
+  "tau_square_proved": false,
+  "coxeter_coherence": false,
+  "transition_compatibility": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "imported_status_rows.csv",
+    "tau_square_obstruction_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_wall_transport_tau",
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/lattice/type_ii_chamber_isotropic",
+    "certificates/automorphic/delta5_maass_character"
+  ],
+  "limitations": [
+    "This packet verifies row 307 only as a tau_i involutivity criterion.",
+    "The type-II chamber packet supplies the target reflection relation but no Picard-groupoid lift.",
+    "The Maass character packet supplies square_value=1 but no orientation-line automorphism.",
+    "The reduced-orientation packet supplies no Weyl-lift rows and no tau_square_defect rows.",
+    "It does not prove tau_i squared equals one."
+  ]
+}

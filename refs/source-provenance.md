@@ -56,3 +56,14 @@
 - Source SHA-256: `23a0b7bb6dbc5952acc16b7ec4775cf153ce86bd1a11ba02e430f89687593d5f`
 - Processed text SHA-256: `86d1d15be4ba732d1e99495a871b6cce6efef2ee6f65f43af68dbcb250a60b4c`
 - Processing: copied into the repository before analysis; extracted with `pdftotext -layout`; assigned to the 2026-04-30 attack-heal swarm and cross-checked against the compact \(K3\times E\) realization constraints in `~/calabi-yau-quantum-groups`.
+
+## 2026-06-05 Research Paper Optimization
+
+- Raw source: `materials/raw/2026-06-05-k3xe-research-paper-optimization.pdf`
+- Processed text: `materials/processed/2026-06-05-k3xe-research-paper-optimization.txt`
+- Origin supplied by principal: `/Users/raeez/Desktop/corrections/k3xe Research Paper Optimization.pdf`
+- PDF metadata creation time: 2026-06-05 17:08:02 GST
+- PDF page count: 23
+- Source SHA-256: `2218e7d5a69c3825cf8c5a14ba3a59734f42e1403576d33c52f7f2d7c151a8c6`
+- Processed text SHA-256: `d0b55cb8ea9819062b61e3fcc1df6836ba3e3f43ae52a1f74874b4a19a485e99`
+- Processing: copied into the repository before analysis; extracted with `pdftotext -layout`; used to isolate primitive recognition, Hall bialgebra, orientation, Koszul, and Pfaffian residuals for the \(K3\times E\) realization programme.

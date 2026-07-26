@@ -1,0 +1,49 @@
+{
+  "schema_version": "rhomred_delta123_chart_orientation_obstruction.v1",
+  "fixture_name": "rhomred_delta123_chart_orientation",
+  "orientation_kind": "rhomred_delta123_chart_orientation_obstruction",
+  "status": "RHOMRED_DELTA123_CHART_ORIENTATION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "delta123_presentation_split_imported": true,
+  "wle3_target_parity_imported": true,
+  "compact_hall_ledger_imported": true,
+  "finite_pfaffian_ledger_imported": true,
+  "isotropic_aij_chart_orientation_imported": true,
+  "delta123_chart_orientation_criterion_recorded": true,
+  "target_delta123_parity_certified": true,
+  "target_delta123_decomposition_certified": true,
+  "source_delta123_chart_rows_supplied": false,
+  "source_parity_rows_supplied": false,
+  "quotient_orientation_rows_supplied": false,
+  "determinant_square_rows_supplied": false,
+  "transition_rows_supplied": false,
+  "delta123_orientation_computed": false,
+  "orientation_sign_claimed_unconditionally": false,
+  "row332_parity_compatibility_claimed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "delta123_chart_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/targets/delta5_gn_kac/delta123_presentation_split",
+    "certificates/targets/delta5_gn_kac/wle3_target_parity",
+    "certificates/sources/k3e_compact_hall",
+    "certificates/pfaffian/k3e_finite_pfaffian",
+    "certificates/orientation/rhomred_isotropic_aij_chart_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 331 only as the source chart-orientation criterion for the delta123 chart.",
+    "The imported delta123 data are target presentation and target parity only.",
+    "No compact Hall delta123 source chart row is supplied.",
+    "No source parity row realizing 29 even and 93 odd summands is supplied.",
+    "No source real-real-real, mixed real-isotropic, or odd imaginary-simple rows are supplied.",
+    "No quotient-orientation, determinant-square, or transition rows are supplied for the delta123 chart.",
+    "It does not prove the row 332 orientation-line compatibility with the 29|93 split."
+  ]
+}

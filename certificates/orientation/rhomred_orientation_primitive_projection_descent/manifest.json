@@ -1,0 +1,51 @@
+{
+  "schema_version": "rhomred_orientation_primitive_projection_descent_obstruction.v1",
+  "fixture_name": "rhomred_orientation_primitive_projection_descent",
+  "orientation_kind": "rhomred_orientation_primitive_projection_descent_obstruction",
+  "status": "RHOMRED_ORIENTATION_PRIMITIVE_PROJECTION_DESCENT_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "e_quotient_descent_imported": true,
+  "hall_coproduct_descent_imported": true,
+  "theta_mu_primitives_imported": true,
+  "transition_primitive_subspace_imported": true,
+  "compact_hall_source_imported": true,
+  "primitive_projection_descent_criterion_recorded": true,
+  "theta_primitive_available_for_supplied_rows": true,
+  "theta_projection_available_for_supplied_rows": true,
+  "theta_kernel_intertwining_available_for_supplied_rows": true,
+  "quotient_orientation_rows_supplied": false,
+  "hall_coproduct_orientation_descent_supplied": false,
+  "source_hall_coproduct_rows_supplied": false,
+  "source_counit_rows_supplied": false,
+  "source_primitive_kernel_rows_supplied": false,
+  "source_primitive_projection_rows_supplied": false,
+  "primitive_projection_descent": false,
+  "transition_compatibility": false,
+  "protected_integration": false,
+  "aggregate_hybrid_population": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "imported_status_rows.csv",
+    "primitive_projection_descent_obstruction_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_orientation_e_quotient_descent",
+    "certificates/orientation/rhomred_orientation_hall_coproduct_descent",
+    "certificates/hybrid/quotient_after_correspondence_theta_mu_primitives",
+    "certificates/hall/transition_primitive_subspace_preservation",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "limitations": [
+    "This packet verifies row 305 only as a primitive-projection descent criterion for quotient orientations.",
+    "The theta_mu_primitives packet provides compatibility only after finite primitive kernel and projection rows are supplied.",
+    "The compact Hall source table supplies no Hall coproduct D rows no counit rows no primitive kernels and no primitive projection matrices.",
+    "The transition primitive-subspace packet records empty core transition tables.",
+    "It does not prove that orientation descent commutes with primitive projection."
+  ]
+}

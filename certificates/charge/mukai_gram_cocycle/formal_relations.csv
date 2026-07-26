@@ -1,0 +1,10 @@
+relation_id,relation_kind,computed_value,expected_value,defect_rank,source_reference,check_status,notes
+pi_integrality,integrality,1,1,0,charges.csv Pi rows,verified,Pi_X is integer-valued on supplied formal charges
+b_symmetry,symmetry,1,1,0,cocycle_pairs.csv B rows,verified,B is symmetric on supplied rows
+b_bilinearity,bilinearity,1,1,0,Appendix C bilinear formula,verified,B is bilinear by the displayed Mukai pairing formula
+b_coboundary,coboundary,1,1,0,cocycle_pairs.csv Pi sum rows,verified,B equals Pi(c+cprime)-Pi(c)-Pi(cprime)
+b_polarization,polarization,1,1,0,linear_trivialization.csv diagonal rows,verified,diagonal B equals twice Pi on supplied rows
+split_section_additive,normal_ordering,1,1,0,normal_ordering.csv split row,verified,normal-ordered split section is additive
+raw_placement_nonadditive,normal_ordering,3,3,0,normal_ordering.csv raw defect rows,verified,raw placement has nonzero B in three displayed rows
+overline_pi_homomorphism,normal_ordering,1,1,0,normal_ordering.csv overline rows,verified,overline Pi is additive on displayed normal-ordered products
+no_linear_trivialization,linear_primitive,1,1,0,linear_trivialization.csv diagonal rows,verified,no additive linear primitive can have nonzero diagonal coboundary

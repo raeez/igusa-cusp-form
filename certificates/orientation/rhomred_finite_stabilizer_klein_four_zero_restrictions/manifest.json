@@ -1,0 +1,45 @@
+{
+  "schema_version": "rhomred_finite_stabilizer_klein_four_zero_restrictions.v1",
+  "fixture_name": "rhomred_finite_stabilizer_klein_four_zero_restrictions",
+  "orientation_kind": "rhomred_finite_stabilizer_klein_four_zero_restrictions",
+  "status": "RHOMRED_FINITE_STABILIZER_KLEIN_FOUR_ZERO_RESTRICTIONS_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "klein_four_class_imported": true,
+  "coefficient_identities_imported": true,
+  "zero_criterion_verified": true,
+  "beta_zero_equivalence_verified": true,
+  "missing_zero_rows_recorded": true,
+  "retained_e2_edge_row_supplied": false,
+  "cyclic_restriction_rows_supplied": false,
+  "r_values_supplied": false,
+  "r_values_zero_verified": false,
+  "b_coefficients_zero_verified": false,
+  "beta_vanishing_verified": false,
+  "linearization_rows_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "zero_criterion_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "remaining_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_klein_four_class",
+    "certificates/orientation/rhomred_finite_stabilizer_klein_four_b20",
+    "certificates/orientation/rhomred_finite_stabilizer_klein_four_b11",
+    "certificates/orientation/rhomred_finite_stabilizer_klein_four_b02",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 295 only as an algebraic zero criterion and an obstruction record.",
+    "It proves beta_E2_edge=0 iff r1=r2=r3=0 after the row 292-294 coefficient identities.",
+    "It does not supply retained cyclic restriction rows, values of r1 r2 r3, a finite-stabilizer beta zero row, zero linearization, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration.",
+    "A geometric proof of r1=r2=r3=0 requires retained finite-stabilizer zero restriction rows or an equivalent edge-reduced vanishing row."
+  ]
+}

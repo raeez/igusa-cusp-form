@@ -1,0 +1,9 @@
+row_id,n,l,m,sector_id,gamma_eff_member,phi_index_n,phi_l,coefficient,active,alpha_f2,alpha_f3,alpha_fm2,delta1_coeff,delta2_coeff,delta3_coeff,delta_coeff_nonnegative,source_reference,check_status,notes
+delta1,1,1,0,n_positive_boundary,true,0,1,1,true,2,-1,0,1,0,0,true,theta_series_phi_01_exact; GN root map,verified,active row mapping to delta_1
+delta2,0,1,1,m_positive,true,0,1,1,true,0,-1,2,0,1,0,true,theta_series_phi_01_exact; GN root map,verified,active row mapping to delta_2
+delta3,0,-1,0,negative_l_boundary,true,0,-1,1,true,0,1,0,0,0,1,true,theta_series_phi_01_exact; GN root map,verified,active row mapping to delta_3
+delta1_plus_delta3,1,0,0,n_positive_boundary,true,0,0,10,true,2,0,0,1,0,1,true,theta_series_phi_01_exact; GN root map,verified,active row mapping to delta_1 plus delta_3
+delta2_plus_delta3,0,0,1,m_positive,true,0,0,10,true,0,0,2,0,1,1,true,theta_series_phi_01_exact; GN root map,verified,active row mapping to delta_2 plus delta_3
+timelike_first,1,1,1,m_positive,true,1,1,-64,true,2,-1,2,1,1,1,true,theta_series_phi_01_exact; GN root map,verified,first timelike active row
+inactive_negative_delta_coeff,1,3,1,m_positive,true,1,3,0,false,2,-3,2,1,1,-1,false,theta_series_phi_01_exact; GN root map,verified,inactive row has zero exponent despite effective ordering
+inactive_boundary_zero,0,2,1,m_positive,true,0,2,0,false,0,-2,2,0,1,-1,false,theta_series_phi_01_exact; GN root map,verified,inactive boundary row with zero q0 coefficient

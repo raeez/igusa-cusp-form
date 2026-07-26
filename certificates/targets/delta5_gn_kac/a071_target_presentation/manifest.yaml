@@ -1,6 +1,6 @@
 schema: a071_target_presentation_fixture
 target: delta5_gn_kac
-window: A071_Wle7_relation_closed_target_rows
+window: A071_added_target_rows_not_relation_closed
 generator: compute/build_target_presentation_fixture.py
 deterministic: true
 target_only: true
@@ -10,9 +10,19 @@ compact_source_firewall:
   feeds_compact_source_comparison: false
 scope:
   active_target_parity_rows: 12
-  signed_only_blocked_rows: 4
+  signed_only_blocked_rows: 7
   target_basis_vectors: 426
-  simple_generator_entries_total_count: 837
+  simple_generator_entries_total_count: 999
+target_presentation_payload:
+  required_for_source_comparison:
+    - full_even_odd_parity_dimensions
+    - relation_rows
+    - positive_negative_pairing_blocks
+    - target_radical_blocks
+    - pbw_rows
+    - row_provenance
+  signed_dimension_rows_are_payload: false
+  imaginary_simple_counts_are_payload: false
 active_rows:
   doubled_isotropic: 2a_ij:10|0
   complementary_weyl_delta123: C_{k,3}:29|93
@@ -20,6 +30,7 @@ active_rows:
   complementary_terminal_zero: C_{k,5}:0|0
 blocked_rows:
   C_{k,2}: signed_only_blocked
+  D_k: signed_only_blocked
   2delta123: signed_only_blocked
 provenance_sources:
   gn_kac_base: GN/Kac target presentation arithmetic
@@ -35,7 +46,7 @@ limitations:
   - no compact source pairings
   - no compact source radicals
   - no source PBW or no-extra theorem
-  - C_{k,2} and 2delta123 do not feed target basis or PBW rows
+  - C_{k,2}, D_k, and 2delta123 do not feed target basis or PBW rows
 files:
   - manifest.yaml
   - target_degrees.csv

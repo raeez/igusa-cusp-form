@@ -8,7 +8,7 @@ envelope $\mathsf{Den}_{\Delta_5,E}=U_E^{\mathrm{ch}}(\operatorname{Cur}_E(\math
 the chiral enveloping algebra of the level-zero current algebra of the
 BKM denominator algebra over $E$
 (Definition~\ref{def:bkm-formal-current-envelope}).  Source--target
-separation is load-bearing.  The target counit
+separation is structural.  The target counit
 \[
 \varepsilon_{\Delta,R}:
 \Omega_E^{\mathrm{ch}}\bar B_E^{\mathrm{ch}}
@@ -19,16 +19,17 @@ separation is load-bearing.  The target counit
 is internal to the imported denominator current envelope and produces
 no source data.  The compact Koszul comparison
 $\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}$ is a
-source-to-target theorem on the supplied hybrid source, conditional
-on the named obstructions.
+source-to-target statement on the supplied hybrid source, conditional
+on the chiral Koszul source datum, the finite Koszul comparison datum,
+and strict Koszul Mittag--Leffler exactness.
 
 The Beilinson cut applies in its purest form on this lane.  $\bar
 B^{\mathrm{ch}}$ is MC twisting / coupling coalgebra; it is not the
-bulk.  The bulk is $\mathsf{Den}_{\Delta_5,E}$ itself, the chiral
-shadow of the BKM denominator algebra; the source coalgebra $C_X$ is
-the supplied compact Hall data after collision coproduct, conilpotent
-filtration, and bar-length truncation, and the cobar map is the
-comparison.
+level-\(\mathsf Z\) bulk.  The target of the lane is
+$\mathsf{Den}_{\Delta_5,E}$, the chiral shadow of the BKM denominator
+algebra; the source coalgebra $C_X$ is the supplied compact Hall data
+after collision coproduct, conilpotent filtration, and bar-length
+truncation, and the cobar map is the comparison.
 
 \subsubsection*{Source--target separation}
 
@@ -45,9 +46,10 @@ C_{X,R},\qquad F^{\mathrm{co}}_{R,\bullet},\qquad
 \Delta_R^{\mathrm{ch}}
 \]
 from the finite hybrid correspondence category
-$\mathsf{Corr}^{E,\mathrm{hyb}}_R$, its quotient functor $Q_{E,R}$,
-orientations, the eight-word two-step binary flag atlas, and the
-separate higher coloured configuration residual; only then may it
+$\mathsf{Corr}^{E,\mathrm{hyb}}_R$, the quotient-after-correspondence
+pseudofunctor inducing $Q_{E,R}$, orientations, the eight-word two-step
+binary flag atlas, and the separate higher-coloured configuration
+residual; only then may it
 compare
 \[
 b_{X,R}:C_{X,R}\simeq
@@ -67,10 +69,10 @@ The domain of $\varepsilon_{\Delta,R}$ contains only target
 augmentation, target charge filtration, and target chiral
 operations; it does not contain rigidified wrapped prequotients,
 anchors, mixed local/wrapped correspondences,
-quotient-after-correspondence functor, orientation transport,
+quotient-after-correspondence pseudofunctor, orientation transport,
 protected integration, or primitive representatives.  These are the
 data from which the source coalgebra and collision coproduct are
-required to be built.
+defined.
 \end{proof}
 
 \subsubsection*{Chiral Koszul source datum}
@@ -94,7 +96,9 @@ except for the terminal comparison with the imported target.
 \begin{enumerate}
 \item \emph{Source chiral object.}  $\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}$
 is the finite hybrid object of \S\ref{subsec:hybrid-ran-carrier},
-with $\mathfrak O_{\mathrm{hyb},R}=0$.
+with $\mathfrak O_{\mathrm{hyb},R}=0$ and with a supplied wrapped
+bar-cobar domain datum.  The wrapped sector is not made Koszul by the
+projection-finite \(b=0\) Ran sector.
 \item \emph{Conilpotent chiral coalgebra.}  $C_{X,R}$ is a coaugmented
 conilpotent chiral coalgebra on $E$, filtered by a finite increasing
 source charge filtration $F^{\mathrm{co}}_{R,\bullet}$; reduced iterated
@@ -102,8 +106,9 @@ coproduct nilpotent on each finite stage.
 \item \emph{Collision coproduct.}  $\Delta_R^{\mathrm{ch}}$ is the
 collision coproduct from the finite Hall correspondences (local-local,
 ordered local-wrapped, wrapped-wrapped, and eight-word flag stacks),
-defined before $Q_{E,R}$; after quotient it satisfies coassociativity
-and counitality.  Transition maps $\rho^C_{R'R}$ commute with
+defined before $Q_{E,R}$; the quotient coalgebra identities are the
+vanishing of the higher-coloured, unit, refinement, and quotient
+residuals.  Transition maps $\rho^C_{R'R}$ commute with
 $\Delta^{\mathrm{ch}}$.
 \item \emph{Bar comparison.}  $b_{X,R}:C_{X,R}\simeq
 \bar B_E^{\mathrm{ch}}(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}},
@@ -111,7 +116,8 @@ $\Delta^{\mathrm{ch}}$.
 is a charge-preserving quasi-isomorphism of conilpotent chiral
 coalgebras compatible with primitive projection, the completed Hopf
 pairing, the reduced $E$-quotient, and the normal-ordered descent
-$\overline\Pi_{X,*}^\Theta$.
+$\overline\Pi_{X,*}^\Theta$, separately on the projection-finite and
+wrapped summands and on their mixed words.
 \item \emph{Cobar comparison with the target envelope.}
 $\Theta_{\mathrm{Kos},R}:\Omega_E^{\mathrm{ch}}C_{X,R}\simeq
 \mathsf{Den}_{\Delta_5,E,\le R}$
@@ -132,6 +138,7 @@ The exact finite Koszul obstruction tuple is
 \mathfrak o^{\Delta,\mathrm{ch}}_R,
 \{\mathfrak o^{C,\mathrm{tr}}_{R'R}\}_{R'\ge R},
 \mathfrak o^b_R,\mathfrak o^\Omega_R,
+\mathfrak o^{\mathrm{wrKos}}_R,
 \mathfrak o^{\mathrm{hyb}}_R,
 \mathfrak o^\Pi_R,
 \mathfrak o^{\mathrm{sep}}_R,
@@ -169,7 +176,8 @@ filtered by bar-length, with deconcatenation collision coproduct
 +[x_1|\cdots|x_p]\otimes\mathbf 1
 +\sum_{i=1}^{p-1}[x_1|\cdots|x_i]\otimes[x_{i+1}|\cdots|x_p],
 \]
-realizes a chiral Koszul source datum with
+realizes the coalgebra and source-bar part of a chiral Koszul source
+datum with
 $\mathfrak o^C_R=\mathfrak o^{\mathrm{fil}}_R=
 \mathfrak o^{\mathrm{conil}}_R=\mathfrak o^{\Delta,\mathrm{ch}}_R=0$
 and $b_{X,R}=\mathrm{id}$.
@@ -184,18 +192,32 @@ deconcatenation coproduct on each ordered word is realized by
 cutting the corresponding ordered collision flag in
 $\mathsf{Corr}^{E,\mathrm{hyb}}_R$; admissibility of pull-push and
 Thom--Sebastiani transport are part of $\mathfrak O_{\mathrm{hyb},R}=0$.
-The eight-word flag pentagon and four-input pentagon are
-coassociativity; vacuum collision flags are counitality.  After at
-most $p\le N_R$ reduced iterations, every branch has length one and
+The eight-word flag pentagon gives binary coassociativity; the
+higher-coloured, unit, refinement, and quotient coherences contained in
+$\mathfrak O_{\mathrm{hyb},R}=0$ give the chiral coalgebra identities.
+After at most $p\le N_R$ reduced iterations, every branch has length one and
 the next reduced coproduct is zero, so $(\overline\Delta_R^{\mathrm{bar}})^{N_R+1}=0$.
 \end{proof}
 
-\subsubsection*{Remaining cobar obstruction}
+The finite packet
+\(\texttt{certificates/charge/bar\_pushforward\_commutation}\) supplies
+only the grading fact used in the preceding construction: for the
+additive normal-ordered map
+\(\overline\Pi_X:\widehat\Gamma_X\to\Gamma_{\mathrm{gram}}\), finite
+bar words, deconcatenation, and multiplication terms have the same
+Gram degree before and after pushforward.  It does not supply
+\(\mathfrak O_{\mathrm{hyb},R}=0\), the wrapped bar-cobar domain, the
+source-internal counit, or the source-to-target chiral
+quasi-isomorphism.
 
-The bar coalgebra is supplied; the cobar map is not.  Two
-independent residuals remain.
+\subsubsection*{Cobar obstruction}
 
-\begin{corollary}[Remaining source-to-target cobar obstruction;
+The canonical source gives a conilpotent chiral bar coalgebra.  A
+cobar quasi-isomorphism to the denominator chiral algebra is an
+additional datum, consisting of a source-internal bar-cobar counit and
+a source-to-target chiral algebra quasi-isomorphism.
+
+\begin{corollary}[Source-to-target cobar obstruction;
 \textit{proved}]
 \label{cor:source-bar-remaining-cobar-obstruction}
 Under the hypotheses of
@@ -203,7 +225,8 @@ Proposition~\ref{prop:canonical-source-bar-coalgebra}, a cobar
 quasi-isomorphism $\Theta_{\mathrm{Kos},R}$ requires:
 \begin{enumerate}
 \item \emph{Source-internal bar-cobar counit.}  The supplied hybrid
-source must lie in the Beilinson--Drinfeld/Francis--Gaitsgory
+source, including the wrapped summands and mixed local/wrapped words,
+must lie in the Beilinson--Drinfeld/Francis--Gaitsgory completed
 bar-cobar domain \cite[Theorem~6.2.2]{FrancisGaitsgoryCKD}, with the
 source-internal counit
 \[
@@ -215,6 +238,7 @@ a quasi-isomorphism in the chosen completed/coderived conilpotent
 category.  Defects:
 $\mathfrak o^{\varepsilon,\mathrm{src}}_R=
 (\mathfrak o^{\mathrm{aug}}_R,\mathfrak o^{\mathrm{FG}}_R,
+\mathfrak o^{\mathrm{wrKos}}_R,
 H^\bullet\operatorname{Cone}\varepsilon^{\mathrm{src}}_{\mathrm{bar},R})$.
 \item \emph{Source-to-target chiral algebra quasi-isomorphism.}
 $\vartheta_R:\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}
@@ -236,6 +260,230 @@ residual is $\mathfrak o^\Omega_R=(\mathfrak o^{\varepsilon,\mathrm{src}}_R,
 \mathfrak o^\vartheta_R)$.  No homotopy inverse to the target counit
 $\varepsilon_{\Delta,R}$ enters this construction.
 \end{corollary}
+
+\begin{definition}[Finite Koszul comparison datum]
+\label{def:finite-koszul-comparison-datum}
+Fix a finite HN height \(R\), and suppose the finite-stage chiral
+Koszul source datum
+\(\mathfrak K^{\mathrm{Kos}}_{X,R}\) of
+Definition~\ref{def:chiral-koszul-source-datum} is fixed.  A finite
+Koszul comparison datum is
+\[
+\mathfrak K^{\mathrm{cmp}}_{X,R}
+=\bigl(
+\varepsilon^{\mathrm{src}}_{\mathrm{bar},R},
+\vartheta_R,
+H^{W}_{R},
+H^{\mathrm{Pf}}_{R},
+H^{\mathrm{Hall}}_{R},
+H^{\mathrm{rad}}_{R},
+H^{\mathrm{PBW}}_{R},
+H^{\mathrm{tr}}_{R'R}\bigr)
+\]
+with the following finite chain-level clauses.
+\begin{enumerate}
+\item[\textup{(K0)}] \emph{Two quasi-isomorphism cones.}
+The source-internal bar-cobar counit
+\[
+\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}:
+\Omega_E^{\mathrm{ch}}C_{X,R}\longrightarrow
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}
+\]
+and the source-to-target chiral algebra morphism
+\[
+\vartheta_R:\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}
+\longrightarrow \mathsf{Den}_{\Delta_5,E,\le R}
+\]
+are supplied with finite filtrations by HN height, bar length,
+local/wrapped word, and parity.  Their cone cohomology groups vanish in
+each filtered piece.
+\item[\textup{(K1)}] \emph{Weyl compatibility.}
+For every retained type-II simple reflection \(s_{\delta_i}\) and
+chosen lift \(\tau_{i,R}\), the square comparing the source Weyl
+transport on \(C_{X,R}\) with the target Weyl action on
+\(\mathsf{Den}_{\Delta_5,E,\le R}\) commutes up to a specified
+homotopy \(H^{W}_{i,R}\).  The Coxeter and chamber-overlap defect
+complexes of these homotopies are acyclic.
+\item[\textup{(K2)}] \emph{Pfaffian orientation compatibility.}
+The determinant line of the finite cobar comparison is identified with
+the Pfaffian-line transport of \((O1)^+\) and the
+\((O2_{\mathrm{atlas}})\) wall datum.  On each type-II wall chart the
+induced sign is the rank-one Pfaffian sign
+\(\epsilon_{o,R}(s_{\delta_i})\); after the target comparison it is
+\(\nu_{\Delta_5}(s_{\delta_i})\).  The difference is the finite defect
+of \(H^{\mathrm{Pf}}_{R}\), required to vanish.
+\item[\textup{(K3)}] \emph{Hall product, coproduct, and pairing
+compatibility.}
+On primitive classes, \(\vartheta_R\circ
+\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}\) intertwines the Hall
+supercommutator, collision coproduct, unit, counit, and Hopf pairing
+with the corresponding operations in the finite target presentation.
+Equivalently the finite matrices \(M,D,\eta,\epsilon,B,G\) of
+Definition~\ref{def:finite-source-proof-tables} are carried to the
+target product, coproduct, bracket, and invariant pairing blocks.
+\item[\textup{(K4)}] \emph{Radical quotient compatibility.}
+The primitive restriction maps the finite source Hopf radical onto the
+finite GN/Kac radical block and induces the comparison on radical
+quotients:
+\[
+\operatorname{Rad}^{\Pi}_{X,R}
+\xrightarrow{\ \Theta_{\mathrm{Kos},R}|_{\Prim}\ }
+\operatorname{Rad}_{\mathrm{GN},R},
+\qquad
+P^{\Pi,\mathrm{red}}_{X,R}
+\xrightarrow{\ \iota_R^{\Prim}\ }
+\mathfrak g_{\Delta_5,\le R}.
+\]
+The kernel and cokernel defect complexes of this quotient square are
+zero.
+\item[\textup{(K5)}] \emph{PBW and primitive-recognition
+compatibility.}
+The primitive restriction of
+\(\Theta_{\mathrm{Kos},R}\) is the same map
+\(\iota_R^{\Prim}\) used in primitive recognition, and it preserves the
+PBW filtrations on the source and target enveloping algebras.  The
+associated-graded comparison agrees with the PBW rows of
+Definition~\ref{def:finite-source-proof-tables}.
+\item[\textup{(K6)}] \emph{Strict transitions.}
+For \(R'\ge R\), the transition homotopy \(H^{\mathrm{tr}}_{R'R}\)
+identifies the two composites obtained by first applying
+\(\Theta_{\mathrm{Kos},R'}\) and then truncating, or first truncating
+the source data and then applying \(\Theta_{\mathrm{Kos},R}\).  The
+same strictness holds for the Weyl, Pfaffian, Hall-pairing, radical,
+and PBW compatibility complexes.
+\item[\textup{(K7)}] \emph{Koszul Mittag--Leffler exactness with
+compatibility.}
+The inverse systems of the two quasi-isomorphism cones and of all
+defect complexes in \((K1)\)--\((K6)\) are strict
+Mittag--Leffler systems; \(R^1\varprojlim=0\) for each of them.
+\end{enumerate}
+The finite Koszul comparison residual
+\[
+\mathfrak O_{\mathrm{Kcmp},R}
+=\bigl(
+H^\bullet\Cone\varepsilon^{\mathrm{src}}_{\mathrm{bar},R},
+H^\bullet\Cone\vartheta_R,
+\mathfrak o^W_R,\mathfrak o^{\mathrm{Pf}}_R,
+\mathfrak o^{\mathrm{Hall}}_R,\mathfrak o^{\mathrm{rad}}_R,
+\mathfrak o^{\mathrm{PBW}}_R,\mathfrak o^{\mathrm{tr}}_{R'R},
+\mathfrak o^{\mathrm{ML}}_{\mathrm{Kcmp}}\bigr)
+\]
+vanishes exactly when \((K0)\)--\((K7)\) hold.  A target-internal
+bar-cobar counit, a primitive restriction, or a scalar denominator
+identity supplies none of these compatibility homotopies.
+
+After choosing finite homogeneous bases, the datum is recorded by three
+source tables:
+\[
+\texttt{koszul\_cones},\qquad
+\texttt{koszul\_comparison\_identities},\qquad
+\texttt{koszul\_transition\_ml}.
+\]
+The first table records the two acyclic cones
+\(\texttt{source\_bar\_cobar\_counit}\) and
+\(\texttt{source\_to\_target\_quasi\_isomorphism}\), with zero
+cohomology rank in every HN, bar-length, word, and parity block.  The
+second table records zero finite defects for
+\[
+\texttt{weyl\_action},\quad
+\texttt{pfaffian\_orientation},\quad
+\texttt{hall\_product},\quad
+\texttt{hall\_coproduct},\quad
+\texttt{hopf\_pairing},\quad
+\texttt{radical\_quotient},\quad
+\texttt{pbw}.
+\]
+The third table records strict transition and Mittag--Leffler
+vanishing for
+\[
+\texttt{source\_cone},\quad \texttt{target\_cone},\quad
+\texttt{weyl\_action},\quad \texttt{pfaffian\_orientation},\quad
+\texttt{hall\_pairing},\quad \texttt{radical\_quotient},\quad
+\texttt{pbw},
+\]
+with \(R^1\varprojlim\)-rank zero.  These rows require geometric source
+provenance and proof references, just as the Hall and
+primitive-recognition tables do.
+\end{definition}
+
+\begin{proposition}[Finite Koszul comparison compatibility;
+\textit{conditional on \(\mathfrak K^{\mathrm{cmp}}_{X,R}\)}]
+\label{prop:finite-koszul-comparison-compatibility}
+If the finite Koszul comparison datum
+\(\mathfrak K^{\mathrm{cmp}}_{X,R}\) is supplied and
+\(\mathfrak O_{\mathrm{Kcmp},R}=0\), then
+\[
+\Theta_{\mathrm{Kos},R}
+=\vartheta_R\circ\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}
+:\Omega_E^{\mathrm{ch}}C_{X,R}\xrightarrow{\simeq}
+\mathsf{Den}_{\Delta_5,E,\le R}
+\]
+is a quasi-isomorphism of augmented chiral algebras whose primitive
+restriction respects the Weyl action, the Pfaffian orientation
+character, the Hall product/coproduct, the Hopf pairing, the radical
+quotient, and the PBW associated graded on the finite window.
+\end{proposition}
+
+\begin{proof}
+Clause (K0) gives the quasi-isomorphism by acyclicity of the two cones.
+Clauses (K1)--(K2) identify the Weyl and Pfaffian-orientation squares,
+with zero Coxeter and wall-sign defects.  Clause (K3) says that the
+source Hall operations and Hopf pairing are carried to the finite
+target blocks, so the primitive bracket and pairing used by
+recognition are the restrictions of the same cobar comparison.  Clause
+(K4) identifies the radical quotient, and (K5) identifies the PBW
+associated gradeds.  The conclusion is therefore a finite diagram
+chase in the common homogeneous bases.  No scalar Borcherds product or
+target-internal counit participates in these diagrams.
+\end{proof}
+
+\begin{proposition}[Primitive restriction is not a Koszul
+quasi-isomorphism; \textit{proved}]
+\label{prop:primitive-restriction-not-koszul}
+Let
+\[
+\vartheta_R:\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}
+\longrightarrow \mathsf{Den}_{\Delta_5,E,\le R}
+\]
+be a morphism of augmented chiral algebras whose restriction to the
+constant-current primitive summand agrees with
+\(\iota_R^{\Prim}\).  This primitive restriction does not imply that
+\(\vartheta_R\) is a quasi-isomorphism.  The required finite
+obstruction is the full cohomology
+\[
+H^\bullet\operatorname{Cone}(\vartheta_R)
+\]
+on every HN weight, bar length, local/wrapped word, and parity block.
+Consequently the chiral Koszul comparison
+\(\Theta_{\mathrm{Kos},R}\) is proved only after the source-internal
+counit cone and the source-to-target cone are acyclic, compatibly in
+\(R\).
+\end{proposition}
+
+\begin{proof}
+The assertion already fails for ordinary augmented dg algebras, hence
+also for constant chiral algebras on \(E\).  Let \(B\) be any augmented
+dg algebra and let \(M\) be a non-zero dg \(B\)-bimodule placed in a
+nonprimitive HN weight, with zero differential.  The square-zero
+extension \(A=B\oplus M\) has multiplication
+\[
+(b,m)(b',m')=(bb',bm'+mb'),\qquad MM=0,
+\]
+and the projection \(p:A\to B\) is a morphism of augmented dg
+algebras.  On the chosen primitive summand of \(B\subset A\), \(p\) is
+the identity.  But
+\[
+H^\bullet\operatorname{Cone}(p)\cong H^\bullet(M)[1]\ne0.
+\]
+Thus agreement on primitives detects only the selected weight-one
+summand.  It does not see square-zero, wrapped, mixed, higher
+bar-length, or parity-cancelling classes in the source.  In the
+Dirac--Igusa notation these missing classes are exactly the cone
+terms in
+\(\mathfrak o^{\varepsilon,\mathrm{src}}_R\) and
+\(\mathfrak o^\vartheta_R\), together with the Koszul
+Mittag--Leffler obstruction in the inverse system.
+\end{proof}
 
 \subsubsection*{Class M completion and chiral Koszulness}
 
@@ -273,6 +521,14 @@ b_X:C_X\xrightarrow{\simeq}
 \Theta_{\mathrm{Kos}}:\Omega_E^{\mathrm{ch}}C_X
 \xrightarrow{\simeq}\mathsf{Den}_{\Delta_5,E}.
 \]
+If, in addition, the finite Koszul comparison data
+\(\mathfrak K^{\mathrm{cmp}}_{X,R}\) of
+Definition~\ref{def:finite-koszul-comparison-datum} are supplied for a
+cofinal HN subsystem and satisfy the strict compatibility
+Mittag--Leffler condition \((K7)\), then the inverse-limit map
+\(\Theta_{\mathrm{Kos}}\) respects the Weyl action, Pfaffian
+orientation character, Hall product/coproduct, Hopf pairing, radical
+quotient, and PBW associated graded.
 This identifies the supplied source cobar algebra with the formal
 target current envelope; it does not construct the $E_3$-source, the
 hybrid wrapped Hall correspondences, the orientation line, the
@@ -287,42 +543,54 @@ counital collision coproduct, and continuity hypotheses.  The
 coradical filtration is finite on every $\Gamma_R^\Pi$-truncation;
 the Koszul Mittag--Leffler hypothesis kills $R^1\varprojlim$ on the
 cones of $b_{X,R}$ and $\Theta_{\mathrm{Kos},R}$, giving completed
-quasi-isomorphisms.  Without that exactness one obtains only a
-compatible pro-quasi-isomorphism.
+quasi-isomorphisms.  If the finite comparison data are present, the
+same argument applied to the Weyl, Pfaffian, Hall-pairing, radical, and
+PBW defect complexes in \((K1)\)--\((K7)\) passes the zero finite
+defects to the inverse limit.  Without that exactness one obtains only
+a compatible pro-quasi-isomorphism, with no theorem-level control of
+these recognition compatibilities.
 \end{proof}
 
 \subsubsection*{Chiral MC twisting / coupling coalgebra}
 
-Bar is twisting; bar is not bulk.  The reduced bar coalgebra
+Bar is twisting; bar is not the level-\(\mathsf Z\) bulk.  The reduced bar coalgebra
 $\bar B_E^{\mathrm{ch}}(\mathcal F_X^{\mathrm{hyb}})$ is the
 Maurer--Cartan coupling coalgebra of the supplied hybrid chiral
 algebra: its primitive elements are the chain-level inputs of MC
 twisting in the Beilinson--Drinfeld/Francis--Gaitsgory framework,
 and its grouplike completion records the homotopy-coherent twisting
-data.  The bulk of the present manuscript is the imported denominator
-algebra $\mathsf{Den}_{\Delta_5,E}$, equivalently the chiral
-$Z^{\mathrm{der}}_{\mathrm{ch}}$ centre of the relevant
-boundary algebra in the parallel chiral-bar-cobar volumes; the
-Koszul comparison maps $C_X$, an instance of MC coupling, into the
-target chiral algebra by the cobar construction.
+data.  The level-\(\mathsf Z\) bulk in Vol~II is
+$Z^{\mathrm{der}}_{\mathrm{ch}}(A)$ for the relevant boundary algebra
+$A$; the visible target is its BKM chiral shadow
+$\mathsf{Den}_{\Delta_5,E}$.  The Koszul comparison maps $C_X$, an
+instance of MC coupling, into that target chiral algebra by the cobar
+construction.
 
-\subsubsection*{Status under the obstruction tuple}
+\subsubsection*{The Koszul obstruction class}
 
 The Koszul lane carries the residuals
 \[
-\mathfrak O_{\mathrm{Kos},R}\quad\text{and}\quad
+\mathfrak O_{\mathrm{Kos},R},\qquad
+\mathfrak O_{\mathrm{Kcmp},R},\qquad
 \mathfrak o^{\mathrm{ML},\mathrm{Kos}}_{R'R}.
 \]
 With $\mathfrak O_{\mathrm{hyb},R}=0$ and the canonical source-bar
 construction, the coalgebra defects vanish; only the cobar residual
 $\mathfrak o^\Omega_R=(\mathfrak o^{\varepsilon,\mathrm{src}}_R,
-\mathfrak o^\vartheta_R)$ remains.  Discharge of the source-internal
-counit and the source-to-target chiral algebra quasi-isomorphism
+\mathfrak o^\vartheta_R)$ remains, with the wrapped Koszul defect
+\(\mathfrak o^{\mathrm{wrKos}}_R\) included in
+\(\mathfrak o^{\varepsilon,\mathrm{src}}_R\).  Vanishing of the source-internal
+counit defect and construction of the source-to-target chiral algebra quasi-isomorphism
 operates in the completed Beilinson--Drinfeld/Francis--Gaitsgory
-bar-cobar domain; the Koszul Mittag--Leffler hypothesis controls the
-inverse-system passage.
+bar-cobar domain.  The comparison residual
+\(\mathfrak O_{\mathrm{Kcmp},R}\) is separate: it records whether this
+quasi-isomorphism respects the Weyl action, Pfaffian orientation,
+Hall pairing, radical quotient, and PBW filtration used by primitive
+recognition.  The Koszul Mittag--Leffler hypothesis controls the
+inverse-system passage for both the quasi-isomorphism cones and these
+compatibility complexes.
 
-\subsubsection*{Cross-repo anchor}
+\subsubsection*{Source-target separation}
 
 The source--target separation is the $K3\times E$-side instance of
 the Vol II Beilinson cut: bar is twisting, bar is not bulk; the
@@ -331,17 +599,21 @@ and the bulk is $Z^{\mathrm{der}}_{\mathrm{ch}}(A)$ which receives
 the cobar of the bar coalgebra after MC coupling.  Vol I master
 patterns prohibit the identification of the chiral bar with the bulk
 chiral algebra and require the Koszul comparison to be a separate
-theorem in the homotopy setting; the same firewall is enforced
+theorem in the homotopy setting; the same separation is enforced
 above.  The compact Koszul comparison and the chiral
 Koszulness theorem are not identical; the present construction lives
 on the comparison side, with chiral Koszulness in the
 Francis--Gaitsgory sense as the abstract input.
 
-$\Theta_{\mathrm{Kos},R}$ identifies the cobar of the source
-coalgebra with the imported current envelope of $\autcor$.
-Recognition closes the cross-level identity: it identifies the
-source-side protected primitive $P_X^{\Pi,\mathrm{red}}$, extracted
-from $C_X$ via the Hopf radical quotient, the Frobenius identity,
-and the no-extra-relations criterion, with the Borcherds--Kac--Moody
-algebra $\mathfrak g_{\Delta_5}$.  Entry $(\mathrm L 6)$ is this
-recognition apparatus, in \S\ref{subsec:primitive-recognition}.
+Under the Koszul source datum and the finite Koszul comparison datum,
+\(\Theta_{\mathrm{Kos},R}\) identifies
+the cobar of the source coalgebra with the imported current envelope of
+\(\autcor\), compatibly with the Weyl, Pfaffian, Hall-pairing,
+radical, and PBW structures.  Under the recognition datum
+\((S1)\)--\((S10)\), the
+source-side protected primitive \(P_X^{\Pi,\mathrm{red}}\), extracted
+from \(C_X\) via the Hopf radical quotient, the Frobenius identity, and
+the no-extra-relations criterion, is identified with the
+Borcherds--Kac--Moody algebra \(\mathfrak g_{\Delta_5}\).  Entry
+\((\mathrm L 6)\) is this recognition apparatus, in
+\S\ref{subsec:primitive-recognition}.

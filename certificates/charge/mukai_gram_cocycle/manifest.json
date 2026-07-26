@@ -1,0 +1,28 @@
+{
+  "schema_version": "mukai_gram_cocycle.v1",
+  "fixture_name": "mukai_gram_cocycle",
+  "charge_kind": "mukai_gram_cocycle_formal",
+  "coefficient_ring": "ZZ",
+  "certified": true,
+  "formal_cocycle_certified": true,
+  "finite_hn_charge_window": false,
+  "compact_source": false,
+  "source_hall_bracket": false,
+  "pfaffian_orientation": false,
+  "o2_wall_atlas": false,
+  "mirror_discriminant": false,
+  "protected_trace": false,
+  "tables": [
+    "charges.csv",
+    "cocycle_pairs.csv",
+    "normal_ordering.csv",
+    "linear_trivialization.csv",
+    "formal_relations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet records formal Mukai-Gram chart arithmetic only.",
+    "It checks Pi integrality on supplied formal charges, the symmetric bilinear cocycle B, B=-delta Pi, B(c,c)=2Pi(c), normal-ordered section additivity, raw-placement nonadditivity, the homomorphism property of overline Pi, and nonexistence of an additive linear primitive for B on a nonzero diagonal row.",
+    "It does not supply a finite HN charge window, compact source representatives, source Hall brackets, Pfaffian orientations, O2 wall atlases, mirror discriminants, or protected traces."
+  ]
+}

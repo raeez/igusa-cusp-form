@@ -1,0 +1,49 @@
+{
+  "schema_version": "rhomred_orientation_extension_multiplicativity_obstruction.v1",
+  "fixture_name": "rhomred_orientation_extension_multiplicativity",
+  "orientation_kind": "rhomred_orientation_extension_multiplicativity_obstruction",
+  "status": "RHOMRED_ORIENTATION_EXTENSION_MULTIPLICATIVITY_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "retained_extension_closure_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "rhomred_square_root_obstruction_imported": true,
+  "direct_sum_multiplicativity_obstruction_imported": true,
+  "mixed_thom_sebastiani_packet_imported": true,
+  "extension_multiplicativity_criterion_recorded": true,
+  "orientation_tables_inspected": true,
+  "extension_closure_rows_verified": true,
+  "extension_stack_rows_supplied": false,
+  "orientation_square_roots_supplied": false,
+  "extension_ts_isomorphism_supplied": false,
+  "determinant_comparison_supplied": false,
+  "coefficient_system_ts_certified": false,
+  "two_step_flag_pentagon_supplied": false,
+  "quotient_descent": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "inspected_orientation_tables.csv",
+    "extension_obstruction_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/moduli/retained_extension_closure",
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/orientation/rhomred_square_root",
+    "certificates/orientation/rhomred_orientation_direct_sum_multiplicativity",
+    "certificates/hybrid/mixed_correspondence_thom_sebastiani"
+  ],
+  "limitations": [
+    "This packet verifies row 300 only as a criterion and missing-row ledger.",
+    "Retained extension closure is imported, but that packet does not construct extension stacks or orientation data.",
+    "The mixed Thom-Sebastiani packet is conditional on supplied Joyce-Upmeier orientation transport and does not certify orientation existence.",
+    "The reduced-orientation table supplies no orientation-line rows and no Thom-Sebastiani multiplicativity rows.",
+    "It does not construct extension orientation multiplicativity, the two-step flag pentagon, quotient descent, transition compatibility, BBDJS vanishing cycles, compact-support pushforward, or protected integration."
+  ]
+}

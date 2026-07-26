@@ -204,31 +204,39 @@ Load-bearing claims about Δ_5, φ_{0,1}, Borcherds-product exponents, the BKM
 denominator, or the κ-ladder must be consistent across these repos. Disagreement is the
 deliverable; report, do not silently reconcile.
 
-## VII. Obstruction discharges
+## VII. Obstruction criteria (Appendix G)
 
-The cross-level identity ②↔③ on K3×E is **unconditional at the chiral-shadow level**,
-granted the four-obstruction discharge of Appendix G:
+The cross-level identity ②↔③ on K3×E is **conditional**: Appendix G proves
+criterion theorems (granted the retained data), not discharges. The retained
+obstruction datum (D0_HN, O1_quot, 𝒯_W, O2_atlas, P_fin, Z_HB) is *chosen*, and
+the repo's own certificate ledgers record its components as unsupplied
+(`certified:false` absence ledgers; App G).
 
-| Obstruction | Statement | Discharge |
+| Obstruction | Statement | Criterion theorem (granted the retained data) |
 |---|---|---|
-| (D0) | D0-degeneration limit of the cosection-reduced d-critical orientation theory | Theorem G.1 (Joyce–Upmeier + Bojko + Mittag–Leffler) |
-| (O1) | Strong reduced orientation on the K3×E-quotient self-Ext frame bundle | Theorem G.3 (Joyce–Upmeier + Bojko + Klein-four lemma G.1 + P³-Pin^c lemma G.2) |
-| (O1⁺) | Weyl-equivariant transport along W^{(2)}(Λ_{II}^{2,1}) reflections | Theorem G.4 ((3,3,3) abelianisation + Maass character match) |
-| (O2) | Local Pfaffian wall normal form + (R1)↔(R2) reconciliation | Theorems G.5–G.7 (rank-one App E + Weyl-orbit transport + 4096 = 2^{χ_top(K3)/2}) |
+| (D0) | D0-degeneration limit of the cosection-reduced d-critical orientation theory | "(D0) criterion" (`thm:G-D0`): reduction to the retained D0-HN datum (Joyce–Upmeier + Bojko + Mittag–Leffler technology) |
+| (O1) | Strong reduced orientation on the K3×E-quotient self-Ext frame bundle | "(O1) quotient-orientation criterion" (`thm:G-O1`) + Klein-four / two-primary detection lemmas (`lem:G-Klein-four`, `lem:G-two-primary-stabilizer`) — the lemmas are proved but do not construct the null-trivialisations |
+| (O1⁺) | Weyl-equivariant transport along W^{(2)}(Λ_{II}^{2,1}) reflections | "(O1)⁺ Weyl transport criterion and type-II character comparison" (`thm:G-O1-plus`): W^{(2)} ≅ ℤ/2∗ℤ/2∗ℤ/2 (universal Coxeter group; off-diagonal Cartan entry −2 is an infinite Coxeter exponent, **no order-three braid relation**), abelianisation (ℤ/2)³, Maass character match on the three generators granted the (O2) wall signs |
+| (O2) | Local Pfaffian wall normal form + (R1)↔(R2) reconciliation | "(O2) wall-atlas consequence / scalar separation / orbit transport" (`thm:G-O2-normal-form`, `thm:G-R1-R2`, `thm:G-O2-orbit-transport`); the 2¹² = 4096 = 64² wall count is stipulated in (O2_atlas), not derived |
 
 The Vol II Hall–Borcherds residual splits by level on the universal stage chain.
 The **level-𝖹 facet** — chain-level CY-orientation trace pairing on
-Z^{der}_{ch}(C_X) — is discharged on K3×E (Theorem G.10): the chain-level inputs
-(UH.1)–(UH.5) of the universal stage chain are verified on (K3×E, D, τ) at boundary
-vacuum b with chart A_b = C_X (Lemma G.9); Vol I Theorem H (chiral Hochschild
-concentration on the Koszul locus) and Vol II's cyclic-Hochschild stage stratification
-clauses (i)+(ii) (chain-level bulk identification and CY-orientation trace pairing of
-degree -dim_ℂ(K3×E)) then supply
-`Tr^{bulk}_n((-1)^F · id)_{Z^{der}_{ch}(C_X)} = -4096 Δ_5^{-2}`. No appeal is made to
-the Vol II Universal Holography master theorem, whose standard-landscape scope
-(affine KM at non-critical level, W_{N,c} at generic c, Vir_c at generic c ≠ 0,
-Schellekens, Monster, VSKR+BGG-tempered cosets on a smooth projective curve) does
-not include the BKM-derived hybrid factorisation chart C_X on K3×E.
+Z^{der}_{ch}(C_X) — is a criterion theorem, not a discharge: "Level-𝖹
+Hall–Borcherds trace criterion on K3×E" (`thm:G-vol2-discharge`; the label's
+"discharge" is a healing fossil). Granted the retained trace datum (Z_HB)
+(clauses (Z1)–(Z5), **not supplied** — the trace packet
+`certificates/trace/k3e_protected_trace` is a finite absence ledger with
+`protected_trace_certification=false`), and granted Vol I Theorem H (chiral
+Hochschild concentration on the Koszul locus) and Vol II's chiral-Hochschild
+Beilinson stratification as established theorems, the trace identity
+`Tr^{bulk}_n((-1)^F · id)_{Z^{der}_{ch}(C_X)} = Δ_5^{-2}` follows, with the OP
+chamber branch the separate scalar representative `-4096·Tr^{bulk}_n`. No
+chain-level input is verified in-repo; the criterion's hypotheses place the
+compact source in the companion volumes' domain by assumption. No appeal is
+made to the Vol II Universal Holography master theorem, whose standard-landscape
+scope (affine KM at non-critical level, W_{N,c} at generic c, Vir_c at generic
+c ≠ 0, Schellekens, Monster, VSKR+BGG-tempered cosets on a smooth projective
+curve) does not include the BKM-derived hybrid factorisation chart C_X on K3×E.
 
 The **level-𝖠 facet** — gravity-line operator algebra acting on the boundary with
 Pentagon-face scalar trace Φ_{10}^{un} = Δ_5^2 — is Vol II's Construction Problem 2
@@ -237,17 +245,25 @@ level-𝖹 trace pairing is strictly weaker than the level-𝖠 acting algebra.
 
 The Pfaffian–Dirac theorem `thm:ch6-pfaffian-dirac`, the orientation-character match
 `thm:ch6-orientation-character`, the primitive recognition theorem
-`thm:ch6-primitive-recognition`, and the level-𝖹 Z_BPS trace promotion all hold
-**unconditionally on K3×E** modulo the correctness of Vol I Theorem H and Vol II's
-cyclic-Hochschild stage stratification clauses (i)+(ii) as established theorems. The
-level-𝖠 gravity-line operator algebra (Vol II CP2) is the open frontier (App G O*5).
+`thm:ch6-primitive-recognition`, and the level-𝖹 Z_BPS trace identity hold
+**relative to retained data** whose components the repo's own ledgers record as
+unsupplied (d0 / o2 / pfaffian / trace certification = false). Pf² = det is part of
+the assumed datum (clauses (P1)–(P2) of (P_fin)), and the hypotheses of (P_fin)
+encode Δ_5's Fourier data, so `Pf_prot = Δ_5` is q-expansion rigidity relative to
+the datum, not a construction. The level-𝖠 gravity-line operator algebra (Vol II
+CP2) is the open frontier (App G O*5).
 
-The five-fold thesis is closed on K3×E at the chiral-shadow / level-𝖹 stage: ① ↔ ②
-proved (Borcherds–Gritsenko–Nikulin); ② ↔ ③ proved at the chiral-shadow level
-(Theorem G.10 with level-𝖹 conditioning above); ② ↔ ⑤ proved (Borcherds 1995); ③ ↔ ⑤
-chained through ② via the singular-theta lift (Theorem 7.x); ④ remains conjectural
-per CLAUDE.md §I (mirror discriminant). The level-𝖠 operator-algebra promotion to a
-gravity-line module remains open as Vol II CP2.
+**Five-level status.** ① ↔ ② proved (Borcherds–Gritsenko–Nikulin); ② ↔ ⑤ and ① ↔ ⑤
+proved (Borcherds 1995); levels ①, ②, ⑤ are classical-proved. Level ③ is a
+conditional recognition architecture: criterion theorems relative to retained data
+that remain unsupplied per the repo's own certificate ledgers; its edges to ② and ①
+hold only relative to that datum. Level ④ is a conjecture (mirror discriminant, §I).
+The five-fold thesis is **not closed** on K3×E; the manuscript's unconditional new
+mathematical content is the parity-resolved δ₁₂₃ root-space computation (29|93 with
+29 − 93 = −64 = f(1,1); `prop:bkm-delta123-presentation-count`) and the
+scalar-Pfaffian monodromy proposition (`prop:scalar-pfaffian-data-not-section`).
+The level-𝖠 operator-algebra promotion to a gravity-line module remains open as
+Vol II CP2.
 
 ## VIII. Source layout and build
 

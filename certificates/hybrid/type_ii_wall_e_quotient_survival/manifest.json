@@ -1,0 +1,39 @@
+{
+  "schema_version": "type_ii_wall_e_quotient_survival.v1",
+  "fixture_name": "type_ii_wall_e_quotient_survival",
+  "hybrid_kind": "type_ii_wall_e_quotient_profile_survival",
+  "status": "TYPE_II_WALL_E_QUOTIENT_SURVIVAL_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "profile_survival_certified": true,
+  "three_wall_survival_certified": true,
+  "operation_profile_survival_certified": true,
+  "quotient_after_correspondence_imported": true,
+  "quotient_first_excluded": true,
+  "hn_transition_compatibility_imported": true,
+  "type_ii_operation_recovery_imported": true,
+  "object_level_nonzero_survival": false,
+  "coefficient_descent_nonzero": false,
+  "orientation_descent": false,
+  "o2_wall_atlas": false,
+  "protected_integration": false,
+  "aggregate_hybrid_population": false,
+  "tables": [
+    "wall_survival_rows.csv",
+    "operation_survival_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/type_ii_wall_hybrid_operation_recovery",
+    "certificates/hybrid/quotient_after_correspondence_pseudofunctor_definition",
+    "certificates/hybrid/quotient_after_correspondence_quotient_first_exclusion",
+    "certificates/hybrid/quotient_after_correspondence_hn_transition_compatibility"
+  ],
+  "limitations": [
+    "This packet proves no type-II wall profile is lost by the quotient-after-correspondence object and arrow assignments.",
+    "It checks the three singleton wrapped wall profiles and their LW, WL, LWL mixed operation profiles survive as quotient-presented reduced profiles.",
+    "The quotient is taken after the unreduced correspondence stack is formed; quotient-first Hall products are excluded.",
+    "It does not prove nonzero object-level quotient cycles, coefficient descent, orientation descent, O2 wall-atlas rows, protected integration, or aggregate hybrid-carrier population."
+  ]
+}

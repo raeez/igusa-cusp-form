@@ -1,0 +1,2005 @@
+\subsection{Eight finite constructions}
+\label{subsec:eight-finite-constructions}
+
+The seventh entry of the Dirac--Igusa pro-object is the finite HN
+system of charge windows, Hall correspondences, orientation transports,
+Pfaffian lines, Koszul source coalgebras, and primitive-recognition
+data.  At HN height \(R\) these data are finite-type or
+finite-dimensional, and their obstruction classes vanish exactly when
+the transition system defines the inverse limit
+\(\mathfrak D_X^{\mathrm{DI}}\).
+
+At fixed HN height all objects lie on finite-type stacks and
+finite-dimensional Borel--Moore chain spaces; the inverse limit is taken
+after the finite stages have compatible transition maps.  For
+$R\in\mathcal R_{\mathrm{HN}}$, the constructions assume:
+$[\textup{K3$\times$E-fin}]$ (finite-type semistable substacks
+at bounded HN height),
+$[\textup{K3$\times$E-atlas}]$ (finite d-critical/cosection
+Hall atlas with Joyce--Upmeier orientation lines), and
+$[\textup{ML}]$ (Mittag--Leffler descent).
+
+At finite height the first two hypotheses are the table system
+\[
+\mathrm{hn\_type\_bounds},\quad
+\mathrm{semistable\_substacks},\quad
+\mathrm{derived\_enhancements},\quad
+\mathrm{universal\_complexes},\quad
+\mathrm{scalar\_rigidifications},\quad
+\mathrm{stratifications},\quad
+\mathrm{extension\_flag\_stacks},\quad
+\mathrm{cosection\_atlas},\quad
+\mathrm{transitions},\quad
+\mathrm{scalar\_firewall}.
+\]
+The scalar firewall excludes Liu stability alone, the formal charge
+window, a target window, a Hilbert-scheme scalar test, or a Pfaffian
+product as finite-moduli data.
+The finite-moduli packet
+\(\texttt{certificates/moduli/k3e\_finite\_moduli}\) currently records
+the HN-bound, semistable-substack, derived-enhancement, and
+rigidification-inertia rows, together with the finite class-bound
+and universal-complex rows and the \(E\)-translation-rigidification
+rows, retained closed-substack rows, and retained extension-closure
+rows, retained HN-factor-closure rows, and retained dual-closure rows.
+The remaining rows stay in the obstruction ledger
+\(\texttt{MODULI\_OBSTRUCTION\_LEDGER\_VERIFIED}\), with
+\(\texttt{moduli\_certification=false}\).  It is still not a
+construction of the full \([K3\times E\text{-fin}]\) package or
+\([K3\times E\text{-atlas}]\).
+
+\begin{definition}[Finite-moduli transition geometry datum]
+\label{def:finite-moduli-transition-geometry}
+Let \(R'\le R\).  A finite-moduli transition geometry datum from height
+\(R\) to height \(R'\) consists of the following rows.
+\begin{enumerate}
+\item Transition morphisms
+\[
+t^{\mathrm{obj}}_{RR'}:\mathfrak M^{\mathrm{obj}}_R\to
+\mathfrak M^{\mathrm{obj}}_{R'},\qquad
+t^{\mathrm{ext}}_{RR'}:\mathfrak M^{\mathrm{ext}}_R\to
+\mathfrak M^{\mathrm{ext}}_{R'},\qquad
+t^{\mathrm{fl}}_{RR'}:\mathfrak M^{\mathrm{fl}}_R\to
+\mathfrak M^{\mathrm{fl}}_{R'}
+\]
+on the retained object, extension, and two-step flag stacks.
+\item Retained closed substacks
+\[
+\mathfrak Z^{a}_R\subset \mathfrak M^{a}_R,\qquad
+\mathfrak Z^{a}_{R'}\subset \mathfrak M^{a}_{R'},
+\qquad a\in\{\mathrm{obj},\mathrm{ext},\mathrm{fl}\},
+\]
+such that \(t^a_{RR'}(\mathfrak Z^a_R)\subset \mathfrak Z^a_{R'}\).
+\item For each \(a\), the restricted morphism
+\[
+t^a_{RR'}|\mathfrak Z^a_R:\mathfrak Z^a_R\to\mathfrak Z^a_{R'}
+\]
+is either proper or a closed immersion of finite-type stacks.  In the
+closed-immersion case the image, equivalently the graph, is recorded as
+a closed substack.
+\item The universal complexes, scalar rigidifications, stabilizer
+stratifications, cosections, vanishing-cycle domains, and orientation
+domains pull back to the corresponding rows on the source stage.
+\item The base-change, retained-locus, stabilizer, orientation-domain,
+vanishing-cycle-domain, and composition defect ranks are zero.
+\end{enumerate}
+Root windows, source-window indices, signed multiplicities, Pfaffian
+products, and scalar traces are not transition morphisms of moduli
+stacks.
+\end{definition}
+
+\begin{proposition}[Proper or closed finite-moduli transitions;
+\textit{proved}]
+\label{prop:finite-moduli-transition-geometry-criterion}
+Given a finite-moduli transition geometry datum of
+Definition~\ref{def:finite-moduli-transition-geometry}, the
+\(\textup{(M2)}\) component of
+Definition~\ref{def:finite-stage-dirac-igusa-morphism} is a system of
+proper or closed transition morphisms on the retained object,
+extension, and two-step flag stacks, compatible with the cosection,
+vanishing-cycle, and Joyce--Upmeier orientation domains.
+\end{proposition}
+
+\begin{proof}
+The datum supplies the three stack morphisms and their restrictions to
+the retained closed substacks.  Item \(3\) says that each restricted
+component is proper or a closed immersion of finite-type stacks.  The
+closed-locus condition in item \(2\) makes these restrictions the
+transition morphisms of the retained finite stages.  Item \(4\) gives
+the required pullback compatibility for universal complexes,
+cosections, vanishing-cycle domains, and orientation domains.  The
+zero-defect rows in item \(5\) give strict base-change and composition.
+Thus the moduli part of the finite-stage transition is exactly the
+\(\textup{(M2)}\) datum.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/finite\_moduli\_transition\_geometry}\)
+records the present state of this datum.  Its verifier status is
+\texttt{FINITE\_MODULI\_TRANSITION\_GEOMETRY\_OBSTRUCTION\_VERIFIED}:
+the object-stack, extension-stack, and two-step flag-stack transition
+morphisms, the proper-or-closed component rows, the finite-type
+source-target rows, the closed image or graph rows, and the
+base-change, retained-locus, composition, orientation-domain, and
+vanishing-cycle-domain zero-defect rows are not yet supplied.  Hence
+the finite-moduli transition-geometry theorem remains open.
+
+\begin{definition}[Finite-stage Dirac--Igusa category]
+\label{def:finite-stage-dirac-igusa-morphism}
+For \(R\in\mathcal R_{\mathrm{HN}}\), a finite-stage
+Dirac--Igusa datum is the tuple
+\[
+\mathfrak D^{\mathrm{DI}}_{X,R}=
+\bigl(
+\mathcal A_{X,R}^{E_3},F_{X,R}^{\mathrm{hyb}},
+\Gamma_{X,R},\Pi_X,\Phi_R,o_R,H_R,P_R^\Pi,
+C_{X,R},\Theta_{\mathrm{Kos},R},
+\mathscr L_{\mathrm{Pf},R},\operatorname{pf}_{X,R},
+\varepsilon_{o,R},\mathrm{Rec}_R
+\bigr)
+\]
+with the finite data and residual equations specified in
+\S\ref{subsec:eight-finite-constructions}.  The category
+\(\mathsf{DI}^{\mathrm{fin}}_{X,R}\) has these tuples as objects and
+the morphisms below as arrows.  The finite-stage category
+\(\mathsf{DI}^{\mathrm{fin}}_X\) is the disjoint union over retained
+heights, together with transition arrows for comparable heights.
+For \(R'\le R\), a transition morphism
+\[
+\rho_{RR'}:\mathfrak D^{\mathrm{DI}}_{X,R}\longrightarrow
+\mathfrak D^{\mathrm{DI}}_{X,R'}
+\]
+is the following compatible system.
+\begin{enumerate}
+\item[\textup{(M1)}] A restriction of charge windows and central
+extensions \(\widehat\Gamma_R\to\widehat\Gamma_{R'}\) preserving
+\(\Pi_X\), the normal-ordering cocycle \(B\), and the target
+Gram labels.
+\item[\textup{(M2)}] Proper or closed transition morphisms of the
+object, extension, and two-step flag stacks, with the corresponding
+cosection, vanishing-cycle, and orientation domains, as in
+Proposition~\ref{prop:finite-moduli-transition-geometry-criterion},
+and with reduced vanishing-cycle transport as in
+Proposition~\ref{prop:transition-vanishing-cycle-preservation-criterion}.
+\item[\textup{(M3)}] A morphism of hybrid local/wrapped
+factorization carriers over \(\operatorname{Ran}^{\mathrm{hyb}}(E)\),
+compatible with the eight-word flag atlas, quotient-after-correspondence
+pseudofunctor, and protected integration.
+\item[\textup{(M4)}] Isomorphisms of quotient-orientation data,
+Weyl lifts, and type-II wall charts preserving the orientation
+cocycle, normal Pfaffian units, wall coordinates, and the local rank
+\(N_{\delta_i}^{\mathrm{Pf}}=1\), with orientation transport as in
+Proposition~\ref{prop:transition-orientation-preservation-criterion}.
+\item[\textup{(M5)}] A morphism of finite Hall bialgebra data
+preserving product, coproduct, unit, counit, Hopf pairing, primitive
+projection, radical quotient, and normal-ordered Gram descent, with
+product preservation as in
+Proposition~\ref{prop:transition-hall-product-preservation-criterion}
+and coproduct preservation as in
+Proposition~\ref{prop:transition-hall-coproduct-preservation-criterion},
+and primitive-subspace preservation as in
+Proposition~\ref{prop:transition-primitive-subspace-preservation-criterion},
+and radical preservation as in
+Proposition~\ref{prop:transition-radical-preservation-criterion}.
+\item[\textup{(M6)}] A Pfaffian-line transition
+\(\rho^{\mathrm{Pf}}_{RR'}:\mathscr L_{\mathrm{Pf},R}|_{\mathfrak Q_{R'}}
+\xrightarrow{\sim}\mathscr L_{\mathrm{Pf},R'}\) carrying
+\(\operatorname{pf}_{X,R}\) to \(\operatorname{pf}_{X,R'}\), compatible
+with squaring and with the automorphic comparison.
+\item[\textup{(M7)}] A filtered coalgebra morphism
+\(C_{X,R}\to C_{X,R'}\) preserving the bar differential, augmentation,
+Koszul source datum, and the comparison
+\(\Theta_{\mathrm{Kos}}\).
+\item[\textup{(M8)}] A morphism of primitive-recognition tables
+preserving representatives, relation rows, parity blocks, product and
+coproduct matrices, Hopf-pairing matrices, radical and quotient
+splittings, comparison maps, no-extra rows, PBW filtrations, and
+Mittag--Leffler transition rows.  PBW-filtration preservation is
+Proposition~\ref{prop:transition-pbw-filtration-preservation-criterion};
+parity-decomposition preservation is
+Proposition~\ref{prop:transition-parity-decomposition-preservation-criterion};
+primitive-space \(R^1\varprojlim\)-vanishing is
+Proposition~\ref{prop:primitive-space-lim1-vanishing-criterion};
+pairing-kernel \(R^1\varprojlim\)-vanishing is
+Proposition~\ref{prop:pairing-kernel-lim1-vanishing-criterion}; and PBW
+associated-graded \(R^1\varprojlim\)-vanishing is
+Proposition~\ref{prop:pbw-associated-graded-lim1-vanishing-criterion}.
+\end{enumerate}
+All diagrams expressing these compatibilities commute in the relevant
+derived, Borel--Moore, filtered, or completed category.  Composition is
+componentwise composition.  Thus the identity and associativity
+conditions for \(\mathsf{DI}^{\mathrm{fin}}_X\) are precisely the
+zero-defect rows in \(\mathrm{cofinal\_subsystems}\),
+\(\mathrm{stage\_morphisms}\), and
+\(\mathrm{composition\_laws}\).  An isomorphism of finite stages is a
+transition morphism whose components are equivalences of stacks where applicable,
+quasi-isomorphisms on chain and coalgebra objects, isomorphisms on
+orientation and Pfaffian lines, isomorphisms of Hall bialgebra and
+recognition matrices on the retained windows, and equality of the
+orientation characters.
+\end{definition}
+
+\begin{definition}[Dirac--Igusa pro-object and pro-isomorphism]
+\label{def:dirac-igusa-pro-isomorphism}
+A Dirac--Igusa pro-object is an object of
+\[
+\operatorname{Pro}_{\mathcal R_{\mathrm{HN}}}(\mathsf{DI}^{\mathrm{fin}}_X),
+\]
+represented by a functor
+\[
+\mathfrak D_X^{\mathrm{DI}}:
+\mathcal R_{\mathrm{HN}}^{\mathrm{op}}\longrightarrow
+\mathsf{DI}^{\mathrm{fin}}_X
+\]
+from a cofinal HN subsystem to the finite-stage category of
+Definition~\ref{def:finite-stage-dirac-igusa-morphism}.  The symbol
+\[
+\varprojlim_R\mathfrak D^{\mathrm{DI}}_{X,R}
+\]
+means this pro-object.  It is not a componentwise inverse limit unless
+the corresponding \(\mathrm{ml\_exactness}\) rows give strict
+Mittag--Leffler towers and \(R^1\varprojlim=0\).  When a component is
+realized as a completed module or complex, its topology is the
+projection topology: a fundamental system of neighbourhoods of zero is
+given by the kernels of the projections to finite retained heights.
+For Picard-groupoid components, this means compatible line bundles and
+trivialisations on a cofinal subsystem.  For completed Lie, Hall, and
+Koszul components, it means the completed filtered object determined by
+the finite quotients.
+
+A pro-isomorphism between two Dirac--Igusa pro-objects is an
+isomorphism in this pro-category: after passing to a common cofinal
+subsystem, it is represented by finite-stage isomorphisms commuting
+with all transition morphisms and with two-sided inverse defects zero.
+Equality of scalar Pfaffian products, equality of squared determinants,
+or equality of signed denominator exponents is not a pro-isomorphism
+unless the morphism data \textup{(M1)}--\textup{(M8)} are supplied.
+\end{definition}
+
+\begin{proposition}[Universal property and cofinal presentation invariance]
+\label{prop:dirac-igusa-pro-object-universal-property}
+Let \(\mathsf C_X=\mathsf{DI}^{\mathrm{fin}}_X\), and suppose the
+finite morphism rows of Definition~\ref{def:finite-stage-dirac-igusa-morphism}
+give an inverse system
+\[
+\mathfrak D=(\mathfrak D_R,\rho_{RR'}):
+\mathcal R_{\mathrm{HN}}^{\mathrm{op}}\longrightarrow \mathsf C_X .
+\]
+For a finite-stage object \(T\in\mathsf C_X\), regarded as a constant
+pro-object, the Dirac--Igusa pro-object satisfies
+\[
+\Hom_{\operatorname{Pro}(\mathsf C_X)}
+ (T,\mathfrak D)
+\cong
+\varprojlim_{R\in\mathcal R_{\mathrm{HN}}}
+\Hom_{\mathsf C_X}(T,\mathfrak D_R).
+\]
+For another Dirac--Igusa pro-object
+\(\mathfrak E=(\mathfrak E_S)_{S\in\mathcal S}\),
+\[
+\Hom_{\operatorname{Pro}(\mathsf C_X)}
+ (\mathfrak E,\mathfrak D)
+\cong
+\varprojlim_{R\in\mathcal R_{\mathrm{HN}}}
+\varinjlim_{S\in\mathcal S}
+\Hom_{\mathsf C_X}(\mathfrak E_S,\mathfrak D_R).
+\]
+These two formulas are the universal property of
+\(\mathfrak D_X^{\mathrm{DI}}\).  They are statements in the
+pro-category; they do not assert componentwise inverse limits of
+complexes, line bundles, Hall objects, or Lie superalgebras.
+
+If
+\(i:\mathcal R'_{\mathrm{HN}}\hookrightarrow\mathcal R_{\mathrm{HN}}\)
+is a cofinal subsystem, the restriction \(i^\ast\mathfrak D\) defines a
+canonically isomorphic pro-object.  More generally, two finite
+presentations of the Dirac--Igusa datum over cofinal HN subsystems
+define the same pro-object exactly when, after passage to a common
+cofinal refinement, the finite-stage isomorphisms commute with
+\textup{(M1)}--\textup{(M8)} and have zero two-sided inverse defects.
+This is the independence of finite presentation choices used in the
+notation
+\(\mathfrak D_X^{\mathrm{DI}}=\varprojlim_R\mathfrak D_{X,R}^{\mathrm{DI}}\).
+\end{proposition}
+
+\begin{proof}
+The first displayed identity is the special case of the standard
+pro-category formula with the source represented by a constant system.
+The second is the defining Hom formula in
+\(\operatorname{Pro}(\mathsf C_X)\):
+morphisms \((\mathfrak E_S)_S\to(\mathfrak D_R)_R\) are compatible
+families of finite-stage morphisms after allowing a cofinal refinement
+of the source index.  Cofinal restriction leaves these Hom functors
+unchanged, hence gives the canonical pro-isomorphism by Yoneda.  The
+finite morphism tables supply the only non-formal input: they ensure
+that the stage maps exist, compose strictly, and have zero inverse
+defects on the common refinement.  The Mittag--Leffler rows enter only
+when one replaces a pro-object by an actual completed component; they
+are not part of the pro-object universal property itself.
+\end{proof}
+
+\begin{definition}[Moduli-cohomology Mittag--Leffler datum]
+\label{def:moduli-cohomology-ml-datum}
+Fix a cofinal sequence in the retained HN system.  For each retained
+object, extension, mixed, wrapped, and two-step flag stack
+\(\mathfrak M_{R,a}\), for each coefficient system
+\(\mathcal K_{R,a}\) used in the finite Hall or reduced
+vanishing-cycle construction, and for each cohomological degree \(q\),
+put
+\[
+C^q_{R,a,\mathcal K}:=
+H^q_c(\mathfrak M_{R,a},\mathcal K_{R,a})
+\]
+or the corresponding Borel--Moore cohomology group, according to the
+six-functor convention of the finite Hall operation under discussion.
+A moduli-cohomology Mittag--Leffler datum consists of:
+\begin{enumerate}
+\item finite-rank rows for every \(C^q_{R,a,\mathcal K}\), with the
+stack kind, coefficient system, support block, and topology recorded;
+\item transition maps
+\[
+u^q_{RR',a,\mathcal K}:C^q_{R,a,\mathcal K}\longrightarrow
+C^q_{R',a,\mathcal K}
+\]
+induced by the proper pushforward, closed restriction, or specified
+six-functor operation along the retained moduli transition;
+\item identity and composition rows for the maps \(u^q_{RR'}\);
+\item for every base stage \(R_0\), stack kind \(a\), coefficient
+\(\mathcal K\), and degree \(q\), an image-stabilization witness:
+there is \(R_1\ge R_0\) such that for all \(R\ge R_1\),
+\[
+\operatorname{im}\bigl(C^q_{R,a,\mathcal K}\to
+C^q_{R_0,a,\mathcal K}\bigr)
+=
+\operatorname{im}\bigl(C^q_{R_1,a,\mathcal K}\to
+C^q_{R_0,a,\mathcal K}\bigr),
+\]
+with the stabilized image written in a finite basis;
+\item the defect rows
+\[
+\mathrm{strict}=1,\qquad \mathrm{ML}=1,\qquad
+\operatorname{rank}R^1\varprojlim_R C^q_{R,a,\mathcal K}=0
+\]
+for every retained tower.
+\end{enumerate}
+Finite type of the stacks, properness or closedness of transition
+morphisms, bounded HN types, Euler characteristics, protected traces,
+and target-root windows are not a moduli-cohomology
+Mittag--Leffler datum.
+\end{definition}
+
+\begin{proposition}[Vanishing of \(R^1\varprojlim\) on moduli
+cohomology; \textit{proved}]
+\label{prop:moduli-cohomology-lim1-vanishing-criterion}
+For every tower \(C^\bullet_{R,a,\mathcal K}\) carrying the datum of
+Definition~\ref{def:moduli-cohomology-ml-datum}, the inverse system is
+Mittag--Leffler in each cohomological degree.  Consequently
+\[
+R^1\varprojlim_R C^q_{R,a,\mathcal K}=0
+\]
+for every retained stack kind \(a\), coefficient system
+\(\mathcal K\), support block, and degree \(q\).  Without the rows of
+Definition~\ref{def:moduli-cohomology-ml-datum}, the passage from
+finite retained moduli cohomology to componentwise inverse-limit
+cohomology is not established.
+\end{proposition}
+
+\begin{proof}
+The identity and composition rows make
+\(\{C^q_{R,a,\mathcal K},u^q_{RR'}\}\) an inverse system of finite-rank
+modules.  The image-stabilization row is exactly the
+Mittag--Leffler condition: for every fixed base stage \(R_0\), the
+images inside \(C^q_{R_0,a,\mathcal K}\) are eventually constant.
+The standard derived-inverse-limit criterion for inverse systems of
+modules then gives \(R^1\varprojlim=0\) on each such tower.  The
+vanishing is degreewise and coefficientwise; it cannot be inferred
+from finite type, from a scalar Euler characteristic, or from the
+existence of proper or closed transition morphisms without the
+stabilized-image rows.
+\end{proof}
+
+The packet
+\[
+\texttt{certificates/moduli/moduli\_cohomology\_lim1\_vanishing}
+\]
+records the current state of this datum.  Its verifier returns
+\(\texttt{MODULI\_COHOMOLOGY\_LIM1\_VANISHING\_OBSTRUCTION\_VERIFIED}\):
+the cofinal HN sequence, retained moduli stack inputs, transition
+geometry input, coefficient systems, finite cohomology groups,
+cohomology transition maps, functoriality rows, image subspace rows,
+image-stabilization witnesses, strict Mittag--Leffler status rows,
+zero \(R^1\varprojlim\) rows, and degreewise coverage rows are not yet
+supplied.
+
+\paragraph{Finite proof tables for morphisms and pro-isomorphisms.}
+The finite-stage functor is supplied by the tables
+\[
+\mathrm{cofinal\_subsystems},\quad
+\mathrm{stage\_objects},\quad
+\mathrm{stage\_morphisms},\quad
+\mathrm{component\_maps},\quad
+\mathrm{composition\_laws},\quad
+\mathrm{ml\_exactness},\quad
+\mathrm{pro\_isomorphisms},\quad
+\mathrm{scalar\_firewall}.
+\]
+The table \(\mathrm{stage\_objects}\) contains one row for each of
+\[
+\mathcal A^{E_3},\ F^{\mathrm{hyb}},\ \Gamma,\ \Pi,\ \Phi,\ o,\ H,\
+P^\Pi,\ C,\ \Theta_{\mathrm{Kos}},\ \mathscr L_{\mathrm{Pf}},\
+\operatorname{pf},\ \varepsilon_o,\ \mathrm{Rec}
+\]
+at each retained height.  The table \(\mathrm{component\_maps}\)
+contains rows for \(\textup{(M1)}\)--\(\textup{(M8)}\), with zero
+compatibility, kernel, and cokernel ranks in the corresponding
+derived, Borel--Moore, filtered, or completed category.  The tables
+\(\mathrm{cofinal\_subsystems}\), \(\mathrm{stage\_morphisms}\), and
+\(\mathrm{composition\_laws}\) record directed cofinality, strict
+transition morphisms, identity laws, and
+\(\rho_{R'R''}\rho_{RR'}=\rho_{RR''}\).  The table
+\(\mathrm{ml\_exactness}\) records \(R^1\varprojlim=0\) for the
+component towers.  The table \(\mathrm{pro\_isomorphisms}\) records
+finite-stage isomorphism families over a common cofinal subsystem,
+with commuting squares and two-sided inverse defects zero.  The table
+\(\mathrm{scalar\_firewall}\) excludes scalar Pfaffian products,
+denominator products, squared determinants, signed exponent tables,
+and protected traces as morphism or pro-isomorphism data.
+The current packet
+\(\texttt{certificates/morphisms/k3e\_dirac\_igusa\_pro\_object}\)
+verifies only the obstruction ledger
+\(\texttt{MORPHISM\_OBSTRUCTION\_LEDGER\_VERIFIED}\), with
+\(\texttt{pro\_object\_certification=false}\).  It records the missing
+cofinal subsystem, stage-object, transition, component-map,
+composition-law, Mittag--Leffler, and pro-isomorphism rows; it does not
+construct the functor
+\(\mathcal R_{\mathrm{HN}}^{\mathrm{op}}\to
+\mathsf{DI}^{\mathrm{fin}}_X\).
+
+\paragraph{Finite proof tables for the compact \(E_3\)-source.}
+The inputs \([\textup{$E_3$-HolFA}]\) and
+\([\textup{K3$\to$E-sp}]\) are supplied at finite height by
+\[
+\mathrm{formal\_target\_charts},\quad
+\mathrm{field\_complexes},\quad
+\mathrm{e3\_operations},\quad
+\mathrm{bv\_qme},\quad
+\mathrm{anomaly\_framing},\quad
+\mathrm{compact\_support},\quad
+\mathrm{factorization\_descent},\quad
+\mathrm{k3\_to\_e\_specialization},\quad
+\mathrm{transitions},\quad
+\mathrm{scalar\_firewall}.
+\]
+These rows record the finite formal target charts, field complexes,
+holomorphic \(E_3\)-operations, BV quantum master equation, anomaly
+cancellation, framing and formality, compact retained support,
+prefactorization descent, \(K3\)-to-\(E\) chain specialization,
+strict transitions, and \(R^1\varprojlim=0\).  The scalar firewall
+excludes the automorphic section, BKM denominator, target current
+envelope, protected trace, and hybrid-carrier-only data as entries of
+\(\mathcal A^{E_3}_{X,R}\).
+The current finite \(E_3\)-source packet records these rows only by the
+obstruction ledger
+\(\texttt{E3\_SOURCE\_OBSTRUCTION\_LEDGER\_VERIFIED}\), with
+\(\texttt{e3\_source\_certification=false}\).  It is an absence ledger,
+not a construction of \(\mathcal A^{E_3}_{X,R}\).
+
+\subsubsection*{Charge window}
+
+\begin{definition}[Finite target test window]
+\label{def:finite-target-test-window}
+Fix an HN height \(R\).  Let
+\(\Gamma_R^{HN}\subset F_{\sigma,S}(R)\subset\Gamma_X^{\mathrm{form}}\)
+be the retained finite HN charge set.  For \(c\in\Gamma_R^{HN}\), set
+\[
+\mathcal T_R(c)
+=\Bigl\{\sum_{i<j}B(c_i,c_j)\Bigm|c=\sum_i c_i,\
+c_i\in F_{\sigma,S}(R),\ \sum_i h_S(c_i)\le R\Bigr\}
+\subset\Gamma_{\mathrm{gram}},
+\]
+and
+\[
+\widehat\Gamma_R
+:=\{(c,T)\mid c\in\Gamma_R^{HN},\ T\in\mathcal T_R(c)\}
+\subset\widehat\Gamma_X .
+\]
+The finite target test window is
+\[
+\Gamma_R^{\mathrm{test}}
+:=\overline\Pi_X(\widehat\Gamma_R)
+=\{\Pi_X(c)+T\mid c\in\Gamma_R^{HN},\ T\in\mathcal T_R(c)\}
+\subset\Gamma_{\mathrm{gram}} .
+\]
+It is finite once \(\Gamma_R^{HN}\) and the translate sets
+\(\mathcal T_R(c)\) are finite.  For \(R\le R'\), compatible inclusions
+of HN charge sets and translate sets induce
+\(\Gamma_R^{\mathrm{test}}\subset\Gamma_{R'}^{\mathrm{test}}\).
+This is a target window in \(\Gamma_{\mathrm{gram}}\), not a compact
+source window and not the (O1) orientation datum.
+\end{definition}
+
+\textit{Hypotheses.} Stability datum $(\sigma,S)$, finite HN height
+\(R\), and a retained HN charge set \(\Gamma_R^{HN}\).
+
+\textit{Finite datum.} Finite saturated downward window
+$F_{\sigma,S}(R)\subset\Gamma_X^{\mathrm{HN}}(R)$, the dyonic
+formal Mukai/effective-charge support, the Gram map
+$\Pi_X:\Gamma_X^{\mathrm{form}}\to\Gamma_{\mathrm{gram}}$, the cocycle
+$B$, the finite normal-ordered lift \(\widehat\Gamma_R\), and the target
+test window \(\Gamma_R^{\mathrm{test}}\subset\Gamma_{\mathrm{gram}}\) of
+Definition~\ref{def:finite-target-test-window}.
+
+\textit{Construction.}
+\begin{enumerate}
+\item Form the Liu charge $L_F(n)=Z_S(Rp_{S,*}(F\otimes p_E^*H^n))$
+\cite{LiuProductStability} for $\sigma_S$ a rational K3 stability
+condition and a degree-one line bundle $H$ on $E$.  Restrict to
+charges with bounded $h_S$-height $\le R$; the resulting set is
+$F_{\sigma,S}(R)$.
+\item Compute the Gram map and cocycle $B(c,c')$ on
+$F_{\sigma,S}(R)\times F_{\sigma,S}(R)$ via the Mukai dictionary of
+\S\ref{subsec:d6-d2-d0-dictionary-appendixC}; check the symmetric
+bilinear $2$-cocycle condition.
+\item Form the finite normal-ordered lift set
+\(\widehat\Gamma_R\) and its image
+\(\Gamma_R^{\mathrm{test}}=\overline\Pi_X(\widehat\Gamma_R)\).
+\end{enumerate}
+At table level this input would be supplied by
+\[
+\mathrm{finite\_test\_window\_definition},\quad
+\mathrm{active\_support},\quad
+\mathrm{window\_saturation},\quad
+\mathrm{liu\_hn\_window},\quad
+\mathrm{gram\_map},\quad
+\mathrm{cocycle\_identities},\quad
+\mathrm{normal\_ordered\_lifts},\quad
+\mathrm{target\_windows},\quad
+\mathrm{primitive\_lifts},\quad
+\mathrm{transitions},\quad
+\mathrm{scalar\_firewall}.
+\]
+When supplied, these rows verify the active \(\phi_{0,1}\)-support,
+downward saturation, Liu height cutoff, Mukai--Gram map, cocycle
+identities, normal-ordered lift orbit, target test-window image,
+primitive formal lift, strict transition, and \(R^1\varprojlim=0\).  The
+finite-test-window definition row is separated in
+\[
+\texttt{certificates/charge/finite\_test\_window}.
+\]
+Its verifier returns
+\(\texttt{FINITE\_TEST\_WINDOW\_DEFINITION\_VERIFIED}\), with populated
+test-window certification and relation-closed target exhaustion both
+false.  It supplies the formula for \(\Gamma_R^{\mathrm{test}}\), not the
+HN charge rows, normal-ordered translate rows, image-membership rows,
+finiteness witnesses, transition inclusions, or the assertion that every
+relation-closed target degree appears at finite \(R\).  The scalar
+firewall rejects target-presentation rows, signed exponent lists,
+Pfaffian products, Hilbert-scheme scalar shadows, orientation data, and
+source-rank-only data as charge-window evidence.
+
+\begin{definition}[Relation-closed target finite-\(R\) exhaustion datum]
+\label{def:relation-closed-target-finite-r-exhaustion}
+Let \(\mathcal D_{\mathrm{rel}}\subset\Gamma_{\mathrm{gram}}\) be the
+target-degree set on which relation closure is asserted.  In the present
+target audit this includes the finite \(W_{\mathrm{rel}}\)-cascade
+recorded by
+\(\texttt{certificates/targets/delta5\_gn\_kac/wrel\_degree\_closure}\)
+and the symbolic tail \(A_N\Rightarrow B_N\Rightarrow A_{N+2}\) for even
+\(N\ge14\) recorded by
+\(\texttt{certificates/targets/delta5\_gn\_kac/wrel\_tail\_staircase}\).
+A finite-\(R\) exhaustion datum for \(\mathcal D_{\mathrm{rel}}\)
+consists of:
+\begin{enumerate}
+\item a target-scope table listing the finite prefix and the symbolic
+tail families;
+\item for every finite-prefix degree \(\gamma\), a finite height
+\(R(\gamma)\), a charge \(c_\gamma\in\Gamma_{R(\gamma)}^{HN}\), and a
+translate \(T_\gamma\in\mathcal T_{R(\gamma)}(c_\gamma)\);
+\item for each symbolic tail family, formulae \(R_N\), \(c_N\), and
+\(T_N\) valid for every allowed parameter \(N\);
+\item the image identities
+\[
+\Pi_X(c_\gamma)+T_\gamma=\gamma,\qquad
+\Pi_X(c_N)+T_N=\gamma_N,
+\]
+with zero defect in \(\Gamma_{\mathrm{gram}}\);
+\item compatibility rows for \(R\le R'\), and a zero coverage-defect row
+for the finite prefix and every symbolic family.
+\end{enumerate}
+Target relation closure, the infinite tail staircase, active-root
+cofinality, signed multiplicities, and the formula for
+\(\Gamma_R^{\mathrm{test}}\) are not finite-\(R\) exhaustion data.
+\end{definition}
+
+\begin{proposition}[Finite-\(R\) realization of relation-closed target
+degrees; \textit{proved}]
+\label{prop:relation-closed-target-finite-r-exhaustion-criterion}
+If \(\mathcal D_{\mathrm{rel}}\) carries the datum of
+Definition~\ref{def:relation-closed-target-finite-r-exhaustion}, then
+for every \(\gamma\in\mathcal D_{\mathrm{rel}}\) there exists a finite
+HN height \(R\) such that
+\[
+\gamma\in\Gamma_R^{\mathrm{test}}.
+\]
+\end{proposition}
+
+\begin{proof}
+For a finite-prefix degree \(\gamma\), the datum gives
+\(R(\gamma)\), \(c_\gamma\in\Gamma_{R(\gamma)}^{HN}\), and
+\(T_\gamma\in\mathcal T_{R(\gamma)}(c_\gamma)\) with
+\(\Pi_X(c_\gamma)+T_\gamma=\gamma\).  By
+Definition~\ref{def:finite-target-test-window},
+\(\gamma\in\Gamma_{R(\gamma)}^{\mathrm{test}}\).  The same argument
+applies to a symbolic tail degree \(\gamma_N\) using \(R_N,c_N,T_N\).
+The zero coverage-defect row says that these two cases exhaust
+\(\mathcal D_{\mathrm{rel}}\).  No target-only table supplies the
+charges \(c\) or translates \(T\), so target relation closure alone does
+not prove the proposition.
+\end{proof}
+
+The packet
+\[
+\texttt{certificates/charge/relation\_closed\_target\_finite\_R\_exhaustion}
+\]
+verifies
+\(\texttt{RELATION\_CLOSED\_TARGET\_FINITE\_R\_EXHAUSTION\_OBSTRUCTION\_VERIFIED}\):
+the finite prefix degree-to-\(R\) rows, symbolic tail \(R_N\)-formulae,
+HN charge witnesses, normal-ordered translate witnesses, image-equality
+rows, finite-\(R\) bounds, transition compatibility rows, compact source
+compatibility rows, and zero coverage-defect row are not supplied.
+
+\textit{Obstruction classes.}
+$[\textup{K3$\times$E-fin}]$ on the Liu charge bound; $B$
+cocycle property.
+
+\subsubsection*{Finite Hall stage and atlas}
+
+\textit{Hypotheses.} The charge window, plus the cosection-twisted reduced
+d-critical heart of \S\ref{subsec:cosection-twisted-orientation}.
+
+\textit{Finite datum.} The finite Hall stage
+$\mathcal C_{\sigma,S,\le R}$, finite-type derived Artin enhancements
+$\mathfrak M_{\widehat c,R},
+\mathfrak E_{\widehat c,\widehat c',R},
+\mathfrak F^{(2)}_{\widehat c,\widehat c',\widehat c'',R}$ of object,
+extension, and two-step flag stacks; reduced cosections; reduced
+vanishing cycles $\Phi^{\mathrm{red}}$; orientation lines
+$o^{\mathrm{red}}$.
+At table level this datum is supplied by
+\(\mathrm{hn\_type\_bounds}\), \(\mathrm{semistable\_substacks}\),
+\(\mathrm{derived\_enhancements}\), \(\mathrm{universal\_complexes}\),
+\(\mathrm{scalar\_rigidifications}\), \(\mathrm{stratifications}\),
+\(\mathrm{extension\_flag\_stacks}\), \(\mathrm{cosection\_atlas}\),
+\(\mathrm{transitions}\), and \(\mathrm{scalar\_firewall}\).
+The current packet verifies only
+\(\texttt{MODULI\_OBSTRUCTION\_LEDGER\_VERIFIED}\), with
+\(\texttt{moduli\_certification=false}\); no finite Hall stage is thereby
+constructed.
+
+\textit{Construction.}
+\begin{enumerate}
+\item Restrict the chosen stability heart to charges in $F_{\sigma,S}(R)$;
+form the finite-type derived enhancements with PTVV $(-1)$-shifted
+symplectic structures \cite{PTVV2013} on the truncations; descend to
+Joyce d-critical structures \cite{BBDJS2015}.
+\item Compute the K3 semiregularity cosection
+$\operatorname{CS}_{\mathcal C}$ on each retained charge stratum.
+Surjectivity on reduced strata and filtered Hall additivity on
+extension stacks are separate rows.
+\item Choose Joyce--Upmeier orientation lines \cite{JoyceUpmeier} with
+chosen square roots, multiplicative under reduced extension
+correspondences.
+\end{enumerate}
+
+\textit{Obstruction classes.}
+$[\textup{K3$\times$E-atlas}]$; finite closed inertia stratifications
+after the wrapped quotient steps, together with closure under
+extensions, HN factors, and duals where needed.
+
+\subsubsection*{Hybrid wrapped factorization datum}
+
+\textit{Hypotheses.} The finite Hall stage.
+
+\textit{Finite datum.} The geometric elliptic-degree map
+\(b_R^{\mathrm{geom}}\) of
+Definition~\ref{def:geometric-elliptic-degree-map}; the hybrid
+factorization carrier
+$\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}$ of
+\S\ref{subsec:hybrid-ran-carrier}: the finite-stage prestack
+\(\operatorname{Ran}^{\mathrm{hyb}}_{R,\mathrm{pre}}(E)\);
+rigidified wrapped prequotients
+$\mathcal M_{\eta,R}^{\mathrm{wr,rig}}$ with anchors
+$\lambda_{\eta,R}$; closed-configuration local sectors
+$\mathcal F_R^{\mathrm{loc}}$; wrapped sectors
+$\mathcal G_R^{\mathrm{wr}}$; the eight-word two-step binary flag
+atlas; the higher-coloured residual
+$\mathfrak o^{\mathrm{col}}_R$; the quotient-after-correspondence
+pseudofunctor inducing $Q_{E,R}$ and comparison isomorphisms
+$\theta^Q_{\mu,R}$; protected integration
+$I_R^{\mathrm{prot}}$.
+At table level this datum would be supplied by
+\[
+\mathrm{hybrid\_ran\_prestack\_definition},\quad
+\mathrm{local\_stratum\_b0\_prestack\_definition},\quad
+\mathrm{geometric\_elliptic\_degree\_map},\quad
+\mathrm{geometric\_elliptic\_degree\_additivity},\quad
+\mathrm{geometric\_borcherds\_degree\_separation},\quad
+\mathrm{positive\_elliptic\_degree\_projection},\quad
+\mathrm{hybrid\_base},\quad
+\mathrm{local\_configurations},\quad
+\mathrm{wrapped\_stratum\_bpositive\_prestack\_definition},\quad
+\mathrm{local\_local\_correspondence\_definition},\quad
+\mathrm{mixed\_local\_wrapped\_correspondence\_definition},\quad
+\mathrm{wrapped\_wrapped\_correspondence\_definition},\quad
+\mathrm{two\_sided\_mixed\_correspondence\_definition},\quad
+\mathrm{source\_target\_anchor\_memory\_definition},\quad
+\mathrm{determinant\_anchor\_construction},\quad
+\mathrm{determinant\_anchor\_translation\_weight},\quad
+\mathrm{determinant\_anchor\_chi\_zero\_degeneracy},\quad
+\mathrm{determinant\_anchor\_extra\_anchor\_data},\quad
+\mathrm{wrapped\_prequotients},\quad
+\mathrm{correspondences},\quad
+\mathrm{flag\_atlas},\quad
+\mathrm{higher\_coloured},\quad
+\mathrm{quotient\_pseudofunctor},\quad
+\mathrm{protected\_integration},\quad
+\mathrm{transitions},\quad
+\mathrm{scalar\_firewall}.
+\]
+When supplied, these rows record the hybrid prestack definition, the
+\(b=0\) local subprestack, the \(b>0\) wrapped subprestack,
+elliptic-degree map, additivity criterion,
+Borcherds-coordinate
+separation, positive-degree projection criterion, and split, local closed
+configuration stacks, wrapped anchors, local/mixed/wrapped
+correspondences, source/target anchor memory before quotient, all eight
+words in \(\{\mathrm L,\mathrm W\}^3\), determinant anchors,
+determinant-anchor weights,
+hypersurface \(\chi=0\) determinant-anchor degeneracy,
+hypersurface \(\chi=0\) Jordan--Hoelder extra-anchor data,
+higher-coloured coherences, quotient-after-correspondence, protected
+integration, and strict HN transitions.
+The degree-map definition is isolated in
+\[
+\texttt{certificates/hybrid/geometric\_elliptic\_degree\_map}.
+\]
+Its verifier returns
+\(\texttt{GEOMETRIC\_ELLIPTIC\_DEGREE\_MAP\_OBSTRUCTION\_VERIFIED}\):
+\(b_R^{\mathrm{geom}}\) is the coefficient of \([E]\) in
+\((p_E)_*\operatorname{cyc}_1(\gamma)\), not
+\(\operatorname{pr}_3\overline\Pi_X\).  The retained HN class rows,
+one-cycle rows, pushforward rows, local/wrapped split rows, and
+transition rows are not supplied.  The additivity criterion is isolated
+in
+\[
+\texttt{certificates/hybrid/geometric\_elliptic\_degree\_additivity}.
+\]
+Its verifier returns
+\(\texttt{GEOMETRIC\_ELLIPTIC\_DEGREE\_ADDITIVITY\_OBSTRUCTION\_VERIFIED}\):
+Definition~\ref{def:geometric-elliptic-degree-additivity-datum} and
+Proposition~\ref{prop:geometric-elliptic-degree-additivity-criterion}
+give the finite-stage criterion, while extension-pair, one-cycle
+additivity, pushforward additivity, integer degree additivity, and
+transition rows are not supplied.  The retained-extension-closure packet
+does not by itself prove additivity of \(b_R^{\mathrm{geom}}\).
+The geometric/Borcherds separation packet is
+\[
+\texttt{certificates/hybrid/geometric\_borcherds\_degree\_separation}.
+\]
+Its verifier returns
+\(\texttt{GEOMETRIC\_BORCHERDS\_DEGREE\_SEPARATION\_OBSTRUCTION\_VERIFIED}\):
+Proposition~\ref{prop:geometric-borcherds-degree-separation} separates
+the support degree \(b_R^{\mathrm{geom}}\) from the trace coordinate
+\(m_R^{\mathrm{Bch}}=\operatorname{pr}_3\overline\Pi_X\); branch
+comparison rows are not supplied.
+The positive elliptic-degree projection packet is
+\[
+\texttt{certificates/hybrid/positive\_elliptic\_degree\_projection}.
+\]
+Its verifier returns
+\(\texttt{POSITIVE\_ELLIPTIC\_DEGREE\_PROJECTION\_VERIFIED}\):
+Proposition~\ref{prop:positive-elliptic-degree-projects} proves that an
+effective one-cycle with positive \(E\)-degree projects onto all of
+\(E\), while retained object support-realization rows are not supplied.
+The hybrid Ran prestack definition packet is
+\[
+\texttt{certificates/hybrid/hybrid\_ran\_prestack\_definition}.
+\]
+Its verifier returns
+\(\texttt{HYBRID\_RAN\_PRESTACK\_DEFINITION\_VERIFIED}\):
+Definition~\ref{def:hybrid-ran-prestack} defines the finite-stage
+carrier as a prestack functor; local component, wrapped component,
+descent, stackification, and transition rows are not supplied.
+The local \(b=0\) stratum packet is
+\[
+\texttt{certificates/hybrid/local\_stratum\_b0\_prestack\_definition}.
+\]
+Its verifier returns
+\(\texttt{LOCAL\_STRATUM\_B0\_PRESTACK\_DEFINITION\_VERIFIED}\):
+Definition~\ref{def:hybrid-local-stratum-prestack} defines the full
+\(J=\varnothing\) subprestack with colours in
+\(\Gamma_R^{\mathrm{loc}}\); closed-configuration, local sheaf,
+descent, and transition rows are not supplied.
+The wrapped \(b>0\) stratum packet is
+\[
+\texttt{certificates/hybrid/wrapped\_stratum\_bpositive\_prestack\_definition}.
+\]
+Its verifier returns
+\(\texttt{WRAPPED\_STRATUM\_BPOSITIVE\_PRESTACK\_DEFINITION\_VERIFIED}\):
+Definition~\ref{def:hybrid-wrapped-stratum-prestack} defines the full
+\(I=\varnothing\) subprestack with colours in
+\(\Gamma_R^{\mathrm{wr}}\); the \(E\)-equivariant prequotient
+definition is separated in the next packet, while anchor,
+support-realization, descent, and transition rows are not supplied.
+The \(E\)-equivariant wrapped prequotient packet is
+\[
+\texttt{certificates/hybrid/equivariant\_wrapped\_prequotient\_definition}.
+\]
+Its verifier returns
+\(\texttt{E\_EQUIVARIANT\_WRAPPED\_PREQUOTIENT\_DEFINITION\_VERIFIED}\):
+Definition~\ref{def:e-equivariant-wrapped-prequotient-stack} defines
+\(\mathcal M_{\eta,R}^{\mathrm{wr,rig}}\) before the reduced
+\(E\)-quotient and the translation action with origin \(0_E\);
+finite type is separated in the next packet, while properness, anchor
+population, anchor losslessness, quotient descent, aggregate
+hybrid-carrier population, and transition rows are not supplied.
+The wrapped-prequotient finite-type packet is
+\[
+\texttt{certificates/hybrid/wrapped\_prequotient\_finite\_type}.
+\]
+Its verifier returns
+\(\texttt{WRAPPED\_PREQUOTIENT\_FINITE\_TYPE\_VERIFIED}\):
+Proposition~\ref{prop:wrapped-prequotient-finite-type} proves finite
+type for \(\mathcal M_{\eta,R}^{\mathrm{wr,rig}}\) at fixed \(R\) from
+the retained finite class set, finite-type semistable substacks, and
+scalar rigidification; properness, anchor population, quotient
+descent, aggregate hybrid-carrier population, and transition rows are
+not supplied.
+The local/local correspondence packet is
+\[
+\texttt{certificates/hybrid/local\_local\_correspondence\_definition}.
+\]
+Its verifier returns
+\(\texttt{LOCAL\_LOCAL\_CORRESPONDENCE\_DEFINITION\_VERIFIED}\):
+Definition~\ref{def:local-local-correspondence-datum} defines the
+ordered \(LL\) projection-finite diagram; extension stack,
+source/target map, descent, properness, Thom--Sebastiani, collision,
+and transition rows are not supplied by that definition packet.
+The local/local target-properness packet is
+\[
+\texttt{certificates/hybrid/local\_local\_extension\_properness}.
+\]
+Its verifier returns
+\(\texttt{LOCAL\_LOCAL\_TARGET\_PROPERNESS\_VERIFIED}\):
+Proposition~\ref{prop:local-local-target-properness} realizes the
+\(LL\) extension stack as a closed relative Quot locus and proves
+properness of the target map \(q^{\mathrm{LL}}\).  It does not assert
+properness of the source map \(p^{\mathrm{LL}}\), and descent,
+collision compatibility, Thom--Sebastiani transport, transition rows,
+and aggregate hybrid-carrier population are not supplied.
+The mixed local/wrapped correspondence packet is
+\[
+\texttt{certificates/hybrid/mixed\_local\_wrapped\_correspondence\_definition}.
+\]
+Its verifier returns
+\(\texttt{MIXED\_LOCAL\_WRAPPED\_CORRESPONDENCE\_DEFINITION\_VERIFIED}\):
+Definition~\ref{def:mixed-local-wrapped-correspondence-datum} defines
+the one-sided \(LW\) and \(WL\) unreduced mixed diagrams; extension
+stack, source/target map, populated anchor-memory, admissibility,
+base-change, projection-formula, Thom--Sebastiani, and transition rows
+are not supplied by that definition packet.
+The mixed local/wrapped target-admissibility packet is
+\[
+\texttt{certificates/hybrid/mixed\_local\_wrapped\_extension\_admissibility}.
+\]
+Its verifier returns
+\(\texttt{MIXED\_LOCAL\_WRAPPED\_ADMISSIBILITY\_VERIFIED}\):
+Proposition~\ref{prop:mixed-local-wrapped-target-admissibility}
+realizes the \(LW\) and \(WL\) extension stacks as closed relative
+Quot loci over the wrapped target prequotient and proves properness of
+the target maps \(q^{\mathrm{LW}}\) and \(q^{\mathrm{WL}}\).  It does
+not assert properness of \(p^{\mathrm{LW}}\) or \(p^{\mathrm{WL}}\),
+and compact-support pushforward, populated anchor-memory rows, base
+change, projection formula, Thom--Sebastiani transport, quotient
+descent, transition rows, and aggregate hybrid-carrier population are
+not supplied.
+The wrapped/wrapped correspondence packet is
+\[
+\texttt{certificates/hybrid/wrapped\_wrapped\_correspondence\_definition}.
+\]
+Its verifier returns
+\(\texttt{WRAPPED\_WRAPPED\_CORRESPONDENCE\_DEFINITION\_VERIFIED}\):
+Definition~\ref{def:wrapped-wrapped-correspondence-datum} defines the
+ordered \(WW\) unreduced diagram; extension stack, source/target map,
+populated anchor-memory, admissibility, Thom--Sebastiani,
+symmetric-descent, and transition rows are not supplied by that
+definition packet.
+The wrapped/wrapped target-admissibility packet is
+\[
+\texttt{certificates/hybrid/wrapped\_wrapped\_extension\_admissibility}.
+\]
+Its verifier returns
+\(\texttt{WRAPPED\_WRAPPED\_ADMISSIBILITY\_VERIFIED}\):
+Proposition~\ref{prop:wrapped-wrapped-target-admissibility} realizes
+the \(WW\) extension stack as a closed relative Quot locus over the
+wrapped target prequotient and proves properness of the target map
+\(q^{\mathrm{WW}}\).  It does not assert properness of
+\(p^{\mathrm{WW}}\), and compact-support pushforward, populated
+anchor-memory rows, symmetric descent, Thom--Sebastiani transport,
+quotient descent, transition rows, and aggregate hybrid-carrier
+population are not supplied.
+The compact-support exceptional pushforward model packet is
+\[
+\texttt{certificates/hybrid/compact\_support\_exceptional\_pushforward\_model}.
+\]
+Its verifier returns
+\(\texttt{COMPACT\_SUPPORT\_EXCEPTIONAL\_PUSHFORWARD\_MODEL\_DEFINED}\):
+Definition~\ref{def:compact-support-exceptional-pushforward-model}
+defines a chosen compactification
+\(\mathfrak E\hookrightarrow\overline{\mathfrak E}_f\to Z\) and the
+formula \(f^{\mathrm{cs}}_!K=\overline f_*j_{f,!}K\), with the
+proper-map specialization \(f^{\mathrm{cs}}_!=f_*\).  It does not prove
+choice independence, base change, projection formula,
+Thom--Sebastiani transport, symmetric descent, quotient descent,
+transition compatibility, associativity, or aggregate hybrid-carrier
+population.
+The mixed-correspondence base-change packet is
+\[
+\texttt{certificates/hybrid/mixed\_correspondence\_base\_change}.
+\]
+Its verifier returns
+\(\texttt{MIXED\_CORRESPONDENCE\_BASE\_CHANGE\_VERIFIED}\):
+Proposition~\ref{prop:mixed-correspondence-base-change} proves the
+Cartesian compact-support base-change isomorphisms for the \(LW\) and
+\(WL\) target maps.  It does not prove compactification-choice
+independence, projection formula, Thom--Sebastiani transport, quotient
+descent, transition compatibility, associativity, or aggregate
+hybrid-carrier population.
+The mixed-correspondence projection-formula packet is
+\[
+\texttt{certificates/hybrid/mixed\_correspondence\_projection\_formula}.
+\]
+Its verifier returns
+\(\texttt{MIXED\_CORRESPONDENCE\_PROJECTION\_FORMULA\_VERIFIED}\):
+Proposition~\ref{prop:mixed-correspondence-projection-formula} proves
+the compact-support projection formula for the \(LW\) and \(WL\)
+target maps with retained finite-Tor target coefficients.  It does not
+prove compactification-choice independence, Thom--Sebastiani
+transport, quotient descent, transition compatibility, associativity,
+or aggregate hybrid-carrier population.
+The mixed-correspondence Thom--Sebastiani packet is
+\[
+\texttt{certificates/hybrid/mixed\_correspondence\_thom\_sebastiani}.
+\]
+Its verifier returns
+\(\texttt{MIXED\_THOM\_SEBASTIANI\_TRANSPORT\_CONDITIONAL\_VERIFIED}\):
+Proposition~\ref{prop:mixed-correspondence-thom-sebastiani} proves the
+binary \(LW/WL\) reduced Thom--Sebastiani transport from supplied
+additive d-critical charts and zero-defect orientation transport.  It
+does not prove \((O1)\), quotient descent, transition compatibility,
+two-step flag associativity, or aggregate hybrid-carrier population.
+The eight-word binary vocabulary packet is
+\[
+\texttt{certificates/hybrid/eight\_word\_binary\_vocabulary}.
+\]
+Its verifier returns
+\(\texttt{EIGHT\_WORD\_BINARY\_VOCABULARY\_DEFINED}\):
+Definition~\ref{def:eight-local-wrapped-binary-words} fixes the
+alphabet \(\{\mathrm L,\mathrm W\}\), the binary type product, the
+eight length-three words, and their two parenthesization symbols.  It
+does not construct the two-step flag stacks or prove associativity.
+The eight-word two-step flag-stack packet is
+\[
+\texttt{certificates/hybrid/eight\_word\_two\_step\_flag\_stacks}.
+\]
+Its verifier returns
+\(\texttt{EIGHT\_WORD\_TWO\_STEP\_FLAG\_STACKS\_CONSTRUCTED}\):
+Proposition~\ref{prop:eight-two-step-flag-stacks} constructs the
+retained two-step flag stacks and the two comparison maps for all
+eight words.  It does not prove associativity, pentagon coherence,
+quotient descent, transition compatibility, or aggregate population.
+The \(LLL\) associativity packet is
+\[
+\texttt{certificates/hybrid/lll\_associativity}.
+\]
+Its verifier returns
+\(\texttt{LLL\_ASSOCIATIVITY\_CONDITIONAL\_VERIFIED}\):
+Proposition~\ref{prop:lll-associativity} proves the pure local
+associativity defect vanishes on the \(LLL\) two-step flag stack,
+under the stated local base-change, projection-formula, and reduced
+Thom--Sebastiani coefficient rows.  It does not prove the seven mixed
+or wrapped word associativity rows or the four-input pentagon.
+The \(LLW\) associativity packet is
+\[
+\texttt{certificates/hybrid/llw\_associativity}.
+\]
+Its verifier returns
+\(\texttt{LLW\_ASSOCIATIVITY\_CONDITIONAL\_VERIFIED}\):
+Proposition~\ref{prop:llw-associativity} proves the \(LLW\)
+associativity defect vanishes on the local/local--mixed two-step flag
+stack, under the stated local and mixed functorial coefficient rows.
+It does not prove the six remaining word associativity rows or the
+four-input pentagon.
+The \(LWL\) associativity packet is
+\[
+\texttt{certificates/hybrid/lwl\_associativity}.
+\]
+Its verifier returns
+\(\texttt{LWL\_ASSOCIATIVITY\_CONDITIONAL\_VERIFIED}\):
+Proposition~\ref{prop:lwl-associativity} proves the \(LWL\)
+associativity defect vanishes on the ordered mixed--mixed two-step flag
+stack, under the stated mixed functorial coefficient rows.  It does not
+prove the five remaining word associativity rows or the four-input
+pentagon.
+The \(WLL\) associativity packet is
+\[
+\texttt{certificates/hybrid/wll\_associativity}.
+\]
+Its verifier returns
+\(\texttt{WLL\_ASSOCIATIVITY\_CONDITIONAL\_VERIFIED}\):
+Proposition~\ref{prop:wll-associativity} proves the \(WLL\)
+associativity defect vanishes on the mixed--local/local two-step flag
+stack, under the stated local and mixed functorial coefficient rows.
+It does not prove the four \(WW\)-dependent word associativity rows or
+the four-input pentagon.
+The \(LWW\) associativity packet is
+\[
+\texttt{certificates/hybrid/lww\_associativity}.
+\]
+Its verifier returns
+\(\texttt{LWW\_ASSOCIATIVITY\_CONDITIONAL\_VERIFIED}\):
+Proposition~\ref{prop:lww-associativity} proves the \(LWW\)
+associativity defect vanishes on the mixed--wrapped/wrapped two-step
+flag stack, under the stated mixed functorial rows and
+wrapped/wrapped functorial hypotheses.  It does not prove the three
+remaining \(WW\)-dependent word associativity rows or the four-input
+pentagon.
+The \(WLW\) associativity packet is
+\[
+\texttt{certificates/hybrid/wlw\_associativity}.
+\]
+Its verifier returns
+\(\texttt{WLW\_ASSOCIATIVITY\_CONDITIONAL\_VERIFIED}\):
+Proposition~\ref{prop:wlw-associativity} proves the \(WLW\)
+associativity defect vanishes on the mixed--wrapped/wrapped two-step
+flag stack, under the stated mixed functorial rows and
+wrapped/wrapped functorial hypotheses.  It does not prove the two
+remaining \(WW\)-dependent word associativity rows or the four-input
+pentagon.
+The \(WWL\) associativity packet is
+\[
+\texttt{certificates/hybrid/wwl\_associativity}.
+\]
+Its verifier returns
+\(\texttt{WWL\_ASSOCIATIVITY\_CONDITIONAL\_VERIFIED}\):
+Proposition~\ref{prop:wwl-associativity} proves the \(WWL\)
+associativity defect vanishes on the wrapped/wrapped--mixed two-step
+flag stack, under the stated mixed functorial rows and
+wrapped/wrapped functorial hypotheses.  It does not prove the
+remaining \(WWW\) word associativity row or the four-input pentagon.
+The \(WWW\) associativity packet is
+\[
+\texttt{certificates/hybrid/www\_associativity}.
+\]
+Its verifier returns
+\(\texttt{WWW\_ASSOCIATIVITY\_CONDITIONAL\_VERIFIED}\):
+Proposition~\ref{prop:www-associativity} proves the \(WWW\)
+associativity defect vanishes on the wrapped/wrapped two-step flag
+stack, under the stated wrapped/wrapped functorial hypotheses.  The
+eight length-three wordwise associativity defects are then zero under
+the stated functorial rows.  The four-input pentagon remains separate.
+The four-input pentagon packet is
+\[
+\texttt{certificates/hybrid/four\_input\_pentagon\_coherence}.
+\]
+Its verifier returns
+\(\texttt{FOUR\_INPUT\_PENTAGON\_CONDITIONAL\_VERIFIED}\):
+Proposition~\ref{prop:four-input-pentagon-coherence} constructs the
+retained four-step flag stack for every word in
+\(\{\mathrm L,\mathrm W\}^4\) and proves the Mac Lane pentagon for
+the binary hybrid product on that common refinement, under the stated
+functorial hypotheses.  It does not define the higher-coloured tree
+category or prove quotient descent, transition compatibility, or
+aggregate population.
+The higher-coloured tree-category packet is
+\[
+\texttt{certificates/hybrid/higher\_coloured\_tree\_category\_definition}.
+\]
+Its verifier returns
+\(\texttt{HIGHER\_COLOURED\_TREE\_CATEGORY\_DEFINED}\):
+Definition~\ref{def:higher-coloured-hybrid-tree-category} defines the
+nonunital higher-coloured hybrid tree category and the six components
+of \(\mathfrak o^{\mathrm{col}}_R\).  It does not prove
+\(\mathfrak o^{\mathrm{col}}_R=0\), unit compatibility, symmetric
+descent, wrapped order conventions, quotient descent, transition
+compatibility, or aggregate population.
+The higher-coloured residual criterion packet is
+\[
+\texttt{certificates/hybrid/higher\_coloured\_residual\_vanishing\_criterion}.
+\]
+Its verifier returns
+\(\texttt{HIGHER\_COLOURED\_RESIDUAL\_CONDITIONAL\_CRITERION\_VERIFIED}\):
+Proposition~\ref{prop:higher-coloured-residual-vanishing-criterion}
+proves the finite-stage implication from the six named component
+rows to \(\mathfrak o^{\mathrm{col}}_R=0\).  The tree component is
+discharged by the eight associativity rows and the four-input
+pentagon.  The unit and symmetric-relabelling rows are supplied by
+separate packets.  The full non-tree tuple remains incomplete:
+refinement, ordered-chart descent, overlap, quotient, transition, and
+aggregate rows are not supplied.
+The hybrid unit packet is
+\[
+\texttt{certificates/hybrid/hybrid\_unit\_object\_and\_vacuum\_correspondences}.
+\]
+Its verifier returns
+\(\texttt{HYBRID\_UNIT\_OBJECT\_AND\_VACUUM\_CORRESPONDENCES\_DEFINED}\):
+Definition~\ref{def:hybrid-unit-object-vacuum-correspondences}
+defines the local zero unit object and the four split vacuum
+correspondences for local and wrapped inputs.  It does not prove the
+local or wrapped unit identity laws, quotient descent, transition
+compatibility, or aggregate population.
+The local unit compatibility packet is
+\[
+\texttt{certificates/hybrid/local\_unit\_compatibility}.
+\]
+Its verifier returns
+\(\texttt{LOCAL\_UNIT\_COMPATIBILITY\_VERIFIED}\):
+Proposition~\ref{prop:local-unit-compatibility} proves that the left
+and right \(LL\) split vacuum correspondences act as identity
+pull-push maps on local coefficients.  It does not prove wrapped unit
+compatibility, quotient descent, transition compatibility, or
+aggregate population.
+The wrapped unit compatibility packet is
+\[
+\texttt{certificates/hybrid/wrapped\_unit\_compatibility}.
+\]
+Its verifier returns
+\(\texttt{WRAPPED\_UNIT\_COMPATIBILITY\_VERIFIED}\):
+Proposition~\ref{prop:wrapped-unit-compatibility} proves that the
+left \(LW\) and right \(WL\) split vacuum correspondences act as
+identity pull-push maps on wrapped coefficients, with wrapped anchor
+memory unchanged before the reduced \(E\)-quotient.  It does not prove
+quotient descent, transition compatibility, or aggregate population.
+The local configuration symmetric descent packet is
+\[
+\texttt{certificates/hybrid/local\_configuration\_symmetric\_descent}.
+\]
+Its verifier returns
+\(\texttt{LOCAL\_CONFIGURATION\_SYMMETRIC\_DESCENT\_VERIFIED}\):
+Proposition~\ref{prop:local-configuration-symmetric-descent} proves
+finite symmetric-group descent for projection-finite closed local
+configuration charts and their reduced coefficients before the reduced
+\(E\)-quotient.  It does not prove collision compatibility,
+closed-chart refinement, ordered-chart descent to the symmetric
+finite-colour colimit, quotient descent, transition compatibility, or
+aggregate population.
+The wrapped insertion order convention packet is
+\[
+\texttt{certificates/hybrid/wrapped\_insertion\_order\_conventions}.
+\]
+Its verifier returns
+\(\texttt{WRAPPED\_INSERTION\_ORDER\_CONVENTIONS\_VERIFIED}\):
+Proposition~\ref{prop:wrapped-insertion-order-conventions} fixes the
+planar wrapped source order, the \(WW\) quotient/subobject convention,
+and the order preservation of the eight two-step flag comparison maps
+before the reduced \(E\)-quotient.  It does not prove unordered
+wrapped-pair symmetric descent, ordered-chart descent, overlap
+compatibility, quotient descent, transition compatibility, or aggregate
+population.
+The ordered two-sided mixed correspondence packet is
+\[
+\texttt{certificates/hybrid/two\_sided\_mixed\_correspondence\_definition}.
+\]
+Its verifier returns
+\(\texttt{TWO\_SIDED\_MIXED\_CORRESPONDENCE\_DEFINITION\_VERIFIED}\):
+Definition~\ref{def:two-sided-mixed-correspondence-datum} defines the
+ordered \(LWL\) unreduced flag diagram; flag-stack, source/target map,
+populated anchor-memory, admissibility, base-change, projection-formula,
+Thom--Sebastiani, and transition rows are not supplied.
+The source/target anchor-memory packet is
+\[
+\texttt{certificates/hybrid/source\_target\_anchor\_memory\_definition}.
+\]
+Its verifier returns
+\(\texttt{SOURCE\_TARGET\_ANCHOR\_MEMORY\_DEFINITION\_VERIFIED}\):
+Definition~\ref{def:source-target-anchor-memory-datum} defines the
+\(LW\), \(WL\), \(WW\), and \(LWL\) anchor-memory maps on unreduced
+correspondence stacks before the \(E\)-quotient.  The determinant
+anchor is constructed by the next packet and its translation weight by
+the following packet.  The \(\chi=0\) degeneracy is isolated by the
+chi-zero packet.  The degree-zero Jordan--Hoelder extra-anchor datum is
+recorded by the extra-anchor-data packet; anchor-residual, full
+losslessness, quotient-descent, stabilizer linearization, populated
+finite-stack, and transition rows are not supplied by the
+source/target-memory packet.
+The determinant-anchor construction packet is
+\[
+\texttt{certificates/hybrid/determinant\_anchor\_construction}.
+\]
+Its verifier returns
+\(\texttt{DETERMINANT\_ANCHOR\_CONSTRUCTION\_VERIFIED}\):
+Definition~\ref{def:determinant-anchor} constructs
+\(\lambda^{\det}_{\eta,R}\) as the normalized determinant of
+cohomology, checks that it lands in \(\operatorname{Pic}^0(E)\simeq E\),
+and records determinant-functor base-change; unit-weight, \(\chi=0\)
+degeneracy, Jordan--Hoelder extra-anchor data, anchor-residual,
+losslessness, quotient-descent, populated wrapped-prequotient, and
+transition rows are not supplied.  The determinant-anchor
+translation-weight packet
+\[
+\texttt{certificates/hybrid/determinant\_anchor\_translation\_weight}
+\]
+returns
+\(\texttt{DETERMINANT\_ANCHOR\_TRANSLATION\_WEIGHT\_VERIFIED}\): under
+the support-translation convention it computes
+\(\lambda^{\det}_{\eta,R}(a\cdot\mathcal F)
+=\lambda^{\det}_{\eta,R}(\mathcal F)+\chi_\eta a\).
+The determinant-anchor chi-zero degeneracy packet
+\[
+\texttt{certificates/hybrid/determinant\_anchor\_chi\_zero\_degeneracy}
+\]
+returns
+\(\texttt{DETERMINANT\_ANCHOR\_CHI\_ZERO\_DEGENERACY\_VERIFIED}\):
+on the branch \(\chi_\eta=0\), the determinant anchor is constant on
+the full retained \(E\)-translation orbit and has rank-one separation
+defect.  The determinant-anchor extra-anchor-data packet
+\[
+\texttt{certificates/hybrid/determinant\_anchor\_extra\_anchor\_data}
+\]
+returns
+\(\texttt{DETERMINANT\_ANCHOR\_EXTRA\_ANCHOR\_DATA\_VERIFIED}\):
+the degree-zero Jordan--Hoelder divisor refines the determinant anchor
+and separates the rank-two pair \(\mathcal O_E^{\oplus2}\) and
+\(L\oplus L^{-1}\), \(L\ne\mathcal O_E\).  Losslessness,
+anchor-residual, quotient-descent, stabilizer linearization, populated
+wrapped-prequotient, and transition rows are not supplied.
+The quotient-after-correspondence pseudofunctor definition packet is
+\[
+\texttt{certificates/hybrid/quotient\_after\_correspondence\_pseudofunctor\_definition}.
+\]
+Its verifier returns
+\(\texttt{QUOTIENT\_AFTER\_CORRESPONDENCE\_PSEUDOFUNCTOR\_DEFINED}\):
+Definition~\ref{def:quotient-after-correspondence-pseudofunctor}
+defines the object assignment \(Y\mapsto [Y/E]\), the generating-arrow
+assignment
+\((Y_0\leftarrow\mathfrak E_e\to Y_1)\mapsto
+([Y_0/E]\leftarrow[\mathfrak E_e/E]\to[Y_1/E])\), the
+coefficient-descent interface, and the quotient residual components.
+The composition component is supplied by
+\[
+\texttt{certificates/hybrid/quotient\_after\_correspondence\_composition}.
+\]
+Proposition~\ref{prop:quotient-after-correspondence-preserves-composition}
+proves preservation of finite-height composition of retained spans.
+The base-change square component is supplied by
+\[
+\texttt{certificates/hybrid/quotient\_after\_correspondence\_base\_change}.
+\]
+Proposition~\ref{prop:quotient-after-correspondence-preserves-base-change}
+proves preservation of retained finite-height cartesian squares after
+quotient.  The Thom--Sebastiani descent component is supplied by
+\[
+\texttt{certificates/hybrid/quotient\_after\_correspondence\_thom\_sebastiani}.
+\]
+Proposition~\ref{prop:quotient-after-correspondence-preserves-thom-sebastiani}
+proves descent of equivariant reduced Thom--Sebastiani transport
+through the quotient correspondence.  The quotient-first exclusion
+component is supplied by
+\[
+\texttt{certificates/hybrid/quotient\_after\_correspondence\_quotient\_first\_exclusion}.
+\]
+Proposition~\ref{prop:quotient-after-correspondence-excludes-quotient-first}
+proves that every reduced generating arrow used by
+\(\mathcal Q^{\mathrm{corr}}_{E,R}\) is the quotient of a preformed
+unreduced \(E\)-equivariant correspondence.  The Borel--Moore chain
+functor component is supplied by
+\[
+\texttt{certificates/hybrid/quotient\_after\_correspondence\_bm\_chain\_functor}.
+\]
+Proposition~\ref{prop:quotient-after-correspondence-borel-moore-chain-functor}
+constructs \(Q_{E,R}\) on quotient-presented Borel--Moore chain
+objects.  The operation-comparison maps are supplied by
+\[
+\texttt{certificates/hybrid/quotient\_after\_correspondence\_theta\_mu\_comparison}.
+\]
+Proposition~\ref{prop:quotient-after-correspondence-theta-mu-comparison}
+constructs \(\theta^Q_{\mu,R}\) for quotient-presented operation
+rows.  The quotient two-step flag associativity component is supplied
+by
+Proposition~\ref{prop:quotient-after-correspondence-theta-mu-associativity}.
+The quotient product-coproduct compatibility component is supplied by
+Proposition~\ref{prop:quotient-after-correspondence-theta-mu-coproduct}.
+The quotient primitive-projection compatibility component is supplied
+by
+Proposition~\ref{prop:quotient-after-correspondence-theta-mu-primitives}.
+The HN-transition compatibility of \(Q_{E,R}\) is supplied by
+Proposition~\ref{prop:quotient-after-correspondence-hn-transition-compatibility}.
+Compact-support pushforward base change, protected-integration
+transition compatibility, and aggregate population are not supplied.  Hall
+product, Hall coproduct, and primitive-subspace transition preservation
+are not supplied by row 256.
+The definition of the protected integration map is supplied separately
+by
+Proposition~\ref{prop:protected-integration-definition}.
+Its product compatibility is supplied separately by
+Proposition~\ref{prop:protected-integration-product-compatibility}.
+Its coproduct compatibility is supplied separately by
+Proposition~\ref{prop:protected-integration-coproduct-compatibility}.
+Its primitive-projection compatibility is supplied separately by
+Proposition~\ref{prop:protected-integration-primitive-compatibility}.
+Its Gram degree is supplied separately by
+Proposition~\ref{prop:protected-integration-gram-degree}.
+Its normal-ordered label comparison is supplied separately by
+Proposition~\ref{prop:protected-integration-pi-x-separation}.
+
+\textit{Construction.}
+\begin{enumerate}
+\item Split $\Gamma_R$ into $\Gamma_R^{\mathrm{loc}}$
+($b_R^{\mathrm{geom}}=0$) and $\Gamma_R^{\mathrm{wr}}$
+($b_R^{\mathrm{geom}}>0$).
+\item Form the local carrier
+\(\operatorname{Ran}^{\mathrm{loc}}_{R,\mathrm{pre}}(E)\) as the
+\(J=\varnothing\) subprestack of
+\(\operatorname{Ran}^{\mathrm{hyb}}_{R,\mathrm{pre}}(E)\), with local
+colour labels in \(\Gamma_R^{\mathrm{loc}}\).
+\item Form the wrapped carrier
+\(\operatorname{Ran}^{\mathrm{wr}}_{R,\mathrm{pre}}(E)\) by imposing
+\(I=\varnothing\) in the hybrid prestack and allowing only colour maps
+\(\eta:J\to\Gamma_R^{\mathrm{wr}}\), with wrapped prequotient families
+and their anchors retained.
+\item For $\alpha\in\Gamma_R^{\mathrm{loc}}$: form the
+closed-configuration incidence stacks
+$\mathfrak M_{\alpha,R,I}^{\mathrm{loc,cl}}$ and the configuration
+maps $\pi_{\alpha,R,I}:\mathfrak M_{\alpha,R,I}^{\mathrm{loc,cl}}
+\to E^I$, with vanishing-cycle/orientation pushforwards
+$\mathscr H_{\alpha,R,I}^{\mathrm{loc}}$.  Define
+$\mathcal F_{\alpha,R}^{\mathrm{loc}}(U)$ by symmetric-group descent
+on $E^I$.
+\item Retain the ordered \(LL\) local/local correspondence diagram of
+Definition~\ref{def:local-local-correspondence-datum}; its
+target-proper extension stack is
+Proposition~\ref{prop:local-local-target-properness}.  Source
+properness is not claimed.  Descent, collision compatibility,
+Thom--Sebastiani, compact-support pushforward, aggregate population,
+and transition rows remain separate obligations.
+\item For $\eta\in\Gamma_R^{\mathrm{wr}}$: form the rigidified
+prequotient $\mathcal M_{\eta,R}^{\mathrm{wr,rig}}\to
+\mathcal M_{\eta,R}^{\mathrm{wr}}\) of
+Definition~\ref{def:e-equivariant-wrapped-prequotient-stack}, with its
+\(E\)-translation action before the reduced quotient is taken.  The
+finite-type assertion is
+Proposition~\ref{prop:wrapped-prequotient-finite-type}.  Then
+attach the determinant anchor \(\lambda^{\det}_{\eta,R}\) of
+Definition~\ref{def:determinant-anchor}.  Its translation weight,
+computed in
+Proposition~\ref{prop:determinant-anchor-translation-weight}, is
+\(\chi_\eta\).  On the \(\chi_\eta=0\) branch,
+Proposition~\ref{prop:determinant-anchor-chi-zero-degeneracy} gives a
+rank-one determinant-anchor separation defect.  Attach the
+degree-zero Jordan--Hoelder divisor of
+Proposition~\ref{prop:determinant-anchor-extra-data-separates-rank-two}
+as extra anchor data; it separates the determinant-zero rank-two test
+pair but is not full anchor losslessness.  Unit-weight normalization,
+losslessness, quotient descent, stabilizer linearization, transition
+compatibility, and finite-stage population remain separate rows.  The
+finite anchor residual \(\mathfrak o^\lambda_R\) is
+Definition~\ref{def:finite-anchor-residual}; its vanishing is a later
+row.
+\item Retain the one-sided \(LW\) and \(WL\) mixed local/wrapped
+correspondence diagrams of
+Definition~\ref{def:mixed-local-wrapped-correspondence-datum}; their
+target-admissible extension-stack and target-map rows are supplied by
+Proposition~\ref{prop:mixed-local-wrapped-target-admissibility}.  Their
+populated anchor-memory, compact-support pushforward, base-change,
+projection-formula, Thom--Sebastiani, quotient-descent, and transition
+rows remain separate obligations.
+\item Retain the ordered \(WW\) wrapped/wrapped correspondence diagram
+of Definition~\ref{def:wrapped-wrapped-correspondence-datum}; its
+target-admissible extension-stack and target-map rows are supplied by
+Proposition~\ref{prop:wrapped-wrapped-target-admissibility}.  Its
+populated anchor-memory, compact-support pushforward, symmetric
+descent, Thom--Sebastiani, quotient-descent, and transition rows
+remain separate obligations.
+\item Retain the compact-support exceptional pushforward model of
+Definition~\ref{def:compact-support-exceptional-pushforward-model}.
+It supplies the chosen formula \(f^{\mathrm{cs}}_!=\overline f_*j_!\)
+and the proper-map specialization.  It does not populate every
+correspondence map with a compactification and does not prove base
+change, projection formula, Thom--Sebastiani, symmetric descent,
+quotient descent, transition compatibility, or associativity.
+\item Retain the \(LW/WL\) mixed base-change isomorphisms of
+Proposition~\ref{prop:mixed-correspondence-base-change}.  They apply to
+Cartesian compact-support squares with pulled coefficient complexes.
+Projection formula, Thom--Sebastiani, quotient descent, transitions,
+associativity, and aggregate population remain separate rows.
+\item Retain the \(LW/WL\) mixed projection-formula isomorphisms of
+Proposition~\ref{prop:mixed-correspondence-projection-formula}.  They
+apply to retained finite-Tor target coefficients in the chosen
+compact-support model.  Thom--Sebastiani, quotient descent,
+transitions, associativity, and aggregate population remain separate
+rows.
+\item Retain the \(LW/WL\) mixed Thom--Sebastiani transports of
+Proposition~\ref{prop:mixed-correspondence-thom-sebastiani}.  They
+apply on the supplied reduced additive d-critical charts with
+zero-defect Joyce--Upmeier orientation transport.  Quotient descent,
+transitions, two-step flag associativity, and aggregate population
+remain separate rows.
+\item Retain the eight-word binary vocabulary of
+Definition~\ref{def:eight-local-wrapped-binary-words}.  This fixes
+\(\{\mathrm{LLL},\mathrm{LLW},\mathrm{LWL},\mathrm{WLL},
+\mathrm{LWW},\mathrm{WLW},\mathrm{WWL},\mathrm{WWW}\}\), the
+\(\mathrm L/\mathrm W\) type product, and the two parenthesization
+symbols.  The actual two-step flag stacks, associativity defects,
+pentagon, quotient descent, transitions, and aggregate population
+remain separate rows.
+\item Retain the eight two-step flag stacks and their left/right
+comparison maps from Proposition~\ref{prop:eight-two-step-flag-stacks}.
+Associativity defects, the four-input pentagon, quotient descent,
+transitions, and aggregate population remain separate rows.
+\item Retain the \(LLL\) associativity identity of
+Proposition~\ref{prop:lll-associativity}.  The seven remaining word
+associativity rows, the four-input pentagon, quotient descent,
+transitions, and aggregate population remain separate rows.
+\item Retain the \(LLW\) associativity identity of
+Proposition~\ref{prop:llw-associativity}.  The six remaining word
+associativity rows, the four-input pentagon, quotient descent,
+transitions, and aggregate population remain separate rows.
+\item Retain the \(LWL\) associativity identity of
+Proposition~\ref{prop:lwl-associativity}.  The five remaining word
+associativity rows, the four-input pentagon, quotient descent,
+transitions, and aggregate population remain separate rows.
+\item Retain the \(WLL\) associativity identity of
+Proposition~\ref{prop:wll-associativity}.  The four remaining
+\(WW\)-dependent associativity rows, the four-input pentagon, quotient
+descent, transitions, and aggregate population remain separate rows.
+\item Retain the \(LWW\) associativity identity of
+Proposition~\ref{prop:lww-associativity}.  The three remaining
+\(WW\)-dependent associativity rows, the four-input pentagon, quotient
+descent, transitions, and aggregate population remain separate rows.
+\item Retain the \(WLW\) associativity identity of
+Proposition~\ref{prop:wlw-associativity}.  The two remaining
+\(WW\)-dependent associativity rows, the four-input pentagon, quotient
+descent, transitions, and aggregate population remain separate rows.
+\item Retain the \(WWL\) associativity identity of
+Proposition~\ref{prop:wwl-associativity}.  The remaining \(WWW\)
+associativity row, the four-input pentagon, quotient descent,
+transitions, and aggregate population remain separate rows.
+\item Retain the \(WWW\) associativity identity of
+Proposition~\ref{prop:www-associativity}.  This completes the
+length-three wordwise associativity list.  The four-input pentagon,
+quotient descent, transitions, and aggregate population remain
+separate rows.
+\item Retain the four-input pentagon coherence of
+Proposition~\ref{prop:four-input-pentagon-coherence}.  The
+higher-coloured tree category, remaining unit compatibilities,
+quotient descent, transitions, and aggregate population remain
+separate rows.
+\item Retain the nonunital higher-coloured tree category of
+Definition~\ref{def:higher-coloured-hybrid-tree-category}.  The
+vanishing of \(\mathfrak o^{\mathrm{col}}_R\), remaining unit
+compatibilities, quotient descent, transitions, and aggregate
+population remain separate rows.
+\item Retain the conditional higher-coloured residual criterion of
+Proposition~\ref{prop:higher-coloured-residual-vanishing-criterion}.
+The tree component is discharged by associativity and pentagon
+coherence.  The unit and symmetric-relabelling rows are supplied by
+separate proof packets.  Refinement, ordered-chart descent, overlap,
+quotient descent, transitions, and aggregate population rows remain
+separate rows.
+\item Retain the hybrid unit object and split vacuum correspondences
+of Definition~\ref{def:hybrid-unit-object-vacuum-correspondences}.
+The local and wrapped unit identity laws are supplied by the next two
+proof rows; quotient descent, transitions, and aggregate population
+remain separate rows.
+\item Retain the local unit compatibility theorem of
+Proposition~\ref{prop:local-unit-compatibility}.  The wrapped unit
+identity law, quotient descent, transitions, and aggregate population
+remain separate rows.
+\item Retain the wrapped unit compatibility theorem of
+Proposition~\ref{prop:wrapped-unit-compatibility}.  The unit component
+of the higher-coloured residual is now discharged at fixed height
+before quotient.  Quotient descent, transitions, and aggregate
+population remain separate rows.
+\item Retain the local configuration symmetric descent theorem of
+Proposition~\ref{prop:local-configuration-symmetric-descent}.  The
+symmetry component of the higher-coloured residual is now discharged
+for projection-finite local configuration charts at fixed height before
+quotient.  Collision compatibility, refinement, ordered-chart descent,
+overlap, quotient descent, transitions, and aggregate population remain
+separate rows.
+\item Retain the wrapped insertion order convention theorem of
+Proposition~\ref{prop:wrapped-insertion-order-conventions}.  The
+wrapped order input row of the higher-coloured residual criterion is
+now supplied at fixed height before quotient.  Unordered wrapped-pair
+symmetric descent, ordered-chart descent, overlap, quotient descent,
+transitions, and aggregate population remain separate rows.
+\item Retain the ordered \(LWL\) two-sided mixed correspondence diagram
+of Definition~\ref{def:two-sided-mixed-correspondence-datum}; its
+flag-stack, source/target-map, populated anchor-memory, admissibility,
+base-change, projection-formula, Thom--Sebastiani, and transition rows
+remain separate obligations.
+\item Retain the source/target anchor-memory maps
+\(a^{\mathrm{LW}},a^{\mathrm{WL}},a^{\mathrm{WW}}\), and
+\(a^{\mathrm{LWL}}\) of
+Definition~\ref{def:source-target-anchor-memory-datum} on the
+unreduced mixed and wrapped correspondence types.  This step assumes
+the abstract wrapped anchors \(\lambda_{\eta,R}\).  The
+determinant-anchor construction and translation-weight computation are
+separate packets, and the \(\chi=0\) determinant-anchor degeneracy is
+handled by its own packet.  The degree-zero Jordan--Hoelder
+extra-anchor datum and the residual definition \(o^\lambda_R\) are
+separate packets; residual vanishing, losslessness, quotient descent,
+and transition rows remain separate obligations.
+\item Retain the quotient-after-correspondence pseudofunctor definition
+of Definition~\ref{def:quotient-after-correspondence-pseudofunctor}.
+This supplies the object, arrow, and coefficient-descent interface
+rows before Borel--Moore chains.
+\item Retain the composition comparison of
+Proposition~\ref{prop:quotient-after-correspondence-preserves-composition}.
+This supplies \(\mathfrak o^{Q,\mathrm{comp}}_R=0\) for finite-height
+retained spans.
+\item Retain the base-change square comparison of
+Proposition~\ref{prop:quotient-after-correspondence-preserves-base-change}.
+This supplies \(\mathfrak o^{Q,\mathrm{bc}}_R=0\) for finite-height
+retained cartesian squares.  Compact-support pushforward base change
+and aggregate population remain separate rows; the
+quotient flag component is treated below.
+\item Retain the Thom--Sebastiani descent comparison of
+Proposition~\ref{prop:quotient-after-correspondence-preserves-thom-sebastiani}.
+This supplies \(\mathfrak o^{Q,\mathrm{TS}}_R=0\) for equivariant
+finite-height reduced Thom--Sebastiani rows.
+\item Retain the quotient-first exclusion of
+Proposition~\ref{prop:quotient-after-correspondence-excludes-quotient-first}.
+This supplies the row-250 firewall: an independent object-quotient-
+first Hall product is not used unless it is identified with
+\([\mathfrak E_e/E]\) for a preformed unreduced correspondence.
+\item Retain the Borel--Moore chain functor of
+Proposition~\ref{prop:quotient-after-correspondence-borel-moore-chain-functor}.
+This supplies \(\mathfrak o^{Q,\mathrm{BM}}_R=0\) on
+quotient-presented coefficient objects.
+\item Retain the operation-comparison maps of
+Proposition~\ref{prop:quotient-after-correspondence-theta-mu-comparison}.
+This supplies \(\mathfrak o^{Q,\theta}_R=0\) for quotient-presented
+finite-height operation rows.
+\item Retain the associativity compatibility of
+Proposition~\ref{prop:quotient-after-correspondence-theta-mu-associativity}.
+This supplies \(\mathfrak o^{Q,\mathrm{flag}}_R=0\) for the eight
+wordwise two-step flag associativity rows.
+\item Retain the coproduct compatibility of
+Proposition~\ref{prop:quotient-after-correspondence-theta-mu-coproduct}.
+This supplies \(\mathfrak o^{Q,\Delta}_R=0\) for supplied finite
+product-coproduct rows.
+\item Retain the primitive-projection compatibility of
+Proposition~\ref{prop:quotient-after-correspondence-theta-mu-primitives}.
+This supplies \(\mathfrak o^{Q,\Prim}_R=0\) for supplied finite
+primitive kernel and projection rows.
+\item Retain the HN-transition compatibility of \(Q_{E,R}\) from
+Proposition~\ref{prop:quotient-after-correspondence-hn-transition-compatibility}.
+This supplies \(\mathfrak o^{Q,\mathrm{tr}}_{R'R}=0\) for supplied
+quotient-presented finite HN object and coefficient transition rows.
+Protected integration and aggregate population remain separate rows.
+Hall product, Hall coproduct, and primitive-subspace transition
+preservation remain outside row 256.
+\item Retain the eight-word vocabulary
+\(\mathcal W^{(3)}_{\mathrm{hyb}}\) of
+Definition~\ref{def:eight-local-wrapped-binary-words} and the
+two-step binary flag stacks
+\(\mathfrak F^{(2),w}_{\xi_1,\xi_2,\xi_3,R}\) of
+Proposition~\ref{prop:eight-two-step-flag-stacks}.  The vanishing of
+\(\mathfrak o^{\mathrm{assoc}}_{\mathrm{LLL},R}\) is supplied by
+Proposition~\ref{prop:lll-associativity}, and
+\(\mathfrak o^{\mathrm{assoc}}_{\mathrm{LLW},R}\) is supplied by
+Proposition~\ref{prop:llw-associativity}; the \(LWL\) associativity
+defect is zero by Proposition~\ref{prop:lwl-associativity}; and the
+\(WLL\) associativity defect is zero by
+Proposition~\ref{prop:wll-associativity}.  The \(LWW\) associativity
+defect is zero by Proposition~\ref{prop:lww-associativity}.  The
+\(WLW\) associativity defect is zero by
+Proposition~\ref{prop:wlw-associativity}.  The \(WWL\) associativity
+defect is zero by Proposition~\ref{prop:wwl-associativity}; and the
+\(WWW\) associativity defect is zero by
+Proposition~\ref{prop:www-associativity}.  The four-input pentagon is
+supplied by Proposition~\ref{prop:four-input-pentagon-coherence}.
+The unit, refinement, symmetry, descent, and higher-coloured tree data
+remain in \(\mathfrak o^{\mathrm{col}}_R\).
+\item Use the supplied quotient-after-correspondence pseudofunctor
+definition
+\(\mathsf{Corr}^{E,\mathrm{hyb}}_R\to
+\mathsf{Corr}^{\mathrm{red},\mathrm{hyb}}_R\), then supply the
+separate compact-support pushforward base-change and transition rows
+before treating the quotient residual as zero.
+\item Define $I_R^{\mathrm{prot}}$ on the reduced functor by
+Proposition~\ref{prop:protected-integration-definition}.  Its product
+compatibility is supplied by
+Proposition~\ref{prop:protected-integration-product-compatibility}.
+Its coproduct compatibility is supplied by
+Proposition~\ref{prop:protected-integration-coproduct-compatibility}.
+Its primitive-projection compatibility is supplied by
+Proposition~\ref{prop:protected-integration-primitive-compatibility}.
+Its Gram degree is supplied by
+Proposition~\ref{prop:protected-integration-gram-degree}.  The
+normal-ordered label comparison is supplied by
+Proposition~\ref{prop:protected-integration-pi-x-separation}.  The
+transition compatibility row remains separate.
+\end{enumerate}
+
+\textit{Obstruction classes.}  $\mathfrak O_{\mathrm{hyb},R}$
+(\S\ref{subsec:hybrid-ran-carrier}).
+
+\subsubsection*{Orientation descent and Weyl transport}
+
+\textit{Hypotheses.} The hybrid wrapped factorization datum.
+
+\textit{Finite datum.} The (O1) and (O1)$^+$ data: null-trivializations of
+the reduced and equivariant orientation gerbes,
+$E[N]$-linearizations with vanishing degree-one characters, and
+Weyl-equivariant lifts $\tau_i$ ($i=1,2,3$) compatible with the
+quotient-orientation cocycle $\mathfrak q_{\mathcal C}$.
+
+\textit{Construction.}
+\begin{enumerate}
+\item For each charge stratum $\mathcal C$: compute the reduced
+gerbe $\alpha^{\mathrm{red}}_{\mathcal C}$, free $E$-class
+$\alpha^{E,\mathrm{free}}_{\mathcal C}$, and equivariant
+finite-stabilizer classes $\widetilde\beta^{H}_{\mathcal C,S}$ for
+the actual stabilizers $H\subset E_{\mathrm{tors}}$ on
+finite-stabilizer strata.
+\item Verify the Klein-four condition at $H=E[2]$:
+$(b_{20},b_{11},b_{02})=(r_1,r_1+r_2+r_3,r_2)$ with
+$r_1=r_2=r_3=0$; for full-level even $N\ge 4$, verify the
+two-primary residual on $E[N]_{(2)}$ including the mixed coefficient
+$A_{12}^{(N)}$.
+\item Choose zero $H^1(BH;\mathbb F_2)$-linearization characters
+$\lambda^H_{\mathcal C,S}=0$.
+\item For each simple type-II reflection $s_{\delta_i}$, supply the
+lift $\tau_i:o_{\mathcal C}\to s_{\delta_i}^* o_{\mathcal C}$ on the
+finite partial action groupoid $\mathcal G_R$; compute the
+$2$-cocycle $c_{o,R}\in Z^2(\mathcal G_R;\underline{\mathbb F}_2)$
+and verify $[c_{o,R}]=0$ with chosen $1$-cochain.
+\item Verify $\tau_i^2=1$ and the Coxeter relations on the
+$W^{(2)}(\Lambda_{II}^{2,1})$-orbit; verify
+$\omega_{i,\mathcal C}=0$ for each torsor defect of the
+quotient-orientation transport.
+\end{enumerate}
+
+\textit{Obstruction classes.}  $\mathfrak O_{\mathrm{or},R}$
+(\S\ref{subsec:cosection-twisted-orientation}); the (O2) wall-atlas
+enters the Pfaffian wall normal form.
+
+\subsubsection*{Hall product, coproduct, and primitive projection}
+
+\textit{Hypotheses.} The finite Hall atlas, hybrid carrier, and orientation transport.
+
+\textit{Finite datum.} The compact Hall product $m_R^{\mathrm{red}}$,
+collision coproduct $\Delta_R^{\mathrm{ch}}$, primitive projection
+$P_R^{\Prim}$, and Hopf pairing $\langle\,,\,\rangle_R$ on the
+cosection-reduced d-critical heart, with normal-ordered Gram descent
+$\overline\Pi_{X,*}^\Theta$.  The product alone is not a primitive
+datum by Proposition~\ref{prop:hall-product-only-no-primitives}.
+
+\textit{Construction.}
+\begin{enumerate}
+\item Form $m_R^{\mathrm{red}}=q_!\circ\operatorname{TS}^{\mathrm{red}}_R
+\circ p^*$ on each binary correspondence (LL, LW, WL, WW); verify
+two-step pentagon coherence on the eight-word atlas.  This operation is
+defined only in the retained compactified correspondence model, or in
+an explicitly supplied exceptional compact-support model as in
+Definition~\ref{def:compact-support-exceptional-pushforward-model};
+for \(LW/WL\) Cartesian target refinements, base change is
+Proposition~\ref{prop:mixed-correspondence-base-change}; for
+\(LW/WL\) retained finite-Tor target coefficients, the projection
+formula is Proposition~\ref{prop:mixed-correspondence-projection-formula};
+for \(LW/WL\) binary coefficient transport, Thom--Sebastiani is
+Proposition~\ref{prop:mixed-correspondence-thom-sebastiani}.
+\item Form $\Delta_R^{\mathrm{ch}}$ by pull-push on the $2$-step flag
+stack; verify coassociativity and counitality after $Q_{E,R}$ using
+the higher-coloured, unit, refinement, quotient, and transition
+coherences.
+\item Form $\langle\,,\,\rangle_R$ on the primitive layer; verify
+Hopf adjointness with the coproduct on the radical quotient.
+\item Compute the Frobenius defect $\mathfrak o_{F,R}$ via the
+CY-3 Serre-functor identity \cite{KSCoHA}; verify
+$\mathfrak o_{F,R}=0$.
+\item Compute the radical $\operatorname{Rad}_R^\Pi$; verify
+Hopf-coideal and Lie-ideal stability.
+\item Form the chain-level normal-ordered Gram descent
+$\overline\Pi_{X,*}^\Theta$ via the negative-cyclic
+Loday--Quillen--Tsygan route or the PTVV--Joyce orientation route
+\cite{LodayQuillen1984,Tsygan1983,LodayCyclicHomology,PTVV2013};
+verify the triple homotopy compatibility
+$d_{\mathrm{Hoch}}\Theta_\Pi=B_{\mathrm{ch}}$ and the
+$\widehat\Gamma_R$-grading absorption.
+\end{enumerate}
+
+\textit{Obstruction classes.}  $\mathfrak O_{\mathrm{Hall},R}$,
+including $\mathfrak o_{F,R}$, the Hopf-coideal residual, and the
+$\Theta$-pentagon residual.
+
+\subsubsection*{Dirac block, Pfaffian line, and type-II wall atlas}
+
+\textit{Hypotheses.} The orientation transport and Hall product.
+
+\textit{Finite datum.} The first-order Dirac block decomposition
+$\mathfrak D_{X,R}^{D_0}=\bigoplus_\gamma J_\gamma$, the Pfaffian
+line $\mathscr L_{\mathrm{Pf},R}$ with squaring isomorphism, the
+Pfaffian-to-automorphic comparison $\iota_{\mathrm{aut},R}$, the
+normalized section $\operatorname{pf}_{X,R}$, and the type-II wall
+atlas (rank-one normal model on every retained component, boundary
+stratum, and overlap).
+
+\textit{Construction.}
+\begin{enumerate}
+\item Form the Pfaffian line
+$\mathscr L_{\mathrm{Pf},R}=\bigotimes_{\mathcal C}
+\operatorname{Pf}(K^{\mathrm{red}}_{\mathcal C,R})$ on the
+cosection-reduced quotient \cite{BBDJS2015}; verify the squaring
+isomorphism.
+\item Form $J_\gamma$ on
+$P^{\Pi,+}_{R,\gamma}\oplus(P^{\Pi,+}_{R,\gamma})^\vee[1]$ for each
+$\gamma\in\Gamma_R^{\Pi,+}\setminus\{0\}$; verify Pfaffian
+contribution $(1-x^\gamma)^{\sdim P^{\Pi,+}_{R,\gamma}}$.
+\item Verify the support, parity, and leading-coefficient residuals
+$\mathfrak o^{\mathrm{supp}}_{R,\gamma}=
+\mathfrak o^{\mathrm{par}}_{R,\gamma}=
+\mathfrak o^{\mathrm{lead}}_R=0$ on the test window.
+\item For each simple type-II wall $\Hpl_{\delta_i}$ ($i=1,2,3$):
+take the rank-one Pfaffian crossing chart on every retained
+component and boundary stratum; verify
+$N_{\delta_i}^{\mathrm{Pf}}=1$ and the local sign
+$\varepsilon^{\mathrm{loc}}_{\delta_i,R}=-1$; verify chart-overlap
+agreement of the normal Pfaffian units, tangent/normal splittings,
+quotient orientations, and protected integration maps; verify the
+half-Hilbert orbit sign sum (size $4096=2^{12}$).
+\item Supply the Pfaffian-to-automorphic comparison
+$\iota_{\mathrm{aut},R}:\mathscr L_{\mathrm{Pf},R}\to\mathcal L^5
+\otimes\nu_{\Delta_5}$ compatible with cusp trivialization and
+squaring.
+\end{enumerate}
+
+\textit{Obstruction classes.}  (D0-Pf), (O2)/hybrid compatibility
+residuals, and the Pfaffian-to-automorphic comparison residuals.
+
+\subsubsection*{Koszul source coalgebra and cobar comparison}
+
+\textit{Hypotheses.} The hybrid carrier and Hall product, an augmentation of the hybrid
+source, and a wrapped bar-cobar domain datum for the wrapped summands
+and mixed local/wrapped words.
+
+\textit{Finite datum.} The conilpotent chiral source coalgebra $C_{X,R}$,
+finite filtration $F^{\mathrm{co}}_{R,\bullet}$, collision coproduct
+$\Delta_R^{\mathrm{ch}}$, bar comparison $b_{X,R}$, and cobar
+comparison $\Theta_{\mathrm{Kos},R}$.
+
+\textit{Construction.}
+\begin{enumerate}
+\item Choose an augmentation
+$\varepsilon_{X,R}^{\mathrm{hyb}}:\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}
+\to k\mathbf 1$ and verify bounded length $N_R$.
+\item Form the canonical source-bar coalgebra
+$C^{\mathrm{bar}}_{X,R}=\bar B_E^{\mathrm{ch}}(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}})$
+\cite[\S3.7]{BD} with bar-length filtration and deconcatenation
+collision coproduct.
+\item Verify binary coassociativity on the eight-word atlas, the
+higher-coloured and unit coherences, bar-length conilpotence, and
+transition compatibility; set $b_{X,R}=\mathrm{id}$.
+\item Verify that the projection-finite summands, wrapped summands,
+and mixed local/wrapped words lie in the chosen completed
+Beilinson--Drinfeld/Francis--Gaitsgory bar-cobar domain.  Under that
+wrapped Koszul datum, verify the source-internal counit
+$\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}:\Omega_E^{\mathrm{ch}}
+C^{\mathrm{bar}}_{X,R}\to\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}$
+is a quasi-isomorphism in the chosen completed/coderived category
+\cite[Theorem~6.2.2]{FrancisGaitsgoryCKD}.
+\item Construct the source-to-target chiral algebra
+quasi-isomorphism $\vartheta_R:
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\xrightarrow{\simeq}
+\mathsf{Den}_{\Delta_5,E,\le R}$ preserving differential, product,
+unit, transition maps, and primitive restriction.
+\item Supply the finite Koszul comparison datum
+\(\mathfrak K^{\mathrm{cmp}}_{X,R}\) of
+Definition~\ref{def:finite-koszul-comparison-datum}: verify the Weyl
+transport square, Pfaffian-orientation sign square, Hall
+product/coproduct and Hopf-pairing square, radical quotient square, PBW
+associated-graded square, and their transition homotopies.
+\item Set $\Theta_{\mathrm{Kos},R}=
+\vartheta_R\circ\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}$;
+verify the Koszul Mittag--Leffler condition on the cones of $b$ and
+$\Theta_{\mathrm{Kos}}$ and on the comparison-defect complexes of
+\(\mathfrak K^{\mathrm{cmp}}_{X,R}\).
+\end{enumerate}
+
+\textit{Obstruction classes.}  $\mathfrak O_{\mathrm{Kos},R}$,
+including $\mathfrak o^\Omega_R=
+(\mathfrak o^{\varepsilon,\mathrm{src}}_R,
+\mathfrak o^\vartheta_R)$ and the wrapped Koszul defect
+\(\mathfrak o^{\mathrm{wrKos}}_R\), together with
+\(\mathfrak O_{\mathrm{Kcmp},R}\) for the Weyl, Pfaffian, Hall-pairing,
+radical, PBW, transition, and Mittag--Leffler comparison defects.
+
+\subsubsection*{Primitive recognition in cofinal finite windows}
+
+\textit{Hypotheses.} The Hall product, Pfaffian datum, and Koszul source coalgebra, plus the imported Borcherds--Kac
+target datum $\mathscr B_{\Delta_5}$.
+
+\textit{Conditional datum.} For every cofinal saturated finite window
+$W_\nu$, the recognition data (R0)--(R8); after these data are supplied
+on a cofinal relation-closed system, the inverse-limit isomorphism
+$P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5}$, and after the
+Koszul source datum is also supplied, the chiral identification
+$\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}$.
+
+\textit{Construction.}
+\begin{enumerate}
+\item For each $\nu$, identify the saturated downward target-root window
+$W_\nu=\{\beta\in\mathcal R_+\mid\operatorname{ht}\beta\le\nu\}$ and
+the source window
+$\Gamma(W_\nu)=\{\gamma\in\Gamma_{\mathrm{gram}}\mid
+\alpha(\gamma)\in W_\nu\}$.  In coordinates
+\(\beta=b_1\delta_1+b_2\delta_2+b_3\delta_3\), this means
+\(\gamma_\beta=(b_1,b_1+b_2-b_3,b_2)\).  The packet
+\(\texttt{certificates/lattice/downward\_root\_windows}\) verifies
+\texttt{DOWNWARD\_ROOT\_WINDOWS\_VERIFIED}; it does not supply compact
+source representatives or the recognition rows below.  The packet
+\(\texttt{certificates/lattice/active\_root\_window\_exhaustion}\)
+verifies \texttt{ACTIVE\_ROOT\_WINDOW\_EXHAUSTION\_VERIFIED}:
+\(\bigcup_\nu W_\nu=\mathcal R_+\) by the height witness
+\(\beta\in W_{\operatorname{ht}(\beta)}\).  This is target-root
+exhaustion, not compact-source support exhaustion.  The packet
+\(\texttt{certificates/sources/source\_window\_compact\_support}\)
+verifies \texttt{SOURCE\_WINDOW\_COMPACT\_SUPPORT\_OBSTRUCTION\_VERIFIED}:
+the compact support index set, source height function, finite source
+windows, compact provenance rows, cofinality witness, transitions, and
+target-source compatibility rows are still absent.  The packet
+\(\texttt{certificates/sources/target\_source\_window\_compatibility}\)
+verifies
+\texttt{TARGET\_SOURCE\_WINDOW\_COMPATIBILITY\_OBSTRUCTION\_VERIFIED}:
+source degree maps into \(\Gamma(W_\nu)\), target-window matching,
+compact-provenance compatibility, cofinal-index compatibility,
+transition compatibility, and zero compatibility-defect rows are still
+absent.
+\item Choose the simple-root representatives $e_i^X,f_i^X,h_i^X$ in
+source degrees $\pm\gamma_i$, with
+$\alpha(\gamma_i)=\alpha_i\in W_\nu$; verify parity assignments via
+the GN multiplicity fibres.
+\item Verify the Borcherds--Kac relations (Cartan, Chevalley, real
+Serre, orthogonality, super sign) on every relation whose source and
+target degrees lie in
+$\Gamma(W_\nu)\cup(-\Gamma(W_\nu))\cup\{0\}$ and
+$W_\nu\cup(-W_\nu)\cup\{0\}$, respectively.
+\item Compute the full finite parity dimensions
+$\dim P^{\Pi,\mathrm{red}}_{X,\gamma,\overline p}$ ($p=0,1$) for
+$\gamma\in\Gamma(W_\nu)$; verify two-integer equality with
+$\rootmult_{\overline p}^{\mathrm{GN}}(\alpha(\gamma))$.
+\item Compute the Hopf pairing matrices in parity blocks; verify
+kernel agreement with GN/Kac, coideal stability, and transition
+compatibility.
+\item Verify the no-extra-relations equality
+$\ker\pi_\nu=
+(\overline{J_{\mathrm{BK}}+\operatorname{Rad}_{\mathrm{GN}}})_{\le W_\nu}$.
+\item Verify generation by Cartan and simple representatives;
+compute PBW associated gradeds and verify strict transition
+preservation.
+\item Verify exact triangular completion: $\lim^1=0$ on the
+triangular finite-window systems.
+\end{enumerate}
+
+\textit{Obstruction classes.}  $\mathfrak O_{\mathrm{Rec},\nu}$
+(\S\ref{subsec:primitive-recognition}); for the chiral
+identification, the finite Koszul comparison residual
+\(\mathfrak O_{\mathrm{Kcmp},R}\) and the inverse-limit Koszul
+Mittag--Leffler condition of \S\ref{subsec:koszul-source}.
+
+\subsubsection*{Finite HN order}
+
+At HN height \(R\) the finite datum has the following order:
+\[
+\begin{array}{rcl}
+(\sigma,S,R) & \longmapsto &
+F_{\sigma,S}(R),\widehat\Gamma_R\\
+& \longmapsto &
+\mathcal C_{\sigma,S,\le R},\Phi^{\mathrm{red}},o^{\mathrm{red}}\\
+& \longmapsto &
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\\
+& \longmapsto &
+\textup{(O1)},\textup{(O1)}^+\\
+& \longmapsto &
+m_R^{\mathrm{red}},\Delta_R^{\mathrm{ch}},
+\langle\,,\,\rangle_R,\overline\Pi_{X,*}^\Theta\\
+& \longmapsto &
+\mathfrak D_{X,R}^{D_0},\mathscr L_{\mathrm{Pf},R},
+\operatorname{pf}_{X,R},\textup{(O2)}\\
+& \longmapsto &
+C_{X,R},b_{X,R},\Theta_{\mathrm{Kos},R}\\
+& \longmapsto &
+\textup{(R0)\text{--}(R8)\ on\ }W_\nu
+\end{array}
+\]
+The pro-object
+\[
+\mathfrak D_X^{\mathrm{DI}}
+=\varprojlim_R\bigl(
+\mathcal A_{X,R}^{E_3},
+F_{X,R}^{\mathrm{hyb}},
+\Gamma_{X,R},
+\Pi_X,
+\Phi_R,
+o_R,
+H_R,
+P_R^\Pi,
+C_{X,R},
+\Theta_{\mathrm{Kos},R},
+\mathscr L_{\mathrm{Pf},R},
+\operatorname{pf}_{X,R},
+\varepsilon_{o,R},
+\mathrm{Rec}_R\bigr)
+\]
+is the inverse limit when every finite obstruction class vanishes
+compatibly.
+
+\subsubsection*{Finite-stage theorems}
+
+\begin{theorem}[Finite-stage Dirac--Igusa pro-object;
+\textit{conditional on the finite obstruction classes}]
+\label{thm:finite-stage-dirac-igusa-pro-object}
+Suppose the finite charge window, Hall atlas, hybrid carrier,
+orientation transport, Hall product, Pfaffian datum, Koszul source
+coalgebra, and primitive-recognition datum are defined at heights
+\(R\in\mathcal R_{\mathrm{HN}}\), all finite obstruction classes
+vanish, the HN transitions are strict, and the finite morphism proof
+tables above have zero defects.  Then these data determine
+a functor
+\[
+R\longmapsto \mathfrak D_{X,R}^{\mathrm{DI}}
+\]
+from \(\mathcal R_{\mathrm{HN}}^{\mathrm{op}}\) to the finite-stage
+category of Definition~\ref{def:finite-stage-dirac-igusa-morphism}.
+Equivalently, for every \(R'\le R\) there is a morphism
+\(\rho_{RR'}\) satisfying \textup{(M1)}--\textup{(M8)}, and the
+composition law
+\(\rho_{R'R''}\rho_{RR'}=\rho_{RR''}\) holds for \(R''\le R'\le R\).
+The inverse limit
+\(\mathfrak D_X^{\mathrm{DI}}=\varprojlim_R
+\mathfrak D_{X,R}^{\mathrm{DI}}\) is the resulting
+Dirac--Igusa pro-object of
+Definition~\ref{def:dirac-igusa-pro-isomorphism}.
+\end{theorem}
+
+\begin{theorem}[Pfaffian--Dirac identification at finite stage;
+\textit{with local orientation and wall data at $R$}]
+\label{thm:pfaffian-dirac-finite-stage}
+Suppose the finite geometric Pfaffian datum, orientation transport,
+type-II wall atlas, and primitive-recognition datum have vanishing
+obstruction classes at height \(R\).  Then on the cusp expansion
+\[
+\operatorname{pf}_{X,R}|_{\mathfrak c_\infty}
+=64q^{1/2}r^{1/2}s^{1/2}\prod_{\gamma\in\Gamma_R^{\Pi,+}\setminus\{0\}}
+(1-x^\gamma)^{\sdim P^{\Pi,+}_{R,\gamma}},
+\]
+the Pfaffian section matches the Borcherds product on the test
+window, with the orientation character
+$\varepsilon_{o,R}|_{W^{(2),\le R}}=\nu_{\Delta_5}|_{W^{(2),\le R}}$
+on the type-II reflection truncation.  The recognition map
+$\iota_R^{\Prim}:H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^\Theta
+\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}})\to\mathfrak g_{\Delta_5,\le R}$
+is an isomorphism on the saturated finite window.
+\end{theorem}
+
+\subsubsection*{Relative theorem on \(K3\times E\)}
+
+The finite Hall atlas, hybrid carrier, and orientation transport at the test window use the retained D0-HN datum
+through Theorem~\ref{thm:G-D0}; the orientation descent at (O1) by the retained
+quotient-orientation datum and Theorem~\ref{thm:G-O1}; these data at
+(O1)$^+$ by the chosen Weyl lifts and Theorem~\ref{thm:G-O1-plus};
+the Pfaffian wall atlas at (O2) by the retained
+\((O2_{\mathrm{atlas}})\) datum and
+Theorem~\ref{thm:G-O2-orbit-transport}; the cofinal recognition
+criterion beyond the base terminal and saturated target audits is the
+unresolved compact-source recognition datum of
+Chapter~\ref{ch:open-obstructions}.
+
+The eight finite constructions give the Dirac--Igusa pro-object only when the
+obstruction classes vanish.  Entry $(\mathrm L 8)$ names $(D0)$,
+$(O1)$, $(O1)^+$, and \((O2_{\mathrm{atlas}})\), locates each in the
+construction, and carries the retained data and the wall-atlas transport through
+Appendix~\ref{app:obstruction-discharges} in
+\S\ref{subsec:four-named-obstructions-ch5}.

@@ -1,0 +1,44 @@
+{
+  "schema_version": "rhomred_finite_stabilizer_beta_obstruction.v1",
+  "fixture_name": "rhomred_finite_stabilizer_beta",
+  "orientation_kind": "rhomred_finite_stabilizer_beta_obstruction",
+  "status": "RHOMRED_FINITE_STABILIZER_BETA_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "residual_inertia_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "group_cohomology_templates_recorded": true,
+  "beta_computation_criterion_recorded": true,
+  "three_residual_groups_inspected": true,
+  "finite_closed_inertia_stratifications_supplied": false,
+  "finite_stabilizer_orientation_rows_supplied": false,
+  "equivariant_beta_representatives_supplied": false,
+  "edge_reduction_rows_supplied": false,
+  "beta_coefficients_supplied": false,
+  "beta_class_values_computed": false,
+  "beta_vanishing_verified": false,
+  "linearization_rows_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "template_rows.csv",
+    "criterion_rows.csv",
+    "residual_group_beta_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/moduli/retained_rigidification_inertia",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies the row-285 finite-stabilizer beta-class obstruction ledger.",
+    "It records the group-cohomology coordinate templates for odd, Klein-four, and two-primary finite stabilizers after Borel edge reduction.",
+    "It does not supply finite closed inertia stratifications, equivariant beta representatives, edge-reduction rows, beta coefficients, beta-class values, beta vanishing, null-trivializations, linearization characters, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration."
+  ]
+}

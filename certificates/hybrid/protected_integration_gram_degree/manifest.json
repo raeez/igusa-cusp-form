@@ -1,0 +1,40 @@
+{
+  "schema_version": "protected_integration_gram_degree.v1",
+  "fixture_name": "protected_integration_gram_degree",
+  "hybrid_kind": "protected_integration_gram_degree",
+  "status": "PROTECTED_INTEGRATION_GRAM_DEGREE_VERIFIED",
+  "protected_integration_defined": true,
+  "product_compatibility_imported": true,
+  "coproduct_compatibility_imported": true,
+  "primitive_compatibility_imported": true,
+  "gram_degree_certification": true,
+  "gram_label_defect_rank": 0,
+  "monomialization_defect_rank": 0,
+  "integration_degree_defect_rank": 0,
+  "pi_x_degree_certification": false,
+  "transition_compatibility_certification": false,
+  "protected_trace_certification": false,
+  "pfaffian_line_certification": false,
+  "aggregate_hybrid_population": false,
+  "scalar_only": false,
+  "tables": [
+    "gram_label_rows.csv",
+    "monomial_degree_rows.csv",
+    "integration_degree_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/protected_integration_definition",
+    "certificates/hybrid/protected_integration_product_compatibility",
+    "certificates/hybrid/protected_integration_coproduct_compatibility",
+    "certificates/hybrid/protected_integration_primitive_compatibility",
+    "certificates/hybrid/geometric_borcherds_degree_separation"
+  ],
+  "limitations": [
+    "This packet proves only that the supplied target labels have formal Gram monomial degree q^n r^l s^m under the supplied monomialization map.",
+    "The target label comparison with overlinePi_X is separated in certificates/hybrid/protected_integration_pi_x_separation.",
+    "It does not prove HN-transition compatibility.",
+    "It does not construct the level-Z protected trace or the Pfaffian line."
+  ]
+}

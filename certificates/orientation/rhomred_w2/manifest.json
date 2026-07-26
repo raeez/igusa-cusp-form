@@ -1,0 +1,40 @@
+{
+  "schema_version": "rhomred_w2_formula_obstruction.v1",
+  "fixture_name": "rhomred_w2",
+  "orientation_kind": "rhomred_w2_formula_obstruction",
+  "status": "RHOMRED_W2_FORMULA_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "rhomred_determinant_imported": true,
+  "square_root_obstruction_imported": true,
+  "w2_formula_recorded": true,
+  "determinant_cohomology_formula_recorded": true,
+  "three_determinant_lines_inspected": true,
+  "c1_rows_supplied": false,
+  "grr_rows_supplied": false,
+  "mod2_reduction_rows_supplied": false,
+  "w2_values_computed": false,
+  "w2_vanishing_verified": false,
+  "topological_square_root_certified": false,
+  "orientation_square_root": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "formula_rows.csv",
+    "w2_obstruction_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_determinant",
+    "certificates/orientation/rhomred_square_root"
+  ],
+  "limitations": [
+    "This packet verifies the row-279 formula and obstruction ledger.",
+    "It records w2 of the underlying real determinant line as c1 modulo 2 and records the determinant-of-cohomology GRR input needed to compute c1.",
+    "It does not compute retained-stratum c1 classes, reduce them modulo 2, prove w2 vanishing, construct a square-root orientation, construct quotient orientation, prove transition compatibility, construct BBDJS vanishing cycles, or define protected integration."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "rhomred_orientation_e_quotient_descent_obstruction.v1",
+  "fixture_name": "rhomred_orientation_e_quotient_descent",
+  "orientation_kind": "rhomred_orientation_e_quotient_descent_obstruction",
+  "status": "RHOMRED_ORIENTATION_E_QUOTIENT_DESCENT_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "orientation_obstruction_ledger_imported": true,
+  "square_root_obstruction_imported": true,
+  "alpha_red_nullhomotopy_imported": true,
+  "free_e_nulltrivialization_imported": true,
+  "finite_stabilizer_nulltrivialization_imported": true,
+  "finite_stabilizer_linearization_vanishing_imported": true,
+  "quotient_descent_criterion_recorded": true,
+  "orientation_tables_inspected": true,
+  "orientation_square_roots_supplied": false,
+  "alpha_red_nullhomotopies_supplied": false,
+  "free_e_nulltrivializations_supplied": false,
+  "finite_stabilizer_nulltrivializations_supplied": false,
+  "linearization_zero_rows_supplied": false,
+  "quotient_borel_rows_supplied": false,
+  "finite_stabilizer_rows_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "inspected_orientation_tables.csv",
+    "descent_obstruction_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/orientation/rhomred_square_root",
+    "certificates/orientation/rhomred_alpha_red_nullhomotopy",
+    "certificates/orientation/rhomred_free_e_nulltrivialization",
+    "certificates/orientation/rhomred_finite_stabilizer_beta_nulltrivialization",
+    "certificates/orientation/rhomred_finite_stabilizer_linearization_vanishing"
+  ],
+  "limitations": [
+    "This packet verifies row 302 only as an E-quotient orientation descent criterion.",
+    "The imported packets record obstruction ledgers for the square root, reduced gerbe, free E-Borel class, finite-stabilizer Borel class, and residual linearization character.",
+    "The reduced-orientation table supplies no orientation-line rows, quotient-Borel rows, or finite-stabilizer rows.",
+    "It does not construct a descended quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "rhomred_perfectness.v1",
+  "fixture_name": "rhomred_perfectness",
+  "orientation_kind": "rhomred_perfectness_input",
+  "status": "RHOMRED_PERFECTNESS_VERIFIED",
+  "base_field": "CC",
+  "rhomred_definition_imported": true,
+  "retained_universal_complexes_imported": true,
+  "retained_derived_enhancements_imported": true,
+  "proper_perfect_pushforward_theorem_imported": true,
+  "perfect_source_complexes": true,
+  "perfect_target_complexes": true,
+  "perfect_cones": true,
+  "three_substacks_verified": true,
+  "perfectness_defect_zero": true,
+  "cosection_surjectivity_proved": false,
+  "det_rhom_red": false,
+  "orientation_square_root": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "input_complex_rows.csv",
+    "target_complex_rows.csv",
+    "perfectness_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_definition",
+    "certificates/moduli/retained_universal_complexes",
+    "certificates/moduli/retained_derived_enhancements"
+  ],
+  "limitations": [
+    "This packet supplies row 276 only: perfectness of the cosection-reduced self-Ext cone on the retained finite rows.",
+    "It proves perfectness by importing the universal perfect complexes, applying proper perfect pushforward to RHom(F,F), and using closure of perfect complexes under fibres.",
+    "It does not prove cosection surjectivity, define determinant lines, construct square-root orientations, construct quotient orientation, prove transition compatibility, construct BBDJS vanishing cycles, or define protected integration."
+  ]
+}

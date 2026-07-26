@@ -1,0 +1,31 @@
+{
+  "schema_version": "relation_closed_target_finite_R_exhaustion_obstruction.v1",
+  "fixture_name": "relation_closed_target_finite_R_exhaustion",
+  "charge_kind": "relation_closed_target_finite_R_exhaustion_obstruction",
+  "status": "RELATION_CLOSED_TARGET_FINITE_R_EXHAUSTION_OBSTRUCTION_VERIFIED",
+  "finite_R_exhaustion_certification": false,
+  "mathematical_certification": false,
+  "finite_test_window_definition_imported": true,
+  "wrel_degree_closure_imported": true,
+  "wrel_tail_staircase_imported": true,
+  "target_tail_infinite": true,
+  "finite_target_prefix_sufficient": false,
+  "tables": [
+    "target_degree_to_R.csv",
+    "hn_witnesses.csv",
+    "symbolic_tail_R_witnesses.csv",
+    "transition_compatibility.csv",
+    "coverage_defects.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "No finite target-degree-to-R rows are supplied.",
+    "No HN charge witnesses are supplied.",
+    "No normal-ordered translate witnesses are supplied.",
+    "No symbolic R(N) witness for the infinite W_rel tail is supplied.",
+    "No transition compatibility rows are supplied.",
+    "The target tail is infinite; a finite target prefix cannot prove row 200.",
+    "It does not prove that every relation-closed target degree appears in Gamma_R^test for finite R."
+  ]
+}

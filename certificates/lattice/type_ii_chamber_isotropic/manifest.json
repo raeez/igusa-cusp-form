@@ -1,0 +1,30 @@
+{
+  "schema_version": "type_ii_chamber_isotropic.v1",
+  "fixture_name": "type_ii_chamber_isotropic",
+  "lattice_kind": "type_ii_chamber_isotropic_lattice",
+  "coefficient_ring": "ZZ",
+  "certified": true,
+  "chamber_isotropic_certified": true,
+  "compact_source": false,
+  "pfaffian_orientation": false,
+  "o2_wall_atlas": false,
+  "mirror_discriminant": false,
+  "protected_trace": false,
+  "parity_decomposition": false,
+  "tables": [
+    "root_divisibility.csv",
+    "type_ii_generators.csv",
+    "chamber_automorphisms.csv",
+    "type_ii_coxeter_pairs.csv",
+    "isotropic_rays.csv",
+    "isotropic_multiplicities.csv",
+    "gn_isotropic_directions.csv",
+    "chamber_relations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet records target-side type-II chamber arithmetic only.",
+    "It checks type-I and type-II square-two divisibility, type-II generator coverage, absence of finite braid relations among distinct type-II simple generators, S3 chamber automorphisms, primitive isotropic rays, multiplicity 10=1+9, and nine GN isotropic directions on each primitive isotropic ray.",
+    "It does not construct compact K3xE source representatives, Pfaffian orientations, O2 wall atlases, mirror discriminants, protected traces, or parity decompositions."
+  ]
+}

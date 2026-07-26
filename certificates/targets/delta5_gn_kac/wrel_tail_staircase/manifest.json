@@ -1,0 +1,32 @@
+{
+  "schema_version": "wrel_tail_staircase.v1",
+  "fixture_name": "wrel_tail_staircase",
+  "target_kind": "wrel_infinite_six_row_tail",
+  "parameter_start": 14,
+  "parameter_step": 2,
+  "parameter_condition": "N even, N >= 14",
+  "transition_count": 2,
+  "symbolic_check_count": 12,
+  "finite_anchor": "A_14",
+  "finite_anchor_degree_count": 6,
+  "finite_anchor_source_table": "six_row_saturation_real_string_saturation_extension.csv",
+  "unbounded_tail_check_count": 2,
+  "infinite_tail": true,
+  "finite_target_degree_enumeration_closed": false,
+  "certified": true,
+  "target_only": true,
+  "compact_source": false,
+  "primitive_recognition": false,
+  "source_formula_id": "lorentzian_pairing_real_string_and_phi_0_1_q0_support",
+  "tables": [
+    "finite_anchor.csv",
+    "staircase_symbolic_checks.csv",
+    "unbounded_tail.csv"
+  ],
+  "limitations": [
+    "This packet proves the symbolic target-degree tail A_N -> B_N -> A_{N+2} for even N >= 14.",
+    "It verifies A_14 inside the finite W_rel degree-closure packet and proves that the target-degree audit has an infinite six-row staircase from that anchor.",
+    "It records an unbounded coordinate subsequence, so finite target-degree enumeration cannot close this target-only audit.",
+    "It does not construct compact source representatives, source relation matrices, PBW comparison data, or primitive recognition."
+  ]
+}

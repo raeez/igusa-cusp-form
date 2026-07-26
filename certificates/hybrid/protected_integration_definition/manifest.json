@@ -1,0 +1,43 @@
+{
+  "schema_version": "protected_integration_definition.v1",
+  "fixture_name": "protected_integration_definition",
+  "hybrid_kind": "protected_integration_definition",
+  "status": "PROTECTED_INTEGRATION_DEFINITION_VERIFIED",
+  "protected_integration_defined": true,
+  "chain_map_certification": true,
+  "definition_defect_rank": 0,
+  "chargewise_functionals_supplied": true,
+  "abstract_monomial_labels": true,
+  "product_compatibility_certification": false,
+  "coproduct_compatibility_certification": false,
+  "primitive_compatibility_certification": false,
+  "transition_compatibility_certification": false,
+  "gram_degree_certification": false,
+  "pi_x_degree_certification": false,
+  "protected_trace_certification": false,
+  "pfaffian_line_certification": false,
+  "aggregate_hybrid_population": false,
+  "scalar_only": false,
+  "tables": [
+    "integration_rows.csv",
+    "charge_functional_rows.csv",
+    "monomial_label_rows.csv",
+    "compatibility_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/quotient_after_correspondence_bm_chain_functor",
+    "certificates/hybrid/geometric_borcherds_degree_separation"
+  ],
+  "limitations": [
+    "This packet defines I_R^prot as a finite direct sum of supplied chargewise degree-zero chain maps.",
+    "The target Gram-degree row is separated in certificates/hybrid/protected_integration_gram_degree.",
+    "The Pi_X-versus-b_R^geom separation row is separated in certificates/hybrid/protected_integration_pi_x_separation.",
+    "Product compatibility is separated in certificates/hybrid/protected_integration_product_compatibility.",
+    "Coproduct compatibility is separated in certificates/hybrid/protected_integration_coproduct_compatibility.",
+    "Primitive-projection compatibility is separated in certificates/hybrid/protected_integration_primitive_compatibility.",
+    "It does not prove HN-transition compatibility.",
+    "It does not construct the level-Z protected trace or the Pfaffian line."
+  ]
+}

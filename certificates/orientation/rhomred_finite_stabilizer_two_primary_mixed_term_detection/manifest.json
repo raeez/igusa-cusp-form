@@ -1,0 +1,40 @@
+{
+  "schema_version": "rhomred_finite_stabilizer_two_primary_mixed_term_detection.v1",
+  "fixture_name": "rhomred_finite_stabilizer_two_primary_mixed_term_detection",
+  "orientation_kind": "rhomred_finite_stabilizer_two_primary_mixed_term_detection",
+  "status": "RHOMRED_FINITE_STABILIZER_TWO_PRIMARY_MIXED_TERM_DETECTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "two_primary_class_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "rank_two_detector_recorded": true,
+  "cyclic_annihilation_verified": true,
+  "cyclic_restrictions_excluded_for_A12": true,
+  "retained_two_primary_edge_row_supplied": false,
+  "A12_value_supplied": false,
+  "coefficient_values_supplied": false,
+  "beta_vanishing_verified": false,
+  "linearization_rows_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "detector_rows.csv",
+    "cyclic_annihilation_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "remaining_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_two_primary_class",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 297: the local detector for the two-primary mixed term A12*x1*x2.",
+    "It proves that the coefficient functional pi12 extracts A12 and that every cyclic subgroup restriction kills x1*x2.",
+    "It does not supply a retained two-primary edge row, the value of A12, beta vanishing, zero linearization, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration."
+  ]
+}

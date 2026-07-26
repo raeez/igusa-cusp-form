@@ -1,0 +1,50 @@
+{
+  "schema_version": "finite_hall_pairing_coproduct_adjointness.v1",
+  "fixture_name": "finite_hall_pairing_coproduct_adjointness",
+  "hall_kind": "finite_hall_pairing_coproduct_adjointness_obstruction",
+  "status": "FINITE_HALL_PAIRING_COPRODUCT_ADJOINTNESS_OBSTRUCTION_VERIFIED",
+  "row_number": 362,
+  "coefficient_ring": "QQ",
+  "relative_theorem_recorded": true,
+  "pairing_invariance_packet_imported": true,
+  "product_operator_packet_imported": true,
+  "coproduct_operator_packet_imported": true,
+  "bialgebra_compatibility_packet_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "adjointness_formula_recorded": true,
+  "tensor_pairing_sign_formula_recorded": true,
+  "source_M_entries_supplied": false,
+  "source_D_entries_supplied": false,
+  "source_G_entries_supplied": false,
+  "source_tensor_pairing_sign_rows_supplied": false,
+  "source_hopf_adjointness_rows_supplied": false,
+  "source_product_correspondence_rows_supplied": false,
+  "source_coproduct_correspondence_rows_supplied": false,
+  "source_orientation_transport_rows_supplied": false,
+  "coproduct_adjointness_proved_for_current_source": false,
+  "quotient_nondegeneracy_proved": false,
+  "mathematical_certification": false,
+  "imports": [
+    "certificates/hall/finite_hall_pairing_invariance",
+    "certificates/hall/finite_hall_product_operator",
+    "certificates/hall/finite_hall_coproduct_operator",
+    "certificates/hall/finite_hall_bialgebra_compatibility",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "adjointness_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv",
+    "text_requirements.csv"
+  ],
+  "limitations": [
+    "This packet proves coproduct adjointness only for supplied finite Hopf-adjointness defect rows.",
+    "It records the tensor-product Koszul sign needed to compare product and coproduct.",
+    "It imports row 350 only as bialgebra context; bialgebra compatibility is not Hopf-pairing adjointness.",
+    "It does not supply compact K3xE source M entries, D entries, G entries, tensor-pairing sign rows, Hopf-adjointness rows, or product/coproduct correspondence rows.",
+    "It does not prove quotient nondegeneracy."
+  ]
+}

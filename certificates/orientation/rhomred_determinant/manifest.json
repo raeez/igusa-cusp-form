@@ -1,0 +1,34 @@
+{
+  "schema_version": "rhomred_determinant.v1",
+  "fixture_name": "rhomred_determinant",
+  "orientation_kind": "rhomred_determinant_input",
+  "status": "RHOMRED_DETERMINANT_VERIFIED",
+  "base_field": "CC",
+  "rhomred_perfectness_imported": true,
+  "determinant_functor_imported": true,
+  "determinant_lines_defined": true,
+  "three_substacks_verified": true,
+  "determinant_defect_zero": true,
+  "orientation_square_root": false,
+  "w2_computed": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "determinant_formula_rows.csv",
+    "determinant_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_perfectness"
+  ],
+  "limitations": [
+    "This packet supplies row 277 only: the determinant line of the perfect reduced self-Ext complex.",
+    "It imports row 276 and applies the Knudsen-Mumford determinant functor to the three retained perfect complexes.",
+    "It does not construct a square-root orientation, compute w2, construct quotient orientation, prove transition compatibility, construct BBDJS vanishing cycles, or define protected integration."
+  ]
+}

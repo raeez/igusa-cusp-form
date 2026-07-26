@@ -2,73 +2,107 @@
 \label{subsec:four-named-obstructions-ch5}
 
 The eighth entry of the Dirac--Igusa pro-object is the obstruction
-ledger.  The cross-level identity ②$\leftrightarrow$③ between the
+theory.  The cross-level identity ②$\leftrightarrow$③ between the
 imported Borcherds--Kac--Moody denominator algebra and the compact
-protected Pfaffian is conditional on four obstruction classes, each
-named below and discharged on $K3\times E$ in
+protected Pfaffian passes through four obstruction classes and the
+finite geometric Pfaffian datum.  The first obstruction is reduced on
+$K3\times E$ to the retained
+D0-HN datum in
 Appendix~\ref{app:obstruction-discharges}
-(Theorems~\ref{thm:G-D0}, \ref{thm:G-O1},
-\ref{thm:G-O1-plus}, \ref{thm:G-O2-orbit-transport}); the principal
-recognition theorem
+(Theorem~\ref{thm:G-D0}); \((O1)\) and \((O1)^+\) are reduced there
+to the retained quotient-orientation and Weyl-transport data
+(Theorems~\ref{thm:G-O1}, \ref{thm:G-O1-plus}); the fourth is reduced
+to the retained type-II
+wall-atlas datum \((O2_{\mathrm{atlas}})\) by
+Theorem~\ref{thm:G-O2-orbit-transport}.  The finite geometric Pfaffian
+datum \((P_{\mathrm{fin}})\) of
+Definition~\ref{def:finite-geometric-pfaffian-datum} supplies the
+cosection-reduced skew perfect complexes, Pfaffian line, finite
+Pfaffian section, type-II wall divisor order, automorphic
+line-comparison, support and parity rows, leading coefficient, and
+Pfaffian-line Mittag--Leffler compatibility for the cofinal HN product.
+The principal
+Pfaffian and orientation theorem
 \[
 \operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})
 =\Delta_5,
 \qquad
-\varepsilon_o=\nu_{\Delta_5},
-\qquad
-P_X\cong\mathfrak g_{\Delta_5}
+\varepsilon_o=\nu_{\Delta_5}
 \]
-holds unconditionally only when (D0), (O1), (O1)$^+$, (O2) all hold.
+holds relative to the first five components of the retained
+obstruction datum
+\(\mathfrak R_X^{\mathrm{DI}}\), namely
+\((D0_{\mathrm{HN}},O1_{\mathrm{quot}},\mathcal T_W,
+O2_{\mathrm{atlas}},P_{\mathrm{fin}})\).
+The Lie-superalgebra recognition \(P_X\cong\mathfrak g_{\Delta_5}\)
+requires the finite compact-source recognition datum \((S1)\)--\((S10)\)
+of \S\ref{subsec:primitive-recognition}.
+On \(K3\times E\) the D0 criterion, the quotient-orientation criteria,
+and the conditional wall-atlas transport are stated in
+Appendix~\ref{app:obstruction-discharges}; the compact-source
+recognition datum is a separate hypothesis.
+The retained obstruction data are the components of the tuple
+\(\mathfrak R_X^{\mathrm{DI}}\) of
+Definition~\ref{def:G-retained-obstruction-datum}.  Thus
+``retained datum'' in this section means a projection of that tuple,
+not a scalar normalization or a theorem label.
 
-The mathematical-repair doctrine applies: heal the proof, statement,
-or construction; never delete, demote, or quietly narrow scope as a
-way to close a defect.  Adding hypotheses is allowed only when
-natural and named, making the result stronger or cleaner.  The four
-obstructions below are stated unconditionally; each is discharged on
-$K3\times E$ in the indicated Appendix~G theorem.
+The fourth obstruction is the type-II wall-atlas datum; the
+Appendix~G theorem transports that datum along the Weyl orbit and
+compares its character with \(\nu_{\Delta_5}\).
 
 \subsubsection*{(D0) D0-degeneration limit of the cosection-reduced
 d-critical orientation theory}
 
-\textit{Statement.}  At every finite HN height $R$ and every retained
+\textit{Obstruction.}  At every finite HN height $R$ and every retained
 charge stratum $\mathcal C\in\mathcal C_{\sigma,S,\le R}$, the
-cosection-reduced d-critical structure on the K3-fibre direction
-extends to the D0-degeneration limit.  Equivalently, the supplied
-finite reduced obstruction theory
-$E_R^{\mathrm{red},\bullet}$, the K3 semiregularity cosection
-$\operatorname{CS}_{\mathcal C}$, the reduced vanishing-cycle complex
-$\Phi_R^{\mathrm{red}}$, and the Joyce--Upmeier orientation line
-$o_R$ are compatible across the family of D0-degenerations parameterized
-by the elliptic-degree direction $b_R^{\mathrm{geom}}\to 0$, with
-strict HN transition maps along the degenerating family and
-preservation of the filtered Hall additivity
+cosection-reduced d-critical structure on the K3-fibre direction must
+extend through a retained flat \(D0\)-degeneration family to the
+zero-dimensional sector on \(K3\times E\).  Equivalently, the datum
+\((D0_{\mathrm{HN}})\) of
+Definition~\ref{def:G-D0-HN-system} supplies the finite derived
+degeneration family, the HN transition morphisms, the reduced
+obstruction theory, the additive K3 semiregularity cosection
+\(\operatorname{CS}_{\mathcal C,R}\), the reduced vanishing-cycle
+specialization, the Joyce--Upmeier orientation specialization, the
+Pfaffian-line and protected-integration specialization, and strict
+Mittag--Leffler exactness.  The filtered Hall additivity equation
 \[
 q^*\operatorname{CS}_C
 =p_1^*\operatorname{CS}_A+p_2^*\operatorname{CS}_B
 \]
-on extension stacks throughout the limit.
+is part of this datum on extension stacks throughout the limit.
+The local/wrapped boundary \(b_R^{\mathrm{geom}}\to0\) belongs to the
+hybrid Ran carrier; it enters \((D0)\) only through compatibility of
+the retained Hall correspondences with the zero-dimensional limit.
 
-\textit{Location.}  Algorithms A2--A3 of
-\S\ref{subsec:eight-build-algorithms}.  Failure of (D0) prevents
+\textit{Finite site.}  The finite Hall atlas and hybrid carrier of
+\S\ref{subsec:eight-finite-constructions}.  Failure of (D0) prevents
 construction of the reduced Hall product $m_R^{\mathrm{red}}$, the
 orientation gerbe descent of (O1), and the Pfaffian line of (D0-Pf)
 on the wrapped sector.
 
-\textit{Discharge state.}  Proved on $K3\times E$ in
-Theorem~\ref{thm:G-D0}.  The fibrewise K3 framework of
-\cite{JoyceSong,JoyceUpmeier} supplies the reduced d-critical
-structure on the projection-finite stratum; the wrapped stratum
-limit is constructed in Appendix~\ref{app:G-D0-discharge}.
+\textit{Criterion.}  Criterion on $K3\times E$ in
+Theorem~\ref{thm:G-D0}, relative to the retained D0-HN datum of
+Definition~\ref{def:G-D0-HN-system}.  The
+fibrewise K3 framework of \cite{JoyceSong,JoyceUpmeier} supplies the
+orientation technology on the projection-finite stratum; the wrapped
+stratum limit is part of the retained datum of
+Appendix~\ref{app:G-D0-discharge}.
+The finite D0 proof tables of
+Definition~\ref{def:G-D0-HN-system} are the checkable form of this
+datum.  A Hilbert-scheme scalar specialization, a K3 scalar test, or a
+scalar trace row is not a D0-HN transition row.
 
 \subsubsection*{(O1) Strong reduced orientation on the
 $K3\times E$-quotient self-Ext frame bundle}
 
-\textit{Statement.}  On the cosection-reduced moduli
+\textit{Obstruction.}  On the cosection-reduced moduli
 $\mathfrak M^{\mathrm{red}}_{\mathcal C,R}$ at every finite HN height
 $R$, the orientation line $o_{\mathcal C}$ has chosen square root
 $o_{\mathcal C}^{\otimes 2}\simeq\det K^{\mathrm{red}}_{\mathcal C}$
 \cite{JoyceUpmeier}, multiplicative under reduced extension
-correspondences, with the quotient-descent package: vanishing of the
+correspondences, with the quotient-descent equations: vanishing of the
 reduced gerbe class
 \[
 \alpha^{\mathrm{red}}_{\mathcal C}
@@ -87,63 +121,65 @@ $\lambda^H_{\mathcal C,S}=0$.  The statement applies on every charge
 stratum used by the Hall correspondences and is compatible with HN
 transitions.
 
-\textit{Location.}  Algorithm A4 of
-\S\ref{subsec:eight-build-algorithms}; (O1) datum of
+\textit{Finite site.}  The orientation descent datum of
+\S\ref{subsec:eight-finite-constructions}; (O1) datum of
 \S\ref{subsec:cosection-twisted-orientation}.  Failure of (O1)
 prevents quotient-after-correspondence descent and obstructs the
 reduced Hall product, the Pfaffian line on the reduced quotient,
 and the orientation character.
 
-\textit{Discharge state.}  Proved on $K3\times E$ in
-Theorem~\ref{thm:G-O1}.  The Klein-four condition at $H=E[2]$
-reduces (O1) on the two-torsion stratum to $r_1=r_2=r_3=0$,
-discharged via fibrewise K3 specialization
-\cite{JoyceSong,JoyceUpmeier} together with the Klein-four lemma
-and the $\mathbb P^3$-$\mathrm{Pin}^c$ lemma of
-Appendix~\ref{app:G-O1-discharge}; the full-level even $N\ge 4$
-two-primary residual is handled by the mixed-coefficient
-$A_{12}^{(N)}$ analysis of the same appendix.
+\textit{Criterion.}  Theorem~\ref{thm:G-O1} is a
+quotient-orientation criterion relative to the retained
+\((O1_{\mathrm{quot}})\) datum.  The Klein-four condition at
+$H=E[2]$ reduces the edge class to \(r_1=r_2=r_3=0\), but quotient
+orientation also requires the zero degree-one linearization character.
+For even $N\ge 4$ the full two-primary residual includes the mixed
+coefficient \(A_{12}^{(N)}\), which cyclic restrictions do not detect.
 
 \subsubsection*{(O1)$^+$ Weyl-equivariant transport along
 $W^{(2)}(\Lambda_{II}^{2,1})$}
 
-\textit{Statement.}  The orientation line of (O1) carries
+\textit{Obstruction.}  The orientation line of (O1) carries
 Weyl-equivariant lifts of the three type-II wall transports
 $\tau_i:o_{\mathcal C}\to s_{\delta_i}^* o_{\mathcal C}$
 ($i=1,2,3$) such that:
 \begin{enumerate}
 \item the $2$-cocycle $c_{o,R}\in Z^2(\mathcal G_R;
 \underline{\mathbb F}_2)$ on the finite partial action groupoid
-$\mathcal G_R$ has cohomology class
-$[c_{o,R}]\in H^2(W^{(2)}(\Lambda_{II}^{2,1});\mathbb F_2)=0$ on
-each complete orbit, with chosen $1$-cochain killing $c_{o,R}$;
+$\mathcal G_R$ has vanishing cohomology class
+$[c_{o,R}]=0$ in
+$H^2(W^{(2)}(\Lambda_{II}^{2,1});\mathbb F_2)$ on each complete
+orbit, with chosen $1$-cochain killing $c_{o,R}$;
 \item $\tau_i^2=1$ for $i=1,2,3$ and the Coxeter relations of
 $W^{(2)}(\Lambda_{II}^{2,1})$ hold on the lifts;
-\item the quotient-orientation package $\mathfrak q_{\mathcal C}$
+\item the quotient-orientation cocycle $\mathfrak q_{\mathcal C}$
 transports along $\tau_i$ between charge strata over Weyl-related
 Gram degrees, with vanishing torsor defect
 $\omega_{i,\mathcal C}=0$.
 \end{enumerate}
 
-\textit{Location.}  Algorithm A4 of
-\S\ref{subsec:eight-build-algorithms}; (O1)$^+$ datum of
+\textit{Finite site.}  The Weyl-transport datum of
+\S\ref{subsec:eight-finite-constructions}; (O1)$^+$ datum of
 \S\ref{subsec:cosection-twisted-orientation}.  Failure of (O1)$^+$
 obstructs the orientation character $\varepsilon_o$ and prevents
 recognition of the Weyl orientation pattern as
 $\nu_{\Delta_5}|_{W^{(2)}(\Lambda_{II}^{2,1})}$.
 
-\textit{Discharge state.}  Proved on $K3\times E$ in
-Theorem~\ref{thm:G-O1-plus}.  The local rank-one Pfaffian crossing
+\textit{Conditional theorem.}  The equivariance part of
+Theorem~\ref{thm:G-O1-plus} is conditional on the retained
+quotient-orientation datum and chosen Weyl lifts.
+The local rank-one Pfaffian crossing
 supplies the local sign $\varepsilon^{\mathrm{loc}}_{\delta_i,R}=-1$
-on a generic chart; the global Coxeter coherence on
+on a generic chart; the character comparison also uses the retained
+\((O2_{\mathrm{atlas}})\) datum.  The global Coxeter coherence on
 $W^{(2)}(\Lambda_{II}^{2,1})$ orbits is established by the
-$(3,3,3)$-abelianisation and Maass-character match of
+no-braid type-II Coxeter presentation and Maass-character match of
 Appendix~\ref{app:G-O1-plus-discharge}.
 
 \subsubsection*{(O2) Local Pfaffian wall normal form on type-II
 walls}
 
-\textit{Statement.}  At every finite HN height $R$ and every retained
+\textit{Obstruction.}  At every finite HN height $R$ and every retained
 component, boundary stratum, and chart overlap of the three simple
 type-II walls $\Hpl_{\delta_i}$, $i=1,2,3$, the cosection-reduced
 self-Ext complex splits as
@@ -170,36 +206,51 @@ orbit sign sum of size $4096=2^{12}$ on the retained components and
 boundary strata of the $W^{(2)}(\Lambda_{II}^{2,1})$-orbit reproduces
 the reflection character $\nu_{\Delta_5}|_{W^{(2)}(\Lambda_{II}^{2,1})}$.
 
-\textit{Location.}  Algorithm A6 of
-\S\ref{subsec:eight-build-algorithms}; rank-one Pfaffian crossing
-of \S\ref{subsec:dirac-pfaffian}.  Failure of (O2) prevents the
+\textit{Finite site.}  The Pfaffian wall-atlas datum of
+\S\ref{subsec:eight-finite-constructions}; rank-one Pfaffian crossing
+of \S\ref{subsec:dirac-pfaffian}.  The finite proof surface is
+\(\mathrm{wall\_objects}\), \(\mathrm{wall\_charts}\),
+\(\mathrm{overlaps}\), \(\mathrm{orbit\_transport}\),
+\(\mathrm{half\_hilbert\_orbit}\), \(\mathrm{compatibilities}\), and
+\(\mathrm{scalar\_separation}\); these rows distinguish the rank-one
+local sign, the global half-Hilbert atlas, and the scalar equality
+\(2^{12}=64^2\).  Failure of (O2) prevents the
 local Pfaffian section
 $\operatorname{pf}_{\delta_i,R}=\upsilon_{\delta_i,R}u_{\delta_i,R}$
 from descending to the orientation character and obstructs the
 section-level identification
 $\operatorname{pf}_X=\Delta_5$ on the wall complement.
 
-\textit{Discharge state.}  Proved on $K3\times E$ in
+\textit{Conditional theorem.}  Conditional on
+\((O2_{\mathrm{atlas}})\) in Definition~\ref{def:G-O2-atlas},
 Theorem~\ref{thm:G-O2-orbit-transport}.  The local rank-one crossing
 model is established (Proposition~\ref{prop:rank-one-crossing-o2-sign});
 component, boundary, and overlap compatibility on the full
-half-Hilbert orbit is established by the Weyl-orbit transport and the
-identity $4096 = 2^{\chi_{\mathrm{top}}(K3)/2}$ of
-Appendix~\ref{app:G-O2-discharge}.  Full normal-form theorem with the
-$4096=2^{12}$ sign sum is recorded in
+half-Hilbert orbit is part of the retained wall-atlas datum and is
+transported by Theorem~\ref{thm:G-O2-orbit-transport}.  The
+$4096=2^{12}$ sign count is the scalar shadow of that retained datum,
+as separated in Appendix~\ref{app:G-O2-discharge}.  The full
+normal-form theorem with this sign count is relative to
 Appendix~\ref{app:pfaffian-wall-normal-form}.
 
-\subsubsection*{Joint conditional theorem}
+\subsubsection*{Joint theorem with recognition datum}
 
-\begin{theorem}[Pfaffian--Dirac identification, conditional on
-(D0), (O1), (O1)$^+$, (O2)]
+\begin{theorem}[Pfaffian--Dirac identification with primitive recognition datum]
 \label{thm:pfaffian-dirac-conditional}
-Suppose (D0), (O1), (O1)$^+$, and (O2) all hold at every finite HN
-height $R$, with strict HN transitions, and the recognition data
-(R0)--(R8) of \S\ref{subsec:primitive-recognition} are supplied on a
-cofinal sequence of saturated downward finite windows.  Suppose the
-chiral Koszul source datum of \S\ref{subsec:koszul-source} is
-constructed with the Koszul Mittag--Leffler exactness hypothesis.
+On \(K3\times E\), suppose (D0), the retained
+\((O1_{\mathrm{quot}})\) datum, the \((O1)^+\) Weyl lifts, and
+\((O2_{\mathrm{atlas}})\) hold at every finite HN height $R$ with
+strict HN transitions as in
+Appendix~\ref{app:obstruction-discharges}.  Suppose the finite
+geometric Pfaffian datum \((P_{\mathrm{fin}})\) of
+Definition~\ref{def:finite-geometric-pfaffian-datum} is supplied on a
+cofinal HN system.  Suppose the recognition data (R0)--(R8) of
+\S\ref{subsec:primitive-recognition} are supplied on a cofinal sequence
+of saturated downward finite windows.  Suppose the chiral Koszul source
+datum of \S\ref{subsec:koszul-source} is supplied, together with the
+finite Koszul comparison datum of
+Definition~\ref{def:finite-koszul-comparison-datum} and the strict
+Koszul Mittag--Leffler exactness hypothesis.
 Then
 \[
 \operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})
@@ -212,56 +263,67 @@ P_X\cong\mathfrak g_{\Delta_5},
 and $\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}$.
 \end{theorem}
 
-The proof is the integration of the eight build algorithms of
-\S\ref{subsec:eight-build-algorithms} with the recognition theorem
-of \S\ref{subsec:primitive-recognition} and the Koszul comparison
-of \S\ref{subsec:koszul-source}.  No part of the conclusion is
-unconditional on (D0), (O1), (O1)$^+$, (O2); each named obstruction
-controls a separate finite-stage construction step, and discharge
-of any one tightens the conditioning of the joint conclusion.
+The eight finite constructions of
+\S\ref{subsec:eight-finite-constructions}, the recognition theorem
+of \S\ref{subsec:primitive-recognition}, and the Koszul comparison
+of \S\ref{subsec:koszul-source} give the displayed implication.  The Pfaffian and orientation
+conclusion holds by the retained D0-HN datum, the retained
+\((O1_{\mathrm{quot}})\) datum, the chosen Weyl lifts, and the
+retained \((O2_{\mathrm{atlas}})\) datum; the primitive
+Lie-superalgebra and current-envelope conclusions require the cofinal
+recognition datum, the Koszul source datum, and the finite Koszul
+comparison datum.
+The current-envelope conclusion uses the finite comparison
+compatibility of
+Proposition~\ref{prop:finite-koszul-comparison-compatibility}; without
+that datum, the source cobar quasi-isomorphism need not preserve the
+Weyl action, Pfaffian orientation character, Hall pairing, radical
+quotient, or PBW filtration used in recognition.
 
-\subsubsection*{The 4096 sign sum and the (O2) ledger}
+\subsubsection*{The 4096 sign sum and the (O2) wall atlas}
 
-The constant $4096=2^{12}$ records the size of the half-Hilbert
+The constant $4096=2^{12}$ is the size of the half-Hilbert
 orbit of the type-II reflection group on the retained finite-window
 components and boundary strata of the type-II wall configuration.
 At the local rank-one chart, each retained component contributes a
 sign $\varepsilon^{\mathrm{loc}}_{\delta_i,R}=-1$; the global sign
-sum is computed by the (O2) wall atlas of Appendix~E and reads as
-the reflection character $\nu_{\Delta_5}|_{W^{(2)}(\Lambda_{II}^{2,1})}$.
-The Oberdieck--Pixton minus sign in the scalar trace
-$\operatorname{Tr}_{\mathrm{prot}}((-1)^F\mathfrak D_X^{-2})
-=-4096\,\Delta_5^{-2}$ is a scalar branch convention and is not the
-source of the orientation character: $\varepsilon_o=\nu_{\Delta_5}$
-on $W^{(2)}(\Lambda_{II}^{2,1})$ is fixed by group theory plus one
-local Pfaffian wall computation, with the $4096$ multiplicity
-controlled by the (O2) atlas, not by the OP scalar.
+system is the retained (O2) wall atlas of Appendix~E transported along
+the chosen Weyl lifts, and its character is
+\(\nu_{\Delta_5}|_{W^{(2)}(\Lambda_{II}^{2,1})}\).
+The Oberdieck--Pixton branch
+$Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}$ is a scalar convention and is
+not the source of the orientation character.  The equality
+$\varepsilon_o=\nu_{\Delta_5}$ on
+$W^{(2)}(\Lambda_{II}^{2,1})$ is relative to the retained quotient
+orientation, the chosen Weyl lifts, and the (O2) wall atlas; the
+local rank-one Pfaffian computation gives only the seed sign.
 
-\subsubsection*{Cross-repo anchor}
+\subsubsection*{Compatibility with the companion volumes}
 
-The four obstructions (D0), (O1), (O1)$^+$, (O2) appear in identical
-form across the parallel chiral-bar-cobar volumes:
-(D0) is the K3-fibre cosection structure that the Vol II
-Hall--Borcherds residual takes as input;
-(O1) is the orientation gerbe whose two-primary residual the Vol III
-Drinfeld doubling tracks;
-(O1)$^+$ is the Weyl-equivariant transport whose discharge the
-$\kappa$-stratification signature controls;
-(O2) is the local Pfaffian wall normal form that the eight-row
-Gritsenko--Cl\'ery catalogue records.  Disagreement between volumes
-on (D0)--(O2) state is the deliverable, not the shortcut; the
-cross-volume Master Critique audits this consistency at the
-relation-closed window.
+The four obstruction classes are source-side geometric data.  Their
+automorphic shadow is smaller: the Gritsenko--Cl\'ery catalogue fixes
+the Borcherds products, weights, characters, and denominator rows; it
+does not record the \(K3\times E\) quotient orientation, the
+Weyl-equivariant determinant-line lifts, or the Pfaffian wall atlas.
+Thus (D0) is the cosection-reduced \(K3\)-fibre degeneration datum,
+(O1) is the reduced orientation gerbe with finite-stabilizer descent,
+(O1)\(^+\) is the Weyl-equivariant determinant-line transport, and
+(O2) is the retained type-II Pfaffian wall atlas.  The
+relation-closed window tests compatibility of these source data with
+the target BKM relations; it is not an equality theorem between
+geometric obstruction classes and automorphic catalogue rows.
 
-Entries $(\mathrm L 1)$--$(\mathrm L 8)$ are now in hand: the hybrid
-carrier, the cosection-twisted orientation, the Hall correspondences,
-the protected Pfaffian, the Koszul source coalgebra, the primitive
-recognition apparatus, the eight build algorithms, and the four named
-obstructions discharged on $K3\times E$ in Appendix~\ref{app:obstruction-discharges}.
-The inverse limit on the HN system $\mathcal R_{\mathrm{HN}}$ assembles
-them into the Dirac--Igusa pro-object
-$\mathfrak D_X^{\mathrm{DI}}=\varprojlim_R(\mathcal A_{X,R}^{E_3},
-F_{X,R}^{\mathrm{hyb}},\dots,\mathrm{Rec}_R)$ of
-Theorem~\ref{thm:ch5-construction-of-dirac-igusa-pro-object}.  The
-cross-level identity \textcircled{2}$\leftrightarrow$\textcircled{3}
-follows in Chapter~\ref{ch:pfaffian-dirac}.
+The inverse limit on the HN system \(\mathcal R_{\mathrm{HN}}\)
+contains the hybrid carrier, the cosection-twisted orientation, the
+Hall correspondences, the protected Pfaffian, the Koszul source
+coalgebra, the primitive recognition apparatus, the finite constructions,
+and the retained orientation and wall-atlas data into
+\[
+\mathfrak D_X^{\mathrm{DI}}
+=\varprojlim_R(\mathcal A_{X,R}^{E_3},
+F_{X,R}^{\mathrm{hyb}},\dots,\mathrm{Rec}_R).
+\]
+The Pfaffian and orientation part of
+\(\textcircled{2}\leftrightarrow\textcircled{3}\) is then the
+retained-data theorem of Chapter~\ref{ch:pfaffian-dirac}; the
+Lie-superalgebra recognition remains conditional on \((S1)\)--\((S10)\).

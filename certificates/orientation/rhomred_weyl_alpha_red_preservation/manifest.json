@@ -1,0 +1,43 @@
+{
+  "schema_version": "rhomred_weyl_alpha_red_preservation_obstruction.v1",
+  "fixture_name": "rhomred_weyl_alpha_red_preservation",
+  "orientation_kind": "rhomred_weyl_alpha_red_preservation_obstruction",
+  "status": "RHOMRED_WEYL_ALPHA_RED_PRESERVATION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "alpha_red_obstruction_imported": true,
+  "alpha_red_nullhomotopy_imported": true,
+  "weyl_wall_transport_imported": true,
+  "torsor_defect_vanishing_imported": true,
+  "preservation_criterion_recorded": true,
+  "alpha_red_cocycles_supplied": false,
+  "weyl_cochain_maps_supplied": false,
+  "transport_defect_vectors_supplied": false,
+  "coboundary_witness_rows_supplied": false,
+  "class_rank_zero_rows_supplied": false,
+  "retained_coverage_rows_supplied": false,
+  "alpha_red_preservation_proved": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "preservation_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_alpha_red",
+    "certificates/orientation/rhomred_alpha_red_nullhomotopy",
+    "certificates/orientation/rhomred_weyl_wall_transport_tau",
+    "certificates/orientation/rhomred_weyl_orientation_torsor_defect_vanishing"
+  ],
+  "limitations": [
+    "This packet verifies row 315 only as the cochain criterion for Weyl preservation of alpha_red.",
+    "The imported row-280 packet contains no computed alpha_red cocycle values.",
+    "The imported row-281 packet contains no null-homotopy cochains.",
+    "The imported row-306 packet contains no Weyl lift or cochain-map rows.",
+    "The imported row-314 packet does not prove torsor-defect vanishing.",
+    "It does not prove Weyl transport preserves alpha_red."
+  ]
+}

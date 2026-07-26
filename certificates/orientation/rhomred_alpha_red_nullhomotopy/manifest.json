@@ -1,0 +1,38 @@
+{
+  "schema_version": "rhomred_alpha_red_nullhomotopy_obstruction.v1",
+  "fixture_name": "rhomred_alpha_red_nullhomotopy",
+  "orientation_kind": "rhomred_alpha_red_nullhomotopy_obstruction",
+  "status": "RHOMRED_ALPHA_RED_NULLHOMOTOPY_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "alpha_red_obstruction_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "nullhomotopy_criterion_recorded": true,
+  "three_retained_strata_inspected": true,
+  "alpha_red_cocycles_supplied": false,
+  "alpha_red_zero_class_supplied": false,
+  "one_cochains_supplied": false,
+  "coboundary_defect_zero": false,
+  "null_homotopies_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "nullhomotopy_obstruction_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_alpha_red",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies the row-281 null-homotopy obstruction ledger.",
+    "It records the cochain criterion delta h_red = a_red for a Cech-Borel representative of alpha_red.",
+    "It does not supply alpha_red cocycle representatives, prove alpha_red=0, construct one-cochains, verify coboundary-defect zero, construct quotient orientation, prove transition compatibility, construct BBDJS vanishing cycles, or define protected integration."
+  ]
+}

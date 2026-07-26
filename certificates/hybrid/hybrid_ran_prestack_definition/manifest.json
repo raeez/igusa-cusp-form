@@ -1,0 +1,32 @@
+{
+  "schema_version": "hybrid_ran_prestack_definition.v1",
+  "fixture_name": "hybrid_ran_prestack_definition",
+  "hybrid_kind": "hybrid_ran_prestack_definition",
+  "status": "HYBRID_RAN_PRESTACK_DEFINITION_VERIFIED",
+  "prestack_defined": true,
+  "stackification_certification": false,
+  "descent_certification": false,
+  "local_stratum_certification": false,
+  "wrapped_stratum_certification": false,
+  "degree_shadow_only": false,
+  "ordinary_ran_only": false,
+  "tables": [
+    "definition_rows.csv",
+    "component_prestack_rows.csv",
+    "descent_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/geometric_elliptic_degree_map",
+    "certificates/hybrid/positive_elliptic_degree_projection"
+  ],
+  "limitations": [
+    "This packet defines Ran^hyb_{R,pre}(E) as a prestack functor.",
+    "No populated local-stratum component rows are supplied; row 206 is separated in certificates/hybrid/local_stratum_b0_prestack_definition.",
+    "No populated wrapped-stratum component rows are supplied; row 207 is separated in certificates/hybrid/wrapped_stratum_bpositive_prestack_definition.",
+    "No descent or stackification rows are supplied.",
+    "No transition rows for the prestack tower are supplied."
+  ]
+}

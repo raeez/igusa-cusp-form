@@ -1,0 +1,48 @@
+{
+  "schema_version": "rhomred_local_divisor_monodromy_definition_obstruction.v1",
+  "fixture_name": "rhomred_local_divisor_monodromy_definition",
+  "orientation_kind": "rhomred_local_divisor_monodromy_definition_obstruction",
+  "status": "RHOMRED_LOCAL_DIVISOR_MONODROMY_DEFINITION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "imaginary_divisor_firewall_imported": true,
+  "compact_hall_ledger_imported": true,
+  "reduced_orientation_ledger_imported": true,
+  "vanishing_cycle_transition_imported": true,
+  "finite_pfaffian_ledger_imported": true,
+  "definition_criterion_recorded": true,
+  "local_divisor_rows_supplied": false,
+  "normal_tube_rows_supplied": false,
+  "meridian_rows_supplied": false,
+  "coefficient_local_system_rows_supplied": false,
+  "pfaffian_line_rows_supplied": false,
+  "monodromy_operator_rows_supplied": false,
+  "transition_compatibility_rows_supplied": false,
+  "local_divisor_monodromy_constructed": false,
+  "epsilon_o_extended_to_local_divisors": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "definition_rows.csv",
+    "local_divisor_rows.csv",
+    "local_monodromy_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_imaginary_divisor_firewall",
+    "certificates/sources/k3e_compact_hall",
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/vanishing_cycles/transition_vanishing_cycle_preservation",
+    "certificates/pfaffian/k3e_finite_pfaffian"
+  ],
+  "limitations": [
+    "This packet verifies row 327 only as a definition criterion for local divisor monodromy.",
+    "No retained compact Hall divisor component rows are supplied.",
+    "No punctured normal tube or meridian rows are supplied.",
+    "No restricted reduced vanishing-cycle local-system rows are supplied.",
+    "No Pfaffian-line summand or monodromy-operator rows are supplied.",
+    "It does not prove row 328 irrelevance of local divisor monodromy to nu_Delta5."
+  ]
+}

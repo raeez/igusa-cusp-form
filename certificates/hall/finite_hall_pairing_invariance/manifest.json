@@ -1,0 +1,49 @@
+{
+  "schema_version": "finite_hall_pairing_invariance.v1",
+  "fixture_name": "finite_hall_pairing_invariance",
+  "hall_kind": "finite_hall_pairing_invariance_obstruction",
+  "status": "FINITE_HALL_PAIRING_INVARIANCE_OBSTRUCTION_VERIFIED",
+  "row_number": 361,
+  "coefficient_ring": "QQ",
+  "relative_theorem_recorded": true,
+  "pairing_supersymmetry_packet_imported": true,
+  "bracket_parity_packet_imported": true,
+  "graded_jacobi_packet_imported": true,
+  "cy3_serre_sign_packet_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "frobenius_formula_recorded": true,
+  "source_G_entries_supplied": false,
+  "source_primitive_bracket_rows_supplied": false,
+  "source_parity_blocks_supplied": false,
+  "source_frobenius_defect_rows_supplied": false,
+  "source_cyclic_correspondence_rows_supplied": false,
+  "source_serre_sign_rows_supplied": false,
+  "source_orientation_transport_rows_supplied": false,
+  "pairing_invariance_proved_for_current_source": false,
+  "coproduct_compatibility_proved": false,
+  "quotient_nondegeneracy_proved": false,
+  "mathematical_certification": false,
+  "imports": [
+    "certificates/hall/finite_hall_pairing_supersymmetry",
+    "certificates/hall/finite_hall_bracket_parity",
+    "certificates/hall/finite_hall_graded_jacobi",
+    "certificates/orientation/rhomred_orientation_cy3_serre_signs",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "invariance_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv",
+    "text_requirements.csv"
+  ],
+  "limitations": [
+    "This packet proves pairing invariance only for supplied finite Frobenius cyclic defect rows.",
+    "It imports row 360 supersymmetry and row 357 bracket parity to convert cyclicity into invariance.",
+    "It imports the row 337 Serre-sign packet only as a criterion and firewall.",
+    "It does not supply compact K3xE source bracket rows, G entries, parity blocks, Frobenius defect rows, cyclic correspondences, Serre-sign rows, or orientation transport.",
+    "It does not prove coproduct compatibility or quotient nondegeneracy."
+  ]
+}

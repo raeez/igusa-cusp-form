@@ -1,0 +1,49 @@
+{
+  "schema_version": "rhomred_orientation_class_limit_survival_obstruction.v1",
+  "fixture_name": "rhomred_orientation_class_limit_survival",
+  "orientation_kind": "rhomred_orientation_class_limit_survival_obstruction",
+  "status": "RHOMRED_ORIENTATION_CLASS_LIMIT_SURVIVAL_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "reduced_orientation_ledger_imported": true,
+  "square_root_obstruction_imported": true,
+  "transition_orientation_ledger_imported": true,
+  "cy3_pairing_nondegeneracy_imported": true,
+  "limit_survival_criterion_recorded": true,
+  "finite_orientation_line_rows_supplied": false,
+  "square_root_rows_supplied": false,
+  "orientation_class_zero_rows_supplied": false,
+  "picard_transition_rows_supplied": false,
+  "determinant_square_transition_rows_supplied": false,
+  "quotient_orientation_transition_rows_supplied": false,
+  "thom_sebastiani_transition_rows_supplied": false,
+  "weyl_coxeter_transition_rows_supplied": false,
+  "strict_composition_rows_supplied": false,
+  "orientation_mittag_leffler_rows_supplied": false,
+  "limit_class_rows_supplied": false,
+  "orientation_class_survival_proved": false,
+  "row340_no_new_class_claimed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "limit_survival_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/orientation/rhomred_square_root",
+    "certificates/orientation/transition_orientation_preservation",
+    "certificates/orientation/rhomred_orientation_cy3_pairing_nondegeneracy"
+  ],
+  "limitations": [
+    "This packet verifies row 339 only as an inverse-limit survival criterion.",
+    "The reduced-orientation packet supplies no finite orientation line, orientation class, square-root, or transition rows.",
+    "The square-root packet records three missing square-root rows and has no orientation class zero row.",
+    "The transition-orientation packet supplies no Picard pullback maps, strict composition rows, or orientation Mittag-Leffler row.",
+    "The row 338 packet does not construct orientation classes or prove inverse-limit survival.",
+    "It does not prove row 340: no new orientation class appears at the limit."
+  ]
+}

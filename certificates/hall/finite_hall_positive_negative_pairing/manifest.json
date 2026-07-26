@@ -1,0 +1,48 @@
+{
+  "schema_version": "finite_hall_positive_negative_pairing.v1",
+  "fixture_name": "finite_hall_positive_negative_pairing",
+  "hall_kind": "finite_hall_positive_negative_pairing_obstruction",
+  "status": "FINITE_HALL_POSITIVE_NEGATIVE_PAIRING_OBSTRUCTION_VERIFIED",
+  "row_number": 358,
+  "coefficient_ring": "QQ",
+  "definition_recorded": true,
+  "normal_ordered_gram_degree_packet_imported": true,
+  "bracket_parity_packet_imported": true,
+  "formal_pairing_pushforward_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "positive_negative_formula_recorded": true,
+  "formal_degree_zero_pairing_rows_verified": true,
+  "source_G_entries_supplied": false,
+  "source_trace_functional_supplied": false,
+  "source_pairing_correspondences_supplied": false,
+  "source_orientation_transport_rows_supplied": false,
+  "source_hopf_pairing_identity_rows_supplied": false,
+  "homogeneity_proved": false,
+  "supersymmetry_proved": false,
+  "invariance_proved": false,
+  "coproduct_compatibility_proved": false,
+  "quotient_nondegeneracy_proved": false,
+  "mathematical_certification": false,
+  "imports": [
+    "certificates/hall/finite_hall_normal_ordered_gram_degree",
+    "certificates/hall/finite_hall_bracket_parity",
+    "certificates/charge/hall_pairing_pushforward_compatibility",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "pairing_rows.csv",
+    "formal_import_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv",
+    "text_requirements.csv"
+  ],
+  "limitations": [
+    "This packet defines the finite positive-negative Hall pairing matrix G for supplied source data.",
+    "It imports formal degree-zero pairing rows only as evidence for the shape of the definition.",
+    "It does not supply compact K3xE source G entries, trace rows, or pairing correspondences.",
+    "It does not prove homogeneity, supersymmetry, Frobenius invariance, coproduct compatibility, or quotient nondegeneracy."
+  ]
+}

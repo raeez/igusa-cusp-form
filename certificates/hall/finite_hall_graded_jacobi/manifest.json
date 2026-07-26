@@ -1,0 +1,43 @@
+{
+  "schema_version": "finite_hall_graded_jacobi.v1",
+  "fixture_name": "finite_hall_graded_jacobi",
+  "hall_kind": "finite_hall_graded_jacobi_obstruction",
+  "status": "FINITE_HALL_GRADED_JACOBI_OBSTRUCTION_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "row_number": 355,
+  "relative_theorem_recorded": true,
+  "commutator_closure_packet_imported": true,
+  "bialgebra_compatibility_packet_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "graded_jacobi_formula_recorded": true,
+  "product_matrix_rows_supplied": false,
+  "primitive_bracket_matrix_rows_supplied": false,
+  "associativity_rows_supplied": false,
+  "primitive_closure_rows_supplied": false,
+  "jacobi_defect_rows_supplied": false,
+  "parity_rows_supplied": false,
+  "normal_ordered_bracket_rows_supplied": false,
+  "graded_jacobi_proved_for_current_source": false,
+  "primitive_lie_algebra_populated": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "jacobi_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv",
+    "text_requirements.csv"
+  ],
+  "imports": [
+    "certificates/hall/finite_hall_primitive_commutator_closure",
+    "certificates/hall/finite_hall_bialgebra_compatibility",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "limitations": [
+    "This packet verifies row 355 as the relative graded-Jacobi theorem for a supplied associative graded Hall product and primitive closure data.",
+    "It does not populate compact source product, bracket, parity, primitive-closure, or Jacobi defect rows.",
+    "It does not prove that the current compact source carries a computed primitive Lie algebra.",
+    "It does not prove normal-ordered Gram-degree preservation; row 356 is separate."
+  ]
+}

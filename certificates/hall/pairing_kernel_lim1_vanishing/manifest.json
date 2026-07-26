@@ -1,0 +1,36 @@
+{
+  "schema_version": "pairing_kernel_lim1_vanishing_obstruction.v1",
+  "fixture_name": "pairing_kernel_lim1_vanishing",
+  "hall_kind": "pairing_kernel_lim1_vanishing_obstruction",
+  "coefficient_ring": "ZZ",
+  "status": "PAIRING_KERNEL_LIM1_VANISHING_OBSTRUCTION_VERIFIED",
+  "lim1_vanishing_certification": false,
+  "mathematical_certification": false,
+  "compact_hall_packet_imported": true,
+  "primitive_space_packet_imported": true,
+  "transition_radical_packet_imported": true,
+  "imports": [
+    "certificates/sources/k3e_compact_hall",
+    "certificates/hall/primitive_space_lim1_vanishing",
+    "certificates/hall/transition_radical_preservation"
+  ],
+  "tables": [
+    "pairing_maps.csv",
+    "pairing_kernel_spaces.csv",
+    "pairing_kernel_transition_maps.csv",
+    "pairing_kernel_image_stabilization.csv",
+    "pairing_kernel_ml_r1lim_defects.csv",
+    "pairing_kernel_coverage.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet verifies the obstruction ledger for lim1 vanishing on Hopf-pairing kernel towers.",
+    "The compact Hall source packet does not yet supply Hopf-pairing matrices, Hopf-pairing identity rows, kernel bases, or quotient splittings.",
+    "The primitive-space lim1 packet does not yet supply primitive-space image-stabilization rows.",
+    "The transition-radical packet does not yet supply pairing-transition identities or restricted kernel transition maps.",
+    "No pairing-kernel image-stabilization witnesses, Mittag-Leffler status rows, or r1lim zero rows are supplied.",
+    "It does not prove that R1lim vanishes on pairing kernels.",
+    "It does not prove lim1 vanishing on radicals, PBW associated gradeds, or parity pieces."
+  ]
+}

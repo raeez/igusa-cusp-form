@@ -1,0 +1,37 @@
+{
+  "schema_version": "rhomred_weyl_orientation_torsor_defect_vanishing_obstruction.v1",
+  "fixture_name": "rhomred_weyl_orientation_torsor_defect_vanishing",
+  "orientation_kind": "rhomred_weyl_orientation_torsor_defect_vanishing_obstruction",
+  "status": "RHOMRED_WEYL_ORIENTATION_TORSOR_DEFECT_VANISHING_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "torsor_defect_computation_imported": true,
+  "orientation_obstruction_imported": true,
+  "vanishing_criterion_recorded": true,
+  "torsor_defect_rows_supplied": false,
+  "h1_basis_rows_supplied": false,
+  "closedness_rows_supplied": false,
+  "zero_vector_rows_supplied": false,
+  "coverage_rows_supplied": false,
+  "torsor_defects_computed": false,
+  "all_torsor_defects_vanishing_proved": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "vanishing_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_orientation_torsor_defects",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 314 only as the zero-vector criterion for the Weyl orientation torsor defects.",
+    "The imported row-313 packet contains no torsor-defect vector rows.",
+    "No H1 bases, closed defect cochains, zero-vector certificates, or retained-wall coverage rows are supplied.",
+    "It does not prove all omega_i,R,S vanish."
+  ]
+}

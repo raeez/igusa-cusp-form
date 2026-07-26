@@ -1,0 +1,47 @@
+{
+  "schema_version": "rhomred_orientation_thom_sebastiani_compatibility_obstruction.v1",
+  "fixture_name": "rhomred_orientation_thom_sebastiani_compatibility",
+  "orientation_kind": "rhomred_orientation_thom_sebastiani_compatibility_obstruction",
+  "status": "RHOMRED_ORIENTATION_THOM_SEBASTIANI_COMPATIBILITY_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "orientation_obstruction_ledger_imported": true,
+  "extension_multiplicativity_obstruction_imported": true,
+  "mixed_thom_sebastiani_packet_imported": true,
+  "four_input_pentagon_packet_imported": true,
+  "compatibility_criterion_recorded": true,
+  "orientation_tables_inspected": true,
+  "bbdjs_ts_imported_as_conditional_input": true,
+  "orientation_square_roots_supplied": false,
+  "orientation_ts_isomorphism_supplied": false,
+  "determinant_square_compatibility_supplied": false,
+  "coefficient_system_compatibility_supplied": false,
+  "chart_overlap_cocycle_zero": false,
+  "quotient_descent": false,
+  "two_step_flag_pentagon_supplied": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "inspected_orientation_tables.csv",
+    "compatibility_obstruction_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/orientation/rhomred_orientation_extension_multiplicativity",
+    "certificates/hybrid/mixed_correspondence_thom_sebastiani",
+    "certificates/hybrid/four_input_pentagon_coherence"
+  ],
+  "limitations": [
+    "This packet verifies row 301 only as a Thom-Sebastiani orientation-line compatibility criterion.",
+    "The mixed Thom-Sebastiani packet is conditional on supplied Joyce-Upmeier orientation transport.",
+    "The four-input pentagon packet lists the BBDJS-Joyce-Upmeier TS orientation pentagon as a functorial input, not as discharged orientation data.",
+    "The reduced-orientation table supplies no orientation-line rows and no Thom-Sebastiani multiplicativity rows.",
+    "It does not construct orientation square roots, the determinant-square compatibility row, oriented coefficient-system TS transport, quotient descent, transition compatibility, BBDJS vanishing cycles, or protected integration."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "rhomred_orientation_hall_coproduct_descent_obstruction.v1",
+  "fixture_name": "rhomred_orientation_hall_coproduct_descent",
+  "orientation_kind": "rhomred_orientation_hall_coproduct_descent_obstruction",
+  "status": "RHOMRED_ORIENTATION_HALL_COPRODUCT_DESCENT_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "e_quotient_descent_imported": true,
+  "orientation_thom_sebastiani_imported": true,
+  "hall_product_descent_imported": true,
+  "theta_mu_coproduct_imported": true,
+  "quotient_thom_sebastiani_imported": true,
+  "transition_hall_coproduct_imported": true,
+  "compact_hall_source_imported": true,
+  "hall_coproduct_descent_criterion_recorded": true,
+  "theta_delta_available_for_supplied_coproduct_rows": true,
+  "theta_mu_coproduct_available_for_supplied_bialgebra_rows": true,
+  "quotient_orientation_rows_supplied": false,
+  "splitting_cocycle_comparison_supplied": false,
+  "inverse_oriented_ts_isomorphism_supplied": false,
+  "source_hall_coproduct_rows_supplied": false,
+  "source_counit_rows_supplied": false,
+  "hall_coproduct_descent": false,
+  "transition_compatibility": false,
+  "protected_integration": false,
+  "aggregate_hybrid_population": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "imported_status_rows.csv",
+    "coproduct_descent_obstruction_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_orientation_e_quotient_descent",
+    "certificates/orientation/rhomred_orientation_thom_sebastiani_compatibility",
+    "certificates/orientation/rhomred_orientation_hall_product_descent",
+    "certificates/hybrid/quotient_after_correspondence_theta_mu_coproduct",
+    "certificates/hybrid/quotient_after_correspondence_thom_sebastiani",
+    "certificates/hall/transition_hall_coproduct_preservation",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "limitations": [
+    "This packet verifies row 304 only as a coproduct-descent criterion for quotient orientations.",
+    "The theta_mu_coproduct packet provides compatibility only after quotient-presented finite coproduct and bialgebra rows are supplied.",
+    "The reduced-orientation tables supply no quotient-orientation rows and no oriented Thom-Sebastiani rows.",
+    "The compact Hall source table supplies no Hall coproduct D rows and no counit rows.",
+    "It does not prove that orientation descent commutes with the Hall coproduct."
+  ]
+}

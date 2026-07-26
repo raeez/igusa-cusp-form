@@ -442,35 +442,42 @@ def eichler_zagier_invariant_check(
     return representative
 
 
-CHL_TWIST_KAPPA_BKM_TABLE: dict[int, tuple[int, int]] = {
-    1: (10, 5),
-    2: (8, 4),
-    3: (6, 3),
-    4: (4, 2),
-    6: (2, 1),
+# Corrected CHL ladder (Jatkar--Sen; Govindarajan--Krishna for the
+# composite rows): c_N(0) = (10, 6, 4, 3, 2) and kappa_BKM = c_N(0)/2 =
+# (5, 3, 2, 3/2, 1) for N in {1, 2, 3, 4, 6}.  The N = 4 weight 3/2 is
+# half-integral; Phi_4 lives on the genus-two metaplectic cover.  The
+# once-recorded integral ladder (10, 8, 6, 4, 2) -> (5, 4, 3, 2, 1),
+# obtained by reading the frame-shape Lefschetz numbers chi^{g_N}(K3)
+# as Jacobi constant terms, is retracted.
+CHL_TWIST_KAPPA_BKM_TABLE: dict[int, tuple[int, Fraction]] = {
+    1: (10, Fraction(5)),
+    2: (6, Fraction(3)),
+    3: (4, Fraction(2)),
+    4: (3, Fraction(3, 2)),
+    6: (2, Fraction(1)),
 }
 
 
-def kappa_bkm_universal_check(table: dict[int, tuple[int, int]]) -> None:
+def kappa_bkm_universal_check(table: dict[int, tuple[int, Fraction]]) -> None:
     """Verify kappa_BKM(Phi_N) = c_N(0)/2 across the CHL frame N in {1,2,3,4,6}.
 
-    For each N, table[N] = (c_N(0), kappa_BKM). The identity is integer-level
-    arithmetic; the test catches typos or transcription drift between this
-    fixture, Ch.4 Theorem thm:bkm-kappa-universal, and KICKSTART Section 6.
+    For each N, table[N] = (c_N(0), kappa_BKM). The identity is exact
+    rational arithmetic (the N = 4 weight is the half-integer 3/2); the
+    test catches typos or transcription drift between this fixture,
+    Ch.4 Theorem thm:bkm-kappa-universal, and KICKSTART Section 6.
     """
 
     for level, (c_zero, kappa_value) in sorted(table.items()):
-        expected_kappa = c_zero // 2
-        if expected_kappa * 2 != c_zero:
-            raise AssertionError(
-                f"c_{level}(0) = {c_zero} is not even; kappa_BKM must be a "
-                f"half-integer count"
-            )
+        expected_kappa = Fraction(c_zero, 2)
         if expected_kappa != kappa_value:
             raise AssertionError(
                 f"kappa_BKM(Phi_{level}) = {kappa_value} disagrees with "
                 f"c_{level}(0)/2 = {expected_kappa}"
             )
+    if Fraction(table[4][0], 2).denominator != 2:
+        raise AssertionError(
+            "corrected ladder requires the half-integral weight 3/2 at N=4"
+        )
 
 
 def main() -> None:

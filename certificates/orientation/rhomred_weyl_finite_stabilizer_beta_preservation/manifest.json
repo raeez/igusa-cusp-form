@@ -1,0 +1,47 @@
+{
+  "schema_version": "rhomred_weyl_finite_stabilizer_beta_preservation_obstruction.v1",
+  "fixture_name": "rhomred_weyl_finite_stabilizer_beta_preservation",
+  "orientation_kind": "rhomred_weyl_finite_stabilizer_beta_preservation_obstruction",
+  "status": "RHOMRED_WEYL_FINITE_STABILIZER_BETA_PRESERVATION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "finite_stabilizer_beta_imported": true,
+  "beta_vanishing_imported": true,
+  "beta_nulltrivialization_imported": true,
+  "weyl_wall_transport_imported": true,
+  "alpha_e_free_preservation_imported": true,
+  "preservation_criterion_recorded": true,
+  "stabilizer_isomorphism_rows_supplied": false,
+  "source_target_beta_rows_supplied": false,
+  "h2_bh_transport_matrices_supplied": false,
+  "edge_transport_defect_rows_supplied": false,
+  "coordinate_defect_rows_supplied": false,
+  "zero_vector_rows_supplied": false,
+  "retained_coverage_rows_supplied": false,
+  "finite_stabilizer_beta_preservation_proved": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "preservation_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_beta",
+    "certificates/orientation/rhomred_finite_stabilizer_beta_vanishing",
+    "certificates/orientation/rhomred_finite_stabilizer_beta_nulltrivialization",
+    "certificates/orientation/rhomred_weyl_wall_transport_tau",
+    "certificates/orientation/rhomred_weyl_alpha_e_free_preservation"
+  ],
+  "limitations": [
+    "This packet verifies row 317 only as the H2(BH)-edge-coordinate criterion for Weyl preservation of beta^H.",
+    "The imported row-285 packet contains no finite-stabilizer orientation or beta-value rows.",
+    "The imported row-286 packet does not prove beta^H vanishing.",
+    "The imported row-287 packet contains no compatible beta null-trivializations.",
+    "The imported row-306 packet contains no Weyl lift on finite stabilizers.",
+    "The imported row-316 packet does not prove alpha_E_free preservation.",
+    "It does not prove Weyl transport preserves beta^H."
+  ]
+}

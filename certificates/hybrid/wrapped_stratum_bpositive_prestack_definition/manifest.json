@@ -1,0 +1,38 @@
+{
+  "schema_version": "wrapped_stratum_bpositive_prestack_definition.v1",
+  "fixture_name": "wrapped_stratum_bpositive_prestack_definition",
+  "hybrid_kind": "wrapped_stratum_bpositive_prestack_definition",
+  "status": "WRAPPED_STRATUM_BPOSITIVE_PRESTACK_DEFINITION_VERIFIED",
+  "wrapped_subprestack_defined": true,
+  "wrapped_prequotient_certification": false,
+  "anchor_certification": false,
+  "support_realization_certification": false,
+  "descent_certification": false,
+  "transition_certification": false,
+  "local_input_allowed": false,
+  "degree_shadow_only": false,
+  "tables": [
+    "definition_rows.csv",
+    "component_rows.csv",
+    "anchor_rows.csv",
+    "support_realization_rows.csv",
+    "descent_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/hybrid_ran_prestack_definition",
+    "certificates/hybrid/geometric_elliptic_degree_map",
+    "certificates/hybrid/positive_elliptic_degree_projection"
+  ],
+  "limitations": [
+    "This packet defines the b>0 wrapped stratum as a subprestack.",
+    "No populated wrapped component rows are supplied.",
+    "The E-equivariant wrapped prequotient definition is separated in certificates/hybrid/equivariant_wrapped_prequotient_definition.",
+    "No populated wrapped prequotient or anchor certification rows are supplied by this packet.",
+    "No support-realization rows for retained objects are supplied.",
+    "No descent or stackification rows are supplied.",
+    "No transition rows are supplied."
+  ]
+}

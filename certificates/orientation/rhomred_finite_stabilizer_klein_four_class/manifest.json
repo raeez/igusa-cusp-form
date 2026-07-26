@@ -1,0 +1,48 @@
+{
+  "schema_version": "rhomred_finite_stabilizer_klein_four_class.v1",
+  "fixture_name": "rhomred_finite_stabilizer_klein_four_class",
+  "orientation_kind": "rhomred_finite_stabilizer_klein_four_class",
+  "status": "RHOMRED_FINITE_STABILIZER_KLEIN_FOUR_CLASS_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "finite_stabilizer_beta_imported": true,
+  "gerbe_linearization_firewall_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "e2_group_identified": true,
+  "cohomology_ring_computed": true,
+  "h2_basis_recorded": true,
+  "klein_four_class_form_recorded": true,
+  "coefficient_inversion_deferred_to_rows_292_294": true,
+  "retained_e2_edge_row_supplied": false,
+  "equivariant_beta_representative_supplied": false,
+  "edge_reduction_rows_supplied": false,
+  "coefficient_values_supplied": false,
+  "cyclic_restriction_values_supplied": false,
+  "beta_vanishing_verified": false,
+  "linearization_rows_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "cohomology_basis_rows.csv",
+    "klein_four_class_rows.csv",
+    "deferred_restriction_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "remaining_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_beta",
+    "certificates/orientation/rhomred_finite_stabilizer_gerbe_linearization_independence",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies the row-291 local E[2] Klein-four class computation.",
+    "It computes H^2(BE[2];F2) and the unique edge-class form b20*x1^2 + b11*x1*x2 + b02*x2^2.",
+    "It does not supply a retained E[2] finite-stabilizer edge row, coefficient values, cyclic-restriction values, beta vanishing, zero linearization, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration.",
+    "The coefficient identities b20=r1, b11=r1+r2+r3, and b02=r2 are deferred to rows 292-294."
+  ]
+}

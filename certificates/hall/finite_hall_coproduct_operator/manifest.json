@@ -1,0 +1,49 @@
+{
+  "schema_version": "finite_hall_coproduct_operator_definition.v1",
+  "fixture_name": "finite_hall_coproduct_operator",
+  "hall_kind": "finite_hall_coproduct_operator_definition",
+  "status": "FINITE_HALL_COPRODUCT_OPERATOR_DEFINITION_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "definition_recorded": true,
+  "finite_hall_object_imported": true,
+  "compact_support_model_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "transition_hall_coproduct_ledger_imported": true,
+  "formal_coproduct_formula_recorded": true,
+  "pullback_exists_proved": false,
+  "pushforward_exists_proved": false,
+  "compactification_independence_proved": false,
+  "retained_splitting_correspondence_rows_supplied": false,
+  "inverse_thom_sebastiani_rows_supplied": false,
+  "coproduct_matrix_rows_supplied": false,
+  "counit_rows_supplied": false,
+  "coassociativity_rows_supplied": false,
+  "bialgebra_compatibility_rows_supplied": false,
+  "transition_compatibility_rows_supplied": false,
+  "finite_hall_coproduct_populated": false,
+  "primitive_claimed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "definition_rows.csv",
+    "coproduct_operator_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hall/finite_geometric_hall_object",
+    "certificates/hybrid/compact_support_exceptional_pushforward_model",
+    "certificates/sources/k3e_compact_hall",
+    "certificates/hall/transition_hall_coproduct_preservation"
+  ],
+  "limitations": [
+    "This packet verifies row 347 only as the definition of Delta_R=p_! (TS^red)^-1 q^*.",
+    "It does not prove q^* exists in the chosen six-functor formalism.",
+    "It does not prove p_! exists for reversed correspondences.",
+    "It does not prove compactification independence for p_!.",
+    "It does not populate coproduct matrices, counit rows, coassociativity rows, or bialgebra rows.",
+    "It does not prove transition preservation of Hall coproducts.",
+    "It makes no primitive, Hopf-pairing, radical, or PBW claim."
+  ]
+}

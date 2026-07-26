@@ -3,16 +3,18 @@
 
 This script is source-side only. It may read the path of a target
 reference fixture, but it never computes, derives, or writes target truth.
-A positive result is SCHEMA_COMPLETE: the manifest kind, table schemas,
-row payloads, row statuses, target-reference separation, target-label
-firewall, and source-degree firewall passed. It is not compact-source
-certification, nor is it external mathematical verification.
+A positive result is SCHEMA_COMPLETE_SCHEMA_ONLY: the manifest kind,
+table schemas, row payloads, row statuses, target-reference separation,
+target-label firewall, and source-degree firewall passed. It is not
+compact-source certification, nor is it external mathematical
+verification.
 """
 
 from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import os
 import re
@@ -23,8 +25,22 @@ from typing import Iterable
 
 
 SCHEMA_COMPLETE_SOURCE_KIND = "compact_source_candidate"
+SCHEMA_ONLY_STATUS = "SCHEMA_COMPLETE_SCHEMA_ONLY"
 MANIFEST_NAME = "manifest.json"
 README_NAME = "README.md"
+TARGET_MANIFEST_NAME = "manifest.yaml"
+TARGET_HASH_FILE = "hashes.sha256"
+TARGET_HASHED_FILENAMES = (
+    "manifest.yaml",
+    "target_degrees.csv",
+    "target_simple_generators.csv",
+    "target_hall_lie_basis.csv",
+    "target_relation_rows.csv",
+    "target_pairing_blocks.csv",
+    "target_radicals.csv",
+    "target_dimensions.csv",
+    "target_pbw.csv",
+)
 NON_PAYLOAD_COLUMNS = frozenset(
     {
         "check_status",
@@ -35,12 +51,25 @@ NON_PAYLOAD_COLUMNS = frozenset(
         "notes",
     }
 )
+PROVENANCE_COLUMNS = ("geometric_source_id", "proof_reference")
+FORBIDDEN_PROVENANCE_TOKENS = frozenset(
+    {
+        "mock",
+        "placeholder",
+        "signed_only",
+        "status_only",
+        "target_only",
+        "todo",
+        "unsupplied",
+    }
+)
 ACCEPTABLE_SOURCE_BLOCK_STATUSES = frozenset(
     {"source_verified", "source_admissible"}
 )
 ACCEPTABLE_SECONDARY_STATUSES = {
     "window_status": frozenset({"window_verified", "verified"}),
     "strict_pbw_status": frozenset({"strict_pbw_verified", "verified"}),
+    "strict_status": frozenset({"strict_verified", "verified"}),
     "ml_status": frozenset({"ml_verified", "verified"}),
 }
 
@@ -66,6 +95,8 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "in_window",
             "source_block_status",
             "target_reference_id",
+            "geometric_source_id",
+            "proof_reference",
             "notes",
         ),
     ),
@@ -78,6 +109,8 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "source_rank",
             "target_rank",
             "parity_source",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -98,6 +131,25 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "finite_stabilizer_linearization",
             "protected_integration",
             "transition_compatibility",
+            "geometric_source_id",
+            "proof_reference",
+            "check_status",
+            "notes",
+        ),
+    ),
+    TableSpec(
+        "simple_representatives.csv",
+        "simple primitive representatives",
+        (
+            "row_id",
+            "representative_role",
+            "degree_id",
+            "parity",
+            "source_basis_id",
+            "cartan_basis_id",
+            "target_reference_id",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -116,6 +168,8 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "value",
             "coefficient_ring",
             "source_correspondence_id",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -134,6 +188,25 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "value",
             "coefficient_ring",
             "source_correspondence_id",
+            "geometric_source_id",
+            "proof_reference",
+            "check_status",
+            "notes",
+        ),
+    ),
+    TableSpec(
+        "unit_counit.csv",
+        "Hall unit and counit",
+        (
+            "row_id",
+            "map_type",
+            "degree_id",
+            "domain_basis_id",
+            "codomain_basis_id",
+            "value",
+            "coefficient_ring",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -152,6 +225,8 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "value",
             "coefficient_ring",
             "derived_from_M_row_ids",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -168,6 +243,28 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "value",
             "coefficient_ring",
             "pairing_correspondence_id",
+            "geometric_source_id",
+            "proof_reference",
+            "check_status",
+            "notes",
+        ),
+    ),
+    TableSpec(
+        "hopf_pairing_identities.csv",
+        "Hopf pairing adjointness and Frobenius identities",
+        (
+            "check_id",
+            "identity_type",
+            "degree_ids",
+            "parity",
+            "source_matrix_ids",
+            "pairing_entry_ids",
+            "left_matrix_id",
+            "right_matrix_id",
+            "defect_rank",
+            "quotient_rank",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -184,6 +281,8 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "value",
             "coefficient_ring",
             "radical_check_id",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -200,6 +299,8 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "value",
             "coefficient_ring",
             "splitting_check_id",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -216,6 +317,26 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "value",
             "coefficient_ring",
             "comparison_source_id",
+            "geometric_source_id",
+            "proof_reference",
+            "check_status",
+            "notes",
+        ),
+    ),
+    TableSpec(
+        "hall_bialgebra_identities.csv",
+        "Hall bialgebra identities",
+        (
+            "check_id",
+            "identity_type",
+            "degree_ids",
+            "source_matrix_ids",
+            "unit_counit_row_ids",
+            "left_matrix_id",
+            "right_matrix_id",
+            "defect_rank",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -232,6 +353,8 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "left_rank",
             "right_rank",
             "combined_rank",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -246,6 +369,8 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "source_matrix_ids",
             "window_status",
             "rank_or_value",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -261,6 +386,28 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "kernel_rank",
             "relation_radical_rank",
             "combined_rank",
+            "geometric_source_id",
+            "proof_reference",
+            "check_status",
+            "notes",
+        ),
+    ),
+    TableSpec(
+        "generation.csv",
+        "generation by simple primitives",
+        (
+            "check_id",
+            "window",
+            "degree_id",
+            "parity",
+            "source_basis_id",
+            "bracket_word_ids",
+            "intermediate_degree_ids",
+            "span_matrix_id",
+            "source_rank",
+            "span_rank",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -275,6 +422,8 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "source_graded_rank",
             "target_graded_rank",
             "comparison_matrix_rank",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -292,6 +441,8 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "target_transition_matrix_id",
             "strict_pbw_status",
             "ml_status",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -308,6 +459,66 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
             "target_matrix_ids",
             "a_entry_ids",
             "q_entry_ids",
+            "geometric_source_id",
+            "proof_reference",
+            "check_status",
+            "notes",
+        ),
+    ),
+    TableSpec(
+        "koszul_cones.csv",
+        "Koszul comparison quasi-isomorphism cones",
+        (
+            "check_id",
+            "cone_type",
+            "degree_id",
+            "bar_length",
+            "word_type",
+            "parity",
+            "source_complex_id",
+            "target_complex_id",
+            "cone_matrix_id",
+            "cohomology_rank",
+            "geometric_source_id",
+            "proof_reference",
+            "check_status",
+            "notes",
+        ),
+    ),
+    TableSpec(
+        "koszul_comparison_identities.csv",
+        "Koszul comparison structure identities",
+        (
+            "check_id",
+            "identity_type",
+            "degree_id",
+            "parity",
+            "source_matrix_ids",
+            "target_matrix_ids",
+            "homotopy_id",
+            "defect_rank",
+            "geometric_source_id",
+            "proof_reference",
+            "check_status",
+            "notes",
+        ),
+    ),
+    TableSpec(
+        "koszul_transition_ml.csv",
+        "Koszul comparison transition and ML identities",
+        (
+            "check_id",
+            "from_stage",
+            "to_stage",
+            "defect_system",
+            "source_transition_matrix_id",
+            "target_transition_matrix_id",
+            "homotopy_id",
+            "strict_status",
+            "ml_status",
+            "r1lim_rank",
+            "geometric_source_id",
+            "proof_reference",
             "check_status",
             "notes",
         ),
@@ -316,17 +527,41 @@ TABLE_SPECS: tuple[TableSpec, ...] = (
 
 
 TARGET_LABEL_PATTERNS: tuple[re.Pattern[str], ...] = (
-    re.compile(r"\be_[0-9A-Za-z]+\b"),
-    re.compile(r"\bE_[0-9A-Za-z,]+\b"),
-    re.compile(r"\bu_[0-9A-Za-z,]+\b"),
-    re.compile(r"\bT_[0-9A-Za-z,]+\b"),
-    re.compile(r"\bM_[0-9A-Za-z,]+\b"),
-    re.compile(r"\bw_[0-9A-Za-z,]+\b"),
+    re.compile(r"(?<![0-9A-Za-z_])e_(?:[0-9A-Za-z]+|\{[0-9A-Za-z]+\})(?![0-9A-Za-z_])"),
+    re.compile(
+        r"(?<![0-9A-Za-z_])E_(?:[0-9A-Za-z]+(?:_[0-9A-Za-z]+)*|"
+        r"\{[0-9A-Za-z,]+\})(?![0-9A-Za-z_])"
+    ),
+    re.compile(
+        r"(?<![0-9A-Za-z_])u_(?:[0-9A-Za-z]+(?:_[0-9A-Za-z]+)*|"
+        r"\{[0-9A-Za-z,]+\})(?![0-9A-Za-z_])"
+    ),
+    re.compile(
+        r"(?<![0-9A-Za-z_])T_(?:[0-9A-Za-z]+(?:_[0-9A-Za-z]+)*|"
+        r"\{[0-9A-Za-z,]+\})(?![0-9A-Za-z_])"
+    ),
+    re.compile(
+        r"(?<![0-9A-Za-z_])M_(?:[0-9A-Za-z]+(?:_[0-9A-Za-z]+)*|"
+        r"\{[0-9A-Za-z,]+\})(?![0-9A-Za-z_])"
+    ),
+    re.compile(
+        r"(?<![0-9A-Za-z_])w_(?:[0-9A-Za-z]+(?:_[0-9A-Za-z]+)*|"
+        r"\{[0-9A-Za-z,]+\})(?![0-9A-Za-z_])"
+    ),
+    re.compile(r"(?:\\delta|delta)_?\{?[0-9A-Za-z,]+\}?"),
+    re.compile(r"\b2delta123\b"),
+    re.compile(
+        r"(?<![0-9A-Za-z_])2a_(?:[0-9]{2}|\{[0-9]{2}\})"
+        r"(?:\.(?:even|odd)\.[0-9]+)?(?![0-9A-Za-z_])"
+    ),
+    re.compile(r"\ba_\{?[0-9]{2}\}?\b"),
+    re.compile(r"\bC_(?:\{?[0-9],[0-9]+\}?|[0-9]_[0-9]+)\b"),
 )
 
 
 ALLOWED_TARGET_LABEL_COLUMNS = {
     "target_basis_id",
+    "target_complex_id",
     "target_matrix_ids",
     "target_reference_id",
     "target_transition_matrix_id",
@@ -348,6 +583,67 @@ SOURCE_DEGREE_LABEL_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
         re.compile(r"\b[KGQ]_\{?\\?(?:alpha|beta|rho)\}?"),
     ),
 )
+
+REQUIRED_IDENTITY_TYPES: dict[str, frozenset[str]] = {
+    "hall_bialgebra_identities.csv": frozenset(
+        {
+            "unit_left",
+            "unit_right",
+            "counit_left",
+            "counit_right",
+            "associativity",
+            "coassociativity",
+            "bialgebra_compatibility",
+            "primitive_closure",
+        }
+    ),
+    "hopf_pairing_identities.csv": frozenset(
+        {"hopf_adjointness", "frobenius_cyclic", "quotient_nondegenerate"}
+    ),
+    "radical_ideal_coideal.csv": frozenset({"lie_ideal", "coproduct_coideal"}),
+    "relation_rows.csv": frozenset(
+        {"cartan", "chevalley", "real_serre", "borcherds_orthogonality", "super_sign"}
+    ),
+    "a_beta_comparison_maps.csv": frozenset(
+        {"bracket", "coproduct", "pairing", "radical_quotient", "pbw"}
+    ),
+    "koszul_cones.csv": frozenset(
+        {"source_bar_cobar_counit", "source_to_target_quasi_isomorphism"}
+    ),
+    "koszul_comparison_identities.csv": frozenset(
+        {
+            "weyl_action",
+            "pfaffian_orientation",
+            "hall_product",
+            "hall_coproduct",
+            "hopf_pairing",
+            "radical_quotient",
+            "pbw",
+        }
+    ),
+    "koszul_transition_ml.csv": frozenset(
+        {
+            "source_cone",
+            "target_cone",
+            "weyl_action",
+            "pfaffian_orientation",
+            "hall_pairing",
+            "radical_quotient",
+            "pbw",
+        }
+    ),
+}
+
+IDENTITY_COLUMN_BY_TABLE: dict[str, str] = {
+    "hall_bialgebra_identities.csv": "identity_type",
+    "hopf_pairing_identities.csv": "identity_type",
+    "radical_ideal_coideal.csv": "identity",
+    "relation_rows.csv": "relation_type",
+    "a_beta_comparison_maps.csv": "identity_type",
+    "koszul_cones.csv": "cone_type",
+    "koszul_comparison_identities.csv": "identity_type",
+    "koszul_transition_ml.csv": "defect_system",
+}
 
 
 @dataclass
@@ -380,6 +676,14 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         help=(
             "explicitly request check-only mode; this is the default and "
             "does not change behavior"
+        ),
+    )
+    parser.add_argument(
+        "--schema-only-ok",
+        action="store_true",
+        help=(
+            "return process success for schema-only completeness; without "
+            "this flag schema-only completeness still exits fail-closed"
         ),
     )
     return parser.parse_args(argv)
@@ -480,6 +784,79 @@ def lexical_absolute(path: Path) -> Path:
     return Path(os.path.abspath(path))
 
 
+def parse_target_hashes(text: str, issues: list[str]) -> dict[str, str]:
+    entries: dict[str, str] = {}
+    for line_number, raw_line in enumerate(text.splitlines(), 1):
+        line = raw_line.strip()
+        if not line:
+            continue
+        parts = line.split(maxsplit=1)
+        if len(parts) != 2:
+            issues.append(f"target hash line {line_number} is malformed: {raw_line!r}")
+            continue
+        digest, filename = parts
+        entries[filename.strip()] = digest
+    return entries
+
+
+def check_target_manifest_identity(target: Path, issues: list[str]) -> None:
+    manifest_path = target / TARGET_MANIFEST_NAME
+    if not manifest_path.is_file():
+        issues.append(f"target reference is missing {TARGET_MANIFEST_NAME}: {target}")
+        return
+
+    manifest = manifest_path.read_text(encoding="utf-8")
+    manifest_lines = manifest.splitlines()
+    required_lines = (
+        "schema: a071_target_presentation_fixture",
+        "target: delta5_gn_kac",
+        "window: A071_added_target_rows_not_relation_closed",
+        "target_only: true",
+        "  imports_compact_source_packets: false",
+        "  provides_compact_source_verification: false",
+        "  feeds_compact_source_comparison: false",
+    )
+    for line in required_lines:
+        if manifest_lines.count(line) != 1:
+            issues.append(f"target manifest missing required identity line: {line}")
+    forbidden_true_lines = (
+        "  imports_compact_source_packets: true",
+        "  provides_compact_source_verification: true",
+        "  feeds_compact_source_comparison: true",
+        "target_only: false",
+    )
+    for line in forbidden_true_lines:
+        if line in manifest_lines:
+            issues.append(f"target manifest contains contradictory identity line: {line}")
+
+
+def check_target_hashes(target: Path, issues: list[str]) -> None:
+    hash_path = target / TARGET_HASH_FILE
+    if not hash_path.is_file():
+        issues.append(f"target reference is missing {TARGET_HASH_FILE}: {target}")
+        return
+
+    entries = parse_target_hashes(hash_path.read_text(encoding="utf-8"), issues)
+    expected_names = set(TARGET_HASHED_FILENAMES)
+    actual_names = set(entries)
+    if actual_names != expected_names:
+        issues.append(
+            "target hash entries mismatch: "
+            f"expected {sorted(expected_names)}, got {sorted(actual_names)}"
+        )
+
+    for filename, expected_digest in entries.items():
+        file_path = target / filename
+        if not file_path.is_file():
+            issues.append(f"target hash target missing: {filename}")
+            continue
+        actual_digest = hashlib.sha256(file_path.read_bytes()).hexdigest()
+        if actual_digest != expected_digest:
+            issues.append(
+                f"target hash mismatch {filename}: {actual_digest} != {expected_digest}"
+            )
+
+
 def check_target_reference(source: Path, target: Path | None, issues: list[str]) -> None:
     if target is None:
         issues.append("target fixture path not supplied; target truth was not generated")
@@ -507,6 +884,9 @@ def check_target_reference(source: Path, target: Path | None, issues: list[str])
         return
     if not target.is_dir():
         issues.append(f"target fixture path is not a directory: {target}")
+        return
+    check_target_manifest_identity(target, issues)
+    check_target_hashes(target, issues)
 
 
 def check_row_status(table: CsvTable, issues: list[str]) -> None:
@@ -562,6 +942,33 @@ def check_mathematical_payload(table: CsvTable, issues: list[str]) -> None:
             )
 
 
+def check_geometric_provenance(table: CsvTable, issues: list[str]) -> None:
+    if not all(column in table.spec.columns for column in PROVENANCE_COLUMNS):
+        return
+    for index, row in enumerate(table.rows, start=2):
+        for column in PROVENANCE_COLUMNS:
+            value = row.get(column, "")
+            if not value:
+                continue
+            normalized_value = re.sub(r"[^0-9a-z]+", "_", value.lower()).strip("_")
+            tokens = {
+                token
+                for token in re.split(r"[^0-9A-Za-z]+", value.lower())
+                if token
+            }
+            forbidden = sorted(
+                token
+                for token in FORBIDDEN_PROVENANCE_TOKENS
+                if token in tokens or token in normalized_value
+            )
+            if forbidden:
+                issues.append(
+                    f"{table.spec.gate}: {table.spec.path}:{index} "
+                    f"column {column!r} contains non-proof provenance "
+                    f"tokens: {','.join(forbidden)}"
+                )
+
+
 def check_degree_source_block_status(table: CsvTable, issues: list[str]) -> None:
     if table.spec.path != "degrees.csv":
         return
@@ -612,6 +1019,107 @@ def check_source_degree_label_firewall(table: CsvTable, issues: list[str]) -> No
             )
 
 
+def parse_int_cell(
+    table: CsvTable, row_index: int, row: dict[str, str], column: str, issues: list[str]
+) -> int | None:
+    value = row.get(column, "")
+    if not re.fullmatch(r"[+-]?\d+", value):
+        issues.append(
+            f"{table.spec.gate}: {table.spec.path}:{row_index} "
+            f"column {column!r} has non-integral rank/value {value!r}"
+        )
+        return None
+    return int(value)
+
+
+def check_equal_int_columns(
+    table: CsvTable, row_index: int, row: dict[str, str], columns: tuple[str, ...], issues: list[str]
+) -> None:
+    values = [
+        parse_int_cell(table, row_index, row, column, issues)
+        for column in columns
+    ]
+    if any(value is None for value in values):
+        return
+    if len(set(values)) != 1:
+        rendered = ", ".join(f"{column}={value}" for column, value in zip(columns, values))
+        issues.append(
+            f"{table.spec.gate}: {table.spec.path}:{row_index} "
+            f"rank equality failed: {rendered}"
+        )
+
+
+def check_zero_int_column(
+    table: CsvTable, row_index: int, row: dict[str, str], column: str, issues: list[str]
+) -> None:
+    value = parse_int_cell(table, row_index, row, column, issues)
+    if value is None:
+        return
+    if value != 0:
+        issues.append(
+            f"{table.spec.gate}: {table.spec.path}:{row_index} "
+            f"requires {column}=0, got {value}"
+        )
+
+
+def check_rank_semantics(table: CsvTable, issues: list[str]) -> None:
+    for index, row in enumerate(table.rows, start=2):
+        if table.spec.path == "parity_blocks.csv":
+            check_equal_int_columns(table, index, row, ("source_rank", "target_rank"), issues)
+        elif table.spec.path == "hall_bialgebra_identities.csv":
+            check_zero_int_column(table, index, row, "defect_rank", issues)
+        elif table.spec.path == "hopf_pairing_identities.csv":
+            check_zero_int_column(table, index, row, "defect_rank", issues)
+            quotient_rank = parse_int_cell(table, index, row, "quotient_rank", issues)
+            if quotient_rank is not None and quotient_rank < 0:
+                issues.append(
+                    f"{table.spec.gate}: {table.spec.path}:{index} "
+                    f"requires quotient_rank >= 0, got {quotient_rank}"
+                )
+        elif table.spec.path == "radical_ideal_coideal.csv":
+            check_equal_int_columns(
+                table, index, row, ("left_rank", "right_rank", "combined_rank"), issues
+            )
+        elif table.spec.path == "no_extra.csv":
+            check_equal_int_columns(
+                table,
+                index,
+                row,
+                ("kernel_rank", "relation_radical_rank", "combined_rank"),
+                issues,
+            )
+        elif table.spec.path == "generation.csv":
+            check_equal_int_columns(table, index, row, ("source_rank", "span_rank"), issues)
+        elif table.spec.path == "pbw.csv":
+            check_equal_int_columns(
+                table,
+                index,
+                row,
+                ("source_graded_rank", "target_graded_rank", "comparison_matrix_rank"),
+                issues,
+            )
+        elif table.spec.path == "koszul_cones.csv":
+            check_zero_int_column(table, index, row, "cohomology_rank", issues)
+        elif table.spec.path == "koszul_comparison_identities.csv":
+            check_zero_int_column(table, index, row, "defect_rank", issues)
+        elif table.spec.path == "koszul_transition_ml.csv":
+            check_zero_int_column(table, index, row, "r1lim_rank", issues)
+
+
+def check_required_identity_coverage(table: CsvTable, issues: list[str]) -> None:
+    required = REQUIRED_IDENTITY_TYPES.get(table.spec.path)
+    if required is None or not table.rows:
+        return
+    identity_column = IDENTITY_COLUMN_BY_TABLE[table.spec.path]
+    present = {row.get(identity_column, "").strip() for row in table.rows}
+    missing = sorted(required - present)
+    if missing:
+        issues.append(
+            f"{table.spec.gate}: {table.spec.path} missing required "
+            f"{identity_column} rows: {','.join(missing)}"
+        )
+
+
 def run(source: Path, target: Path | None) -> tuple[bool, list[str]]:
     issues: list[str] = []
     if not source.exists():
@@ -632,25 +1140,30 @@ def run(source: Path, target: Path | None) -> tuple[bool, list[str]]:
 
     for table in tables:
         check_mathematical_payload(table, issues)
+        check_geometric_provenance(table, issues)
         check_row_status(table, issues)
         check_secondary_statuses(table, issues)
         check_degree_source_block_status(table, issues)
         check_target_label_firewall(table, issues)
         check_source_degree_label_firewall(table, issues)
+        check_rank_semantics(table, issues)
+        check_required_identity_coverage(table, issues)
 
     return not issues, issues
 
 
 def print_report(
-    source: Path, target: Path | None, schema_complete: bool, issues: list[str]
+    source: Path, target: Path | None, schema_only_complete: bool, issues: list[str]
 ) -> None:
-    status = "SCHEMA_COMPLETE" if schema_complete else "BLOCKED"
+    status = SCHEMA_ONLY_STATUS if schema_only_complete else "BLOCKED"
     print("compact-source fixture verifier")
     print("mode: check-only")
     print(f"source: {source}")
     print(f"target: {target if target is not None else '<none>'}")
     print(f"status: {status}")
-    print(f"schema_complete: {str(schema_complete).lower()}")
+    print(f"schema_only_complete: {str(schema_only_complete).lower()}")
+    print("compact_source_recognition: false")
+    print("mathematical_certification: false")
     if issues:
         print("fail_closed_limitations:")
         for issue in issues:
@@ -659,9 +1172,9 @@ def print_report(
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(sys.argv[1:] if argv is None else argv)
-    schema_complete, issues = run(args.source, args.target)
-    print_report(args.source, args.target, schema_complete, issues)
-    return 0 if schema_complete else 1
+    schema_only_complete, issues = run(args.source, args.target)
+    print_report(args.source, args.target, schema_only_complete, issues)
+    return 0 if schema_only_complete and args.schema_only_ok else 1
 
 
 if __name__ == "__main__":

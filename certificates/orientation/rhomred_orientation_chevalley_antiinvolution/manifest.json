@@ -1,0 +1,57 @@
+{
+  "schema_version": "rhomred_orientation_chevalley_antiinvolution_obstruction.v1",
+  "fixture_name": "rhomred_orientation_chevalley_antiinvolution",
+  "orientation_kind": "rhomred_orientation_chevalley_antiinvolution_obstruction",
+  "status": "RHOMRED_ORIENTATION_CHEVALLEY_ANTIINVOLUTION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "negative_root_compatibility_imported": true,
+  "compact_hall_ledger_imported": true,
+  "target_presentation_imported": true,
+  "retained_dual_closure_imported": true,
+  "hall_pairing_pushforward_imported": true,
+  "transition_orientation_ledger_imported": true,
+  "chevalley_antiinvolution_criterion_recorded": true,
+  "source_simple_representative_rows_supplied": false,
+  "source_positive_negative_chart_rows_supplied": false,
+  "source_bracket_rows_supplied": false,
+  "source_chevalley_relation_rows_supplied": false,
+  "source_pairing_rows_supplied": false,
+  "source_radical_rows_supplied": false,
+  "source_parity_blocks_supplied": false,
+  "orientation_square_root_rows_supplied": false,
+  "determinant_duality_square_rows_supplied": false,
+  "serre_sign_line_rows_supplied": false,
+  "quotient_orientation_rows_supplied": false,
+  "transition_rows_supplied": false,
+  "chevalley_antiinvolution_constructed": false,
+  "row335_frobenius_claimed": false,
+  "row336_trace_degree_claimed": false,
+  "row337_serre_sign_claimed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "chevalley_antiinvolution_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_negative_root_orientation_compatibility",
+    "certificates/sources/k3e_compact_hall",
+    "certificates/targets/delta5_gn_kac/a071_target_presentation",
+    "certificates/moduli/retained_dual_closure",
+    "certificates/charge/hall_pairing_pushforward_compatibility",
+    "certificates/orientation/transition_orientation_preservation"
+  ],
+  "limitations": [
+    "This packet verifies row 334 only as a source Chevalley anti-involution criterion.",
+    "The target presentation supplies formal target Chevalley and Serre rows only.",
+    "The compact Hall source packet supplies no simple representatives, B entries, relation rows, G entries, radical rows, or parity blocks.",
+    "The row 333 packet records negative-root orientation compatibility only as a criterion.",
+    "No source anti-involution map, orientation-line lift, Serre sign line, quotient-orientation transport, or Picard-groupoid transition row is supplied.",
+    "It does not prove row 335 Frobenius pairing, row 336 trace degree, or row 337 CY3 Serre signs."
+  ]
+}
+

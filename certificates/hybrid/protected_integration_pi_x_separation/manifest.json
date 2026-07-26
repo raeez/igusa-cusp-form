@@ -1,0 +1,37 @@
+{
+  "schema_version": "protected_integration_pi_x_separation.v1",
+  "fixture_name": "protected_integration_pi_x_separation",
+  "hybrid_kind": "protected_integration_pi_x_separation",
+  "status": "PROTECTED_INTEGRATION_PI_X_SEPARATION_VERIFIED",
+  "protected_integration_defined": true,
+  "gram_degree_imported": true,
+  "geometric_separation_imported": true,
+  "pi_x_degree_certification": true,
+  "label_comparison_defect_rank": 0,
+  "coordinate_comparison_defect_rank": 0,
+  "separation_defect_rank": 0,
+  "geom_b_substitute_excluded": true,
+  "transition_compatibility_certification": false,
+  "protected_trace_certification": false,
+  "pfaffian_line_certification": false,
+  "aggregate_hybrid_population": false,
+  "scalar_only": false,
+  "tables": [
+    "pi_label_rows.csv",
+    "pi_coordinate_rows.csv",
+    "separation_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/protected_integration_gram_degree",
+    "certificates/hybrid/geometric_borcherds_degree_separation"
+  ],
+  "limitations": [
+    "This packet proves only that the supplied protected integration target labels use overlinePi_X after the supplied finite lift widehatomega_R.",
+    "It excludes b_R^geom as the protected integration exponent.",
+    "It does not prove a branch formula relating pr3 overlinePi_X to b_R^geom.",
+    "It does not prove HN-transition compatibility.",
+    "It does not construct the level-Z protected trace or the Pfaffian line."
+  ]
+}

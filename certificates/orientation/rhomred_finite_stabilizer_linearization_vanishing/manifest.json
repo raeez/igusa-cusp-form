@@ -1,0 +1,44 @@
+{
+  "schema_version": "rhomred_finite_stabilizer_linearization_vanishing_obstruction.v1",
+  "fixture_name": "rhomred_finite_stabilizer_linearization_vanishing",
+  "orientation_kind": "rhomred_finite_stabilizer_linearization_vanishing_obstruction",
+  "status": "RHOMRED_FINITE_STABILIZER_LINEARIZATION_VANISHING_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "linearization_character_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "linearization_vanishing_criterion_recorded": true,
+  "h1_zero_basis_criterion_recorded": true,
+  "three_residual_groups_inspected": true,
+  "lambda_values_supplied": false,
+  "lambda_character_computed": false,
+  "lambda_zero_rows_supplied": false,
+  "all_retained_lambda_vanishing_verified": false,
+  "beta_vanishing_implies_lambda_vanishing": false,
+  "nulltrivialization_implies_lambda_vanishing": false,
+  "linearization_rows_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "linearization_vanishing_obstruction_rows.csv",
+    "basis_zero_obstruction_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_linearization_character",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies the row-289 finite-stabilizer linearization-vanishing obstruction ledger.",
+    "It records the H1(BH;F2) zero-coordinate criteria after row 288 computes lambda.",
+    "It does not supply lambda values, lambda-character computations, zero-coordinate rows, all-retained vanishing, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration.",
+    "It explicitly does not infer lambda vanishing from beta vanishing or finite-stabilizer gerbe null-trivialization."
+  ]
+}

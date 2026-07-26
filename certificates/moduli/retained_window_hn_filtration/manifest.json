@@ -1,0 +1,28 @@
+{
+  "schema_version": "retained_window_hn_filtration.v1",
+  "fixture_name": "retained_window_hn_filtration",
+  "moduli_kind": "retained_window_hn_filtration_finite_exact_category",
+  "coefficient_ring": "ZZ",
+  "certified": true,
+  "retained_window_noetherianity_required": true,
+  "retained_window_hn_filtration": true,
+  "global_ap_liu_hn_filtrations": false,
+  "bounded_hn_types": false,
+  "finite_type_moduli": false,
+  "derived_moduli": false,
+  "pfaffian_orientation": false,
+  "protected_trace": false,
+  "tables": [
+    "window_hn_datum.csv",
+    "object_stability.csv",
+    "exact_quotient_steps.csv",
+    "hn_filtration_summary.csv",
+    "formal_relations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet proves finite retained-window HN filtration existence from supplied exact quotient chains with semistable quotients and strictly decreasing phases.",
+    "It uses the retained finite noetherian window as input and does not prove global HN filtrations in the Abramovich-Polishchuk/Liu heart.",
+    "It does not prove bounded HN types, finite-type moduli, derived moduli, Pfaffian orientations, or protected traces."
+  ]
+}

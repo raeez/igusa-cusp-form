@@ -1,20 +1,3 @@
-% !TEX root = ../main.tex
-%
-% Chapter 8 — View IV: the mirror discriminant.
-% Conjectural identification of \(\Delta_5^{-2}\) with the discriminant
-% section of the K3-mirror period family, transported across the
-% genus-two Siegel space via the exceptional isomorphism
-% \(\Sp_4 \simeq \mathrm{Spin}(3,2)\).
-%
-% The chapter is self-contained: the lattice conventions of
-% Chapter~2 (\(\Lambda_S\) Mukai, signature \((4,20)\); \(\Lambda_{II}^{2,1}\)
-% type-II symmetric polarisation) and the automorphic side of Chapter~3
-% (\(\Delta_5 \in M_5(\Sp_4(\Z), \nu_{\Delta_5})\)) are imported by
-% reference, not redefined. Everything attached to View~\textcircled{4}
-% is conjectural; the cross-level identities \textcircled{4}\(\leftrightarrow\)\textcircled{1},
-% \textcircled{4}\(\leftrightarrow\)\textcircled{2}, \textcircled{4}\(\leftrightarrow\)\textcircled{5}
-% are not theorems in this manuscript. View~\textcircled{4} is the only
-% one of the five views that is conjectural at this moment.
 
 \providecommand{\ClaimStatusConjectured}{}
 \providecommand{\ClaimStatusHeuristic}{}
@@ -29,8 +12,9 @@
 \section{The mirror discriminant}
 \label{sec:view4-mirror-discriminant}
 
-The four views developed so far place \(\Delta_5\) on chains that begin
-with explicit modular or representation-theoretic data: the
+The automorphic, BKM, Pfaffian, and theta-lift constructions place
+\(\Delta_5\) on chains that begin with explicit modular or
+representation-theoretic data: the
 Borcherds--Gritsenko--Nikulin section of the weight-\(5\) automorphic
 line over \(\Sp_4(\Z) \backslash \mathcal H_2\) (View~\textcircled{1}),
 the denominator
@@ -39,41 +23,41 @@ the Borcherds--Kac--Moody Lie superalgebra on \(\Lambda_{II}^{2,1}\)
 (View~\textcircled{2}), the protected Pfaffian
 \(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\) of the
 Dirac--Igusa pro-object (View~\textcircled{3}), and the singular theta
-lift of the weak Jacobi form \(\phi_{0,1}\) under
-\(\mathrm{Mp}(4,\R) \leftrightarrow \mathrm O(3,2)\) (View~\textcircled{5}).
-The fifth view is geometric. Let \(\mathcal P_{K3}\) be the period
-family of \(K3\)-mirror pairs; let
-\(\mathfrak D_{\mathrm{per}} \subset \mathcal P_{K3}\) be its
-discriminant locus, the divisor along which the local Hodge filtration
-degenerates. The expected statement is the equality
+lift of the weak Jacobi form \(\phi_{0,1}\), namely the Borcherds
+regularized theta integral on the
+\(\mathrm O(3,2)\) type-IV domain, with \(\Mp_2\)-Weil input and the
+\(\PSp_4\simeq\SO(3,2)_+\) exterior-square bridge
+(View~\textcircled{5}).
+The period-side assertion is geometric. Let \(\mathcal P_{K3\times E}^{(3)}\) be
+the rank-\(3\) Mukai-invariant period quotient transported to
+\(\mathcal H_2/\Sp_4(\Z)\).  Let \(\mathfrak H_{\mathrm{II}}\) denote
+the type-II Heegner divisor on this quotient.  The automorphic
+calculation gives the divisor equality
 \begin{equation}
 \label{eq:view4-conjecture}
-[\mathfrak D_{\mathrm{per}}]
-\;=\;
 [\,\Delta_5^{-2}\,]
+\;=\;
+2[\mathfrak H_{\mathrm{II}}]
 \qquad
 \text{(equality of divisor classes on the }
 (K3 \times E)\text{-component)},
 \end{equation}
-where \([\Delta_5^{-2}]\) is the principal divisor of the meromorphic
-section \(\Delta_5^{-2}\) of the appropriate automorphic line. The four
-preceding chains supply the Borcherds product, the BKM denominator, the
-Dirac--Igusa pro-object, and the theta-lift bridge; the fifth view asks
-for an independent geometric origin of the same form on the period
-side.
+where \([\Delta_5^{-2}]\) is the polar divisor of the meromorphic
+section \(\Delta_5^{-2}\) of the automorphic line.  The conjectural
+content is the existence of a rank-\(3\) Mukai--Hodge quotient of a
+mirror period family whose discriminant support is
+\(\mathfrak H_{\mathrm{II}}\), together with the comparison of the
+automorphic line with the period Hodge line.
 
-The status, recorded in advance, is conjectural. View~\textcircled{4}
-is the sole view in this manuscript whose load-bearing identification
-is not currently a theorem. The cross-level identities
+This identification is conjectural. The cross-level identities
 \textcircled{4}\(\leftrightarrow\)\textcircled{1},
 \textcircled{4}\(\leftrightarrow\)\textcircled{2},
-\textcircled{4}\(\leftrightarrow\)\textcircled{5} are open. The
-identifications proved or conditionally proved on the other four
-chains are imported from the previous chapters unchanged; the present
-chapter neither weakens nor strengthens those chains.
+\textcircled{4}\(\leftrightarrow\)\textcircled{5} are open.  The
+automorphic identity, the BKM denominator identity, the conditional
+Pfaffian identity, and the singular theta-lift identity do not use the
+period-discriminant conjecture.
 
-The handle \(\Delta_5\) splits into three names already in this
-manuscript. The automorphic section over
+The handle \(\Delta_5\) splits into three names. The automorphic section over
 \(\Sp_4(\Z) \backslash \mathcal H_2\) is denoted
 \(\mathcal D_X = \Delta_5\) (View~\textcircled{1}); the BKM denominator
 is
@@ -110,10 +94,14 @@ even hyperbolic lattice \(M\), of signature \((1, t)\), such that
 hyperbolic plane \(U\); the pair \((S, \iota)\) is then
 \emph{Nikulin-admissible}, in the convention of
 Gritsenko--Nikulin~\cite{GNII}\,\S\,3 and the rank-3 sublattice
-constructions of Borcherds~\cite{Borcherds95}\,\S\,15. Here \(t\)
-denotes the rank of \(M^{\!\perp}\) inside \(\Lambda_{K3}\) minus one,
-and \((1,t)\) is signature in the convention
-\(\mathrm{sign}(M) = (\#\text{positive}, \#\text{negative})\).
+constructions of Borcherds~\cite{Borcherds95}\,\S\,15. Here
+\[
+t=\rk M-1
+\]
+is the negative index of \(M\), so that
+\(\rk M^\perp=21-t\) and
+\(\mathrm{sign}(M^\perp)=(2,19-t)\).  The convention is
+\(\mathrm{sign}(L)=(\#\text{positive},\#\text{negative})\).
 
 The associated period domain
 \[
@@ -127,9 +115,10 @@ The associated period domain
 \langle \omega, \bar\omega\rangle > 0
 \bigr\}^+
 \]
-is the type-IV symmetric domain of signature \((2, 19 - t)\), with
-arithmetic group \(\Gamma_M = \mathrm O^+(M^\perp)\) acting properly
-discontinuously. The \emph{Dolgachev mirror lattice} is the
+is the type-IV symmetric domain of signature \((2, 19 - t)\) and
+dimension \(19-t\), with arithmetic group
+\(\Gamma_M = \mathrm O^+(M^\perp)\) acting properly discontinuously.
+The \emph{Dolgachev mirror lattice} is the
 sub-lattice
 \[
 \check M
@@ -142,35 +131,38 @@ M^\perp
 \;=\;
 U \oplus \check M,
 \]
-so that \(\check M\) carries signature \((1, 19 - t)\) and is
-hyperbolic. The mirror K3 surface \(S^\vee\) is the lattice-polarised
-K3 with \(\Pic(S^\vee) \simeq \check M\); the Dolgachev map
-\((S, \iota) \mapsto (S^\vee, \check\iota)\) descends to an involution
-on the moduli stack \(\Omega_M / \Gamma_M\) and on its mirror
-\(\Omega_{\check M} / \Gamma_{\check M}\); this is the
-Dolgachev--Nikulin involution, recorded as
-\(\iota_{\mathrm{DN}}\) in the cross-volume \(d=2\) Vol~III chapter on
-derived categories~\cite[Prop.~6.4]{CYQGVolIII}.
+so that \(\check M\) carries signature \((1,18-t)\) and is hyperbolic.
+The mirror K3 surface \(S^\vee\) is lattice-polarised by \(\check M\).
+Dolgachev mirror symmetry gives a correspondence between the
+\(M\)-polarised and \(\check M\)-polarised moduli quotients; it is an
+involution on a single quotient only in the self-mirror cases.
 
 The Aspinwall--Morrison form of the same construction~\cite{AspinwallMorrisonStringy}
-realizes \(\Omega_M\) as the moduli space of lattice-polarised K3 sigma
-models with B-field, and identifies the mirror involution as the
-exchange of large-volume and large-complex-structure limits along the
-two distinguished cusps of \(\Omega_M / \Gamma_M\). Aspinwall--Morrison
-and Dolgachev produce the same lattice; the difference is in
-presentation, not in object. The Mukai-lattice form
+uses the Mukai lattice to compare complex and complexified K\"ahler
+directions at large-volume and large-complex-structure cusps.  The full
+K3 sigma-model moduli space is larger than \(\Omega_M/\Gamma_M\);
+the lattice correspondence is the only input needed for the
+\(\Delta_5\) discriminant statement.  The type-IV lattice of the mirror
+quotient is
 \[
-\widetilde M = U \oplus M,
+\widetilde M
+\;=\;
+U_{\mathrm{mir}} \oplus M
+\;\simeq\;
+\check M^\perp
+\;\subset\;
+\Lambda_{K3},
 \qquad
-\widetilde M^\perp = U \oplus M^\perp = 2 U \oplus \check M,
-\qquad
-\widetilde M^\perp \subset \widetilde \Lambda_{K3},
+\mathrm{sign}(\widetilde M)=(2,t+1).
 \]
-is the convention adopted in the cross-volume Vol~III statement
-\cite[Prop.~6.4 + Thm.~6.7]{CYQGVolIII}. The Dolgachev--Nikulin
-involution acts as \(-\mathrm{id}\) on \(\widetilde M\) and
-\(+\mathrm{id}\) on \(\widetilde M^\perp\), preserving the full
-signature \((4, 20)\).
+Here \(U_{\mathrm{mir}}\) is the hyperbolic plane split from
+\(M^\perp=U_{\mathrm{mir}}\oplus\check M\).  In the full Mukai lattice
+\(\widetilde\Lambda_{K3}=U_{\mathrm{Muk}}\oplus\Lambda_{K3}\), the
+orthogonal complement of \(U_{\mathrm{Muk}}\oplus M\) is
+\(M^\perp=U_{\mathrm{mir}}\oplus\check M\); the extra Mukai plane is
+contained in the augmented sublattice.  No canonical action on
+\(\widetilde \Lambda_{K3}\) is needed here; only the primitive
+decomposition and the induced period domains enter the argument.
 
 \paragraph{The rank-three case.} The polarisation relevant to View~\textcircled{4}
 is
@@ -197,8 +189,7 @@ convention is
 bilinear form of the lattice. The decomposition follows from the
 embedding \(\langle -2 \rangle \hookrightarrow E_8(-1)\) on a single
 root, after which the orthogonal complement of the root inside
-\(E_8(-1)\) is \(E_7(-1)\). Inside the Mukai lattice the augmented
-sub-lattice is
+\(E_8(-1)\) is \(E_7(-1)\). The rank-five mirror-domain lattice is
 \[
 \widetilde M
 \;=\;
@@ -210,25 +201,25 @@ U \oplus M
 \qquad
 \mathrm{sign}(\widetilde M) = (2, 3).
 \]
-Under the manuscript's convention (the exterior-square model of
-\(\Sp_4 \simeq \mathrm{Spin}(3,2)\) at \S\,\ref{ssec:exceptional-iso})
+Under the exterior-square convention (the model of
+\(\PSp_4(\R)\simeq\SO(3,2)_+\) at \S\,\ref{ssec:exceptional-iso})
 the same lattice is written
 \(\Lambda^{3,2} = U \oplus U \oplus \langle 2 \rangle\), with the
 hyperbolic-plane summand
 \(\HypPlan = \begin{pmatrix} 0 & -1 \\ -1 & 0 \end{pmatrix}\) carrying
 signature \((1, 1)\) and the rank-1 summand carrying form value \(+2\)
 on a generator. The two writings are the same lattice expressed in
-opposite sign conventions on the bilinear form: the manuscript's
+opposite sign conventions on the bilinear form: the convention
 \((p, q) = (3, 2)\) is signature ``three positive, two negative''
-when read with the manuscript's quadratic form, while the
+for the fixed quadratic form, while the
 Dolgachev convention writes the same signature ``two positive, three
 negative'' on the form with reversed sign. The
-\((+2)\)-vectors of the manuscript are the \((-2)\)-vectors of the
+\((+2)\)-vectors in the fixed convention are the \((-2)\)-vectors of the
 Dolgachev convention; the Heegner divisors and the period domain
 are independent of the sign choice.
 
-The period domain attached to \(\widetilde M = \Lambda^{3,2}\) is the
-type-IV symmetric domain
+In the Dolgachev sign on \(\widetilde M\), the period domain attached
+to \(\widetilde M\) is the type-IV symmetric domain
 \[
 \Omega_{\widetilde M}
 \;=\;
@@ -241,12 +232,18 @@ type-IV symmetric domain
 \qquad
 \dim_{\C} \Omega_{\widetilde M} = 3,
 \]
-with arithmetic group
-\(\Gamma_{\widetilde M} = \mathrm O^+(\widetilde M)
-\simeq \mathrm O^+(\Lambda^{3,2})\) acting properly discontinuously,
-where the component is fixed by the manuscript's positive cone
-\(\mathcal C(\Lambda^{2,1})_+\) (\S\,\ref{ssec:exceptional-iso}). The
-exceptional isogeny
+whereas the exterior-square sign of \(\Lambda^{3,2}\) writes the same
+domain with \((Z,\bar Z)<0\).  The two inequalities define the same
+oriented two-plane after multiplying the bilinear form by \(-1\).
+The arithmetic group is
+\[
+\Gamma_{\widetilde M}
+:=\wedge^2\Sp_4(\Z)/\{\pm\Id_4\}
+\subset \mathrm P\mathrm O^+(\widetilde M)
+\]
+acting properly discontinuously, where the component is fixed by the
+positive cone \(\mathcal C(\Lambda^{2,1})_+\)
+(\S\,\ref{ssec:exceptional-iso}). The exceptional isogeny
 \[
 \PSp_4(\R)
 \;\simeq\;
@@ -254,9 +251,9 @@ exceptional isogeny
 \qquad
 \Sp_4(\Z) / \{\pm 1\}
 \;\simeq\;
-\SO_+(\Lambda^{3,2}),
+\Gamma_{\widetilde M},
 \]
-imported as View~\textcircled{5} (the Sp(4) \(\simeq\) Spin(3,2)
+imported as View~\textcircled{5} (the \(\PSp_4\simeq\SO(3,2)_+\)
 bridge), gives the identification
 \begin{equation}
 \label{eq:view4-period-bridge}
@@ -294,10 +291,9 @@ where \(M^\perp \subset \Lambda_{K3}\) has signature \((2, 17)\) and
 parametrises the \emph{transcendental} Hodge filtration of a
 lattice-polarised K3 surface. The Borcherds lift used in
 View~\textcircled{4} is on \(\Omega_{\widetilde M}\), not on
-\(\Omega_M\): the difference is the absorption of the elliptic
-factor \(\Lambda_E = U\) into \(\widetilde M = U \oplus M\), which is
-the K\"unneth identification on \(K3 \times E\) recorded below in
-\S\,\ref{subsec:k3xe-period-family}. The two period spaces are not
+\(\Omega_M\): the difference is the adjoining of one Mukai hyperbolic
+plane to the rank-\(3\) K3 lattice, not an identification of the
+even elliptic cohomology with the elliptic period.  The two period spaces are not
 interchangeable: \(\Omega_{\widetilde M}\) of dimension \(3\) is the
 genus-two Siegel space and supports \(\Delta_5\) directly via the
 exceptional isogeny, while \(\Omega_M\) of dimension \(17\) is the
@@ -305,72 +301,81 @@ K3-only period space, on which the rank-\(3\) lattice-polarised lift
 of \(\phi_{0,1}\) lands only after the additional Mukai-\(U\)
 augmentation.
 
-\subsection{The K3 \texorpdfstring{$\times$}{x} E period family}
+\subsection{The K3 \texorpdfstring{$\times$}{x} E Mukai--Hodge quotient}
 \label{subsec:k3xe-period-family}
 
-The threefold \(K3 \times E\) acquires its Hodge structure through the
-K\"unneth decomposition. The Mukai lattice
-\(\Lambda_S = H^*(S, \Z)\) of signature \((4, 20)\) carries the Mukai
+The full Calabi--Yau-threefold variation of Hodge structure on
+\(X=S\times E_\tau\) is
+\[
+H^3(X,\Z)
+\;=\;
+H^2(S,\Z)\otimes H^1(E_\tau,\Z),
+\]
+of rank \(44\).  The elliptic modulus \(\tau\) belongs to
+\(H^1(E_\tau)\).  It does not belong to the even elliptic lattice
+\(H^0(E,\Z)\oplus H^2(E,\Z)\), whose Hodge type is constant.
+
+The Mukai lattice
+\(\widetilde H(S,\Z)=H^*(S, \Z)\) of signature \((4, 20)\) carries the Mukai
 pairing
 \(\langle (r, c, s), (r', c', s') \rangle_{\mathrm{Muk}} = c \cdot c' - r s' - r' s\)
-(Definition~\ref{def:mukai-lattice}); the elliptic factor
-contributes its Mukai lattice
-\(\Lambda_E = H^{\mathrm{even}}(E, \Z) = H^0(E,\Z)\oplus H^2(E,\Z) = U\)
-with the standard hyperbolic form. The even integral cohomology is
+(Definition~\ref{def:mukai-lattice}).  The even cohomology of the elliptic curve
+is the hyperbolic plane
+\(U_E = H^{\mathrm{even}}(E, \Z) = H^0(E,\Z)\oplus H^2(E,\Z)\)
+with the standard hyperbolic form. Since \(H^{\mathrm{odd}}(S)=0\), the even
+integral cohomology is, as an integral group with its Mukai tensor pairing,
 \[
 H^{\mathrm{even}}(K3 \times E, \Z)
 \;=\;
-\Lambda_S \otimes \Lambda_E
+\widetilde H(S,\Z) \otimes U_E
 \;=\;
-\Lambda_S \otimes U,
+\widetilde H(S,\Z) \otimes U,
 \]
-a lattice of rank \(48\) (the odd K\"unneth term
-\(H^{\mathrm{odd}}(S)\otimes H^{\mathrm{odd}}(E)\) is absent because
-\(S\) carries no odd cohomology); the relevant Hodge filtration is controlled,
-on each weight, by the K3 polarisation \(M\) and the \(\tau\)-modulus
-of \(E\). The component of the period stack parametrising
-\((K3 \times E)\)-pairs \((S, E_\tau)\) with \(S\) lattice-polarised
-by \(M = U \oplus \langle -2 \rangle\) is, on the rank-3
-Mukai-invariant stratum,
+a lattice of rank \(48\).  This even Mukai lattice is not the
+Calabi--Yau-threefold period lattice; it is the lattice from which the
+rank-\(3\) Mukai-invariant quotient is cut.
+
+For \((K3 \times E)\)-pairs \((S, E_\tau)\) with \(S\)
+lattice-polarised by \(M = U \oplus \langle -2 \rangle\), the retained
+rank-\(3\) Mukai--Hodge quotient is
 \begin{equation}
 \label{eq:view4-k3e-moduli}
-\mathcal P_{K3 \times E}
+\mathcal P_{K3 \times E}^{(3)}
 \;\;:=\;\;
 \Omega_{\widetilde M} \big/ \Gamma_{\widetilde M}
 \;\;\overset{\eqref{eq:view4-period-bridge}}{\simeq}\;\;
 \mathcal H_2 \big/ \Sp_4(\Z),
 \end{equation}
-where the augmented lattice \(\widetilde M = U \oplus M\) absorbs the
-elliptic Mukai-\(U\) summand into the K3-side Mukai-\(U\) summand.
-The K\"unneth identification
-\(\Lambda_E = U \subset \widetilde M\) is the Hodge-theoretic content
-of the absorption: the elliptic period \(\tau \in \mathbb H_1\) is
-absorbed into the type-IV variable \(z_1 \in \Omega_{\widetilde M}\)
-under the manuscript's coordinatisation in
-\S\,\ref{ssec:exceptional-iso}. Equation~\eqref{eq:view4-k3e-moduli}
-is the period-side input on which View~\textcircled{4} is stated. It
-is a theorem of Gritsenko--Nikulin~\cite[Thm.~1.1, Thm.~1.2]{GNII} (the
-existence and identification of the lattice-polarised lift) and
-Borcherds~\cite[\S\,15]{Borcherds95} (the period-domain
-Borcherds-product convergence on signature \((2, 3)\)); it is not a
-new statement.
+where the augmented lattice \(\widetilde M=U_{\mathrm{mir}}\oplus M\)
+is a rank-\(5\) type-IV lattice.  The summand \(U_{\mathrm{mir}}\) is
+an abstract Mukai hyperbolic plane in the period quotient.  It is not
+the constant even elliptic lattice \(U_E\).  The elliptic period enters
+through \(H^1(E_\tau)\) and then through the exterior-square
+\(\PSp_4\simeq\SO(3,2)_+\) coordinate system on
+\(\Omega_{\widetilde M}\).
+Equation~\eqref{eq:view4-k3e-moduli} is the period quotient on which
+View~\textcircled{4} is stated.  The quotient is the
+\(\PSp_4\simeq\SO(3,2)_+\) model; the assertion that it is the base of
+the compact mirror discriminant is Conjecture~\ref{conj:mirror-discriminant}.
 
 The K3-only period domain \(\Omega_M\) of dimension \(17\) does not
 enter \eqref{eq:view4-k3e-moduli}: its role is to parametrise the
-transcendental Hodge filtration of \(S\) alone, before tensoring with
-\(\Lambda_E = U\). The \((K3 \times E)\)-component is on
+transcendental Hodge filtration of \(S\) alone. The rank-\(3\)
+\((K3 \times E)\) Mukai--Hodge quotient is on
 \(\Omega_{\widetilde M}\), of dimension \(3\). The relation
-\(\widetilde M = U \oplus M\) is the bridge between the two
-period spaces.
+\(\widetilde M = U_{\mathrm{mir}} \oplus M\) is the rank-five
+type-IV bridge, not an equality with the full \(H^3(K3\times E)\)
+period domain.
 
 \subsection{The discriminant locus}
 \label{subsec:view4-discriminant}
 
-The period family \(\mathcal P_{K3 \times E}\) carries a natural
-divisor: the locus along which the rank-3 lattice-polarised K3
-surface acquires a nodal degeneration in the polarisation lattice
-\(M\). On the type-IV symmetric domain \(\Omega_{\widetilde M}\),
-the Heegner divisors are
+The candidate period quotient carries a natural Heegner divisor.  It
+becomes the support of the discriminant divisor of a mirror period
+family only after the comparison asserted in
+Conjecture~\ref{conj:mirror-discriminant}.
+On the type-IV symmetric domain \(\Omega_{\widetilde M}\), the Heegner
+divisors are
 \[
 \mathfrak H_{(\delta)}
 \;=\;
@@ -384,20 +389,19 @@ the Heegner divisors are
 \;\;
 (\delta, \delta) = 2,
 \]
-indexed by primitive square-\(2\) vectors of the manuscript's
-form on \(\widetilde M = \Lambda^{3,2}\)
-(equivalently, square-\((-2)\) vectors of the Dolgachev form on the
-K3 side after the sign flip recorded above). On the corresponding
-geometric component the K3 fibre acquires a nodal rational curve
-in the class \(\delta\): the Hodge filtration on
-\(H^2(S, \Z) \otimes H^*(E, \Z)\) degenerates along this divisor as
-the elliptic factor passes through a Mukai-isomorphic point. The
-\emph{period-family discriminant} is
+indexed by primitive square-\(2\) vectors of the fixed form on
+\(\widetilde M = \Lambda^{3,2}\)
+(equivalently, square-\((-2)\) vectors of the Dolgachev form after the
+sign flip recorded above).  Such a hyperplane records an extra
+algebraic Mukai vector; on a K3 slice its \(H^2\)-projection is the
+ordinary nodal \((-2)\)-class when the projection is nonzero.  The
+type-II Heegner divisor is
 \begin{equation}
 \label{eq:view4-discriminant-divisor}
-\mathfrak D_{\mathrm{per}}
+\mathfrak H_{\mathrm{II}}
 \;\;=\;\;
-\bigcup_{\substack{\delta \in \widetilde M \\ (\delta, \delta) = 2}}
+\bigcup_{\substack{\delta \in \widetilde M \\ (\delta, \delta) = 2\\
+(\delta,\widetilde M)=2\Z}}
 \mathfrak H_{(\delta)} \big/ \Gamma_{\widetilde M}
 \;\;\subset\;\;
 \Omega_{\widetilde M} / \Gamma_{\widetilde M}.
@@ -406,8 +410,7 @@ The \(\Gamma_{\widetilde M}\)-orbit structure on primitive square-\(2\)
 vectors of \(\widetilde M\) breaks into type-I and type-II classes
 (\(\delta \cdot \widetilde M = \Z\) versus \(\delta \cdot \widetilde M = 2\Z\),
 the dichotomy already imported as the type-II versus type-I
-distinction at the \(W^{(2)}(\Lambda_{II}^{2,1})\)-orbit level in
-the manuscript's preceding chapters); the union in
+distinction at the \(W^{(2)}(\Lambda_{II}^{2,1})\)-orbit level); the union in
 \eqref{eq:view4-discriminant-divisor} runs over the type-II orbit,
 which is the orbit relevant to the \(\Sp_4(\Z)\)-image of the
 exceptional isogeny. The image in the quotient is one irreducible
@@ -428,10 +431,11 @@ Z = \begin{pmatrix} \tau_1 & 0 \\ 0 & \tau_2 \end{pmatrix} \;\text{up to } \Sp_4
 \]
 the diagonal locus on which the principally polarised abelian surface
 \(\C^2 / (\Z^2 + Z \Z^2)\) decomposes as a product of two elliptic
-curves; the corresponding K3-side degeneration is exactly the nodal
-rational curve. The match
-\(\mathfrak D_{\mathrm{per}} \leftrightarrow \mathcal H_2^{(\mathrm{Hum})}\)
-is fixed by the bridge~\eqref{eq:view4-period-bridge}.
+curves.  Under the lattice identification
+\eqref{eq:view4-period-bridge}, this Humbert surface is the Heegner
+support of a norm-\((-2)\) class in the rank-\(3\) Mukai-invariant
+period domain.  The assertion that it is the full discriminant support
+of a compact mirror family is part of Conjecture~\ref{conj:mirror-discriminant}.
 
 The form \(\Delta_5\) of View~\textcircled{1} vanishes precisely along
 this divisor: \(\Delta_5 \in M_5(\Sp_4(\Z), \nu_{\Delta_5})\) has a
@@ -446,40 +450,41 @@ the Borcherds product expansion of View~\textcircled{1} gives
 \prod_{(n, l, m) \in \Gamma_{\mathrm{eff}}}
 (1 - q^n r^l s^m)^{f(nm, l)},
 \]
-and the zero locus is exactly \(\mathcal H_2^{(\mathrm{Hum})}\),
-counted with multiplicity \(1\). Hence
+and the automorphic zero divisor is exactly
+\(\mathcal H_2^{(\mathrm{Hum})}\), counted with multiplicity \(1\).
+Thus the theorem-level divisor identity is
 \begin{equation}
 \label{eq:view4-divisor-of-Delta5}
-[\,\Delta_5^{\,-1}\,]
+[\,\operatorname{div}(\Delta_5)\,]
 \;\;=\;\;
 [\,\mathcal H_2^{(\mathrm{Hum})}\,]
-\;\;=\;\;
-[\,\mathfrak D_{\mathrm{per}}\,]
 \quad \text{(divisor classes on } \mathcal H_2 / \Sp_4(\Z)).
 \end{equation}
-This identity is a theorem in the cited references; it is recorded
-here as the input to the conjecture.
+The additional equality with the mirror discriminant
+\(\mathfrak D_{\mathrm{mir}}\) is not contained in the automorphic
+theorem; it is the support part of the mirror-discriminant conjecture.
 
 \subsection{The conjecture}
 \label{subsec:view4-conjecture}
 
-The discriminant of a period family carries multiplicities, not
-just a support. For the K3-mirror period family on the rank-3
-Mukai-invariant component, the relevant multiplicity is fixed by
-the Hodge structure on \(H^2(S, \Z) \oplus H^*(E, \Z)\): a nodal K3
-acquires a vanishing cycle of dimension \(2\), and the local
-universal Hodge filtration degenerates with multiplicity \(2\)
-along \(\mathfrak D_{\mathrm{per}}\) when the discriminant is
-read as the divisor of a section of the period-bundle determinant
-(Saito's mixed-Hodge-module formalism for the Hodge filtration on
-the local Milnor fibre, \cite{SaitoMHM}; Bryan--Pandharipande
-\cite[\S\,3]{BRYAN} for the genus-two BPS calculation that supplies
-the same multiplicity at the level of generating functions).
+The discriminant of a period quotient carries multiplicities, not just
+a support.  Let
+\(\mathfrak D_{\mathrm{mir}}\) denote the conjectural reduced
+discriminant divisor of that quotient, and let
+\(\lambda_{\mathrm{per}}=\mathcal F^2\) denote the descended K3
+period Hodge line on the same quotient.  In the rank-\(3\)
+Mukai-invariant component the expected section of
+\(\lambda_{\mathrm{per}}^{-10}\) has polar order \(2\) along the type-II Heegner divisor:
+locally this is the Picard--Lefschetz contribution of a nodal K3
+vanishing cycle to the Hodge filtration, and automorphically it is the
+square of the simple zero of \(\Delta_5\).  This multiplicity comparison
+is part of the conjecture until the rank-\(3\) quotient and the
+comparison line have been constructed.
 
 \begin{conjecture}[The mirror discriminant identity]
 \label{conj:mirror-discriminant}
 \ClaimStatusConjectured
-On the \((K3 \times E)\)-component of the K3-mirror period family,
+On the rank-\(3\) \((K3 \times E)\) Mukai--Hodge quotient
 parametrised by \eqref{eq:view4-k3e-moduli}, the meromorphic section
 \[
 \Delta_5^{\,-2}
@@ -492,19 +497,21 @@ parametrised by \eqref{eq:view4-k3e-moduli}, the meromorphic section
 \]
 of the inverse \(10\)th tensor power of the automorphic line bundle
 \(\mathcal L_{\mathrm{aut}}\) coincides, as a meromorphic section of
-the period-bundle determinant on \(\mathcal P_{K3 \times E}\), with the
-discriminant of the K3-mirror period family. Equivalently, the polar
-divisor of \(\Delta_5^{-2}\) is twice the period-family discriminant
-\(\mathfrak D_{\mathrm{per}}\), and the comparison map
+\(\lambda_{\mathrm{per}}^{-10}\) on
+\(\mathcal P_{K3 \times E}^{(3)}\), with the
+discriminant section of the rank-\(3\) quotient. Equivalently, the polar
+divisor of \(\Delta_5^{-2}\) is twice the quotient discriminant
+\(\mathfrak D_{\mathrm{mir}}\), the support of
+\(\mathfrak D_{\mathrm{mir}}\) is \(\mathfrak H_{\mathrm{II}}\), and the comparison map
 \[
 \mathcal L^{-10}_{\,\mathrm{aut}}
 \;\;\xrightarrow{\;\;\sim\;\;}\;\;
-\bigl(\det \mathcal H^2_{\mathrm{tr}}\bigr)^{\,*}
+\lambda_{\mathrm{per}}^{-10}
 \]
 on the open complement \(\mathcal P_{K3 \times E}^{\circ}
-= \mathcal P_{K3 \times E} \setminus \mathfrak D_{\mathrm{per}}\)
-extends to a global identification of the inverse-period-determinant
-section with \(\Delta_5^{-2}\).
+= \mathcal P_{K3 \times E}^{(3)} \setminus \mathfrak D_{\mathrm{mir}}\)
+extends to a global identification with \(\Delta_5^{-2}\) as a
+section of \(\lambda_{\mathrm{per}}^{-10}\).
 \end{conjecture}
 
 The conjecture is, at the level of divisor classes,
@@ -512,7 +519,9 @@ The conjecture is, at the level of divisor classes,
 \label{eq:view4-divisor-equation}
 [\,\Delta_5^{\,-2}\,]
 \;\;=\;\;
-2\,[\,\mathfrak D_{\mathrm{per}}\,]
+2\,[\,\mathfrak D_{\mathrm{mir}}\,]
+\;\;=\;\;
+2\,[\,\mathfrak H_{\mathrm{II}}\,]
 \;\;=\;\;
 2\,[\,\mathcal H_2^{(\mathrm{Hum})}\,];
 \end{equation}
@@ -522,20 +531,24 @@ and the trivialisation of the comparison line bundle.
 
 \paragraph{Evidence.}
 The genus-two Bryan--Pandharipande generating function for
-disconnected genus-two BPS states on \(K3 \times E\) gives
-\(Z^{K3 \times E}_{\mathrm{BPS}} = \Delta_5^{-2}\) in the cusp
-chamber~\cite[Conj.~1]{BRYAN}; this identity has been proved by
-Oberdieck--Pixton~\cite[Thm.~1]{OB} and is the input to
-View~\textcircled{1} on the curve-counting side. Two facts converge:
-the coefficient of \(\Delta_5^{-2}\) at a degenerate stable map is
-controlled, by the Maulik--Toda Gopakumar--Vafa formalism
-\cite{MaulikTodaGV}, by the local Milnor monodromy on the period
-filtration; and the local Hodge-filtration multiplicity at a nodal K3
-fibre is \(2\) (Saito~\cite{SaitoMHM}). Both of these are theorems,
-not conjectures. What is conjectural is the global trivialisation: the
-comparison line bundle
-\(\mathcal L^{-10}_{\,\mathrm{aut}} \otimes (\det \mathcal H^2_{\mathrm{tr}})\)
-admits no obstruction, and the identification of the two sides extends
+disconnected genus-two BPS states on \(K3 \times E\) predicts the cusp
+branch governed by the reciprocal Igusa form~\cite[Conj.~1]{BRYAN};
+Oberdieck--Pixton prove the normalized OP/DT/PT scalar representative
+\[
+Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}
+\]
+\cite[Thm.~1]{OB}.  In the trace convention of this manuscript
+\[
+Z_{\mathrm{BPS}}^{K3\times E}:=-4096^{-1}Z^X_{\mathrm{OP}}
+=\Delta_5^{-2}.
+\]
+This is the input to View~\textcircled{1} on the curve-counting side.  The local
+Picard--Lefschetz model and Saito's Hodge-filtration formalism predict
+the same order-two degeneration as the automorphic divisor
+\([\Delta_5^{-2}]\).  The unproved point is the global comparison: the
+line
+\(\mathcal L^{-10}_{\,\mathrm{aut}} \otimes \lambda_{\mathrm{per}}^{10}\)
+must be trivialised and the identification of the two sides must extend
 across the discriminant divisor.
 
 A separate piece of evidence is the rank-\(4\) precedent set by
@@ -552,36 +565,36 @@ product \(\Phi_{12}\) on the Leech-extension lattice
 \(\mathrm{II}_{25,1}\) of \cite{BorcherdsGKM88, Borcherds95} is a
 distinct, signature-\((26,2)\) object and is not invoked here.
 
-\paragraph{Status.}
+\paragraph{Epistemic strength.}
 \ClaimStatusConjectured\ The identification claim of
 Conjecture~\ref{conj:mirror-discriminant} is conjectured. The
-existence of the comparison line bundle is folklore; the divisor
-identity~\eqref{eq:view4-divisor-of-Delta5} is a theorem; the
-multiplicity-2 statement on the K3 side is a theorem; the global
-extension across the discriminant divisor is the conjectural content.
+comparison line bundle is a standard Hodge-theoretic object; the
+automorphic Heegner identity~\eqref{eq:view4-divisor-of-Delta5} is a
+theorem; the equality
+\(\operatorname{Supp}(\mathfrak D_{\mathrm{mir}})=\mathfrak H_{\mathrm{II}}\),
+the multiplicity \(2\), and the global extension across the
+discriminant divisor are conjectural.
 
-\paragraph{What this conjecture supplies.}
-If proved, View~\textcircled{4} embeds the present programme inside
+\paragraph{Consequences.}
+If proved, View~\textcircled{4} embeds the \(\Delta_5\) identity inside
 mirror symmetry on \(K3 \times E\) at the level of period-side
-discriminants. The identification supplies a new derivation of
-\(\Delta_5\) that does not pass through the Borcherds product
+discriminants.  The identification would give a period-side derivation
+of \(\Delta_5\) independent of the Borcherds product
 (View~\textcircled{1}), the BKM denominator (View~\textcircled{2}),
-the Pfaffian of the Dirac--Igusa pro-object (View~\textcircled{3}),
-or the singular theta lift (View~\textcircled{5}). It is a fifth
-chain. The fact that the same form arises on five chains is the
-content of the pentadic thesis of the manuscript; the fifth chain,
-conjectural now, completes the picture.
+the Pfaffian of the Dirac--Igusa pro-object (View~\textcircled{3}), and
+the singular theta lift (View~\textcircled{5}).  It is a conjectural
+fifth chain.
 
-The opposite implication is also of interest. A proof of
-Conjecture~\ref{conj:mirror-discriminant} would identify
-\(\Delta_5^{-2}\) with the universal determinant section of the
-\((K3 \times E)\)-mirror period family; combined with the Bryan--Oberdieck--Pixton
+A proof of Conjecture~\ref{conj:mirror-discriminant} would identify
+\(\Delta_5^{-2}\) with the section of \(\lambda_{\mathrm{per}}^{-10}\)
+on the rank-\(3\)
+\((K3 \times E)\) Mukai--Hodge quotient; together with the Bryan--Oberdieck--Pixton
 theorem~\cite[Thm.~1]{OB} that
-\(Z^{K3 \times E}_{\mathrm{BPS}} = \Delta_5^{-2}\), this would give a
-new proof of the genus-two BPS partition-function identity through
-the period side, complementing the curve-counting derivation.
+\(Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2}\), this would give a
+period-side interpretation of the unscaled trace
+\(Z_{\mathrm{BPS}}^{K3\times E}:=-4096^{-1}Z^X_{\mathrm{OP}}\).
 
-\subsection{What the conjecture does not assert}
+\subsection{Range of the period conjecture}
 \label{subsec:view4-not-asserted}
 
 The Beilinson cut is in force: a statement is not primitive if it
@@ -589,24 +602,25 @@ holds only after passing to a trace, choosing a chamber, completing a
 category, or installing descent data.
 The conjectural identification is on the period side: it concerns
 the section \(\Delta_5^{-2}\) of an automorphic line bundle and the
-discriminant divisor of the K3-mirror period family. It is not a
-claim about the protected operator-level package
-\(\mathfrak D_X^{\mathrm{DI}}\) of View~\textcircled{3}; that package
-is constructed and proved, under the four named obstructions
-\((\mathrm{D0})\), \((\mathrm{O1})\), \((\mathrm{O1}^+)\),
-\((\mathrm{O2})\), in the
-View~\textcircled{2}\(\leftrightarrow\)\textcircled{3} chapters
-preceding this one. View~\textcircled{4} does not enter the operator
-chain.
+discriminant divisor of the rank-\(3\) \(K3\times E\) mirror period
+component. It is not a
+claim about the protected operator-level datum
+\(\mathfrak D_X^{\mathrm{DI}}\) of View~\textcircled{3}; that datum
+is established at the Pfaffian and orientation level only relative to
+the retained data in the
+View~\textcircled{2}\(\leftrightarrow\)\textcircled{3} chapters and
+Appendix~\ref{app:obstruction-discharges}. View~\textcircled{4} does
+not enter the operator chain.
 
-The level-\(n\) scalar partition function
-\(Z^{K3 \times E}_{\mathrm{BPS}} = \Delta_5^{-2}\) is, on the present
-programme, the orientation-forgetful trace of the Pfaffian package;
-its promotion to a \(3d\) gravitational path integral requires the
+In the trace convention of Chapter~\ref{ch:zbps-realization}, the
+level-\(n\) scalar partition function
+\(Z^{K3 \times E}_{\mathrm{BPS}}:=\Delta_5^{-2}\) is the
+orientation-forgetful trace of the Pfaffian datum;
+its three-dimensional gravity-line realization requires the
 Hall--Borcherds residual (Vol~II, \cite{ChiralBarCobarVolII}). The
 mirror conjecture above says nothing about the gravitational lift; it
 addresses only the geometric origin of the section
-\(\Delta_5^{-2}\) on the K3-mirror period family.
+\(\Delta_5^{-2}\) on the rank-\(3\) mirror period component.
 
 The Borcherds--Kac--Moody denominator
 \(\operatorname{den}(\mathfrak g_{\Delta_5}) = 64^{-1} \Delta_5(2 Z)\)
@@ -629,118 +643,115 @@ off; the two conventions agree on the K3 mirror lattice. The
 Mukai-lattice form
 \(\widetilde M = U \oplus M = 2U \oplus \langle -2\rangle\)
 of rank 5 and signature \((2, 3)\) is the convention adopted in
-cross-volume Vol~III~\cite[Prop.~6.4]{CYQGVolIII}; it is the convention
+Vol~III~\cite[Prop.~6.4]{CYQGVolIII}; it is the convention
 relevant to the period-domain bridge~\eqref{eq:view4-period-bridge}.
-The lattice \(\widetilde M\) is identified with the manuscript's
+The lattice \(\widetilde M\) is identified with
 \(\Lambda^{3,2}\) of \S\,\ref{ssec:exceptional-iso} by the sign-flip
 on the rank-\(1\) summand recorded in \S\,\ref{subsec:k3-mirror-period}.
-Disagreement on the lattice convention surfaces, in cross-volume work,
+Disagreement on the lattice convention appears
 only as a sign convention on the Mukai pairing; it does not affect the
 discriminant divisor.
 
 The K3 vs.\ \((K3 \times E)\) period-space matching
-\eqref{eq:view4-k3e-moduli} works because \emph{the Mukai \(U\)-summand
-of} \(\widetilde M\) \emph{is the elliptic factor on the
-\((K3 \times E)\)-side after K\"unneth absorption}, not because the
-K3-mirror period family and the \((K3 \times E)\)-mirror period family
-are abstractly equal. Disagreement on this point would surface as
-a discrepancy between the \(\Sp_4\)-side and the
-\(\mathrm O^+(2,3)\)-side; the
+\eqref{eq:view4-k3e-moduli} adjoins the distinguished hyperbolic
+summand \(U_{\mathrm{mir}}\) to the rank-\(3\) K3 lattice and lets the
+elliptic variation enter through \(H^1(E_\tau)\).  It does not
+identify \(U_{\mathrm{mir}}\) with the constant even elliptic lattice
+\(U_E\), and it is not an abstract equality between the
+K3-mirror period family and the \((K3 \times E)\)-mirror period family.
+The possible discrepancy is exactly the comparison between the
+\(\Sp_4\)-side and the \(\mathrm O^+(2,3)\)-side; the
 isomorphism~\eqref{eq:view4-period-bridge} is
-exactly the Sp(4) \(\simeq\) Spin(3,2) bridge of
-View~\textcircled{5}, and the absorption of \(\Lambda_E = U\) into
-the Mukai \(U\)-summand of \(\widetilde M\) is the Hodge-theoretic
-content of the K\"unneth product.
+exactly the \(\PSp_4\simeq\SO(3,2)_+\) bridge of
+View~\textcircled{5}.
 
-The phrase ``discriminant of WHAT'' is sharpened by the
-multiplicity. There are two natural divisors on the period side:
-the support divisor \(\mathfrak D_{\mathrm{per}}\) of the
-period-family degeneration, and the principal divisor of the
-section of \((\det \mathcal H^2_{\mathrm{tr}})^*\) realizing the
-period-bundle determinant. The conjecture concerns the second:
+The word discriminant names a section, not only a support, once
+multiplicities are present. There are two natural divisors on the
+period side: the Heegner support \(\mathfrak H_{\mathrm{II}}\), and
+the polar divisor of the section of \(\lambda_{\mathrm{per}}^{-10}\).
+The conjecture concerns the second:
 \(\Delta_5^{-2}\) is conjectured to be that section, with polar
-divisor twice the support divisor of
-\(\mathfrak D_{\mathrm{per}}\). The factor of 2 is forced by the
-local multiplicity of the Hodge filtration at a nodal K3 and is
-matched, on the automorphic side, by the square of \(\Delta_5\); a
-mismatch at the level of multiplicity would falsify the conjecture
-by a factor that the Borcherds product does not allow.
+divisor twice the support divisor \(\mathfrak H_{\mathrm{II}}\).  The
+factor of \(2\) is predicted by the
+local Picard--Lefschetz model and is matched, on the automorphic side,
+by the square of \(\Delta_5\); a mismatch at the level of multiplicity
+would falsify the conjecture by a factor that the Borcherds product
+does not allow.
 
-The relation to the Borcherds--Gritsenko--Nikulin precedent at
-rank \(4\) is the cleanest comparison. At
-\(L = U \oplus U\) the analogous lift is \(\Phi_{12}\) on the type-IV
-symmetric domain of signature \((2, 4)\), and Gritsenko--Nikulin
-\cite[Thm.~4.1]{GNII} prove that \(\Phi_{12}\) is the quasi-pull-back
-of the discriminant section of the universal lattice-polarised Hodge
-bundle. The rank-3 analogue
-\(L = U \oplus \langle -2 \rangle\) is
-Conjecture~\ref{conj:mirror-discriminant}; the only piece missing
-is the global comparison-line trivialisation. The
-\(\Phi_{12}\) precedent is evidence; it is not a proof, since the
-quasi-pull-back map at rank \(3\) is governed by a different Heegner
-divisor structure.
+The relation to the Borcherds--Gritsenko--Nikulin quasi-pull-back
+theorems is the cleanest comparison.  There the Borcherds form
+\(\Phi_{12}\) on the even unimodular lattice of signature \((2,26)\)
+is pulled back to lattice-polarised type-IV domains, and its divisor is
+read as a discriminant section of the corresponding Hodge bundle
+\cite[Thm.~4.1]{GNII}.  The rank-\(3\) lattice
+\(L = U \oplus \langle -2 \rangle\) requires a separate comparison line
+and a separate Heegner-divisor analysis; the \(\Phi_{12}\) theorem is
+evidence, not a proof.
 
-\subsection{Open obligations}
-\label{subsec:view4-open}
+\subsection{Components of the period conjecture}
+\label{subsec:view4-period-components}
 
 \begin{enumerate}
 \item[\textnormal{(M1)}]
 \ClaimStatusOpen\ \emph{Trivialisation of the comparison line.} The
 comparison line bundle
-\(\mathcal L^{-10}_{\,\mathrm{aut}} \otimes (\det \mathcal H^2_{\mathrm{tr}})\)
-on \(\mathcal P_{K3 \times E}^{\circ}\) carries no first Chern class
-that is not absorbed by the automorphic-character data of
-\(\nu_{\Delta_5}^{-2}\). Sub-conjecture: this comparison line is
-trivial. Implication: under (M1), the
-identity~\eqref{eq:view4-divisor-equation} promotes from a divisor
-identity to an equality of sections.
+\(\mathcal L^{-10}_{\,\mathrm{aut}} \otimes \lambda_{\mathrm{per}}^{10}\)
+on \(\mathcal P_{K3 \times E}^{\circ}\) must be trivialised.  Since
+\(\nu_{\Delta_5}^2=1\), the inverse-square section has no residual
+character; the obstruction is an ordinary Hodge line class.  A
+trivialisation of this line, together with the divisor and boundary
+conditions below, strengthens the divisor comparison to an equality of
+meromorphic sections.
 
 \item[\textnormal{(M2)}]
-\ClaimStatusOpen\ \emph{Multiplicity at the cusp.}
-Conjecture~\ref{conj:mirror-discriminant} concerns the polar divisor
-of \(\Delta_5^{-2}\) on the open part \(\mathcal P_{K3 \times E}^{\circ}\);
-the boundary behaviour at the rank-2 cusp of \(\mathcal H_2 / \Sp_4(\Z)\)
-is governed by the singular weight \(c_1(0) / 2 = 5\)
-(\cite[\S\,15]{Borcherds95}). Sub-conjecture: the boundary
-multiplicity matches the singular weight on the period side.
+\ClaimStatusOpen\ \emph{Extension and multiplicity.}
+The section comparison is first defined on
+\(\mathcal P_{K3 \times E}^{\circ}\), where the Heegner divisor has
+been removed.  The period condition is the extension across
+\(\mathfrak H_{\mathrm{II}}\) with polar order \(2\), together with
+the extension to the rank-2 cusp with boundary exponent governed by
+the Borcherds singular weight \(c_1(0)/2=5\)
+(\cite[\S\,15]{Borcherds95}).  Thus the divisor of the extended
+section, not the open part itself, is compared with
+\([\Delta_5^{-2}]\).
 
 \item[\textnormal{(M3)}]
-\ClaimStatusOpen\ \emph{The mirror involution \(\iota_{\mathrm{DN}}\)
-on the section.} The Dolgachev--Nikulin involution on
-\(\widetilde\Lambda_{K3}\) acts as \(-\mathrm{id}\) on
-\(\widetilde M = 2U \oplus \langle -2\rangle\) (signature \((2,3)\))
-and as \(+\mathrm{id}\) on \(\widetilde M^\perp\) (signature
-\((2, 17)\)); both halves carry the same positive-part rank \(2\),
-which is the structural source of the symmetry. Sub-conjecture:
-\(\iota_{\mathrm{DN}}^*(\Delta_5) = \Delta_5\) up to the multiplier
-\(\nu_{\Delta_5}\), and the discriminant identity is
-\(\iota_{\mathrm{DN}}\)-invariant.
+\ClaimStatusOpen\ \emph{The mirror correspondence on the section.}
+Dolgachev mirror symmetry gives a correspondence between the
+\(M\)-polarised and \(\check M\)-polarised period quotients, not a
+canonical involution of \(\Omega_{\widetilde M}/\Gamma_{\widetilde M}\).
+The period condition is that a chosen correspondence identifies the
+period Hodge line with the automorphic line and carries the
+type-II Heegner divisor to the type-II Heegner divisor.  After this
+comparison, \(\Delta_5^{-2}\) is required to be the same meromorphic
+section of the compared inverse Hodge line.
 
 \item[\textnormal{(M4)}]
-\ClaimStatusOpen\ \emph{Cross-volume consistency at rank \(\geq 5\).}
+\ClaimStatusOpen\ \emph{Rank \(\geq 5\) lattice compatibility.}
 The Vol~III rank-\(\geq 5\) lattice-polarised \(\mathfrak g_L\)
-family~\cite{CYQGVolIIIWave3} is the conjectural extension of
+family~\cite{CYQGVolIIILatticePolarized} is the conjectural extension of
 Conjecture~\ref{conj:mirror-discriminant} to higher Picard rank.
 At rank \(\geq 5\) the discriminant identity is conditional on the
 Gritsenko--Cl\'ery 2018 admissibility conjecture
 (Conj.~5.1 of \cite{GC}); the rank-\(3\) statement is the corresponding
-conditional statement for the K3-Mukai-invariant lattice and is the
-only one of the rank ladder relevant to this manuscript.
+conjectural statement for the K3-Mukai-invariant lattice and is the
+rank relevant to the \(\Delta_5\) row.
 \end{enumerate}
 
-The four open obligations \((\mathrm M 1)\)--\((\mathrm M 4)\) are
+The four period conditions \((\mathrm M 1)\)--\((\mathrm M 4)\) are
 distinct from the four obstruction classes \((\mathrm{D0})\),
 \((\mathrm{O1})\), \((\mathrm{O1}^+)\), \((\mathrm{O2})\) of
 View~\textcircled{3}; the latter govern the operator-level chain
 and are the conditioning for \textcircled{2}\(\leftrightarrow\)\textcircled{3},
 while the former govern the period-side chain and are the
 conditioning for \textcircled{4}\(\leftrightarrow\)\textcircled{1}.
-The two sets do not interact: a discharge of \((\mathrm M 1)\) does
-not advance the operator package, and a discharge of \((\mathrm{D0})\)
-does not advance the period-side conjecture.
+The two systems lie on different chains: \((\mathrm M 1)\)--\((\mathrm M 4)\)
+are period-line and Heegner-divisor conditions, whereas
+\((\mathrm{D0})\), \((\mathrm{O1})\), \((\mathrm{O1}^+)\), and
+\((\mathrm{O2})\) are Pfaffian-line and orientation conditions.
 
-\subsection{Cross-repository consistency}
-\label{subsec:view4-cross-repo}
+\subsection{Compatibility with the Vol III lattice convention}
+\label{subsec:view4-volIII-lattice-convention}
 
 The lattice convention
 \(M = U \oplus \langle -2 \rangle\),
@@ -755,22 +766,22 @@ Vol~III~\cite[\S\,6.4 + Prop.~6.4 + Thm.~6.7]{CYQGVolIII}; on the
 distinct construction. The mirror discriminant of
 Conjecture~\ref{conj:mirror-discriminant} is on the
 \(\kappa_{\mathrm{BKM}} = 5\) row of the \(\kappa\)-tuple; the
-period-side input is the discriminant divisor on the
+period-side datum is the discriminant divisor on the
 lattice-polarised period stratum of the Vol~III chart
 classification (Vol~III~\cite[\S\,V]{CYQGVolIII}: the
 ``lattice-polarised period domain'' equivariance stratum). The
 \((K3 \times E)\)-fiber rank \(\kappa_{\mathrm{fiber}} = 24\) is the
-Mukai-lattice rank of \(\widetilde \Lambda_{K3}\) and enters the
-present chapter only as the rank of the Heisenberg algebra of the
-Mukai lattice, not as a discriminant invariant.
+Mukai-lattice rank of \(\widetilde \Lambda_{K3}\); it is the rank of
+the Heisenberg algebra of the Mukai lattice, not a discriminant
+invariant.
 
 The mixed-holomorphic-topological-strings companion volume
 \cite{MixedHTSCompanion} records that the modular line bundle on
 \(\overline{\mathcal A}_g\) at level \(g = 2\) is
 \(\Omega_{\mathrm{central}}\), and that
-\(\Phi_{10} = \chi_{10} = \Delta_5^{\,2}\) is the level-\(2\)
-section. The conjecture above is consistent with that statement:
-the polar divisor of \(\Delta_5^{-2} = \Phi_{10}^{-1}\) on
+\(\Phi_{10}^{\mathrm{un}} = \chi_{10} = \Delta_5^{\,2}\) is the genus-\(2\)
+section.  The mirror-discriminant conjecture is consistent with that statement:
+the polar divisor of \(\Delta_5^{-2} = (\Phi_{10}^{\mathrm{un}})^{-1}\) on
 \(\overline{\mathcal A}_2\) is twice the divisor of \(\Delta_5\),
 and the mirror discriminant identification is precisely the
 geometric origin of that section.
@@ -778,36 +789,16 @@ geometric origin of that section.
 The Vol~II Hall--Borcherds residual is silent on
 View~\textcircled{4}: the period-side discriminant identification
 is independent of the gravitational-lift bridge, and the
-conjecture above does not require the residual to be discharged.
-A discharge of the Hall--Borcherds residual on the
+conjecture above does not require the residual.
+Solving the Hall--Borcherds residual on the
 \((K3 \times E)\)-component would not by itself prove
 Conjecture~\ref{conj:mirror-discriminant}; conversely, a proof
 of Conjecture~\ref{conj:mirror-discriminant} would not
-automatically discharge the Hall--Borcherds residual.
+automatically construct the Hall--Borcherds residual.
 
 \medskip
 
-The fifth view stands open. The four other views form a single
-quadrilateral of theorems and conditional theorems; the fifth
-view is the missing diagonal. Its discharge is the next
-geometric problem in the programme.
-
-% Bibliographic anchors used by this chapter that are not yet entered
-% into proj.bib (queued for the integration owner; cross-volume
-% citations are nonfatal because main.tex's \bibliography{proj} is
-% the sole bibliography source):
-%   AspinwallMorrisonStringy  (Aspinwall--Morrison, 1994/97)
-%   DolgachevMirrorLP         (Dolgachev, J. Math. Sci. 81, 1996)
-%   BruinierFunkeHeegner      (Bruinier--Funke, Crelle 594, 2006)
-%   CYQGVolIII                (cross-repo: ~/calabi-yau-quantum-groups)
-%   CYQGVolIIIWave3           (cross-repo: ~/calabi-yau-quantum-groups
-%                              C13 lattice-polarised K3 ledger)
-%   ChiralBarCobarVolII       (cross-repo: ~/chiral-bar-cobar-vol2)
-%   MixedHTSCompanion         (cross-repo:
-%                              ~/mixed-holomorphic-topological-strings)
-%
-% These keys are used inline above with the standard \cite{} macro;
-% under \bibliography{proj} they will surface as undefined-citation
-% warnings until the integration owner imports the entries (or
-% replaces with substitute citations to GN, OB, BRYAN, MaulikTodaGV,
-% SaitoMHM, BORCEA, VOISIN, Borcherds95, B already in proj.bib).
+View~\textcircled{4} remains conjectural.  The automorphic, BKM,
+Pfaffian, and theta-lift views form the theorem-level quadrilateral at
+the stated categorical dimensions.  The mirror-discriminant identity is
+the remaining period-side equality.

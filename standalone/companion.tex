@@ -1,0 +1,554 @@
+% =====================================================================
+%  THE COMPANION TO THE IGUSA SQUARE ROOT
+%  Distilled from ~/igusa-cusp-form. Standalone document.
+%  Author: Raeez Lorgat.
+% =====================================================================
+\documentclass[11pt]{article}
+\usepackage[localtheorems]{raeez-math-template}
+
+\providecommand{\cA}{\mathcal{A}}
+\providecommand{\cC}{\mathcal{C}}
+\providecommand{\cD}{\mathcal{D}}
+\providecommand{\cF}{\mathcal{F}}
+\providecommand{\cH}{\mathcal{H}}
+\providecommand{\cL}{\mathcal{L}}
+\providecommand{\cM}{\mathcal{M}}
+\providecommand{\cO}{\mathcal{O}}
+\providecommand{\cP}{\mathcal{P}}
+\providecommand{\cW}{\mathcal{W}}
+\providecommand{\cZ}{\mathcal{Z}}
+\providecommand{\bC}{\mathbb{C}}
+\providecommand{\bR}{\mathbb{R}}
+\providecommand{\bQ}{\mathbb{Q}}
+\providecommand{\bZ}{\mathbb{Z}}
+\providecommand{\bH}{\mathbb{H}}
+\providecommand{\bF}{\mathbb{F}}
+\providecommand{\fg}{\mathfrak{g}}
+\providecommand{\fD}{\mathfrak{D}}
+\providecommand{\fA}{\mathfrak{A}}
+\providecommand{\fM}{\mathfrak{M}}
+\providecommand{\barB}{\overline{B}}
+\providecommand{\MC}{\mathrm{MC}}
+\providecommand{\Ran}{\operatorname{Ran}}
+\providecommand{\Mbar}{\overline{\mathcal{M}}}
+\providecommand{\FM}{\overline{\mathrm{FM}}}
+\providecommand{\Vir}{\mathrm{Vir}}
+\providecommand{\ChirHoch}{\operatorname{ChirHoch}}
+\providecommand{\Zder}{Z^{\mathrm{der}}_{\mathrm{ch}}}
+\providecommand{\kch}{\kappa_{\mathrm{ch}}}
+\providecommand{\kBKM}{\kappa_{\mathrm{BKM}}}
+\providecommand{\kcat}{\kappa_{\mathrm{cat}}}
+\providecommand{\kfib}{\kappa_{\mathrm{fiber}}}
+\providecommand{\SCchtop}{\mathsf{SC}^{\mathrm{ch,top}}}
+\providecommand{\PhiFA}{\Phi^{\mathrm{FA}}}
+\providecommand{\SpCh}{\mathrm{Sp}^{\mathrm{ch}}}
+\providecommand{\CoHA}{\mathrm{CoHA}}
+\providecommand{\Dfive}{\Delta_5}
+\providecommand{\Phiten}{\Phi_{10}}
+\providecommand{\Tr}{\operatorname{Tr}}
+\providecommand{\Rez}{\operatorname{Res}}
+\providecommand{\Conf}{\operatorname{Conf}}
+\providecommand{\Pf}{\operatorname{Pf}}
+\providecommand{\smult}{\operatorname{smult}}
+\providecommand{\dend}{\operatorname{den}}
+\providecommand{\Sp}{\mathrm{Sp}}
+\providecommand{\SO}{\mathrm{SO}}
+\providecommand{\HypPlan}{U}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{principle}{Principle}
+
+\title{\bfseries The Igusa Square Root\\[0.4em]\Large The Companion}
+\author{Raeez Lorgat}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent\itshape
+The Igusa cusp form $\chi_{10}$ of weight ten on $\Sp_4(\bZ)$ has a
+square root: the weight-five cusp form $\Dfive$ with the order-two
+Maass multiplier $\nu_{\Dfive}$, and the square root, not the square,
+is the fundamental object. The BPS partition function
+$Z^{K3\times E}_{\mathrm{BPS}}=\Dfive^{-2}=\chi_{10}^{-1}$ is blind to
+the sign of $\Dfive$; the Pfaffian --- the square root of the
+determinant line --- retains the order-two orientation character, and
+the manuscript's central conditional identity is
+$\epsilon_o=\nu_{\Dfive}$. Five readings of $\Dfive$ are assembled:
+the automorphic section, the denominator of a generalized
+Borcherds--Kac--Moody superalgebra on a rank-three Lorentzian lattice,
+a protected Pfaffian of a $K3\times E$ factorization datum, a
+conjectural mirror discriminant, and the singular theta lift of the
+$K3$ half-elliptic-genus $\phi_{0,1}$. The triangle
+automorphic--denominator--theta is classical; the Pfaffian reading is
+a recognition criterion relative to named finite data; the mirror
+reading is open. This companion states the five views with exact
+normalisations, the two unconditional new results, the honest ledger
+of retained data, and the place of $\Dfive$ in the five-garden
+programme: the terminal scalar shadow of the $K3\times E$ object.
+\end{abstract}
+
+\section{The seed}\label{sec:seed}
+
+A partition function that is a perfect square asks for its square
+root. On the trivial-canonical threefold $X=K3\times E$ the reduced
+curve-counting partition function is
+$Z^{X}_{\mathrm{BPS}}=\chi_{10}^{-1}$, and
+$\chi_{10}=\Dfive^2$ where $\Dfive$ is the unique weight-five cusp
+form on $\Sp_4(\bZ)$ with character --- the Maass multiplier
+$\nu_{\Dfive}$, of order two, trivial on the theta group and equal to
+$\det$ on the relevant reflection subgroup. Squaring kills exactly one
+bit: an order-two twist that no scalar function of the period sees.
+The manuscript's organising claim is that this bit is geometric. It is
+the orientation of a moduli problem --- the $\bZ/2$ of a Pfaffian line
+whose square is a determinant line --- and the five readings of
+$\Dfive$ are five levels at which one and the same $K3\times E$ datum
+$\fA_{K3\times E}\in E_3\text{-}\mathrm{HolFA}(K3\times E)$ presents
+it:
+\[
+\textcircled{1}\ \text{automorphic section}\qquad
+\textcircled{2}\ \text{BKM denominator}\qquad
+\textcircled{3}\ \text{protected Pfaffian}\qquad
+\textcircled{4}\ \text{mirror discriminant}\qquad
+\textcircled{5}\ \text{theta lift.}
+\]
+The edges $\textcircled{1}\leftrightarrow\textcircled{2}$,
+$\textcircled{2}\leftrightarrow\textcircled{5}$,
+$\textcircled{1}\leftrightarrow\textcircled{5}$ are theorems of Igusa,
+Borcherds and Gritsenko--Nikulin. The edge
+$\textcircled{2}\leftrightarrow\textcircled{3}$ --- the
+Pfaffian--Dirac identity --- is this manuscript's contribution, and it
+is a \emph{recognition criterion}: a theorem relative to a named
+finite package of retained data which the manuscript's own ledgers
+record as not yet supplied. Reading $\textcircled{4}$ is a
+conjecture. The five-fold thesis is deliberately not closed; what the
+architecture supplies is the exact list of finite data that would
+close it.
+
+\section{The objects}\label{sec:objects}
+
+\begin{definition}[The Jacobi seed]
+$\phi_{0,1}$ is the weak Jacobi form of weight $0$ and index $1$,
+normalised by the $K3$ elliptic genus
+$Z_{K3}(\tau,z)=2\,\phi_{0,1}(\tau,z)$, with closed form
+$\phi_{0,1}=4\sum_{i=2}^{4}\theta_i(\tau,z)^2/\theta_i(\tau,0)^2$ and
+expansion $\phi_{0,1}=r^{-1}+10+r+O(q)$. Its coefficients $f(n,l)$
+depend only on $4n-l^2$:
+\[
+f(0,0)=10,\quad f(0,\pm1)=1,\quad f(1,0)=108,\quad f(1,\pm1)=-64,
+\quad f(1,\pm2)=10,\quad f(2,0)=808,\ \ldots
+\]
+with support $4n-l^2\ge-1$.
+\end{definition}
+
+\begin{definition}[The lattices]
+With $\HypPlan$ the hyperbolic plane, the ambient rank-three lattice
+is $\Lambda^{2,1}=\HypPlan\oplus\langle2\rangle$ with basis
+$(f_2,f_3,f_{-2})$, $(f_2,f_{-2})=-1$, $(f_3,f_3)=2$. The type-II
+sublattice $\Lambda^{2,1}_{II}$ (even coefficients on $f_{\pm2}$) has
+index $4$ and discriminant $-32$. The simple type-II roots
+\[
+\delta_1=2f_2-f_3,\qquad \delta_2=2f_{-2}-f_3,\qquad \delta_3=f_3
+\]
+have Cartan matrix
+$(\delta_i,\delta_j)=4\mathbf I_3-2\mathbf J_3=
+\begin{psmallmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{psmallmatrix}$ and
+Weyl vector $\rho=\tfrac12(\delta_1+\delta_2+\delta_3)$ with
+$(\rho,\delta_i)=-1$. The off-diagonal entries $-2$ are infinite
+Coxeter exponents: the reflection group
+$W^{(2)}(\Lambda^{2,1}_{II})=\langle s_{\delta_1},s_{\delta_2},
+s_{\delta_3}\rangle$ is the free product $\bZ/2*\bZ/2*\bZ/2$
+--- the universal Coxeter group on three generators, with
+abelianisation $(\bZ/2)^3$; there is no braid relation. The theta-lift
+lattice is $\Lambda^{3,2}=\HypPlan\oplus\HypPlan\oplus\langle2\rangle$,
+realised as $q_0^{\perp}$ inside $\wedge^2\bZ^4$ with the Pfaffian
+pairing; the exceptional isogeny $\mathrm{PSp}_4(\bR)\simeq\SO(3,2)_+$
+carries Siegel modular forms to orthogonal ones.
+\end{definition}
+
+\begin{definition}[Mukai--Gram dictionary]
+The formal charge lattice of $X=S\times E$ is
+$\Gamma^{\mathrm{form}}_X=\widetilde H(S,\bZ)\otimes
+H^{\mathrm{even}}(E,\bZ)$, charges $(Q,P)$. The quadratic Gram map
+$\Pi_X(Q,P)=\bigl(\tfrac{(Q,Q)}2,(Q,P),\tfrac{(P,P)}2\bigr)\in\bZ^3$
+is not additive; its defect is a symmetric polarization $B$ forcing
+the normal-ordered central extension
+$\widehat\Gamma_X=\Gamma^{\mathrm{form}}_X\oplus_B\bZ^3$ on which the
+corrected map is additive \textup{(the naive additive pushforward is
+proved not to exist)}. For a curve class $\beta_h=s_1+hF$ with
+$\chi(\cO_Y)=n$ and $d$ points, the D6--D2--D0 charge computes to
+$\Pi_X=(h-1,\,n,\,d-1)$, and the root grading is
+$\alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}$ with
+$\alpha(n,l,m)^2=-2(4nm-l^2)$.
+\end{definition}
+
+\begin{definition}[The Dirac--Igusa pro-object]
+$\fD^{DI}_X$ is an inverse system over Harder--Narasimhan heights of
+fourteen-component data: the $E_3$-prefactorization datum, a hybrid
+factorization carrier on
+$\Ran^{\mathrm{hyb}}(E)=\Ran(E)_{b=0}\sqcup\Ran^{\mathrm{wr}}(E)_{b>0}$,
+the charge lattice with Gram projection, vanishing-cycle coefficients
+with cosection-twisted reduced d-critical orientation \textup{(the
+inflated $K3$ two-form supplies the cosection; Joyce--Upmeier square
+roots supply the orientation candidates)}, Hall product and coproduct
+on $H^\bullet_c(\fM^{\mathrm{red},+}(X),\Phi_W\otimes o)$, a
+first-order Dirac block with Pfaffian line, a chiral Koszul source
+coalgebra $C_X$ with cobar comparison towards
+$U^{\mathrm{ch}}_E(\fg_{\Dfive}\otimes\cO_E)$, and a recognition map.
+Two honesty clauses are part of the definition. The ``Dirac operator''
+is algebraic: the first-order block at degree $\gamma$ is the
+$2\times2$ skew matrix
+$J_\gamma=\begin{psmallmatrix}0&1-x^\gamma\\-(1-x^\gamma)&0
+\end{psmallmatrix}$ with
+$\Pf(J_\gamma)=(1-x^\gamma)^{\operatorname{sdim}P_\gamma}$,
+$x^\gamma=q^nr^ls^m$ --- no analytic operator on a constructed state
+space is asserted. And the geometric Pfaffian line satisfies
+$\cL_{\Pf}^{\otimes2}\simeq\cL_{\det}$: the square root of the
+determinant of the cosection-reduced self-Ext complex, which is
+exactly where the orientation bit lives.
+\end{definition}
+
+Three names discipline the one symbol: $\cD_X$ is the automorphic
+section (view $\textcircled{1}$);
+$\dend(\fg_{\Dfive})=64^{-1}\Dfive(2Z)$ is the denominator (view
+$\textcircled{2}$); $\Pf_{\mathrm{prot}}(\fD^{DI}_X)$ is the protected
+Pfaffian (view $\textcircled{3}$, conditional). The bare handle
+$\Dfive$ never substitutes for any of the three.
+
+\section{The theorems}\label{sec:theorems}
+
+\begin{theorem}[View $\textcircled{1}$; proved]\label{thm:view1}
+$\cD_X=\Dfive$ is the Borcherds--Gritsenko--Nikulin section of the
+weight-five automorphic line on $\Sp_4(\bZ)\backslash\bH_2$ with
+multiplier $\nu_{\Dfive}$: weight $5=f(0,0)/2$, divisor the simple
+Humbert surface $\mathcal H_1$ \textup{(the diagonal locus)} with
+multiplicity one, leading theta coefficient
+$[q^{1/2}r^{1/2}s^{1/2}]\Dfive=2^6=64$, and in the chamber
+$0<|s|\ll|q|\ll|r|^{-1}\ll1$ the Borcherds product
+\[
+\Dfive(Z)\;=\;64\,q^{1/2}r^{1/2}s^{1/2}
+\prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}
+\bigl(1-q^nr^ls^m\bigr)^{f(nm,l)} .
+\]
+The multiplier has order two, restricts to $\det$ on
+$W^{(2)}(\Lambda^{2,1}_{II})$, and is trivial on chamber-permuting
+type-I reflections.
+\end{theorem}
+
+\begin{theorem}[View $\textcircled{2}$; proved, Gritsenko--Nikulin]
+\label{thm:view2}
+The generalized Borcherds--Kac--Moody Lie superalgebra
+$\fg_{\Dfive}$ on $\Lambda^{2,1}_{II}$ --- three even real simple
+roots $\delta_i$, imaginary simple data with parity multiplicities
+read off $\phi_{0,1}$ --- has Weyl--Kac--Borcherds denominator
+\[
+\dend(\fg_{\Dfive})
+=\sum_{w\in W^{(2)}}\det(w)\,
+w\Bigl(e^{-2\pi i(\rho,z)}-\!\!\sum_{a}m(a)\,e^{-2\pi i(\rho+a,z)}\Bigr)
+=e^{-2\pi i(\rho,z)}\!\!\prod_{\alpha\in\mathcal R_+}\!\!
+(1-e^{-2\pi i(\alpha,z)})^{\smult(\alpha)}
+=\tfrac1{64}\Dfive(2Z),
+\]
+with signed root supermultiplicities
+$\smult(\alpha(n,l,m))=f(nm,l)$ on the active support. The doubling
+$Z\mapsto2Z$ records the index-four sublattice; $64$ is the theta
+normalisation, not a doubling factor.
+\end{theorem}
+
+\begin{theorem}[View $\textcircled{5}$; proved, Borcherds]
+\label{thm:view5}
+The theta decomposition of $\phi_{0,1}$ is a weight $-1/2$
+vector-valued form $h$ for the dual Weil representation of
+$\langle2\rangle$; its regularized theta lift on $\Lambda^{3,2}$,
+pulled through $\mathrm{PSp}_4(\bR)\simeq\SO(3,2)_+$, is
+$\Theta(\phi^{\mathrm{Weil}}_{0,1})=\Dfive$, with weight
+$c_{\phi}(0,0)/2$ and divisor
+$\sum c_\phi(-\lambda^2/2,\lambda)\,\lambda^\perp$.
+\end{theorem}
+
+\begin{theorem}[The BPS scalar; proved elsewhere]\label{thm:bps}
+For primitive classes on $K3\times E$ in the
+Oberdieck--Pandharipande chamber, the reduced Donaldson--Thomas,
+stable-pairs and Oberdieck--Pixton partition functions agree:
+\[
+Z^X_{\mathrm{DT}}=Z^X_{\mathrm{PT}}=Z^X_{\mathrm{OP}}
+=-4096\,\Dfive^{-2},
+\qquad
+Z^{K3\times E}_{\mathrm{BPS}}:=(\Phiten^{\mathrm{un}})^{-1}
+=\Dfive^{-2},
+\]
+where $4096=64^2$ is the squared theta-leading constant and the sign
+is the Oberdieck--Pandharipande scalar branch. The arithmetic of the
+square: $\Delta_{10}=\Dfive^2$ spans the Maass space, is the
+Saito--Kurokawa lift of $\Delta E_6\in S_{18}(\mathrm{SL}_2(\bZ))$,
+with spinor $L$-function
+$L_{\mathrm{spin}}(s,\Delta_{10})=\zeta(s-8)\,\zeta(s-9)\,
+L(s,\Delta E_6)$ --- a Ramanujan-violating CAP form, eigenvalues
+$\lambda(2)=240$, $\lambda(3)=21960$.
+\end{theorem}
+
+\begin{theorem}[The two unconditional new results]\label{thm:new}
+\textup{(i)} At the triple root
+$\delta_{123}=\delta_1+\delta_2+\delta_3$ \textup{(norm $-6$)} the
+parity-resolved multiplicities of $\fg_{\Dfive}$ are
+\[
+\dim_{\bar0}=29,\qquad \dim_{\bar1}=93,\qquad 29-93=-64=f(1,1),
+\]
+the $29$ even directions arising as $2$ independent Jacobi words
+$[e_k,[e_i,e_j]]$ plus $3\times9$ brackets against the nine isotropic
+imaginary-simple fibres \textup{(whence $\smult(a_{ij})=10=1+9$)}, the
+$93$ odd directions as imaginary simple generators.
+\textup{(ii)} A divisor, a leading coefficient, a scalar Borcherds
+product, and its square do not determine a section of
+$\cL^{5}\otimes T_\chi$ for a nontrivial order-two flat twist
+$T_\chi$: order-two monodromy is invisible after squaring. This is
+the precise sense in which $\Dfive$ carries strictly more than
+$\chi_{10}$.
+\end{theorem}
+
+\begin{theorem}[Pfaffian--Dirac; conditional recognition]
+\label{thm:pfdirac}
+Granted the retained data $(D0)$ \textup{(degeneration limit of the
+cosection-reduced orientation theory)}, $(O1)$ \textup{(strong reduced
+orientation on the quotient self-Ext frame bundle)}, $(O1)^+$
+\textup{(Weyl-equivariant transport along the three type-II
+reflections)}, $(O2_{\mathrm{atlas}})$ \textup{(the local Pfaffian
+wall atlas)} and the finite geometric Pfaffian datum
+$(P_{\mathrm{fin}})$ on a cofinal Harder--Narasimhan system,
+\[
+\iota_{\mathrm{aut}}\bigl(\Pf_{\mathrm{prot}}(\fD^{DI}_X)\bigr)
+=\cD_X=\Dfive,
+\qquad
+\epsilon_o=\nu_{\Dfive}\ \text{on}\ W^{(2)}(\Lambda^{2,1}_{II}).
+\]
+The orientation mechanism is a rank-one computation: at a Pfaffian
+wall the odd crossing complex has $\Pf=\upsilon\,u$ and the
+reflection flips its sign; since $W^{(2)}$ is a free product of three
+involutions, a $\{\pm1\}$-character is fixed by its generator values,
+where both $\epsilon_o$ and $\nu_{\Dfive}$ take $-1$. Honest scope:
+the hypotheses of $(P_{\mathrm{fin}})$ encode the Fourier data of
+$\Dfive$, so the identity is $q$-expansion rigidity relative to the
+datum, not a construction; the manuscript's certificate ledgers record
+every component of the retained package as not supplied; and the
+$2^{12}=4096=64^2$ wall count is stipulated inside the atlas datum,
+so its match with the squared theta constant carries no independent
+evidence.
+\end{theorem}
+
+\begin{theorem}[Primitive recognition; conditional]\label{thm:recog}
+Granted the ten-part finite compact-source datum $(S1)$--$(S10)$
+\textup{(chain-level descent endpoint, Cartan matching, simple
+representatives, Borcherds--Kac relations in the Hall bracket,
+radical equality, no-extra-relations, generation, completed PBW,
+exact triangular completion, and full parity dimensions
+$\dim P_{\gamma,\bar p}=\operatorname{mult}^{\mathrm{GN}}_{\bar p}
+(\alpha(\gamma))$ in both parities}\textup),
+the protected primitive Lie superalgebra of the $K3\times E$ datum
+recognises the Gritsenko--Nikulin algebra,
+$\cP_X\cong\fg_{\Dfive}$, and the chiral Koszul source satisfies
+$\Omega^{\mathrm{ch}}_E C_X\simeq
+U^{\mathrm{ch}}_E(\fg_{\Dfive}\otimes\cO_E)$.
+\end{theorem}
+
+\begin{theorem}[Level-$\mathsf Z$ trace criterion; conditional]
+\label{thm:trace}
+Granted the retained trace datum $(Z_{\mathrm{HB}})$ and, as
+established inputs, chiral Hochschild concentration on the Koszul
+locus \textup{(Volume I)} and the chiral-Hochschild stratification
+\textup{(Volume II)}, the bulk supertrace of the $K3\times E$ chart
+satisfies
+$\Tr^{\mathrm{bulk}}\bigl((-1)^F\bigr)_{\Zder(C_X)}=\Dfive^{-2}$, with
+the Oberdieck--Pandharipande branch $-4096\,\Dfive^{-2}$ as the
+separate scalar representative. The stronger level-$\mathsf A$
+statement --- a gravity-line operator algebra acting on the boundary
+with Pentagon trace $\Phiten^{\mathrm{un}}=\Dfive^2$ --- is open
+\textup{(Volume II, second construction problem)}.
+\end{theorem}
+
+\begin{conjecture}[View $\textcircled{4}$: mirror discriminant]
+\label{conj:mirror}
+On the rank-three Mukai-invariant period component
+$\Omega_{\widetilde M}/\Gamma_{\widetilde M}\simeq\bH_2/\Sp_4(\bZ)$
+for $M=\HypPlan\oplus\langle-2\rangle$ \textup{(Dolgachev mirror
+$\check M=\HypPlan\oplus E_7(-1)\oplus E_8(-1)$)}, the discriminant
+section of the mirror period family equals $\Dfive^{-2}$; its polar
+divisor is twice the reduced mirror discriminant, supported on the
+Humbert divisor where $\Dfive$ vanishes. The theorem-level part is
+the divisor identity $[\operatorname{div}\Dfive]=[\mathcal H_1]$; the
+trivialisation, polar-order, and mirror-correspondence clauses are
+open.
+\end{conjecture}
+
+\begin{conjecture}[Twined denominators]\label{conj:twined}
+For $g$ in the Mathieu group $M_{24}$, the $g$-twined BKM denominators
+satisfy $\dend(\fg^{(g)}_{\Dfive})
+=\Theta(\phi^{(g),\mathrm{Weil}}_{0,1})|_{\bH_2}$; the classes
+$7A,7B,15A,15B$ lie outside the CHL frame
+\textup{(selected by $\varphi(N)\mid2$)} and their constant terms
+need not be even --- the named arithmetic obstruction.
+\end{conjecture}
+
+\section{The computations}\label{sec:computations}
+
+The five-coordinate $\kappa$-tuple of $K3\times E$, five distinct
+constructions with no additive relation:
+\[
+\bigl(\kcat,\ \kch^{\mathrm{Hodge}},\ \kch^{\mathrm{Heis}},\
+\kBKM,\ \kfib\bigr)=(0,\,0,\,3,\,5,\,24),
+\]
+where $\kcat=\chi(\cO_{K3})\chi(\cO_E)=0$ is K\"unneth-multiplicative,
+$\kch^{\mathrm{Hodge}}=\sum_q(-1)^qh^{0,q}=0$,
+$\kch^{\mathrm{Heis}}=3$ is the rank of the type-II Heisenberg--Cartan
+after Gram projection, $\kBKM(\Dfive)=c_1(0)/2=5$ is the Borcherds
+weight, and $\kfib=24$ is simultaneously $\chi_{\mathrm{top}}(K3)$ and
+the Mukai rank --- numerically equal, semantically distinct. The
+additive identity
+$\kBKM=\kch^{\mathrm{Hodge}}+\chi(\cO_{\mathrm{fiber}})$ is false
+\textup{(it predicts $2$; the value is $5$)}: the five coordinates are
+incommensurable readings of one datum.
+
+The universal Borcherds-weight identity is
+$\kBKM(\Phi_N)=c_N(0)/2$, always naming the input denominator. On the
+CHL ladder $N\in\{1,2,3,4,6\}$ the corrected weights are
+\[
+\mathrm{wt}=\bigl(5,\ 3,\ 2,\ \tfrac32,\ 1\bigr),
+\qquad c_N(0)=(10,\ 6,\ 4,\ 3,\ 2),
+\]
+per Jatkar--Sen and Govindarajan--Krishna --- the weight at $N=4$ is
+half-integral, and the once-recorded ladder $(5,4,3,2,1)$ is
+retracted \textup{(its error: reading the frame-shape half-sum, the
+weight of $\eta(\tau)^8\eta(2\tau)^8$, as a Jacobi constant term)}.
+The Fake Monster form $\Phi_{12}$ carries $c_\Lambda(0)=24$,
+$\kBKM=12$: one rule, distinct rows.
+
+The first finite window of the denominator algebra, parity-resolved
+($\mathrm{even}\,|\,\mathrm{odd}$): the isotropic doubles $2a_{ij}$
+carry $10\,|\,0$; the triple root $\delta_{123}$ carries $29\,|\,93$;
+the next window rows carry signed dimensions
+$108$, $-513$, and at $2\delta_{123}$ superdimension $4016$ with
+correction $m=-540$. The verification $[qrs]$-coefficient of the
+monic product equals $93=64+29$.
+
+Normalisation trap, stated once: $\Phiten^{\mathrm{un}}=\Dfive^2$
+\textup{(theta-normalised)} while the Oberdieck--Pixton-monic form is
+$\chi_{10}^{\mathrm{OP}}=D_5^2=4096^{-1}\Dfive^2$ with
+$D_5=64^{-1}\Dfive$; the two differ by $2^{12}$, and every identity
+above names its branch.
+
+\section{The garden}\label{sec:garden}
+
+One logarithmic $1$-form generates the programme. On a smooth complex
+curve $X$, the form $\eta=d\log(z_1-z_2)$ is the unique
+coordinate-free $1$-form with a residue along the diagonal of
+$\Conf_2(X)$; the Arnold relation
+$\eta_{12}\wedge\eta_{23}+\eta_{23}\wedge\eta_{31}
++\eta_{31}\wedge\eta_{12}=0$ generates all relations among its higher
+companions. From $\eta$ one builds, for an augmented chiral algebra
+$\cA$ on $X$, the ordered bar complex
+$\barB^{\mathrm{ord}}_X(\cA)=T^c(s^{-1}\bar\cA)\otimes
+\Omega^\bullet_{\log}(\FM_\bullet(X))$; its differential squares to
+zero exactly when $\cA$ satisfies the Borcherds identity. Assembled
+over $\Mbar_{g,n}$ with the prime-form propagator, the total
+differential is a Maurer--Cartan element $\Theta_\cA=D_\cA-d_0$;
+genus~$\ge1$ flatness fails by the curvature
+$d^2_{\mathrm{fib}}=\kappa(\cA)\,\omega_g$, and the scalar $\kappa$
+--- $\kappa(\Vir_c)=c/2$,
+$\kappa(V_k(\fg))=\dim\fg\,(k+h^\vee)/2h^\vee$ --- is the central
+charge read as modular curvature. The Verdier--Koszul dual obeys
+conductor laws $c(\cA)+c(\cA^!)=K$ with $K(\Vir)=26$,
+$K(\cW_N)=4N^3-2N-2$, $K(V_k(\fg))=2\dim\fg$ along
+$k\mapsto-k-2h^\vee$; the landscape stratifies into archetype classes
+$\mathsf G/\mathsf L/\mathsf C/\mathsf M$ of shadow depth
+$2/3/4/\infty$ plus the critical Feigin--Frenkel stratum.
+
+Every object sits on one chain: primitive factorization category
+$\to$ chart algebra $A_b$ $\to$ bar shadow $\barB(A_b)$ $\to$ derived
+chiral centre $\Zder(A_b)$ \textup{(the bulk)} $\to$ acting line
+operators $\to$ scalar modular shadow. Identifying stages without the
+licensing datum --- shadow $=$ object --- is the master error the
+programme is disciplined against; this volume sits deliberately at
+the terminal stage and refuses every unlicensed promotion: $\Dfive$
+is not a Hilbert space, $Z_{\mathrm{BPS}}$ is not a path integral,
+the denominator is not the bulk.
+
+The five gardens are five readings of the chain. \emph{Volume I}
+(\texttt{chiral-bar-cobar}) builds the engine on algebraic curves:
+bar--cobar adjunction and inversion, quadratic Koszul recognition,
+centre complementarity, the deformation--Hodge--graph traces
+$F_g=\kappa\lambda_g^{\mathrm{FP}}+\delta F_g^{\mathrm{cross}}$,
+Hochschild concentration, and the arithmetic shadow. \emph{Volume II}
+(\texttt{chiral-bar-cobar-vol2}) reads the same object as physics:
+bar $=$ BV/BRST, quantum master equation $=$ Maurer--Cartan, anomaly
+$=$ curvature ($c-26\leftrightarrow\kappa_{\mathrm{tot}}$), the
+two-coloured Swiss-cheese operad as bulk--boundary home, and
+Universal Holography $\cA\mapsto(\partial=\cA,\
+\mathrm{bulk}=\Zder(\cA))$, at $\Vir_{c=3\ell/2G_N}$ the boundary
+reading of 3d gravity. \emph{Volume III}
+(\texttt{calabi-yau-quantum-groups}) constructs the geometric source:
+the two-stage functor $\Phi_d=\SpCh_{\Sigma_{d-1},C}\circ\PhiFA_d$
+from Calabi--Yau $d$-categories to chiral algebras on a curve, the
+cohomological Hall algebra $Y^+(X)$ with Drinfeld double $G(X)$ as
+the level-three quantum group --- at $K3\times E$ the conditional
+Hall--Borcherds recognition of $\fg_{\Dfive}$ that this volume's
+criteria make precise. \emph{Mixed holomorphic--topological strings}
+computes the local germ of the $d=2$ theory at $N$ Dirac branes,
+$J(f)=\Tr f(\phi_1,\phi_2)$, with the holomorphic de Rham obstruction
+$H^1(K3\times E,\cO)\neq0$ showing exactly why the local-to-global
+route needs more than the formal stalk. \emph{This volume} is the
+terminal scalar: the pentadic $\Dfive$, the one order-two bit that
+survives every projection, and the finite list of data that would
+promote it back to an operator.
+
+The single question underneath: characterise the modular convolution
+algebra $\fg^{\mathrm{mod}}_\cA$ as a geometric object. The proposed
+answer --- endomorphisms of the Lagrangian embedding
+$\cL_\cA\hookrightarrow\cM_{\mathrm{vac}}(\cA)$ in a $(-2)$-shifted
+symplectic stack of vacua --- has Volume I computing its Taylor jets,
+Volume II its local composition law, Volume III its geometric source,
+and this volume its sharpest example: the $K3\times E$ datum whose
+scalar shadow is $\Dfive$.
+
+\section{The frontier}\label{sec:frontier}
+
+The manuscript's architectural invention is the recognition-criterion
+format: every conditional theorem names the exact finite data that
+would close it, and the ledgers record what is supplied. The open
+list, in order of depth:
+
+\begin{enumerate}
+\item The finite compact-source datum $(S1)$--$(S10)$ for primitive
+recognition, and the finite Koszul comparison datum --- the operator-level
+construction of $\fg_{\Dfive}$ from $K3\times E$ moduli.
+\item The orientation package: $(D0_{\mathrm{HN}})$ degeneration
+datum, $(O1_{\mathrm{quot}})$ quotient orientation,
+Weyl transport $\mathcal T_W$, and the type-II wall atlas
+$(O2_{\mathrm{atlas}})$ --- what makes $\epsilon_o$ a character
+globally.
+\item The finite geometric Pfaffian datum $(P_{\mathrm{fin}})$,
+replacing $q$-expansion rigidity by construction.
+\item The trace datum $(Z_{\mathrm{HB}})$ and the Hall--Borcherds
+residual --- the four-part chain datum whose derived-centre trace is
+$\Dfive^{-2}$.
+\item The gravity-line operator algebra with Pentagon trace
+$\Dfive^2$ \textup{(Volume II's second construction problem)} --- the
+level-$\mathsf A$ completion.
+\item The mirror clauses \textup{(M1)}--\textup{(M4)} of view
+$\textcircled{4}$.
+\item Twined denominators for all twenty-six $M_{24}$ classes, with
+the parity obstruction at the non-CHL classes.
+\end{enumerate}
+
+What stands unconditionally: the classical triangle
+$\textcircled{1}\textcircled{2}\textcircled{5}$ with every
+normalisation pinned; the Oberdieck--Pandharipande scalar
+$-4096\,\Dfive^{-2}$; the Saito--Kurokawa arithmetic of the square;
+the parity-resolved window $29\,|\,93$ with $29-93=f(1,1)$; and the
+monodromy proposition that makes the square root a genuine invariant.
+The pentad is a programme; the square root is already a theorem.
+
+\end{document}

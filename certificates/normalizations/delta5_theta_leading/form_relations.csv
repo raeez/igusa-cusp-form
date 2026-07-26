@@ -1,0 +1,9 @@
+relation_id,relation_kind,left_form,right_form,scale_numerator,scale_denominator,computed_left_numerator,computed_left_denominator,computed_right_numerator,computed_right_denominator,residual_numerator,residual_denominator,source_reference,check_status,notes
+delta10_is_delta5_square,square,Delta10_theta,Delta5,1,1,4096,1,4096,1,0,1,Igusa theta-constant normalization; Maass character squares trivially,verified,\Delta_{10}=\Delta_5^2 in the theta-normalized convention
+chi10_is_delta10,same,chi10,Delta10_theta,1,1,4096,1,4096,1,0,1,Igusa and Oberdieck-Pandharipande naming convention,verified,\chi_{10} names the same unscaled generator as \Delta_{10}
+phi10un_is_chi10,same,Phi10_un,chi10,1,1,4096,1,4096,1,0,1,Borcherds unscaled determinant convention,verified,\Phi_{10}^{un} names the same unscaled determinant section
+chi10op_is_d5_square,square,chi10_OP,D5,1,1,1,1,1,1,0,1,Oberdieck-Pixton monic convention,verified,\chi_{10}^{OP}=D_5^2
+chi10op_is_scaled_delta10,same,chi10_OP,Delta10_theta,1,4096,1,1,1,1,0,1,squared theta-leading coefficient 4096,verified,\chi_{10}^{OP}=4096^{-1}\Delta_{10}
+zbps_is_phi10un_inverse,inverse,Phi10_un_inverse,Phi10_un,1,1,1,4096,1,4096,0,1,unscaled protected trace convention,verified,Z_BPS=(\Phi_{10}^{un})^{-1}
+op_inverse_is_chi10op_inverse,inverse,chi10_OP_inverse,chi10_OP,1,1,1,1,1,1,0,1,Oberdieck-Pixton monic inverse convention,verified,(\chi_{10}^{OP})^{-1} is the unsigned OP inverse
+op_branch_is_negative_chi10op_inverse,inverse,Z_OP_scalar_branch,chi10_OP,-1,1,-1,1,-1,1,0,1,Oberdieck-Pixton chamber sign; branch separation,verified,Z_OP^X=-(\chi_{10}^{OP})^{-1}=-4096\Delta_5^{-2}

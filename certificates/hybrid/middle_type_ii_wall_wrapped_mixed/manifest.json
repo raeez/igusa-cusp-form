@@ -1,0 +1,46 @@
+{
+  "schema_version": "middle_type_ii_wall_wrapped_mixed.v1",
+  "fixture_name": "middle_type_ii_wall_wrapped_mixed",
+  "hybrid_kind": "middle_type_ii_wall_wrapped_mixed_routing",
+  "status": "MIDDLE_TYPE_II_WALL_WRAPPED_MIXED_ROUTING_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "routing_certified": true,
+  "middle_wall_image_imported": true,
+  "type_ii_wall_branch_formula_checked": true,
+  "positive_elliptic_degree_checked": true,
+  "wrapped_stratum_definition_imported": true,
+  "mixed_correspondence_definition_imported": true,
+  "two_sided_mixed_definition_imported": true,
+  "wrapped_prequotient_definition_imported": true,
+  "retained_branch_comparison_rows": false,
+  "retained_wall_object_certification": false,
+  "effective_support_realization": false,
+  "anchor_population": false,
+  "o2_wall_atlas": false,
+  "quotient_descent": false,
+  "protected_integration": false,
+  "hybrid_carrier_population": false,
+  "tables": [
+    "wall_degree_rows.csv",
+    "wrapped_routing_rows.csv",
+    "mixed_operation_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/lattice/type_ii_wall_images",
+    "certificates/hybrid/geometric_elliptic_degree_map",
+    "certificates/hybrid/geometric_borcherds_degree_separation",
+    "certificates/hybrid/positive_elliptic_degree_projection",
+    "certificates/hybrid/wrapped_stratum_bpositive_prestack_definition",
+    "certificates/hybrid/equivariant_wrapped_prequotient_definition",
+    "certificates/hybrid/mixed_local_wrapped_correspondence_definition",
+    "certificates/hybrid/two_sided_mixed_correspondence_definition"
+  ],
+  "limitations": [
+    "This packet verifies the routing arithmetic for the middle type-II wall image gamma_wall(delta_2)=(0,1,1).",
+    "On the type-II wall branch d=m+1, the middle wall has d=2>0 and is therefore routed to the wrapped b>0 stratum.",
+    "Local insertions against this wrapped wall are typed by the mixed local/wrapped correspondence definitions before E-quotient.",
+    "No retained wall object, support-realization row, anchor population row, O2 wall-atlas row, quotient-descent row, protected-integration row, or aggregate hybrid-carrier population row is supplied."
+  ]
+}

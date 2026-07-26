@@ -1,0 +1,32 @@
+{
+  "schema_version": "moduli_cohomology_lim1_vanishing_obstruction.v1",
+  "fixture_name": "moduli_cohomology_lim1_vanishing",
+  "moduli_kind": "moduli_cohomology_lim1_vanishing_obstruction",
+  "coefficient_ring": "ZZ",
+  "status": "MODULI_COHOMOLOGY_LIM1_VANISHING_OBSTRUCTION_VERIFIED",
+  "lim1_vanishing_certification": false,
+  "mathematical_certification": false,
+  "finite_moduli_packet_imported": true,
+  "transition_geometry_packet_imported": true,
+  "imports": [
+    "certificates/moduli/k3e_finite_moduli",
+    "certificates/moduli/finite_moduli_transition_geometry"
+  ],
+  "tables": [
+    "coefficient_systems.csv",
+    "cohomology_towers.csv",
+    "cohomology_transition_maps.csv",
+    "image_stabilization.csv",
+    "ml_r1lim_defects.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet verifies the obstruction ledger for lim1 vanishing on retained moduli cohomology.",
+    "The finite-moduli packet does not yet supply extension and two-step flag stacks or transition rows.",
+    "The transition-geometry packet does not yet supply proper or closed transition morphisms.",
+    "No coefficient-system rows, cohomology tower rows, image-stabilization witnesses, or r1lim zero rows are supplied.",
+    "It does not prove that R1lim vanishes on moduli cohomology.",
+    "It does not prove lim1 vanishing on primitive spaces, pairing kernels, or PBW associated gradeds."
+  ]
+}

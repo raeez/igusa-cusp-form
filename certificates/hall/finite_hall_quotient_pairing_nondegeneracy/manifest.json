@@ -1,0 +1,51 @@
+{
+  "schema_version": "finite_hall_quotient_pairing_nondegeneracy.v1",
+  "fixture_name": "finite_hall_quotient_pairing_nondegeneracy",
+  "hall_kind": "finite_hall_quotient_pairing_nondegeneracy_obstruction",
+  "status": "FINITE_HALL_QUOTIENT_PAIRING_NONDEGENERACY_OBSTRUCTION_VERIFIED",
+  "row_number": 363,
+  "coefficient_ring": "QQ",
+  "relative_theorem_recorded": true,
+  "coproduct_adjointness_packet_imported": true,
+  "pairing_supersymmetry_packet_imported": true,
+  "positive_negative_pairing_packet_imported": true,
+  "pairing_kernel_lim1_packet_imported": true,
+  "transition_radical_packet_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "quotient_rank_formula_recorded": true,
+  "source_G_entries_supplied": false,
+  "source_K_entries_supplied": false,
+  "source_Q_entries_supplied": false,
+  "source_quotient_pairing_rows_supplied": false,
+  "source_quotient_rank_rows_supplied": false,
+  "source_determinant_rows_supplied": false,
+  "source_radical_identification_rows_supplied": false,
+  "quotient_nondegeneracy_proved_for_current_source": false,
+  "transition_radical_preservation_proved": false,
+  "pairing_kernel_lim1_vanishing_proved": false,
+  "mathematical_certification": false,
+  "imports": [
+    "certificates/hall/finite_hall_pairing_coproduct_adjointness",
+    "certificates/hall/finite_hall_pairing_supersymmetry",
+    "certificates/hall/finite_hall_positive_negative_pairing",
+    "certificates/hall/pairing_kernel_lim1_vanishing",
+    "certificates/hall/transition_radical_preservation",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "quotient_nondegeneracy_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv",
+    "text_requirements.csv"
+  ],
+  "limitations": [
+    "This packet proves quotient nondegeneracy only for supplied finite quotient-rank rows.",
+    "It records the finite linear algebra criterion for Q^t G Q on the radical quotient.",
+    "It does not supply compact K3xE source G entries, K entries, Q entries, quotient pairing rows, rank rows, determinant rows, or radical-identification rows.",
+    "It does not prove transition preservation of radicals.",
+    "It does not prove lim1 vanishing for the radical or pairing-kernel tower."
+  ]
+}

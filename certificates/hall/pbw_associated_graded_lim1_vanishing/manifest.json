@@ -1,0 +1,32 @@
+{
+  "schema_version": "pbw_associated_graded_lim1_vanishing_obstruction.v1",
+  "fixture_name": "pbw_associated_graded_lim1_vanishing",
+  "hall_kind": "pbw_associated_graded_lim1_vanishing_obstruction",
+  "coefficient_ring": "ZZ",
+  "status": "PBW_ASSOCIATED_GRADED_LIM1_VANISHING_OBSTRUCTION_VERIFIED",
+  "lim1_vanishing_certification": false,
+  "mathematical_certification": false,
+  "compact_hall_packet_imported": true,
+  "transition_pbw_packet_imported": true,
+  "imports": [
+    "certificates/sources/k3e_compact_hall",
+    "certificates/hall/transition_pbw_filtration_preservation"
+  ],
+  "tables": [
+    "pbw_graded_pieces.csv",
+    "pbw_graded_transition_maps.csv",
+    "pbw_graded_image_stabilization.csv",
+    "pbw_graded_ml_r1lim_defects.csv",
+    "pbw_graded_coverage.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet verifies the obstruction ledger for lim1 vanishing on PBW associated-graded towers.",
+    "The compact Hall source packet does not yet supply PBW filtration rows, ordered word bases, relation-rewrite rows, or associated-graded comparison rows.",
+    "The transition-PBW packet does not yet supply associated-graded transition matrices, PBW-symbol identities, A_beta PBW squares, or composition rows.",
+    "No PBW associated-graded image-stabilization witnesses, Mittag-Leffler status rows, or r1lim zero rows are supplied.",
+    "It does not prove that R1lim vanishes on PBW associated gradeds.",
+    "It does not prove lim1 vanishing on radicals or parity pieces."
+  ]
+}

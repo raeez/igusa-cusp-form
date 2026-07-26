@@ -1,0 +1,49 @@
+{
+  "schema_version": "quotient_after_correspondence_theta_mu_coproduct.v1",
+  "fixture_name": "quotient_after_correspondence_theta_mu_coproduct",
+  "hybrid_kind": "quotient_after_correspondence_theta_mu_coproduct",
+  "status": "QUOTIENT_AFTER_CORRESPONDENCE_THETA_MU_COPRODUCT_VERIFIED",
+  "theta_mu_coproduct_compatible": true,
+  "quotient_after_correspondence_imported": true,
+  "theta_mu_comparison_imported": true,
+  "theta_mu_associativity_imported": true,
+  "coproduct_certification": true,
+  "coproduct_defect_rank": 0,
+  "bialgebra_square_defect_rank": 0,
+  "primitive_certification": true,
+  "transition_certification": true,
+  "protected_integration_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "coproduct_rows.csv",
+    "coproduct_comparison_rows.csv",
+    "bialgebra_square_rows.csv",
+    "primitive_rows.csv",
+    "transition_rows.csv",
+    "protected_integration_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/quotient_after_correspondence_composition",
+    "certificates/hybrid/quotient_after_correspondence_base_change",
+    "certificates/hybrid/quotient_after_correspondence_thom_sebastiani",
+    "certificates/hybrid/quotient_after_correspondence_bm_chain_functor",
+    "certificates/hybrid/quotient_after_correspondence_theta_mu_comparison",
+    "certificates/hybrid/quotient_after_correspondence_theta_mu_associativity",
+    "certificates/hybrid/quotient_after_correspondence_theta_mu_primitives",
+    "certificates/hybrid/quotient_after_correspondence_hn_transition_compatibility"
+  ],
+  "limitations": [
+    "This packet proves only compatibility of theta_mu with supplied quotient-presented finite Hall coproduct and bialgebra rows.",
+    "It does not populate certificates/sources/k3e_compact_hall/hall_bialgebra_identities.csv.",
+    "Primitive-projection compatibility is separated in certificates/hybrid/quotient_after_correspondence_theta_mu_primitives.",
+    "The HN transition compatibility of Q_E_R is separated in certificates/hybrid/quotient_after_correspondence_hn_transition_compatibility.",
+    "The protected integration definition is separated in certificates/hybrid/protected_integration_definition.",
+    "It does not prove protected-integration compatibility or aggregate hybrid population.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/quotient_pseudofunctor.csv."
+  ]
+}

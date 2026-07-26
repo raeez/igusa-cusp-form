@@ -1,0 +1,47 @@
+{
+  "schema_version": "finite_hall_pairing_homogeneity.v1",
+  "fixture_name": "finite_hall_pairing_homogeneity",
+  "hall_kind": "finite_hall_pairing_homogeneity_obstruction",
+  "status": "FINITE_HALL_PAIRING_HOMOGENEITY_OBSTRUCTION_VERIFIED",
+  "row_number": 359,
+  "coefficient_ring": "QQ",
+  "relative_theorem_recorded": true,
+  "positive_negative_pairing_packet_imported": true,
+  "normal_ordered_gram_degree_packet_imported": true,
+  "formal_pairing_pushforward_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "homogeneity_formula_recorded": true,
+  "formal_degree_zero_pairing_rows_verified": true,
+  "source_G_entries_supplied": false,
+  "source_trace_functional_supplied": false,
+  "source_pairing_correspondences_supplied": false,
+  "source_homogeneity_defect_rows_supplied": false,
+  "pairing_homogeneity_proved_for_current_source": false,
+  "supersymmetry_proved": false,
+  "invariance_proved": false,
+  "coproduct_compatibility_proved": false,
+  "quotient_nondegeneracy_proved": false,
+  "mathematical_certification": false,
+  "imports": [
+    "certificates/hall/finite_hall_positive_negative_pairing",
+    "certificates/hall/finite_hall_normal_ordered_gram_degree",
+    "certificates/charge/hall_pairing_pushforward_compatibility",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "homogeneity_rows.csv",
+    "formal_import_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv",
+    "text_requirements.csv"
+  ],
+  "limitations": [
+    "This packet proves pairing homogeneity only for supplied source G rows from a homogeneous product and degree-zero trace.",
+    "It imports formal degree-zero pairing rows only as finite algebraic evidence.",
+    "It does not supply compact K3xE source G entries, trace rows, or pairing correspondences.",
+    "It does not prove supersymmetry, Frobenius invariance, coproduct compatibility, or quotient nondegeneracy."
+  ]
+}

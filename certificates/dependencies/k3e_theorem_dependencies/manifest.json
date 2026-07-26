@@ -1,0 +1,39 @@
+{
+  "schema_version": "k3e_theorem_dependency_fixture.v1",
+  "fixture_name": "k3e_theorem_dependencies",
+  "dependency_kind": "finite_theorem_dependency_candidate",
+  "window": "finite_schema_ledger",
+  "stage": "cofinal_hn_dependency_graph",
+  "coefficient_ring": "ZZ",
+  "certified": false,
+  "schema_only_complete": true,
+  "dependency_certification": false,
+  "mathematical_certification": false,
+  "empty_blocked": false,
+  "automorphic_only": false,
+  "target_only": false,
+  "scalar_only": false,
+  "mirror_only": false,
+  "gravity_only": false,
+  "table_row_counts": {
+    "beilinson_levels.csv": 5,
+    "objects.csv": 12,
+    "morphisms.csv": 9,
+    "theorem_dependencies.csv": 7,
+    "dependency_edges.csv": 20,
+    "forbidden_edges.csv": 13,
+    "status_separation.csv": 7,
+    "level_equalities.csv": 10,
+    "equality_sites.csv": 7,
+    "definition_separation.csv": 6,
+    "obstruction_independence.csv": 7,
+    "transitions.csv": 2,
+    "scalar_firewall.csv": 7
+  },
+  "limitations": [
+    "This packet is a finite theorem-dependency schema ledger only.",
+    "It records Beilinson-level sites, typed objects, morphisms, allowed proof edges, forbidden proof edges, claim-status separation, Beilinson-level equality scopes, equality-site rows, definition-separation rows, obstruction-independence rows, strict transition rows, and scalar-firewall rows.",
+    "It does not certify the Pfaffian theorem, the orientation theorem, primitive recognition, the mirror conjecture, the scalar trace, or the gravity-line residual.",
+    "The verifier checks schema, status, payload, zero defect ranks, coverage, equality-site coverage, definition non-circularity, and forbidden-edge separation only."
+  ]
+}

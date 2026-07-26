@@ -1,0 +1,46 @@
+{
+  "schema_version": "wrapped_insertion_order_conventions.v1",
+  "fixture_name": "wrapped_insertion_order_conventions",
+  "hybrid_kind": "wrapped_insertion_order_conventions",
+  "status": "WRAPPED_INSERTION_ORDER_CONVENTIONS_VERIFIED",
+  "wrapped_order_conventions_proved": true,
+  "ordered_wrapped_profiles": true,
+  "binary_vertex_order_rule": true,
+  "ww_quotient_subobject_convention": true,
+  "flag_comparison_order_preserved": true,
+  "flag_word_count": 8,
+  "braid_operator_used": false,
+  "unordered_wrapped_descent": false,
+  "ordered_colimit_descent": false,
+  "overlap_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "wrapped_order_rows.csv",
+    "flag_order_rows.csv",
+    "unordered_wrapped_descent_rows.csv",
+    "ordered_colimit_descent_rows.csv",
+    "overlap_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/higher_coloured_tree_category_definition",
+    "certificates/hybrid/wrapped_wrapped_correspondence_definition",
+    "certificates/hybrid/eight_word_two_step_flag_stacks"
+  ],
+  "limitations": [
+    "This packet proves the planar wrapped insertion order convention before the reduced E-quotient.",
+    "It fixes the WW source order as quotient colour first and subobject colour second.",
+    "It proves that the eight two-step flag comparison maps preserve the same ordered wrapped subsequence.",
+    "It uses no braid operator and supplies no unordered wrapped-pair symmetric descent.",
+    "It does not prove ordered-chart descent, overlap compatibility, quotient descent, transition compatibility, or aggregate population.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/higher_coloured.csv."
+  ]
+}

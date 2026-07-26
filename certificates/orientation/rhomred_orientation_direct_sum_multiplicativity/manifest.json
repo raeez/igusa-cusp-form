@@ -1,0 +1,44 @@
+{
+  "schema_version": "rhomred_orientation_direct_sum_multiplicativity_obstruction.v1",
+  "fixture_name": "rhomred_orientation_direct_sum_multiplicativity",
+  "orientation_kind": "rhomred_orientation_direct_sum_multiplicativity_obstruction",
+  "status": "RHOMRED_ORIENTATION_DIRECT_SUM_MULTIPLICATIVITY_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "rhomred_determinant_imported": true,
+  "rhomred_square_root_obstruction_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "direct_sum_criterion_recorded": true,
+  "orientation_tables_inspected": true,
+  "missing_ts_rows_recorded": true,
+  "orientation_square_roots_supplied": false,
+  "reduced_cone_direct_sum_decomposition_supplied": false,
+  "direct_sum_ts_isomorphism_supplied": false,
+  "hyperbolic_cross_trivialization_supplied": false,
+  "pentagon_coherence_supplied": false,
+  "extension_multiplicativity_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "inspected_orientation_tables.csv",
+    "direct_sum_obstruction_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_determinant",
+    "certificates/orientation/rhomred_square_root",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 299 only as a Picard-groupoid criterion with missing input rows.",
+    "It imports the determinant-line packet and the square-root obstruction packet.",
+    "The current orientation packet supplies no orientation-line square-root rows and no Thom-Sebastiani multiplicativity rows.",
+    "It does not construct the direct-sum Thom-Sebastiani isomorphism, hyperbolic cross-term trivialization, pentagon coherence, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration."
+  ]
+}

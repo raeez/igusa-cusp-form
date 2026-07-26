@@ -1,0 +1,35 @@
+{
+  "schema_version": "k3_cosection_surjectivity_obstruction.v1",
+  "fixture_name": "k3_cosection_surjectivity",
+  "orientation_kind": "k3_cosection_surjectivity_obstruction",
+  "status": "K3_COSECTION_SURJECTIVITY_OBSTRUCTION_VERIFIED",
+  "mathematical_certification": false,
+  "surjectivity_certification": false,
+  "k3_semiregularity_cosection_packet_imported": true,
+  "retained_class_bounds_inspected": true,
+  "d0_semiregularity_table_inspected": true,
+  "surjectivity_rows_empty": true,
+  "k3_class_witness_rows_empty": true,
+  "cokernel_rows_empty": true,
+  "tables": [
+    "criterion_rows.csv",
+    "inspected_source_tables.csv",
+    "k3_class_witness_rows.csv",
+    "surjectivity_rows.csv",
+    "cokernel_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/k3_semiregularity_cosection",
+    "certificates/moduli/retained_class_bounds",
+    "certificates/charge/k3e_charge_window",
+    "certificates/d0/k3e_d0_hn"
+  ],
+  "limitations": [
+    "This packet verifies the fail-closed obstruction ledger for row 274.",
+    "The Maulik-Toda/Oberdieck nonzero-K3-class surjectivity criterion is recorded, but the retained finite tables do not yet supply K3-class witness rows.",
+    "The core witness, surjectivity, and cokernel tables are intentionally empty.",
+    "This status is not a proof of cosection surjectivity."
+  ]
+}

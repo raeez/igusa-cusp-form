@@ -1,0 +1,36 @@
+{
+  "schema_version": "joyce_dcritical_truncation.v1",
+  "fixture_name": "joyce_dcritical_truncation",
+  "orientation_kind": "joyce_dcritical_truncation_input",
+  "status": "JOYCE_DCRITICAL_TRUNCATION_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "ptvv_finite_substack_input_imported": true,
+  "bbdjs_source_theorem_imported": true,
+  "dcritical_truncations_constructed": true,
+  "three_substacks_verified": true,
+  "dcritical_defect_zero": true,
+  "vanishing_cycle_complex": false,
+  "k3_semiregularity_cosection": false,
+  "cosection_surjectivity": false,
+  "rhom_red": false,
+  "det_rhom_red": false,
+  "orientation_square_root": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "protected_integration": false,
+  "tables": [
+    "bbdjs_source_rows.csv",
+    "dcritical_truncation_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/ptvv_finite_substack_symplectic"
+  ],
+  "limitations": [
+    "This packet supplies row 272 only: the Joyce d-critical structure on the classical truncation of each retained finite derived substack.",
+    "It imports the PTVV (-1)-shifted symplectic finite-substack input and applies the BBDJS d-critical truncation theorem.",
+    "It does not construct BBDJS vanishing-cycle complexes, K3 semiregularity cosections, cosection surjectivity, reduced RHom, determinant lines, orientation square roots, quotient orientation, transition compatibility, or protected integration."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "finite_hall_nonhopf_boundary.v1",
+  "fixture_name": "finite_hall_nonhopf_boundary",
+  "hall_kind": "finite_hall_nonhopf_boundary",
+  "status": "FINITE_HALL_NONHOPF_BOUNDARY_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "row_number": 352,
+  "boundary_recorded": true,
+  "antipode_packet_imported": true,
+  "bialgebra_compatibility_packet_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "bialgebra_without_antipode_hopf_name_allowed": false,
+  "current_finite_hall_hopf_algebra_claimed": false,
+  "nonexistence_of_antipode_claimed": false,
+  "future_antipode_allowed_as_open_obligation": true,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "boundary_rows.csv",
+    "coverage_rows.csv",
+    "forbidden_promotions.csv",
+    "text_requirements.csv"
+  ],
+  "imports": [
+    "certificates/hall/finite_hall_antipode_datum",
+    "certificates/hall/finite_hall_bialgebra_compatibility",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "limitations": [
+    "This packet verifies row 352 as a naming and source-data boundary.",
+    "It says that the present compact Hall source is not Hopf-verified without antipode rows and convolution identities.",
+    "It does not prove that no antipode can exist on a later populated source package.",
+    "It does not prove primitive closure or a Hopf radical quotient."
+  ]
+}

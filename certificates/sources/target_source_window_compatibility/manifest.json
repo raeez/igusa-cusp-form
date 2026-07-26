@@ -1,0 +1,28 @@
+{
+  "schema_version": "target_source_window_compatibility_obstruction.v1",
+  "fixture_name": "target_source_window_compatibility",
+  "source_kind": "target_source_window_compatibility_obstruction",
+  "coefficient_ring": "ZZ",
+  "status": "TARGET_SOURCE_WINDOW_COMPATIBILITY_OBSTRUCTION_VERIFIED",
+  "target_source_compatibility": false,
+  "mathematical_certification": false,
+  "target_root_exhaustion_imported": true,
+  "source_compact_support_imported": false,
+  "imports": [
+    "certificates/lattice/downward_root_windows",
+    "certificates/lattice/active_root_window_exhaustion",
+    "certificates/sources/source_window_compact_support"
+  ],
+  "tables": [
+    "source_degree_maps.csv",
+    "compatibility_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet verifies the obstruction ledger for target/source window compatibility.",
+    "It imports the target-side root-window packets and the source-window compact-support obstruction packet.",
+    "The core compatibility tables are intentionally empty until source degree maps and zero-defect compatibility rows are supplied.",
+    "It does not prove target/source window compatibility."
+  ]
+}

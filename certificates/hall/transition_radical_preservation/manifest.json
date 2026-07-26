@@ -1,0 +1,33 @@
+{
+  "schema_version": "transition_radical_preservation_obstruction.v1",
+  "fixture_name": "transition_radical_preservation",
+  "hall_kind": "transition_radical_preservation_obstruction",
+  "coefficient_ring": "ZZ",
+  "status": "TRANSITION_RADICAL_PRESERVATION_OBSTRUCTION_VERIFIED",
+  "radical_transition_certification": false,
+  "mathematical_certification": false,
+  "compact_hall_packet_imported": true,
+  "primitive_transition_packet_imported": true,
+  "imports": [
+    "certificates/sources/k3e_compact_hall",
+    "certificates/hall/transition_primitive_subspace_preservation"
+  ],
+  "tables": [
+    "pairing_transition.csv",
+    "radical_kernel_rows.csv",
+    "radical_transition_matrices.csv",
+    "quotient_transition_matrices.csv",
+    "transition_defects.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet verifies the obstruction ledger for transition preservation of Hopf-pairing radicals.",
+    "The compact Hall source packet does not yet supply Hopf-pairing matrices, Hopf-pairing identity rows, radical kernels, or quotient splittings.",
+    "The primitive-transition packet does not yet supply restricted primitive transition matrices.",
+    "The core transition-radical tables are intentionally empty until pairing transition, radical kernel, and quotient transition rows are supplied.",
+    "It does not prove that transition maps preserve radicals.",
+    "It does not prove PBW compatibility or lim1 vanishing on pairing kernels.",
+    "Pairing-kernel lim1 vanishing is tracked separately by certificates/hall/pairing_kernel_lim1_vanishing."
+  ]
+}

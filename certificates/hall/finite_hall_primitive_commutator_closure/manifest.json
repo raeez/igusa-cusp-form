@@ -1,0 +1,43 @@
+{
+  "schema_version": "finite_hall_primitive_commutator_closure.v1",
+  "fixture_name": "finite_hall_primitive_commutator_closure",
+  "hall_kind": "finite_hall_primitive_commutator_closure_obstruction",
+  "status": "FINITE_HALL_PRIMITIVE_COMMUTATOR_CLOSURE_OBSTRUCTION_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "row_number": 354,
+  "relative_theorem_recorded": true,
+  "primitive_subspace_packet_imported": true,
+  "bialgebra_compatibility_packet_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "closure_criterion_recorded": true,
+  "product_matrix_rows_supplied": false,
+  "coproduct_matrix_rows_supplied": false,
+  "unit_counit_rows_supplied": false,
+  "primitive_kernel_rows_supplied": false,
+  "bialgebra_identity_rows_supplied": false,
+  "primitive_closure_rows_supplied": false,
+  "supercommutator_matrix_rows_supplied": false,
+  "primitive_commutator_closure_proved_for_current_source": false,
+  "primitive_bracket_populated": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "primitive_closure_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv",
+    "text_requirements.csv"
+  ],
+  "imports": [
+    "certificates/hall/finite_hall_primitive_subspace_definition",
+    "certificates/hall/finite_hall_bialgebra_compatibility",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "limitations": [
+    "This packet verifies row 354 as a relative bialgebra theorem: if the finite bialgebra identities and primitive kernel data are supplied, the supercommutator of primitives is primitive.",
+    "It does not populate compact source product, coproduct, unit, counit, primitive kernel, primitive closure, or supercommutator rows.",
+    "It does not prove the current compact source has a primitive Hall bracket.",
+    "It does not prove graded Jacobi; row 355 is separate."
+  ]
+}

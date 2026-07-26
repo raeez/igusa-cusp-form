@@ -1,0 +1,44 @@
+{
+  "schema_version": "rhomred_orientation_no_new_limit_class_obstruction.v1",
+  "fixture_name": "rhomred_orientation_no_new_limit_class",
+  "orientation_kind": "rhomred_orientation_no_new_limit_class_obstruction",
+  "status": "RHOMRED_ORIENTATION_NO_NEW_LIMIT_CLASS_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "limit_survival_criterion_imported": true,
+  "reduced_orientation_ledger_imported": true,
+  "square_root_obstruction_imported": true,
+  "transition_orientation_ledger_imported": true,
+  "no_new_limit_class_criterion_recorded": true,
+  "pro_picard_comparison_rows_supplied": false,
+  "finite_effectivity_rows_supplied": false,
+  "separatedness_rows_supplied": false,
+  "automorphism_mittag_leffler_rows_supplied": false,
+  "object_class_mittag_leffler_rows_supplied": false,
+  "zero_defect_pi0_comparison_rows_supplied": false,
+  "pro_orientation_class_rows_supplied": false,
+  "no_new_limit_class_proved": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "no_new_class_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_orientation_class_limit_survival",
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/orientation/rhomred_square_root",
+    "certificates/orientation/transition_orientation_preservation"
+  ],
+  "limitations": [
+    "This packet verifies row 340 only as a no-new-limit-class criterion.",
+    "The row 339 packet records survival only and has no pro-Picard comparison rows.",
+    "The reduced-orientation packet supplies no finite orientation line, orientation class, square-root, or transition rows.",
+    "The square-root packet records three missing square-root rows and has no orientation class zero row.",
+    "The transition-orientation packet supplies no Picard pullback maps, strict composition rows, orientation Mittag-Leffler row, or pro-Picard comparison row.",
+    "No phantom-orientation-class exclusion is proved."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "protected_integration_product_compatibility.v1",
+  "fixture_name": "protected_integration_product_compatibility",
+  "hybrid_kind": "protected_integration_product_compatibility",
+  "status": "PROTECTED_INTEGRATION_PRODUCT_COMPATIBILITY_VERIFIED",
+  "protected_integration_defined": true,
+  "product_compatibility_certification": true,
+  "product_word_count": 4,
+  "product_defect_rank": 0,
+  "label_multiplication_defect_rank": 0,
+  "integration_square_defect_rank": 0,
+  "coproduct_compatibility_certification": false,
+  "primitive_compatibility_certification": false,
+  "transition_compatibility_certification": false,
+  "gram_degree_certification": false,
+  "pi_x_degree_certification": false,
+  "protected_trace_certification": false,
+  "pfaffian_line_certification": false,
+  "aggregate_hybrid_population": false,
+  "scalar_only": false,
+  "tables": [
+    "product_rows.csv",
+    "label_multiplication_rows.csv",
+    "integration_square_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/protected_integration_definition",
+    "certificates/hybrid/quotient_after_correspondence_theta_mu_comparison",
+    "certificates/hybrid/quotient_after_correspondence_theta_mu_associativity"
+  ],
+  "limitations": [
+    "This packet proves only product compatibility of I_R^prot on supplied finite binary local/wrapped product rows.",
+    "Coproduct compatibility is separated in certificates/hybrid/protected_integration_coproduct_compatibility.",
+    "Primitive-projection compatibility is separated in certificates/hybrid/protected_integration_primitive_compatibility.",
+    "It does not prove HN-transition compatibility.",
+    "Gram degree is separated in certificates/hybrid/protected_integration_gram_degree.",
+    "The Pi_X-versus-b_R^geom separation row is separated in certificates/hybrid/protected_integration_pi_x_separation.",
+    "It does not construct the level-Z protected trace or the Pfaffian line."
+  ]
+}

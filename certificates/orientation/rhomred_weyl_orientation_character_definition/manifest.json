@@ -1,0 +1,51 @@
+{
+  "schema_version": "rhomred_weyl_orientation_character_definition_obstruction.v1",
+  "fixture_name": "rhomred_weyl_orientation_character_definition",
+  "orientation_kind": "rhomred_weyl_orientation_character_definition_obstruction",
+  "status": "RHOMRED_WEYL_ORIENTATION_CHARACTER_DEFINITION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "cochain_transition_imported": true,
+  "torsor_defect_vanishing_imported": true,
+  "alpha_red_preservation_imported": true,
+  "alpha_e_free_preservation_imported": true,
+  "beta_preservation_imported": true,
+  "lambda_zero_preservation_imported": true,
+  "maass_character_firewall_imported": true,
+  "definition_criterion_recorded": true,
+  "strict_weyl_action_rows_supplied": false,
+  "orientation_line_automorphism_rows_supplied": false,
+  "generator_sign_rows_supplied": false,
+  "stratum_independence_rows_supplied": false,
+  "transition_compatibility_rows_supplied": false,
+  "finite_stage_character_rows_supplied": false,
+  "inverse_limit_character_rows_supplied": false,
+  "orientation_character_constructed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "definition_rows.csv",
+    "generator_sign_rows.csv",
+    "character_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_orientation_cocycle_cochain_transition",
+    "certificates/orientation/rhomred_weyl_orientation_torsor_defect_vanishing",
+    "certificates/orientation/rhomred_weyl_alpha_red_preservation",
+    "certificates/orientation/rhomred_weyl_alpha_e_free_preservation",
+    "certificates/orientation/rhomred_weyl_finite_stabilizer_beta_preservation",
+    "certificates/orientation/rhomred_weyl_finite_stabilizer_lambda_zero_preservation",
+    "certificates/automorphic/delta5_maass_character"
+  ],
+  "limitations": [
+    "This packet verifies row 319 only as the word-evaluation definition criterion for epsilon_o.",
+    "The imported row-312 packet contains no transition-compatible Coxeter cochains.",
+    "The imported row-314 packet does not prove torsor-defect vanishing.",
+    "The imported row-315 through row-318 packets do not prove component preservation.",
+    "The automorphic Maass character packet is certified as automorphic data but explicitly does not construct an orientation character.",
+    "It does not construct epsilon_o."
+  ]
+}

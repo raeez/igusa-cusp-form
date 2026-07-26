@@ -1,0 +1,46 @@
+{
+  "schema_version": "rhomred_weyl_alpha_e_free_preservation_obstruction.v1",
+  "fixture_name": "rhomred_weyl_alpha_e_free_preservation",
+  "orientation_kind": "rhomred_weyl_alpha_e_free_preservation_obstruction",
+  "status": "RHOMRED_WEYL_ALPHA_E_FREE_PRESERVATION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "free_e_borel_imported": true,
+  "free_e_vanishing_imported": true,
+  "free_e_nulltrivialization_imported": true,
+  "weyl_wall_transport_imported": true,
+  "alpha_red_preservation_imported": true,
+  "preservation_criterion_recorded": true,
+  "source_target_coefficient_rows_supplied": false,
+  "h2_be_transport_matrices_supplied": false,
+  "coordinate_defect_rows_supplied": false,
+  "zero_vector_rows_supplied": false,
+  "cochain_transport_defect_rows_supplied": false,
+  "retained_coverage_rows_supplied": false,
+  "alpha_e_free_preservation_proved": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "preservation_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_free_e_borel",
+    "certificates/orientation/rhomred_free_e_vanishing",
+    "certificates/orientation/rhomred_free_e_nulltrivialization",
+    "certificates/orientation/rhomred_weyl_wall_transport_tau",
+    "certificates/orientation/rhomred_weyl_alpha_red_preservation"
+  ],
+  "limitations": [
+    "This packet verifies row 316 only as the H2(BE)-coordinate criterion for Weyl preservation of alpha_E_free.",
+    "The imported row-282 packet contains no a1/a2 coefficient rows.",
+    "The imported row-283 packet does not prove alpha_E_free vanishing.",
+    "The imported row-284 packet contains no connected BE cochain trivializations.",
+    "The imported row-306 packet contains no Weyl lift or H2(BE) transport matrix rows.",
+    "The imported row-315 packet does not prove alpha_red preservation.",
+    "It does not prove Weyl transport preserves alpha_E_free."
+  ]
+}

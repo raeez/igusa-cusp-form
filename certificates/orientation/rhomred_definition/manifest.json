@@ -1,0 +1,37 @@
+{
+  "schema_version": "rhomred_definition.v1",
+  "fixture_name": "rhomred_definition",
+  "orientation_kind": "rhomred_definition_input",
+  "status": "RHOMRED_DEFINITION_VERIFIED",
+  "mathematical_certification": false,
+  "k3_semiregularity_cosection_packet_imported": true,
+  "k3_cosection_surjectivity_obstruction_imported": true,
+  "rhomred_cones_defined": true,
+  "three_substacks_recorded": true,
+  "definition_defect_zero": true,
+  "cosection_surjectivity_proved": false,
+  "perfect_reduced_obstruction": false,
+  "det_rhom_red": false,
+  "orientation_square_root": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "cone_formula_rows.csv",
+    "rhomred_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/k3_semiregularity_cosection",
+    "certificates/orientation/k3_cosection_surjectivity"
+  ],
+  "limitations": [
+    "This packet supplies row 275 only: the cone definition of RHom_red(F,F).",
+    "It imports the K3 semiregularity cosection and the row-274 surjectivity obstruction ledger; the cone exists without the surjectivity witness, while Kiem-Li reduced obstruction theory still requires it.",
+    "It does not prove cosection surjectivity, perfectness of the reduced obstruction complex, determinant-line existence, square-root orientation, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration."
+  ]
+}

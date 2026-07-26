@@ -1,0 +1,26 @@
+{
+  "schema_version": "downward_root_windows.v1",
+  "fixture_name": "downward_root_windows",
+  "window_kind": "downward_root_windows",
+  "coefficient_ring": "ZZ",
+  "certified": true,
+  "target_side": true,
+  "compact_source": false,
+  "primitive_recognition": false,
+  "pfaffian_orientation": false,
+  "protected_trace": false,
+  "max_audit_nu": 7,
+  "status": "DOWNWARD_ROOT_WINDOWS_VERIFIED",
+  "tables": [
+    "root_window_definitions.csv",
+    "gamma_window_formula.csv",
+    "finite_height_audit.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet defines the target-side cofinal height windows W_nu and the source degree preimage Gamma(W_nu).",
+    "It proves downward saturation formally by the height inequality on the positive root poset.",
+    "It audits the ambient positive-cone windows through nu=7 and checks the alpha inverse formula and product-chamber sector rule.",
+    "It does not construct compact K3xE source representatives, source relation matrices, Hall pairings, PBW data, primitive recognition, Pfaffian orientations, or protected traces."
+  ]
+}

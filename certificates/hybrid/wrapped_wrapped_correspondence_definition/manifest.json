@@ -1,0 +1,48 @@
+{
+  "schema_version": "wrapped_wrapped_correspondence_definition.v1",
+  "fixture_name": "wrapped_wrapped_correspondence_definition",
+  "hybrid_kind": "wrapped_wrapped_correspondence_definition",
+  "status": "WRAPPED_WRAPPED_CORRESPONDENCE_DEFINITION_VERIFIED",
+  "wrapped_wrapped_correspondence_defined": true,
+  "ordered_source_pair": true,
+  "extension_stack_certification": false,
+  "source_target_map_certification": false,
+  "anchor_memory_certification": false,
+  "admissibility_certification": false,
+  "thom_sebastiani_certification": false,
+  "transition_certification": false,
+  "symmetric_descent_certification": false,
+  "mixed_certification": false,
+  "local_local_certification": false,
+  "two_sided_certification": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "definition_rows.csv",
+    "extension_stack_rows.csv",
+    "source_target_map_rows.csv",
+    "anchor_memory_rows.csv",
+    "admissibility_rows.csv",
+    "thom_sebastiani_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/hybrid_ran_prestack_definition",
+    "certificates/hybrid/wrapped_stratum_bpositive_prestack_definition",
+    "certificates/hybrid/geometric_elliptic_degree_map",
+    "certificates/hybrid/geometric_elliptic_degree_additivity",
+    "certificates/hybrid/mixed_local_wrapped_correspondence_definition"
+  ],
+  "limitations": [
+    "This packet defines only the ordered wrapped/wrapped correspondence type.",
+    "No populated wrapped/wrapped extension-stack rows are supplied.",
+    "No source/target-map or populated source/target-anchor memory rows are supplied.",
+    "Target admissibility is separated in certificates/hybrid/wrapped_wrapped_extension_admissibility; no admissibility rows are supplied by this definition packet.",
+    "No Thom-Sebastiani rows are supplied.",
+    "No symmetric-descent rows are supplied.",
+    "No local-local, mixed, or ordered two-sided mixed correspondence rows are supplied.",
+    "No transition rows are supplied."
+  ]
+}

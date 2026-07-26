@@ -1,0 +1,55 @@
+{
+  "schema_version": "rhomred_orientation_frobenius_trace_degree_obstruction.v1",
+  "fixture_name": "rhomred_orientation_frobenius_trace_degree",
+  "orientation_kind": "rhomred_orientation_frobenius_trace_degree_obstruction",
+  "status": "RHOMRED_ORIENTATION_FROBENIUS_TRACE_DEGREE_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "expected_trace_degree": -3,
+  "frobenius_pairing_imported": true,
+  "compact_hall_ledger_imported": true,
+  "hall_pairing_pushforward_imported": true,
+  "protected_integration_gram_degree_imported": true,
+  "protected_trace_ledger_imported": true,
+  "transition_orientation_ledger_imported": true,
+  "trace_degree_criterion_recorded": true,
+  "source_trace_functional_rows_supplied": false,
+  "source_trace_degree_rows_supplied": false,
+  "trace_pairing_identity_rows_supplied": false,
+  "trace_cyclicity_rows_supplied": false,
+  "source_degree_convention_rows_supplied": false,
+  "orientation_trace_line_rows_supplied": false,
+  "serre_shift_rows_supplied": false,
+  "radical_quotient_rows_supplied": false,
+  "quotient_orientation_rows_supplied": false,
+  "transition_rows_supplied": false,
+  "frobenius_trace_degree_proved": false,
+  "row337_serre_sign_claimed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "trace_degree_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_orientation_frobenius_pairing",
+    "certificates/sources/k3e_compact_hall",
+    "certificates/charge/hall_pairing_pushforward_compatibility",
+    "certificates/hybrid/protected_integration_gram_degree",
+    "certificates/trace/k3e_protected_trace",
+    "certificates/orientation/transition_orientation_preservation"
+  ],
+  "limitations": [
+    "This packet verifies row 336 only as a Frobenius trace-degree criterion.",
+    "The row 335 packet records the Frobenius pairing only as a criterion and keeps the source trace functional open.",
+    "The compact Hall source packet supplies no source trace, product, pairing, Hopf-pairing identity, radical, quotient, or transition rows.",
+    "The formal Hall-pairing pushforward packet proves homogeneous degree-zero compatibility for supplied pairing rows only.",
+    "The protected-integration Gram-degree packet proves target monomial s-degree m_R, not source cohomological trace degree -3.",
+    "The level-Z protected trace packet is an empty obstruction ledger.",
+    "It does not prove row 337 CY3 Serre signs."
+  ]
+}
+

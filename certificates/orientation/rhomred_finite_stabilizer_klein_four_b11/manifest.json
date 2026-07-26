@@ -1,0 +1,48 @@
+{
+  "schema_version": "rhomred_finite_stabilizer_klein_four_b11.v1",
+  "fixture_name": "rhomred_finite_stabilizer_klein_four_b11",
+  "orientation_kind": "rhomred_finite_stabilizer_klein_four_b11",
+  "status": "RHOMRED_FINITE_STABILIZER_KLEIN_FOUR_B11_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "klein_four_class_imported": true,
+  "b20_identity_imported": true,
+  "second_cyclic_restriction_recorded": true,
+  "diagonal_cyclic_restriction_recorded": true,
+  "restriction_maps_computed": true,
+  "b11_identity_verified": true,
+  "standalone_b02_identity_deferred": true,
+  "retained_e2_edge_row_supplied": false,
+  "cyclic_restriction_rows_supplied": false,
+  "r_values_supplied": false,
+  "b11_value_supplied": false,
+  "b02_value_supplied": false,
+  "beta_vanishing_verified": false,
+  "linearization_rows_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "restriction_map_rows.csv",
+    "coefficient_identity_rows.csv",
+    "deferred_coefficient_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "remaining_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_klein_four_class",
+    "certificates/orientation/rhomred_finite_stabilizer_klein_four_b20",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 293: the local mixed coefficient identity b11=r1+r2+r3.",
+    "It computes the second and diagonal cyclic restriction maps.",
+    "It uses the row 292 identity b20=r1 and the local second-cyclic relation b02=r2 inside the mixed-coefficient calculation.",
+    "It does not supply a retained E[2] edge row, cyclic restriction rows, values of r1 r2 r3, the value of b11, beta vanishing, zero linearization, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration.",
+    "The standalone row b02=r2 remains recorded separately for row 294."
+  ]
+}

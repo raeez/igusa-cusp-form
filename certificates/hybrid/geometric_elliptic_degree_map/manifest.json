@@ -1,0 +1,34 @@
+{
+  "schema_version": "geometric_elliptic_degree_map_obstruction.v1",
+  "fixture_name": "geometric_elliptic_degree_map",
+  "hybrid_kind": "geometric_elliptic_degree_map_obstruction",
+  "status": "GEOMETRIC_ELLIPTIC_DEGREE_MAP_OBSTRUCTION_VERIFIED",
+  "degree_map_defined": true,
+  "populated_degree_map_certification": false,
+  "additivity_certification": false,
+  "mathematical_certification": false,
+  "hybrid_carrier_packet_imported": true,
+  "moduli_packet_imported": true,
+  "borcherds_coordinate_substitute": false,
+  "tables": [
+    "definition_rows.csv",
+    "domain_classes.csv",
+    "cycle_class_rows.csv",
+    "pushforward_rows.csv",
+    "local_wrapped_split.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet defines b_R^geom as the p_E-pushforward degree of the retained one-cycle class.",
+    "No retained HN numerical class rows are supplied.",
+    "No one-cycle class rows are supplied.",
+    "No p_E pushforward rows are supplied.",
+    "No local/wrapped split rows are supplied.",
+    "No transition rows are supplied.",
+    "It does not prove additivity under retained extensions; row 202 is separated in certificates/hybrid/geometric_elliptic_degree_additivity.",
+    "It does not identify b_R^geom with pr_3 overlinePi_X; row 203 is separated in certificates/hybrid/geometric_borcherds_degree_separation.",
+    "It does not prove object-level positive-degree support projection; row 204 is separated in certificates/hybrid/positive_elliptic_degree_projection."
+  ]
+}

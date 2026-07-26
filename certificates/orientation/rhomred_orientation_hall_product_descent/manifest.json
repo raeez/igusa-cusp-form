@@ -1,0 +1,52 @@
+{
+  "schema_version": "rhomred_orientation_hall_product_descent_obstruction.v1",
+  "fixture_name": "rhomred_orientation_hall_product_descent",
+  "orientation_kind": "rhomred_orientation_hall_product_descent_obstruction",
+  "status": "RHOMRED_ORIENTATION_HALL_PRODUCT_DESCENT_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "e_quotient_descent_imported": true,
+  "orientation_thom_sebastiani_imported": true,
+  "orientation_extension_multiplicativity_imported": true,
+  "theta_mu_comparison_imported": true,
+  "quotient_thom_sebastiani_imported": true,
+  "transition_hall_product_imported": true,
+  "compact_hall_source_imported": true,
+  "hall_product_descent_criterion_recorded": true,
+  "theta_mu_available_for_supplied_operation_rows": true,
+  "quotient_thom_sebastiani_available_for_supplied_ts_rows": true,
+  "quotient_orientation_rows_supplied": false,
+  "extension_cocycle_comparison_supplied": false,
+  "oriented_ts_isomorphism_supplied": false,
+  "source_hall_product_rows_supplied": false,
+  "hall_product_descent": false,
+  "transition_compatibility": false,
+  "protected_integration": false,
+  "aggregate_hybrid_population": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "imported_status_rows.csv",
+    "product_descent_obstruction_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_orientation_e_quotient_descent",
+    "certificates/orientation/rhomred_orientation_thom_sebastiani_compatibility",
+    "certificates/orientation/rhomred_orientation_extension_multiplicativity",
+    "certificates/hybrid/quotient_after_correspondence_theta_mu_comparison",
+    "certificates/hybrid/quotient_after_correspondence_thom_sebastiani",
+    "certificates/hall/transition_hall_product_preservation",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "limitations": [
+    "This packet verifies row 303 only as a product-descent criterion for quotient orientations.",
+    "The theta_mu and quotient Thom-Sebastiani packets provide comparison maps only after the relevant operation and coefficient-descent rows are supplied.",
+    "The reduced-orientation tables supply no quotient-orientation rows and no oriented Thom-Sebastiani rows.",
+    "The compact Hall source table supplies no Hall product M rows.",
+    "It does not prove that orientation descent commutes with the Hall product."
+  ]
+}

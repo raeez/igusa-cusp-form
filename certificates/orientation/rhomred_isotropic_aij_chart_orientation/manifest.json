@@ -1,0 +1,44 @@
+{
+  "schema_version": "rhomred_isotropic_aij_chart_orientation_obstruction.v1",
+  "fixture_name": "rhomred_isotropic_aij_chart_orientation",
+  "orientation_kind": "rhomred_isotropic_aij_chart_orientation_obstruction",
+  "status": "RHOMRED_ISOTROPIC_AIJ_CHART_ORIENTATION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "type_ii_chamber_isotropic_imported": true,
+  "wle3_target_parity_imported": true,
+  "simple_wall_chart_orientation_imported": true,
+  "compact_hall_ledger_imported": true,
+  "isotropic_chart_orientation_criterion_recorded": true,
+  "target_aij_parity_certified": true,
+  "source_isotropic_chart_rows_supplied": false,
+  "source_parity_rows_supplied": false,
+  "quotient_orientation_rows_supplied": false,
+  "determinant_square_rows_supplied": false,
+  "transition_rows_supplied": false,
+  "isotropic_aij_orientation_computed": false,
+  "orientation_vector_claimed_unconditionally": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "isotropic_chart_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/lattice/type_ii_chamber_isotropic",
+    "certificates/targets/delta5_gn_kac/wle3_target_parity",
+    "certificates/orientation/rhomred_three_simple_wall_chart_orientation",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "limitations": [
+    "This packet verifies row 330 only as the source chart-orientation criterion for isotropic a_ij charts.",
+    "The imported a_ij data are target arithmetic and target parity only.",
+    "No compact Hall isotropic chart rows are supplied.",
+    "No quotient-orientation or determinant-square rows are supplied for isotropic charts.",
+    "No transition-compatible source parity rows are supplied.",
+    "It does not prove the row 331 delta123 chart orientation or the row 332 29|93 compatibility."
+  ]
+}

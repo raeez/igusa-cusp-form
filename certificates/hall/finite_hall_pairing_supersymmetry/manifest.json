@@ -1,0 +1,46 @@
+{
+  "schema_version": "finite_hall_pairing_supersymmetry.v1",
+  "fixture_name": "finite_hall_pairing_supersymmetry",
+  "hall_kind": "finite_hall_pairing_supersymmetry_obstruction",
+  "status": "FINITE_HALL_PAIRING_SUPERSYMMETRY_OBSTRUCTION_VERIFIED",
+  "row_number": 360,
+  "coefficient_ring": "QQ",
+  "relative_theorem_recorded": true,
+  "pairing_homogeneity_packet_imported": true,
+  "positive_negative_pairing_packet_imported": true,
+  "cy3_serre_sign_packet_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "signed_transpose_formula_recorded": true,
+  "source_G_entries_supplied": false,
+  "source_parity_blocks_supplied": false,
+  "source_signed_transpose_rows_supplied": false,
+  "source_serre_sign_rows_supplied": false,
+  "source_orientation_transport_rows_supplied": false,
+  "pairing_supersymmetry_proved_for_current_source": false,
+  "invariance_proved": false,
+  "coproduct_compatibility_proved": false,
+  "quotient_nondegeneracy_proved": false,
+  "mathematical_certification": false,
+  "imports": [
+    "certificates/hall/finite_hall_pairing_homogeneity",
+    "certificates/hall/finite_hall_positive_negative_pairing",
+    "certificates/orientation/rhomred_orientation_cy3_serre_signs",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "supersymmetry_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv",
+    "text_requirements.csv"
+  ],
+  "limitations": [
+    "This packet proves pairing supersymmetry only for supplied finite signed-transpose rows.",
+    "It imports row 359 homogeneity to reduce to opposite-degree same-parity blocks.",
+    "It imports the row 337 Serre-sign packet only as a criterion and firewall.",
+    "It does not supply compact K3xE source G entries, parity blocks, signed-transpose rows, Serre-sign rows, or orientation transport.",
+    "It does not prove Frobenius invariance, coproduct compatibility, or quotient nondegeneracy."
+  ]
+}

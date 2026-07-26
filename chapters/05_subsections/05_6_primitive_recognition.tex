@@ -2,7 +2,8 @@
 \label{subsec:primitive-recognition}
 
 The sixth entry of the Dirac--Igusa pro-object is the primitive
-recognition theorem: an isomorphism of Gram-graded Lie superalgebras
+recognition criterion.  Its conclusion, after the compact source data
+are supplied, is an isomorphism of Gram-graded Lie superalgebras
 \[
 P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5}
 \]
@@ -16,11 +17,12 @@ fixes two integers in every degree (the parity dimensions), the
 relation ideal, the radical equality, the no-extra-relations theorem,
 the completed PBW filtration, and the Hopf-radical coideal stability.
 
-The counterexample-against-determinant route is the zero-bracket graded
-super vector space with the same signed dimensions: identical
-denominator, no Lie structure, no Hopf datum.  Recognition therefore
-requires representatives, relations, pairings, kernels, and PBW data,
-not numerics.
+The determinant admits the zero-bracket graded super vector space with
+the same signed dimensions: the denominator is identical, while the
+Chevalley diagonal, the non-orthogonal brackets, and the Hopf pairing
+datum have disappeared.  Recognition therefore requires
+representatives, relations, pairings, kernels, and PBW data, not
+numerics.
 
 \subsubsection*{Borcherds--Cartan target datum}
 
@@ -89,9 +91,12 @@ Cartan identification $\iota_H:P^{\Pi,\mathrm{red}}_{X,0}
 Gram grading with the GN root grading via $\alpha(n,l,m)$.
 
 \item[\textup{(S3)}] \emph{Simple primitive representatives and
-parities.}  For every simple-root index $i\in I$, parity-homogeneous
+parities.}  For every simple-root index $i\in I$, choose
+$\gamma_i\in\Gamma_{\mathrm{gram}}$ with
+$\alpha(\gamma_i)=\alpha_i$.  The source supplies parity-homogeneous
 representatives $e_i^X,f_i^X,h_i^X$ in
-$P^{\Pi,\mathrm{red}}_{X,\pm\alpha_i}$ and
+$P^{\Pi,\mathrm{red}}_{X,\gamma_i}$,
+$P^{\Pi,\mathrm{red}}_{X,-\gamma_i}$, and
 $P^{\Pi,\mathrm{red}}_{X,0}$, with $|e_i^X|=|f_i^X|=p(i)$,
 $h_i^X=\iota_H^{-1}(\alpha_i)$, and the GN multiplicity fibres
 $\mu_{\overline 0}(a),\mu_{\overline 1}(a)$ for imaginary simple
@@ -118,16 +123,30 @@ $(\alpha_i,\alpha_j)=0\Rightarrow[e_i^X,e_j^X]=[f_i^X,f_j^X]=0$, and
 the super sign rule.  In the rank-three real subsystem, the Serre
 exponent is $3$ ($(\delta_i,\delta_j)=-2$); first brackets
 $[e_i^X,e_j^X]$ are not forced to vanish.  For the primitive isotropic
-roots $a_{ij}=\delta_i+\delta_j$ ($i<j$), the source supplies
-$u^{\pm,X}_{ij,r}\in P^{\Pi,\mathrm{red}}_{X,\pm a_{ij}}$,
+degrees $a_{ij}=\delta_i+\delta_j$ ($i<j$), choose
+$\gamma_{ij}\in\Gamma_{\mathrm{gram}}$ with
+$\alpha(\gamma_{ij})=a_{ij}$.  The source supplies
+the nine Gritsenko--Nikulin isotropic simple representatives
+$u^{\pm,X}_{ij,r}\in P^{\Pi,\mathrm{red}}_{X,\pm\gamma_{ij}}$,
 $1\le r\le 9$, satisfying orthogonality and Chevalley zero with
 adjacent real roots, with real-string relations
 $(\operatorname{ad}e_k^X)^5 u^{+,X}_{ij,r}=0$ for the complementary
-$\{i,j,k\}=\{1,2,3\}$.
+$\{i,j,k\}=\{1,2,3\}$.  The tenth even vector in
+$\mathfrak g_{a_{ij}}$ is the real bracket $[e_i^X,e_j^X]$.
 
-\item[\textup{(S5)}] \emph{Completed Hopf pairing and radical
-quotient.}  Continuous, homogeneous, invariant for bracket and
-coproduct, with closed homogeneous radical
+\item[\textup{(S5)}] \emph{Counital Hall bialgebra, Hopf pairing, and
+radical quotient.}  A continuous completed Hall product, unit,
+coproduct, and counit satisfy associativity, coassociativity, the unit
+and counit identities, and the bialgebra compatibility
+\[
+\Delta_X m_X
+=(m_X\otimes m_X)(1\otimes\tau\otimes1)(\Delta_X\otimes\Delta_X)
+\]
+with the Koszul sign braiding \(\tau\).  The bracket is the
+supercommutator of this product restricted to primitives.  The Hopf
+pairing is continuous, homogeneous, invariant for bracket and coproduct,
+has vanishing Frobenius cyclic defect, is non-degenerate after the
+radical quotient, and has closed homogeneous radical
 $\operatorname{Rad}_X=\{x\mid\langle x,y\rangle_X=0\ \forall y\}$ a Lie
 ideal and coideal.  After quotienting by
 $\overline{\operatorname{Rad}_X}$, the source radical quotient is
@@ -173,6 +192,10 @@ nonzero $\gamma$ with $\alpha(\gamma)\in\mathcal R$,
 \dim P^{\Pi,\mathrm{red}}_{X,\gamma,\overline p}
 =\rootmult_{\overline p}(\alpha(\gamma)),\qquad p=0,1.
 \]
+The same equality is required in degree \(-\gamma\), with the target
+parity dimensions transported by the Borcherds--Kac Chevalley
+anti-involution; it is not inferred from the positive half or from the
+signed denominator.
 On the first timelike channel $\gamma=(1,1,1)$,
 \[
 d^{\mathrm{GN}}_{(1,1,1),\overline 0}=29,\qquad
@@ -181,12 +204,16 @@ d^{\mathrm{GN}}_{(1,1,1),\overline 1}=93.
 These are presentation-level target dimensions, not an inference
 from $29-93=-64$.
 \end{enumerate}
-Then $P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5}$ as
-Gram-graded Lie superalgebras, with denominator
+Then $P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5}$ as completed
+Lie superalgebras graded by \(\Gamma_{\mathrm{gram}}\) through
+\(\alpha\), with denominator
 $64^{-1}\Delta_5(2Z)$.  If in addition the chiral Koszul source datum
-of \S\ref{subsec:koszul-source} is constructed (including Koszul
-Mittag--Leffler exactness), then $\Omega_E^{\mathrm{ch}}C_X\simeq
-\mathsf{Den}_{\Delta_5,E}$.
+and the finite Koszul comparison datum of
+\S\ref{subsec:koszul-source} are constructed, including the strict
+Koszul Mittag--Leffler exactness for the compatibility complexes, then
+\(\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}\) through a
+map respecting the Weyl action, Pfaffian orientation character, Hall
+pairing, radical quotient, and PBW associated graded.
 \end{theorem}
 
 \begin{proof}
@@ -200,11 +227,14 @@ the compact Hopf radical with the GN/Kac radical, so $\pi$ descends
 to $G(\mathscr B_{\Delta_5})\to P_X^{\Pi,\mathrm{red}}$.  (S7) gives
 surjectivity; (S6) gives injectivity after the completed radical
 quotient.  (S8) gives PBW-compatible finite-height identifications;
-(S9) gives exactness in the inverse limit; (S10) rules out hidden
-zero-superdimension root spaces and cancelling ideals invisible to
-the determinant.  The chiral statement uses $C_X$, $b_X$,
-$\Theta_{\mathrm{Kos}}$, and the Koszul Mittag--Leffler exactness of
-\S\ref{subsec:koszul-source}.
+(S9), in the form of
+Proposition~\ref{prop:strict-ml-completion-primitive-recognition},
+gives exactness in the inverse limit; (S10) rules out hidden
+zero-superdimension root spaces and cancelling ideals invisible to the
+determinant.  The chiral statement uses $C_X$, $b_X$,
+$\Theta_{\mathrm{Kos}}$, the finite Koszul comparison datum
+\(\mathfrak K^{\mathrm{cmp}}_{X,R}\), and the Koszul
+Mittag--Leffler exactness of \S\ref{subsec:koszul-source}.
 \end{proof}
 
 \subsubsection*{Cofinal finite-window primitive recognition}
@@ -223,72 +253,1294 @@ a_{ij}:10|0,\quad
 2\delta_i+\delta_j:1|0,\quad
 \delta_{123}:29|93,
 \]
-so $29-93=-64=f(1,1)$.  These are target data; they do not construct
+so $29-93=-64=f(1,1)$.  The row $a_{ij}:10|0$ is the real bracket
+$[e_i,e_j]$ together with the nine Gritsenko--Nikulin isotropic simple
+directions.  These are target data; they do not construct
 compact source primitives, source pairings, radical kernels, or
 source bracket constants.
+The finite target packet \(\texttt{wle3\_target\_parity}\) verifies
+this table from the theta-series coefficients and the
+Gritsenko--Nikulin/Kac presentation: \(a_{ij}\) is isotropic,
+the real-string exponent for \(2\delta_i+\delta_j\) is \(3\), and
+\(\delta_{123}\) splits as \(29=2+27\) even directions and \(93\) odd
+imaginary-simple directions.  It is a target-reference table only.
+
+On the first base terminal and saturation-extension target rows the
+coefficient table
+\(\texttt{k3e\_first\_relation\_window\_coefficients}\) computes
+\[
+f(4,4)=10,\quad f(2,2)=108,\quad
+f(2,1)=f(4,3)=-513,\quad
+f(3,3)=-64,\quad f(4,2)=4016,
+\]
+together with their discriminant-orbit translates and the terminal
+zero rows \(f(5,5)=f(1,-3)=0\).  These equalities match the signed
+dimensions in the A071 target presentation.  They remain one-integer
+target arithmetic; they do not supply the two parity dimensions required
+by (R3), or any compact-source row in (R0)--(R8).
+The A071 target-presentation check verifies the target rows
+\[
+2a_{ij}:10|0,\qquad C_{k,3}:29|93,\qquad
+C_{k,4}:10|0,\qquad C_{k,5}:0|0,
+\]
+and verifies that \(C_{k,2}\), \(D_k=\delta_k+2a_{ij}\), and
+\(2\delta_{123}\) are signed-only: they have no target basis,
+positive-negative pairing block, radical block, or PBW row.  This is a
+target-reference computation, not a compact-source theorem.
+
+The first relation-closed compact-source window is therefore a separate
+finite computation.  Its row packet is
+\[
+\mathrm{window\_closure},\quad
+\mathrm{target\_source\_representatives},\quad
+\mathrm{chevalley\_serre\_matrices},\quad
+\mathrm{hall\_boundary\_complex},\quad
+\mathrm{spectral\_sequence},\quad
+\mathrm{kernel\_matrices},\quad
+\mathrm{pbw\_graded},\quad
+\mathrm{first\_window\_theorems},\quad
+\mathrm{transitions},\quad
+\mathrm{scalar\_firewall}.
+\]
+These rows must prove downward saturation and relation closure,
+geometric source representatives with full parity ranks, Cartan,
+Chevalley, real-Serre, Borcherds-orthogonality, and super-sign
+relations, the Hall--Chevalley boundary \(d_1\), strong convergence of
+the finite-window spectral sequence, computed kernel bases, no-extra
+kernel equality, PBW associated-graded equality, and strict
+Mittag--Leffler transition.  Target labels, signed dimensions, scalar
+traces, Pfaffian products, denominator products, target PBW rows,
+arbitrary matrices, and status-only rows are excluded by the scalar
+firewall.
+
+\begin{proposition}[Target-presentation rows are a prerequisite;
+\textit{proved}]
+\label{prop:target-presentation-prerequisite}
+Let \(W\subset\mathcal R_+\) be a finite downward-saturated target-root
+window.  If \(W\) is used in a primitive-recognition datum satisfying
+(R0)--(R8), then the target restriction
+\(\mathfrak g_{\Delta_5}|_{S_W}\) must be represented by a finite
+target-presentation datum in the sense of
+Definition~\ref{def:bkm-finite-target-presentation-datum}.  Signed
+rows \(\smult(\beta)\) and imaginary-simple integers \(m(\beta)\)
+alone are not admissible codomains for the comparison maps
+\(A_{\beta,\overline p}\).
+\end{proposition}
+
+\begin{proof}
+Clause (R2) compares source relation rows with the Borcherds--Kac
+target relations, so the Cartan, Chevalley, real-Serre,
+orthogonality, and super-sign rows must be present in the target
+window.  Clause (R3) compares two parity dimensions in each sign, not
+the signed difference.  Clause (R4) compares the source
+positive-negative Hopf pairing and radical quotient with the target
+invariant-pairing kernel.  Clause (R7) compares PBW associated gradeds.
+Thus the target side must carry the parity, relation, pairing,
+radical, and PBW rows of
+Definition~\ref{def:bkm-finite-target-presentation-datum}.  A scalar
+row \(\smult(\beta)\) or \(m(\beta)\) supplies none of the pairing,
+radical, relation, or PBW codomains, and supplies only one integer
+where (R3) requires two.
+\end{proof}
 
 \begin{definition}[Cofinal finite-window primitive-recognition datum]
 \label{def:cofinal-primitive-recognition-datum}
-A finite set $W\subset Q_+\setminus\{0\}$ is \emph{downward
-saturated} if $0<\beta'\le\beta$, $\beta\in W$, $\beta-\beta'\in Q_+$
-imply $\beta'\in W$.  A cofinal finite-window primitive-recognition
-datum for $P_X^{\Pi,\mathrm{red}}$ is an increasing sequence of
-finite downward-saturated windows $W_1\subset W_2\subset\cdots$ with
+A finite set \(W\subset\mathcal R_+\) is \emph{downward saturated} if
+\(\beta\in W\), \(\beta'\in\mathcal R_+\), \(0<\beta'\le\beta\), and
+\(\beta-\beta'\in Q_+\) imply \(\beta'\in W\).  The canonical
+height-window convention is
+\[
+W_\nu=\{\beta=b_1\delta_1+b_2\delta_2+b_3\delta_3\in\mathcal R_+
+\mid b_1+b_2+b_3\le \nu\}.
+\]
+A cofinal finite-window primitive-recognition datum for
+$P_X^{\Pi,\mathrm{red}}$ is an increasing sequence of finite
+downward-saturated target-root windows
+$W_1\subset W_2\subset\cdots$ with
 $\bigcup_\nu W_\nu=\mathcal R_+$, together with the following finite
-data on every $W_\nu$, compatible under $W_\nu\subset W_{\nu+1}$.
+data on every $W_\nu$, compatible under $W_\nu\subset W_{\nu+1}$.  Put
+\[
+\Gamma(W_\nu):=\{\gamma\in\Gamma_{\mathrm{gram}}\mid
+\alpha(\gamma)\in W_\nu\}.
+\]
 
 \begin{enumerate}
 \item[(R0)] \emph{Compact source labels.}  Every source basis vector
-in $W_\nu\cup(-W_\nu)\cup\{0\}$ satisfies the compact source
-admissibility condition.  Target labels from
+of degree in $\Gamma(W_\nu)\cup(-\Gamma(W_\nu))\cup\{0\}$ satisfies
+the compact source admissibility condition.  Target labels from
 $G(\mathscr B_{\Delta_5})$ appear only in target rows or as
 codomains of comparison maps.
 \item[(R1)] \emph{Representatives and parities.}  Simple-root
-representatives $e_i^X,f_i^X,h_i^X$ whose roots lie in $W_\nu$ are
-supplied with the GN parity fibres for imaginary simple roots and
-even real representatives for $\delta_1,\delta_2,\delta_3$.
+representatives $e_i^X,f_i^X,h_i^X$ whose target roots lie in $W_\nu$
+are supplied in source degrees $\pm\gamma_i$ with
+$\alpha(\gamma_i)=\alpha_i$, with the GN parity fibres for imaginary
+simple roots and even real representatives for $\delta_1,\delta_2,\delta_3$.
 \item[(R2)] \emph{Relations.}  Cartan, Chevalley, real Serre,
 orthogonality, and super sign relations checked for every relation
-whose displayed source and target degrees lie in
-$W_\nu\cup(-W_\nu)\cup\{0\}$.
+whose displayed target roots lie in
+$W_\nu\cup(-W_\nu)\cup\{0\}$ and whose source lifts lie in
+$\Gamma(W_\nu)\cup(-\Gamma(W_\nu))\cup\{0\}$.
 \item[(R3)] \emph{Full finite parity dimensions.}  For every
-$\beta\in W_\nu$,
-$\dim P^{\Pi,\mathrm{red}}_{X,\beta,\overline p}
-=\rootmult_{\overline p}^{\mathrm{GN}}(\beta)$ ($p=0,1$), with zero
-on non-root degrees.  Two-integer equality, not signed-superdimension.
-\item[(R4)] \emph{Hopf pairing and radical.}  Positive-negative
-pairing matrices written in parity blocks; kernels agree with GN/Kac
-invariant-pairing kernels; stable under finite brackets in the
+$\gamma\in\Gamma(W_\nu)$ and for its negative \(-\gamma\),
+$\dim P^{\Pi,\mathrm{red}}_{X,\gamma,\overline p}
+=\rootmult_{\overline p}^{\mathrm{GN}}(\alpha(\gamma))$ ($p=0,1$),
+with the negative-root parity dimensions carried by the
+Borcherds--Kac Chevalley anti-involution, and with zero on source
+degrees whose image is not a target root.
+Two-integer equality, not signed-superdimension.
+\item[(R4)] \emph{Hall bialgebra, Hopf pairing, and radical.}  The
+finite product \(M\), coproduct \(D\), unit \(\eta\), and counit
+\(\epsilon\) satisfy associativity, coassociativity, unit, counit, and
+bialgebra compatibility identities on the window; the supercommutator
+bracket sends primitives to primitives.  Positive-negative pairing
+matrices are written in parity blocks; kernels agree with GN/Kac
+invariant-pairing kernels; Hopf adjointness, the primitive Frobenius
+cyclic identity, and non-degeneracy on the radical quotient are verified
+by finite rank-zero defect rows; stable under finite brackets in the
 window; coideal for finite coproduct; carried to the next window by
 transitions; inverse-limit radical the closure of finite kernels.
 \item[(R5)] \emph{No extra relations.}  Finite kernel equality
 $\ker\pi_\nu=
 (\overline{J_{\mathrm{BK}}+\operatorname{Rad}_{\mathrm{GN}}})_{\le W_\nu}$.
-\item[(R6)] \emph{Generation.}  Source primitive root spaces in
-$W_\nu\cup(-W_\nu)$ generated by Cartan and supplied simple
-representatives through brackets whose intermediate positive degrees
-stay in $W_\nu$.
+\item[(R6)] \emph{Generation.}  Source primitive spaces over
+$\Gamma(W_\nu)\cup(-\Gamma(W_\nu))$ are generated by Cartan and
+supplied simple representatives through brackets whose intermediate
+target roots stay in $W_\nu$.
 \item[(R7)] \emph{Completed PBW compatibility.}  Strict PBW
 filtration preservation under transitions, inverse-limit PBW
 compatibility.
-\item[(R8)] \emph{Exact triangular completion.}  Words whose total
-degree lies in the finite test window only through positive-negative
-cancellation are not added as extra finite generators; transition
-maps strict, images closed, $\lim^1$ vanishing on the triangular
-finite-window systems.
+\item[(R8)] \emph{Exact triangular completion.}  For any source stage
+\(R\) assigned to \(W_\nu\), words whose total Gram degree lies in the
+finite target test window \(\Gamma_R^{\mathrm{test}}\) of
+Definition~\ref{def:finite-target-test-window} only through
+positive-negative cancellation are not added as extra finite generators;
+transition maps strict, images closed, \(\lim^1\) vanishing on the
+triangular finite-window systems.
 \end{enumerate}
 The datum is finite at each $\nu$, but not numerical: it contains
 representatives, relation verifications, pairing matrices, kernel
 equalities, and PBW transition data.  The Borcherds product and the
-OP scalar square provide none of these source-side objects.
+OP scalar square provide none of these source-side objects.  The further
+assertion that every relation-closed target degree occurs at some finite
+HN stage is the finite-\(R\) exhaustion datum of
+Definition~\ref{def:relation-closed-target-finite-r-exhaustion}; it is
+not a consequence of target relation closure alone.
 \end{definition}
+
+\begin{proposition}[Height root windows and their Gram preimages;
+\textit{proved}]
+\label{prop:height-root-windows-gamma}
+The sets \(W_\nu\) of
+Definition~\ref{def:cofinal-primitive-recognition-datum} are finite,
+downward saturated, and cofinal in \(\mathcal R_+\).  If
+\(\beta=b_1\delta_1+b_2\delta_2+b_3\delta_3\in W_\nu\), then
+\[
+\gamma_\beta=(b_1,\ b_1+b_2-b_3,\ b_2)\in\Gamma_{\mathrm{gram}}
+\]
+is the unique element with
+\[
+\alpha(\gamma_\beta)
+=b_1\delta_1+b_2\delta_2+b_3\delta_3.
+\]
+Hence
+\[
+\Gamma(W_\nu)
+=\{(b_1,b_1+b_2-b_3,b_2)\mid
+b_1\delta_1+b_2\delta_2+b_3\delta_3\in W_\nu\}.
+\]
+Moreover \(\gamma_\beta\) lies in the type-II product chamber:
+\[
+b_2>0\Rightarrow m>0,\qquad
+b_2=0,\ b_1>0\Rightarrow m=0,\ n>0,\qquad
+b_1=b_2=0,\ b_3>0\Rightarrow m=n=0,\ l<0.
+\]
+\end{proposition}
+
+\begin{proof}
+Finiteness follows because \(b_1+b_2+b_3\le\nu\) gives only finitely
+many triples in \(Q_+\).  If
+\(\beta'\in\mathcal R_+\), \(0<\beta'\le\beta\), and
+\(\beta\in W_\nu\), then
+\(\operatorname{ht}(\beta')\le\operatorname{ht}(\beta)\le\nu\); hence
+\(\beta'\in W_\nu\).  Cofinality follows because every positive root
+has finite height.
+
+For \(\gamma=(n,l,m)\), the product-chamber root map is
+\[
+\alpha(n,l,m)=n\delta_1+m\delta_2+(n+m-l)\delta_3.
+\]
+Solving \(\alpha(n,l,m)=b_1\delta_1+b_2\delta_2+b_3\delta_3\) gives
+\(n=b_1\), \(m=b_2\), and \(l=b_1+b_2-b_3\), proving uniqueness and the
+displayed formula for \(\Gamma(W_\nu)\).  The three chamber cases are
+then immediate from \(b_i\ge0\) and \(\beta\ne0\).
+\end{proof}
+
+The packet
+\(\texttt{certificates/lattice/downward\_root\_windows}\) records
+Proposition~\ref{prop:height-root-windows-gamma}.  It verifies
+\texttt{DOWNWARD\_ROOT\_WINDOWS\_VERIFIED}: the height-window formula,
+the inverse formula for \(\Gamma(W_\nu)\), the product-chamber sector
+rule, and the ambient positive-cone audit for \(1\le\nu\le7\).  It is a
+target-side root-window convention, not a compact-source recognition
+packet, not a Pfaffian orientation, and not a protected trace.
+
+\begin{proposition}[Active height windows exhaust the positive roots;
+\textit{proved}]
+\label{prop:active-root-window-exhaustion}
+Let \(W_\nu^{\mathrm{act}}:=W_\nu\).  Then
+\[
+\bigcup_{\nu\ge1}W_\nu^{\mathrm{act}}=\mathcal R_+ .
+\]
+Equivalently, every positive root
+\(\beta=b_1\delta_1+b_2\delta_2+b_3\delta_3\) is witnessed in the
+finite active window \(W_{\operatorname{ht}(\beta)}\), where
+\(\operatorname{ht}(\beta)=b_1+b_2+b_3\).
+\end{proposition}
+
+\begin{proof}
+By definition \(W_\nu\subset\mathcal R_+\) for every \(\nu\).  Conversely,
+if \(\beta\in\mathcal R_+\), then its coefficients in the positive
+root monoid are non-negative and have finite sum
+\(\operatorname{ht}(\beta)\).  Hence
+\(\beta\in W_{\operatorname{ht}(\beta)}^{\mathrm{act}}\).  The two
+inclusions give the displayed equality.
+\end{proof}
+
+The packet
+\(\texttt{certificates/lattice/active\_root\_window\_exhaustion}\)
+records Proposition~\ref{prop:active-root-window-exhaustion}.  It
+verifies \texttt{ACTIVE\_ROOT\_WINDOW\_EXHAUSTION\_VERIFIED}: the
+height-witness formula
+\(\beta\in\mathcal R_+\Rightarrow\beta\in W_{\operatorname{ht}(\beta)}\),
+the low active membership samples, the inverse \(\gamma_\beta\) formula,
+and the type-II chamber sector rule.  It is not the compact-source
+support exhaustion required before moduli transitions, orientation
+transport, vanishing-cycle transport, Hall operations, radical
+transport, or PBW transport.
+
+\begin{definition}[Source-window compact-support exhaustion datum]
+\label{def:source-window-compact-support-exhaustion}
+A source-window compact-support exhaustion datum consists of:
+\begin{enumerate}
+\item a set \(\mathscr S_X^{\mathrm{cpt}}\) of compact-source support
+rows, each carrying a source degree, a compact geometric provenance row,
+proper support, finite stabilizer data, and the orientation row used by
+the source Hall construction;
+\item a height function
+\[
+h_X:\mathscr S_X^{\mathrm{cpt}}\longrightarrow \mathbb Z_{\ge0}
+\]
+with finite fibres;
+\item finite source windows
+\[
+\mathscr S_{X,\le R}^{\mathrm{cpt}}
+=\{s\in\mathscr S_X^{\mathrm{cpt}}\mid h_X(s)\le R\};
+\]
+\item a cofinality witness proving that every
+\(s\in\mathscr S_X^{\mathrm{cpt}}\) lies in
+\(\mathscr S_{X,\le h_X(s)}^{\mathrm{cpt}}\);
+\item transition rows
+\(\mathscr S_{X,\le R}^{\mathrm{cpt}}\hookrightarrow
+\mathscr S_{X,\le R'}^{\mathrm{cpt}}\) for \(R\le R'\), later refined
+to closed embeddings or proper maps before orientation, vanishing-cycle,
+Hall, radical, and PBW transport is asserted.
+\end{enumerate}
+Target root labels, signed multiplicities, Pfaffian products, and
+protected traces are not entries of this datum.
+\end{definition}
+
+\begin{proposition}[Source-window compact-support exhaustion criterion;
+\textit{proved}]
+\label{prop:source-window-compact-support-criterion}
+If a datum of
+Definition~\ref{def:source-window-compact-support-exhaustion} is
+supplied, then the finite source windows exhaust compact support:
+\[
+\bigcup_{R\ge0}\mathscr S_{X,\le R}^{\mathrm{cpt}}
+=\mathscr S_X^{\mathrm{cpt}}.
+\]
+\end{proposition}
+
+\begin{proof}
+The inclusion from left to right is part of the definition of the
+finite source windows.  Conversely, for
+\(s\in\mathscr S_X^{\mathrm{cpt}}\), the cofinality witness gives
+\(s\in\mathscr S_{X,\le h_X(s)}^{\mathrm{cpt}}\).  Thus every compact
+source support row occurs in one finite source window.
+\end{proof}
+
+The packet
+\(\texttt{certificates/sources/source\_window\_compact\_support}\)
+records the present state of this datum.  Its verifier status is
+\texttt{SOURCE\_WINDOW\_COMPACT\_SUPPORT\_OBSTRUCTION\_VERIFIED}: the
+obstruction ledger lists the missing compact support index set, source
+height function, finite source windows, compact provenance rows,
+cofinality witness, source-window transitions, and target-source
+compatibility rows.  Its core source tables are empty, so
+the compact-source support-exhaustion theorem remains open.  This is
+the firewall separating the target-root exhaustion of
+Proposition~\ref{prop:active-root-window-exhaustion} from compact-source
+support exhaustion.
+
+\begin{definition}[Target/source window compatibility datum]
+\label{def:target-source-window-compatibility}
+Let \(W_\nu\) be the target height window and
+\(\mathscr S_{X,\le R}^{\mathrm{cpt}}\) a finite compact-source
+window.  A target/source window compatibility datum consists of:
+\begin{enumerate}
+\item a degree map
+\[
+d_R:\mathscr S_{X,\le R}^{\mathrm{cpt}}\longrightarrow
+\Gamma_{\mathrm{gram}}
+\]
+recording the normal-ordered Gram degree of every compact support row;
+\item a target index \(\nu(R)\) such that
+\[
+d_R(s)\in\Gamma(W_{\nu(R)})\qquad
+\text{for every }s\in\mathscr S_{X,\le R}^{\mathrm{cpt}};
+\]
+\item the row-wise equality
+\[
+\alpha(d_R(s))\in W_{\nu(R)}
+\]
+with zero degree-map defect;
+\item compatibility with compact provenance: the support row, its
+source degree, its compact geometric provenance, and its Gram degree
+all carry the same support identifier;
+\item compatibility under transitions
+\[
+\mathscr S_{X,\le R}^{\mathrm{cpt}}\hookrightarrow
+\mathscr S_{X,\le R'}^{\mathrm{cpt}},\qquad
+W_{\nu(R)}\subset W_{\nu(R')},
+\]
+so that the source degree map commutes with passage to larger windows.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Compatibility criterion for target and source windows;
+\textit{proved}]
+\label{prop:target-source-window-compatibility-criterion}
+Given a datum of
+Definition~\ref{def:target-source-window-compatibility}, every compact
+source support row in \(\mathscr S_{X,\le R}^{\mathrm{cpt}}\) has a
+well-defined target codomain in
+\(\Gamma(W_{\nu(R)})\cup(-\Gamma(W_{\nu(R)}))\cup\{0\}\), and the
+finite comparison maps on that source window are degree-compatible with
+the target window \(W_{\nu(R)}\).
+\end{proposition}
+
+\begin{proof}
+For a positive source degree the codomain is \(\alpha(d_R(s))\in
+W_{\nu(R)}\) by the compatibility datum.  The negative degree is carried
+to \(-\Gamma(W_{\nu(R)})\), and the Cartan degree is \(0\).  The
+zero-defect equality makes the target degree independent of notation,
+and the transition condition shows that enlarging \(R\) does not move a
+previously defined source support row outside the enlarged target
+window.  Thus every finite comparison row has a target codomain in the
+chosen window.
+\end{proof}
+
+The packet
+\(\texttt{certificates/sources/target\_source\_window\_compatibility}\)
+records the current state of this datum.  Its verifier status is
+\texttt{TARGET\_SOURCE\_WINDOW\_COMPATIBILITY\_OBSTRUCTION\_VERIFIED}:
+the source degree maps, \(\Gamma(W_\nu)\)-membership rows, target-window
+matching rows, compact-provenance compatibility rows, cofinal-index
+compatibility rows, transition compatibility rows, and zero
+compatibility-defect rows are not yet supplied.  Hence target/source
+window compatibility remains open.
+
+\begin{proposition}[Finite-window presentation recognition;
+\textit{proved}]
+\label{prop:finite-window-presentation-recognition}
+Fix a downward-saturated finite target-root window \(W\) and put
+\(S_W=W\cup(-W)\cup\{0\}\).  For a graded Lie superalgebra \(L\), write
+\[
+L|_{S_W}:=\bigoplus_{\beta\in S_W}L_\beta
+\]
+with the bracket retained only on pairs whose total degree remains in
+\(S_W\).  Suppose a compact \(K3\times E\) source supplies
+\((\mathrm{R0})\)--\((\mathrm{R8})\) on \(W\).  Then the finite
+comparison matrices \(A_{\beta,\bar p}\) determine an isomorphism of
+truncated Gram-graded Lie superalgebras
+\[
+A_W:\ P^{\Pi,\mathrm{red}}_X|_{\alpha^{-1}(S_W)}
+\xrightarrow{\ \sim\ }
+\mathfrak g_{\Delta_5}|_{S_W},
+\]
+compatible with the Cartan identification, the simple-root
+representatives, the Hopf-pairing radical quotient, and the
+associated-graded PBW filtration on \(W\).  Conversely, such an
+isomorphism, together with compact-source basis provenance, parity
+blocks, simple representatives, product, coproduct, unit, counit,
+Hopf-pairing, radical, quotient, and transition maps from which its
+matrices are obtained, gives \((\mathrm{R0})\)--\((\mathrm{R8})\).
+\end{proposition}
+
+\begin{proof}
+The representatives of (R1) define a homomorphism from the free
+Borcherds--Kac presentation to the source truncation.  The relation
+rows of (R2) put every Cartan, Chevalley, real-Serre, orthogonality,
+and super-sign relation whose degree lies in \(S_W\) in the kernel.
+The Hopf bialgebra and pairing data of (R4) make the source quotient a
+truncated Lie superalgebra: product and coproduct are compatible, the
+supercommutator closes on primitives, and the radical is a Lie ideal
+and a coproduct coideal.  The no-extra relation row (R5) is exactly the
+finite equality
+\[
+\ker\pi_W=
+\bigl(\overline{J_{\mathrm{BK}}+\operatorname{Rad}_{\mathrm{GN}}}
+\bigr)|_{S_W}.
+\]
+Thus the presentation map descends injectively from
+\(\mathfrak g_{\Delta_5}|_{S_W}\) to the source radical quotient.
+Generation (R6) gives surjectivity on every source degree in
+\(\alpha^{-1}(S_W)\).  The parity dimensions of (R3) identify the
+even and odd dimensions degree by degree in both signs, so no
+zero-superdimension summand or parity-cancelling kernel can remain.
+PBW compatibility (R7) identifies the associated gradeds of the
+universal enveloping algebras on \(W\).  Exact triangular completion
+(R8) says that the finite truncation is stable under passage to the
+next window and that no relation is created only by completion.  The
+matrix \(A_W\) is therefore a degree-preserving bijection preserving
+all brackets, pairing quotients, and PBW associated gradeds present in
+the finite window.
+
+Conversely, a truncated isomorphism with specified compact-source basis
+provenance, parity blocks, simple representatives, product, coproduct,
+unit, counit, Hopf pairing, radical, quotient, and transition maps
+yields the relation rows, radical identities, no-extra equality,
+generation spans, PBW rows, and transition rows by writing those finite
+maps in homogeneous bases.  Without the named compact-source maps one
+has only a linear isomorphism of graded vector spaces, not (R0)--(R8).
+\end{proof}
+
+\begin{definition}[PBW-transition datum]
+\label{def:transition-pbw-filtration-datum}
+Let \(W_\nu\subset W_{\nu+1}\) be two downward-saturated finite
+windows.  Put
+\[
+L_\nu=P^{\Pi,\mathrm{red}}_{X,\nu}/\operatorname{Rad}^{\Pi}_{X,\nu},
+\qquad
+L_{\nu+1}=P^{\Pi,\mathrm{red}}_{X,\nu+1}/
+\operatorname{Rad}^{\Pi}_{X,\nu+1}.
+\]
+A PBW-transition datum for \(L_{\nu+1}\to L_\nu\) consists of the
+following finite rows:
+\begin{enumerate}
+\item radical-quotient transition matrices \(T^Q_{\nu+1,\nu}\) in
+homogeneous quotient bases;
+\item ordered PBW word bases for \(F^{\mathrm{PBW}}_{\le d}U(L_\nu)\)
+and \(F^{\mathrm{PBW}}_{\le d}U(L_{\nu+1})\), with their
+associated-graded ranks;
+\item source and target relation-rewrite rows which identify the
+normal forms in the enveloping algebras;
+\item the multiplicative word transition induced by
+\(T^Q_{\nu+1,\nu}\), together with the zero-defect relation-rewrite
+identity saying that it descends to
+\[
+U(T^Q_{\nu+1,\nu}):U(L_{\nu+1})\longrightarrow U(L_\nu);
+\]
+\item for every retained \(d\), a zero-defect filtered-image row
+\[
+U(T^Q_{\nu+1,\nu})
+\bigl(F^{\mathrm{PBW}}_{\le d}U(L_{\nu+1})\bigr)
+\subset
+F^{\mathrm{PBW}}_{\le d}U(L_\nu);
+\]
+\item the induced matrices on
+\(\operatorname{gr}^{\mathrm{PBW}}_dU(L_{\nu+1})\to
+\operatorname{gr}^{\mathrm{PBW}}_dU(L_\nu)\), the PBW-symbol
+intertwining identity, the \(A_\beta\)-PBW transition square, and the
+composition law for three consecutive windows.
+\end{enumerate}
+The datum is absent if only primitive transitions, radical transitions,
+PBW rank equalities, target PBW rows, Hilbert series, scalar traces,
+or the formal normal-ordered PBW-pushforward packet are supplied.
+\end{definition}
+
+\begin{proposition}[Transition preservation of PBW filtrations;
+\textit{proved}]
+\label{prop:transition-pbw-filtration-preservation-criterion}
+A PBW-transition datum in the sense of
+Definition~\ref{def:transition-pbw-filtration-datum} determines a
+filtered algebra homomorphism
+\[
+U(T^Q_{\nu+1,\nu}):
+\bigl(U(L_{\nu+1}),F^{\mathrm{PBW}}_{\le\bullet}\bigr)
+\longrightarrow
+\bigl(U(L_\nu),F^{\mathrm{PBW}}_{\le\bullet}\bigr)
+\]
+and hence maps
+\[
+\operatorname{gr}^{\mathrm{PBW}}_d U(L_{\nu+1})
+\longrightarrow
+\operatorname{gr}^{\mathrm{PBW}}_d U(L_\nu)
+\]
+for every retained PBW degree \(d\).  These associated-graded maps are
+compatible with the finite comparison matrices \(A_\beta\), and they
+compose functorially on triples of windows.  Without the rows of
+Definition~\ref{def:transition-pbw-filtration-datum}, transition
+preservation of PBW filtrations is not established.
+\end{proposition}
+
+\begin{proof}
+The quotient transition matrix sends degree-one primitive generators of
+\(L_{\nu+1}\) to degree-one elements of \(L_\nu\).  Multiplication gives
+a word-level map from the tensor algebra on \(L_{\nu+1}\) to the tensor
+algebra on \(L_\nu\).  The relation-rewrite zero-defect row is exactly
+the statement that the image of every source enveloping relation is a
+target enveloping relation; hence the word-level map descends to the
+universal enveloping quotients.
+
+The filtered-image row says, in the chosen finite PBW bases, that the
+matrix of the descended map has no component from words of length
+\(\le d\) to target normal forms of length \(>d\).  This is precisely
+\(U(T^Q_{\nu+1,\nu})(F^{\mathrm{PBW}}_{\le d})\subset
+F^{\mathrm{PBW}}_{\le d}\).  Therefore the standard quotient
+\(F_{\le d}/F_{\le d-1}\) produces the displayed associated-graded
+matrix.  The PBW-symbol row identifies this quotient map with the
+symbol of the degree-one transition, and the \(A_\beta\)-square is the
+same matrix identity after applying the finite source-to-target
+comparison.  The composition row gives equality of the two matrix
+products for three windows, so the associated graded maps form an
+inverse system.  No scalar or rank-only datum contains these matrix
+identities.
+\end{proof}
+
+The packet
+\[
+\texttt{certificates/hall/transition\_pbw\_filtration\_preservation}
+\]
+records the current state of this datum.  Its verifier returns
+\(\texttt{TRANSITION\_PBW\_FILTRATION\_PRESERVATION\_OBSTRUCTION\_VERIFIED}\):
+the radical-quotient transition input, source and target PBW
+filtration rows, associated-graded rank rows, ordered word bases,
+relation-rewrite systems, quotient transition matrices, multiplicative
+word transitions, relation-rewrite compatibility rows, filtered-image
+identities, restricted filtered transition matrices, associated-graded
+transition matrices, PBW-symbol identities, \(A_\beta\)-PBW transition
+squares, and PBW-transition composition rows are not yet supplied.
+
+\begin{definition}[Parity-transition datum]
+\label{def:transition-parity-decomposition-datum}
+Let \(V_{\nu,\gamma}\) and \(V_{\nu+1,\gamma}\) be the retained
+finite primitive source spaces, after the finite radical quotient if
+recognition is being tested after \textup{(R4)}.  A parity-transition
+datum for
+\[
+T_{\nu+1,\nu,\gamma}:V_{\nu+1,\gamma}\longrightarrow V_{\nu,\gamma}
+\]
+consists of parity-homogeneous bases
+\[
+V_{\nu,\gamma}=V_{\nu,\gamma,\overline 0}\oplus
+V_{\nu,\gamma,\overline 1},
+\qquad
+V_{\nu+1,\gamma}=V_{\nu+1,\gamma,\overline 0}\oplus
+V_{\nu+1,\gamma,\overline 1},
+\]
+the finite fermion-parity involutions
+\[
+J_{\nu,\gamma}=+1\ \text{on }V_{\nu,\gamma,\overline 0},\qquad
+J_{\nu,\gamma}=-1\ \text{on }V_{\nu,\gamma,\overline 1},
+\]
+and the transition matrix of \(T_{\nu+1,\nu,\gamma}\), with the
+following zero-defect rows:
+\[
+J_{\nu,\gamma}T_{\nu+1,\nu,\gamma}
+=T_{\nu+1,\nu,\gamma}J_{\nu+1,\gamma},
+\]
+equivalently
+\[
+T_{\overline 0\overline 1}=0,\qquad
+T_{\overline 1\overline 0}=0.
+\]
+The datum also includes the restricted matrices
+\[
+T_{\overline p}:V_{\nu+1,\gamma,\overline p}
+\longrightarrow V_{\nu,\gamma,\overline p},
+\qquad p=0,1,
+\]
+the same rows for \(-\gamma\) transported by the Borcherds--Kac
+Chevalley anti-involution, the comparison square with the finite
+\(A_\beta\)-matrices on each parity piece, and the composition law for
+three consecutive windows.  Signed superdimension, target parity
+tables, parity ranks without transition matrices, primitive/radical/PBW
+transition rows, and the formal parity-pushforward packet are not such
+a datum.
+\end{definition}
+
+\begin{proposition}[Transition preservation of parity decompositions;
+\textit{proved}]
+\label{prop:transition-parity-decomposition-preservation-criterion}
+A parity-transition datum in the sense of
+Definition~\ref{def:transition-parity-decomposition-datum} makes each
+finite transition \(T_{\nu+1,\nu,\gamma}\) an even linear map.  Hence
+\[
+T_{\nu+1,\nu,\gamma}
+\bigl(V_{\nu+1,\gamma,\overline p}\bigr)
+\subset
+V_{\nu,\gamma,\overline p},\qquad p=0,1,
+\]
+and the even and odd retained root-space towers are defined
+separately.  The same conclusion holds for the negative-root spaces
+and is compatible with the finite comparison maps \(A_\beta\).  Without
+the rows of
+Definition~\ref{def:transition-parity-decomposition-datum}, transition
+preservation of parity decompositions is not established.
+\end{proposition}
+
+\begin{proof}
+The commutator identity
+\(J_{\nu,\gamma}T_{\nu+1,\nu,\gamma}
+=T_{\nu+1,\nu,\gamma}J_{\nu+1,\gamma}\)
+is the coordinate-free statement that the transition is even.  If
+\(x\in V_{\nu+1,\gamma,\overline p}\), then
+\[
+J_{\nu,\gamma}T_{\nu+1,\nu,\gamma}x
+=T_{\nu+1,\nu,\gamma}J_{\nu+1,\gamma}x
+=(-1)^pT_{\nu+1,\nu,\gamma}x.
+\]
+Thus \(T_{\nu+1,\nu,\gamma}x\) lies in the
+\((-1)^p\)-eigenspace of \(J_{\nu,\gamma}\), namely
+\(V_{\nu,\gamma,\overline p}\).  In parity-homogeneous bases this is
+equivalent to the two off-diagonal block identities
+\(T_{\overline 0\overline 1}=T_{\overline 1\overline 0}=0\).  The
+restricted matrices are the diagonal blocks.  The Chevalley
+anti-involution and the \(A_\beta\)-comparison square are additional
+finite matrix identities in the datum, so the same parity preservation
+holds on negative roots and after comparison with the target
+presentation.  The composition row gives functoriality of the even and
+odd restricted maps.
+\end{proof}
+
+The packet
+\[
+\texttt{certificates/hall/transition\_parity\_decomposition\_preservation}
+\]
+records the current state of this datum.  Its verifier returns
+\(\texttt{TRANSITION\_PARITY\_DECOMPOSITION\_PRESERVATION\_OBSTRUCTION\_VERIFIED}\):
+the primitive-transition input, source and target-stage parity blocks,
+parity-homogeneous bases, source and target fermion-parity involutions,
+ambient transition matrices, parity-commutator identities,
+off-diagonal zero identities, even and odd restricted transition
+matrices, negative-root parity transport rows, comparison parity
+squares, and parity-transition composition rows are not yet supplied.
+
+\begin{definition}[Primitive-space Mittag--Leffler datum]
+\label{def:primitive-space-ml-datum}
+Fix a cofinal sequence \(W_1\subset W_2\subset\cdots\) as in
+Definition~\ref{def:cofinal-primitive-recognition-datum}.  For each
+retained Gram degree \(\gamma\) with
+\(\alpha(\gamma)\in W_\nu\cup(-W_\nu)\), and for each parity
+\(\overline p\), let
+\[
+P_{\nu,\gamma,\overline p}
+:=P^{\Pi,\mathrm{red}}_{X,\gamma,\overline p}
+\bigm|_{\alpha^{-1}(W_\nu\cup(-W_\nu))}
+\]
+denote the finite primitive Hall space after normal-ordered descent and
+before quotienting by the Hopf radical.  When
+\(W_\nu\subset W_{\nu'}\), transition preservation of primitive
+subspaces gives a restricted map
+\[
+t_{\nu'\nu,\gamma,\overline p}:
+P_{\nu',\gamma,\overline p}\longrightarrow
+P_{\nu,\gamma,\overline p}.
+\]
+A primitive-space Mittag--Leffler datum consists of:
+\begin{enumerate}
+\item primitive-space rows for every
+\((\nu,\gamma,\overline p)\), including a finite basis, parity, sign,
+target root, and finite rank;
+\item restricted primitive transition matrices \(t_{\nu'\nu}\), together
+with identity and composition rows;
+\item coverage rows for every retained positive and negative root
+degree, for both parities, on the cofinal window sequence;
+\item for every base window \(W_{\nu_0}\), every retained
+\((\gamma,\overline p)\), and every later tower containing that degree,
+an image-stabilization witness: there is \(\nu_1\ge \nu_0\) such that
+for all \(\nu\ge\nu_1\),
+\[
+\operatorname{im}\bigl(
+P_{\nu,\gamma,\overline p}\to
+P_{\nu_0,\gamma,\overline p}\bigr)
+=
+\operatorname{im}\bigl(
+P_{\nu_1,\gamma,\overline p}\to
+P_{\nu_0,\gamma,\overline p}\bigr),
+\]
+with the stabilized image written in the chosen basis of
+\(P_{\nu_0,\gamma,\overline p}\);
+\item the defect rows
+\[
+\mathrm{strict}=1,\qquad \mathrm{ML}=1,\qquad
+\operatorname{rank}R^1\varprojlim_\nu
+P_{\nu,\gamma,\overline p}=0
+\]
+for every retained primitive-space tower, and compatibility rows for
+the \(A_\beta\)-comparison maps.
+\end{enumerate}
+Transition preservation of primitive subspaces, finite rank, equality of
+signed multiplicities, target-window containment, radical-transition
+data, PBW-transition data, and denominator-product identities are not a
+primitive-space Mittag--Leffler datum.
+\end{definition}
+
+\begin{proposition}[Vanishing of \(R^1\varprojlim\) on primitive spaces;
+\textit{proved}]
+\label{prop:primitive-space-lim1-vanishing-criterion}
+For every tower \(P_{\nu,\gamma,\overline p}\) carrying the datum of
+Definition~\ref{def:primitive-space-ml-datum}, the inverse system of
+primitive spaces is Mittag--Leffler.  Consequently
+\[
+R^1\varprojlim_\nu P_{\nu,\gamma,\overline p}=0
+\]
+for every retained Gram degree, target root, sign, and parity.  Without
+the rows of Definition~\ref{def:primitive-space-ml-datum}, the passage
+from finite primitive Hall spaces to the completed primitive source is
+not exact.
+\end{proposition}
+
+\begin{proof}
+The primitive-space rows and restricted transition matrices define an
+inverse system of finite-rank vector spaces once the identity and
+composition rows have zero defect.  The image-stabilization row is
+precisely the Mittag--Leffler condition: for each fixed base window,
+the images of all sufficiently large windows inside the base primitive
+space are constant.  The standard derived inverse-limit criterion for
+inverse systems of vector spaces therefore gives
+\(R^1\varprojlim=0\) on each primitive-space tower.  The conclusion is
+degreewise and paritywise.  It cannot be inferred from pointwise
+primitive kernels, dimension counts, signed Borcherds multiplicities, or
+transition preservation without the stabilized-image rows.
+\end{proof}
+
+The packet
+\[
+\texttt{certificates/hall/primitive\_space\_lim1\_vanishing}
+\]
+records the current state of this datum.  Its verifier returns
+\(\texttt{PRIMITIVE\_SPACE\_LIM1\_VANISHING\_OBSTRUCTION\_VERIFIED}\):
+the cofinal root-window sequence, primitive-space rows, primitive bases,
+finite-rank rows, parity and sign coverage rows, restricted transition
+matrices, transition-functoriality rows, image subspace rows,
+image-stabilization witnesses, strict Mittag--Leffler rows, zero
+\(R^1\varprojlim\) rows, degreewise coverage rows, and comparison-tower
+compatibility rows are not yet supplied.
+
+\begin{definition}[Pairing-kernel Mittag--Leffler datum]
+\label{def:pairing-kernel-ml-datum}
+Assume the primitive-space rows of
+Definition~\ref{def:primitive-space-ml-datum} have been supplied.  For
+each retained \((\nu,\gamma,\overline p)\), a finite Hopf-pairing row is
+a matrix for
+\[
+\lambda_{\nu,\gamma,\overline p}:
+P_{\nu,\gamma,\overline p}\longrightarrow
+P_{\nu,-\gamma,\overline p}^{\vee},
+\qquad
+x\longmapsto \langle x,-\rangle_\nu ,
+\]
+together with its opposite transpose
+\[
+\rho_{\nu,\gamma,\overline p}:
+P_{\nu,-\gamma,\overline p}\longrightarrow
+P_{\nu,\gamma,\overline p}^{\vee},
+\qquad
+y\longmapsto \langle -,y\rangle_\nu .
+\]
+Put
+\[
+K^{\ell}_{\nu,\gamma,\overline p}:=\ker\lambda_{\nu,\gamma,\overline p},
+\qquad
+K^{r}_{\nu,\gamma,\overline p}:=\ker\rho_{\nu,\gamma,\overline p}.
+\]
+The Hopf radical is formed later from these pairing kernels and the
+radical-intersection/quotient data; a pairing-kernel datum by itself is
+not a radical quotient.
+
+A pairing-kernel Mittag--Leffler datum consists of:
+\begin{enumerate}
+\item finite Hopf-pairing matrices \(\lambda_{\nu,\gamma,\overline p}\)
+and \(\rho_{\nu,\gamma,\overline p}\), with Hopf adjointness,
+Frobenius-cyclicity, and quotient-nondegeneracy identity rows marking
+that these are the pairings used in recognition;
+\item finite bases and ranks for every left kernel
+\(K^\ell_{\nu,\gamma,\overline p}\) and right kernel
+\(K^r_{\nu,\gamma,\overline p}\);
+\item transition maps between the left kernels and between the right
+kernels, induced by the primitive transition matrices and the
+pairing-transition identity, with identity and composition rows;
+\item coverage rows for every retained positive and negative root
+degree, both parities, and both kernel sides;
+\item for every base window \(W_{\nu_0}\), retained
+\((\gamma,\overline p)\), and side \(s\in\{\ell,r\}\), an
+image-stabilization witness: there is \(\nu_1\ge\nu_0\) such that for
+all \(\nu\ge\nu_1\),
+\[
+\operatorname{im}\bigl(K^s_{\nu,\gamma,\overline p}\to
+K^s_{\nu_0,\gamma,\overline p}\bigr)
+=
+\operatorname{im}\bigl(K^s_{\nu_1,\gamma,\overline p}\to
+K^s_{\nu_0,\gamma,\overline p}\bigr),
+\]
+with the stabilized image written in a finite kernel basis;
+\item the defect rows
+\[
+\mathrm{strict}=1,\qquad \mathrm{ML}=1,\qquad
+\operatorname{rank}R^1\varprojlim_\nu
+K^s_{\nu,\gamma,\overline p}=0
+\]
+for every retained pairing-kernel tower, and compatibility rows with
+the \(A_\beta\)-comparison to the target invariant-pairing kernels.
+\end{enumerate}
+Hopf-pairing matrices, rank equalities, quotient non-degeneracy,
+primitive-space Mittag--Leffler exactness, radical-transition
+preservation, target invariant kernels, and denominator identities are
+not a pairing-kernel Mittag--Leffler datum.
+\end{definition}
+
+\begin{proposition}[Vanishing of \(R^1\varprojlim\) on pairing kernels;
+\textit{proved}]
+\label{prop:pairing-kernel-lim1-vanishing-criterion}
+For every tower \(K^s_{\nu,\gamma,\overline p}\), \(s\in\{\ell,r\}\),
+carrying the datum of
+Definition~\ref{def:pairing-kernel-ml-datum}, the inverse system of
+pairing kernels is Mittag--Leffler.  Consequently
+\[
+R^1\varprojlim_\nu K^s_{\nu,\gamma,\overline p}=0
+\]
+for every retained Gram degree, target root, sign, parity, and kernel
+side.  Without the rows of
+Definition~\ref{def:pairing-kernel-ml-datum}, kernel formation for the
+Hopf pairing need not commute with passage from finite windows to the
+completed primitive source.
+\end{proposition}
+
+\begin{proof}
+The pairing-kernel rows and restricted transition matrices define an
+inverse system of finite-rank vector spaces once identity and
+composition defects vanish.  The image-stabilization row is exactly the
+Mittag--Leffler condition for this kernel system.  The standard derived
+inverse-limit criterion for inverse systems of vector spaces gives
+\(R^1\varprojlim=0\) for each left and right pairing-kernel tower.  This
+is a statement about the kernels as subspaces with their restricted
+transition maps.  It does not follow from the existence of a Hopf
+pairing matrix, from rank equality, from non-degeneracy after quotient,
+or from Mittag--Leffler exactness of the ambient primitive spaces without
+strict kernel-transition and stabilized-image rows.
+\end{proof}
+
+The packet
+\[
+\texttt{certificates/hall/pairing\_kernel\_lim1\_vanishing}
+\]
+records the current state of this datum.  Its verifier returns
+\(\texttt{PAIRING\_KERNEL\_LIM1\_VANISHING\_OBSTRUCTION\_VERIFIED}\):
+the cofinal root-window sequence, primitive-space input, Hopf-pairing
+matrix rows, Hopf-pairing identity rows, left and right kernel rows,
+kernel bases, finite-rank rows, pairing-transition input, restricted
+kernel transition matrices, transition-functoriality rows, image
+subspace rows, image-stabilization witnesses, strict Mittag--Leffler
+rows, zero \(R^1\varprojlim\) rows, degreewise coverage rows, and
+comparison-kernel compatibility rows are not yet supplied.
+
+\begin{definition}[PBW associated-graded Mittag--Leffler datum]
+\label{def:pbw-associated-graded-ml-datum}
+Assume the radical quotient transition data and the PBW-transition
+datum of Definition~\ref{def:transition-pbw-filtration-datum} have been
+supplied.  Let
+\[
+L_\nu:=P^{\Pi,\mathrm{red}}_{X}|_{\alpha^{-1}(S_{W_\nu})}
+/\operatorname{Rad}^{\Pi}_{X,\nu}
+\]
+be the finite primitive radical quotient on the window \(W_\nu\).  For
+each PBW degree \(d\), retained Gram degree \(\chi\), and parity
+\(\overline p\), put
+\[
+G^{\mathrm{PBW}}_{\nu,d,\chi,\overline p}
+:=\Bigl(\operatorname{gr}^{\mathrm{PBW}}_dU(L_\nu)\Bigr)_{\chi,\overline p}.
+\]
+The associated-graded transition maps of
+Proposition~\ref{prop:transition-pbw-filtration-preservation-criterion}
+give maps
+\[
+g_{\nu'\nu,d,\chi,\overline p}:
+G^{\mathrm{PBW}}_{\nu',d,\chi,\overline p}
+\longrightarrow
+G^{\mathrm{PBW}}_{\nu,d,\chi,\overline p}
+\qquad (\nu\le\nu').
+\]
+A PBW associated-graded Mittag--Leffler datum consists of:
+\begin{enumerate}
+\item finite PBW filtration rows \(F^{\mathrm{PBW}}_{\le d}U(L_\nu)\),
+lower filtration rows \(F^{\mathrm{PBW}}_{\le d-1}U(L_\nu)\), and
+quotient rows for every
+\(G^{\mathrm{PBW}}_{\nu,d,\chi,\overline p}\);
+\item ordered word bases, relation-rewrite rows, associated-graded
+bases, and associated-graded rank rows;
+\item associated-graded transition matrices \(g_{\nu'\nu}\), together
+with PBW-symbol intertwining, \(A_\beta\)-PBW comparison squares,
+identity rows, and composition rows;
+\item coverage rows for every retained PBW degree, Gram degree, parity,
+side, and cofinal window;
+\item for every base window \(W_{\nu_0}\), every retained
+\((d,\chi,\overline p)\), and every side, an image-stabilization
+witness: there is \(\nu_1\ge\nu_0\) such that for all \(\nu\ge\nu_1\),
+\[
+\operatorname{im}\bigl(
+G^{\mathrm{PBW}}_{\nu,d,\chi,\overline p}\to
+G^{\mathrm{PBW}}_{\nu_0,d,\chi,\overline p}\bigr)
+=
+\operatorname{im}\bigl(
+G^{\mathrm{PBW}}_{\nu_1,d,\chi,\overline p}\to
+G^{\mathrm{PBW}}_{\nu_0,d,\chi,\overline p}\bigr),
+\]
+with the stabilized image written in a finite associated-graded basis;
+\item the defect rows
+\[
+\mathrm{strict}=1,\qquad \mathrm{ML}=1,\qquad
+\operatorname{rank}R^1\varprojlim_\nu
+G^{\mathrm{PBW}}_{\nu,d,\chi,\overline p}=0
+\]
+for every retained PBW associated-graded tower.
+\end{enumerate}
+PBW filteredness, associated-graded rank equality, target PBW rows,
+Hilbert series, formal PBW pushforward, denominator identities, and
+primitive or pairing-kernel Mittag--Leffler exactness are not a PBW
+associated-graded Mittag--Leffler datum.
+\end{definition}
+
+\begin{proposition}[Vanishing of \(R^1\varprojlim\) on PBW associated
+gradeds; \textit{proved}]
+\label{prop:pbw-associated-graded-lim1-vanishing-criterion}
+For every tower
+\(G^{\mathrm{PBW}}_{\nu,d,\chi,\overline p}\) carrying the datum of
+Definition~\ref{def:pbw-associated-graded-ml-datum}, the inverse system
+of PBW associated-graded pieces is Mittag--Leffler.  Consequently
+\[
+R^1\varprojlim_\nu
+G^{\mathrm{PBW}}_{\nu,d,\chi,\overline p}=0
+\]
+for every retained PBW degree, Gram degree, parity, and side.  Without
+the rows of Definition~\ref{def:pbw-associated-graded-ml-datum}, PBW
+associated gradeds need not commute with passage from finite windows to
+the completed enveloping algebra.
+\end{proposition}
+
+\begin{proof}
+The associated-graded piece rows and associated-graded transition
+matrices define an inverse system of finite-rank vector spaces once the
+identity and composition rows have zero defect.  The
+image-stabilization row is precisely the Mittag--Leffler condition on
+that inverse system.  The standard derived inverse-limit criterion for
+inverse systems of vector spaces gives \(R^1\varprojlim=0\) on every
+retained PBW associated-graded tower.  Filteredness alone gives maps of
+filtered pieces; it does not imply that the images on the quotients
+\(F_{\le d}/F_{\le d-1}\) stabilize.  Rank equality and Hilbert-series
+agreement likewise do not compute the derived inverse limit.
+\end{proof}
+
+The packet
+\[
+\texttt{certificates/hall/pbw\_associated\_graded\_lim1\_vanishing}
+\]
+records the current state of this datum.  Its verifier returns
+\(\texttt{PBW\_ASSOCIATED\_GRADED\_LIM1\_VANISHING\_OBSTRUCTION\_VERIFIED}\):
+the cofinal root-window sequence, radical-quotient input,
+PBW-transition input, PBW filtration rows, ordered word bases,
+relation-rewrite rows, associated-graded piece rows, graded bases,
+associated-graded rank rows, associated-graded transition maps,
+PBW-symbol intertwining rows, \(A_\beta\)-PBW squares,
+transition-functoriality rows, image subspace rows,
+image-stabilization witnesses, strict Mittag--Leffler rows, zero
+\(R^1\varprojlim\) rows, degreewise coverage rows, and
+comparison-graded compatibility rows are not yet supplied.
+
+\begin{proposition}[Strict Mittag--Leffler completion for primitive
+recognition; \textit{proved}]
+\label{prop:strict-ml-completion-primitive-recognition}
+Let
+\(\{W_\nu\}_{\nu\ge 1}\) be a cofinal increasing sequence of
+downward-saturated finite root windows.  For each \(\nu\), let
+\[
+A_\nu:\ P^{\Pi,\mathrm{red}}_{X}|_{\alpha^{-1}(S_{W_\nu})}
+\xrightarrow{\sim}
+\mathfrak g_{\Delta_5}|_{S_{W_\nu}}
+\]
+be the finite-window isomorphism of
+Proposition~\ref{prop:finite-window-presentation-recognition}.  Suppose
+the transition maps for \(W_{\nu+1}\to W_\nu\) satisfy the following
+strict Mittag--Leffler conditions:
+\begin{enumerate}
+\item the source primitive-space towers of
+Definition~\ref{def:primitive-space-ml-datum} and the target root-space
+parity towers are Mittag--Leffler, and \(A_\nu\) commutes with the
+transition maps on each parity piece;
+\item the pairing-kernel towers of
+Definition~\ref{def:pairing-kernel-ml-datum}, the kernel towers of the
+finite presentation maps, the Hopf radical intersection towers, and the
+relation-radical quotient towers are strict subsystems: transition maps
+carry each subspace onto the corresponding image and induce the quotient
+transition maps;
+\item the PBW filtrations are strict under transition, and the induced
+towers on the associated graded pieces carry the
+Mittag--Leffler datum of
+Definition~\ref{def:pbw-associated-graded-ml-datum};
+\item the triangular finite-window towers for positive-negative
+cancellation have \(R^1\varprojlim=0\).
+\end{enumerate}
+Then inverse limit is exact on the finite recognition diagram.  In
+particular,
+\[
+\varprojlim_\nu
+\bigl(P^{\Pi,\mathrm{red}}_{X}|_{\alpha^{-1}(S_{W_\nu})}
+/\operatorname{Rad}^{\Pi}_{X,\nu}\bigr)
+\cong
+\bigl(\varprojlim_\nu
+P^{\Pi,\mathrm{red}}_{X}|_{\alpha^{-1}(S_{W_\nu})}\bigr)
+\big/
+\overline{\varprojlim_\nu\operatorname{Rad}^{\Pi}_{X,\nu}},
+\]
+the completed kernel is the closure of the finite kernels, the
+completed PBW associated graded is the inverse limit of the finite PBW
+associated gradeds, and the maps \(A_\nu\) assemble to an isomorphism
+of completed Gram-graded Lie superalgebras
+\[
+\varprojlim_\nu
+P^{\Pi,\mathrm{red}}_{X}|_{\alpha^{-1}(S_{W_\nu})}
+\xrightarrow{\sim}
+\varprojlim_\nu \mathfrak g_{\Delta_5}|_{S_{W_\nu}}.
+\]
+Without these strict Mittag--Leffler conditions, finite-window
+isomorphisms do not by themselves identify the completed primitive
+source with the completed BKM target.
+\end{proposition}
+
+\begin{proof}
+For inverse systems of vector spaces, the derived exact sequence for
+\(\varprojlim\) shows that exactness of
+\[
+0\to K_\nu\to V_\nu\to Q_\nu\to0
+\]
+passes to inverse limits exactly when \(R^1\varprojlim K_\nu=0\), or
+more generally when the tower is Mittag--Leffler.  Apply this to the
+presentation-kernel tower, the Hopf-radical tower, the quotient tower,
+and each even/odd root-space tower.  Strictness says that taking
+subobjects, quotients, and finite PBW filtered pieces commutes with the
+transition maps; hence the inverse-limit quotient is the quotient by
+the closure of the finite radicals, and the inverse-limit kernel is the
+closure of the finite kernels.  The strict filtered statement gives
+\[
+\operatorname{gr}_{\mathrm{PBW}}\varprojlim_\nu U(P_\nu)
+\cong
+\varprojlim_\nu\operatorname{gr}_{\mathrm{PBW}}U(P_\nu)
+\]
+on every retained degree.
+
+The maps \(A_\nu\) commute with the transition maps, so they form an
+isomorphism of inverse systems.  Since inverse limit is a functor and
+the kernel and cokernel towers of \(A_\nu\) are zero, the inverse-limit
+map has zero kernel and cokernel.  If the Mittag--Leffler hypotheses are
+removed, the \(R^1\varprojlim\) term can contribute a hidden kernel,
+cokernel, radical element, PBW class, or parity-cancelling summand
+which is invisible on each fixed finite window.  This is exactly the
+completion failure prohibited by (R8).
+\end{proof}
+
+\begin{definition}[Finite source proof tables]
+\label{def:finite-source-proof-tables}
+After choosing homogeneous bases on a finite window \(W_\nu\), the
+finite-window primitive-recognition datum of
+Definition~\ref{def:cofinal-primitive-recognition-datum} is equivalent
+to the following source proof tables:
+\[
+\begin{gathered}
+\mathrm{degrees},\ \mathrm{parity\_blocks},\
+\mathrm{basis\_provenance},\
+\mathrm{simple\_representatives},\
+M,\ D,\ \mathrm{unit\_counit},\ B,\ G,\
+\mathrm{hopf\_pairing\_identities},\ K,\ Q,\ A,\\
+\mathrm{hall\_bialgebra\_identities},\
+\mathrm{radical\_ideal\_coideal},\
+\mathrm{relation\_rows},\
+\mathrm{no\_extra},\
+\mathrm{generation},\
+\mathrm{pbw},\
+\mathrm{transitions},\
+\mathrm{A}_{\beta}\mathrm{\_comparison\_maps}.
+\end{gathered}
+\]
+When the same packet is used to assert the current-envelope statement
+\(\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}\), it must
+also contain the finite Koszul comparison tables
+\[
+\mathrm{koszul\_cones},\qquad
+\mathrm{koszul\_comparison\_identities},\qquad
+\mathrm{koszul\_transition\_ml}
+\]
+of Definition~\ref{def:finite-koszul-comparison-datum}.  They are not
+implied by the \(A_\beta\)-comparison maps: \(A_\beta\) records the
+primitive radical-quotient comparison, whereas the Koszul tables record
+the acyclic cones, compatibility homotopies, and strict
+Mittag--Leffler systems of the chiral cobar comparison.
+
+Their mathematical meanings are fixed as follows.  The degree table
+records the Gram labels \(\gamma\), their signs, window membership, and
+compact source-admissibility.  The provenance table records the retained
+charge lift, source stratum, vanishing-cycle or intersection-complex
+summand, reduced orientation, quotient orientation,
+Thom--Sebastiani transport, finite-stabilizer linearization, protected
+integration, and transition compatibility of every basis vector.  The
+parity table records the two ranks in each parity, not only their
+difference.  The simple-representative table names the source basis
+vectors realizing \(e_i^X,f_i^X,h_i^X\), together with their parity and
+target reference.  The matrices \(M,D,B\) record, respectively, the
+source Hall product, source coproduct, and supercommutator bracket on
+the chosen source bases.  The \(\mathrm{unit\_counit}\) table records
+the unit and counit maps.  The Hall bialgebra identity table records the
+vanishing of the finite defects for associativity, coassociativity,
+left and right unit, left and right counit, product-coproduct
+compatibility, and primitive closure of the supercommutator.  The
+matrix \(G\) records the Hopf pairing.  The Hopf-pairing identity table
+records the finite defects for Hopf adjointness
+\(\langle m(x,y),z\rangle=\langle x\otimes y,\Delta z\rangle\), the
+Frobenius cyclic identity for the primitive bracket, and
+non-degeneracy of the induced pairing on the radical quotient.  The
+matrices \(K,Q\) record the radical kernel and a quotient splitting.
+The matrix \(A\) records the comparison from the source radical quotient
+to the imported target basis; target labels are allowed only in this
+codomain.
+
+Each row is \emph{geometrically generated}.  It carries a source
+identifier for the compact correspondence, reduced stratum, vanishing-
+cycle or intersection-complex summand, orientation transport,
+Hopf-pairing construction, radical computation, quotient splitting,
+comparison map, or transition morphism from which the row is obtained,
+together with a proof reference for the relevant theorem, equation,
+finite computation, or source certificate.  A row whose matrices satisfy
+the displayed rank identities but are not obtained from these
+compact-source data is not a row of the finite source proof tables.  In
+particular, arbitrary matrices with the correct dimensions, target-only
+rows, signed-only rows, and status-only rows do not define the compact
+source primitive-recognition datum.
+
+The remaining tables record identities.  The
+\(\mathrm{radical\_ideal\_coideal}\) rows state that \(K\) is stable as
+a Lie ideal and as a coproduct coideal.  The
+\(\mathrm{relation\_rows}\) table records the Cartan, Chevalley, real
+Serre, Borcherds orthogonality, and super sign relations.  The
+\(\mathrm{no\_extra}\) table records the finite rank identity
+\(\ker\pi_\nu=(\overline{J_{\mathrm{BK}}+\operatorname{Rad}_{\mathrm{GN}}})_{\le W_\nu}\).
+The \(\mathrm{generation}\) table records, for each source basis vector
+in the radical quotient, a bracket-word span by the Cartan and simple
+primitive representatives with all intermediate degrees remaining in
+\(W_\nu\).  The \(\mathrm{pbw}\) table records the associated-graded PBW
+rank comparison.  The \(\mathrm{transitions}\) table records strictness
+and Mittag--Leffler exactness under \(W_{\nu+1}\to W_\nu\).  The
+\(\mathrm{A}_{\beta}\)-comparison table records that the comparison
+matrix \(A\) intertwines the source bracket, coproduct, pairing, radical
+quotient, and PBW filtration with the target blocks.
+Admissibility of these finite tables is numerical: every defect-rank
+row above must have rank \(0\), and every rank-comparison row must have
+equal ranks on the two sides and on their combined span.  A non-zero
+defect rank or a failed rank equality is a failed finite-window
+recognition datum.  The identity rows are also exhaustive.  In the
+finite source proof tables the canonical labels are
+\[
+\begin{gathered}
+\texttt{unit\_left},\texttt{unit\_right},\texttt{counit\_left},
+\texttt{counit\_right},\texttt{associativity},\texttt{coassociativity},
+\texttt{bialgebra\_compatibility},\texttt{primitive\_closure},\\
+\texttt{hopf\_adjointness},\texttt{frobenius\_cyclic},
+\texttt{quotient\_nondegenerate},\quad
+\texttt{lie\_ideal},\texttt{coproduct\_coideal},\\
+\texttt{cartan},\texttt{chevalley},\texttt{real\_serre},
+\texttt{borcherds\_orthogonality},\texttt{super\_sign},\quad
+\texttt{bracket},\texttt{coproduct},\texttt{pairing},
+\texttt{radical\_quotient},\texttt{pbw}.
+\end{gathered}
+\]
+Omitting one family is a failed finite-window recognition datum.
+If the current-envelope comparison is also asserted, the Koszul table
+families listed above are part of the same finite packet; omitting one
+of them is a failed finite Koszul comparison datum, even if
+\((\mathrm{R0})\)--\((\mathrm{R8})\) hold algebraically.
+\end{definition}
+
+For the compact \(K3\times E\) Hall source packet used in this
+manuscript, the companion obstruction ledger
+\[
+\texttt{certificates/sources/k3e\_compact\_hall/blocked\_obligations.csv}
+\]
+records precisely the missing source artifacts.  Its verifier returns
+\(\texttt{COMPACT\_HALL\_OBSTRUCTION\_LEDGER\_VERIFIED}\), while still
+recording \(\texttt{compact\_source\_recognition=false}\) and
+\(\texttt{mathematical\_certification=false}\).  The ledger is therefore
+not evidence for primitive recognition.  It is the finite list of
+objects which must be supplied before \(P_X^{\Pi,\mathrm{red}}\) exists
+as a constructed compact-source primitive Hall Lie superalgebra:
+the coproduct \(D\), unit and counit, bialgebra compatibility, primitive
+closure, Hopf pairing, radical ideal/coideal, no-extra kernel equality,
+PBW comparison, strict Mittag--Leffler transition, the
+\(A_\beta\)-intertwining rows, and the finite Koszul comparison rows.
+
+\begin{proposition}[The finite source proof tables are exactly the
+finite recognition datum; \textit{proved}]
+\label{prop:finite-source-proof-tables-equivalence}
+For a fixed downward-saturated finite window \(W_\nu\), a populated
+system of finite source proof tables in the sense of
+Definition~\ref{def:finite-source-proof-tables}, with all stated rank
+and intertwining identities verified over the chosen coefficient ring
+and with every row geometrically generated from the compact-source
+correspondences and orientation/Hopf data named there,
+is equivalent to clauses \textup{(R0)}--\textup{(R8)} of
+Definition~\ref{def:cofinal-primitive-recognition-datum} after a choice
+of homogeneous bases.  In particular, a header-only table system, or a
+table system whose rows contain status text but no mathematical payload,
+or a table system of arbitrary matrices without compact-source
+provenance, does not define a finite-window primitive-recognition datum.
+\end{proposition}
+
+\begin{proof}
+Choosing homogeneous bases turns each finite-dimensional source
+primitive space, pairing block, radical, quotient, and comparison map
+into matrices, but only after the corresponding finite Hall
+correspondence, reduced orientation, Hopf pairing, radical quotient, and
+transition maps have been constructed.  The row-level geometric source
+and proof reference record this construction before coordinates are
+chosen.  The degree and provenance tables are precisely (R0).
+The simple-representative table is (R1).  The parity table is (R3).
+The representative rows together with the relation table are
+(R1)--(R2).
+The \(M,D,\eta,\epsilon,B\) matrices and the Hall bialgebra identity
+table are the product-coproduct and primitive-closure part of (R4).
+The \(G\) matrix and the Hopf-pairing identity table are the pairing
+adjointness, Frobenius, and quotient non-degeneracy part of (R4).  The
+\(K,Q\) matrices and the
+\(\mathrm{radical\_ideal\_coideal}\) identities are the radical part of
+(R4).  The
+\(\mathrm{no\_extra}\) rank identity is (R5).  The generation span table
+is (R6).  The PBW table is (R7), and the transition table is (R8).  The
+\(\mathrm{A}_{\beta}\)-comparison rows assert that the source quotient
+is compared to the same target blocks in every operation, so the matrix
+statements are independent of the chosen coordinates.  Conversely, any
+finite-window datum satisfying (R0)--(R8) yields these tables after
+choosing bases and writing the finite maps and identities in matrix
+form, with the geometric source and proof reference inherited from the
+finite maps themselves.  Empty rows have no source vectors, maps, ranks,
+or identities; arbitrary matrices with no compact-source origin have no
+Hall correspondence, orientation datum, pairing construction, or
+transition map.  They satisfy none of the clauses.
+\end{proof}
 
 \begin{proposition}[Global recognition is exactly the cofinal datum;
 \textit{proved}]
 \label{prop:global-recognition-cofinal-datum}
 Assume (S1)--(S4) of Theorem~\ref{thm:primitive-recognition}.  Then
-the remaining global source-side assertions (S5)--(S10) are supplied
-by a cofinal finite-window primitive-recognition datum
+the global source-side assertions (S5)--(S10) are equivalent to
+a cofinal finite-window primitive-recognition datum
 $\{W_\nu,(\textup{R0})\text{--}(\textup{R8})\}$ in the sense of
 Definition~\ref{def:cofinal-primitive-recognition-datum}, and
 conversely.
@@ -299,12 +1551,14 @@ The two sides record the same data: each $W_\nu$ is a saturated
 finite window in (S5)--(S9), and (R3) is exactly the
 two-integer parity equality of (S10) on $W_\nu$.  The Hopf pairing
 matrices, kernel equalities, PBW filtrations, no-extra-relations
-ledger, and transition strictness are word-for-word the cofinal
+relations, and transition strictness are exactly the cofinal
 contents of (S5)--(S9), and the cusp-positive arithmetic side of
 $f(nm,l)$ is recovered from the parity equalities (R3) on the active
 target degrees.  Conversely, given (R0)--(R8) on a cofinal system,
-inverse limit exactness (R8) gives the global statements
-(S5)--(S9), and (R3) on a cofinal exhaustion gives (S10).
+the strict Mittag--Leffler completion theorem
+Proposition~\ref{prop:strict-ml-completion-primitive-recognition}
+gives the global statements (S5)--(S9), and (R3) on a cofinal
+exhaustion gives (S10).
 \end{proof}
 
 \subsubsection*{Recognition criterion at the window $W_{\le 3}$}
@@ -319,11 +1573,216 @@ and strict Mittag--Leffler transition maps.  The target labels
 $e_i,E_{ij},u_{ij,r},T_i,M_{ij,r},w_s$ occur only in target blocks
 or as codomain coordinates of $A_{\beta,\overline p}$.
 
-The window $W_{\le 3}$ is the first arithmetic window, not the
-first relation-closed window.  A relation-closed test must include
+The window $W_{\le 3}$ is the first arithmetic window, not a
+relation-closed degree window.  A relation-closed degree test must include
 real-Serre terminal rows, doubled isotropic rows, $\delta_{123}$-real
 strings, odd--odd $\delta_{123}$ rows, and complementary
-height-seven strings, or pass to the downward-saturated closure.
+height-seven strings, or pass to the downward-saturated closure.  In
+the target-reference packet \(\texttt{wle3\_target\_parity}\),
+\(W_{\le3}\) has the verified rows \(\delta_i:1|0\),
+\(a_{ij}:10|0\), \(2\delta_i+\delta_j:1|0\), and
+\(\delta_{123}:29|93\); its scalar firewall excludes source parity,
+Hall brackets, pairing radicals, PBW comparison, and primitive
+recognition.
+The finite packet \(\texttt{parity\_pushforward}\) verifies a different
+formal statement: once finite source parity blocks are supplied, the
+additive normal-ordered Gram pushforward preserves the even and odd
+blocks separately.  It supplies neither the source parity dimensions
+required in (R3) nor the Gritsenko--Nikulin/Kac target parity equality;
+those remain primitive-recognition data.
+The finite packet \(\texttt{pbw\_pushforward}\) is likewise formal: once
+a finite PBW filtration is supplied, additive normal-ordered Gram
+pushforward preserves its filtered pieces and associated graded.  It
+does not supply the compact-source PBW comparison required in (R7), the
+target PBW rows, or the no-extra-relations theorem.
+The finite packet \(\texttt{triangular\_pushforward}\) is the analogous
+formal statement for a supplied positive/Cartan/negative splitting: the
+normal-ordered pushforward preserves the three direct-sum parts and the
+displayed bracket signs.  It does not supply the exact triangular
+completion required in (R8), target triangular completion, or the
+Mittag--Leffler exactness of triangular finite-window systems.
+The finite target degree-closure packet
+\(\texttt{wrel\_degree\_closure}\) verifies that the enlarged target
+degree set has exactly the \(35\) rows
+\[
+W_{\le3}^{act}\cup R_4\cup I_4\cup C_{\le7}\cup\{2\delta_{123}\},
+\]
+with \(R_4\) and \(C_{k,5}\) terminal zero rows.  Its
+downward-saturation audit finds exactly three nonzero proper
+subdegree defects, namely
+\[
+D_k=\delta_k+2a_{ij},\qquad \{i,j,k\}=\{1,2,3\},
+\]
+below \(2\delta_{123}\), each with signed multiplicity \(-513\).
+This is still only the target degree closure.
+In the larger target degree window,
+Remark~\ref{rem:bkm-relation-window-target-parity}
+supplies full parity only for \(2a_{ij}\), \(C_{k,3}\), \(C_{k,4}\),
+and \(C_{k,5}\).  The rows \(C_{k,2}\), \(D_k\), and
+\(2\delta_{123}\) remain signed target rows; they cannot serve as
+source comparison codomains until the finite target presentation is
+computed in those degrees.  The base-string terminal degree set is
+therefore not yet a primitive-recognition window in the sense of
+(R0)--(R8).
+The A071 target-presentation verifier records this boundary: it checks
+the \(2a_{ij}\), \(C_{k,3}\), \(C_{k,4}\), and \(C_{k,5}\) parity rows,
+and rejects \(C_{k,2}\), \(D_k\), and \(2\delta_{123}\) as target
+basis, pairing, radical, or PBW rows.  The failure is structural, not
+a missing scalar coefficient.  The minimal nonzero downward-saturation
+extension \(W_{\mathrm{rel}}^+\cup\{D_1,D_2,D_3\}\) is now
+target-recorded; a primitive-recognition window must still supply the
+missing target-presentation and compact-source data.  The
+post-saturation real-string audit records \(21\) terminal codomains
+outside the saturated extension, \(10\) with nonzero signed
+multiplicity.  The terminal-layer audit groups these codomains into
+\(21\) distinct terminal degrees; adjoining them creates \(114\)
+nonzero subdegree-defect incidences across \(26\) distinct subdegrees.
+The next target-degree computation adjoins exactly these \(26\) rows and
+gives an \(85\)-row degree set with zero remaining nonzero
+proper-subdegree defect.  This closes downward saturation for the
+displayed terminal layer, but full finite relation closure remains a
+further target closure problem: if these \(26\) rows are promoted to
+target-generator rows, the real-root strings force \(55\) terminal
+checks, \(54\) terminal codomains outside the \(85\)-row set, and
+\(12\) missing codomains with nonzero signed multiplicity.  Adjoining
+those \(55\) terminal codomains would create \(546\) nonzero
+proper-subdegree defect incidences across \(98\) distinct subdegrees.
+Adjoining those \(98\) rows gives a \(237\)-row target degree set with
+zero remaining nonzero proper-subdegree defect for that layer.  If this
+\(98\)-row layer is promoted to target-generator rows, the real-root
+strings force \(206\) terminal checks, \(182\) new terminal degrees, and
+\(24\) missing nonzero terminal degrees.  The exact terminal-layer table
+records all \(206\) codomains, and the exact saturation-extension table
+records the \(50\) distinct nonzero proper subdegrees created by
+adjoining them, with \(624\) incidences.  Adjoining both layers gives a
+\(469\)-row target degree set with zero remaining nonzero
+proper-subdegree defects for that layer.  Promoting the newly adjoined
+\(50\)-row layer forces \(96\) real-string terminal checks, \(90\) new
+terminal degrees, no missing nonzero terminal degree, and a \(12\)-row
+nonzero saturation extension with \(44\) incidences.  Adjoining these
+rows gives a \(571\)-row target degree set with zero remaining nonzero
+proper-subdegree defects for that layer.  Promoting the newly adjoined
+\(12\)-row layer forces \(20\) real-string terminal checks, all with
+zero signed terminal multiplicity, and a \(6\)-row nonzero saturation
+extension with \(8\) incidences.  Adjoining these rows gives a
+\(597\)-row target degree set with zero remaining nonzero
+proper-subdegree defects for that layer.  Promoting the newly adjoined
+\(6\)-row layer forces \(10\) real-string terminal checks, all with
+zero signed terminal multiplicity, and a \(6\)-row nonzero saturation
+extension with \(18\) incidences.  Adjoining these rows gives a
+\(613\)-row target degree set with zero remaining nonzero
+proper-subdegree defects for that layer.  Promoting the next newly
+adjoined \(6\)-row layer forces \(10\) real-string terminal checks, all
+with zero signed terminal multiplicity, and a \(6\)-row nonzero
+saturation extension with \(8\) incidences.  Adjoining these rows gives
+a \(629\)-row target degree set with zero remaining nonzero
+proper-subdegree defects for that layer.  Promoting the next newly
+adjoined \(6\)-row layer forces \(10\) real-string terminal checks, all
+with zero signed terminal multiplicity, and a \(6\)-row nonzero
+saturation extension with \(18\) incidences.  Adjoining these rows gives
+a \(645\)-row target degree set with zero remaining nonzero
+proper-subdegree defects for that layer.  The tail is not a finite
+accident.  For every even \(N\ge 14\), put
+\[
+\begin{aligned}
+A_N&=\{(0,N,N-1),(0,N,N),(0,N+1,N),
+      (N,0,N-1),(N,0,N),(N+1,0,N)\},\\
+B_N&=\{(0,N,N+1),(0,N+1,N+1),(0,N+1,N+2),
+      (N,0,N+1),(N+1,0,N+1),(N+1,0,N+2)\}.
+\end{aligned}
+\]
+The verifier
+\(\texttt{wrel\_tail\_staircase}\) proves symbolically, using the
+Lorentzian pairing and the \(q^0\)-term \(y^{-1}+10+y\) of
+\(\phi_{0,1}\), that the real-root terminal audit and downward
+saturation force
+\[
+A_N\Longrightarrow B_N,\qquad B_N\Longrightarrow A_{N+2}.
+\]
+Its finite-anchor table checks the six rows of \(A_{14}\) inside the
+\(\texttt{wrel\_degree\_closure}\) packet.  Hence the target-degree
+audit contains an infinite six-row staircase.  Its
+\(\texttt{unbounded\_tail.csv}\) table records the subsequences
+\(A_{14+2k}\) and \(B_{14+2k}\) with a strictly increasing coordinate.
+The source comparison can therefore be formulated only through finite
+presentation data, not by closing a finite target-degree enumeration.
+To promote this target audit to the first relation-closed compact-source
+theorem, one must populate the first-window packet
+\[
+\mathrm{window\_closure},\quad
+\mathrm{target\_source\_representatives},\quad
+\mathrm{chevalley\_serre\_matrices},\quad
+\mathrm{hall\_boundary\_complex},\quad
+\mathrm{spectral\_sequence},\quad
+\mathrm{kernel\_matrices},\quad
+\mathrm{pbw\_graded},\quad
+\mathrm{first\_window\_theorems},\quad
+\mathrm{transitions},\quad
+\mathrm{scalar\_firewall}.
+\]
+The theorem rows include the first-window instances of \(O1\),
+\(O1^+\), \(O2\), \(P_{\mathrm{fin}}\), Hall product, Hall coproduct,
+Hopf pairing, Koszul comparison, PBW comparison, primitive
+recognition, and Pfaffian equality.  A target relation-closed degree
+set without these compact-source rows is not a source theorem.
+At present the packet
+\(\texttt{certificates/first\_window/k3e\_relation\_closed\_window}\)
+verifies only the obstruction ledger
+\(\texttt{FIRST\_WINDOW\_OBSTRUCTION\_LEDGER\_VERIFIED}\), with
+\(\texttt{first\_window\_certification=false}\).  Thus the first
+relation-closed source theorem remains open until these finite rows are
+supplied.
+
+\begin{proposition}[Target-admissibility obstruction for the
+height-seven closure; \textit{proved}]
+\label{prop:target-admissibility-obstruction-wrel}
+Let \(W\) be a downward-saturated finite target-root window containing
+the height-\(7\) closure \(W_{\mathrm{rel}}^+\) of
+Chapter~\ref{ch:pfaffian-dirac}.  If \(W\) is a
+primitive-recognition window satisfying (R0)--(R8), then the target
+restriction must contain a finite target-presentation datum.  In
+particular, for every row \(C_{k,2}\), \(D_k=\delta_k+2a_{ij}\), and
+\(2\delta_{123}\), it must supply the full even/odd parity dimensions,
+the positive-negative pairing block, the target radical block, and the
+PBW associated-graded row.  The signed target identities
+\[
+ \sdim(C_{k,2})=108,\quad m(C_{k,2})=90,\qquad
+ \sdim(D_k)=-513,\quad m(D_k)=54,\qquad
+ \sdim(2\delta_{123})=4016,\quad m(2\delta_{123})=-540
+\]
+do not supply these data.  Hence the presently available target data
+do not make the saturated extension of \(W_{\mathrm{rel}}^+\) a
+primitive-recognition window.
+\end{proposition}
+
+\begin{proof}
+The rows \(C_{k,2}\) and \(2\delta_{123}\) lie in
+\(W_{\mathrm{rel}}^+\), and \(D_k\) lies in every downward-saturated
+window containing \(W_{\mathrm{rel}}^+\), since
+\[
+0<D_k=\delta_k+2a_{ij}<2\delta_{123}.
+\]
+By
+Proposition~\ref{prop:target-presentation-prerequisite}, they must be
+target-presentation rows.  Clause (R3) requires the two integers
+\(\rootmult_{\overline 0}^{\mathrm{GN}}(\beta)\) and
+\(\rootmult_{\overline 1}^{\mathrm{GN}}(\beta)\) for every
+\(\beta\in W\), and also in the negative degree by the
+Borcherds--Kac Chevalley anti-involution.  A signed multiplicity gives
+only their difference.  The integer \(m(\beta)\) records the
+Gritsenko--Nikulin imaginary-simple contribution in the denominator
+presentation; it is not the full quotient root-space parity split and
+does not determine an invariant positive-negative pairing.
+
+Clauses (R4), (R5), and (R7) then require the target pairing kernel,
+radical block, and PBW associated-graded comparison in the same
+degrees.  Without those target blocks the source-to-target matrices
+\(A_{\beta,\overline p}\) have no defined codomain in these rows, and
+the equations expressing Hopf radical equality, no-extra-relations, and
+PBW compatibility are not well-formed.  Thus signed data in
+\(C_{k,2}\), \(D_k\), and \(2\delta_{123}\) are not admissible target
+data for (R0)--(R8).
+\end{proof}
 
 \subsubsection*{What signed dimensions miss}
 
@@ -341,18 +1800,63 @@ not isomorphic to it as a Lie superalgebra.
 \begin{proof}
 The denominator depends only on signed superdimensions; the bracket
 data, no-extra-relations theorem, Hopf-radical coideal stability, and
-PBW filtration are independent.  $V_\bullet$ has trivial bracket and
-trivial Hopf radical; the BKM relations $J_{\mathrm{BK}}$ are not in
-the kernel of any nonzero map to $V_\bullet$ for non-Cartan letters.
+PBW filtration are independent.  If the Cartan is mapped nontrivially,
+the Chevalley relation \([e_i,f_i]=h_i\) fails in \(V_\bullet\).  If
+the Cartan is killed, the root-degree Cartan identification fails.  In
+either case the kernel of the free presentation map contains all
+non-Cartan brackets, hence is strictly larger than
+\(\overline{J_{\mathrm{BK}}+\operatorname{Rad}_{\mathrm{GN}}}\) in
+degrees where the BKM bracket is nonzero.  With the zero Hopf pairing
+the radical is all of \(V_\bullet\), so the radical quotient is zero.
 \end{proof}
 
 This lemma is the counterexample that prohibits the determinant route
-to recognition.  It is also the structural reason eight clauses
-(S1)--(S10) collapse to one: signed dimensions are necessary and
-not sufficient, and the seven extra clauses are exactly the missing
-data.
+to recognition.  It is also the structural reason the ten clauses
+(S1)--(S10) do not collapse to their signed-dimension shadow:
+the signed dimensions are necessary and not sufficient; (S1)--(S9)
+supply the source presentation, and (S10) supplies the missing parity
+split.
 
-\subsubsection*{Status under the obstruction tuple}
+\begin{lemma}[Finite-window scalar exclusions;
+\textit{proved}]
+\label{lem:first-window-scalar-exclusions}
+Let \(W\) be a finite target-root window.  None of the following data
+implies a finite-window primitive-recognition datum on \(W\) in the
+sense of Definition~\ref{def:cofinal-primitive-recognition-datum}:
+target labels without compact representatives, signed dimensions, the
+scalar trace \(Z_{BPS}^{K3\times E}\), the Pfaffian product, the
+Borcherds denominator product, target PBW rows without source PBW
+strictness, arbitrary matrices with the right ranks but no compact
+provenance, or rows whose only content is a verification status.
+\end{lemma}
+
+\begin{proof}
+Clauses (R0)--(R8) require source objects before comparison: compact
+basis vectors, source representatives, Hall product and coproduct,
+unit and counit, Hopf pairing, radical and quotient matrices, relation
+rows, no-extra kernel equality, generation spans, PBW strictness, and
+Mittag--Leffler transition maps.  Target labels give only codomain
+coordinates for \(A_{\beta,\bar p}\), not the source vectors mapped to
+them.  Signed dimensions and the denominator product give one integer
+per degree; (R3) requires the two parity dimensions, while (R4)--(R8)
+require operations and kernels.  Lemma~\ref{lem:signed-dimensions-miss}
+exhibits a zero-bracket object with the same denominator and no
+recognition isomorphism.  The scalar trace and the Pfaffian product
+live after taking a protected scalar shadow; they forget the bracket,
+coproduct, Hopf radical, PBW filtration, and finite transition system.
+Target PBW rows test only the imported target presentation and do not
+give source PBW strictness or a source-to-target intertwining matrix.
+Arbitrary matrices with correct ranks do not supply a Hall
+correspondence, reduced orientation, compact cycle, pairing
+construction, or transition morphism, so they fail the geometric
+provenance part of (R0) and the construction clauses of (R4)--(R8).
+Status-only rows contain no vector space, map, matrix, kernel, rank, or
+identity.  Hence each listed substitute omits at least one structural
+component of (R0)--(R8), and none defines a finite-window
+primitive-recognition datum.
+\end{proof}
+
+\subsubsection*{Obstruction classes}
 
 The recognition lane carries the residuals
 \[
@@ -366,29 +1870,43 @@ The recognition lane carries the residuals
 \]
 required to vanish on every cofinal window.  The first arithmetic
 window $W_{\le 3}$ is achievable from the GN target side; the first
-relation-closed window includes the real-Serre terminal rows and the
-$\delta_{123}$ odd--odd rows.  The finite-stage components of the
-(R0)--(R8) ledger and the source-radical/Hopf-coideal stability
-under (O1) are established in
-Appendix~\ref{app:obstruction-discharges}.  Discharge of the
-source-internal recognition theorem at any one window beyond
-$W_{\le 3}$ is the open frontier of Chapter~\ref{ch:open-obstructions}.
+relation-closed degree window includes the real-Serre terminal rows and the
+$\delta_{123}$ odd--odd rows, but some added target rows are still only
+signed target rows by
+Remark~\ref{rem:bkm-relation-window-target-parity}.  The
+finite-stage components of the
+(R0)--(R8) criterion, including source-radical/Hopf-coideal stability,
+remain source-recognition data.  Appendix~\ref{app:obstruction-discharges}
+supplies the orientation lane; it does not supply the source matrices
+\(M,D,B,G,K,Q\), the comparison maps \(A_{\beta,\bar p}\), the kernel
+equality, the PBW associated-graded comparison, or the finite Koszul
+comparison residual
+\(\mathfrak O_{\mathrm{Kcmp},R}\).  Construction of the
+source-internal recognition criterion at any one relation-closed degree
+window beyond \(W_{\le 3}\), together with the Koszul compatibility
+checks of Definition~\ref{def:finite-koszul-comparison-datum}, is the
+unresolved compact-source datum of Chapter~\ref{ch:open-obstructions}.
 
-\subsubsection*{Cross-repo anchor}
+\subsubsection*{Comparison with the denominator algebra}
 
 The recognition theorem is the source side of the Vol III Drinfeld
-double construction and the target side of the Borcherds 1992 GKM
-\cite{B}/\cite{Borcherds95} program; Gritsenko--Nikulin
-\cite{GN,GNPartI,GNII} and Kac \cite{KAC:1} supply the target
-denominator algebra and parity table.  The slogan
-$\mathrm{CoHA}(\C^3)=W_{1+\infty}$ is forbidden: the present
-recognition is at the level of the protected primitive Hall
-algebra, before Drinfeld doubling, and it identifies that algebra
-with $\mathfrak g_{\Delta_5}$, not with the centred or
+double construction.  The target presentation uses the generalized
+Kac--Moody convention of Borcherds \cite{BorcherdsGKM88} and Kac
+\cite{KAC:1}; the automorphic correction algebra is the
+Gritsenko--Nikulin algebra of \cite[Sections~3--4,
+Proposition~3.1]{GN}, and the product-lift data are those of
+\cite[Theorem~2.1, \S5.1.1]{GNII} together with
+Borcherds' automorphic product \cite{Borcherds95,B}.  The identity
+$\mathrm{CoHA}(\C^3)=W_{1+\infty}$ belongs to the local toric case;
+the present recognition criterion is at the level of the protected primitive Hall
+algebra, before Drinfeld doubling; after the compact source datum is
+supplied, it identifies that algebra with $\mathfrak g_{\Delta_5}$, not
+with the centred or
 vacuum-evaluated double.
 
 Entries $(\mathrm L 1)$--$(\mathrm L 6)$ name the constructed
-objects; the explicit finite-stage calculus assembling them is the
-eight algorithms A1--A8, each with typed input, output, and named
-local obstruction.  Entry $(\mathrm L 7)$ is this calculus, in
-\S\ref{subsec:eight-build-algorithms}.
+objects.  The finite HN system in
+\S\ref{subsec:eight-finite-constructions} supplies the charge windows,
+Hall correspondences, orientation transports, Pfaffian lines, Koszul
+source coalgebras, primitive-recognition data, and their local
+obstruction classes.

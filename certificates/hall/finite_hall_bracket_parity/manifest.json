@@ -1,0 +1,49 @@
+{
+  "schema_version": "finite_hall_bracket_parity.v1",
+  "fixture_name": "finite_hall_bracket_parity",
+  "hall_kind": "finite_hall_bracket_parity_obstruction",
+  "status": "FINITE_HALL_BRACKET_PARITY_OBSTRUCTION_VERIFIED",
+  "row_number": 357,
+  "coefficient_ring": "QQ",
+  "relative_theorem_recorded": true,
+  "graded_jacobi_packet_imported": true,
+  "normal_ordered_gram_degree_packet_imported": true,
+  "bracket_pushforward_packet_imported": true,
+  "parity_pushforward_packet_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "parity_formula_recorded": true,
+  "formal_supplied_rows_verified": true,
+  "source_parity_blocks_supplied": false,
+  "source_product_matrix_rows_supplied": false,
+  "source_primitive_bracket_rows_supplied": false,
+  "source_bracket_parity_defect_rows_supplied": false,
+  "bracket_parity_proved_for_current_source": false,
+  "full_source_parity_certified": false,
+  "gn_kac_parity_equality": false,
+  "primitive_lie_algebra_populated": false,
+  "mathematical_certification": false,
+  "imports": [
+    "certificates/hall/finite_hall_graded_jacobi",
+    "certificates/hall/finite_hall_normal_ordered_gram_degree",
+    "certificates/charge/hall_pairing_pushforward_compatibility",
+    "certificates/charge/parity_pushforward",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "parity_rows.csv",
+    "formal_import_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv",
+    "text_requirements.csv"
+  ],
+  "limitations": [
+    "This packet proves bracket parity compatibility for supplied homogeneous Hall bracket rows.",
+    "It imports formal bracket rows in which target parity equals the sum of input parities.",
+    "It imports finite parity pushforward only as formal super-vector-space bookkeeping.",
+    "It does not supply compact K3xE source parity blocks or primitive bracket rows.",
+    "It does not prove the GN-Kac parity equality required for primitive recognition."
+  ]
+}

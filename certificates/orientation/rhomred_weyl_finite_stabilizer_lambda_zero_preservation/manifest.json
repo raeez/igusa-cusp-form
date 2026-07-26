@@ -1,0 +1,44 @@
+{
+  "schema_version": "rhomred_weyl_finite_stabilizer_lambda_zero_preservation_obstruction.v1",
+  "fixture_name": "rhomred_weyl_finite_stabilizer_lambda_zero_preservation",
+  "orientation_kind": "rhomred_weyl_finite_stabilizer_lambda_zero_preservation_obstruction",
+  "status": "RHOMRED_WEYL_FINITE_STABILIZER_LAMBDA_ZERO_PRESERVATION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "linearization_character_imported": true,
+  "linearization_vanishing_imported": true,
+  "weyl_wall_transport_imported": true,
+  "beta_preservation_imported": true,
+  "preservation_criterion_recorded": true,
+  "stabilizer_isomorphism_rows_supplied": false,
+  "source_target_lambda_rows_supplied": false,
+  "h1_bh_transport_matrices_supplied": false,
+  "orientation_line_action_transport_rows_supplied": false,
+  "coordinate_defect_rows_supplied": false,
+  "zero_vector_rows_supplied": false,
+  "retained_coverage_rows_supplied": false,
+  "lambda_zero_preservation_proved": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "preservation_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_linearization_character",
+    "certificates/orientation/rhomred_finite_stabilizer_linearization_vanishing",
+    "certificates/orientation/rhomred_weyl_wall_transport_tau",
+    "certificates/orientation/rhomred_weyl_finite_stabilizer_beta_preservation"
+  ],
+  "limitations": [
+    "This packet verifies row 318 only as the H1(BH)-coordinate criterion for Weyl preservation of lambda^H=0.",
+    "The imported row-288 packet contains no finite-linearization rows, orientation-line action rows, generator-basis rows, character values, or H1 coordinates.",
+    "The imported row-289 packet does not prove lambda^H vanishing.",
+    "The imported row-306 packet contains no Weyl lift on finite stabilizers.",
+    "The imported row-317 packet does not prove finite-stabilizer beta preservation.",
+    "It does not prove Weyl transport preserves lambda^H=0."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "mixed_correspondence_thom_sebastiani.v1",
+  "fixture_name": "mixed_correspondence_thom_sebastiani",
+  "hybrid_kind": "mixed_correspondence_thom_sebastiani",
+  "status": "MIXED_THOM_SEBASTIANI_TRANSPORT_CONDITIONAL_VERIFIED",
+  "mixed_thom_sebastiani_transport_proved": true,
+  "conditional_on_reduced_ts_charts": true,
+  "conditional_on_orientation_transport": true,
+  "orientation_existence_certification": false,
+  "o1_discharge": false,
+  "orders": [
+    "LW",
+    "WL"
+  ],
+  "dcritical_additivity_required": true,
+  "quadratic_stabilization_allowed": true,
+  "cosection_reduction_required": true,
+  "uses_bbdjs_thom_sebastiani": true,
+  "uses_joyce_upmeier_orientation_transport": true,
+  "binary_ts_defects_zero": true,
+  "base_change_packet_imported": true,
+  "projection_formula_packet_imported": true,
+  "two_step_flag_pentagon_certification": false,
+  "quotient_descent_certification": true,
+  "transition_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "thom_sebastiani_rows.csv",
+    "orientation_hypotheses.csv",
+    "two_step_flag_pentagon_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/mixed_local_wrapped_correspondence_definition",
+    "certificates/hybrid/mixed_local_wrapped_extension_admissibility",
+    "certificates/hybrid/mixed_correspondence_base_change",
+    "certificates/hybrid/mixed_correspondence_projection_formula",
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/moduli/retained_universal_complexes",
+    "certificates/hybrid/quotient_after_correspondence_thom_sebastiani"
+  ],
+  "limitations": [
+    "This packet proves binary Thom-Sebastiani transport only for the one-sided mixed LW and WL correspondences.",
+    "The proof is conditional on supplied reduced additive d-critical charts and zero-defect Joyce-Upmeier orientation transport.",
+    "It does not construct the orientation line and does not discharge O1.",
+    "Quotient-after-correspondence preservation of Thom-Sebastiani is separated in certificates/hybrid/quotient_after_correspondence_thom_sebastiani.",
+    "It does not prove transition compatibility, the eight-word two-step flag pentagon, or associativity.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/correspondences.csv."
+  ]
+}

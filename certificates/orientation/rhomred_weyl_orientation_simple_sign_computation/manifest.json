@@ -1,0 +1,46 @@
+{
+  "schema_version": "rhomred_weyl_orientation_simple_sign_computation_obstruction.v1",
+  "fixture_name": "rhomred_weyl_orientation_simple_sign_computation",
+  "orientation_kind": "rhomred_weyl_orientation_simple_sign_computation_obstruction",
+  "status": "RHOMRED_WEYL_ORIENTATION_SIMPLE_SIGN_COMPUTATION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "orientation_character_definition_imported": true,
+  "o2_wall_atlas_imported": true,
+  "finite_pfaffian_imported": true,
+  "maass_character_firewall_imported": true,
+  "local_sign_formula_recorded": true,
+  "orientation_character_constructed": false,
+  "simple_wall_coverage_rows_supplied": false,
+  "rank_one_wall_chart_rows_supplied": false,
+  "pfaffian_unit_rows_supplied": false,
+  "reflection_coordinate_rows_supplied": false,
+  "local_sign_rows_supplied": false,
+  "generator_sign_rows_supplied": false,
+  "stratum_independence_rows_supplied": false,
+  "transition_compatibility_rows_supplied": false,
+  "simple_sign_computation_proved": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "simple_sign_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_orientation_character_definition",
+    "certificates/wall_atlas/k3e_o2_atlas",
+    "certificates/pfaffian/k3e_finite_pfaffian",
+    "certificates/automorphic/delta5_maass_character"
+  ],
+  "limitations": [
+    "This packet verifies row 320 only as the rank-one local sign criterion for epsilon_o(s_delta_i)=-1.",
+    "The imported row-319 packet contains no constructed orientation character and no generator-sign rows.",
+    "The O2 wall-atlas packet contains no retained wall objects, rank-one chart rows, coordinate flips, invariant units, or local sign rows.",
+    "The finite Pfaffian packet contains no type-II wall chart or sign rows.",
+    "The automorphic Maass character packet is certified as target automorphic data but explicitly does not construct an orientation character or Pfaffian line.",
+    "It does not prove epsilon_o(s_delta_i)=-1."
+  ]
+}

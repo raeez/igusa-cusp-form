@@ -1,0 +1,50 @@
+{
+  "schema_version": "two_sided_mixed_correspondence_definition.v1",
+  "fixture_name": "two_sided_mixed_correspondence_definition",
+  "hybrid_kind": "two_sided_mixed_correspondence_definition",
+  "status": "TWO_SIDED_MIXED_CORRESPONDENCE_DEFINITION_VERIFIED",
+  "two_sided_mixed_correspondence_defined": true,
+  "ordered_three_input": true,
+  "flag_stack_certification": false,
+  "source_target_map_certification": false,
+  "anchor_memory_certification": false,
+  "admissibility_certification": false,
+  "base_change_certification": false,
+  "projection_formula_certification": false,
+  "thom_sebastiani_certification": false,
+  "transition_certification": false,
+  "eight_word_flag_atlas_certification": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "definition_rows.csv",
+    "flag_stack_rows.csv",
+    "source_target_map_rows.csv",
+    "anchor_memory_rows.csv",
+    "admissibility_rows.csv",
+    "base_change_rows.csv",
+    "projection_formula_rows.csv",
+    "thom_sebastiani_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/hybrid_ran_prestack_definition",
+    "certificates/hybrid/local_stratum_b0_prestack_definition",
+    "certificates/hybrid/wrapped_stratum_bpositive_prestack_definition",
+    "certificates/hybrid/geometric_elliptic_degree_map",
+    "certificates/hybrid/geometric_elliptic_degree_additivity",
+    "certificates/hybrid/local_local_correspondence_definition",
+    "certificates/hybrid/mixed_local_wrapped_correspondence_definition",
+    "certificates/hybrid/wrapped_wrapped_correspondence_definition"
+  ],
+  "limitations": [
+    "This packet defines only the ordered two-sided mixed correspondence type.",
+    "No populated two-sided mixed flag-stack rows are supplied.",
+    "No source/target-map or populated source/target-anchor memory rows are supplied.",
+    "No admissibility, base-change, projection-formula, or Thom-Sebastiani rows are supplied.",
+    "No eight-word flag-atlas rows are supplied.",
+    "No transition rows are supplied."
+  ]
+}

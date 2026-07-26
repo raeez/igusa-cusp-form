@@ -1,0 +1,42 @@
+{
+  "schema_version": "rhomred_weyl_orientation_torsor_defects_obstruction.v1",
+  "fixture_name": "rhomred_weyl_orientation_torsor_defects",
+  "orientation_kind": "rhomred_weyl_orientation_torsor_defects_obstruction",
+  "status": "RHOMRED_WEYL_ORIENTATION_TORSOR_DEFECTS_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "tau_transport_imported": true,
+  "cochain_transition_imported": true,
+  "orientation_obstruction_imported": true,
+  "torsor_defect_formula_recorded": true,
+  "weyl_lift_rows_supplied": false,
+  "quotient_orientation_rows_supplied": false,
+  "finite_stabilizer_transport_rows_supplied": false,
+  "linearization_transport_rows_supplied": false,
+  "h1_basis_rows_supplied": false,
+  "torsor_defect_vector_rows_supplied": false,
+  "torsor_defects_computed": false,
+  "torsor_defects_vanishing_proved": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "torsor_transport_rows.csv",
+    "torsor_defect_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_wall_transport_tau",
+    "certificates/orientation/rhomred_weyl_orientation_cocycle_cochain_transition",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 313 only as the computation criterion for omega_i,R,S.",
+    "The imported row-306 packet contains no Weyl-lift rows.",
+    "The reduced-orientation quotient Borel, finite-stabilizer, and Weyl-lift tables are empty.",
+    "No H1 basis or torsor-defect vector is supplied.",
+    "It does not prove the row-314 vanishing of torsor defects."
+  ]
+}

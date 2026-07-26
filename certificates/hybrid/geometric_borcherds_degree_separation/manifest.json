@@ -1,0 +1,26 @@
+{
+  "schema_version": "geometric_borcherds_degree_separation_obstruction.v1",
+  "fixture_name": "geometric_borcherds_degree_separation",
+  "hybrid_kind": "geometric_borcherds_degree_separation_obstruction",
+  "status": "GEOMETRIC_BORCHERDS_DEGREE_SEPARATION_OBSTRUCTION_VERIFIED",
+  "separation_certified": true,
+  "equality_certification": false,
+  "branch_comparison_certification": false,
+  "degree_map_definition_imported": true,
+  "borcherds_coordinate_substitute": false,
+  "tables": [
+    "definition_rows.csv",
+    "branch_comparison_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/geometric_elliptic_degree_map"
+  ],
+  "limitations": [
+    "This packet separates b_R^geom from m_R^Bch=pr_3 overlinePi_X.",
+    "No branch-comparison rows are supplied.",
+    "No equality b_R^geom=m_R^Bch is certified.",
+    "No affine relation such as m_R^Bch=b_R^geom-1 is certified outside a supplied branch datum."
+  ]
+}

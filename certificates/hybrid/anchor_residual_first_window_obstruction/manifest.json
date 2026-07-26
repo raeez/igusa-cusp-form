@@ -1,0 +1,34 @@
+{
+  "schema_version": "anchor_residual_first_window_obstruction.v1",
+  "fixture_name": "anchor_residual_first_window_obstruction",
+  "hybrid_kind": "anchor_residual_first_window_obstruction",
+  "status": "ANCHOR_RESIDUAL_FIRST_WINDOW_OBSTRUCTION_VERIFIED",
+  "row": 218,
+  "first_window_vanishing_proved": false,
+  "criterion_defined": true,
+  "first_window_scaffold_imported": true,
+  "first_window_scaffold_status": "FIRST_WINDOW_OBSTRUCTION_LEDGER_VERIFIED",
+  "anchor_residual_definition_imported": true,
+  "missing_component_rows_certified": true,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "criterion_rows.csv",
+    "component_requirement_rows.csv",
+    "first_window_import_rows.csv",
+    "missing_first_window_rows.csv",
+    "vanishing_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/anchor_residual_definition",
+    "certificates/first_window/k3e_relation_closed_window"
+  ],
+  "limitations": [
+    "This packet verifies the exact criterion for first-window vanishing of o_R^lambda.",
+    "It verifies that the current first-window scaffold has no compact-source, theorem, or strict transition rows proving the criterion.",
+    "It does not prove row 218; it records the missing finite-window rows needed for that proof.",
+    "It excludes scalar, target-only, determinant-only, and status-only substitutes."
+  ]
+}

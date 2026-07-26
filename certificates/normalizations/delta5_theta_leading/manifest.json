@@ -1,0 +1,29 @@
+{
+  "schema_version": "delta5_theta_leading_normalization.v2",
+  "fixture_name": "delta5_theta_leading",
+  "normalization_kind": "delta5_theta_leading_scalar_normalization",
+  "coefficient_ring": "ZZ",
+  "phase_convention": "exp(pi i (z[l+a/2] + t(b) l)) per 03_view1_automorphic.tex sec:view1-theta-normalization; the theta-leading sign is convention-dependent: +64 in this convention, -64 in the Mumford convention exp(pi i (z[l+a/2] + t(l+a/2) b)); both computed from first principles by compute/verify_theta_product_identity.py",
+  "certified": true,
+  "scalar_arithmetic_certified": true,
+  "form_conventions_certified": true,
+  "compact_source": false,
+  "pfaffian_line": false,
+  "orientation_character": false,
+  "primitive_recognition": false,
+  "tables": [
+    "normalizations.csv",
+    "scalar_relations.csv",
+    "form_conventions.csv",
+    "form_relations.csv",
+    "branch_separation.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet records scalar normalizations only.",
+    "It checks 64, 64^2=4096, D5=64^{-1}Delta5, Delta10=Delta5^2, chi10=Delta10, Phi10_un=chi10, chi10_OP=D5^2=4096^{-1}Delta10, and the inverse scalar branches.",
+    "It does not construct the Pfaffian line or the O2 wall atlas.",
+    "It does not identify the OP scalar branch sign with the orientation character.",
+    "Sign trap: the +64 theta-leading constant is pinned by the phase convention recorded in phase_convention; the equally standard Mumford convention yields -64. compute/verify_theta_product_identity.py verifies the ten-even-theta product against the Borcherds product in both conventions on the box q,s <= 7/2 (120 monomials)."
+  ]
+}

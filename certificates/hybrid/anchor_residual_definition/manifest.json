@@ -1,0 +1,48 @@
+{
+  "schema_version": "anchor_residual_definition.v1",
+  "fixture_name": "anchor_residual_definition",
+  "hybrid_kind": "anchor_residual_definition",
+  "status": "ANCHOR_RESIDUAL_DEFINITION_VERIFIED",
+  "anchor_residual_defined": true,
+  "repaired_anchor_target": "Sym^r_Pic0_E",
+  "determinant_projection": "Abel_sum_to_Pic0_E",
+  "extra_anchor_restriction": "degree_zero_jordan_holder_divisor",
+  "components": [
+    "existence",
+    "unit_weight",
+    "losslessness",
+    "multiplicativity",
+    "transition"
+  ],
+  "vanishing_certification": false,
+  "first_window_vanishing_certification": false,
+  "quotient_descent_certification": false,
+  "stabilizer_linearization_certification": false,
+  "finite_stage_population_certification": false,
+  "transition_compatibility_certification": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "target_model_rows.csv",
+    "residual_component_rows.csv",
+    "residual_vanishing_rows.csv",
+    "first_window_vanishing_rows.csv",
+    "quotient_descent_rows.csv",
+    "stabilizer_linearization_rows.csv",
+    "finite_stage_population_rows.csv",
+    "transition_compatibility_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/determinant_anchor_extra_anchor_data",
+    "certificates/hybrid/source_target_anchor_memory_definition"
+  ],
+  "limitations": [
+    "This packet defines o_R^lambda as a five-component residual for repaired wrapped anchors.",
+    "The repaired anchor target is Sym^r Pic^0(E) with Abel-sum projection to the determinant anchor.",
+    "The five components are existence, unit translation weight, losslessness, multiplicativity, and HN-transition compatibility.",
+    "It does not prove that any component vanishes, prove first-window vanishing, descend the repaired anchor through the quotient, choose stabilizer linearizations, or populate all finite wrapped prequotient rows.",
+    "The current first-window obstruction is separated in certificates/hybrid/anchor_residual_first_window_obstruction."
+  ]
+}

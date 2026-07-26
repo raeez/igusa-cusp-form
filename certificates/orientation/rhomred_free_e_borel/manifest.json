@@ -1,0 +1,41 @@
+{
+  "schema_version": "rhomred_free_e_borel_obstruction.v1",
+  "fixture_name": "rhomred_free_e_borel",
+  "orientation_kind": "rhomred_free_e_borel_obstruction",
+  "status": "RHOMRED_FREE_E_BOREL_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "retained_e_translation_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "connected_e_basis_recorded": true,
+  "edge_class_criterion_recorded": true,
+  "three_free_actions_inspected": true,
+  "equivariant_borel_representatives_supplied": false,
+  "edge_reduction_rows_supplied": false,
+  "coefficient_rows_supplied": false,
+  "free_e_class_values_computed": false,
+  "free_e_vanishing_verified": false,
+  "free_e_null_trivialization_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "basis_rows.csv",
+    "free_e_obstruction_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/moduli/retained_e_translation_rigidifications",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies the row-282 formula and obstruction ledger.",
+    "It records H2(BE;F2)=F2u1 plus F2u2 and the connected-free edge-class criterion alpha_E_free=a1u1+a2u2.",
+    "It does not supply equivariant Borel representatives, edge-reduction rows, a1/a2 coefficient rows, free-E vanishing, null-trivializations, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration."
+  ]
+}

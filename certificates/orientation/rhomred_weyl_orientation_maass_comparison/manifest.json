@@ -1,0 +1,36 @@
+{
+  "schema_version": "rhomred_weyl_orientation_maass_comparison_obstruction.v1",
+  "fixture_name": "rhomred_weyl_orientation_maass_comparison",
+  "orientation_kind": "rhomred_weyl_orientation_maass_comparison_obstruction",
+  "status": "RHOMRED_WEYL_ORIENTATION_MAASS_COMPARISON_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "determinant_comparison_imported": true,
+  "maass_character_imported": true,
+  "maass_determinant_restriction_recorded": true,
+  "transitivity_criterion_recorded": true,
+  "orientation_character_constructed": false,
+  "epsilon_equals_det_proved": false,
+  "epsilon_equals_maass_proved": false,
+  "inverse_limit_character_supplied": false,
+  "maass_as_source_allowed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "comparison_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_orientation_determinant_comparison",
+    "certificates/automorphic/delta5_maass_character"
+  ],
+  "limitations": [
+    "This packet verifies row 322 only as the transitivity criterion from epsilon_o=det_W and nu_Delta5|W^(2)=det_W.",
+    "The imported row-321 packet does not prove epsilon_o=det_W.",
+    "The Maass character packet is certified automorphic data but explicitly does not construct an orientation character or Pfaffian line.",
+    "It does not prove epsilon_o=nu_Delta5 on W^(2)."
+  ]
+}

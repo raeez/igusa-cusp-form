@@ -176,7 +176,9 @@ Borcherds, Gritsenko, Mukai, Kac, Moore, Chriss-Ginzburg.
   f(4,0)=16524, ...
 - **κ-tuple** (κ_cat, κ_ch^Hodge, κ_ch^Heis, κ_BKM, κ_fiber) = **(0, 0, 3, 5, 24)**.
 - **κ-universal identity** κ_BKM(Φ_N) = c_N(0)/2 across CHL frame:
-  N=1,2,3,4,6 → κ_BKM = 5,4,3,2,1, c_N(0) = 10,8,6,4,2.
+  N=1,2,3,4,6 → κ_BKM = 5, 3, 2, 3/2, 1, c_N(0) = 10, 6, 4, 3, 2
+  (Jatkar–Sen / Govindarajan–Krishna; N=4 half-integral; the old
+  integral ladder 5,4,3,2,1 from c_N(0)=χ^{g_N}(K3) is retracted).
 - **Saito–Kurokawa**: Δ_5² is the SK lift of g = Δ E_6 ∈ S_{18}(SL_2(Z));
   L_spin(s, Δ_10^θ) = ζ(s−8) ζ(s−9) L(s, g);
   dim Maaß_10 = dim S_{18}(SL_2(Z)) = 1 forces g = Δ E_6.

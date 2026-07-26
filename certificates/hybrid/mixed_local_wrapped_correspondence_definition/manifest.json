@@ -1,0 +1,50 @@
+{
+  "schema_version": "mixed_local_wrapped_correspondence_definition.v1",
+  "fixture_name": "mixed_local_wrapped_correspondence_definition",
+  "hybrid_kind": "mixed_local_wrapped_correspondence_definition",
+  "status": "MIXED_LOCAL_WRAPPED_CORRESPONDENCE_DEFINITION_VERIFIED",
+  "mixed_correspondence_defined": true,
+  "one_sided_only": true,
+  "extension_stack_certification": false,
+  "source_target_map_certification": false,
+  "anchor_memory_certification": false,
+  "admissibility_certification": false,
+  "base_change_certification": false,
+  "projection_formula_certification": false,
+  "thom_sebastiani_certification": false,
+  "transition_certification": false,
+  "local_local_certification": false,
+  "wrapped_wrapped_certification": false,
+  "two_sided_certification": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "definition_rows.csv",
+    "extension_stack_rows.csv",
+    "source_target_map_rows.csv",
+    "anchor_memory_rows.csv",
+    "admissibility_rows.csv",
+    "base_change_rows.csv",
+    "projection_formula_rows.csv",
+    "thom_sebastiani_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/hybrid_ran_prestack_definition",
+    "certificates/hybrid/local_stratum_b0_prestack_definition",
+    "certificates/hybrid/wrapped_stratum_bpositive_prestack_definition",
+    "certificates/hybrid/geometric_elliptic_degree_map",
+    "certificates/hybrid/geometric_elliptic_degree_additivity"
+  ],
+  "limitations": [
+    "This packet defines only the one-sided mixed local/wrapped correspondence type.",
+    "No populated mixed extension-stack rows are supplied.",
+    "No source/target-map or populated source/target-anchor memory rows are supplied.",
+    "Target admissibility is separated in certificates/hybrid/mixed_local_wrapped_extension_admissibility; no admissibility rows are supplied by this definition packet.",
+    "No base-change, projection-formula, or Thom-Sebastiani rows are supplied.",
+    "No local-local, wrapped-wrapped, or ordered two-sided mixed correspondence rows are supplied.",
+    "No transition rows are supplied."
+  ]
+}

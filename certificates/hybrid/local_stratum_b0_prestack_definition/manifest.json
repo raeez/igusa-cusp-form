@@ -1,0 +1,33 @@
+{
+  "schema_version": "local_stratum_b0_prestack_definition.v1",
+  "fixture_name": "local_stratum_b0_prestack_definition",
+  "hybrid_kind": "local_stratum_b0_prestack_definition",
+  "status": "LOCAL_STRATUM_B0_PRESTACK_DEFINITION_VERIFIED",
+  "local_subprestack_defined": true,
+  "closed_configuration_certification": false,
+  "local_sheaf_certification": false,
+  "descent_certification": false,
+  "transition_certification": false,
+  "wrapped_input_allowed": false,
+  "ordinary_ran_only": false,
+  "tables": [
+    "definition_rows.csv",
+    "component_rows.csv",
+    "closed_configuration_rows.csv",
+    "descent_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/hybrid_ran_prestack_definition",
+    "certificates/hybrid/geometric_elliptic_degree_map"
+  ],
+  "limitations": [
+    "This packet defines the b=0 local stratum as a subprestack.",
+    "No closed-configuration incidence stack rows are supplied.",
+    "No local sheaf or factorization algebra rows are supplied.",
+    "No descent or stackification rows are supplied.",
+    "No transition rows are supplied."
+  ]
+}

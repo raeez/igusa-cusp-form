@@ -1,0 +1,45 @@
+{
+  "schema_version": "eight_word_two_step_flag_stacks.v1",
+  "fixture_name": "eight_word_two_step_flag_stacks",
+  "hybrid_kind": "eight_word_two_step_flag_stacks",
+  "status": "EIGHT_WORD_TWO_STEP_FLAG_STACKS_CONSTRUCTED",
+  "word_count": 8,
+  "flag_stack_rows_constructed": true,
+  "comparison_map_rows_constructed": true,
+  "comparison_map_count": 16,
+  "finite_type_flag_quot_model": true,
+  "retained_intermediate_colours": true,
+  "before_e_quotient": true,
+  "associativity_certification": false,
+  "pentagon_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "flag_stack_rows.csv",
+    "comparison_map_rows.csv",
+    "associativity_rows.csv",
+    "pentagon_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/eight_word_binary_vocabulary",
+    "certificates/hybrid/local_local_correspondence_definition",
+    "certificates/hybrid/mixed_local_wrapped_correspondence_definition",
+    "certificates/hybrid/wrapped_wrapped_correspondence_definition",
+    "certificates/moduli/retained_extension_closure",
+    "certificates/moduli/retained_universal_complexes"
+  ],
+  "limitations": [
+    "This packet constructs the retained two-step flag stacks and their two comparison maps for the eight length-three local/wrapped words.",
+    "The construction is before the reduced E-quotient.",
+    "It does not prove associativity, pentagon coherence, quotient descent, transition compatibility, or aggregate population.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/flag_atlas.csv."
+  ]
+}

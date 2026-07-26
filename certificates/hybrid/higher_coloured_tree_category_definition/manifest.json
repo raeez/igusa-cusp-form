@@ -1,0 +1,47 @@
+{
+  "schema_version": "higher_coloured_tree_category_definition.v1",
+  "fixture_name": "higher_coloured_tree_category_definition",
+  "hybrid_kind": "higher_coloured_tree_category_definition",
+  "status": "HIGHER_COLOURED_TREE_CATEGORY_DEFINED",
+  "definition_only": true,
+  "category_defined": true,
+  "nonunital_category": true,
+  "object_profiles_defined": true,
+  "tree_generators_defined": true,
+  "residual_components_defined": true,
+  "residual_vanishing": false,
+  "unit_certification": false,
+  "symmetric_descent_certification": false,
+  "wrapped_order_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "object_profile_rows.csv",
+    "generator_rows.csv",
+    "residual_component_rows.csv",
+    "residual_vanishing_rows.csv",
+    "unit_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/eight_word_binary_vocabulary",
+    "certificates/hybrid/eight_word_two_step_flag_stacks",
+    "certificates/hybrid/four_input_pentagon_coherence",
+    "certificates/hybrid/source_target_anchor_memory_definition"
+  ],
+  "limitations": [
+    "This packet defines the nonunital higher-coloured hybrid tree category only.",
+    "It defines the six residual components o_tree, o_unit, o_sym, o_ref, o_des, and o_ov.",
+    "It does not prove the higher-coloured residual vanishes.",
+    "It does not supply units or unit compatibility.",
+    "It does not prove symmetric descent, wrapped order conventions, quotient descent, transition compatibility, or aggregate population.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/higher_coloured.csv."
+  ]
+}

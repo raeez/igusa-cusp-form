@@ -1,0 +1,34 @@
+{
+  "schema_version": "rhomred_weyl_imaginary_divisor_firewall.v1",
+  "fixture_name": "rhomred_weyl_imaginary_divisor_firewall",
+  "orientation_kind": "rhomred_weyl_imaginary_divisor_firewall",
+  "status": "RHOMRED_WEYL_IMAGINARY_DIVISOR_FIREWALL_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "real_root_definition_imported": true,
+  "imaginary_root_definition_imported": true,
+  "semidirect_hall_lifts_imported": true,
+  "weyl_domain_recorded": true,
+  "imaginary_not_weyl_recorded": true,
+  "local_divisor_monodromy_separated": true,
+  "local_divisor_monodromy_defined": false,
+  "imaginary_monodromy_as_weyl_allowed": false,
+  "epsilon_o_extended_to_imaginary_divisors": false,
+  "mathematical_certification": true,
+  "tables": [
+    "source_rows.csv",
+    "separation_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_semidirect_hall_lifts"
+  ],
+  "limitations": [
+    "This packet proves only the separation between real-root Weyl monodromy and imaginary-divisor monodromy.",
+    "It does not define local divisor monodromy.",
+    "It does not construct any compact Hall loop around an imaginary divisor component.",
+    "It does not extend epsilon_o beyond W^(2)(Lambda_II^{2,1})."
+  ]
+}

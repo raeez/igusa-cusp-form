@@ -1,0 +1,45 @@
+{
+  "schema_version": "rhomred_weyl_orientation_cocycle_obstruction.v1",
+  "fixture_name": "rhomred_weyl_orientation_cocycle",
+  "orientation_kind": "rhomred_weyl_orientation_cocycle_obstruction",
+  "status": "RHOMRED_WEYL_ORIENTATION_COCYCLE_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "partial_action_groupoid_imported": true,
+  "tau_transport_imported": true,
+  "tau_square_imported": true,
+  "orientation_obstruction_imported": true,
+  "cocycle_formula_recorded": true,
+  "groupoid_rows_supplied": false,
+  "lift_rows_supplied": false,
+  "composable_pair_rows_supplied": false,
+  "cocycle_rows_supplied": false,
+  "normalization_rows_supplied": false,
+  "cocycle_defect_rows_supplied": false,
+  "orientation_cocycle_defined": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "definition_rows.csv",
+    "composable_pair_rows.csv",
+    "cocycle_value_rows.csv",
+    "cocycle_normalization_rows.csv",
+    "cocycle_defect_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_partial_action_groupoid",
+    "certificates/orientation/rhomred_weyl_wall_transport_tau",
+    "certificates/orientation/rhomred_weyl_tau_square",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 309 only as the formula defining the orientation projective cocycle.",
+    "No populated finite partial action groupoid rows are supplied.",
+    "No Weyl lift rows are supplied.",
+    "No composable-pair cocycle values normalization rows or cocycle-defect rows are supplied.",
+    "It does not prove that c_o_R is populated and does not prove [c_o_R]=0."
+  ]
+}

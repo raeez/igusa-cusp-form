@@ -1,0 +1,49 @@
+{
+  "schema_version": "local_local_correspondence_definition.v1",
+  "fixture_name": "local_local_correspondence_definition",
+  "hybrid_kind": "local_local_correspondence_definition",
+  "status": "LOCAL_LOCAL_CORRESPONDENCE_DEFINITION_VERIFIED",
+  "local_local_correspondence_defined": true,
+  "ordered_source_pair": true,
+  "extension_stack_certification": false,
+  "source_target_map_certification": false,
+  "descent_certification": false,
+  "properness_certification": false,
+  "thom_sebastiani_certification": false,
+  "transition_certification": false,
+  "mixed_certification": false,
+  "wrapped_wrapped_certification": false,
+  "two_sided_certification": false,
+  "wrapped_input_allowed": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "definition_rows.csv",
+    "extension_stack_rows.csv",
+    "source_target_map_rows.csv",
+    "descent_rows.csv",
+    "properness_rows.csv",
+    "thom_sebastiani_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/hybrid_ran_prestack_definition",
+    "certificates/hybrid/local_stratum_b0_prestack_definition",
+    "certificates/hybrid/geometric_elliptic_degree_map",
+    "certificates/hybrid/geometric_elliptic_degree_additivity",
+    "certificates/hybrid/mixed_local_wrapped_correspondence_definition",
+    "certificates/hybrid/wrapped_wrapped_correspondence_definition"
+  ],
+  "limitations": [
+    "This packet defines only the ordered local/local correspondence type.",
+    "No populated local/local extension-stack rows are supplied.",
+    "No source/target-map or collision-compatibility rows are supplied.",
+    "The target-properness theorem is separated in certificates/hybrid/local_local_extension_properness.",
+    "No descent rows are supplied by this packet.",
+    "No Thom-Sebastiani rows are supplied.",
+    "No mixed, wrapped-wrapped, or ordered two-sided mixed correspondence rows are supplied.",
+    "No transition rows are supplied."
+  ]
+}

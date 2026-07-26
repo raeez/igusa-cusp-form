@@ -1,0 +1,49 @@
+{
+  "schema_version": "lwl_associativity.v1",
+  "fixture_name": "lwl_associativity",
+  "hybrid_kind": "word_associativity",
+  "status": "LWL_ASSOCIATIVITY_CONDITIONAL_VERIFIED",
+  "word": "LWL",
+  "uses_mixed_lw_product": true,
+  "uses_mixed_wl_product": true,
+  "uses_wrapped_wrapped_product": false,
+  "associativity_proved": true,
+  "conditional_on_functorial_rows": true,
+  "uses_two_step_flag_stack": true,
+  "uses_left_right_comparison_maps": true,
+  "uses_base_change": true,
+  "uses_projection_formula": true,
+  "uses_reduced_thom_sebastiani": true,
+  "associativity_defect_rank": 0,
+  "remaining_word_associativity_count": 5,
+  "pentagon_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "associativity_rows.csv",
+    "functorial_input_rows.csv",
+    "remaining_word_rows.csv",
+    "pentagon_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/eight_word_two_step_flag_stacks",
+    "certificates/hybrid/mixed_correspondence_base_change",
+    "certificates/hybrid/mixed_correspondence_projection_formula",
+    "certificates/hybrid/mixed_correspondence_thom_sebastiani"
+  ],
+  "limitations": [
+    "This packet proves associativity only for the LWL word.",
+    "The proof is conditional on supplied mixed base-change, projection-formula, and reduced Thom-Sebastiani coefficient rows on the LWL flag square.",
+    "It does not prove associativity for WLL, LWW, WLW, WWL, or WWW.",
+    "It does not prove the four-input pentagon, quotient descent, transition compatibility, or aggregate population.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/flag_atlas.csv."
+  ]
+}

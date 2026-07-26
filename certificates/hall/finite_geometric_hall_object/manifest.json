@@ -1,0 +1,50 @@
+{
+  "schema_version": "finite_geometric_hall_object_definition.v1",
+  "fixture_name": "finite_geometric_hall_object",
+  "hall_kind": "finite_geometric_hall_object_definition",
+  "status": "FINITE_GEOMETRIC_HALL_OBJECT_DEFINITION_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "definition_recorded": true,
+  "finite_moduli_packet_imported": true,
+  "reduced_orientation_ledger_imported": true,
+  "transition_vanishing_cycle_ledger_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "finite_charge_set_available": true,
+  "retained_substacks_available": true,
+  "finite_residual_inertia_available": true,
+  "orientation_lines_supplied": false,
+  "vanishing_cycle_coefficients_supplied": false,
+  "compact_support_bm_model_supplied": false,
+  "object_component_rows_supplied": false,
+  "source_degree_rows_supplied": false,
+  "basis_provenance_rows_supplied": false,
+  "finite_rank_rows_supplied": false,
+  "finite_hall_object_populated": false,
+  "product_claimed": false,
+  "coproduct_claimed": false,
+  "pairing_claimed": false,
+  "primitive_claimed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "definition_rows.csv",
+    "object_components.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/moduli/k3e_finite_moduli",
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/vanishing_cycles/transition_vanishing_cycle_preservation",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "limitations": [
+    "This packet verifies the row 341 definition of the finite compact Hall object.",
+    "It does not populate any object component of H_R^geom.",
+    "The reduced-orientation ledger supplies no orientation-line rows.",
+    "The transition vanishing-cycle ledger supplies no vanishing-cycle transport or coefficient rows.",
+    "The compact Hall source packet supplies no source degrees, basis provenance, product, coproduct, unit, or counit rows.",
+    "No product, coproduct, Hopf pairing, radical quotient, PBW filtration, primitive subspace, or transition claim is made."
+  ]
+}

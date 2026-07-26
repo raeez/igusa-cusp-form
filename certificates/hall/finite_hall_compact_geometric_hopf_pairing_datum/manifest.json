@@ -1,0 +1,53 @@
+{
+  "schema_version": "finite_hall_compact_geometric_hopf_pairing_datum.v1",
+  "fixture_name": "finite_hall_compact_geometric_hopf_pairing_datum",
+  "hall_kind": "finite_hall_compact_geometric_hopf_pairing_datum_obstruction",
+  "status": "FINITE_HALL_COMPACT_GEOMETRIC_HOPF_PAIRING_DATUM_OBSTRUCTION_VERIFIED",
+  "row_number": 364,
+  "coefficient_ring": "QQ",
+  "definition_recorded": true,
+  "quotient_nondegeneracy_packet_imported": true,
+  "coproduct_adjointness_packet_imported": true,
+  "pairing_invariance_packet_imported": true,
+  "cy3_serre_sign_packet_imported": true,
+  "trace_obstruction_ledger_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "source_side_datum_recorded": true,
+  "source_degree_zero_trace_supplied": false,
+  "positive_negative_correspondence_rows_supplied": false,
+  "orientation_transport_rows_supplied": false,
+  "thom_sebastiani_transport_rows_supplied": false,
+  "source_G_entries_supplied": false,
+  "source_K_entries_supplied": false,
+  "source_Q_entries_supplied": false,
+  "cyclic_three_point_correspondence_rows_supplied": false,
+  "hopf_adjointness_witness_rows_supplied": false,
+  "frobenius_cyclic_witness_rows_supplied": false,
+  "quotient_nondegeneracy_witness_rows_supplied": false,
+  "compact_geometric_hopf_pairing_datum_supplied": false,
+  "level_Z_trace_substitutes_for_source_trace": false,
+  "mathematical_certification": false,
+  "imports": [
+    "certificates/hall/finite_hall_quotient_pairing_nondegeneracy",
+    "certificates/hall/finite_hall_pairing_coproduct_adjointness",
+    "certificates/hall/finite_hall_pairing_invariance",
+    "certificates/orientation/rhomred_orientation_cy3_serre_signs",
+    "certificates/trace/k3e_protected_trace",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "tables": [
+    "source_rows.csv",
+    "datum_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv",
+    "text_requirements.csv"
+  ],
+  "limitations": [
+    "This packet records the compact geometric Hopf-pairing datum only as a required source datum.",
+    "It does not supply source degree-zero trace rows, compact positive-negative pairing correspondences, G/K/Q rows, cyclic three-point coherences, or Hopf-pairing identity witnesses.",
+    "It imports the level-Z protected trace packet only as a firewall; the scalar trace is not the source degree-zero trace.",
+    "It does not prove the compact geometric Hopf-pairing datum exists.",
+    "It does not prove the row 365 Hopf-pairing defect theorem."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "local_configuration_symmetric_descent.v1",
+  "fixture_name": "local_configuration_symmetric_descent",
+  "hybrid_kind": "local_configuration_symmetric_descent",
+  "status": "LOCAL_CONFIGURATION_SYMMETRIC_DESCENT_VERIFIED",
+  "symmetric_descent_proved": true,
+  "fixed_chart_descent": true,
+  "local_configuration_relabelling": true,
+  "support_locus_preserved": true,
+  "coefficient_equivariance": true,
+  "quotient_stack_descent": true,
+  "ordered_colimit_descent": false,
+  "collision_descent": false,
+  "refinement_certification": false,
+  "overlap_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "relabeling_rows.csv",
+    "coefficient_equivariance_rows.csv",
+    "quotient_stack_rows.csv",
+    "ordered_colimit_descent_rows.csv",
+    "collision_descent_rows.csv",
+    "refinement_rows.csv",
+    "transition_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/hybrid_ran_prestack_definition",
+    "certificates/hybrid/local_stratum_b0_prestack_definition"
+  ],
+  "limitations": [
+    "This packet proves fixed-chart finite symmetric-group descent for projection-finite local configuration charts.",
+    "It proves preservation of the support locus Z_I under coordinate relabelling.",
+    "It proves equivariance of the reduced local vanishing-cycle coefficient under the relabelling isomorphism.",
+    "It proves effective descent only for the finite stabilizer quotient stack of the fixed chart.",
+    "It does not prove collision compatibility, refinement compatibility, ordered-chart descent to the symmetric finite-colour colimit, quotient descent, transition compatibility, or aggregate population.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/local_configurations.csv or higher_coloured.csv."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "rhomred_finite_stabilizer_klein_four_b02.v1",
+  "fixture_name": "rhomred_finite_stabilizer_klein_four_b02",
+  "orientation_kind": "rhomred_finite_stabilizer_klein_four_b02",
+  "status": "RHOMRED_FINITE_STABILIZER_KLEIN_FOUR_B02_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "klein_four_class_imported": true,
+  "b11_packet_imported": true,
+  "second_cyclic_restriction_recorded": true,
+  "restriction_map_computed": true,
+  "b02_identity_verified": true,
+  "retained_e2_edge_row_supplied": false,
+  "second_cyclic_restriction_row_supplied": false,
+  "r2_value_supplied": false,
+  "b02_value_supplied": false,
+  "beta_vanishing_verified": false,
+  "linearization_rows_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "restriction_map_rows.csv",
+    "coefficient_identity_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "remaining_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_klein_four_class",
+    "certificates/orientation/rhomred_finite_stabilizer_klein_four_b11",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 294: the local second cyclic restriction identity b02=r2.",
+    "It computes iota_2^*(x1)=0 and iota_2^*(x2)=t, hence iota_2^* beta=b02 t^2.",
+    "It does not supply a retained E[2] edge row, a second cyclic restriction row, the value of r2, the value of b02, beta vanishing, zero linearization, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration.",
+    "The zero condition r1=r2=r3=0 is deferred to row 295."
+  ]
+}

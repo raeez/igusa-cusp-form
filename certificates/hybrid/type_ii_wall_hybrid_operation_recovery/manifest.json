@@ -1,0 +1,46 @@
+{
+  "schema_version": "type_ii_wall_hybrid_operation_recovery.v1",
+  "fixture_name": "type_ii_wall_hybrid_operation_recovery",
+  "hybrid_kind": "type_ii_wall_hybrid_operation_profile_recovery",
+  "status": "TYPE_II_WALL_HYBRID_OPERATION_RECOVERY_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "operation_profile_recovery_certified": true,
+  "three_wall_coverage_certified": true,
+  "wall_image_imported": true,
+  "wall_branch_degree_checked": true,
+  "wrapped_profile_recovery_checked": true,
+  "mixed_profiles_checked": true,
+  "middle_wall_routing_imported": true,
+  "retained_branch_comparison_rows": false,
+  "retained_wall_object_certification": false,
+  "effective_support_realization": false,
+  "anchor_population": false,
+  "mixed_extension_stack_population": false,
+  "o2_wall_atlas": false,
+  "e_quotient_losslessness": false,
+  "quotient_descent": false,
+  "protected_integration": false,
+  "hybrid_carrier_population": false,
+  "tables": [
+    "wall_profile_rows.csv",
+    "operation_profile_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/lattice/type_ii_wall_images",
+    "certificates/hybrid/geometric_borcherds_degree_separation",
+    "certificates/hybrid/positive_elliptic_degree_projection",
+    "certificates/hybrid/wrapped_stratum_bpositive_prestack_definition",
+    "certificates/hybrid/mixed_local_wrapped_correspondence_definition",
+    "certificates/hybrid/two_sided_mixed_correspondence_definition",
+    "certificates/hybrid/middle_type_ii_wall_wrapped_mixed"
+  ],
+  "limitations": [
+    "This packet verifies operation-profile recovery of the three simple type-II wall images by the hybrid local/wrapped vocabulary.",
+    "It checks gamma_wall(delta_1)=(1,1,0), gamma_wall(delta_2)=(0,1,1), gamma_wall(delta_3)=(0,-1,0), and d=m+1 equals 1, 2, 1.",
+    "Each wall is routed to a singleton wrapped colour profile, with local insertions typed by LW, WL, and LWL mixed profiles before E-quotient.",
+    "No retained wall object, branch-comparison row, support-realization row, anchor population row, mixed extension stack, O2 wall atlas, E-quotient losslessness row, protected integration row, or aggregate hybrid-carrier population row is supplied."
+  ]
+}

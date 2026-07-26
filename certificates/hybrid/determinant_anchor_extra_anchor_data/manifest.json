@@ -1,0 +1,42 @@
+{
+  "schema_version": "determinant_anchor_extra_anchor_data.v1",
+  "fixture_name": "determinant_anchor_extra_anchor_data",
+  "hybrid_kind": "determinant_anchor_extra_anchor_data",
+  "status": "DETERMINANT_ANCHOR_EXTRA_ANCHOR_DATA_VERIFIED",
+  "chi_zero_degeneracy_imported": true,
+  "extra_anchor_data_defined": true,
+  "extra_anchor_payload": "degree_zero_jordan_holder_divisor",
+  "target": "Sym^r_Pic0_E",
+  "determinant_refinement_certified": true,
+  "rank_two_test_pair_separated": true,
+  "test_pair": "O_E^oplus2_vs_L_plus_L_inverse",
+  "losslessness_certification": false,
+  "anchor_residual_certification": false,
+  "quotient_descent_certification": false,
+  "stabilizer_linearization_certification": false,
+  "transition_certification": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "extra_anchor_rows.csv",
+    "determinant_refinement_rows.csv",
+    "rank_two_separation_rows.csv",
+    "anchor_losslessness_rows.csv",
+    "anchor_residual_rows.csv",
+    "quotient_descent_rows.csv",
+    "stabilizer_linearization_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/determinant_anchor_chi_zero_degeneracy"
+  ],
+  "limitations": [
+    "This packet adds the degree-zero Jordan-Hoelder divisor of the elliptic pushforward as extra anchor data.",
+    "The determinant is the Abel-sum of this divisor, so the extra datum refines the determinant anchor.",
+    "It verifies the rank-two separation 2[O_E] != [L]+[L^{-1}] for L != O_E.",
+    "The anchor-residual definition is separated in certificates/hybrid/anchor_residual_definition.",
+    "It does not prove global anchor losslessness, prove o_R^lambda=0, prove quotient descent, choose stabilizer linearizations, or prove transition compatibility."
+  ]
+}

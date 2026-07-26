@@ -1,30 +1,33 @@
 \section{Mukai--Gram dictionary on \texorpdfstring{$K3\times E$}{K3 x E}}
 \label{appendix:mukai-gram-dictionary}
 
-Let \(X=S\times E\) be the Calabi--Yau threefold, with \(S\) a smooth
-complex K3 surface and \(E\) a smooth complex elliptic curve. The
+Let \(X=S\times E\) be the smooth trivial-canonical threefold, with
+\(S\) a smooth complex K3 surface and \(E\) a smooth complex elliptic curve. The
 Mukai vector and Mukai pairing on \(\widetilde H(S,\Z)\), together with
 the K\"unneth decomposition on \(H^*(X,\Z)\), produce the Gram-degree
 projection \(\Pi_X:\Gamma_X^{\mathrm{form}}\to\Gamma_{\mathrm{gram}}\)
 and its normal-ordered companion \(\overline\Pi_X\) on the central
 extension \(\widehat\Gamma_X\). The Borcherds expansion variables
-\(q^nr^ls^m\) of every Igusa cusp expansion in the body are the
-Gram-degree shadow of a dyonic charge \(c=(Q,P)\) on a
-one-dimensional subscheme \(Y\subset X\). For \(Y\) of class
+\(q^nr^ls^m\) of an Igusa cusp expansion record Gram-degree shadows in
+\(\Gamma_{\mathrm{gram}}\).  When the shadow is carried by an actual
+one-dimensional subscheme \(Y\subset X\), its dyonic charge
+\(c=(Q_Y,P_Y)\) satisfies the formula below.  The existence of such a
+subscheme is the algebraic-effective Hall-support condition, not a
+formal consequence of the Fourier monomial. For \(Y\) of class
 \([Y]=(\beta_h,d)\) and \(\chi(\mathcal O_Y)=n\),
 \[
 \Pi_X(Q_Y,P_Y)=(h-1,\,n,\,d-1).
 \]
-The threefold Euler characteristic
-\(n=\chi(\mathcal O_Y)\) is the direct topological invariant; no
+The threefold arithmetic Euler characteristic
+\(n=\chi(\mathcal O_Y)\) is the direct structure-sheaf invariant; no
 ``Todd correction'' enters, and no ambient fourfold appears.
 
-The constructions of this appendix sit at Beilinson chart layer
-\(\alpha\) (intrinsic charge data) plus
+The Mukai--Gram construction sits at Beilinson chart layer
+\(\alpha\) (intrinsic charge data) and
 \(\gamma\) (ambient Mukai/Gram lattice). The
 \(\kappa\)-tuple, orientation character \(\epsilon_o\), Pfaffian
-section, and recognition theorem live above; this appendix supplies the
-chart data they consume.
+section, and recognition theorem live at higher Beilinson levels and
+depend on this chart datum.
 
 \subsection{Mukai vector and Mukai pairing on a K3 surface}
 \label{subsec:mukai-vector-pairing}
@@ -84,9 +87,14 @@ hyperbolic-plane summands are
 \widetilde H(S,\Z)
 \simeq U^{\oplus4}\oplus E_8(-1)^{\oplus2}
 \]
-as integral lattices, with the algebraic part
-\(\widetilde H^{1,1}_{\mathrm{alg}}(S,\Z)\) of signature \((1,\rho-1)\)
-on a polarized K3 of Picard rank \(\rho\). This is Mukai
+as integral lattices.  For a polarized K3 of Picard rank \(\rho\), the
+N\'eron--Severi lattice \(\mathrm{NS}(S)\) has signature
+\((1,\rho-1)\), while the algebraic Mukai lattice
+\[
+\widetilde H^{1,1}_{\mathrm{alg}}(S,\Z)
+=H^0(S,\Z)\oplus\mathrm{NS}(S)\oplus H^4(S,\Z)
+\]
+has signature \((2,\rho)\).  This is Mukai
 \cite[Theorem~1.5(ii)]{Mukai1987}; see also Huybrechts--Lehn
 \cite[Chapter~6]{HuybrechtsLehn}.
 \end{proposition}
@@ -98,8 +106,11 @@ and degree-four components. Even unimodularity follows from the K3
 intersection lattice on \(H^2\) (even unimodular of signature
 \((3,19)\)) and the unimodular pairing
 \(H^0\times H^4\to\Z\) under \(rs'\mapsto rs'\). The signature
-\((4,20)\) follows by Hodge index plus the two extra signs from the
-hyperbolic factor on \(H^0\oplus H^4\). The lattice isomorphism is
+\((4,20)\) follows by Hodge index plus the hyperbolic factor on
+\(H^0\oplus H^4\).  The same hyperbolic factor changes
+\(\mathrm{NS}(S)\) of signature \((1,\rho-1)\) into
+\(\widetilde H^{1,1}_{\mathrm{alg}}(S,\Z)\) of signature
+\((2,\rho)\).  The lattice isomorphism is
 \cite[Theorem~1.5(ii)]{Mukai1987}.
 \end{proof}
 
@@ -110,7 +121,7 @@ The Mukai pairing on \(\widetilde H(S,\Z)\) is symmetric in both the
 algebraic and transcendental parts. There is no orthosymplectic
 \(\mathfrak{osp}\) refinement at the level of the lattice. The
 Hodge \(\Z/2\)-super-extension \((\mathbb C,\omega_S)\mapsto
-\mathbb C\oplus\omega_S\) used in cross-volume Mukai self-mirror
+\mathbb C\oplus\omega_S\) used in Mukai self-mirror
 language imposes a separate \(\Z/2\)-grading on a Yangian-type quantum
 group constructed from this lattice; that grading does not change the
 underlying lattice pairing, which remains symmetric. The classical Lie
@@ -127,8 +138,9 @@ realization.
 \(v_S(\mathcal O_p)=(0,0,1)\) for the structure sheaf of a point
 \(p\in S\); \(v_S(\mathcal O_S)=(1,0,1)\) for the trivial line bundle;
 \(v_S(L)=(1,c_1(L),c_1(L)^2/2+1)\) for a line bundle \(L\). For an ideal
-sheaf \(\mathcal I_C\) of a curve \(C\subset S\) of degree
-\(\deg C=c_1(\mathcal O_S(C))\cdot c_1(\mathcal O_S(C))=2g-2\),
+sheaf \(\mathcal I_C\) of a smooth curve \(C\subset S\) of genus \(g\),
+the adjunction formula on the K3 surface gives
+\(C^2=c_1(\mathcal O_S(C))^2=2g-2\), and
 \[
 v_S(\mathcal I_C)=(1,-c_1(\mathcal O_S(C)),\ch_2(\mathcal I_C)+1).
 \]
@@ -165,15 +177,17 @@ even class on \(X\) decomposes uniquely as
 v_X=v^{(0)}\otimes 1_E+v^{(\omega)}\otimes\omega_E,
 \qquad v^{(0)},v^{(\omega)}\in H^*(S,\Z).
 \]
-The even integral lattice carries the K\"unneth pairing
-\(\widetilde H(X,\Z)=\widetilde H(S,\Z)\otimes H^{\mathrm{even}}(E,\Z)\),
-of rank $48$ and signature $(24,24)$ — the K\"unneth tensor of the
-$(4,20)$-Mukai pairing on $\widetilde H(S,\Z)$ with the
-$(1,1)$-hyperbolic pairing on the rank-2 lattice
-\(U_E=H^{\mathrm{even}}(E,\Z)=H^0(E,\Z)\oplus H^2(E,\Z)\).  The
-hyperbolic-plane decomposition gives
-\(\widetilde H(S,\Z)\otimes U_E\simeq
-U^{\oplus4}\oplus E_8(-1)^{\oplus2}\) tensored with \(U_E\); the odd
+The formal K\"unneth lattice
+\[
+H^{\mathrm{even}}(X,\Z)
+\simeq \widetilde H(S,\Z)\otimes U_E,\qquad
+U_E:=H^0(E,\Z)\oplus H^2(E,\Z),
+\]
+carries the tensor K\"unneth pairing of rank \(48\) and signature
+\((24,24)\), obtained from the \((4,20)\)-Mukai pairing on
+\(\widetilde H(S,\Z)\) and the \((1,1)\)-hyperbolic pairing on \(U_E\).
+This cross-pairing is distinct from the direct-sum componentwise Gram
+pairing on \(\Gamma_X^{\mathrm{form}}\) used by \(\Pi_X\).  The odd
 K\"unneth term \(H^{\mathrm{odd}}(S)\otimes H^{\mathrm{odd}}(E)\) is
 absent because the K3 surface \(S\) carries no odd cohomology. See
 Huybrechts \cite[Chapter~3]{HuybrechtsLehn}.
@@ -181,9 +195,9 @@ Huybrechts \cite[Chapter~3]{HuybrechtsLehn}.
 
 \begin{proof}
 \(E\) and \(S\) have torsion-free integral cohomology, so K\"unneth holds
-integrally and produces the displayed tensor decomposition. The pairing
-factorization is bilinearity of the cup product over the K\"unneth
-isomorphism. The lattice signature comes from
+integrally and produces the displayed tensor decomposition. The
+tensor-pairing factorization is bilinearity of the cup product over the
+K\"unneth isomorphism. The lattice signature comes from
 \((4,20)\) on \(\widetilde H(S,\Z)\) (Proposition~\ref{prop:mukai-pairing-appendixC})
 tensored with \((1,1)\) on \(U_E\).
 \end{proof}
@@ -191,14 +205,13 @@ tensored with \((1,1)\) on \(U_E\).
 \begin{definition}[Gram-degree projection on \(X=K3\times E\)]
 \label{def:gram-degree-projection-appendixC}
 \ClaimStatusDefinition\
-The formal additive even-Mukai sector of
-Definition~\ref{def:gram-index-lattice} is
+The formal additive even-Mukai sector is
 \[
 \Gamma_X^{\mathrm{form}}
-:=\Lambda_S\oplus\Lambda_S,\qquad
+:=\widetilde H(S,\Z)\oplus\widetilde H(S,\Z),\qquad
 c=(Q,P)\in\Gamma_X^{\mathrm{form}},
 \]
-where \(\Lambda_S=\widetilde H(S,\Z)\). The Gram-index lattice is
+with \(Q,P\in\widetilde H(S,\Z)\). The Gram-index lattice is
 \[
 \Gamma_{\mathrm{gram}}:=\Z^3,
 \]
@@ -227,70 +240,72 @@ The K\"unneth decomposition of \(v_X(\mathcal I_Y)\) on the threefold
 Theorem~\ref{thm:d6-d2-d0-dictionary-appendixC} as a chart-data
 identity. The Mukai-vector calculation isolates the K3-fibre rank-one
 component \(P_Y=(1,0,1-d)\) on the \(1_E\)-summand and the curve-class
-component \(Q_Y=(0,-\beta,-n)\) on the \(\omega_E\)-summand; the
-Mukai pairing on the K3 components delivers the Gram-degree shadow.
+component \(Q_Y=(0,-\beta^\vee,-n)\) on the \(\omega_E\)-summand, with
+\(\beta^\vee\in H^2(S,\Z)\) the Poincar\'e dual of \(\beta\); the Mukai
+pairing on the K3 components delivers the Gram-degree shadow.
 
 \begin{theorem}[Mukai vector of an ideal sheaf on the threefold $K3\times E$]
 \label{thm:mukai-vector-ideal-sheaf-threefold}
 \ClaimStatusProvedHere\
 Let \(X=S\times E\) with \(S\) a smooth complex K3 surface and \(E\) a
-smooth complex elliptic curve, so \(X\) is a smooth Calabi--Yau
-threefold. Let \(Y\subset X\) be a one-dimensional closed subscheme of
-class \([Y]=(\beta,d)\in H_2(S,\Z)\oplus H_2(E,\Z)\) and Euler
-characteristic \(n=\chi(\mathcal O_Y)\in\Z\). The Mukai vector of the
+smooth complex elliptic curve, so \(K_X\simeq\mathcal O_X\) and \(X\)
+is a smooth trivial-canonical threefold. Let \(Y\subset X\) be a
+one-dimensional closed subscheme of
+class \([Y]=(\beta,d)\in H_2(S,\Z)\oplus H_2(E,\Z)\), write
+\(\beta^\vee\in H^2(S,\Z)\) for the Poincar\'e dual of \(\beta\), and let
+\(n=\chi(\mathcal O_Y)\in\Z\). The Mukai vector of the
 ideal sheaf \(\mathcal I_Y\in D^b(X)\) decomposes against the K\"unneth
 basis as
 \[
 v_X(\mathcal I_Y)
 =(1,0,1-d)\otimes1_E
-+(0,-\beta,-n)\otimes\omega_E.
++(0,-\beta^\vee,-n)\otimes\omega_E.
 \]
 \end{theorem}
 
 \begin{proof}
-The threefold Calabi--Yau condition gives
+The trivial-canonical threefold condition gives
 \(\sqrt{\td(X)}=\pi_S^*\sqrt{\td(S)}\,\pi_E^*\sqrt{\td(E)}=(1,0,1)\otimes1\),
 since the elliptic curve is one-dimensional with trivial Todd class
 \(\td(E)=1\). The ideal-sheaf identity is
 \(\ch(\mathcal I_Y)=1-\ch(\mathcal O_Y)\). For the structure sheaf of a
-one-dimensional subscheme of a Calabi--Yau threefold,
+one-dimensional subscheme of a trivial-canonical threefold,
 \(\ch_0(\mathcal O_Y)=0\), \(\ch_1(\mathcal O_Y)=0\),
 \(\ch_2(\mathcal O_Y)=\operatorname{PD}[Y]\), and
 \(\int_X\ch_3(\mathcal O_Y)=\chi(\mathcal O_Y)=n\). Decomposing
 \([Y]=(\beta,d)\) on the K\"unneth basis,
-\(\operatorname{PD}[Y]=\beta\otimes\omega_E+d[\mathrm{pt}_S]\otimes 1_E\),
-where \([\mathrm{pt}_S]\) is the K3 point class and the duality
-\(H_2(S)\to H^2(S)\) sends \(\beta\) to \(\beta^\vee\); the fibrewise
+\(\operatorname{PD}[Y]=\beta^\vee\otimes\omega_E+d[\mathrm{pt}_S]\otimes 1_E\),
+where \([\mathrm{pt}_S]\) is the K3 point class; the fibrewise
 elliptic-degree component \(d[\mathrm{pt}_S]\otimes 1_E\) records the
 elliptic degree. Hence
 \[
 \ch(\mathcal O_Y)
-=(0,0,d)\otimes1_E+(0,\beta,n)\otimes\omega_E,
+=(0,0,d)\otimes1_E+(0,\beta^\vee,n)\otimes\omega_E,
 \]
 and
 \(1-\ch(\mathcal O_Y)
-=(1,0,-d)\otimes1_E+(0,-\beta,-n)\otimes\omega_E\).
+=(1,0,-d)\otimes1_E+(0,-\beta^\vee,-n)\otimes\omega_E\).
 Multiplying by
 \(\sqrt{\td(X)}=(1,0,1)\otimes1_E\) using the K3 cup product on each
 K\"unneth summand,
 \((1,0,1)\cup(1,0,-d)=(1,0,1-d)\) since \([\mathrm{pt}_S]\cup1=[\mathrm{pt}_S]\),
-and \((1,0,1)\cup(0,-\beta,-n)=(0,-\beta,-n)\) since
-\(\beta\cup[\mathrm{pt}_S]=0\) in \(H^*(S,\Z)\), yields the displayed
+and \((1,0,1)\cup(0,-\beta^\vee,-n)=(0,-\beta^\vee,-n)\) since
+\(\beta^\vee\cup[\mathrm{pt}_S]=0\) in \(H^*(S,\Z)\), yields the displayed
 Mukai vector
-\(v_X(\mathcal I_Y)=(1,0,1-d)\otimes1_E+(0,-\beta,-n)\otimes\omega_E\).
+\(v_X(\mathcal I_Y)=(1,0,1-d)\otimes1_E+(0,-\beta^\vee,-n)\otimes\omega_E\).
 \end{proof}
 
 \begin{remark}[Threefold Euler characteristic, no Todd correction]
 \label{rem:threefold-euler-characteristic-no-todd-correction}
 \ClaimStatusDerivation\
-The integer \(n=\chi(\mathcal O_Y)\in\Z\) is the topological Euler
+The integer \(n=\chi(\mathcal O_Y)\in\Z\) is the holomorphic Euler
 characteristic of the structure sheaf \(\mathcal O_Y\) on the threefold
-\(X=S\times E\); the threefold Calabi--Yau condition makes
+\(X=S\times E\); the trivial-canonical threefold condition makes
 \(\sqrt{\td(X)}\) act as identity on the third Chern character so that
 \(\int_X\ch_3(\mathcal O_Y)=n\) directly. There is no auxiliary
 ``Todd correction'' to install on top of \(n\); the Mukai vector
-\((0,-\beta,-n)\otimes\omega_E\) records \(n\) as the second-degree K3
-component on the elliptic \(\omega_E\)-summand. The sign is fixed by
+\((0,-\beta^\vee,-n)\otimes\omega_E\) records \(n\) in the K3
+\(H^4\)-coordinate on the elliptic \(\omega_E\)-summand. The sign is fixed by
 \(\ch(\mathcal I_Y)=1-\ch(\mathcal O_Y)\) and the K\"unneth orientation
 \(\int_E\omega_E=+1\).
 \end{remark}
@@ -302,7 +317,7 @@ With the standing data of
 Theorem~\ref{thm:mukai-vector-ideal-sheaf-threefold}, set
 \[
 P_Y:=(1,0,1-d),\qquad
-Q_Y:=(0,-\beta,-n)\;\in\;\widetilde H(S,\Z),
+Q_Y:=(0,-\beta^\vee,-n)\;\in\;\widetilde H(S,\Z),
 \]
 the K\"unneth components of \(v_X(\mathcal I_Y)\). Then the Gram-degree
 projection of Definition~\ref{def:gram-degree-projection-appendixC} reads
@@ -311,7 +326,7 @@ projection of Definition~\ref{def:gram-degree-projection-appendixC} reads
 =\Bigl(\tfrac{(Q_Y,Q_Y)_{\mathrm{Muk}}}2,\,
 (Q_Y,P_Y)_{\mathrm{Muk}},\,
 \tfrac{(P_Y,P_Y)_{\mathrm{Muk}}}2\Bigr)
-=\Bigl(\tfrac{\beta^2}2,\,n,\,d-1\Bigr).
+=\Bigl(\tfrac{(\beta^\vee)^2}2,\,n,\,d-1\Bigr).
 \]
 For the elliptically fibered K3 surface \(S\to\mathbb P^1\) with section
 \(s_1\) and curve class
@@ -328,14 +343,14 @@ Apply the Mukai pairing of
 Proposition~\ref{prop:mukai-pairing-appendixC} component by component:
 \begin{align*}
 (Q_Y,Q_Y)_{\mathrm{Muk}}
-&=(-\beta)\cdot(-\beta)-0\cdot(-n)-0\cdot(-n)=\beta^2,\\
+&=(-\beta^\vee)\cdot(-\beta^\vee)-0\cdot(-n)-0\cdot(-n)=(\beta^\vee)^2,\\
 (Q_Y,P_Y)_{\mathrm{Muk}}
-&=(-\beta)\cdot 0-0\cdot(1-d)-1\cdot(-n)=n,\\
+&=(-\beta^\vee)\cdot 0-0\cdot(1-d)-1\cdot(-n)=n,\\
 (P_Y,P_Y)_{\mathrm{Muk}}
 &=0\cdot0-1\cdot(1-d)-1\cdot(1-d)=2(d-1),
 \end{align*}
-giving the half-pairings \((\beta^2/2,n,d-1)\). For the elliptic class
-\(\beta_h=s_1+hF\), the K3 intersection \(s_1^2=-2\) on a section of an
+giving the half-pairings \(((\beta^\vee)^2/2,n,d-1)\). For the elliptic class
+\(\beta_h=s_1+hF\), identified with its Poincar\'e dual, the K3 intersection \(s_1^2=-2\) on a section of an
 elliptic K3 surface (genus formula \(2g(s_1)-2=s_1^2+s_1\cdot K_S=-2+0\),
 giving \(g(s_1)=0\)), \(s_1\cdot F=1\), \(F^2=0\), so
 \(\beta_h^2=s_1^2+2h(s_1\cdot F)+h^2 F^2=-2+2h=2h-2\). The Gram-degree
@@ -347,14 +362,14 @@ normalization is the
 \begin{remark}[Algebraic vs primitive D2 charges]
 \label{rem:algebraic-versus-primitive-d2-charges}
 \ClaimStatusDerivation\
-The K3 curve class \(\beta\in H_2(S,\Z)\) appearing in
-\(Q_Y=(0,-\beta,-n)\) is algebraic: it lies in
-\(H_2(S,\Z)_{\mathrm{alg}}=\mathrm{NS}(S)\), since \(Y\subset X\) is a
+The K3 curve class \(\beta\in H_2(S,\Z)\) appearing through its
+Poincar\'e dual in \(Q_Y=(0,-\beta^\vee,-n)\) is algebraic:
+\(\beta^\vee\in\mathrm{NS}(S)\), since \(Y\subset X\) is a
 closed subscheme. Primitivity of \(\beta\) — that \(\beta\) is not a
 non-trivial integer multiple of another effective class — is a separate
 condition; the dictionary holds for any algebraic \(\beta\), not only
 primitive ones. The Mukai-pairing formula
-\((Q_Y,Q_Y)_{\mathrm{Muk}}=\beta^2\) records the
+\((Q_Y,Q_Y)_{\mathrm{Muk}}=(\beta^\vee)^2\) records the
 \(\mathrm{NS}(S)\)-self-intersection regardless of primitivity. The
 Bryan--Oberdieck--Pandharipande--Yin/Maulik--Pandharipande conventions
 \cite{OPand,BRYAN,MaulikTodaGV} take \(\beta\) algebraic; the elliptic
@@ -408,7 +423,7 @@ not a non-zero additive cohomology class.
 \end{lemma}
 
 \begin{proof}
-This is Lemma~\ref{lem:gram-additivity-defect} of the body. Symmetry,
+This is Lemma~\ref{lem:gram-additivity-defect}.  Symmetry,
 bilinearity, integrality, polarization, and \(\delta\)-cocycle property
 are Lemma~\ref{lem:gram-additivity-defect-appendixC}(i)--(iii). The
 splitting \(B=-\delta\Pi_X\) by the quadratic refinement \(\Pi_X\) is
@@ -496,7 +511,110 @@ using Lemma~\ref{lem:gram-additivity-defect-appendixC}. The split-section
 and raw-placement identities are the definitions.
 \end{proof}
 
-\begin{remark}[Resolution of the polarization defect]
+The finite formal packet
+\(\texttt{certificates/charge/mukai\_gram\_cocycle}\) records explicit
+rank-one Mukai-slice rows for the three simple Gram shadows
+\(\delta_1,\delta_2,\delta_3\) and one test charge.  Its verifier checks
+the fixed Mukai sign convention, integrality of \(\Pi_X\), symmetry and
+bilinearity of \(B\), the identity
+\[
+B(c,c')=\Pi_X(c+c')-\Pi_X(c)-\Pi_X(c'),
+\]
+the polarization identity \(B(c,c)=2\Pi_X(c)\), additivity of the split
+section \(s(c)=(c,\Pi_X(c))\), non-additivity of the raw placement
+\((c,0)\), and the homomorphism property of \(\overline\Pi_X\).  This
+packet is formal chart arithmetic; it is not a finite HN charge window,
+a compact source construction, a Hall bracket computation, a Pfaffian
+orientation, an \(O2\) wall atlas, a mirror discriminant, or a protected
+trace.
+
+\begin{proposition}[Compact Mukai representatives for the three simple wall charges]
+\label{prop:type-ii-compact-mukai-representatives}
+\textnormal{[constructed in the compact \(K3\) Mukai chart]}
+Let \(S\) be a smooth projective \(K3\) surface.  Choose a closed point
+\(p\in S\) and a zero-dimensional closed subscheme \(Z\subset S\) of
+length \(2\).  With the convention
+\[
+v(E)=\ch(E)\sqrt{\td(S)},\qquad \sqrt{\td(S)}=(1,0,1),
+\]
+one has
+\[
+v(\mathcal I_Z)=(1,0,-1),\qquad
+v(\mathcal I_p)=(1,0,0),\qquad
+v(\mathcal O_p)=(0,0,1).
+\]
+Define compact Mukai-pair representatives in
+\(\widetilde H(S,\Z)\oplus\widetilde H(S,\Z)\) by
+\[
+x_{\delta_1}:=(\mathcal I_Z,\mathcal I_p),\qquad
+x_{\delta_2}:=(\mathcal I_p,\mathcal I_Z),\qquad
+x_{\delta_3}:=(\mathcal I_p,\mathcal O_p).
+\]
+Then
+\[
+\Pi_X(v(x_{\delta_1}))=(1,1,0),\qquad
+\Pi_X(v(x_{\delta_2}))=(0,1,1),\qquad
+\Pi_X(v(x_{\delta_3}))=(0,-1,0).
+\]
+Thus the three triples of
+Proposition~\ref{prop:type-ii-wall-images} have compact representatives
+at the Mukai-chart level.  This construction does not supply retained
+HN semistability, a compact Hall source basis, reduced orientations,
+vanishing-cycle summands, \(E\)-quotient data, O2 wall charts, Pfaffian
+signs, or protected integration.
+\end{proposition}
+
+\begin{proof}
+For a zero-dimensional closed subscheme \(W\subset S\) of length \(r\),
+\(\ch(\mathcal I_W)=1-r[\mathrm{pt}]\), hence
+\[
+v(\mathcal I_W)=(1,0,1-r).
+\]
+For \(r=2\) this gives \(v(\mathcal I_Z)=(1,0,-1)\), and for \(r=1\)
+it gives \(v(\mathcal I_p)=(1,0,0)\).  The skyscraper sheaf has
+\(\ch(\mathcal O_p)=(0,0,1)\), hence
+\(v(\mathcal O_p)=(0,0,1)\).
+
+Use the rank-one Mukai pairing
+\[
+\bigl((r,d,s),(r',d',s')\bigr)=2dd'-rs'-r's.
+\]
+The three pair representatives have Mukai vectors
+\[
+\begin{array}{c|cc}
+&Q&P\\
+\hline
+x_{\delta_1}&(1,0,-1)&(1,0,0)\\
+x_{\delta_2}&(1,0,0)&(1,0,-1)\\
+x_{\delta_3}&(1,0,0)&(0,0,1).
+\end{array}
+\]
+Therefore
+\[
+\Pi_X(Q,P)=\Bigl(\frac{(Q,Q)}2,(Q,P),\frac{(P,P)}2\Bigr)
+\]
+gives respectively
+\[
+\Bigl(\frac2 2,1,\frac0 2\Bigr)=(1,1,0),\qquad
+\Bigl(\frac0 2,1,\frac2 2\Bigr)=(0,1,1),\qquad
+\Bigl(\frac0 2,-1,\frac0 2\Bigr)=(0,-1,0).
+\]
+All three sheaves are coherent sheaves on the projective surface \(S\),
+so their supports are proper over \(\C\).  The final sentence records
+the extra structure not produced by the Mukai-vector calculation.
+\end{proof}
+
+The finite packet
+\[
+\texttt{certificates/charge/type\_ii\_compact\_mukai\_representatives}
+\]
+verifies
+\(\texttt{TYPE\_II\_COMPACT\_MUKAI\_REPRESENTATIVES\_VERIFIED}\): the
+three compact Mukai-pair representatives above have the required
+Gram-degree shadows.  Its scalar firewall excludes reading these rows
+as compact Hall source basis vectors or retained O2 wall objects.
+
+\begin{remark}[Polarization defect]
 \label{rem:resolution-polarization-defect-appendixC}
 \ClaimStatusProved\
 The composite
@@ -522,18 +640,18 @@ charges and their Gram-degree shadows are tracked. It is not the
 algebraic effective semigroup \(\Gamma_X^{\mathrm{eff}}\) of curve
 classes representable by closed subschemes \(Y\subset X\); membership
 in the effective sub-semigroup is a separate algebraic-effective
-condition (Definition~\ref{def:gram-index-lattice}). The
+condition (Definition~\ref{def:algebraic-effective-hall-support}). The
 Beilinson chart layer \(\alpha\) (charge data) and \(\gamma\) (Mukai
 lattice) license \(\widehat\Gamma_X\) as ambient; the Hall-support
 restriction is part of the categorical-input layer at higher Beilinson
-level, not the chart data of this appendix.
+level, not the Mukai--Gram chart datum.
 \end{remark}
 
-\subsection{Three Igusa names; chart-data licensing}
+\subsection{Three Igusa names and the Mukai--Gram chart}
 \label{subsec:three-igusa-names-chart-data}
 
-Three Igusa names live distinctly in the body and remain distinct under
-the chart-data of this appendix:
+Three Igusa names are distinct mathematical objects and remain distinct under
+the Mukai--Gram chart datum:
 \begin{itemize}
 \item the automorphic section \(\mathcal D_X=\Delta_5\), a section of
   the weight-\(5\) automorphic line over the genus-\(2\) Siegel space
@@ -556,17 +674,17 @@ algebraic and transcendental parts; the ungraded Mukai-form classical
 limit of an associated Yangian-type construction is the orthogonal Lie
 algebra \(\mathfrak{so}(4,20)\), not the orthosymplectic
 \(\mathfrak{osp}(4\mid20)\). The Hodge \(\Z/2\)-super-extension that
-appears in cross-volume Yangian conventions imposes a separate
+appears in Yangian conventions imposes a separate
 \(\Z/2\)-grading on the algebraic side; it does not enter the lattice
-pairing of this appendix. The Bryan/Oberdieck--Pandharipande/
+pairing above. The Bryan/Oberdieck--Pandharipande/
 Maulik--Toda conventions \cite{OPand,BRYAN,MaulikTodaGV} take \(\beta\)
 algebraic and \(d\) elliptic-degree, agreeing with
 Theorem~\ref{thm:d6-d2-d0-dictionary-appendixC}.
 
-The constructions here do not touch the orientation character
+The Mukai--Gram chart datum does not touch the orientation character
 \(\epsilon_o\) of
-Open Problem~\ref{def:O1-plus-weyl-transport}, the Pfaffian
+the Weyl-transport condition \ref{def:O1-plus-weyl-transport}, the Pfaffian
 section \(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)\), or the
 recognition theorem of
 Theorem~\ref{thm:pfaffian-dirac-finite-stage}; those structures live
-above this appendix and consume the chart data supplied here.
+at higher Beilinson levels and depend on the chart datum.

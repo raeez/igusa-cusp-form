@@ -1,0 +1,43 @@
+{
+  "schema_version": "rhomred_weyl_orientation_determinant_comparison_obstruction.v1",
+  "fixture_name": "rhomred_weyl_orientation_determinant_comparison",
+  "orientation_kind": "rhomred_weyl_orientation_determinant_comparison_obstruction",
+  "status": "RHOMRED_WEYL_ORIENTATION_DETERMINANT_COMPARISON_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "orientation_character_definition_imported": true,
+  "simple_sign_criterion_imported": true,
+  "maass_determinant_firewall_imported": true,
+  "coxeter_presentation_recorded": true,
+  "determinant_generator_values_recorded": true,
+  "group_theoretic_criterion_recorded": true,
+  "orientation_character_constructed": false,
+  "source_generator_signs_supplied": false,
+  "simple_sign_computation_proved": false,
+  "equality_on_generators_rows_supplied": false,
+  "transition_compatibility_rows_supplied": false,
+  "inverse_limit_comparison_rows_supplied": false,
+  "epsilon_equals_det_proved": false,
+  "maass_as_source_allowed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "generator_comparison_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_orientation_character_definition",
+    "certificates/orientation/rhomred_weyl_orientation_simple_sign_computation",
+    "certificates/automorphic/delta5_maass_character"
+  ],
+  "limitations": [
+    "This packet verifies row 321 only as the group-theoretic determinant-comparison criterion.",
+    "The imported row-319 packet contains no constructed orientation character.",
+    "The imported row-320 packet contains no finite generator-sign rows and does not prove epsilon_o(s_delta_i)=-1.",
+    "The Maass character packet records nu_Delta5 restricted to W^(2) equals determinant, but it explicitly does not construct an orientation character or Pfaffian line.",
+    "It does not prove epsilon_o=det_W."
+  ]
+}

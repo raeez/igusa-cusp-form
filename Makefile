@@ -42,9 +42,19 @@ STANDALONE_PASSES := 3
 
 AUX_EXTS := aux bbl blg idx ilg ind log out toc synctex.gz fdb_latexmk fls
 
+# Genuine-arithmetic verifiers (exact, bounded expansion boxes; each
+# prints a *_VERIFIED status and exits nonzero on any mismatch).
+VERIFY_SCRIPTS := \
+	compute/verify_square_root.py \
+	compute/verify_lattice.py \
+	compute/verify_jacobi_window_fixture.py \
+	compute/verify_theta_normalization_fixture.py \
+	compute/verify_theta_product_identity.py \
+	compute/verify_bkm_kappa_ladder.py
+
 .DEFAULT_GOAL := all
 
-.PHONY: all fast release standalone icloud view watch clean veryclean count help mathematics-publish root-publish architecture unified-architecture
+.PHONY: all fast release standalone icloud view watch clean veryclean count help mathematics-publish root-publish architecture unified-architecture verify
 
 all: $(PDF)
 
@@ -239,6 +249,26 @@ veryclean: clean
 	@rmdir $(OUT_DIR) 2>/dev/null || true
 	@echo "  ok  Clean."
 
+## verify: Run the genuine-arithmetic verifiers; fails on any mismatch
+verify:
+	@echo "  -- Running genuine-arithmetic verifiers --"
+	@failures=0; \
+	for script in $(VERIFY_SCRIPTS); do \
+		printf "  [verify] %-52s " "$$script"; \
+		if output=$$($(PYTHON_BIN) "$$script" 2>&1); then \
+			echo "ok  $$(echo "$$output" | tail -n 1)"; \
+		else \
+			echo "FAIL"; \
+			echo "$$output" | tail -n 20; \
+			failures=$$((failures + 1)); \
+		fi; \
+	done; \
+	if [ $$failures -ne 0 ]; then \
+		echo "  fail  $$failures verifier(s) failed."; \
+		exit 1; \
+	fi; \
+	echo "  ok  All verifiers passed."
+
 count:
 	@echo ""
 	@echo "  -- Igusa paper statistics --"
@@ -261,6 +291,7 @@ help:
 	@echo "  make release    Full rebuild -> out/main.pdf + release PDF + standalones + iCloud"
 	@echo "  make standalone Build standalone documents -> out/"
 	@echo "  make icloud     Copy latest PDFs to iCloud Drive"
+	@echo "  make verify     Run the genuine-arithmetic verifiers (exact, fast)"
 	@echo "  make clean      Remove build debris"
 	@echo "  make veryclean  Remove build debris and untracked generated PDFs"
 	@echo "  make count      Paper statistics"

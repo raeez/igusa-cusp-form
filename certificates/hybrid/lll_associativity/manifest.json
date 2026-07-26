@@ -1,0 +1,46 @@
+{
+  "schema_version": "lll_associativity.v1",
+  "fixture_name": "lll_associativity",
+  "hybrid_kind": "word_associativity",
+  "status": "LLL_ASSOCIATIVITY_CONDITIONAL_VERIFIED",
+  "word": "LLL",
+  "pure_local": true,
+  "associativity_proved": true,
+  "conditional_on_local_functorial_rows": true,
+  "uses_two_step_flag_stack": true,
+  "uses_left_right_comparison_maps": true,
+  "uses_local_base_change": true,
+  "uses_local_projection_formula": true,
+  "uses_local_reduced_thom_sebastiani": true,
+  "associativity_defect_rank": 0,
+  "remaining_word_associativity_count": 7,
+  "pentagon_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "associativity_rows.csv",
+    "functorial_input_rows.csv",
+    "remaining_word_rows.csv",
+    "pentagon_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/eight_word_two_step_flag_stacks",
+    "certificates/hybrid/local_local_extension_properness",
+    "certificates/hybrid/compact_support_exceptional_pushforward_model"
+  ],
+  "limitations": [
+    "This packet proves associativity only for the pure local LLL word.",
+    "The proof is conditional on supplied local base-change, projection-formula, and reduced Thom-Sebastiani coefficient rows on the LLL flag square.",
+    "It does not prove associativity for LLW, LWL, WLL, LWW, WLW, WWL, or WWW.",
+    "It does not prove the four-input pentagon, quotient descent, transition compatibility, or aggregate population.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/flag_atlas.csv."
+  ]
+}

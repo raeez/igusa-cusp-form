@@ -1,0 +1,47 @@
+{
+  "schema_version": "wrapped_prequotient_finite_type.v1",
+  "fixture_name": "wrapped_prequotient_finite_type",
+  "hybrid_kind": "wrapped_prequotient_finite_type",
+  "status": "WRAPPED_PREQUOTIENT_FINITE_TYPE_VERIFIED",
+  "finite_type_wrapped_prequotients": true,
+  "prequotient_definition_imported": true,
+  "finite_class_bounds_imported": true,
+  "finite_type_semistable_substacks_imported": true,
+  "scalar_rigidification_imported": true,
+  "rigidification_finite_type_descent_used": true,
+  "properness_certification": false,
+  "anchor_population_certification": false,
+  "anchor_losslessness_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "finite_type_rows.csv",
+    "finite_type_input_rows.csv",
+    "rigidification_descent_rows.csv",
+    "properness_rows.csv",
+    "anchor_population_rows.csv",
+    "anchor_losslessness_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/equivariant_wrapped_prequotient_definition",
+    "certificates/moduli/retained_class_bounds",
+    "certificates/moduli/retained_semistable_substacks",
+    "certificates/moduli/retained_rigidification_inertia"
+  ],
+  "limitations": [
+    "This packet proves finite type for scalar-rigidified wrapped prequotients at a fixed finite HN height.",
+    "The proof uses the finite retained class set finite-type semistable substacks and scalar rigidification by the central G_m.",
+    "It does not prove properness of any prequotient or correspondence map.",
+    "It does not populate final wrapped anchors or prove anchor losslessness.",
+    "It does not prove quotient descent or transition compatibility.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/wrapped_prequotients.csv."
+  ]
+}

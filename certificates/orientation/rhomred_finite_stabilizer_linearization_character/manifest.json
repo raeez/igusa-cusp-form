@@ -1,0 +1,46 @@
+{
+  "schema_version": "rhomred_finite_stabilizer_linearization_character_obstruction.v1",
+  "fixture_name": "rhomred_finite_stabilizer_linearization_character",
+  "orientation_kind": "rhomred_finite_stabilizer_linearization_character_obstruction",
+  "status": "RHOMRED_FINITE_STABILIZER_LINEARIZATION_CHARACTER_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "beta_nulltrivialization_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "determinant_anchor_translation_weight_inspected": true,
+  "linearization_character_criterion_recorded": true,
+  "h1_basis_criterion_recorded": true,
+  "three_residual_groups_inspected": true,
+  "finite_linearization_rows_supplied": false,
+  "orientation_line_action_rows_supplied": false,
+  "generator_basis_rows_supplied": false,
+  "character_values_supplied": false,
+  "h1_coordinates_computed": false,
+  "all_retained_lambda_computed": false,
+  "lambda_vanishing_verified": false,
+  "linearization_rows_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "linearization_character_obstruction_rows.csv",
+    "basis_restriction_obstruction_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_beta_nulltrivialization",
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/hybrid/determinant_anchor_translation_weight"
+  ],
+  "limitations": [
+    "This packet verifies the row-288 finite-stabilizer linearization-character obstruction ledger.",
+    "It records the H1(BH;F2) coordinate criterion for computing lambda from orientation-line actions and generator values.",
+    "It does not supply finite-linearization rows, orientation-line action rows, generator-basis rows, character values, H1 coordinates, lambda vanishing, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "rhomred_finite_stabilizer_beta_vanishing_obstruction.v1",
+  "fixture_name": "rhomred_finite_stabilizer_beta_vanishing",
+  "orientation_kind": "rhomred_finite_stabilizer_beta_vanishing_obstruction",
+  "status": "RHOMRED_FINITE_STABILIZER_BETA_VANISHING_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "finite_stabilizer_beta_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "vanishing_criterion_recorded": true,
+  "three_residual_groups_inspected": true,
+  "beta_coefficients_supplied": false,
+  "beta_class_values_computed": false,
+  "beta_zero_rows_supplied": false,
+  "all_retained_beta_vanishing_verified": false,
+  "beta_null_trivializations_supplied": false,
+  "linearization_rows_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "beta_vanishing_obstruction_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_beta",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies the row-286 finite-stabilizer beta-vanishing obstruction ledger.",
+    "It records the zero-coordinate criteria for odd or trivial, Klein-four, and two-primary finite stabilizers after row-285 beta computation.",
+    "It does not supply beta coefficient values, beta class values, beta zero rows, compatible null-trivializations, linearization characters, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration."
+  ]
+}

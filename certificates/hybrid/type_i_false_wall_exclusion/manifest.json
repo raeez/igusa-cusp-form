@@ -1,0 +1,38 @@
+{
+  "schema_version": "type_i_false_wall_exclusion.v1",
+  "fixture_name": "type_i_false_wall_exclusion",
+  "hybrid_kind": "type_i_false_wall_profile_exclusion",
+  "status": "TYPE_I_FALSE_WALL_EXCLUSION_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "profile_exclusion_certified": true,
+  "type_i_chamber_roots_excluded": true,
+  "type_ii_wall_profiles_imported": true,
+  "quotient_survival_imported": true,
+  "quotient_resurrection_excluded": true,
+  "aggregate_hybrid_population": false,
+  "global_colour_exhaustion": false,
+  "retained_wall_object_certification": false,
+  "object_level_nonzero_survival": false,
+  "coefficient_descent_nonzero": false,
+  "orientation_descent": false,
+  "o2_wall_atlas": false,
+  "protected_integration": false,
+  "tables": [
+    "admitted_type_ii_wall_rows.csv",
+    "type_i_exclusion_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/lattice/type_ii_chamber_isotropic",
+    "certificates/hybrid/type_ii_wall_hybrid_operation_recovery",
+    "certificates/hybrid/type_ii_wall_e_quotient_survival"
+  ],
+  "limitations": [
+    "This packet proves that the type-II hybrid wall-profile inlet does not admit the three type-I chamber-automorphism roots as wall profiles.",
+    "It imports the lattice fact that type-I roots have ambient divisibility one and zero Delta5 divisor order.",
+    "It imports that the three admitted wall profiles are the three type-II profiles and that these profiles survive the quotient-after-correspondence assignment.",
+    "It does not prove aggregate hybrid-carrier population, global colour exhaustion, object-level nonzero survival, coefficient descent, O2 wall-atlas insertion, or protected integration."
+  ]
+}

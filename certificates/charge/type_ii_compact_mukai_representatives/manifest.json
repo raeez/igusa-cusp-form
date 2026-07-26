@@ -1,0 +1,36 @@
+{
+  "schema_version": "type_ii_compact_mukai_representatives.v1",
+  "fixture_name": "type_ii_compact_mukai_representatives",
+  "charge_kind": "type_ii_compact_mukai_representatives",
+  "status": "TYPE_II_COMPACT_MUKAI_REPRESENTATIVES_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "certified": true,
+  "compact_mukai_representatives_certified": true,
+  "delta1_representative_certified": true,
+  "delta2_representative_certified": true,
+  "delta3_representative_certified": true,
+  "mukai_gram_cocycle_imported": true,
+  "type_ii_wall_images_imported": true,
+  "compact_hall_source_basis": false,
+  "o2_wall_atlas": false,
+  "hn_semistability": false,
+  "orientation_data": false,
+  "vanishing_cycles": false,
+  "protected_integration": false,
+  "e_quotient": false,
+  "tables": [
+    "mukai_object_rows.csv",
+    "representative_rows.csv",
+    "gram_image_rows.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/charge/mukai_gram_cocycle",
+    "certificates/lattice/type_ii_wall_images"
+  ],
+  "limitations": [
+    "This packet constructs compact representatives only in the K3 Mukai chart.",
+    "It checks v(I_Z2)=(1,0,-1), v(I_p)=(1,0,0), v(O_p)=(0,0,1), and the three Pi_X images (1,1,0), (0,1,1), (0,-1,0).",
+    "It does not construct retained HN semistability, a compact Hall source basis, reduced orientations, vanishing-cycle summands, E-quotient data, O2 wall charts, Pfaffian signs, or protected integration."
+  ]
+}

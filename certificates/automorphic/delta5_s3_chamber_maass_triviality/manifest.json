@@ -1,0 +1,31 @@
+{
+  "schema_version": "delta5_s3_chamber_maass_triviality.v1",
+  "fixture_name": "delta5_s3_chamber_maass_triviality",
+  "character_kind": "delta5_maass_character_s3_chamber_restriction",
+  "status": "DELTA5_S3_CHAMBER_MAASS_TRIVIALITY_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "ZZ",
+  "maass_character_imported": true,
+  "s3_chamber_generators_recorded": true,
+  "generator_values_trivial": true,
+  "s3_generation_recorded": true,
+  "triviality_on_s3_proved": true,
+  "orientation_character_constructed": false,
+  "epsilon_o_extension_claimed": false,
+  "pfaffian_line_constructed": false,
+  "compact_source_claimed": false,
+  "tables": [
+    "source_rows.csv",
+    "generator_rows.csv",
+    "relation_rows.csv",
+    "coverage_rows.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/automorphic/delta5_maass_character"
+  ],
+  "limitations": [
+    "This packet proves only the automorphic Maass-character restriction to Aut(Poly_II) ~= S3.",
+    "It does not construct epsilon_o, a Pfaffian orientation line, compact K3xE source data, or an extension of epsilon_o to W^(2) semidirect S3."
+  ]
+}

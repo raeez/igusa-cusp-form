@@ -1,0 +1,48 @@
+{
+  "schema_version": "finite_hall_antipode_datum_obstruction.v1",
+  "fixture_name": "finite_hall_antipode_datum",
+  "hall_kind": "finite_hall_antipode_datum_obstruction",
+  "status": "FINITE_HALL_ANTIPODE_DATUM_OBSTRUCTION_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "definition_recorded": true,
+  "bialgebra_compatibility_packet_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "transition_hall_product_ledger_imported": true,
+  "transition_hall_coproduct_ledger_imported": true,
+  "antipode_definition_recorded": true,
+  "convolution_identity_criterion_recorded": true,
+  "antipode_matrix_rows_supplied": false,
+  "charge_involution_rows_supplied": false,
+  "connected_conilpotent_recursion_rows_supplied": false,
+  "unit_counit_rows_supplied": false,
+  "bialgebra_rows_supplied": false,
+  "convolution_identity_rows_supplied": false,
+  "transition_antipode_rows_supplied": false,
+  "actual_antipode_proved": false,
+  "finite_hall_hopf_algebra_claimed": false,
+  "primitive_claimed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "definition_rows.csv",
+    "antipode_rows.csv",
+    "convolution_identity_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hall/finite_hall_bialgebra_compatibility",
+    "certificates/sources/k3e_compact_hall",
+    "certificates/hall/transition_hall_product_preservation",
+    "certificates/hall/transition_hall_coproduct_preservation"
+  ],
+  "limitations": [
+    "This packet verifies row 351 as the definition of the antipode datum required for any finite Hall Hopf-algebra claim.",
+    "It does not populate antipode matrix rows.",
+    "It does not supply a retained charge involution or a connected conilpotent recursion proof.",
+    "It does not supply left or right convolution identity rows.",
+    "It does not supply transition compatibility for antipodes.",
+    "It does not claim that the current compact Hall bialgebra is a Hopf algebra."
+  ]
+}

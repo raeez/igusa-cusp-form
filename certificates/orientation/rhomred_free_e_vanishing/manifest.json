@@ -1,0 +1,40 @@
+{
+  "schema_version": "rhomred_free_e_vanishing_obstruction.v1",
+  "fixture_name": "rhomred_free_e_vanishing",
+  "orientation_kind": "rhomred_free_e_vanishing_obstruction",
+  "status": "RHOMRED_FREE_E_VANISHING_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "free_e_borel_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "vanishing_criterion_recorded": true,
+  "three_retained_strata_inspected": true,
+  "coefficient_rows_supplied": false,
+  "free_e_class_values_computed": false,
+  "a1_zero_verified": false,
+  "a2_zero_verified": false,
+  "free_e_vanishing_verified": false,
+  "free_e_null_trivialization_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "free_e_vanishing_obstruction_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_free_e_borel",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies the row-283 vanishing criterion and obstruction ledger.",
+    "It records that alpha_E_free=0 is equivalent to a1=0 and a2=0 after the row-282 coefficient class has been supplied.",
+    "It does not supply a1/a2 coefficient values, zero-coefficient checks, null-trivializations, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration."
+  ]
+}

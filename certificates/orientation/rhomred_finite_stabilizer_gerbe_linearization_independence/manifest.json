@@ -1,0 +1,42 @@
+{
+  "schema_version": "rhomred_finite_stabilizer_gerbe_linearization_independence.v1",
+  "fixture_name": "rhomred_finite_stabilizer_gerbe_linearization_independence",
+  "orientation_kind": "rhomred_finite_stabilizer_gerbe_linearization_independence",
+  "status": "RHOMRED_FINITE_STABILIZER_GERBE_LINEARIZATION_INDEPENDENCE_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "linearization_vanishing_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "degree_separation_proved": true,
+  "klein_four_counterexample_recorded": true,
+  "two_primary_counterexample_recorded": true,
+  "trivial_or_odd_zero_target_recorded": true,
+  "false_implication_excluded": true,
+  "beta_vanishing_implies_lambda_vanishing": false,
+  "nulltrivialization_implies_lambda_vanishing": false,
+  "determinant_anchor_weight_implies_lambda_vanishing": false,
+  "linearization_vanishing_verified": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "degree_separation_rows.csv",
+    "counterexample_rows.csv",
+    "current_packet_firewall_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "remaining_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_linearization_vanishing",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies the row-290 firewall that finite-stabilizer gerbe vanishing does not imply zero linearization.",
+    "It proves the degree separation by explicit E[2] and two-primary counterexamples.",
+    "It does not compute lambda values, prove row-289 zero-linearization, prove quotient orientation, prove transition compatibility, construct BBDJS vanishing cycles, or perform protected integration."
+  ]
+}

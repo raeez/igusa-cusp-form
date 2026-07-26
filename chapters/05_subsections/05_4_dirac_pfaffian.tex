@@ -1,4 +1,4 @@
-\subsection{Dirac operator and protected Pfaffian}
+\subsection{First-order Dirac block and protected Pfaffian}
 \label{subsec:dirac-pfaffian}
 
 The fourth entry of the Dirac--Igusa pro-object is the protected
@@ -13,8 +13,8 @@ orientation; its square root, the Pfaffian line, retains the
 orientation character $\epsilon_o$, and it is precisely the match
 $\epsilon_o=\nu_{\Delta_5}$ that distinguishes the first-order object
 $\Delta_5$ from its orientation-blind square $\Delta_5^2$.  Two
-constructions of this Pfaffian are at work.  The geometric construction starts from
-the cosection-reduced d-critical heart, builds a Joyce--Upmeier
+definitions of this Pfaffian meet.  The geometric definition starts from
+the cosection-reduced d-critical heart, carries a Joyce--Upmeier
 orientation, descends to the reduced quotient, and associates a
 Pfaffian line to the determinant of the reduced obstruction theory in
 the Brav--Bussi--Dupont--Joyce--Szendr\H{o}i framework
@@ -27,9 +27,9 @@ $\Gamma_{\mathrm{gram}}$, and writes the algebraic super-Pfaffian
 \]
 of the trivial first-order block decomposition $D_\gamma$ on the
 target side.  The Pfaffian--Dirac theorem of Chapter~6 is the
-identification, conditional on (D0), (O1), (O1)$^+$, (O2), of these
-two Pfaffian sections after the chosen line-comparison
-$\iota_{\mathrm{aut}}$.
+identification of these two Pfaffian sections after the chosen
+line-comparison $\iota_{\mathrm{aut}}$ and the four-obstruction
+datum of Appendix~\ref{app:obstruction-discharges}.
 
 \subsubsection*{Pfaffian line and squaring isomorphism}
 
@@ -78,6 +78,149 @@ $\mathfrak c_\infty$ and with the squaring map
 $\mathscr L_{\mathrm{Pf},X}^{\otimes 2}\simeq\mathscr L_{\det,X}$.
 \end{definition}
 
+\begin{definition}[Finite geometric Pfaffian datum
+\((P_{\mathrm{fin}})\)]
+\label{def:finite-geometric-pfaffian-datum}
+At finite HN height \(R\), a finite geometric Pfaffian datum is the
+following system on the reduced compact quotient
+\(\mathfrak Q_R=(\mathfrak M_R/E)^{\mathrm{red}}\).
+\begin{enumerate}
+\item[\textup{(P1)}] For every retained stratum \(\mathcal C\), a
+cosection-reduced perfect self-Ext complex
+\(K^{\mathrm{red}}_{\mathcal C,R}\) with odd skew self-duality
+\[
+\vartheta_{\mathcal C,R}:K^{\mathrm{red}}_{\mathcal C,R}
+\xrightarrow{\sim}
+(K^{\mathrm{red}}_{\mathcal C,R})^\vee[1],
+\]
+compatible with the reduced obstruction theory and the quotient by
+\(E\).
+\item[\textup{(P2)}] A Joyce--Upmeier orientation
+\(o_{\mathcal C,R}\) and the corresponding Pfaffian line
+\[
+\mathscr L_{\mathrm{Pf},R}
+=\bigotimes_{\mathcal C}\operatorname{Pf}
+(K^{\mathrm{red}}_{\mathcal C,R}),
+\qquad
+\mathscr L_{\mathrm{Pf},R}^{\otimes 2}\simeq\mathscr L_{\det,R}.
+\]
+\item[\textup{(P3)}] A finite-rank skew first-order block
+\(D_{R,\gamma}\) on each retained primitive degree
+\(\gamma\in\Gamma_R^{\Pi,+}\), with Pfaffian section
+\[
+\operatorname{pf}_{X,R}\in
+H^0(\mathfrak Q_R,\mathscr L_{\mathrm{Pf},R}).
+\]
+In a cusp frame this section has support exactly on the retained
+active degrees, full even/odd parity dimensions
+\(p^{\bar0}_{R,\gamma},p^{\bar1}_{R,\gamma}\), and signed exponent
+\(p^{\bar0}_{R,\gamma}-p^{\bar1}_{R,\gamma}=a_\Delta(\gamma)\).
+\item[\textup{(P4)}] For every retained simple type-II wall chart,
+with wall coordinate \(u_{\delta_i,R}\), a local factorization
+\[
+\operatorname{pf}_{X,R}
+=\upsilon_{\delta_i,R}\,u_{\delta_i,R}\cdot
+\operatorname{pf}^{\mathrm{tan}}_{i,R},
+\qquad
+\operatorname{ord}_{u_{\delta_i,R}=0}(\operatorname{pf}_{X,R})=1,
+\]
+where the unit \(\upsilon_{\delta_i,R}\) is invariant under the chosen
+reflection lift and the normal Pfaffian rank is
+\(N^{\mathrm{Pf}}_{\delta_i,R}=1\).  No type-I wall is allowed in this
+datum.
+\item[\textup{(P5)}] A finite-stage comparison
+\(\iota_{\mathrm{aut},R}:\mathscr L_{\mathrm{Pf},R}\to
+\mathcal L^5\otimes\nu_{\Delta_5}\) on the automorphic chart,
+compatible with the cusp trivialization, the leading coefficient
+\(\operatorname{lc}_{\mathfrak c_\infty}(\operatorname{pf}_{X,R})=64\),
+and squaring to the determinant line.
+\item[\textup{(P6)}] Strict transition isomorphisms
+\(\rho^{\mathrm{Pf}}_{R^+R}:
+\mathscr L_{\mathrm{Pf},R^+}|_{\mathfrak Q_R}
+\xrightarrow{\sim}\mathscr L_{\mathrm{Pf},R}\) carrying
+\(\operatorname{pf}_{X,R^+}\) to \(\operatorname{pf}_{X,R}\), with
+closed images and vanishing \(\lim^1\) for the line and section
+systems.
+\end{enumerate}
+The scalar Borcherds product, the squared determinant
+\(\Delta_5^2\), and the OP scalar \(-4096\Delta_5^{-2}\) are not
+entries of \((P_{\mathrm{fin}})\).  They are shadows obtained after
+choosing the cusp frame and, in the OP case, after squaring and
+inverting the Pfaffian section.
+
+After finite homogeneous trivialisations, \((P_{\mathrm{fin}})\) is
+recorded by the Pfaffian proof tables
+\[
+\mathrm{strata},\quad
+\mathrm{skew\_complexes},\quad
+\mathrm{pfaffian\_lines},\quad
+\mathrm{pfaffian\_sections},\quad
+\mathrm{wall\_charts},\quad
+\mathrm{automorphic\_comparisons},\quad
+\mathrm{transitions},\quad
+\mathrm{scalar\_firewall}.
+\]
+The rows are not scalar product rows.  They record retained strata,
+cosection-reduced skew perfect complexes, Pfaffian lines and their
+squares, finite Pfaffian sections, type-II rank-one wall charts,
+Pfaffian-to-automorphic line comparisons, strict transition maps, and
+the exclusion of scalar Borcherds products, squared determinants, OP
+scalar traces, and exponent tables as entries of \((P_{\mathrm{fin}})\).
+Defect ranks, exponent residuals, leading residuals, and
+\(R^1\varprojlim\)-ranks must be zero; the type-II normal Pfaffian rank
+and divisor order must be one; the simple-reflection sign is \(-1\);
+the automorphic comparison has leading coefficient \(64\), weight \(5\),
+and character \(\nu_{\Delta_5}\).  Every row must carry geometric
+source provenance and a proof reference.
+\end{definition}
+
+\begin{proposition}[Scalar Pfaffian data do not determine a Pfaffian section;
+\textit{proved}]
+\label{prop:scalar-pfaffian-data-not-section}
+Let \(U\) be a quotient chart in the type-II wall complement, let
+\(\mathcal L^5\) be the automorphic weight-five line on \(U\), and let
+\(T_\chi\) be a non-trivial order-two flat line with character
+\(\chi:\pi_1(U)\to\{\pm1\}\).  A divisor, a leading coefficient, a
+scalar Borcherds product written after choosing a cusp trivialization of
+\(\mathcal L^5\), or the square of that product in \(\mathcal L^{10}\)
+does not determine a section of \(\mathcal L^5\otimes T_\chi\).  Thus a
+section-level Pfaffian identity
+\[
+\operatorname{pf}_X=\Delta_5
+\]
+requires, in addition to the scalar product data, the Pfaffian line
+\(\mathscr L_{\mathrm{Pf},X}\), the section \(\operatorname{pf}_X\), the
+comparison \(\iota_{\mathrm{aut}}\), the order-two character
+\(\epsilon_o=\nu_{\Delta_5}\), and the inverse-limit transition data for
+these objects.  In particular, the exponent table \(f(nm,l)\), the
+squared identity \(\Delta_5^2=\chi_{10}\), and the OP scalar
+\(-4096\,\Delta_5^{-2}\) do not construct
+\(\operatorname{pf}_{X,R}\) or the orientation character
+\(\epsilon_{o,R}\).
+\end{proposition}
+
+\begin{proof}
+Choose a simply connected open set \(V\subset U\) and a flat frame
+\(\tau\) of \(T_\chi|_V\).  For a local section \(s\) of \(\mathcal L^5\),
+the section \(s\otimes\tau\) of \(\mathcal L^5\otimes T_\chi\) has the
+same local scalar expression as \(s\) after the frame \(\tau\) is set
+equal to \(1\).  Under the canonical trivialization
+\(T_\chi^{\otimes2}\simeq\mathcal O_U\), the squares of \(s\) and
+\(s\otimes\tau\) give the same section \(s^2\) of \(\mathcal L^{10}\).
+Their divisors and leading coefficients in the chosen cusp
+trivialization are therefore identical.
+
+The two objects are nevertheless different globally.  Along a loop
+\(\ell\) with \(\chi(\ell)=-1\), analytic continuation fixes \(s\) and
+sends \(s\otimes\tau\) to \(-s\otimes\tau\).  This monodromy is exactly
+the information carried by the order-two orientation character.  Hence
+the square, the local product, and the scalar trace forget the data
+needed to define the Pfaffian section as a section of a twisted
+weight-five line.  The line, section, line comparison, character, and
+transition compatibilities are therefore separate data, not consequences
+of the scalar product.
+\end{proof}
+
 \subsubsection*{First-order Dirac block decomposition}
 
 \begin{definition}[First-order Dirac block]
@@ -112,16 +255,18 @@ Hall bracket of \S\ref{subsec:hall-correspondences}: the Pfaffian
 line is the determinant detector, and the symbol carries the Lie
 data.  The phrase \emph{first-order} means the Pfaffian/primitive
 object before scalar squaring; no analytic Dirac operator on a
-constructed Hilbert space is asserted.
+constructed state space is asserted.
 
 \subsubsection*{The Pfaffian product at finite stage}
 
 \begin{proposition}[Pfaffian product at finite stage;
-\textit{conditional on (D0-Pf)}]
+\textit{conditional on \((P_{\mathrm{fin}})\)}]
 \label{prop:pfaffian-product-finite-stage}
 Suppose the orientation lane $(\textup{O1},\textup{O1}^+)$ has
-descended to the reduced quotient, the first-order block
-decomposition is supplied, and the support and parity residuals
+descended to the reduced quotient, the finite geometric Pfaffian datum
+\((P_{\mathrm{fin}})\) of
+Definition~\ref{def:finite-geometric-pfaffian-datum} is supplied, and
+the support and parity residuals
 \[
 \mathfrak o^{\mathrm{supp}}_{R,\gamma}=
 \begin{cases}
@@ -230,22 +375,40 @@ normal Pfaffian units, tangent/normal splittings, quotient
 orientations, and protected integration maps must agree on chart
 overlaps.  A single generic chart computes only a local sign.
 
+The finite O2 wall-atlas proof packet is the table system
+\[
+\mathrm{wall\_objects},\quad
+\mathrm{wall\_charts},\quad
+\mathrm{overlaps},\quad
+\mathrm{orbit\_transport},\quad
+\mathrm{half\_hilbert\_orbit},\quad
+\mathrm{compatibilities},\quad
+\mathrm{scalar\_separation}.
+\]
+Its rows must carry the retained wall objects, rank-one chart
+coordinates, Cech/cochain overlap equations, Weyl transport, the
+twelve-coordinate half-Hilbert orbit, and the component, boundary,
+Thom--Sebastiani, HN-transition, quotient-orientation, and protected
+integration identities.  The scalar-separation rows record
+\(4096=2^{12}=64^2\) without identifying the OP scalar normalization
+or the Maass character value with wall-atlas data.
+
 The half-Hilbert orbit of the type-II reflection group on the
 relevant retained stratum carries a sign sum of size $4096=2^{12}$,
 counting the supplied finite-window normal Pfaffian signs across the
 twelve retained components and boundary strata of the type-II wall
 configuration; this sum is the signature of the (O2) wall
-normal-form theorem.  Local rank-one charts contribute the local
-factors; the global sum reads as the orientation character on the
+normal-form datum.  Local rank-one charts contribute the local
+factors; the chosen Weyl lifts convert the retained global system
+into the orientation character on the
 $W^{(2)}(\Lambda_{II}^{2,1})$-orbit.  The full normal-form
-theorem with overlap, boundary, and component coherence is the
-content of Appendix~\ref{app:pfaffian-wall-normal-form} and
+theorem with overlap, boundary, and component coherence is relative
+to the retained \((O2_{\mathrm{atlas}})\) datum and
 Theorem~\ref{thm:G-O2-orbit-transport} of
-Appendix~\ref{app:G-O2-discharge}; the present section sketches the
-local model only.
+Appendix~\ref{app:G-O2-discharge}; the local model is the finite
+rank-one wall factor.
 
-\begin{proposition}[Generic local sign and the orientation
-character; \textit{conditional on (O1)$^+$ and the (O2) wall atlas}]
+\begin{proposition}[Generic local sign and the orientation character]
 \label{prop:generic-local-sign-orientation-character}
 Suppose (O1)$^+$ supplies a normalized lift
 $\tau_{i,R,S}:o_{R,S}\to s_{\delta_i}^* o_{R,S}$ of the simple
@@ -287,45 +450,50 @@ with cusp-side expansion
 \Gamma_{\mathrm{eff}}}(1-q^nr^ls^m)^{f(nm,l)},
 \]
 matching the imported Borcherds--Gritsenko--Nikulin product.  The
-scalar trace is the Oberdieck--Pixton normalization
+scalar branch obtained after taking the protected trace of the
+inverse squared Pfaffian section is the Oberdieck--Pixton
+normalization
 \[
-\operatorname{Tr}_{\mathrm{prot}}\bigl((-1)^F\mathfrak D_X^{-2}\bigr)
-=-4096\,\Delta_5^{-2},
+Z^X_{\mathrm{OP}}=-4096\,\Delta_5^{-2},
 \]
-which carries the negative sign and the $4096=2^{12}$ overall
-multiplicity attached to the half-Hilbert orbit.  This sign and
-multiplicity are not chosen branch conventions; they are computed by
-the (O2) wall atlas after (O1)$^+$ has supplied the Weyl
-transports.
+where the negative sign is the OP scalar branch and
+\(4096=2^{12}=64^2\) is the scalar equality between the retained
+half-Hilbert sign count and the squared theta-leading coefficient.
+Neither number defines the orientation character.
 
-\subsubsection*{Cross-repo anchor and status}
+\subsubsection*{Comparison with the Pfaffian identity}
 
-Vol II's Construction Problem~1 isolates the protected Pfaffian
+The Vol II primitive-to-shadow comparison singles out the protected Pfaffian
 $\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X)=\Delta_5$ as the
-target identity for the chiral $E_3$-algebra $\mathfrak A_{K3\times E}$;
-the present section supplies the $K3\times E$-side construction.
+target identity for the retained Pfaffian datum; the \(K3\times E\)
+side supplies the Pfaffian line and scalar branch data.
 BBDJS \cite{BBDJS2015} provides the orientation-line and Pfaffian
 calculus on the cosection-reduced d-critical heart; Joyce--Upmeier
 \cite{JoyceUpmeier} provides multiplicativity under reduced
 extension correspondences; Joyce--Tanaka--Upmeier
 \cite{JoyceTanakaUpmeier} extends the framework to $4$-fold
-analogues but is not used directly here.  The constants $4096=2^{12}$
-and $-1$ are fixed by group theory plus one local rank-one Pfaffian
-wall computation; the Oberdieck--Pixton minus sign is a scalar branch
-convention, not the source of the orientation character.  No
-identification of the Pfaffian $\Delta_5$ with a compact BPS Hilbert
-space is asserted: $\Delta_5$ is the protected scalar shadow of
-$\mathfrak A_{K3\times E}$, and the operator-level package is the
-pro-object $\mathfrak D_X^{\mathrm{DI}}$ conditional on (D0), (O1),
-(O1)$^+$, (O2).
+analogues but is not used directly here.  The constant \(4096=2^{12}\)
+is fixed at the orientation level by the retained half-Hilbert wall
+atlas and at the scalar level by \(64^2\); the local sign \(-1\) is
+fixed by the rank-one Pfaffian wall computation.  The
+Oberdieck--Pixton minus sign is a scalar branch convention, not the
+source of the orientation character.  No
+identification of the Pfaffian $\Delta_5$ with a compact microscopic
+state space is asserted: \(\Delta_5\) is the protected Pfaffian section,
+the scalar trace is \(\Delta_5^{-2}\), and the operator-level datum is the
+pro-object $\mathfrak D_X^{\mathrm{DI}}$, defined at the Pfaffian and
+orientation level relative to the retained data of
+Appendix~\ref{app:obstruction-discharges}.
 
 The Pfaffian recovers $\Delta_5$ at the target scalar level, but
 the cross-level recognition that identifies the primitive Hopf
 algebra of \S\ref{subsec:hall-correspondences} with the Borcherds--Kac--Moody
 target $\autcor$ requires a separately constructed source coalgebra
-and an explicit chiral-Koszul cobar comparison.  The bar of the
-augmented hybrid factorization algebra is the source coalgebra
-$C_X$; the cobar map $\Theta_{\mathrm{Kos},R}$ is the quasi-isomorphism
-to the imported current envelope $\mathsf{Den}_{\Delta_5,E}$.  This
-Koszul lane $(\mathrm L 5)$ is the content of
+and an explicit chiral-Koszul cobar comparison.  The source coalgebra
+$C_X$ is the bar of the augmented binary/two-step hybrid correspondence
+algebra; it becomes the bar of a hybrid factorization algebra only
+after the higher-coloured residual vanishes.  The cobar map
+$\Theta_{\mathrm{Kos},R}$ is the quasi-isomorphism to the imported
+current envelope $\mathsf{Den}_{\Delta_5,E}$.  This Koszul lane
+$(\mathrm L 5)$ is the content of
 \S\ref{subsec:koszul-source}.

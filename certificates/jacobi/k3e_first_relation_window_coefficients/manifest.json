@@ -1,0 +1,36 @@
+{
+  "schema_version": "k3e_jacobi_window_coefficients.v2",
+  "fixture_name": "k3e_first_relation_window_coefficients",
+  "jacobi_kind": "finite_jacobi_window_candidate",
+  "window": "W_rel_plus_saturation_extension",
+  "coefficient_ring": "ZZ",
+  "certified": true,
+  "coefficient_certified": true,
+  "normalization_laws_certified": true,
+  "target_only": true,
+  "compact_source": false,
+  "primitive_recognition": false,
+  "first_window_theorem": false,
+  "source_formula_id": "theta_series_phi_01_exact",
+  "source_script": "compute/verify_square_root.py",
+  "target_fixture_id": "a071_target_presentation",
+  "target_fixture": "certificates/targets/delta5_gn_kac/a071_target_presentation",
+  "tables": [
+    "window_degrees.csv",
+    "normalization_laws.csv",
+    "jacobi_coefficients.csv",
+    "discriminant_orbits.csv",
+    "target_comparisons.csv",
+    "transitions.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This certificate fixes the normalization phi_{0,1}=r^{-1}+10+r+O(q), the finite evenness checks f(n,l)=f(n,-l), and the finite discriminant-dependence checks f(n,l)=c(4n-l^2) in the first relation-closed window.",
+    "This certificate computes only the target arithmetic coefficients f(nm,l) from phi_{0,1}.",
+    "It compares those coefficients with the A071 target signed dimensions.",
+    "It includes the D_1, D_2, D_3 rows forced by the minimal nonzero downward-saturation extension.",
+    "It does not supply compact K3xE source representatives.",
+    "It does not supply even and odd parity dimensions for signed-only target rows.",
+    "It does not supply Hall brackets, pairings, radical kernels, PBW rows, or primitive recognition."
+  ]
+}

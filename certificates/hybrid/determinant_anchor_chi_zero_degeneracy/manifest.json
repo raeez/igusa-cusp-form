@@ -1,0 +1,46 @@
+{
+  "schema_version": "determinant_anchor_chi_zero_degeneracy.v1",
+  "fixture_name": "determinant_anchor_chi_zero_degeneracy",
+  "hybrid_kind": "determinant_anchor_chi_zero_degeneracy",
+  "status": "DETERMINANT_ANCHOR_CHI_ZERO_DEGENERACY_VERIFIED",
+  "translation_weight_imported": true,
+  "translation_action_imported": true,
+  "chi_zero_degeneracy_certified": true,
+  "chi_zero_weight": "0",
+  "orbit_kernel": "all_E",
+  "determinant_anchor_orbit_constant": true,
+  "free_orbit_separation_defect_rank": 1,
+  "extra_anchor_data_certification": false,
+  "anchor_residual_certification": false,
+  "anchor_losslessness_certification": false,
+  "quotient_descent_certification": false,
+  "stabilizer_linearization_certification": false,
+  "transition_certification": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "degeneracy_rows.csv",
+    "orbit_witness_rows.csv",
+    "repair_requirement_rows.csv",
+    "extra_anchor_data_rows.csv",
+    "anchor_residual_rows.csv",
+    "anchor_losslessness_rows.csv",
+    "quotient_descent_rows.csv",
+    "stabilizer_linearization_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/determinant_anchor_translation_weight",
+    "certificates/moduli/retained_e_translation_rigidifications"
+  ],
+  "limitations": [
+    "This packet handles the chi(F)=0 branch by proving that the determinant anchor is constant on every E-translation orbit.",
+    "The free retained E-action makes the constant orbit a one-dimensional separation defect for determinant-anchor-only data.",
+    "It records that an extra anchor datum is mandatory on the chi(F)=0 branch.",
+    "The determinant_anchor_extra_anchor_data packet constructs the degree-zero Jordan-Hoelder divisor as a determinant-refining test-pair separator.",
+    "The anchor_residual_definition packet defines o_R^lambda.",
+    "This packet does not prove o_R^lambda=0, prove losslessness, prove quotient descent, choose stabilizer linearizations, or prove transition compatibility."
+  ]
+}

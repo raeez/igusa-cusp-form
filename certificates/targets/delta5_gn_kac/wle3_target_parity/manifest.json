@@ -1,0 +1,24 @@
+{
+  "schema_version": "wle3_target_parity.v1",
+  "fixture_name": "wle3_target_parity",
+  "target_kind": "wle3_target_parity_candidate",
+  "window": "W_le_3",
+  "coefficient_ring": "ZZ",
+  "certified": true,
+  "target_only": true,
+  "compact_source": false,
+  "primitive_recognition": false,
+  "source_formula_id": "theta_series_phi_01_and_gn_kac_presentation",
+  "tables": [
+    "target_degrees.csv",
+    "decomposition.csv",
+    "coefficient_comparison.csv",
+    "real_string_checks.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet verifies the imported target parity table in W<=3.",
+    "It does not construct compact source representatives.",
+    "It does not supply source Hall brackets, pairings, radicals, PBW data, or primitive recognition."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "rhomred_weyl_wall_transport_tau_obstruction.v1",
+  "fixture_name": "rhomred_weyl_wall_transport_tau",
+  "orientation_kind": "rhomred_weyl_wall_transport_tau_obstruction",
+  "status": "RHOMRED_WEYL_WALL_TRANSPORT_TAU_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "orientation_obstruction_imported": true,
+  "type_ii_chamber_imported": true,
+  "wall_profile_survival_imported": true,
+  "o2_wall_atlas_imported": true,
+  "weyl_wall_transport_criterion_recorded": true,
+  "type_ii_generators_available": true,
+  "wall_profiles_survive_quotient": true,
+  "orientation_line_rows_supplied": false,
+  "retained_wall_object_rows_supplied": false,
+  "weyl_lift_rows_supplied": false,
+  "tau_transport_constructed": false,
+  "tau_square_proved": false,
+  "transition_compatibility": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "imported_status_rows.csv",
+    "tau_transport_obstruction_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/k3e_reduced_orientation",
+    "certificates/lattice/type_ii_chamber_isotropic",
+    "certificates/hybrid/type_ii_wall_e_quotient_survival",
+    "certificates/wall_atlas/k3e_o2_atlas"
+  ],
+  "limitations": [
+    "This packet verifies row 306 only as a Weyl-wall transport criterion for tau_i.",
+    "The type-II chamber packet supplies the three target simple reflections but no source orientation transport.",
+    "The wall-profile survival packet proves quotient profile survival but no nonzero wall object or orientation descent.",
+    "The reduced-orientation packet supplies no orientation lines and no Weyl-lift rows.",
+    "The O2 wall-atlas packet supplies no retained wall objects.",
+    "It does not construct the maps tau_i and does not prove tau_i squared equals one."
+  ]
+}

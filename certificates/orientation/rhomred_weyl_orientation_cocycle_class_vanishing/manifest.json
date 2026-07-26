@@ -1,0 +1,40 @@
+{
+  "schema_version": "rhomred_weyl_orientation_cocycle_class_vanishing_obstruction.v1",
+  "fixture_name": "rhomred_weyl_orientation_cocycle_class_vanishing",
+  "orientation_kind": "rhomred_weyl_orientation_cocycle_class_vanishing_obstruction",
+  "status": "RHOMRED_WEYL_ORIENTATION_COCYCLE_CLASS_VANISHING_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "orientation_cocycle_imported": true,
+  "orientation_obstruction_imported": true,
+  "rank_criterion_recorded": true,
+  "cocycle_value_rows_supplied": false,
+  "cocycle_closedness_rows_supplied": false,
+  "cochain_complex_rows_supplied": false,
+  "coboundary_matrix_rows_supplied": false,
+  "rank_certificate_rows_supplied": false,
+  "cochain_witness_rows_supplied": false,
+  "cocycle_class_vanishing_proved": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "cochain_complex_rows.csv",
+    "class_vanishing_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_orientation_cocycle",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 310 only as the rank criterion for the vanishing of the orientation projective cocycle class.",
+    "The imported row-309 packet contains no populated cocycle-value rows.",
+    "The reduced-orientation Coxeter cocycle table is empty.",
+    "No normalized groupoid cochain complex or coboundary matrix is supplied.",
+    "No rank certificate proving [c_o,R]=0 is supplied.",
+    "It does not construct the row-311 one-cochain."
+  ]
+}

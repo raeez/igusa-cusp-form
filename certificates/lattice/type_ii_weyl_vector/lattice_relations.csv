@@ -1,0 +1,8 @@
+relation_id,relation_kind,computed_value,expected_value,defect_rank,source_reference,check_status,notes
+cartan_matrix,matrix_identity,1,1,0,compute/verify_type_ii_weyl_vector_fixture.py root_gram,verified,Cartan matrix equals 4I3-2J3
+root_lattice_discriminant,determinant,-32,-32,0,compute/verify_type_ii_weyl_vector_fixture.py determinant_3,verified,determinant of the type-II root Gram matrix
+rho_half_sum,vector_identity,1,1,0,compute/verify_type_ii_weyl_vector_fixture.py root_combination,verified,rho equals half the sum of the three type-II roots
+rho_simple_pairings,pairing_identity,1,1,0,compute/verify_type_ii_weyl_vector_fixture.py pair,verified,"(rho,delta_i)=-1 for all i"
+rho_norm,norm_numerator_over_two,-3,-3,0,compute/verify_type_ii_weyl_vector_fixture.py pair,verified,"(rho,rho)=-3/2"
+rho_dual_membership,dual_membership,1,1,0,compute/verify_type_ii_weyl_vector_fixture.py integral pairings,verified,rho pairs integrally with each root and lies in the dual root lattice
+u4_plus_2_isometry,isometry,1,1,0,compute/verify_type_ii_weyl_vector_fixture.py isometry_basis,verified,basis u=delta1+delta3 v=delta2+delta3 h=delta3 has Gram U(4)+<2>

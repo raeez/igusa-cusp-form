@@ -2,9 +2,9 @@
 """Build the A071 target-presentation fixture.
 
 This is a target-only Delta_5 / Gritsenko--Nikulin / Kac reference
-fixture.  It records currently justified target parity rows and the
-signed-only rows that remain blocked.  It is not a compact source
-verifier and it does not import source packets.
+fixture.  It records currently justified finite target-presentation
+rows and the signed-only rows that remain blocked.  It is not a compact
+source verifier and it does not import source packets.
 """
 
 from __future__ import annotations
@@ -229,6 +229,36 @@ def make_target_rows() -> list[TargetRow]:
 
     for k in (1, 2, 3):
         i, j = complement_pair(k)
+        beta = beta_with_entries({i: 2, j: 2, k: 1})
+        rows.append(
+            TargetRow(
+                degree_id=f"D_{k}",
+                tex_label=f"D_{{{k}}}",
+                family="saturation_defect_signed_only",
+                beta=beta,
+                smult=-513,
+                simple_even=54,
+                simple_odd=0,
+                signed_residual=-567,
+                fixture_status="signed_only_blocked",
+                parity_source="signed_only_blocked",
+                provenance_kind="signed_only",
+                provenance_note=(
+                    "signed target data smult=-513 and m=54 only; full "
+                    "parity split requires finite target presentation reducer; "
+                    "row is forced by downward saturation below 2delta123"
+                ),
+                citation=f"{GN_CITATION}; {KAC_CITATION}",
+                relation_kind="blocked_pending_finite_target_reducer",
+                relation_input=f"delta_{k}+2a_{{{i}{j}}}",
+                relation_output="no parity fixture",
+                parity_effect="not_available",
+                chamber_rep=f"D_{{{k}}}",
+            )
+        )
+
+    for k in (1, 2, 3):
+        i, j = complement_pair(k)
         beta = beta_with_entries({i: 1, j: 1, k: 3})
         rows.append(
             TargetRow(
@@ -364,7 +394,15 @@ def validate_rows(rows: list[TargetRow]) -> None:
             if row.fixture_status != "signed_only_blocked":
                 raise ValueError(f"{row.degree_id}: blocked row has bad status")
 
-    expected_blocked = {"C_1_2", "C_2_2", "C_3_2", "2delta123"}
+    expected_blocked = {
+        "C_1_2",
+        "C_2_2",
+        "C_3_2",
+        "D_1",
+        "D_2",
+        "D_3",
+        "2delta123",
+    }
     blocked = {row.degree_id for row in rows if not row.is_parity_fixture}
     if blocked != expected_blocked:
         raise ValueError(f"blocked rows mismatch: {sorted(blocked)}")
@@ -468,6 +506,23 @@ def simple_generator_rows(rows: list[TargetRow]) -> list[dict[str, Any]]:
                     "generator_block": "gn_timelike_simple_m_positive",
                     "parity": "even",
                     "count": 90,
+                    "fixture_status": "signed_only_blocked",
+                    "feeds_basis": False,
+                    "parity_source": row.parity_source,
+                    "provenance_kind": row.provenance_kind,
+                    "provenance_note": row.provenance_note,
+                    "citation": row.citation,
+                    "computation_hash": row.computation_hash,
+                }
+            )
+        elif row.family == "saturation_defect_signed_only":
+            out.append(
+                {
+                    "degree_id": row.degree_id,
+                    "tex_label": row.tex_label,
+                    "generator_block": "gn_timelike_simple_m_positive",
+                    "parity": "even",
+                    "count": row.simple_even,
                     "fixture_status": "signed_only_blocked",
                     "feeds_basis": False,
                     "parity_source": row.parity_source,
@@ -661,7 +716,7 @@ def manifest_content(rows: list[TargetRow]) -> str:
     lines = [
         "schema: a071_target_presentation_fixture",
         "target: delta5_gn_kac",
-        "window: A071_Wle7_relation_closed_target_rows",
+        "window: A071_added_target_rows_not_relation_closed",
         "generator: compute/build_target_presentation_fixture.py",
         "deterministic: true",
         "target_only: true",
@@ -674,6 +729,16 @@ def manifest_content(rows: list[TargetRow]) -> str:
         "  signed_only_blocked_rows: " + str(len(blocked)),
         "  target_basis_vectors: " + str(basis_count),
         "  simple_generator_entries_total_count: " + str(simple_count),
+        "target_presentation_payload:",
+        "  required_for_source_comparison:",
+        "    - full_even_odd_parity_dimensions",
+        "    - relation_rows",
+        "    - positive_negative_pairing_blocks",
+        "    - target_radical_blocks",
+        "    - pbw_rows",
+        "    - row_provenance",
+        "  signed_dimension_rows_are_payload: false",
+        "  imaginary_simple_counts_are_payload: false",
         "active_rows:",
         "  doubled_isotropic: 2a_ij:10|0",
         "  complementary_weyl_delta123: C_{k,3}:29|93",
@@ -681,6 +746,7 @@ def manifest_content(rows: list[TargetRow]) -> str:
         "  complementary_terminal_zero: C_{k,5}:0|0",
         "blocked_rows:",
         "  C_{k,2}: signed_only_blocked",
+        "  D_k: signed_only_blocked",
         "  2delta123: signed_only_blocked",
         "provenance_sources:",
         "  gn_kac_base: GN/Kac target presentation arithmetic",
@@ -696,7 +762,7 @@ def manifest_content(rows: list[TargetRow]) -> str:
         "  - no compact source pairings",
         "  - no compact source radicals",
         "  - no source PBW or no-extra theorem",
-        "  - C_{k,2} and 2delta123 do not feed target basis or PBW rows",
+        "  - C_{k,2}, D_k, and 2delta123 do not feed target basis or PBW rows",
         "files:",
     ]
     lines.extend(f"  - {filename}" for filename in OUTPUT_FILENAMES)

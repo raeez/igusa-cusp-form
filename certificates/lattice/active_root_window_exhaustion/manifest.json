@@ -1,0 +1,29 @@
+{
+  "schema_version": "active_root_window_exhaustion.v1",
+  "fixture_name": "active_root_window_exhaustion",
+  "window_kind": "active_root_window_exhaustion",
+  "coefficient_ring": "ZZ",
+  "status": "ACTIVE_ROOT_WINDOW_EXHAUSTION_VERIFIED",
+  "active_exhaustion": true,
+  "target_side": true,
+  "compact_support": false,
+  "moduli_transitions": false,
+  "orientation_transport": false,
+  "vanishing_cycles": false,
+  "hall_operations": false,
+  "radicals_pbw": false,
+  "imports": [
+    "certificates/lattice/downward_root_windows"
+  ],
+  "tables": [
+    "active_exhaustion.csv",
+    "sample_membership.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet proves target-side active height-window exhaustion: every beta in R_plus lies in W_ht(beta).",
+    "It imports the downward_root_windows packet for the height-window convention and Gamma(W_nu) formula.",
+    "It is not the compact-source support exhaustion required for row 184.",
+    "It does not construct compact support, moduli transitions, orientation transport, vanishing-cycle transport, Hall operations, radicals, PBW filtrations, or protected traces."
+  ]
+}

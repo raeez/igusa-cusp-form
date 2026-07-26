@@ -1,0 +1,46 @@
+{
+  "schema_version": "rhomred_finite_stabilizer_two_primary_class.v1",
+  "fixture_name": "rhomred_finite_stabilizer_two_primary_class",
+  "orientation_kind": "rhomred_finite_stabilizer_two_primary_class",
+  "status": "RHOMRED_FINITE_STABILIZER_TWO_PRIMARY_CLASS_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "finite_stabilizer_beta_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "two_primary_group_identified": true,
+  "cohomology_ring_computed": true,
+  "h2_basis_recorded": true,
+  "two_primary_class_form_recorded": true,
+  "mixed_term_detection_deferred_to_row_297": true,
+  "retained_two_primary_edge_row_supplied": false,
+  "equivariant_beta_representative_supplied": false,
+  "edge_reduction_rows_supplied": false,
+  "coefficient_values_supplied": false,
+  "cyclic_restriction_detection_supplied": false,
+  "beta_vanishing_verified": false,
+  "linearization_rows_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "cohomology_basis_rows.csv",
+    "two_primary_class_rows.csv",
+    "deferred_detection_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "remaining_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_finite_stabilizer_beta",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 296: the local even N>=4 two-primary class computation.",
+    "It computes H^2(B(Z/2^a)^2;F2) for a>=2 and the unique edge-class form A1*y1 + A12*x1*x2 + A2*y2.",
+    "It does not supply a retained two-primary finite-stabilizer edge row, coefficient values, cyclic-restriction detection of A12, beta vanishing, zero linearization, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration.",
+    "The mixed-term detection firewall for A12 is deferred to row 297."
+  ]
+}

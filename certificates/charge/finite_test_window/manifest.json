@@ -1,0 +1,30 @@
+{
+  "schema_version": "finite_test_window_definition.v1",
+  "fixture_name": "finite_test_window",
+  "charge_kind": "finite_test_window_definition",
+  "status": "FINITE_TEST_WINDOW_DEFINITION_VERIFIED",
+  "finite_test_window_defined": true,
+  "populated_window_certification": false,
+  "relation_closed_target_exhaustion": false,
+  "charge_window_packet_imported": true,
+  "mukai_gram_packet_imported": true,
+  "orientation_definition_substitute": false,
+  "tables": [
+    "definition_rows.csv",
+    "test_window_membership.csv",
+    "test_window_transitions.csv",
+    "test_window_finiteness.csv",
+    "target_exhaustion_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet defines Gamma_R^test as overlinePi_X(hatGamma_R).",
+    "No HN charge rows are supplied.",
+    "No normal-ordered translate orbits are supplied.",
+    "No populated Gamma_R^test membership rows are supplied.",
+    "No finiteness witness rows or transition rows are supplied.",
+    "It does not prove that every relation-closed target degree appears at finite R.",
+    "Row 200 is tracked separately in certificates/charge/relation_closed_target_finite_R_exhaustion."
+  ]
+}

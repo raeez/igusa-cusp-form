@@ -1,0 +1,50 @@
+{
+  "schema_version": "rhomred_weyl_partial_action_groupoid_obstruction.v1",
+  "fixture_name": "rhomred_weyl_partial_action_groupoid",
+  "orientation_kind": "rhomred_weyl_partial_action_groupoid_obstruction",
+  "status": "RHOMRED_WEYL_PARTIAL_ACTION_GROUPOID_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "type_ii_chamber_imported": true,
+  "tau_transport_imported": true,
+  "tau_square_imported": true,
+  "wall_profile_survival_imported": true,
+  "orientation_obstruction_imported": true,
+  "groupoid_datum_recorded": true,
+  "type_ii_generators_available": true,
+  "wall_profiles_survive_quotient": true,
+  "object_rows_supplied": false,
+  "arrow_rows_supplied": false,
+  "identity_rows_supplied": false,
+  "inverse_rows_supplied": false,
+  "composition_rows_supplied": false,
+  "partial_action_groupoid_defined": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "groupoid_object_rows.csv",
+    "groupoid_arrow_rows.csv",
+    "groupoid_composition_rows.csv",
+    "groupoid_inverse_rows.csv",
+    "groupoid_defect_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/lattice/type_ii_chamber_isotropic",
+    "certificates/orientation/rhomred_weyl_wall_transport_tau",
+    "certificates/orientation/rhomred_weyl_tau_square",
+    "certificates/hybrid/type_ii_wall_e_quotient_survival",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 308 only as a finite partial-action-groupoid datum.",
+    "The target type-II generator rows and quotient wall-profile rows are available.",
+    "No retained quotient-orientation object rows are supplied.",
+    "No Weyl transport arrow rows are supplied.",
+    "No identity inverse partial-composition or associativity-defect rows are supplied.",
+    "It does not define a populated finite partial action groupoid."
+  ]
+}

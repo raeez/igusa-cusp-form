@@ -1,0 +1,39 @@
+{
+  "schema_version": "rhomred_weyl_orientation_s3_extension_decision_obstruction.v1",
+  "fixture_name": "rhomred_weyl_orientation_s3_extension_decision",
+  "orientation_kind": "rhomred_weyl_orientation_s3_extension_decision_obstruction",
+  "status": "RHOMRED_WEYL_ORIENTATION_S3_EXTENSION_DECISION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "determinant_comparison_imported": true,
+  "s3_maass_triviality_imported": true,
+  "s3_generator_permutation_recorded": true,
+  "abstract_invariance_criterion_recorded": true,
+  "abstract_extensions_classified": true,
+  "maass_compatible_extension_identified": true,
+  "orientation_character_constructed": false,
+  "epsilon_equals_det_proved": false,
+  "source_generator_signs_supplied": false,
+  "source_semidirect_hall_lifts_supplied": false,
+  "source_orientation_extension_claimed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "extension_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_orientation_determinant_comparison",
+    "certificates/automorphic/delta5_s3_chamber_maass_triviality"
+  ],
+  "limitations": [
+    "This packet verifies row 324 as an abstract semidirect character-extension criterion and decision.",
+    "The imported row-321 determinant-comparison packet does not prove epsilon_o=det_W.",
+    "The imported row-323 packet proves only Maass triviality on S3.",
+    "No compact-source semidirect Hall lifts or source orientation extension rows are supplied.",
+    "It does not claim a geometric extension of epsilon_o to W^(2) semidirect S3."
+  ]
+}

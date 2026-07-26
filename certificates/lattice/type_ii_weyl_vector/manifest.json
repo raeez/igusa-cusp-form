@@ -1,0 +1,26 @@
+{
+  "schema_version": "type_ii_weyl_vector.v1",
+  "fixture_name": "type_ii_weyl_vector",
+  "lattice_kind": "type_ii_weyl_vector_lattice",
+  "coefficient_ring": "QQ",
+  "certified": true,
+  "lattice_arithmetic_certified": true,
+  "compact_source": false,
+  "pfaffian_orientation": false,
+  "o2_wall_atlas": false,
+  "mirror_discriminant": false,
+  "protected_trace": false,
+  "tables": [
+    "simple_roots.csv",
+    "cartan_matrix.csv",
+    "isometry_basis.csv",
+    "weyl_vector.csv",
+    "lattice_relations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet records target-side type-II BKM lattice arithmetic only.",
+    "It checks the simple roots, Cartan matrix 4I3-2J3, discriminant -32, Lambda_II^{2,1} ~= U(4)+<2>, rho=1/2(delta1+delta2+delta3), (rho,delta_i)=-1, (rho,rho)=-3/2, and rho in the dual root lattice.",
+    "It does not construct compact K3xE source data, Pfaffian orientations, O2 wall atlases, mirror discriminants, or protected scalar traces."
+  ]
+}

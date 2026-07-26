@@ -1,0 +1,47 @@
+{
+  "schema_version": "finite_hall_normal_ordered_gram_degree.v1",
+  "fixture_name": "finite_hall_normal_ordered_gram_degree",
+  "hall_kind": "finite_hall_normal_ordered_gram_degree_obstruction",
+  "status": "FINITE_HALL_NORMAL_ORDERED_GRAM_DEGREE_OBSTRUCTION_VERIFIED",
+  "row_number": 356,
+  "coefficient_ring": "QQ",
+  "relative_theorem_recorded": true,
+  "graded_jacobi_packet_imported": true,
+  "pushforward_degree_packet_imported": true,
+  "charge_window_fixture_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "normal_ordered_degree_formula_recorded": true,
+  "formal_supplied_rows_verified": true,
+  "source_degree_rows_supplied": false,
+  "source_normal_ordered_lift_rows_supplied": false,
+  "source_product_matrix_rows_supplied": false,
+  "source_primitive_bracket_rows_supplied": false,
+  "source_bracket_degree_defect_rows_supplied": false,
+  "normal_ordered_gram_degree_proved_for_current_source": false,
+  "primitive_lie_algebra_populated": false,
+  "parity_proved": false,
+  "mathematical_certification": false,
+  "imports": [
+    "certificates/hall/finite_hall_graded_jacobi",
+    "certificates/charge/hall_pairing_pushforward_compatibility",
+    "certificates/charge/k3e_charge_window",
+    "certificates/sources/k3e_compact_hall"
+  ],
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "degree_rows.csv",
+    "formal_import_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv",
+    "text_requirements.csv"
+  ],
+  "limitations": [
+    "This packet proves the normal-ordered Gram-degree statement for supplied homogeneous Hall bracket rows.",
+    "It imports a finite formal pushforward packet with three bracket rows and zero degree defect.",
+    "It does not supply compact K3xE source degree rows or normal-ordered lift rows.",
+    "It does not populate the compact primitive Hall bracket.",
+    "It does not prove the row 357 parity compatibility."
+  ]
+}

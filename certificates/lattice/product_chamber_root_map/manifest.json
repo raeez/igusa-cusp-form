@@ -1,0 +1,26 @@
+{
+  "schema_version": "product_chamber_root_map.v1",
+  "fixture_name": "product_chamber_root_map",
+  "chamber_kind": "product_chamber_root_map_lattice",
+  "coefficient_ring": "ZZ",
+  "certified": true,
+  "root_map_certified": true,
+  "compact_source": false,
+  "pfaffian_orientation": false,
+  "o2_wall_atlas": false,
+  "mirror_discriminant": false,
+  "protected_trace": false,
+  "tables": [
+    "chamber_sectors.csv",
+    "closure_rules.csv",
+    "root_map_rows.csv",
+    "root_map_relations.csv",
+    "denominator_conventions.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet records target-side product-chamber and root-map arithmetic only.",
+    "It checks Gamma_eff sector closure, Gamma_act rows by phi_{0,1} coefficients, the alpha map, the delta-basis formula, active nonnegativity, inactive zero exponents, and the Z -> 2Z denominator convention.",
+    "It does not construct compact K3xE source data, Pfaffian orientations, O2 wall atlases, mirror discriminants, or protected traces."
+  ]
+}

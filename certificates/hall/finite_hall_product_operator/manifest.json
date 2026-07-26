@@ -1,0 +1,47 @@
+{
+  "schema_version": "finite_hall_product_operator_definition.v1",
+  "fixture_name": "finite_hall_product_operator",
+  "hall_kind": "finite_hall_product_operator_definition",
+  "status": "FINITE_HALL_PRODUCT_OPERATOR_DEFINITION_VERIFIED",
+  "coefficient_ring": "ZZ",
+  "definition_recorded": true,
+  "finite_hall_object_imported": true,
+  "compact_support_model_imported": true,
+  "compact_hall_source_ledger_imported": true,
+  "transition_hall_product_ledger_imported": true,
+  "formal_product_formula_recorded": true,
+  "pullback_exists_proved": false,
+  "pushforward_exists_proved": false,
+  "compactification_independence_proved": false,
+  "retained_extension_correspondence_rows_supplied": false,
+  "reduced_thom_sebastiani_rows_supplied": false,
+  "product_matrix_rows_supplied": false,
+  "associativity_rows_supplied": false,
+  "transition_compatibility_rows_supplied": false,
+  "finite_hall_product_populated": false,
+  "primitive_claimed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "definition_rows.csv",
+    "product_operator_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hall/finite_geometric_hall_object",
+    "certificates/hybrid/compact_support_exceptional_pushforward_model",
+    "certificates/sources/k3e_compact_hall",
+    "certificates/hall/transition_hall_product_preservation"
+  ],
+  "limitations": [
+    "This packet verifies row 342 only as the definition of m_R=q_! TS^red p^*.",
+    "It does not prove p^* exists in the chosen six-functor formalism.",
+    "It does not prove q_! exists for retained correspondences.",
+    "It does not prove compactification independence.",
+    "It does not populate product matrices or associativity rows.",
+    "It does not prove transition preservation of Hall products.",
+    "It makes no primitive, Hopf-pairing, radical, or PBW claim."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "rhomred_weyl_orientation_cocycle_cochain_trivialization_obstruction.v1",
+  "fixture_name": "rhomred_weyl_orientation_cocycle_cochain_trivialization",
+  "orientation_kind": "rhomred_weyl_orientation_cocycle_cochain_trivialization_obstruction",
+  "status": "RHOMRED_WEYL_ORIENTATION_COCYCLE_COCHAIN_TRIVIALIZATION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "orientation_cocycle_imported": true,
+  "class_vanishing_imported": true,
+  "orientation_obstruction_imported": true,
+  "cochain_trivialization_criterion_recorded": true,
+  "cocycle_value_rows_supplied": false,
+  "rank_certificate_rows_supplied": false,
+  "cochain_complex_rows_supplied": false,
+  "cochain_vector_rows_supplied": false,
+  "gauge_normalization_rows_supplied": false,
+  "coboundary_defect_rows_supplied": false,
+  "transition_compatibility_rows_supplied": false,
+  "cochain_trivialization_constructed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "cochain_witness_rows.csv",
+    "cochain_defect_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_orientation_cocycle",
+    "certificates/orientation/rhomred_weyl_orientation_cocycle_class_vanishing",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 311 only as the criterion for choosing a one-cochain killing c_o,R.",
+    "The imported row-309 packet contains no populated cocycle-value rows.",
+    "The imported row-310 packet contains no rank certificate proving [c_o,R]=0.",
+    "No cochain vector b_R is supplied.",
+    "No coboundary-defect row verifies d1*b_R=v(c_o,R).",
+    "It does not verify compatibility under R to R'."
+  ]
+}

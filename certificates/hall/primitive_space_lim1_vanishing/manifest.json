@@ -1,0 +1,32 @@
+{
+  "schema_version": "primitive_space_lim1_vanishing_obstruction.v1",
+  "fixture_name": "primitive_space_lim1_vanishing",
+  "hall_kind": "primitive_space_lim1_vanishing_obstruction",
+  "coefficient_ring": "ZZ",
+  "status": "PRIMITIVE_SPACE_LIM1_VANISHING_OBSTRUCTION_VERIFIED",
+  "lim1_vanishing_certification": false,
+  "mathematical_certification": false,
+  "compact_hall_packet_imported": true,
+  "transition_primitive_packet_imported": true,
+  "imports": [
+    "certificates/sources/k3e_compact_hall",
+    "certificates/hall/transition_primitive_subspace_preservation"
+  ],
+  "tables": [
+    "primitive_spaces.csv",
+    "primitive_transition_maps.csv",
+    "primitive_image_stabilization.csv",
+    "primitive_ml_r1lim_defects.csv",
+    "primitive_coverage.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet verifies the obstruction ledger for lim1 vanishing on primitive Hall-space towers.",
+    "The compact Hall source packet does not yet supply primitive-space rows, primitive bases, finite ranks, or source transition rows.",
+    "The transition-primitive-subspace packet does not yet supply restricted primitive transition maps or composition rows.",
+    "No primitive image-stabilization witnesses, Mittag-Leffler status rows, or r1lim zero rows are supplied.",
+    "It does not prove that R1lim vanishes on primitive spaces.",
+    "It does not prove lim1 vanishing on pairing kernels, radicals, PBW associated gradeds, or parity pieces."
+  ]
+}

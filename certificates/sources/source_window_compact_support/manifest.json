@@ -1,0 +1,24 @@
+{
+  "schema_version": "source_window_compact_support_obstruction.v1",
+  "fixture_name": "source_window_compact_support",
+  "source_kind": "source_window_compact_support_obstruction",
+  "coefficient_ring": "ZZ",
+  "status": "SOURCE_WINDOW_COMPACT_SUPPORT_OBSTRUCTION_VERIFIED",
+  "compact_support_exhaustion": false,
+  "mathematical_certification": false,
+  "target_root_exhaustion_imported": true,
+  "tables": [
+    "compact_support_indices.csv",
+    "source_windows.csv",
+    "support_exhaustion.csv",
+    "transitions.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet verifies the obstruction ledger for source-window compact-support exhaustion.",
+    "It imports the target-side root-window exhaustion only as a forbidden substitute.",
+    "The core source tables are intentionally empty until compact support indices, source windows, cofinality witnesses, transition rows, and target/source compatibility rows are supplied.",
+    "It does not prove compact-source support exhaustion."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "quotient_after_correspondence_hn_transition_compatibility.v1",
+  "fixture_name": "quotient_after_correspondence_hn_transition_compatibility",
+  "hybrid_kind": "quotient_after_correspondence_hn_transition_compatibility",
+  "status": "QUOTIENT_AFTER_CORRESPONDENCE_HN_TRANSITION_COMPATIBILITY_VERIFIED",
+  "hn_transition_compatible": true,
+  "q_e_transition_compatible": true,
+  "transition_certification": true,
+  "transition_defect_rank": 0,
+  "object_transition_defect_rank": 0,
+  "coefficient_transition_defect_rank": 0,
+  "bm_transition_square_defect_rank": 0,
+  "quotient_after_correspondence_imported": true,
+  "bm_chain_functor_imported": true,
+  "hall_product_transition_certification": false,
+  "hall_coproduct_transition_certification": false,
+  "primitive_transition_certification": false,
+  "protected_integration_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "transition_rows.csv",
+    "object_transition_rows.csv",
+    "coefficient_transition_rows.csv",
+    "bm_transition_square_rows.csv",
+    "protected_integration_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/quotient_after_correspondence_pseudofunctor_definition",
+    "certificates/hybrid/quotient_after_correspondence_bm_chain_functor"
+  ],
+  "limitations": [
+    "This packet proves only that Q_E_R commutes with supplied quotient-presented finite HN transition rows.",
+    "It requires the source transition, quotient transition, and coefficient transport to be supplied as the same equivariant transition correspondence after quotient descent.",
+    "It does not prove that HN transitions preserve the Hall product, Hall coproduct, or primitive subspaces.",
+    "The protected integration definition is separated in certificates/hybrid/protected_integration_definition.",
+    "It does not prove protected-integration transition compatibility.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/quotient_pseudofunctor.csv."
+  ]
+}

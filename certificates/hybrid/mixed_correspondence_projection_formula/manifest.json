@@ -1,0 +1,52 @@
+{
+  "schema_version": "mixed_correspondence_projection_formula.v1",
+  "fixture_name": "mixed_correspondence_projection_formula",
+  "hybrid_kind": "mixed_correspondence_projection_formula",
+  "status": "MIXED_CORRESPONDENCE_PROJECTION_FORMULA_VERIFIED",
+  "mixed_projection_formula_proved": true,
+  "orders": [
+    "LW",
+    "WL"
+  ],
+  "target_coefficient_required": true,
+  "target_coefficient_finite_tor_required": true,
+  "compact_support_model_imported": true,
+  "base_change_packet_imported": true,
+  "uses_open_projection_formula": true,
+  "uses_proper_projection_formula": true,
+  "proper_target_specialization_used": true,
+  "projection_formula_defects_zero": true,
+  "choice_independence_certification": false,
+  "thom_sebastiani_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "projection_formula_rows.csv",
+    "choice_independence_rows.csv",
+    "thom_sebastiani_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/mixed_local_wrapped_correspondence_definition",
+    "certificates/hybrid/mixed_local_wrapped_extension_admissibility",
+    "certificates/hybrid/compact_support_exceptional_pushforward_model",
+    "certificates/hybrid/mixed_correspondence_base_change",
+    "certificates/moduli/retained_universal_complexes"
+  ],
+  "limitations": [
+    "This packet proves the compact-support projection formula only for the one-sided mixed LW and WL target maps.",
+    "The proof uses the chosen compact-support model q_cs_bang_K=bar_q_star_j_bang_K.",
+    "The target coefficient is required to lie in the retained finite-Tor subcategory.",
+    "It records the proper-target specialization for q_LW and q_WL.",
+    "It does not prove independence of compactification choices.",
+    "It does not prove Thom-Sebastiani transport, quotient descent, transition compatibility, or associativity.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/correspondences.csv."
+  ]
+}

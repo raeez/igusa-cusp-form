@@ -1,0 +1,45 @@
+{
+  "schema_version": "rhomred_three_simple_wall_chart_orientation_obstruction.v1",
+  "fixture_name": "rhomred_three_simple_wall_chart_orientation",
+  "orientation_kind": "rhomred_three_simple_wall_chart_orientation_obstruction",
+  "status": "RHOMRED_THREE_SIMPLE_WALL_CHART_ORIENTATION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "simple_sign_criterion_imported": true,
+  "o2_wall_atlas_imported": true,
+  "finite_pfaffian_imported": true,
+  "maass_irrelevance_imported": true,
+  "chart_orientation_criterion_recorded": true,
+  "three_chart_rows_supplied": false,
+  "wall_object_rows_supplied": false,
+  "rank_one_chart_rows_supplied": false,
+  "invariant_unit_rows_supplied": false,
+  "quotient_orientation_rows_supplied": false,
+  "local_sign_rows_supplied": false,
+  "transition_rows_supplied": false,
+  "three_simple_wall_orientation_computed": false,
+  "orientation_vector_claimed_unconditionally": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "chart_orientation_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_orientation_simple_sign_computation",
+    "certificates/wall_atlas/k3e_o2_atlas",
+    "certificates/pfaffian/k3e_finite_pfaffian",
+    "certificates/orientation/rhomred_local_divisor_monodromy_maass_irrelevance"
+  ],
+  "limitations": [
+    "This packet verifies row 329 only as the chart-level orientation computation criterion.",
+    "No retained O2 wall-object rows are supplied.",
+    "No rank-one wall-chart rows are supplied.",
+    "No invariant tangent Pfaffian unit or quotient-orientation rows are supplied.",
+    "No local sign rows for the three simple wall charts are supplied.",
+    "It does not prove the global orientation character values."
+  ]
+}

@@ -1,21 +1,10 @@
-% =====================================================================
-% Chapter 2 — K3 x E setup, Mukai dictionary, lattice polarization,
-% normal-ordered Gram cocycle, and hybrid Ran^{hyb}(E) factorization
-% carrier. Structural reconstitution of the source TeX (current main.tex
-% lines 371--548 and 4401--5185), surgical edits absorbed: K3xE threefold
-% throughout, n = chi(O_Y) directly; Bott-element framing of B(c,c)=
-% 2 Pi_X(c) excised; the three Delta_5 names tagged on first use; the
-% E-descent lemma split into connected and finite-stabilizer branches;
-% the linearization lemma stated as a criterion, not as vanishing.
-% =====================================================================
 
-\chapter{K3$\times$E setup, Mukai dictionary, lattice polarization,
+\chapter{K3$\times$E geometry, Mukai dictionary, lattice polarization,
 normal-ordered Gram cocycle, hybrid $\operatorname{Ran}^{\mathrm{hyb}}(E)$ carrier}
 \label{ch:k3xe-setup}
 
-The arithmetic source produces three named scalars at level five.  Each
-is the Igusa cusp form $\Phi_{10}^{1/2}$ on a different categorical
-chain.  The automorphic chain produces the section
+The arithmetic source contains three named weight-five readings, and
+their normalizations are different.  The automorphic chain produces the section
 \[
 \mathcal{D}_X = \Delta_5
 \in M_5\!\bigl(\Sp_4(\Z),\,\nu_{\Delta_5}\bigr)
@@ -26,87 +15,99 @@ The Borcherds--Kac--Moody (BKM) chain produces the denominator
 \operatorname{den}(\mathfrak g_{\Delta_5}) = 64^{-1}\,\Delta_5(2Z)
 \qquad\text{(View \textcircled{2}; proved \cite{GN}).}
 \]
-The compact Pfaffian chain produces, granted the four-obstruction
-discharge of
-Theorem~\ref{thm:G-four-obstruction-discharge} of
+The compact Pfaffian chain produces, granted the retained D0-HN datum,
+the retained quotient-orientation datum, the chosen Weyl lifts, and
+the retained type-II wall-atlas datum of
+Theorem~\ref{thm:G-four-obstruction-criterion} of
 Appendix~\ref{app:obstruction-discharges}, the protected Pfaffian
 \[
-\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}}) = \Delta_5
-\qquad\text{(View \textcircled{3}; proved on $K3\times E$ at the chiral-shadow level).}
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}}) = \mathcal D_X=\Delta_5
+\qquad\text{(View \textcircled{3}; relative to the retained orientation data at the Pfaffian level).}
 \]
 The handle ``$\Delta_5$'' with no superscript is reserved for working
-formulas; manuscript prose names which of $\mathcal D_X$,
+formulas; each occurrence names which of $\mathcal D_X$,
 $\operatorname{den}(\mathfrak g_{\Delta_5})$, or
 $\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})$ is meant.
 The cross-level identity \textcircled{2}$\leftrightarrow$\textcircled{3}
-is unconditional at the chiral-shadow level on \(K3\times E\),
-granted the discharges of
-$(\mathrm{D0})$, $(\mathrm{O1})$, $(\mathrm{O1}^+)$, $(\mathrm{O2})$
+is a theorem at the Pfaffian and orientation level on \(K3\times E\),
+granted \((\mathrm{D0})\), the retained quotient-orientation datum for
+$(\mathrm{O1})$, the chosen Weyl lifts for $(\mathrm{O1}^+)$, and the
+retained datum $(\mathrm{O2}_{\mathrm{atlas}})$
 in Theorems~\ref{thm:G-D0}, \ref{thm:G-O1}, \ref{thm:G-O1-plus},
-\ref{thm:G-O2-orbit-transport}.
+\ref{thm:G-O2-orbit-transport}.  The primitive Lie-superalgebra
+recognition \(P_X^{\Pi,\mathrm{red}}\cong\mathfrak g_{\Delta_5}\)
+requires the finite compact-source datum \((S1)\)--\((S10)\) of
+Chapter~\ref{ch:pfaffian-dirac}.
 
-\paragraph{The Mukai--Gram dictionary as the chapter's organizing principle.}
-The chapter is structured around the Mukai--Gram dictionary on
-\(K3\times E\): the Mukai lattice
-\(\widetilde H(S,\Z)\) of \(S\) (rank \(24\), signature \((4,20)\),
-\cite{Mukai1984}) is the K3-side data; tensoring with the even
-cohomology \(H^{\mathrm{even}}(E,\Z)=H^0(E,\Z)\oplus H^2(E,\Z)\)
-(a hyperbolic plane under \(\langle 1_E,\omega_E\rangle=1\), the odd
-K\"unneth term absent because \(S\) carries no odd cohomology) supplies
-the even threefold lattice
-\(\widetilde H(X,\Z)\) of rank \(48\) and signature \((24,24)\), and
-the Gram-index lattice
-\(\Gamma_{\mathrm{gram}}=\Z^3\) is the polarisation under which the
-Borcherds product variables \((q,r,s)\) of
-View~\textcircled{2} live.  The dictionary maps:
+\paragraph{The Mukai--Gram dictionary.}
+The Mukai--Gram dictionary on \(K3\times E\) begins with the Mukai
+lattice \(\widetilde H(S,\Z)\) of the K3 surface \(S\), of rank \(24\)
+and signature \((4,20)\) \cite{Mukai1984}.  The even Kunneth sector
 \[
- \widetilde H(X,\Z)\;\xrightarrow{\;\Pi_X\;}\;\Gamma_{\mathrm{gram}}=\Z^3
- \;\hookrightarrow\;\La^{2,1}_{II}\;\hookrightarrow\;\La^{3,2},
+\Gamma_X^{\mathrm{form}}
+ =\widetilde H(S,\Z)\otimes H^{\mathrm{even}}(E,\Z)
+ \cong \widetilde H(S,\Z)\oplus\widetilde H(S,\Z)
 \]
-the rightmost arrow the embedding into the type-IV singular-theta-lift
-ambient of Chapter~\ref{ch:singular-theta-lift}.  Each step is a
-named lattice with a named pairing; the chapter develops them in
-turn.  Detailed lattice computations are in
-Appendix~\ref{appendix:mukai-gram-dictionary}; this chapter supplies
-the dictionary as the organising axis of \(K3\times E\) data.
+is the formal \(K3\times E\) charge lattice used below; the two summands
+are written \((Q,P)\).  For the Gram map this underlying Kunneth group
+is read with the two componentwise K3 Mukai pairings; the tensor
+Kunneth cross-pairing on \(H^{\mathrm{even}}(X,\Z)\) is a different
+bilinear form.  The Gram-index lattice
+\(\Gamma_{\mathrm{gram}}=\Z^3\) receives the quadratic shadow
+\[
+ \Pi_X(Q,P)=\bigl((Q,Q)/2,\,(Q,P),\,(P,P)/2\bigr).
+\]
+This map is not additive; its additivity defect is the symmetric
+polarization \(B=-\delta\Pi_X\).  The additive lattice map is the
+normal-ordered homomorphism
+\[
+ \overline\Pi_X:\widehat\Gamma_X\longrightarrow\Gamma_{\mathrm{gram}},
+ \qquad
+ \widehat\Gamma_X=\Gamma_X^{\mathrm{form}}\oplus_B\Gamma_{\mathrm{gram}}.
+\]
+After this normal ordering, \(\Gamma_{\mathrm{gram}}\) embeds into
+\(\La^{2,1}_{II}\) and then into the type-IV ambient lattice
+\(\La^{3,2}\) of Chapter~\ref{ch:singular-theta-lift}.  Detailed lattice
+computations are in Appendix~\ref{appendix:mukai-gram-dictionary}; the
+dictionary fixes the \(K3\times E\) charge convention.
 
-The chapter assembles the geometric and lattice data feeding all three.
-The compact target is fixed at $X = S \times E$ with $S$ a smooth complex
+The geometric and lattice data feed the three established
+\(\Delta_5\) constructions.  The compact target is fixed at
+$X = S \times E$ with $S$ a smooth complex
 projective K3 surface and $E$ a smooth elliptic curve over $\C$; this is
-a Calabi--Yau threefold ($\dim_\C X = 3$, $K_X \cong \mathcal{O}_X$;
-proved/$\alpha$, \cite{Mukai1984,Mukai1987}), so $n = \chi(\mathcal O_Y)$
+a trivial-canonical threefold ($\dim_\C X = 3$, $K_X \cong \mathcal{O}_X$;
+elementary from the product formula), so $n = \chi(\mathcal O_Y)$
 appears directly.  The $(\kappa_{\mathrm{cat}},
 \kappa_{\mathrm{ch}}^{\mathrm{Hodge}}, \kappa_{\mathrm{ch}}^{\mathrm{Heis}},
 \kappa_{\mathrm{BKM}}, \kappa_{\mathrm{fiber}}) = (0, 0, 3, 5, 24)$ tuple
 of \cite{CYQGVolIII} (the K3$\times$E row of the
-Gritsenko--Cl\'ery catalogue) is the categorical-dimensional anchor; every
-use of $\kappa$ in this manuscript carries one of these five subscripts.
+Gritsenko--Cl\'ery catalogue) is the categorical-dimensional anchor;
+every use of $\kappa$ carries one of these five subscripts.
 
-The four-step build is geometric, then arithmetic.  First, the formal
-dyonic charge lattice $\Gamma_X^{\mathrm{form}} = \Lambda_S \oplus
-\Lambda_S$ on the Mukai sector and the algebraic/effective Hall support
-$\Gamma_{X,\sigma}^{\mathrm{eff}} \subset \Gamma_X^{\mathrm{alg}} \subset
-\Gamma_X^{\mathrm{form}}$ inside it.  Second, the quadratic Gram map
-$\Pi_X : \Gamma_X^{\mathrm{form}} \to \Gamma_{\mathrm{gram}} = \Z^3$ and
-its symmetric bilinear polarization $B = -\delta\Pi_X$.  Third, the
+The datum has a geometric part and an arithmetic part.  The geometric
+part is the formal dyonic charge lattice
+$\Gamma_X^{\mathrm{form}} = \Lambda_S \oplus \Lambda_S$ on the Mukai
+sector, together with
+$\Gamma_{X,\sigma}^{\mathrm{eff}} \subset \Gamma_X^{\mathrm{alg}}
+\subset \Gamma_X^{\mathrm{form}}$.  The arithmetic part is the
+quadratic Gram map
+$\Pi_X : \Gamma_X^{\mathrm{form}} \to \Gamma_{\mathrm{gram}} = \Z^3$,
+its symmetric bilinear polarization $B = -\delta\Pi_X$, the
 normal-ordered extension
-$\widehat\Gamma_X = \Gamma_X^{\mathrm{form}} \oplus_B \Gamma_{\mathrm{gram}}$
-and the additive map $\overline\Pi_X(c, T) = \Pi_X(c) - T$, with the
-fixed-lift raw-pushforward obstruction theorem fixing the necessity of
-that extension.  Fourth, the hybrid factorization carrier
-$\operatorname{Ran}^{\mathrm{hyb}}(E) = \operatorname{Ran}(E)_{b=0}
-\sqcup \operatorname{Ran}^{\mathrm{wr}}(E)_{b>0}$, with the projection-
-locality obstruction fixing the necessity of the wrapped stratum.
+$\widehat\Gamma_X = \Gamma_X^{\mathrm{form}} \oplus_B
+\Gamma_{\mathrm{gram}}$, and the additive map
+$\overline\Pi_X(c, T) = \Pi_X(c) - T$.  The fixed-lift
+raw-pushforward obstruction theorem forces the extension, and the
+projection-locality obstruction forces the wrapped stratum in
+$\operatorname{Ran}^{\mathrm{hyb}}(E) =
+\operatorname{Ran}(E)_{b=0}\sqcup
+\operatorname{Ran}^{\mathrm{wr}}(E)_{b>0}$.
 
-% =====================================================================
 \section{Smooth K3$\times$E threefold and Mukai lattice}
 \label{sec:k3xe-mukai-lattice}
-% =====================================================================
 
-% -------------------------------------------------------------------
 \subsection{The compact target}
 \label{subsec:k3xe-compact-target}
-% -------------------------------------------------------------------
 
 \begin{definition}[K3$\times$E threefold; primitive geometric datum]
 \label{def:k3xe-threefold}
@@ -122,11 +123,14 @@ The canonical bundle is trivial, $K_X \cong p_S^*K_S \otimes p_E^*K_E
 \cong \mathcal O_X$, and Hodge invariants are
 \[
 \dim_\C X = 3,\qquad
+h^{1,0}(X)=h^{1,0}(E)=1,\qquad
 \chi_{\mathrm{top}}(X) = \chi_{\mathrm{top}}(S)\cdot\chi_{\mathrm{top}}(E)
 = 24 \cdot 0 = 0,\qquad
 \chi(\mathcal O_X) = \chi(\mathcal O_S)\cdot\chi(\mathcal O_E) = 2\cdot 0 = 0.
 \]
-The threefold $X$ is a Calabi--Yau threefold (proved/$\alpha$).
+The threefold $X$ is Calabi--Yau in the trivial-canonical sense used by
+Donaldson--Thomas theory and shifted symplectic geometry; the
+construction uses the chosen trivialization of \(K_X\).
 \end{definition}
 
 \begin{remark}[Distinguishing $\chi_{\mathrm{top}}(K3) = 24$ and
@@ -136,7 +140,7 @@ The two integers enter the construction by different routes.  The
 Borcherds weight is $f(0,0)/2 = 5$, where $f(0,0) = 10$ is the
 constant Fourier coefficient of the weight-zero index-one weak Jacobi
 form $\phi_{0,1} = r^{-1} + 10 + r + O(q)$ in the Eichler--Zagier
-normalization (computed/$\beta$, \cite{EZ:1}).  The topological Euler
+normalization (computed, \cite{EZ:1}).  The topological Euler
 number $\chi_{\mathrm{top}}(K3) = 24$ enters one step removed, through
 the elliptic-genus specialization: at $z = 0$ the $\phi_{0,1}$ support
 $4n - l^2 \ge -1$ leaves only $l \in \{-1,0,1\}$ at $n = 0$, so the
@@ -146,28 +150,30 @@ $2 \cdot 12 = 24 = \chi_{\mathrm{top}}(K3)$.  Thus $\chi_{\mathrm{top}}(K3)
 = 2\sum_l f(0,l)$, not $f(0,0)$; the Borcherds weight $5$ sees only the
 single coefficient $f(0,0) = 10$.  The integer
 $\chi(\mathcal O_S) = 2$ enters by a third route, the categorical
-Calabi--Yau dimension and the holomorphic part of the Mukai pairing.  The two integers do not
-collapse: the $\kappa$-tuple of \cite{CYQGVolIII}
+Calabi--Yau dimension and the holomorphic part of the Mukai pairing.
+The two integers belong to different entries: the $\kappa$-tuple of \cite{CYQGVolIII}
 records $\kappa_{\mathrm{fiber}} = 24 = \chi_{\mathrm{top}}(K3)$, not
 $2 = \chi(\mathcal O_S)$, and the universal Borcherds identity
 $\kappa_{\mathrm{BKM}}(\Phi_N) = c_N(0)/2$ at $\Phi_1 = \Delta_5$ gives
-$c_1(0) = 10$ and $\kappa_{\mathrm{BKM}} = 5$, while
-$\kappa_{\mathrm{ch}}^{\mathrm{Heis}} + \chi(\mathcal O_E) = 3 + 0 = 3$:
-the additive collapse $\kappa_{\mathrm{BKM}} = \kappa_{\mathrm{ch}}^{\mathrm{Heis}}
-+ \chi(\mathcal O_{\mathrm{fiber}})$ disagrees with the universal
-identity at $N = 1$ (proved/$\alpha$, \cite{CYQGVolIII}
-counterexample).  The level $\kappa_{\mathrm{BKM}} = 5$ is the cusp-form
-weight; the manuscript writes the protected scalar shadow at level
-$n = \chi(\mathcal O_Y)$, with the threefold $Y$ specialized to the
-K3$\times$E fibre over the closed cobordism.  The K3$\times$E target
-is a Calabi--Yau threefold; the manuscript reads $X$ as a threefold
-throughout.
+$c_1(0) = 10$ and $\kappa_{\mathrm{BKM}} = 5$.  The expression
+$\kappa_{\mathrm{ch}}^{\mathrm{Hodge}}+\chi(\mathcal O_{K3})=0+2=2$
+does not give the Borcherds weight, while
+$\kappa_{\mathrm{ch}}^{\mathrm{Heis}}+\chi(\mathcal O_{K3})=3+2=5$
+is only an accidental equality at the \(N=1\) row.  Across the CHL
+frame the Borcherds weights are \(c_N(0)/2=(5,3,2,\tfrac32,1)\)
+\textup{(Jatkar--Sen \cite{JS06Dyon}; Govindarajan--Krishna
+\cite{GK09CHL,GK10Composite}; the \(N=4\) weight is
+half-integral)}, not a fixed
+sum of a chiral rank and \(\chi(\mathcal O_{K3})\)
+(proved, \cite{CYQGVolIII} counterexample).  The coordinate $\kappa_{\mathrm{BKM}} = 5$ is the
+cusp-form weight; the protected scalar shadow is written at level
+$n = \chi(\mathcal O_Y)$ for the one-dimensional subscheme
+$Y\subset K3\times E$.  The target $X = K3\times E$ is a
+trivial-canonical threefold.
 \end{remark}
 
-% -------------------------------------------------------------------
 \subsection{Mukai lattice on the K3 factor}
 \label{subsec:k3-mukai-lattice}
-% -------------------------------------------------------------------
 
 \begin{definition}[Mukai lattice and Mukai pairing]
 \label{def:mukai-lattice}
@@ -187,7 +193,7 @@ v(\mathcal F)
 \]
 where $r$ is the rank, $c_1$ is the first Chern class, and the half-shift
 $r$ in the four-form term comes from $\mathrm{Td}(S) = 1 + 2[\mathrm{pt}]$
-(proved/$\beta$, \cite{Mukai1984,Mukai1987}).  The \emph{Mukai pairing}
+(proved, \cite{Mukai1984,Mukai1987}).  The \emph{Mukai pairing}
 is
 \[
 \bigl\langle (r, c, s),\,(r', c', s')\bigr\rangle_{\mathrm{Muk}}
@@ -201,7 +207,7 @@ unimodular, of signature $(4, 20)$, and rank $24$:
 \]
 where $U$ denotes the rank-two hyperbolic plane $U \cong \mathbb Z e
 \oplus \mathbb Z f$ with $e^2 = f^2 = 0$, $e\cdot f = 1$, and $E_8(-1)$
-denotes the negative-definite $E_8$ root lattice (proved/$\beta$,
+denotes the negative-definite $E_8$ root lattice (proved,
 \cite{Mukai1987,NIKULIN}).
 \end{definition}
 
@@ -212,18 +218,16 @@ contributes a hyperbolic plane $U$ via $(1, 0, 0)$ and $(0, 0, 1)$ and
 that $H^2(S, \Z) \cong II_{3, 19} \cong U^{\oplus 3} \oplus
 E_8(-1)^{\oplus 2}$, which has positive part of dimension $3$.  Together,
 $\Lambda_S = U \oplus II_{3, 19} \cong U^{\oplus 4} \oplus
-E_8(-1)^{\oplus 2}$ with positive part of dimension $4$ (proved/$\beta$,
+E_8(-1)^{\oplus 2}$ with positive part of dimension $4$ (proved,
 \cite{Mukai1987}).  The signature is $(4, 20)$, not $(20, 4)$: the
-positive direction is the smaller side.  Throughout the manuscript a
+positive direction is the smaller side.  A
 reflection $r_v$ across $v\in\Lambda_S$ acts by $r_v(x) = x - 2(x, v)v/(v,
 v)$, taking the $\R$-linear extension when $(v, v)\ne 0$, without
 implicit sign reversal.
 \end{remark}
 
-% -------------------------------------------------------------------
 \subsection{K\"unneth and the formal even Mukai sector on $X = S \times E$}
 \label{subsec:kunneth-formal-mukai}
-% -------------------------------------------------------------------
 
 \begin{definition}[Formal even Mukai sector on $X = S \times E$]
 \label{def:formal-even-mukai-sector}
@@ -234,7 +238,7 @@ $1_E \in H^0(E, \Z)$ and $\omega_E \in H^2(E, \Z)$ with $\int_E \omega_E
 v_X = P \otimes 1_E + Q \otimes \omega_E,\qquad
 P, Q \in \Lambda_S
 \]
-(proved/$\beta$, K\"unneth on simply connected $\widetilde H$ tensor
+(proved, K\"unneth on simply connected $\widetilde H$ tensor
 $E$-cohomology).  The pair $(Q, P)\in\Lambda_S\oplus\Lambda_S$ is the
 \emph{formal even charge}.  The component $P\otimes 1_E$ is invariant
 under translation along $E$, while $Q\otimes\omega_E$ records the
@@ -246,9 +250,8 @@ group
 \Gamma_X^{\mathrm{form}} := \Lambda_S \oplus \Lambda_S,\qquad
 c = (Q, P),
 \]
-with electric component $Q$ and magnetic component $P$.  In this
-chapter the legacy notation $\Gamma_X^{\mathrm{phys}}$ is retained as a
-mnemonic only and equals $\Gamma_X^{\mathrm{form}}$:
+with electric component $Q$ and magnetic component $P$.  The symbol
+\(\Gamma_X^{\mathrm{phys}}\) is defined here by the equality
 \[
 \Gamma_X^{\mathrm{phys}} := \Gamma_X^{\mathrm{form}}.
 \]
@@ -259,14 +262,1131 @@ algebraicity, effectivity, stability, or non-emptiness of compact Hall
 moduli.
 \end{definition}
 
+\begin{definition}[Liu product-stability datum on \(S\times E\)]
+\label{def:liu-product-stability-datum}
+Fix a rational Bridgeland stability condition
+\[
+\sigma_S=(\mathcal A_S,Z_S),\qquad
+Z_S\bigl(K(D^b(\mathrm{Coh}\,S))\bigr)\subset\Q+i\Q ,
+\]
+on \(D^b(\mathrm{Coh}\,S)\).  Let \(L_E\) be a degree-one line bundle
+on the elliptic curve \(E\), and let
+\[
+p:S\times E\to S,\qquad q:S\times E\to E
+\]
+be the projections.  The Abramovich--Polishchuk heart used by Liu is
+the following heart
+\cite{AbramovichPolishchukTStructures,LiuProductStability}:
+\[
+\mathcal A_E^{\mathrm{AP}}
+=\bigl\{M\in D^b(\mathrm{Coh}(S\times E))\mid
+p_*(M\otimes q^*L_E^{\otimes n})\in\mathcal A_S
+\text{ for }n\gg0\bigr\}.
+\]
+For \(M\in\mathcal A_E^{\mathrm{AP}}\), Liu's curve-factor
+polynomial is
+\[
+L_M(n):=
+Z_S\!\bigl(p_*(M\otimes q^*L_E^{\otimes n})\bigr)
+=a(M)n+b(M)+i\bigl(c(M)n+d(M)\bigr),
+\]
+where \(a,b,c,d:K(\mathcal A_E^{\mathrm{AP}})\to\Q\) are additive
+homomorphisms.  For \(t\in\Q_{>0}\), set
+\[
+Z_t(M)=a(M)t-d(M)+i\,c(M)t,\qquad
+\nu_t(M)=
+\begin{cases}
+\dfrac{-a(M)t+d(M)}{c(M)t},&c(M)\neq0,\\[6pt]
++\infty,&c(M)=0.
+\end{cases}
+\]
+Let
+\[
+\mathcal T_t=\{M\in\mathcal A_E^{\mathrm{AP}}\mid
+\nu_{t,\min}(M)>0\},\qquad
+\mathcal F_t=\{M\in\mathcal A_E^{\mathrm{AP}}\mid
+\nu_{t,\max}(M)\le0\},
+\]
+and
+\[
+\mathcal A_E^t=\langle\mathcal T_t,\mathcal F_t[1]\rangle .
+\]
+For \(s\in\Q_{>0}\), Liu's product central charge is
+\[
+Z_E^{s,t}(M)=c(M)s+b(M)+i\bigl(-a(M)t+d(M)\bigr).
+\]
+The Liu product-stability condition is
+\[
+\sigma_{s,t}:=(\mathcal A_E^t,Z_E^{s,t}).
+\]
+Liu proves that this is a rational Bridgeland stability condition for
+\(s,t\in\Q_{>0}\), and extends the construction continuously to
+\((s,t)\in\R_{>0}^2\)
+\cite[Theorem~4.7 and \S5]{LiuProductStability}.  This is a
+source-imported stability condition.  It is not a finite-type moduli
+construction, not a compact Hall stage, and not a Pfaffian
+orientation.
+\end{definition}
+
+The packet \(\texttt{certificates/moduli/liu\_product\_stability}\)
+checks this definition.  It records the source theorem, the AP heart
+membership formula, the linear polynomial \(L_M(n)\), the four
+coefficient homomorphisms \(a,b,c,d\), the weak charge \(Z_t\), the
+torsion-pair tilt, and the central charge \(Z_E^{s,t}\).  Its verifier
+status is \texttt{LIU\_PRODUCT\_STABILITY\_DEFINED}.  It does not
+prove the separate AP-compatibility row, finite-type semistable
+substacks, derived enhancements, compact Hall stages, Pfaffian
+orientations, or protected traces.
+
+\begin{proposition}[Compatibility with the Abramovich--Polishchuk heart]
+\label{prop:ap-liu-heart-compatibility}
+\textnormal{[proved]}
+With the datum of
+Definition~\ref{def:liu-product-stability-datum}, the heart of Liu's
+product stability condition is the torsion-pair tilt of the
+Abramovich--Polishchuk heart:
+\[
+\heartsuit(\sigma_{s,t})
+=\mathcal A_E^t
+=\langle\mathcal T_t,\mathcal F_t[1]\rangle,
+\]
+where \((\mathcal T_t,\mathcal F_t)\) is the torsion pair in
+\(\mathcal A_E^{\mathrm{AP}}\) defined by the slope \(\nu_t\).
+Consequently
+\[
+\mathcal A_X^{\mathrm{AP/Liu}}=\mathcal A_E^t.
+\]
+Thus the retained heart is Abramovich--Polishchuk-compatible in the
+finite-row sense: it is obtained from \(\mathcal A_E^{\mathrm{AP}}\)
+by Liu's specified torsion-pair tilt.
+\end{proposition}
+
+\begin{proof}
+The Abramovich--Polishchuk heart
+\(\mathcal A_E^{\mathrm{AP}}\) is the global heart entering Liu's
+construction.  Liu defines the weak charge \(Z_t\) on this heart,
+uses the resulting slope \(\nu_t\) to form the torsion pair
+\[
+\mathcal T_t=\{M\mid\nu_{t,\min}(M)>0\},\qquad
+\mathcal F_t=\{M\mid\nu_{t,\max}(M)\le0\},
+\]
+and then sets
+\[
+\mathcal A_E^t=\langle\mathcal T_t,\mathcal F_t[1]\rangle
+\]
+before defining
+\[
+\sigma_{s,t}=(\mathcal A_E^t,Z_E^{s,t})
+\]
+\cite[\S2.2 and Theorem~4.7]{LiuProductStability}.  Hence the heart
+of \(\sigma_{s,t}\) is \(\mathcal A_E^t\) by construction.  The
+retained heart is defined as
+\(\mathcal A_X^{\mathrm{AP/Liu}}:=\heartsuit(\sigma_{s,t})\), so it
+equals \(\mathcal A_E^t\).  This proves the compatibility statement
+using only the definition of the tilt; it proves no noetherianity,
+HN-filtration, boundedness, finite-moduli, derived-enhancement,
+Pfaffian-orientation, or protected-trace row.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/ap\_liu\_compatibility}\) checks this
+heart identification.  It records the AP membership formula, the
+weak charge \(Z_t\), the slope \(\nu_t\), the torsion pair
+\((\mathcal T_t,\mathcal F_t)\), the tilted heart
+\(\mathcal A_E^t\), and the equality
+\(\mathcal A_X^{\mathrm{AP/Liu}}=\heartsuit(\sigma_{s,t})=\mathcal A_E^t\).
+Its verifier status is
+\texttt{AP\_LIU\_COMPATIBILITY\_VERIFIED}.  It does not prove
+noetherianity, HN filtrations, bounded HN types, finite-type
+semistable substacks, derived enhancements, compact Hall stages,
+Pfaffian orientations, or protected traces.
+
+\begin{definition}[Retained Abramovich--Polishchuk/Liu heart]
+\label{def:retained-ap-liu-heart}
+Fix the Liu product-stability datum of
+Definition~\ref{def:liu-product-stability-datum}.  The retained
+stability heart on
+\[
+D^b(\mathrm{Coh}\,X),\qquad X=S\times E,
+\]
+is
+\[
+\mathcal A_X^{\mathrm{AP/Liu}}
+:=\heartsuit(\sigma_{s,t}),
+\]
+equivalently
+\(\mathcal A_X^{\mathrm{AP/Liu}}=\mathcal A_E^t\) by
+Proposition~\ref{prop:ap-liu-heart-compatibility}.  In
+the rest of the manuscript the symbol \(\sigma\) means this retained
+datum \(\sigma_{s,t}\), and its heart is
+\(\mathcal A_X^{\mathrm{AP/Liu}}\).
+
+This definition is only the choice of the ambient heart and stability
+datum.  Noetherianity of the retained windows, existence of
+Harder--Narasimhan filtrations, boundedness of HN types, finite-type
+semistable substacks, quasi-smooth derived enhancements, universal
+complexes, and compact Hall stages are separate finite rows.
+\end{definition}
+
+The packet \(\texttt{certificates/moduli/stability\_heart}\) checks
+this definition as a table-level datum.  It records the inputs
+\[
+(S,H),\quad (E,0_E),\quad \sigma_S,\quad L_E,\quad
+\mathcal A_X^{\mathrm{AP}},\quad \sigma_{s,t},\quad
+\mathcal R_{\mathrm{HN}},
+\]
+and verifies the scalar firewall excluding noetherianity, HN
+filtrations, bounded HN types, finite-type moduli, Pfaffian
+orientations, and protected traces.  Its verifier status is
+\texttt{STABILITY\_HEART\_DATUM\_VERIFIED}.
+
+\begin{definition}[Retained noetherian window]
+\label{def:retained-noetherian-window}
+Fix the heart \(\mathcal A_X^{\mathrm{AP/Liu}}\).  A retained finite
+window at height \(R\) is a full exact subcategory
+\[
+\mathcal A_{X,R}^{\mathrm{ret}}\subset\mathcal A_X^{\mathrm{AP/Liu}}
+\]
+with a finite set of isomorphism classes, closed under retained
+subobjects and retained quotients, together with a length function
+\[
+\ell_R:\operatorname{Obj}(\mathcal A_{X,R}^{\mathrm{ret}})\to\Z_{\ge0}
+\]
+such that \(\ell_R(A)=0\) exactly for the zero object and
+\(\ell_R(A)<\ell_R(B)\) for every strict retained monomorphism
+\(A\hookrightarrow B\).
+\end{definition}
+
+\begin{proposition}[Retained finite windows are noetherian]
+\label{prop:retained-window-noetherian}
+\textnormal{[proved]}
+Every retained finite window
+\(\mathcal A_{X,R}^{\mathrm{ret}}\) in the sense of
+Definition~\ref{def:retained-noetherian-window} is noetherian: every
+ascending chain of retained subobjects terminates.
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+A_0\subset A_1\subset A_2\subset\cdots
+\]
+be a chain of retained subobjects of an object \(A\) in
+\(\mathcal A_{X,R}^{\mathrm{ret}}\).  After deleting repetitions, each
+inclusion is strict.  The length function then gives a strictly
+increasing sequence
+\[
+\ell_R(A_0)<\ell_R(A_1)<\ell_R(A_2)<\cdots .
+\]
+All \(A_i\) lie in the finite retained window and all are subobjects of
+\(A\), so \(\ell_R(A_i)\le \ell_R(A)\).  A strictly increasing sequence
+of non-negative integers bounded above by \(\ell_R(A)\) is finite.
+Thus the original ascending chain stabilizes.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_window\_noetherian}\) checks
+this finite ACC statement on a displayed retained exact window.  It
+verifies a finite object set, subobject and quotient closure, strict
+increase of the length rank along each strict monomorphism, acyclicity
+of the strict subobject graph, and the longest-chain bound.  Its
+verifier status is
+\texttt{RETAINED\_WINDOW\_NOETHERIAN\_VERIFIED}.  It does not prove
+global noetherianity of \(\mathcal A_X^{\mathrm{AP/Liu}}\),
+Harder--Narasimhan filtrations, bounded HN types, finite-type
+semistable substacks, quasi-smooth moduli, Pfaffian orientations, or
+protected traces.
+
+\begin{definition}[Retained finite Harder--Narasimhan filtration datum]
+\label{def:retained-finite-hn-filtration-datum}
+Let \(\mathcal A_{X,R}^{\mathrm{ret}}\) be a retained finite window.
+A retained finite Harder--Narasimhan filtration datum consists of:
+\[
+\Phi_R\subset\Q,\qquad
+\phi_R:\mathcal S_R\to\Phi_R,
+\]
+where \(\Phi_R\) is a finite totally ordered phase set and
+\(\mathcal S_R\) is a class of nonzero retained semistable objects,
+together with, for every \(A\in\mathcal A_{X,R}^{\mathrm{ret}}\), a
+finite exact filtration
+\[
+0=A_0\subset A_1\subset\cdots\subset A_m=A
+\]
+whose retained quotients \(E_i=A_i/A_{i-1}\) lie in \(\mathcal S_R\)
+and satisfy
+\[
+\phi_R(E_1)>\phi_R(E_2)>\cdots>\phi_R(E_m).
+\]
+The zero object has the empty filtration.  This is finite
+retained-window data.  It is not a global Harder--Narasimhan theorem
+for \(\mathcal A_X^{\mathrm{AP/Liu}}\), not boundedness of HN types,
+and not finite-type moduli.
+\end{definition}
+
+\begin{proposition}[Retained finite HN filtrations exist from the datum]
+\label{prop:retained-window-hn-filtration}
+\textnormal{[proved]}
+If a retained finite window
+\(\mathcal A_{X,R}^{\mathrm{ret}}\) carries the datum of
+Definition~\ref{def:retained-finite-hn-filtration-datum}, then every
+object of \(\mathcal A_{X,R}^{\mathrm{ret}}\) has a retained
+Harder--Narasimhan filtration.
+\end{proposition}
+
+\begin{proof}
+For \(A=0\) the empty filtration is the Harder--Narasimhan filtration.
+For \(A\neq0\), the datum gives an exact retained chain
+\[
+0=A_0\subset A_1\subset\cdots\subset A_m=A .
+\]
+Each quotient \(E_i=A_i/A_{i-1}\) is retained and semistable, and the
+phase inequalities are strict.  The chain is finite, hence terminates
+inside the exact window.  These are precisely the
+Harder--Narasimhan conditions in the retained finite window.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_window\_hn\_filtration}\)
+checks this finite statement on a displayed retained exact window.  It
+verifies a finite phase set, semistable quotient factors, exact
+filtration chains, length additivity, and strict phase descent.  Its
+verifier status is
+\texttt{RETAINED\_WINDOW\_HN\_FILTRATION\_VERIFIED}.  It does not
+prove global Harder--Narasimhan filtrations in
+\(\mathcal A_X^{\mathrm{AP/Liu}}\), bounded HN types, finite-type
+semistable substacks, quasi-smooth moduli, Pfaffian orientations, or
+protected traces.
+
+\begin{definition}[Retained bounded HN type datum]
+\label{def:retained-bounded-hn-type-datum}
+Let \(\mathcal A_{X,R}^{\mathrm{ret}}\) be a retained finite window
+with a retained finite Harder--Narasimhan filtration datum.  The
+\emph{retained HN type} of an object \(A\) is the finite word
+\[
+\operatorname{HNType}_R(A)
+=\bigl(([E_1],\phi_R(E_1)),\ldots,([E_m],\phi_R(E_m))\bigr)
+\]
+attached to its retained HN quotients \(E_i=A_i/A_{i-1}\), with the
+empty word for \(A=0\).  A retained bounded HN type datum is a finite
+set \(\mathfrak T_R\) containing all these words, together with a
+finite Liu--Hilbert decoration of the semistable factor classes:
+\[
+[E]\longmapsto
+\bigl(\widehat c_E,[a_E,b_E],P_E,N_E,\mathcal F_E\bigr).
+\]
+Here \(\widehat c_E\) is the retained numerical class, \([a_E,b_E]\)
+is the cohomological-amplitude interval, \(P_E\) is the retained
+Hilbert-polynomial label, \(N_E\) is the retained regularity bound, and
+\(\mathcal F_E\) is the retained closure family.  This datum is a
+finite bound on active-window HN types.  It is not a finite-type
+semistable substack, not a quasi-smooth derived enhancement, and not a
+compact Hall stage.
+\end{definition}
+
+\begin{proposition}[HN type is bounded in a retained active window]
+\label{prop:retained-hn-type-bounded}
+\textnormal{[proved]}
+Let \(\mathcal A_{X,R}^{\mathrm{ret}}\) be a retained finite window
+with a retained finite Harder--Narasimhan filtration datum.  Then the
+set of retained HN types occurring in
+\(\mathcal A_{X,R}^{\mathrm{ret}}\) is finite.  More precisely, if
+\[
+N_R=\max\{\ell_R(A)\mid A\in
+\mathcal A_{X,R}^{\mathrm{ret}}\},
+\]
+then every retained HN type has length at most \(N_R\).
+\end{proposition}
+
+\begin{proof}
+The retained window has finitely many isomorphism classes, hence the
+set of retained semistable HN factors is finite.  If
+\[
+0=A_0\subset A_1\subset\cdots\subset A_m=A
+\]
+is the retained HN filtration of \(A\), then each inclusion
+\(A_{i-1}\subset A_i\) is strict unless \(m=0\).  The retained length
+rank gives
+\[
+0=\ell_R(A_0)<\ell_R(A_1)<\cdots<\ell_R(A_m)\le N_R,
+\]
+so \(m\le N_R\).  Thus every retained HN type is a word of length at
+most \(N_R\) in a finite alphabet of semistable factor classes.  The
+set of such words is finite, and the strict phase condition selects a
+finite subset.  A finite Liu--Hilbert decoration of the factor classes
+therefore gives a finite decorated HN type set.
+\end{proof}
+
+The packet \(\texttt{certificates/moduli/retained\_hn\_type\_bounds}\)
+checks this finite boundedness statement.  It verifies the finite
+semistable factor-type set, the finite HN type-word set, the maximal
+HN height, the maximal factor count, the retained length-rank bound,
+and the mirror of the HN type rows in
+\(\texttt{certificates/moduli/k3e\_finite\_moduli/hn\_type\_bounds.csv}\).
+Its verifier status is
+\texttt{RETAINED\_HN\_TYPE\_BOUNDS\_VERIFIED}.  It does not construct
+finite-type semistable substacks, quasi-smooth derived enhancements,
+universal complexes, compact Hall stages, Pfaffian orientations, or
+protected traces.
+
+\begin{definition}[Retained finite-type semistable substack datum]
+\label{def:retained-finite-type-semistable-substack-datum}
+Fix a retained finite window
+\(\mathcal A_{X,R}^{\mathrm{ret}}\), the retained stability condition
+\(\sigma_{s,t}\), and the retained bounded HN type datum of
+Definition~\ref{def:retained-bounded-hn-type-datum}.  A retained
+finite-type semistable substack datum assigns to every retained
+semistable factor type \(c\) a finite-type bounded
+Quot/Postnikov ambient stack \(Q_{R,c}\), a chart
+\[
+U_{R,c}\to Q_{R,c},
+\]
+and a specialization-closed finite-type algebraic substack
+\[
+\mathfrak M^{ss}_{R,c}\subset Q_{R,c}
+\]
+whose objects are exactly the \(\sigma_{s,t}\)-semistable retained
+objects of type \(c\).  The datum carries two defect ranks:
+\[
+d^{ss}_{R,c}=0,\qquad d^{bd}_{R,c}=0.
+\]
+The first says that no unstable object is included and no semistable
+object of type \(c\) is omitted.  The second says that the bounded
+Quot/Postnikov ambient covers the retained class.  This is a
+finite-type semistable-substack datum.  It is not a quasi-smooth
+derived enhancement, not a universal complex, not a rigidification,
+not a compact Hall correspondence, and not an orientation datum.
+\end{definition}
+
+\begin{proposition}[Finite-type semistable substacks for retained classes]
+\label{prop:retained-finite-type-semistable-substacks}
+\textnormal{[proved]}
+Let \(\mathcal A_{X,R}^{\mathrm{ret}}\) carry a retained bounded HN
+type datum and a retained finite-type semistable substack datum.  Then
+for every retained semistable factor type \(c\) the stack
+\(\mathfrak M^{ss}_{R,c}\) is of finite type over \(\C\), is
+specialization-closed inside its bounded Quot/Postnikov ambient, and
+parametrizes exactly the retained \(\sigma_{s,t}\)-semistable objects
+of type \(c\).
+\end{proposition}
+
+\begin{proof}
+The retained HN type datum gives only finitely many semistable factor
+types \(c\).  For each such \(c\), the semistable-substack datum places
+\(\mathfrak M^{ss}_{R,c}\) inside a finite-type bounded
+Quot/Postnikov ambient \(Q_{R,c}\) through the chart \(U_{R,c}\), with
+the semistable locus represented by finitely many locally closed
+retained chart pieces.  Finite unions of locally closed substacks of a
+finite-type algebraic stack are finite type.  The condition
+\(d^{bd}_{R,c}=0\) says that the ambient covers the retained class,
+while \(d^{ss}_{R,c}=0\) says that the substack is precisely the
+\(\sigma_{s,t}\)-semistable locus of that class.  The
+specialization-closed flag is part of the datum and is checked in the
+same finite chart.  Thus each \(\mathfrak M^{ss}_{R,c}\) is finite
+type and has the asserted moduli meaning.  The argument uses no
+derived enhancement, universal complex, rigidification, finite-inertia
+stratification, flag correspondence, cosection atlas, transition map,
+Pfaffian orientation, or protected trace.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_semistable\_substacks}\)
+checks this finite-type row.  It imports the retained HN factor types,
+supplies one bounded Quot/Postnikov ambient chart and one semistable
+substack for each retained class, verifies specialization-closedness,
+and checks zero semistability and boundedness defect ranks.  Its
+verifier status is
+\texttt{RETAINED\_SEMISTABLE\_SUBSTACKS\_VERIFIED}.  The mirrored
+rows in
+\(\texttt{certificates/moduli/k3e\_finite\_moduli/semistable\_substacks.csv}\)
+discharge item \(167\).  They do not construct derived enhancements,
+universal complexes, scalar rigidifications, finite inertia strata,
+extension or flag stacks, cosection atlases, transitions, compact Hall
+stages, Pfaffian orientations, or protected traces.
+
+\begin{definition}[Retained quasi-smooth derived enhancement datum]
+\label{def:retained-quasi-smooth-derived-enhancement-datum}
+Fix the retained finite-type semistable substacks
+\(\mathfrak M^{ss}_{R,c}\) of
+Definition~\ref{def:retained-finite-type-semistable-substack-datum}.
+A retained quasi-smooth derived enhancement datum assigns to every
+retained semistable factor type \(c\) a derived Artin stack
+\[
+\mathfrak M^{\mathrm{der}}_{R,c}
+\]
+with a morphism
+\(\mathfrak M^{\mathrm{der}}_{R,c}\to\operatorname{Perf}(X)\), an
+identification
+\[
+t_0\mathfrak M^{\mathrm{der}}_{R,c}
+=\mathfrak M^{ss}_{R,c},
+\]
+a perfect cotangent complex of amplitude
+\[
+\mathbb L_{\mathfrak M^{\mathrm{der}}_{R,c}}\in
+D^{[-1,0]}(\mathfrak M^{\mathrm{der}}_{R,c}),
+\]
+and a restricted PTVV \((-1)\)-shifted symplectic form
+\[
+\omega^{\mathrm{PTVV}}_{R,c}.
+\]
+The datum carries two defect ranks
+\[
+d^{\mathrm{Tor}}_{R,c}=0,\qquad d^\omega_{R,c}=0.
+\]
+The first says that the cotangent-amplitude assertion has no retained
+Tor-amplitude defect.  The second says that the PTVV form restricts to
+the retained derived substack without symplectic defect.  This is a
+derived-enhancement datum.  It is not a universal perfect complex, not
+a scalar rigidification, not an inertia stratification, not a
+Hall-flag correspondence, and not a cosection or orientation datum.
+\end{definition}
+
+\begin{proposition}[Quasi-smooth derived Artin enhancements]
+\label{prop:retained-quasi-smooth-derived-enhancements}
+\textnormal{[proved]}
+Let the retained finite-type semistable substacks carry the datum of
+Definition~\ref{def:retained-quasi-smooth-derived-enhancement-datum}.
+Then every \(\mathfrak M^{ss}_{R,c}\) has a quasi-smooth derived Artin
+enhancement \(\mathfrak M^{\mathrm{der}}_{R,c}\) whose classical
+truncation is \(\mathfrak M^{ss}_{R,c}\), whose cotangent complex has
+amplitude \([-1,0]\), and whose \((-1)\)-shifted symplectic form is
+the restricted PTVV form on the Calabi--Yau threefold
+\(X=S\times E\).
+\end{proposition}
+
+\begin{proof}
+The datum gives a derived Artin stack
+\(\mathfrak M^{\mathrm{der}}_{R,c}\) with
+\(t_0\mathfrak M^{\mathrm{der}}_{R,c}=\mathfrak M^{ss}_{R,c}\).
+The finite-type statement for the classical truncation is
+Proposition~\ref{prop:retained-finite-type-semistable-substacks}.  The
+cotangent-amplitude condition
+\(\mathbb L_{\mathfrak M^{\mathrm{der}}_{R,c}}\in D^{[-1,0]}\) and the
+vanishing \(d^{\mathrm{Tor}}_{R,c}=0\) are exactly the
+quasi-smoothness criterion for a derived Artin stack.  Since
+\(K_X\simeq\mathcal O_X\), \(X\) is a Calabi--Yau threefold, and PTVV
+produce the ambient \((-1)\)-shifted symplectic form on the derived
+moduli of perfect complexes \cite[Theorem~0.3]{PTVV2013}.  The
+vanishing \(d^\omega_{R,c}=0\) says that this form restricts to the
+retained derived substack.  Thus the retained enhancement is
+quasi-smooth and carries the asserted PTVV form.  The proof supplies no
+universal complex on the rigidified stack, no scalar rigidification, no
+finite-inertia stratification, no extension or flag stack, no cosection
+atlas, no transition system, no Pfaffian orientation, and no protected
+trace.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_derived\_enhancements}\)
+checks this row.  It imports the finite-type semistable substacks,
+records one derived Artin enhancement per retained substack, verifies
+cotangent amplitude \([-1,0]\), imports the PTVV \((-1)\)-shifted
+symplectic form, and checks zero Tor-amplitude and symplectic defect
+ranks.  Its verifier status is
+\texttt{RETAINED\_DERIVED\_ENHANCEMENTS\_VERIFIED}.  The mirrored rows
+in
+\(\texttt{certificates/moduli/k3e\_finite\_moduli/derived\_enhancements.csv}\)
+discharge item \(168\).  They do not construct universal complexes,
+scalar rigidifications, finite inertia strata, extension or flag
+stacks, cosection atlases, transitions, compact Hall stages, Pfaffian
+orientations, or protected traces.
+
+\begin{definition}[Retained scalar rigidification and residual-inertia datum]
+\label{def:retained-rigidification-inertia-datum}
+Fix the retained quasi-smooth derived enhancements
+\(\mathfrak M^{\mathrm{der}}_{R,c}\) of
+Definition~\ref{def:retained-quasi-smooth-derived-enhancement-datum}.
+A retained scalar rigidification and residual-inertia datum assigns to
+every retained semistable factor type \(c\) an exact sequence of
+stabilizer groups
+\[
+1\longrightarrow \mathbb G_m\longrightarrow
+\operatorname{Aut}_{R,c}\longrightarrow H_{R,c}\longrightarrow 1,
+\]
+a scalar rigidification
+\[
+\mathfrak M^{\mathrm{rig}}_{R,c}
+=\bigl[\mathfrak M^{\mathrm{der}}_{R,c}/\mathbb G_m\bigr],
+\]
+and the residual inertia group \(H_{R,c}\).  The datum requires
+\[
+|H_{R,c}|<\infty,\qquad
+d^{\mathrm{rig}}_{R,c}=0,\qquad d^{\mathrm{in}}_{R,c}=0.
+\]
+Thus the scalar \(\mathbb G_m\) has been removed, the residual inertia
+is finite, and the rigidification and inertia defects vanish.  This is
+a scalar-rigidification datum for retained derived substacks.  It is
+not a universal perfect complex, not a finite closed inertia
+stratification, not an extension or flag stack, not a cosection atlas,
+not a transition system, and not an orientation datum.
+\end{definition}
+
+\begin{proposition}[Finite residual inertia after scalar rigidification]
+\label{prop:retained-finite-residual-inertia-after-rigidification}
+\textnormal{[proved]}
+Let the retained derived enhancements carry the datum of
+Definition~\ref{def:retained-rigidification-inertia-datum}.  Then for
+each retained semistable factor type \(c\), the scalar rigidified stack
+\(\mathfrak M^{\mathrm{rig}}_{R,c}\) has finite residual inertia
+\(H_{R,c}\).  Equivalently, after quotienting the scalar
+\(\mathbb G_m\)-automorphisms, no positive-dimensional stabilizer
+remains in the retained row.
+\end{proposition}
+
+\begin{proof}
+The datum gives the exact sequence
+\[
+1\to \mathbb G_m\to\operatorname{Aut}_{R,c}\to H_{R,c}\to 1.
+\]
+The scalar rigidification is the quotient by the indicated central
+\(\mathbb G_m\).  Therefore the stabilizer remaining on
+\(\mathfrak M^{\mathrm{rig}}_{R,c}\) is \(H_{R,c}\).  The condition
+\(|H_{R,c}|<\infty\) gives finite residual inertia, and the equalities
+\(d^{\mathrm{rig}}_{R,c}=d^{\mathrm{in}}_{R,c}=0\) say that neither
+the quotient nor the inertia computation has a retained defect.  The
+argument constructs no universal complex, finite closed inertia
+stratification, flag stack, cosection atlas, transition map, Pfaffian
+orientation, or protected trace.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_rigidification\_inertia}\)
+checks this row.  It imports the retained derived enhancements,
+records one scalar rigidification for each retained substack, verifies
+the exact sequence
+\[
+1\to\mathbb G_m\to\operatorname{Aut}_{R,c}\to H_{R,c}\to 1,
+\]
+checks \(\mathbb G_m\)-removal, finite residual inertia, and zero
+rigidification and inertia defect ranks.  Its verifier status is
+\texttt{RETAINED\_RIGIDIFICATION\_INERTIA\_VERIFIED}.  The mirrored
+rows in
+\(\texttt{certificates/moduli/k3e\_finite\_moduli/scalar\_rigidifications.csv}\)
+discharge item \(169\) and the scalar-rigidification existence row
+item \(175\).  They do not construct universal complexes, finite
+closed inertia stratifications, extension or flag stacks, cosection
+atlases, transitions, compact Hall stages, Pfaffian orientations, or
+protected traces.
+
+\begin{definition}[Retained finite class-bound datum]
+\label{def:retained-finite-class-bound-datum}
+Fix the retained finite-type semistable substacks
+\(\mathfrak M^{ss}_{R,c}\) and the retained HN type-bound rows.  A
+retained finite class-bound datum consists of a finite set
+\[
+C_R=\{c_1,\ldots,c_m\}
+\]
+of retained semistable classes, together with maps assigning to each
+\(c\in C_R\) a retained type \(\tau(c)\), a charge \(\widehat c\), a
+substack \(\mathfrak M^{ss}_{R,c}\), a finite Hilbert-polynomial label
+set
+\[
+\{P_{c,i}\}_{i\in I_c},\qquad |I_c|<\infty,
+\]
+a cohomological-amplitude interval
+\[
+[a_c,b_c]\subset\mathbb Z,\qquad a_c\le b_c,
+\]
+and a nonnegative regularity bound \(N_c\).  The datum requires zero
+class-coverage, Hilbert-bound, amplitude-bound, and regularity-bound
+defects.  This is a retained class-bound datum.  It is not a universal
+perfect complex, not a finite closed inertia stratification, not an
+extension or flag stack, not a cosection atlas, not a transition
+system, and not an orientation datum.
+\end{definition}
+
+\begin{proposition}[Finite retained class bounds]
+\label{prop:retained-finite-class-bounds}
+\textnormal{[proved]}
+Let a retained active window carry the datum of
+Definition~\ref{def:retained-finite-class-bound-datum}.  Then the
+retained class set \(C_R\) is finite.  For every \(c\in C_R\), the
+Hilbert-polynomial labels \(P_{c,i}\), the cohomological amplitude
+interval \([a_c,b_c]\), and the regularity bound \(N_c\) are finite
+retained data.
+\end{proposition}
+
+\begin{proof}
+The datum writes \(C_R=\{c_1,\ldots,c_m\}\), hence the retained class
+set is finite.  For each \(c\), the index set \(I_c\) of Hilbert
+polynomial labels is finite by hypothesis, the amplitude interval is
+bounded by the two integers \(a_c\le b_c\), and \(N_c\in\mathbb Z_{\ge0}\)
+is a finite integer.  The vanishing of the four defect ranks says that
+these labels cover exactly the retained classes imported from the HN
+type-bound and semistable-substack rows.  The argument constructs no
+universal family over \(\mathfrak M^{ss}_{R,c}\), no closed inertia
+stratification, no flag stack, no cosection atlas, no transition map,
+no Pfaffian orientation, and no protected trace.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_class\_bounds}\) checks this
+row.  It imports the retained HN type-bound rows and retained
+semistable substacks, records the finite class set \(C_R\), records the
+Hilbert-polynomial labels \(P_{c,i}\), records the amplitude intervals
+\([a_c,b_c]\), and records finite regularity bounds \(N_c\).  Its
+verifier status is
+\texttt{RETAINED\_CLASS\_BOUNDS\_VERIFIED}.  The mirrored class-bound
+data are the Hilbert-polynomial, amplitude, and regularity columns in
+\(\texttt{certificates/moduli/k3e\_finite\_moduli/hn\_type\_bounds.csv}\),
+and they discharge items \(170\)--\(173\).  They do not construct
+universal complexes, finite closed inertia stratifications, extension
+or flag stacks, cosection atlases, transitions, compact Hall stages,
+Pfaffian orientations, or protected traces.
+
+\begin{definition}[Retained universal perfect-complex datum]
+\label{def:retained-universal-perfect-complex-datum}
+Fix the retained finite substacks
+\(\mathfrak M^{ss}_{R,c}\), their scalar rigidifications, and the
+retained class-bound datum.  A retained universal perfect-complex datum
+assigns to every \(c\in C_R\) a perfect complex
+\[
+\mathcal U_{R,c}\in
+\operatorname{Perf}\bigl(X\times\mathfrak M^{\mathrm{rig}}_{R,c}\bigr),
+\]
+a base-change identification for every test morphism
+\[
+T\longrightarrow \mathfrak M^{\mathrm{rig}}_{R,c},
+\qquad
+\mathcal U_{R,c}|_{X\times T}\simeq E_T,
+\]
+and a finite Tor-amplitude interval
+\[
+\operatorname{TorAmp}(\mathcal U_{R,c})\subset [a_c,b_c].
+\]
+It carries two defect ranks
+\[
+d^{\mathrm{desc}}_{R,c}=0,\qquad d^{\mathrm{perf}}_{R,c}=0.
+\]
+The first says that the tautological complex on the bounded
+Quot/Postnikov chart descends across the scalar rigidification.  The
+second says that the descended object remains perfect on the retained
+finite substack.  This is a universal-complex datum.  It is not a
+finite closed inertia stratification, not an extension or flag stack,
+not a cosection atlas, not a transition system, and not an orientation
+datum.
+\end{definition}
+
+\begin{proposition}[Universal perfect complexes on retained finite substacks]
+\label{prop:retained-universal-perfect-complexes}
+\textnormal{[proved]}
+Let the retained finite substacks carry the datum of
+Definition~\ref{def:retained-universal-perfect-complex-datum}.  Then
+each retained scalar-rigidified finite substack
+\(\mathfrak M^{\mathrm{rig}}_{R,c}\) carries a universal perfect
+complex \(\mathcal U_{R,c}\) on \(X\times
+\mathfrak M^{\mathrm{rig}}_{R,c}\), compatible with base change and of
+finite Tor amplitude contained in \([a_c,b_c]\).
+\end{proposition}
+
+\begin{proof}
+The bounded Quot/Postnikov ambient chart carries its tautological
+complex.  Restricting it to the retained finite substack gives the
+tautological complex before rigidification.  The equality
+\(d^{\mathrm{desc}}_{R,c}=0\) is precisely the descent condition across
+the scalar rigidification
+\(\mathfrak M^{\mathrm{der}}_{R,c}\to
+\mathfrak M^{\mathrm{rig}}_{R,c}\).  The equality
+\(d^{\mathrm{perf}}_{R,c}=0\) says that the descended complex is
+perfect on \(X\times\mathfrak M^{\mathrm{rig}}_{R,c}\).  The datum
+also supplies the base-change identifications and the Tor-amplitude
+containment in \([a_c,b_c]\).  Thus the retained substack carries the
+asserted universal perfect complex.  The proof constructs no finite
+closed inertia stratification, extension or flag stack, cosection
+atlas, transition map, Pfaffian orientation, or protected trace.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_universal\_complexes}\) checks
+this row.  It imports the retained semistable substacks, class-bound
+rows, derived enhancements, and scalar rigidifications, records one
+universal perfect complex per retained finite substack, verifies
+base-change compatibility, finite Tor amplitude, zero descent defect,
+and zero perfection defect.  Its verifier status is
+\texttt{RETAINED\_UNIVERSAL\_COMPLEXES\_VERIFIED}.  The mirrored rows
+in
+\(\texttt{certificates/moduli/k3e\_finite\_moduli/universal\_complexes.csv}\)
+discharge item \(174\).  They do not construct finite closed inertia
+stratifications, extension or flag stacks, cosection atlases,
+transitions, compact Hall stages, Pfaffian orientations, or protected
+traces.
+
+\begin{definition}[Retained \(E\)-translation rigidification datum]
+\label{def:retained-e-translation-rigidification-datum}
+Fix the retained scalar-rigidified finite substacks
+\(\mathfrak M^{\mathrm{rig}}_{R,c}\) and their universal perfect
+complexes.  A retained \(E\)-translation rigidification datum assigns
+to every \(c\in C_R\) an action
+\[
+a_{R,c}:E\times \mathfrak M^{\mathrm{rig}}_{R,c}
+\longrightarrow \mathfrak M^{\mathrm{rig}}_{R,c}
+\]
+with identity element \(0_E\), free on the retained row, together with
+the quotient stack
+\[
+\mathfrak M^{E\text{-}\mathrm{rig}}_{R,c}
+=\bigl[\mathfrak M^{\mathrm{rig}}_{R,c}/E\bigr].
+\]
+The datum carries a defect rank
+\[
+d^{E\text{-}\mathrm{rig}}_{R,c}=0.
+\]
+Thus the elliptic-translation direction has been removed without
+defect on the retained finite substack.  This is an
+\(E\)-translation-rigidification datum.  It is not a finite closed
+inertia stratification, not an extension or flag stack, not a
+cosection atlas, not a transition system, and not an orientation datum.
+\end{definition}
+
+\begin{proposition}[\(E\)-translation rigidifications on retained finite substacks]
+\label{prop:retained-e-translation-rigidifications}
+\textnormal{[proved]}
+Let the retained scalar-rigidified finite substacks carry the datum of
+Definition~\ref{def:retained-e-translation-rigidification-datum}.  Then
+each retained finite substack has an \(E\)-translation rigidification
+\(\mathfrak M^{E\text{-}\mathrm{rig}}_{R,c}\), and the translation
+direction has zero retained quotient defect.
+\end{proposition}
+
+\begin{proof}
+The datum gives an action of the elliptic curve \(E\) on
+\(\mathfrak M^{\mathrm{rig}}_{R,c}\), with identity \(0_E\), and states
+that the action is free on the retained row.  The quotient
+\[
+\bigl[\mathfrak M^{\mathrm{rig}}_{R,c}/E\bigr]
+\]
+therefore removes exactly the \(E\)-translation direction.  The
+vanishing \(d^{E\text{-}\mathrm{rig}}_{R,c}=0\) says that the quotient
+has no retained translation-rigidification defect.  The proof
+constructs no finite closed inertia stratification, extension or flag
+stack, cosection atlas, transition map, Pfaffian orientation, or
+protected trace.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_e\_translation\_rigidifications}\)
+checks this row.  It imports scalar rigidifications and universal
+perfect complexes, records the \(E\)-translation action on each
+retained finite substack, verifies freeness on the retained row,
+constructs the quotient by \(E\), and checks zero
+translation-rigidification defect.  Its verifier status is
+\texttt{RETAINED\_E\_TRANSLATION\_RIGIDIFICATIONS\_VERIFIED}.  The
+mirrored rows in
+\(\texttt{certificates/moduli/k3e\_finite\_moduli/e\_translation\_rigidifications.csv}\)
+discharge item \(176\).  They do not construct finite closed inertia
+stratifications, extension or flag stacks, cosection atlases,
+transitions, compact Hall stages, Pfaffian orientations, or protected
+traces.
+
+\begin{definition}[Retained closed-substack datum]
+\label{def:retained-closed-substack-datum}
+Fix the retained \(E\)-translation-rigidified finite substacks
+\(\mathfrak M^{E\text{-}\mathrm{rig}}_{R,c}\).  A retained
+closed-substack datum assigns to every \(c\in C_R\) a finite family of
+closed substacks
+\[
+\mathfrak Z_{R,c,j}\hookrightarrow
+\mathfrak M^{E\text{-}\mathrm{rig}}_{R,c},
+\qquad 1\le j\le m_{R,c},
+\]
+which covers the retained row.  It carries the finite integers
+\[
+m_{R,c}>0
+\]
+and defect ranks
+\[
+d^{\mathrm{cov}}_{R,c}=0,\qquad d^{\mathrm{in}}_{R,c}=0.
+\]
+The first defect rank says that the closed substacks cover the
+retained row.  The second says that the finite residual inertia from
+the scalar rigidification remains finite on every retained closed
+stratum.  This is a retained closed-substack datum.  It is not closure
+under extensions, not closure under Harder--Narasimhan factors, not
+closure under duals, not an extension or flag stack, not a cosection
+atlas, not a transition system, and not an orientation datum.
+\end{definition}
+
+\begin{proposition}[Retained closed finite substacks]
+\label{prop:retained-closed-substacks}
+\textnormal{[proved]}
+Let the retained \(E\)-translation-rigidified finite substacks carry
+the datum of Definition~\ref{def:retained-closed-substack-datum}.  Then
+each retained finite row has a finite closed cover by substacks on
+which the residual inertia is finite.  Equivalently, the finite
+stratification row has positive strata count, finite residual inertia,
+zero coverage defect, and zero inertia defect.
+\end{proposition}
+
+\begin{proof}
+The retained semistable rows are finite type and specialization-closed
+by Proposition~\ref{prop:retained-finite-type-semistable-substacks}.
+The scalar rigidification removes \(\mathbb G_m\) and leaves finite
+residual inertia by
+Proposition~\ref{prop:retained-finite-residual-inertia-after-rigidification}.
+The \(E\)-translation rigidification removes the elliptic translation
+direction by
+Proposition~\ref{prop:retained-e-translation-rigidifications}.  The
+closed-substack datum then supplies the closed immersions
+\(\mathfrak Z_{R,c,j}\hookrightarrow
+\mathfrak M^{E\text{-}\mathrm{rig}}_{R,c}\), their finite cover, and
+the equalities \(d^{\mathrm{cov}}_{R,c}=d^{\mathrm{in}}_{R,c}=0\).
+Thus the retained row is represented by a finite closed cover with
+finite residual inertia.  The proof constructs no extension closure,
+HN-factor closure, dual closure, flag stack, cosection atlas,
+transition map, Pfaffian orientation, or protected trace.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_closed\_substacks}\) checks
+this row.  It imports the retained finite-type semistable substacks,
+the scalar rigidifications with finite residual inertia, and the
+\(E\)-translation rigidifications, records one retained closed substack
+and one closed-cover row per retained finite row, and checks zero
+coverage and inertia defects.  Its verifier status is
+\texttt{RETAINED\_CLOSED\_SUBSTACKS\_VERIFIED}.  The mirrored rows in
+\(\texttt{certificates/moduli/k3e\_finite\_moduli/stratifications.csv}\)
+discharge item \(177\).  They do not prove closure under extensions,
+closure under HN factors, closure under duals, extension or flag
+stacks, cosection atlases, transitions, compact Hall stages, Pfaffian
+orientations, or protected traces.
+
+\begin{definition}[Retained extension-closure datum]
+\label{def:retained-extension-closure-datum}
+Fix the retained finite HN word set
+\[
+\mathcal W_R^{\mathrm{HN}}
+=\{0,s_3,s_2,s_1,e_{32},e_{21},f_{321}\}
+\]
+from the bounded HN type datum.  A retained extension-closure datum is
+a finite set of binary extension rows
+\[
+u\ast v\longmapsto w,\qquad u,v,w\in \mathcal W_R^{\mathrm{HN}},
+\]
+with \(w\) retained and with defect rank
+\[
+d^{\mathrm{ext}}_{u,v}=0.
+\]
+For the first retained window the nontrivial rows are
+\[
+s_3\ast s_2=e_{32},\qquad
+s_2\ast s_1=e_{21},\qquad
+e_{32}\ast s_1=f_{321},\qquad
+s_3\ast e_{21}=f_{321}.
+\]
+This is an extension-closure datum in the retained exact window.  It
+is not an extension stack, not a two-step flag stack, not closure under
+Harder--Narasimhan factors, not closure under duals, not a cosection
+atlas, not a transition system, and not an orientation datum.
+\end{definition}
+
+\begin{proposition}[Retained substacks are closed under extensions]
+\label{prop:retained-extension-closure}
+\textnormal{[proved]}
+Let the retained finite HN window carry the datum of
+Definition~\ref{def:retained-extension-closure-datum}.  Then every
+extension represented by one of the retained binary extension rows has
+middle term again in the retained finite HN window.  The extension
+closure defect is zero on every such row.
+\end{proposition}
+
+\begin{proof}
+The bounded HN type datum supplies the finite word set
+\(\mathcal W_R^{\mathrm{HN}}\).  The extension-closure datum supplies
+the four nonempty binary rows displayed in
+Definition~\ref{def:retained-extension-closure-datum}; their middle
+terms are \(e_{32}\), \(e_{21}\), and \(f_{321}\), all elements of
+\(\mathcal W_R^{\mathrm{HN}}\).  The equalities
+\[
+d^{\mathrm{ext}}_{s_3,s_2}
+=d^{\mathrm{ext}}_{s_2,s_1}
+=d^{\mathrm{ext}}_{e_{32},s_1}
+=d^{\mathrm{ext}}_{s_3,e_{21}}=0
+\]
+say that no retained extension leaves the finite window.  Thus the
+retained HN rows are closed under the supplied extensions.  The proof
+constructs no extension stack, two-step flag stack, HN-factor closure,
+dual closure, cosection atlas, transition map, Pfaffian orientation, or
+protected trace.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_extension\_closure}\) checks
+this row.  It imports the retained HN type-bound packet and retained
+closed-substack packet, records four nonempty binary extension rows,
+checks that every middle HN type lies inside the retained finite HN
+word set, and checks zero extension-closure defect.  Its verifier
+status is \texttt{RETAINED\_EXTENSION\_CLOSURE\_VERIFIED}.  The
+mirrored rows in
+\(\texttt{certificates/moduli/k3e\_finite\_moduli/extension\_closure.csv}\)
+discharge item \(178\).  They do not construct extension or flag
+stacks, prove closure under HN factors, prove closure under duals,
+construct cosection atlases, construct transitions, construct compact
+Hall stages, construct Pfaffian orientations, or construct protected
+traces.
+
+\begin{definition}[Retained HN-factor-closure datum]
+\label{def:retained-hn-factor-closure-datum}
+Fix the retained finite HN word set
+\(\mathcal W_R^{\mathrm{HN}}\) and the retained semistable factor types
+\[
+\mathcal T_R=\{s_3,s_2,s_1\}.
+\]
+A retained HN-factor-closure datum assigns to every nonzero word
+\[
+w=(t_1,\ldots,t_k)\in \mathcal W_R^{\mathrm{HN}}
+\]
+its ordered factor list \(t_i\in\mathcal T_R\), together with the
+retained class \(C_{R,t_i}\), the finite-type semistable substack
+\(\mathfrak M^{ss}_{R,t_i}\), and the retained closed substack
+\(\mathfrak Z_{R,t_i}\) for each factor.  It carries defect ranks
+\[
+d^{\mathrm{HNfac}}_{w,i}=0,\qquad 1\le i\le k.
+\]
+This is HN-factor closure in the retained finite window.  It is not
+closure under duals, not an extension or flag stack, not subquotient
+closure in compactified flag stacks, not a cosection atlas, not a
+transition system, and not an orientation datum.
+\end{definition}
+
+\begin{proposition}[Retained substacks are closed under HN factors]
+\label{prop:retained-hn-factor-closure}
+\textnormal{[proved]}
+Let the retained finite HN window carry the datum of
+Definition~\ref{def:retained-hn-factor-closure-datum}.  Then every HN
+factor of every retained finite HN word is represented by a retained
+finite-type semistable substack and by a retained closed substack.  All
+HN-factor-closure defects vanish.
+\end{proposition}
+
+\begin{proof}
+The bounded HN type datum supplies the retained words
+\[
+0,\ s_3,\ s_2,\ s_1,\ e_{32}=(s_3,s_2),\
+e_{21}=(s_2,s_1),\ f_{321}=(s_3,s_2,s_1).
+\]
+The datum assigns to each nonzero factor occurrence the corresponding
+retained class, finite-type semistable substack, and retained closed
+substack.  There are ten such occurrences:
+three one-factor words, two two-factor words, and one three-factor
+word.  The equalities \(d^{\mathrm{HNfac}}_{w,i}=0\) say that each
+factor occurrence lies in the retained finite window.  Thus passing
+from a retained object to its HN factors does not leave the retained
+substack system.  The proof constructs no compactified extension
+stack, no two-step flag stack, no subquotient closure theorem, no dual
+closure, no cosection atlas, no transition map, no Pfaffian
+orientation, and no protected trace.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_hn\_factor\_closure}\) checks
+this row.  It imports retained HN type bounds, class bounds,
+finite-type semistable substacks, retained closed substacks, and
+retained extension closure, records ten HN-factor occurrence rows, and
+checks that every factor occurrence is represented by a retained class,
+a retained finite-type semistable substack, and a retained closed
+substack.  Its verifier status is
+\texttt{RETAINED\_HN\_FACTOR\_CLOSURE\_VERIFIED}.  The mirrored rows in
+\(\texttt{certificates/moduli/k3e\_finite\_moduli/hn\_factor\_closure.csv}\)
+discharge item \(179\).  They are not the dual-closure rows below, do
+not construct extension or flag stacks, do not prove subquotient
+closure in flag stacks, do not construct cosection atlases, do not
+construct transitions, do not construct compact Hall stages, do not
+construct Pfaffian orientations, and do not construct protected traces.
+
+\begin{definition}[Retained dual-closure datum]
+\label{def:retained-dual-closure-datum}
+Fix the retained finite HN word set
+\(\mathcal W_R^{\mathrm{HN}}\).  A retained dual-closure datum is an
+involution \(D_R\) on the retained semistable factor types
+\[
+D_R(s_3)=s_1,\qquad D_R(s_2)=s_2,\qquad D_R(s_1)=s_3,
+\]
+together with the induced involution on HN words
+\[
+D_R(t_1,\ldots,t_k)
+=(D_R(t_k),\ldots,D_R(t_1)).
+\]
+For the first retained window this gives
+\[
+D_R(0)=0,\quad D_R(s_3)=s_1,\quad D_R(s_2)=s_2,\quad
+D_R(s_1)=s_3,\quad D_R(e_{32})=e_{21},\quad
+D_R(e_{21})=e_{32},\quad D_R(f_{321})=f_{321}.
+\]
+It carries defect ranks
+\[
+d^{\vee}_{w}=0,\qquad w\in\mathcal W_R^{\mathrm{HN}}.
+\]
+This is dual closure in the retained finite window.  It is not an
+extension or flag stack, not subquotient closure in compactified flag
+stacks, not a cosection atlas, not a transition system, and not an
+orientation datum.
+\end{definition}
+
+\begin{proposition}[Retained substacks are closed under duals]
+\label{prop:retained-dual-closure}
+\textnormal{[proved]}
+Let the retained finite HN window carry the datum of
+Definition~\ref{def:retained-dual-closure-datum}.  Then duality sends
+every retained finite HN word to a retained finite HN word, and the
+dual-closure defect vanishes on every retained word.
+\end{proposition}
+
+\begin{proof}
+The factor duality exchanges \(s_3\) and \(s_1\) and fixes \(s_2\), so
+it is an involution on the retained semistable factor set
+\(\{s_3,s_2,s_1\}\).  Applying it to an HN word reverses the order and
+dualizes each factor.  Hence
+\[
+D_R(e_{32})=D_R(s_3,s_2)=(s_2,s_1)=e_{21},\qquad
+D_R(e_{21})=(s_3,s_2)=e_{32},
+\]
+and
+\[
+D_R(f_{321})=D_R(s_3,s_2,s_1)=(s_3,s_2,s_1)=f_{321}.
+\]
+The zero word is fixed, the one-factor words map as displayed in the
+definition, and all targets belong to \(\mathcal W_R^{\mathrm{HN}}\).
+The equalities \(d^{\vee}_w=0\) say that no dualized retained word
+leaves the finite window.  The proof constructs no compactified
+extension stack, no two-step flag stack, no subquotient closure
+theorem, no cosection atlas, no transition map, no Pfaffian
+orientation, and no protected trace.
+\end{proof}
+
+The packet
+\(\texttt{certificates/moduli/retained\_dual\_closure}\) checks this
+row.  It imports retained HN type bounds, class bounds, retained closed
+substacks, and retained HN-factor closure, records the three factor
+dual rows and seven HN-word dual rows, verifies that type duality and
+HN-word duality are involutive, and checks that HN-word duality is
+reverse factorwise duality.  Its verifier status is
+\texttt{RETAINED\_DUAL\_CLOSURE\_VERIFIED}.  The mirrored rows in
+\(\texttt{certificates/moduli/k3e\_finite\_moduli/dual\_closure.csv}\)
+discharge item \(180\).  They do not construct extension or flag
+stacks, prove subquotient closure in flag stacks, construct cosection
+atlases, construct transitions, construct compact Hall stages,
+construct Pfaffian orientations, or construct protected traces.
+
 \begin{definition}[Algebraic/effective Hall support]
 \label{def:algebraic-effective-hall-support}
 Fix a polarised K3 surface $(S, H)$, a chosen Mukai vector lattice
 $\Lambda_{S, \mathrm{alg}} \subset \Lambda_S$ (the image of the
 algebraic K-class lattice generated by sheaves whose Mukai vector lies in
-$H^0\oplus\mathrm{NS}(S)\oplus H^4$), and a stability condition $\sigma$
-on $D^b(\mathrm{Coh}\,S\times E)$ (Bridgeland-stable; folklore/$\beta$,
-\cite{KSCoHA}).  Set
+$H^0\oplus\mathrm{NS}(S)\oplus H^4$), and the retained stability datum
+\(\sigma=\sigma_{s,t}\) with heart
+\(\mathcal A_X^{\mathrm{AP/Liu}}\) from
+Definition~\ref{def:retained-ap-liu-heart}.  The retained-window rows
+above supply noetherianity, Harder--Narasimhan filtrations, bounded HN
+types, finite-type semistable substacks, and quasi-smooth derived
+enhancements, together with finite residual inertia after scalar
+rigidification, finite retained class-bound data, and universal
+perfect complexes, \(E\)-translation rigidifications, and finite
+closed-cover stratifications at finite height, together with extension
+closure, HN-factor closure, and dual closure inside the retained HN
+window; later rows supply flag stacks, subquotient closure in flag
+stacks, cosection charts, transitions, scalar firewalls, and
+compact Hall support.  No unconditional Bridgeland stability theorem on the
+threefold \(S\times E\) is used.  Set
 \[
 \Gamma_X^{\mathrm{alg}}
 := \Lambda_{S,\mathrm{alg}}\oplus\Lambda_{S,\mathrm{alg}},\qquad
@@ -276,11 +1396,184 @@ on $D^b(\mathrm{Coh}\,S\times E)$ (Bridgeland-stable; folklore/$\beta$,
 \]
 where the \emph{$\sigma$-effective semigroup}
 $\Gamma_{X, \sigma}^{\mathrm{eff}}$ is the additive sub-semigroup of
-charges supported by $\sigma$-semistable objects of nonzero Mukai vector.
+charges supported by objects semistable for this datum and of nonzero
+Mukai vector.
 Membership in $\Gamma_{X, \sigma}^{\mathrm{eff}}$ is not implied by
 membership in $\Gamma_X^{\mathrm{alg}}$ or by formal lattice arithmetic
-(folklore/$\beta$).
+(folklore).
 \end{definition}
+
+\begin{definition}[Admissible Dirac--Igusa parameter datum]
+\label{def:admissible-dirac-igusa-parameter-datum}
+An admissible parameter datum for the Dirac--Igusa construction is
+\[
+\mathfrak p=(S,H,\sigma,E,0_E,\tau_X,\mathcal R_{\mathrm{HN}}),
+\qquad X=S\times E,
+\]
+where \((S,H)\) is a polarized smooth complex K3 surface, \(E\) is a
+smooth elliptic curve with origin \(0_E\), \(\tau_X:K_X\simeq\mathcal O_X\)
+is the chosen trivialization, \(\sigma\) is the retained stability datum
+used to define \(\Gamma_{X,\sigma}^{\mathrm{eff}}\), and
+\(\mathcal R_{\mathrm{HN}}\) is the cofinal finite HN index system.
+It includes the retained finite charge, moduli, hybrid, orientation,
+Hall, Pfaffian, Koszul, and primitive-recognition packets whenever
+those packets are invoked later.  Thus \(H\) and \(\sigma\) are not
+decorations: they determine the algebraic/effective Hall support and
+the finite HN windows.
+
+A morphism \(\alpha:\mathfrak p\to\mathfrak p'\) is an admissible
+base-change isomorphism
+\[
+\alpha=(f,u,\eta_\sigma,\eta_{\mathrm{HN}})
+\]
+with \(f:S\to S'\) an isomorphism of K3 surfaces carrying \(H\) to
+\(H'\), \(u:E\to E'\) an isomorphism of elliptic curves with
+\(u(0_E)=0_{E'}\), compatibility with the chosen trivializations of
+\(K_{S\times E}\), a transport \(\eta_\sigma\) of the retained
+stability datum and effective Hall support, and a cofinal identification
+\(\eta_{\mathrm{HN}}:\mathcal R_{\mathrm{HN}}\to\mathcal R'_{\mathrm{HN}}\).
+The induced Mukai isometry sends \((Q,P)\) to
+\((f_*Q,f_*P)\), preserves the Mukai pairing, and therefore preserves
+\[
+\Pi_X(Q,P)=((Q,Q)/2,(Q,P),(P,P)/2),\qquad B=-\delta\Pi_X .
+\]
+The resulting groupoid is denoted \(\mathsf{Par}^{\mathrm{DI}}\).
+Arbitrary non-isomorphic deformations of \(S\), arbitrary changes of
+stability chamber, and arbitrary changes of elliptic origin are not
+morphisms of \(\mathsf{Par}^{\mathrm{DI}}\) unless the corresponding
+wall-crossing or origin-translation datum below is supplied.
+\end{definition}
+
+\begin{proposition}[Admissible base-change functoriality]
+\label{prop:admissible-base-change-functoriality}
+Let \(\alpha:\mathfrak p\to\mathfrak p'\) be a morphism in
+\(\mathsf{Par}^{\mathrm{DI}}\).  If the finite packets attached to
+\(\mathfrak p\) have zero defect rows and are transported by
+\(\alpha\), then pull-push along \(f\times u:X\to X'\) induces
+functors at each retained height
+\[
+\alpha_{R,*}:\mathsf{DI}^{\mathrm{fin}}_{X,R}
+\longrightarrow
+\mathsf{DI}^{\mathrm{fin}}_{X',\eta_{\mathrm{HN}}(R)}
+\]
+preserving the components \(\mathcal A^{E_3}\), \(F^{\mathrm{hyb}}\),
+\(\widehat\Gamma\), \(\Pi\), \(\Phi\), \(o\), \(H\), \(P^\Pi\), \(C\),
+\(\Theta_{\mathrm{Kos}}\), \(\mathscr L_{\mathrm{Pf}}\),
+\(\operatorname{pf}\), \(\varepsilon_o\), and \(\mathrm{Rec}\), in the
+sense of the morphisms \textup{(M1)}--\textup{(M8)} of
+Definition~\ref{def:finite-stage-dirac-igusa-morphism}.  These functors
+commute with HN transition morphisms and therefore induce a functor on
+Dirac--Igusa pro-objects
+\[
+\alpha_*:
+\operatorname{Pro}(\mathsf{DI}^{\mathrm{fin}}_X)
+\longrightarrow
+\operatorname{Pro}(\mathsf{DI}^{\mathrm{fin}}_{X'}).
+\]
+For composable admissible morphisms, the induced functors compose up to
+the canonical pro-isomorphism coming from the common cofinal HN
+refinement.  This is the base-change functoriality in \(S\) and \(E\)
+used by the construction.
+\end{proposition}
+
+\begin{proof}
+The isomorphism \(f\) gives an isometry of Mukai lattices and carries
+the algebraic sublattice, the polarization, and the retained stability
+support by hypothesis.  The isomorphism \(u\) preserves \(1_E\),
+\(\omega_E\), the origin, and the translation group law.  Hence
+\((f\times u)_*\) preserves the formal charge lattice, the
+normal-ordered central extension, and the Gram map.  The assumed
+transport of the finite packets carries the moduli stacks,
+correspondence stacks, orientation lines, Pfaffian lines, Hall
+bialgebra matrices, Koszul source complexes, and primitive-recognition
+matrices to their primed counterparts.  Compatibility with the
+transition maps is exactly the zero-defect condition in the finite
+morphism tables.  Proposition~\ref{prop:dirac-igusa-pro-object-universal-property}
+then gives the induced pro-functor and the cofinal composition law.
+\end{proof}
+
+\begin{definition}[Polarization and elliptic-origin dependence]
+\label{def:polarization-origin-dependence}
+The dependence on the K3 polarization is the dependence of
+\(\Gamma_{X,\sigma}^{\mathrm{eff}}\), the HN index system, and the
+finite moduli stacks on \((H,\sigma)\).  If two choices
+\((H,\sigma)\) and \((H',\sigma')\) lie in chambers connected by a
+specified Kontsevich--Soibelman wall-crossing datum
+\(\mathsf{WC}_{H,H',R}\) with zero finite defects, the resulting
+Dirac--Igusa pro-objects are compared by the induced pro-isomorphism.
+Without such a wall-crossing datum they are different parameter
+points, not two presentations of the same object.
+
+Let \(a\in E\) and replace the origin \(0_E\) by \(a\).  For a retained
+wrapped family \(\mathcal F\), the determinant anchors of
+Definition~\ref{def:determinant-anchor} satisfy the canonical identity
+\[
+\lambda^{\det}_{a}(\mathcal F)
+\simeq
+\lambda^{\det}_{0_E}(\mathcal F)\otimes
+\mathcal O_E\!\bigl(\chi(\mathcal F)(0_E-a)\bigr)
+\quad\text{in }\operatorname{Pic}^0(E).
+\]
+Thus changing the origin contributes the degree-zero character
+\[
+\vartheta_{a,\mathcal F}:=
+\mathcal O_E\!\bigl(\chi(\mathcal F)(0_E-a)\bigr)\in \operatorname{Pic}^0(E),
+\]
+and, after restriction to a finite stabilizer \(H\subset E[N]\), the
+corresponding finite character
+\[
+\vartheta_{a,\mathcal F}^{H}\in H^1(BH;\mathbb C^\times)
+\]
+is the only permitted change in the quotient-orientation linearization.
+The Dirac--Igusa object is independent of the elliptic origin only
+after twisting the wrapped-anchor and orientation-linearization rows by
+this character and verifying the same finite stabilizer equations.
+\end{definition}
+
+\begin{proposition}[Elliptic-origin change up to its canonical character]
+\label{prop:elliptic-origin-independence-character}
+Fix \(S,H,\sigma,E\) and the finite HN system, and let
+\(\mathfrak p_0\) and \(\mathfrak p_a\) be the admissible parameter
+data obtained from the origins \(0_E\) and \(a\in E\).  Suppose the
+finite hybrid, orientation, and morphism rows for \(\mathfrak p_a\) are
+obtained from those for \(\mathfrak p_0\) by tensoring every wrapped
+anchor with
+\(\vartheta_{a,\mathcal F}=\mathcal O_E(\chi(\mathcal F)(0_E-a))\)
+and by adding the restricted character
+\(\vartheta^H_{a,\mathcal F}\) to the finite stabilizer linearization
+row for each retained stabilizer \(H\subset E[N]\).  Then the two
+finite-stage systems determine canonically pro-isomorphic
+Dirac--Igusa pro-objects after this character twist.  Before the twist,
+the obstruction to identifying the two origin choices is exactly the
+family of characters \(\vartheta^H_{a,\mathcal F}\).
+\end{proposition}
+
+\begin{proof}
+By Definition~\ref{def:determinant-anchor},
+\[
+\lambda^{\det}_{a}(\mathcal F)
+=\det Rp_{E,*}\mathcal F\otimes\mathcal O_E(-\chi(\mathcal F)a)
+\]
+and
+\[
+\lambda^{\det}_{0_E}(\mathcal F)
+=\det Rp_{E,*}\mathcal F\otimes\mathcal O_E(-\chi(\mathcal F)0_E).
+\]
+Their ratio is
+\(\mathcal O_E(\chi(\mathcal F)(0_E-a))\), a canonical point of
+\(\operatorname{Pic}^0(E)\).  Restriction to a finite stabilizer gives
+the character \(\vartheta^H_{a,\mathcal F}\).  All other components of
+the formal charge lattice, the Mukai--Gram map, and the K3 data are
+unchanged.  Therefore the finite-stage morphisms are the identity on
+all components except the wrapped-anchor and orientation-linearization
+rows, where they are precisely the displayed tensor and character
+twists.  The zero-defect assumptions give commuting transition squares;
+Proposition~\ref{prop:dirac-igusa-pro-object-universal-property} then
+identifies the resulting pro-objects.  If the character rows are not
+twisted, the displayed ratio remains as the residual finite-stabilizer
+linearization class, so the obstruction is exactly
+\(\vartheta^H_{a,\mathcal F}\).
+\end{proof}
 
 \begin{remark}[Three-tier inclusion]
 \label{rem:three-tier-inclusion}
@@ -290,14 +1583,14 @@ The hierarchy $\Gamma_{X, \sigma}^{\mathrm{eff}}
 distinguishes three discipline registers.  $\Gamma_X^{\mathrm{form}}$ is
 the formal additive group on which $\Pi_X$ is defined and the
 polarization identity $B = -\delta\Pi_X$ holds.  $\Gamma_X^{\mathrm{alg}}$
-is the K-theoretic algebraic sublattice; the rank-one extension closure
-of $\Gamma_X^{\mathrm{alg}}$ inside $\Gamma_X^{\mathrm{form}}$ records the
-Mukai-effective branch (computed/$\beta$,
-\cite{Mukai1987,KSCoHA}).  $\Gamma_{X, \sigma}^{\mathrm{eff}}$ is the
-$\sigma$-stable Hall support; it depends on $\sigma$ and is not
-fibre-functorial in the K3 type.  The sectorial Hall truncation of
-\S\ref{sec:k3xe-hybrid-ran-carrier} works at the second level after
-imposing finite Harder--Narasimhan height bounds.
+is the K-theoretic algebraic sublattice; its rank-one extension closure
+inside $\Gamma_X^{\mathrm{form}}$ records only the algebraic Mukai
+branch (computed, \cite{Mukai1987,KSCoHA}).
+$\Gamma_{X, \sigma}^{\mathrm{eff}}$ is the Hall support selected by
+$\sigma$; effectivity and semistability are not lattice-theoretic
+properties and are not fibre-functorial in the K3 type.  The sectorial
+Hall truncation of \S\ref{sec:k3xe-hybrid-ran-carrier} works at this
+third level after imposing finite Harder--Narasimhan height bounds.
 \end{remark}
 
 \begin{lemma}[Two orthogonal hyperbolic planes inside $\Lambda_S$]
@@ -308,22 +1601,18 @@ U \oplus U \hookrightarrow \Lambda_S,\qquad
 U_1 = \Z e_1 \oplus \Z f_1,\quad U_2 = \Z e_2 \oplus \Z f_2,
 \]
 with $e_i^2 = f_i^2 = 0$, $e_i\cdot f_i = 1$, and $U_1\perp U_2$ inside
-the Mukai pairing (proved/$\alpha$, \cite{NIKULIN}).
+the Mukai pairing (proved, \cite{NIKULIN}).
 \end{lemma}
 
 \begin{proof}
 Direct from $\Lambda_S \cong U^{\oplus 4} \oplus E_8(-1)^{\oplus 2}$.
 \end{proof}
 
-% =====================================================================
 \section{Quadratic Gram map and lattice polarization}
 \label{sec:gram-map-polarization}
-% =====================================================================
 
-% -------------------------------------------------------------------
 \subsection{Igusa variables and the Gram-index lattice}
 \label{subsec:igusa-variables-gram-index}
-% -------------------------------------------------------------------
 
 For a Siegel period
 \[
@@ -363,7 +1652,7 @@ is
 The \emph{Jacobi-active sublocus}
 $\Gamma_{\mathrm{act}} \subset \Gamma_{\mathrm{eff}}$ is the locus of
 nonvanishing $f(nm, l)$ in the weak Jacobi form $\phi_{0, 1}$
-(computed/$\beta$, \cite{EZ:1}).
+(computed, \cite{EZ:1}).
 \end{definition}
 
 \begin{proposition}[Gram matrix convention for protected charges]
@@ -376,7 +1665,7 @@ l = (Q, P),\qquad
 m = \frac{(P, P)}{2}.
 \]
 Then $n, l, m \in \Z$ (since $\Lambda_S$ is even unimodular,
-proved/$\gamma$),
+proved),
 \[
 \begin{pmatrix} (Q, Q) & (Q, P) \\ (P, Q) & (P, P) \end{pmatrix}
 = 2\,T(n, l, m),\qquad
@@ -399,10 +1688,8 @@ The determinant follows.  The Fourier character is
 $\exp(2\pi i\,\mathrm{tr}(T Z)) = q^n r^l s^m$.
 \end{proof}
 
-% -------------------------------------------------------------------
 \subsection{The Gram map and its bilinear cocycle}
 \label{subsec:gram-map-bilinear-cocycle}
-% -------------------------------------------------------------------
 
 \begin{definition}[Quadratic Gram map and bilinear cocycle]
 \label{def:gram-map-cocycle}
@@ -435,8 +1722,18 @@ additive cochain identity,
 B = -\delta\Pi_X,\qquad
 (\delta q)(c, c') = q(c) + q(c') - q(c + c').
 \]
-(proved/$\gamma$.)
+(proved.)
 \end{lemma}
+
+\begin{remark}[Quadratic primitive, no linear primitive]
+\label{rem:B-quadratic-not-linear}
+The equality \(B=-\delta\Pi_X\) is an equality in the ordinary
+inhomogeneous cochain complex, where the primitive \(\Pi_X\) is
+quadratic.  There is no additive homomorphism
+\(L:\Gamma_X^{\mathrm{form}}\to\Gamma_{\mathrm{gram}}\) with
+\(B=-\delta L\).  Thus the normal-ordering defect is removed by the
+quadratic Gram coordinate, not by a linear change of charge lattice.
+\end{remark}
 
 \begin{proof}
 Write $c = (Q, P)$, $c' = (Q', P')$; then
@@ -464,7 +1761,7 @@ $B$ is normalized, $B(c, 0) = B(0, c) = 0$, and the additive coboundary
 \[
 (\delta B)(a, b, c) := B(b, c) - B(a + b, c) + B(a, b + c) - B(a, b)
 \]
-vanishes identically on $\Gamma_X^{\mathrm{form}}$ (proved/$\gamma$).
+vanishes identically on $\Gamma_X^{\mathrm{form}}$ (proved).
 \end{lemma}
 
 \begin{proof}
@@ -495,10 +1792,8 @@ $\Gamma_{\mathrm{gram}}$, with associated symmetric bilinear $B$ given by
 the Mukai pairing of components on each direction.
 \end{remark}
 
-% -------------------------------------------------------------------
 \subsection{Formal lift of every Gram triple}
 \label{subsec:formal-gram-triple-lift}
-% -------------------------------------------------------------------
 
 \begin{lemma}[Formal primitive torsion-one lift of every Gram triple]
 \label{lem:primitive-lift-every-gram-triple}
@@ -519,7 +1814,7 @@ I(Q, P)
 {\textstyle\bigwedge^2\Lambda_S}\bigr\}
 \]
 equals $1$.
-(proved/$\beta$.)
+(proved.)
 \end{lemma}
 
 \begin{proof}
@@ -554,16 +1849,28 @@ primitive bracket; only the latter is the working content of
 Chapter~\ref{chap:dirac-igusa-pro-object}.
 \end{remark}
 
-% =====================================================================
+The packet
+\(\texttt{certificates/charge/formal\_primitive\_lift}\) is the finite
+table-level check of Lemma~\ref{lem:primitive-lift-every-gram-triple}.
+It verifies, on the zero row, the three simple-root rows, the
+\(\delta_{123}\) row, and one negative-pairing test row, that
+\[
+\Pi_X(Q,P)=(n,l,m),\qquad
+I(Q,P)=1,\qquad
+\alpha(\Pi_X(Q,P))=2n f_2-l f_3+2m f_{-2}.
+\]
+The same packet records the \(e_1,e_2\) minor equal to \(1\), hence
+primitivity of the displayed formal lift.  It is not evidence for
+algebraic effectivity, finite HN boundedness, compact Hall support,
+source Hall brackets, Pfaffian orientations, type-II wall atlases,
+mirror discriminants, or protected traces.
+
 \section{Normal-ordered Gram extension}
 \label{sec:normal-ordered-extension}
-% =====================================================================
 
-% -------------------------------------------------------------------
 \subsection{Central extension and the additive normal-ordered Gram
 homomorphism}
 \label{subsec:central-extension-additive-gram}
-% -------------------------------------------------------------------
 
 \begin{definition}[Normal-ordered extension and Gram homomorphism]
 \label{def:normal-ordered-extension}
@@ -619,7 +1926,7 @@ $\star$ to componentwise addition; thus $\widehat\Gamma_X\cong
 \Gamma_X^{\mathrm{form}}\oplus\Gamma_{\mathrm{gram}}$ as abstract abelian
 groups, and $[B] = 0$ in additive cohomology.
 \end{enumerate}
-(proved/$\delta$.)
+(proved.)
 \end{theorem}
 
 \begin{proof}
@@ -661,10 +1968,20 @@ inverse $(c, T)\mapsto(c, T + \Pi_X(c))$.  Direct calculation gives
 matching the change of variables applied to $(c, T)\star(c', T')$.
 \end{proof}
 
-% -------------------------------------------------------------------
+\begin{remark}[Finite charge-window verification]
+\label{rem:finite-charge-window-verification}
+The normal-ordered group law is a proved lattice identity.  Its use in
+the Dirac--Igusa pro-object additionally requires a finite
+charge-window packet: active \(\phi_{0,1}\)-support, downward
+saturation, Liu HN bounds, Mukai--Gram rows, cocycle identities,
+normal-ordered lift orbits, target-window images, primitive formal
+lifts, strict transitions, and a scalar firewall.  A target
+presentation, signed exponent list, Pfaffian product, Hilbert-scheme
+scalar, or source-rank table does not by itself supply this packet.
+\end{remark}
+
 \subsection{The fixed-lift raw-pushforward obstruction theorem}
 \label{subsec:raw-gram-descent-no-go}
-% -------------------------------------------------------------------
 
 \begin{definition}[Raw homogeneous and fixed-lift $\Pi_X$-pushforwards]
 \label{def:raw-pi-pushforward}
@@ -708,7 +2025,7 @@ $2\delta_i + \delta_j$, $i \ne j$.  The strict fixed-lift raw
 $\Pi_X$-descent therefore cannot carry these brackets; they require the
 normal-ordered extension $\widehat\Gamma_X$ and the additive homomorphism
 $\overline\Pi_X$.
-(proved/$\delta$, \cite{GN}.)
+(proved, \cite{GN}.)
 \end{theorem}
 
 \begin{proof}
@@ -727,7 +2044,7 @@ degrees $\gamma_i, \gamma_j$, $\Pi_X(c_i) = \gamma_i$ with $\gamma_i\ne
 off-diagonal entries $-2$, so distinct simple roots satisfy
 $\langle\delta_i, \delta_j\rangle = -2$, and the real-root string
 through $\delta_j$ in the $\delta_i$-direction includes the levels
-$\delta_i + \delta_j$ and $2\delta_i + \delta_j$ (proved/$\delta$,
+$\delta_i + \delta_j$ and $2\delta_i + \delta_j$ (proved,
 \cite[\S2--3]{GN}).  Both correspond to nonzero brackets, hence raw
 pushforward forces
 \[
@@ -759,6 +2076,464 @@ multiplicative orientation) is a separate input system, named in
 Chapter~\ref{chap:dirac-igusa-pro-object}.
 \end{remark}
 
+\begin{definition}[Gram fibres, zero fibre, and fibre-summed parity blocks]
+\label{def:gram-fibres-zero-fibre}
+For \(\gamma\in\Gamma_{\mathrm{gram}}\), set
+\[
+\Gamma_X(\gamma):=\Pi_X^{-1}(\gamma)\subset\Gamma_X^{\mathrm{form}}.
+\]
+The \emph{zero Gram fibre} is
+\[
+K_{\Pi,0}:=\Gamma_X(0,0,0)
+=\{(Q,P)\mid Q^2=P^2=Q\cdot P=0\}.
+\]
+It is a fibre of the quadratic map \(\Pi_X\), not the kernel of a group
+homomorphism.  If \(V=\bigoplus_{c\in A}V_c\) is a finite
+\(\Z/2\)-graded formal source over a finite subset
+\(A\subset\Gamma_X^{\mathrm{form}}\), the fibre-summed Gram pushforward
+is the \(\Z/2\)-graded vector space
+\[
+(\Pi_{X,*}^{\mathrm{fib}}V)_{\gamma,\bar p}
+:=\bigoplus_{\substack{c\in A\cap\Gamma_X(\gamma)}}V_{c,\bar p},
+\qquad \bar p\in\Z/2.
+\]
+The signed superdimension
+\(\dim(\Pi_{X,*}^{\mathrm{fib}}V)_{\gamma,\bar0}
+-\dim(\Pi_{X,*}^{\mathrm{fib}}V)_{\gamma,\bar1}\)
+is a scalar shadow of this two-integer datum.
+\end{definition}
+
+\begin{proposition}[The zero Gram fibre is not an additive subgroup]
+\label{prop:zero-gram-fibre-not-subgroup}
+\textnormal{[proved]}
+In the two-hyperbolic-plane chart of
+Lemma~\ref{lem:primitive-lift-every-gram-triple}, the zero Gram fibre
+\(K_{\Pi,0}\) is not closed under addition.  Hence no quotient of
+\(\Gamma_X^{\mathrm{form}}\) by \(K_{\Pi,0}\) is defined at the level of
+abelian groups.
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+k_1=(e_1,e_2),\qquad k_2=(f_1,-f_2).
+\]
+Then
+\[
+\Pi_X(k_1)=\Pi_X(k_2)=(0,0,0),
+\]
+because \(e_1,e_2,f_1,f_2\) are isotropic and the two hyperbolic planes
+are orthogonal.  Their sum is
+\[
+k_1+k_2=(e_1+f_1,e_2-f_2).
+\]
+The first component has square \(2\), the second has square \(-2\), and
+the two components are orthogonal.  Therefore
+\[
+\Pi_X(k_1+k_2)=(1,0,-1)\ne(0,0,0).
+\]
+Thus \(K_{\Pi,0}\) is a null-cone fibre of a quadratic map, not a
+subgroup.
+\end{proof}
+
+\begin{remark}[Fibre summation does not prove a Hall radical]
+\label{rem:fibre-summation-not-radical}
+Definition~\ref{def:gram-fibres-zero-fibre} proves only the formal
+bookkeeping required before a finite Hall window can be compared with a
+target root window.  A fibre with one even and one odd source vector has
+signed superdimension \(0\) and parity profile \((1,1)\); it is not the
+zero source degree.  The radical along \(K_{\Pi,0}\) is therefore a
+separate Hopf-radical datum inside a finite source: it must specify the
+pairing matrix, kernel matrix, quotient splitting, ideal/coideal
+identities, and transition exactness.  It is not obtained by quotienting
+the formal charge lattice by \(K_{\Pi,0}\).
+\end{remark}
+
+The packet \(\texttt{certificates/charge/gram\_fibre\_kernel}\) checks
+these formal assertions on finite rows.  It records two distinct
+formal charges with Gram label \((1,1,0)\), two with Gram label
+\((1,1,1)\), and two nonzero charges in \(K_{\Pi,0}\) whose parity
+profile is \((1,1)\) although the signed superdimension is \(0\).  It
+also records the witness
+\[
+(e_1,e_2)+(f_1,-f_2)=(e_1+f_1,e_2-f_2),\qquad
+\Pi_X(e_1+f_1,e_2-f_2)=(1,0,-1),
+\]
+so the zero fibre is not additive.  The packet does not prove finite
+HN boundedness, compact Hall support, source Hall brackets, source
+parity, a Hopf radical, exactness of a finite pushforward, Pfaffian
+orientations, or protected traces.
+
+\begin{definition}[Zero-fibre radical on a finite formal source]
+\label{def:zero-fibre-radical-finite-source}
+Let \(V=\bigoplus_{c\in A}V_c\) be a finite
+\(\Gamma_X^{\mathrm{form}}\)-graded \(\Q\)-vector space with
+\(\Z/2\)-parity, where \(A\subset\Gamma_X^{\mathrm{form}}\) is finite.
+Let
+\[
+V_{\Pi,0}:=\bigoplus_{c\in A\cap K_{\Pi,0}}V_c.
+\]
+For a bilinear pairing \(h:V_{\Pi,0}\otimes V_{\Pi,0}\to\Q\), the
+\emph{zero-fibre radical} is the ordinary linear-algebra kernel
+\[
+\operatorname{Rad}_{\Pi,0}(V,h)
+:=\ker\!\left(V_{\Pi,0}\longrightarrow V_{\Pi,0}^{\vee}\right),
+\qquad
+v\longmapsto h(v,-).
+\]
+It is a subspace of the finite source vector space, not a quotient of
+\(\Gamma_X^{\mathrm{form}}\) by the zero Gram fibre.
+\end{definition}
+
+\begin{proposition}[Exactness of finite fibre-summed Gram pushforward]
+\label{prop:finite-fibre-pushforward-exact}
+\textnormal{[proved]}
+The functor
+\[
+\Pi_{X,*}^{\mathrm{fib}}:
+\mathrm{Vect}^{\mathrm{fin}}_{\Gamma_X^{\mathrm{form}},\Z/2}
+\longrightarrow
+\mathrm{Vect}^{\mathrm{fin}}_{\Gamma_{\mathrm{gram}},\Z/2},
+\qquad
+(\Pi_{X,*}^{\mathrm{fib}}V)_{\gamma,\bar p}
+=\bigoplus_{\Pi_X(c)=\gamma}V_{c,\bar p},
+\]
+is exact on finite-support graded \(\Q\)-vector spaces.  Consequently a
+degreewise exact sequence
+\[
+0\longrightarrow A\longrightarrow B\longrightarrow C\longrightarrow0
+\]
+of finite formal sources remains exact after applying
+\(\Pi_{X,*}^{\mathrm{fib}}\).
+\end{proposition}
+
+\begin{proof}
+Fix \((\gamma,\bar p)\).  The \((\gamma,\bar p)\)-component of
+\(\Pi_{X,*}^{\mathrm{fib}}\) is the finite direct sum of the
+\((c,\bar p)\)-components over the fibre \(\Pi_X^{-1}(\gamma)\cap A\).
+Finite direct sums are exact in the category of \(\Q\)-vector spaces.
+Taking this finite direct sum in every Gram/parity component gives the
+displayed exact sequence after pushforward.
+\end{proof}
+
+The packet
+\(\texttt{certificates/charge/fibre\_pushforward\_exactness}\) checks
+this finite linear algebra on six displayed Gram/parity blocks.  It
+records matrices for \(0\to A\to B\to C\to0\), verifies that the
+projection kernel equals the injection image in each block, verifies
+the same equality after fibre-summed pushforward, and records a
+zero-fibre pairing matrix whose radical is one-dimensional.  The packet
+does not prove finite HN boundedness, compact Hall support, source Hall
+brackets, Hopf ideal/coideal closure of the radical, exact Hall
+pushforward, bar-construction commutation, Pfaffian orientations, or
+protected traces.
+
+\begin{proposition}[Finite normal-ordered pushforward preserves parity]
+\label{prop:finite-parity-pushforward}
+\textnormal{[proved]}
+Let
+\[
+V=\bigoplus_{\hat\gamma\in A}
+\left(V_{\hat\gamma,\bar0}\oplus V_{\hat\gamma,\bar1}\right)
+\]
+be a finite-support \(\widehat\Gamma_X\)-graded super vector space, and
+let
+\(\overline\Pi_X:\widehat\Gamma_X\to\Gamma_{\mathrm{gram}}\) be the
+additive normal-ordered Gram map.  Define the pushed super vector space
+by
+\[
+(\overline\Pi_{X,*}^{\mathrm{fib}}V)_{\gamma,\bar p}
+:=
+\bigoplus_{\substack{\hat\gamma\in A\\
+\overline\Pi_X(\hat\gamma)=\gamma}}
+V_{\hat\gamma,\bar p},
+\qquad \bar p\in\Z/2.
+\]
+Then \(\overline\Pi_{X,*}^{\mathrm{fib}}\) preserves the even and odd
+summands separately.  In particular the pair
+\[
+\bigl(\dim(\overline\Pi_{X,*}^{\mathrm{fib}}V)_{\gamma,\bar0},
+\dim(\overline\Pi_{X,*}^{\mathrm{fib}}V)_{\gamma,\bar1}\bigr)
+\]
+is the fibrewise sum of the source parity dimensions, while the signed
+superdimension is only its scalar shadow.
+\end{proposition}
+
+\begin{proof}
+For fixed \((\gamma,\bar p)\), the displayed definition is an ordinary
+finite direct sum of precisely the \(\bar p\)-parity components whose
+normal-ordered Gram degree is \(\gamma\).  No even summand is placed in
+an odd summand and no odd summand is placed in an even summand.  Thus
+the pushed even block is the direct sum of source even blocks over the
+fibre of \(\overline\Pi_X\), and the pushed odd block is the direct sum
+of source odd blocks over the same fibre.  Taking the difference of the
+two dimensions is a later scalar trace operation and does not recover
+the two parity ranks.
+\end{proof}
+
+The packet \(\texttt{certificates/charge/parity\_pushforward}\) checks
+this finite statement on three displayed Gram degrees.  It records the
+two parity dimensions before and after pushforward and includes a
+zero-degree row with parity profile \((1,1)\) and signed
+superdimension \(0\).  It proves preservation of finite parity blocks
+under the additive normal-ordered pushforward.  It does not prove the
+source parity theorem, the Gritsenko--Nikulin/Kac target parity
+equality, compact source representatives, primitive recognition,
+Pfaffian orientations, or protected traces.
+
+\begin{proposition}[Finite bar construction commutes with the
+normal-ordered Gram pushforward]
+\label{prop:finite-bar-pushforward-commutes}
+\textnormal{[proved]}
+Let \(A=\Q\mathbf 1\oplus\bar A\) be a finite-support augmented
+associative algebra graded by the additive group
+\(\widehat\Gamma_X\), with multiplication preserving the
+\(\widehat\Gamma_X\)-degree.  Let
+\[
+T^c_{\le N}(\bar A)=
+\bigoplus_{1\le p\le N}\bar A^{\otimes p}
+\]
+be the finite reduced tensor coalgebra with deconcatenation coproduct,
+graded by the sum of the \(\widehat\Gamma_X\)-degrees of the letters.
+Then the additive homomorphism
+\(\overline\Pi_X:\widehat\Gamma_X\to\Gamma_{\mathrm{gram}}\) induces a
+canonical isomorphism of finite
+\(\Gamma_{\mathrm{gram}}\)-graded coalgebras
+\[
+\overline\Pi_{X,*}^{\mathrm{fib}}\,T^c_{\le N}(\bar A)
+\;\cong\;
+T^c_{\le N}\!\left(\overline\Pi_{X,*}^{\mathrm{fib}}\bar A\right).
+\]
+If the bar differential is defined by multiplication in \(A\), the
+same isomorphism intertwines the finite bar differential.
+\end{proposition}
+
+\begin{proof}
+For a word \([a_1|\cdots|a_p]\), the source degree is
+\(\hat\gamma_1+\cdots+\hat\gamma_p\) in the additive group
+\(\widehat\Gamma_X\).  Since \(\overline\Pi_X\) is a group homomorphism,
+\[
+\overline\Pi_X(\hat\gamma_1+\cdots+\hat\gamma_p)
+=\overline\Pi_X(\hat\gamma_1)+\cdots+\overline\Pi_X(\hat\gamma_p).
+\]
+Thus pushing the word degree forward after forming the tensor coalgebra
+and forming the tensor coalgebra after pushing the letters forward give
+the same finite direct sum in each
+\(\Gamma_{\mathrm{gram}}\)-degree.  Deconcatenation cuts a word into
+two subwords; the displayed equality is additive on the two subword
+degrees, so the coproduct is preserved.  The internal bar differential
+replaces adjacent letters \(a_i,a_{i+1}\) by their product.  Degree
+preservation of multiplication in \(A\) gives
+\(\deg(a_i a_{i+1})=\deg(a_i)+\deg(a_{i+1})\), hence the same
+\(\Gamma_{\mathrm{gram}}\)-degree after \(\overline\Pi_X\).  Therefore
+the finite bar differential is intertwined.
+\end{proof}
+
+The packet
+\(\texttt{certificates/charge/bar\_pushforward\_commutation}\) checks
+this statement on finite words of length at most three.  It records
+letter degrees, word degrees, deconcatenation splits, and product terms
+in the bar differential, all using the additive normal-ordered Gram
+grading.  It does not certify the raw quadratic \(\Pi_X\)-pushforward,
+the chiral Koszul quasi-isomorphism, Hall bracket compatibility, Hopf
+pairing compatibility, Pfaffian orientations, or protected traces.
+
+\begin{proposition}[Finite bracket and pairing degrees descend under
+normal-ordered Gram pushforward]
+\label{prop:finite-bracket-pairing-pushforward}
+\textnormal{[proved]}
+Let \(P=\bigoplus_{\hat\gamma\in\widehat\Gamma_X}P_{\hat\gamma}\) be a
+finite-support \(\widehat\Gamma_X\)-graded Lie super vector space with
+\[
+[P_{\hat\gamma},P_{\hat\delta}]
+\subset P_{\hat\gamma+\hat\delta}.
+\]
+Then \(\overline\Pi_{X,*}^{\mathrm{fib}}P\) is a
+\(\Gamma_{\mathrm{gram}}\)-graded Lie super vector space.  If
+\[
+h:P\otimes P\to\Q
+\]
+is a homogeneous degree-zero bilinear form, in the sense that
+\[
+h(P_{\hat\gamma},P_{\hat\delta})=0
+\quad\text{unless}\quad \hat\gamma+\hat\delta=0,
+\]
+then the fibre-summed form on
+\(\overline\Pi_{X,*}^{\mathrm{fib}}P\) is homogeneous of degree zero
+for the \(\Gamma_{\mathrm{gram}}\)-grading.
+\end{proposition}
+
+\begin{proof}
+For \(x\in P_{\hat\gamma}\) and \(y\in P_{\hat\delta}\), the source
+bracket has degree \(\hat\gamma+\hat\delta\).  Applying the additive
+homomorphism \(\overline\Pi_X\) gives
+\[
+\overline\Pi_X(\hat\gamma+\hat\delta)
+=\overline\Pi_X(\hat\gamma)+\overline\Pi_X(\hat\delta),
+\]
+so the same bracket is graded after fibre-summed pushforward.  The
+Jacobi identity and super-skew symmetry are unchanged, since the
+underlying bracket is the same linear map on the same finite direct
+sum.
+
+If \(h(x,y)\ne0\), then \(\hat\gamma+\hat\delta=0\).  Applying
+\(\overline\Pi_X\) gives
+\(\overline\Pi_X(\hat\gamma)+\overline\Pi_X(\hat\delta)=0\).  Thus the
+pushed pairing can be nonzero only on opposite Gram degrees.  This is
+degree-zero homogeneity of the pushed form.  No Hopf adjointness,
+Frobenius cyclic identity, quotient non-degeneracy, or primitive
+closure is used.
+\end{proof}
+
+The packet
+\(\texttt{certificates/charge/hall\_pairing\_pushforward\_compatibility}\)
+checks this finite algebraic statement on supplied bracket and pairing
+rows.  It verifies that three bracket rows have additive
+normal-ordered Gram degree and that three nonzero pairing rows have
+total Gram degree \(0\).  It does not construct compact Hall
+correspondences, prove primitive closure, prove Hopf adjointness, prove
+the Frobenius cyclic identity, prove quotient non-degeneracy, prove
+Pfaffian orientations, or prove protected traces.
+
+\begin{proposition}[Finite normal-ordered pushforward preserves the PBW filtration]
+\label{prop:finite-pbw-pushforward}
+\textnormal{[proved]}
+Let \(U=\bigoplus_{\hat\gamma\in A}U_{\hat\gamma}\) be a
+finite-support \(\widehat\Gamma_X\)-graded vector space equipped with
+an increasing PBW filtration \(F_{\le d}U\) by homogeneous subspaces:
+\[
+F_{\le d}U
+=\bigoplus_{\hat\gamma\in A}
+\bigl(F_{\le d}U\cap U_{\hat\gamma}\bigr).
+\]
+Write \(F_{\le d}U_{\hat\gamma}:=F_{\le d}U\cap U_{\hat\gamma}\).
+Define
+\[
+F_{\le d}
+(\overline\Pi_{X,*}^{\mathrm{fib}}U)_{\gamma}
+:=
+\bigoplus_{\substack{\hat\gamma\in A\\
+\overline\Pi_X(\hat\gamma)=\gamma}}
+F_{\le d}U_{\hat\gamma}.
+\]
+Then \(\overline\Pi_{X,*}^{\mathrm{fib}}\) preserves the PBW
+filtration, and for every \(d\)
+\[
+\operatorname{gr}^{\mathrm{PBW}}_d
+(\overline\Pi_{X,*}^{\mathrm{fib}}U)_{\gamma}
+\cong
+\bigoplus_{\substack{\hat\gamma\in A\\
+\overline\Pi_X(\hat\gamma)=\gamma}}
+\operatorname{gr}^{\mathrm{PBW}}_d U_{\hat\gamma}.
+\]
+If \(U\) is a filtered algebra whose multiplication has
+\(\widehat\Gamma_X\)-degree \(\hat\gamma+\hat\delta\) and PBW degree
+\(\le a+b\) on \(F_{\le a}U_{\hat\gamma}\cdot
+F_{\le b}U_{\hat\delta}\), the pushed multiplication has
+\(\Gamma_{\mathrm{gram}}\)-degree
+\(\overline\Pi_X(\hat\gamma)+\overline\Pi_X(\hat\delta)\) and PBW
+degree \(\le a+b\).
+\end{proposition}
+
+\begin{proof}
+For fixed \((\gamma,d)\), the displayed formula is a finite direct sum
+over the fibre of \(\overline\Pi_X\).  Since
+\(F_{\le d}U_{\hat\gamma}\subset F_{\le d+1}U_{\hat\gamma}\) for each
+\(\hat\gamma\), the same inclusion holds after taking the finite direct
+sum over the fibre.  Finite direct sums are exact over \(\Q\), hence
+the quotient \(F_{\le d}/F_{\le d-1}\) commutes with the displayed
+pushforward and gives the associated-graded isomorphism.  For the
+algebra statement, the source multiplication sends
+\((\hat\gamma,\hat\delta)\) to \(\hat\gamma+\hat\delta\) and has PBW
+degree \(\le a+b\); applying the additive homomorphism
+\(\overline\Pi_X\) sends the Gram degree to
+\(\overline\Pi_X(\hat\gamma)+\overline\Pi_X(\hat\delta)\) and does not
+change the filtration index.  Thus the pushed filtered multiplication
+has the asserted degree and filtration bound.
+\end{proof}
+
+The packet \(\texttt{certificates/charge/pbw\_pushforward}\) checks
+this finite filtered statement on three displayed Gram degrees.  It
+records cumulative PBW dimensions, verifies monotonicity of the
+filtration, and recomputes the associated-graded dimensions as
+successive quotients.  It proves only preservation of a supplied finite
+PBW filtration under the additive normal-ordered pushforward.  It does
+not prove the compact-source PBW comparison, target PBW comparison,
+no-extra-relations theorem, primitive recognition, Pfaffian
+orientations, or protected traces.
+
+\begin{proposition}[Finite normal-ordered pushforward preserves triangular decomposition]
+\label{prop:finite-triangular-pushforward}
+\textnormal{[proved]}
+Let \(h:\Gamma_{\mathrm{gram}}\to\Z\) be an additive height functional.
+For a finite-support \(\widehat\Gamma_X\)-graded vector space
+\(V=\bigoplus_{\hat\gamma\in A}V_{\hat\gamma}\), define
+\[
+V^+=\bigoplus_{h(\overline\Pi_X(\hat\gamma))>0}V_{\hat\gamma},
+\qquad
+V^0=\bigoplus_{h(\overline\Pi_X(\hat\gamma))=0}V_{\hat\gamma},
+\qquad
+V^-=\bigoplus_{h(\overline\Pi_X(\hat\gamma))<0}V_{\hat\gamma}.
+\]
+Then
+\[
+\overline\Pi_{X,*}^{\mathrm{fib}}V
+=
+(\overline\Pi_{X,*}^{\mathrm{fib}}V)^-
+\oplus
+(\overline\Pi_{X,*}^{\mathrm{fib}}V)^0
+\oplus
+(\overline\Pi_{X,*}^{\mathrm{fib}}V)^+
+\]
+with each summand obtained by pushing forward the corresponding source
+summand over the same fibres of \(\overline\Pi_X\).  If \(V\) carries a
+homogeneous bracket
+\[
+[V_{\hat\gamma},V_{\hat\delta}]
+\subset V_{\hat\gamma+\hat\delta},
+\]
+then the pushed bracket has height
+\[
+h\!\left(\overline\Pi_X(\hat\gamma+\hat\delta)\right)
+=h(\overline\Pi_X(\hat\gamma))
++h(\overline\Pi_X(\hat\delta)).
+\]
+Thus positive-positive brackets remain positive, negative-negative
+brackets remain negative, Cartan-positive and Cartan-negative brackets
+remain in the corresponding sign, and positive-negative brackets land
+in the sign determined by the actual height sum.
+\end{proposition}
+
+\begin{proof}
+The three displayed subspaces form a direct sum because every integer
+height is exactly one of positive, zero, or negative.  For a fixed
+Gram degree \(\gamma\), the fibre-summed pushforward takes the finite
+direct sum over \(\overline\Pi_X^{-1}(\gamma)\).  All source summands
+in this fibre have the same value \(h(\gamma)\), hence the same
+triangular sign.  Therefore no positive source summand is pushed into
+the Cartan or negative part, and similarly for the other two signs.
+
+For the bracket statement, source homogeneity gives degree
+\(\hat\gamma+\hat\delta\).  Additivity of \(\overline\Pi_X\) and of
+\(h\) gives the displayed height equality.  The triangular sign after
+pushforward is therefore the sign of this integer.  The four stated
+same-sign and Cartan-action cases are immediate; the
+positive-negative case is not collapsed to a universal rule, but is
+read from the actual height sum.
+\end{proof}
+
+The packet
+\(\texttt{certificates/charge/triangular\_pushforward}\) checks this
+finite statement on seven displayed source blocks and five supplied
+bracket sign rows.  It verifies that the supplied integer height agrees
+with the positive, Cartan, and negative labels, that the fibre-summed
+pushforward keeps the three direct-sum parts separate, and that the
+displayed bracket rows land in the triangular part determined by the
+pushed height.  It does not prove exact triangular completion, target
+triangular completion, compact-source primitive recognition,
+no-extra-relations, PBW comparison, Pfaffian orientations, or protected
+traces.
+
 \begin{remark}[Quadratic obstruction; no linear trivialisation]
 \label{rem:quadratic-obstruction}
 Suppose $B = \delta L$ for some additive linear $L : \Gamma_X^{\mathrm
@@ -768,13 +2543,11 @@ contradicting $B(c, c) = 2\,\Pi_X(c) \ne 0$ for any $c$ with
 $(Q, Q), (Q, P), (P, P)$ not all zero.  Hence no additive linear
 trivialisation exists.  The quadratic primitive $\Pi_X$ is necessary;
 trivializing the additive cocycle requires a quadratic cochain, not a
-linear one (proved/$\gamma$).
+linear one (proved).
 \end{remark}
 
-% -------------------------------------------------------------------
 \subsection{Normal-ordering flag formula}
 \label{subsec:normal-ordering-flag-formula}
-% -------------------------------------------------------------------
 
 \begin{lemma}[Multiplication of raw placements]
 \label{lem:multiplication-of-raw-placements}
@@ -788,7 +2561,7 @@ and consequently
 \overline\Pi_X\!\left(i_0(c_1)\star\cdots\star i_0(c_k)\right)
 = \sum_i \Pi_X(c_i).
 \]
-(proved/$\delta$.)
+(proved.)
 \end{lemma}
 
 \begin{proof}
@@ -805,14 +2578,15 @@ pairwise $B$-term from $\Pi_X(\sum_i c_i) = \sum_i \Pi_X(c_i) +
 
 \begin{remark}[Normal-ordered primitive recognition target]
 \label{rem:normal-ordered-recognition-target}
-The interface with the BKM denominator algebra is the corrected route
+The interface with the BKM denominator algebra is the normal-ordered
+charge route
 \[
 \Gamma_X^{\mathrm{form}}\hookrightarrow\widehat\Gamma_X
 \xrightarrow{\overline\Pi_X}\Gamma_{\mathrm{gram}}
 \xrightarrow{\alpha}\Lambda_{II}^{2,1},
 \]
 where $\alpha(n, l, m) = 2 n f_2 - l f_3 + 2 m f_{-2}$ is the type-IV
-embedding into the BKM root lattice (proved/$\delta$, \cite{GN}).  At
+embedding into the BKM root lattice (proved, \cite{GN}).  At
 chain level this becomes the descent $\overline\Pi_{X, *}^{\Theta}$ of
 Chapter~\ref{chap:dirac-igusa-pro-object}.  The primitive recognition
 problem is to construct a protected primitive Hall algebra whose
@@ -821,44 +2595,60 @@ $\mathfrak g_{\Delta_5}$.  Raw Gram pushforward is not an admissible
 recognition target.
 \end{remark}
 
-% =====================================================================
 \section{The hybrid $\operatorname{Ran}^{\mathrm{hyb}}(E)$ factorization
 carrier}
 \label{sec:k3xe-hybrid-ran-carrier}
-% =====================================================================
 
-The K3 direction is integrated.  What remains is a chiral object on the
-elliptic factor $E$.  The naive carrier is the Ran space
+After integration along the K3 direction, the chiral object is supported
+on the elliptic factor $E$.  The ordinary finite-support carrier is the Ran space
 $\operatorname{Ran}(E)$ of finite subsets, but a one-dimensional
-subscheme with positive elliptic degree projects onto all of $E$.  The
-hybrid carrier $\operatorname{Ran}^{\mathrm{hyb}}(E)$ is the disjoint
-union of the projection-finite local stratum $\operatorname{Ran}(E)_{b
-= 0}$ and the wrapped stratum $\operatorname{Ran}^{\mathrm{wr}}(E)_{b
-> 0}$, with mixed local/wrapped correspondences supplied as additional
-finite-stage data.
+effective cycle with positive elliptic degree projects onto all of $E$.  The
+hybrid carrier $\operatorname{Ran}^{\mathrm{hyb}}(E)$ is a finite-stage
+prestack whose \(b=0\) local and \(b>0\) wrapped subprestacks are
+separated before the mixed local/wrapped correspondences are supplied as
+additional finite-stage data.
+At finite stage those data are represented by the tables
+\(\mathrm{hybrid\_ran\_prestack\_definition}\),
+\(\mathrm{local\_stratum\_b0\_prestack\_definition}\),
+\(\mathrm{wrapped\_stratum\_bpositive\_prestack\_definition}\),
+\(\mathrm{geometric\_elliptic\_degree\_map}\),
+\(\mathrm{geometric\_elliptic\_degree\_additivity}\),
+\(\mathrm{geometric\_borcherds\_degree\_separation}\),
+\(\mathrm{positive\_elliptic\_degree\_projection}\),
+\(\mathrm{hybrid\_base}\), \(\mathrm{local\_configurations}\),
+\(\mathrm{wrapped\_prequotients}\),
+\(\mathrm{local\_local\_correspondence\_definition}\),
+\(\mathrm{mixed\_local\_wrapped\_correspondence\_definition}\),
+\(\mathrm{wrapped\_wrapped\_correspondence\_definition}\),
+\(\mathrm{two\_sided\_mixed\_correspondence\_definition}\),
+\(\mathrm{correspondences}\),
+\(\mathrm{flag\_atlas}\), \(\mathrm{higher\_coloured}\),
+\(\mathrm{quotient\_pseudofunctor}\), \(\mathrm{protected\_integration}\),
+\(\mathrm{transitions}\), and \(\mathrm{scalar\_firewall}\).  They are
+not supplied by the ordinary Ran space, a quotient-first Hall product,
+or the Borcherds \(s\)-degree.
 
-% -------------------------------------------------------------------
 \subsection{Projection-locality obstruction}
 \label{subsec:projection-locality-obstruction}
-% -------------------------------------------------------------------
 
 \begin{lemma}[Projection-locality obstruction]
 \label{lem:projection-locality-obstruction}
-Let $C \subset X = S\times E$ be a one-dimensional closed subscheme
-(reduced and irreducible, for definiteness) with
+Let
 \[
-\deg_E(C) := \deg\bigl(p_E\!\restriction_C : C\to E\bigr) > 0.
+Z=\sum_i m_i[C_i]\in Z_1(S\times E),\qquad m_i>0,
 \]
-Then $p_E(C) = E$, hence $p_E(C)$ is not a finite subset of $E$ and
-$C$ is not local on $\operatorname{Ran}(E)$.
-(proved/$\epsilon$.)
+be an effective one-cycle.  If \((p_E)_*Z=b[E]\) with \(b>0\), then
+\(p_E(|Z|)=E\).  Hence \(|Z|\) is not local on
+\(\operatorname{Ran}(E)\).
 \end{lemma}
 
 \begin{proof}
-The pushforward $p_{E, *}[C]$ is a positive multiple of the fundamental
-class $[E]$, so the image $p_E(C)$ is a closed one-dimensional subset of
-the irreducible curve $E$.  An irreducible curve has only itself as a
-one-dimensional closed subset, so $p_E(C) = E$.
+For each irreducible component \(C_i\), the proper image \(p_E(C_i)\)
+is either a point or a closed one-dimensional subset of the irreducible
+curve \(E\).  In the second case it is all of \(E\), and
+\((p_E)_*[C_i]=\deg(C_i/E)[E]\).  Since the effective sum
+\((p_E)_*Z=b[E]\) has \(b>0\), at least one component maps dominantly
+to \(E\).  Therefore \(p_E(|Z|)=E\).
 \end{proof}
 
 \begin{remark}[Geometric versus Borcherds elliptic degree]
@@ -866,7 +2656,7 @@ one-dimensional closed subset, so $p_E(C) = E$.
 The lemma fixes the necessity of a wrapped stratum.  The geometric
 elliptic-degree map $b_R^{\mathrm{geom}}$, on a finite Hall stage $R$,
 records the integer $\deg_E$ of a chosen retained class.  The trace
-exponent $m_R := \mathrm{pr}_3\overline\Pi_X$, on the same stage,
+exponent $m_R^{\mathrm{Bch}} := \mathrm{pr}_3\overline\Pi_X$, on the same stage,
 records the third coordinate of the normal-ordered Gram pushforward.
 The two are not equal as functions on the formal lattice; the Borcherds
 exponent $m$ records the magnetic Mukai pairing $(P, P)/2$, which sees
@@ -880,48 +2670,42 @@ $\operatorname{Ran}(E)$-support-locality obstruction in the
 K3-integrated chiral shadow.
 \end{remark}
 
-% -------------------------------------------------------------------
 \subsection{The hybrid carrier}
 \label{subsec:hybrid-carrier-definition}
-% -------------------------------------------------------------------
 
 \begin{definition}[Hybrid Ran carrier]
 \label{def:hybrid-ran-carrier}
-The \emph{hybrid Ran carrier} on $E$ is the disjoint union
+At finite HN height \(R\), the \emph{hybrid Ran carrier} is the
+prestack
 \[
-\operatorname{Ran}^{\mathrm{hyb}}(E)
-:= \operatorname{Ran}(E)_{b = 0}\,\sqcup\,\operatorname{Ran}^{\mathrm{wr}}(E)_{b > 0},
+\operatorname{Ran}^{\mathrm{hyb}}_{R,\mathrm{pre}}(E):
+\mathrm{Aff}_{\C}^{op}\to\infty\textup{-}\mathrm{Gpd}
 \]
-with the projection-finite local stratum
-$\operatorname{Ran}(E)_{b = 0}$ and the wrapped stratum
-$\operatorname{Ran}^{\mathrm{wr}}(E)_{b > 0}$ defined as follows.
-\begin{enumerate}[label = \textup{(\roman*)}]
-\item $\operatorname{Ran}(E)_{b = 0}$ is the standard Ran space of
-finite (unordered) subsets $T = \{x_1, \ldots, x_k\} \subset E$
-(\cite{BD,FrancisGaitsgoryCKD}); its functor of points sends a test
-scheme $S'$ to the set of finite closed subschemes $T'\subset E\times
-S'$ whose projection to $S'$ is finite \'etale of constant fibre size
-$\le R$ for some chosen finite Hall height $R$.  This is the
-$b_R^{\mathrm{geom}} = 0$ stratum: branes whose K3 factor has zero
-elliptic degree.
-\item $\operatorname{Ran}^{\mathrm{wr}}(E)_{b > 0}$ is the
-\emph{wrapped prequotient stratum}: a colim of pre-quotient stacks
-$\mathfrak W_{R, b}$ parameterising rigidified compactly supported
-B-branes $\mathcal F\in D^b(\mathrm{Coh}\,X)$ of bounded retained Liu--
-Hilbert class $\Xi = (\gamma, [a, b], (P_i), N)$ with positive elliptic
-degree $b = \deg_E(\mathrm{ch}_2(\mathcal F)) > 0$, modulo
-$E$-translation up to the chosen anchor (\S\ref{subsec:e-quotient-anchor}).
-\end{enumerate}
-The two strata are exchanged only by the mixed local/wrapped
-correspondences of \S\ref{subsec:mixed-correspondences}; they are not
-identified.
+of Definition~\ref{def:hybrid-ran-prestack}.  A test family consists
+of finitely many local maps to \(E\), retained local colour labels,
+finitely many wrapped colour labels, and \(T\)-families in the
+corresponding rigidified wrapped prequotient stacks with anchor maps to
+\(E\).  Its local \(b=0\) stratum is the subprestack
+\(\operatorname{Ran}^{\mathrm{loc}}_{R,\mathrm{pre}}(E)\) of
+Definition~\ref{def:hybrid-local-stratum-prestack}.  Its wrapped
+\(b>0\) stratum is the subprestack
+\(\operatorname{Ran}^{\mathrm{wr}}_{R,\mathrm{pre}}(E)\) of
+Definition~\ref{def:hybrid-wrapped-stratum-prestack}.  The stack
+\(\operatorname{Ran}^{\mathrm{hyb}}_{R,\tau}(E)\) exists only after
+descent rows for the chosen topology \(\tau\) have been supplied.  The
+set
+\[
+\bigsqcup_{b\ge0}\operatorname{Ran}(E)\times\{b\}
+\]
+is the degree shadow, not the carrier.
 \end{definition}
 
 \begin{remark}[Two strata, two registers]
 \label{rem:two-strata-two-registers}
 On the $b = 0$ stratum the standard Ran/factorization formalism applies
-and produces a chiral algebra in $\mathrm{Fact}(\operatorname{Ran}(E))$
-(folklore/$\epsilon$, \cite{BD,FrancisGaitsgoryCKD}).  On the $b > 0$
+and supplies the local chiral factorization input in
+$\mathrm{Fact}(\operatorname{Ran}(E))$ (folklore,
+\cite{BD,FrancisGaitsgoryCKD}).  On the $b > 0$
 stratum the support of $\mathrm{Supp}\,\mathcal F$ projects onto $E$, so
 the brane is global; its data live on the wrapped prequotient and after
 $E$-quotient become $E$-equivariant data on the elliptic curve.  The
@@ -929,10 +2713,8 @@ hybrid carrier is the smallest carrier reflecting both strata; it is
 not a single Ran space.
 \end{remark}
 
-% -------------------------------------------------------------------
 \subsection{Mixed local/wrapped correspondences}
 \label{subsec:mixed-correspondences}
-% -------------------------------------------------------------------
 
 \begin{definition}[Mixed local/wrapped correspondences (finite Hall
 stage $R$)]
@@ -950,9 +2732,10 @@ Fix a finite Hall stage $R$ and retained Liu--Hilbert classes $\Xi_A,
 \mathfrak M^{\mathrm{ss}}_{\Xi_C}
 \]
 is the closed derived flag-Quot/filtration stack over
-$\mathfrak M^{\mathrm{ss}}_{\Xi_C}$, with $q$ proper or
-$\mathrm{Coh}^{\mathrm{prop}}$-admissible in the compactified model
-(folklore/$\epsilon$).  Three colours of correspondence appear,
+$\mathfrak M^{\mathrm{ss}}_{\Xi_C}$, with $q$ required at this finite
+stage to be proper or $\mathrm{Coh}^{\mathrm{prop}}$-admissible in the
+compactified model (folklore).  Three colours of
+correspondence appear,
 indexed by the location of $\Xi_A, \Xi_B$ in
 $\operatorname{Ran}^{\mathrm{hyb}}(E)$:
 \begin{enumerate}[label = \textup{(LL)},leftmargin = *]
@@ -960,50 +2743,366 @@ $\operatorname{Ran}^{\mathrm{hyb}}(E)$:
 \item[\textup{(LW)}] \emph{ordered local/wrapped}: $b_A = 0$, $b_B > 0$;
 \item[\textup{(WW)}] \emph{wrapped-wrapped}: $b_A, b_B > 0$.
 \end{enumerate}
-The arity-three shadow is the eight-word two-step binary flag atlas
+The local-local row is the ordered projection-finite diagram
 \[
-\{L, W\}^3 = \{LLL, LLW, LWL, LWW, WLL, WLW, WWL, WWW\},
+\mathfrak E^{\mathrm{LL}}_{\alpha,\beta;\gamma,R,I,J,K}
+\longrightarrow
+\mathfrak M^{\mathrm{loc,cl}}_{\alpha,R,I}
+\times
+\mathfrak M^{\mathrm{loc,cl}}_{\beta,R,J}
+\longrightarrow
+\mathfrak M^{\mathrm{loc,cl}}_{\gamma,R,K},
 \]
-which records binary associativity only; higher coloured tree
+where \(\alpha:I\to\Gamma_R^{\mathrm{loc}}\),
+\(\beta:J\to\Gamma_R^{\mathrm{loc}}\),
+\(\gamma=|\alpha|+|\beta|\) is retained in
+\(\Gamma_R^{\mathrm{loc}}\), and \(K=I\sqcup J\) modulo Ran
+collisions.  This is
+Definition~\ref{def:local-local-correspondence-datum}; it has no
+wrapped input and no reduced \(E\)-quotient.
+The one-sided mixed row is the ordered pair of unreduced diagrams
+\[
+\mathfrak E^{\mathrm{LW}}_{\alpha,\eta;\zeta,R,I}
+\longrightarrow
+\mathfrak M^{\mathrm{loc,cl}}_{\alpha,R,I}
+\times
+\mathcal M_{\eta,R}^{\mathrm{wr,rig}}
+\longrightarrow
+\mathcal M_{\zeta,R}^{\mathrm{wr,rig}},
+\]
+and
+\[
+\mathfrak E^{\mathrm{WL}}_{\eta,\alpha;\zeta,R,I}
+\longrightarrow
+\mathcal M_{\eta,R}^{\mathrm{wr,rig}}
+\times
+\mathfrak M^{\mathrm{loc,cl}}_{\alpha,R,I}
+\longrightarrow
+\mathcal M_{\zeta,R}^{\mathrm{wr,rig}},
+\]
+where \(\alpha:I\to\Gamma_R^{\mathrm{loc}}\),
+\(\eta\in\Gamma_R^{\mathrm{wr}}\), and
+\(\zeta=|\alpha|+\eta\) or \(\eta+|\alpha|\) is retained in
+\(\Gamma_R^{\mathrm{wr}}\).  This is
+Definition~\ref{def:mixed-local-wrapped-correspondence-datum}; it is
+not the local-local row, not the wrapped-wrapped row, not the two-sided
+mixed row, and not a quotient-first product.
+The wrapped-wrapped row is the ordered unreduced diagram
+\[
+\mathfrak E^{\mathrm{WW}}_{\eta_1,\eta_2;\zeta,R}
+\longrightarrow
+\mathcal M_{\eta_1,R}^{\mathrm{wr,rig}}
+\times
+\mathcal M_{\eta_2,R}^{\mathrm{wr,rig}}
+\longrightarrow
+\mathcal M_{\zeta,R}^{\mathrm{wr,rig}},
+\]
+where \(\eta_1,\eta_2\in\Gamma_R^{\mathrm{wr}}\) and
+\(\zeta=\eta_1+\eta_2\) is retained in
+\(\Gamma_R^{\mathrm{wr}}\).  This is
+Definition~\ref{def:wrapped-wrapped-correspondence-datum}; it is
+ordered, unreduced, and separate from symmetric descent and
+source/target-anchor memory.
+The ordered two-sided mixed row is the unreduced local--wrapped--local
+diagram
+\[
+\mathfrak E^{\mathrm{LWL}}_{\alpha_-;\eta;\beta_+,R,I_-,I_+}
+\longrightarrow
+\mathfrak M^{\mathrm{loc,cl}}_{\alpha_-,R,I_-}
+\times
+\mathcal M_{\eta,R}^{\mathrm{wr,rig}}
+\times
+\mathfrak M^{\mathrm{loc,cl}}_{\beta_+,R,I_+}
+\longrightarrow
+\mathcal M_{\zeta,R}^{\mathrm{wr,rig}},
+\]
+where
+\(\zeta=|\alpha_-|+\eta+|\beta_+|\in\Gamma_R^{\mathrm{wr}}\).
+	This is
+	Definition~\ref{def:two-sided-mixed-correspondence-datum}; it is not
+	the full eight-word associativity atlas and not a quotient-first
+	product.
+	The source/target anchor-memory row is separate: for \(LW\), \(WL\),
+	\(WW\), and \(LWL\) it records the ordered wrapped source anchors and
+	wrapped target anchor on the unreduced correspondence stack, before the
+	reduced \(E\)-quotient, as in
+	Definition~\ref{def:source-target-anchor-memory-datum}.  The
+	local/local row has no wrapped anchor memory.  This row does not
+	construct the determinant anchor, compute its translation weight,
+	repair the \(\chi=0\) degeneracy, or define \(o^\lambda_R\).
+	The arity-three shadow is the eight-word two-step binary flag atlas
+	\[
+	\{L, W\}^3 = \{LLL, LLW, LWL, LWW, WLL, WLW, WWL, WWW\},
+	\]
+which records binary associativity only; higher-coloured tree
 configurations live on a separate coloured tree category
 $\mathrm{Tree}^{\mathrm{col}}_R$, supplied as additional input
-(folklore/$\epsilon$, \cite{CYQGVolIII}).
+(folklore, \cite{CYQGVolIII}).
 \end{definition}
 
 \begin{remark}[Eight binary words versus colored trees]
 \label{rem:eight-words-vs-colored-trees}
 The eight binary words of Definition~\ref{def:mixed-correspondences}
 exhaust the arity-three two-step compositions $\{L, W\}^3$, but they do
-not catalogue higher coloured tree configurations, units, symmetry/order
+not catalogue higher-coloured tree configurations, units, symmetry/order
 conventions, refinement maps, descent, or overlaps.  Those data are
 additional finite Hall input named at \S\ref{sec:k3xe-four-obstructions};
 asserting them prematurely confuses binary associativity with the full
 factorization-coherence structure (\cite{CYQGVolIII},
-correspondence-programme remark).
+correspondence formalism).
 \end{remark}
 
-% -------------------------------------------------------------------
 \subsection{Wrapped anchor and translation linearization}
 \label{subsec:e-quotient-anchor}
-% -------------------------------------------------------------------
 
 \begin{definition}[Determinant anchor on the wrapped stratum]
 \label{def:determinant-anchor}
-For a retained $E$-stable family $\mathcal F$ on the wrapped stratum,
-the \emph{determinant anchor line bundle} on $E$ is
+Fix a finite HN height \(R\), a wrapped colour
+\(\eta\in\Gamma_R^{\mathrm{wr}}\), and a test scheme \(T\).  Let
+\(\mathcal F_{\eta,T}\) be the retained universal perfect complex on
+\(X\times T\) pulled back from the wrapped prequotient row, and write
 \[
-\lambda(\mathcal F)
-:= \det Rp_{E, *}\mathcal F
-\otimes \mathcal O_E\!\bigl(-\chi(\mathcal F)\,0_E\bigr).
+\pi_{E,T}:X\times T\longrightarrow E\times T .
 \]
-This is a degree-zero line bundle on $E$, hence a point of
-$\mathrm{Pic}^0(E) \cong E$.  The translation law
+Let \(\chi_\eta=\chi(\mathcal F_{\eta,t})\), constant on the retained
+colour row.  The Knudsen--Mumford determinant functor
+\cite{KnudsenMumfordDet,DeligneDetCohomology} gives a line bundle
 \[
-\lambda(t\cdot\mathcal F) = \lambda(\mathcal F) + \chi(\mathcal F)\,t,
-\qquad t\in E,
+\mathscr D_{\eta,T}
+:=\det R\pi_{E,T,*}\mathcal F_{\eta,T}
 \]
-holds in $\mathrm{Pic}^0(E)$ (proved/$\epsilon$, \cite{Mukai1987}).
+on \(E\times T\), functorial in \(T\) as a point of the relative
+Picard functor.  Since \(E\) has genus \(1\),
+\(\deg\det C=\chi(C)\) for a perfect complex \(C\) on \(E\).  Hence
+\(\mathscr D_{\eta,T}\) has relative degree \(\chi_\eta\), and
+\[
+\lambda^{\det}_{\eta,R}(\mathcal F_{\eta,T})
+:=\mathscr D_{\eta,T}\otimes
+\operatorname{pr}_E^*\mathcal O_E(-\chi_\eta\cdot0_E)
+\]
+where \(\operatorname{pr}_E:E\times T\to E\) is projection.  This line
+bundle has relative degree \(0\).  Its class defines the
+determinant anchor
+\[
+\lambda^{\det}_{\eta,R}:T\longrightarrow
+\operatorname{Pic}^0(E)\simeq E .
+\]
+This constructs only the normalized determinant anchor.  The next
+propositions compute its \(E\)-translation weight and isolate the
+\(\chi_\eta=0\) degeneracy.  The finite-cover normalization to unit
+weight, extra anchor data, anchor residual definition and vanishing,
+quotient descent, and transition compatibility are separate rows.
 \end{definition}
+
+The packet
+\(\texttt{certificates/hybrid/determinant\_anchor\_construction}\)
+verifies
+\(\texttt{DETERMINANT\_ANCHOR\_CONSTRUCTION\_VERIFIED}\): the
+determinant-of-cohomology line is functorial in families, the
+normalization has relative degree zero, and the resulting map lands in
+\(\operatorname{Pic}^0(E)\simeq E\).  It does not compute the
+translation weight, handle the \(\chi=0\) degeneracy, add extra anchor
+data, define \(o^\lambda_R\), or prove quotient descent.
+
+\begin{proposition}[Translation weight of the determinant anchor]
+\label{prop:determinant-anchor-translation-weight}
+\textnormal{[proved]}
+Let \(a:T\to E\) be a section and let
+\(\tau_a:E\times T\to E\times T\) be translation by \(a\).  Use the
+support-translation convention
+\[
+a\cdot \mathcal F_{\eta,T}
+:=(\operatorname{id}_S\times\tau_a)_*\mathcal F_{\eta,T}
+\]
+on \(X=S\times E\).  If \(\Gamma_a,\Gamma_0\subset E\times T\) are
+the graphs of \(a\) and \(0_E\), then in the relative Picard functor
+\[
+\lambda^{\det}_{\eta,R}(a\cdot\mathcal F_{\eta,T})
+\simeq
+\lambda^{\det}_{\eta,R}(\mathcal F_{\eta,T})\otimes
+\mathcal O_{E\times T}\!\bigl(\chi_\eta(\Gamma_a-\Gamma_0)\bigr).
+\]
+Under \(\operatorname{Pic}^0(E)\simeq E\), the induced translation law is
+\[
+\lambda^{\det}_{\eta,R}(a\cdot\mathcal F_{\eta,T})
+=
+\lambda^{\det}_{\eta,R}(\mathcal F_{\eta,T})+\chi_\eta a .
+\]
+Thus the \(E\)-translation weight of the determinant anchor is
+\(\chi_\eta\).  Its kernel is \(E[\chi_\eta]\) when \(\chi_\eta\ne0\),
+and all of \(E\) when \(\chi_\eta=0\).
+\end{proposition}
+
+\begin{proof}
+Set
+\(\mathscr D_{\eta,T}=\det R\pi_{E,T,*}\mathcal F_{\eta,T}\).  The
+Cartesian square for translation on the elliptic factor gives, in the
+relative Picard group,
+\[
+\det R\pi_{E,T,*}(a\cdot\mathcal F_{\eta,T})
+\simeq
+\tau_{a,*}\mathscr D_{\eta,T}
+\simeq
+\tau_{-a}^{*}\mathscr D_{\eta,T}.
+\]
+For a relative line bundle \(L\) of degree \(d\) on \(E\times T\),
+translation acts trivially on the \(\operatorname{Pic}^0(E)\)-class and
+shifts the degree part by
+\[
+\tau_{-a}^{*}L\otimes L^{-1}
+\simeq
+\mathcal O_{E\times T}\!\bigl(d(\Gamma_a-\Gamma_0)\bigr)
+\quad
+\text{in }\operatorname{Pic}^0(E\times T/T).
+\]
+Taking \(L=\mathscr D_{\eta,T}\) and \(d=\chi_\eta\), and then tensoring
+both sides with the fixed normalization
+\(\mathcal O_{E\times T}(-\chi_\eta\Gamma_0)\), gives the displayed
+identity.  The sign is positive because the manuscript uses pushforward
+by the support translation \(x\mapsto x+a\); the pullback convention
+would reverse the sign.  The kernel statement is the kernel of the
+multiplication homomorphism \([\chi_\eta]:E\to E\).
+\end{proof}
+
+The packet
+\(\texttt{certificates/hybrid/determinant\_anchor\_translation\_weight}\)
+verifies
+\(\texttt{DETERMINANT\_ANCHOR\_TRANSLATION\_WEIGHT\_VERIFIED}\):
+for the support-translation convention
+\(a\cdot\mathcal F=(\operatorname{id}_S\times\tau_a)_*\mathcal F\),
+the determinant anchor has translation weight \(\chi_\eta\), with
+restriction \(h\mapsto\chi_\eta h\) on any finite stabilizer
+\(H\subset E[N]\).  It does not choose a coherent stabilizer
+linearization, make the weight one by finite cover, handle the
+\(\chi_\eta=0\) degeneracy, add extra anchor data, define
+\(o^\lambda_R\), prove quotient descent, or prove transition
+compatibility.
+
+\begin{proposition}[Zero-Euler determinant-anchor degeneracy]
+\label{prop:determinant-anchor-chi-zero-degeneracy}
+\textnormal{[proved]}
+Assume \(\chi_\eta=0\).  Then for every section \(a:T\to E\),
+\[
+\lambda^{\det}_{\eta,R}(a\cdot\mathcal F_{\eta,T})
+=
+\lambda^{\det}_{\eta,R}(\mathcal F_{\eta,T})
+\quad\text{in }\operatorname{Pic}^0(E).
+\]
+On a retained finite row where the \(E\)-translation action is free, a
+geometric point \(a\ne0\) gives distinct objects
+\(\mathcal F_{\eta,t}\) and \(a\cdot\mathcal F_{\eta,t}\) with the same
+determinant anchor.  Hence the determinant anchor has full
+\(E\)-orbit kernel on the \(\chi_\eta=0\) branch and has
+one-dimensional separation defect.  A final wrapped anchor on this
+branch must contain extra anchor data not determined by
+\(\lambda^{\det}_{\eta,R}\).
+\end{proposition}
+
+\begin{proof}
+Proposition~\ref{prop:determinant-anchor-translation-weight} gives
+\[
+\lambda^{\det}_{\eta,R}(a\cdot\mathcal F_{\eta,T})
+=
+\lambda^{\det}_{\eta,R}(\mathcal F_{\eta,T})+\chi_\eta a .
+\]
+When \(\chi_\eta=0\) this is the displayed equality for all
+\(a\in E\).  The retained \(E\)-translation-rigidification datum is
+free on the retained row by
+Proposition~\ref{prop:retained-e-translation-rigidifications}; hence a
+nonzero geometric translation gives a different point in the
+prequotient before the reduced quotient is taken.  The two points have
+the same determinant anchor.  Therefore determinant-anchor-only data
+does not separate the \(E\)-orbit.  The orbit is one-dimensional, so
+the class-level separation defect has rank \(1\).  Extra anchor data is
+therefore a necessary input for the \(\chi_\eta=0\) branch, not a
+consequence of determinant of cohomology.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hybrid/determinant\_anchor\_chi\_zero\_degeneracy}\)
+verifies
+\(\texttt{DETERMINANT\_ANCHOR\_CHI\_ZERO\_DEGENERACY\_VERIFIED}\):
+on the branch \(\chi_\eta=0\), the determinant anchor is constant on
+the full \(E\)-translation orbit, and freeness of the retained
+translation action gives a rank-one separation defect for
+determinant-anchor-only data.  It records that extra anchor data is
+mandatory.  It does not itself construct that data, define
+\(o^\lambda_R\), prove losslessness, prove quotient descent, choose
+stabilizer linearizations, or prove transition compatibility.
+
+\begin{proposition}[Extra anchor data from the degree-zero Jordan--Hoelder divisor]
+\label{prop:determinant-anchor-extra-data-separates-rank-two}
+\textnormal{[proved]}
+Let \(V\) be a semistable vector bundle of rank \(r\) and degree \(0\)
+on \(E\).  Write the associated graded object of a Jordan--Hoelder
+filtration as
+\[
+\operatorname{gr}^{\mathrm{JH}}V=L_1\oplus\cdots\oplus L_r,
+\qquad
+L_i\in\operatorname{Pic}^0(E),
+\]
+and set
+\[
+\operatorname{sp}^{\mathrm{JH}}(V)
+=[L_1]+\cdots+[L_r]\in
+\operatorname{Sym}^r\operatorname{Pic}^0(E).
+\]
+This divisor is independent of the Jordan--Hoelder filtration.  Its
+Abel sum is \(\det V\).  For
+\[
+V_0=\mathcal O_E^{\oplus2},\qquad
+V_L=L\oplus L^{-1},\qquad L\ne\mathcal O_E,
+\]
+one has
+\[
+\det V_0\simeq\det V_L\simeq\mathcal O_E,\qquad
+\operatorname{sp}^{\mathrm{JH}}(V_0)=2[\mathcal O_E],\qquad
+\operatorname{sp}^{\mathrm{JH}}(V_L)=[L]+[L^{-1}],
+\]
+and the two degree-two divisors are unequal in
+\(\operatorname{Sym}^2\operatorname{Pic}^0(E)\).
+\end{proposition}
+
+\begin{proof}
+By Atiyah's classification and Tu's S-equivalence description for
+semistable bundles on an elliptic curve
+\cite{AtiyahVectorBundlesElliptic,TuSemistableElliptic}, every stable
+Jordan--Hoelder factor of a degree-zero semistable vector bundle on
+\(E\) is a degree-zero line bundle, and the unordered collection of
+these factors is the S-equivalence class of \(V\).  Hence
+\(\operatorname{sp}^{\mathrm{JH}}(V)\) is independent of the chosen
+Jordan--Hoelder filtration.  The determinant of the associated graded
+object is
+\[
+\det\operatorname{gr}^{\mathrm{JH}}(V)=L_1\otimes\cdots\otimes L_r,
+\]
+which equals \(\det V\); under the group law on
+\(\operatorname{Pic}^0(E)\), this is precisely the Abel sum of the
+divisor \(\operatorname{sp}^{\mathrm{JH}}(V)\).  The displayed
+rank-two pair has determinant \(\mathcal O_E\) on both sides.  If
+\(2[\mathcal O_E]=[L]+[L^{-1}]\) in
+\(\operatorname{Sym}^2\operatorname{Pic}^0(E)\), then the unordered
+multisets \(\{\mathcal O_E,\mathcal O_E\}\) and
+\(\{L,L^{-1}\}\) are equal, so \(L\simeq\mathcal O_E\), contrary to the
+hypothesis.  Thus the determinant anchor agrees while the
+Jordan--Hoelder divisor separates the two objects.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hybrid/determinant\_anchor\_extra\_anchor\_data}\)
+verifies
+\(\texttt{DETERMINANT\_ANCHOR\_EXTRA\_ANCHOR\_DATA\_VERIFIED}\):
+on a row where the elliptic pushforward is a degree-zero semistable
+vector bundle, the additional anchor datum is the
+Jordan--Hoelder S-equivalence divisor in
+\(\operatorname{Sym}^r\operatorname{Pic}^0(E)\).  Its Abel sum is the
+determinant anchor, and it separates the determinant-zero rank-two test
+pair
+\(\mathcal O_E^{\oplus2}\) and \(L\oplus L^{-1}\) with
+\(L\ne\mathcal O_E\).  It does not prove global anchor losslessness,
+prove \(o^\lambda_R=0\), prove quotient descent, choose stabilizer
+linearizations, populate every finite wrapped prequotient, or prove
+transition compatibility.
 
 \begin{lemma}[Connected $E$-descent: separated cohomological classes]
 \label{lem:connected-e-descent}
@@ -1023,7 +3122,7 @@ connected gerbe class
 \[
 \alpha^{E,\mathrm{free}} = a_1 u_1 + a_2 u_2 \in H^2(BE; \mathbb F_2).
 \]
-(proved/$\epsilon$, \cite{NIKULIN}.)
+(proved, \cite{NIKULIN}.)
 \end{lemma}
 
 \begin{proof}
@@ -1074,15 +3173,19 @@ H^*\!\bigl(B(\Z/2^a)^2; \mathbb F_2\bigr)
 The mixed term $A_{12}^{(N)}$ is invisible to cyclic order-two restrictions;
 even $N\ge 4$ tests must be checked on the full two-primary generators.
 For odd $N$, the mod-2 orientation obstruction vanishes by transfer.
-(proved/$\epsilon$.)
+(proved.)
 \end{lemma}
 
 \begin{proof}
 $E[2]\cong(\Z/2)^2$ has $H^*(B(\Z/2)^2; \mathbb F_2) = \mathbb F_2[x_1,
-x_2]$ with $|x_i| = 1$.  The reduction of $\beta^E\in H^2(BE; \mathbb
-F_2)$ along the inclusion $E[2]\hookrightarrow E$ gives the displayed
-quadratic in $x_1, x_2$; reduction to cyclic subgroups gives the linear
-combinations $r_i$ as in \cite[\S2]{NIKULIN}.  The degree-one linearization
+x_2]$ with $|x_i| = 1$.  The class
+\(\beta^{E,E[2]}\) is the finite-stabilizer Cech--Borel edge class,
+not the restriction of the connected \(BE\)-class
+\(\alpha^{E,\mathrm{free}}\).  Its restriction to the three non-zero
+cyclic subgroups gives the three parities \(r_i\); inversion of this
+three-by-three system gives
+\((b_{20},b_{11},b_{02})=(r_1,r_1+r_2+r_3,r_2)\).
+The degree-one linearization
 class $\lambda^{E, E[2]}$ is the residual character of the underlying
 line bundle after $\beta = 0$ is imposed; it lives in $H^1$ and is
 distinct from the gerbe $\beta\in H^2$ in degree.  Even $N\ge 4$
@@ -1107,12 +3210,22 @@ class
 \]
 to vanish.  This is a \emph{criterion} for descent on the wrapped
 stratum; it is not implied by $g^*[\lambda] = [\lambda]$ in
-$\mathrm{Pic}(E)$.  The translation law
-$\lambda(t\cdot\mathcal F) = \lambda(\mathcal F) + \chi(\mathcal F) t$
-of Definition~\ref{def:determinant-anchor} carries unit weight only
-when $\chi(\mathcal F) \ne 0$; otherwise the anchor is unweighted and
-descends only after the linearization class vanishes.
-(proved/$\epsilon$ as a criterion.)
+$\mathrm{Pic}(E)$.  Proposition~\ref{prop:determinant-anchor-translation-weight}
+computes the translation law for \(\lambda^{\det}\) and its weight
+\(\chi(\mathcal F)\).  The finite-cover normalisation to unit weight
+when \(\chi(\mathcal F)\ne0\) and the coherent stabilizer
+linearization are later anchor rows.  The \(\chi(\mathcal F)=0\)
+determinant-anchor degeneracy is
+Proposition~\ref{prop:determinant-anchor-chi-zero-degeneracy}; the
+degree-zero Jordan--Hoelder divisor of
+Proposition~\ref{prop:determinant-anchor-extra-data-separates-rank-two}
+separates the determinant-zero rank-two test pair.  Full anchor
+losslessness, finite-stage population, quotient descent, transition
+compatibility, and the coherent stabilizer linearization remain later
+rows.  Until those rows are supplied, this paragraph is only the
+descent criterion for a chosen linearized anchor.
+(proved as a criterion; determinant-anchor weight proved in
+Proposition~\ref{prop:determinant-anchor-translation-weight}.)
 \end{remark}
 
 \begin{remark}[Mod-2 character does not control odd-order anchor
@@ -1123,14 +3236,11 @@ anchor characters.  For anchor descent on the wrapped stratum, also
 compute the actual stabilizer character on the chosen anchor
 trivialization, valued in $\widehat H = \mathrm{Hom}(H, \C^\times)$, or
 define the retained stabilizer as preserving that trivialization.
-(unverified/$\epsilon$ at the manuscript level; supplied as part of the
-finite Hall datum.)
+(unverified; supplied as part of the finite Hall datum.)
 \end{remark}
 
-% -------------------------------------------------------------------
 \subsection{Cusp polarization and chamber transport}
 \label{subsec:cusp-polarization-chamber}
-% -------------------------------------------------------------------
 
 \begin{definition}[Cusp polarization on $\Gamma_{\mathrm{eff}}$]
 \label{def:cusp-polarization}
@@ -1154,7 +3264,7 @@ The arithmetic group $\Sp_4(\Z)$ is the symmetry of the genus-two
 chemical potential $Z$ and of the invariant Gram plane on
 $\Lambda^{3, 2}$; it is not asserted to be the full microscopic
 T-/U-duality group of the K3$\times T^2$ compactification, which is
-larger (folklore/$\beta$, \cite{HM,DVV}).
+larger (folklore, \cite{HM,DVV}).
 \end{remark}
 
 \begin{remark}[Chamber dependence of the wrapped stratum]
@@ -1169,10 +3279,29 @@ the correspondence stack is the original closed flag-Quot stack
 restricted to the new chamber.
 \end{remark}
 
-% =====================================================================
+\begin{definition}[Chamber-compatible Hall descent datum]
+\label{def:chamber-compatible-hall-descent}
+Let \(\sigma\) and \(\sigma'\) be two chosen stability data, and let
+\(g\in\Sp_4(\Z)\) transport the standard cusp chamber to another
+product chamber.  A chamber-compatible Hall descent datum is a
+Kontsevich--Soibelman wall-crossing system
+\[
+\mathsf{WC}_{g,R}:\mathcal C_{\sigma,S,\le R}\longrightarrow
+\mathcal C_{\sigma',S,\le R'}
+\]
+on the retained finite Hall stages, with transition maps in \(R\),
+which preserves the normal-ordered Gram map \(\overline\Pi_X\), transports
+the local/wrapped split, the quotient-after-correspondence datum, the
+orientation lines, and the protected integration maps.  The identity
+\(\overline\Pi_X(\widehat c\star\widehat c')
+=\overline\Pi_X(\widehat c)+\overline\Pi_X(\widehat c')\) on
+\(\widehat\Gamma_X\) is a chamber-independent lattice fact; the compact
+Hall category and its primitive bracket are not chamber-independent without
+\(\mathsf{WC}_{g,R}\) (folklore/\(\beta\), \cite{KSCoHA}).
+\end{definition}
+
 \section{Local protected observable algebra (sectorial source datum)}
 \label{sec:local-protected-observable-algebra}
-% =====================================================================
 
 The compact realization route of Chapter~\ref{chap:dirac-igusa-pro-object}
 takes as supplied input a chain-level local observable system on
@@ -1180,8 +3309,8 @@ opens $U\subset X = S\times E$.  The system is graded by the
 algebraic/effective Hall support, factorizes on disjoint opens, and
 restricts on $E$-projection-finite supports to a chiral object on
 $\operatorname{Ran}(E)_{b = 0}$.  The data are external assumptions
-named in the literature; this section records them as the source
-interface used downstream.
+named in the literature and form the source datum for the compact
+realization.
 
 \begin{definition}[Local protected observable algebra]
 \label{def:local-protected-observable-algebra}
@@ -1192,10 +3321,10 @@ charge support.  For $c\in\Gamma_{X, \sigma}^{\mathrm{eff}}(U)$, let
 $\mathfrak M_c(U)$ be the supplied derived moduli stack of compactly
 supported B-branes on $U$ of Mukai charge $c$.  The PTVV theorem supplies
 the ambient $(-1)$-shifted symplectic structure on the $\mathrm{CY}_3$
-perfect-complex moduli problem (proved/$\beta$, \cite{PTVV2013}).  Let
+perfect-complex moduli problem (proved, \cite{PTVV2013}).  Let
 $\Phi_c$ denote the BBDJS perverse sheaf $P^\bullet_{\mathfrak M_c, s_c}$
 on an oriented d-critical truncation, when such a d-critical structure
-and square-root orientation are supplied (proved/$\beta$,
+and square-root orientation are supplied (proved,
 \cite[Theorem~6.9]{BBDJS2015}).  Let $o_c$ be the orientation line, a
 square root of the determinant line of the cotangent complex of
 $\mathfrak M_c(U)$, supplied as part of the Hall datum.
@@ -1220,78 +3349,95 @@ cycles
 \Phi_{F_1\oplus\cdots\oplus F_k}
 \simeq \Phi_{F_1}\boxtimes\cdots\boxtimes\Phi_{F_k}
 \]
-on disjoint d-critical charts (proved/$\beta$,
+on disjoint d-critical charts (proved,
 \cite{MasseyST,SaitoMHM}), together with the Ext-vanishing
 $\mathrm{Ext}^*(\mathcal F, \mathcal G) = 0$ for branes
 $\mathcal F, \mathcal G$ with disjoint supports
-(folklore/$\beta$).
+(folklore).
 \end{definition}
 
-\begin{remark}[Source interface: external assumptions]
+\begin{remark}[External source datum]
 \label{rem:source-interface-external-assumptions}
 The components are external assumptions: PTVV $(-1)$-shifted symplectic
-structure on derived moduli of B-branes (proved/$\beta$,
+structure on derived moduli of B-branes (proved,
 \cite{PTVV2013}); BBDJS vanishing-cycle perverse sheaf and its
-Thom--Sebastiani isomorphism (proved/$\beta$,
+Thom--Sebastiani isomorphism (proved,
 \cite{MasseyST,SaitoMHM,BBDJS2015}); orientation lines and
-Joyce--Upmeier-compatible multiplicative orientation data (supplied
-separately, proved/$\beta$, \cite[Theorem~4.1]{JoyceUpmeier} or
-\cite{KSCoHA}).  The factorization map relies on disjoint-supports
-Ext-vanishing for compactly supported branes (folklore/$\beta$;
+Joyce--Upmeier-compatible multiplicative orientation data (ambient
+technology proved in \cite[Theorem~4.1]{JoyceUpmeier}; the
+\(K3\times E\) quotient orientation is supplied separately).  The factorization map relies on disjoint-supports
+Ext-vanishing for compactly supported branes (folklore;
 absent for non-compact supports, where one recovers chiral algebra
 structure, not commutative factorization).  Compactness on $X = S\times
 E$ is open because the relevant moduli of branes are typically
 non-quasicompact in $\Lambda_S$-charge; the sectorial truncation of
-\S\ref{sec:k3xe-hybrid-ran-carrier} is the candidate truncation,
-conditional on the four obstructions of
-\S\ref{sec:k3xe-four-obstructions}.
+\S\ref{sec:k3xe-hybrid-ran-carrier} is the finite-stage carrier, and
+the compact-source recognition datum \((S1)\)--\((S10)\) is the
+remaining finite recognition problem.
+At finite stage the retained-moduli assertion is represented by the
+tables \(\mathrm{hn\_type\_bounds}\),
+\(\mathrm{semistable\_substacks}\), \(\mathrm{derived\_enhancements}\),
+\(\mathrm{universal\_complexes}\), \(\mathrm{scalar\_rigidifications}\),
+\(\mathrm{stratifications}\), \(\mathrm{extension\_flag\_stacks}\),
+\(\mathrm{cosection\_atlas}\), \(\mathrm{transitions}\), and
+\(\mathrm{scalar\_firewall}\), not by the scalar Hilbert-scheme test.
+At present the packet
+\(\texttt{certificates/moduli/k3e\_finite\_moduli}\) supplies only the
+obstruction ledger
+\(\texttt{MODULI\_OBSTRUCTION\_LEDGER\_VERIFIED}\), with
+\(\texttt{moduli\_certification=false}\).
 \end{remark}
 
-% =====================================================================
-\section{The four obstructions and the conditional comparison target}
+\section{The four obstructions and the comparison target}
 \label{sec:k3xe-four-obstructions}
-% =====================================================================
 
-The hybrid carrier and the source interface produce a candidate compact
-holomorphic $E_3$-factorization algebra and its $K3$-specialization to a
-chiral object on $\operatorname{Ran}^{\mathrm{hyb}}(E)$.  The
+The hybrid carrier and the source datum are supplied as a finite
+holomorphic $E_3$-prefactorization datum and a \(K3\)-to-\(E\)
+specialization datum on $\operatorname{Ran}^{\mathrm{hyb}}(E)$.  The
 cross-level comparison
 $\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}}) =
-\Delta_5$ is conditional on four obstruction classes, each named and
-discharged on $K3\times E$ in Appendix~\ref{app:obstruction-discharges}
+\Delta_5$ holds on \(K3\times E\) relative to four retained data,
+with \((O2)\) represented by the retained wall-atlas datum of
+Appendix~\ref{app:obstruction-discharges}
 (Theorems~\ref{thm:G-D0}, \ref{thm:G-O1}, \ref{thm:G-O1-plus},
-\ref{thm:G-O2-orbit-transport}).  The chapter records them here as the
-conditioning data feeding Chapter~\ref{chap:dirac-igusa-pro-object}.
+\ref{thm:G-O2-orbit-transport}).  They are the orientation and
+Pfaffian data feeding
+Chapter~\ref{chap:dirac-igusa-pro-object}.
 
 \begin{description}
 \item[$(\mathrm{D0})$ {\rm D0-degeneration limit.}]
-The cosection-reduced d-critical orientation theory on
-$\mathrm{Hilb}^n(X)\times\mathrm{Sym}^n(X)$, in the D0-degeneration limit
-$n\to\infty$, supplies the orientation line on the local stratum
-(proved on $K3\times E$, Theorem~\ref{thm:G-D0}).
+The retained D0-HN datum of Definition~\ref{def:G-D0-HN-system}
+supplies the flat D0-degeneration family, additive K3 semiregularity
+cosections, reduced vanishing-cycle and orientation specializations,
+Pfaffian-line extension, and strict HN transitions
+(criterion Theorem~\ref{thm:G-D0}).
 \item[$(\mathrm{O1})$ {\rm Strong reduced orientation.}]
 The K3$\times$E-quotient self-Ext frame bundle carries a strong reduced
 orientation on the wrapped stratum, descending the BBDJS orientation
-line $o_c$ across the $E$-quotient (proved on $K3\times E$,
-Theorem~\ref{thm:G-O1}).
+line $o_c$ across the $E$-quotient relative to
+\((O1_{\mathrm{quot}})\) (Theorem~\ref{thm:G-O1}).
 \item[$(\mathrm{O1}^+)$ {\rm Weyl-equivariant transport.}]
 The orientation transports $W^{(2)}(\Lambda_{II}^{2, 1})$-equivariantly
-along reflections, fixing the orientation character
-$\epsilon_o = \nu_{\Delta_5}$ on the BKM Weyl group (proved on
-$K3\times E$, Theorem~\ref{thm:G-O1-plus}).
+along reflections relative to the chosen Weyl lifts
+(Theorem~\ref{thm:G-O1-plus}); after the type-II wall atlas supplies
+the rank-one local signs, the transported character agrees with
+$\nu_{\Delta_5}$ on the BKM Weyl group.
 \item[$(\mathrm{O2})$ {\rm Local Pfaffian wall normal form.}]
 On type-II walls of $\Lambda_{II}^{2, 1}$, the local Pfaffian wall
-normal form is the $4096 = 2^{12}$ sign sum on the half-Hilbert orbit
-(proved on $K3\times E$, Theorem~\ref{thm:G-O2-orbit-transport}).
+normal form is the rank-one crossing
+$[\mathbb R\xrightarrow{u}\mathbb R]$; the retained
+\((O2_{\mathrm{atlas}})\) datum transports these local signs over the
+half-Hilbert orbit, whose sign support has cardinality
+$4096 = 2^{12}$ (Theorem~\ref{thm:G-O2-orbit-transport}).
 \end{description}
 
 The protected scalar shadow on the closed K3$\times$E$\to$point
 cobordism is the OP/DT identity
 \[
-Z^X_{\mathrm{DT}}(T, Q, P)
-= Z^X_{\mathrm{OP}}(P, Q, T)
+Z^X_{\mathrm{DT}}
+= Z^X_{\mathrm{OP}}(P_{\mathrm{OP}}, Q_{\mathrm{OP}}, T_{\mathrm{OP}})
 = -4096\,\Delta_5(Z)^{-2}
-\qquad\text{(proved/$\beta$, \cite{OB,OPand,DT}).}
+\qquad\text{(proved, \cite{OB,OPand,DT}).}
 \]
 Equivalently $\chi_{10}^{\mathrm{OP}} = (64^{-1}\Delta_5)^2 = 4096^{-1}\Delta_5^2$
 and $Z^X_{\mathrm{OP}} = -(\chi_{10}^{\mathrm{OP}})^{-1}$; the factor
@@ -1302,19 +3448,19 @@ Z_{\mathrm{BPS}}^{K3\times E}
 = (\Phi_{10}^{\mathrm{un}})^{-1}
 = \Delta_5^{-2}
 \]
-is the level-$n$ protected trace of $\mathfrak A_{K3\times E}$ on the
+is the level-$n$ protected trace of the retained \(K3\times E\) data on the
 closed cobordism in the unnormalized convention $\Phi_{10}^{\mathrm{un}}
-= \Delta_5^2$; the squared scalar cannot recover the orientation
-character that distinguishes $\Delta_5$ from $-\Delta_5$.  Promotion to a
-$3d$ gravitational path integral requires the Hall--Borcherds residual
+= \Delta_5^2$; the inverse-square scalar cannot recover the orientation
+character that distinguishes $\Delta_5$ from $-\Delta_5$.  A
+\(3d\) gravitational path-integral realization requires the Hall--Borcherds residual
 of \cite{ChiralBarCobarVolII} and is not claimed.  The conditional
 cross-level identity
 $\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}}) =
 \Delta_5$ supplies the orientation/Pfaffian datum under
 $(\mathrm{D0}), (\mathrm{O1}), (\mathrm{O1}^+), (\mathrm{O2})$.
 
-\begin{remark}[Cross-volume consistency]
-\label{rem:cross-volume-consistency}
+\begin{remark}[Compatibility of the \(\kappa\)-tuple]
+\label{rem:kappa-tuple-compatibility}
 The $\kappa$-tuple $(0, 0, 3, 5, 24)$ is consistent across
 \cite{CYQGVolIII} (Vol III), the Hall--Borcherds
 residual of \cite{ChiralBarCobarVolII} (Vol II), and the
@@ -1325,27 +3471,26 @@ $\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}$ + brane completion of
 holomorphic de Rham obstruction class on the global target; the
 identity $Z_{\mathrm{BPS}}^{K3\times E} = \Delta_5^{-2}$ does not
 promote to the global target via formal Hamiltonian BF, and the
-Hall--Borcherds residual is the cross-volume bridge.
+Hall--Borcherds residual is the remaining chain-level bridge.
 \end{remark}
 
-% =====================================================================
-\section{Notation summary and chapter outputs}
+\section{Notation and fixed data}
 \label{sec:k3xe-notation-summary}
-% =====================================================================
 
 \begin{description}
 \item[$X = S\times E$.]
-Smooth complex projective Calabi--Yau threefold; $S$ is a K3 surface,
-$E$ a smooth elliptic curve.  $\dim_\C X = 3$.
+Smooth complex projective trivial-canonical threefold; $S$ is a K3
+surface, $E$ a smooth elliptic curve.  $\dim_\C X = 3$ and
+\(h^{1,0}(X)=1\).
 \item[$\Lambda_S$.]
 Mukai lattice; even unimodular signature $(4, 20)$.
 $\Lambda_S\cong U^{\oplus 4}\oplus E_8(-1)^{\oplus 2}\cong II_{4, 20}$.
 \item[$\Gamma_X^{\mathrm{form}}, \Gamma_X^{\mathrm{phys}}$.]
 Formal full-Mukai dyonic lattice $\Lambda_S\oplus\Lambda_S$.  The
-superscript ``$\mathrm{phys}$'' is mnemonic only; not the
+superscript ``$\mathrm{phys}$'' denotes this formal even branch, not the
 $\mathcal N = 4$ charge lattice.
 \item[$\Gamma_X^{\mathrm{alg}},\Gamma_{X, \sigma}^{\mathrm{eff}}$.]
-Algebraic K-class lattice $\subset\Gamma_X^{\mathrm{form}}$; supplied
+Algebraic K-class lattice $\subset\Gamma_X^{\mathrm{form}}$; chosen
 $\sigma$-effective semigroup $\subset\Gamma_X^{\mathrm{alg}}$.
 \item[$\Gamma_{\mathrm{gram}} = \Z^3$.]
 Gram-index lattice, $(n, l, m)$.
@@ -1361,17 +3506,20 @@ Normal-ordered extension $\Gamma_X^{\mathrm{form}}\oplus_B\Gamma_{\mathrm
 Additive normal-ordered Gram homomorphism $\overline\Pi_X(c, T) =
 \Pi_X(c) - T$.
 \item[$\operatorname{Ran}^{\mathrm{hyb}}(E)$.]
-Hybrid carrier $\operatorname{Ran}(E)_{b = 0}\sqcup\operatorname{Ran}^{\mathrm{wr}}(E)_{b > 0}$
-on the elliptic factor.
+Finite-stage hybrid prestack on the elliptic factor, with local
+\(b=0\) subprestack
+\(\operatorname{Ran}^{\mathrm{loc}}_{R,\mathrm{pre}}(E)\) and wrapped
+\(b>0\) subprestack
+\(\operatorname{Ran}^{\mathrm{wr}}_{R,\mathrm{pre}}(E)\).
 \item[$\mathcal D_X = \Delta_5$, $\mathrm{den}(\mathfrak g_{\Delta_5})$,
 $\mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})$.]
-Three named scalars at level five: automorphic section, BKM denominator,
+Three named weight-five objects: automorphic section, BKM denominator,
 compact Pfaffian (View \textcircled{1}, \textcircled{2}, \textcircled{3}).
 \end{description}
 
-The chapter outputs are: (a) the formal Mukai sector
+The fixed data are: (a) the formal Mukai sector
 $\Gamma_X^{\mathrm{form}} = \Lambda_S\oplus\Lambda_S$ and its three-tier
-support hierarchy; (b) the lattice polarization $B = -\delta\Pi_X$ as the
+support hierarchy; (b) the bilinear polarization \(B = -\delta\Pi_X\) as the
 full structural content of the Gram defect; (c) the normal-ordered
 extension $\widehat\Gamma_X$ with additive homomorphism
 $\overline\Pi_X$, fixed by the fixed-lift raw-pushforward obstruction
@@ -1379,18 +3527,14 @@ theorem; (d) the hybrid Ran carrier
 $\operatorname{Ran}^{\mathrm{hyb}}(E)$, fixed by the projection-locality
 obstruction; (e) the connected/finite split of the $E$-descent classes,
 with the linearization criterion separated from the gerbe class; (f)
-the local protected observable algebra source interface, supplied as
+the local protected observable algebra source datum, taken as an
 external assumption; (g) the four obstructions
 $(\mathrm{D0}), (\mathrm{O1}), (\mathrm{O1}^+), (\mathrm{O2})$
 conditioning the cross-level identity ②$\leftrightarrow$③.
 
-Chapter~\ref{chap:dirac-igusa-pro-object} consumes these outputs as fixed
-input data and constructs the Dirac--Igusa pro-object $\mathfrak D_X^{
+Chapter~\ref{chap:dirac-igusa-pro-object} constructs from these fixed
+data the Dirac--Igusa pro-object $\mathfrak D_X^{
 \mathrm{DI}} = \lim_R(\mathcal A_{X, R}^{E_3}, F_{X, R}^{\mathrm{hyb}},
 \Gamma_{X, R}, \Pi_X, \Phi_R, o_R, H_R, P_R^\Pi, C_{X, R},
 \Theta_{\mathrm{Kos}, R}, \mathcal L_{\mathrm{Pf}, R}, \mathrm{pf}_{X, R},
 \epsilon_{o, R}, \mathrm{Rec}_R)$.
-
-% =====================================================================
-% End of Chapter 2.
-% =====================================================================

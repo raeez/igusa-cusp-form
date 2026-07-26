@@ -1,0 +1,13 @@
+firewall_id,forbidden_substitute,excluded,defect_rank,source_reference,check_status,notes
+firewall_determinant_anchor_only,determinant_anchor_only,true,0,chapters/02_k3xe_setup.tex:prop:determinant-anchor-chi-zero-degeneracy,verified,determinant anchor alone is constant on chi zero translation orbits
+firewall_translation_weight_only,translation_weight_only,true,0,certificates/hybrid/determinant_anchor_translation_weight/README.md:1,verified,weight computation exposes but does not repair chi zero degeneracy
+firewall_extra_anchor_constructed,extra_anchor_data_constructed,true,0,materials/processed/2026-06-05-k3xe-research-paper-optimization.txt:1170,verified,row 215 requires extra anchor data but row 216 constructs it
+firewall_anchor_residual,anchor_residual,true,0,materials/processed/2026-06-05-k3xe-research-paper-optimization.txt:1171,verified,row 217 defines the anchor residual separately
+firewall_losslessness,anchor_losslessness,true,0,chapters/05_subsections/05_1_hybrid.tex:def:hybrid-wrapped-factorization-datum,verified,degeneracy handling is not anchor losslessness
+firewall_quotient_descent,quotient_descent,true,0,chapters/05_subsections/05_1_hybrid.tex:def:hybrid-wrapped-factorization-datum,verified,chi zero degeneracy handling is before quotient descent
+firewall_stabilizer_linearization,stabilizer_linearization,true,0,chapters/02_k3xe_setup.tex:rem:translation-linearization-criterion,verified,class invariance at chi zero is not a coherent stabilizer linearization
+firewall_mod2_orientation,mod2_orientation_character,true,0,chapters/02_k3xe_setup.tex:rem:mod2-not-odd-order,verified,mod two orientation character does not repair determinant-anchor degeneracy
+firewall_fock,scalar_Fock_factor,true,0,chapters/05_subsections/05_1_hybrid.tex:def:hybrid-wrapped-factorization-datum,verified,a scalar Fock factor is not chi zero anchor data
+firewall_borcherds_degree,Borcherds_s_degree,true,0,certificates/hybrid/geometric_borcherds_degree_separation/README.md:1,verified,the Borcherds trace degree does not repair Pic0 anchor degeneracy
+firewall_ordinary_ran,ordinary_Ran_only,true,0,chapters/05_subsections/05_1_hybrid.tex:def:hybrid-ran-prestack,verified,ordinary Ran locality has no wrapped determinant-anchor degeneracy repair
+firewall_empty_hybrid,empty_hybrid_carrier,true,0,certificates/hybrid/k3e_hybrid_carrier/manifest.json:1,verified,the empty carrier scaffold has no chi zero anchor payload

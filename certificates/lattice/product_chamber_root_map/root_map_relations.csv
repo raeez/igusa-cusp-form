@@ -1,0 +1,6 @@
+relation_id,relation_kind,computed_value,expected_value,defect_rank,source_reference,check_status,notes
+alpha_formula,coordinate_identity,1,1,0,compute/verify_product_chamber_root_map_fixture.py alpha,verified,alpha formula equals 2nf2-lf3+2mf-2 on all rows
+delta_basis_formula,coordinate_identity,1,1,0,compute/verify_product_chamber_root_map_fixture.py delta_coeffs,verified,delta basis formula equals n delta1+m delta2+(n+m-l)delta3 on all rows
+active_nonnegative_delta3,inequality,1,1,0,weak Jacobi support plus Gamma_eff chamber; checked on fixture rows,verified,active rows have nonnegative delta-basis coefficients
+inactive_zero_exponent,zero_exponent,1,1,0,definition Gamma_act and phi_01 coefficient check,verified,inactive rows in the fixture have zero exponent
+gamma_eff_sector_closure,sector_closure,1,1,0,Appendix B Gamma_eff sector definition,verified,sector closure rows cover Gamma_eff product decompositions

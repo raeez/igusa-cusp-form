@@ -1,0 +1,41 @@
+{
+  "schema_version": "rhomred_weyl_orientation_cocycle_cochain_transition_obstruction.v1",
+  "fixture_name": "rhomred_weyl_orientation_cocycle_cochain_transition",
+  "orientation_kind": "rhomred_weyl_orientation_cocycle_cochain_transition_obstruction",
+  "status": "RHOMRED_WEYL_ORIENTATION_COCYCLE_COCHAIN_TRANSITION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "cochain_trivialization_imported": true,
+  "transition_orientation_imported": true,
+  "orientation_obstruction_imported": true,
+  "transition_compatibility_criterion_recorded": true,
+  "cochain_vector_rows_supplied": false,
+  "transition_cochain_map_rows_supplied": false,
+  "cocycle_pullback_rows_supplied": false,
+  "cochain_transition_defect_rows_supplied": false,
+  "gauge_compatibility_rows_supplied": false,
+  "two_step_coherence_rows_supplied": false,
+  "cochain_transition_compatibility_proved": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "transition_cochain_map_rows.csv",
+    "cochain_transition_defect_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_orientation_cocycle_cochain_trivialization",
+    "certificates/orientation/transition_orientation_preservation",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies row 312 only as the criterion for transition compatibility of the chosen Coxeter cochains.",
+    "The imported row-311 packet contains no cochain vector b_R.",
+    "The transition-orientation packet contains no Coxeter cochain transition row.",
+    "The reduced-orientation transition table is empty.",
+    "It does not compute the torsor defects omega_i,C of rows 313--314."
+  ]
+}

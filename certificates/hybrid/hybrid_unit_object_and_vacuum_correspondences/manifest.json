@@ -1,0 +1,33 @@
+{
+  "schema_version": "hybrid_unit_object_and_vacuum_correspondences.v1",
+  "fixture_name": "hybrid_unit_object_and_vacuum_correspondences",
+  "hybrid_kind": "hybrid_unit_definition",
+  "status": "HYBRID_UNIT_OBJECT_AND_VACUUM_CORRESPONDENCES_DEFINED",
+  "definition_only": true,
+  "unit_object_defined": true,
+  "unit_correspondences_defined": true,
+  "unit_correspondence_count": 4,
+  "local_unit_compatibility_proved": false,
+  "wrapped_unit_compatibility_proved": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "unit_object_rows.csv",
+    "unit_correspondence_rows.csv",
+    "local_unit_compatibility_rows.csv",
+    "wrapped_unit_compatibility_rows.csv",
+    "transition_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/moduli/retained_window_hn_filtration",
+    "certificates/hybrid/local_local_correspondence_definition",
+    "certificates/hybrid/mixed_local_wrapped_correspondence_definition",
+    "certificates/hybrid/higher_coloured_residual_vanishing_criterion"
+  ]
+}

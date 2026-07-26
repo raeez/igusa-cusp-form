@@ -1,0 +1,38 @@
+{
+  "schema_version": "rhomred_square_root_obstruction.v1",
+  "fixture_name": "rhomred_square_root",
+  "orientation_kind": "rhomred_square_root_obstruction",
+  "status": "RHOMRED_SQUARE_ROOT_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "rhomred_determinant_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "square_root_criterion_recorded": true,
+  "three_determinant_lines_inspected": true,
+  "square_root_rows_supplied": false,
+  "square_defect_zero": false,
+  "orientation_class_zero": false,
+  "mathematical_certification": false,
+  "w2_computed": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "inspected_orientation_tables.csv",
+    "square_root_obstruction_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_determinant",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies the obstruction ledger for row 278.",
+    "It records the Picard-groupoid criterion for a square root of the reduced determinant line and checks that the current reduced-orientation table supplies no square-root rows.",
+    "It does not construct a square-root orientation, compute w2, construct quotient orientation, prove transition compatibility, construct BBDJS vanishing cycles, or define protected integration."
+  ]
+}

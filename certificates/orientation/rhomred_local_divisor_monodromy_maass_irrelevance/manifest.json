@@ -1,0 +1,41 @@
+{
+  "schema_version": "rhomred_local_divisor_monodromy_maass_irrelevance.v1",
+  "fixture_name": "rhomred_local_divisor_monodromy_maass_irrelevance",
+  "orientation_kind": "rhomred_local_divisor_monodromy_maass_irrelevance",
+  "status": "RHOMRED_LOCAL_DIVISOR_MONODROMY_MAASS_IRRELEVANCE_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "local_divisor_monodromy_definition_imported": true,
+  "orientation_maass_comparison_imported": true,
+  "automorphic_maass_character_imported": true,
+  "domain_separation_recorded": true,
+  "no_meridian_to_automorphic_map_recorded": true,
+  "irrelevance_theorem_recorded": true,
+  "local_divisor_monodromy_rows_supplied": false,
+  "meridian_to_automorphic_comparison_supplied": false,
+  "nu_delta5_depends_on_local_monodromy": false,
+  "nu_delta5_evaluated_on_meridians": false,
+  "epsilon_o_extended_to_local_divisors": false,
+  "row329_simple_wall_orientation_computed": false,
+  "mathematical_certification": true,
+  "tables": [
+    "source_rows.csv",
+    "irrelevance_rows.csv",
+    "comparison_map_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_local_divisor_monodromy_definition",
+    "certificates/orientation/rhomred_weyl_orientation_maass_comparison",
+    "certificates/automorphic/delta5_maass_character"
+  ],
+  "limitations": [
+    "This packet proves row 328 as a domain-separation theorem.",
+    "No local divisor monodromy operators are supplied.",
+    "No meridian-to-automorphic comparison map is supplied.",
+    "It does not prove epsilon_o equals nu_Delta5 on W^(2).",
+    "It does not compute row 329 simple wall orientations."
+  ]
+}

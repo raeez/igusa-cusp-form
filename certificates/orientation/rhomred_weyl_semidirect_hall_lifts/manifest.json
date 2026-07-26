@@ -1,0 +1,46 @@
+{
+  "schema_version": "rhomred_weyl_semidirect_hall_lifts_obstruction.v1",
+  "fixture_name": "rhomred_weyl_semidirect_hall_lifts",
+  "orientation_kind": "rhomred_weyl_semidirect_hall_lifts_obstruction",
+  "status": "RHOMRED_WEYL_SEMIDIRECT_HALL_LIFTS_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "s3_extension_decision_imported": true,
+  "compact_hall_ledger_imported": true,
+  "partial_action_groupoid_imported": true,
+  "tau_transport_imported": true,
+  "transition_orientation_imported": true,
+  "semidirect_hall_lift_criterion_recorded": true,
+  "compact_hall_source_supplied": false,
+  "partial_action_groupoid_defined": false,
+  "tau_transport_constructed": false,
+  "transition_orientation_certified": false,
+  "semidirect_hall_lifts_supplied": false,
+  "orientation_transport_rows_supplied": false,
+  "semidirect_relation_rows_supplied": false,
+  "source_orientation_extension_claimed": false,
+  "mathematical_certification": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "semidirect_lift_rows.csv",
+    "semidirect_relation_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_weyl_orientation_s3_extension_decision",
+    "certificates/sources/k3e_compact_hall",
+    "certificates/orientation/rhomred_weyl_partial_action_groupoid",
+    "certificates/orientation/rhomred_weyl_wall_transport_tau",
+    "certificates/orientation/transition_orientation_preservation"
+  ],
+  "limitations": [
+    "This packet verifies row 325 only as a construction criterion and obstruction ledger.",
+    "No semidirect Hall lift rows are supplied.",
+    "No compact Hall source rows are supplied.",
+    "No orientation-line transport or determinant square-root compatibility rows are supplied for chamber transpositions.",
+    "It does not claim a geometric extension of epsilon_o to W^(2) semidirect S3."
+  ]
+}

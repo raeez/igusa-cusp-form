@@ -1,0 +1,42 @@
+{
+  "schema_version": "eight_word_binary_vocabulary.v1",
+  "fixture_name": "eight_word_binary_vocabulary",
+  "hybrid_kind": "eight_word_binary_vocabulary",
+  "status": "EIGHT_WORD_BINARY_VOCABULARY_DEFINED",
+  "alphabet_defined": true,
+  "type_product_defined": true,
+  "word_length": 3,
+  "word_count": 8,
+  "parenthesizations_defined": true,
+  "left_right_intermediate_types_defined": true,
+  "flag_stacks_constructed": false,
+  "associativity_certification": false,
+  "pentagon_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "alphabet_rows.csv",
+    "word_rows.csv",
+    "flag_stack_rows.csv",
+    "associativity_rows.csv",
+    "pentagon_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/mixed_correspondence_thom_sebastiani",
+    "certificates/moduli/retained_extension_closure"
+  ],
+  "limitations": [
+    "This packet defines only the local/wrapped alphabet, the binary type product, the eight length-three words, and the two parenthesization symbols.",
+    "It does not construct the two-step flag stacks.",
+    "It does not prove associativity, pentagon coherence, quotient descent, transition compatibility, or aggregate population.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/flag_atlas.csv."
+  ]
+}

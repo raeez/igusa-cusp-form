@@ -1,0 +1,36 @@
+{
+  "schema_version": "geometric_elliptic_degree_additivity_obstruction.v1",
+  "fixture_name": "geometric_elliptic_degree_additivity",
+  "hybrid_kind": "geometric_elliptic_degree_additivity_obstruction",
+  "status": "GEOMETRIC_ELLIPTIC_DEGREE_ADDITIVITY_OBSTRUCTION_VERIFIED",
+  "additivity_criterion_defined": true,
+  "additivity_certification": false,
+  "mathematical_certification": false,
+  "degree_map_definition_imported": true,
+  "retained_extension_closure_imported": true,
+  "retained_extension_closure_sufficient": false,
+  "borcherds_coordinate_substitute": false,
+  "tables": [
+    "definition_rows.csv",
+    "extension_pairs.csv",
+    "cycle_additivity_rows.csv",
+    "pushforward_additivity_rows.csv",
+    "degree_additivity_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/geometric_elliptic_degree_map",
+    "certificates/moduli/retained_extension_closure"
+  ],
+  "limitations": [
+    "This packet defines the finite-stage criterion for additivity of b_R^geom on retained extensions.",
+    "No retained extension-pair rows are supplied in the geometric degree packet.",
+    "No one-cycle additivity rows are supplied.",
+    "No p_E pushforward additivity rows are supplied.",
+    "No integer degree additivity rows are supplied.",
+    "No transition compatibility rows for additivity are supplied.",
+    "Retained extension closure alone only records that the middle HN word is retained."
+  ]
+}

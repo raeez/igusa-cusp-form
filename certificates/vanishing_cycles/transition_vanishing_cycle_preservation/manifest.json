@@ -1,0 +1,34 @@
+{
+  "schema_version": "transition_vanishing_cycle_preservation_obstruction.v1",
+  "fixture_name": "transition_vanishing_cycle_preservation",
+  "vanishing_cycle_kind": "transition_vanishing_cycle_preservation_obstruction",
+  "coefficient_ring": "ZZ",
+  "status": "TRANSITION_VANISHING_CYCLE_PRESERVATION_OBSTRUCTION_VERIFIED",
+  "vanishing_cycle_transition_certification": false,
+  "mathematical_certification": false,
+  "d0_packet_imported": true,
+  "transition_geometry_packet_imported": true,
+  "orientation_transition_packet_imported": true,
+  "imports": [
+    "certificates/d0/k3e_d0_hn",
+    "certificates/moduli/finite_moduli_transition_geometry",
+    "certificates/orientation/transition_orientation_preservation"
+  ],
+  "tables": [
+    "dcritical_chart_transitions.csv",
+    "cosection_compatibility.csv",
+    "vanishing_cycle_transport.csv",
+    "ts_base_change.csv",
+    "transition_defects.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet verifies the obstruction ledger for transition preservation of reduced vanishing cycles.",
+    "The D0-HN packet does not yet supply reduced vanishing-cycle specialization or transition rows.",
+    "The finite-moduli transition-geometry packet does not yet supply stack transition morphisms.",
+    "The orientation-transition packet does not yet supply Picard-groupoid orientation transport.",
+    "The core transition-vanishing-cycle tables are intentionally empty until chart-level transition rows and zero-defect rows are supplied.",
+    "It does not prove that transition maps preserve vanishing cycles."
+  ]
+}

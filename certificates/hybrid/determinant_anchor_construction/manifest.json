@@ -1,0 +1,50 @@
+{
+  "schema_version": "determinant_anchor_construction.v1",
+  "fixture_name": "determinant_anchor_construction",
+  "hybrid_kind": "determinant_anchor_construction",
+  "status": "DETERMINANT_ANCHOR_CONSTRUCTION_VERIFIED",
+  "determinant_anchor_constructed": true,
+  "pic0_valued": true,
+  "degree_normalization_defined": true,
+  "determinant_functoriality_certified": true,
+  "translation_weight_certification": false,
+  "unit_weight_certification": false,
+  "chi_zero_degeneracy_certification": false,
+  "extra_anchor_data_certification": false,
+  "anchor_residual_certification": false,
+  "anchor_losslessness_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "construction_rows.csv",
+    "degree_rows.csv",
+    "functoriality_rows.csv",
+    "translation_weight_rows.csv",
+    "unit_weight_rows.csv",
+    "chi_zero_degeneracy_rows.csv",
+    "extra_anchor_data_rows.csv",
+    "anchor_residual_rows.csv",
+    "anchor_losslessness_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/moduli/retained_universal_complexes",
+    "certificates/hybrid/wrapped_stratum_bpositive_prestack_definition",
+    "certificates/hybrid/source_target_anchor_memory_definition"
+  ],
+  "limitations": [
+    "This packet constructs the normalized determinant-of-cohomology anchor lambda_det(F) as a Pic^0(E)-valued map.",
+    "It verifies the degree-zero normalization and determinant-functor base-change needed for a morphism to the Picard functor.",
+    "It does not compute the E-translation weight; that row is separated in certificates/hybrid/determinant_anchor_translation_weight.",
+    "It does not pass to a finite cover to make unit translation weight.",
+    "It does not handle chi(F)=0 degeneracy; that row is separated in certificates/hybrid/determinant_anchor_chi_zero_degeneracy.",
+    "It does not add the Jordan-Hoelder extra-anchor data; that row is separated in certificates/hybrid/determinant_anchor_extra_anchor_data.",
+    "It does not define the anchor residual; that row is separated in certificates/hybrid/anchor_residual_definition.",
+    "It does not prove o_R^lambda=0, prove losslessness, prove quotient descent, or prove transition compatibility."
+  ]
+}

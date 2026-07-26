@@ -1,0 +1,34 @@
+{
+  "schema_version": "transition_parity_decomposition_preservation_obstruction.v1",
+  "fixture_name": "transition_parity_decomposition_preservation",
+  "hall_kind": "transition_parity_decomposition_preservation_obstruction",
+  "coefficient_ring": "ZZ",
+  "status": "TRANSITION_PARITY_DECOMPOSITION_PRESERVATION_OBSTRUCTION_VERIFIED",
+  "parity_transition_certification": false,
+  "mathematical_certification": false,
+  "compact_hall_packet_imported": true,
+  "primitive_transition_packet_imported": true,
+  "parity_pushforward_packet_imported": true,
+  "imports": [
+    "certificates/sources/k3e_compact_hall",
+    "certificates/hall/transition_primitive_subspace_preservation",
+    "certificates/charge/parity_pushforward"
+  ],
+  "tables": [
+    "parity_decomposition_rows.csv",
+    "parity_involutions.csv",
+    "parity_transition_matrices.csv",
+    "parity_comparison_squares.csv",
+    "transition_defects.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet verifies the obstruction ledger for transition preservation of parity decompositions.",
+    "The compact Hall source packet does not yet supply source parity blocks, parity-homogeneous bases, or parity involution rows.",
+    "The primitive-transition packet does not yet supply ambient transition matrices in parity-homogeneous bases.",
+    "The formal parity-pushforward packet preserves a supplied parity split under normal-ordered Gram pushforward but does not construct compact source parity transitions.",
+    "The core transition-parity tables are intentionally empty until parity decomposition, parity involution, block diagonal transition, comparison square, and composition rows are supplied.",
+    "It does not prove source parity equality, target parity equality, or lim1 vanishing on parity pieces."
+  ]
+}

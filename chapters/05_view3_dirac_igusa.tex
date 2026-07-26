@@ -8,10 +8,12 @@ identities: the Borcherds--Gritsenko--Nikulin section (View ①), the
 denominator of a generalized Borcherds--Kac--Moody Lie superalgebra
 $\mathfrak g_{\Delta_5}$ on the root lattice $\Lambda_{II}^{2,1}$
 (View ②), and the singular theta lift of the weight-zero index-one
-weak Jacobi form $\phi_{0,1}$ (View ⑤).  This chapter constructs the
-fourth side of the same object: the protected Pfaffian of a chiral
-$E_3$-algebra $\mathfrak A_{K3\times E}$ on the $K3\times E$ formal
-target, presented at finite stage as the Dirac--Igusa pro-object
+weak Jacobi form $\phi_{0,1}$ (View ⑤).  The
+View~\textcircled{3} datum is the protected Pfaffian line
+and compact source comparison for a finite
+\(E_3\)-prefactorization algebra on the \(K3\times E\) formal target,
+presented at finite stage as the
+Dirac--Igusa pro-object
 \[
 \mathfrak D_X^{\mathrm{DI}}
 =\varprojlim_R\bigl(
@@ -30,33 +32,362 @@ C_{X,R},
 \varepsilon_{o,R},
 \mathrm{Rec}_R\bigr)
 \]
-with eight build algorithms and four named obstructions.
+with eight finite constructions and four named obstructions.
 
-Throughout the chapter $S$ is a smooth complex K3 surface and $E$ is a
-smooth elliptic curve; singular K3 limits, nodal or cuspidal elliptic
+Let $S$ be a smooth complex K3 surface and let $E$ be a
+smooth elliptic curve.  Singular K3 limits, nodal or cuspidal elliptic
 degenerations, imprimitive curve-class contributions, the $s=0$
 compact Hall cusp, and multi-component charge closures belong to
-separate boundary data.  The three standing finite-stage hypotheses
+separate boundary data.  The standing finite-stage hypotheses
 are $[\textup{K3$\times$E-fin}]$ (finite-type semistable substacks at
 bounded HN height), $[\textup{K3$\times$E-atlas}]$ (finite
 d-critical/cosection Hall atlas), and $[\textup{ML}]$
-(Mittag--Leffler descent for the HN inverse system).
+(Mittag--Leffler descent for the HN inverse system).  Two further
+standing functorial inputs are $[\textup{$E_3$-HolFA}]$, a chosen
+finite holomorphic \(E_3\)-prefactorization model for
+\(\mathcal A_{X,R}^{E_3}\), including the BV quantum master equation,
+anomaly cancellation, locality, and framing/formality data needed to
+make the \(E_3\)-operations act on the retained finite stage, and
+$[\textup{$K3{\to}E$-sp}]$, a chosen chain-level specialization from
+the \(K3\)-direction to the hybrid chiral carrier on \(E\).
+At finite stage these two inputs are the table system
+\[
+\mathrm{formal\_target\_charts},\quad
+\mathrm{field\_complexes},\quad
+\mathrm{e3\_operations},\quad
+\mathrm{bv\_qme},\quad
+\mathrm{anomaly\_framing},\quad
+\mathrm{compact\_support},\quad
+\mathrm{factorization\_descent},\quad
+\mathrm{k3\_to\_e\_specialization},\quad
+\mathrm{transitions},\quad
+\mathrm{scalar\_firewall}.
+\]
+The scalar firewall excludes the automorphic section, the BKM
+denominator, the target current envelope, the protected trace, and the
+hybrid carrier as replacements for the compact \(E_3\)-source.
+The finite \(E_3\)-source packet
+\(\texttt{certificates/e3\_source/k3e\_e3\_holfa}\) currently supplies
+only the obstruction ledger
+\(\texttt{E3\_SOURCE\_OBSTRUCTION\_LEDGER\_VERIFIED}\), with
+\(\texttt{e3\_source\_certification=false}\).  Thus
+\([\textup{$E_3$-HolFA}]\) and \([\textup{K3$\to$E-sp}]\) are retained
+inputs until the formal-target, field-complex, \(E_3\)-operation,
+BV-QME, anomaly, compact-support, descent, specialization, transition,
+and scalar-firewall rows are supplied.
+The finite charge-window hypotheses are row-level data:
+\[
+\mathrm{active\_support},\quad
+\mathrm{window\_saturation},\quad
+\mathrm{liu\_hn\_window},\quad
+\mathrm{gram\_map},\quad
+\mathrm{cocycle\_identities},\quad
+\mathrm{normal\_ordered\_lifts},\quad
+\mathrm{target\_windows},\quad
+\mathrm{primitive\_lifts},\quad
+\mathrm{transitions},\quad
+\mathrm{scalar\_firewall}.
+\]
+The current finite charge-window packet is empty-blocked and supplies
+none of these rows.  The formal Mukai--Gram cocycle packet
+\(\texttt{certificates/charge/mukai\_gram\_cocycle}\) supplies only the
+chart-level identities for \(\Pi_X\), \(B\), the normal-ordered section,
+and \(\overline\Pi_X\).  It does not supply finite active support,
+Liu bounds, target-window images, primitive formal lifts, strict
+transitions, Mittag--Leffler rows, or the scalar firewall required for
+the finite charge window.
+The formal primitive-lift packet
+\(\texttt{certificates/charge/formal\_primitive\_lift}\) supplies only
+pointwise lattice lifts and the root grading
+\(\alpha(\Pi_X(Q,P))=2n f_2-l f_3+2m f_{-2}\) on the supplied formal
+rows.  It is not a replacement for finite charge-window rows,
+effectivity, compact support, source Hall brackets, Pfaffian
+orientations, or type-II wall atlases.
+The formal Gram-fibre packet
+\(\texttt{certificates/charge/gram\_fibre\_kernel}\) supplies only
+same-Gram fibre grouping, separate even/odd summation, the definition
+of \(K_{\Pi,0}=\Pi_X^{-1}(0,0,0)\), and the explicit fact that
+\(K_{\Pi,0}\) is not an additive subgroup.  It is not a source parity
+theorem, a Hopf radical, or an exactness theorem for a finite
+pushforward.
+The finite exactness packet
+\(\texttt{certificates/charge/fibre\_pushforward\_exactness}\) supplies
+only finite vector-space exactness of the fibre-summed Gram
+pushforward and a zero-fibre radical as a pairing kernel.  It is not
+the exact Hall pushforward, Hopf radical ideal/coideal closure, or
+bar-commutation datum required by the compact source theorem.
+The finite bar-pushforward packet
+\(\texttt{certificates/charge/bar\_pushforward\_commutation}\) supplies
+only tensor-coalgebra compatibility for the additive normal-ordered
+Gram grading.  It is not the raw quadratic \(\Pi_X\)-pushforward, the
+chiral Koszul quasi-isomorphism, Hall bracket compatibility, or Hopf
+pairing compatibility.
+The finite bracket-pairing pushforward packet
+\(\texttt{certificates/charge/hall\_pairing\_pushforward\_compatibility}\)
+supplies only degree compatibility for a supplied bracket and supplied
+homogeneous pairing after normal-ordered Gram pushforward.  It is not
+compact Hall geometry, primitive closure, Hopf adjointness, Frobenius
+cyclicity, quotient non-degeneracy, Pfaffian orientation, or protected
+trace data.
+The finite parity-pushforward packet
+\(\texttt{certificates/charge/parity\_pushforward}\) supplies only the
+super-vector-space identity that the additive normal-ordered Gram
+pushforward sums even and odd finite blocks separately.  Its signed
+superdimension rows are scalar shadows of the two parity ranks.  It is
+not a source parity theorem, the Gritsenko--Nikulin/Kac parity
+equality, compact source data, primitive recognition, Pfaffian
+orientation, or protected trace data.
+The finite PBW-pushforward packet
+\(\texttt{certificates/charge/pbw\_pushforward}\) supplies only the
+filtered-vector-space identity that the additive normal-ordered Gram
+pushforward preserves a supplied finite PBW filtration and its
+associated graded.  It is not the compact-source PBW comparison, target
+PBW comparison, no-extra-relations theorem, primitive recognition,
+Pfaffian orientation, or protected trace data.
+The finite triangular-pushforward packet
+\(\texttt{certificates/charge/triangular\_pushforward}\) supplies only
+the direct-sum identity that a supplied positive/Cartan/negative
+decomposition, checked by an integer height on Gram degrees, remains
+triangular after additive normal-ordered Gram pushforward.  It is not
+exact triangular completion, target triangular completion,
+compact-source primitive recognition, no-extra-relations, Pfaffian
+orientation, or protected trace data.
+The retained stability-heart packet
+\(\texttt{certificates/moduli/stability\_heart}\) supplies only the
+chosen Abramovich--Polishchuk/Liu heart
+\(\mathcal A_X^{\mathrm{AP/Liu}}\subset D^b(\mathrm{Coh}(S\times E))\)
+and its input data.  It verifies
+\texttt{STABILITY\_HEART\_DATUM\_VERIFIED}, but it is not
+noetherianity, HN existence, bounded HN type data, finite-type
+semistable moduli, derived enhancements, Pfaffian orientation, or
+protected trace data.
+The Liu product-stability packet
+\(\texttt{certificates/moduli/liu\_product\_stability}\) supplies the
+precise source-imported definition of \(\sigma_{s,t}\): the AP heart,
+the linear polynomial \(L_M(n)\), the coefficient homomorphisms
+\(a,b,c,d\), the weak charge \(Z_t\), the tilt by
+\((\mathcal T_t,\mathcal F_t)\), and the central charge
+\(Z_E^{s,t}\).  It verifies
+\texttt{LIU\_PRODUCT\_STABILITY\_DEFINED}, but it is not the
+AP-compatibility theorem, finite-type semistable moduli, derived
+enhancements, Pfaffian orientation, or protected trace data.
+The AP--Liu compatibility packet
+\(\texttt{certificates/moduli/ap\_liu\_compatibility}\) supplies
+Proposition~\ref{prop:ap-liu-heart-compatibility}: the retained heart
+\(\mathcal A_X^{\mathrm{AP/Liu}}\) is the Liu tilt
+\(\mathcal A_E^t=\langle\mathcal T_t,\mathcal F_t[1]\rangle\) of the
+Abramovich--Polishchuk heart \(\mathcal A_E^{\mathrm{AP}}\).  It
+verifies \texttt{AP\_LIU\_COMPATIBILITY\_VERIFIED}, but it is not
+noetherianity, HN existence, bounded HN type data, finite-type
+semistable moduli, derived enhancements, Pfaffian orientation, or
+protected trace data.
+The retained-window noetherian packet
+\(\texttt{certificates/moduli/retained\_window\_noetherian}\) supplies
+only the finite ACC theorem for a supplied subobject-closed and
+quotient-closed retained exact window with a strict length rank.  It
+verifies \texttt{RETAINED\_WINDOW\_NOETHERIAN\_VERIFIED}, but it is not
+global noetherianity of the AP/Liu heart, HN existence, bounded HN type
+data, finite-type moduli, derived enhancements, Pfaffian orientation,
+or protected trace data.
+The retained-window HN-filtration packet
+\(\texttt{certificates/moduli/retained\_window\_hn\_filtration}\)
+supplies only finite exact HN filtrations in the retained window: the
+quotient factors are semistable, the phases strictly decrease, and
+lengths add across the exact steps.  It verifies
+\texttt{RETAINED\_WINDOW\_HN\_FILTRATION\_VERIFIED}, but it is not a
+global HN theorem for the AP/Liu heart, bounded HN type data,
+finite-type moduli, derived enhancements, Pfaffian orientation, or
+protected trace data.
+The retained HN type-bound packet
+\(\texttt{certificates/moduli/retained\_hn\_type\_bounds}\) supplies
+only bounded HN type data in the active finite window.  It verifies
+\texttt{RETAINED\_HN\_TYPE\_BOUNDS\_VERIFIED}: the semistable factor
+alphabet is finite, HN words have bounded length, and the
+finite-moduli HN type rows are mirrored from the certified packet.  It
+is not finite-type semistable moduli, derived enhancements, universal
+complexes, Pfaffian orientation, or protected trace data.
+The retained semistable-substack packet
+\(\texttt{certificates/moduli/retained\_semistable\_substacks}\)
+supplies Proposition~\ref{prop:retained-finite-type-semistable-substacks}:
+each retained semistable HN factor type has a specialization-closed
+finite-type substack inside a bounded Quot/Postnikov ambient.  It
+verifies \texttt{RETAINED\_SEMISTABLE\_SUBSTACKS\_VERIFIED}, but it
+is not a derived enhancement, universal complex, rigidification,
+finite-inertia stratification, flag stack, cosection atlas,
+transition system, Pfaffian orientation, or protected trace datum.
+The retained derived-enhancement packet
+\(\texttt{certificates/moduli/retained\_derived\_enhancements}\)
+supplies Proposition~\ref{prop:retained-quasi-smooth-derived-enhancements}:
+each retained semistable substack has a quasi-smooth derived Artin
+enhancement with cotangent amplitude \([-1,0]\) and the restricted
+PTVV \((-1)\)-shifted symplectic form.  It verifies
+\texttt{RETAINED\_DERIVED\_ENHANCEMENTS\_VERIFIED}, but it is not a
+universal complex, rigidification, finite-inertia stratification, flag
+stack, cosection atlas, transition system, Pfaffian orientation, or
+protected trace datum.
+The retained rigidification-inertia packet
+\(\texttt{certificates/moduli/retained\_rigidification\_inertia}\)
+supplies
+Proposition~\ref{prop:retained-finite-residual-inertia-after-rigidification}:
+the scalar \(\mathbb G_m\) is removed from every retained derived
+substack, and the residual inertia group is finite with zero
+rigidification and inertia defects.  It verifies
+\texttt{RETAINED\_RIGIDIFICATION\_INERTIA\_VERIFIED}, but it is not a
+universal complex, finite closed inertia stratification, flag stack,
+cosection atlas, transition system, Pfaffian orientation, or protected
+trace datum.
+The retained class-bound packet
+\(\texttt{certificates/moduli/retained\_class\_bounds}\) supplies
+Proposition~\ref{prop:retained-finite-class-bounds}: the retained
+class set \(C_R\), the Hilbert-polynomial labels \(P_{c,i}\), the
+cohomological-amplitude intervals \([a_c,b_c]\), and the regularity
+bounds \(N_c\) are finite row data.  It verifies
+\texttt{RETAINED\_CLASS\_BOUNDS\_VERIFIED}, but it is not a universal
+complex, finite closed inertia stratification, flag stack, cosection
+atlas, transition system, Pfaffian orientation, or protected trace
+datum.
+The retained universal-complex packet
+\(\texttt{certificates/moduli/retained\_universal\_complexes}\)
+supplies Proposition~\ref{prop:retained-universal-perfect-complexes}:
+each retained scalar-rigidified finite substack carries a universal
+perfect complex with base-change compatibility, finite Tor amplitude,
+zero descent defect, and zero perfection defect.  It verifies
+\texttt{RETAINED\_UNIVERSAL\_COMPLEXES\_VERIFIED}, but it is not a
+finite closed inertia stratification, flag stack, cosection atlas,
+transition system, Pfaffian orientation, or protected trace datum.
+The retained \(E\)-translation-rigidification packet
+\(\texttt{certificates/moduli/retained\_e\_translation\_rigidifications}\)
+supplies
+Proposition~\ref{prop:retained-e-translation-rigidifications}: the
+elliptic-translation action is removed on every retained finite row
+with zero translation-rigidification defect.  It verifies
+\texttt{RETAINED\_E\_TRANSLATION\_RIGIDIFICATIONS\_VERIFIED}, but it
+is not a finite closed inertia stratification, flag stack, cosection
+atlas, transition system, Pfaffian orientation, or protected trace
+datum.
+The retained closed-substack packet
+\(\texttt{certificates/moduli/retained\_closed\_substacks}\) supplies
+Proposition~\ref{prop:retained-closed-substacks}: every retained
+finite row has a finite closed cover with finite residual inertia and
+zero coverage and inertia defects.  It verifies
+\texttt{RETAINED\_CLOSED\_SUBSTACKS\_VERIFIED}, but it is not closure
+under extensions, closure under HN factors, closure under duals, a flag
+stack, a cosection atlas, a transition system, a Pfaffian orientation,
+or a protected trace datum.
+The retained extension-closure packet
+\(\texttt{certificates/moduli/retained\_extension\_closure}\) supplies
+Proposition~\ref{prop:retained-extension-closure}: every supplied
+binary extension row has middle term in the retained finite HN word set
+with zero extension-closure defect.  It verifies
+\texttt{RETAINED\_EXTENSION\_CLOSURE\_VERIFIED}, but it is not an
+extension stack, a two-step flag stack, closure under HN factors,
+closure under duals, a cosection atlas, a transition system, a
+Pfaffian orientation, or a protected trace datum.
+The retained HN-factor-closure packet
+\(\texttt{certificates/moduli/retained\_hn\_factor\_closure}\) supplies
+Proposition~\ref{prop:retained-hn-factor-closure}: every HN factor of
+a retained finite HN word is represented by a retained class, a
+finite-type semistable substack, and a retained closed substack.  It
+verifies \texttt{RETAINED\_HN\_FACTOR\_CLOSURE\_VERIFIED}, but it is
+not a dual-closure datum, not an extension stack, not a two-step flag
+stack, not subquotient closure in flag stacks, not a cosection atlas,
+not a transition system, not a Pfaffian orientation, and not a
+protected trace datum.
+The retained dual-closure packet
+\(\texttt{certificates/moduli/retained\_dual\_closure}\) supplies
+Proposition~\ref{prop:retained-dual-closure}: the finite duality
+involution \(s_3\leftrightarrow s_1\), \(s_2\mapsto s_2\), together
+with reversal of HN words, preserves the retained finite HN word set
+with zero defect.  It verifies
+\texttt{RETAINED\_DUAL\_CLOSURE\_VERIFIED}, but it is not an extension
+stack, not a two-step flag stack, not subquotient closure in flag
+stacks, not a cosection atlas, not a transition system, not a Pfaffian
+orientation, and not a protected trace datum.
+The finite-moduli and atlas hypotheses are likewise row-level data:
+\[
+\mathrm{hn\_type\_bounds},\quad
+\mathrm{semistable\_substacks},\quad
+\mathrm{derived\_enhancements},\quad
+\mathrm{universal\_complexes},\quad
+\mathrm{scalar\_rigidifications},\quad
+\mathrm{stratifications},\quad
+\mathrm{extension\_flag\_stacks},\quad
+\mathrm{cosection\_atlas},\quad
+\mathrm{transitions},\quad
+\mathrm{scalar\_firewall}.
+\]
+These rows record the retained bounded Quot/Postnikov slices,
+quasi-smooth derived enhancements, universal complexes, scalar
+rigidifications, finite residual inertia, retained closed
+stratifications, retained extension closure, retained HN-factor
+closure, retained dual closure, compactified flag correspondences,
+d-critical/cosection charts, and strict transitions.
+Liu stability without the finite charge-window rows, a target charge
+window, or a Hilbert-scheme scalar test does not supply
+\([K3\times E\text{-fin}]\) or
+\([K3\times E\text{-atlas}]\).
+The finite-moduli packet
+\(\texttt{certificates/moduli/k3e\_finite\_moduli}\) currently records
+the HN-bound, semistable-substack, derived-enhancement, and
+rigidification-inertia rows, together with the finite class-bound
+rows, universal-complex rows, \(E\)-translation-rigidification rows,
+retained closed-substack rows, retained extension-closure rows,
+retained HN-factor-closure rows, and retained dual-closure rows.  The
+remaining rows stay in the obstruction ledger
+\(\texttt{MODULI\_OBSTRUCTION\_LEDGER\_VERIFIED}\), with
+\(\texttt{moduli\_certification=false}\).  Thus the full finite-type
+moduli and d-critical/cosection atlas inputs remain open until the
+flag-stack, cosection-atlas, transition, and scalar-firewall rows are
+supplied.
 
-The bar coalgebra is MC twisting, not bulk; the bulk is the imported
-Borcherds--Kac--Moody current envelope $\mathsf{Den}_{\Delta_5, E}$,
-and the cobar comparison $\Theta_{\mathrm{Kos}, R}$ is the
-source-to-target theorem on the hybrid source, not a target-internal
-counit.
+The bar coalgebra is MC twisting, not the level-\(\mathsf Z\) bulk.
+The imported Borcherds--Kac--Moody current envelope
+$\mathsf{Den}_{\Delta_5, E}$ is the target chiral shadow, and the
+cobar comparison $\Theta_{\mathrm{Kos}, R}$ is the source-to-target
+map on the hybrid source.  Its invertibility is the Koszul source
+datum, not a target-internal counit.
 
-\section*{The climax theorem}
+\section*{Construction theorem for the Dirac--Igusa package}
 
 \begin{theorem}[Construction of the Dirac--Igusa pro-object on $K3\times E$]
 \label{thm:ch5-construction-of-dirac-igusa-pro-object}
-Granted the four-obstruction discharge of
-Theorem~\ref{thm:G-four-obstruction-discharge} and the three standing
+Granted the first five components of the retained obstruction datum
+\(\mathfrak R_X^{\mathrm{DI}}\) of
+Definition~\ref{def:G-retained-obstruction-datum}, as used in
+Theorem~\ref{thm:G-four-obstruction-criterion}, and the standing
 finite-stage hypotheses
 $[\textup{K3$\times$E-fin}]$, $[\textup{K3$\times$E-atlas}]$, $[\textup{ML}]$,
-there exists a finite-stage Dirac--Igusa pro-object
+the standing hypotheses $[\textup{$E_3$-HolFA}]$ and
+$[\textup{$K3{\to}E$-sp}]$ through the finite compact-source proof
+tables above, the chiral Koszul source datum of
+Definition~\ref{def:chiral-koszul-source-datum}, its
+finite Koszul comparison datum of
+Definition~\ref{def:finite-koszul-comparison-datum}, its strict
+Mittag--Leffler exactness of
+Proposition~\ref{prop:chiral-koszul-source-datum-consequence}, and
+the cofinal primitive-recognition datum of
+Definition~\ref{def:cofinal-primitive-recognition-datum}, together
+with the finite-stage morphism proof tables of
+\S\ref{subsec:eight-finite-constructions} and the finite
+theorem-dependency ledger
+\[
+\mathrm{beilinson\_levels},\quad
+\mathrm{objects},\quad
+\mathrm{morphisms},\quad
+\mathrm{theorem\_dependencies},\quad
+\mathrm{dependency\_edges},\quad
+\mathrm{forbidden\_edges},\quad
+\mathrm{status\_separation},\quad
+\mathrm{level\_equalities},\quad
+\mathrm{equality\_sites},\quad
+\mathrm{definition\_separation},\quad
+\mathrm{obstruction\_independence},\quad
+\mathrm{transitions},\quad
+\mathrm{scalar\_firewall},
+\]
+verified only as the schema-complete theorem-dependency ledger and not
+as a certificate for the retained construction packets,
+the finite stages define a Dirac--Igusa pro-object
 \[
 \mathfrak D_X^{\mathrm{DI}}
 =\varprojlim_{R\in\mathcal R_{\mathrm{HN}}}\!\bigl(
@@ -76,8 +407,29 @@ C_{X,R},
 \mathrm{Rec}_R\bigr)
 \]
 on the moduli stack $\mathfrak M^{\mathrm{red},+}_c(X)$ of effective
-dyonic-class objects in the Bridgeland heart of
-Chapter~\ref{ch:k3xe-setup}, with the following typed structure:
+dyonic-class objects in the chosen stability heart of
+Chapter~\ref{ch:k3xe-setup}.  More precisely, the finite stages form a
+functor
+\[
+\mathcal R_{\mathrm{HN}}^{\mathrm{op}}\longrightarrow
+\mathsf{DI}^{\mathrm{fin}}_X
+\]
+in the finite-stage category of
+Definition~\ref{def:finite-stage-dirac-igusa-morphism}, and the
+displayed inverse limit is notation for the associated object of
+\(\operatorname{Pro}_{\mathcal R_{\mathrm{HN}}}(\mathsf{DI}^{\mathrm{fin}}_X)\).
+Componentwise inverse limits are asserted only for components whose
+strict Mittag--Leffler and \(R^1\varprojlim=0\) rows are supplied.  The
+universal property and cofinal presentation invariance are those of
+Proposition~\ref{prop:dirac-igusa-pro-object-universal-property}.  The
+dependence on the admissible parameter datum
+\((S,H,\sigma,E,0_E)\), base-change functoriality in \(S\) and \(E\),
+and the elliptic-origin character correction are those of
+Definitions~\ref{def:admissible-dirac-igusa-parameter-datum},
+\ref{def:polarization-origin-dependence} and
+Propositions~\ref{prop:admissible-base-change-functoriality} and
+\ref{prop:elliptic-origin-independence-character}.  The
+typed finite stages are:
 \begin{enumerate}
 \item[\textnormal{(L1)}] (\emph{Hybrid carrier},
 \S\ref{subsec:hybrid-ran-carrier}.)  $F_{X,R}^{\mathrm{hyb}}$ is the
@@ -85,75 +437,112 @@ hybrid wrapped factorization carrier on
 $\mathrm{Ran}^{\mathrm{hyb}}(E)$ over the elliptic factor, with
 local/wrapped/mixed atlas matching the type-II wall structure
 $\{\gamma(\delta_1),\gamma(\delta_2),\gamma(\delta_3)\}=\{(1,1,0),(0,1,1),(0,-1,0)\}$
-on $\Lambda^{2,1}_{II}$.
+on $\Lambda^{2,1}_{II}$, as computed in
+Proposition~\ref{prop:type-ii-wall-images}.  Compact Mukai-chart
+representatives for these three triples are constructed in
+Proposition~\ref{prop:type-ii-compact-mukai-representatives}; retained
+wall objects, wall charts, and protected integration remain O2 and
+hybrid inputs.
 \item[\textnormal{(L2)}] (\emph{Reduced d-critical orientation},
 \S\ref{subsec:cosection-twisted-orientation}.)
-$o_R\in H^1(\mathfrak M^{\mathrm{red},+}_{c,R}(X),\Z/2)$ is the
-cosection-twisted multiplicative Joyce--Upmeier orientation cocycle of
-Bojko \cite[Theorem~1.4]{Bojko}, surviving the strong reduced
-orientation conditions of
+$o_R$ is the reduced orientation datum: a square root of the reduced
+determinant line, Thom--Sebastiani transport on retained extension
+strata, null-trivialisations of the reduced and equivariant
+degree-two orientation gerbes, and zero finite-stabilizer
+linearization characters, as in
 Definition~\ref{def:O1-strong-reduced-orientation}.
 \item[\textnormal{(L3)}] (\emph{Hall correspondences},
 \S\ref{subsec:hall-correspondences}.)
-$H_R$ is the protected Hall product on
+$H_R$ is the finite protected Hall datum on
 $H^\bullet_c(\mathfrak M^{\mathrm{red},+}_{c,R}(X),
-\Phi_W\otimes o_R)$, supplying the Hall--Drinfeld correspondence to
-the level-3 object $G(X)$.
-\item[\textnormal{(L4)}] (\emph{Dirac operator and Pfaffian line},
+\Phi_W\otimes o_R)$: product, collision coproduct, primitive
+projection, and Hopf pairing on the cosection-reduced heart.  The
+comparison with the Drinfeld double \(G(X)=D(Y^+(X))\) requires the
+Hall pairing, integral form, stable-envelope transport, completion, and
+primitive-recognition data.
+\item[\textnormal{(L4)}] (\emph{First-order Dirac block and Pfaffian line},
 \S\ref{subsec:dirac-pfaffian}.)
 $\mathscr L_{\mathrm{Pf},R}$ is the Pfaffian line bundle on
 $\mathfrak Q_R=(\mathfrak M^{\mathrm{red},+}_{c,R}(X)/E)^{\mathrm{red}}$
-with finite Pfaffian sections $\operatorname{pf}_{X,R}$ assembled
+with finite Pfaffian sections $\operatorname{pf}_{X,R}$ carried
 into the inverse limit by Mittag--Leffler descent.
 \item[\textnormal{(L5)}] (\emph{Chiral Koszul source coalgebra},
 \S\ref{subsec:koszul-source}.)
-$C_{X,R}$ is the bar of the augmented hybrid factorization algebra,
-with chiral Koszul cobar map
-$\Theta_{\mathrm{Kos},R}:\Omega_E^{\mathrm{ch}}C_X\xrightarrow{\sim}
-\mathsf{Den}_{\Delta_5,E}$ the source-to-target identification.
+$C_{X,R}$ is the bar of the augmented binary/two-step hybrid
+correspondence algebra; it becomes the bar of a hybrid factorization
+algebra only after the higher-coloured residual vanishes.  The chiral
+Koszul cobar map
+$\Theta_{\mathrm{Kos},R}:\Omega_E^{\mathrm{ch}}C_X\longrightarrow
+\mathsf{Den}_{\Delta_5,E}$ is the source-to-target comparison and is a
+quasi-isomorphism under the chiral Koszul source datum and its
+Mittag--Leffler exactness.  Its compatibility with Weyl transport,
+Pfaffian orientation, Hall pairing, radical quotient, and PBW
+filtration is the finite Koszul comparison datum of
+Definition~\ref{def:finite-koszul-comparison-datum}.
 \item[\textnormal{(L6)}] (\emph{Primitive recognition},
 \S\ref{sec:ch6-primitive-recognition}.)
 $\mathrm{Rec}_R$ is the cofinal-window primitive recognition
 criterion (S1)--(S10) of
-Definition~\ref{def:cofinal-primitive-recognition-datum}, supplying
-the primitive part
-$P_X^{\Pi,\mathrm{red}}\simeq\mathfrak g_{\Delta_5}$.
-\item[\textnormal{(L7)}] (\emph{Eight build algorithms},
-\S\ref{subsec:eight-build-algorithms}.)
-The pro-object is computed by the eight finite-stage algorithms
-A1--A8 of Appendix~\ref{app:eight-build-algorithms}, run in order,
-with input/output/obstruction tuples typed at each step.
-\item[\textnormal{(L8)}] (\emph{Obstruction package},
+Definition~\ref{def:cofinal-primitive-recognition-datum}.  Under that
+finite compact-source datum, it identifies
+\(P_X^{\Pi,\mathrm{red}}\) with \(\mathfrak g_{\Delta_5}\).
+\item[\textnormal{(L7)}] (\emph{Eight finite constructions},
+\S\ref{subsec:eight-finite-constructions}.)
+The pro-object is the inverse limit of the eight finite constructions
+of Appendix~\ref{app:eight-finite-constructions}; its transition maps
+are the morphisms \(\rho_{RR'}\) of
+Definition~\ref{def:finite-stage-dirac-igusa-morphism}, and each
+component carries its obstruction class.
+\item[\textnormal{(L8)}] (\emph{Obstruction classes},
 \S\ref{subsec:ch6-obstructions}.)
-The four named obstructions $(D0)$, $(O1)$, $(O1)^+$, $(O2)$ are
-discharged on $K3\times E$ by
-Theorem~\ref{thm:G-four-obstruction-discharge}.
+The obstruction $(D0)$ is reduced on \(K3\times E\) to the retained
+D0-HN datum, $(O1)$ and $(O1)^+$ are reduced to retained orientation data, and $(O2)$ is reduced to
+\((O2_{\mathrm{atlas}})\), by
+Theorem~\ref{thm:G-four-obstruction-criterion}.
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-The pro-object is the inverse limit of the finite-stage data on the
-HN system $\mathcal R_{\mathrm{HN}}$.  Each finite-stage entry is
-constructed by one of the eight algorithms A1--A8 of
-Appendix~\ref{app:eight-build-algorithms}, and the inverse limit
-exists by the standing data
+The pro-object is represented by the functor of finite-stage data on
+the HN system $\mathcal R_{\mathrm{HN}}$.  The Pfaffian, orientation,
+Hall, and carrier entries are obtained from the finite constructions
+of Appendix~\ref{app:eight-finite-constructions}, and the functorial
+transition system is supplied by the fixed finite-stage data
 $[\textup{K3$\times$E-fin}]$, $[\textup{K3$\times$E-atlas}]$,
-$[\textup{ML}]$ together with the four-obstruction discharge of
-Theorem~\ref{thm:G-four-obstruction-discharge}.  The eight numbered
-data items $(\mathrm{L1})$--$(\mathrm{L8})$ are exactly the eight
-build algorithms in the input/output convention; the chapter's eight
-sections \S~\ref{subsec:hybrid-ran-carrier} through
-\S\ref{subsec:eight-build-algorithms} supply the technical content
-of each.
+$[\textup{ML}]$ together with the projections
+\((D0_{\mathrm{HN}},O1_{\mathrm{quot}},\mathcal T_W,O2_{\mathrm{atlas}})\)
+of \(\mathfrak R_X^{\mathrm{DI}}\).  The Koszul entry
+\(\Theta_{\mathrm{Kos},R}\) is supplied by the chiral Koszul source
+datum and its exact inverse-system condition.  The recognition entry
+\(\mathrm{Rec}_R\) is supplied by the finite compact-source
+recognition datum.  Thus $(\mathrm{L1})$--$(\mathrm{L8})$ are finite
+components with separate source, orientation, Hall, Koszul, Pfaffian,
+and recognition hypotheses, and their transition morphisms satisfy
+\textup{(M1)}--\textup{(M8)} by the finite morphism proof tables;
+no component is inferred from another.
 \end{proof}
 
 \medskip
 
-Entries $(\mathrm L 1)$--$(\mathrm L 8)$ are developed in turn.
-Each section supplies the typed input/output data, the local
-algorithm, and the obstruction class.  The full pseudocode is in
-Appendix~\ref{app:eight-build-algorithms}; the discharges are in
-Appendix~\ref{app:obstruction-discharges}.
+Entries $(\mathrm L 1)$--$(\mathrm L 8)$ are the finite constituents of
+\(\mathfrak D_X^{\mathrm{DI}}\).  Each constituent has its
+finite-stage morphism and obstruction class.  A section equality,
+denominator product, or scalar trace does not determine an isomorphism
+of Dirac--Igusa pro-objects unless the morphisms of
+Definition~\ref{def:finite-stage-dirac-igusa-morphism} and the
+pro-isomorphism of Definition~\ref{def:dirac-igusa-pro-isomorphism} are
+supplied with cofinality, component-map, composition-law,
+Mittag--Leffler, pro-isomorphism, and scalar-firewall rows.  The finite
+formulas are in
+Appendix~\ref{app:eight-finite-constructions}; the retained obstruction
+data are in Appendix~\ref{app:obstruction-discharges}.
+The current finite morphism packet
+\(\texttt{certificates/morphisms/k3e\_dirac\_igusa\_pro\_object}\)
+verifies only the obstruction ledger
+\(\texttt{MORPHISM\_OBSTRUCTION\_LEDGER\_VERIFIED}\), with
+\(\texttt{pro\_object\_certification=false}\).  Thus the present
+checked data record the missing pro-object morphism rows; they do not
+construct the transition functor or a pro-isomorphism.
 
 \input{chapters/05_subsections/05_1_hybrid}
 
@@ -167,7 +556,6 @@ Appendix~\ref{app:obstruction-discharges}.
 
 \input{chapters/05_subsections/05_6_primitive_recognition}
 
-\input{chapters/05_subsections/05_7_build_algorithms}
+\input{chapters/05_subsections/05_7_finite_constructions}
 
 \input{chapters/05_subsections/05_8_obstructions}
-

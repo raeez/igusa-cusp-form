@@ -1,0 +1,40 @@
+{
+  "schema_version": "rhomred_free_e_nulltrivialization_obstruction.v1",
+  "fixture_name": "rhomred_free_e_nulltrivialization",
+  "orientation_kind": "rhomred_free_e_nulltrivialization_obstruction",
+  "status": "RHOMRED_FREE_E_NULLTRIVIALIZATION_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "coefficient_ring": "F2",
+  "free_e_vanishing_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "nulltrivialization_criterion_recorded": true,
+  "connected_be_h1_zero_recorded": true,
+  "three_retained_strata_inspected": true,
+  "free_e_cocycles_supplied": false,
+  "free_e_zero_class_supplied": false,
+  "one_cochains_supplied": false,
+  "coboundary_defect_zero": false,
+  "nulltrivializations_supplied": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "nulltrivialization_obstruction_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_free_e_vanishing",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies the row-284 null-trivialization obstruction ledger.",
+    "It records the cochain criterion delta h_E_free = a_E_free for a Cech-Borel representative of the connected free E-Borel class.",
+    "It does not supply free-E cocycle representatives, prove alpha_E_free=0, construct one-cochains, verify coboundary-defect zero, construct quotient orientation, prove transition compatibility, construct BBDJS vanishing cycles, or define protected integration."
+  ]
+}

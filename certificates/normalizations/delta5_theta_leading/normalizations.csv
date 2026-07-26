@@ -1,0 +1,6 @@
+normalization_id,form_id,leading_monomial,scale_numerator,scale_denominator,base_leading,normalized_leading,source_reference,check_status,notes
+Delta5_theta_leading,Delta5,q_half_r_half_s_half,1,1,64,64,GN Theorem 4.1; Igusa theta-constant normalization; compute/verify_theta_product_identity.py,verified,theta-normalized Igusa cusp form; phase convention exp(pi i (z[l+a/2] + t(b) l)) per 03_view1_automorphic.tex sec:view1-theta-normalization; the +64 sign is convention-dependent
+Delta5_theta_leading_mumford,Delta5_mumford,q_half_r_half_s_half,1,1,-64,-64,Mumford theta-characteristic convention; compute/verify_theta_product_identity.py,verified,sign trap: the ten-even-theta product in the Mumford convention exp(pi i (z[l+a/2] + t(l+a/2) b)) equals -64*D5; the manuscript convention gives +64*D5
+D5_monic_leading,D5=64^{-1}Delta5,q_half_r_half_s_half,1,64,64,1,GN Theorem 2.1; BKM denominator normalization,verified,monic Borcherds product normalization
+Delta10_theta_square,Delta10=Delta5^2,q_r_s,1,1,4096,4096,Igusa chi10 normalization; Maass character squares trivially,verified,squared theta-normalized weight-ten form
+chi10_OP_monic,chi10_OP=D5^2,q_r_s,1,4096,4096,1,Oberdieck-Pixton monic convention; Oberdieck-Pandharipande,verified,OP monic weight-ten normalization

@@ -1,0 +1,28 @@
+{
+  "schema_version": "retained_hn_factor_closure.v1",
+  "fixture_name": "retained_hn_factor_closure",
+  "moduli_kind": "retained_hn_factor_closure",
+  "coefficient_ring": "ZZ",
+  "certified": true,
+  "hn_factor_closure": true,
+  "hn_factor_closure_defects_zero": true,
+  "extension_flag_stacks": false,
+  "subquotient_closure": false,
+  "dual_closure": false,
+  "cosection_atlas": false,
+  "transitions": false,
+  "compact_hall_stage": false,
+  "pfaffian_orientation": false,
+  "protected_trace": false,
+  "tables": [
+    "hn_factor_closure.csv",
+    "hn_factor_words.csv",
+    "formal_relations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet supplies retained HN-factor closure rows for every nonzero HN factor occurrence.",
+    "It verifies each factor against the retained class, semistable substack, and closed substack rows.",
+    "It does not prove compactified extension or two-step flag stacks, subquotient closure in flag stacks, cosection atlases, transitions, Pfaffian orientations, or protected traces. Dual closure is supplied by certificates/moduli/retained_dual_closure."
+  ]
+}

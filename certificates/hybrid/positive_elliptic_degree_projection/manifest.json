@@ -1,0 +1,26 @@
+{
+  "schema_version": "positive_elliptic_degree_projection.v1",
+  "fixture_name": "positive_elliptic_degree_projection",
+  "hybrid_kind": "positive_elliptic_degree_projection",
+  "status": "POSITIVE_ELLIPTIC_DEGREE_PROJECTION_VERIFIED",
+  "curve_theorem_certified": true,
+  "object_support_certification": false,
+  "degree_map_definition_imported": true,
+  "effective_cycle_required": true,
+  "borcherds_coordinate_substitute": false,
+  "tables": [
+    "theorem_rows.csv",
+    "support_realization_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/geometric_elliptic_degree_map"
+  ],
+  "limitations": [
+    "The packet proves the effective one-cycle projection theorem.",
+    "No retained object support-realization rows are supplied.",
+    "No populated b_R^geom degree rows are supplied.",
+    "A positive numerical degree without an effective support cycle is not enough for object-level projection."
+  ]
+}

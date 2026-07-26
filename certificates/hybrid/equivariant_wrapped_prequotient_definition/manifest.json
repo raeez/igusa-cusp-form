@@ -1,0 +1,47 @@
+{
+  "schema_version": "equivariant_wrapped_prequotient_definition.v1",
+  "fixture_name": "equivariant_wrapped_prequotient_definition",
+  "hybrid_kind": "equivariant_wrapped_prequotient_definition",
+  "status": "E_EQUIVARIANT_WRAPPED_PREQUOTIENT_DEFINITION_VERIFIED",
+  "prequotient_stacks_defined": true,
+  "e_action_defined": true,
+  "origin_fixed": true,
+  "wrapped_colour_preserved": true,
+  "retained_translation_imported": true,
+  "finite_type_certification": false,
+  "properness_certification": false,
+  "anchor_population_certification": false,
+  "anchor_losslessness_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "prequotient_rows.csv",
+    "e_action_rows.csv",
+    "translation_import_rows.csv",
+    "finite_type_rows.csv",
+    "properness_rows.csv",
+    "anchor_population_rows.csv",
+    "anchor_losslessness_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/wrapped_stratum_bpositive_prestack_definition",
+    "certificates/hybrid/geometric_elliptic_degree_map",
+    "certificates/moduli/retained_e_translation_rigidifications"
+  ],
+  "limitations": [
+    "This packet defines the scalar-rigidified wrapped prequotient stack before the reduced E-quotient.",
+    "It defines the E-translation action with origin 0_E and verifies the action law and wrapped-colour preservation.",
+    "It imports the retained E-translation rigidification packet only for the retained action rows.",
+    "Finite type is separated in certificates/hybrid/wrapped_prequotient_finite_type.",
+    "It does not prove properness for wrapped prequotients.",
+    "It does not populate final wrapped anchors or prove anchor losslessness.",
+    "It does not prove quotient descent or transition compatibility.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/wrapped_prequotients.csv."
+  ]
+}

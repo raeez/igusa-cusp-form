@@ -7,9 +7,11 @@ content that the orientation lane equips and the hybrid carrier
 indexes.  Three operations live here: the Hall product
 $m_R^{\mathrm{red}}$, the collision coproduct $\Delta_R^{\mathrm{ch}}$,
 and the primitive projection $P_R^{\Prim}$.  After normal-ordered
-Gram descent these form a graded Hopf datum on the protected
-primitive layer; recognition of this Hopf datum with the
-Borcherds--Kac--Moody target is the §5.6 obligation.
+Gram descent these form at most a graded bialgebra-and-primitive
+datum.  The word ``Hopf'' is reserved for the additional antipode data
+of Definition~\ref{def:finite-hall-antipode-datum}; recognition with
+the Borcherds--Kac--Moody target is the \S5.6 obligation only after
+that data and the radical quotient data have been supplied.
 
 The Kontsevich--Soibelman cohomological Hall algebra of a
 $3$-Calabi--Yau category \cite{KSCoHA} is the prototype; on
@@ -21,14 +23,67 @@ Schiffmann--Vasserot theorems on Drinfeld doubles of CoHA operate
 on the same input; their integral form is the Hall side of the
 present construction.
 
+\begin{definition}[Finite compact Hall object]
+\label{def:finite-geometric-hall-object}
+Fix a finite HN height \(R\) and a finite retained charge set
+\(\widehat\Gamma_R\).  A finite compact Hall object at height \(R\) is
+the \(\widehat\Gamma_R\)-graded object
+\[
+\mathcal H_R^{\mathrm{geom}}
+=
+\bigoplus_{\widehat c\in\widehat\Gamma_R}
+H_*^{\mathrm{BM}}\!\left(
+\mathfrak M^{\mathrm{red}}_{R,\widehat c},
+\Phi^{\mathrm{red}}_{R,\widehat c}\otimes
+o_{R,\widehat c}\right),
+\]
+where the summand is defined only after the following data are fixed:
+the finite-type retained rigidified stack
+\(\mathfrak M^{\mathrm{red}}_{R,\widehat c}\) with finite residual
+inertia, the cosection-reduced BBDJS vanishing-cycle complex
+\(\Phi^{\mathrm{red}}_{R,\widehat c}\), the Joyce--Upmeier orientation
+line \(o_{R,\widehat c}\), and an admissible compact-support
+Borel--Moore six-functor model giving finite-rank groups.  The parity
+is the cohomological parity of these Borel--Moore groups together with
+the orientation parity recorded in the source basis provenance.
+
+The object \(\mathcal H_R^{\mathrm{geom}}\) is only the finite
+coefficient object.  It does not include the Hall product, coproduct,
+unit, counit, Hopf pairing, radical quotient, PBW filtration, primitive
+subspace, normal-ordered Gram descent, or transition maps.  Those are
+additional source rows.  A scalar trace, Euler characteristic, signed
+root multiplicity, Pfaffian product, target root window, or denominator
+product is not a substitute for the displayed Borel--Moore direct sum.
+\end{definition}
+
+The packet
+\(\texttt{certificates/hall/finite\_geometric\_hall\_object}\)
+verifies
+\(\texttt{FINITE\_GEOMETRIC\_HALL\_OBJECT\_DEFINITION\_VERIFIED}\):
+it records Definition~\ref{def:finite-geometric-hall-object} as the row
+\(341\) definition and imports the retained finite-moduli packet, the
+reduced-orientation obstruction ledger, the transition
+vanishing-cycle obstruction ledger, and the compact Hall source
+obstruction ledger.  The present source packets do not yet populate
+\(\mathcal H_R^{\mathrm{geom}}\): no orientation-line rows,
+vanishing-cycle coefficient rows, object-component rows, source-degree
+rows, homogeneous basis provenance rows, or finite-rank rows are
+supplied.  Hence row \(341\) is a definition of the finite compact Hall
+object, not a proof that the compact \(K3\times E\) source stage has
+been populated.
+
 \subsubsection*{The compact Hall product}
 
 \begin{definition}[Compact Hall product on the cosection-reduced
 heart]
 \label{def:compact-hall-product}
 Let $\mathcal C_{\sigma,S,\le R}$ be the finite HN quotient of
-\S\ref{subsec:hybrid-ran-carrier}.  The compact Hall product at
-height $R$ is the operation
+\S\ref{subsec:hybrid-ran-carrier}.  Assume the retained Liu--Hilbert
+compactified correspondence and the compact-support pushforward of
+Proposition~\ref{prop:finite-dcritical-hall-product}, including finite
+residual inertia, base-change, projection-formula, Thom--Sebastiani, and
+quotient-after-correspondence coherences.  The compact Hall
+product at height $R$ is the operation
 \[
 m_R^{\mathrm{red}}=
 q_{c,c'}{}_!\circ\operatorname{TS}^{\mathrm{red}}_{c,c'}\circ p_{c,c'}^*:
@@ -39,19 +94,437 @@ H_*^{\mathrm{BM}}\!\bigl(\mathfrak M_c^\sigma\times\mathfrak M_{c'}^\sigma,
 H_*^{\mathrm{BM}}\!\bigl(\mathfrak M_{c+c'}^\sigma,
 \Phi_{c+c'}^{\mathrm{red}}\otimes o_{c+c'}\bigr)
 \]
-attached to the extension correspondence
+attached to the retained compactified extension correspondence
 \[
 \mathfrak M_c^\sigma\times\mathfrak M_{c'}^\sigma
-\xleftarrow{p_{c,c'}}\mathfrak E_{c,c'}^\sigma
+\xleftarrow{p_{c,c'}}\overline{\mathfrak E}_{c,c'}^{\mathrm{ret},\sigma}
 \xrightarrow{q_{c,c'}}\mathfrak M_{c+c'}^\sigma,
 \]
 in the cosection-reduced d-critical heart, with vanishing-cycle
 coefficients $\Phi^{\mathrm{red}}$, Joyce--Upmeier orientation lines
 $o$, and Thom--Sebastiani transport
-$\operatorname{TS}^{\mathrm{red}}_{c,c'}$.  Associativity on the
-finite stage is the eight-word two-step binary flag pentagon of
-\S\ref{subsec:hybrid-ran-carrier}, axiom (5).
+$\operatorname{TS}^{\mathrm{red}}_{c,c'}$.  This definition names the
+operator once the three functorial pieces \(p^*\),
+\(\operatorname{TS}^{\mathrm{red}}\), and \(q_!\) are supplied in the
+chosen six-functor model.  It does not prove that \(p^*\) exists, that
+\(q_!\) exists for the retained correspondence, or that \(q_!\) is
+independent of a compactification; these are separate functorial
+obligations.
+It also does not supply product matrices, associativity, transition
+compatibility, or primitive closure.  Associativity on the finite stage
+is the eight-word two-step binary flag pentagon together with the
+quotient-after-correspondence and HN-transition coherences of
+\S\ref{subsec:hybrid-ran-carrier}.
 \end{definition}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_product\_operator}\)
+verifies
+\(\texttt{FINITE\_HALL\_PRODUCT\_OPERATOR\_DEFINITION\_VERIFIED}\):
+it records the row \(342\) definition
+\[
+m_R^{\mathrm{red}}=q_!\operatorname{TS}^{\mathrm{red}}p^*
+\]
+and imports the row \(341\) finite compact Hall object, the
+compact-support exceptional pushforward model, the compact Hall source
+obstruction ledger, and the transition-Hall-product obstruction ledger.
+The present packets give only the formal product expression and the
+chosen compact-support notation.  They do not populate retained
+extension-correspondence rows, \(p^*\) rows, \(q_!\) rows, reduced
+Thom--Sebastiani rows on the Hall correspondence, product matrix rows,
+base-change or projection-formula rows, compactification-independence
+rows, associativity rows, or product-transition rows.
+
+\begin{proposition}[Pullback leg of the finite Hall product]
+\label{prop:finite-hall-product-pullback-existence}
+\textnormal{[six-functor criterion proved; retained \(p\)-row not supplied]}
+Let
+\[
+p_{c,c'}:\overline{\mathfrak E}_{R,c,c'}^{\mathrm{ret}}
+\longrightarrow
+\mathfrak M_{R,c}^{\mathrm{red}}\times
+\mathfrak M_{R,c'}^{\mathrm{red}}
+\]
+be a supplied retained extension-correspondence morphism at finite HN
+height \(R\).  Assume that \(p_{c,c'}\) is a finite-type morphism in
+the retained Artin-stack category on which the chosen constructible
+six-functor formalism is installed, and that the input coefficient
+\[
+K_{R,c,c'}=
+(\Phi^{\mathrm{red}}_{R,c}\otimes o_{R,c})
+\boxtimes
+(\Phi^{\mathrm{red}}_{R,c'}\otimes o_{R,c'})
+\]
+is a bounded constructible complex on the input product stack.  Then
+the pullback
+\[
+p_{c,c'}^*K_{R,c,c'}
+\in
+D^b_c(\overline{\mathfrak E}_{R,c,c'}^{\mathrm{ret}})
+\]
+exists in the same six-functor formalism.  This is the \(p^*\)-leg of
+the finite Hall product \(m_R^{\mathrm{red}}\).
+
+The present packets do not supply the hypotheses for the actual
+compact \(K3\times E\) Hall product.  The finite-moduli packet has no
+extension-stack rows, finite-type flag rows, source-map rows, or
+d-critical coefficient rows on the extension correspondence.  The row
+\(341\) finite-Hall-object packet has no object-component or
+coefficient rows.  The row \(342\) product-operator packet has no
+populated \(p^*\) rows.  The compact-support packet gives notation for
+compact-support pushforwards, not a populated pullback leg.  Hence row
+\(343\) is presently this pullback-existence criterion and obstruction
+ledger, not a proof that the retained Hall product has a populated
+\(p^*\)-leg.
+\end{proposition}
+
+\begin{proof}
+In a constructible six-functor theory on the retained finite-type
+Artin-stack category, every morphism \(p\) in the category carries a
+pullback functor
+\[
+p^*:D^b_c(Y)\longrightarrow D^b_c(X).
+\]
+The finite-type and constructibility hypotheses ensure that bounded
+constructible coefficients remain in the retained coefficient category
+after pullback.  Applying this to the supplied extension morphism
+\(p_{c,c'}\) and to \(K_{R,c,c'}\) gives the displayed object.  The
+argument uses only the pullback functor; it does not construct
+\(q_!\), prove Thom--Sebastiani compatibility, produce product
+matrices, or prove associativity.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_product\_pullback\_functor}\)
+verifies
+\(\texttt{FINITE\_HALL\_PRODUCT\_PULLBACK\_FUNCTOR\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(342\) product-operator packet, the finite-moduli
+obstruction ledger, the row \(341\) finite-Hall-object packet, and the
+compact-support model; it records the pullback-existence criterion; and
+it keeps the retained extension correspondence, finite-type \(p\)-map,
+constructible input coefficient, populated \(p^*\)-row, and product
+matrix rows open.
+
+\begin{proposition}[Exceptional pushforward leg of the finite Hall
+product]
+\label{prop:finite-hall-product-pushforward-existence}
+\textnormal{[compact-support criterion proved; retained \(q\)-row not
+supplied]}
+Let
+\[
+q_{c,c'}:\overline{\mathfrak E}_{R,c,c'}^{\mathrm{ret}}
+\longrightarrow
+\mathfrak M_{R,c+c'}^{\mathrm{red}}
+\]
+be a supplied retained extension-correspondence morphism at finite HN
+height \(R\), and let
+\[
+K_{\mathfrak E}\in
+D^b_c(\overline{\mathfrak E}_{R,c,c'}^{\mathrm{ret}})
+\]
+be the bounded constructible coefficient obtained after the preceding
+pullback and reduced Thom--Sebastiani transport.  Assume that
+\(q_{c,c'}\) lies in the chosen retained finite-type Artin-stack
+category with finite residual inertia and that one of the following
+two pieces of functorial data is supplied:
+\begin{enumerate}
+\item \(q_{c,c'}\) is proper in that category; or
+\item a compact-support model
+\[
+j_q:\overline{\mathfrak E}_{R,c,c'}^{\mathrm{ret}}
+\hookrightarrow
+\overline{\mathfrak E}_{q},\qquad
+\overline q:\overline{\mathfrak E}_{q}\to
+\mathfrak M_{R,c+c'}^{\mathrm{red}},
+\qquad
+q_{c,c'}=\overline q\circ j_q
+\]
+is supplied as in
+Definition~\ref{def:compact-support-exceptional-pushforward-model},
+with \(j_{q,!}K_{\mathfrak E}\) and
+\(\overline q_*j_{q,!}K_{\mathfrak E}\) in the same constructible
+six-functor formalism.
+\end{enumerate}
+Then the exceptional pushforward leg
+\[
+q^{\mathrm{cs}}_{c,c',!}K_{\mathfrak E}
+:=
+\overline q_*j_{q,!}K_{\mathfrak E}
+\in D^b_c(\mathfrak M_{R,c+c'}^{\mathrm{red}})
+\]
+exists; in the proper case it is the ordinary proper pushforward
+\(q_{c,c',*}K_{\mathfrak E}\).  This is the \(q_!\)-leg of the finite
+Hall product \(m_R^{\mathrm{red}}\).
+
+The present packets do not supply the hypotheses for the actual
+compact \(K3\times E\) Hall product.  The row \(342\) product operator
+records \(q_!\) only as notation.  The row \(343\) packet proves only
+the pullback criterion.  The finite-moduli ledger has no extension
+flag-stack row, no retained \(q\)-map row, no properness row for
+\(q\), and no d-critical coefficient row on the extension
+correspondence.  The compact-support model defines
+\(\overline q_*j_{q,!}\), but its map-population and
+choice-independence tables are empty.  The compact Hall source packet
+has no product matrix rows.  Hence row \(344\) is this exceptional
+pushforward criterion and obstruction ledger, not a proof that the
+retained Hall product has a populated \(q_!\)-leg.
+\end{proposition}
+
+\begin{proof}
+In the proper case, the six-functor formalism supplies the proper
+direct image
+\[
+q_{c,c',*}:D^b_c(\overline{\mathfrak E}_{R,c,c'}^{\mathrm{ret}})
+\longrightarrow
+D^b_c(\mathfrak M_{R,c+c'}^{\mathrm{red}}),
+\]
+and properness preserves constructibility.  In the compact-support
+case, the supplied open immersion gives extension by zero
+\[
+j_{q,!}K_{\mathfrak E}\in D^b_c(\overline{\mathfrak E}_{q}),
+\]
+and the supplied proper map \(\overline q\) gives the proper direct
+image
+\[
+\overline q_*j_{q,!}K_{\mathfrak E}
+\in D^b_c(\mathfrak M_{R,c+c'}^{\mathrm{red}}).
+\]
+This composite is exactly the compact-support exceptional pushforward
+of Definition~\ref{def:compact-support-exceptional-pushforward-model}.
+The argument does not compare two compactifications, prove base
+change or the projection formula, construct the reduced
+Thom--Sebastiani row, produce product matrices, or prove associativity.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_product\_pushforward\_functor}\)
+verifies
+\(\texttt{FINITE\_HALL\_PRODUCT\_PUSHFORWARD\_FUNCTOR\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(342\) product-operator packet, the row \(343\)
+pullback packet, the finite-moduli obstruction ledger, the row \(341\)
+finite-Hall-object packet, the compact-support model, and the compact
+Hall source obstruction ledger; it records the compact-support
+pushforward criterion; and it keeps the retained extension
+correspondence, retained \(q\)-map, properness or compactification
+row, constructible coefficient row, populated \(q_!\)-row,
+compactification independence, and product matrix rows open.
+
+\begin{proposition}[Compactification independence criterion for the
+Hall \(q_!\)-leg]
+\label{prop:finite-hall-product-qbang-compactification-independence}
+\textnormal{[common-refinement criterion proved; compactification pair
+not supplied]}
+Let
+\[
+q:\mathfrak E\longrightarrow Z
+\]
+be a supplied retained Hall target morphism at finite HN height \(R\),
+and let \(K_{\mathfrak E}\in D^b_c(\mathfrak E)\) be the bounded
+constructible coefficient on the correspondence source.  Suppose two
+compact-support models for \((q,K_{\mathfrak E})\) are supplied:
+\[
+j_i:\mathfrak E\hookrightarrow\overline{\mathfrak E}_i,\qquad
+\overline q_i:\overline{\mathfrak E}_i\to Z,\qquad
+q=\overline q_i\circ j_i,\qquad i=1,2,
+\]
+with \(\overline q_i\) proper.  Assume further that a common proper
+refinement is supplied:
+\[
+j_{12}:\mathfrak E\hookrightarrow\overline{\mathfrak E}_{12},
+\qquad
+r_i:\overline{\mathfrak E}_{12}\to\overline{\mathfrak E}_i,\qquad
+\overline q_{12}:\overline{\mathfrak E}_{12}\to Z,
+\]
+where the maps \(r_i\) and \(\overline q_{12}\) are proper and satisfy
+\[
+r_i\circ j_{12}=j_i,\qquad
+\overline q_i\circ r_i=\overline q_{12}.
+\]
+Finally assume that the extension-by-zero comparison morphisms
+\[
+r_{i,*}j_{12,!}K_{\mathfrak E}
+\xrightarrow{\;\sim\;}
+j_{i,!}K_{\mathfrak E},
+\qquad i=1,2,
+\]
+are isomorphisms in the chosen constructible six-functor formalism.
+Then the two compact-support pushforwards are canonically identified:
+\[
+\overline q_{1,*}j_{1,!}K_{\mathfrak E}
+\cong
+\overline q_{12,*}j_{12,!}K_{\mathfrak E}
+\cong
+\overline q_{2,*}j_{2,!}K_{\mathfrak E}.
+\]
+Thus \(q_!^{\mathrm{cs}}K_{\mathfrak E}\) is independent of the two
+compactifications whenever the common-refinement datum and the two
+comparison isomorphisms are supplied.
+
+The present packets do not supply the hypotheses for the actual
+compact \(K3\times E\) Hall product.  The compact-support model has
+only the abstract formula
+\(\overline q_*j_{q,!}\); its choice-independence table is empty.  The
+row \(344\) packet records the existence criterion for a supplied
+compactification, not a comparison between two choices.  The
+finite-moduli ledger has no retained \(q\)-map row, no compactification
+pair row, and no common-refinement row.  Hence row \(345\) is this
+common-refinement criterion and obstruction ledger, not a proof that
+the actual retained Hall \(q_!\)-leg is already independent of
+compactification.
+\end{proposition}
+
+\begin{proof}
+For \(i=1,2\), proper functoriality gives
+\[
+\overline q_{i,*}r_{i,*}
+=
+(\overline q_i\circ r_i)_*
+=
+\overline q_{12,*}.
+\]
+Composing this equality with the supplied comparison isomorphism
+\[
+r_{i,*}j_{12,!}K_{\mathfrak E}\simeq j_{i,!}K_{\mathfrak E}
+\]
+gives
+\[
+\overline q_{i,*}j_{i,!}K_{\mathfrak E}
+\simeq
+\overline q_{i,*}r_{i,*}j_{12,!}K_{\mathfrak E}
+=
+\overline q_{12,*}j_{12,!}K_{\mathfrak E}.
+\]
+The two choices \(i=1,2\) are therefore identified through the same
+middle object.  The proof uses only proper functoriality and the
+supplied extension-by-zero comparison maps; it does not construct the
+common refinement, prove base change or the projection formula, produce
+product matrices, or prove associativity.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_product\_compactification\_independence}\)
+verifies
+\(\texttt{FINITE\_HALL\_PRODUCT\_COMPACTIFICATION\_INDEPENDENCE\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(342\) product-operator packet, the row \(344\)
+pushforward packet, the finite-moduli obstruction ledger, the
+compact-support model, and the compact Hall source obstruction ledger;
+it records the common-refinement criterion; and it keeps the retained
+\(q\)-map, compactification-pair row, common-refinement row,
+comparison-isomorphism row, populated choice-independence row, and
+product matrix rows open.
+
+\begin{proposition}[Associativity criterion via retained two-step
+flags]
+\label{prop:finite-hall-product-associativity-two-step-flags}
+\textnormal{[two-step-flag criterion proved; populated \(m_R\)-rows
+not supplied]}
+Let \(c_1,c_2,c_3\in\widehat\Gamma_R\).  Suppose the finite Hall
+product legs
+\[
+m_{a,b}^{\mathrm{red}}
+=q_{a,b,!}^{\mathrm{cs}}\operatorname{TS}^{\mathrm{red}}_{a,b}p_{a,b}^*
+\]
+are supplied, choice-independent, and constructible for the four pairs
+\[
+(c_1,c_2),\quad (c_1+c_2,c_3),\quad
+(c_2,c_3),\quad (c_1,c_2+c_3)
+\]
+that occur in the two parenthesizations.  Assume also that a retained
+two-step extension flag stack
+\[
+\mathfrak F^{\mathrm{ret}}_{R;c_1,c_2,c_3}
+\]
+is supplied, with comparison morphisms to the two iterated
+correspondence fibre products
+\[
+\lambda:\mathfrak F^{\mathrm{ret}}_{R;c_1,c_2,c_3}\to
+\overline{\mathfrak E}^{\mathrm{ret}}_{R;c_1+c_2,c_3}
+\times_{\mathfrak M^{\mathrm{red}}_{R,c_1+c_2}}
+\overline{\mathfrak E}^{\mathrm{ret}}_{R;c_1,c_2},
+\]
+\[
+\rho:\mathfrak F^{\mathrm{ret}}_{R;c_1,c_2,c_3}\to
+\overline{\mathfrak E}^{\mathrm{ret}}_{R;c_1,c_2+c_3}
+\times_{\mathfrak M^{\mathrm{red}}_{R,c_2+c_3}}
+\overline{\mathfrak E}^{\mathrm{ret}}_{R;c_2,c_3}.
+\]
+Assume the squares defining \(\lambda\) and \(\rho\) satisfy the
+base-change isomorphisms for the relevant \(p^*\)- and \(q_!^{cs}\)
+legs, that the projection formula holds for the coefficient objects,
+and that the reduced Thom--Sebastiani identifications on the two
+parenthesizations agree on
+\(\mathfrak F^{\mathrm{ret}}_{R;c_1,c_2,c_3}\).  Finally assume that
+the two compact-support target pushforwards from the flag stack to
+\(\mathfrak M^{\mathrm{red}}_{R,c_1+c_2+c_3}\) are identified by the
+compactification-independence criterion of
+Proposition~\ref{prop:finite-hall-product-qbang-compactification-independence}.
+
+Then for all supplied constructible inputs
+\[
+K_i\in D^b_c(\mathfrak M^{\mathrm{red}}_{R,c_i}),\qquad i=1,2,3,
+\]
+there is a canonical associativity isomorphism
+\[
+m^{\mathrm{red}}_{c_1+c_2,c_3}
+\bigl(m^{\mathrm{red}}_{c_1,c_2}(K_1,K_2),K_3\bigr)
+\cong
+m^{\mathrm{red}}_{c_1,c_2+c_3}
+\bigl(K_1,m^{\mathrm{red}}_{c_2,c_3}(K_2,K_3)\bigr).
+\]
+After Borel--Moore homology and after choosing homogeneous bases, this
+is the rowwise associativity identity for the finite product matrix
+\(M_R\).
+
+The present packets do not supply the hypotheses for the actual
+compact \(K3\times E\) Hall product.  Rows \(342\)--\(345\) define the
+operator and record criteria for \(p^*\), \(q_!\), and
+compactification independence, but their populated product,
+pushforward, and independence tables are empty.  The hybrid two-step
+flag packet constructs the eight local/wrapped flag stacks and
+comparison maps before the reduced quotient; the wordwise
+associativity packets are conditional on functorial rows and do not
+populate the compact Hall carrier.  The compact Hall source packet has
+no product matrix entries and no Hall-bialgebra associativity rows.
+Hence row \(346\) is this associativity criterion and obstruction
+ledger, not a proof that the actual retained \(m_R\) is already
+associative as a populated finite matrix.
+\end{proposition}
+
+\begin{proof}
+Expand the left parenthesization by the definition of
+\(m^{\mathrm{red}}\).  It is the compact-support pushforward along the
+left iterated correspondence after pulling back
+\(K_1\boxtimes K_2\boxtimes K_3\) and applying reduced
+Thom--Sebastiani twice.  The right parenthesization is the analogous
+pushforward along the right iterated correspondence.  Pull both
+iterated correspondences back to
+\(\mathfrak F^{\mathrm{ret}}_{R;c_1,c_2,c_3}\) by \(\lambda\) and
+\(\rho\).  The supplied base-change and projection-formula
+isomorphisms identify the two iterated pull--push expressions with
+compact-support pushforwards from this common flag stack.  The supplied
+Thom--Sebastiani associativity isomorphism identifies the two
+coefficient complexes on the flag stack.  The supplied
+compactification-independence comparison identifies the two final
+compact-support pushforwards to
+\(\mathfrak M^{\mathrm{red}}_{R,c_1+c_2+c_3}\).  The resulting
+isomorphism is the displayed associativity isomorphism.  Passing to
+Borel--Moore homology and to homogeneous bases gives the matrix
+identity whenever the product matrix rows are supplied.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_product\_associativity\_two\_step\_flags}\)
+verifies
+\(\texttt{FINITE\_HALL\_PRODUCT\_ASSOCIATIVITY\_TWO\_STEP\_FLAGS\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(342\) product operator, rows \(344\)--\(345\), the
+finite-moduli obstruction ledger, the compact-support model, the
+eight-word two-step flag-stack packet, the conditional wordwise
+associativity packets, and the compact Hall source obstruction ledger;
+it records the two-step-flag associativity criterion; and it keeps the
+populated compact product rows, compact Hall two-step flag rows,
+functorial base-change/projection/Thom--Sebastiani rows, quotient
+descent, transition rows, product matrices, and Hall-bialgebra
+associativity rows open.
 
 For local-only inputs and ordered mixed and wrapped inputs, the same
 construction produces the three operation families
@@ -64,7 +537,7 @@ admissibility/properness residuals of that section to vanish.
 
 The collision coproduct is defined on the same correspondence
 geometry, read in the opposite direction: instead of contracting an
-extension to a single output, one expands an object into the pairs of
+extension to a single middle term, one expands an object into the pairs of
 its sub/quotient extensions.  At finite stage, this is the
 $2$-step flag stack already supplied as part of the hybrid datum.
 
@@ -78,7 +551,10 @@ is the chain-level pull-push along the $2$-step flag stack
 $\mathfrak{Flag}^{(2)}_{c,c',R}$ of subobjects of charge $c$ and
 quotients of charge $c'$ in $\mathfrak M_{c+c',R}^\sigma$, computed
 in the cosection-reduced d-critical heart, before the reduced
-$E$-quotient.  After $Q_{E,R}$ it satisfies the coalgebra identities
+$E$-quotient.  If the higher-coloured residual, unit maps, refinement
+coherences, and quotient-after-correspondence residuals of
+\S\ref{subsec:hybrid-ran-carrier} vanish, then after $Q_{E,R}$ it
+satisfies the coalgebra identities
 \[
 (\Delta_R^{\mathrm{ch}}\otimes 1)\Delta_R^{\mathrm{ch}}
 =(1\otimes\Delta_R^{\mathrm{ch}})\Delta_R^{\mathrm{ch}},
@@ -91,15 +567,605 @@ $R'\ge R$ the transition map $\rho^C_{R'R}$ commutes with
 $\Delta^{\mathrm{ch}}$.
 \end{definition}
 
+\begin{definition}[Compact Hall coproduct on the cosection-reduced
+heart]
+\label{def:compact-hall-coproduct}
+Let
+\[
+\mathfrak M^{\mathrm{red}}_{R,c}\times
+\mathfrak M^{\mathrm{red}}_{R,c'}
+\xleftarrow{\ p_{c,c'}\ }
+\overline{\mathfrak E}^{\mathrm{ret}}_{R,c,c'}
+\xrightarrow{\ q_{c,c'}\ }
+\mathfrak M^{\mathrm{red}}_{R,c+c'}
+\]
+be the retained compactified extension correspondence at finite HN
+height \(R\), with the same reduced vanishing-cycle and orientation
+coefficients as in Definition~\ref{def:compact-hall-product}.  The
+compact Hall coproduct operator is the formal pull--inverse
+Thom--Sebastiani--push operator
+\[
+\Delta_R^{\mathrm{red}}
+=
+p_{c,c',!}^{\mathrm{cs}}\circ
+(\operatorname{TS}^{\mathrm{red}}_{c,c'})^{-1}\circ
+q_{c,c'}^*.
+\]
+It sends a coefficient on
+\(\mathfrak M^{\mathrm{red}}_{R,c+c'}\) to a coefficient on
+\(\mathfrak M^{\mathrm{red}}_{R,c}\times
+\mathfrak M^{\mathrm{red}}_{R,c'}\), and after Borel--Moore
+Kunneth identification it is read as
+\[
+\Delta_R^{\mathrm{red}}:
+\mathcal H^{\mathrm{geom}}_{R,c+c'}
+\longrightarrow
+\mathcal H^{\mathrm{geom}}_{R,c}\otimes
+\mathcal H^{\mathrm{geom}}_{R,c'}.
+\]
+This definition names the operator once the three functorial pieces
+\(q^*\), \((\operatorname{TS}^{\mathrm{red}})^{-1}\), and
+\(p_!^{\mathrm{cs}}\) are supplied in the chosen six-functor model.  It
+does not prove that \(q^*\) exists, that \(p_!\) exists for the
+reversed correspondence, that \(p_!\) is independent of a
+compactification, or that the coproduct is coassociative.  It also does
+not supply counit maps, coproduct matrices, transition compatibility,
+bialgebra compatibility, or primitive closure.
+\end{definition}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_coproduct\_operator}\)
+verifies
+\(\texttt{FINITE\_HALL\_COPRODUCT\_OPERATOR\_DEFINITION\_VERIFIED}\):
+it records the row \(347\) definition
+\[
+\Delta_R^{\mathrm{red}}
+=p_!(\operatorname{TS}^{\mathrm{red}})^{-1}q^*
+\]
+and imports the row \(341\) finite compact Hall object, the
+compact-support exceptional pushforward model, the compact Hall source
+obstruction ledger, and the transition-Hall-coproduct obstruction
+ledger.  The present packets give only the formal coproduct expression
+and the chosen compact-support notation.  They do not populate retained
+splitting-correspondence rows, \(q^*\) rows, \(p_!\) rows, inverse
+Thom--Sebastiani rows, compactification-independence rows, coproduct
+matrix rows, counit rows, coassociativity rows, bialgebra rows, or
+coproduct-transition rows.
+
+\begin{proposition}[Exceptional pushforward leg of the finite Hall
+coproduct]
+\label{prop:finite-hall-coproduct-pushforward-existence}
+\textnormal{[compact-support criterion proved; retained \(p\)-row not
+supplied]}
+Let
+\[
+p_{c,c'}:\overline{\mathfrak E}_{R,c,c'}^{\mathrm{ret}}
+\longrightarrow
+\mathfrak M_{R,c}^{\mathrm{red}}\times
+\mathfrak M_{R,c'}^{\mathrm{red}}
+\]
+be a supplied retained splitting-correspondence morphism at finite HN
+height \(R\), and let
+\[
+K_{\mathfrak E}\in
+D^b_c(\overline{\mathfrak E}_{R,c,c'}^{\mathrm{ret}})
+\]
+be the bounded constructible coefficient obtained after the preceding
+pullback \(q_{c,c'}^*\) and inverse reduced Thom--Sebastiani
+transport.  Assume that \(p_{c,c'}\) lies in the chosen retained
+finite-type Artin-stack category with finite residual inertia and that
+one of the following two pieces of functorial data is supplied:
+\begin{enumerate}
+\item \(p_{c,c'}\) is proper in that category; or
+\item a compact-support model
+\[
+j_p:\overline{\mathfrak E}_{R,c,c'}^{\mathrm{ret}}
+\hookrightarrow
+\overline{\mathfrak E}_{p},\qquad
+\overline p:\overline{\mathfrak E}_{p}\to
+\mathfrak M_{R,c}^{\mathrm{red}}\times
+\mathfrak M_{R,c'}^{\mathrm{red}},
+\qquad
+p_{c,c'}=\overline p\circ j_p
+\]
+is supplied as in
+Definition~\ref{def:compact-support-exceptional-pushforward-model},
+with \(j_{p,!}K_{\mathfrak E}\) and
+\(\overline p_*j_{p,!}K_{\mathfrak E}\) in the same constructible
+six-functor formalism.
+\end{enumerate}
+Then the exceptional pushforward leg
+\[
+p^{\mathrm{cs}}_{c,c',!}K_{\mathfrak E}
+:=
+\overline p_*j_{p,!}K_{\mathfrak E}
+\in
+D^b_c(\mathfrak M_{R,c}^{\mathrm{red}}\times
+\mathfrak M_{R,c'}^{\mathrm{red}})
+\]
+exists; in the proper case it is the ordinary proper pushforward
+\(p_{c,c',*}K_{\mathfrak E}\).  This is the \(p_!\)-leg of the finite
+Hall coproduct \(\Delta_R^{\mathrm{red}}\).
+
+The present packets do not supply the hypotheses for the actual
+compact \(K3\times E\) Hall coproduct.  The row \(347\) coproduct
+operator records \(p_!\) only as notation.  The finite-moduli ledger
+has no extension flag-stack row, no retained splitting \(p\)-map row,
+no properness row for \(p\), and no d-critical coefficient row on the
+splitting correspondence.  The compact-support model defines
+\(\overline p_*j_{p,!}\), but its map-population and
+choice-independence tables are empty.  The compact Hall source packet
+has no coproduct matrix rows, and the transition-Hall-coproduct packet
+has no coproduct-transport rows.  Hence row \(348\) is this
+exceptional pushforward criterion and obstruction ledger, not a proof
+that the retained Hall coproduct has a populated \(p_!\)-leg.
+\end{proposition}
+
+\begin{proof}
+In the proper case, the six-functor formalism supplies the proper
+direct image
+\[
+p_{c,c',*}:
+D^b_c(\overline{\mathfrak E}_{R,c,c'}^{\mathrm{ret}})
+\longrightarrow
+D^b_c(\mathfrak M_{R,c}^{\mathrm{red}}\times
+\mathfrak M_{R,c'}^{\mathrm{red}}),
+\]
+and properness preserves constructibility.  In the compact-support
+case, the supplied open immersion gives extension by zero
+\[
+j_{p,!}K_{\mathfrak E}\in D^b_c(\overline{\mathfrak E}_{p}),
+\]
+and the supplied proper map \(\overline p\) gives the proper direct
+image
+\[
+\overline p_*j_{p,!}K_{\mathfrak E}
+\in
+D^b_c(\mathfrak M_{R,c}^{\mathrm{red}}\times
+\mathfrak M_{R,c'}^{\mathrm{red}}).
+\]
+This composite is exactly the compact-support exceptional pushforward
+of Definition~\ref{def:compact-support-exceptional-pushforward-model}.
+The argument does not compare two compactifications, prove base
+change or the projection formula, construct the \(q^*\) row, construct
+the inverse reduced Thom--Sebastiani row, produce coproduct matrices,
+or prove coassociativity.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_coproduct\_pushforward\_functor}\)
+verifies
+\(\texttt{FINITE\_HALL\_COPRODUCT\_PUSHFORWARD\_FUNCTOR\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(347\) coproduct-operator packet, the
+finite-moduli obstruction ledger, the row \(341\) finite-Hall-object
+packet, the compact-support model, the compact Hall source obstruction
+ledger, and the transition-Hall-coproduct obstruction ledger; it
+records the compact-support pushforward criterion; and it keeps the
+retained splitting correspondence, retained \(p\)-map, properness or
+compactification row, constructible coefficient row, inverse
+Thom--Sebastiani row, populated \(p_!\)-row, compactification
+independence, coproduct matrix rows, and transition-coproduct rows
+open.
+
+\begin{proposition}[Coassociativity criterion via retained two-step
+splitting flags]
+\label{prop:finite-hall-coproduct-coassociativity-two-step-flags}
+\textnormal{[two-step-splitting-flag criterion proved; populated
+\(\Delta_R\)-rows not supplied]}
+Let \(c_1,c_2,c_3\in\widehat\Gamma_R\).  Suppose the finite Hall
+coproduct legs
+\[
+\Delta_{a,b}^{\mathrm{red}}
+=p_{a,b,!}^{\mathrm{cs}}
+(\operatorname{TS}_{a,b}^{\mathrm{red}})^{-1}q_{a,b}^*
+\]
+are supplied, choice-independent, and constructible for the four
+pairs
+\[
+(c_1+c_2,c_3),\quad (c_1,c_2),\quad
+(c_1,c_2+c_3),\quad (c_2,c_3)
+\]
+that occur in the two coproduct parenthesizations.  Assume also that
+a retained two-step splitting flag stack
+\[
+\mathfrak F^{\mathrm{ret}}_{R;c_1,c_2,c_3}
+\]
+is supplied, with comparison morphisms to the two iterated splitting
+correspondence fibre products
+\[
+\lambda:\mathfrak F^{\mathrm{ret}}_{R;c_1,c_2,c_3}\to
+\overline{\mathfrak E}^{\mathrm{ret}}_{R;c_1+c_2,c_3}
+\times_{\mathfrak M^{\mathrm{red}}_{R,c_1+c_2}}
+\overline{\mathfrak E}^{\mathrm{ret}}_{R;c_1,c_2},
+\]
+\[
+\rho:\mathfrak F^{\mathrm{ret}}_{R;c_1,c_2,c_3}\to
+\overline{\mathfrak E}^{\mathrm{ret}}_{R;c_1,c_2+c_3}
+\times_{\mathfrak M^{\mathrm{red}}_{R,c_2+c_3}}
+\overline{\mathfrak E}^{\mathrm{ret}}_{R;c_2,c_3}.
+\]
+Assume the squares defining \(\lambda\) and \(\rho\) satisfy the
+base-change isomorphisms for the relevant \(q^*\)- and
+\(p_!^{\mathrm{cs}}\)-legs, that the projection formula holds for the
+coefficient objects, and that the inverse reduced
+Thom--Sebastiani identifications on the two parenthesizations agree on
+\(\mathfrak F^{\mathrm{ret}}_{R;c_1,c_2,c_3}\).  Finally assume that
+the two compact-support pushforwards from the flag stack to
+\[
+\mathfrak M^{\mathrm{red}}_{R,c_1}\times
+\mathfrak M^{\mathrm{red}}_{R,c_2}\times
+\mathfrak M^{\mathrm{red}}_{R,c_3}
+\]
+are identified by a supplied compactification-independence comparison
+for the \(p_!^{\mathrm{cs}}\)-legs.
+
+Then for every supplied constructible input
+\[
+K\in D^b_c(\mathfrak M^{\mathrm{red}}_{R,c_1+c_2+c_3})
+\]
+there is a canonical coassociativity isomorphism
+\[
+(\Delta_{c_1,c_2}^{\mathrm{red}}\otimes 1)
+\Delta_{c_1+c_2,c_3}^{\mathrm{red}}(K)
+\cong
+(1\otimes\Delta_{c_2,c_3}^{\mathrm{red}})
+\Delta_{c_1,c_2+c_3}^{\mathrm{red}}(K).
+\]
+After Borel--Moore homology and after choosing homogeneous bases, this
+is the rowwise coassociativity identity for the finite coproduct
+matrix \(D_R\).
+
+The present packets do not supply the hypotheses for the actual
+compact \(K3\times E\) Hall coproduct.  Row \(347\) names the
+coproduct operator but has no populated \(\Delta_R\)-rows.  Row
+\(348\) proves only the \(p_!\)-existence criterion for a supplied
+retained splitting map, and its pushforward table is empty.  The
+finite-moduli ledger has no retained two-step splitting flag stack.
+The compact-support model has no base-change, projection-formula,
+Thom--Sebastiani, or choice-independence rows.  The hybrid two-step
+flag packet constructs local/wrapped flag stacks before the reduced
+quotient and does not populate the compact Hall carrier.  The compact
+Hall source packet has no coproduct matrix entries and no
+Hall-bialgebra coassociativity rows.  Hence row \(349\) is this
+coassociativity criterion and obstruction ledger, not a proof that the
+actual retained \(\Delta_R\) is already coassociative as a populated
+finite matrix.
+\end{proposition}
+
+\begin{proof}
+Expand the left parenthesization by the definition of
+\(\Delta^{\mathrm{red}}\).  It is the compact-support pushforward to
+\(\mathfrak M^{\mathrm{red}}_{R,c_1}\times
+\mathfrak M^{\mathrm{red}}_{R,c_2}\times
+\mathfrak M^{\mathrm{red}}_{R,c_3}\) obtained by pulling \(K\) back
+along the two relevant \(q\)-maps, applying inverse reduced
+Thom--Sebastiani twice, and pushing along the two relevant
+\(p\)-maps.  The right parenthesization is the analogous expression
+for the other iterated splitting correspondence.  Pull both iterated
+correspondences back to
+\(\mathfrak F^{\mathrm{ret}}_{R;c_1,c_2,c_3}\) by \(\lambda\) and
+\(\rho\).  The supplied base-change and projection-formula
+isomorphisms identify the two iterated pull--inverse-TS--push
+expressions with compact-support pushforwards from this common flag
+stack.  The supplied inverse Thom--Sebastiani coassociativity
+isomorphism identifies the two coefficient complexes on the flag
+stack.  The supplied compactification-independence comparison
+identifies the two compact-support pushforwards to the triple product.
+The resulting isomorphism is the displayed coassociativity
+isomorphism.  Passing to Borel--Moore homology and to homogeneous
+bases gives the matrix identity whenever the coproduct matrix rows are
+supplied.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_coproduct\_coassociativity\_two\_step\_flags}\)
+verifies
+\(\texttt{FINITE\_HALL\_COPRODUCT\_COASSOCIATIVITY\_TWO\_STEP\_FLAGS\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(347\) coproduct operator, row \(348\), the
+finite-moduli obstruction ledger, the compact-support model, the
+eight-word two-step flag-stack packet, the compact Hall source
+obstruction ledger, and the transition-Hall-coproduct obstruction
+ledger; it records the two-step-splitting-flag coassociativity
+criterion; and it keeps the populated compact coproduct rows, compact
+Hall two-step splitting flag rows, functorial
+base-change/projection/inverse-Thom--Sebastiani rows,
+compactification-independence rows, quotient descent, transition rows,
+coproduct matrices, and Hall-bialgebra coassociativity rows open.
+
+\begin{proposition}[Bialgebra compatibility criterion for the finite
+Hall product and coproduct]
+\label{prop:finite-hall-bialgebra-compatibility}
+\textnormal{[product--coproduct square criterion proved; populated
+bialgebra rows not supplied]}
+Let \(a,b,u,v\in\widehat\Gamma_R\) with \(u+v=a+b\), and set
+\[
+\mathsf S(a,b;u,v)
+=\{(a_1,a_2,b_1,b_2)\mid
+a=a_1+a_2,\ b=b_1+b_2,\ u=a_1+b_1,\ v=a_2+b_2\}.
+\]
+The set \(\mathsf S(a,b;u,v)\) is finite at finite HN height.  Suppose
+the product legs \(m^{\mathrm{red}}_{a,b}\),
+\(m^{\mathrm{red}}_{a_1,b_1}\),
+\(m^{\mathrm{red}}_{a_2,b_2}\) and the coproduct legs
+\(\Delta^{\mathrm{red}}_{u,v}\),
+\(\Delta^{\mathrm{red}}_{a_1,a_2}\),
+\(\Delta^{\mathrm{red}}_{b_1,b_2}\) are supplied, constructible, and
+choice-independent for every
+\((a_1,a_2,b_1,b_2)\in\mathsf S(a,b;u,v)\).  Assume also that a
+retained product--splitting square stack
+\[
+\mathfrak Q^{\mathrm{ret}}_{R;a,b}^{u,v}
+\]
+is supplied, with comparison morphisms to the iterated correspondence
+for \(\Delta_{u,v}m_{a,b}\) and to the finite disjoint union, indexed
+by \(\mathsf S(a,b;u,v)\), of the iterated correspondences for
+\[
+(m_{a_1,b_1}^{\mathrm{red}}\otimes
+m_{a_2,b_2}^{\mathrm{red}})
+(1\otimes\tau\otimes1)
+(\Delta_{a_1,a_2}^{\mathrm{red}}\otimes
+\Delta_{b_1,b_2}^{\mathrm{red}}).
+\]
+Assume the comparison squares satisfy proper base change for the
+relevant \(q^*\), \(p^*\), \(q_!^{\mathrm{cs}}\), and
+\(p_!^{\mathrm{cs}}\) legs; the projection formula for the coefficient
+objects; the product--coproduct Thom--Sebastiani coherence identifying
+the product-side and coproduct-side coefficient complexes on
+\(\mathfrak Q^{\mathrm{ret}}_{R;a,b}^{u,v}\); the Koszul sign
+convention for the middle braiding \(\tau\); and compact-support
+choice-independence for all final pushforwards to
+\(\mathfrak M^{\mathrm{red}}_{R,u}\times
+\mathfrak M^{\mathrm{red}}_{R,v}\).
+
+Then for all supplied constructible inputs
+\[
+K_a\in D^b_c(\mathfrak M^{\mathrm{red}}_{R,a}),\qquad
+K_b\in D^b_c(\mathfrak M^{\mathrm{red}}_{R,b}),
+\]
+there is a canonical bialgebra-compatibility isomorphism
+\[
+\Delta^{\mathrm{red}}_{u,v}
+m^{\mathrm{red}}_{a,b}(K_a,K_b)
+\cong
+\bigoplus_{\mathsf S(a,b;u,v)}
+(m^{\mathrm{red}}_{a_1,b_1}\otimes
+m^{\mathrm{red}}_{a_2,b_2})
+(1\otimes\tau\otimes1)
+(\Delta^{\mathrm{red}}_{a_1,a_2}K_a\otimes
+\Delta^{\mathrm{red}}_{b_1,b_2}K_b).
+\]
+After Borel--Moore homology and after choosing homogeneous bases, this
+is the rowwise matrix identity
+\[
+D_R^{a+b;u,v}M_R^{a,b}
+=
+\sum_{\mathsf S(a,b;u,v)}
+(M_R^{a_1,b_1}\otimes M_R^{a_2,b_2})
+(1\otimes\tau\otimes1)
+(D_R^{a;a_1,a_2}\otimes D_R^{b;b_1,b_2}).
+\]
+
+The present packets do not supply the hypotheses for the actual
+compact \(K3\times E\) Hall bialgebra.  Row \(342\) names the product
+operator and row \(347\) names the coproduct operator; neither packet
+has populated operation rows.  Rows \(346\) and \(349\) record the
+associativity and coassociativity criteria, but their identity tables
+are empty.  The finite-moduli ledger has no retained
+product--splitting square stack.  The compact-support model has no
+base-change, projection-formula, Thom--Sebastiani, or
+choice-independence rows for the mixed product--coproduct square.  The
+compact Hall source packet has no \(M\)-entries, \(D\)-entries, or
+Hall-bialgebra identity rows.  Hence row \(350\) is this bialgebra
+compatibility criterion and obstruction ledger, not a proof that the
+actual retained finite source already satisfies
+\(\Delta m=(m\otimes m)\Delta\).
+\end{proposition}
+
+\begin{proof}
+Expand the left side by the definitions of \(m^{\mathrm{red}}\) and
+\(\Delta^{\mathrm{red}}\).  It is a compact-support pull--TS--push
+along the product correspondence followed by a
+pull--inverse-TS--push along the splitting correspondence.  Expand the
+right side by first splitting the two inputs, applying the Koszul
+braiding to exchange the two middle factors, and multiplying the two
+output pairs.  Pull the two iterated correspondences to
+\(\mathfrak Q^{\mathrm{ret}}_{R;a,b}^{u,v}\).  Proper base change and
+the projection formula identify the two iterated pull-push functors on
+this common square stack.  The supplied product--coproduct
+Thom--Sebastiani coherence identifies the coefficient complexes; the
+middle exchange contributes exactly the Koszul sign \(\tau\).  The
+compact-support choice-independence comparisons identify the final
+pushforwards to
+\(\mathfrak M^{\mathrm{red}}_{R,u}\times
+\mathfrak M^{\mathrm{red}}_{R,v}\).  The resulting isomorphism is the
+displayed bialgebra-compatibility isomorphism.  Applying
+Borel--Moore homology, Kunneth, and homogeneous compact-source bases
+gives the displayed finite matrix identity whenever \(M_R\), \(D_R\),
+and the bialgebra identity rows are supplied.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_bialgebra\_compatibility}\)
+verifies
+\(\texttt{FINITE\_HALL\_BIALGEBRA\_COMPATIBILITY\_OBSTRUCTION\_VERIFIED}\):
+it imports the product and coproduct operator packets, the row \(346\)
+associativity packet, the row \(349\) coassociativity packet, the
+finite-moduli obstruction ledger, the compact-support model, the
+compact Hall source obstruction ledger, and the product- and
+coproduct-transition obstruction ledgers; it records the
+product--coproduct square criterion; and it keeps the populated
+product rows, populated coproduct rows, retained product--splitting
+square rows, base-change/projection/Thom--Sebastiani rows,
+compactification-independence rows, \(M\)- and \(D\)-matrices,
+transition rows, and Hall-bialgebra compatibility rows open.
+
+\begin{definition}[Finite Hall antipode datum]
+\label{def:finite-hall-antipode-datum}
+A finite Hall antipode datum at HN height \(R\) is extra structure on a
+supplied finite Hall bialgebra
+\[
+(\mathcal H_R,m_R,\Delta_R,\eta_R,\epsilon_R)
+\]
+whose unit, counit, associativity, coassociativity, and
+product--coproduct compatibility rows have zero defect.  It consists
+of either:
+\begin{enumerate}
+\item explicit homogeneous antipode matrices
+\[
+S_{R,\gamma}:\mathcal H_{R,\gamma}\longrightarrow
+\mathcal H_{R,\iota(\gamma)}
+\]
+for a supplied charge involution \(\iota\) preserving the retained
+finite window; or
+\item a supplied connected conilpotent filtration for which the
+standard recursive antipode
+\[
+S_R(1)=1,\qquad
+S_R(x)=-x-\sum S_R(x')\,x''
+\quad
+\bigl(\widetilde\Delta_Rx=\sum x'\otimes x''\bigr)
+\]
+terminates in every retained homogeneous block.
+\end{enumerate}
+In either presentation the convolution identities
+\[
+m_R(S_R\otimes\mathrm{id})\Delta_R=\eta_R\epsilon_R,\qquad
+m_R(\mathrm{id}\otimes S_R)\Delta_R=\eta_R\epsilon_R
+\]
+must be supplied as zero-defect rows, and \(S_R\) must commute with the
+HN transition maps on every block where the pro-object is formed.  A
+finite Hall bialgebra becomes a finite Hall Hopf algebra only after
+this antipode datum is supplied.
+
+The present compact \(K3\times E\) packets do not supply an antipode
+datum.  The source packet has no antipode matrix rows, no charge
+involution row, no connected conilpotent recursion row, and no left or
+right convolution identity row.  The bialgebra-compatibility packet
+records only the criterion for
+\(\Delta m=(m\otimes m)(1\otimes\tau\otimes1)(\Delta\otimes\Delta)\).
+Hopf-pairing rows, Drinfeld double comparisons, bar-coalgebra
+deconcatenation, primitive closure, scalar traces, and signed
+multiplicities are not antipode data.
+\end{definition}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_antipode\_datum}\)
+verifies
+\(\texttt{FINITE\_HALL\_ANTIPODE\_DATUM\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(350\) bialgebra-compatibility packet, the compact
+Hall source obstruction ledger, and the product- and
+coproduct-transition obstruction ledgers; it records
+Definition~\ref{def:finite-hall-antipode-datum}; and it keeps the
+antipode matrices, charge involution or connected-conilpotent
+filtration, unit and counit rows, bialgebra rows, convolution-identity
+rows, and transition-antipode rows open.  Thus row \(351\) defines the
+antipode data required by any finite Hall Hopf-algebra claim; it does
+not assert that the current compact Hall source is a Hopf algebra.
+
+\begin{proposition}[No Hopf algebra without an antipode; \textit{proved}]
+\label{prop:finite-hall-nonhopf-boundary}
+Let
+\[
+(\mathcal H_R,m_R,\Delta_R,\eta_R,\epsilon_R)
+\]
+be a supplied finite Hall bialgebra stage.  If the finite Hall
+antipode datum of Definition~\ref{def:finite-hall-antipode-datum} is
+not supplied, then this stage is not a finite Hall Hopf algebra in the
+verified source package of the manuscript.  It may be used only as a
+bialgebra-level input.  Every downstream occurrence of a Hopf algebra
+claim is therefore conditional on the antipode matrices, or on the
+terminating connected-conilpotent recursion, together with the two
+convolution identities and transition compatibility.
+
+This is not a non-existence theorem for antipodes on the underlying
+graded vector space.  It is the source-data boundary used in this
+manuscript: absent \(S_R\) and its convolution identities, the Hopf
+algebra name is unavailable.
+\end{proposition}
+
+\begin{proof}
+A Hopf algebra is a bialgebra equipped with an antipode.  In the
+finite Hall presentation this means exactly the datum
+\(S_R\) and the two identities
+\[
+m_R(S_R\otimes\mathrm{id})\Delta_R=\eta_R\epsilon_R,\qquad
+m_R(\mathrm{id}\otimes S_R)\Delta_R=\eta_R\epsilon_R .
+\]
+If no such row is supplied, no convolution inverse for the identity
+endomorphism of \(\mathcal H_R\) has been constructed.  Bialgebra
+compatibility, Hopf-pairing adjointness, a target Drinfeld double, a
+bar-coalgebra model, primitive closure, and scalar trace data do not
+define that convolution inverse.  The verified source package
+therefore remains bialgebra-level until the antipode datum is added.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_nonhopf\_boundary}\)
+verifies \(\texttt{FINITE\_HALL\_NONHOPF\_BOUNDARY\_VERIFIED}\): it
+imports the row \(351\) antipode-datum packet, the row \(350\)
+bialgebra-compatibility packet, and the compact Hall source
+obstruction ledger; it records
+Proposition~\ref{prop:finite-hall-nonhopf-boundary}; it checks that
+the current source has no antipode rows, no convolution identity rows,
+and no finite Hall Hopf-algebra claim; and it records explicitly that
+no non-existence theorem for future antipodes is being asserted.
+
 This is the source coalgebra of \S\ref{subsec:koszul-source}; its
 identification with the bar construction
 $\bar B_E^{\mathrm{ch}}(\mathcal F_X^{\mathrm{hyb}})$ is the bar
 comparison there.
 
-\subsubsection*{Primitive projection and the Hopf datum}
+\subsubsection*{Primitive projection and the bialgebra datum}
 
-The primitive projection on a graded conilpotent Hopf object is
-unique once the augmentation, product, and coproduct are supplied.
+The primitive subspace is a bialgebra notion.  It uses the
+augmentation, unit, counit, and coproduct; its closure under the
+supercommutator uses bialgebra compatibility.  It does not make the
+source object Hopf.  Hopf-level recognition is available only after
+the antipode datum named in
+Proposition~\ref{prop:finite-hall-nonhopf-boundary} is supplied.
+
+\begin{definition}[Finite primitive Hall subspace]
+\label{def:finite-hall-primitive-subspace}
+Let
+\((\mathcal H_R,\Delta_R,\eta_R,\epsilon_R)\) be a finite counital
+Hall coalgebra stage with supplied homogeneous finite bases.  Put
+\[
+I_R=\ker\epsilon_R .
+\]
+The reduced coproduct is the map
+\[
+\bar\Delta_R:I_R\longrightarrow I_R\otimes I_R,\qquad
+\bar\Delta_R(x)=
+\Delta_Rx-\eta_R(1)\otimes x-x\otimes\eta_R(1),
+\]
+equivalently the projection of \(\Delta_R|_{I_R}\) to
+\(I_R\otimes I_R\).  The finite primitive Hall subspace is
+\[
+P_R=\Prim(\mathcal H_R)
+=\ker\bigl(\bar\Delta_R:I_R\to I_R\otimes I_R\bigr).
+\]
+In finite coordinates, row \(353\) consists of the counit matrix,
+the augmentation-ideal basis, the reduced-coproduct matrix
+\(\bar D_R\), and kernel rows giving a basis, inclusion, and projection
+for \(P_R\).  It is a definition of a subspace of the supplied finite
+coalgebra.  It does not assert that the compact \(K3\times E\) source
+has supplied those rows, and it does not assert primitive closure under
+the Hall commutator.
+\end{definition}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_primitive\_subspace\_definition}\)
+verifies
+\(\texttt{FINITE\_HALL\_PRIMITIVE\_SUBSPACE\_DEFINITION\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(352\) non-Hopf boundary, the row \(350\)
+bialgebra-compatibility packet, and the compact Hall source
+obstruction ledger; it records
+Definition~\ref{def:finite-hall-primitive-subspace}; and it keeps the
+source coproduct matrix, unit and counit rows, augmentation-ideal
+basis, reduced-coproduct matrix, primitive-kernel rows, primitive
+basis, inclusion, projection, and degree--parity split open.  Thus
+row \(353\) defines \(P_R=\ker\bar\Delta_R\) for supplied finite data;
+it does not populate \(P_R\) in the present compact source.
 
 \begin{definition}[Primitive Hall sub-bracket]
 \label{def:primitive-hall-bracket}
@@ -109,7 +1175,7 @@ Write
 =\ker\bigl(\widetilde\Delta:
 \mathcal F_X\to\mathcal F_X\otimes\mathcal F_X\bigr)
 \]
-for the primitive layer of the protected Hall Hopf object, where
+for the primitive layer of the protected Hall bialgebra object, where
 $\widetilde\Delta=\Delta-(\eta\varepsilon\otimes\mathrm{id}+
 \mathrm{id}\otimes\eta\varepsilon)$.  The Hall product restricts to
 a $\widehat\Gamma_X$-graded bracket
@@ -124,6 +1190,702 @@ quotient, the descended bracket is $\Gamma_{\mathrm{gram}}$-graded
 and the descended primitive layer is the candidate $P_X^{\Pi,\mathrm{red}}$
 to be identified with $\mathfrak g_{\Delta_5}$.
 \end{definition}
+
+The finite packet
+\(\texttt{certificates/charge/hall\_pairing\_pushforward\_compatibility}\)
+supplies only the grading calculation behind this sentence: a supplied
+\(\widehat\Gamma_X\)-graded bracket and a supplied homogeneous
+degree-zero pairing remain graded after pushforward by the additive
+normal-ordered map \(\overline\Pi_X\).  The compact Hall
+correspondence, primitive closure, Hopf adjointness, Frobenius cyclic
+identity, quotient non-degeneracy, and protected trace remain separate
+data.
+
+\begin{proposition}[Product-only Hall data do not define primitives;
+\textit{proved}]
+\label{prop:hall-product-only-no-primitives}
+Let \(\mathcal H_R\) be a finite HN stage carrying the Hall product
+\(m_R\) and unit \(\eta_R\).  Without a counital coproduct
+\(\Delta_R\) and the bialgebra compatibility of \(m_R\) with
+\(\Delta_R\), there is no defined primitive subspace
+\[
+\Prim(\mathcal H_R)=
+\ker\bigl(\Delta_R-\eta_R\varepsilon_R\otimes\mathrm{id}
+-\mathrm{id}\otimes\eta_R\varepsilon_R\bigr),
+\]
+and the supercommutator of \(m_R\) does not define a Lie bracket on
+primitives.  Thus a compact Hall product, even if associative and
+oriented, is not a primitive-recognition datum.
+\end{proposition}
+
+\begin{proof}
+The displayed formula is the definition of primitives in a counital
+bialgebra.  If \(\Delta_R\) or \(\varepsilon_R\) is absent, the kernel
+is not an object.  If \(\Delta_R\) is present but not compatible with
+\(m_R\), the bialgebra identity
+\[
+\Delta_R([x,y])=[\Delta_Rx,\Delta_Ry]
+\]
+in the graded tensor-product algebra does not hold.  Hence
+\(\Delta_R x=x\otimes1+1\otimes x\) and
+\(\Delta_R y=y\otimes1+1\otimes y\) no longer imply
+\(\Delta_R([x,y])=[x,y]\otimes1+1\otimes[x,y]\).
+
+The product does not determine the coproduct.  Over a characteristic
+zero field, the graded algebra \(A=k[x,y]\), \(|y|=2|x|\), has the
+primitive coproduct
+\(\Delta_0x=x\otimes1+1\otimes x\),
+\(\Delta_0y=y\otimes1+1\otimes y\), and also the counital
+coassociative algebra coproduct
+\[
+\Delta_1x=x\otimes1+1\otimes x,\qquad
+\Delta_1y=y\otimes1+1\otimes y+x\otimes x.
+\]
+The multiplication is the same in both bialgebras, but
+\(\Prim(A,\Delta_0)\) and \(\Prim(A,\Delta_1)\) are different
+subspaces: \(y\) is primitive for \(\Delta_0\), while
+\(y-\frac12x^2\) is primitive for \(\Delta_1\).  Hence the Hall
+product alone cannot determine \(P_R^{\Prim}\), the Hopf radical, or
+the PBW comparison used in primitive recognition.
+\end{proof}
+
+\begin{definition}[Finite Hall bialgebra defect tuple]
+\label{def:finite-hall-bialgebra-defect-tuple}
+Fix homogeneous finite bases on a retained HN stage and write
+\((M,D,\eta,\epsilon)\) for the matrices of the Hall product,
+coproduct, unit, and counit.  The finite Hall bialgebra defect tuple is
+\[
+\mathfrak O_{\mathrm{Hbialg},R}
+=\bigl(
+\mathfrak o^{\mathrm{unit},L}_R,\mathfrak o^{\mathrm{unit},R}_R,
+\mathfrak o^{\mathrm{counit},L}_R,\mathfrak o^{\mathrm{counit},R}_R,
+\mathfrak o^{\mathrm{assoc}}_R,\mathfrak o^{\mathrm{coassoc}}_R,
+\mathfrak o^{\mathrm{bialg}}_R,\mathfrak o^{\mathrm{prim}}_R
+\bigr),
+\]
+where
+\[
+\mathfrak o^{\mathrm{assoc}}_R
+=m_R(m_R\otimes1)-m_R(1\otimes m_R),\qquad
+\mathfrak o^{\mathrm{coassoc}}_R
+=(\Delta_R\otimes1)\Delta_R-(1\otimes\Delta_R)\Delta_R,
+\]
+\[
+\mathfrak o^{\mathrm{bialg}}_R
+=\Delta_Rm_R-(m_R\otimes m_R)(1\otimes\tau\otimes1)
+(\Delta_R\otimes\Delta_R),
+\]
+with \(\tau\) the Koszul sign braiding, and
+\[
+\mathfrak o^{\mathrm{prim}}_R(x,y)
+=\widetilde\Delta_R
+\bigl(m_R(x,y)-(-1)^{|x||y|}m_R(y,x)\bigr)
+\]
+for \(x,y\in\ker\widetilde\Delta_R\cap\ker\epsilon_R\).  The unit and
+counit components are the four usual left/right defects
+\[
+m_R(\eta_R\otimes1)-1,\quad m_R(1\otimes\eta_R)-1,\quad
+(\epsilon_R\otimes1)\Delta_R-1,\quad
+(1\otimes\epsilon_R)\Delta_R-1.
+\]
+\end{definition}
+
+\begin{proposition}[Hall primitives are formed only after the bialgebra
+defects vanish; \textit{proved}]
+\label{prop:hall-bialgebra-defects-primitive-closure}
+At a finite HN stage, the matrices
+\((M,D,\eta,\epsilon)\) define a counital graded bialgebra whose
+supercommutator restricts to a bracket on the primitive subspace if and
+only if the first seven components of
+\(\mathfrak O_{\mathrm{Hbialg},R}\) vanish; then
+\(\mathfrak o^{\mathrm{prim}}_R=0\) follows.  Conversely, a finite
+source proof table in which any component of
+\(\mathfrak O_{\mathrm{Hbialg},R}\) is absent or non-zero does not
+define the primitive Hall Lie superalgebra used in
+Theorem~\ref{thm:primitive-recognition}.
+\end{proposition}
+
+\begin{proof}
+The unit, counit, associativity, coassociativity, and bialgebra
+compatibility equations are exactly the first seven displayed defects.
+When they vanish, the standard calculation in a graded bialgebra gives,
+for primitive \(x,y\),
+\[
+\Delta_R([x,y])
+=[x,y]\otimes1+1\otimes[x,y],
+\qquad
+\epsilon_R([x,y])=0,
+\]
+because \(\Delta_R\) is multiplicative and \(\epsilon_R\) is an algebra
+homomorphism.  Hence the supercommutator lies in the primitive subspace,
+which is the vanishing of \(\mathfrak o^{\mathrm{prim}}_R\).  If one of
+the first seven equations is missing or non-zero, the object is not a
+counital bialgebra on the chosen finite stage, and the displayed
+primitive-bracket calculation is not available.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_primitive\_commutator\_closure}\)
+verifies
+\(\texttt{FINITE\_HALL\_PRIMITIVE\_COMMUTATOR\_CLOSURE\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(353\) primitive-subspace definition, the row
+\(350\) bialgebra-compatibility packet, and the compact Hall source
+obstruction ledger; it records
+Proposition~\ref{prop:hall-bialgebra-defects-primitive-closure} as the
+row \(354\) relative proof; and it keeps the product matrix, coproduct
+matrix, unit and counit rows, primitive-kernel basis, bialgebra
+identity rows, primitive-closure defect rows, and supercommutator
+matrix rows open.  Hence the proposition proves the closure theorem for
+supplied finite bialgebra data; the present compact \(K3\times E\)
+source still has no populated primitive Hall bracket.
+
+\begin{proposition}[The primitive Hall supercommutator satisfies
+graded Jacobi; \textit{proved}]
+\label{prop:finite-hall-graded-jacobi}
+Let \(A\) be an associative \(\mathbb Z/2\)-graded algebra and let
+\[
+[x,y]=xy-(-1)^{|x||y|}yx
+\]
+for homogeneous \(x,y\in A\).  Then the bracket is graded
+skew-symmetric and satisfies the graded Jacobi identity
+\[
+(-1)^{|x||z|}[x,[y,z]]
++(-1)^{|y||x|}[y,[z,x]]
++(-1)^{|z||y|}[z,[x,y]]=0 .
+\]
+Consequently, if the finite Hall bialgebra data of
+Proposition~\ref{prop:hall-bialgebra-defects-primitive-closure} are
+supplied so that \(P_R\) is closed under the supercommutator, then
+\(P_R\) is a finite graded Lie algebra object under the Hall bracket.
+\end{proposition}
+
+\begin{proof}
+Graded skew-symmetry is immediate from the definition.  For Jacobi,
+expand the three displayed summands in the associative algebra \(A\).
+The twelve monomials \(xyz,xzy,yxz,yzx,zxy,zyx\), each with its
+Koszul sign, occur in cancelling pairs after using only associativity
+and the parity rule \(|xy|=|x|+|y|\).  Thus the supercommutator on
+any associative graded algebra is a graded Lie bracket.  If
+\(x,y,z\in P_R\), Proposition~\ref{prop:hall-bialgebra-defects-primitive-closure}
+keeps each inner and outer commutator in \(P_R\), so the same identity
+holds in the primitive Hall subspace.
+\end{proof}
+
+The packet \(\texttt{certificates/hall/finite\_hall\_graded\_jacobi}\)
+verifies
+\(\texttt{FINITE\_HALL\_GRADED\_JACOBI\_OBSTRUCTION\_VERIFIED}\): it
+imports the row \(354\) primitive-commutator closure packet, the row
+\(350\) bialgebra-compatibility packet, and the compact Hall source
+obstruction ledger; it records
+Proposition~\ref{prop:finite-hall-graded-jacobi}; and it keeps the
+source product matrix, primitive bracket matrix, associativity rows,
+primitive-closure rows, Jacobi defect rows, parity rows, and
+normal-ordered bracket matrices open.  Hence row \(355\) proves
+graded Jacobi for supplied associative finite Hall data; it does not
+populate a compact \(K3\times E\) primitive bracket.
+
+\begin{proposition}[The Hall bracket preserves normal-ordered Gram
+degree; \textit{proved for supplied homogeneous data}]
+\label{prop:finite-hall-normal-ordered-gram-degree}
+Let \(P_R=\bigoplus_{\widehat c\in\widehat\Gamma_R}P_{R,\widehat c}\)
+be a finite primitive Hall stage whose bracket is obtained from a
+homogeneous Hall product:
+\[
+[P_{R,\widehat c},P_{R,\widehat c'}]\subset
+P_{R,\widehat c+\widehat c'} .
+\]
+Let
+\[
+\overline\Pi_X:\widehat\Gamma_R\longrightarrow\Gamma_R^\Pi
+\]
+be the additive normal-ordered Gram homomorphism.  Define the
+descended fibre-summed pieces
+\[
+P^\Pi_{R,\gamma}=
+\bigoplus_{\overline\Pi_X(\widehat c)=\gamma}P_{R,\widehat c}.
+\]
+Then
+\[
+[P^\Pi_{R,\gamma},P^\Pi_{R,\gamma'}]\subset
+P^\Pi_{R,\gamma+\gamma'} .
+\]
+Equivalently, every non-zero finite bracket row has zero
+normal-ordered Gram-degree defect
+\[
+\overline\Pi_X(\widehat e)
+-\overline\Pi_X(\widehat c)
+-\overline\Pi_X(\widehat c')=0
+\]
+for its source degrees \(\widehat c,\widehat c'\) and target degree
+\(\widehat e=\widehat c+\widehat c'\).
+\end{proposition}
+
+\begin{proof}
+The Hall product is homogeneous by hypothesis, so both ordered products
+\(xy\) and \(yx\) in the supercommutator have source degree
+\(\widehat c+\widehat c'\).  Subtracting them with the Koszul sign
+cannot change the charge degree.  Applying the additive
+normal-ordered homomorphism gives
+\[
+\overline\Pi_X(\widehat c+\widehat c')
+=\overline\Pi_X(\widehat c)+\overline\Pi_X(\widehat c').
+\]
+If several source charges have the same descended Gram label, the
+definition of \(P^\Pi_{R,\gamma}\) is the direct sum over that fibre;
+the same additivity sends the whole bracket of the two fibres into the
+fibre over \(\gamma+\gamma'\).  This proves the displayed inclusion.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_normal\_ordered\_gram\_degree}\)
+verifies
+\(\texttt{FINITE\_HALL\_NORMAL\_ORDERED\_GRAM\_DEGREE\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(355\) graded-Jacobi packet, the finite
+\(\texttt{hall\_pairing\_pushforward\_compatibility}\) packet, the
+empty \(K3\times E\) charge-window fixture, and the compact Hall source
+obstruction ledger; it records
+Proposition~\ref{prop:finite-hall-normal-ordered-gram-degree}; and it
+keeps the current source degree rows, normal-ordered lift rows, Hall
+product rows, primitive bracket rows, and bracket-degree defect rows
+open.  Hence row \(356\) proves the Gram-degree statement for supplied
+homogeneous normal-ordered Hall data; it does not populate the compact
+\(K3\times E\) bracket or replace the row \(357\) parity check.
+
+\begin{proposition}[The Hall bracket respects parity;
+\textit{proved for supplied homogeneous data}]
+\label{prop:finite-hall-bracket-parity}
+Let \(A=A_{\bar0}\oplus A_{\bar1}\) be a
+\(\mathbb Z/2\)-graded associative algebra whose product is even:
+\[
+A_pA_q\subset A_{p+q}\qquad(p,q\in\mathbb Z/2).
+\]
+For homogeneous \(x\in A_p\) and \(y\in A_q\), set
+\[
+[x,y]=xy-(-1)^{pq}yx .
+\]
+Then \([x,y]\in A_{p+q}\).  Consequently, if the finite primitive Hall
+stage \(P_R\) is supplied as a parity-graded subspace closed under this
+supercommutator, then
+\[
+[P_{R,\bar p},P_{R,\bar q}]\subset P_{R,\bar p+\bar q}.
+\]
+After normal-ordered Gram descent, the same statement holds fibrewise:
+\[
+[P^\Pi_{R,\gamma,\bar p},P^\Pi_{R,\gamma',\bar q}]
+\subset P^\Pi_{R,\gamma+\gamma',\bar p+\bar q}
+\]
+whenever the row \(356\) degree hypotheses and the parity block rows
+are supplied.
+\end{proposition}
+
+\begin{proof}
+Since the multiplication is even, both \(xy\) and \(yx\) lie in the
+same parity summand \(A_{p+q}\).  Their signed difference therefore
+also lies in \(A_{p+q}\).  Restricting to \(P_R\) uses only the supplied
+closure of \(P_R\) under the supercommutator and the supplied parity
+decomposition of \(P_R\).  The normal-ordered statement is obtained by
+combining this parity calculation with
+Proposition~\ref{prop:finite-hall-normal-ordered-gram-degree}: the
+Gram label adds independently of the parity label, while the parity
+label adds in \(\mathbb Z/2\).
+\end{proof}
+
+The packet \(\texttt{certificates/hall/finite\_hall\_bracket\_parity}\)
+verifies
+\(\texttt{FINITE\_HALL\_BRACKET\_PARITY\_OBSTRUCTION\_VERIFIED}\): it
+imports the row \(355\) graded-Jacobi packet, the row \(356\)
+normal-ordered Gram-degree packet, the finite
+\(\texttt{hall\_pairing\_pushforward\_compatibility}\) bracket rows,
+the finite \(\texttt{parity\_pushforward}\) packet, and the compact
+Hall source obstruction ledger; it records
+Proposition~\ref{prop:finite-hall-bracket-parity}; and it keeps the
+current source parity blocks, homogeneous product rows, primitive
+bracket rows, and bracket-parity defect rows open.  Hence row \(357\)
+proves parity compatibility for supplied homogeneous finite Hall data;
+it does not prove full \(K3\times E\) source parity or the GN--Kac
+parity comparison required later in primitive recognition.
+
+\begin{definition}[Compact geometric Hall bialgebra datum]
+\label{def:compact-geometric-hall-bialgebra-datum}
+At a finite HN height \(R\), a compact geometric Hall bialgebra datum is
+the following finite correspondence package on the cosection-reduced
+d-critical heart:
+\begin{enumerate}
+\item finite-type retained substacks
+\(\mathfrak M^{\mathrm{red}}_{R,\widehat c}\) for all
+\(\widehat c\in\widehat\Gamma_R\), with finite residual inertia,
+reduced vanishing-cycle sheaves \(\Phi^{\mathrm{red}}_{R,\widehat c}\),
+and Joyce--Upmeier orientation lines \(o_{R,\widehat c}\);
+\item compactified extension correspondences
+\[
+\mathfrak M^{\mathrm{red}}_{R,\widehat c}\times
+\mathfrak M^{\mathrm{red}}_{R,\widehat c'}
+\xleftarrow{\ p\ }
+\overline{\mathfrak E}^{\mathrm{red}}_{R,\widehat c,\widehat c'}
+\xrightarrow{\ q\ }
+\mathfrak M^{\mathrm{red}}_{R,\widehat c+\widehat c'}
+\]
+with admissible \(p^*,q_!\) for the product and admissible
+\(q^*,p_!\) for the collision coproduct, in either a retained
+compactified flag-Quot model or an explicitly supplied compact-support
+six-functor model;
+\item reduced Thom--Sebastiani isomorphisms
+\(\operatorname{TS}^{\mathrm{red}}_{\widehat c,\widehat c'}\) and their
+inverse transports, compatible with the multiplicative orientation
+cocycle;
+\item vacuum correspondences for the zero object, giving the unit
+\(\eta_R\) and counit \(\epsilon_R\);
+\item three-step and four-step retained flag stacks carrying the
+associativity, coassociativity, and bialgebra-compatibility diagrams,
+with base-change, projection-formula, Koszul sign, and
+Thom--Sebastiani coherence witnesses;
+\item reduced \(E\)-quotient and HN-transition compatibilities for all
+the preceding correspondences.
+\end{enumerate}
+The product and coproduct attached to this datum are
+\[
+m_R=q_!\operatorname{TS}^{\mathrm{red}}p^*,\qquad
+\Delta_R=p_!(\operatorname{TS}^{\mathrm{red}})^{-1}q^*.
+\]
+\end{definition}
+
+\begin{definition}[Hall-product-preserving transition datum]
+\label{def:transition-hall-product-preservation}
+Let \(R'\le R\).  Suppose the finite-moduli transition geometry of
+Definition~\ref{def:finite-moduli-transition-geometry}, the
+orientation-preserving transition datum of
+Definition~\ref{def:transition-orientation-preservation}, and the
+vanishing-cycle-preserving transition datum of
+Definition~\ref{def:transition-vanishing-cycle-preservation} are
+supplied.  A Hall-product-preserving transition datum consists of:
+\begin{enumerate}
+\item a transition cube for the retained compactified extension
+correspondences
+\[
+\mathfrak M_R\times\mathfrak M_R
+\xleftarrow{\ p_R\ }\overline{\mathfrak E}_R
+\xrightarrow{\ q_R\ }\mathfrak M_R,
+\qquad
+\mathfrak M_{R'}\times\mathfrak M_{R'}
+\xleftarrow{\ p_{R'}\ }\overline{\mathfrak E}_{R'}
+\xrightarrow{\ q_{R'}\ }\mathfrak M_{R'},
+\]
+whose input and output squares commute with the stage transitions;
+\item transport of the coefficient system
+\(\Phi_R^{\mathrm{red}}\otimes o_R\) on the extension graph, including
+the Thom--Sebastiani product isomorphism
+\[
+\operatorname{TS}^{\mathrm{red}}_R:
+p_R^*(\Phi_R^{\mathrm{red}}\boxtimes\Phi_R^{\mathrm{red}})
+\xrightarrow{\sim}q_R^*\Phi_R^{\mathrm{red}};
+\]
+\item proper base-change, projection-formula, and compact-support
+pushforward isomorphisms comparing the two pull-push functors
+\[
+q_{R,!}\operatorname{TS}^{\mathrm{red}}_Rp_R^*
+\quad\text{and}\quad
+q_{R',!}\operatorname{TS}^{\mathrm{red}}_{R'}p_{R'}^*
+\]
+after applying the transition maps;
+\item finite product matrices \(M_R,M_{R'}\) in compact source bases
+and transition matrices \(T_R,T_{R'}\) satisfying the product
+intertwining identity
+\[
+T_{\alpha+\beta}\,M_R^{\alpha,\beta}
+=M_{R'}^{\alpha,\beta}(T_\alpha\otimes T_\beta)
+\]
+in every retained degree and parity block;
+\item compatibility with the associativity square on the retained
+two-step flag stack;
+\item zero correspondence, coefficient-system, base-change,
+projection-formula, product-intertwining, associativity-transition, and
+composition defect ranks, together with \(R^1\varprojlim=0\) for the
+Hall product maps.
+\end{enumerate}
+Scalar traces, denominator products, signed multiplicities, target BKM
+products, Pfaffian products, orientation transport alone, and
+vanishing-cycle transport alone are not Hall-product transition data.
+\end{definition}
+
+\begin{proposition}[Transition preservation of compact Hall products;
+\textit{proved}]
+\label{prop:transition-hall-product-preservation-criterion}
+Given a Hall-product-preserving transition datum of
+Definition~\ref{def:transition-hall-product-preservation}, the
+finite-stage transition \(R\to R'\) preserves the compact Hall product:
+on every retained finite degree block,
+\[
+T_R\circ m_R=m_{R'}\circ(T_R\otimes T_R).
+\]
+\end{proposition}
+
+\begin{proof}
+The transition cube identifies the input pullbacks \(p_R^*\) and
+\(p_{R'}^*\) after passage to the transition graph.  The coefficient
+transport identifies \(\Phi^{\mathrm{red}}\otimes o\) and the
+Thom--Sebastiani product isomorphisms on the two sides.  Proper base
+change, the projection formula, and compact-support pushforward
+compatibility then identify the two exceptional pushforwards along
+\(q_R\) and \(q_{R'}\).  Hence the two pull-push functors defining
+\(m_R\) and \(m_{R'}\) commute with transition.  In finite compact
+source bases this is exactly the displayed matrix identity.  The
+associativity-transition and \(R^1\varprojlim\) rows give strict
+composition and inverse-limit exactness for the product maps.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/transition\_hall\_product\_preservation}\)
+records the present state of this datum.  Its verifier status is
+\texttt{TRANSITION\_HALL\_PRODUCT\_PRESERVATION\_OBSTRUCTION\_VERIFIED}:
+the transition-geometry input, orientation-transition input,
+vanishing-cycle transition input, source product matrices, extension
+correspondence transition squares, input and output product-stack
+squares, coefficient-system transport rows, Thom--Sebastiani product
+transport rows, proper base-change rows, projection-formula rows,
+compact-support pushforward rows, product-matrix intertwining rows,
+associativity-transition rows, and Hall-product Mittag--Leffler rows
+are not yet supplied.  Hence transition preservation of compact Hall
+products remains open.
+
+\begin{definition}[Hall-coproduct-preserving transition datum]
+\label{def:transition-hall-coproduct-preservation}
+Let \(R'\le R\).  Suppose the finite-moduli transition geometry of
+Definition~\ref{def:finite-moduli-transition-geometry}, the
+orientation-preserving transition datum of
+Definition~\ref{def:transition-orientation-preservation}, and the
+vanishing-cycle-preserving transition datum of
+Definition~\ref{def:transition-vanishing-cycle-preservation} are
+supplied.  A Hall-coproduct-preserving transition datum consists of:
+\begin{enumerate}
+\item a transition cube for the same retained compactified extension
+correspondences, read in the splitting direction
+\[
+\mathfrak M_R
+\xleftarrow{\ q_R\ }\overline{\mathfrak E}_R
+\xrightarrow{\ p_R\ }\mathfrak M_R\times\mathfrak M_R,
+\qquad
+\mathfrak M_{R'}
+\xleftarrow{\ q_{R'}\ }\overline{\mathfrak E}_{R'}
+\xrightarrow{\ p_{R'}\ }\mathfrak M_{R'}\times\mathfrak M_{R'},
+\]
+whose \(q\)-source square and \(p\)-two-output square commute with the
+stage transitions;
+\item transport of the coefficient system
+\(\Phi_R^{\mathrm{red}}\otimes o_R\) on the splitting graph, including
+the inverse Thom--Sebastiani coproduct isomorphism
+\[
+(\operatorname{TS}^{\mathrm{red}}_R)^{-1}:
+q_R^*\Phi_R^{\mathrm{red}}
+\xrightarrow{\sim}
+p_R^*(\Phi_R^{\mathrm{red}}\boxtimes\Phi_R^{\mathrm{red}});
+\]
+\item proper base-change, projection-formula, and compact-support
+pushforward isomorphisms comparing the two pull-push functors
+\[
+p_{R,!}(\operatorname{TS}^{\mathrm{red}}_R)^{-1}q_R^*
+\quad\text{and}\quad
+p_{R',!}(\operatorname{TS}^{\mathrm{red}}_{R'})^{-1}q_{R'}^*
+\]
+after applying the transition maps;
+\item finite coproduct matrices \(D_R,D_{R'}\) in compact source bases,
+counit matrices \(\epsilon_R,\epsilon_{R'}\), and transition matrices
+\(T_\gamma\) satisfying the coproduct intertwining identity
+\[
+(T_\mu\otimes T_\nu)\,D_R^{\rho;\mu,\nu}
+=D_{R'}^{\rho;\mu,\nu}\,T_\rho
+\]
+in every retained degree and parity block with \(\rho=\mu+\nu\);
+\item compatibility with the coassociativity square on the retained
+two-step flag stack and with the zero-object counit square;
+\item zero correspondence, coefficient-system, base-change,
+projection-formula, coproduct-intertwining, coassociativity-transition,
+counit-transition, and composition defect ranks, together with
+\(R^1\varprojlim=0\) for the Hall coproduct maps.
+\end{enumerate}
+Scalar traces, denominator products, signed multiplicities, target BKM
+coalgebra data, Pfaffian operations, bar-coalgebra deconcatenation,
+Hall-product preservation, orientation transport alone, and
+vanishing-cycle transport alone are not Hall-coproduct transition data.
+\end{definition}
+
+\begin{proposition}[Transition preservation of compact Hall coproducts;
+\textit{proved}]
+\label{prop:transition-hall-coproduct-preservation-criterion}
+Given a Hall-coproduct-preserving transition datum of
+Definition~\ref{def:transition-hall-coproduct-preservation}, the
+finite-stage transition \(R\to R'\) preserves the compact Hall
+coproduct: on every retained finite degree block with \(\rho=\mu+\nu\),
+\[
+(T_\mu\otimes T_\nu)\circ\Delta_R^{\rho;\mu,\nu}
+=\Delta_{R'}^{\rho;\mu,\nu}\circ T_\rho .
+\]
+\end{proposition}
+
+\begin{proof}
+The transition cube identifies the source pullbacks \(q_R^*\) and
+\(q_{R'}^*\) after passage to the transition graph.  The coefficient
+transport identifies \(\Phi^{\mathrm{red}}\otimes o\) and the inverse
+Thom--Sebastiani isomorphisms on the two sides.  Proper base change,
+the projection formula, and compact-support pushforward compatibility
+then identify the two exceptional pushforwards along \(p_R\) and
+\(p_{R'}\).  Hence the two pull-push functors defining \(\Delta_R\) and
+\(\Delta_{R'}\) commute with transition.  In finite compact source
+bases this is exactly the displayed matrix identity.  The
+coassociativity-transition, counit-transition, and \(R^1\varprojlim\)
+rows give strict composition, counital compatibility, and inverse-limit
+exactness for the coproduct maps.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/transition\_hall\_coproduct\_preservation}\)
+records the present state of this datum.  Its verifier status is
+\texttt{TRANSITION\_HALL\_COPRODUCT\_PRESERVATION\_OBSTRUCTION\_VERIFIED}:
+the transition-geometry input, orientation-transition input,
+vanishing-cycle transition input, source coproduct matrices, source
+counit maps, splitting correspondence transition squares, source object
+and target product stack squares, coefficient-system transport rows,
+inverse Thom--Sebastiani coproduct transport rows, proper base-change
+rows, projection-formula rows, compact-support pushforward rows,
+coproduct-matrix intertwining rows, coassociativity-transition rows,
+counit-transition rows, and Hall-coproduct Mittag--Leffler rows are not
+yet supplied.  Hence transition preservation of compact Hall coproducts
+remains open.
+
+\begin{definition}[Primitive-subspace-preserving transition datum]
+\label{def:transition-primitive-subspace-preservation}
+Let \(R'\le R\), and suppose the finite Hall stages carry counital
+coproducts \((\Delta_R,\epsilon_R)\) and
+\((\Delta_{R'},\epsilon_{R'})\).  Put
+\[
+\widetilde\Delta_R
+=\Delta_R-\eta_R\epsilon_R\otimes\mathrm{id}
+-\mathrm{id}\otimes\eta_R\epsilon_R,
+\qquad
+P_R=\ker\widetilde\Delta_R\cap\ker\epsilon_R .
+\]
+A primitive-subspace-preserving transition datum consists of:
+\begin{enumerate}
+\item finite compact-source matrices for
+\(\Delta_R,\Delta_{R'},\epsilon_R,\epsilon_{R'}\), the associated
+reduced coproducts \(\widetilde\Delta_R,\widetilde\Delta_{R'}\), and
+the ambient Hall transition \(T_R:\mathcal H_R\to\mathcal H_{R'}\);
+\item source and target primitive kernel rows, including inclusions
+\(\iota_R:P_R\hookrightarrow\mathcal H_R\),
+\(\iota_{R'}:P_{R'}\hookrightarrow\mathcal H_{R'}\) and finite
+primitive projection matrices;
+\item the reduced-coproduct and counit intertwining identities
+\[
+\widetilde\Delta_{R'}T_R=(T_R\otimes T_R)\widetilde\Delta_R,\qquad
+\epsilon_{R'}T_R=\epsilon_R;
+\]
+\item a restricted transition matrix
+\[
+T_R^{\Prim}:P_R\longrightarrow P_{R'}
+\]
+satisfying \(\iota_{R'}T_R^{\Prim}=T_R\iota_R\), together with zero
+primitive-image, projection-commutator, and composition defect ranks.
+\end{enumerate}
+Hall product preservation, scalar trace data, denominator products,
+target root spaces, bar-coalgebra primitives, normal-ordered degree
+maps, and primitive ranks without inclusions are not
+primitive-subspace transition data.
+\end{definition}
+
+\begin{proposition}[Transition preservation of primitive Hall
+subspaces; \textit{proved}]
+\label{prop:transition-primitive-subspace-preservation-criterion}
+Given a primitive-subspace-preserving transition datum of
+Definition~\ref{def:transition-primitive-subspace-preservation}, the
+ambient Hall transition carries primitives to primitives:
+\[
+T_R(P_R)\subseteq P_{R'}.
+\]
+Equivalently, \(T_R|_{P_R}\) factors through the displayed
+\(T_R^{\Prim}:P_R\to P_{R'}\).
+\end{proposition}
+
+\begin{proof}
+Let \(x\in P_R\).  Then
+\(\widetilde\Delta_Rx=0\) and \(\epsilon_Rx=0\).  The two
+intertwining identities give
+\[
+\widetilde\Delta_{R'}(T_Rx)
+=(T_R\otimes T_R)\widetilde\Delta_Rx=0,\qquad
+\epsilon_{R'}(T_Rx)=\epsilon_Rx=0.
+\]
+Thus \(T_Rx\in\ker\widetilde\Delta_{R'}\cap\ker\epsilon_{R'}=P_{R'}\).
+The finite restricted matrix \(T_R^{\Prim}\) is the same statement in
+the chosen primitive bases.  The projection and composition defect
+rows assert that this factorization is compatible with the finite
+primitive summands and with successive stage transitions.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/transition\_primitive\_subspace\_preservation}\)
+records the present state of this datum.  Its verifier status is
+\texttt{TRANSITION\_PRIMITIVE\_SUBSPACE\_PRESERVATION\_OBSTRUCTION\_VERIFIED}:
+the source and target coproduct matrices, source and target counit
+maps, reduced-coproduct matrices, primitive kernel rows, ambient Hall
+transition matrices, Hall-coproduct transition input, counit-transition
+compatibility, kernel-intertwining rows, primitive projection matrices,
+restricted primitive transition matrices, and primitive-transition
+composition rows are not yet supplied.  Hence transition preservation
+of primitive Hall subspaces remains open.
+
+\begin{proposition}[Geometric Hall data give the finite bialgebra
+defect rows; \textit{proved relative to the datum}]
+\label{prop:geometric-hall-data-give-bialgebra-defects}
+Let the compact geometric Hall bialgebra datum of
+Definition~\ref{def:compact-geometric-hall-bialgebra-datum} be given at
+height \(R\).  Then the matrices of
+\((m_R,\Delta_R,\eta_R,\epsilon_R)\) satisfy the unit, counit,
+associativity, coassociativity, and bialgebra-compatibility equations
+of Definition~\ref{def:finite-hall-bialgebra-defect-tuple}.  Hence the
+first seven components of
+\(\mathfrak O_{\mathrm{Hbialg},R}\) vanish, and
+Proposition~\ref{prop:hall-bialgebra-defects-primitive-closure}
+forms the primitive Hall bracket.  Conversely, finite matrices
+\((M,D,\eta,\epsilon)\) whose bialgebra defect ranks vanish but which
+are not obtained from such a compact geometric Hall bialgebra datum are
+not compact \(K3\times E\) source rows; they are only an abstract finite
+bialgebra.
+\end{proposition}
+
+\begin{proof}
+The left and right unit identities are the pull-push identities for the
+vacuum extension correspondences.  The counit identities are their
+collision analogues after applying the augmentation to the zero-object
+factor.  Associativity of \(m_R\) is the equality of the two pull-push
+composites on the retained three-step extension flag stack; the
+base-change isomorphism, projection formula, and triple
+Thom--Sebastiani coherence identify the two composites.  The same
+argument applied to the reversed correspondence gives coassociativity
+of \(\Delta_R\).
+
+Bialgebra compatibility is the comparison between first multiplying and
+then splitting an extension, and first splitting the two inputs and then
+multiplying the four resulting pieces.  The retained four-step
+flag-of-flags stack is the common refinement of these two operations.
+Base change on this common refinement gives the equality of the two
+pull-push functors; the middle interchange contributes exactly the
+Koszul sign braiding \(\tau\), and the multiplicative
+Thom--Sebastiani orientation transport identifies the coefficient
+systems.  This is the matrix identity
+\[
+\Delta_Rm_R
+=(m_R\otimes m_R)(1\otimes\tau\otimes1)
+(\Delta_R\otimes\Delta_R).
+\]
+Thus all first seven defect matrices have rank zero.  The primitive
+closure is then the algebraic calculation of
+Proposition~\ref{prop:hall-bialgebra-defects-primitive-closure}.
+
+The converse sentence is the Beilinson cut: an abstract finite
+bialgebra with the same matrices is not a \(K3\times E\) source object
+unless its entries are the pull-push matrices of the retained compact
+correspondences with the stated orientation, quotient, and transition
+data.
+\end{proof}
 
 \begin{lemma}[Primitive bracket lifting; \textit{conditional on the
 Frobenius defect $\mathfrak o_F=0$}]
@@ -142,10 +1904,754 @@ $C^3_{\mathrm{cyc}}(\widetilde P_X;k)$ after the reduced $E$-quotient
 and radical quotient, vanishes precisely when the bracket is
 graded-symmetric for the Hopf pairing.  Vanishing is the cyclic-CY-3
 Serre-functor identity of
-Lemma~\ref{thm:hall-product}.  Non-degeneracy of the
+Theorem~\ref{thm:hall-product}.  Non-degeneracy of the
 Hopf pairing alone does \emph{not} force $\mathfrak o_F=0$; it only
 detects the vanishing once supplied.
 \end{lemma}
+
+\begin{definition}[Finite positive-negative Hall pairing]
+\label{def:finite-hall-positive-negative-pairing}
+Let
+\[
+P_R^\Pi=\bigoplus_{\gamma\in\Gamma_R^\Pi,\ \bar p\in\mathbb Z/2}
+P_{R,\gamma,\bar p}^\Pi
+\]
+be a finite normal-ordered primitive Hall stage, equipped with the
+descended product \(m_R^\Theta\) and a degree-zero trace
+\[
+\operatorname{tr}_{0,R}:
+H_{R,0,\bar0}^{\Pi}\longrightarrow k .
+\]
+A finite positive-negative Hall pairing is the collection of bilinear
+forms
+\[
+\langle\cdot,\cdot\rangle_{R,\gamma,\bar p}:
+P_{R,\gamma,\bar p}^\Pi\otimes
+P_{R,-\gamma,\bar p}^\Pi\longrightarrow k
+\]
+defined, in homogeneous finite bases, by the matrix
+\[
+G_{\gamma,\bar p;ab}
+=\operatorname{tr}_{0,R}
+\bigl(m_R^\Theta(e_{\gamma,\bar p,a},e_{-\gamma,\bar p,b})\bigr).
+\]
+Equivalently, \(G_{\gamma,\bar p;ab}\) is the pull-push coefficient of
+the compact positive-negative pairing correspondence
+\[
+\mathfrak P^{\mathrm{red}}_{R,\gamma,-\gamma;0}
+\longrightarrow
+\mathfrak M^{\mathrm{red}}_{R,0}
+\]
+with reduced Thom--Sebastiani and orientation transport, followed by
+\(\operatorname{tr}_{0,R}\).  A finite row of type \(G\) consists of
+the degree \(\gamma\), the parity \(\bar p\), the positive and negative
+primitive basis labels, the scalar coefficient, the pairing
+correspondence, and the geometric source reference.
+
+This is a definition of the source matrix \(G\).  It does not assert
+that \(G\) is homogeneous, graded-symmetric, invariant under the Hall
+bracket, compatible with the coproduct, or non-degenerate after the
+radical quotient.  Those are the separate defect rows of
+Definition~\ref{def:finite-hopf-pairing-identity-tuple}.
+\end{definition}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_positive\_negative\_pairing}\)
+verifies
+\(\texttt{FINITE\_HALL\_POSITIVE\_NEGATIVE\_PAIRING\_OBSTRUCTION\_VERIFIED}\):
+it imports the formal degree-zero pairing rows of
+\(\texttt{hall\_pairing\_pushforward\_compatibility}\), the row \(356\)
+normal-ordered Gram-degree packet, the row \(357\) parity packet, and
+the compact Hall source obstruction ledger; it records
+Definition~\ref{def:finite-hall-positive-negative-pairing}; and it
+keeps the current source \(G\)-entries, degree-zero trace row,
+positive-negative pairing correspondences, orientation transport rows,
+and Hopf-pairing identity rows open.  Hence row \(358\) defines the
+finite positive-negative Hall pairing matrix; it does not prove any of
+the row \(359\)--\(362\) pairing identities.
+
+\begin{proposition}[The finite Hall pairing is homogeneous;
+\textit{proved for supplied source data}]
+\label{prop:finite-hall-pairing-homogeneity}
+Assume the finite positive-negative Hall pairing of
+Definition~\ref{def:finite-hall-positive-negative-pairing} is supplied
+from a homogeneous normal-ordered Hall product and a degree-zero trace.
+Extend it by zero to all pairs
+\[
+P_{R,\gamma,\bar p}^{\Pi}\otimes P_{R,\gamma',\bar q}^{\Pi}.
+\]
+Then
+\[
+\langle
+P_{R,\gamma,\bar p}^{\Pi},
+P_{R,\gamma',\bar q}^{\Pi}
+\rangle_R=0
+\quad\text{unless}\quad
+\gamma+\gamma'=0\ \text{and}\ \bar p=\bar q .
+\]
+Equivalently, every non-zero finite pairing row has total
+normal-ordered Gram degree \(0\) and belongs to one parity block.
+\end{proposition}
+
+\begin{proof}
+For homogeneous inputs \(x\in P_{R,\gamma,\bar p}^{\Pi}\) and
+\(y\in P_{R,\gamma',\bar q}^{\Pi}\), the row \(356\) degree
+calculation gives
+\[
+m_R^\Theta(x,y)\in H_{R,\gamma+\gamma',\bar p+\bar q}^{\Pi}.
+\]
+The trace in Definition~\ref{def:finite-hall-positive-negative-pairing}
+is defined on the degree-zero block.  Hence
+\(\operatorname{tr}_{0,R}(m_R^\Theta(x,y))\) can contribute only when
+\(\gamma+\gamma'=0\).  The positive-negative pairing matrix \(G\) is
+defined blockwise on
+\(P_{R,\gamma,\bar p}^{\Pi}\otimes P_{R,-\gamma,\bar p}^{\Pi}\); its
+extension by zero kills the off-parity blocks.  Thus every non-zero
+entry has total normal-ordered Gram degree \(0\) and one fixed parity
+label.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_pairing\_homogeneity}\)
+verifies
+\(\texttt{FINITE\_HALL\_PAIRING\_HOMOGENEITY\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(358\) positive-negative pairing definition, the
+row \(356\) normal-ordered Gram-degree packet, the formal degree-zero
+pairing rows of
+\(\texttt{hall\_pairing\_pushforward\_compatibility}\), and the compact
+Hall source obstruction ledger; it records
+Proposition~\ref{prop:finite-hall-pairing-homogeneity}; and it keeps
+the current source \(G\)-entries, trace row, pairing correspondence
+rows, and homogeneity defect rows open.  Hence row \(359\) proves the
+homogeneity criterion for supplied finite source data; it does not
+prove graded supersymmetry, Frobenius invariance, coproduct
+adjointness, or quotient non-degeneracy.
+
+\begin{proposition}[The finite Hall pairing is supersymmetric;
+\textit{proved for supplied signed-transpose rows}]
+\label{prop:finite-hall-pairing-supersymmetry}
+Assume the finite positive-negative Hall pairing of
+Definition~\ref{def:finite-hall-positive-negative-pairing} is
+homogeneous in the sense of
+Proposition~\ref{prop:finite-hall-pairing-homogeneity}.  Suppose that
+for every retained degree \(\gamma\), parity \(\bar p\), and pair of
+finite basis labels \(a,b\), the signed-transpose row
+\[
+G_{\gamma,\bar p;ab}
+-(-1)^{\bar p}G_{-\gamma,\bar p;ba}=0
+\]
+is supplied.  Then the extended finite pairing is supersymmetric:
+\[
+\langle x,y\rangle_R
+=(-1)^{|x||y|}\langle y,x\rangle_R
+\]
+for all homogeneous \(x,y\in P_R^\Pi\).
+
+Conversely, a compact-source proof of this identity requires the
+source \(G\)-entries on both signs, source parity blocks,
+signed-transpose defect rows, and the reduced Calabi--Yau
+threefold Serre-sign and orientation-transport data.  Formal
+degree-zero pairing rows, target positive-negative blocks, and scalar
+traces do not supply these signs.
+\end{proposition}
+
+\begin{proof}
+Write \(x\in P_{R,\gamma,\bar p}^{\Pi}\) and
+\(y\in P_{R,\gamma',\bar q}^{\Pi}\).  By
+Proposition~\ref{prop:finite-hall-pairing-homogeneity}, both
+\(\langle x,y\rangle_R\) and \(\langle y,x\rangle_R\) vanish unless
+\(\gamma'=-\gamma\) and \(\bar q=\bar p\).  On a non-zero block one
+therefore has \(|x|=|y|=\bar p\), so
+\((-1)^{|x||y|}=(-1)^{\bar p}\).  Expanding in the chosen finite
+bases, the asserted supersymmetry equation is exactly
+\[
+G_{\gamma,\bar p;ab}
+=(-1)^{\bar p}G_{-\gamma,\bar p;ba}.
+\]
+Linearity gives the identity for arbitrary homogeneous vectors.  This
+is a finite signed-transpose criterion; the geometric computation of
+the signs is the source Serre/orientation problem named in the final
+sentence of the statement.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_pairing\_supersymmetry}\)
+verifies
+\(\texttt{FINITE\_HALL\_PAIRING\_SUPERSYMMETRY\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(359\) homogeneity packet, the row \(358\)
+positive-negative pairing definition, the reduced Calabi--Yau
+threefold Serre-sign criterion packet, and the compact Hall source
+obstruction ledger; it records
+Proposition~\ref{prop:finite-hall-pairing-supersymmetry}; and it keeps
+the current source \(G\)-entries, source parity blocks,
+signed-transpose rows, Serre-sign rows, and orientation-transport rows
+open.  Hence row \(360\) proves the finite supersymmetry criterion for
+supplied source data; it does not prove Frobenius invariance, coproduct
+adjointness, or quotient non-degeneracy.
+
+\begin{definition}[Finite Hopf-pairing identity tuple]
+\label{def:finite-hopf-pairing-identity-tuple}
+Fix homogeneous finite bases on a retained primitive stage and write
+\((M,B,D,G,K,Q)\) for the product, bracket, coproduct, Hopf-pairing,
+radical, and quotient-splitting matrices.  The finite Hopf-pairing
+identity tuple is
+\[
+\mathfrak O_{\mathrm{Hpair},R}
+=\bigl(
+\mathfrak o^{\mathrm{adj}}_R,\,
+\mathfrak o^{\mathrm{Frob}}_R,\,
+\mathfrak o^{\mathrm{qnd}}_R
+\bigr),
+\]
+where
+\[
+\mathfrak o^{\mathrm{adj}}_R(x,y,z)
+=\langle m_R^\Theta(x,y),z\rangle_R
+-\langle x\otimes y,\Delta_R^\Theta z\rangle_R,
+\]
+\[
+\mathfrak o^{\mathrm{Frob}}_R(x,y,z)
+=\langle[x,y]_\Theta,z\rangle_R
++(-1)^{|x||y|}\langle y,[x,z]_\Theta\rangle_R,
+\]
+and \(\mathfrak o^{\mathrm{qnd}}_R\) is the finite rank defect of the
+pairing induced by \(G\) on
+\((P_R^\Pi/\operatorname{Rad}_R^\Pi)_\gamma\otimes
+(P_R^\Pi/\operatorname{Rad}_R^\Pi)_{-\gamma}\) in every retained
+parity block.  In matrix form these are the adjointness, Frobenius
+cyclic, and quotient non-degeneracy rows of the finite source proof
+tables.
+\end{definition}
+
+\begin{proposition}[The finite Hall pairing is invariant;
+\textit{proved for supplied Frobenius rows}]
+\label{prop:finite-hall-pairing-invariance}
+Assume the finite primitive Hall bracket is the graded-skew
+supercommutator and is parity-compatible, the finite Hall pairing is
+supersymmetric in the sense of
+Proposition~\ref{prop:finite-hall-pairing-supersymmetry}, and the
+Frobenius cyclic component of
+Definition~\ref{def:finite-hopf-pairing-identity-tuple} vanishes:
+\[
+\mathfrak o^{\mathrm{Frob}}_R(x,y,z)=0
+\]
+for every homogeneous retained triple.  Then the finite pairing is
+invariant under the Hall bracket:
+\[
+\langle [x,y]_\Theta,z\rangle_R
+=\langle x,[y,z]_\Theta\rangle_R
+\]
+for all homogeneous \(x,y,z\in P_R^\Pi\).
+
+Conversely, a compact-source proof of this identity requires source
+primitive bracket rows, source \(G\)-entries, parity blocks, Frobenius
+defect rows, cyclic three-point pairing correspondences, and the
+reduced Calabi--Yau threefold Serre-sign/orientation transport data.
+The graded Jacobi identity, pairing supersymmetry, or target invariant
+form does not supply these source rows.
+\end{proposition}
+
+\begin{proof}
+Put \(p=|x|\), \(q=|y|\), \(r=|z|\).  Apply the assumed vanishing of
+\(\mathfrak o^{\mathrm{Frob}}_R\) to the triple \((y,z,x)\):
+\[
+0=\langle [y,z]_\Theta,x\rangle_R
+  +(-1)^{qr}\langle z,[y,x]_\Theta\rangle_R .
+\]
+The bracket parity row gives
+\(|[y,z]_\Theta|=q+r\) and \(|[x,y]_\Theta|=p+q\).  Supersymmetry of
+the pairing gives
+\[
+\langle [y,z]_\Theta,x\rangle_R
+=(-1)^{p(q+r)}\langle x,[y,z]_\Theta\rangle_R .
+\]
+Using graded skew-symmetry
+\([y,x]_\Theta=-(-1)^{pq}[x,y]_\Theta\) and supersymmetry again,
+\[
+\langle z,[y,x]_\Theta\rangle_R
+=-(-1)^{pq+(p+q)r}
+\langle [x,y]_\Theta,z\rangle_R .
+\]
+The two exponents \(p(q+r)\) and \(qr+pq+(p+q)r\) agree in
+\(\mathbb Z/2\).  After removing the common sign, the displayed
+vanishing becomes
+\[
+\langle x,[y,z]_\Theta\rangle_R
+-\langle [x,y]_\Theta,z\rangle_R=0,
+\]
+which is the asserted invariance.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_pairing\_invariance}\)
+verifies
+\(\texttt{FINITE\_HALL\_PAIRING\_INVARIANCE\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(360\) supersymmetry packet, the row \(357\)
+bracket-parity packet, the row \(355\) graded-Jacobi packet, the
+reduced Calabi--Yau threefold Serre-sign criterion packet, and the
+compact Hall source obstruction ledger; it records
+Proposition~\ref{prop:finite-hall-pairing-invariance}; and it keeps
+the current source \(B\)-entries, \(G\)-entries, parity blocks,
+Frobenius defect rows, cyclic three-point correspondences,
+Serre-sign rows, and orientation-transport rows open.  Hence row
+\(361\) proves the finite invariance criterion for supplied source
+data; it does not prove coproduct adjointness or quotient
+non-degeneracy.
+
+\begin{proposition}[The finite Hall product and coproduct are adjoint;
+\textit{proved for supplied Hopf-adjointness rows}]
+\label{prop:finite-hall-pairing-coproduct-adjointness}
+Assume the finite Hall product \(m_R^\Theta\), coproduct
+\(\Delta_R^\Theta\), and positive-negative pairing \(G\) are supplied
+in homogeneous finite bases.  Equip \(P_R^\Pi\otimes P_R^\Pi\) with the
+Koszul tensor product pairing
+\[
+\langle x_1\otimes x_2,u_1\otimes u_2\rangle_{R\otimes R}
+=(-1)^{|x_2||u_1|}
+\langle x_1,u_1\rangle_R\langle x_2,u_2\rangle_R .
+\]
+If every adjointness component of
+Definition~\ref{def:finite-hopf-pairing-identity-tuple} vanishes,
+\[
+\mathfrak o^{\mathrm{adj}}_R(x,y,z)=0 ,
+\]
+then
+\[
+\langle m_R^\Theta(x,y),z\rangle_R
+=\langle x\otimes y,\Delta_R^\Theta z\rangle_{R\otimes R}
+\]
+for all homogeneous retained finite vectors \(x,y,z\) in the domain of
+the Hopf-pairing tuple.
+
+In coordinates, for homogeneous basis vectors
+\(e_a,e_b,e_d\), this is the rank-zero matrix identity
+\[
+\sum_c M_{ab}^{c}G_{cd}
+-\sum_{u,v}D_{d}^{uv}(-1)^{|e_b||e_u|}G_{au}G_{bv}=0 .
+\]
+A compact-source proof therefore requires source \(M\)-entries,
+\(D\)-entries, \(G\)-entries, tensor-pairing sign rows, Hopf
+adjointness defect rows, and the product/coproduct correspondence
+orientation data.  Bialgebra compatibility, pairing invariance, target
+Hopf forms, and scalar traces do not supply this adjointness matrix.
+\end{proposition}
+
+\begin{proof}
+Write
+\[
+m_R^\Theta(e_a,e_b)=\sum_c M_{ab}^{c}e_c,\qquad
+\Delta_R^\Theta(e_d)=\sum_{u,v}D_d^{uv}e_u\otimes e_v .
+\]
+By bilinearity of \(G\),
+\[
+\langle m_R^\Theta(e_a,e_b),e_d\rangle_R
+=\sum_c M_{ab}^{c}G_{cd}.
+\]
+By the Koszul tensor product rule,
+\[
+\langle e_a\otimes e_b,\Delta_R^\Theta(e_d)\rangle_{R\otimes R}
+=\sum_{u,v}D_d^{uv}(-1)^{|e_b||e_u|}G_{au}G_{bv}.
+\]
+Thus the displayed coordinate defect is exactly
+\(\mathfrak o^{\mathrm{adj}}_R(e_a,e_b,e_d)\).  Its vanishing on the
+finite homogeneous basis gives the identity for basis vectors, and
+linearity gives it for all homogeneous vectors.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_pairing\_coproduct\_adjointness}\)
+verifies
+\(\texttt{FINITE\_HALL\_PAIRING\_COPRODUCT\_ADJOINTNESS\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(361\) pairing-invariance packet, the row \(342\)
+product-operator packet, the row \(347\) coproduct-operator packet, the
+row \(350\) bialgebra-compatibility packet, and the compact Hall source
+obstruction ledger; it records
+Proposition~\ref{prop:finite-hall-pairing-coproduct-adjointness}; and
+it keeps the current source \(M\)-entries, \(D\)-entries,
+\(G\)-entries, tensor-pairing sign rows, Hopf-adjointness defect rows,
+product/coproduct correspondence rows, and orientation-transport rows
+open.  Hence row \(362\) proves the coproduct-adjointness criterion for
+supplied finite source data; it does not prove quotient
+non-degeneracy.
+
+\begin{proposition}[The finite quotient Hopf pairing is non-degenerate;
+\textit{proved for supplied quotient-rank rows}]
+\label{prop:finite-hall-quotient-pairing-nondegeneracy}
+Let \(G_{\gamma,\bar p}\) be a supplied homogeneous finite
+positive-negative pairing matrix on
+\[
+P_{R,\gamma,\bar p}^{\Pi}\otimes P_{R,-\gamma,\bar p}^{\Pi}.
+\]
+Let \(K_{\gamma,\bar p}\subset P_{R,\gamma,\bar p}^{\Pi}\) and
+\(K_{-\gamma,\bar p}\subset P_{R,-\gamma,\bar p}^{\Pi}\) be supplied
+left and right radical bases for \(G_{\gamma,\bar p}\), and let
+\[
+Q_{\gamma,\bar p}:L_{\gamma,\bar p}\longrightarrow
+P_{R,\gamma,\bar p}^{\Pi},\qquad
+Q_{-\gamma,\bar p}:L_{-\gamma,\bar p}\longrightarrow
+P_{R,-\gamma,\bar p}^{\Pi}
+\]
+be quotient splittings.  Write
+\[
+\overline G_{\gamma,\bar p}
+=Q_{\gamma,\bar p}^{t}G_{\gamma,\bar p}Q_{-\gamma,\bar p}
+\]
+for the induced quotient pairing matrix.  If the finite rank rows give
+\[
+\operatorname{rank}\overline G_{\gamma,\bar p}
+=\dim L_{\gamma,\bar p}
+=\dim L_{-\gamma,\bar p}
+\]
+for every retained \((\gamma,\bar p)\), then the induced pairing
+\[
+L_{\gamma,\bar p}\otimes L_{-\gamma,\bar p}\longrightarrow k
+\]
+is non-degenerate.  This is the quotient non-degeneracy component
+\(\mathfrak o^{\mathrm{qnd}}_R=0\) of
+Definition~\ref{def:finite-hopf-pairing-identity-tuple}.
+
+Conversely, a compact-source proof requires the source \(G\)-entries,
+left and right radical bases \(K_{\pm\gamma,\bar p}\), quotient
+splittings \(Q_{\pm\gamma,\bar p}\), quotient-pairing matrices, and
+rank or determinant rows proving full rank.  Hopf adjointness,
+Frobenius invariance, target radical tables, rank equality alone, and
+signed dimensions do not supply quotient non-degeneracy.
+\end{proposition}
+
+\begin{proof}
+Because \(K_{\gamma,\bar p}\) and \(K_{-\gamma,\bar p}\) are supplied
+as the left and right radicals of \(G_{\gamma,\bar p}\), the pairing
+descends to
+\[
+P_{R,\gamma,\bar p}^{\Pi}/K_{\gamma,\bar p}
+\quad\text{and}\quad
+P_{R,-\gamma,\bar p}^{\Pi}/K_{-\gamma,\bar p}.
+\]
+The splittings \(Q_{\gamma,\bar p}\) and \(Q_{-\gamma,\bar p}\) give
+finite bases of these quotients, and the matrix of the descended
+pairing in these bases is precisely
+\(\overline G_{\gamma,\bar p}
+=Q_{\gamma,\bar p}^{t}G_{\gamma,\bar p}Q_{-\gamma,\bar p}\).  Full
+rank equal to both quotient dimensions says that the two adjoint maps
+\[
+L_{\gamma,\bar p}\longrightarrow L_{-\gamma,\bar p}^{*},
+\qquad
+L_{-\gamma,\bar p}\longrightarrow L_{\gamma,\bar p}^{*}
+\]
+are isomorphisms.  This is non-degeneracy of the quotient pairing.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_quotient\_pairing\_nondegeneracy}\)
+verifies
+\(\texttt{FINITE\_HALL\_QUOTIENT\_PAIRING\_NONDEGENERACY\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(362\) coproduct-adjointness packet, the row \(360\)
+supersymmetry packet, the row \(358\) positive-negative pairing
+definition, the pairing-kernel \(\varprojlim^1\) obstruction packet,
+the transition-radical obstruction packet, and the compact Hall source
+obstruction ledger; it records
+Proposition~\ref{prop:finite-hall-quotient-pairing-nondegeneracy}; and
+it keeps the current source \(G\)-entries, \(K\)-entries,
+\(Q\)-entries, quotient-pairing matrices, quotient-rank rows,
+determinant rows, and radical-identification rows open.  Hence row
+\(363\) proves the quotient non-degeneracy criterion for supplied
+finite source data; it does not prove transition preservation of
+radicals or \(\varprojlim^1\)-vanishing for the radical tower.
+
+\begin{definition}[Compact geometric Hopf-pairing datum]
+\label{def:compact-geometric-hopf-pairing-datum}
+At finite HN height \(R\), assume the compact geometric Hall
+bialgebra datum of
+Definition~\ref{def:compact-geometric-hall-bialgebra-datum}.  A
+compact geometric Hopf-pairing datum on the descended primitive stage is
+the following additional source data:
+\begin{enumerate}
+\item a degree-zero protected trace
+\[
+\operatorname{tr}_{0,R}:H_c^\bullet
+(\mathfrak M^{\mathrm{red}}_{R,0},\Phi^{\mathrm{red}}_{R,0}\otimes
+o_{R,0})\longrightarrow k
+\]
+compatible with the vacuum counit and with HN transitions;
+\item positive-negative compact pairing correspondences
+\(\mathfrak P^{\mathrm{red}}_{R,\gamma,-\gamma;0}\) obtained by
+restricting the Hall product to total descended Gram degree \(0\), with
+orientation and Thom--Sebastiani transport inherited from the Hall
+datum;
+\item homogeneous pairing matrices
+\[
+G_{\gamma,ab}
+=\operatorname{tr}_{0,R}\!\left(
+m_R(e_{\gamma,a},e_{-\gamma,b})\right)
+\]
+on every retained parity block, together with kernel matrices
+\(K_{\gamma,\bar p}\) and quotient splittings \(Q_{\gamma,\bar p}\);
+\item triple pairing correspondences for charges
+\(\gamma_1+\gamma_2+\gamma_3=0\), with cyclic permutation
+isomorphisms induced by the \(3\)-Calabi--Yau Serre pairing and by
+Joyce--Upmeier orientation transport;
+\item finite rank-zero witnesses for Hopf adjointness and the primitive
+Frobenius cyclic identity, and finite rank witnesses that the induced
+pairing on
+\((P_R^\Pi/\operatorname{Rad}_R^\Pi)_\gamma\otimes
+(P_R^\Pi/\operatorname{Rad}_R^\Pi)_{-\gamma}\)
+is non-degenerate in every retained parity block.
+\end{enumerate}
+The radical is
+\[
+\operatorname{Rad}_{R,\gamma,\bar p}^{\Pi}
+=\{x\in P_{R,\gamma,\bar p}^{\Pi}\mid
+\langle x,y\rangle_R=0\text{ for all }
+y\in P_{R,-\gamma,\bar p}^{\Pi}\},
+\]
+with both signs included.  The datum is source-side: the target
+Gritsenko--Nikulin radical may be used only as a comparison codomain
+after the source radical and quotient have been formed.
+\end{definition}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_compact\_geometric\_hopf\_pairing\_datum}\)
+verifies
+\(\texttt{FINITE\_HALL\_COMPACT\_GEOMETRIC\_HOPF\_PAIRING\_DATUM\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(363\) quotient non-degeneracy packet, the row
+\(362\) coproduct-adjointness packet, the row \(361\) Frobenius
+invariance packet, the reduced Calabi--Yau threefold Serre-sign
+criterion packet, the level-\(\mathsf Z\) protected-trace obstruction
+ledger as a firewall, and the compact Hall source obstruction ledger;
+it records
+Definition~\ref{def:compact-geometric-hopf-pairing-datum}; and it
+keeps the source degree-zero trace, positive-negative pairing
+correspondences, orientation and Thom--Sebastiani transport,
+\(G\)-entries, \(K\)-entries, \(Q\)-entries, cyclic three-point
+correspondences, Hopf-adjointness witnesses, Frobenius cyclic
+witnesses, and quotient non-degeneracy witnesses open.  Hence row
+\(364\) records the compact geometric Hopf-pairing datum as a
+source-level datum; it does not construct it, and the
+level-\(\mathsf Z\) protected trace does not substitute for the source
+degree-zero trace.
+
+\begin{definition}[Radical-preserving transition datum]
+\label{def:transition-radical-preservation}
+Let \(R'\le R\).  Suppose the primitive-subspace transition datum of
+Definition~\ref{def:transition-primitive-subspace-preservation} is
+given after normal-ordered descent, so that
+\[
+T_R^{\Prim}:P_R^\Pi\longrightarrow P_{R'}^\Pi
+\]
+is defined.  A radical-preserving transition datum consists of:
+\begin{enumerate}
+\item source and target Hopf-pairing matrices
+\(G_{R,\gamma,\bar p}\) and \(G_{R',\gamma,\bar p}\), with the Hopf
+adjointness, Frobenius cyclic, and quotient non-degeneracy rows of
+Definition~\ref{def:finite-hopf-pairing-identity-tuple};
+\item source and target radical kernel rows
+\[
+K_{R,\gamma,\bar p}=\operatorname{Rad}_{R,\gamma,\bar p}^{\Pi},
+\qquad
+K_{R',\gamma,\bar p}=\operatorname{Rad}_{R',\gamma,\bar p}^{\Pi},
+\]
+together with quotient splittings \(Q_{R,\gamma,\bar p}\) and
+\(Q_{R',\gamma,\bar p}\);
+\item for every target opposite primitive \(y'\in
+P_{R',-\gamma,\bar p}^{\Pi}\), a lifted source opposite primitive
+\(L_{R'R}^{-\gamma}y'\in P_{R,-\gamma,\bar p}^{\Pi}\) with
+\(T_R^{\Prim,-\gamma}L_{R'R}^{-\gamma}y'=y'\);
+\item the pairing-transition identity
+\[
+\bigl\langle T_R^{\Prim,\gamma}x,y'\bigr\rangle_{R'}
+=\bigl\langle x,L_{R'R}^{-\gamma}y'\bigr\rangle_R
+\]
+for every \(x\in P_{R,\gamma,\bar p}^{\Pi}\) and
+\(y'\in P_{R',-\gamma,\bar p}^{\Pi}\);
+\item a restricted radical transition matrix
+\[
+T_R^{\operatorname{Rad}}:K_{R,\gamma,\bar p}\longrightarrow
+K_{R',\gamma,\bar p}
+\]
+and a descended quotient transition matrix
+\[
+\bar T_R:P_{R,\gamma,\bar p}^{\Pi}/K_{R,\gamma,\bar p}
+\longrightarrow
+P_{R',\gamma,\bar p}^{\Pi}/K_{R',\gamma,\bar p},
+\]
+with zero radical-image, quotient well-definedness, splitting
+compatibility, and composition defect ranks.
+\end{enumerate}
+Scalar traces, denominator products, signed multiplicities, target
+radical tables, pairing matrices without Hopf identities, rank
+equalities, primitive transition alone, and normal-ordered degree maps
+are not radical-transition data.
+\end{definition}
+
+\begin{proposition}[Transition preservation of Hopf radicals;
+\textit{proved}]
+\label{prop:transition-radical-preservation-criterion}
+Given a radical-preserving transition datum of
+Definition~\ref{def:transition-radical-preservation}, the primitive
+transition carries the Hopf-pairing radical into the Hopf-pairing
+radical:
+\[
+T_R^{\Prim,\gamma}\bigl(\operatorname{Rad}_{R,\gamma,\bar p}^{\Pi}\bigr)
+\subseteq
+\operatorname{Rad}_{R',\gamma,\bar p}^{\Pi}.
+\]
+Consequently \(T_R^{\Prim}\) descends to the radical quotients through
+the displayed \(\bar T_R\).
+\end{proposition}
+
+\begin{proof}
+Let \(x\in\operatorname{Rad}_{R,\gamma,\bar p}^{\Pi}\), and let
+\(y'\in P_{R',-\gamma,\bar p}^{\Pi}\).  Choose the supplied lift
+\(L_{R'R}^{-\gamma}y'\in P_{R,-\gamma,\bar p}^{\Pi}\).  The
+pairing-transition identity gives
+\[
+\bigl\langle T_R^{\Prim,\gamma}x,y'\bigr\rangle_{R'}
+=\bigl\langle x,L_{R'R}^{-\gamma}y'\bigr\rangle_R=0,
+\]
+because \(x\) pairs trivially with every source opposite primitive.
+Since this holds for every \(y'\), the vector
+\(T_R^{\Prim,\gamma}x\) lies in
+\(\operatorname{Rad}_{R',\gamma,\bar p}^{\Pi}\).  The finite restricted
+matrix \(T_R^{\operatorname{Rad}}\) records this inclusion in radical bases, and the
+quotient well-definedness row is precisely the statement that
+\(T_R^{\Prim}\) factors through \(\bar T_R\).  The splitting and
+composition rows make the quotient transition independent of the
+chosen finite representatives and compatible with successive stages.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/transition\_radical\_preservation}\)
+records the present state of this datum.  Its verifier status is
+\texttt{TRANSITION\_RADICAL\_PRESERVATION\_OBSTRUCTION\_VERIFIED}: the
+primitive-transition input, source and target Hopf-pairing matrices,
+source and target Hopf-pairing identity rows, source and target radical
+kernels, opposite-primitive lift rows, pairing-transition identities,
+radical-image identities, restricted radical transition matrices,
+source and target quotient splittings, descended quotient transition
+matrices, and radical-transition composition rows are not yet supplied.
+Hence transition preservation of Hopf radicals remains open.
+
+\begin{proposition}[Geometric Hopf-pairing data give the finite
+Hopf-pairing defect rows; \textit{proved relative to the datum}]
+\label{prop:geometric-hopf-pairing-data-give-defects}
+Let the compact geometric Hall bialgebra datum and the compact
+geometric Hopf-pairing datum be given at height \(R\).  Then
+\[
+\mathfrak O_{\mathrm{Hpair},R}=0.
+\]
+Consequently the radical of the source pairing is a coproduct coideal;
+if the cyclic Frobenius component of the datum is imposed on primitives,
+it is also a Lie ideal, and the quotient carries the descended primitive
+Lie bracket and Hopf pairing.  Conversely, a matrix \(G\), a kernel
+matrix \(K\), and a quotient matrix \(Q\) with the right ranks are not a
+compact source Hopf-pairing datum unless their entries are obtained
+from the protected trace, pairing correspondences, and cyclic
+three-point coherences above.
+\end{proposition}
+
+\begin{proof}
+Hopf adjointness is the equality of two pull-push evaluations on the
+same three-point extension/collision correspondence.  On one side one
+multiplies \(x\) and \(y\), then pairs with \(z\) by
+\(\operatorname{tr}_{0,R}\); on the other one splits \(z\) by
+\(\Delta_R\), pairs the two resulting factors with \(x\) and \(y\), and
+then applies the tensor trace.  The common flag refinement and the
+projection formula identify the two Borel--Moore chain maps, while the
+Thom--Sebastiani and orientation transports identify the coefficient
+systems.  This is
+\[
+\langle m_R^\Theta(x,y),z\rangle_R
+=\langle x\otimes y,\Delta_R^\Theta z\rangle_R.
+\]
+
+The Frobenius cyclic identity is the same three-point trace after a
+cyclic permutation of the inputs.  The \(3\)-Calabi--Yau Serre pairing
+changes the order by the Koszul sign; the supercommutator therefore
+gives
+\[
+\langle[x,y]_\Theta,z\rangle_R
++(-1)^{|x||y|}\langle y,[x,z]_\Theta\rangle_R=0.
+\]
+The quotient non-degeneracy component is not a consequence of the first
+two equations; it is the finite rank condition in the datum after
+dividing by \(K_{\gamma,\bar p}\).  Hence the three components of
+\(\mathfrak O_{\mathrm{Hpair},R}\) vanish.
+
+The coideal and Lie-ideal conclusions are
+Lemma~\ref{lem:hopf-radical-ideal-coideal}.  The converse sentence is a
+source/target firewall: a finite bilinear form can have the same kernel
+rank as the target radical without being the protected trace pairing of
+the compact \(K3\times E\) Hall source.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_hopf\_pairing\_defect\_rows}\)
+verifies
+\(\texttt{FINITE\_HALL\_HOPF\_PAIRING\_DEFECT\_ROWS\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(364\) compact geometric Hopf-pairing datum packet,
+the row \(350\) Hall bialgebra compatibility packet, the row \(362\)
+Hopf-adjointness criterion, the row \(361\) Frobenius cyclic criterion,
+the row \(363\) quotient non-degeneracy criterion, and the compact Hall
+source obstruction ledger; it records
+Proposition~\ref{prop:geometric-hopf-pairing-data-give-defects}; and it
+keeps the present compact source Hopf-adjointness rows, Frobenius
+cyclic rows, quotient non-degeneracy rows, \(M\)-, \(D\)-, \(G\)-,
+\(K\)-, and \(Q\)-entries, radical ideal/coideal rows, degree-zero
+source trace, positive-negative pairing correspondences, and cyclic
+three-point coherences open.  Hence row \(365\) proves only the
+relative implication from supplied compact geometric Hopf-pairing data
+to \(\mathfrak O_{\mathrm{Hpair},R}=0\); it does not construct the
+datum and does not prove Hopf-radical descent for the current compact
+source.
+
+\begin{proposition}[A pairing matrix is not a Hopf-pairing proof;
+\textit{proved}]
+\label{prop:pairing-matrix-not-hopf-pairing-proof}
+At a finite HN stage, the matrix \(G\), its kernel matrix \(K\), and a
+quotient splitting \(Q\) do not by themselves prove that the radical is
+the Hopf radical used in primitive recognition.  The finite stage proves
+Hopf-radical descent only after
+\(\mathfrak O_{\mathrm{Hpair},R}=0\): Hopf adjointness, the primitive
+Frobenius cyclic identity, and non-degeneracy of the induced quotient
+pairing.  Under these three vanishings, the radical is a coproduct
+coideal and a Lie ideal, hence the quotient carries the descended
+primitive Lie bracket and Hopf pairing.
+\end{proposition}
+
+\begin{proof}
+The matrix \(G\) defines a bilinear form and \(K=\ker G\) records its
+linear radical.  Coideal stability is not a linear-algebra consequence
+of being a kernel: it follows from Hopf adjointness
+\(\langle m(x,y),r\rangle=\langle x\otimes y,\Delta r\rangle\) and
+non-degeneracy of the quotient tensor pairing.  Lie-ideal stability is
+not a consequence of kernel membership either; it follows from the
+Frobenius identity
+\(\langle[x,r],z\rangle=-(-1)^{|x||r|}\langle r,[x,z]\rangle\).  These
+are exactly the first two defects in
+\(\mathfrak O_{\mathrm{Hpair},R}\), and quotient non-degeneracy is the
+third.  With all three vanishing, Lemma~\ref{lem:hopf-radical-ideal-coideal}
+applies.  If any one is absent, \(K\) is only the radical of a finite
+matrix, not the Hopf radical required by
+Theorem~\ref{thm:primitive-recognition}.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_pairing\_matrix\_firewall}\)
+verifies
+\(\texttt{FINITE\_HALL\_PAIRING\_MATRIX\_FIREWALL\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(365\) Hopf-pairing defect packet, the row \(362\)
+Hopf-adjointness criterion, the row \(361\) Frobenius cyclic criterion,
+the row \(363\) quotient non-degeneracy criterion, and the compact Hall
+source obstruction ledger; it records
+Proposition~\ref{prop:pairing-matrix-not-hopf-pairing-proof}; and it
+keeps the current source \(G\)-, \(K\)-, and \(Q\)-entries,
+Hopf-adjointness rows, Frobenius cyclic rows, quotient
+non-degeneracy rows, radical coideal rows, radical Lie-ideal rows, and
+quotient Hopf-pairing rows open.  Hence row \(366\) is a firewall
+theorem: \(G,K,Q\) and their ranks can identify a finite bilinear
+kernel, but they do not prove the Hopf radical used in primitive
+recognition.  Hopf-radical descent begins only after
+\(\mathfrak O_{\mathrm{Hpair},R}=0\).
 
 \begin{lemma}[Hopf radical is a Lie ideal and a coideal;
 \textit{conditional on $\mathfrak o_F=0$ and Hopf adjointness}]
@@ -180,51 +2686,228 @@ $\langle[x,r]_\Theta,z\rangle_R
 so $[x,r]_\Theta\in\operatorname{Rad}_R^\Pi$.
 \end{proof}
 
+The packet
+\(\texttt{certificates/hall/finite\_hall\_hopf\_radical\_ideal\_coideal}\)
+verifies
+\(\texttt{FINITE\_HALL\_HOPF\_RADICAL\_IDEAL\_COIDEAL\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(366\) pairing-matrix firewall, the row \(365\)
+Hopf-pairing defect packet, the row \(362\) Hopf-adjointness criterion,
+the row \(361\) Frobenius cyclic criterion, the row \(363\) quotient
+non-degeneracy criterion, and the compact Hall source obstruction
+ledger; it records Lemma~\ref{lem:hopf-radical-ideal-coideal}; and it
+keeps the present source Hopf-adjointness rows, Frobenius cyclic rows,
+quotient tensor non-degeneracy rows, radical coideal rows, radical
+Lie-ideal rows, \(G\)-, \(K\)-, and \(Q\)-entries open.  Hence row
+\(367\) proves the conditional algebraic criterion for a supplied
+finite Hopf pairing; it does not prove the radical ideal/coideal rows
+for the current compact \(K3\times E\) source.
+
 \subsubsection*{Integral form and stable-envelope transport}
 
 Two parallel constructions act on the same compact Hall heart:
 \begin{enumerate}
-\item the integral form of the Schiffmann--Vasserot
-elliptic Hall algebra, whose $K3\times E$-specialization carries the
-Maulik--Okounkov stable envelope;
-\item the Drinfeld double $\mathcal D_\hbar(\textup{CoHA}_{K3\times E})$
-of Vol III, whose positive half is the protected primitive Hopf
-algebra above and whose Drinfeld pairing is the Hopf pairing.
+\item the integral-form comparison modeled on the
+Schiffmann--Vasserot elliptic Hall algebra; a compact
+\(K3\times E\) specialization would require a non-toric
+Maulik--Okounkov-type stable-envelope transport;
+\item the proposed Drinfeld double
+\(\mathcal D_\hbar(\textup{CoHA}_{K3\times E})\) of Vol III, whose
+positive half must be the protected primitive Hopf algebra above and
+whose Drinfeld pairing must be the Hopf pairing.
 \end{enumerate}
-The compatibility datum between these two constructions is part of
-the cross-repo consistency check between this manuscript and the
-Calabi--Yau quantum-groups constellation.  Disagreement on a
-load-bearing constant or sign is the deliverable; the Drinfeld
-double is not asserted here as a black box.
+The compatibility datum between these two constructions is a comparison
+with Calabi--Yau quantum groups.  A different constant or
+sign would be a distinct mathematical claim; the Drinfeld double is not
+asserted here as an input theorem.
+
+\begin{definition}[Integral-form stable-envelope comparison datum]
+\label{def:integral-form-stable-envelope-comparison-datum}
+At finite height \(R\), an integral-form stable-envelope comparison
+datum for the compact \(K3\times E\) Hall heart consists of the
+following finite rows:
+\begin{enumerate}
+\item an integral lattice
+\((Y^+_{R,\mathbb Z}(X),m_R,\Delta_R,\langle-,-\rangle_R)\)
+inside the protected Hall bialgebra, stable under product,
+coproduct, and the Hopf pairing;
+\item a separated and complete topology on \(Y^+_R(X)\), compatible
+with the HN transition maps and the Hopf radical quotient;
+\item a completed Drinfeld double
+\(\mathcal D_\hbar(Y^+_R(X))\) with cross-relations whose structure
+constants are the finite Hall pairing rows;
+\item a Cartan part in the double, identified with
+\(\Lambda_{II}^{2,1}\otimes\mathbb C\), and rows proving that this
+Cartan survives the reduced primitive quotient;
+\item a compact non-toric stable-envelope correspondence satisfying
+support, normalization, degree, and chamber-cocycle identities on the
+retained \(K3\times E\) moduli;
+\item comparison constants, signs, and degree shifts identifying the
+preceding double with the Calabi--Yau quantum-group normalization.
+\end{enumerate}
+The datum is source-level.  The target BKM denominator, the
+Schiffmann--Vasserot affine \(A_0\) theorem, and the
+Maulik--Okounkov quiver-variety stable envelope do not supply these
+finite compact rows.
+\end{definition}
+
+\begin{proposition}[Stable-envelope and Drinfeld-double scope
+firewall; \textit{proved}]
+\label{prop:integral-form-stable-envelope-transport-firewall}
+The Maulik--Okounkov stable-envelope theorem and the
+Schiffmann--Vasserot elliptic-Hall comparison may be used here only in
+their stated scope.  They do not construct the integral form,
+separated completion, compact non-toric stable envelope, Drinfeld
+double cross-relations, or Cartan identification required for the
+compact \(K3\times E\) Hall heart.  Any assertion
+\[
+\mathcal D_\hbar(Y^+(K3\times E))^{\mathrm{int}}_{\mathrm{compl}}
+ \simeq
+Y_\hbar(\widehat{\mathfrak g}_{\Delta_5})
+\]
+is therefore conditional on the datum of
+Definition~\ref{def:integral-form-stable-envelope-comparison-datum}.
+\end{proposition}
+
+\begin{proof}
+Appendix~\ref{app:stable-envelope} records the precise imported
+theorems.  Maulik--Okounkov stable envelopes are constructed for
+smooth symplectic varieties in the quiver-variety setting with a torus
+action and chamber data; their theorem gives the geometric
+\(R\)-matrix in that category.  Schiffmann--Vasserot identify the
+\(\mathbb C^3\) cohomological Hall algebra with the positive half in
+the affine \(A_0\) elliptic-Hall setting.  Neither theorem contains a
+compact non-toric \(K3\times E\) moduli atlas, a retained D0-HN
+comparison, an \(O2\) wall atlas, or the Hopf-radical quotient rows
+above.
+
+Thus the cited theorems fix the target shape and the normalization
+problem, but they do not supply the finite source rows of
+Definition~\ref{def:integral-form-stable-envelope-comparison-datum}.
+The compact comparison is a separate datum: without those rows the
+symbol \(\mathcal D_\hbar(Y^+(K3\times E))^{\mathrm{int}}_{\mathrm{compl}}\)
+is a requested construction, not an established input theorem.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_integral\_form\_stable\_envelope\_transport}\)
+verifies
+\(\texttt{FINITE\_HALL\_INTEGRAL\_FORM\_STABLE\_ENVELOPE\_TRANSPORT\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(367\) Hopf-radical ideal/coideal criterion, the
+compact Hall source ledger, the D0-HN obstruction ledger, and the
+\((O2)\) wall-atlas ledger; it records
+Definition~\ref{def:integral-form-stable-envelope-comparison-datum}
+and
+Proposition~\ref{prop:integral-form-stable-envelope-transport-firewall};
+and it keeps the present compact source integral-form rows, product
+stability rows, coproduct stability rows, pairing stability rows,
+separated-completion rows, complete-completion rows, Drinfeld-double
+rows, cross-relation rows, stable-envelope rows, Cartan
+identification rows, primitive Cartan survival rows, compact
+non-toric replacement theorem, and Calabi--Yau quantum-group
+comparison rows open.  Hence row \(368\) proves only the scope
+firewall and the required finite datum; it does not construct the
+compact \(K3\times E\) integral form, the compact Drinfeld double, or
+stable-envelope transport.
 
 \subsubsection*{Conilpotent source coalgebra and Hopf radical
 quotient}
 
-\begin{definition}[Conilpotent source coalgebra]
+\begin{definition}[Finite conilpotent source-coalgebra datum]
 \label{def:conilpotent-source-coalgebra}
-At finite stage, $C_{X,R}$ is the conilpotent chiral coalgebra on
-$E$ obtained from the collision coproduct on $\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}$
-after the reduced $E$-quotient: it is filtered by a finite increasing
-source charge filtration
+A finite conilpotent source-coalgebra datum at HN height \(R\) is a
+source-side package
+\[
+(C_{X,R},\eta^C_R,\varepsilon^C_R,
+F^{\mathrm{co}}_{R,\bullet},
+\Delta_R^{\mathrm{ch}},\rho^C_{R'R})
+\]
+obtained from the retained collision correspondences on
+\(\mathcal F_{X,\sigma,S,\le R}^{\mathrm{hyb}}\), after the reduced
+\(E\)-quotient, with the following finite rows:
+\begin{enumerate}
+\item \(C_{X,R}\) is a coaugmented chiral coalgebra on \(E\), with
+coaugmentation \(\eta^C_R\), counit \(\varepsilon^C_R\), and
+coalgebra identities for \(\Delta_R^{\mathrm{ch}}\);
+\item \(C_{X,R}\) is filtered by a finite increasing source charge
+filtration
 \[
 0=F^{\mathrm{co}}_{R,-1}\subset F^{\mathrm{co}}_{R,0}\subset
 \cdots\subset F^{\mathrm{co}}_{R,N_R}=C_{X,R}
 \]
 whose associated graded pieces are finite dimensional in each
-$\Gamma_R^\Pi$-degree — where
-$\Gamma_R^\Pi:=\overline\Pi_X(\widehat\Gamma_R)$
+\(\Gamma_R^\Pi\)-degree, where
+\(\Gamma_R^\Pi:=\overline\Pi_X(\widehat\Gamma_R)\)
 is the image, under the \emph{normal-ordered} Gram homomorphism
-$\overline\Pi_X$ of Chapter~\ref{ch:k3xe-setup}, of the retained
+\(\overline\Pi_X\) of Chapter~\ref{ch:k3xe-setup}, of the retained
 normal-ordered charge window $\widehat\Gamma_R$ at Harder--Narasimhan
-height $R$ (\S\ref{subsec:hybrid-ran-carrier}); the additive
-$\overline\Pi_X$, not the raw quadratic $\Pi_X$, is forced as the
-grading by the no-go theorem of Chapter~\ref{ch:k3xe-setup} —
-and whose reduced iterated coproduct is
-nilpotent on each finite stage.  Conilpotence is recorded by the
-defect $(\overline\Delta_R^{\mathrm{ch}})^{N_R+1}$, required to
-vanish.  Inverse-limit completion gives the source coalgebra
-$C_X=\varprojlim_R C_{X,R}$.
+height \(R\) (\S\ref{subsec:hybrid-ran-carrier});
+\item the additive \(\overline\Pi_X\), not the raw quadratic
+\(\Pi_X\), is the grading map;
+\item the reduced iterated coproduct is nilpotent:
+\[
+(\overline\Delta_R^{\mathrm{ch}})^{N_R+1}=0;
+\]
+\item for every successor \(R'\le R\), the transition map
+\(\rho^C_{R'R}\) preserves the filtration, counit, coaugmentation, and
+collision coproduct.
+\end{enumerate}
+Only after these transition rows and the strict Mittag--Leffler rows
+are supplied does the inverse limit define the source coalgebra
+\[
+C_X=\varprojlim_R C_{X,R}.
+\]
 \end{definition}
+
+\begin{proposition}[Conilpotent source-coalgebra firewall;
+\textit{proved}]
+\label{prop:conilpotent-source-coalgebra-firewall}
+The notation \(C_{X,R}\), the formal bar-coalgebra construction, the
+target BKM denominator, the stable-envelope comparison, and the
+Drinfeld-double comparison do not construct the finite conilpotent
+source-coalgebra datum of
+Definition~\ref{def:conilpotent-source-coalgebra}.  A compact
+\(K3\times E\) source coalgebra is available only after the
+coaugmentation, counit, finite filtration, collision-coproduct,
+coalgebra-identity, conilpotence, quotient-after-correspondence,
+transition, and Mittag--Leffler rows are supplied.
+\end{proposition}
+
+\begin{proof}
+A conilpotent coalgebra is not determined by its name.  It requires a
+coalgebra object, counit and coaugmentation, a coproduct satisfying
+coassociativity and counit identities, and a filtration for which the
+reduced iterated coproduct terminates.  In this manuscript those
+structures must be produced by retained compact collision
+correspondences and their quotient-after-correspondence identities.
+The target denominator and the later Drinfeld-double comparison live
+on the comparison side; stable-envelope transport is a separate
+normalization problem.  None of them supplies the source chain maps or
+zero-defect rows listed in
+Definition~\ref{def:conilpotent-source-coalgebra}.  The inverse-limit
+object \(C_X\) additionally requires transition compatibility and
+strict Mittag--Leffler exactness, since otherwise
+\(R^1\varprojlim\) remains an obstruction.
+\end{proof}
+
+The packet
+\(\texttt{certificates/hall/finite\_hall\_conilpotent\_source\_coalgebra}\)
+verifies
+\(\texttt{FINITE\_HALL\_CONILPOTENT\_SOURCE\_COALGEBRA\_OBSTRUCTION\_VERIFIED}\):
+it imports the row \(368\) stable-envelope/Drinfeld-double firewall,
+the hybrid carrier ledger, the compact Hall source obstruction
+ledger, the D0-HN obstruction ledger, the Hall product and coproduct
+transition ledgers, and the primitive-space and pairing-kernel
+\(\varprojlim^1\) ledgers; it records
+Definition~\ref{def:conilpotent-source-coalgebra} and
+Proposition~\ref{prop:conilpotent-source-coalgebra-firewall}; and it
+keeps the present compact source coalgebra rows, coaugmentation rows,
+counit rows, finite filtration rows, collision-coproduct rows,
+coalgebra-identity rows, conilpotence rows, quotient coalgebra
+identity rows, transition coalgebra rows, inverse-limit
+Mittag--Leffler rows, and bar-cobar comparison rows open.  Hence row
+\(369\) proves only the source-data boundary for \(C_{X,R}\) and
+\(C_X\); it does not construct the compact \(K3\times E\)
+conilpotent source coalgebra.
 
 \begin{proposition}[Sectorial Hall truncation and inverse limit;
 \textit{conditional on
@@ -277,7 +2960,7 @@ OP/DT chamber, or that the wall-crossing transport is compatible
 with $\overline\Pi_X$, is a separate conjectural input.  No
 chamber-independence of the recognition target is asserted.
 
-\subsubsection*{Status under the obstruction tuple}
+\subsubsection*{The Hall obstruction class}
 
 The Hall lane carries the residuals
 \[
@@ -286,27 +2969,42 @@ The Hall lane carries the residuals
 \mathfrak o^{\mathrm{conf}}_R,\,
 \mathfrak o^{\mathrm{prop}}_R,\,
 \mathfrak o^{\mathrm{TS}}_R,\,
-\mathfrak o^{\mathrm{assoc}}_R,\,
-\mathfrak o_{F,R},\,
-\mathfrak o^{\mathrm{coid}}_R,\,
+\mathfrak O_{\mathrm{Hbialg},R},\,
+\mathfrak O_{\mathrm{Hpair},R},\,
 \mathfrak o^{\mathrm{ML}}_{R'R}).
 \]
-Discharge of the wrapped product on the projection-finite stratum is
-classical d-critical CoHA after cosection reduction; on the wrapped
-stratum the construction is open and tracked by the (D0)
-obstruction.  Hopf adjointness, Frobenius vanishing, and PBW
-compatibility are independent constructions on the descended primitive
-layer.
+The first four entries assert the existence of the compact geometric
+Hall bialgebra datum of
+Definition~\ref{def:compact-geometric-hall-bialgebra-datum}: finite
+retained substacks, compact-support functoriality, and coherent
+Thom--Sebastiani orientation transport.  The tuple
+\(\mathfrak O_{\mathrm{Hbialg},R}\) is then the algebraic defect tuple
+of Definition~\ref{def:finite-hall-bialgebra-defect-tuple}; it is not
+defined before product, coproduct, unit, and counit matrices have been
+obtained from the compact correspondences.  The tuple
+\(\mathfrak O_{\mathrm{Hpair},R}\) is the Hopf-pairing identity tuple of
+Definition~\ref{def:finite-hopf-pairing-identity-tuple}; it is
+independent of the bialgebra equations and is not defined before the
+compact geometric Hopf-pairing datum of
+Definition~\ref{def:compact-geometric-hopf-pairing-datum}: protected
+trace, positive-negative pairing correspondences, cyclic three-point
+coherences, source radical, quotient splitting, and quotient
+non-degeneracy.  On the projection-finite stratum the wrapped product
+is the classical d-critical CoHA product after cosection reduction; on
+the wrapped stratum the construction is open and governed by the (D0)
+obstruction.  PBW compatibility remains a separate recognition datum on
+the descended primitive layer.
 
-\subsubsection*{Cross-repo anchor}
+\subsubsection*{Comparison with Drinfeld doubling}
 
-Vol III's Drinfeld doubling $Y^+(X)\to G(X)$ produces the BKM target
-of the present manuscript on the source side; the integral form is
-the chiral lift of the Schiffmann--Vasserot elliptic Hall algebra.
+Vol III's Drinfeld doubling $Y^+(X)\to G(X)$ is the comparison target
+for the compact source side; the integral form is
+the chiral lift of the Schiffmann--Vasserot elliptic Hall algebra
+after the stable-envelope and completion data are fixed.
 Maulik--Okounkov stable-envelope transport supplies the integral
 form on the projection-finite Ran stratum; the wrapped stratum is
-the stratum-completion that this manuscript and the chiral-bar-cobar
-volumes reconstruct.  No black-box equality $\mathrm{CoHA}=W_\infty$
+the corresponding stratum-completion.  No black-box equality
+$\mathrm{CoHA}=W_\infty$
 is asserted: $\mathrm{CoHA}(\C^3)=Y^+(\mathfrak{gl}_1)$ in Vol III,
 and $W_{1+\infty}$ appears only after Drinfeld doubling, centre,
 vacuum evaluation.  The same discipline applies here: the protected
@@ -314,9 +3012,11 @@ primitive Hopf algebra of $K3\times E$ becomes the BKM target only
 after the Hopf radical quotient, the Frobenius identity, and the
 no-extra-relations theorem of \S\ref{subsec:primitive-recognition}.
 
-The Hall correspondences produce a protected primitive Hopf algebra
-on the cosection-twisted heart, but they live at the operator level
-and have no automatic comparison to the scalar denominator
+Under \(\mathfrak O_{\mathrm{Hall},R}=0\) and the Mittag--Leffler
+transition datum, the Hall correspondences give a finite-stage
+protected primitive Hopf datum on the cosection-twisted heart.  This
+datum lives at the operator level and has no automatic comparison to
+the scalar denominator
 $\mathrm{den}(\autcor)=64^{-1}\Delta_5(2Z)$ imported in
 Chapter~\ref{ch:view2-bkm}.  Closing the cross-level identity
 \textcircled{2}$\leftrightarrow$\textcircled{3} requires a chain-level

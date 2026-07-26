@@ -1,0 +1,52 @@
+{
+  "schema_version": "quotient_after_correspondence_bm_chain_functor.v1",
+  "fixture_name": "quotient_after_correspondence_bm_chain_functor",
+  "hybrid_kind": "quotient_after_correspondence_bm_chain_functor",
+  "status": "QUOTIENT_AFTER_CORRESPONDENCE_BM_CHAIN_FUNCTOR_VERIFIED",
+  "bm_chain_functor_constructed": true,
+  "quotient_after_correspondence_imported": true,
+  "quotient_first_exclusion_imported": true,
+  "coefficient_descent_required": true,
+  "quotient_stack_descent_used": true,
+  "verdier_dual_bm_definition_used": true,
+  "bm_chain_defect_rank": 0,
+  "compact_support_pushforward_base_change": false,
+  "flag_certification": true,
+  "theta_mu_certification": true,
+  "operation_comparison_constructed": true,
+  "transition_certification": true,
+  "protected_integration_certification": false,
+  "aggregate_hybrid_population": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "bm_chain_functor_rows.csv",
+    "bm_object_rows.csv",
+    "coefficient_morphism_rows.csv",
+    "functoriality_rows.csv",
+    "flag_coherence_rows.csv",
+    "theta_mu_rows.csv",
+    "transition_rows.csv",
+    "protected_integration_rows.csv",
+    "aggregate_population_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/quotient_after_correspondence_pseudofunctor_definition",
+    "certificates/hybrid/quotient_after_correspondence_quotient_first_exclusion",
+    "certificates/hybrid/quotient_after_correspondence_theta_mu_comparison",
+    "certificates/hybrid/quotient_after_correspondence_theta_mu_associativity",
+    "certificates/hybrid/quotient_after_correspondence_hn_transition_compatibility"
+  ],
+  "limitations": [
+    "This packet constructs only the descent-defined Borel-Moore chain functor Q_E_R on quotient-presented coefficient objects.",
+    "It applies C_*^BM([Y/E], -) to descended constructible coefficients.",
+    "The theta_mu operation-comparison maps are separated in certificates/hybrid/quotient_after_correspondence_theta_mu_comparison.",
+    "The theta_mu associativity compatibility row is separated in certificates/hybrid/quotient_after_correspondence_theta_mu_associativity.",
+    "The HN transition compatibility of Q_E_R is separated in certificates/hybrid/quotient_after_correspondence_hn_transition_compatibility.",
+    "It does not prove protected-integration compatibility or aggregate hybrid population.",
+    "The protected integration definition is separated in certificates/hybrid/protected_integration_definition.",
+    "It does not populate certificates/hybrid/k3e_hybrid_carrier/quotient_pseudofunctor.csv."
+  ]
+}

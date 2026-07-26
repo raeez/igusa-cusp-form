@@ -1,0 +1,28 @@
+{
+  "schema_version": "bar_pushforward_commutation.v1",
+  "fixture_name": "bar_pushforward_commutation",
+  "charge_kind": "bar_pushforward_commutation_formal_tensor_coalgebra",
+  "coefficient_ring": "ZZ",
+  "certified": true,
+  "bar_pushforward_commutation_certified": true,
+  "normal_ordered_additive_grading": true,
+  "raw_quadratic_pushforward": false,
+  "chiral_koszul_quasiisomorphism": false,
+  "hall_bracket_compatibility": false,
+  "hopf_pairing_compatibility": false,
+  "pfaffian_orientation": false,
+  "protected_trace": false,
+  "tables": [
+    "generators.csv",
+    "bar_words.csv",
+    "deconcatenation.csv",
+    "bar_differential.csv",
+    "formal_relations.csv",
+    "scalar_firewall.csv"
+  ],
+  "limitations": [
+    "This packet proves finite tensor-coalgebra degree bookkeeping for the additive normal-ordered Gram grading.",
+    "It checks finite bar-word degrees, deconcatenation degrees, and degree preservation of displayed bar-differential products.",
+    "It does not certify the raw quadratic Pi_X pushforward, chiral Koszul quasi-isomorphism, Hall bracket compatibility, Hopf pairing compatibility, Pfaffian orientations, or protected traces."
+  ]
+}

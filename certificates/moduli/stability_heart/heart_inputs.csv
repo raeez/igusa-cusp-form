@@ -1,0 +1,9 @@
+input_id,input_kind,input_symbol,required,source_reference,check_status,notes
+polarized_k3_surface,geometric_input,"(S,H)",true,chapters/02_k3xe_setup.tex def:admissible-dirac-igusa-parameter-datum,verified,polarized K3 input for the retained datum
+elliptic_curve_with_origin,geometric_input,"(E,0_E)",true,chapters/02_k3xe_setup.tex def:admissible-dirac-igusa-parameter-datum,verified,elliptic factor with chosen origin
+rational_k3_stability_condition,stability_input,"sigma_S=(A_S,Z_S)",true,"BridgelandK3Stability; LiuProductStability",verified,rational K3 stability condition used by Liu product stability
+degree_one_elliptic_line_bundle,stability_input,L_E,true,LiuProductStability,verified,degree-one line bundle on E for product stability
+ap_product_t_structure,t_structure_input,A_X^{AP},true,AbramovichPolishchukTStructures,verified,product t-structure heart on DbCoh(X)
+liu_product_parameters,stability_input,"(s,t)",true,certificates/moduli/liu_product_stability,verified,positive product-stability parameters
+liu_product_stability,stability_input,"sigma_{s,t}",true,certificates/moduli/liu_product_stability,verified,product stability datum on DbCoh(X)
+retained_hn_index_system,retained_index_input,R_HN,true,chapters/02_k3xe_setup.tex def:admissible-dirac-igusa-parameter-datum,verified,cofinal finite HN index system retained as datum

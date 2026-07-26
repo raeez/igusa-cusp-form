@@ -1,0 +1,52 @@
+{
+  "schema_version": "source_target_anchor_memory_definition.v1",
+  "fixture_name": "source_target_anchor_memory_definition",
+  "hybrid_kind": "source_target_anchor_memory_definition",
+  "status": "SOURCE_TARGET_ANCHOR_MEMORY_DEFINITION_VERIFIED",
+  "source_target_anchor_memory_defined": true,
+  "before_quotient": true,
+  "determinant_anchor_construction": false,
+  "translation_weight_certification": false,
+  "chi_zero_degeneracy_certification": false,
+  "extra_anchor_data_certification": false,
+  "anchor_residual_certification": false,
+  "anchor_losslessness_certification": false,
+  "quotient_descent_certification": false,
+  "transition_certification": false,
+  "quotient_first": false,
+  "scalar_only": false,
+  "tables": [
+    "definition_rows.csv",
+    "local_local_exclusion.csv",
+    "determinant_anchor_rows.csv",
+    "translation_weight_rows.csv",
+    "chi_zero_degeneracy_rows.csv",
+    "extra_anchor_data_rows.csv",
+    "anchor_residual_rows.csv",
+    "anchor_losslessness_rows.csv",
+    "quotient_descent_rows.csv",
+    "transition_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/hybrid/hybrid_ran_prestack_definition",
+    "certificates/hybrid/local_stratum_b0_prestack_definition",
+    "certificates/hybrid/wrapped_stratum_bpositive_prestack_definition",
+    "certificates/hybrid/mixed_local_wrapped_correspondence_definition",
+    "certificates/hybrid/wrapped_wrapped_correspondence_definition",
+    "certificates/hybrid/local_local_correspondence_definition",
+    "certificates/hybrid/two_sided_mixed_correspondence_definition"
+  ],
+  "limitations": [
+    "This packet defines source and target anchor memory for LW, WL, WW, and LWL unreduced correspondence types before the reduced E quotient.",
+    "It assumes the abstract wrapped anchors lambda_{eta,R} already named by the wrapped prequotient datum.",
+    "The determinant-anchor construction is separated in certificates/hybrid/determinant_anchor_construction.",
+    "The determinant-anchor translation weight is separated in certificates/hybrid/determinant_anchor_translation_weight.",
+    "The determinant-anchor chi-zero degeneracy is separated in certificates/hybrid/determinant_anchor_chi_zero_degeneracy.",
+    "The determinant-anchor extra-anchor-data row is separated in certificates/hybrid/determinant_anchor_extra_anchor_data.",
+    "The anchor-residual definition is separated in certificates/hybrid/anchor_residual_definition.",
+    "It does not prove the residual o_R^lambda vanishes.",
+    "It does not prove anchor losslessness, quotient descent, transition compatibility, or populated finite correspondence anchor rows."
+  ]
+}

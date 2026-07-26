@@ -1,0 +1,40 @@
+{
+  "schema_version": "k3_semiregularity_cosection.v1",
+  "fixture_name": "k3_semiregularity_cosection",
+  "orientation_kind": "k3_semiregularity_cosection_input",
+  "status": "K3_SEMIREGULARITY_COSECTION_VERIFIED",
+  "base_field": "CC",
+  "ptvv_finite_substack_input_imported": true,
+  "joyce_dcritical_truncation_imported": true,
+  "holomorphic_two_form_input": true,
+  "cosections_constructed": true,
+  "three_substacks_verified": true,
+  "cosection_construction_defect_zero": true,
+  "cosection_surjectivity": false,
+  "filtered_hall_additivity": false,
+  "rhom_red": false,
+  "perfect_reduced_obstruction": false,
+  "det_rhom_red": false,
+  "orientation_square_root": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "formula_rows.csv",
+    "cosection_rows.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/ptvv_finite_substack_symplectic",
+    "certificates/orientation/joyce_dcritical_truncation"
+  ],
+  "limitations": [
+    "This packet supplies row 273 only: the K3 semiregularity cosection on the obstruction sheaf of each retained finite classical truncation.",
+    "It imports the Joyce d-critical truncation rows and records the Atiyah-class semiregularity formula induced by p_S^* sigma_S.",
+    "It does not prove cosection surjectivity, filtered Hall additivity, reduced RHom, perfectness of the reduced obstruction theory, determinant lines, orientation square roots, quotient orientation, transition compatibility, BBDJS vanishing cycles, or protected integration."
+  ]
+}

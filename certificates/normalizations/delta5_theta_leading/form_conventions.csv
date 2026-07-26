@@ -1,0 +1,10 @@
+form_id,tex_name,role,base_form,scale_numerator,scale_denominator,power,leading_monomial,leading_numerator,leading_denominator,is_partition_function,source_reference,check_status,notes
+Delta5,\Delta_5,theta_weight5_square_root,Delta5,1,1,1,q_half_r_half_s_half,64,1,false,GN Theorem 4.1; Igusa theta-constant normalization,verified,theta-normalized weight-five Igusa cusp form
+D5,D_5,monic_borcherds_product,Delta5,1,64,1,q_half_r_half_s_half,1,1,false,GN Theorem 2.1; BKM denominator normalization,verified,monic Borcherds product after dividing the theta-leading coefficient
+Delta10_theta,\Delta_{10},theta_weight10_square,Delta5,1,1,2,q_r_s,4096,1,false,Igusa chi10 normalization; Maass character squares trivially,verified,theta-normalized square of the weight-five section
+chi10,\chi_{10},igusa_chi10_unscaled,Delta5,1,1,2,q_r_s,4096,1,false,Igusa chi10 convention; Oberdieck-Pandharipande notation,verified,unscaled weight-ten cusp form
+Phi10_un,\Phi_{10}^{un},unscaled_trace_weight10,Delta5,1,1,2,q_r_s,4096,1,false,Borcherds unscaled determinant convention; trace convention,verified,unscaled determinant section used before inversion
+chi10_OP,\chi_{10}^{OP},op_monic_weight10,Delta5,1,4096,2,q_r_s,1,1,false,Oberdieck-Pixton monic convention; Oberdieck-Pandharipande scalar identity,verified,OP monic form equal to D5 squared
+Phi10_un_inverse,(\Phi_{10}^{un})^{-1},unscaled_bps_partition,Delta5,1,1,-2,q_r_s_inverse,1,4096,true,unscaled protected trace convention,verified,inverse of the unscaled determinant section
+chi10_OP_inverse,(\chi_{10}^{OP})^{-1},op_unsigned_inverse,Delta5,4096,1,-2,q_r_s_inverse,1,1,true,Oberdieck-Pixton monic inverse convention,verified,unsigned inverse of the OP monic form
+Z_OP_scalar_branch,Z_OP^X,op_signed_scalar_branch,Delta5,-4096,1,-2,q_r_s_inverse,-1,1,true,Oberdieck-Pixton chamber sign; scalar branch separation,verified,signed OP reduced DT/PT scalar branch

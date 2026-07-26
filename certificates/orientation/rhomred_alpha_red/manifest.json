@@ -1,0 +1,43 @@
+{
+  "schema_version": "rhomred_alpha_red_obstruction.v1",
+  "fixture_name": "rhomred_alpha_red",
+  "orientation_kind": "rhomred_alpha_red_obstruction",
+  "status": "RHOMRED_ALPHA_RED_OBSTRUCTION_VERIFIED",
+  "base_field": "CC",
+  "rhomred_w2_imported": true,
+  "cosection_surjectivity_obstruction_imported": true,
+  "orientation_obstruction_ledger_imported": true,
+  "alpha_red_formula_recorded": true,
+  "alpha_red_zero_criterion_recorded": true,
+  "three_retained_strata_inspected": true,
+  "determinant_w2_values_supplied": false,
+  "cokernel_rank_zero_rows_supplied": false,
+  "cokernel_w2_values_supplied": false,
+  "alpha_red_values_computed": false,
+  "alpha_red_vanishing_verified": false,
+  "null_homotopy_supplied": false,
+  "orientation_square_root": false,
+  "quotient_orientation": false,
+  "transition_compatibility": false,
+  "vanishing_cycle_complex": false,
+  "protected_integration": false,
+  "tables": [
+    "source_rows.csv",
+    "criterion_rows.csv",
+    "alpha_red_obstruction_rows.csv",
+    "inspected_orientation_tables.csv",
+    "coverage_rows.csv",
+    "blocked_obligations.csv",
+    "scalar_firewall.csv"
+  ],
+  "imports": [
+    "certificates/orientation/rhomred_w2",
+    "certificates/orientation/k3_cosection_surjectivity",
+    "certificates/orientation/k3e_reduced_orientation"
+  ],
+  "limitations": [
+    "This packet verifies the row-280 formula and obstruction ledger.",
+    "It records the reduced gerbe class alpha_red as the sum of the determinant w2 term and the pulled-back cosection-cokernel w2 term.",
+    "It does not compute determinant w2 values, prove cosection cokernel rank zero, compute the cokernel w2 term, prove alpha_red=0, construct a null-homotopy, construct quotient orientation, prove transition compatibility, construct BBDJS vanishing cycles, or define protected integration."
+  ]
+}
