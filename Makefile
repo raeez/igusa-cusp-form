@@ -54,7 +54,7 @@ VERIFY_SCRIPTS := \
 
 .DEFAULT_GOAL := all
 
-.PHONY: all fast release standalone icloud view watch clean veryclean count help mathematics-publish root-publish architecture unified-architecture verify
+.PHONY: platonic all fast release standalone icloud view watch clean veryclean count help mathematics-publish root-publish architecture unified-architecture verify
 
 all: $(PDF)
 
@@ -134,6 +134,39 @@ release:
 		done; \
 	fi
 	@echo "  =========================================="
+
+## platonic: Build the platonic-integrated monograph → out/platonic.pdf
+##   THE mathematically current root for this repository: platonic/main.tex,
+##   the shared five-volume spine (Volume I-V) plus this repository's own
+##   opening and closing chapters, set in EB Garamond via raeez-math-template.
+##   See platonic/PLATONIC_LEDGER.md.
+platonic:
+	@echo "  -- Building the platonic-integrated monograph --"
+	@mkdir -p $(OUT_DIR) $(LOG_DIR)
+	@cd platonic && \
+	  TEXINPUTS=".:..:$$TEXINPUTS" BIBINPUTS=".:..:$$BIBINPUTS" \
+	  $(TEX) $(TEXFLAGS) main.tex >../$(LOG_DIR)/platonic.log 2>&1 || true; \
+	  TEXINPUTS=".:..:$$TEXINPUTS" BIBINPUTS=".:..:$$BIBINPUTS" \
+	  bibtex main >>../$(LOG_DIR)/platonic.log 2>&1 || true; \
+	  for i in 1 2 3; do \
+	    TEXINPUTS=".:..:$$TEXINPUTS" BIBINPUTS=".:..:$$BIBINPUTS" \
+	    $(TEX) $(TEXFLAGS) main.tex >../$(LOG_DIR)/platonic.log 2>&1 || true; \
+	  done
+	@if [ -f platonic/main.pdf ]; then \
+		cp platonic/main.pdf $(OUT_DIR)/platonic.pdf; \
+		echo "    OK out/platonic.pdf ($$(pdfinfo platonic/main.pdf 2>/dev/null | awk '/^Pages/{print $$2}') pages)"; \
+	else \
+		echo "    FAIL - see $(LOG_DIR)/platonic.log"; exit 1; \
+	fi
+	@if grep -aqE '^! ' $(LOG_DIR)/platonic.log; then \
+		echo "    LaTeX errors:"; grep -aE '^! ' $(LOG_DIR)/platonic.log | head -5; exit 1; \
+	fi
+	@if grep -aqE 'Reference .* undefined|Citation .* undefined' $(LOG_DIR)/platonic.log; then \
+		echo "    undefined references or citations:"; \
+		grep -aE 'Reference .* undefined|Citation .* undefined' $(LOG_DIR)/platonic.log | head -5; exit 1; \
+	fi
+	@echo "    0 errors, 0 undefined references, 0 undefined citations."
+
 
 ## root-publish: Copy the release binary to repo root under its canonical name
 root-publish:

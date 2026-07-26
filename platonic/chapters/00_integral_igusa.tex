@@ -1,0 +1,93 @@
+
+\part{The integral Igusa theorem}
+\chapter{The square root as a complete mathematical object}
+The seed is the weak Jacobi form
+\[
+ \phiweak(\tau,z)=\sum_{n\ge0,\,\ell\in\Z}f(n,\ell)q^nr^\ell,
+ \qquad f(0,0)=10.
+\]
+The singular theta lift forms the monic weight-five product
+\[
+ \Dmon(Z)=q^{1/2}r^{1/2}s^{1/2}
+ \prod_{(n,\ell,m)>0}(1-q^nr^\ell s^m)^{f(nm,\ell)},
+ \qquad \ChiTen=\Dmon^2.
+\]
+The product already carries three exact structures.  Its exponent is a parity-refined root superdimension, its Weyl monomial is the vacuum charge, and its automorphy factor is an orientation line.  The square root therefore belongs first to a root-graded first-order theory.  The scalar inverse square is its second-quantized trace.
+
+\begin{principle}[First-order carrier]
+An automorphic product is realized at first order by a tuple consisting of a graded primitive Lie superalgebra, its completed Chevalley coalgebra, a current or factorization envelope, a quantization, and a determinant-class operator.  The product is the common Euler, PBW, vacuum, and Fredholm character of this tuple.
+\end{principle}
+
+\begin{definition}[Universal Igusa realization datum]
+The universal Igusa realization datum is
+\[
+ \RealDatum=
+ (\gIg,\nIg,\widehat C_*(\nIg),\widehat U(\nIg),
+  \CurE(\gIg),\widehat U_q(\gIg),\mathbb A_Z,\mathcal L^5\tensor\nu_5),
+\]
+where the completion uses a proper additive height, the current object retains elliptic degree as a local--wrapped colour, Hong's quantum Borcherds superalgebra supplies the Hopf quantization, and $\mathbb A_Z$ is the root-diagonal Fredholm family on the absolute-convergence chamber.
+\end{definition}
+
+\begin{theorem}[Initiality of the universal Igusa realization]
+Let $\mathsf R$ be a complete root-graded protected realization with the following data:
+\begin{enumerate}
+\item primitive generators indexed by the three real simple roots and the prescribed imaginary simple-root spaces;
+\item the Borcherds--Serre relations of the Gritsenko--Nikulin datum;
+\item parity-refined primitive dimensions equal to the coefficients $f(nm,\ell)$;
+\item a proper-height complete PBW envelope, a compatible elliptic-degree colour, and a continuous character map.
+\end{enumerate}
+There is a unique continuous presentation-preserving morphism
+\[
+ \RealDatum\longrightarrow\mathsf R.
+\]
+It is an equivalence precisely when the primitive map is surjective and the parity-refined PBW series agree.  Every functorial current, bar, quantum-double, and Fredholm construction commutes with this equivalence.
+\end{theorem}
+\begin{proof}
+The generalized Cartan superdatum presents $\gIg$ by generators and relations.  A realization of the listed generators and relations therefore gives the unique primitive morphism.  Proper height extends it continuously.  Surjectivity together with parity-refined PBW equality invokes minimal PBW recognition in each first height and proves injectivity.  Chevalley chains, current envelopes, Hong quantization, and root-diagonal Fredholm operators are functorial in the root presentation.
+\end{proof}
+
+\begin{theorem}[Integral Igusa identity]
+The universal datum satisfies the simultaneous identities
+\[
+ \den(\gIg)=\Dmon(2Z),
+ \qquad
+ e^{-\rho}\sch\widehat C_*(\nIg)=\Dmon(2Z),
+\]
+\[
+ \operatorname{sdet}_F(1-K_Z)=e^{\rho}\Dmon(2Z),
+ \qquad
+ \mathcal Z^{\red}_{K3\times E}=-\ChiTen^{-1}.
+\]
+After the half-coordinate pullback $\jmath(Z)=Z/2$, the reduced scalar is the inverse square of the first-order denominator:
+\[
+ \mathcal Z^{\red}_{K3\times E}
+ =-\bigl(\jmath^*\den(\gIg)\bigr)^{-2}.
+\]
+\end{theorem}
+\begin{proof}
+The first identity is the Gritsenko--Nikulin denominator theorem.  PBW identifies the second with the Euler supercharacter of Chevalley chains.  Trace-class convergence gives the third as the product of root eigenvalues.  The fourth is the primitive reduced curve-counting theorem of Oberdieck--Pixton in monic normalization.  Substitution of the half-coordinate identity gives the final equality.
+\end{proof}
+
+\chapter{The compact geometric refinement}
+The physical charge of a brane is additive.  The automorphic Gram degree is quadratic.  Their exact relation is carried by the polarization cocycle
+\[
+ B(c_1,c_2)=\PiGram(c_1+c_2)-\PiGram(c_1)-\PiGram(c_2).
+\]
+The central extension
+\[
+ (c,\lambda)(d,\mu)=(c+d,\lambda+\mu+B(c,d))
+\]
+makes $c\mapsto(c,\PiGram(c))$ additive.  This extension is the natural grading object for a Hall source whose character descends to the three Igusa variables.
+
+\begin{definition}[Geometric realization datum]
+A geometric $K3\times E$ realization consists of a reduced oriented extension theory on compactly supported objects, its additive charge grading, the polarized Gram extension, projection-finite and wrapped elliptic sectors, mixed extension correspondences, a primitive integration map to the universal root datum, a coproduct and Hopf pairing, and an orientation-line map to $\mathcal L^5\tensor\nu_5$.
+\end{definition}
+
+\begin{recognition}[Geometric Hall--Borcherds recognition]
+For every geometric realization datum, the primitive integration map is an equivalence exactly when it sends the simple geometric states to the simple Borcherds generators, is surjective on primitives, and has the prescribed parity-refined PBW character.  Under these conditions the completed Hall double, current factorization object, open--closed centre, and determinant line identify with the corresponding components of $\RealDatum$.
+\end{recognition}
+\begin{proof}
+The simple-state comparison produces a presentation morphism.  Surjectivity and the parity-refined PBW equality give an isomorphism by minimal-height recognition.  The Hall coproduct, pairing, current functor, centre, and determinant constructions preserve the charge filtration and therefore descend through the isomorphism.
+\end{proof}
+
+The theorem closes the algebraic content of the compact comparison.  Geometry enters through one explicit datum: the reduced oriented extension theory with its local--wrapped correspondences.  The universal target, its quantum group, its first-order operator, and its automorphic character are constructed independently and receive every such geometric realization.
