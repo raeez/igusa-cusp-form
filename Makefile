@@ -52,7 +52,7 @@ VERIFY_SCRIPTS := \
 	compute/verify_theta_product_identity.py \
 	compute/verify_bkm_kappa_ladder.py
 
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := platonic
 
 .PHONY: platonic all fast release standalone icloud view watch clean veryclean count help mathematics-publish root-publish architecture unified-architecture verify
 

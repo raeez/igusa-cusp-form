@@ -1,74 +1,76 @@
-# Platonic-integrated deployment — The Igusa Square Root
+# The integrated monograph
 
-`make platonic` → `out/platonic.pdf`, **501 pages, 0 LaTeX errors, 0
-undefined references, 0 undefined citations.**
+`make` → `out/platonic.pdf` — **507 pages, 0 LaTeX errors, 0 undefined
+references, 0 undefined citations.** This is the default target: a plain build
+produces the current, merged monograph.
 
-## What was deployed
+Home volume of this repository: **Volume III — Igusa–Borcherds Theory**, placed first.
 
-The upstream source bundle, entire. This repository's home volume is
-**Volume III**; its own opening and closing chapters are `00_integral_igusa.tex`, `99_integral_closure.tex`.
+## One spine, five volumes
 
-## The shared spine
-
-Five volume files are **byte-identical** across the Calabi–Yau and Igusa
-bundles — one canonical spine, 6,034 lines, verified by SHA-256:
-
-| file | lines | repository whose subject it is |
+| volume | lines | home repository |
 |---|---:|---|
-| `Volume_I_Ordered_Chiral_Geometry.tex` | 1552 | `chiral-bar-cobar` |
-| `Volume_II_Mixed_HT_Deligne_Theory.tex` | 929 | `mixed-holomorphic-topological-strings` |
-| `Volume_III_Igusa_Borcherds_Theory.tex` | 1427 | `igusa-cusp-form` |
-| `Volume_IV_Calabi_Yau_Quantum_Groups.tex` | 1279 | `calabi-yau-quantum-groups` |
-| `Volume_V_Universal_Chiral_BV_and_Einstein_Completion.tex` | 847 | no repository yet |
+| I Ordered Chiral Geometry | 1552 | `chiral-bar-cobar` |
+| II Mixed HT Deligne Theory | 929 | `mixed-holomorphic-topological-strings` |
+| III Igusa–Borcherds Theory | 1427 | `igusa-cusp-form` |
+| IV Calabi–Yau Quantum Groups | 1279 | `calabi-yau-quantum-groups` |
+| V Universal Chiral BV, Einstein Completion | 847 | — |
 
-`platonic.sty`, `integrated_macros.tex`, and `references.bib` are likewise
-identical between the two bundles. Editing a spine file here forks it from the
-other repository's copy; the spine is shared, not owned.
+The five volume files, `platonic.sty`, `integrated_macros.tex`, and
+`references.bib` are **byte-identical in every repository** (SHA-256
+verified). Editing one here forks it from every other copy. Each repository
+differs only in its `00_home.tex` frame and the order of the volumes.
+
+## Merged in — `Volume_I_audit_and_obstructions.tex`
+
+The spine as shipped had no audit of the legacy planar tables and no
+obstruction constitution: `Motzkin`, `Riordan`, `Goncharova`,
+`pentagonal`, and `no-go` all occurred zero times across all five volumes.
+Both are now merged in, in the spine's own notation:
+
+- **Bar–Chevalley comparison** and the simple-Lie calculation:
+  $\mathfrak{sl}_2 \to 1+t^3$, $\mathfrak{sl}_3 \to 1+t^3+t^5+t^8$,
+  $\mathfrak g_2 \to 1+t^3+t^{11}+t^{14}$.
+- **Pentagonal rigidity.** For the positive Witt algebra,
+  $\dim H^n(\mathrm{Bar}^\perp U(L_1)) = 2$ for every $n\ge1$, in the
+  weights $(3n^2\mp n)/2$, with Euler character $\prod_{n\ge1}(1-q^n)$
+  saturating it degree by degree. Verified $n=1,2,3,4$.
+- **The two sequences are one sequence.** $M(n)=R(n)+R(n+1)$, so the
+  Virasoro sequence is $R(n+2)-R(n)$ and the $\mathfrak{sl}_2$ sequence is
+  $R(n+3)$. The shared discriminant carries no Drinfeld–Sokolov content.
+- **Carrier theorem**: neither planar sequence is the bar homology of the
+  algebra it names, nor a bar chain count; they agree with the truth at
+  $n=2$ alone.
+- **Where a mixed distributive law can live**: only on the image of the
+  aligned idempotent. Located, not constructed.
+- **Seven obstruction theorems**: no quantum group from dimension loss, no
+  modular object from topology alone, no bulk from a boundary centre, no
+  classification by central charge, no identification of anomalies of
+  different types, no unnamed comparison of bars, no homology from a scalar
+  sequence.
+
+The last of these is what retracts the $5\times5$ $\kappa$-matrix and the
+Universal Trace Identity, rather than merely omitting them.
 
 ## Typography
 
-`newtxtext`/`newtxmath` (Times) → EB Garamond via
-`raeez-math-template` with `localtheorems`, so `platonic.sty`'s fifteen
-theorem environments stand unchanged. In `platonic.sty` the
-`newtxtext`, `newtxmath`, `fontenc`, `inputenc`, `imakeidx`, and `bm`
-loads are commented out and delegated to the template — `imakeidx` because
-the template already loads `makeidx` and calls `\makeindex`, and `bm`
-because the template's `newtxmath` leaves no room in LaTeX's sixteen-alphabet
-budget. The duplicate `\makeindex` in `main.tex` is likewise disabled. No
-mathematical content was touched.
+EB Garamond via `raeez-math-template` with `localtheorems`, so
+`platonic.sty`'s fifteen theorem environments stand. In `platonic.sty` the
+`newtxtext`, `newtxmath`, `fontenc`, `inputenc`, `imakeidx`, and
+`bm` loads are delegated to the template — `imakeidx` because the template
+already calls `\makeindex`, `bm` because the template's `newtxmath`
+exhausts LaTeX's sixteen-alphabet budget. No mathematical content was touched.
 
-## Mathematics audit
+## Verification
 
-The spine is on the corrected framework, not the retracted one. Occurrence
-counts across the five volume files:
+`chiral-bar-cobar/compute/` carries two independent harnesses, cross-checked:
+exact `Fraction` sparse elimination with $d^2=0$ asserted per space, and
+sympy dense matrices. They share one claim, $H^*(\mathfrak{sl}_2)=1,0,0,1$,
+and agree with no shared code, basis, sign convention, or backend. 23 tests.
 
-| corrected-framework marker | count | | retracted-claim marker | count |
-|---|---:|---|---|---:|
-| `denominator` | 44 | | Beilinson tower | **0** |
-| `aligned` | 34 | | Universal Trace Identity | **0** |
-| `associative chiral` | 27 | | five-archetype | **0** |
-| `distributive law` | 10 | | KSDual | **0** |
-| `two associative` | 2 | | Theorem H | **0** |
+## Still open
 
-Nothing keyed to the Open Beilinson tower, the $5\times5$ $\kappa$-matrix,
-the five archetypes, or the Universal Trace Identity survives.
-
-**Gap: `no-go` occurs 0 times.** The obstruction constitution present in
-`chiral-bar-cobar/reconstruction/core/part5_audit.tex` has no counterpart
-here. The retractions are therefore implicit in the spine rather than stated,
-which is the same gap found in the 153-page and 246-page chiral witnesses.
-
-## Cross-repository constant check
-
-`Volume_III_Igusa_Borcherds_Theory.tex` and
-`chiral-bar-cobar/reconstruction/core/part4_physics.tex` share the Igusa
-normalization, and they agree:
-
-- weight $f(0,0)/2 = 5$ with $f(0,0)=10$, $f(0,\pm1)=1$;
-- $\Delta_5^{\theta} = 2^6\,\Delta_5^{\mathrm{mon}} = 64\,D_5$.
-
-The spine is stronger on one point: it **derives** the 64 from the ten even
-genus-two theta constants — four characteristics contributing 1 and six
-contributing a factor 2, total exponent $(1/2,1/2,1/2)$ — where the chiral
-volume quotes it as a normalization. That derivation has been cross-referenced
-back into `chiral-bar-cobar`.
+No $\lambda$ is constructed for any example, so the doubly noncommutative
+object remains a definition without a model; the anticommutation of the two
+edge-contraction differentials rests on determinant-line independence that no
+witness proves; the genus-two-and-above analytic material is unported.
