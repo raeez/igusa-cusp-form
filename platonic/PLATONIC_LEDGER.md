@@ -1,78 +1,59 @@
 # The integrated monograph
 
 `make` → `out/platonic.pdf` — **507 pages, 0 LaTeX errors, 0 undefined
-references, 0 undefined citations.** This is the default target: a plain build
-produces the current, merged monograph.
+references, 0 undefined citations.** Default target: a plain build produces the
+current, merged monograph.
 
 ## This repository
 
-**not a numbered volume**. *The Igusa Square Root* is a standalone monograph in its own space, with its own opening (`00_integral_igusa.tex`) and closing (`99_integral_closure.tex`) chapters, leading with its own subject. The programme volumes follow as background, not as a sequence this work belongs to.
+**not a volume of the programme**. *The Igusa Square Root* is a standalone monograph in its own space, with its own opening and closing chapters and its own subject placed first; the programme volumes follow as background.
 
 ## The programme, and what stands outside it
 
 | | subject | repository |
 |---|---|---|
 | **I** | Ordered Chiral Geometry | `chiral-bar-cobar` |
-| **II** | Mixed Holomorphic–Topological Deligne Theory | `mixed-holomorphic-topological-strings` |
+| **II** | Mixed Holomorphic–Topological Theory | `chiral-bar-cobar-vol2` |
 | **III** | Calabi–Yau Quantum Groups | `calabi-yau-quantum-groups` |
 | — | Universal Chiral BV and Einstein Completion | no repository yet |
-| — | Igusa–Borcherds theory, *The Igusa Square Root* | `igusa-cusp-form`, standalone |
+| — | *The Igusa Square Root* | `igusa-cusp-form`, standalone |
+| — | *Remarks on Mixed HT Strings* | `mixed-holomorphic-topological-strings`, standalone |
 
-The upstream spine ships five files whose names run `Volume_I` …
-`Volume_V`, with Igusa–Borcherds at `III` and Calabi–Yau at `IV`. Those
-filenames are upstream identifiers and are **not** the programme numbering:
-Calabi–Yau is Volume III, and the Igusa material belongs to a standalone
-monograph rather than to the volume sequence. The filenames were left
-untouched so that the files stay byte-identical across repositories; do not
-renumber them.
+The upstream spine ships five files named `Volume_I` … `Volume_V`, with
+Igusa–Borcherds at `III` and Calabi–Yau at `IV`. **Those filenames are
+upstream identifiers, not the programme numbering.** They are left untouched so
+the files stay byte-identical across repositories; do not renumber them.
 
 ## One spine
 
 The five volume files, `platonic.sty`, `integrated_macros.tex`, and
-`references.bib` are **byte-identical in every repository** (SHA-256
-verified). Repositories differ only in their own opening and closing chapters
-and in which volume they read first. Editing a volume file here forks it from
-every other copy.
+`references.bib` are byte-identical in every repository. Repositories differ
+only in their own frame chapter and in which volume they read first. Editing a
+volume file here forks it from every other copy.
 
 ## Merged in — `Volume_I_audit_and_obstructions.tex`
 
 The spine as shipped had no audit of the legacy planar tables and no
 obstruction constitution: `Motzkin`, `Riordan`, `Goncharova`,
 `pentagonal`, and `no-go` all occurred zero times across all five volumes.
-Both are now merged in, in the spine's own notation:
+Now merged in, in the spine's own notation: the bar–Chevalley comparison with
+$\mathfrak{sl}_2\to1+t^3$, $\mathfrak{sl}_3\to1+t^3+t^5+t^8$,
+$\mathfrak g_2\to1+t^3+t^{11}+t^{14}$; pentagonal rigidity
+($\dim H^n(\mathrm{Bar}^\perp U(L_1))=2$ in the weights $(3n^2\mp n)/2$,
+Euler character $\prod(1-q^n)$ saturating it, verified $n=1,2,3,4$); the
+identity $M(n)=R(n)+R(n+1)$ dissolving the Drinfeld–Sokolov attribution; the
+carrier theorem; the location of a mixed distributive law on the aligned
+idempotent's image; and seven obstruction theorems, the last of which retracts
+the $5\times5$ $\kappa$-matrix and the Universal Trace Identity rather than
+merely omitting them.
 
-- **Bar–Chevalley comparison** and the simple-Lie calculation:
-  $\mathfrak{sl}_2 \to 1+t^3$, $\mathfrak{sl}_3 \to 1+t^3+t^5+t^8$,
-  $\mathfrak g_2 \to 1+t^3+t^{11}+t^{14}$.
-- **Pentagonal rigidity.** For the positive Witt algebra,
-  $\dim H^n(\mathrm{Bar}^\perp U(L_1)) = 2$ for every $n\ge1$, in the
-  weights $(3n^2\mp n)/2$, with Euler character $\prod_{n\ge1}(1-q^n)$
-  saturating it degree by degree. Verified $n=1,2,3,4$.
-- **The two sequences are one sequence.** $M(n)=R(n)+R(n+1)$, so the
-  Virasoro sequence is $R(n+2)-R(n)$ and the $\mathfrak{sl}_2$ sequence is
-  $R(n+3)$; the shared discriminant carries no Drinfeld–Sokolov content.
-- **Carrier theorem**: neither planar sequence is the bar homology of the
-  algebra it names, nor a bar chain count; they agree with the truth at
-  $n=2$ alone.
-- **Where a mixed distributive law can live**: only on the image of the
-  aligned idempotent. Located, not constructed.
-- **Seven obstruction theorems**: no quantum group from dimension loss, no
-  modular object from topology alone, no bulk from a boundary centre, no
-  classification by central charge, no identification of anomalies of
-  different types, no unnamed comparison of bars, no homology from a scalar
-  sequence.
+## What is discarded, and what is kept for the record
 
-The last is what retracts the $5\times5$ $\kappa$-matrix and the Universal
-Trace Identity, rather than merely omitting them.
-
-## Typography
-
-EB Garamond via `raeez-math-template` with `localtheorems`, so
-`platonic.sty`'s fifteen theorem environments stand. In `platonic.sty` the
-`newtxtext`, `newtxmath`, `fontenc`, `inputenc`, `imakeidx`, and
-`bm` loads are delegated to the template — `imakeidx` because the template
-already calls `\makeindex`, `bm` because the template's `newtxmath`
-exhausts LaTeX's sixteen-alphabet budget. No mathematical content was touched.
+The retracted architecture — Open Beilinson tower, Theorems A/B/C/D/H, the five
+archetypes, the $5\times5$ $\kappa$-matrix, the Universal Trace Identity — is
+**not** in the default build. It remains tracked, still builds under its own
+target, and its disposition is recorded file by file. Nothing was deleted; it
+is out of the monograph and available as history.
 
 ## Verification
 
@@ -86,4 +67,5 @@ and agree with no shared code, basis, sign convention, or backend. 23 tests.
 No $\lambda$ is constructed for any example, so the doubly noncommutative
 object remains a definition without a model; the anticommutation of the two
 edge-contraction differentials rests on determinant-line independence that no
-witness proves; the genus-two-and-above analytic material is unported.
+witness proves; the genus-two-and-above analytic material is unported; and the
+408-page revision still lacks 46 of its 53 sources.
