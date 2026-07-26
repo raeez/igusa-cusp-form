@@ -4,22 +4,35 @@
 references, 0 undefined citations.** This is the default target: a plain build
 produces the current, merged monograph.
 
-Home volume of this repository: **Volume III — Igusa–Borcherds Theory**, placed first.
+## This repository
 
-## One spine, five volumes
+**not a numbered volume**. *The Igusa Square Root* is a standalone monograph in its own space, with its own opening (`00_integral_igusa.tex`) and closing (`99_integral_closure.tex`) chapters, leading with its own subject. The programme volumes follow as background, not as a sequence this work belongs to.
 
-| volume | lines | home repository |
-|---|---:|---|
-| I Ordered Chiral Geometry | 1552 | `chiral-bar-cobar` |
-| II Mixed HT Deligne Theory | 929 | `mixed-holomorphic-topological-strings` |
-| III Igusa–Borcherds Theory | 1427 | `igusa-cusp-form` |
-| IV Calabi–Yau Quantum Groups | 1279 | `calabi-yau-quantum-groups` |
-| V Universal Chiral BV, Einstein Completion | 847 | — |
+## The programme, and what stands outside it
+
+| | subject | repository |
+|---|---|---|
+| **I** | Ordered Chiral Geometry | `chiral-bar-cobar` |
+| **II** | Mixed Holomorphic–Topological Deligne Theory | `mixed-holomorphic-topological-strings` |
+| **III** | Calabi–Yau Quantum Groups | `calabi-yau-quantum-groups` |
+| — | Universal Chiral BV and Einstein Completion | no repository yet |
+| — | Igusa–Borcherds theory, *The Igusa Square Root* | `igusa-cusp-form`, standalone |
+
+The upstream spine ships five files whose names run `Volume_I` …
+`Volume_V`, with Igusa–Borcherds at `III` and Calabi–Yau at `IV`. Those
+filenames are upstream identifiers and are **not** the programme numbering:
+Calabi–Yau is Volume III, and the Igusa material belongs to a standalone
+monograph rather than to the volume sequence. The filenames were left
+untouched so that the files stay byte-identical across repositories; do not
+renumber them.
+
+## One spine
 
 The five volume files, `platonic.sty`, `integrated_macros.tex`, and
 `references.bib` are **byte-identical in every repository** (SHA-256
-verified). Editing one here forks it from every other copy. Each repository
-differs only in its `00_home.tex` frame and the order of the volumes.
+verified). Repositories differ only in their own opening and closing chapters
+and in which volume they read first. Editing a volume file here forks it from
+every other copy.
 
 ## Merged in — `Volume_I_audit_and_obstructions.tex`
 
@@ -37,7 +50,7 @@ Both are now merged in, in the spine's own notation:
   saturating it degree by degree. Verified $n=1,2,3,4$.
 - **The two sequences are one sequence.** $M(n)=R(n)+R(n+1)$, so the
   Virasoro sequence is $R(n+2)-R(n)$ and the $\mathfrak{sl}_2$ sequence is
-  $R(n+3)$. The shared discriminant carries no Drinfeld–Sokolov content.
+  $R(n+3)$; the shared discriminant carries no Drinfeld–Sokolov content.
 - **Carrier theorem**: neither planar sequence is the bar homology of the
   algebra it names, nor a bar chain count; they agree with the truth at
   $n=2$ alone.
@@ -49,8 +62,8 @@ Both are now merged in, in the spine's own notation:
   different types, no unnamed comparison of bars, no homology from a scalar
   sequence.
 
-The last of these is what retracts the $5\times5$ $\kappa$-matrix and the
-Universal Trace Identity, rather than merely omitting them.
+The last is what retracts the $5\times5$ $\kappa$-matrix and the Universal
+Trace Identity, rather than merely omitting them.
 
 ## Typography
 
