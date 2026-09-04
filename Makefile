@@ -61,10 +61,12 @@ all: $(PDF)
 $(PDF): $(TEX_SOURCES) $(BIB).bib Makefile
 	@echo "  -- Building $(MAIN).tex -> $(PDF) --"
 	@mkdir -p $(OUT_DIR) $(LOG_DIR)
-	@$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-pass1.log 2>&1 || true
-	@if [ ! -f $(PDF) ] || grep -qE '^!|^Fatal error|^.+Emergency stop|^!.*No pages of output' $(LOG_DIR)/$(MAIN)-pass1.log; then \
-		echo "  fail  pdflatex pass 1 failed (no PDF or fatal error). See $(LOG_DIR)/$(MAIN)-pass1.log"; \
+	@$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-pass1.log 2>&1; \
+		tex_status=$$?; \
+	if [ $$tex_status -ne 0 ] || [ ! -f $(PDF) ] || grep -qE '^!|^Fatal error|^.+Emergency stop|^!.*No pages of output' $(LOG_DIR)/$(MAIN)-pass1.log; then \
+		echo "  fail  pdflatex pass 1 failed (exit $$tex_status, no PDF, or fatal error). See $(LOG_DIR)/$(MAIN)-pass1.log"; \
 		tail -n 40 $(LOG_DIR)/$(MAIN)-pass1.log; \
+		rm -f $(PDF); \
 		exit 1; \
 	fi
 	@cd $(OUT_DIR) && BIBINPUTS="..:$$BIBINPUTS" BSTINPUTS="..:$$BSTINPUTS" $(BIBTEX) $(MAIN) >../$(LOG_DIR)/$(MAIN)-bibtex.log 2>&1 || true
@@ -73,10 +75,12 @@ $(PDF): $(TEX_SOURCES) $(BIB).bib Makefile
 		tail -n 20 $(LOG_DIR)/$(MAIN)-bibtex.log; \
 	fi
 	@for pass in $$(seq 2 $(PASSES)); do \
-		$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-pass$$pass.log 2>&1 || true; \
-		if [ ! -f $(PDF) ] || grep -qE '^!|^Fatal error|^.+Emergency stop|^!.*No pages of output' $(LOG_DIR)/$(MAIN)-pass$$pass.log; then \
-			echo "  fail  pdflatex pass $$pass failed (no PDF or fatal error). See $(LOG_DIR)/$(MAIN)-pass$$pass.log"; \
+		$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-pass$$pass.log 2>&1; \
+		tex_status=$$?; \
+		if [ $$tex_status -ne 0 ] || [ ! -f $(PDF) ] || grep -qE '^!|^Fatal error|^.+Emergency stop|^!.*No pages of output' $(LOG_DIR)/$(MAIN)-pass$$pass.log; then \
+			echo "  fail  pdflatex pass $$pass failed (exit $$tex_status, no PDF, or fatal error). See $(LOG_DIR)/$(MAIN)-pass$$pass.log"; \
 			tail -n 40 $(LOG_DIR)/$(MAIN)-pass$$pass.log; \
+			rm -f $(PDF); \
 			exit 1; \
 		fi; \
 		if [ -f $(OUT_DIR)/$(MAIN).idx ]; then makeindex -q $(OUT_DIR)/$(MAIN).idx >/dev/null 2>&1 || true; fi; \
@@ -86,14 +90,15 @@ $(PDF): $(TEX_SOURCES) $(BIB).bib Makefile
 fast:
 	@echo "  -- Fast build --"
 	@mkdir -p $(OUT_DIR) $(LOG_DIR)
-	@$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-fast.log 2>&1 || true
-	@if [ -f $(PDF) ] && ! grep -qE '^!|^Fatal error|^.+Emergency stop' $(LOG_DIR)/$(MAIN)-fast.log; then \
-		echo "  ok  $(PDF)"; \
-	else \
-		echo "  fail  Fast build failed. See $(LOG_DIR)/$(MAIN)-fast.log"; \
+	@$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-fast.log 2>&1; \
+		tex_status=$$?; \
+	if [ $$tex_status -ne 0 ] || [ ! -f $(PDF) ] || grep -qE '^!|^Fatal error|^.+Emergency stop' $(LOG_DIR)/$(MAIN)-fast.log; then \
+		echo "  fail  Fast build failed (exit $$tex_status, no PDF, or fatal error). See $(LOG_DIR)/$(MAIN)-fast.log"; \
 		tail -n 40 $(LOG_DIR)/$(MAIN)-fast.log; \
+		rm -f $(PDF); \
 		exit 1; \
-	fi
+	fi; \
+	echo "  ok  $(PDF)"
 
 release:
 	@mkdir -p $(OUT_DIR) $(LOG_DIR)
