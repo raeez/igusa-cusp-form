@@ -1,61 +1,33 @@
 ---
 name: chriss-ginzburg-rectify
-description: Use when a section, introduction, theorem lane, or proof region of the Igusa Square Root manuscript needs full structural fortification rather than a local patch. This is the Codex-native equivalent of `/chriss-ginzburg-rectify` from `CLAUDE.md`.
+description: Restructure an Igusa Square Root proof region or introduction when its mathematical argument requires structural repair. Use local edits for isolated corrections.
 ---
 
-# Chriss-Ginzburg Rectify — Igusa cusp form
+# Structural mathematical repair
 
-Use this when the text must be reimagined, not merely corrected.
+Identify the requested region, its intended result, and the defect in its argument.
+Read that region with its definitions, hypotheses, cited results, and affected dependents.
+Read relevant sections of `docs/igusa-research-reference.md`, resolved from the repository root.
+Consult appendix sources, investigation notes, and companion volumes only when the claim depends on them.
 
-## Load first
+For a Borcherds determinant, BKM denominator, K3×E realization comparison, or Igusa square root,
+make the lattice, Weyl vector, multiplier, and retained data explicit before use.
+A worked Fourier coefficient or exponent computation can expose the obstruction before the general result.
+Use `compute/verify_lattice.py` or `compute/verify_square_root.py` when the changed claim concerns their fixtures.
+Inspect other local verifiers when the claim requires a different arithmetic check.
 
-- `~/ecosystem/INVARIANTS.md`
-- `CLAUDE.md`
-- `AGENTS.md`
-- `main.tex` — the full target region in context
-- `proj.bib` — primary sources for any cited result
-- `appendices/` (e.g., `boundary_compatibility_conditions.tex`)
-- `notes/` — recent attack-heal traces and pattern logs
-- `compute/verify_lattice.py`, `compute/verify_square_root.py` for numerical anchors
-- the directly cited dependencies
+Choose structural changes that resolve the demonstrated defect. Preserve substantive mathematical content.
+Organize around the governing identity, comparison, or obstruction.
+Use decomposition tables or precise cases when they clarify the argument.
+Rewrite a region when local patches leave dependencies unclear. Do not require fixed rewriting passes.
+Test the repaired argument against plausible failures: signs, characters, Weyl vectors, divisors, multipliers, exponents, or categorical levels.
 
-## Five-phase loop
+Preserve the theorem target and repair the proof or construction. State discovered gaps honestly.
+Do not present unsupported sentences as theorems or treat demotion as completion of theorem repair.
+Conclude when the requested result has checkable evidence, or report the exact unresolved obligation,
+failed routes, and next discriminating step. An unresolved investigation is not a proved obstruction.
 
-1. Diagnose the real organizing question of the region.
-2. Find the unique survivor: the theorem, identity, or modular relation
-   the section must actually carry — the Borcherds determinant of $\phi_{0,1}$,
-   the BKM denominator identity, the $K3 \times E$ realization comparison,
-   or the Igusa $\Delta_5$ square-root.
-3. Rebuild the structure: move the first real coefficient computation
-   earlier, cut decorative transitions, front-load lattice / Weyl-vector /
-   multiplier prerequisites, weaken any sentence whose proof support is
-   not yet there.
-4. Rewrite from scratch where patching preserves bad architecture.
-5. Run a hostile Beilinson audit and repeat until `CONVERGED` or `BLOCKED`.
-
-## Convergent writing standard
-
-For introductions, prefaces, and abstracts, use at least three passes.
-
-For section openings and theorem lead-ins, use at least two passes.
-
-Loop:
-
-`WRITE -> REIMAGINE -> REWRITE -> BEILINSON AUDIT -> REIMAGINE AGAIN -> REWRITE AGAIN -> CONVERGE`
-
-## Structural moves
-
-Prefer:
-
-- deficiency opening (the obstruction the section resolves)
-- unique survivor (one theorem or identity, named)
-- instant computation (a Fourier coefficient, a Weyl vector, a Borcherds exponent)
-- forced transition (the next move follows from the present obstruction)
-- decomposition table (lattice strata, Heegner divisors, Humbert surfaces)
-- dichotomy (paramodular vs. orthogonal, BKM vs. Kac-Moody, weak vs. holomorphic)
-- sentence-as-theorem
-
-## Stop rule
-
-Do not keep polishing a strong false sentence. Demote it, split it, or
-fence it. A weakened true theorem ranks above a polished false one.
+Keep workflow, agents, and repair history outside manuscript sources, including metadata.
+Use literal mathematical prose. No mannered prose.
+Verify coherent TeX changes through an isolated local build under the root contract.
+Report proof evidence separately from compilation and finite arithmetic checks.
