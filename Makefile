@@ -20,6 +20,7 @@ MAIN      := main
 BIB       := proj
 TEX       := pdflatex
 BIBTEX    := bibtex
+MAKEINDEX := makeindex
 TEXFLAGS  := -interaction=nonstopmode -file-line-error -synctex=0
 LOG_DIR   := .build_logs
 OUT_DIR   := out
@@ -61,6 +62,7 @@ all: $(PDF)
 $(PDF): $(TEX_SOURCES) $(BIB).bib Makefile
 	@echo "  -- Building $(MAIN).tex -> $(PDF) --"
 	@mkdir -p $(OUT_DIR) $(LOG_DIR)
+	@rm -f $(PDF)
 	@$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-pass1.log 2>&1; \
 		tex_status=$$?; \
 	if [ $$tex_status -ne 0 ] || [ ! -f $(PDF) ] || grep -qE '^!|^Fatal error|^.+Emergency stop|^!.*No pages of output' $(LOG_DIR)/$(MAIN)-pass1.log; then \
@@ -69,12 +71,18 @@ $(PDF): $(TEX_SOURCES) $(BIB).bib Makefile
 		rm -f $(PDF); \
 		exit 1; \
 	fi
-	@cd $(OUT_DIR) && BIBINPUTS="..:$$BIBINPUTS" BSTINPUTS="..:$$BSTINPUTS" $(BIBTEX) $(MAIN) >../$(LOG_DIR)/$(MAIN)-bibtex.log 2>&1 || true
+	@if ! (cd "$(OUT_DIR)" && BIBINPUTS="$(CURDIR):$$BIBINPUTS" BSTINPUTS="$(CURDIR):$$BSTINPUTS" $(BIBTEX) $(MAIN)) >"$(abspath $(LOG_DIR))/$(MAIN)-bibtex.log" 2>&1; then \
+		echo "  fail  bibtex failed."; \
+		tail -n 40 "$(LOG_DIR)/$(MAIN)-bibtex.log"; \
+		rm -f $(PDF); exit 1; \
+	fi
 	@if grep -qE '^I couldn|^I found no|^Fatal error|^.+Emergency stop' $(LOG_DIR)/$(MAIN)-bibtex.log; then \
-		echo "  warn  bibtex reported issues (continuing). See $(LOG_DIR)/$(MAIN)-bibtex.log"; \
+		echo "  fail  bibtex reported issues. See $(LOG_DIR)/$(MAIN)-bibtex.log"; \
 		tail -n 20 $(LOG_DIR)/$(MAIN)-bibtex.log; \
+		rm -f $(PDF); exit 1; \
 	fi
 	@for pass in $$(seq 2 $(PASSES)); do \
+		rm -f $(PDF); \
 		$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-pass$$pass.log 2>&1; \
 		tex_status=$$?; \
 		if [ $$tex_status -ne 0 ] || [ ! -f $(PDF) ] || grep -qE '^!|^Fatal error|^.+Emergency stop|^!.*No pages of output' $(LOG_DIR)/$(MAIN)-pass$$pass.log; then \
@@ -83,13 +91,19 @@ $(PDF): $(TEX_SOURCES) $(BIB).bib Makefile
 			rm -f $(PDF); \
 			exit 1; \
 		fi; \
-		if [ -f $(OUT_DIR)/$(MAIN).idx ]; then makeindex -q $(OUT_DIR)/$(MAIN).idx >/dev/null 2>&1 || true; fi; \
+		if [ -f $(OUT_DIR)/$(MAIN).idx ]; then \
+			$(MAKEINDEX) -q $(OUT_DIR)/$(MAIN).idx >$(LOG_DIR)/$(MAIN)-index-pass$$pass.log 2>&1; index_status=$$?; \
+			if [ $$index_status -ne 0 ]; then \
+				tail -n 40 $(LOG_DIR)/$(MAIN)-index-pass$$pass.log; rm -f $(PDF); exit 1; \
+			fi; \
+		fi; \
 	done
 	@echo "  ok  $(PDF)"
 
 fast:
 	@echo "  -- Fast build --"
 	@mkdir -p $(OUT_DIR) $(LOG_DIR)
+	@rm -f $(PDF)
 	@$(TEX) $(TEXFLAGS) -output-directory=$(OUT_DIR) $(MAIN).tex >$(LOG_DIR)/$(MAIN)-fast.log 2>&1; \
 		tex_status=$$?; \
 	if [ $$tex_status -ne 0 ] || [ ! -f $(PDF) ] || grep -qE '^!|^Fatal error|^.+Emergency stop' $(LOG_DIR)/$(MAIN)-fast.log; then \
@@ -148,29 +162,34 @@ release:
 platonic:
 	@echo "  -- Building the platonic-integrated monograph --"
 	@mkdir -p $(OUT_DIR) $(LOG_DIR)
-	@cd platonic && \
-	  TEXINPUTS=".:..:$$TEXINPUTS" BIBINPUTS=".:..:$$BIBINPUTS" \
-	  $(TEX) $(TEXFLAGS) main.tex >../$(LOG_DIR)/platonic.log 2>&1 || true; \
-	  TEXINPUTS=".:..:$$TEXINPUTS" BIBINPUTS=".:..:$$BIBINPUTS" \
-	  bibtex main >>../$(LOG_DIR)/platonic.log 2>&1 || true; \
-	  for i in 1 2 3; do \
-	    TEXINPUTS=".:..:$$TEXINPUTS" BIBINPUTS=".:..:$$BIBINPUTS" \
-	    $(TEX) $(TEXFLAGS) main.tex >../$(LOG_DIR)/platonic.log 2>&1 || true; \
-	  done
-	@if [ -f platonic/main.pdf ]; then \
-		cp platonic/main.pdf $(OUT_DIR)/platonic.pdf; \
-		echo "    OK out/platonic.pdf ($$(pdfinfo platonic/main.pdf 2>/dev/null | awk '/^Pages/{print $$2}') pages)"; \
-	else \
-		echo "    FAIL - see $(LOG_DIR)/platonic.log"; exit 1; \
-	fi
-	@if grep -aqE '^! ' $(LOG_DIR)/platonic.log; then \
-		echo "    LaTeX errors:"; grep -aE '^! ' $(LOG_DIR)/platonic.log | head -5; exit 1; \
-	fi
-	@if grep -aqE 'Reference .* undefined|Citation .* undefined' $(LOG_DIR)/platonic.log; then \
-		echo "    undefined references or citations:"; \
-		grep -aE 'Reference .* undefined|Citation .* undefined' $(LOG_DIR)/platonic.log | head -5; exit 1; \
-	fi
-	@echo "    0 errors, 0 undefined references, 0 undefined citations."
+	@rm -f $(OUT_DIR)/platonic.pdf
+	@set -e; \
+	build_dir=$$(mktemp -d "$(abspath $(OUT_DIR))/platonic.XXXXXX"); \
+	log_dir="$(abspath $(LOG_DIR))"; source_dir="$(CURDIR)"; \
+	cd platonic; \
+	for pass in $$(seq 1 $(PASSES)); do \
+		rm -f "$$build_dir/main.pdf"; \
+		if ! TEXINPUTS=".:..:$$TEXINPUTS" BIBINPUTS=".:..:$$BIBINPUTS" \
+			$(TEX) $(TEXFLAGS) -output-directory="$$build_dir" main.tex >"$$log_dir/platonic-pass$$pass.log" 2>&1; then \
+			tail -n 40 "$$log_dir/platonic-pass$$pass.log"; exit 1; \
+		fi; \
+		if [ ! -s "$$build_dir/main.pdf" ] || grep -aEq '^!|Fatal error|Emergency stop|No pages of output' "$$log_dir/platonic-pass$$pass.log"; then \
+			tail -n 40 "$$log_dir/platonic-pass$$pass.log"; exit 1; \
+		fi; \
+		if [ "$$pass" -eq 1 ]; then \
+			if ! (cd "$$build_dir" && BIBINPUTS="$$source_dir/platonic:$$source_dir:$$BIBINPUTS" BSTINPUTS="$$source_dir/platonic:$$source_dir:$$BSTINPUTS" $(BIBTEX) main) >"$$log_dir/platonic-bibtex.log" 2>&1; then \
+				tail -n 40 "$$log_dir/platonic-bibtex.log"; exit 1; \
+			fi; \
+			if grep -aEq '^I couldn|^I found no|^Fatal error|Emergency stop' "$$log_dir/platonic-bibtex.log"; then \
+				tail -n 40 "$$log_dir/platonic-bibtex.log"; exit 1; \
+			fi; \
+		fi; \
+	done; \
+	if grep -aEq 'Reference .* undefined|Citation .* undefined' "$$log_dir/platonic-pass$(PASSES).log"; then \
+		tail -n 40 "$$log_dir/platonic-pass$(PASSES).log"; exit 1; \
+	fi; \
+	cp "$$build_dir/main.pdf" "$(abspath $(OUT_DIR))/platonic.pdf"; \
+	echo "  ok  $(OUT_DIR)/platonic.pdf"
 
 
 ## root-publish: Copy the release binary to repo root under its canonical name
@@ -208,46 +227,31 @@ unified-architecture:
 standalone:
 	@echo "  -- Building standalone documents --"
 	@mkdir -p $(OUT_DIR) $(LOG_DIR)
-	@if [ -z "$(strip $(STANDALONE_TEX))" ]; then \
-		echo "  (no standalone documents found)"; \
-	else \
-		failures=0; \
-		for tex in $(STANDALONE_TEX); do \
-			if [ ! -f "$$tex" ]; then continue; fi; \
-			base=$$(basename "$$tex" .tex); \
-			if [ -f "$(OUT_DIR)/$$base.pdf" ] && [ "$(OUT_DIR)/$$base.pdf" -nt "$$tex" ]; then \
-				echo "  ok  $(OUT_DIR)/$$base.pdf (up to date)"; \
-				continue; \
+	@set -e; \
+	for tex in $(STANDALONE_TEX); do \
+		base=$$(basename "$$tex" .tex); \
+		tmpdir=$$(mktemp -d "$(abspath $(OUT_DIR))/standalone-$$base.XXXXXX"); \
+		rm -f "$(OUT_DIR)/$$base.pdf"; \
+		for pass in $$(seq 1 $(STANDALONE_PASSES)); do \
+			rm -f "$$tmpdir/$$base.pdf"; \
+			if ! TEXINPUTS="$$tmpdir:$$(pwd):$$(pwd)/standalone:" $(TEX) $(TEXFLAGS) -output-directory="$$tmpdir" "$$tex" >"$(LOG_DIR)/standalone-$$base-pass$$pass.log" 2>&1; then \
+				tail -n 40 "$(LOG_DIR)/standalone-$$base-pass$$pass.log"; exit 1; \
 			fi; \
-			tmpdir=$$(mktemp -d "/tmp/mkd-$$(basename "$$(pwd)")-standalone-$$base.XXXXXX"); \
-			echo "  [standalone] $$tex -> $(OUT_DIR)/$$base.pdf"; \
-			for pass in $$(seq 1 $(STANDALONE_PASSES)); do \
-				TEXINPUTS="$$tmpdir:$$(pwd):$$(pwd)/standalone:" $(TEX) $(TEXFLAGS) -output-directory="$$tmpdir" "$$tex" >"$(LOG_DIR)/standalone-$$base-pass$$pass.log" 2>&1; rc=$$?; \
-				if [ -f "$$tmpdir/$$base.idx" ]; then makeindex -q "$$tmpdir/$$base.idx" >/dev/null 2>&1 || true; fi; \
-				if [ $$rc -ne 0 ]; then \
-					if grep -aE '^! |Emergency stop|Runaway argument|Fatal error|Undefined control sequence|File ended while scanning|No pages of output' "$(LOG_DIR)/standalone-$$base-pass$$pass.log" >/dev/null 2>&1; then \
-						echo "  fail  $$tex failed on pass $$pass. See $(LOG_DIR)/standalone-$$base-pass$$pass.log"; \
-						grep -aE '^! |Emergency stop|Runaway argument|Fatal error|Undefined control sequence|File ended while scanning|No pages of output' "$(LOG_DIR)/standalone-$$base-pass$$pass.log" | head -n 20 || tail -n 40 "$(LOG_DIR)/standalone-$$base-pass$$pass.log"; \
-						failures=$$((failures + 1)); \
-						break; \
-					else \
-						echo "  warn  $$tex returned $$rc on pass $$pass; continuing."; \
-					fi; \
+			if [ ! -s "$$tmpdir/$$base.pdf" ] || grep -aEq '^!|Emergency stop|Runaway argument|Fatal error|Undefined control sequence|File ended while scanning|No pages of output' "$(LOG_DIR)/standalone-$$base-pass$$pass.log"; then \
+				tail -n 40 "$(LOG_DIR)/standalone-$$base-pass$$pass.log"; exit 1; \
+			fi; \
+			if [ -f "$$tmpdir/$$base.idx" ]; then \
+				if ! $(MAKEINDEX) -q "$$tmpdir/$$base.idx" >"$(LOG_DIR)/standalone-$$base-index-pass$$pass.log" 2>&1; then \
+					tail -n 40 "$(LOG_DIR)/standalone-$$base-index-pass$$pass.log"; exit 1; \
 				fi; \
-			done; \
-			if [ -f "$$tmpdir/$$base.pdf" ]; then \
-				cp "$$tmpdir/$$base.pdf" "$(OUT_DIR)/$$base.pdf"; \
-				echo "  ok  $(OUT_DIR)/$$base.pdf"; \
-			elif [ $$failures -eq 0 ]; then \
-				echo "  fail  no PDF produced for $$tex"; \
-				failures=$$((failures + 1)); \
 			fi; \
 		done; \
-		if [ $$failures -ne 0 ]; then \
-			echo "  fail  $$failures standalone document(s) failed."; \
-			exit 1; \
+		if grep -aEq 'Reference .* undefined|Citation .* undefined' "$(LOG_DIR)/standalone-$$base-pass$(STANDALONE_PASSES).log"; then \
+			tail -n 40 "$(LOG_DIR)/standalone-$$base-pass$(STANDALONE_PASSES).log"; exit 1; \
 		fi; \
-	fi
+		cp "$$tmpdir/$$base.pdf" "$(OUT_DIR)/$$base.pdf"; \
+		echo "  ok  $(OUT_DIR)/$$base.pdf"; \
+	done
 
 icloud: $(PDF) standalone
 	@echo "  -- Copying Igusa PDFs to iCloud --"
