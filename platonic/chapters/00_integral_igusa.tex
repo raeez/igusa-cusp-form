@@ -1,0 +1,134 @@
+
+\part{Root constructions and the compact comparison}
+\chapter{The Igusa product and its root presentation}
+The seed is the weak Jacobi form
+\[
+ \phiweak(\tau,z)=\sum_{n\ge0,\,\ell\in\Z}f(n,\ell)q^nr^\ell,
+ \qquad f(0,0)=10.
+\]
+The singular theta lift forms the monic weight-five product
+\[
+ \Dmon(Z)=q^{1/2}r^{1/2}s^{1/2}
+ \prod_{(n,\ell,m)>0}(1-q^nr^\ell s^m)^{f(nm,\ell)},
+ \qquad \ChiTen=\Dmon^2.
+\]
+The product records signed multiplicities, a Weyl prefactor, and an
+automorphy law. The root bracket is supplied by the
+Gritsenko--Nikulin presentation. A geometric orientation and an
+operator trace require their own carriers and maps.
+
+\begin{definition}[Igusa root constructions]
+Fix the Gritsenko--Nikulin Lie superalgebra \(\gIg\), its positive
+subalgebra \(\nIg\), and a proper additive height on its positive
+root cone. Its root constructions are the height-complete
+Chevalley coalgebra, enveloping algebra, and level-zero current
+envelope. Hong's quantum group also uses the full
+Borcherds--Cartan superdatum. The diagonal Fredholm model uses a
+chosen parity realization, Hilbert norms, and an absolute-convergence
+domain. Write \(\RealDatum\) for this collection with those choices.
+A map of collections includes a specified map on every component.
+\end{definition}
+
+\begin{theorem}[Universal primitive map and PBW recognition]
+Let \(\mathfrak p\) be a positive-root-graded Lie superalgebra
+over \(\mathbb C\), with finite-dimensional homogeneous pieces.
+Suppose a homogeneous parity-preserving map from every simple-root
+generating space of \(\nIg\) to \(\mathfrak p\) satisfies
+the defining Borcherds--Serre relations. It extends uniquely to
+a graded Lie-superalgebra map
+\[
+ f:\nIg\longrightarrow\mathfrak p.
+\]
+It induces continuous maps on height completions, enveloping
+algebras, Chevalley chains, and level-zero currents. The map \(f\)
+is an isomorphism if and only if it is surjective and the root-graded
+PBW series agree in each parity.
+\end{theorem}
+\begin{proof}
+Extend the chosen maps to the free Lie superalgebra on the
+simple-root spaces. The relation hypothesis makes the defining
+ideal lie in its kernel, giving \(f\). The generators prove
+uniqueness. On enveloping algebras the map sends
+\(x_1\cdots x_j\) to \(f(x_1)\cdots f(x_j)\).
+On Chevalley chains it is the graded symmetric map on the shifted
+generators. It commutes with the Chevalley differential because
+\(f\) preserves brackets. The current map is
+\(\partial^j x\mapsto\partial^j f(x)\), preserving
+\([x_\lambda y]=[x,y]\). Root degree preservation gives
+compatible maps at each height and hence on the stated limits.
+
+If \(f\) is surjective, \(U(f)\) is surjective. Proper
+positive height makes each root-graded PBW component
+finite-dimensional. Equality of its even and odd dimensions makes
+\(U(f)\) bijective in every component. PBW embeds each Lie
+superalgebra into its enveloping algebra, so \(f\) is injective.
+The converse follows by applying the constructions to its inverse.
+\end{proof}
+
+
+A Hall-category comparison must intertwine the actual extension
+correspondences. A quantum-double comparison preserves its coproduct
+and pairing. A Fredholm comparison intertwines the operators on
+their declared domains. These maps are part of a realization of
+\(\RealDatum\). The universal primitive map supplies the algebraic
+component from which they are to be constructed.
+
+\begin{theorem}[Integral Igusa identity]
+The stated root constructions give the identities
+\[
+ \den(\gIg)=\Dmon(2Z),
+ \qquad
+ e^{-\rho}\sch\widehat C_*(\nIg)=\Dmon(2Z),
+\]
+\[
+ \operatorname{sdet}_F(1-K_Z)=e^{\rho}\Dmon(2Z),
+ \qquad
+ \mathcal Z^{\red}_{K3\times E}=-\ChiTen^{-1}.
+\]
+After the half-coordinate pullback $\jmath(Z)=Z/2$, the reduced scalar is the inverse square of the first-order denominator:
+\[
+ \mathcal Z^{\red}_{K3\times E}
+ =-\bigl(\jmath^*\den(\gIg)\bigr)^{-2}.
+\]
+\end{theorem}
+\begin{proof}
+The first identity is the Gritsenko--Nikulin denominator theorem.  PBW identifies the second with the Euler supercharacter of Chevalley chains.  Trace-class convergence gives the third as the product of root eigenvalues.  The fourth is the primitive reduced curve-counting theorem of Oberdieck--Pixton in monic normalization.  Substitution of the half-coordinate identity gives the final equality.
+\end{proof}
+
+\chapter{The compact geometric refinement}
+The physical charge of a brane is additive.  The automorphic Gram degree is quadratic.  Their exact relation is carried by the polarization cocycle
+\[
+ B(c_1,c_2)=\PiGram(c_1+c_2)-\PiGram(c_1)-\PiGram(c_2).
+\]
+The central extension
+\[
+ (c,\lambda)(d,\mu)=(c+d,\lambda+\mu+B(c,d))
+\]
+makes $c\mapsto(c,\PiGram(c))$ additive.  This extension is the natural grading object for a Hall source whose character descends to the three Igusa variables.
+
+\begin{definition}[Geometric realization datum]
+A geometric $K3\times E$ realization consists of a reduced oriented extension theory on compactly supported objects, its additive charge grading, the polarized Gram extension, projection-finite and wrapped elliptic sectors, mixed extension correspondences, a primitive integration map to the universal root datum, a coproduct and Hopf pairing, and an orientation-line map to $\mathcal L^5\tensor\nu_5$.
+\end{definition}
+
+\begin{recognition}[Geometric Hall--Borcherds recognition]
+Let the geometric realization datum supply a positive-root-graded
+primitive Lie superalgebra \(\mathfrak p_X\) and simple geometric
+classes satisfying the defining relations of \(\nIg\).
+The resulting map \(\nIg\to\mathfrak p_X\) is an isomorphism
+precisely when it is surjective and the two parity-refined PBW
+series agree. It then identifies their completed enveloping
+algebras, Chevalley chains, and level-zero current envelopes.
+\end{recognition}
+\begin{proof}
+Apply the universal primitive map and PBW recognition theorem to
+these geometric classes. The induced maps are the tensor-word,
+Chevalley, and current maps constructed in its proof.
+\end{proof}
+
+The compact construction must produce these primitive classes from
+oriented reduced coefficients on extension stacks. It must prove
+their relations and generation and identify both parity dimensions.
+To compare Hall doubles, centres, or Pfaffian sections, it must also
+construct the coproduct, monoidal, and line maps. These maps have a
+common geometric source. Their existence does not follow from the
+PBW character.

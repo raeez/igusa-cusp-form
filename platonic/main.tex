@@ -1,0 +1,102 @@
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\documentclass[11pt,twoside,openright]{memoir}
+\usepackage[localtheorems]{raeez-math-template}
+\usepackage{platonic}
+\input{integrated_macros}
+\title{\texorpdfstring{\textbf{The Igusa Square Root}\\[0.55em]\Large Borcherds Denominators, Protected Hall Theory, Chiral Geometry, and the $K3\times E$ Realization}{The Igusa Square Root: Borcherds Denominators, Protected Hall Theory, Chiral Geometry, and the K3 x E Realization}}
+\author{Raeez Lorgat}
+\date{26 July 2026}
+\hypersetup{pdftitle={The Igusa Square Root},pdfauthor={Raeez Lorgat},pdfsubject={Borcherds Denominators, Protected Hall Theory, Chiral Geometry, and the K3 x E Realization},pdfkeywords={Igusa cusp form, Borcherds algebra, K3 x E, Hall algebra, chiral algebra, quantum group, protected field theory}}
+\hypersetup{pdfcreator={},pdfproducer={},pdfcreationdate={},pdfmoddate={}}
+\begin{document}
+\frontmatter
+\maketitle
+\thispagestyle{empty}
+\cleardoublepage
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+Let \(S\) be a smooth projective K3 surface and \(E\) an elliptic
+curve. Reduced curve counting on \(S\times E\), in classes primitive
+and nonzero in the K3 factor, produces the reciprocal of the monic
+Igusa cusp form \(\ChiTen\). Its square root \(\Dmon\) is an
+automorphic section of weight five with an order-two character.
+A geometric realization asks for extension operations on states,
+their parity, an orientation line, and a comparison of its section
+with \(\Dmon\).
+
+The automorphic construction begins with the weak Jacobi form
+\(\phiweak\), the type-II Lorentzian root lattice, its positive
+roots, and its Weyl vector. The Borcherds--Gritsenko--Nikulin
+construction supplies a Lie superalgebra \(\gIg\) and the identity
+\(\den(\gIg)=\Dmon(2Z)\). Proper-height Chevalley chains give its
+homological denominator. A diagonal operator built from signed
+multiplicities gives the Fredholm product on an absolute-convergence
+chamber. The root Lie superalgebra carries the bracket, while the
+minimal virtual superspace carries the signed product.
+
+The compact comparison begins with sheaves, extensions, and flags on
+\(S\times E\). It requires reduced critical coefficients and
+orientation comparisons on those correspondences, then a root-graded
+map preserving the Hall operations. Identifying a Pfaffian with the
+automorphic section also requires a map of lines and their transport.
+The reduced counting identity supplies the scalar value to recover.
+
+\chapter*{The comparison problem}
+\addcontentsline{toc}{chapter}{The comparison problem}
+An extension \(0\to A\to F\to B\to0\) remembers the relative
+elliptic position of its endpoints. After translation quotient,
+\(A\) and \(B\) must therefore live on the same elliptic torsor.
+For \(E\)-stacks \(M,N\), the relevant product is
+\[
+ [(M\times N)/E_{\mathrm{diag}}]
+ \simeq[M/E]\times_{BE}[N/E],
+\]
+where \(BE\) is the stack of elliptic torsors. The ordinary product
+of the two quotients forgets the identification of their torsors.
+For \(M=N=E\), the relative product is \(E\), with coordinate
+\(y-x\), whereas the ordinary product is a point.
+
+On the full coherent-sheaf stack, the middle-term map of an extension
+correspondence is proper on each fixed Hilbert-polynomial component.
+Its fibre is the appropriate Quot space. Iterated correspondences
+are full flag stacks, and the zero sheaf gives the unit over \(BE\).
+A critical cohomological realization must provide the coefficient
+maps and orientation transport on these same flags. The desired
+Hall--Borcherds map sends actual primitive classes to root vectors
+and preserves brackets and both parity dimensions. A separate map
+of square-root lines must preserve the orientation character.
+
+The later algebraic and field-theoretic comparisons explain which
+operations such maps must retain. The relative Rees and oscillator
+calculations supply finite examples. Their compact Hall interpretation
+requires a map from geometric states to the specified representations.
+A Hochschild centre, a monoidal categorical centre, and a trace on a
+representation each have their own carrier and comparison map.
+The geometric realization keeps these structures until scalar evaluation.
+
+
+\chapter*{Notation and normalization}
+\addcontentsline{toc}{chapter}{Notation and normalization}
+The ground field has characteristic zero.  Stable categories are presentable and idempotent-complete.  Tensor products preserve colimits separately.  Completions are separated inverse limits of finite weight or proper-height quotients.  The Igusa normalization is
+\[
+ \Dtheta=64\Dmon,\qquad \ChiTen=\Dmon^2,
+\]
+with $\Dmon$ monic.  Physical charge is additive; Gram degree is carried through its polarization cocycle.  Bar, factorization, and Hopf coproducts retain distinct notation and distinct geometric meanings.
+
+\tableofcontents
+\mainmatter
+\input{chapters/00_integral_igusa.tex}
+\input{chapters/Volume_III_Igusa_Borcherds_Theory.tex}
+\input{chapters/Volume_I_Ordered_Chiral_Geometry.tex}
+\input{chapters/Volume_I_audit_and_obstructions.tex}
+\input{chapters/Volume_II_Mixed_HT_Deligne_Theory.tex}
+\input{chapters/Volume_IV_Calabi_Yau_Quantum_Groups.tex}
+\input{chapters/Volume_V_Universal_Chiral_BV_and_Einstein_Completion.tex}
+\input{chapters/99_integral_closure.tex}
+\backmatter
+\bibliographystyle{alpha}
+\bibliography{references}
+\end{document}

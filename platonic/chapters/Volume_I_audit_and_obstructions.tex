@@ -1,0 +1,476 @@
+\chapter{Enveloping bars and planar path sequences}
+\label{ch:enveloping-audit}
+
+The dimension of a bar chain space and the dimension of its homology are different invariants. For an enveloping algebra, the Chevalley comparison gives a Lie-theoretic model for the homology. This makes it possible to compare Motzkin and Riordan path counts with the ordered bar on a specified carrier.
+
+Bar length and Chevalley degree are homological degrees: $H_n$ denotes degree-$n$ homology. The cohomology of the dual Chevalley complex is written $H^n$. For finite-dimensional weight pieces their dimensions agree.
+
+\section{Chevalley comparison}
+
+\begin{theorem}[Bar--Chevalley comparison]
+\label{thm:bar-chevalley-spine}
+Let $k$ be a field of characteristic zero and let $\g$ be an ordinary Lie algebra over $k$.
+Give $U(\g)$ its augmentation killing $\g$.
+There is a natural quasi-isomorphism of ordinary conilpotent differential graded coalgebras
+\[
+ \kappa:C_*(\g)\longrightarrow\BarPerp\bigl(U(\g)\bigr),
+\]
+where both constructions use direct sums and ordinary tensors over $k$.
+It preserves the PBW filtration.
+If $\g=\bigoplus_{w\ge1}\g_w$ and $[\g_u,\g_v]\subseteq\g_{u+v}$,
+the map is a quasi-isomorphism in each total weight.
+It extends to the degreewise product over weights, using completed tensor products by total weight.
+The completed coalgebras are conilpotent in each weight; no global conilpotence is asserted for infinite sums.
+\end{theorem}
+\begin{proof}
+Put $C_n(\g)=\Lambda^n\g$ in homological degree $n$, with differential
+\[
+ d(x_1\wedge\cdots\wedge x_n)
+ =\sum_{i<j}(-1)^{i+j+1}[x_i,x_j]\wedge
+ x_1\wedge\cdots\widehat{x_i}\cdots\widehat{x_j}\cdots\wedge x_n.
+\]
+Its coproduct splits the exterior factors between two ordered sublists,
+with the sign of the corresponding permutation.
+The ordinary normalized bar differential joins positions $i,i+1$ with sign $(-1)^{i-1}$.
+Define
+\[
+ \kappa(x_1\wedge\cdots\wedge x_n)
+ =\sum_{\sigma\in S_n}\operatorname{sgn}(\sigma)
+ [x_{\sigma(1)}|\cdots|x_{\sigma(n)}].
+\]
+At degree zero this map preserves the unit.
+At degree two its differential is $[x_1x_2-x_2x_1]=[[x_1,x_2]]$.
+In every degree, pair permutations whose merged adjacent entries occur in opposite orders.
+Their difference is the bracket of those entries, with the displayed exterior sign.
+This proves the chain-map equation.
+Cutting an antisymmetrized word amounts to choosing an ordered subset and
+antisymmetrizing its two subwords.
+The two procedures give the same permutations and signs, proving the coalgebra identity.
+
+Filter $U(\g)$ by PBW degree, the bar by total PBW degree, and $\Lambda^n\g$ by degree $n$.
+PBW identifies the associated graded algebra with $S(\g)$.
+The associated graded comparison is the antisymmetrization
+$\Lambda(\g)\to B(S(\g))$, with zero differential on its source.
+To verify that it is a quasi-isomorphism, consider the free Koszul resolution
+$S(V)\otimes\Lambda(V)$ for $V=\g$.
+For a basis $(x_i)$ of $V$, its differential is
+$\delta=\sum_i x_i\iota_i$, where $\iota_i$ contracts the exterior factor $x_i$.
+On polynomial degree $p$ and exterior degree $q$, with $p+q>0$, the map
+\[
+ h=\frac{1}{p+q}\sum_i (x_i\wedge -)\,\frac{\partial}{\partial x_i}
+\]
+satisfies $\delta h+h\delta=1$.
+Only finitely many summands act on each element, even when $V$ is infinite-dimensional.
+The identity follows by cancellation of cross terms and the Euler identity in the two degrees.
+Thus this free resolution has augmentation homology $k$ only.
+The free normalized bar resolution has the same homology by its extra-degeneracy contraction.
+Antisymmetrization defines an augmentation-preserving comparison between these free resolutions.
+The simplicial bar sign convention is related to the displayed bar convention by multiplication by $(-1)^n$ in degree $n$.
+Free bases permit a reverse comparison and homotopies to be lifted inductively,
+since every positive-degree cycle in a resolution is a boundary.
+Tensoring these homotopies with $k$ proves the asserted quasi-isomorphism on associated graded complexes.
+
+Every cycle in the cone of $\kappa$ has finite PBW filtration degree.
+A primitive for its highest associated graded part lowers that degree;
+iteration terminates because the filtration is bounded below.
+The cone is acyclic, proving the ordinary assertion.
+For a positive weight grading, PBW degree is at most total weight.
+The same argument is therefore finite within each weight.
+Finally, kernels and images of a degreewise product differential are products of kernels and images,
+so the componentwise quasi-isomorphisms extend to the stated completion.
+\end{proof}
+
+The ordinary comparison does not itself construct a morphism in $\FactD(X)$.
+For geometric coefficient systems, one must give compatible enveloping and Chevalley constructions on every chart
+and coherent factorization equivalences for the whole Chevalley complex.
+On each disjointness locus, with restriction denoted by $j^!$, the required equation is
+\[
+ f_{B,I}\,j^!\kappa_I
+ =(\kappa_{I_1}\boxtimes\kappa_{I_2})\,f_{C,I},
+ \qquad I=I_1\sqcup I_2.
+\]
+Here $f_{C,I}$ and $f_{B,I}$ are the specified Chevalley and bar factorization maps.
+The bar map may use the signed shuffle comparison under its geometric functor hypotheses.
+The Chevalley factorization maps, collision compatibility, refinement coherence,
+and continuity of the completed maps remain additional geometric data to construct or verify.
+Internal tensor formulas and PBW alone do not provide them.
+
+
+\begin{calculation}[Finite-dimensional simple case]
+\label{calc:simple-spine}
+For a simple Lie algebra of rank $r$ with exponents $m_1,\dots,m_r$, the
+Chevalley cohomology is the exterior algebra on primitive classes of degrees
+$2m_i+1$. The corresponding homology Poincar\'e polynomials are
+\[
+ \BarPerp U(\mathfrak{sl}_2):\ 1+t^3,
+ \qquad
+ \BarPerp U(\mathfrak{sl}_3):\ 1+t^3+t^5+t^8,
+ \qquad
+ \BarPerp U(\mathfrak g_2):\ 1+t^3+t^{11}+t^{14}.
+\]
+The corresponding Betti sequences for $\mathfrak{sl}_2$ and $\mathfrak{sl}_3$ are
+$1,0,0,1$ and $1,0,0,1,0,1,0,0,1$.
+For a finite-dimensional Lie algebra, the Chevalley chain dimensions are
+$\binom{\dim\g}{n}$.
+
+For an ordinary augmented algebra $A$ over $\mathbb C$, let
+$I=\ker(A\to\mathbb C)$.  Its normalized two-sided bar with trivial
+coefficients has homological chain spaces
+\[
+ B_0(A)=\mathbb C,\qquad B_n(A)=I^{\otimes n}\quad(n\ge1).
+\]
+Here $n$ is bar length, independently of any internal weight or PBW degree.
+If $I$ has finite dimension $d$, then $\dim B_n(A)=d^n$; in particular,
+an augmentation ideal of dimension three gives the chain counts $3^n$.
+In a cohomological convention that places $B_n$ in degree $-n$, its homology
+is denoted $H^{-n}$ instead of $H_n$.
+
+For $A=U(\mathfrak{sl}_2)$, PBW gives the basis
+$e^a h^b f^c$, with $a,b,c\ge0$, where
+$[h,e]=2e$, $[h,f]=-2f$, and $[e,f]=h$.
+The augmentation ideal has all these basis elements except $1$.
+Consequently $B_n(A)$ is countably infinite-dimensional for every $n\ge1$.
+Its total PBW filtration has finite-dimensional associated graded pieces,
+with generating function
+\[
+ \sum_{d\ge0}\dim\operatorname{gr}^{\mathrm{PBW}}_d B_n(A)\,z^d
+ =\bigl((1-z)^{-3}-1\bigr)^n.
+\]
+In particular, $3^n$ is the dimension in the least possible total PBW degree
+$d=n$. These least-degree dimensions are $3,9,27,81,243$ for
+$n=1,2,3,4,5$; the full bar chain spaces are infinite-dimensional. The quotient of
+indecomposables is zero: the perfectness of $\mathfrak{sl}_2$ implies $I/I^2=0$.
+
+The Chevalley chain model is different: its degree-$n$ space is
+$\Lambda^n\mathfrak{sl}_2$, of dimensions $1,3,3,1$ in degrees $0,1,2,3$.
+With the convention $d(x\wedge y)=[x,y]$, the map
+$d:\Lambda^2\mathfrak{sl}_2\to\mathfrak{sl}_2$ sends
+\[
+ e\wedge h\longmapsto-2e,\qquad
+ e\wedge f\longmapsto h,\qquad
+ h\wedge f\longmapsto-2f,
+\]
+and is an isomorphism.  The next differential vanishes, since
+\[
+ d(e\wedge h\wedge f)
+ =-2e\wedge f-h\wedge h-2f\wedge e=0.
+\]
+Together with $d:\mathfrak{sl}_2\to\mathbb C$ equal to zero, this gives
+Chevalley homology dimensions $1,0,0,1$.  The ordinary bar--Chevalley
+comparison identifies these homology groups with those of $U(\mathfrak{sl}_2)$;
+it does not identify the two chain spaces.
+
+\end{calculation}
+
+\section{The Virasoro row}
+
+The transverse presentation of the Virasoro family is the enveloping algebra of
+the positive Witt algebra
+\[
+ L_1=\bigoplus_{n\ge1}\mathbb C\,e_n,
+ \qquad
+ [e_i,e_j]=(j-i)e_{i+j},
+\]
+to which Theorem~\ref{thm:bar-chevalley-spine} applies: $L_1$ is positively
+graded with one-dimensional weight spaces, so every weight has finitely many
+decompositions.
+
+\begin{theorem}[Pentagonal rigidity]
+\label{thm:pentagonal-spine}
+The bar homology of $U(L_1)$ satisfies
+\[
+ \dim H_n\bigl(\BarPerp U(L_1)\bigr)=2
+ \qquad\text{for every }n\ge1,
+\]
+one dimension in each of the weights $(3n^2-n)/2$ and $(3n^2+n)/2$. Its graded
+Euler character is
+\begin{equation}
+\label{eq:witt-euler-spine}
+ \chi_q\bigl(\BarPerp U(L_1)\bigr)=\prod_{n\ge1}\bigl(1-q^n\bigr),
+\end{equation}
+and \eqref{eq:witt-euler-spine} is accounted for degree by degree with no
+residual freedom.
+\end{theorem}
+\begin{proof}
+By Theorem~\ref{thm:bar-chevalley-spine} the bar of $U(L_1)$ is quasi-isomorphic to $C_*(L_1)$.
+Each weight subcomplex is finite-dimensional, so its homology has the same
+dimensions as the weightwise dual cohomology. Goncharova's calculation gives
+two dimensions in each degree $n\ge1$, in the weights $(3n^2\mp n)/2$. Identity \eqref{eq:witt-euler-spine} is the
+denominator product applied to $L_1$, where every root space is one dimensional
+and even, so $\smult(L_1)_n=1$. Euler's pentagonal number theorem expands the
+product as $\sum_{m\in\Z}(-1)^mq^{m(3m-1)/2}$, whose support is exactly
+$\{(3n^2\pm n)/2\}$ with coefficient $(-1)^n$ at each of $(3n^2-n)/2$ and
+$(3n^2+n)/2$. Comparing with $\sum_n(-1)^n\dim H_{n,w}$, each weight of the Euler
+character is saturated by a single class in the degree Goncharova predicts, so
+no further classes and no cancellation are available.
+\end{proof}
+
+For $n=1,2,3,4$, the nonzero homology groups occupy the weight pairs
+$(1,2)$, $(5,7)$, $(12,15)$, $(22,26)$, one dimension in each.
+The corresponding nonzero coefficients of $\prod_{n\ge1}(1-q^n)$ occur at
+$0,1,2,5,7,12,15,22,26$ with signs $+,-,-,+,+,-,-,+,+$.
+
+\section{Planar path sequences}
+
+A Motzkin path is a lattice path from $(0,0)$ to $(n,0)$, staying at
+nonnegative height, with steps $(1,1)$, $(1,0)$, and $(1,-1)$.
+Let $M(n)$ count all such paths of length $n$, and let $R(n)$ count those with
+no horizontal step at height zero.  Both counts include the empty path:
+$M(0)=R(0)=1$, while $M(1)=1$ and $R(1)=0$.
+For $n\ge1$ consider the two sequences
+\[
+ a_n=M(n+1)-M(n)=1,2,5,12,30,76,\ldots,
+ \qquad
+ b_n=R(n+3)=3,6,15,36,91,\ldots.
+\]
+
+\begin{proposition}[Motzkin and Riordan identities]
+\label{prop:one-sequence-spine}
+For every $n\ge0$,
+\[
+ M(n)=R(n)+R(n+1),\qquad
+ M(n+1)-M(n)=R(n+2)-R(n).
+\]
+The ordinary generating functions of the two path counts, and hence those
+of $a_n$ and $b_n$, belong to
+$\mathbb Q(z,\sqrt{1-2z-3z^2})$.
+\end{proposition}
+\begin{proof}
+Work in the formal power-series ring $\mathbb Q[[z]]$, and write
+$M(z)=\sum_{n\ge0}M(n)z^n$ and $R(z)=\sum_{n\ge0}R(n)z^n$.
+A nonempty Motzkin path either starts with a horizontal step followed by
+an arbitrary Motzkin path, or has a unique first-return decomposition
+$U P D Q$, where $U$ and $D$ are the up and down steps,
+$P$ and $Q$ are arbitrary Motzkin paths, and $P$ is drawn
+one unit above the horizontal axis.  Thus
+\[
+ M=1+zM+z^2M^2.
+\]
+A nonempty path counted by $R$ has no initial horizontal step.  Its first
+return similarly has the form $U P D Q$, with $P$ arbitrary and $Q$ counted
+by $R$.  Consequently
+\[
+ R=1+z^2MR,\qquad R=(1-z^2M)^{-1}.
+\]
+The inverses here exist because their denominators have constant term one.
+Using $z^2M^2=M-1-zM$, compute
+\[
+ (1+zM)(1-z^2M)
+ =1+zM-z^2M-z^3M^2=1+z.
+\]
+It follows that $(1+z)R=1+zM$.  Comparing coefficients of $z^{n+1}$ gives
+$R(n+1)+R(n)=M(n)$ for all $n\ge0$.  Subtracting consecutive identities
+gives the difference formula.
+
+Solving the quadratic equation for the formal series with constant term
+one gives
+\[
+ M(z)=\frac{1-z-\sqrt{1-2z-3z^2}}{2z^2},\qquad
+ R(z)=\frac{1+zM(z)}{1+z},
+\]
+where the square root has constant term one.  The apparent pole in the
+formula for $M$ is removable as a formal series.  Finite index shifts and
+differences preserve the indicated quadratic function field, proving the
+last assertion.  These identities are consequences solely of the path
+decompositions.
+\end{proof}
+
+\begin{remark}[Low-degree homology]
+Theorem~\ref{thm:pentagonal-spine} gives homology dimensions $2,2,2$ in degrees $1,2,3$, whereas $a_1,a_2,a_3$ are $1,2,5$. These triples agree only in degree two. The degree-one discrepancy already excludes equality of the full homology dimension sequences.
+\end{remark}
+
+\begin{theorem}[Enveloping bars and planar path counts]
+\label{thm:carrier-spine}
+Let $B_\bullet(A)$ be the ordinary normalized bar over $\mathbb C$, with
+trivial coefficients and homological degree given by bar length.  With
+$a_n=M(n+1)-M(n)$ and $b_n=R(n+3)$ indexed by $n\ge1$ as above,
+\[
+ \dim H_1 B_\bullet(U(\mathfrak{sl}_2))=0\ne b_1=3,
+ \qquad
+ \dim H_1 B_\bullet(U(L_1))=2\ne a_1=1,
+\]
+where $L_1=\bigoplus_{m\ge1}\mathbb C e_m$ and
+$[e_i,e_j]=(j-i)e_{i+j}$.
+Hence neither sequence is the bar homology dimension sequence of the
+corresponding enveloping algebra.  Neither is its full bar chain dimension
+sequence: in both cases $B_n$ is countably infinite-dimensional for every
+$n\ge1$.
+\end{theorem}
+\begin{proof}
+For any augmented algebra $A$ with augmentation ideal $I$, the bar
+differential out of $B_1=I$ is zero and the image from $B_2=I\otimes I$ is
+$I^2$.  Therefore
+\[
+ H_1B_\bullet(A)=I/I^2.
+\]
+For an ordinary Lie algebra $\mathfrak g$, the inclusion of generators
+induces an isomorphism
+\[
+ \mathfrak g/[\mathfrak g,\mathfrak g]\ \xrightarrow{\ \sim\ }
+ I/I^2,\qquad I=\ker(U(\mathfrak g)\to\mathbb C).
+\]
+Indeed the generators span $I/I^2$, and
+$[x,y]=xy-yx$ vanishes there.  For injectivity, equip
+$\mathbb C\oplus\mathfrak g/[\mathfrak g,\mathfrak g]$ with the square-zero
+product on its second summand.  The quotient map from $\mathfrak g$ to that
+summand is a Lie map into the commutator Lie algebra of this associative
+algebra.  The universal property of $U(\mathfrak g)$ extends it to an
+augmented algebra map, which kills $I^2$ and provides an inverse on the
+displayed quotient.
+
+The brackets $[h,e]=2e$, $[h,f]=-2f$, and $[e,f]=h$ show that
+$\mathfrak{sl}_2$ equals its commutator algebra.  For $L_1$, every nonzero
+bracket has weight at least three.  Conversely, for $m\ge3$,
+\[
+ e_m=\frac{1}{m-2}[e_1,e_{m-1}].
+\]
+Thus $[L_1,L_1]=\bigoplus_{m\ge3}\mathbb C e_m$, and its abelianization
+has basis the classes of $e_1,e_2$, in weights one and two.  This proves
+both degree-one assertions without using any higher-degree calculation.
+
+PBW gives a countably infinite basis of the augmentation ideal of either
+enveloping algebra.  In the $L_1$ case the basis consists of nonempty
+ordered monomials in the countable set $e_1,e_2,\ldots$, each monomial
+having finite length.  Finite tensor powers of either augmentation ideal
+are therefore countably infinite-dimensional.  The path counts are finite
+in every degree, so they cannot count these full chain spaces.
+\end{proof}
+
+In particular, a complex whose homology dimensions are $b_n$ cannot be
+quasi-isomorphic to $B_\bullet(U(\mathfrak{sl}_2))$, and one whose homology
+dimensions are $a_n$ cannot be quasi-isomorphic to $B_\bullet(U(L_1))$,
+with the stated degree convention.  A discrepancy of chain dimensions
+alone would not imply this conclusion; the degree-one homology discrepancy
+does.
+
+The weight grading gives a different, finite comparison.  An ordered PBW
+monomial of weight $w$ specifies a partition of $w$, so for $n\ge1$,
+\[
+ \sum_{w\ge0}\dim B_n(U(L_1))_w q^w
+ =\left(\prod_{m\ge1}(1-q^m)^{-1}-1\right)^n.
+\]
+Each coefficient is finite.  Thus a weightwise dimension, a dimension
+after a specified weight cutoff, and an ungraded dimension are distinct
+invariants.  In a weight completion, dimensions must likewise be interpreted
+weightwise; the countable algebraic dimensions above refer to the ordinary
+direct-sum enveloping algebras.
+
+\begin{remark}[Chiral coefficients and transverse multiplication]
+Independently of these scalar calculations, a Virasoro chiral coefficient does not determine the transverse bar: a fixed coefficient may be combined with free, square-zero, enveloping, or quantum-plane transverse algebras whose bars differ, while the coefficient and the central charge are unchanged. A chain-level comparison with an ordered bar therefore also requires a specified transverse multiplication and a quasi-isomorphism from the proposed complex to that bar.
+\end{remark}
+
+\chapter{The obstruction constitution}
+\label{ch:obstructions}
+
+Each statement below names what is \emph{not} determined, and therefore what
+must be supplied. Without them the preceding theorems admit false corollaries.
+
+\begin{proposition}[Where a mixed distributive law can live]
+\label{prop:lambda-sector-spine}
+The sector on which a mixed distributive law between $\tensor^!$ and $\starCh$
+is geometrically defined is the common-decomposition sector, the image of the
+aligned idempotent $e_{\mathrm{al}}$. Off that sector the two products admit no
+interchange, only the aligned retraction, so no distributive law can be
+written.
+\end{proposition}
+\begin{proof}
+A distributive law requires a natural transformation interchanging the two
+products in a fixed direction, subject to the coherence conditions of each. The
+canonical comparison in the additive model is the aligned inclusion $\iota$ with
+retraction $\pi$, and $\pi\iota=\id$ while $\iota\pi=e_{\mathrm{al}}\ne\id$ in
+general. A natural transformation subject to both coherence conditions
+therefore exists only where $e_{\mathrm{al}}$ acts as the identity.
+\end{proof}
+
+This locates a mixed law without constructing one. No example in the present
+corpus exhibits one; Zamolodchikov--Faddeev algebras are the natural candidate,
+since their spectral variable belongs to the chiral direction while their word
+belongs to the transverse direction.
+
+\begin{theorem}[No quantum group from dimension loss]
+\label{nogo:dimension-loss-spine}
+The dimension of the kernel of $V^{\otimes n}\to\Sym^nV$ determines no
+$R$-matrix, associator, or quantum group. That kernel carries no
+multiplication, coproduct, monodromy, or coherence equation.
+\end{theorem}
+\begin{proof}
+The kernel is a representation of $\Sigma_n$ and nothing more. Two algebras
+with the same underlying graded vector space, hence the same kernel dimensions
+in every arity, may have different multiplications and inequivalent
+representation categories; a free algebra and a quadratic quotient with the
+same Hilbert series is an example. A quantum-group structure is a coproduct
+together with coherence data, none of which is a function of a dimension.
+\end{proof}
+
+\begin{theorem}[No modular object from topology alone]
+The identity $\partial^2=0$ on $\overline{\mathcal M}_{g,n}$ assigns no
+coefficient operations to boundary strata. A modular master element exists only
+after cyclic contractions and clutching-compatible coefficient maps have been
+supplied.
+\end{theorem}
+
+\begin{theorem}[No bulk from a boundary centre]
+The derived centre is terminal among algebraic central actions on the boundary
+algebra. It does not detect a decoupled bulk sector, so a physical bulk is not
+determined by the boundary chiral algebra unless a bulk-to-centre comparison is
+supplied and proved to be an equivalence.
+\end{theorem}
+\begin{proof}
+Terminality is the universal property of the centre. It is a statement about
+the boundary category and is insensitive to any sector acting trivially on it,
+so a bulk with trivial boundary action is invisible.
+\end{proof}
+
+\begin{theorem}[No classification by central charge]
+Central charge determines the Virasoro anomaly coefficient. It does not
+determine the chiral operation, the representation category, the braid
+monodromy, or the higher-genus conformal blocks. Distinct holomorphic theories
+at equal central charge exist.
+\end{theorem}
+
+\begin{theorem}[No identification of anomalies of different types]
+\label{nogo:anomalies-spine}
+A current-algebra level, a Virasoro central charge, a determinant-line
+curvature, a BRST ghost-number anomaly, and a Borcherds-product weight are
+invariants in different theories, living in different deformation complexes.
+They may be related by a theorem in a particular family. They are not one
+universal scalar, and no identity among them follows from numerical agreement.
+\end{theorem}
+\begin{proof}
+Each is a class in a distinct complex: an Atiyah-algebra extension class, a
+Virasoro cocycle, the curvature of a determinant line, a class in $H^1$ or
+$H^2$ of a BRST convolution complex, and a weight in the character lattice of
+an automorphic form. A map between two of these complexes is additional data;
+in its absence, equality of numbers is a coincidence of values, not an
+identification of classes.
+\end{proof}
+
+\begin{theorem}[No unnamed comparison of bars]
+An asserted equality $\BarPerp(A)=\BarAssCh(A)$ has no meaning without a
+functor carrying the pointwise multiplication problem to the chiral-convolution
+multiplication problem. The two have different underlying gradings, counting
+interval subdivisions and collision trees respectively. Agreement of Euler
+characteristics is not a comparison map.
+\end{theorem}
+
+\begin{theorem}[A scalar sequence is not homology data]
+\label{nogo:scalar-spine}
+A sequence of integers becomes bar homology only after a chain complex, a
+differential, a grading convention, and a rank computation or quasi-isomorphism
+are specified. Matching initial values, discriminants, or growth rates
+constructs no such map.
+\end{theorem}
+\begin{proof}
+Chain-space dimensions and homology dimensions differ by the ranks of the
+differentials, which are not functions of the chain dimensions.
+Calculation~\ref{calc:simple-spine} exhibits an algebra whose bar chain
+dimensions are $3,9,27,81,243$ and whose bar homology dimensions are $1,0,0,1$;
+Proposition~\ref{prop:one-sequence-spine} exhibits two sequences with the same
+discriminant and growth rate that are transforms of one another and of neither
+homology.
+\end{proof}
+
+Theorem~\ref{nogo:anomalies-spine} together with the central-charge statement
+retracts any programme treating a tuple of scalars drawn from these sources as
+a single classifying invariant, and any trace identity asserted among them
+without a named comparison morphism.
