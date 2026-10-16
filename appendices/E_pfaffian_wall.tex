@@ -1,0 +1,372 @@
+\section{Pfaffian crossings and reflection characters}
+\label{app:pfaffian-wall-normal-form}
+
+A simple zero of a Pfaffian changes sign under reflection of its
+normal coordinate. To interpret that sign as the action on an
+orientation line, one must specify a lift of the reflection and
+require it to preserve the section. This appendix gives the local
+skew model, compares its sign with the automorphic character, and
+states the gluing needed for a global compact comparison.
+
+\subsection{The three type-II walls}
+\label{app:pfaffian-wall-three-walls}
+
+Use the root lattice
+\[
+ L=\mathbb Zf_2\oplus\mathbb Zf_3\oplus\mathbb Zf_{-2},
+ \qquad(f_2,f_{-2})=-1,\quad f_3^2=2,
+\]
+with other pairings zero. Its type-II sublattice is
+\[
+ L_{\mathrm{II}}=
+ \{mf_2+lf_3+nf_{-2}:m,n\in2\mathbb Z\}
+ \simeq U(4)\oplus\langle2\rangle.
+\]
+It has index four in \(L\) and determinant \(-32\).
+The three simple roots and their Gram matrix are
+\[
+ \delta_1=2f_2-f_3,\quad
+ \delta_2=2f_{-2}-f_3,\quad \delta_3=f_3,
+ \qquad
+ A=\begin{pmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{pmatrix}.
+\]
+The eigenvalues \(4,4,-2\) give signature \((2,1)\).
+For a root \(\delta\), reflection is
+\(s_\delta(x)=x-(x,\delta)\delta\).
+The Weyl vector is
+\[
+ \rho=\tfrac12(\delta_1+\delta_2+\delta_3)
+       =f_2-\tfrac12f_3+f_{-2},
+ \qquad (\rho,\delta_i)=-1.
+\]
+These formulas use the same lattice and active cone as
+Chapter~\ref{ch:view2-bkm}.
+
+The walls bound an ideal hyperbolic triangle. Its reflection group
+\(W=W^{(2)}(L_{\mathrm{II}})\) has presentation
+\begin{equation}\label{eq:appE-free-product}
+ W=\langle s_1,s_2,s_3\mid s_i^2=1\rangle,
+ \qquad s_i=s_{\delta_i}
+\end{equation}
+\cite[Proposition 2.2]{GN}. A product of distinct simple
+reflections is parabolic, not hyperbolic. On their two-dimensional
+root span its matrix is
+\[
+ s_is_j=\begin{pmatrix}3&-2\\2&-1\end{pmatrix}
+       =I+\begin{pmatrix}2&-2\\2&-2\end{pmatrix},
+ \qquad (s_is_j-I)^2=0.
+\]
+It has infinite order because its \(n\)-th power is
+\(I+n(s_is_j-I)\).
+
+The type-I normals
+\(f_{-2}-f_2,f_2-f_3,f_{-2}-f_3\) have divisibility one in
+\(L\); their reflections give the chamber symmetry group \(S_3\).
+The \(\delta_i\) have divisibility two. The index six of the
+reflection subgroup in the full norm-two reflection group is
+independent of the index four of the lattices.
+The denominator on \(L_{\mathrm{II}}\) is
+\(64^{-1}\Delta_5(2Z)\). Doubling changes the exponential
+coordinates as in Proposition~\ref{prop:view1-GN-doubled-denominator};
+it does not change these integral indices.
+
+\subsection{One normal Pfaffian factor}
+\label{app:pfaffian-wall-rank-one}
+\label{app:pfaffian-wall-sign-computation}
+
+Take a complex normal chart \(U=T_0\times\mathbb A^1_u\), or its
+analytic analogue, with base reflection \(s(t,u)=(t,-u)\).
+Let \(V=\mathcal O_U^2\) and put
+\[
+ D_u:V\longrightarrow V^\vee,
+ \qquad D_u=\begin{pmatrix}0&u\\-u&0\end{pmatrix}.
+\]
+The complex \(K_D=[V\xrightarrow{D_u}V^\vee]\) lies in degrees
+\([-1,0]\). Its Pfaffian line and section are
+\[
+ \mathscr L_{\mathrm{Pf}}=\det V^\vee,
+ \qquad \operatorname{pf}(D_u)=u,
+ \qquad \operatorname{pf}(D_u)^2=\det D_u=u^2
+\]
+in the chosen frame. There is one hyperbolic Pfaffian factor;
+the skew matrix has rank two away from the wall. The scalar complex
+\([\mathcal O\xrightarrow{u}\mathcal O]\) has determinant section
+\(u\), so it is a different determinant problem.
+
+A compatible reflection lift is explicit. With
+\(R=\operatorname{diag}(-1,1)\),
+\[
+ R^tD_uR=D_{-u},\qquad \det R=-1.
+\]
+Hence the induced comparison of Pfaffian frames has sign \(-1\).
+An identity lift on the rank-two bundle would fail the first
+identity. For a tangential skew factor, assume its Pfaffian has a
+nonvanishing reference section \(\upsilon\) fixed by the chosen
+comparison. The total local coefficient is then \(\upsilon u\).
+
+\begin{proposition}[Sign of a section-compatible crossing]
+\label{prop:appE-local-pfaffian-sign}
+In this model, pullback by the base reflection changes the
+Pfaffian expression by \(-1\) and preserves its square:
+\[
+ s^*(\upsilon u)=-\upsilon u,
+ \qquad s^*((\upsilon u)^2)=(\upsilon u)^2.
+\]
+Relative to the specified reference frames, a lift carrying the
+section to its pullback has residual sign
+\(\epsilon_o^{\mathrm{loc}}(s)=(-1)^{N^{\mathrm{Pf}}}=-1\), where
+\(N^{\mathrm{Pf}}=1\).
+\end{proposition}
+\begin{proof}
+The Pfaffian of the displayed matrix is \(u\). Pullback replaces
+\(u\) by \(-u\) and leaves \(\upsilon\) fixed. The transformation
+law \(\operatorname{Pf}(R^tDR)=\det(R)\operatorname{Pf}(D)\)
+identifies this change with the stated lift. Squaring removes the
+sign.
+\end{proof}
+
+The functional identity is not, by itself, a construction of that
+lift on a geometric orientation line. Nor does a real path through
+\(u=0\) compute monodromy in the wall complement. The skew model,
+tangential unit and section comparison are the hypotheses of the
+local assertion.
+
+\subsection{The automorphic character}
+\label{app:pfaffian-wall-maass-match}
+
+Let \(\widetilde\nu_{\Delta_5}\) be the homogeneous orthogonal
+character of Definition~\ref{def:homogeneous-orthogonal-character}.
+It retains both the weight-five line and its modular character.
+
+\begin{lemma}[Values on the six reflections]
+\label{lem:appE-maass-on-type-ii}
+The values of \(\widetilde\nu_{\Delta_5}\) are \(-1\) on the
+three simple type-II reflections and \(+1\) on the three type-I
+chamber reflections. Multiplying \(\Delta_5\) by a nonzero constant
+changes none of these values.
+\end{lemma}
+\begin{proof}
+The symplectic lifts in
+Lemma~\ref{lem:view1-maass-multiplier-restriction} satisfy
+\(\sigma(g_\beta)=-s_\beta\) and
+\(j(g_\beta,Z)=-1\). Maass's formula
+\cite[(1.5)]{GN} gives modular character \(+1\) on the type-II
+lifts and \(-1\) on the type-I lifts. Homogeneity of degree
+\(-5\) gives
+\(\widetilde\nu_{\Delta_5}(-I)=-1\), reversing the signs for
+\(s_\beta\). These are the linear reflection signs of
+\cite[Proposition 2.1]{GN}. A scalar cancels from every
+transformation law.
+\end{proof}
+
+\begin{theorem}[Local orientation comparison]
+\label{thm:appE-local-orientation-match}
+Suppose each simple type-II wall has the section-compatible skew
+crossing above. Then, in those reference comparisons,
+\[
+ \epsilon_o^{\mathrm{loc}}(s_i)=-1
+       =\widetilde\nu_{\Delta_5}(s_i),\qquad 1\le i\le3.
+\]
+\end{theorem}
+\begin{proof}
+Apply Proposition~\ref{prop:appE-local-pfaffian-sign} and
+Lemma~\ref{lem:appE-maass-on-type-ii} to each generator.
+\end{proof}
+
+\subsection{From three local signs to an action}
+\label{app:pfaffian-wall-W2-extension}
+
+The group \(W\) has a determinant character \(\det_W\), taking
+value \(-1\) on every \(s_i\). Equation~\eqref{eq:appE-free-product}
+shows directly that these assignments respect its relations.
+The preceding lemma proves
+\[
+ \widetilde\nu_{\Delta_5}|_W=\det_W.
+\]
+To compare a geometric orientation with this character, local lifts
+must first form an action on the same root pair.
+
+For chosen lifts \(\phi_w\) of \(w\in W\), their composition
+defect is
+\[
+ c(w,v)=\phi_w\,w^*(\phi_v)\,\phi_{wv}^{-1}.
+\]
+When all lifts preserve the specified square map, this defect is
+\(\mu_2\)-valued. On a connected base with constant coefficients
+it is a group two-cocycle. More generally its coefficients are
+locally constant signs on the relevant components, with the induced
+group action. A one-cochain \(\eta\) with
+\(\delta\eta=c\) replaces the lifts by coherent ones. This
+cochain equation does not determine their character: different
+coherent lifts can differ by a character.
+
+Assume further that the coherent action has constant scalar values
+in the reference comparisons and that it preserves the local
+Pfaffian sections. Those values give a homomorphism
+\(\epsilon_o:W\to\{\pm1\}\). Since its generator values are
+\(-1\),
+\[
+ \epsilon_o=\det_W=\widetilde\nu_{\Delta_5}|_W.
+\]
+This is the conditional global conclusion. It uses the action,
+reference comparisons and sections, rather than just an equality
+of determinant squares.
+
+\subsection{The global wall-atlas condition}
+\label{app:pfaffian-wall-O2}
+
+\begin{definition}[Compatible wall atlas]
+\label{def:appE-O2}
+For each finite geometric stage \(R\), a compatible type-II wall
+atlas consists of charts \(U_{w,i,R}\), for \(w\in W\) and
+\(1\le i\le3\), with skew-complex comparisons to the normal model
+above; Pfaffian-line and section isomorphisms on overlaps; and
+coherent lifts of the Weyl action. The charts cover the specified
+geometric locus and its required boundary pieces. Their comparisons
+commute with the transition maps in \(R\).
+
+Equivalently, when lifts are initially projective, include their
+actual sign two-cocycle and a one-cochain trivializing it. That
+trivialization must agree on components, boundaries and overlaps,
+and preserve the local section comparisons.
+\end{definition}
+
+The condition is denoted \((O2_{\mathrm{atlas}})\).
+Its local hypotheses can be expressed by the chart, wall, splitting,
+tangential-unit and normal-rank residuals
+\[
+ \mathfrak o^{\mathrm{chart}}_{\delta,R},\quad
+ \mathfrak o^{\mathrm{wall}}_{\delta,R},\quad
+ \mathfrak o^{\mathrm{split}}_{\delta,R},\quad
+ \mathfrak o^{\mathrm{unit}}_{\delta,R},\quad
+ \mathfrak o^{\mathrm{rank}}_{\delta,R}.
+\]
+Their vanishing means that the corresponding geometric maps exist
+with the stated comparisons. The transition residual
+\(\mathfrak o^{\mathrm{tr}}_{\delta,R'R}\) additionally requires
+commutativity with the stage maps. A local zero in one chart gives
+neither a global covering nor a trivialization of the global cocycle.
+
+Together with quotient orientation and coherent Weyl transport,
+this atlas yields the character comparison above. The conditional
+transport statement of Theorem~\ref{thm:G-O2-orbit-transport} uses
+these hypotheses. Constructing them on the compact reduced Hall
+locus remains a geometric problem.
+
+\subsection{The two numerical appearances of \(4096\)}
+\label{app:pfaffian-wall-O2-4096}
+
+The abstract set \(\Omega_{12}=\{\pm1\}^{12}\) has
+\(2^{12}=4096\) elements. A geometric interpretation as a count of
+wall configurations requires an actual bijection with this set,
+including the identifications, coverage and stabilizer weights.
+Definition~\ref{def:appE-O2} alone gives no such bijection.
+
+Independently, the theta-leading coefficient is \(64\), so
+\[
+ \Xi=(64^{-1}\Delta_5)^2,\qquad
+ Z^X_{\mathrm{OP}}=-\Xi^{-1}=-4096\Delta_5^{-2}
+\]
+in the primitive curve-counting convention
+\cite{OB,OPand}. Here \(4096=64^2\) is a normalization constant.
+Equality with \(|\Omega_{12}|\) supplies no map from a geometric
+orbit to \(\Omega_{12}\), and it does not determine an orientation
+character. The separate hypotheses in
+Theorem~\ref{thm:G-R1-R2} must be retained when either geometric
+interpretation is claimed.
+
+\subsection{Parity and the first timelike root}
+\label{app:pfaffian-wall-recognition}
+
+A reflection character acts on a line. Primitive recognition compares
+a Lie superalgebra and therefore needs the even and odd dimensions
+as well as its brackets. Put
+\(\beta=\delta_1+\delta_2+\delta_3\).
+
+\begin{lemma}[The first timelike parity split]
+\label{lem:appE-first-timelike-parity}
+For the fixed Gritsenko--Nikulin presentation,
+\[
+ \operatorname{sdim}\mathfrak g_{\Delta_5,\beta}=-64,
+ \qquad
+ (\dim\mathfrak g_{\beta,\bar0},\dim\mathfrak g_{\beta,\bar1})
+       =(29,93).
+\]
+\end{lemma}
+\begin{proof}
+The Jacobi coefficient is \(f(1,1)=-64\)
+\cite{EZ:1}. In the presentation, the even part at \(\beta\)
+contains two independent Lie words in the three real generators and nine
+brackets for each of the three real--null decompositions. Thus its
+ dimension is \(2+3\cdot9=29\). The odd part consists of the
+\(93\) imaginary simple generators read from the chamber
+correction. No real Serre relation occurs in this multidegree.
+This is the word calculation of
+Proposition~\ref{prop:bkm-delta123-presentation-count}, and
+\(29-93=-64\).
+\end{proof}
+
+The integer \(93\) comes from the simple-generator correction, not
+from assigning one parity to a product exponent. More explicitly,
+with the complete boundary factors retained,
+\[
+ m(\beta)=-[qrs]\bigl((qrs)^{-1/2}64^{-1}\Delta_5\bigr)=-93.
+\]
+Witt's multigraded formula gives the two real words as
+\(3!/3=2\); the null-ray multiplicity nine is the first coefficient
+of the corresponding eta-nine correction \cite{GN,GNII}.
+
+\begin{corollary}[Parity dimensions do not determine brackets]
+\label{cor:appE-signed-not-recognition}
+Even the full list of root parity dimensions does not recognize the
+positive Borcherds algebra without an operation comparison.
+\end{corollary}
+\begin{proof}
+Give the underlying positive graded super vector space of
+\(\mathfrak g_{\Delta_5}\) the zero bracket. Every even and odd
+root dimension is unchanged, but the real-root bracket
+\([e_i,e_j]\ne0\) for \(i\ne j\) has been lost. The two graded
+Lie superalgebras cannot be identified while preserving these
+specified generators and their brackets. A single root component
+is not itself the recipient for all those brackets.
+\end{proof}
+
+Higher degrees sharpen the comparison. Write
+\(a_{ij}=\delta_i+\delta_j\). At \(2a_{ij}\), the signed root
+multiplicity ten consists of the null simple multiplicity nine and
+the one-dimensional affine contribution. At
+\(a_{ij}+2\delta_k\), with distinct \(i,j,k\), the simple
+correction is \(90\) and the signed multiplicity is \(108\).
+The full parity pair is \((201,93)\), by
+Proposition~\ref{prop:bkm-height-six-parities}. Thus the residual
+\(108-90=18\) is a signed bracket contribution; it is not a parity
+block. Also
+\[
+ s_{\delta_k}(\beta)=a_{ij}+3\delta_k,
+\]
+so the height-four degree is not that reflected timelike degree.
+The real Serre exponents are three for a real--real pair, five for a
+complementary real--null pair, and three for a real generator acting
+on a timelike simple generator of degree \(\beta\).
+The all-height parity recursion of
+Proposition~\ref{prop:bkm-all-height-parities} determines both target
+parities in the fixed presentation. It does not construct a compact
+source with those dimensions or operations.
+
+\subsection{The remaining geometric comparisons}
+\label{app:pfaffian-wall-open-obligations}
+
+The local skew calculation supplies a Pfaffian section with a
+specified reflection lift. The automorphic calculation independently
+supplies the homogeneous character. A compact identification needs
+a covering geometric wall atlas, compatible square-root and section
+comparisons, quotient descent, and coherent Weyl transport at every
+stage and under every transition. These are the hypotheses in
+Theorems~\ref{thm:G-O1} and \ref{thm:G-O1-plus} and the wall-atlas
+condition above.
+
+A geometric primitive comparison must further preserve both
+parities and the actual Lie and Hall operations. The scalar
+normalization and the abstract twelve-sign count solve none of
+those existence problems. They remain independent even after the
+local reflection signs have been matched.

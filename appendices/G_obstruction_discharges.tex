@@ -1,0 +1,651 @@
+\section{Orientation, wall and trace comparisons}
+\label{app:obstruction-discharges}
+
+A square root of a determinant, a Pfaffian section and a protected
+trace require different constructions. The square root must descend
+through the geometric quotient. The section must arise from a skew
+complex and agree with the automorphic section in a specified line.
+The trace requires a state and a cyclic operation on that state.
+This appendix gives the comparison criteria and their consequences.
+It does not assume that the complete compact datum exists.
+
+\subsection{The geometric recipients}
+\label{app:G-setup}
+
+Fix a smooth projective K3 surface \(S\), an elliptic curve \(E\)
+and \(X=S\times E\). Choose a holomorphic two-form \(\sigma_S\)
+on \(S\) and a nonzero one-form on \(E\), hence a Calabi--Yau
+three-form on \(X\). The stability heart and bounded geometric
+loci are those of Appendix~\ref{app:stability-support}.
+The symmetric Mukai form on \(H^*(S,\mathbb Z)\) is distinct
+from the skew Euler form of the threefold category.
+
+At each stage \(R\), specify the object, extension, mixed, wrapped
+and higher flag stacks, their coefficient categories and transition
+maps. A notation such as \(\mathfrak M_R^{\mathrm{red}}\)
+includes an actual reduction construction. The ambient shifted
+symplectic structure on \(\operatorname{Perf}(X)\) does not make
+every retained substack quasi-smooth, reduced or oriented.
+In particular, the scalar and dual scalar directions must be
+accounted for before using a two-term obstruction theory.
+
+\subsection{Specialization to zero-dimensional objects}
+\label{app:G-D0-discharge}
+
+The threefold D0 sector consists of zero-dimensional objects on
+\(X\); for sheaves its charge is their length. It is different
+from \(\operatorname{Hilb}^n(S)\), which supplies a surface
+comparison. A degeneration from curve classes to this sector must
+first specify its geometric recipient.
+
+There is an elementary obstruction in a fixed recipient. In a flat
+family of coherent sheaves on a fixed polarized projective
+threefold, the Hilbert polynomial is constant. A nonzero effective
+one-cycle has a positive linear Hilbert coefficient, while a
+zero-dimensional sheaf has a constant Hilbert polynomial. Such a
+flat family cannot specialize the former to the latter. Varying
+only stability does not change this conserved charge. A proposed
+D0 comparison must therefore either stay within the D0 charge or
+construct a different geometric or categorical degeneration and
+its charge map.
+
+\begin{definition}[A D0 specialization system]
+\label{def:G-D0-HN-system}
+A datum \(D0_{\mathrm{HN}}\) consists of the following compatible
+objects and maps.
+\begin{enumerate}
+\item[\textup{(D0.1)}] For every stage \(R\), a specified family of
+geometric or categorical recipients over a pointed curve, with a
+chosen D0 subcategory in the special fibre. If the family is
+geometric and flatness is required, flatness is part of the datum.
+Its charge specialization is specified and respects the preceding
+Hilbert-polynomial constraint in a fixed sheaf recipient.
+\item[\textup{(D0.2)}] Object and full flag loci over that curve,
+with transition maps \(\rho_{RR'}\) in their actual variance,
+composition isomorphisms, and the properness or support conditions
+needed by their coefficient functors.
+\item[\textup{(D0.3)}] Perfect reduced deformation complexes and
+oriented critical charts on the loci where critical coefficients
+are used, together with comparison maps from the ambient theory.
+Their amplitude and nondegeneracy are hypotheses on these loci.
+\item[\textup{(D0.4)}] The actual semiregularity morphisms, their
+fibres and their compatibility with flags and specialization.
+A surjectivity theorem for nonzero curve class is used only there;
+it does not supply surjectivity in the D0 sector.
+\item[\textup{(D0.5)}] Reduced constructible coefficients
+\(\Phi_R^{\mathrm{red}}\) and specialization morphisms, including
+an equivalence wherever one is required by the comparison.
+Their extension and higher flag maps commute with specialization.
+\item[\textup{(D0.6)}] Root pairs
+\((o_R,o_R^{\otimes2}\simeq\mathscr D_R^{\mathrm{red}})\),
+with their cross-determinant factors, square-compatible transition
+maps and higher flag coherences.
+\item[\textup{(D0.7)}] Compatible skew complexes, Pfaffian lines
+and sections, quotient-after-correspondence maps, compact-support
+operations and protected integration maps wherever the proposed
+comparison uses them.
+\item[\textup{(D0.8)}] The exactness and effectivity hypotheses
+needed for each asserted limit: derived inverse-limit comparisons
+for coefficient complexes, and effective descent of root pairs and
+sections if an actual infinite geometric recipient is claimed.
+\end{enumerate}
+These clauses define a system in the specified recipient. They do
+not assert a flat degeneration of nonzero curve charge to D0
+sheaves on the unchanged threefold.
+\end{definition}
+
+\begin{theorem}[Compatible D0 specialization]
+\label{thm:G-D0}
+A datum \(D0_{\mathrm{HN}}\) defines a pro-system of reduced
+coefficients, orientation pairs, Pfaffian sections and the supplied
+operations, together with its specialization comparison. On any
+recipient where \textup{(D0.8)} gives effectivity, the corresponding
+limit carries these structures and maps.
+\end{theorem}
+\begin{proof}
+The composition and higher flag comparisons make the stagewise
+objects a diagram in their coefficient and Picard categories.
+The specialization maps give a morphism of these diagrams.
+The same is true for every operation square by
+\textup{(D0.5)}--\textup{(D0.7)}. This constructs the pro-system.
+Effectivity and passage through cohomology then use precisely the
+comparisons in \textup{(D0.8)}. For countable coefficient towers,
+the possible extra term is \(\varprojlim{}^1H^{q-1}\), as in
+Section~\ref{subsec:eight-finite-constructions}. There is no general
+Mittag--Leffler assertion about a gerbe or a functor without first
+specifying the corresponding diagram.
+\end{proof}
+
+The ambient shifted symplectic theorem \cite{PTVV2013}, orientation
+theory \cite{JoyceUpmeier,JoyceTanakaUpmeier}, the oriented
+critical-sheaf construction \cite{BBDJS2015} and cosection
+localization \cite{KiemLi2013} enter at different steps.
+Cosection localization of a virtual cycle does not itself construct
+reduced vanishing-cycle coefficients or their specialization.
+
+\begin{remark}[The surface scalar comparison]
+\label{rem:G-D0-elliptic-genus}
+The Hilbert--Chow map
+\(\operatorname{Hilb}^n(S)\to\operatorname{Sym}^n(S)\) and the
+Hilbert-scheme elliptic classes of
+Chapter~\ref{ch:zbps-realization} give an actual K3 state and
+scalar calculation. The \(\chi_y\)-genus is a specialization of
+that elliptic genus, not the whole genus. Reduced K3 curve
+invariants \cite{MaulikPandharipande} and threefold D0
+specialization are further, distinct constructions. None of these
+scalar formulas provides the maps in \(D0_{\mathrm{HN}}\).
+\end{remark}
+
+\subsection{Roots on the translation quotient}
+\label{app:G-O1-discharge}
+
+Let \(B_R\) be a retained locus before translation quotient and
+\(\mathscr D_R\) its actual reduced determinant line. Its root
+problem belongs to \([B_R/E]\). Denote the Kummer obstruction by
+\(\delta(\mathscr D_R)\in H^2([B_R/E],\mu_2)\).
+If this class vanishes, the isomorphism classes of root pairs form an
+\(H^1([B_R/E],\mu_2)\)-torsor. A choice of pair is still needed.
+
+\begin{definition}[Quotient orientation]
+\label{def:G-O1-quot}
+The datum \(O1_{\mathrm{quot}}\) consists of roots of the actual
+reduced determinant lines on the quotient object and flag stacks,
+with their square maps, cross-determinant comparisons and coherent
+transition isomorphisms. Equivalently, on a presenting groupoid it
+consists of root cocycles and chosen primitives for their defects,
+compatible with every overlap, flag and stage map. Coarse descent,
+when required, additionally asks that stabilizers act trivially on
+the chosen root fibres.
+\end{definition}
+
+\begin{definition}[Strong reduced orientation]
+\label{def:G-strong-reduced-orientation}
+A strong reduced orientation is such a quotient root system whose
+extension comparisons are associative on all retained flags and
+compatible with the reduced critical coefficient maps. No
+\(\operatorname{Spin}^c\) or \(\operatorname{Pin}^c\) structure
+is included unless its quadratic bundle and lift are separately
+constructed.
+\end{definition}
+
+A free \(E\)-action does not justify setting an independently
+written class in \(H^2(BE,\mu_2)\) to zero. It is its image in
+the actual quotient problem that matters. For example,
+\([E/E]=\mathrm{pt}\). Likewise, an edge computation at a finite
+stabilizer applies only after ordinary, mixed and differential
+terms in the equivariant obstruction have been accounted for.
+
+\begin{lemma}[The Klein-four detection equations]
+\label{lem:G-Klein-four}
+For \(E[2]=(\mathbb Z/2)^2\), write
+\[
+ \beta=b_{20}x_1^2+b_{11}x_1x_2+b_{02}x_2^2
+       \in H^2(BE[2],\mathbb F_2),\qquad |x_i|=1.
+\]
+If \(r_1,r_2,r_3\) are its coefficients on the two coordinate
+subgroups and the diagonal subgroup, then
+\[
+ b_{20}=r_1,\qquad b_{02}=r_2,\qquad
+ b_{11}=r_1+r_2+r_3.
+\]
+Thus \(\beta=0\) exactly when all three restrictions vanish.
+For a chosen root character
+\(\lambda=\lambda_1x_1+\lambda_2x_2\), the three restriction
+values are instead \(\lambda_1,\lambda_2,\lambda_1+\lambda_2\).
+The two vanishing problems are independent.
+\end{lemma}
+\begin{proof}
+The ring is \(H^*(BE[2],\mathbb F_2)=\mathbb F_2[x_1,x_2]\).
+The restrictions substitute \((t,0),(0,t),(t,t)\).
+These substitutions give both formulas. A zero degree-two class
+admits, for example, the nonzero character \((1,0)\).
+\end{proof}
+
+\begin{lemma}[The full two-primary stabilizer]
+\label{lem:G-two-primary-stabilizer}
+For \(E[N]=(\mathbb Z/N)^2\), odd \(N\) gives no
+positive-degree mod-two group cohomology. If \(2^a\parallel N\),
+the calculation reduces to \((\mathbb Z/2^a)^2\).
+For \(a=1\) the preceding lemma applies. For \(a\ge2\),
+\[
+ H^*(B(\mathbb Z/2^a)^2,\mathbb F_2)
+ =\Lambda(x_1,x_2)\otimes\mathbb F_2[y_1,y_2],
+ \qquad |x_i|=1,\quad |y_i|=2.
+\]
+Consequently an edge obstruction and a root character have the forms
+\[
+ \beta=A_1y_1+A_{12}x_1x_2+A_2y_2,
+ \qquad \lambda=\lambda_1x_1+\lambda_2x_2.
+\]
+Their simultaneous vanishing requires all five coefficients to
+vanish. The coefficient \(A_{12}\) is invisible on every cyclic
+subgroup.
+\end{lemma}
+\begin{proof}
+Averaging removes the odd-primary part. The cyclic mod-two
+cohomology ring for order \(2^a\), \(a\ge2\), is
+\(\Lambda(x)\otimes\mathbb F_2[y]\); K\"unneth gives the ring
+above. On a cyclic subgroup of order at least four, both
+restricted degree-one classes are multiples of one exterior class,
+whose square vanishes. On an order-two subgroup their restrictions
+are zero. Hence \(x_1x_2\) is invisible in either case.
+\end{proof}
+
+\begin{remark}[Detection and gluing]
+\label{rem:G-N-2-vs-N-3}
+These are equations for the indicated classifying-space edge.
+They do not provide its geometric reduction, a primitive for a
+cocycle, or compatibility of chosen primitives on intersecting
+strata. The exterior-generator calculation requires \(4\mid N\);
+for \(N\equiv2\pmod4\), the Klein-four calculation applies.
+The degree-one condition is needed for the requested trivial
+stabilizer action, not for every root on a quotient stack.
+\end{remark}
+
+\begin{theorem}[Quotient orientation criterion]
+\label{thm:G-O1}
+The coherent roots and flag comparisons of
+\(O1_{\mathrm{quot}}\) descend to a strong reduced orientation
+on the quotient stack. If their stabilizer characters vanish and
+the stated coarse descent theorem applies to the retained locus,
+they descend further to its coarse recipient.
+\end{theorem}
+\begin{proof}
+Descent of line bundles with square maps is descent in the Picard
+groupoid. The supplied overlap cocycles give its descent datum;
+the flag coherences descend the cross-determinant comparisons.
+This proves stack descent. The extra trivial stabilizer action
+and the coarse descent hypotheses give the second assertion.
+There is no multiplication formula omitting the cross determinant.
+\end{proof}
+
+\subsection{Weyl transport}
+\label{app:G-O1-plus-discharge}
+
+Use the type-II Coxeter subgroup
+\(W=\langle s_1,s_2,s_3\mid s_i^2=1\rangle\).
+Its full lattice isometry group also contains chamber symmetries;
+these two groups have different character comparisons.
+A geometric \(W\)-action requires maps of the actual root pairs
+on the quotient action groupoid, with their square maps and
+coefficient and flag compatibilities.
+
+\begin{theorem}[Equivariant root transport]
+\label{thm:G-O1-plus}
+Suppose the chosen lifts of
+Definition~\ref{def:O1-plus-weyl-transport} have a specified
+trivialization of their action-groupoid defect and zero remaining
+quotient-torsor defects. They define an honest \(W\)-equivariant
+root system. If its residual scalar generator values are constant
+and each section-compatible simple skew wall has value \(-1\),
+its character is
+\[
+ \epsilon_o(w)=\det_W(w).
+\]
+This is the restriction of the homogeneous orthogonal character
+\(\widetilde\nu_{\Delta_5}\) to \(W\).
+\end{theorem}
+\begin{proof}
+Correcting the lifts by the chosen primitive makes their
+compositions satisfy the action law. The quotient-torsor equations
+keep the root and coefficient comparisons in that same action.
+After its residual action has been identified with a scalar
+character, its value on a reduced word is the product of the
+values on the generators. Cancellation of \(s_i^2\) preserves
+that product. Every value \(-1\) therefore gives \((-1)^{\ell(w)}\),
+which is the determinant character of the reflection representation.
+The character of \(\Delta_5\) has these generator values by
+Appendix~\ref{app:pfaffian-wall-normal-form}.
+\end{proof}
+
+\begin{remark}[Which information a character retains]
+\label{rem:G-O1-plus-reduction}
+The abelianization \(W_{\mathrm{ab}}=(\mathbb Z/2)^3\)
+classifies the constant sign characters. It does not classify root
+obstructions on the geometric action groupoid. The products of two
+distinct simple reflections are parabolic of infinite order; there
+is no order-three braid relation. Extending the root action to
+\(W\rtimes S_3\) requires chamber-symmetry lifts. The two
+extensions \(\epsilon_o(w)\) and
+\(\epsilon_o(w)\operatorname{sgn}(\sigma)\) have the same
+restriction to \(W\), while the automorphic homogeneous character
+chooses the trivial \(S_3\)-factor. Its symplectic multiplier
+must still be kept with the weight-five automorphy factor.
+\end{remark}
+
+\subsection{Skew wall charts and their global comparison}
+\label{app:G-O2-discharge}
+
+\begin{definition}[A type-II wall atlas]
+\label{def:G-O2-atlas}
+A datum \(O2_{\mathrm{atlas}}\) consists of actual wall objects
+with their full charges, wall semistability and reduced deformation
+maps. At each simple wall it gives a chart with normal coordinate
+\(u\), a skew normal block
+\[
+ D_u=\begin{pmatrix}0&u\\-u&0\end{pmatrix},
+ \qquad [V\xrightarrow{D_u}V^\vee]\text{ in degrees }[-1,0],
+\]
+an invertible tangential Pfaffian \(\upsilon\), and a specified
+reflection lift carrying the total section
+\(\upsilon u\) to the reflected section. The tangential unit is
+invariant in this comparison. The charts have root-pair and
+section isomorphisms on overlaps, a trivialized sign defect on
+triple overlaps, and compatible flag, Weyl, boundary and stage maps.
+A proposed twelve-sign geometric parametrization is additional
+data: it is a bijection from its actual geometric index set to
+\(\{\pm1\}^{12}\), with the asserted multiplicities and coverage.
+\end{definition}
+
+\begin{theorem}[Transport of a simple skew wall]
+\label{thm:G-O2-normal-form}
+A wall atlas with the preceding Weyl transport has a simple
+Pfaffian zero and residual reflection sign \(-1\) at every
+transported type-II wall.
+\end{theorem}
+\begin{proof}
+In the normal frame, \(\operatorname{pf}(D_u)=u\).
+The rank-two lift \(R=\operatorname{diag}(-1,1)\) satisfies
+\(R^tD_uR=D_{-u}\) and has determinant \(-1\) on the
+Pfaffian frame. Multiplication by the invariant tangential unit
+preserves the simple zero and the sign. The supplied chart
+isomorphisms preserve the divisor order, and character conjugacy
+gives the same sign at \(ws_iw^{-1}\). A scalar complex
+\([\mathbb C\xrightarrow{u}\mathbb C]\) has determinant \(u\)
+and is not this skew normal block.
+\end{proof}
+
+\begin{theorem}[The two scalar counts]
+\label{thm:G-R1-R2}
+The abstract sign set \(\Omega_{12}=\{\pm1\}^{12}\) has
+\(4096\) elements, and the normalized theta product satisfies
+\[
+ [q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64,
+ \qquad [qrs]\Delta_5^2=4096.
+\]
+A geometric wall index set has cardinality \(4096\) if it is
+supplied with the bijection in \(O2_{\mathrm{atlas}}\).
+The equality of the two integers does not construct that bijection.
+\end{theorem}
+\begin{proof}
+There are two independent choices in each of twelve coordinates.
+The theta coefficient is Lemma~\ref{lem:bkm-vacuum-coefficient};
+squaring the lowest monomial gives \(64^2\). The geometric
+assertion follows only from the stated bijection.
+\end{proof}
+
+\begin{remark}[A count, a character and a scalar]
+\label{rem:G-R1-R2}
+The root-lattice quotient \(L_{\mathrm{II}}/2L_{\mathrm{II}}\)
+has eight elements. It is neither \(\Omega_{12}\) nor a
+constructed wall atlas. A sign character, a geometric multiplicity
+and the normalization \(D_5=\Delta_5/64\) retain different data,
+even when their resulting scalar formulas agree.
+\end{remark}
+
+\begin{theorem}[Gluing the transported wall sections]
+\label{thm:G-O2-orbit-transport}
+The overlap, stabilizer and action coherences of
+\(O2_{\mathrm{atlas}}\) glue the transported wall sections on
+the declared geometric recipient. A twelve-sign parametrization,
+when supplied, retains its cardinality under this transport.
+\end{theorem}
+\begin{proof}
+The overlap maps glue the lines and sections because their triple
+composites are the identity after the chosen correction. Two Weyl
+paths with the same endpoint differ by the specified stabilizer
+comparison; its coherence identifies the transported sections.
+This is the required path independence. An orbit-stabilizer count
+without those geometric identifications would not prove it.
+\end{proof}
+
+\subsection{The finite Pfaffian and the assembled criterion}
+
+\begin{definition}[Finite geometric Pfaffian data]
+\label{def:G-finite-pfaffian-section}
+The datum \(P_{\mathrm{fin}}\) is that of
+Definition~\ref{def:finite-geometric-pfaffian-datum}: actual reduced
+skew perfect complexes, root lines, Pfaffian sections and their
+stage comparisons, together with an independently defined map to
+the modular domain and line isomorphisms to
+\(\lambda_{\mathrm{aut}}^5\otimes\varepsilon_5\).
+The finite expansions include the full boundary factors and the
+leading coefficient \(64\). Every inverse-limit or analytic
+conclusion uses its stated exactness, convergence and continuation
+hypotheses. A manufactured product of hyperbolic blocks gives the
+formal reference section but not this geometric comparison.
+\end{definition}
+
+\begin{definition}[The complete comparison datum]
+\label{def:G-retained-obstruction-datum}
+Write
+\[
+ \mathfrak R_X^{\mathrm{DI}}=
+ (D0_{\mathrm{HN}},O1_{\mathrm{quot}},\mathcal T_W,
+       O2_{\mathrm{atlas}},P_{\mathrm{fin}},Z_{\mathrm{HB}}),
+\]
+where \(\mathcal T_W\) is the coherent root transport just
+specified and \(Z_{\mathrm{HB}}\) is the state and trace
+comparison defined below. All components live on compatible
+geometric systems. The first five concern the Pfaffian and its
+orientation; the last is additional trace data.
+\end{definition}
+
+\begin{theorem}[Relative Pfaffian criterion]
+\label{thm:G-four-obstruction-criterion}
+Suppose the first five components of
+\(\mathfrak R_X^{\mathrm{DI}}\) satisfy their comparison
+conditions. Then the geometric Pfaffian has the root transport and
+normalized automorphic section of
+Theorem~\ref{thm:ch6-pfaffian-dirac}. Its character on \(W\)
+is \(\det_W\). Primitive recognition remains conditional on
+\textup{(S1)}--\textup{(S10)}, and the trace requires
+\(Z_{\mathrm{HB}}\).
+\end{theorem}
+\begin{proof}
+The D0 system supplies its specialization maps, quotient orientation
+descends the roots, and Weyl transport identifies their wall actions.
+The wall atlas glues the local skew sections. The independent
+Pfaffian-line comparison and compatible normalized finite expansions
+in \(P_{\mathrm{fin}}\) then identify the section with
+\(\Delta_5\) on their declared formal or analytic domain.
+The character assertion is Theorem~\ref{thm:G-O1-plus}.
+None of these steps constructs primitive representatives or a
+cyclic state.
+\end{proof}
+
+\subsection{Algebras, centres and cyclic states}
+\label{app:G-vol2-residual}
+
+The coalgebra \(C_X\) and its associative cobar
+\(A_X=\Omega C_X\) have different types. A boundary algebra
+\(A_b\) can be compared with \(A_X\); its bar can be compared
+with \(C_X\). A filtered quasi-isomorphism from an algebra to
+that coalgebra is not an algebra comparison.
+
+For an ordinary dg algebra, the derived centre is
+\[
+ Z^{\mathrm{der}}(A_b)
+ =R\operatorname{Hom}_{A_b\otimes A_b^{\mathrm{op}}}(A_b,A_b).
+\]
+A chiral or factorization centre needs the corresponding enriched
+bimodule category and internal operations. The ordinary formula
+does not identify it with a physical bulk. The interface comparison
+of \cite{ChiralBarCobarVolI} uses an actual coefficient-linear
+strong monoidal equivalence with the required enrichment. Those
+hypotheses, and both supported actions when a junction is used,
+remain conditions on the compact source.
+
+Even a nondegenerate degree \(-3\) pairing
+\[
+ Z\otimes Z\longrightarrow\mathbb C[-3]
+\]
+is a bilinear map, not a prepared state, a sewing operation or a
+partition trace. A cyclic refinement and a state on which the
+charged operators act must be supplied. The finite modes of
+Chapter~\ref{ch:zbps-realization} illustrate the distinction:
+the elliptic coefficient bundles and their geometric joining maps
+exist before a compact boundary intertwiner is known.
+
+\begin{definition}[A Hall--Borcherds trace comparison]
+\label{def:G-vol2-hall-borcherds}
+A trace comparison is an operation-preserving map from an
+independently defined compact Hall state and its cyclic operations
+to a specified boundary state, preserving charges, parity, support,
+completion and normalization. If a centre acts on the boundary
+state, its action and the compatibility of this map with that
+action are part of the comparison. The resulting protected
+partition function is the trace on the state, with its stated
+vacuum and regularization conventions.
+\end{definition}
+
+\begin{remark}[A trace and an acting algebra]
+\label{rem:G-level-Z-vs-gravity-line}
+A trace comparison does not construct a gravity-line operator
+algebra. Conversely, an acting algebra does not select a cyclic
+state or a trace functional. Centre cochains, cyclic chains and
+endomorphisms of the state have separate roles; no equality of
+their scalar characters identifies them.
+\end{remark}
+
+\subsection{A conditional trace calculation}
+\label{app:G-vol2-discharge}
+
+\begin{definition}[A compatible cyclic state datum]
+\label{def:G-level-Z-trace-datum}
+The datum \(Z_{\mathrm{HB}}\) specifies:
+\begin{enumerate}
+\item[\textup{(Z1)}] The compact coalgebra \(C_X\), an associative
+source \(A_X=\Omega C_X\), and a boundary algebra \(A_b\),
+with actual filtered comparisons in the declared ordinary or
+factorization recipient. Any bar comparison has coalgebra type.
+\item[\textup{(Z2)}] The coefficient tensor, unit, support and
+completion, the stage transition maps, and the convergence or
+exactness needed for the asserted trace and limit.
+\item[\textup{(Z3)}] The enriched centre comparison and its action
+on an independently defined compact state \(\mathcal H_X\),
+whenever a centre interpretation is required. Its hypotheses and
+maps are supplied on that same recipient.
+\item[\textup{(Z4)}] A cyclic chain functional or equivalent
+specified cyclic structure, the chosen state or boundary condition,
+and its sewing maps. A degree \(-3\) Calabi--Yau pairing, if
+used, has a comparison to these maps; it does not replace them.
+\item[\textup{(Z5)}] A charge- and parity-preserving comparison
+of the completed state, or of a convergent associated graded, with
+\[
+ \widehat{\operatorname{Sym}}_{\mathrm{sup}}
+       \left(\bigoplus_{\gamma>0}V_\gamma^{\oplus2}\right),
+ \qquad
+ \operatorname{sdim}V_\gamma=f_\gamma,
+\]
+where each \(V_\gamma\) is a finite-dimensional super vector
+space and \(f_\gamma\) is the exponent in the product for
+\(D_5\) in Chapter~\ref{ch:view1-automorphic}. It intertwines the cyclic
+trace and fixes the normal-ordering scalar and monomial to
+\(64^{-2}x^{-2\rho}\), with
+\(x^\rho=q^{1/2}r^{1/2}s^{1/2}\). The comparison retains the
+axis factors and every relevant stage map.
+\end{enumerate}
+Clause \textup{(Z5)} is a substantive state comparison. It is not
+implied by matching a cyclic pairing or by prescribing a desired
+scalar partition function.
+\end{definition}
+
+\begin{theorem}[Trace from the state comparison]
+\label{thm:G-vol2-discharge}
+Given \(Z_{\mathrm{HB}}\), its normalized protected trace is
+\[
+ \operatorname{Tr}_{\mathrm{prot},\mathcal H_X}
+       =64^{-2}x^{-2\rho}
+          \prod_{\gamma>0}(1-x^\gamma)^{-2f_\gamma}
+       =\Delta_5^{-2}
+\]
+in the stated cusp completion, and on any analytic domain to which
+the supplied comparison continues it.
+\end{theorem}
+\begin{proof}
+An even oscillator of degree \(\gamma\) contributes
+\((1-x^\gamma)^{-1}\) to the supertrace of its symmetric
+algebra. An odd oscillator contributes \(1-x^\gamma\).
+The doubled spaces in \textup{(Z5)} therefore contribute
+\((1-x^\gamma)^{-2f_\gamma}\). Positive-height local
+finiteness makes every fixed-height coefficient a finite
+calculation. The state and cyclic comparisons identify this trace
+with the geometric one; their convergence hypotheses justify any
+associated-graded or analytic passage. The prescribed vacuum
+monomial and scalar then give the inverse square of the complete
+Borcherds product.
+\end{proof}
+
+\begin{theorem}[Joint Pfaffian and trace consequence]
+\label{thm:G-pfaffian-dirac-relative}
+If all components of \(\mathfrak R_X^{\mathrm{DI}}\) exist with
+the stated compatibilities, the geometric Pfaffian section is
+\(\Delta_5\), its \(W\)-character is \(\det_W\), and the
+protected state trace is \(\Delta_5^{-2}\). In the separate
+convention of Convention~\ref{conv:op-chamber}, the corresponding
+OP scalar representative is \(-4096\Delta_5^{-2}\).
+These conclusions do not assert primitive recognition or construct
+a gravity-line operator algebra.
+\end{theorem}
+\begin{proof}
+Apply Theorems~\ref{thm:G-four-obstruction-criterion} and
+\ref{thm:G-vol2-discharge} to their compatible data. The OP factor
+is the declared change of scalar convention. Recognition needs
+its presentation map, and an acting gravity algebra needs its
+operator and module construction.
+\end{proof}
+
+\begin{remark}[The additional input in a trace theorem]
+\label{rem:G-conditioning-clean}
+A centre theorem identifies a specified enriched endomorphism
+object. An orientation theorem provides a root with coherent
+transports. Neither theorem supplies \(\mathcal H_X\), the
+cyclic functional, the sewing maps or the state comparison in
+\textup{(Z5)}. These remain compact geometric constructions even
+when the scalar Borcherds product is already known.
+\end{remark}
+
+\subsection{Compatibility and the remaining construction}
+\label{app:G-retained-data-compatibility}
+\label{app:G-relative-theorem}
+
+The compatibility problem is to construct the preceding objects
+on one system of compact moduli and correspondence stacks.
+Orientation and critical-sheaf theorems apply on their stated
+recipients. The fourfold orientation calculation of
+\cite{CaoKoolMonavari} does not replace the threefold reduced
+orientation problem. The reduced stable-pair comparison of
+\cite{OberdieckK3xE} and the curve-counting formula of \cite{OB}
+retain their numerical scope and normalization; they do not
+construct a chiral state intertwiner.
+
+The first missing coefficient map is the global reduced oriented
+pull--push on compact extension flags, with the common translation
+torsor and higher coherences. A coproduct needs its own support and
+coefficient comparison. The ordinary-Koszul cooperation obstruction
+on the specified polynomial shuffle carrier does not disappear by
+naming a bialgebra; a meromorphic or localized cooperation changes
+the tensor or recipient and requires a new comparison. This keeps
+the positive formal and ordinary critical Hall constructions
+separate from the unresolved reduced compact structure.
+
+After that construction, primitive recognition still asks for
+actual representatives, relations, both parity dimensions,
+invariant forms, radicals, generation and PBW compatibility.
+The modular comparison still asks for the geometric line and
+section. The trace comparison still asks for the cyclic state and
+its sewing map. These are the maps by which the established local,
+algebraic and automorphic constructions could become one compact
+realization.
+
+The standard current and conformal examples have their own domains:
+affine Kac--Moody algebras at noncritical level, principal
+\(W\)-algebras, Virasoro algebras, rational \(c=24\) models
+including the Monster theory, and cosets with the required
+finiteness hypotheses. A theorem on those objects does not place
+the compact hybrid Hall recipient in its domain. The
+Saito--Kurokawa arithmetic of Proposition~\ref{prop:zbps-sk-hecke}
+and the selected input pairs of
+Theorem~\ref{thm:bkm-kappa-universal} remain positive scalar and
+automorphic comparisons at their separately stated scopes.

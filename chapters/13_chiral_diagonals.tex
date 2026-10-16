@@ -1,0 +1,789 @@
+\chapter{Chiral diagonals and curvature}
+\label{nd:chap:diagonal}
+
+Cohomological joining uses pullback and Gysin maps of a target diagonal.
+An operation on chiral states must also account for the momentum fields
+conjugate to its normal directions. The simplest operator
+product prevents restriction by a quotient: killing a coordinate would
+kill the vacuum. A differential can instead remove the coordinate and
+its conjugates together.
+
+We construct this differential first in an affine chart and then on a
+normal bundle. Its cohomology retains the tangential chiral de Rham
+fields. Passing from the normal bundle to the actual formal diagonal
+introduces curvature. A relative vertex complex retains that formal
+geometry and its fermionic charge, while a second complex, obtained by
+finite conjugation, resolves the central Dolbeault algebra. The final
+calculation records the parameter torsion that appears when the normal
+contraction is made compatible with Laurent charge. These constructions
+specify what a chiral version of the cochain maps in
+Chapter~\ref{df:chap:fibers} would have to preserve.
+
+\section{The normal quartet}
+\label{nd:sec:quartet}
+
+Work over $\mathbb C$. In one normal coordinate the chiral de Rham
+system has even fields $v,\beta$ and odd fields $c,b$, with singular
+operator products
+\begin{equation}\label{nd:eq:ope}
+ \beta(z)v(w)\sim\frac1{z-w},\qquad
+ b(z)c(w)\sim\frac1{z-w}.
+\end{equation}
+The variables $z,w$ are insertion variables, distinct from target
+coordinates such as $v$.
+
+All other generating singular products vanish,
+and vertex skew symmetry determines the reversed products. In
+particular $v(z)\beta(w)\sim-(z-w)^{-1}$.
+
+We use the following weights and gradings:
+\[
+\begin{array}{c|rrrr}
+ &v&\beta&c&b\\\hline
+ \text{conformal weight}&0&1&0&1\\
+ \text{fermionic charge }J&0&0&1&-1\\
+ \text{cochain degree}&0&0&-1&1.
+\end{array}
+\]
+For these fields, cochain degree is $-J$ and its reduction modulo two
+is their parity. These are not two independent contributions to a
+tensor-product sign. Later, Dolbeault form degree will be added to
+cochain degree.
+
+The vertex products $a_{(n)}b$ give the singular part
+\[
+ a(z)b(w)\sim\sum_{n\geq0}
+           \frac{(a_{(n)}b)(w)}{(z-w)^{n+1}}.
+\]
+Colons denote normal ordering, and $T$ denotes vertex translation.
+
+The local systems \eqref{nd:eq:ope}, with the chiral coordinate-change
+laws, define the sheaf $\Omega_Y^{\mathrm{ch}}$ of vertex
+superalgebras on a smooth complex manifold $Y$.\footnote{
+F.~Malikov, V.~Schechtman and A.~Vaintrob,
+\emph{Chiral de Rham complex},
+\href{https://arxiv.org/abs/math/9803041}{Sections~2--3}.
+The coordinate transformations and their composition are in
+Sections~3.6--3.9.}
+Here it has zero differential. In particular, its usual chiral
+de Rham differential is not included.
+
+Suppose that a unital vertex homomorphism $\phi$ kills the normal
+coordinate. The relation $\beta_{(0)}v=1$ would give
+\[
+ 1=\phi(\beta_{(0)}v)=\phi(\beta)_{(0)}\phi(v)=0.
+\]
+Thus a chiral restriction cannot be this quotient.
+
+Define instead
+\begin{equation}\label{nd:eq:delta}
+ \delta=(:vb:)_{(0)},\qquad
+ \delta c=v,\quad \delta\beta=-b,\quad
+ \delta v=\delta b=0.
+\end{equation}
+Every zero mode is a derivation of every vertex product and commutes
+with $T$. The current $:vb:$ has regular self-product, hence
+$\delta^2=0$. The sign on the momentum field is forced by
+\[
+ \delta(\beta_{(0)}c)=(-b)_{(0)}c+\beta_{(0)}v=-1+1=0.
+\]
+The operator $\delta$ raises cochain degree by one, preserves conformal
+weight, and lowers $J$ by one.
+
+We use two carriers. The polynomial carrier consists of finite normally
+ordered states with polynomial normal coordinates.
+
+For the formal carrier,
+complete the coefficient functions in the undifferentiated normal
+coordinates at each fixed conformal weight. Then take the direct sum
+over conformal weights. A state consequently has bounded conformal
+weight. Positive-weight creation variables remain polynomial, with
+bounded multiplicities in each weight. Singular products differentiate
+coefficient functions only finitely many times for a fixed pair of
+states, and are continuous in this topology.
+
+\begin{theorem}\label{nd:thm:quartet}
+Tensor a tangential chiral de Rham algebra with finitely many normal
+quartets \eqref{nd:eq:ope}. Give the tensor product the sum of the
+normal differentials \eqref{nd:eq:delta}, and give the tangential
+factor zero differential and cochain grading $-J$.
+The tangential inclusion is a
+quasi-isomorphism of differential graded vertex superalgebras on both
+the polynomial and the fixed-weight formal carriers.
+\end{theorem}
+
+\begin{proof}
+Use the Poincar\'e--Birkhoff--Witt (PBW) state presentation, whose
+underlying vector space has polynomial and exterior creation variables.
+Write $v_j,\beta_j,c_j,b_j$ for the creation variables corresponding
+to the normalized derivatives $T^j/j!$ of the four fields, $j\geq0$.
+
+On one normal factor,
+\[
+ \delta=\sum_{j\geq0}
+       (v_j\partial_{c_j}-b_j\partial_{\beta_j}),\qquad
+ h_0=\sum_{j\geq0}
+       (c_j\partial_{v_j}-\beta_j\partial_{b_j}).
+\]
+Fermionic derivatives are left derivatives. The anticommutator
+$\delta h_0+h_0\delta$ is a derivation of the PBW polynomial and
+exterior algebra and is the identity on every generator. It is
+therefore the total normal-number operator $N$.
+For several normal factors, sum the two operators over the factors.
+
+On positive normal number put $h=h_0/N$, and put $h=0$ on the
+normal vacuum. Let $i$ include that vacuum and let $\pi$ extract
+its coefficient. Then
+\begin{equation}\label{nd:eq:contraction}
+ \delta h+h\delta=1-i\pi.
+\end{equation}
+Each polynomial involves finitely many modes.
+
+On formal coefficient
+functions the same identity holds coefficientwise. Differentiation
+lowers adic order by at most one. Division by a positive integer
+preserves the topology. Thus the normal cohomology is its scalar
+vacuum.
+
+Tensoring this contraction with the tangential factor proves
+the cohomology assertion. The inclusion preserves the vacuum,
+translation and all vertex products, so it is the asserted vertex
+quasi-isomorphism.
+\end{proof}
+
+The projection $\pi$ is a map of complexes. The equation
+$\beta_{(0)}v=1$ prevents it from being a vertex homomorphism.
+The homotopy is likewise a linear operator, not a vertex derivation.
+These distinctions allow the contraction to exist without contradicting
+the obstruction to a quotient.
+
+The weight bound is essential for locality. An unrestricted oscillator
+completion would admit both $\sum_{m\geq0}:\beta^m:$ and
+$\sum_{m\geq0}:v^m:$. Their complete contractions include
+$m!(z-w)^{-m}$ for arbitrarily large $m$, so no finite locality order
+would remain. The first series has unbounded conformal weight and is
+excluded.
+
+Finally, $\delta$ does not preserve an individual Laurent coefficient
+of the elliptic state, because it lowers fermionic charge. It removes
+only normal fields. Tangential states of positive conformal weight
+survive. A differential contracting all positive conformal weights
+has a different cohomology.
+
+\section{Affine diagonals and regrouping}
+\label{nd:sec:affine}
+
+Consider $r\geq1$ copies of one affine target coordinate, with field
+columns $\gamma,c,\beta,b$. Let $\mathbf1$ be the column of $r$ ones
+and set
+\begin{equation}\label{nd:eq:projector}
+ P_r=I_r-\frac1r\mathbf1\mathbf1^{\mathsf t},\qquad
+ \delta_r=
+ \left(:\sum_{i,j}(P_r)_{ij}\gamma_i b_j:\right)_{(0)}.
+\end{equation}
+The fields tangent to the full diagonal are
+\[
+ \bar\gamma=\frac1r\sum_i\gamma_i,\qquad
+ \bar c=\frac1r\sum_i c_i,\qquad
+ \bar\beta=\sum_i\beta_i,\qquad
+ \bar b=\sum_i b_i.
+\]
+
+Their two nonzero generating products have coefficient one, as in
+\eqref{nd:eq:ope}. The complementary fields form $r-1$ normal
+quartets. On the original columns,
+$\delta_rc=P_r\gamma$ and $\delta_r\beta=-P_rb$.
+Theorem~\ref{nd:thm:quartet} contracts their total normal number.
+
+\begin{proposition}\label{nd:prop:regrouping}
+Successive affine diagonal operations associated to any partition
+and refinement of the $r$ factors give the differential $\delta_r$.
+Their changes of normal basis compose and preserve the tangential
+fields and all vertex products.
+\end{proposition}
+
+\begin{proof}
+For a set partition $\mathcal P$, let $Q_{ij}=1/|B|$ when $i,j$
+belong to the same block $B\in\mathcal P$, and let $Q_{ij}=0$
+otherwise. It is the orthogonal projector onto block-constant vectors.
+There is an orthogonal decomposition
+\[
+ P_r=(I_r-Q)+\left(Q-\frac1r\mathbf1\mathbf1^{\mathsf t}\right).
+\]
+
+The first term records the normal directions within each block.
+The second records the differences of block means, with the block-size
+weights in their induced pairing. Their currents sum to the current
+in \eqref{nd:eq:projector}. Repeated refinement decomposes the same
+projector.
+
+A normal-basis change sends $v,c$ by an invertible matrix and
+$\beta,b$ by its inverse transpose. It preserves the two pairings
+in \eqref{nd:eq:ope} and the current $\sum_a:v^ab_a:$.
+Composition of these transformations is matrix multiplication, proving
+the compatibility of all successive regroupings.
+\end{proof}
+
+This calculation concerns the diagonal in a product of affine target
+charts. To apply it to a curved target, one must first understand its
+behavior under changes of normal frame.
+
+\section{The absolute normal-bundle complex}
+\label{nd:sec:absolute}
+
+Let $E\to Y$ be a holomorphic vector bundle, and let
+$M=\operatorname{Tot}(E)$. Locally write $x^i$ for base coordinates
+and $v^a$ for fiber coordinates. There is a chiral de Rham quartet
+for every base and fiber coordinate. Let $\mathcal V_E$ be the sheaf
+over $Y$ of states on $M$ polynomial in the fiber directions, or its
+fixed-weight completion along the zero section.
+
+Give every $c$, including each $c_x^i$, degree $-1$, and every $b$
+degree $1$. This total fermionic grading respects a varying frame:
+under $v'=g(x)v$ one has
+\begin{equation}\label{nd:eq:odd-frame}
+ c_v'=g(x)c_v+(dg)_x(v)c_x.
+\end{equation}
+A degree assigned only to normal fermions would not respect
+\eqref{nd:eq:odd-frame}.
+
+The fiber Euler vector field $\mathsf E=v^a\partial_{v^a}$ is
+intrinsic. Chiral contraction with a vector field is compatible with
+the chiral de Rham coordinate laws. Consequently
+\begin{equation}\label{nd:eq:absolute-delta}
+ \delta=(\iota_{\mathsf E})_{(0)},\qquad
+ \iota_{\mathsf E}=\sum_a:v^ab_a:
+\end{equation}
+is a global differential on $\mathcal V_E$.
+In a local frame it has the normal action
+\eqref{nd:eq:delta} and kills tangential fields.
+
+The following homotopy controls the nonconstant part of a frame change.
+For a matrix $A(x)$, write $W=A^b_a(x)v^a\partial_{v^b}$ and put
+\begin{equation}\label{nd:eq:frame-homotopy}
+ H_A=:A^b_a c_v^a\beta_b:
+       -:\partial_iA^b_a\,c_x^ic_v^ab_b:.
+\end{equation}
+The chiral Lie derivative along $W$, denoted by $\mathcal L_W$,
+is the infinitesimal action of its coordinate change.
+
+\begin{lemma}\label{nd:lem:frame}
+The zero mode of \eqref{nd:eq:frame-homotopy} satisfies
+$[\delta,(H_A)_{(0)}]=\mathcal L_W$.
+\end{lemma}
+
+\begin{proof}
+Applying the odd derivation $\delta$ gives the current
+\[
+ :A^b_av^a\beta_b:
+ +:A^b_ac_v^ab_b:
+ +:\partial_iA^b_a\,v^ac_x^ib_b:.
+\]
+The last sign follows from
+$\delta(c_x^ic_v^ab_b)=-c_x^iv^ab_b$.
+The three terms are the vector-field term and the two fermionic terms
+in the chiral Lie derivative of $W$. Taking zero modes proves the
+identity.
+\end{proof}
+
+\begin{theorem}\label{nd:thm:absolute}
+The cohomology vertex sheaf of $(\mathcal V_E,\delta)$ is canonically
+$\Omega_Y^{\mathrm{ch}}$, with zero differential and cochain grading
+equal to minus its fermionic charge. This holds for polynomial normal
+states and for the fixed-weight formal completion.
+\end{theorem}
+
+\begin{proof}
+In each frame, Theorem~\ref{nd:thm:quartet} identifies the cohomology
+with the tangential fields. It remains to compare these identifications.
+After shrinking around a base point, a varying frame matrix is a
+constant matrix times $\exp A(x)$, using the holomorphic matrix
+logarithm near the identity. A constant frame matrix fixes the
+tangential fields and the normal vacuum.
+
+Let $F_s$ be the chiral frame action of $\exp(sA)$. It commutes with
+$\delta$ because $[\mathsf E,W]=0$, and
+$\frac{d}{ds}F_s=\mathcal L_WF_s$.
+Lemma~\ref{nd:lem:frame} gives
+\[
+ F_1-1=\delta K+K\delta,
+ \qquad K=\int_0^1(H_A)_{(0)}F_s\,ds.
+\]
+Thus every vertical frame change induces the identity on the local
+tangential cohomology. A change of base coordinates induces the base
+chiral de Rham transformation. These identifications satisfy the
+cocycle identity and preserve vertex products, giving the canonical
+cohomology sheaf.
+\end{proof}
+
+The theorem constructs a canonical cohomology sheaf without requiring
+a global strict inclusion of tangential vertex fields.
+For the full diagonal in $Y^r$, its linear normal bundle is
+$T_Y\otimes(\mathbb C^r/\mathbb C_{\mathrm{diag}})$.
+The theorem applies to this bundle, and the decompositions used in
+Proposition~\ref{nd:prop:regrouping} give its compatible linear
+regroupings. The next issue is comparison with the formal diagonal
+itself.
+
+\section{Curvature of the formal diagonal}
+\label{nd:sec:curvature}
+
+Write two nearby target points as $(x,x+v)$. Under $x'=f(x)$,
+their difference becomes
+\begin{equation}\label{nd:eq:hessian}
+ v'=f(x+v)-f(x)
+    =df_x(v)+\tfrac12d^2f_x(v,v)+O(v^3).
+\end{equation}
+The quadratic term is the first discrepancy from the linear normal
+transition.
+
+\begin{proposition}\label{nd:prop:connection}
+Let $Y$ be a K3 or Enriques surface. Its formal diagonal has no
+holomorphic linearization over the first projection inducing the
+identity on the normal bundle.
+\end{proposition}
+
+\begin{proof}
+The quadratic term of such a linearization, written as an exponential,
+would have the form
+\[
+ \operatorname{Exp}_x(v)=x+v-\tfrac12\Gamma_x(v,v)+O(v^3)
+\]
+with $\Gamma_x$ symmetric. Comparing
+$f(\operatorname{Exp}_x(v))$ and
+$\operatorname{Exp}_{f(x)}(df_x(v))$ gives
+\[
+ \Gamma_{f(x)}(df_x(v),df_x(v))
+       =df_x\Gamma_x(v,v)-d^2f_x(v,v).
+\]
+This is the transformation law of a torsion-free holomorphic
+connection on $T_Y$.
+
+Extend that connection by the bundle's $\bar\partial$ operator.
+Its curvature has type $(2,0)$, so the Chern--Weil form representing
+$c_2$ has type $(4,0)$ and vanishes on a complex surface.
+This would give $c_2(T_Y)=0$, contrary to
+$\int_Yc_2(T_Y)=24$ for a K3 surface and $12$ for an Enriques surface.
+\end{proof}
+
+Equivalently, the quadratic discrepancies in
+\eqref{nd:eq:hessian} represent the symmetric Atiyah class of $T_Y$,
+which obstructs a holomorphic connection. This obstruction leaves the
+ordinary diagonal kernel intact. The sheaf $\mathcal O_\Delta$ is
+perfect because the local coordinate differences are a regular
+sequence. For a unital affine coordinate algebra $B$, the bar complex has terms
+$B^{\otimes(n+2)}$, outer bimodule action and alternating adjacent
+multiplication. It resolves $B$ as a $B$-bimodule functorially.
+A chiral comparison must retain the additional coordinate-change data
+of its normal fields.
+
+\section{A relative lift retaining the formal neighborhood}
+\label{nd:sec:formal}
+
+Assume that $Y$ is Kähler. Choose a Kähler connection and its smooth
+formal exponential. The transported Dolbeault algebra of the formal
+diagonal over the first projection is
+\begin{equation}\label{nd:eq:formal-base}
+ \left(\mathcal A_Y^{0,*}
+       (\widehat{\operatorname{Sym}}T_Y^*),D_B\right),
+ \qquad D_B=\bar\partial+R,\qquad R=\sum_{n\geq2}R_n.
+\end{equation}
+Here $\mathcal A_Y^{0,*}$ is the Dolbeault algebra of smooth
+$(0,*)$-forms. Each $R_n$ is a $(0,1)$-form with values in
+homogeneous vertical polynomial vector fields of degree $n$.
+
+We define $R_n$ as the homogeneous Taylor coefficient of this
+transported differential. This fixes the factorial convention.
+
+The formal-exponential theorem gives
+\begin{equation}\label{nd:eq:MC}
+ \bar\partial R+\tfrac12[R,R]=0,
+\end{equation}
+and $R_2$ represents the Atiyah class.\footnote{
+S.~Yu, \emph{The Dolbeault dga of the formal neighborhood of the
+diagonal}, \href{https://arxiv.org/abs/1211.1567}{Theorem~3.2 and
+Section~3}. The homogeneous polynomial convention in
+\eqref{nd:eq:formal-base} is obtained from its symmetric-tensor
+Taylor convention.}
+
+Define the relative formal $bc$--$\beta\gamma$ system
+$\mathcal V_{\mathrm{rel}}$ of $T_Y$ as follows. Its normal fields
+have products \eqref{nd:eq:ope}, its coefficients
+$\mathcal A_Y^{0,*}$ are central vertex elements with $T=0$, and
+it has no base momentum fields. Linear frames act on $v,c$ and
+contragrediently on $\beta,b$. Complete in the normal coordinates
+at each conformal weight, as in Section~\ref{nd:sec:quartet}.
+
+Total cochain degree is Dolbeault degree minus $J$. Forms are placed
+to the left of the fiber fields. The tensor product uses total
+degree for its signs.
+
+For a vertical vector field $V=V^i(v)\partial_{v^i}$, its chiral
+Lie action is
+\begin{equation}\label{nd:eq:lie}
+ \mathcal L_V=
+ \left(:V^i(v)\beta_i:
+       +:\partial_jV^i(v)c^jb_i:\right)_{(0)}.
+\end{equation}
+It acts by $V$ on functions and by
+$c^i\mapsto\partial_jV^i c^j$ on the coordinate fermions.
+This action is the derivative of the formal-coordinate action in
+the chiral de Rham construction. Its bosonic and fermionic anomalies
+cancel, giving the exact identity
+\begin{equation}\label{nd:eq:lie-action}
+ [\mathcal L_V,\mathcal L_W]=\mathcal L_{[V,W]}.
+\end{equation}
+We extend it to form-valued vector fields with the tensor-product signs.
+
+\begin{theorem}\label{nd:thm:formal}
+The operator
+\begin{equation}\label{nd:eq:Dform}
+ D_{\mathrm{form}}=\bar\partial+\mathcal L_R
+\end{equation}
+is a global square-zero derivation of $\mathcal V_{\mathrm{rel}}$.
+It preserves conformal weight and fermionic charge, and restricts to
+$D_B$ on fiber functions. Changes of formal exponential induce chiral
+coordinate isomorphisms intertwining these differentials, with the
+coordinate composition law.
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{nd:eq:MC} and \eqref{nd:eq:lie-action} give
+\[
+ D_{\mathrm{form}}^2
+   =\mathcal L_{\bar\partial R+[R,R]/2}=0.
+\]
+The current in \eqref{nd:eq:lie} has weight one and charge zero.
+Its zero mode is a derivation, preserves these gradings, and acts by
+$V$ on functions.
+
+Under a formal coordinate change, the chiral de Rham
+transformation transports the Lie action. For a base-dependent change,
+its Dolbeault derivative supplies the extra term that also appears
+when conjugating $\bar\partial+R$ on functions. Hence the chiral
+transformation intertwines \eqref{nd:eq:Dform}. Composition of the
+coordinate transformations gives the cocycle identity.
+
+At fixed conformal weight, a state has boundedly many momentum fields.
+Only boundedly many contractions can therefore lower the normal order
+of a coefficient. The sum of homogeneous terms is continuous in the
+specified formal completion. Thus these local formulas define the
+global formal operator.
+\end{proof}
+
+The relative Euler contraction $\delta$ of
+\eqref{nd:eq:absolute-delta} is still defined on this carrier. Its
+commutator with the new differential measures the curvature error.
+For a form-valued vertical field $V$, write
+$\iota_V=:V^ib_i:$.
+
+\begin{proposition}\label{nd:prop:curvature}
+With the total graded commutator,
+\begin{equation}\label{nd:eq:curvature}
+ [D_{\mathrm{form}},\delta]
+   =-\sum_{n\geq2}(n-1)(\iota_{R_n})_{(0)}.
+\end{equation}
+In particular, $D_{\mathrm{form}}+\delta$ need not square to zero.
+\end{proposition}
+
+\begin{proof}
+The chiral Cartan identity gives
+$[\mathcal L_V,\iota_{\mathsf E,(0)}]
+=\iota_{[V,\mathsf E],(0)}$.
+For a homogeneous degree-$n$ vector field,
+$[V,\mathsf E]=-(n-1)V$.
+The holomorphic Euler contraction commutes with $\bar\partial$
+with the total sign. Extending the Cartan identity to forms yields
+\eqref{nd:eq:curvature}.
+\end{proof}
+
+\section{A conjugated Koszul resolution}
+\label{nd:sec:koszul}
+
+The Euler contraction can also be used to construct a global
+resolution of the central base. For a degree-$n$ vertical field put
+\begin{equation}\label{nd:eq:H}
+ H_{V_n}=\frac1n:\partial_jV_n^i(v)c^j\beta_i:.
+\end{equation}
+The odd derivation rule and the homogeneous Euler identity give
+\begin{equation}\label{nd:eq:K}
+ \delta H_{V_n}=K_{V_n}
+  =:V_n^i\beta_i:
+       +\frac1n:\partial_jV_n^ic^jb_i:.
+\end{equation}
+The fermionic coefficient here is $1/n$, whereas the Lie action
+\eqref{nd:eq:lie} has coefficient one.
+
+Apply \eqref{nd:eq:H} to the tensors $R_n$ and let
+$\mathscr S=\sum_n H_{R_n}$, with forms placed first. Its form degree
+is one and its fiber cochain degree is $-1$.
+Thus $S_0=\mathscr S_{(0)}$ is an even derivation of total degree zero.
+Define
+\begin{equation}\label{nd:eq:DK}
+ d_0=\bar\partial+\delta,\qquad
+ D_K=e^{S_0}d_0e^{-S_0}.
+\end{equation}
+On a complex $d$-fold, $S_0^{d+1}=0$ by form degree, so both
+exponentials are finite.
+
+\begin{theorem}\label{nd:thm:koszul}
+The operator $D_K$ is a global square-zero vertex derivation.
+The central inclusion
+\[
+ i:(\mathcal A_Y^{0,*},\bar\partial)
+        \longrightarrow(\mathcal V_{\mathrm{rel}},D_K)
+\]
+is a quasi-isomorphism. For choices $S_0,S'_0$ on this carrier,
+the automorphism $e^{S'_0}e^{-S_0}$ intertwines their resolutions.
+These intertwiners compose exactly.
+\end{theorem}
+
+\begin{proof}
+The currents \eqref{nd:eq:H} are tensorial under relative linear
+frame changes. Their zero modes are global derivations, and finite
+exponentiation gives vertex automorphisms fixing the central base.
+Conjugation therefore proves the square-zero and derivation assertions.
+
+The normal homotopy \eqref{nd:eq:contraction} is equivariant under
+linear frame changes with central coefficients. It defines a global
+relative homotopy $h$ and vacuum projection $\pi$. Extend $h$ to
+forms with the tensor-product sign. Then
+$\bar\partial h+h\bar\partial=0$ and
+$d_0h+hd_0=1-i\pi$.
+
+Transporting the contraction gives
+\[
+ h_K=e^{S_0}he^{-S_0},\qquad
+ \pi_K=\pi e^{-S_0},\qquad
+ D_Kh_K+h_KD_K=1-i\pi_K.
+\]
+This proves the quasi-isomorphism of complexes, and the central
+inclusion is a vertex morphism. The projection and the homotopy are
+only required to be linear maps of the indicated degrees.
+Finally, cancellation of adjacent exponentials proves both the
+intertwining identity and composition of the changes of choice.
+\end{proof}
+
+The square-zero argument uses homogeneous form-valued tensors to
+define $\mathscr S$, but does not require their Maurer--Cartan equation.
+That equation is needed for the geometric interpretation of
+$D_{\mathrm{form}}$, which restricts to the formal-neighborhood
+Dolbeault differential on functions. Theorem~\ref{nd:thm:koszul}
+compares $(\mathcal V_{\mathrm{rel}},D_K)$ with the central Dolbeault
+algebra by a quasi-isomorphism. It does not identify the two differentials.
+
+\section{The second correction on a surface}
+\label{nd:sec:surface}
+
+On a surface the conjugation has only two nontrivial form degrees.
+Write $K_1=\sum_nK_{R_n}$ as a form-valued current. The total sign is
+$d_0\mathscr S=\bar\partial\mathscr S-K_1$.
+Expanding \eqref{nd:eq:DK} gives
+\begin{equation}\label{nd:eq:surface}
+ D_K=d_0+(K_1)_{(0)}-(\bar\partial\mathscr S)_{(0)}
+                    +\tfrac12[S_0,(K_1)_{(0)}].
+\end{equation}
+All further terms have form degree at least three.
+
+The first-form action on functions is $R$. The second-form term
+can contain fermionic fields of negative cochain degree.
+
+\begin{example}\label{nd:ex:second}
+Take fiber coordinates $v_1,v_2$ and exterior form variables
+$\eta_1,\eta_2$, placed to the left of fiber fermions. Set
+\[
+ V=v_1^2\partial_{v_2},\qquad W=v_2^2\partial_{v_1},\qquad
+ H_V=:v_1c_1\beta_2:,\qquad H_W=:v_2c_2\beta_1:,
+\]
+and suppress $\bar\partial$. For
+$S_0=\eta_1(H_V)_{(0)}+\eta_2(H_W)_{(0)}$, put
+$A_1=[S_0,\delta]$ and $A_2=\tfrac12[S_0,A_1]$.
+Then
+\[
+ A_1(v_1)=\eta_2v_2^2,\qquad
+ A_1(v_2)=\eta_1v_1^2,
+\]
+while
+\begin{align*}
+ A_2(v_1)&=-\eta_1\eta_2
+       \left(\tfrac32v_1v_2c_1+\tfrac12v_1^2c_2\right),\\
+ A_2(v_2)&=\eta_1\eta_2
+       \left(\tfrac12v_2^2c_1+\tfrac32v_1v_2c_2\right).
+\end{align*}
+
+Indeed $S_0(v_1)=\eta_2v_2c_2$, and the two compositions are
+\[
+ S_0A_1(v_1)=-2\eta_1\eta_2v_1v_2c_1,\qquad
+ A_1S_0(v_1)=\eta_1\eta_2(v_1v_2c_1+v_1^2c_2).
+\]
+Their half-difference gives the first formula. Interchanging the two
+indices gives the second. Each action on these coordinate polynomials
+has only a single contraction, so these are identities of zero modes.
+\end{example}
+
+Thus the algebra of fiber functions need not be a subcomplex of
+$D_K$. The example uses specified polynomial tensors. They are not
+assumed to satisfy \eqref{nd:eq:MC} or to arise from a K3 metric.
+They show that the second correction can be nonzero for arbitrary
+tensors.
+
+\section{Charge restoration and parameter torsion}
+\label{nd:sec:charge}
+
+Introduce an even parameter $u$ of fermionic charge $+1$ and
+cochain degree zero. The combined charge includes its exponent.
+Cochain degree still uses the original field grading and Dolbeault
+degree. In particular, charge is no longer parity after adjoining $u$.
+The differential $u\delta$ preserves combined charge.
+
+Let $K$ be a finite normal PBW subcomplex stable under $\delta$ and
+the contraction $h$, with cohomology consisting of its scalar vacuum
+in degree zero. Write
+$B^k=\operatorname{im}(\delta:K^{k-1}\to K^k)$.
+
+\begin{proposition}\label{nd:prop:torsion}
+There are vector-space splittings giving
+\begin{equation}\label{nd:eq:torsion}
+ H^k(K[u],u\delta)\cong
+ B^k\otimes\mathbb C[u]/(u)\ \oplus\
+ \begin{cases}
+ \mathbb C[u]|0\rangle,&k=0,\\
+ 0,&k\ne0.
+ \end{cases}
+\end{equation}
+The derived fiber at $u=0$ is $(K,0)$.
+The same statements hold coefficientwise in the fixed-weight formal
+completion, with coefficientwise completed base change.
+\end{proposition}
+
+\begin{proof}
+Multiplication by $u$ is injective on $K[u]$, so the cycles of
+$u\delta$ are $(\ker\delta)[u]$ and its boundaries are $uB[u]$.
+Split $\ker\delta$ into $B$ and the scalar vacuum to obtain
+\eqref{nd:eq:torsion}. The finite complex is termwise free over
+$\mathbb C[u]$, so derived base change sets its differential to zero.
+In the fixed-weight completion the normal-number contraction gives
+the same continuous splitting coefficientwise. Completed base change
+has the asserted zero differential on each coefficient.
+\end{proof}
+
+For two normal directions, keep no derivative jets and truncate total
+normal number at three. There are four bosonic and four fermionic
+variables. Their normal-number series and its first four coefficients are
+\[
+ \frac{(1+t)^4}{(1-t)^4},\qquad 1+8+32+88=129.
+\]
+The contraction leaves one vacuum and $64$ acyclic pairs.
+After scaling the differential there are therefore $64$ torsion
+cohomology generators, besides the free vacuum. The terms of the
+parameter complex are free even though its cohomology is not flat.
+
+For the curved resolution, charge restoration begins over
+$\mathbb C[u,u^{-1}]$. The finite conjugation is
+\begin{equation}\label{nd:eq:homogenized}
+ e^{S_0/u}(\bar\partial+u\delta)e^{-S_0/u}
+  =\bar\partial+u\delta+(K_1)_{(0)}+u^{-1}K_2+\cdots.
+\end{equation}
+On a surface the last term is
+\[
+ K_2=-(\bar\partial\mathscr S)_{(0)}
+                   +\tfrac12[S_0,(K_1)_{(0)}].
+\]
+
+A correction of form degree $r$ has charge $r-1$, so its coefficient
+is $u^{1-r}$. A regular extension on the unchanged carrier requires
+these negative-power coefficients to vanish, or to acquire the required
+divisibility in a parameter-dependent family.
+Example~\ref{nd:ex:second} exhibits a nonzero $K_2$ for polynomial
+tensors. Its value for a specified K3 curvature is a separate
+geometric calculation.
+
+\section{The diagonal transfer still to be constructed}
+\label{nd:sec:comparison}
+
+For a compact complex surface $Y$ and $N\geq0$, the geometric state
+object at length $N$ is
+\begin{equation}\label{nd:eq:states}
+ \mathcal H_N(Y)=
+ \bigoplus_{[g]\subset\mathfrak S_N}
+ R\Gamma\bigl(Y^N,\Omega_{Y^N}^{\mathrm{ch},g}\bigr)^{C(g)}.
+\end{equation}
+Here $C(g)$ is the centralizer of $g$. The sheaf
+$\Omega_{Y^N}^{\mathrm{ch},g}$ consists of twisted chiral de Rham
+modules on the fixed locus $(Y^N)^g$. We view it as a sheaf on $Y^N$.
+
+Its coordinate and centralizer actions are those of the
+twisted-module construction.\footnote{
+E.~Frenkel and M.~Szczesny, \emph{Chiral de Rham complex and orbifolds},
+\href{https://arxiv.org/abs/math/0307181}{Sections~4.8--4.10,
+Theorems~4.2--4.3}. The index is treated in Section~6.}
+
+The derived global sections in \eqref{nd:eq:states} use only the
+sheaf-resolution differential. Finite-group invariants are exact
+over $\mathbb C$. We use individual length and conformal-weight
+components. Their generating series are taken coefficientwise.
+
+The absolute Euler complex has cohomology $\Omega_Y^{\mathrm{ch}}$.
+The relative formal-diagonal complex retains the transported
+Dolbeault algebra on functions and the normal fields.
+The conjugated Koszul complex resolves the central base.
+Each construction therefore has a specified use in a comparison.
+The supported diagonal transfer on
+\eqref{nd:eq:states} remains to be constructed.
+
+Let $S$ be a K3 surface and $E$ an elliptic curve. For the threefold
+$S\times E$, the zero object in the relative translation quotient
+lies over $BE$, the classifying stack of $E$.
+The comparison must retain that relative unit and compatible
+orientation square roots along extension flags.
+
+It must also identify the reduced state with a specified geometric
+module coefficient. Let $H,R$ be unital algebras and
+$I_0:H\to R$ a unital homomorphism. A reduced functional
+$D:H\to R$ satisfying
+\[
+ D(ab)=I_0(a)D(b)+D(a)I_0(b),\qquad D(1)=0
+\]
+defines the unital action
+\[
+ a\longmapsto\begin{pmatrix}I_0(a)&D(a)\\0&I_0(a)\end{pmatrix}
+\]
+on the right $R$-module $R\oplus R$. Multiplicativity is exactly the
+displayed derivation identity. Thus $D$ is its off-diagonal coefficient. Its unit data differ from an
+empty-vacuum matrix coefficient of value one.
+
+A chiral McKay comparison with the Hilbert-scheme state complex
+$R\Gamma(Y^{[N]},\Omega_{Y^{[N]}}^{\mathrm{ch}})$ must likewise identify
+the complexes and their operations beyond their equal elliptic indices.
+
+\begin{question}\label{nd:qn:transfer}
+Construct a diagonal transfer on the actual chiral state sheaves,
+through defects or bimodules preserving the prescribed Laurent charge.
+Construct the compact reduced critical Hall coefficient functor,
+with its oriented extension pullbacks and supported pushforwards,
+and compare its diagonal operation with this transfer.
+Can the comparison preserve the curvature corrections, derived
+specialization, supported products, vacuum, and the common elliptic
+torsor of the reduction?
+\end{question}
+
+The next coherence can be stated once its supports and coefficients
+are fixed. Let $(B_A,b_A)$ and $(B_B,b_B)$ be specified supported bar
+coalgebras with degree-one coderivations squaring to zero.
+Suppose that the degree-zero components $F_1,\ldots,F_{n-1}$ satisfy
+the comparison equations through arity $n-1$.
+Let $\partial$ be the differential on the arity-$n$ Hom complex
+induced by the unary coderivation components. The residual is
+\[
+ \mathfrak r_n=(b_BF_{<n}-F_{<n}b_A)_n,\qquad
+ \partial F_n=-\mathfrak r_n.
+\]
+The preceding equations imply $\partial\mathfrak r_n=0$.
+
+Suppose that this Hom complex contracts onto chosen cohomology
+representatives, with projection $P$ and homotopy $h$. Then
+$\partial h+h\partial=1-P$, so $F_n=-h\mathfrak r_n$ solves the
+equation when $P\mathfrak r_n=0$.
+The normal contraction in \eqref{nd:eq:contraction} computes its own
+vertex complex. Applying this criterion to compact Hall operations
+requires their supported Hom complex and the value of its residual.

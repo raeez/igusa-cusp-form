@@ -1,0 +1,291 @@
+\subsection{Finite skew blocks and the protected Pfaffian}
+\label{subsec:dirac-pfaffian}
+
+A square root of a determinant line need not come with a section.
+A skew operator supplies one: its Pfaffian.  This subsection first
+constructs that finite algebraic object, then states the geometric
+comparisons needed to regard it as the protected section on the
+compact reduced moduli space.
+
+\subsubsection*{The Pfaffian of a skew two-term complex}
+
+Let \(B\) be a complex base, \(V\) a vector bundle of even rank
+\(2n\), and \(D:V\to V^\vee\) a skew map.  Regard
+\[
+ K_D=[V\xrightarrow{D}V^\vee]
+\]
+as a complex in degrees \([-1,0]\).  In a frame its skew matrix has
+a Pfaffian, and under a frame change \(A\) it satisfies
+\[
+ \operatorname{Pf}(A^tDA)=\det(A)\operatorname{Pf}(D).
+\]
+Thus these local functions define a section of \(\det V^\vee\).
+
+\begin{definition}[Pfaffian line and section]
+\label{def:pfaffian-line}
+For this skew complex define
+\[
+ \mathscr L_{\mathrm{Pf}}(K_D)=\det V^\vee,
+ \qquad \operatorname{pf}(D)\in
+ H^0(B,\mathscr L_{\mathrm{Pf}}(K_D)).
+\]
+The determinant identity gives
+\[
+ \mathscr L_{\mathrm{Pf}}(K_D)^{\otimes2}
+ \simeq\det K_D,
+ \qquad \operatorname{pf}(D)^2=\det(D).
+\]
+A geometric Pfaffian datum specifies such local skew models and
+compatible Pfaffian-line and section comparisons on their overlaps,
+or another precise construction of the same line and section.
+An orientation of a critical locus is a root pair; it does not by
+itself specify these operators or their Pfaffian sections.
+\end{definition}
+
+The section is also \(\omega_D^n/n!\), where
+\(\omega_D\in\Lambda^2V^\vee\) is the alternating form of \(D\).
+In a hyperbolic basis its coefficient is the product of the skew-block
+entries and its square is the determinant.  The identity holds on the
+dense set of invertible skew matrices and hence, being polynomial, on
+all skew matrices over \(\mathbb C\).  It therefore holds in families
+by the same universal polynomial identity.
+
+The degree convention matters.  For the unshifted CY3 self-Ext
+complex \(K=R\operatorname{Hom}(F,F)\), Serre duality has the form
+\(K\simeq K^\vee[-3]\).  If a specified reduced complex has only
+Ext degrees one and two, shifting it by \([2]\) places those terms
+in degrees \([-1,0]\), and changes the self-duality to a map to its
+dual shifted by \([1]\).  A comparison with \(K_D\) must include
+this shift, the skew symmetry and the determinant-square map.
+One cannot impose the latter self-duality on the unshifted complex
+without changing its meaning.  The shifted degree condition alone
+also does not provide a skew realization or a Pfaffian section.
+
+\subsubsection*{Hyperbolic factors and the super ratio}
+
+Choose a positive charge monoid \(\Gamma^+\) and a height function
+\(h\) which is positive on its nonzero elements and locally finite
+on the active degrees.  Work in its completed monoid algebra, or
+at a fixed height jet.  Then \(1-x^\gamma\) is a unit for
+\(\gamma\ne0\).  Let \(P_\gamma=P_{\gamma,\bar0}\oplus
+P_{\gamma,\bar1}\) have finite dimension \((p_\gamma\mid q_\gamma)\).
+
+\begin{definition}[A finite skew block]
+\label{def:first-order-dirac-block}
+For one basis vector of either parity use the ordered hyperbolic
+block
+\[
+ J_\gamma=
+ \begin{pmatrix}0&1-x^\gamma\\-(1-x^\gamma)&0\end{pmatrix}.
+\]
+Take \(p_\gamma\) such blocks in the even part and
+\(q_\gamma\) in the odd part.  Their super-Pfaffian means the ratio
+of the two ordinary Pfaffians:
+\[
+ \operatorname{sPf}(J_{\gamma,P})
+ =\frac{\operatorname{Pf}(J_\gamma^{\oplus p_\gamma})}
+        {\operatorname{Pf}(J_\gamma^{\oplus q_\gamma})}
+ =(1-x^\gamma)^{p_\gamma-q_\gamma}.
+\]
+The ordinary Pfaffian of all the blocks together has exponent
+\(p_\gamma+q_\gamma\), not \(p_\gamma-q_\gamma\).
+The ratio is defined on the formal unit domain just specified, or
+as a meromorphic section where its denominator is allowed.
+\end{definition}
+
+The matrix is linear in the scalar \(1-x^\gamma\).  This does not
+make it the symbol of the Hall bracket or an analytic Dirac
+operator.  An abelian three-dimensional Lie algebra and the
+three-dimensional Heisenberg algebra give identical such blocks
+when assigned the same graded vector space, but have different
+brackets.  In a Chevalley--Eilenberg model the bracket is a binary
+operation in its differential; in an enveloping algebra it appears
+in the Poisson bracket of the PBW associated graded.  Relating either
+construction to a differential operator requires a separate map.
+
+\subsubsection*{A finite geometric comparison}
+
+\begin{definition}[Finite geometric Pfaffian data]
+\label{def:finite-geometric-pfaffian-datum}
+A finite geometric Pfaffian datum \((P_{\mathrm{fin}})\) consists
+of a specified reduced quotient base \(\mathfrak Q_R\), its perfect
+reduced complex, oriented critical coefficients and skew realization
+with Pfaffian line \(\mathscr L_{\mathrm{Pf},R}\) and section
+\(\operatorname{pf}_{X,R}\).  The skew realization is compatible
+with the shift and square map above.
+
+On a specified cusp chart, the datum further gives an oriented
+block comparison with the finite family \(J_{\gamma,P}\), including
+its determinant of frame change and every residual unit.  The scalar
+normalization is fixed as
+\(64x^\rho\), where \(x^\rho=q^{1/2}r^{1/2}s^{1/2}\).  Thus the
+block comparison identifies the section itself, rather than only
+its rank or squared determinant.  Each \(P_\gamma\) is compared as
+a graded space with the target root space \(V_\gamma\).  In
+particular the source is zero where the target graded space is zero;
+vanishing of its signed dimension alone is not this condition.
+
+At a simple type-II wall there is a compatible local factorization
+\(\operatorname{pf}_{X,R}=\upsilon u\,
+\operatorname{pf}^{\mathrm{tan}}_{X,R}\), with simple normal zero,
+invertible \(\upsilon\) and a stipulated reflection lift.  For the
+sign conclusion the reference comparison preserves the tangential
+factor and unit, the base map sends \(u\) to \(-u\), and the actual
+root lift carries the section to its pullback.
+
+Finally the datum specifies its parameter map, Pfaffian-to-automorphic
+line comparison and transition isomorphisms.  Transitions preserve
+the square maps, the sections, the root comparisons and the critical
+coefficient data.  An effective geometric limit is required when
+these are claimed to define a line and section on that limit.
+\end{definition}
+
+This definition retains the distinction between a positive height
+jet and an actual finite moduli space.  On the former, adding roots
+of higher height does not change a lower jet.  It need not leave
+an ordinary section on the latter unchanged.  A transition of the
+moduli problem must therefore be supplied separately.  Likewise a
+root with signed multiplicity zero can still have equal nonzero
+even and odd parts; the full graded comparison detects them.
+
+\begin{proposition}[The finite Pfaffian product]
+\label{prop:pfaffian-product-finite-stage}
+Suppose \((P_{\mathrm{fin}})\) supplies the stated block and
+normalization comparison on a finite active set \(A_R\).  Then
+\[
+ \operatorname{pf}_{X,R}|_{\mathfrak c_\infty}
+ =64q^{1/2}r^{1/2}s^{1/2}
+ \prod_{\gamma\in A_R}(1-x^\gamma)^{p_\gamma-q_\gamma}.
+\]
+If \(P_\gamma\simeq V_\gamma\) with both parities preserved,
+its exponents equal the target Borcherds exponents
+\(a_\Delta(\gamma)=\operatorname{sdim}V_\gamma\).
+\end{proposition}
+\begin{proof}
+The Pfaffian is multiplicative on the ordered orthogonal sum of
+skew blocks.  Divide the odd Pfaffian into the even Pfaffian and
+use the specified frame and normalization to obtain the formula.
+The graded root comparison gives the exponent equality.  Merely
+knowing the ranks and the leading coefficient would not prove this
+formula: multiplying a section by a nonconstant unit with constant
+term one preserves those data.  The actual block comparison excludes
+that additional unit.
+\end{proof}
+
+Write \(J(z)=\left(\begin{smallmatrix}0&z\\-z&0\end{smallmatrix}\right)\).
+Then \(J(1-x)\) and \(J(1-x)(1+x^2)\) have the same rank,
+leading coefficient and simple divisor at \(x=1\) wherever
+\(1+x^2\) is invertible.  Their Pfaffian sections differ.  The
+calculation exhibits the need to identify every unit in the block
+comparison.
+
+\begin{definition}[The automorphic line comparison]
+\label{def:pfaffian-to-automorphic-line-comparison}
+Let \(\kappa:B\to\mathcal A_2\) be the specified parameter map,
+on the chosen stack or cover carrying the weight-five character
+line.  A Pfaffian-to-automorphic comparison is an isomorphism
+\[
+ \iota_{\mathrm{aut}}:\mathscr L_{\mathrm{Pf},X}
+ \xrightarrow{\sim}
+ \kappa^*(\mathcal L^5\otimes\nu_{\Delta_5}),
+\]
+compatible with the square map, the cusp frame and the stated
+boundary extension.  A section identity means
+\(\iota_{\mathrm{aut}}(\operatorname{pf}_X)=\kappa^*\Delta_5\).
+It includes the map \(\kappa\); the two lines do not initially live
+on the same base.
+\end{definition}
+
+\begin{proposition}[What scalar squaring forgets]
+\label{prop:scalar-pfaffian-data-not-section}
+Local scalar products, their divisors, their leading coefficients
+and their squares do not determine the descent of a square-root
+section.  In particular they do not construct
+\(\iota_{\mathrm{aut}}\).
+\end{proposition}
+\begin{proof}
+Let \(T_\chi\) be a nontrivial sign local system on a punctured
+quotient chart.  Tensoring a local square-root section by a flat
+frame of \(T_\chi\) leaves its local expression and its square
+unchanged.  Around a loop with \(\chi=-1\), that frame changes
+sign.  The two local sections therefore have different descent
+data, even though their squares agree.  This example concerns the
+flat or equivariant line with its specified descent; it makes no
+claim that a given scalar expression has two distinct global
+holomorphic descents.  Those descents are precisely the missing
+information.
+\end{proof}
+
+\subsubsection*{Type-II crossings and local normalization}
+
+\begin{definition}[A rank-one Pfaffian crossing]
+\label{def:rank-one-type-ii-crossing}
+A normal Pfaffian crossing is a rank-two skew block
+\[
+ D_u=\begin{pmatrix}0&u\\-u&0\end{pmatrix},
+ \qquad\operatorname{Pf}(D_u)=u,
+\]
+with a specified reference frame comparison and base reflection
+\(u\mapsto-u\).  Its tangential Pfaffian is an invariant unit in
+that reference comparison.  The orientation lift is required to carry
+the section to its pullback.  The phrase ``rank one'' counts one hyperbolic
+Pfaffian factor; the skew matrix itself has size two.
+\end{definition}
+
+\begin{proposition}[The normal sign]
+\label{prop:rank-one-crossing-o2-sign}
+\label{prop:generic-local-sign-orientation-character}
+A rank-one crossing changes its Pfaffian section by \(-1\) and
+has determinant \(u^2\).  If all three simple walls have these
+comparisons and they assemble to the coherent character
+\(\epsilon_o\), then \(\epsilon_o=\det_W\) on the type-II Weyl
+group.  Its automorphic target is the homogeneous orthogonal
+character \(\widetilde\nu_{\Delta_5}|_W\).
+\end{proposition}
+\begin{proof}
+The two-by-two Pfaffian is \(u\), so its pulled-back expression
+is \(-u\) and its square is \(u^2\).  Section compatibility forces
+the root lift to have residual sign \(-1\) in the reference frames.
+The three generator values determine
+the character, as proved in the preceding subsection.  A real path
+crossing \(u=0\) is not a path in the wall complement; the stipulated
+lift is part of the datum.
+\end{proof}
+
+The abstract sign set
+\[
+ \Omega_{12}=\{\pm1\}^{12}
+\]
+has cardinality \(2^{12}=4096\).  To interpret
+this number as a count of geometric wall configurations, one needs
+a bijection from a complete geometric atlas to that set, including
+stabilizer weights and identifications on overlaps.  The finite
+sign sum alone does not construct such an atlas.
+
+\subsubsection*{From the finite product to the compact section}
+
+Local finiteness in positive height makes the products compatible
+as jets: only finitely many factors contribute to any fixed height.
+This gives a formal product.  To obtain the holomorphic automorphic
+section one also needs convergence on a cusp domain, the parameter
+and line comparisons, and analytic continuation with the stated
+boundary behaviour.  Under these assumptions the target product is
+\(\Delta_5\), with normalization
+\[
+ \Delta_5=64q^{1/2}r^{1/2}s^{1/2}(1+\cdots),
+ \qquad \Delta_5^2=\chi_{10},
+\]
+where the complete boundary factors are those of
+Chapter~\ref{ch:view1-automorphic}.
+
+If an independently defined protected trace satisfies the geometric
+sewing identity
+\[
+ Z_X=-4096\,\iota_{\mathrm{aut}}(\operatorname{pf}_X)^{-2},
+\]
+then the section comparison gives
+\(Z_X=-4096\,\kappa^*(\Delta_5^{-2})\).
+The trace and its sewing identity remain additional geometric data.
+The scalar branch sign in this formula does not determine
+\(\epsilon_o\), and the finite algebraic skew blocks do not alone
+construct the compact state space or its operator.

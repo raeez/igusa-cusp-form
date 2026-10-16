@@ -1,0 +1,1848 @@
+\subsection{Formal sheaf models and elliptic support}
+\label{subsec:hybrid-ran-carrier}
+
+The spherical collection gives a local algebra of sheaf deformations.
+To obtain Hall operations, this algebra must describe extensions of
+several objects at once and retain their traces. We first construct
+that formal comparison. We then distinguish sheaves supported over
+finitely many points of $E$ from sheaves whose support dominates $E$.
+Their extension diagrams can be formed together, and elliptic
+translation acts on the entire diagram.
+
+\subsubsection*{One cyclic model for the spherical collection}
+
+Use the common-polynomial line bundles $L_1,L_2,L_3$ of
+Theorem~\ref{k3:thm:common-triple}. Fix a nonzero holomorphic
+form $\Omega_S$. Their Dolbeault dg category has morphisms
+\[
+ \mathcal D(i,j)=\mathcal A^{0,*}(S,L_i^\vee\otimes L_j),
+ \qquad d=\bar\partial,
+ \qquad
+ \langle a,b\rangle=\int_S\Omega_S\wedge\operatorname{tr}(ba).
+\]
+The pairing has degree $-2$ and induces Serre duality. Set
+$A(i,j)=\operatorname{Ext}_S^*(L_i,L_j)$ and
+$\ell=\bigoplus_i\C1_i$. Thus $A^0=\ell$, $A$ is concentrated in
+degrees $0,1,2$, and $A^2$ is dual to $\ell$.
+
+\begin{proposition}[Cyclic formality of the collection]
+\label{hall:prop:cyclic-collection}
+There is a strictly unital cyclic minimal model on $A$ with only its
+Yoneda multiplication $m_2$ nonzero. One cyclic $A_\infty$
+quasi-equivalence $F:A\to\mathcal D$ can be chosen for the whole
+collection, before choosing multiplicities or flags.
+\end{proposition}
+
+\begin{proof}
+The cyclic minimal-model and strictification results of
+\cite[Lemmas~4.4--4.5, Proposition~4.8 and Corollary~4.9]
+{DavisonPurity2CY} apply to this simple-minded $2$-Calabi--Yau
+collection. The nonnegative-degree hypothesis for strictification
+holds. They give the cyclic model with strict vertex units.
+
+For $n\geq3$, an input in $A^0=\ell$ makes $m_n$ vanish by strict
+unitality. If all inputs have positive degree and one has degree two,
+the output has degree at least three, since $|m_n|=2-n$.
+The remaining possibility has every input of degree one and output
+of degree two. Pair that output with a vertex unit. Cyclicity moves
+the unit into an input, making the value zero. Perfection of the
+pairing $A^2\otimes A^0\to\C$ forces the output to vanish.
+\end{proof}
+
+For multiplicity spaces $V_i$, write
+$F_{\mathbf n}=\bigoplus_iL_i\otimes V_i$ and $n_i=\dim V_i$.
+Matrix amplification replaces $A(i,j)$ by
+$A(i,j)\otimes\operatorname{Hom}(V_i,V_j)$, composes morphisms
+by matrix multiplication, and composes the cyclic trace with matrix
+trace. Write $A_{\mathbf n}$ for this matrix amplification.
+The group $G_{\mathbf n}=\prod_iGL(V_i)$ acts by changing bases.
+
+Choose a quiver $Q$ with two arrows from $i$ to $j$ for each $i<j$.
+Its double has dual variables
+$X_a:V_{t(a)}\to V_{h(a)}$ and
+$Y_a:V_{h(a)}\to V_{t(a)}$. With dual arrow bases chosen according
+to the Serre pairing, the surface Maurer--Cartan equation is
+\begin{equation}
+\label{hall:eq:preprojective-moment}
+ \mu_i(X,Y)=\sum_{h(a)=i}X_aY_a-\sum_{t(a)=i}Y_aX_a=0.
+\end{equation}
+For a local Artinian base with maximal ideal $\mathfrak m$, the
+pointed deformation problem uses $\mathfrak m$-valued arrows and
+the formal gauge group
+$\exp(\mathfrak g_{\mathbf n}\otimes\mathfrak m)$, where
+$\mathfrak g_{\mathbf n}=\bigoplus_i\operatorname{End}(V_i)$.
+The full affine quotient by $G_{\mathbf n}$ is a separate algebraic
+quiver model. Its comparison with sheaf moduli here is formal near
+the specified polystable object.
+
+\subsubsection*{The normal operator and the derived critical quotient}
+
+Embed $S$ as the fibre over $e\in E$ and choose a normal coordinate
+at $e$. The normal Koszul resolution adds an exterior generator
+$\theta$ of degree one. The formal threefold algebra is
+$A_{\mathbf n}\otimes\Lambda(\theta)$.
+A degree-one element $x+z\theta$ has square
+\[
+ (x+z\theta)^2=x^2+(xz-zx)\theta.
+\]
+The first equation is \eqref{hall:eq:preprojective-moment}; the
+second says that the normal endomorphisms commute with the arrows.
+Both are critical equations of
+\begin{align}
+ \mathcal W_{\mathbf n}(X,Y,Z)
+ &=\sum_i\operatorname{Tr}(Z_i\mu_i)\label{hall:eq:tripled-potential}\\
+ &=\sum_{a\in Q_1}\operatorname{Tr}
+       \bigl(Y_a(Z_{h(a)}X_a-X_aZ_{t(a)})\bigr).
+ \nonumber
+\end{align}
+The potential is defined on
+$\mathcal V_{\mathbf n}=\operatorname{Rep}(\overline Q,\mathbf n)
+\oplus\mathfrak g_{\mathbf n}$. Its equations are
+\[
+ \mu_i=0,\qquad Z_{h(a)}X_a=X_aZ_{t(a)},\qquad
+ Y_aZ_{h(a)}=Z_{t(a)}Y_a.
+\]
+Taking the derived critical locus on the smooth quotient
+$[\mathcal V_{\mathbf n}/G_{\mathbf n}]$ retains gauge symmetry.
+At a critical point its endomorphism-degree complex is
+\begin{equation}
+\label{hall:eq:four-term-gauge-complex}
+ \mathfrak g_{\mathbf n}\xrightarrow{\rho}\mathcal V_{\mathbf n}
+ \xrightarrow{\operatorname{Hess}\mathcal W_{\mathbf n}}
+ \mathcal V_{\mathbf n}^*\xrightarrow{-\rho^*}
+ \mathfrak g_{\mathbf n}^*.
+\end{equation}
+The degrees are $0,1,2,3$; the tangent complex is its shift by $[1]$.
+Invariance of $\mathcal W$ gives
+$(\operatorname{Hess}\mathcal W)\rho=0$ and its dual identity.
+The outer terms record automorphisms and their duals. Omitting them
+changes the derived critical quotient.
+
+For $N=\sum_i n_i>0$, set
+\[
+ c=N^{-1}\sum_i\operatorname{Tr}Z_i,\qquad Z_i^0=Z_i-cI_{V_i}.
+\]
+Since $\sum_i\operatorname{Tr}\mu_i=0$, the potential is
+independent of $c$. Therefore
+\[
+ \operatorname{Crit}_{[\mathcal V_{\mathbf n}/G_{\mathbf n}]}(\mathcal W)
+ \simeq T^*[-1]\mathbb A^1_c\times
+ \operatorname{Crit}_{[\mathcal V^0_{\mathbf n}/G_{\mathbf n}]}(\mathcal W^0).
+\]
+Quotienting translations of $c$ removes its tangent direction; the
+centred critical model removes its dual obstruction direction as
+well. These are different operations. On a flag with block dimensions
+$N_i$, removing the total centre imposes $\sum_i N_ic_i=0$ and
+leaves the relative centres.
+The zero object has $N=0$ and requires its separate unit construction.
+
+The ambient quotient has canonical line
+$\det(\mathcal V_{\mathbf n}^*)\otimes\det\mathfrak g_{\mathbf n}$.
+The opposite arrow spaces cancel in its determinant character, as do
+the loop and gauge terms. An ordering of the hyperbolic pairs gives
+a local trivialization. Matching this orientation with a prescribed
+compact orientation is a further comparison, even when the formal
+cyclic algebras have been identified.
+
+\subsubsection*{Dimensional reduction and the point sector}
+
+Write $\varphi_f=\phi_f[-1]$ for shifted vanishing cycles, so that
+$\varphi_0\Q=\Q$. In the mixed Hodge version, $(-r)$ denotes a
+Tate twist. The potential above is linear in the $r=\dim\mathfrak
+g_{\mathbf n}$ loop coordinates. This gives a coefficient
+comparison after compactly supported pushforward.
+
+\begin{proposition}[Dimensional reduction of the tripled potential]
+\label{hall:prop:dimensional-reduction}
+There is a natural comparison
+\[
+ R\Gamma_c(\mathcal V_{\mathbf n},
+                 \varphi_{\mathcal W_{\mathbf n}}\Q)
+ \simeq R\Gamma_c(\mu^{-1}(0),\Q)[-2r](-r).
+\]
+The comparison is $G_{\mathbf n}$-equivariant, interpreted through
+finite-dimensional approximations. On the centred model replace
+$r$ by $r-1$ when $\sum_i n_i>0$; the zero locus on the right
+remains $\mu^{-1}(0)$. The zero-dimensional representation is
+left unchanged.
+\end{proposition}
+
+\begin{proof}
+For $f(x,z)=\sum_{i=1}^r z_if_i(x)$, the dimensional-reduction
+theorem identifies $\pi_!\varphi_f\pi^*K$ with
+$\pi_!\pi^*i_*i^*K$, where $i$ includes the common zero locus
+of the $f_i$ and $\pi$ is the rank-$r$ vector-bundle projection
+\cite[Theorem~A.1 and Corollary~A.9]{DavisonCriticalCoHA}.
+Apply it to the moment-map coordinates and $K=\Q$.
+Compactly supported cohomology of the affine fibre is
+$\Q[-2r](-r)$, giving the formula. On the trace-free loop space
+the potential pairs with the projection of $\mu$ to its dual.
+That projection has the same zero locus: $\mu$ already has
+total trace zero. The fibre rank is now $r-1$.
+\end{proof}
+
+For the preprojective stack
+$[\mu^{-1}(0)/G_{\mathbf n}]$, the dual compactly supported
+cohomology is pure of Tate type \cite[Theorem~A]{Davison2017}.
+This controls its mixed Hodge weights; it does not identify a
+compact reduced coefficient system with the preprojective one.
+
+This is a pushforward comparison. It does not identify the
+vanishing-cycle sheaf at each critical point with a constant
+sheaf, or construct reduced compact Hall operations.
+
+For point sheaves the cyclic model is also explicit. Fix
+$x\in X$ and a volume-normalized tangent basis $e_1,e_2,e_3$,
+with $e_3$ in the elliptic direction. The cyclic analytic minimal
+model of $\mathcal O_x$ is $\Lambda^\bullet T_xX$ with exterior
+multiplication and the volume pairing
+\cite[Theorem~4.23 and Proposition~5.18]{VanGarderenCyclic}.
+Matrix amplification for $\mathcal O_x^{\oplus n}$ gives
+\[
+ a=X_1e_1+X_2e_2+Ze_3,\qquad
+ \frac13\operatorname{vol}_x\operatorname{Tr}(a^3)
+       =\operatorname{Tr}(Z[X_1,X_2]).
+\]
+Its three critical equations are the pairwise commutators of
+$X_1,X_2,Z$. In the formal neighbourhood of the zero triple they
+describe the deformations of $\mathcal O_x^{\oplus n}$ modulo
+$GL_n$. Over a fixed closed point, support at $x$ requires the
+coordinate operators to be jointly nilpotent. The full affine
+commuting-triple variety also contains other supports.
+Removing $\operatorname{Tr}Z/n$ centres this local model in the
+elliptic direction. The gauge terms and relative centres remain
+as in \eqref{hall:eq:four-term-gauge-complex}.
+
+\subsubsection*{Finite flags use the same comparison}
+
+We use the suspended bar convention: the bar differential has degree
+one and $F$ has degree zero. Its Taylor coefficients below act on
+the suspended morphism spaces. Matrix amplification of these
+coefficients is the path sum
+\[
+ (F_n^{\mathrm{mat}}(a_n,\ldots,a_1))_{i_ni_0}
+ =\sum_{i_1,\ldots,i_{n-1}}
+ F_n((a_n)_{i_ni_{n-1}},\ldots,(a_1)_{i_1i_0}).
+\]
+An ordered twisted flag is a finite upper-triangular matrix of
+objects with a strictly upper-triangular degree-one twisting element
+$\delta$ satisfying the Maurer--Cartan equation. Its successive
+quotients are the diagonal objects.
+Write $\overline\delta=s\delta$, of degree zero in the suspended
+space, and regard the $a_i$ below as suspended morphisms.
+
+\begin{theorem}[Cyclic comparison on finite formal flags]
+\label{hall:thm:formal-flags}
+The chosen $F$ extends to finite twisted flags by
+\begin{align*}
+ F_*(\overline\delta)
+ &=\sum_{n\geq1}F_n^{\mathrm{mat}}
+                  (\overline\delta,\ldots,\overline\delta),\\
+ F_k^{\mathrm{tw}}(a_k,\ldots,a_1)
+ &=\sum_{j_0,\ldots,j_k\geq0}
+ F_{k+j_0+\cdots+j_k}^{\mathrm{mat}}
+ (\overline\delta_k^{j_k},a_k,\ldots,a_1,\overline\delta_0^{j_0}).
+\end{align*}
+A power here denotes repeated inputs. These formulas give a cyclic
+quasi-equivalence, equivariant under changes of multiplicity bases
+and compatible with every regrouping of a finite flag. They also
+apply with nilpotent Artinian parameters and in the compatible
+inverse-limit formal completion.
+\end{theorem}
+
+\begin{proof}
+A strictly upper-triangular insertion advances along the finite
+flag, so the sums terminate between any two displayed morphisms.
+With Artinian parameters, use flag distance and the maximal-ideal
+filtration together; each fixed precision still has finitely many
+terms. The identity $b_{\mathcal D}F=Fb_A$, evaluated on repeated
+$\overline\delta$ and then on distinguished morphism inputs, gives the
+Maurer--Cartan equation and all twisted functor equations.
+
+On the associated graded of these finite filtrations, the linear
+map is a direct sum of the original quasi-isomorphisms $F_1$.
+It is therefore a quasi-isomorphism on each morphism complex.
+Lift a flag inductively by lifting its next degree-one extension
+class and taking its cone. For a small Artinian extension, the
+obstruction lies in degree two; injectivity of $H^2(F_1)$ removes
+it, surjectivity of $H^1(F_1)$ matches the extension class, and a
+degree-zero gauge correction matches representatives.
+
+The trace is the original cyclic trace followed by matrix trace.
+Rotating a closed matrix path preserves it with the Koszul sign.
+Regrouping a flag partitions the same paths into consecutive
+subpaths. Thus the comparisons preserve the cyclic class and agree
+under further subdivision. The formal completion is the inverse
+limit of these compatible finite-precision formulas.
+\end{proof}
+
+This theorem constructs the formal comparison on all finite flags.
+An analytic realization requires convergence. A comparison of
+constructible critical coefficients on compact moduli further
+requires algebraic or analytic charts, their orientation descent and
+the coefficient morphisms on extension correspondences. Those
+requirements remain even though the formal category comparison is
+available.
+
+\subsubsection*{Critical coefficients on spectral configurations}
+
+The polynomial quiver model also gives coefficients on its actual
+spectral configuration spaces. Work in rational constructible
+derived categories with smooth descent on quotient stacks, allowing
+the unbounded complexes produced by classifying stacks. For this
+construction keep the common centre. Put
+\[
+ \mathcal Y_{\mathbf n}=[\mathcal V_{\mathbf n}/G_{\mathbf n}],
+ \qquad d_{\mathbf n}=\dim\mathcal V_{\mathbf n}-\dim G_{\mathbf n}
+       =2\sum_{a\in Q_1}n_{t(a)}n_{h(a)},
+ \qquad
+ \Phi_{\mathbf n}=\varphi_{\mathcal W_{\mathbf n}}
+                         \Q_{\mathcal Y_{\mathbf n}}[d_{\mathbf n}].
+\]
+This normalization uses the local quotient orientation already
+specified. In mixed Hodge coefficients include the twist
+$(d_{\mathbf n}/2)$, which is integral.
+
+\begin{proposition}[Spectral factorization]
+\label{hall:prop:spectral-factorization}
+On the open where the spectrum of $Z$ splits into two ordered
+disjoint parts, the critical stack and its coefficient are the
+products for those two parts. These comparisons are compatible
+with every refinement into finitely many disjoint spectral blocks.
+\end{proposition}
+
+\begin{proof}
+Coprime factors of the characteristic polynomial give polynomial
+idempotents in $Z$ by Bezout's identity. They split the vertex
+spaces in families on the resultant open. The equations commuting
+the arrows with $Z$ make every arrow preserve these subspaces.
+The cross-block normal variables have paired potentials
+\[
+ \operatorname{Tr}(Y\mathcal L(X)),\qquad
+ \mathcal L(X)=Z_\beta X-XZ_\alpha.
+\]
+The eigenvalues of $\mathcal L$ are differences of eigenvalues
+in the two blocks. Its determinant is invertible on this open,
+so the polarized change $Y'=\mathcal L^*(Y)$ turns the potential
+into $\operatorname{Tr}(Y'X)$.
+
+There are
+$r(\alpha,\beta)=\sum_{a\in Q_1}
+(\alpha_{t(a)}\beta_{h(a)}+\beta_{t(a)}\alpha_{h(a)})$
+hyperbolic pairs. Their vanishing-cycle factor is
+$\Q[-2r](-r)$ by dimensional reduction. The difference
+$d_{\alpha+\beta}-d_\alpha-d_\beta=2r$ cancels this shift,
+and the Hodge normalization cancels its Tate twist.
+Thom--Sebastiani and stabilization give the coefficient
+comparison \cite[Theorems~2.13 and~5.4]{BBDJS2015}.
+
+The chosen polarization fixes its orientation generator: dimensional
+reduction identifies it with the complex orientation of the
+$X$-space. The change in $Y$ fixes that space. Under refinement,
+the same hyperbolic pairs are regrouped; K\"unneth multiplies their
+even-degree orientation generators. The resulting normalized
+generators have degree zero, so all reassociations agree.
+These constructions are equivariant and descend to the quotient.
+\end{proof}
+
+Let $\mathfrak M_{\mathbf n}$ be the classical critical stack and
+let $\pi_{\mathbf n}$ record the characteristic divisors of its
+normal operators in
+$\prod_i\operatorname{Sym}^{n_i}\mathbb A^1$. Define
+$C_{\mathbf n}=R\pi_{\mathbf n!}\Phi_{\mathbf n}$.
+For a word $\boldsymbol\gamma=(\gamma_1,\ldots,\gamma_r)$ of
+nonzero dimension vectors, let $\theta_{\boldsymbol\gamma}$
+place multiplicity $(\gamma_j)_i$ at the $j$th point in colour $i$.
+The word coefficient is
+\[
+ C_{\boldsymbol\gamma}
+ =\theta_{\boldsymbol\gamma}^!C_{\sum_j\gamma_j}
+ \quad\text{on }(\mathbb A^1)^r.
+\]
+Exceptional pullback retains the collision coefficients and their
+shifts. The empty coefficient is $\Q$. For a consecutive cut
+$A|B$, denote by $j_{A|B}$ the open inclusion where every point
+in $A$ differs from every point in $B$. The cut tensor has
+$A|B$ component
+$Rj_{A|B,*}j_{A|B}^*(C_A\boxtimes C_B)$.
+
+\begin{theorem}[The spectral cut coalgebra]
+\label{hall:thm:spectral-cut}
+The word coefficients have coassociative maps
+\[
+ C_{\boldsymbol\gamma}\longrightarrow
+ Rj_{A|B,*}j_{A|B}^*(C_A\boxtimes C_B)
+\]
+that are equivalences after restriction to the cut open. Their
+empty coefficient gives the counit and coaugmentation. With this
+cut tensor, their cobar is the unital dg algebra
+\[
+ \Omega_{\mathrm{cut}}C
+ =\widehat T_{\mathrm{cut}}(\overline C[-1]),\qquad
+ d q_c=-q_{dc}+\sum(-1)^{|c_1|+1}q_{c_1}q_{c_2},
+ \quad\overline\Delta c=\sum c_1\otimes c_2.
+\]
+Here $|q_c|=|c|+1$, and completion is the product over total
+dimension vectors.
+\end{theorem}
+
+\begin{proof}
+Spectral factorization, base change for $R\pi_!$ and K\"unneth
+identify the restricted coefficient with the external product.
+The unit of the adjunction $j^*\dashv Rj_*$ gives the displayed
+map. Two successive cuts use the same three-block factorization
+and the same open direct image, proving coassociativity.
+Empty cuts give the unit comparisons.
+
+Extend the displayed differential as a derivation. Its linear
+and quadratic parts anticommute because $\Delta$ is a chain map;
+its two successive splitting terms cancel by coassociativity.
+Hence $d^2=0$. At a fixed total dimension $\mathbf n$, a word
+of nonempty factors has length at most $\sum_i n_i$. Thus the
+completion has only finitely many word lengths in each dimension,
+even when its stack cohomology is unbounded.
+\end{proof}
+
+This is an associative construction on charged ordered
+configurations. Its tensor uses consecutive cuts and their
+separation opens. A Hall multiplication instead uses extensions.
+Their comparison must preserve these operations on their stated
+coefficient categories.
+
+\subsubsection*{The support left by failed cuts}
+
+For a word of length $r$, let $U_i$ be its prefix cut open after
+position $i$, and put
+$Z_r=(\mathbb A^1)^r\setminus\bigcup_{i=1}^{r-1}U_i$.
+Write $R\underline\Gamma_{Z_r}$ for the coefficient functor
+of sections supported in this closed set. Expanding the cut
+cobar by the subsets of the $r-1$ cuts gives the augmented
+\v Cech complex of these opens, shifted by $[-1]$. Therefore
+\begin{equation}
+\label{hall:eq:cut-support}
+ (\overline{\Omega_{\mathrm{cut}}C})_{\boldsymbol\gamma}
+ \simeq R\underline\Gamma_{Z_r}(C_{\boldsymbol\gamma})[-1].
+\end{equation}
+Indeed the term with $k$ cuts has the $k+1$ generator shifts,
+and the cobar splitting signs are the alternating restriction
+signs. The augmented \v Cech complex is the fibre of restriction
+to the union of the cut opens. For two positions this says
+\[
+ R\underline\Gamma_{Z_2}(C)[-1]
+ =\operatorname{Cone}(C\longrightarrow Rj_*j^*C)[-2],
+\]
+using $\operatorname{Cone}(f)^n=D^n\oplus C^{n+1}$ for
+$f:C\to D$.
+
+The first supports already distinguish cuts from the full
+diagonal. If $\Delta_{ij}$ denotes equality of positions $i,j$,
+then
+\[
+ Z_2=\Delta_{12},\qquad Z_3=\Delta_{13},\qquad
+ Z_4=\Delta_{14}\cup(\Delta_{13}\cap\Delta_{24}).
+\]
+To verify the last formula, assume positions one and four differ.
+Failure of the first and third cuts forces an equality joining
+one to an interior position and another joining four to an
+interior position. The two interiors cannot be equal. Pairing
+one with two and three with four leaves the middle cut open;
+pairing one with three and two with four closes all three cuts.
+The remaining possibilities force one to equal four. This proves
+the formula. In particular, the crossed-pair component must be
+retained even away from the total diagonal.
+
+The coefficient on a collision is also larger than its restriction
+off that collision. For two one-dimensional colours with $r$
+paired arrows, the centred potential is
+$f=sQ(x,y)$, where $Q=\sum_{i=1}^r x_i y_i$.
+The effective relative group $\mathbb G_m$ acts with weights
+$1,-1,0$ on $x,y,s$; the full quotient retains a separate
+diagonal scalar stabilizer. Its critical ideal is
+\[
+ (Q,sx_1,\ldots,sx_r,sy_1,\ldots,sy_r)
+       =(x,y)\cap(s,Q).
+\]
+For the intersection identity, reduce $sa+Qb$ modulo $(x,y)$;
+since $s$ is a nonzerodivisor there, membership forces
+$a\in(x,y)$. For $r=2$, the invariant matrix $(x_i y_j)$ on
+the collision component has trace zero and rank at most one.
+Writing it as $\left(\begin{smallmatrix}u&v\\w&-u\end{smallmatrix}\right)$
+identifies its affine quotient with $u^2+vw=0$.
+On $x\ne0$ the quotient is $T^*\mathbb P^1$.
+
+\begin{proposition}[The collision stalk]
+\label{hall:prop:collision-stalk}
+For $r\geq2$, the stalk of $\varphi_f\Q[2r+1]$ at the origin
+has rank one in degrees $1-2r,-1,0$ and vanishes otherwise.
+At a nonzero point of the spectral axis only degree $-1$
+remains. At a smooth nonzero point of the collision quadric
+only degree $1-2r$ remains.
+\end{proposition}
+
+\begin{proof}
+The map $(s,x,y)\mapsto(s,x,sy)$ identifies $f^{-1}(1)$ with
+$\C^*\times Q^{-1}(1)$. Projection of $Q^{-1}(1)$ to $x\ne0$
+is an affine bundle with fibre $\C^{r-1}$. Thus $f^{-1}(1)$
+has the homotopy type of $S^1\times S^{2r-1}$.
+Homogeneity rescales a small Milnor fibre into a large ball
+sublevel of $f^{-1}(1)$. The squared norm is a proper
+semialgebraic function on this smooth affine fibre; its critical
+set has finitely many connected components, on each of which
+its value is constant. Above those values the sublevels are
+deformation retracts of the whole fibre. Thus the reduced
+Milnor cohomology has rank one in degrees $1,2r-1,2r$.
+The shift gives
+$H^j(\varphi_f\Q[2r+1])_0=\widetilde H^{j+2r}(F_0,\Q)$.
+Off the origin, the transverse functions are respectively the
+nondegenerate quadratic form $Q$ and the node $sQ$ with $Q$
+as a local coordinate. Their Milnor spheres give the two
+remaining assertions.
+\end{proof}
+
+These are atlas coefficients; the equivariant quotient also
+retains its stabilizer directions. The gauge complex has the
+relative infinitesimal action of $\mathbb G_m$ in addition to
+the displayed critical
+equations.
+
+\subsubsection*{Supported comparison equations}
+
+Fix a dg model of the supported coefficient category and two
+uncurved $A_\infty$ algebras $A,B$ in it. Put $sA=A[1]$ and
+$sB=B[1]$, and write $b_A,b_B$ for their degree-one bar
+coderivations. A comparison has Taylor components $F_n$ of
+degree zero satisfying $b_BF=Fb_A$. With the components below
+arity $n$ fixed, set
+\[
+ \mathcal H_n=\operatorname{Hom}_{\mathrm{supp}}
+             ((sA)^{\otimes n},sB),\qquad
+ R_n=(b_BF_{<n}-F_{<n}b_A)_n.
+\]
+The tensor and Hom here retain the specified support and diagram
+conditions. The Hom differential is
+$\partial H=b_{B,1}H-(-1)^{|H|}Hb_{A,1}$, where the source
+has its tensor differential.
+
+\begin{proposition}[The next comparison component]
+\label{hall:prop:supported-residual}
+If all lower arity equations hold, then $\partial R_n=0$.
+The next component exists exactly when
+$[R_n]=0\in H^1(\mathcal H_n)$, and it solves
+$\partial F_n=-R_n$. If
+$\partial h+h\partial=1-P$ is a contraction onto closed
+cohomology representatives and $PR_n=0$, one solution is
+$F_n=-hR_n$. Solutions modulo boundaries, with the lower
+components fixed, form a torsor under $H^0(\mathcal H_n)$.
+\end{proposition}
+
+\begin{proof}
+For $D=b_BF-Fb_A$, the square-zero identities give
+$b_BD+Db_A=0$. Its arity-$n$ part is $\partial R_n=0$
+because all lower defects vanish. Adding $F_n$ changes the
+defect by $\partial F_n$, giving the stated obstruction and
+solution. Differences of solutions are degree-zero cycles;
+homotopies fixing the lower components add boundaries.
+\end{proof}
+
+For the compact comparison, these equations must hold on the
+whole collision coefficients. Already the complex
+$\C[s]e\to\C[s]$, with $|e|=-1$ and $de=s$, has
+$H^0=\C[s]/(s)$ although it becomes contractible after
+inverting $s$. A primitive containing $s^{-1}$ therefore does
+not solve the equation on the collision. At four inputs,
+\eqref{hall:eq:cut-support} also retains the crossed-pair support.
+
+\subsubsection*{Local and horizontal support}
+
+For a coherent sheaf on $X$, call its support \emph{local over $E$}
+when its image under $p_E:X\to E$ is finite, and \emph{wrapped}
+when that image is all of $E$. Properness and irreducibility of $E$
+give these alternatives for a nonempty support. The fibre sheaves
+$i_*L_i$ above are local. In a short exact sequence, the middle
+support is the union of the two endpoint supports. Hence an
+extension is local precisely when both endpoints are local.
+
+\begin{proposition}[Effective elliptic degree]
+\label{prop:positive-elliptic-degree-projects}
+\label{lem:wrapped-projection-obstruction}
+Let $Z=\sum_i m_i[C_i]$ be an effective one-cycle on $X$, with
+$m_i>0$. Write $(p_E)_*Z=b[E]$. Then $b>0$ if and only if some
+$C_i$ dominates $E$, in which case $p_E(|Z|)=E$.
+For a coherent sheaf of support dimension at most one, its
+fundamental one-cycle has $b=0$ precisely when its support is local
+over $E$.
+\end{proposition}
+
+\begin{proof}
+Each proper irreducible curve maps either to a point, contributing
+zero, or onto $E$, contributing its positive degree. Positivity of
+the multiplicities prevents cancellation. Zero-dimensional support
+adds only finitely many image points.
+\end{proof}
+
+\begin{corollary}
+\label{cor:finite-support-ranE-misses-s}
+A sheaf with positive effective elliptic degree is not supported
+over any finite configuration in $E$. Finite-support sheaf moduli
+alone therefore do not contain that geometric sector.
+\end{corollary}
+
+This is a statement about support of sheaves. A factorization
+algebra on $E$ can carry other labels or act on additional modules;
+the proposition does not prohibit such constructions. It also does
+not identify $b$ with an exponent of the Igusa product.
+
+\begin{definition}[Geometric degree at a bounded stage]
+\label{def:geometric-elliptic-degree-map}
+Choose a bounded family of coherent sheaves, a finite set of charges
+$\Gamma_R$, and the extension stacks to be used at that stage.
+On the sector of support dimension at most one set
+$b_R^{\mathrm{geom}}(A)=\deg(p_E)_*\operatorname{cyc}_1(A)$.
+On a larger coherent-sheaf sector one may instead fix an ample $H$
+on $S$ and an integer $n$ for which every generic-fibre sheaf
+$A|_{S_{\C(E)}}(nH)$ in the chosen family is generated by sections
+and has no higher cohomology. Set
+\[
+ b_{R,n}^{\mathrm{geom}}(A)
+ =\operatorname{rk}Rp_{E*}(A\otimes p_S^*\mathcal O_S(nH)).
+\]
+The regularity condition and a common choice of $n$ are part of this
+larger-domain construction. We write $b_R^{\mathrm{geom}}$ for the
+chosen degree when its domain is fixed.
+\end{definition}
+
+The existence of sufficiently large twists is the relative Serre
+and global-generation statement; a common bound must hold on the
+chosen families \cite[Tags~0B5S and~01PR]{StacksProject}. The degree
+is additive on their Grothendieck classes. On the larger domain it
+is the generic-fibre Euler characteristic, which by the regularity
+hypothesis equals the dimension of global sections. It is
+nonnegative, and it is zero precisely when that generic-fibre sheaf
+is zero. Since the sheaf is generated by its sections, this is
+precisely the local-support condition. On the one-dimensional
+support sector the generic fibre has finite length, so the two
+definitions agree and do not depend on $n$.
+
+\begin{definition}[Additive support data]
+\label{def:geometric-elliptic-degree-additivity-datum}
+The charges of every permitted short exact sequence must satisfy
+$\gamma_C=\gamma_A+\gamma_B$. A degree on these charges is
+additive support data when it represents the chosen geometric
+degree of each object and satisfies
+\[
+ b_R^{\mathrm{geom}}(\gamma_A+\gamma_B)
+ =b_R^{\mathrm{geom}}(\gamma_A)+b_R^{\mathrm{geom}}(\gamma_B),
+ \qquad b_R^{\mathrm{geom}}(0)=0.
+\]
+Only operations whose endpoint, intermediate and total charges are
+present are included at a bounded stage.
+\end{definition}
+
+\begin{proposition}[Support and addition]
+\label{prop:geometric-elliptic-degree-additivity-criterion}
+Both constructions in Definition~\ref{def:geometric-elliptic-degree-map}
+are additive on the stated coherent-sheaf domains. Consequently the
+support types obey
+$\mathrm L\mathrm L=\mathrm L$, whereas a product involving a
+wrapped input has type $\mathrm W$.
+\end{proposition}
+
+\begin{proof}
+Fundamental cycles are additive for short exact sequences of
+sheaves of dimension at most one. For the second construction,
+derived pushforward is additive in the Grothendieck group and rank
+is additive. The support characterization just proved gives the
+type rule. The direct support-union argument gives the same rule
+without choosing a numerical degree.
+\end{proof}
+
+The regularity hypothesis matters. For a line bundle $L_i$ and
+the polarization $H$ of the common-polynomial triple,
+$\chi(S,L_i(nH))=4n^2-2$. Thus the horizontal sheaf
+$L_i\boxtimes\mathcal O_E$ has that generic Euler characteristic,
+which is negative at $n=0$. It becomes a nonnegative rank only on
+the acyclic, generated range. A virtual perfect-complex class can
+also have cancellations, so effectiveness must not be inferred
+from its numerical degree alone.
+
+\subsubsection*{The configuration and family spaces}
+
+For a finite set $I$, a labelled configuration is a tuple
+$\mathbf e\in E^I$. Let $Z_I\subset E\times E^I$ be the union of
+the graphs of its coordinates. A closed local incidence stack at
+fixed thickness $N$ parametrizes a flat family $A$ with
+\[
+ \mathcal I_{S\times Z_I}^{N}A=0.
+\]
+We denote it by $\mathfrak M^{\mathrm{loc,cl}}_{\gamma,R,I,N}$.
+Keeping $N$ retains infinitesimal support at collisions. Set-theoretic
+support in $Z_I$ does not impose thickness one. A bounded choice of
+$N$, or the specified filtered system in $N$, is included whenever
+these incidence stacks are used.
+
+Thickness also enters extension closure. If the same ideal kills
+the two endpoints to powers $N_A$ and $N_B$, it kills the middle
+sheaf to power $N_A+N_B$: its $N_A$-th power sends the middle
+sheaf into the subobject, and the next $N_B$ powers kill that
+subobject. Thus collision and extension maps must use compatible
+thickness bounds, rather than assume that one fixed bound is
+closed under all extensions.
+
+\begin{definition}[Wrapped families and scalar rigidification]
+\label{def:e-equivariant-wrapped-prequotient-stack}
+Let $\mathcal M^{\mathrm{wr}}_{\eta,R}$ be a chosen algebraic
+stack of wrapped sheaves. When its scalar subgroup can be
+rigidified, write
+\[
+ \rho_{\eta,R}:\mathcal M^{\mathrm{wr}}_{\eta,R}
+ \longrightarrow\mathcal M^{\mathrm{wr,rig}}_{\eta,R}.
+\]
+The map removes the central scalar automorphisms. It is directed
+from the original stack to the rigidified stack. Elliptic
+translation has not been divided out. A coefficient or universal
+object on the rigidification requires descent along $\rho$;
+the universal sheaf on the original stack is not assumed to descend.
+\end{definition}
+
+\begin{lemma}[Translation on families]
+\label{lem:e-action-law-wrapped-prequotient}
+Support translation acts by
+$a\cdot A=(1_S\times\tau_a)_*A$, where $\tau_a(e)=e+a$,
+and gives a coherent $E$-action
+on the sheaf and flag stacks. It descends through a scalar
+rigidification compatible with this central subgroup.
+\end{lemma}
+
+\begin{proof}
+The equality $\tau_a\tau_b=\tau_{a+b}$ gives the composition
+isomorphism on sheaves and all their morphisms. Its associativity
+is the associativity of composition of translations. Scalar
+multiplication commutes with this action, so the universal property
+of rigidification gives the descended action.
+\end{proof}
+
+\begin{proposition}[Finite type after rigidification]
+\label{prop:wrapped-prequotient-finite-type}
+Suppose the chosen wrapped stack is finite type and its scalar
+rigidification is an algebraic $\mathbb G_m$-gerbe. Then the
+rigidified stack is finite type. No universal sheaf on it is implied.
+In particular, the finite-type premise holds for a finite open
+cover by specified finite-type semistable substacks. Finiteness of the
+numerical index set and boundedness of each substack are separate
+premises of this construction.
+\end{proposition}
+
+\begin{proof}
+The gerbe is smooth and surjective, and finite type over the base
+can be checked on such a cover. Descent of a particular sheaf is a
+separate condition on its scalar action and descent isomorphisms.
+The finite disjoint union of the open substacks is a smooth
+surjective finite-type cover, proving the additional assertion.
+\end{proof}
+
+\begin{definition}[A carrier for local and wrapped families]
+\label{def:hybrid-ran-prestack}
+\label{def:hybrid-ran-base}
+Choose the charge and moduli domains above. A presentation of the
+hybrid carrier consists of a finite labelled local configuration
+$(I,\alpha,\mathbf e)$ and a finite list of wrapped families
+$(W_j)_{j\in J}$ with charges $\eta_j$. Form the prestack colimit
+of
+\[
+ E^I\times\prod_{j\in J}\mathcal M^{\mathrm{wr}}_{\eta_j,R}
+\]
+over relabellings and local collision maps. Under a surjection
+$I\twoheadrightarrow I'$, the diagonal repeats coordinates and
+the new local colour is the sum of the colours in each fibre.
+Only defined charge sums occur. Denote this prestack by
+$\operatorname{Ran}^{\mathrm{hyb}}_{R,\mathrm{pre}}(E)$.
+Compatible scalar rigidifications can be used in this diagram when
+the required family and coefficient descent is supplied.
+\end{definition}
+
+The indexing category contains all specified finite presentations;
+it is not generally a finite category. A topology $\tau$ gives its
+stackification $a_\tau\operatorname{Ran}^{\mathrm{hyb}}_{R,\mathrm{pre}}(E)$.
+An operation or coefficient object on that stackification must
+satisfy descent. Neither taking the colimit nor stackifying defines
+a Hall coefficient system.
+
+\begin{definition}[Local and wrapped subcarriers]
+\label{def:hybrid-local-stratum-prestack}
+\label{def:hybrid-wrapped-stratum-prestack}
+The local subcarrier has $J=\varnothing$; the purely wrapped
+subcarrier has $I=\varnothing$. Mixed presentations have both.
+When the geometric degree is defined on the chosen domain, its
+charge types are
+\begin{equation}
+\label{eq:hybrid-loc-wr-windows}
+ \Gamma_R^{\mathrm{loc}}=\{\gamma:b_R^{\mathrm{geom}}(\gamma)=0\},
+ \qquad
+ \Gamma_R^{\mathrm{wr}}=\{\gamma:b_R^{\mathrm{geom}}(\gamma)>0\}.
+\end{equation}
+The local incidence stacks and the critical sheaves placed over
+these carriers are additional objects, not part of their points.
+\end{definition}
+
+A wrapped family is retained as a family, with its automorphisms.
+Replacing it by its degree or by a single point of $E$ would discard
+that information. The ordered extension diagrams below retain still
+more information: which object is a subobject and which is a quotient.
+
+\subsubsection*{Ordered extensions and proper targets}
+
+We use quotient-first input order. Thus
+$\mathfrak E_{\alpha,\beta}$ parametrizes short exact sequences
+\[
+ 0\longrightarrow B_\beta\longrightarrow C_{\alpha+\beta}
+ \longrightarrow A_\alpha\longrightarrow0,
+\]
+with endpoint map $p(C)=(A,B)$ and middle-object map $q(C)=C$.
+All sheaves, maps and configuration parameters belong to the chosen
+domains. The charge set at height $R$ is only a window: a nonzero
+positive charge cannot lie in a finite set closed under all of its
+positive multiples. Operations at this stage are therefore partial,
+unless a separate quotient construction makes them total.
+
+\begin{definition}[The four binary correspondence types]
+\label{def:local-local-correspondence-datum}
+\label{def:mixed-local-wrapped-correspondence-datum}
+\label{def:wrapped-wrapped-correspondence-datum}
+Restrict the ordered extension stack to the indicated support types:
+\[
+ \begin{array}{c|c|c}
+ \text{type}&\text{endpoints }(A,B)&\text{middle object}\\ \hline
+ \mathrm{LL}&(A_{\mathrm L},B_{\mathrm L})&C_{\mathrm L}\\
+ \mathrm{LW}&(A_{\mathrm L},B_{\mathrm W})&C_{\mathrm W}\\
+ \mathrm{WL}&(A_{\mathrm W},B_{\mathrm L})&C_{\mathrm W}\\
+ \mathrm{WW}&(A_{\mathrm W},B_{\mathrm W})&C_{\mathrm W}.
+ \end{array}
+\]
+Local endpoints retain their closed configuration presentations and
+thicknesses. Wrapped endpoints retain their sheaf families. These
+are correspondences before elliptic quotient. Scalar rigidification
+is applied to a compatible whole diagram when such a diagram and
+its coefficient descent have been specified.
+\end{definition}
+
+\begin{proposition}[A proper coherent-sheaf domain]
+\label{prop:local-local-target-properness}
+Let $C$ be a flat family of coherent sheaves on the projective
+threefold $X$, over a base $T$. Fix the Hilbert polynomial of the
+quotient $A$. If all additional endpoint and support conditions
+cut out a closed subfunctor of $\operatorname{Quot}_T(C)$, then
+the corresponding middle-object map $q$ is proper over $T$.
+\end{proposition}
+
+\begin{proof}
+The relative Quot scheme with that polynomial is projective over
+$T$ \cite[Theorem~2.2.4]{HuybrechtsLehn}. Its universal quotient
+is flat, and its kernel is flat because
+$C$ is flat. The required sequences therefore form the stated
+closed subfunctor of a projective $T$-scheme, which is proper.
+Fixed annihilator conditions defining the local incidence spaces
+are imposed inside this Quot problem.
+\end{proof}
+
+\begin{proposition}[Mixed and wrapped target maps]
+\label{prop:mixed-local-wrapped-target-admissibility}
+\label{prop:wrapped-wrapped-target-admissibility}
+The same properness criterion holds for the mixed and wrapped
+coherent-sheaf correspondences, and for their finite flag versions.
+If instead the chosen conditions define only an open substack, the
+restriction of $q$ need not be proper. A product with ordinary
+critical cohomology is then available by this route only when the
+specific coefficient complex has proper support over the target,
+or another appropriate integration morphism has been constructed.
+\end{proposition}
+
+\begin{proof}
+Use the same relative Quot scheme, or its projective iterated flag
+version, and impose the closed conditions. An open subspace of a
+proper scheme need not be proper: $\mathbb A^1\subset\mathbb P^1$
+is an example. Thus mere openness of a stability condition gives
+no properness conclusion. The support alternative is exactly the
+condition identifying the relevant exceptional and ordinary
+pushforwards.
+\end{proof}
+
+In particular, ordinary Quot properness does not establish this
+criterion for all perfect complexes in a tilted heart. Such a heart
+needs its actual extension moduli and the corresponding properness
+or integration theorem. A bound on the number of numerical charges
+also does not prove that their moduli are finite type.
+
+\subsubsection*{Flags and their eight support words}
+
+A three-step ordered flag is written in descending order,
+\[
+ C=F^0\supset F^1\supset F^2\supset F^3=0,
+ \qquad A_i=F^{i-1}/F^i.
+\]
+This convention matches quotient-first multiplication.
+Every intermediate sheaf and its configuration belongs to the
+specified domain. For a partial charge window, both regroupings
+are compared only when all their intermediate charges are present.
+
+\begin{definition}[Binary support words]
+\label{def:eight-local-wrapped-binary-words}
+The support word of this flag is
+$(\epsilon_1,\epsilon_2,\epsilon_3)$, with
+$\epsilon_i=\mathrm L$ or $\mathrm W$ according to $A_i$.
+The eight possibilities are
+\[
+ \mathrm{LLL},\quad\mathrm{LLW},\quad\mathrm{LWL},\quad
+ \mathrm{WLL},\quad\mathrm{LWW},\quad\mathrm{WLW},\quad
+ \mathrm{WWL},\quad\mathrm{WWW}.
+\]
+Each block has type $\mathrm L$ exactly when all its factors do.
+The word specifies filtration order, not physical time order.
+\end{definition}
+
+\begin{proposition}[The two extension compositions]
+\label{prop:eight-two-step-flag-stacks}
+For each of the eight words, the two iterated extension
+correspondences are naturally equivalent to the stack of flags
+with those successive quotients. These equivalences commute with
+base change in the parameter scheme.
+\end{proposition}
+
+\begin{proof}
+For the first composition, take a sequence with quotient $C_{12}$
+and subobject $A_3$, together with a sequence expressing $C_{12}$
+as an extension of $A_1$ by $A_2$. The inverse image of $A_2$
+defines $F^1$, and $F^2=A_3$. For the other composition, take
+$F^1$ as the extension of $A_2$ by $A_3$ and then extend $A_1$
+by $F^1$. These constructions are inverse on families and their
+isomorphisms. Kernels, inverse images and the indicated quotients
+commute with base change for these flat exact sequences. The
+support-union rule gives precisely the displayed word types.
+\end{proof}
+
+This is a geometric comparison of correspondences. To deduce an
+equality of operations, the two coefficient morphisms on that flag
+stack must agree. We state the needed coefficient framework before
+making that deduction.
+
+\subsubsection*{Coefficient maps and six operations}
+
+Fix a characteristic-zero coefficient field $k$; the rational
+constructions above use $k=\Q$.
+
+\begin{definition}[An admissible coefficient theory]
+\label{def:compact-support-exceptional-pushforward-model}
+Choose constructible derived categories $D_c(Y)$ on all spaces and
+stacks in the correspondence diagram. Require the six operations
+$f^*,Rf_*,Rf_!,f^!$, tensor product and internal Hom on the maps
+being used, with coherent composition, the needed Cartesian
+base-change isomorphisms and the projection formula. Each chosen
+coefficient and its image must remain in the stated categories.
+On quotient stacks this includes the full smooth or equivariant
+descent diagrams. Boundedness of cohomology or perfection is an
+additional condition whenever a finite dual or ordinary tensor
+product requires it.
+For a compactification $f=\overline f j$, with $j$ open and
+$\overline f$ proper, the exceptional image is
+$Rf_!K=R\overline f_*j_!K$. If $f$ is proper, take $j=1$
+and $\overline f=f$. Independence of this presentation is
+proved in Proposition~\ref{prop:finite-hall-product-qbang-compactification-independence}.
+\end{definition}
+
+Write $\mathcal M_\gamma$ for the chosen object stack and
+choose $K_\gamma\in D_c(\mathcal M_\gamma)$.
+For ordinary critical cohomology, a binary operation uses an
+integer source shift $\kappa(\alpha,\beta)$ and a coefficient morphism
+\begin{equation}
+\label{hall:eq:binary-coefficient-map}
+ u_{\alpha,\beta}:
+ p^*(K_\alpha\boxtimes K_\beta)[\kappa(\alpha,\beta)]
+ \longrightarrow q^!K_{\alpha+\beta},
+\end{equation}
+together with properness of the source coefficient's support
+over the target of $q$. This identifies its ordinary and
+exceptional pushforwards. Pullback on ordinary cohomology,
+then $Rq_!u$ and the trace, gives the product.
+A Thom--Sebastiani isomorphism on a
+product of critical charts contributes to $u$ only after its
+comparison with the extension diagram has been constructed.
+Appendix~\ref{app:hall-product} gives a theorem that constructs
+these morphisms on its unreduced moduli domain.
+More explicitly, a comparison
+$p^*(K_\alpha\boxtimes K_\beta)[\kappa]\simeq K_{\mathfrak E}$
+can be used when it is supplied together with
+$K_{\mathfrak E}\to q^!K_{\alpha+\beta}$. Their composite is
+$u_{\alpha,\beta}$. The first isomorphism alone does not supply
+the second arrow.
+
+\begin{proposition}[Base change and projection formula]
+\label{prop:mixed-correspondence-base-change}
+\label{prop:mixed-correspondence-projection-formula}
+In the chosen admissible coefficient theory, a Cartesian square
+with horizontal maps $f,f'$ and vertical maps $q,q'$ gives
+\[
+ f^*Rq_!K\simeq Rq'_!f'^*K,
+ \qquad
+ Rq_!(K\otimes q^*L)\simeq Rq_!K\otimes L.
+\]
+Consequently the pull--push functors of composable extension
+correspondences identify with the functor of their fibre-product
+correspondence. The coefficient morphisms themselves must be
+compatible with these identifications.
+\end{proposition}
+
+\begin{proof}
+Apply the base-change and projection-formula isomorphisms in the
+definition, then the composition isomorphism for exceptional
+pushforward. This compares the functors on their common domain;
+it makes no assertion that two independently chosen coefficient
+morphisms are equal.
+\end{proof}
+
+\begin{proposition}[Critical coefficient transport]
+\label{prop:mixed-correspondence-thom-sebastiani}
+Suppose oriented critical charts and their coefficient morphisms
+are compatible on the extension and flag diagrams. Their
+Thom--Sebastiani and hyperbolic comparison maps then define the
+morphisms \eqref{hall:eq:binary-coefficient-map} compatibly with
+base change and projection formula. This implication holds for
+local, mixed and wrapped correspondences on that domain.
+\end{proposition}
+
+\begin{proof}
+The chartwise morphisms are objects of the descent diagram for
+morphisms of constructible complexes. Their specified overlap
+homotopies glue them. Naturality of the six operations transports
+the base-change and projection-formula comparisons through this
+descent. The critical Hall theorem supplies one such coherent
+system under its own hypotheses; an arbitrary orientation line
+alone does not supply the morphisms.
+\end{proof}
+
+\begin{proposition}[Associativity for the eight words]
+\label{prop:lll-associativity}
+\label{prop:llw-associativity}
+\label{prop:lwl-associativity}
+\label{prop:wll-associativity}
+\label{prop:lww-associativity}
+\label{prop:wlw-associativity}
+\label{prop:wwl-associativity}
+\label{prop:www-associativity}
+Assume that the two composites of the maps $u$ agree on each
+three-step flag stack, including their shifts and orientation
+identifications. Then every defined triple product satisfies
+\[
+ m_{\alpha+\beta,\gamma}(m_{\alpha,\beta}\otimes1)
+ =m_{\alpha,\beta+\gamma}(1\otimes m_{\beta,\gamma})
+\]
+with the tensor associativity constraint determined by $\kappa$.
+\end{proposition}
+
+\begin{proof}
+Proposition~\ref{prop:eight-two-step-flag-stacks} identifies the
+two geometric compositions with one flag stack. Base change and
+projection formula identify the induced pull--push functors there.
+The assumed equality of coefficient morphisms makes their traces
+equal. This proves the displayed equation for all eight words.
+\end{proof}
+
+\begin{proposition}[Four-input coherence]
+\label{prop:four-input-pentagon-coherence}
+The geometric associators obtained by forgetting steps of a
+four-step flag satisfy the pentagon. If the coefficient
+comparisons are coherent on that flag diagram, their associators
+satisfy the same pentagon.
+Writing $a_{\alpha,\beta,\gamma}$ for reassociation from left
+to right, the identity is
+\[
+ a_{\alpha,\beta,\gamma+\delta}
+ a_{\alpha+\beta,\gamma,\delta}
+ =(1\otimes a_{\beta,\gamma,\delta})
+   a_{\alpha,\beta+\gamma,\delta}
+   (a_{\alpha,\beta,\gamma}\otimes1).
+\]
+\end{proposition}
+
+\begin{proof}
+Both paths around the pentagon identify a filtration with the
+same successive quotients and forget the same intermediate steps.
+The inverse-image and quotient constructions in the preceding
+proof agree under repeated subdivision. Applying a coherent
+coefficient functor preserves this equality.
+\end{proof}
+
+A pentagon for categorical associators controls reassociation in
+that category. It does not by itself provide all higher chain
+homotopies of an $A_\infty$ operation or all collision coherences
+of a factorization object.
+
+\begin{definition}[The coloured flag diagram]
+\label{def:higher-coloured-hybrid-tree-category}
+An ordered profile consists of finitely many local or wrapped
+inputs with their configuration and family data. A planar rooted
+tree records an iterated extension of that profile; each edge
+carries the sum of the charges below it and the corresponding
+support type. Vertices carry the indicated extension or flag
+correspondence. Grafting gives composition, and contracting an
+internal edge regroups a flag.
+A coherent coefficient system on this diagram specifies the
+operations and comparison homotopies on all finite trees, together
+with units, local relabellings, configuration refinements and
+overlap descent. Every requested coherence is on its actual
+configuration space, including collisions.
+The notation $\mathfrak o^{\mathrm{col}}_R=0$ abbreviates
+these tree, unit, symmetry, refinement, descent and overlap
+conditions. Each condition belongs to its own diagram; the
+notation does not assert that they form one cohomology class.
+\end{definition}
+
+\begin{proposition}[From coherent flags to operations]
+\label{prop:higher-coloured-residual-vanishing-criterion}
+A coherent coefficient system on the coloured flag diagram
+induces the corresponding associative or homotopy-coherent
+operations, with its specified units and local symmetries.
+The conclusion is restricted to the charge and support domain of
+that system.
+\end{proposition}
+
+\begin{proof}
+Compose the coefficient morphisms and their pull--push functors
+along each tree. Edge contraction gives the comparison between
+composites. The prescribed higher compatibilities are exactly the
+relations among these comparisons. The six-functor composition
+constraints transport them to the resulting operations.
+\end{proof}
+
+\subsubsection*{Units, disjoint support and insertion order}
+
+\begin{definition}[The zero-object correspondence]
+\label{def:hybrid-unit-object-vacuum-correspondences}
+Before elliptic quotient, the distinguished zero object has
+moduli stack $\mathrm{pt}$, empty support, and charge zero.
+Its two unit correspondences are
+\[
+ 0\longrightarrow A\xrightarrow{1}A\longrightarrow0\longrightarrow0,
+ \qquad
+ 0\longrightarrow0\longrightarrow A\xrightarrow{1}A\longrightarrow0.
+\]
+Choose the coefficient at zero and the comparison morphisms so
+that these correspondences induce the identity. Scalar
+rigidification of nonzero objects does not rigidify the zero
+object by a nonexistent scalar subgroup of its automorphisms.
+\end{definition}
+
+\begin{proposition}[Local and wrapped units]
+\label{prop:local-unit-compatibility}
+\label{prop:wrapped-unit-compatibility}
+With these unit coefficient identifications, both zero-endpoint
+operations are the identity on every local or wrapped coefficient
+object.
+\end{proposition}
+
+\begin{proof}
+Each displayed sequence is uniquely determined by $A$, including
+its morphisms. Both legs identify with the identity map on its
+moduli stack. The coefficient comparison and the trace are then
+the stipulated identity maps.
+\end{proof}
+
+\begin{proposition}[Local symmetry and configuration descent]
+\label{prop:local-configuration-symmetric-descent}
+Sheaves with disjoint supports over $E$ have vanishing mutual Ext
+groups. Their extension correspondence is the direct-sum
+correspondence. If its oriented coefficient comparison is the
+external-product comparison, the local operation on disjoint
+configurations is symmetric with the coefficient category's
+Koszul signs. A coefficient object on the unlabelled carrier
+requires compatible equivariant descent under relabellings and
+under the specified collision refinements.
+For a colour-preserving permutation, this is equivariant descent
+under
+$\mathfrak S_\alpha=\{\sigma\in\operatorname{Aut}(I):
+\alpha_{\sigma(i)}=\alpha_i\}$.
+The corresponding quotient is
+$[\mathfrak M^{\mathrm{loc,cl}}_{\alpha,R,I,N}/\mathfrak S_\alpha]$;
+its coefficient includes the full equivariant identifications.
+\end{proposition}
+
+\begin{proof}
+All local Ext sheaves between disjoint closed supports vanish,
+so their global Ext groups vanish. The extensions split uniquely
+relative to their endpoints. Permuting the summands is compatible
+with their product charts and external tensor products, giving
+the stated symmetry. On labelled charts the descent is the full
+equivariant diagram; collision maps require its additional
+refinement comparisons.
+Explicitly, a relabelling $\sigma:I\to I'$ sends
+$(\alpha_i,e_i)$ to
+$(\alpha_{\sigma^{-1}(i')},e_{\sigma^{-1}(i')})$.
+It identifies the graph unions $Z_I,Z_{I'}$, preserves the
+annihilator condition at thickness $N$, and leaves the sheaf
+itself unchanged. Its induced coefficient isomorphisms must
+satisfy the permutation composition law before quotient descent.
+\end{proof}
+
+In particular, summing independently over every $E^I$ would count
+the same collision configurations repeatedly. A coefficient system
+on the carrier uses the actual colimit and its compatible maps,
+or an equivalent descent construction, rather than an unrelated
+direct sum over all finite labels.
+On a permitted collision, the one-label presentation and the
+two-coincident-label presentation are identified by descent.
+A direct sum over their label sets keeps two independent copies.
+
+\begin{proposition}[Ordered wrapped insertions]
+\label{prop:wrapped-insertion-order-conventions}
+For overlapping supports, exchanging two inputs changes which
+one is the subobject. The corresponding extension stacks need
+not be identified. Planar order must therefore be retained unless
+a specified symmetry or braiding compares the two operations.
+\end{proposition}
+
+\begin{proof}
+The exchanged correspondence parametrizes
+$0\to A\to C'\to B\to0$, whereas the original parametrizes
+$0\to B\to C\to A\to0$. They involve opposite Ext groups and
+have no natural identification from the definition of an
+extension. The disjoint-support splitting argument does not
+apply when those groups are nonzero.
+\end{proof}
+
+\begin{definition}[Two-sided mixed insertions]
+\label{def:two-sided-mixed-correspondence-datum}
+A two-sided mixed correspondence is the flag stack with ordered
+successive quotients $(A_-,W,A_+)$, where the first and last
+objects have local support and $W$ is wrapped. Collections of
+local inputs may replace $A_-$ and $A_+$, with their original
+orders and configurations retained. Forgetting the left or right
+steps gives the one-sided mixed correspondences.
+\end{definition}
+
+
+\subsubsection*{Elliptic quotient over a common torsor}
+
+Let $BE$ denote the stack of $E$-torsors, and let $Y$ be a stack
+with an $E$-action. A point of $[Y/E]$ over
+$T$ is an $E$-torsor $P\to T$ together with an equivariant map
+$P\to Y$. The map $[Y/E]\to BE$ remembers $P$.
+For the unrigidified sheaf stacks put
+$\mathcal Q_\gamma=[\mathcal M_\gamma/E]$ and
+$\mathcal H_{\alpha,\beta}=[\mathfrak E_{\alpha,\beta}/E]$,
+using simultaneous translation of the exact sequence.
+
+\begin{proposition}[Common-torsor Hall spans]
+\label{hall:prop:common-torsor}
+There is a natural equivalence
+\[
+ \mathcal Q_\alpha\times_{BE}\mathcal Q_\beta
+ \simeq[(\mathcal M_\alpha\times\mathcal M_\beta)/E_{\mathrm{diag}}].
+\]
+The extension diagram descends to a relative span
+\[
+ \mathcal Q_\alpha\times_{BE}\mathcal Q_\beta
+ \longleftarrow\mathcal H_{\alpha,\beta}
+ \longrightarrow\mathcal Q_{\alpha+\beta}.
+\]
+Its iterated compositions are identified by the same flag
+constructions, and its relative zero-object unit is $BE$.
+\end{proposition}
+
+\begin{proof}
+An object of the fibre product consists of two torsors, their
+families, and an isomorphism between the torsors. Transport one
+family across this isomorphism. Both families now live on one
+torsor; this is an object of the diagonal quotient. Repeating that
+torsor in the two factors gives the inverse equivalence on objects
+and arrows, compatibly with base change.
+
+An equivariant extension on the common torsor has equivariant
+endpoints and middle object. Thus the extension span descends.
+The inverse-image and quotient constructions for flags are
+translation equivariant, so they identify its two compositions.
+Regroupings of longer flags forget the same steps. The zero
+object is fixed by translation and has quotient
+$[\mathrm{pt}/E]=BE$. Extensions with zero give the relative
+unit identities.
+\end{proof}
+
+\begin{definition}[Quotients of correspondence diagrams]
+\label{def:quotient-after-correspondence-pseudofunctor}
+For an $E$-equivariant correspondence
+$Y_0\leftarrow Z\to Y_1$, assign the span
+$[Y_0/E]\leftarrow[Z/E]\to[Y_1/E]$ over $BE$.
+Composition uses relative fibre products over the middle quotient.
+Denote this assignment on the chosen diagrams by
+$\mathcal Q^{\mathrm{corr}}_{E,R}$.
+It is a quotient of diagrams, not a cosection reduction of
+obstruction complexes.
+For a coefficient realization of this assignment,
+$\mathfrak o^Q_R=0$ will mean compatibility with composition,
+base change, the critical coefficient maps, flag refinement,
+the chosen cohomology realization, operation comparison and
+transitions. Its components are defined only after the maps
+in question have been supplied.
+\end{definition}
+
+\begin{proposition}[Composition and Cartesian squares]
+\label{prop:quotient-after-correspondence-preserves-composition}
+\label{prop:quotient-after-correspondence-preserves-base-change}
+For equivariant maps $Z\to Y\leftarrow W$,
+\[
+ [(Z\times_Y W)/E]
+ \simeq[Z/E]\times_{[Y/E]}[W/E].
+\]
+These equivalences preserve the composition and base-change
+squares of the correspondence diagrams and all their flag
+refinements.
+\end{proposition}
+
+\begin{proof}
+A point on the right gives a common torsor after transporting
+across its specified isomorphism. The equality of the two maps
+to $Y$ is then exactly an equivariant point of $Z\times_Y W$.
+This construction and its inverse commute with pullback and with
+forgetting a stage of a longer diagram. The resulting
+associativity identifications are therefore coherent.
+\end{proof}
+
+\begin{proposition}[What independent quotients forget]
+\label{prop:quotient-after-correspondence-excludes-quotient-first}
+Replacing $\mathcal Q_\alpha\times_{BE}\mathcal Q_\beta$ by
+$\mathcal Q_\alpha\times\mathcal Q_\beta$ discards the
+identification of their torsors. It is not generally an equivalent
+input stack. A construction directly on quotient stacks is valid
+when it retains this relative input and its coefficient maps.
+\end{proposition}
+
+\begin{proof}
+Take two copies of $E$ with the translation action. Their diagonal
+quotient is $E$, represented by the difference of the two
+coordinates. Each independent quotient $[E/E]$ is a point, so
+the product of independent quotients is a point. The difference
+coordinate is lost. The common-torsor fibre product retains it
+by Proposition~\ref{hall:prop:common-torsor}.
+\end{proof}
+
+Thus the obstruction is to forgetting the common torsor, not to
+working with quotient stacks. The relative construction already
+gives the correct quotient correspondence. Obtaining a reduced
+critical operation on it still requires reduced coefficients and
+their comparison maps.
+
+\subsubsection*{Coefficient descent and its variance}
+
+For an $E$-stack $Y$, a descended coefficient consists of
+$\overline K_Y\in D_c([Y/E])$ and its coherent pullback
+identification with $K_Y$ on $Y$. Equivalently it is an object
+of the full descent diagram on the action groupoid
+$E^\bullet\times Y$. This includes the higher compatibility
+maps; an isomorphism on $E\times Y$ without its cocycle data is
+insufficient. If critical coefficients are normalized perversely,
+the smooth-atlas dimension shifts are included in the stated
+identification.
+
+\begin{proposition}[Descent of the critical comparisons]
+\label{prop:quotient-after-correspondence-preserves-thom-sebastiani}
+Suppose all coefficient objects, binary morphisms and their flag
+homotopies form a compatible equivariant descent diagram.
+Then they descend to the quotient correspondence diagram, with
+its relative input over $BE$. Their base-change, projection and
+Thom--Sebastiani comparisons descend with them.
+\end{proposition}
+
+\begin{proof}
+The constructible category on the quotient is the totalization
+of its equivariant descent categories. The supplied morphisms and
+homotopies define a morphism in this totalization. The functorial
+comparison diagrams are equivariant by hypothesis, so they define
+the corresponding diagrams after totalization. This uses the
+full descent data; forgetting to the underlying complex on $Y$
+is not a fully faithful test for all equivariant derived morphisms.
+\end{proof}
+
+The translation quotient is not automatically within the
+critical Hall theorem's moduli hypotheses. For example, its
+relative zero has stabilizer $E$, which is not affine, whereas
+Theorem~\ref{thm:hall-product} assumes affine stabilizers.
+Moreover, removing an orbit and its dual obstruction direction
+requires the reduced critical construction, not just the quotient
+of the classical stack.
+
+Fix a Verdier duality functor $\mathbb D_Y$ in the chosen
+coefficient theory. A useful dual compact-support convention is
+\[
+ \mathbb B(Y;K):=R\operatorname{Hom}(R\Gamma_c(Y,K),k).
+\]
+When duality applies it is $R\Gamma(Y,\mathbb D_YK)$.
+For $K=k_Y$, this is the usual dualizing-complex description of
+Borel--Moore chains, with its indicated cohomological indexing.
+Crucially, it is contravariant in $K$.
+
+\begin{proposition}[Dual coefficients on the quotient]
+\label{prop:quotient-after-correspondence-borel-moore-chain-functor}
+When the indicated functors exist, the descended coefficient gives
+$\mathbb B([Y/E];\overline K_Y)$. A morphism $f:K\to L$ induces
+\[
+ \mathbb B(Y;L)\longrightarrow\mathbb B(Y;K),
+\]
+and duality reverses composition. An operation obtained by dualizing a
+compact-support operation must therefore reverse its coefficient
+arrows. Identification of dual tensor products additionally
+requires the stated finiteness or completed-tensor hypothesis.
+\end{proposition}
+
+\begin{proof}
+Apply $R\operatorname{Hom}(-,k)$ to the morphism
+$R\Gamma_c(Y,K)\to R\Gamma_c(Y,L)$.
+For $K\xrightarrow fL\xrightarrow gM$, the resulting map is
+$f^\vee g^\vee=(gf)^\vee$. The tensor-duality identification is
+valid for perfect complexes; outside that domain its completion
+or replacement must be specified. Descent gives the quotient
+coefficient object before this duality is taken.
+\end{proof}
+
+This does not produce a natural map from nonequivariant chains on
+$Y$ to chains on $[Y/E]$, nor an equivalence between them. Their
+coefficient and stabilizer information differs. In particular,
+finite type of a stack does not imply finite-dimensional
+cohomology: already $H^*(B\mathbb G_m,\Q)=\Q[c]$ is unbounded.
+
+\begin{proposition}[Comparison of operations]
+\label{prop:quotient-after-correspondence-theta-mu-comparison}
+\label{prop:quotient-after-correspondence-theta-mu-associativity}
+\label{prop:quotient-after-correspondence-theta-mu-coproduct}
+Suppose a coefficient realization $Q_{E,R}$ of the equivariant
+correspondence diagram is supplied, together with natural
+comparisons
+\[
+ \theta_{\mu,R}:Q_{E,R}\mu_R
+       \xrightarrow{\ \sim\ }\overline\mu_RQ_{E,R}^{\otimes n}
+\]
+for its $n$-input operations. The tensor on the quotient side is
+the specified relative tensor. If these comparisons commute with
+flag refinement, they preserve associativity. If they also
+commute with the separate collision diagrams, they preserve the
+specified coproduct and its compatibilities.
+\end{proposition}
+
+\begin{proof}
+Use the comparison to replace each operation in either composite.
+Naturality and the assumed flag compatibility identify the two
+replacements with the comparison for the common longer flag.
+The same argument on the collision diagram proves the coproduct
+assertion. A coproduct comparison is used only after that
+coproduct has been defined.
+\end{proof}
+
+\begin{proposition}[Primitives and transitions under comparison]
+\label{prop:quotient-after-correspondence-theta-mu-primitives}
+\label{prop:quotient-after-correspondence-hn-transition-compatibility}
+An operation-preserving comparison of coaugmented counital
+coalgebras maps primitive elements to primitive elements. To
+identify their primitive objects, an equivalence or a suitable
+kernel-preservation property is required. Comparisons at two
+bounded stages commute with transition only when the coefficient
+maps and their natural transformations satisfy that transition
+square.
+\end{proposition}
+
+\begin{proof}
+Apply the comparison to
+$\Delta x=1\otimes x+x\otimes1$ and use preservation of the
+coaugmentation and coproduct. This proves preservation of
+primitive elements. Equality with the whole target kernel needs
+more than an inclusion, hence the stated additional hypothesis.
+The transition assertion follows by composing the supplied
+commuting squares. None is implied by the existence of the maps
+on isolated stages.
+\end{proof}
+
+\subsubsection*{Anchors retain less than families}
+
+An anchor is auxiliary data for recording a family's position or
+spectral invariants. It is not needed to define the common-torsor
+quotient. For a perfect family $A$, normalize its determinant
+pushforward to degree zero:
+\[
+ \lambda^{\det}(A)=\det Rp_{E*}A\otimes\mathcal O_E(-\chi(A)0_E)
+ \quad\text{in }\operatorname{Pic}^0(E)\simeq E.
+\]
+Proposition~\ref{prop:determinant-anchor-translation-weight} gives
+$\lambda^{\det}(a\cdot A)=\lambda^{\det}(A)+\chi(A)a$.
+For $\chi\ne0$, base change along $[\chi]:E\to E$ gives a
+weight-one anchor and a finite residual $E[|\chi|]$-quotient,
+as constructed in Proposition~\ref{k3:prop:anchor-cover}.
+For $\chi=0$, this determinant is translation invariant.
+
+\begin{definition}[Anchor data on a correspondence]
+\label{def:source-target-anchor-memory-datum}
+Given chosen anchor maps on the object stacks, retain their
+pullbacks from every endpoint, intermediate object and middle
+object of an extension or flag. If a proposed anchor comparison
+identifies or composes these values, specify that morphism and
+its compatibility with flag refinement before passing to a
+quotient. The original families remain part of the correspondence.
+\end{definition}
+
+For semistable degree-zero vector bundles on $E$, the
+Jordan--H\"older divisor
+$\Lambda(V)=\sum_i[L_i]\in\operatorname{Sym}^r\operatorname{Pic}^0(E)$
+has Abel sum $\det V$. It distinguishes
+$\mathcal O_E^{\oplus2}$ from $L\oplus L^{-1}$ for nontrivial
+$L$. But translations preserve each degree-zero line's
+isomorphism class, hence preserve $\Lambda(V)$.
+This spectral invariant does not repair orbit separation on a
+free translation orbit.
+
+\begin{definition}[Requirements on a chosen anchor comparison]
+\label{def:finite-anchor-residual}
+An anchor comparison specifies its actual target, its definition
+on families, its translation weight, and any relation to the
+determinant. To replace a family parameter by that target one
+must additionally identify the resulting kernel equivalence
+relation. Compatibility with extensions and transitions is imposed
+as a commutative diagram. Divisor union applies to extensions of
+semistable degree-zero elliptic bundles, where their
+Jordan--H\"older factors concatenate; it is not imposed on arbitrary
+perfect pushforwards.
+Write $\mathfrak o^\lambda_R=0$ for existence of these maps,
+their stated translation weight, their prescribed kernel
+equivalence relation, extension compatibility, and transition
+compatibility. These are conditions on the chosen maps, with
+the zero-weight obstruction below still in force.
+\end{definition}
+
+\begin{proposition}[The zero-weight obstruction]
+\label{prop:first-window-anchor-residual-vanishing-criterion}
+On a nontrivial translation orbit, a translation-invariant
+spectral datum cannot determine an $E$-valued anchor of weight
+one. In particular this applies to the degree-zero
+Jordan--H\"older divisor. On the nonzero-$\chi$ locus the
+determinant cover instead gives the weight-one construction,
+with its finite stabilizer descent still to be specified.
+\end{proposition}
+
+\begin{proof}
+A function of an invariant datum has the same value on $A$ and
+$a\cdot A$. Weight one requires those values to differ by $a$.
+For $a\ne0$ these statements contradict one another. The
+nonzero-weight assertion is the explicit isogeny construction
+already cited. This rules out the stated invariant replacement,
+not every possible anchor construction.
+\end{proof}
+
+\subsubsection*{Geometric degree and automorphic degree}
+
+The normal-ordered charge map
+$\overline\Pi_X:\widehat\Gamma\to\Lambda_{II}^{2,1}$ is additive on
+its specified charge carrier. Write
+$\overline\Pi_X(\gamma)=(n,\ell,m)$ and
+$m^{\mathrm{Bch}}=\operatorname{pr}_3\overline\Pi_X$.
+The integer $m^{\mathrm{Bch}}$ is a root or trace grading. The
+geometric degree $b_R^{\mathrm{geom}}$ measures support over $E$.
+
+\begin{definition}[A comparison of degree maps]
+\label{def:geometric-borcherds-degree-comparison-datum}
+A comparison specifies a domain of geometric charges and the
+maps from that domain to the two grading groups. Any equality
+between the two degrees is stated on that domain and checked
+against addition on its permitted extensions. An affine shift
+in a scalar generating series is recorded separately from an
+additive charge map.
+\end{definition}
+
+\begin{proposition}[An affine shift is not additive]
+\label{prop:geometric-borcherds-degree-separation}
+If $b$ and $m$ are additive on two charges and their sum, then
+$b=m+1$ cannot hold on all three. It may still describe the
+absolute indexing of selected coefficients in a generating
+series.
+\end{proposition}
+
+\begin{proof}
+If the equality holds on $\alpha$ and $\beta$, then
+$b(\alpha+\beta)=m(\alpha)+m(\beta)+2
+=m(\alpha+\beta)+2$, rather than $m(\alpha+\beta)+1$.
+\end{proof}
+
+For example, a scalar series written in $s^{d-1}$ has an exponent
+$m=d-1$. The shift accounts for its prefactor. It cannot be used
+unchanged as an additive degree law for Hall extensions.
+
+\begin{proposition}[The three simple wall labels]
+\label{prop:middle-type-ii-wall-wrapped-mixed}
+\label{prop:type-ii-walls-hybrid-operation-recovery}
+The simple type-II wall images are
+\[
+ (1,1,0),\qquad(0,1,1),\qquad(0,-1,0).
+\]
+Suppose three actual sheaf classes have these images under
+$\overline\Pi_X$, and suppose their geometric elliptic degrees
+are respectively $1,2,1$. Then all three classes have wrapped
+support. Local insertions against them use mixed correspondences,
+and insertions on both sides use the ordered two-sided flag.
+\end{proposition}
+
+\begin{proof}
+The wall images are Proposition~\ref{prop:type-ii-wall-images}.
+The assumed positive geometric degrees give wrapped support by
+Proposition~\ref{prop:positive-elliptic-degree-projects}, or by
+the specified larger-domain degree construction. The definitions
+of the mixed correspondences then give the stated profiles.
+The degrees $1,2,1$ agree with $d=m+1$ on these three selected
+labels; the previous proposition prevents extending that affine
+rule to all their sums as an additive identification.
+\end{proof}
+
+\begin{proposition}[Wall labels after quotient]
+\label{prop:type-ii-walls-survive-e-quotient}
+\label{prop:no-type-i-wall-enters-hybrid-carrier}
+Translation preserves the numerical charges, so the common-torsor
+quotient preserves the three selected type-II labels and their
+mixed profiles. It introduces no further divisor wall. The
+type-I reflections act by the chamber permutations described in
+Lemma~\ref{lem:bkm-chamber-s3}. Their reflecting vectors are
+$f_{-2}-f_2$, $f_2-f_3$ and $f_{-2}-f_3$; they do not become type-II
+divisor roots under this quotient.
+\end{proposition}
+
+\begin{proof}
+Translation is connected to the identity and preserves numerical
+classes. Quotienting the same object and flag stacks consequently
+retains their labels. The two root types have the different
+ambient divisibilities and divisor orders stated in
+Remark~\ref{rem:bkm-divisibility-types}. An elliptic quotient
+changes neither the reference lattice nor these divisor orders.
+This conclusion concerns the selected wall classes; it neither
+constructs their sheaf representatives nor exhausts every
+possible geometric charge.
+\end{proof}
+
+
+\subsubsection*{Protected integration is a further map}
+
+The coefficient object is not determined by its Euler
+characteristic. A scalar invariant requires a specified functional
+on that object, and compatibility with Hall multiplication requires
+an equation for the functional on extension correspondences.
+
+\begin{definition}[Protected integration at a bounded stage]
+\label{def:finite-protected-integration-datum}
+Let $\mathcal H_R=\bigoplus_{\gamma\in\Gamma_R}\mathcal H_{\gamma,R}$
+be a chosen reduced coefficient realization, with the operations
+already constructed on its charge domain. Choose a target complex
+$T_R=\bigoplus_\gamma(T_R)_\gamma$ and degree-zero chain maps
+\[
+ I_{\gamma,R}^{\mathrm{prot}}:
+ \mathcal H_{\gamma,R}\longrightarrow(T_R)_\gamma.
+\]
+Their sum is $I_R^{\mathrm{prot}}$. A scalar-labelled target has
+$(T_R)_\gamma=k e_{\omega_R(\gamma)}$ in degree zero; the label
+map $\omega_R$ and its relation to $\overline\Pi_X$ must be
+specified. A finite charge window carries only those target
+products that are defined on the window, unless a separate
+algebra quotient has been proved to exist.
+\end{definition}
+
+\begin{proposition}[The integration equations]
+\label{prop:protected-integration-definition}
+\label{prop:protected-integration-product-compatibility}
+\label{prop:protected-integration-coproduct-compatibility}
+The finite sum above is a chain map. It preserves the specified
+multiplication precisely when, on every permitted pair,
+\[
+ I_R^{\mathrm{prot}}m_R
+ =m_{T,R}(I_R^{\mathrm{prot}}\otimes I_R^{\mathrm{prot}}).
+\]
+If source and target also have specified coproducts, preservation
+of them is the additional equation
+\[
+ \Delta_{T,R}I_R^{\mathrm{prot}}
+ =(I_R^{\mathrm{prot}}\otimes I_R^{\mathrm{prot}})\Delta_R.
+\]
+The relevant shifts, tensor products and units are included in
+these equations. Neither equation follows from the existence of
+the individual functionals.
+\end{proposition}
+
+\begin{proof}
+A finite direct sum of chain maps is a chain map. The displayed
+identities are the algebra and coalgebra morphism conditions on
+each homogeneous component. Summing them gives the corresponding
+condition on every element in the allowed domain. Conversely,
+restricting an operation-preserving map to a homogeneous component
+gives those identities.
+\end{proof}
+
+\begin{proposition}[Primitive compatibility and scalar targets]
+\label{prop:protected-integration-primitive-compatibility}
+A coaugmentation- and coproduct-preserving map sends primitives
+to primitives. If the target is a monoid algebra with its
+group-like coproduct
+$\Delta e_t=e_t\otimes e_t$ and unit $e_1$, its primitive
+space is zero. Such a map therefore kills every source primitive.
+\end{proposition}
+
+\begin{proof}
+Apply the map to the primitive equation. For the second claim,
+write a primitive as $x=\sum_t c_te_t$. For $t\ne1$, the
+coefficient of $e_t\otimes e_t$ in
+$\Delta x=e_1\otimes x+x\otimes e_1$ gives $c_t=0$.
+The coefficient of $e_1\otimes e_1$ then gives $c_1=2c_1$,
+hence $c_1=0$ as well.
+\end{proof}
+
+This is a restriction on that target coproduct. A numerical
+integration map may still be useful as an algebra map or trace,
+without preserving a primitive Lie algebra. To compare operator
+primitives one needs a target with the appropriate primitive
+structure and an actual intertwining map.
+
+Another scalar coalgebra can retain a primitive. Let $e_n$ have
+charge $n\geq0$, with
+\[
+ \Delta e_n=\sum_{a+b=n}e_a\otimes e_b,\qquad
+ \varepsilon(e_n)=\delta_{n0},\qquad
+ e_a e_b=\binom{a+b}{a}e_{a+b}.
+\]
+The map $e_n\mapsto x^n/n!$ identifies this Hopf algebra with
+the additive polynomial Hopf algebra, so its primitive space is
+$k e_1$. The split components of its coproduct have coefficient
+one, but its product has binomial coefficients. Using instead
+the monoid product $e_ae_b=e_{a+b}$ breaks bialgebra compatibility:
+the coefficient of $e_1\otimes e_1$ is one in $\Delta e_2$
+and two in $(\Delta e_1)^2$. Thus a scalar coproduct and a
+scalar product must be compared together.
+
+If source and target primitive projections $\pi_P,\pi_T$ are
+chosen, their compatibility with integration is the additional
+equation $I_R^{\mathrm{prot}}\pi_P=\pi_T I_R^{\mathrm{prot}}$.
+Preservation of the primitive subspace alone does not give this
+equation for arbitrary projections.
+
+\begin{proposition}[Homogeneous integration]
+\label{prop:protected-integration-gram-degree}
+\label{prop:protected-integration-pi-x-separation}
+Suppose the target has monomials $q^nr^\ell s^m$ graded by
+$\overline\Pi_X(\gamma)=(n,\ell,m)$. Then an integration map
+preserves this grading exactly when it maps each source component
+to the corresponding monomial component. The geometric degree
+$b_R^{\mathrm{geom}}$ does not determine $m$ without the
+comparison of Definition~\ref{def:geometric-borcherds-degree-comparison-datum}.
+\end{proposition}
+
+\begin{proof}
+The grading condition is the statement that each homogeneous
+component has the displayed image. Additivity of
+$\overline\Pi_X$ makes target multiplication homogeneous.
+The geometric degree has a different definition and can be
+substituted only after the asserted relation between the maps is
+proved on this domain.
+\end{proof}
+
+When the numerical charge index $\Gamma_R$ is not already the
+normal-ordered extension, choose its lift
+$\widehat\omega_R:\Gamma_R\to\widehat\Gamma$ explicitly.
+For a target degree map $g_R$, the homogeneous comparison is
+\[
+ g_R\omega_R=\overline\Pi_X\widehat\omega_R.
+\]
+All three maps respect the permitted additions. The preceding
+formula uses $\widehat\omega_R=1$ when the source was already
+indexed by extended charges.
+
+For a transition $\rho_{R'R}:\mathcal H_R\to\mathcal H_{R'}$
+and $t_{R'R}:T_R\to T_{R'}$, the integration compatibility is
+$t_{R'R}I_R^{\mathrm{prot}}=I_{R'}^{\mathrm{prot}}\rho_{R'R}$.
+It must hold before forming a limiting map. A finite-type bound
+alone gives neither this equation nor exactness of the inverse
+limit.
+
+\subsubsection*{The compact factorization problem}
+
+The K3 stability conditions and their projective moduli
+\cite{BridgelandK3Stability,BayerMacriProjectivity} provide the
+surface input. A choice of moduli on $S\times E$ must additionally
+satisfy the product-stability and support conditions of
+Appendix~\ref{app:stability-support}.
+
+\begin{definition}[A local and wrapped factorization datum]
+\label{def:hybrid-wrapped-factorization-datum}
+A compact hybrid datum on the chosen charge domain consists of
+local incidence stacks and wrapped family stacks, their extension
+and collision diagrams, and an admissible coefficient theory on
+those diagrams. Its coefficient objects are equipped with the
+required critical and reduced orientation structures. Its maps
+include the binary comparisons, all finite flag coherences,
+local configuration descent, and the separate collision
+comparisons. Elliptic quotient is taken over a common torsor,
+with coherent coefficient descent and relative unit $BE$.
+Optional anchors and protected integration maps carry the
+specific comparison diagrams just defined.
+
+At bounded stages all charge sums and intermediate objects must
+belong to the permitted domain. A family of such data has
+specified transition maps preserving its objects, operations,
+units and coherences. The completion, when needed, is formed
+only with a stated topology and the corresponding inverse-limit
+or derived inverse-limit construction.
+We abbreviate this collection of existence and compatibility
+requirements by $\mathfrak O_{\mathrm{hyb},R}=0$. The notation
+includes the anchor and integration conditions only when those
+maps are requested. It is not an assertion that a coefficient
+object exists because its prospective defects have been named.
+\end{definition}
+
+\begin{proposition}[Scope of the constructed data]
+\label{prop:hybrid-datum-scope}
+The formal cyclic comparison and its finite-flag extension
+identify the specified formal sheaf deformations with the
+corresponding completions of the quiver models. The common-torsor
+construction gives the relative
+elliptic quotient of the sheaf extension diagrams. The critical
+Hall theorem supplies coefficient operations on its unreduced
+moduli domain. A compact reduced hybrid factorization object
+follows when these constructions are joined by the coefficient,
+orientation and collision comparisons in the preceding definition.
+\end{proposition}
+
+\begin{proof}
+The first assertion is
+Proposition~\ref{hall:prop:cyclic-collection} and
+Theorem~\ref{hall:thm:formal-flags}; the second is
+Proposition~\ref{hall:prop:common-torsor}; the third is
+Theorem~\ref{thm:hall-product}. With the additional comparisons,
+all prescribed operations and coherences are maps on one
+coefficient diagram. Proposition~\ref{prop:higher-coloured-residual-vanishing-criterion}
+then gives the claimed factorization operations on that domain.
+\end{proof}
+
+\begin{corollary}[The compact comparison remains a coefficient problem]
+\label{cor:no-quotient-first-hybrid-repair}
+A degree label, a determinant anchor, a product of independent
+quotients or the scalar Igusa product does not construct the
+compact reduced coefficient comparisons. Working relatively over
+$BE$ resolves the common-torsor part of the quotient problem;
+it leaves the reduced critical maps and their collision
+compatibilities to be constructed.
+\end{corollary}
+
+The distinction is visible already at a collision. A formal
+comparison of deformation algebras acts on the completed
+neighbourhood, whereas a constructible coefficient comparison
+must act on the actual extension and collision spaces with the
+required supports. A homotopy defined only after inverting a
+separation parameter does not solve an equation on its zero
+locus. These supported maps, together with their reduced
+orientations, are the next inputs needed for the compact Hall
+structure.
+
+A holomorphic factorization theory on $X$ would provide another
+possible source. Its pushforward along $p_E$ and its comparison
+with the Hall coefficients require specified functors preserving
+the relevant supports, tensor products, units and collision
+operations. The right-$D$-module chiral construction of
+\cite{BD} and the smooth factorization framework of
+\cite{CostelloGwilliam2} use different coefficient categories;
+an equivalence between their realizations is an additional map.
+Neither the local deformation model nor a common scalar trace
+supplies that map.

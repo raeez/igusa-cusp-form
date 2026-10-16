@@ -1,0 +1,693 @@
+\chapter{Derived Euler fibers and higher operations}
+\label{df:chap:fibers}
+
+The Euler quotient of Chapter~\ref{ed:chap:euler} is the cohomology
+of a projective bundle. Its parameter acts by the first Chern class of
+the tautological line. Taking the derived fiber at parameter zero
+recovers the cochain algebra of the unit sphere bundle.
+The resulting cohomology need not determine its
+multiplication up to homotopy. For the tangent bundle of a K3 surface,
+a nonzero triple Massey product records information lost by passing
+to the cohomology algebra.
+
+We shall construct the comparison with sphere-bundle cochains and compute
+all the transferred products. We then retain the parameter action on
+the Euler quotient. Its Jordan blocks give a second family of higher
+operations, now on a module over an exterior algebra. Finally, split
+bundle embeddings provide pullback and Gysin maps between the Euler
+models. These maps exhibit the compatibility a geometric correspondence
+must possess before it acts on a derived Euler fiber.
+
+Two gradings enter these constructions. In the geometric cochain model,
+the parameter $z$ has cohomological degree two. In the module calculation,
+it has resolution degree zero and may retain degree two as a separate
+internal grading. The unit in Theorem~\ref{ed:thm:factor} of
+Chapter~\ref{ed:chap:euler} is generally
+inhomogeneous in cohomological degree. Its equality of completed Euler
+and elliptic ideals therefore does not itself give a comparison of
+graded cochain algebras.
+
+\section{The projective-bundle cochain algebra}
+\label{df:sec:projective}
+
+Let $X$ be a compact smooth manifold and let $E\to X$ be a complex
+vector bundle of rank $r\geq1$. Write
+$\pi:P=\mathbf P(E)\to X$ for its bundle of lines and
+$L=\mathcal O_P(-1)\subset\pi^*E$ for the tautological line.
+Over $\mathbb R$ use the de Rham algebra $A_X=\Omega^*(X)$.
+Over $\mathbb Q$ use $A_X=A_{\mathrm{PL}}(X)$, the commutative
+algebra of rational polynomial forms. Choose closed representatives
+$c_j(E)\in A_X^{2j}$ of the Chern classes, with $c_0(E)=1$.
+
+The Euler relation is the homogeneous polynomial
+\begin{equation}\label{df:eq:euler}
+ e_z(E)=\sum_{j=0}^r(-z)^{r-j}c_j(E),\qquad |z|=2.
+\end{equation}
+To impose this relation at the cochain level, adjoin one odd generator:
+\begin{equation}\label{df:eq:projective}
+ \mathcal P_E=A_X[z]\otimes\Lambda(\eta_E),\qquad
+ |\eta_E|=2r-1,\qquad D\eta_E=e_z(E),\quad Dz=0.
+\end{equation}
+Here $\Lambda(\eta_E)$ is the exterior algebra, and $D$ extends the
+differential of $A_X$ by the graded Leibniz rule. All differentials
+in this section raise cohomological degree by one.
+
+An explicit comparison over $\mathbb R$ determines the geometric meaning
+of the generator. Choose Hermitian connections on $E$ and $L$, normalized
+by
+\[
+ c(\nabla)=\det\left(1+\frac{i}{2\pi}F_\nabla\right),
+ \qquad \lambda=c_1(\nabla L).
+\]
+The tautological inclusion is a nowhere-zero section of
+$W=\pi^*E\otimes L^*$. Let $\nabla_0$ preserve the trivial line
+spanned by this section and be trivial on it. Let $\nabla_1$ be the
+tensor-product connection. Their top Chern forms satisfy
+\[
+ c_r(\nabla_0)=0,\qquad c_r(\nabla_1)=e_\lambda(\pi^*E).
+\]
+
+Put $a=\nabla_1-\nabla_0$ and $\nabla_t=\nabla_0+ta$.
+If $F_t$ is the curvature and $P_r$ is the polarized invariant
+polynomial normalized by $P_r(F,\ldots,F)=c_r(\nabla)$, define
+\begin{equation}\label{df:eq:transgression}
+ \Theta_E=r\int_0^1P_r(a,F_t,\ldots,F_t)\,dt.
+\end{equation}
+The Bianchi identity gives
+$\frac{d}{dt}c_r(\nabla_t)=r\,dP_r(a,F_t,\ldots,F_t)$.
+Consequently $d\Theta_E=e_\lambda(\pi^*E)$, and there is a
+cochain-algebra map
+\begin{equation}\label{df:eq:comparison}
+ \Phi_E:\mathcal P_E\longrightarrow\Omega^*(P),\qquad
+ \alpha\longmapsto\pi^*\alpha,\quad z\longmapsto\lambda,
+ \quad\eta_E\longmapsto\Theta_E.
+\end{equation}
+This is the Chern--Simons transgression for the tautological
+section.\footnote{D.~L.~Johnson, \emph{Chern--Simons forms on associated bundles,
+and boundary terms},
+\href{https://arxiv.org/abs/math/0601182}{math/0601182},
+Theorem~1.2 and \S2.2.}
+
+\begin{theorem}\label{df:thm:projective}
+The map $\Phi_E$ is a quasi-isomorphism. Over $\mathbb Q$,
+$\mathcal P_E$ is a commutative rational cochain model of
+$\mathbf P(E)$, with $z$ representing $c_1(L)$.
+\end{theorem}
+
+\begin{proof}
+As a complex, $\mathcal P_E$ is the extension defined by
+multiplication by $e_z(E)$ on $A_X[z]$, with the shift in
+\eqref{df:eq:projective}. This multiplication is injective on
+$H^*(X)[z]$. Indeed, its leading coefficient is $(-1)^r$, so
+the highest nonzero coefficient of a polynomial cannot disappear.
+Zero divisors in $H^*(X)$ do not affect this argument. The long exact
+sequence of the extension gives
+\[
+ H^*(\mathcal P_E)=H^*(X)[z]/(e_z(E)).
+\]
+
+The classes $1,c_1(L),\ldots,c_1(L)^{r-1}$ restrict to a basis on
+each projective fiber. The projective-bundle theorem therefore identifies
+this quotient with $H^*(P)$ by base pullback and $z\mapsto c_1(L)$.
+These are exactly the maps induced by $\Phi_E$.
+
+For rational polynomial forms, choose a closed representative of
+$c_1(L)$. The top Chern relation is exact on $P$, so choose a primitive
+as the image of $\eta_E$. The same cohomology calculation proves that
+the resulting rational map is a quasi-isomorphism. If a representative
+$e$ changes to $e+D\sigma$, the generator change
+$\eta'_E\mapsto\eta_E+\sigma$ compares the two models.
+\end{proof}
+
+We use the polynomial model for the derived construction below.
+Completion in $z$ means degreewise completion with $|z|=2$.
+Its cohomology quotient agrees with the polynomial quotient because
+$c_1(L)$ is nilpotent on $H^*(P)$. A degree-zero ring
+$\mathbb Q[[q]]$ may be adjoined by completed scalar extension.
+
+\section{The unit sphere bundle}
+\label{df:sec:sphere}
+
+Choose a Hermitian metric on $E$. A unit vector determines its line,
+so the unit circle bundle of $L$ is the unit sphere bundle $S(E)$.
+Thus $S(E)$ is the homotopy fiber of the classifying map
+$P\to BU(1)$ of $L$. We write $C^*(-;\mathbb Q)$ for a commutative
+rational cochain model, and give its parameter map
+$\mathbb Q[z]\to C^*(P;\mathbb Q)$ by this classifying map.
+
+\begin{theorem}\label{df:thm:sphere}
+There is a multiplicative derived comparison
+\begin{equation}\label{df:eq:derived-fiber}
+ C^*(\mathbf P(E);\mathbb Q)
+       \otimes^{\mathbb L}_{\mathbb Q[z]}\mathbb Q
+ \simeq C^*(S(E);\mathbb Q),\qquad |z|=2.
+\end{equation}
+A cochain model for this fiber is
+\begin{equation}\label{df:eq:sphere}
+ \mathcal S_E=A_X\otimes\Lambda(\eta'_E),\qquad
+ |\eta'_E|=2r-1,\qquad D\eta'_E=c_r(E).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Resolve the augmentation of $\mathbb Q[z]$ by adjoining
+$\nu$ of degree one with $D\nu=z$. The polynomial
+\[
+ Q_E(z)=\frac{e_z(E)-c_r(E)}{z}
+\]
+is closed and has degree $2r-2$. In the resulting relative model set
+$\eta'_E=\eta_E-\nu Q_E(z)$. Its differential is $c_r(E)$.
+The remaining factor $\mathbb Q[z]\otimes\Lambda(\nu)$ contracts
+onto its constants. This computes the derived tensor product without
+inverting the parameter.
+
+The same change of generator has a geometric interpretation. On the
+circle bundle put $\alpha=\frac{i}{2\pi}A_L$, where $A_L$ is the
+unitary connection form. With the complex orientation of the circle,
+$\int_{S^1}\alpha=-1$ and $d\alpha$ is the pullback of $\lambda$.
+If $\rho:S(E)\to P$ is the projection, the form
+\[
+ \rho^*\Theta_E-\alpha Q_E(\rho^*\lambda)
+\]
+has differential equal to the pullback of $c_r(E)$ from $X$.
+
+On a sphere fiber the first term vanishes by dimension. The second
+is $(-1)^{r+1}\alpha\lambda^{r-1}$, with pullbacks suppressed.
+Since $\int_{\mathbf P^{r-1}}\lambda^{r-1}=(-1)^{r-1}$, its integral
+on the complex-oriented sphere is $-1$. It represents a fiber generator
+with the sign fixed by $D\eta'_E=c_r(E)$. The sphere-bundle filtration,
+whose fiber cohomology has two rows, now proves the de Rham comparison.
+
+Over $\mathbb Q$ the relative model of an oriented odd-sphere bundle
+adjoins a generator with differential its Euler class. The complex
+structure makes its orientation local system trivial, and its Euler
+class is $c_r(E)$. This gives \eqref{df:eq:sphere}. Equivalently,
+the cochain comparison for the homotopy pullback over the simply
+connected space $BU(1)$ gives \eqref{df:eq:derived-fiber}.
+\end{proof}
+
+\section{The multiplication retained by the fiber}
+\label{df:sec:minimal}
+
+Let $X$ now be a connected smooth projective complex variety of
+dimension $d>0$, with $H^{\mathrm{odd}}(X;\mathbb Q)=0$.
+Put $A=H^*(X;\mathbb Q)$ and assume that the topological Euler
+characteristic $\chi=\chi(X)$ is nonzero. Choose
+$\omega\in A^{2d}$ with $\int_X\omega=1$, and let
+$\tau:A\to\mathbb Q$ be integration, extended by zero outside
+degree $2d$. The top Chern class of $TX$ is $\chi\omega$.
+
+A cochain algebra is \emph{formal} if it is connected to its cohomology
+algebra with zero differential by a chain of quasi-isomorphisms.
+Compact K\"ahler formality, including its rational form, permits the
+replacement of $A_X$ by $A$.\footnote{P.~Deligne, P.~Griffiths,
+J.~Morgan and D.~Sullivan, \emph{Real homotopy theory of K\"ahler
+manifolds}, Inventiones Mathematicae \textbf{29} (1975), 245--274.
+See
+\href{https://www.math.stonybrook.edu/~dennis/publications/PDF/DS-pub-0024.pdf}
+{\S6, Main Theorem}. Rational formality is proved by
+D.~Sullivan, \emph{Infinitesimal computations
+in topology}, Publications Math\'ematiques de l'IH\'ES
+\textbf{47} (1977), 269--331.
+See
+\href{https://www.math.stonybrook.edu/~dennis/publications/PDF/DS-pub-0039.pdf}
+{Theorem~12.1}.}
+
+An exact change in the representative of the Euler class is absorbed
+by the generator change used above. The sphere bundle $S(TX)$ therefore
+has the finite cochain model
+\begin{equation}\label{df:eq:finite}
+ B=A\otimes\Lambda(\eta),\qquad
+ |\eta|=2d-1,\qquad d\eta=\chi\omega.
+\end{equation}
+
+There is only one contractible pair, namely $\eta\mapsto\chi\omega$.
+Set $A'=\bigoplus_{0<j<2d}A^j$. Representatives for cohomology form
+the subspace
+\begin{equation}\label{df:eq:cohomology}
+ H=\mathbb Q1\oplus A'\oplus\eta A^{>0}\subset B.
+\end{equation}
+Let $i:H\to B$ be inclusion and let $p:B\to H$ kill $\eta$ and
+$\omega$. Define the degree-minus-one homotopy $h$ by
+\begin{equation}\label{df:eq:contraction}
+ h(\omega)=\eta/\chi,\qquad h=0
+ \quad\text{on the other summands}.
+\end{equation}
+Then $pi=1$, $dh+hd=1-ip$, and $h^2=hi=ph=0$.
+
+The contraction transfers multiplication to higher maps on $H$.
+To fix their signs, let $sV$ lower the degree of a graded space $V$ by one.
+Give the tensor coalgebra
+$T^c(sV)=\bigoplus_{n\geq0}(sV)^{\otimes n}$ its deconcatenation
+coproduct. An uncurved $A_\infty$ structure on $V$ is a degree-one
+coderivation $b$ with $b(1)=0$ and $b^2=0$.
+Its Taylor components are the suspended multiplications.
+
+We use
+\[
+ b_1(sa)=-s(da),\qquad
+ b_2(sa,sb)=(-1)^{|a|}s(ab),\qquad
+ b_3(sa,sb,sc)=(-1)^{2|a|+|b|}s\,m_3(a,b,c).
+\]
+Extending a Taylor component across preceding suspended inputs carries
+their Koszul sign. A minimal structure has $b_1=0$, and a strict unit
+acts as the ordinary unit in arity two and gives zero in higher arity.
+
+\begin{theorem}\label{df:thm:minimal}
+The space $H$ has a strictly unital minimal $A_\infty$ structure
+quasi-isomorphic to $B$. Its binary product is $p(i(-)i(-))$.
+The only possibly nonzero higher multiplication is
+\begin{equation}\label{df:eq:ternary}
+ m_3(a,b,c)=\frac{\tau(bc)a-\tau(ab)c}{\chi}\,\eta,
+ \qquad a,b,c\in A'.
+\end{equation}
+It is zero on all other homogeneous input patterns, and $m_n=0$ for
+$n\geq4$. The suspended components of a quasi-isomorphism $I:H\to B$
+are
+\begin{equation}\label{df:eq:inclusion}
+ I_1=si s^{-1},\qquad
+ I_2(sa,sb)=s\bigl(\tau(ab)\eta/\chi\bigr)
+ \quad(a,b\in A'),\qquad I_n=0\quad(n\geq3),
+\end{equation}
+with $I_2$ zero on the remaining input patterns.
+\end{theorem}
+
+\begin{proof}
+The projected binary product removes exactly the top-class component
+$\tau(ab)\omega$. Its primitive is $h(ab)=\tau(ab)\eta/\chi$.
+For $a,b\in A'$ the binary bar equation is therefore
+\[
+ -s\,d\bigl(\tau(ab)\eta/\chi\bigr)+s(ab)
+       =s\bigl(ab-\tau(ab)\omega\bigr).
+\]
+The two placements of this primitive in arity three give
+$p\bigl(a\,h(bc)-h(ab)\,c\bigr)$, which is
+\eqref{df:eq:ternary}. If an input contains $\eta$, a prospective
+contribution either has zero homotopy or contains $\eta^2$.
+Normalization of the contraction gives strict unitality.
+
+In a transferred multiplication tree, every nonzero homotopy edge
+has output proportional to $\eta$. A second homotopy above it vanishes,
+and the product of two such outputs vanishes. Every tree with at least
+four leaves has one of these forms. The trees for $I_n$, $n\geq3$,
+vanish for the same reason.
+
+Write $b_B,b_H$ for the two bar coderivations. The remaining terms in
+$b_BI=Ib_H$ are products of two $I_2$ outputs or applications of
+$I_2$ to an $m_3$ output. Both are zero.
+The linear term of $I$ is injective, hence so is $I$ by tensor length.
+The equality $Ib_H^2=b_B^2I=0$ gives all the $A_\infty$ identities.
+
+Since $I_1$ induces the
+identity on cohomology, $I$ is a quasi-isomorphism.\footnote{B.~Keller,
+\emph{Introduction to $A$-infinity algebras and modules},
+\href{https://arxiv.org/abs/math/9910179}{math/9910179},
+\S\S3.3--3.6 and 4.2. The displayed contraction fixes the signs here.}
+\end{proof}
+
+For example, the binary product of $a,b\in A'$ is
+$ab-\tau(ab)\omega$, whereas $a(\eta b)=\eta ab$.
+The product of two classes containing $\eta$ is zero.
+The ternary product measures the difference between using the two
+possible primitives when a triple product passes through the omitted
+top class.
+
+\section{Nonformality and examples}
+\label{df:sec:nonformal}
+
+If even cocycles $a,b,c$ have $ab=dU$ and $bc=dV$, the cocycle
+$aV-Uc$ defines a triple Massey product. Its indeterminacy consists
+of the products obtained by changing $U$ and $V$ by closed classes.
+A nonzero Massey product with zero indeterminacy obstructs formality.
+The contraction above supplies both primitives and their signs.
+
+\begin{corollary}\label{df:cor:nonformal}
+Under the hypotheses of Section~\ref{df:sec:minimal}, if
+$\dim H^2(X;\mathbb Q)\geq2$, the rational cochain algebra of
+$S(TX)$ is not formal. This applies to every $X=Y^{[n]}$ with $n>0$
+and $Y$ a projective K3 or Enriques surface.
+\end{corollary}
+
+\begin{proof}
+Choose independent $a,c\in A^2$. Poincar\'e duality gives
+$b\in A^{2d-2}$ with $\tau(ab)=1$ and $\tau(bc)=0$.
+Then $ab=\omega=d(\eta/\chi)$ and $bc=0$, so
+\begin{equation}\label{df:eq:massey}
+ \langle[a],[b],[c]\rangle=-[c\eta]/\chi\ne0.
+\end{equation}
+The indeterminacy is
+$[a]H^{2d-1}(B)+H^{2d-1}(B)[c]$, which is zero.
+Indeed, the base has no odd cohomology and $\eta$ is not closed.
+The nonzero class $c\eta$ occurs in \eqref{df:eq:cohomology}.
+
+The Hilbert schemes in the assertion are smooth projective.
+In the Hilbert-scheme cohomology formula, a surface class of degree
+$j$ contributes a generator of degree $j+2m-2$ in length $m$.
+For these surfaces $j$ is even, and the degree-two surface classes
+persist in every positive length.
+
+The Euler generating series is
+\[
+ \sum_{n\geq0}\chi(Y^{[n]})p^n
+       =\prod_{m\geq1}(1-p^m)^{-\chi(Y)}.
+\]
+Its coefficients are positive since $\chi(Y)$ is $24$ or $12$.
+Thus all hypotheses hold. The cohomology formula used here is the
+geometric Heisenberg decomposition\cite{NakajimaHilbert1997}.
+\end{proof}
+
+For a surface $Y$ satisfying the same hypotheses, write
+$u_i u_j=Q_{ij}\omega$ in a basis of
+$H^2(Y;\mathbb Q)$. The cohomology of $S(TY)$ has dimensions
+$1,b_2(Y),b_2(Y),1$ in degrees $0,2,5,7$. Its products include
+\begin{equation}\label{df:eq:surface-products}
+ u_i(u_j\eta)=Q_{ij}\omega\eta,\qquad
+ m_3(u_i,u_j,u_k)
+       =\frac{Q_{jk}u_i-Q_{ij}u_k}{\chi(Y)}\,\eta.
+\end{equation}
+In a hyperbolic plane take $u^2=v^2=0$, $uv=\omega$,
+$a=u+v$, and $c=u-v$. Then $a^2=2\omega$ and $ac=0$, giving
+\[
+ \langle a,a,c\rangle=-\frac{2}{\chi(Y)}c\eta
+ =\begin{cases}
+   -c\eta/6,&Y\text{ an Enriques surface},\\
+   -c\eta/12,&Y\text{ a K3 surface}.
+  \end{cases}
+\]
+Both Massey products have zero indeterminacy.
+
+\begin{example}\label{df:ex:grassmannian}
+The condition $b_2(X)\geq2$ is sufficient but not necessary.
+Let $X=\operatorname{Gr}(2,4)$, the Grassmannian of two-dimensional
+subspaces of $\mathbb C^4$, and let $S$ be its tautological rank-two
+bundle. Put $h=c_1(S^*)$ and $p=c_2(S^*)$. Its rational cohomology is
+\[
+ A=\mathbb Q[h,p]/(h^3-2hp,\ h^4-3h^2p+p^2),
+ \qquad |h|=2,\quad |p|=4.
+\]
+
+The Schubert classes are $1,h,p,h^2-p,hp,p^2$.
+The relations are the degree-six and degree-eight terms of
+$c(S)^{-1}$, because the quotient bundle has rank two.
+They give $p^2=h^2p=\omega$, with $\int_X\omega=1$, and
+$h^4=2\omega$. The six Schubert cells give $\chi(X)=6$.
+
+Although $b_2(X)=1$, take $a=b=p$ and $c=h^2-p\ne0$.
+Then $ab=\omega$ and $bc=0$. In the sphere model
+$|\eta|=7$ and $d\eta=6\omega$, so
+\[
+ \langle[p],[p],[h^2-p]\rangle
+       =-[(h^2-p)\eta]/6\ne0.
+\]
+Its indeterminacy vanishes because $H^7(B)=0$.
+Thus $S(T\operatorname{Gr}(2,4))$ is also nonformal.
+\end{example}
+
+The general sphere-bundle formality criterion imposes a condition on
+the full cohomology algebra of the base. A single Betti number cannot
+replace it.\footnote{J.~Zhou, \emph{Formality of sphere bundles},
+Algebraic \& Geometric Topology \textbf{25} (2025), 2297--2315,
+\href{https://arxiv.org/abs/2304.09594}{2304.09594}, Theorem~1.2.
+For a nonzero top Euler class, formality of the total space forces
+the formal base cohomology to be generated by one element.}
+
+\section{The higher action of the parameter}
+\label{df:sec:parameter}
+
+The preceding products belong to the cochain algebra of a sphere bundle.
+To retain the action of $z$ on the projective-bundle quotient, we instead
+take a derived Hom over the parameter ring. Set $R_0=\mathbb Q[[z]]$,
+with $z$ in resolution degree zero, and let $C$ be a finite-length
+$R_0$-module. Multiplication by $z$ is a nilpotent operator $N$ on $C$.
+The Koszul dual algebra is
+$\mathcal K=\operatorname{Ext}_{R_0}^*(\mathbb Q,\mathbb Q)
+=\Lambda(\xi)$, where $\xi$ has resolution degree one.
+
+A dg $\mathcal K$-module representing
+$\operatorname{RHom}_{R_0}(\mathbb Q,C)$ is
+\begin{equation}\label{df:eq:parameter-module}
+ M_C=C\otimes\Lambda(\xi),\qquad
+ d(a)=\xi Na,\quad d(\xi a)=0.
+\end{equation}
+The action of $\xi$ is exterior multiplication. Using the free resolution
+of $\mathbb Q$ with differential $-z$ gives the displayed sign after
+applying Hom. If $z$ has internal degree two as well, give $\xi$ internal
+degree $-2$. Then $d$ raises resolution degree by one and preserves
+internal degree.
+
+For the cyclic block $C_m=R_0/(z^m)$ choose a basis
+$e_0,\ldots,e_{m-1}$ with $Ne_j=e_{j+1}$ and $Ne_{m-1}=0$.
+The cohomology of $M_{C_m}$ has one generator $u$ in resolution degree
+zero and one generator $v$ in degree one. A contraction is
+\begin{equation}\label{df:eq:block-contraction}
+ \begin{aligned}
+ i(u)&=e_{m-1},& i(v)&=(-1)^{m-1}\xi e_0,\\
+ h(\xi e_j)&=e_{j-1}\quad(j>0),& h&=0\quad\text{otherwise}.
+ \end{aligned}
+\end{equation}
+The projection is $p(e_{m-1})=u$, $p(\xi e_0)=(-1)^{m-1}v$,
+and zero on the other basis vectors. It satisfies $dh+hd=1-ip$.
+
+For modules use the reduced bar comodule
+$T^c(s\overline{\mathcal K})\otimes M$, where
+$\overline{\mathcal K}=\mathbb Q\xi$ and $s$ now lowers resolution
+degree by one. An $A_\infty$ module structure on $M$ is a square-zero degree-one
+differential on this comodule compatible with the algebra bar
+differential. Here the reduced algebra bar differential is zero.
+
+Fix the left-module sign so that the action term on
+$(s\xi)\otimes a$ is $\xi a$. The operation $m_{j+1}$ has $j$
+algebra inputs, one module input, and resolution degree $1-j$.
+The adjective reduced excludes inputs equal to the algebra unit.
+
+\begin{theorem}\label{df:thm:block}
+The minimal strictly unital $A_\infty$ module of $M_{C_m}$ has exactly
+one nonzero reduced operation:
+\begin{equation}\label{df:eq:block-operation}
+ m_{m+1}(\underbrace{\xi,\ldots,\xi}_{m},u)=v.
+\end{equation}
+All reduced operations on $v$ vanish. A bar comparison with $M_{C_m}$
+has components
+\begin{equation}\label{df:eq:block-comparison}
+ I_j((s\xi)^{\otimes j},u)=(-1)^j e_{m-1-j}\quad(0\leq j<m),
+ \qquad I_0(v)=(-1)^{m-1}\xi e_0,
+\end{equation}
+and all other components zero. In particular, the higher module
+structure determines $m$.
+\end{theorem}
+
+\begin{proof}
+The transferred component with $j$ algebra inputs is
+$p\xi(-h\xi)^{j-1}i$. Each application of $h\xi$ lowers the basis
+index by one. Projection first survives at $j=m$, when the sign
+chosen for $v$ gives \eqref{df:eq:block-operation}. It vanishes for
+larger $j$. Starting from $v$, the first exterior multiplication
+already vanishes.
+
+Since $s\xi$ has degree zero, the comparison equation on these words is
+\[
+ dI_j+\xi I_{j-1}
+       =\sum_{k=1}^j I_{j-k}m_{k+1}.
+\]
+For $j<m$, the two terms on the left cancel. At $j=m$, their sum
+is $I_0(v)$. Above $m$, both sides vanish. The minimal bar differential
+squares to zero since its only nonzero output is $v$, on which every
+reduced operation is zero. Strict units give the remaining identities.
+
+The coefficient dual to the Taylor map in
+\eqref{df:eq:block-operation} is $z^m$. The corresponding two-term
+free presentation is $[R_0\xrightarrow{z^m}R_0]$, up to an overall
+shift. Its only nonzero cohomology is $R_0/(z^m)$. Deleting the higher
+map would change this module while leaving the two cohomology
+dimensions of $M_{C_m}$ equal to one.
+\end{proof}
+
+For $m=1$ the operation is the ordinary binary action. For $m>1$ the
+binary action on cohomology is zero, and the first nonzero reduced
+operation has arity $m+1$. If $e_0$ has internal degree $k$, then
+$u$ has internal degree $k+2m-2$ and $v$ has degree $k-2$.
+Equation~\eqref{df:eq:block-operation} preserves that grading.
+
+Apply the theorem to $C=H^*(\mathbf P(TX);\mathbb Q)$, with
+$N=c_1(L)\cup-$. The Jordan lengths computed in
+Chapter~\ref{ed:chap:euler} (Proposition~\ref{ed:prop:jordan} and
+Theorem~\ref{ed:thm:square}) give the following multiplicities:
+\begin{equation}\label{df:eq:module-table}
+ \begin{array}{c|rrrr}
+  X&m_3&m_5&m_7&m_9\\ \hline
+  \text{Enriques surface}&10&1&0&0\\
+  \text{K3 surface}&22&1&0&0\\
+  \text{K3 Hilbert square}&23&276&23&1
+ \end{array}.
+\end{equation}
+For the Hilbert square there are $323$ blocks, but their lengths sum
+to $1296$. The two resolution cohomology dimensions each see only
+$323$. The higher module operations distinguish all four lengths.
+Although their displayed decomposition uses a Jordan basis,
+the dg module \eqref{df:eq:parameter-module} is defined directly
+by the tautological operator.
+
+This construction also retains maps. If $T:C\to C'$ satisfies
+$TN=N'T$, then $T\otimes1$ is a strict dg $\mathcal K$-module map.
+Choose contractions and transfer them to the bar modules, writing
+$I,P,H$ for the resulting maps with $IP-1=-dH-Hd$.
+The transferred map is $F(T)=P'TI$.
+
+Let $T_1:C_1\to C_2$ and $T_2:C_2\to C_3$ commute with the respective
+parameter operators. Subscripts on $I,P,H$ label these modules. Then
+\begin{equation}\label{df:eq:composition-homotopy}
+ F(T_2)F(T_1)-F(T_2T_1)=dK+Kd,
+ \qquad K=-P_3T_2H_2T_1I_1.
+\end{equation}
+This follows by substituting $I_2P_2-1=-dH_2-H_2d$.
+The perturbation formulas are finite at each bar length, since each
+action lowers that length. Thus changes of contraction retain the
+module maps and their composition homotopies.
+
+For comparison, a free resolution of a cyclic block gives
+\begin{equation}\label{df:eq:block-hom}
+ \begin{split}
+ \operatorname{Hom}_{R_0}(C_m,C_n)
+   &=z^{\max(n-m,0)}R_0/(z^n),\\
+ \operatorname{Ext}_{R_0}^1(C_m,C_n)
+   &=R_0/(z^{\min(m,n)}),\qquad
+ \operatorname{Ext}_{R_0}^{j}(C_m,C_n)=0\quad(j>1).
+ \end{split}
+\end{equation}
+Indeed, applying Hom to
+$[R_0\xrightarrow{z^m}R_0]\to C_m$ gives the kernel and cokernel
+of $z^m$ on $C_n$.
+
+Finite-length $R_0$-modules form the extension closure of $\mathbb Q$.
+Derived Hom from $\mathbb Q$ sends this generator to the free
+$\mathcal K$-module and identifies their derived endomorphisms.
+Exact triangles extend the identification to all finite-length modules.
+The minimal modules therefore retain the groups in \eqref{df:eq:block-hom}.
+
+\section{Split embeddings and Gysin maps}
+\label{df:sec:gysin}
+
+Return to cohomological grading. Let $E$ and $F$ be complex bundles
+over $X$, of ranks $r\geq1$ and $s\geq0$. Choose Chern representatives
+from direct-sum connections, so that
+$e_z(E\oplus F)=e_z(E)e_z(F)$ holds as a cochain identity.
+For the inclusion $j:\mathbf P(E)\hookrightarrow\mathbf P(E\oplus F)$,
+the normal bundle is $L^*\otimes\pi^*F$. Its Euler class is $e_z(F)$
+after identifying $z$ with $c_1(L)$.
+
+\begin{theorem}\label{df:thm:gysin}
+The pullback and the degree-$2s$ Gysin map admit the following
+$A_X[z]$-linear representatives on Euler cochain models:
+\begin{equation}\label{df:eq:gysin}
+ \begin{aligned}
+ j^*(a)&=a,&
+ j^*(\eta_{E\oplus F}b)&=\eta_E e_z(F)b,\\
+ j_!(a)&=e_z(F)a,&
+ j_!(\eta_E b)&=\eta_{E\oplus F}b.
+ \end{aligned}
+\end{equation}
+They satisfy the projection formula, the self-intersection formula
+$j^*j_!=e_z(F)$, and composition for flags of split bundles.
+\end{theorem}
+
+\begin{proof}
+Write odd generators on the left. For homogeneous $b$,
+$D(\eta_E b)=e_z(E)b-\eta_E Db$. Substitution into
+\eqref{df:eq:gysin} proves the chain-map identities, including
+coefficients of odd degree or nonzero differential. The same formulas
+give $j_!(xj^*y)=j_!(x)y$ and $j^*j_!(x)=e_z(F)x$.
+For $E\subset E\oplus F\subset E\oplus F\oplus G$,
+the even factors multiply as $e_z(F)e_z(G)$, while the odd generator
+is sent to the final odd generator. This proves flag compatibility.
+
+For pullback, retain the fixed connection on $L^*\otimes\pi^*F$.
+On $\pi^*E\otimes L^*$, choose the connection $\nabla_0$ trivial
+on the tautological section. Their direct sum preserves the
+tautological section of the restricted bundle.
+The top Chern transgression is then $\Theta_E e_\lambda(F)$.
+This realizes the first line of \eqref{df:eq:gysin} geometrically.
+
+For the Gysin map, first work over the universal base
+$BU(r)\times BU(s)$. Its rational cohomology is the polynomial
+algebra in the Chern classes of $E$ and $F$, all in even degrees.
+Together with $z$, call this algebra $R$. The two projective-bundle
+models resolve $R/(e_z(E))$ and $R/(e_z(E)e_z(F))$.
+The projection $L\to\pi^*F$ cuts out $\mathbf P(E)$ transversely.
+Its Euler class gives $j_!(1)=e_z(F)$.
+
+A degree-$2s$ $R$-linear map from the free Euler resolution of
+$R/(e_z(E))$ to $R/(e_z(E)e_z(F))$ is determined by its value on $1$.
+Its value on $\eta_E$ would have odd degree $2(r+s)-1$, and the
+target has no odd part. The relation is respected precisely because
+$e_z(E)e_z(F)=0$ there. Thus the Gysin class has the representative
+whose value on $1$ is $e_z(F)$. Lifting this representative to the
+target Euler resolution gives exactly the second line of
+\eqref{df:eq:gysin}.
+
+The Thom construction commutes with pullback of the pair of bundles.
+Derived base change from the universal, simply connected base therefore
+gives the same Gysin map over $X$. This identifies its class in the
+derived category of $A_X[z]$-modules.
+\end{proof}
+
+These formulas apply to a split normal bundle and its Thom class.
+A Hall correspondence has a deformation complex involving cross
+derived Hom terms. To use the same construction there, one must compare
+that complex, its orientation, and its coefficient pullback and pushforward
+with the Euler models. The split calculation specifies the required
+compatibilities but does not supply this comparison.
+
+\section{Maps of Euler cones and the vacuum}
+\label{df:sec:cones}
+
+The odd generators above also express a general condition on derived
+quotient maps. Let $f:A\to B$ and $g:C\to D$ be degree-zero cochain
+maps. Their cones have underlying spaces $B\oplus A[1]$ and
+$D\oplus C[1]$, with differentials
+\[
+ d_f=\begin{pmatrix}d_B&f\\0&-d_A\end{pmatrix},\qquad
+ d_g=\begin{pmatrix}d_D&g\\0&-d_C\end{pmatrix}.
+\]
+For multiplication by a homogeneous Euler class of degree $2r$,
+the source shift $A[-2r]$ makes this convention applicable.
+
+A degree-$k$ map preserving the target subcomplexes $B$ and $D$
+has the form
+\begin{equation}\label{df:eq:cone-map}
+ T=\begin{pmatrix}b&h\\0&(-1)^k a\end{pmatrix},
+ \qquad |a|=|b|=k,\quad |h|=k-1.
+\end{equation}
+These maps form a Hom complex with differential
+$\partial T=d_gT-(-1)^kTd_f$. Direct multiplication gives
+$\partial^2=0$ and the Leibniz rule for composition. In degree zero,
+closedness says that $a$ and $b$ are chain maps and
+\begin{equation}\label{df:eq:cone-homotopy}
+ d_Dh+hd_A=bf-ga.
+\end{equation}
+The off-diagonal entry is therefore the specified homotopy making
+the coefficient square commute. Composing two closed degree-zero maps
+gives $h_{21}=b_2h_1+h_2a_1$.
+
+There is a simple obstruction at the empty object. Use only resolution
+grading for this example, with all coefficient modules in degree zero.
+The empty Euler map is $f_0=1:R_0\to R_0$. For a connected
+positive-dimensional smooth projective $Y$, the nonempty map is
+$f_1=e_z(TY):H^*(Y)[[z]]\to H^*(Y)[[z]]$.
+An ordinary creator with $b(1)=1$ would require
+$1=e_z(TY)a(1)$ in \eqref{df:eq:cone-homotopy}.
+This is impossible: reduction at $z=0$ and then to cohomological
+degree zero sends the right side to zero and the left side to one.
+
+The Euler-transported creator with $b(1)=e_z(TY)$ instead has the
+strict lift $a(1)=1$, $h=0$. Its source cone is nevertheless
+$\operatorname{Cone}(1)$, which is acyclic, so the induced derived
+map is zero. This does not alter the image-module action constructed
+in Section~\ref{ed:sec:transport} of Chapter~\ref{ed:chap:euler}.
+It shows why that action and an
+action on the Euler quotient require different vacuum data.
+
+To identify either higher structure with chiral collision operations,
+one must construct a map from the relevant supported operation complex.
+It must preserve the intrinsic sphere-fiber products or the parameter
+module operations on their respective carriers, together with the
+vacuum comparisons.

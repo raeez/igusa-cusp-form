@@ -1,0 +1,374 @@
+\section{Mukai vectors and Gram degrees}
+\label{appendix:mukai-gram-dictionary}
+
+Let $S$ be a smooth complex projective K3 surface and $E$ a smooth
+complex elliptic curve.  Consider a one-dimensional subscheme $Y\subset S\times E$ with
+curve class $(\beta,d)$.  Here $\beta$ is its projected class on $S$,
+identified with its Poincar\'e dual, and $d$ is its degree over $E$.  The two Mukai components of its ideal give
+\[
+\Pi_X(Q_Y,P_Y)=\left(\frac{\beta^2}{2},\chi(\mathcal O_Y),d-1\right).
+\]
+We derive the formula, give sheaf representatives of the three
+simple Gram degrees, and describe the quadratic correction required
+when charges are added.
+
+\subsection{Surface vectors and pairings}
+\label{subsec:mukai-vector-pairing}
+
+\begin{definition}[Mukai vector]
+\label{def:mukai-lattice-vector-appendixC}
+Write $\omega_S$ for the point class with $\int_S\omega_S=1$.
+The cohomological Mukai lattice is
+\[
+\widetilde H(S,\Z)=H^0(S,\Z)\oplus H^2(S,\Z)\oplus H^4(S,\Z),
+\]
+with coordinates $(r,D,s)$ denoting $r+D+s\omega_S$.
+For $F\in D^b\Coh(S)$, set
+\[
+v_S(F)=\operatorname{ch}(F)\sqrt{\operatorname{td}(S)}
+=(\rk F,c_1(F),\rk F+\operatorname{ch}_2(F)).
+\]
+Here $\operatorname{ch}_2(F)$ is integrated over $S$, and
+$\sqrt{\operatorname{td}(S)}=1+\omega_S$.  Actual coherent vectors
+lie in $\widetilde H_{\mathrm{alg}}(S,\Z)=\Z\oplus\NS(S)\oplus\Z$.
+\end{definition}
+
+\begin{proposition}[Mukai form]
+\label{prop:mukai-pairing-appendixC}
+The symmetric form
+\[
+\langle(r,D,s),(r',D',s')\rangle=D\cdot D'-rs'-r's
+=-\int_S(r,-D,s)(r',D',s')
+\]
+is even unimodular of signature $(4,20)$ on the full lattice.
+On the algebraic sublattice it has signature $(2,\rho(S))$, and
+\[
+\chi_S(F,G)=-\langle v_S(F),v_S(G)\rangle.
+\]
+\end{proposition}
+
+\begin{proof}
+The $H^0\oplus H^4$ part is a hyperbolic plane.  Adjoining it to
+$H^2(S,\Z)\cong U^{\oplus3}\oplus E_8(-1)^{\oplus2}$ proves
+the assertion about the full lattice.  Adjoining it to $\NS(S)$,
+whose signature is $(1,\rho-1)$, gives the algebraic signature.
+Hirzebruch--Riemann--Roch gives the last identity, as in
+Proposition~\ref{k3:prop:rr}.
+\end{proof}
+
+\begin{remark}[Symmetry and additional algebraic structures]
+\label{rem:mukai-symmetric-both-parts}
+The Mukai form is symmetric on both the algebraic and transcendental
+parts.  Its real infinitesimal isometry algebra is
+$\mathfrak{so}(4,20)$.  Its complexification is
+$\mathfrak{so}_{24}(\C)$.  This statement concerns a quadratic vector
+space.  A separate supergrading does not change that bilinear form,
+and the form alone defines neither a Yangian nor a Hall algebra.
+
+A comparison with a quantum group requires its multiplication,
+coproduct and deformation parameter, together with a map respecting
+those structures.  For example, the Hilbert-scheme construction of
+\cite[\S2]{SchiffmannVasserot2013} uses the equivariant cohomology of
+Hilbert schemes of $\mathbb A^2$, while the construction in
+\cite[\S2]{KSCoHA} uses quiver representation stacks.  Neither
+construction by itself supplies such a comparison for the full K3
+Mukai lattice.
+\end{remark}
+
+The surface examples in Example~\ref{ex:mukai-vector-point-and-ideal}
+include point ideals and divisor ideals, which have different vectors
+and self-pairings.  They will supply the threefold representatives
+below.
+
+\subsection{Paired charges on the threefold}
+\label{subsec:kunneth-k3-times-e-appendixC}
+
+\begin{proposition}[K\"unneth decomposition and Euler form]
+\label{prop:kunneth-k3-times-e-appendixC}
+Let $X=S\times E$ and normalize $\omega_E$ by $\int_E\omega_E=1$.
+Every even integral cohomology class has a unique expression
+\[
+v_X=P\otimes1_E+Q\otimes\omega_E,
+\qquad Q,P\in\widetilde H(S,\Z).
+\]
+For a perfect complex $\mathcal F$ on $X$, the components of
+$v_X(\mathcal F)=\operatorname{ch}(\mathcal F)
+\sqrt{\operatorname{td}(X)}$ satisfy
+\[
+P=v_S(Li_t^*\mathcal F),\qquad
+Q=v_S(Rp_{S*}\mathcal F).
+\]
+Here $i_t:S\hookrightarrow X$ is a fiber inclusion and
+$p_S:X\to S$ is projection.  If $c=(Q,P)$ and $c'=(Q',P')$ are
+charges of $\mathcal F,\mathcal G$, then
+\[
+\chi_X(\mathcal F,\mathcal G)=Q\cdot P'-P\cdot Q'.
+\]
+\end{proposition}
+
+\begin{proof}
+The cohomology of both factors is torsion free, and the odd
+cohomology of $S$ vanishes.  The integral K\"unneth theorem therefore
+gives the decomposition.  Derived restriction extracts the
+$1_E$ coefficient.  Grothendieck--Riemann--Roch for $p_S$, with
+$\operatorname{td}(E)=1$, extracts the $\omega_E$ coefficient.
+In particular, both components of a coherent charge are integral
+and algebraic.
+
+For the Euler form, the duality involution sends
+$P\otimes1_E+Q\otimes\omega_E$ to
+$P^\vee\otimes1_E-Q^\vee\otimes\omega_E$.  Thus Riemann--Roch
+and $\int_S v^\vee w=-\langle v,w\rangle$ give
+\[
+\chi_X(\mathcal F,\mathcal G)
+=\int_S(P^\vee Q'-Q^\vee P')=Q\cdot P'-P\cdot Q'.
+\]
+\end{proof}
+
+There are also two useful symmetric forms on this rank-$48$ group:
+\[
+\begin{aligned}
+b_{\oplus}(c,c')&=Q\cdot Q'+P\cdot P',\\
+b_{\mathrm{cross}}(c,c')&=Q\cdot P'+P\cdot Q'.
+\end{aligned}
+\]
+Their signatures are $(8,40)$ and $(24,24)$, respectively.  The
+second is the tensor of the Mukai form with the hyperbolic form on
+$H^0(E,\Z)\oplus H^2(E,\Z)$.  Both are auxiliary to the alternating
+threefold Euler form.
+
+\begin{definition}[Gram degrees]
+\label{def:gram-degree-projection-appendixC}
+Order the formal charge lattice as
+$\Gamma_X^{\mathrm{form}}=\widetilde H(S,\Z)\oplus\widetilde H(S,\Z)$,
+with $c=(Q,P)$.  Its Gram map is
+\[
+\Pi_X:\Gamma_X^{\mathrm{form}}\longrightarrow\Gamma_{\mathrm{gram}}
+=\Z^3,\qquad
+\Pi_X(Q,P)=\left(\frac{Q^2}{2},Q\cdot P,\frac{P^2}{2}\right).
+\]
+We call $\Pi_X(c)$ the Gram degree of $c$.  It determines the
+exponent of $q^nr^ls^m$ when $(n,l,m)=\Pi_X(c)$ in the chosen
+Igusa cusp coordinates.
+\end{definition}
+
+\subsection{The ideal-sheaf dictionary}
+\label{subsec:d6-d2-d0-dictionary-appendixC}
+
+\begin{theorem}[Threefold ideal-sheaf charge]
+\label{thm:mukai-vector-ideal-sheaf-threefold}
+Let $Y\subset X$ be a one-dimensional closed subscheme.  Write its
+fundamental curve class as
+$[Y]=(\beta,d)\in H_2(S,\Z)\oplus H_2(E,\Z)$ and put
+$n=\chi(\mathcal O_Y)$.  Identify $\beta$ with its Poincar\'e dual
+in $H^2(S,\Z)$.  Then
+\[
+v_X(I_Y)=(1,0,1-d)\otimes1_E+(0,-\beta,-n)\otimes\omega_E.
+\]
+\end{theorem}
+
+\begin{proof}
+The first nonzero Chern character of $\mathcal O_Y$ is
+\[
+\operatorname{ch}_2(\mathcal O_Y)
+=\beta\otimes\omega_E+d\omega_S\otimes1_E.
+\]
+Since $c_1(X)=0$, Riemann--Roch gives
+$\int_X\operatorname{ch}_3(\mathcal O_Y)=n$.
+The ideal sequence and $\sqrt{\operatorname{td}(X)}
+=(1+\omega_S)\otimes1_E$ now give the displayed formula.
+Zero-dimensional embedded components contribute to $n$ and require
+no change in the calculation.
+\end{proof}
+
+\begin{remark}[The Euler coordinate]
+\label{rem:threefold-euler-characteristic-no-todd-correction}
+The equality $\int_X\operatorname{ch}_3(\mathcal O_Y)=n$ follows
+because the only possible extra term in degree six is
+$\operatorname{ch}_2(\mathcal O_Y)c_1(X)/2$, which vanishes.
+The ideal sequence fixes the sign $-n$ in $Q_Y$.
+\end{remark}
+
+\begin{theorem}[D6--D2--D0 Gram dictionary]
+\label{thm:d6-d2-d0-dictionary-appendixC}
+Under the preceding hypotheses, put
+$P_Y=(1,0,1-d)$ and $Q_Y=(0,-\beta,-n)$.  Then
+\[
+\Pi_X(Q_Y,P_Y)=\left(\frac{\beta^2}{2},n,d-1\right).
+\]
+If $S$ is elliptically fibered with section $s_1$ and fiber $F$,
+the class $\beta_h=s_1+hF$, $h\geq0$, gives
+$\Pi_X(Q_Y,P_Y)=(h-1,n,d-1)$.
+\end{theorem}
+
+\begin{proof}
+The three pairings are
+\[
+Q_Y^2=\beta^2,\qquad Q_Y\cdot P_Y=n,\qquad P_Y^2=2(d-1).
+\]
+For the elliptic class, adjunction gives $s_1^2=-2$.  Also,
+$s_1\cdot F=1$ and $F^2=0$.  Hence $\beta_h^2=2h-2$.
+\end{proof}
+
+\begin{remark}[Algebraicity and primitivity]
+\label{rem:algebraic-versus-primitive-d2-charges}
+The projection of an effective curve cycle on $X$ to $S$ is an
+effective algebraic cycle, possibly zero.  Thus
+$\beta\in\NS(S)$ and $d\geq0$.  The formula holds whether or not
+$\beta$ is primitive.  Here primitive means nonzero and indivisible
+in the integral lattice, rather than merely indivisible among
+classes represented by a chosen family of curves.  The class
+$\beta_h$ is primitive because $\beta_h\cdot F=1$.
+
+These numerical conditions do not determine the existence of a
+subscheme for every prescribed triple $(\beta,d,n)$.  Enumerative
+comparisons impose their own hypotheses, including the primitive
+K3-class regime in \cite{OPand}.  The charge calculation does not
+extend that regime to imprimitive classes.
+\end{remark}
+
+\begin{remark}[Additive charges]
+\label{rem:chart-data-not-additive-hall-grading}
+An exact triangle adds Mukai vectors, so a Hall operation is graded
+by $(Q,P)$ whenever its source category and coefficient theory have
+been specified.  Gram degrees add with an additional cross term.
+Consequently a sum over equal Gram degrees is not by itself a
+regrading by a group homomorphism.
+\end{remark}
+
+\subsection{Polarization of the Gram map}
+\label{subsec:gram-cocycle-appendixC}
+
+\begin{lemma}[The cross term]
+\label{lem:gram-additivity-defect-appendixC}
+For $c=(Q,P)$ and $c'=(Q',P')$, define
+\[
+B(c,c')=(Q\cdot Q',\;Q\cdot P'+Q'\cdot P,\;P\cdot P').
+\]
+Then $B$ is symmetric, integral and bilinear, and
+\[
+\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c'),\qquad B(c,c)=2\Pi_X(c).
+\]
+With $(\delta f)(c,c')=f(c)+f(c')-f(c+c')$, one has
+$B=-\delta\Pi_X$ and $\delta B=0$.
+\end{lemma}
+
+\begin{proof}
+Expand the two squares and the middle pairing in $\Pi_X(c+c')$.
+Bilinearity gives the cocycle equation
+\[
+B(c,c')+B(c+c',c'')=B(c',c'')+B(c,c'+c'').
+\]
+The remaining identities follow by subtraction and by setting $c'=c$.
+\end{proof}
+
+\begin{remark}[Quadratic and linear corrections]
+\label{rem:cleanly-stated-polarization-identity}
+The equality $B(c,c)=2\Pi_X(c)$ also follows from
+$\Pi_X(2c)=4\Pi_X(c)$.  Thus the group-cohomology class of $B$ is
+zero, with a quadratic trivialization.  An additive homomorphism
+$f$ has $\delta f=0$, so it cannot trivialize a nonzero $B$.
+This is the obstruction to an additive linear correction.
+\end{remark}
+
+\subsection{An additive extension of Gram degrees}
+\label{subsec:normal-ordered-gram-map-appendixC}
+
+\begin{definition}[Normal-ordered charge group]
+\label{def:normal-ordered-charge-lattice-appendixC}
+Let $\widehat\Gamma_X$ be the set
+$\Gamma_X^{\mathrm{form}}\times\Gamma_{\mathrm{gram}}$ with law
+\[
+(c,T)\star(c',T')=(c+c',T+T'+B(c,c')).
+\]
+Its identity is $(0,0)$ and its inverse operation is
+$(c,T)^{-1}=(-c,-T+2\Pi_X(c))$.  The split section and the raw
+placement are, respectively,
+\[
+s(c)=(c,\Pi_X(c)),\qquad i_0(c)=(c,0).
+\]
+\end{definition}
+
+\begin{proposition}[Additive Gram map]
+\label{prop:normal-ordered-gram-homomorphism-appendixC}
+The cocycle law makes $\widehat\Gamma_X$ an abelian group.  The map
+\[
+(c,T)\longmapsto(c,T-\Pi_X(c))
+\]
+is an isomorphism to the ordinary direct sum
+$\Gamma_X^{\mathrm{form}}\oplus\Gamma_{\mathrm{gram}}$.
+In particular,
+\[
+\overline\Pi_X(c,T)=\Pi_X(c)-T
+\]
+is a homomorphism, $s$ is a homomorphism, and
+$\overline\Pi_X\circ s=0$, whereas
+$\overline\Pi_X\circ i_0=\Pi_X$.
+\end{proposition}
+
+\begin{proof}
+Associativity is the cocycle equation, and symmetry of $B$ gives
+commutativity.  For the displayed splitting, the identity
+$\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c')$ cancels the cross term.
+The other assertions follow immediately.  The raw placement fails
+to be additive precisely where $B$ is nonzero.
+\end{proof}
+
+The threefold sheaves of
+Proposition~\ref{prop:type-ii-compact-mukai-representatives} realize
+the three simple Gram degrees $(1,1,0)$, $(0,1,1)$ and $(0,-1,0)$.
+They are external sums of point ideals or point sheaves on $S$.
+Their construction requires no special Picard lattice.  Their support dimensions differ,
+and a common stability condition with the required Hall operations
+remains a separate comparison problem.
+
+\begin{remark}[Choice of lift]
+\label{rem:resolution-polarization-defect-appendixC}
+Products of raw lifts accumulate the cross term in the central
+coordinate.  For example,
+\[
+i_0(c)\star i_0(c')=(c+c',B(c,c')).
+\]
+The additive map $\overline\Pi_X$ sends this product to
+$\Pi_X(c)+\Pi_X(c')$.  The split lift $s(c+c')$ instead has additive
+Gram degree zero.  These are different lifts of the same underlying
+charge.  The lattice extension is associative, but lifting an
+actual Hall product requires a rule compatible with its objects
+and extension correspondences.
+\end{remark}
+
+\begin{remark}[Effective support]
+\label{rem:chart-data-not-hall-support-appendixC}
+The formal lattice contains nonalgebraic vectors.  Even in its
+algebraic sublattice, a class need not be represented by an object
+in a prescribed heart or stability chamber.  Such support must be
+specified before forming its Hall algebra, as in
+Definition~\ref{def:algebraic-effective-hall-support}.  The
+ideal-sheaf dictionary and the three explicit sheaves above supply
+particular representatives, not a realization of every root class
+with all the required operations.
+\end{remark}
+
+\subsection{Automorphic and protected interpretations}
+\label{subsec:three-igusa-names-chart-data}
+
+The automorphic form $\Delta_5$ is a section of its weight-five line
+with character $\nu_{\Delta_5}$.  In the root-lattice normalization,
+the Borcherds--Kac--Moody denominator is
+\[
+\operatorname{den}(\mathfrak g_{\Delta_5})
+=64^{-1}\Delta_5(2Z).
+\]
+The Gram dictionary explains the associated Fourier exponents.
+It does not construct a compact protected Pfaffian section.  Such a
+section requires the oriented geometric data of
+Chapter~\ref{chap:dirac-igusa-pro-object}, including the
+Weyl-transport condition~\ref{def:O1-plus-weyl-transport}, and the
+finite-stage hypotheses of
+Theorem~\ref{thm:pfaffian-dirac-finite-stage}.
+
+Likewise, symmetry of the Mukai lattice does not identify a Hall
+algebra with its orthogonal isometry algebra.  Both comparisons
+require maps respecting the relevant operations.  The lattice and
+charge identities proved here remain valid independently of those
+constructions.

@@ -1,0 +1,1433 @@
+\part{Boundary operations and three-dimensional gravity}
+
+
+\chapter{Interfaces and associative duality}
+\begin{summarybox}
+A boundary comparison must preserve products, interfaces and their higher
+identities. Their deformation equations admit a local BV construction when
+a local field realization is supplied. Three-dimensional Cartan gravity
+provides a concrete classical theory for comparison; quantum reconstruction
+also involves measures, boundary conditions, states and global sectors.
+\end{summarybox}
+
+\section{Three products and one interface}
+Holomorphic collisions and transverse composition have different coefficient
+objects. To compare them, one needs maps that put both actions on a common
+interface. The ordinary two-sided bar describes the algebraic relation these
+maps must preserve.
+
+Let $X$ be a smooth complex curve. Fix a six-functor enhancement of
+$\Dcal_X=D\text{-}\Mod(\Ran X)$, with pointwise tensor $\tensor^!$
+and chiral convolution $\starCh$. A module for one tensor is not thereby
+a module for the other. Choose a recipient for the interface, coefficient
+realization functors into that recipient, and their comparison maps.
+
+\begin{definition}[Complete mixed boundary datum]
+A complete mixed datum consists of a chiral Lie algebra $L$, an associative
+algebra $A^{\ch}$ for $\starCh$, a transverse $\Eone$ algebra $A^\perp$
+in the specified factorization coefficient category, and an interface $K$.
+It includes a Lie map $\iota:L\to(A^{\ch})_{\Lie}$ and actions on $K$
+of the two realized associative algebras. The actions commute coherently:
+their comparison homotopy and all its higher identities are part of the datum,
+denoted by $\lambda$. Every operation is continuous for the declared filtration.
+Augmentations, when required, are additional specified maps to the appropriate
+tensor units. They do not identify those units with a conformal vacuum or a
+chosen physical state. Write $\mathbb A=(L,A^{\ch},A^\perp,K,\iota,\lambda)$.
+\end{definition}
+
+The three native bars retain their recipients:
+\[
+ \BarLieCh(L),\qquad \BarAssCh(A^{\ch}),\qquad \BarPerp(A^\perp).
+\]
+A fourth bar describes the interface after coefficient realization. The
+following strict algebraic model fixes its order and signs.
+
+\begin{construction}[Two-sided interface bar]
+Let $A,B$ be augmented associative algebras over a field $k$, concentrated
+in degree zero, and let $K$ be a left $A$, right $B$ bimodule. Put
+$\bar A=\ker\epsilon_A$, $\bar B=\ker\epsilon_B$. The term of bidegree
+$(p,q)$ is
+\[
+ C_{p,q}=(s\bar A)^{\otimes p}\otimes K\otimes(s\bar B)^{\otimes q},
+ \qquad |s a|=-1.
+\]
+There is one left block, one interface factor, and one right block.
+For an element $m\in K$, on $[a_1|\cdots|a_p]m[b_1|\cdots|b_q]$, let $d_L$ multiply adjacent
+$a_i,a_{i+1}$ with sign $(-1)^{i-1}$ and act by $a_p$ on $m$ with sign
+$(-1)^{p-1}$. Let $d_R$ first act by $b_1$ on $m$ with sign $+1$, and
+multiply $b_i,b_{i+1}$ with sign $(-1)^i$. Empty sums vanish. Set
+\[
+ b|_{C_{p,q}}=d_L+(-1)^p d_R.
+\]
+The direct-sum total complex computes
+$k\otimes_A^{\mathbb L}K\otimes_B^{\mathbb L}k$.
+For dg algebras, add the internal differential using the tensor Koszul signs.
+For positive weights with a lower bound on $K$, take the degreewise product
+over weights; each fixed weight has only finitely many bar lengths.
+\end{construction}
+
+\begin{theorem}[Interface differential]
+The displayed differential squares to zero. Its identities are associativity
+of $A,B$, their module axioms on $K$, and commutation of the two actions.
+\end{theorem}
+\begin{proof}
+Two disjoint contractions in $d_L^2$ have opposite signs; two overlapping
+ones agree by associativity or the left module axiom. Thus $d_L^2=0$.
+The same argument gives $d_R^2=0$. The unsuspended left and right
+contractions commute, including at $K$, where the identity is
+$(am)b=a(mb)$. Applying $d_L$ lowers $p$ by one, so the two cross terms
+in $(d_L+(-1)^p d_R)^2$ have opposite signs. Finally, the augmented
+one-sided free bar resolutions of $k$ on the two sides give the displayed
+derived tensor product. Their tensor product is a resolution because $k$
+is a field. Positive weights make the same proof finite at every weight.
+\end{proof}
+
+In a homotopy-coherent interface, the binary operations alone need not square
+to zero. The homotopy $\lambda$ and the higher operations contribute further
+terms. A supplied coloured bar resolution packages their identities into
+a square-zero coderivation. Promoting this algebraic construction to
+$\BarMix(\mathbb A;K)$ requires the actual collision, restriction and
+coefficient maps in the chosen geometric recipient.
+
+\section{Low-arity mixed signs}
+The shortest word involving both actions is $[x]m[y]$. Its boundary is
+\[
+ b([x]m[y])=(xm)[y]-[x](my),\qquad
+ b^2([x]m[y])=(xm)y-x(my)=0.
+\]
+The sign is the orientation of the two contraction edges. More generally,
+\[
+ \det(E_{\ch}\oplus E_\perp)
+ =\det(E_{\ch})\otimes\det(E_\perp);
+\]
+interchanging two odd contraction operators changes this orientation.
+For $A=B=K=k[x]/(x^3)$, omitting the cross sign in the total differential
+leaves a nonzero multiple $2x^2$ on $[x]1[x]$ in characteristic zero.
+This is already a failure of the strict bimodule bar, before geometric
+collision terms enter.
+
+\section{Compatible modules and the mixed centre}
+An operation on a boundary theory must act on boundary-changing morphisms as well as on objects. Natural transformations retain this compatibility, and derived natural transformations retain its higher homotopies.
+
+Assume the chosen recipient gives a presentable enriched stable category
+of compatible modules and the enriched endomorphism object used below exists.
+A compatible module is a triple $(M^{\ch},M^\perp,\kappa)$ with an $A^{\ch}$ action, an $A^\perp$ action, and an interface comparison over $K$.  Let $\Mod_{\mathbb A}^{\mathrm{mix}}$ be their stable category.
+
+\begin{definition}[Mixed derived centre]
+The mixed derived centre is
+\[
+ Z_{\mathrm{mix}}(\mathbb A)
+ =\End\!\left(\id_{\Mod_{\mathbb A}^{\mathrm{mix}}}\right).
+\]
+It is computed by the endomorphisms of the diagonal compatible bimodule.
+\end{definition}
+
+\begin{theorem}[Universal interior action]
+$Z_{\mathrm{mix}}(\mathbb A)$ carries an internal $\Etwo$ algebra structure.  Every action already defined as a coherent natural endomorphism of the identity determines a point of this centre. The space of its factorizations through the representing endomorphism object is contractible.  Morita-equivalent complete mixed data have equivalent centres.
+\end{theorem}
+\begin{proof}
+Endomorphisms of the identity functor form the higher centre of a module category.  Vertical composition and composition of endofunctors give the coherent
+interchange operations on endomorphisms of the identity, hence its $\Etwo$
+structure. In a Hochschild cochain model these are the brace operations.  A supplied coherent natural action defines an endomorphism of the identity. A physical bulk insertion determines such an action only after its action on modules, morphisms, and higher compositions has been constructed.  The factorization is the universal property of the endomorphism object.  Morita equivalence identifies the module categories and their identity functors.
+\end{proof}
+
+\section{Relative induction from a chiral algebra}
+Let $j:\mathcal P_{\ch}\to\mathcal P_{\mathrm{mix}}$ be a specified
+morphism of coloured operads in a monoidal category in which the relevant
+homotopy colimits exist and tensor product preserves them. A chiral algebra
+$V$ is here an algebra for the source operad, with its chosen unit relations.
+Relative operadic composition defines
+\[
+ j_!V=\mathcal P_{\mathrm{mix}}
+       \circ^{\mathbb L}_{\mathcal P_{\ch}}V.
+\]
+It can be computed by the geometric realization of the relative operadic bar.
+This is the algebraic collar $\Coll(V)$ for the specified operad map.
+
+\begin{theorem}[Relative induction and completion]
+Relative induction is left adjoint to restriction:
+\[
+ \operatorname{Map}(j_!V,B)
+ \simeq\operatorname{Map}(V,j^*B).
+\]
+If the selected category of complete algebras has a completion left adjoint
+to inclusion, then $\widehat\Coll(V)=\widehat{j_!V}$ has the same mapping
+property for complete targets. In particular, this holds for the positive
+weight completion with weight-preserving maps and compatible finite-weight
+quotients used in the ordinary bar construction.
+\end{theorem}
+\begin{proof}
+Mapping the relative bar realization into $B$ gives the totalization of
+maps out of its terms. Its compatibilities say exactly that the map from
+$V$ respects the source-operad action. This proves the first adjunction.
+Compose it with the completion adjunction for the second. In the positive
+weight case a compatible map on every weight extends uniquely continuously
+to the product, and conversely a weight-preserving continuous map restricts
+to those maps. The equivalence is an equivalence of mapping spaces, including
+their homotopies.
+\end{proof}
+
+A regular interface and its distributive law still have to be constructed
+in the geometric coefficient category. The associative envelope
+$U_\star(L)$ of a Lie object for a specified monoidal product is also a
+separate construction from the Beilinson--Drinfeld chiral envelope. An
+operadic induction identifies them only through a supplied comparison.
+
+\section{The Koszul--Morita square}
+A change from modules to comodules must transport the interface as well as each algebra. The mixed bar supplies the comparison object. Exchange then asks for motion in an additional topological direction, while BRST reduction asks whether the differential respects every transported operation.
+
+Let $P$ be a dualizable boundary state for $A^\perp$.  Its boundary dual is
+\[
+ A_P^!=\RHom_{A^\perp}(P,P).
+\]
+The ordinary bar construction gives explicit twisted tensor functors.
+Their extension to the mixed datum must also transport the interface and
+its geometric operations.
+
+Let $k$ be a field and let $A_{\mathrm{alg}}=\bigoplus_{w\ge0}A_w$
+be an augmented associative algebra in cohomological degree zero.
+Assume $A_0=k$, augmentation projects onto $A_0$, and multiplication adds weights.
+Set $A=\prod_{w\ge0}A_w$ and $C=\prod_{w\ge0}B(A_{\mathrm{alg}})_w$,
+with degreewise products and the weight topology.
+The bar suspension lowers cohomological degree by one, with $b_2[a|b]=[ab]$.
+The degree-one twisting map $\tau:C\to A$ sends $[a]$ to $a$
+and vanishes on the empty word and longer words.
+
+A module or comodule has the form $\prod_{w\ge w_0}M_w$,
+with differential preserving weight, for some integer $w_0$.
+Actions and coactions preserve weight.
+Comodule coactions are counital and coassociative, and use the tensor product
+\[
+ (C\widehat\otimes M)_w
+ =\bigoplus_{u+v=w}B(A_{\mathrm{alg}})_u\otimes M_v.
+\]
+The same convention defines $A\widehat\otimes M$.
+These sums are finite in each weight.
+Repeated reduced coactions vanish in weight $w$ after more than $w-w_0$ steps.
+Invert quasi-isomorphisms in each weight to obtain $D_{\mathrm{wt}}(A)$
+and $D_{\mathrm{wt}}(C)$.
+
+\begin{proposition}[Ordinary twisted tensor equivalence]
+The functors
+\[
+ F(M)=C\widehat\otimes_\tau M,\qquad
+ G(N)=A\widehat\otimes_\tau N
+\]
+induce inverse equivalences $D_{\mathrm{wt}}(A)\simeq D_{\mathrm{wt}}(C)$.
+Writing $\Delta c=\sum c_{(1)}\otimes c_{(2)}$
+and $\rho n=\sum n_{(-1)}\otimes n_{(0)}$, their differentials are
+\[
+\begin{aligned}
+ d_F(c\otimes m)={}&d_Cc\otimes m+(-1)^{|c|}c\otimes d_Mm
+ +\sum(-1)^{|c_{(1)}|}c_{(1)}\otimes\tau(c_{(2)})m,\\
+ d_G(a\otimes n)={}&a\otimes d_Nn
+ -\sum a\tau(n_{(-1)})\otimes n_{(0)}.
+\end{aligned}
+\]
+The counit and unit are
+\[
+ \epsilon_M(a\otimes c\otimes m)=a\epsilon_C(c)m,\qquad
+ \eta_N(n)=\sum n_{(-1)}\otimes1\otimes n_{(0)}.
+\]
+\end{proposition}
+\begin{proof}
+The twisting equation makes both differentials square to zero.
+The action, coaction, and counit identities show that the displayed maps
+are chain maps and satisfy the triangle identities.
+For $GF(M)$, the extra degeneracy of the two-sided bar inserts
+$1[\bar a_0|a_1|\cdots|a_r]m$ into $a_0[a_1|\cdots|a_r]m$,
+where $\bar a_0=a_0-\epsilon_A(a_0)1$.
+With simplicial boundary $\sum_i(-1)^id_i$, it contracts the augmented bar.
+Multiplying length-$r$ words by $(-1)^r$ gives the displayed differential convention.
+This contraction preserves weight, so the counit is a weightwise quasi-isomorphism.
+For $FG(N)$, filter each weight by the weight of the final $N$-factor.
+The reduced coaction lowers that weight.
+The associated graded unit is the contracted right-sided bar
+$k\otimes N_v\to B(k,A_{\mathrm{alg}},A_{\mathrm{alg}})\otimes N_v$.
+The filtration is finite in each total weight, so the unit is also a quasi-isomorphism.
+The same finite filtrations show that $F,G$ preserve weightwise quasi-isomorphisms,
+since tensoring complexes over $k$ preserves them.
+Thus the unit and counit give the asserted inverse equivalences.
+\end{proof}
+
+For a right module $R$ and a left module $L$ with the same lower-weight
+bounds, the two-sided bar has underlying weight-completed complex
+\[
+ \prod_n\ \bigoplus_{u+v_1+\cdots+v_r+w=n}
+ R_u\otimes s\bar A_{v_1}\otimes\cdots\otimes s\bar A_{v_r}\otimes L_w,
+ \qquad v_i>0,
+\]
+where the sum also runs over $r\ge0$ and $\bar A=\ker(A_{\mathrm{alg}}\to k)$.
+Internal differentials and the two endpoint actions and adjacent products
+form its bar differential. Its realization computes $R\otimes_A^{\mathbb L}L$
+in these weight-graded categories.
+Comparing it with a derived cotensor product requires a two-sided twisting
+comparison on the chosen comodule category and completion.
+Weight completion here is not identified with derived augmentation-adic completion.
+
+\begin{proposition}[Centre transport under a mixed equivalence]
+Suppose an equivalence between the compatible mixed module categories is supplied,
+with coherent compatibility with all four bar objects and the interface operations.
+It identifies the derived endomorphism objects of their identity functors.
+\end{proposition}
+\begin{proof}
+Conjugate a natural endomorphism by the equivalence and a quasi-inverse.
+The unit and counit homotopies give inverse maps on derived endomorphism objects
+and preserve composition and its coherent operations.
+\end{proof}
+
+Constructing such a mixed equivalence requires the restriction, collision,
+interface, and distributive-law comparisons for the actual geometric coefficients.
+Its unit and counit must respect those maps and the chosen inverse limits.
+A diagonal bimodule comparison must produce an actual compatible bicomodule
+before tensor products can be identified with geometric cotensor products.
+Transport of mixed Hochschild chains and traces further requires their
+cyclic comparison and the trace domains used in their definition.
+These are additional mixed Koszul--Morita constructions.
+The ordinary weight-graded equivalence supplies its stated one-colour functors,
+without identifying the other mixed carriers or their physical traces.
+
+\section{BRST reduction}
+Let $Q$ be a square-zero derivation of all the supplied mixed operations,
+including their homotopies. Extend it factorwise to the bar resolution.
+The total bar operator $b$ then anticommutes with $Q$.
+
+\begin{theorem}[BRST--bar bicomplex]
+The total differential $D=Q+b$ squares to zero. Suppose its filtration is
+finite in each weight, or satisfies a stated strong-convergence criterion.
+The associated spectral sequence has
+\[
+ E_1=H_Q(\BarMix(\mathbb A;K)),\qquad
+ E_1\Longrightarrow H_D(\BarMix(\mathbb A;K)).
+\]
+Over a field, when the relevant tensor and completion functors preserve
+the needed quasi-isomorphisms, $(E_1,d_1)$ is the bar complex of the
+$Q$-cohomology operations. If this cohomology lies in one row, the spectral
+sequence collapses after this differential, and the target is the
+\emph{cohomology} of that reduced bar complex.
+\end{theorem}
+\begin{proof}
+The derivation identity gives $Qb+bQ=0$; the bar identities give $b^2=0$.
+Filter the resulting bicomplex so that $Q$ is its degree-zero differential.
+K\"unneth and the specified limit condition identify the first page and its
+remaining bar differential. A finite weightwise filtration converges; in
+the one-row case all later differentials have zero target or source.
+Without that concentration the later differentials remain part of the
+comparison.
+\end{proof}
+
+\chapter{Deformations, local fields, and quantization}
+
+\section{The centre-extended deformation algebra}
+Varying a boundary product changes its compatibility with the interface and the central action. The deformation complex must therefore include all these operations. A local field realization is further data needed to turn their deformation equations into a BV action.
+
+Fix a coloured operad $\mathcal P_{\mathrm{mix}}$ presenting the supplied
+operations and central action. Choose a conilpotent dg cooperad $C$ and
+a cofibrant resolution $\Omega C\to\mathcal P_{\mathrm{mix}}$; for example,
+use the bar cooperad when its bar--cobar resolution is available. Fixed units
+and prescribed nullary operations are held relative. Write $\bar C$ for
+the reduced part. The convolution complex
+\[
+ \Def_{\mathbb A}^{\mathrm{full}}
+ =\Hom_{\mathbb S}
+ \left(\bar C,\End_{\mathbb A}\right)
+\]
+uses the tensor recipient of this operadic presentation. Complete it in a
+filtration for which the insertion operations converge and the deformation
+ideal is pronilpotent. It contains the chiral operation, both associative
+products, the interface, and the central action.
+
+\begin{theorem}[Complete deformation $L_\infty$ algebra]
+The convolution complex has a canonical complete $L_\infty$ structure.  Its Maurer--Cartan mapping space describes algebras over $\Omega C$,
+with the fixed relative data. These are the chosen homotopy-coherent mixed
+structures together with their central action.  Twisting by the point defined by $\mathbb A$ gives the tangent algebra of deformations of the full datum.
+\end{theorem}
+\begin{proof}
+The infinitesimal decomposition maps of the chosen cooperad insert collections of operations into one another.  Composition in the endomorphism operad turns these decompositions into the convolution brackets.  The cooperad identities imply the $L_\infty$ identities.  A Maurer--Cartan element is precisely an operad morphism from a cofibrant resolution of $\mathcal P_{\mathrm{mix}}$ to $\End_{\mathbb A}$.  Twisting linearizes this mapping space at the selected structure.
+\end{proof}
+
+\subsection{Field equations and Bianchi identities}
+Let $\alpha$ be a degree-one field in the localized deformation algebra.  Its curvature is
+\[
+ \mathcal F(\alpha)
+ =\sum_{n\ge1}\frac1{n!}\ell_n(\alpha^{\tensor n}).
+\]
+The linearization at $\alpha$ is
+\[
+ d_\alpha x
+ =\sum_{n\ge0}\frac1{n!}
+   \ell_{n+1}(\alpha^{\tensor n},x).
+\]
+
+\begin{theorem}[Universal Bianchi identity]
+For every $\alpha$,
+\[
+ d_\alpha\mathcal F(\alpha)=0.
+\]
+At a Maurer--Cartan point, $d_\alpha^2=0$.
+\end{theorem}
+\begin{proof}
+Both identities are the exponential form of the $L_\infty$ Jacobi relations.  Expand the coderivation square on the cofree cocommutative coalgebra and evaluate it on $e^\alpha$ and $e^\alpha x$.
+\end{proof}
+
+\section{Shifted cotangent transgression}
+Let $\flie$ be a complete elliptic $L_\infty$ algebra on a three-manifold $M$.  Its shifted cotangent theory has fields
+\[
+ \mathcal E=T^*[-1]\flie[1]
+ =\flie[1]\oplus\flie^![-2].
+\]
+Here $\flie^!$ is the continuous density-valued dual. The pairing is
+integrated with compact support or boundary conditions permitting integration
+by parts. For example, for the de Rham local algebra in three dimensions,
+$\flie^!\simeq\Omega^\bullet(M,\mathfrak g^*)[3]$; both superfields then
+have de Rham shift $[1]$. This is different from the finite-dimensional
+cotangent of a Lie algebra, whose dual term has shift $[-2]$.
+The canonical action is
+\[
+ S(\alpha,\beta)
+ =\angles{\beta,\mathcal F(\alpha)}.
+\]
+
+\begin{theorem}[Universal BV envelope]
+The action satisfies the classical master equation.  Its Euler--Lagrange equations are
+\[
+ \mathcal F(\alpha)=0,
+ \qquad
+ d_\alpha^!\beta=0.
+\]
+The linearization, including its gauge directions, is the tangent complex
+of the shifted cotangent moduli problem.
+At the zero cotangent vector over a Maurer--Cartan point $\alpha$, it splits
+as
+\[
+ T_\alpha\MC(\flie)\oplus L_\alpha\MC(\flie)[-1].
+\]
+At a nonzero $\beta$, the derivative of $d_\alpha^!\beta$ also contains
+the Hessian term in the $\alpha$ direction.
+\end{theorem}
+\begin{proof}
+The Hamiltonian vector field of $S$ is the cotangent lift of the homological vector field defining the $L_\infty$ structure.  The square of that vector field is zero, hence $\{S,S\}=0$.  Variation in $\beta$ gives the Maurer--Cartan equation.  Variation in $\alpha$ gives the dual linearized equation.
+\end{proof}
+
+\begin{definition}[Local realization and chiral BV envelope]
+A local realization of the complete mixed datum consists of an elliptic local $L_\infty$ algebra $\flie_{\mathbb A}^{\mathrm{full}}$ on $M=X^{\mathrm{an}}\times\R$, a specified continuous filtered $L_\infty$ quasi-isomorphism
+\[
+ \Gamma(M,\flie_{\mathbb A}^{\mathrm{full}})
+ \longrightarrow \Def_{\mathbb A}^{\mathrm{full}},
+\]
+and the local pairing needed for cotangent transgression. Here $\Gamma$ denotes the chosen complex of global sections with its declared topology. The comparison includes compatibility with the specified boundary operations. The dual fields use the density-valued continuous dual, with compact support or boundary conditions that make the integrated pairing and integration by parts defined.
+
+For a supplied local realization, define
+\[
+ \BVEnv_3^{\mathrm{full}}(\mathbb A)
+ =T^*[-1]\MC(\flie_{\mathbb A}^{\mathrm{full}}).
+\]
+Its action is the cotangent action displayed above. Constructing a local realization from an abstract mixed datum remains an additional existence problem.
+\end{definition}
+
+\section{Intrinsic algebraic quantization}
+An invariant volume gives a finite-dimensional BV operator. To use this
+construction on an inverse system of charts, its operators must also commute
+with the transition maps.
+
+Let $\mathfrak X$ first be a smooth graded formal chart, with a homological
+vector field $Q$ and a nonvanishing Berezinian $\mu$ invariant under $Q$.
+Use a coordinate or filtration completion on which the operators below are
+continuous. Functions on its shifted cotangent are completed polyvectors:
+\[
+ \Ocal(T^*[-1]\mathfrak X)=\widehat\PV(\mathfrak X)
+ =\prod_{p\geq0}\Gamma(\mathfrak X,\wedge^pT_{\mathfrak X})[p].
+\]
+The volume defines divergence and hence the operator $\Delta_\mu$ on
+polyvectors, with its signs fixed by the following bracket convention.
+
+\begin{theorem}[Invariant-volume BV complex]
+The degree-one operator $\Delta_\mu$ has order two and satisfies
+\[
+ \Delta_\mu^2=0,\qquad [d_{\mathfrak X},\Delta_\mu]=0,
+\]
+\[
+ \Delta_\mu(fg)=\Delta_\mu(f)g+(-1)^{|f|}f\Delta_\mu(g)
+                 +(-1)^{|f|}\{f,g\}.
+\]
+Thus $(\widehat\PV(\mathfrak X)\llbracket\hbar\rrbracket,
+d_{\mathfrak X}+\hbar\Delta_\mu)$ is a complex.
+\end{theorem}
+\begin{proof}
+In coordinates with the selected volume, divergence is the graded sum of
+paired derivatives in the base and cotangent variables. The graded
+commutation relations give its square zero. Equivalently, divergence on
+vector fields is a Lie cocycle; this identity extends to the square of its
+second-order extension. Invariance of $\mu$ under $Q$ gives the commutator
+with $d_{\mathfrak X}$. Expanding the paired derivatives on a product gives
+the displayed bracket. These identities extend to the chosen completion
+by continuity; see also the finite BV construction in \cite{SchwarzBV}.
+\end{proof}
+
+For an ordinary smooth $m$-dimensional variety and a nowhere-zero top form,
+contraction gives the precise comparison
+\[
+ \PV^p\longrightarrow\Omega^{m-p},\qquad
+ (\PV,\Delta_\mu)\simeq(\Omega^\bullet[m],d_{\mathrm{dR}}),
+\]
+with contraction signs chosen compatibly. Polyvector degree is reversed,
+and the shift $[m]$ makes both sides have degree $-p$. The parameter $\hbar$
+gives the corresponding Rees differential. On a graded or derived chart,
+a Berezinian is not an ordinary top differential form: for one odd coordinate
+$\theta$, the powers $(d\theta)^n$ persist for all $n$. A de Rham description
+therefore needs its own recipient, such as integral forms, and a comparison
+map with its shifts and completion.
+
+\begin{definition}[Quantum complex on a chart system]
+Suppose finite smooth graded formal charts of the localized deformation
+problem carry these invariant volumes, and are linked by specified maps of
+BV complexes. If the operators are continuous on the separated inverse
+limit, denote that limit complex by $\QHdg_3^{\mathrm{full}}(\mathbb A)$.
+Existence of compatible orientations alone does not construct the transition
+maps or a comparison with a derived de Rham complex.
+\end{definition}
+
+\begin{theorem}[Quantum master equation]
+For a degree-zero formal action $S=S_0+\hbar S_1+\cdots$, the equation
+\[
+ dS+\tfrac12\{S,S\}+\hbar\Delta_\mu S=0
+\]
+is equivalent to $(d+\hbar\Delta_\mu)e^{S/\hbar}=0$ on the formal WKB
+module generated by $e^{S/\hbar}$, or in any explicitly specified algebra
+where the exponential and these operations converge.
+\end{theorem}
+\begin{proof}
+The second-order product identity gives
+\[
+ (d+\hbar\Delta_\mu)e^{S/\hbar}
+ =\hbar^{-1}\bigl(dS+\tfrac12\{S,S\}+\hbar\Delta_\mu S\bigr)e^{S/\hbar}.
+\]
+This is an identity of formal WKB symbols. A general exponential with
+$S_0\ne0$ need not be an element of the original $\hbar$-adic algebra.
+\end{proof}
+
+\section{Perturbative factorization realization}
+The algebraic quantum differential does not specify a propagator or a space of singular kernels. Fix a local realization, elliptic gauge-fixing data, support and boundary conditions, and a renormalization prescription. A heat-kernel propagator is defined away from the diagonal. Extending its graph integrals to collisions requires counterterms and compatibility with the boundary conditions.
+
+\begin{definition}[Factorization realization data]
+A factorization realization consists of renormalized local observable complexes, continuous disjoint-insertion maps, and coherent homotopies for their compositions. It includes extensions of graph weights to the required collision strata, their Stokes identities, and a quantum master equation in the permitted local functional complex. Weiss descent is a further required property of these actual complexes. A boundary realization also includes a comparison with the supplied mixed datum, preserving its two products, Lie operation, interface, and mixed law.
+\end{definition}
+
+Under these hypotheses the disjoint-insertion maps and composition homotopies define the stated factorization object. The boundary comparison identifies its boundary operations with those of $\mathbb A$. The construction problem is to produce these data from the physical fields and action. A graphwise identity supplies the corresponding composition equation, whereas descent and boundary identification require their own maps and proofs.
+
+\chapter{Exchange and projective boundary families}
+
+\section{Planar exchange and Tannaka reconstruction}
+A second topological direction can give exchange paths for defects. An
+actual line category must provide their braiding and its homotopies. In the
+finite algebraic setting, let $\mathscr L$ be an essentially small rigid
+braided $k$-linear tensor category with a faithful strong monoidal functor
+$\omega:\mathscr L\to\operatorname{Vect}_{k}^{\mathrm{fd}}$. Form the coend
+\[
+ H=\int^{M\in\mathscr L}\omega(M)^*\otimes\omega(M)
+\]
+in all vector spaces. Write $[f\otimes v]_M$ for a matrix coefficient.
+
+\begin{theorem}[Matrix-coefficient Hopf algebra]
+The coend is a coquasitriangular Hopf algebra. Its coalgebra structure is
+\[
+ \Delta[f\otimes v]_M
+   =\sum_i[f\otimes e_i]_M\otimes[e^i\otimes v]_M,
+ \qquad \epsilon[f\otimes v]_M=f(v).
+\]
+Tensor product gives multiplication; duality gives the antipode. Its linear
+dual acts on each finite fibre. Reconstruction of the entire line category
+as finite comodules requires the usual exactness and reconstruction
+hypotheses in addition to faithfulness.
+\end{theorem}
+\begin{proof}
+The coevaluation tensor $\sum_i e_i\otimes e^i$ is basis-independent, so
+the displayed coproduct is well-defined and coassociative. Evaluation gives
+the counit. The monoidal constraint identifies the product of coefficients
+of $M,N$ with a coefficient of $M\otimes N$; functoriality makes this
+descend through the coend relations. The tensor unit gives its unit, and
+the duality identities give the antipode equations. Finally, evaluating
+the braiding on two fibres defines the coquasitriangular pairing. Naturality
+and the two hexagons are exactly its compatibility with multiplication and
+coproduct. These are the finite reconstruction operations of Volume~IV.
+\end{proof}
+
+For a meromorphic spectral family, specify expansion regions, tensor
+completions and pairings before passing to continuous duals. An actual
+completed coevaluation may turn the pairing into an $R$-matrix. Naturality
+on a chosen generating fibre gives an RTT \emph{relation}. A full RTT
+presentation further needs a generation theorem and a proof that these
+relations give its entire kernel.
+
+\section{Projective connections and the Virasoro tangent complex}
+A projective connection describes the affine transformation law of a
+stress tensor. It is distinct from an action on every operation of a mixed
+boundary theory.
+
+Fix the convention
+\[
+ \delta_\epsilon p=\mathcal D_{p,c}(\epsilon)
+   =\epsilon\partial p+2(\partial\epsilon)p+\frac c{12}\partial^3\epsilon.
+\]
+On a coordinate disc, the third-derivative term is a Lie algebra cocycle:
+with $L_\epsilon f=\epsilon f'+2\epsilon'f$,
+\[
+ L_\epsilon(\eta''')-L_\eta(\epsilon''')
+   =(\epsilon\eta'-\eta\epsilon')'''.
+\]
+Global projective connections are glued by the corresponding Schwarzian
+coordinate law. Denote their quotient by coordinate changes by $\Pcal_c(X)$.
+Its tangent complex is
+\[
+ \Omega^{0,\bullet}(X,T_X)
+ \xrightarrow{\mathcal D_{p,c}}
+ \Omega^{0,\bullet}(X,K_X^{\otimes2}),
+\]
+with vector fields in quotient-tangent degree $-1$ and projective variations
+in degree zero; totalize with the Dolbeault degree.
+
+\begin{proposition}[A projectively covariant mixed family]
+Suppose the coordinate-change action lifts coherently to the chiral and
+transverse operations, the interface and all their identities. It then
+defines a family of mixed structures over the projective quotient. Its
+relative and projective tangent algebras form an extension. A compatible
+splitting identifies that extension with the corresponding homotopy
+semidirect product.
+\end{proposition}
+\begin{proof}
+The equivariant structure descends the family through the coordinate-change
+groupoid. Differentiation gives the tangent extension; a splitting supplies
+its action and higher coherence operations. Conversely those operations
+give the semidirect description. A map $\Vir_c\to A^{\ch}$ supplies the
+chiral conformal action, but the other actions in the hypothesis must also
+be constructed.
+\end{proof}
+
+\section{Einstein completion of a conformal pair}
+Let $A_L,A_R$ be conformal mixed boundary data equipped with the coherent
+projective families just described and specified maps to the same projective
+quotient $\Pcal_c(X)$. Their homotopy fibre product is a relative deformation
+problem. Equality of the two central parameters is necessary for this
+matching convention, but does not supply these maps or the coupled action.
+
+\begin{definition}[Candidate Einstein BV completion]
+Suppose the relative algebra and a continuous $L_\infty$ action of the Cartan algebra have been supplied, together with their local realization. The associated cotangent candidate is
+\[
+ \EinBV_3(A_L,A_R)
+ =T^*[-1]\MC\!\left(
+   \mathfrak g_{\mathrm{grav}}
+   \ltimes_{\mathrm{Ham}}
+   \mathfrak m_{A_L,A_R}
+  \right).
+\]
+Here $\mathfrak g_{\mathrm{grav}}$ is the Cartan deformation algebra and $\mathfrak m_{A_L,A_R}$ is the relative mixed deformation algebra after projective matching.
+\end{definition}
+
+\begin{theorem}[Cotangent action for a supplied coupled algebra]
+Suppose projective matching and a continuous $L_\infty$ action have constructed the displayed complete semidirect product. Suppose also that its local realization and integrated dual pairing are defined. Its shifted cotangent has action
+\[
+ S(\alpha,\beta)=\langle\beta,\mathcal F(\alpha)\rangle
+\]
+and satisfies the classical master equation. Its Bianchi identity is the $L_\infty$ identity of the coupled algebra.
+\end{theorem}
+\begin{proof}
+The supplied semidirect product has a square-zero homological vector field. Its cotangent lift is Hamiltonian for the displayed action and remains square-zero. This proves the classical master equation and the Bianchi identity by the preceding cotangent construction.
+\end{proof}
+
+The gravitational summand of this cotangent action is the cotangent theory of Cartan deformations. It introduces independent dual fields. To identify it with Einstein BV theory requires a comparison preserving the BV pairing and the action, including boundary terms, on the invertible-coframe sector. The flatness equations alone do not provide that comparison. A physical coupled completion must also construct the matter action and its equivariant moment map. The intended Einstein reconstruction therefore retains these field and action comparisons as existence problems.
+
+\chapter{Cartan gravity and its boundary currents}
+
+\section{Three-dimensional gravity as a flat Cartan theory}
+Let $M$ be an oriented three-manifold and $\ell>0$, with
+$\Lambda=-\ell^{-2}$. Use $\eta=\operatorname{diag}(-1,1,1)$ and
+$\epsilon_{012}=1$, raising internal indices with $\eta$.
+The Cartan algebra $\mathfrak g_\Lambda$ has basis $J_a,P_a$, $a=0,1,2$, with
+\[
+ [J_a,J_b]=\epsilon_{ab}{}^cJ_c,
+ \qquad [J_a,P_b]=\epsilon_{ab}{}^cP_c,
+ \qquad [P_a,P_b]=\ell^{-2}\epsilon_{ab}{}^cJ_c.
+\]
+The invariant pairing is $\angles{J_a,P_b}=\eta_{ab}$ and vanishes on the two diagonal summands.  A Cartan connection is
+\[
+ \mathcal A=\omega^aJ_a+e^aP_a.
+\]
+Put $R^a=d\omega^a+\tfrac12\epsilon^a{}_{bc}\omega^b\wedge\omega^c$
+and $T^a=de^a+\epsilon^a{}_{bc}\omega^b\wedge e^c$. Its curvature is
+\[
+ F_{\mathcal A}
+ =\left(R^a+\frac1{2\ell^2}\epsilon^a{}_{bc}e^b\wedge e^c\right)J_a
+ +T^aP_a.
+\]
+
+\begin{theorem}[Cartan--Einstein equivalence]
+On the locus where $e$ is invertible, $F_{\mathcal A}=0$ is equivalent to
+\[
+ T^a=0,
+ \qquad
+ G_{\mu\nu}+\Lambda g_{\mu\nu}=0,
+ \qquad
+ g_{\mu\nu}=\eta_{ab}e^a_\mu e^b_\nu.
+\]
+The Chern--Simons action for $\mathcal A$ equals the Einstein--Hilbert action with cosmological constant, up to its boundary term and normalization.
+\end{theorem}
+\begin{proof}
+The $P$ component of the flatness equation is the torsion equation.  Invertibility of $e$ gives the Levi--Civita spin connection.  The $J$ component states that the curvature two-form has constant sectional curvature $-\ell^{-2}$.  In three dimensions the Riemann tensor is determined by the Ricci tensor, so this is the Einstein equation.  Expanding the Chern--Simons three-form gives the first-order gravitational
+action with the coefficients computed below
+\cite{AchucarroTownsend,Witten3DGravity}. On a flat connection,
+$\mathcal L_\zeta\mathcal A=d_{\mathcal A}(\iota_\zeta\mathcal A)$;
+invertibility of $e$ therefore identifies infinitesimal translations with
+diffeomorphisms modulo Lorentz transformations, on shell.
+\end{proof}
+
+\section{The Chern--Simons normalization}
+Normalize the fundamental trace on $\mathfrak{sl}_2$ by
+$\operatorname{tr}(J_aJ_b)=\eta_{ab}/2$. Define
+\[
+ \operatorname{CS}_{\operatorname{tr}}(A)
+ =\operatorname{tr}\bigl(A\wedge dA+\tfrac23 A\wedge A\wedge A\bigr).
+\]
+For $A^\pm=\omega\pm\ell^{-1}e$, direct expansion gives
+\[
+\begin{split}
+ \operatorname{CS}_{\operatorname{tr}}(A^+)
+ -\operatorname{CS}_{\operatorname{tr}}(A^-)
+ ={}&\frac4\ell\operatorname{tr}(e\wedge R_\omega)
+ +\frac4{3\ell^3}\operatorname{tr}(e\wedge e\wedge e)\\
+ &-\frac2\ell d\operatorname{tr}(\omega\wedge e).
+\end{split}
+\]
+Since $R^a=\tfrac12\epsilon^a{}_{bc}R^{bc}$, its bulk integral is
+\[
+ \begin{gathered}
+ \frac{k}{4\pi}\int_M
+  \bigl(\operatorname{CS}_{\operatorname{tr}}(A^+)
+       -\operatorname{CS}_{\operatorname{tr}}(A^-)\bigr)\\
+ =\frac{k}{4\pi\ell}\int_M\epsilon_{abc}e^a\wedge
+   \left(R^{bc}+\frac1{3\ell^2}e^b\wedge e^c\right)
+   +\text{boundary term}.
+ \end{gathered}
+\]
+Thus the Einstein normalization $1/(16\pi G)$ gives
+$k=\ell/(4G)$. With the full Cartan pairing
+$\langle J_a,P_b\rangle=\eta_{ab}$, the corresponding single Cartan
+Chern--Simons three-form is the displayed epsilon-form, up to an exact
+form, and has coefficient $1/(16\pi G)$. The Cartan pairing and the
+fundamental trace are different invariant forms; their action coefficients
+must be compared through this expansion \cite{AchucarroTownsend,Witten3DGravity}.
+
+\section{Four equivalent linear complexes}
+Fix an invertible constant-curvature solution $(e,\omega)$. Its local
+deformations have four presentations: the flat adjoint de Rham complex,
+the Einstein--Cartan complex, the metric Einstein complex, and the Calabi
+complex resolving the sheaf of local Killing fields.
+
+\begin{theorem}[Local comparison of gravitational complexes]
+On a geodesically convex open set, these complexes are quasi-isomorphic.
+The first comparison is the splitting of the flat Cartan differential into
+translation and Lorentz components. Eliminating the algebraic torsion
+variable and Lorentz gauge pair gives the metric complex. In dimension
+three its curvature and Bianchi terms identify algebraically with the
+Calabi terms. Each complex resolves the same local Killing sheaf.
+\end{theorem}
+\begin{proof}
+The Cartan splitting is an isomorphism of complexes, with the formulas
+below. For invertible $e$, the map
+\[
+ v^a\longmapsto\epsilon^a{}_{bc}v^b\wedge e^c
+\]
+from spin-connection variations to torsion variations is an isomorphism
+of rank-nine bundles. The torsion equation therefore eliminates $v$.
+The antisymmetric coframe variation and the Lorentz gauge parameter form
+another algebraic contractible pair. Contracting these pairs in the
+complex leaves the metric differential and its Bianchi identity.
+In three dimensions the algebraic curvature module is isomorphic to the
+symmetric two-tensor module by contraction and trace reversal; linearizing
+at constant curvature gives the corresponding identification of equations.
+
+For local exactness, the flat adjoint complex has the Poincar\'e homotopy.
+Its parallel degree-zero sections are the Killing field and its skew first
+derivative, identified by the coframe. The Calabi complex has a compatible
+Killing-transport resolution and local homotopies on constant-curvature
+opens \cite[Sec.~2 and Cor.~10]{KhavkineCalabi}. These yield the same
+resolution of the Killing sheaf. Local exactness here uses this differential
+resolution, not merely exactness of its principal symbol.
+\end{proof}
+
+\section{The four complexes in coordinates}
+The flat adjoint complex is
+\[
+ \Omega^0(M,\mathfrak g_\Lambda)\xrightarrow{d_{\mathcal A}}
+ \Omega^1(M,\mathfrak g_\Lambda)\xrightarrow{d_{\mathcal A}}
+ \Omega^2(M,\mathfrak g_\Lambda)\xrightarrow{d_{\mathcal A}}
+ \Omega^3(M,\mathfrak g_\Lambda).
+\]
+Its degrees are gauge parameters, fluctuations, linearized equations and
+Bianchi identities. Write a parameter as $(\xi^a,\lambda^a)$ and a
+fluctuation as $(u^a,v^a)=(\delta e^a,\delta\omega^a)$. The first two maps are
+\[
+\begin{aligned}
+ u^a&=D_\omega\xi^a+\epsilon^a{}_{bc}e^b\lambda^c,&
+ v^a&=D_\omega\lambda^a+\ell^{-2}\epsilon^a{}_{bc}e^b\xi^c,\\
+ \delta T^a&=D_\omega u^a+\epsilon^a{}_{bc}v^b\wedge e^c,&
+ \delta F^a&=D_\omega v^a+\ell^{-2}\epsilon^a{}_{bc}e^b\wedge u^c.
+\end{aligned}
+\]
+The final map is the linearized Cartan Bianchi identity.
+
+\begin{proposition}[Cartan chain identity]
+The composite of the first two maps is zero on the torsion-free
+constant-curvature background.
+\end{proposition}
+\begin{proof}
+Apply $D_\omega^2$ to $\xi,\lambda$, substitute
+$R^a=-\epsilon^a{}_{bc}e^b\wedge e^c/(2\ell^2)$ and $D_\omega e=0$.
+The curvature terms cancel the explicit $\ell^{-2}$ terms. The remaining
+coefficients vanish by the Jacobi identity. Equivalently,
+$d_{\mathcal A}^2=[F_{\mathcal A},-]=0$.
+\end{proof}
+
+Modulo Lorentz rotation, the metric fluctuation and its gauge variation are
+\[
+ h_{\mu\nu}=2\eta_{ab}e^a_{(\mu}u^b_{\nu)},\qquad
+ K(\zeta)_{\mu\nu}=\nabla_\mu\zeta_\nu+\nabla_\nu\zeta_\mu.
+\]
+Use $\operatorname{Ric}(g)=2\Lambda g$, $R(g)=6\Lambda$ and
+$h=g^{\mu\nu}h_{\mu\nu}$ for its trace. An unambiguous form of the
+linearized Einstein operator is the Palatini formula
+\[
+\begin{aligned}
+ C^\rho{}_{\mu\nu}
+  &=\tfrac12g^{\rho\sigma}
+     (\nabla_\mu h_{\nu\sigma}+\nabla_\nu h_{\mu\sigma}
+                        -\nabla_\sigma h_{\mu\nu}),\\
+ \dot{\operatorname{Ric}}_{\mu\nu}
+  &=\nabla_\rho C^\rho{}_{\mu\nu}-\nabla_\nu C^\rho{}_{\mu\rho},\\
+ \dot R&=g^{\mu\nu}\dot{\operatorname{Ric}}_{\mu\nu}-2\Lambda h,\\
+ (E_\Lambda h)_{\mu\nu}
+  &=\dot{\operatorname{Ric}}_{\mu\nu}-\tfrac12g_{\mu\nu}\dot R
+                                  -2\Lambda h_{\mu\nu}.
+\end{aligned}
+\]
+Naturality and the contracted Bianchi identity give
+$E_\Lambda K=0$ and $\nabla^\mu(E_\Lambda h)_{\mu\nu}=0$.
+For a constant rescaling $h=cg$, one has $C=0$, $\dot R=-6\Lambda c$,
+and $E_\Lambda(cg)=\Lambda cg$.
+
+\begin{proposition}[Metric reduction on the torsion constraint]
+Solving $\delta T=0$ uniquely for $v$ and substituting in $\delta F=0$
+gives $E_\Lambda h=0$. On this constrained space, the kernel of
+$(u,v)\mapsto h$ is the infinitesimal Lorentz action.
+\end{proposition}
+\begin{proof}
+The invertible algebraic map in the preceding theorem determines $v$
+from the first derivative of $u$. The symmetric part of $u$ gives $h/2$;
+its antisymmetric part is a Lorentz rotation. Substitution differentiates
+the Levi--Civita curvature, giving the displayed Palatini operator. A
+Lorentz rotation determines both its coframe variation and its associated
+spin-connection variation. An arbitrary $v$ in the unconstrained space
+would not be detected by $h$, which is why the torsion constraint is needed.
+\end{proof}
+
+For the Calabi comparison, define the constant-curvature defect
+\[
+ \mathcal C(g)_{\mu\nu\rho\sigma}
+ =R_{\mu\nu\rho\sigma}
+  -\Lambda(g_{\mu\rho}g_{\nu\sigma}-g_{\mu\sigma}g_{\nu\rho}).
+\]
+The second Calabi operator is $\dot{\mathcal C}_g$, and the complex begins
+\[
+ \Gamma(TM)\xrightarrow K\Gamma(S^2T^*M)
+ \xrightarrow{\dot{\mathcal C}_g}\Gamma(\mathcal R)
+ \xrightarrow{B_g}\Gamma(\mathcal B).
+\]
+Here $\mathcal R$ is the algebraic curvature bundle and $\mathcal B$ the
+corresponding Bianchi bundle. Differentiating the natural identity
+$\mathcal C(g)=0$ gives $\dot{\mathcal C}_gK=0$. The correction by the
+variation of $\Lambda g\wedge g$ is essential. In dimension three, contraction
+and trace reversal identify this complex with the metric presentation above.
+
+\section{Brown--Henneaux and the projective boundary}
+Take asymptotically AdS boundary conditions for which the Chern--Simons
+charges are differentiable and finite. With the preceding fundamental
+trace and boundary orientation, each chiral sector has level
+$k=\ell/(4G)$. Brown--Henneaux boundary conditions yield the classical
+central charge \cite{BrownHenneaux}
+\[
+ c=6k=\frac{3\ell}{2G}.
+\]
+The local reduction makes its projective term explicit. Choose generators
+$[L_i,L_j]=(i-j)L_{i+j}$, with
+\[
+ L_1=\begin{pmatrix}0&0\\-1&0\end{pmatrix},\quad
+ L_0=\tfrac12\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad
+ L_{-1}=\begin{pmatrix}0&1\\0&0\end{pmatrix}.
+\]
+In the gauge $a_z=L_1+t(z)L_{-1}$, set
+\[
+ \lambda_\epsilon=\epsilon L_1-\epsilon'L_0
+                    +(t\epsilon+\tfrac12\epsilon'')L_{-1}.
+\]
+Matrix multiplication gives
+\[
+ \partial\lambda_\epsilon+[a_z,\lambda_\epsilon]
+   =(\epsilon t'+2\epsilon't+\tfrac12\epsilon''')L_{-1}.
+\]
+Normalize the projective variable by $p=kt$ and the charge by
+$Q_\epsilon=(2\pi)^{-1}\int\epsilon p$ with the selected orientation.
+Then
+\[
+ \delta_\epsilon p=\epsilon p'+2\epsilon'p+\frac k2\epsilon'''
+                  =\mathcal D_{p,6k}(\epsilon).
+\]
+This is a comparison of actual classical boundary charges with the
+projective transformation law. Identifying another conformal mixed datum
+with these charges still requires its boundary map.
+
+\section{Boundary BFV theory and the Virasoro moment map}
+Variation of a Chern--Simons action with an oriented boundary gives the
+boundary symplectic form
+\[
+ \Omega_{\partial}=\frac{k}{4\pi}
+                   \int_{\partial M}\operatorname{tr}(\delta A\wedge\delta A).
+\]
+A choice of polarization and boundary term specifies the allowed fields
+and differentiable gauge charges. On a spatial boundary circle, these
+charges have the affine Poisson central extension; in a compatible sign
+convention its cocycle is
+\[
+ \frac{k}{2\pi}\int_{S^1}\operatorname{tr}(\lambda\,d\eta).
+\]
+The highest-weight reduction just computed gives the classical Virasoro
+algebra. Neither this symplectic form alone nor an arbitrary boundary
+condition defines its quantization.
+
+For the algebraic quantum comparison, let $V^\kappa(\mathfrak{sl}_2)$ be
+the affine vertex algebra with long-root squared length two and
+$\kappa\ne-2$. Principal quantum Drinfeld--Sokolov reduction, including
+its ghost and improvement terms, gives a Virasoro algebra of central charge
+\[
+ c_{\mathrm{DS}}(\kappa)
+ =1-\frac{6(\kappa+1)^2}{\kappa+2}
+ =13-6(\kappa+2)-\frac6{\kappa+2}.
+\]
+This formula is the principal rank-one reduction of
+\cite[Example~5.22]{ArakawaW}.
+The affine quantum parameter $\kappa$ and the classical gravitational
+parameter $k$ have different definitions. Relating them requires the
+chosen quantization, real form and level convention. Substituting
+$\kappa=k$ does not give the classical identity $c=6k$.
+
+\section{Higher-spin completion}
+There is a concrete extension of the Chern--Simons construction: choose
+$\mathfrak{sl}_N\oplus\mathfrak{sl}_N$ with its principal
+$\mathfrak{sl}_2$ embeddings, action levels and asymptotically AdS
+highest-weight boundary conditions. If $V_m$ denotes the irreducible
+$\mathfrak{sl}_2$ module of highest weight $m$, then
+\[
+ \mathfrak{sl}_N\cong\bigoplus_{s=2}^N V_{2s-2}.
+\]
+
+\begin{theorem}[Principal spectrum and boundary reduction]
+In this specified Chern--Simons model, the frame-like fields have one
+integer spin $s$ for every $2\leq s\leq N$. Principal classical
+Drinfeld--Sokolov reduction gives one boundary generating current in each
+of the same conformal weights, with the classical $W_N$ Poisson algebra.
+\end{theorem}
+\begin{proof}
+The principal embedding decomposes the adjoint as displayed. The connection
+component in $V_{2s-2}$ is the frame-like spin-$s$ field. Highest-weight
+gauge leaves one lowest-weight coefficient in each summand; the residual
+gauge transformations give the principal reduced Poisson algebra.
+These are the bulk and boundary constructions of
+\cite{CampoleoniHigherSpin}; the infinite higher-spin analogue is treated
+in \cite{HenneauxRey}.
+\end{proof}
+
+This theory has no local propagating higher-spin modes in three dimensions,
+but has nontrivial boundary charges and global sectors. An independently
+given pair of $W_N$ boundary algebras does not by itself provide its bulk
+action, states or allowed fillings. A reconstruction must map that pair
+to the actual boundary reduction and prove the required equivalence.
+
+\section{The principal embedding count}
+The exponents of $\mathfrak{sl}_N$ are $1,2,\ldots,N-1$.  Under the principal $\mathfrak{sl}_2$ embedding,
+\[
+ \mathfrak{sl}_N=\bigoplus_{m=1}^{N-1}V_{2m}.
+\]
+The dimensions satisfy
+\[
+ \sum_{m=1}^{N-1}(2m+1)
+ =(N-1)(N+1)=N^2-1.
+\]
+Writing $s=m+1$ gives one field at every spin $s=2,\ldots,N$.
+
+\chapter{Matter, determinants, and gravitational states}
+
+\section{Matter stress tensor and the Einstein moment map}
+A projective transformation law alone does not make a matter action
+Hamiltonian. A Hamiltonian coupling needs a symplectic or Poisson matter
+space, an action, and an equivariant moment map. Its elementary BRST model
+exhibits the extra ghost terms explicitly.
+
+Let the finite-dimensional ordinary Lie algebra $\mathfrak h$ act
+Hamiltonianly on an ordinary Poisson algebra $B$ over a characteristic-zero
+field, with
+generators $\mu_a$ and $\{\mu_a,\mu_b\}=f_{ab}{}^c\mu_c$.
+Adjoin odd variables $c^a,b_a$ of degrees $1,-1$, respectively, with the
+degree-zero Poisson bracket $\{c^a,b_b\}=\delta^a_b$; all other
+new generator brackets vanish. Put
+\[
+ \Omega=c^a\mu_a-\tfrac12 f_{ab}{}^c c^a c^b b_c.
+\]
+
+\begin{proposition}[Hamiltonian BRST charge]
+The charge satisfies $\{\Omega,\Omega\}=0$, so
+$Q_{\mathrm{BRST}}=\{\Omega,-\}$ is square-zero. Without the equivariance
+condition, its square contains the moment-map defect.
+\end{proposition}
+\begin{proof}
+The term quadratic in ghosts is
+\[
+ \tfrac12c^ac^b\bigl(\{\mu_a,\mu_b\}-f_{ab}{}^c\mu_c\bigr)
+\]
+in $\tfrac12\{\Omega,\Omega\}$. The remaining term is cubic in ghosts
+and linear in $b$, with the Jacobi identity as coefficient. Both vanish.
+The graded Jacobi identity then gives $Q_{\mathrm{BRST}}^2=0$.
+For $\{q,p\}=1$, $\mu_h=qp$, $\mu_e=p$ and $[h,e]=e$, the charge is
+$c_hqp+c_ep-c_hc_eb_e$. Deleting its cubic ghost term leaves
+$\{\Omega,\Omega\}=2c_hc_ep\ne0$.
+\end{proof}
+
+A local field theory further needs its matter action, ghosts, antifields
+and higher couplings. A supplied local equivariant deformation algebra
+has the shifted cotangent BV action already constructed. Identification
+with an Einstein--matter action requires the action and pairing comparison;
+the isolated linear term $\langle h,\mu_{\mathrm{matt}}\rangle$ does not
+replace these data.
+
+The Ward identity also records the matter equations. Define $T^{\mu\nu}$
+and $E_i$ by
+\[
+ \delta S_{\mathrm{matt}}
+ =\int_M\left(\tfrac12T^{\mu\nu}\delta g_{\mu\nu}
+                      +E_i\delta\phi^i\right)\,\mathrm{vol}_g.
+\]
+For scalar matter fields, diffeomorphism invariance and compactly supported
+$\xi$ give
+\[
+ \begin{gathered}
+ 0=\int_M\xi^\nu(-\nabla^\mu T_{\mu\nu}
+                         +E_i\partial_\nu\phi^i)\,\mathrm{vol}_g,\\
+ \nabla^\mu T_{\mu\nu}=E_i\partial_\nu\phi^i.
+ \end{gathered}
+\]
+Thus conservation holds on shell. Other tensor fields contribute the
+corresponding Euler--Lagrange terms from their Lie derivatives. In a BV
+action this is the component of the master equation linear in the
+diffeomorphism ghost, with the equations and antifield terms retained.
+
+\section{One-loop gravity and analytic torsion}
+Consider first a closed oriented Riemannian three-manifold and an acyclic
+unitary flat coefficient bundle $E$. Fix elliptic gauge fixing and the
+normalization of the Gaussian measure. If $\Delta_q$ is its de Rham
+Laplacian on $q$-forms, use the torsion convention
+\[
+ \tau_{\mathrm{RS}}(M,E)
+   =\prod_{q=0}^3(\det{}'\Delta_q)^{(-1)^{q+1}q/2}.
+\]
+The prime omits zero modes; acyclicity removes their integration here.
+
+\begin{proposition}[Acyclic Chern--Simons Gaussian]
+For a unitary flat adjoint bundle in this setting, the absolute one-loop
+factor is
+\[
+ |Z_{1\text{-loop}}(\mathcal A)|=\tau_{\mathrm{RS}}(M,E)^{1/2}.
+\]
+The regularized phase is determined by the relevant eta invariant together
+with the framing convention.
+\end{proposition}
+\begin{proof}
+Gauge fixing separates exact one-forms from their orthogonal complement.
+The bosonic and ghost determinants give
+$(\det{}'\Delta_0)^{3/4}(\det{}'\Delta_1)^{-1/4}$.
+Hodge duality in dimension three identifies $\Delta_3$ with $\Delta_0$
+and $\Delta_2$ with $\Delta_1$, so the displayed torsion is
+$(\det{}'\Delta_0)^{3/2}(\det{}'\Delta_1)^{-1/2}$.
+The Gaussian magnitude is its square root. Spectral asymmetry of the
+first-order kinetic operator gives the phase
+\cite{RaySinger1971,WittenJones}.
+\end{proof}
+
+The gravitational real form and a noncompact AdS manifold require their
+own integration contour, boundary domains and regularization. The local
+quasi-isomorphisms of gravitational complexes identify cohomological
+determinant lines, but do not by themselves identify analytic norms or
+Gaussian measures. Already the acyclic two-term Euclidean complex
+$\R\xrightarrow{c}\R$ has torsion $|c|$ in this convention, although it
+is quasi-isomorphic to zero (take $c\ne0$). Equality of one-loop factors therefore requires
+the corresponding norm and measure comparison as well as orientation.
+
+\section{BTZ, Cardy, and the area law}
+Let a modular, unitary two-dimensional theory have left and right central
+charges $c_L,c_R$ and a discrete spectrum with a suitable vacuum. Write
+$E_L=L_0-c_L/24$ and $E_R=\bar L_0-c_R/24$. In a regime where the
+modular transform is vacuum-dominated, the leading Cardy entropy is
+\[
+ S_{\mathrm{Cardy}}=2\pi\sqrt{c_LE_L/6}
+                   +2\pi\sqrt{c_RE_R/6}.
+\]
+This is an asymptotic statement about a specified spectrum. The usual
+fixed-central-charge high-energy regime and a simultaneous large-central-charge
+limit are different limits; the latter needs appropriate spectral
+conditions, for example the sparse-light-spectrum hypotheses of
+\cite{HartmanKellerStoica}.
+
+For the BTZ charges, take $G,\ell>0$, $r_+\geq|r_-|$, and
+\[
+ E_L=\frac{(r_++r_-)^2}{16G\ell},\qquad
+ E_R=\frac{(r_+-r_-)^2}{16G\ell},\qquad
+ c_L=c_R=\frac{3\ell}{2G}.
+\]
+
+\begin{proposition}[BTZ substitution]
+The Cardy expression evaluated on these charges equals
+$2\pi r_+/(4G)$, the Bekenstein--Hawking area expression. It computes
+the leading statistical entropy only when the boundary spectrum and
+energy range justify the Cardy asymptotic.
+\end{proposition}
+\begin{proof}
+The two terms become $\pi(r_++r_-)/(4G)$ and
+$\pi(r_+-r_-)/(4G)$; the sign condition on the radii fixes both square
+roots. Their sum is $2\pi r_+/(4G)$. The BTZ metric and its charges give
+the geometric area expression \cite{BTZ1992}; modular high-energy
+asymptotics supply the statistical comparison \cite{Cardy1986}.
+\end{proof}
+
+\section{Higher-spin holonomy and boundary charges}
+Holonomy is the ordered exponential of a connection. It contains global
+conjugacy data and is different from the polynomial invariant of its local
+connection coefficient. For example, if a constant traceless $2\times2$
+matrix satisfies $a^2=qI$ around a circle of length $L$, then
+\[
+ \operatorname{tr}(a^2)=2q,\qquad
+ \operatorname{tr}(\operatorname{Hol}^s)
+   =2\cosh(sL\sqrt q)
+   =2+s^2L^2q+O(q^2).
+\]
+The latter is a power series in $q$, including at $q=0$.
+
+\begin{proposition}[Constant-sector reconstruction from a logarithm]
+For a constant semisimple $\mathfrak{sl}_N$ connection, a chosen local
+branch of the logarithm of its holonomy recovers the conjugacy class of
+the connection coefficient, subject to the traceless condition. On a
+regular principal Drinfeld--Sokolov slice, its invariant polynomials
+then recover the constant boundary current coordinates with their fixed
+normalizations.
+\end{proposition}
+\begin{proof}
+Diagonalize the coefficient. Holonomy exponentiates its eigenvalues times
+$L$; a local logarithm branch inverts this map, while conjugacy retains
+the unordered eigenvalues. The elementary symmetric polynomials of those
+eigenvalues are the characteristic-polynomial coefficients. The regular
+principal slice gives coordinates for these invariants. For nonconstant
+connections path ordering intervenes, and a branch of global holonomy does
+not recover all local current modes.
+\end{proof}
+
+The $W_N$ brackets come from the actual boundary Hamiltonian reduction.
+They are not obtained by identifying every holonomy trace with a current
+zero mode. Smooth Euclidean saddles impose the appropriate contractible-cycle
+holonomy condition in the chosen global gauge group and spin structure;
+the remaining charges and allowed saddles still require these global data.
+
+\chapter{Anomalies and the Igusa boundary problem}
+
+\section{Four native anomaly classes}
+The relevant anomaly data have different recipients. A local quantum BV
+obstruction is a degree-one class in the local deformation complex at the
+chosen perturbative order. A determinant line has curvature and possibly
+flat holonomy. A framing anomaly is encoded by the appropriate transgressed
+characteristic or invertible-theory datum. A curved bar construction has
+an arity-zero term satisfying its curved identities. A comparison must
+map both the class and any proposed primitive between these recipients.
+
+\begin{proposition}[Central curvature extension]
+Let $(\mathfrak l,d,[-,-],\kappa)$ be a curved dg Lie algebra with central
+$\kappa\in\mathfrak l^2$, $d\kappa=0$, so $d^2=[\kappa,-]=0$.
+Adjoin a central generator $u$ of degree one with $du=\kappa$.
+Then $\kappa$ is exact in the extension, and twisting by $-u$ gives zero
+curvature. The extension respects a pronilpotent completion whenever
+$u,d$ and the twist are admissible for that filtration.
+\end{proposition}
+\begin{proof}
+The differential extends because $d^2u=d\kappa=0$ and $\kappa$ is central.
+The twisted curvature is
+\[
+ \kappa+d(-u)+\tfrac12[-u,-u]=0.
+\]
+The twisted differential remains $d$ because $u$ is central.
+\end{proof}
+
+A geometric cancellation is a further statement. If an anomaly is
+represented by an actual invertible field theory $\mathcal A$, tensoring
+with its inverse cancels that full anomaly. Adjoining $u$ does not
+construct such an inverse theory or its coupling. In particular, canceling
+a curvature form leaves open any flat holonomy of the anomaly line.
+
+\section{Hall and Calabi--Yau sources}
+Let $\Ccal$ be a Calabi--Yau category with a Hall moduli problem.
+The actual Hall constructions of Volume~IV specify coefficient complexes,
+orientations, admissible pull--push maps and flag identities. With these
+data the extension correspondence gives $H^+$. A boundary chiral algebra
+requires a factorization pushforward compatible with configurations and
+collisions. Relative induction, when defined, still needs its interface
+and geometric comparison maps to supply a complete mixed datum.
+
+\begin{proposition}[Transport under a supplied mixed Morita equivalence]
+Suppose a Hall construction supplies a complete mixed boundary datum and a Morita equivalence of its compatible module category with that of $\mathbb A$. The equivalence identifies their derived centres. A comparison of local deformation algebras, BV pairings, and actions is additional data for a BV comparison. Quantum line and amplitude comparisons additionally require the monoidal and cyclic structures used to define them.
+\end{proposition}
+\begin{proof}
+Conjugating natural transformations by the equivalence and its inverse identifies the endomorphisms of the two identity functors. The unit and counit homotopies provide the inverse comparison and preserve composition. This proves the centre comparison. It does not construct the additional local, symplectic, or cyclic maps.
+\end{proof}
+
+An algebra map alone does not induce the required forward centre map. For example, the homomorphism $\C[x]\to M_2(\C)$ with $x\mapsto\operatorname{diag}(0,1)$ sends the central element $x$ to a noncentral matrix. Its commutator with the matrix unit $E_{12}$ is $-E_{12}$. Thus even the degree-zero condition fails for a centre map extending the given algebra map. Hall multiplication maps must be supplemented by an actual coherent module comparison before centre transport can be applied.
+
+For $X=K3\times E$, suppose a geometric Hall source supplies the complete charge-graded BPS Lie superalgebra and Cartan action required in Volume~IV. Its semidirect product with the common Cartan defines $\mathfrak b_X$. Volume~IV then constructs the completed Lie amalgam with the Igusa Borcherds Borel $\mathfrak b_\Delta$. Applying the completed enveloping functor gives the cocommutative Hopf algebra
+\[
+ H_{X\boxtimes\Delta}
+ =\widehat U(\mathfrak b_X)
+  \widehat *_{\widehat U(\mathfrak h_\Pi)}
+  \widehat U(\mathfrak b_\Delta).
+\]
+Under the continuous extension and retraction hypotheses of Volume~IV,
+the two Hopf retractions preserve the geometric and automorphic sectors.
+A quantum amalgam also requires compatible Hopf structures, continuous
+coproducts and actual retractions over the common Cartan algebra. A pairing
+or a Hall product alone does not provide them.
+
+\subsection{Mixed realization of the amalgam}
+The Hopf retractions above are maps of their stated algebraic objects. A mixed realization must construct chiral and transverse operations, an interface, and a compatible distributive law. To realize the retractions, it must then supply maps preserving those operations and the chosen completions.
+
+A BV retraction requires further maps between the local deformation algebras, together with compatible pairings and actions. The counterexample to forward centre functoriality prevents deducing these maps from the Hopf retractions alone. The intended geometric--automorphic theory asks for this mixed realization and for a primitive comparison quotient on its actual boundary operators. Its interaction ideal is the kernel of that constructed quotient, rather than an ideal determined by equality of scalar characters.
+
+\section{Igusa root states and the mixed-boundary comparison}
+Here $D_5$ is the monic Igusa form and $\chi_{10}=D_5^2$.
+The Gritsenko--Nikulin presentation defines the root Lie superalgebra
+$\mathfrak g_{\Delta_5}$ and its positive subalgebra $\mathfrak n_+$.
+Let $d_\alpha=\operatorname{sdim}(\mathfrak g_{\Delta_5})_\alpha$,
+and fix the positive cone, its proper height, and Weyl vector $\rho$.
+Put
+\[
+ P=\prod_{\alpha>0}(1-e^{-\alpha})^{d_\alpha},\qquad
+ \DenIg=e^{-\rho}P=D_5(2Z),\qquad \jmath(Z)=Z/2.
+\]
+The products are first interpreted in the positive-height completion.
+
+\begin{theorem}[Root character and reduced scalar]
+The root Fock space $\operatorname{Sym}(\mathfrak n_+)$, formed with
+super symmetry, has supercharacter $P^{-1}$. Consequently
+\[
+ -\jmath^*\!\left(e^{2\rho}
+   \operatorname{sch}(\operatorname{Sym}(\mathfrak n_+)^{\otimes2})\right)
+ =-(\jmath^*\DenIg)^{-2}=-\chi_{10}^{-1}.
+\]
+For a nonsingular projective K3 surface $S$ and an elliptic curve $E$, this scalar also has an enumerative interpretation. Let $N_{g,h,d}$ be the reduced disconnected Gromov--Witten invariant in class $(\beta_h,d)$, where $\beta_h$ is nonzero and primitive with square $2h-2$. Disconnected domains have no collapsed connected components.
+Use the incidence insertion $\beta_h^\vee\otimes[\mathrm{point}]$, with $\langle\beta_h,\beta_h^\vee\rangle=1$. Then the series
+\[
+ \mathcal Z(u,q,s)=\sum_{g,h,d\ge0}N_{g,h,d}u^{2g-2}q^{h-1}s^{d-1}
+\]
+is the Laurent expansion of $-\chi_{10}(r,q,s)^{-1}$ under $r=e^{iu}$, by \cite[Theorem~1]{OP}.
+\end{theorem}
+\begin{proof}
+An even root vector contributes $(1-e^{-\alpha})^{-1}$ to the
+supercharacter of its symmetric algebra. An odd root vector contributes
+$1-e^{-\alpha}$, because its symmetric algebra in super vector spaces
+is an exterior algebra. Multiplying the two contributions gives
+$P^{-1}$. Proper height makes every coefficient calculation finite.
+The Weyl factor gives $e^{2\rho}P^{-2}=\DenIg^{-2}$.
+Pullback by $\jmath$ gives $D_5(Z)^{-2}=\chi_{10}(Z)^{-1}$.
+Oberdieck--Pixton, Theorem~1, identifies the separately defined reduced numerical generating series with its negative \cite{OP}. This last theorem
+is an enumerative input; the character calculation supplies the root side.
+\end{proof}
+
+A primitive realization starts with parity-preserving root classes in a charge-graded Lie superalgebra $\mathfrak p$ satisfying the defining relations. Use the same positive charge cone and height filtration on the target,
+and require the classes to preserve charge. The free Lie presentation gives an even charge-preserving map $f:\mathfrak n_+\to\mathfrak p$.
+
+Applying $f$ to tensor words constructs $U(f)$. With trivial coefficients, use Chevalley chains $C_*^{\mathrm{CE}}(\mathfrak a)=\operatorname{Sym}(\mathfrak a[1])$, where the homological suspension raises degree by one and the differential contracts pairs by the bracket. Applying the suspension of $f$ to every factor gives a chain map because $f$ preserves brackets.
+
+For the level-zero Lie conformal current, define $\operatorname{Cur}(\mathfrak a)=\C[\partial]\otimes\mathfrak a$, with $\partial$ even. Its generator bracket is $[x_\lambda y]=[x,y]$. Extend it by $[\partial x_\lambda y]=-\lambda[x_\lambda y]$ and $[x_\lambda\partial y]=(\partial+\lambda)[x_\lambda y]$. The formula $\partial^j x\mapsto\partial^j f(x)$ defines $\operatorname{Cur}(f)$. Charge preservation makes these maps compatible with the specified proper-height quotients and their inverse limits.
+
+A complete mixed boundary realization requires further geometric maps.
+The compact source consists of sheaves and extension flags on a common
+elliptic torsor. Its critical realization must supply reduced coefficient
+complexes, orientation cross-line maps, unit and flag coherences, and the
+admissible pull--push operations. A chiral comparison must preserve actual
+support and moving-insertion operations. A quantum-double comparison must
+preserve coproducts, pairings and the domain of exchange operators.
+The finite Calabi--Yau quiver completions require their specified dg maps;
+ordinary full-subquiver inclusions do not in general give those maps.
+
+The mixed datum to which a BV envelope is applied must therefore include
+these operations and compatible maps between them. Identifying the
+primitive algebra of that envelope requires an actual map of its
+deformation complex to the root complex. A determinant comparison requires
+a skew perfect family, a square-root line and section, and an isomorphism
+to the automorphic line preserving transport and normalization.
+An operator-trace interpretation further requires its state space and
+trace domain. Constructing this datum and these comparisons is the Igusa
+mixed-boundary problem. The root character identity specifies the scalar
+that their final evaluation must recover.
+
+\chapter{Descent of coherent operations}
+
+\section{The carrier lattice}
+Different operations live on different geometric domains. A descent
+construction records their incidence categories and the maps between them;
+a list of domain names alone does not determine these categories.
+To describe the support filtration, take the finite set
+\[
+ \mathfrak C=\{\mathrm{diag},\mathrm{ch},\perp,\mathrm{int},
+              \mathrm{ex},\mathrm{cyc},\mathrm{mod},\mathrm{BV},\mathrm{Ein}\}.
+\]
+These names stand for diagonal, chiral, transverse, interface, exchange,
+cyclic, modular, BV and Einstein operations. Supply an incidence
+$\infty$-category $\mathcal I$ of the actual operations, faces and higher
+relations, together with its support subcategories $\mathcal I_S$ and
+an admissible coherent diagram $F:\mathcal I\to\operatorname{Spaces}$.
+Set
+\[
+ \operatorname{Str}_S(\mathbb A)=\lim_{\mathcal I_S}F.
+\]
+
+\begin{definition}[Relation-excisive pair and cover]
+The pair $S,T$ is relation-excisive when its incidence diagram presents
+\[
+ \mathcal I_{S\cup T}\simeq
+ \mathcal I_S\coprod^{h}_{\mathcal I_{S\cap T}}\mathcal I_T
+\]
+and the structure diagram has the indicated compatible restrictions.
+A finite cover $U=\bigcup_iS_i$ is relation-complete when the corresponding
+\v{C}ech homotopy colimit of all nonempty intersections presents
+$\mathcal I_U$, with its structure diagram. These are hypotheses about
+the full categories and their coherent relations. Covering the names of
+the operations, or checking only individual cells, does not suffice.
+\end{definition}
+
+\begin{theorem}[Carrier descent]
+For a relation-excisive pair, the square
+\[
+\begin{tikzcd}
+ \operatorname{Str}_{S\cup T}(\mathbb A)\arrow[r]\arrow[d]&
+ \operatorname{Str}_{S}(\mathbb A)\arrow[d]\\
+ \operatorname{Str}_{T}(\mathbb A)\arrow[r]&
+ \operatorname{Str}_{S\cap T}(\mathbb A)
+\end{tikzcd}
+\]
+is a homotopy pullback. For a relation-complete cover,
+\[
+ \operatorname{Str}_U(\mathbb A)\simeq
+ \underset{\varnothing\ne J\subseteq I}{\operatorname{holim}}
+       \operatorname{Str}_{\cap_{j\in J}S_j}(\mathbb A).
+\]
+Restriction makes $S\mapsto\operatorname{Str}_S(\mathbb A)$ a
+contravariant functor on the support power set.
+\end{theorem}
+\begin{proof}
+The space of cones to $F|_{\mathcal I_U}$ is its limit. A presentation
+of the indexing category and diagram by the stated homotopy colimit
+identifies such a cone with compatible cones on the pieces, including
+all higher matching homotopies. This is exactly the displayed homotopy
+limit. Restriction of cones along inclusions composes coherently, giving
+functoriality and compatibility under refinements of the cover.
+\end{proof}
+
+A support filtration of the deformation complex needs an additional
+chain-level hypothesis. Here is a form in which its associated graded is
+explicit. Suppose a cellular model $D$ has graded pieces $E_S$ and
+\[
+ D=\bigoplus_{S\subseteq\mathfrak C}E_S,\qquad
+ d(E_S)\subseteq\bigoplus_{T\subseteq S}E_T.
+\]
+Put $\Def_{\leq S}=\bigoplus_{T\subseteq S}E_T$ and assume the
+cellular inclusions compute their homotopy latching objects. Define
+\[
+ \Def_{=S}=\operatorname{cofib}\left(
+  \underset{T\subsetneq S}{\operatorname{hocolim}}\Def_{\leq T}
+       \longrightarrow\Def_{\leq S}\right).
+\]
+Then $\Def_{=S}$ is $E_S$ with the support-preserving part of $d$.
+The latching condition holds, for example, for the displayed split
+cellular inclusions of complexes over a field.
+
+\begin{theorem}[Support spectral sequence]
+Under these hypotheses, $F_pD=\bigoplus_{|S|\leq p}E_S$ is a finite
+filtration by subcomplexes, with a strongly convergent spectral sequence
+\[
+ E_1^{p,q}=\bigoplus_{|S|=p}H^{p+q}(\Def_{=S})
+             \Longrightarrow H^{p+q}(D).
+\]
+The first differential is induced by the part of $d$ lowering support
+cardinality by one, with its cellular signs.
+\end{theorem}
+\begin{proof}
+The triangular condition on $d$ makes every $F_pD$ a subcomplex. Its
+associated graded is the direct sum of $E_S$ of cardinality $p$ with
+their support-preserving differentials. For each proper support $T$, the
+index category of proper subsets containing $T$ has initial object $T$;
+the split latching colimit therefore removes exactly the proper-support
+pieces. This identifies the associated graded with the displayed cofibres.
+The spectral sequence of the finite filtration now gives the result and
+strong convergence.
+\end{proof}
+
+A first-page class can be killed by a later differential. For instance,
+put a degree-zero generator at support $\{a,b\}$ and a degree-one
+generator at support $\{a\}$, and let the differential map the first
+isomorphically to the second. The first page has both classes, whereas
+the total complex is acyclic. A general convolution cochain differential
+can instead enlarge support; it needs a different invariant filtration
+or a comparison with such a cellular model before this theorem applies.
+
+\section{Sixteen comparisons and their hypotheses}
+The constructions above give the following comparisons, each with its
+specified carrier and hypotheses.
+\begin{enumerate}
+\item An operation has its actual geometric coefficient domain.
+\item A diagonal model can retain principal parts when its filtration and
+      residue or restriction maps are supplied.
+\item An ordered interval carries transverse fusion with its composition maps.
+\item Motion in a plane gives exchange when the line category and its braiding
+      have been constructed.
+\item A circle gives a cyclic trace only on the stated cyclic object and domain.
+\item Stable-curve sewing requires its gluing maps and orientation data.
+\item The transverse, associative-chiral and chiral-Lie bars have different
+      tensors and units.
+\item An enveloping comparison uses its actual PBW theorem and functor; the
+      associative monoidal envelope and the chiral envelope retain their types.
+\item The interface bar records both actions and their higher compatibility.
+\item The derived centre represents coherent natural interior actions on
+      the supplied module category.
+\item A cooperadic resolution gives the tangent algebra of the full mixed
+      structure with its fixed relative operations.
+\item Its Maurer--Cartan curvature gives the corresponding field equation
+      after a local realization.
+\item Its $L_\infty$ identities give the Bianchi identity.
+\item A local dual pairing gives the classical shifted cotangent BV action.
+\item An invariant volume gives the finite BV complex; a de Rham description
+      or inverse limit needs the additional comparisons just specified.
+\item An Einstein realization requires projective matching, coupled local
+      fields, and a comparison preserving the physical action and BV pairing.
+\end{enumerate}
+These statements allow several formulations of the theory. Equivalences
+between formulations require maps preserving the listed operations.
+
+\section{Coherent actions and gravitational reconstruction}
+A supplied mixed boundary datum defines compatible modules and their derived natural endomorphisms. A specified coloured operad organizes deformations of that datum together with its central action. These are constructions relative to the full operations and their coherence maps. The centre alone does not recover the datum from which the deformation algebra is formed.
+
+A supplied local realization of the deformation algebra admits shifted cotangent transgression. With the invariant volumes and compatible BV transition maps specified
+above, the finite charts also give the algebraic quantum complex. The physical bulk is defined independently by its fields, action, gauge symmetry, boundary conditions, and quantization. Reconstruction requires a coherent action map from its observables to an independently defined geometric centre, followed by an equivalence theorem on the stated sector.
+
+For gravity, the invertible coframe gives the classical Cartan--Einstein correspondence. The cotangent construction supplies a formal comparison theory with extra dual fields. Its identification with gravitational BV fields requires an action-preserving and pairing-preserving map. Quantum boundary currents, a continuum measure, global holonomy sectors, allowed fillings, and compatible states remain necessary for the quantum and global comparison.
+
+Hall and Calabi--Yau geometry can supply boundary operations when their correspondences, coefficients, orientations, and comparison maps are constructed. Exchange additionally uses a monoidal category and a fibre functor. Cyclic pairings and sewing determine amplitudes only on their stated domains. These comparisons are the mathematical steps by which local boundary operations could reconstruct physical and geometric theories.

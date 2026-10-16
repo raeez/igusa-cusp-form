@@ -1,0 +1,1957 @@
+\part{Hamiltonian quantization and relative centres}
+The Poisson bracket on a symplectic plane gives a Lie algebra of
+Hamiltonians.  Its enveloping algebra quantizes functions on the dual
+Lie algebra; its Hochschild cochains describe the relative derived
+centre of that quantization.  Write $\hbarq$ for the formal quantization
+parameter.  The first comparison in this part is
+therefore between two complexes with the same coefficient parameter:
+Chevalley cochains with differential $\hbarq d_{\CE}$ and relative
+Hochschild cochains of a Rees enveloping algebra.
+
+Finite pointed jets make this comparison explicit.  They also separate
+three geometric constructions: a degree-one symplectic target for a
+two-dimensional sigma model, a finite odd cotangent space with a quantum
+master equation, and the symplectic plane on which Moyal multiplication
+acts.  Their coordinates, degrees, and quantizations will be specified
+before they are compared.
+
+Two further passages require additional maps.  Formal Hamiltonians form
+an inverse limit, whereas their continuous dual is a direct limit.
+Matrix Hamiltonians form a necklace Lie algebra, whose abelianization
+maps onto commutative Hamiltonians.  Neither passage supplies the
+continuous centre comparison by itself.  The positive finite
+constructions, a binary matrix homotopy, and the precise comparison
+data will give the local models for the global question.
+
+\chapter{Hamiltonian jets and cotangent fields}
+\section{Hamiltonians and the Poisson bracket}
+Let $V=\C^2$ with coordinates $(z_1,z_2)$ and symplectic form
+\[
+ \omega=\dd z_1\wedge\dd z_2.
+\]
+Let $\mathfrak m=(z_1,z_2)$.  The pointed formal Hamiltonian Lie algebra is
+\[
+ \h=\mathfrak m^2\subset\C\llbracket z_1,z_2\rrbracket,
+ \qquad
+ \{f,g\}=\partial_{z_1}f\,\partial_{z_2}g-
+          \partial_{z_2}f\,\partial_{z_1}g.
+\]
+It consists of Hamiltonians whose vector fields fix the chosen Darboux
+point.  For $p,q\ge0$, the complete filtration
+$F^p\h=\mathfrak m^{p+2}$ obeys
+\[
+ \{F^p\h,F^q\h\}\subset F^{p+q}\h.
+\]
+Write $R_r=\Sym^r(V^\vee)$ for the homogeneous polynomials of degree $r$.  The bracket obeys
+\[
+ \{R_r,R_s\}\subset R_{r+s-2}.
+\]
+For $d\ge2$ define the finite jet quotient
+\[
+ \h_{\le d}=\bigoplus_{r=2}^{d}R_r,
+\]
+where every bracket component of degree greater than $d$ is set equal to zero.
+
+\begin{theorem}[Finite Hamiltonian jet algebra]
+The truncated bracket makes $\h_{\le d}$ a finite-dimensional Lie algebra.  Its dimension is
+\[
+ \dim\h_{\le d}=\frac{d(d+3)}2-2.
+\]
+The quadratic part is
+\[
+ R_2\cong\mathfrak{sl}_2,
+\]
+and each $R_r$ is the irreducible $\mathfrak{sl}_2$-module $\Sym^r(\C^2)$.
+\end{theorem}
+\begin{proof}
+The Jacobiator of the polynomial Poisson bracket vanishes before truncation.  Projection to degrees at most $d$ preserves this identity because the discarded terms form a Lie ideal.  The dimension is
+\[
+ \sum_{r=2}^{d}(r+1)
+ =\frac{d(d+3)}2-2.
+\]
+Quadratic Hamiltonians act linearly on $V$ and preserve $\omega$; this identifies $R_2$ with $\mathfrak{sp}(V)=\mathfrak{sl}_2$.  The standard action on homogeneous polynomials gives the final statement.
+\end{proof}
+
+For monomials $z^\alpha=z_1^az_2^b$ and
+$z^\beta=z_1^cz_2^d$, the bracket is
+\[
+ \{z^\alpha,z^\beta\}
+ =\det(\alpha,\beta)z^{\alpha+\beta-\epsilon},
+ \qquad \epsilon=(1,1).
+\]
+The coefficient of the Jacobiator on three monomials is
+\[
+ \sum_{\mathrm{cyc}}
+ \det(\alpha,\beta)\det(\alpha+\beta-\epsilon,\gamma)=0.
+\]
+Expanding the second determinant cancels its quadratic terms in pairs.
+The remaining terms vanish by
+$\det(\alpha,\beta)\gamma+
+\det(\beta,\gamma)\alpha+
+\det(\gamma,\alpha)\beta=0$ in dimension two.
+This is the coordinate form of the identity
+$[\partial_{z_1}\wedge\partial_{z_2},
+\partial_{z_1}\wedge\partial_{z_2}]_{\mathrm{Sch}}=0$.
+
+The affine Hamiltonian Lie algebra
+$\h^{\mathrm{aff}}=\C\llbracket z_1,z_2\rrbracket/\C$
+also contains linear Hamiltonians, which generate translations.
+It does not have the same finite jet quotients: for $d\ge2$, the
+bracket of $z_1^{d+1}$ with $z_2$ is $(d+1)z_1^d$, so the discarded
+higher-degree subspace is no longer an ideal.
+
+\section{Unimodularity}
+\begin{theorem}[Unimodularity of every finite jet]
+For every $d\ge2$ and every $x\in\h_{\le d}$,
+\[
+ \Tr_{\h_{\le d}}(\ad_x)=0.
+\]
+\end{theorem}
+\begin{proof}
+A homogeneous Hamiltonian of degree greater than two raises polynomial degree.  Its adjoint action is strictly upper triangular in the decomposition $\bigoplus_{r=2}^{d}R_r$, hence has trace zero.  A quadratic Hamiltonian belongs to $\mathfrak{sl}_2$.  Its action on each finite-dimensional $\mathfrak{sl}_2$-module $R_r$ has trace zero.  Linearity gives the result.
+\end{proof}
+
+
+\section{The degree-one symplectic target}
+Use cohomological grading, with $(M[k])^i=M^{i+k}$.
+Put $L=\h_{\le d}$ in degree zero and define the semidirect dg Lie algebra
+\[
+ \g_d=L\ltimes L^\vee[-1].
+\]
+The dual summand has degree $1$, is abelian, and carries the coadjoint
+action $(\ad_x^*\lambda)(y)=-\lambda([x,y])$.
+Thus $\g_d[1]=L[1]\oplus L^\vee$ is the degree-one symplectic
+space $T^*[1]L^\vee$.  Its functions have even coordinates $x_a$ on
+$L^\vee$ and odd coordinates $c^a$ of degree $1$ in the cotangent
+direction.  These $x_a$ are linear functions corresponding to a basis
+$e_a$ of $L$; write $[e_a,e_b]=f^c{}_{ab}e_c$.
+
+\begin{proposition}[Chevalley--Poisson identification]
+There is a canonical isomorphism of commutative dg algebras
+\[
+ C^*_{\CE}(\g_d)
+ \cong C^*(L,\Sym L)
+ =\bigl(\Sym L\tensor\Lambda L^\vee,d_{\CE}\bigr).
+\]
+Under $\Sym L=\Ocal(L^\vee)$, this is the polynomial polyvector
+complex for the linear Poisson tensor on $L^\vee$.
+\end{proposition}
+\begin{proof}
+Chevalley functions are $\Sym(\g_d^\vee[-1])$.
+The dual of $L^\vee[-1]$, followed by the shift $[-1]$, is $L$ in
+degree zero.  The other summand contributes $L^\vee[-1]$ in degree
+$1$.  The Lie bracket and coadjoint action give
+\begin{equation}\label{eq:vol2-ce-coordinate}
+ d_{\CE}c^c=-\frac12f^c{}_{ab}c^ac^b,
+ \qquad
+ d_{\CE}x_a=f^c{}_{ba}c^b x_c.
+\end{equation}
+The Schouten differential of the linear Poisson tensor has these same
+values on polynomial coordinates and constant vector fields.
+Both differentials are derivations, so the identifications agree on
+the entire algebra.
+\end{proof}
+
+In particular, for a polynomial $F$ one has
+\[
+ d_{\CE}F=c^a\{x_a,F\}_{\mathrm{lin}},
+ \qquad \{x_a,x_b\}_{\mathrm{lin}}=f^c{}_{ab}x_c.
+\]
+The identity $d_{\CE}^2=0$ is the Poisson Jacobi identity.
+With the degree-$-1$ Poisson bracket $\{c^a,x_b\}=\delta^a_b$,
+the Hamiltonian
+\[
+ \Theta=\frac12x_cf^c{}_{ab}c^ac^b
+\]
+has degree $2$ and generates this differential.
+It is the Hamiltonian of the degree-one symplectic target.
+
+\section{The finite BV space}
+The finite BV construction instead uses
+\[
+ \mathcal E_L=T^*[-1](L[1])=L[1]\oplus L^\vee[-2].
+\]
+Its linear coordinates are $c^a$ of degree $1$ and $b_a$ of degree
+$-2$.  Choose the odd Poisson bracket $\{b_a,c^b\}_{\mathrm{BV}}
+=\delta_a^b$ and the constant Berezinian, with left odd derivatives
+in the Laplacian
+\[
+ \Delta=\sum_a\frac{\partial}{\partial b_a}
+                    \frac{\partial}{\partial c^a}.
+\]
+The degree-zero cotangent action is
+\[
+ S_L=-\frac12b_cf^c{}_{ab}c^ac^b.
+\]
+Its Hamiltonian vector field on the $c$ coordinates is the Chevalley
+differential in \eqref{eq:vol2-ce-coordinate}.
+
+\begin{theorem}[Finite quantum master equation]
+For $L=\h_{\le d}$ the constant Berezinian gives
+\[
+ \frac12\{S_L,S_L\}_{\mathrm{BV}}=0,
+ \qquad
+ \Delta S_L=\sum_b\Tr_L(\ad e_b)c^b=0.
+\]
+Consequently $S_L$ satisfies the finite quantum master equation
+\[
+ \frac12\{S_L,S_L\}_{\mathrm{BV}}+\hbarq\Delta S_L=0.
+\]
+\end{theorem}
+\begin{proof}
+The classical term is the cotangent Hamiltonian for the square of the
+Chevalley differential, hence vanishes by Jacobi.
+Left differentiation of the two odd variables gives
+\[
+ \Delta S_L=-\sum_{a,b}f^a{}_{ab}c^b
+            =\sum_b\Tr_L(\ad e_b)c^b.
+\]
+Unimodularity of the finite Hamiltonian jet algebra gives the second
+vanishing.  The chosen Berezinian is translation invariant; multiplying
+it by a nonzero constant does not change $\Delta$.
+\end{proof}
+
+The two cotangent constructions have different degrees and functions.
+The even variables $x_a$ in the Poisson complex have degree zero;
+the finite BV antifields $b_a$ have degree $-2$.
+The finite master equation is an algebraic statement on
+$\mathcal E_L$.  A field theory requires a source manifold, its field
+complex, and boundary conditions.
+
+\section{The Poisson sigma model and its boundary product}
+Let $\Sigma$ be an oriented disk and use the degree-one symplectic
+target $T^*[1]L^\vee$.  The graded mapping space
+$\operatorname{Map}(T[1]\Sigma,T^*[1]L^\vee)$ has a degree-$-1$
+symplectic form.  Its degree-zero classical fields are a map
+$X:\Sigma\to L^\vee$ and an $L$-valued one-form $\eta$.
+For the linear Poisson tensor $\pi$ on $L^\vee$, the classical action is
+\[
+ S_\Sigma(X,\eta)
+ =\int_\Sigma\left(\eta_a\wedge\dd X^a
+        +\frac12\pi^{ab}(X)\eta_a\wedge\eta_b\right).
+\]
+Impose $\eta|_{T\partial\Sigma}=0$.
+Integration by parts identifies the action with
+\[
+ \int_\Sigma\left\langle X,\dd\eta+
+                              \frac12[\eta,\eta]\right\rangle.
+\]
+The boundary term vanishes under the stated condition.
+This is two-dimensional BF theory for $L$; the full mapping-space fields add
+the ghosts and antifields required by its gauge symmetry.
+
+For boundary insertions at two ordered points and a fixed value of
+$X$ at a third point, the formal perturbation expansion gives the
+Kontsevich graph product.  The propagator and the finite counterterm
+which removes tadpoles are described in
+\cite{CattaneoFelderPSM}*{Sections~3.7--3.8}.
+This is a perturbative interpretation of the product.  Its associativity
+and the following algebraic identification use the formality theorem.
+
+\begin{theorem}[Linear Poisson boundary algebra]
+Let $R=\C\llbracket\hbarq\rrbracket$ and let $\star_L$ be the
+Kontsevich product for $\hbarq\pi$ on $\Sym L\llbracket\hbarq\rrbracket$.
+There is an $R$-algebra isomorphism
+\[
+ (\Sym L\llbracket\hbarq\rrbracket,\star_L)
+ \xrightarrow{\sim}
+ U_\hbar(L)
+ =T(L)\llbracket\hbarq\rrbracket/
+   \overline{\angles{xy-yx-\hbarq[x,y]}}.
+\]
+It fixes the linear generators.  The associative algebra on the right
+defines a locally constant factorization algebra on the oriented line,
+whose product for adjacent intervals is the enveloping multiplication.
+\end{theorem}
+\begin{proof}
+For linear functions the star commutator is exactly
+$\hbarq[x,y]$.  The universal property gives the homomorphism from
+the Rees enveloping algebra to the star algebra.
+Its reduction modulo $\hbarq$ is the identity on $\Sym L$.
+PBW and completeness lift this to an isomorphism; the inverse is the
+displayed map.  This is the linear Poisson identification of
+\cite{KontsevichDQ}*{Section~8.2}.
+The usual associative factorization envelope on a line assigns the
+algebra to an interval and its ordered multiplication to disjoint
+subintervals.  Associativity supplies its gluing maps.
+\end{proof}
+
+PBW symmetrization is the underlying $R$-module isomorphism.
+It also transports the enveloping product to the Gutt product.
+The equivalence with the Kontsevich product is an algebra map and
+contains its own ordering correction.  Identifying an analytic or
+renormalized field-theoretic boundary observable algebra with this
+algebraic factorization model requires the corresponding observable map.
+
+\chapter{Relative centres and affine formality}
+\section{The coefficient ring and the Chevalley differential}
+The Rees relation scales both the Lie bracket and its adjoint action.
+Its Chevalley differential must retain the same parameter.
+For example, take the quadratic jet $\flie=\mathfrak{sl}_2$ with
+$[h,e]=2e$.  Modulo $\hbarq$, the enveloping algebra is commutative,
+so the Hochschild differential of $e$ vanishes.
+The unscaled Chevalley differential instead satisfies
+$(d_{\CE}e)(h)=2e$.
+
+Let $\flie$ be a finite-dimensional complex Lie algebra.
+For $N\ge0$, put
+\[
+ R_N=\C[\hbarq]/(\hbarq^{N+1}),\qquad
+ \flie_N=R_N\tensor_\C\flie,\qquad
+ [x,y]_N=\hbarq[x,y],
+\]
+and
+\[
+ A_N=U_{R_N}(\flie_N)
+ =T_{R_N}(\flie_N)/(xy-yx-\hbarq[x,y]).
+\]
+Here $N$ denotes the order in $\hbarq$, independently of a Chan--Paton rank.
+Write $\bar A_N$ for the augmentation ideal and $S=\Sym_\C\flie$.
+PBW symmetrization is the $R_N$-module isomorphism
+\[
+ \operatorname{sym}_N:S\tensor R_N\longrightarrow A_N,
+ \qquad
+ x_1\cdots x_r\longmapsto
+ \frac1{r!}\sum_{\sigma\in S_r}x_{\sigma(1)}\cdots x_{\sigma(r)}.
+\]
+The source has its ordinary symmetric product.
+Use normalized relative Hochschild cochains
+\[
+ C^n_{\HH}(A_N/R_N,A_N)
+ =\operatorname{Hom}_{R_N}(\bar A_N^{\tensor_{R_N}n},A_N)
+\]
+with differential
+\[
+\begin{split}
+ (bF)(a_1,\ldots,a_{n+1})
+ ={}&a_1F(a_2,\ldots,a_{n+1})\\
+ &+\sum_{i=1}^n(-1)^iF(a_1,\ldots,a_i a_{i+1},\ldots,a_{n+1})\\
+ &+(-1)^{n+1}F(a_1,\ldots,a_n)a_{n+1}.
+\end{split}
+\]
+Let $d_{\CE}$ act on
+$C^n(\flie,S)=\operatorname{Hom}_\C(\Lambda^n\flie,S)$
+by the adjoint Chevalley differential.
+
+\begin{theorem}[Relative Rees comparison]\label{thm:vol2-relative-rees}
+Antisymmetrization defines a quasi-isomorphism of $R_N$-complexes
+\[
+ \operatorname{Alt}_N:
+ C^\bullet_{\HH}(A_N/R_N,A_N)
+ \longrightarrow
+ \bigl(C^\bullet(\flie,S)\tensor R_N,\hbarq d_{\CE}\bigr),
+\]
+given by
+\[
+ (\operatorname{Alt}_NF)(x_1,\ldots,x_n)
+ =\operatorname{sym}_N^{-1}
+ \sum_{\sigma\in S_n}\operatorname{sgn}(\sigma)
+ F(x_{\sigma(1)},\ldots,x_{\sigma(n)}).
+\]
+These maps commute with coefficient reduction in $N$.
+\end{theorem}
+\begin{proof}
+Write $A=A_N$, $R=R_N$, and $A^e=A\tensor_R A^{\op}$.
+In homological degree $n$, set
+\[
+ K_n=A\tensor_R\Lambda_R^n\flie_N\tensor_R A.
+\]
+Its augmentation is multiplication.
+For $X=x_1\wedge\cdots\wedge x_n$, let $X_{\widehat i}$ and
+$X_{\widehat i\widehat j}$ omit the indicated entries without reordering.
+Define
+\[
+\begin{split}
+ \partial(a\tensor X\tensor b)
+ ={}&\sum_i(-1)^{i+1}
+ \bigl(ax_i\tensor X_{\widehat i}\tensor b
+       -a\tensor X_{\widehat i}\tensor x_i b\bigr)\\
+ &+\hbarq\sum_{i<j}(-1)^{i+j}
+ a\tensor[x_i,x_j]\wedge X_{\widehat i\widehat j}\tensor b.
+\end{split}
+\]
+The normalized relative bimodule bar has terms
+$\mathcal B_n=A\tensor_R\bar A^{\tensor_R n}\tensor_R A$.
+Define
+\[
+ \iota_n(a\tensor X\tensor b)
+ =\sum_{\sigma\in S_n}\operatorname{sgn}(\sigma)
+       a[x_{\sigma(1)}|\cdots|x_{\sigma(n)}]b.
+\]
+The outer bar faces give the first sum in $\partial$.
+Pair adjacent transpositions in the internal faces and use
+$xy-yx=\hbarq[x,y]$ to obtain the second sum.
+For two inputs this reads
+\[
+\begin{split}
+ b\bigl(1[x|y]1-1[y|x]1\bigr)
+ ={}&x[y]1-y[x]1+1[x]y-1[y]x\\
+ &-\hbarq\,1[[x,y]]1.
+\end{split}
+\]
+Thus $b\iota=\iota\partial$.
+PBW makes $\flie_N$ a free summand of $\bar A$.
+Since every factorial is invertible in $R$, $\iota$ is injective.
+The identity $b^2=0$ then gives $\partial^2=0$.
+
+Give $K_n$ filtration degree equal to its outer PBW degrees plus $n$.
+The associated graded is the diagonal Koszul complex of
+$\Sym_R(\flie_N)$.
+Its differential uses differences of left and right polynomial generators.
+A linear change of variables makes these independent polynomial variables.
+They form a regular sequence even when $R$ has nilpotents.
+For an augmented cycle, lift a primitive of its highest-degree symbol
+and subtract its differential.
+The filtration degree decreases, so this procedure terminates.
+Hence $K_\bullet\to A$ is a free bimodule resolution.
+The relative bar is also free over $A^e$, with its usual unit-insertion contraction.
+The map $\iota$ lifts the identity of $A$.
+Projectivity constructs its chain homotopy inverse degree by degree.
+Applying $\operatorname{Hom}_{A^e}(-,A)$ gives a cochain homotopy equivalence.
+
+The induced differential on
+$\operatorname{Hom}_R(\Lambda_R^n\flie_N,A)$ is
+\[
+\begin{split}
+ (\delta_N\phi)(x_1,\ldots,x_{n+1})
+ ={}&\sum_i(-1)^{i+1}
+ [x_i,\phi(x_1,\ldots,\widehat{x_i},\ldots,x_{n+1})]_A\\
+ &+\hbarq\sum_{i<j}(-1)^{i+j}
+ \phi([x_i,x_j],x_1,\ldots,\widehat{x_i},
+                         \ldots,\widehat{x_j},\ldots,x_{n+1}).
+\end{split}
+\]
+Commuting $x$ past the factors of a symmetrized monomial gives
+\[
+ [x,\operatorname{sym}_N(f)]_A
+ =\hbarq\operatorname{sym}_N(\operatorname{ad}_x f).
+\]
+Both sums therefore become $\hbarq$ times the ordinary Chevalley differential.
+Precomposition with $\iota$ gives $\operatorname{Alt}_N$.
+All formulas commute with coefficient reduction.
+\end{proof}
+
+\section{The formal coefficient limit}
+Put $R=\C\llbracket\hbarq\rrbracket$ and $A=\varprojlim_N A_N$.
+PBW identifies its underlying module with $S\llbracket\hbarq\rrbracket$.
+Each coefficient of $\hbarq$ is a polynomial.
+Define
+\[
+ A^{\widehat\tensor_R n}=\varprojlim_N A_N^{\tensor_{R_N}n},
+ \qquad
+ C^\bullet_{\HH,\mathrm{cont}}(A/R,A)
+ =\varprojlim_N C^\bullet_{\HH}(A_N/R_N,A_N).
+\]
+Equivalently, these are continuous $R$-multilinear normalized cochains
+on the completed relative tensors.
+
+\begin{corollary}[Formal relative Rees comparison]\label{cor:vol2-formal-relative-rees}
+The compatible antisymmetrizations induce a quasi-isomorphism
+\[
+ C^\bullet_{\HH,\mathrm{cont}}(A/R,A)
+ \longrightarrow
+ \bigl(C^\bullet(\flie,S)\llbracket\hbarq\rrbracket,
+                    \hbarq d_{\CE}\bigr).
+\]
+\end{corollary}
+\begin{proof}
+Coefficient reduction is surjective in each cochain degree.
+For Hochschild cochains, lift outputs on the PBW input basis.
+The Chevalley exterior input has finite rank, so its outputs also lift.
+The comparison cones are acyclic and their transition maps are degreewise surjective.
+The long exact sequence shows that every transition kernel is acyclic.
+Choose a primitive of a compatible cycle at level zero.
+Lift it one level and correct its differential by a primitive in the transition kernel.
+Iteration gives compatible primitives at every order.
+The inverse-limit cone is therefore acyclic.
+\end{proof}
+
+The coefficient ring is part of this result.
+Absolute $\C$-linear cochains also detect variations of the coefficient parameter.
+For $\flie=0$, the continuous absolute derivation $\partial_{\hbarq}$
+on $R$ has no relative counterpart.
+For nonabelian $\flie$, the associated graded for the $\hbarq$ filtration
+has zero differential, whereas $d_{\CE}$ need not vanish.
+
+\section{Linear Poisson formality}
+For $\flie=\h_{\le d}$, put $A_d=U_\hbar(\h_{\le d})$ and
+\[
+ \mathcal P_d=
+ \bigl(C^*(\h_{\le d},\Sym\h_{\le d})
+       \llbracket\hbarq\rrbracket,\hbarq d_{\CE}\bigr).
+\]
+This is the polynomial polyvector complex on $\h_{\le d}^*$ with
+differential $[\hbarq\pi_d,-]$ for the linear Poisson tensor $\pi_d$.
+The relative comparison gives $C^\bullet_{\HH,\mathrm{cont}}(A_d/R,A_d)
+\to\mathcal P_d$ as a map of complexes.
+Higher operations require a formality map with specified operadic structure.
+
+Fix Kontsevich's formality morphism $\mathcal U$ on the affine space
+$\h_{\le d}^*$.
+Its twist by $\hbarq\pi_d$ defines a star product $\star_d$ and an
+$\Linf$ quasi-isomorphism on the degree-shifted complexes.
+Let $T_d:(\Sym\h_{\le d}\llbracket\hbarq\rrbracket,\star_d)
+\to A_d$ be the algebra identification fixing the linear generators.
+This identification includes the equivalence between the Kontsevich and PBW products.
+PBW symmetrization alone identifies the underlying modules.
+The first Taylor coefficient of the twisted comparison is
+\[
+ \Phi_d(v)=(T_d)_*
+ \sum_{r\ge0}\frac1{r!}
+ \mathcal U_{r+1}
+ (\underbrace{\hbarq\pi_d,\ldots,\hbarq\pi_d}_{r},v).
+\]
+It has source $\mathcal P_d$ and target
+$C^\bullet_{\HH,\mathrm{cont}}(A_d/R,A_d)$.
+At each order in $\hbarq$, polynomial inputs have polynomial outputs.
+Its reduction modulo $\hbarq$ is the Hochschild--Kostant--Rosenberg map,
+with the normalized antisymmetrization convention.
+That map is a quasi-isomorphism for the polynomial algebra.
+The complete $\hbarq$ filtration then proves that $\Phi_d$ is a quasi-isomorphism.
+The higher Taylor coefficients supply the $\Linf$ identities after shifting by $[1]$.
+These statements use the affine formality construction
+\cite{KontsevichDQ}*{Sections~6, 8.2, and~8.3}.
+
+On invariant polynomials, the standard Duflo normalization gives
+\[
+ \operatorname{Duf}_\hbar
+ =\operatorname{sym}_\hbar\circ j^{1/2}(\hbarq\partial),
+ \qquad
+ j^{1/2}(x)=
+ \det_{\h_{\le d}}^{1/2}
+ \left(\frac{\sinh(\operatorname{ad}_x/2)}
+ {\operatorname{ad}_x/2}\right).
+\]
+It is an algebra isomorphism from
+$(\Sym\h_{\le d})^{\h_{\le d}}\llbracket\hbarq\rrbracket$
+to $Z(A_d)$, by the Duflo theorem
+\cite{KontsevichDQ}*{Section~8.3.4}.
+The square root has constant term one.
+This assertion concerns invariant degree-zero cohomology.
+It does not identify antisymmetrization with a homotopy-$\Etwo$ map.
+
+\section{The quadratic Duflo correction}
+First set the coefficient parameter to $1$ in the polynomial Rees algebra.
+For the resulting ordinary $\mathfrak{sl}_2$ enveloping algebra, take generators
+\[
+ [h,e]=2e,
+ \qquad
+ [h,f]=-2f,
+ \qquad
+ [e,f]=h.
+\]
+The invariant polynomial and the quadratic Casimir are
+\[
+ q=2ef+\frac12h^2,
+ \qquad
+ \Omega=ef+fe+\frac12h^2.
+\]
+
+\begin{calculation}[The zero-point shift]
+The Duflo map gives
+\[
+ \operatorname{Duf}(q)=\Omega+\frac12.
+\]
+Let $V_n$ be the irreducible highest-weight-$n$ module, with $n\ge0$.
+Then
+\[
+ \left(\Omega+\frac12\right)\big|_{V_n}
+ =\frac{(n+1)^2}{2}\id.
+\]
+\end{calculation}
+\begin{proof}
+Write $x=ue+vf+wh$.  Direct adjoint matrices give
+$\Tr(\operatorname{ad}_x^2)=8uv+8w^2$.
+Thus the quadratic term of $j^{1/2}(\partial)$ is
+$(\partial_e\partial_f+\partial_h^2)/6$.
+Applied to $q=2ef+h^2/2$, it gives $(2+1)/6=1/2$.
+Higher differential terms annihilate this quadratic polynomial.
+Symmetrization sends $q$ to $\Omega$.
+On a highest-weight vector, $ef$ acts by $n$, $fe$ by zero,
+and $h^2/2$ by $n^2/2$.
+Centrality gives the eigenvalue on the entire irreducible module.
+\end{proof}
+
+Restoring the Rees parameter gives $\operatorname{Duf}_\hbar(q)=\Omega+\hbarq^2/2$.  The polynomial calculation permits specialization at $1$; arbitrary formal power series do not admit that specialization.  Higher wheels assemble into $j^{1/2}$ on higher-degree invariants.
+
+
+For the quadratic jet, the invariant polynomial $q=2ef+h^2/2$ is
+$d_{\CE}$-closed.  Its Duflo image is a degree-zero central class.
+The oscillator quotient below sends that class to $\hbarq^2/8$;
+this scalar follows from the quotient's own Casimir relation.
+
+\section{Hochschild braces}
+For Hochschild cochains $F\in C^p(A,A)$ and $G_i\in C^{q_i}(A,A)$, the brace
+\[
+ F\{G_1,\ldots,G_r\}
+\]
+is the signed sum over ordered insertions of the $G_i$ into the inputs
+of $F$.  For an algebra in degree zero, an insertion has sign
+$(-1)^{\sum_i(q_i-1)j_i}$, where $j_i$ is the number of input
+positions preceding $G_i$ in the expanded expression.
+The brace identities state that a nested insertion is the sum over
+all ways of distributing the inner insertions among the outer slots.
+Together with the cup product and unit, these operations give the
+Hochschild form of the Deligne structure
+\cite{McClureSmith}*{Theorem~1.1}.
+The operadic construction in
+\cite{KontsevichSoibelmanDeligne}*{Section~7} gives the corresponding
+structure for $A_\infty$ algebras.  Here the relative operations are
+taken at each coefficient precision and then passed to the complete
+limit; every fixed-arity insertion is continuous.
+
+The relative Hochschild cochains carry this brace structure.
+Their canonical coherent evaluation action on $A_d$ gives the
+closed--open pair
+$(C^\bullet_{\HH,\mathrm{cont}}(A_d/R,A_d),A_d)$.
+The closed algebra is the relative derived centre.
+A homotopy-$\Etwo$ refinement means a morphism or zigzag
+\[
+ \widetilde\Phi_d:\mathcal P_d
+ \simeq C^\bullet_{\HH,\mathrm{cont}}(A_d/R,A_d)
+\]
+in complete $R$-linear homotopy-$\Etwo$ algebras,
+with the chosen Gerstenhaber structure on $\mathcal P_d$.
+A compatible Swiss-cheese refinement also specifies the mixed operations
+on the pair and their coherence homotopies.
+
+\begin{corollary}[Open--closed structure with a refinement]\label{cor:vol2-open-closed-refinement}
+Given these refinements, the pair $(\mathcal P_d,A_d)$ has the transported
+homotopy Swiss-cheese action.
+Its open product is the enveloping product.
+The specified closed and mixed Taylor coefficients determine its
+closed bracket and boundary action.
+\end{corollary}
+\begin{proof}
+Transport the two-colored operations through the supplied equivalence
+of complete operadic algebras.
+The coherence homotopies are part of this equivalence.
+\end{proof}
+
+\begin{theorem}[Brace realization with a refinement]
+For $A=A_d$, supply the homotopy-$\Etwo$ and mixed refinements of
+Corollary~\ref{cor:vol2-open-closed-refinement}.
+They identify the selected homotopy Gerstenhaber operations on
+$\mathcal P_d$ with the relative Hochschild centre operations.
+The chosen mixed refinement also identifies their action on the boundary algebra.
+\end{theorem}
+\begin{proof}
+The relative Hochschild complex has its brace operations.
+The supplied operadic equivalence preserves their coherent homotopies.
+An equivalence of complexes alone would not imply this conclusion.
+\end{proof}
+
+\section{The first mixed identities}
+A relative Hochschild $1$-cocycle $D$ of an algebra concentrated in degree zero
+is an $R$-linear derivation:
+\[
+ D(ab)=D(a)b+aD(b).
+\]
+For two such cocycles $D,E$, their Gerstenhaber bracket acts by
+\[
+ [D,E](a)=D(E(a))-E(D(a)).
+\]
+For a graded algebra and homogeneous derivations, these formulas become
+\[
+\begin{split}
+ D(ab)&=D(a)b+(-1)^{|D||a|}aD(b),\\
+ [D,E](a)&=D(E(a))-(-1)^{|D||E|}E(D(a)).
+\end{split}
+\]
+Higher Hochschild cochains act through multilinear evaluations and braces.
+They need not act by derivations or carry a coproduct defining a diagonal action.
+A compatible mixed refinement transports these operations, including their homotopies.
+
+\chapter{Finite presentations and Moyal multiplication}
+\section{Quadratic Hamiltonians}
+Set
+\[
+ e=\frac12z_1^2,
+ \qquad
+ f=-\frac12z_2^2,
+ \qquad
+ h=-z_1z_2.
+\]
+A direct differentiation gives
+\[
+ \{h,e\}=2e,
+ \qquad
+ \{h,f\}=-2f,
+ \qquad
+ \{e,f\}=h.
+\]
+Thus $\h_{\le2}=R_2$ is $\mathfrak{sl}_2$ with its standard
+Chevalley basis.  Its Rees enveloping algebra is
+$U_\hbar(\mathfrak{sl}_2)$; the Moyal realization below is a proper
+associative quotient of this algebra.
+
+\section{Cubic Hamiltonians}
+Let
+\[
+ v_j=z_1^{3-j}z_2^j,
+ \qquad 0\le j\le3.
+\]
+Then
+\[
+ \{h,v_j\}=(3-2j)v_j,
+ \qquad
+ \{e,v_j\}=jv_{j-1},
+ \qquad
+ \{f,v_j\}=(3-j)v_{j+1},
+\]
+with the boundary terms understood as zero.  Hence $R_3$ is the irreducible highest-weight-three module.
+
+\begin{proposition}[The cubic jet algebra]
+The degree-three jet algebra is the semidirect product
+\[
+ \h_{\le3}\cong\mathfrak{sl}_2\ltimes\Sym^3(\C^2),
+\]
+where the second summand is abelian.
+\end{proposition}
+\begin{proof}
+The bracket of two cubic polynomials has degree four and vanishes in the degree-three quotient.  The bracket with a quadratic polynomial is the displayed $\mathfrak{sl}_2$ action.
+\end{proof}
+
+\section{The first nonlinear layer}
+Write $w_k=z_1^{4-k}z_2^k$, $0\le k\le4$.  In $\h_{\le4}$ the cubic modes satisfy
+\begin{equation}\label{eq:vol2-cubic-quartic}
+ \{v_i,v_j\}=3(j-i)w_{i+j-1},
+\end{equation}
+whenever the index lies between $0$ and $4$; the coefficient makes every remaining case vanish.
+
+\begin{calculation}[Two brackets]
+\[
+ \{z_1^3,z_2^3\}=9z_1^2z_2^2=9w_2,
+ \qquad
+ \{z_1^2z_2,z_1z_2^2\}=3z_1^2z_2^2=3w_2.
+\]
+The two independent cubic pairs reach the same quartic channel with amplitudes in the ratio $3:1$.
+\end{calculation}
+\begin{proof}
+Differentiate each monomial in the two symplectic coordinates and substitute in the Poisson formula.  The first pair gives $3z_1^2\cdot3z_2^2$.  The second gives $2z_1z_2\cdot2z_1z_2-z_1^2\cdot z_2^2=3z_1^2z_2^2$.
+\end{proof}
+
+\begin{theorem}[The quartic jet presentation]
+The twelve symbols $e,f,h,v_0,\ldots,v_3,w_0,\ldots,w_4$ present
+$\h_{\le4}$ with the following relations: the $\mathfrak{sl}_2$
+relations, the displayed action on $v_j$,
+\eqref{eq:vol2-cubic-quartic}, and
+\[
+\begin{aligned}
+ [h,w_k]&=(4-2k)w_k,&[e,w_k]&=kw_{k-1},&
+ [f,w_k]&=(4-k)w_{k+1},\\
+ [v_i,w_k]&=0,&[w_k,w_l]&=0.
+\end{aligned}
+\]
+Indices outside their indicated ranges contribute zero.
+The seven symbols $e,f,h,v_0,\ldots,v_3$ already generate this Lie algebra.
+\end{theorem}
+\begin{proof}
+Every bracket of two displayed symbols is a linear combination of the
+twelve symbols.  Induction on a Lie word therefore shows that the
+presented algebra has dimension at most twelve.
+The polynomial Poisson bracket, truncated above degree four, satisfies
+every relation.  Indeed, a cubic--quartic bracket has degree five and a
+quartic--quartic bracket has degree six, so both vanish in this quotient.
+The images of the twelve symbols form the monomial basis of
+$R_2\oplus R_3\oplus R_4$, which has dimension twelve.
+The resulting surjection is consequently an isomorphism.
+Finally, \eqref{eq:vol2-cubic-quartic} produces $w_0,w_1,w_2,w_3,w_4$
+from the pairs $(v_0,v_1),(v_0,v_2),(v_0,v_3),(v_1,v_3),(v_2,v_3)$,
+with nonzero coefficients $3,6,9,6,3$.
+\end{proof}
+
+\section{The Moyal product}
+For polynomials on $\C^2$, the Moyal product is
+\begin{equation}\label{eq:vol2-moyal}
+ f\star g
+ =\sum_{n\ge0}\frac1{n!}\left(\frac{\hbarq}{2}\right)^n
+ \sum_{r=0}^n(-1)^r\binom nr
+ (\partial_1^{n-r}\partial_2^rf)
+ (\partial_1^r\partial_2^{n-r}g).
+\end{equation}
+Every polynomial pair gives a finite sum.
+Associativity follows directly from the constant Poisson tensor.
+On a triple tensor product, the operators
+$P_{ij}=\partial_1^{(i)}\partial_2^{(j)}-
+\partial_2^{(i)}\partial_1^{(j)}$ commute.  Both parenthesizations
+of the product are therefore
+\[
+ m_3\exp\!\left(\frac{\hbarq}{2}
+                   (P_{12}+P_{13}+P_{23})\right)
+        (f\tensor g\tensor h),
+\]
+where $m_3$ multiplies the three polynomial factors.
+
+\begin{theorem}[Quadratic exactness]
+For polynomials $f,g$ of degree at most two,
+\[
+ [f,g]_\star=\hbarq\{f,g\}.
+\]
+The quadratic generators therefore define a Lie representation of the Rees-scaled $\mathfrak{sl}_2$.  Their associative algebra has an additional Casimir relation.
+\end{theorem}
+\begin{proof}
+The commutator retains the odd powers of the Poisson bidifferential.  Derivatives of order three vanish on quadratics, so the first-order term is the entire commutator.
+\end{proof}
+
+\begin{proposition}[The oscillator quotient]\label{prop:vol2-oscillator-quotient}
+Let $R_N=\C[\hbarq]/(\hbarq^{N+1})$ and let $W_N=R_N[q,p]$
+have the Moyal product for $\{q,p\}=1$.
+Let $U_N$ have generators $E,F,H$ with relations
+\[
+ [H,E]=2\hbarq E,\qquad [H,F]=-2\hbarq F,\qquad [E,F]=\hbarq H.
+\]
+Set $\Omega=EF+FE+H^2/2$.
+The assignments
+\[
+ E\longmapsto e=q^2/2,\qquad
+ F\longmapsto f=-p^2/2,\qquad
+ H\longmapsto h=-qp
+\]
+induce an algebra isomorphism
+\[
+ U_N/(\Omega+3\hbarq^2/8)
+ \xrightarrow{\sim} W_N^{(q,p)\mapsto(-q,-p)}.
+\]
+These compatible isomorphisms also hold after $\hbarq$-adic completion.
+If linear Hamiltonians are retained, the generated associative algebra is the full Weyl algebra.
+\end{proposition}
+\begin{proof}
+Quadratic exactness proves the three commutator relations.
+The associative products are
+\[
+\begin{split}
+ e\star f&=-q^2p^2/4-\hbarq qp/2-\hbarq^2/8,\\
+ f\star e&=-q^2p^2/4+\hbarq qp/2-\hbarq^2/8,\\
+ h\star h&=q^2p^2-\hbarq^2/4.
+\end{split}
+\]
+Thus $\Omega$ maps to $-3\hbarq^2/8$.
+Its commutator with each of $E,F,H$ vanishes by the defining relations.
+Give these generators PBW degree one.
+Give an even monomial $q^ap^b$ degree $(a+b)/2$.
+The leading symbol of $\Omega+3\hbarq^2/8$ is
+$C=2EF+H^2/2$.
+It is a non-zero-divisor in $R_N[E,F,H]$, since $2C$ is monic in $H$.
+Centrality and this property give
+\[
+ \operatorname{gr}\bigl(U_N/(\Omega+3\hbarq^2/8)\bigr)
+ =R_N[E,F,H]/(C).
+\]
+Indeed, every element of the two-sided ideal is a multiple of the central generator.
+Its leading symbol is the product of the two leading symbols.
+The quotient has basis $E^aH^bF^c$ with $a,c\ge0$ and $b=0,1$.
+Their leading symbols map to unit multiples of the distinct monomials
+$q^{2a+b}p^{2c+b}$, precisely the even monomials.
+Hence the associated-graded map is an isomorphism.
+Lifting highest-degree terms proves surjectivity and comparing them proves injectivity.
+Every element at fixed $N$ has finite polynomial degree.
+The formulas commute with reduction in $N$, so their inverse limit gives the formal isomorphism.
+Finally $q,p$ generate $W_N$ and topologically generate its formal limit.
+\end{proof}
+
+The primitive coproduct on $U_N$ does not descend to this quotient.
+Modulo $\hbarq$, it sends the classical relation to
+\[
+ \Delta(C)=C\tensor1+1\tensor C
+   +2E\tensor F+2F\tensor E+H\tensor H.
+\]
+The cross-term is nonzero in the tensor square of $\C[E,F,H]/(C)$.
+For example, evaluation at $(E,F,H)=(1,0,0)$ in the first factor
+and $(0,1,0)$ in the second gives $2$.
+Thus the oscillator quotient is an associative algebra, with no coproduct inherited from these primitive generators.
+
+\begin{calculation}[Cubic correction]
+For $f=z_1^3$ and $g=z_2^3$,
+\[
+ f\star g-g\star f
+ =9\hbarq z_1^2z_2^2+\frac32\hbarq^3.
+\]
+The first term quantizes the quartic Hamiltonian channel.  The constant
+is the first higher-order correction to this cubic commutator.
+\end{calculation}
+\begin{proof}
+In \eqref{eq:vol2-moyal}, the odd orders are $n=1$ and $n=3$.  The first contributes $9\hbarq z_1^2z_2^2$.  The third contributes $2(\hbarq/2)^3(3!)=3\hbarq^3/2$.
+\end{proof}
+
+\section{Weyl generators}
+With the convention $\{q,p\}=1$, the symbols satisfy
+$[q,p]_\star=\hbarq$.
+Their Weyl-ordered differential operators are
+\[
+ \widehat q=q,\qquad \widehat p=-\hbarq\partial_q,
+ \qquad [\widehat q,\widehat p]=\hbarq.
+\]
+The abstract Weyl algebra is defined by this commutator relation.
+Weyl ordering transports its multiplication to the Moyal product.
+The differential-operator representation realizes these relations over
+$\C[\hbarq]$ and its formal completion.
+The finite quotient argument above uses the abstract $R_N$-algebra,
+so it does not require a faithful differential-operator representation at nilpotent $\hbarq$.
+
+\chapter{Continuous Hamiltonians and symplectic descent}
+\section{Residue duality and the direction of truncation}
+The finite jet algebras are quotients of
+$\h=\mathfrak m^2\subset\C\llbracket z_1,z_2\rrbracket$.
+Their duals embed into the continuous dual of $\h$.
+Continuous duals use the adic topology and the discrete coefficient field.
+To see the different directions explicitly, put
+\[
+ \rho_{ab}=z_1^{-a-1}z_2^{-b-1}\,\dd z_1\dd z_2,
+ \qquad a,b\ge0.
+\]
+The residue pairing is
+\[
+ \operatorname{Res}_0(z_1^iz_2^j\rho_{ab})
+ =\delta_{ia}\delta_{jb}.
+\]
+Every continuous functional on the power-series ring depends on
+finitely many Taylor coefficients.  Hence its continuous dual is
+$\bigoplus_{a,b\ge0}\C\rho_{ab}$, and
+\[
+ \h^\vee_{\mathrm{cont}}
+ =\bigoplus_{a+b\ge2}\C\rho_{ab}
+ =\varinjlim_d(\h_{\le d})^\vee.
+\]
+The two degree-one residue modes pair with the translations in the
+affine Hamiltonian algebra.
+
+\begin{proposition}[Coadjoint residue formula]
+For $f=z_1^iz_2^j\in\h$,
+\[
+ \ad_f^*\rho_{ab}
+ =-\bigl(i(b+1)-j(a+1)\bigr)
+       \rho_{a-i+1,b-j+1}.
+\]
+A mode with a negative index or total index less than two is interpreted
+as zero on $\h$.  For a formal $f$, only finitely many of its monomials
+contribute to the action on a fixed residue mode.
+\end{proposition}
+\begin{proof}
+By definition,
+$\langle\ad_f^*\rho_{ab},g\rangle
+=-\langle\rho_{ab},\{f,g\}\rangle$.
+For $g=z_1^uz_2^v$, the bracket is
+$(iv-ju)z_1^{i+u-1}z_2^{j+v-1}$.
+The residue can be nonzero only for
+$u=a-i+1$, $v=b-j+1$; substitution gives the stated coefficient.
+Nonnegative output indices bound $i\le a+1$ and $j\le b+1$,
+which proves finiteness for a power series.
+\end{proof}
+
+The continuous semidirect product
+\[
+ \g=\h\ltimes\h^\vee_{\mathrm{cont}}[-1]
+\]
+has its invariant evaluation pairing with values in $\C[-1]$.
+Give $\h$ its inverse-limit
+topology and the residue dual the discrete direct-sum topology.
+The coadjoint action is continuous by the finite dependence just proved.
+The finite pairs $\g_d$ remain valid cotangent dg Lie algebras, but
+they are not the images of a componentwise Lie quotient of $\g$.
+
+\begin{proposition}[Failure of componentwise cotangent truncation]
+Let $d\ge2$.  Project $\h$ to degrees at most $d$, and project its
+residue dual by retaining only modes with $a+b\le d$.
+Their direct sum is not a Lie morphism $\g\to\g_d$.
+\end{proposition}
+\begin{proof}
+Both $z_1^{d+1}$ and $\rho_{d,1}$ project to zero.  Their coadjoint
+bracket is
+\[
+ \ad_{z_1^{d+1}}^*\rho_{d,1}
+ =-2(d+1)\rho_{0,2},
+\]
+which survives the projection.  Thus the kernel is not a Lie ideal.
+The natural dual map of the Hamiltonian quotient is instead the
+inclusion $(\h_{\le d})^\vee\hookrightarrow\h^\vee_{\mathrm{cont}}$.
+\end{proof}
+
+\section{Jet completion and comparison data}
+The Hamiltonian Lie algebra and its completed Rees enveloping algebra
+do have the quotient systems
+\[
+ \h=\varprojlim_d\h_{\le d},\qquad
+ \widehat U_\hbar(\h)=\varprojlim_d U_\hbar(\h_{\le d}).
+\]
+This is the jet-quotient topology on the enveloping algebra, together
+with its $\hbarq$ topology.  It does not complete arbitrary PBW powers
+of a fixed finite jet: for example, a bare infinite sum of powers of
+one cubic generator is not an element of $U_\hbar(\h_{\le3})$.
+A Lie quotient does not by itself define a covariant map between
+Chevalley cochains with adjoint coefficients.
+Nor does an algebra quotient define a map between all Hochschild
+cochains with values in the algebra itself.
+A cochain must descend through the input quotient and the output quotient.
+Consequently the coefficient limit of
+Corollary~\ref{cor:vol2-formal-relative-rees} is distinct from this jet limit.
+
+A \emph{compatible jet comparison} consists of the following data.
+Choose complete $R$-linear cochain models $P_d,H_d$ with transition maps,
+levelwise comparisons $P_d\simeq\mathcal P_d$ and
+$H_d\simeq C^\bullet_{\HH,\mathrm{cont}}(A_d/R,A_d)$,
+and compatible quasi-isomorphisms $P_d\to H_d$.
+Use degreewise surjective transitions and ordinary inverse limits,
+or use derived inverse limits throughout the following datum.
+Choose a continuous Hamiltonian polyvector model $\mathcal P_\infty$,
+including its underlying topological space and the differential
+$[\hbarq\pi,-]$ for its linear Poisson tensor.
+Specify identifications
+\[
+ \varprojlim_dP_d\simeq\mathcal P_\infty,
+ \qquad
+ \varprojlim_dH_d\simeq
+ C^\bullet_{\HH,\mathrm{cont}}
+ (\widehat U_\hbar(\h)/R,\widehat U_\hbar(\h)),
+\]
+The topology on the right is the stated jet-quotient topology together
+with the $\hbarq$ completion.
+The identifications must use this same topology.
+For higher operations, also supply compatible homotopy-$\Etwo$ and
+Swiss-cheese refinements whose operations converge in that topology.
+
+\begin{theorem}[Continuous comparison from compatible jets]\label{thm:vol2-compatible-jets}
+A compatible jet comparison induces a continuous quasi-isomorphism
+\[
+ \Phi_\infty:\mathcal P_\infty
+ \xrightarrow{\sim}
+ C^\bullet_{\HH,\mathrm{cont}}
+ (\widehat U_\hbar(\h)/R,\widehat U_\hbar(\h)).
+\]
+Compatible homotopy-$\Etwo$ and Swiss-cheese refinements give the
+corresponding complete open--closed operations.
+\end{theorem}
+\begin{proof}
+For surjective transitions, the cones of the levelwise maps are
+acyclic inverse systems with surjective maps in each degree.
+The primitive-lifting argument of
+Corollary~\ref{cor:vol2-formal-relative-rees} proves exactness of their limit.
+For a derived inverse limit, use its invariance under levelwise equivalences.
+Apply the supplied identifications of the two limits.
+Compatibility and convergence of the operadic maps give the final assertion.
+\end{proof}
+
+The finite PBW comparison constructs the relative centre at each fixed jet.
+A continuous field-theory comparison additionally requires the jet datum
+and a map from the specified field observables to $\mathcal P_\infty$.
+Universal graph formulas alone do not provide the cochain transition maps.
+
+\begin{corollary}[Continuous open--closed structure with compatible jets]
+Under the jet comparison and mixed refinement hypotheses of
+Theorem~\ref{thm:vol2-compatible-jets}, the pair
+$(\mathcal P_\infty,\widehat U_\hbar(\h))$
+has the corresponding complete homotopy Swiss-cheese action.
+Its closed color is equivalent to the continuous relative derived centre.
+\end{corollary}
+\begin{proof}
+The supplied finite operations commute with the transition maps
+and converge in the specified completion.
+Their limit acts on the two limit objects.
+The comparison theorem identifies the closed complex with continuous relative Hochschild cochains.
+\end{proof}
+
+
+\section{Holomorphic deformation-quantization algebroids}
+The symplectic surface gives a second geometric construction.
+Let $(S,\omega)$ be a complex surface with a nowhere-degenerate closed
+holomorphic two-form, and let $\pi=\omega^{-1}$.
+A deformation-quantization algebroid on $S$ is an $R$-linear stack
+locally represented by a sheaf of star-product algebras, with
+\[
+ f\star g-g\star f=\hbarq\{f,g\}_\pi+O(\hbarq^2).
+\]
+Local algebra identifications and their inner coherence maps are part
+of the stack.  A global object, which would present the algebroid by
+one global algebra sheaf, is additional data.
+
+\begin{theorem}[Symplectic quantization algebroid]
+A holomorphic symplectic surface admits a deformation-quantization
+algebroid $\mathcal W_{S,\hbar}$ whose classical limit is the trivial
+algebroid of $\Ocal_S$.  With the classical trivialization in the
+symplectic classification, its Fedosov class has the form
+\[
+ \Theta(\mathcal W_{S,\hbar})
+ \in\frac{[\omega]}{\hbarq}
+       +H^2(S;\C\llbracket\hbarq\rrbracket).
+\]
+Changing this class can change the equivalence class of the algebroid.
+\end{theorem}
+\begin{proof}
+Apply the symplectic algebroid existence and classification theorems
+of \cite{BresslerRojasDQ}*{Theorems~7.1--7.2 and Section~7.3}
+to the complex distribution $T^{0,1}S$.
+Its invariant functions are $\Ocal_S$; the local Dolbeault lemma gives
+the required exactness along the distribution.  The holomorphic
+symplectic tensor is the nondegenerate Poisson tensor in that theorem.
+The canonical quantization of the trivial classical gerbe supplies
+the asserted algebroid.  The Fedosov class records the difference
+from this canonical quantization.
+\end{proof}
+
+On a formal Darboux disk the completed local algebra is a formal Weyl algebra.
+A Fedosov resolution expresses its differential in the form
+\[
+ D_F=\nabla+\frac1{\hbarq}[\gamma,-],
+\]
+where the required fibrewise differential may be included in $\gamma$.
+The square is an inner derivation by the curvature, so central
+curvature gives $D_F^2=0$ while still contributing to the
+quantization class.  Changing that central class
+is therefore not the same operation as changing a resolution within
+a fixed class.
+
+A global holomorphic symplectic connection cannot be assumed even on
+a K3 surface.  Its tangent bundle has second Chern number $24$.
+A holomorphic connection would have curvature of type $(2,0)$, so
+its second Chern form would have type $(4,0)$ and vanish on a complex
+surface, a contradiction.  Local holomorphic constructions, or
+Dolbeault resolutions with their descent data, are consequently
+essential.  Covariant formality for smooth manifolds
+\cite{DolgushevCov} uses a chosen connection; equivariance there
+requires an invariant connection.
+
+Holomorphic Lie algebroid formality also gives a sheafwise
+$L_\infty$ comparison between polyvectors and polydifferential
+operators, together with the compatible comparison of their
+differential-form and Hochschild-chain modules
+\cite{CalaqueDolgushevHalbout}*{Theorem~5.2 and Corollary~5.3}.
+For the tangent Lie algebroid, this supplies holomorphic formality
+without a global holomorphic connection.  The additional
+$\Etwo$ structure and descent for a specified quantization class
+are the data in the following comparison.
+
+\section{Centre descent with a fixed formal Poisson class}
+All cochains in this section are continuous and relative to
+$R=\C\llbracket\hbarq\rrbracket$.
+Let $\{U_i\}$ be a Darboux cover and choose a formal Poisson tensor
+\[
+ \Pi_i=\hbarq\pi_i+\hbarq^2\pi_{i,2}+\cdots,
+ \qquad [\Pi_i,\Pi_i]_{\mathrm{Sch}}=0,
+\]
+whose quantization represents the chosen local algebroid.
+Write $\PV_{U_i}$ for holomorphic polyvector fields, placing
+$\Lambda^kT_{U_i}$ in degree $k$.
+Fix homotopy-$\Etwo$ structures and local equivalences
+\[
+ \widetilde\Phi_i:
+ (\PV_{U_i}\llbracket\hbarq\rrbracket,[\Pi_i,-])
+ \simeq C^\bullet_{\HH,\mathrm{cont}}
+       (\mathcal W_{U_i,\hbar}/R,\mathcal W_{U_i,\hbar}).
+\]
+Require compatible equivalences on overlaps and their coherent
+homotopies on all higher intersections, both for the source complexes
+and for these maps.  Denote the resulting sheaf of source algebras
+by $\mathcal P_{S,\Pi}$ and the algebroid's relative Hochschild
+cochain sheaf by $\mathcal C_{S,\hbar}$.
+
+\begin{theorem}[Global centre comparison with coherent descent]
+The specified data induce a sheafwise homotopy-$\Etwo$ equivalence
+\[
+ \mathcal P_{S,\Pi}\simeq\mathcal C_{S,\hbar}
+\]
+and an equivalence of their derived global sections.
+If the chosen continuous Morita theory identifies
+$Z_{\mathrm{Mor},R}^{\mathrm{der}}(\Perf(\mathcal W_{S,\hbar}))$
+with $\R\Gamma(S,\mathcal C_{S,\hbar})$, this gives
+\[
+ Z_{\mathrm{Mor},R}^{\mathrm{der}}
+       (\Perf(\mathcal W_{S,\hbar}))
+ \simeq\R\Gamma(S,\mathcal P_{S,\Pi}).
+\]
+\end{theorem}
+\begin{proof}
+The overlap maps and their higher homotopies define a map of descent
+objects.  Its restriction to each $U_i$ is an equivalence, so it is
+an equivalence of sheaves.  Derived global sections preserve this
+equivalence.  Applying the stated Morita identification gives the
+last formula.
+\end{proof}
+
+When the chosen formal Poisson class is represented globally by
+$\Pi=\hbarq\pi$ with the indicated untwisted descent, the source is
+$(\PV_S\llbracket\hbarq\rrbracket,[\hbarq\pi,-])$.
+An arbitrary quantization period does not specify this representative.
+Likewise, equivariance under holomorphic symplectomorphisms requires
+equivariant comparison and descent data; local formality alone does
+not supply them.
+
+\section{Topological factorization with holomorphic coefficients}
+Give $\R^2$ its standard framing.  A complete homotopy-$\Etwo$
+algebra internal to sheaves on $S$ has a locally constant
+factorization envelope on $\R^2$ valued in those sheaves, using the
+chosen completed tensor product.  Applied to the preceding equivalence,
+this gives
+\[
+ \operatorname{Fact}_{\Etwo}(\mathcal P_{S,\Pi})
+ \simeq\operatorname{Fact}_{\Etwo}(\mathcal C_{S,\hbar}).
+\]
+The assertion follows by applying the factorization envelope to an
+equivalence of its coefficient algebras.
+It retains the relative centre action on the corresponding local
+perfect-module categories.
+
+The holomorphic variable here is a sheaf variable: restriction to
+smaller open sets is contravariant.  A factorization algebra on
+$\R^2\times S$ also requires covariant operations for disjoint
+holomorphic open sets and the relevant descent condition.
+Such operations require a geometric construction in the coefficient
+direction.  Once supplied compatibly on both sides, they promote the
+displayed equivalence to that geometric factorization comparison.
+They are not part of the definition of an $\Etwo$-algebra sheaf.
+
+\section{Classical mixed fields and the quantization question}
+There is a local classical BF construction with the desired mixed
+directions.  On a holomorphic symplectic chart $U\subset S$, let
+\[
+ \mathcal D=\Omega^\bullet(\R^2)\widehat\tensor
+                \Omega^{0,\bullet}(U),
+ \qquad D=\dd_{\R^2}+\bar\partial.
+\]
+Here the tensor is the completed projective tensor of smooth-form
+spaces.  The differential acts by the graded tensor rule.
+For a finite-dimensional Lie algebra $L$, take fields
+\[
+ A\in\mathcal D\tensor L[1],\qquad
+ B\in\mathcal D\tensor L^\vee[2].
+\]
+The two de Rham and two Dolbeault degrees make the integration degree
+four.  The shifts above therefore give the BV pairing degree $-1$.
+With compact support, the degree-zero action is
+\[
+ S_{\mathrm{BF}}(A,B)
+ =\int_{\R^2\times U}\omega\wedge
+     \left\langle B,DA+\frac12[A,A]\right\rangle.
+\]
+Its classical master equation follows from $D^2=0$, the derivation
+property of $D$, Jacobi, and integration by parts.
+For $L=\h_{\le d}$ this is a finite coefficient model.
+A formal Hamiltonian field theory must additionally specify its
+continuous coefficient complex and the gluing of formal coordinate
+charts.
+
+Renormalized quantum observables require compatible gauge fixing and
+counterterms satisfying the field-theoretic quantum master equation.
+The finite identity $\Delta S_L=0$ controls its stated finite model;
+it does not establish the local field-theoretic quantum master equation.
+Even after quantization, identifying the observable algebra with the
+relative centre requires a map from those observables to the selected
+Hamiltonian or symplectic polyvector complex, with the factorization
+operations and descent respected.
+
+\chapter{Derived matrix equations and necklace actions}
+\section{The derived commuting fibre}
+For a positive integer $N$, let $X=(X_{ij})$ and $Y=(Y_{ij})$ be
+two generic $N\times N$ matrices.  Define the commutative dg algebra
+\[
+ \mathcal K_N=
+ \C[X_{ij},Y_{ij}]\tensor\Lambda(\psi_{ij}),
+ \qquad |X_{ij}|=|Y_{ij}|=0,\quad |\psi_{ij}|=-1,
+\]
+with differential
+\[
+ QX=QY=0,\qquad Q\psi=[X,Y].
+\]
+Here $\psi$ is a matrix with anticommuting entries, and products of
+such matrices use the ordinary matrix rule with graded coefficients.
+The algebra $\mathcal K_N$ is the function algebra of the derived
+zero fibre of the moment map
+\[
+ \mu:\mathfrak{gl}_N^2\longrightarrow\mathfrak{gl}_N,
+ \qquad (X,Y)\longmapsto[X,Y].
+\]
+Indeed, the Koszul resolution of the origin in the target, pulled back
+along $\mu$, computes the derived tensor product defining this fibre.
+Its zeroth cohomology is the coordinate algebra of the ordinary
+commuting scheme.
+Its negative cohomology retains the failure of the commuting equations
+to form a regular sequence.
+
+For example, $\Tr\psi$ is a closed element of degree $-1$ because
+$\Tr[X,Y]=0$.  It is not exact: setting $X=Y=0$ annihilates every
+boundary but leaves the nonzero exterior element $\Tr\psi$.
+At rank one this becomes
+\[
+ \mathcal K_1=\C[x,y]\tensor\Lambda(\psi),\qquad Q=0.
+\]
+Thus even the simplest derived commuting fibre has an odd direction
+in addition to its ordinary affine plane.
+
+Simultaneous conjugation acts on $\mathcal K_N$.
+Two quotients of this action will be distinguished:
+\[
+ [\operatorname{Spec}\mathcal K_N/GL_N],
+ \qquad
+ \mathcal B_N=C^*_{\CE}(\mathfrak{gl}_N,\mathcal K_N).
+\]
+The first is the derived group quotient; the second computes
+Chevalley cochains for the infinitesimal action.
+They need not have the same function complex.
+At rank one conjugation is trivial, and rational $\mathbb G_m$
+invariants are exact, so the group quotient has function complex
+$\mathcal K_1$.  In contrast,
+\[
+ \mathcal B_1=\mathcal K_1\tensor\Lambda(c),\qquad |c|=1,
+\]
+with zero differential.  This additional Chevalley ghost records
+Lie algebra cohomology.
+
+\section{Cyclic words and the moment map}
+Let $F=\C\angles{x,y}$ and let $F_{\mathrm{cyc}}=F/[F,F]$,
+where $[F,F]$ is the linear span of associative commutators.
+For a word $a_1\cdots a_r$, its cyclic derivative in $x$ is
+\[
+ \partial_x^{\mathrm{cyc}}[a_1\cdots a_r]
+ =\sum_{a_i=x}a_{i+1}\cdots a_ra_1\cdots a_{i-1}.
+\]
+Define $\partial_y^{\mathrm{cyc}}$ similarly.
+These derivatives are well defined on cyclic words and take values
+in the free algebra.  Put
+\[
+ \delta_f(x)=-\partial_y^{\mathrm{cyc}}f,
+ \qquad \delta_f(y)=\partial_x^{\mathrm{cyc}}f,
+\]
+and extend by the derivation rule.
+
+\begin{theorem}[Necklace Lie algebra and action]
+The bracket
+\[
+ \{f,g\}_{\mathrm{neck}}
+ =\left[
+   \partial_x^{\mathrm{cyc}}f\,\partial_y^{\mathrm{cyc}}g
+  -\partial_y^{\mathrm{cyc}}f\,\partial_x^{\mathrm{cyc}}g
+  \right]_{\mathrm{cyc}}
+\]
+makes $F_{\mathrm{cyc}}$ a Lie algebra, with the constants central.
+The map $f\mapsto\delta_f$ is a Lie morphism, factors through
+$F_{\mathrm{cyc}}/\C$, and satisfies
+\[
+ \delta_f([x,y])=0.
+\]
+\end{theorem}
+\begin{proof}
+Consider the bilinear map $F\tensor F\to F\tensor F$ determined by
+the generator values
+$\{\!\{x,y\}\!\}=1\tensor1$,
+$\{\!\{y,x\}\!\}=-1\tensor1$, with the other generator brackets
+zero, the outer Leibniz rule in the second argument, and skew-symmetry
+with interchange of the two output factors.
+This is a double bracket.  Its double Jacobiator is the cyclic sum
+of nested brackets, with the outer bracket acting in the first output
+factor.  It vanishes on generator triples, since the inner brackets
+are constant.  The derivation property in each argument then gives
+its vanishing on all words.
+Its induced bracket on cyclic words is the displayed formula.
+The double Jacobi identity gives both the Lie identity and
+$[\delta_f,\delta_g]=\delta_{\{f,g\}_{\mathrm{neck}}}$;
+see \cite{VanDenBerghDouble}*{Section~2.4 and Theorem~6.3.1}.
+The cyclic derivative identity
+\[
+ [x,\partial_x^{\mathrm{cyc}}f]
+ +[y,\partial_y^{\mathrm{cyc}}f]=0
+\]
+follows by cancellation of successive cyclic cuts of each word.
+Substitution into the derivative of $[x,y]$ proves the moment-map
+identity.  Constant cyclic words have zero derivatives.
+\end{proof}
+
+\begin{proposition}[Action on the derived commuting fibre]
+Matrix evaluation of $\delta_f$ on $X,Y$, together with
+$\delta_f\psi=0$, defines an action of $F_{\mathrm{cyc}}/\C$
+on $\mathcal K_N$ by dg derivations.
+It is equivariant for conjugation and hence acts on
+$\mathcal B_N$ as well.
+\end{proposition}
+\begin{proof}
+The moment-map identity gives
+$\delta_f(Q\psi)=\delta_f[X,Y]=0=Q(\delta_f\psi)$.
+The commutator with $Q$ also vanishes on $X,Y$, so it vanishes on
+the whole algebra.  Matrix evaluation preserves the free-algebra
+derivation and Lie identities.
+All expressions are equivariant polynomials in the matrices;
+extending the derivation by zero on Chevalley ghosts therefore gives
+the action on $\mathcal B_N$.
+\end{proof}
+
+The ordinary matrix space carries the symplectic form
+$\Tr(\dd X\wedge\dd Y)$.
+For $f\in F_{\mathrm{cyc}}$ define $J_N(f)=\Tr f(X,Y)$.
+Constants are retained here: $J_N(1)=N$.
+
+\begin{theorem}[Trace moment map]
+With this symplectic convention,
+\[
+ \{J_N(f),J_N(g)\}_{\mathfrak{gl}_N^2}
+ =J_N(\{f,g\}_{\mathrm{neck}}).
+\]
+\end{theorem}
+\begin{proof}
+Cyclic differentiation gives
+\[
+ \dd J_N(f)=\Tr\bigl(
+       (\partial_x^{\mathrm{cyc}}f)(X,Y)\dd X
+      +(\partial_y^{\mathrm{cyc}}f)(X,Y)\dd Y\bigr).
+\]
+Contraction with the inverse trace symplectic form gives the necklace
+formula.  Equivalently, the matrix-entry brackets are
+$\{X_{ij},Y_{kl}\}=\delta_{il}\delta_{jk}$,
+as in \cite{VanDenBerghDouble}*{Propositions~7.5.1--7.5.2}.
+\end{proof}
+
+\section{Formal completion and the enveloping action}
+Let $F_{\mathrm{cyc},r}$ be the cyclic words of length $r$ and put
+\[
+ \mathfrak n=\prod_{r\ge2}F_{\mathrm{cyc},r}.
+\]
+Its bracket sends lengths $r,s$ to length $r+s-2$.
+Complete $\mathcal K_N$ by the weights
+\[
+ \operatorname{wt}X_{ij}=\operatorname{wt}Y_{ij}=1,
+ \qquad \operatorname{wt}\psi_{ij}=2.
+\]
+The differential preserves weight.
+For a Hamiltonian of length $r$, its derivation raises weight by
+$r-2$ on the even generators and annihilates $\psi$.
+The sum of these derivations therefore converges on the weight
+completion $\widehat{\mathcal K}_N$.
+Chevalley ghosts have weight zero, giving the corresponding
+completion $\widehat{\mathcal B}_N$.
+
+Let $\mathfrak n_{\le d}=\bigoplus_{2\le r\le d}F_{\mathrm{cyc},r}$
+with the projected bracket, and define
+$\widehat U_\hbar(\mathfrak n)=\varprojlim_d
+U_\hbar(\mathfrak n_{\le d})$.
+The continuous Lie action gives a Rees enveloping action
+\[
+ \widehat U_\hbar(\mathfrak n)
+ \longrightarrow
+ \operatorname{End}_{\mathrm{cont}}
+       (\widehat{\mathcal B}_N)\llbracket\hbarq\rrbracket,
+ \qquad f\longmapsto\hbarq\delta_f.
+\]
+The enveloping completion uses these length quotients and the
+coefficient parameter.  A Hamiltonian of length greater than $d$
+acts trivially on the quotient by matrix weights at least $d$.
+Thus the finite actions are compatible on every bounded matrix
+weight quotient, and their inverse limit defines the displayed map.
+The Rees relation follows directly from
+\[
+ [\hbarq\delta_f,\hbarq\delta_g]
+ =\hbarq^2\delta_{\{f,g\}_{\mathrm{neck}}}.
+\]
+At any fixed output weight only finitely many Hamiltonian lengths
+contribute.  The topology on endomorphisms is the inverse-limit
+topology of these weight quotients.  No completion by arbitrary PBW
+powers in a fixed finite length quotient is imposed.
+
+\section{The commutative Hamiltonian lift}
+Abelianization of words gives a continuous surjective Lie map
+\[
+ \mathfrak n\longrightarrow\h.
+\]
+Here $x$ maps to $z_1$ and $y$ to $z_2$.
+A linear section is cyclic symmetrization: average the words with a
+prescribed number of $x$'s and $y$'s and pass to their cyclic class.
+Denote it by $\sigma$.  It need not be a Lie section.
+
+\begin{proposition}[The first symmetrization defect]
+For $f=x^3$ and $g=y^3$,
+\[
+\begin{split}
+ D&=\{\sigma f,\sigma g\}_{\mathrm{neck}}
+                      -\sigma\{f,g\}\\
+  &=3\bigl([xxyy]-[xyxy]\bigr)
+   =-\frac32\bigl[[x,y]^2\bigr]_{\mathrm{cyc}}\ne0.
+\end{split}
+\]
+On the derived commuting fibre, the corresponding derivation defect
+is null-homotopic.  A degree-$-1$ derivation giving the homotopy is
+\[
+ H(X)=-3[X,\psi],\qquad
+ H(Y)=-3[Y,\psi],\qquad
+ H(\psi)=3\psi^2.
+\]
+It satisfies $QH+HQ=\delta_D$ and extends equivariantly to
+$\mathcal B_N$.
+\end{proposition}
+\begin{proof}
+There are six words with two copies of each generator.  Four have cyclic
+class $[xxyy]$ and two have cyclic class $[xyxy]$, so
+\[
+ \sigma(x^2y^2)=\frac23[xxyy]+\frac13[xyxy].
+\]
+The necklace bracket of $[x^3]$ and $[y^3]$ is $9[xxyy]$,
+whereas the commutative bracket is $9x^2y^2$.
+Their difference is the first displayed expression for $D$.
+Expansion of $[x,y]^2$ gives
+$2[xyxy]-2[xxyy]$ after cyclic reduction.
+The two necklaces are distinct basis classes, proving nonvanishing.
+The derivation defect is also nonzero at rank two: for
+$X=\operatorname{diag}(1,0)$ and $Y=E_{12}$ one has
+$[X,[X,Y]]=E_{12}$, hence $\delta_D(X)=-3E_{12}$.
+
+Put $\mu=[X,Y]$.  Cyclic differentiation of $D$ gives
+\[
+ \delta_D(X)=-3[X,\mu],\qquad
+ \delta_D(Y)=-3[Y,\mu],\qquad \delta_D(\psi)=0.
+\]
+The first two identities for $QH+HQ$ follow from $Q\psi=\mu$.
+On the odd generator, the graded derivation rule gives
+\[
+ QH(\psi)=3(\mu\psi-\psi\mu),\qquad
+ HQ(\psi)=-3(\mu\psi-\psi\mu),
+\]
+so these terms cancel.  Equality on generators gives equality on
+the whole free graded algebra and hence after matrix evaluation.
+The formulas are conjugation equivariant, so extending $H$ by zero
+on the Chevalley ghosts preserves the same homotopy identity.
+\end{proof}
+
+This homotopy resolves one binary defect.  An action of all
+commutative formal Hamiltonians on the derived matrix object requires
+higher homotopies satisfying the $\Linf$ identities and converging
+in the specified topology.  Constructing such a lift, or a different
+strict Lie lift, remains the comparison problem.
+The necklace action is already a complete positive construction;
+the failed strictness of $\sigma$ is not an obstruction to every
+possible Hamiltonian action.
+
+\section{The first two ordinary trace models}
+Passing to ordinary rank-one functions gives $\C[x,y]$ and
+$J_1(f)=f(x,y)$ after abelianization.
+The necklace bracket becomes the usual Poisson bracket.
+Pointed Hamiltonians act by vector fields fixing the origin; linear
+Hamiltonians generate translations.  The odd coordinate of
+$\mathcal K_1$ and the Chevalley ghost of $\mathcal B_1$ belong to
+their larger derived models.
+
+For two-by-two matrices, Cayley--Hamilton gives
+\[
+ X^2-(\Tr X)X+(\det X)I=0
+\]
+and the analogous identity for $Y$.
+These reduce a consecutive power $X^2$ or $Y^2$ in a word after
+adjoining the indicated trace and determinant coefficients.
+Commuting complex matrices admit a common invariant flag and hence
+can be simultaneously triangularized.  Their traces are therefore
+computed from the diagonal pairs $(x_i,y_i)$, even when the matrices
+are not simultaneously diagonalizable.
+Write $p_{ab}=\sum_{i=1}^2x_i^ay_i^b$.
+Then
+\[
+ p_{20}=p_{10}^2-2\det X,\qquad
+ p_{02}=p_{01}^2-2\det Y,
+\]
+\[
+ p_{11}^2-p_{20}p_{02}
+ =-(x_1y_2-x_2y_1)^2.
+\]
+The first two identities are Cayley--Hamilton trace identities; the
+third follows by expanding the two diagonal sums.
+These are identities of ordinary trace functions.  They do not
+identify the full derived quotient with its eigenvalue model.
+
+\chapter{Stable traces and the centre comparison}
+\section{Graded stabilization}
+The eigenvalue model of rank $N$ has coordinate ring
+\[
+ \mathcal T_N=
+ \C[x_1,y_1,\ldots,x_N,y_N]^{S_N}.
+\]
+Give $x_i,y_i$ weight one.  For $a,b\ge0$ with $a+b>0$, put
+\[
+ p_{ab}^{(N)}=\sum_{i=1}^Nx_i^ay_i^b.
+\]
+Adding the zero pair defines restriction maps
+$\mathcal T_{N+1}\to\mathcal T_N$ preserving this weight.
+Define the graded stable algebra and its weight completion by
+\[
+ \mathcal T_{\mathrm{gr}}
+ =\bigoplus_{w\ge0}\varprojlim_N(\mathcal T_N)_w,
+ \qquad
+ \widehat{\mathcal T}_{\mathrm{wt}}
+ =\prod_{w\ge0}(\mathcal T_{\mathrm{gr}})_w.
+\]
+
+\begin{theorem}[Stable multisymmetric algebra]
+For each weight $w$, restriction stabilizes once $N\ge w$.
+There is a graded algebra isomorphism
+\[
+ \mathcal T_{\mathrm{gr}}
+ \cong\C[p_{ab}\mid a,b\ge0,\ a+b>0],
+ \qquad \operatorname{wt}p_{ab}=a+b.
+\]
+Its weight completion is $\widehat{\mathcal T}_{\mathrm{wt}}$.
+\end{theorem}
+\begin{proof}
+A monomial orbit sum is indexed by a multiset of nonzero exponent
+pairs $\alpha_1,\ldots,\alpha_l$, placed in distinct slots among
+$1,\ldots,N$.  At total weight $w$ one has $l\le w$.
+For $N\ge w$ all such multisets occur, and zero-pair restriction
+identifies their orbit-sum bases.  This proves stabilization.
+
+Expand $p_{\alpha_1}\cdots p_{\alpha_l}$ by assigning a slot to each
+factor.  The assignments with distinct slots give the corresponding
+orbit sum with coefficient $\prod_\alpha m_\alpha!$, where
+$m_\alpha$ is the multiplicity of $\alpha$ in the multiset.
+All other assignments merge two or more exponent pairs and have
+fewer occupied slots.  Induction on $l$ therefore gives a triangular
+change of basis between the power-sum monomials and the orbit sums.
+The diagonal coefficients are nonzero over $\C$.
+In each weight the two bases are consequently equivalent, proving
+generation and algebraic independence of the stable power sums.
+Taking the product over weights gives the stated completion.
+\end{proof}
+
+This definition distinguishes graded stabilization from an inverse
+limit of ungraded polynomial rings.  For example,
+$\sum_{r\ge0}p_{10}^r$ is a valid weight-completed series but does
+not restrict to a polynomial at rank one.  It is therefore not an
+element of $\varprojlim_N\mathcal T_N$ with uncompleted terms.
+Finite-rank relations and the formal topology must both be specified
+before taking a stable limit.
+
+\section{The rank parameter and the pointed Poisson algebra}
+On $(\C^2)^N$ use $\{x_i,y_j\}=\delta_{ij}$.
+The invariant bracket is
+\[
+ \{p_{ab}^{(N)},p_{cd}^{(N)}\}
+ =(ad-bc)p_{a+c-1,b+d-1}^{(N)},
+ \qquad p_{00}^{(N)}=N.
+\]
+It follows by differentiating the two sums; terms with distinct
+indices have zero bracket.  A negative output index occurs only
+with zero coefficient.
+In particular,
+$\{p_{10}^{(N)},p_{01}^{(N)}\}=N$.
+Adding the zero pair is therefore not Poisson on the full trace algebra.
+
+There are two compatible ways to retain this formula.
+First, introduce a central symbol $\nu$ and define
+\[
+ \widetilde{\mathcal T}
+ =\C[\nu,p_{ab}\mid a+b>0],\qquad p_{00}=\nu,
+\]
+with the displayed bracket on generators and $\{\nu,-\}=0$.
+This is the symmetric Poisson algebra of the Lie algebra of polynomial
+Hamiltonians including its constant.  Jacobi follows from the
+polynomial Poisson bracket.  Specialization $\nu=N$ and
+$p_{ab}\mapsto p_{ab}^{(N)}$ is a Poisson map for every rank.
+
+Second, use the pointed subalgebra generated by $p_{ab}$ with
+$a+b\ge2$.
+The bracket of two such generators again has degree at least two,
+so it never produces the rank parameter.  Zero-pair restriction is
+Poisson on this subalgebra.  Its weight completion is also Poisson:
+the bracket lowers weight by two, and only finitely many homogeneous
+input weights can contribute to a fixed output weight.
+This gives the stable pointed Hamiltonian trace algebra.
+
+\section{The two-brane cone}
+Separate center-of-mass and relative coordinates.  Put
+\[
+ u=x_1-x_2,
+ \qquad
+ v=y_1-y_2,
+ \qquad
+ E=\frac12u^2,
+ \quad
+ F=-\frac12v^2,
+ \quad
+ H=-uv.
+\]
+Then
+\[
+ H^2+4EF=0.
+\]
+
+\begin{proposition}[The $A_1$ Kirillov--Kostant cone]
+With $\{u,v\}=2$,
+\[
+ \{H,E\}=4E,
+ \qquad
+ \{H,F\}=-4F,
+ \qquad
+ \{E,F\}=2H.
+\]
+The generators $E/2,F/2,H/2$ satisfy the standard
+$\mathfrak{sl}_2$ Lie--Poisson brackets.  Their quadratic relation
+defines its nilpotent cone.
+\end{proposition}
+\begin{proof}
+The three identities follow by direct differentiation.  The quadratic equation is the determinant-zero equation for the traceless matrix
+\[
+ \begin{pmatrix}H&2E\\2F&-H\end{pmatrix}.
+\]
+\end{proof}
+
+\section{Reduced cyclic traces and stable Lie homology}
+A trace of the unit records the representation dimension.
+For $B=\C$, one has $\operatorname{Tr}_N(1)=N$, so ordinary traces
+cannot define a rank-compatible map on all of $HC_0(B)$.
+A scalar-reduced trace removes this dependence after choosing an augmentation.
+
+Let $B$ be a unital associative $\C$-algebra.
+The affine representation scheme $\Rep_NB$ represents unital algebra maps
+$B\to\operatorname{Mat}_N(D)$ for commutative $\C$-algebras $D$.
+Put
+\[
+ \mathcal R_N=\Ocal(\Rep_NB)^{GL_N},\qquad
+ \mathfrak c_B=HC_0(B)=B/[B,B],
+\]
+where $[B,B]$ denotes the linear span of commutators.
+The ordinary trace is the linear map
+\[
+ \operatorname{Tr}_N:\mathfrak c_B\longrightarrow\mathcal R_N,
+ \qquad
+ \operatorname{Tr}_N([b])(\rho)=\operatorname{Tr}(\rho(b)).
+\]
+Cyclicity makes it independent of the representative, and conjugation
+invariance puts its image in $\mathcal R_N$.
+
+For Lie and Poisson compatibility, specify a Lie bracket on $\mathfrak c_B$,
+a Poisson bracket on each $\mathcal R_N$, and the identities
+\begin{equation}\label{eq:vol2-trace-bracket-datum}
+ \{\operatorname{Tr}_N\beta,\operatorname{Tr}_N\gamma\}_N
+ =\operatorname{Tr}_N[\beta,\gamma]_{\mathrm{cyc}}
+ \qquad(\beta,\gamma\in\mathfrak c_B).
+\end{equation}
+A Hamiltonian comparison also specifies a Lie map
+$j:\h\to\mathfrak c_B$ for this bracket.
+These are additional data on $B$.
+The preceding necklace bracket and trace moment map supply the bracket
+and trace data for $B=\C\angles{x,y}$ with its canonical symplectic bracket.
+The map $j$ remains an additional comparison.
+Here $j$ is an algebraic Lie map.  A continuous formal comparison
+also requires a topology on the cyclic recipient and continuity of
+$j$ and the trace maps.
+An arbitrary unital algebra does not carry these structures by definition.
+
+For rank stabilization, choose an augmentation $\epsilon:B\to\C$.
+It defines the rank-stabilization morphism
+\[
+ s_N:\Rep_NB\longrightarrow\Rep_{N+1}B,
+ \qquad \rho\longmapsto\rho\oplus\epsilon.
+\]
+Restriction gives $s_N^*:\mathcal R_{N+1}\to\mathcal R_N$.
+Define the reduced cyclic space and trace by
+\[
+ \overline{\mathfrak c}_B=B/(\C1+[B,B]),
+ \qquad
+ t_N(\overline b)(\rho)
+ =\operatorname{Tr}(\rho(b))-N\epsilon(b).
+\]
+Let $\mathfrak m_N\subset\mathcal R_N$ be the ideal of functions
+vanishing at the representation $b\mapsto\epsilon(b)I_N$.
+The completed invariant rings and stable target are
+\[
+ \widehat{\mathcal R}_N
+ =\varprojlim_{r\ge1}\mathcal R_N/\mathfrak m_N^r,
+ \qquad
+ \mathcal R_\infty^{\wedge}
+ =\varprojlim_N\widehat{\mathcal R}_N.
+\]
+Use the inverse-limit topologies.
+Write $J$ for the augmentation ideal in $\Sym_\C\overline{\mathfrak c}_B$
+and put
+\[
+ \widehat\Sym\overline{\mathfrak c}_B
+ =\varprojlim_{r\ge1}
+   \Sym_\C\overline{\mathfrak c}_B/J^r.
+\]
+
+The stable matrix Lie algebra is
+$\mathfrak{gl}_\infty B=\varinjlim_N\mathfrak{gl}_N B$
+under block-zero Lie embeddings.
+For its homology, use trivial coefficients $\C$.
+Let $V_B=\bigoplus_{n\ge1}HC_{n-1}(B)$, with $HC_{n-1}(B)$ placed
+in homological degree $n$.
+The notation $\Sym_{\mathrm{gr}}V_B$ denotes the free graded-commutative
+algebra, with the Koszul sign rule.
+
+\begin{theorem}[Cyclic traces and stable Lie homology]
+Assume the compatible jet comparison and its homotopy Gerstenhaber refinement.
+Write $\mathcal A=\widehat U_\hbar(\h)$.
+For the augmented algebra and completion above, there are maps
+\[
+ \mathcal P_\infty
+ \xrightarrow{\ \Phi_\infty\ }
+ C^*_{\HH,\mathrm{cont}}(\mathcal A/R,\mathcal A),
+ \qquad
+ \operatorname{Tr}_N:\mathfrak c_B\longrightarrow\mathcal R_N,
+\]
+\[
+ \widehat\Sym\overline{\mathfrak c}_B
+ \longrightarrow\mathcal R_\infty^{\wedge},
+ \qquad
+ \Sym_{\mathrm{gr}}V_B
+ \xrightarrow{\sim}
+ H_*^{\CE}(\mathfrak{gl}_\infty B;\C).
+\]
+The first preserves the selected homotopy Gerstenhaber structure.
+The second is linear and, under the bracket data
+\eqref{eq:vol2-trace-bracket-datum}, is a Lie map.
+Under those data, its composite with $j$ preserves the Hamiltonian bracket.
+The third is a continuous homomorphism of commutative algebras,
+and the fourth is an isomorphism of graded Hopf algebras.
+These maps are natural for morphisms preserving the stated data.
+\end{theorem}
+\begin{proof}
+The first arrow is the chosen comparison of
+Theorem~\ref{thm:vol2-compatible-jets}.
+Its operadic refinement gives the asserted Gerstenhaber compatibility.
+The trace formula above constructs the second arrow.
+Equation~\eqref{eq:vol2-trace-bracket-datum} supplies its Lie compatibility,
+and the Lie property of $j$ gives the composite assertion.
+
+The augmentation annihilates commutators.
+Both terms of $t_N$ vanish on a commutator, and their values on a scalar
+multiple of the unit cancel.
+Thus $t_N$ is well defined on $\overline{\mathfrak c}_B$.
+At the trivial representation its value is zero, so its image lies in $\mathfrak m_N$.
+Moreover,
+\[
+\begin{split}
+ (s_N^*t_{N+1})(\overline b)(\rho)
+ &=\operatorname{Tr}(\rho(b))+\epsilon(b)-(N+1)\epsilon(b)\\
+ &=t_N(\overline b)(\rho).
+\end{split}
+\]
+The point $N\epsilon$ maps to $(N+1)\epsilon$, so
+$s_N^*(\mathfrak m_{N+1}^r)\subset\mathfrak m_N^r$.
+Hence restriction defines the transition maps between the completed rings.
+The symmetric-algebra extension of $t_N$ sends $J^r$ into $\mathfrak m_N^r$.
+It therefore induces a ring homomorphism on each corresponding quotient.
+Taking the inverse limit in $r$ gives a continuous map to
+$\widehat{\mathcal R}_N$.
+The displayed stabilization identity makes these maps compatible in $N$.
+Their inverse limit is the third arrow.
+
+The diagonal Lie map
+$\mathfrak{gl}_\infty B\to
+ \mathfrak{gl}_\infty B\oplus\mathfrak{gl}_\infty B$
+induces the homology coproduct.
+Block sum in the opposite direction induces the homology product,
+using the K\"unneth isomorphism over $\C$.
+The Loday--Quillen--Tsygan theorem
+\cite{LodayQuillenMatrices}*{Theorem~6.2} identifies primitive homology
+in degree $n$ with $HC_{n-1}(B)$.
+The stable homology is a connected graded-commutative and cocommutative
+Hopf algebra over $\C$.  The characteristic-zero structure theorem
+therefore identifies it with the free graded-commutative Hopf algebra
+on its primitives, giving the fourth arrow.
+The trace formulas, the augmentation-preserving rank maps, and stable
+Lie homology are natural.
+Naturality of the first arrow requires preservation of the selected jet comparison.
+\end{proof}
+
+Scalar reduction need not preserve the supplied Poisson bracket.
+For example, for $B=\C[x,y]$ with $\{x,y\}=1$ and
+$\epsilon(x)=\epsilon(y)=0$, traces on $N$ points satisfy
+\[
+ \{\operatorname{Tr}_Nx,\operatorname{Tr}_Ny\}=N,
+ \qquad t_N(\overline1)=0.
+\]
+A reduced Poisson comparison requires the cyclic bracket to descend
+through the scalar quotient and to satisfy the reduced trace identity.
+For example, centrality of the unit and vanishing of $\epsilon$ on
+the selected cyclic brackets give these properties: subtracting
+$N\epsilon(b)$ does not change the bracket of two trace functions,
+and then $t_N([b,c])=\operatorname{Tr}_N[b,c]$.
+A restriction to a Hamiltonian subalgebra may supply these conditions.
+Only multiplicativity and continuity are asserted for the third arrow.
+For $B=\C$, the reduced cyclic space is zero and that arrow is the identity on $\C$.
+
+\section{The local centre and its modules}
+Assume a compatible jet comparison and a complete homotopy-$\Etwo$
+refinement as in Theorem~\ref{thm:vol2-compatible-jets}.
+Put
+\[
+ \Acal_{\mathrm{bulk}}^{\mathrm{alg}}
+ =\operatorname{Fact}_{\Etwo}(\mathcal P_\infty).
+\]
+The factorization envelope uses the standard framing of the two topological directions.
+The formal holomorphic coefficient remains at the Darboux point.
+Let $\Ccal_\partial$ be the category of perfect complete $\mathcal A$-modules
+in the chosen continuous $R$-linear Morita theory.
+Assume its centre is computed by
+$C^\bullet_{\HH,\mathrm{cont}}(\mathcal A/R,\mathcal A)$.
+
+\begin{theorem}[Local derived-centre comparison]
+These data give an equivalence of complete homotopy-$\Etwo$ factorization algebras
+\[
+ \Acal_{\mathrm{bulk}}^{\mathrm{alg}}
+ \xrightarrow{\sim}
+ \operatorname{Fact}_{\Etwo}\!\left(
+ Z^{\mathrm{der}}_{\mathrm{Mor},R}(\Ccal_\partial)\right).
+\]
+On a topological disk the coefficient map is the selected refinement
+of $\Phi_\infty$.  Every perfect complete boundary module has the
+induced derived centre action.
+\end{theorem}
+\begin{proof}
+The compatible jet theorem gives the complete homotopy-$\Etwo$ comparison.
+The factorization envelope preserves this equivalence.
+The assumed continuous Morita model identifies its target with the centre.
+A centre element is a derived natural endomorphism of the identity functor,
+so evaluation gives the action on each boundary module.
+\end{proof}
+
+More generally, a complete module $M$ receives the same action whenever
+the continuous Morita theory supplies the completed derived tensor and
+$\mathcal A\widehat\tensor_{\mathcal A}^{\mathbf L}M\simeq M$.
+Apply $-\widehat\tensor_{\mathcal A}^{\mathbf L}M$ to the derived
+bimodule endomorphisms of $\mathcal A$ which define Hochschild cochains.
+
+\begin{corollary}[Global K3 comparison with descent data]
+Let $S$ be a K3 surface with holomorphic symplectic form.
+Suppose the local comparisons extend, with the coherent descent data
+specified above, to a sheafwise equivalence with
+$\mathcal C_{S,\hbar}$, and that the stated continuous Morita
+identification holds.
+Suppose further that the selected cyclic and mixed refinements extend
+and satisfy descent in the same completed category.
+Then derived global sections give the corresponding global centre,
+cyclic, and open--closed comparisons.
+\end{corollary}
+\begin{proof}
+Derived global sections preserve equivalences of sheaves.
+Apply them to the supplied sheafwise maps and their coherence homotopies.
+\end{proof}
+
+
+\section{The remaining comparison maps}
+At a fixed Hamiltonian jet, PBW antisymmetrization proves the relative
+Rees comparison, including both Chevalley terms scaled by $\hbarq$.
+Affine formality supplies a comparison with its selected $\Linf$
+structure, and Duflo
+identifies the degree-zero invariant algebras.  A homotopy-$\Etwo$
+or mixed refinement is specified when those operations are used.
+The oscillator algebra is a separate associative quotient; its
+Casimir relation obstructs descent of the primitive coproduct.
+
+For the Hamiltonian inverse limit, the compatible cochain systems
+of Theorem~\ref{thm:vol2-compatible-jets} are the required datum.
+With its operadic refinement and continuous Morita model, the
+centre acts on every supplied complete boundary module $M$ through
+\[
+ \mathcal P_\infty
+ \xrightarrow{\ \Phi_\infty\ }
+ C^\bullet_{\HH,\mathrm{cont}}(\mathcal A/R,\mathcal A)
+ \longrightarrow\RHom_{\mathcal A}(M,M).
+\]
+The final arrow evaluates a derived natural endomorphism at $M$.
+For the matrix object $\widehat{\mathcal B}_N$, the necklace action
+has been constructed.  A coherent lift of commutative Hamiltonians
+would provide the additional action needed to compare it with a
+module over the Hamiltonian boundary algebra.
+The explicit binary homotopy gives one equation in this problem.
+
+The symplectic surface has its own quantization algebroid and its
+fixed-class descent question.  Relating its centre to Hamiltonian
+Lie cochains requires a comparison between those carriers.
+Relating either centre to scalar traces requires an actual map to
+the stated cyclic or representation-invariant target; surjectivity
+is a further assertion.  The reduced trace homomorphism and the
+stable Lie-homology theorem construct their stated maps without
+making that additional identification.
+

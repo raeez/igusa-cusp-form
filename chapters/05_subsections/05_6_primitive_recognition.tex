@@ -1,0 +1,829 @@
+\subsection{Primitive recognition}
+\label{subsec:primitive-recognition}
+
+The compact recognition problem asks for a graded Lie superalgebra
+isomorphism from geometric primitives to the denominator algebra
+$\mathfrak g=\mathfrak g_{\Delta_5}$ of
+Chapter~\ref{ch:view2-bkm}. Its first interior comparison must identify
+$29$ even and $93$ odd directions and their brackets. The scalar
+$-64$ specifies only their difference.
+
+We first work with algebraic direct sums over root degrees. Positive
+height completion is available by
+Proposition~\ref{prop:bkm-positive-completion}. A completion of both
+signs must be separately defined. In particular, the full product of
+positive and negative root spaces is not a topological Lie algebra
+with the coordinatewise topology. This distinction applies equally
+to the proposed compact source and to the target.
+
+\subsubsection*{The source and its presentation map}
+
+Assume the hybrid geometry supplies an ordinary Hall super-bialgebra
+$H_X$ in a specified coefficient realization. Its associative
+product $m_X$, unit and counital coproduct $\Delta_X$ satisfy
+\[
+ \Delta_Xm_X=(m_X\otimes m_X)(1\otimes\tau\otimes1)
+                         (\Delta_X\otimes\Delta_X),
+\]
+where $\tau$ is the Koszul braiding. Its actual primitives form a
+Lie superalgebra under the supercommutator. If a cochain realization
+is used, all differentials and the passage to protected cohomology
+must preserve the operations needed for this assertion.
+
+Denote the descended primitive algebra by $P_X^{\Pi,\mathrm{desc}}$.
+A formula such as
+\[
+ P_X^{\Pi,\mathrm{desc}}=
+ H^0\Prim_{\mathrm{prot}}(\overline\Pi_{X,*}^{\Theta}\mathcal F_X)
+\]
+means that the coefficient realization, primitive functor and charge
+descent have been constructed and shown to commute in that formula.
+It is not a definition of those maps from the charge labels alone.
+
+Let $B_X$ be an independent even invariant Lie form on this algebra,
+and set
+\[
+ R_X=\operatorname{Rad}B_X,\qquad
+ P_X^{\Pi,\mathrm{red}}=P_X^{\Pi,\mathrm{desc}}/R_X.
+\]
+Invariance makes $R_X$ a Lie ideal. Its generated ideal in the
+ordinary enveloping algebra is a Hopf ideal by
+Proposition~\ref{prop:bkm-lie-radical-quotient}.
+The invariant form is not required to be adjoint to the ordinary
+primitive Hopf coproduct. That requirement would contradict the
+real $\mathfrak{sl}_2$ sector.
+
+Let $\mathfrak F$ be the free Lie superalgebra on a basis of
+$\mathfrak h=L\otimes\C$ and the symbols $e_i,f_i$ with their
+prescribed parities. Let $J_{\mathrm{BK}}$ be the ideal generated
+by Definition~\ref{def:bkm-relations}, including the linear
+identification $h_i=\alpha_i\in\mathfrak h$. Thus
+$\mathfrak F/J_{\mathrm{BK}}=\mathfrak g$.
+This is the Gritsenko--Nikulin presentation
+\cite[Section~3 and Statement~6.4]{GN}, with its product and lattice
+forms in \cite{GNPartI,GNII,BorcherdsGKM88,KAC:1}.
+No further radical quotient of $\mathfrak g$ is needed: its invariant
+form is already nondegenerate.
+
+\begin{theorem}[Recognition from geometric representatives]
+\label{thm:primitive-recognition}
+Suppose the following data are supplied over $\C$.
+\begin{enumerate}
+\item[\textup{(S1)}] The source primitive algebra and its
+normal-ordered descent are constructed. Their bracket is graded by
+$\Gamma_{\mathrm{gram}}$, and each descended homogeneous parity
+space is finite-dimensional.
+\item[\textup{(S2)}] An even identification
+$P^{\Pi,\mathrm{red}}_{X,0}\simeq\mathfrak h$ matches the source
+degrees with $L$ through $\alpha(n,l,m)$.
+\item[\textup{(S3)}] For every simple index $i$, the source supplies $e_i^X,f_i^X$
+in degrees $\pm\alpha^{-1}(\alpha_i)$ and parity $p(i)$.
+It also supplies $h_i^X$ corresponding to $\alpha_i$ in the Cartan. The imaginary
+fibers have the prescribed $\mu_{\bar p}(a)$ generators.
+\item[\textup{(S4)}] These representatives satisfy the Cartan,
+Chevalley, real Serre, orthogonality and super sign relations of
+Definition~\ref{def:bkm-relations} in the source bracket.
+\item[\textup{(S5)}] The invariant source Lie form descends to
+$P_X^{\Pi,\mathrm{red}}$, and the presentation map preserves it
+and $B_{\mathfrak g}$. The radical and quotient maps are actual
+maps of the supplied source objects.
+\item[\textup{(S6)}] For the induced map
+$\pi:\mathfrak F\to P_X^{\Pi,\mathrm{red}}$, one has
+$\ker\pi=J_{\mathrm{BK}}$.
+\item[\textup{(S7)}] The Cartan and simple representatives
+generate $P_X^{\Pi,\mathrm{red}}$ by finite bracket words.
+\item[\textup{(S8)}] The source and target ordinary enveloping
+algebras carry their PBW length filtrations and the finite weighted
+pieces of Proposition~\ref{prop:bkm-finite-filtered-pbw}. The
+comparison uses these actual algebras, not envelopes of symmetric
+root fragments.
+\item[\textup{(S9)}] Whenever a topological conclusion is desired,
+a completion domain and continuous operations are specified on
+both sides. The comparison and its inverse extend continuously.
+For positive height this uses the genuine positive Lie quotients.
+For another domain it is a separate hypothesis.
+\item[\textup{(S10)}] The source parity dimensions agree with
+$e_\beta,o_\beta$ in every positive and negative root degree,
+and vanish in non-root degrees. At $\delta_{123}$ they are
+$29|93$, not a choice inferred from the signed value $-64$.
+\end{enumerate}
+Then $\mathfrak g\to P_X^{\Pi,\mathrm{red}}$ is a graded Lie
+isomorphism preserving the invariant form. It induces a filtered
+Hopf isomorphism of ordinary enveloping algebras. Under (S9), it
+also identifies the specified completions. Its superdenominator
+is $64^{-1}\Delta_5(2Z)$.
+\end{theorem}
+\begin{proof}
+The representatives and (S4) factor $\pi$ through $\mathfrak g$.
+Clause (S6) gives injectivity and (S7) gives surjectivity.
+The degree, parity and form conditions make this the claimed
+structured isomorphism.
+
+The ordinary enveloping universal property
+and PBW give the filtered Hopf assertion. Continuity of both maps
+proves the completed statement in (S9). The denominator follows
+from Theorem~\ref{thm:bkm-denominator-identity}.
+
+In particular, (S10) is a consequence of the established
+isomorphism, while its finite parity tests can be used in proving
+injectivity or surjectivity. It is not a substitute for them.
+\end{proof}
+
+For a real pair the required Serre exponent is three.
+At $a_{ij}=\delta_i+\delta_j$, the source must supply nine even
+null simple representatives in addition to $[e_i^X,e_j^X]$.
+For the complementary real index $k$, their exponent is five.
+The relations at $\delta_{123}$ also restrict possible source
+differentials: Theorem~\ref{thm:bkm-serre-nonextension} forbids the
+rank-$28$ cancellation on the unchanged presentation beyond height
+five. A derived replacement must therefore identify its changed
+relations and its comparison map.
+
+If the independent coefficient data of
+Definition~\ref{def:finite-koszul-comparison-datum} are supplied,
+their primitive comparison can be required to be the inverse of the
+isomorphism above. The resulting statement concerns the associative
+Ran envelope $\mathcal A_{\Delta,E}$ in its specified category.
+It does not follow solely from the ordinary primitive isomorphism.
+
+\subsubsection*{Finite root sets and geometric support}
+
+\begin{definition}[Cofinal finite recognition data]
+\label{def:cofinal-primitive-recognition-datum}
+For $\nu\geq1$ set
+\[
+ W_\nu=\{\beta\in\mathcal R_+:\operatorname{ht}\beta\leq\nu\},
+ \qquad S_{W_\nu}=W_\nu\cup(-W_\nu)\cup\{0\},
+ \qquad \Gamma(W_\nu)=\alpha^{-1}(W_\nu).
+\]
+Finite recognition data on an exhaustion consist of the following
+compatible homogeneous spaces and maps.
+\begin{enumerate}
+\item[\textup{(R0)}] Geometric source spaces with specified compact
+supports, coefficient summands, orientation data and charge maps.
+Their basis vectors are classes of these objects.
+\item[\textup{(R1)}] The simple representatives and Cartan maps
+in each retained degree, with the prescribed parities.
+\item[\textup{(R2)}] The homogeneous bracket maps and the defining
+relation identities. Each iterated identity is evaluated in a
+finite enlargement retaining all intermediate degrees.
+\item[\textup{(R3)}] Even bijections
+$A_{\beta,\bar p}:P^{\Pi,\mathrm{red}}_{X,\alpha^{-1}(\beta),\bar p}
+\to\mathfrak g_{\beta,\bar p}$ for all retained root degrees in both signs and in degree zero.
+Require the source spaces to vanish in every non-root degree.
+Include these zero-space tests in the finite degree exhaustion.
+\item[\textup{(R4)}] Opposite-degree invariant Lie pairings, their
+radicals and quotient maps. The comparison intertwines the pairings
+and brackets. Where ordinary Hall products and coproducts are
+used to define primitives, their bialgebra identities hold in
+finite operation diagrams with the necessary output spaces.
+\item[\textup{(R5)}] No extra relation in each bounded word space:
+$\ker(\pi|_{F_N\mathfrak F})=J_{\mathrm{BK}}\cap F_N\mathfrak F$.
+Here $F_N$ bounds total generator weight, assigning weight one to
+Cartan generators and $\operatorname{ht}\alpha_i$ to $e_i,f_i$.
+This finite-dimensional word bound is different from fixing only
+the total root degree.
+\item[\textup{(R6)}] Every retained source vector is a finite
+bracket-word combination of the supplied representatives, in some
+finite enlargement containing its intermediate degrees.
+\item[\textup{(R7)}] The ordinary enveloping comparison preserves
+PBW length and the finite weighted pieces. Its maps are the ones
+induced by the primitive comparison.
+\item[\textup{(R8)}] Restriction and enlargement maps agree on
+common homogeneous operations. For a completed statement, actual
+quotient or inverse-system maps are supplied in a completion domain
+with continuous operations, as in (S9).
+\end{enumerate}
+The maps $A_{\beta,\bar p}$ must commute with every retained bracket
+and pairing square. Root sets carry partial operations as in
+Definition~\ref{def:bkm-finite-target-presentation-datum}. No
+zero extension of omitted brackets is imposed.
+\end{definition}
+
+A bounded root degree alone does not make the free presentation
+finite: positive and negative generators can cancel in arbitrarily
+long words. The total generator-weight bound in (R5) does give
+finite-dimensional word spaces. The intersection
+$J_{\mathrm{BK}}\cap F_N\mathfrak F$ is the actual ideal
+intersection, not merely the span of defining relators whose
+written degrees happen to lie in a root set.
+
+\begin{proposition}[Height sets and their inverse degree map]
+\label{prop:height-root-windows-gamma}
+The $W_\nu$ are finite, downward saturated and cofinal in
+$\mathcal R_+$. Their Gram preimages are
+\[
+ \Gamma(W_\nu)=
+ \{(b_1,b_1+b_2-b_3,b_2):\textstyle\sum_i b_i\delta_i\in W_\nu\}.
+\]
+They lie in the product cusp support.
+\end{proposition}
+\begin{proof}
+There are finitely many nonnegative triples with sum at most $\nu$.
+A proper positive subdegree has no greater height. Every positive
+root has finite height.
+
+Solving the three coefficients in
+\eqref{eq:bkm-alpha-map} gives the displayed inverse.
+If $b_2>0$ then $m>0$. If $b_2=0,b_1>0$ then $m=0,n>0$.
+If $b_1=b_2=0,b_3>0$ then $n=m=0,l<0$.
+\end{proof}
+
+\begin{corollary}[Exhaustion of positive roots]
+\label{prop:active-root-window-exhaustion}
+Every positive root $\beta$ lies in $W_{\operatorname{ht}\beta}$,
+and $\bigcup_\nu W_\nu=\mathcal R_+$.
+\end{corollary}
+\begin{proof}
+Finiteness of height proves the assertion. A root of zero
+superdimension still occurs, since roots were defined by their spaces.
+\end{proof}
+
+\begin{definition}[Geometric support exhaustion]
+\label{def:source-window-compact-support-exhaustion}
+A discrete geometric support exhaustion uses a set
+$\mathscr S_X^{\mathrm{cpt}}$ of compact support types and a height
+$h_X:\mathscr S_X^{\mathrm{cpt}}\to\N$ with finite fibers. Its stages are
+$\mathscr S_{X,\leq R}^{\mathrm{cpt}}=\{s:h_X(s)\leq R\}$.
+Each type carries its actual source stratum, proper support,
+stabilizer and orientation data. Geometric transition maps between
+the associated moduli or coefficient objects are also specified.
+Inclusions of the index sets do not alone give these maps.
+\end{definition}
+
+\begin{proposition}[Support exhaustion]
+\label{prop:source-window-compact-support-criterion}
+Such an exhaustion contains every retained support type in a
+finite stage. It does not assert that the union of the corresponding
+moduli has finite dimension or finitely many points.
+\end{proposition}
+\begin{proof}
+The type $s$ occurs at $R=h_X(s)$. Finiteness concerns the index
+set of types, not the geometric objects they index.
+\end{proof}
+
+\begin{definition}[Compatibility of source and root degrees]
+\label{def:target-source-window-compatibility}
+For each geometric stage, specify its normal-ordered degree map
+$d_R:\mathscr S_{X,\leq R}^{\mathrm{cpt}}\to\Gamma_{\mathrm{gram}}$
+and an index $\nu(R)$ such that
+$\alpha(d_R(s))\in S_{W_{\nu(R)}}$ whenever that support contributes
+to the primitive comparison. The maps agree on shared support types
+as $R$ increases, and $\nu(R)$ can be chosen nondecreasing.
+\end{definition}
+
+\begin{proposition}[Degree-compatible finite comparison]
+\label{prop:target-source-window-compatibility-criterion}
+These data place each retained geometric primitive space in a
+specified target degree and preserve that assignment under transition.
+\end{proposition}
+\begin{proof}
+Apply the defining equality with $\alpha$ at each support type.
+Compatibility of $d_R$ makes the same equality hold in every later
+stage. Negative degrees and the Cartan use $-W_\nu$ and $\{0\}$.
+\end{proof}
+
+The existence of a geometric support exhaustion and its operation
+maps is part of the compact construction. The target height
+exhaustion supplies no such geometric maps. In a proposed source
+whose support cannot be indexed with finite fibers, another finite
+coefficient construction must replace this discrete formulation.
+That limitation concerns this exhaustion method, not existence of
+all possible compact sources.
+
+\subsubsection*{Recognition in finite homogeneous coordinates}
+
+\begin{proposition}[Target operation spaces]
+\label{prop:target-presentation-prerequisite}
+A finite comparison with $\mathfrak g$ requires its two parity
+spaces, bracket maps, opposite-degree invariant pairings and
+ordinary enveloping pieces on the retained operation domains.
+The signed dimensions $f_\beta$ or simple coefficients $m(\beta)$
+alone do not define these maps.
+\end{proposition}
+\begin{proof}
+A bracket square has a vector space at each input and at its
+output, and a pairing square has the specified opposite-degree
+spaces. A scalar dimension cannot supply their structure maps.
+The parity recursion constructs dimensions for the target
+presentation. Bases and operations still come from that presentation.
+\end{proof}
+
+\begin{proposition}[Finite homogeneous recognition]
+\label{prop:finite-window-presentation-recognition}
+Finite recognition data determine an isomorphism of the retained
+homogeneous operation diagrams
+\[
+ A_W:P_X^{\Pi,\mathrm{red}}|_{\alpha^{-1}(S_W)}
+       \xrightarrow{\sim}\mathfrak g|_{S_W}.
+\]
+It preserves the Cartan, simple representatives, retained brackets
+and invariant pairings. Cofinal compatible data identify the full
+algebraic graded Lie algebras.
+\end{proposition}
+\begin{proof}
+Each parity block of $A_W$ is bijective by (R3), and the bracket
+and pairing squares commute by (R2)--(R4). Their inverses preserve
+the same maps. Every homogeneous operation occurs in some finite
+enlargement, so the compatible family identifies all operations
+on the direct sums. Equivalently, (R5)--(R6) prove injectivity and
+surjectivity of the source presentation map. This is
+Theorem~\ref{thm:bkm-finite-operation-reconstruction}. No enveloping
+algebra of a symmetric root fragment is used.
+\end{proof}
+
+\begin{definition}[Finite source matrices]
+\label{def:finite-source-proof-tables}
+Choose homogeneous bases of the geometric coefficient and primitive
+spaces. Denote the ordinary Hall product, coproduct, bracket and
+invariant Lie form by matrices $M,D,B,G$, and the unit and counit
+by $\eta,\epsilon$. These matrices act on their specified input
+and output spaces, with enlargement when a product increases the
+retained weight. Kernel inclusions, quotient maps and source-to-target
+maps are denoted $K,Q,A$.
+
+The coefficient basis is obtained from the supplied compact support,
+vanishing-cycle or intersection-cohomology summand, reduced and
+quotient orientations, finite-stabilizer action and protected
+integration. Thom--Sebastiani and transition isomorphisms specify
+how these coefficients enter the Hall operations. These geometric
+objects and maps precede their coordinate matrices.
+
+Require associativity of $M$, coassociativity of $D$, and the left
+and right unit and counit laws. Require also
+\[
+ DM=(M\otimes M)(1\otimes\tau\otimes1)(D\otimes D),
+ \qquad B=M-M\tau\quad\hbox{on primitives},
+\]
+and the invariant-form identities
+\[
+ G([x,y],z)=G(x,[y,z]),\qquad
+ G(x,y)=(-1)^{|x||y|}G(y,x).
+\]
+The comparison squares include
+\[
+ A_{\beta+\gamma}B^X_{\beta,\gamma}
+ =B^{\mathfrak g}_{\beta,\gamma}(A_\beta\otimes A_\gamma),
+ \qquad
+ G^X_\beta=A_\beta^{\mathrm t}G^{\mathfrak g}_\beta A_{-\beta}
+\]
+in homogeneous bases, with the super sign convention on reversed
+arguments.
+
+Radical inclusion and quotient matrices satisfy
+$\operatorname{im}K=\ker G$, $QK=0$, and induce a nondegenerate
+form on the quotient. The relation matrices express the defining
+Cartan, Chevalley, Serre and orthogonality identities. Their actual
+ideal intersections enter (R5). The bracket-word spans enter (R6).
+
+The induced enveloping matrices use the super PBW relations and
+finite weighted pieces. They need not satisfy Hopf adjointness
+with the same matrix $G$. Proposition~\ref{prop:bkm-hopf-pairing-obstruction}
+proves that the latter requirement is incompatible with this target.
+\end{definition}
+
+\begin{proposition}[Coordinate form of recognition]
+\label{prop:finite-source-proof-tables-equivalence}
+Over $\C$, the finite source spaces and maps of (R0)--(R8) are
+equivalently specified by the matrices above. Their geometric
+construction, exact kernel equalities and commuting operation
+diagrams remain part of the specification. This equivalence is independent of the chosen
+homogeneous bases.
+\end{proposition}
+\begin{proof}
+A choice of basis turns every given linear map into a matrix.
+Composition, kernel and intertwining identities are unchanged by
+conjugating the source and target bases. Conversely, matrices on
+the specified geometric spaces define those maps when they satisfy
+the stated identities. Equality of a proposed relation subspace
+with a kernel requires inclusion and equality of dimensions, not
+only two unrelated ranks. Invertibility of each comparison block
+gives its actual inverse. Bare matrices of the right sizes do not
+identify their underlying spaces with geometric coefficients.
+\end{proof}
+
+\begin{proposition}[Cofinal recognition]
+\label{prop:global-recognition-cofinal-datum}
+Suppose the algebraic source and its presentation map are
+constructed. Conditions (S1)--(S8) and (S10) can be checked on
+cofinal finite homogeneous operation domains and bounded word spaces.
+A completed recognition statement additionally requires (S9).
+\end{proposition}
+\begin{proof}
+Every algebraic vector and relation is a finite linear combination
+of words, and hence occurs at some total generator-weight bound.
+Every bracket or pairing square involves finitely many degrees.
+Thus the finite data exhaust the defining maps and identities.
+Conversely, a global graded isomorphism and its specified geometric
+source restrict to these diagrams and preserve their kernels and
+parities. A topology and convergence of its operations are not
+consequences of an algebraic finite-word assertion, so the completed
+conclusion retains (S9).
+\end{proof}
+
+\subsubsection*{Transitions, parity and PBW}
+
+Charge descent changes the grading before any source-to-target
+comparison is made. Its formal effect on supplied algebraic data
+can be stated separately.
+
+\begin{proposition}[Additive regrading]
+\label{prop:recognition-additive-regrading}
+Let $q:\Gamma\to\Lambda$ be a homomorphism of charge groups and
+$V=\bigoplus_{\gamma\in\Gamma}V_\gamma$ a graded super vector space.
+Define
+\[
+ (q_*V)_{\lambda,\bar p}
+   =\bigoplus_{q(\gamma)=\lambda}V_{\gamma,\bar p}.
+\]
+Regrading preserves both parity summands and any supplied
+homogeneous filtration. For a graded Lie superalgebra $L$, it gives
+\[
+ q_*U(L)\simeq U(q_*L),\qquad
+ q_*\operatorname{gr}_{\mathrm{PBW}}U(L)
+   \simeq\operatorname{Sym}_{\mathrm{super}}(q_*L).
+\]
+A supplied positive/Cartan/negative direct-sum decomposition
+survives as a labeled decomposition. To recover those labels from
+the new charge alone, require $q$ to preserve the corresponding
+positive, zero and negative supports.
+\end{proposition}
+\begin{proof}
+Regrading retains every vector, its parity and its filtration
+membership. Additivity gives $q(\gamma+\gamma')=q(\gamma)+q(\gamma')$,
+so each homogeneous product, coproduct or bracket has the new
+required degree. It changes neither the tensor algebra nor its
+supercommutator relations. Hence it preserves the enveloping
+algebra, its PBW length and its associated graded.
+
+The three labeled summands remain direct because their underlying
+subspaces have not changed. If their new charge supports overlap,
+charge alone cannot distinguish them. Finite retained vector spaces
+remain finite, but arbitrary charge fibers need not have finite
+dimension. A completed regrading therefore requires its own
+summation and continuity hypotheses.
+\end{proof}
+
+Apply this proposition to the supplied normal-ordered homomorphism
+$\overline\Pi_X$. It preserves constructed parity, PBW and triangular
+data. It does not supply source dimensions, representatives,
+relations or the geometric maps in the recognition theorem.
+
+An inclusion of finite root sets is an enlargement of an operation
+diagram. It is not automatically a quotient morphism of Lie
+algebras. In the following statements, $L_\nu$ and their transitions
+are actual Lie superalgebras and morphisms, for example the
+positive-height quotients. This supplies the domain needed by the
+enveloping functor.
+
+\begin{definition}[PBW transition data]
+\label{def:transition-pbw-filtration-datum}
+For an even Lie morphism $T^Q_{\nu+1,\nu}:L_{\nu+1}\to L_\nu$,
+its PBW transition is the induced map
+$U(T^Q_{\nu+1,\nu}):U(L_{\nu+1})\to U(L_\nu)$.
+When weighted finite pieces are retained, assume $T^Q$ respects
+that weight filtration as well. The comparison maps and transitions
+are required to form commuting diagrams.
+\end{definition}
+
+\begin{proposition}[Functorial PBW filtration]
+\label{prop:transition-pbw-filtration-preservation-criterion}
+The induced map preserves PBW length. Its associated-graded map is
+$\operatorname{Sym}_{\mathrm{super}}(T^Q)$, and these maps compose
+functorially. Under the additional weight condition, they preserve
+the specified finite weighted pieces.
+\end{proposition}
+\begin{proof}
+A generator maps to a generator in $L_\nu$. A word of length at
+most $d$ maps to such a word. Preservation of the Lie bracket
+carries the source supercommutator relation to the target relation,
+so the tensor-algebra map descends. Super PBW identifies its symbol
+with the symmetric map. Both construction and composition are
+functorial. The weight assertion follows by adding the weights of
+generators in each word.
+\end{proof}
+
+\begin{definition}[Parity transition data]
+\label{def:transition-parity-decomposition-datum}
+Let $J_\nu$ be $+1$ on $V_{\nu,\overline0}$ and $-1$ on
+$V_{\nu,\overline1}$. A parity-preserving transition satisfies
+\[
+ J_\nu T_{\nu+1,\nu}=T_{\nu+1,\nu}J_{\nu+1}.
+\]
+The same equation is required in each retained positive, negative
+and Cartan degree, compatibly with its comparison map.
+\end{definition}
+
+\begin{proposition}[Parity blocks]
+\label{prop:transition-parity-decomposition-preservation-criterion}
+The equation above is equivalent to zero off-diagonal parity
+blocks. It restricts the inverse system separately to both parities.
+\end{proposition}
+\begin{proof}
+If $J_{\nu+1}x=(-1)^px$, then
+$J_\nu T x=TJ_{\nu+1}x=(-1)^pTx$.
+Conversely, a map preserving both eigenspaces commutes with $J$.
+The restricted maps inherit identity and composition from $T$.
+\end{proof}
+
+\begin{definition}[Finite primitive towers]
+\label{def:primitive-space-ml-datum}
+A finite primitive tower consists of actual finite-dimensional
+spaces $P_{\nu,\gamma,\bar p}$ and compatible inverse-system maps
+$t_{\nu'\nu}$ preserving degree and parity. The notation does not
+assert that these are projections of a symmetric root fragment as
+Lie algebras.
+\end{definition}
+
+\begin{proposition}[Primitive inverse limits]
+\label{prop:primitive-space-lim1-vanishing-criterion}
+Every such countable tower is Mittag--Leffler and satisfies
+$R^1\varprojlim_\nu P_{\nu,\gamma,\bar p}=0$.
+\end{proposition}
+\begin{proof}
+Images in a fixed finite-dimensional term form a descending chain
+and stabilize. Apply Proposition~\ref{prop:bkm-finite-tower-ml}.
+No additional stabilization hypothesis is needed after these finite
+spaces and their actual transition maps have been constructed.
+\end{proof}
+
+\begin{definition}[Pairing-kernel towers]
+\label{def:pairing-kernel-ml-datum}
+At each degree and parity, the invariant form defines
+\[
+ \lambda_{\nu,\gamma}:P_{\nu,\gamma}\to P_{\nu,-\gamma}^*,
+ \qquad
+ \rho_{\nu,\gamma}:P_{\nu,-\gamma}\to P_{\nu,\gamma}^*,
+\]
+with kernels $K^\ell_{\nu,\gamma}$ and $K^r_{\nu,\gamma}$.
+To form a kernel tower, require that the specified transitions
+carry each kernel into the corresponding kernel and compose.
+For a map of inverse systems with these dual codomains, specify
+the codomain transitions separately. Dualization reverses the
+direction of an inverse transition.
+\end{definition}
+
+\begin{proposition}[Kernel inverse limits]
+\label{prop:pairing-kernel-lim1-vanishing-criterion}
+The countable towers of these finite kernels have
+$R^1\varprojlim K^\ell_{\nu,\gamma}
+=R^1\varprojlim K^r_{\nu,\gamma}=0$.
+For an actual commuting map of inverse systems, its kernel
+commutes with inverse limit without a Mittag--Leffler assumption.
+\end{proposition}
+\begin{proof}
+Finite-dimensionality gives the first assertion. The second follows
+because the kernel and the inverse limit are limits, which commute.
+It makes no identification between an inverse limit of dual
+spaces and a continuous dual unless the necessary variance and
+topology have been supplied.
+\end{proof}
+
+\begin{definition}[Finite PBW associated-graded towers]
+\label{def:pbw-associated-graded-ml-datum}
+Suppose actual enveloping transitions preserve finite weighted
+pieces $F_NU(L_\nu)$ and PBW length $P_dU(L_\nu)$. Their finite
+associated-graded pieces are
+\[
+ G_{\nu,N,d,\chi,\bar p}
+ =\left(\frac{F_NU(L_\nu)\cap P_dU(L_\nu)}
+              {F_NU(L_\nu)\cap P_{d-1}U(L_\nu)}\right)_{\chi,\bar p}.
+\]
+The induced quotient maps define the corresponding inverse towers.
+\end{definition}
+
+\begin{proposition}[PBW inverse limits]
+\label{prop:pbw-associated-graded-lim1-vanishing-criterion}
+These towers satisfy $R^1\varprojlim G_{\nu,N,d,\chi,\bar p}=0$.
+For the limit filtration defined by the finite filtered inverse
+systems, taking the indicated associated-graded quotient commutes
+with inverse limit.
+\end{proposition}
+\begin{proof}
+The $G_\nu$ are finite-dimensional. The short exact sequence of
+the two filtered pieces and their quotient also has
+finite-dimensional kernel. Proposition~\ref{prop:bkm-finite-tower-ml}
+therefore proves exactness after inverse limit and gives the
+associated-graded quotient. This does not identify
+$U(\varprojlim L_\nu)$ with $\varprojlim U(L_\nu)$. Such a
+comparison has its own completion requirements.
+\end{proof}
+
+\begin{proposition}[Compatible limits and radical quotients]
+\label{prop:strict-ml-completion-primitive-recognition}
+Compatible finite-level isomorphisms $A_\nu:V_\nu\to W_\nu'$
+induce an isomorphism of ordinary inverse limits without an
+additional exactness hypothesis. For a compatible short exact
+sequence of finite-dimensional spaces
+$0\to R_\nu\to P_\nu\to Q_\nu\to0$, one has
+\[
+ \varprojlim Q_\nu\simeq
+       (\varprojlim P_\nu)/(\varprojlim R_\nu).
+\]
+If the towers are given the inverse-limit linear topology,
+$\varprojlim R_\nu$ is closed. These assertions preserve operations
+only when those operations are defined continuously on the limits.
+\end{proposition}
+\begin{proof}
+The inverses $A_\nu^{-1}$ are compatible and induce the inverse
+map on limits. The quotient assertion follows from
+$R^1\varprojlim R_\nu=0$. Its kernel is closed because it is the
+intersection of the inverse images of the finite-stage kernels.
+Continuous operation squares pass to limits. The obstruction in
+Proposition~\ref{prop:bkm-two-sided-completion-obstruction} shows
+why a vector-space limit of symmetric root fragments is not, by
+these linear facts alone, a completed Lie algebra.
+\end{proof}
+
+\subsubsection*{The first enlarged degree set}
+
+The height-three root set contains thirteen degrees. To evaluate the
+first real Serre relations, doubled null degrees, complementary
+strings and odd-odd products, consider the finite degree set
+\[
+ \begin{split}
+ W_{\mathrm{rel}}^+={}&W_3
+ \cup\{3\delta_i+\delta_j:i\ne j\}
+ \cup\{2a_{ij}:i<j\}\\
+ &\cup\{a_{ij}+s\delta_k:\{i,j,k\}=\{1,2,3\},\ 2\leq s\leq5\}
+ \cup\{2\delta_{123}\}.
+ \end{split}
+\]
+It has $13+6+3+12+1=35$ degrees, including nine zero root spaces
+at the real and complementary terminal degrees. Its nonzero
+proper subdegrees add exactly
+$D_k=\delta_k+2a_{ij}$, giving a $38$-degree set. Thus a degree
+set that includes zero codomains is different from a subset of
+$\mathcal R_+$.
+
+\begin{proposition}[Comparison spaces in the enlarged set]
+\label{prop:target-admissibility-obstruction-wrel}
+The full parity dimensions at
+$C_{k,2}=a_{ij}+2\delta_k$, $D_k$ and $2\delta_{123}$ are
+respectively
+\[
+ 201|93,\qquad510|1023,\qquad10136|6120.
+\]
+Every downward-saturated root set containing $2\delta_{123}$
+contains the $D_k$. Recognition there additionally requires the
+source coefficient spaces, invariant pairings and the bracket and
+enveloping comparison maps in those degrees.
+\end{proposition}
+\begin{proof}
+The dimensions are Proposition~\ref{prop:bkm-height-six-parities}.
+The inequalities $0<D_k<2\delta_{123}$ force their inclusion.
+The operation requirements are those of
+Proposition~\ref{prop:target-presentation-prerequisite}.
+The signed values $108,-513,4016$ and simple coefficients
+$90,54,-540$ describe different quantities and do not supply the
+geometric maps.
+\end{proof}
+
+A further degree-enlargement rule illustrates why one should retain
+finite operation diagrams instead of requiring a single finite
+set closed under all such enlargements. For a degree $\beta$ with
+$(\delta_i,\beta)<0$, define
+\[
+ T_i(\beta)=\beta+\bigl(1-(\delta_i,\beta)\bigr)\delta_i.
+\]
+On an imaginary simple generator this is its real Serre output
+degree. On a composite root, this formula only specifies a test degree.
+It does not assert that the corresponding power of
+$\operatorname{ad}e_i$ kills the entire root space.
+The distinction is detected by
+Theorem~\ref{thm:bkm-serre-nonextension}.
+
+For example, apply $T_i$ to the ten degrees
+$2a_{ij}$, $C_{k,2}$, $D_k$ and $2\delta_{123}$ inside the
+$38$-degree set. There are twenty-one distinct new output degrees.
+Eighteen have nonzero signed coefficient. Adjoining their nonzero
+proper subdegrees creates $126$ incidences across thirty distinct
+new degrees, so the enlarged set has $38+21+30=89$ degrees.
+
+These finite counts use the full Jacobi coefficients after elliptic
+reduction. In particular,
+\[
+ \begin{array}{c|c|r}
+ \beta&(n m,l)&f(nm,l)\\\hline
+ (2,6,1)&(12,7)&1\\
+ (8,2,2)&(16,8)&10\\
+ (5,2,1)&(10,6)&108\\
+ (7,2,2)&(14,7)&-513
+ \end{array}
+\]
+and the same values hold after exchanging the first two root
+coordinates. Elliptic translation reduces these coefficients to
+$f(0,1)$, $f(0,0)$, $f(1,0)$ and $f(2,1)$, respectively.
+
+A finite Fourier expansion cannot assign zero to an uncomputed
+coefficient beyond its degree bound. Such a substitution would
+already miscount this first enlargement.
+
+\begin{proposition}[An unbounded affine staircase]
+\label{prop:recognition-affine-staircase}
+Suppose a set of nonnegative lattice degrees is closed under
+$T_i$ whenever its pairing is negative. Suppose it contains all
+proper subdegrees with nonzero Jacobi coefficient. If it
+contains the three real simple degrees, it is infinite.
+\end{proposition}
+\begin{proof}
+For $N\geq2$, define
+\[
+\begin{split}
+ A_N={}&\{(0,N,N-1),(0,N,N),(0,N+1,N),\\
+       &\hspace{18mm}(N,0,N-1),(N,0,N),(N+1,0,N)\},\\
+ B_N={}&\{(0,N,N+1),(0,N+1,N+1),(0,N+1,N+2),\\
+       &\hspace{18mm}(N,0,N+1),(N+1,0,N+1),(N+1,0,N+2)\}.
+\end{split}
+\]
+For $\beta=(0,N+1,N)$, the pairing with $\delta_3$ is $-2$,
+so $T_3(\beta)=(0,N+1,N+3)$.
+Its three indicated proper subdegrees in the first half of $B_N$
+have Gram $q$-degree zero and elliptic exponents $-1,0,-1$,
+hence coefficients $1,10,1$. Exchanging the first two coordinates
+gives the other half. Therefore $A_N$ forces $B_N$.
+
+For $\beta=(0,N+1,N+2)$, the pairing with $\delta_2$ is $-2$,
+so $T_2(\beta)=(0,N+4,N+2)$.
+Its proper subdegrees include the first half of $A_{N+2}$,
+again with coefficients $1,10,1$. The coordinate exchange gives
+$B_N\Rightarrow A_{N+2}$. Both displayed output degrees have
+zero coefficient, since their elliptic exponent has absolute
+value two at $q$-degree zero.
+
+Finally, $T_3(\delta_2)=(0,1,3)$ forces the root $(0,1,2)$.
+Its $T_2$ output is $(0,4,2)$, whose nonzero proper subdegrees
+include $(0,2,1),(0,2,2),(0,3,2)$. Starting with $\delta_1$
+gives their coordinate exchanges, so $A_2$ is present.
+Induction yields $A_{2+2k}$ and $B_{2+2k}$ for all $k\geq0$.
+Their coordinates are unbounded. In particular this includes the
+six-degree families at every even $N\geq14$.
+\end{proof}
+
+This is an obstruction to that finite closure rule. It does not
+obstruct the positive Lie quotients or the cofinal finite operation
+diagrams used above. A compact construction need only provide each
+specified operation in a sufficiently large valid domain, with
+compatible maps. It need not make an infinite root algebra into a
+single finite algebra.
+
+\subsubsection*{The remaining compact construction}
+
+\begin{lemma}[The same determinant with an abelian bracket]
+\label{lem:signed-dimensions-miss}
+Equip the graded super vector space underlying $\mathfrak g$ with
+the zero bracket. Its root superdeterminant is unchanged, but it
+is not isomorphic to $\mathfrak g$ as a Lie superalgebra.
+\end{lemma}
+\begin{proof}
+The determinant uses only the signed graded dimensions.
+The new bracket is abelian, while $[e_i,f_i]=h_i\ne0$ in
+$\mathfrak g$. An abelian Lie superalgebra is a valid comparison
+object here. No counital Hopf structure with zero coproduct is
+being asserted.
+\end{proof}
+
+\begin{lemma}[Scalar data and geometric recognition]
+\label{lem:first-window-scalar-exclusions}
+A scalar denominator, Pfaffian product or protected index does
+not by itself determine the geometric primitive recognition datum.
+Target dimensions or target PBW spaces likewise do not construct
+source coefficient spaces or an intertwining map.
+\end{lemma}
+\begin{proof}
+The preceding lemma keeps the entire signed determinant while
+changing the bracket. Adding an even-odd pair also keeps it while
+changing both parity dimensions. The matrices in
+Definition~\ref{def:finite-source-proof-tables} require actual
+source spaces, operations and geometric coefficient maps before
+their comparison with the target can be formed. Those objects are
+absent from the scalar formulas.
+\end{proof}
+
+The unresolved compact data include admissible correspondences,
+coefficient realizations, the invariant Lie form and source
+representatives. Generation, kernel equality and the preceding
+coefficient comparison must also be constructed. They can be
+expressed as the relation and operation defects
+\[
+ \mathfrak O_{\mathrm{Rec},\nu}
+ =\bigl(\mathfrak o^{(R1)}_\nu,\ldots,
+        \mathfrak o^{(R8)}_\nu,
+        \mathfrak o^{\mathrm{tr}}_{\nu+1,\nu}\bigr),
+\]
+with each entry referring to the corresponding map and identity.
+An unresolved geometric map cannot be replaced by a vanishing
+numerical defect. The orientation and Pfaffian
+data of Appendix~\ref{app:obstruction-discharges} do not alone
+construct these source maps.
+
+The target denominator is established by
+\cite[Sections~3--4]{GN}, \cite[Theorem~2.1 and Section~5.1.1]{GNII}
+and the Borcherds lift \cite{Borcherds95,B}. An additional Drinfeld
+double, a derived center or a vacuum-evaluated algebra is a further
+construction with its own tensor and pairing data. A local toric
+Hall algebra does not identify the compact $K3\times E$ primitive
+algebra without a map between the actual coefficient objects.
+The first compact comparison must construct the source operations
+on the explicit real, null and interior spaces above. These finite
+comparisons must then extend to global recognition.

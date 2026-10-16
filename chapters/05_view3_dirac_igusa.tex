@@ -1,0 +1,240 @@
+\chapter{Formal geometry and the compact comparison}
+\label{chap:dirac-igusa-pro-object}
+
+The denominator algebra supplies a target for a geometric Hall
+construction. To reach it, one must first construct coefficients
+on moduli of objects, maps on extension flags and compatible
+orientation data. The product of their signed dimensions is a
+consequence to compare, not a definition of those operations.
+This chapter begins with the formal deformation model, then
+constructs or specifies the maps needed by the compact problem.
+
+Let \(S\) be a smooth projective K3 surface, \(E\) a smooth
+elliptic curve and \(X=S\times E\). Fix the polarization and
+stability data, the elliptic origin and the support conditions of
+Appendix~\ref{app:stability-support}. Singular K3 limits, singular
+elliptic curves, imprimitive classes, the compact Hall cusp and
+multiple-component degenerations need their own coefficient and
+specialization maps. Results below are used on the stated smooth
+and bounded recipients.
+
+\section{The source and its finite comparisons}
+
+Three established reference constructions will recur: the
+normalized Borcherds product \(D_5=\Delta_5/64\), the denominator
+algebra \(\mathfrak g_{\Delta_5}\) with denominator \(D_5(2Z)\),
+and the regularized theta lift. A geometric Pfaffian, source
+coalgebra or compact state must be constructed independently
+before being compared with these targets.
+
+At a stage \(R\), the proposed geometric datum is
+\[
+ \begin{split}
+ \mathfrak D^{\mathrm{DI}}_{X,R}=
+ (&\mathcal A_{X,R}^{E_3},F_{X,R}^{\mathrm{hyb}},
+   \Gamma_{X,R},\Pi_X,\Phi_R,o_R,H_R,P_R^\Pi,\\
+  &C_{X,R},\Theta_{\mathrm{Kos},R},
+   \mathscr L_{\mathrm{Pf},R},\operatorname{pf}_{X,R},
+   \epsilon_{o,R},\mathrm{Rec}_R).
+ \end{split}
+\]
+The entries denote, respectively, a field complex when that
+refinement is required, the local and wrapped carrier, charges
+and their Gram map, critical coefficients and orientation,
+Hall operations and primitives, a source coalgebra and its
+associative comparison, a Pfaffian line and section, Weyl
+transport and primitive recognition. Their precise definitions
+and morphisms are developed below. A compatible cofiltered
+system of such stages is the Dirac--Igusa pro-object
+\(\{\mathfrak D^{\mathrm{DI}}_{X,R}\}_R\). An effective
+geometric inverse limit is an additional construction.
+
+\subsection*{Formal charges and geometric supports}
+
+The Mukai--Gram map \(\Pi_X\) is quadratic. Its polarization
+\(B\) defines an additive normal-ordered central lift
+\(\overline\Pi_X\), as in Appendix~\ref{appendix:mukai-gram-dictionary}.
+Pointwise lattice lifts of Gram triples and the root assignment
+\[
+ \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
+\]
+are explicit. They supply no effectivity or semistability statement
+for a compact sheaf. The raw zero fibre
+\(K_{\Pi,0}=\Pi_X^{-1}(0,0,0)\) is not an additive subgroup,
+so it cannot be used as a quotient charge group.
+
+After an actual additive regrading has been fixed, summing finite
+vector spaces over its fibres is exact and retains even and odd
+parts separately. It also preserves a supplied filtration and
+triangular decomposition. The tensor-coalgebra comparison uses
+that additive grading; the raw quadratic Gram map does not
+commute with tensor degrees. These linear constructions retain
+their precise scope in
+Proposition~\ref{prop:recognition-additive-regrading}. They do
+not prove that a geometric Hall bracket, pairing radical or
+coefficient functor descends to the regraded source.
+
+A finite target test window therefore starts from actual bounded
+geometric charges, their normal-ordering translates and the image
+identity in Definition~\ref{def:finite-target-test-window}.
+A geometric exhaustion must represent every required relation
+degree and its intermediate outputs. The first simple target
+triples are
+\[
+ \gamma(\delta_1)=(1,1,0),\qquad
+ \gamma(\delta_2)=(0,1,1),\qquad
+ \gamma(\delta_3)=(0,-1,0).
+\]
+The sheaf representatives of
+Proposition~\ref{prop:type-ii-compact-mukai-representatives}
+realize these Gram values. Their wall semistability, reduced wall
+charts and operation comparisons are further geometric data.
+
+\subsection*{The moduli and coefficient hypotheses}
+
+The Abramovich--Polishchuk heart and its Liu tilt retain the
+polynomial charge, weak stability function, torsion pair and
+central charge together. A finite subobject- and quotient-closed
+collection with finitely many isomorphism classes and a strict
+integer length has the noetherian and HN properties of
+Propositions~\ref{prop:retained-window-noetherian} and
+\ref{prop:retained-window-hn-filtration}. The maximal-phase,
+maximal-length construction bounds the number of HN factors by
+the initial length. If length is additive, their lengths sum to
+that length. This finite collection need not be additive or
+closed under all extensions.
+
+Finite geometric stages require additional bounded class data,
+finite-type loci and the object and flag maps actually used.
+Semistability need not be closed under every specialization.
+The ambient CY3 moduli stack has a shifted symplectic structure;
+its scalar directions prevent an automatic two-term reduction on
+all substacks. The universal complex may require a scalar gerbe
+or a twisted recipient, even when its weight-zero endomorphism
+complex descends. Scalar rigidification does not force finite
+residual inertia. Closed strata, retained extensions, HN factors
+and geometric duality must be supplied at the support and heart
+where they are asserted.
+
+These requirements constitute the finite-moduli and reduced-atlas
+hypotheses. They are not consequences of a finite charge list.
+The reduced critical object is denoted \(\Phi_o\): its
+orientation enters through the sign-torsor construction, not an
+ordinary tensor of a constructible complex with a coherent line.
+The common translation quotient, proper or compact-support maps,
+cosections, roots and full flag coherences belong to the same
+coefficient system.
+
+If an \(E_3\)-field refinement is sought, its formal target
+charts, field complexes and operadic maps are additional input.
+A BV realization requires its quantum master equation, anomaly
+and framing conditions. The proposed
+\(\operatorname{Sp}^{\mathrm{ch}}_{K3,E}\) must be constructed
+on these complexes and preserve compact supports, factorization
+and stage transitions. A current-envelope target does not define
+this specialization functor.
+
+\input{chapters/05_subsections/05_1_hybrid}
+
+\input{chapters/05_subsections/05_2_orientation}
+
+\input{chapters/05_subsections/05_3_hall}
+
+\input{chapters/05_subsections/05_4_dirac_pfaffian}
+
+\input{chapters/05_subsections/05_5_koszul}
+
+\input{chapters/05_subsections/05_6_primitive_recognition}
+
+\input{chapters/05_subsections/05_7_finite_constructions}
+
+\input{chapters/05_subsections/05_8_obstructions}
+
+\section{Assembly of the geometric comparison}
+
+The constructions above have supplied formal local models and
+finite algebraic comparisons. Their compact extension can now be
+stated as a conditional assembly theorem, with each operation in
+its own recipient.
+
+\begin{theorem}[The structured comparison system]
+\label{thm:ch5-construction-of-dirac-igusa-pro-object}
+Suppose a common cofiltered family of geometric stages carries
+the following compatible structures.
+\begin{enumerate}
+\item[\textup{(L1)}] The local, wrapped and mixed carriers of
+Section~\ref{subsec:hybrid-ran-carrier}, with actual anchors,
+common-torsor quotients and all required coefficient and flag maps.
+When an \(E_3\)-source and chiral specialization are asserted,
+their field, operadic, anomaly, support and descent hypotheses
+are supplied on that same system.
+\item[\textup{(L2)}] Reduced orientation pairs, their quotient
+and cross-determinant comparisons, coherent Weyl lifts and stage
+maps, as in Section~\ref{subsec:cosection-twisted-orientation}.
+Trivial stabilizer characters are required wherever coarse
+descent is part of the comparison.
+\item[\textup{(L3)}] The Hall product, coproduct, unit and counit
+in their declared tensor, with the coefficient maps of
+Section~\ref{subsec:hall-correspondences}. Primitive projection
+and a full Hopf pairing are additional structures with their own
+hypotheses. The invariant Lie form on primitives has its separate
+radical quotient. A double comparison also requires an opposite
+half, cross relations, integral form and completion; stable-envelope
+transport is used only when its geometric maps have been supplied.
+\item[\textup{(L4)}] The actual skew complexes, Pfaffian lines,
+sections and parameter and automorphic-line comparisons of
+Section~\ref{subsec:dirac-pfaffian}, including the boundary
+normalization and the stated geometric or analytic effectivity.
+\item[\textup{(L5)}] The source coalgebra and the associative
+comparison of Section~\ref{subsec:koszul-source}, with the
+finite comparison maps and their inverses. A bar of the full
+factorization algebra is used only after its higher operations
+and coherences exist. An ordinary bar and a current envelope
+remain separate recipients.
+\item[\textup{(L6)}] The compact source representatives, relation
+kernel, generation, both parities, invariant form and PBW data of
+\textup{(S1)}--\textup{(S10)}, or their exhaustive finite
+realization in Definition~\ref{def:cofinal-primitive-recognition-datum}.
+\item[\textup{(L7)}] Morphisms \textup{(M1)}--\textup{(M8)}
+satisfying the identity and composition laws of
+Definition~\ref{def:finite-stage-dirac-igusa-morphism}, with the
+specified derived-limit and effectivity hypotheses wherever an
+actual limit is claimed.
+\item[\textup{(L8)}] The compatible degeneration, quotient
+orientation, Weyl and wall-atlas data
+\((D0)\), \((O1)\), \((O1)^+\), \((O2)\) and the finite Pfaffian datum
+\(P_{\mathrm{fin}}\) of
+Theorem~\ref{thm:G-four-obstruction-criterion}.
+\end{enumerate}
+Then the stages define the Dirac--Igusa pro-object. Their supplied
+primitive maps identify \(P_X^{\Pi,\mathrm{red}}\) with
+\(\mathfrak g_{\Delta_5}\) at the stated algebraic or completed
+scope. Their associative source and Pfaffian comparisons have the
+respective conclusions of their comparison theorems. An operator
+trace requires the independent cyclic state datum of
+Appendix~\ref{app:obstruction-discharges}.
+\end{theorem}
+\begin{proof}
+The component maps in \textup{(L7)} define the cofiltered diagram
+of structured finite stages. It is the asserted pro-object by
+Proposition~\ref{prop:dirac-igusa-pro-object-universal-property}.
+The geometric representatives of \textup{(L6)} define the
+presentation map; its stated kernel equality and generation give
+the primitive isomorphism. The maps and inverses in
+\textup{(L5)} give the associative comparison. The skew sections,
+line comparisons and normalizations in \textup{(L4)} and
+\textup{(L8)} give the Pfaffian theorem. Each passage to a
+completion uses that component's exactness and effectivity
+hypotheses. None of these constructions selects the cyclic state
+needed for the final trace assertion.
+\end{proof}
+
+The parameter datum \((S,H,\sigma,E,0_E)\) also requires its
+actual base-change maps. Definitions
+\ref{def:admissible-dirac-igusa-parameter-datum} and
+\ref{def:polarization-origin-dependence} specify those maps and
+the polarization and origin conventions. The origin change of
+Proposition~\ref{prop:elliptic-origin-independence-character}
+compares determinant Picard classes; an equivariant root character
+requires its further lift. A scalar denominator determines none
+of these base-change or pro-object morphisms.

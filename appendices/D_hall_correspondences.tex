@@ -1,0 +1,520 @@
+\section{Hall correspondences, orientations and reduced classes}
+\label{app:hall-correspondences}
+
+An extension correspondence can support several different operations.
+Ordinary cohomology, compactly supported cohomology and Borel--Moore
+homology require different coefficient maps. A virtual cycle supplies
+none of these maps by itself. We state the critical Hall theorem with
+its coefficient comparison, then explain the reduced stable-pair
+construction on $X=S\times E$, where $S$ is a smooth projective K3
+surface and $E$ is an elliptic curve.
+
+We work over $\C$ with rational constructible coefficients. A chosen
+nonzero form $\Omega_S$ on $S$ and a nonzero one-form on $E$ trivialize
+$K_X$. Thus $X$ has complex dimension three. The shifted symplectic
+structure on its derived moduli of perfect complexes has degree $-1$:
+the Calabi--Yau formula is $2-\dim_\C X$ \cite{PTVV2013}.
+For a fourfold it would instead be $-2$. The virtual-class theories
+of \cite{BorisovJoyce,OhThomasI,OhThomasII} and the toric
+fourfold DT/PT correspondence of \cite{CaoKoolMonavari} concern
+that different dimension. The algebraic
+charges of coherent sheaves lie in the support described in
+Definition~\ref{def:algebraic-effective-hall-support}, with the
+Mukai pairing on the K3 factor \cite{Mukai1984}. Neither a
+virtual-cycle construction nor a formal quiver chart enlarges that
+support automatically.
+
+\subsection{Oriented critical coefficients}
+\label{app:bbdjs}
+
+A $d$-critical locus $(M,s)$ is a classical space locally presented as
+the critical locus of a function on a smooth space, with compatible
+critical structures on overlaps. It has a canonical line $K_{M,s}$
+on $M^{\mathrm{red}}$. An orientation is a line $L$ and an isomorphism
+$L^{\otimes2}\simeq K_{M,s}$. For a critical chart
+$R\hookrightarrow U$ with function $f$, the restriction of $K_{M,s}$
+is $K_U^{\otimes2}|_{R^{\mathrm{red}}}$.
+
+Joyce--Song construct analytic critical charts for sheaf moduli
+under their Calabi--Yau hypotheses, including
+$H^1(\mathcal O_X)=0$ \cite[Theorems~5.4--5.5]{JoyceSong}.
+That local construction does not supply the global oriented
+coefficient object in the following theorem. In particular,
+$S\times E$ does not satisfy the displayed vanishing hypothesis.
+
+\begin{theorem}[Oriented vanishing cycles]
+\label{thm:bbdjs}
+An oriented complex algebraic $d$-critical locus $(M,s,L)$ carries a
+perverse sheaf $\Phi_{M,s,L}$ whose restriction to each critical chart
+is the perverse vanishing-cycle sheaf of $f$, twisted by the sign local
+system of compatible identifications
+$L|_{R^{\mathrm{red}}}\simeq K_U|_{R^{\mathrm{red}}}$.
+These local sheaves glue canonically with their duality and monodromy
+structures \cite[Theorem~6.9]{BBDJS2015}.
+\end{theorem}
+
+The twist in this statement is a rank-one rational local system
+associated to a $\mu_2$-torsor. It is not tensor product with the
+underlying algebraic line $L$. The construction for oriented
+$d$-critical Artin stacks uses smooth descent and the stack version
+of these coefficient comparisons; we use the conventions of
+\cite[\S4]{KinjoParkSafronovCoHA}. In particular, the phrase
+``vanishing-cycle coefficients'' includes the orientation and its
+chosen descent isomorphisms.
+
+For a continuous family of real elliptic operators on a compact
+manifold, the determinant line instead has an orientation double
+cover \cite[Definition~1.2]{JoyceTanakaUpmeier}. A comparison with
+critical orientation data must identify these two orientation
+problems; a trivialization in one does not specify that comparison.
+
+The Thom--Sebastiani theorem compares the critical coefficients of
+$f\boxplus g$ on a product with the external tensor product of the
+coefficients of $f$ and $g$ \cite[Theorem~2.13]{BBDJS2015}.
+For constructible derived coefficients this is the natural
+monodromy-compatible comparison of \cite[\S0]{MasseyST}.
+An extension stack is generally not that product. Its Hall operation
+uses an additional comparison on the extension correspondence.
+
+\subsection{The critical Hall product}
+\label{app:hall-product}
+
+Let $\mathcal C$ be a finite-type stable dg category with a
+$3$-Calabi--Yau structure, and let $\mathcal M_{\mathcal C}$ denote
+its derived moduli stack of pseudo-perfect modules. Choose an open
+substack $\mathcal M$ closed under direct sums and containing zero.
+Write $\Gamma=\pi_0(\mathcal M)$ and
+$\mathcal M=\coprod_{\alpha\in\Gamma}\mathcal M_\alpha$.
+Direct sum makes $\Gamma$ a commutative monoid.
+The two-step filtration stack gives the correspondence
+\[
+ \mathcal M_\alpha\times\mathcal M_\beta
+ \xleftarrow{\ p\ }\mathcal F_{\alpha,\beta}
+ \xrightarrow{\ q\ }\mathcal M_{\alpha+\beta}.
+\]
+Here $p$ records the associated graded objects in the fixed order,
+and $q$ records the filtered object's underlying object.
+
+An orientation of $\mathcal M$ induces an orientation on a graded
+pair through this Lagrangian correspondence. Orientation data
+identifies it with the external product of the two orientations and
+identifies the orientation at zero with the trivial one. Such data
+are \emph{strong} when the two induced identifications on three
+factors agree, and both unit diagrams commute
+\cite[Definition~8.4]{KinjoParkSafronovCoHA}.
+
+We use the cohomological convention $K[d]^i=K^{i+d}$. Let
+$\kappa(\alpha,\beta)$ denote the integer shift in the hyperbolic
+coefficient comparison
+\begin{equation}
+\label{eq:D-critical-hall-comparison}
+ (\Phi_\alpha\boxtimes\Phi_\beta)[\kappa(\alpha,\beta)]
+ \xrightarrow{\ \sim\ } Rp_*q^!\Phi_{\alpha+\beta}.
+\end{equation}
+This definition fixes the sign of every shift below.
+The index satisfies
+\[
+ \kappa(\alpha,\beta)+\kappa(\alpha+\beta,\gamma)
+ =\kappa(\beta,\gamma)+\kappa(\alpha,\beta+\gamma),
+ \qquad \kappa(0,\alpha)=\kappa(\alpha,0)=0.
+\]
+For $\Gamma$-graded complexes define the corresponding tensor product by
+\[
+ (V\otimes_\kappa W)_\gamma
+ =\bigoplus_{\alpha+\beta=\gamma}
+       (V_\alpha\otimes W_\beta)[\kappa(\alpha,\beta)].
+\]
+The cocycle identity supplies its associativity constraint.
+
+\begin{theorem}[Critical cohomological Hall multiplication]
+\label{thm:hall-product}
+Assume that $\mathcal M^{\mathrm{cl}}$ is a quasi-separated Artin
+stack with affine stabilizers, that it is $\Theta$-reductive, and
+that its zero object is a closed point substack. Equip $\mathcal M$
+with strong orientation data. Then the coefficients in
+\eqref{eq:D-critical-hall-comparison} exist and define a unital
+associative multiplication
+\[
+ H\otimes_\kappa H\longrightarrow H,
+ \qquad
+ H=\bigoplus_{\alpha\in\Gamma}
+ H^\bullet(\mathcal M_\alpha,\Phi_\alpha).
+\]
+The unit comes from the zero object. The multiplication is the
+critical Hall construction of
+\cite[Theorem~8.6, Corollary~8.8 and Proposition~8.29]
+{KinjoParkSafronovCoHA}, with shifts specified by
+\eqref{eq:D-critical-hall-comparison}.
+\end{theorem}
+
+\begin{proof}
+The cited theorem constructs the hyperbolic comparison and its
+compatibility with three-step filtrations. Its adjoint is
+\[
+ p^*(\Phi_\alpha\boxtimes\Phi_\beta)
+       [\kappa(\alpha,\beta)]
+ \longrightarrow q^!\Phi_{\alpha+\beta}.
+\]
+The $\Theta$-reductivity hypothesis makes $q$ proper on each
+component used here. Apply ordinary cohomology, then the counit
+$Rq_!q^!\Phi_{\alpha+\beta}\to\Phi_{\alpha+\beta}$, using
+$Rq_!=Rq_*$ on that component. The resulting map has source
+$(H_\alpha\otimes H_\beta)[\kappa(\alpha,\beta)]$.
+The two compositions for a triple are induced by the same
+three-step filtration correspondence. The associativity assertion
+for the coefficient comparison and the strong orientation
+identification make these maps equal. The two zero-endpoint
+filtrations give the unit identities.
+\end{proof}
+
+For a smooth projective threefold with trivial canonical bundle,
+Joyce--Upmeier construct orientation data on the moduli of sheaves and
+perfect complexes \cite[Theorem~4.4]{JoyceUpmeier}. The existence of
+strong orientation data is a further condition; its obstruction is
+formulated in \cite[Theorem~3.10]{JoyceUpmeier}. Without this
+condition the critical multiplication has the sign ambiguity described
+in \cite[Remark~8.7 and Example~8.9]{KinjoParkSafronovCoHA}.
+For Ginzburg categories of quivers with potential, strong orientation
+data and comparison with the quiver product of
+\cite{KSCoHA} are proved
+in \cite[Proposition~8.34, Corollary~8.36 and Proposition~8.37]
+{KinjoParkSafronovCoHA}.
+
+The theorem uses ordinary critical cohomology. A product on compactly
+supported cohomology, on dual compactly supported cohomology, or on a
+reduced translation quotient needs its own coefficient comparison and
+support functoriality. In particular, a properness assertion about a
+Quot scheme must refer to coherent sheaves, a fixed Hilbert polynomial,
+and closed conditions on the quotients. It does not prove properness
+for an arbitrary open stability condition or an arbitrary tilted heart.
+
+\subsection{Collision coproducts and primitives}
+\label{app:hall-coproduct}
+
+A multiplication does not specify a coproduct. A candidate collision
+correspondence has the reverse form
+\[
+ \mathcal M_\gamma\xleftarrow{\ r\ }
+ \mathcal C_{\alpha,\beta}\xrightarrow{\ s\ }
+ \mathcal M_\alpha\times\mathcal M_\beta,
+ \qquad \alpha+\beta=\gamma.
+\]
+To use it one must give a coefficient morphism with the variance and
+shift required by the chosen homology theory, and identify its iterates
+on triple collisions. The extension correspondence alone provides
+neither of these data.
+
+\begin{theorem}[A supplied collision coproduct]
+\label{thm:hall-coproduct}
+Suppose the collision correspondences induce maps
+$\Delta:H\to H\otimes H$ in a specified symmetric monoidal
+category, and that their coefficient comparisons satisfy
+coassociativity, both counit identities, and compatibility with the
+Hall product and its unit. Suppose also that the counit is an algebra
+map. Then the resulting unital algebra and counital coalgebra form
+a bialgebra. This conclusion applies to the compact reduced Hall
+object when the geometric and coefficient hypotheses of
+Definition~\ref{def:compact-geometric-hall-bialgebra-datum} are
+satisfied.
+\end{theorem}
+
+\begin{proof}
+Compose the coefficient morphisms along the two triple-collision
+correspondences. Their identification gives coassociativity.
+The zero-output correspondences give the counit equations. The
+compatibility correspondence for multiplication and collision gives
+\[
+ \Delta m=(m\otimes m)(1\otimes\tau\otimes1)(\Delta\otimes\Delta),
+\]
+where $\tau$ is the symmetry of the chosen category. The stated unit
+and counit compatibilities are the remaining bialgebra equations.
+\end{proof}
+
+The symmetry and tensor product in this statement are part of its
+hypotheses. An algebra in the index-twisted category of
+Theorem~\ref{thm:hall-product} is not, without a compatible
+regrading or comparison, an ordinary Hopf superalgebra.
+
+\subsection{Primitive Lie superalgebras}
+\label{app:hall-primitives}
+
+Now let $H$ be a bialgebra in super vector spaces over a field of
+characteristic zero. Put $\overline H=\ker\varepsilon$ and let
+$\pi=1-\eta\varepsilon:H\to\overline H$ be the augmentation
+projection. The reduced coproduct on $\overline H$ is
+$\overline\Delta=(\pi\otimes\pi)\Delta$.
+
+\begin{theorem}[Primitive closure]
+\label{thm:hall-primitives-formal}
+The space
+\[
+ P(H)=\ker(\overline\Delta:\overline H
+                          \longrightarrow\overline H\otimes\overline H)
+\]
+is a Lie superalgebra under
+$[x,y]=xy-(-1)^{|x||y|}yx$. A compatible differential makes it a dg
+Lie superalgebra. No antipode is needed for this conclusion.
+\end{theorem}
+
+\begin{proof}
+For $x\in\overline H$, the counit and coaugmentation equations give
+$\Delta x=x\otimes1+1\otimes x+\overline\Delta x$.
+For homogeneous primitives $x,y$, multiplicativity of $\Delta$ gives
+\[
+ \Delta(xy)=xy\otimes1+x\otimes y
+       +(-1)^{|x||y|}y\otimes x+1\otimes xy.
+\]
+Subtract the same formula with $x,y$ interchanged and multiplied by
+$(-1)^{|x||y|}$. The mixed terms cancel, proving primitive closure.
+The super Jacobi identity follows by expanding the commutator in the
+associative algebra. A differential compatible with $m$ and $\Delta$
+preserves both $\overline H$ and its primitive kernel.
+\end{proof}
+
+This result concerns the primitive kernel of a specified coproduct.
+It does not identify that kernel with BPS cohomology, the primitive
+part of a word-cut bar construction, or the denominator Lie
+superalgebra. Those comparisons retain the hypotheses of
+Theorem~\ref{thm:primitive-recognition}.
+
+\subsection{Cosection localization and reduction}
+\label{app:cosection}
+
+\begin{definition}[Cosection and degeneracy locus]
+\label{def:cosection-app-D}
+Let $M$ be a Deligne--Mumford stack with a perfect obstruction theory
+$\mathbb E\to\mathbb L_M$ of amplitude $[-1,0]$. Its obstruction
+sheaf is $\mathrm{Ob}_M=h^1(\mathbb E^\vee)$.
+A cosection is an $\mathcal O_M$-linear map
+$\sigma:\mathrm{Ob}_M\to\mathcal O_M$.
+Let $U\subset M$ be the open locus where it is surjective, and let
+$Z=M\setminus U$ be its degeneracy locus.
+\end{definition}
+
+Write $\mathfrak E=h^1/h^0(\mathbb E^\vee)$ for the obstruction
+bundle stack. The relevant cone stack is
+\[
+ \mathfrak E(\sigma)=\mathfrak E|_Z\,\cup\,
+            \ker(\sigma:\mathfrak E|_U\longrightarrow\mathbb A^1_U).
+\]
+It contains the full obstruction bundle stack over $Z$. It is not the
+kernel of the obstruction sheaf regarded as a perfect complex.
+
+\begin{theorem}[Kiem--Li localization]
+\label{thm:cosection-localisation}
+The intrinsic normal cone lies in $\mathfrak E(\sigma)$, and the
+localized Gysin map gives
+\[
+ [M]^{\mathrm{vir}}_{\mathrm{loc}}\in A_{\mathrm{vd}}(Z),
+ \qquad i_*[M]^{\mathrm{vir}}_{\mathrm{loc}}=[M]^{\mathrm{vir}},
+\]
+where $i:Z\hookrightarrow M$ and $\mathrm{vd}=\operatorname{rk}\mathbb E$
+\cite[Theorem~5.1]{KiemLi2013}. If $\sigma$ is everywhere
+surjective, then $[M]^{\mathrm{vir}}=0$.
+\end{theorem}
+
+\begin{proof}
+The cone containment and localized Gysin construction are the cited
+theorem. Compatibility of the localized Gysin map with the ordinary
+zero-section Gysin map gives the pushforward identity. If $U=M$,
+then $Z$ is empty, so its Chow group and the localized class vanish.
+\end{proof}
+
+Removing a trivial obstruction direction is a different construction.
+It requires a map of obstruction complexes and a compatible reduced
+perfect obstruction theory on the specified moduli space. When this
+removes a rank-one obstruction summand, the virtual dimension rises
+by one. The localized class above retains the original virtual
+dimension and is supported on $Z$; it is not this reduced class.
+
+For a perfect complex $F$ on $X$, the familiar candidate
+semiregularity functional is
+\[
+ \operatorname{Ext}^2_X(F,F)\longrightarrow H^3(X,\Omega_X^1)
+ \xrightarrow{\ \Omega_S\wedge-\ }H^3(X,K_X)
+ \xrightarrow{\ \int_X\ }\C.
+\]
+The first arrow is composition with the Atiyah class followed by
+trace. Its restriction to the relevant obstruction complex, its
+surjectivity in families and the resulting reduced theory must be
+specified. The nonvanishing of $\Omega_S$ alone proves none of
+these assertions. The formal Borcherds variable $s$ does not define
+the degeneracy locus of this cosection.
+
+\begin{theorem}[Reduced stable pairs on $S\times E$]
+\label{thm:reduced-virtual-class-K3xE}
+Let $\beta\in\operatorname{Pic}(S)$ be a nonzero curve class,
+$d\geq0$, and $n\in\Z$. Set
+$P=P_n(S\times E,(\beta,d))$. There is a reduced class
+$[P]^{\mathrm{red}}\in A_1(P)$. The translation action has finite
+stabilizers, and its Deligne--Mumford quotient $P/E$ carries a
+zero-dimensional virtual class such that
+\[
+ \pi^*[P/E]^{\mathrm{vir}}=[P]^{\mathrm{red}},
+ \qquad \pi:P\longrightarrow P/E.
+\]
+Its degree is the orbifold Euler characteristic weighted by the
+Behrend function of $P/E$. It equals the reduced invariant obtained
+by integrating the normalized incidence insertion on $[P]^{\mathrm{red}}$
+\cite[Theorems~1--2]{OberdieckReducedPT}.
+\end{theorem}
+
+\begin{proof}
+Oberdieck constructs an isotrivial map $P\to E$, equivariant for a
+nonzero multiple of translation. Its fibre $K$ over zero has a
+symmetric perfect obstruction theory, and $P/E\simeq K/G$ for a
+finite group $G$. The class
+$|G|^{-1}(K\to P/E)_*[K]^{\mathrm{vir}}$ is independent of the
+chosen isotrivial map. The virtual-class formula in terms of the
+Fulton Chern class gives its pullback as $[P]^{\mathrm{red}}$.
+Behrend's formula on $K$, together with finite descent, identifies
+its degree with the weighted Euler characteristic of the quotient.
+The normalized incidence insertion intersects an elliptic orbit
+with degree one, giving the second description of that degree.
+These are the constructions and comparisons of
+\cite[\S3]{OberdieckReducedPT}.
+\end{proof}
+
+The theorem holds for nonzero $\beta$ without requiring it to be
+primitive. The primitive-class hypothesis enters the particular
+Igusa generating-series identity discussed in
+Chapter~\ref{ch:view1-automorphic}. Its normalization is
+$Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}$, after the specified DT/PT
+and GW/PT comparisons and expansion conventions. A numerical
+identity for these reduced invariants does not supply critical Hall
+coefficient morphisms.
+
+\begin{proposition}[Reduced critical coefficients require a critical structure]
+\label{prop:bbdjs-reduced-K3xE}
+Suppose a reduced translation quotient is equipped with a
+$d$-critical structure and an orientation compatible with its
+local critical charts. Then Theorem~\ref{thm:bbdjs}, or its Artin
+stack version on the stated domain, gives its critical coefficient
+sheaf. A Hall multiplication on these coefficients further requires
+the oriented coefficient comparison on extension flags and its
+associativity and unit coherences.
+\end{proposition}
+
+\begin{proof}
+Apply the oriented critical-sheaf theorem to the supplied structure.
+The Hall maps are then constructed only when the coefficient
+comparison and support conditions in
+Theorem~\ref{thm:hall-product}, or the specified reduced analogue,
+are available. A symmetric perfect obstruction theory or a virtual
+class alone is not among the hypotheses that construct these
+comparison morphisms.
+\end{proof}
+
+The reduced stable-pair theorem supplies a virtual class on its
+particular moduli spaces. It does not state that every reduced
+semistable Hall stack is an oriented $d$-critical stack, or that
+removing one obstruction direction preserves a shifted symplectic
+structure. The desired compact coefficient theory must construct
+these structures and their maps on the actual extension and collision
+diagrams.
+
+\subsection{Stable envelopes and quantum groups}
+\label{app:stable-envelope}
+
+Let $M$ be a smooth holomorphic symplectic variety with a proper map
+to an affine variety. Let $A\subset T$ be tori acting on $M$, with
+$A$ preserving the symplectic form, and assume the equivariance and
+$T$-formality hypotheses of \cite[\S3.1]{MaulikOkounkov}.
+The nonzero $A$-weights in the normal bundle of $M^A$ determine
+hyperplanes in $\operatorname{Cochar}(A)\otimes\R$. Their
+complement has chambers. Choose a chamber $\mathcal C$ and a
+polarization of the fixed locus. The fixed components need not be
+points.
+
+\begin{definition}[Stable envelope]
+\label{def:stable-envelope}
+The stable envelope is the $H_T^\bullet(\mathrm{pt})$-linear map
+\[
+ \operatorname{Stab}_{\mathcal C}:
+ H_T^\bullet(M^A)\longrightarrow H_T^\bullet(M)
+\]
+characterized by attracting support, the signed Euler class of the
+negative normal bundle on each fixed component, and a strict bound
+on the degree in the $A$-parameters on lower fixed components.
+\end{definition}
+
+\begin{theorem}[Maulik--Okounkov stable envelopes]
+\label{thm:maulik-okounkov}
+Under these hypotheses and choices, the stable envelope exists and
+is unique \cite[Theorem~3.3.4]{MaulikOkounkov}. After equivariant
+localization it is invertible, and chamber comparisons
+\[
+ R_{\mathcal C',\mathcal C}
+ =\operatorname{Stab}_{\mathcal C'}^{-1}
+       \operatorname{Stab}_{\mathcal C}
+\]
+satisfy the chamber composition identities. For the framing
+factorizations of Nakajima quiver varieties
+\cite{Nakajima1994,Nakajima1998}, these identities give
+the spectral-parameter Yang--Baxter equation
+\cite[\S4.1.8--9]{MaulikOkounkov}.
+The resulting geometric Yangian $Y_Q$ acts on the direct sums of
+quiver-variety cohomologies used in that construction.
+\end{theorem}
+
+\begin{proof}
+Existence and uniqueness are the cited stable-envelope theorem.
+Localization makes the triangular restriction matrix invertible.
+Successive chamber comparisons cancel their intermediate stable
+envelopes. On a three-factor framing decomposition, the two routes
+between opposite chambers factor into the three pairwise
+$R$-matrices, giving the Yang--Baxter equation. The Yangian is
+constructed from these operators in
+\cite[Chapters~5--6]{MaulikOkounkov}.
+\end{proof}
+
+The Lie algebra $\mathfrak g_Q$ obtained from the classical
+$R$-matrix contains the quiver Kac--Moody algebra and can be larger;
+see \cite[\S1.2.8]{MaulikOkounkov}. It must not be identified with
+that Kac--Moody algebra for an arbitrary quiver. The
+Schiffmann--Vasserot construction uses framed rank-$r$ torsion-free
+sheaves on $\mathbb P^2$, framed along its line at infinity.
+Let $M_{r,n}$ be their instanton moduli, and localize equivariant
+cohomology over $K_r=\C(x,y,e_1,\ldots,e_r)$. Their specialized
+algebra $\mathbf{SH}^{(r)}_{K_r}$ acts faithfully on
+$L^{(r)}_{K_r}=\bigoplus_n H_*^{\widetilde T}(M_{r,n})\otimes K_r$.
+It embeds into the specified degreewise completed current algebra
+of $W_{\kappa-r}(\mathfrak{gl}_r)$, with $\kappa=-y/x$, and
+induces its Verma-module action on $L^{(r)}_{K_r}$
+\cite[Introduction, Theorems~A--C]{SchiffmannVasserot2013}.
+This preserves the distinction between a convolution algebra,
+its completion, and a representation of a vertex algebra.
+These theorems provide concrete quantum-group models; a comparison
+with a compact reduced $S\times E$ Hall algebra requires further
+geometric and coefficient maps.
+
+A compact comparison would have to specify an integral form, a
+coproduct and pairing, the completed Drinfeld double, its Cartan
+subalgebra and the geometric operators defining the comparison.
+Equality of an index or of a denominator does not determine these
+structures. Definition~\ref{def:integral-form-stable-envelope-comparison-datum}
+keeps this problem separate from the construction of the reference
+Yangian.
+
+\subsection{The remaining compact comparisons}
+\label{app:hall-level-separations}
+\label{app:hall-local-obstruction-calculations}
+
+Three established constructions enter the compact problem: the
+critical Hall product under strong orientation hypotheses, the
+reduced stable-pair virtual class, and the quantum groups acting on
+quiver-variety cohomology. Their comparison requires maps on
+coefficients. The formal cyclic charts provide a local domain on
+which to construct and test those maps; they do not identify the
+three constructions globally.
+
+For the reduced $S\times E$ theory, the first equations are the
+coefficient comparison on extensions and its equality on the two
+three-step flag diagrams, including the orientation identifications.
+The collision coproduct has a separate three-output equation and a
+compatibility equation with multiplication. Elliptic descent is
+relative to a common $E$-torsor and has unit $BE$. A final comparison
+with the Igusa denominator also needs the primitive Lie form,
+operator realization, protected state and modular line described in
+the main text. These requirements concern different mathematical
+objects; satisfying one leaves the others to be constructed.

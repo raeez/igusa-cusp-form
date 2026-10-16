@@ -1,0 +1,241 @@
+\subsection{The four geometric comparison conditions}
+\label{subsec:four-named-obstructions-ch5}
+
+The compact comparison needs a reduced coefficient theory, compatible
+orientation pairs, Weyl transport and geometric wall charts. We denote
+these requirements by \((D0)\), \((O1)\), \((O1)^+\) and \((O2)\).
+They are existence and compatibility conditions; they are not four
+classes in a common cohomology group. The Kummer and group-cocycle
+classes below detect particular parts of them.
+
+The tuple of Definition~\ref{def:G-retained-obstruction-datum}
+keeps these inputs together with finite geometric Pfaffians:
+\[
+ (D0_{\mathrm{HN}},O1_{\mathrm{quot}},\mathcal T_W,
+       O2_{\mathrm{atlas}},P_{\mathrm{fin}}).
+\]
+Primitive recognition, an associative coefficient comparison and a
+protected state require additional data. In particular, constructing
+this tuple would not identify the compact primitive algebra from its
+superdimension alone.
+
+\subsubsection*{Degeneration and reduced coefficients}
+
+At each finite geometric stage \(R\), condition \((D0)\) asks for a
+specified degeneration or specialization to a zero-dimensional
+sector. Its domain must be stated before using flatness. On a fixed
+projective target, a flat family of coherent sheaves has constant
+Hilbert polynomial. A sheaf with nonzero effective curve class has a
+positive linear coefficient, whereas a zero-dimensional sheaf has a
+constant polynomial. Such a family cannot specialize the former to
+the latter. Likewise a family of perfect complexes preserves its
+Chern character in a fixed cohomological marking.
+
+A proposed comparison changing the target, support theory or charge
+therefore has to construct that change. The datum
+\(D0_{\mathrm{HN}}\) specifies its geometric recipient, coefficient
+functor and transition maps, together with the reduced deformation
+and orientation comparisons. It must also provide specialization of
+the constructible critical coefficients, Pfaffian lines and protected
+integration maps on every required correspondence. The boundary
+\(b_R^{\mathrm{geom}}\to0\) in a hybrid Ran carrier is not by itself
+such a geometric specialization.
+
+For extension maps \(q,p_1,p_2\), a compatible semiregularity
+cosection satisfies
+\[
+ q^*\operatorname{CS}_{C}
+   =p_1^*\operatorname{CS}_{A}+p_2^*\operatorname{CS}_{B}
+\]
+on the common deformation complex, with the stated reductions and
+shifts. This equality is required throughout the specialization and
+under the stage transitions. The nonzero-K3-class surjectivity
+criterion of Section~\ref{subsec:cosection-twisted-orientation} does
+not assert surjectivity in curve class zero.
+
+A perfect reduced deformation complex, a cosection-localized virtual
+cycle and an oriented critical coefficient are different objects.
+The orientation constructions of \cite{JoyceSong,JoyceUpmeier}
+do not identify all three or supply every specialization above.
+Theorem~\ref{thm:G-D0} describes a consequence of a supplied compatible
+system. Failure of this proposed degeneration route does not rule out
+an independently constructed reduced Hall theory.
+
+\subsubsection*{Quotient orientation}
+
+Let \(K^{\mathrm{red}}\) be the specified perfect reduced complex on
+a geometric coefficient base \(B\), and write
+\(\mathscr D^{\mathrm{red}}=\det K^{\mathrm{red}}\).
+Condition \((O1)\) asks for a root pair
+\[
+ (o,\rho),\qquad
+ \rho:o^{\otimes2}\xrightarrow{\sim}\mathscr D^{\mathrm{red}},
+\]
+on the required quotient stack, with coherent extension-flag
+comparisons and stage transitions.
+If a cosection correction is included, it must have a perfect model
+\(C_{\mathrm{cs}}\). The actual line to be rooted is then
+\[
+ \mathscr D_{\mathrm{tw}}=
+ \mathscr D^{\mathrm{red}}\otimes\det C_{\mathrm{cs}}.
+\]
+Its obstruction is the Kummer boundary
+\[
+ \alpha^{\mathrm{red}}=\delta(\mathscr D_{\mathrm{tw}})
+       \in H^2(B,\mu_2).
+\]
+In analytic cohomology it is the mod-two reduction of the integral
+first Chern class. Rational Grothendieck--Riemann--Roch does not
+recover its possible two-torsion. The vanishing of
+\(\alpha^{\mathrm{red}}\) permits a root pair; a choice of pair
+and its extension-flag coherence remain necessary.
+
+For an \(E\)-action, the equivariant root problem is on \([B/E]\).
+On a free-action locus this is the quotient itself. There is no
+universal obstruction obtained merely by writing
+\[
+ a_1u_1+a_2u_2\in H^2(BE;\mathbb F_2).
+\]
+Such a class contributes only through the actual pullback to the
+chosen quotient problem; that pullback need not be injective.
+
+On a finite-stabilizer stratum with stabilizer \(H\), one must
+solve the equivariant Kummer problem
+\(\widetilde\beta^H\in H^2_H(B;\mu_2)\).
+For coarse descent, every stabilizer must also act trivially on the
+chosen root fibre. Thus a zero gerbe obstruction does not remove a
+nonzero degree-one sign character
+\(\lambda^H\in H^1(BH;\mathbb F_2)\).
+For \(H=E[2]\), the three order-two restrictions detect the three
+coefficients of the degree-two class. For \(E[N]\), with
+\(4\mid N\), the mixed class \(e_1e_2\) in the two-primary
+cohomology is invisible on every cyclic subgroup. Its coefficient
+\(A_{12}^{(N)}\) must be checked independently. These are the
+finite-group calculations underlying Theorem~\ref{thm:G-O1}.
+
+Orientation enters the critical coefficient through its sign
+torsor and the corresponding constructible local system. An
+ordinary tensor of a coherent root line with a constructible complex
+is not the coefficient construction. Nor does descent of the
+weight-zero endomorphism complex imply descent of the weight-one
+universal sheaf.
+
+\subsubsection*{Coherent Weyl transport}
+
+Set \(W=W^{(2)}(\Lambda_{II}^{2,1})\).
+Condition \((O1)^+\) supplies geometric maps between the required
+strata and lifts of their action to the root pairs. At a finite stage
+these maps may define only a partial action groupoid
+\(\mathcal G_R\). Its composition defect belongs to
+\[
+ c_{o,R}\in Z^2(\mathcal G_R;\underline{\mu_2}),
+\]
+with the actual action on the sign coefficients. A one-cochain
+\(\eta_R\) with \(\delta\eta_R=c_{o,R}\) rectifies the lifts.
+One uses \(H^2(W;\mathbb F_2)\) only after identifying the relevant
+complete action and constant coefficient system with that group
+cohomology problem.
+
+The corrected lifts must satisfy \(\tau_i^2=1\), preserve the
+quotient root and its square map, and commute with stage
+transitions. The torsor defect \(\omega_{i,\mathcal C}\) measuring
+compatibility with the quotient orientation must vanish with a
+specified trivialization. The free-product Coxeter presentation has
+no finite braid relations between distinct generators. It therefore
+simplifies the relations to verify, but it does not construct the
+lifts or their scalar signs. The sign comparison in
+Theorem~\ref{thm:G-O1-plus} additionally uses the local sections of
+\((O2)\).
+
+\subsubsection*{Pfaffian wall charts}
+
+Condition \((O2)\) supplies the wall atlas of
+Definition~\ref{def:appE-O2}. At each required simple wall the
+geometric skew complex is compared with a tangential factor and the
+normal rank-two block
+\[
+ [\mathcal O^2\xrightarrow{D_u}(\mathcal O^2)^\vee],
+ \qquad D_u=\begin{pmatrix}0&u\\-u&0\end{pmatrix}.
+\]
+The normal Pfaffian is \(u\); its determinant is \(u^2\).
+An invariant tangential Pfaffian unit and a section-compatible lift
+of \(u\mapsto-u\) give the local residual sign \(-1\).
+The comparison includes the required shift of the geometric
+self-Ext complex. It is not inferred from the scalar complex
+\([\mathcal O\xrightarrow{u}\mathcal O]\).
+
+The charts must cover the geometric locus, with compatible
+splittings, roots, sections and integration maps on components,
+boundaries and overlaps. Their transitions must agree with the
+Weyl lifts. Theorem~\ref{thm:G-O2-orbit-transport} transports such a
+supplied system. The local matrix computation supplies none of its
+global covering or gluing maps.
+
+The set \(\{\pm1\}^{12}\) has \(4096\) elements. To regard it as
+a geometric atlas count requires a separate bijection, including
+stabilizer weights and overlap identifications. Its cardinality does
+not determine a reflection character. The equality \(4096=64^2\)
+in the scalar normalization
+\(Z^X_{\mathrm{OP}}=-4096\Delta_5^{-2}\) is independent of that
+geometric counting problem.
+
+\subsubsection*{The joint conditional comparison}
+
+\begin{theorem}[Pfaffian and primitive comparison from geometric data]
+\label{thm:pfaffian-dirac-conditional}
+Suppose the four geometric conditions above are supplied on a common
+cofinal system, together with the following additional data.
+\begin{enumerate}
+\item The finite geometric Pfaffian datum of
+  Definition~\ref{def:finite-geometric-pfaffian-datum}, including the
+  parameter and line maps, section normalization and the effective
+  formal or analytic limit required for the conclusion.
+\item The primitive recognition data \textup{(S1)}--\textup{(S10)}
+  of Theorem~\ref{thm:primitive-recognition}, or their compatible
+  finite realization with every intermediate operation degree
+  retained and the stated convergence hypotheses.
+\item The associative coefficient source and the finite comparison
+  of Definition~\ref{def:finite-koszul-comparison-datum}, on its
+  declared tensor and support, with compatible inverse maps and the
+  derived-limit hypotheses needed to pass to the chosen completion.
+\end{enumerate}
+Then the geometric Pfaffian is identified with \(\Delta_5\) by its
+specified line comparison, and
+\[
+ \epsilon_o=\widetilde\nu_{\Delta_5}|_W,
+ \qquad
+ P_X^{\Pi,\mathrm{red}}\simeq\mathfrak g_{\Delta_5}.
+\]
+The third datum additionally identifies the source cobar with the
+associative Ran target \(\mathcal A_{\Delta,E}\) of
+Section~\ref{subsec:koszul-source}. Each conclusion is at the
+coefficient, topology and operation scope of its own hypotheses.
+\end{theorem}
+\begin{proof}
+The wall models and coherent lifts give the generator signs
+\(-1\), hence the character comparison by
+Theorem~\ref{thm:appE-local-orientation-match} and the Weyl action.
+The finite skew Pfaffians multiply by the finite product formula.
+The stipulated parameter, line and limit comparisons identify that
+section with the normalized automorphic product.
+
+For primitives, the geometric representatives define the
+presentation map. Equality of its relation kernel and the defining
+ideal gives injectivity; generation gives surjectivity, as in
+Theorem~\ref{thm:primitive-recognition}. The independent coefficient
+maps give the cobar comparison and preserve the required Weyl,
+orientation, pairing and filtration data by
+Proposition~\ref{prop:finite-koszul-comparison-compatibility}.
+Passing to the specified limit uses its derived-limit hypotheses,
+not just the existence of the finite objects.
+\end{proof}
+
+The cofinal collection is first a pro-object
+\(\{\mathfrak D_{X,R}^{\mathrm{DI}}\}_R\) in the category where
+its maps and operations have been defined. An inverse limit is an
+additional construction in a specified complete category. The
+four geometric conditions, primitive recognition and the
+associative comparison are separate parts of that construction.
+Automorphic catalogue entries fix target products and characters;
+they do not supply the compact quotient orientation, Weyl lifts,
+Pfaffian atlas or geometric representatives.

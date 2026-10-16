@@ -1,0 +1,138 @@
+\part{Denominators and geometric realizations}
+\chapter{From an automorphic product to operations}
+\label{comp:ch:entrance}
+
+A protected index counts states with signs. Its coefficients do not
+specify the states, their extension operations or the line in which an
+operator determinant takes values. The Igusa product makes these
+questions concrete: one automorphic function has a root-algebra
+construction and a reduced curve-counting interpretation. A geometric
+comparison must connect their objects and operations before evaluating
+that function.
+
+Use $Z=\left(\begin{smallmatrix}\tau&z\\z&\sigma\end{smallmatrix}\right)\in\mathbb H_2$,
+with $q=e^{2\pi i\tau}$, $r=e^{2\pi iz}$ and $s=e^{2\pi i\sigma}$. Write
+\[
+ \phiweak(\tau,z)=\sum_{n\geq0,\,\ell\in\mathbb Z}
+                     f(n,\ell)q^nr^\ell,
+ \qquad f(0,0)=10,
+\]
+for the normalized weak Jacobi form of weight zero and index one.
+The K3 elliptic genus is \(2\phiweak\). In the cusp convention
+specified below, its multiplicative lift is
+\[
+ \Dmon(Z)=q^{1/2}r^{1/2}s^{1/2}
+       \prod_{(n,\ell,m)>0}(1-q^nr^\ell s^m)^{f(nm,\ell)},
+ \qquad \Dtheta=64\Dmon,\qquad \ChiTen=\Dmon^2.
+\]
+The order on \((n,\ell,m)\), the theta phase and the coefficient
+ring of this product will be fixed before its construction.
+The monic section \(\Dmon\) has weight five and an order-two
+modular character $\nu_5$.
+
+The Gritsenko--Nikulin presentation supplies a Lie superalgebra
+\(\gIg\), with positive half \(\nIg\), for which
+\[
+ \den(\gIg)=\Dmon(2Z).
+\]
+The product records signed root dimensions. The presentation supplies
+both parity dimensions and the bracket. In particular, the first
+interior root has dimensions \((29\mid93)\); its signed dimension
+\(-64\) is not its ordinary dimension.
+
+\section{Algebraic and analytic constructions}
+
+A proper positive height makes the bounded root-degree pieces finite.
+Complete by total root height, retaining the specified coproduct and
+completed tensor product. The ordinary Chevalley chain complex of
+\(\nIg\) then has Euler supercharacter, with Weyl vector $\rho$,
+\[
+ P=\prod_{\alpha>0}(1-e^{-\alpha})^{\operatorname{sdim}\gIg_\alpha},
+ \qquad e^{-\rho}P=\den(\gIg).
+\]
+Its enveloping algebra has PBW supercharacter \(P^{-1}\).
+The ordinary bar--Chevalley comparison, the current envelope on a
+curve and an associative envelope on Ran space have different
+carriers; their maps and tensor products are specified separately.
+
+\begin{definition}[Root constructions]
+\label{comp:def:root-constructions}
+Let \(\RealDatum\) denote the following collection associated with
+the fixed minimal Igusa presentation: its positive height-complete
+enveloping algebra and Chevalley coalgebra; its level-zero current
+envelope; its quantized root datum with a specified Cartan and Borel
+completion; and its diagonal Fredholm model on a declared root
+Hilbert superspace and convergence domain. An operation-preserving
+comparison specifies a map on every component it compares.
+\end{definition}
+
+Theorem~\ref{igusa:primitive-presentation-map} constructs the
+primitive map from simple-root representatives satisfying the
+relations. Surjectivity and equality of the two parity-refined PBW
+series make that map an isomorphism. It then induces the ordinary
+enveloping, Chevalley and current maps. A Hall-category comparison,
+a quantum-double pairing and a Fredholm intertwiner each require
+additional structure.
+
+The analytic root operator \(K_Z\) acts on a positive root vector
+by \(e^{-\alpha(Z)}\). On its trace-class domain,
+\[
+ \operatorname{sdet}_F(1-K_Z)=P=e^{\rho}\Dmon(2Z).
+\]
+An oriented skew doubling realizes this determinant as a Pfaffian
+ratio. This constructs an operator model of the scalar product.
+A global geometric family and its orientation transport are further
+comparisons.
+
+\section{The compact geometric problem}
+
+Let \(X=S\times E\), where \(S\) is a smooth projective K3
+surface and \(E\) is an elliptic curve. In the primitive nonzero
+K3-class sector and the reduced incidence convention, curve counting
+gives
+\[
+ \mathcal Z^{\mathrm{red}}_{X}=-\ChiTen^{-1}
+ =-\bigl(\jmath^*\den(\gIg)\bigr)^{-2},
+ \qquad \jmath(Z)=Z/2.
+\]
+The negative sign and the half-coordinate pullback are part of this
+identity. The two copies of the root Fock space reproduce the inverse
+square after the Weyl normalization; an identification with geometric
+states is additional.
+
+Physical charge is additive, whereas its three Gram invariants are
+quadratic. For $c=(Q,P)\in\widetilde H(S,\mathbb Z)^{\oplus2}$,
+write $\PiGram(c)=(Q^2/2,Q\cdot P,P^2/2)$ and put
+\[
+ B(c,d)=\PiGram(c+d)-\PiGram(c)-\PiGram(d).
+\]
+The group law
+\[
+ (c,\lambda)(d,\mu)=(c+d,\lambda+\mu+B(c,d))
+\]
+makes \(c\mapsto(c,\PiGram(c))\) additive. This split central
+extension retains the cross term; projecting away that term does not
+make the original Gram map additive.
+
+Write $\mathcal L$ for the weight-one modular line.
+
+\begin{definition}[Geometric realization datum]
+\label{comp:def:geometric-realization}
+A compact realization datum consists of reduced oriented coefficient
+complexes on object, extension and flag moduli of \(X\); their
+additive charge grading and polarized Gram refinement; point-supported
+and wrapped elliptic sectors with their mixed correspondences;
+primitive representatives and an integration map to the root
+presentation; a specified coproduct and full Hopf pairing when a
+double is compared; and a map of orientation lines to the automorphic
+line \(\mathcal L^5\otimes\nu_5\), preserving their sections.
+\end{definition}
+
+These moduli share an elliptic torsor after translation quotient.
+The coefficient maps must therefore act on the common-torsor
+extension and flag diagrams. The geometric primitive map satisfies
+the same presentation criterion as the algebraic map above.
+Its relations, generation and both parity dimensions must be proved
+on the actual classes. The coproduct, chiral collision operations,
+orientation transport and state comparison retain their own equations.
+Their existence is the compact realization problem.

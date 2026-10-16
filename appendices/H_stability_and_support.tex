@@ -1,0 +1,1559 @@
+\section{Stability, finite charge spaces, and elliptic support}
+\label{app:stability-support}
+
+A Hall operation uses families of exact sequences, together with a
+coefficient theory on their moduli.  The lattice calculations determine
+neither of these.  A product stability condition gives the filtration problem on
+$S\times E$.  Moduli and descent conditions then determine which
+geometric operations can be defined.
+
+\subsection{A product stability condition}
+
+\begin{definition}[Product heart and central charge]
+\label{def:liu-product-stability-datum}
+\label{def:retained-ap-liu-heart}
+Fix a numerical Bridgeland stability condition
+$\sigma_S=(\mathcal A_S,Z_S)$ on $D^b\Coh(S)$ with
+$Z_S(\Lambda_S^{\mathrm{alg}})\subset\Q+i\Q$.
+Choose a degree-one line bundle $L_E$ on $E$.  The
+Abramovich--Polishchuk heart \cite{AbramovichPolishchukTStructures} is
+\[
+\mathcal A_E^{\mathrm{AP}}=
+\{M\in D^b\Coh(X):Rp_{S*}(M\otimes p_E^*L_E^n)\in\mathcal A_S
+\text{ for }n\gg0\}.
+\]
+Write
+\[
+Z_S(Rp_{S*}(M\otimes p_E^*L_E^n))
+=a(M)n+b(M)+i(c(M)n+d(M)).
+\]
+For rational $t>0$, the weak charge and slope are
+\[
+Z_t=at-d+ict,
+\qquad
+\nu_t(M)=\begin{cases}(-at+d)/(ct)&c(M)\ne0,\\
+ +\infty&c(M)=0.\end{cases}
+\]
+
+For nonzero objects, the minimum and maximum slopes of the
+Harder--Narasimhan factors define the torsion pair
+\[
+\mathcal T_t=\{M:\nu_{t,\min}(M)>0\},
+\qquad \mathcal F_t=\{M:\nu_{t,\max}(M)\le0\}.
+\]
+Both subcategories include zero.  Set
+\[
+\mathcal A_X^{\mathrm{AP/Liu}}
+=\mathcal A_E^t=\langle\mathcal T_t,\mathcal F_t[1]\rangle,
+\qquad Z_E^{s,t}=cs+b+i(-at+d).
+\]
+\end{definition}
+
+\begin{proposition}[The product stability condition]
+\label{prop:ap-liu-heart-compatibility}
+For rational $s,t>0$, the pair
+\[
+\sigma_{s,t}=(\mathcal A_E^t,Z_E^{s,t})
+\]
+is a stability condition whose central charge factors through
+$\Gamma_X^{\mathrm{alg}}$.  Its support property holds on
+\[
+\Lambda_S^{\mathrm{alg}}\oplus
+\bigl(\Lambda_S^{\mathrm{alg}}/\ker Z_S\bigr),
+\qquad (Q,P)\longmapsto(P,\overline Q).
+\]
+These pairs extend continuously to positive real parameters.
+No support property on the larger full paired lattice is asserted.
+\end{proposition}
+
+\begin{proof}
+The rational central charge has discrete image because it factors
+through the finite-rank lattice $\Lambda_S^{\mathrm{alg}}$.
+The assertion is Liu's product theorem, including its torsion-pair
+construction and support property
+\cite[Theorems~4.7 and 5.9]{LiuProductStability}.
+\end{proof}
+
+In the coordinates of Chapter~\ref{ch:k3xe-setup}, these coefficients
+have a direct interpretation.  Grothendieck--Riemann--Roch gives
+\[
+v(Rp_{S*}(M\otimes p_E^*L_E^n))=Q(M)+nP(M).
+\]
+Indeed, $\operatorname{ch}(L_E^n)=1+n\omega_E$ and
+$\operatorname{td}(E)=1$, so integration over $E$ selects $Q+nP$.
+Consequently
+\[
+a(M)+ic(M)=Z_S(P(M)),\qquad
+b(M)+id(M)=Z_S(Q(M)).
+\]
+This identifies the polynomial coefficients with the actual numerical
+charges.  The product stability theorem does not assert finite type
+or properness for every moduli locus considered below.
+
+\subsection{Finite windows and Harder--Narasimhan filtrations}
+
+At finite height, termination of subobject chains can be imposed by
+a nonnegative integer length that strictly increases under strict
+inclusions.  This gives an elementary noetherianity criterion for the
+chosen subcategory, without a global noetherianity assertion for
+\(\mathcal A_X^{\mathrm{AP/Liu}}\).
+
+A finite height bound is generally incompatible with closure under
+direct sums.  Indeed, for a nonzero object \(A\), the split inclusions
+\[
+A\subset A^{\oplus2}\subset A^{\oplus3}\subset\cdots
+\]
+are strict.  An isomorphism-invariant length strictly increasing on
+these inclusions takes infinitely many values.  Such an additive
+subcategory cannot have finitely many isomorphism classes.  A finite
+window therefore retains exact sequences from the ambient heart,
+without being an exact category in its own right.
+
+\begin{definition}[Retained noetherian window]
+\label{def:retained-noetherian-window}
+Fix the heart \(\mathcal A_X^{\mathrm{AP/Liu}}\).  A retained finite
+window at height \(R\) is a full subcategory
+\[
+\mathcal A_{X,R}^{\mathrm{ret}}\subset\mathcal A_X^{\mathrm{AP/Liu}}
+\]
+containing zero and closed under isomorphisms, with finitely many
+isomorphism classes.  Require every ambient subobject and quotient
+of an object in the window to lie in the window.  A retained exact
+sequence is a short exact sequence in the ambient heart whose three
+terms lie in the window.  No closure under direct sums or arbitrary
+extensions is assumed.
+
+The window carries an isomorphism-invariant length function
+\[
+\ell_R:\operatorname{Obj}(\mathcal A_{X,R}^{\mathrm{ret}})
+\longrightarrow\Z_{\ge0}
+\]
+with \(\ell_R(A)=0\) exactly for zero.
+Require \(\ell_R(A)<\ell_R(B)\) for each non-isomorphism ambient
+monomorphism \(A\hookrightarrow B\) between retained objects.
+\end{definition}
+
+\begin{proposition}[Retained finite windows are noetherian]
+\label{prop:retained-window-noetherian}
+\textnormal{[proved]}
+Every retained finite window
+\(\mathcal A_{X,R}^{\mathrm{ret}}\) in the sense of
+Definition~\ref{def:retained-noetherian-window} satisfies the
+ascending chain condition on ambient subobjects of each retained
+object.
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+A_0\subset A_1\subset A_2\subset\cdots
+\]
+be a chain of retained subobjects of an object \(A\) in
+\(\mathcal A_{X,R}^{\mathrm{ret}}\).  After deleting repetitions, each
+inclusion is strict.  The length function then gives a strictly
+increasing sequence
+\[
+\ell_R(A_0)<\ell_R(A_1)<\ell_R(A_2)<\cdots .
+\]
+All \(A_i\) lie in the finite retained window and all are subobjects of
+\(A\), so \(\ell_R(A_i)\le \ell_R(A)\).  A strictly increasing sequence
+of non-negative integers bounded above by \(\ell_R(A)\) is finite.
+Thus the original ascending chain stabilizes.
+\end{proof}
+
+A chain of strict subobjects of \(A\) has at most \(\ell_R(A)\)
+inclusions.  Each inclusion increases an integer length by at least
+one.  Stability supplies a second ordering, by phase, which selects
+the successive quotients of a Harder--Narasimhan filtration.
+
+\begin{definition}[Retained finite Harder--Narasimhan filtration datum]
+\label{def:retained-finite-hn-filtration-datum}
+Let \(\mathcal A_{X,R}^{\mathrm{ret}}\) be a retained finite window.
+For a nonzero object \(M\) of the heart, its stability phase is
+\[
+\phi_\sigma(M)=\pi^{-1}\arg Z_E^{s,t}(M)\in(0,1].
+\]
+An object \(M\) is semistable if every nonzero ambient subobject
+\(B\subset M\) has \(\phi_\sigma(B)\le\phi_\sigma(M)\).
+
+Let \(\mathcal S_R\) be the nonzero semistable objects in the
+window.  Their phases form a finite ordered set.  Choose an
+order-preserving identification of that set with a finite subset
+\(\Phi_R\subset\Q\), and denote the resulting phase label by
+\(\phi_R:\mathcal S_R\to\Phi_R\).  These rational labels encode the order.  They need not equal the
+stability phases.
+
+A retained finite Harder--Narasimhan filtration datum assigns to
+every \(A\in\mathcal A_{X,R}^{\mathrm{ret}}\) a filtration
+\[
+0=A_0\subset A_1\subset\cdots\subset A_m=A
+\]
+in the ambient heart.  Every \(A_i\) and every quotient
+\(E_i=A_i/A_{i-1}\) must belong to the window, with
+\(E_i\in\mathcal S_R\) and
+\[
+\phi_R(E_1)>\phi_R(E_2)>\cdots>\phi_R(E_m).
+\]
+The zero object has the empty filtration.
+\end{definition}
+
+\begin{proposition}[Construction of finite HN filtrations]
+\label{prop:retained-window-hn-filtration}
+\textnormal{[proved]}
+Every retained finite window in the heart of \(\sigma_{s,t}\)
+admits a datum of
+Definition~\ref{def:retained-finite-hn-filtration-datum}.
+For each \(A\), the filtration has at most \(\ell_R(A)\) nonzero
+quotients.
+\end{proposition}
+
+\begin{proof}
+For any nonzero quotient \(C\) of \(A\), choose a nonzero subobject
+\(B\subset C\) of maximal phase.  Among subobjects of that phase,
+choose one with maximal \(\ell_R(B)\).  The choices exist because
+all subobjects of \(C\) belong to the finite window, and phase and
+length are constant on isomorphism classes.  Every subobject of
+\(B\) is also a subobject of \(C\), so \(B\) is semistable.
+
+We claim that every nonzero subobject \(D\subset C/B\) has phase
+strictly smaller than \(\phi_\sigma(B)\).  Let \(B'\subset C\)
+be its inverse image.  The ambient exact sequence
+\[
+0\longrightarrow B\longrightarrow B'\longrightarrow D
+\longrightarrow0
+\]
+has all terms in the window.  Additivity of the central charge gives
+\(Z_E^{s,t}(B')=Z_E^{s,t}(B)+Z_E^{s,t}(D)\).
+
+For nonzero numbers with distinct arguments in \((0,\pi]\), the
+sum has argument strictly between them.  Equal arguments remain equal.
+Thus \(\phi_\sigma(D)>\phi_\sigma(B)\) contradicts maximality of
+the phase of \(B\).  Equality would give
+\(\phi_\sigma(B')=\phi_\sigma(B)\), whereas the strict inclusion
+\(B\subset B'\) gives \(\ell_R(B')>\ell_R(B)\).
+
+This contradicts the second maximality condition and proves the
+claim.
+
+Start with \(C=A\), retain the chosen \(B\), and repeat the
+construction on \(A/B\).  Taking inverse images in \(A\) produces
+a chain of ambient subobjects.  Subobject and quotient closure
+keeps all its terms and semistable factors inside the window.
+The claim makes their phases strictly decrease.  Each nonzero
+factor strictly increases the length of the inverse-image
+subobject, so after at most \(\ell_R(A)\) steps the quotient is
+zero.  The resulting chain is the required filtration.
+\end{proof}
+
+\begin{example}[Bounded semisimple windows]
+Let \(S_1,\ldots,S_k\) be pairwise nonisomorphic simple objects of
+the ambient heart, and let \(N\) be a nonnegative integer.  The
+objects
+\[
+\bigoplus_{i=1}^k S_i^{\oplus n_i},
+\qquad n_i\ge0,\qquad \sum_i n_i\le N,
+\]
+and their isomorphic copies form a retained finite window.
+Subobjects and quotients of a semisimple object are semisimple,
+and their simple multiplicities are bounded by those of the object.
+
+The composition length is \(\sum_i n_i\), and strictly increases
+under strict monomorphisms.  Each \(S_i\) is stable because it has
+no proper nonzero subobject.  Grouping the summands of equal phase
+and ordering the groups by decreasing phase gives the HN
+filtration explicitly.  For \(k=1\), this is the one-factor
+filtration of every nonzero object.
+
+For \(N>0\), the window need not contain the direct sum of two
+objects of length \(N\).  It therefore illustrates the distinction
+between ambient exact sequences and an additive exact category.
+In the AP/Liu heart this construction requires a chosen finite
+collection of simple objects.  It does not supply compact Hall
+moduli for more general branes.
+\end{example}
+
+The construction uses only the stability function, finite object
+classes, subobject and quotient closure, and the strict length
+bound.  If the length is additive on retained short exact
+sequences, it also gives
+\(\ell_R(A)=\sum_i\ell_R(E_i)\).  Finite-type moduli and extension
+correspondences remain geometric constructions beyond this
+filtration theorem.
+
+\begin{definition}[Retained bounded HN type datum]
+\label{def:retained-bounded-hn-type-datum}
+Let \(\mathcal A_{X,R}^{\mathrm{ret}}\) be a retained finite window
+with a retained finite Harder--Narasimhan filtration datum.  Its \emph{retained HN type} is
+\[
+\operatorname{HNType}_R(A)
+=\bigl(([E_1],\phi_R(E_1)),\ldots,([E_m],\phi_R(E_m))\bigr)
+\]
+where \(E_i=A_i/A_{i-1}\) are the retained semistable quotients.
+For zero, use the empty word.
+
+A retained bounded HN type datum consists of a finite set
+\(\mathfrak T_R\) containing these words and a decoration of
+semistable factor classes:
+\[
+[E]\longmapsto
+\bigl(\widehat c_E,[a_E,b_E],P_E,N_E,\mathcal F_E\bigr).
+\]
+Here \(\widehat c_E\) is the retained numerical class and
+\([a_E,b_E]\) its cohomological-amplitude interval.
+The symbols \(P_E,N_E,\mathcal F_E\) specify a Hilbert polynomial,
+a regularity bound, and a chosen family closed under the required
+operations.  This datum is a
+finite bound on active-window HN types.  It is not a finite-type
+semistable substack, not a quasi-smooth derived enhancement, and not a
+compact Hall stage.
+\end{definition}
+
+\begin{proposition}[HN type is bounded in a retained active window]
+\label{prop:retained-hn-type-bounded}
+\textnormal{[proved]}
+Let \(\mathcal A_{X,R}^{\mathrm{ret}}\) be a retained finite window
+with a retained finite Harder--Narasimhan filtration datum.  Then the
+set of retained HN types occurring in
+\(\mathcal A_{X,R}^{\mathrm{ret}}\) is finite.  More precisely, if
+\[
+N_R=\max\{\ell_R(A)\mid A\in
+\mathcal A_{X,R}^{\mathrm{ret}}\},
+\]
+then every retained HN type has length at most \(N_R\).
+\end{proposition}
+
+\begin{proof}
+The retained window has finitely many isomorphism classes, hence the
+set of retained semistable HN factors is finite.  If
+\[
+0=A_0\subset A_1\subset\cdots\subset A_m=A
+\]
+is the retained HN filtration of \(A\), then each inclusion
+\(A_{i-1}\subset A_i\) is strict unless \(m=0\).  The retained length
+rank gives
+\[
+0=\ell_R(A_0)<\ell_R(A_1)<\cdots<\ell_R(A_m)\le N_R,
+\]
+so \(m\le N_R\).  Thus every retained HN type is a word of length at
+most \(N_R\) in a finite alphabet of semistable factor classes.  The
+set of such words is finite, and the strict phase condition selects a
+finite subset.  A finite Liu--Hilbert decoration of the factor classes
+therefore gives a finite decorated HN type set.
+\end{proof}
+
+The bound \(m\le N_R\) controls the number of factors in each HN
+word.  The finite factor alphabet and its Liu--Hilbert decorations
+then give finitely many decorated words.  Representing their
+semistable factors by algebraic stacks requires additional geometric data.  Finiteness of the word
+set alone does not supply those families.
+
+\subsection{Moduli hypotheses and derived amplitudes}
+
+The finite-window argument concerns a finite set of isomorphism
+classes.  A finite-type moduli stack can instead contain infinitely
+many such classes.  To pass from that argument to geometry, one must
+specify the relevant families and prove their boundedness.
+
+\begin{definition}[Bounded moduli data]
+\label{def:retained-finite-type-semistable-substack-datum}
+\label{def:retained-finite-class-bound-datum}
+For a finite set $C_R$ of numerical types, choose algebraic substacks
+$\mathfrak M^{ss}_{R,c}$ of the stack of objects of
+$\mathcal A_E^t$.  Require each to parametrize exactly the selected
+$\sigma_{s,t}$-semistable families of type $c$.  Bounded moduli data include finite-type Quot or Postnikov parameter
+spaces covering these stacks and finite sets of Hilbert polynomials.
+They also include amplitude bounds $[a_c,b_c]$ and regularity bounds
+$N_c$ for cohomology sheaves, relative to a fixed ample bundle on $X$.
+When a closed locus in a chosen ambient stack is needed, closedness
+is a further hypothesis on the inclusion.
+\end{definition}
+
+\begin{proposition}[Consequences of the bounded moduli hypotheses]
+\label{prop:retained-finite-type-semistable-substacks}
+\label{prop:retained-finite-class-bounds}
+Suppose the covering maps in the bounded moduli data are smooth and
+surjective.  Then every $\mathfrak M^{ss}_{R,c}$ is of finite type.
+Its objects satisfy the specified class, polynomial, amplitude and
+regularity bounds.  If the chosen inclusions into ambient stacks are closed immersions,
+their images are specialization closed.
+\end{proposition}
+
+\begin{proof}
+Finite type is smooth-local on an algebraic stack.  The bounds hold
+on the covering parameter spaces and descend to their represented
+families.  Specialization-closedness is a condition on the chosen
+locus, independent of the finiteness of its set of numerical types.
+\end{proof}
+
+Derived moduli introduce a different issue.  At an object $F$ of the
+heart, the tangent complex of the derived stack of perfect complexes
+is
+\[
+\mathbb T_{\Perf(X),F}=R\Hom_X(F,F)[1].
+\]
+Negative self-extensions vanish in a heart.  Serre duality on the
+threefold then bounds this tangent complex in degrees $[-1,2]$.
+Its cotangent complex has amplitude $[-2,1]$ in general.  In
+particular, scalar automorphisms give a nonzero degree-$-1$ tangent
+space and a nonzero degree-one cotangent space.
+
+\begin{definition}[Derived enhancement and reduced chart]
+\label{def:retained-quasi-smooth-derived-enhancement-datum}
+A derived enhancement of $\mathfrak M^{ss}_{R,c}$ is a derived stack
+$\mathfrak M^{\mathrm{der}}_{R,c}$ with that classical truncation and
+a comparison with the relevant moduli of perfect complexes.
+A quasi-smooth reduced chart means a separately constructed derived
+Deligne--Mumford stack $\mathfrak N_{R,c}$ with perfect cotangent
+complex in degrees $[-1,0]$.  Its use as a Calabi--Yau chart requires
+a specified $(-1)$-shifted symplectic form and a compatible comparison
+with the reduced deformation complexes of the objects.
+\end{definition}
+
+\begin{proposition}[The scalar obstruction to a two-term chart]
+\label{prop:retained-quasi-smooth-derived-enhancements}
+The unrigidified stack of nonzero objects cannot have cotangent
+amplitude $[-1,0]$ at an object with scalar automorphisms.
+A chosen reduced model is quasi-smooth when its cotangent complex
+is perfect with that amplitude.  It is $(-1)$-shifted symplectic only
+if its closed two-form induces an equivalence
+$\mathbb T\simeq\mathbb L[-1]$.
+\end{proposition}
+
+\begin{proof}
+The infinitesimal scalar automorphism gives a copy of $\C$ in
+$H^{-1}(\mathbb T)$, hence in the dual of $H^1(\mathbb L)$.
+This excludes amplitude $[-1,0]$ on the unrigidified stack.
+The assertions about the reduced chart are the quasi-smoothness and
+nondegeneracy criteria for its specified structures.
+\end{proof}
+
+The Calabi--Yau trace gives the ambient shifted symplectic form
+\cite{PTVV2013}.  Its restriction along an arbitrary substack need
+not be nondegenerate.  Removing scalar automorphisms changes one end
+of the tangent complex.  A two-term self-dual model must also account
+for the Serre-dual trace direction.  Neither operation is supplied by
+boundedness of the classical moduli stack.
+
+\subsection{Scalar and translation quotients}
+
+\begin{definition}[Scalar rigidification]
+\label{def:retained-rigidification-inertia-datum}
+Suppose the scalar subgroup $\mathbb G_m$ is central in the inertia
+of a moduli stack $\mathfrak M$.  A scalar rigidification is a
+$\mathbb G_m$-gerbe
+\[
+\pi:\mathfrak M\longrightarrow\mathfrak M^{\mathrm{rig}}
+\]
+that replaces every automorphism group by its quotient by the scalar
+subgroup.  Require the residual automorphism groups to be finite on
+the locus under consideration.
+\end{definition}
+
+\begin{proposition}[Residual inertia]
+\label{prop:retained-finite-residual-inertia-after-rigidification}
+At an object $F$, scalar rigidification has residual stabilizer
+$\Aut(F)/\mathbb G_m$.  It is finite precisely when this quotient
+is finite.  In particular, removing scalars from
+$\bigoplus_i L_i\otimes W_i$ generally leaves a positive-dimensional
+group.
+\end{proposition}
+
+\begin{proof}
+The first assertion is the inertia property of rigidification.
+For the displayed polystable sheaf, distinct stable summands have no
+Hom groups between them.  Thus
+$\Aut(F)=\prod_i\GL(W_i)$, whose quotient by the diagonal scalars
+has dimension $\sum_i(\dim W_i)^2-1$ when $F\ne0$.
+\end{proof}
+
+Rigidification removes an existing central subgroup of automorphisms.
+It is not an external quotient $[\mathfrak M/\mathbb G_m]$.
+For example, $B\mathbb G_m\to\operatorname{Spec}\C$ is the scalar
+rigidification of $B\mathbb G_m$.  The quotient for a trivial external
+$\mathbb G_m$ action instead has another $B\mathbb G_m$ factor.
+
+\begin{definition}[Normalized universal complex]
+\label{def:retained-universal-perfect-complex-datum}
+Let $\mathcal U\in\Perf(X\times\mathfrak M)$ be the tautological
+complex, on which scalar inertia has weight one.  A normalization is
+a line bundle $\mathcal L$ on $\mathfrak M$ of scalar weight $-1$.
+The normalized complex is
+$\mathcal U\otimes\operatorname{pr}_{\mathfrak M}^*\mathcal L$.
+If no such line exists, one may instead retain the corresponding
+twisted family on the gerbe, with its twist specified.
+\end{definition}
+
+\begin{proposition}[The scalar weight of a universal family]
+\label{prop:retained-universal-perfect-complexes}
+A nonzero tautological complex of scalar weight one does not descend
+unchanged across $\pi$.  If a normalizing line exists, the
+weight-zero tensor product descends to a perfect complex
+$\mathcal U^{\mathrm{rig}}$ on $X\times\mathfrak M^{\mathrm{rig}}$.
+This descent is unique up to equivalence and is compatible with
+base change.
+\end{proposition}
+
+\begin{proof}
+The pullback of any complex on $\mathfrak M^{\mathrm{rig}}$ has
+trivial action by the kernel $\mathbb G_m$ of the inertia map.
+A nonzero weight-one complex has a different action, so it cannot
+be such a pullback.
+
+Tensoring by a weight-$-1$ line produces weight zero.
+Locally for the faithfully flat topology, the gerbe is
+$B\mathbb G_m\times U\to U$.  A weight-zero complex on this product
+is precisely the pullback of a complex on $U$: the weight-zero
+representation has trivial $\mathbb G_m$ action.  These local
+pullback equivalences glue, and are compatible with base change.
+Perfectness descends in the same topology.
+\end{proof}
+
+A fixed Tor-amplitude bound $[a_c,b_c]$ is further data on a
+class-$c$ locus.  This means that $\mathcal U\otimes^L M$ has
+cohomology sheaves only in these degrees for every quasicoherent
+sheaf $M$.  Tensoring by the normalizing line preserves this bound.
+The descended complex $\mathcal U^{\mathrm{rig}}$ and all its
+derived pullbacks then have Tor amplitude in $[a_c,b_c]$.
+Indeed, the bound is local for faithfully flat descent and is
+preserved by derived pullback.
+
+On $B\mathbb G_m$, the standard one-dimensional representation is
+the simplest example of the obstruction.  Its underlying vector
+space is a line, but its inertia action prevents descent to a point.
+A normalization is additional data and need not exist globally.
+Determinants of cohomology give an explicit sufficient condition.
+
+\begin{proposition}[Normalization from Euler weights]
+\label{k3:prop:scalar-normalization}
+Let $\mathcal U$ be a perfect family of scalar weight one on
+$X\times\mathfrak M$, where $X$ is smooth and projective.  Suppose
+there are perfect complexes $A_1,\ldots,A_k$ on $X$ for which the
+integers
+\[
+d_j=\chi(X,\mathcal U_m\otimes^L A_j)
+\]
+are independent of $m\in\mathfrak M$ and have greatest common
+divisor one.  Choose integers $b_j$ with $\sum_jb_jd_j=-1$.
+For the projection $p:X\times\mathfrak M\to\mathfrak M$, the line
+\[
+\mathcal L=\bigotimes_j
+\left(\det Rp_*(\mathcal U\otimes^L\operatorname{pr}_X^*A_j)
+\right)^{b_j}
+\]
+has scalar weight $-1$ and normalizes the universal family.
+\end{proposition}
+
+\begin{proof}
+Proper smooth pushforward makes each displayed complex perfect.
+A scalar $z$ acts by $z$ on every cohomology group of its fiber.
+It therefore acts by $z^{d_j}$ on its determinant, since the
+exponent is the alternating sum of the cohomology dimensions.
+The tensor product has weight $\sum_jb_jd_j=-1$.
+Proposition~\ref{prop:retained-universal-perfect-complexes} then
+gives the descended normalized family.
+\end{proof}
+
+For a family of virtual rank one, take $A_1=\mathcal O_x$ at any
+fixed smooth point $x\in X$.  Derived restriction has Euler
+characteristic one, so the inverse of its determinant is a
+normalizing line.  This provides a normalization on a rank-one
+moduli locus without a choice of a frame of the universal family.
+
+\begin{definition}[Elliptic quotient and finite closed cover]
+\label{def:retained-e-translation-rigidification-datum}
+\label{def:retained-closed-substack-datum}
+Suppose translation in $E$ acts on $\mathfrak M^{\mathrm{rig}}$ and
+preserves the selected locus.  Let
+$\mathfrak Q=[\mathfrak M^{\mathrm{rig}}/E]$.
+When a free quotient is used, require the action to be free in the
+stack-theoretic sense.  When finite stabilizers are allowed, specify
+them on the quotient.  A finite closed cover consists of closed
+immersions $\mathfrak Z_j\hookrightarrow\mathfrak Q$ whose images
+cover that locus, with finite inertia on each $\mathfrak Z_j$.
+\end{definition}
+
+\begin{proposition}[Quotient and covering consequences]
+\label{prop:retained-e-translation-rigidifications}
+\label{prop:retained-closed-substacks}
+The map $\mathfrak M^{\mathrm{rig}}\to\mathfrak Q$ is an
+$E$-torsor in the stack sense.  The $\mathfrak Z_j$ form the stated
+finite closed cover with the prescribed inertia.  Equivariant coefficients descend only with
+a cocycle compatible with this quotient and its stabilizers.
+\end{proposition}
+
+\begin{proof}
+A map $T\to[\mathfrak M^{\mathrm{rig}}/E]$ specifies an $E$-torsor
+on $T$ and an equivariant map from that torsor to
+$\mathfrak M^{\mathrm{rig}}$.  This is the defining pullback property
+of the quotient.  The covering and inertia conclusions are precisely
+the hypotheses on the closed immersions.  Descent of coefficients
+uses their equivariant cocycle, which is separate from the existence
+of the quotient stack.
+\end{proof}
+
+\subsection{A finite word model for closure}
+
+The following calculation records three closure conditions without
+asserting that a geometric correspondence has been constructed.
+Let $s_3,s_2,s_1$ be symbols with strictly decreasing phases and set
+\[
+\mathcal W=\{0,s_3,s_2,s_1,e_{32},e_{21},f_{321}\},
+\quad e_{32}=(s_3,s_2),\quad e_{21}=(s_2,s_1),
+\quad f_{321}=(s_3,s_2,s_1).
+\]
+
+\begin{definition}[Selected extensions and factor closure]
+\label{def:retained-extension-closure-datum}
+\label{def:retained-hn-factor-closure-datum}
+Retain the four concatenation rules
+\[
+s_3*s_2=e_{32},\quad s_2*s_1=e_{21},\quad
+ e_{32}*s_1=f_{321},\quad s_3*e_{21}=f_{321}.
+\]
+For a geometric interpretation, each rule must be represented by an
+actual exact sequence with the indicated types.  Factor closure
+requires a chosen semistable moduli locus for every factor occurring
+in a retained word.  Each factor retains its numerical class and,
+when a finite closed cover is used, its chosen closed locus.
+Require every factor occurrence to belong to these loci.
+\end{definition}
+
+\begin{proposition}[Closure of the word set]
+\label{prop:retained-extension-closure}
+\label{prop:retained-hn-factor-closure}
+The four selected concatenations lie in $\mathcal W$.  Every nonzero
+factor is one of $s_3,s_2,s_1$, and the six nonempty words have ten
+factor occurrences in total.  Under the stated factor-closure
+requirements, taking these factors stays in the chosen substack
+system.
+\end{proposition}
+
+\begin{proof}
+The two words of length two contribute four occurrences, the three
+words of length one contribute three, and $f_{321}$ contributes three.
+The displayed rules list their retained concatenations.
+\end{proof}
+
+\begin{definition}[Duality on words]
+\label{def:retained-dual-closure-datum}
+Set $D(s_3)=s_1$, $D(s_2)=s_2$, $D(s_1)=s_3$ and
+$D(t_1,\ldots,t_k)=(D(t_k),\ldots,D(t_1))$.  Set $D(0)=0$.
+\end{definition}
+
+\begin{proposition}[Dual closure]
+\label{prop:retained-dual-closure}
+The map $D$ is an involution of $\mathcal W$.  It exchanges
+$e_{32}$ and $e_{21}$ and fixes $f_{321}$.
+\end{proposition}
+
+\begin{proof}
+Reversing the word twice restores its order, and dualizing each
+symbol twice restores the symbol.  Applying the rule to the three
+longer words gives the asserted values.
+\end{proof}
+
+These statements concern selected words and selected extensions.
+They assert neither closure under every extension nor existence of
+an extension stack.  A sheaf duality must preserve the selected heart, or be compared
+with a second heart.  It must also act on families and extension flags.
+
+\subsection{Effective charges and parameter transport}
+
+\begin{definition}[Geometric charge support]
+\label{def:algebraic-effective-hall-support}
+Choose an extension-closed full subcategory $\mathcal B$ of the heart
+$\mathcal A_E^t$, containing zero.  Its effective charge semigroup is
+\[
+\Gamma_{X,\mathcal B}^{\mathrm{eff}}
+=\{v_X(F):F\in\mathcal B\}\subset\Gamma_X^{\mathrm{alg}}.
+\]
+For a fixed phase $\phi$, the semistable subcategory
+$\mathcal P(\phi)$ is one such choice.  The notation
+$\Gamma_{X,\sigma}^{\mathrm{eff}}$ presupposes a specified heart or
+single-phase subcategory of this kind.  A bounded window instead
+has a charge set, without an assertion of additive closure.
+\end{definition}
+
+The semigroup property follows from direct sums, which are split
+extensions.  Semistable objects of different phases need not have a
+semistable direct sum.  Their union is a support set and is not
+assumed to define a semigroup.
+
+\begin{remark}[Formal, algebraic and effective charges]
+\label{rem:three-tier-inclusion}
+The inclusions
+\[
+\Gamma_{X,\mathcal B}^{\mathrm{eff}}
+\subset\Gamma_X^{\mathrm{alg}}
+\subset\Gamma_X^{\mathrm{form}}
+\]
+separate existence of objects from algebraicity of numerical classes
+and from cohomological lattice arithmetic.  Only the last two groups
+are fixed by their lattice definitions.  The first depends on the
+chosen category and stability condition.
+\end{remark}
+
+\begin{definition}[Admissible parameter transport]
+\label{def:admissible-dirac-igusa-parameter-datum}
+A parameter datum is
+\[
+\mathfrak p=(S,H,\sigma,E,0_E,\tau_X,\mathcal R_{\mathrm{HN}}),
+\]
+where $\tau_X$ trivializes $K_X$ and $\mathcal R_{\mathrm{HN}}$ is a
+specified cofiltered system of finite stages.  Every stage includes
+those moduli, correspondences, coefficients and orientation data that
+its operations use.  An admissible isomorphism includes maps $f:S\to S'$, $u:E\to E'$
+preserving these structures.  It also specifies compatible
+isomorphisms of the finite-stage data after a common cofinal refinement.  Write
+$\mathsf{Par}^{\mathrm{DI}}$ for this groupoid.
+\end{definition}
+
+\begin{proposition}[Transport of a specified system]
+\label{prop:admissible-base-change-functoriality}
+An admissible isomorphism transports the finite-stage constructions
+and induces their pro-isomorphism.  It preserves the Mukai pairing,
+$\Pi_X$, $B$, and $\overline\Pi_X$.  It preserves Hall, Koszul,
+primitive and Pfaffian structures when their comparison maps and
+coherence identities are part of the given stage isomorphisms.
+\end{proposition}
+
+\begin{proof}
+The map $f$ induces a Mukai isometry, while $u$ preserves the two
+integral generators of $H^{\mathrm{even}}(E)$.  The formulas for the
+charge maps are therefore invariant.  Derived transport along
+$f\times u$ carries the given families and correspondences to their
+primed versions.  The supplied coefficient and orientation
+isomorphisms identify the operations.  Compatibility with transitions
+then gives an isomorphism of the cofiltered systems after their
+common cofinal refinement.
+\end{proof}
+
+\begin{definition}[Polarization and origin]
+\label{def:polarization-origin-dependence}
+Changing $(H,\sigma)$ changes the selected moduli and their
+Harder--Narasimhan types.  A comparison across stability chambers
+requires specified wall-crossing maps with their coefficient and
+orientation compatibilities.  For the origin change from $0_E$ to
+$a\in E$, define the determinant anchor by
+\[
+\lambda_a^{\det}(\mathcal F)=
+\det Rp_{E*}\mathcal F\otimes\mathcal O_E(-\chi(\mathcal F)a),
+\]
+for a perfect complex on $X$.  Here
+$\chi(\mathcal F)=\chi(X,\mathcal F)$.
+\end{definition}
+
+\begin{proposition}[Origin change of the determinant anchor]
+\label{prop:elliptic-origin-independence-character}
+The anchors satisfy the Picard-group identity
+\[
+[\lambda_a^{\det}(\mathcal F)]-
+[\lambda_0^{\det}(\mathcal F)]
+=[\mathcal O_E(\chi(\mathcal F)(0_E-a))].
+\]
+This identity does not assign a character to a finite stabilizer.
+If an equivariant line and compatible transport of all operations are
+specified, their chosen character twist is part of that transport.
+\end{proposition}
+
+\begin{proof}
+Canceling the two copies of $\det Rp_{E*}\mathcal F$ gives the
+line-bundle ratio.  A stabilizer character requires an action on a
+fiber of a line bundle, hence a linearization.  The underlying line does not determine it.  On a point with
+trivial action by a finite group $H$, every character of $H$
+linearizes the trivial line.  Thus a Picard class alone cannot specify the
+character needed for equivariant transport.
+\end{proof}
+
+Even after the anchor ratio is fixed, orientation lines can carry
+independent characters and higher compatibility conditions.
+A coherent equivariant comparison must supply these explicitly.
+The determinant translation law below describes the numerical
+part of this problem.
+
+\subsection{Finite regrading and radicals}
+
+\begin{remark}[Finite charge spaces]
+\label{rem:finite-charge-window-verification}
+Choose a finite set of source charges together with the maps whose
+images are needed for a given calculation.  Closure under those maps
+is part of the choice.  A finite charge set, an HN type bound and a
+finite-type moduli stack are different objects.  A denominator
+identity supplies none of their transition maps.
+\end{remark}
+
+\begin{definition}[Gram fibers and parity]
+\label{def:gram-fibres-zero-fibre}
+Write $\Gamma_X(\gamma)=\Pi_X^{-1}(\gamma)$ and
+\[
+K_{\Pi,0}=\Gamma_X(0)=\{(Q,P):Q^2=P^2=Q\cdot P=0\}.
+\]
+For a finite-dimensional super vector space $V=\bigoplus_cV_c$, set
+\[
+(\Pi_{X,*}^{\mathrm{fib}}V)_{\gamma,\bar p}
+=\bigoplus_{c\in\Gamma_X(\gamma)}V_{c,\bar p},
+\qquad\bar p\in\Z/2.
+\]
+\end{definition}
+
+\begin{proposition}[The zero Gram fiber]
+\label{prop:zero-gram-fibre-not-subgroup}
+The set $K_{\Pi,0}$ is not a subgroup of
+$\Gamma_X^{\mathrm{form}}$.
+\end{proposition}
+
+\begin{proof}
+In two orthogonal hyperbolic planes, set
+$k_1=(e_1,e_2)$ and $k_2=(f_1,-f_2)$.  Both have Gram degree zero,
+whereas
+\[
+\Pi_X(k_1+k_2)=\Pi_X(e_1+f_1,e_2-f_2)=(1,0,-1).
+\]
+\end{proof}
+
+\begin{definition}[A radical in the zero-degree space]
+\label{def:zero-fibre-radical-finite-source}
+For $V_{\Pi,0}=\bigoplus_{c\in K_{\Pi,0}}V_c$ and a bilinear form
+$h$ on this finite-dimensional space, define
+\[
+\operatorname{Rad}_{\Pi,0}(V,h)
+=\ker\bigl(V_{\Pi,0}\longrightarrow V_{\Pi,0}^*\bigr),
+\qquad v\longmapsto h(v,-).
+\]
+\end{definition}
+
+\begin{remark}[Radical and cancellation]
+\label{rem:fibre-summation-not-radical}
+This radical is a vector subspace.  It gives no quotient of the charge
+group by $K_{\Pi,0}$.  Nor does it automatically define an ideal or a
+coideal in an algebra carried by $V$.  For example, the form with
+matrix $\left(\begin{smallmatrix}0&0\\0&1\end{smallmatrix}\right)$
+on $\Q z_0\oplus\Q z_1$ has radical $\Q z_0$.
+
+A different loss of information occurs when one takes superdimension.
+An even line and an odd line have parity dimensions $(1,1)$ and
+superdimension zero.  Such lines can occur in one Gram degree with
+distinct source charges.  For instance,
+\[
+\Pi_X(e_1+f_1,f_1+e_2)=\Pi_X(e_1+f_1,e_1)=(1,1,0).
+\]
+Assigning opposite parities to these two summands gives this example.
+
+Exchanging $Q$ and $P$ in
+$(e_1+f_1,f_1+e_2+f_2)$ gives another pair, both of degree $(1,1,1)$.
+The two zero-degree charges in the previous proof give the same
+parity phenomenon inside $V_{\Pi,0}$.
+\end{remark}
+
+\begin{proposition}[Exactness and parity of finite regrading]
+\label{prop:finite-fibre-pushforward-exact}
+\label{prop:finite-parity-pushforward}
+Regrading finite-support super vector spaces along any set map is
+exact and preserves the even and odd dimensions separately, by
+summing them in each fiber.  This applies to $\Pi_X$ and to the
+homomorphism $\overline\Pi_X$ on its different source group.
+\end{proposition}
+
+\begin{proof}
+Every target component is a finite direct sum of source components.
+Direct sums preserve exact sequences, with no change of parity.
+Additivity of the set map is unnecessary for this vector-space
+statement.
+\end{proof}
+
+\begin{proposition}[Finite bar and bracket operations]
+\label{prop:finite-bar-pushforward-commutes}
+\label{prop:finite-bracket-pairing-pushforward}
+Let $f=\overline\Pi_X$.  Let $A$ be a $\widehat\Gamma_X$-graded augmented differential
+graded algebra with finite support.  Regrading commutes with the
+reduced tensor coalgebra on $\bar A[1]$, truncated to lengths
+$1$ through $N$.  It preserves deconcatenation and the bar
+differential.  Regrading a homogeneous Lie superalgebra preserves
+its bracket.  A degree-zero pairing remains of degree zero.
+\end{proposition}
+
+\begin{proof}
+Proposition~\ref{k3:prop:regrading} gives the tensor and differential
+identifications, including the cohomological shift $[1]$.
+On a word $[a_1|\cdots|a_j]$, additivity gives target degree
+$\sum_i f(\deg a_i)$.  Cutting the word or multiplying adjacent
+factors preserves this degree.  The same equality proves bracket
+homogeneity.  If $h(V_a,V_{a'})$ is nonzero only for $a+a'=0$,
+then it is nonzero only for $f(a)+f(a')=0$ after regrading.
+\end{proof}
+
+The unshifted tensor coalgebra has the same degree calculation.
+The shift is necessary when it is used as the cohomological bar
+complex.  Regrading does not construct a chiral Koszul comparison
+or establish a pairing identity that was absent in the source.
+
+\begin{proposition}[Filtrations and height decompositions]
+\label{prop:finite-pbw-pushforward}
+\label{prop:finite-triangular-pushforward}
+Let $V$ be a finite-support $\widehat\Gamma_X$-graded vector space
+with a filtration $F_dV$ by homogeneous subspaces.  Then
+\[
+\operatorname{gr}_d(f_*V)_\gamma
+=\bigoplus_{f(a)=\gamma}\operatorname{gr}_dV_a.
+\]
+A homogeneous filtered multiplication with
+$F_iV\,F_jV\subset F_{i+j}V$ retains this property after regrading.
+For any homomorphism $h:\Gamma_{\mathrm{gram}}\to\Z$, the direct
+sum decomposition by negative, zero and positive values of $h\circ f$
+is also preserved.  A bracket has height equal to the sum of its
+input heights.
+\end{proposition}
+
+\begin{proof}
+Exactness commutes the quotient $F_d/F_{d-1}$ with the sum in each
+fiber.  Multiplication keeps its filtration bound because the
+underlying map is unchanged.  The height sign is constant on a fiber
+of $f$, and $h(f(a+a'))=h(f(a))+h(f(a'))$.
+\end{proof}
+
+This includes a supplied Poincar\'e--Birkhoff--Witt filtration.
+When the filtered pieces have finite dimension, put
+$b_d(\gamma)=\dim F_d(f_*V)_\gamma$.  Their graded dimension is
+$b_d(\gamma)-b_{d-1}(\gamma)$.
+
+Positive-positive brackets stay
+positive, negative-negative brackets stay negative, and zero-height
+inputs preserve the other input's height.  For opposite signs, the
+actual sum decides the output.  The zero-height space need not be
+a Cartan subalgebra.  A completed triangular decomposition requires
+its own algebraic and continuity hypotheses.
+
+\subsection{Local and wrapped moduli}
+\label{subsec:hybrid-carrier-definition}
+
+\begin{definition}[Hybrid parameter space]
+\label{def:hybrid-ran-carrier}
+At a finite stage $R$, choose local color classes with projection-finite
+moduli $\mathfrak M^{L}_{R,c}$ and wrapped color classes with
+prequotient moduli $\mathfrak M^{W}_{R,c}$.  A test family contains a finite configuration of maps to $E$ with
+local colors.  It also contains finitely many wrapped families
+with their specified anchors.
+
+Maps identify repeated local
+points and transport all labels and families coherently.  Denote this
+prestack by $\operatorname{Ran}^{\mathrm{hyb}}_{R,\mathrm{pre}}(E)$.
+When its descent data for a topology $\tau$ are specified, write
+$\operatorname{Ran}^{\mathrm{hyb}}_{R,\tau}(E)$ for the resulting
+stack.  Empty configurations are included when a unit is required.
+\end{definition}
+
+The local and wrapped subprestacks are denoted
+$\operatorname{Ran}^{\mathrm{loc}}_{R,\mathrm{pre}}(E)$ and
+$\operatorname{Ran}^{\mathrm{wr}}_{R,\mathrm{pre}}(E)$.
+For effective curves, a positive projection degree gives a wrapped
+object by Lemma~\ref{lem:projection-locality-obstruction}.
+For more general complexes the support condition is part of the
+chosen moduli problem.  The degree-labeled set
+$\bigsqcup_{b\ge0}\operatorname{Ran}(E)\times\{b\}$ does not retain
+these wrapped families.
+
+\begin{remark}[Factorization is additional structure]
+\label{rem:two-strata-two-registers}
+A projection-finite moduli problem can be organized over the Ran
+prestack.  A factorization object on that prestack still requires
+restriction, collision and disjoint-support maps with their
+compatibilities.  Wrapped families have their own parameter stacks.
+The hybrid parameter space records both types and does not itself
+construct their operations.
+\end{remark}
+
+\subsection{Mixed extension correspondences}
+\label{subsec:mixed-correspondences}
+
+\begin{definition}[Selected extension spans]
+\label{def:mixed-correspondences}
+For $A,B\in\{L,W\}$ and classes $c_1,c_2,c_3$ with
+$c_3=c_1+c_2$, specify a stack $\mathfrak E^{AB}_{R,c_1,c_2;c_3}$
+of exact sequences $0\to F_1\to F_3\to F_2\to0$ in the chosen
+heart.  It has a span
+\[
+\mathfrak M^A_{R,c_1}\times\mathfrak M^B_{R,c_2}
+\xleftarrow{\ p\ }
+\mathfrak E^{AB}_{R,c_1,c_2;c_3}
+\xrightarrow{\ q\ }\mathfrak M^C_{R,c_3},
+\]
+where $p$ takes the subobject and quotient, $q$ takes the middle
+object, and $C$ is its specified support type.
+Each operation requires the pullback or Gysin map along $p$, the
+pushforward along $q$, and compatible coefficient maps with their
+degree shifts.  In a Borel--Moore theory, properness of $q$ is one
+sufficient pushforward hypothesis.
+\end{definition}
+
+There are four ordered binary types $LL,LW,WL,WW$.  The two mixed
+types have different input orders even when their charge sums agree.
+For local configurations indexed by finite sets $I,J$, the target
+configuration is the union of the two configurations, with repeated
+points identified.  In a mixed span the wrapped source anchor and
+the wrapped target anchor are both retained.  In a $WW$ span there
+are two wrapped source anchors.  These functions belong to the
+prequotient correspondence and require their own compatibility laws.
+
+A local--wrapped--local flag has three source factors and a wrapped
+target.  Its two binary decompositions involve the ordered types
+$LW$ then $WL$, or $WL$ then $LW$, with the appropriate intermediate
+class in each case.  The corresponding flag stacks must identify the
+two composites together with their coefficient and orientation maps.
+This is the content required of the two-sided mixed correspondence.
+
+If translation acts equivariantly on such a span, quotient all its
+terms by the same copy of $E$.  For $E$-stacks $M_1,M_2$, there is
+a canonical equivalence
+\[
+[(M_1\times M_2)/E]
+\simeq[M_1/E]\mathbin{\times}_{BE}[M_2/E].
+\]
+An object on either side is one $E$-torsor with two equivariant maps.
+Thus the source of the quotient extension span is this fiber product
+over $BE$.  Two unrelated torsors, as in the ordinary product of the
+two quotients, do not give the same source.  The empty-object quotient
+is $BE$, which is the corresponding relative unit.
+
+\begin{remark}[Flags and higher coherence]
+\label{rem:eight-words-vs-colored-trees}
+The eight words
+\[
+LLL,\ LLW,\ LWL,\ LWW,\ WLL,\ WLW,\ WWL,\ WWW
+\]
+list the ternary support types.
+An exact category has canonical comparisons between the two ways of
+forming a three-step extension flag.  Restricted moduli and their
+coefficients must inherit these comparisons.  Units, permutations,
+longer flags, collisions and descent impose further identities.
+They are indexed by colored trees and their contractions, not by
+the eight ternary words alone.
+\end{remark}
+
+\subsection{Determinant anchors and translation}
+\label{subsec:e-quotient-anchor}
+
+\begin{definition}[Determinant anchor]
+\label{def:determinant-anchor}
+Let $\mathcal F$ be a perfect family on $S\times E\times T$, and
+let $\pi_{E,T}:S\times E\times T\to E\times T$ be the projection.
+Suppose $\chi(\mathcal F_t)=\chi$ is constant on $T$.  Set
+\[
+\mathscr D(\mathcal F)=\det R\pi_{E,T*}\mathcal F,
+\qquad
+\lambda^{\det}(\mathcal F)
+=\mathscr D(\mathcal F)\otimes
+\operatorname{pr}_E^*\mathcal O_E(-\chi\,0_E).
+\]
+We use $E\simeq\Pic^0(E)$ given by
+$a\mapsto\mathcal O_E(a-0_E)$ to regard the relative Picard class
+of $\lambda^{\det}$ as a map $T\to E$.
+\end{definition}
+
+Proper smooth pushforward makes $R\pi_{E,T*}\mathcal F$ perfect,
+so its determinant is defined and compatible with derived base change
+\cite{KnudsenMumfordDet,DeligneDetCohomology}.
+For a perfect complex $C$ on a genus-one curve,
+$\deg\det C=\chi(C)$.  Hence the normalized line has relative degree
+zero.  Its class in the relative Picard functor disregards lines
+pulled back from $T$.  It does not choose a trivialization of such lines.
+
+\begin{proposition}[Translation weight]
+\label{prop:determinant-anchor-translation-weight}
+Use support translation
+$a\cdot\mathcal F=(\operatorname{id}_S\times\tau_a)_*\mathcal F$.
+Then
+\[
+\lambda^{\det}(a\cdot\mathcal F)
+=\lambda^{\det}(\mathcal F)+\chi a
+\quad\text{in }\Pic^0(E)\simeq E.
+\]
+For a section $a:T\to E$, the ratio in the relative Picard functor
+is represented by $\mathcal O_{E\times T}(\chi(\Gamma_a-\Gamma_0))$, where
+$\Gamma_a$ is its graph.  The kernel of the translation weight is
+$E[|\chi|]$ for $\chi\ne0$, and is all of $E$ for $\chi=0$.
+\end{proposition}
+
+\begin{proof}
+Base change identifies the determinant after translation with
+$\tau_{-a}^*\mathscr D(\mathcal F)$.
+For a degree-$\chi$ line $L$ on $E$, the relative Picard class of
+$\tau_{-a}^*L\otimes L^{-1}$ is $\chi(a-0_E)$.
+One sees this first for a divisor by translating each point, then
+for any line by subtracting divisors.  The same identity holds in
+families in the relative Picard functor.  Normalizing both sides by
+$-\chi\,0_E$ gives the result.  The sign is positive for support
+pushforward and negative for translation pullback.
+\end{proof}
+
+\begin{proposition}[Unit-weight cover and finite slice]
+\label{k3:prop:anchor-cover}
+Let $\mathfrak M$ be an $E$-stack with a morphism
+$\lambda:\mathfrak M\to E$ satisfying
+$\lambda(a\cdot F)=\lambda(F)+\chi a$ for a fixed nonzero integer
+$\chi$.  Put
+\[
+\widetilde{\mathfrak M}
+=\mathfrak M\mathbin{\times}_{E,[\chi]}E,
+\qquad \mathfrak M_0=\lambda^{-1}(0_E).
+\]
+Then $\widetilde{\mathfrak M}\to\mathfrak M$ is finite \emph{\'etale}
+of degree $\chi^2$.  The anchor $(F,b)\mapsto b$ has translation
+weight one under $a\cdot(F,b)=(a\cdot F,b+a)$.  Moreover,
+\[
+\widetilde{\mathfrak M}\simeq E\times\mathfrak M_0,
+\qquad
+[\mathfrak M/E]\simeq[\mathfrak M_0/E[|\chi|]].
+\]
+\end{proposition}
+
+\begin{proof}
+Multiplication by $\chi$ on a complex elliptic curve is an \emph{\'etale}
+isogeny of degree $\chi^2$.  Its base change gives the first assertion.
+The equation $\chi b=\lambda(F)$ is preserved by the displayed
+$E$ action.  The mutually inverse maps
+\[
+(F,b)\longmapsto (b,(-b)\cdot F),
+\qquad (b,F_0)\longmapsto(b\cdot F_0,b)
+\]
+identify the cover with $E\times\mathfrak M_0$.
+
+Put $K=E[|\chi|]$.  The isogeny $[\chi]$ is a $K$-torsor, so
+$\mathfrak M$ is the quotient of this cover by its deck action.
+Under the displayed identification that action is
+\[
+k\cdot(b,F_0)=(b-k,k\cdot F_0).
+\]
+
+It commutes with the $E$ action on the first factor.  Quotienting
+$E\times\mathfrak M_0$ first by $E$ leaves $\mathfrak M_0$ with
+its $K$ action.  Quotienting in the other order gives
+$[\mathfrak M/E]$.  This proves the equivalence of stacks, including
+their automorphism groups.
+\end{proof}
+
+This constructs the normalization on the nonzero-$\chi$ locus from
+the actual anchor map.  Orientation and coefficient descent still
+have to be compatible with the finite residual group.  The cover
+does not choose its stabilizer characters.
+
+\begin{proposition}[The zero-Euler branch]
+\label{prop:determinant-anchor-chi-zero-degeneracy}
+When $\chi=0$, the determinant anchor is constant along every
+translation orbit.  On a locus where translation acts freely, it
+therefore fails to distinguish all points of that one-dimensional
+orbit.  An equivariant anchor of weight one cannot be a function
+of this determinant anchor alone.
+\end{proposition}
+
+\begin{proof}
+The translation formula becomes
+$\lambda^{\det}(a\cdot F)=\lambda^{\det}(F)$.
+A function of this invariant map is invariant, whereas a
+weight-one anchor changes by $a$.  These requirements disagree for
+$a\ne0$ on a free orbit.
+\end{proof}
+
+\begin{proposition}[Jordan--H\"older data beyond the determinant]
+\label{prop:determinant-anchor-extra-data-separates-rank-two}
+For a semistable rank-$r$, degree-zero vector bundle $V$ on $E$, its
+Jordan--H\"older factors are degree-zero lines $L_1,\ldots,L_r$.
+The divisor
+\[
+\operatorname{sp}^{\mathrm{JH}}(V)=\sum_i[L_i]
+\in\operatorname{Sym}^r\Pic^0(E)
+\]
+is independent of the filtration and has Abel sum $\det V$.
+It distinguishes $\mathcal O_E^{\oplus2}$ from $L\oplus L^{-1}$
+for every nontrivial $L\in\Pic^0(E)$, although their determinants
+are equal.
+\end{proposition}
+
+\begin{proof}
+The classification of semistable bundles on an elliptic curve gives
+the stated stable factors and identifies their unordered collection
+with the S-equivalence class
+\cite{AtiyahVectorBundlesElliptic,TuSemistableElliptic}.
+The determinant is the tensor product of these factors, giving the
+Abel sum.  If $[L]+[L^{-1}]=2[\mathcal O_E]$, equality of the two
+unordered multisets forces $L=\mathcal O_E$.
+\end{proof}
+
+This divisor distinguishes the two S-equivalence classes, but not
+points of a translation orbit.  Translation acts trivially on the
+isomorphism class of each degree-zero line, so it also fixes the
+divisor.  The zero-$\chi$ orbit-separation problem remains after
+adding this particular invariant.
+
+\subsection{Topological obstruction groups}
+
+We compute the cohomology of classifying spaces with coefficients
+$\mathbb F_2$.  Here $BE$ means the topological classifying space of
+the complex Lie group $E$.  To use these groups for an algebraic
+orientation problem, one must specify the comparison carrying its
+actual equivariant obstruction classes into them.
+
+\begin{lemma}[Connected translations]
+\label{lem:connected-e-descent}
+There is an isomorphism
+\[
+H^*(BE;\mathbb F_2)=\mathbb F_2[u_1,u_2],\qquad |u_i|=2.
+\]
+Thus $H^1(BE;\mathbb F_2)=0$, whereas a degree-two class has the
+form $\alpha=a_1u_1+a_2u_2$ and vanishes exactly when $a_1=a_2=0$.
+\end{lemma}
+
+\begin{proof}
+Topologically $E\simeq(S^1)^2$, so
+$BE\simeq(\mathbb{CP}^{\infty})^2$.  The two universal first Chern
+classes and the K\"unneth formula give the polynomial ring.
+\end{proof}
+
+Vanishing of $H^1$ excludes a continuous sign character of the
+connected group.  It does not force a degree-two gerbe class to vanish.
+
+\begin{lemma}[Finite translation groups]
+\label{lem:finite-stabilizer-e-descent}
+For $E[2]\cong(\Z/2)^2$,
+\[
+H^*(BE[2];\mathbb F_2)=\mathbb F_2[x_1,x_2],\qquad |x_i|=1.
+\]
+Write a degree-two class as
+$\beta=b_{20}x_1^2+b_{11}x_1x_2+b_{02}x_2^2$.
+Its restrictions to the cyclic subgroups generated by $(1,0)$,
+$(0,1)$ and $(1,1)$ have coefficients $r_1,r_2,r_3$ satisfying
+\[
+(b_{20},b_{11},b_{02})=(r_1,r_1+r_2+r_3,r_2).
+\]
+A degree-one class $\lambda=\lambda_1x_1+\lambda_2x_2$ instead has
+restriction coefficients $(\lambda_1,\lambda_2,\lambda_1+\lambda_2)$.
+
+If $2^a$ is the exact power of two dividing $N$, with $a\ge2$, then
+\[
+H^*(BE[N];\mathbb F_2)
+=\Lambda(x_1,x_2)\otimes\mathbb F_2[y_1,y_2],
+\qquad |x_i|=1,\quad |y_i|=2.
+\]
+Its degree-two classes are
+$A_1y_1+A_{12}x_1x_2+A_2y_2$.
+The mixed class $x_1x_2$ is invisible on every cyclic subgroup.
+For $N$ odd, all positive-degree mod-two cohomology vanishes.
+For $a=1$, the first polynomial-ring description applies.
+\end{lemma}
+
+\begin{proof}
+The classifying space of $\Z/2$ is $\mathbb{RP}^{\infty}$.
+Restriction to the three subgroups substitutes $(x,0)$, $(0,x)$
+and $(x,x)$, giving the displayed formulas.
+
+For $\Z/2^a$ with $a\ge2$, the periodic resolution gives one
+mod-two cohomology class in each degree, with a periodicity generator
+$y$ in degree two.  Its degree-one generator $x$ lifts to a
+$\Z/4$ character.  Its Bockstein, hence $x^2$, is zero.
+The cyclic ring is therefore $\Lambda(x)\otimes\mathbb F_2[y]$,
+and K\"unneth gives the rank-two formula.
+
+On a cyclic subgroup whose order is divisible by four, the two
+restricted degree-one classes are multiples of one exterior
+generator, so their product vanishes.  If its order has two-primary
+part exactly two, both restrictions vanish: an element of order two
+in $(\Z/2^a)^2$ has even coordinates.  A cyclic subgroup of odd
+order has no positive mod-two cohomology.
+Finally, transfer annihilates positive cohomology for an odd-order
+group, because its order is invertible in $\mathbb F_2$.
+\end{proof}
+
+If a finite class is the restriction of
+$\alpha\in H^2(BE;\mathbb F_2)$, the inclusion $E[2]\hookrightarrow E$
+sends $u_i$ to $x_i^2$.  Such a restriction has $b_{11}=0$.
+A stabilizer class obtained from an equivariant gerbe on a moduli
+space must be computed from that gerbe.  It is not an arbitrary class
+of $BE$, and it is not assumed independent of its global restrictions.
+
+\begin{remark}[Square roots and their equivariant choices]
+\label{rem:translation-linearization-criterion}
+For a specified square-root gerbe on a stabilizer classifying space,
+a trivialization exists only when its degree-two obstruction vanishes.
+When it does, isomorphism classes of trivializations form a torsor
+under $H^1(BH;\mathbb F_2)$.
+The degree-two obstruction and the degree-one choice have distinct
+roles.  An invariant Picard class does not choose either an
+equivariant cocycle or a trivialization.
+
+An equivariant line descends to the quotient \emph{stack} with its
+stabilizer representation.  Triviality of that representation is an
+additional requirement for descent to a coarse quotient, or for a
+specified invariant frame.  Thus a demand that a character vanish
+must name its descent target.  These cohomology calculations give
+criteria once the actual orientation class is supplied.  They do not
+compute that class for the compact Hall moduli.
+\end{remark}
+
+\begin{remark}[Characters of odd order]
+\label{rem:mod2-not-odd-order}
+A sign character detects only two-primary information.  A line
+linearization has a character in $\Hom(H,\C^\times)$, which can be
+nontrivial for $H$ of odd order.  For example, a generator of
+$\Z/3$ can act by a primitive cube root of unity, while
+$H^1(B(\Z/3);\mathbb F_2)=0$.  Descent of that line requires its
+actual character, not only its sign reduction.
+\end{remark}
+
+\subsection{Cusp polarization and chamber transport}
+\label{subsec:cusp-polarization-chamber}
+
+\begin{definition}[Cusp order]
+\label{def:cusp-polarization}
+The standard cusp positivity convention orders $(m,n,-\ell)$
+lexicographically.  Inside the positive semigroup
+$\Gamma_{\mathrm{eff}}$, retain the Jacobi-active indices
+$\Gamma_{\mathrm{act}}$ defined in
+\S\ref{subsec:igusa-variables-gram-index}.
+A region where every active monomial has absolute value less than
+one is $\Imag\tau=\Imag\sigma=t$, $\Imag z=-a$, with $0<a<t$.
+Taking $t$ sufficiently large gives the usual cusp region.
+\end{definition}
+
+For active indices with $n+m>0$, the inequality
+$\ell^2\le4nm+1$ and integrality give $|\ell|\le n+m$.
+Thus $t(n+m)-a\ell>0$.  The remaining index $(0,-1,0)$ has
+imaginary exponent $a>0$.  Hence each active monomial has absolute
+value less than one in this chamber.  This is an order on Fourier
+indices, not a positivity theorem for microscopic charges.
+
+\begin{remark}[Arithmetic chamber transport]
+\label{rem:chamber-transport}
+The index form
+\[
+\langle\gamma,\gamma'\rangle_{\mathrm{ind}}
+=2(nm'+n'm)-\ell\ell'
+\]
+is $-1/2$ times the root pairing under $\alpha$.
+An element of $\Sp_4(\Z)$ transports the automorphic section and its
+expansion to a cusp with transported local coordinates.
+This arithmetic action does not specify an action on every sheaf
+charge or on a stability condition.  Such a geometric action requires
+its own functor and charge comparison.  
+
+In the four-dimensional
+$N=4$ dyon problem, the electric and magnetic vectors lie in a
+rank-$28$ Narain lattice \cite[\S1]{DVV}.  The three quadratic
+invariants enter a genus-two generating function.  This does not
+identify its Siegel modular group with the full microscopic duality
+group or identify the rank-$24$ Mukai lattice with that Narain lattice.
+\end{remark}
+
+\begin{remark}[Wrapped objects under a change of chamber]
+\label{rem:chamber-dependence-wrapped}
+Projection to the fixed curve $E$ determines whether an object is
+wrapped.  Changing an automorphic cusp alone does not change that
+projection.  A comparison that transports the local and wrapped
+categories must specify the functors and prove the corresponding
+support statements.
+\end{remark}
+
+\begin{definition}[Chamber-compatible Hall comparison]
+\label{def:chamber-compatible-hall-descent}
+Choose two stability conditions and cusp expansions.
+A chamber-compatible comparison consists of maps of their finite
+moduli and extension systems, with coherent coefficient and orientation
+maps.  Require them to intertwine the charge maps in the chosen
+coordinates, preserve the indicated support categories, and commute
+with all transition maps.  Wall-crossing identities of scalar
+invariants alone do not supply such a comparison.
+\end{definition}
+
+The identity
+$\overline\Pi_X(\widehat c\star\widehat c')
+=\overline\Pi_X(\widehat c)+\overline\Pi_X(\widehat c')$
+holds before any chamber is chosen.  It remains a lattice identity
+until these categorical maps have been constructed.
+
+\subsection{Constructible coefficients for local operations}
+\label{sec:local-protected-observable-algebra}
+
+Deformation and obstruction complexes on stable-sheaf moduli underlie
+Donaldson--Thomas theory \cite{DT}.  A Hall construction retains
+cohomological coefficients and extension operations before taking
+numerical invariants.  Comparing it with an algebra of BPS states,
+as in \cite{HM}, requires a map between the specified state spaces
+that preserves their products.
+
+For an open $U\subset X$, select finite-type moduli
+$\mathfrak M_c(U)$ of the desired compactly supported objects.
+Assume they carry oriented critical charts and a constructible
+vanishing-cycle complex $\Phi_c$ with compatible descent.  This
+requires a specified coefficient formalism for these stacks.
+On oriented d-critical schemes the construction is provided by
+\cite[Theorem~6.9]{BBDJS2015}.  Applying it to a quotient requires
+compatible charts, orientations and equivariance.
+
+\begin{definition}[Protected coefficient complex]
+\label{def:local-protected-observable-algebra}
+Suppose $R\Gamma_c(\mathfrak M_c(U),\Phi_c)$ is a bounded complex
+of finite-dimensional rational vector spaces.  Fix the convention
+\[
+C^{\mathrm{BM}}(\mathfrak M_c(U);\Phi_c)
+=R\Hom_\Q\bigl(R\Gamma_c(\mathfrak M_c(U),\Phi_c),\Q\bigr),
+\qquad
+\mathcal A_X(U)=\bigoplus_c
+C^{\mathrm{BM}}(\mathfrak M_c(U);\Phi_c).
+\]
+Here the sum runs over the specified geometric charge support.
+An algebra structure on $\mathcal A_X(U)$ consists of homogeneous
+maps induced by the selected extension spans, with stated Gysin
+shifts, pushforward hypotheses and coherent coefficient comparisons.
+\end{definition}
+
+For $\Phi_c=\Q$, the convention is the usual Borel--Moore complex
+$R\Gamma(\mathfrak M_c(U),\omega_{\mathfrak M_c(U)})$ by Verdier
+duality.  The orientation is used to construct $\Phi_c$.  It is a
+coherent square-root line on the critical geometry, so it cannot be
+tensored directly with a rational constructible complex.  A change
+of orientation can instead produce a specified sign local system
+in the constructible category.  Orientation also enters the proposed
+vanishing-cycle definition of Gopakumar--Vafa invariants
+\cite[\S1.2]{MaulikTodaGV}.
+
+For disjoint opens $U_1,\ldots,U_k$, objects on their disjoint union
+decompose among the opens.  If $F$ and $G$ have disjoint supports,
+the sheaf $R\mathcal Hom(F,G)$ is zero, hence $R\Hom(F,G)=0$.
+
+This assertion does not require compact support.  Compactness and
+finite type enter the coefficient functors and pushforwards.
+When the chosen moduli and orientations respect this product
+decomposition, Thom--Sebastiani and K\"unneth give maps
+\[
+\mathcal A_X(U_1)\otimes\cdots\otimes\mathcal A_X(U_k)
+\longrightarrow\mathcal A_X(U_1\sqcup\cdots\sqcup U_k)
+\]
+\cite{MasseyST,SaitoMHM}.  Extension to overlapping opens and
+collision strata requires further factorization data.
+A comparison with the D-module formalism of \cite[\S3.4]{BD}
+requires a realization on configuration spaces, compatible with
+their diagonals.
+
+The Lie--commutative duality of \cite{FrancisGaitsgoryCKD} concerns
+chiral Lie algebras and commutative coalgebras in the chiral tensor
+category.  An associative-to-associative comparison
+\cite{ChiralBarCobarVolI,ChiralBarCobarVolII} additionally requires
+the associative products and compatible collision maps on both sides.
+These operations are not supplied by the disjoint-support calculation.
+
+For the unreduced moduli of coherent sheaves and perfect complexes
+on a smooth projective Calabi--Yau threefold, orientation data do
+exist \cite[Theorem~4.4]{JoyceUpmeier}.  The theorem applies to
+$S\times E$ with the chosen trivialization of its canonical bundle.
+It supplies isomorphism classes of square roots compatible with
+the indicated exact-sequence or triangle operations.  Compatibility
+with a chosen scalar and trace reduction, translation quotient,
+boundary degeneration and higher flag maps must still be established
+for the system considered here.
+
+\begin{remark}[Scope of the coefficient construction]
+\label{rem:source-interface-external-assumptions}
+The shifted symplectic form, an oriented critical chart, its
+constructible complex, and a Hall product are separate structures.
+The product needs actual pull-push maps on extension stacks.
+Multiplicative orientation requires their compatibility on longer
+flags.  Translation reduction requires the common-torsor spans and
+equivariant descent described above.  None is constructed by the
+scalar superdimension of a coefficient complex.
+\end{remark}
+
+\subsection{Orientation and modular comparison}
+\label{sec:k3xe-four-obstructions}
+
+Four geometric requirements organize the orientation comparison.
+Condition $(D0)$ asks for a D0 degeneration with compatible reduced
+complexes, semiregularity cosections, coefficient specialization,
+orientation and transition maps.  Condition $(O1)$ asks for a square
+root of the reduced determinant line on the elliptic quotient,
+including its boundary behavior.  Condition $(O1)^+$ asks for coherent
+Weyl lifts and a trivialization of their orientation cocycle.
+Condition $(O2_{\mathrm{atlas}})$ asks for compatible type-II wall
+charts with a normal skew complex
+\([V\xrightarrow{D_u}V^\vee]\) in degrees \([-1,0]\), where
+\(V=\mathcal O^2\) and \(\operatorname{pf}(D_u)=u\).
+The chart includes a compatible reflection lift on the root line
+and a reflection-invariant tangential unit.
+The corresponding conditional criteria are stated in
+Appendix~\ref{app:obstruction-discharges}.
+
+These orientation requirements do not alone identify a geometric
+Pfaffian with an automorphic form.  The finite geometric datum
+$(P_{\mathrm{fin}})$ of
+Theorem~\ref{thm:pentadic-pfaffian-dirac} also specifies the reduced
+skew complexes, Pfaffian sections, Fourier coefficients, line maps,
+cusp frames and compatible limits.  Under all those hypotheses, the
+line and section comparison gives
+\[
+\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})
+=\Delta_5,
+\qquad \epsilon_o=\widetilde\nu_{\Delta_5}
+\quad\text{on }W^{(2)}(\Lambda_{II}^{2,1}).
+\]
+Construction of the compact geometric hypotheses remains open.
+
+The scalar normalization is a different statement.  In the primitive
+K3 class regime and variable convention of the opening chapter,
+\[
+Z^X_{\mathrm{OP}}=-\frac1{\chi_{10}^{\mathrm{OP}}}
+=-4096\Delta_5^{-2},\qquad
+\chi_{10}^{\mathrm{OP}}=(\Delta_5/64)^2.
+\]
+The reduced stable-pair and Gromov--Witten comparisons underlying
+this identity have the hypotheses stated there
+\cite{OberdieckReducedPT,OPand,OB}.
+The reduced Donaldson--Thomas theory uses weighted Euler
+characteristics after quotienting the Hilbert scheme by elliptic
+translation \cite{BRYAN}.
+
+The normalized scalar
+$Z_{\mathrm{BPS}}^{K3\times E}:=-Z^X_{\mathrm{OP}}/4096$
+is $\Delta_5^{-2}$.  Calling it a trace of an independently
+constructed geometric state space requires the state comparison.
+The inverse square loses the sign character of $\Delta_5$.
+The formal set of twelve signs has $2^{12}=64^2$ elements.
+A geometric orbit of that size requires its own bijection.
+The numerical equality supplies no map from an orientation line
+to an automorphic line.
+
+\begin{remark}[Numerical invariants and comparison coefficients]
+\label{rem:kappa-tuple-compatibility}
+The tuple
+\[
+(\chi(\mathcal O_X),\sum_q(-1)^qh^{0,q}(X),
+\rk\Gamma_{\mathrm{gram}},\operatorname{wt}\Delta_5,
+\chi_{\mathrm{top}}(S))=(0,0,3,5,24)
+\]
+records five defined numerical invariants.  Replacing its third entry
+by a genus-one chiral or Heisenberg coefficient requires a chosen
+complex, trace normalization and a comparison with the Gram rank
+\cite{CYQGVolIII}.
+A matching number does not supply this comparison.  Nor does the
+scalar Igusa identity construct a gravitational path integral on
+the compact target.  A proposed local holomorphic-topological model
+needs a global gluing map, with its obstruction class and coefficient
+comparison, before it can yield that interpretation
+\cite{MixedHTSCompanion}.
+\end{remark}
+
+\subsection{Fixed notation and the remaining maps}
+\label{sec:k3xe-notation-summary}
+
+The cohomological charge group is $\Gamma_X^{\mathrm{form}}$, its
+algebraic subgroup is $\Gamma_X^{\mathrm{alg}}$, and geometric support
+is selected inside it.  The map $\Pi_X$ is quadratic.
+The split extension $\widehat\Gamma_X$ carries the additive map
+$\overline\Pi_X$.  The hybrid parameter space records local and
+wrapped families, while their operations require the extension spans
+and coefficients just specified.
+
+At each height, the proposed Dirac--Igusa system consists of these
+geometric data together with its Hall and primitive maps, Koszul
+comparison, Pfaffian line and section.  A pro-object exists from a
+coherent cofiltered system of such stages.  The construction problem
+is to supply the compact stages, the comparison maps and their
+transition identities.  The lattice extension, support lemma and
+finite regrading results solve their stated parts without replacing
+that problem.

@@ -1,0 +1,1355 @@
+\chapter{Critical completion and constructible coefficients}
+\label{vc:chap:critical}
+
+The incidence equations of Chapter~\ref{ei:chap:incidence}
+define a coherent algebra. A vanishing-cycle coefficient
+requires a potential. For the triangle, three equations
+constrain two coordinates, so the given derived zero locus
+cannot itself carry a nondegenerate $(-1)$-shifted form.
+One multiplier for each equation produces a critical space.
+Its additional directions determine the coefficient to be
+compared with compact Hall geometry.
+
+We first construct this completion, including its coordinate
+changes, orientation and constraint correspondences.
+The function $\lambda z^m$ then separates three kinds of
+data: coherent multiplicity, transverse vanishing monodromy
+and compact integration. For the triangle, we determine
+the entire rational central perverse sheaf and its two
+monodromy summands. One nonzero summand has zero compact
+integral. The displacement family also retains a nontrivial
+specialization map when nearby monodromy is the identity.
+
+All schemes are over $\mathbb C$. Differentials have degree $1$,
+and $C[r]^i=C^{i+r}$. Fix a smooth separated scheme $B$
+of finite type and pure dimension $m$,
+a rank-$r$ vector bundle $V\to B$, and a section $s$ of $V$.
+Its derived zero locus $Z=Z^{\mathrm{der}}(s)$ has the Koszul
+algebra $\operatorname{Sym}_{\mathcal O_B}(V^\vee[1])$,
+with differential given by contraction with $s$.
+Write $Z_{\mathrm{cl}}=t_0Z$ for its classical truncation.
+
+The cotangent complex $\mathbb L_Z$ represents derived
+first-order differentials. Its dual is
+\[
+ \mathbb T_Z=R\mathcal Hom(\mathbb L_Z,\mathcal O_Z).
+\]
+A nondegenerate $(-1)$-shifted two-form induces a
+quasi-isomorphism $\mathbb T_Z\simeq\mathbb L_Z[-1]$.
+
+\section{The tangent complex and the critical space}
+
+\begin{proposition}\label{vc:cicp:prop:rank}
+The cotangent complex of $Z$, restricted to $Z_{\mathrm{cl}}$,
+has the two-term presentation
+\begin{equation}\label{vc:cicp:eq:cotangent}
+ \mathbb L_Z|_{Z_{\mathrm{cl}}}
+   =\bigl[V^\vee|_{Z_{\mathrm{cl}}}
+       \xrightarrow{\,ds\,}\Omega_B|_{Z_{\mathrm{cl}}}\bigr]
+ \quad\text{in degrees }-1,0.
+\end{equation}
+If $Z_{\mathrm{cl}}$ is nonempty and $Z$ has a nondegenerate
+$(-1)$-shifted two-form, then $m=r$.
+In particular, the fixed-parameter derived incidence scheme
+of a connected graph with a cycle, using the pair sections
+$\vartheta(u_e)\vartheta(u_e+h)$, has no such form.
+\end{proposition}
+
+\begin{proof}
+The free Koszul presentation gives \eqref{vc:cicp:eq:cotangent}.
+At any classical point its Euler rank is $m-r$.
+Nondegeneracy would identify
+$\mathbb T_Z$ with $\mathbb L_Z[-1]$. Duality preserves
+Euler rank and this shift reverses it, so $m-r=-(m-r)$.
+
+For a connected graph on $n$ vertices and $e$ edges, quotienting
+simultaneous spectral translation leaves $m=n-1$ coordinates
+and $r=e$ equations. The incidence locus contains the
+configuration with every difference zero. Thus $m-r=-\beta$, where
+$\beta=e-n+1$ is the number of independent cycles.
+\end{proof}
+
+Nonemptiness is necessary: the section $1$ of the trivial
+line over $\mathbb A^2$ has empty derived zero locus, since
+its Koszul algebra has $d\epsilon=1$. Nondegeneracy on the
+empty scheme imposes no rank equality.
+
+This calculation concerns the specified derived enhancement.
+It permits another critical enhancement of the same classical
+support. It also permits an absolute parameter family with a
+different Euler rank. For a displacement parameter $h$, the
+assertion applies fiberwise, or to the relative cotangent
+complex over the $h$-curve. Including $h$ among the coordinates
+adds one to the rank calculation.
+
+The shifted cotangent space is
+$T^*[-1]Z=\operatorname{Spec}_Z
+\operatorname{Sym}_{\mathcal O_Z}(\mathbb T_Z[1])$.
+
+Let $M=\operatorname{Tot}_B(V^\vee)$, with projection $\pi$.
+The evaluation pairing defines the regular function
+\begin{equation}\label{vc:cicp:eq:potential}
+ F(x,\lambda)=\langle\lambda,s(x)\rangle.
+\end{equation}
+Its derived critical locus, denoted $\widehat Z$, is the derived
+zero locus of $dF$ on $M$.
+
+\begin{theorem}\label{vc:cicp:thm:completion}
+There is an equivalence of $(-1)$-shifted symplectic derived
+schemes
+\begin{equation}\label{vc:cicp:eq:completion}
+ \widehat Z=\operatorname{Crit}^{\mathrm{der}}(F)
+       \simeq T^*[-1]Z.
+\end{equation}
+In local coordinates $x_1,\ldots,x_m$ and a frame
+$s_1,\ldots,s_r$, its algebra is
+\begin{equation}\label{vc:cicp:eq:critical-algebra}
+ \widehat A=\mathcal O_B[\lambda_1,\ldots,\lambda_r]
+       \otimes\Lambda(\xi_1,\ldots,\xi_m,
+                       \epsilon_1,\ldots,\epsilon_r),
+\end{equation}
+where $|\lambda_a|=0$, $|\xi_i|=|\epsilon_a|=-1$, and
+\begin{equation}\label{vc:cicp:eq:differential}
+ d\epsilon_a=s_a,\qquad
+ d\xi_i=\sum_a\lambda_a\partial_i s_a,\qquad
+ dx_i=d\lambda_a=0.
+\end{equation}
+The inclusion of the original Koszul algebra represents
+$T^*[-1]Z\to Z$. Setting $\lambda_a=\xi_i=0$ represents
+its zero section. Their composite on $Z$ is the identity.
+\end{theorem}
+
+\begin{proof}
+The equations in \eqref{vc:cicp:eq:differential} are the partial
+derivatives of $F$ with respect to the coordinates of $M$.
+They therefore give its critical Koszul algebra.
+They also present
+$\operatorname{Sym}_{\mathcal O_Z}(\mathbb T_Z[1])$:
+the shifted duals of the odd Koszul generators give the
+degree-zero multipliers, and those of the base coordinates
+give the $\xi_i$.
+
+The common presentation identifies the standard shifted
+cotangent form with the critical form. This is the local
+comparison of Kinjo, Lemma~2.7.\footnote{T.~Kinjo,
+\emph{Dimensional reduction in cohomological Donaldson--Thomas
+theory}, \href{https://arxiv.org/abs/2102.01568v2}{arXiv:2102.01568v2},
+Lemma~2.7. For the shifted cotangent form, see
+D.~Calaque, \emph{Shifted cotangent stacks are shifted symplectic}.
+\href{https://arxiv.org/abs/1612.08101v2}{arXiv:1612.08101v2},
+Theorem~2.2.}
+
+The two displayed algebra maps commute with the differential
+and have the stated composite. The coordinate changes below
+give their descent.
+\end{proof}
+
+\section{Descent and orientation}
+
+The multipliers transform in the dual bundle. The odd base
+coordinates must transform as well. Let $s'=G(x)s$ for an
+invertible matrix of regular functions. Use column vectors for
+$s,\lambda,\epsilon$ and put
+\begin{equation}\label{vc:cicp:eq:frame}
+ \lambda'=G^{-T}\lambda,\qquad \epsilon'=G\epsilon,
+ \qquad
+ \xi'_i=\xi_i+\lambda'^T(\partial_iG)\epsilon.
+\end{equation}
+
+\begin{proposition}\label{vc:cicp:prop:descent}
+Equations~\eqref{vc:cicp:eq:frame}, together with ordinary cotangent
+coordinate changes on $B$, glue the critical algebra and its
+shifted symplectic form. Adding one coordinate $z$ and one
+equation $s_{r+1}=z$ leaves the derived zero locus unchanged
+and adds the hyperbolic term $\lambda_{r+1}z$ to its critical
+potential.
+\end{proposition}
+
+\begin{proof}
+The identity $\lambda^Ts=\lambda'^Ts'$ preserves $F$.
+Moreover,
+\[
+ d\epsilon'=Gs=s',\qquad
+ d\xi'_i=\lambda'^TG\partial_i s
+             +\lambda'^T(\partial_iG)s
+          =\lambda'^T\partial_i s'.
+\]
+Thus the correction in \eqref{vc:cicp:eq:frame} is exactly the
+product-rule term required for a cochain map.
+
+In the critical-chart convention the odd Liouville form is
+\[
+ \theta=\sum_i\xi_i\,d_{\mathrm{dR}}x_i
+                +\sum_a\epsilon_a\,d_{\mathrm{dR}}\lambda_a.
+\]
+Since
+$d_{\mathrm{dR}}\lambda'
+ =G^{-T}d_{\mathrm{dR}}\lambda
+  -G^{-T}(d_{\mathrm{dR}}G)^T\lambda'$, the extra term in
+$\epsilon'^T d_{\mathrm{dR}}\lambda'$ cancels the correction
+in $\sum_i\xi'_i d_{\mathrm{dR}}x_i$.
+Hence $\theta$, and therefore its de Rham differential,
+is preserved. Under two frame changes the correction satisfies
+the product rule for their product matrix, proving the cocycle.
+
+For the additional presentation pair, the four new generators
+have differential
+\[
+ d\epsilon_{r+1}=z,\qquad d\xi_z=\lambda_{r+1}.
+\]
+Their algebra is the Koszul resolution of the origin in
+$\mathbb A^2_{z,\lambda_{r+1}}$. It contracts to $\mathbb C$.
+This argument does not justify deleting an original equation.
+\end{proof}
+
+An orientation of a critical locus is a square root of its
+critical canonical line on the reduced support. A global
+critical chart $\operatorname{Crit}(F)\subset M$ identifies
+that line with $K_M^{\otimes2}$ on this support, so it
+supplies the root $K_M$. If
+$B\to H$ is smooth and the construction is relative to $H$,
+the cotangent sequence of $M\to B$ gives
+\begin{equation}\label{vc:cicp:eq:orientation}
+ K_{M/H}\cong\pi^*(K_{B/H}\otimes\det V).
+\end{equation}
+Restricted to the reduced critical locus, its square is the
+critical canonical line.
+
+The corresponding absolute formula
+uses $K_B$. These are orientations for the respective critical
+charts. Identifying them with the intrinsic shifted-cotangent
+orientation uses the determinant conventions of the comparison.
+
+For the global spectral family, let $E$ be an elliptic curve,
+$\Theta=\mathcal O_E(0)$ with its divisor section $\vartheta$,
+and $B=E^{n-1}\times E_h$.
+For an oriented graph edge $e$, let $u_e:B\to E$ be its
+vertex difference after quotienting simultaneous translation.
+Define
+\[
+ \mathcal S_e=u_e^*\Theta\otimes(u_e+h)^*\Theta,
+ \qquad s_e=\vartheta(u_e)\vartheta(u_e+h),
+ \qquad V=\bigoplus_e\mathcal S_e.
+\]
+The pairing with $s=(s_e)$ defines a global potential on
+$\operatorname{Tot}_B(V^\vee)$.
+
+Its relative critical locus uses derivatives along $B/E_h$
+and the multipliers. The same local construction and descent
+give the relative shifted cotangent completion.
+The absolute critical locus also has an odd coordinate
+$\xi_h$ with $d\xi_h=\partial_hF$ in a parameter chart.
+These are two different enhancements of the family.
+
+Formula~\eqref{vc:cicp:eq:orientation} uses
+$\det V=\bigotimes_e\mathcal S_e$.
+It needs no square root of an individual $\mathcal S_e$.
+This critical orientation does not decide whether an individual
+pair line has a root over the displacement base.
+It does not decide whether the distinguished section is a square.
+
+\section{Adding constraints}
+
+Fix finitely many indexed line bundles $L_a$ over the same
+smooth base $B$, with sections $s_a$. For a subset $I$ put
+$V_I=\bigoplus_{a\in I}L_a$, and let $Z_I$ be the derived
+zero locus of $(s_a)_{a\in I}$.
+Let $\widehat A_I$ denote its critical algebra.
+If $I\subset J$, forgetting equations defines
+$f_{JI}:Z_J\to Z_I$. Cotangent pullback gives the correspondence
+\begin{equation}\label{vc:cicp:eq:correspondence}
+ T^*[-1]Z_I\ \longleftarrow\
+ Z_J\mathbin{\times}_{Z_I}T^*[-1]Z_I
+ \ \longrightarrow\ T^*[-1]Z_J,
+\end{equation}
+where all fiber products of derived schemes are derived.
+
+\begin{theorem}\label{vc:cicp:thm:flags}
+The correspondence \eqref{vc:cicp:eq:correspondence} is Lagrangian
+for the difference of the two shifted symplectic forms.
+In a common affine chart its middle algebra is
+\begin{equation}\label{vc:cicp:eq:middle}
+ W_{I,J}=\widehat A_I\otimes
+          \Lambda(\epsilon_a:a\in J\setminus I),
+ \qquad d\epsilon_a=s_a.
+\end{equation}
+For $I\subset J\subset K$, composition has the equivalence
+\begin{equation}\label{vc:cicp:eq:composition}
+ W_{I,J}\otimes^{\mathbb L}_{\widehat A_J}W_{J,K}
+      \simeq W_{I,K}.
+\end{equation}
+These equivalences agree for every nested flag of subsets.
+\end{theorem}
+
+\begin{proof}
+The left algebra map is inclusion from $\widehat A_I$.
+The map from $\widehat A_J$ sets
+$\lambda_a=0$ for $a\in J\setminus I$ and retains their
+$\epsilon_a$. It fixes all other generators.
+Equation~\eqref{vc:cicp:eq:differential} verifies that this is a
+cochain map, including the differentials of the $\xi_i$.
+
+The pulled-back critical forms agree because each extra
+term contains $d_{\mathrm{dR}}\lambda_a=0$.
+The correspondence is the shifted conormal of the graph of
+$f_{JI}$. Its Lagrangian nondegeneracy is Calaque's shifted
+conormal theorem, Theorem~2.8 of the cited paper.
+
+As a module over $\widehat A_J$, the algebra $W_{J,K}$ has
+a finite filtration by the exterior length of its new
+generators, with free graded pieces. It is therefore
+$K$-flat, so ordinary tensor product computes the derived
+tensor product in \eqref{vc:cicp:eq:composition}.
+It sets to zero precisely the multipliers in $K\setminus I$
+and retains precisely their odd generators and equations.
+This is $W_{I,K}$.
+
+Every longer flag gives the same algebra.
+Reordering the odd generators uses the exterior Koszul signs.
+Frame changes respecting the indexed line summands preserve
+these subset maps. Proposition~\ref{vc:cicp:prop:descent}
+therefore glues the equivalences. An arbitrary change mixing
+an included and an excluded equation changes the specified flag.
+\end{proof}
+
+This constructs geometric correspondences and their composition.
+A map on their unintegrated vanishing-cycle coefficients still
+requires a coefficient operation with the appropriate support
+and orientation. The geometric composition alone does not
+supply that operation.
+
+\section{The completed triangle}
+
+For a fixed complex parameter $h$, take the local shifted pair equations
+\[
+ s_1=x(x+h),\qquad s_2=y(y+h),\qquad
+ s_3=(x+y)(x+y+h).
+\]
+They are the formal equations of the selected forward pair
+sections $\vartheta(u)\vartheta(u+h)$.
+
+For the two-arrow weights of Yang--Zhao, the original equal
+equivariant parameter is $t$ and $h=2t$.\footnote{
+Y.~Yang and G.~Zhao, \emph{Quiver varieties and elliptic
+quantum groups}.
+\href{https://arxiv.org/abs/1708.01418v1}{arXiv:1708.01418v1},
+Remark~2.2(2) and equation~(3). Only these ordered intercolor
+pair factors are used here.}
+
+Integrating an invariant differential gives a holomorphic
+local logarithm. The theta sections are their linear factors
+times invertible holomorphic functions. Rescaling the dual
+multipliers by those functions gives these equations and an
+analytic isomorphism of their potential germs near zero.
+The same changes may also be completed formally.
+
+The invertible row change replacing $s_3$ by
+$(s_3-s_1-s_2)/2=xy$ changes the full potential to
+\begin{equation}\label{vc:cicp:eq:triangle-potential}
+ W_h=P x(x+h)+Q y(y+h)+Txy,
+ \qquad P=p+r,\quad Q=q+r,\quad T=2r.
+\end{equation}
+Thus its critical algebra has five odd generators and
+\begin{align}
+ d\epsilon_P&=x(x+h),& d\epsilon_Q&=y(y+h),&
+ d\epsilon_T&=xy,\notag\\
+ d\xi_x&=(2x+h)P+Ty,&
+ d\xi_y&=(2y+h)Q+Tx.
+ \label{vc:cicp:eq:triangle-gradient}
+\end{align}
+
+\begin{proposition}\label{vc:cicp:prop:triangle-strata}
+For $h\ne0$, the reduced critical locus of $W_h$ is the
+disjoint union of the three affine lines
+\[
+ (x,y;P,Q,T)=(0,0;0,0,T),\quad
+ (-h,0;0,T,T),\quad (0,-h;T,0,T).
+\]
+The Hessian has rank four at every point of these lines.
+For $h=0$, the reduced critical support is
+$\mathbb A^3_{P,Q,T}$ at $x=y=0$.
+Put $\Delta=T^2-4PQ$. Its tangent and obstruction dimensions are
+\[
+\begin{array}{c|c|c}
+ \text{multiplier stratum}&\operatorname{rank}\operatorname{Hess}W_0
+       &(\dim H^0\mathbb T,\dim H^1\mathbb T)\\\hline
+ \Delta\ne0&2&(3,3)\\
+ \Delta=0,\ (P,Q,T)\ne0&1&(4,4)\\
+ (P,Q,T)=0&0&(5,5).
+\end{array}
+\]
+\end{proposition}
+
+\begin{proof}
+The first three equations in \eqref{vc:cicp:eq:triangle-gradient}
+give the three listed pairs $(x,y)$ when $h\ne0$.
+The last two then give the listed multiplier lines.
+The principal Hessian minor on $x,y,P,Q$ has determinant
+$h^4$ on every line. Its tangent vector is in the Hessian
+kernel, so the rank is exactly four.
+
+At $h=0$, the equations $x^2=y^2=xy=0$ force $x=y=0$
+on the reduced support. The only nonzero Hessian block is
+\begin{equation}\label{vc:cicp:eq:normal-hessian}
+ H_{\mathrm{normal}}=
+ \begin{pmatrix}2P&T\\T&2Q\end{pmatrix},
+ \qquad \det H_{\mathrm{normal}}=-\Delta.
+\end{equation}
+The critical tangent complex is the Hessian map between
+two five-dimensional spaces. Its kernel and cokernel have
+dimension five minus this rank.
+\end{proof}
+
+The completion has introduced noncompact multiplier directions.
+Its critical tangent dimensions therefore differ from the
+cohomology dimensions of the coherent incidence algebra.
+Vanishing cycles on those multiplier directions provide a
+third, explicitly computable coefficient object.
+\section{Vanishing cycles and a single multiplier}
+\label{vc:sec:vanishing}
+
+For a complex algebraic variety $Y$, write
+$\mathrm D_c^b(Y;\mathbb Q)$ for the bounded derived
+category of rational sheaves on its analytic space, with
+finite-dimensional algebraically constructible cohomology.
+All constructible coefficients below lie in this category.
+
+Write $\varphi_f=\phi_f[-1]$ for shifted vanishing
+cycles, with $\varphi_0=\mathrm{id}$. On a smooth complex
+$N$-fold $M$, put
+\[
+ \mathcal P_f=\varphi_f\mathbb Q_M[N].
+\]
+This is the perverse normalization. Its stalk at a critical
+point $p$ is the reduced cohomology of a local Milnor fiber,
+shifted so that
+\begin{equation}\label{vc:vic:eq:milnor-shift}
+ \mathcal H^k(\mathcal P_f)_p
+       =\widetilde H^{k+N-1}(\operatorname{MF}_p(f);\mathbb Q).
+\end{equation}
+When Tate twists are displayed, coefficients are understood
+in the corresponding mixed-Hodge or monodromic refinement.
+
+
+The middle perverse convention places a local system on a
+smooth complex $d$-fold in degree $-d$. The functor
+$\varphi_f$ is exact for this perverse structure.
+For an open inclusion $j$, the middle extension $j_{!*}K$
+is the perverse image of
+${}^pH^0(j_!K)\to{}^pH^0(Rj_*K)$.
+Here ${}^pH^0$ is degree-zero perverse cohomology and $K$
+is perverse on the open stratum. This extension has no
+nonzero perverse subobject or quotient supported on the boundary.
+
+Hyperbolic stabilization of a critical chart, with the
+induced orientation, preserves this normalized coefficient.
+The comparison includes the determinant double cover of the
+added quadratic form.\footnote{C.~Brav, V.~Bussi, D.~Dupont,
+D.~Joyce and B.~Szendr\H{o}i, \emph{Symmetries and stabilization
+for sheaves of vanishing cycles}.
+\href{https://arxiv.org/abs/1211.3259}{arXiv:1211.3259},
+Theorem~5.4.} In the coordinate-equation stabilization above,
+the specified hyperbolic pair gives that orientation.
+
+We first justify the use of global fibers in the homogeneous
+examples below. Let $g$ be a nonconstant homogeneous polynomial
+of positive degree on $\mathbb C^N$ and suppose that
+$g^{-1}(1)$ is smooth. Dilation identifies
+\[
+ g^{-1}(\delta)\cap B_\varepsilon
+       \cong g^{-1}(1)\cap B_{\varepsilon|\delta|^{-1/\deg g}}.
+\]
+
+The squared norm on the smooth affine fiber is proper and
+semialgebraic. Its critical-value set is semialgebraic and,
+by Sard's theorem, has measure zero, hence is finite.
+Above its last critical value, increasing the sublevel radius
+does not change homotopy type. Thus the local Milnor fiber at
+the origin has the homotopy type of $g^{-1}(1)$.
+This argument allows a nonisolated critical locus.
+
+Let $f_m(\lambda,z)=\lambda z^m$ on $\mathbb A^2$, for
+$m\ge1$. For $m\ge2$ its reduced critical support is the
+$\lambda$-axis. Let
+$j:\mathbb C^*\hookrightarrow\mathbb C$ and
+$i:\{0\}\hookrightarrow\mathbb C$ be its two strata.
+On the punctured axis define the local system $L_m$ by the
+reduced cyclic permutation representation
+\begin{equation}\label{vc:vic:eq:cyclic-system}
+ (L_m)_\lambda=
+ \bigl\{(a_1,\ldots,a_m)\in\mathbb Q^m:
+                         \textstyle\sum_j a_j=0\bigr\},
+ \qquad T(a_1,\ldots,a_m)=(a_m,a_1,\ldots,a_{m-1}).
+\end{equation}
+Reversing the loop orientation replaces $T$ by its inverse.
+For $m=1$ put $L_1=0$.
+
+\begin{theorem}\label{vc:vic:thm:monomial}
+On its reduced support, the underlying rational perverse sheaf
+of $f_m$ is
+\begin{equation}\label{vc:vic:eq:monomial-splitting}
+ \mathcal P_{f_m}\cong j_{!*}L_m[1]\oplus i_*\mathbb Q.
+\end{equation}
+The extension is clean:
+$j_!L_m[1]\simeq Rj_*L_m[1]$.
+At the origin the only nonzero rational stalk group is
+$\mathbb Q$ in degree zero.
+\end{theorem}
+
+\begin{proof}
+For $\lambda\ne0$, the transverse fiber has $m$ points.
+Their reduced degree-zero cohomology gives
+\eqref{vc:vic:eq:cyclic-system}. The smooth axis supplies the
+shift by one. The characteristic polynomial of $T$ on this
+space is
+\[
+ 1+t+\cdots+t^{m-1},\qquad \det(1-T)=m.
+\]
+
+Consequently the punctured-disc cochain complex
+$[L_m\xrightarrow{T-1}L_m]$ is acyclic. This proves
+$j_!L_m\simeq Rj_*L_m$. Both its stalk and costalk at the
+origin vanish, so adjunction gives no morphisms, in any degree,
+between this extension and an origin-supported complex.
+The localization triangle therefore splits off the origin part.
+
+The homogeneous fiber $\lambda z^m=1$ is $\mathbb C^*$,
+parametrized by $z\ne0$. The preceding homogeneous argument
+identifies the local Milnor fiber with it up to homotopy.
+Its only reduced cohomology is
+$H^1(\mathbb C^*;\mathbb Q)=\mathbb Q$.
+Equation~\eqref{vc:vic:eq:milnor-shift} puts this in degree zero.
+For $m=1$ the critical point is isolated and the same calculation
+gives the entire sheaf. This proves
+\eqref{vc:vic:eq:monomial-splitting} in rational coefficients.
+\end{proof}
+
+The circle complex also gives
+$R\Gamma_c(\mathbb C^*,L_m)=0$, by duality or by the
+same invertibility of $T-1$. Thus compact integration over
+the multiplier retains the origin term alone.
+The unintegrated local system still has rank $m-1$ and
+cyclic monodromy. The coherent algebra $\mathbb C[z]/(z^m)$,
+these vanishing cycles and their compact integral are three
+different coefficient objects.
+
+\section{The triangle stalks}
+
+For the polynomial
+$W_h=P x(x+h)+Q y(y+h)+Txy$ of
+\eqref{vc:cicp:eq:triangle-potential}, write
+$\mathcal P_h=\varphi_{W_h}\mathbb Q_{\mathbb A^5}[5]$.
+At $h=0$ it is supported on $\mathbb A^3_{P,Q,T}$.
+The discriminant $\Delta=T^2-4PQ$ defines the quadratic rank strata.
+
+\begin{theorem}\label{vc:vic:thm:triangle-stalks}
+At a point $(0,0;P,Q,T)$ the nonzero rational stalk groups of
+$\mathcal P_0$ are as follows:
+\begin{equation}\label{vc:vic:eq:stalk-table}
+\begin{array}{c|c|c}
+ \text{stratum}&\text{cohomological degree}&\text{rank}\\\hline
+ \Delta\ne0&-3&1\\
+ \Delta=0,\ (P,Q,T)\ne0&-2&1\\
+ (P,Q,T)=0&-1&1.
+\end{array}
+\end{equation}
+For $h\ne0$, its restriction to each of the three critical
+lines is isomorphic to $\mathbb Q_{\mathbb A^1}[1]$.
+\end{theorem}
+
+\begin{proof}
+At quadratic rank two, the holomorphic Morse lemma with
+parameters gives a nondegenerate quadratic in two normal
+variables and three smooth spectator coordinates.
+Its Milnor fiber has reduced cohomology in degree one.
+The shift in \eqref{vc:vic:eq:milnor-shift} therefore gives
+$1-(5-1)=-3$.
+
+At rank one, assume $P\ne0$. The patch with $Q\ne0$ is
+identical after interchanging $x,y$. Completing the square gives
+\[
+ W_0=P\left(x+\frac{T}{2P}y\right)^2
+              +\left(Q-\frac{T^2}{4P}\right)y^2.
+\]
+Choose a local square root of the unit $P$. The new coefficient
+$s=Q-T^2/(4P)$ is a transverse parameter to the rank-one
+stratum. The germ becomes $u^2+sv^2$, with two spectator
+coordinates.
+
+Theorem~\ref{vc:vic:thm:monomial} for $sv^2$
+has reduced Milnor cohomology in degree one at its origin.
+Thom--Sebastiani for the additional nondegenerate square
+suspends it to degree two. Formula~\eqref{vc:vic:eq:milnor-shift}
+then gives $-2$.
+
+At the zero quadratic form, project the global fiber $W_0=1$
+to $(x,y)$. The point $(0,0)$ is excluded. At every other
+point, $P x^2+Txy+Qy^2=1$ is a nonzero affine linear
+equation in three multipliers, so its solutions form an
+affine plane. On $x\ne0$ one solves for $P$, and on $y\ne0$
+one solves for $Q$. This is a locally trivial affine-bundle
+torsor over $\mathbb C^2\setminus\{0\}$, with contractible
+fiber. It has the homotopy type of $S^3$.
+
+The homogeneous argument applies to $W_0$ of degree three,
+so this is also the local Milnor homotopy type. Its unique
+reduced class gives degree $3-(5-1)=-1$.
+
+For $h\ne0$, Proposition~\ref{vc:cicp:prop:triangle-strata}
+gives a smooth critical line and a nondegenerate Hessian
+in four normal directions. The Morse lemma with parameters
+gives a rank-one local system shifted by one on that line.
+The line is simply connected, so this local system is constant.
+\end{proof}
+
+Stalk ranks alone do not describe how a perverse sheaf glues
+across these strata. Even on the open quadratic stratum the
+rank-one coefficient has nontrivial monodromy.
+
+\begin{proposition}\label{vc:vic:prop:determinant-cover}
+On $\Delta\ne0$, the normal vanishing cohomology of $W_0$ is the
+sign local system associated with the double cover
+\begin{equation}\label{vc:vic:eq:determinant-cover}
+ w^2=\Delta.
+\end{equation}
+It is nontrivial.
+\end{proposition}
+
+\begin{proof}
+A change of orthonormal frame for a nondegenerate complex
+quadratic form acts on its one-dimensional vanishing
+cohomology by the determinant character of $O(2,\mathbb C)$.
+The two choices of determinant frame give the double cover
+\eqref{vc:vic:eq:determinant-cover}. The determinant of the
+normal Hessian is $-\Delta$ and multiplication of a square
+root by $i$ identifies the two sign conventions.
+For an explicit loop, set $Q=1,T=0$ and move $P$ once
+around zero. A local normal coordinate $\sqrt P\,x$
+returns with the opposite sign. Reflection of that coordinate
+acts by $-1$ on the vanishing class.
+\end{proof}
+
+This double cover lies over multiplier space. It persists
+at zero spectral displacement and is independent of the
+cover $h=2t$ used to take roots of spectral pair lines.
+It also coexists with the global critical orientation
+\eqref{vc:cicp:eq:orientation}. An orientation and a constant
+trivialization of every normal vanishing-cycle local system
+are different data.
+
+\section{The central perverse sheaf}
+\label{vc:sec:central-sheaf}
+
+Put $B_{\mathrm{mult}}=\mathbb A^3_{P,Q,T}$ and
+$f=W_0=Px^2+Txy+Qy^2$. Regard
+$\Phi=\mathcal P_0$ as a perverse sheaf on its reduced
+support $B_{\mathrm{mult}}$.
+Write $\mathcal T_f$ for raw geometric monodromy in the
+value of $f$, with no dimension-dependent sign.
+This is distinct from continuation in multiplier space
+and from monodromy in the displacement $h$.
+Let $D=\{\Delta=0\}$,
+$D^\circ=D\setminus\{0\}$ and
+$U=B_{\mathrm{mult}}\setminus D$.
+
+\begin{lemma}\label{vc:cqm:lem:function-monodromy}
+The automorphism $\mathcal T_f$ satisfies $\mathcal T_f^2=1$.
+The only nonzero stalk cohomology on each stratum is
+\begin{equation}\label{vc:cqm:eq:stalks}
+\begin{array}{c|c|c}
+ \text{stratum}&\text{stalk of }\Phi&\mathcal T_f\\ \hline
+ U&H^{-3}=\mathbb Q&+1\\
+ D^\circ&H^{-2}=\mathbb Q&-1\\
+ \{0\}&H^{-1}=\mathbb Q&+1.
+\end{array}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The path $(x,y)\mapsto(e^{\pi it}x,e^{\pi it}y)$, with
+$P,Q,T$ fixed, rotates the value of $f$ once. It preserves
+small balls centered on $B_{\mathrm{mult}}$. Its endpoint is the involution
+$(x,y)\mapsto(-x,-y)$, and two circuits give the identity.
+Thus it defines the stated involution on vanishing cycles.
+
+The local fibers are those of
+Theorem~\ref{vc:vic:thm:triangle-stalks}. At rank two, a
+nondegenerate binary quadratic form has Milnor fiber of
+homotopy type $S^1$. At rank one, completing a square gives
+$u^2+sv^2$, with two additional smooth parameters.
+The fiber of $sv^2$ has homotopy type $\mathbb C^*$.
+Adding $u^2$ suspends its reduced cohomology. Its function
+monodromy on that cohomology is the product of $+1$ for
+$sv^2$ and $-1$ for $u^2$.
+
+These are the Thom--Sebastiani monodromy conventions.\footnote{
+C.~Brav, V.~Bussi, D.~Dupont, D.~Joyce and B.~Szendr\H{o}i,
+\emph{Symmetries and stabilization for sheaves of vanishing
+cycles}. \href{https://arxiv.org/abs/1211.3259}{arXiv:1211.3259},
+Definition~2.12 and Theorem~2.13. Their twisted monodromy
+includes the sign $(-1)^{\dim U}$. The symbol $\mathcal T_f$ here is
+their untwisted function monodromy.}
+
+At the origin, projection of $f^{-1}(1)$ to
+$\mathbb C^2\setminus\{0\}$ is an affine-plane torsor:
+for each nonzero $(x,y)$, the equation is a nonzero linear
+equation in $P,Q,T$. It is locally trivial and has
+contractible fibers. Hence $f^{-1}(1)\simeq S^3$.
+The homogeneous comparison proved in
+Section~\ref{vc:sec:vanishing} applies to this cubic, whose
+fiber over one is smooth.
+
+The involution covers the antipodal map of
+$\mathbb C^2\setminus\{0\}$ and acts by $+1$ on $H^3$.
+At rank two its action on $H^1(S^1)$ is also $+1$.
+The shift $\phi_f[-1]\mathbb Q[5]$ places reduced Milnor
+cohomology of degree $k$ in stalk degree $k-4$.
+\end{proof}
+
+\subsection{The two local systems}
+
+Consider the double covers
+\begin{equation}\label{vc:cqm:eq:covers}
+ \nu:\widetilde B_{\mathrm{mult}}=\{w^2=\Delta\}\longrightarrow B_{\mathrm{mult}},
+ \qquad
+ \rho:\mathbb A^2\longrightarrow D,
+ \quad(a,b)\longmapsto(a^2,b^2,2ab).
+\end{equation}
+Let $L_{\det}$ be the sign local system of $\nu$ on $U$,
+and let $L_{\mathrm{sq}}$ be the sign local system of
+$\rho$ on $D^\circ$. 
+The rank-two vanishing line is $L_{\det}$ by
+Proposition~\ref{vc:vic:prop:determinant-cover}.
+On $D^\circ$, the form
+is $(ax+by)^2$. The loop $P=e^{2\pi it}$, $Q=T=0$ reverses
+its chosen square coordinate and hence its suspended
+vanishing class. Since
+$D^\circ=(\mathbb C^2\setminus\{0\})/\{\pm1\}$ has
+fundamental group $\mathbb Z/2$, this identifies the
+rank-one vanishing line with $L_{\mathrm{sq}}$.
+
+Write $j:U\hookrightarrow B_{\mathrm{mult}}$, $k:D^\circ\hookrightarrow D$
+and $i:D\hookrightarrow B_{\mathrm{mult}}$. For a pure-dimensional variety $Y$, the intersection
+complex $\operatorname{IC}_Y$ is the middle extension of
+the constant complex on its smooth locus, normalized by
+$\operatorname{IC}_Y|_{Y_{\mathrm{sm}}}
+=\mathbb Q[\dim Y]$.
+For a finite double-cover pushforward, the superscript
+$-$ denotes its deck anti-invariant direct summand.
+
+\subsection{The vertex and its involution}
+
+\begin{lemma}\label{vc:cqm:lem:node}
+The stalk of $\operatorname{IC}_{\widetilde B_{\mathrm{mult}}}$ at the
+origin has a copy of $\mathbb Q$ in each of degrees
+$-3$ and $-1$. Deck monodromy acts by $+1$ and $-1$
+on them, respectively.
+\end{lemma}
+
+\begin{proof}
+The matrix
+\[
+ \begin{pmatrix}2P&T+w\\T-w&2Q\end{pmatrix}
+\]
+has determinant $w^2-\Delta$. It identifies $\widetilde B_{\mathrm{mult}}$
+with the rank-at-most-one locus of two-by-two matrices.
+Choosing the line containing the image gives a proper
+resolution
+\[
+ r:\operatorname{Tot}_{\mathbb P^1}
+       (\mathcal O(-1)\oplus\mathcal O(-1))
+       \longrightarrow\widetilde B_{\mathrm{mult}}.
+\]
+It is an isomorphism away from the origin, with exceptional
+fiber $\mathbb P^1$.
+
+Since $2\dim\mathbb P^1=2<3$, the
+map is small, and
+$Rr_*\mathbb Q[3]=\operatorname{IC}_{\widetilde B_{\mathrm{mult}}}$.
+Proper base change gives the two stalk groups.\footnote{
+M.~A.~de Cataldo and L.~Migliorini,
+\emph{The decomposition theorem, perverse sheaves and the
+topology of algebraic maps}.
+\href{https://arxiv.org/abs/0712.0349}{arXiv:0712.0349},
+Remark~4.2.4.}
+
+The deck involution is matrix transpose. It exchanges
+the two small resolutions, so its action must be
+computed intrinsically. The link of the node is the
+circle bundle of $\mathcal O(-1,-1)$ over
+$\mathbb P^1\times\mathbb P^1$. If $a,b$ are the two
+degree-two generators, its Euler class is $a+b$ up to
+sign. The Gysin sequence gives
+\[
+ H^2(\mathrm{link};\mathbb Q)
+    =\frac{\mathbb Q a\oplus\mathbb Q b}
+            {\mathbb Q(a+b)}.
+\]
+
+Transpose interchanges the two factors and acts by $-1$
+on this quotient. Intersection extension across an
+isolated threefold singularity retains this link group
+as stalk degree $-1$, and the constant link group as
+degree $-3$. The latter is invariant.
+\end{proof}
+
+\begin{theorem}\label{vc:cqm:thm:coefficient}
+There is a decomposition of rational perverse sheaves
+\begin{equation}\label{vc:cqm:eq:decomposition}
+ \Phi=\mathcal P_+\oplus\mathcal P_-,
+ \qquad \mathcal P_\pm=\operatorname{im}
+                  \frac{1\pm\mathcal T_f}{2},
+\end{equation}
+with
+\begin{align}
+ \mathcal P_+&\cong j_{!*}(L_{\det}[3])
+       \cong(R\nu_*\operatorname{IC}_{\widetilde B_{\mathrm{mult}}})^- ,
+       \label{vc:cqm:eq:plus}\\
+ \mathcal P_-&\cong i_*k_{!*}(L_{\mathrm{sq}}[2])
+       \cong i_*(R\rho_*\mathbb Q_{\mathbb A^2}[2])^- .
+       \label{vc:cqm:eq:minus}
+\end{align}
+Raw function monodromy acts by $+1$ and $-1$ on these
+summands, respectively.
+\end{theorem}
+
+\begin{proof}
+Lemma~\ref{vc:cqm:lem:function-monodromy} gives the two
+projectors in the perverse category. Vanishing cycles
+commute with Verdier duality, which replaces monodromy
+by its inverse. Each summand is therefore self-dual.
+
+The plus summand restricts to $L_{\det}[3]$ on $U$ and
+has zero stalks and costalks on $D^\circ$. At the origin,
+its stalk has degree $-1$ and its costalk degree $+1$.
+It has no perverse quotient or subobject supported on the
+boundary. These are precisely the middle-extension
+conditions.
+
+The minus summand has support $D$, restricts
+to $L_{\mathrm{sq}}[2]$, and has zero stalk and costalk
+at the origin. The same criterion identifies it.\footnote{
+L.~G.~Maxim and J.~Sch\"urmann, \emph{Constructible sheaf
+complexes in complex geometry and applications}.
+\href{https://arxiv.org/abs/2105.13069}{arXiv:2105.13069},
+Sections~2.2, 2.4 and 4.2, for intermediate extension,
+finite pushforward and Verdier duality.}
+
+Finite pushforward is perverse exact. For $\rho$, the
+origin is a fixed point of the deck involution, which
+acts trivially on the constant stalk. Its anti-invariant
+stalk and, by duality, costalk vanish. This proves
+\eqref{vc:cqm:eq:minus}.
+
+For $\nu$, the anti-invariant stalk
+vanishes at every smooth branch point. Its origin stalk
+is $\mathbb Q$ in degree $-1$, with dual costalk in degree
+$+1$, by Lemma~\ref{vc:cqm:lem:node}. Thus its
+anti-invariant pushforward satisfies the same
+middle-extension conditions as $\mathcal P_+$.
+\end{proof}
+
+\section{Dimensional reduction and constraint maps}
+\label{vc:sec:reduction}
+
+Return to a smooth complex $m$-fold $B$, a rank-$r$ bundle
+$V$, and a section $s$. Put
+$M=\operatorname{Tot}_B(V^\vee)$, let $\pi:M\to B$ be
+its projection, and let $F=\langle\lambda,s\rangle$.
+Write $i:Z_{\mathrm{cl}}\hookrightarrow B$ for the ordinary
+zero locus with its underlying complex topology, and
+$\widetilde i:M|_{Z_{\mathrm{cl}}}\hookrightarrow M$.
+The symbol $R\pi_!$ means derived direct image with proper
+support. No properness of the multiplier bundle is assumed.
+
+There is a natural coefficient map
+\begin{equation}\label{vc:eq:reduction-map}
+\begin{aligned}
+ \alpha_{\mathcal G}:R\pi_!\varphi_F\pi^*\mathcal G
+ &\longrightarrow
+ R\pi_!\widetilde i_*\widetilde i^*\pi^*\mathcal G\\
+ &\cong i_*i^*\mathcal G[-2r](-r),
+ \qquad \mathcal G\in\mathrm D_c^b(B;\mathbb Q).
+\end{aligned}
+\end{equation}
+To specify the first arrow, let $i_0:F^{-1}(0)\hookrightarrow M$.
+The support description
+\[
+ \varphi_F\mathcal H
+ =i_{0*}i_0^*R\Gamma_{\{\operatorname{Re}F\leq0\}}\mathcal H
+\]
+gives its natural map to coefficients on the zero fiber.
+Restrict this map to $M|_{Z_{\mathrm{cl}}}$, then apply
+$R\pi_!$. The second arrow in \eqref{vc:eq:reduction-map}
+uses the complex orientation of the rank-$r$ fibers.
+
+\begin{theorem}\label{vc:prop:linear-reduction}
+The map $\alpha_{\mathcal G}$ is an isomorphism, natural in
+$\mathcal G$. Thus
+\begin{equation}\label{vc:vic:eq:dimensional-reduction}
+ R\pi_!\varphi_F\pi^*\mathcal G
+ \simeq i_*i^*\mathcal G[-2r](-r).
+\end{equation}
+For rational sheaves the Tate twist is omitted.
+The comparison commutes with raw function monodromy,
+which is the identity on the right-hand side.
+For two linear potentials it carries the Thom--Sebastiani
+map to the compactly supported K\"unneth map.
+\end{theorem}
+
+\begin{proof}
+Where a component of $s$ is nonzero, replace its multiplier
+coordinate by $F$. A coefficient pulled back from $B$ is
+constant in this coordinate, so its vanishing cycles are
+zero. Thus the source is supported over $Z_{\mathrm{cl}}$.
+On a trivializing chart, the linear-potential reduction
+theorem identifies the map just defined with an
+isomorphism.\footnote{B.~Davison, \emph{The critical CoHA
+of a quiver with potential}.
+\href{https://arxiv.org/abs/1311.7172}{arXiv:1311.7172},
+Theorem~A.1, Corollary~A.7 and Proposition~A.8.}
+
+The local cancellation can be seen in one multiplier.
+Homogeneity makes the nearby term a derived direct image
+from its punctured multiplier line. For
+$j:\mathbb C^*\hookrightarrow\mathbb C$ and a local
+system $L$ with fiber $A$ and monodromy $T$, both
+$R\Gamma(\mathbb C^*,L)$ and $(Rj_*L)_0$ are the circle
+complex $[A\xrightarrow{T-1}A]$.
+Their restriction map is an isomorphism.
+The localization triangle gives
+$R\Gamma(\mathbb C,j_!L)=0$, and Verdier duality gives
+$R\Gamma_c(\mathbb C,Rj_*L)=0$.
+This also holds for bounded complexes with locally constant
+cohomology and requires no finite-order hypothesis on $T$.
+
+For several multipliers, the blow-up of the zero section
+is the tautological line over the projective multiplier
+bundle. On its $a$th chart the potential is
+$\lambda(s_a+\sum_{b\ne a}s_bv_b)$.
+The same punctured-line cancellation, with proper
+base change for the blow-up, is the local reduction
+argument. The remaining coefficient is
+$i_*i^*\mathcal G\otimes R\Gamma_c(\mathbb A^r,\mathbb Q)$,
+and the fiber complex is $\mathbb Q[-2r](-r)$.
+
+The support map is invariant under bundle frames, so
+these local comparisons glue. Its monodromic refinement
+has constant value-parameter monodromy on the reduced
+side. The support inclusion defining Thom--Sebastiani
+commutes with restriction, giving the last assertion.
+For $r=0$, the formula is $\varphi_0=\mathrm{id}$.
+\end{proof}
+
+The pullback condition is essential. For $F=t$ on
+$\mathbb A^1$ and the origin-supported coefficient
+$\mathcal H=i_{0*}\mathbb Q$, nearby cycles vanish and
+$\varphi_t\mathcal H=\mathcal H$.
+Its compact integral is $\mathbb Q$, whereas the
+coefficient section $1$ over a point has empty zero locus.
+Replacing $\pi^*\mathcal G$ by this arbitrary coefficient
+would therefore make \eqref{vc:vic:eq:dimensional-reduction} false.
+
+\begin{corollary}\label{vc:vic:cor:integrated-constraints}
+For the subset $I$ of a fixed collection of sections, let
+$r_I=|I|$, let $\pi_I$ be its multiplier bundle and let
+$i_I:(Z_I)_{\mathrm{cl}}\hookrightarrow B$.
+The normalized integrated coefficient
+\begin{equation}\label{vc:vic:eq:normalized-coefficient}
+ \mathcal C_I=
+ R\pi_{I!}\varphi_{F_I}\mathbb Q[2r_I](r_I)
+       \simeq i_{I*}\mathbb Q_{(Z_I)_{\mathrm{cl}}}
+\end{equation}
+has restriction maps $\mathcal C_I\to\mathcal C_J$ for
+$I\subset J$, compatible with every nested flag.
+\end{corollary}
+
+\begin{proof}
+The inclusion
+$a:(Z_J)_{\mathrm{cl}}\hookrightarrow(Z_I)_{\mathrm{cl}}$
+has the ordinary coefficient unit
+\[
+ \mathbb Q_{(Z_I)_{\mathrm{cl}}}
+       \longrightarrow Ra_*\mathbb Q_{(Z_J)_{\mathrm{cl}}}.
+\]
+Push it to $B$ and transport it through
+\eqref{vc:vic:eq:normalized-coefficient}.
+The units for successive inclusions compose to the unit
+for their composite. This proves the flag identities.
+The normalization removes the separate shift and twist
+for every added multiplier.
+\end{proof}
+
+These are maps after multiplier integration. They are not
+unintegrated vanishing-cycle Gysin maps on a sheaf-extension
+stack. In particular, they do not equip the geometric
+correspondences of Theorem~\ref{vc:cicp:thm:flags} with a Hall
+product before integration.
+
+The right side of \eqref{vc:vic:eq:dimensional-reduction} sees
+the underlying classical space. It retains neither nilpotent
+thickening nor the negative coherent Koszul cohomology as such.
+For $s=z^m$, this agrees with
+Theorem~\ref{vc:vic:thm:monomial}: the integral is independent
+of $m$, although the transverse local system and coherent
+length both depend on $m$.
+
+For $f_m=\lambda z^m$, the perverse normalization is
+$[2]$. Dimensional reduction therefore makes its compact
+integral $\mathbb Q(-1)$ in degree zero in the monodromic
+mixed-Hodge refinement. The clean punctured local system
+has zero compact integral. Consequently the origin term
+of Theorem~\ref{vc:vic:thm:monomial} has that same Tate class.
+This specifies the Hodge class without identifying local
+and global mixed-Hodge structures merely from a homotopy
+equivalence of their fibers.
+
+For a fixed triangle parameter, $m=2$, $r=3$, and the
+perverse normalization is $[5]$. Hence
+\begin{equation}\label{vc:vic:eq:triangle-integral}
+ R\Gamma_c(\operatorname{Crit}(W_h),\mathcal P_h)
+       \simeq R\Gamma_c((Z_h)_{\mathrm{cl}},\mathbb Q)[-1](-3).
+\end{equation}
+At $h=0$ the right side has one class, and at a generic
+nonzero displacement it has three classes, all in degree one.
+
+For the global elliptic pair sections, take
+$B=E_x\times E_y$ and the three differences $x,y,x+y$.
+The first two pair sections give $x,y\in\{0,-h\}$ when
+$h\ne0$. Three of the four pairs satisfy the last equation
+for every $h$. At $(-h,-h)$ that section has value
+$\vartheta(-2h)\vartheta(-h)$. It vanishes precisely at
+nonzero two-torsion displacements. Thus the global version
+of \eqref{vc:vic:eq:triangle-integral} has four classes there.
+
+The compactness of $E^2$ does not make its multiplier
+bundle proper. The symbol $!$ in these formulas remains
+essential. Verdier duality converts it to an ordinary direct
+image only while changing the coefficients to their duals.
+
+\section{Compact integration and monodromy}
+
+\begin{proposition}\label{vc:cqm:prop:integral}
+Compact integration over multiplier space satisfies
+\begin{equation}\label{vc:cqm:eq:integrals}
+ R\Gamma_c(B_{\mathrm{mult}},\mathcal P_-)=0,\qquad
+ R\Gamma_c(B_{\mathrm{mult}},\mathcal P_+)\cong\mathbb Q[-1].
+\end{equation}
+In particular, it annihilates a nonzero perverse sheaf.
+\end{proposition}
+
+\begin{proof}
+By \eqref{vc:cqm:eq:minus}, the first integral is the
+anti-invariant part of
+$R\Gamma_c(\mathbb C^2,\mathbb Q)[2]$.
+The only compact cohomology of $\mathbb C^2$ is
+$H_c^4=\mathbb Q$, and $(a,b)\mapsto(-a,-b)$ preserves
+its complex orientation. That anti-invariant part is zero.
+
+For the plus summand, the resolution in
+Lemma~\ref{vc:cqm:lem:node} retracts to its exceptional
+$\mathbb P^1$. Ordinary global cohomology of its
+pushforward therefore maps isomorphically to the
+origin stalk. This restriction is intrinsic and
+commutes with the deck involution on the intersection
+complex. No action on a chosen resolution is required.
+Consequently
+$R\Gamma(B_{\mathrm{mult}},\mathcal P_+)=\mathbb Q[1]$.
+Verdier duality and self-duality give the second formula.
+\end{proof}
+
+These statements are in rational constructible sheaves.
+For the total complex $\Phi$, dimensional reduction gives
+$\mathbb Q[-1](-3)$ with its monodromic mixed Hodge
+normalization, as in \eqref{vc:vic:eq:triangle-integral} and
+Theorem~\ref{vc:prop:linear-reduction}.
+This does not specify separate Hodge lifts of
+\eqref{vc:cqm:eq:plus} and \eqref{vc:cqm:eq:minus}.
+
+The same reduction has a useful monodromy consequence.
+Let $X$ be smooth, $s_1,\ldots,s_r$ regular functions,
+$\pi:X\times\mathbb A^r\to X$, and
+$F=\sum_{a=1}^r\lambda_a s_a$.
+
+\begin{proposition}\label{vc:cqm:prop:linear-monodromy}
+Let $\mathcal K$ be a monodromy-invariant direct
+summand of $\phi_F[-1]\mathbb Q$ on which
+$\mathcal T_F-1$ is invertible. Then $\pi_!\mathcal K=0$.
+\end{proposition}
+
+\begin{proof}
+The natural reduction map identifies
+$\pi_!\phi_F[-1]\mathbb Q$ with the constant
+coefficient on $Z=\{s_a=0\}$, shifted by $-2r$.
+It commutes with raw function monodromy, and the
+target monodromy is the identity. Hence on the
+direct summand $\pi_!\mathcal K$ the endomorphism
+$\mathcal T_F-1$ is both zero and invertible.
+
+The required equivariance is part of the natural
+monodromic reduction map.\footnote{B.~Davison,
+\emph{The critical CoHA of a quiver with potential}.
+\href{https://arxiv.org/abs/1311.7172}{arXiv:1311.7172},
+Theorem~A.1 and Corollary~A.7. In the proof of the latter,
+the comparison over the punctured value parameter is
+constant on the reduced side.}
+\end{proof}
+
+The pullback hypothesis and its counterexample are those
+of Theorem~\ref{vc:prop:linear-reduction}.
+
+\subsection{The integral cyclic boundary}
+
+Over $\mathbb Z$, division by two is unavailable.
+The cyclic local system of the monomial example gives
+a direct test of the resulting boundary terms.
+For $m\ge2$, let
+\[
+ I_m=\{(a_1,\ldots,a_m)\in\mathbb Z^m:
+                         \textstyle\sum a_i=0\},
+\]
+with cyclic permutation $T_m$.
+
+\begin{proposition}\label{vc:cqm:prop:integral-link}
+The map $T_m-1:I_m\to I_m$ is injective and has
+cokernel $\mathbb Z/m$.
+\end{proposition}
+
+\begin{proof}
+Let $C_m$ be the cyclic group of order $m$.
+Multiplication by $t-1$ identifies
+$\mathbb Z[C_m]/\mathbb Z(1+\cdots+t^{m-1})$ with
+its augmentation ideal $I_m$.
+The invariant vectors in $I_m$ are constant vectors
+with sum zero, hence vanish. Taking coinvariants in
+the quotient presentation gives
+$\mathbb Z/(1+\cdots+1)=\mathbb Z/m$.
+Equivalently, the Smith factors are
+$1,\ldots,1,m$.
+\end{proof}
+
+For the associated local system on a punctured disk,
+the boundary stalk of its derived direct image is the
+circle complex $[I_m\xrightarrow{T_m-1}I_m]$ in
+degrees $0,1$. It is nonzero over $\mathbb Z$ and
+vanishes after tensoring with $\mathbb Q$.
+In particular, a sign local system has an integral
+$\mathbb Z/2$ boundary term. This computation does not
+give an integral direct-sum version of
+Theorem~\ref{vc:cqm:thm:coefficient}.
+\section{Three branches specializing to one point}
+
+Work over a small complex disk $\mathbb D$ around $h=0$.
+The ordinary total zero locus of the polynomial triangle
+has ring
+\begin{equation}\label{vc:vic:eq:three-branch-ring}
+ \mathbb C[h,x,y]/(x(x+h),y(y+h),xy).
+\end{equation}
+Define
+\[
+ z_0=h+x+y,\qquad z_1=-x,\qquad z_2=-y.
+\]
+Then $h=z_0+z_1+z_2$, and its ideal is
+$(z_0z_1,z_0z_2,z_1z_2)$.
+Thus the total classical space is reduced: it is the union
+of three coordinate axes. Each axis maps isomorphically to
+the parameter disc and all three meet at its origin.
+
+The nonreduced central scheme fiber has just one underlying
+topological point.
+
+Let $f:Z_{\mathrm{cl}}\to\mathbb D$ be this finite map and put
+$\mathcal V=f_*\mathbb Q_{Z_{\mathrm{cl}}}$.
+Write $i:\{0\}\hookrightarrow\mathbb D$ for the origin inclusion.
+
+\begin{theorem}\label{vc:vic:thm:specialization}
+There is an exact sequence of constructible sheaves
+\begin{equation}\label{vc:vic:eq:normalization-sequence}
+ 0\longrightarrow\mathcal V\longrightarrow\mathbb Q_{\mathbb D}^3
+   \xrightarrow{\ (a,b,c)\mapsto(b-a,c-a)\ }
+      i_*\mathbb Q^2\longrightarrow0.
+\end{equation}
+The nearby cycles at zero are $\mathbb Q^3$ with identity
+monodromy. The specialization map is
+\begin{equation}\label{vc:vic:eq:specialization}
+ \mathbb Q\longrightarrow\mathbb Q^3,
+       \qquad a\longmapsto(a,a,a),
+\end{equation}
+and consequently
+\begin{equation}\label{vc:vic:eq:parameter-cycles}
+ \varphi_h(\mathcal V[1])_0\cong\mathbb Q^2.
+\end{equation}
+Branch permutations induce the standard two-dimensional
+representation of $S_3$ on this last vector space.
+There is no nonzero subsheaf of $\mathcal V$ supported only
+at the origin.
+\end{theorem}
+
+\begin{proof}
+Normalization separates the three axes into three discs.
+A locally constant function descends exactly when its
+three values at the common point agree. On the punctured
+disc normalization is an isomorphism on each branch. At
+the origin its coefficient map is the diagonal inclusion.
+These stalk calculations prove
+\eqref{vc:vic:eq:normalization-sequence} and
+\eqref{vc:vic:eq:specialization}.
+
+Each branch is a section over the whole disc, so continuation
+around zero fixes it. The vanishing-cycle triangle therefore
+identifies \eqref{vc:vic:eq:parameter-cycles} with
+$\mathbb Q^3/\mathbb Q(1,1,1)$.
+Permutation of the three branch values gives the stated
+$S_3$ representation.
+Finally, a section supported only at the common point must
+vanish along every incident branch. Its common value is
+then zero. This proves the last assertion.
+\end{proof}
+
+In particular, $\mathcal V$ cannot be replaced by a punctured
+constant sheaf together with an independent central
+skyscraper while preserving its specialization map.
+Identity nearby monodromy has not made specialization an
+isomorphism.
+
+Let $p:(x,y,h)\mapsto h$ be the base projection, so that
+$f=p|_{Z_{\mathrm{cl}}}$. Let $\pi$ project the multiplier
+bundle to this three-dimensional base.
+For the absolute total-family potential $F$ on that
+six-dimensional bundle, dimensional reduction before
+parameter restriction gives
+\begin{equation}\label{vc:vic:eq:absolute-family}
+ R(p\pi)_!\varphi_F\mathbb Q\simeq\mathcal V[-6](-3).
+\end{equation}
+
+Indeed $f$ is finite, and proper base change to its finite
+fibers shows that its higher constructible direct images
+vanish. Equation~\eqref{vc:vic:eq:dimensional-reduction} then
+gives \eqref{vc:vic:eq:absolute-family}.
+This uses the absolute potential with its $h$ derivative.
+It asserts no arbitrary base-change identity for unintegrated
+vanishing cycles. The fixed-$h$ perverse coefficients have
+the separate normalization in \eqref{vc:vic:eq:triangle-integral}.
+
+The coherent family and the constructible family therefore
+have distinct defects. Monic reduction of the first two
+Koszul equations gives
+\[
+ A_h=\mathbb C[[h]][x,y]/(x(x+h),y(y+h))
+            \otimes\Lambda(\eta),\qquad d\eta=xy.
+\]
+Multiplication by $xy$ on the basis $1,x,y,xy$ has sole
+nonzero row $(1,-h,-h,h^2)$. Its unit entry gives free
+cohomology of rank three in each of degrees $0,-1$.
+
+At zero it is the nonformal algebra of
+Theorem~\ref{ei:gio:thm:triangle-minimal}.
+Meanwhile the constructible coefficient has the rank-two
+specialization defect \eqref{vc:vic:eq:parameter-cycles}.
+These statements coexist because their coefficient functors
+retain different data.
+
+There is a concrete evaluation map between the coherent
+degree-zero ring and its branch normalization. For
+$R=\mathbb C[[h]]$, evaluate the basis $1,x,y$ at
+$(0,0),(-h,0),(0,-h)$. The resulting matrix is
+\begin{equation}\label{vc:vic:eq:coherent-evaluation}
+ E_h=\begin{pmatrix}1&0&0\\1&-h&0\\1&0&-h\end{pmatrix},
+ \qquad \det E_h=h^2.
+\end{equation}
+It is injective over $R$, and its image consists exactly of
+triples whose pairwise differences are divisible by $h$.
+Indeed subtracting the first row from the other two makes
+the matrix $\operatorname{diag}(1,-h,-h)$.
+
+Thus its cokernel is $(R/(h))^2$, and its specialization
+has rank one. After complexifying the rational stalks,
+the surviving diagonal is the one in
+\eqref{vc:vic:eq:specialization}. This compares the displayed
+evaluation maps. It does not identify coherent and
+constructible coefficient functors or their higher products.
+
+Near a nonzero two-torsion displacement, the fourth elliptic
+tree branch meets the last divisor in a simple isolated point,
+disjoint from the three persistent branches.
+Its constructible contribution is an actual parameter-supported
+skyscraper. The corresponding coherent local complex is
+$[\mathcal O\xrightarrow{v}\mathcal O]$, where $v$ is a
+parameter times a unit. Its extra negative derived-fiber
+class comes from Tor. This isolated contribution differs
+from the collision of the three persistent branches at zero.
+
+\section{The compact coefficient comparison}
+\label{vc:sec:compact}
+
+The surface Hall theory supplies an independent comparison
+source. For a projective K3 surface $S$, let
+$\mathfrak M_S(\gamma)$ be the stack of coherent sheaves
+of Mukai vector $\gamma$. Write $v_\gamma$ for its
+virtual dimension. Borel--Moore homology is defined by
+the dualizing complex, with proper direct image as its
+covariant operation.
+
+The shifted rational groups
+\[
+ H_{S,n}(\gamma)
+ =H^{\mathrm{BM}}_{-n+v_\gamma}
+       (\mathfrak M_S(\gamma);\mathbb Q)
+\]
+carry the Hall multiplication and the cocommutative
+coproduct constructed by Davison--Hennecart--Kinjo--Schiffmann--Vasserot.
+
+The coproduct takes values in the product
+completion over charge decompositions, while multiplication
+uses the locally finite part. Let $\chi(\gamma_1,\gamma_2)$
+be the Euler pairing, the alternating dimension of the
+surface Ext groups. The charge braiding includes
+$(-1)^{\chi(\gamma_1,\gamma_2)}$, together with the
+cochain Koszul sign. The primitives for this coproduct
+are their affinized BPS Lie algebra.\footnote{
+B.~Davison, L.~Hennecart, T.~Kinjo, O.~Schiffmann and
+E.~Vasserot, \emph{Hecke operators on symplectic surfaces
+and $\chi$-independence}.
+\href{https://arxiv.org/abs/2607.01355v1}{arXiv:2607.01355v1},
+equation~(4.1), Section~6.1, Proposition~6.4,
+Corollary~6.5 and Definition~6.6.}
+
+Relative dimensional reduction also exists for perverse
+pullbacks along locally finitely presented geometric
+morphisms of derived Artin stacks, with classical base
+locally of finite type.\footnote{A.~A.~Khan, T.~Kinjo,
+H.~Park and P.~Safronov, \emph{Period sheaves via perverse
+pullbacks}.
+\href{https://arxiv.org/abs/2510.18610v1}{arXiv:2510.18610v1},
+Theorem~4.1. The dimension is the relative virtual dimension
+of the derived source.}
+For a derived zero locus of rank $r$ on a smooth
+$m$-dimensional base, this dimension is $m-r$.
+It agrees with the shift in
+\eqref{vc:vic:eq:triangle-integral} for $m=2,r=3$.
+
+An application to a compact translation quotient must
+identify its coefficient and extension maps with those
+in the theorem. An Ext-quiver comparison must also
+intertwine the surface coproduct before any primitive
+identification follows.
+
+\begin{question}\label{vc:vic:qn:compact-comparison}
+For the common-torsor extension geometry of sheaves on
+$S\times E_{\mathrm{geom}}$, construct the reduced oriented
+critical coefficient functor and its maps on extension
+correspondences. Give the map to a spectral base.
+Specify its recipient: a coherent incidence algebra,
+an unintegrated vanishing-cycle coefficient, its
+constructible reduction, or an independently defined
+state complex.
+
+Can this comparison preserve the common translation torsor,
+relative empty object, orientations, supports and every
+flag composition? Determine which higher products,
+monodromy summands and specialization maps survive it.
+Construct its marked state and compare compact reduced
+integration with the selected spectral trace.
+Finally, identify the geometric modular line and section
+required by the Igusa denominator.
+\end{question}

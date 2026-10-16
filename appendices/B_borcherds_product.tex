@@ -1,0 +1,789 @@
+\section{Jacobi coefficients and automorphic products}
+\label{app:borcherds-product-expansion}
+
+The product is determined by its Jacobi input, coefficient cone and
+cusp normalization.  This appendix gives the explicit calculations
+used in Chapters~\ref{ch:view1-automorphic} and
+\ref{ch:singular-theta-lift}.  It then places the Igusa form in the
+eight-form classification of diagonal-divisor forms, keeping the
+Jacobi index, congruence level and character of each form.
+
+\subsection{The Fourier coefficients of
+\texorpdfstring{\(\phi_{0,1}\)}{phi01}}
+
+Use \(q=e^{2\pi i\tau}\), \(r=e^{2\pi iz}\) and
+\[
+ \phi_{0,1}
+ =4\sum_{a=2}^4\frac{\theta_a(\tau,z)^2}{\theta_a(\tau,0)^2}
+ =\sum_{n\geq0,\ell\in\Z}f(n,\ell)q^nr^\ell.
+\]
+The genus-one theta series are those in
+Chapter~\ref{ch:view1-automorphic}.
+Their initial terms are
+\[
+\begin{aligned}
+ q^{-1/8}\theta_2(\tau,z)
+ &=r^{1/2}+r^{-1/2}
+   +q(r^{3/2}+r^{-3/2})+O(q^3),\\
+ \theta_3(\tau,z)
+ &=1+q^{1/2}(r+r^{-1})+q^2(r^2+r^{-2})+O(q^{9/2}),\\
+ \theta_4(\tau,z)
+ &=1-q^{1/2}(r+r^{-1})+q^2(r^2+r^{-2})+O(q^{9/2}).
+\end{aligned}
+\]
+The same expansions at \(r=1\) give the denominators.
+
+For the first quotient, cancellation of \(q^{1/4}\) leaves
+a denominator \(4(1+2q+q^2+O(q^3))\).
+Its inverse through \(q^2\) is
+\(\tfrac14(1-2q+3q^2)\).
+For the other two quotients the terms with odd powers of
+\(q^{1/2}\) cancel in their sum.
+
+Put \(R_j=r^j+r^{-j}\).
+Expansion gives
+\[
+\begin{array}{c|cc}
+ &4\theta_2(\tau,z)^2/\theta_2(\tau,0)^2&
+ 4\theta_3(\tau,z)^2/\theta_3(\tau,0)^2+
+ 4\theta_4(\tau,z)^2/\theta_4(\tau,0)^2\\ \hline
+ q^0&R_1+2&8\\
+ q^1&2R_2-4&8R_2-64R_1+112\\
+ q^2&R_3-4R_2-R_1+8&112R_2-512R_1+800
+\end{array}
+\]
+and hence
+\[
+ \phi_{0,1}
+ =R_1+10+q(10R_2-64R_1+108)
+       +q^2(R_3+108R_2-513R_1+808)+O(q^3).
+\]
+Equivalently,
+\[
+\begin{array}{c|rrrrrrr}
+ &\ell=-3&-2&-1&0&1&2&3\\ \hline
+ n=0&0&0&1&10&1&0&0\\
+ n=1&0&10&-64&108&-64&10&0\\
+ n=2&1&108&-513&808&-513&108&1
+\end{array}
+\]
+The first row fixes the Borcherds weight and divisor.
+The next rows determine the first imaginary-root exponents.
+
+The elliptic transformation law gives
+\[
+ f(n,\ell)=f(n+a\ell+a^2,\ell+2a),\qquad
+ f(n,\ell)=f(n,-\ell).
+\]
+Reducing \(\ell\) to \(0\) or \(1\) shows that \(f(n,\ell)\)
+depends only on \(4n-\ell^2\), and that it vanishes for
+\(4n-\ell^2<-1\).
+In particular,
+\[
+\begin{aligned}
+ f(0,0)&=f(1,\pm2)=10,&
+ f(1,0)&=f(2,\pm2)=108,\\
+ f(0,\pm1)&=f(2,\pm3)=1,&
+ f(1,\pm3)&=0.
+\end{aligned}
+\]
+In the theta decomposition
+\(\phi_{0,1}=h_0\theta_{1,0}+h_1\theta_{1,1}\),
+the functions \(h_0,h_1\) depend on \(\tau\) alone:
+\[
+ h_0=10+108q+808q^2+\cdots,\qquad
+ h_1=q^{-1/4}(1-64q-513q^2+\cdots).
+\]
+The negative numbers are Euler superdimensions in the product
+interpretation.  They do not determine the separate parity dimensions
+of an arbitrary coefficient complex.
+
+\subsection{The active cone and the simple walls}
+
+For
+\(Z=\bigl(\begin{smallmatrix}z_1&z_2\\z_2&z_3\end{smallmatrix}\bigr)\),
+write \(q=e^{2\pi iz_1}\), \(r=e^{2\pi iz_2}\),
+\(s=e^{2\pi iz_3}\).  The ordering convention is
+\[
+\begin{split}
+ \Gamma_{\mathrm{eff}}={}&
+ \{(n,\ell,m):m>0,\ n\geq0\}\\
+ &{}\cup\{(n,\ell,0):n>0\}
+ \cup\{(0,\ell,0):\ell<0\}.
+\end{split}
+\]
+The unrestricted coordinate \(\ell\) is integral in each sector.
+These sectors form a semigroup under addition.
+Only indices in
+\[
+ \Gamma_{\mathrm{act}}
+ =\{(n,\ell,m)\in\Gamma_{\mathrm{eff}}:f(nm,\ell)\ne0\}
+\]
+contribute nontrivial factors.
+
+In the basis \((f_2,f_3,f_{-2})\), fix
+\((f_2,f_{-2})=-1\), \(f_3^2=2\), with all other pairings zero.
+The product-root map and its norm are
+\[
+ \alpha(n,\ell,m)=2nf_2-\ell f_3+2mf_{-2},\qquad
+ \alpha(n,\ell,m)^2=2\ell^2-8nm.
+\]
+For
+\(\delta_1=2f_2-f_3\), \(\delta_2=2f_{-2}-f_3\),
+\(\delta_3=f_3\), this becomes
+\[
+ \alpha(n,\ell,m)
+ =n\delta_1+m\delta_2+(n+m-\ell)\delta_3.
+\]
+
+The support inequality \(\ell^2\leq4nm+1\) implies
+\(n+m-\ell\geq0\) at every active index with \(n+m>0\).
+The remaining active index is \((0,-1,0)\).
+Thus the total root height
+\[
+ h=2(n+m)-\ell
+\]
+is positive on every factor, and only finitely many factors occur
+below a fixed height.  The associated completed ring is
+\(\Z[[qr,sr,r^{-1}]]\).
+The larger ordering semigroup itself does not have finite
+decomposition sets.
+
+\begin{proposition}[Images of the simple type-II walls]
+\label{prop:type-ii-wall-images}
+The inverse images of the simple roots are
+\[
+ \gamma_{\mathrm{wall}}(\delta_1)=(1,1,0),\qquad
+ \gamma_{\mathrm{wall}}(\delta_2)=(0,1,1),\qquad
+ \gamma_{\mathrm{wall}}(\delta_3)=(0,-1,0).
+\]
+Their product exponents are all \(1\).
+\end{proposition}
+
+\begin{proof}
+The coefficients in the simple-root basis are
+\((n,m,n+m-\ell)\).
+Setting these successively equal to \((1,0,0)\), \((0,1,0)\)
+and \((0,0,1)\) gives the three triples.
+Their exponents are \(f(0,1)\), \(f(0,1)\) and \(f(0,-1)\),
+respectively.
+\end{proof}
+
+Some further product degrees illustrate the distinction between a
+root norm and its signed multiplicity:
+\[
+\begin{array}{c|r|r}
+ (n,\ell,m)&\alpha(n,\ell,m)^2&f(nm,\ell)\\ \hline
+ (1,1,0)&2&1\\
+ (0,1,1)&2&1\\
+ (0,-1,0)&2&1\\
+ (0,0,m),\ m\geq1&0&10\\
+ (1,0,1)&-8&108\\
+ (1,1,1)&-6&-64\\
+ (1,2,1)&0&10\\
+ (1,3,1)&10&0\\
+ (2,1,1)&-14&-513\\
+ (1,2,2)&-8&108
+\end{array}
+\]
+The inactive row \((1,3,1)\) is allowed by the ordering
+convention but contributes no factor.
+The active set need not itself be an additive monoid.
+Its containment in the positive simple-root monoid is what makes
+the product and its logarithm well-defined.
+
+\subsection{The product and its theta phase}
+
+\begin{theorem}[Borcherds--Gritsenko--Nikulin product]
+\label{thm:borcherds-product-delta5}
+In the theta convention
+\[
+ \nu_{a,b}(Z)=
+ \sum_{u\in\Z^2}e^{\pi i((u+a/2)^tZ(u+a/2)+b^tu)},\qquad
+ \Delta_5=\prod_{a^tb\ \mathrm{even}}\nu_{a,b},
+\]
+one has
+\[
+ \Delta_5(Z)
+ =64(qrs)^{1/2}
+ \prod_{\Gamma_{\mathrm{eff}}}
+                (1-q^nr^\ell s^m)^{f(nm,\ell)}.
+\]
+The product is a formal total-height expansion and an absolutely
+convergent analytic expansion sufficiently near the standard cusp in
+the type-II chamber.  Its continuation is the holomorphic
+weight-five cusp form with Maass character.
+\end{theorem}
+
+\begin{proof}
+The Jacobi product theorem applies to \(\phi_{0,1}\)
+\cite[Theorem 2.1 and Example 2.4]{GNII}.
+The classical product identification, with the theta normalization
+in the statement, is \cite[Theorem 4.1]{GN}.
+The active-cone argument above gives the formal completion.
+The six nonconstant theta factors have leading coefficients
+\[
+ 2q^{1/8},\ 2q^{1/8},\
+ 2s^{1/8},\ 2s^{1/8},\
+ 2q^{1/8}s^{1/8}(r^{1/4}+r^{-1/4}),\
+ 2q^{1/8}s^{1/8}(r^{1/4}-r^{-1/4}).
+\]
+Together with the other four leading constants, they give
+\(64q^{1/2}s^{1/2}(r^{1/2}-r^{-1/2})\).
+This fixes the coefficient \(64\) and its sign.
+\end{proof}
+
+The monic form is \(D_5=\Delta_5/64\).
+If theta characteristics are instead defined with phase
+\(b^t(u+a/2)\), the product of the ten constants is
+\(-\Delta_5\).  The square and the divisor are unchanged.
+The sign of the square-root section is fixed only after this phase
+convention is specified.
+
+For analytic convergence, the chamber inequalities are
+\[
+ y_2<0,\qquad y_1+y_2>0,\qquad y_3+y_2>0,
+ \qquad y_j=\Imag z_j.
+\]
+The product theorem applies sufficiently far toward the cusp within
+this chamber.  In particular it applies on a neighborhood of
+\((y_1,y_2,y_3)=(T,-T/2,T)\) for large \(T\).
+The frequently used ordering
+\(0<|s|\ll|q|\ll|r|^{-1}\ll1\) selects a further subregion.
+Its interpretation does not replace the support or convergence
+hypotheses.
+
+\subsection{The coefficient 93}
+
+The leading coefficient of \(\Delta_5\) and the first interior
+coefficient of its normalized product are different quantities.
+Put
+\[
+ P(q,r,s)=\frac{D_5}{(qrs)^{1/2}}.
+\]
+Its constant coefficient in \(q,s\) is \(1-r^{-1}\).
+
+To compute the coefficient of \(qs\), only the factors of
+\(q\)-degree and \(s\)-degree at most one are needed.
+Let \(A=r+10+r^{-1}\).  The boundary factors give
+\((1-qA)(1-sA)\) to these degrees.  The mixed factors give
+\[
+ 1-qs\bigl(10(r^2+r^{-2})-64(r+r^{-1})+108\bigr).
+\]
+Therefore
+\[
+ [qs]P=(1-r^{-1})
+ \bigl(-9(r^2+r^{-2})+84(r+r^{-1})-6\bigr),
+ \qquad [qrs]P=93.
+\]
+
+The factor \((1-qrs)^{-64}\) contributes \(64\) to this
+coefficient.  The other factors contribute \(29\).
+
+The same calculation is particularly transparent in root variables
+\(x_1=qr\), \(x_2=sr\), \(x_3=r^{-1}\):
+\[
+ P=
+ \prod_{i=1}^3(1-x_i)
+ \prod_{i<j}(1-10x_ix_j)
+ (1+64x_1x_2x_3)
+ \pmod{(x_1^2,x_2^2,x_3^2)}.
+\]
+Thus
+\[
+ [x_ix_j]P=-9,\qquad
+ [x_1x_2x_3]P=-1+30+64=93.
+\]
+
+The standard minimal Gritsenko--Nikulin presentation assigns nine
+even imaginary simple generators to each primitive null pair.
+At the first interior root
+\(\beta=\delta_1+\delta_2+\delta_3\), the coefficient \(93\)
+gives \(93\) odd imaginary simple generators.
+
+The earlier even generators contribute \(29\) even vectors.
+Two are multilinear brackets of the real generators.
+The other \(3\cdot9\) bracket a null simple generator with the
+omitted real generator.  The first real Serre relations have
+height four.
+Consequently the whole root space has parity dimensions
+\[
+ \dim\autcor_\beta^{\bar0}=29,\qquad
+ \dim\autcor_\beta^{\bar1}=93,\qquad
+ \operatorname{sdim}\autcor_\beta=-64.
+\]
+
+This uses the defining Lie presentation, not just the signed product
+exponent.  Its construction is given in
+Chapter~\ref{ch:view2-bkm}.
+
+In Gritsenko--Nikulin's Fourier notation
+\(e^{\pi i(nz_1+\ell z_2+mz_3)}\), the coefficient with
+\((n,\ell,m)=(1,1,1)\) is \(64\)
+\cite[(1.6)--(1.7)]{GN}.
+In the present \(q,r,s\) notation that is
+\([q^{1/2}r^{1/2}s^{1/2}]\Delta_5\).
+It is consistent with the coefficient \(93\) of \(P\).
+
+\subsection{Fourier--Jacobi and separating factors}
+
+Factoring all \(m=0\) terms gives
+\[
+ D_5=s^{1/2}b(q,r)
+ \prod_{m>0,\ n\geq0,\ \ell\in\Z}
+                (1-q^nr^\ell s^m)^{f(nm,\ell)},
+\]
+where
+\[
+ b(q,r)=q^{1/2}(r^{1/2}-r^{-1/2})
+ \prod_{a\geq1}(1-q^a)^{10}(1-rq^a)(1-r^{-1}q^a)
+ =\eta(\tau)^9\vartheta(\tau,z).
+\]
+The odd Jacobi theta function \(\vartheta\) is normalized by this
+product and has first term \(q^{1/8}(r^{1/2}-r^{-1/2})\).
+The squared boundary factor is
+\[
+ \mathcal B(q,r)=b(q,r)^2
+ =q(r+r^{-1}-2)
+   \prod_{a\geq1}(1-q^a)^{20}(1-rq^a)^2(1-r^{-1}q^a)^2.
+\]
+These are the factors needed in the normalized half and full
+elliptic-index series.
+
+The separating limit is
+\[
+ D_5=
+ 2\pi iz_2\,\eta(z_1)^{12}\eta(z_3)^{12}+O(z_2^3).
+\]
+It follows by dividing out \(r^{1/2}-r^{-1/2}\), pairing the
+\(\ell\) and \(-\ell\) factors, and using
+\(\phi_{0,1}(\tau,0)=12\).
+The quotient is even in \(z_2\), which gives the stated cubic
+remainder.
+
+Squaring yields
+\[
+ \Xi=D_5^2
+ =(2\pi iz_2)^2\eta(z_1)^{24}\eta(z_3)^{24}+O(z_2^4).
+\]
+The product with leading coefficient one is \(\Xi\), the
+\(\chi_{10}\) of \cite{OPand,OB}.
+The theta square is \(\Delta_5^2=4096\,\Xi\).
+Accordingly the primitive reduced scalar series is
+\[
+ Z_{\mathrm{OP}}^X=-\Xi^{-1}=-4096\,\Delta_5^{-2}.
+\]
+The expansion prescriptions and primitive-class hypotheses are those
+of Chapter~\ref{ch:pentadic}.
+
+\subsection{The two denominator exponentials}
+
+\begin{lemma}[Two exponential normalizations]
+\label{lem:appB-doubling}
+For
+\(\zeta=z_3f_2+z_2f_3+z_1f_{-2}\),
+\[
+ q^nr^\ell s^m=e^{-\pi i(\alpha(n,\ell,m),\zeta)_L}.
+\]
+The denominator written with
+\(e^{-2\pi i(\alpha,\zeta)_L}\) is
+\[
+ \operatorname{den}(\autcor)(Z)=D_5(2Z)
+ =64^{-1}\Delta_5(2Z).
+\]
+\end{lemma}
+
+\begin{proof}
+The pairing is
+\((\alpha(n,\ell,m),\zeta)_L
+=-2(nz_1+\ell z_2+mz_3)\), proving the first formula.
+The Gritsenko--Nikulin denominator theorem uses the doubled
+exponential for each root and for
+\(\rho=f_2-\tfrac12f_3+f_{-2}\)
+\cite[\S3]{GN}.
+Substitution \(Z\mapsto2Z\) makes precisely this change.
+\end{proof}
+
+In these coordinates the additive denominator is
+\[
+ \sum_{w\in W^{(2)}(M_{II})}\det(w)
+ \left(e^{-2\pi i(w\rho,\zeta)_L}
+ -\sum_a m(a)e^{-2\pi i(w(\rho+a),\zeta)_L}\right).
+\]
+For a primitive isotropic ray \(a\), its coefficients are related by
+\[
+ 1-\sum_{t\geq1}m(ta)u^t
+ =\prod_{t\geq1}(1-u^t)^{\tau(ta)}.
+\]
+The numbers \(m(a)\) on negative-norm rays and \(\tau(ta)\)
+on null rays specify the imaginary simple-root data.
+They enter the Lie presentation in addition to the real-root
+Cartan matrix.
+
+The determinant signs in this alternating sum belong to the linear
+tube action.  On a chosen symplectic reflection lift,
+the weight-five factor \(j(g,Z)^5\) must also be included.
+Lemma~\ref{lem:view1-maass-multiplier-restriction} computes the
+resulting relation between the tube character \(\varepsilon_5\)
+and the Maass character \(\nu_5\).
+
+\subsection{The eight diagonal-divisor forms}
+
+For positive integers \(t,N\), let \(\Gamma_t(N)\) be the
+Hecke congruence subgroup of the paramodular group:
+\[
+ \Gamma_t(N)=
+ \left\{
+ \begin{pmatrix}
+ *&t*&*&*\\
+ *&*&*&t^{-1}*\\
+ N*&Nt*&*&*\\
+ Nt*&Nt*&t*&*
+ \end{pmatrix}\in\Sp_4(\Q):\text{each }*\in\Z
+ \right\}.
+\]
+In particular \(\Gamma_1(1)=\Sp_4(\Z)\), and
+\(\Gamma_1(N)=\Gamma_0^{(2)}(N)\).
+The integer \(t\) is the polarization type and the index of the
+weight-zero Jacobi input.
+The integer \(N\) is the congruence level.
+A diagonal-divisor form has precisely the
+\(\Gamma_t(N)\)-translates of \(z_2=0\) as its zero divisor,
+each with multiplicity one.
+
+Cl\'ery--Gritsenko classify eight such forms, up to scalar
+\cite[Theorem 1.4]{GC}.
+The table uses their names and the order of the character or
+multiplier on \(\Gamma_t(N)\):
+\[
+\begin{array}{c|c|c|c|c|c}
+ j&F_j&(t,N)&k_j&\operatorname{ord}(\nu_j)&c_j^{\mathrm{tot}}\\ \hline
+ 1&\Delta_5&(1,1)&5&2&10\\
+ 2&\Delta_2&(2,1)&2&4&4\\
+ 3&\Delta_1&(3,1)&1&6&2\\
+ 4&\Delta_{1/2}&(4,1)&\tfrac12&8&1\\
+ 5&\nabla_3&(1,2)&3&2&6\\
+ 6&\nabla_2&(1,3)&2&2&4\\
+ 7&\nabla_{3/2}&(1,4)&\tfrac32&4&3\\
+ 8&Q_1&(2,2)&1&4&2
+\end{array}
+\]
+The final column denotes the total constant coefficient entering
+the weight formula, so \(k_j=c_j^{\mathrm{tot}}/2\).
+Its meaning at congruence level is specified below.
+The monic convention for the first form is \(D_5\).
+Our symbol \(\Delta_5\) restores the factor \(64\).
+
+In this order the weights and total constants are
+\[
+ (5,2,1,\tfrac12,3,2,\tfrac32,1),\qquad
+ (10,4,2,1,6,4,3,2).
+\]
+If the pairs are instead ordered
+\[
+ (1,1),(2,1),(1,2),(3,1),(1,3),(4,1),(1,4),(2,2),
+\]
+the same columns read
+\[
+ (5,2,3,1,2,\tfrac12,\tfrac32,1),\qquad
+ (10,4,6,2,4,1,3,2).
+\]
+Keeping the parameter pair prevents an interchange of the
+paramodular and congruence families.
+
+\subsubsection{The first Fourier--Jacobi coefficients}
+With monic leading terms, the eight Jacobi coefficients are
+\[
+\begin{array}{c|c|c}
+ F&b_F(\tau,z)&\text{Jacobi-parabolic multiplier}\\ \hline
+ D_5&\eta(\tau)^9\vartheta(\tau,z)&v_\eta^{12}\times v_H\\
+ \Delta_2&\eta(\tau)^3\vartheta(\tau,z)&v_\eta^6\times v_H\\
+ \Delta_1&\eta(\tau)\vartheta(\tau,z)&v_\eta^4\times v_H\\
+ \Delta_{1/2}&\vartheta(\tau,z)&v_\eta^3\times v_H\\
+ \nabla_3&\eta(\tau)\eta(2\tau)^4\vartheta(\tau,z)&\chi_2^{(2)}\times v_H\\
+ \nabla_2&\eta(3\tau)^3\vartheta(\tau,z)&\chi_2^{(3)}\times v_H\\
+ \nabla_{3/2}&\dfrac{\eta(2\tau)\eta(4\tau)^2}{\eta(\tau)}
+                    \vartheta(\tau,z)&\chi_4^{(4)}\times v_H\\[5pt]
+ Q_1&\dfrac{\eta(2\tau)^2}{\eta(\tau)}
+                    \vartheta(\tau,z)&\chi_4^{(2)}\times v_H
+\end{array}
+\]
+These coefficients and their lifts are given in
+\cite[(13)--(19), \S3]{GC}.
+The symbol \(\chi_d^{(N)}\) denotes the order-\(d\) character
+or multiplier determined by the displayed seed on \(\Gamma_0(N)\).
+The first coefficient of the theta-normalized \(\Delta_5\) is
+\(64b_{D_5}\).
+
+For clarity, use Heisenberg elements
+\[
+ [\lambda,\mu;\kappa]=
+ \begin{pmatrix}
+ 1&0&0&\mu\\
+ \lambda&1&\mu&\kappa\\
+ 0&0&1&-\lambda\\
+ 0&0&0&1
+ \end{pmatrix},\qquad \lambda,\mu,\kappa\in\Z.
+\]
+Their character on the extended index-\(\tfrac12\) theta
+function \(\vartheta(\tau,z)e^{\pi i\sigma}\) is
+\[
+ v_H([\lambda,\mu;\kappa])
+ =(-1)^{\lambda+\mu+\lambda\mu+\kappa}.
+\]
+Indeed \(z\) changes by \(\lambda\tau+\mu\), and \(\sigma\)
+changes by
+\(\lambda^2\tau+2\lambda z+\lambda\mu+\kappa\).
+The odd theta transformation cancels the first two terms in the
+latter exponential and supplies \((-1)^{\lambda+\mu}\).
+This also specifies the convention for every \(v_H\) in the table.
+
+\subsubsection{Products at paramodular level}
+For \(t=1,2,3,4\), the index-\(t\) weak Jacobi inputs have
+constant rows
+\[
+ r+10+r^{-1},\quad r+4+r^{-1},\quad
+ r+2+r^{-1},\quad r+1+r^{-1},
+\]
+respectively.
+
+Besides \(\phi_{0,1}\), they can be written as
+\[
+\begin{aligned}
+ \phi_{0,4}(\tau,z)&=\frac{\vartheta(\tau,3z)}{\vartheta(\tau,z)},\\
+ \phi_{0,3}(\tau,z)&=
+       \left(\frac{\vartheta(\tau,2z)}{\vartheta(\tau,z)}\right)^2,\\
+ \phi_{0,2}(\tau,z)&=
+ \frac{\vartheta(\tau,2z)^4}
+      {\vartheta(\tau,z)^3\vartheta(\tau,3z)}
+ +\frac{\vartheta(\tau,4z)\vartheta(\tau,z)}
+      {\vartheta(\tau,2z)\vartheta(\tau,3z)}.
+\end{aligned}
+\]
+The last expression follows by substituting the first two into
+\[
+ \phi_{0,2}\phi_{0,4}-\phi_{0,3}^2
+ =\frac{\vartheta(\tau,4z)}{\vartheta(\tau,2z)}.
+\]
+The apparent poles cancel in these weak Jacobi forms
+\cite[Lemma 2.5 and (2.10), (2.24)]{GNII}.
+Their initial coefficients satisfy
+\[
+ \phi_{0,2}=r+4+r^{-1}
+ +q\bigl(r^3+r^{-3}-8(r^2+r^{-2})-(r+r^{-1})+16\bigr)+O(q^2).
+\]
+
+Write
+\(\phi_{0,t}=\sum f_t(n,\ell)q^nr^\ell\).
+Their monic products are
+\[
+\begin{aligned}
+ \Delta_2&=q^{1/4}r^{1/2}s^{1/2}
+       \prod_{(n,\ell,m)>0}(1-q^nr^\ell s^{2m})^{f_2(nm,\ell)},\\
+ \Delta_1&=q^{1/6}r^{1/2}s^{1/2}
+       \prod_{(n,\ell,m)>0}(1-q^nr^\ell s^{3m})^{f_3(nm,\ell)},\\
+ \Delta_{1/2}&=q^{1/8}r^{1/2}s^{1/2}
+       \prod_{(n,\ell,m)>0}(1-q^nr^\ell s^{4m})^{f_4(nm,\ell)}.
+\end{aligned}
+\]
+Here \((n,\ell,m)>0\) is the cusp ordering, with zero exponents
+omitted.  These identities are
+\cite[(2.11), (2.20)--(2.21)]{GNII}.
+
+They extend to \(\Gamma_t^+\), generated by \(\Gamma_t\)
+and the Fricke involution, with the specified multipliers.
+The projective Fricke action is
+\[
+ \begin{pmatrix}z_1&z_2\\z_2&z_3\end{pmatrix}
+ \longmapsto
+ \begin{pmatrix}tz_3&z_2\\z_2&z_1/t\end{pmatrix}.
+\]
+
+\subsubsection{The constant terms at all cusps}
+Let \(\phi\in J_{0,t}^{!}(\Gamma_0(N))\) be holomorphic on
+\(\mathbb H_1\times\C\) and meromorphic at the cusps.
+Choose a scaling matrix \(M_{f/e}\) for each cusp \(f/e\),
+with \(e\mid N\).
+Put
+\[
+ h_e=\frac{N}{\gcd(e^2,N)},\qquad N_e=\frac Ne,\qquad
+ \phi|_{0,t}M_{f/e}
+ =\sum_{n\in h_e^{-1}\Z,\ \ell\in\Z}
+             c_{f/e}(n,\ell)q^nr^\ell.
+\]
+The width is \(h_e\).
+
+Assume at each cusp that
+\[
+ \frac{h_e}{N_e}c_{f/e}(u,\ell)\in\Z
+ \qquad\text{whenever }4tu-\ell^2\leq0.
+\]
+
+Cl\'ery--Gritsenko's product theorem \cite[Theorem 3.1]{GC}
+then gives a meromorphic modular form on
+\(\Gamma_t(N)^+=\langle\Gamma_t(N),V_t\rangle\), where
+\(V_t\) is the Fricke involution above.
+Its weight is
+\[
+ k=\frac12c^{\mathrm{tot}},\qquad
+ c^{\mathrm{tot}}
+ =\sum_{f/e}\frac{h_e}{N_e}\,c_{f/e}(0,0).
+\]
+Its factors are
+\[
+ B_\phi=q^Ar^Bs^C
+ \prod_{f/e}\prod_{(n,\ell,m)>0}
+ \left(1-(q^nr^\ell s^{tm})^{N_e}\right)^{
+               (h_e/N_e)c_{f/e}(nm,\ell)}.
+\]
+For this possibly polar input, \((n,\ell,m)>0\) means
+\(m>0\) with \(n,\ell\in\Z\), or \(m=0,n>0\), or
+\(m=n=0,\ell<0\).  For a weak input the nonzero factors have
+\(n\geq0\).
+
+The cusp prefactors are
+\[
+ A=\frac1{24}\sum_{f/e,\ell}h_e c_{f/e}(0,\ell),\quad
+ B=\frac12\sum_{f/e,\ell>0}\ell h_e c_{f/e}(0,\ell),\quad
+ C=\frac14\sum_{f/e,\ell}\ell^2 h_e c_{f/e}(0,\ell).
+\]
+The singular coefficients at all cusps specify the divisor.
+The complete cusp expansions also determine the multiplier and weight.
+
+For the four congruence forms, the constant contributions are
+\[
+\begin{array}{c|c|c|c}
+ F&\text{cusps}&c_{f/e}(0,0)&c^{\mathrm{tot}}\\ \hline
+ \nabla_3&\infty,\ 0&2,\ 4&2+4=6\\
+ \nabla_2&\infty,\ 0&1,\ 3&1+3=4\\
+ \nabla_{3/2}&\infty,\ 1/2,\ 0&0,\ 2,\ 2&0+\tfrac12(2)+2=3\\
+ Q_1&\infty,\ 0&0,\ 2&0+2=2
+\end{array}
+\]
+These are the inputs of \cite[\S3]{GC}.
+In particular \(\nabla_3\) has weight \(3\) although its
+constant coefficient at infinity is \(2\).
+The single infinity coefficient suffices when \(N=1\), but does
+not give the congruence weight.
+
+\subsubsection{Half-integral automorphy}
+The orders \(8\) and \(4\) in the table are orders of multiplier
+systems.  They do not specify the degree of a covering space.
+For a half-integral weight, one can choose holomorphic square roots
+of \(j(g,Z)=\det(CZ+D)\) and retain their multiplication cocycle
+in the multiplier.  Equivalently, use the group
+\[
+ \widetilde\Gamma
+ =\{(g,\varphi):g\in\Gamma,\ \varphi(Z)^2=j(g,Z)\},
+\]
+with product
+\((g,\varphi)(h,\psi)=(gh,(\varphi\circ h)\psi)\).
+On this cover the half-integral automorphy factor is single-valued.
+
+This is an output group acting on Siegel space.
+The metaplectic input group \(\Mp_2(\Z)\) acts on the Jacobi
+theta components and must be specified separately.
+
+\subsection{Denominator algebras and CHL parameters}
+
+The first four paramodular forms have the
+Gritsenko--Nikulin denominator presentations
+\cite[\S5.1.1]{GNII}.
+The other four forms also occur with specified root data in
+Govindarajan's twisted-CHL constructions
+\cite[\S4 and Table 3]{Gov11BKM}.
+For CHL orbifold orders one, two and three, the dyon interpretation
+is developed in \cite{CD09BKM}.
+
+To relate the two parameter systems, write \(N_{\mathrm{orb}}\)
+for the CHL orbifold order and \(M_{\mathrm{tw}}\) for the
+twisting order.  For the entries with
+\(N_{\mathrm{orb}}\leq M_{\mathrm{tw}}\), the catalog pair is
+\[
+ t=\gcd(N_{\mathrm{orb}},M_{\mathrm{tw}}),\qquad
+ N=\frac{M_{\mathrm{tw}}}{t}.
+\]
+The dictionary is
+\[
+\begin{array}{c|c|c}
+ F&(N_{\mathrm{orb}},M_{\mathrm{tw}})
+       &\text{number of real simple roots}\\ \hline
+ \Delta_5&(1,1)&3\\
+ \Delta_2&(2,2)&4\\
+ \Delta_1&(3,3)&6\\
+ \Delta_{1/2}&(4,4)&\text{countably infinite}\\
+ \nabla_3&(1,2)&3\\
+ \nabla_2&(1,3)&3\\
+ \nabla_{3/2}&(1,4)&3\\
+ Q_1&(2,4)&4
+\end{array}
+\]
+The root lattice has rank three even when the set of real simple
+roots is larger.  At fixed \(N_{\mathrm{orb}}\) the Weyl
+vector and real-root system agree, while the imaginary
+multiplicities vary with \(M_{\mathrm{tw}}\).
+
+The forms at exchanged CHL parameters are related by a change of
+cusp and can have different denominator chambers
+\cite[(3.12), \S4]{Gov11BKM}.
+The Weyl chamber, parity prescription and additive denominator must
+therefore accompany the product.
+
+The half-weight \(3/2\) associated with the cyclic order-four CHL
+eta product is consistent with the preceding table.
+For cyclic orders \(1,2,3,4,6\), let \(g_N\) be the eta products
+\[
+\begin{array}{c|l|c}
+ N&g_N(\tau)&\operatorname{wt}(g_N)\\ \hline
+ 1&\eta(\tau)^{24}&12\\
+ 2&\eta(\tau)^8\eta(2\tau)^8&8\\
+ 3&\eta(\tau)^6\eta(3\tau)^6&6\\
+ 4&\eta(\tau)^4\eta(2\tau)^2\eta(4\tau)^4&5\\
+ 6&\eta(\tau)^2\eta(2\tau)^2\eta(3\tau)^2\eta(6\tau)^2&4
+\end{array}
+\]
+Multiplication by the Jacobi factor \(\vartheta^2/\eta^6\)
+subtracts two from the weight, as in the CHL lifting prescription
+\cite[Table 1 and \S3.2]{GK10Composite}.
+Half of the resulting seed weights is
+\[
+ 5,\quad3,\quad2,\quad\frac32,\quad1.
+\]
+This eta-weight calculation does not identify all these parameters
+with the pairs \((t,N)\), nor does it construct a compact Hall
+source for any row.
+
+\subsection{The weight and the geometric source}
+
+For each form in the catalog, define
+\(\kappa_{\mathrm{BKM}}(F_j)=\operatorname{wt}(F_j)\).
+Then the precise common weight identity is
+\[
+ \kappa_{\mathrm{BKM}}(F_j)=\frac{c_j^{\mathrm{tot}}}{2}.
+\]
+For the Igusa input, \(c_1^{\mathrm{tot}}=f(0,0)=10\).
+
+The number \(5\) is a coordinate determined by the automorphic
+construction.
+The categorical and Hodge quantities attached to \(S\times E\)
+come from other constructions.
+So do the rank \(3\) of the root-degree lattice,
+\(24=e(S)\), and \(2=\chi(\mathcal O_S)\).
+A normalized Heisenberg trace may introduce another comparison
+invariant.  Its identification with a lattice rank requires the
+comparison data stated in Chapter~\ref{ch:pentadic}.
+The numerical equality \(3+2=5\) does not replace the product
+weight formula.
+
+The catalog supplies automorphic lines, sections and, with the
+cited root presentations, denominator algebras.
+The primitive reduced \(S\times E\) counting theorem supplies the
+scalar \(-\Xi^{-1}\) for the first form.
+Constructing a compact source with the appropriate coefficient
+complexes, Hall operations, reduction, orientation and state is an
+additional requirement.  The conditional Pfaffian criteria in
+Appendix~\ref{app:obstruction-discharges} retain those data.
+The comparison must preserve the complete boundary factor, the
+character and the divisor multiplicities.
+It must also preserve the exponential convention and the
+normalized section.

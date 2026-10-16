@@ -1,0 +1,360 @@
+\subsection{The source bar coalgebra and the compact comparison}
+\label{subsec:koszul-source}
+
+The hybrid correspondences must first define an algebra in a specified
+coefficient category. Only then does its associative bar have a
+meaning. We use the unitalized Ran category
+$(\mathcal R_E^+,\star,K)$ of Section~\ref{sec:bkm-ran-envelope},
+with right differential-module coefficients, cross-block chiral
+convolution and empty unit $K$. A realization of constructible Hall
+coefficients in this category is additional geometric data.
+It must carry the products, orientation transport and higher collision
+coherences, including wrapped and mixed configurations.
+
+Write $V_E=\mathsf{Den}_{\Delta_5,E}$ for the BD current envelope
+and $\mathcal A_{\Delta,E}=U_\star(\iota_*V_E)$ for its associative
+Ran envelope. The associative comparison in this subsection has
+$\mathcal A_{\Delta,E}$ as its target. A comparison directly with
+$V_E$ as a BD chiral algebra is a different statement and needs the
+corresponding chiral functor. The bar--cobar equivalence in
+Proposition~\ref{prop:bkm-ran-bar-envelope} does not identify these
+two recipients.
+
+\begin{lemma}[Source and target bars]
+\label{lem:source-target-koszul-separation}
+For an augmented associative target $T$ with $T_\varnothing=\C$,
+the counit $\Omega BT\to T$ is an internal equivalence in the
+specified Ran category. It constructs neither a compact-source
+algebra nor a morphism from such an algebra to $T$.
+\end{lemma}
+\begin{proof}
+The counit depends functorially on the multiplication and
+augmentation of $T$. Its construction has no input consisting of
+compact correspondences, a realization of their coefficients,
+orientations or a source-to-target morphism. In particular,
+$C_X:=BT$ would define a coalgebra from $T$, without identifying it
+with a coalgebra obtained from the compact geometry.
+\end{proof}
+
+\subsubsection*{Coefficient realization and the source coalgebra}
+
+At a stage $R$, denote the realized hybrid algebra by $A_{X,R}$.
+The index may bound geometric complexity or configuration arity.
+It does not by itself specify a root-height quotient. Whenever a
+target stage $T_R$ is used, it must be an actual augmented
+associative object with supplied transition maps. A projection to
+symmetric positive and negative root degrees is not such an object,
+by Proposition~\ref{prop:bkm-positive-completion}. Identification
+of the limit of the $T_R$ with $\mathcal A_{\Delta,E}$ is a
+separate comparison.
+
+\begin{definition}[Chiral Koszul source datum]
+\label{def:chiral-koszul-source-datum}
+For fixed stability, support and stage data $(\sigma,S,R)$, a
+source datum $\mathfrak K^{\mathrm{Kos}}_{X,R}$ consists of the
+following objects and morphisms in $\mathcal R_E^+$.
+\begin{enumerate}
+\item A realization of
+$\mathcal F^{\mathrm{hyb}}_{X,\sigma,S,\leq R}$ as an augmented
+associative algebra $A_{X,R}$ with empty component $\C$.
+Its multiplication and all coherent collision operations come from
+the supplied hybrid correspondences and orientations.
+\item A coaugmented counital coassociative coalgebra $C_{X,R}$
+with empty component $\C$, differential $d_C$, coproduct
+$\Delta_R^{\mathrm{ch}}$ and an exhaustive filtration
+$F^{\mathrm{co}}_{R,\bullet}$. The reduced coproduct is locally
+nilpotent on each finite configuration and retained filtration
+piece. If a global finite bound on that stage is used, it is included
+in the datum.
+\item A morphism of coalgebras
+$b_{X,R}:C_{X,R}\to BA_{X,R}$ compatible with charge descent,
+coaugmentation, counit and the supplied geometric operations.
+Its cone is acyclic. The geometric construction of $C_{X,R}$
+and this comparison are specified on local, wrapped and mixed
+inputs, with all higher-colored collision coherences.
+\item Compatible transition morphisms on these objects. Their
+coherent diagrams include the reduced $E$-quotient and the
+normal-ordered charge homomorphism $\overline\Pi_X$.
+\end{enumerate}
+A source-to-target comparison additionally supplies an augmented
+associative morphism $\vartheta_R:A_{X,R}\to T_R$ and proves
+its cone acyclic. Define
+\[
+ \varepsilon^{\mathrm{src}}_{\mathrm{bar},R}
+ :=\varepsilon_{A_{X,R}}\circ\Omega b_{X,R}:
+ \Omega C_{X,R}\longrightarrow A_{X,R},
+ \qquad
+ \Theta_{\mathrm{Kos},R}
+ :=\vartheta_R\circ\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}.
+\]
+The symbols $B,\Omega$ in this datum always refer to $\star$ and $K$.
+\end{definition}
+
+The finite binary flag atlas supplies particular associativity
+and coproduct diagrams. It does not replace the higher-colored,
+unit, refinement and quotient coherences required by this
+definition. Nor does the projection-finite local sector provide the
+coefficient realization of wrapped inputs. A restriction to ordered
+words records the word-cut part of $C_{X,R}$. Comparison with the
+full Ran coalgebra must preserve every collision operation.
+
+The obstruction notation can retain these separate requirements:
+\[
+\begin{split}
+ \mathfrak O_{\mathrm{Kos},R}=
+ (&\mathfrak o^C_R,\mathfrak o^{\mathrm{fil}}_R,
+ \mathfrak o^{\mathrm{conil}}_R,\mathfrak o^{\Delta,\mathrm{ch}}_R,
+ \{\mathfrak o^{C,\mathrm{tr}}_{R'R}\},
+ H^\bullet\operatorname{Cone}b_{X,R},\mathfrak o^\Omega_R,\\
+ &\mathfrak o^{\mathrm{wrKos}}_R,\mathfrak o^{\mathrm{hyb}}_R,
+ \mathfrak o^\Pi_R,\mathfrak o^{\mathrm{sep}}_R,
+ \mathfrak o^{\Prim}_R).
+\end{split}
+\]
+Here the first entries mean the stated coalgebra, filtration and
+transition identities. $\mathfrak o^{\mathrm{wrKos}}_R$ includes
+the wrapped coefficient realization and its bar domain.
+The last entries require compatible charge descent, separation of
+source from target, and any specified ordinary primitive realization.
+An absent object or map is an unresolved construction, rather than
+a numerical value of this tuple.
+
+\begin{proposition}[Finite-length source bar]
+\label{prop:canonical-source-bar-coalgebra}
+Suppose the realized augmented algebra $A_{X,R}$ is supplied and
+its positive augmentation ideal $a_{X,R}$ has no nonzero retained
+$\star$-word of length greater than $N_R$. Then its normalized
+bar coalgebra is
+\[
+ C^{\mathrm{bar}}_{X,R}=BA_{X,R}
+ =K\oplus\bigoplus_{1\leq p\leq N_R}(sa_{X,R})^{\star p},
+\]
+with the internal and multiplication differentials. The suspension
+$s$ is the bar suspension. Multiplication has degree one after
+suspension. The coproduct is deconcatenation:
+\[
+ \Delta[x_1|\cdots|x_p]
+ =1\otimes[x_1|\cdots|x_p]+[x_1|\cdots|x_p]\otimes1
+  +\sum_{i=1}^{p-1}[x_1|\cdots|x_i]\otimes[x_{i+1}|\cdots|x_p].
+\]
+It is conilpotent and supplies a source-bar model with $b_{X,R}$
+the identity.
+
+Without a uniform $N_R$, the same construction is
+finite at each configuration by the positive arity bound.
+\end{proposition}
+\begin{proof}
+The normalized associative bar construction in this tensor category
+has the displayed terms. Associativity with its coherent form gives
+the square-zero bar differential. Cutting words gives a counital
+coassociative coproduct compatible with it. Each reduced cut lowers
+the available length, so more than $N_R$ nonempty blocks cannot
+occur.
+
+On a configuration $I$, positivity gives the bound $|I|$
+instead. These are coefficient-category statements. To identify
+the coproduct with geometric cutting correspondences requires the
+realization and coherence maps stipulated in the source datum.
+\end{proof}
+
+If all nonempty geometric colors have positive HN height, the
+bound on total HN height can imply $N_R\leq R$. That is a hypothesis
+on the retained geometric algebra, not a conclusion about the full
+two-sided root algebra. Additivity of $\overline\Pi_X$ ensures that
+a bar word, each cut and each multiplication term have the same
+descended Gram degree. This proves compatibility of gradings. It
+constructs neither the realization nor the comparison $\vartheta_R$.
+
+\begin{corollary}[The remaining source-to-target map]
+\label{cor:source-bar-remaining-cobar-obstruction}
+For a source datum in the specified Ran category,
+$\varepsilon^{\mathrm{src}}_{\mathrm{bar},R}$ is an equivalence.
+Hence $\Theta_{\mathrm{Kos},R}$ is an equivalence exactly when
+$\vartheta_R$ is. A bar construction in another coefficient category
+requires its own counit theorem before this conclusion applies.
+\end{corollary}
+\begin{proof}
+The coalgebra map $b_{X,R}$ is an equivalence by assumption.
+Apply the associative cobar and the bar--cobar counit of
+Proposition~\ref{prop:bkm-ran-bar-envelope}. The two-out-of-three
+property proves the assertion. A target-internal counit supplies
+no part of $\vartheta_R$.
+\end{proof}
+
+For a strict representative, the comparison equations include
+\[
+ d_T\vartheta_R=\vartheta_Rd_X,\quad
+ \vartheta_R\mu_X=\mu_T(\vartheta_R\star\vartheta_R),\quad
+ \vartheta_R\eta_X=\eta_T,\quad
+ \vartheta_R\rho^X_{R'R}=\rho^T_{R'R}\vartheta_{R'}.
+\]
+For coherent representatives, these equations are replaced by the
+specified coherent homotopies. In either case the full coefficient
+cone $\operatorname{Cone}\vartheta_R$ must be acyclic.
+The Lie--commutative chiral theorem of
+\cite[Theorems~5.1.1--5.2.1]{FrancisGaitsgoryCKD} does not supply
+this compact associative comparison. It enters the envelope
+construction at precisely the scope proved in
+Proposition~\ref{prop:bkm-ran-bar-envelope}.
+
+\subsubsection*{Compatibility with the geometric structures}
+
+\begin{definition}[Finite Koszul comparison datum]
+\label{def:finite-koszul-comparison-datum}
+A comparison datum $\mathfrak K^{\mathrm{cmp}}_{X,R}$ supplements
+the source datum by the following maps and commuting diagrams.
+\begin{enumerate}
+\item[\textup{(K0)}] The source counit and $\vartheta_R$ have
+acyclic cones. If finite filtrations are used to prove this, the
+associated-graded cone comparisons are acyclic at every retained
+coefficient and parity.
+\item[\textup{(K1)}] Every specified Weyl transport is intertwined
+by $\Theta_{\mathrm{Kos},R}$. A reflection may map between chambers
+or require a larger finite operation domain. Both domain and
+codomain are specified. In chain representatives the equation is
+$\Theta\tau_i^X-\tau_i^T\Theta=dH_i^W+H_i^Wd$.
+The $H_i^W$ carry the higher coherences for their defined
+compositions. No finite symmetric root set is assumed invariant
+under the whole Weyl group.
+\item[\textup{(K2)}] On the perfect complexes defining the geometric
+Pfaffian and determinant lines, a supplied line isomorphism
+intertwines orientation transport. Its type-II reflection sign is
+$\epsilon_o(s_{\delta_i})=\widetilde\nu_{\Delta_5}(s_{\delta_i})=-1$.
+The wall and chamber isomorphisms satisfy the cocycle identities of
+$(O1)^+$ and $(O2_{\mathrm{atlas}})$.
+\item[\textup{(K3)}] The associative map preserves products and
+units, and its bar preserves coproducts, coaugmentations and
+counits. If an ordinary Hall/Hopf realization is used to extract
+primitives, it is separately supplied and its operation diagrams
+commute. The invariant Lie form on those primitives is intertwined
+with $B_{\mathfrak g}$. It is not identified with a pairing adjoint
+to the ordinary primitive Hopf coproduct. Such an identification
+is excluded by Proposition~\ref{prop:bkm-hopf-pairing-obstruction}.
+\item[\textup{(K4)}] The primitive comparison carries the invariant source Lie radical
+onto the target radical. It induces the comparison on their quotients.
+When the target is $\mathfrak g$, its invariant form has zero
+radical. Kernel and quotient squares are required in the actual
+coefficient realization.
+\item[\textup{(K5)}] This primitive comparison is the same map
+$\iota_R^{\Prim}$ used in recognition. The induced maps of ordinary
+enveloping algebras preserve PBW length and the finite weighted
+pieces of Proposition~\ref{prop:bkm-finite-filtered-pbw}.
+\item[\textup{(K6)}] Stage transitions and all the preceding
+structures form coherent diagrams. In a strict chain model,
+$\Theta_R\Omega(\rho^C_{R'R})-\rho^T_{R'R}\Theta_{R'}
+=dH^{\mathrm{tr}}_{R'R}+H^{\mathrm{tr}}_{R'R}d$, with the
+composition homotopies also specified.
+\item[\textup{(K7)}] Completion uses the homotopy inverse limit
+of these diagrams. To use ordinary inverse limits, require degreewise Mittag--Leffler
+chain groups for the objects and comparison cones. Alternatively,
+supply another explicit comparison between ordinary and homotopy
+limits. Bar and cobar
+commute with the chosen completed construction only when that
+additional comparison has been proved.
+\end{enumerate}
+The notation $\mathfrak O_{\mathrm{Kcmp},R}$ denotes the two cone
+cohomologies together with the Weyl, line, operation, radical, PBW
+and transition defects in these diagrams. Their vanishing includes
+the supplied coherent nullhomotopies, not just equal matrix ranks.
+\end{definition}
+
+\begin{proposition}[Compatible finite comparison]
+\label{prop:finite-koszul-comparison-compatibility}
+Under \textup{(K0)--(K6)}, the map
+$\Theta_{\mathrm{Kos},R}:\Omega C_{X,R}\to T_R$ is an augmented
+associative equivalence compatible with the specified Weyl,
+orientation, primitive, invariant-form and enveloping diagrams.
+\end{proposition}
+\begin{proof}
+Clause (K0) and the source counit give the equivalence.
+Each remaining compatibility is a supplied commuting square or
+coherent homotopy, and composition with the counit preserves it.
+The radical comparison descends to quotient spaces. The ordinary
+enveloping universal property gives the PBW comparisons.
+This conclusion uses the stated realizations of these structures,
+not an automatic extraction of a Hall object from the target.
+\end{proof}
+
+\begin{proposition}[Agreement on selected generators]
+\label{prop:primitive-restriction-not-koszul}
+Agreement with a prescribed map on a selected family of root
+vectors does not imply an equivalence of associative coefficient
+objects. For a supplied comparison $\vartheta_R$, the remaining
+condition is acyclicity of its full coefficient cone.
+\end{proposition}
+\begin{proof}
+The failure already occurs for ordinary augmented dg algebras.
+Let $B$ be such an algebra and let $M$ be a dg $B$-bimodule with
+nonzero cohomology. The square-zero extension $A=B\oplus M$ has
+\[
+ (b,m)(b',m')=(bb',bm'+mb'),\qquad M^2=0.
+\]
+Its augmented projection $p:A\to B$ fixes every selected vector
+in the copy of $B$, but
+$\operatorname{Cone}(p)\simeq M[1]$ is not acyclic.
+This example asserts neither a connected Hopf structure on $A$
+nor agreement on all its primitives. Under those additional
+hypotheses, Proposition~\ref{prop:bkm-connected-hopf-recognition}
+gives the positive ordinary Hopf recognition theorem.
+\end{proof}
+
+To establish the analogous conclusion in a chiral coefficient
+category one must inspect the local comparison cone, not merely
+the ordinary example. Additional wrapped, mixed or descendant
+coefficients can lie outside the selected root-vector family.
+The invariant form and the ordinary primitive map likewise need
+the specified realizations in (K3)--(K5).
+
+\begin{proposition}[Passage to completion]
+\label{prop:chiral-koszul-source-datum-consequence}
+Suppose source and comparison data are supplied on a cofinal
+sequence of stages, with the coherent transitions of (K6).
+Then their homotopy inverse limits give equivalences
+\[
+ \operatorname*{holim}_R C_{X,R}
+       \simeq\operatorname*{holim}_R BA_{X,R},\qquad
+ \operatorname*{holim}_R\Omega C_{X,R}
+       \simeq\operatorname*{holim}_R T_R,
+\]
+with all specified compatible operations.
+Under (K7), the same assertions hold for the ordinary inverse
+limits of the chosen chain models. Writing these limits as
+$B A_X$, $\Omega C_X$ and $\mathcal A_{\Delta,E}$ additionally
+requires the corresponding bar, cobar and target-limit comparisons.
+\end{proposition}
+\begin{proof}
+A homotopy limit is a functor on the coherent diagram category and
+preserves equivalences. Apply it to $b_{X,R}$ and
+$\Theta_{\mathrm{Kos},R}$ and their compatibility diagrams.
+The ordinary-limit assertion follows from
+Proposition~\ref{prop:bkm-limit-complexes}.
+For actual degreewise finite-dimensional towers, the required
+Mittag--Leffler property is automatic once their transition maps
+exist. In general it is not automatic, as the polynomial-tail
+example there shows. Nothing in preservation of equivalences by
+limits alone says that bar or cobar commutes with that limit.
+\end{proof}
+
+\subsubsection*{Twisting cochains and the boundary algebra}
+
+A twisting cochain from $C_{X,R}$ to an augmented algebra has
+unsuspended degree one. It satisfies
+\[
+ d\tau+\tau d+\mu(\tau\star\tau)\overline\Delta=0,
+\]
+with the suspension signs fixed by the bar convention.
+Equivalently it is a morphism from the cobar. For a bar source it
+includes the canonical twisting cochain. This equation describes
+coupling data at the specified carrier and tensor. It does not
+identify the bar coalgebra with the bulk algebra.
+
+A proposed bulk center belongs to the associative boundary algebra
+$A_b=R\operatorname{End}(b)$ and requires its separate map and
+hypotheses, as in Remark~\ref{rem:bkm-universal-holography-scope}.
+The empty coefficient $K$, the BD vacuum, the augmentation of
+$A_{X,R}$ and a prepared state are not interchangeable. In
+particular, obtaining a completed coefficient equivalence to
+$\mathcal A_{\Delta,E}$ still leaves the state comparison and its
+protected trace to be constructed. The geometric primitive
+recognition in the next subsection is another operation-preserving
+comparison, with its own explicit source data.

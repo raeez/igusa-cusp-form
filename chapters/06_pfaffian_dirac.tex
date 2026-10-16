@@ -1,0 +1,728 @@
+\chapter{Pfaffians, orientation characters and primitive recognition}
+\label{ch:pfaffian-dirac}
+
+The automorphic form and the BKM denominator are already related by
+an explicit theorem:
+\[
+ \operatorname{den}(\mathfrak g_{\Delta_5})(Z)
+ =64^{-1}\Delta_5(2Z).
+\]
+The compact \(K3\times E\) problem asks for more.  It asks for a
+geometric Pfaffian section, a coherent action on its orientation,
+and a realization of the BKM bracket on the geometric primitive
+spaces.  These constructions have different sources and require
+different comparison maps.  This chapter states the consequences
+of supplying them, while keeping the missing compact constructions
+visible.
+
+The real simple generators have the usual Kac--Moody relations
+\cite{KAC:1}.  The generalized construction of \cite{BorcherdsGKM88}
+admits imaginary simple roots; the parity and multiplicity data for
+this denominator are those of Chapter~\ref{ch:view2-bkm}.
+The normalization and doubled modular
+variable in the displayed formula are those of the type-II lattice in
+Chapter~\ref{ch:view2-bkm}.  The Pfaffian comparison uses
+\(\Delta_5\) itself, after a specified parameter map and an
+isomorphism of lines.  Its reflection character is compared with
+the homogeneous orthogonal character
+\(\widetilde\nu_{\Delta_5}\), not directly with the symplectic
+Maass character \(\nu_{\Delta_5}\) of a lift \cite{MAASS:1}.
+
+\section{The geometric data and their comparisons}
+\label{sec:ch6-data}
+
+\subsection{A system of finite geometric objects}
+\label{subsec:ch6-pro-object}
+
+Fix a cofiltered system of finite geometric moduli problems indexed
+by \(R\), with their actual transition maps.  When constructed, a
+Dirac--Igusa system records the following objects and maps:
+\[
+ \left(
+ \begin{gathered}
+ \mathcal A_{X,R},\ F^{\mathrm{hyb}}_{X,R},\
+ \Gamma_{X,R},\ \Pi_X,\ \Phi_R,\ o_R,\ H_R,\ P_R^\Pi,\\
+ C_{X,R},\ \Theta_{\mathrm{Kos},R},\
+ \mathscr L_{\mathrm{Pf},R},\ \operatorname{pf}_{X,R},\
+ \epsilon_{o,R},\ \mathrm{Rec}_R
+ \end{gathered}
+ \right)_R.
+\]
+Here \(F^{\mathrm{hyb}}\) is the specified formal or geometric
+coefficient object, \(\Gamma\) its charge group, \(\Pi_X\) the
+specified normal-ordered charge homomorphism, and \(\Phi\) its critical
+coefficient realization.  The symbol
+\(o\) denotes its orientation, \(H\) the algebra carrying the supplied Hall
+operations, and \(P^\Pi\) its descended primitive Lie algebra.
+The coalgebra \(C\) and map \(\Theta_{\mathrm{Kos}}\) belong to a
+separately specified bar--cobar comparison.  The remaining entries
+are the Pfaffian line and section, an orientation character when
+extractable from its action, and the primitive recognition map.
+An enhanced factorization algebra structure on \(\mathcal A\),
+including any claimed \(E_3\) structure, is further data with its
+operations and coefficient category; the list does not construct it.
+
+If all these data and their transitions are given, they define a
+pro-object \(\mathfrak D_X^{\mathrm{DI}}\) in their common category
+of structured objects.  A pro-object is a diagram, rather than an
+assertion that a geometric inverse limit exists.  For ordinary
+pro-objects the formula is
+\[
+ \operatorname{Hom}_{\operatorname{Pro}(\mathcal C)}
+ ((X_i),(Y_j))
+ =\varprojlim_j\varinjlim_i\operatorname{Hom}_{\mathcal C}(X_i,Y_j);
+\]
+in a derived setting the corresponding mapping spaces and homotopy
+limits are used.  Cofinal reindexing preserves the pro-object.
+Passing from it to an effective geometric line, a completed algebra
+or an analytic operator requires the relevant comparison in each
+case.  A finite root set is not a finite moduli space, and a
+Harder--Narasimhan bound is not automatically a compatible root-height
+quotient.
+
+\begin{remark}[Three objects attached to \(\Delta_5\)]
+\label{rem:ch6-three-delta-names}
+The automorphic section \(\mathcal D_X=\Delta_5\), the denominator
+of \(\mathfrak g_{\Delta_5}\), and a putative compact Pfaffian
+section have different definitions.  The first two are identified
+by the classical automorphic and BKM theorems
+\cite{Borcherds95,GN,GNPartI,GNII}; the third needs the geometric
+line and section comparison below.  Writing the same scalar
+expansion does not identify their bases, coefficient systems or
+operations.
+\end{remark}
+
+\subsection{Reduction, orientation, transport and walls}
+\label{subsec:ch6-obstructions}
+
+We retain the names \((D0),(O1),(O1)^+,(O2)\) for four geometric
+requirements.  They refer to data and equations, rather than four
+universal scalar obstruction classes.
+
+The \((D0)\) datum is a specified degeneration from the compact
+problem to the chosen endpoint, together with finite object,
+extension and complete-flag moduli, their derived enhancements and
+transitions.  The reduced complexes, coefficient specialization,
+orientation and Pfaffian comparisons must be supplied on that
+family.  A semiregularity functional on \(\operatorname{Ext}^2\)
+can help construct a reduced obstruction theory; it does not alone
+give a nondegenerate reduced shifted symplectic form or a
+vanishing-cycle specialization functor.  Similarly, a reduced
+virtual-dimension shift does not by itself identify orientation
+lines by tensoring with a parity symbol.
+
+The \((O1)\) datum is the strong reduced orientation of
+Definition~\ref{def:O1-strong-reduced-orientation}.  Its extension
+formula contains the cross determinant \(L(F,G)\), the computed
+reduction excess and the complete-flag coherence.  It descends
+through the common elliptic quotient as a root pair.  Stabilizer
+characters are allowed on the quotient stack.  If the chosen theory
+also asks for a coarse or inertia-trivial orientation, their
+vanishing is an additional condition.  Its global Kummer class
+cannot in general be recovered solely from pointwise stabilizer
+restrictions or a chosen representative of a Borel filtration term.
+
+The \((O1)^+\) datum consists of the geometric Weyl transports
+and coherent root lifts of Definition~\ref{def:O1-plus-weyl-transport}.
+It includes a trivialization of the sign cocycle on the actual
+action groupoid, the involutive relations and transport of all
+extension and quotient identifications.  An orbit groupoid has the
+cohomology of its stabilizer; it is not automatically the
+classifying space of the whole Weyl group.  Extracting a scalar
+character further needs the reference fibre identifications of
+Definition~\ref{def:orientation-character-epsilon-o}.
+
+The \((O2)\) datum is a complete type-II wall atlas with compatible
+normal skew blocks
+\[
+ D_{u_i}=\begin{pmatrix}0&u_i\\-u_i&0\end{pmatrix},
+ \qquad\operatorname{Pf}(D_{u_i})=u_i.
+\]
+Each stipulated base reflection sends \(u_i\) to \(-u_i\).
+Its reference comparison preserves the tangential section and unit;
+the actual root lift carries the Pfaffian section to its pullback.  These charts
+must cover the relevant components and boundary strata, and their
+orientation, coefficient and integration comparisons must agree on
+overlaps.  A generic rank-one calculation alone supplies neither
+coverage nor those equations.  In particular the middle wall
+\(\delta_2\leftrightarrow(0,1,1)\) needs a geometric object in
+that degree.  If the chosen charge comparison assigns it positive
+geometric elliptic degree, the support obstruction of
+Section~\ref{subsec:hybrid-ran-carrier} requires a wrapped source object.
+The Gram label alone does not establish that geometric degree.
+
+The finite geometric Pfaffian datum \((P_{\mathrm{fin}})\) of
+Definition~\ref{def:finite-geometric-pfaffian-datum} is additional.
+It supplies the skew realization, actual section, oriented block
+factorization, every residual unit, the parameter map and the line
+comparison.  Neither a list of ranks nor an orientation alone
+supplies that section.
+
+\begin{proposition}[What remains when a comparison is absent]
+\label{prop:ch6-hypothesis-deletion-residues}
+A supplied orientation without Weyl lifts remains a root pair;
+there is then no specified \(W\)-action on it.  Coherent lifts
+without wall charts give an action but no computed simple-wall
+signs.  These orientation data without a Pfaffian realization do
+not specify a section.  A Pfaffian section without a parameter and
+line comparison is not yet a section of the automorphic line.
+Finally, a section identity without primitive representatives and
+their relations does not identify the source Lie algebra.
+\end{proposition}
+\begin{proof}
+Each conclusion names the object or map supplied by the corresponding
+datum.  The missing constructions are not defined by the remaining
+ones.  For example the two signs of a square root have the same
+square, while the abelian and Heisenberg algebras on the same
+three-dimensional graded space have the same scalar skew blocks.
+Thus squaring forgets a root lift and graded block dimensions
+forget a bracket.  These examples establish the stated limitations
+of those particular data; they do not assert independence of every
+geometric hypothesis on a compact family.
+\end{proof}
+
+\begin{proposition}[Limits of an independence argument]
+\label{prop:ch6-obstruction-independence}
+The preceding requirements have different mathematical roles, but
+some depend on the existence of others.  In particular a root
+transport includes root objects, and a geometric Pfaffian datum
+includes its line and square map.  Treating the requirement spaces
+as independent Cartesian factors does not prove that their
+vanishing conditions are geometrically independent.
+\end{proposition}
+\begin{proof}
+A transport \(o_U\to g^*o_V\) is not an object of a category
+independent of \(o_U,o_V\); its source and target are those root
+objects.  Likewise the square equation for a Pfaffian section
+already involves its line.  A product of formal predicates in
+which these objects can be varied independently therefore need not
+parametrize any geometric data.  A genuine nonimplication would
+need a counterexample satisfying the other geometric hypotheses
+in the same category.  The concrete examples above prove only the
+specified scalar and algebraic failures.
+\end{proof}
+
+\subsection{The scalar branch convention}
+\label{subsec:ch6-op-scalar-branch}
+
+Set \(D_5=64^{-1}\Delta_5\) and
+\(\chi_{10}^{\mathrm{OP}}=D_5^2=4096^{-1}\Delta_5^2\), with the
+complete chamber factors of Chapter~\ref{ch:view1-automorphic}.
+The OP scalar branch is
+\[
+ Z^X_{\mathrm{OP}}=-(\chi_{10}^{\mathrm{OP}})^{-1}
+ =-4096\Delta_5^{-2}.
+\]
+The sign belongs to the signed chamber convention for the reduced
+count \cite{OB}.  The number \(4096=64^2\) is the squared theta
+normalization.  Both statements concern the scalar invariant.
+They do not calculate the action on a geometric orientation line.
+An identification with a protected trace requires the state and
+sewing comparison of the theory in question.
+
+\section{The conditional Pfaffian section identity}
+\label{sec:ch6-pfaffian-dirac}
+
+\begin{theorem}[Pfaffian--Dirac comparison]
+\label{thm:ch6-pfaffian-dirac}
+Suppose the compact system supplies \((D0),(O1),(O1)^+,(O2)\) and
+\((P_{\mathrm{fin}})\) on the specified cofinal geometric system.
+Assume its oriented block factorizations cover all active target
+degrees and preserve both parities, with scalar normalization
+\(64x^\rho\).  Suppose also that its compatible Pfaffian lines and
+sections are effective on a base \(B\), with parameter map
+\(\kappa:B\to\mathcal A_2\) and line comparison
+\[
+ \iota_{\mathrm{aut}}:\mathscr L_{\mathrm{Pf},X}
+ \xrightarrow{\sim}\kappa^*(\mathcal L^5\otimes\nu_{\Delta_5}).
+\]
+Assume the formal block product converges on a nonempty cusp domain
+and the compared sections extend holomorphically to a connected
+reduced analytic base, with that domain meeting every irreducible component.
+Then
+\[
+ \iota_{\mathrm{aut}}(\operatorname{pf}_X)=\kappa^*\Delta_5.
+\]
+The formal equality already holds in the specified height completion;
+the analytic conclusion uses the additional convergence and extension
+hypotheses.
+\end{theorem}
+\begin{proof}
+At each finite height the oriented skew-block comparison gives
+\[
+ 64q^{1/2}r^{1/2}s^{1/2}
+ \prod_{\gamma\in A_R}(1-x^\gamma)^{\operatorname{sdim}V_\gamma}
+\]
+by Proposition~\ref{prop:pfaffian-product-finite-stage}.  In a fixed
+height jet only finitely many active factors contribute.  Therefore
+the products have a unique limit in the positive-height completion.
+No assertion about general geometric inverse limits is used in this
+coefficient stabilization.
+
+The classical Borcherds--Gritsenko--Nikulin product identifies this
+formal series, with its boundary factors and normalization, with the
+cusp expansion of \(\Delta_5\).  The actual line comparison puts
+both sides in the same line over \(B\).  Effectivity supplies its
+geometric section; convergence makes the two expansions equal on
+the stated open domain.  Their difference is a holomorphic section
+vanishing there, so the identity theorem on each reduced irreducible
+analytic component gives the result.  Alternatively, when both
+sections descend to the Siegel modular stack, the usual expansion
+principle gives the same equality \cite{Igusa1962,Igusa1964II}.
+A real-root character alone
+would not supply that modular descent.
+\end{proof}
+
+\begin{remark}[The role of the geometric hypotheses]
+\label{rem:ch6-why-four}
+The proof uses the actual block comparison to obtain the product,
+positive height to take its formal limit, and the parameter and
+line comparison to interpret its analytic continuation.  The
+orientation and wall conditions control the geometric choices and
+reflection action entering those comparisons.  Some of these
+conditions may already be included in a stronger formulation of
+\((P_{\mathrm{fin}})\); no assertion of logical minimality is
+needed.  The theorem is conditional because those compact geometric
+constructions are not consequences of the target product.
+\end{remark}
+
+If a protected state theory independently satisfies
+\[
+ Z_X=-4096\,
+ \iota_{\mathrm{aut}}(\operatorname{pf}_X)^{-2},
+\]
+then the theorem yields
+\(Z_X=-4096\,\kappa^*\Delta_5^{-2}\).
+Under the rescaling \(Z_{\mathrm{BPS}}=-4096^{-1}Z_X\), this is
+\(Z_{\mathrm{BPS}}=\kappa^*\Delta_5^{-2}\).
+These are consequences of the additional sewing identity, rather
+than constructions of a compact microscopic state space.
+
+\section{The orientation character}
+\label{sec:ch6-orientation-character}
+
+\begin{theorem}[Conditional orientation character identity]
+\label{thm:ch6-orientation-character}
+Suppose \((O1)^+\) gives coherent orientation transport and the
+reference identifications needed to extract \(\epsilon_o\).
+Suppose \((O2)\) gives a compatible rank-one Pfaffian crossing on
+each of the three simple type-II walls.  Then
+\[
+ \epsilon_o=\det_W
+ =\widetilde\nu_{\Delta_5}|_W.
+\]
+\end{theorem}
+\begin{proof}
+In the reference frames, pullback sends the section
+\(\upsilon_i u_i\) to \(-\upsilon_i u_i\), since the unit is
+invariant.  Compatibility of the actual root lift with that section
+therefore forces its residual sign to be \(-1\).  This gives all
+three generator values.
+Coherent transport and the reference identifications make these
+values a character.  They equal the determinant character on the
+generators, and the homogeneous automorphic character has the same
+values by Lemma~\ref{lem:bkm-maass-restriction}.
+\end{proof}
+
+\begin{remark}[The OP sign and the reflection sign]
+\label{rmk:ch6-op-not-orientation-source}
+The normal factor has Pfaffian \(u\) and determinant \(u^2\).
+Squaring erases its reflection sign.  The OP branch sign cannot
+recover it.  Likewise a real path joining \(u>0\) to \(u<0\)
+would cross the deleted wall; the comparison here is the specified
+reflection lift, not parallel transport along such a path.
+\end{remark}
+
+\begin{remark}[Imaginary root divisors]
+\label{rmk:ch6-imaginary-roots}
+Imaginary simple roots have no associated simple Weyl reflections.
+Any geometric monodromy around a divisor bearing such a label needs
+the punctured analytic family and locally constant coefficient
+system of Definition~\ref{def:local-divisor-monodromy-datum}.
+The oriented coefficient is twisted by its orientation sign torsor,
+not by tensoring a constructible sheaf with a coherent line.
+Neither the target multiplicity nor the Maass multiplier establishes
+this local constancy or defines the meridian action.
+\end{remark}
+
+\begin{remark}[Chamber symmetry]
+\label{rmk:ch6-S3-extension}
+The homogeneous automorphic character is trivial on the type-I
+chamber group \(S_3\).  The abstract extension of \(\det_W\) to
+\(W\rtimes S_3\) compatible with it is therefore
+\((w,\sigma)\mapsto\det_W(w)\).  The other abstract extension is
+its product with \(\operatorname{sgn}(\sigma)\).  Realizing either
+on the compact geometry still requires chamber transports and the
+semidirect relations of
+Proposition~\ref{prop:semidirect-hall-lift-construction-criterion}.
+\end{remark}
+
+\section{Primitive recognition}
+\label{sec:ch6-primitive-recognition}
+
+Let \(P_X^{\Pi,\mathrm{desc}}\) be an actually constructed descended
+primitive Lie superalgebra.  When a coefficient realization gives
+\[
+ P_X^{\Pi,\mathrm{desc}}
+ =H^0\Prim_{\mathrm{prot}}
+   (\overline\Pi_{X,*}^{\Theta}\mathcal F_X),
+\]
+the equality includes that realization, its differential, the
+primitive operation and charge descent.  Let \(B_X\) be a specified
+even invariant Lie form, and put
+\[
+ R_X=\operatorname{Rad}B_X,\qquad
+ P_X^{\Pi,\mathrm{red}}=P_X^{\Pi,\mathrm{desc}}/R_X.
+\]
+Invariance makes \(R_X\) a Lie ideal.  Its generated ideal in the
+ordinary enveloping algebra is a Hopf ideal.  The Lie form itself
+is not required to be adjoint to the primitive Hopf coproduct.
+
+\begin{theorem}[Recognition from the compact representatives]
+\label{thm:ch6-primitive-recognition}
+Suppose \(P_X^{\Pi,\mathrm{red}}\) satisfies the ten hypotheses of
+Theorem~\ref{thm:primitive-recognition}: a constructed source and
+descent; the Cartan and root grading; representatives of every real
+and imaginary simple generator with both parities; the
+Borcherds--Kac relations; the invariant-form comparison; the exact
+presentation kernel; generation; the filtered enveloping comparison;
+a specified continuous completion when used; and the full parity
+dimensions with zero spaces in non-root degrees.
+Then there is an isomorphism of graded Lie superalgebras
+\[
+ \mathfrak g_{\Delta_5}\xrightarrow{\sim}
+ P_X^{\Pi,\mathrm{red}}
+\]
+preserving the invariant forms.  It induces a filtered Hopf
+isomorphism of their ordinary enveloping algebras.  If the maps and
+inverses extend continuously to the specified completions, the
+completed objects are also identified.  The superdenominator is
+\(64^{-1}\Delta_5(2Z)\).
+\end{theorem}
+\begin{proof}
+Let \(\mathfrak F\) be the free Lie superalgebra on the chosen
+Cartan basis and simple symbols, and \(J_{\mathrm{BK}}\) the ideal
+of the presentation in Definition~\ref{def:bkm-relations}.
+The geometric representatives define
+\(\pi:\mathfrak F\to P_X^{\Pi,\mathrm{red}}\).
+The relations give \(J_{\mathrm{BK}}\subset\ker\pi\), the
+no-extra-relations hypothesis gives equality, and generation gives
+surjectivity.  Therefore
+\[
+ \mathfrak F/J_{\mathrm{BK}}
+ =\mathfrak g_{\Delta_5}\simeq P_X^{\Pi,\mathrm{red}}.
+\]
+The form comparison and functoriality of the ordinary enveloping
+algebra give the remaining algebraic assertions.  The target
+invariant form is already nondegenerate; no further target radical
+is added to the presentation ideal.
+
+Compatible finite partial-operation comparisons determine this map
+only when they cover all the relevant inputs, outputs and relations.
+For genuine inverse systems of isomorphisms, the inverses are also
+compatible and give the inverse limit isomorphism.  Passing a radical
+quotient through a limit requires exactness of its kernel tower;
+finite-dimensional towers give that exactness under the hypotheses
+of Proposition~\ref{prop:strict-ml-completion-primitive-recognition}.
+None of these linear statements equips a two-sided root product
+with a continuous bracket.  The completion hypothesis specifies
+that bracket and its domain.  Finally the denominator follows from
+the known target presentation and its full graded dimensions.
+\end{proof}
+
+The associative Ran comparison is another assertion.  In the
+coefficient category of Section~\ref{subsec:koszul-source}, let
+\[
+ V_E=\mathsf{Den}_{\Delta_5,E},\qquad
+ \mathcal A_{\Delta,E}=U_\star(\iota_*V_E).
+\]
+The first object is the BD current envelope; the second is its
+associative Ran envelope.  A source datum supplies an augmented
+algebra \(A_{X,R}\), a coalgebra map
+\(b_{X,R}:C_{X,R}\to BA_{X,R}\), and an associative comparison
+\(\vartheta_R:A_{X,R}\to T_R\), with their acyclic cones and
+operation compatibilities.  Its map is
+\[
+ \Theta_{\mathrm{Kos},R}
+ =\vartheta_R\circ\varepsilon_{A_{X,R}}\circ\Omega b_{X,R}:
+ \Omega C_{X,R}\longrightarrow T_R.
+\]
+Here \(B,\Omega\) use the specified Ran tensor \(\star\) and empty
+unit.  If these maps are equivalences on the admitted bar--cobar
+domain, preserve the transitions, and pass to the specified limit
+with target \(\mathcal A_{\Delta,E}\), they give
+\[
+ \Omega C_X\simeq\mathcal A_{\Delta,E}.
+\]
+A direct statement about the BD chiral algebra \(V_E\) requires
+the corresponding chiral comparison functor.  Primitive recognition
+alone supplies neither comparison.  A word-cut coalgebra also needs
+a map preserving the full collision operations before it can be
+identified with this Ran coalgebra.
+
+\begin{remark}[Identical dimensions with a different bracket]
+\label{rmk:ch6-zero-bracket-counterexample}
+Give the target graded super-vector space the zero bracket.
+Its two parity dimensions in every degree, and hence its scalar
+superproduct, remain unchanged.  But
+\([e_i,f_i]=h_i\) fails for each nonzero real Cartan vector.
+The assignments of generators do not factor through the BKM
+presentation.  A zero form would moreover have the entire space
+as radical.  This example proves that parity dimensions and a
+scalar denominator do not recognize a Lie algebra.  Adding an
+arbitrary nondegenerate form still does not supply the required
+invariant form and bracket comparison.
+\end{remark}
+
+\begin{remark}[Algebraic recognition and geometric orientation]
+\label{rmk:ch6-recognition-without-orientation}
+The algebraic recognition theorem needs the stated source algebra,
+representatives and relations.  It can be applied to an algebra
+constructed by any method satisfying those hypotheses.  In the
+compact geometric construction considered here, orientation and
+coefficient descent are among the requirements for producing that
+source and its operations.  A Frobenius identity does not by itself
+construct the coproduct, prove a radical coideal condition, or
+identify the compact primitive algebra.
+\end{remark}
+
+\section{Compatibility with chiral Koszul duality and Calabi--Yau quantum groups}
+\label{sec:ch6-chiral-compatibility}
+
+The three theorems sit inside chiral Koszul duality and
+Calabi--Yau quantum groups as the View~\textcircled{2} /
+View~\textcircled{3} face of the Calabi--Yau-to-chiral comparison.  Three
+compatibilities are required.
+
+\subsection{Primitive-to-shadow comparison}
+\label{subsec:ch6-primitive-to-shadow}
+
+The primitive-to-shadow comparison is the cross-level identity
+\textcircled{\scriptsize 2}\(\leftrightarrow\)\textcircled{\scriptsize 3}
+applied to the primitive-to-shadow part of the chain.  The Vol II primitive
+datum on \((X,D,\tau)\) is the bicoloured nine-tuple
+\[
+\bigl(\mathcal C\big|_{(X,D,\tau)},\,
+\mathcal D^{\mathrm{cl}}\big|_X;\,
+b,\,A_b,\,F^{\mathrm{cl}};\,
+\sigma_{\mathrm{half}},\,\operatorname{tr}^{\mathrm{cl}}_X;\,
+\operatorname{Tr}_{\mathcal C}\bigr).
+\]
+The chart of vacuum \(b\) is the \(\alpha\)-datum; the chart
+algebra \(A_b=\mathrm{End}_{\mathcal C}(b)\) is the open primitive
+algebra; the closed-colour vacuum factorization algebra
+\(F^{\mathrm{cl}}\) gives the closed-side trace
+\(\operatorname{tr}^{\mathrm{cl}}_X\) which evaluates at the type-II
+cusp \(\mathfrak c_\infty\) to the weight-\(5\) Borcherds--Gritsenko--Nikulin
+section \(\mathcal D_X=\Delta_5\) (View \textcircled{\scriptsize 1}).  The
+comparison
+\(A_b=\Phi^{(\Sigma_{d-1},C)}_d(\mathcal C_X)\) is the chain-fusion datum of
+chiral Koszul duality and Calabi--Yau quantum groups at level
+\(2\): under that datum the Calabi--Yau-side chiral algebra
+\(A_X\) is compared with the open-side chart algebra \(A_b\) on the same
+curve \(C\) with boundary vacuum induced by
+\((\mathcal C_X,\Sigma_{d-1},C)\).  In the present setting, the
+comparison concerns the chiral algebra on \(E\) attached to the Hall
+source of \(K3\times E\); conditional on the chiral Koszul source
+datum, the finite Koszul comparison datum, and strict Koszul
+Mittag--Leffler exactness, the chiral cobar
+\(\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}\) of
+Theorem~\ref{thm:ch6-primitive-recognition} is the source-side chiral
+expression at level \(2\), and its constant-current Lie superalgebra is
+\(\mathfrak g_{\Delta_5}\) (View \textcircled{\scriptsize 2}).  The
+protected Pfaffian \(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\)
+is the pre-trace Pfaffian section.  After squaring and applying the
+retained level-\(\mathsf Z\) datum, Vol~I Theorem~H
+(chiral-Hochschild concentration on the Koszul locus) and Vol~II's
+cyclic-Hochschild Beilinson stratification \textnormal{(i)+(ii)}
+identify the derived-centre trace pairing of degree
+\(-\dim_\C(K3\times E)\) whose scalar is \(\Delta_5^{-2}\)
+(Appendix~\ref{app:obstruction-discharges},
+Theorem~\ref{thm:G-vol2-discharge}).  The level-\(\mathsf A\)
+gravity-line operator algebra acting on the boundary is the open
+Hall--Borcherds residual of Vol~II and is not constructed by the
+level-\(\mathsf Z\) trace criterion.
+
+\subsection{Vol III chain fusion at level \(2\)}
+\label{subsec:ch6-vol3-chain-fusion}
+
+The Vol III \(\kappa\)-stratification supplies the
+\(\kappa\)-tuple
+\((\kappa_{\mathrm{cat}},\kappa_{\mathrm{ch}}^{\mathrm{Hodge}},
+\kappa_{\mathrm{ch}}^{\mathrm{Heis}},\kappa_{\mathrm{BKM}},
+\kappa_{\mathrm{fiber}})=(0,0,3,5,24)\) at \(K3\times E\); the row
+\(\kappa_{\mathrm{BKM}}=5\) is the cusp-form weight realized by
+\(\Delta_5\), and the row \(\kappa_{\mathrm{fiber}}=24\) is
+\(\chi_{\mathrm{top}}(K3)=24\).  The additive expression
+\(\kappa_{\mathrm{BKM}}=\kappa_{\mathrm{ch}}+\chi(\mathcal O_{\mathrm{fiber}})\)
+has no invariant meaning: the Hodge reading gives \(0+2=2\) at \(N=1\),
+and the Heisenberg reading gives the accidental equality \(3+2=5\) only
+on that row.  The CHL frame has Borcherds weights
+\((5,3,2,\tfrac32,1)\), fixed by \(c_N(0)/2\) with
+\(c_N(0)=(10,6,4,3,2)\) per Jatkar--Sen and Govindarajan--Krishna
+\cite{JS06Dyon,GK09CHL,GK10Composite},
+not by a fixed additive
+formula.  Thus \(\kappa_{\mathrm{fiber}}\) is the Euler characteristic
+of the topological fibre and not of \(\mathcal O_{\mathrm{fiber}}\); for
+K3, \(\chi_{\mathrm{top}}(K3)=24\) but
+\(\chi(\mathcal O_{K3})=2\).  Under
+the Vol III chain-fusion datum at level \(2\), the chiral algebra
+\(A_X\) on the CY face is compared with the chart algebra
+\(A_b\) on the Vol II open face.  In the \(K3\times E\) specialization
+this comparison becomes
+\(A_X=A_b=\Omega_E^{\mathrm{ch}}C_X\simeq\mathsf{Den}_{\Delta_5,E}\) only
+under the hypotheses of Theorem~\ref{thm:ch6-primitive-recognition}.
+
+\begin{remark}[Coefficient projection is not a Hall comparison]
+\label{rmk:ch6-coefficient-projection}
+A Hall--Borcherds comparison map cannot be defined by coefficient
+projection alone, and a coefficient projection respecting charge
+addition because both products use the same cone is not a recognition
+theorem.  A coefficient projection is not a Hall product/bracket matrix
+comparison, and does not prove Borcherds--Serre rows, radical descent,
+no-extra-relations, or PBW.  The recognition criterion (S4)--(S10) of
+Theorem~\ref{thm:ch6-primitive-recognition} is the mathematical
+statement:
+the source-side bracket matrices, Hopf radical, kernel equality, and
+PBW associated-graded comparison are independent data, none of which is
+inferable from a coefficient projection.
+\end{remark}
+
+\subsection{BCOV / mixed holomorphic-topological strings}
+\label{subsec:ch6-bcov}
+
+The mixed holomorphic-topological strings companion provides the local
+model \(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) with brane
+completion as one realization of the factorization-algebra datum
+\(\Phi_d^{\mathrm{FA}}\); the global obstruction is the holomorphic
+de Rham obstruction class.  The level-\(n\) scalar shadow
+\(Z_{\mathrm{BPS}}^{K3\times E}=\Delta_5^{-2}\) on the closed
+\(K3\times E\mapsto\mathrm{point}\) cobordism is the BPS partition
+function (Chapter~\ref{ch:zbps-realization}).  A three-dimensional
+gravity-line interpretation with internal compact factor \(K3\times E\)
+requires the Hall--Borcherds residual of Vol II and is not claimed by
+Theorem~\ref{thm:ch6-pfaffian-dirac}.  The identity
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})=\mathcal D_X=\Delta_5\)
+is a protected Pfaffian identity before trace; its inverse square is
+the level-\(n\) protected scalar trace.  The Pfaffian and orientation
+parts of the operator-level datum \(\mathfrak D_X^{\mathrm{DI}}\) are
+defined on \(K3\times E\)
+relative to the retained data of
+Appendix~\ref{app:obstruction-discharges}; the primitive Lie-superalgebra
+part is the compact-source recognition problem.
+
+\section{Finite progress and the remaining compact constructions}
+\label{sec:ch6-residuals}
+
+The target degree calculations give concrete comparison problems.
+At height three, the target has real simple dimensions \(1|0\),
+isotropic dimensions \(10|0\), and interior dimensions \(29|93\).
+The isotropic space consists of the real bracket and nine even
+imaginary simple directions.  The interior space admits a
+rank-28 differential in the positive height-three quotient, leaving
+cohomology \(1|65\).  That differential extends through height
+five and fails at height six for the unchanged Borcherds relations,
+by Theorem~\ref{thm:bkm-serre-nonextension}.  Thus a proposed
+geometric differential must be compared with the relations on its
+actual domain, rather than inferred from the signed dimension
+\(-64\).
+
+The first enlarged degree set has 35 degrees, including zero
+codomains of relations.  With
+\(a_{ij}=\delta_i+\delta_j\),
+\(C_{k,s}=a_{ij}+s\delta_k\), and
+\(D_k=\delta_k+2a_{ij}\), it is
+\[
+ \begin{split}
+ W_{\mathrm{rel}}^+={}&W_3
+ \cup\{3\delta_i+\delta_j:i\ne j\}
+ \cup\{2a_{ij}:i<j\}\\
+ &\cup\{C_{k,s}:2\leq s\leq5\}
+ \cup\{2\delta_{123}\}.
+ \end{split}
+\]
+The three missing nonzero proper subdegrees are \(D_k\), giving
+38 degrees after adjoining them.  Their full target dimensions are
+known:
+\[
+ \begin{gathered}
+ 2a_{ij}:10|0,\quad C_{k,2}:201|93,\quad
+ C_{k,3}:29|93,\quad C_{k,4}:10|0,\quad C_{k,5}:0|0,\\
+ D_k:510|1023,\qquad 2\delta_{123}:10136|6120.
+ \end{gathered}
+\]
+These refine the signed coefficients
+\(10,108,-64,10,0,-513,4016\).  Their derivation from the full
+presentation is given in Chapter~\ref{ch:view2-bkm}; the
+compact-source representatives and operation comparisons remain
+separate.
+
+For the degree-enlargement rule
+\[
+ T_i(\beta)=\beta+(1-(\delta_i,\beta))\delta_i
+ \quad\text{when }(\delta_i,\beta)<0,
+\]
+the first enlargement of the specified ten degrees in that
+38-degree set adds 21 new output degrees.  Eighteen have nonzero
+signed coefficient.  Their nonzero proper subdegrees contribute
+126 incidences across 30 new degrees, giving \(38+21+30=89\).
+These are the finite counts proved in
+Section~\ref{subsec:primitive-recognition}, using elliptic
+reduction of every Jacobi coefficient.  Assigning zero to a
+coefficient beyond a truncated Fourier expansion would change
+those counts.
+
+This rule is the real Serre output degree on an imaginary simple
+generator.  On a composite root it merely specifies a degree;
+it need not annihilate the whole root space.  Under this rule and
+nonzero proper-subdegree closure, the affine families
+\(A_N\Rightarrow B_N\Rightarrow A_{N+2}\) of
+Proposition~\ref{prop:recognition-affine-staircase} force an
+unbounded set.  Finite partial-operation diagrams remain useful:
+they specify exactly which inputs, codomains and relations they
+contain.  The infinite enlargement argument is not an obstruction
+to all finite comparison calculations, and a finite collection of
+target dimensions is not a compact recognition theorem.
+
+The orientation calculations likewise produce definite local
+results.  Formal coordinate changes admit the all-arity functors
+and full Artin determinant roots of
+Section~\ref{subsec:cosection-twisted-orientation}.  Complete flags
+retain their cross determinants and common trace excess.  Finite
+stabilizer root problems reduce to actual character square roots,
+while general gerbes can have additional mixed cohomology classes.
+The first missing compact orientation construction is a single
+reduced critical coefficient system whose root comparisons agree
+on all these flags, quotient overlaps and transitions.
+
+For the wall count, the only unconditional combinatorial statement
+is \(|\{\pm1\}^{12}|=4096\).  To identify this set with the
+geometric configurations of a half-Hilbert wall atlas requires a
+bijection, coverage and the correct stabilizer weights.  If those
+hypotheses are supplied, the count agrees numerically with
+\(64^2\).  That equality of integers does not identify the wall
+integration map with the OP scalar normalization.
+
+The original compact comparison consequently still requires the
+reduced coefficient realization and Hall operations, the geometric
+Pfaffian family, the state and sewing map, and the modular parameter
+and line comparison.  The ordinary connected cocommutative Hopf
+recognition theorem applies only when that recipient and its
+hypotheses are constructed.  Localized, spectral or braided Hall
+operations use other tensors and coefficient domains; their
+positive results do not automatically furnish this ordinary
+compact structure.
+
+The three-dimensional gravitational interpretation and the
+Hall--Borcherds operator comparison need their actual state spaces
+and sewing operations.  Numerical levels do not construct them.
+For example the cusp-form weight is five, while the K3 elliptic
+genus has weight zero, index one and value 24 at the trivial
+elliptic variable \cite{Gritsenko99}.  A notation that groups categorical, Hodge,
+Heisenberg, BKM and fibre values into a tuple such as
+\((0,0,3,5,24)\) must define the five entries separately.  The
+numerical equality \(5=3+2\) supplies no comparison among their
+categories or traces.  The finite constructions above provide
+specific local maps and falsifiers; the global compact section
+and state statements remain conditional on the stated geometric
+constructions.

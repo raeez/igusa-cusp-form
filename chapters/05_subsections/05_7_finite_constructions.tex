@@ -1,0 +1,496 @@
+\subsection{Finite geometric systems and their limits}
+\label{subsec:eight-finite-constructions}
+
+The preceding constructions have different meanings of finiteness.
+A bounded set of charges is combinatorial. A moduli stack of finite
+type is geometric. A finite-dimensional coefficient space is a
+property of a specified cohomology theory. None of these conditions
+alone supplies the other two. For example,
+\(H^*(B\mathbb G_m;\mathbb Q)=\mathbb Q[c_1]\) is unbounded even
+though \(B\mathbb G_m\) is an Artin stack of finite type.
+
+We organize the compact comparison by finite operation diagrams and
+then by inverse systems. A finite stage must contain the input and
+output spaces of the operations being compared. It need not be
+closed under every extension or bracket. When a calculation leaves
+the retained range, its larger output stage must be specified.
+This permits finite calculations without asserting that a bounded
+root fragment is a Lie algebra or that a bounded nonzero charge set
+is closed under arbitrary addition.
+
+\subsubsection*{Charges and target windows}
+
+Fix the stability and support data of
+Appendix~\ref{app:stability-support}. Let
+\(F_{\sigma,S}(R)\subset\Gamma_X^{\mathrm{form}}\) be a supplied
+finite set of charges with positive height bounded by \(R\), and
+let \(\Gamma_R^{HN}\subset F_{\sigma,S}(R)\) be the charges of
+the geometric strata to be used. The product-stability construction
+has central charge
+\[
+ L_F(n)=Z_S\bigl(Rp_{S,*}(F\otimes p_E^*H^n)\bigr),
+\]
+where \(H\) has degree one on \(E\) and the K3 stability datum is
+rational \cite{LiuProductStability}. Its numerical formula does not
+prove boundedness of the chosen moduli problem. The relevant class
+bounds, bounded families and finite-type substacks must be supplied
+at their actual support and stability scope.
+
+Let \(\Pi_X\) and \(B\) be the Gram map and normal-ordering
+cocycle of Section~\ref{subsec:d6-d2-d0-dictionary-appendixC}.
+The cocycle equation is
+\[
+ B(c,c')+B(c+c',c'')=B(c',c'')+B(c,c'+c'').
+\]
+It makes the central lift associative on its declared charge monoid.
+Restrictions to finite sets retain only the products whose outputs
+are present.
+
+\begin{definition}[Finite target test window]
+\label{def:finite-target-test-window}
+For \(c\in\Gamma_R^{HN}\), set
+\[
+ \mathcal T_R(c)=
+ \left\{\sum_{i<j}B(c_i,c_j):
+   c=\sum_i c_i,\ c_i\in F_{\sigma,S}(R),\
+   \sum_i h_S(c_i)\le R\right\}.
+\]
+Assume these translate sets are finite, and define
+\[
+ \begin{split}
+ \widehat\Gamma_R&=
+    \{(c,T):c\in\Gamma_R^{HN},\ T\in\mathcal T_R(c)\},\\
+ \Gamma_R^{\mathrm{test}}&=
+    \{\Pi_X(c)+T:(c,T)\in\widehat\Gamma_R\}.
+ \end{split}
+\]
+This is a finite target-degree set. Compatible inclusions of the
+charge and translate sets give inclusions of the target sets as
+\(R\) increases.
+\end{definition}
+
+The image formula constructs a set of Gram degrees after its inputs
+have been supplied. It does not construct sheaves representing those
+degrees, nor does it make the test window exhaustive.
+
+\begin{definition}[Exhaustion of a specified target set]
+\label{def:relation-closed-target-finite-r-exhaustion}
+Let \(\mathcal D_{\mathrm{rel}}\) be a specified set of degrees
+needed by the target relations. A finite-stage realization of this
+set assigns to each \(\gamma\in\mathcal D_{\mathrm{rel}}\) a
+finite height \(R(\gamma)\), a charge
+\(c_\gamma\in\Gamma_{R(\gamma)}^{HN}\), and a translate
+\(T_\gamma\in\mathcal T_{R(\gamma)}(c_\gamma)\), such that
+\[
+ \Pi_X(c_\gamma)+T_\gamma=\gamma.
+\]
+The assignments are compatible with the stage inclusions. If the
+target set has a finite prefix and symbolic tail families
+\(\gamma_N\), the tail requires formulas
+\(R_N,c_N,T_N\) valid for every allowed \(N\), with the same
+image identity. All intermediate degrees of each asserted relation
+must be included in an appropriate finite enlargement.
+\end{definition}
+
+\begin{proposition}[Coverage of target degrees]
+\label{prop:relation-closed-target-finite-r-exhaustion-criterion}
+Under this datum, every degree of \(\mathcal D_{\mathrm{rel}}\)
+belongs to \(\Gamma_R^{\mathrm{test}}\) for some finite \(R\).
+\end{proposition}
+\begin{proof}
+The pair \((c_\gamma,T_\gamma)\) belongs to
+\(\widehat\Gamma_{R(\gamma)}\) and has image \(\gamma\).
+The same argument applies uniformly to each symbolic family.
+\end{proof}
+
+A relation cascade, including a family of the form
+\(A_N\Rightarrow B_N\Rightarrow A_{N+2}\), can describe target
+degrees that must be retained. It supplies neither the geometric
+charges \(c_N\) nor their normal-ordering translates. Conversely,
+a finite list of represented degrees does not prove coverage of an
+infinite cascade. The target calculations and the geometric
+exhaustion are distinct parts of recognition.
+
+\subsubsection*{Geometric stages and transitions}
+
+A geometric stage consists of the chosen finite-type object stacks,
+extension stacks and flag stacks, with the support and stability
+conditions needed for their maps. The full CY3 deformation problem
+has its shifted symplectic structure on its stated derived stack
+\cite{PTVV2013}. Restricting or reducing that problem requires a
+comparison preserving the relevant structure; a finite-type
+substack is not automatically a two-term critical chart.
+The reduced constructible coefficients and orientations are those
+constructed on the actual reduced critical problem
+\cite{BBDJS2015,JoyceUpmeier}.
+
+A universal complex may live on a scalar gerbe. Its weight-zero
+endomorphism complex and natural maps can descend without descent
+of the weight-one universal object. Scalar rigidification likewise
+does not imply finite residual inertia: direct sums can retain
+positive-dimensional automorphism groups. Both facts affect the
+coefficient theory and its quotient maps.
+
+\begin{definition}[Finite geometric transition datum]
+\label{def:finite-moduli-transition-geometry}
+For \(R'\le R\), specify object, extension and flag morphisms
+\[
+ t^a_{RR'}:\mathfrak M^a_R\longrightarrow\mathfrak M^a_{R'},
+ \qquad a\in\{\mathrm{obj},\mathrm{ext},\mathrm{fl}\},
+\]
+and closed retained substacks
+\(\mathfrak Z^a_R\subset\mathfrak M^a_R\) carried into
+\(\mathfrak Z^a_{R'}\). Require the restricted morphisms to be
+proper; a closed immersion is one allowed special case.
+For every coefficient operation, include the appropriate base-change
+square and its comparison morphism. Include the maps of deformation
+complexes, cosections, constructible coefficients and root pairs,
+with their overlap and composition coherences.
+\end{definition}
+
+\begin{proposition}[Restricted geometric transitions]
+\label{prop:finite-moduli-transition-geometry-criterion}
+These data give proper transition maps on the retained substacks.
+When their coefficient and base-change comparisons are equivalences,
+they transport the specified coefficient operations and orientation
+pairs compatibly with composition.
+\end{proposition}
+\begin{proof}
+The retained-locus condition restricts each supplied morphism to the
+chosen source and target. Properness is a hypothesis on those maps.
+The coefficient assertion follows by composing their specified
+pullback or pushforward comparisons with the base-change
+isomorphisms. Their coherence gives equality of the composite
+transports.
+\end{proof}
+
+A closed graph alone does not make a morphism a closed immersion.
+Nor do inclusions of bounded HN substacks naturally give morphisms
+in the opposite direction. The direction of a transition and the
+variance of its coefficient functor are part of the datum. A direct
+system obtained from open inclusions is not the inverse system above
+without an additional construction.
+
+\subsubsection*{The eight kinds of structure}
+
+The following structures specify the operations that a finite
+comparison must retain.
+\begin{enumerate}
+\item \emph{Charge and support.} The geometric classes, Gram map,
+  normal-ordering cocycle and finite operation degrees are those
+  above. The elliptic support degree is defined by
+  \((p_E)_*\operatorname{cyc}_1(F)=b^{\mathrm{geom}}[E]\).
+  It is additive on the relevant exact sequences. It is not the
+  third Borcherds coordinate \(m^{\mathrm{Bch}}\) without a proved
+  comparison. A positive effective elliptic degree projects onto
+  all of \(E\); at degree zero the image of the curve support
+  in \(E\) is a finite set.
+\item \emph{Moduli and coefficients.} Specify the derived object
+  and extension stacks, full flag correspondences, reduced
+  deformation theory, critical coefficient system and supports.
+  A proper target map can be obtained from a closed relative Quot
+  locus in the sheaf recipient when its boundedness and closedness
+  hypotheses hold. It does not imply properness of the source map,
+  and the argument does not apply to an arbitrary tilted-heart
+  extension problem without another construction.
+\item \emph{Hybrid operations.} The local and wrapped sectors of
+  Section~\ref{subsec:hybrid-ran-carrier} use their actual
+  configuration spaces, wrapped prequotients and anchors. The
+  \(LL,LW,WL,WW\) correspondences retain the source and target
+  anchor data before quotient. Their three-input comparisons include
+  all eight words in \(\{L,W\}^3\), and the full higher-flag
+  coherences are further structure. The wrapped product of quotient
+  stacks uses a common \(BE\) fibre, not two independently
+  forgotten translation torsors. The quotient-after-correspondence
+  pseudofunctor and protected integration maps must satisfy the
+  relevant base-change, projection and Thom--Sebastiani identities.
+\item \emph{Orientation and transport.} Specify root pairs on the
+  actual quotient, cross-determinant factors on extensions and
+  coherent flag comparisons. On a finite-stabilizer locus, a root
+  obstruction and the character of a chosen root are separate
+  conditions. Weyl lifts act on this same datum and preserve its
+  square maps, critical coefficients and transition comparisons.
+\item \emph{Hall and primitive operations.} Specify product,
+  coproduct, unit, counit and the tensor in which the bialgebra
+  equation is asserted. The ordinary Koszul and meromorphic
+  braided tensors give different equations. A product alone gives
+  neither cooperation nor a primitive projection. In a connected
+  cocommutative ordinary realization over characteristic zero,
+  the Eulerian projection has the hypotheses of
+  Section~\ref{subsec:primitive-recognition}. The invariant Lie
+  form, its radical and its generated Hopf ideal are distinct from
+  any separately supplied full Hopf pairing.
+\item \emph{Pfaffians.} Supply the finite skew complexes, their
+  shifts and square maps, the Pfaffian lines and sections, and the
+  geometric wall charts. The actual parameter and automorphic-line
+  comparisons fix the target and its normalization. Positive-height
+  product convergence and analytic continuation are separate from
+  geometric effectivity of the family.
+\item \emph{Associative coefficients.} Supply the counital,
+  coaugmented source coalgebra with its conilpotence or the precise
+  replacement filtration, and the associative cobar recipient of
+  Section~\ref{subsec:koszul-source}. The finite comparison maps
+  preserve its differential, support, tensor and operations.
+  Lie--commutative chiral duality is not a substitute for this
+  associative comparison.
+\item \emph{Recognition.} Supply geometric simple and Cartan
+  representatives, relation maps, kernel equalities, generation,
+  both root parities and PBW comparisons. A finite calculation must
+  retain all intermediate outputs. Compatible comparisons in every
+  bounded weighted word space give the all-level algebraic
+  assertion; a topological conclusion also requires continuous
+  inverse maps on a specified completion.
+\end{enumerate}
+
+For wrapped sheaves, a determinant anchor can record translation
+when its Euler characteristic is nonzero. At Euler characteristic
+zero that information can vanish. Jordan--H\"older data may then
+separate additional objects but do not automatically determine an
+elliptic translation orbit. Additional anchors must be chosen and
+their separating property proved. Similarly, a change of origin can
+change a line's Picard class without determining an equivariant
+stabilizer character. The constructions and examples of
+Section~\ref{subsec:hybrid-ran-carrier} keep these distinctions.
+
+On the formal nilpotent support of the local deformation problem,
+the cyclic local model and
+its full flag extensions provide genuine local operations. Their
+comparison with a global reduced compact coefficient functor, its
+proper correspondence maps and quotient descent remains a separate
+geometric construction. The finite organization above preserves
+this positive local result without treating a list of required
+objects as proof of global existence.
+
+\subsubsection*{Morphisms of finite comparison data}
+
+\begin{definition}[Finite-stage Dirac--Igusa datum and morphism]
+\label{def:finite-stage-dirac-igusa-morphism}
+In a fixed coefficient setting, a stage is a tuple
+\[
+ \begin{split}
+ \mathfrak D^{\mathrm{DI}}_{X,R}=
+ (&\mathcal A_{X,R}^{E_3},F_{X,R}^{\mathrm{hyb}},
+   \Gamma_{X,R},\Pi_X,\Phi_R,o_R,H_R,P_R^\Pi,\\
+  &C_{X,R},\Theta_{\mathrm{Kos},R},
+   \mathscr L_{\mathrm{Pf},R},\operatorname{pf}_{X,R},
+   \epsilon_{o,R},\mathrm{Rec}_R),
+ \end{split}
+\]
+whose components carry the specified structures above. In particular,
+an \(E_3\)-source is actual additional operadic data when that
+component is required; it is not inferred from its scalar series.
+A morphism consists of the following compatible maps.
+\begin{enumerate}
+\item[(M1)] Maps of charge and support diagrams preserving
+  \(\Pi_X\), the cocycle \(B\) and the retained products.
+\item[(M2)] Geometric and coefficient transition maps as in
+  Definition~\ref{def:finite-moduli-transition-geometry}, with the
+  required proper support and variance.
+\item[(M3)] Maps of the hybrid carriers and all specified
+  coloured-flag operations, compatible with the quotient
+  pseudofunctor and protected integration.
+\item[(M4)] Isomorphisms of the pulled-back orientation pairs,
+  compatible Weyl lifts and wall charts, preserving their square
+  maps, normal coordinates and section comparisons.
+\item[(M5)] Maps of the chosen Hall data preserving product,
+  coproduct, units and counits in their declared tensor. Preserve
+  primitives, the invariant Lie form and its radical; require a
+  further Hopf-pairing comparison only where that pairing is
+  independently supplied.
+\item[(M6)] Isomorphisms of pulled-back Pfaffian lines carrying
+  the specified sections to one another and commuting with their
+  square and automorphic-line comparisons.
+\item[(M7)] Coalgebra maps preserving the differential, counit,
+  coaugmentation, filtration and the associative comparison
+  \(\Theta_{\mathrm{Kos}}\).
+\item[(M8)] Maps of the recognition diagrams preserving the
+  representatives, relations, kernels, parity pieces, invariant
+  forms, radicals and PBW filtrations, with all required
+  intermediate operation spaces.
+\end{enumerate}
+Composition is componentwise, with the coherence required by the
+chosen coefficient category. Fix strict models when an ordinary
+category \(\mathsf C_X\) is used below. Alternatively retain an
+enhanced category and all its mapping spaces. A finite-stage
+isomorphism is an invertible morphism of these structured data,
+not merely an isomorphism of their underlying vector spaces.
+\end{definition}
+
+The preservation results in the preceding subsections apply to
+these maps at their individual scopes: orientation pairs and
+critical coefficients, Hall products and coproducts, primitive
+subspaces, invariant-form radicals, PBW filtrations and parity.
+They do not follow from a scalar equality. In particular, maps
+between nonorthogonal matrix quotients must be checked before a
+radical or pairing is transported.
+
+\subsubsection*{Pro-objects and actual inverse limits}
+
+\begin{definition}[The Dirac--Igusa pro-object]
+\label{def:dirac-igusa-pro-isomorphism}
+A compatible cofiltered diagram
+\(R\mapsto\mathfrak D^{\mathrm{DI}}_{X,R}\) in \(\mathsf C_X\)
+defines the pro-object
+\(\mathfrak D_X^{\mathrm{DI}}=\{\mathfrak D^{\mathrm{DI}}_{X,R}\}_R\).
+A pro-isomorphism is an invertible morphism in
+\(\operatorname{Pro}(\mathsf C_X)\).
+No componentwise inverse limit is implicit in this notation.
+\end{definition}
+
+\begin{proposition}[Mapping formula and cofinal invariance]
+\label{prop:dirac-igusa-pro-object-universal-property}
+For two such systems \(\mathfrak E=(\mathfrak E_S)_S\) and
+\(\mathfrak D=(\mathfrak D_R)_R\),
+\[
+ \operatorname{Hom}_{\operatorname{Pro}(\mathsf C_X)}
+       (\mathfrak E,\mathfrak D)
+ =\varprojlim_R\varinjlim_S
+       \operatorname{Hom}_{\mathsf C_X}(\mathfrak E_S,\mathfrak D_R).
+\]
+For a constant source \(T\), this reduces to
+\[
+ \operatorname{Hom}_{\operatorname{Pro}(\mathsf C_X)}(T,\mathfrak D)
+ =\varprojlim_R\operatorname{Hom}_{\mathsf C_X}(T,\mathfrak D_R).
+\]
+Cofinal restriction gives an isomorphic pro-object. Compatible
+finite-stage isomorphisms on common cofinal systems are a sufficient
+construction of a pro-isomorphism.
+\end{proposition}
+\begin{proof}
+The first formula defines the morphisms of the pro-category. A
+constant source removes the inner colimit. Cofinal restriction
+preserves these mapping functors, hence the represented pro-object.
+Compatible finite-stage inverses give inverse elements in the two
+mapping sets, proving the last assertion. In an enhanced
+pro-category, the corresponding statement uses mapping spaces and
+homotopy limits and colimits.
+\end{proof}
+
+The sufficient condition is not necessary in a general pro-category.
+For example, the vector-space tower
+\[
+ \mathbb C\xleftarrow{0}\mathbb C\xleftarrow{0}\mathbb C
+       \xleftarrow{0}\cdots
+\]
+is pro-zero: for every target stage, the next transition kills the
+identity class in the defining colimit. Every stage is nevertheless
+nonzero, so no cofinal set of stages is levelwise isomorphic to the
+zero tower. Replacing the zero transitions by identities gives the
+constant nonzero pro-object. Thus the transition maps are decisive.
+
+When an actual inverse limit exists, it belongs to a specified
+complete category. For modules its projection topology has basic
+neighbourhoods given by kernels of the stage projections. For line
+or root-pair components the appropriate construction is a limit of
+Picard groupoids or stacks, with its descent data. Neither existence
+of a pro-object nor Mittag--Leffler vanishing for some cohomology
+groups proves geometric effectivity of all its components.
+
+\begin{definition}[Degreewise Mittag--Leffler condition]
+\label{def:moduli-cohomology-ml-datum}
+Choose a countable cofinal sequence and coefficient complexes
+\(K_{R,a}\) on the retained object, extension, wrapped or flag
+stacks. Let
+\[
+ C^q_{R,a}=H_c^q(\mathfrak M_{R,a},K_{R,a})
+\]
+when compactly supported cohomology is the selected theory, and use
+the specified dualizing-complex model in a Borel--Moore theory.
+The actual six-functor maps define a tower only after their variance
+and identity and composition laws have been fixed.
+It is Mittag--Leffler in degree \(q\) if, for every \(R_0\), the
+images of \(C^q_{R,a}\to C^q_{R_0,a}\) are constant for all
+sufficiently large \(R\).
+\end{definition}
+
+\begin{proposition}[Degreewise exactness of a countable limit]
+\label{prop:moduli-cohomology-lim1-vanishing-criterion}
+For a countable tower of modules satisfying the preceding condition,
+\(R^1\varprojlim_R C^q_{R,a}=0\).
+For a tower of complexes \(C_R\), there is a short exact sequence
+\[
+ 0\longrightarrow\varprojlim{}^1 H^{q-1}(C_R)
+ \longrightarrow H^q(R\varprojlim C_R)
+ \longrightarrow\varprojlim H^q(C_R)\longrightarrow0.
+\]
+In particular, degreewise Mittag--Leffler cohomology gives the
+right-hand identification.
+\end{proposition}
+\begin{proof}
+The derived limit of a countable module tower is represented by the
+two-term product complex with map
+\[
+ 1-T:\prod_n A_n\longrightarrow\prod_n A_n,
+ \qquad (1-T)(x)_n=x_n-u_nx_{n+1}.
+\]
+For a surjective tower this map is surjective by successive lifting.
+For a Mittag--Leffler tower, its stabilized images form a
+surjective subtower. The quotient is pro-zero. On a pro-zero tower,
+\(\sum_{j\ge0}T^j\) is finite in each fixed output coordinate
+and inverts \(1-T\). The exact sequence of these towers therefore
+gives surjectivity of \(1-T\) on the original tower, proving the
+vanishing of its cokernel \(\varprojlim{}^1\).
+Applying the same product-cone model to a tower of complexes gives
+the displayed cohomology sequence.
+\end{proof}
+
+Every tower of finite-dimensional vector spaces over a fixed field
+is Mittag--Leffler: its images in a fixed stage form a descending
+chain of subspaces. The analogous assertion for finite-rank
+integral modules is false, as the tower
+\(\mathbb Z\xleftarrow{2}\mathbb Z\xleftarrow{2}\cdots\)
+shows. The images \(2^n\mathbb Z\) never stabilize.
+Finite type of a stack, a proper transition map or an Euler
+characteristic does not establish the finite-dimensional or
+Mittag--Leffler hypotheses for a chosen coefficient theory.
+
+\subsubsection*{Finite and limiting comparison statements}
+
+\begin{theorem}[Formation of the finite comparison system]
+\label{thm:finite-stage-dirac-igusa-pro-object}
+Suppose the eight kinds of structure above are constructed, with
+morphisms \textup{(M1)}--\textup{(M8)} satisfying their identity and
+composition laws on a cofiltered stage system. They define a
+Dirac--Igusa pro-object. The primitive, pairing-kernel, PBW and
+coefficient cohomology limits agree with the cohomology of their
+derived limits whenever each of those towers satisfies the
+Mittag--Leffler hypotheses just stated. No geometric effectivity or
+analytic continuation is implied by this conclusion.
+\end{theorem}
+\begin{proof}
+The component maps and their coherence define the diagram in
+\(\mathsf C_X\), hence its pro-object. Apply the preceding
+proposition to each of the indicated coefficient towers. The last
+sentence distinguishes these limits from the further geometric and
+analytic realizations.
+\end{proof}
+
+\begin{theorem}[Finite Pfaffian comparison]
+\label{thm:pfaffian-dirac-finite-stage}
+At a finite stage carrying the geometric skew and orientation data,
+the Pfaffian product and local reflection identities hold under
+their specified line comparisons. A primitive recognition or
+associative cobar conclusion holds only with the corresponding
+finite source maps and relations. If these comparisons and their
+inverses commute with every stage transition, they give the stated
+comparison of pro-objects and, when defined, of their compatible
+limits.
+\end{theorem}
+\begin{proof}
+The finite skew identity is
+\(\operatorname{pf}(D)^2=\det D\), and orthogonal block sums
+multiply Pfaffians. Section-compatible wall lifts give the local
+sign of Proposition~\ref{prop:rank-one-crossing-o2-sign}.
+The primitive and coefficient conclusions are the separate
+recognition and associative comparison theorems of the preceding
+subsections. Compatible inverse maps induce a pro-isomorphism by
+Proposition~\ref{prop:dirac-igusa-pro-object-universal-property};
+applying an available limit functor preserves that equivalence.
+\end{proof}
+
+For \(K3\times E\), the finite moduli, reduced coefficients,
+orientation transport and compact comparison maps remain the
+geometric inputs. The local cyclic charts, formal charge formulas,
+target relations and finite skew identities provide concrete parts
+of the construction. A global realization requires their compatible
+geometric extensions, rather than only their scalar shadows.

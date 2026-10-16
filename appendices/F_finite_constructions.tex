@@ -1,0 +1,1073 @@
+\section{Finite comparison maps for the compact realization}
+\label{app:eight-finite-constructions}
+
+The finite data of Section~\ref{subsec:eight-finite-constructions}
+become useful when their maps can be calculated. This appendix fixes
+the geometric supports, coefficient morphisms and matrix equations
+needed for that calculation. It also separates the formal target
+from the compact source: a target degree can be listed before a
+sheaf of that degree or a Hall operation has been constructed.
+
+Throughout, \(X=S\times E\), with \(S\) a smooth projective K3
+surface and \(E\) a smooth elliptic curve. The stage parameter
+\(R\) bounds the chosen geometric data. It is distinct from root
+height, word length, cohomological degree and any formal deformation
+parameter. When several bounds are used, their comparison is part
+of the construction.
+
+The proposed compact datum includes a field complex
+\(\mathcal A_{X,R}^{E_3}\), its local/wrapped specialization,
+critical coefficients and orientation, Hall operations, primitives,
+a coalgebra and its associative comparison, Pfaffian sections and
+recognition maps. If an \(E_3\)- or BV description is required,
+its formal target charts, field differential and operations must be
+constructed. The quantum master equation, anomaly and framing,
+compact-support maps and factorization descent are additional
+conditions on those same complexes. A map denoted
+\(\operatorname{Sp}_{K3,E}^{\mathrm{ch}}\) must preserve the
+specified operations and stage transitions; it is not defined by
+naming a current-envelope target.
+
+\subsection{Charges, finite supports and target degrees}
+\label{app:build-charge-window}
+
+Fix the Abramovich--Polishchuk heart and its Liu tilt at the scope
+of Appendix~\ref{app:stability-support}
+\cite{AbramovichPolishchukTStructures,LiuProductStability}.
+The polynomial charge has the form
+\[
+ L_M(n)=a(M)n+b(M)+i\bigl(c(M)n+d(M)\bigr).
+\]
+The weak charge, torsion pair and tilted heart must be kept with
+the central charge; retaining only the polynomial does not retain
+the stability condition. A finite subobject- and quotient-closed
+collection with a strict integer length admits the finite HN
+argument of Proposition~\ref{prop:retained-window-hn-filtration}:
+choose maximal phase and then maximal length at each quotient.
+Its factor count is bounded by the initial length. This is an
+argument in the chosen heart, not a theorem that the moduli of all
+such factors is finite or proper.
+
+Let \(\Gamma_{\mathrm{act}}\) be the nonzero Jacobi support in
+the cusp convention of Chapter~\ref{ch:view1-automorphic}, for the
+index-one form of \cite{EZ:1}. A finite
+set can be obtained by taking
+\[
+ A_R^\circ=
+ \{(n,l,m)\in\Gamma_{\mathrm{act}}:n+|l|+m\le R\}
+\]
+and its downward saturation in the positive root order. This gives
+an exhaustion of the active target degrees. The actual positive
+cone and its finite height fibres establish finiteness; they do not
+supply geometric representatives.
+
+For geometric charge data, the normal-ordered lift is
+\[
+ \widehat\Gamma_R=
+ \{(c,T):c\in\Gamma_R^{HN},\ T\in\mathcal T_R(c)\},
+ \qquad
+ \Gamma_R^\Pi=\{\Pi_X(c)+T:(c,T)\in\widehat\Gamma_R\}.
+\]
+The translate set \(\mathcal T_R(c)\), its bounds and the cocycle
+\(B\) are those of Definition~\ref{def:finite-target-test-window}.
+The formal lift of every Gram triple in
+Lemma~\ref{lem:primitive-lift-every-gram-triple} is a lattice
+construction. It does not prove effectivity, stability or existence
+of a compact object at that lift.
+
+At a retained positive root \(\beta\), the target has separately
+specified even and odd dimensions \(e_\beta,o_\beta\).
+The minimal Gritsenko--Nikulin presentation and its ordinary and
+super denominators \cite{GN,GNPartI,GNII} determine them by
+Proposition~\ref{prop:bkm-all-height-parities}.
+Signed exponents alone do not: adding an even and an odd generator
+can leave their difference unchanged. The first interior target is
+\(29\mid93\), and the next height-four timelike target is
+\(201\mid93\). Geometric recognition requires maps to these
+spaces, not just the numbers \(-64\) and \(108\).
+
+A finite relation diagram enlarges its degree set to retain the
+output of every intermediate bracket. Let \(W_3\) be the thirteen
+positive root degrees of height at most three, and put
+\[
+ R_4=\{3\delta_i+\delta_j:i\ne j\},\qquad
+ I_4=\{2a_{ij}:i<j\},
+\]
+\[
+ C_{\le7}=\{a_{ij}+s\delta_k:
+       \{i,j,k\}=\{1,2,3\},\ 2\le s\le5\}.
+\]
+Here \(a_{ij}=\delta_i+\delta_j\), as in the target presentation.
+The degree set
+\[
+ W_{\mathrm{rel}}^+
+ =W_3\cup R_4\cup I_4\cup C_{\le7}
+       \cup\{2\delta_{123}\},
+ \qquad
+ D_k=\delta_k+2a_{ij},
+\]
+has \(35\) elements, including the nine zero root spaces at the
+terminal real and complementary Serre degrees.
+Adding the \(D_k\) gives
+\(W_{\mathrm{sat}}^+=W_{\mathrm{rel}}^+\cup\{D_1,D_2,D_3\}\),
+but the effect of a further enlargement must be computed from its
+actual set and operations. The first further enlargement described
+after Proposition~\ref{prop:target-admissibility-obstruction-wrel}
+has \(89\) degrees. Later finite totals cannot be inferred
+by retaining a count calculated from a different initial set.
+
+The six-degree families \(A_N,B_N\) of
+Proposition~\ref{prop:recognition-affine-staircase} satisfy
+\(A_N\Rightarrow B_N\Rightarrow A_{N+2}\) under its specified
+degree-enlargement rule. To realize such degrees geometrically,
+one must give
+\(R_N,c_N,T_N\) satisfying
+\(\Pi_X(c_N)+T_N=\gamma_N\) for every relevant member of the
+family. Definition~\ref{def:relation-closed-target-finite-r-exhaustion}
+keeps this existence assertion separate from the target calculation.
+
+\subsection{Finite moduli and universal complexes}
+\label{app:build-finite-moduli}
+
+A bounded geometric class can be described by
+\[
+ c=(\widehat c,[a_c,b_c],(P_{c,i}),N_c),
+\]
+where \(\widehat c\) is its charge, \([a_c,b_c]\) its prescribed
+cohomological range, \(P_{c,i}\) its Hilbert polynomials and
+\(N_c\) a regularity bound. A supplied finite collection \(C_R\)
+of such data determines the moduli problem
+\[
+ \mathfrak M^{ss}_{R,c}
+ =\{A\in\operatorname{Perf}(X):
+   A\text{ has the specified class and bounds and is semistable}\}.
+\]
+One must prove that the chosen locus is algebraic and of finite
+type. Semistability is not generally a closed condition under every
+specialization. If a proper correspondence argument uses a closed
+locus inside a bounded Quot space, that closedness is an extra
+hypothesis on the locus being used.
+
+The tangent complex at \(A\in\operatorname{Perf}(X)\) is
+\(R\operatorname{Hom}(A,A)[1]\). On a CY3 it can have cohomology
+in degrees \(-1,0,1,2\). Scalar automorphisms and their Serre-dual
+trace direction are present before reduction. A two-term reduced
+complex therefore needs an actual reduction map and proof of its
+amplitude. Restriction of the ambient shifted symplectic form to an
+arbitrary substack is not automatically nondegenerate
+\cite{PTVV2013}.
+
+On the scalar gerbe, the universal complex \(\mathcal U\) has
+weight one. The complex
+\(R\mathcal Hom(\mathcal U,\mathcal U)\) has weight zero and
+can descend along the gerbe with its natural maps. Descent of
+\(\mathcal U\) itself needs a trivialization or compensating
+weight, or else a twisted recipient. The distinction is already
+visible on \(B\mathbb G_m\): the standard representation does
+not descend to a line on a point, although its endomorphism line
+does.
+
+Removing the common scalar subgroup does not make all stabilizers
+finite. For a direct sum of two distinct stable objects, a relative
+\(\mathbb G_m\) remains; repeated summands retain larger linear
+groups. A finite-inertia locus and its closed strata must be
+specified if the coefficient or descent theorem requires them.
+Quotient by translation in \(E\) is a further geometric operation,
+with its own stabilizers and support conditions.
+
+The retained object set, HN factors and chosen extension diagrams
+must be compatible. This is not closure under all extensions inside
+a bounded nonzero positive charge set: repeated sums leave any
+fixed positive bound. Likewise, reversal of a finite HN word and a
+formal charge involution does not construct derived duality on the
+chosen heart. A geometric duality must land in the specified
+recipient and preserve the retained support and orientation data.
+The hypotheses and their valid finite consequences are separated
+in Appendix~\ref{app:stability-support}.
+
+\subsection{Hybrid support and correspondence maps}
+\label{app:build-hybrid-wrapped}
+
+The elliptic support degree is defined from the actual one-cycle:
+\[
+ (p_E)_*\operatorname{cyc}_1(F)=b_R^{\mathrm{geom}}(F)[E].
+\]
+For effective one-dimensional support, a positive degree projects
+onto all of \(E\). At degree zero, every curve component has a
+point as its image in \(E\). These support statements are independent of the
+normal-ordered Borcherds coordinate
+\(m_R^{\mathrm{Bch}}=\operatorname{pr}_3\overline\Pi_X\).
+An equality between those two degree functions is a comparison to
+be proved, not a convention for the support.
+
+The local closed-configuration stack for a finite index set \(I\)
+has pairs \((A,(e_i)_{i\in I})\) with
+\[
+ \operatorname{Supp}(A)\subset
+       \bigcup_{i\in I}S\times\{e_i\}.
+\]
+Repeated points are allowed in this closed configuration recipient.
+The open disjoint locus and the collision locus have different
+restriction maps. A local section on one does not itself define
+the operation across the other.
+
+The wrapped sector begins with an \(E\)-equivariant prequotient
+\(\mathcal M_{\eta,R}^{\mathrm{wr,rig}}\) and its anchor
+\(\lambda_{\eta,R}\). A determinant anchor of Euler weight
+\(\chi\) transforms under translation with that weight. It can
+be constant along orbits when \(\chi=0\). Jordan--H\"older
+spectral data may distinguish, for example, \(\mathcal O_E^2\)
+from \(L\oplus L^{-1}\), but translation acts trivially on the
+isomorphism classes of degree-zero line bundles. Thus that datum
+alone does not separate every orbit.
+
+Changing the origin from \(0\) to \(a\) changes the relevant
+Picard class by
+\[
+ \lambda_a\otimes\lambda_0^{-1}
+       \simeq\mathcal O_E\bigl(\chi(0-a)\bigr)
+\]
+under the stated determinant convention. It does not canonically
+choose a stabilizer character. Even a trivial line can carry
+different linearizations. An equivariant comparison must retain
+that choice.
+
+The four binary correspondences \(LL,LW,WL,WW\) are defined
+before quotient, keeping both input anchors and the output anchor.
+For two wrapped inputs, the common-translation quotient satisfies
+\[
+ [M\times N/E]\simeq[M/E]\times_{BE}[N/E]
+\]
+with diagonal translation. The ordinary product of quotient stacks
+would permit two unrelated torsors and changes the operation.
+Quotienting an extension diagram therefore requires a
+pseudofunctor \(Q_{E,R}\), its operation comparisons
+\(\theta^Q_{\mu,R}\), and their base-change coherences.
+If \(\mathcal B_R^{E,\mathrm{hyb}}\) denotes the specified
+prequotient correspondence construction, the descended one is
+\(Q_{E,R}\mathcal B_R^{E,\mathrm{hyb}}\) only after those
+comparisons are supplied.
+
+The two-step flag atlas has eight words of length three in
+\(\{L,W\}^3\). Their associativity squares are finite tests of
+the actual correspondences. Full factorization needs all higher
+flags and collision coherences as well. A finite table of binary
+maps does not provide those higher maps.
+
+On a sheaf locus, properness of the target extension map can follow
+from its description as a closed relative Quot locus. The argument
+requires the bounded Hilbert data and the closed source condition.
+It applies separately to \(LL\), the two ordered mixed cases,
+and \(WW\) when their respective hypotheses hold. It supplies no
+properness of the other map in the correspondence and does not
+prove Thom--Sebastiani, quotient descent or a protected coefficient
+identity. Section~\ref{subsec:hybrid-ran-carrier} gives the actual
+local models and the remaining global comparisons.
+
+\subsection{Reduced orientation and equivariant descent}
+\label{app:build-orientation}
+
+Let \(K_0\) be a specified perfect deformation complex with a
+cosection morphism
+\(\sigma:K_0\to\mathcal O[-2]\). Its fibre is perfect:
+\[
+ K^{\mathrm{fib}}\longrightarrow K_0
+       \xrightarrow{\sigma}\mathcal O[-2].
+\]
+The notation \(K^{\mathrm{red}}\) further specifies which scalar,
+orbit and dual obstruction directions are removed. A morphism to
+\(H^2(S,\mathcal O_S)[-1]\) would remove a different degree.
+The precise shift is therefore part of the cosection construction.
+
+For a nonzero elliptic translation direction \(u_F\), Serre
+duality pairs \(\operatorname{Ext}^1(F,F)/\mathbb Cu_F\)
+with \(\ker\sigma_F\subset\operatorname{Ext}^2(F,F)\).
+This gives a linear reduced pairing. A family of reduced critical
+charts, its orientations and coefficient gluing must still be
+constructed. The positive reduced stable-pair comparison and the
+ordinary critical CoHA construction in the preceding chapters
+retain their own geometric domains; neither automatically provides
+this complete reduced compact coefficient system.
+
+The determinant convention is
+\[
+ \det K=\bigotimes_i(\det K^i)^{(-1)^i},\qquad
+ \det(K[1])=(\det K)^{-1},\qquad
+ \det(K^\vee)=(\det K)^{-1}.
+\]
+A root is the pair \((o,\rho:o^{\otimes2}\simeq\det K)\).
+If a further perfect cosection factor \(C_{\mathrm{cs}}\) is
+used, root the actual tensor product
+\(\mathscr D=\det K^{\mathrm{red}}\otimes\det C_{\mathrm{cs}}\).
+Its obstruction is \(\delta(\mathscr D)\in H^2(B,\mu_2)\).
+An underlying cokernel sheaf need not have a determinant until a
+perfect model is supplied.
+
+For a complex line,
+\[
+ w_2(\mathscr D_{\mathbb R})=c_1(\mathscr D)\bmod2.
+\]
+This uses the integral Chern class. A rational Chern-character
+calculation cannot detect all its torsion. If a cocycle
+\(a^{\mathrm{red}}\) represents the obstruction, an actual
+trivialization is a cochain \(h^{\mathrm{red}}\) with
+\(\delta h^{\mathrm{red}}=a^{\mathrm{red}}\).
+Vanishing of its cohomology class does not select that cochain.
+The isomorphism classes of root pairs form an
+\(H^1(B,\mu_2)\)-torsor, rather than merely the two-torsion subgroup
+of the Picard group.
+
+For an \(E\)-action, solve the root problem on \([B/E]\).
+The group \(H^2(BE;\mathbb F_2)\) has basis \(u_1,u_2\), but
+an expression \(a_1u_1+a_2u_2\) contributes only through the
+actual quotient or spectral-sequence map. That map need not be
+injective. For the translation action of \(E\) on itself,
+\([E/E]\) is a point. Thus requiring both coefficients to vanish
+in \(H^2(BE)\) is not a universal free-action descent criterion.
+
+\subsubsection*{Finite stabilizers}
+
+At a finite stabilizer \(H\), distinguish the equivariant Kummer
+class from the character of the chosen root. For
+\(H=E[2]\simeq(\mathbb Z/2)^2\), write
+\[
+ \beta=b_{20}x_1^2+b_{11}x_1x_2+b_{02}x_2^2,
+ \qquad |x_i|=1.
+\]
+Restriction to the three order-two subgroups gives coefficients
+\[
+ r_1=b_{20},\qquad r_2=b_{02},\qquad
+ r_3=b_{20}+b_{11}+b_{02}.
+\]
+Hence
+\[
+ b_{20}=r_1,\quad b_{02}=r_2,\quad b_{11}=r_1+r_2+r_3,
+ \qquad \beta=0\Longleftrightarrow r_1=r_2=r_3=0.
+\]
+Indeed, the two coordinate restrictions send \((x_1,x_2)\) to
+\((t,0)\) and \((0,t)\), while the diagonal restriction sends it
+to \((t,t)\).
+
+For a two-primary subgroup \((\mathbb Z/2^a)^2\) with
+\(a\ge2\),
+\[
+ H^*(B(\mathbb Z/2^a)^2;\mathbb F_2)
+ =\Lambda(x_1,x_2)\otimes\mathbb F_2[y_1,y_2],
+ \qquad |y_i|=2.
+\]
+A degree-two class is
+\(A_1y_1+A_{12}x_1x_2+A_2y_2\).
+The mixed class restricts to zero on every cyclic subgroup: on a
+cyclic group of order divisible by four, both degree-one factors
+are multiples of an exterior generator, while on an order-two
+subgroup their pullbacks from \(\mathbb Z/2^a\) vanish.
+The functional
+\[
+ \pi_{12}(y_1)=\pi_{12}(y_2)=0,\qquad
+ \pi_{12}(x_1x_2)=1
+\]
+detects the missing coefficient \(A_{12}\).
+For \(E[N]\), the exterior-generator case requires \(4\mid N\);
+when its two-primary exponent is two, the polynomial
+\(E[2]\) calculation applies instead.
+Odd-order groups have no positive-degree mod-two group cohomology,
+by averaging.
+
+Even when the degree-two class vanishes, a chosen equivariant root
+can have a nontrivial character
+\(\lambda^H\in H^1(BH;\mathbb F_2)\).
+For \(E[2]\), write
+\(\lambda^H=\lambda_1x_1+\lambda_2x_2\); its three restriction
+values are \(\lambda_1,\lambda_2,\lambda_1+\lambda_2\).
+The pair \((1,0)\) gives a nontrivial character despite a zero
+Kummer class. Coarse descent requires that every stabilizer act
+trivially on the root fibre. Stack descent and coarse descent are
+therefore different requirements.
+
+For an inclusion \(K\hookrightarrow H\), chosen cocycle
+primitives require comparisons of the form
+\[
+ \operatorname{res}h^H-h^K=\delta q^{K,H}.
+\]
+The comparisons must satisfy their own compatibility for chains of
+subgroups and for overlap and stage maps. Cohomological vanishing
+at each stabilizer separately supplies no such coherent choice.
+
+\subsubsection*{Cross determinants and critical coefficients}
+
+Write \(\mathscr D_A^{\mathrm{full}}=\det R\operatorname{Hom}(A,A)\).
+The block decomposition of this full, unshifted complex gives
+\[
+ \begin{split}
+ \mathscr D_{A\oplus B}^{\mathrm{full}}\simeq{}&
+ \mathscr D_A^{\mathrm{full}}\otimes\mathscr D_B^{\mathrm{full}}\otimes
+ \det R\operatorname{Hom}(A,B)\otimes
+ \det R\operatorname{Hom}(B,A).
+ \end{split}
+\]
+For a reduced complex, one must first identify its corresponding
+determinant triangle and any additional reduction factors. When
+the displayed cross factor is the one in that triangle, the
+orientation comparison requires
+\[
+ o_{A\oplus B}\simeq o_A\otimes o_B\otimes q_{A,B},
+ \qquad
+ q_{A,B}^{\otimes2}\simeq
+ \det R\operatorname{Hom}(A,B)\otimes
+ \det R\operatorname{Hom}(B,A).
+\]
+For a filtered extension, the corresponding determinant triangle
+and its coherent higher-flag identifications replace the split
+formula. Omitting \(q_{A,B}\) generally changes the square map.
+
+The critical coefficient \(\Phi_o\) is a constructible object
+formed using the orientation and its sign torsor
+\cite{BBDJS2015,JoyceUpmeier,JoyceTanakaUpmeier}. It is not the
+ordinary tensor \(\Phi\otimes o\) of a constructible complex
+with a coherent line. A coefficient map on an extension
+correspondence must be an actual morphism in its constructible or
+mixed-Hodge recipient, with the required shifts and supports.
+The line-level determinant identity alone supplies no such morphism.
+Thom--Sebastiani comparisons and their full flag associativity must
+be checked for these coefficient maps.
+
+\subsubsection*{Weyl cocycles and their compatible primitives}
+
+At a finite action groupoid \(\mathcal G_R\), let the lifted
+arrows have sign defect \(c_{o,R}\). With a fixed finite cochain
+model, its trivialization is the linear equation
+\[
+ d_R^1b_R=v(c_{o,R})
+\]
+over \(\mathbb F_2\). It has a solution exactly when
+\[
+ \operatorname{rank}d_R^1
+ =\operatorname{rank}[d_R^1\mid v(c_{o,R})],
+\]
+provided the represented defect is actually a cocycle in that
+cochain complex. The matrix ranks test solvability; the vector
+\(b_R\) is the chosen trivialization.
+
+Transition maps must act on the cochain models, not only their
+cohomology. If
+\(\rho^i_{RR'}:C^i(\mathcal G_{R'})\to C^i(\mathcal G_R)\),
+require
+\[
+ d_R^1\rho^1_{RR'}=\rho^2_{RR'}d_{R'}^1,
+ \quad \rho^2_{RR'}v(c_{o,R'})=v(c_{o,R}),
+ \quad \rho^1_{RR'}b_{R'}=b_R.
+\]
+A tower of solvable equations need not admit the last compatible
+choice without an inverse-system argument.
+
+Suppose \(\eta_{R,S}\) trivializes the quotient orientation on a
+stratum \(S\), and \(\Theta_{i,R,S}\) is its chosen transport.
+The remaining torsor defect is represented by
+\[
+ \Delta^\omega_{i,R,S}
+ =\Theta^1_{i,R,S}\eta_{R,S}-\eta_{R,s_iS}.
+\]
+It must be closed, have zero class in the actual degree-one
+cohomology, and have a compatible primitive when a chain-level
+identification is required. The reduced degree-two defects require
+the corresponding cochain comparisons as well.
+For identified finite stabilizers, the matrices on their cohomology
+must intertwine both classes and characters:
+\[
+ M_i^H v(\beta^H_S)=v(\beta^{H'}_{s_iS}),\qquad
+ N_i^H v(\lambda^H_S)=v(\lambda^{H'}_{s_iS}).
+\]
+The same assertion for any \(BE\)-component uses its actual
+induced map \(M_i^E\).
+
+Once coherent lifts have constant residual generator values
+\(\sigma_i^o\), their character on a word is
+\[
+ \epsilon_o(s_{i_1}\cdots s_{i_m})=
+       \prod_{a=1}^m\sigma_{i_a}^o.
+\]
+Section-compatible skew crossings give \(\sigma_i^o=-1\), hence
+\(\epsilon_o=\det_W\), as in
+Appendix~\ref{app:pfaffian-wall-normal-form}.
+The automorphic homogeneous character is trivial on the chamber
+symmetry \(S_3\). Extending a geometric \(W\)-action to the full
+semidirect product requires actual chamber-symmetry correspondences
+and their lifts. The two scalar extensions
+\[
+ \widetilde\epsilon_\chi(w,\sigma)=\epsilon_o(w)\chi(\sigma),
+ \qquad \chi\in\{1,\operatorname{sgn}\},
+\]
+show that the \(W\)-restriction alone cannot choose that extension.
+
+At another divisor, a coefficient local system \(\mathcal K_R\)
+on the complement has monodromy
+\[
+ T_{R,S,\eta}=\rho_{\mathcal K_R}(\gamma_{R,S,\eta})
+\]
+around a specified meridian \(\gamma_{R,S,\eta}\). This requires
+local constancy and the stated representation of the fundamental
+group. A coherent root line has no such representation until a
+flat structure is supplied, and an arbitrary constructible critical
+complex need not be locally constant on the proposed complement.
+Monodromy at an imaginary-root divisor need not be a Weyl reflection.
+
+Parity also does not choose a root-line action. The Berezinian of a
+super vector space and a chosen square root with its equivariance
+are different data. Similarly, a duality
+\(K_\gamma\simeq K_{-\gamma}^{\vee}[-3]\), when actually
+supplied, gives
+\[
+ \det K_\gamma\simeq\det K_{-\gamma}.
+\]
+The dual and the odd shift each invert the determinant, so their
+effects cancel. A claim about opposite root lines needs the chosen
+square-map and duality comparison; it cannot be inferred by
+inserting an inverse determinant or an unexplained sign line.
+
+Finally, a compatible family of root pairs is first an object of
+the limit of the relevant Picard groupoids. Its effectivity as a
+line on an infinite geometric recipient needs an actual comparison
+\[
+ \operatorname{Pic}^{or}(B_\infty)
+       \longrightarrow\varprojlim_R\operatorname{Pic}^{or}(B_R).
+\]
+An equivalence here is stronger than a statement about individual
+classes in \(\pi_0\). Taking isomorphism classes can lose the
+coherent isomorphisms and their automorphisms.
+
+\subsection{Hall maps, primitives and pairings}
+\label{app:build-hall}
+
+Let \(\mathcal H_{R,c}\) be the specified coefficient realization
+of the oriented critical object \(\Phi_{o,R,c}\) on the retained
+moduli stack. This can be compactly supported critical cohomology
+or a declared Borel--Moore model; its grading, duals and shifts are
+part of the definition. Do not identify these realizations by
+notation alone.
+
+An extension correspondence has maps
+\[
+ \mathfrak M_a\times\mathfrak M_b
+       \xleftarrow{p}\mathfrak E_{a,b}\xrightarrow{q}
+       \mathfrak M_{a+b}.
+\]
+For a product, specify the pullback or Gysin map appropriate to
+\(p\), the critical coefficient morphism \(\theta_{a,b}\),
+and the proper or compact-support pushforward appropriate to
+\(q\). The notation
+\[
+ m_{a,b}=q_!\theta_{a,b}p^\dagger
+\]
+records these chosen maps; \(p^\dagger\) includes its degree
+shift. Ordinary pullback on sheaves does not automatically define
+a map on compactly supported cohomology. The coefficient and
+support comparisons must supply that map in the chosen realization.
+
+For a separated finite-type map with a compactification
+\(q=\overline q\,j\), the sheaf-theoretic expression is
+\[
+ q_!K=\overline q_*j_!K.
+\]
+A common proper refinement of two compactifications identifies
+these objects through the standard proper base-change comparison.
+This proves independence of the compactification at the functorial
+level; it does not manufacture a missing morphism from the resulting
+coefficient object to the desired target coefficient.
+
+On the three-input flag correspondence, associativity compares
+\[
+ m_{a+b,c}(m_{a,b}\otimes1)
+       \quad\text{and}\quad
+ m_{a,b+c}(1\otimes m_{b,c}).
+\]
+The geometric proof must identify the two composed diagrams,
+their coefficients and shifts. Higher flags give coherence among
+these identifications. Likewise a coproduct requires a separate
+coefficient map and admissible pushforward in the reverse diagram.
+It is not obtained by formally inverting \(\theta_{a,b}\) unless
+that map is an equivalence on the stated recipient.
+
+For a bialgebra comparison, the four-block flag decomposes by
+\[
+ \mathsf S(a,b;u,v)=
+ \{(a_1,a_2,b_1,b_2):
+   a=a_1+a_2,\ b=b_1+b_2,
+   u=a_1+b_1,\ v=a_2+b_2\}.
+\]
+With \(M\) and \(D\) denoting the product and coproduct matrices,
+its required identity is
+\[
+ \begin{split}
+ D^{a+b;u,v}M^{a,b}
+ =\sum_{\mathsf S(a,b;u,v)}
+ &(M^{a_1,b_1}\otimes M^{a_2,b_2})
+ (1\otimes\tau\otimes1)\\
+ &\hspace{-1em}\cdot
+ (D^{a;a_1,a_2}\otimes D^{b;b_1,b_2}).
+ \end{split}
+\]
+The braiding \(\tau\) must be the one belonging to the actual
+tensor. An ordinary Koszul equation cannot be substituted for a
+meromorphic braided equation. Unit and counit diagrams are
+additional parts of a bialgebra structure.
+
+For a connected positively graded ordinary bialgebra, the antipode
+recursion is
+\[
+ S(1)=1,\qquad S(x)=-x-\sum S(x')x'',
+ \qquad\overline\Delta x=\sum x'\otimes x''.
+\]
+Positive degree makes it finite on each homogeneous element.
+The convolution inverse identities are
+\(m(S\otimes1)\Delta=m(1\otimes S)\Delta=\eta\epsilon\).
+This antipode preserves total charge; it is not a geometric
+charge-reversing duality.
+
+Let \(I=\ker\epsilon\). On this augmentation ideal,
+\[
+ \overline\Delta(x)=\Delta x-1\otimes x-x\otimes1,
+ \qquad P=\ker(\overline\Delta:I\to I\otimes I).
+\]
+For the ordinary Koszul tensor, the supercommutator
+\( [x,y]=xy-(-1)^{|x||y|}yx \) of primitives is primitive.
+Expanding the bialgebra identity cancels the two cross terms.
+Associativity also gives the super Jacobi identity
+\[
+ (-1)^{|x||z|}[x,[y,z]]+
+ (-1)^{|y||x|}[y,[z,x]]+
+ (-1)^{|z||y|}[z,[x,y]]=0.
+\]
+Thus \(P\)
+is a Lie superalgebra. After a proved charge descent,
+\[
+ P^\Pi_\gamma=
+   \bigoplus_{\overline\Pi_X(\widehat c)=\gamma}P_{\widehat c},
+ \qquad
+ [P^\Pi_{\gamma,\bar p},P^\Pi_{\eta,\bar q}]
+   \subset P^\Pi_{\gamma+\eta,\bar p+\bar q}.
+\]
+The additivity of the descended degree is a hypothesis on the
+operations; the central cocycle alone does not establish it.
+
+A canonical primitive projector requires further assumptions.
+For the connected cocommutative ordinary Hopf realization over
+characteristic zero, the Eulerian logarithm gives the projector
+proved in Chapter~\ref{ch:view2-bkm}. A chosen linear splitting
+of \(P\hookrightarrow I\) is not that projector, and its
+naturality under transition maps must be checked independently.
+
+\subsubsection*{Coherent charge descent}
+
+An additive charge map regrades supplied operations. A chain-level
+repair of a nonadditive comparison asks for more: a specified
+deformation complex, the cochain representing the defect, and its
+null-homotopy. If that recipient is a Hochschild cochain complex,
+the proposed equation has the form
+\[
+ d_{\mathrm{Hoch}}\Theta_\Pi=B_{\mathrm{ch}},
+ \qquad |\Theta_\Pi|=1,\quad |B_{\mathrm{ch}}|=2.
+\]
+Here \(B_{\mathrm{ch}}\) must first be constructed as a closed
+cochain from the geometric charge defect. The equation is soluble
+exactly when its class vanishes in that specified complex.
+Triple homotopies, cyclic refinements, Jacobi compatibility and
+radical preservation are further equations on the chosen solution.
+They may be denoted
+\(\mathfrak o_\Theta^{\mathrm{top}},
+\mathfrak o_\Theta^{\mathrm{Hoch}},
+\mathfrak o_\Theta^{\mathrm{tri}},
+\mathfrak o_\Theta^{\mathrm{Jac}},\mathfrak o_F,
+\mathfrak o_\Theta^{\mathrm{cyc}},
+\mathfrak o_\Theta^{\mathrm{rad}}\): these names record the
+carrier, Hochschild, triple, Jacobi, invariant-form, cyclic and
+radical requirements, not seven classes in an unspecified group.
+
+The Loday--Quillen--Tsygan comparison concerns stable matrix Lie
+homology and cyclic homology
+\cite{LodayQuillen1984,Tsygan1983,LodayCyclicHomology}. Applying
+it to this problem requires a map from the actual compact
+coefficient system to its recipient. Neither that stable theorem
+nor the critical Hall construction of \cite{KSCoHA} supplies
+\(\Theta_\Pi\), a reduced orientation or all the listed
+operation homotopies.
+
+\subsubsection*{Invariant Lie forms and a separate Hopf pairing}
+
+An even opposite-degree invariant Lie form has matrices
+\[
+ B(e_{\gamma,\bar p,a},e_{-\gamma,\bar p,b})
+       =G_{\gamma,\bar p;ab},\qquad
+ G_{\gamma,\bar p}=(-1)^{\bar p}G_{-\gamma,\bar p}^{t}.
+\]
+Other degree or parity pairings vanish. Invariance is
+\[
+ B([x,y],z)=B(x,[y,z]),
+\]
+or equivalently
+\(B([x,y],z)+(-1)^{|x||y|}B(y,[x,z])=0\).
+If this form is defined through a geometric product and a
+charge-zero functional, both that functional and the coefficient
+pairing must be constructed. A formal integral symbol does not
+supply them.
+
+For supplied homogeneous bases and dual output functionals, the
+product and pairing entries are then
+\[
+ M_{ab}^{c}=\langle e^c,q_!\theta p^\dagger(e_a\otimes e_b)\rangle,
+ \qquad
+ G_{\gamma;ab}=\operatorname{tr}_0
+       m(e_{\gamma,a},e_{-\gamma,b}).
+\]
+The first expression is the coefficient realization of the
+correspondence; the second additionally requires its charge-zero
+trace and the claimed invariant-form identity. Integration and
+duality must be defined on those same coefficient objects.
+
+The radical \(R_B\) is a Lie ideal by invariance. Its generated
+ideal in \(U(P)\) is a Hopf ideal because every radical generator
+is primitive. This is the positive quotient construction of
+Proposition~\ref{prop:bkm-lie-radical-quotient}.
+If matrices \(Q_\gamma\) have columns lifting bases of the
+radical quotients, then the descended form is
+\[
+ \overline G_\gamma=Q_\gamma^tG_\gamma Q_{-\gamma}.
+\]
+The left and right radicals must be killed before this expression
+is independent of the lifts. Nondegeneracy requires
+\[
+ \operatorname{rank}\overline G_\gamma
+       =\dim(P_\gamma/R_{B,\gamma})
+       =\dim(P_{-\gamma}/R_{B,-\gamma}).
+\]
+The \(Q\)'s here are sections represented by columns, not arbitrary
+quotient matrices denoted by the same symbol.
+
+A full Hopf pairing, if supplied on a different appropriate
+recipient, has the additional adjointness equation
+\[
+ \langle xy,z\rangle
+       =\langle x\otimes y,\Delta z\rangle.
+\]
+For homogeneous basis elements it reads
+\[
+ \sum_c M_{ab}^{c}G_{cd}
+ =\sum_{u,v}D_d^{uv}(-1)^{|e_b||e_u|}G_{au}G_{bv},
+\]
+together with its unit and counit equations. This is not a further
+identity of the invariant Lie form on an ordinary nonabelian
+primitive algebra. Indeed, Hopf adjointness and
+\(\langle1,x\rangle=\epsilon(x)\) make
+\(\langle[x,y],z\rangle=0\) for primitives, whereas the
+normalized invariant form on \(\mathfrak{sl}_2\) gives
+\(B([h,e],f)=2B(e,f)=2\). Those two requirements cannot be
+imposed on the same form in that recipient.
+
+\subsubsection*{Matrix transport}
+
+For a transition \(T_\gamma:H_{R,\gamma}\to H_{R',\gamma}\),
+product and coproduct preservation are the equations
+\[
+ \begin{split}
+ T_{\alpha+\beta}M_R^{\alpha,\beta}
+   &=M_{R'}^{\alpha,\beta}(T_\alpha\otimes T_\beta),\\
+ (T_\mu\otimes T_\nu)D_R^{\rho;\mu,\nu}
+   &=D_{R'}^{\rho;\mu,\nu}T_\rho,
+ \qquad \rho=\mu+\nu.
+ \end{split}
+\]
+Preserving unit and counit then intertwines the reduced coproduct
+on augmentation ideals and hence maps primitives to primitives.
+Radical preservation also needs the actual pairing comparison.
+For example, if an opposite-degree map \(L\) satisfies
+\[
+ B_{R'}(T_\gamma x,y')=B_R(x,L_{-\gamma}y'),
+\]
+then a radical vector maps to a radical vector provided the displayed
+pairings test all target vectors. This is a statement about the
+specified maps; equal matrix ranks alone do not imply it.
+
+The super bracket matrix is obtained from the two ordered products
+and their Koszul signs. Kernel bases, quotient sections and the
+maps \(A_{\beta,\bar p}\) to the target must satisfy these
+transport equations. The relation complex and its spectral sequence
+must use the same representatives and maps. PBW comparisons concern
+the actual filtered enveloping algebras and their finite weighted
+pieces, not a formal symmetric algebra on a root fragment.
+
+A Hall--Drinfeld double additionally needs a compatible opposite
+half, a full pairing in its declared tensor, cross relations and
+completion. Serre duality of the geometric complexes and the
+weight-five denominator do not supply those constructions
+\cite{CYQGVolIII}.
+
+\subsection{Finite skew blocks and the modular section}
+\label{app:build-dirac-pfaffian}
+
+For a bundle \(V\) of rank \(2n\) and a skew map
+\(D:V\to V^\vee\), the complex
+\([V\xrightarrow D V^\vee]\) in degrees \([-1,0]\) has
+Pfaffian line \(\det V^\vee\) and section
+\(\operatorname{pf}(D)\), with square \(\det D\).
+A geometric comparison must include this shift and skew structure;
+a fibrewise Serre-dual pairing alone does not supply a family of
+skew operators or a section.
+
+For one positive degree \(\gamma\), the block
+\[
+ J_\gamma=
+ \begin{pmatrix}0&1-x^\gamma\\-(1-x^\gamma)&0\end{pmatrix}
+\]
+has Pfaffian \(1-x^\gamma\). With \(e_\gamma\) even and
+\(o_\gamma\) odd copies, the formal super ratio is
+\[
+ (1-x^\gamma)^{e_\gamma-o_\gamma}.
+\]
+At finite height, the product of these blocks gives a finite jet.
+Local finiteness in positive height makes the jets compatible. It
+constructs a formal reference product, not an independently defined
+compact geometric skew complex.
+
+For geometric Pfaffians, require a parameter map to the relevant
+modular domain and line isomorphisms
+\[
+ \iota_{\mathrm{aut},R}:\mathscr L_{\mathrm{Pf},R}
+       \xrightarrow{\sim}
+       (\lambda_{\mathrm{aut}}^5\otimes\varepsilon_5)|_R,
+\]
+commuting with square maps, stage transitions and cusp frames.
+In those frames the desired finite expansion is
+\[
+ 64q^{1/2}r^{1/2}s^{1/2}
+       \prod_{\gamma\in A_R}(1-x^\gamma)^{f_\gamma}
+       \pmod{\text{higher positive height}},
+\]
+with the entire boundary factor included. If a protected integration
+formula is used to obtain this section, it must act on the actual
+coefficient objects and line-valued sections. Defining every input
+block to be the desired scalar factor does not construct that
+geometric integration map.
+
+The normal wall block is \(D_u=\left(\begin{smallmatrix}0&u\\-u&0\end{smallmatrix}\right)\).
+An invariant tangential unit and a section-compatible reflection
+lift give the residual sign \(-1\). The global atlas and root
+transport are the separate requirements of
+Appendix~\ref{app:pfaffian-wall-normal-form}.
+The quotient \(L_{\mathrm{II}}/2L_{\mathrm{II}}\) has eight
+elements, while the abstract twelve-sign set has \(4096\).
+Neither supplies a geometric wall-atlas count without its comparison.
+
+The reference normalization is
+\[
+ [q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64,\qquad
+ [qrs]\Delta_5^2=4096,\qquad
+ D_5=64^{-1}\Delta_5,\quad\Xi=D_5^2.
+\]
+The homogeneous character on the type-II Weyl group is \(\det_W\)
+and is trivial on chamber symmetries. The symplectic multiplier is
+kept with the weight-five automorphy factor. On the period cover,
+\(\operatorname{div}(\Delta_5)=\widetilde H_1\), so its inverse
+square has pole order two; the generic coarse quotient has order
+one, as in Chapter~\ref{ch:view4-mirror}. These target data do not
+construct the geometric section or its mirror interpretation.
+
+Analytic convergence in a cusp region, continuation and boundary
+extension are further requirements beyond the formal product.
+Under the independent geometric line and section comparisons, the
+finite Pfaffian formula yields \(\Delta_5\) at that normalization.
+An identity for a protected trace additionally requires its own
+state and sewing map; the scalar normalization alone is insufficient.
+
+\subsection{The associative source coalgebra}
+\label{app:build-koszul}
+
+Fix the coefficient category, its unit and convolution tensor.
+The source \(C_{X,R}\) is a counital coaugmented coalgebra with
+differential and a conilpotent or specified positive filtration.
+Its cobar is the associative algebra \(\Omega C_{X,R}\).
+Conversely an augmented associative source \(A_{X,R}\) has a bar
+coalgebra \(BA_{X,R}\). A twisting cochain and the bar--cobar
+comparison preserve these types. A coalgebra is not identified
+with an endomorphism algebra merely because their underlying
+complexes have the same graded ranks.
+
+For an ordinary augmented dg algebra \(A\) over a field \(k\), the underlying bar
+coalgebra is the tensor coalgebra on the suspension of its
+augmentation ideal. Its length filtration is
+\[
+ F_p BA=k\oplus\bigoplus_{1\le j\le p}
+                (s\overline A)^{\otimes j},
+\]
+and deconcatenation is
+\[
+ \Delta[a_1|\cdots|a_p]
+ =1\otimes[a_1|\cdots|a_p]+[a_1|\cdots|a_p]\otimes1
+  +\sum_{i=1}^{p-1}[a_1|\cdots|a_i]\otimes[a_{i+1}|\cdots|a_p].
+\]
+Internal differentials and adjacent products give its bar
+differential with the suspended Koszul signs. If every factor
+has positive height, a bounded total-height piece has bounded
+word length. This does not identify word cuts with every
+geometric collision operation.
+
+Given coalgebra, source-counit and algebra maps
+\[
+ b_R:C_{X,R}\longrightarrow BA_{X,R},\qquad
+ \varepsilon_R:\Omega BA_{X,R}\longrightarrow A_{X,R},\qquad
+ \vartheta_R:A_{X,R}\longrightarrow\mathcal A_{\Delta,E,R},
+\]
+their composite is
+\(\Theta_{\mathrm{Kos},R}=\vartheta_R\varepsilon_R\Omega b_R\).
+Its equivalence requires the hypotheses and inverses for these
+actual maps. A source-internal counit cannot replace the independent
+map \(\vartheta_R\) to the target. The same notation in a Ran
+recipient uses its specified convolution and completed bar.
+
+On the positive Ran coefficient recipient of
+Section~\ref{subsec:koszul-source}, a proposed comparison has the
+form
+\[
+ C_{X,R}\longrightarrow C_{\Delta,R},\qquad
+ \Omega C_{X,R}\longrightarrow\mathcal A_{\Delta,E,R},
+\]
+with the actual differentials, supports, completions and inverse
+maps. The ordinary bar of the reference enveloping algebra is a
+separate object. An envelope of a Beilinson--Drinfeld current Lie
+algebra and its main-diagonal Ran object also require their specified
+functors and units. Francis--Gaitsgory Lie--commutative duality
+\cite{FrancisGaitsgoryCKD} does not identify these associative
+constructions; the chiral operations of \cite{BD} retain their
+specified tensor and support as well.
+
+The finite comparison must intertwine the geometric primitive map,
+Weyl transport, root-pair and Pfaffian comparisons and the invariant
+Lie form wherever these structures occur. On ordinary enveloping
+algebras it must preserve the PBW filtration. Additional full Hopf
+pairings, collision maps and factorization operations have their own
+comparison equations. Commuting finite maps give a comparison of
+pro-objects; passing to an effective geometric or analytic limit
+uses separate hypotheses.
+
+\subsection{Recognition from geometric representatives}
+\label{app:build-recognition}
+
+Let \(\mathfrak F\) be the free Lie superalgebra on the target
+simple and Cartan symbols, and let \(J_{\mathrm{BK}}\) be the
+Borcherds relation ideal. Geometric representatives define a map
+\[
+ \pi:\mathfrak F\longrightarrow P_X^{\Pi,\mathrm{red}}.
+\]
+Its factorization through the target requires every Cartan,
+Chevalley, real Serre, orthogonality and super sign relation.
+The desired identification follows when
+\[
+ \ker\pi=J_{\mathrm{BK}},\qquad
+ \operatorname{im}\pi=P_X^{\Pi,\mathrm{red}},
+\]
+with the stated degree, parity and invariant-form compatibilities.
+This is Theorem~\ref{thm:primitive-recognition}.
+
+A finite proof retains bounded word spaces and their actual
+intermediate degrees. Its matrices include the product \(M\),
+coproduct \(D\), unit and counit, bracket \(B\), invariant form
+\(G\), radical inclusion \(K\), quotient section \(Q\), and
+comparison maps \(A_{\beta,\bar p}\). The same symbols must not
+hide different domains: \(B\) here is a bracket matrix, whereas
+the charge normal-ordering \(B(c,c')\) is a cocycle.
+The Hall boundary complex, its spectral sequence and the relation
+kernel calculations are performed on the chosen geometric
+representatives, not on an independently manufactured target vector
+space.
+
+For the target positive roots, the height windows
+\[
+ W_\nu=\{\beta\in\mathcal R_+:
+                    \operatorname{ht}\beta\le\nu\},\qquad
+ \bigcup_\nu W_\nu=\mathcal R_+,
+\]
+give the Gram degree
+\(\gamma_\beta=(b_1,b_1+b_2-b_3,b_2)\) for
+\(\beta=b_1\delta_1+b_2\delta_2+b_3\delta_3\).
+Thus \(\Gamma(W_\nu)=\{\gamma_\beta:\beta\in W_\nu\}\)
+is a target degree window. Its exhaustion is proved by
+\(\beta\in W_{\operatorname{ht}\beta}\); source support
+exhaustion requires the separate geometric representatives.
+
+The finite conditions \textup{(R0)}--\textup{(R8)} in
+Definition~\ref{def:cofinal-primitive-recognition-datum} retain
+source supports, representatives, relation identities, parity
+bijections, the invariant form and radical, kernel equality,
+generation, PBW and transition compatibility. Every relation word
+must be evaluated in a stage containing its intermediate outputs.
+The all-level assertion follows only when these bounded word spaces
+exhaust the presentation with compatible comparisons. A finite
+prefix or a list of signed multiplicities does not prove it.
+
+At \(\delta_{123}\), recognition compares \(29\) even and
+\(93\) odd vectors together with their brackets. The rank-28
+differential of Chapter~\ref{ch:view2-bkm} extends through height
+five in the stated presentation and fails at height six. A derived
+replacement changes its presentation or its recipient and must
+provide the corresponding map. It cannot silently keep the original
+relations while retaining the obstructed differential.
+
+For a topological conclusion, specify the completion of both
+source and target. Positive-height completion uses genuine
+positive Lie quotients. A product over both positive and negative
+root degrees does not automatically have continuous brackets:
+a fixed output degree can receive infinitely many cancelling input
+pairs. A different completion requires its own finite-support or
+convergence argument.
+
+An ordinary primitive isomorphism induces the filtered enveloping
+Hopf isomorphism under its stated hypotheses. It does not by itself
+identify a chiral field algebra, internal centre, boundary category
+or physical state. Those are further operation-preserving maps
+\cite{ChiralBarCobarVolI,ChiralBarCobarVolII,CYQGVolIII}.
+
+\subsection{Dependencies, transitions and effectivity}
+\label{app:build-ordered-dependencies}
+
+The geometric dependencies form a partial order. The Hall operations
+need their correspondence and coefficient maps; recognition needs
+the actual source primitives and their presentation map. A geometric
+Pfaffian comparison needs a skew family, root data and a section.
+These are dependencies of this proposed compact construction, not
+a universal forced order among all the objects. A determinant root
+can be studied before any Hall product, and the bar of an augmented
+algebra is defined without an orientation line.
+
+The finite morphisms \textup{(M1)}--\textup{(M8)} of
+Definition~\ref{def:finite-stage-dirac-igusa-morphism} express the
+required compatibility. They must preserve charge, coefficients,
+operations, root pairs, Pfaffian sections, coalgebras and recognition
+maps. Root-line transitions are isomorphisms after the appropriate
+pullback. Kernel and pairing transitions use their actual source
+and target maps. Cohomological ranks alone do not define them.
+
+The collection \(\{\mathfrak D^{\mathrm{DI}}_{X,R}\}_R\) is a
+pro-object once the maps and coherence are supplied. Its Hom formula
+is the limit-colimit formula of
+Proposition~\ref{prop:dirac-igusa-pro-object-universal-property}.
+Compatible levelwise inverses are sufficient for a pro-isomorphism,
+but not necessary in a general pro-category. The zero-bonding
+nonzero-stage tower in that subsection gives a counterexample to
+the converse.
+
+For each countable coefficient tower, the exact obstruction to
+commuting cohomology with derived inverse limit is
+\(\varprojlim{}^1 H^{q-1}\) \cite[\S3.5]{WeibelHA}.
+Finite-dimensional field-valued
+towers are Mittag--Leffler; finite-rank integral towers need not be.
+Primitive-space, pairing-kernel and PBW towers require this check
+on their own coefficients. A nonuniform collection of finite
+cutoffs gives no all-level conclusion without a cofinality argument.
+
+The resulting conditional comparison is the one in
+Theorem~\ref{thm:pfaffian-dirac-conditional}. It retains the
+geometric degeneration and coefficient, quotient orientation,
+coherent Weyl transport and wall-atlas conditions, together with
+independent Pfaffian, primitive and associative comparison data.
+Its remaining compact construction is to supply these objects and
+maps on the same geometric system. Their formal reference models,
+finite matrix identities and automorphic scalar are necessary
+comparison data, but do not replace that construction.

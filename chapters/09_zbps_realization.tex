@@ -1,0 +1,1555 @@
+\chapter{Elliptic states, joining and the inverse Igusa form}
+\label{ch:zbps-realization}
+
+The inverse Igusa form occurs in two geometric series.  Hilbert
+schemes of a K3 surface give an elliptic-index series after its
+boundary factors have been restored.  Reduced curve counts on
+\(X=S\times E\), with \(S\) a K3 surface and \(E\) an elliptic
+curve, give the reciprocal cusp form itself, with a specified
+normalization.  To compare operations behind these formulas, one
+needs the complexes on which they act.
+
+We first construct elliptic states from the chiral de Rham sheaf.
+Its actual Enriques coefficient has parity dimensions \((1|65)\),
+although the corresponding BKM root space has dimensions
+\((29|93)\).  Both have superdimension \(-64\).  Hilbert
+correspondences then give a concrete joining operator, whose double
+commutator with creators measures multiplication of surface classes.
+These constructions make the comparison problem explicit.  They do
+not identify a reduced threefold Hall action with a field action.
+
+The second half of the chapter relates the primitive curve counts
+to \(\Delta_5^{-2}\), determines the spin \(L\)-function of the
+weight-ten eigenline, and specifies the additional trace and sewing
+data needed for a compact realization.  A Pfaffian comparison
+retains a line, a section and its symmetry action.  Squaring that
+section and taking a numerical trace each forget information, by
+different operations.
+
+\section{Geometric fields before their index}
+\label{sec:zbps-geometric-fields}
+
+Let \(Y\) be a smooth projective complex variety of dimension \(d\).
+On a coordinate chart its chiral de Rham sheaf
+\(\Omega_Y^{\mathrm{ch}}\) has even fields \(\gamma^i,\beta_i\)
+and odd fields \(c^i,b_i\), with singular products
+\[
+ \beta_i(z)\gamma^j(w)\sim\frac{\delta_i^j}{z-w},
+ \qquad b_i(z)c^j(w)\sim\frac{\delta_i^j}{z-w}.
+\]
+Their conformal weights are \(0,1,0,1\).  The fields \(c^i,b_i\)
+have fermionic charges \(1,-1\); the even fields have charge zero.
+We write \(a_{(m)}b\) for the coefficient of
+\((z-w)^{-m-1}\) in the field product, and \(\partial\) for
+vertex translation.
+
+For a coordinate change \(\widetilde\gamma=f(\gamma)\) with
+inverse \(g\), put \(f_i^a=\partial_i f^a\) and
+\(g_a^i=\partial_a g^i\).  The fields transform by
+\begin{align*}
+ \widetilde c^a&=f_i^a(\gamma)c^i,&
+ \widetilde b_a&=:g_a^i(f(\gamma))b_i:,\\
+ \widetilde\beta_a
+ &=:\beta_i g_a^i(f(\gamma)):
+   +:\partial_k(g_a^i\circ f)(\gamma)c^k b_i:.
+\end{align*}
+The colons denote the normal product in the indicated order.
+The last summand is essential.  For example, when
+\(\widetilde\gamma=\gamma^2\) on a punctured chart,
+\[
+ \widetilde\beta=:\beta(2\gamma)^{-1}:
+                   -(2\gamma^2)^{-1}:cb:.
+\]
+The coordinate theorem proves both preservation of the singular
+products and exact composition on overlaps.\footnote{
+F.~Malikov, V.~Schechtman and A.~Vaintrob, \emph{Chiral de Rham
+complex}, \href{https://arxiv.org/abs/math/9803041}{(3.17),
+Theorems~3.7--3.8}.}
+
+Choose a finite affine cover with affine intersections.  The
+Thom--Whitney totalization of its cosimplicial sections is denoted
+\[
+ \mathbb V_Y=\operatorname{TW}
+       \bigl(\check C^\bullet(Y,\Omega_Y^{\mathrm{ch}})\bigr).
+\]
+Concretely, a component is a polynomial differential form on a
+simplex with values in sections on the corresponding intersection;
+face and degeneracy maps impose the compatibility conditions.
+For a form \(\omega\) and field \(v\), total parity is
+\(\deg\omega+\epsilon(v)\), where \(\epsilon\) is intrinsic
+fermionic parity.  Thus
+\[
+ (\omega\otimes v)_{(m)}(\eta\otimes w)
+ =(-1)^{\epsilon(v)\deg\eta}\omega\eta\otimes v_{(m)}w.
+\]
+The differential is the simplex de Rham differential.  No
+additional differential on the fields is included.
+
+\begin{proposition}\label{prop:zbps-derived-field-seed}
+The complex \(\mathbb V_Y\) is a dg vertex superalgebra computing
+\(R\Gamma(Y,\Omega_Y^{\mathrm{ch}})\) in each conformal weight.
+Its vacuum is the compatible constant unit.
+\end{proposition}
+\begin{proof}
+Tensoring a vertex superalgebra with a commutative dg algebra gives
+the displayed product, and the Koszul sign makes the differential
+a derivation.  Compatible cosimplicial components preserve the
+vertex identities.  Integration on simplices compares this
+complex with the Cech complex; the polynomial Poincare contraction
+proves that comparison is a quasi-isomorphism.  At each weight,
+the coordinate construction has a finite filtration by coherent
+tensor bundles.  They are acyclic on the affine intersections.
+Induction through the filtration identifies the Cech complex
+with derived sections.
+\end{proof}
+
+Let \(L_0,J_0\) be the conformal-weight and charge operators,
+with formal variables \(q,y\).  The associated-graded
+supercharacter of the field sheaf is
+\begin{equation}\label{eq:zbps-field-symbol}
+ y^{-d/2}\bigotimes_{a\ge1}
+ \left(\Lambda_{-yq^{a-1}}T_Y^*
+ \otimes\Lambda_{-y^{-1}q^a}T_Y
+ \otimes\operatorname{Sym}_{q^a}T_Y^*
+ \otimes\operatorname{Sym}_{q^a}T_Y\right).
+\end{equation}
+The exterior signs encode intrinsic parity.  The coordinate
+filtration need not split as a field sheaf.  Its Euler
+characteristic nevertheless gives
+\[
+ \sum_k(-1)^k\operatorname{str}
+ \left(q^{L_0}y^{J_0-d/2};H^k(Y,\Omega_Y^{\mathrm{ch}})\right)
+ =\operatorname{Ell}(Y;q,y).
+\]
+This equality retains the product of the sheaf-degree sign and the
+intrinsic-parity sign.  It does not recover either grading from
+the resulting Laurent series.
+
+\subsection{The first Enriques coefficient}
+
+Let \(T\) be an Enriques surface and \(K=K_T\).  A trivialization
+of \(K^{\otimes2}\) permits local volume coordinates whose
+transition determinants are constant \(\pm1\).  The coordinate
+change of \(J=\sum_i:c^i b_i:\) adds the vertex derivative of the
+logarithm of that determinant, so \(J\) is global.  Its zero mode
+is fermionic charge.  Set
+\[
+ \mathscr V=(\Omega_T^{\mathrm{ch}})_{L_0=1,J_0=2}.
+\]
+Since normalized charge is \(J_0-1\), this is the coefficient of
+\(qy\).  The weight-zero, charge-two sheaf is \(K\).
+
+\begin{proposition}\label{prop:zbps-enriques-projector}
+There is a splitting of sheaves of complex vector spaces
+\[
+ \mathscr V=\partial K\oplus\ker J_{(1)},
+ \qquad P=\tfrac12\partial J_{(1)},\qquad P^2=P.
+\]
+The maps need not be \(\mathcal O_T\)-linear.
+\end{proposition}
+\begin{proof}
+The translation commutator is
+\([J_{(1)},\partial]=J_{(0)}\).  For \(a\in K\), weight gives
+\(J_{(1)}a=0\), while charge gives \(J_{(0)}a=2a\).
+Thus \(J_{(1)}\partial a=2a\).  Translation is injective on
+\(K\), with left inverse \(J_{(1)}/2\), proving the splitting.
+Locally the two summands of
+\(\partial(c^1c^2)=(\partial c^1)c^2+c^1\partial c^2\)
+each map to \(c^1c^2\) under \(J_{(1)}\).
+\end{proof}
+
+\begin{theorem}\label{thm:zbps-enriques-coefficient}
+The dimensions of \(H^k(T,\mathscr V)\), for \(k=0,1,2\), are
+\((0,65,1)\).  The summand \(\ker J_{(1)}\) has only
+\(H^1\), of dimension \(65\).  On a K3 surface the corresponding
+field coefficient has dimensions \((1,130,1)\).
+\end{theorem}
+\begin{proof}
+Writing \(\Omega=\Omega_T^1\), the coefficient of
+\eqref{eq:zbps-field-symbol} has internally even associated graded
+\[
+ \Omega\otimes\Omega\oplus K\otimes\Omega\oplus K\otimes T_T
+ \cong\operatorname{Sym}^2\Omega\oplus K\oplus\Omega\oplus T_T.
+\]
+Use \(\Omega\cong T_T\otimes K\) and \(K^2\cong\mathcal O_T\).
+Pullback along the etale K3 cover is injective on global sections.
+The vanishing of positive symmetric holomorphic tangent and
+cotangent tensors on K3, together with Serre duality, leaves only
+\(H^1\) in the three noncanonical summands.\footnote{
+S.~Kobayashi, \emph{The first Chern class and holomorphic symmetric
+tensor fields}, Corollary~8; I.~Dolgachev, \emph{A brief introduction
+to Enriques surfaces}, \href{https://arxiv.org/abs/1412.7744}{\S3}.}
+Their dimensions are \(45,10,10\).  For instance,
+\[
+ \operatorname{ch}(\operatorname{Sym}^2\Omega)=3-4c_2(T),
+ \qquad \operatorname{td}(T)=1+c_2(T)/12,
+ \qquad \int_Tc_2(T)=12,
+\]
+so Riemann--Roch gives \(\chi(\operatorname{Sym}^2\Omega)=-45\).
+The canonical summand has \(H^2(K)=\C\) and no other cohomology.
+
+The finite filtration gives \(h^0=0\), \(h^1\le65\),
+\(h^2\le1\), and Euler characteristic \(-64\).
+The projector preserves \(H^2(K)\), so \(h^2=1\) and
+\(h^1=65\).  On K3 the three degree-one dimensions are
+\(90,20,20\), and the canonical summand contributes one dimension
+in degrees zero and two.  The same splitting and filtration bounds
+give \((1,130,1)\).
+\end{proof}
+
+Total parity therefore gives \((1|65)\) on Enriques.  The BKM
+coefficient \((29|93)\) in Chapter~\ref{ch:view2-bkm} has the same
+superdimension, but a comparison would have to account for the
+additional \(28\) dimensions of each parity.  The charge-current
+projector acts on the geometric field sheaf; it supplies no
+cancellation differential on the BKM algebra.
+
+There is a natural extra differential on chiral de Rham fields.
+Locally put \(Q=\sum_i:\beta_i c^i:\) and
+\(G=\sum_i:b_i\partial\gamma^i:\).  Their modes satisfy
+\[
+ [Q_{(0)},G_{(1)}]_+=L_0.
+\]
+The operators in this formula are global, even where \(Q\) itself
+changes by a total vertex derivative.\footnote{Malikov, Schechtman
+and Vaintrob, loc. cit., Theorems~4.2--4.4.}
+At weight \(m>0\), \(G_{(1)}/m\) contracts \(Q_{(0)}\).
+With the total cochain signs it also contracts the sum of
+\(Q_{(0)}\) and the sheaf-resolution differential.  Moreover,
+\(Q_{(0)}\) raises charge by one.  This extra differential thus
+changes both the positive-weight cohomology and its charge grading;
+it cannot be inserted while preserving the state theory just
+constructed.
+
+\section{Cycle sectors and the chiral comparison}
+\label{sec:zbps-cycle-states}
+
+The twisted chiral de Rham construction associates a sheaf
+\(\Omega_{Y^N}^{\mathrm{ch},g}\) to the fixed locus of each
+\(g\in\mathfrak S_N\), with a compatible centralizer action.\footnote{
+E.~Frenkel and M.~Szczesny, \emph{Chiral de Rham complex and
+orbifolds}, \href{https://arxiv.org/abs/math/0307181}{Theorems~4.2--4.3}.}
+Writing \(C(g)\) for the centralizer of \(g\), define the
+unshifted sector complex
+\[
+ \mathcal H_N(Y)=\bigoplus_{[g]\subset\mathfrak S_N}
+ R\Gamma\bigl((Y^N)^g,\Omega_{Y^N}^{\mathrm{ch},g}\bigr)^{C(g)}.
+\]
+Only the sheaf-resolution differential is used.  Coefficients are
+in \(\C\); finite-group invariants are exact.  For an \(n\)-cycle
+\(\sigma_n\), set
+\[
+ \mathcal K_n(Y)=
+ R\Gamma\bigl(Y,\Omega_{Y^n}^{\mathrm{ch},\sigma_n}\bigr)^{\mu_n}.
+\]
+Its local oscillators have indices in \(\tfrac1n\Z\), and the
+cyclic invariants retain the centralizer projection.
+
+Let \(s\) record cycle length.
+\begin{theorem}\label{thm:zbps-cycle-decomposition}
+There is a natural equivalence of supercomplexes
+\[
+ \prod_{N\ge0}s^N\mathcal H_N(Y)
+ \simeq\widehat{\operatorname{Sym}}_{\mathrm{super}}
+       \left(\bigoplus_{n\ge1}s^n\mathcal K_n(Y)\right).
+\]
+The product completion is coefficientwise in length and conformal
+weight, and the symmetry uses total cochain and intrinsic parity.
+\end{theorem}
+\begin{proof}
+A permutation with \(a_n\) cycles of length \(n\) has fixed locus
+\(Y^{\sum a_n}\) and centralizer
+\(\prod_n(\mu_n^{a_n}\rtimes\mathfrak S_{a_n})\).
+Disjoint coordinate sets give external products of the twisted
+sheaves.  The finite coherent filtrations justify coefficientwise
+Kunneth.  Taking cyclic invariants first gives
+\(\bigotimes_n\mathcal K_n(Y)^{\otimes a_n}\); the remaining
+symmetric groups give the super symmetric powers.  Each length
+has finitely many partitions, proving the stated completion.
+\end{proof}
+
+In the symmetric-power model, use coinvariants and identify them
+with invariants by averaging.  Concatenation and assignment of
+cycles to two groups define a commutative, cocommutative dg super
+Hopf algebra.  Explicitly,
+\[
+ \Delta(v_1\cdots v_a)=
+ \sum_{I\subset\{1,\ldots,a\}}(-1)^{\epsilon(I)}v_I\otimes v_{I^c}.
+\]
+Subwords keep their order; \(\epsilon(I)\) is the total Koszul
+permutation sign.  The empty cycle configuration is the unit and
+the counit component.  Single-cycle vectors are primitive and
+have antipode \(-1\).  In invariant coordinates multiplication
+is the normalized shuffle.  These conventions fix the factorials.
+For multiplication \(M_v\) and the derivation \(D_\lambda\)
+associated to a homogeneous continuous single-cycle functional,
+\[
+ [D_\lambda,M_v]_{\mathrm{super}}=\lambda(v).
+\]
+The identity is the graded Leibniz rule.  The Hopf identities follow
+by assigning cycles to three groups in either order.
+
+The seed fields give another action.  Let
+\(V_Y=H^0(Y,\Omega_Y^{\mathrm{ch}})\).  Its mode Lie superalgebra is
+\[
+ \mathfrak m(V_Y)=
+ \frac{V_Y\otimes\C[t,t^{-1}]}
+ {\operatorname{im}(\partial\otimes1+1\otimes\partial_t)},
+ \qquad
+ [a[m],b[n]]=\sum_{j\ge0}\binom mj(a_{(j)}b)[m+n-j].
+\]
+Here \(a[m]\) is the class of \(a\otimes t^m\).
+The diagonal field \(a^\Delta=\sum_{i=1}^N a^{(i)}\) is invariant
+under permutations and acts on every twisted sector.  Distinct
+factors have no singular products, so this is a mode Lie action
+\(\rho\), with central vacuum mode \(1[-1]\) acting by \(N\).  Under the
+cycle decomposition it acts on each cycle in turn; hence
+\[
+ [\rho(A),M_v]_{\mathrm{super}}=M_{\rho(A)v}.
+\]
+The diagonal map is not a unital vertex map: its vacuum has
+multiplicity \(N\), and regular products have cross terms.
+Neither this length-preserving mode action nor cycle
+concatenation is an extension correspondence for sheaves on
+\(S\times E\).
+
+\subsection{An obstruction at weight one}
+
+Take \(Y=S\) to be K3 and write
+\[
+ C_{H,N}=R\Gamma(S^{[N]},\Omega_{S^{[N]}}^{\mathrm{ch}}),
+ \qquad C_{O,N}=\mathcal H_N(S).
+\]
+Retain sheaf degree \(k\), conformal weight \(w\), charge \(J\)
+and intrinsic parity \(\epsilon\).  Total parity is
+\(k+\epsilon\), and normalized charge at length \(N\) is
+\(J-N\).  An untwisted field monomial satisfies
+\(\epsilon\equiv J\pmod2\): the odd generators have charges
+\(\pm1\), and the even generators have charge zero.
+This holds sheafwise and therefore in cohomology.
+
+The age of a permutation is the sum of the numbers
+\(\theta\in(0,1)\) in its normal eigenvalues \(e^{2\pi i\theta}\),
+with multiplicity.  On a surface product it is \(N-c(g)\), where
+\(c(g)\) counts cycles.  Age contributes to the twisted charge;
+the constant ground section has intrinsic parity zero.
+
+In the transposition sector, let \(\tau\) be the constant ground
+section.  It has \((k,w,J,\epsilon)=(0,0,1,0)\); the charge one
+is its age.  The global invariant field
+\(G^\Delta=G^{(1)}+G^{(2)}\) gives
+\(v=(G^\Delta)_{(0)}\tau\).  The difference coordinates have
+half-integral modes.  Directly,
+\[
+ v=\frac12\sum_{a=1}^2
+      \gamma^{a,-}_{-1/2}b^-_{a,-1/2}\tau,
+ \qquad
+ 2\beta^-_{1,1/2}c^{1,-}_{1/2}v=\tau.
+\]
+The rightmost detector acts first.  Its two contractions use
+\([\beta_r,\gamma_t]=\delta_{r+t,0}\) and
+\(\{b_r,c_t\}=\delta_{r+t,0}\).  The coefficient \(1/2\)
+is the derivative of the half-integral coordinate mode.
+Globality follows from the invariant field action before this
+local calculation is used.  The detector proves nonvanishing.
+
+\begin{theorem}[Unshifted chiral comparison]
+\label{thm:zbps-unshifted-mckay}
+There is no cochain-degree-zero quasi-isomorphism, in either
+direction or by a zigzag, between \(C_{H,2}\) and \(C_{O,2}\)
+that preserves weight, charge and total parity.  The same
+obstruction occurs at every even cycle length.
+\end{theorem}
+\begin{proof}
+The class \(v\) lies in \(H^0(C_{O,2})\) with
+\((w,J,\epsilon)=(1,0,1)\).  It cannot be a boundary in a
+sheaf-resolution model concentrated in nonnegative degrees.
+The corresponding Hilbert component is zero by the untwisted
+charge-parity relation.  A map preserving \(k\) and total parity
+also preserves \(\epsilon\).  Its cone therefore retains this
+class, in degree zero for a map from Hilbert to orbifold and in
+degree \(-1\) for the reverse direction.
+
+For an \(N\)-cycle, let \(\tau_N\) be the constant ground section.
+The global descendant \(v_N=(\sum_{i=1}^N G^{(i)})_{(0)}\tau_N\)
+has the Fourier-coordinate expression
+\[
+ v_N=\sum_{a=1}^2\sum_{r=1}^{N-1}\frac rN
+ \gamma^{a,r}_{-r/N}b_{a,r;-(1-r/N)}\tau_N.
+\]
+The positive detector
+\((N/r)\beta_{a,r;r/N}c^{a,r}_{1-r/N}\) sends it to \(\tau_N\).
+Each term has weight one and centralizer eigenvalue one.
+The ground age is \(N-1\), so the class has
+\((k,w,J,\epsilon)=(0,1,N-2,1)\).
+For even \(N\), its charge is even and its intrinsic parity odd,
+again excluding a Hilbert counterpart.  Homogeneous resolution
+changes and contractible additions preserve this cohomology
+mismatch.  A zigzag would identify the two homogeneous cohomology
+groups, and coefficientwise completion leaves them unchanged.
+\end{proof}
+
+This argument does not obstruct the corresponding odd-length
+component.  It also specifies a different possible comparison.
+Let \(C[a]^k=C^{k+a}\), and let \(\Pi\) reverse intrinsic parity.
+For a permutation \(g\), its surface age is
+\(a(g)=N-\ell(g)\), where \(\ell(g)\) counts cycles.  Define
+\[
+ C_{O,N}^{\mathrm{age}}=
+ \bigoplus_{[g]}\Pi^{a(g)}
+ R\Gamma\bigl((S^N)^g,\Omega_{S^N}^{\mathrm{ch},g}\bigr)^{C(g)}
+ [-a(g)].
+\]
+Both sheaf degree and intrinsic parity increase by the age, so
+total parity and the elliptic supertrace are unchanged.
+The transposition class moves to \((k,w,J,\epsilon)=(1,1,0,0)\).
+The mismatch used in the theorem disappears.  Constructing
+quasi-isomorphisms with \(C_{H,N}\), together with supported field,
+creation and joining maps and their coherent compatibilities,
+remains a separate question.
+
+\section{Hilbert correspondences and joining}
+\label{sec:zbps-geometric-joining}
+
+Let \(Y\) be K3 or Enriques, put \(X_N=Y^{[N]}\), with
+\(X_0=\mathrm{pt}\), and use rational
+cohomology with its complex orientation.  Write \(A=H^*(Y;\Q)\).
+Its odd part is zero, and \(c_1(T_Y)=0\) rationally.  The punctual
+incidence variety for \(N\ge0\) and \(r>0\) is
+\[
+ \mathfrak Q_{N,r}=\{(Z',x,Z):Z\subset Z',\ \ell(Z)=N,
+ \ \ell(Z')=N+r,\ \operatorname{Supp}(I_Z/I_{Z'})=\{x\}\}
+\]
+lies in \(X_{N+r}\times Y\times X_N\).  Its fundamental cycle
+and projections \(\pi_+,s_Y,\pi_-\) define
+\[
+ C_r(a)v=(\pi_+)_*
+       \bigl([\mathfrak Q_{N,r}]\cup s_Y^*a\cup\pi_-^*v\bigr).
+\]
+Cap product and Poincare duality are understood.  The pushforward
+is proper.  If \(\dagger\) is the ordinary Poincare adjoint, set
+\(A_r(a)=(-1)^{r-1}C_r(a)^\dagger\).  Then
+\[
+ [A_r(a),C_t(b)]=r\delta_{rt}\int_Yab,
+ \qquad [C_r(a),C_t(b)]=[A_r(a),A_t(b)]=0.
+\]
+The Nakajima--Grojnowski theorem identifies the polynomial space
+\[
+ \operatorname{Sym}\left(\bigoplus_{r\ge1}s^r A\right)
+ \cong\bigoplus_{N\ge0}H^*(X_N;\Q)
+\]
+by sending the generator \(p_r(a)\) to \(C_r(a)|0\rangle\),
+where \(|0\rangle=1_{X_0}\).
+Creation has degree \(\deg a+2(r-1)\) and Hodge shift
+\((r-1,r-1)\).\footnote{See \cite{NakajimaHilbert1997} and
+M.~Lehn--C.~Sorger, \emph{The cup product of the Hilbert scheme
+for K3 surfaces}, \href{https://arxiv.org/abs/math/0012166}
+{Theorems~3.5--3.6}.  Their trace on the shifted surface algebra
+is \(-\int_Y\); the annihilator above uses \(+r\int_Yab\).}
+Over distinct points the iterated length-one correspondence
+orders the points in \(N!\) ways.  Hence
+\[
+ \frac1{N!}C_1(1)^N|0\rangle=1_{X_N}.
+\]
+
+These correspondences have a simple Hall antecedent.  A point of
+\(X_N\) is a cyclic quotient \(\mathcal O_Y\twoheadrightarrow Q\).
+Constructible functions on zero-dimensional sheaves act on those
+quotients by
+\[
+ (h\cdot f)(\mathcal O_Y\twoheadrightarrow Q)
+ =\int_{U\subset Q}h(U)
+ f(\mathcal O_Y\twoheadrightarrow Q/U)\,d\chi.
+\]
+Associativity integrates over the same flags
+\(0\subset U\subset W\subset Q\) in either order.  The zero
+subobject gives the unit.  For \(Z\subset Z'\), the extension is
+\[
+ 0\longrightarrow I_Z/I_{Z'}\longrightarrow\mathcal O_{Z'}
+ \longrightarrow\mathcal O_Z\longrightarrow0.
+\]
+The framing generates the middle object.  Euler pushforward proves
+this constructible-function action; critical cohomology requires
+its own pullback and pushforward maps.  Passing to \(Y\times E\)
+also admits nilpotent normal operators, so the surface category
+is not extension-closed in the threefold category.
+
+\subsection{The surface diagonal}
+
+Choose a basis \(u_1,\ldots,u_b\) of \(H^2(Y;\Q)\), where \(b=b_2(Y)\),
+and let \(\omega\) be the point class with \(\int_Y\omega=1\).
+Writing \(Q_{ij}=\int_Yu_iu_j\),
+\[
+ A=\Q1\oplus\bigoplus_i\Q u_i\oplus\Q\omega,
+ \qquad u_iu_j=Q_{ij}\omega,
+ \qquad u_i\omega=\omega^2=0.
+\]
+Multiplication \(m\) and its adjoint diagonal \(\Delta\) satisfy
+\begin{align*}
+ \Delta1&=1\otimes\omega+\omega\otimes1
+              +\sum_{i,j}Q^{ij}u_i\otimes u_j,\\
+ \Delta u_i&=u_i\otimes\omega+\omega\otimes u_i,
+ &\Delta\omega&=\omega\otimes\omega,
+\end{align*}
+where \((Q^{ij})=Q^{-1}\).  Testing against basis pairs proves
+these formulas.  Consequently
+\[
+ e_A=m\Delta1=(b+2)\omega=c_2(T_Y),\qquad m\Delta(a)=e_Aa.
+\]
+The coefficient is \(12\) for Enriques and \(24\) for K3.
+A split followed by a join inserts this Euler class.
+
+The full permutation product explains this insertion.  Label each
+cycle of \(\sigma\in\mathfrak S_N\) by an element of \(A\).
+For a joint orbit \(O\) of \(\langle\sigma,\tau\rangle\), let
+\(c_\sigma(O)\) count its \(\sigma\)-cycles, and set
+\[
+ g_O=\frac{|O|+2-c_\sigma(O)-c_\tau(O)-c_{\sigma\tau}(O)}2.
+\]
+Riemann--Hurwitz identifies it with the nonnegative genus of the
+transitive three-branch covering.  If \(a_O,b_O\) are the products
+of the input labels on that orbit, its output labels are
+\[
+ \Delta_{c_{\sigma\tau}(O)}(a_Ob_Oe_A^{g_O}).
+\]
+Here \(\Delta_k\) is the iterated diagonal, with
+\(\Delta_1=\operatorname{id}\).
+Tensoring over orbits gives the Frobenius permutation product.
+Its associativity follows from the projection formula and
+\(m\Delta(a)=e_Aa\), which identify the decompositions of each
+connected covering surface.  For \(s_2=(12)\) and \(\rho=(123)\),
+\[
+ (as_2)(bs_2)=\Delta(ab)\,\mathrm{id},\qquad
+ (a\rho)(b\rho)=abe_A\rho^2,
+ \qquad (a\rho)(b\rho^{-1})=\Delta_3(ab)\,\mathrm{id}.
+\]
+Genus at least two gives zero because \(e_A^2=0\).
+
+For the Hilbert product, multiply this law by
+\[
+ (-1)^{(|\sigma|+|\tau|-|\sigma\tau|)/2},
+ \qquad |\sigma|=N-c(\sigma).
+\]
+Permutation parity makes the exponent integral; telescoping proves
+the two-cocycle identity.  The invariant algebra with this sign
+is \(H^*(X_N;\Q)\), since \(K_Y\) is numerically trivial.\footnote{
+Lehn--Sorger, loc. cit., \S2 and Theorem~3.2.}
+A cycle-labelled permutation summed over all conjugates with
+repetitions corresponds to the product of its creators on the
+vacuum.  The identity sector then has coefficient \(N!\).
+Over \(\C\), the factor \(i^{|\sigma|}\) removes the sign twist;
+over \(\Q\), the sign remains explicit.
+
+\subsection{The second-order operator}
+
+For a homogeneous basis \(a_\alpha\) of \(A\), write
+\(a_\alpha a_\beta=m_{\alpha\beta}^{\gamma}a_\gamma\) and
+\(\Delta a_\gamma=\Delta_\gamma^{\alpha\beta}
+ a_\alpha\otimes a_\beta\).  Let \(\partial_{n,\alpha}\)
+differentiate \(p_n(a_\alpha)\).  Define
+\begin{align*}
+ J&=\frac12\sum_{i,j\ge1}ij\,m_{\alpha\beta}^{\gamma}
+ p_{i+j}(a_\gamma)\partial_{i,\alpha}\partial_{j,\beta},\\
+ S&=\frac12\sum_{i,j\ge1}(i+j)\Delta_\gamma^{\alpha\beta}
+ p_i(a_\alpha)p_j(a_\beta)\partial_{i+j,\gamma},
+ \qquad D_H=J-S.
+\end{align*}
+All sums are finite at fixed length.  Joining two cycles gives
+\(ij\) endpoint choices.  Splitting a cycle gives \(i+j\)
+choices, counted twice by the ordered sum.  Thus the transposition
+sum acts by \(J+S\) in the ordinary orbifold product and by
+\(D_H\) with the Hilbert sign.  Geometrically \(D_H\) is cup
+multiplication by \(-c_1(\mathcal O_Y^{[N]})\); the canonical-class
+term vanishes.\footnote{Lehn--Sorger, Proposition~3.9.}
+For \(N\ge2\), the transposition class is
+\(C_2(1)C_1(1)^{N-2}|0\rangle/(2(N-2)!)\), with the denominator
+given by its centralizer order.
+
+\begin{proposition}\label{prop:zbps-joining}
+If \(M_i(a)\) multiplies by \(p_i(a)\), then
+\[
+ [[D_H,M_i(a)],M_j(b)]=ijM_{i+j}(ab),\qquad
+ [[[D_H,M_i(a)],M_j(b)],M_k(c)]=0.
+\]
+The operator preserves length and raises cohomological degree by
+two and normalized Hodge charge by one.  Moreover,
+\[
+ D_H^2p_2(a)=-p_2(e_Aa),\qquad
+ D_H^{2N+1}|_{H^*(X_N)}=0.
+\]
+\end{proposition}
+\begin{proof}
+The first-order splitting term has zero double commutator with
+multiplication.  Differentiating both derivative slots of \(J\)
+gives \(ijM_{i+j}(ab)\), which commutes with every creator.
+Joining increases the age degree by two; splitting inserts a
+degree-four diagonal and decreases the age degree by two.
+Both have Hodge increase \((1,1)\).  A label of Hodge degree
+\((r,s)\) on a length-\(i\) cycle has normalized charge
+\(r+i-1-i=r-1\), so the increase is one.
+At length two, splitting and joining gives \(-m\Delta(a)\),
+proving the square formula.  The degree range \(0,\ldots,4N\)
+proves the nilpotence bound.
+\end{proof}
+
+In particular \(D_H^2p_2(1)\ne0\).  This joining operator is
+even and second order; it is not a square-zero differential.
+Its double commutator gives an operation that the scalar
+elliptic genus alone does not specify.
+
+\subsection{Preparing the elliptic matrix coefficient}
+\label{subsec:zbps-elliptic-transport}
+
+Let \(\mathcal E_{q,y}(X_N)\) be the tensor class in
+\eqref{eq:zbps-field-symbol}, and put
+\[
+ \varepsilon_N=\operatorname{td}(T_{X_N})
+                 \operatorname{ch}(\mathcal E_{q,y}(X_N)),
+ \qquad R=\Q(y)[[q]].
+\]
+Riemann--Roch gives
+\(\int_{X_N}\varepsilon_N=\operatorname{Ell}(X_N;q,y)\).
+These are even, generally inhomogeneous cohomology classes.
+Their degree-zero parts \(r_N\) have constant \(q\) coefficient
+\(y^{-N}(1-y)^{2N}\), a unit over \(\Q(y)\).  Since
+\(\nu_N=\varepsilon_N-r_N\) has positive degree,
+\[
+ \varepsilon_N^{-1}=r_N^{-1}
+       \sum_{j=0}^{2N}(-r_N^{-1}\nu_N)^j.
+\]
+Write \(U_N\) for multiplication by \(\varepsilon_N\).
+
+A cohomological kernel from \(X_M\) to \(X_N\) is a class on
+\(X_N\times X_M\).  It acts by pullback, cup product and
+pushforward; convolution uses the same operations on the triple
+product.  Transport it by
+\[
+ \widetilde K=\pi_N^*\varepsilon_N\cup K
+                         \cup\pi_M^*\varepsilon_M^{-1}.
+\]
+The middle classes cancel in every convolution, so
+\[
+ \widetilde{L\circ K}=\widetilde L\circ\widetilde K,
+ \qquad T_{\widetilde K}=U_NT_KU_M^{-1},
+ \qquad\widetilde{[\Delta_{X_N}]}=[\Delta_{X_N}].
+\]
+The transported creators and annihilators obey the same Heisenberg
+relations.  Cup multiplication commutes with \(U_N\), so \(D_H\)
+is unchanged.  Telescoping and the vacuum normalization give
+\[
+ \frac1{N!}\widetilde C_1(1)^N|0\rangle=\varepsilon_N.
+\]
+With \(\langle\mathcal I|\) denoting integration in each length,
+\begin{equation}\label{eq:zbps-prepared-elliptic-state}
+ \left\langle\mathcal I\middle|
+       \exp(s\widetilde C_1(1))\middle|0\right\rangle
+ =\sum_{N\ge0}s^N\operatorname{Ell}(Y^{[N]};q,y).
+\end{equation}
+This is a specified matrix coefficient.  Conjugation leaves
+ordinary traces unchanged, and \(q\) here is a coefficient
+parameter.  The inverse used above is an inverse in cohomology,
+not a tensor inverse of a coefficient complex.
+
+The twisted-sector index theorem and the elliptic McKay theorem
+identify this scalar with the index of the cycle sectors.\footnote{
+Frenkel--Szczesny, Theorem~6.1, with the intrinsic-parity signs in
+\eqref{eq:zbps-field-symbol}; L.~Borisov--A.~Libgober,
+\emph{McKay correspondence for elliptic genera},
+\href{https://arxiv.org/abs/math/0206241}{Corollary~6.7}.}
+If \(\operatorname{Ell}(Y;q,y)=\sum c(m,\ell)q^my^\ell\), then
+\[
+ \sum_{N\ge0}s^N\operatorname{Ell}(Y^{[N]};q,y)
+ =\prod_{n>0,\,m\ge0,\,\ell}
+       (1-s^nq^my^\ell)^{-c(nm,\ell)}.
+\]
+For Enriques and K3 the seeds are \(\phi_{0,1}\) and
+\(2\phi_{0,1}\).  With the boundary factor \(b(q,y)\) of
+Section~\ref{sec:view1-boundary-factors}, the two series are
+\[
+ F_T=\frac{s^{1/2}b(q,y)}{D_5(q,y,s)},\qquad
+ F_S=\frac{s\,b(q,y)^2}{D_5(q,y,s)^2},\qquad F_T^2=F_S.
+\]
+The boundary factors cancel before specialization at \(y=1\).
+The unshifted obstruction of Theorem~\ref{thm:zbps-unshifted-mckay}
+shows why this scalar equality cannot be read as a comparison of
+all the underlying gradings and operations.
+
+There is also a domain issue at \(y=1\).  At \(q=0\), set
+\(t=y-1\), \(z=y+y^{-1}-2=t^2/(1+t)\), and
+\(a=1+z/12\).  On the surface,
+\[
+ \varepsilon_Y(0,y)=z\,1+a\,c_2(T_Y).
+\]
+Writing \(e=\chi_{\mathrm{top}}(Y)\), its multiplication matrix
+on \((1,\omega)\) is
+\[
+ \begin{pmatrix}z&0\\ae&z\end{pmatrix}.
+\]
+The transported length-one annihilator therefore has value
+\[
+ \widetilde A_1(1)(1)=\int_Y\varepsilon_Y^{-1}=-ae\,z^{-2},
+\]
+a fourth-order pole at \(t=0\), although the index
+\(\int_Y\varepsilon_Y=ae\) is regular.  The image lattice
+\(\varepsilon_Y H^*(Y;\Q)[[t]]\) is abstractly free, while its
+embedded special image has rank one.  Its cokernel is
+\[
+ \Q[[t]]/(t^4)\oplus
+       \bigl(\Q[[t]]/(t^2)\bigr)^{b_2(Y)}.
+\]
+Indeed the outer matrix has Smith form \(\operatorname{diag}(1,t^4)\),
+and multiplication on \(H^2(Y)\) is a unit times \(t^2\).
+The derived special fibre of the cokernel consequently has
+\(b_2(Y)+1\) dimensions in each of degrees \(-1,0\).
+The later degeneration chapters develop this distinction between
+the lattice, its embedded fibre and the derived cokernel.
+
+Finally, any invertible even classes \(\alpha_N\), with
+\(\alpha_0=1\), give the same conjugation construction with
+matrix coefficient \(\sum_Ns^N\int_{X_N}\alpha_N\).
+For \(N>0\), taking \(\alpha_N=1+c_N[\mathrm{pt}]\) realizes
+an arbitrary coefficient \(c_N\in R\).  A prescribed scalar
+series therefore does not determine a critical Hall action on
+independently defined field complexes.
+
+\section{Primitive curve counts on the threefold}
+\label{sec:zbps-scalar-shadow}
+
+Return to \(X=S\times E\).  Let \(\beta_h\) be a nonzero
+primitive K3 class with \(\beta_h^2=2h-2\), and let \(d\) be
+the degree along \(E\).  Translation by \(E\) and the K3
+symplectic reduction enter the reduced theory.  Its stable-pair
+and ideal-sheaf moduli are \(P_n(X,(\beta_h,d))\) and
+\(I_n(X,(\beta_h,d))\).  For pairs, \(n=\chi(F)\); for an
+ideal sheaf of a curve \(C\), \(n=\chi(\mathcal O_C)\).
+The obstruction theories and virtual classes live on these moduli.
+The target remains a complex threefold.
+
+\begin{convention}[Rational representatives and variables]
+\label{conv:op-chamber}
+Let \(R_{h,d}(v)\) be the rational function whose Laurent
+expansion at \(v=0\) is the reduced DT/PT series in class
+\((\beta_h,d)\).  Use
+\[
+ (T_{\mathrm{OP}},Q_{\mathrm{OP}},P_{\mathrm{OP}})=(s,q,r),
+ \qquad v=-r,
+\]
+and define the rational representative of the full primitive
+series by
+\[
+ Z^X_{\mathrm{OP}}(r,q,s)=
+       \sum_{h,d\ge0}R_{h,d}(-r)q^{h-1}s^{d-1}.
+\]
+The DT/PT expansion uses \(r=0\); the Borcherds product chamber
+uses the expansion at \(r=\infty\), coefficientwise in \(q,s\).
+The GW substitution is \(r=e^{iu}\), hence \(v=-e^{iu}\),
+followed by Laurent expansion at \(u=0\).
+\end{convention}
+
+Oberdieck proves equality of reduced DT and PT series for nonzero
+K3 class and rationality of the PT series.  The degree-zero DT
+correction is trivial because \(\chi_{\mathrm{top}}(S\times E)=0\)
+\cite[Theorem~3]{OberdieckReducedPT}.  The primitive PT/GW
+comparison is \cite[Proposition~5]{OPand}.  The K3 reduction and
+primitive-class convention also agree with the reduced K3 theory
+of \cite{MaulikPandharipande}.
+
+\begin{theorem}[The primitive inverse Igusa series]
+\label{thm:zbps-level-n-shadow}
+With Convention~\ref{conv:op-chamber}, the reduced numerical
+invariants satisfy
+\begin{equation}\label{eq:zbps-op-dt}
+ Z^X_{\mathrm{DT}}=Z^X_{\mathrm{PT}}=Z^X_{\mathrm{OP}}
+ =-(\chi_{10}^{\mathrm{OP}})^{-1}
+ =-4096\,\Delta_5(Z)^{-2}.
+\end{equation}
+Here the equality of DT/PT series means equality of their rational
+representatives.  Define the unscaled scalar by
+\begin{equation}\label{eq:zbps-equality}
+ Z_{\mathrm{BPS}}^{K3\times E}:=-4096^{-1}Z^X_{\mathrm{OP}}
+ =\bigl(\Phi_{10}^{\mathrm{un}}\bigr)^{-1}=\Delta_5^{-2}.
+\end{equation}
+This definition does not supply an operator trace.
+\end{theorem}
+\begin{proof}
+The reduced GW series is
+\[
+ Z(u,q,s)=\sum_{g,h,d\ge0}N_{g,h,d}u^{2g-2}q^{h-1}s^{d-1}.
+\]
+Oberdieck--Pixton identify it with the Laurent expansion of
+\(-1/\chi_{10}^{\mathrm{OP}}\) under \(r=e^{iu}\)
+\cite[Theorem~1]{OB}.  Their product is
+\[
+ \chi_{10}^{\mathrm{OP}}(r,q,s)
+ =rqs\prod_{(h,k,d)>0}(1-r^kq^hs^d)^{c(4hd-k^2)},
+ \qquad c(4hd-k^2)=2f(hd,k).
+\]
+Positivity means \(h,d\ge0\) and \(h+d>0\), or \(h=d=0\)
+and \(k<0\).  The primitive PT/GW comparison, including
+\(v=-e^{iu}\), and the reduced DT/PT theorem identify the
+rational representatives.  In the theta convention of this book,
+\begin{equation}\label{eq:zbps-op-monic}
+ \chi_{10}^{\mathrm{OP}}=D_5^2
+ =2^{-12}\Delta_{10}^{\theta}=4096^{-1}\Delta_5^2,
+ \qquad \Delta_{10}^{\theta}=\Phi_{10}^{\mathrm{un}}=\Delta_5^2.
+\end{equation}
+This is the product normalization of Chapter~\ref{ch:view1-automorphic},
+with the classical Igusa identification
+\cite{Igusa1962,Igusa1964II}.  Inverting proves
+\eqref{eq:zbps-op-dt} and the rescaling gives
+\eqref{eq:zbps-equality}.
+\end{proof}
+
+The theorem concerns the primitive K3-class branch.  It makes no
+assertion for an arbitrary imprimitive class.  Changing stability
+chamber in a proposed compact Hall realization requires the
+correspondence comparison of
+Definition~\ref{def:chamber-compatible-hall-descent}; the rational
+variable substitution alone does not transport a Hall bracket.
+
+\subsection{Coefficients, roots and normalization}
+\label{subsec:zbps-coefficients}
+
+The seed has expansion
+\begin{equation}\label{eq:zbps-phi01-leading}
+ \phi_{0,1}=y^{-1}+10+y
+ +q\bigl(10y^{-2}-64y^{-1}+108-64y+10y^2\bigr)+O(q^2).
+\end{equation}
+Its coefficients have several uses with different objects behind
+them.  They are Euler superdimensions of the elliptic coefficient
+bundles.  At the root
+\(\alpha(n,\ell,m)=2nf_2-\ell f_3+2mf_{-2}\), the value
+\(f(nm,\ell)\) is the signed root multiplicity in the BKM
+denominator.  The K3 genus has coefficients \(2f\),
+which produce the squared automorphic product.  These equalities
+are equalities of indices; they do not identify the ordinary
+parity dimensions or construct bracket maps.
+
+In the product coordinates of Chapter~\ref{ch:view1-automorphic},
+\begin{equation}\label{eq:zbps-bgn-product}
+ \Delta_5(Z)=64(qrs)^{1/2}
+       \prod_{(n,\ell,m)>0}(1-q^nr^\ell s^m)^{f(nm,\ell)}.
+\end{equation}
+The chamber includes the factor \(1-r^{-1}\) at \(n=m=0\).
+For \(P=D_5/(qrs)^{1/2}\), one has
+\[
+ [qs]P=(1-r^{-1})
+       \bigl(-9(r^2+r^{-2})+84(r+r^{-1})-6\bigr),
+ \qquad [qrs]P=93.
+\]
+Indeed the pure \(q\) and pure \(s\) factors contribute
+\((1-qA)(1-sA)\), where \(A=r+10+r^{-1}\), and the mixed
+factor contributes
+\(-qs(10(r^2+r^{-2})-64(r+r^{-1})+108)\).
+Their product gives the displayed expression.
+The isolated factor \((1-qrs)^{-64}\) supplies \(64\); the
+remaining factors supply \(29\).  The coefficient \(93\) is
+therefore different from the root superdimension \(-64\).
+
+Squaring gives
+\begin{equation}\label{eq:zbps-delta5-squared-leading}
+ \Delta_5^2=4096qrs
+       \prod_{(n,\ell,m)>0}(1-q^nr^\ell s^m)^{2f(nm,\ell)}.
+\end{equation}
+Thus, with \((p,q,\widetilde q)=(r,q,s)\) in the OP notation,
+\begin{equation}\label{eq:zbps-leading-coeff-check}
+ \chi_{10}^{\mathrm{OP}}=4096^{-1}\Delta_5^2,
+ \qquad [pq\widetilde q]\chi_{10}^{\mathrm{OP}}=1,
+ \qquad [(qrs)^{1/2}]D_5=1.
+\end{equation}
+The leading theta coefficient is \(64\), and its square is
+\(4096\).  The minus sign in \eqref{eq:zbps-op-dt} is the OP
+convention.  None is an orientation character.
+
+\begin{remark}[The sign data]
+\label{rem:zbps-constants-not-orientation}
+The homogeneous orthogonal character
+\(\widetilde\nu_{\Delta_5}\) of
+Definition~\ref{def:homogeneous-orthogonal-character} belongs to
+the weight-five automorphic line.  A geometric character
+\(\epsilon_o\) requires an actual equivariant root line and
+coherent wall transport.  Its local sign must be computed from
+the action on that root, as in Chapter~\ref{ch:pfaffian-dirac}.
+The formal set \(\Omega_{12}=\{\pm1\}^{12}\) also has
+cardinality \(4096\), but a geometric sign orbit identified
+with that set is additional data.  Its cardinality cannot be
+inferred from the theta coefficient.
+\end{remark}
+
+At a generic smooth point of the diagonal divisor on Siegel space,
+write \(\Delta_5=u a\) in a local frame, with \(a\) a unit.
+Then \(\Delta_5^{-2}=u^{-2}a^{-2}\) has a double pole.
+This divisor calculation leaves the geometric mirror-discriminant
+comparison of Chapter~\ref{ch:view4-mirror} open.
+The coefficient of \(q^{-1}s^{-1}\), expanded at \(r=0\), is
+\[
+ [q^{-1}s^{-1}]\Delta_5^{-2}
+ =\frac{r}{4096(1-r)^2}
+ =\sum_{n\ge1}\frac n{4096}r^n.
+\]
+A fixed Euler degree extracts \([r^n]\); it is not the complete
+series.  Evaluation at a Siegel point outside the polar divisor
+is yet another operation.  The target Euler characteristic is
+\(\chi(\mathcal O_X)=\chi(\mathcal O_S)\chi(\mathcal O_E)=0\),
+which is distinct from the Euler degree of a curve or stable pair.
+
+\section{The weight-ten Hecke eigenline}
+\label{sec:spin-l-factor}
+
+The arithmetic of \(\Delta_5^2\) is independent of its scalar
+normalization.  Put
+\[
+ g(\tau)=\Delta(\tau)E_6(\tau),\qquad
+ \Delta=q\prod_{n\ge1}(1-q^n)^{24},\qquad
+ E_6=1-504\sum_{n\ge1}\sigma_5(n)q^n.
+\]
+Here \(\sigma_5(n)=\sum_{d\mid n}d^5\).  The space
+\(S_{18}(\mathrm{SL}_2(\Z))\) is one-dimensional, so \(g\)
+is its normalized Hecke eigenform.  The Saito--Kurokawa
+correspondence identifies its lift with the one-dimensional
+weight-ten Siegel cusp space.  Thus its eigenline is
+\(\C\Delta_5^2=\C\chi_{10}^{\mathrm{OP}}\)
+\cite[Theorem~2 and its corollary]{ZagierSK}.
+
+\begin{proposition}[The full Hecke operators]
+\label{prop:zbps-sk-hecke}
+Let \(a_p\) be the coefficient of \(q^p\) in \(g\), and use
+Andrianov's full operators \(T(p)\) and \(T(p^2)\), normalized
+by \cite[Theorem~3.1.1]{Andr74}.  On the weight-ten eigenline,
+\[
+ \lambda(p)=a_p+p^8+p^9,\qquad
+ \lambda(p^2)=a_p^2+a_p(p^8+p^9)+p^{18}.
+\]
+In particular,
+\[
+ \begin{array}{c|rrr}
+ p&a_p&\lambda(p)&\lambda(p^2)\\\hline
+ 2&-528&240&135424\\
+ 3&-4284&21960&293343849
+ \end{array}
+\]
+\end{proposition}
+\begin{proof}
+For a positive even Siegel weight \(K\), the lift of a
+weight-\(2K-2\) eigenform has local polynomial
+\[
+ (1-p^{K-2}t)(1-p^{K-1}t)
+          (1-a_pt+p^{2K-3}t^2).
+\]
+Andrianov's polynomial for the full operators is
+\[
+ 1-\lambda(p)t+
+ \bigl(\lambda(p)^2-\lambda(p^2)-p^{2K-4}\bigr)t^2
+ -\lambda(p)p^{2K-3}t^3+p^{4K-6}t^4.
+\]
+Set \(x=p^{K-2}\), \(y=p^{K-1}\), so \(xy=p^{2K-3}\).
+The linear and quadratic coefficients of the factored polynomial
+are \(-(a_p+x+y)\) and \(a_p(x+y)+2xy\).  Therefore
+\[
+ \lambda(p^2)=(a_p+x+y)^2-x^2-a_p(x+y)-2xy
+             =a_p^2+a_p(x+y)+y^2.
+\]
+Taking \(K=10\) gives the formulas.  Expanding the defining
+product for \(\Delta\) and the divisor series for \(E_6\) gives
+\(g=q-528q^2-4284q^3+\cdots\), from which the table follows.
+\end{proof}
+
+The notation \(T(p^2)\) here denotes the full Hecke operator;
+it must not be replaced by a single double-coset generator with
+the same informal degree.  The elliptic bound
+\(|a_p|\le2p^{17/2}\) shows \(\lambda(p)/p^9\to1\).
+The Satake factor \(p^9\), normalized by \(p^{17/2}\), has
+absolute value \(p^{1/2}\), expressing the non-tempered nature
+of this lift.
+
+\begin{remark}[The Maass subspace]
+\label{rem:zbps-sk-hecke-level0}
+For positive even \(K\), the full-level lift takes
+\(S_{2K-2}(\mathrm{SL}_2(\Z))\) to the Maass subspace in weight
+\(K\), with Hecke eigenvalues prescribed by the local polynomial
+above.  At \(K=10\), both the source
+and the entire Siegel cusp space have dimension one
+\cite[pp.~375, 379--381]{ZagierSK}.  The product normalization
+\eqref{eq:zbps-op-monic} changes its generator but leaves all
+Hecke eigenvalues unchanged.
+\end{remark}
+
+\begin{theorem}[The spin factorization and its completion]
+\label{thm:zbps-andrianov-factor}
+For \(F=\Delta_{10}^{\theta}=\Delta_5^2\),
+\begin{equation}\label{eq:zbps-spinor-factor}
+ L_{\mathrm{spin}}(s,F)=\zeta(s-8)\zeta(s-9)L(s,g),
+ \qquad g=\Delta E_6.
+\end{equation}
+The local polynomial and completed function are
+\begin{align*}
+ Q_{p,F}(t)&=1-\lambda(p)t+
+ (\lambda(p)^2-\lambda(p^2)-p^{16})t^2
+ -\lambda(p)p^{17}t^3+p^{34}t^4,\\
+ \Psi_F(s)&=(2\pi)^{-2s}\Gamma(s)\Gamma(s-8)
+                         L_{\mathrm{spin}}(s,F).
+\end{align*}
+The completion is meromorphic and satisfies
+\(\Psi_F(18-s)=\Psi_F(s)\).
+\end{theorem}
+\begin{proof}
+The Saito--Kurokawa local factor just computed gives
+\eqref{eq:zbps-spinor-factor} in a right half-plane and hence by
+meromorphic continuation \cite[(10)--(11), Theorem~2]{ZagierSK}.
+Andrianov's Theorem~3.1.1 supplies the completion and functional
+equation \cite{Andr74}.  These are separate uses of the two
+results: the general genus-two functional equation does not by
+itself imply the Saito--Kurokawa factorization.
+\end{proof}
+
+\begin{proposition}[The pole at \(s=10\)]
+\label{prop:zbps-spin-pole-residue}
+The possible pole at \(s=9\) in \eqref{eq:zbps-spinor-factor}
+is cancelled by \(L(9,g)=0\).  At \(s=10\) there is a simple
+pole with positive residue
+\begin{equation}\label{eq:zbps-residue}
+ \operatorname*{Res}_{s=10}L_{\mathrm{spin}}(s,F)
+ =\zeta(2)L(10,g)=\frac{\pi^2}{6}L(10,g)>0.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The Mellin transform
+\[
+ \Lambda(g,s)=(2\pi)^{-s}\Gamma(s)L(s,g)
+             =\int_0^\infty g(iy)y^{s-1}\,dy
+\]
+continues to an entire function.  Modularity of weight eighteen
+gives \(g(i/y)=-y^{18}g(iy)\).  Splitting the integral at one
+and substituting \(y\mapsto1/y\) gives
+\[
+ \Lambda(g,s)=\int_1^\infty
+        g(iy)\bigl(y^{s-1}-y^{17-s}\bigr)\,dy,
+ \qquad\Lambda(g,s)=-\Lambda(g,18-s).
+\]
+Thus \(L(9,g)=0\).  At \(s=10\) the factor in parentheses is
+\(y^9-y^7>0\) for \(y>1\).
+
+The product for \(\Delta(iy)\) is positive.  Modularity of
+\(E_6\) gives \(E_6(i)=0\), and its Fourier series gives
+\[
+ \frac{d}{dy}E_6(iy)=1008\pi
+       \sum_{n\ge1}n\sigma_5(n)e^{-2\pi ny}>0.
+\]
+Hence \(g(iy)>0\) for \(y>1\), proving
+\(\Lambda(g,10)>0\) and \(L(10,g)>0\).
+The pole of \(\zeta(s-9)\) has residue one; multiplying the
+remaining factors gives \eqref{eq:zbps-residue}.
+\end{proof}
+
+The rational-period theorem supplies a nonzero even-critical
+period \(\Omega^+(g)\), defined up to \(\Q^\times\), such that
+\[
+ \frac{L(10,g)}{(2\pi i)^{10}\Omega^+(g)}\in\Q.
+\]
+Here the superscript specifies the even critical integers, rather
+than the parity of the index in
+\(r_n(g)=\int_0^\infty g(iy)y^n\,dy\).
+The rational structures come from Eichler--Shimura--Manin theory
+\cite{Manin72,KZ}, with the period convention of \cite{Del79}.
+The positivity proof is additional to that rationality statement.
+Neither argument uses a geometric Pfaffian or a compact Hall
+realization.
+
+\section{Trace domains and sewing}
+\label{sec:scalar-trace-not-gravity}
+
+A scalar series becomes a trace only after a state space, an
+endomorphism and a trace functional have been specified.  At a
+finite geometric truncation \(R\), suppose one has charge-graded
+perfect complexes \(V_{R,\gamma}\), where \(\gamma=(h,d,n)\),
+and even degree-zero chain endomorphisms \(U_{R,\gamma}\).
+For a bounded finite-dimensional model their normalized trace is
+\[
+ t_{R,\gamma}=\lambda_{R,\gamma}
+       \sum_{k,\epsilon}(-1)^{k+\epsilon}
+       \operatorname{tr}
+       (U_{R,\gamma}\mid V_{R,\gamma}^{k,\epsilon}).
+\]
+The intrinsic parity \(\epsilon\) is included only when that
+grading is part of the state theory.  Cyclicity of the finite
+supertrace makes chain-homotopic endomorphisms have the same value.
+The normalization \(\lambda_{R,\gamma}\) is essential: the
+coefficient \(n/4096\) above need not be an integer superdimension.
+An inverse limit requires coefficientwise stabilization or a
+trace-convergence theorem; a formal limit alone does not supply it.
+
+If the construction starts from a boundary dg-category
+\(\mathcal C_R\) and a chosen object \(b_R\), then
+\(A_{b,R}=\operatorname{End}_{\mathcal C_R}(b_R)\) is an
+associative algebra by composition.  For a chosen coefficient
+line \(\ell_R\), a cyclic functional
+\(A_{b,R}\to\ell_R[-3]\), a cyclic pairing on its Hochschild
+chains, and a pairing on a chiral centre are differently typed
+data.  Passing between them requires the relevant comparison.
+An object \(b_R\) also need not generate the boundary category.
+A proposed compact realization must specify its trace domain
+and prove compatibility with the state and all sewing maps.
+
+\subsection{A finite-trace obstruction on a continuous carrier}
+
+The domain matters even for a positive heat operator.  Write
+\(M_f\) for multiplication by \(f\), and let
+\(\mathcal H=L^2((0,\infty),dP)\) and
+\(C_t=M_{e^{-tP^2}}\), with \(t>0\).
+
+\begin{proposition}\label{prop:zbps-no-full-cyclic-extension}
+There is no two-sided ideal \(\mathcal J\subset B(\mathcal H)\)
+containing \(C_t\) and carrying a complex-linear functional
+\(\tau:\mathcal J\to\C\) with
+\(\tau(AB)=\tau(BA)\) for \(A\in\mathcal J\),
+\(B\in B(\mathcal H)\), which agrees with the ordinary trace
+on finite-rank operators.
+No continuity or positivity assumption on the functional is
+needed.
+\end{proposition}
+\begin{proof}
+Let \(q=M_{\mathbf1_{[1,2]}}\).  Multiplication by
+\(\mathbf1_{[1,2]}e^{tP^2}\) is bounded, so \(q\in\mathcal J\).
+The range \(q\mathcal H\) is infinite-dimensional.  Choose a
+unilateral shift \(V\) on it, extended by zero on its orthogonal
+complement.  Then
+\[
+ V^*V=q,\qquad VV^*=q-p_1,
+\]
+where \(p_1\) is a rank-one projection.  As
+\(V=qV\in\mathcal J\), cyclicity and linearity give
+\(\tau(q)=\tau(q-p_1)=\tau(q)-1\), a contradiction.
+\end{proof}
+
+The commutative multiplier algebra has the positive semifinite
+weight \(M_f\mapsto\int_0^\infty f(P)\,dP\) for \(f\ge0\),
+finite on \(C_t\).  The proposition rules out a finite cyclic extension
+to the specified full operator ideal.  It is not an obstruction
+to every trace domain, and it says nothing about the Igusa
+coefficients without an actual identification of their operator
+carrier with this one.
+
+\subsection{Marked kernels retain finite amplitudes}
+\label{subsec:zbps-marked-kernels}
+
+Choose a nonnegative measurable \(\rho\) such that
+\(e^{-tP^2}\) and \(\rho(P)e^{-tP^2}\) lie in \(\mathcal H\)
+for every \(t>0\).  Put
+\[
+ v_0(t)=e^{-tP^2},\qquad v_1(t)=\rho(P)e^{-tP^2},\qquad
+ K_{ij}(t,s)=|v_i(t)\rangle\langle v_j(s)|.
+\]
+These rank-one kernels have the sewing law
+\[
+ K_{ij}(t,s)K_{k\ell}(u,v)
+ =\langle v_j(s),v_k(u)\rangle K_{i\ell}(t,v).
+\]
+It follows directly by applying both sides to a vector.
+The middle overlap is part of the product.  In particular,
+\[
+ \langle v_0(t),v_1(s)\rangle
+   =\int_0^\infty\rho(P)e^{-(t+s)P^2}\,dP,
+ \qquad
+ \langle v_1(t),v_1(s)\rangle
+   =\int_0^\infty\rho(P)^2e^{-(t+s)P^2}\,dP.
+\]
+One and two marked boundaries insert \(\rho\) and \(\rho^2\),
+respectively.  Each \(K_{ii}(t,t)\) is positive; when
+\(v_i(t)\ne0\), division by \(\|v_i(t)\|^2\) gives a positive
+contraction.  For \(a>0\), \(C_a v_i(t)=v_i(a+t)\), so the heat action is compatible
+with these marked states.  This construction preserves finite
+matrix coefficients without assigning a finite trace to \(C_t\)
+in the forbidden ideal.
+
+\subsection{A closed scalar does not fix a cap}
+\label{subsec:zbps-frobenius-sewing}
+
+A finite example separates normalization from sewing.  On
+\(A=\C e_1\oplus\C e_2\), take
+\[
+ e_ie_j=\delta_{ij}e_i,\qquad 1=e_1+e_2,
+ \qquad \varepsilon(e_1)=w,\quad\varepsilon(e_2)=1-w,
+ \qquad 0<w<1.
+\]
+This is a positive Frobenius algebra for its coordinatewise real
+structure.  If \(p_1=w,p_2=1-w\), its coproduct and cup are
+\[
+ \Delta(e_i)=p_i^{-1}e_i\otimes e_i,
+ \qquad \operatorname{coev}(1)=\sum_i p_i^{-1}e_i\otimes e_i.
+\]
+The inverse weights are forced by the snake identity.
+A connected surface of genus \(g\) with \(q\) outgoing circles
+sends \(e_i\) through multiplication, handles and coproducts with
+the corresponding factor \(p_i^{1-g-q}\); in particular its
+closed value is
+\[
+ Z_g=\sum_i p_i^{1-g}.
+\]
+Both \(w=1/2\) and \(w=1/3\) give \(Z_0=1\) and \(Z_1=2\),
+but their genus-two values are \(4\) and \(9/2\).
+Thus even a unit, a normalized sphere and the same torus value
+do not determine all sewing data.  This example does not compare
+two theories with the same complete family of closed operations.
+
+\subsection{When a supertrace is positive}
+\label{subsec:zbps-positive-supertrace}
+
+Let a graded Hilbert space carry an odd self-adjoint operator
+\(D\) and an even nonnegative self-adjoint Hamiltonian \(H\)
+strongly commuting with \(D\).  Fix a domain of \(\beta>0\) on
+which \(e^{-\beta H}\) is trace class.  Each finite-dimensional
+\(H\)-eigenspace decomposes into \(\ker D\) and paired even/odd
+states on its complement.  Their contributions cancel, giving
+\[
+ \operatorname{STr}(e^{-\beta H})
+ =\operatorname{STr}(e^{-\beta H}|_{\ker D}).
+\]
+If the physical kernel is entirely even, this becomes an ordinary
+positive trace and hence a Laplace transform of a positive
+spectral measure.  Without that parity hypothesis the remaining
+measure is signed.  A protected index therefore supplies neither
+positivity nor an ordinary thermal interpretation merely by being
+written as a supertrace.
+
+\section{The compact realization question}
+\label{sec:k3-e-threefold-realization}
+
+The geometric states, Hilbert correspondences and reduced curve
+counts constructed above have different coefficient theories.
+A compact realization must compare those theories by maps
+preserving their operations.  In particular, the prepared state
+in \eqref{eq:zbps-prepared-elliptic-state}, the empty cut unit,
+the local field vacuum and a scalar augmentation are distinct
+data.  Equality of their eventual scalar series cannot identify
+them.
+
+\begin{scope}[The physical interpretation]
+\label{scope:zbps-no-3d-gravity}
+The primitive inverse Igusa identity is a theorem about reduced
+numerical invariants.  A protected D-brane interpretation asks for
+\[
+ \Omega_X(h,d,n)\stackrel{\mathrm{phys}}{=}
+                 \mathbf{DT}^X_{n,(\beta_h,d)}
+\]
+in a specified physical chamber.  This is additional to the
+DT/PT/GW theorem.  Dyon counting provides a physical setting for
+inverse automorphic products \cite{DVV}; the automorphic
+construction itself is the singular theta lift \cite{B}.
+Neither result constructs the state and sewing maps of a
+three-dimensional gravitational sector obtained from
+\(\mathrm{AdS}_3\times S^3\times K3\).  A metric path integral
+or a boundary operator algebra requires those additional data.
+\end{scope}
+
+\subsection{The Hall and state comparison}
+\label{sec:hall-borcherds-residual}
+
+Fix a reduced oriented Hall coefficient theory on the desired
+threefold moduli, including its extension flags, supported
+pullbacks and pushforwards, relative unit and a geometric charge
+map.  Denote its completed associative algebra by
+\(\widehat{\mathcal H}^{\mathrm{red}}_X\).  This notation
+presupposes the construction of those operations; it does not
+assert that every reduction admits them.
+
+Let \(\mathfrak n_+\) be the positive part of
+\(\mathfrak g_{\Delta_5}\).  At the ordinary coefficient level
+the target is \(\widehat{U(\mathfrak n_+)}\), with a specified
+positive-height completion.  For a chiral comparison on \(E\),
+one must instead supply a geometric associative Ran algebra
+\(F_X\) and the corresponding current target
+\(\mathcal A_{+,E}\), with their Ran convolution tensor and
+empty unit.  A current envelope and an ordinary enveloping
+algebra have different domains.
+
+\begin{conjecture}[Compact Hall and state comparison]
+\label{conj:zbps-hall-borcherds-residual}
+For a suitable reduced coefficient theory and compatible charge
+dictionary, construct algebra and supported current comparisons
+\begin{equation}\label{eq:zbps-hall-to-borch}
+ \Theta_{\mathrm{Hall}}:
+ \widehat{\mathcal H}^{\mathrm{red}}_X
+ \longrightarrow\widehat{U(\mathfrak n_+)},
+ \qquad
+ \Theta_E:F_X\longrightarrow\mathcal A_{+,E}.
+\end{equation}
+Their primitive maps must preserve the defining relations,
+invariant pairing and its radical.  Their state maps must
+intertwine the extension operations with independently defined
+geometric fields and joining correspondences, including the
+supported collision operations and vacuum insertions.  For the
+Hilbert/orbifold field comparison, use the age and parity data
+specified after Theorem~\ref{thm:zbps-unshifted-mckay}.
+\end{conjecture}
+
+The charge dictionary is part of the problem.  The Enriques
+seed has half the K3 elliptic genus, but dividing an index by two
+does not construct a functor from K3 threefold states to Enriques
+states.  Nor does matching the coefficient \(-64\) construct
+the extra differentials or primitive brackets.  The ordinary
+cycle Hopf algebra has zero primitive commutator; the nonzero
+cohomological joining commutator is an even second-order
+operation.  A Hall comparison must identify the actual operation
+complexes before comparing these expressions.
+
+The gravity-line extension of this problem, as formulated in
+\cite{ChiralBarCobarVolII}, further asks for a boundary action
+and bulk sewing.  A Drinfeld double requires a compatible Hopf
+pairing, integral form and completion.  Current enveloping along
+\(E\) requires its own coefficient and support functor.  An
+open--closed comparison must preserve the operations of the
+two-coloured Swiss-cheese chiral-topological operad, including
+its boundary and bulk compositions.  None is a formal consequence
+of an isomorphism of graded vector spaces.  In particular, an
+ambient fusion or reconstruction object cannot be identified
+with a unitary spectral presentation without a comparison of
+those structures.
+
+Once source and target operation complexes are fixed, their
+higher comparison equations are concrete.  If \(b_A,b_B\) are
+their bar coderivations and the components below arity \(n\)
+have been constructed, put
+\[
+ R_n=(b_BF_{<n}-F_{<n}b_A)_n.
+\]
+The next equation is
+\(\partial_{\mathrm{Hom}}F_n=-R_n\).
+For a contraction
+\(\partial_{\mathrm{Hom}}h+h\partial_{\mathrm{Hom}}=1-P\),
+the choice \(F_n=-hR_n\) solves it when \(PR_n=0\).
+The normal-coordinate construction of Chapter~5 solves its own
+coordinate equations; it does not compute these Hall-supported
+residuals.  This locates the next comparison without assuming
+its answer.
+
+\subsection{A Pfaffian and its inverse square}
+\label{subsec:zbps-pfaffian-comparison}
+
+Suppose an independently constructed family over a base \(B\)
+has a Pfaffian line \(\mathscr L_{\mathrm{Pf}}\), section
+\(p_X\), and squaring map
+\[
+ \sigma:\mathscr L_{\mathrm{Pf}}^{\otimes2}
+                  \xrightarrow{\sim}\mathscr L_{\det}.
+\]
+For a rank-two skew block
+\(\left(\begin{smallmatrix}0&u\\-u&0\end{smallmatrix}\right)\),
+the Pfaffian is \(u\) and the determinant is \(u^2\).
+The square therefore forgets the sign of its root.  A comparison
+with a modular form also needs a parameter map
+\(\kappa:B\to\mathcal A_2\) and an isomorphism
+\[
+ \iota_{\mathrm{aut}}:\mathscr L_{\mathrm{Pf}}
+       \xrightarrow{\sim}\kappa^*(\mathcal L^5\otimes\nu_{\Delta_5}).
+\]
+Here \(\mathcal L\) is the Hodge line on the Siegel modular
+stack and \(\nu_{\Delta_5}\) is its multiplier character.
+
+\begin{theorem}[Conditional square-root consequence]
+\label{thm:zbps-square-root-consequence}
+Assume the complete geometric hypotheses of
+Theorem~\ref{thm:ch6-pfaffian-dirac}: the reduced orientation and
+wall data, the finite oriented block comparisons in every active
+degree with both parities, compatible effective lines and sections,
+and the stated parameter, convergence and extension conditions.
+Then, as meromorphic sections over \(B\),
+\begin{equation}\label{eq:zbps-square-root}
+ \iota_{\mathrm{aut}}(p_X)^{-2}
+ =\kappa^*\Delta_5^{-2}
+ =\kappa^*(\Phi_{10}^{\mathrm{un}})^{-1}
+ =\kappa^*Z_{\mathrm{BPS}}^{K3\times E}.
+\end{equation}
+If a protected state theory independently satisfies the sewing
+identity \(Z_X=-4096\,\iota_{\mathrm{aut}}(p_X)^{-2}\), then
+its scalar equals \(-4096\,\kappa^*\Delta_5^{-2}\).
+\end{theorem}
+\begin{proof}
+The Pfaffian comparison gives
+\(\iota_{\mathrm{aut}}(p_X)=\kappa^*\Delta_5\).
+Squaring and inverting gives the first two equalities;
+Theorem~\ref{thm:zbps-level-n-shadow} gives the last.
+The additional sewing identity yields the state-theoretic
+conclusion.  It is not implied by taking the reciprocal of a
+section.
+\end{proof}
+
+The expression \(\operatorname{Pf}_{\mathrm{prot}}
+(\mathfrak D_X^{\mathrm{DI}})\) abbreviates \(p_X\) only when
+this geometric system has been constructed.  A proposed system
+may be organized as
+\begin{equation}\label{eq:zbps-dirac-igusa-pro-object}
+\begin{split}
+ \mathfrak D_X^{\mathrm{DI}}=\bigl\{\bigl(&
+ \mathcal A^{E_3}_{X,R},F^{\mathrm{hyb}}_{X,R},\Gamma_{X,R},\Pi_X,
+ \Phi_R,o_R,H_R,P_R^\Pi,C_{X,R},\Theta_{\mathrm{Kos},R},\\
+ &\mathscr L_{\mathrm{Pf},R},p_{X,R},\epsilon_{o,R},\mathrm{Rec}_R
+ \bigr)\bigr\}_R.
+\end{split}
+\end{equation}
+The entries name, respectively, the chosen factorization
+refinement and hybrid Ran carrier, charge indices and map,
+coefficient complexes, orientation, extension operations,
+primitive pieces, source coalgebra and Koszul comparison,
+Pfaffian line and section, symmetry action and recognition map.
+This denotes the pro-system, with its specified transition maps.
+Each entry has its own construction and compatibility conditions.
+In particular, a finite root window is not automatically a
+proper geometric truncation, and a formal height limit need not
+be an effective family.
+
+The conditions \((D0),(O1),(O1)^+,(O2)\) express distinct
+geometric requirements.  A degeneration system must compare
+reduced coefficients, orientations, their specialization and
+integration.  The reduced orientation must descend through
+stabilizers, with coherent symmetry lifts.  A wall model must
+compare the actual root action and its local Pfaffian divisor.
+The finite Pfaffian condition \((P_{\mathrm{fin}})\) further
+requires oriented block factorizations, units, all active parity
+dimensions and the leading coefficient \(64x^\rho\).
+These conditions control the conditional theorem; they are not
+existence results for the compact family.
+
+If \(\epsilon_o\) denotes the resulting root-line character,
+the reflection comparison asks for
+\begin{equation}\label{eq:zbps-orientation-equality}
+ \epsilon_o|_{W^{(2)}(\Lambda_{II}^{2,1})}
+ =\widetilde\nu_{\Delta_5}|_{W^{(2)}(\Lambda_{II}^{2,1})}.
+\end{equation}
+The rank-one wall calculation determines a sign only after the
+actual root lift, the section transformation and the local frame
+comparison have been specified.  A ratio of scalar formulas in
+unrelated frames does not determine that character.  Global
+modular descent also requires the full multiplier and boundary
+normalization, beyond the reflection subgroup.
+
+An inverse-square scalar is invariant under \(p_X\mapsto-p_X\).
+Likewise, the identity has supertrace one on spaces of dimensions
+\((1|0)\) and \((2|1)\).  These examples exhibit information
+lost by the two operations.  A virtual determinant constructed
+from Euler superdimensions sees the product exponents, but does
+not supply brackets, Hopf-pairing radicals, a Pfaffian line or a
+root of its symmetry action.  The automorphic product, its BKM
+denominator and a geometric Pfaffian meet only after the stated
+comparisons.  In the Gritsenko--Nikulin coordinates the algebraic
+denominator is \(64^{-1}\Delta_5(2Z)\); the change of argument
+is part of that lattice convention.
+
+\begin{remark}[Five numerical invariants]
+\label{rem:zbps-kappa-stratum}
+Let \(r_{\mathrm{Gram}}\) be the rank of the three-coordinate
+Gram lattice.  Define \(\kappa_{\mathrm{cat}}=\chi(\mathcal O_X)\),
+let \(\kappa_{\mathrm{ch}}^{\mathrm{Hodge}}\) denote the same
+alternating Hodge sum in the indicated convention, and put
+\(\kappa_{\mathrm{BKM}}=\mathrm{wt}(\Delta_5)\) and
+\(\kappa_{\mathrm{fiber}}=\chi_{\mathrm{top}}(S)\).  Then
+\begin{equation}\label{eq:zbps-kappa-tuple}
+ (\kappa_{\mathrm{cat}},\kappa_{\mathrm{ch}}^{\mathrm{Hodge}},
+ r_{\mathrm{Gram}},\kappa_{\mathrm{BKM}},\kappa_{\mathrm{fiber}})
+ =(0,0,3,5,24).
+\end{equation}
+The two zeroes come from \(1-1+1-1\).  The modular weight is
+\(f(0,0)/2=5\) \cite{Borcherds95,Gritsenko99}, while
+\(\chi(\mathcal O_S)=2\).  Thus an additive formula
+\(\kappa_{\mathrm{BKM}}=
+\kappa_{\mathrm{ch}}^{\mathrm{Hodge}}+\chi(\mathcal O_S)\)
+would assert \(5=2\).  A genus-one Heisenberg bar coefficient
+instead requires a chosen complex, trace and normalized class;
+rescaling its trace changes it without changing \(r_{\mathrm{Gram}}\).
+An identification with the Gram rank requires its own map.
+\end{remark}
+
+\section{Further structures}
+\label{sec:zbps-open-problems}
+
+An associative source comparison must keep the carrier and its
+tensor product fixed.  If \(C_X\) is a chiral coalgebra, a centre
+comparison goes through a specified cobar algebra or comodule
+category.  A filtered quasi-isomorphism of underlying complexes
+\(A_b\simeq C_X\) does not compare their multiplications,
+cooperations or cyclic functionals.  Applying chiral Hochschild
+or boundary-realization constructions
+\cite{ChiralBarCobarVolI,ChiralBarCobarVolII,ChiralBarCobarVolIV}
+therefore requires an associative comparison preserving those
+operations, completion, support and transitions.  Lie--Com
+chiral Koszul duality cannot provide it by a change of notation.
+
+A local mixed holomorphic--topological theory raises another
+comparison problem.  A model on
+\(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\) specifies both
+topological and holomorphic directions.  Its coefficient and operator complexes
+must descend, and the quantum master equation and anomaly class
+must be defined in the actual global deformation complex.
+Kunneth gives
+\[
+ H^1(S\times E,\mathcal O_{S\times E})\cong\C.
+\]
+This nonzero group neither identifies the full obstruction complex
+nor proves that an obstruction class is nonzero.  A quartic
+invariant such as \(\operatorname{Tr}_{\mathrm{ad}}(x^4)\)
+likewise specifies an anomaly question only after its BV descent
+and form degrees are fixed.  Formal local Hamiltonian data alone
+do not produce the compact sewing identity.
+
+For a gravitational boundary algebra, the Brown--Henneaux relation
+\(c=3\ell/(2G_N)\) fixes a Virasoro parameter.  With the usual
+normalization its bracket is
+\[
+ [T_\lambda T]=\partial T+2\lambda T+\frac c{12}\lambda^3.
+\]
+A comparison with a K3 Heisenberg construction must identify the
+actual bracket, state and trace normalization.  The Borcherds
+weight \(5\) does not determine that central charge.  Constructing
+an acting algebra with determinant section \(\Delta_5^2\),
+proving that its partition function is the reciprocal section,
+and relating it to \(p_X\) remain separate requirements.
+
+\subsection{Mathieu and umbral structures}
+\label{subsec:zbps-moonshine}
+
+The K3 elliptic genus \(2\phi_{0,1}\) has an \(N=4\)
+superconformal-character decomposition \cite{EOT}.  After the
+massless terms are separated, its mock-modular series has form
+\[
+ \Sigma(\tau)=-2q^{-1/8}+\sum_{n\ge1}A_nq^{n-1/8}.
+\]
+The Mathieu twining functions of \cite{GHV} determine class
+functions, and the module theorem proves that the massive
+coefficients are actual \(M_{24}\)-characters
+\cite{GannonUmbral}.  This character theorem does not supply a
+simultaneous \(M_{24}\)-action on every geometric K3 state model.
+
+Umbral moonshine begins with the six-group construction of
+\cite{CDH} and extends to the twenty-three Niemeier lattices with
+nonempty root systems.\footnote{M.~Cheng, J.~Duncan and J.~Harvey,
+\emph{Umbral moonshine and the Niemeier lattices},
+\href{https://arxiv.org/abs/1307.5793}{\S1}.}
+The \(A_1^{24}\) case gives Mathieu moonshine.
+A twining construction changes the coefficient data and uses
+the powers of the group element. For the Mathieu inputs, the full
+lifts are meromorphic Borcherds products \cite{WangWilliamsMathieu}.
+Chapter~\ref{ch:open-obstructions} gives their lattices, weights
+and the odd-divisor obstruction to particular square roots.
+These results use the complete twining and cusp data; the untwined
+coefficients \(f(n,\ell)\) alone do not define the lift.
+An equivariant denominator algebra or a geometric Hall action
+requires further constructions.
+
+A compact comparison must identify the coefficient and state
+theories on their actual supports, then compare the oriented
+modular lines and sewing functionals.  The inverse Igusa series
+fixes the scalar that these maps must recover.
+
+\section*{Bibliographic notes}
+\label{sec:zbps-bibliography}
+
+The primitive numerical identity uses Oberdieck--Pixton
+\cite{OB}, Oberdieck--Pandharipande \cite{OPand}, and the reduced
+DT/PT comparison \cite{OberdieckReducedPT}; direct vertex
+calculations in DT theory are developed in \cite{BRYAN}.
+The Saito--Kurokawa factorization is described in \cite{ZagierSK};
+Andrianov \cite{Andr74} fixes the full Hecke polynomial and its
+analytic completion.  Their arithmetic statements concern the
+weight-ten eigenline, independently of the Pfaffian realization.
+The periods in \cite{Manin72,KZ,Del79} express rationality of
+critical values, while the Mellin argument above proves the
+nonvanishing needed for the pole.

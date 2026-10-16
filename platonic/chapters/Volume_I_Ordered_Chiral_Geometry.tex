@@ -1,0 +1,2097 @@
+\part{Ordered chiral geometry}
+\chapter{Collision, order, and coefficient maps}
+
+Two observables on $X\times\mathbb R$, with $X$ a smooth complex curve,
+can approach one another in two different directions.
+Collision in $X$ probes singular coefficients along a diagonal.
+Composition along the oriented real line retains the order of the operators.
+A third operation, exchanging the operators along paths in a plane,
+requires transport beyond the two compositions.
+The distinction is already visible for two observables; it persists in their
+bar constructions and in the categories on which they act.
+
+\begin{principle}[Two directions of locality]
+A factorization coefficient on $X$ describes separation and collision of
+holomorphic supports. An internal associative multiplication describes
+composition in an independent oriented direction. A braid action is additional
+transport data, subject to its compatibility with those operations.
+\end{principle}
+
+The geometric sources of the operations are
+\[
+\begin{array}{c|c}
+\text{geometry}&\text{operation}\\\hline
+\text{diagonal in }X^2&\text{singular chiral operation}\\
+\text{oriented interval}&\text{ordered composition}\\
+\text{oriented plane}&\text{braid transport}\\
+\text{circle}&\text{Hochschild chains}\\
+\text{bordered or stable curves}&\text{sewing with its specified contractions}.
+\end{array}
+\]
+A comparison between rows must give a map preserving the operations in question.
+
+\section{Coefficients on configurations}
+Let $\Delta:X\hookrightarrow X^2$ be the diagonal and
+$j:X^2\setminus\Delta(X)\hookrightarrow X^2$ its complement.
+A Beilinson--Drinfeld chiral Lie operation on a right $D$-module $\g$ is
+\[
+ \mu:j_*j^*(\g\boxtimes\g)\longrightarrow\Delta_!\g,
+\]
+with skew-symmetry and the chiral Jacobi identity \cite{BD04}.
+The module, the singular coefficient extension, and the operation are separate data.
+For the pole filtration on $\mathcal O_{X^2}(*\Delta)$,
+\[
+ \gr_m^F\mathcal O_{X^2}(*\Delta)
+ \cong\mathcal O_\Delta(m\Delta)
+ \cong N_{\Delta/X^2}^{\otimes m},\qquad m\ge1.
+\]
+This is the normal symbol of a principal part of order $m$.
+It follows from the quotient of consecutive pole-order sheaves.
+A residue for a meromorphic one-form recovers its first principal-part coefficient;
+higher poles require their higher normal symbols. A coordinate change can mix
+lower coefficients while preserving the filtration.
+
+Fix a stable presentable category $\Dcal_X$ of coefficients on the unital Ran space
+$\Ran^+(X)$, whose points include the empty configuration.
+Specify its restriction and collision functors and their coherent base-change maps.
+We use the pointwise tensor $\tensor^!$ and the chiral convolution with chart formula
+\[
+ (F\tensor^{\ch}G)_I
+ =\bigoplus_{I=I_1\sqcup I_2}
+ j_{I_1,I_2,*}j_{I_1,I_2}^{!}(F_{I_1}\boxtimes G_{I_2}).
+\]
+Here $j_{I_1,I_2}$ includes the locus where the two blocks are disjoint;
+empty blocks are allowed. The direct image is the $*$ extension appearing
+in the singular chiral coefficient model, with its stipulated transition maps.
+Its replacement by extension by zero would be a different coefficient construction.
+The pointwise unit is denoted $\mathbbm1_\perp$; the convolution unit
+$\mathbbm1_{\ch}$ is supported at the empty configuration.
+No identification of these units is part of the notation.
+We also write $\starCh$ for $\tensor^{\ch}$. Preservation of a realization or limit is a hypothesis where that construction uses it.
+
+A factorization object consists of coefficients $F_I$ on the finite configuration
+charts, collision maps, and coherent equivalences
+\[
+ j^!F_I\simeq\mathop{\boxtimes}_{a=1}^r F_{I_a}
+ \qquad(I=I_1\sqcup\cdots\sqcup I_r)
+\]
+on the corresponding disjoint locus, together with its empty-configuration datum.
+Write $\Fact_D(X)$ for the resulting category in the fixed enhancement.
+When that enhancement realizes factorization objects as chiral commutative
+coalgebras, this notation refers to the factorizing subcategory of
+$\operatorname{CoCAlg}_{\ch}(\Dcal_X)$.
+The Lie-to-commutative-coalgebra equivalence of chiral Koszul duality has this
+Lie-theoretic scope \cite{FG12,Heuts}; an associative duality requires its own functors.
+
+\begin{proposition}[Pointwise tensor of factorization objects]
+Suppose the pointwise tensor is compatible with the specified collision functors
+and external products. Then it restricts to a symmetric monoidal structure on
+$\Fact_D(X)$.
+\end{proposition}
+\begin{proof}
+For two blocks, the comparison on the disjoint locus is
+\[
+\begin{aligned}
+ j^!(F_I\tensor^!G_I)
+ &\simeq j^!F_I\tensor^!j^!G_I\\
+ &\simeq(F_{I_1}\boxtimes F_{I_2})\tensor^!
+        (G_{I_1}\boxtimes G_{I_2})\\
+ &\simeq(F_{I_1}\tensor^!G_{I_1})\boxtimes
+        (F_{I_2}\tensor^!G_{I_2}).
+\end{aligned}
+\]
+The same reordering gives the comparison for any finite number of blocks.
+Refinement, permutation and collision coherence follow from those for the inputs
+and the assumed tensor compatibilities. The specified pointwise unit has the
+corresponding factorization structure.
+\end{proof}
+
+\section{The two associative structures}
+\begin{definition}[Transversely ordered chiral algebra]
+An ordered chiral algebra is an augmented associative algebra
+\[
+ A^\perp\in\Alg_{\Eone}^{\mathrm{aug}}(\Fact_D(X),\tensor^!).
+\]
+Thus its multiplication and unit are morphisms of factorization objects.
+On the chart $I$ the multiplication is
+$m_I:A_I\tensor^!A_I\to A_I$.
+For a binary decomposition its compatibility with separation is
+\[
+ \Delta_{I_1,I_2}m_I
+ =(m_{I_1}\boxtimes m_{I_2})\sigma
+   (\Delta_{I_1,I_2}\tensor^!\Delta_{I_1,I_2}),
+\]
+where $\sigma$ interchanges the two middle tensor factors with their graded sign.
+All higher associativity homotopies, units, and collision maps obey the same compatibility.
+\end{definition}
+
+\begin{proposition}[Locality recognition]
+An ordered chiral algebra is equivalently a family of associative algebra objects
+$A_I$ whose units and products commute coherently with the transition maps and
+factorization equivalences.
+\end{proposition}
+\begin{proof}
+A morphism in $\Fact_D(X)$ is a componentwise morphism preserving these data.
+Apply this description to every operation of the associative operad.
+The displayed binary equation is its multiplication condition; the coherent
+higher equations give the remaining algebra structure. In a strict dg model
+these reduce to associativity, units, and the stated compatibility diagrams.
+\end{proof}
+
+\begin{definition}[Associative chiral-convolution algebra]
+An associative chiral-convolution algebra is an augmented object
+\[
+ A^{\ch}_{\mathsf{Ass}}\in
+ \Alg_{\Eone}^{\mathrm{aug}}(\Dcal_X,\tensor^{\ch}).
+\]
+Its commutator is a Lie algebra object for the same convolution tensor.
+A chiral Lie algebra $\g^{\ch}$ has this latter Lie type.
+\end{definition}
+
+The maps $m^\perp:A\tensor^!A\to A$ and
+$m^{\ch}:A\tensor^{\ch}A\to A$ have different domains.
+Neither definition contains a comparison between them.
+Even the elementary operation of adjoining a unit must specify its tensor.
+In a stable monoidal dg category whose tensor preserves sums, a nonunital
+associative algebra $(M,\mu)$ has the augmented unitalization
+$\mathbbm1\oplus M$ with multiplication
+\[
+ (a,m)(b,n)=(ab,an+bm+\mu(m,n)).
+\]
+It is square-zero precisely when $\mu=0$.
+Associativity follows by expanding this formula and using associativity of $\mu$.
+This construction applies separately to either chosen tensor when its hypotheses hold.
+It does not make an ambient direct sum a factorization object, nor does it
+identify the two different unitalizations on a common carrier.
+
+\section{Common decompositions and collision}
+For a finite set $I$, write $\Dec(I)$ for its ordered decompositions $I=A\sqcup B$.
+In a linear species model suppose
+\[
+ \mathcal M_I=\bigoplus_{d_1,d_2\in\Dec(I)}\mathcal M_{d_1,d_2}.
+\]
+There is a projection $e_I$ onto
+$\mathcal M_I^{\mathrm{al}}=\bigoplus_d\mathcal M_{d,d}$.
+If $a_I$ denotes the diagonal of the discrete decomposition index, this is
+extension by zero after restriction, $a_{I,!}a_I^!$.
+
+\begin{proposition}[Finite alignment and its descent condition]
+The projections $e_I$ are idempotent and natural under bijections.
+On three decomposition indices the two iterated alignments are the projection
+onto $d_1=d_2=d_3$.
+They descend to a coefficient diagram with collision transitions if those
+transitions intertwine the projections coherently.
+\end{proposition}
+\begin{proof}
+On each direct summand $e_I$ is either zero or the identity.
+Bijections preserve equality of decomposition indices, and both triple composites
+retain exactly the common diagonal. For a transition $T_{IJ}$ the required equation is
+\[
+ T_{IJ}e_I\simeq e_JT_{IJ}.
+\]
+Together with its coherence under composition, this equation is exactly what
+makes the chartwise endomorphisms an endomorphism of the full diagram.
+Idempotence then passes to that diagram and, in an idempotent-complete setting,
+its image defines the aligned subobject.
+\end{proof}
+
+The collision condition is substantive. The surjection
+$\{1,2\}\to\{*\}$ does not carry the decomposition
+$(\{1\},\{2\})$ to a disjoint decomposition: its two images overlap.
+Consequently the finite discrete indexing argument alone does not supply a
+Ran transition or its base-change square.
+A particular geometric model may supply the required comparison; the failure
+of this argument is no obstruction to every possible mixed distributive law.
+
+A \emph{mixed associative chiral datum} is a common factorization carrier with
+both augmented associative products, a specified comparison between their mixed
+composites on a stated correspondence, and coherent unit and iteration diagrams.
+When the correspondence is the aligned image above, its descent condition is
+part of the datum. To extend an aligned comparison to the entire mixed object
+one must also define it on the complementary sector. Equality of the two
+finite triple projectors proves only the alignment identity, not these additional laws.
+
+\section{From an oriented line to an internal algebra}
+Let $\mathcal F$ be a product-generated factorization algebra on
+$X^{\mathrm{an}}\times\mathbb R$ that is holomorphic along $X$ and locally
+constant along the real direction. Its value on an interval, considered as an
+object of the chosen holomorphic factorization category, has an $\Eone$ structure:
+ordered disjoint intervals give its products, and each order chamber is contractible.
+Factorization in $X$ commutes with these products because the product embeddings commute.
+
+To obtain an object of $\Fact_D(X)$ one further needs a specified monoidal
+comparison from that holomorphic coefficient theory to the chosen $D$-module theory,
+preserving the units, collision maps and relevant colimits.
+Under those hypotheses the comparison transports the internal associative algebra.
+A regular-holonomic Riemann--Hilbert equivalence can be used only on coefficient
+objects within its domain and with these compatibilities established.
+It does not algebraize an arbitrary holomorphic factorization algebra.
+
+\section{Block-ordered operations}
+The preceding definition is intrinsic. A geometric model arises after one chooses an infinity-operad $\mathsf{Ch}_X$ representing the selected chiral factorization theory. The Boardman--Vogt tensor product
+\[
+ \mathsf{OrdCh}_X=\Eone\tensor\mathsf{Ch}_X
+\]
+then represents compatible ordered and chiral operations.
+
+\begin{theorem}[Operadic exponential law]
+Let $P$ and $Q$ be infinity-operads whose Boardman--Vogt tensor product exists, and let $\Vcal$ be a compatible presentable symmetric monoidal infinity-category.  Then
+\[
+ \Alg_{P\tensor Q}(\Vcal)
+ \simeq
+ \Alg_P\bigl(\Alg_Q(\Vcal)\bigr).
+\]
+In particular, after a chiral operad $\mathsf{Ch}_X$ has been constructed, the tensor product $\Eone\tensor\mathsf{Ch}_X$ classifies $\Eone$-algebra objects in $\mathsf{Ch}_X$-algebras.
+\end{theorem}
+\begin{proof}
+The tensor product of infinity-operads is characterized by the displayed universal property \cite{LurieHA}.  The second statement is the specialization $P=\Eone$ and $Q=\mathsf{Ch}_X$.  This formal equivalence applies to each geometric model of $\mathsf{Ch}_X$ after that model and its operadic tensor product have been constructed.
+\end{proof}
+
+A profile is an ordered list $(I_1,\ldots,I_r)$ of finite chiral label sets. Its geometric carrier is $X^{I_1}\times\cdots\times X^{I_r}$. Chiral morphisms refine and collide labels inside one block. Transverse morphisms merge adjacent blocks. The tensor-product operad imposes their mixed squares.
+
+\section{Mixed forests}
+Suppose a cellular resolution of the chosen mixed operad is given, whose cells
+are levelled forests with transverse and chiral internal edges and specified
+coefficient complexes. A Boardman--Vogt model can be used when its cells and
+coefficient maps have been constructed in that geometric theory. Set
+\[
+ \operatorname{or}(F)=\det(E_\perp(F))\tensor\det(E_{\ch}(F)).
+\]
+The candidate differential is the internal coefficient differential plus one-edge contractions.
+
+\begin{theorem}[Two-color forest differential]
+Let $C_*$ be the chain complex freely generated by oriented two-color forests, with one determinant-line generator for every transverse edge and one for every chiral edge.  Suppose contraction of an edge is functorial on the coefficient system and every codimension-two contraction square commutes before orientations are inserted.  With the product orientation, the transverse and chiral contraction operators satisfy
+\[
+ d_\perp^2=0,\qquad d_{\ch}^2=0,\qquad
+ d_\perp d_{\ch}+d_{\ch}d_\perp=0.
+\]
+Thus $d=d_{\mathrm{int}}+d_\perp+d_{\ch}$ squares to zero whenever the internal differential anticommutes with both contraction operators.
+\end{theorem}
+\begin{proof}
+Every term of $d_\perp^2$ contracts the same pair of transverse edges in two orders.  The underlying coefficient maps agree by functoriality, while exchanging the two transverse determinant generators reverses the sign.  The terms cancel in pairs.  The same argument proves $d_{\ch}^2=0$.  For one edge of each color the coefficient maps again form a commuting square and exchanging the two determinant generators contributes the Koszul sign $-1$, proving the mixed anticommutator identity.  The internal terms vanish by the chain-map assumption.
+\end{proof}
+
+The sign calculation proves that this candidate is a complex under its stated hypotheses. Identifying it with a resolution of the geometric operad still requires the cellular comparison. The intrinsic definition of an ordered chiral algebra is independent of that choice.
+
+\chapter{Bars, completions, and module equivalence}
+
+The bar remembers the multiplication used to form it.
+We first distinguish the three operadic types, then construct the transverse bar
+in the factorization category. Positive weights provide a separate setting in
+which the complete tensor cobar and its module functors can be proved to reconstruct.
+
+\section{Three bar constructions}
+We distinguish three bars by their monoidal product and algebraic operad.
+The two associative augmentations are to their respective tensor units.
+Use cohomological degrees: $sM=M[1]$ lowers the degree of an element by one.
+In a chosen dg model, $\bar A$ is the reduced augmentation ideal and
+$T^c_\otimes(M)=\bigoplus_{n\ge0}M^{\otimes n}$ is the tensor coalgebra
+with deconcatenation; its empty tensor is the coaugmentation.
+
+\begin{definition}[Transverse, associative-chiral, and Lie-chiral bars]
+For the two augmented associative objects and a chiral Lie algebra, define
+\[
+ \BarPerp(A^\perp)
+   :=\mathbbm1\tensor_{A^\perp}^{\mathbb L,!}\mathbbm1,
+\]
+\[
+ \BarAssCh(A^{\ch}_{\mathsf{Ass}})
+   :=\mathbbm1\starCh_{A^{\ch}_{\mathsf{Ass}}}^{\mathbb L}\mathbbm1,
+\]
+and
+\[
+ \BarLieCh(\g^{\ch})
+   :=C_*^{\ch}(\g^{\ch})
+   =\Sym^{\ch}(\g^{\ch}[1])
+\]
+with its chiral Chevalley differential.  The first bar is formed with $\tensor^!$, the second with $\starCh$, and the third is the Lie-to-commutative-coalgebra Koszul functor.
+\end{definition}
+
+\begin{theorem}[Typed bar theorem]
+Choose a symmetric monoidal dg coefficient model in which the indicated tensors compute derived tensors and direct-sum normalization computes realization. The three underlying bars then have the following chain models.
+\begin{enumerate}
+\item $\BarPerp(A^\perp)$ is the tensor coalgebra $T^c_{\tensor^!}(s\bar A)$ with coderivation induced by $m^\perp$.
+\item $\BarAssCh(A^{\ch}_{\mathsf{Ass}})$ is the tensor coalgebra $T^c_{\starCh}(s\bar A)$ with coderivation induced by $m^{\ch}$.
+\item $\BarLieCh(\g^{\ch})$ is the chiral symmetric coalgebra with differential induced by the chiral Lie bracket.
+\end{enumerate}
+Each differential squares to zero by the defining relation of its own operad.  The outputs live in different coalgebra categories and are compared by a displayed monoidal or PBW morphism.
+\end{theorem}
+\begin{proof}
+Normalize the two simplicial two-sided bars in their respective monoidal categories.  Degeneracies remove units, leaving the two tensor coalgebras, and faces contract adjacent factors using the relevant multiplication.  The Lie formula is the ordinary operadic bar of the Lie operad internal to chiral convolution.  Associativity and Jacobi are exactly the quadratic identities that make the corresponding coderivations square to zero.
+\end{proof}
+
+\begin{definition}[PBW-admissible chiral Lie algebra]
+A chiral Lie algebra $\g^{\ch}$ is PBW-admissible when its associative enveloping algebra $U_{\starCh}(\g)$ for chiral convolution has a complete separated PBW filtration, the canonical map
+\[
+ \Sym^{\ch}(\g)\longrightarrow\gr_{\mathrm{PBW}}U_{\starCh}(\g)
+\]
+is an equivalence, and the bar filtration is strongly convergent in the chosen nilcomplete Ran category.
+\end{definition}
+
+\begin{theorem}[Filtered chiral PBW comparison]
+Let $\g$ be a chiral Lie algebra in a complete filtered chiral category.  Assume:
+\begin{enumerate}
+\item its associative enveloping algebra $U_{\starCh}(\g)$ for chiral convolution exists;
+\item the PBW filtration is exhaustive, complete, and separated;
+\item the chiral PBW morphism
+\[
+ \Sym^{\ch}(\g)\longrightarrow \gr U_{\starCh}(\g)
+\]
+is an isomorphism;
+\item the induced filtrations on the two bar complexes are strongly convergent.
+\end{enumerate}
+Then antisymmetrization induces a filtered quasi-isomorphism
+\[
+ \BarAssCh\bigl(U_{\starCh}(\g)\bigr)
+ \simeq
+ \BarLieCh(\g).
+\]
+\end{theorem}
+\begin{proof}
+The associated graded of the associative chiral bar is the Koszul bar of $\Sym^{\ch}(\g)$.  The usual Koszul antisymmetrization identifies this coalgebra with the chiral Chevalley coalgebra.  Hypotheses (2)--(4) give a complete, separated, strongly convergent comparison spectral sequence.  Since its associated-graded map is a quasi-isomorphism, the filtered map is a quasi-isomorphism.  This is an associative-enveloping-to-Chevalley comparison under the stated PBW and convergence hypotheses. It does not identify arbitrary associative chiral algebras with chiral Lie algebras.
+\end{proof}
+
+\begin{definition}[Bar-admissible mixed datum]
+A mixed associative chiral datum is bar-admissible when its aligned distributive law acts on the full bisimplicial two-sided bar and both geometric realizations commute with the tensor products occurring in that bisimplicial object.
+\end{definition}
+
+\begin{theorem}[Mixed Fubini theorem]
+Let $A$ be a mixed algebra in a presentable stable category.  Assume the mixed distributive datum extends to the bisimplicial two-sided bar, and that both monoidal products preserve its geometric realizations separately.  Then the two iterated realizations and the diagonal realization are canonically equivalent:
+\[
+ \left|\,p\mapsto\left|q\mapsto B_{p,q}(A)\right|_{\ch}\right|_\perp
+ \simeq
+ \left|\operatorname{diag}B_{\bullet,\bullet}(A)\right|
+ \simeq
+ \left|\,q\mapsto\left|p\mapsto B_{p,q}(A)\right|_\perp\right|_{\ch}.
+\]
+\end{theorem}
+\begin{proof}
+The distributive datum makes the two simplicial directions commute, so $B_{\bullet,\bullet}(A)$ is a genuine bisimplicial object.  Geometric realization is a colimit.  Since the two tensor products preserve the relevant colimits, Fubini for colimits identifies both iterated realizations with the realization of the diagonal simplicial object.
+\end{proof}
+
+The notation used in the remainder of this part is
+\[
+ \Barc_X^{\ord}=\BarPerp.
+\]
+It always refers to transverse order.
+
+\section{Realization and factorization}
+
+Factorization compares the coefficient at a disjoint configuration with
+an external tensor product of its coefficients at the separate configurations.
+This condition is nonlinear. For example, suppose those coefficients are
+$k$ at one point and at two distinct points, where $k$ is a field.
+The componentwise sum of two copies has coefficient $k^2$ at both configurations.
+Factorization would instead require $k^2\otimes_k k^2\cong k^4$ at two points.
+A componentwise shift also fails: its two-point coefficient is $k[1]$,
+whereas the tensor product of its singleton coefficients is $k[2]$.
+Thus an ambient stable coefficient category does not make its
+factorization objects closed under componentwise sums or shifts.
+
+Geometric realization has a different colimit property.
+A small indexing $\infty$-category $J$ is \emph{sifted} when it is nonempty
+and its diagonal $J\to J\times J$ is cofinal.
+Here cofinal means that, for every diagram $D$ on $J\times J$,
+the canonical map $\operatorname*{colim}_{J}(D\circ\Delta)
+\to\operatorname*{colim}_{J\times J}D$ is an equivalence whenever these colimits exist.
+Iteration gives the same property for $J\to J^m$, for every finite $m\geq1$.
+The simplex category with arrows reversed is sifted, so simplicial
+geometric realization is a sifted colimit.
+
+\begin{proposition}
+Fix coefficient categories on configuration charts, with specified
+restriction and collision functors and their coherent identifications.
+Suppose the coefficient categories admit $J$-indexed colimits
+and these functors preserve them.
+Suppose external tensor products preserve colimits separately in each variable.
+Let $(F_j)_{j\in J}$ be a diagram of factorization objects and
+morphisms preserving their factorization equivalences.
+If $J$ is sifted, the componentwise colimit is a factorization object.
+\end{proposition}
+\begin{proof}
+Write $F_I=\operatorname*{colim}_{j\in J}(F_j)_I$ on a chart indexed by $I$.
+The collision maps and their coherences pass to the colimit by hypothesis.
+For a decomposition $I=I_1\sqcup\cdots\sqcup I_m$, let $u$ denote
+restriction to its disjointness locus.
+Restriction, factorization, cofinality, and separate preservation give
+\[
+\begin{aligned}
+ uF_I
+ &\simeq\operatorname*{colim}_{j\in J}u(F_j)_I\\
+ &\simeq\operatorname*{colim}_{j\in J}
+        \mathop{\boxtimes}_{a=1}^m(F_j)_{I_a}\\
+ &\simeq\operatorname*{colim}_{(j_1,\ldots,j_m)\in J^m}
+        \mathop{\boxtimes}_{a=1}^m(F_{j_a})_{I_a}
+ \simeq\mathop{\boxtimes}_{a=1}^m F_{I_a}.
+\end{aligned}
+\]
+Each comparison is natural in the diagram and the decomposition.
+Refinements and permutations therefore preserve the given coherence diagrams.
+If an empty-configuration unit is specified, its constant diagram also
+has that unit as colimit, since a sifted category has contractible groupoid completion.
+\end{proof}
+
+For a simplicial two-sided bar, this proposition applies when every
+simplicial term and every face and degeneracy are already in the
+specified factorization category.
+It also requires the actual restriction and collision functors to preserve realization.
+Normalization may then be computed in an ambient stable category.
+Its individual shifted summands need not be factorization objects.
+A coproduct on the normalized complex requires its own compatibility
+with the factorization equivalences.
+
+\section{The internal ordered bar}
+Let $A$ be an augmented ordered chiral algebra.
+Assume the restriction and collision functors preserve geometric realizations,
+and the external and pointwise tensor products preserve them separately.
+The two-sided simplicial bar has
+\[
+ B_r(\mathbbm1,A,\mathbbm1)=
+ \mathbbm1\tensor^! A^{\tensor^!r}\tensor^!\mathbbm1.
+\]
+Every face and degeneracy is a factorization morphism by the algebra and augmentation axioms.
+The sifted-colimit proposition therefore constructs its realization
+$\Barc_X^{\ord}(A)$ as a factorization object.
+
+\begin{theorem}[Normalized bar]
+Choose a symmetric monoidal dg model for the ambient coefficients in which the displayed
+tensors compute derived tensors and direct-sum normalization computes realization.
+Write $\bar A$ for the augmentation ideal in that model.
+The underlying bar complex is
+\[
+ \Barc_X^{\ord}(A)\simeq
+ \bigl(T^c(s\bar A),d_{\mathrm{int}}+b_m\bigr).
+\]
+Here $s$ decreases cohomological degree by one.
+The direct sum and its individual shifted summands are formed in the ambient coefficient category.
+Deconcatenation makes this complex a conilpotent coassociative coalgebra there:
+\[
+ \Delta_{\mathrm{dec}}[a_1|\cdots|a_n]
+ =\sum_{i=0}^n[a_1|\cdots|a_i]\tensor[a_{i+1}|\cdots|a_n].
+\]
+\end{theorem}
+\begin{proof}
+Normalization removes words containing a unit and leaves the shifted augmentation ideal in every slot.
+The faces give the internal differential and adjacent multiplication.
+The simplicial identities give a square-zero differential.
+Two successive cuts enumerate the same three subwords in either order.
+An internal differential or multiplication lies on one side of any surviving cut,
+with the tensor sign of its prefix. Thus the differential is a coderivation.
+Every element has finite word support, so sufficiently many reduced cuts give zero.
+\end{proof}
+
+\section{The bar comparison on separated configurations}
+The normalized word decomposition is not itself a decomposition in $\Fact_D(X)$.
+Its compatibility with factorization is expressed by a map between whole bar complexes.
+For augmented dg algebras $P,Q$ in the chosen model, define
+\[
+ \operatorname{sh}:BP\tensor BQ\longrightarrow B(P\tensor Q)
+\]
+by shuffling the factors $p_i\tensor1$ and $1\tensor q_j$,
+keeping their respective orders.
+The sign is the Koszul sign for the permutation of the suspended factors.
+For degree-zero factors,
+\[
+ \operatorname{sh}([p]\tensor[q])
+ =[p\tensor1|1\tensor q]-[1\tensor q|p\tensor1].
+\]
+
+\begin{proposition}[Shuffle and factorization]
+The shuffle is a natural quasi-isomorphism and a coalgebra map,
+where its source has the tensor-product coalgebra structure.
+For the geometric coefficient models above, suppose these maps commute with the specified
+restriction and collision functors.
+Then they give factorization equivalences for the whole bar and make
+deconcatenation a morphism of factorization objects in the derived category.
+\end{proposition}
+\begin{proof}
+In the bar differential of a shuffle, a merge of an entry from $P$ with one from $Q$
+occurs twice with opposite suspended signs.
+The equality $(p\tensor1)(1\tensor q)=(-1)^{|p||q|}(1\tensor q)(p\tensor1)$ cancels these terms.
+Merges within one factor give the differential of that factor.
+Internal differentials commute with the same signed permutation.
+Thus the shuffle is a cochain map.
+
+A cut of a shuffled word determines one cut in each input word,
+a shuffle of their prefixes, and a shuffle of their suffixes.
+Conversely these four choices determine exactly that cut shuffle.
+The signs on both sides come from the same permutation of suspended factors.
+This proves the coalgebra identity with the tensor-product coproduct.
+
+To verify the quasi-isomorphism, form the bisimplicial object
+$B_p(k,P,k)\tensor B_q(k,Q,k)$, with $k$ denoting the tensor unit.
+Its iterated realization is $BP\tensor BQ$.
+Its diagonal is the simplicial bar of $P\tensor Q$.
+Cofinality of the simplicial diagonal identifies these realizations.
+On normalized chains the map from the iterated realization to the diagonal
+is the shuffle just defined: the monotone paths from $(0,0)$ to $(p,q)$
+triangulate the product of its two simplices.
+Each path inserts precisely the degeneracies of its shuffle.
+Adjacent paths have opposite orientations on a shared face,
+so their signed sum has exactly the product boundary.
+This is the realization comparison, hence an equivalence.
+
+For $I=I_1\sqcup I_2$ on the disjointness locus, the given algebra factorization
+identifies $A_I$ with $A_{I_1}\boxtimes A_{I_2}$.
+The shuffle therefore gives the comparison
+$BA_{I_1}\boxtimes BA_{I_2}\to BA_I$.
+Its inverse in the derived category is the bar factorization map.
+The coalgebra identity just proved gives compatibility with deconcatenation.
+For several blocks, iterated shuffles enumerate the same ordered multishuffles,
+with the same Koszul signs. This proves refinement coherence.
+Naturality and the stated functor compatibility give the collision coherence.
+\end{proof}
+
+The restriction and collision compatibility in this proposition is a hypothesis on the
+chosen geometric model. It does not follow from naming an ambient stable category.
+Conilpotence here refers to finite normalized words in that model.
+No word-length completion is implicit.
+
+
+\section{Three coproducts}
+Three coproducts occur on different carriers:
+\[
+\begin{aligned}
+ \Delta_{\mathrm{fact}}&:\text{separation of chiral support},\\
+ \Delta_{\mathrm{dec}}&:\text{cutting an ordered bar word},\\
+ \Delta_{\mathrm{Hopf}}&:\text{fusion of representations}.
+\end{aligned}
+\]
+The first two are present on the transverse bar under the preceding geometric compatibility hypotheses. The third is additional bialgebra data on an acting algebra, with an antipode when a Hopf algebra is intended.
+
+\begin{proposition}[Coproduct separation]
+Factorization separation is carried by every ordered coefficient.  Deconcatenation is generated functorially by the bar construction.  An algebra-compatible coproduct is supplied by an independent bialgebra structure.  A coalgebra comparison morphism relates the Hopf coproduct to either geometric coproduct whenever a theory identifies their carriers.
+\end{proposition}
+\begin{proof}
+Factorization separation is part of the coefficient object, and deconcatenation is the canonical cut map on tensor words.  A Hopf coproduct is an algebra map to the specified tensor square, with counit and antipode identities; a completion is used only when supplied.  Its source, target, and defining universal property differ from the first two, so a relation among them is exactly the data of a comparison morphism.
+\end{proof}
+
+\section{Interval factorization homology}
+For a right $A$-module $R$ and a left $A$-module $L$, factorization homology of an interval with endpoint labels gives
+\[
+ \int_{([0,1],\{0,1\})}(A;R,L)
+ \simeq R\tensor_A^{\mathbb L}L.
+\]
+This statement holds internally in every presentable monoidal category supporting factorization homology \cite{AFT,LurieHA}. Taking $R=L=\mathbbm1$ identifies the interval amplitude with the ordered bar.
+
+\section{Cobar and twisting cochains}
+Let $C$ be a coaugmented conilpotent differential graded coalgebra in the ambient
+coefficient model, and write $\bar C$ for its coaugmentation coideal.
+The ordinary, direct-sum tensor cobar algebra is
+\[
+ \Cobarc_X^{\ord}(C)=
+ \bigl(T(s^{-1}\bar C),d_{\mathrm{int}}+d_\Delta\bigr).
+\]
+A twisting cochain $\tau:C\to A$ has degree $1$, vanishes on the coaugmentation,
+and has zero composite with the augmentation of $A$. It satisfies
+\[
+ d\tau+\tau d+m(\tau\tensor\tau)\bar\Delta=0.
+\]
+The universal twisting cochains are
+\[
+ \tau_A:\Barc_X^{\ord}(A)\to A,
+ \qquad
+ \tau_C:C\to\Cobarc_X^{\ord}(C).
+\]
+
+\begin{theorem}[Bar--cobar adjunction]
+For ordinary augmented dg algebras and coaugmented conilpotent dg coalgebras
+in the specified coefficient model, tensor cobar is left adjoint to tensor bar.
+Their mapping set is the set of twisting cochains.
+An internal adjunction on factorization objects additionally requires both constructions
+to produce factorization objects and their twisting maps to preserve the geometric data.
+\end{theorem}
+\begin{proof}
+An algebra map from the tensor algebra $T(s^{-1}\bar C)$ is determined by its restriction to $s^{-1}\bar C$. Compatibility with the cobar differential is the Maurer--Cartan equation above. The same equation describes coalgebra maps from $C$ to the cofree conilpotent coalgebra $T^c(s\bar A)$.
+\end{proof}
+
+\section{Complete bar--cobar reconstruction}
+Ordinary tensor cobar uses finite words. Completion changes that carrier.
+Let $k$ be a commutative ring and
+$A_{\mathrm{alg}}=\bigoplus_{w\ge0}A_w$ an augmented algebra in degree zero,
+with $A_0=k$, augmentation given by projection onto $A_0$, and multiplication adding weights.
+Put $D=\Omega B(A_{\mathrm{alg}})$ using ordinary direct-sum tensors,
+and let $D_w$ be its weight-$w$ subcomplex.
+The complete algebra and its complete resolution are
+\[
+ \widehat A=\prod_{w\ge0}A_w,\qquad
+ \widehat D=\prod_{w\ge0}D_w.
+\]
+Products of complexes are taken degreewise, with the weight topology.
+
+\begin{theorem}[Complete reconstruction]
+The componentwise counit $\widehat D\to\widehat A$ is a quasi-isomorphism
+of complete differential graded algebras.
+\end{theorem}
+\begin{proof}
+A weight-$w$ block word has at most $w$ positive-weight entries.
+Filter by their number. Multiplication lowers this number and splitting preserves it.
+At a fixed list of $N\ge2$ entries, the splitting complex is the tensor product
+of the coefficient module with $N-1$ copies of $[k\xrightarrow{1}k]$ in degrees $-1,0$.
+Changing the first outer cut to an inner gap contracts it.
+The other differential terms cancel by their prefix signs.
+This identity survives tensoring with any coefficient module.
+Subtracting a primitive at the largest entry number terminates, so negative cohomology vanishes.
+In degree zero, the boundaries impose $c(a)c(b)=c(ab)$,
+leaving exactly $A_w$.
+Taking the degreewise product preserves kernels and images of these differentials,
+and therefore preserves the computed cohomology.
+\end{proof}
+
+For $k[x]$ with weight one on $x$, the ordinary counit recovers $k[x]$,
+whereas this weight completion recovers $k[[x]]$.
+A completed geometric bar--cobar equivalence needs a specified completed tensor product,
+coalgebra category, and comparison maps compatible with collision and inverse limits.
+An operadic nilcompletion or a boundary double centralizer is not identified
+with the ordinary tensor counit by this weight calculation.
+The coalgebra-unit and geometric duality statements require their own convergence and comparison arguments.
+
+\section{Quadratic recognition}
+Over a field $k$, let $V$ have weight one and let $A=T(V)/(R)$ with $R\subset V\tensor V$. Its quadratic dual coalgebra $A^{\mathrm{q!}}$ is cogenerated by $sV$ with quadratic component $s^2R$. The canonical map $A^{\mathrm{q!}}\to\Barc(A)$ induces the twisting cochain whose left and right twisted tensor complexes are the Koszul complexes.
+
+\begin{theorem}[Quadratic Koszul criterion]
+Assume positive weight and degreewise finite duals. The following conditions are equivalent:
+\begin{enumerate}
+\item $A^{\mathrm{q!}}\to\Barc(A)$ is a quasi-isomorphism;
+\item $\Cobarc(A^{\mathrm{q!}})\to A$ is a quasi-isomorphism;
+\item the left and right Koszul complexes have homology concentrated in weight zero;
+\item $\Tor_i^A(\mathbbm1,\mathbbm1)$ is concentrated in internal weight $i$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+The universal twisting morphism $A^{\mathrm{q!}}\to A$ is Koszul exactly when the associated twisted tensor products resolve the unit. The fundamental theorem of twisting morphisms identifies this condition with the bar and cobar quasi-isomorphisms. Weight purity is the homological form of the same statement \cite{Priddy,LV}.
+\end{proof}
+
+\section{Modules, comodules, and Morita theory}
+The ordinary tensor counit reconstructs an algebra. Reconstruction of its
+modules requires the unit and counit of the twisted module functors as well.
+The following weight conditions make these maps finite in every component.
+
+Let $k$ be a field and let $A_{\mathrm{alg}}=\bigoplus_{w\ge0}A_w$
+be an associative algebra in cohomological degree zero.
+Assume $A_0=k$, multiplication adds weights, and augmentation projects onto $A_0$.
+Put $C_{\mathrm{alg}}=B(A_{\mathrm{alg}})$, with its bar weight grading, and set
+\[
+ A=\prod_{w\ge0}A_w,\qquad C=\prod_{w\ge0}(C_{\mathrm{alg}})_w.
+\]
+Products are degreewise in complexes.
+The universal twisting map $\tau:C\to A$ has degree one,
+sends $[a]$ to $a$, and vanishes on the empty word and all longer words.
+The bar differential has the earlier convention $b_2[ a|b]=[ab]$.
+
+A complete weight-graded left $A$-module here means a product
+$M=\prod_{w\ge w_0}M_w$ of complexes, for some integer $w_0$,
+with differential preserving weight and actions $A_u\otimes M_v\to M_{u+v}$.
+A complete weight-graded left $C$-comodule means such a product $N$
+with a counital coassociative coaction
+$\rho:N\to C\widehat\otimes N$ preserving weight and differential.
+The completed tensor product is defined componentwise by
+\[
+ (C\widehat\otimes N)_w
+ =\bigoplus_{u+v=w}(C_{\mathrm{alg}})_u\otimes N_v.
+\]
+This sum is finite since $u\ge0$ and $v\ge w_0$.
+Each reduced coaction lowers the weight of its final $N$-component.
+It therefore vanishes after more than $w-w_0$ iterations on $N_w$.
+These comodules need no chosen coaugmentation.
+
+Write $D_{\mathrm{wt}}(A)$ and $D_{\mathrm{wt}}(C)$ for the categories
+obtained by inverting maps that are quasi-isomorphisms in every weight,
+respectively for these modules and comodules.
+This specifies the weak equivalences; no coderived localization is implicit.
+Define
+\[
+ F(M)=C\widehat\otimes_\tau M,\qquad
+ G(N)=A\widehat\otimes_\tau N.
+\]
+The first has the coaction induced by $\Delta_C$ and the second the left $A$-action.
+Writing $\Delta(c)=\sum c_{(1)}\otimes c_{(2)}$ and
+$\rho(n)=\sum n_{(-1)}\otimes n_{(0)}$, their differentials are
+\[
+\begin{aligned}
+ d_F(c\otimes m)={}&d_Cc\otimes m+(-1)^{|c|}c\otimes d_Mm
+  +\sum(-1)^{|c_{(1)}|}c_{(1)}\otimes\tau(c_{(2)})m,\\
+ d_G(a\otimes n)={}&a\otimes d_Nn
+  -\sum a\tau(n_{(-1)})\otimes n_{(0)}.
+\end{aligned}
+\]
+All sums are finite in each weight.
+The twisting equation, associativity, and coassociativity make both differentials square to zero.
+
+\begin{theorem}[Koszul module equivalence in positive weights]
+These functors induce inverse equivalences
+\[
+ D_{\mathrm{wt}}(A)\simeq D_{\mathrm{wt}}(C).
+\]
+Their counit and unit are
+\[
+ \epsilon_M(a\otimes c\otimes m)=a\epsilon_C(c)m,\qquad
+ \eta_N(n)=\sum n_{(-1)}\otimes1\otimes n_{(0)}.
+\]
+\end{theorem}
+\begin{proof}
+The differential formulas show that these are cochain maps,
+respectively $A$-linear and $C$-colinear.
+The twisting terms cancel in the unit equation; the counit equation uses the module action.
+Coassociativity and the counit identities give the two triangle identities.
+
+The complex $GF(M)$ is the two-sided normalized bar resolution
+$A\widehat\otimes B(A_{\mathrm{alg}})\widehat\otimes M$.
+For its contraction, use the simplicial boundary convention
+$\partial=\sum_i(-1)^i d_i$.
+Multiplying a bar word of length $r$ by $(-1)^r$ translates this convention
+to the displayed twisting differentials.
+Writing $\bar a=a-\epsilon_A(a)1$, the extra degeneracy is
+\[
+ h\bigl(a_0[a_1|\cdots|a_r]m\bigr)
+ =1[\bar a_0|a_1|\cdots|a_r]m.
+\]
+The first face returns the original term minus its scalar first factor.
+The other faces cancel against applying $h$ after the boundary,
+including the module-action face.
+The internal differential of $M$ cancels by the suspension sign.
+Thus $\partial h+h\partial=1-i\epsilon_M$, with $i(m)=1[\,]m$.
+This is a linear contraction; $i$ need not be $A$-linear.
+It preserves total weight, so the counit is a quasi-isomorphism in every weight.
+
+At fixed total weight, filter $FG(N)$ by the weight of its final $N$-factor.
+This filtration is finite.
+The reduced-coaction term lowers that weight and disappears in the associated graded.
+The associated graded unit is therefore the inclusion into
+$B(k,A_{\mathrm{alg}},A_{\mathrm{alg}})\otimes N_v$.
+The rightmost extra degeneracy contracts this augmented bar onto $k$:
+\[
+ h\bigl([a_1|\cdots|a_r]a\bigr)
+ =(-1)^{r+1}[a_1|\cdots|a_r|\bar a]1
+\]
+in the same simplicial convention.
+The last face gives $1-i\epsilon$; all other faces cancel in pairs.
+Consequently the unit is a quasi-isomorphism on each associated graded component,
+and the finite filtration proves the same for each weight of $N$.
+
+Both functors preserve weightwise quasi-isomorphisms.
+Filter by the weight of the final module or comodule component.
+The twisting terms strictly change that weight in one direction.
+On associated graded components, the functors tensor complexes of $k$-vector spaces,
+which preserves quasi-isomorphisms.
+The filtration is finite at fixed total weight.
+Hence $F,G$ descend to the stated localizations, where their unit and counit are isomorphisms.
+\end{proof}
+
+This theorem uses an explicit weight decomposition and a lower weight bound on every module and comodule.
+Derived $I$-adic completion, with $I=\ker(A\to k)$, instead uses
+$M\to\varprojlim_p(A/I^p\otimes_A^{\mathbb L}M)$.
+The two completions require a comparison of their filtrations.
+A coderived category also has a separately specified class of coacyclic complexes.
+Neither identification follows from the algebra counit alone.
+For right and left modules, the two-sided bar computes their relative derived tensor product
+in the same finite weight components.
+An identification with a geometric derived cotensor product additionally requires
+the two-sided twisting comparison and its compatibility with the chosen completion and collision maps.
+
+\subsection{A generator and Morita descent}
+Let $\Ccal_I$ be presentable stable linear categories on the configuration charts,
+with a compatible family of objects $b_I$.
+Assume each $b_I$ is a compact generator. Set
+\[
+ A_I=\RHom_{\Ccal_I}(b_I,b_I).
+\]
+Composition gives an associative algebra. We use right $A_I$-modules, so the local
+Morita functor is $x\mapsto\RHom(b_I,x)$ with action by precomposition.
+
+\begin{theorem}[Morita equivalence with factorization descent]
+Suppose the local categories, generators and algebra objects have specified
+enriched factorization data, and the local Morita functors commute coherently
+with the transition functors and disjoint factorization maps.
+Then the local Morita equivalences assemble to an equivalence of the resulting
+factorization categories with the corresponding family of module categories.
+\end{theorem}
+\begin{proof}
+Compact-generator Morita theory identifies $\Ccal_I$ with right $A_I$-modules.
+The compatibility hypothesis identifies these functors and their inverses on
+every transition and refinement. Taking descent preserves the equivalence.
+\end{proof}
+
+A chosen boundary object need not be a compact generator.
+Computing its endomorphism algebra supplies only the local algebra; the generator
+and descent hypotheses decide whether it reconstructs the category.
+
+\section{Sign calculation for the length-three bar}
+For homogeneous $a,b,c\in\bar A$, write $[a|b|c]=sa\tensor sb\tensor sc$. With the standard suspension convention,
+\[
+ b_m[a|b|c]
+ =(-1)^{|a|}[ab|c]
+ +(-1)^{|a|+|b|+1}[a|bc].
+\]
+Applying $b_m$ again gives
+\[
+ b_m^2[a|b|c]
+ =(-1)^{|b|}\bigl[(ab)c-a(bc)\bigr],
+\]
+which vanishes by associativity.
+
+\chapter{Explicit associative algebras}
+
+The following examples are algebras in complexes over a field.
+They make the bar, quadratic dual and exchange relations concrete.
+Their promotion to geometric factorization objects requires coefficient families
+and compatible collision maps in addition to the algebra formulas.
+
+\section{Free and square-zero pairs}
+Work over a field $k$ in dg vector spaces, with the usual tensor.
+For a complex $M$ the free augmented algebra is
+\[
+ T(M)=k\oplus M\oplus M^{\otimes2}\oplus\cdots.
+\]
+The unit is the empty word and the augmentation kills positive word length.
+Assume $M$ is perfect when taking its derived dual.
+
+\begin{theorem}[Free and square-zero bars]
+There is a quasi-isomorphism of coaugmented coalgebras
+\[
+ k\oplus sM\longrightarrow B(T(M)),
+\]
+where $sM$ is primitive. Consequently
+\[
+ \RHom_{T(M)}(k,k)\simeq k\oplus M^\vee[-1]
+\]
+as an augmented algebra with square-zero reduced product.
+For the square-zero algebra $A=k\oplus M$, one has
+\[
+ B(A)=T^c(sM),\qquad
+ \RHom_A(k,k)\simeq\prod_{r\ge0}(M^\vee[-1])^{\otimes r}.
+\]
+The last product has the word topology and concatenation multiplication.
+\end{theorem}
+\begin{proof}
+In $B(T(M))$, fix a word of $N$ factors from $M$ and vary its decomposition into
+nonempty bar blocks. For $N>1$ the bar differential removes internal cuts.
+The cut complex is a tensor product of $N-1$ elementary contractible complexes.
+Fix the first internal position. Inserting that cut when it is absent, and assigning zero when it is present, contracts the cut complex with its prefix sign.
+The surviving summands are the empty word and the one-factor word $sM$.
+The inclusion of these summands is a coalgebra map and a quasi-isomorphism.
+Dualizing gives the square-zero product because the surviving reduced
+coalgebra is primitive. For $A=k\oplus M$ the multiplication part of the bar
+differential is zero. Dualizing the direct-sum tensor coalgebra gives the
+product of its tensor duals, with concatenation induced by deconcatenation.
+\end{proof}
+
+These are linear coefficient constructions. A geometric version must supply
+factorization coefficients whose whole bars have the required restriction and
+collision compatibilities. The displayed ambient direct sum alone does not do so.
+
+\section{The quantum plane}
+Let
+\[
+ A_q=\kfield\angles{x,y}/(yx-qxy),\qquad q\in\kfield^\times.
+\]
+Give $x$ and $y$ weight one.
+
+\begin{theorem}[PBW basis of the quantum plane]
+The monomials $x^ay^b$, $a,b\ge0$, form a basis of $A_q$.
+\end{theorem}
+\begin{proof}
+Use the rewriting rule $yx\mapsto qxy$. Every reduction decreases the inversion number of a word. The leading word $yx$ has distinct initial and terminal generators, so every overlap decomposes into independent reductions. Bergman's diamond argument therefore gives the ordered monomials as normal forms.
+\end{proof}
+
+The quadratic dual is
+\[
+ A_q^!=\kfield\angles{\xi,\eta}/(\xi^2,\eta^2,\xi\eta+q\eta\xi).
+\]
+
+\begin{theorem}[Koszulness]
+$A_q$ is Koszul, and its Koszul complex is
+\[
+ 0\to A_q\tensor\kfield(\xi\eta)
+ \xrightarrow{d_2}
+ A_q\tensor(\kfield\xi\oplus\kfield\eta)
+ \xrightarrow{d_1}A_q\to\kfield\to0,
+\]
+with
+\[
+ d_1(a\tensor\xi+b\tensor\eta)=ax+by,
+\quad
+ d_2(a\tensor\xi\eta)=ay\tensor\xi-qax\tensor\eta.
+\]
+\end{theorem}
+\begin{proof}
+Direct substitution gives $d_1d_2=ayx-qaxy=0$. The image of $d_1$ is the augmentation ideal $(x,y)$, so the complex is exact at $A_q$ and has cokernel $\kfield$. We now compute $\ker d_1$.
+
+Write
+\[
+ u=\sum_{i,j\ge0}u_{ij}x^iy^j,
+ \qquad
+ v=\sum_{i,j\ge0}v_{ij}x^iy^j.
+\]
+The relation $y^jx=q^jxy^j$ gives
+\[
+ ux+vy=\sum_{a,b\ge0}
+ \bigl(q^b u_{a-1,b}+v_{a,b-1}\bigr)x^ay^b,
+\]
+where coefficients with a negative index are zero. Thus $ux+vy=0$ implies $u_{i,0}=0$, $v_{0,j}=0$, and
+\[
+ v_{a,b}=-q^{b+1}u_{a-1,b+1}.
+\]
+Define $c=\sum_{i,j\ge0}u_{i,j+1}x^iy^j$. Then $u=cy$ and, using $x^iy^jx=q^jx^{i+1}y^j$,
+\[
+ v=-qcx.
+\]
+Hence $(u,v)=d_2(c)$. Finally, $d_2(c)=0$ implies $cy=0$; the PBW basis and $q\ne0$ show that $A_q$ is a domain, so $c=0$. The complex is exact, and the quadratic Koszul criterion proves that $A_q$ is Koszul.
+\end{proof}
+
+\begin{theorem}[Yoneda algebra of the quantum plane]
+Use the convention that a Yoneda product $\alpha\beta$ means first $\beta$ and then $\alpha$. The augmentation module has
+\[
+ \Ext^*_{A_q}(\kfield,\kfield)
+ \cong
+ \kfield\angles{\xi,\eta}/(\xi^2,\eta^2,\xi\eta+q\eta\xi)
+ =A_q^!
+\]
+as a bigraded algebra, where $|\xi|=|\eta|=1$ in cohomological degree and each generator retains its internal weight one.
+\end{theorem}
+\begin{proof}
+Apply $\Hom_{A_q}(-,\kfield)$ to the minimal Koszul resolution in the preceding theorem. Every matrix entry of $d_1$ and $d_2$ lies in the augmentation ideal, so the dual differential vanishes. The cohomology has basis
+\[
+ 1,\quad \xi,\eta,\quad \xi\eta
+\]
+in cohomological degrees $0,1,1,2$. Splicing the two degree-one extensions gives the degree-two class. The syzygy $y\otimes\xi-qx\otimes\eta$ identifies the two splicings by
+$\xi\eta=-q\eta\xi$, while the absence of degree-two $x^2$ and $y^2$ syzygies gives $\xi^2=\eta^2=0$. These relations account for the complete four-dimensional cohomology, and therefore present the Yoneda algebra.
+\end{proof}
+
+The algebra, its bar, and its augmentation module are explicit.
+To realize $A_q$ transversely over a curve one must construct a compatible
+factorization family of algebras. Tensoring every configuration coefficient by
+one fixed copy of $A_q$ does not suffice: at two separated supports,
+factorization would require two copies of that algebra.
+
+\section{Quiver path algebras}
+Let $Q$ be a finite quiver and $S=\bigoplus_{i\in Q_0}ke_i$. Assign a dg vector space $M_a$ to each arrow $a:i\to j$ and set
+\[
+ M=\bigoplus_{a\in Q_1}e_jM_ae_i,
+ \qquad
+ T_S(M)=S\oplus M\oplus M\tensor_S M\oplus\cdots.
+\]
+Words are composable paths.
+
+For the quiver $1\xrightarrow{a}2$, the path algebra has basis $e_1,e_2,a$ and relation $a=e_2ae_1$. The simple modules $S_1,S_2$ satisfy
+\[
+ \Ext^1(S_1,S_2)\cong\kfield,
+ \qquad
+ \Ext^1(S_i,S_i)=0,
+ \qquad
+ \Ext^1(S_2,S_1)=0.
+\]
+The bar differential records concatenation of paths, and the quadratic dual reverses the arrow with cohomological shift.
+
+\begin{theorem}[Relative path-algebra bar]
+For a tensor path algebra $T_S(M)$ over semisimple $S$,
+\[
+ S\tensor_{T_S(M)}^{\mathbb L}S\simeq S\oplus sM
+\]
+as a coaugmented coalgebra in $S$-bimodules. A quadratic quotient $T_S(M)/(R)$ is Koszul precisely when its relative quadratic complex is exact away from weight zero.
+\end{theorem}
+\begin{proof}
+The last-arrow contraction is $S$-bilinear and gives the same extra degeneracy as in the free case. The quotient statement follows from the relative twisting-morphism criterion.
+\end{proof}
+
+\section{Weyl and Clifford deformations}
+Let $V$ be a finite-dimensional vector space over a field of characteristic zero, and let $\omega:V\tensor V\to\kfield$ be alternating. The Weyl algebra is
+\[
+ W_\hbar(V,\omega)=T(V)[[\hbar]]/
+ \angles{uv-vu-\hbar\omega(u,v)}.
+\]
+For a purely odd space and symmetric $\omega$, the same formula with the supercommutator $uv+vu$ gives a Clifford algebra.
+
+\begin{theorem}[Filtered PBW theorem]
+For alternating $\omega$ in the even Weyl case, or symmetric $\omega$ in the purely odd Clifford case, the associated graded algebra for the word filtration is $\Sym(V)[[\hbar]]$ in the Weyl case and $\bigwedge(V)[[\hbar]]$ in the Clifford case, interpreted degreewise in the $\hbar$-adic tensor category.
+\end{theorem}
+\begin{proof}
+Filter by word length. The constant term lowers filtration by two, so the associated graded relation is the commutative or skew-commutative quadratic relation. The cubic ambiguities reduce to the cocycle identity for a central scalar form, which holds because scalars commute. The ordered monomials give the PBW basis.
+\end{proof}
+
+Let $R\subset V^{\otimes2}$ be the span of the homogeneous commutator
+relations, or supercommutator relations in the odd case.
+The quadratic-linear-constant presentation has a curved Koszul dual.
+Its constant term gives the curvature functional
+\[
+ \theta:s^2R\longrightarrow k[[\hbar]][2],\qquad
+ \theta\bigl(s^2(u\otimes v-v\otimes u)\bigr)=\hbar\omega(u,v)
+\]
+in the even convention, with the corresponding plus sign for odd generators.
+Dualizing this functional gives the curvature element $m_0$ of degree two.
+A comparison with geometric anomaly curvature requires a map between their deformation complexes.
+
+
+\section{The Hall algebra of the \texorpdfstring{$A_2$}{A2} quiver}
+Let $Q:1\to2$ over $\mathbb F_q$. Write $S_1,S_2$ for the simples and $M$ for the unique non-split extension
+\[
+ 0\to S_2\to M\to S_1\to0.
+\]
+Use $[U]*[V]=v^{\langle\dim U,\dim V\rangle}
+\sum_W F_{U,V}^W[W]$, where $F_{U,V}^W$ counts subobjects isomorphic to $V$
+with quotient $U$, and
+$\langle\alpha,\beta\rangle=\alpha_1\beta_1+\alpha_2\beta_2-\alpha_1\beta_2$.
+Direct counting gives
+\[
+ [S_1]*[S_2]=v^{-1}[S_1\oplus S_2]+v^{-1}[M],
+ \qquad
+ [S_2]*[S_1]=[S_1\oplus S_2],
+ \qquad v^2=q.
+\]
+Putting $E_i=[S_i]$, the root vector is
+\[
+ E_{12}=E_1E_2-v^{-1}E_2E_1=v^{-1}[M].
+\]
+
+\begin{theorem}[Quantum Serre relation]
+The Hall generators satisfy
+\[
+ E_1^2E_2-(v+v^{-1})E_1E_2E_1+E_2E_1^2=0,
+\]
+and the analogous relation with $1$ and $2$ exchanged.
+\end{theorem}
+\begin{proof}
+Every representation of dimension vector $(2,1)$ is a linear map $f:\mathbb F_q^2\to\mathbb F_q$ of rank zero or one. Read a word from the top quotient to the bottom quotient. The complete-flag counts are
+\[
+\begin{array}{c|ccc}
+\operatorname{rk}f&112&121&211\\ \hline
+0&q+1&q+1&q+1\\
+1&q+1&1&0.
+\end{array}
+\]
+For rank zero every one-dimensional subspace of $\mathbb F_q^2$ is admissible, giving $q+1$ flags in each word. For rank one, the word $121$ forces the unique kernel line, the word $211$ is incompatible with the final subrepresentation, and the word $112$ allows every line at the remaining stage.
+
+The total Euler-form exponents of the three words are respectively $-1,0,1$. Their twisted coefficients are therefore $v^{-1},1,v$. On the rank-zero stratum the Serre combination has coefficient
+\[
+ (q+1)\bigl(v^{-1}-(v+v^{-1})+v\bigr)=0.
+\]
+On the rank-one stratum it has coefficient
+\[
+ v^{-1}(q+1)-(v+v^{-1})
+ =v^{-1}(v^2+1)-(v+v^{-1})=0.
+\]
+The two isomorphism classes exhaust dimension vector $(2,1)$, proving the relation. Vector-space duality, followed by interchanging the vertices, gives the second Serre relation. These are the relations in Ringel's realization of $U_v^+(\mathfrak{sl}_3)$ \cite{Ringel,Green}.
+\end{proof}
+
+\chapter{Spectral exchange and formal fields}
+
+An exchange relation compares two orders of separated spectral labels.
+Normal forms require its overlap equations. A field realization also requires
+truncation on each state, a vacuum, translation, and associativity of iterated fields.
+We construct these structures in that order.
+
+\section{Labelled exchange and its normal forms}
+Let $k$ have characteristic zero, let $V$ be finite-dimensional, and work over
+rational functions in pairwise distinct labelled parameters $u_1,\ldots,u_n$,
+with all denominators of the operators below inverted.
+Fix an invertible $R(u)\in\End(V^{\otimes2})\otimes k(u)$ satisfying
+\begin{equation}\label{eq:vol1-spectral-ybe}
+ R_{12}(u-v)R_{13}(u-w)R_{23}(v-w)
+ =R_{23}(v-w)R_{13}(u-w)R_{12}(u-v).
+\end{equation}
+Write $P$ for the tensor flip and
+$c_{u,v}=P R(u-v):V_u\otimes V_v\to V_v\otimes V_u$ for the crossing.
+For exchange in both directions impose
+\[
+ R^{21}(-u)R(u)=1,
+\]
+so $c_{v,u}c_{u,v}=1$.
+Write $R(e_i\otimes e_j)=\sum_{k,l}R_{ij}^{kl}e_k\otimes e_l$.
+The Zamolodchikov--Faddeev relation is
+\begin{equation}\label{eq:vol1-zf}
+ a_i(u)a_j(v)=\sum_{k,l}R_{ij}^{kl}(u-v)a_l(v)a_k(u).
+\end{equation}
+Thus it identifies two labelled tensor words by $c_{u,v}$.
+
+\begin{theorem}[Normal ordering on the distinct-label sector]
+Fix an order of the labels. In the multilinear sector containing each label
+exactly once, the quotient by these exchanges is canonically isomorphic to
+the tensor product in that order.
+In particular a tensor basis of the ordered product is a basis of this sector.
+\end{theorem}
+\begin{proof}
+Orient each exchange to remove an inversion. The inversion number decreases,
+so reduction terminates. Exchanges on disjoint positions commute.
+For three adjacent distinct labels the two possible reductions agree by
+\eqref{eq:vol1-spectral-ybe}. Reverse exchanges impose no further relation because
+$c_{v,u}$ is the inverse of $c_{u,v}$.
+Every reduction therefore gives the same linear map to the ordered tensor product.
+The inclusion of that product into the quotient and the reduction map are inverse:
+reduction fixes an already ordered tensor, and each reduction step is a defining relation.
+\end{proof}
+
+Conversely, an injective ordered-tensor presentation for three distinct labels
+forces the Yang--Baxter overlap equation; the two reductions represent the same
+word and must agree as operators. This argument concerns the labelled multilinear
+sector. Repeated labels and coincident parameters require their own relations.
+Without inverse exchange the full two-way relation can collapse even at length two.
+For $V=k$ and $R=2$, Yang--Baxter holds, but the two exchanges imply $ab=4ab$;
+over $k$ this forces every such two-label product to vanish.
+
+\subsection{Diagonal exchange}
+In a basis $e_i$ of $V$, choose nonzero scalars or rational functions $q_{ij}(u)$ with
+$q_{ij}(u)q_{ji}(-u)=1$ and $q_{ii}(u)=1$.
+The operator $R(u)(e_i\otimes e_j)=q_{ij}(u)e_i\otimes e_j$ satisfies
+Yang--Baxter because its three diagonal factors commute.
+Thus
+\[
+ a_i(u)a_j(v)=q_{ij}(u-v)a_j(v)a_i(u).
+\]
+In the distinct-label sector the preceding theorem applies.
+For three reversed labels the coefficient is
+\[
+ a_i(w)a_j(v)a_k(u)
+ =q_{ij}(w-v)q_{ik}(w-u)q_{jk}(v-u)
+   a_k(u)a_j(v)a_i(w).
+\]
+Both reduced orders cross exactly the same three pairs, proving the formula.
+For two fixed generators $x,y$, the relation $yx=qxy$ is the quantum plane
+already constructed; its complete PBW assertion follows from its separate
+one-rule reduction proof.
+
+\subsection{The rational permutation solution}
+For $R(u)=1-\hbar P/u$, expansion of both sides of Yang--Baxter has identical
+linear terms. The quadratic terms agree by the permutation relations and
+$1/(u(u+v))+1/(v(u+v))=1/(uv)$.
+The cubic terms agree because
+$P_{12}P_{13}P_{23}=P_{23}P_{13}P_{12}$.
+However,
+\[
+ R^{21}(-u)R(u)=\left(1-\frac{\hbar^2}{u^2}\right)I.
+\]
+The unitary normalization
+\[
+ \widetilde R(u)=\frac{R(u)}{1-\hbar/u}
+ =\frac{uI-\hbar P}{u-\hbar}
+\]
+satisfies $\widetilde R^{21}(-u)\widetilde R(u)=I$.
+Scalar normalization preserves Yang--Baxter.
+
+\section{The RTT Yangian of \texorpdfstring{$\mathfrak{gl}_2$}{gl2}}
+Work over $k[\hbar]$, with $k$ of characteristic zero. Put
+\[
+ T(u)=1+\sum_{r\ge1}T^{(r)}u^{-r},
+ \qquad R(u)=1-\frac{\hbar P}{u}.
+\]
+The RTT Yangian $Y_\hbar(\mathfrak{gl}_2)$ is generated by the coefficients $t_{ij}^{(r)}$ subject to
+\[
+ R(u-v)T_1(u)T_2(v)=T_2(v)T_1(u)R(u-v).
+\]
+Equivalently,
+\[
+ (u-v)[t_{ij}(u),t_{kl}(v)]
+ =\hbar\bigl(t_{kj}(u)t_{il}(v)-t_{kj}(v)t_{il}(u)\bigr).
+\]
+
+\begin{proposition}[Coefficient relations]
+Put $t_{ij}^{(0)}=\delta_{ij}$. The RTT identity is equivalent to
+\[
+ [t_{ij}^{(r+1)},t_{kl}^{(s)}]-[t_{ij}^{(r)},t_{kl}^{(s+1)}]
+ =\hbar\bigl(t_{kj}^{(r)}t_{il}^{(s)}-t_{kj}^{(s)}t_{il}^{(r)}\bigr),
+ \qquad r,s\ge0.
+\]
+In particular,
+\[
+ [t_{ij}^{(1)},t_{kl}^{(1)}]
+ =\hbar(\delta_{kj}t_{il}^{(1)}-\delta_{il}t_{kj}^{(1)}),
+\]
+so the first-mode relation has the Rees parameter $\hbar$. At $\hbar=0$ it is commutative; setting $\hbar=1$ gives the ordinary $\mathfrak{gl}_2$ relation.
+\end{proposition}
+\begin{proof}
+Clear the denominator $u-v$ in RTT and compare the coefficient of $u^{-r}v^{-s}$. The two terms contributed by multiplication by $u-v$ produce the two commutators on the left, and the two ordered products on the right are the corresponding coefficients of the RTT numerator. Setting $r=0$ gives the displayed first-mode relation.
+\end{proof}
+
+\begin{theorem}[Hopf structure]
+The formulas
+\[
+ \Delta(T(u))=T(u)\dot\tensor T(u),\qquad
+ \varepsilon(T(u))=1,\qquad
+ S(T(u))=T(u)^{-1}
+\]
+define a Hopf algebra structure on the coefficient algebra. Formal matrix identities are taken in its $u^{-1}$-adic series ring; each individual coefficient is a finite sum. Coefficientwise,
+\[
+ \Delta(t_{ij}^{(r)})
+ =\sum_{a=1}^{2}\sum_{p=0}^{r}
+ t_{ia}^{(p)}\tensor t_{aj}^{(r-p)}.
+\]
+\end{theorem}
+\begin{proof}
+Apply the RTT relation in each tensor factor. Matrix multiplication in the auxiliary space gives the RTT relation for $\Delta(T)$. Coassociativity is associativity of matrix multiplication. Expanding the matrix product gives the coefficient formula. The inverse series exists uniquely because $T(u)=1+O(u^{-1})$; its defining identities give the antipode axioms.
+\end{proof}
+
+The evaluation map
+\[
+ \operatorname{ev}_a:T(u)\longmapsto 1+\frac{\hbar E}{u-a},
+ \qquad E=(E_{ij}),
+\]
+lands in $U(\mathfrak{gl}_2)[\hbar][[u^{-1}]]$.
+Its validity follows by substituting $[E_{ij},E_{kl}]=\delta_{kj}E_{il}-\delta_{il}E_{kj}$
+into the coefficient relation.
+Give $t_{ij}^{(r)}$ degree $r-1$ and $\hbar$ degree zero.
+The PBW theorem identifies the associated graded with
+$U_\hbar(\mathfrak{gl}_2[t])$, where $U_\hbar(\mathfrak l)$ has relations
+$xy-yx=\hbar[x,y]_{\mathfrak l}$.
+At $\hbar=1$ this is $U(\mathfrak{gl}_2[t])$.
+The distinct filtration assigning degree $r$ to $t_{ij}^{(r)}$ has a commutative
+associated graded. These are the two filtrations in
+\cite[Sections~1.16--1.27]{MNOYangians}; their distinction fixes the deformation parameter.
+
+This example contains three structures: ordered multiplication in the Yangian, coproduct on tensor products of modules, and exchange by the rational $R$-matrix.
+
+
+\section{RTT coproducts and reflection}
+For a fixed numerical $R$, the general RTT algebra $\mathcal T_R$ is the
+coefficient algebra of $T(u)$ subject to
+\begin{equation}\label{eq:vol1-rtt-general}
+ R_{12}(u-v)T_1(u)T_2(v)=T_2(v)T_1(u)R_{12}(u-v).
+\end{equation}
+Suppose its formal expansion convention makes every coefficient well-defined.
+Its coproduct and counit are
+\[
+ \Delta(t_{ij}(u))=\sum_a t_{ia}(u)\otimes t_{aj}(u),
+ \qquad\epsilon(t_{ij}(u))=\delta_{ij}.
+\]
+To verify the relation for the coproduct, write $U,V$ for two copies of $T$
+with commuting coefficient algebras. Then
+\[
+ R U_1V_1U_2V_2
+ =R U_1U_2V_1V_2
+ =U_2U_1R V_1V_2
+ =U_2U_1V_2V_1R
+ =U_2V_2U_1V_1R.
+\]
+Thus $UV$ satisfies RTT. Matrix multiplication proves coassociativity, and
+substitution of the identity proves the counit equations.
+This proves a bialgebra structure; an antipode additionally requires the relevant
+matrix inverse, as in the Yangian normalization above.
+
+For a constant invertible $R$ satisfying Yang--Baxter, the reflection algebra
+$\mathcal K_R$ is the free algebra on the entries of $K$ modulo
+\begin{equation}\label{eq:vol1-reflection}
+ R_{21}K_1R_{12}K_2=K_2R_{21}K_1R_{12}.
+\end{equation}
+This always defines an associative quotient. Its interpretation as boundary
+transport is a statement about operators satisfying that relation.
+Indeed, put $B=PR$. Since $PK_2P=K_1$, the reflection equation is equivalent to
+\[
+ BK_2BK_2=K_2BK_2B.
+\]
+Together with Yang--Baxter for the adjacent $B_i$ and commutation at disjoint
+positions, this is the boundary braid relation. Invertible solutions therefore
+represent the corresponding boundary braid group; noninvertible solutions give
+the specified monoid action. This operator coherence proves no PBW theorem for
+arbitrary generator relations in $\mathcal K_R$.
+For $R=I$ the relation says that all entries of $K$ commute, giving a polynomial
+algebra and its usual monomial basis.
+
+The RTT coproduct, reflection quotient and ZF labelled sector have different
+carriers, despite their use of the same numerical $R$-operator.
+
+\section{Fields and weak associativity}
+For a vector space $W$ set
+\[
+ \mathcal E(W)=\Hom_k(W,W((z))).
+\]
+A field is an endomorphism-valued formal distribution whose action on each
+state has only finitely many negative powers. The bound may depend on that state.
+Thus $\mathcal E(W)$ generally differs from $\End(W)((z))$, which imposes one
+uniform bound on the operator coefficients.
+For example, on $W=\bigoplus_{m\ge0}ke_m$ the rule
+$a(z)e_m=z^{-m}e_m$ is a field, but has no uniform lower bound.
+
+\begin{definition}[Nonlocal vertex algebra]
+A nonlocal vertex algebra consists of a vector space $V$, a vacuum $\mathbf1$,
+and a linear map $Y:V\to\mathcal E(V)$ such that
+\[
+ Y(\mathbf1,z)=\id,
+ \qquad Y(a,z)\mathbf1\in a+zV[[z]],
+\]
+and for each $a,b,c\in V$ some integer $l\ge0$ satisfies weak associativity:
+\[
+ (z_0+z_2)^lY(a,z_0+z_2)Y(b,z_2)c
+ =(z_0+z_2)^lY(Y(a,z_0)b,z_2)c.
+\]
+Substitution and expansion are in the formal-variable convention of
+\cite[Definition~2.3]{LiNonlocal}: powers of $z_0+z_2$ are expanded in
+nonnegative powers of the second variable after clearing the indicated factor.
+\end{definition}
+
+The translation operator is
+$Ta=\left.\partial_zY(a,z)\mathbf1\right|_{z=0}$; it satisfies
+$[T,Y(a,z)]=Y(Ta,z)=\partial_zY(a,z)$.
+The vacuum also implies injectivity of the state-field map.
+Neither fact replaces weak associativity.
+
+\begin{theorem}[Reconstruction from compatible fields]
+Let $U\subset\mathcal E(W)$ be quasi-compatible: for every finite ordered
+list of its fields there is a nonzero polynomial in pairs of variables whose
+product clears their iterated product into
+$\Hom(W,W((z_1,\ldots,z_r)))$.
+Then $U$ and the identity generate a nonlocal vertex algebra of fields, with
+$W$ a faithful quasi-module. If $U$ is $S$-local in Li's sense, the generated
+algebra is a weak quantum vertex algebra and $W$ is a module.
+\end{theorem}
+\begin{proof}
+For a compatible pair choose a clearing polynomial $p(z_1,z)$ and define its
+field product by
+\[
+ Y_{\mathcal E}(a(z),z_0)b(z)
+ =\iota_{z,z_0}p(z+z_0,z)^{-1}
+   \left.p(z_1,z)a(z_1)b(z)\right|_{z_1=z+z_0}.
+\]
+The result is independent of the clearing polynomial, and compatibility is
+preserved by its coefficients. Closing under those coefficients and adjoining
+the identity gives weak associativity by comparing the same cleared triple
+product in its two nested expansions.
+These are the constructions and assertions of
+\cite[Theorems~2.17, 2.20 and 5.8]{LiNonlocal}.
+The last theorem uses $S$-locality to strengthen the quasi-module identity to
+the module identity. A canonical Yang--Baxter operator on the generated
+state space requires the additional nondegeneracy hypothesis of
+\cite[Theorem~5.11 and Corollary~5.13]{LiNonlocal}.
+\end{proof}
+
+\section{The formal deformation parameter}
+For $V=V_0[[\hbar]]$ and $W=W_0[[\hbar]]$, use
+\[
+ V_\hbar((z))=\varprojlim_M(V/\hbar^MV)((z)),
+ \qquad V\widehat\otimes W=(V_0\otimes W_0)[[\hbar]].
+\]
+The pole bound may now also depend on $M$.
+A topological state-field map is
+$Y:V\widehat\otimes V\to V_\hbar((z))$ with vacuum and translation.
+A braiding has the form $S(z)=I+O(\hbar)$, with completed Laurent coefficients.
+In the convention used here, $S$-locality means
+\begin{equation}\label{eq:vol1-s-locality}
+\begin{split}
+ &(z_1-z_2)^N Y(z_1)(1\otimes Y(z_2))
+       (S(z_1-z_2)\otimes1)(a\otimes b\otimes c)\\
+ &\quad=(z_1-z_2)^N Y(z_2)(1\otimes Y(z_1))
+       (P\otimes1)(a\otimes b\otimes c)\pmod{\hbar^M}.
+\end{split}
+\end{equation}
+Here $P$ is the tensor flip (the graded flip in the super version), the Laurent coefficients are expanded in the indicated
+formal regions, and $N$ can depend on $a,b,M$ but works for every $c$.
+Weak associativity is required modulo each $\hbar^M$, with its corresponding
+state-dependent clearing exponent.
+These are the quantum vertex axioms of
+\cite[Definitions~3.4, 3.5 and 3.12]{DSGKQVA}.
+In particular the ordinary local case is $S=I$, since $P$ is already displayed.
+
+A chosen exchange operator may satisfy the stronger exact equations
+\[
+ S^{21}(-z)S(z)=I,\qquad
+ S_{12}(z_1-z_2)S_{13}(z_1-z_3)S_{23}(z_2-z_3)
+ =S_{23}(z_2-z_3)S_{13}(z_1-z_3)S_{12}(z_1-z_2).
+\]
+They give coherent exchange on labelled tensor products by the same argument as
+above. Compatibility of that exchange with a collision product is expressed by
+the hexagon, in one convention,
+\[
+ S(w)(Y(z)\otimes1)
+ =(Y(z)\otimes1)S_{23}(w)\iota_{w,z}S_{13}(z+w).
+\]
+This is additional exact data if degeneracy of $Y$ leaves a kernel:
+associativity alone gives the hexagon only after applying the relevant field map
+\cite[Proposition~3.14]{DSGKQVA}.
+Conversely, the exact hexagon and braided locality imply weak associativity
+by \cite[Proposition~3.13]{DSGKQVA}.
+Formal exchange is not, without an analytic continuation theorem, an action by
+monodromy on actual functions of complex configurations.
+
+For Yangian currents, a scalar factor $f(u)$ with
+\[
+ f(u)f(-u)=\left(1-\frac{\hbar^2}{u^2}\right)^{-1}
+\]
+makes $f(u)(1-\hbar P/u)$ unitary; the explicit factor above is one choice.
+RTT itself does not supply field truncation. For instance an evaluation series
+$E/(u-a)=\sum_{r\ge0}a^rE\,u^{-r-1}$, expanded at infinity with $a\ne0$,
+has unbounded negative powers on any state on which $E$ is nonzero.
+A quantum vertex realization must specify its state space, expansion, vacuum,
+translation, and weak-associativity or reconstruction theorem.
+The $\phi$-coordinated module construction uses further chosen coordinate data
+\cite{LiQVA}.
+
+The same distinction applies to Ran coefficients. Given an actual
+translation-equivariant coefficient system and a restriction map to fields,
+the preceding axioms can identify its field realization.
+Conversely, a nonlocal field algebra does not by its definition provide
+algebraic coefficients on all configuration charts, collision pullbacks,
+or an associative algebra for $\tensor^{\ch}$.
+Those coefficient maps and their descent equations are the required geometric comparison.
+
+\section{Shuffle multiplication}
+Let $K(z)$ be rational and set
+$\operatorname{Sh}_n=k(z_1,\ldots,z_n)^{\mathfrak S_n}$, with
+$\operatorname{Sh}_0=k$.
+For $f\in\operatorname{Sh}_m$, $g\in\operatorname{Sh}_n$, define
+\begin{equation}\label{eq:vol1-shuffle}
+ f*g=\sum_{\sigma\in\operatorname{Sh}(m,n)}
+ \sigma\left(f(z_1,\ldots,z_m)g(z_{m+1},\ldots,z_{m+n})
+       \prod_{i\le m<j}K(z_i-z_j)\right).
+\end{equation}
+Here $\operatorname{Sh}(m,n)$ consists of permutations preserving order within
+each block. Equivalently this is the full permutation sum divided by $m!n!$.
+The unit is $1\in\operatorname{Sh}_0$.
+
+\begin{proposition}[Associative shuffle multiplication]
+The product is associative and unital. The same holds on any subspace closed
+under the product with its specified pole and wheel conditions.
+\end{proposition}
+\begin{proof}
+Both parenthesizations enumerate each ordered partition of the final labels
+into three blocks of the prescribed sizes exactly once.
+Every pair from different blocks contributes the same kernel factor on both sides.
+An empty block contributes one term and no kernel, proving the unit equation.
+\end{proof}
+
+For the additive affine Yangian model, take
+\[
+ K(z)=\frac{(z+\epsilon_1)(z+\epsilon_2)(z+\epsilon_3)}{z^3},
+ \qquad\epsilon_1+\epsilon_2+\epsilon_3=0.
+\]
+In \cite[Section~7.3]{Tsymbaliuk}, the small additive shuffle algebra consists of
+functions $f/\prod_{i\ne j}(z_i-z_j)$ with symmetric polynomial numerator $f$
+vanishing when three distinct indices satisfy
+$z_{i_1}-z_{i_2}=\epsilon_1$ and $z_{i_2}-z_{i_3}=\epsilon_2$.
+Its product uses the equivalent pair factor $\omega(z_j,z_i)=K(z_i-z_j)$.
+For generic parameters, meaning that an integral relation
+$a\epsilon_1+b\epsilon_2+c\epsilon_3=0$ forces $a=b=c$,
+\cite[Theorem~7.6]{Tsymbaliuk} identifies it with the positive affine Yangian
+by sending its current generator $e_r$ to $z_1^r$.
+Degreewise factorial rescaling identifies averaged and shuffle-sum normalizations.
+This cited identification has its specified numerator, wheel and parameter hypotheses;
+an arbitrary rational shuffle algebra is a larger object.
+
+For two degree-one elements the formula is explicitly
+\[
+ z^r*z^s=z_1^rz_2^sK(z_1-z_2)+z_2^rz_1^sK(z_2-z_1).
+\]
+For generic nonzero $\epsilon_a$, the numbers $-\epsilon_a$ are zeros of the
+individual kernel, not poles. The kernel has its pole at zero.
+The wheel condition is a vanishing condition on a polynomial numerator and
+cannot be read as a residue at those zeros.
+
+\subsection{A coproduct is a separate operation}
+A chamber expansion of a product kernel does not by itself prove an ordinary
+bialgebra structure. One must give the tensor recipient, the cross factors and
+any Cartan currents, then verify multiplicativity, the counits, coassociativity
+and continuity. A double also needs a Hopf pairing with its stated nondegeneracy
+and completion. A localized or braided target changes these requirements.
+
+A polynomial example exhibits the obstruction already in charge two.
+Over $R=\mathbb Q[h_1,h_2]$, set $h_3=-h_1-h_2$,
+$a=-(h_1^2+h_1h_2+h_2^2)$ and $b=-h_1h_2(h_1+h_2)$.
+Use even polynomial charge pieces $A_n=R[x_1,\ldots,x_n]^{S_n}$ and subset
+shuffle kernels
+\[
+ K_j(v)=v^{2j-1}(v^3+av+b),\qquad j=0,1,
+\]
+with the argument $v=x_{\mathrm{right}}-x_{\mathrm{left}}$.
+For $j=0$, pairing terms that exchange a colliding cross-block pair cancels
+their possible simple-pole residues, so the symmetric product is polynomial.
+For $j=1$ the kernel is already polynomial. Thus these are polynomial shuffle algebras.
+Write $e_m=x^m\in A_1$; the algebra unit is $\mathbf1_0\in A_0$.
+Direct multiplication gives
+\[
+ [e_0,e_3]-3[e_1,e_2]+a[e_0,e_1]=b(e_0*e_0).
+\]
+Indeed the commutator of $f,g\in A_1$ is
+$2b(y-x)^{2j-1}(f(x)g(y)-g(x)f(y))$ and
+$e_0*e_0=2(y-x)^{2j}((y-x)^2+a)$.
+A charge-preserving unital algebra coproduct with charge-zero projection as
+both counits, and with the ordinary Koszul multiplication on its tensor target,
+would make every $e_m$ primitive.
+The left side of the relation would then be primitive, whereas the reduced
+coproduct of its right side would be $2b\,e_0\otimes e_0\ne0$.
+This rules out that ordinary cooperation on these polynomial carriers.
+It does not rule out a construction in a different localized or braided recipient.
+
+\chapter{Centres, cyclic structures, and cotangent models}
+
+Ordered multiplication gives Hochschild operations.
+A cyclic pairing allows further contractions, while a quantum field theory
+requires a compatible quantization and pushforward. Finite cotangent models
+make the algebraic part of these requirements explicit.
+
+\section{The derived centre and a bulk action}
+For an associative algebra $A$ in a specified presentable closed symmetric monoidal stable
+coefficient category, its Hochschild cochains are
+\[
+ Z_{\ord}(A)=\RHom_{A\otimes A^{\op}}(A,A),
+\]
+with derived tensors and internal Hom in that category.
+Assume the coefficient tensor preserves the realizations used to define bimodules.
+The Deligne construction gives an $\Etwo$ structure on these cochains
+\cite{McClureSmith,KontsevichSoibelmanDeligne}.
+Its brace operations insert cochains into the inputs of other cochains;
+the resulting operad models the chains of little two-disks.
+As endomorphisms of the identity bimodule, the centre represents coherent
+central actions on $A$.
+
+A physical bulk-to-boundary comparison must supply a map
+\[
+ \beta:\Obs_{\mathrm{bulk}}|_{\partial}\longrightarrow Z_{\ord}(A_{\partial})
+\]
+preserving those operations. Locality of a specified bulk action can make it
+central and hence produce $\beta$ by the universal property.
+An equivalence requires a separate completeness theorem for that boundary
+condition. The centre is an algebraic object even when the physical map is unknown.
+In a Ran model these constructions also require their restriction and collision
+compatibilities; an internal Hom in an ambient category does not automatically
+inherit factorization.
+
+\section{Cyclic structure and surface sewing}
+Hochschild chains $CC_*(A)$ retain the differential and the circle action.
+Their degree-zero homology $\HH_0(A)$ forgets both higher degrees and the
+coherent circle data needed for cyclic contractions.
+For a proper dg algebra a $d$-Calabi--Yau trace is a circle-equivariant map
+\[
+ \tau:CC_*(A)\longrightarrow k[-d]
+\]
+whose induced bimodule pairing is nondegenerate.
+Equivalently the map is defined from the homotopy orbits of the circle action.
+In a finite cyclic $\Ainf$ model this is represented by a nondegenerate pairing
+compatible cyclically with every higher multiplication.
+A functional on $\HH_0(A)$ alone is not that datum.
+
+\begin{theorem}[Open theory and its closed extension]
+Let $A$ be a unital cyclic $\Ainf$ algebra over a characteristic-zero field,
+with finite-dimensional chain model and a nondegenerate cyclic pairing
+$A\otimes A\to k[-d]$.
+It defines an open topological conformal field theory in the cyclic model.
+Its homotopy-universal open--closed extension has closed state complex
+quasi-isomorphic to the Hochschild chains of $A$.
+The surface operations use the dimension-$d$ determinant local system.
+\end{theorem}
+\begin{proof}
+The pairing contracts the two flags of an internal ribbon edge; cyclicity
+makes this contraction independent of a cyclic presentation at a vertex.
+Boundary strata joining adjacent inputs give the $\Ainf$ identities.
+These operations give the open theory of \cite[Theorem~A]{CostelloCY}.
+For its universal extension, an annulus with ordered open inputs gives the
+cyclic tensor word of those inputs. A unit at a nondistinguished position is
+degenerate, and a collision of consecutive marked points composes the
+corresponding two factors. Thus its normalized chain differential is precisely
+the Hochschild differential, including the last-to-first term.
+This identifies the closed state complex as in
+\cite[Proposition~7.4.3]{CostelloCY}.
+\end{proof}
+
+Properness can provide a finite model, but a chosen strict cyclic pairing and
+its homotopy compatibility must still be available in the model being used.
+For a smooth category the corresponding Calabi--Yau datum is instead a
+negative-cyclic class inducing a nondegenerate dualizing-bimodule comparison.
+Its direction differs from that of the proper trace.
+A dualizable linear category with either such structure has framed $\Etwo$
+Hochschild cochains by the cyclic Deligne theorem
+\cite[Theorem~1.0.1 and Section~4]{BravRozenblyum}.
+The circle-invariant class transports the Hochschild calculus to the framed
+operations; its nondegeneracy supplies the required equivalence.
+
+Stable-curve sewing is a further action of a modular operad with specified
+clutching maps. To combine it with ribbon-surface operations one must identify
+their coefficient carriers and verify the mixed contraction equations.
+A common scalar trace is insufficient to make these operations agree.
+
+\section{Matrix traces and the necklace bracket}
+Let $F=\kfield\angles{x,y}$ and let $F_{\mathrm{cyc}}=F/[F,F]$ be the quotient by the commutator subspace. Cyclic derivatives are defined by
+\[
+ \partial_x^{\mathrm{cyc}}[a_1\cdots a_n]
+ =\sum_{a_i=x}a_{i+1}\cdots a_na_1\cdots a_{i-1}
+\]
+and similarly for $y$. Define
+\[
+ \{f,g\}_{\mathrm{neck}}
+ =\bracks{
+ \partial_x^{\mathrm{cyc}}f\,\partial_y^{\mathrm{cyc}}g
+ -\partial_y^{\mathrm{cyc}}f\,\partial_x^{\mathrm{cyc}}g}_{\mathrm{cyc}}.
+\]
+
+\begin{theorem}[Trace realization]
+For matrices $X,Y\in\mathfrak{gl}_N$ with $\{X_{ij},Y_{kl}\}=\delta_{il}\delta_{jk}$ and the other coordinate brackets zero,
+\[
+ \{\Tr f(X,Y),\Tr g(X,Y)\}
+ =\Tr\{f,g\}_{\mathrm{neck}}(X,Y).
+\]
+\end{theorem}
+\begin{proof}
+Differentiate the trace by moving the varied matrix entry cyclically to the first position. This gives the cyclic derivative. Contract the $X$ derivative of one trace with the $Y$ derivative of the other and subtract the reversed contraction. The matrix indices close into the trace of the cyclic product.
+\end{proof}
+
+On the locus of simultaneous diagonalization in the Hamiltonian reduction
+of pairs of matrices with moment map $[X,Y]$, use eigenvalue coordinates
+with $\{x_i,y_j\}=\delta_{ij}$. The invariant functions are
+
+\[
+ p_{ab}=\Tr(X^aY^b).
+\]
+Then
+\[
+ \{p_{ab},p_{cd}\}=(ad-bc)p_{a+c-1,b+d-1}.
+\]
+This follows by differentiating $p_{ab}=\sum_i x_i^ay_i^b$. A term with a negative index has zero coefficient and is interpreted as zero.
+For two eigenvalues, the relative invariants
+\[
+ A=(x_1-x_2)^2,
+ \quad B=(x_1-x_2)(y_1-y_2),
+ \quad C=(y_1-y_2)^2
+\]
+satisfy $B^2=AC$. Since $\{x_1-x_2,y_1-y_2\}=2$, their brackets are
+\[
+ \{A,B\}=4A,\qquad\{B,C\}=4C,\qquad\{A,C\}=8B.
+\]
+Thus $e=A/4$, $h=-B/2$, $f=-C/4$ satisfy
+$\{h,e\}=2e$, $\{h,f\}=-2f$, $\{e,f\}=h$.
+The same polynomial identities hold on the associated symmetric-product
+Poisson variety.
+
+
+
+\section{A finite cotangent BF model}
+Let $L$ be a finite-dimensional dg Lie algebra. Its cotangent BV space is
+\[
+ \mathcal E_L=L[1]\oplus L^*[-2],
+\]
+with the canonical degree $-1$ symplectic pairing. Write $A\in L[1]$ and $B\in L^*[-2]$. The cotangent action is
+\[
+ S_L(A,B)=\angles{B,d_LA+\frac12[A,A]}.
+\]
+
+\begin{theorem}[Cotangent master equation]
+The Hamiltonian vector field of $S_L$ is square-zero, and consequently $\{S_L,S_L\}=0$.
+\end{theorem}
+\begin{proof}
+The Hamiltonian vector field is the cotangent lift of the Chevalley vector field, with the suspension signs of the cotangent pairing. Its square on the base vanishes by $d_L^2=0$, the derivation identity for $d_L$, and the Jacobi identity. The cotangent lift preserves commutators of vector fields, so the full Hamiltonian vector field is square-zero. Hence $\{S_L,S_L\}$ is constant; evaluating at the origin gives zero.
+\end{proof}
+
+\begin{proposition}[Coordinate form of the modular term]
+Let $L$ be an ordinary finite-dimensional Lie algebra with basis $e_a$ and structure constants $[e_a,e_b]=f^c_{ab}e_c$. Let $c^a$ be the odd coordinates on $L[1]$ and $b_a$ their BV-conjugate coordinates. With
+\[
+ S=\frac12 b_c f^c_{ab}c^ac^b,
+ \qquad
+ \Delta=-\sum_a\frac{\partial}{\partial c^a}
+                 \frac{\partial}{\partial b_a},
+\]
+one has
+\[
+ \Delta S=\sum_b\Tr(\ad_{e_b})c^b.
+\]
+Thus the one-loop class of the finite cotangent theory is exactly the modular character.
+\end{proposition}
+\begin{proof}
+Differentiation first in $b_a$ gives $\frac12f^a_{ij}c^ic^j$. Odd differentiation in $c^a$ gives $f^a_{aj}c^j$, and the chosen sign in $\Delta$ converts this to $f^a_{ja}c^j=\Tr(\ad_{e_j})c^j$. This is the displayed formula.
+\end{proof}
+
+A finite-dimensional dg Lie algebra is unimodular when the supertrace of every adjoint endomorphism vanishes. Every finite-dimensional nilpotent Lie algebra in degree zero is unimodular because each $\ad_x$ is nilpotent.
+
+\begin{theorem}[Finite-dimensional quantum master equation]
+Let $L$ be unimodular and let $\Delta$ be the BV Laplacian determined by the translation-invariant Berezinian on $\mathcal E_L$. Then
+\[
+ \Delta S_L=0,
+ \qquad
+ \frac12\{S_L,S_L\}+\hbar\Delta S_L=0,
+\]
+and equivalently, in the formal exponential module,
+\[
+ \hbar\Delta\bigl(e^{S_L/\hbar}\bigr)=0.
+\]
+The quantum observable differential
+\[
+ \delta_{S_L}=\{S_L,-\}+\hbar\Delta
+\]
+satisfies $\delta_{S_L}^2=0$.
+\end{theorem}
+\begin{proof}
+The classical master equation gives $\{S_L,S_L\}=0$. The scalar $\Delta S_L$ is the divergence of the Chevalley vector field on $L[1]$. The degree-one linear differential has zero supertrace, so contributes no constant term. Its linear coefficient is the modular character $x\mapsto\operatorname{str}(\ad_x)$, which vanishes by unimodularity. The BV exponential identity
+\[
+ \hbar^2e^{-S_L/\hbar}\Delta(e^{S_L/\hbar})
+ =\frac12\{S_L,S_L\}+\hbar\Delta S_L
+\]
+proves the exponential form. The standard BV commutator calculation then gives
+\[
+ \delta_{S_L}^2=\left\{\frac12\{S_L,S_L\}+\hbar\Delta S_L,-\right\}=0.
+\]
+\end{proof}
+
+For a finite-dimensional nilpotent Lie algebra $\flie$, a local input on
+$X\times\mathbb R$ is
+\[
+ \Lcal_X=\Omega^{0,*}(X)\widehat\otimes\Omega^*(\mathbb R)\otimes\flie,
+\]
+with differential $\bar\partial+d_{\mathbb R}$ and pointwise bracket.
+Its cotangent theory uses the compactly supported density dual and the shifts
+appropriate to the spacetime integration pairing.
+The classical observables are functions on the full cotangent field complex
+with the cotangent Chevalley differential, including the dual fields.
+They are holomorphic along $X$ and topological along the real direction in
+the corresponding local classical theory.
+
+The finite theorem applies to a finite dg Lie model with its specified
+cotangent pairing and unimodularity. A linear deformation retract alone may
+transfer higher $L_\infty$ operations; a quantum pushforward may also produce
+loop terms. Neither is computed by the cubic finite action without that comparison.
+
+An algebraic interval model can be constructed independently.
+The enveloping algebra $U(\flie)$ quantizes the linear Lie--Poisson space,
+and its two augmentation modules give
+\[
+ k\otimes_{U(\flie)}^{\mathbb L}k
+ \simeq B(U(\flie))\simeq C_*(\flie).
+\]
+A field-theoretic identification needs the boundary quantization and the map
+identifying interval sewing with this derived tensor product.
+A renormalized solution of the local quantum master equation supplies quantum
+observables in its perturbative domain; the finite-dimensional QME does not
+supply that solution or the boundary comparison.
+
+\section{BRST and ordered reduction}
+Let $(A,Q)$ be an augmented dg ordered algebra whose differential preserves
+the augmentation. Extend $Q$ to the reduced bar factorwise. Write $b$ for
+the multiplication bar differential.
+
+\begin{proposition}[BRST--bar bicomplex]
+With the suspension sign convention,
+\[
+ Q_{\Barc}b+bQ_{\Barc}=0.
+\]
+Hence $D=Q_{\Barc}+b$ satisfies $D^2=0$.
+\end{proposition}
+\begin{proof}
+Apply $Q$ to a bar face that multiplies adjacent entries. The derivation formula splits the result into the two terms obtained by applying $Q$ before that face. The totalization sign makes their sum the anticommutator.
+\end{proof}
+
+Over a field, the K\"unneth isomorphism identifies the first page and its
+first differential as
+\[
+ (E_1,d_1)\cong B(H^*(A,Q)).
+\]
+The spectral sequence converges to $H^*(B(A),D)$ when the length filtration
+is exhaustive and bounded in each total degree, or weightwise under the
+positive-weight hypotheses above. For an ordered geometric tensor, the same
+argument requires the corresponding K\"unneth and convergence statements.
+A BRST reduction, including a current-algebra Drinfeld--Sokolov construction,
+fits this bicomplex only after its product, augmentation and derivation
+properties have been supplied.
+
+\section{Corners and operation identities}
+Let $K$ be a regular cell complex arising from a manifold with corners.
+Assign a cochain complex $E_\sigma$ to each cell and a degree-zero cochain map
+$\rho_{\sigma,\tau}:E_\sigma\to E_\tau$ to each codimension-one face
+$\tau\subset\overline\sigma$.
+Form the total complex with the cellular chain degree placed in negative
+cohomological degrees. Orient the cells and use the usual incidence signs.
+Its candidate differential is the internal differential plus the signed face maps.
+
+\begin{proposition}[The corner equation]
+This candidate is a differential if and only if, for every codimension-two
+incidence $\nu\subset\overline\sigma$, the equation
+\[
+ \sum_{\sigma\supset\tau\supset\nu}
+  [\sigma:\tau][\tau:\nu]\,
+  \rho_{\tau,\nu}\rho_{\sigma,\tau}=0
+\]
+holds.
+\end{proposition}
+\begin{proof}
+The internal square is zero. Because every face map is a cochain map,
+its two mixed terms with the internal differential cancel under the totalization sign.
+The remaining terms are the two-face composites displayed above, grouped by
+source and target. This proves necessity and sufficiency.
+\end{proof}
+
+For constant coefficients the equation is the cellular identity $\partial^2=0$.
+With operation-valued coefficients, the maps themselves must satisfy it.
+Associahedra express higher associative identities in this form.
+Collision compactifications and stable-graph spaces express chiral or modular
+identities only after their coefficient maps have been supplied.
+An identity among residues alone is not a construction of the required homotopies.
+
+\section{Two edge colours}
+Consider stable graphs with transverse and chiral edges, and coefficients with
+compatible contraction maps. Give the edges the determinant orientation,
+with an ordering of colours and the Koszul sign when generators are exchanged.
+Complete by a graph grading for which each fixed coefficient receives only
+finitely many contractions. In the associated Feynman-transform construction,
+separating edges produce brackets $[-,-]_\perp$, $[-,-]_{\ch}$ and loops
+produce $\Delta_\perp$, $\Delta_{\ch}$.
+
+\begin{proposition}[The equation for two-colour contractions]
+Suppose the chosen coefficient modular operad and its endomorphism pairing
+satisfy the contraction and symmetry axioms, with the determinant twist.
+In the resulting completed graph convolution model, a structure element $\Theta$
+commutes with the Feynman-transform differential exactly when
+\[
+ d\Theta+\tfrac12[\Theta,\Theta]_\perp
+ +\tfrac12[\Theta,\Theta]_{\ch}
+ +\hbar_\perp\Delta_\perp\Theta
+ +\hbar_{\ch}\Delta_{\ch}\Theta=0.
+\]
+Here the loop parameters record the corresponding loop contractions and the
+suspensions are chosen so every summand has the same cohomological degree.
+\end{proposition}
+\begin{proof}
+The transform differential is dual to an edge contraction and inserts that edge on the dual generators. Evaluating a structure map turns a separating edge into a composition of two
+vertex coefficients and gives the indicated quadratic term; interchanging the
+two vertices accounts for the factor $1/2$. A loop contracts two flags of one
+coefficient and gives its linear loop term.
+For a pair of edges, the coefficient composites agree by the modular axioms,
+while exchanging their determinant generators changes the sign.
+This proves cancellation also for one edge of each colour, in particular
+$\Delta_\perp\Delta_{\ch}+\Delta_{\ch}\Delta_\perp=0$.
+The map from the free graph construction is a chain map exactly when the
+one-edge formula holds on its generators, which is the displayed equation.
+This is the edgewise form of the Feynman transform \cite{GetzlerKapranov}.
+\end{proof}
+
+The proposition starts with compatible coefficient contractions.
+It does not infer them from the existence of the two types of graph edges.
+
+\section{Typed anomalies}
+An obstruction to extending a solution is a cohomology class in its
+deformation complex. The governing datum depends on the construction:
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
+\toprule
+construction&governing object&datum\\ \midrule
+central extension&local Lie algebra cochains&cocycle\\
+BRST quantization&BRST deformation complex&nilpotence obstruction\\
+BV quantization&local BV cochains&quantum master anomaly\\
+conformal-block family&Atiyah algebra of its determinant line&projective curvature\\
+curved Koszul duality&curved convolution Lie algebra&curvature $m_0$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+A curved differential need not square to zero, so its curvature is not
+automatically a class in an ordinary cochain complex. When the deformation
+complexes and obstruction classes are defined, a comparison requires a
+morphism of those complexes and equality of the transported classes.
+This retains the geometric origin of each scalar.
+
+
+\section{Calabi--Yau categories and moduli}
+For a dualizable linear category with a specified smooth or proper Calabi--Yau
+structure, cyclic Deligne gives the framed $\Etwo$ structure described above.
+For a smooth dg category of finite type with a $d$-Calabi--Yau structure,
+the derived moduli of objects carries a $(2-d)$-shifted symplectic form
+under the hypotheses of the moduli construction \cite{PTVV,BravDyckerhoff}.
+At an object $E$, the tangent complex is $\RHom(E,E)[1]$; the Calabi--Yau
+pairing gives its degree-$(2-d)$ nondegeneracy, and the negative-cyclic lift
+supplies closedness of the form.
+
+These are two outputs of Calabi--Yau data on specified recipients.
+A geometric BV theory or a factorization family can yield an ordered chiral
+algebra when the coefficient comparison and interval-recognition hypotheses
+are satisfied. Neither output by itself constructs that family or the physical bulk map.
+
+\chapter{Hall coefficients and the Igusa comparison}
+
+The general constructions become relevant to the Igusa denominator only after
+their carriers and operations have been compared with the reduced geometric theory.
+The root presentation supplies an explicit algebraic recipient. The remaining
+maps must retain the coefficient system, orientations, and prepared states.
+
+\section{Hall multiplication and geometric coefficients}
+For a moduli problem with extension stacks, write
+\[
+ \mathcal M_\alpha\times\mathcal M_\beta
+ \xleftarrow{p}\mathcal M_{\alpha,\beta}^{\mathrm{ext}}
+ \xrightarrow{q}\mathcal M_{\alpha+\beta}.
+\]
+A pull--push product requires a coefficient theory, the relevant pullback
+along $p$, a defined pushforward along $q$, and all shifts, orientations and
+base-change maps. When these give $q_*p^*$, its expression is
+\[
+ a*b=q_*p^*(a\boxtimes b).
+\]
+The two orders of multiplication are compared through full two-step flag stacks.
+Their identification proves associativity only when the pull--push base-change
+and orientation identifications agree on those flags.
+
+The quiver constructions of Theorem~\ref{comp:thm:quiver-composition} supply
+positive enveloping comparisons with their stated coefficient hypotheses
+\cite{DHS}. Preprojective and surface CoHA comparisons with Yangian halves
+have their corresponding domains and parameters \cite{SVYangians,DPPSSV}.
+To obtain an ordered chiral algebra, multiplication must further extend to a
+factorization family over the chosen curve or defect parameter.
+To obtain a double, it must also admit a compatible coproduct and Hopf pairing
+in the stated tensor and topology. The charge-two example above shows why
+ordinary cooperation cannot simply be inferred from a shuffle product.
+
+\section{Two positive root completions}
+Work over a field $k$ of characteristic zero. Let
+$\mathfrak n=\bigoplus_{\alpha>0}\mathfrak n_\alpha$ be a Lie superalgebra
+with finite-dimensional root spaces and an additive integer height
+$h(\alpha)>0$, with only finitely many roots below each height bound.
+Put
+\[
+ \mathfrak n_H=\mathfrak n/\!\bigoplus_{h(\alpha)>H}\mathfrak n_\alpha.
+\]
+Each quotient is finite-dimensional and nilpotent, since a sufficiently long
+iterated bracket has height greater than $H$.
+There are two enveloping constructions:
+\[
+ U_{\mathrm{tower}}=\varprojlim_HU(\mathfrak n_H),
+ \qquad
+ \widehat U_h(\mathfrak n)=\prod_\gamma U(\mathfrak n)_\gamma.
+\]
+The latter completes by total root height of products.
+For $\mathfrak n=kx$ even of height one, they are respectively $k[x]$ and $k[[x]]$.
+We therefore keep their topologies separate.
+
+\begin{theorem}[The two bar comparisons]
+Antisymmetrization gives quasi-isomorphisms
+\[
+ \widehat C_{*,h}(\mathfrak n)
+ \longrightarrow\widehat B_{\mathrm{word},h}U(\mathfrak n),
+\]
+and
+\[
+ \varprojlim_H C_*(\mathfrak n_H)
+ \longrightarrow\varprojlim_H B_{\mathrm{word}}U(\mathfrak n_H).
+\]
+In each homological degree the two Chevalley completions agree.
+The coefficient map from the bar tower to the bar completed by total height
+is also a quasi-isomorphism. These statements do not identify the two
+enveloping algebras.
+\end{theorem}
+\begin{proof}
+At fixed root degree, positive height bounds the number of inputs.
+The PBW filtration reduces antisymmetrization to the super-symmetric Koszul
+resolution, proving the first assertion coefficientwise.
+For the second assertion, the quotient maps are surjective on every chain group
+of both bar and Chevalley complexes and hence on their mapping cones $K_H$.
+The degreewise exact Roos sequence
+\[
+ 0\to\varprojlim_HK_H\to\prod_HK_H
+ \xrightarrow{1-\mathrm{shift}}\prod_HK_H\to0
+\]
+proves that the limit cone is acyclic, since its component cones are acyclic
+and products of vector-space complexes preserve acyclicity.
+In Chevalley degree $r$, a monomial with each input of height at most $H$ has
+total height at most $rH$; the two height filtrations are cofinal in that degree.
+The coefficient map composed with the tower antisymmetrization is the first
+comparison, so it is a quasi-isomorphism as well.
+These are the constructions of Theorem~\ref{comp:thm:positive-bar} and
+Proposition~\ref{comp:prop:lie-quotient-bar} on the Igusa root algebra.
+\end{proof}
+
+For the positive Igusa Lie superalgebra $\nIg$, the Euler supercharacter is
+\[
+ \chi_{\mathrm{root}}\widehat C_{*,h}(\nIg)
+ =\prod_{\alpha>0}(1-e^{-\alpha})^{\operatorname{sdim}\gIg_\alpha}.
+\]
+An intrinsically even root vector gives an exterior Chevalley factor; an odd
+one gives a symmetric factor. Combining the intrinsic parity and homological
+Euler signs gives the stated exponent, and proper height makes every coefficient finite.
+With the root-torus convention $e^{-\alpha(n,\ell,m)}=Q^nR^\ell S^m$ and
+$e^{-\rho}=Q^{1/2}R^{1/2}S^{1/2}$, the denominator theorem gives
+\[
+ e^{-\rho}\chi_{\mathrm{root}}\widehat C_{*,h}(\nIg)
+ =\Dmon(Z_{\mathrm{root}}),\qquad
+ \Dmon(2\Omega)=2^{-6}\Dtheta(2\Omega)
+\]
+in the period convention $Z_{\mathrm{root}}=2\Omega$ \cite{GN97,GN98b}.
+The change of variable acts on the Weyl factor as well as on the product.
+This is an ordinary word-bar character identity.
+
+\section{Currents and finite cotangent models}
+At every finite height, the current Lie conformal superalgebra is
+\[
+ \operatorname{Cur}(\mathfrak n_H)=k[\partial]\otimes\mathfrak n_H,
+ \qquad[a_\lambda b]=[a,b].
+\]
+Its level-zero vertex envelope $V_H$ has primitive current generators:
+\[
+ \Delta(a(-1)\mathbf1)
+ =a(-1)\mathbf1\otimes\mathbf1+\mathbf1\otimes a(-1)\mathbf1.
+\]
+The current brackets respect this assignment, so the universal property of
+the envelope extends it to a vertex-algebra morphism.
+The quotient maps form an inverse system of vertex algebras.
+At fixed root degree and mode energy it stabilizes by PBW, as in
+Proposition~\ref{comp:prop:current-character}.
+
+The resulting pro-object has fields at every finite height.
+Its inverse-limit field values naturally lie in
+$\varprojlim_H V_H((z))$.
+Identifying them with ordinary fields valued in $(\varprojlim_HV_H)((z))$
+would require a uniform pole bound on each completed state pair.
+These targets need not agree: $\sum_{m\ge0}x^mz^{-m}$ is Laurent modulo every
+$x^{H+1}$, but has no lower Laurent bound over $k[[x]]$.
+The BD current field, its underlying main-diagonal Ran Lie object, and the
+associative Ran envelope are the separate constructions of
+Section~\ref{comp:sec:currents} and Proposition~\ref{comp:prop:ran-envelope}.
+
+Each finite positive-height Lie superalgebra is unimodular: every homogeneous
+adjoint operation strictly raises height, so its supertrace vanishes.
+Its finite cotangent model therefore satisfies the QME above.
+The independently defined algebraic boundary object $U(\mathfrak n_H)$ has
+interval complex $C_*(\mathfrak n_H)$ through the bar comparison.
+A local holomorphic--topological theory can also be formed from the current
+local Lie algebra and its density dual, at the classical level.
+Identifying these three constructions requires boundary quantization and sewing maps.
+At infinite height it additionally requires compatible quantum pushforwards:
+dualizing the Lie quotient maps reverses their direction on the cotangent fields.
+Neither a formal inverse system nor the denominator character supplies these maps
+or the compact $K3\times E$ realization.
+
+\section{Character, bracket, parity, and orientation}
+An Euler character retains an alternating scalar invariant of a complex.
+Reconstruction also requires the bracket, parity decomposition and orientation
+line carried by the intended object.
+
+\begin{theorem}[Three reconstruction fibres]
+The following fibres contain distinct structured objects with the same scalar image.
+\begin{enumerate}
+\item For positive integers $a,b$, the PBW-character fibre of a graded vector
+space with basis $x,y,z$ in degrees $a,b,a+b$ contains both the abelian Lie
+algebra and the Heisenberg Lie algebra $[x,y]=z$.
+\item The superdimension-zero fibre contains both the zero super vector space and $\kfield^{1|1}$.
+\item The groupoid of square roots of a line $D$ contains $(L,\phi:L^{\otimes2}\simeq D)$ and its twists by line bundles $\chi$ with a chosen trivialization $\chi^{\otimes2}\simeq\mathbbm1$. Nonisomorphic twists can have the same square.
+\end{enumerate}
+Thus these scalar images do not determine the bracket, the two parity dimensions, or the square-root datum. A reconstruction must supply enough structure to distinguish the displayed fibres.
+\end{theorem}
+\begin{proof}
+PBW identifies the graded vector-space character of an enveloping algebra with the symmetric-superalgebra character of its underlying graded Lie space, so the two displayed brackets have the same PBW character.  The two super vector spaces in the second item both have superdimension zero and have parity dimensions $(0,0)$ and $(1,1)$.  Finally $(L\otimes\chi)^{\otimes2}\cong L^{\otimes2}\cong D$. On a space with a nontrivial two-torsion line, $\mathbbm1$ and that line are distinct roots of $\mathbbm1$. Twisting a root line does not automatically provide a section of the twist; a prescribed section requires its own lift.
+\end{proof}
+
+\begin{recognition}[Minimal PBW recognition]
+Let $\phi:\mathfrak g\twoheadrightarrow\mathfrak h$ be a surjective morphism of positively graded Lie superalgebras with finite-dimensional homogeneous pieces.  If the parity-refined Hilbert series of $U(\mathfrak g)$ and $U(\mathfrak h)$ agree, then $\phi$ is an isomorphism.  Equality of signed PBW characters suffices when the parity of every primitive degree is prescribed in advance.
+\end{recognition}
+\begin{proof}
+If the kernel is nonzero, choose its first positive degree.  In that degree all decomposable PBW contributions agree by minimality, while the primitive even or odd dimension in $U(\mathfrak h)$ is strictly smaller.  This contradicts equality of parity-refined Hilbert series.  With prescribed parity, the formal logarithm of the PBW product recovers the signed primitive dimension inductively in height, and prescribed parity recovers the ordinary dimension.
+\end{proof}
+
+\section{The geometric comparison}
+The constructions have three distinct starting points:
+\[
+\begin{array}{c|c|c}
+\text{input}&\text{tensor}&\text{bar}\\ \hline
+\text{transverse associative algebra}&\tensor^!&\BarPerp\\
+\text{associative Ran algebra}&\tensor^{\ch}&\BarAssCh\\
+\text{chiral Lie algebra}&\tensor^{\ch}&\BarLieCh.
+\end{array}
+\]
+The ordinary associative bar and cobar give their tensor reconstruction on the
+proved positive-weight domain. The enveloping comparison relates an
+associative bar to Chevalley chains when its PBW hypotheses hold.
+The interval construction computes a relative derived tensor product.
+Hochschild cochains supply the algebraic centre, and a Calabi--Yau structure
+supplies cyclic and framed operations on their own coefficient categories.
+
+For a compact protected realization of the Igusa denominator, these outputs
+must be connected by actual geometric maps. The first data are a global
+reduced oriented coefficient system on compact extension flags and a multiplication
+with its base-change and orientation coherence. The next comparison identifies
+its primitive algebra with the fixed root presentation through the generating
+maps and relations, rather than through the character alone.
+A chiral comparison must retain supported collision operations and the empty
+unit. A boundary comparison must retain the state, trace domain and sewing maps.
+A modular comparison must identify the determinant line and its normalized section.
+
+The algebraic root and current constructions provide recipients for these maps.
+They do not determine a compact state space or a bulk solely from its boundary
+centre. The complete principal-part filtration, transverse ordering, braid
+transport and surface contractions remain operations to be compared, each with
+its own carrier and coherence equations.

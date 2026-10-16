@@ -1,0 +1,1188 @@
+\subsection{Critical Hall operations and primitive Lie algebras}
+\label{subsec:hall-correspondences}
+
+The formal deformation model of
+\S\ref{subsec:hybrid-ran-carrier} supplies actual extension
+categories and polynomial critical models. Their Hall algebra
+requires a coefficient theory on the extension stacks.
+The global critical Hall theorem gives such a multiplication on
+ordinary critical cohomology under its strong orientation and
+properness hypotheses. The compact reduced $S\times E$ problem
+asks for additional comparisons with the reduced quotient
+coefficients. A collision coproduct and a primitive Lie form are
+further structures, with separate equations.
+
+We work over a characteristic-zero field $k$, using $k=\Q$ for
+constructible coefficients before extension of scalars. All
+cohomological shifts and orientation parities are part of the
+coefficient objects. When an ordinary superalgebra is used below,
+its multiplication is even and its tensor symmetry is
+$\tau(x\otimes y)=(-1)^{|x||y|}y\otimes x$.
+Passing from an index-shifted critical Hall multiplication to this
+category requires the stated regrading or comparison.
+
+\subsubsection*{The coefficient object and its multiplication}
+
+\begin{definition}[A bounded geometric coefficient object]
+\label{def:finite-geometric-hall-object}
+Fix chosen moduli components $\mathcal M_{R,\gamma}$ and critical
+coefficients $K_{R,\gamma}$, including any reduction and orientation
+data. Choose one realization, for example
+\[
+ \mathcal H_{R,\gamma}=R\Gamma(\mathcal M_{R,\gamma},K_{R,\gamma}),
+ \qquad
+ \mathcal H_R=\bigoplus_{\gamma\in\Gamma_R}\mathcal H_{R,\gamma}.
+\]
+If instead compact-support or dual compact-support realization is
+used, name it explicitly and use its coefficient variance. In
+particular
+$\mathbb B(M;K)=R\operatorname{Hom}(R\Gamma_c(M,K),k)$
+is contravariant in $K$.
+The set $\Gamma_R$ is finite when a finite charge window is
+specified. Finite-dimensional cohomology or a perfect chain
+model is an additional hypothesis, not a consequence of this
+finite indexing set.
+\end{definition}
+
+For a bounded ordinary-cohomology model, let
+$\mathcal E_{\alpha,\beta}$ be the ordered extension stack with
+maps $p$ to its endpoints and $q$ to its middle object. The
+required coefficient morphism is
+\[
+ u_{\alpha,\beta}:
+ p^*(K_\alpha\boxtimes K_\beta)[\kappa(\alpha,\beta)]
+ \longrightarrow q^!K_{\alpha+\beta}.
+\]
+The source shift $\kappa$ is fixed by this formula, as in
+\eqref{eq:D-critical-hall-comparison}. On a translation quotient,
+the endpoint stack is the fibre product over $BE$ and the
+coefficient tensor is the specified relative tensor.
+
+\begin{definition}[A geometric Hall product]
+\label{def:compact-hall-product}
+Put $L=p^*(K_\alpha\boxtimes K_\beta)[\kappa(\alpha,\beta)]$.
+Suppose $u:L\to q^!K_{\alpha+\beta}$ is defined, the support
+of $L$ is proper over the target, and K\"unneth holds in
+the chosen realization. The Hall product is the composite
+\[
+ (\mathcal H_\alpha\otimes\mathcal H_\beta)
+       [\kappa(\alpha,\beta)]
+ \longrightarrow R\Gamma(\mathcal M_{\alpha+\beta},Rq_!L)
+ \longrightarrow\mathcal H_{\alpha+\beta}.
+\]
+The first arrow is pullback followed by $Rq_*L\simeq Rq_!L$.
+The second applies $Rq_!u$ and the counit $Rq_!q^!\to1$.
+Only permitted charge sums are included at a bounded stage.
+\end{definition}
+
+\begin{proposition}[The pullback and integration legs]
+\label{prop:finite-hall-product-pullback-existence}
+\label{prop:finite-hall-product-pushforward-existence}
+The product is defined under the stated coefficient, K\"unneth
+and proper-support hypotheses. Existence of $Rq_!$ for a
+nonproper map alone does not provide the last arrow on ordinary
+cohomology. For compactly supported cohomology, pullback along
+$p$ needs its corresponding support condition instead.
+\end{proposition}
+
+\begin{proof}
+Ordinary cohomology admits pullback through the unit
+$K\to Rp_*p^*K$. Proper support identifies $Rq_*L$ with
+$Rq_!L$, after which $Rq_!u$ and the trace give the last
+arrow. Without that support condition an arbitrary global
+section on the extension stack need not have proper support
+over the target. Dually, pulling a
+compactly supported section back along a map with nonproper
+fibres need not leave compact support.
+\end{proof}
+
+\begin{proposition}[Independence of an exceptional-pushforward model]
+\label{prop:finite-hall-product-qbang-compactification-independence}
+Suppose a map in the coefficient theory is compactifiable as
+$q=\overline qj$, with $j$ open and $\overline q$ proper, and
+exceptional pushforward is computed by
+$Rq_!=R\overline q_*j_!$. Two such compactifications give the
+same functor when the chosen six-functor theory supplies its
+proper base-change and composition identifications.
+\end{proposition}
+
+\begin{proof}
+Compare both compactifications with the closure of the graph of
+the identity on their common open domain inside their product.
+The proper comparison maps restrict to the identity on that
+open. Proper base change and extension by zero identify the two
+pushforwards with the one through this common refinement.
+The composition constraints give the cocycle identification
+for three choices. This concerns $q_!$; it does not remove a
+proper-support requirement elsewhere in the Hall product.
+\end{proof}
+
+\begin{proposition}[Associativity of the coefficient product]
+\label{prop:finite-hall-product-associativity-two-step-flags}
+If the two composites of $u$ agree on the three-step extension
+flag, including their shifts and orientation identifications,
+then the Hall multiplication is associative on all permitted
+triples. Coherent zero-endpoint comparisons give its unit.
+\end{proposition}
+
+\begin{proof}
+The two geometric compositions are the same flag stack by
+Proposition~\ref{prop:eight-two-step-flag-stacks}. Base change,
+projection formula and composition identify their pull--push
+functors. The coefficient equality gives equality of the
+resulting maps. The two zero-endpoint sequences identify with
+the identity correspondence and give the unit equations.
+\end{proof}
+
+Theorem~\ref{thm:hall-product} constructs these morphisms and
+their coherence for the specified unreduced $3$-Calabi--Yau
+moduli with strong orientation data. This applies to the
+Ginzburg categories of the tripled-quiver models. On a compact
+projective threefold with trivial canonical bundle, orientation
+data exists by
+\cite[Theorem~4.4]{JoyceUpmeier}; the strong associativity
+condition remains additional. A formal cyclic equivalence
+between deformation categories does not alone identify their
+constructible coefficient maps on an open algebraic moduli
+stack.
+
+\subsubsection*{An actual constructible Hall calculation}
+
+There is a concrete algebraic result before critical
+coefficients are compared. Consider the Euler-characteristic
+Hall algebra of finite-dimensional nilpotent representations of
+the preprojective algebra of the quiver in
+\eqref{hall:eq:preprojective-moment}. Functions are constructible,
+and convolution integrates over invariant subspaces.
+Use the same quotient-first convention as above.
+Let $e_i$ be the characteristic function of the vertex simple.
+The divided power $e_i^{(b)}=e_i^{*b}/b!$ is the characteristic
+function of $S_i^{\oplus b}$: a complete flag in $\C^b$ has
+Euler characteristic $b!$.
+
+\begin{theorem}[The cubic real-root Serre relation]
+\label{hall:thm:constructible-serre}
+For distinct vertices $i,j$,
+\[
+ (\operatorname{ad}e_i)^3(e_j)=0.
+\]
+The assignment of the three Chevalley generators to $e_i$
+therefore defines a homomorphism from the positive real-root
+Kac--Moody Lie algebra with Euler matrix $G$ into this
+constructible Hall algebra.
+\end{theorem}
+
+\begin{proof}
+Only dimension vector $(3,1)$ on $i,j$ contributes. Combine
+the two forward arrows into $X:\C^3\to\C^2$ and the reverse
+arrows into $Y:\C^2\to\C^3$. The preprojective relation at
+$i$ gives $YX=0$, hence
+$\operatorname{rk}X+\operatorname{rk}Y\leq2$.
+Put $I=\operatorname{im}Y$ and $K=\ker X$.
+
+For $e_i^{(b)}*e_j*e_i^{(3-b)}$, a descending flag has its last
+$i$-subspace $U$ of dimension $3-b$. Invariance requires
+$I\subset U\subset K$. If $I\not\subset K$, all these flag
+spaces are empty. Otherwise, writing $r=\dim I$ and $s=\dim K$,
+their Euler characteristics are
+$\binom{s-r}{3-b-r}$. We have
+$s-r=3-\operatorname{rk}X-\operatorname{rk}Y\geq1$.
+Consequently their alternating sum is
+\[
+ \sum_{b=0}^3(-1)^b\binom{s-r}{3-b-r}
+ =(-1)^{3-r}(1-1)^{s-r}=0.
+\]
+Multiplying by $3!$ converts the divided-power relation into
+the cubic commutator, up to its irrelevant overall sign.
+The same argument with the two vertices exchanged proves the
+opposite relation.
+\end{proof}
+
+This is a relation for actual convolution operators with
+constructible-function coefficients. It proves neither
+injectivity nor an identification of all imaginary generators.
+Transporting it to critical cohomology or to compact reduced
+sheaves needs a comparison preserving convolution. In particular,
+matching the Euler matrix $G$ alone is insufficient.
+
+\subsubsection*{A spectral coproduct on critical quiver cohomology}
+
+The quiver theory also has a coproduct constructed from direct
+sum and the ambient Euler class. Let $Q'$ be a finite quiver,
+$T$ a torus acting on its arrows, and $W$ an invariant potential.
+This includes the tripled quiver with its canonical potential.
+For a dimension vector $d$, put $G_d=\prod_iGL_{d_i}$ and
+\[
+ R=H^*(BT;\Q),\qquad
+ M_d=[\operatorname{Rep}_d(Q')/G_d],\qquad
+ C_d=H_T^*(M_d,\varphi_{\operatorname{Tr}W}\Q),\qquad
+ C=\bigoplus_d C_d.
+\]
+Assume the relative K\"unneth maps over $BT$ are isomorphisms
+for the finite products used below. The direct sum has finite
+dimension-vector support. Every fixed dimension vector has
+finitely many decompositions.
+
+Write $E_{i,d}$ for the tautological bundles and $L_a$ for the
+line bundle on $BT$ associated to the character of arrow $a$.
+The ambient two-term Hom complex, in degrees
+zero and one, is
+\[
+ \Theta_{d,e}=\left[
+ \bigoplus_i E_{i,d}^\vee\boxtimes E_{i,e}
+ \longrightarrow
+ \bigoplus_{a:i\to j}E_{i,d}^\vee\boxtimes E_{j,e}\otimes L_a
+ \right].
+\]
+Its virtual rank is the quiver Euler form
+$\chi(d,e)=\sum_i d_ie_i-\sum_{a:i\to j}d_ie_j$.
+This complex belongs to the smooth representation stack; it
+is not the threefold self-Ext complex of the critical locus.
+Set $\Psi(V,z)=z^{\operatorname{rk}V}c(V,z^{-1})$, expanding
+the Chern polynomial of a virtual bundle at $z=\infty$.
+
+Direct sum induces a critical-cohomology pullback
+$\delta_{d,e}:C_{d+e}\to C_d\otimes_R C_e$.
+Tensoring the vertex spaces with a line gives a coaction
+$\operatorname{act}_z^*=e^{z\mathsf T}$, polynomial on each
+class. Thus $\mathsf T$ is locally nilpotent, $|z|=2$ and
+$|\mathsf T|=-2$.
+
+\begin{theorem}[Critical vertex coproduct]
+\label{hall:thm:critical-vertex-coproduct}
+The maps
+\[
+ \Delta_{d,e}(z)=\Psi(\Theta_{d,e},-z)
+                     e^{z\mathsf T_1}\delta_{d,e}
+ :C_{d+e}\longrightarrow(C_d\otimes_R C_e)((z^{-1}))
+\]
+satisfy
+\begin{align*}
+ (\Delta_{d,e}(z)\otimes1)\Delta_{d+e,f}(w)
+   &=(1\otimes\Delta_{e,f}(w))\Delta_{d,e+f}(z+w),\\
+ \Delta(z)\mathsf T
+   &=\partial_z\Delta(z)+(1\otimes\mathsf T)\Delta(z),\\
+ (\varepsilon\otimes1)\Delta(z)&=1,
+ & (1\otimes\varepsilon)\Delta(z)&=e^{z\mathsf T}.
+\end{align*}
+Here $\varepsilon$ is restriction to the zero representation.
+Rational factors in the first identity are compared with
+$z,w,z+w$ invertible and expanded in the same iterated Laurent
+region. The $(d,e)$ component has ordinary cohomological
+degree $2\chi(d,e)$, including the degree of $z$.
+\end{theorem}
+
+\begin{proof}
+The unit of direct-sum adjunction, natural pullback for vanishing
+cycles, Thom--Sebastiani and K\"unneth define $\delta$.
+Associativity of direct sum makes it coassociative. Line scaling
+commutes with direct sum, so $\mathsf T$ is a coderivation.
+Splitting either variable of $\Theta$ gives a direct sum of
+the corresponding Hom complexes. Translating its first variable
+by $u$ tensors it with $L_{-u}$, and translating the second
+tensors it with $L_u$.
+
+Consequently both iterated coproducts have factor
+\[
+ \Psi(\Theta_{12},-z)\Psi(\Theta_{13},-z-w)
+                  \Psi(\Theta_{23},-w)
+\]
+on $e^{(z+w)\mathsf T_1+w\mathsf T_2}\delta^{(3)}$.
+This proves coassociativity. Simultaneous translation fixes
+$\Theta$, and
+$\partial_z\Psi(\Theta,-z)=\mathsf T_1\Psi(\Theta,-z)$,
+which prove the translation identity. A zero-dimensional
+factor has $\Theta=0$, giving the two counit equations.
+Finally $z^{\chi-r}c_r(\Theta)$ has degree $2\chi$.
+This is the construction of
+\cite[Theorem~2.3.1]{JindalKaubrysLatyntsev} in ordinary
+cohomological grading.
+\end{proof}
+
+For the Hall regrading $A_d=C_d[-\chi(d,d)]$, the component
+degree becomes $\chi(d,e)-\chi(e,d)$. Tensor symmetries must
+be transported with this regrading. With the compatible sign
+twist of the Hall product, the coproduct satisfies the vertex
+bialgebra identity in the meromorphically braided coefficient
+category \cite[Theorems~4.5.2 and~4.5.5]{JindalKaubrysLatyntsev}.
+For a symmetric quiver that category consists of modules over
+the tautological cup-product ring; for a nonsymmetric quiver
+it uses the separate cohomology rings in each dimension vector.
+These are concrete algebraic recipients, with their prescribed
+braiding and spectral completion.
+
+The spectral parameter has a geometric role. A localized Euler
+factor $y-x+\lambda$ becomes $y-x+\lambda-z$ under first-factor
+line scaling. Its leading coefficient is $-1$, so it is
+invertible as a Laurent series even if the unshifted class is
+a zero divisor. For a single arrow $1\to2$, dimensions
+$d=(1,0)$ and $e=(0,1)$, and zero arrow weight,
+\[
+ \Delta_{d,e}(z)(1)=\frac1{y-x-z}
+       =-\sum_{r\geq0}(y-x)^r z^{-r-1}.
+\]
+The general localized-to-spectral comparison is
+\cite[Theorem~3.3.2]{JindalKaubrysLatyntsev}.
+It does not extend a localized coefficient across its
+collision divisor. Nor does it identify this coproduct with
+the cut coproduct of Theorem~\ref{hall:thm:spectral-cut}:
+one uses line scaling on cohomology, the other uses separation
+opens in spectral configuration spaces. A comparison with the
+compact reduced theory must specify its own tensor, support,
+coefficient maps and relation to these two constructions.
+
+There is also a localized bialgebra on the dual compactly
+supported critical cohomology of semistable quiver
+representations. For a fixed slope and a stability condition
+generic at that slope, with the locally closed Serre-subcategory restriction
+of \cite[\S6.1]{DavisonMeinhardtCoHA}, its tensor product
+inverts the prescribed cross-factor equivariant Euler classes.
+The perverse associated graded has a Hopf structure without
+localization in the specified symmetric category and is free commutative
+there; after the stated sign twist it is free supercommutative
+\cite[Theorem~C]{DavisonMeinhardtCoHA}. The PBW comparison
+with the original Hall object is a comparison of graded
+coefficient objects and need not be an algebra isomorphism.
+Thus localization and passage to the associated graded each
+change the recipient of the coproduct assertion.
+
+\subsubsection*{A collision coproduct is separate data}
+
+\begin{definition}[A geometric collision coproduct]
+\label{def:collision-coproduct}
+\label{def:compact-hall-coproduct}
+For each decomposition $\gamma=\alpha+\beta$, specify a
+collision span
+\[
+ \mathcal M_\gamma\xleftarrow{\ r\ }
+ \mathcal C_{\alpha,\beta}\xrightarrow{\ s\ }
+ \mathcal M_\alpha\times\mathcal M_\beta
+\]
+and a coefficient morphism that induces a map in the chosen
+realization. For ordinary cohomology, one possible form is
+\[
+ v_{\alpha,\beta}:r^*K_\gamma
+ \longrightarrow s^!(K_\alpha\boxtimes K_\beta)[d_{\alpha,\beta}],
+\]
+with the support of $r^*K_\gamma$ proper over the endpoint
+stack. The resulting component is
+\[
+ \mathcal H_\gamma\longrightarrow
+ (\mathcal H_\alpha\otimes\mathcal H_\beta)[d_{\alpha,\beta}].
+\]
+A coproduct on a direct sum requires finitely many nonzero
+components on every element; otherwise the target and its
+completion must be specified. The analogous construction on
+quotients uses the relative endpoint product over $BE$.
+\end{definition}
+
+\begin{proposition}[The coproduct integration leg]
+\label{prop:finite-hall-coproduct-pushforward-existence}
+Under the coefficient and support hypotheses in this definition,
+pullback along $r$, then $v$, then the proper trace along $s$
+gives the stated coproduct component.
+\end{proposition}
+
+\begin{proof}
+Apply the same ordinary-cohomology pull--push construction as
+for multiplication, with the collision span and its specified
+coefficient map. Proper support is used at the trace, and
+K\"unneth identifies the endpoint cohomology with the chosen
+tensor product.
+\end{proof}
+
+\begin{proposition}[Coassociativity and compatibility]
+\label{prop:finite-hall-coproduct-coassociativity-two-step-flags}
+\label{prop:finite-hall-bialgebra-compatibility}
+Suppose the two successive collision diagrams are identified,
+and their coefficient composites agree. Then the coproduct is
+coassociative. Suppose in addition that the diagram comparing
+collision after extension with extension after two collisions
+carries the corresponding coefficient equality. In an ordinary
+super realization it gives
+\[
+ \Delta m=(m\otimes m)(1\otimes\tau\otimes1)
+                     (\Delta\otimes\Delta).
+\]
+Unit and counit compatibility are additional equations.
+\end{proposition}
+
+\begin{proof}
+The common triple-collision diagram gives the first equality by
+base change and composition of the coefficient maps. In the
+second diagram, the middle two factors must be interchanged
+before the two products are formed. This is $\tau$, so its
+Koszul sign is part of the displayed equality. These arguments
+compare the given maps; they do not construct a missing collision
+coefficient morphism from the extension product.
+\end{proof}
+
+The ordinary associative bar coalgebra has another coproduct:
+cutting a word into two consecutive subwords. Its tensor,
+support and differential are those of the bar construction.
+Identifying it with a geometric collision coalgebra requires an
+operation-preserving comparison. Neither a shared notation
+$\Delta$ nor equality of Euler characteristics supplies that
+comparison; see \S\ref{subsec:koszul-source}.
+
+\subsubsection*{The complete bialgebra equations}
+
+Assume now that $H$ is a complex of super vector spaces with
+even chain maps $m,\eta,\Delta,\varepsilon$, with the ordinary
+tensor product. All subsequent assertions in this subsection
+have this carrier. If a geometrically constructed object is only
+an algebra in a shifted or relative category, the following
+criterion applies after its specified comparison to this carrier.
+
+\begin{definition}[Bialgebra defects]
+\label{def:finite-hall-bialgebra-defect-tuple}
+The bialgebra defects are the differences between the two sides
+of the following equations:
+\begin{align*}
+ m(m\otimes1)&=m(1\otimes m),&
+ m(\eta\otimes1)&=1=m(1\otimes\eta),\\
+ (\Delta\otimes1)\Delta&=(1\otimes\Delta)\Delta,&
+ (\varepsilon\otimes1)\Delta&=1=(1\otimes\varepsilon)\Delta,\\
+ \Delta m&=(m\otimes m)(1\otimes\tau\otimes1)(\Delta\otimes\Delta),&
+ \Delta\eta&=\eta\otimes\eta,\\
+ \varepsilon m&=\varepsilon\otimes\varepsilon,&
+ \varepsilon\eta&=1_k.
+\end{align*}
+Call their collection $\mathfrak O_{\mathrm{Hbialg},R}$ on a
+bounded realization. Vanishing means that every displayed map
+identity holds on its defined domain. In finite bases these are
+matrix and structure-constant equations. A differential is
+required to commute with all four structure maps.
+\end{definition}
+
+The last three equations cannot simply be omitted. For example,
+let $H=ke_1\oplus ke_2$ with
+$e_ie_j=\delta_{ij}e_i$, unit $e_1+e_2$,
+$\Delta e_i=e_i\otimes e_i$, and $\varepsilon(e_i)=1$.
+Multiplication is associative and unital, comultiplication is
+coassociative and counital, and $\Delta$ is multiplicative.
+Nevertheless
+\[
+ \Delta(1)=e_1\otimes e_1+e_2\otimes e_2\ne1\otimes1,
+ \quad \varepsilon(e_1e_2)=0\ne1,
+ \quad \varepsilon(1)=2.
+\]
+This is the algebra of the groupoid with two identity objects,
+not a bialgebra with the given structure maps.
+
+\begin{definition}[Compact geometric bialgebra data]
+\label{def:compact-geometric-hall-bialgebra-datum}
+A compact geometric bialgebra datum consists of a coefficient
+object, the extension and collision coefficient maps, zero-object
+unit and counit, and the comparison to the stated tensor category.
+The geometry must supply the proper-support or exceptional
+integration maps it uses. Coherent flag, collision and mixed
+diagrams must induce all equations of
+Definition~\ref{def:finite-hall-bialgebra-defect-tuple}.
+If finite matrices are used, their bases and finite-dimensional
+models are part of the datum.
+\end{definition}
+
+\begin{proposition}[Geometric data and algebraic identities]
+\label{prop:geometric-hall-data-give-bialgebra-defects}
+Such a datum gives a bialgebra on its specified domain. Its
+primitive Lie algebra is obtained from the reduced coproduct
+below. The conclusion is conditional on the geometric and
+coefficient comparisons, not just on formal names for the four
+structure maps.
+\end{proposition}
+
+\begin{proof}
+The flag and mixed correspondence comparisons give the displayed
+identities by the preceding propositions. The zero-object and
+counit diagrams give the unit equations, counit equations and
+the last three scalar compatibilities. These are exactly the
+bialgebra axioms.
+\end{proof}
+
+
+\subsubsection*{Primitives, parity and an antipode}
+
+\begin{definition}[The primitive subspace]
+\label{def:finite-hall-primitive-subspace}
+Let $H$ be a counital coalgebra with coaugmentation $\eta$,
+$\varepsilon\eta=1$ and $\Delta\eta=\eta\otimes\eta$.
+Put $I=\ker\varepsilon$ and
+$\pi=1-\eta\varepsilon:H\to I$. Its reduced coproduct and
+primitive space are
+\[
+ \overline\Delta=(\pi\otimes\pi)\Delta|_I:I\longrightarrow I\otimes I,
+ \qquad P(H)=\ker\overline\Delta.
+\]
+For $x\in I$, this is
+$\overline\Delta x=\Delta x-1\otimes x-x\otimes1$.
+A linear projection onto $P(H)$, if desired, is an extra choice
+unless another theorem constructs one naturally.
+\end{definition}
+
+\begin{definition}[Primitive Hall bracket]
+\label{def:primitive-hall-bracket}
+For an ordinary super bialgebra $H$, the primitive bracket is
+\[
+ [x,y]=m(x,y)-(-1)^{|x||y|}m(y,x),\qquad x,y\in P(H).
+\]
+It is the restriction of the supercommutator in $H$.
+\end{definition}
+
+\begin{proposition}[Primitive closure and Jacobi]
+\label{prop:hall-bialgebra-defects-primitive-closure}
+\label{prop:finite-hall-graded-jacobi}
+\label{lem:primitive-bracket-lifting}
+The bracket takes values in $P(H)$ and makes it a Lie
+superalgebra. It satisfies
+\[
+ [x,[y,z]]=[[x,y],z]+(-1)^{|x||y|}[y,[x,z]].
+\]
+A compatible differential restricts to its dg Lie differential.
+\end{proposition}
+
+\begin{proof}
+Multiplicativity of the coproduct gives
+\[
+ \Delta(xy)=xy\otimes1+x\otimes y
+       +(-1)^{|x||y|}y\otimes x+1\otimes xy
+\]
+for primitives. The mixed terms cancel in the supercommutator,
+so the bracket is primitive. Expanding the three commutators
+using associative multiplication gives the displayed Jacobi
+identity. Compatibility of the differential with the
+coaugmentation, counit, multiplication and coproduct proves
+that it restricts and is a derivation.
+\end{proof}
+
+\begin{proposition}[What multiplication alone determines]
+\label{prop:hall-product-only-no-primitives}
+An associative superalgebra has a Lie superalgebra under its
+supercommutator, but its primitive subspace is not determined
+without a coproduct. On $k[t]$, the two bialgebra structures
+\[
+ \Delta_a t=t\otimes1+1\otimes t,\quad\varepsilon_a(t)=0,
+ \qquad
+ \Delta_m t=t\otimes t,\quad\varepsilon_m(t)=1
+\]
+have the same multiplication and different primitive spaces.
+\end{proposition}
+
+\begin{proof}
+For the additive structure, $P(k[t])=kt$: the mixed terms in
+$\Delta_a(t^n)$ exclude every highest degree $n\geq2$.
+For the multiplicative structure, every basis element $t^n$
+is group-like. Comparing diagonal coefficients as in
+Proposition~\ref{prop:protected-integration-primitive-compatibility}
+shows that its primitive space is zero.
+\end{proof}
+
+The ambiguity also occurs among connected positively graded
+Hopf structures. Give $k[x,y]$ degrees $1,2$. One coproduct
+makes both $x$ and $y$ primitive; another has
+\[
+ \Delta x=x\otimes1+1\otimes x,\qquad
+ \Delta y=y\otimes1+1\otimes y+x\otimes x.
+\]
+For the second, $y-x^2/2$ is primitive. This change of polynomial
+coordinates identifies it with the additive Hopf algebra on
+two generators and proves coassociativity. The two primitive
+planes inside the fixed polynomial algebra are
+$\operatorname{span}\{x,y\}$ and
+$\operatorname{span}\{x,y-x^2/2\}$.
+
+\begin{proposition}[Charge and parity]
+\label{prop:finite-hall-normal-ordered-gram-degree}
+\label{prop:finite-hall-bracket-parity}
+Suppose the product preserves an additive charge grading
+$\widehat\Gamma$ and cohomological parity. If the coproduct and
+coaugmentation preserve the grading, its primitive space is
+graded, and
+\[
+ [P_{\widehat\alpha,\bar p},P_{\widehat\beta,\bar q}]
+ \subset P_{\widehat\alpha+\widehat\beta,\bar p+\bar q}.
+\]
+Regrading by the additive map $\overline\Pi_X$ preserves this
+law. A raw quadratic charge expression can be used only through
+the normal-ordered extension on which it becomes additive.
+\end{proposition}
+
+\begin{proof}
+Both terms in the bracket have the same summed charge and
+parity. Primitive closure was proved above. The composite with
+an additive grading map sends their common charge to
+$\overline\Pi_X(\widehat\alpha)+\overline\Pi_X(\widehat\beta)$.
+The construction and group law of the normal-ordered charge
+extension are given in Chapter~\ref{ch:k3xe-setup}.
+\end{proof}
+
+The primitive projection is not part of this proof. In the
+connected cocommutative characteristic-zero domain, the
+convolution logarithm of the identity gives a natural primitive
+projection; Proposition~\ref{prop:bkm-connected-hopf-recognition}
+proves that result with its local-nilpotence hypotheses. It must
+not be applied to a general noncocommutative Hall bialgebra
+without those hypotheses.
+
+\begin{definition}[Antipode]
+\label{def:finite-hall-antipode-datum}
+An antipode on a bialgebra is a chain map $S:H\to H$ satisfying
+\[
+ m(S\otimes1)\Delta=\eta\varepsilon
+                 =m(1\otimes S)\Delta.
+\]
+A bialgebra admitting this convolution inverse of its identity
+is a Hopf algebra. On a connected positively graded bialgebra,
+the antipode is defined recursively by
+\[
+ S(1)=1,\qquad S(x)=-x-\sum S(x')x'',
+ \qquad\overline\Delta x=\sum x'\otimes x''.
+\]
+Each reduced factor has lower positive degree.
+\end{definition}
+
+\begin{proposition}[Existence from conilpotence]
+\label{prop:finite-hall-nonhopf-boundary}
+If the augmentation projection $\pi=1-\eta\varepsilon$ is
+locally nilpotent under convolution, then
+\[
+ S=\sum_{n\geq0}(-1)^n\pi^{\star n}
+\]
+is an antipode. In particular this holds for a connected
+positively graded bialgebra. It preserves additive charge.
+A bialgebra need not admit an antipode: the multiplicative
+structure on $k[t]$ above is an example.
+\end{proposition}
+
+\begin{proof}
+The convolution unit is $\eta\varepsilon$, and
+$1_H=\eta\varepsilon+\pi$. Local nilpotence makes the
+geometric series finite on each element. Multiplying the series
+by $\eta\varepsilon+\pi$ on either side gives
+$\eta\varepsilon$, proving both identities. In a connected
+positive grading, iterated reduced coproducts strictly split
+the total degree, so they eventually vanish. Every term has
+the original total charge. For multiplicative $k[t]$, an
+antipode would satisfy $S(t)t=1$, which has no polynomial
+solution.
+\end{proof}
+
+An antipode therefore preserves an additive charge; it does not
+create the opposite charge sector. A two-sided comparison or a
+Drinfeld double has to construct that opposite sector separately.
+
+\subsubsection*{Finite positive windows}
+
+Let $H=\bigoplus_{n\geq0}H_n$ have additive positive grading.
+The direct sum $H_{\leq R}$ carries every product with total
+degree at most $R$. If $\Delta$ preserves total degree, this
+window is a subcoalgebra. Declaring all higher products to be
+zero instead gives the algebra quotient
+$H/H_{>R}$, but that ideal need not be a coideal.
+
+For the additive Hopf algebra $k[x]$, take $N\geq2$. Then
+\[
+ \Delta(x^N)=x^N\otimes1+1\otimes x^N
+       +\sum_{i=1}^{N-1}\binom Ni x^i\otimes x^{N-i}.
+\]
+The coefficient of $x\otimes x^{N-1}$ is $N\ne0$.
+Thus $(x^N)$ is not a coideal, and the algebra
+$k[x]/(x^N)$ does not inherit the additive coproduct in the
+ordinary tensor category. It still has the partial operations
+obtained by restricting total degree. This elementary example
+prevents a bounded Hall charge window from being called a finite
+Hopf algebra merely by setting operations outside it to zero.
+
+\subsubsection*{A primitive Lie form and a Hopf pairing}
+
+A compact effective Hall support generally contains no opposite
+charge. To pair $\gamma$ with $-\gamma$, choose an enlarged
+carrier or independently defined opposite object and a
+comparison realizing that pairing. An antipode on a positively
+graded Hall algebra does not supply it.
+
+\begin{definition}[A positive--negative primitive form]
+\label{def:finite-hall-positive-negative-pairing}
+Let $L=\bigoplus_{\gamma,\bar p}L_{\gamma,\bar p}$ be a Lie
+superalgebra containing the required positive and negative
+sectors. An even degree-zero primitive form is a bilinear map
+$B:L\otimes L\to k$ pairing only opposite charges and equal
+parities. It is supersymmetric when
+$B(x,y)=(-1)^{|x||y|}B(y,x)$, and invariant when
+\[
+ B([x,y],z)=B(x,[y,z]).
+\]
+Its invariance defect is
+$\mathfrak o_F(x,y,z)=B([x,y],z)+(-1)^{|x||y|}B(y,[x,z])$.
+For an even supersymmetric form, its vanishing for all
+homogeneous triples is equivalent to the displayed invariance
+identity, by super skew-symmetry of the bracket.
+One possible geometric construction starts with an even
+supertrace $\operatorname{tr}_0$ on a two-sided graded
+associative realization and sets
+$B(x,y)=\operatorname{tr}_0(xy)$ on its chosen Lie subspace.
+The existence and descent of that trace are part of the data.
+\end{definition}
+
+\begin{proposition}[Trace forms]
+\label{prop:finite-hall-pairing-homogeneity}
+\label{prop:finite-hall-pairing-supersymmetry}
+\label{prop:finite-hall-pairing-invariance}
+If the trace is even, vanishes in nonzero charge, and satisfies
+$\operatorname{tr}_0(xy)=(-1)^{|x||y|}\operatorname{tr}_0(yx)$,
+then its product form has the stated homogeneity,
+supersymmetry and Lie invariance.
+\end{proposition}
+
+\begin{proof}
+Charge preservation of multiplication and the degree-zero trace
+give homogeneity. Its parity gives zero between unequal
+parities, and its cyclic identity gives supersymmetry. Finally,
+\begin{align*}
+ B([x,y],z)
+ &=\operatorname{tr}_0(xyz)
+       -(-1)^{|x||y|}\operatorname{tr}_0(yxz)\\
+ &=\operatorname{tr}_0(xyz)
+       -(-1)^{|y||z|}\operatorname{tr}_0(xzy)
+ =B(x,[y,z]).\qedhere
+\end{align*}
+\end{proof}
+
+\begin{definition}[Pairing identities on their carriers]
+\label{def:finite-hopf-pairing-identity-tuple}
+For a primitive Lie form, its identities are evenness,
+homogeneity, supersymmetry and Lie invariance. Its radical and
+quotient pairing are then formed on $L$.
+A Hopf pairing instead is a bilinear map
+$\beta:H\otimes K\to k$ between full Hopf superalgebras such
+that
+\[
+ \beta(xy,z)=\beta(x\otimes y,\Delta_Kz),\qquad
+ \beta(x,yz)=\beta(\Delta_Hx,y\otimes z),
+\]
+with $\beta(1,z)=\varepsilon_K(z)$ and
+$\beta(x,1)=\varepsilon_H(x)$.
+The tensor pairing includes the super sign
+\[
+ \beta(x\otimes y,u\otimes v)
+ =(-1)^{|y||u|}\beta(x,u)\beta(y,v).
+\]
+Antipode compatibility is imposed with the convention of the
+chosen pairing. These equations concern the full algebra
+products, not a product asserted to close on primitives.
+The notation $\mathfrak O_{\mathrm{Hpair},R}=0$ records the
+identities for the pairing on its specified carrier. A Lie-form
+comparison uses the first set; a double uses the full Hopf
+pairing equations. It does not require the same form to serve
+both roles.
+\end{definition}
+
+\begin{proposition}[Hopf adjointness on primitives]
+\label{prop:finite-hall-pairing-coproduct-adjointness}
+If $x,y$ are primitives in $H$ and $z$ is primitive in $K$,
+then $\beta(xy,z)=0$. Hence the restriction of a Hopf pairing
+to primitives annihilates $[P(H),P(H)]$ in its first argument.
+If that restricted pairing is nondegenerate there, then
+$P(H)$ is abelian.
+\end{proposition}
+
+\begin{proof}
+Insert $\Delta_Kz=z\otimes1+1\otimes z$ in the first
+adjointness equation. Each term contains either
+$\varepsilon_H(x)$ or $\varepsilon_H(y)$, both zero.
+Subtract the two products to obtain the commutator assertion.
+Nondegeneracy forces every such commutator to vanish.
+\end{proof}
+
+Thus a nondegenerate invariant form on a nonabelian primitive
+Lie superalgebra cannot simultaneously be the restriction of
+this Hopf pairing. The primitive-recognition problem uses the
+Lie form. A Drinfeld double uses an appropriate Hopf pairing
+on its full positive and negative halves. Their comparison
+must retain this distinction.
+
+
+\subsubsection*{Radicals and quotient forms}
+
+\begin{proposition}[Finite quotient pairing]
+\label{prop:finite-hall-quotient-pairing-nondegeneracy}
+Let $G:V\otimes W\to k$ be a bilinear pairing of
+finite-dimensional spaces. Quotienting $V$ by its left radical
+and $W$ by its right radical gives a perfect pairing. If
+$Q_V,Q_W$ are matrices of chosen quotient lifts, its matrix is
+\[
+ \overline G=Q_V^tGQ_W.
+\]
+It has rank equal to both quotient dimensions. To apply this
+criterion to geometric primitives, the actual matrix $G$ and
+its two radicals must first be identified.
+\end{proposition}
+
+\begin{proof}
+Both radicals vanish against the opposite space, so the pairing
+descends. A nonzero class in either quotient has nonzero pairing
+with some vector in the opposite space by the definition of its
+radical. Thus both adjoint maps are injective. Their dimensions
+are both $\operatorname{rank}G$, so they are isomorphisms.
+Evaluating on the chosen lifts gives the displayed matrix.
+\end{proof}
+
+\begin{definition}[Geometric pairing data]
+\label{def:compact-geometric-hopf-pairing-datum}
+For the compact primitive comparison, geometric pairing data
+specify the positive and negative carrier, the pairing
+correspondence or trace, its orientation and degree shifts, and
+the cyclic three-input comparison proving Lie invariance.
+The form and its radical are then computed on the resulting
+primitive Lie algebra.
+If a Hopf pairing for a double is also required, its two full
+Hopf algebras, product--coproduct adjointness, unit--counit
+normalization and antipode compatibility are additional data.
+They are not imposed as substitute axioms on the primitive
+Lie form.
+\end{definition}
+
+\begin{proposition}[Lie radicals and enveloping quotients]
+\label{lem:hopf-radical-ideal-coideal}
+Let $L$ have an even supersymmetric invariant form $B$, and let
+$R=\operatorname{rad}B$. Then $R$ is a Lie ideal, and $L/R$
+has the descended nondegenerate invariant form. The ideal
+generated by $R$ in $U(L)$ is a Hopf ideal, and
+\[
+ U(L)/(U(L)R)\simeq U(L/R).
+\]
+This construction does not require $B$ to be a Hopf pairing.
+\end{proposition}
+
+\begin{proof}
+For homogeneous $x\in L$, $r\in R$ and $z\in L$, invariance
+and supersymmetry give
+\[
+ B([x,r],z)=-(-1)^{|x||r|}B(r,[x,z])=0.
+\]
+Thus $R$ is an ideal. The form descends and is nondegenerate
+by the definition of the radical. In $U(L)$ each $r$ is
+primitive, so $\Delta r=r\otimes1+1\otimes r$,
+$\varepsilon(r)=0$ and $S(r)=-r$. The generated ideal is
+therefore also a coideal and is stable under the antipode.
+The universal property of the enveloping algebra identifies
+its quotient with $U(L/R)$.
+\end{proof}
+
+\begin{proposition}[Radicals of a full Hopf pairing]
+\label{hall:prop:full-hopf-radical}
+Let $\beta:H\otimes K\to k$ be a Hopf pairing. Suppose its
+induced quotient tensor pairings separate points, as they do
+in finite-dimensional quotients. Then its left and right
+radicals are Hopf ideals in their respective full algebras.
+\end{proposition}
+
+\begin{proof}
+If $r$ is in the left radical, product adjointness gives
+$\beta(hr,z)=\beta(h\otimes r,\Delta z)=0$, and similarly
+for $rh$. Pairing $r$ against the unit gives
+$\varepsilon_H(r)=0$. The other adjointness equation says
+$\beta(\Delta r,y\otimes z)=\beta(r,yz)=0$.
+Separation by the quotient tensor pairing forces the image
+of $\Delta r$ in the tensor of the two quotient spaces to
+vanish. Thus $\Delta r\in R\otimes H+H\otimes R$.
+Antipode compatibility gives stability under $S_H$.
+The argument for the right radical is identical with the
+roles exchanged.
+\end{proof}
+
+\begin{proposition}[What the pairing matrix proves]
+\label{prop:pairing-matrix-not-hopf-pairing-proof}
+\label{prop:geometric-hopf-pairing-data-give-defects}
+A finite matrix and its kernel determine a bilinear radical
+and its perfect quotient pairing. Lie-ideal stability requires
+invariance of the primitive form. Hopf-ideal stability in a
+full algebra requires the full pairing hypotheses just stated,
+or the enveloping-algebra construction from a Lie ideal.
+These are distinct ways to construct a quotient.
+\end{proposition}
+
+\begin{proof}
+The linear-algebra assertion is
+Proposition~\ref{prop:finite-hall-quotient-pairing-nondegeneracy}.
+The other assertions follow from the two preceding propositions,
+whose proofs use the respective invariance and adjointness
+identities. A kernel computation alone contains neither identity.
+\end{proof}
+
+The resulting quotient Lie algebra is still a geometric source
+for the recognition problem. A comparison with the BKM target
+must prove its generators, brackets, form and absence of extra
+relations as stated in \S\ref{subsec:primitive-recognition}.
+A matrix rank or a signed dimension does not give that map.
+
+\subsubsection*{Transition maps}
+
+Let $R'\leq R$. Write
+$T_{R'R}:H_R\to H_{R'}$ for a proposed inverse transition.
+It must first be defined by a morphism of coefficient diagrams
+or by another specified chain construction. The direction of
+a dual transition is reversed and is not silently identified
+with this one.
+
+\begin{definition}[Multiplicative transitions]
+\label{def:transition-hall-product-preservation}
+A multiplicative transition commutes with the differential,
+unit and multiplication:
+\[
+ T_{R'R}m_R=m_{R'}(T_{R'R}\otimes T_{R'R}),\qquad
+ T_{R'R}\eta_R=\eta_{R'}.
+\]
+For partial charge windows the first equation is imposed only
+where both sides are defined. The transition comparisons must
+also respect shifts, orientation and the relative tensor when
+those are present.
+\end{definition}
+
+\begin{proposition}[Multiplication under transition]
+\label{prop:transition-hall-product-preservation-criterion}
+A coefficient-diagram transition preserving the extension
+maps and their trace comparisons satisfies these equations.
+\end{proposition}
+
+\begin{proof}
+Move the transition through each leg of the defining composite
+for the product, using its supplied pullback, coefficient and
+trace naturality squares. Their composition is the displayed
+multiplicative square. The zero-object square gives the unit.
+\end{proof}
+
+\begin{definition}[Coalgebra transitions]
+\label{def:transition-hall-coproduct-preservation}
+A coalgebra transition satisfies
+\[
+ \Delta_{R'}T_{R'R}=(T_{R'R}\otimes T_{R'R})\Delta_R,
+ \qquad\varepsilon_{R'}T_{R'R}=\varepsilon_R,
+ \qquad T_{R'R}\eta_R=\eta_{R'}.
+\]
+The maps for successive stages compose and preserve the
+specified degree and parity.
+\end{definition}
+
+\begin{proposition}[Coproduct under transition]
+\label{prop:transition-hall-coproduct-preservation-criterion}
+Transitions of collision coefficient diagrams preserving all
+their comparison maps satisfy these equations.
+\end{proposition}
+
+\begin{proof}
+Compose the naturality squares for the collision pullback,
+coefficient morphism and trace. They give the coproduct square.
+The empty-output and zero-object squares give the counit and
+coaugmentation identities.
+\end{proof}
+
+\begin{definition}[Primitive transitions]
+\label{def:transition-primitive-subspace-preservation}
+A primitive transition is the restriction
+$T^{\mathrm{Prim}}_{R'R}:P(H_R)\to P(H_{R'})$ of a
+coaugmentation- and coproduct-preserving transition. If an
+independently chosen primitive projection is used, its
+commutation with $T_{R'R}$ is an additional equation.
+\end{definition}
+
+\begin{proposition}[Preservation of the primitive kernel]
+\label{prop:transition-primitive-subspace-preservation-criterion}
+Every coalgebra transition above preserves primitives, and
+multiplicative transitions also preserve their Lie bracket.
+\end{proposition}
+
+\begin{proof}
+The reduced-coproduct square commutes, so its source kernel
+maps into its target kernel. Multiplicativity then preserves
+the two terms of the supercommutator.
+\end{proof}
+
+\begin{definition}[Radical transitions]
+\label{def:transition-radical-preservation}
+Let $L_R$ and $L_{R'}$ have the actual primitive forms $B_R$
+and $B_{R'}$, and let $T:L_R\to L_{R'}$ preserve the Lie
+bracket. A sufficient pairing condition for radical descent is:
+for every opposite homogeneous $y'\in L_{R'}$, there exists
+$a(y')\in L_R$ such that
+\[
+ B_{R'}(Tx,y')=B_R(x,a(y'))\quad\text{for all }x\in L_R.
+\]
+An adjoint lift satisfying $Ta(y')=y'$ is one possible stronger
+choice. In finite coordinates the condition is
+$T_\gamma^tG_{R',\gamma}=G_{R,\gamma}A_{-\gamma}$.
+\end{definition}
+
+\begin{proposition}[Radical descent]
+\label{prop:transition-radical-preservation-criterion}
+Under this condition $T(\operatorname{rad}B_R)
+\subset\operatorname{rad}B_{R'}$. Hence $T$ descends to the
+quotient Lie algebras. Compatible radical-preserving
+transitions give a quotient inverse system.
+\end{proposition}
+
+\begin{proof}
+For $x$ in the source radical, the right side of the pairing
+identity vanishes for every $y'$. Thus $Tx$ lies in the target
+radical. The quotient map is well defined, and it is a Lie
+map because $T$ is one. Its composition laws are inherited
+from the original transitions.
+\end{proof}
+
+\subsubsection*{Coalgebras and their completions}
+
+\begin{definition}[A geometric conilpotent coalgebra]
+\label{def:conilpotent-source-coalgebra}
+A geometric coalgebra $C_{X,R}$ is a coefficient object with a
+specified tensor, coaugmentation, counit and geometric collision
+coproduct. It is conilpotent if each element is killed by a
+sufficiently long iterated reduced coproduct. A sufficient
+filtration is
+$F_0=k1\subset F_1\subset\cdots$, exhaustive, with
+\[
+ \overline\Delta F_n\subset
+ \sum_{i,j>0,\ i+j\leq n}F_i\otimes F_j.
+\]
+If this is a chiral coalgebra on $E$ or on its Ran space, the
+coefficient category, chiral tensor, supports and filtration
+are part of the definition; ordinary vector-space data alone
+do not define it. Transitions preserve all these structures.
+\end{definition}
+
+\begin{proposition}[Conilpotence and a completed limit]
+\label{prop:conilpotent-source-coalgebra-firewall}
+The displayed positive filtration implies conilpotence of
+each algebraic element. An inverse limit of such coalgebras
+need not be conilpotent as an ordinary coalgebra. It carries
+the corresponding completed coproduct when that coproduct
+is continuous for the specified inverse-limit topology.
+\end{proposition}
+
+\begin{proof}
+Every positive factor in an iterated reduced coproduct consumes
+at least one unit of filtration degree, so more than $n$
+factors kill $F_n$. For the limit, consider the tensor
+coalgebra truncated by word length and take its inverse limit.
+An element with nonzero components in all lengths has
+nonzero reduced coproducts of arbitrarily high length.
+The compatible finite coproducts land instead in the completed
+tensor product, where the induced limit map is continuous.
+\end{proof}
+
+\begin{proposition}[Exactness of finite towers]
+\label{prop:sectorial-hall-truncation}
+For a countable inverse tower of actual finite-dimensional
+vector spaces in each fixed degree, the Mittag--Leffler
+condition holds and $R^1\varprojlim$ vanishes. Thus a short
+exact sequence of such towers remains exact under inverse
+limit. In particular, once compatible finite primitive and
+radical towers have been constructed,
+\[
+ \varprojlim_R(L_R/\operatorname{rad}B_R)
+ \simeq(\varprojlim_RL_R)/(\varprojlim_R\operatorname{rad}B_R).
+\]
+The kernel of an actual commuting map of inverse systems
+commutes with inverse limit without a Mittag--Leffler
+hypothesis. Operations on the limits still require their
+stated continuous tensor products.
+\end{proposition}
+
+\begin{proof}
+The images in a fixed finite-dimensional term form a descending
+chain, which stabilizes. This is Mittag--Leffler and gives
+$R^1\varprojlim=0$ for the countable tower, as proved in
+Proposition~\ref{prop:bkm-finite-tower-ml}. Apply the derived
+inverse-limit exact sequence to the radical short exact
+sequence. Kernels commute with inverse limits because both
+are limits. The continuous operation statement concerns the
+definition of their target topology, not exactness alone.
+\end{proof}
+
+The finiteness premise is substantial for moduli coefficients.
+For unbounded or infinite-dimensional systems one must prove
+an appropriate Mittag--Leffler property or retain the derived
+inverse-limit correction. Fibrewise K3 boundedness alone also
+does not construct a finite-type stability moduli space on
+$S\times E$. On the product hearts and stability conditions of
+\cite{AbramovichPolishchukTStructures,LiuProductStability},
+the required input is boundedness in every selected class,
+together with a support bound making the permitted charge
+window finite. Threefold boundedness results such as
+\cite{PiyaratneTodaModuli3folds} apply only after their stability
+hypotheses have been verified. Appendix~\ref{app:stability-support}
+states these product-stability and support requirements.
+
+\subsubsection*{Integral forms and the compact comparison}
+
+\begin{definition}[An integral-form quantum-group comparison]
+\label{def:integral-form-stable-envelope-comparison-datum}
+An integral-form comparison starts with a specified graded
+Hopf algebra and a lattice stable under its operations. It
+includes a separated complete topology, an appropriate full
+Hopf pairing for the double, its cross-relations and Cartan
+part, and a comparison preserving these structures with the
+proposed quantum group. A stable-envelope realization also
+specifies the geometric correspondence, chamber,
+polarization, support and normalization conditions, and its
+chamber composition maps.
+For the Igusa problem, one proposed target is denoted
+$Y_\hbar(\widehat{\mathfrak g}_{\Delta_5})$. Here the chosen
+central extension, its quantum-group presentation and its
+coproduct have to be defined independently. The desired
+comparison is then
+\[
+ D_\hbar(H^+)^{\mathrm{int}}_{\mathrm{compl}}
+ \longrightarrow Y_\hbar(\widehat{\mathfrak g}_{\Delta_5}).
+\]
+An isomorphism would require an inverse preserving these
+operations. The notation for the target does not itself
+construct a Yangian for the Borcherds Lie superalgebra.
+The compact Hall--Drinfeld proposal of \cite{CYQGVolIII} is
+subject to the same coefficient, pairing and completion requirements.
+\end{definition}
+
+\begin{proposition}[Scope of stable-envelope transport]
+\label{prop:integral-form-stable-envelope-transport-firewall}
+The stable-envelope theorem and the Schiffmann--Vasserot
+comparisons construct quantum-group objects on their specified
+symplectic and instanton moduli. Applying them to the compact
+reduced Hall construction requires the preceding comparison
+data. The formal tripled-quiver chart alone does not extend
+those objects or their operators to compact moduli.
+\end{proposition}
+
+\begin{proof}
+Appendix~\ref{app:stable-envelope} states the geometric
+hypotheses and the actual algebras of those constructions.
+A formal chart identifies a completed local deformation
+problem. It does not furnish a proper symplectic resolution,
+a torus action and stable envelopes on the whole compact
+moduli space, or the required coefficient and operator
+comparison. When those data are supplied, the induced map
+can be tested on the products, coproducts and double
+cross-relations stated in the definition.
+\end{proof}
+
+The normal-ordered charge group is independent of a stability
+chamber, but the selected sheaf moduli and their Hall operations
+can change with the chamber. A wall-crossing comparison must
+preserve the actual coefficient operations and match the
+primitive curve-counting chamber before its scalar series is
+identified with the normalized Igusa denominator. This is
+additional to a charge-lattice identification.
+
+The original compact problem therefore has several concrete
+next maps. First construct the reduced oriented coefficient
+morphism on extensions and its equality on three-step flags.
+Then construct the collision coproduct and the mixed
+product--coproduct comparison. An operator realization of the
+BKM algebra further requires the primitive Lie form and the
+recognition map; a geometric Pfaffian or protected trace
+requires its own family, state and modular-line comparison.
+The local constructions above supply domains and equations
+for these tasks without replacing them by the scalar product.
+The collective notation $\mathfrak O_{\mathrm{Hall},R}=0$
+means that these geometric data and their relevant bialgebra,
+pairing and transition equations have actually been supplied.
+Exactness of an inverse limit is imposed at the chosen
+completion, not inferred from the name of a finite stage.

@@ -1,0 +1,1326 @@
+\chapter*{The square-root realization problem}
+\addcontentsline{toc}{chapter}{The square-root realization problem}
+\label{ch:frontispiece}
+
+Counting curves on a product of a K3 surface and an elliptic curve
+produces the reciprocal of a genus-two modular form. The geometric
+realization problem asks for more: a space of protected states,
+operations on those states, and an oriented square root of their
+determinant. These are different constructions. Their relation can
+be tested by asking what information survives a signed count.
+
+Let \(S\) be a smooth complex projective K3 surface, so
+\(K_S\simeq\mathcal O_S\) and \(H^1(S,\mathcal O_S)=0\).
+Let \(E\) be a smooth elliptic curve with an origin, and put
+\(X=S\times E\). Choose a nonzero effective primitive class
+\(\beta_h\in H_2(S,\Z)\) with \(\beta_h^2=2h-2\).
+Here primitive means not an integer multiple greater than one of another
+integral class. For \(d\geq0\), the class \((\beta_h,d)\) in
+\(H_2(X,\Z)\) is the sum of \(\beta_h\) in a K3 fiber and
+\(d\) copies of an elliptic fiber.
+
+A one-dimensional subscheme \(C\subset X\) has this curve class
+and an integer \(n=\chi(\mathcal O_C)\). Translation in \(E\)
+moves \(C\) without changing its class. The reduced
+Donaldson--Thomas (DT) invariant counts translation orbits with the
+Behrend weight:
+\[
+ \DT_{n,(\beta_h,d)}=
+ \int_{\operatorname{Hilb}^{(\beta_h,d),n}(X)/E}\nu\,de.
+\]
+The Hilbert scheme parametrizes these subschemes, and \(\nu\) is
+the integer-valued Behrend function of the quotient. The integral is
+the weighted Euler characteristic: each level set \(\nu^{-1}(a)\)
+contributes \(a\,e(\nu^{-1}(a))\), with the stack weighting for
+finite stabilizers.
+
+The reduction removes the trivial obstruction
+direction induced by the holomorphic symplectic form of \(S\).
+It is this reduced quotient theory that has a nonzero counting series.
+
+To state its automorphic expression, write
+\[
+ \mathcal H_2=\{Z=Z^t\in M_2(\C):\Imag Z>0\},\qquad
+ Z=\begin{pmatrix}z_1&z_2\\z_2&z_3\end{pmatrix},\qquad
+ (q,r,s)=(e^{2\pi iz_1},e^{2\pi iz_2},e^{2\pi iz_3}).
+\]
+Let \(\chi_{10}^{\mathrm{OP}}\) be the monic Igusa cusp form of
+weight ten, with coefficient \([qrs]\chi_{10}^{\mathrm{OP}}=1\).
+
+For fixed \(h,d\), the counting series
+\(\sum_n\DT_{n,(\beta_h,d)}y^n\) is a Laurent series at
+\(y=0\). Let \(R_{h,d}(y)\in\Q(y)\) be its rational
+representative, whose existence follows from reduced DT/PT
+rationality \cite[Theorem 3]{OberdieckReducedPT}.
+The primitive counting identity is an equality with rational
+coefficients in \(r\):
+\[
+ Z^X_{\mathrm{OP}}(r,q,s):=
+ \sum_{h,d\geq0}R_{h,d}(-r)q^{h-1}s^{d-1}
+ =-\frac{1}{\chi_{10}^{\mathrm{OP}}(Z)}.
+\]
+Expansion of each rational coefficient at \(r=0\) recovers
+\(\sum_n\DT_{n,(\beta_h,d)}(-r)^n\).
+
+For each \(h\), the invariant is computed on a projective K3 surface
+carrying \(\beta_h\). Primitive deformation invariance makes this
+choice immaterial. The coefficient variable for Euler characteristic is \(y=-r\).
+The variables \(q\) and \(s\) record the K3 square through \(h-1\)
+and elliptic degree through \(d-1\).
+
+The equality uses reduced
+DT/stable-pair (Pandharipande--Thomas, PT) comparison,
+primitive Gromov--Witten (GW)/PT comparison, and the
+Oberdieck--Pixton theorem \cite[Theorem 3(i)]{OberdieckReducedPT},
+\cite[Proposition 5]{OPand}, \cite[Theorem 1]{OB}.
+The respective comparisons and expansion domains are stated below.
+
+The theta-normalized square root is the weight-five Igusa form
+\(\Delta_5\), fixed by
+\[
+ \chi_{10}^{\mathrm{OP}}=4096^{-1}\Delta_5^2,
+ \qquad [q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64,
+ \qquad 4096=64^2.
+\]
+The subscript BPS refers to the Bogomolny--Prasad--Sommerfield
+protected-state interpretation being sought. The rescaled scalar
+\(Z^{K3\times E}_{\mathrm{BPS}}:=-Z^X_{\mathrm{OP}}/4096\)
+is \(\Delta_5^{-2}\). This definition alone supplies neither a
+protected state space nor a trace on it. Such a trace requires the
+complex, cyclic pairing, completion, and comparison hypotheses
+specified in \S\ref{sec:beilinson-chain-placement}.
+
+\paragraph*{Squaring loses a character.}
+Consider the flat complex line on a circle obtained from
+\(\R\times\C\) by \((t,a)\sim(t+1,-a)\).
+Parallel transport around the circle multiplies a vector by \(-1\).
+Its tensor square has transport \(+1\), just like the trivial line.
+The two lines therefore have identical flat tensor squares but are
+not isomorphic as flat lines.
+
+More generally a line may be twisted
+by any order-two flat line without changing its square.
+A determinant section consequently does not determine an oriented
+Pfaffian section: the square-root line and its transport remain
+additional data. This is the distinction used by
+Proposition~\ref{prop:scalar-pfaffian-data-not-section}.
+
+For \(\Delta_5\), this lost datum is an order-two automorphic
+character. Recovering it geometrically is one part of the compact
+realization problem. A signed count gives the difference of two
+parity dimensions. Recovering the algebra of states also requires
+the individual dimensions and the multiplication.
+The first denominator calculation below shows where these separate
+questions occur.
+
+\chapter{The geometric realization problem}
+\label{ch:pentadic}
+
+An infinite product can be realized as the character of an algebra,
+as an index of geometric complexes, or as the determinant of a family.
+To compare these realizations, one must compare what is multiplied.
+The root algebra has brackets and two parity dimensions at each root.
+Geometric complexes have extension maps, orientations and specialization.
+A determinant line has transport and a section.
+
+The Igusa product gives a precise common target.
+Its root lattice fixes the charges, its Jacobi seed fixes the signed
+multiplicities, and its character fixes the automorphic line.
+Hilbert schemes provide independent geometric coefficient complexes.
+Their indices determine the scalar comparison, while their operations
+pose the stronger realization problem.
+
+\section{The lattice, roots and Weyl vector}
+\label{op:sec:root-datum}
+
+A lattice is a finite free abelian group with an integral
+symmetric pairing. The denominator uses the Lorentzian lattice
+\(\La^{2,1}=\HypPlan\oplus\langle2\rangle\), with basis
+\((f_2,f_3,f_{-2})\), pairings
+\((f_2,f_{-2})=-1\), \((f_3,f_3)=2\), and all other pairings zero.
+The two positive and one negative directions give signature
+\((2,1)\). Here $U(k)$ is the rank-two lattice with Gram
+matrix $\left(\begin{smallmatrix}0&k\\k&0\end{smallmatrix}\right)$.
+Changing the sign of one basis vector identifies the displayed
+hyperbolic plane with $U$.
+
+The index-four sublattice
+\(\La^{2,1}_{II}=\Z(2f_2)\oplus\Z f_3\oplus\Z(2f_{-2})\)
+is abstractly \(U(4)\oplus\langle2\rangle\), with determinant
+\(-32\). For integral indices \((n,\ell,m)\in\Z^3\), define
+\[
+ \alpha(n,\ell,m)=2nf_2-\ell f_3+2mf_{-2}.
+\]
+The three simple real roots
+\(\delta_1=2f_2-f_3\), \(\delta_2=2f_{-2}-f_3\),
+\(\delta_3=f_3\) have Gram matrix
+\[
+ ((\delta_i,\delta_j))=
+ \begin{pmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{pmatrix}
+ =4\Id_3-2\mathbf J_3.
+\]
+Here \(\mathbf J_3\) is the all-ones matrix. The reflections
+\(s_{\delta_i}(x)=x-(x,\delta_i)\delta_i\) preserve this form.
+They generate \(W^{(2)}(\La^{2,1}_{II})\).
+
+Choose the chamber
+\(\Poly_{II}\) containing the Weyl vector
+\[
+ \rho=\tfrac12(\delta_1+\delta_2+\delta_3)
+      =f_2-\tfrac12f_3+f_{-2},\qquad (\rho,\delta_i)=-1.
+\]
+Thus its wall inequalities in this convention are
+\((x,\delta_i)\leq0\) in the chosen negative cone.
+
+\section{Automorphic sections and the Jacobi seed}
+\label{sec:retained-e3-five-readings}
+
+The square root transforms as a section of a line, rather than as
+an invariant function. Write \(\Sp_4(\Z)\) for the group preserving
+the standard alternating form on \(\Z^4\). The notation
+\(\Sp(2,\Z)\) denotes the same group. Its block matrix
+\(g=\left(\begin{smallmatrix}A&B\\C&D\end{smallmatrix}\right)\)
+acts by \(gZ=(AZ+B)(CZ+D)^{-1}\).
+The weight-one automorphic line \(\mathcal L\) on the quotient
+stack is defined by this factor \(\det(CZ+D)\).
+A form of weight \(k\) and character \(\nu\) satisfies
+\[
+ F(gZ)=\nu(g)\det(CZ+D)^kF(Z).
+\]
+
+The product of the ten even genus-two theta constants is normalized
+so that its \(q^{1/2}r^{1/2}s^{1/2}\) coefficient is \(+64\).
+With this choice of sign it is \(\Delta_5\).
+Its character \(\nu_{\Delta_5}\) has order two
+\cite{Igusa1962,MAASS:1}. In particular
+\[
+ \mathcal D_X:=\Delta_5\in
+ H^0(\Sp_4(\Z)\backslash\mathcal H_2,
+       \mathcal L^{\otimes5}\otimes\nu_{\Delta_5}),\qquad
+ \Delta_{10}:=\Delta_5^2\in M_{10}(\Sp_4(\Z)).
+\]
+The alternative names \(\Phi_{10}^{\mathrm{un}}=\chi_{10}=\Delta_{10}\)
+refer to this theta normalization. The monic form is
+\(D_5=64^{-1}\Delta_5\), so \(\chi_{10}^{\mathrm{OP}}=D_5^2\).
+
+The product exponents come from one elliptic function with modular
+symmetry. A weak Jacobi form of weight zero and index one is a
+holomorphic function \(\phi(\tau,z)\) on \(\Hpl\times\C\).
+It obeys the transformation laws
+\begin{align*}
+ \phi\left(\frac{a\tau+b}{c\tau+d},\frac{z}{c\tau+d}\right)
+ &=e^{2\pi i cz^2/(c\tau+d)}\phi(\tau,z),\\
+ \phi(\tau,z+\lambda\tau+\mu)
+ &=e^{-2\pi i(\lambda^2\tau+2\lambda z)}\phi(\tau,z)
+ \quad(\lambda,\mu\in\Z),
+\end{align*}
+for \(\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)
+\in\SL_2(\Z)\). Its Fourier expansion has nonnegative powers
+of \(q_\tau=e^{2\pi i\tau}\).
+
+The normalized seed is
+\[
+ \phi_{0,1}(\tau,z)=\sum_{n\geq0,\ell\in\Z}f(n,\ell)
+ q_\tau^n e^{2\pi i\ell z}=e^{-2\pi iz}+10+e^{2\pi iz}+O(q_\tau).
+\]
+It is half the K3 elliptic genus. Its coefficients depend on
+\(4n-\ell^2\), vanish below \(-1\), and satisfy
+\(f(1,0)=108\), \(f(1,\pm1)=-64\), \(f(1,\pm2)=10\)
+\cite{EZ:1,DMVV}. The elliptic law explains the discriminant:
+replacing \(\ell\) by \(\ell+2\lambda\) replaces \(n\) by
+\(n+\lambda\ell+\lambda^2\), preserving \(4n-\ell^2\).
+
+\section{The automorphic product and denominator}
+\label{sec:edge-1-2}
+
+To expand at a cusp, choose the positive indices
+\[
+ \Gamma_{\mathrm{eff}}=
+ \{(n,\ell,m):m>0,\ n\geq0,\ \ell\in\Z\}
+ \cup\{(n,\ell,0):n>0,\ \ell\in\Z\}
+ \cup\{(0,\ell,0):\ell<0\}.
+\]
+Only \(4nm-\ell^2\geq-1\) contributes. Set
+\(\Gamma_{\mathrm{act}}=\{\gamma\in\Gamma_{\mathrm{eff}}:
+ f(nm,\ell)\ne0\}\). Expand each factor in its positive monomial
+in a cusp chamber where \(|q^nr^\ell s^m|<1\) on this support.
+For example \(\Imag z_1=\Imag z_3=t\), \(\Imag z_2=-a\),
+with \(0<a<t\) and \(t\) sufficiently large, selects such a
+chamber.
+
+The support condition bounds \(\ell\) at fixed \((n,m)\).
+The remaining degree-zero factor is \(1-r^{-1}\). These facts
+make coefficient extraction finite in the associated completion.
+The Borcherds product is
+\[
+ \Delta_5(Z)=64q^{1/2}r^{1/2}s^{1/2}
+ \prod_{(n,\ell,m)\in\Gamma_{\mathrm{eff}}}
+ (1-q^nr^\ell s^m)^{f(nm,\ell)}.
+\]
+
+A lattice-graded Lie superalgebra has even and odd root spaces.
+The signed multiplicity is their superdimension
+\(\smult\mathfrak g_\alpha=\dim\mathfrak g_\alpha^{\bar0}
+-\dim\mathfrak g_\alpha^{\bar1}\).
+The Gritsenko--Nikulin Borcherds--Kac--Moody superalgebra
+\(\mathfrak g_{\Delta_5}\) has
+\(\smult\mathfrak g_{\alpha(n,\ell,m)}=f(nm,\ell)\)
+on the active support. Its denominator identity reads
+\[
+ \operatorname{den}(\mathfrak g_{\Delta_5})
+ =\sum_{w\in W^{(2)}}\sgn(w)w\left(e^\rho-
+ \sum_{a\in\La^{2,1}_{II}\cap\R_{>0}\Poly_{II}}
+ m(a)e^{\rho+a}\right)
+ =64^{-1}\Delta_5(2Z).
+\]
+
+The symbols \(e^\alpha\) are lattice characters. Doubling \(Z\)
+converts the half-exponent product convention to these denominator
+characters. The integers \(m(a)\) are the imaginary-simple
+correction coefficients \cite[Theorem 2.3(a)]{GN}.
+
+The first correction can be seen without reconstructing the whole
+algebra. Remove the leading monomial from the product and take
+\(s\)-degree zero. Up to \(q\)-degree one, its factors are
+\[
+ (1-r^{-1})(1-qr)(1-q)^{10}(1-qr^{-1}).
+\]
+The coefficient of \(q\) is
+\[
+ -(1-r^{-1})(r+10+r^{-1})=-r-9+9r^{-1}+r^{-2}.
+\]
+Thus the constant term in \(r\) is \(-9\).
+
+In lattice notation
+it occurs at \(\rho+2f_2\). But
+\[
+ \rho^2=-2+\tfrac12=-\tfrac32,\qquad
+ (\rho+2f_2)^2=-6+\tfrac12=-\tfrac{11}{2}.
+\]
+Reflections preserve the norm, so this exponent is outside the Weyl
+orbit of \(\rho\). The uncorrected alternating sum cannot give
+the product. The imaginary-root correction is necessary.
+
+Signed multiplicities still leave a second question. At
+\(\delta_{123}=\delta_1+\delta_2+\delta_3\),
+Proposition~\ref{prop:bkm-delta123-presentation-count} computes
+\((\dim\mathfrak g^{\bar0}_{\delta_{123}},
+\dim\mathfrak g^{\bar1}_{\delta_{123}})=(29,93)\).
+Their difference is \(-64=f(1,1)\). The pair \((30,94)\) has the
+same difference. The exponent \(-64\) therefore cannot by itself
+recognize the parity-resolved root space, still less its brackets.
+This is why the compact primitive-algebra comparison requires more
+than the scalar denominator.
+
+\section{The regularized theta lift}
+\label{sec:edge-1-5}
+
+The Jacobi transformation law also explains the product's
+modularity. Introduce the rank-five lattice
+\(L=\La^{3,2}=\HypPlan\oplus\HypPlan\oplus\langle2\rangle\)
+of signature \((3,2)\), and set \(M=L(-1)\).
+The type-IV domain of negative oriented two-planes in \(L\) is the
+domain of positive oriented two-planes in \(M\).
+The exterior-square representation identifies its chosen component
+with \(\mathcal H_2\), and its arithmetic group with
+\(\Gamma_{3,2}=\wedge^2\Sp_4(\Z)/\{\pm\Id\}\).
+This rank-five lattice carries the theta kernel. The rank-three
+cusp quotient carries the product indices.
+
+The index-one elliptic theta functions are
+\(\theta_{1,\mu}(\tau,z)=\sum_{\ell\equiv\mu\ (2)}
+q_\tau^{\ell^2/4}e^{2\pi i\ell z}\), for \(\mu=0,1\).
+Writing \(\phi_{0,1}=h_0\theta_{1,0}+h_1\theta_{1,1}\) gives
+\([q_\tau^{n-\ell^2/4}]h_{\ell\bmod2}=f(n,\ell)\).
+The vector \(h\) has weight \(-1/2\) and Weil representation
+\(\rho_M=\rho_L^\vee\). Indeed the nontrivial theta component
+has eigenvalue \(i\) under \(T:\tau\mapsto\tau+1\),
+so its coefficient has eigenvalue
+\(-i\). In particular \([q_\tau^0]h_0=10\).
+
+For a positive plane \(P\) in \(M\), decompose a lattice vector
+as \(\lambda_++\lambda_-\), with \(\lambda_+\in P\) and
+\(\lambda_-\in P^\perp\). The
+kernel and additive lift are
+\begin{align*}
+ \Theta_M(\tau,P)&=\sum_{\gamma\in M^*/M}e_\gamma
+ \sum_{\lambda\in M+\gamma}
+ e^{\pi i\tau\lambda_+^2+\pi i\overline\tau\lambda_-^2},\\
+ \Phi_M(P,h)&=\int^{\mathrm{reg}}_{\SL_2(\Z)\backslash\Hpl}
+ v\sum_\gamma h_\gamma(\tau)
+ \overline{\Theta_{M,\gamma}(\tau,P)}\,\frac{du\,dv}{v^2}.
+\end{align*}
+Here \(\tau=u+iv\), squares use the form of \(M\), and
+\(e_\gamma\) is the standard basis of the group algebra \(\C[M^*/M]\).
+The Gaussian has absolute value
+\(e^{-\pi v(\lambda_+^2-\lambda_-^2)}\), which decays.
+
+The Hermitian pairing has weight \((1,1)\). Multiplication by
+\(v\) makes the integrand invariant. Regularization means the
+constant term of the meromorphic continuation obtained by inserting
+\(v^{-s}\) in the truncated integral, as specified in
+\S\ref{ssec:singular-theta}.
+
+Borcherds's theorem constructs a multiplicative form \(\Psi_M\)
+from this additive function. A homogeneous null coordinate
+\(w=X_M+iY_M\) satisfies \((w,w)_M=0\) and
+\((w,\overline w)_M>0\). Its oriented plane is
+\(P(w)=\operatorname{span}_{\R}(X_M,Y_M)\).
+With \(k=[q_\tau^0]h_0/2=5\) and
+\(C_B=\Gamma'(1)/2+\log\sqrt{2\pi}\), the precise relation is
+\[
+ \Phi_M=-4\log\|\Psi_M\|-4kC_B,\qquad
+ \|\Psi_M\|=|\Psi_M(w)|\,|Y_M|^k,\qquad
+ |Y_M|=\sqrt{(Y_M,Y_M)_M}.
+\]
+
+The theorem applies to weight \(-1/2\) inputs of type \(\rho_M\)
+with integral coefficients at nonpositive indices
+\cite[Theorem 13.3]{B}. Its general output weight varies with the
+input. For this chosen seed, the primitive-cusp product with leading
+coefficient \(+1\) is \(D_5\).
+
+Choose the ordered basis \((f_1,f_2,f_3,f_{-2},f_{-1})\) of
+\(L\), with nonzero pairings
+\((f_1,f_{-1})_L=(f_2,f_{-2})_L=-1\) and \(f_3^2=2\).
+In this basis the cusp frame is
+\(w=(z_2^2-z_1z_3,z_3,z_2,z_1,1)\). Substitution gives \(w^2=0\)
+and \(|Y_M|^2=2\det(\Imag Z)\). Therefore
+\[
+ \Phi_M(P,h)=-4\log\!\left(
+ |\Delta_5(Z)|[2\det(\Imag Z)]^{5/2}\right)
+ +4\log64-20C_B.
+\]
+The norm determines no phase.
+
+The positive leading coefficient
+\(64\) fixes the theta normalization separately. Thus the
+multiplicative lift, denoted
+\(\Theta_{\mathrm{sing}}^{\mathrm{Bor}}(h)=64D_5\), is
+\(\Delta_5\), and its denominator is
+\(64^{-1}\Delta_5(2Z)\). These are the automorphic,
+denominator, and theta descriptions of one form.
+
+\section{Geometric coefficients and the normalized half-index}
+\label{op:sec:half-index}
+
+The seed already has a geometric coefficient theory.
+For a smooth projective complex variety $Y$ of dimension $d$, put
+\begin{equation}\label{op:eq:elliptic-coefficient}
+ \mathcal E_{q,r}(Y)=r^{-d/2}\bigotimes_{j\ge1}
+ \left(
+ \Lambda_{-rq^{j-1}}T_Y^*\otimes
+ \Lambda_{-r^{-1}q^j}T_Y\otimes
+ \operatorname{Sym}_{q^j}T_Y^*\otimes
+ \operatorname{Sym}_{q^j}T_Y
+ \right).
+\end{equation}
+Here $\Lambda_tV=\sum_i t^i\Lambda^iV$ and
+$\operatorname{Sym}_tV=\sum_i t^i\operatorname{Sym}^iV$.
+An exterior power $\Lambda^iV$ has internal parity $i$ modulo two.
+The minus signs record this parity in the displayed class.
+Thus each coefficient is an actual finite direct sum of vector
+bundles with parity, rather than only a virtual rank.
+
+Apply derived global sections coefficient by coefficient.
+The resulting complex has total parity given by internal parity
+plus cohomological degree. Its signed Euler characteristic is
+\[
+ \operatorname{Ell}(Y;q,r)
+   =\chi\bigl(Y,\mathcal E_{q,r}(Y)\bigr).
+\]
+Completion is in nonnegative powers of $q$.
+At fixed $q$-degree the $r$-support is finite, and projectivity
+makes every coefficient cohomology finite-dimensional.
+This fixes both the carrier and the meaning of its index.
+
+For a surface $Y$, let $Y^{[N]}$ be the Hilbert scheme of
+length-$N$ zero-dimensional subschemes and define
+\[
+ F_Y(s,q,r)=\sum_{N\ge0}s^N
+              \operatorname{Ell}(Y^{[N]};q,r).
+\]
+The coefficient complexes are
+$R\Gamma(Y^{[N]},\mathcal E_{q,r}(Y^{[N]}))$.
+
+The Hilbert-scheme elliptic-genus theorem gives
+\begin{equation}\label{op:eq:Hilbert-product}
+ F_Y=\prod_{a>0,\,b\ge0,\,\ell\in\Z}
+          (1-s^aq^br^\ell)^{-c_Y(ab,\ell)},
+ \qquad
+ \operatorname{Ell}(Y;q,r)=\sum_{b,\ell}c_Y(b,\ell)q^br^\ell.
+\end{equation}
+This is the numerical McKay comparison for the crepant
+Hilbert--Chow resolution.\footnote{L.~Borisov and A.~Libgober,
+\emph{McKay correspondence for elliptic genera},
+\href{https://arxiv.org/abs/math/0206241}{arXiv:math/0206241},
+Corollary~6.7. The coefficient bundle convention is their
+equation~(3). The hypotheses here are smoothness and projectivity.}
+It does not identify the extension or chiral operations on
+the coefficient complexes.
+
+Separate the factors with zero $s$-degree by setting
+\begin{equation}\label{op:eq:boundary-factor}
+ b(q,r)=q^{1/2}r^{1/2}(1-r^{-1})
+       \prod_{j\ge1}(1-q^j)^{10}(1-rq^j)(1-r^{-1}q^j),
+ \qquad \mathcal B(q,r)=b(q,r)^2.
+\end{equation}
+The square is
+\[
+ \mathcal B=q(r+r^{-1}-2)
+       \prod_{j\ge1}(1-q^j)^{20}(1-rq^j)^2(1-r^{-1}q^j)^2.
+\]
+For the monic form $D_5=\Delta_5/64$ and
+$\Xi=D_5^2=\chi_{10}^{\mathrm{OP}}$, cancellation gives
+\begin{equation}\label{op:eq:K3-index}
+ F_S=\frac{s\mathcal B}{\Xi}
+     =\prod_{a>0,b\ge0,\ell\in\Z}
+           (1-s^aq^br^\ell)^{-2f(ab,\ell)}.
+\end{equation}
+The numerator is part of the normalization.
+It removes the boundary pole and restores the length-zero
+coefficient $1$. The cancelled expression lies in
+$\Z[r^{\pm1}][[s,q]]$.
+
+\begin{theorem}[The Enriques half-index]\label{op:thm:Enriques}
+Let $T$ be a smooth projective complex Enriques surface.
+Then
+\begin{equation}\label{op:eq:Enriques-index}
+ F_T=\frac{s^{1/2}b}{D_5}
+     =\prod_{a>0,b\ge0,\ell\in\Z}
+           (1-s^aq^br^\ell)^{-f(ab,\ell)},
+ \qquad F_T^2=F_S.
+\end{equation}
+These are identities of normalized elliptic-index series.
+\end{theorem}
+
+\begin{proof}
+The canonical cover $\pi:\widetilde S\to T$ is an
+\'{e}tale K3 double cover, so $T_{\widetilde S}=\pi^*T_T$.\footnote{
+I.~Dolgachev, \emph{A brief introduction to Enriques surfaces},
+\href{https://arxiv.org/abs/1412.7744v2}{arXiv:1412.7744v2},
+Section~3, pp.~7--8. Only the complex case is used.}
+The elliptic characteristic class therefore pulls back,
+and integration over the cover multiplies it by two.
+Thus $\operatorname{Ell}(T)=\phi_{0,1}$.
+
+Equation~\eqref{op:eq:Hilbert-product} gives the product.
+Separating its zero-$s$ factors in $D_5$ gives the quotient,
+and squaring doubles every exponent.
+\end{proof}
+
+The surface $T$ is a separate geometric input.
+No Enriques involution is required on the originally chosen $S$.
+The equality $F_T^2=F_S$ compares indices of independently
+defined complexes. It supplies no equivalence between their
+states or their products.
+
+The canonical line $K_T$ defines a character on the surface $T$.
+The automorphic character belongs to a line over Siegel moduli.
+A geometric square-root comparison must relate these bases and lines.
+
+The first nontrivial length calculation makes the distinction
+visible. At $q=0$, the Enriques seed has coefficients
+$r^{-1}+10+r$. The length-two term comes from two length-one
+factors or one length-two factor, giving
+\begin{align}
+ [s^2q^0]F_T&=r^2+11r+66+11r^{-1}+r^{-2},\notag\\
+ [s^2q^0]F_S&=3r^2+42r+234+42r^{-1}+3r^{-2}.
+ \label{op:eq:length-two}
+\end{align}
+For example the constant coefficient of the first line is
+$\binom{11}{2}+1+10=66$.
+The summands count two weight-zero length-one contributions,
+the opposite-weight pair, and the weight-zero length-two term.
+
+Only after cancelling the boundary factors may one set $r=1$.
+All positive-energy exterior and symmetric factors in
+\eqref{op:eq:elliptic-coefficient} then cancel.
+The remaining index is the topological Euler characteristic.
+Consequently
+\begin{align*}
+ F_T(s,q,1)&=\prod_{a\ge1}(1-s^a)^{-12}
+            =1+12s+90s^2+520s^3+\cdots,\\
+ F_S(s,q,1)&=\prod_{a\ge1}(1-s^a)^{-24}
+            =1+24s+324s^2+3200s^3+\cdots.
+\end{align*}
+The raw quotients in \eqref{op:eq:K3-index} and
+\eqref{op:eq:Enriques-index} have vanishing numerator and
+denominator at $r=1$. Their cancelled series specify the value.
+
+\subsection{A coefficient before taking its index}
+
+The two parities can be calculated directly at positive energy.
+Write $\Omega_T=T_T^*$ and let $K_T=\Lambda^2\Omega_T$.
+Since $K_T^{\otimes2}\simeq\mathcal O_T$, the $qr$ coefficient
+of \eqref{op:eq:elliptic-coefficient} is the internally even bundle
+\begin{equation}\label{op:eq:Enriques-bundle}
+ B_{11}=\operatorname{Sym}^2\Omega_T\oplus K_T
+                              \oplus\Omega_T\oplus T_T.
+\end{equation}
+Indeed the expression through $q$-degree one is
+\[
+ r^{-1}(1-r\Omega_T+r^2K_T)
+ \bigl(1+q((1-r)\Omega_T+(1-r^{-1})T_T)\bigr)+O(q^2).
+\]
+Extracting $qr$ gives
+$\Omega_T^{\otimes2}+K_T\otimes\Omega_T+K_T\otimes T_T$.
+The rank-two identities
+$K_T\otimes T_T\simeq\Omega_T$ and
+$K_T\otimes\Omega_T\simeq T_T$ give
+\eqref{op:eq:Enriques-bundle}.
+
+On an Enriques surface, $c_2(T)=12$,
+$\chi(\mathcal O_T)=1$, and $c_1(T)=0$ rationally.
+Its Hodge numbers give $h^1(\Omega_T)=10$.
+
+The K3 cover has no nonzero holomorphic symmetric cotangent
+tensors of positive degree.\footnote{S.~Kobayashi,
+\emph{The first Chern class and holomorphic symmetric tensor fields}.
+See Corollary~8 in
+\href{https://www.jstage.jst.go.jp/article/jmath1948/32/2/32_2_325/_pdf}
+{J.~Math. Soc. Japan \textbf{32} (1980), 325--329}.}
+
+Pullback and Serre duality therefore make $H^0$ and $H^2$
+vanish for $T_T$, $\Omega_T$, and $\operatorname{Sym}^2\Omega_T$.
+
+For the last bundle, Riemann--Roch gives
+\[
+ \operatorname{ch}(\operatorname{Sym}^2\Omega_T)=3-4c_2(T),
+ \qquad
+ \chi(\operatorname{Sym}^2\Omega_T)=3-48=-45.
+\]
+The same formula for $T_T$ gives $\chi(T_T)=-10$.
+The canonical line has cohomology dimensions $(0,0,1)$.
+
+Adding the four summands yields
+\[
+ (h^0,h^1,h^2)(T,B_{11})=(0,65,1),
+ \qquad \operatorname{sdim}H^*(T,B_{11})=1-65=-64.
+\]
+Thus the actual coefficient has parity dimensions $(1|65)$.
+
+The denominator root space has $(29|93)$ at the corresponding
+interior root, as computed above. Their indices agree, but the
+two parity spaces are not isomorphic.
+A geometric comparison must account for the differential,
+the operations and their possible kernels.
+It may instead be an action of the root algebra on the state complex.
+
+\section{Reduced counting and the scalar normalization}
+\label{sec:level-n-scalar-shadow}
+
+The Hilbert-scheme count in the opening can be compared with maps
+and sheaves. A stable pair on \(X\) is a map
+\(\mathcal O_X\to F\), with \(F\) pure of dimension one and
+zero-dimensional cokernel. The reduced invariant \(\PT_{n,(\beta,d)}\)
+is the corresponding Behrend-weighted quotient count by \(E\).
+For nonzero K3 class, Oberdieck proves
+\[
+ \sum_n\DT_{n,(\beta,d)}y^n
+ =\sum_n\PT_{n,(\beta,d)}y^n.
+\]
+There is no degree-zero correction factor: \(\chi_{\mathrm{top}}(X)
+=\chi_{\mathrm{top}}(S)\chi_{\mathrm{top}}(E)=24\cdot0=0\)
+\cite[\S0.3, Theorem 3(i)]{OberdieckReducedPT}.
+
+For maps, let \(\overline M^{\bullet}_{g,1}(X,(\beta_h,d))\)
+be the moduli of possibly disconnected stable maps, with no
+contracted connected components, one marked point, and arithmetic
+genus \(g\). Choose \(\beta_h^\vee\in H^2(S,\Q)\) with
+\(\langle\beta_h,\beta_h^\vee\rangle=1\). If \(\pi_S,\pi_E\)
+are the projections, the reduced Gromov--Witten invariant is
+\[
+ N_{g,h,d}=\int_{[\overline M^{\bullet}_{g,1}(X,(\beta_h,d))]^{\mathrm{red}}}
+ \operatorname{ev}_1^*(\pi_S^*\beta_h^\vee\cup\pi_E^*[0_E]).
+\]
+The insertion removes the translation orbit, and the value is
+independent of the dual class. Primitive deformation invariance
+makes it depend on \(h\), rather than the chosen primitive class.
+
+A nonzero disconnected contribution has one component nontrivial
+over \(S\). Its other components have genus one. Thus its arithmetic
+genus is nonnegative \cite[\S1.2]{OPand}.
+
+Write
+\[
+ Z_{\mathrm{PT}}^{\mathrm{rat}}(y,q,s)
+ =\sum_{h,d\geq0}R_{h,d}(y)q^{h-1}s^{d-1}.
+\]
+The GW/PT comparison of Oberdieck--Pandharipande gives
+\[
+ Z_{\mathrm{GW}}(u,q,s):=\sum_{g,h,d\geq0}
+ N_{g,h,d}u^{2g-2}q^{h-1}s^{d-1}
+ =Z_{\mathrm{PT}}^{\mathrm{rat}}(-e^{iu},q,s),
+\]
+where the right side means its Laurent expansion at \(u=0\)
+\cite[Proposition 5]{OPand}. Oberdieck--Pixton prove
+\(Z_{\mathrm{GW}}=-1/\chi_{10}^{\mathrm{OP}}(r,q,s)\) under
+\(r=e^{iu}\) \cite[Theorem 1]{OB}. Their theorem proves the
+primitive Igusa formula conjectured in \cite{OPand}.
+
+Combining the comparisons gives precisely
+\[
+ Z^X_{\mathrm{OP}}=Z_{\mathrm{PT}}^{\mathrm{rat}}(-r,q,s)
+ =-4096\Delta_5^{-2},\qquad
+ Z^{K3\times E}_{\mathrm{BPS}}=\Delta_{10}^{-1}
+ =-\tfrac1{4096}Z^X_{\mathrm{OP}}.
+\]
+
+These are identities of coefficientwise rational functions before
+choosing Laurent expansions. The DT/PT expansion is at \(r=0\).
+The chosen product chamber instead gives the expansion at
+\(r=\infty\), and the GW substitution gives the expansion at
+\(u=0\). For example the coefficient of \(q^{-1}s^{-1}\) is
+\[
+ -\frac{r}{(1-r)^2}
+ =\begin{cases}
+ -\sum_{n\geq1}n r^n,& |r|<1,\\
+ -\sum_{n\geq1}n r^{-n},& |r|>1.
+ \end{cases}
+\]
+Thus the two Laurent series have the same rational representative.
+
+Under the GW substitution,
+\(r-2+r^{-1}=2\cos u-2=-u^2+O(u^4)\), so
+\(-1/(r-2+r^{-1})=u^{-2}+O(1)\), consistent with genus zero.
+The sign \(y=-r\) is independent of the orientation character.
+The formula stated here does not include imprimitive K3 classes.
+
+\section{Five distinct numerical invariants}
+
+The counting and algebraic constructions use several Euler
+characteristics and ranks. The group $\Gamma_{\mathrm{ind}}=\Z^3$
+of triples $(n,\ell,m)$ is called the \emph{Gram-index lattice}.
+Its exponent map $\alpha$ identifies it with $\La^{2,1}_{II}$.
+Write $r_{\mathrm{Gram}}=3$ for its rank.
+
+The lattice
+$\widetilde H(S,\Z)=H^0(S,\Z)\oplus H^2(S,\Z)\oplus H^4(S,\Z)$,
+with pairing
+$(r,c,a)\cdot(r',c',a')=c\cdot c'-ra'-r'a$,
+is called the \emph{Mukai lattice}.
+Its algebraic sublattice replaces $H^2(S,\Z)$ by $\NS(S)$.
+Here $\NS(S)$ is the image of the first Chern class of line
+bundles in integral cohomology.
+The five numerical values are
+\[
+ (\kappa_{\mathrm{cat}},\kappa^{\mathrm{Hodge}}_{\mathrm{ch}},
+ r_{\mathrm{Gram}},\kappa_{\mathrm{BKM}},
+ \kappa_{\mathrm{fiber}})=(0,0,3,5,24).
+\]
+The first is \(\chi(\mathcal O_X)=2\cdot0=0\).
+The Hodge numbers \(h^{0,q}(X)\), for \(q=0,1,2,3\), are
+\((1,1,1,1)\), giving the second invariant \(1-1+1-1=0\).
+
+The third counts the three Gram coordinates of the type-II
+Heisenberg--Cartan algebra. It is not the rank of the algebraic
+Mukai lattice \(H^0(S,\Z)\oplus\NS(S)\oplus H^4(S,\Z)\),
+which has rank five when \(\NS(S)\simeq U\oplus\langle-2\rangle\).
+The fourth is the Borcherds weight \(f(0,0)/2=10/2=5\).
+The last is \(\chi_{\mathrm{top}}(S)=1+22+1=24\).
+
+A genus-one Heisenberg bar coefficient is a different quantity.
+Its definition requires the chosen bar complex, a trace functional,
+and a normalized genus-one class. Denote this coefficient by
+\(\kappa^{\mathrm{Heis}}_{\mathrm{ch}}\) when these data are fixed.
+The comparison \(\kappa^{\mathrm{Heis}}_{\mathrm{ch}}=r_{\mathrm{Gram}}=3\)
+requires a map identifying that normalized coefficient with the
+Gram rank. Rescaling the trace rescales the coefficient and leaves
+the rank unchanged. The five-entry tuple with
+\(\kappa^{\mathrm{Heis}}_{\mathrm{ch}}\) in its third position
+therefore assumes this additional comparison.
+
+
+In particular
+\(\kappa_{\mathrm{BKM}}=
+\kappa^{\mathrm{Hodge}}_{\mathrm{ch}}+\chi(\mathcal O_S)\)
+would give \(5=0+2\), which is false. The values
+\(\chi(\mathcal O_S)=2\) and \(\chi_{\mathrm{top}}(S)=24\)
+are different invariants.
+
+For any admissible Borcherds input
+\(\Phi_N\), the weight formula instead reads
+\(\kappa_{\mathrm{BKM}}(\Phi_N)=c_N(0)/2\), with \(c_N(0)\)
+the zero-coset constant coefficient of that input.
+The \((t,N;k)=(1,1;5)\) row of the Cl\'ery--Gritsenko catalog
+uses \(\phi_{0,1}\) \cite{GC,GN}. The Fake-Monster product
+\(\Phi_{12}\) uses constant coefficient \(24\), giving weight
+\(12\), with its denominator on the Leech-extension lattice
+\(\mathrm{II}_{25,1}\) \cite{BorcherdsGKM88,Borcherds95}.
+The two weights belong to different inputs and lattices.
+
+For the cyclic Chaudhuri--Hockney--Lykken (CHL) orbifold inputs with
+orders \(N=1,2,3,4,6\), the eta-product cycle shapes are
+\(1^{24},1^82^8,1^63^6,1^42^24^4,1^22^23^26^2\).
+Their eta weights are \(12,8,6,5,4\). Subtracting two gives the
+squared-product weights \(10,6,4,3,2\), hence square-root weights
+\(5,3,2,3/2,1\) \cite[Table 1, \S3]{GK10Composite}.
+
+These rows have different orbifold inputs. Even a comparison with
+the unchanged number \(0+2\) would have equality at \(N=3\).
+The counterexample
+at \(N=1\) already disproves a universal identification of the
+Borcherds weight with the Hodge and holomorphic Euler invariants.
+
+
+\section{Charges and extension operations}
+\label{op:sec:operations}
+
+The root indices must be compared with geometric charges before
+extension operations can be transported.
+For two Mukai vectors $(Q,P)$, the quadratic function
+\[
+ \Pi_X(Q,P)=\bigl((Q,Q)/2,(Q,P),(P,P)/2\bigr)
+\]
+is called the \emph{Gram map}. Sheaf charges lie in the
+algebraic Mukai sublattice. The following calculation also
+applies to the full lattice.
+
+The first coordinate of \(\Pi_X(Q+Q',P+P')\) differs from the
+sum of the first coordinates by \((Q,Q')\). The middle differs
+by \((Q,P')+(Q',P)\), and the last by \((P,P')\).
+Thus the Gram map is quadratic, rather than additive.
+
+Its polarization does give an additive refinement.
+Let $C=\widetilde H(S,\Z)\oplus\widetilde H(S,\Z)$ and set
+\[
+ B(c,c')=\Pi_X(c+c')-\Pi_X(c)-\Pi_X(c').
+\]
+On $C\oplus\Z^3$ define
+\begin{equation}\label{op:eq:polarized-charge}
+ (c,\lambda)\star(c',\lambda')
+       =(c+c',\lambda+\lambda'+B(c,c')).
+\end{equation}
+The map $(c,\lambda)\mapsto(c,\lambda-\Pi_X(c))$
+identifies this law with componentwise addition.
+In particular it is associative and commutative.
+
+Its group-homomorphic sections over $C$ are
+$c\mapsto(c,\Pi_X(c)+L(c))$ for additive maps $L:C\to\Z^3$.
+This constructs the charge-group refinement.
+A Hall comparison must still transport the coefficient complexes
+and their extension maps through that refinement.
+
+There is a second geometric issue before choosing coefficients.
+Write $\mathcal M_\alpha$ for translation-invariant moduli stacks
+of coherent sheaves on $X=S\times E$ in an extension-closed class.
+Their charges add in extensions.
+
+Let $\mathcal H^{\mathrm{ext}}_{\alpha,\beta}$ parametrize
+short exact sequences with endpoint charges $\alpha,\beta$.
+Set
+\[
+ \mathcal Q_\alpha=[\mathcal M_\alpha/E],\qquad
+ \mathcal H_{\alpha,\beta}
+     =[\mathcal H^{\mathrm{ext}}_{\alpha,\beta}/E].
+\]
+The quotient uses simultaneous translation of the whole sequence.
+Every quotient has a map to the classifying stack $BE$ of
+principal $E$-bundles.
+
+\begin{proposition}\label{op:prop:common-torsor}
+The reduced extension correspondence has endpoints over $BE$:
+\begin{equation}\label{op:eq:Hall-span}
+ \mathcal Q_\alpha\times_{BE}\mathcal Q_\beta
+       \longleftarrow\mathcal H_{\alpha,\beta}
+       \longrightarrow\mathcal Q_{\alpha+\beta}.
+\end{equation}
+Its left-hand space is canonically
+$[(\mathcal M_\alpha\times\mathcal M_\beta)/E_{\mathrm{diag}}]$.
+Iterated correspondences are the corresponding flag stacks on
+one common torsor. The zero object gives the relative unit $BE$.
+\end{proposition}
+
+\begin{proof}
+Over a test scheme, an object in the fiber product is a pair of
+$E$-torsors, equivariant families, and an isomorphism of torsors.
+Transport across that isomorphism places both families on one torsor.
+Repeating a single torsor gives the inverse construction, on both
+objects and arrows. An extension on this torsor gives the span.
+
+Either bracketing of three extensions gives a three-step flag.
+Taking preimages and quotients recovers the intermediate objects,
+and further flags give all refinement compatibilities.
+The zero sheaf has every $E$-translation as a stabilizer, so its
+quotient is $BE$.
+\end{proof}
+
+Quotienting the endpoints independently would replace the fiber
+product over $BE$ by a product over a point and discard this
+torsor identification. To define Hall operations from
+\eqref{op:eq:Hall-span}, choose a coefficient theory with pullback
+and pushforward. Their composites require orientation and support
+conditions on the correspondence.
+Coherent complexes and vanishing-cycle sheaves have different
+such operations. The correspondence alone does not identify them.
+
+\subsection{A reduced coefficient as a matrix element}
+
+Reduction can change which functional on an algebra represents
+the counting invariant. This has an elementary model.
+Let $H$ and $R$ be unital complex algebras and suppose
+\[
+ I:H\longrightarrow R[\epsilon]/(\epsilon^2),\qquad
+ I(a)=I_0(a)+\epsilon I_1(a)
+\]
+is a unital algebra homomorphism, with $\epsilon$ central.
+Comparing its two coefficients gives
+\begin{equation}\label{op:eq:reduced-derivation}
+ I_1(ab)=I_0(a)I_1(b)+I_1(a)I_0(b),\qquad I_1(1)=0,
+\end{equation}
+while $I_0$ is unital and multiplicative.
+The reduced coefficient $I_1$ therefore need not be a character.
+
+Nevertheless it is a matrix element of a unital action:
+\begin{equation}\label{op:eq:reduced-module}
+ \rho(a)=\begin{pmatrix}I_0(a)&I_1(a)\\0&I_0(a)\end{pmatrix}
+       \quad\text{on the right $R$-module }R\oplus R.
+\end{equation}
+Equation~\eqref{op:eq:reduced-derivation} is precisely the
+off-diagonal equation in $\rho(ab)=\rho(a)\rho(b)$.
+The first summand is invariant, and the quotient is another copy
+of the module defined by $I_0$.
+The coefficient from the second summand to the first is $I_1$,
+including its vanishing on the unit.
+This model distinguishes a state action from an algebra character.
+To use it in reduced curve counting requires an independently
+constructed geometric map $I$ and a comparison with the actual state.
+
+\section{Collision coefficients before global integration}
+\label{op:sec:collision-coefficients}
+
+The coefficient must retain how supports meet.
+The displacement parameter in the following model belongs to a
+spectral elliptic curve. It is distinct from the geometric factor
+$E$ of $S\times E$ and from the Jacobi parameter curve.
+An identification of those roles requires a map between the
+corresponding families.
+
+In a formal coordinate near zero displacement, the three equations are
+\[
+ x(x+h)=0,\qquad y(y+h)=0,\qquad xy=0.
+\]
+For $h\ne0$ their solutions are $(0,0)$, $(-h,0)$ and $(0,-h)$.
+At $h=0$ the three points meet.
+The coherent derived zero locus retains the equations through
+\[
+ K_h=\C[h,x,y]\otimes\Lambda(\epsilon_1,\epsilon_2,\epsilon_3),
+ \qquad
+ (d\epsilon_1,d\epsilon_2,d\epsilon_3)
+       =(x(x+h),y(y+h),xy),\qquad |\epsilon_i|=-1.
+\]
+Its negative cohomology records relations among the equations.
+
+Adding dual multiplier coordinates gives a different construction:
+\begin{equation}\label{op:eq:critical-triangle}
+ W_h=Px(x+h)+Qy(y+h)+Txy.
+\end{equation}
+Its critical equations include derivatives in $P,Q,T$.
+The critical completion, its constructible coefficients and its
+matrix factorizations are developed in
+Chapters~\ref{vc:chap:critical} and~\ref{mc:chap:categories}.
+The coherent and constructible comparisons specify different
+recipients, gradings and support functors.
+
+One composition already explains why the full coefficient matters.
+A matrix factorization of $W_h$ is a parity-graded free module
+with an odd operator $D$ satisfying $D^2=W_h\operatorname{id}$.
+
+For $R=\C[h,P,Q,T]$, take the two branch factorizations
+$D_0,D_1$ in \eqref{mc:tcrm:eq:objects}.
+Their morphism complexes have odd closed maps
+$f:D_0\to D_1$ and $g:D_1\to D_0$ represented by a Clifford
+generator $\gamma_1$ with $\gamma_1^2=-P$.
+Their return is
+\[
+ [g f]=-P[1_{D_0}]\ne0.
+\]
+It is killed by $h$, as proved in
+Proposition~\ref{mc:tcrm:prop:composites}.
+Inverting $h$ contracts the off-diagonal morphisms and loses this
+return. A comparison made only after that localization therefore
+does not construct the comparison at the collision.
+
+The central critical coefficient also has a nonzero monodromy
+summand with zero global cohomology, by
+Theorem~\ref{vc:cqm:thm:coefficient} and
+Proposition~\ref{vc:cqm:prop:integral}.
+Its absence from the global periodic invariant does not make it
+the zero sheaf. Thus the coefficient functor and its operations
+must be constructed before taking global sections or an index.
+
+\section{The compact Pfaffian realization}
+\label{sec:edge-2-3}
+
+A compact construction must produce a square-root line and its
+section before comparing it with \(\Delta_5\). The target
+\(X=S\times E\) has a holomorphic volume form after one is chosen
+on each factor. The construction requires reduced self-Ext complexes
+on its moduli of objects, describing infinitesimal deformations and
+obstructions. Their determinant lines are candidates for the square
+of a Pfaffian line. The reduced complexes, orientations, sections,
+and their gluing are the geometric data to be constructed.
+
+A morphism from the obstruction sheaf to the structure sheaf
+is called a \emph{cosection}. Its kernel alone does not define a
+reduced perfect obstruction theory. The reduction here requires
+the actual perfect complex and compatible maps on extension families.
+
+An \(E_3\)-prefactorization datum assigns complexes to open sets
+and compatible operations for disjoint insertions, with the
+three-dimensional little-disks operations where specified.
+The notation
+\(\mathfrak A_X\in E_3\text{-}\mathrm{HolFA}(X)\)
+means a chosen such holomorphic datum. A Calabi--Yau category alone
+is not an asserted construction of this datum
+\cite{KontsevichOperadsMotives,TamarkinLittleDisks,
+LambrechtsVolicLittleDisks,CostelloGwilliam1,CostelloGwilliam2}.
+
+Choose a stability condition with Harder--Narasimhan filtrations:
+finite filtrations whose semistable quotients have strictly decreasing
+phases. Let \(R\) select a finite range of their types.
+The construction needs a hybrid configuration carrier on \(E\).
+It contains ordinary finite configurations and the wrapped strata
+for objects supported over the whole elliptic factor.
+
+Charges lie in a lattice \(\Gamma_{X,R}\) with quadratic Gram
+map \(\Pi_X\). Vanishing-cycle sheaves \(\Phi_R\) record the
+local critical geometry, and an orientation \(o_R\) is needed to
+glue them. Hall correspondences \(H_R\) encode extensions and their
+composition. The source coalgebra \(C_{X,R}\) and its Koszul cobar
+\(\Theta_{\mathrm{Kos},R}\) retain the differentials and higher
+operations needed to compare that source with the denominator.
+The primitive part after Gram descent is \(P_R^\Pi\).
+
+These objects, a Pfaffian line \(\mathcal L_{\mathrm{Pf},R}\)
+and section \(\mathrm{pf}_{X,R}\), its orientation character
+\(\epsilon_{o,R}\), and a recognition map \(\mathrm{Rec}_R\)
+form compatible finite data. Their inverse limit is
+\[
+ \mathfrak D_X^{DI}=\varprojlim_R
+ (\mathcal A^{E_3}_{X,R},F^{\mathrm{hyb}}_{X,R},\Gamma_{X,R},
+ \Pi_X,\Phi_R,o_R,H_R,P_R^\Pi,C_{X,R},\Theta_{\mathrm{Kos},R},
+ \mathcal L_{\mathrm{Pf},R},\mathrm{pf}_{X,R},
+ \epsilon_{o,R},\mathrm{Rec}_R).
+\]
+Every entry requires compatible transition maps. This inverse
+system specifies the target of the construction.
+The compact geometric entries remain to be constructed.
+
+The orientation hypotheses have separate roles. Condition \((D0)\)
+requires an orientation through the degeneration, agreeing with the
+generic reduced orientation. Condition \((O1)\) requires a square
+root of the reduced determinant line on the quotient by \(E\),
+extending over the cusp boundary. Condition \((O1)^+\) requires
+Weyl-equivariant root lifts with a trivialized sign cocycle on
+the actual action groupoid. A reduction to constant-group
+cohomology \(H^2(W^{(2)};\mathbb F_2)\) is additional data.
+
+Condition
+\((O2_{\mathrm{atlas}})\) requires type-II wall charts with a
+rank-one normal Pfaffian factor, a section-compatible root lift
+and reflection-invariant units. The reflection changes the normal
+coordinate's sign, and the chosen lift has residual character
+\(-1\) on each simple reflection. The formal set of twelve signs
+has \(2^{12}=4096\) elements; a geometric orbit of that size needs
+its own bijection. The equality with \(64^2\) is numerical.
+
+The finite geometric Pfaffian datum \((P_{\mathrm{fin}})\) further
+requires the following data at each finite stage, on the reduced
+compact quotient \(\mathfrak Q_R\).
+\begin{enumerate}
+\item Reduced perfect self-Ext complexes \(K_R\) with odd skew
+self-duality \(K_R\simeq K_R^\vee[1]\), compatible with reduction
+and the elliptic quotient.
+\item Orientations and Pfaffian lines with specified isomorphisms
+\(\mathcal L_{\mathrm{Pf},R}^{\otimes2}\simeq\mathcal L_{\det,R}\).
+\item Finite skew blocks and Pfaffian sections, with the prescribed
+active support, signed exponents, and full even and odd dimensions.
+\item Type-II wall factorizations
+\(\mathrm{pf}_R=\upsilon_Ru_R\mathrm{pf}^{\mathrm{tan}}_R\),
+with \(\upsilon_R\) an invariant unit and normal divisor order one.
+\item Line comparisons with \(\mathcal L^5\otimes\nu_{\Delta_5}\),
+compatible with determinant squares and cusp frames, with leading
+coefficient \(64\).
+\item Strict section-preserving transitions with closed images and
+vanishing \(\lim^1\) for the line and section systems.
+\end{enumerate}
+These hypotheses retain the finite geometric complexes and maps.
+Equality of scalar products supplies none of these data.
+
+The orientation character acts on lattice reflections. To compare
+it with automorphy, extend the Maass character to the homogeneous
+null cone over \(\mathcal H_2\). At the cusp frame \(w(Z)\), put
+\[
+ \widehat\Delta_5(tw(Z))=t^{-5}\Delta_5(Z),\qquad t\in\C^\times.
+\]
+
+Write \(\sigma:\Sp_4(\Z)\to\Gamma_{3,2}\) for the exterior-square
+homomorphism. Its frame relation
+\(\sigma(g)w(Z)=\det(CZ+D)w(gZ)\) gives
+\(\widehat\Delta_5(\sigma(g)w)=
+\nu_{\Delta_5}(g)\widehat\Delta_5(w)\).
+The character descends through the kernel \(\{\pm\Id_4\}\),
+where it is trivial. Since \(\Gamma_{3,2}\subset\mathrm{SO}(L)\)
+and \(\det(-\Id_L)=-1\), it has a unique extension
+\[
+ \widetilde\nu_{\Delta_5}:
+ \Gamma_{3,2}\times\{\pm\Id_L\}\longrightarrow\{\pm1\},
+ \qquad \widetilde\nu_{\Delta_5}(-\Id_L)=(-1)^5=-1.
+\]
+The central value is forced by the homogeneous degree.
+
+Extend each \(s_{\delta_i}\) by the identity on \(f_{\pm1}\).
+Choose \(g_i=\operatorname{diag}(V_i,V_i^{-t})\), where
+\[
+ V_1=\begin{pmatrix}-1&0\\2&1\end{pmatrix},\qquad
+ V_2=\begin{pmatrix}-1&-2\\0&1\end{pmatrix},\qquad
+ V_3=\begin{pmatrix}-1&0\\0&1\end{pmatrix}.
+\]
+
+These matrices are symplectic, with \(\sigma(g_i)=-s_{\delta_i}\) and
+\(\det(V_i^{-t})=-1\). Maass's formula gives
+\(\nu_{\Delta_5}(g_i)=1\) \cite[(1.5)]{GN}.
+Thus \(\Delta_5(s_{\delta_i}Z)=-\Delta_5(Z)\), while
+\(\widetilde\nu_{\Delta_5}(s_{\delta_i})=-1\).
+The extended character restricts to the determinant on
+\(W^{(2)}(\La^{2,1}_{II})\), since the three reflections generate it.
+These are the linear reflection signs of
+\cite[Propositions 2.1--2.2]{GN}.
+
+\begin{theorem}[Pfaffian--Dirac]
+\label{thm:pentadic-pfaffian-dirac}
+Assume \((D0)\), \((O1)\), \((O1)^+\),
+\((O2_{\mathrm{atlas}})\), and \((P_{\mathrm{fin}})\) on the
+cosection-reduced critical charts of \(K3\times E\), with the
+compatible inverse system just described. Then
+\[
+ \mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{DI})=\Delta_5,
+ \qquad \epsilon_o=\widetilde\nu_{\Delta_5}
+       \quad\hbox{on }W^{(2)}(\La^{2,1}_{II}).
+\]
+The comparison uses the specified automorphic line maps and cusp frames.
+\end{theorem}
+
+The orientation comparison checks the three generators:
+\(\epsilon_o(s_{\delta_i})=-1=
+\widetilde\nu_{\Delta_5}(s_{\delta_i})\).
+The section comparison
+uses the finite Fourier data and strict transitions in
+\((P_{\mathrm{fin}})\). The detailed recognition statement is
+Theorem~\ref{thm:ch6-pfaffian-dirac}. Construction of its compact
+hypotheses remains a geometric problem.
+
+\begin{remark}[Primitive recognition]
+\label{rem:conditioning-named}
+The protected primitive Lie superalgebra is
+\[
+ \mathcal P_X=P_X^{\Pi,\mathrm{red}}=P_X
+ :=H^0\Prim_{\mathrm{prot}}(\overline\Pi^\Theta_{X,*}\mathcal F_X)
+ /\overline{\operatorname{Rad}\langle\,,\rangle_X}.
+\]
+Here \(\mathcal F_X\) is the hybrid factorization sheaf,
+\(\overline\Pi^\Theta_{X,*}\) is its completed Gram pushforward,
+and the closed radical is the part annihilated by its Hall pairing.
+The assertion \(\mathcal P_X\cong\mathfrak g_{\Delta_5}\)
+requires the source representatives, relations, pairings, radical
+quotient, Poincar\'e--Birkhoff--Witt comparison, and full parity
+dimensions of \((S1)\)--\((S10)\) on cofinal relation-closed
+windows. The finite Koszul comparisons are additional chain-level
+requirements. They are distinct from Pfaffian recognition and are
+not implied by equality of signed exponents.
+\end{remark}
+
+\section{Mirror periods and geometric comparison objects}
+\label{sec:view-4-mirror}
+
+The rank-seventeen lattice-polarized K3 family of
+Chapter~\ref{ch:view4-mirror} supplies a classical Siegel period
+model. The compact mirror problem asks for a separate
+three-dimensional period construction \(\mathcal P_{K3\times E}^{(3)}\),
+with a map to \(\mathcal H_2/\Sp_4(\Z)\), a geometric meromorphic
+section and a comparison with the automorphic line identifying
+that section with \(\Delta_5^{-2}\). The stronger assertion of a
+period quotient requires its quotient map and an inverse period
+comparison as well.
+On a common period cover where the period map is normally
+unramified, the predicted polar divisor is
+\(2\mathfrak D_{\mathrm{mir}}\), with reduced support the type-II
+Humbert--Heegner divisor. Its generic coarse reflection quotient
+has order one instead. These base and line conditions belong to
+Conjecture~\ref{conj:mirror-discriminant}; the compact comparison
+is not used as a theorem hypothesis.
+
+\begin{definition}[The five comparison objects]
+\label{def:pentadic-delta5}
+With the preceding domains and hypotheses, the five objects are
+\[
+ (\mathcal D_X,\operatorname{den}(\mathfrak g_{\Delta_5}),
+ \mathrm{Pf}_{\mathrm{prot}}(\mathfrak D_X^{DI}),
+ \mathrm{Disc}(\mathcal P\to\mathbb D),
+ \Theta_{\mathrm{sing}}^{\mathrm{Bor}}(h)).
+\]
+The automorphic section, denominator, and multiplicative theta lift
+agree after the factor \(64\) and substitution \(Z\mapsto2Z\).
+The Pfaffian agrees under all five geometric hypotheses of
+Theorem~\ref{thm:pentadic-pfaffian-dirac}. The inverse-square mirror
+comparison is conjectural. The primitive-algebra comparison has the
+separate hypotheses of Remark~\ref{rem:conditioning-named}.
+\end{definition}
+
+\section{Protected traces and the physical realization}
+\label{sec:beilinson-chain-placement}
+
+A physical interpretation must specify which states are counted
+and how observables act on them. A signed partition function alone
+specifies neither operation. If a boundary theory is described by
+a factorization differential graded category \(\mathcal C\), a
+chosen boundary vacuum \(b\) has an endomorphism algebra
+\(A_b=\End_{\mathcal C}(b)\). Composition in \(\mathcal C\)
+gives the boundary product. The bar construction records twisting
+and coupling data.
+
+Bulk observables are compared with the derived
+chiral center \(Z^{\mathrm{der}}_{\mathrm{ch}}(A_b)\), whose action
+must respect boundary products and locality. A trace on that center
+is a further operation.
+
+The compact comparison requires a source coalgebra \(C_X\)
+and a cobar comparison with the denominator chiral object
+\(\mathsf{Den}_{\Delta_5,E}\).
+It must preserve Weyl transport, orientation, Hall pairings,
+radical quotients and the Poincar\'e--Birkhoff--Witt filtration.
+These are the chiral Koszul
+source datum, finite Koszul comparison datum, and strict
+Mittag--Leffler conditions of
+Definitions~\ref{def:chiral-koszul-source-datum} and
+\ref{def:finite-koszul-comparison-datum} and
+Proposition~\ref{prop:chiral-koszul-source-datum-consequence}.
+They retain chain-level information that the denominator forgets.
+
+For a protected trace, choose a chart algebra $A_b$ in a specified
+completed chiral bar--cobar domain.
+Its comparison with the coalgebra has the type
+\[
+ \operatorname{Bar}^{\mathrm{ch}}(A_b)\simeq C_X,
+ \qquad\text{or equivalently in that domain}\qquad
+ A_b\simeq\Omega^{\mathrm{ch}}C_X.
+\]
+The first map is a coalgebra map and the second is an algebra map.
+Require their filtrations and completions to agree with the
+finite inverse system.
+
+The trace further requires concentration and stratification
+comparisons on this actual domain, and a degree $-3$ cyclic pairing
+\[
+ Z^{\mathrm{der}}_{\mathrm{ch}}(A_b)\otimes
+ Z^{\mathrm{der}}_{\mathrm{ch}}(A_b)\longrightarrow\C[-3].
+\]
+The completion must support the stated chiral-Koszul comparisons,
+and the pairing must be compatible with the volume form,
+Pfaffian line, and transitions. Finally its scalar normalization
+must agree with the product and the reduced enumerative convention.
+
+Let \(t_{h,d,n}\) be the normalized supertrace on the
+\((h,d,n)\)-graded summand of the supplied protected complex.
+The index \(n\) is Euler characteristic, while \(h\) and \(d\)
+record the K3 square and elliptic degree as in the counting series.
+Write the full graded trace as
+\[
+ \mathrm{Tr}^{\mathrm{bulk}}_{\mathrm{gr}}
+ ((-1)^F\mathrm{id})
+ :=\sum_{h,d\geq0}\sum_{n\in\Z}
+ t_{h,d,n}r^nq^{h-1}s^{d-1},
+\]
+using the specified completion and the DT expansion at \(r=0\).
+Here \(F\) denotes parity.
+
+Suppose the specified concentration and stratification comparisons
+identify this trace with the normalized reduced state.
+Then the protected trace identity is
+\[
+ \mathrm{Tr}^{\mathrm{bulk}}_{\mathrm{gr}}
+ ((-1)^F\mathrm{id})=\Delta_5^{-2},
+\]
+as an identity after coefficientwise rationalization in \(r\).
+A trace at a fixed Euler degree \(n_0\) is the coefficient
+\([r^{n_0}]\) in the \(r=0\) expansion, rather than this full
+series. The OP scalar is \(-4096\) times the full graded trace.
+Construction of this compact trace datum and construction of a
+gravity-line algebra acting on boundary states remain distinct
+problems.
+
+\begin{remark}[Information retained by the comparisons]
+\label{rem:beilinson-cut-delta5}
+Choosing a vacuum, passing to cohomology, taking a radical quotient,
+completing, and taking a trace each require their own maps. The
+scalar identity does not reverse these operations.
+
+The Pfaffian comparison retains a line and its character.
+Primitive recognition retains brackets and parity.
+The trace comparison retains a cyclic
+pairing. A proposed gravitational realization must preserve all
+operations used to compose and glue boundary observables.
+\end{remark}
+
+A formal local model illustrates the algebraic data without providing
+compact gluing. Fix a worldline \(\R_t\times\{0_s\}\times\{p\}\) in
+\(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\), with a
+formal skyscraper boundary condition at \(p\) and multiplicity
+space \(\C^N\). In the formal Darboux chart
+\(\widehat{\mathcal O}_{\C^2,p}=\C[[z_1,z_2]]\), the transverse
+coordinates act by matrices
+\(\phi_1,\phi_2\in\mathfrak{gl}_N\).
+
+Work in the formal completion at \(\phi_1=\phi_2=0\), the
+length-\(N\) skyscraper with trivial transverse action. Let
+\(\mathrm{Kosz}([\phi_1,\phi_2])\) be the power-series algebra
+in the matrix entries, tensored with odd generators \(\eta_{ij}\) in
+degree \(-1\), with differential
+\(d\eta_{ij}=[\phi_1,\phi_2]_{ij}\). It describes the completed derived
+commuting locus. Infinitesimal simultaneous conjugation is imposed
+by the continuous Chevalley--Eilenberg cochain complex
+\[
+ A^{\mathrm{cl}}_{\partial,N}
+ =C^\bullet_{\mathrm{CE}}(\mathfrak{gl}_N,
+        \mathrm{Kosz}([\phi_1,\phi_2])).
+\]
+
+The ghosts have degree one, and the total differential combines the
+Koszul differential with the Lie-algebra action and bracket.
+This is a classical formal-local boundary model in the mixed
+holomorphic--topological setting with local geometry
+\(\R^2_{\mathrm{top}}\times\C^2_{\mathrm{hol}}\)
+\cite{CostelloLiBCOV,CostelloLiOpenClosedBCOV}.
+Its use as a compact chiral-Hochschild chart requires a comparison
+map and descent, rather than only equality of local expressions.
+
+The simplest gluing obstruction has a precise surface carrier.
+For a holomorphic-symplectic surface \((Y,\omega)\) and a symplectic
+vector field \(v\), the one-form \(\alpha_v=-\iota_v\omega\) is
+closed. Choose local holomorphic functions \(h_i\) with
+\(dh_i=\alpha_v\). Their differences on overlaps are locally
+constant and define
+\[
+ \operatorname{per}_Y(v)=[h_i-h_j]\in H^1(Y,\C_Y).
+\]
+This class vanishes exactly when the primitives can be changed by
+constants to glue to one holomorphic Hamiltonian. Equivalently it
+is the connecting image for
+\(0\to\C_Y\to\mathcal O_Y\xrightarrow{d}
+\Omega^1_{Y,\mathrm{cl}}\to0\).
+
+For the threefold \(X=S\times E\), the notation
+\(\mathrm{ob}^{\mathrm{hol}}_{\mathrm{dR}}(X)\) names the proposed
+compact descent obstruction. Defining its target complex and the
+map transporting the local surface Hamiltonians to it remains part
+of the compact construction. The surface period class alone supplies
+neither. A global theory must also establish locality,
+anomaly cancellation, and the quantum master equation. A
+three-dimensional gravitational path integral with internal factor
+\(K3\times E\) requires both that global field theory and the
+gravity-line algebra acting on boundary states. The enumerative
+identity alone supplies neither.
+
+\cleardoublepage

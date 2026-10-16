@@ -1,0 +1,2082 @@
+\chapter{The denominator algebra}
+\label{ch:view2-bkm}
+
+The product expansion of the Igusa form assigns an integer to every
+positive lattice degree. To obtain a Lie superalgebra, one must also
+specify generators and relations. At the first interior degree, the product exponent is $-64$.
+The algebra constructed below has $29$ even and $93$ odd vectors there.
+Their difference explains the exponent. Their brackets require the
+presentation.
+
+Gritsenko and Nikulin construct this presentation by adjoining
+imaginary simple generators to a rank-three hyperbolic Kac--Moody
+algebra \cite[Sections~2--3 and~6]{GN}. We first describe its lattice
+and chamber, then extract the imaginary generators from the chamber
+Fourier expansion. The resulting superdenominator is
+$64^{-1}\Delta_5(2Z)$. Its ordinary denominator supplies the additional
+information needed to recover both parity dimensions at every degree.
+
+Finite root spaces then provide concrete comparison spaces for the
+compact $K3\times E$ problem. The comparison itself must preserve
+brackets, pairings and coefficient objects. Equality of denominators
+supplies only its numerical consequence.
+
+\section{The lattice and its chamber}
+\label{sec:bkm-lattice}
+
+Write $U$ for the integral hyperbolic plane, with isotropic generators
+whose pairing is $-1$. The lattice relevant to the chosen cusp is
+\begin{equation}
+\label{eq:bkm-lambda21-def}
+ \La^{2,1}=U\oplus\langle2\rangle
+ =\Z f_2\oplus\Z f_3\oplus\Z f_{-2},
+\end{equation}
+with bilinear form
+\begin{equation}
+\label{eq:bkm-lambda21-form}
+ (f_2,f_{-2})=-1,\qquad (f_3,f_3)=2,\qquad
+ (f_2,f_2)=(f_{-2},f_{-2})=(f_2,f_3)=(f_{-2},f_3)=0.
+\end{equation}
+It is even of signature $(2,1)$. Adjoining a second hyperbolic plane
+gives the orthogonal lattice $\La^{3,2}$ used in
+Section~\ref{ssec:exceptional-iso}.
+
+\begin{definition}[Type-II sublattice]
+\label{def:bkm-type-ii-sublattice}
+The type-II lattice is
+\begin{equation}
+\label{eq:bkm-type-ii-def}
+ L:=\La^{2,1}_{II}
+ =2\Z f_2\oplus\Z f_3\oplus2\Z f_{-2}.
+\end{equation}
+Its dual and discriminant group are
+\begin{equation}
+\label{eq:bkm-type-ii-dual}
+ L^*=\tfrac12\La^{2,1},\qquad
+ L^*/L\simeq\Z/4\oplus\Z/2\oplus\Z/4.
+\end{equation}
+Thus $[\La^{2,1}:L]=4$, $[L^*:\La^{2,1}]=8$ and
+$L\simeq U(4)\oplus\langle2\rangle$, with determinant $-32$.
+\end{definition}
+
+The three vectors
+\begin{equation}
+\label{eq:bkm-type-ii-simple-roots}
+ \delta_1=2f_2-f_3,\qquad
+ \delta_2=2f_{-2}-f_3,\qquad \delta_3=f_3
+\end{equation}
+form an integral basis of $L$. They have square two and divisibility
+two in $\La^{2,1}$: the ideal $(\delta_i,\La^{2,1})$ is $2\Z$.
+
+\begin{lemma}[Cartan matrix]
+\label{lem:bkm-cartan-matrix}
+The Gram matrix of this basis is
+\begin{equation}
+\label{eq:bkm-cartan-matrix}
+ A=((\delta_i,\delta_j))
+ =\begin{pmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{pmatrix}
+ =4I_3-2J_3,
+\end{equation}
+where $J_3$ is the all-ones matrix. Its eigenvalues are $-2,4,4$.
+\end{lemma}
+\begin{proof}
+For example,
+$(2f_2-f_3,2f_{-2}-f_3)=-4+2=-2$.
+The other entries follow from~\eqref{eq:bkm-lambda21-form}.
+The line spanned by $(1,1,1)$ has eigenvalue $-2$. The plane of
+coordinate sum zero has eigenvalue $4$.
+\end{proof}
+
+The Gram-index lattice of Chapter~\ref{ch:k3xe-setup} is
+$\Gamma_{\mathrm{ind}}=\Z^3$. Its identification with $L$ is
+\begin{equation}
+\label{eq:bkm-alpha-map}
+ \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2}
+ =n\delta_1+m\delta_2+(n+m-l)\delta_3.
+\end{equation}
+If $\gamma=(n,l,m)$ and $\gamma'=(n',l',m')$, then
+\begin{align}
+\label{eq:bkm-gram-index-pairing}
+ \langle\gamma,\gamma'\rangle_{\mathrm{ind}}
+ &=2(nm'+n'm)-ll',\\
+\label{eq:bkm-pullback-pairing}
+ (\alpha(\gamma),\alpha(\gamma'))
+ &=-2\langle\gamma,\gamma'\rangle_{\mathrm{ind}},\qquad
+ \alpha(\gamma)^2=-2(4nm-l^2).
+\end{align}
+This integral map is fixed throughout the chapter. In particular,
+changing an exponential coordinate does not change its image lattice.
+
+\subsection{Reflections and the positive cone}
+\label{sec:bkm-walls-chamber}
+
+For a positive-norm vector $\beta$, its orthogonal reflection is
+\begin{equation}
+\label{eq:bkm-kac-reflection}
+ s_\beta(x)=x-\frac{2(x,\beta)}{(\beta,\beta)}\beta.
+\end{equation}
+It preserves an integral lattice when
+$(\beta,\beta)$ divides $2(\beta,L)$. For a square-two vector the
+formula is
+\begin{equation}
+\label{eq:bkm-square-2-reflection}
+ s_\beta(x)=x-(x,\beta)\beta.
+\end{equation}
+Let $V_+$ be the component of $\{x\in L_\R:x^2<0\}$ containing
+$\delta_1+\delta_2+\delta_3$. We also write
+$\Cone(\La^{2,1})_+=V_+$.
+
+\begin{definition}[Type-II Weyl chamber]
+\label{def:bkm-type-ii-chamber}
+The chamber and its closed cone are
+\begin{equation}
+\label{eq:bkm-poly-ii}
+ \Poly_{II}=\{\R_{>0}x:x\in V_+,\ (x,\delta_i)\leq0\ (1\leq i\leq3)\},
+ \qquad
+ \mathcal C=\{x\in L_\R:(x,\delta_i)\leq0\ (1\leq i\leq3)\}.
+\end{equation}
+The primitive wall normals are
+$\Poly_{II,\mathrm{prim}}=\{\delta_1,\delta_2,\delta_3\}$.
+The notation $\R_{>0}\Poly_{II}$ will include the nonzero ideal
+boundary of $\mathcal C$.
+\end{definition}
+
+\begin{lemma}[Chamber and dual cone]
+\label{lem:bkm-chamber-dual-cone}
+Put $Q_+=\N\delta_1+\N\delta_2+\N\delta_3$ and
+$\Delta(L)_+=\R_{\geq0}Q_+$. With the nonpositive pairing convention
+for the dual cone, one has
+\begin{equation}
+\label{eq:bkm-chamber-dual-cone}
+ \Delta(L)_+^*=\mathcal C
+ \subset\overline V_+\subset\Delta(L)_+.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Write $x=\sum_i b_i\delta_i$ and $t_i=-(x,\delta_i)$.
+Since $A^{-1}=(I_3-J_3)/4$, the chamber inequalities give
+\[
+ b_i=\frac{\sum_{j\ne i}t_j}{4}\geq0,\qquad
+ x^2=-\frac12\sum_{i<j}t_it_j\leq0.
+\]
+A nonzero such vector belongs to the future component. This proves
+the first inclusion.
+
+For the second, let $s=\sum_i b_i\geq0$ on
+$\overline V_+$. The norm inequality reads
+$2\sum_i b_i^2\leq s^2$. If $b_1<0$, then
+\[
+ \sum_i b_i^2\geq b_1^2+\tfrac12(s-b_1)^2>\tfrac12s^2,
+\]
+a contradiction. The other coordinates are nonnegative by symmetry.
+\end{proof}
+
+\begin{remark}[Divisibility classes]
+\label{rem:bkm-divisibility-types}
+A primitive square-two vector in $\La^{2,1}$ has divisibility one
+or two, called type~I or type~II. To see the parity distinction,
+write it as $af_2+bf_3+cf_{-2}$. Its norm equation is $b^2-ac=1$.
+The divisibility is $\gcd(a,2b,c)$. It is two precisely when $a,c$
+are even, in which case $b$ is odd.
+
+Otherwise $a+b+c$ is even.
+Thus type~I vectors lie in
+\[
+ \La^{2,1}_I=\{af_2+bf_3+cf_{-2}:a+b+c\equiv0\pmod2\},
+\]
+and type~II vectors lie in $L$. The vectors
+$f_{-2}-f_2,f_2-f_3,f_{-2}-f_3$ are type~I. The $\delta_i$ are
+type~II. The divisor of $\Delta_5$ uses the latter orbit, as proved
+in Chapter~\ref{ch:view1-automorphic}.
+\end{remark}
+
+\begin{lemma}[Reflection groups]
+\label{lem:bkm-reflection-decomposition}
+Let $W^{(2)}(\La^{2,1})$ be generated by its square-two reflections,
+and let $W_I,W_{II}$ be generated by the type~I and type~II
+reflections. Then
+\begin{equation}
+\label{eq:bkm-reflection-indices}
+ \Orth(\La^{2,1})_+=W^{(2)}(\La^{2,1}),\qquad
+ [W^{(2)}:W_I]=2,\qquad [W^{(2)}:W_{II}]=6,
+\end{equation}
+and
+\begin{equation}
+\label{eq:bkm-chamber-decomposition}
+ W^{(2)}(\La^{2,1})=W_{II}\rtimes\Aut(\Poly_{II}),\qquad
+ \Aut(\Poly_{II})\simeq S_3.
+\end{equation}
+The group $W_{II}$ is the Coxeter group on $s_{\delta_1},s_{\delta_2},
+s_{\delta_3}$ with relations $s_{\delta_i}^2=1$ only.
+\end{lemma}
+\begin{proof}
+These are the reflection decompositions for $U\oplus\langle2\rangle$
+in \cite[Section~2, equations~(2.1)--(2.3)]{GN}, using Nikulin's
+classification \cite{NIKULIN}. The type-II chamber is an ideal
+triangle: each pair of its wall normals has Gram matrix
+$\left(\begin{smallmatrix}2&-2\\-2&2\end{smallmatrix}\right)$.
+Consequently distinct simple reflections have no finite braid
+relation. The chamber stabilizer permutes its three ideal vertices,
+and the three reflections in the following lemma realize all these
+permutations. Its order gives the index six. The type-I reflection
+subgroup has the separate order-two chamber symmetry described in
+the cited decomposition.
+\end{proof}
+
+\begin{lemma}[$S_3$ chamber action]
+\label{lem:bkm-chamber-s3}
+The reflections in $f_{-2}-f_2$, $f_2-f_3$ and $f_{-2}-f_3$
+act on $(\delta_1,\delta_2,\delta_3)$ as $(12)$, $(13)$ and $(23)$,
+respectively.
+\end{lemma}
+\begin{proof}
+For the first reflection, $f_2$ and $f_{-2}$ are exchanged and
+$f_3$ is fixed. For the second, substitution in
+\eqref{eq:bkm-square-2-reflection} exchanges $2f_2-f_3$ and $f_3$
+and fixes $2f_{-2}-f_3$. The third follows by exchanging $f_2$
+and $f_{-2}$. Each permutation preserves $A$.
+\end{proof}
+
+\begin{proposition}[Weyl vector]
+\label{prop:bkm-weyl-vector}
+The equations
+\begin{equation}
+\label{eq:bkm-weyl-vector-condition}
+ (\rho,\delta_i)=-\tfrac12\delta_i^2=-1
+\end{equation}
+have the unique solution
+\begin{equation}
+\label{eq:bkm-weyl-vector}
+ \rho=\tfrac12(\delta_1+\delta_2+\delta_3)
+ =f_2-\tfrac12f_3+f_{-2}\in L^*\cap V_+,
+ \qquad \rho^2=-\tfrac32.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The matrix $A$ is invertible and
+$A(1,1,1)^T=(-2,-2,-2)^T$. This determines the coefficients of
+$\rho$. Its norm follows from~\eqref{eq:bkm-lambda21-form}.
+\end{proof}
+
+\begin{remark}[The fixed line]
+\label{rem:bkm-rho-s3-invariant}
+The chamber action fixes $\rho$. Its fixed subspace in $L_\Q$ is
+exactly $\Q\rho$, since it permutes the three basis vectors
+$\delta_i$. In particular, the factor $1/2$ in the Weyl vector is
+fixed by~\eqref{eq:bkm-weyl-vector-condition}. The sum of the three
+roots has pairing $-2$ with each wall.
+\end{remark}
+
+\begin{lemma}[Isotropic chamber rays]
+\label{lem:bkm-isotropic-orbit}
+The only primitive isotropic rays of $\mathcal C\cap L$ are
+\[
+ a_{13}=\delta_1+\delta_3=2f_2,\qquad
+ a_{23}=\delta_2+\delta_3=2f_{-2},\qquad
+ a_{12}=\delta_1+\delta_2=2f_2-2f_3+2f_{-2}.
+\]
+The chamber group permutes them transitively.
+\end{lemma}
+\begin{proof}
+In the proof of Lemma~\ref{lem:bkm-chamber-dual-cone}, a chamber
+vector is isotropic precisely when $\sum_{i<j}t_it_j=0$.
+For nonnegative $t_i$, this means that at most one is nonzero.
+The resulting three rays have the displayed primitive integral
+generators. The $S_3$ action permutes the pairs of indices.
+\end{proof}
+
+\section{From Fourier coefficients to simple generators}
+\label{sec:bkm-roots}
+\label{sec:bkm-active-support}
+
+The Fourier coefficients of the weak Jacobi form are denoted by
+\begin{equation}
+\label{eq:bkm-phi01-expansion}
+ \phi_{0,1}(\tau,z)=\sum_{n\geq0,\ l\in\Z}f(n,l)q^nr^l
+ =r^{-1}+10+r+O(q).
+\end{equation}
+Elliptic translation and evenness make $f(n,l)$ a function of
+$4n-l^2$. It vanishes for $4n-l^2<-1$. Let $\Gamma_{\mathrm{eff}}$
+be the cusp support
+\[
+ \{m>0,n\geq0,l\in\Z\}\ \cup\
+ \{m=0,n>0,l\in\Z\}\ \cup\
+ \{m=n=0,l<0\}\subset\Z^3.
+\]
+
+\begin{definition}[Active support]
+\label{def:bkm-active-support}
+Set
+\[
+ \Gamma_{\mathrm{act}}=\{(n,l,m)\in\Gamma_{\mathrm{eff}}:f(nm,l)\ne0\},
+ \qquad \Cone_{\mathrm{Borch}}=\R_{\geq0}\alpha(\Gamma_{\mathrm{act}}).
+\]
+\end{definition}
+
+\begin{lemma}[Positive root coordinates]
+\label{lem:bkm-active-cone}
+Every active degree has
+\begin{equation}
+\label{eq:bkm-active-decomposition}
+ \alpha(n,l,m)=n\delta_1+m\delta_2+(n+m-l)\delta_3\in Q_+\setminus\{0\}.
+\end{equation}
+Moreover $\Cone_{\mathrm{Borch}}=\Delta(L)_+$.
+\end{lemma}
+\begin{proof}
+The first two coefficients are nonnegative. Activity implies
+$l^2\leq4nm+1$. If $n,m>0$ and $l\geq n+m+1$, then
+$l^2\geq4nm+(n-m)^2+2(n+m)+1>4nm+1$. The cases with $nm=0$
+follow from $|l|\leq1$ and the cusp convention. Thus $n+m-l\geq0$.
+The active triples $(1,1,0),(0,1,1),(0,-1,0)$ give the three
+simple vectors, proving equality of the cones.
+\end{proof}
+
+For $\beta=\sum b_i\delta_i\in Q_+$ define its height by
+$\operatorname{ht}\beta=b_1+b_2+b_3$. There are finitely many
+lattice degrees below any fixed height. We use the corresponding
+completion $\Z[[Q_+]]$: its elements are formal sums
+$\sum_{\beta\in Q_+}a_\beta X^\beta$, and multiplication is defined
+by the finite sums over $\beta=\beta_1+\beta_2$. Product factors
+below always have positive height. This specifies a common formal
+domain before any infinite product is formed.
+
+\begin{lemma}[Leading coefficient]
+\label{lem:bkm-vacuum-coefficient}
+\begin{equation}
+\label{eq:bkm-vacuum-coefficient}
+ [q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The ten-theta product gives the leading term
+$64q^{1/2}s^{1/2}(r^{1/2}-r^{-1/2})$ by
+Proposition~\ref{prop:view1-theta-constant-leading-coefficient}.
+\end{proof}
+
+\begin{theorem}[Borcherds product]
+\label{thm:bkm-borcherds-product-D5}
+In the fixed cusp expansion,
+\begin{equation}
+\label{eq:bkm-D5-borcherds-product}
+ D_5(Z):=64^{-1}\Delta_5(Z)
+ =q^{1/2}r^{1/2}s^{1/2}
+   \prod_{(n,l,m)\in\Gamma_{\mathrm{eff}}}(1-q^nr^ls^m)^{f(nm,l)}.
+\end{equation}
+Here $q^nr^ls^m=e^{-\pi i(\alpha(n,l,m),z)}$ and
+$q^{1/2}r^{1/2}s^{1/2}=e^{-\pi i(\rho,z)}$ in the tube
+coordinates of Chapter~\ref{ch:view1-automorphic}.
+\end{theorem}
+\begin{proof}
+This is the multiplicative lift of $\phi_{0,1}$
+\cite[Theorem~2.1 and Example~2.4]{GNII}, equivalently the
+orthogonal Borcherds lift on $\La^{3,2}$
+\cite[Theorem~13.3]{B}. Lemma~\ref{lem:bkm-active-cone} places
+its nontrivial factors in the height completion. The boundary factor
+$(1-r^{-1})$ has degree $\delta_3$. The leading coefficient fixes
+the normalization.
+\end{proof}
+
+The chamber expansion of this product specifies the imaginary
+simple generators. It is convenient to use $W=W_{II}$ and to include
+the isotropic boundary in $\mathcal C\setminus\{0\}$.
+
+\begin{theorem}[Chamber Fourier correction]
+\label{thm:bkm-weyl-alternating-sum}
+There are unique integers $m(a)$, indexed by
+$a\in(\mathcal C\cap L)\setminus\{0\}$, such that
+\begin{equation}
+\label{eq:bkm-weyl-sum-Delta5}
+ D_5(Z)=\sum_{w\in W}\det(w)
+ \left(e^{-\pi i(w\rho,z)}-
+       \sum_{a\in(\mathcal C\cap L)\setminus\{0\}}
+         m(a)e^{-\pi i(w(\rho+a),z)}\right).
+\end{equation}
+\end{theorem}
+\begin{proof}
+Write $D_5=\sum_\lambda c_\lambda e^{-\pi i(\lambda,z)}$ with
+$\lambda\in\rho+L$. Its nonzero Fourier coefficients lie in $V_+$
+by the cusp condition. The linear reflection law from
+Lemma~\ref{lem:view1-maass-multiplier-restriction} gives
+$c_{w\lambda}=\det(w)c_\lambda$. A coefficient on a reflecting
+wall vanishes.
+
+Each surviving orbit therefore has a unique
+representative in the chamber interior. For this representative
+$\lambda=\rho+a$, the pairings $(a,\delta_i)$ are even integers,
+so $(\lambda,\delta_i)<0$ implies $(a,\delta_i)\leq0$.
+Lemma~\ref{lem:bkm-chamber-dual-cone} puts $a$ in $\mathcal C$.
+
+The coefficient at $\rho$ is one. Define $m(a)=-c_{\rho+a}$ for
+$a\ne0$ and sum the alternating orbits. This is
+\cite[Theorem~2.3(a)]{GN}. The chamber condition concerns the orbit
+representative: $s_{\delta_i}\rho=\rho+\delta_i$ is another
+nonzero Fourier term, although $\delta_i^2=2$.
+\end{proof}
+
+\begin{lemma}[Null-ray correction]
+\label{lem:bkm-isotropic-eta-product}
+For any of the three primitive null vectors $a=a_{ij}$,
+\begin{equation}
+\label{eq:bkm-isotropic-tau}
+ 1-\sum_{n\geq1}m(na)t^n
+ =\prod_{n\geq1}(1-t^n)^9,
+ \qquad \tau(na):=9.
+\end{equation}
+For $a=2f_2$, the left side is also
+$1+64^{-1}\sum_{n\geq1}c_\Delta(1+2n,1,1)t^n$, where
+$c_\Delta(u,v,w)$ denotes the coefficient of $q^{u/2}r^{v/2}s^{w/2}$.
+\end{lemma}
+\begin{proof}
+The first Fourier--Jacobi coefficient of $\Delta_5$ is the lift
+input $\eta^9\vartheta$. Its restriction along this ray gives
+\eqref{eq:bkm-isotropic-tau} \cite[Section~3]{GN}.
+The chamber permutations carry it to the other two rays.
+\end{proof}
+
+\begin{definition}[Imaginary simple generators]
+\label{def:bkm-imaginary-simple-roots}
+At a timelike $a\in\mathcal C\cap L$, prescribe
+\[
+ \mu_{\overline0}(a)=\max(m(a),0),\qquad
+ \mu_{\overline1}(a)=\max(-m(a),0).
+\]
+At every nonzero multiple of a primitive chamber null vector,
+prescribe $\mu_{\overline0}(na_{ij})=9$ and
+$\mu_{\overline1}(na_{ij})=0$. All other imaginary simple fibers
+are zero. Denote this multiset by $\Delta^{im}_{\mathrm{simp}}$.
+\end{definition}
+
+\begin{remark}[Simple parity and root parity]
+\label{rem:bkm-parity-split}
+The signs of $m(a)$ determine the parity of the timelike
+\emph{simple} generators in this presentation. A full root space also
+contains brackets of lower degrees. Its product exponent is the difference of its even and odd dimensions.
+The sign of that exponent does not determine the parity of every vector.
+At $a_{ij}$, nine simple vectors and one real-real bracket give ten
+even vectors. At $\delta_1+\delta_2+\delta_3$, both parities occur.
+\end{remark}
+
+\section{The Borcherds presentation}
+\label{sec:bkm-generators-relations}
+\label{sec:bkm-structural-properties}
+
+\begin{lemma}[Cartan inequalities]
+\label{lem:bkm-cartan-conditions}
+Distinct simple vectors have nonpositive pairing. Real simple
+vectors have square two, imaginary simple vectors have nonpositive
+square, and $2(\delta_i,a)/\delta_i^2$ is integral for every simple
+vector $a$.
+\end{lemma}
+\begin{proof}
+The real pairings are the off-diagonal entries of $A$.
+The chamber inequalities give $(a,\delta_i)\leq0$ for imaginary
+$a$. Two vectors in the same closed future cone have nonpositive
+pairing. Integrality follows from the integral form on $L$.
+Repeated copies of a null vector have pairing zero. Repeated copies
+of a timelike vector have negative pairing.
+\end{proof}
+
+\begin{definition}[Borcherds--Cartan superdatum]
+\label{def:bkm-borcherds-cartan-superdatum}
+Let $I$ index one even generator at each $\delta_i$, and
+$\mu_{\bar p}(a)$ generators of parity $\bar p$ at every imaginary
+simple degree $a$. Denote their degree and parity maps by
+$i\mapsto\alpha_i\in L$ and $i\mapsto p(i)\in\Z/2$.
+Together with the even Cartan space $\mathfrak h=L\otimes\C$
+and its form, these data define $\mathscr B_{\Delta_5}$.
+\end{definition}
+
+\begin{definition}[Denominator algebra]
+\label{def:bkm-relations}
+The Lie superalgebra $\autcor=\mathfrak g$ is generated by
+$\mathfrak h$ and $e_i,f_i$ for $i\in I$, with
+$|e_i|=|f_i|=p(i)$ and degrees $\alpha_i,-\alpha_i$.
+Identify $h_i=\alpha_i$ in $\mathfrak h$. Impose
+\begin{align}
+\label{eq:bkm-cartan-relations}
+ [h,h']&=0,&[h,e_j]&=(h,\alpha_j)e_j,&
+ [h,f_j]&=-(h,\alpha_j)f_j,\\
+\label{eq:bkm-chevalley-relations}
+ [e_i,f_j]&=\delta_{ij}h_i.
+\end{align}
+For a real simple index $i$ and $j\ne i$, impose
+\begin{equation}
+\label{eq:bkm-real-serre}
+ (\operatorname{ad}e_i)^{1-2(\alpha_i,\alpha_j)/\alpha_i^2}e_j=0,
+ \qquad
+ (\operatorname{ad}f_i)^{1-2(\alpha_i,\alpha_j)/\alpha_i^2}f_j=0.
+\end{equation}
+
+Finally, impose
+\begin{equation}
+\label{eq:bkm-orthogonality}
+ [e_i,e_j]=[f_i,f_j]=0\quad\text{if }(\alpha_i,\alpha_j)=0.
+\end{equation}
+All brackets satisfy super-antisymmetry and the super Jacobi
+identity. For homogeneous vectors,
+\[
+ [x,y]=-(-1)^{|x||y|}[y,x].
+\]
+\end{definition}
+
+These are the symmetrizable generalized Kac--Moody relations without
+odd real simple roots \cite[Statement~6.4 and equations~(6.26)--(6.30)]{GN}.
+They can be obtained from the derived contragredient algebra with
+one independent Cartan generator for each $i\in I$ by quotienting
+its central Cartan kernel under $h_i\mapsto\alpha_i$.
+The specified Cartan space is nondegenerate and spanned by the
+three real vectors.
+
+\begin{remark}[Real Serre exponent]
+\label{rem:bkm-real-serre-exponent}
+For distinct real indices, $1-2(\delta_i,\delta_j)/\delta_i^2=3$.
+Thus $(\operatorname{ad}e_i)^3e_j=0$, while $[e_i,e_j]$ survives.
+The matrix $A/2$ is a rescaled bilinear form, not the generalized
+Cartan matrix in this normalization: real diagonal entries of that
+matrix are two.
+\end{remark}
+
+\begin{lemma}[Triangular decomposition and local finiteness]
+\label{lem:bkm-triangular-decomposition}
+There is a decomposition
+\begin{equation}
+\label{eq:bkm-triangular}
+ \mathfrak g=\mathfrak n_-\oplus\mathfrak h\oplus\mathfrak n_+,
+ \qquad
+ \mathfrak n_\pm=\bigoplus_{\beta\in Q_+\setminus\{0\}}
+                         \mathfrak g_{\pm\beta},
+\end{equation}
+with $\mathfrak g_0=\mathfrak h$ and
+$[\mathfrak g_\beta,\mathfrak g_\gamma]
+\subset\mathfrak g_{\beta+\gamma}$. Every homogeneous root space is
+finite-dimensional. More strongly, the sum of its dimensions over
+$0<\operatorname{ht}\beta\leq N$ is finite for every $N$.
+\end{lemma}
+\begin{proof}
+The triangular decomposition follows from the symmetrizable
+presentation theorem just cited. For its grading, first use the free
+abelian group $\widetilde Q=\bigoplus_{i\in I}\Z r_i$, then send
+$r_i$ to $\alpha_i$. Every $\alpha_i$ has positive height. Only
+finitely many simple degrees have height at most $N$, and each has
+finite multiplicity. A positive word of total height at most $N$
+has length at most $N$ and uses only this finite set of generators.
+There are therefore finitely many such words.
+
+This proves the
+finite-fiber condition of \cite[(6.29)--(6.30)]{GN} and the asserted
+finiteness after passing to relations. No nonempty positive word
+has degree zero.
+\end{proof}
+
+\begin{definition}[Root sets and signed multiplicity]
+\label{def:bkm-full-root-datum}
+\label{def:bkm-real-roots}
+The positive roots are
+$\mathcal R_+=\{\beta\in Q_+\setminus\{0\}:\mathfrak g_\beta\ne0\}$.
+The negative roots are $-\mathcal R_+$. The real roots form
+$\Delta^{re}=W\{\delta_1,\delta_2,\delta_3\}$, and all remaining
+roots are imaginary. The imaginary root spaces are the homogeneous
+pieces of the presentation, including all brackets that survive its
+relations. They are not just Weyl translates of the simple fibers.
+\label{def:bkm-smult}
+For every lattice degree set
+\begin{equation}
+\label{eq:bkm-smult-def}
+ e_\beta=\dim\mathfrak g_{\beta,\overline0},\qquad
+ o_\beta=\dim\mathfrak g_{\beta,\overline1},\qquad
+ \smult(\beta)=e_\beta-o_\beta.
+\end{equation}
+We also use $\rootmult_{\bar p}(\beta)$ for the two dimensions.
+\end{definition}
+
+For a real root $\beta$, write
+$\Hpl_\beta=\{\R_{>0}x:x\in V_+,\ (x,\beta)=0\}$.
+The three simple mirrors bound $\Poly_{II}$. Their Weyl translates
+form $\bigcup_{\beta\in\Delta^{re}}\Hpl_\beta$.
+The type-I chamber reflections permute the three simple mirrors.
+A physical wall interpretation additionally requires a comparison
+with the geometric parameter space.
+
+The chosen cusp also splits the positive half. For
+$\beta=\alpha(n,l,m)$, let $c(\beta)=m$, the second simple-root
+coordinate. Then $\mathfrak n_+=\mathfrak n_+^{>0}\oplus\mathfrak n_+^0$,
+where
+\begin{align*}
+ \mathfrak n_+^{>0}&=\bigoplus_{\beta\in\mathcal R_+,\ c(\beta)>0}
+                      \mathfrak g_\beta,\\
+ \mathfrak n_+^0&=\bigoplus_{\beta\in\mathcal R_+,\ c(\beta)=0}
+                      \mathfrak g_\beta.
+\end{align*}
+
+The second summand is supported on the cusp boundary.
+They do not split the Cartan or negative half.
+Additivity of $c$ makes the first an ideal of $\mathfrak n_+$
+and the second a subalgebra. This cusp degree is distinct from
+the chamber multiplicity $m(a)$.
+
+\begin{lemma}[Real subalgebra]
+\label{lem:bkm-real-sub-km}
+The real generators and $\mathfrak h$ generate the Kac--Moody
+algebra $\bkm(A)$. Its inclusion in $\mathfrak g$ is injective.
+\end{lemma}
+\begin{proof}
+In the positive presentation, every relation involving an imaginary
+index has positive degree in that index for the finer
+$\widetilde Q$-grading. Hence it imposes no relation on the purely
+real words. The remaining positive relations are exactly the real
+Serre relations. The same argument applies to the negative half.
+Together with the injective Cartan identification and triangular
+decomposition, this proves injectivity of the full real subalgebra.
+\end{proof}
+
+\begin{remark}[Automorphic correction]
+\label{rem:bkm-borcherds-correction}
+\label{sec:bkm-rank-three-comparison}
+Every connected rank-two principal submatrix of $A$ is affine
+$A_1^{(1)}$, while $A$ has Lorentzian signature. Thus $\bkm(A)$ is
+hyperbolic. The imaginary simple generators enlarge it to
+$\mathfrak g$. This is the automorphic correction of
+\cite[Section~3]{GN}. Both algebras have real-root multiplicity one
+and real Serre exponent three. Their imaginary root spaces differ.
+
+The correction provides the explicit modular denominator below.
+\begin{table}[ht]
+\centering
+\caption{Real generators and the first interior root.}
+\label{tab:bkm-real-root-comparison}
+\begin{tabular}{lcc}
+ & $\bkm(A)$ & $\mathfrak g$\\\hline
+Real simple vectors & $\delta_1,\delta_2,\delta_3$ & $\delta_1,\delta_2,\delta_3$\\
+Imaginary simple fibers & $0$ & $\mu_{\bar p}(a)$\\
+First interior parity dimensions & $2|0$ & $29|93$
+\end{tabular}
+\end{table}
+\end{remark}
+
+\begin{lemma}[Invariant bilinear form]
+\label{lem:bkm-invariant-form}
+There is a unique even nondegenerate invariant supersymmetric form
+$B_{\mathfrak g}$ extending the form on $\mathfrak h$. It satisfies
+\[
+ B_{\mathfrak g}(e_i,f_j)=\delta_{ij},\qquad
+ B_{\mathfrak g}([x,y],z)=B_{\mathfrak g}(x,[y,z]).
+\]
+Root spaces pair only in opposite degrees, and their opposite-degree
+pairings are perfect.
+\end{lemma}
+\begin{proof}
+Use the invariant-form theorem for symmetrizable contragredient
+superalgebras \cite[Chapter~2]{KAC:1}, with the super modification
+and central quotient of \cite[Section~6, Type~1 and~(6.28)]{GN}.
+The Cartan form here is nondegenerate, so after that quotient no
+Cartan radical remains. The theorem gives nondegeneracy and
+invariance.
+
+Its normalization can also be read directly:
+\[
+ B_{\mathfrak g}([e_i,f_j],h)
+ =B_{\mathfrak g}(e_i,[f_j,h])
+ =(\alpha_j,h)B_{\mathfrak g}(e_i,f_j).
+\]
+The left side is $\delta_{ij}(\alpha_i,h)$. Since $\alpha_j\ne0$
+and the Cartan form is nondegenerate, this forces the stated value.
+Invariance recursively determines the pairings of bracket words.
+
+For weights $\beta,\gamma$, invariance under $h$ gives
+$(h,\beta+\gamma)B_{\mathfrak g}(x_\beta,y_\gamma)=0$.
+Thus only opposite weights pair. Local finiteness then turns the
+nondegenerate opposite pairing into a perfect pairing.
+\end{proof}
+
+\begin{lemma}[Even Weyl transport]
+\label{lem:bkm-weyl-transport-parity}
+The operators
+$\exp(\operatorname{ad}e_i)\exp(-\operatorname{ad}f_i)
+ \exp(\operatorname{ad}e_i)$ at real simple indices induce even
+isomorphisms
+$\mathfrak g_{\beta,\bar p}\simeq\mathfrak g_{s_i\beta,\bar p}$.
+\end{lemma}
+\begin{proof}
+The Serre relations give local nilpotence of the real adjoint
+actions. These exponentials therefore define the usual Weyl
+operators \cite[Chapter~3]{KAC:1}. The generators are even, so the
+operators preserve parity \cite[Section~6]{GN}.
+\end{proof}
+
+\begin{lemma}[Real roots and simple imaginary fibers]
+\label{lem:bkm-real-root-multiplicity-one}
+Every real root has parity dimensions $1|0$.
+\label{lem:bkm-imaginary-simple-fibre}
+At an imaginary simple degree $a$, let $E_a^{\mathrm{simp}}$ be
+the span of its specified generators. Its signed dimension is
+$\mu_{\overline0}(a)-\mu_{\overline1}(a)$. The full root space
+may contain further bracket vectors.
+\end{lemma}
+\begin{proof}
+The assertions hold at the simple generators by the positive
+presentation. Weyl transport proves the real-root assertion on
+the entire real orbit. In the fine positive grading, simple
+generators and decomposable words have distinct degrees, even when
+their images in $L$ coincide.
+\end{proof}
+
+\section{Two denominator identities}
+\label{sec:bkm-denominator-identity}
+\label{sec:bkm-denominator-consistency}
+
+For the following formulas let $X^\beta=e^{-2\pi i(\beta,z)}$.
+$X^\rho\Z[[Q_+]]$ denotes the shifted height-completed module.
+Define the chamber correction series
+\begin{align*}
+ S_s&=1-\sum_{a\in(\mathcal C\cap L)\setminus\{0\}}m(a)X^a,\\
+ S_o&=1-\sum_{\substack{a\in\mathcal C\cap L\\a^2<0}}|m(a)|X^a
+       +\sum_{i<j}\left(\prod_{n\geq1}(1-X^{na_{ij}})^9-1\right).
+\end{align*}
+The null-ray terms in $S_o$ retain their eta-product coefficients.
+Only the timelike coefficients undergo the absolute-value operation.
+
+\begin{theorem}[Superdenominator and ordinary denominator]
+\label{thm:bkm-denominator-identity}
+The algebra $\mathfrak g$ satisfies
+\begin{align}
+\label{eq:bkm-denominator-identity}
+ X^\rho D_s
+ &:=\sum_{w\in W}\det(w)X^{w\rho}w(S_s)
+   =64^{-1}\Delta_5(2Z),\\
+\label{eq:bkm-denominator-product}
+ D_s&=\prod_{\beta\in Q_+\setminus\{0\}}
+                  (1-X^\beta)^{e_\beta-o_\beta},\\
+\label{eq:bkm-ordinary-denominator}
+ D_o&:=X^{-\rho}\sum_{w\in W}\det(w)X^{w\rho}w(S_o)
+   =\prod_{\beta\in Q_+\setminus\{0\}}
+           (1-X^\beta)^{e_\beta}(1+X^\beta)^{-o_\beta}.
+\end{align}
+In particular,
+\begin{equation}
+\label{eq:bkm-denominator-equality}
+ \operatorname{den}(\mathfrak g):=X^\rho D_s
+ =64^{-1}\Delta_5(2Z),
+\end{equation}
+and, for every $\beta=\alpha(n,l,m)\in Q_+\setminus\{0\}$,
+\begin{equation}
+\label{eq:bkm-active-multiplicities}
+ e_\beta-o_\beta=f(nm,l).
+\end{equation}
+\end{theorem}
+\begin{proof}
+Apply the two superalgebra denominator identities
+\cite[Statements~6.7$'$--6.8$'$]{GN} to the presentation.
+In the super identity, the imaginary correction is $S_s$.
+For the ordinary identity, each timelike simple generator
+contributes minus its ordinary multiplicity. Two timelike future
+vectors cannot be orthogonal, nor can a timelike vector be
+orthogonal to a nonzero future null vector. Orthogonal collections
+of imaginary generators therefore consist either of one timelike
+generator or of generators on one null ray.
+
+All null generators are
+even, so these collections give the three eta products in $S_o$.
+This proves both product formulas.
+
+The Weyl sums are locally finite in height. For a reduced word $w$,
+$w\rho-\rho$ is the sum of its positive inversion roots, hence has
+height at least the word length. Also $wa-a\in Q_+$ for
+$a\in\mathcal C$. Only finitely many Weyl words and chamber degrees
+can therefore contribute to a fixed height. The positive root spaces
+are finite by Lemma~\ref{lem:bkm-triangular-decomposition}.
+
+The chamber Fourier formula with $z$ replaced by $2z$ gives the
+first equality with $\Delta_5(2Z)$. Compare its product with
+\eqref{eq:bkm-D5-borcherds-product}. Euler factors in $\Z[[Q_+]]$
+are unique: remove them successively in increasing height, where
+the first nonconstant term of $(1-X^\beta)^a$ is $-aX^\beta$.
+Thus the exponents agree, including zero exponents.
+\end{proof}
+
+\begin{remark}[Exponential normalization]
+\label{rem:bkm-doubling-Z}
+The substitution $Z\mapsto2Z$ sends $q,r,s$ to $q^2,r^2,s^2$
+and $e^{-\pi i(\beta,z)}$ to $e^{-2\pi i(\beta,z)}$.
+It leaves the integral lattice $L$ and the degree map $\alpha$
+unchanged. In particular $L\ne2\La^{2,1}$: its $f_3$ direction
+is primitive. The Jacobi form $\phi_{0,1}$ is the multiplicative
+input, whereas the additive lift uses $\eta^9\vartheta$.
+\label{rem:bkm-doubling-power-of-two}
+The constant $64=2^6$ is the leading theta-product coefficient.
+The number $2^{12}$ in a stipulated half-Hilbert orientation
+model counts a different finite orbit. It does not normalize this
+denominator.
+\end{remark}
+
+\begin{proposition}[Recovery of both parities]
+\label{prop:bkm-all-height-parities}
+Write the ordinary denominator uniquely as
+$D_o=\prod_{\beta>0}(1-X^\beta)^{b_\beta}$, and put
+$f_\beta=f(nm,l)$ when $\beta=\alpha(n,l,m)$.
+The parity dimensions of the fixed presentation are determined
+recursively by
+\begin{equation}
+\label{eq:bkm-parity-recursion}
+ o_\beta=\frac{b_\beta-f_\beta+o_{\beta/2}}2,
+ \qquad e_\beta=f_\beta+o_\beta,
+\end{equation}
+where $o_{\beta/2}=0$ if $\beta/2\notin Q_+\setminus\{0\}$.
+\end{proposition}
+\begin{proof}
+The identity
+$(1+X^\beta)^{-o_\beta}
+ =(1-X^\beta)^{o_\beta}(1-X^{2\beta})^{-o_\beta}$ gives
+$b_\beta=e_\beta+o_\beta-o_{\beta/2}$.
+Combine it with $f_\beta=e_\beta-o_\beta$.
+The half-degree has smaller height, so the formula is recursive.
+Existence of the presented algebra and its two denominator identities
+ensure nonnegative integral results. This argument applies at every
+height. It does not infer an infinite assertion from a finite table.
+\end{proof}
+
+\subsection{The first root spaces}
+
+\begin{proposition}[Jacobi coefficients through degree four]
+\label{prop:bkm-higher-order-fourier}
+The nonzero coefficients for $0\leq n\leq4$ are as follows.
+$f(n,-l)=f(n,l)$ and omitted entries vanish.
+\[
+\begin{array}{c|rrrrr}
+ n\backslash |l|&0&1&2&3&4\\\hline
+ 0&10&1&0&0&0\\
+ 1&108&-64&10&0&0\\
+ 2&808&-513&108&1&0\\
+ 3&4016&-2752&808&-64&0\\
+ 4&16524&-11775&4016&-513&10
+\end{array}
+\]
+\end{proposition}
+\begin{proof}
+Expand the three theta quotients defining $\phi_{0,1}$ in
+Chapter~\ref{ch:view1-automorphic}, or its theta decomposition in
+Lemma~\ref{lem:theta-decomposition} \cite{EZ:1}. Elliptic translation supplies
+the repeated discriminant coefficients. The value
+$\phi_{0,1}(\tau,0)=12$ checks each positive-$n$ row sum.
+In particular $2\phi_{0,1}$ has value $24$, the K3 Euler number.
+Squaring~\eqref{eq:bkm-D5-borcherds-product} gives
+\[
+ \Delta_5^2=64^2qrs
+ \prod_{\Gamma_{\mathrm{eff}}}(1-q^nr^ls^m)^{2f(nm,l)}.
+\]
+\end{proof}
+
+\begin{proposition}[Low-degree brackets]
+\label{prop:bkm-low-degree-denominator-brackets}
+The positive roots of height at most three are
+\begin{equation}
+\label{eq:bkm-height-three-table}
+\begin{array}{c|c|c|c}
+ \operatorname{ht}\beta&\beta&\beta^2&e_\beta|o_\beta\\\hline
+ 1&\delta_i&2&1|0\\
+ 2&a_{ij}=\delta_i+\delta_j&0&10|0\\
+ 3&2\delta_i+\delta_j\ (i\ne j)&2&1|0\\
+ 3&\delta_{123}:=\delta_1+\delta_2+\delta_3&-6&29|93
+\end{array}
+\end{equation}
+The inverse Gram coordinate is
+$\gamma(\sum b_i\delta_i)=(b_1,b_1+b_2-b_3,b_2)$.
+For $i\ne j$, set $E_{ij}=[e_i,e_j]$ and
+$E_{iij}=[e_i,E_{ij}]$. For $\{i,j,k\}=\{1,2,3\}$ one has
+\begin{gather*}
+ E_{ji}=-E_{ij},\qquad
+ [h_i,E_{ij}]=[h_j,E_{ij}]=0,\qquad [h_k,E_{ij}]=-4E_{ij},\\
+ [f_i,E_{ij}]=2e_j,\qquad [f_j,E_{ij}]=-2e_i,\qquad [f_k,E_{ij}]=0,\\
+ [e_i,E_{iij}]=0,\qquad [f_i,E_{iij}]=2E_{ij},\qquad
+ [f_j,E_{iij}]=0.
+\end{gather*}
+For $i<j$, a basis in degree $a_{ij}$ consists of $E_{ij}$ and
+nine even simple vectors $u_{ij,r}$, $1\leq r\leq9$.
+They satisfy
+\[
+ [e_i,u_{ij,r}]=[e_j,u_{ij,r}]
+ =[f_i,u_{ij,r}]=[f_j,u_{ij,r}]=0,
+ \qquad (\operatorname{ad}e_k)^5u_{ij,r}=0.
+\]
+\end{proposition}
+\begin{proof}
+The inverse degree map and the norm formula give the table's degrees
+and norms. Purely real positive words of height two give one bracket
+in each pair degree. Null-ray simple generators add nine, with
+orthogonality giving the displayed zeros. Chevalley and Jacobi give,
+for example,
+$[f_i,[e_i,e_j]]=[-h_i,e_j]=2e_j$ and
+$[f_i,[e_i,E_{ij}]]=[-h_i,E_{ij}]+[e_i,2e_j]=2E_{ij}$.
+The real Serre exponents are three on $e_j$ and five on $u_{ij,r}$
+because $(\delta_k,a_{ij})=-4$. The interior count is proved next.
+\end{proof}
+
+\begin{proposition}[The first interior degree]
+\label{prop:bkm-delta123-presentation-count}
+One has $m(\delta_{123})=-93$ and
+$e_{\delta_{123}}|o_{\delta_{123}}=29|93$.
+The even space contains the two-dimensional real span
+\[
+ T_1=[e_1,E_{23}],\qquad T_2=[e_2,E_{31}],\qquad
+ T_3=[e_3,E_{12}],\qquad T_1+T_2+T_3=0,
+\]
+and the $27$ vectors $[e_k,u_{ij,r}]$. The odd space consists of
+$93$ imaginary simple vectors, denoted $c^1,\ldots,c^{93}$.
+\end{proposition}
+\begin{proof}
+The multilinear part of the free Lie algebra on three real generators
+has dimension two. No Serre relation has this fine degree.
+Each mixed real-null word is also free of a relation at this degree.
+The fine generator grading separates the $27$ choices from each
+other and from the real words. Thus the even contribution is
+$2+27=29$.
+
+The chamber Fourier coefficient is
+$m(\delta_{123})=-64^{-1}c_\Delta(3,3,3)=-93$:
+the coefficient of $qrs$ in the normalized product is $64+29=93$.
+It prescribes $93$ odd simple generators. No bracket involving an
+odd generator can yet occur at smaller total height. Hence the
+signed root multiplicity is $29-93=-64=f(1,1)$.
+\end{proof}
+
+\begin{proposition}[Further interior parity dimensions]
+\label{prop:bkm-height-six-parities}
+Up to permutation of simple-root coordinates,
+\[
+\begin{array}{c|r|r|r|r}
+ (b_1,b_2,b_3)&m(\beta)&f_\beta&e_\beta&o_\beta\\\hline
+ (1,1,1)&-93&-64&29&93\\
+ (1,1,2)&90&108&201&93\\
+ (2,2,1)&54&-513&510&1023\\
+ (2,2,2)&-540&4016&10136&6120
+\end{array}
+\]
+\end{proposition}
+\begin{proof}
+The chamber coefficient definition computes the displayed $m$ values
+from the finite product expansion in these degrees. Formula
+\eqref{eq:bkm-parity-recursion} gives the two root dimensions.
+
+There is also a direct word count. At $(1,1,2)$, there are three purely real words and $9+9+9$ words
+containing one null simple generator. Brackets between generators of
+degrees $a_{13}$ and $a_{23}$ add $81$ vectors. The remaining $90$
+even vectors are simple generators. Their sum is $201$.
+The odd vectors are $[e_3,c^u]$, $1\leq u\leq93$.
+
+At $(2,2,1)$, an odd word contains one $c^u$. Its remaining degree
+$(1,1,0)$ is represented by the two ordered real actions or one of
+the nine generators in degree $a_{12}$. This gives
+$93(2+9)=1023$.
+
+At $(2,2,2)$, there are $540$ new odd simple generators. Each
+$c^u$ permits six ordered actions by three distinct real generators.
+It also permits both orders of a null generator and the complementary
+real generator, with $3\cdot9$ choices for the null generator. Thus
+\[
+ o_{(2,2,2)}=540+93(6+3\cdot2\cdot9)=6120.
+\]
+
+Fine generator degrees separate these summands. The real Serre
+relations involving $c^u$ require three repetitions of one real
+index and do not occur in the listed action degrees. The null
+orthogonality relations give precisely the reductions just used.
+Finally $e_\beta=f_\beta+o_\beta$ gives $510$ and $10136$.
+\end{proof}
+
+\begin{remark}[Real strings]
+\label{rem:bkm-affine-string}
+For distinct $i,j,k$, the real $\mathfrak{sl}_2$ at $k$ acts on
+the string through $a_{ij}$ with lowest weight $-4$.
+The degrees are $a_{ij}+s\delta_k$, $0\leq s\leq4$.
+$a_{ij}-\delta_k$ and $a_{ij}+5\delta_k$ are not roots.
+This is the real-root string theorem
+\cite[Proposition~5.1(c)]{KAC:1}, with the superalgebra convention
+of \cite[Section~6]{GN}. The affine subalgebra at $i,j$ contributes
+one even vector at every $na_{ij}$, and the null simple fibers
+contribute nine. Thus $\mathfrak g_{na_{ij}}$ has dimensions $10|0$.
+\label{rem:bkm-relation-window-target-parity}
+If $C_{k,s}=a_{ij}+s\delta_k$ and $D_k=\delta_k+2a_{ij}$, the
+corresponding dimensions are
+\[
+ 2a_{ij}:10|0,\quad C_{k,2}:201|93,\quad
+ C_{k,3}:29|93,\quad C_{k,4}:10|0,\quad C_{k,5}:0|0,
+ \qquad D_k:510|1023.
+\]
+The two transported rows follow from even Weyl symmetry. These
+are abstract root dimensions. Comparison maps still require actual
+vectors and operations in the compact source.
+\end{remark}
+
+\begin{corollary}[First signed multiplicities]
+\label{cor:bkm-real-isotropic-multiplicities}
+The values at $\delta_i,a_{ij},\delta_{123}$ are respectively
+$1,10,-64$. Their parity dimensions are $1|0,10|0,29|93$.
+\end{corollary}
+\begin{proof}
+Subtract the parity dimensions in
+\eqref{eq:bkm-height-three-table}.
+\end{proof}
+
+\section{A differential and its first Serre obstruction}
+\label{sec:bkm-root-differential}
+
+The two parities at $\gamma:=\delta_{123}$ permit a complex with
+smaller cohomology but the same signed dimension. Whether such a
+complex respects the root operations is a further question.
+Consider first the genuine positive-height quotient
+\[
+ L_{\leq3}=\mathfrak n_+/
+       \bigoplus_{\operatorname{ht}\beta>3}\mathfrak g_\beta.
+\]
+Its dimensions by height are $3$, $30$, and $35|93$, respectively,
+so its total dimension is $161$. Give its even simple generators
+cohomological degree zero and its $93$ odd generators $c^u$ degree
+$-1$. Cochain parity supplies the super sign.
+
+\begin{proposition}[Cancellation in the height-three quotient]
+\label{prop:bkm-height-three-differential}
+Choose a basis $w_1,\ldots,w_{29}$ of
+$W_\gamma:=\mathfrak g_{\gamma,\overline0}$.
+The assignments
+\[
+ dc^u=w_u\quad(1\leq u\leq28),\qquad
+ dc^u=0\quad(29\leq u\leq93),\qquad de_i=du_{ij,r}=0
+\]
+define a dg Lie structure on $L_{\leq3}$. At $\gamma$ its
+cohomology is $H^{-1}=\C^{65}$ and $H^0=\C$.
+\end{proposition}
+\begin{proof}
+Every height-three vector is central in this positive quotient.
+The assigned derivation therefore respects the relations and
+squares to zero. Its degree-$\gamma$ complex is
+$\C^{93}\longrightarrow\C^{29}$ with rank $28$.
+The pairs $(c^u,w_u)$ for $u\leq28$ are contractible, with homotopy
+$w_u\mapsto c^u$. The remaining $65$ odd and one even vector give
+the stated cohomology.
+\end{proof}
+
+This calculation explains how $29-93=-64$ can coexist with
+cohomology dimensions $1|65$. It makes no choice of a geometric
+differential. Such a choice would have to arise from the coefficient
+complexes and preserve their operations. Even abstractly, the
+unchanged Borcherds relations constrain the extension.
+
+\begin{lemma}[Lowering detects the interior even space]
+\label{lem:bkm-lowering-detector}
+Put $E_i=\operatorname{ad}e_i$, $F_i=\operatorname{ad}f_i$ and
+$H_i=\operatorname{ad}h_i$. The map
+\[
+ W_\gamma\longrightarrow\bigoplus_i\mathfrak g_{\gamma-\delta_i},
+ \qquad w\longmapsto(F_1w,F_2w,F_3w)
+\]
+is injective, and $F_i^2W_\gamma=0$.
+\end{lemma}
+\begin{proof}
+For the real basis $u=[e_1,[e_2,e_3]]$ and
+$v=[e_2,[e_1,e_3]]$, Chevalley and Jacobi give
+\[
+\begin{array}{c|cc}
+ &u&v\\\hline
+ F_1&4E_{23}&2E_{23}\\
+ F_2&2E_{13}&4E_{13}\\
+ F_3&-2E_{12}&2E_{12}
+\end{array}
+\]
+The first two coefficient rows have determinant $12$.
+
+For a null simple vector $b\in\operatorname{span}\{u_{ij,r}\}$,
+\[
+ F_k[e_k,b]=4b,\qquad F_i[e_k,b]=F_j[e_k,b]=0
+ \quad(\{i,j,k\}=\{1,2,3\}).
+\]
+The nine simple directions at $a_{ij}$ are independent of $E_{ij}$.
+These blocks therefore detect all $27$ mixed coefficients. The real
+block detects the remaining two. A second lowering has a negative
+simple-root coordinate and vanishes.
+\end{proof}
+
+\begin{theorem}[First obstruction to extending the differential]
+\label{thm:bkm-serre-nonextension}
+A root-preserving odd derivation of the unchanged positive
+Borcherds algebra vanishes on all $c^u$.
+Set the rank-$28$ differential above to zero on all other simple
+generators. It descends to every positive-height quotient of height
+at most five, and fails at height six.
+\end{theorem}
+\begin{proof}
+The purely even real-root spaces force $de_i=0$.
+For $w=dc^u\in W_\gamma$, differentiation of the defining relation
+$E_i^3c^u=0$ gives $E_i^3w=0$. On $W_\gamma$ we have
+$H_iw=-2w$ and $F_i^2w=0$. The $\mathfrak{sl}_2$ commutation
+relations give
+\[
+ F_iE_i^aF_i^bw
+ =E_i^aF_i^{b+1}w
+   -a(-2-2b+a-1)E_i^{a-1}F_i^bw.
+\]
+
+Four successive lowerings of $E_i^3w$ are
+$E_i^3F_iw$, $6E_i^2F_iw$, $36E_iF_iw$, and $144F_iw$.
+Hence $E_i^3w=0$ implies $F_iw=0$ for every $i$.
+Lemma~\ref{lem:bkm-lowering-detector} forces $w=0$.
+The negative generators only detect the positive relations. No
+extension of $d$ to them is assumed.
+
+The first relations involving $c^u$ are the real Serre relations
+at $\gamma+3\delta_i$, of height six. Orthogonality gives none
+at lower height: $(\gamma,\delta_i)=-2$ and
+$(\gamma,a_{ij})=-4$. Thus through height five every surviving
+relation either contains no $c^u$ and is closed, or is absent by
+height. The differential preserves height and squares to zero on
+generators, so it descends through those quotients. At height six
+the injective detector rules out its nonzero image.
+\end{proof}
+
+There is a separate restriction on retaining the real algebra in
+cohomology. If $R_\gamma$ is its two-dimensional real multilinear
+part and $W'\subset W_\gamma$ has dimension $28$, then
+\[
+ \dim(W'\cap R_\gamma)\geq28+2-29=1.
+\]
+Thus making $W'$ exact while keeping the real generators closed
+kills at least one nonzero real bracket in cohomology.
+
+\begin{proposition}[Free attachment of the desired boundaries]
+\label{prop:bkm-free-dg-attachment}
+Let $\mathfrak a$ be the ordinary Lie algebra generated by the real
+and null simple vectors with their prescribed relations.
+Choose $w_1,\ldots,w_{28}\in\mathfrak a_\gamma$ and form
+\[
+ \mathcal L=\mathfrak a*\operatorname{Lie}(c^1,\ldots,c^{93}),
+ \qquad dc^u=\begin{cases}w_u,&u\leq28,\\0,&u>28,\end{cases}
+ \qquad d\mathfrak a=0,
+\]
+where the $c^u$ have degree $-1$ and root $\gamma$.
+This is a dg Lie algebra with
+$H^0(\mathcal L)=\mathfrak a/\langle w_1,\ldots,w_{28}\rangle_{\mathrm{Lie}}$.
+The differential extends to its positive-height completion.
+\end{proposition}
+\begin{proof}
+The derivation extends freely and its square is zero on generators.
+Degree zero is $\mathfrak a$. Every degree-$-1$ word has one
+$c^u$, so its differential is an iterated bracket of $w_u$ with
+$\mathfrak a$. These images generate exactly the stated ideal.
+Root degree is preserved, giving continuity in positive height.
+\end{proof}
+
+This attachment imposes no new Serre relation on the $c^u$.
+For example, $d[c^i,c^j]=-[c^j,w_i]-[c^i,w_j]$ records relations
+among its boundaries in negative cohomological degrees.
+For a homotopy-invariant derived quotient, make the attachment to a
+semifree resolution of $\mathfrak a$ using chosen cycle lifts of
+the $w_u$. Imposing an additional differential
+$dz=E_i^3c^u$ would require $d^2z=E_i^3w_u=0$. The theorem
+shows why that requirement fails in the original root algebra.
+The construction provides a different derived algebra, whose
+comparison with geometric elliptic coefficients remains to be made.
+
+\section{Finite operations and completions}
+\label{sec:bkm-finite-operations}
+
+A finite set of roots gives finite-dimensional vector spaces.
+It gives a Lie algebra only when the bracket has a suitable
+quotient or closure property. The positive-height quotients just
+used have this property because positive heights add.
+
+\begin{proposition}[Positive completion]
+\label{prop:bkm-positive-completion}
+The subspace
+\[
+ \mathfrak n_{+,>N}
+ =\bigoplus_{\operatorname{ht}\beta>N}\mathfrak g_\beta
+\]
+is a Lie ideal of $\mathfrak n_+$. Its finite-dimensional nilpotent
+quotients define the topological Lie superalgebra
+\[
+ \widehat{\mathfrak n}_+
+ =\varprojlim_N\mathfrak n_+/\mathfrak n_{+,>N}
+ =\prod_{\beta>0}\mathfrak g_\beta.
+\]
+The bracket projected to
+$\mathfrak h\oplus\bigoplus_i(\mathfrak g_{\delta_i}
+\oplus\mathfrak g_{-\delta_i})$ fails Jacobi.
+\end{proposition}
+\begin{proof}
+A bracket of positive degrees has their sum as degree, so the
+specified subspace is an ideal. An iterated bracket of more than
+$N$ positive inputs has height greater than $N$. The quotient is
+therefore nilpotent and finite-dimensional. Every coefficient of
+the completed bracket is a finite sum, giving continuity.
+
+For the projected full bracket, take $i\ne j$.
+The term $[e_i,[e_j,f_j]]=[e_i,h_j]=2e_i$ survives,
+whereas the intermediate $[e_i,e_j]$ is projected to zero and
+$[e_i,f_j]=0$. Thus the derivation form of Jacobi has defect $2e_i$.
+\end{proof}
+
+\begin{definition}[Finite homogeneous operation datum]
+\label{def:bkm-finite-target-presentation-datum}
+A finite set $W\subset\mathcal R_+$ is \emph{downward saturated} if it
+contains every positive root $\beta'\leq\beta\in W$, where
+$\beta-\beta'\in Q_+$. Put $S_W=W\cup(-W)\cup\{0\}$.
+The target datum contains the spaces $\mathfrak g_{\beta,\bar p}$
+for $\beta\in S_W$ and $B_{\mathfrak g}$ on opposite degrees.
+It retains each homogeneous bracket map whose input and output
+degrees belong to $S_W$. It also specifies the
+simple generators, their defining relations, and bases of the
+finite enveloping pieces defined below. Every iterated identity
+is required in a larger set containing all its intermediate degrees.
+\end{definition}
+
+Such a datum is a fragment of the graded algebra. It is not assigned
+a bracket that sets omitted outputs to zero. In particular, its
+finite matrices describe operations inherited from $\mathfrak g$,
+not an enveloping algebra of the fragment itself.
+
+\begin{proposition}[Finite filtered enveloping spaces]
+\label{prop:bkm-finite-filtered-pbw}
+Choose homogeneous root bases and a basis of $\mathfrak h$.
+Give a root basis vector weight $|\operatorname{ht}\beta|$ and a
+Cartan basis vector weight one. Ordered super-PBW monomials of total
+weight at most $N$ span a finite-dimensional space $F_NU(\mathfrak g)$.
+These spaces exhaust $U(\mathfrak g)$ and satisfy
+\[
+ F_MF_N\subset F_{M+N},\qquad
+ \Delta(F_N)\subset\sum_{a+b\leq N}F_a\otimes F_b,\qquad
+ S(F_N)\subset F_N.
+\]
+
+Here $\Delta(x)=x\otimes1+1\otimes x$ and $S(x)=-x$ on
+$\mathfrak g$. The ordinary PBW length filtration is an additional
+filtration. Its intersection with each $F_N$ is finite-dimensional.
+\end{proposition}
+\begin{proof}
+Only finitely many root and Cartan basis vectors have weight at
+most $N$, and each has positive weight. There are finitely many
+ordered monomials of bounded total weight, with an odd vector
+occurring at most once. Reordering uses
+$xy-(-1)^{|x||y|}yx=[x,y]$. The bracket weight is at most the sum
+of the input weights, including opposite roots whose bracket lies
+in the Cartan. Thus multiplication and the Hopf operations respect
+the stated bounds. The super PBW theorem proves that these
+monomials form bases.
+\end{proof}
+
+A finite filtered piece is generally not an algebra. Already in
+$U(\mathfrak{sl}_2)$, order the basis by $f<h<e$ and project each
+product to PBW length at most one. The projected product satisfies
+$e*f=h$, $h*f=-2f$ and $f*f=0$, so
+\[
+ (e*f)*f-e*(f*f)=-2f.
+\]
+The associative multiplication is the map into the larger filtered
+piece specified by the proposition.
+
+\begin{theorem}[Reconstruction from finite operations]
+\label{thm:bkm-finite-operation-reconstruction}
+Let $P=\bigoplus_{\beta\in L}P_\beta$ be a graded Lie superalgebra
+with finite-dimensional homogeneous spaces and no support outside
+$\mathcal R_+\cup(-\mathcal R_+)\cup\{0\}$. Suppose compatible
+even isomorphisms $A_\beta:P_\beta\to\mathfrak g_\beta$ are given
+on an exhaustion of all root degrees and the Cartan. If every
+homogeneous bracket square commutes in some finite set containing
+its inputs and output, then $\bigoplus_\beta A_\beta$ is a graded
+Lie isomorphism. If the opposite-degree pairing squares commute,
+it also preserves the specified invariant forms. It induces a
+filtered Hopf isomorphism of the ordinary enveloping algebras and
+an isomorphism of the positive-height Lie completions.
+\end{theorem}
+\begin{proof}
+Compatibility defines $A$ on every homogeneous space. Algebraic
+elements have finite support. Every pair of such elements is
+contained in a finite set of homogeneous bracket squares, so $A$
+preserves brackets. The inverses have the same property.
+
+Pairing
+compatibility is checked on the finitely many opposite-degree
+terms. The enveloping assertion follows by its universal property
+and the super PBW theorem. On the positive half, the maps commute
+with the genuine height quotients. The compatible inverses induce
+the inverse on their limit.
+\end{proof}
+
+\begin{proposition}[Obstruction to the full root-product topology]
+\label{prop:bkm-two-sided-completion-obstruction}
+The bracket of $\mathfrak g$ has no jointly continuous extension
+to $\mathfrak h\oplus\prod_{\beta\ne0}\mathfrak g_\beta$ with
+its coordinatewise linear topology and discrete Cartan factor.
+\end{proposition}
+\begin{proof}
+Fix a primitive null ray $a=a_{ij}$ and choose one pair of simple
+generators $e_n,f_n$ in degrees $na,-na$ for each $n\geq1$.
+Chevalley gives $[e_n,f_m]=\delta_{nm}na$.
+The two partial sums $\sum_{n=1}^Ne_n$ and $\sum_{n=1}^Nf_n$
+converge coordinatewise, but their brackets have Cartan component
+$N(N+1)a/2$, which is not eventually constant. This contradicts
+continuity.
+\end{proof}
+
+One valid enlargement is
+$\mathfrak n_-\oplus\mathfrak h\oplus\widehat{\mathfrak n}_+$,
+with the negative and Cartan summands discrete. A negative element
+has finite support, so every mixed bracket coefficient is a finite
+sum. Its negative output is again finite. Positive-positive
+brackets are continuous by height. This defines a topological Lie
+algebra. A completion allowing both infinite signs needs a
+different summation domain and a new continuity argument.
+
+\subsection{Inverse limits of maps and complexes}
+
+A compatible family of literal isomorphisms of inverse systems
+induces an isomorphism on inverse limits: the compatible inverse
+maps provide its inverse. No exactness hypothesis is needed for
+that assertion. Exactness becomes relevant when forming quotient
+objects or passing from quasi-isomorphisms of complexes to ordinary
+limits.
+
+\begin{proposition}[Finite towers]
+\label{prop:bkm-finite-tower-ml}
+Every countable inverse system of finite-dimensional vector spaces
+is Mittag--Leffler. Consequently, for a compatible short exact
+sequence $0\to K_N\to V_N\to Q_N\to0$ with each $K_N$
+finite-dimensional, its inverse limit is exact.
+\end{proposition}
+\begin{proof}
+At a fixed index $N$, the images of later terms in $K_N$ form a
+descending chain of subspaces. Their dimensions stabilize, hence
+so do the subspaces. This is the Mittag--Leffler condition and
+implies $R^1\varprojlim K_N=0$ for a countable tower
+\cite[Section~3.5]{WeibelHA}. Apply the inverse-limit exact sequence.
+\end{proof}
+
+The assertion applies to primitive spaces, pairing kernels and finite
+PBW pieces only after those spaces and their transition maps exist.
+Kernels themselves commute with limits of an actual commuting
+inverse-system map.
+
+Dualization reverses arrows: if
+$T_N:V_{N+1}\to V_N$, then $T_N^*:V_N^*\to V_{N+1}^*$.
+Thus finite perfect pairings do not, by themselves, define an
+inverse tower of dual spaces. For a surjective inverse tower of
+finite-dimensional spaces, the continuous dual of its limit is
+$\varinjlim V_N^*$. Comparison with a second inverse limit requires
+specified adjoint transition maps. Over a general coefficient ring,
+finite generation alone also does not imply the descending-chain
+argument used above.
+
+\begin{proposition}[Ordinary limits of complexes]
+\label{prop:bkm-limit-complexes}
+For a countable tower of cochain complexes, degreewise
+Mittag--Leffler chain groups suffice to identify its ordinary
+inverse limit with its homotopy inverse limit. Without such a
+condition, ordinary inverse limits need not preserve
+quasi-isomorphisms, even for towers of acyclic complexes.
+\end{proposition}
+\begin{proof}
+Let $T$ shift a product of the chain groups using the transition
+maps. The homotopy inverse limit is
+$\operatorname{Cone}(1-T:\prod C_N\to\prod C_N)[-1]$.
+Degreewise Mittag--Leffler makes $1-T$ degreewise surjective.
+Its kernel complex, the ordinary limit, is then quasi-isomorphic
+to that homotopy fiber. Homotopy limits preserve equivalences.
+
+For failure without this hypothesis, take the acyclic complexes
+\[
+ C_N=\bigl(t^N\C[t]\lhook\joinrel\longrightarrow
+             \C[t]\longrightarrow\C[t]/(t^N)\bigr)
+\]
+in degrees $-1,0,1$. The transition maps are inclusion, identity
+and reduction, respectively. Their ordinary limit is
+$0\to\C[t]\to\C[[t]]$, whose degree-one cohomology is
+$\C[[t]]/\C[t]$. The compatible residues
+$1+t+\cdots+t^{N-1}$ have no polynomial lift: such a lift would
+have coefficient one in every degree. The infinite-dimensional
+tail spaces here are not covered by the preceding proposition.
+\end{proof}
+
+\section{Information in the superdenominator}
+\label{sec:bkm-chiral-shadow}
+\label{sec:bkm-chiral-shadow-character}
+
+\begin{lemma}[Visible and zero exponents]
+\label{lem:bkm-active-multiplicity}
+On $\Gamma_{\mathrm{act}}$, the signed root dimension is
+$\smult(\alpha(n,l,m))=f(nm,l)$. A zero exponent can arise from an absent root space or from equal,
+nonzero parity dimensions. The superdenominator alone does not
+distinguish these possibilities.
+\end{lemma}
+\begin{proof}
+The equality is~\eqref{eq:bkm-active-multiplicities}.
+A factor with exponent zero is one for either of the stated parity
+possibilities. The ordinary denominator of the fixed presentation
+resolves that ambiguity by Proposition~\ref{prop:bkm-all-height-parities}.
+\end{proof}
+
+\begin{proposition}[Information in a superdenominator]
+\label{prop:bkm-information-content}
+A product $\prod_{\beta>0}(1-X^\beta)^{f_\beta}$ in the positive
+height completion determines every signed exponent $f_\beta$.
+Taken without a presentation or ordinary denominator, it determines
+neither the two parity dimensions nor a bracket or invariant form.
+\end{proposition}
+\begin{proof}
+Taking logarithms over $\Q$ gives
+\[
+ \log D_s=-\sum_{\beta>0}\sum_{r\geq1}
+                 \frac{f_\beta}{r}X^{r\beta}.
+\]
+At each height the already known smaller degrees can be subtracted,
+leaving $f_\beta$. But adjoining an even-odd pair in any degree
+does not change $f_\beta$. On fixed graded spaces, the abelian
+bracket also gives the same determinant. It differs from the
+Borcherds bracket, for which $[e_i,f_i]=h_i\ne0$.
+\end{proof}
+
+\begin{proposition}[The super Grothendieck quotient]
+\label{prop:bkm-determinant-grothendieck}
+Let $\mathcal B$ be a locally finite super vector space graded by
+the positive monoid, with $\sdim\mathcal B_{\alpha(n,l,m)}=f(nm,l)$.
+Its completed superdeterminant gives
+\[
+ 64q^{1/2}r^{1/2}s^{1/2}
+ \prod_{\Gamma_{\mathrm{eff}}}(1-q^nr^ls^m)^{\sdim\mathcal B_{\alpha(n,l,m)}}
+ =\Delta_5(Z).
+\]
+This invariant factors through the quotient of the completed
+Grothendieck group by $[\Pi V]=-[V]$, where $\Pi$ reverses parity.
+The ordinary Grothendieck group of super vector spaces retains both
+parity dimensions.
+\end{proposition}
+\begin{proof}
+In each degree, ordinary $K_0$ is $\Z[\C_{\overline0}]
+\oplus\Z[\C_{\overline1}]$. Superdimension is the map
+$(e,o)\mapsto e-o$, whose kernel is generated by $(1,1)$.
+The superdeterminant is $(1-X^\beta)^{e-o}$, so it factors through
+that quotient. Local finiteness makes the product meaningful in
+height. The specified signed dimensions identify it with
+\eqref{eq:bkm-D5-borcherds-product}.
+\end{proof}
+
+\begin{remark}[The extra datum in parity recovery]
+\label{rem:bkm-determinant-forgets}
+The pair $29|93$ uses the minimal simple-generator prescription
+and the Borcherds relations. The superdenominator by itself admits
+all pairs $(a,a+64)$. Formula~\eqref{eq:bkm-parity-recursion} recovers
+the actual pair because its second input, $D_o$, is constructed
+from that prescription. This does not reconstruct a compact Hall
+object from a numerical product.
+\end{remark}
+
+\begin{remark}[Cusp and root coordinates]
+\label{rem:bkm-two-polarizations}
+The cusp notation uses $(n,l,m)$ and the root notation uses
+$(b_1,b_2,b_3)=(n,m,n+m-l)$. Their common active monomials lie in
+$Q_+$ by Lemma~\ref{lem:bkm-active-cone}. The cusp order and the
+chosen Weyl chamber specify expansions of the same lattice
+characters through $\alpha$. This coordinate identification is an
+integral map. It does not supply a duality of coefficient objects.
+
+For a compact source, the normal-ordered charge homomorphism
+$\overline\Pi_X$ must still intertwine its operations with this
+grading. The quadratic defect of an uncorrected charge assignment
+is not an extra term in the target Cartan form.
+\end{remark}
+
+\section{The invariant form and primitive recognition}
+\label{sec:bkm-primitive-comparison}
+
+If an associative super-bialgebra $H$ is given, its primitives are
+$P(H)=\{x:\Delta x=x\otimes1+1\otimes x\}$.
+Compatibility of product and coproduct makes them a Lie
+superalgebra under the supercommutator. Recognition of
+$\mathfrak g$ in such a source requires a Lie form on the primitives.
+That form must be distinguished from a pairing adjoint to the
+ordinary Hopf product and coproduct.
+
+\begin{proposition}[Hopf adjointness on primitives]
+\label{prop:bkm-hopf-pairing-obstruction}
+Let $B$ be an even Hopf pairing on a super-bialgebra over $\C$,
+with $B(xy,z)=B(x\otimes y,\Delta z)$ and the unit-counit
+identities. Then $B([P(H),P(H)],P(H))=0$.
+Its restriction cannot be the nondegenerate invariant form of
+$\mathfrak g$. The contradiction already occurs on a real
+$\mathfrak{sl}_2$ triple.
+\end{proposition}
+\begin{proof}
+For primitive $z$, the right side of the adjointness identity has
+one unit factor. If $x,y$ are also primitive, the unit-counit
+identities give $B(xy,z)=0$, and similarly for the reversed product,
+with the Koszul tensor sign. Thus the primitive commutator pairs
+to zero with every primitive. On an even real triple in
+$\mathfrak g$,
+\[
+ [h,e]=2e,\qquad B_{\mathfrak g}(e,f)=1,
+ \qquad B_{\mathfrak g}([h,e],f)=2.
+\]
+This contradicts the asserted Hopf adjointness. Even without a unit
+normalization, for even primitives the expression
+$B(x,z)B(y,1)+B(x,1)B(y,z)$ is symmetric in $x,y$, giving the
+same contradiction after subtraction.
+\end{proof}
+
+The obstruction fixes the recipient: ordinary primitives and their
+ordinary coproduct. It does not exclude a Hall pairing between
+different positive and negative objects, a braided coproduct, or
+an independently constructed invariant Lie form. Each such choice
+has its own compatibility equations.
+
+\begin{proposition}[Radical quotient from a Lie form]
+\label{prop:bkm-lie-radical-quotient}
+Let $P$ be a Lie superalgebra with an even invariant form $B_P$,
+and let $R$ be its radical. Then $R$ is a Lie ideal. The two-sided
+ideal $\langle R\rangle$ in $U(P)$ is a Hopf ideal, and
+\[
+ U(P)/\langle R\rangle\simeq U(P/R)
+\]
+as Hopf superalgebras.
+\end{proposition}
+\begin{proof}
+Invariance implies $B_P([x,r],y)=0$ for every $r\in R$ and all
+homogeneous $x,y$, so $[P,R]\subset R$. In $U(P)$ the elements
+of $R$ are primitive. Therefore
+$\Delta\langle R\rangle\subset\langle R\rangle\otimes U(P)
++U(P)\otimes\langle R\rangle$, the counit kills this ideal, and
+the antipode preserves it. The enveloping universal property gives
+the displayed quotient isomorphism.
+\end{proof}
+
+For a compact source, first construct $P_X$ and its invariant
+form $B_X$. Then construct a root-graded homomorphism
+\[
+ \mathfrak g\longrightarrow P_X/\operatorname{Rad}B_X
+\]
+from specified source representatives of the real and imaginary
+simple generators. The defining relations, generation and absence
+of extra relations must be proved. On finite homogeneous spaces,
+these statements can be expressed by bracket, pairing and comparison
+matrices as in Theorem~\ref{thm:bkm-finite-operation-reconstruction}.
+An arbitrary full-rank integral matrix is insufficient over a
+coefficient ring: multiplication by two on $\Z$ has full rank and
+is not invertible. Over $\C$, equal dimensions and invertible
+comparison matrices do give the required vector-space isomorphisms.
+
+\begin{proposition}[Recognition on all primitives]
+\label{prop:bkm-connected-hopf-recognition}
+Let $H$ be a connected cocommutative Hopf superalgebra over $\C$.
+Here connected means that the reduced coproduct is elementwise
+conilpotent. Then the natural map $U(P(H))\to H$ is an isomorphism.
+Consequently a morphism between such Hopf superalgebras is an
+isomorphism if it is an isomorphism on all primitives.
+\end{proposition}
+\begin{proof}
+In the convolution algebra of endomorphisms of $H$, put
+$J=\mathrm{id}-\eta\varepsilon$ and
+\[
+ e=\log^*(\mathrm{id})
+   =\sum_{n\geq1}\frac{(-1)^{n+1}}nJ^{*n}.
+\]
+Every sum is finite on an element by conilpotence. In
+$\operatorname{Hom}(H,H\otimes H)$, the maps $x\mapsto x\otimes1$
+and $x\mapsto1\otimes x$ commute for convolution by
+cocommutativity, and their product is $\Delta$. Taking logarithms
+therefore gives $\Delta e(x)=e(x)\otimes1+1\otimes e(x)$.
+Thus $e$ takes values in $P(H)$. The identity
+$\exp^*(e)=\mathrm{id}$ expresses each element as a finite sum
+of products of these primitives, proving surjectivity.
+
+For injectivity, suppose the kernel has a nonzero element of least
+PBW filtration degree $d$. Its counit is zero, and its reduced
+coproduct lies in the tensor square of filtration degree at most
+$d-1$. The map is injective on that smaller filtration, so the
+reduced coproduct must vanish.
+
+By super PBW in characteristic zero,
+the primitives of $U(P(H))$ are exactly $P(H)$. Indeed, in the
+associated graded symmetric coalgebra the coproduct component of
+lengths $(1,d-1)$, followed by multiplication, is $d$ times the
+identity in length $d$. Thus a primitive has length at most one.
+This contradicts injectivity on $P(H)$.
+The last assertion follows by functoriality of the enveloping map.
+\end{proof}
+
+Agreement on a chosen list of root generators has no such force
+without these recipient and generation hypotheses. An isomorphism
+of global primitive spaces also does not identify a sheaf of chiral
+coefficients without a comparison of its local operations.
+
+\section{Current algebras and their coefficients}
+\label{sec:bkm-source-target}
+
+The root algebra determines a chiral algebra on a smooth complex
+curve $C$. This construction supplies a concrete comparison object.
+Its local state spaces include current descendants absent from the
+root denominator.
+
+\begin{definition}[Current chiral envelope]
+\label{def:bkm-formal-current-envelope}
+Let $\mathcal D_C$ be the sheaf of differential operators on $C$.
+The induced right differential module
+\[
+ \operatorname{Cur}_C(\mathfrak g)=\mathfrak g\otimes_\C\mathcal D_C
+\]
+has the current Lie-star bracket induced by $[a,b]_{\mathfrak g}$.
+Here a Lie-star bracket is a differential-module map to the
+small-diagonal direct image, with antisymmetry and Jacobi.
+Its level-zero Beilinson--Drinfeld chiral envelope is
+\[
+ V_C=\mathsf{Den}_{\Delta_5,C}
+ :=U_C^{\mathrm{ch}}\operatorname{Cur}_C(\mathfrak g).
+\]
+A chiral bracket extends the Lie-star bracket to inputs on the
+complement of the diagonal, with the corresponding differential-module
+and Jacobi conditions. The envelope has the local vacuum map
+$\omega_C\to V_C$.
+\end{definition}
+
+\begin{proposition}[Local current realization]
+\label{prop:bkm-formal-current-envelope}
+The uncompleted ind differential-module envelope $V_C$ exists.
+On a coordinate disk its vacuum module is the level-zero induced
+module
+\[
+ U(\mathfrak g[t,t^{-1}])
+       \otimes_{U(\mathfrak g[t])}\C,
+\]
+and its PBW vector space is
+$\operatorname{Sym}_{\mathrm{super}}
+ (\mathfrak g\otimes t^{-1}\C[t^{-1}])$.
+The zero product of the current states recovers $[a,b]_{\mathfrak g}$.
+Its root superdenominator is $64^{-1}\Delta_5(2Z)$.
+\end{proposition}
+\begin{proof}
+The induced current Lie-star module is
+\cite[Section~2.5.6(b)(ii)]{BD}. The chiral enveloping construction
+and its PBW theorem are \cite[Sections~3.7.1 and~3.7.14]{BD}.
+The induced underlying $\mathcal O_C$-module is flat.
+Locally, the current operator product is
+$a(z)b(w)\sim[a,b](w)/(z-w)$, with no central double pole at level
+zero.
+
+PBW orders the negative loop modes and gives the displayed
+vacuum module \cite{KACVA}. Thus the first current states recover
+the original bracket by their zero product. Apply
+Theorem~\ref{thm:bkm-denominator-identity} to that root algebra.
+\end{proof}
+
+The last assertion concerns the current bracket, not a character of
+the entire vacuum module. Give a mode $a\otimes t^{-r}$ energy
+$r$, with formal energy variable $u$. For the positive-root current
+envelope, PBW gives the supercharacter
+\begin{equation}
+\label{eq:bkm-current-supercharacter}
+ \prod_{\beta>0}\prod_{r\geq1}
+           (1-u^rX^\beta)^{-\smult(\beta)}.
+\end{equation}
+Each fixed root height and energy has finite dimension.
+
+The energy
+is the loop-rotation grading. This formula does not require a
+Sugawara conformal vector for the infinite-dimensional algebra.
+The product includes every descendant mode, so it differs from the
+root superdeterminant even before a compact state space is considered.
+
+\begin{proposition}[An infinite current coefficient]
+\label{prop:bkm-current-infinite-charge-zero}
+For the full two-sided root algebra, the energy-two, root-charge-zero
+part of the universal current vacuum module is infinite-dimensional.
+\end{proposition}
+\begin{proof}
+At each $na_{ij}$ choose an even null simple generator and its
+negative partner. The PBW monomials
+$(e_n\otimes t^{-1})(f_n\otimes t^{-1})|0\rangle$ have energy
+two and charge zero. They are independent for all $n\geq1$.
+Thus the unpolarized root-and-energy character is not defined by
+finite coefficient dimensions. A different convergence prescription
+or a separately constructed state is needed to define such a trace.
+\end{proof}
+
+\subsection{An associative envelope on Ran space}
+\label{sec:bkm-ran-envelope}
+
+An associative bar construction needs an associative recipient,
+a tensor product and a unit. We describe one recipient in which
+the current chiral algebra has such an envelope.
+Let $\mathsf{FinSurj}_+$ be the category of nonempty finite sets
+and surjections. Set
+\[
+ \mathcal R_C=\varprojlim_{\mathsf{FinSurj}_+}\operatorname{DMod}(C^I),
+ \qquad \mathcal R_C^+=D(\C)\times\mathcal R_C,
+\]
+where a surjection $I\twoheadrightarrow J$ acts by exceptional
+pullback along its diagonal $C^J\to C^I$.
+An object is therefore a compatible family of right differential
+modules, together with an isolated empty component.
+
+For an ordered
+partition $I=I_1\sqcup I_2$, let $j_{I_1,I_2}$ be the open locus
+where points in different blocks are distinct. Chiral convolution is
+\[
+ (F\star G)_I=
+ \bigoplus_{I=I_1\sqcup I_2}
+  j_{I_1,I_2,*}j_{I_1,I_2}^{!}(F_{I_1}\boxtimes G_{I_2}).
+\]
+
+The empty-block summands use the empty coefficients. The unit $K$
+has $K_\varnothing=\C$ and $K_I=0$ for $I\ne\varnothing$.
+Call a family positive if its empty component is zero.
+
+For a right differential module $N$ on $C$, its positive
+main-diagonal family is $(\iota_*N)_I=\delta_{I,*}N$.
+The chiral bracket of $V_C$ makes $\mathcal L_C:=\iota_*V_C$
+a Lie object for $\star$. Define the augmented associative envelope
+\[
+ \mathcal A_{\Delta,C}=U_\star(\mathcal L_C),
+ \qquad (\mathcal A_{\Delta,C})_\varnothing=\C.
+\]
+This algebra and the BD envelope $V_C$ have different carriers.
+
+\begin{proposition}[Bar of the associative envelope]
+\label{prop:bkm-ran-bar-envelope}
+In $(\mathcal R_C^+,\star,K)$ there are equivalences
+\[
+ B\mathcal A_{\Delta,C}\simeq
+ \mathrm{CE}_\star(\mathcal L_C),\qquad
+ \Omega\mathrm{CE}_\star(\mathcal L_C)
+       \simeq\mathcal A_{\Delta,C}.
+\]
+The first coalgebra satisfies factorization. The bar is coaugmented
+and counital, its reduced coproduct is coassociative, and the cobar
+recovers an augmented associative algebra with empty component $\C$.
+\end{proposition}
+\begin{proof}
+The Ran convolution is symmetric and exact. Its positive $r$-fold
+words vanish on a configuration of cardinality less than $r$.
+This finite configuration bound makes the normalized bar--cobar
+comparison finite at every configuration.
+
+Flattening a bar--cobar
+word with $r$ original inputs gives $r-1$ gaps, each with the two
+states ``inside a block'' and ``between blocks''. On the associated
+graded the gap differential is a tensor product of two-term identity
+complexes. It is contractible for $r>1$. The empty and one-input
+terms survive. The finite filtration proves the unit and counit
+equivalences, including their coherent versions.
+
+For the envelope, the comparison from the Chevalley--Eilenberg
+coalgebra to the bar is suspended symmetrization
+\[
+ sx_1\cdots sx_r\longmapsto
+ \sum_{\sigma\in S_r}\varepsilon(\sigma;sx_1,\ldots,sx_r)
+ [x_{\sigma(1)}|\cdots|x_{\sigma(r)}].
+\]
+It has no factor $1/r!$: the unshuffle coproduct on the source
+corresponds to deconcatenation of the permutation sum. Its binary
+differential is the envelope commutator relation. The PBW filtration
+reduces it to the abelian Koszul comparison, contracted in positive
+polynomial weight by the Euler homotopy divided by that weight.
+Characteristic zero and the finite configuration bound give an
+equivalence. These constructions in the Ran coefficient category
+are described in \cite{ChiralBarCobarVolI}.
+
+Finally, the Chevalley--Eilenberg coalgebra of a chiral Lie object
+satisfies factorization precisely when that Lie object is supported
+on the main diagonal \cite[Theorems~5.1.1--5.2.1]{FrancisGaitsgoryCKD}.
+Here it is $\iota_*V_C$, so the hypothesis holds. The associative
+cobar assertion follows from the first paragraph.
+\end{proof}
+
+The Francis--Gaitsgory equivalence in the last step is between Lie
+and commutative coalgebra objects. The associative statement uses
+the envelope and its associative bar comparison in addition.
+It does not construct a second independently defined chiral field
+algebra.
+
+Likewise, restriction to ordered words, pullback to a
+collision atlas, and transposition of coefficient modules are
+different operations. A transposed algebra needs a duality domain
+and the correct exchanged extensions, such as $j_*$ and $j_!$.
+The generally infinite current coefficients are not automatically
+bounded holonomic objects. None of these operations turns a scalar
+supercharacter into a map of coefficient systems.
+
+\section{The character and the weight}
+\label{sec:bkm-maass-multiplier}
+
+The automorphic character is part of the denominator normalization.
+For $g=\left(\begin{smallmatrix}A&B\\C&D\end{smallmatrix}\right)
+\in\Sp_4(\Z)$ and $j(g,Z)=\det(CZ+D)$, one has
+\begin{equation}
+\label{eq:bkm-delta5-transformation}
+ \Delta_5(gZ)=\nu_{\Delta_5}(g)j(g,Z)^5\Delta_5(Z),
+ \qquad \nu_{\Delta_5}^2=1.
+\end{equation}
+Consequently $\Delta_5^2$ has weight ten and trivial character.
+The homogeneous orthogonal character
+$\widetilde\nu_{\Delta_5}$ is the one in
+Definition~\ref{def:homogeneous-orthogonal-character}. Its central
+value at $-\Id$ is $-1$.
+
+\begin{lemma}[Reflection values]
+\label{lem:bkm-maass-reflection-values}
+The character is $-1$ on each $s_{\delta_i}$ and $+1$ on each
+of the three type-I chamber reflections.
+\end{lemma}
+\begin{proof}
+Their symplectic lifts $g_\beta$ satisfy
+$\sigma(g_\beta)=-s_\beta$ and $j(g_\beta,Z)=-1$.
+Maass's character \cite{MAASS:1}, in the explicit form
+\cite[(1.5), Propositions~2.1--2.2]{GN}, has values $+1$ on the
+type-II lifts and $-1$ on the type-I lifts.
+Multiplication by the homogeneous central value $-1$ gives the
+claimed reflection values.
+\end{proof}
+
+\begin{lemma}[Linear action and slash action]
+\label{lem:bkm-maass-restriction}
+For $h=wa\in W\rtimes\Aut(\Poly_{II})$, one has
+\[
+ \widetilde\nu_{\Delta_5}|_W=\det,\qquad
+ \widetilde\nu_{\Delta_5}|_{\Aut(\Poly_{II})}=1,
+ \qquad \Delta_5(hZ)=\det(w)\Delta_5(Z).
+\]
+For a lift $g_h$ obtained by multiplying the six reflection lifts,
+$j(g_h,Z)=\det(w)\det(a)$ and
+\[
+ (\Delta_5|_5g_h)(Z)=\nu_{\Delta_5}(g_h)\Delta_5(Z)
+                     =\det(a)\Delta_5(Z).
+\]
+\end{lemma}
+\begin{proof}
+The generator values prove the restrictions and linear action.
+The cocycle rule multiplies the constant factors $-1$ of the lifts,
+giving $j(g_h,Z)=\det(h)$. Dividing the linear action by its fifth
+power gives the slash action. Changing a lift by $-\Id_4$ leaves
+these factors unchanged.
+\end{proof}
+
+\begin{remark}[Eight Coxeter characters]
+\label{rem:bkm-why-determinant}
+Since the only Coxeter relations are $s_i^2=1$, a character
+$W\to\{\pm1\}$ can choose each of its three signs independently.
+There are eight such characters. The reflection calculation selects
+$(-1,-1,-1)$, hence the determinant. Rescaling $\Delta_5$ cannot
+alter these values. Identifying them with transport on a compact
+orientation line still requires that line and its equivariant
+comparison with the automorphic line.
+\end{remark}
+
+\subsection{Borcherds weight}
+\label{sec:bkm-kappa-borcherds-weight}
+\label{sec:bkm-volIII-frame}
+
+The notation $\kappa_{\mathrm{BKM}}$ will mean the modular weight
+of a specified Borcherds product. It is distinct from a categorical
+trace, a current-algebra parameter or an Euler characteristic.
+
+\begin{theorem}[Weight of the denominator]
+\label{thm:bkm-kappa-universal}
+For an admissible Borcherds input with constant coefficient
+$c(0,0)$, the product has weight $c(0,0)/2$. In the present case,
+\begin{equation}
+\label{eq:bkm-kappa-formula}
+ \kappa_{\mathrm{BKM}}(\Delta_5)=\frac{f(0,0)}2=\frac{10}2=5.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Apply \cite[Theorem~13.3]{B} to the weight-$-1/2$ Weil input
+obtained by theta decomposition of $\phi_{0,1}$ on $\La^{3,2}$.
+Its constant coefficient is ten. The exceptional orthogonal
+identification transports this weight to the Siegel form, as in
+Chapter~\ref{ch:singular-theta-lift}.
+\end{proof}
+
+For comparison, the cyclic CHL eta products at orders
+$1,2,3,4,6$ have weights $12,8,6,5,4$:
+\[
+\begin{array}{c|l|c|c}
+ N&g_N&\operatorname{wt}(g_N)&
+       (\operatorname{wt}(g_N)-2)/2\\\hline
+ 1&\eta^{24}&12&5\\
+ 2&\eta^8\eta(2\tau)^8&8&3\\
+ 3&\eta^6\eta(3\tau)^6&6&2\\
+ 4&\eta^4\eta(2\tau)^2\eta(4\tau)^4&5&3/2\\
+ 6&\eta^2\eta(2\tau)^2\eta(3\tau)^2\eta(6\tau)^2&4&1
+\end{array}
+\]
+Here unlabeled eta factors have argument $\tau$. Multiplication
+by $\vartheta^2/\eta^6$ subtracts two from the seed weight. The last
+column is its half-weight.
+
+The lifting prescriptions and their
+characters are specified in \cite{JS06Dyon,GK09CHL,GK10Composite}.
+For the corresponding normalized square-root Borcherds inputs, the
+weight formula reads $c_N(0)=(10,6,4,3,2)$ and gives precisely that
+column. Half-integral weight requires the appropriate cover.
+
+The frame shapes also describe the permutation action on twenty-four
+coordinates \cite{ChengHarrison}. The number of fixed coordinates
+is not this constant coefficient.
+
+These cyclic orders do not index the eight pairs of the
+Gritsenko--Cl\'ery catalog. In its input-pair order
+\[
+ (1,1),(2,1),(1,2),(3,1),(1,3),(4,1),(1,4),(2,2),
+\]
+the weights are $(5,2,3,1,2,\tfrac12,\tfrac32,1)$ and the
+Borcherds constants are $(10,4,6,2,4,1,3,2)$
+\cite[Theorem~1.4]{GC}. Appendix~\ref{app:borcherds-product-expansion}
+gives the exact cusp and parameter dictionary. The common
+$(1,1)$ member is the present $\Delta_5$.
+
+\begin{remark}[Different characteristics]
+\label{rem:bkm-additive-collapse-fails}
+The numerical tuple $(0,0,3,5,24)$ can record proposed categorical
+and chiral characteristics together with the Cartan rank, Borcherds
+weight and K3 Euler number. The last three numbers have the present
+interpretations
+$\operatorname{rk}L=3$, $\operatorname{wt}\Delta_5=5$ and
+$\chi_{\mathrm{top}}(K3)=24$. A categorical or chiral trace in
+either first slot requires its own object and trace definition.
+The Hodge Euler characteristic of $K3\times E$ is zero because
+$\chi(\mathcal O_E)=0$, while $\chi(\mathcal O_{K3})=2$.
+Reading a proposed additive formula through these Euler numbers gives
+\[
+ 5\ne0+2.
+\]
+
+The different numerical equality $3+2=5$ uses the Cartan rank.
+It cannot supply the varying CHL weights $5,3,2,3/2,1$ from a
+fixed rank-three lattice and the same K3 Euler number.
+Thus neither equality constructs an additive identity among these
+independently defined characteristics.
+\end{remark}
+
+\begin{remark}[Two inputs to the weight formula]
+\label{rem:bkm-two-inputs-one-weight-rule}
+\label{rem:bkm-paramodular-fake-monster-rows}
+The present input has constant ten and weight five.
+The fake-monster denominator on the Lorentzian lattice
+$\mathrm{II}_{25,1}$ comes from $\eta^{-24}$, whose constant
+coefficient is twenty-four, and has weight twelve
+\cite{BorcherdsGKM88,Borcherds95}. Its orthogonal automorphic
+product lives on the corresponding signature-$(26,2)$ extension.
+The values five and twelve are evaluations of the same weight rule
+on different lattices and different inputs.
+\end{remark}
+
+\section{The compact comparison}
+\label{sec:bkm-summary-theorem}
+\label{sec:bkm-cross-view-boundary}
+\label{sec:bkm-closing}
+\label{sec:bkm-coda}
+
+\begin{theorem}[Denominator algebra]
+\label{thm:bkm-denominator-algebra-identity}
+The specified Borcherds presentation has Cartan space $L\otimes\C$,
+locally finite positive and negative root spaces, an invariant
+nondegenerate form and a triangular decomposition. Its
+superdenominator and weight are
+\[
+ \operatorname{den}(\mathfrak g)=64^{-1}\Delta_5(2Z),\qquad
+ \kappa_{\mathrm{BKM}}(\Delta_5)=5,
+\]
+and its signed root dimensions are $f(nm,l)$ under $\alpha$.
+Its two parity dimensions are determined by
+\eqref{eq:bkm-parity-recursion}.
+\end{theorem}
+\begin{proof}
+The presentation and invariant-form results give the first
+assertions. The two denominator identities and the weight theorem
+give the remaining formulas.
+\end{proof}
+
+\begin{corollary}[Automorphic and theta realizations]
+\label{thm:bkm-view-I-II}
+\label{thm:bkm-view-II-V}
+The root superdenominator is the normalized doubled Igusa form.
+That form is also obtained from the multiplicative singular theta
+lift of the Weil component of $\phi_{0,1}$ on
+$\La^{3,2}\simeq U\oplus U\oplus\langle2\rangle$, with the
+normalization of Theorem~\ref{thm:bkm-borcherds-product-D5}.
+\end{corollary}
+\begin{proof}
+Combine the denominator theorem with the singular-lift description
+\cite[Theorem~13.3]{B} and the exceptional exterior-square map
+of Section~\ref{ssec:exceptional-iso}.
+\end{proof}
+
+\begin{remark}[Arithmetic consequences]
+\label{rem:bkm-fourier-anchor}
+The polar coefficient $f(0,1)=1$ determines the real reflective
+divisor and $f(0,0)=10$ determines the weight. The remaining
+Jacobi coefficients give the signed root multiplicities and the
+theta-lift product. These arithmetic identities hold at every
+degree by the lift theorems. A finite coefficient table illustrates
+them. It cannot establish a compact protected index or identify its
+operations.
+\end{remark}
+
+A compact protected Pfaffian asks for additional geometric data.
+Chapter~\ref{chap:dirac-igusa-pro-object} specifies a finite Dirac
+family, its reduced orientation and orientation-compatible transition
+maps. It also requires a coherent wall atlas and a finite geometric
+Pfaffian datum. The relevant hypotheses are
+$(D0)$, $(O1)$, $(O1)^+$, $(O2_{\mathrm{atlas}})$ and
+$(P_{\mathrm{fin}})$ there. Their comparison aims at
+\[
+ \operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})
+       =\Delta_5,
+ \qquad \epsilon_o|_W=\widetilde\nu_{\Delta_5}|_W.
+\]
+
+These are conditional geometric identities with specified line
+trivializations and normalization. They are separate from the
+unconditional abstract denominator theorem. A mirror discriminant
+comparison remains conjectural as formulated in
+Chapter~\ref{ch:view4-mirror}.
+
+\begin{remark}[Boundary algebra and center]
+\label{rem:bkm-target-not-bulk}
+\label{rem:bkm-universal-holography-scope}
+Suppose a factorization category $\mathcal C$ and a chosen boundary
+object $b$ have been constructed. Its boundary algebra is
+$A_b=R\operatorname{End}_{\mathcal C}(b)$ in the specified
+coefficient recipient. A proposed bulk description by its derived
+center requires the bulk-to-center map, its operation compatibility
+and its reconstruction hypotheses. An identification with Hochschild
+cochains uses the corresponding enrichment and representability
+conditions \cite{ChiralBarCobarVolI,ChiralBarCobarVolII}.
+Where a chiral Swiss-cheese brace action is defined, the comparison
+must intertwine its mixed bulk-boundary operations. A gravitational
+interpretation additionally requires line observables and their
+operator product.
+
+The root algebra $\mathfrak g$ is not, by its denominator identity,
+that center. Nor may a bar coalgebra $C_X$ be substituted for the
+associative boundary algebra in a center expression without a
+proved comparison in the relevant category.
+
+For a supplied compact coalgebra in $\mathcal R_E^+$, the current
+construction provides a precise possible comparison target,
+\[
+ C_X\longrightarrow B\mathcal A_{\Delta,E},
+ \qquad
+ \Omega C_X\longrightarrow\mathcal A_{\Delta,E}.
+\]
+A constructible Hall system must first be realized as such a
+right differential-module family. The morphism must preserve the
+collision operations, the coaugmentation and the transition maps.
+Its cone must be acyclic before it is called an equivalence.
+A word-cut coalgebra gives only its specified ordered restriction.
+The missing comparison with full collision diagrams remains part
+of the compact problem.
+\end{remark}
+
+The local current vacuum $\omega_E\to V_E$, empty convolution
+unit $K$, augmentation to $K$, and prepared physical state have
+four different roles. A protected operator trace
+requires a state or module, its action and its trace functional.
+Neither the current construction nor the scalar product chooses
+that state. The compact recognition problem requires these coefficient and
+operation maps together with the invariant Lie comparison. Their
+completion must support all the stated operations. The algebraic constructions of this chapter fix their
+codomains and their first nontrivial root tests.

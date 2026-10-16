@@ -1,0 +1,1395 @@
+\subsection{Reduced complexes and coherent orientations}
+\label{subsec:cosection-twisted-orientation}
+
+An orientation is a square root together with its squaring map.  Its
+compatibility with an extension is another isomorphism, and compatibility
+with a flag is an equation between such isomorphisms.  These distinctions
+matter on \(X=S\times E\): removing the elliptic translation direction,
+changing a formal coordinate on \(E\), and descending through a stabilizer
+all act on the deformation complex.  We first construct the complexes and
+local comparisons.  We then formulate the global orientation they must
+preserve.
+
+\subsubsection*{The deformation complex and the reduced recipient}
+
+Fix a smooth projective K3 surface \(S\), an elliptic curve \(E\), and
+nonzero forms \(\sigma_S\in H^0(S,\Omega_S^2)\) and
+\(\omega_E\in H^0(E,\Omega_E^1)\).  Their product trivializes \(K_X\).
+K3 stability conditions and projective moduli of stable objects
+\cite{BridgelandK3Stability,BayerMacriProjectivity} provide the surface
+input.  On \(X\), we additionally fix the product-stability and support
+conditions of Appendix~\ref{app:stability-support}.
+For a perfect family \(\mathcal F\) on \(X\times B\), put
+\[
+ K_{\mathcal F}=Rp_*R\mathcal Hom(\mathcal F,\mathcal F),
+ \qquad p:X\times B\longrightarrow B.
+\]
+We work on bases for which this complex is perfect and its formation
+commutes with the base changes in use.  Proper smooth projection and a
+perfect family give this property.  At a point represented by \(F\), the
+cohomology of \(K_F\) is \(\operatorname{Ext}^*(F,F)\).
+
+\begin{proposition}[Restriction of the shifted symplectic structure]
+\label{prop:ptvv-finite-substack-symplectic}
+The derived stack of perfect complexes on \(X\) carries the
+\((-1)\)-shifted symplectic structure associated with the chosen volume
+form.  A derived open substack inherits it.  On a different derived
+substack, the pulled-back closed two-form is symplectic only if its
+induced map from tangent to shifted cotangent complexes is an equivalence.
+Finiteness of a stability window does not imply this condition.
+At \(F\), the tangent complex of the unrigidified stack is \(K_F[1]\);
+in particular,
+\[
+ H^{-1}(T_F)=\operatorname{Hom}(F,F).
+\]
+For nonzero simple \(F\), its cotangent complex therefore has a nonzero
+\(H^1\), and is not of amplitude \([-1,0]\).
+\end{proposition}
+\begin{proof}
+The shifted form on the derived moduli stack is the trace construction of
+\cite{PTVV2013}.  An open immersion identifies tangent and cotangent
+complexes, so it preserves nondegeneracy.  For a general morphism, pulling
+back a closed form preserves closedness but gives no such identification.
+The tangent formula follows from the endomorphism deformation complex.
+Duality gives \(H^1(L_F)=\operatorname{Hom}(F,F)^\vee\).  The identity of a
+nonzero simple object spans a copy of \(\mathbb C\) in this group.
+\end{proof}
+
+\begin{proposition}[Critical truncation and orientation coefficients]
+\label{prop:joyce-dcritical-truncation}
+Let \(\mathfrak U\) be a derived scheme locally of finite presentation
+carrying a
+\((-1)\)-shifted symplectic form, and let \(U=t_0\mathfrak U\).
+Then \(U\) has its associated d-critical structure, with canonical line
+\[
+ K_{U,s}\simeq\det(L_{\mathfrak U})|_{U^{\mathrm{red}}}.
+\]
+A square-root pair for this line defines the oriented vanishing-cycle
+sheaf on \(U\).  On a critical chart \(i:R\hookrightarrow V\), with
+function \(f:V\to\mathbb A^1\), write \(\phi_f\) for the
+vanishing-cycle functor shifted by \([-1]\).  Its expression is
+\[
+ \mathcal P_{U,s}|_R
+ \simeq i^*\phi_f\mathbb Q_V[\dim V]\otimes_{\mu_2}Q_{R,V,f,i},
+\]
+with the convention for shifted vanishing cycles fixed as in
+\cite[Theorem~6.9]{BBDJS2015}.  Here \(Q_{R,V,f,i}\) is the principal
+\(\mu_2\)-bundle of square-root identifications with \(i^*K_V\).
+\end{proposition}
+\begin{proof}
+The d-critical structure and canonical-line comparison are
+\cite[Theorem~6.6]{BBDJS2015}.  The oriented coefficient sheaf and the
+comparison on embeddings of charts are Theorem~6.9 of that paper.
+The tensor in the displayed formula uses the sign representation of
+\(\mu_2\).  It is a tensor of constructible coefficients; it is not a
+tensor with the coherent orientation line.  On an Artin stack one must
+also supply compatible smooth-atlas descent.  A reduced or rigidified
+moduli problem must first satisfy the hypotheses on its own derived
+recipient.
+\end{proof}
+
+Choose the translation vector \(v_E\) dual to \(\omega_E\).  Contraction
+of the Atiyah class gives its infinitesimal action
+\[
+ u_F=\iota_{v_E}\operatorname{At}(F)\in\operatorname{Ext}^1(F,F).
+\]
+Let \(\operatorname{Tr}_X:\operatorname{Ext}^3(F,F)\to\mathbb C\)
+be the Serre trace with the chosen volume form.
+
+\begin{proposition}[Semiregularity and the translation direction]
+\label{prop:k3-semiregularity-cosection}
+\label{prop:k3-cosection-surjectivity-criterion}
+The functional
+\[
+ \sigma_F:\operatorname{Ext}^2(F,F)\longrightarrow\mathbb C,
+ \qquad \xi\longmapsto\operatorname{Tr}_X(\xi\circ u_F)
+\]
+is dual to the infinitesimal translation class.  It is nonzero, hence
+surjective, precisely when \(u_F\ne0\).  With compatible relative Atiyah
+and trace maps it is induced by a morphism
+\[
+ K_{\mathcal F}\longrightarrow\mathcal O_B[-2].
+\]
+\end{proposition}
+\begin{proof}
+Serre duality gives a perfect pairing between
+\(\operatorname{Ext}^2(F,F)\) and \(\operatorname{Ext}^1(F,F)\).
+Evaluation against \(u_F\) proves the pointwise assertion.  The relative
+Atiyah class, contraction, composition and trace give the displayed
+morphism in families.  Its target has cohomology in degree two, as the
+functional requires.  Equivalently, the Atiyah--trace expression can be
+paired with the pulled-back K3 two-form; the volume convention fixes the
+sign of that expression.  A statement of surjectivity on a family needs
+nonvanishing at every relevant point, not only at its generic point.
+\end{proof}
+
+\begin{definition}[A cosection fibre]
+\label{def:rhom-red-self-ext-cone}
+Let \(K_0\) be a specified perfect deformation complex with a morphism
+\(\sigma:K_0\to\mathcal O_B[-2]\).  Its cosection fibre is
+\[
+ K^{\mathrm{fib}}=\operatorname{fib}(\sigma),\qquad
+ K^{\mathrm{fib}}\longrightarrow K_0
+ \xrightarrow{\sigma}\mathcal O_B[-2].
+\]
+One possible \(K_0\) is the fibre of the trace map
+\(K_{\mathcal F}\to Rp_*\mathcal O_{X\times B}\); using it requires
+restricting the cosection to that fibre.  We use the notation
+\(K^{\mathrm{red}}\) only after specifying which scalar, orbit and dual
+obstruction directions the reduced deformation problem removes.
+\end{definition}
+
+\begin{proposition}[Perfectness and scalar descent]
+\label{prop:rhomred-perfectness}
+The fibre of a morphism of perfect complexes is perfect.  The
+endomorphism complex of a family on a scalar \(\mathbb G_m\)-gerbe has
+weight zero and descends to the rigidified base, whenever the stated
+perfect-complex descent applies.  The trace, relative Atiyah class along \(X\), contraction and
+cosection maps descend with it.  These statements do not assert that the
+universal family, of scalar weight one, descends.
+\end{proposition}
+\begin{proof}
+Perfect complexes form a stable category.  Scalar conjugation acts
+trivially on \(R\mathcal Hom(\mathcal F,\mathcal F)\), since the two
+scalar weights cancel.  Locally trivialize the gerbe and apply descent
+to this weight-zero complex and its natural maps.  The same cancellation
+proves compatibility on overlaps.  It does not cancel the weight of
+\(\mathcal F\) itself.
+\end{proof}
+
+The trace-free fibre need not remove scalar automorphisms.  Indeed,
+\(\operatorname{tr}(\mathrm{id}_F)=\operatorname{rk}(F)\); for a
+rank-zero sheaf, the identity survives this trace.  Likewise, deleting
+one obstruction quotient is not by itself a symplectic reduction.
+At a point where \(u_F\ne0\), Serre duality induces a perfect
+pairing between \(\operatorname{Ext}^1(F,F)/\mathbb C u_F\) and
+\(\ker\sigma_F\subset\operatorname{Ext}^2(F,F)\).  This is the
+linear reduction of the orbit direction and its dual obstruction.  Constructing the corresponding family,
+its derived critical charts and their gluing remains necessary.  A
+perfect obstruction theory, a cosection-localized cycle
+\cite{KiemLi2013}, and such an oriented critical family are different
+constructions.
+
+There are positive reduced geometric constructions in more specific
+moduli problems.  For stable pairs on \(S\times E\) with nonzero
+K3 curve class, the quotient and reduced virtual classes of
+\cite[Theorems~1--2]{OberdieckReducedPT} satisfy the comparison stated
+in Theorem~\ref{thm:reduced-virtual-class-K3xE}.  That result retains
+its precise stable-pair domain.  Extending it to the reduced critical
+coefficient and complete-flag structures above is a further problem.
+
+\subsubsection*{Square-root pairs and their obstruction}
+
+For a perfect complex \(K\), use the determinant convention
+\[
+ \det K=\bigotimes_j(\det K^j)^{(-1)^j}.
+\]
+Thus \(\det(K[1])=(\det K)^{-1}\) and
+\(\det(K^\vee)=(\det K)^{-1}\).  Determinants of exact triangles carry
+the usual functorial identifications
+\cite{KnudsenMumfordDet,DeligneDetCohomology}.
+
+\begin{definition}[The reduced determinant line]
+\label{def:rhomred-determinant-line}
+A specified perfect reduced complex determines
+\(\mathscr D^{\mathrm{red}}=\det K^{\mathrm{red}}\).
+An orientation is a pair
+\[
+ (o,\rho),\qquad \rho:o^{\otimes2}\xrightarrow{\sim}
+ \mathscr D^{\mathrm{red}}.
+\]
+When this orientation is used for critical coefficients, a comparison
+between \(\mathscr D^{\mathrm{red}}|_{B^{\mathrm{red}}}\) and the
+canonical d-critical line is part of the datum.  A shift or dualization
+of the deformation complex changes that comparison.
+\end{definition}
+
+\begin{proposition}[Kummer obstruction and choices]
+\label{prop:rhomred-square-root-criterion}
+\label{prop:alpha-red-vanishing-criterion}
+\label{prop:alpha-red-nullhomotopy-criterion}
+Over a complex scheme or stack on its relevant descent site, let
+\(\delta:\operatorname{Pic}(B)\to H^2(B,\mu_2)\) be the Kummer
+boundary.  A line \(\mathscr D\) has a square-root pair if and only if
+\(\alpha=\delta(\mathscr D)\) vanishes.  If it vanishes, the
+isomorphism classes of square-root pairs form a torsor under
+\(H^1(B,\mu_2)\); the automorphisms of a pair form \(H^0(B,\mu_2)\).
+The underlying root lines, after forgetting their squaring maps, form
+a torsor under \(\operatorname{Pic}(B)[2]\).
+\end{proposition}
+\begin{proof}
+Apply cohomology to
+\[
+ 1\longrightarrow\mu_2\longrightarrow\mathbb G_m
+ \xrightarrow{z\mapsto z^2}\mathbb G_m\longrightarrow1;
+\]
+see \cite[Tags 03PK, 03PL]{StacksProject}.  Local roots of transition
+functions have a \(\mu_2\)-valued defect on triple overlaps.  This is
+\(\delta(\mathscr D)\), and a trivializing cochain glues a root pair.
+The ratio of two pairs is a line with a trivialization of its square,
+which is a \(\mu_2\)-torsor.  A root-preserving automorphism is a
+section of \(\mu_2\).  Forgetting the trivialization gives the last
+assertion.  In general \(H^1(B,\mu_2)\) is larger than
+\(\operatorname{Pic}(B)[2]\), because units modulo squares also occur.
+\end{proof}
+
+\begin{proposition}[Integral and rational characteristic classes]
+\label{prop:rhomred-w2-formula}
+The image of the Kummer class of a complex line in analytic cohomology
+is its integral first Chern class reduced modulo two.  It is also the
+second Stiefel--Whitney class of the underlying oriented real plane.
+A rational Grothendieck--Riemann--Roch formula alone does not determine
+this class.
+\end{proposition}
+\begin{proof}
+The first assertion follows by comparing the square map on transition
+functions with the integral exponential sequence.  For a complex line,
+\(w_2=c_1\bmod2\), as in \cite{MilnorStasheffCharacteristicClasses}.
+The map from integral to rational cohomology kills torsion, so its value
+cannot recover arbitrary mod-two information.  For example, the sign
+line on \(B\mu_2\) has nonzero Kummer obstruction although its rational
+first Chern class vanishes.  Its character has no square root character
+of \(\mu_2\).
+\end{proof}
+
+For a proper smooth morphism \(p:Y\to B\) of smooth schemes and a
+perfect complex \(\mathcal K\), the rational calculation retains its
+usual form:
+\[
+ c_1(\det Rp_*\mathcal K)_{\mathbb Q}
+ =\left[p_*\bigl(\operatorname{ch}(\mathcal K)
+             \operatorname{td}(T_p)\bigr)\right]_1.
+\]
+It is the degree-one part of Grothendieck--Riemann--Roch
+\cite[Tag 02UO]{StacksProject}.  The Deligne--Mumford stack version
+uses the appropriate representation-valued theory
+\cite{ToenRRRoot}.  Neither rational calculation removes the need
+for the integral Kummer class.
+
+A cosection is a morphism of complexes on \(B\), not a map of bases
+along which a line can be pulled back.  If a reduction constructs an
+additional perfect complex \(C_{\mathrm{cs}}\), one may instead define
+\[
+ \mathscr D_{\mathrm{tw}}
+ =\mathscr D^{\mathrm{red}}\otimes\det C_{\mathrm{cs}},\qquad
+ \alpha_{\mathrm{red}}=\delta(\mathscr D_{\mathrm{tw}}).
+\]
+This notation requires the construction of \(C_{\mathrm{cs}}\).
+The cokernel of a cosection has a determinant only when supplied with
+the requisite perfect model.  The root criterion applies to the actual
+line \(\mathscr D_{\mathrm{tw}}\), including its torsion information.
+
+\subsubsection*{Formal coordinates and the full determinant unit}
+
+Consider sheaves near one fibre of \(S\times E\), annihilated by a
+locally uniform power of a chosen normal coordinate \(t\).  Such a
+sheaf is equivalently a coherent sheaf \(F\) on \(S\) with a nilpotent
+endomorphism \(N_F\): multiplication by \(t\) is \(N_F\).
+Restriction and extension of this module structure preserve exact
+sequences and finite flags.  With strict endomorphisms on chosen
+resolutions, put
+\[
+ C(F,G)=R\operatorname{Hom}_S(F,G),\qquad
+ \mathcal K(F,G)=C(F,G)\otimes\Lambda(\theta),\quad |\theta|=1.
+\]
+For a homogeneous coefficient \(a\), the differential and composition are
+\begin{align*}
+ D(a\theta^\epsilon)
+ &=d_Ca\,\theta^\epsilon
+   +(-1)^{|a|}(N_Ga-aN_F)\theta^{\epsilon+1},\\
+ (a\theta^\epsilon)(b\theta^\delta)
+ &=(-1)^{\epsilon|b|}ab\,\theta^{\epsilon+\delta},
+ \qquad \theta^2=0.
+\end{align*}
+The relative resolution
+\[
+ 0\longrightarrow\mathcal O_S[t]\otimes F
+ \xrightarrow{t-N_F}\mathcal O_S[t]\otimes F
+ \longrightarrow F\longrightarrow0
+\]
+combined with a resolution on \(S\) computes this Hom complex.  The commutator with \(N\) commutes with \(d_C\) and is a
+derivation, so these formulas define a dg category.  This construction
+uses the actual endomorphisms; it does not require formality of
+\(C(F,G)\).
+
+Let \(f(t)=\sum_{r\ge1}c_rt^r\), with \(c_1\) invertible.  For
+composable maps \(a_i:F_{i-1}\to F_i\), define
+\[
+ D_n^f(a_n,\ldots,a_1)=
+ \sum_{r\ge n}c_r
+ \sum_{j_0+\cdots+j_n=r-n}
+ N_{F_n}^{j_n}a_nN_{F_{n-1}}^{j_{n-1}}
+ \cdots a_1N_{F_0}^{j_0}.
+\]
+At fixed arity every sum is finite under the chosen nilpotence bounds.
+The coefficient maps need not commute with \(N\).  The first divided
+difference satisfies
+\[
+ D_1^f(N_Ga-aN_F)=f(N_G)a-af(N_F).
+\]
+
+\begin{theorem}[Coordinate functors at every arity]
+\label{thm:orientation-coordinate-functor}
+Use suspension \(s\) of degree \(-1\), with bar operations
+\[
+ b_1(sa)=-s(Da),\qquad
+ b_2(sa\otimes sb)=(-1)^{|a|}s(ab).
+\]
+There is a strictly unital \(A_\infty\) functor \(\mathcal F_f\)
+from the category with endomorphisms \(N_F\) to that with
+endomorphisms \(f(N_F)\).  Its first component is the identity on
+unmarked coefficients and \(D_1^f\) on the \(\theta\) coefficient.
+For \(n\ge2\), its suspended components are
+\[
+ (\mathcal F_f)_n
+ \bigl(s(a_n\theta),\ldots,s(a_1\theta)\bigr)
+ =s\bigl(D_n^f(a_n,\ldots,a_1)\theta\bigr),
+\]
+and vanish if any input is unmarked.  For another invertible coordinate
+\(g\), these coalgebra maps satisfy
+\[
+ \mathcal F_g\mathcal F_f=\mathcal F_{g\circ f},\qquad
+ \mathcal F_{f^{-1}}\mathcal F_f=\mathrm{id}.
+\]
+\end{theorem}
+\begin{proof}
+On marked inputs the suspended degree is the coefficient degree.
+Consequently the internal differential obeys exactly the graded
+Leibniz rule for \(D_n^f\); the closed endomorphisms \(N_F\) have
+degree zero.  Products of two marked inputs vanish.  In the remaining
+higher identity, exactly one input is unmarked.  Replacing that input
+by its commutator with \(N\) makes the inner sum telescope over the
+adjacent exponent.  For the monomial \(f(t)=t^r\), its endpoint terms
+are the two adjacent compositions, with the tensor signs dictated by
+\(b_1,b_2\).  Linearity and finite nilpotence give the identity for
+\(f\).  With two or more unmarked inputs only the ordinary binary
+composition identity can survive.  The unit is unmarked, so all higher
+components containing it vanish.
+
+For composition, place the \(N_{F_i}\) on the diagonal of an upper
+triangular block matrix and the \(a_i\) on its first off-diagonal.
+The relevant \(n\)-step block of \(f\) of this matrix is \(D_n^f\).
+Applying \(g\) and summing over intervening blocks is precisely the
+partition formula for composition of the suspended functors.  The
+identity \(g(f(M))=(g\circ f)(M)\) proves the claimed equality.
+The same calculation with the inverse formal series proves the inverse
+identity at each nilpotence bound.
+\end{proof}
+
+Already in arity two, the higher map is needed:
+\[
+ D_1^f(ab)-aD_1^f(b)=D_2^f(N_Ha-aN_G,b).
+\]
+It is this identity, with its graded counterparts, that corrects the
+failure of the first component to preserve composition.
+
+The K3 Serre trace \(\tau_S:C(F,F)\to\mathbb C[-2]\) gives a CY3
+trace on the \(\theta\) coefficient.  For complementary powers of
+\(\theta\), the pairing is
+\[
+ \langle a\theta^\epsilon,b\theta^\delta\rangle
+ =(-1)^{\epsilon|b|}\tau_S(ab),\qquad \epsilon+\delta=1.
+\]
+If the normal volume is \(h(t)\,dt\), its coefficient after changing
+to \(f(t)\) is \(h(t)/f'(t)\).  Cyclicity gives the exact trace identity
+\[
+ \tau_S\!\left(h(N)f'(N)^{-1}D_1^f(b)\right)
+ =\tau_S(h(N)b).
+\]
+Indeed, for any coefficient \(k(N)\), cyclicity gives
+\(\tau_S(k(N)D_1^f(b))=\tau_S(k(N)f'(N)b)\).
+Take \(k(N)=h(N)f'(N)^{-1}\).  This proves transport of the
+displayed trace functional.  A comparison of negative cyclic classes
+or a global critical coefficient functor requires its own construction.
+
+\begin{proposition}[The determinant and its nonreduced square root]
+\label{prop:orientation-coordinate-determinant}
+Let the coefficient base be a local Artin \(\mathbb C\)-algebra
+\(R\) with residue field \(\mathbb C\),
+and let \(C(F,G)\) have a bounded finite free model.  The determinant
+of the coordinate map on \(\mathcal K(F,G)\) is
+\[
+ d_f(F,G)=\prod_j
+ \det\!\left(D_1^f|_{C^j(F,G)}\right)^{(-1)^{j+1}}.
+\]
+On a self-Hom complex put \(\chi=\chi(C(F,F))\).  Suppose its
+reduction has determinant \(\bar c_1^{-\chi}\), and \(\chi\) is even.
+Then \(\rho_f=c_1^\chi d_f(F,F)\) lies in \(1+\mathfrak m_R\),
+and the unique root with reduction \(\bar c_1^{-\chi/2}\) is
+\[
+ j_f(F)=c_1^{-\chi/2}
+ \exp\!\left(\tfrac12\log\rho_f\right),\qquad j_f(F)^2=d_f(F,F).
+\]
+\end{proposition}
+\begin{proof}
+The unmarked part of the complex is unchanged, whereas the marked
+copy of \(C^j\) is in degree \(j+1\).  This gives the determinant
+exponent.  Both logarithm and exponential are finite series on the
+nilpotent maximal ideal.  Squaring is an automorphism of
+\(1+\mathfrak m_R\), proving existence and uniqueness.  On the
+reduced K3 self-Hom complex, evenness of the Mukai lattice gives
+\(\chi(F,F)\in2\mathbb Z\).  The determinant of a polynomial in the
+commuting nilpotent left and right actions has constant diagonal
+\(c_1\), which gives the stated reduced determinant.
+\end{proof}
+
+For example, take \(R=\mathbb C[\varepsilon]/(\varepsilon^2)\),
+\(F=\mathcal O_S\), \(N=\varepsilon\,\mathrm{id}\), and
+\(f(t)=t+at^2\).  The two self-Ext groups in degrees zero and two
+each see \(D_1^f=1+2a\varepsilon\).  Hence
+\[
+ d_f(F,F)=1-4a\varepsilon,
+ \qquad j_f(F)=1-2a\varepsilon.
+\]
+Their reduced values are both one, but the actual coordinate comparison
+is not.  Nilpotent units cannot be discarded from an orientation map.
+
+\subsubsection*{Equivariant square roots and the Borel filtration}
+
+Let \(M\) be connected and carry an \(E\)-action and an equivariant determinant line
+\(\mathscr D\).  An orientation on \([M/E]\) is an equivariant
+square-root pair on \(M\).  Equivariance includes its cocycle on
+\(E\times E\times M\).  We write
+\(M_E=EE\times_E M\) for the analytic homotopy quotient when discussing
+mod-two characteristic classes.
+
+\begin{proposition}[The base part of an equivariant obstruction]
+\label{prop:free-e-borel-class-criterion}
+\label{prop:free-e-borel-vanishing-criterion}
+The degree-two base term in the Borel spectral sequence is
+\[
+ E_\infty^{2,0}
+ =H^2(BE,\mathbb F_2)/\operatorname{im}
+ \bigl(d_2:H^1(M,\mathbb F_2)\to H^2(BE,\mathbb F_2)\bigr).
+\]
+It identifies with the image of \(H^2(BE,\mathbb F_2)\) in
+\(H^2(M_E,\mathbb F_2)\).  There is generally no canonical projection
+from the latter group to \(H^2(BE,\mathbb F_2)\).
+If a class \(\alpha_E\) restricts to zero on \(M\), then it is the
+pullback of a base class \(a\), determined modulo \(\operatorname{im}d_2\).
+It vanishes precisely when that representative lies in
+\(\operatorname{im}d_2\).
+\end{proposition}
+\begin{proof}
+Topologically \(E\) is a real two-torus, so \(BE\) is
+\(K(\mathbb Z^2,2)\), with \(H^1(BE,\mathbb F_2)=0\).
+In total degree two, the only incoming differential to \((2,0)\) is
+the stated transgression, and no outgoing differential survives.
+The filtration has no \((1,1)\) term.  Hence a class vanishing on the
+fibre lies in its \((2,0)\) piece.  The edge map is a pullback from the
+base, not a projection onto it.  Choosing generators \(u_1,u_2\) of
+\(H^2(BE,\mathbb F_2)\) writes a representative as
+\(a_1u_1+a_2u_2\), but does not make that representative unique.
+\end{proof}
+
+For the translation action of \(E\) on itself, the homotopy quotient
+is contractible.  Both base generators are transgressions.  This free
+action gives a concrete reason that two coefficients in \(H^2(BE)\)
+cannot be assigned canonically to an arbitrary equivariant class.
+On a free locus admitting a geometric quotient, the equivariant root
+problem is the ordinary root problem on that quotient.
+
+\begin{proposition}[Equivariant nulltrivializations]
+\label{prop:free-e-borel-nulltrivialization-criterion}
+The vanishing of \(\delta(\mathscr D)\) on \([M/E]\) is equivalent
+to the existence of an equivariant square-root pair.  Its choices form
+a torsor under \(H^1([M/E],\mu_2)\), with automorphism group
+\(H^0([M/E],\mu_2)\).  A nonequivariant root and a vanishing ordinary
+class on \(M\) do not specify this equivariant nulltrivialization.
+\end{proposition}
+\begin{proof}
+Apply the Kummer argument on the quotient stack, or apply it on the
+simplicial action presentation.  The equations on double and triple
+overlaps include the action and its composition.  Forgetting those
+equations gives only the nonequivariant root.
+\end{proof}
+
+\subsubsection*{Finite stabilizers and character lines}
+
+For an object \(x\) with finite stabilizer \(H\subset E\), restriction
+along \(BH\to[M/E]\) is always defined.  It requires no choice of a
+Borel edge splitting.  Such restrictions are necessary local tests;
+they need not detect the whole equivariant obstruction.
+Write \(\beta_x\in H^2(BH,\mu_2)\) for the restricted gerbe class.
+
+\begin{proposition}[Finite root gerbes]
+\label{prop:finite-stabilizer-beta-class-criterion}
+\label{prop:finite-stabilizer-beta-vanishing-criterion}
+\label{prop:finite-stabilizer-beta-nulltrivialization-criterion}
+The root gerbe at \(x\) is neutral precisely when \(\beta_x=0\).
+In that case root pairs form an \(H^1(BH,\mu_2)\)-torsor.
+For the root gerbe of an actual line, write its character as
+\(\chi\in\operatorname{Hom}(H,\mathbb C^*)\), additively.
+Its root characters are exactly the solutions of
+\[
+ 2\lambda=\chi.
+\]
+\end{proposition}
+\begin{proof}
+A line on \(BH\) is a one-dimensional representation.  Its tensor
+square doubles its character.  The Kummer sequence therefore gives
+both the obstruction and the stated torsor.  More generally, a
+\(\mu_2\)-gerbe has a normalized group two-cocycle; a trivialization
+is a cochain whose coboundary is that cocycle.
+\end{proof}
+
+\begin{proposition}[Stack descent and inertia]
+\label{prop:finite-stabilizer-linearization-character-criterion}
+\label{prop:finite-stabilizer-linearization-vanishing-criterion}
+\label{prop:finite-stabilizer-gerbe-linearization-independence}
+A root character \(\lambda\) need not vanish for an orientation on
+\(BH\) or on the quotient stack.  Vanishing is an additional condition
+for descent to the coarse space, or for a specified inertia-trivial
+normalization.  Existence of a root and this additional condition are
+distinct requirements.
+\end{proposition}
+\begin{proof}
+Take \(H=\mu_2\) and the trivial determinant line.  Both the trivial
+line and the sign line, with their squaring maps, are roots on
+\(B\mu_2\).  The sign line does not descend to the point, because its
+inertia acts nontrivially.  Conversely the determinant sign character
+itself has no root character: doubling either character of \(\mu_2\)
+gives zero.  Thus a gerbe obstruction precedes the choice of root
+linearization, while coarse descent further restricts that choice.
+\end{proof}
+
+The finite subgroups of a complex elliptic curve are abelian of rank
+at most two.  Their odd-primary part contributes no positive-degree
+cohomology with \(\mathbb F_2\) coefficients.  The following formulas
+include cyclic subgroups and unequal two-primary factors.
+
+\begin{proposition}[Two-primary classes]
+\label{prop:finite-stabilizer-two-primary-class}
+\label{prop:finite-stabilizer-two-primary-mixed-term}
+\label{prop:finite-stabilizer-odd-transfer}
+Let \(H_{(2)}=C_{2^a}\times C_{2^b}\), omitting a factor when it is
+trivial.  A nontrivial cyclic factor has generators \(x\) in degree
+one and \(u\) in degree two, with
+\[
+ H^*(BC_{2^a},\mathbb F_2)=
+ \begin{cases}
+ \mathbb F_2[x],&a=1,\quad u=x^2,\\
+ \Lambda(x)\otimes\mathbb F_2[u],&a>1.
+ \end{cases}
+\]
+For two nontrivial factors,
+\[
+ H^2(BH,\mathbb F_2)
+ =\mathbb F_2u_1\oplus\mathbb F_2(x_1x_2)
+  \oplus\mathbb F_2u_2.
+\]
+If a character line has exponents \(k_1,k_2\) on these factors,
+its Kummer class is
+\[
+ \delta(\chi)=(k_1\bmod2)u_1+(k_2\bmod2)u_2.
+\]
+In particular the mixed term of an arbitrary gerbe is available in
+\(H^2\), but it cannot occur in the root gerbe of a character line.
+When \(a=b\ge2\), the nonzero class \(x_1x_2\) restricts to zero
+on every cyclic subgroup of \(H_{(2)}\).  Thus cyclic restrictions
+do not determine an arbitrary degree-two gerbe class.
+\end{proposition}
+\begin{proof}
+The periodic resolution of a cyclic group computes the stated ring:
+the square of the degree-one generator is nonzero for order two and
+zero for higher powers of two.  The K\"unneth formula gives the three
+degree-two summands.  A character of the product is a tensor product
+of characters pulled back from the two factors.  The Kummer boundary
+is additive and commutes with pullback.  On a cyclic factor, doubling
+characters has cokernel \(\mathbb F_2\), detected by the parity of
+its exponent; this defines \(u\).  There is therefore no mixed term.
+Restriction and transfer for the odd-primary subgroup show that its
+positive-degree \(\mathbb F_2\)-cohomology vanishes.
+To check the cyclic restrictions when \(a=b\ge2\), let
+\(C\subset H_{(2)}\) be cyclic.  If \(C\) has order two, then
+\(C\subset2H_{(2)}\), so both mod-two characters \(x_1,x_2\)
+restrict to zero.  If \(|C|\ge4\), its degree-one cohomology is
+spanned by a class \(\xi\) with \(\xi^2=0\).  Both restricted
+characters are multiples of \(\xi\), so their product is zero.
+The trivial subgroup also has zero degree-two cohomology.  The
+K\"unneth summand above shows that \(x_1x_2\) itself is nonzero.
+\end{proof}
+
+\begin{proposition}[The Klein four calculation]
+\label{prop:finite-stabilizer-klein-four-class}
+\label{prop:finite-stabilizer-klein-four-b20}
+\label{prop:finite-stabilizer-klein-four-b11}
+\label{prop:finite-stabilizer-klein-four-b02}
+\label{prop:finite-stabilizer-klein-four-zero-restrictions}
+For \(H=C_2\times C_2\), every degree-two class has a unique expression
+\[
+ \beta=b_{20}x_1^2+b_{11}x_1x_2+b_{02}x_2^2.
+\]
+Its restrictions to the first factor, second factor and diagonal have
+coefficients \(b_{20}\), \(b_{02}\) and
+\(b_{20}+b_{11}+b_{02}\), respectively.  These three restrictions
+detect \(\beta\).  For a line-root gerbe one already has
+\(b_{11}=0\).
+\end{proposition}
+\begin{proof}
+Pull back the polynomial ring \(\mathbb F_2[x_1,x_2]\) along the
+three inclusions.  The diagonal sends both generators to the same
+class \(x\).  The resulting three linear equations recover all three
+coefficients.  The final assertion is the character-line calculation
+above.  For higher cyclic orders, the degree-one restriction to the
+order-two subgroup may vanish; the same three-test argument cannot
+be transferred without computing those restriction maps.
+\end{proof}
+
+\begin{proposition}[Scope of stabilizer detection]
+\label{prop:finite-stabilizer-orientation-detection}
+An equivariant root restricts to a root at every stabilizer.  The
+converse requires a descent statement for the global gerbe, including
+its variation on the moduli space and the action overlaps.  It does
+not follow from the pointwise classes \(\beta_x\) alone.
+\end{proposition}
+\begin{proof}
+Restriction preserves square-root pairs.  Pointwise stabilizer
+restriction forgets the remaining overlap maps.  Already for a free
+action all stabilizers are trivial, whereas the quotient may carry a
+line without a square root.  Thus stabilizer tests cannot in general
+recover its Kummer class.
+\end{proof}
+
+\subsubsection*{Cross determinants and complete flags}
+
+For a perfect pair on a proper CY3, put
+\[
+ L(F,G)=\det R\operatorname{Hom}_X(F,G),\qquad
+ \mathscr D(F)=\det R\operatorname{Hom}_X(F,F).
+\]
+Serre duality identifies
+\(R\operatorname{Hom}(G,F)\simeq
+R\operatorname{Hom}(F,G)^\vee[-3]\).  Both the dual and the odd shift
+invert the determinant, so their composite preserves it.
+
+\begin{proposition}[The cross-determinant square]
+\label{prop:orientation-direct-sum-multiplicativity}
+\label{prop:orientation-extension-multiplicativity}
+For a direct sum, and for an exact triangle represented by a strict
+filtered perfect model with subquotients \(F,G\), determinant
+functoriality gives
+\[
+ \mathscr D(E)\simeq
+ \mathscr D(F)\otimes\mathscr D(G)\otimes L(F,G)^{\otimes2}.
+\]
+For a strict finite flag with subquotients \(F_1,\ldots,F_r\),
+\[
+ \mathscr D(E)\simeq
+ \bigotimes_i\mathscr D(F_i)\otimes
+ \bigotimes_{i<j}L(F_i,F_j)^{\otimes2}.
+\]
+These determinant identifications are compatible with regrouping the
+flag, with the determinant signs fixed by its order.
+\end{proposition}
+\begin{proof}
+The direct-sum endomorphism complex has its four Hom blocks.  The two
+cross blocks have equal determinants by CY3 duality.  For a filtered
+model, filter the endomorphism complex by the difference of the flag
+indices.  Its associated graded consists of all the Hom blocks.
+Multiplicativity of determinant on this filtration gives the same
+formula without splitting the extension.  Refining or regrouping the
+filtration gives the canonical determinant comparison for the same
+filtered complex.  Pair the off-diagonal blocks using Serre duality
+in their fixed order.
+\end{proof}
+
+A trace-free or reduced construction changes this formula.  For
+specified reduced determinant lines define the excess line
+\[
+ A(F,G)=\mathscr D^{\mathrm{red}}(E)\otimes
+ \bigl(\mathscr D^{\mathrm{red}}(F)\otimes
+ \mathscr D^{\mathrm{red}}(G)\otimes L(F,G)^2\bigr)^{-1}.
+\]
+One must compute \(A(F,G)\) and supply its root if a square-root
+multiplication uses it.  Reducing the two endpoints independently
+need not give the reduction of their extension.
+
+For a concrete trace calculation take
+\[
+ H=\mathbb C[u]/(u^2)\otimes\Lambda(\eta),\quad |u|=2,
+ \quad|\eta|=1,\quad\tau(u\eta)=1.
+\]
+In the trace-free block of sizes \(n,m>0\), the common scalar
+complement is
+\[
+ t\longmapsto
+ \operatorname{diag}(tI_n/n,-tI_m/m).
+\]
+Its trace pairing is \((n+m)\tau(tt')/(nm)\).  Deleting each block
+trace separately would delete this nonzero paired summand.  For a
+flag of block sizes \(n_i\), the same complement is
+\(\{(t_i):\sum_i t_i=0\}\), with pairing
+\(\sum_i\tau(t_it_i')/n_i\).  Regrouping a flag retains this one
+common trace condition.
+
+This calculation also has nonsplit families.  Over \(\mathbb C[t]\),
+take the upper triangular trace-free matrices spanned by
+\(h=\operatorname{diag}(1,-1)\) and \(e=e_{12}\), tensored with
+\(H\), and differential \([t\eta e,-]\).  Then
+\[
+ dh=-2t\eta e,\qquad de=0.
+\]
+The cohomology contains \(\mathbb C[t]/(t)\) classes represented by
+\(\eta e\) and \(u\eta e\), in degrees one and three.  Replacing
+the family by a split fibre loses this torsion and its derived
+specialization.  Determinants of the actual filtered complex remain
+well defined throughout the family.
+
+\begin{definition}[Strong reduced orientation]
+\label{def:O1-strong-reduced-orientation}
+On a specified reduced moduli problem, a \emph{strong reduced orientation}
+consists of a root pair \((o,\rho)\), compatible equivariant descent, and
+extension isomorphisms
+\[
+ \gamma_{F,G}:o_E\xrightarrow{\sim}
+ o_F\otimes o_G\otimes L(F,G)\otimes a(F,G),
+ \qquad a(F,G)^2\simeq A(F,G).
+\]
+Their squares are the prescribed determinant comparisons.  On every
+three-step flag, the two composites of \(\gamma\), including the
+cross and excess lines, agree.  They agree with the chosen unit on
+the zero object and commute with the stated transitions and base
+changes.  These are equations of line isomorphisms over the full
+bases, including their nilpotents.
+\end{definition}
+
+\begin{proposition}[Coordinate roots on strict flags]
+\label{prop:orientation-coordinate-flag}
+For a strict flag in the K3 formal endomorphism category, with the
+Serre-compatible determinant comparisons above, the coordinate
+factors satisfy
+\[
+ d_f(E,E)=d_f(F,F)d_f(G,G)d_f(F,G)^2,
+ \qquad
+ j_f(E)=j_f(F)j_f(G)d_f(F,G).
+\]
+The second formula uses the specified Artin roots and extends to
+all finite flags by multiplication over their ordered pairs.
+\end{proposition}
+\begin{proof}
+The upper triangular endomorphism acts on the filtered Hom complex;
+its associated graded has the four Hom blocks.  Determinants are
+products on that filtration.  The divided-difference operators on
+opposite cross blocks are adjoint for the K3 Serre pairing, so their
+determinants agree.  This proves the first formula.  The Euler
+characteristics obey
+\(\chi(E,E)=\chi(F,F)+\chi(G,G)+2\chi(F,G)\).
+Consequently both sides of the root formula have the same square
+and the same reduced value \(\bar c_1^{-\chi(E,E)/2}\).  Uniqueness of
+the root in \(1+\mathfrak m_R\) proves equality on the full Artin
+base.  Refinement of the same filtration proves the all-flag formula.
+\end{proof}
+
+Even squares and units do not force the three-step equation.  Starting
+with compatible maps indexed by positive masses, multiply
+\(\gamma_{2,1}\) by \(-1\) and leave the other maps unchanged,
+including the unit maps.  The two composites at masses \((1,1,1)\)
+then differ by \(-1\), while all squares are unchanged.
+There are nevertheless two useful positive corrections.  A normalized
+mass-only sign three-cocycle \(c(a,b,c)\) on \(\mathbb N\) is the
+coboundary of
+\[
+ \beta(a,b)=\prod_{j=0}^{b-1}c(a,j,1).
+\]
+The cocycle equation telescopes to \(\delta\beta=c\), so rescaling
+by \(\beta\) removes this mass-only associator.  For a normalized
+constant sign two-cocycle \(\alpha\) on a finite group \(G\) of odd order,
+\(b(g)=\prod_{h\in G}\alpha(g,h)\) similarly satisfies
+\(\delta b=\alpha^{|G|}=\alpha\).  Neither calculation trivializes
+a sign cocycle varying over the moduli space.  For example,
+\(\alpha((a,b),(c,d))=(-1)^{ad}\) on \(C_2^2\) is not a
+coboundary: it is nonsymmetric, whereas a coboundary on an abelian
+group with trivial coefficients is symmetric.
+
+\subsubsection*{Oriented coefficients and Hall operations}
+
+On an oriented critical moduli scheme, the pointwise Euler
+characteristic of the vanishing-cycle sheaf is the Behrend function
+\(\nu\); the sign local system has rank one and does not change this
+Euler characteristic.  This is the numerical comparison of
+\cite[Remark~6.14]{BBDJS2015}, underlying the weighted-Euler theories
+of \cite{BEHREND,JoyceSong}.  Passing to \(\nu\) forgets monodromy
+and extension morphisms.  Those data are still needed for a product
+on critical cohomology.
+
+
+\begin{proposition}[Thom--Sebastiani and quotient descent]
+\label{prop:orientation-thom-sebastiani-compatibility}
+\label{prop:orientation-e-quotient-descent}
+Compatible strong orientation data identify the sign torsors in
+Thom--Sebastiani comparisons and descend the oriented coefficient
+sheaves to the quotient stack.  These comparisons use the actual
+critical charts and their embeddings.  They do not follow from an
+isomorphism between determinant classes in a Picard group alone.
+\end{proposition}
+\begin{proof}
+On a critical chart the coefficient is twisted by the principal
+bundle of square-root identifications.  An orientation isomorphism
+identifies these bundles; equality on triple overlaps gives equality
+of their descent maps.  Apply the Thom--Sebastiani isomorphism to the
+vanishing-cycle factor and tensor its sign-bundle comparison.
+Equivariance supplies the same equations on the action presentation.
+This constructs descent to the stack, where stabilizer characters
+are retained.  Coarse descent would impose the additional
+inertia-trivial condition discussed above.
+\end{proof}
+
+\begin{proposition}[Operations require their coefficient morphisms]
+\label{prop:orientation-descent-hall-product}
+\label{prop:orientation-descent-hall-coproduct}
+\label{prop:finite-dcritical-hall-product}
+For an \(E\)-equivariant moduli space \(M\), put
+\(\mathcal M=[M/E]\).  Suppose an extension correspondence
+\[
+ \mathcal M\times_{BE}\mathcal M\xleftarrow{p}\mathcal E
+ \xrightarrow{q}\mathcal M
+\]
+has a specified critical coefficient comparison, with its shifts,
+support conditions and functors, giving
+\(q_!p^*(\mathcal P\boxtimes_{BE}\mathcal P)\to\mathcal P\).
+Fix a cohomology theory in which the specified pull--push and
+K\"unneth maps exist, so that this comparison induces the Hall product.
+Assume the two resulting comparisons agree on three-step flags and
+satisfy the relevant base-change identities.  Then the induced Hall
+product is associative.  A collision coproduct requires a separately
+specified correspondence and coefficient morphism, with its own
+coassociativity and support identities.  The orientation and the
+product alone do not supply it.
+\end{proposition}
+\begin{proof}
+Both parenthesizations of the product pull back to the complete
+three-step flag correspondence.  Proper or supported base change,
+projection and the assumed coefficient equality identify their
+pushforwards.  The same argument proves coassociativity only after
+the collision coefficient morphism and its complete-flag equality
+have been supplied.  Inverting Thom--Sebastiani on a local product
+chart does not construct this global morphism on collision support.
+\end{proof}
+
+The tensor is over \(BE\) because both endpoints of an extension use
+one elliptic torsor.  Quotient the whole correspondence with its
+diagonal action before separating its maps.  The zero object retains
+its map to \(BE\); it is not replaced by a point before checking the
+unit.  The common-torsor equivalence of
+Section~\ref{subsec:hall-correspondences} fixes this convention independently
+of any reduction of the deformation complex.
+
+\begin{proposition}[Primitive projections after descent]
+\label{prop:orientation-descent-primitive-projection}
+Let a descended coefficient theory already carry the specified
+connected conilpotent cocommutative Hopf structure over a
+characteristic-zero field.  The convolution logarithm of the identity
+is then its projection to the kernel of the reduced coproduct on
+the domain proved in
+Section~\ref{subsec:primitive-recognition}.  If transition functors
+preserve the Hopf maps and their finite convolution sums, they
+preserve this projection.  Without these hypotheses, a chosen
+splitting of the primitive kernel is additional data.
+\end{proposition}
+\begin{proof}
+The formula for the projection is a finite sum on every conilpotence
+stage and is natural for the given Hopf maps.  Apply the transition
+functor term by term.  An orientation comparison by itself asserts
+none of the coalgebra, connectedness or exactness hypotheses needed
+for that formula.
+\end{proof}
+
+\subsubsection*{Weyl transport as a root-groupoid problem}
+
+Let \(W=W^{(2)}(\Lambda_{II}^{2,1})\).  Its three simple
+reflections have the presentation described in
+Lemma~\ref{lem:bkm-chamber-s3}.  To transport an orientation, one
+first needs geometric maps or correspondences between the relevant
+strata; the lattice reflection alone gives no pullback of a line.
+For clarity, write \(g^*\) for the specified pullback functor, with
+its composition identifications.
+
+\begin{definition}[The groupoid of defined transports]
+\label{def:finite-partial-action-groupoid-GR}
+Choose strata and specified invertible geometric transports between
+them.  Let \(\mathcal G\) be their groupoid, with all defined
+composites and their relations.  A finite set of strata or generating
+arrows need not make \(\mathcal G\) finite: there may be infinitely
+many distinct loops.  A finite cochain calculation applies only after
+a finite model for the cochains in the required degrees has been
+specified.
+\end{definition}
+
+\begin{definition}[Root transport and its sign cocycle]
+\label{def:O1-plus-weyl-transport}
+\label{def:orientation-projective-cocycle-coR}
+Suppose each stratum \(U\) has a root pair \((o_U,\rho_U)\), and
+each arrow \(g:U\to V\) has a determinant comparison
+\(d_g:\mathscr D_U\to g^*\mathscr D_V\).
+A lift is an isomorphism
+\[
+ \tau_g:o_U\longrightarrow g^*o_V,
+ \qquad (g^*\rho_V)\tau_g^{\otimes2}=d_g\rho_U.
+\]
+When the determinant comparisons are coherent, two composites of such
+lifts differ by a section of \(\mu_2\).  In particular define
+\[
+ c(g,h)=\tau_{hg}^{-1}\,(g^*\tau_h)\,\tau_g
+ \in H^0(U,\mu_2).
+\]
+This is a two-cocycle on \(\mathcal G\) with the pullback coefficient
+system \(U\mapsto H^0(U,\mu_2)\).  Strong Weyl transport, denoted
+\((O1)^+\), is a coherent lift preserving the full root, extension,
+unit and equivariant descent data.
+\end{definition}
+
+\begin{proposition}[Existence, torsor defects and strictification]
+\label{prop:weyl-wall-transport-tau-construction}
+\label{prop:weyl-wall-transport-tau-square}
+\label{prop:orientation-cocycle-class-vanishing-criterion}
+\label{prop:orientation-cocycle-cochain-trivialization-criterion}
+\label{prop:weyl-orientation-torsor-defect-computation}
+\label{prop:weyl-orientation-torsor-defect-vanishing}
+Given \(d_g\), the obstruction to identifying the two root pairs is
+the class of their ratio in \(H^1(U,\mu_2)\).  If it vanishes, lifts
+form a torsor under \(H^0(U,\mu_2)\).  Once lifts exist, they can be
+made coherent precisely when \([c]=0\).  Multiplying lifts by a
+one-cochain \(b\) changes \(c\) by \(\delta b\).
+For an involution \(s\), coherent normalized transport satisfies
+\[
+ (s^*\tau_s)\tau_s=\mathrm{id}.
+\]
+The determinant square equation alone does not impose this identity.
+\end{proposition}
+\begin{proof}
+Use \(d_g\) to regard \(g^*o_V\) and \(o_U\) as roots of one line.
+Their ratio is a \(\mu_2\)-torsor.  A trivialization is the required
+lift, and its automorphisms give the stated freedom.  Associativity
+of three lifted arrows proves the cocycle equation.  Substitution of
+\(b(g)\tau_g\) gives the coboundary formula, so strictification is
+equivalent to \([c]=0\).  The pair of arrows \((s,s)\) gives the
+involutive relation.  Before strictification their composite may
+instead be the nontrivial automorphism of the root.
+\end{proof}
+
+For constant coefficients \(\mathbb F_2\), a specified finite
+cochain model makes the equation \(\delta b=c\) a linear system.
+It is soluble if and only if adjoining \(c\) to the matrix of
+\(\delta:C^1\to C^2\) does not increase its rank.  One must use
+cochains for the actual groupoid.  A transitive action groupoid is
+equivalent to the stabilizer group of one object.  Its cohomology is
+therefore stabilizer cohomology, not automatically \(H^*(W)\).
+Only an action on a single fixed object gives \(BW\).
+
+\begin{proposition}[Naturality of the obstruction data]
+\label{prop:weyl-alpha-red-preservation-criterion}
+\label{prop:weyl-alpha-e-free-preservation-criterion}
+\label{prop:weyl-finite-stabilizer-beta-preservation-criterion}
+\label{prop:weyl-finite-stabilizer-lambda-zero-preservation-criterion}
+A determinant comparison transports the Kummer class by pullback.
+A root lift transports its chosen nulltrivialization.  At a
+stabilizer isomorphism \(\varphi:H_U\to H_V\), the equations are
+\[
+ \beta_U=\varphi^*\beta_V,
+ \qquad \lambda_U=\varphi^*\lambda_V.
+\]
+If inertia-trivial normalization is imposed, it is preserved by the
+same equation with \(\lambda_U=\lambda_V=0\).  The base-filtration
+part of a Borel class is preserved as a filtration class, without
+choosing representatives in \(H^2(BE)\).
+\end{proposition}
+\begin{proof}
+Kummer boundaries, restrictions and character pullbacks commute with
+the geometric pullback.  A root isomorphism gives the same comparison
+before passing to cohomology, hence transports the nulltrivialization
+as well.  In chosen cohomology bases, if \(A_\varphi\) represents
+\(\varphi^*\), the defect is \(\beta_U-A_\varphi\beta_V\), and
+similarly in degree one.  This fixes the variance of the finite
+matrix equation.  Naturality of the spectral sequence preserves its
+filtration and quotient terms; it does not create a splitting.
+\end{proof}
+
+\begin{proposition}[Compatibility of strictifications]
+\label{prop:orientation-cocycle-cochain-transition-compatibility}
+Suppose transition pullbacks \(r\) identify two systems of
+projective lifts with cocycles \(c_R,c_{R'}\).  Cochains killing
+these cocycles give compatible strictifications when their
+restrictions differ by the specified change of trivialization.  In
+constant additive coefficients this condition is
+\[
+ r(b_R)-b_{R'}=\delta a_{RR'},
+\]
+with compatible zero-cochains \(a_{RR'}\) on successive transitions.
+\end{proposition}
+\begin{proof}
+Conjugating the root lift at each object by its sign \(a\) changes
+the arrow cochain by \(\delta a\).  Thus the displayed equation
+is exactly a natural isomorphism of the two strict transports.
+Composition of these natural isomorphisms is the additional
+compatibility equation on a triple of transition levels.
+\end{proof}
+
+\subsubsection*{Reflection characters and divisor monodromy}
+
+\begin{definition}[A character extracted from root transport]
+\label{def:orientation-character-epsilon-o}
+To obtain a scalar character from \((O1)^+\), choose compatible
+reference identifications of the transported lines, or a fixed
+one-dimensional fibre representation.  Suppose the residual signs
+\(\sigma_i\in\{\pm1\}\) of the three simple lifts are constant on
+the relevant components and compatible with transitions.  They
+define
+\[
+ \epsilon_o(s_{i_1}\cdots s_{i_k})=\prod_{j=1}^k\sigma_{i_j}.
+\]
+For the present type-II group, the only Coxeter relations are
+\(s_i^2=1\); hence this is a character once the residual signs have
+been constructed.  An action on moving lines, without the reference
+identifications, is not itself such a scalar character.
+\end{definition}
+
+\begin{proposition}[A simple Pfaffian wall]
+\label{prop:orientation-character-simple-wall-sign-criterion}
+Suppose a local Pfaffian section is \(p=\upsilon u e\), where
+\(e\) is a line frame and \(\upsilon\) is invertible.  Fix a reference
+comparison of source and target frames.  Let the base reflection
+send \(u\mapsto-u\) and preserve \(\upsilon\).  Relative to that
+reference comparison the pulled-back section has ratio \(-1\).
+If the actual root lift satisfies
+\[
+ \tau_s(p)=s^*p,
+\]
+its residual sign relative to the reference comparison is \(-1\).
+Under the component and transition compatibility in the preceding
+definition, this gives \(\epsilon_o(s_i)=-1\).
+\end{proposition}
+\begin{proof}
+In the reference frames, write \(\tau_s(e)=\lambda s^*e\).
+The displayed compatibility gives
+\(\lambda\upsilon u=-\upsilon u\) on the wall complement, hence
+\(\lambda=-1\).  Squaring loses the sign.  Preserving a reference
+frame alone would not identify its action with this section-compatible
+root lift.  The calculation uses the stipulated reflection, not
+parallel transport along a real path through a removed wall.
+\end{proof}
+
+\begin{proposition}[The determinant and automorphic characters]
+\label{prop:orientation-character-determinant-criterion}
+\label{prop:orientation-character-maass-criterion}
+If the source character exists and takes value \(-1\) on all three
+simple type-II reflections, then
+\[
+ \epsilon_o=\det_W
+ =\widetilde\nu_{\Delta_5}|_W.
+\]
+\end{proposition}
+\begin{proof}
+The determinant of a real reflection is \(-1\), so equality on the
+generators gives the first equality.  The second is the homogeneous
+orthogonal character calculation in
+Lemma~\ref{lem:bkm-maass-restriction}.  The homogeneous character is
+used here: its value on an orthogonal reflection is not the bare
+symplectic Maass character of a chosen lift.  This automorphic
+identity does not construct the source character.
+\end{proof}
+
+\begin{proposition}[Chamber symmetries]
+\label{prop:s3-chamber-maass-triviality}
+\label{prop:orientation-character-s3-extension-decision}
+The homogeneous character \(\widetilde\nu_{\Delta_5}\) is trivial
+on the type-I chamber symmetry group \(\Sigma\simeq S_3\).
+A character \(\epsilon_o\) taking value \(-1\) on all three simple
+reflections is \(\Sigma\)-invariant.  Its abstract extensions to
+\(W\rtimes\Sigma\) are exactly
+\[
+ \widetilde\epsilon_\chi(w,\sigma)=\epsilon_o(w)\chi(\sigma),
+ \qquad \chi\in\{1,\operatorname{sgn}\}.
+\]
+The automorphically compatible extension has \(\chi=1\).
+\end{proposition}
+\begin{proof}
+The type-I transpositions have homogeneous character \(+1\), by the
+calculation in Chapter~\ref{ch:view1-automorphic}; they generate
+\(\Sigma\).  Chamber symmetry permutes the three equal generator
+values of \(\epsilon_o\), proving invariance.  The displayed formula
+then respects the semidirect product.  Two extensions differ by a
+character of \(S_3\), whose only sign characters are the two listed.
+\end{proof}
+
+\begin{proposition}[Geometric extension to chamber symmetries]
+\label{prop:semidirect-hall-lift-construction-criterion}
+An abstract extension is realized on an oriented Hall theory only
+after supplying chamber transports of its actual correspondences,
+coefficient maps and root pairs.  These must preserve the specified
+product, coproduct, unit, pairing and transitions, and satisfy the
+\(S_3\) relations and
+\[
+ \theta_\sigma\tau_i\theta_\sigma^{-1}
+ =\tau_{\sigma(i)}
+\]
+with the appropriate pullbacks.  Such coherent transports define
+an action of \(W\rtimes S_3\).
+\end{proposition}
+\begin{proof}
+The relations present the semidirect product.  An action on the
+geometric objects and all their comparison maps satisfying these
+relations factors through that presentation.  The character criterion
+for a line does not assert the existence of these correspondences.
+\end{proof}
+
+\begin{definition}[A local divisor monodromy datum]
+\label{def:local-divisor-monodromy-datum}
+Let \(\mathcal U\) be a complex analytic family near a smooth point
+of a divisor, with a specified transverse disk and punctured disk
+\(\Delta^*\).  Choose its reduced critical recipient and orientation.
+Suppose the relevant supported cohomology of the oriented
+vanishing-cycle sheaf forms a finite-rank local system \(\mathbb V\)
+on \(\Delta^*\).  A base point and the positive meridian then define
+\[
+ T_D:\mathbb V_{z_0}\xrightarrow{\sim}\mathbb V_{z_0}
+\]
+up to conjugacy.  For a rank-one sign local system its value lies in
+\(\{\pm1\}\).  The required local constancy, supports and
+finite-dimensionality are hypotheses on the actual family.
+\end{definition}
+
+\begin{proposition}[Divisor and Weyl monodromy have different domains]
+\label{prop:imaginary-divisor-not-weyl-monodromy}
+\label{prop:local-divisor-monodromy-maass-irrelevance}
+An imaginary simple root contributes a multiplicity to the BKM
+presentation but no simple Weyl reflection.  A meridian around a
+geometric divisor labelled by that root therefore has no prescribed
+value under \(\epsilon_o:W\to\{\pm1\}\).  Its local monodromy
+requires the preceding analytic datum; a Maass character or a root
+multiplicity alone does not supply it.
+\end{proposition}
+\begin{proof}
+The Weyl group is generated by reflections in the real simple roots.
+The meridian instead belongs to the fundamental group of a specified
+punctured analytic neighbourhood.  Identifying their actions would
+require a map of these geometric actions and their coefficient
+systems, not merely a common root label.
+\end{proof}
+
+\subsubsection*{Parity, duality and cyclic traces}
+
+\begin{proposition}[Local root profiles and orientation lifts]
+\label{prop:three-simple-wall-chart-orientation}
+\label{prop:isotropic-aij-chart-orientation}
+\label{prop:delta123-chart-orientation}
+\label{prop:orientation-line-delta123-parity-compatibility}
+The target root profiles are \((1\mid0)\) for each real simple root,
+\((10\mid0)\) for each isotropic \(a_{ij}\), and \((29\mid93)\)
+for \(\delta_1+\delta_2+\delta_3\), with the parity convention of
+Chapter~\ref{ch:view2-bkm}.  A compact chart realizes these profiles only
+if an actual graded comparison identifies its relevant cohomology
+with those spaces.  Their parity does not alone determine a lift
+to a determinant square root.
+\end{proposition}
+\begin{proof}
+The profiles are the target calculations in the BKM chapter.  A
+graded linear isomorphism preserves them, so it gives the conditional
+chart assertion.  For the last statement, consider one odd line.
+Parity acts by \(-1\) on its Berezinian.  A scalar lift \(\lambda\)
+to a square root would have to satisfy \(\lambda^2=-1\), hence
+\(\lambda=\pm i\) over \(\mathbb C\).  Such a lift is not an
+involutive sign action.  More generally the Berezinian parity is
+\((-1)^q\) on a space of dimension \((p\mid q)\); a Pfaffian-half
+comparison is additional structure.  In particular \(q=93\) cannot
+be replaced by an assumed orientation sign without that comparison.
+\end{proof}
+
+\begin{proposition}[Opposite degrees under CY3 duality]
+\label{prop:orientation-line-negative-root-compatibility}
+If a specified comparison identifies
+\(K_{-\gamma}\simeq K_\gamma^\vee[-3]\), then
+\[
+ \det K_{-\gamma}\simeq\det K_\gamma.
+\]
+An unshifted dual would instead have inverse determinant.  The
+corresponding square-root identification must square to the actual
+shifted determinant comparison.
+\end{proposition}
+\begin{proof}
+Dualization and an odd cohomological shift each invert determinant.
+Their composite gives the displayed equality.  The distinction is
+visible for \(K_\gamma=\mathcal O(1)\) in degree zero on
+\(\mathbb P^1\): the shifted dual has determinant \(\mathcal O(1)\),
+whereas the unshifted dual has determinant \(\mathcal O(-1)\).
+\end{proof}
+
+\begin{proposition}[Opposite products and Chevalley transport]
+\label{prop:orientation-chevalley-antiinvolution}
+Suppose geometric duality defines an involution \(\vartheta\) on a
+specified graded associative Hall theory, with
+\[
+ \vartheta(xy)=(-1)^{|x||y|}\vartheta(y)\vartheta(x),
+ \qquad \vartheta^2=1,
+\]
+and compatible orientation, coproduct and transition comparisons.
+It then induces the corresponding opposite-product involution on
+its primitive Lie superalgebra.  Agreement with a target Chevalley
+involution is an additional equality of these maps under the
+primitive comparison.
+\end{proposition}
+\begin{proof}
+Substitute the displayed formula into the supercommutator.  One
+obtains
+\(\vartheta([x,y])=-[\vartheta(x),\vartheta(y)]\).
+Equivalently it is the indicated Lie anti-involution, with a minus
+sign converting it to a Lie automorphism if that convention is used.
+The coproduct comparison preserves primitives, and the determinant
+square comparison preserves their orientation data.  None of these
+maps is determined by dimensions of opposite root spaces.
+\end{proof}
+
+\begin{proposition}[Associative traces and primitive forms]
+\label{prop:orientation-frobenius-pairing}
+\label{prop:orientation-frobenius-trace-degree}
+\label{prop:orientation-cy3-serre-signs}
+Let \(A\) be a graded associative algebra or dg algebra, \(\ell\) a
+line, and \(\operatorname{tr}:A\to\ell[-3]\) a closed cyclic trace.
+Then
+\[
+ B(x,y)=\operatorname{tr}(xy),\qquad
+ B(x,y)=(-1)^{|x||y|}B(y,x),\qquad
+ B(xy,z)=B(x,yz).
+\]
+Its nonzero homogeneous values have \(|x|+|y|=3\), when \(\ell\)
+is in degree zero.  On the commutator Lie superalgebra the restricted
+form is invariant.  This is a different condition from Hopf
+adjointness on a full bialgebra.
+\end{proposition}
+\begin{proof}
+These are respectively the definition, graded cyclicity, associativity
+and degree of the trace.  Expanding the commutators gives Lie
+invariance with the same Koszul signs.  In contrast, for an ordinary
+Hopf pairing and primitive elements \(x,y,z\), Hopf adjointness gives
+\[
+ \langle xy,z\rangle
+ =\langle x,z\rangle\epsilon(y)+\epsilon(x)\langle y,z\rangle=0.
+\]
+Thus it also annihilates \([x,y]\) against \(z\).  An invariant Lie
+form on a nonabelian primitive algebra need not do this.  A product
+and a trace must be defined on \(A\), not on a primitive subspace
+which is generally not closed under that product.
+\end{proof}
+
+\begin{proposition}[The induced quotient pairing]
+\label{prop:orientation-cy3-pairing-nondegeneracy}
+Let a bilinear pairing of finite-dimensional spaces have matrix
+\(G\), with convention \(B(x,y)=x^tGy\).  Its left and right
+radicals are \(\ker G^t\) and \(\ker G\).  It induces a
+nondegenerate pairing on the two radical quotients.  If \(Q_L,Q_R\)
+are quotient maps and \(s_L,s_R\) are sections, its matrix is
+\[
+ \overline G=s_L^tGs_R,\qquad Q_Ls_L=1,\quad Q_Rs_R=1.
+\]
+The expression is independent of the sections.  It is generally not
+\(Q_LGQ_R^t\).
+\end{proposition}
+\begin{proof}
+Changing a section adds a map into the appropriate radical, which
+pairs to zero.  If a quotient class pairs to zero with every opposite
+class, a representative lies in the radical and its quotient is
+zero.  This proves nondegeneracy over a field.  Over a coefficient
+ring one must separately require finite projective quotients and
+that the resulting map to the dual is an isomorphism; a nonzero
+determinant or full generic rank is insufficient.  Compatibility
+with a Lie bracket, a Hopf operation or transitions further requires
+the corresponding ideal, coideal or kernel identities.
+\end{proof}
+
+\subsubsection*{Compatible towers and effective orientation lines}
+
+\begin{definition}[Orientation-preserving transitions]
+\label{def:transition-orientation-preservation}
+For specified transition maps \(t_{RR'}\), an orientation transition
+is a root isomorphism
+\[
+ \theta^o_{RR'}:t_{RR'}^*o_{R'}\xrightarrow{\sim}o_R.
+\]
+Its square is the determinant comparison, and it preserves the
+chosen equivariant, extension, unit and Weyl identifications.
+Identity and composition are equations of these isomorphisms on
+all successive transitions.
+\end{definition}
+
+\begin{proposition}[Formal orientation towers]
+\label{prop:transition-orientation-preservation-criterion}
+\label{prop:orientation-class-inverse-limit-survival}
+A compatible family of orientation objects and transition
+isomorphisms defines an object in the homotopy limit of their
+groupoids.  Every finite projection is the specified root pair,
+with its comparisons.  This formal statement does not require the
+orientation line itself to have trivial Picard class.
+\end{proposition}
+\begin{proof}
+An object of the homotopy limit is precisely such a compatible
+system, including its composition coherence.  Applying any finite
+projection recovers its component.  Vanishing of the Kummer
+obstruction says that the determinant has a root; it does not say
+that the root is a trivial line.
+\end{proof}
+
+\begin{proposition}[Classes in a tower of root groupoids]
+\label{prop:orientation-no-new-limit-class}
+Consider a countable tower and a compatible family of isomorphism
+classes of roots.  Choices of compatible representatives and edge
+isomorphisms have, when nonempty, ambiguity measured by
+\(\varprojlim{}^1 A_R\), where \(A_R\) is the automorphism group
+of the chosen root at level \(R\).  Here
+\(A_R=H^0(B_R,\mu_2)\), with the induced transition maps.
+If this automorphism tower is Mittag--Leffler, the ambiguity vanishes.
+To obtain a line on a geometric limit, one additionally needs an
+effective comparison between its root groupoid and the homotopy
+limit.  An equivalence of those groupoids, together with the stated
+vanishing, identifies its isomorphism classes with the compatible
+finite classes.
+\end{proposition}
+\begin{proof}
+Fix representatives.  Changing each adjacent transition isomorphism
+is an element of \(\prod_R A_R\); changing the representative
+identifications acts by
+\((a_R)\mapsto(a_R-t_Ra_{R+1})\) in additive notation.  The quotient
+is the usual \(\varprojlim{}^1 A_R\).  The Mittag--Leffler condition
+makes this quotient zero.  This is an automorphism calculation;
+there is no presumed abelian group of roots of a fixed line.
+Finally an effective comparison transfers the formal objects and
+isomorphisms to the geometric limit.  Without it, a formal compatible
+system is all that has been constructed.
+\end{proof}
+
+\begin{definition}[Coefficient-preserving transitions]
+\label{def:transition-vanishing-cycle-preservation}
+A transition of oriented critical coefficients is a specified
+isomorphism between the chosen pullback of \(\mathcal P_{R'}\)
+and \(\mathcal P_R\), with the required shift and support convention.
+It commutes with the orientation sign torsors, critical-chart
+comparisons, duality and the coefficient maps defining the retained
+Hall operations.  These isomorphisms satisfy the transition
+composition equation.
+\end{definition}
+
+\begin{proposition}[Preservation of critical coefficients]
+\label{prop:transition-vanishing-cycle-preservation-criterion}
+Coefficient-preserving transitions identify the induced finite
+operations and their orientation comparisons.  Passing to a chosen
+completed operation further requires the limit and completed-tensor
+hypotheses for that coefficient category.
+\end{proposition}
+\begin{proof}
+Apply the specified transition isomorphisms to the defining
+pull--push diagram.  Their commutation with its coefficient maps
+identifies the two operations.  A limiting diagram follows only if
+the relevant functors, supports and tensor products commute with
+that limit.  Properness of the underlying stack map alone does not
+assert this coefficient comparison.
+\end{proof}
+
+The orientation theorems for sheaf moduli and real elliptic operators
+\cite{JoyceUpmeier,JoyceTanakaUpmeier} provide substantial orientation
+constructions in their own settings.  Applying them to the compact
+reduced problem requires the comparison with its actual reduced
+complex and extension data.  The formal coordinate functors, cross
+determinant squares and finite character calculations above supply
+explicit parts of that problem.  The remaining global question is
+the construction of one reduced oriented coefficient system on the
+common elliptic quotient, compatible with complete flags, geometric
+transitions and the stipulated reflection transports.

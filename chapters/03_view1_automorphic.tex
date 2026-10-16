@@ -1,0 +1,885 @@
+\chapter{The automorphic denominator}
+\label{ch:view1-automorphic}
+
+\section{The section to be realized}
+\label{sec:view1-pentadic-level}
+
+A geometric realization of the Igusa denominator must recover a section
+of a specified line, with its character and boundary behavior.  These
+data can be determined before constructing the geometric source.  The
+Jacobi coefficients give a convergent product.  Its theta normalization
+then fixes a weight-five section, and its square gives the monic
+weight-ten form in the primitive curve-counting theorem.
+
+The three constructions involved have different inputs.  The
+automorphic product starts from a weak Jacobi form.  The
+Borcherds--Kac--Moody denominator starts from a Lie superalgebra with
+specified generators and relations.  A compact Pfaffian would start
+from a family of complexes with a pairing, reduction and orientation.
+This chapter identifies the first section and its relation to the
+second denominator.  Its boundary calculations also give necessary
+conditions on the third construction.
+
+\section{Siegel space and the coefficient cone}
+\label{sec:view1-siegel-and-chamber}
+
+For the classical theory of Siegel modular forms, see
+\cite[Chapter I]{FREITAG:1} and \cite[\S\S2--3]{VDGEER:1}.
+Write
+\[
+ \mathbb H_2=\{Z=Z^t\in M_2(\C):\Imag Z>0\},\qquad
+ Z=\begin{pmatrix}z_1&z_2\\z_2&z_3\end{pmatrix}.
+\]
+The action of
+\(g=\bigl(\begin{smallmatrix}A&B\\C&D\end{smallmatrix}\bigr)
+\in\Sp_4(\Z)\) is
+\(gZ=(AZ+B)(CZ+D)^{-1}\).  Put \(j(g,Z)=\det(CZ+D)\).
+A modular form of integral weight \(k\) and character \(\nu\) satisfies
+\[
+ F(gZ)=\nu(g)j(g,Z)^kF(Z).
+\]
+Thus it is a section of \(\mathcal L^k\otimes\nu\) on the quotient
+stack \([\Sp_4(\Z)\backslash\mathbb H_2]\), where \(\mathcal L\)
+is the determinant Hodge line and \(\nu\) denotes the character line.
+All line-valued identities below use this quotient.
+
+At the standard rational cusp \(\mathfrak c_\infty\), set
+\[
+ q=e^{2\pi iz_1},\qquad r=e^{2\pi iz_2},\qquad
+ s=e^{2\pi iz_3}.
+\]
+The three elementary root monomials are
+\[
+ x_1=qr,\qquad x_2=sr,\qquad x_3=r^{-1}.
+\]
+They correspond to the charges
+\((1,1,0)\), \((0,1,1)\), \((0,-1,0)\), in the order
+\((n,\ell,m)\).
+
+Their nonnegative span is the monoid
+\[
+ C_+=\{(n,\ell,m)\in\Z^3:n\geq0,\ m\geq0,\quad
+                                  n+m-\ell\geq0\}.
+\]
+Indeed
+\[
+ q^nr^\ell s^m=x_1^n x_2^m x_3^{n+m-\ell}.
+\]
+The total root height and its completion are therefore
+\[
+ h(n,\ell,m)=2(n+m)-\ell,\qquad
+ \widehat{\Z[C_+]}=\Z[[x_1,x_2,x_3]].
+\]
+At height \(h\), this monoid has \(\binom{h+2}{2}\) elements.
+Consequently multiplication and products of factors of increasing
+positive height are defined coefficientwise.
+
+The usual ordering set for the Borcherds product is
+\[
+\begin{split}
+ \Gamma_{\mathrm{eff}}={}&
+ \{(n,\ell,m):m>0,\ n\geq0,\ \ell\in\Z\}\\
+ &{}\cup\{(n,\ell,0):n>0,\ \ell\in\Z\}
+ \cup\{(0,\ell,0):\ell<0\}.
+\end{split}
+\]
+This larger semigroup records the conventional order of the indices.
+The coefficient cone \(C_+\) supplies the completion.  In particular,
+the entire ordering semigroup does not have finite decomposition
+sets: \((2,0,0)=(1,a,0)+(1,-a,0)\) for every integer \(a\).
+The Jacobi support proved below places every nontrivial product factor
+in \(C_+\setminus\{0\}\).
+
+In analytic coordinates \(y_j=\Imag z_j\), the corresponding chamber is
+\[
+ -y_2>0,\qquad y_1+y_2>0,\qquad y_3+y_2>0.
+\]
+These inequalities imply \(\Imag Z>0\) and \(|x_i|<1\).
+A useful ray is \((y_1,y_2,y_3)=(T,-T/2,T)\), on which
+\(|x_i|=e^{-\pi T}\).  The product theorem will give absolute
+convergence sufficiently far along this chamber.  The more restrictive
+ordering \(0<|s|\ll|q|\ll|r|^{-1}\ll1\) is a possible cusp
+subregion.  Formal identities use total height and require no limit
+of complex variables.
+
+\section{The Jacobi input}
+\label{sec:view1-jacobi-input}
+
+For the Jacobi variables \((\tau,z)\in\mathbb H_1\times\C\), use
+\(q=e^{2\pi i\tau}\) and \(r=e^{2\pi iz}\).
+The weight-zero, index-one weak Jacobi form is
+\[
+ \phi_{0,1}(\tau,z)
+ =4\sum_{a=2}^4\frac{\theta_a(\tau,z)^2}{\theta_a(\tau,0)^2}
+ =\sum_{n\geq0,\ \ell\in\Z}f(n,\ell)q^nr^\ell.
+\]
+Here
+\[
+\begin{aligned}
+ \theta_2(\tau,z)&=\sum_{a\in\Z}q^{(a+1/2)^2/2}r^{a+1/2},\\
+ \theta_3(\tau,z)&=\sum_{a\in\Z}q^{a^2/2}r^a,\qquad
+ \theta_4(\tau,z)=\sum_{a\in\Z}(-1)^a q^{a^2/2}r^a.
+\end{aligned}
+\]
+The denominators are nonzero on \(\mathbb H_1\).
+
+The theta transformation formulas give the modular law
+\[
+ \phi_{0,1}\!\left(\frac{a\tau+b}{c\tau+d},\frac z{c\tau+d}\right)
+ =e^{2\pi icz^2/(c\tau+d)}\phi_{0,1}(\tau,z)
+\]
+for \(\bigl(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\bigr)
+\in\SL_2(\Z)\), and the elliptic law
+\[
+ \phi_{0,1}(\tau,z+a\tau+b)
+ =q^{-a^2}r^{-2a}\phi_{0,1}(\tau,z),
+ \qquad a,b\in\Z.
+\]
+Comparing coefficients gives
+\[
+ f(n,\ell)=f(n+a\ell+a^2,\ell+2a).
+\]
+
+Together with \(z\mapsto-z\), this implies that \(f(n,\ell)\)
+depends only on \(4n-\ell^2\).  Reduction of \(\ell\) to \(0\) or
+\(1\), followed by weak holomorphy, gives
+\[
+ f(n,\ell)=0\quad\text{if }4n-\ell^2<-1.
+\]
+The normalization is
+\(\phi_{0,1}=r^{-1}+10+r+O(q)\).
+It generates the one-dimensional space \(J_{0,1}^{\mathrm{weak}}\)
+\cite{EZ:1}.  For a K3 surface \(S\), the elliptic genus has constant
+term \(2r^{-1}+20+2r\), so
+\(\operatorname{Ell}(S)=2\phi_{0,1}\).
+This is the normalization used in the Hilbert-scheme formulas of
+Chapter~\ref{ch:pentadic} \cite{DMVV}.
+
+Expansion of the three theta quotients gives
+\begin{equation}
+\label{eq:view1-phi01-coefficients}
+\begin{array}{c|rrrrrrr}
+ &\ell=-3&-2&-1&0&1&2&3\\ \hline
+ n=0&0&0&1&10&1&0&0\\
+ n=1&0&10&-64&108&-64&10&0\\
+ n=2&1&108&-513&808&-513&108&1
+\end{array}
+\end{equation}
+Appendix~\ref{app:borcherds-product-expansion} gives the coefficient
+calculation.  The constant coefficient \(10\) determines the weight.
+The coefficient at discriminant \(-1\) determines the simple
+reflective divisor \cite{Gritsenko2018Reflective}.
+The negative coefficients will be signed root
+multiplicities.
+
+Define the active set by
+\[
+ \Gamma_{\mathrm{act}}
+ =\{(n,\ell,m)\in\Gamma_{\mathrm{eff}}:f(nm,\ell)\ne0\}.
+\]
+For \(n+m>0\), its elements satisfy
+\(\ell^2\leq4nm+1\).  If \(\ell>n+m\), integrality would give
+\(\ell^2\geq(n+m+1)^2>4nm+1\), a contradiction.
+For \(n=m=0\), the only active index is \((0,-1,0)\).
+It follows that
+\[
+ \Gamma_{\mathrm{act}}\subset C_+\setminus\{0\}.
+\]
+This proves the local finiteness needed for the formal product and
+for each of its inverses.
+
+\section{The theta normalization}
+\label{sec:view1-theta-normalization}
+
+The theta phase matters for a square root.  Choose representatives
+\(a,b\in\{0,1\}^2\), and define the genus-two theta constants by
+\[
+ \nu_{a,b}(Z)=
+ \sum_{u\in\Z^2}
+ \exp\!\left(\pi i\bigl((u+a/2)^tZ(u+a/2)+b^tu\bigr)\right).
+\]
+Use the ten characteristics with \(a^tb\) even, and put
+\[
+ \Delta_5(Z)=\prod_{a^tb\ \mathrm{even}}\nu_{a,b}(Z).
+\]
+This is the convention of Gritsenko--Nikulin
+\cite[(1.2)]{GN}.
+
+In the convention with phase
+\(b^t(u+a/2)\), each constant acquires
+\(e^{\pi i a^tb/2}\).  The product of those phases is \(-1\),
+coming from \(a=b=(1,1)\).  Specifying the series removes this
+otherwise hidden sign.
+
+\begin{proposition}[Theta-constant leading coefficient]
+\label{prop:view1-theta-constant-leading-coefficient}
+In the chosen convention,
+\[
+ [q^{1/2}s^{1/2}]\Delta_5
+ =64(r^{1/2}-r^{-1/2}),\qquad
+ [q^{1/2}r^{1/2}s^{1/2}]\Delta_5=64.
+\]
+\end{proposition}
+
+\begin{proof}
+The four constants with \(a=(0,0)\) start with \(1\).
+The two with \(a=(1,0)\) start with \(2q^{1/8}\), and the two
+with \(a=(0,1)\) start with \(2s^{1/8}\).
+For \(a=(1,1)\), the two even characteristics give
+\[
+ 2q^{1/8}s^{1/8}(r^{1/4}+r^{-1/4}),\qquad
+ 2q^{1/8}s^{1/8}(r^{1/4}-r^{-1/4}).
+\]
+Their product retains both elliptic monomials.  Multiplication by
+the other eight leading terms gives the stated coefficient.
+\end{proof}
+
+\begin{definition}[Monic Borcherds form]
+\label{def:view1-monic-Borcherds-Gritsenko-form}
+Set \(D_5=64^{-1}\Delta_5\).
+Its coefficient at \(q^{1/2}r^{1/2}s^{1/2}\) is \(1\).
+The half powers mean the exponentials
+\(e^{\pi iz_1}\), \(e^{\pi iz_2}\), \(e^{\pi iz_3}\) on
+\(\mathbb H_2\).
+\end{definition}
+
+The factor \(r^{1/2}-r^{-1/2}\) will give the separating divisor.
+Calling the form monic fixes one coefficient.  It does not discard
+the other term in that coefficient of \(q^{1/2}s^{1/2}\).
+
+\section{The Borcherds product}
+\label{sec:view1-borcherds-gritsenko-nikulin-section}
+\label{ssec:view1-product-expansion}
+
+The Jacobi form has integral coefficients, weight zero and index one.
+The Borcherds product theorem in this case gives a global modular form
+from precisely these data \cite[Theorem 4.1]{GN},
+\cite[Theorem 2.1 and Example 2.4]{GNII}.
+
+\begin{theorem}[Borcherds--Gritsenko--Nikulin product]
+\label{thm:view1-borcherds-gritsenko-nikulin-lift}
+The monic form has the expansion
+\[
+ D_5(Z)=(qrs)^{1/2}
+ \prod_{\gamma=(n,\ell,m)\in\Gamma_{\mathrm{act}}}
+             (1-q^nr^\ell s^m)^{f(nm,\ell)}.
+\]
+After division by \((qrs)^{1/2}\), this is an element of
+\(1+(x_1,x_2,x_3)\Z[[x_1,x_2,x_3]]\).
+Analytically, the product converges absolutely sufficiently near
+\(\mathfrak c_\infty\) in the specified chamber.
+It continues to a holomorphic Siegel cusp form of weight five,
+with a character of order two on \(\Sp_4(\Z)\).
+\end{theorem}
+
+\begin{proof}
+The active-cone calculation proves the formal assertion.
+The analytic product theorem supplies the continuation, its weight
+\(f(0,0)/2=5\), and its rational quadratic divisors.
+Gritsenko--Nikulin identify this product with their theta product
+divided by \(64\) \cite[Theorem 4.1]{GN}.
+Their later convention writes the monic form itself as
+\(\Delta_5\) \cite[(2.16)]{GNII}.
+Proposition~\ref{prop:view1-theta-constant-leading-coefficient}
+fixes the conversion to the convention used here.
+\end{proof}
+
+For example, convergence holds for sufficiently large \(T\) on the
+ray \((T,-T/2,T)\), and on a neighborhood of this ray far enough
+toward the cusp.  On smaller compact subsets the convergence is
+normal.  The general convergence statement and its continuation
+follow from the same product theorem.  A formal height completion
+alone would not supply analytic convergence.
+
+\begin{corollary}[Theta-normalized section]
+\label{cor:view1-theta-normalized-section}
+With zero exponents omitted or retained, respectively,
+\[
+ \Delta_5
+ =64(qrs)^{1/2}
+       \prod_{\Gamma_{\mathrm{act}}}(1-q^nr^\ell s^m)^{f(nm,\ell)}
+ =64(qrs)^{1/2}
+       \prod_{\Gamma_{\mathrm{eff}}}(1-q^nr^\ell s^m)^{f(nm,\ell)}.
+\]
+\end{corollary}
+
+The composite index \(nm\) is the same one that occurs in the
+Hilbert-scheme elliptic-genus product.  There the K3 coefficients
+are \(2f(nm,\ell)\), and the positive-\(m\) product is an inverse.
+The boundary factors and the factor of two distinguish that index
+from the present square root.
+
+\subsection{The automorphic line}
+\label{ssec:view1-package}
+
+\begin{definition}[The Borcherds--Gritsenko--Nikulin section]
+\label{def:view1-borcherds-gritsenko-nikulin-section}
+For \(X=S\times E\), write
+\(\mathcal D_X=\Delta_5\) for the section of
+\(\mathcal L^5\otimes\nu_5\) specified above.
+Here \(\nu_5\) is the Maass character, also denoted
+\(\nu_{\Delta_5}\), whose values are given below.
+\end{definition}
+
+\begin{remark}[The meaning of \(\mathcal D_X\)]
+\label{rem:view1-D-X-naming}
+The subscript names the geometric realization problem.
+The section itself is defined on Siegel space.
+A geometric interpretation requires a parameter space \(B\), a map
+\(\sigma:B\to[\Sp_4(\Z)\backslash\mathbb H_2]\), and an isomorphism
+from an independently constructed line on \(B\) to
+\(\sigma^*(\mathcal L^5\otimes\nu_5)\).
+The introduction of the three Fourier variables does not define
+this map or line isomorphism.
+\end{remark}
+
+\section{Weight, character and divisor}
+\label{sec:view1-weight-multiplier-divisor}
+
+\subsection{The weight}
+\label{ssec:view1-borcherds-weight}
+
+\begin{proposition}[The Borcherds weight]
+\label{prop:view1-borcherds-gritsenko-weight-identity}
+For the fixed Jacobi input, put \(c_1(0)=f(0,0)=10\).
+Then
+\[
+ \operatorname{wt}(\mathcal D_X)
+ =\frac{f(0,0)}2=5
+ =\frac{c_1(0)}2=\kappa_{\mathrm{BKM}}(\Delta_5).
+\]
+Here \(\kappa_{\mathrm{BKM}}\) denotes the automorphic weight.
+\end{proposition}
+
+\begin{proof}
+This is the weight formula in
+Theorem~\ref{thm:view1-borcherds-gritsenko-nikulin-lift}.
+\end{proof}
+
+Integral weight makes \(j(g,Z)^5\) single-valued on the Siegel
+group.  A nontrivial character remains.  The input metaplectic
+representation in Chapter~\ref{ch:singular-theta-lift} concerns a
+different group.
+
+The same weight formula applies to the other seven diagonal-divisor
+forms in Appendix~\ref{app:borcherds-product-expansion}.
+For a congruence input its constant term is the weighted contribution
+of all cusps.  The parameter pair \((t,N)\), consisting of the Jacobi
+index and congruence level, must be retained.
+
+\subsection{The Maass character}
+\label{ssec:view1-maass-multiplier}
+
+The character \(\nu_5:\Sp_4(\Z)\to\{\pm1\}\) is determined on
+the usual generators by
+\[
+ \nu_5\begin{pmatrix}0&I_2\\-I_2&0\end{pmatrix}=1,\qquad
+ \nu_5\begin{pmatrix}I_2&B\\0&I_2\end{pmatrix}
+       =(-1)^{b_1+b_2+b_3},
+ \quad B=\begin{pmatrix}b_1&b_2\\b_2&b_3\end{pmatrix},
+\]
+and, for \(U=\bigl(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\bigr)
+\in\mathrm{GL}_2(\Z)\),
+\[
+ \nu_5\begin{pmatrix}U^{-t}&0\\0&U\end{pmatrix}
+ =(-1)^{(1+a+d)(1+b+c)+ad}.
+\]
+These are Maass's formulas \cite{MAASS:1}, also reproduced in
+\cite[(1.3)--(1.5)]{GN}.
+In particular \(\nu_5^2=1\).
+The character is nontrivial, since translation by
+\(B=\operatorname{diag}(1,0)\) has value \(-1\).
+Thus \(\Delta_5\) is a section of the character-twisted Hodge line,
+whereas \(\Delta_5^2\) is a section of \(\mathcal L^{10}\).
+
+\subsection{The diagonal divisor}
+\label{ssec:view1-diagonal-divisor}
+
+Let
+\[
+ \mathcal H_{\mathrm{diag}}
+ =\left\{\begin{pmatrix}\tau&0\\0&\sigma\end{pmatrix}:
+                         \tau,\sigma\in\mathbb H_1\right\}.
+\]
+The divisor of \(\Delta_5\) on \(\mathbb H_2\) is
+\[
+ \operatorname{div}(\Delta_5)
+ =\sum_{\mathcal H\in\Sp_4(\Z)\cdot\mathcal H_{\mathrm{diag}}}
+       \mathcal H,
+\]
+where each distinct component occurs once
+\cite[Theorem 1.4]{GC}.  It descends to the Humbert divisor of
+discriminant one.  The order here is measured upstairs, or on the
+quotient stack with its line.  Coarse quotient ramification should
+not be inserted into this multiplicity.
+
+In the rank-three lattice
+\[
+ M_0=\Z f_2\oplus\Z f_3\oplus\Z f_{-2},\qquad
+ (f_2,f_{-2})=-1,\quad f_3^2=2,
+\]
+all other basis pairings vanish.  The three simple roots are
+\[
+ \delta_1=2f_2-f_3,\qquad
+ \delta_2=2f_{-2}-f_3,\qquad \delta_3=f_3.
+\]
+They span the type-II lattice
+\(M_{II}=\Z(2f_2)\oplus\Z f_3\oplus\Z(2f_{-2})\).
+
+Their Gram matrix and product degrees are
+\[
+ ((\delta_i,\delta_j))=
+ \begin{pmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{pmatrix},
+ \qquad
+ (1,1,0),\ (0,1,1),\ (0,-1,0).
+\]
+Each corresponding factor has exponent \(1\).
+Its wall is a component of the simple Humbert divisor.  The reciprocal
+\(\Delta_5^{-2}\) consequently has order \(-2\) there.
+The separating calculation below also proves order one directly at
+\(z_2=0\).
+
+\subsection{Linear reflections and the slash action}
+\label{ssec:view1-maass-character-walls}
+
+The action on the tube coordinates has a different character from the
+weight-five slash action.  To specify both, put
+\[
+ \zeta=z_3f_2+z_2f_3+z_1f_{-2},\qquad
+ s_\beta(v)=v-(v,\beta)\beta\quad(\beta^2=2),
+\]
+and let \(s_\beta Z\) denote the period corresponding to
+\(s_\beta\zeta\).
+The three reflections permuting the simple roots have normals
+\[
+ \alpha_1=f_{-2}-f_2,\qquad
+ \alpha_2=f_2-f_3,\qquad
+ \alpha_3=f_{-2}-f_3.
+\]
+
+The orthogonal realization separates the two signs intrinsically.
+Let \(L\) and \(\sigma:\Sp_4(\Z)\to\Gamma_{3,2}\subset\SO(L)\)
+be the exterior-square lattice and homomorphism of
+Theorem~\ref{thm:exceptional-iso}. Its cusp frame satisfies
+\(\sigma(g)w(Z)=j(g,Z)w(gZ)\).
+
+\begin{definition}[Homogeneous orthogonal character]
+\label{def:homogeneous-orthogonal-character}
+On the nonzero null cone over \(\mathbb H_2\), set
+\[
+ \widehat\Delta_5(tw(Z))=t^{-5}\Delta_5(Z).
+\]
+The character of its orthogonal transformation law is
+\[
+ \widetilde\nu_5:\Gamma_{3,2}\times\{\pm\Id_L\}\longrightarrow\{\pm1\},
+ \qquad
+ \widetilde\nu_5(\eta\sigma(g))=\eta^{-5}\nu_5(g)
+ \quad(\eta\in\{\pm1\}).
+\]
+We also write \(\widetilde\nu_{\Delta_5}=\widetilde\nu_5\).
+\end{definition}
+
+The definition is independent of the lift \(g\), since
+\(\ker\sigma=\{\pm\Id_4\}\) and \(\nu_5(-\Id_4)=1\).
+The two orthogonal factors intersect trivially:
+\(\dim L=5\) gives \(\det(-\Id_L)=-1\).
+Homogeneity forces \(\widetilde\nu_5(-\Id_L)=-1\), and the frame
+relation gives
+\(\widehat\Delta_5(\sigma(g)w)=\nu_5(g)\widehat\Delta_5(w)\).
+Extend each rank-three reflection by the identity on the complementary
+hyperbolic plane in \(L\).
+
+\begin{lemma}[Reflection signs and symplectic lifts]
+\label{lem:view1-maass-multiplier-restriction}
+The linear tube action satisfies
+\[
+ \Delta_5(s_{\delta_i}Z)=-\Delta_5(Z),\qquad
+ \Delta_5(s_{\alpha_i}Z)=\Delta_5(Z).
+\]
+For the block-diagonal symplectic lifts \(g_\beta\) below,
+the Maass and slash-action values are instead
+\[
+ \nu_5(g_{\delta_i})=1,\qquad \nu_5(g_{\alpha_i})=-1,
+ \qquad \Delta_5|_5g_\beta=\nu_5(g_\beta)\Delta_5.
+\]
+The homogeneous orthogonal values are
+\[
+ \widetilde\nu_5(s_{\delta_i})=-1,\qquad
+ \widetilde\nu_5(s_{\alpha_i})=1.
+\]
+\end{lemma}
+
+\begin{proof}
+Take \(g_\beta=\operatorname{diag}(U_\beta^{-t},U_\beta)\),
+with
+\[
+\begin{array}{c|ccc}
+ \beta&\delta_1&\delta_2&\delta_3\\ \hline
+ U_\beta&
+ \begin{psmallmatrix}1&-2\\0&-1\end{psmallmatrix}&
+ \begin{psmallmatrix}1&0\\2&-1\end{psmallmatrix}&
+ \begin{psmallmatrix}1&0\\0&-1\end{psmallmatrix}\\[5pt]
+ \beta&\alpha_1&\alpha_2&\alpha_3\\ \hline
+ U_\beta&
+ \begin{psmallmatrix}0&1\\1&0\end{psmallmatrix}&
+ \begin{psmallmatrix}1&-1\\0&-1\end{psmallmatrix}&
+ \begin{psmallmatrix}1&0\\1&-1\end{psmallmatrix}
+\end{array}
+\]
+Each determinant is \(-1\).
+The action \(Z\mapsto U_\beta^{-t}ZU_\beta^{-1}\)
+is \(s_\beta\) on the tube coordinates.
+For \(U=\bigl(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\bigr)\),
+its matrix in the basis \((f_2,f_3,f_{-2})\) is
+\[
+ \begin{pmatrix}
+ a^2&-2ab&b^2\\
+ -ac&ad+bc&-bd\\
+ c^2&-2cd&d^2
+ \end{pmatrix}.
+\]
+Substitution verifies all six reflections.
+
+Maass's formula gives \(+1\) in the first three cases and \(-1\)
+in the last three.  Since \(j(g_\beta,Z)=\det U_\beta=-1\),
+the functional equation gives
+\(\Delta_5(s_\beta Z)=-\nu_5(g_\beta)\Delta_5(Z)\).
+The cusp frame obeys \(w(s_\beta Z)=s_\beta w(Z)\), so the frame
+relation also gives \(\sigma(g_\beta)=-s_\beta\).
+Consequently \(\widetilde\nu_5(s_\beta)=-\nu_5(g_\beta)\).
+These equations prove all three assertions.
+\end{proof}
+
+Write \(\varepsilon_5\) for the character of this linear tube action.
+It is the restriction of \(\widetilde\nu_5\) to the reflections
+fixing the complementary hyperbolic plane.
+For the reflection group \(W^{(2)}(M_{II})\) and the chamber
+symmetry group \(S_3\), the lemma gives
+\[
+ \varepsilon_5(w)=\det(w),\qquad
+ \varepsilon_5(a)=1\quad(a\in S_3).
+\]
+These are the signs used in the alternating denominator identity
+\cite[Propositions 2.1--2.2]{GN}.
+
+The divisibility of \(\beta\in M_0\) is the positive generator
+of the ideal \((\beta,M_0)\subset\Z\).
+The type-I walls carry no divisor of \(\Delta_5\).
+Their primitive normals have divisibility
+one in \(M_0\), whereas a type-II normal has divisibility two.
+The latter admits the half-normal in the dual lattice that supports
+the negative Fourier index of the lift.  This divisor criterion is
+made explicit in Chapter~\ref{ch:singular-theta-lift}.
+
+\section{The coefficientwise determinant}
+\label{sec:view1-K0-determinant-identification}
+
+For each \(\gamma=(n,\ell,m)\in\Gamma_{\mathrm{act}}\), choose
+a finite super vector space \(V_\gamma=V_\gamma^{\bar0}\oplus
+V_\gamma^{\bar1}\) with
+\[
+ \operatorname{sdim}V_\gamma
+ =\dim V_\gamma^{\bar0}-\dim V_\gamma^{\bar1}=f(nm,\ell).
+\]
+Such spaces exist by placing \(|f(nm,\ell)|\) basis vectors
+in the parity given by its sign.
+This realizes the integer without specifying a bracket or geometric
+coefficient complex.
+We use the split Grothendieck group of finite super vector spaces
+with the additional relation \([\Pi V]=-[V]\), where \(\Pi\)
+reverses parity.  Its classes are determined by superdimension.
+
+The graded sum \(V=\bigoplus_\gamma V_\gamma\) has
+finite-dimensional total-height components.
+
+For \(x^\gamma=q^nr^\ell s^m\), define the completed Berezinian by
+\[
+ \operatorname{Ber}_{V}(1-x)=
+ \prod_\gamma
+ \frac{\det(1-x^\gamma\mid V_\gamma^{\bar0})}
+      {\det(1-x^\gamma\mid V_\gamma^{\bar1})}.
+\]
+Total height makes every truncation finite.
+
+\begin{lemma}[The \(K_0\) superdeterminant]
+\label{lem:view1-K0-Fock-superdeterminant}
+The Berezinian depends only on the super-Grothendieck classes and is
+\[
+ \sdet_V(1-x):=\operatorname{Ber}_V(1-x)
+ =\prod_{\Gamma_{\mathrm{act}}}(1-x^\gamma)^{f(nm,\ell)}.
+\]
+The Euler supercharacter of the super-symmetric algebra is its inverse.
+\end{lemma}
+
+\begin{proof}
+An even basis vector contributes \(1-x^\gamma\) to the determinant.
+An odd vector contributes its reciprocal.  This proves the first
+identity on each finite height truncation and hence on their inverse
+limit.  In a super-symmetric algebra, an even generator gives a
+polynomial algebra with supercharacter \((1-x^\gamma)^{-1}\).
+An odd generator gives an exterior algebra with supercharacter
+\(1-x^\gamma\).  Multiplication gives the inverse product.
+\end{proof}
+
+\begin{proposition}[The automorphic continuation of the determinant]
+\label{prop:bgn-identification-recap}
+Put \(v_0(Z)=64(qrs)^{1/2}\).
+Then
+\[
+ v_0(Z)\,\sdet_V(1-x)=\mathcal D_X(Z)=\Delta_5(Z)
+\]
+in the height-completed cusp expansion.  The left side has the
+analytic continuation given by
+Theorem~\ref{thm:view1-borcherds-gritsenko-nikulin-lift}.
+\end{proposition}
+
+\begin{proof}
+The lemma identifies every factor of the product theorem.
+The theta coefficient fixes \(v_0\).
+On the convergence region this is an equality of holomorphic
+functions.  Analytic continuation gives the stated section.
+\end{proof}
+
+\begin{remark}[Scope of the determinant identity]
+\label{rem:view1-bgn-scope}
+An Euler class can also come from an actual derived supercomplex.
+Its Berezinian still remembers only the signed dimensions used above.
+A comparison with a Hall algebra requires compatible extension maps.
+A comparison with a Pfaffian requires a family, a skew pairing,
+an orientation and modular descent.  None of these operations is
+defined by the product of Euler classes.
+\end{remark}
+
+\section{The complete boundary factors}
+\label{sec:view1-boundary-factors}
+
+The zero-\(s\) factors give the first Fourier--Jacobi coefficient.
+Define
+\[
+ b(q,r)=q^{1/2}(r^{1/2}-r^{-1/2})
+ \prod_{a\geq1}(1-q^a)^{10}(1-rq^a)(1-r^{-1}q^a).
+\]
+Separating the factors with \(m=0\) gives the exact identity
+\[
+ D_5=s^{1/2}b(q,r)
+ \prod_{\substack{m>0,\ n\geq0\\\ell\in\Z}}
+                    (1-q^nr^\ell s^m)^{f(nm,\ell)}.
+\]
+Thus \([s^{1/2}]D_5=b\).
+
+Writing
+\[
+ \eta(\tau)=q^{1/24}\prod_{a\geq1}(1-q^a),\qquad
+ \vartheta(\tau,z)=q^{1/8}(r^{1/2}-r^{-1/2})
+  \prod_{a\geq1}(1-q^a)(1-rq^a)(1-r^{-1}q^a),
+\]
+one has \(b=\eta^9\vartheta\).
+This is the weight-five, index-\(\tfrac12\) Jacobi form whose
+additive lift gives \(D_5\) \cite[(13)]{GC}.
+Its multiplier on the Jacobi parabolic is
+\(v_\eta^{12}\times v_H\), where \(v_\eta\) is the Dedekind
+eta multiplier and \(v_H\) is the odd-theta Heisenberg character.
+
+For a K3 surface \(S\) and a chosen Enriques surface \(T\), the
+normalized elliptic-index series of Chapter~\ref{ch:pentadic} are
+therefore
+\[
+ F_S=\frac{s\,b^2}{D_5^2},\qquad
+ F_T=\frac{s^{1/2}b}{D_5},\qquad F_T^2=F_S.
+\]
+These quotients have their boundary factors cancelled before
+specialization at \(r=1\).  Raw reciprocal cusp forms have poles
+there.
+
+\begin{proposition}[The separating leading section]
+\label{prop:view1-separating-leading}
+For \(z=z_2\) near zero and \(z_1,z_3\in\mathbb H_1\),
+\[
+ D_5(Z)=2\pi iz\,\eta(z_1)^{12}\eta(z_3)^{12}+O(z^3).
+\]
+Consequently
+\[
+ D_5(Z)^2=(2\pi iz)^2\eta(z_1)^{24}\eta(z_3)^{24}+O(z^4).
+\]
+\end{proposition}
+
+\begin{proof}
+At \(r=1\), the theta quotient gives \(\phi_{0,1}(\tau,0)=12\).
+Hence
+\[
+ \sum_\ell f(n,\ell)=
+ \begin{cases}12,&n=0,\\0,&n>0.\end{cases}
+\]
+After removing \(r^{1/2}-r^{-1/2}\) from \(D_5\), the factors
+with \(n,m>0\) cancel at \(r=1\).  The two boundary directions give
+\[
+ \left.\frac{D_5}{r^{1/2}-r^{-1/2}}\right|_{r=1}
+ =(qs)^{1/2}\prod_{a\geq1}(1-q^a)^{12}(1-s^a)^{12}
+ =\eta(z_1)^{12}\eta(z_3)^{12}.
+\]
+This calculation first holds on a product convergence region and then
+continues along the diagonal.  The quotient is even in \(z\), since
+the remaining factors pair \(\ell\) and \(-\ell\).
+
+Finally \(r^{1/2}-r^{-1/2}=2\pi iz+O(z^3)\).
+\end{proof}
+
+The eta factors never vanish on \(\mathbb H_1\).
+This proves the simple order on the diagonal and fixes its leading
+section.  An eventual geometric line comparison must reproduce both
+the factor \(2\pi i\) and the two eta powers.
+
+\section{The square and the counting normalization}
+\label{sec:view1-squared-scalar}
+
+Set
+\[
+ \Xi=D_5^2=\chi_{10}^{\mathrm{OP}},\qquad
+ \Delta_{10}=\Delta_5^2=4096\,\Xi.
+\]
+The character of \(\Delta_5\) disappears on squaring.
+Both \(\Xi\) and \(\Delta_{10}\) are weight-ten forms, with
+different leading coefficients.
+
+\begin{proposition}[The weight-ten normalization]
+\label{prop:view1-square-chi-10}
+Both counting papers \cite{OPand,OB} denote \(\Xi\) by
+\(\chi_{10}\).  Its product is
+\[
+ \Xi=qrs\prod_{\Gamma_{\mathrm{eff}}}
+                  (1-q^nr^\ell s^m)^{2f(nm,\ell)}.
+\]
+In the unscaled notation of this book,
+\[
+ \Phi_{10}^{\mathrm{un}}=\chi_{10}=\Delta_{10}=\Delta_5^2.
+\]
+Thus this last bare \(\chi_{10}\) is \(4096\) times the form
+bearing that name in the two cited counting papers.
+\end{proposition}
+
+\begin{proof}
+Squaring the product doubles its exponents and squares its
+prefactor.  The product in \cite[(12)]{OPand} and
+\cite[(3)]{OB} has prefactor \(qrs\) and coefficients
+\(c(4nm-\ell^2)=2f(nm,\ell)\).
+It is therefore \(\Xi\), coefficient by coefficient.
+The unscaled equalities are the stated notation.
+\end{proof}
+
+For primitive nonzero K3 curve classes
+\(\beta_h^2=2h-2\), the reduced disconnected Gromov--Witten theorem
+of Oberdieck--Pixton \cite[Theorem 1]{OB} is
+\[
+ \sum_{g,h,d\geq0}N_{g,h,d}\,u^{2g-2}q^{h-1}s^{d-1}
+ =-\frac1{\Xi(q,e^{iu},s)}.
+\]
+The right side means its Laurent expansion at \(u=0\).
+The DT/PT and GW/PT comparisons in Chapter~\ref{ch:pentadic}
+give the rational-coefficient form of the primitive DT series,
+\[
+ Z_{\mathrm{OP}}^X=-\Xi^{-1}=-4096\,\Delta_5^{-2}.
+\]
+The DT Euler variable is \(-r\).  Its expansion at \(r=0\), a
+product expansion in the chamber \(|r|>1\), and a genus expansion
+at \(r=e^{iu}\) are different expansions of the same rational
+coefficients.  Arbitrary imprimitive classes require additional
+statements.
+
+The convention
+\(Z_{\mathrm{BPS}}^{K3\times E}:=-Z_{\mathrm{OP}}^X/4096
+=\Delta_5^{-2}\) names a rescaled scalar function.
+Constructing a protected state space and a trace with this value is
+a further problem.  Squaring also loses the order-two character of
+the line and the sign of its section.
+
+\section{The root denominator}
+\label{sec:view1-2Z-denominator}
+
+For the Gritsenko--Nikulin Lie superalgebra
+\(\mathfrak g_{\Delta_5}\), let
+\(\operatorname{den}(\mathfrak g_{\Delta_5})\) denote its
+Weyl--Kac--Borcherds denominator in the character convention
+\(e^{-2\pi i(\alpha,\zeta)}\).
+The change from product degrees to roots is
+\[
+ \alpha(n,\ell,m)=2nf_2-\ell f_3+2mf_{-2}
+ =n\delta_1+m\delta_2+(n+m-\ell)\delta_3.
+\]
+It identifies the charge lattice with \(M_{II}\), an index-four
+sublattice of \(M_0\).  Direct pairing gives
+\[
+ q^nr^\ell s^m=e^{-\pi i(\alpha(n,\ell,m),\zeta)}.
+\]
+
+\begin{proposition}[The doubled denominator]
+\label{prop:view1-GN-doubled-denominator}
+In the specified character convention,
+\[
+ \operatorname{den}(\mathfrak g_{\Delta_5})(Z)
+ =D_5(2Z)=64^{-1}\Delta_5(2Z).
+\]
+\end{proposition}
+
+\begin{proof}
+Gritsenko--Nikulin's denominator theorem identifies the signed root
+multiplicities with \(f(nm,\ell)\), and its Weyl vector is
+\(\rho=f_2-\tfrac12f_3+f_{-2}\)
+\cite[\S3 and Theorem 4.1]{GN}.
+Replacing \(Z\) by \(2Z\) changes each
+\(e^{-\pi i(\alpha,\zeta)}\) to
+\(e^{-2\pi i(\alpha,\zeta)}\), including the Weyl prefactor.
+The scalar is the theta normalization already fixed above.
+\end{proof}
+
+The simple imaginary generators and their parities are part of the
+Lie superalgebra construction in Chapter~\ref{ch:view2-bkm}.
+A graded super vector space with the same Euler dimensions would
+give the same product but would not define this denominator algebra.
+
+\section{The orthogonal lift and the geometric comparison}
+\label{sec:view1-Sp-Spin-bridge}
+\label{sec:view1-summary}
+
+The exceptional isomorphism
+\(\PSp_4(\R)\simeq\SO(3,2)_+\) identifies Siegel space with a
+type-IV domain.  Chapter~\ref{ch:singular-theta-lift} constructs the
+regularized theta lift on that domain, starting from the
+weight-\(-\tfrac12\) vector-valued theta components of
+\(\phi_{0,1}\).  Its multiplicative product is \(D_5\) in the
+monic cusp normalization.
+
+\begin{theorem}[The automorphic target]
+\label{thm:view1-package}
+The section \(\mathcal D_X=\Delta_5\) has weight five,
+Maass character \(\nu_5\), and simple Humbert divisor of
+discriminant one.  Its cusp expansion is the height-completed
+Borcherds product, its first Fourier--Jacobi coefficient is \(64b\),
+and its separating leading section is
+\[
+ 128\pi iz_2\,\eta(z_1)^{12}\eta(z_3)^{12}.
+\]
+Its square is \(4096\,\Xi\), and its root denominator is
+\(64^{-1}\Delta_5(2Z)\).
+\end{theorem}
+
+\begin{proof}
+The assertions follow from the product theorem, Maass's formulas,
+the diagonal-divisor theorem, and the two boundary calculations.
+\end{proof}
+
+The retained hypotheses in
+Appendix~\ref{app:obstruction-discharges} specify the D0-HN datum
+and quotient orientation.  They also specify Weyl lifts,
+the wall datum \((O2_{\mathrm{atlas}})\), and the finite
+Pfaffian datum \((P_{\mathrm{fin}})\).
+The relative Pfaffian--Dirac statement is treated in
+Chapter~\ref{ch:pfaffian-dirac} under these data.
+
+A geometric realization must define
+\(\operatorname{Pf}_{\mathrm{prot}}(\mathfrak D_X^{\mathrm{DI}})\)
+on its own line and compare it with \(\sigma^*\mathcal D_X\).
+The line isomorphism must preserve the character and both boundary
+sections computed above.  An identification of Hall or chiral
+operations has additional content beyond this line comparison.
+The mirror-discriminant interpretation likewise requires an
+independently defined period map and divisor comparison.

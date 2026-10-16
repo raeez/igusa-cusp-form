@@ -1,0 +1,561 @@
+\chapter{K3 periods and the mirror discriminant}
+\label{ch:view4-mirror}
+
+\section{A geometric source for the Siegel period domain}
+\label{sec:view4-mirror-discriminant}
+
+The Siegel threefold already parametrizes a classical family of
+lattice-polarized K3 surfaces. Its decomposable-abelian-surface divisor
+is also a locus where the K3 polarization enlarges. This gives a
+geometric interpretation of the zero divisor of \(\Delta_5\).
+The further question is whether an independently defined compact
+\(K3\times E\) construction produces the same period map, line and
+meromorphic section. That comparison must retain the elliptic
+variation and the geometric source of the section.
+
+We first construct the K3 lattice and its period coordinates. The two
+orbits of roots then distinguish the Humbert surfaces \(H_1\) and
+\(H_4\). Finally we compare the local divisor on the period cover
+with its coarse quotient. These calculations specify the target of
+the compact mirror problem without assuming that problem solved.
+
+\subsection{Polarization and the mirror lattice}
+\label{subsec:k3-mirror-period}
+
+Write
+\[
+ U=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+ \Lambda_{K3}=3U\oplus2E_8(-1),\qquad
+ \widetilde\Lambda_{K3}=U_{\mathrm{Muk}}\oplus\Lambda_{K3}.
+\]
+The signatures are \((3,19)\) and \((4,20)\), respectively;
+positive entries are counted first. The second lattice is the Mukai
+lattice, with pairing
+\[
+ ((r,c,s),(r',c',s'))=c\cdot c'-rs'-r's
+\]
+\cite{Mukai1984,Mukai1987}.
+
+Let \(M\) be an even lattice of signature \((1,t)\).
+An \(M\)-polarization of a K3 surface \(S\) is a primitive embedding
+\(M\hookrightarrow\operatorname{Pic}(S)\); we require its image to
+contain a nef and big class, and call the polarization
+\emph{pseudoample}. Requiring an ample class is stronger. A choice
+of a primitive hyperbolic plane in \(M^\perp\subset\Lambda_{K3}\)
+is additional data. Since \(U\) is unimodular, such a choice splits
+\[
+ M^\perp=U_{\mathrm{mir}}\oplus N.
+\]
+The lattice \(N\), of signature \((1,18-t)\), is the mirror lattice
+for this choice \cite[\S\S1--3, 5]{DolgachevMirrorLP}.
+Thus lattice polarization does not itself include a mirror cusp.
+
+In the same K3 lattice, the complementary relation is
+\[
+ N^\perp=U_{\mathrm{mir}}\oplus M,
+ \qquad \operatorname{sign}(N^\perp)=(2,t+1).
+\]
+Indeed, unimodularity of the chosen \(U_{\mathrm{mir}}\)
+splits it from \(\Lambda_{K3}\). In the remaining summand,
+\(M\) is primitive and \(N=M^\perp\); taking the orthogonal
+complement again recovers \(M\).
+
+For a fixed primitive embedding, the marked period domain is
+\[
+ \Omega_M=\{[\omega]\in\mathbb P(M^\perp\otimes\mathbb C):
+       (\omega,\omega)=0,
+       (\omega,\overline\omega)>0\}^{+}.
+\]
+The superscript selects one connected component. Its complex
+ dimension is \(20-\operatorname{rk}M=19-t\).
+The arithmetic group for polarizations fixed pointwise is the image
+of the isometries of \(\Lambda_{K3}\) fixing \(M\). Equivalently it
+is the component-preserving discriminant kernel in
+\(O(M^\perp)\), with the relevant ample-chamber convention.
+It need not be the full orthogonal group.
+
+The lattice used here is
+\[
+ M=U\oplus\langle-2\rangle.
+\]
+Embed its rank-one summand as a root in one \(E_8(-1)\) factor of
+\(\Lambda_{K3}\), and its hyperbolic plane in one of the three
+\(U\)'s. The root complement is \(E_7(-1)\), so
+\[
+ M^\perp=2U\oplus E_8(-1)\oplus E_7(-1),\qquad
+ N=U\oplus E_8(-1)\oplus E_7(-1).
+\]
+In particular, \(N\) has rank \(17\) and signature \((1,16)\).
+Its orthogonal complement in the same K3 lattice is
+\[
+ T=N^\perp=2U\oplus\langle-2\rangle,
+ \qquad \operatorname{sign}(T)=(2,3).
+\]
+The domain \(\Omega_M\) has dimension \(17\), whereas
+\(\Omega_N\subset\mathbb P(T\otimes\mathbb C)\) has dimension
+\(3\). They parametrize different lattice-polarized K3 surfaces.
+
+\subsection{The integral gluing}
+\label{subsec:view4-lattice-check}
+
+The root complement above is integral, but the root and its
+orthogonal complement do not split \(E_8\) integrally. An explicit
+basis exhibits the difference. In Euclidean \(\mathbb R^8\), set
+\[
+ \begin{split}
+ a_1&=\tfrac12(e_1-e_2-e_3-e_4-e_5-e_6-e_7+e_8),\\
+ a_2&=e_1+e_2,\qquad a_3=-e_1+e_2,\\
+ a_j&=-e_{j-2}+e_{j-1}\qquad(4\le j\le8).
+ \end{split}
+\]
+Their Gram matrix is the positive \(E_8\) matrix, of determinant
+\(1\). The first seven roots have the \(E_7\) Gram matrix, of
+ determinant \(2\). They are orthogonal to \(r=e_7+e_8\), and
+\begin{equation}\label{eq:view4-e8-glue}
+ r=2a_1+3a_2+4a_3+6a_4+5a_5+4a_6+3a_7+2a_8.
+\end{equation}
+Consequently
+\[
+ [E_8:E_7\oplus\mathbb Zr]=2,
+ \qquad \det(E_7\oplus\mathbb Zr)=4.
+\]
+Indeed, replacing the last basis vector \(a_8\) by \(r\) has
+ determinant \(2\). Equation~\eqref{eq:view4-e8-glue} also displays
+ the missing glue vector. Reversing the form gives the asserted
+ embedding into \(E_8(-1)\).
+
+This distinction matters when a root becomes algebraic. A primitive
+closure can enlarge \(E_7(-1)\oplus\langle-2\rangle\) to
+\(E_8(-1)\). Adding the two orthogonal lattices without their glue
+would give the wrong discriminant group.
+
+\section{The period map and an explicit K3 family}
+\label{subsec:view4-period-coordinates}
+
+Choose a basis \((e_1,f_1,e_2,f_2,g)\) of \(T\) with
+\((e_i,f_i)=1\), \(g^2=-2\), and all other pairings zero.
+For
+\[
+ Z=\begin{pmatrix}\tau&z\\z&\sigma\end{pmatrix}\in\mathbb H_2,
+ \qquad
+ w(Z)=e_1+(z^2-\tau\sigma)f_1+\tau e_2+\sigma f_2+zg,
+\]
+one has
+\begin{equation}\label{eq:view4-period-vector}
+ (w(Z),w(Z))=0,\qquad
+ (w(Z),\overline{w(Z)})=4\det\operatorname{Im}Z>0.
+\end{equation}
+The first identity follows by canceling
+\(2(z^2-\tau\sigma)+2\tau\sigma-2z^2\).
+For the second, write \(\operatorname{Im}\tau=b\),
+\(\operatorname{Im}\sigma=d\), \(\operatorname{Im}z=f\);
+the pairing is \(4(bd-f^2)\).
+The tube-domain parametrization \(Z\mapsto[w(Z)]\) identifies
+\(\mathbb H_2\) with the selected component \(\Omega_N\).
+
+The discriminant group of \(T\) is \(\mathbb Z/2\), whose
+quadratic-form automorphism group is trivial. Thus the
+component-preserving discriminant kernel here is \(O^+(T)\).
+Its effective projective action is the genus-two Siegel modular
+action, with real exceptional isomorphism
+\(\operatorname{PSp}_4(\mathbb R)\simeq
+\operatorname{SO}_0(T\otimes\mathbb R)\).
+The K3 Torelli theorem gives the coarse period isomorphism
+\begin{equation}\label{eq:view4-period-bridge}
+ \mathcal M_N\simeq
+ O^+(T)\backslash\Omega_N
+ \simeq\operatorname{Sp}_4(\mathbb Z)\backslash\mathbb H_2,
+\end{equation}
+where \(\mathcal M_N\) denotes the coarse moduli space of
+pseudoample \(N\)-polarized K3 surfaces
+\cite[Proposition 3.1]{ClingherDoran2012}.
+The quotient on the right also parametrizes principally polarized
+abelian surfaces. The associated Hodge correspondence is the
+classical K3--abelian-surface correspondence of
+\cite[Proposition 3.2]{ClingherDoran2012}.
+
+Here is a family realizing the K3 side. For complex parameters
+\((\alpha,\beta,\gamma,\delta)\) with
+\((\gamma,\delta)\ne(0,0)\), consider the quartic in
+\(\mathbb P^3_{[x:y:z:w]}\)
+\begin{equation}\label{eq:view4-quartic}
+ \begin{split}
+ y^2zw-4x^3z+3\alpha xzw^2+\beta zw^3
+   +\gamma xz^2w
+   -\tfrac12(\delta z^2w^2+w^4)=0.
+ \end{split}
+\end{equation}
+In this equation \(z\) is a projective coordinate, distinct from the
+ off-diagonal period coordinate used above.
+The minimal resolution is a K3 surface with a canonical
+pseudoample \(N\)-polarization. Every such polarized surface occurs,
+and its isomorphism class is determined by
+\[
+ [\alpha:\beta:\gamma:\delta]\in\mathbb P(2,3,5,6),
+ \qquad (\gamma,\delta)\ne(0,0)
+\]
+\cite[Theorems 1.2 and 1.4]{ClingherDoran2012}.
+The construction identifies the two exceptional root configurations
+of types \(E_8\) and \(E_7\) together with the hyperbolic plane of
+an elliptic fibration. The minimal resolution, rather than the
+singular quartic itself, is the smooth K3 surface.
+
+The weights can be checked directly. Replacing the parameters by
+\((t^4\alpha,t^6\beta,t^{10}\gamma,t^{12}\delta)\) and the
+coordinates by \((t^2x,t^3y,t^{-6}z,w)\) leaves every term in
+\eqref{eq:view4-quartic} unchanged. Over \(\mathbb C\), this
+realizes the weighted scaling \((2,3,5,6)\).
+
+In the modular normalizations of Clingher--Doran, the inverse period
+map is
+\begin{equation}\label{eq:view4-inverse-period}
+ Z\longmapsto
+ [\mathcal E_4(Z):\mathcal E_6(Z):
+       2^{12}3^5\mathcal C_{10}(Z):
+       2^{12}3^6\mathcal C_{12}(Z)]
+\end{equation}
+\cite[Theorem 3.5]{ClingherDoran2012}.
+Their proof compares two elliptic fibrations on the associated
+Kummer surface: one obtained by a Nikulin involution of
+\eqref{eq:view4-quartic}, the other from genus-two theta functions.
+Matching the Weierstrass coefficients gives
+\eqref{eq:view4-inverse-period}.
+The normalization of the weight-ten coordinate is
+\begin{equation}\label{eq:view4-cd-normalization}
+ \mathcal C_{10}=-2^{-14}\Delta_5^2=-\tfrac14\Xi,
+ \qquad \Xi=64^{-2}\Delta_5^2.
+\end{equation}
+This follows from their squared theta-product formula
+\cite[(34)]{ClingherDoran2012}; the phase change in
+Section~\ref{sec:view1-theta-normalization} has square one.
+Thus their \(\mathcal C_{10}\) must not be substituted for the
+monic counting form \(\Xi\) without its scalar.
+
+A family of smooth resolutions is taken on a suitable marked or
+level cover. Its product with a fixed elliptic curve is a compact
+family of threefolds with trivial canonical bundle. This is already
+a positive geometric construction. Comparing it with a prescribed
+compact Hall theory, or allowing a specified varying elliptic
+factor, requires further maps.
+
+\subsection{Forms, sign conventions and Hodge lines}
+\label{subsec:view4-volIII-lattice-convention}
+
+The orthogonal lattice of the preceding calculation has signature
+\((2,3)\). The exterior-square model of
+Section~\ref{ssec:exceptional-iso} uses signature \((3,2)\).
+To pass between them, negate the entire bilinear form and then
+identify \(-U\simeq U\) in each hyperbolic factor. This sends
+\(T\) to a lattice isometric to \(2U\oplus\langle2\rangle\).
+It is an identification with \(T(-1)\), not an isometry from
+\(T\) to a lattice of different signature. The domain inequality
+changes from positive to negative, and a root of square \(-2\)
+becomes a vector of square \(2\). The orthogonal hyperplane is
+unchanged.
+
+On the marked domain, the K3 Hodge line is
+\(\lambda_N=\mathbb Cw(Z)\). The primitive exterior-square
+construction identifies this line with the determinant of the
+abelian surface's holomorphic one-forms. An equivariant line
+comparison requires the corresponding arithmetic actions. In
+particular, the coarse isomorphism
+\eqref{eq:view4-period-bridge} does not by itself identify the two
+moduli stacks or all of their stabilizer actions on Hodge lines.
+We use a common level cover whenever an actual line is required.
+
+Let \(\lambda_{\mathrm{aut}}\) be the weight-one automorphic line
+on that cover, and let \(\varepsilon_5\) be the character line of
+\(\Delta_5\). Then
+\[
+ \Delta_5\in H^0(\lambda_{\mathrm{aut}}^{\otimes5}
+                         \otimes\varepsilon_5),\qquad
+ \Delta_5^2\in H^0(\lambda_{\mathrm{aut}}^{\otimes10}),
+ \qquad \varepsilon_5^{\otimes2}\simeq\mathcal O.
+\]
+The character belongs to the full automorphy law. Its slash-action
+value need not equal the sign of a function in a chosen linear tube
+frame; Section~\ref{sec:view1-theta-normalization} and the character
+calculation of Chapter~\ref{ch:view1-automorphic} fix that convention.
+
+\section{The two root divisors}
+\label{subsec:view4-discriminant}
+
+For a primitive root \(v\in T\), put
+\[
+ H_v=\{[\omega]\in\Omega_N:(\omega,v)=0\},\qquad
+ \operatorname{div}(v)=\gcd\{(v,x):x\in T\}.
+\]
+These are rational quadratic, or Heegner, divisors
+\cite[\S2]{BruinierFunkeHeegner}. The roots of \(T\) form two
+orthogonal-group orbits, distinguished by divisibility
+\cite[\S3.3]{ClingherDoran2012}.
+Their simplest representatives are
+\[
+ v_2=g,\qquad v_1=e_2-f_2.
+\]
+Both have square \(-2\), while
+\[
+ \operatorname{div}(v_2)=2,\quad (w(Z),v_2)=-2z;
+ \qquad
+ \operatorname{div}(v_1)=1,\quad (w(Z),v_1)=\sigma-\tau.
+\]
+Their orthogonal complements in \(T\) are
+\(2U\) and \(U\oplus\langle2\rangle\oplus\langle-2\rangle\),
+respectively. On the Siegel quotient their images are
+\[
+ H_1:\ z=0,\qquad H_4:\ \tau=\sigma,
+\]
+with the full arithmetic orbits understood. The subscript is the
+Humbert discriminant. The decomposable locus is \(H_1\), not
+\(H_2\).
+
+To retain the root-type notation, write
+\begin{equation}\label{eq:view4-discriminant-divisor}
+ \mathfrak H_{\mathrm{II}}
+   =\Bigl(\bigcup_{v^2=-2,\ \operatorname{div}(v)=2}H_v\Bigr)
+       /O^+(T)=H_1.
+\end{equation}
+A point of \(H_1\) corresponds to a product of two elliptic curves.
+On the K3 side, its \(N\)-polarization extends to
+\(U\oplus E_8(-1)\oplus E_8(-1)\).
+The index-two glue above explains the second \(E_8\).
+The other root orbit gives the \(N\oplus\langle-2\rangle\)
+enhancement along \(H_4\). Thus the full root arrangement has two
+types, whereas \(\Delta_5\) detects the divisibility-two type.
+Neither type should be identified with singular fibres of every
+chosen K3 family: an extra algebraic root and a singular uncontracted
+K3 surface are different conditions.
+
+\subsection{Orders on the period cover and the coarse quotient}
+\label{subsec:view4-divisor-orders}
+
+Let \(\widetilde H_1\) be the reduced union of the divisibility-two
+hyperplanes in \(\mathbb H_2\). The Borcherds product and theta
+normalization give
+\begin{equation}\label{eq:view4-divisor-of-Delta5}
+ \operatorname{div}_{\mathbb H_2}(\Delta_5)=\widetilde H_1,
+ \qquad
+ \operatorname{div}_{\mathbb H_2}(\Delta_5^{-2})=-2\widetilde H_1.
+\end{equation}
+These are divisors in the open domain, before adding a toroidal
+boundary \cite{GN,GNII,B}.
+If \(\operatorname{Pole}(s)\) denotes the effective polar divisor
+of a meromorphic section \(s\), then
+\begin{equation}\label{eq:view4-conjecture}
+ \operatorname{Pole}_{\mathbb H_2}(\Delta_5^{-2})=2\widetilde H_1.
+\end{equation}
+The sign differs from the signed divisor of the section.
+
+Near a generic point of \(z=0\), take the normal coordinate
+\(u=z\). The root reflection sends \(u\) to \(-u\), and the
+local theta product has the form
+\[
+ \Delta_5=u\,a(u),\qquad a(0)\ne0.
+\]
+Its odd transformation in this frame is part of the line action.
+On the effective coarse reflection quotient the normal coordinate is
+\(t=u^2\), so
+\[
+ \Delta_5^2=t\,b(t),\qquad b(0)\ne0.
+\]
+Consequently the square has zero order one, and its inverse has pole
+order one, along the generic coarse Humbert divisor. On the period
+cover, or as a stack divisor pulled back to it, the corresponding
+orders are two. A root line with nontrivial reflection action does
+not descend as an ordinary line on the same coarse chart.
+
+The distinction is visible without a global product formula:
+\(\operatorname{ord}_{u}(t)=2\). The reflection records the
+ramification. It does not determine a distinguished meromorphic
+section or its order. In particular, Picard--Lefschetz monodromy
+alone cannot prove an order-two pole for a geometric discriminant.
+
+The two integers appearing here have different sources. The
+Borcherds weight \(f(0,0)/2=5\) comes from the constant Jacobi
+coefficient. The Weyl vector specifies the cusp exponents. Neither
+the weight nor the reflection alone replaces the full boundary
+factor of Chapter~\ref{ch:view1-automorphic}.
+
+\section{What remains for a compact mirror comparison}
+\label{subsec:k3xe-period-family}
+
+For \(X=S\times E\), K\"unneth gives
+\[
+ H^3(X,\mathbb Z)=H^2(S,\mathbb Z)\otimes H^1(E,\mathbb Z),
+ \qquad \operatorname{rk}H^3(X)=44.
+\]
+This is a weight-three Hodge structure with alternating
+polarization. In contrast,
+\[
+ H^{\mathrm{even}}(X,\mathbb Z)
+   =\widetilde H(S,\mathbb Z)\otimes
+       \bigl(H^0(E,\mathbb Z)\oplus H^2(E,\mathbb Z)\bigr)
+\]
+is an integral group of rank \(48\).
+The two even elliptic summands have constant Hodge type. They do not
+contain the varying elliptic modulus, which belongs to \(H^1(E)\).
+Identifying their underlying rank-two lattice with a hyperbolic
+plane supplies no elliptic period map.
+
+\begin{proposition}[A restriction on a Hodge-quotient construction]
+\label{prop:view4-weight-three-obstruction}
+A polarized weight-three variation cannot have a rank-five
+polarized quotient with nondegenerate induced polarization.
+No integral Tate twist of a weight-three variation has weight two.
+\end{proposition}
+\begin{proof}
+The polarization in odd weight is alternating. If \(A\) is an
+alternating matrix of odd size over a field of characteristic zero,
+then
+\(\det A=\det A^t=\det(-A)=-\det A\), so \(\det A=0\).
+A rank-five alternating polarization is therefore degenerate.
+An integral Tate twist changes the weight by an even integer,
+which proves the second assertion.
+\end{proof}
+
+This excludes the specified polarized-quotient route from
+\(H^3(X)\) to \(T\). It does not exclude a different geometric
+construction of a period map. The classical \(N\)-polarized K3
+family is already such a period construction, with a different
+input. Nor does the dimension difference between \(\Omega_M\)
+and \(\Omega_N\) prohibit every correspondence. It shows why
+mirror lattices alone cannot specify one.
+
+We use the notation
+\begin{equation}\label{eq:view4-k3e-moduli}
+ \mathcal P_{K3\times E}^{(3)}\longrightarrow
+ \mathcal M_N\simeq\mathcal A_2
+\end{equation}
+only for a proposed three-dimensional compact period construction
+with this actual comparison map supplied.
+The superscript denotes a dimension, not the rank of a
+weight-two period lattice; that lattice has rank five.
+It is not a definition of a quotient of \(H^3(X)\) or of the
+rank-48 even cohomology group.
+
+\subsection{The line and section problem}
+\label{subsec:view4-conjecture}
+
+A compact mirror comparison would start with a geometric family,
+a period morphism \(p:B\to\mathcal A_2\), and a geometric Hodge
+or determinant line \(\lambda_{\mathrm{per}}\) on an explicitly
+chosen base or stack. It would then supply a meromorphic section
+\(s_{\mathrm{mir}}\) and a line isomorphism relating it to the
+inverse Igusa section. This order prevents the desired modular
+form from serving as the definition of its own geometric source.
+
+\begin{conjecture}[Compact mirror discriminant comparison]
+\label{conj:mirror-discriminant}
+For a suitable mirror construction associated with the compact
+\(K3\times E\) theory, there exist the preceding family, period
+map and geometric section, together with
+\[
+ \iota:p^*\lambda_{\mathrm{aut}}^{-10}
+             \xrightarrow{\ \sim\ }\lambda_{\mathrm{per}}^{-10},
+ \qquad
+ \iota(p^*\Delta_5^{-2})=s_{\mathrm{mir}}.
+\]
+The comparison is required to extend across the chosen
+discriminant and boundary, with the same cusp normalization.
+The elliptic parameter and the comparison with the original compact
+geometric source are part of the construction.
+\end{conjecture}
+
+On a common period cover on which the reduced discriminant
+\(\widetilde{\mathfrak D}_{\mathrm{mir}}\) pulls back to
+\(\widetilde H_1\), and where the period map is unramified normally,
+the predicted polar-divisor equality is
+\begin{equation}\label{eq:view4-divisor-equation}
+ \operatorname{Pole}(s_{\mathrm{mir}})
+       =2\widetilde{\mathfrak D}_{\mathrm{mir}}.
+\end{equation}
+For a ramified period map the orders acquire its ramification
+indices. On the generic effective coarse reflection quotient the
+corresponding order is one. These statements fix the base before
+assigning a multiplicity.
+
+Matching divisors is weaker than matching sections. After the
+comparison of lines, their quotient can be a nonconstant invertible
+function on an open base. A boundary extension and a normalization
+must eliminate that ambiguity. Likewise a square-line comparison
+does not construct a square root with the required character.
+
+\subsection{The four independent period conditions}
+\label{subsec:view4-period-components}
+
+The geometric comparison separates into the following conditions.
+\begin{enumerate}
+\item[(M1)] Construct the period morphism and the comparison of
+  lines, with their coefficient, marking and stabilizer conventions.
+  On the open complement of the discriminant this trivializes
+  \(p^*\lambda_{\mathrm{aut}}^{-10}
+     \otimes\lambda_{\mathrm{per}}^{10}\).
+\item[(M2)] Extend the section comparison over the discriminant
+  and a specified boundary. Compute its local orders on that base
+  and its full cusp expansion; the weight five alone is insufficient.
+\item[(M3)] Relate the chosen mirror construction to the original
+  compact source, including the varying elliptic factor. Dolgachev's
+  lattice construction and the complexified K\"ahler interpretation
+  of \cite{AspinwallMorrisonStringy} do not furnish a canonical map
+  between moduli spaces of dimensions seventeen and three, or an
+  involution of either space.
+\item[(M4)] For another polarization, specify the new orthogonal
+  lattice, arithmetic group, automorphic input and geometric line.
+  Its higher-rank extension is a new comparison problem. The
+  classical rank-three denominator examples of \cite{GNII}, the
+  reflective-product constructions of \cite{GC}, and the proposed
+  lattice-polarized families of \cite{CYQGVolIIILatticePolarized}
+  do not impose a universal Picard-rank criterion for this comparison.
+\end{enumerate}
+
+The broader Borcherds construction supplies many possible
+orthogonal automorphic targets \cite{Borcherds95,BorcherdsGKM88}.
+For example, the fake-monster root lattice has signature
+\((25,1)\), whereas its weight-twelve orthogonal form lives on a
+lattice of signature \((26,2)\), or \((2,26)\) after reversing the
+form. It is a different target from \(T\). Any restriction or
+quasi-pullback must specify its embedding and the extra root factors;
+it is not the period comparison of
+Conjecture~\ref{conj:mirror-discriminant} by itself.
+
+\subsection{Curve counts, Pfaffians and states}
+\label{subsec:view4-not-asserted}
+
+The primitive reduced curve-counting theorem gives, in the
+conventions fixed in Chapter~\ref{ch:zbps-realization},
+\[
+ Z^X_{\mathrm{OP}}=-\Xi^{-1}=-4096\Delta_5^{-2}
+\]
+\cite{BRYAN,OB}. The underlying generating series and its rational
+expansion are the enumerative assertion. The rescaled scalar
+\(-4096^{-1}Z^X_{\mathrm{OP}}=\Delta_5^{-2}\) does not on its own
+specify an operator trace or a geometric discriminant section.
+Conjecture~\ref{conj:mirror-discriminant} would give a period-side
+interpretation of that scalar if its geometric construction and
+normalization were supplied.
+
+The automorphic product, the denominator superalgebra and the
+regularized theta lift are established at their stated recipients.
+The compact Pfaffian identity additionally needs a geometric skew
+family, an orientation and a comparison of sections. Its four
+conditions \((\mathrm{D0}), (\mathrm{O1}), (\mathrm{O1}^{+}),
+(\mathrm{O2})\) govern those objects, whereas \((\mathrm M1)\)--
+\((\mathrm M4)\) govern the period family and its section.
+Neither collection of conditions supplies the other.
+A gravitational or boundary interpretation further requires its
+state, supported operations, trace domain and sewing maps
+\cite{ChiralBarCobarVolII,MixedHTSCompanion,CYQGVolIII}.
+
+The numerical tuple \((0,0,3,5,24)\) retains these distinctions.
+The first two entries are the holomorphic Euler characteristics of
+the compact product, the third is the Cartan rank of the reference
+root algebra, the fourth is its Borcherds weight, and the last is
+the Mukai rank of a K3 surface. A proposed Hall specialization must
+compare its own Cartan object before using the third entry as a
+geometric rank. The tuple is not a relation among these invariants
+and does not construct a mirror period map.
+
+The classical K3 period model and its root divisors therefore remain
+available as positive geometric input. The compact problem asks for
+the additional map from independently defined geometry, with its
+line, section and elliptic variation, to that explicit target.

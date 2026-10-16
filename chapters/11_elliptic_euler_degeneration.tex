@@ -1,0 +1,555 @@
+\chapter{Elliptic classes and Euler degeneration}
+\label{ed:chap:euler}
+
+The elliptic characteristic class acts on cohomology by multiplication.
+Where this multiplication is invertible, it transports geometric
+correspondence operators by conjugation. At the specialization $y=1$, however, the class
+becomes the top Chern class. On a connected positive-dimensional variety
+with nonzero Euler characteristic, its multiplication has rank one.
+To understand the specialization of the representation, we must therefore
+retain the image of multiplication and its position inside cohomology.
+
+We shall identify this image with an equivariant Euler ideal. Its quotient
+is the cohomology of the projectivized tangent bundle, with the parameter
+acting by the tautological class. This description turns the orders of
+vanishing into lengths of nilpotent Jordan blocks.
+
+Surfaces provide the
+first example. The Hilbert square of a K3 surface exhibits several distinct
+lengths. We then determine which operators preserve the image.
+The usual Heisenberg vacuum relation obstructs an extension to the
+unchanged ambient cohomology at $y=1$.
+
+\section{The characteristic class and its Euler factor}
+\label{ed:sec:factor}
+
+Let $X$ be a smooth projective complex variety of complex dimension $d>0$.
+We use rational singular cohomology, with its cup product and complex
+orientation, and put
+\[
+ H_X=H^*(X;\mathbb Q),\qquad
+ R_0=\mathbb Q[[\zeta]],\qquad R=\mathbb Q[[q,\zeta]],\qquad
+ H_{X,R}=H_X\otimes_{\mathbb Q}R.
+\]
+
+The coefficient variables are even. We retain cohomological parity.
+Multiplication by an inhomogeneous even class need not preserve the
+integer cohomological grading. All power series use the indicated formal
+topology. The variable $q$ records elliptic energy, and $y=e^\zeta$ is a
+formal coordinate near $y=1$. We write
+$\chi(X)=\sum_i(-1)^i\dim_{\mathbb Q}H^i(X;\mathbb Q)$
+for the topological Euler characteristic.
+
+For a vector bundle $V$, write
+$\Lambda_tV=\sum_{j\geq0}t^j\Lambda^jV$ and
+$\operatorname{Sym}_tV=\sum_{j\geq0}t^j\operatorname{Sym}^jV$.
+The normalized elliptic tensor class is
+\begin{equation}\label{ed:eq:elliptic-tensor}
+ \mathcal E_{q,y}(X)=y^{-d/2}
+ \bigotimes_{r\geq1}
+ \left(
+ \Lambda_{-yq^{r-1}}T_X^*\otimes
+ \Lambda_{-y^{-1}q^r}T_X\otimes
+ \operatorname{Sym}_{q^r}T_X^*\otimes
+ \operatorname{Sym}_{q^r}T_X
+ \right).
+\end{equation}
+The expression belongs to $K^0(X)_{\mathbb Q}[[q,\zeta]]$, where
+$K^0(X)$ is the Grothendieck group of algebraic vector bundles.
+The factor $y^{-d/2}$ means $e^{-d\zeta/2}$, also when $d$ is odd.
+Its cohomological characteristic class and multiplication operator are
+\begin{equation}\label{ed:eq:epsilon}
+ \epsilon_X(q,e^\zeta)
+ =\operatorname{td}(T_X)\operatorname{ch}(\mathcal E_{q,e^\zeta}(X)),
+ \qquad E_X(a)=\epsilon_X(q,e^\zeta)\smile a.
+\end{equation}
+
+The Todd class supplies the Riemann--Roch normalization: integration of
+$\epsilon_X$ gives the holomorphic Euler characteristic of the elliptic
+tensor class. The operator $E_X$ retains more information than this
+integral.
+
+Let $x_1,\ldots,x_d$ denote formal Chern roots of $T_X$. Define
+\begin{equation}\label{ed:eq:euler}
+ e_\zeta(T_X)=\prod_{i=1}^d(x_i-\zeta)
+ =\sum_{k=0}^d(-\zeta)^{d-k}c_k(T_X).
+\end{equation}
+This is the equivariant Euler class when fiber scaling has weight
+$-\zeta$. We shall use the even power series
+$s(w)=\sinh(w/2)/(w/2)$, whose constant term is one.
+The factor at energy zero belonging to a single root is
+\begin{equation}\label{ed:eq:single-root}
+ e^{-\zeta/2}\frac{x(1-e^{\zeta-x})}{1-e^{-x}}
+ =\frac{x\sinh((x-\zeta)/2)}{\sinh(x/2)}
+ =(x-\zeta)\frac{s(x-\zeta)}{s(x)}.
+\end{equation}
+The remaining factors for that root form the series
+\[
+ \psi(q,\zeta,x)=
+ \prod_{r\geq1}
+ \frac{(1-e^\zeta q^r e^{-x})(1-e^{-\zeta}q^r e^x)}
+      {(1-q^r e^{-x})(1-q^r e^x)}.
+\]
+
+\begin{theorem}\label{ed:thm:factor}
+The elliptic class factors as
+\begin{equation}\label{ed:eq:factor}
+ \epsilon_X(q,e^\zeta)=e_\zeta(T_X)U_X(q,\zeta),
+ \qquad U_X\in H_{X,R}^{\times},\qquad U_X(q,0)=1.
+\end{equation}
+The unit is given by
+\begin{equation}\label{ed:eq:unit}
+ U_X(q,\zeta)=\prod_{i=1}^d
+       \frac{s(x_i-\zeta)}{s(x_i)}\psi(q,\zeta,x_i).
+\end{equation}
+In particular, the embedded ideals satisfy
+\begin{equation}\label{ed:eq:ideal}
+ \epsilon_XH_{X,R}=e_\zeta(T_X)H_{X,R}.
+\end{equation}
+The two multiplication complexes
+$[H_{X,R}\xrightarrow{\epsilon_X}H_{X,R}]$ and
+$[H_{X,R}\xrightarrow{e_\zeta}H_{X,R}]$ lie in resolution degrees
+$-1,0$. Multiplication by $U_X$ on the source and the identity on the
+target define an isomorphism from the first complex to the second.
+\end{theorem}
+
+\begin{proof}
+For each power of $q$, only
+finitely many factors contribute. Their denominators are $q$-adic units.
+Positive cohomological degrees are nilpotent, so substitution of the
+Chern roots into the series is defined. The factors involving $s$ are
+units as well. At $\zeta=0$, every ratio in \eqref{ed:eq:unit} equals one.
+The splitting principle and \eqref{ed:eq:single-root} prove
+\eqref{ed:eq:factor}.
+
+Multiplication by $U_X$ is an automorphism, which proves the equality of
+ideals. The identity $e_\zeta U_X=\epsilon_X$ gives the chain map.
+\end{proof}
+
+Thus the ideal, its quotient, and the multiplication complex are
+independent of elliptic energy after the displayed identification.
+The conjugated correspondence operators will still depend on $q$.
+
+\begin{example}[A surface with rationally trivial canonical class]
+\label{ed:ex:surface}
+Let $Y$ be a K3 or Enriques surface. Write $\omega\in H^4(Y;\mathbb Q)$
+for the point class normalized by $\int_Y\omega=1$.
+Since $c_1(T_Y)=0$ rationally and $c_2(T_Y)=\chi(Y)\omega$, we have
+\[
+ e_\zeta(T_Y)=\zeta^2+\chi(Y)\omega.
+\]
+Both surfaces have vanishing odd rational cohomology. On the span of
+$1,\omega$, multiplication has matrix
+\begin{equation}\label{ed:eq:surface-matrix}
+ \begin{pmatrix}\zeta^2&0\\ \chi(Y)&\zeta^2\end{pmatrix},
+\end{equation}
+and on $H^2(Y;\mathbb Q)$ it is $\zeta^2$ times the identity.
+
+The nonzero rational number $\chi(Y)$ is a unit of $R_0$.
+Elementary row and column operations therefore give diagonal entries
+$1,\zeta^4$ for \eqref{ed:eq:surface-matrix}, up to units. Consequently
+\begin{equation}\label{ed:eq:surface-cokernel}
+ \operatorname{coker}E_Y\cong
+ R/(\zeta^4)\oplus\bigl(R/(\zeta^2)\bigr)^{b_2(Y)},
+ \qquad b_2(Y)=
+ \begin{cases}22,&Y\text{ a K3 surface},\\10,&Y\text{ an Enriques surface}.
+ \end{cases}
+\end{equation}
+The length-four summand records the coupling of degree zero to top
+degree. The rank-one specialization alone does not detect its length.
+\end{example}
+
+\section{The quotient as a projective bundle}
+\label{ed:sec:projective}
+
+Let $\pi:\mathbb P(T_X)\to X$ parametrize one-dimensional subspaces
+of tangent fibers. Its tautological line is
+$L=\mathcal O(-1)\subset\pi^*T_X$. Put $\lambda=c_1(L)$.
+This convention determines the sign in the comparison with $\zeta$.
+
+\begin{theorem}\label{ed:thm:projective}
+There is a canonical isomorphism of $R$-superalgebras
+\begin{equation}\label{ed:eq:projective}
+ H_{X,R}/(\epsilon_X(q,e^\zeta))
+ \ \cong\ H^*(\mathbb P(T_X);\mathbb Q)[[q]],
+ \qquad a\longmapsto\pi^*a,\quad\zeta\longmapsto\lambda.
+\end{equation}
+On the right, $\zeta$ acts by cup product with the nilpotent class
+$\lambda$.
+\end{theorem}
+
+\begin{proof}
+The inclusion $L\hookrightarrow\pi^*T_X$ is a nowhere-zero section of
+$\pi^*T_X\otimes L^*$. Hence its top Chern class vanishes:
+\begin{equation}\label{ed:eq:projective-relation}
+ \sum_{k=0}^d(-\lambda)^{d-k}\pi^*c_k(T_X)=0.
+\end{equation}
+The classes $1,\lambda,\ldots,\lambda^{d-1}$ restrict to a basis of
+the cohomology of every fiber $\mathbb P^{d-1}$. Leray--Hirsch shows
+that these classes form a basis over $H_X$. Since the relation is monic
+up to sign, it gives the entire presentation
+\[
+ H^*(\mathbb P(T_X);\mathbb Q)
+ \cong H_X[\zeta]/(e_\zeta(T_X)).
+\]
+
+In this graded presentation, $\zeta$ has degree two. The quotient has
+finite top degree, so $\zeta$ is nilpotent. Completing in $\zeta$
+therefore leaves the quotient unchanged. Extend in $q$ and apply
+\eqref{ed:eq:ideal}.
+\end{proof}
+
+The same Euler polynomial occurs in zero-section self-intersection for
+the tangent bundle with fiber weight $-\zeta$. Removing the zero section
+and quotienting by scalar multiplication gives $\mathbb P(T_X)$.
+Formula \eqref{ed:eq:projective} identifies the elliptic quotient with
+the cohomology of this geometry. It does not require a choice of Chern
+roots or a basis of cohomology.
+
+\begin{example}[The sign for $\mathbb P^2$]\label{ed:ex:projective-plane}
+Put $X=\mathbb P^2$ and $h=c_1(\mathcal O(1))$, so
+$H_X=\mathbb Q[h]/(h^3)$ and $c(T_X)=1+3h+3h^2$. The relation is
+\begin{equation}\label{ed:eq:p2-relation}
+ \lambda^2-3h\lambda+3h^2=0.
+\end{equation}
+
+It can also be read directly on the complete flag variety. A tangent
+line at a line $A\subset\mathbb C^3$ determines a plane $B$ containing
+$A$, and is $\operatorname{Hom}(A,B/A)$. Thus, if
+$a=c_1(A)$ and $b=c_1(B/A)$, then $h=-a$ and $\lambda=b-a$.
+
+The flag relations include
+$a^2+ab+b^2=0$ and $a^2b+ab^2=0$. Substitution gives
+\eqref{ed:eq:p2-relation}. Changing the middle sign leaves
+$6h\lambda$, which is nonzero since $1,\lambda$ form a basis over $H_X$.
+This example detects the convention that is invisible
+on surfaces with $c_1=0$.
+\end{example}
+
+\section{Elementary divisors and nilpotent lengths}
+\label{ed:sec:smith}
+
+Write $D=\dim_{\mathbb Q}H_X$. A matrix over the discrete valuation
+ring $R_0$ with nonzero determinant admits invertible row and column
+operations reducing it to
+$\operatorname{diag}(\zeta^{\ell_1},\ldots,\zeta^{\ell_D})$,
+where $0\leq\ell_1\leq\cdots\leq\ell_D$.
+The integers $\ell_i$ are its Smith exponents. A zero exponent contributes
+no cokernel. A positive exponent contributes $R_0/(\zeta^{\ell_i})$.
+
+We use this theorem over $R_0$, then extend the resulting matrices to
+$R$. We do not require a Smith theorem over a ring with two parameters.
+
+\begin{proposition}\label{ed:prop:jordan}
+Multiplication by $e_\zeta(T_X)$ on $H_X\otimes R_0$ is injective,
+with determinant $(-\zeta)^{dD}$. Its positive Smith exponents are the
+Jordan-block lengths of cup product by $\lambda$ on
+$H^*(\mathbb P(T_X);\mathbb Q)$, and their sum is $dD$.
+If $X$ is connected and $\chi(X)\ne0$, there is one zero Smith exponent
+and $D-1$ positive exponents.
+\end{proposition}
+
+\begin{proof}
+Order a homogeneous basis of $H_X$ by increasing degree. Every positive
+Chern class raises degree, so the multiplication matrix is triangular
+with diagonal $(-\zeta)^d$. Its determinant is nonzero in $R_0$.
+The adjugate identity proves injectivity.
+
+Each summand $R_0/(\zeta^\ell)$ is a single nilpotent Jordan block
+for multiplication by $\zeta$. Theorem~\ref{ed:thm:projective}
+identifies this endomorphism with cup product by $\lambda$.
+Leray--Hirsch gives total dimension $dD$, which is also the valuation
+of the determinant.
+
+At $\zeta=0$ the matrix is multiplication by $c_d(T_X)$.
+For connected $X$, let $\omega_X\in H^{2d}(X;\mathbb Q)$ satisfy
+$\int_X\omega_X=1$. The operator vanishes on positive degrees
+and sends $1$ to $\chi(X)\omega_X$. Its rank is one when
+$\chi(X)\ne0$, so precisely one Smith exponent is zero.
+\end{proof}
+
+Let $C_X=\operatorname{coker}E_X$. Its derived fiber at $\zeta=0$
+means $C_X\otimes_R^{\mathbf L}R/(\zeta)$, computed from a free
+resolution. Theorem~\ref{ed:thm:factor} and the preceding proposition
+give the resolution $[H_{X,R}\xrightarrow{\epsilon_X}H_{X,R}]$.
+Thus a block of length $\ell>0$ has derived fiber
+\[
+ [\mathbb Q[[q]]\xrightarrow{0}\mathbb Q[[q]]]
+\]
+in resolution degrees $-1,0$. In the connected case with $\chi(X)\ne0$,
+each of these degrees has rank $D-1$. The ordinary fiber and the derived
+fiber have different information, but neither records the positive
+lengths without retaining the parameter action.
+
+For $X=\mathbb P^2$, the multiplication matrix in the basis $1,h,h^2$
+is
+\[
+ \begin{pmatrix}
+ \zeta^2&0&0\\-3\zeta&\zeta^2&0\\3&-3\zeta&\zeta^2
+ \end{pmatrix}.
+\]
+The entries generate the unit ideal, the two-by-two minors generate
+$(\zeta^2)$, and the determinant is $\zeta^6$. The exponents are
+$0,2,4$. Equivalently, cup product by the tautological class on the
+six-dimensional cohomology of the flag variety has blocks of lengths
+two and four.
+
+\section{The Hilbert square of a K3 surface}
+\label{ed:sec:square}
+
+Let $S$ be a projective K3 surface and $X=S^{[2]}$ its Hilbert scheme
+of length-two subschemes. The degree shifts in the Hilbert-scheme
+cohomology decomposition\cite{NakajimaHilbert1997} give, at length
+two, $\operatorname{Sym}^2H^*(S)$ together with a second copy of
+$H^*(S)$ shifted up by two. Therefore the even Betti numbers of $X$ are
+\[
+ (b_0,b_2,b_4,b_6,b_8)=(1,23,276,23,1),
+\]
+and its odd cohomology vanishes. The Hodge shift on the second summand
+raises both indices by one, so
+$h^{0,0}=h^{0,2}=h^{0,4}=1$ and $\chi(\mathcal O_X)=3$.
+
+We use the Beauville--Bogomolov bilinear form $q_X$ on $H^2(X;\mathbb Q)$,
+normalized by $\int_X\alpha^4=3q_X(\alpha,\alpha)^2$ and
+$q_X(\alpha,\alpha)>0$ for an ample class $\alpha$.
+The Chern--Fujiki identities give
+\begin{equation}\label{ed:eq:chern-square}
+ \int_Xc_4=324,\qquad
+ \int_Xc_2\alpha\beta=30q_X(\alpha,\beta),\qquad
+ \int_Xc_2^2=828.
+\end{equation}
+The first number also follows from the Betti numbers. The middle
+identity is the length-two coefficient of the Chern--Fujiki generating
+formula.\footnote{Y.~Cao, G.~Oberdieck and Y.~Toda,
+\emph{Gopakumar--Vafa type invariants of holomorphic symplectic
+4-folds}, Theorems~4.1--4.2,
+\url{https://doi.org/10.1007/s00220-023-04882-8}.}
+
+For the last number, Hirzebruch--Riemann--Roch and $c_1=0$ give
+$720\chi(\mathcal O_X)=3\int_Xc_2^2-\int_Xc_4$.
+Nondegeneracy of $q_X$ implies that multiplication by $c_2$ is an
+isomorphism $H^2(X)\to H^6(X)$.
+
+\begin{theorem}\label{ed:thm:square}
+For $X=S^{[2]}$, the Smith exponents, with multiplicities, are
+\begin{equation}\label{ed:eq:square-spectrum}
+ 0^1,\qquad 2^{23},\qquad 4^{276},\qquad 6^{23},\qquad 8^1.
+\end{equation}
+At every elliptic energy,
+\[
+ C_X\cong
+ (R/(\zeta^2))^{23}\oplus(R/(\zeta^4))^{276}
+ \oplus(R/(\zeta^6))^{23}\oplus R/(\zeta^8).
+\]
+Its derived fiber has rank $323$ over $\mathbb Q[[q]]$ in each of
+resolution degrees $-1,0$.
+\end{theorem}
+
+\begin{proof}
+The symplectic form identifies $T_X$ with $T_X^*$, so $c_1=c_3=0$
+over $\mathbb Q$. Hence
+$e_\zeta(T_X)=\zeta^4+\zeta^2c_2+c_4$.
+
+Choose $\omega\in H^8(X;\mathbb Q)$ with $\int_X\omega=1$.
+On the invariant span of $1,c_2,\omega$, the matrix is
+\begin{equation}\label{ed:eq:square-core}
+ \begin{pmatrix}
+ \zeta^4&0&0\\
+ \zeta^2&\zeta^4&0\\
+ 324&828\zeta^2&\zeta^4
+ \end{pmatrix}.
+\end{equation}
+Its entries generate the unit ideal. All two-by-two minors are divisible
+by $\zeta^4$, and the last two rows and first two columns have minor
+$504\zeta^4$. Its determinant is $\zeta^{12}$. The exponents of this
+block are consequently $0,4,8$.
+
+Choose a basis $a_1,\ldots,a_{23}$ of $H^2(X)$. The classes
+$c_2a_i$ form a basis of $H^6(X)$. Each pair $a_i,c_2a_i$ gives
+\[
+ \begin{pmatrix}\zeta^4&0\\\zeta^2&\zeta^4\end{pmatrix},
+\]
+whose exponents are $2,6$.
+
+Finally, the kernel of $\int_Xc_2(-)$ on $H^4(X)$ has dimension
+$275$ and is complementary to $\mathbb Qc_2$, because
+$\int_Xc_2^2\ne0$. Multiplication on each of these directions is
+$\zeta^4$. These invariant subspaces exhaust cohomology and yield
+\eqref{ed:eq:square-spectrum}. The $323$ positive exponents sum to
+$1296=4\cdot324$. The free resolutions of the positive blocks give
+the derived fiber, and \eqref{ed:eq:factor} extends the decomposition
+from $R_0$ to $R$.
+\end{proof}
+
+There is a geometric description of the same lengths. Write $C_i$ for
+cup product by $c_i(T_X)$ on $H_X$. In the projective-bundle basis
+$1,\lambda,\lambda^2,\lambda^3$, cup product by $\lambda$ has matrix
+\begin{equation}\label{ed:eq:companion}
+ \begin{pmatrix}
+ 0&0&0&-C_4\\
+ I&0&0&0\\
+ 0&I&0&-C_2\\
+ 0&0&I&0
+ \end{pmatrix}.
+\end{equation}
+The last column is the relation
+$\lambda^4+c_2\lambda^2+c_4=0$.
+
+The three-dimensional block \eqref{ed:eq:square-core} contributes
+Jordan lengths $4,8$. Each pair from $H^2$ and $H^6$ contributes $2,6$.
+Each remaining middle-degree direction contributes $4$.
+
+For higher Hilbert schemes, the same projective-bundle theorem applies,
+but the lengths require the corresponding Chern multiplication operators.
+The length-zero Hilbert scheme is a point: its elliptic class is one,
+its cokernel is zero, and its rank-zero tangent projectivization is empty.
+
+\section{Transport of correspondences}
+\label{ed:sec:transport}
+
+The determinant calculation shows that $E_X$ becomes invertible over
+$R^{\mathrm{loc}}=R[\zeta^{-1}]$. Indeed,
+$e_\zeta=(-\zeta)^d(1+N)$ with $N$ in positive cohomological degree.
+$N$ is nilpotent, so $(1+N)^{-1}$ is a finite sum. The factor $U_X$
+is already invertible over $R$.
+
+For smooth projective complex varieties $X,Y$, a cohomology kernel
+$K_{YX}\in H^*(Y\times X;\mathbb Q)\otimes R$ defines
+\[
+ T_K(a)=(p_Y)_*(K_{YX}\smile p_X^*a).
+\]
+Pushforward uses the complex orientation. We compose kernels in the
+same order as operators: on $Z\times Y\times X$,
+\[
+ K_{ZY}*K_{YX}
+ =(p_{ZX})_*(p_{ZY}^*K_{ZY}\smile p_{YX}^*K_{YX}).
+\]
+All projections used for pushforward are proper. These formulas extend
+$R^{\mathrm{loc}}$-linearly, and the diagonal class is the identity kernel.
+
+\begin{proposition}\label{ed:prop:transport}
+The transformed kernel
+\begin{equation}\label{ed:eq:kernel}
+ \widetilde K_{YX}
+ =p_Y^*\epsilon_Y\smile K_{YX}\smile p_X^*\epsilon_X^{-1}
+\end{equation}
+acts by $E_YT_KE_X^{-1}$. This transformation preserves convolution,
+identity kernels, and every operator relation over $R^{\mathrm{loc}}$.
+If the original operators are defined over $R$, their transforms act
+over $R$ on the image modules
+\begin{equation}\label{ed:eq:image-module}
+ M_X=E_X(H_{X,R})\subset H_{X,R}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The projection formula gives the operator identity. In a convolution,
+the two factors pulled back from the middle variety are
+$\epsilon_Y^{-1}\epsilon_Y=1$. They are even, so no sign is introduced.
+This proves preservation of convolution. Restriction to the diagonal
+similarly cancels the two factors and preserves its class.
+
+Finally, injectivity of $E_X$ identifies the free module $H_{X,R}$
+with its image $M_X$. Through this isomorphism the transformed action
+is simply $E_YT_KE_X^{-1}:M_X\to M_Y$, which is defined over $R$.
+\end{proof}
+
+The image module is free, although its quotient in the ambient module
+has $\zeta$-torsion. Regularity on the image therefore does not imply
+regularity on the ambient module. Moreover, multiplication by
+$\epsilon_X$ is a module map. It is generally not a unital algebra map
+for the original cup product. The proposition is an operator transport
+statement, with no multiplicative identification of coefficient algebras.
+
+\section{Simultaneous preservation and the vacuum}
+\label{ed:sec:order}
+
+Let $L_0=R_0^D$ and let $M\subset L_0$ be a submodule of full rank.
+Choose a Smith basis so that
+$M=D_\ell L_0$, where
+$D_\ell=\operatorname{diag}(\zeta^{\ell_1},\ldots,\zeta^{\ell_D})$.
+The algebra of endomorphisms preserving both modules is
+\[
+ \mathscr O_\ell=
+ \{T\in\operatorname{End}_{R_0}(L_0):T(M)\subset M\}.
+\]
+
+\begin{proposition}\label{ed:prop:order}
+An ambient endomorphism belongs to $\mathscr O_\ell$ precisely when
+\begin{equation}\label{ed:eq:order}
+ T_{ij}\in\zeta^{\max(0,\ell_i-\ell_j)}R_0.
+\end{equation}
+For $\ell=(0,m)$ with $m>0$, the algebra
+$\mathscr O_\ell/\zeta\mathscr O_\ell$ has dimension four. It has two
+orthogonal idempotents and two opposite arrows, with both arrow
+composites zero. Its image acting on $L_0/\zeta L_0$ has dimension three.
+\end{proposition}
+
+\begin{proof}
+Preservation of $M$ is equivalent to regularity of
+$D_\ell^{-1}TD_\ell$. Its $(i,j)$ entry is
+$\zeta^{\ell_j-\ell_i}T_{ij}$. Combining this with ambient regularity
+gives \eqref{ed:eq:order}.
+
+For two exponents the algebra is
+\[
+ \begin{pmatrix}R_0&R_0\\\zeta^mR_0&R_0\end{pmatrix}
+\]
+with free basis $e_{11},e_{22},e_{12},\zeta^me_{21}$.
+The off-diagonal products are $\zeta^me_{11}$ and
+$\zeta^me_{22}$. Both vanish modulo $\zeta\mathscr O_\ell$.
+The lower arrow has nonzero class in this abstract fiber, but acts as
+zero on $L_0/\zeta L_0$. The other three basis elements act independently.
+\end{proof}
+
+Applied to the Euler image, this condition determines which regular
+ambient operators descend to the projective-bundle quotient. The unit
+factorization makes the same calculation valid after extension to $R$.
+The distinction between the abstract fiber and its action is essential:
+a generator may survive in the algebra while its specialized operator
+vanishes.
+
+For a K3 or Enriques surface $Y$, put $X_n=Y^{[n]}$ and
+$H_n=H^*(X_n;\mathbb Q)\otimes R$, with empty vacuum
+$|0\rangle=1\in H_0=R$. Normalize the length-one Nakajima creator and
+annihilator so that
+\[
+ C_1(\omega)|0\rangle=\omega,\qquad
+ [A_1(1),C_1(\omega)]|0\rangle=|0\rangle.
+\]
+The annihilator lowers length and kills the empty vacuum. Here both
+insertions are even, so the bracket is the ordinary commutator.
+Let $\widetilde C_1,\widetilde A_1$ denote their transports from
+Proposition~\ref{ed:prop:transport}.
+
+\begin{proposition}\label{ed:prop:vacuum}
+The transported creator and the specified empty vacuum cannot be part
+of a regular Heisenberg action on the unchanged modules $H_n$ at
+$\zeta=0$. The transported original correspondence action is regular
+on the image modules $M_n=E_{X_n}(H_n)$.
+\end{proposition}
+
+\begin{proof}
+Since $E_{X_0}=1$, the transported creator sends the vacuum to
+\[
+ \widetilde C_1(\omega)|0\rangle
+ =\epsilon_Y\omega=\zeta^2u(q,\zeta)\omega,
+ \qquad u(q,\zeta)\in R^\times.
+\]
+Only the degree-zero component of the unit $U_Y$ contributes to this
+product, and $c_2(T_Y)\omega=0$.
+Any $R$-linear annihilator $H_1\to H_0$ sends this vector into
+$\zeta^2R$. The reversed composition on the vacuum is zero, because
+there is no negative length. The normalized Heisenberg relation would
+make their difference equal to $1\in R$, a contradiction.
+Regularity on $M_n$ follows from Proposition~\ref{ed:prop:transport}.
+\end{proof}
+
+These results determine the degeneration of the cohomological
+correspondence representation. A compact critical Hall realization
+requires an additional comparison with its coefficient complexes,
+preserving the supported products, vacuum, orientations and reduction
+maps. Likewise, the formal parameter used here does not construct the
+modular line over the genus-two moduli stack. The Euler quotient
+provides a concrete recipient for these comparisons and a constraint
+on any comparison that retains the ambient cohomology and the vacuum.

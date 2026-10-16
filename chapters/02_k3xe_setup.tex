@@ -1,0 +1,1082 @@
+\chapter{K3 lattices and spherical objects}
+\label{ch:k3xe-setup}
+
+The three real simple roots of the Igusa denominator have matrix
+\[
+G=\begin{pmatrix}2&-2&-2\\-2&2&-2\\-2&-2&2\end{pmatrix}.
+\]
+We first realize this matrix as the Euler form of three line bundles
+on a projective K3 surface.  Their extension spaces then give a doubled
+quiver with two arrows between each pair of vertices.  A second choice
+of the line bundles makes their Hilbert polynomials equal, so that
+polystability supplies a formal differential graded algebra.
+
+These constructions take place on the surface.  Pushing the bundles
+onto a fiber of $S\times E$ introduces a normal deformation and cancels
+the Euler form.  To compare the resulting threefold charges with
+Igusa exponents, we must therefore distinguish the surface pairing,
+the threefold Euler form, and the quadratic Gram map.  We compute all
+three before considering their compatibility with Hall operations.
+
+\section{Cohomological and algebraic Mukai lattices}
+\label{sec:k3xe-mukai-lattice}
+\label{subsec:k3-mukai-lattice}
+
+Let $S$ be a smooth complex projective K3 surface.  Write
+$\omega_S\in H^4(S,\Z)$ for the class of a point, normalized by
+$\int_S\omega_S=1$.  The N\'eron--Severi group $\NS(S)$ is the image
+of the first Chern class map $\Pic(S)\to H^2(S,\Z)$.  Its rank is
+$\rho(S)$.
+
+\begin{definition}[Mukai lattice]
+\label{def:mukai-lattice}
+The cohomological Mukai lattice is
+\[
+\Lambda_S=\widetilde H(S,\Z)
+=H^0(S,\Z)\oplus H^2(S,\Z)\oplus H^4(S,\Z).
+\]
+We write its elements as $(r,D,s)$, with the last coordinate denoting
+$s\omega_S$, and use the pairing
+\[
+\langle(r,D,s),(r',D',s')\rangle=D\cdot D'-rs'-r's.
+\]
+The algebraic Mukai lattice is its sublattice
+\[
+\Lambda_S^{\mathrm{alg}}=\Z\oplus\NS(S)\oplus\Z.
+\]
+For $F\in D^b\Coh(S)$, its Mukai vector is
+\[
+v(F)=\operatorname{ch}(F)\sqrt{\operatorname{td}(S)}
+=\bigl(\rk F,c_1(F),\rk F+\operatorname{ch}_2(F)\bigr).
+\]
+Here Chern characters and ranks of a complex are alternating sums,
+and $\operatorname{ch}_2(F)$ denotes its integral over $S$.
+\end{definition}
+
+The formula uses $\operatorname{td}(S)=1+2\omega_S$ and
+$\sqrt{\operatorname{td}(S)}=1+\omega_S$.  The last coordinate is
+integral because $D^2$ is even.  The two lattices have different ranks:
+$\Lambda_S$ has rank $24$, whereas $\Lambda_S^{\mathrm{alg}}$ has rank
+$\rho(S)+2$.
+
+The Euler pairing is
+$\chi_S(F,G)=\sum_i(-1)^i\dim_\C\Ext^i_S(F,G)$.
+The numerical Grothendieck group is $K_0(S)$ modulo the radical
+of this pairing.
+
+\begin{proposition}[Riemann--Roch and numerical classes]
+\label{k3:prop:rr}
+For $F,G\in D^b\Coh(S)$,
+\[
+\chi_S(F,G)=-\langle v(F),v(G)\rangle.
+\]
+The Mukai vector induces an isomorphism from the numerical
+Grothendieck group of $S$ to $\Lambda_S^{\mathrm{alg}}$.
+\end{proposition}
+
+\begin{proof}
+The involution $(r,D,s)^\vee=(r,-D,s)$ satisfies
+\[
+\int_S(r,D,s)^\vee(r',D',s')=rs'+r's-D\cdot D'.
+\]
+Hirzebruch--Riemann--Roch identifies this expression with
+$\chi_S(F,G)$ when the vectors are $v(F)$ and $v(G)$.
+
+The vectors of $\mathcal O_S$, a point sheaf $\mathcal O_x$, and a
+line bundle $\mathcal O_S(D)$ are
+\[
+(1,0,1),\qquad (0,0,1),\qquad (1,D,1+D^2/2).
+\]
+Their integer combinations generate $\Lambda_S^{\mathrm{alg}}$.
+Its pairing is nondegenerate by the Hodge index theorem.  Thus the
+kernel of $v$ is precisely the radical of the Euler form, which
+proves the assertion about numerical classes.
+\end{proof}
+
+For a zero-dimensional subscheme $Z\subset S$ of length $a$, the exact
+sequence $0\to I_Z\to\mathcal O_S\to\mathcal O_Z\to0$ gives
+\[
+v(I_Z)=(1,0,1-a),\qquad
+\langle v(I_Z),v(I_Z)\rangle=2a-2.
+\]
+In particular, a point sheaf and an ideal of a point have different
+Mukai vectors.  The numerical quotient is essential in
+Proposition~\ref{k3:prop:rr}: quotienting the algebraic Grothendieck
+group merely by torsion does not produce the full cohomological
+lattice.  The construction and Riemann--Roch convention are those of
+\cite{Mukai1984,Mukai1987,HuybrechtsK3}.
+
+\begin{example}[Points, ideals and divisors]
+\label{ex:mukai-vector-point-and-ideal}
+For a point $p$, a zero-dimensional subscheme $Z$ of length $a$, and
+a smooth curve $C$ of genus $g$, the vectors are
+\[
+\begin{array}{c|c}
+F&v_S(F)\\ \hline
+\mathcal O_S&(1,0,1)\\
+\mathcal O_p&(0,0,1)\\
+I_Z&(1,0,1-a)\\
+\mathcal O_S(D)&(1,D,1+D^2/2)\\
+I_C=\mathcal O_S(-C)&(1,-C,g)\\
+\mathcal O_C&(0,C,1-g).
+\end{array}
+\]
+The ideal sequences give the second, third and last rows.  The
+exponential Chern character gives the line-bundle rows, and
+adjunction gives $C^2=2g-2$.  In particular,
+\[
+v_S(\mathcal O_p)^2=0,\quad v_S(I_Z)^2=2a-2,\quad
+\langle v_S(\mathcal O_S),v_S(\mathcal O_p)\rangle=-1.
+\]
+The last equality agrees with $\chi_S(\mathcal O_S,\mathcal O_p)=1$.
+\end{example}
+
+\begin{remark}[The hyperbolic sign]
+\label{rem:mukai-sign-convention}
+The K3 lattice $H^2(S,\Z)$ is
+$U^{\oplus3}\oplus E_8(-1)^{\oplus2}$, where $U$ has basis $e,f$ with
+$e^2=f^2=0$ and $e\cdot f=1$.  The vectors $(1,0,0)$ and $(0,0,1)$
+have pairing $-1$.  Replacing the second by its negative identifies
+their span with $U$.  Hence
+\[
+\Lambda_S\cong U^{\oplus4}\oplus E_8(-1)^{\oplus2}
+\]
+is even and unimodular of signature $(4,20)$.
+Changing only the sign of the hyperbolic off-diagonal entries gives
+an isometric integral lattice.  Riemann--Roch fixes which sign belongs
+to the chosen Mukai vector.
+\end{remark}
+
+\begin{lemma}[Two hyperbolic planes]
+\label{lem:two-hyperbolic-planes}
+The full lattice $\Lambda_S$ contains an orthogonal primitive copy of
+$U\oplus U$.  Such a copy need not lie in $\Lambda_S^{\mathrm{alg}}$.
+\end{lemma}
+
+\begin{proof}
+Take two summands in the displayed decomposition.  For a projective
+surface of Picard rank one, the algebraic lattice has rank three and
+cannot contain a rank-four sublattice.
+\end{proof}
+
+\section{Three spherical line bundles}
+\label{k3:sec:spherical}
+
+An object $L\in D^b\Coh(S)$ is spherical if
+$\Ext^0(L,L)=\Ext^2(L,L)=\C$ and its other self-extension groups
+vanish.  Every line bundle on a K3 surface is spherical, since its
+self-extensions are $H^*(S,\mathcal O_S)$.  The problem is to arrange
+the extensions between three different line bundles.
+
+We use the following consequence of the K3 period theorem.  A
+primitive even sublattice of signature $(1,r-1)$ in the K3 lattice is
+the N\'eron--Severi lattice of some projective K3 surface.  If a
+positive vector in that lattice is perpendicular to no vector of
+square $-2$, a marking can put it in the ample cone.  Indeed, a
+generic period makes the prescribed lattice exactly algebraic, and
+reflections in square-$-2$ classes move positive chambers to the ample
+chamber \cite[Chapters~7, 8 and 14]{HuybrechtsK3}.
+
+\begin{proposition}[A triple with the required Euler form]
+\label{k3:prop:first-triple}
+For every positive integer $d$, there is a polarized K3 surface
+$(S,H)$ with $H^2=2d$ and line bundles $L_0,L_1,L_2$ such that
+\[
+\dim\Ext^k(L_i,L_j)=
+\begin{cases}
+1,&i=j,\ k=0,2,\\
+2,&i\ne j,\ k=1,\\
+0,&\text{otherwise}.
+\end{cases}
+\]
+Thus $(\chi_S(L_i,L_j))_{i,j}=G$.
+The bundles can be chosen with $L_0=\mathcal O_S$ and
+\[
+\chi(L_0(mH))=dm^2+2,\qquad
+\chi(L_i(mH))=dm^2-2\quad(i=1,2).
+\]
+\end{proposition}
+
+\begin{proof}
+In three orthogonal hyperbolic planes choose bases $e_i,f_i$ and set
+\[
+D_1=e_1-4f_1,\qquad
+D_2=-4f_1+e_2-4f_2,\qquad H=e_3+df_3.
+\]
+The lattice $N_d=\langle D_1,D_2,H\rangle$ is primitive: the coefficient
+minor in rows $e_1,e_2,e_3$ is the identity.  Its Gram matrix is
+\[
+\begin{pmatrix}-8&-4&0\\-4&-8&0\\0&0&2d\end{pmatrix}.
+\]
+It has signature $(1,2)$.  Every vector perpendicular to $H$ has
+square $-8(a^2+ab+b^2)$, so none has square $-2$.  The period theorem
+therefore gives a marked surface with $\NS(S)=N_d$ and $H$ ample.
+
+Take $L_i=\mathcal O_S(D_i)$ for $i=1,2$.  Each of
+$D_1,D_2,D_1-D_2$ has square $-8$ and is perpendicular to $H$.
+A nonzero effective divisor has positive intersection with $H$.
+Consequently neither sign of any of these three classes is effective.
+
+For each such class $D$, we obtain
+\[
+h^0(\mathcal O_S(D))=h^2(\mathcal O_S(D))=0,
+\qquad \chi(\mathcal O_S(D))=2+D^2/2=-2.
+\]
+Hence $h^1(\mathcal O_S(D))=2$, giving all the off-diagonal
+extensions.  The diagonal groups follow from sphericality.
+Riemann--Roch applied to $D_i+mH$ gives the Hilbert polynomials.
+\end{proof}
+
+All three bundles have slope zero with respect to $H$, but their
+reduced Hilbert polynomials are different.  A direct sum containing
+$L_0$ and one of $L_1,L_2$ is therefore not Gieseker polystable
+\cite[Definitions 1.2.3--1.2.4]{HuybrechtsLehn}.
+To apply the formality theorem for polystable sheaves, we construct a
+triple with one common polynomial.
+
+\begin{theorem}[A common-polynomial spherical triple]
+\label{k3:thm:common-triple}
+There is a polarized K3 surface $(S,H)$ with $H^2=8$ and three line
+bundles $L_1,L_2,L_3$ having the extension groups of
+Proposition~\ref{k3:prop:first-triple}.  Each is $H$-Gieseker stable,
+and each has Hilbert polynomial $4m^2-2$.
+\end{theorem}
+
+\begin{proof}
+In $U^{\oplus3}$ put
+\[
+\begin{aligned}
+D_1&=e_1-4f_1,&
+D_2&=-4f_1+e_2-4f_2,\\
+D_3&=-4f_1-4f_2+e_3-4f_3,&
+V&=f_1+f_2+2f_3.
+\end{aligned}
+\]
+The sublattice $N=\langle D_1,D_2,D_3,V\rangle$ is primitive, since
+its coefficient minor in rows $e_1,e_2,e_3,f_1$ has determinant one.
+In the stated basis its matrix is
+\[
+N=\begin{pmatrix}
+-8&-4&-4&1\\-4&-8&-4&1\\-4&-4&-8&2\\1&1&2&0
+\end{pmatrix}.
+\]
+
+Set $H=D_3+4V=e_3+4f_3$.  Then $H^2=8$, $H\cdot D_i=0$, and
+$H\cdot V=2$.  The span of the $D_i$ is negative definite, with
+\[
+\left(\sum_i a_iD_i\right)^2
+=-4\left(\sum_i a_i^2+\left(\sum_i a_i\right)^2\right).
+\]
+Thus $N$ has signature $(1,3)$.  A vector in $N$ perpendicular to
+$H$ has zero $V$ coordinate, and its square is divisible by eight.
+In particular, $H^\perp\cap N$ contains no square-$-2$ class.
+
+Choose a surface with $\NS(S)=N$ and $H$ ample.  Set
+$L_i=\mathcal O_S(D_i)$.  For $i\ne j$, the class $D_j-D_i$ is
+nonzero, has square $-8$, and is perpendicular to $H$.  The previous
+cohomology argument gives $\Ext^1(L_i,L_j)=\C^2$ and no other
+off-diagonal extensions.  A line bundle is Gieseker stable: a proper
+subsheaf of the same rank has a nonzero torsion quotient and therefore
+a smaller reduced Hilbert polynomial.  Finally,
+\[
+\chi(L_i(mH))=2+(D_i+mH)^2/2=4m^2-2.
+\]
+\end{proof}
+
+\section{Integral gluing and the root sublattice}
+\label{k3:sec:gluing}
+
+The primitive embedding above specifies more than a rational
+intersection form.  The ample class and the negative classes do not
+split the Picard lattice integrally.  We compute the missing classes
+before using the spherical vectors as a root lattice.
+
+For an integral nondegenerate lattice $K$, let
+$K^*=\{x\in K\otimes\Q:(x,K)\subset\Z\}$ and
+$A_K=K^*/K$.  If $K$ is even, its discriminant quadratic form is
+$q_K(x+K)=x^2\bmod 2\Z$.
+
+\begin{proposition}[The Picard gluing]
+\label{k3:prop:picard-gluing}
+In Theorem~\ref{k3:thm:common-triple}, let
+$L=\langle D_1,D_2,D_3,H\rangle$.  Then
+\[
+[N:L]=4,\qquad N/L\cong\Z/4,
+\qquad \det L=-2048,\qquad \det N=-128.
+\]
+The overlattice is obtained by adjoining the isotropic discriminant
+class of $(H-D_3)/4$.  Moreover,
+\[
+A_N\cong\Z/8\oplus\Z/16.
+\]
+\end{proposition}
+
+\begin{proof}
+The change of basis $H=D_3+4V$ has determinant four.  It identifies
+$N/L$ with the cyclic group generated by $V+L$.  In $L\otimes\Q$,
+\[
+V=(H-D_3)/4,\qquad V^2=0,
+\qquad \bigl((V,D_1),(V,D_2),(V,D_3),(V,H)\bigr)=(1,1,2,2),
+\]
+where the last expression lists the four pairings.  Thus $V\in L^*$
+and its class is isotropic of exact order four.
+
+The $D_i$ block has eigenvalues $-16,-4,-4$, and the orthogonal
+$H$ block is $(8)$.  Hence $\det L=-2048$ and
+$\det N=\det L/4^2=-128$.  The greatest common divisors of the
+one-, two-, and three-row minors of the displayed matrix of $N$ are
+$1,1,8$.  Its Smith invariant factors are therefore $1,1,8,16$,
+which give the stated discriminant group.
+\end{proof}
+
+The corresponding Mukai lattice is
+$M=\Z\oplus N\oplus\Z$.  Write a vector as
+$(r,a,b,c,t,s)$, meaning $(r,aD_1+bD_2+cD_3+tV,s)$.  The three
+spherical vectors are
+\[
+v_i=v(L_i)=(1,D_i,-3).
+\]
+Let $F\subset M$ be their integer span.
+
+\begin{proposition}[The spherical lattice and its complement]
+\label{k3:prop:spherical-complement}
+The lattice $F$ is saturated in $M$, and its Gram matrix is $-G$.
+Its orthogonal complement consists exactly of
+\[
+C(r,a,c)=(r,a,a,c,4(c-a),3r-16a),\qquad r,a,c\in\Z.
+\]
+In this parametrization the complement has matrix
+\[
+C=\begin{pmatrix}-6&16&0\\16&-40&-8\\0&-8&8\end{pmatrix},
+\qquad \det C=256,
+\qquad A_C\cong\Z/2\oplus\Z/8\oplus\Z/16.
+\]
+The inclusion $F\oplus C\subset M$ has quotient
+$\Z/2\oplus\Z/4$ and index eight.
+\end{proposition}
+
+\begin{proof}
+The coefficient matrix of the $v_i$ has an identity minor in rows
+$a,b,c$, proving saturation.  Their pairings are
+\[
+\langle v_i,v_j\rangle=D_i\cdot D_j+6
+=\begin{cases}-2&i=j,\\2&i\ne j.\end{cases}
+\]
+For $x=(r,a,b,c,t,s)$, the differences of the equations
+$\langle x,v_i\rangle=0$ first give $b=a$ and $t=4(c-a)$.
+The remaining equation gives $s=3r-16a$.  These equations have no
+further divisibility condition, so the displayed parametrization
+exhausts the integral complement.
+
+Substitution into the Mukai pairing gives the matrix $C$.  Its
+entries have greatest common divisor two, and its two-row minors
+have greatest common divisor sixteen.  Together with its determinant,
+these give Smith factors $2,8,16$.
+
+To compute the quotient, impose the three relations $v_i=0$ in the
+free group with coordinate generators $R,A,B,C_0,T,S_0$.
+They identify $A=B=C_0=-R+3S_0$.  The three complement generators
+then impose
+\[
+R+3S_0=0,\qquad -2R-10S_0-4T=0,
+\qquad -R+3S_0+4T=0.
+\]
+Eliminating $R$ leaves $4S_0+4T=0$ and $6S_0+4T=0$.
+Their relation matrix has Smith factors $2,4$.
+As a check on the index, $\det M=128$ and
+$\det F\det C=32\cdot256=8^2\det M$.
+\end{proof}
+
+The negative of the Mukai pairing on $F$ is the Euler matrix $G$.
+This constructs an integral copy of the real-root lattice.  It does
+not identify all algebraic charges with that copy.  For example,
+$(0,0,1)$ lies outside $F\otimes\Q$: a combination of the $v_i$
+with zero divisor part has every coefficient zero.  Point charges
+therefore require additional classes even rationally.
+
+\section{The extension quiver and its formal deformation equation}
+\label{k3:sec:formal-quiver}
+
+Choose finite-dimensional vector spaces $W_i$, not all zero, and put
+$F_W=\bigoplus_{i=1}^3L_i\otimes W_i$, using the common-polynomial
+triple.  This sheaf is $H$-polystable.  Its self-extension spaces in
+degrees zero and two are
+\[
+\Ext^0(F_W,F_W)=\bigoplus_i\End(W_i),\qquad
+\Ext^2(F_W,F_W)=\bigoplus_i\End(W_i)^*.
+\]
+The trace pairing identifies each dual matrix space with its original.
+The degree-one space is
+\[
+\Ext^1(F_W,F_W)
+=\bigoplus_{i\ne j}\Ext^1(L_i,L_j)\otimes\Hom(W_i,W_j).
+\]
+
+Choose two arrows $a:i\to j$ for each $i<j$.  A basis of
+$\Ext^1(L_i,L_j)$ assigns a map $X_a:W_i\to W_j$ to each arrow.
+Use a Serre-dual basis of $\Ext^1(L_j,L_i)$ to assign
+$Y_a:W_j\to W_i$.
+
+Degree-one Serre duality is alternating.
+Choose the dual bases so that the quadratic Yoneda product is the
+moment map
+\[
+\mu_i(X,Y)=
+\sum_{a:\,\operatorname{head}(a)=i}X_aY_a
+-\sum_{a:\,\operatorname{tail}(a)=i}Y_aX_a.
+\]
+This also fixes the sign of the duality convention.  The trace of
+$\sum_i\mu_i$ vanishes because every arrow contributes one commutator.
+
+\begin{theorem}[Pointed formal deformation model]
+\label{k3:thm:formality}
+The algebra $R\Hom_S(F_W,F_W)$ is formal.  Let $A$ be a local
+Artin $\C$-algebra with maximal ideal $\mathfrak m_A$.  Choose a
+formality comparison.  Deformations with an identified special
+fiber are then described by
+\[
+(X,Y)\in\Ext^1(F_W,F_W)\otimes\mathfrak m_A,
+\qquad \mu_i(X,Y)=0,
+\]
+modulo the gauge group
+$\exp(\Ext^0(F_W,F_W)\otimes\mathfrak m_A)$.
+\end{theorem}
+
+\begin{proof}
+Theorem~1.2 of Budur--Zhang applies to every Gieseker-polystable sheaf
+on a projective K3 surface, with no genericity condition on its ample
+polarization \cite{BudurZhangFormality}.  It gives a quasi-isomorphism
+zigzag from $R\Hom_S(F_W,F_W)$ to its cohomology algebra.
+
+Passing to the commutator differential graded Lie algebra preserves
+this comparison.  Over the nilpotent ideal $\mathfrak m_A$, its
+Maurer--Cartan groupoid is invariant under quasi-isomorphism.  In the
+cohomology algebra the differential is zero, so the equation is
+$u^2=0$ for $u$ of degree one.  Products of off-diagonal extensions
+can land only in the diagonal degree-two spaces.  Serre duality
+identifies those products with the displayed $\mu_i$, giving the
+quadratic equations and their gauge action.
+\end{proof}
+
+The quotient here fixes an identification of the special fiber.
+An equivariant comparison with the action of
+$\prod_i\GL(W_i)$ is additional structure on the formality map.
+Likewise, a cyclic comparison must preserve the trace up to the
+specified homotopies.  Formality for one sheaf supplies neither
+compatibility with extension flags nor an orientation on a global
+moduli stack.  These requirements will enter the Hall construction
+separately.
+
+\section{Passage to the threefold}
+\label{subsec:k3xe-compact-target}
+
+\begin{definition}[The product threefold]
+\label{def:k3xe-threefold}
+Let $E$ be a smooth complex elliptic curve with origin $0_E$ and put
+$X=S\times E$.  Write $p_S,p_E$ for the projections.  Choose nonzero
+holomorphic volume forms on $S$ and $E$ and use their product to
+trivialize $K_X$.
+\end{definition}
+
+This is a Calabi--Yau threefold in the trivial-canonical sense.  Its
+irregularity is $h^{1,0}(X)=1$, and
+\[
+\chi_{\mathrm{top}}(X)=24\cdot0=0,
+\qquad \chi(\mathcal O_X)=2\cdot0=0.
+\]
+The chosen volume form determines the trace used by the Calabi--Yau
+structure.
+
+\begin{proposition}[Extensions on a surface fiber]
+\label{k3:prop:fiber-ext}
+For $t\in E$, let $i_t:S\hookrightarrow X$ be the fiber inclusion.
+For perfect complexes $A,B$ on $S$, there is a natural decomposition
+\[
+\Ext^k_X(i_{t*}A,i_{t*}B)
+=\Ext^k_S(A,B)\oplus
+\bigl(\Ext^{k-1}_S(A,B)\otimes T_tE\bigr).
+\]
+In particular, the self-extension dimensions of $i_{t*}L_i$ are
+$(1,1,1,1)$ in degrees $0,1,2,3$.  For $i\ne j$, the dimensions
+are $(0,2,2,0)$.  All their threefold Euler pairings vanish.
+\end{proposition}
+
+\begin{proof}
+We have $i_{t*}A=A\boxtimes\mathcal O_t$.  The derived K\"unneth
+formula for Hom gives
+\[
+R\Hom_X(i_{t*}A,i_{t*}B)
+\simeq R\Hom_S(A,B)\otimes R\Hom_E(\mathcal O_t,\mathcal O_t).
+\]
+The second factor has cohomology $\C$ in degree zero and $T_tE$ in
+degree one.  This follows from a local resolution by the equation of
+the point.  Tensoring gives the asserted decomposition.  The two
+summands have opposite Euler signs and the same dimensions.
+\end{proof}
+
+The normal line $T_tE$ is part of this formula.  A local parameter
+identifies it with $\C$ and gives an exterior-generator model for the
+normal extension algebra.  Changing the parameter rescales that
+generator.  Moreover, $i_{t*}L_i$ has two-dimensional support.
+A category consisting only of sheaves supported on curves in $X$
+does not contain these objects.
+
+\begin{remark}[The two K3 Euler characteristics]
+\label{rem:two-K3-Eulers}
+The integer $\chi(\mathcal O_S)=2$ appears in the line-bundle
+Riemann--Roch formula.  The integer $\chi_{\mathrm{top}}(S)=24$
+appears in the elliptic genus.  With
+$\phi_{0,1}=r^{-1}+10+r+O(q)$, the K3 elliptic genus is
+$2\phi_{0,1}$, whose specialization at the elliptic variable zero
+is $24$.  The Borcherds product of $\phi_{0,1}$ instead has weight
+$10/2=5$ \cite{EZ:1,Borcherds95,GN}.  These are different operations
+on the input coefficients.
+\end{remark}
+
+The distinction persists in the CHL examples.  Write $k_N$ for the
+weight of the relevant genus-two form and $w_N=k_N/2$ for its
+square-root weight.  The eta products entering the additive seeds
+have weights $12,8,6,5,4$ at $N=1,2,3,4,5$, respectively.
+The common factor $\vartheta_1(\tau,z)^2/\eta(\tau)^6$ has weight
+$-2$, so the weights are
+\[
+\begin{array}{c|ccccc}
+N&1&2&3&4&5\\ \hline
+k_N&10&6&4&3&2\\
+w_N&5&3&2&3/2&1.
+\end{array}
+\]
+
+The prime-level formula is $k_N=24/(N+1)-2$ for $N=2,3,5$
+\cite{JS06Dyon,GK09CHL}.  At $N=4$, the eta product is
+$\eta(\tau)^4\eta(2\tau)^2\eta(4\tau)^4$, giving weight five
+before the Jacobi factor \cite[Table~1 and (3.17)]{GK10Composite}.
+Thus the numerical equality $3+\chi(\mathcal O_S)=5$ at $N=1$
+is not a formula for this sequence of weights.  It supplies no
+comparison between a chiral coefficient and an automorphic weight.
+
+\section{Paired charges and the Gram map}
+\label{subsec:kunneth-formal-mukai}
+\label{sec:gram-map-polarization}
+\label{subsec:igusa-variables-gram-index}
+
+Let $\omega_E\in H^2(E,\Z)$ satisfy $\int_E\omega_E=1$.  Since
+$H^{\mathrm{odd}}(S,\Z)=0$, every even cohomology class on $X$ has
+unique components in
+$\widetilde H(S,\Z)\otimes(\Z\oplus\Z\omega_E)$.
+
+\begin{definition}[Paired formal charge]
+\label{def:formal-even-mukai-sector}
+The formal charge lattice and its algebraic sublattice are
+\[
+\Gamma_X^{\mathrm{form}}=\Lambda_S\oplus\Lambda_S,
+\qquad
+\Gamma_X^{\mathrm{alg}}=\Lambda_S^{\mathrm{alg}}
+\oplus\Lambda_S^{\mathrm{alg}}.
+\]
+We order a charge as $c=(Q,P)$ by writing
+\[
+v_X=P\otimes1_E+Q\otimes\omega_E.
+\]
+The notation $\Gamma_X^{\mathrm{phys}}$ will mean this same formal
+lattice when used without a specified stability condition.
+For a perfect complex $\mathcal F$ on $X$, its actual charge is
+$v_X(\mathcal F)=\operatorname{ch}(\mathcal F)
+\sqrt{\operatorname{td}(X)}$.
+\end{definition}
+
+Both components are invariant under translation in $E$.  For an
+actual complex, $P=v(Li_t^*\mathcal F)$ and
+$Q=v(Rp_{S*}\mathcal F)$, so both are algebraic integral Mukai
+vectors.  Conversely, external products with $\mathcal O_E$ and
+$\mathcal O_t$ generate both summands numerically.  These formulas
+also explain why $Q$ and $P$ cannot be assigned support dimensions
+merely from their order in the pair.
+
+Riemann--Roch on $X$ gives the skew form
+\[
+\chi_X(\mathcal F,\mathcal G)
+=\langle Q,P'\rangle-\langle P,Q'\rangle.
+\]
+Indeed, duality changes the sign of the $\omega_E$ component, and
+integration on $S$ turns the Mukai pairing into the negative Euler
+pairing.  A symmetric cross-pairing on the same group is an auxiliary
+form and is not this threefold Euler form.
+
+\begin{definition}[Gram degrees]
+\label{def:gram-index-lattice}
+\label{def:gram-map-cocycle}
+The Gram-index group is $\Gamma_{\mathrm{gram}}=\Z^3$.  The Gram map
+is
+\[
+\Pi_X(Q,P)=\left(\frac{\langle Q,Q\rangle}{2},
+\langle Q,P\rangle,\frac{\langle P,P\rangle}{2}\right).
+\]
+For $\gamma=(n,\ell,m)$ set
+$T(\gamma)=\left(\begin{smallmatrix}n&\ell/2\\\ell/2&m\end{smallmatrix}\right)$.
+\end{definition}
+
+\begin{proposition}[Gram matrix and Fourier character]
+\label{prop:gram-matrix-convention}
+For $\Pi_X(Q,P)=(n,\ell,m)$, the Gram matrix of $Q,P$ is $2T(\gamma)$,
+and its determinant is $4nm-\ell^2$.  If
+$Z=\left(\begin{smallmatrix}\tau&z\\z&\sigma\end{smallmatrix}\right)$,
+$q=e^{2\pi i\tau}$, $r=e^{2\pi iz}$ and $s=e^{2\pi i\sigma}$, then
+\[
+e^{2\pi i\operatorname{tr}(T(\gamma)Z)}=q^nr^\ell s^m.
+\]
+\end{proposition}
+
+\begin{proof}
+Evenness of $\Lambda_S$ makes $n,m$ integral.  The matrix and
+exponential identities follow by multiplying their two-by-two entries.
+\end{proof}
+
+At the standard cusp, we use the positive additive semigroup
+\[
+\begin{split}
+\Gamma_{\mathrm{eff}}={}&\{(n,\ell,m):m>0,\ n\ge0\}\\
+&\cup\{(n,\ell,0):n>0\}
+\cup\{(0,\ell,0):\ell<0\}.
+\end{split}
+\]
+The omitted coordinate $\ell$ ranges over all integers in the first
+two sets.  Its Jacobi-active subset $\Gamma_{\mathrm{act}}$ consists
+of the triples with $f(nm,\ell)\ne0$, where
+$\phi_{0,1}=\sum f(a,b)q^ar^b$.  Positivity of an exponent is an
+arithmetic condition.  It does not assert existence of a sheaf with
+that charge.
+
+\begin{proposition}[The ideal-sheaf charge]
+\label{k3:prop:ideal-charge}
+Let $Y\subset X$ have dimension at most one, with fundamental
+one-cycle
+\[
+[Y]=\beta\otimes\omega_E+d\omega_S\otimes1_E
+\]
+and holomorphic Euler characteristic $n_Y=\chi(\mathcal O_Y)$.
+Then
+\[
+P(I_Y)=(1,0,1-d),\qquad Q(I_Y)=(0,-\beta,-n_Y),
+\]
+and
+\[
+\Pi_X(I_Y)=(\beta^2/2,n_Y,d-1).
+\]
+\end{proposition}
+
+\begin{proof}
+The ideal sequence gives
+$\operatorname{ch}(I_Y)=1-[Y]-n_Y\omega_S\omega_E$.
+Here the degree-six coefficient is $-n_Y$ because $c_1(X)=0$ and
+$Y$ has dimension at most one.  Multiplication by
+$\sqrt{\operatorname{td}(X)}=1+\omega_S$ gives the two displayed
+components.  Their Mukai pairings give the three Gram coordinates.
+\end{proof}
+
+In this sector $d$ is the degree of projection of the fundamental
+cycle to $E$.  Its Gram exponent is $d-1$.  The distinction persists
+outside this sector, where the Gram map remains quadratic and a
+support-degree function requires a specified class of objects.
+
+\subsection{The quadratic additivity defect}
+\label{subsec:gram-map-bilinear-cocycle}
+
+For charges $c=(Q,P)$ and $c'=(Q',P')$, define
+\[
+B(c,c')=\bigl(\langle Q,Q'\rangle,
+\langle Q,P'\rangle+\langle Q',P\rangle,
+\langle P,P'\rangle\bigr).
+\]
+This symmetric bilinear map measures the failure of the Gram degrees
+to add.
+
+\begin{lemma}[Polarization]
+\label{lem:gram-additivity-defect}
+\label{lem:b-cocycle-identity}
+For all formal charges,
+\[
+\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c')+B(c,c'),
+\qquad B(c,c)=2\Pi_X(c).
+\]
+If $(\delta q)(c,c')=q(c)+q(c')-q(c+c')$, then $B=-\delta\Pi_X$.
+In particular,
+\[
+B(b,c)-B(a+b,c)+B(a,b+c)-B(a,b)=0.
+\]
+\end{lemma}
+
+\begin{proof}
+Expanding $(Q+Q')^2/2$ gives the first coordinate and its cross term
+$\langle Q,Q'\rangle$.  Expanding $(Q+Q',P+P')$ gives the two middle
+cross terms.  The third coordinate is the same calculation with $P$.
+Putting $c'=c$ gives the diagonal identity.  Bilinearity cancels the
+four terms of the final equation.
+\end{proof}
+
+\begin{remark}[The primitive is quadratic]
+\label{rem:B-quadratic-not-linear}
+\label{rem:polarization-not-bott}
+\label{rem:quadratic-obstruction}
+An additive map $q$ has $\delta q=0$.  Since $B$ is nonzero, an
+additive change of coordinates cannot have coboundary $-B$.
+The identity $B=-\delta\Pi_X$ instead uses the quadratic map
+$\Pi_X$.  The diagonal value $2\Pi_X(c)$ is its polarization identity.
+\end{remark}
+
+\subsection{Primitive formal lifts}
+\label{subsec:formal-gram-triple-lift}
+
+\begin{lemma}[A saturated lift of every Gram triple]
+\label{lem:primitive-lift-every-gram-triple}
+Choose two orthogonal hyperbolic planes in $\Lambda_S$, with bases
+$e_1,f_1,e_2,f_2$.  For every $(n,\ell,m)\in\Z^3$, the vectors
+\[
+Q=e_1+nf_1,\qquad P=\ell f_1+e_2+mf_2
+\]
+have Gram degree $(n,\ell,m)$ and span a primitive rank-two sublattice.
+The greatest common divisor of the coordinates of $Q\wedge P$ is one.
+\end{lemma}
+
+\begin{proof}
+The hyperbolic pairings give $Q^2=2n$, $P^2=2m$ and $Q\cdot P=\ell$.
+The coefficient minor in rows $e_1,e_2$ is the identity matrix.
+It proves saturation and gives coefficient one on $e_1\wedge e_2$
+in $Q\wedge P$.
+\end{proof}
+
+\begin{remark}[Formal and geometric lifts]
+\label{rem:pointwise-not-hall-support}
+The lemma constructs an integral cohomological pair for each prescribed
+Gram matrix.  Algebraic pairs must lie in
+$\Gamma_X^{\mathrm{alg}}$.  A stable sheaf with such a pair requires
+further geometric conditions and a nonempty moduli space.  Even when
+individual pairs are realized, a comparison with Hall multiplication
+requires compatibility with addition of classes in exact triangles.
+\end{remark}
+
+\section{An additive extension of Gram degrees}
+\label{sec:normal-ordered-extension}
+\label{subsec:central-extension-additive-gram}
+
+A Hall operation adds classes of objects.  The Gram map is quadratic,
+so it cannot itself serve as an additive grading map.  Introduce a
+second coordinate to record its cross terms.
+
+\begin{definition}[Normal-ordered extension]
+\label{def:normal-ordered-extension}
+On the set
+$\widehat\Gamma_X=\Gamma_X^{\mathrm{form}}\times\Gamma_{\mathrm{gram}}$
+define
+\[
+(c,T)\star(c',T')=(c+c',T+T'+B(c,c')).
+\]
+The \emph{normal-ordered} Gram map and the raw placement are
+\[
+\overline\Pi_X(c,T)=\Pi_X(c)-T,
+\qquad i_0(c)=(c,0).
+\]
+\end{definition}
+
+\begin{theorem}[The extension splits]
+\label{thm:normal-ordered-extension-group-law}
+The operation $\star$ makes $\widehat\Gamma_X$ an abelian group.
+Its identity is $(0,0)$, its inverse formula is
+\[
+(c,T)^{-1}=(-c,-T+2\Pi_X(c)),
+\]
+and $\overline\Pi_X$ is a homomorphism.  The map
+\[
+\Psi:\widehat\Gamma_X\longrightarrow
+\Gamma_X^{\mathrm{form}}\oplus\Gamma_{\mathrm{gram}},
+\qquad (c,T)\longmapsto(c,T-\Pi_X(c))
+\]
+is an isomorphism to the ordinary direct sum.  In particular,
+$c\mapsto(c,\Pi_X(c))$ is an additive section of the charge projection.
+\end{theorem}
+
+\begin{proof}
+The cocycle identity proves associativity, and symmetry of $B$ proves
+commutativity.  Since $B(c,-c)=-2\Pi_X(c)$, the displayed inverse
+multiplies with $(c,T)$ to $(0,0)$.  Polarization gives
+\[
+\begin{split}
+\Pi_X(c+c')-T-T'-B(c,c')
+&=\Pi_X(c)-T+\Pi_X(c')-T',
+\end{split}
+\]
+which proves additivity of $\overline\Pi_X$.  The same identity shows
+that $\Psi$ is additive, with inverse $(c,S)\mapsto(c,S+\Pi_X(c))$.
+\end{proof}
+
+The extension is thus split as an abelian group.  Its role is to
+retain the correction coordinate in a proposed graded construction.
+The raw placement $i_0$ is a set map, not a homomorphism, and the
+additive section has zero normal-ordered Gram degree.  Neither map
+provides an additive lift of arbitrary raw Gram degrees.
+
+\subsection{Products of raw placements}
+\label{subsec:normal-ordering-flag-formula}
+
+\begin{lemma}[The flag formula]
+\label{lem:multiplication-of-raw-placements}
+For $c_1,\ldots,c_k\in\Gamma_X^{\mathrm{form}}$,
+\[
+\begin{aligned}
+i_0(c_1)\star\cdots\star i_0(c_k)
+&=\left(\sum_i c_i,\sum_{i<j}B(c_i,c_j)\right),\\
+\overline\Pi_X\bigl(i_0(c_1)\star\cdots\star i_0(c_k)\bigr)
+&=\sum_i\Pi_X(c_i).
+\end{aligned}
+\]
+\end{lemma}
+
+\begin{proof}
+Adding one factor introduces
+$B(\sum_{i<k}c_i,c_k)=\sum_{i<k}B(c_i,c_k)$.  Induction gives the
+first identity.  Iterated polarization gives
+$\Pi_X(\sum_i c_i)=\sum_i\Pi_X(c_i)+\sum_{i<j}B(c_i,c_j)$,
+which proves the second.
+\end{proof}
+
+This is an identity of charge groups.  To use it on moduli of flags,
+one must construct the additional coordinate and its transition maps
+on those moduli.  A group law alone does not give that geometric data.
+
+\subsection{An obstruction along a root string}
+\label{subsec:raw-gram-descent-no-go}
+
+\begin{definition}[Raw regrading]
+\label{def:raw-pi-pushforward}
+For a vector space $V=\bigoplus_cV_c$ graded by formal charges, define
+\[
+(\Pi_{X,*}^{\mathrm{raw}}V)_\gamma
+=\bigoplus_{\Pi_X(c)=\gamma}V_c.
+\]
+A fixed-lift choice instead retains only $V_{L(\gamma)}$, where
+$\Pi_X(L(\gamma))=\gamma$ for the selected degrees.
+\end{definition}
+
+Vector-space regrading is always defined when the indicated sums
+exist.  It need not preserve the degree of a multiplication or a Lie
+bracket.
+
+\begin{theorem}[The fixed-lift root-string obstruction]
+\label{thm:raw-gram-descent-no-go}
+Let $\mathfrak p=\bigoplus_c\mathfrak p_c$ be a charge-graded Lie
+superalgebra.  Suppose $x\in\mathfrak p_c$ and
+$y\in\mathfrak p_{c'}$ satisfy
+\[
+[x,y]\ne0,\qquad [x,[x,y]]\ne0,\qquad \Pi_X(c)\ne0.
+\]
+The original bracket cannot be homogeneous for raw Gram degree on
+both of these channels.  Consequently, fixed raw lifts of the real
+simple generators cannot preserve the nonzero second root strings
+of the matrix $G$.
+\end{theorem}
+
+\begin{proof}
+Homogeneity of the first bracket requires
+\[
+\Pi_X(c+c')=\Pi_X(c)+\Pi_X(c'),
+\quad\text{hence }B(c,c')=0.
+\]
+Homogeneity of the second requires $B(c,c+c')=0$.  But
+\[
+B(c,c+c')=B(c,c)+B(c,c')=2\Pi_X(c)\ne0.
+\]
+This is a contradiction.  For the real simple generators attached to
+$G$, the off-diagonal Cartan integer is $-2$.  The corresponding
+$\mathfrak{sl}_2$ root string has nonzero first and second brackets,
+so it meets the stated hypotheses \cite{GN}.
+\end{proof}
+
+\begin{remark}[Scope of the obstruction]
+\label{rem:no-go-scope}
+The theorem concerns the original bracket on homogeneous chosen
+charges.  It does not exclude a different bracket, a different
+grading, or a comparison that mixes source lifts.  The additive map
+$\overline\Pi_X$ removes this degree obstruction for an algebra
+already graded by $\widehat\Gamma_X$.  Constructing such an algebra
+and comparing its primitive bracket remain separate problems.
+\end{remark}
+
+\subsection{Operations preserved by additive regrading}
+\label{k3:subsec:additive-regrading}
+
+For a homomorphism $f:A\to B$ of abelian groups, let
+\[
+(f_*V)_b=\bigoplus_{a:\,f(a)=b}V_a.
+\]
+We use direct sums throughout this construction.  Cohomological
+degree and super parity are retained as separate gradings.
+
+\begin{proposition}[Additive regrading]
+\label{k3:prop:regrading}
+On graded $\Q$-complexes, $f_*$ is exact and symmetric monoidal.
+It preserves homogeneous products, Lie superbrackets, coalgebra
+maps, and their identities.  It commutes with the direct-sum bar construction of an augmented
+differential graded algebra, including every finite length truncation.
+\end{proposition}
+
+\begin{proof}
+A degree component of $f_*$ is a direct sum of complexes, so exactness
+holds over $\Q$.  The tensor comparison is the identification
+\[
+\begin{split}
+(f_*V\otimes f_*W)_b
+&=\bigoplus_{f(a)+f(a')=b}V_a\otimes W_{a'}\\
+&=(f_*(V\otimes W))_b.
+\end{split}
+\]
+The equality uses additivity of $f$.  This identification preserves
+the symmetry and its Koszul signs, since it changes neither
+cohomological degree nor parity.  It therefore preserves all
+identities expressed by the stated operations.
+
+For an augmented algebra $A_\bullet$, write $\bar A_\bullet$ for the
+augmentation ideal.  The bar coalgebra has underlying complex
+$\bigoplus_{j\ge0}(\bar A_\bullet[1])^{\otimes j}$, where $[1]$
+lowers cohomological degree by one.  Its differential comes from the
+internal differential and multiplication.  Exactness, the tensor
+comparison, and preservation of these maps identify the two bar
+constructions.  The same argument applies after restricting to
+length at most any fixed integer.
+\end{proof}
+
+Taking $f=\overline\Pi_X$ gives the appropriate additive regrading
+once the extended grading exists.  Pairings of degree zero, bracket
+filtrations and finite Poincar\'e--Birkhoff--Witt constructions are
+preserved for the same reason.  Completed products require an
+additional finiteness or continuity argument.  The finite versions,
+including separate even and odd dimensions and zero-degree radicals,
+are developed in Appendix~\ref{app:stability-support}.
+
+\begin{remark}[The root comparison]
+\label{rem:normal-ordered-recognition-target}
+The root coordinates used later identify a Gram triple with
+\[
+\alpha(n,\ell,m)=2nf_2-\ell f_3+2mf_{-2}
+\in\Lambda_{II}^{2,1}.
+\]
+Their form has $f_3^2=2$, $(f_2,f_{-2})=-1$, and all other pairings
+zero.  Thus $\alpha(n,\ell,m)^2=2\ell^2-8nm$.
+The three triples $(1,1,0)$, $(0,1,1)$ and $(0,-1,0)$ give matrix
+$G$.  This arithmetic identification is independent of the saturated
+surface embedding $F\subset M$.  A geometric realization must
+compare the corresponding operations, as well as these lattices.
+\end{remark}
+
+\begin{proposition}[Sheaves representing the three simple Gram degrees]
+\label{prop:type-ii-compact-mukai-representatives}
+Choose $p\in S$ and a length-two subscheme $Z\subset S$.  The three
+pairs of coherent sheaves
+\[
+x_{\delta_1}=(I_Z,I_p),\qquad
+x_{\delta_2}=(I_p,I_Z),\qquad
+x_{\delta_3}=(I_p,\mathcal O_p)
+\]
+have Gram degrees $(1,1,0)$, $(0,1,1)$ and $(0,-1,0)$,
+respectively, when their vectors are ordered as $(Q,P)$.
+These degrees are also represented by coherent sheaves on $X$:
+for a fixed $t\in E$, put
+\[
+\begin{aligned}
+\mathcal F_1&=i_{t*}I_Z\oplus p_S^*I_p,\\
+\mathcal F_2&=i_{t*}I_p\oplus p_S^*I_Z,\\
+\mathcal F_3&=i_{t*}I_p\oplus p_S^*\mathcal O_p.
+\end{aligned}
+\]
+\end{proposition}
+
+\begin{proof}
+The vectors $v_S(I_Z)=(1,0,-1)$, $v_S(I_p)=(1,0,0)$ and
+$v_S(\mathcal O_p)=(0,0,1)$ give
+\[
+\begin{array}{c|c|c|c}
+&Q^2/2&Q\cdot P&P^2/2\\ \hline
+x_{\delta_1}&1&1&0\\
+x_{\delta_2}&0&1&1\\
+x_{\delta_3}&0&-1&0.
+\end{array}
+\]
+For any sheaf $A$ on $S$, the external-product formulas give
+\[
+v_X(i_{t*}A)=v_S(A)\otimes\omega_E,\qquad
+v_X(p_S^*A)=v_S(A)\otimes1_E.
+\]
+They identify the charges of $\mathcal F_i$ with the displayed
+pairs.  All supports are proper because $X$ is projective.
+\end{proof}
+
+The sheaves $\mathcal F_1$ and $\mathcal F_2$ have rank one and a
+surface-supported direct summand.  The sheaf $\mathcal F_3$ has surface and
+curve summands.  Thus this construction gives actual coherent
+charges, but not pure sheaves of one fixed dimension.  A realization
+by stable objects in a specified heart, with the required extension
+operations and oriented coefficients, is a further problem.  The
+spherical line bundles of \S\ref{k3:sec:spherical} answer a different
+question: they realize the additive Euler matrix of the real roots.
+
+\section{Geometric support over the elliptic curve}
+\label{sec:k3xe-hybrid-ran-carrier}
+\label{subsec:projection-locality-obstruction}
+
+The support of an object gives another constraint on a proposed
+factorization construction.  A finite configuration on $E$ can
+record objects whose projection is finite.  A curve projecting
+dominantly to $E$ requires a different parameter space.
+
+\begin{lemma}[Projection of an effective curve]
+\label{lem:projection-locality-obstruction}
+Let $Z=\sum_i m_i[C_i]$ be an effective one-cycle in $S\times E$.
+If $(p_E)_*Z=b[E]$ with $b>0$, then $p_E(|Z|)=E$.
+\end{lemma}
+
+\begin{proof}
+The proper image of an irreducible curve $C_i$ in $E$ is a point or
+all of $E$.  A dominant component contributes
+$m_i\deg(C_i/E)>0$ to $b$, whereas a component mapping to a point
+contributes zero.  If $b>0$, some component is dominant.
+\end{proof}
+
+\begin{remark}[Support degree and Gram exponent]
+\label{rem:geometric-vs-borcherds-degree}
+For ideal sheaves in Proposition~\ref{k3:prop:ideal-charge}, the
+support degree is $d$ and the third Gram coordinate is $d-1$.
+For a sheaf on one surface fiber, the projection is a point even
+though its support has dimension two.  Thus projection-finiteness
+and support dimension are distinct conditions.  A moduli problem
+must specify both before it can be assigned to a finite-configuration
+or dominant-support parameter space.
+\end{remark}
+
+The finite-configuration space is the Ran prestack of $E$: its
+$T$-points are nonempty finite subsets of $\Hom(T,E)$.  We call
+objects projecting onto $E$ wrapped objects.  Combining the two
+support types requires moduli for wrapped objects and correspondences
+for mixed extensions.  Their existence and compatibility do not
+follow from adjoining a second set of points to the Ran prestack.
+Appendix~\ref{app:stability-support} states the stability, finiteness,
+and equivariance conditions for such a construction.
+
+\begin{definition}[Finite Harder--Narasimhan type]
+\label{k3:def:hn-type}
+Fix a stability condition and a collection of factor labels.
+A Harder--Narasimhan filtration is a finite filtration with semistable
+quotients of strictly decreasing phase.  When every quotient has a chosen factor label, its
+\emph{retained HN type} is the ordered word of factor and phase labels.
+\end{definition}
+
+A finite set of such words can bound the types of objects used in an
+extension correspondence.  The finite-window proof and the further
+conditions needed for moduli of these objects are given in
+Appendix~\ref{app:stability-support}.
+
+The surface calculation supplies concrete spherical objects, a root
+sublattice, and a formal deformation equation.  The threefold
+calculation supplies their normal extensions and actual paired
+charges.  A global Hall comparison must connect these constructions
+through extension correspondences with a specified coefficient
+theory, trace and orientation.  The following chapters develop the
+arithmetic target before returning to those geometric operations.

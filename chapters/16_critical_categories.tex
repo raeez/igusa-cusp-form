@@ -1,0 +1,1457 @@
+\chapter{Critical categories and cyclic realization}
+\label{mc:chap:categories}
+
+The potential of Chapter~\ref{vc:chap:critical} has three
+incidence branches when the displacement is nonzero.
+Each branch yields a matrix factorization.
+To compare this category with a geometric coefficient,
+we must retain the morphisms between the objects and
+prove that the chosen objects generate the category.
+The return products remain nonzero before the displacement
+is inverted. After inversion, every complex of morphisms
+between distinct branches contracts.
+
+We construct all nine morphism complexes and their products
+in a finite Clifford model. Multiplier derivatives then
+prove generation for the polynomial family. The same
+morphism comparison survives arbitrary base change,
+but generation does not. A monomial example records its
+multiplicity in a higher operation. Absolute Hochschild
+and cyclic calculations show which of these data survive
+passage to global periodic invariants.
+
+Let $S$ be a commutative ring in even parity and $W\in S$.
+A matrix factorization consists of a finite projective
+$\mathbb Z/2$-graded $S$-module and an odd endomorphism $D$
+satisfying $D^2=W1$. For two such objects,
+\[
+ \partial_{ab}(c)=D_bc-(-1)^{|c|}cD_a
+\]
+is the differential on their morphisms. It squares to zero.
+
+Composition of endomorphisms satisfies the graded Leibniz
+rule. All explicit factorizations below are finite free.
+All categorical gradings in this chapter are parity
+gradings unless an integer Koszul degree is specified.
+
+Write $\operatorname{MF}(S,W)^\pi$ for the idempotent
+completion of this dg category. A collection
+\emph{split-generates} if finite sums, shifts, cones and
+direct summands produce every object of its homotopy
+category. The closure under these operations is its
+\emph{thick closure}. For a dg algebra $A$,
+$\operatorname{Perf}(A)$ denotes perfect right dg modules:
+the thick closure of the free module $A$.
+A Morita equivalence is an equivalence on perfect modules
+with their dg enhancements.
+
+\section{A relative Clifford comparison}
+
+Let $R$ be a commutative $\mathbb Q$-algebra and
+$A=(A_{ij})$ a symmetric $n$-by-$n$ matrix over $R$.
+Put $S=R[x_1,\ldots,x_n]$.
+
+On $S\otimes\Lambda^*R^n$, let $e_i$ be exterior
+multiplication and $\iota_i$ contraction. Thus
+\[
+ [e_i,e_j]_+=[\iota_i,\iota_j]_+=0,
+ \qquad [e_i,\iota_j]_+=\delta_{ij},
+\]
+where $[u,v]_+=uv+vu$ for odd operators.
+Define
+\begin{equation}\label{mc:tcrm:eq:quadratic-object}
+ D=\sum_i x_i e_i+\sum_i(Ax)_i\iota_i,
+ \qquad
+ \gamma_i=e_i-\sum_jA_{ij}\iota_j.
+\end{equation}
+Then
+\begin{equation}\label{mc:tcrm:eq:operator-relations}
+ D^2=x^tAx,\quad [D,\gamma_i]_+=0,\quad
+ [D,\iota_i]_+=x_i,\quad
+ [\gamma_i,\gamma_j]_+=-2A_{ij}.
+\end{equation}
+Let $\operatorname{Cl}_R(-A)$ be the parity-graded
+$R$-algebra on odd generators $\gamma_i$ with the last
+relations and zero differential.
+
+\begin{theorem}\label{mc:tcrm:thm:Clifford}
+The indicated operators define a quasi-isomorphism
+of $R$-linear dg algebras
+\begin{equation}\label{mc:tcrm:eq:Clifford-map}
+ \operatorname{Cl}_R(-A)\longrightarrow
+ \bigl(\operatorname{End}_S(S\otimes\Lambda^*R^n),[D,-]\bigr).
+\end{equation}
+It commutes with arbitrary commutative base change of
+$R$. Neither nondegeneracy of $A$ nor reducedness of
+$R$ is required.
+\end{theorem}
+
+\begin{proof}
+The exterior-contraction operators $e_I\iota_J$, with
+each index set ordered increasingly, form an $S$-basis
+of the endomorphisms. Replacing each $e_i$ by
+$\gamma_i=e_i-\sum_jA_{ij}\iota_j$ is triangular in
+exterior length, with diagonal entries one.
+Consequently the $\gamma_I\iota_J$ are another basis.
+In particular, the ordered $\gamma_I$ are linearly
+independent and realize the stated Clifford algebra.
+
+In this basis the differential kills $\gamma_I$ and
+replaces each $\iota_i$ by $x_i$, with the Koszul
+sign past $\gamma_I$. The underlying complex is
+therefore $\operatorname{Cl}_R(-A)$ tensored with
+the polynomial Koszul complex of $x_1,\ldots,x_n$.
+That sequence is regular over every coefficient ring.
+Its augmentation evaluates at $x=0$ and removes
+positive contraction length.
+
+For polynomial degree $d$ and contraction length $q$,
+the Koszul homotopy away from $d+q=0$ is
+\[
+ \frac{\sum_i\iota_i\partial_{x_i}}{d+q}.
+\]
+On the Clifford factor it carries the sign $(-1)^{|\gamma_I|}$.
+Its anticommutator with the differential is the
+identity away from degree $d+q=0$.
+This proves the quasi-isomorphism and its compatibility
+with base change. The inclusion is multiplicative.
+The projection and homotopy are only linear maps.
+\end{proof}
+
+Over a field with a nondegenerate form, this is the
+usual Clifford description of quadratic matrix
+factorizations.\footnote{T.~Dyckerhoff,
+\emph{Compact generators in categories of matrix
+factorizations},
+\href{https://arxiv.org/abs/0904.4713}{arXiv:0904.4713},
+Section~5.5, following the quadratic theory of
+Buchweitz--Eisenbud--Herzog. The isolated-singularity
+generation theorem is not needed for the endomorphism
+comparison proved here.}
+The theorem computes the chosen object. Generation
+of a larger nonisolated category is a separate question.
+
+The coefficient hypothesis matters for this presentation
+and contraction. Over $\mathbb Z$, the anticommutator
+relation with $n=1$ and $A=0$ gives
+$\mathbb Z[g]/(2g^2)$, whereas the exterior operator
+satisfies $g^2=0$. The element $g^2$ in that presented
+algebra is nonzero, as its image in $\mathbb F_2[g]$
+shows. Characteristic zero alone does not justify
+either division by two or the displayed Euler homotopy.
+
+For the central triangle take
+\[
+ R=\mathbb C[P,Q,T],\qquad
+ A=\begin{pmatrix}P&T/2\\T/2&Q\end{pmatrix}.
+\]
+Then
+\begin{equation}\label{mc:tcrm:eq:binary-Clifford}
+ \gamma_1^2=-P,\qquad \gamma_2^2=-Q,
+ \qquad \gamma_1\gamma_2+\gamma_2\gamma_1=-T.
+\end{equation}
+The even element $w=2\gamma_1\gamma_2+T$ satisfies
+\begin{equation}\label{mc:tcrm:eq:even-cover}
+ w^2=T^2-4PQ=\Delta,
+ \qquad w\gamma_i=-\gamma_iw.
+\end{equation}
+Since the even basis is $1,\gamma_1\gamma_2$, its
+subalgebra is exactly $R[w]/(w^2-\Delta)$, the
+coordinate ring of the cover in \eqref{vc:cqm:eq:covers}.
+
+It is not the center of the full universal Clifford
+algebra. On the locus $\Delta\ne0$, adjoining
+$\sqrt\Delta$ gives idempotents
+$\tfrac12(1\pm w/\sqrt\Delta)$, exchanged by the
+deck involution. This recovers its sign local system.
+
+It does not supply a functor from matrix factorizations
+to perverse sheaves.
+
+\section{The three objects and every morphism}
+
+Now put $R=\mathbb C[h,P,Q,T]$ and retain the
+actual displaced potential
+\begin{equation}\label{mc:tcrm:eq:potential}
+ W_h=Px(x+h)+Qy(y+h)+Txy.
+\end{equation}
+Let $C_R$ be the free rank-four Clifford algebra
+\eqref{mc:tcrm:eq:binary-Clifford} over this ring.
+Give it the odd derivation
+$\partial_0\gamma_1=hP$, $\partial_0\gamma_2=hQ$.
+Set
+\[
+ t_0=0,\qquad t_1=h\gamma_1,\qquad t_2=h\gamma_2.
+\]
+Each satisfies $\partial_0t_a+t_a^2=0$.
+
+\begin{definition}\label{mc:tcrm:def:category}
+The marked dg category $\mathcal C_h$ has objects
+$0,1,2$. For every ordered pair, put
+\begin{equation}\label{mc:tcrm:eq:Hom}
+ \operatorname{Hom}_{\mathcal C_h}(a,b)=C_R,
+ \qquad
+ \partial_{ab}(c)=\partial_0c+t_bc-(-1)^{|c|}ct_a.
+\end{equation}
+Composition from
+$\operatorname{Hom}(b,c)\otimes_R\operatorname{Hom}(a,b)$
+to $\operatorname{Hom}(a,c)$ is Clifford multiplication
+in that order. The units are the copies of $1$.
+\end{definition}
+
+The displayed identities for $t_a$ give $\partial_{ab}^2=0$.
+Expanding \eqref{mc:tcrm:eq:Hom} gives the Leibniz rule
+for every composable pair. Thus the definition gives
+a strict dg category, finite free in every morphism
+complex.
+
+On $R[x,y]\otimes\Lambda^*R^2$, use the Clifford
+operators from \eqref{mc:tcrm:eq:quadratic-object} and put
+\begin{align}
+ D_0={}&xe_1+ye_2+(Px+Ty/2+hP)\iota_1
+                       +(Tx/2+Qy+hQ)\iota_2,
+                       \label{mc:tcrm:eq:objects}\\
+ D_1={}&D_0+h\gamma_1,\qquad
+ D_2=D_0+h\gamma_2.\nonumber
+\end{align}
+All three squares are $W_h1$. They are Koszul
+factorizations at the respective sections
+$(0,0)$, $(-h,0)$ and $(0,-h)$ of the incidence locus.
+
+A dg functor is a \emph{quasi-equivalence} if it induces
+quasi-isomorphisms on morphism complexes and is essentially
+surjective on the homotopy category.
+
+\begin{theorem}\label{mc:tcrm:thm:marked-model}
+The constant-in-$x,y$ Clifford operators give a
+quasi-equivalence from $\mathcal C_h$ to the full
+dg subcategory of matrix factorizations of $W_h$
+on $D_0,D_1,D_2$. It preserves composition and units
+strictly and is compatible with arbitrary commutative
+base change of $R$.
+\end{theorem}
+
+\begin{proof}
+Write $a_0=(0,0)$, $a_1=(1,0)$ and $a_2=(0,1)$.
+In every matrix morphism complex use the basis
+$c\iota_J$, with $c$ a Clifford word.
+The differential on $c$ is \eqref{mc:tcrm:eq:Hom}, and
+for a single contraction generator it is
+\begin{equation}\label{mc:tcrm:eq:source-shift}
+ \partial(c\iota_i)=\partial_{ab}(c)\iota_i
+       +(-1)^{|c|}c\bigl(x_i+h(a_a)_i\bigr),
+ \qquad (x_1,x_2)=(x,y).
+\end{equation}
+Indeed $[D_a,\iota_i]_+=x_i+h(a_a)_i$.
+
+The regular sequence belongs to the source object $a$.
+Iteration gives the tensor product with its polynomial
+Koszul complex. Translating coordinates reduces its
+contraction to the one in
+Theorem~\ref{mc:tcrm:thm:Clifford}.
+
+Thus inclusion is a quasi-isomorphism on every morphism
+complex. It preserves multiplication, and the three
+objects already exhaust the stated target subcategory.
+The contractions are defined over $R$, so they survive
+base change, including $h=0$ and nilpotent parameters.
+\end{proof}
+
+This also permits the base change
+$R\to\mathbb C[P,Q,T][[h]]$, with $x,y$ still polynomial
+variables. No analytic convergence or generation of
+the entire matrix-factorization category follows from
+the morphism comparison alone. The generation theorem
+proved below supplies the latter assertion
+while the multiplier variables remain in the ring.
+Arbitrary specialization can destroy it.
+
+\section{Cohomology before and after localization}
+
+\begin{proposition}\label{mc:tcrm:prop:off-diagonal}
+For $a\ne b$ there is an odd $R$-linear operator
+$H_{ab}$ on the morphism complex such that
+\begin{equation}\label{mc:tcrm:eq:h-homotopy}
+ \partial_{ab}H_{ab}+H_{ab}\partial_{ab}=h1.
+\end{equation}
+Moreover
+\begin{equation}\label{mc:tcrm:eq:off-diagonal}
+ H^{\bar0}\operatorname{Hom}(a,b)\cong R/(h),
+ \qquad H^{\bar1}\operatorname{Hom}(a,b)\cong R/(h).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Write $\delta_{ab}=\partial_{ab}/h$.
+The odd Clifford derivatives $\partial_{\gamma_i}$
+are defined by $\partial_{\gamma_i}\gamma_j=\delta_{ij}$
+and the super Leibniz rule. They preserve the Clifford
+relations, and
+\[
+ \delta_{ab}\partial_{\gamma_i}
+       +\partial_{\gamma_i}\delta_{ab}
+          =((a_b)_i-(a_a)_i)1.
+\]
+For distinct objects one coordinate difference is
+$\pm1$. Divide by that sign to define $H_{ab}$.
+Thus $\delta_{ab}$ is split exact.
+
+In the bases $1,\gamma_1\gamma_2$ and
+$\gamma_1,\gamma_2$, each of its two parity matrices
+has determinant zero and an entry $\pm1$.
+Its kernel and image are therefore the same free
+rank-one summand. Multiplying the differential by
+the non-zero-divisor $h$ keeps that kernel and
+multiplies its image by $h$. This proves
+\eqref{mc:tcrm:eq:off-diagonal}.
+\end{proof}
+
+For the three diagonal complexes define, respectively,
+\begin{equation}\label{mc:tcrm:eq:regular-pairs}
+ (r_1,r_2)=(P,Q),\quad(-P,Q-T),\quad(P-T,-Q),
+ \qquad \kappa_a=r_1\gamma_2-r_2\gamma_1.
+\end{equation}
+
+\begin{proposition}\label{mc:tcrm:prop:diagonal}
+For each object $a$,
+\begin{equation}\label{mc:tcrm:eq:diagonal}
+ H^{\bar0}\operatorname{End}(a)=R/(hr_1,hr_2),
+ \qquad
+ H^{\bar1}\operatorname{End}(a)=(R/(h))\kappa_a.
+\end{equation}
+Their odd generators satisfy
+\begin{equation}\label{mc:tcrm:eq:odd-square}
+ \kappa_a^2=PQ(T-P-Q)
+\end{equation}
+in the even cohomology ring.
+\end{proposition}
+
+\begin{proof}
+The differentials of $\gamma_1$, $\gamma_2$ and
+$v=\gamma_1\gamma_2$ are $hr_1$, $hr_2$ and
+$h\kappa_a$. Each pair $(r_1,r_2)$ is regular.
+Hence every odd cycle is a multiple of its Koszul
+syzygy $\kappa_a$, and the odd boundaries are its
+$h$-multiples. An even cycle is scalar. Its boundaries
+form $(hr_1,hr_2)$. Finally
+\[
+ \kappa_a^2=-Qr_1^2-Pr_2^2+Tr_1r_2,
+\]
+which equals \eqref{mc:tcrm:eq:odd-square} for all three
+pairs in \eqref{mc:tcrm:eq:regular-pairs}.
+\end{proof}
+
+After inverting $h$, all off-diagonal morphism
+complexes contract by $H_{ab}/h$. The diagonal
+cohomology rings become $R[h^{-1}]/(r_1,r_2)$,
+with zero odd cohomology. These are the three
+multiplier lines of Proposition~\ref{vc:cicp:prop:triangle-strata}.
+The localized category is quasi-equivalent to the
+disjoint union of its diagonal dg algebras. This
+does not infer formality of those algebras from
+their cohomology rings.
+
+At $h=0$, by contrast, every differential in
+\eqref{mc:tcrm:eq:Hom} vanishes. The endomorphism algebra
+of the direct sum of the three identical objects is
+$\operatorname{Mat}_3(C_R/(h))$.
+Each off-diagonal derived fiber has two directions in each parity.
+One comes from cohomology modulo $h$, the other from
+$h$-torsion in the opposite parity.
+
+For object zero, the odd
+specialization retains the syzygy sequence
+\[
+ 0\longrightarrow R_0\kappa_0
+ \longrightarrow R_0\gamma_1\oplus R_0\gamma_2
+ \xrightarrow{(a,b)\mapsto Pa+Qb}(P,Q)
+ \longrightarrow0,\qquad R_0=\mathbb C[P,Q,T].
+\]
+The additional even vector $v$ has connecting class
+$\partial v/h=\kappa_0$. Cohomology followed by ordinary
+specialization would lose these connecting maps.
+
+\section{Return and transit products}
+
+We now fix generators, so every composition has a
+specified sign. With $v=\gamma_1\gamma_2$, take
+the following closed representatives:
+\begin{equation}\label{mc:tcrm:eq:generators}
+\begin{array}{c|c|c}
+ ab&\alpha_{ab}\ (\text{even})&\beta_{ab}\ (\text{odd})\\ \hline
+ 01&Q+v&\gamma_1\\
+ 10&T-Q+v&\gamma_1\\
+ 02&T-P+v&\gamma_2\\
+ 20&P+v&\gamma_2\\
+ 12&T+v&\gamma_2-\gamma_1\\
+ 21&v&\gamma_2-\gamma_1.
+\end{array}
+\end{equation}
+They generate the two groups in
+\eqref{mc:tcrm:eq:off-diagonal}. Put $K=P+Q-T$ and
+$\ell_{01}=P$, $\ell_{02}=Q$, $\ell_{12}=K$.
+The notation $\ell_{ab}$ is symmetric in its indices.
+
+\begin{proposition}\label{mc:tcrm:prop:composites}
+For $a\ne b$, the return products in
+$H^*\operatorname{End}(a)$ are
+\begin{align}
+ [\beta_{ba}\beta_{ab}]&=-\ell_{ab},\nonumber\\
+ [\alpha_{ba}\alpha_{ab}]&=-
+       \prod_{\{i,j\}\ne\{a,b\}}\ell_{ij},
+       \label{mc:tcrm:eq:returns}\\
+ [\alpha_{ba}\beta_{ab}]&=\varepsilon_{ab}\kappa_a,
+ \qquad
+ [\beta_{ba}\alpha_{ab}]=-\varepsilon_{ab}\kappa_a.
+       \nonumber
+\end{align}
+The product ranges over the other two edges.
+Set $\varepsilon_{ab}=1$ for $a<b$ and $-1$ for $a>b$.
+All these classes are nonzero and killed by $h$.
+
+For distinct $a,b,c$, write the four transit products as
+\[
+ \begin{aligned}
+ \alpha_{bc}\alpha_{ab}&=u_1\alpha_{ac},&
+ \beta_{bc}\beta_{ab}&=u_2\alpha_{ac},\\
+ \alpha_{bc}\beta_{ab}&=u_3\beta_{ac},&
+ \beta_{bc}\alpha_{ab}&=u_4\beta_{ac}.
+ \end{aligned}
+\]
+Their coefficients are
+\begin{equation}\label{mc:tcrm:eq:transit}
+\begin{array}{c|rrrr}
+ abc&u_1&u_2&u_3&u_4\\ \hline
+ 012&Q&-1&P&K\\
+ 021&-P&-1&-Q&K\\
+ 102&-K&-1&P&-Q\\
+ 120&P&1&-K&Q\\
+ 201&K&1&Q&-P\\
+ 210&-Q&1&-K&-P.
+\end{array}
+\end{equation}
+These identities hold already for the chosen chain
+representatives.
+\end{proposition}
+
+\begin{proof}
+The relations \eqref{mc:tcrm:eq:binary-Clifford} give
+\[
+ v^2=-Tv-PQ,\qquad
+ v\gamma_1=P\gamma_2-T\gamma_1,\qquad
+ \gamma_1v=-P\gamma_2,\qquad
+ v\gamma_2=-Q\gamma_1,\qquad
+ \gamma_2v=Q\gamma_1-T\gamma_2.
+\]
+Substituting \eqref{mc:tcrm:eq:generators} proves
+\eqref{mc:tcrm:eq:returns} and every entry of
+\eqref{mc:tcrm:eq:transit}. For example, the path
+$0\to1\to0$ gives
+\[
+ -P,\quad -QK,\quad \kappa_0,\quad-\kappa_0
+\]
+in the order odd--odd, even--even, even--odd,
+odd--even. The transit product
+$(\gamma_2-\gamma_1)\gamma_1=P-T-v=-\alpha_{02}$
+gives the second entry in the first transit row.
+
+Every boundary has a factor $h$, whereas each
+displayed return is a nonzero polynomial Clifford
+vector modulo $h$. Thus none is a boundary.
+Equation~\eqref{mc:tcrm:eq:h-homotopy} supplies a primitive
+for $h$ times either off-diagonal factor. Multiplying
+that primitive by the other closed factor, with its
+Leibniz sign, proves that each return is killed by $h$.
+\end{proof}
+
+The three plane forms have a symmetric expression
+in the original constraint multipliers:
+\begin{equation}\label{mc:tcrm:eq:symmetric}
+ P=p+r,\qquad Q=q+r,\qquad T=2r,
+ \qquad
+ \begin{aligned}
+ \Delta&=-4(pq+qr+rp),\\
+ -\kappa_a^2&=(p+q)(q+r)(r+p).
+ \end{aligned}
+\end{equation}
+Indeed the potential becomes
+\[
+ p\,x(x+h)+q\,y(y+h)+r(x+y)(x+y+h).
+\]
+The transformations $(x,y)\mapsto(y,x)$ with
+$p\leftrightarrow q$, and
+$(x,y)\mapsto(-(x+y+h),y)$ with
+$p\leftrightarrow r$, preserve it. They permute
+the three branch points and the three plane forms.
+This is the $S_3$ symmetry of the potential and its
+marked support. An equivariant categorical comparison
+must additionally specify the maps intertwining its
+chosen factorizations.
+
+\section{Generation from smooth branches}
+
+Let $S$ be a regular Noetherian ring of finite Krull
+dimension, let $W$ be a non-zero-divisor, and set
+$A=S/(W)$. The singularity category is
+$D_{\mathrm{sg}}(A)=D^b_{\mathrm{coh}}(A)/\operatorname{Perf}(A)$.
+The regular-ambient equivalence identifies it with
+matrix factorizations. The image of an $A$-module under
+this equivalence is its \emph{stabilization}.\footnote{
+D.~Orlov, \emph{Matrix factorizations for nonaffine LG-models},
+\href{https://arxiv.org/abs/1101.4051}{arXiv:1101.4051},
+Theorem~3.5. An affine regular Noetherian scheme of finite
+Krull dimension has the required locally free resolutions.
+
+For the local and nonlocal ring formulations, see
+T.~Dyckerhoff, \emph{Compact generators in categories of
+matrix factorizations}.
+\href{https://arxiv.org/abs/0904.4713}{arXiv:0904.4713},
+Sections~2.1--2.4.}
+
+\begin{proposition}\label{mc:cgcr:prop:branches}
+Let $f_1,\ldots,f_r\in S$ act null-homotopically on
+every finite matrix factorization, and put $I=(f_1,\ldots,f_r)$.
+Suppose ideals $J_1,\ldots,J_k$ contain $W$, satisfy
+$J_1\cdots J_k\subset I$, and have regular quotients $S/J_a$.
+Then the stabilizations of the $S/J_a$ split-generate
+$\operatorname{MF}(S,W)^\pi$.
+\end{proposition}
+
+\begin{proof}
+If $DH+HD=f\,1$, the cone of multiplication by $f$ has
+differential and change of basis
+\begin{equation}\label{mc:cgcr:eq:cone}
+ D_f=\begin{pmatrix}D&f\,1\\0&-D\end{pmatrix},
+ \qquad U=\begin{pmatrix}1&-H\\0&1\end{pmatrix},
+ \qquad D_fU=U\begin{pmatrix}D&0\\0&-D\end{pmatrix}.
+\end{equation}
+The second summand is shifted, so $U$ is even and invertible.
+Thus the original object is a direct summand of its cone.
+
+Repeat for every $f_i$. On a split sum with differential
+$\operatorname{diag}(D,-D)$, a subsequent homotopy is
+$\operatorname{diag}(H_i,-H_i)$. Conjugate it back through
+the preceding splitting. No anticommutation of the initially
+chosen homotopies is needed.
+
+Choose a bounded coherent representative $N$ in
+$D_{\mathrm{sg}}(A)$. Its ordinary Koszul tensor
+\[
+ N\otimes K(f_1,\ldots,f_r)
+\]
+represents these iterated cones.
+Every cohomology module $V$ is killed by $I$.
+
+Filter $V$ by successive products of the $J_a$.
+The product containment makes the last term zero, and
+each quotient is a finite module over one regular ring
+$S/J_a$. It therefore has a finite projective resolution
+over that ring. Each projective term is a summand of a
+finite sum of $S/J_a$ as an $A$-module.
+
+The filtration and the bounded truncation triangles put
+the Koszul tensor in the thick closure of the branch
+modules. Its original summand belongs to that closure
+after idempotent completion.
+\end{proof}
+
+The derivatives of $W$ supply the homotopies. For a free
+factorization,
+\begin{equation}\label{mc:cgcr:eq:Jacobian-homotopy}
+ D(\partial_zD)+(\partial_zD)D=(\partial_zW)1.
+\end{equation}
+For a projective module, choose a connection along the
+derivation $\partial_z$ and differentiate the endomorphism
+$D$ covariantly. Such a connection exists by writing the
+module as an idempotent summand of a free module and
+projecting its coefficientwise connection. The same
+Leibniz identity proves \eqref{mc:cgcr:eq:Jacobian-homotopy}.
+Flatness of the connection is unnecessary.
+
+\subsection{The polynomial triangle}
+
+Put $R=\mathbb C[h,P,Q,T]$, $S=R[x,y]$, and retain
+\[
+ W_h=Px(x+h)+Qy(y+h)+Txy.
+\]
+Let $D_0,D_1,D_2$ be the factorizations
+\eqref{mc:tcrm:eq:objects}, and let $\mathcal C_h$ be the
+finite dg category of Definition~\ref{mc:tcrm:def:category}.
+Write $\mathcal E_h=\bigoplus_{a,b=0}^2
+\operatorname{Hom}_{\mathcal C_h}(a,b)$, with matrix
+composition as multiplication. Its underlying $R$-module
+has rank $36$.
+
+\begin{theorem}\label{mc:cgcr:thm:triangle}
+The object $G=D_0\oplus D_1\oplus D_2$ split-generates
+$\operatorname{MF}(S,W_h)^\pi$. There is a Morita equivalence
+\begin{equation}\label{mc:cgcr:eq:Morita}
+ \operatorname{Perf}(\mathcal E_h)
+       \simeq\operatorname{MF}(S,W_h)^\pi.
+\end{equation}
+At $h=0$, with $P,Q,T$ still variables, $D_0|_{h=0}$
+alone split-generates. Its Morita algebra is the rank-four
+Clifford algebra \eqref{mc:tcrm:eq:binary-Clifford} over
+$R_0=\mathbb C[P,Q,T]$, with zero differential.
+\end{theorem}
+
+\begin{proof}
+The multiplier derivatives generate
+\[
+ I=(x(x+h),y(y+h),xy).
+\]
+Set $J_0=(x,y)$, $J_1=(x+h,y)$ and $J_2=(x,y+h)$.
+The invertible change
+\[
+ z_0=h+x+y,\qquad z_1=-x,\qquad z_2=-y
+\]
+identifies $I$ with $(z_0z_1,z_0z_2,z_1z_2)$.
+It follows that $I=J_0\cap J_1\cap J_2$ and
+$J_0J_1J_2\subset I$. All three quotients are $R$.
+
+For a module killed by $I$, the filtration
+\[
+ 0\subset J_1J_2V\subset J_1V\subset V
+\]
+has quotients killed by $J_0,J_2,J_1$, respectively.
+Their projective resolutions over $R$ have length at most
+four. Equations~\eqref{mc:cgcr:eq:Jacobian-homotopy} and
+Proposition~\ref{mc:cgcr:prop:branches} apply.
+
+Each $D_a$ is the Koszul stabilization of its branch
+module. Indeed its exterior coefficients generate $J_a$
+and its contraction coefficients express $W_h$ in that
+regular sequence. The Koszul stabilization is obtained
+by adding the corresponding multiplication-by-$W_h$
+homotopy to the Koszul resolution.\footnote{
+T.~Dyckerhoff, \emph{Compact generators in categories of
+matrix factorizations}.
+\href{https://arxiv.org/abs/0904.4713}{arXiv:0904.4713},
+Section~2.3, Lemma~2.6 and Corollary~2.7. Section~2.4
+extends the construction to regular nonlocal rings.
+
+Exterior--contraction duality changes the stabilization
+by a parity shift, which leaves its thick closure unchanged.}
+
+The full morphism comparison of
+Theorem~\ref{mc:tcrm:thm:marked-model} is multiplicative.
+It identifies $\mathcal E_h$ with the derived endomorphisms
+of $G$. The two Morita functors are
+$\operatorname{RHom}(G,-)$ and
+$-\otimes^{\mathbb L}_{\mathcal E_h}G$.
+
+At $h=0$ the derivative ideal becomes $(x,y)^2$.
+The two-step $(x,y)$-adic filtration reduces every module
+killed by this ideal to modules over the regular ring
+$R_0$. Proposition~\ref{mc:cgcr:prop:branches}, with the branch
+ideal repeated twice, proves the central assertion.
+Theorem~\ref{mc:tcrm:thm:Clifford} supplies its endomorphism
+algebra.
+\end{proof}
+
+The proof also applies to finite projective factorizations
+over $\mathbb C[P,Q,T][[h]][x,y]$.
+The branch quotients remain regular, the filtrations are
+finite, and the morphism contractions are coefficient-linear.
+The cyclic comparisons
+below concern the finite-type algebraic models.
+
+\section{Failure under multiplier specialization}
+
+\begin{proposition}\label{mc:cgcr:prop:specialization}
+For $R\to\mathbb C$ given by $h=P=Q=T=0$, the natural functor
+\[
+ \operatorname{Perf}(\mathcal E_h\otimes_R^{\mathbb L}\mathbb C)
+       \longrightarrow\operatorname{MF}(\mathbb A^2,0)^\pi
+\]
+is not essentially surjective.
+\end{proposition}
+
+\begin{proof}
+All three images are
+$K_0=(\mathbb C[x,y]\otimes\Lambda^*\mathbb C^2,xe_1+ye_2)$.
+On $x\ne0$, contraction by $\iota_1/x$ contracts $K_0$.
+On $y\ne0$, use $\iota_2/y$. Its thick closure vanishes
+away from the origin. The free even factorization
+$(\mathcal O_{\mathbb A^2},0)$ does not vanish there.
+It therefore lies outside the image.
+\end{proof}
+
+The coefficient-linear contractions in
+Theorem~\ref{mc:tcrm:thm:marked-model} do survive this base
+change, so the functor still computes the full subcategory
+generated by $K_0$. What fails is generation of the new
+ambient category: an arbitrary zero-potential object has
+no multiplier derivatives from which to obtain the
+homotopies \eqref{mc:cgcr:eq:Jacobian-homotopy}.
+
+\section{A monomial and its higher products}
+\label{mc:rmf:sec:monomial}
+
+One object already distinguishes a higher operation from
+its periodic invariant. The potential $\lambda z^m$ has
+multiplicity $m$, while its binary cohomology algebra is
+the same for every $m\ge3$.
+We keep $\lambda$ as a parameter and compute the complete
+minimal algebra of its chosen factorization.
+
+Put $R=\mathbb C[\lambda]$, $S=R[z]$ and $m\ge2$.
+All complexes in this section are $\mathbb Z/2$-graded,
+with even scalar coefficients. On the free module
+$S^{1|1}$ define
+\begin{equation}\label{mc:rmf:eq:factorization}
+ D_m=\begin{pmatrix}0&z\\\lambda z^{m-1}&0\end{pmatrix},
+ \qquad D_m^2=\lambda z^m I.
+\end{equation}
+Let $A_m=\operatorname{End}_S(S^{1|1})$, with differential
+$\delta a=D_ma-(-1)^{|a|}aD_m$.
+The square of this differential is zero because $D_m^2$
+is scalar.
+
+\subsection{The parameter-linear contraction}
+
+Set
+\begin{equation}\label{mc:rmf:eq:matrices}
+ J=\begin{pmatrix}0&-1\\\lambda z^{m-2}&0\end{pmatrix},
+ \qquad H=\begin{pmatrix}0&0\\1&0\end{pmatrix},
+ \qquad E=\begin{pmatrix}1&0\\0&0\end{pmatrix}.
+\end{equation}
+The first two matrices are odd and the third is even.
+Direct multiplication gives
+\begin{equation}\label{mc:rmf:eq:pairs}
+ \delta J=0,\qquad \delta H=zI,\qquad
+ \delta E=zJ,\qquad J^2=-\lambda z^{m-2}I.
+\end{equation}
+Every even matrix has a unique expression $aI+bE$,
+and every odd matrix a unique expression $aJ+bH$,
+with $a,b\in R[z]$.
+
+\begin{proposition}\label{mc:rmf:prop:contraction}
+The cohomology of $A_m$ is the free $R$-module
+$R1\oplus R\chi$, with $1$ even and $\chi=[J]$ odd.
+For $a_0=a|_{z=0}$, define
+\begin{align*}
+ p(aI+bE)&=a_0\,1,&p(aJ+bH)&=a_0\chi,\\
+ i(1)&=I,&i(\chi)&=J,\\
+ \mathsf h(aI+bE)&=\frac{a-a_0}{z}H,
+ &\mathsf h(aJ+bH)&=\frac{a-a_0}{z}E.
+\end{align*}
+Then $pi=1$, $\delta\mathsf h+\mathsf h\delta=1-ip$ and
+$\mathsf h^2=\mathsf h i=p\mathsf h=0$. These identities survive every
+commutative base change of $R$.
+\end{proposition}
+
+\begin{proof}
+Equations~\eqref{mc:rmf:eq:pairs} split the underlying
+complex into two copies of multiplication by $z$:
+one sends $H$ to $zI$, and the other sends $E$ to $zJ$.
+This computes the cohomology. The polynomial $a-a_0$
+is divisible by $z$, so the displayed homotopy uses
+no localization. Applying $\delta\mathsf h+\mathsf h\delta$ to
+$aI+bE$ gives $(a-a_0)I+bE$, and applying it to
+$aJ+bH$ gives $(a-a_0)J+bH$.
+The other identities follow from the same decomposition.
+All formulas are polynomial in $\lambda$ and require
+no flatness of its specialization.
+\end{proof}
+
+\subsection{Every arity from one polynomial identity}
+
+Let $s$ denote parity suspension, so $|sa|=|a|-1$.
+Our suspended differential and multiplication on a dg
+algebra are
+\begin{equation}\label{mc:rmf:eq:bar-signs}
+ b_1(sa)=-s(\delta a),\qquad
+ b_2(sa,sb)=(-1)^{|a|}s(ab).
+\end{equation}
+The maps $b_n$ extend by the tensor signs to a degree-one
+coderivation on the tensor coalgebra of the suspension.
+An $A_\infty$ structure means that this coderivation
+squares to zero. A morphism means a coalgebra map
+commuting with these coderivations.
+
+Introduce an even auxiliary variable $\tau$ and put
+\begin{equation}\label{mc:rmf:eq:translated}
+ D_m(\tau)=
+ \begin{pmatrix}
+  0&z-\tau\\
+  \displaystyle\lambda\sum_{j=0}^{m-1}z^{m-1-j}\tau^j&0
+ \end{pmatrix}.
+\end{equation}
+The geometric sum gives
+\[
+ D_m(\tau)^2=\lambda(z^m-\tau^m)I.
+\]
+Writing $a(\tau)=D_m(\tau)-D_m=\sum_{j=1}^{m-1}\tau^jA_j$,
+we obtain
+\begin{equation}\label{mc:rmf:eq:Taylor}
+ A_1=J,\qquad A_j=\lambda z^{m-1-j}H\quad(2\le j<m),
+ \qquad \delta a(\tau)+a(\tau)^2=-\lambda \tau^mI.
+\end{equation}
+
+\begin{theorem}\label{mc:rmf:thm:minimal}
+On $R1\oplus R\chi$, put the strict unit products and
+the single additional reduced coefficient
+\begin{equation}\label{mc:rmf:eq:higher}
+ b_m((s\chi)^{\otimes m})=\lambda s1.
+\end{equation}
+A reduced coefficient has no unit among its inputs.
+All other reduced coefficients vanish. These operations
+give a strictly unital minimal $A_\infty$ algebra.
+
+There is an $A_\infty$ quasi-isomorphism to $A_m$ with
+\begin{equation}\label{mc:rmf:eq:comparison}
+ F_1(s1)=sI,\qquad
+ F_j((s\chi)^{\otimes j})=sA_j\quad(1\le j<m).
+\end{equation}
+All remaining components are zero, including every
+$F_j$ with $j>1$ and a unit input.
+The formulas commute with arbitrary commutative
+base change of $R$.
+\end{theorem}
+
+\begin{proof}
+Every word without units is a power of $s\chi$,
+which has even parity. On such words the equation
+$b_{A_m}F=Fb$ has generating series
+\[
+ -s\bigl(\delta a(\tau)+a(\tau)^2\bigr)
+       =\lambda \tau^m sI.
+\]
+This is \eqref{mc:rmf:eq:Taylor}. On the right, a source
+$b_m$ creates $s1$. A higher component of $F$ with that
+unit input is zero. Only $F_1(s1)$ at arity $m$ remains.
+
+For words containing a unit, strict unitality fixes
+$b_2(s1,sa)=sa$ and
+$b_2(sa,s1)=(-1)^{|a|}sa$.
+Deleting a unit on its left or on its right gives
+opposite terms after the tensor sign. Internal terms
+therefore cancel in pairs. At either endpoint the
+remaining term equals multiplication by the target
+unit $I$. Every higher coefficient with a unit input
+vanishes. This proves the morphism equation on all words.
+
+The same cancellation proves $b^2=0$. For $m\ge3$,
+an inner $b_m$ creates a unit, so it cannot be an input
+to another normalized higher coefficient. The only
+remaining terms are the two adjacent binary unit terms,
+which cancel. For $m=2$, the assertion is associativity
+of the algebra with unit and relation $\chi^2=-\lambda$.
+Finally $F_1=i$ induces the cohomology isomorphism of
+Proposition~\ref{mc:rmf:prop:contraction}. The polynomial
+formulas and that contraction persist after base change.
+\end{proof}
+
+For $m=2$, \eqref{mc:rmf:eq:higher} is the Clifford
+product $\chi^2=-\lambda$. For $m\ge3$, the binary
+product has $\chi^2=0$, while the first nonzero reduced
+higher operation has arity $m$ when $\lambda\ne0$.
+At $\lambda=0$, every reduced coefficient vanishes.
+The model becomes the exterior algebra on $\chi$.
+
+The field version relating higher multiplications to
+potential coefficients is Dyckerhoff's theorem.\footnote{
+T.~Dyckerhoff, \emph{Compact generators in categories of
+matrix factorizations}.
+\href{https://arxiv.org/abs/0904.4713}{arXiv:0904.4713},
+Section~5.6, Theorem~5.8. The present formulas specify
+the coefficient parameter, the suspension signs and
+the complete comparison for the chosen object.}
+
+\begin{corollary}\label{mc:rmf:cor:multiplicity}
+Fix a nonzero complex value of $\lambda$ and $m\ge3$.
+Among these strictly unital minimal algebras, the arity
+of the first nonzero reduced higher operation is
+preserved by $A_\infty$ isomorphisms. In particular,
+it determines $m$.
+\end{corollary}
+
+\begin{proof}
+A parity-preserving unital isomorphism has linear term
+$\chi\mapsto c\chi$ with $c\ne0$.
+On a pure $s\chi$ word, every Taylor component has even
+parity in the suspension. Its value therefore lies in
+the line spanned by $s\chi$.
+
+Before the first higher operation, the morphism
+equations involve only products of two odd elements,
+which are zero. At that first arity, the nonzero
+$s1$ coefficient can only be matched by a higher
+operation of the same arity in the other algebra.
+Its coefficient changes by the nonzero factor $c^m$.
+The first arity is therefore unchanged.
+\end{proof}
+
+\begin{proposition}\label{mc:cgcr:prop:monomial}
+With $\lambda$ retained as a variable, $D_m$ split-generates
+$\operatorname{MF}(\mathbb C[\lambda,z],\lambda z^m)^\pi$.
+\end{proposition}
+
+\begin{proof}
+The multiplier derivative of any factorization differential
+contracts $z^m$ by \eqref{mc:cgcr:eq:Jacobian-homotopy}.
+Use $m$ copies of the branch ideal $(z)$ in
+Proposition~\ref{mc:cgcr:prop:branches}. Their product is
+$(z^m)$ and the quotient is the regular ring
+$\mathbb C[\lambda]$. Its Koszul stabilization is $D_m$.
+\end{proof}
+
+Thus the minimal algebra above gives a Morita model of
+the total polynomial family. After specializing $\lambda$,
+its explicit endomorphism comparison remains valid.
+That comparison alone does not prove generation of the
+specialized ambient category.
+
+\section{Absolute Hochschild coefficients}
+
+All invariants in this section are over $\mathbb C$.
+For a complex dg category $\mathcal A$, its Hochschild
+cochain complex is the derived endomorphism complex of
+the diagonal bimodule:
+\[
+ C^\bullet(\mathcal A)=R\operatorname{Hom}_{
+     \mathcal A^{\mathrm{op}}\otimes_{\mathbb C}\mathcal A}
+                  (\mathcal A,\mathcal A).
+\]
+The diagonal has component $\operatorname{Hom}_{\mathcal A}(a,b)$
+at the object pair $(a,b)$.
+Its cohomology is $\operatorname{HH}^*(\mathcal A)$.
+
+Suppose a smooth Landau--Ginzburg model has all critical
+points in the zero fiber. Its absolute Hochschild cohomology
+is computed by polyvectors with differential given by
+contraction with $dW$.\footnote{K.~H.~Lin and D.~Pomerleano,
+\emph{Global matrix factorizations}.
+\href{https://arxiv.org/abs/1101.5847}{arXiv:1101.5847},
+Theorem~3.1 and Lemma~3.3. The complex is absolute,
+so it includes multiplier derivatives.}
+
+Return to $R_0=\mathbb C[P,Q,T]$ and $S_0=R_0[x,y]$.
+For $W_0=Px^2+Txy+Qy^2\in S_0$, the identity
+$W_0=P\partial_PW_0+Q\partial_QW_0+T\partial_TW_0$
+verifies the critical-value hypothesis.
+
+\begin{proposition}\label{mc:cgcr:prop:Hochschild}
+The absolute Hochschild cohomology of
+$\operatorname{MF}(S_0,W_0)^\pi$ is the parity folding
+of the cohomology of
+\begin{equation}\label{mc:cgcr:eq:Jacobian}
+ \mathcal J=\frac{R_0[x,y]}{(x^2,y^2)}
+                 \otimes\Lambda(\alpha,\beta,\gamma),
+ \quad
+ \begin{cases}
+ d\alpha=xy,\\
+ d\beta=2Px+Ty,\\
+ d\gamma=Tx+2Qy,
+ \end{cases}
+\end{equation}
+where $|\alpha|=|\beta|=|\gamma|=-1$.
+As an $R_0$-complex, its free ranks in degrees
+$0,-1,-2,-3$ are $4,12,12,4$.
+Moreover,
+\begin{equation}\label{mc:cgcr:eq:zeroth}
+ H^0(\mathcal J)=R_0\oplus M,\qquad M^2=0,
+ \qquad M=\operatorname{coker}
+       \begin{pmatrix}2P&T\\T&2Q\end{pmatrix}.
+\end{equation}
+The dimensions of its derived fibers are
+\[
+\begin{array}{c|rrrr}
+ \text{rank of the quadratic form}&H^0&H^{-1}&H^{-2}&H^{-3}\\\hline
+ 2&1&3&3&1\\
+ 1&2&6&6&2\\
+ 0&3&9&9&3.
+\end{array}
+\]
+\end{proposition}
+
+\begin{proof}
+The five gradient entries are
+$x^2,y^2,xy,2Px+Ty,Tx+2Qy$.
+The first two are a regular sequence. Tensoring their
+Koszul resolution with the other free Koszul factors
+and then augmenting gives \eqref{mc:cgcr:eq:Jacobian}.
+In degree zero all products of $x,y$ vanish, while their
+linear relations are the columns in \eqref{mc:cgcr:eq:zeroth}.
+
+At a rank-two form the two linear gradients are independent
+coordinates. Eliminating them leaves three closed exterior
+generators over $\mathbb C$.
+
+At a rank-one form, make a
+linear change to a nonzero square. One linear gradient
+and the square of the remaining coordinate form a regular
+sequence, with a length-two quotient. The three excess
+Koszul generators are closed after elementary generator
+changes.
+
+At the zero form, multiplication by $xy$ on
+$\mathbb C[x,y]/(x^2,y^2)$ has rank one. Its kernel and
+cokernel both have dimension three. The other two exterior
+generators are closed. These three computations give the table.
+\end{proof}
+
+Here $H^0$ means integer Koszul degree zero, rather than
+the entire even group after folding. The module $M$ is
+supported on $4PQ-T^2=0$, has rank one at its generic
+point, and needs two generators at the vertex.
+
+The strict supercenter consists of elements that
+supercommute with every Clifford generator.
+For the universal Clifford algebra it is $R_0$.
+An even central coefficient of $\gamma_1\gamma_2$ must vanish.
+An odd central vector lies in the kernel of the displayed
+Hessian, which is zero over the polynomial domain. At $P=Q=T=0$ the Clifford
+algebra becomes exterior and is entirely supercentral.
+Thus strict supercenters also need not commute with base
+change.
+
+The table describes fibers of the fixed absolute
+complex. It makes no identification with invariants of
+every newly specialized matrix-factorization category.
+
+\subsection{The monomial Hochschild modules}
+
+For $F_m=\lambda z^m$, the absolute gradient has two entries.
+They retain the multiplier derivative even when one later
+takes a fiber over the multiplier base.
+
+\begin{proposition}\label{mc:prop:monomial-Hochschild}
+For $m\ge2$, the absolute gradient Koszul complex has
+\begin{align}
+ H^0&=\mathbb C[\lambda,z]/(z^m,\lambda z^{m-1}),\notag\\
+ H^{-1}&=\bigl(\mathbb C[\lambda,z]/(z^{m-1})\bigr)\theta,
+ &\theta&=m\lambda\epsilon_\lambda-z\epsilon_z,
+ \label{mc:cgcr:eq:monomial-HH}\\
+ H^{-2}&=0.\notag
+\end{align}
+Its parity folding gives absolute Hochschild cohomology.
+\end{proposition}
+
+\begin{proof}
+The differential is
+$d\epsilon_\lambda=z^m$,
+$d\epsilon_z=m\lambda z^{m-1}$.
+Cancel $z^{m-1}$ in the syzygy equation in the polynomial
+domain. The regular pair $(z,m\lambda)$ has syzygies
+generated by $(m\lambda,-z)$.
+The degree-minus-two boundary is $-z^{m-1}\theta$,
+with zero kernel. The degree-zero quotient gives the
+remaining assertion.
+\end{proof}
+
+\section{The mixed cyclic comparison}
+
+For a complex dg category $\mathcal A$, let
+$CC_\bullet(\mathcal A)$ be its absolute Hochschild bar
+complex, with internal and Hochschild differential $b$
+and Connes differential $B$. These odd operators satisfy
+$b^2=B^2=bB+Bb=0$. Its periodic cyclic homology is the
+cohomology of $(CC_\bullet(\mathcal A)((u)),b+uB)$,
+where $u$ is an even formal variable. Laurent series have
+finitely many negative powers and arbitrary nonnegative
+powers of $u$. For
+$\mathcal A=\mathcal C_h$, the bar words range over all
+composable cycles of its three objects.
+
+A $u$-connection is an operator $\nabla_u=\partial_u+A(u)$,
+where $A(u)$ is $\mathbb C((u))$-linear and
+$[\nabla_u,b+uB]=(b+uB)/(2u)$.
+A mixed-complex map $f$ is weakly compatible with
+connections if there is an odd $\mathbb C((u))$-linear map
+$H$ such that
+\[
+ \nabla'_u f-f\nabla_u=(b'+uB')H+H(b+uB).
+\]
+Here $f$ also denotes its extension to Laurent series.
+
+Return to $R=\mathbb C[h,P,Q,T]$ and $S=R[x,y]$.
+Efimov's comparison, applied to the Morita equivalence
+\eqref{mc:cgcr:eq:Morita}, gives a zigzag of quasi-isomorphisms
+of mixed complexes
+\begin{equation}\label{mc:cgcr:eq:cyclic}
+ (CC_\bullet(\mathcal E_h),b,B)
+     \simeq(\Omega_S^\bullet,-dW_h\wedge,d).
+\end{equation}
+The comparison is weakly compatible with the connections.
+
+It passes from curved modules through the completed
+curved bar complexes for $(S,-W_h)$ and $(S,W_h)$.
+Their completion is the product over bar-word lengths.
+It allows the curvature term to insert an additional
+bar entry while retaining an infinite sequence of lengths.
+
+The final curved Hochschild--Kostant--Rosenberg map is
+\[
+ a_0[a_1|\cdots|a_k]\longmapsto
+       \frac{a_0}{k!}\,da_1\wedge\cdots\wedge da_k.
+\]
+Its inputs are scalar curved-bar words after those
+comparisons, not Clifford words.\footnote{A.~I.~Efimov,
+\emph{Cyclic homology of categories of matrix factorizations}.
+\href{https://arxiv.org/abs/1212.2859v2}{arXiv:1212.2859v2},
+Theorems~1.1--1.4, Proposition~3.14 and Section~4,
+equations~(4.2)--(4.6). The hypotheses are smoothness,
+separation, finite type and characteristic zero, with
+the critical locus contained in the zero fiber.
+The linear multiplier identity verifies the last condition.}
+
+On the de Rham side the differential and connection are
+\begin{equation}\label{mc:cgcr:eq:connection}
+ Q_u=-dW_h\wedge+ud,\qquad
+ \nabla_u=\partial_u+\frac{\Gamma}{u}+\frac{W_h}{u^2},
+ \qquad \Gamma|_{\Omega^p}=-p/2.
+\end{equation}
+They satisfy $Q_u^2=0$ and
+$[\nabla_u,Q_u]=Q_u/(2u)$.
+Indeed the four nonzero commutator terms are
+$d$, $(dW_h\wedge)/(2u)$, $-d/2$ and
+$-(dW_h\wedge)/u$. Their sum is the stated expression.
+All six affine coordinates, including $h,P,Q,T$, are
+differentiated. For $h$ fixed, the corresponding
+five-variable absolute model is a separate application.
+
+Even a length-one bar boundary uses both return paths.
+In the convention where it is the supercommutator,
+closed odd maps $f:0\to1$ and $g:1\to0$, both represented
+by $\gamma_1$, give
+\[
+ b(g[f])=gf-(-1)^{|f||g|}fg=-P1_0-P1_1.
+\]
+This relates the two returns. It does not kill each term
+separately or permit the intermediate object to be deleted.
+
+\section{The grading of the periodic realization}
+
+Let $M$ be a smooth quasi-projective complex $d$-fold
+with potential $F$.
+Form the quotient of its dg category of coherent matrix
+factorizations by the thick subcategory generated by
+totalizations of short exact sequences.
+Write $\operatorname{MF}(M,F)$ for its idempotent completion.
+Assume that every critical point lies in $F^{-1}(0)$.
+
+Write $\phi_F$ for classical vanishing cycles and normalize
+$\Phi_F=\phi_F[-1]\mathbb Q_M[d]$.
+We regard this complex on $M$ by extension by zero.
+Efimov's periodic comparison identifies
+$\operatorname{HP}_k$ with the parity folding of
+$H^{k-1}(F^{-1}(0),\phi_F\mathbb C_M)((u))$,
+with connection monodromy $T_F(-1)^k$.
+
+Consequently
+\begin{equation}\label{mc:cgcr:eq:degrees}
+ \begin{aligned}
+ H^j(M,\Phi_F)&\longleftrightarrow
+ H^{j+d-1}(F^{-1}(0),\phi_F\mathbb Q_M),\\
+ k&=j+d.
+ \end{aligned}
+\end{equation}
+Here $T_F$ is monodromy in the value of $F$.
+The support convention is ordinary cohomology. The multiplier
+projection need not be proper.
+
+For the Morse function $xy$ on $\mathbb A^2$, the Milnor
+fiber is homotopy equivalent to a circle.
+Its reduced cohomology is in degree one, giving even
+periodic degree $k=2$.
+For $x^2$ on $\mathbb A^1$, the two-point Milnor
+fiber has reduced cohomology in degree zero, giving odd
+periodic degree $k=1$. These examples fix the shift.
+
+For the central triangle,
+Proposition~\ref{vc:cqm:prop:integral} gives
+$R\Gamma(\mathbb A^3,\Phi_{W_0})=\mathbb Q[1]$.
+The single normalized degree is $j=-1$ and $d=5$.
+Thus the raw vanishing degree is $3$ and the periodic
+degree is $4$. We obtain
+\begin{equation}\label{mc:cgcr:eq:central-periodic}
+ \operatorname{HP}_{\bar0}\operatorname{MF}(\mathbb A^5,W_0)
+      =\mathbb C((u)),\qquad
+ \operatorname{HP}_{\bar1}=0.
+\end{equation}
+
+The nonzero summand $\mathcal P_-$ of
+Theorem~\ref{vc:cqm:thm:coefficient} is self-dual.
+Its compact cohomology vanishes by
+Proposition~\ref{vc:cqm:prop:integral}, so Verdier duality
+also makes its ordinary cohomology zero.
+It contributes nothing to these global periodic groups.
+
+Raw function monodromy is $+1$ on this class. The even
+periodic degree leaves that sign unchanged.
+
+At a fixed
+nonzero numerical $h$, the three multiplier lines of
+Proposition~\ref{vc:cicp:prop:triangle-strata} are Morse--Bott
+with four hyperbolic normal coordinates. Their orientation
+local systems are constant on the affine lines. Each
+contributes one even class, giving periodic ranks $(3,0)$.
+These are separately specified absolute categories.
+
+\begin{corollary}\label{mc:cor:monomial-periodic}
+For every $m\ge2$, the absolute periodic cyclic ranks
+of $\operatorname{MF}(\mathbb A^2,\lambda z^m)^\pi$
+are $(1,0)$.
+\end{corollary}
+
+\begin{proof}
+For $\Phi_m=\varphi_{F_m}\mathbb Q[2]$, dimensional
+reduction over the multiplier has
+$R\pi_!\Phi_m=\mathbb Q_{\{z=0\}}$ in rational sheaves.
+Verdier duality gives the same ordinary pushforward.
+Its normalized ordinary cohomology therefore has one
+class in degree zero. The ambient dimension is two,
+so \eqref{mc:cgcr:eq:degrees} puts it in even periodic degree.
+\end{proof}
+
+The absolute Hochschild modules in
+\eqref{mc:cgcr:eq:monomial-HH} depend on $m$, as does the
+first reduced operation in Theorem~\ref{mc:rmf:thm:minimal}.
+The constant periodic ranks determine neither datum.
+No assertion about conservativity of a categorical functor
+follows from this equality of ranks alone.
+
+\section{Global elliptic sectors and periodic ranks}
+
+Let $E$ be a complex elliptic curve,
+$\Theta=\mathcal O_E(0)$ its theta line, and $\vartheta$
+its divisor section. Fix $n\ge1$, set $h=[n]t$, and put
+$B_n=E_x\times E_y\times E_t$.
+For $u_1=x,u_2=y,u_3=x+y$, define
+\[
+ \mathcal S_i=u_i^*\Theta\otimes(u_i+[n]t)^*\Theta,
+ \qquad s_i=\vartheta(u_i)\vartheta(u_i+[n]t).
+\]
+Let $V_n=\bigoplus_i\mathcal S_i$,
+$M_n=\operatorname{Tot}_{B_n}(V_n^\vee)$, and
+$F_n=\langle\lambda,s\rangle$.
+This is a smooth quasi-projective sixfold with a global
+regular function. Fiberwise multiplier dilation shows
+that every critical point lies in its zero fiber.
+
+\begin{proposition}\label{mc:cgcr:prop:extra-sectors}
+Above each point with $[n]t\in E[2]\setminus\{0\}$ and
+$x=y=-[n]t$, the potential at $\lambda=0$ has analytic
+local form $pu+qv+rw$. The factorization
+\begin{equation}\label{mc:cgcr:eq:extra}
+ D_{\mathrm{extra}}=ue_1+ve_2+we_3
+                         +p\iota_1+q\iota_2+r\iota_3
+\end{equation}
+on $\mathcal O\otimes\Lambda^*\mathbb C^3$ is a generator over the convergent local ring of this
+chart, and over its formal completion. Its endomorphism
+cohomology is $\mathbb C$ in
+even parity and zero in odd parity. The three moving
+branch objects vanish near these points. There are
+$3n^2$ such local sectors.
+\end{proposition}
+
+\begin{proof}
+The fourth branch and its torsion condition are those of
+Theorem~\ref{ei:esf:thm:global-fibers} and
+\eqref{ei:esf:eq:fourth-branch}.
+The first two sections have simple roots at the indicated
+fourth branch point. Use them as coordinates $u,v$.
+Subtract their multiples from the third section. On
+their common branch its restriction is
+$\vartheta(-2h)\vartheta(-h)$.
+
+At nonzero two-torsion this has a simple zero in $h$,
+since $[2]$ is \'{e}tale and $\vartheta(-h)\ne0$.
+It is therefore a third coordinate $w$.
+The dual change of multiplier frame gives $F_n=pu+qv+rw$.
+The point of the $t$-curve is also unramified under $[n]$.
+
+Exterior--contraction relations prove
+$D_{\mathrm{extra}}^2=F_n1$.
+The endomorphism differential sends
+$\iota_i$ to $(u,v,w)_i$ and $e_i$ to $(p,q,r)_i$.
+The resulting six-coordinate Koszul complex resolves
+$\mathbb C$. Generation follows by the smooth-branch
+argument with $(u,v,w)$, or by iterated hyperbolic
+stabilization. The three other branch supports are
+disjoint from this point, so their objects restrict to
+zero there. Finally each of the three nonzero points
+of $E[2]$ has $n^2$ preimages under $[n]$.
+\end{proof}
+
+At fixed $w=0$ the relative chart has two hyperbolic
+pairs and a free multiplier direction $r$. The proposition
+uses the absolute chart, in which $w$ is a coordinate.
+It constructs local generators. A global finite generator
+with all descent maps is a further construction.
+
+Write $Z_n$ for the reduced common zero locus of the $s_i$.
+Its curve part consists of three copies of $E$,
+\[
+ C_0=(0,0,t),\qquad C_1=(0,-[n]t,t),\qquad
+ C_2=(-[n]t,0,t).
+\]
+They meet at the $n^2$ points $t\in E[n]$.
+The remaining points are exactly the $3n^2$ points of
+Proposition~\ref{mc:cgcr:prop:extra-sectors}.
+
+\begin{theorem}\label{mc:cgcr:thm:global-periodic}
+The Betti numbers and absolute periodic cyclic ranks are
+\begin{align}
+ (b_0,b_1,b_2)(Z_n)&=(1+3n^2,\,2n^2+4,\,3),
+       \label{mc:cgcr:eq:Betti}\\
+ \dim_{\mathbb C((u))}\operatorname{HP}_{\bar0}
+             \operatorname{MF}(M_n,F_n)&=3n^2+4,\notag\\
+ \dim_{\mathbb C((u))}\operatorname{HP}_{\bar1}
+             \operatorname{MF}(M_n,F_n)&=2n^2+4.
+       \label{mc:cgcr:eq:global-periodic}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+The first two constraints force $x,y\in\{0,-[n]t\}$.
+Evaluating the third gives exactly the stated locus.
+For $C=C_0\cup C_1\cup C_2$, normalization has the
+exact sheaf sequence
+\begin{equation}\label{mc:cgcr:eq:normalization}
+ 0\longrightarrow\mathbb Q_C
+ \longrightarrow\bigoplus_{i=0}^2(\nu_i)_*\mathbb Q_E
+ \longrightarrow\bigoplus_{t\in E[n]}\mathbb Q_t^2
+ \longrightarrow0.
+\end{equation}
+The last map is $(a,b,c)\mapsto(b-a,c-a)$ at every
+intersection. Its map on global constants has rank two.
+The long exact sequence therefore gives
+$b_0(C)=1$, $b_1(C)=6+(2n^2-2)$ and $b_2(C)=3$.
+
+The isolated points give \eqref{mc:cgcr:eq:Betti}.
+In particular $\chi(Z_n)=n^2$.
+
+Let $\pi:M_n\to B_n$ and $i:Z_n\hookrightarrow B_n$.
+For $\Phi_n=\phi_{F_n}[-1]\mathbb Q_{M_n}[6]$,
+linear-potential dimensional reduction gives
+\begin{equation}\label{mc:cgcr:eq:reduction}
+ R\pi_!\Phi_n\simeq i_*\mathbb Q_{Z_n}.
+\end{equation}
+The base dimension and vector-bundle rank are both three.
+
+This formula is for rational sheaves. Its mixed-Hodge
+version includes the Tate twist $(-3)$.\footnote{
+B.~Davison, \emph{The critical CoHA of a quiver with
+potential}, \href{https://arxiv.org/abs/1311.7172}{arXiv:1311.7172},
+Theorem~A.1. T.~Kinjo, \emph{Dimensional reduction in
+cohomological Donaldson--Thomas theory},
+\href{https://arxiv.org/abs/2102.01568}{arXiv:2102.01568},
+equation~(1.1) and Theorem~4.14.
+Use the critical-chart orientation and its comparison
+with the canonical shifted-cotangent orientation.}
+
+Verdier self-duality of $\Phi_n$ turns the compact
+pushforward into
+$R\pi_*\Phi_n\simeq i_*\omega_{Z_n}$,
+where $\omega_{Z_n}$ is the rational dualizing complex.
+Since $Z_n$ is proper,
+\[
+ H^j(M_n,\Phi_n)=H^{-j}(Z_n,\mathbb Q)^\vee.
+\]
+
+The normalized degrees are $0,-1,-2$.
+Equation~\eqref{mc:cgcr:eq:degrees} gives raw vanishing
+degrees $5,4,3$ and periodic degrees $6,5,4$.
+Thus the even periodic rank is $b_0+b_2$ and the odd
+rank is $b_1$, proving \eqref{mc:cgcr:eq:global-periodic}.
+\end{proof}
+
+The ranks are $(7,6)$ on the displacement base $n=1$
+and $(16,12)$ on the half-displacement cover $n=2$.
+They are invariants of the absolute global spectral
+category. A relative cyclic complex over the $t$-curve,
+its base-change maps and its connection in $t$ require
+their own construction. The periodic $u$-connection has
+the comparison above. The rank formula does not compute
+its full monodromy matrix.
+
+\section{The coherent comparison and its grading}
+
+The same equations have the coherent Koszul algebra
+\begin{equation}\label{mc:tcrm:eq:coherent-Koszul}
+ K_h=\mathbb C[h,x,y]\otimes\Lambda(\epsilon_1,\epsilon_2,\epsilon_3),
+ \qquad
+ \begin{cases}
+ d\epsilon_1=x(x+h),\\
+ d\epsilon_2=y(y+h),\\
+ d\epsilon_3=xy,
+ \end{cases}
+ \qquad |\epsilon_i|=-1.
+\end{equation}
+Its coherent derived category is related to an
+equivariant singularity category of the potential,
+with the multiplier grading retained.
+Precisely, let $X=\mathbb A^3_{h,x,y}$ and let
+$Z=\{W_h=0\}\subset X\times\mathbb A^3_{P,Q,T}$.
+The multiplicative group dilates $P,Q,T$ with
+weight one. The equivariant singularity category
+is the quotient of bounded equivariant coherent
+complexes on $Z$ by equivariant perfect complexes.
+
+Isik's Koszul duality identifies it with the bounded
+coherent derived category of $K_h$. The nonregular
+section requires the Koszul dg algebra in place of
+its degree-zero cohomology.\footnote{M.~U.~Isik,
+\emph{Equivalence of the derived category of a variety
+with a singularity category}.
+\href{https://arxiv.org/abs/1011.1484}{arXiv:1011.1484},
+Theorem~3.6 and Remark~3.7. Here the smooth ambient
+scheme is the absolute space $\mathbb A^3_{h,x,y}$.
+The section is $(x(x+h),y(y+h),xy)$.}
+
+This graded equivalence has a different source of
+grading from the parity category in
+Definition~\ref{mc:tcrm:def:category}. To use it for
+the marked objects, one must specify their graded
+lifts, the parameter-linear functor and its effect
+on the objects and their compositions.
+
+\begin{question}\label{mc:tcrm:qn:coherent-comparison}
+Construct the graded lifts and the $\mathbb C[h]$-linear
+Koszul-duality comparison.
+Require it to carry the point modules at $(0,0)$, $(-h,0)$
+and $(0,-h)$ of \eqref{mc:tcrm:eq:coherent-Koszul} to the
+objects \eqref{mc:tcrm:eq:objects}.
+Specify the shifts and periodization. How does it identify their
+Yoneda products with \eqref{mc:tcrm:eq:returns} and
+\eqref{mc:tcrm:eq:transit}, and the coherent higher
+operations with the relative operations of the
+marked category?
+\end{question}
+
+\section{The compact categorical comparison}
+
+The Morita equivalence \eqref{mc:cgcr:eq:Morita} identifies
+two descriptions of the specified polynomial potential.
+An identification with a compact sheaf deformation
+potential requires an additional geometric map.
+The half-displacement cover, the quadratic determinant
+cover and the Enriques canonical cover have different bases.
+Comparing their lines requires maps between those bases.
+The genus-two parameter family and weight-five automorphic
+line also remain separate constructions.
+
+\begin{question}\label{mc:cgcr:qn:compact-comparison}
+Construct the comparison from compact translation-reduced
+critical Hall coefficients to the spectral category or
+to an independently specified state endomorphism category.
+Which maps preserve extension pullback and pushforward,
+orientation, the common translation torsor, the relative
+empty object and the reduced state? How do they carry
+the return products of \eqref{mc:tcrm:eq:returns}, the
+unintegrated summand $\mathcal P_-$ of
+Theorem~\ref{vc:cqm:thm:coefficient}, and the extra local
+objects \eqref{mc:cgcr:eq:extra}?
+
+Construct the coefficient comparison before global sections
+and before inverting $h$. Can it retain the arity in
+Theorem~\ref{mc:rmf:thm:minimal} and the parameter specialization
+map of Theorem~\ref{vc:vic:thm:specialization}?
+Give a finite global generator of the elliptic spectral
+category with its descent maps, including the extra local
+sectors. Identify the reduced marked state and the modular
+line and section required by the Igusa denominator.
+\end{question}

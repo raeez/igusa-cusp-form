@@ -1,0 +1,137 @@
+\section{The \texorpdfstring{\(N=1\)}{N=1} boundary comparison}
+\label{sec:n1-boundary-compatibility-conditions}
+
+A compact Hall realization must compare its source operations with
+the denominator datum, in addition to reproducing a scalar series.
+Here the geometric base is a smooth complex K3 surface \(S\) times a
+smooth elliptic curve \(E\). Singular K3 limits, nodal or cuspidal
+elliptic curves, imprimitive multiple covers, the compact Hall cusp
+and multi-component charge degenerations each require their own
+coefficient and specialization maps.
+
+The formal automorphic target has the ordered support
+\[
+ \begin{split}
+ \Gamma_{\mathrm{eff}}={}&
+ \{(n,l,m):m>0,\ n\ge0,\ l\in\mathbb Z\}\\
+ &\cup\{(n,l,0):n>0,\ l\in\mathbb Z\}
+ \cup\{(0,l,0):l<0\}.
+ \end{split}
+\]
+Only the degrees with \(f(nm,l)\ne0\) contribute factors. They
+generate the positive cone
+\[
+ C_+=\{(n,l,m):n,m,n+m-l\ge0\},\qquad
+ h(n,l,m)=2(n+m)-l.
+\]
+Positive-height completion is
+\[
+ \widehat{\mathbb Z[C_+]}=\mathbb Z[[qr,sr,r^{-1}]].
+\]
+The Lorentzian index map is
+\[
+ \alpha(n,l,m)=2nf_2-lf_3+2mf_{-2},
+ \qquad
+ (\alpha(\gamma),\alpha(\eta))
+       =-2\langle\gamma,\eta\rangle_{\mathrm{ind}},
+\]
+so \(\alpha(n,l,m)^2=-2(4nm-l^2)\).
+The simple roots and Weyl vector are
+\[
+ \delta_1=2f_2-f_3,\quad\delta_2=2f_{-2}-f_3,\quad\delta_3=f_3,
+ \qquad
+ \rho=f_2-\tfrac12f_3+f_{-2},\quad(\rho,\delta_i)=-1.
+\]
+These formulas fix the lattice, chamber and completion before the
+comparison is formulated.
+
+The scalar and algebraic targets are
+\[
+ \begin{gathered}
+ \operatorname{Borch}_{\theta}(\phi_{0,1}^{\mathrm{Weil}})=\Delta_5,
+ \qquad
+ \operatorname{den}(\mathfrak g_{\Delta_5})
+       =64^{-1}\Delta_5(2Z),\\
+ \operatorname{wt}(\Delta_5)=5,
+ \qquad Z^X_{\mathrm{OP}}=Z^X_{\mathrm{DT}}
+       =-4096\Delta_5^{-2}.
+ \end{gathered}
+\]
+The last equality has the primitive nonzero-K3-class and variable
+conventions of Chapter~\ref{ch:zbps-realization}. More generally a
+specified scalar branch may be written
+\(Z^X_{\square}=C_{\square}\Delta_5^{-2}\); its normalization
+constant does not define the geometric coefficient theory.
+
+Put \(W=W^{(2)}(\Lambda_{II}^{2,1})\). The orientation comparison
+requires
+\[
+ \epsilon_o|_W=\widetilde\nu_{\Delta_5}|_W
+\]
+for the homogeneous orthogonal character, including its line action.
+Weyl transport of a chosen root pair and the section-compatible wall
+charts supply the geometric side. Rescaling \(\Delta_5\) changes
+none of these character values.
+
+There are three distinct algebraic recipients. The denominator
+algebra is the graded Lie superalgebra \(\mathfrak g_{\Delta_5}\).
+Its ordinary enveloping algebra uses the usual Koszul tensor. The
+associative Ran object \(\mathcal A_{\Delta,E}\) of
+Section~\ref{subsec:koszul-source} uses its specified chiral
+convolution; comparison with a Beilinson--Drinfeld current envelope
+requires the separate current construction stated there. A notation
+such as \(U_E^{\mathrm{ch}}(\mathfrak g\otimes\mathcal O_E)\)
+does not identify these recipients or supply a geometric source.
+
+For a Hall--Drinfeld double, one must construct a compatible
+opposite half and the full pairing and cross relations in their
+actual tensor category. Serre duality of deformation complexes does
+not alone construct that double. The invariant form on the primitive
+Lie algebra has a different role from a Hopf-adjoint pairing; imposing
+both identities on the same ordinary primitive form would contradict
+the real \(\mathfrak{sl}_2\) sector.
+
+The recognition criterion of
+Theorem~\ref{thm:primitive-recognition} asks for actual geometric
+representatives, the Borcherds relations, generation and equality of
+the relation kernel. It preserves both parity dimensions and the
+invariant form, and then induces the ordinary filtered enveloping
+isomorphism. It does not infer these hypotheses from a product
+exponent. Even when all signed dimensions agree, additional even and
+odd root vectors could cancel in the scalar series. The fixed
+presentation and its ordinary denominator determine the target
+parities; a geometric map must still identify them.
+
+Finite degree sets retain partial operations with their actual output
+spaces. They are not automatically Lie subalgebras, and a symmetric
+root cutoff need not be a quotient preserving brackets. Relation
+identities must retain every intermediate degree. Quotienting a
+free presentation by a collection of defects constructs that
+quotient; it does not prove the same defects vanish on an
+independently defined compact source. Faithfulness and the
+absence of additional source relations remain necessary.
+
+The inverse-limit comparison also needs a common cofinal system,
+compatible maps and a specified completion. Ordinary cohomology
+commutes with that derived limit only under the corresponding
+exactness hypotheses. Centres, associators, supported field
+operations, states and protected traces require their own comparisons;
+they do not follow from the ordinary primitive recognition theorem.
+
+The eight Gritsenko--Cl\'ery input pairs and the cyclic CHL orders
+are different indexing systems, as explained in
+Chapter~\ref{ch:view2-bkm}. In particular, the labels
+\(F_5,F_6,F_7,F_8\) by themselves provide no map to a CHL
+denominator, no identified simple real roots or Weyl-sum side, and
+no compact geometric realization. An order-four multiplier can be
+realized on the corresponding character cover, but this operation
+alone constructs no nonabelian denominator algebra. Applying a
+separate CHL denominator theorem requires matching its actual seed,
+level, multiplier, cusp, lattice and presentation. A row map
+\(\Phi_j^{\mathrm{cmp}}\leftrightarrow F_i\) must be constructed;
+it is not part of the \(N=1\) theorem.
+
+The \(N=1\) automorphic and denominator data thus specify a concrete
+target. The compact problem is to build the coefficient, orientation,
+primitive, field and state maps that reach it while preserving their
+stated operations.

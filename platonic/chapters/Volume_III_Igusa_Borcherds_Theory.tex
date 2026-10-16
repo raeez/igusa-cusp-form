@@ -1,0 +1,2491 @@
+\part{Root algebras, extension geometry and operators}
+\chapter{Lattices and automorphic denominators}
+\label{comp:ch:root-data}
+
+The denominator records signed dimensions. A bracket requires the
+labelled generators and relations behind those dimensions. The
+lattice fixes their degrees, the automorphic product fixes the
+chamber correction, and that correction specifies the minimal
+Borcherds presentation.
+
+\section{The Lorentzian root lattice}
+Let
+\[
+ L=\Z f_2\oplus\Z f_3\oplus\Z f_{-2}
+\]
+with bilinear form
+\[
+ (f_2,f_{-2})=-1,
+ \qquad (f_3,f_3)=2,
+\]
+and all remaining basis pairings zero. Its signature is $(2,1)$. Define the type-II root lattice
+\[
+ L_{II}=2\Z f_2\oplus\Z f_3\oplus2\Z f_{-2}
+ \cong U(4)\oplus\angles{2}.
+\]
+Here $U$ is the unimodular hyperbolic plane, and $U(4)$ has its
+pairing multiplied by four.
+The Gram-index map is
+\[
+ \alpha:\Gammaind=\Z^3\longrightarrow L_{II},
+ \qquad
+ \alpha(n,\ell,m)=2nf_2-\ell f_3+2mf_{-2}.
+\]
+Then
+\[
+ (\alpha(n,\ell,m),\alpha(n',\ell',m'))
+ =-2\bigl(2nm'+2n'm-\ell\ell'\bigr),
+\]
+and
+\[
+ (\alpha(n,\ell,m),\alpha(n,\ell,m))
+ =-2(4nm-\ell^2).
+\]
+
+\subsection{Real simple roots and Weyl vector}
+Put
+\[
+ \delta_1=2f_2-f_3,
+ \qquad
+ \delta_2=2f_{-2}-f_3,
+ \qquad
+ \delta_3=f_3.
+\]
+
+\begin{proposition}[Type-II Cartan matrix]
+The Gram matrix of the real simple roots is
+\[
+ \bigl((\delta_i,\delta_j)\bigr)_{i,j=1}^3
+ =\begin{pmatrix}
+ 2&-2&-2\\
+ -2&2&-2\\
+ -2&-2&2
+ \end{pmatrix}.
+\]
+The reflections
+\[
+ s_i(x)=x-(x,\delta_i)\delta_i
+\]
+are integral involutions preserving $L_{II}$ and its form.
+\end{proposition}
+\begin{proof}
+Substitution into the basis pairing gives the matrix. Since $(\delta_i,\delta_i)=2$, the reflection formula has integral coefficients. Direct expansion gives $s_i^2=1$ and $(s_ix,s_iy)=(x,y)$.
+\end{proof}
+
+The Weyl vector is
+\[
+ \rho=f_2-\frac12f_3+f_{-2},
+ \qquad (\rho,\delta_i)=-1.
+\]
+Use formal root-torus monomials
+\[
+ e^{-\alpha(n,\ell,m)}=Q^nR^\ell S^m,\qquad
+ e^{-\rho}=Q^{1/2}R^{1/2}S^{1/2}.
+\]
+The substitution relating this torus to the denominator period
+coordinate will be specified below.
+
+
+\section{The root reflection matrices}
+In the basis $(f_2,f_3,f_{-2})$, the form is
+\[
+ G=\begin{pmatrix}0&0&-1\\0&2&0\\-1&0&0\end{pmatrix}.
+\]
+The three reflection matrices are
+\[
+ S_1=\begin{pmatrix}1&4&4\\0&-1&-2\\0&0&1\end{pmatrix},\quad
+ S_2=\begin{pmatrix}1&0&0\\-2&-1&0\\4&4&1\end{pmatrix},\quad
+ S_3=\begin{pmatrix}1&0&0\\0&-1&0\\0&0&1\end{pmatrix}.
+\]
+Direct multiplication gives
+\[
+ S_i^2=I,
+ \qquad S_i^{\mathsf T}GS_i=G.
+\]
+
+
+\section{The protected Jacobi input}
+\subsection{The K3 elliptic genus}
+Write \(q=e^{2\pi i\tau}\) and \(r=e^{2\pi iz}\).
+Let $S$ be a K3 surface. The right-moving supersymmetric index of a unitary $\mathcal N=(4,4)$ sigma model is the elliptic genus
+\[
+ Z_{K3}(\tau,z)=2\phiweak(\tau,z).
+\]
+The normalized weak Jacobi form has weight zero, index one, and Fourier expansion
+\[
+ \phiweak(\tau,z)=\sum_{n\ge0}\sum_{\ell\in\Z}f(n,\ell)q^nr^\ell.
+\]
+In Eichler--Zagier normalization,
+\[
+ \phiweak(\tau,z)=4\sum_{a=2}^{4}
+ \frac{\vartheta_a(\tau,z)^2}{\vartheta_a(\tau,0)^2}
+ \in J^{\mathrm w}_{0,1}
+\]
+\cite{EZ}. The coefficient depends on the discriminant $4n-\ell^2$ and on $\ell$ modulo $2$.
+
+\begin{theorem}[Exact low Fourier coefficients]
+\label{comp:thm:jacobi-coefficients}
+The first four $q$-rows are
+\[
+\begin{aligned}
+\phiweak={}&r^{-1}+10+r\\
+&+q\bigl(10r^{-2}-64r^{-1}+108-64r+10r^2\bigr)\\
+&+q^2\bigl(r^{-3}+108r^{-2}-513r^{-1}+808-513r+108r^2+r^3\bigr)\\
+&+q^3\bigl(-64r^{-3}+808r^{-2}-2752r^{-1}+4016\\
+&\hspace{7.5em}{}-2752r+808r^2-64r^3\bigr)+O(q^4).
+\end{aligned}
+\]
+In particular,
+\[
+ f(0,0)=10,
+ \qquad \frac{f(0,0)}2=5.
+\]
+\end{theorem}
+\begin{proof}
+Insert the theta-series expansions into the preceding quotient formula. Work with $t=q^{1/8}$ and $x=r^{1/2}$; each quotient is an exact formal power series in $t$ with Laurent-polynomial coefficients in $x$. The fractional powers cancel in the sum. Division through $t^{24}$ gives the displayed rows. The arithmetic calculation is reproduced in Section~\ref{app:theta-computation}.
+\end{proof}
+
+\subsection{The virtual half-index}
+For every $(n,\ell)$ choose the minimal super vector space
+$U_{n,\ell}=\mathbb C^{\max(f(n,\ell),0)\mid\max(-f(n,\ell),0)}$. It satisfies
+\[
+ \sdim U_{n,\ell}=f(n,\ell).
+\]
+The integer \(f(n,\ell)\) is its superdimension. In the ordinary
+Grothendieck group of finite-dimensional super vector spaces, the
+even and odd dimensions remain separate. The signed integer is their
+image under superdimension. The determinant depends only on that image. Adding an even--odd pair
+preserves the determinant, but changes the vector space. The minimal
+choice makes every zero coefficient contribute the zero space.
+
+\begin{lemma}[Fock character and Berezinian]
+Let $V=\bigoplus_{\gamma}V_\gamma$ be a super vector space graded
+by a pointed positive lattice cone, with a proper positive height and
+finite-dimensional homogeneous pieces and $V_0=0$. In the total-height completion,
+\[
+ \sch\bigl(\Sym(V_{\bar0})\tensor\bigwedge(V_{\bar1})\bigr)
+ =\prod_\gamma(1-x^\gamma)^{-\sdim V_\gamma},
+\]
+and
+\[
+ \sdet_V(1-x)=\prod_\gamma(1-x^\gamma)^{\sdim V_\gamma}.
+\]
+\end{lemma}
+\begin{proof}
+An even one-dimensional summand contributes the geometric series $(1-x^\gamma)^{-1}$. An odd one-dimensional summand contributes $1-x^\gamma$. Multiplication over a homogeneous basis proves both identities.
+\end{proof}
+
+
+
+\section{Exact theta-series calculation}\label{app:theta-computation}
+Set $t=q^{1/8}$ and $x=r^{1/2}$. Then
+\[
+\begin{aligned}
+\vartheta_2(\tau,z)&=\sum_{n\in\Z}t^{4n^2+4n+1}x^{2n+1},\\
+\vartheta_3(\tau,z)&=\sum_{n\in\Z}t^{4n^2}x^{2n},\\
+\vartheta_4(\tau,z)&=\sum_{n\in\Z}(-1)^nt^{4n^2}x^{2n}.
+\end{aligned}
+\]
+Cancel the common lowest power of $t$ in each quotient before
+formal division in $\mathbb Q[x^{\pm1}][[t]]$. At $q=0$, the
+second theta quotient contributes $(r+2+r^{-1})/4$ and the other
+two contribute one each. Multiplication by four gives
+$r^{-1}+10+r$. Successive convolution and inversion through
+$t^{24}$ give the next three rows of
+Theorem~\ref{comp:thm:jacobi-coefficients}. Fractional powers
+cancel before conversion back to $(q,r)$.
+
+
+\section{The Borcherds product}
+\subsection{The effective chamber}
+For \(Z=\left(\begin{smallmatrix}\tau&z\\z&\sigma\end{smallmatrix}\right)\in\mathbb H_2\),
+put \(s=e^{2\pi i\sigma}\). Define
+\[
+\begin{aligned}
+\Gammaeff={}&\set{(n,\ell,m)\in\Z^3:m>0,\ n\ge0}\\
+&\cup\set{(n,\ell,0):n>0}
+ \cup\set{(0,\ell,0):\ell<0}.
+\end{aligned}
+\]
+The ordering is lexicographic in $(m,n,-\ell)$ and is precisely the ordering selected by the cusp chamber.
+For $\gamma=(n,\ell,m)$ put
+\[
+ V_\gamma=U_{nm,\ell},
+ \qquad \sdim V_\gamma=f(nm,\ell).
+\]
+
+\begin{definition}[Monic virtual determinant]
+The monic determinant of the half-index is
+\[
+ \Dmon(Z)=q^{1/2}r^{1/2}s^{1/2}
+ \sdet_V(1-x)
+ =q^{1/2}r^{1/2}s^{1/2}
+ \prod_{\Gammaeff}(1-q^nr^\ell s^m)^{f(nm,\ell)}.
+\]
+\end{definition}
+
+\begin{theorem}[Borcherds--Gritsenko--Nikulin product]
+The preceding product converges normally sufficiently far inside the chosen cusp chamber and extends to a holomorphic genus-two modular form of weight five with a character of order two. It is the monic Igusa form $\Dmon$. The theta-normalized form is
+\[
+ \Dtheta=2^6\Dmon.
+\]
+\end{theorem}
+\begin{proof}
+The singular theta lift of the vector-valued form corresponding to $\phiweak$ produces the product, divisor, weight, and automorphic character. The weight is $f(0,0)/2=5$. The genus-two identification with the Igusa form and the product formula are the Gritsenko--Nikulin theorems \cite{Borcherds95,Borcherds98,GN97,GN98b}. The product of the ten even theta constants has coefficient $2^6$ at $q^{1/2}r^{1/2}s^{1/2}$, fixing the scalar.
+\end{proof}
+
+\subsection{The theta constant normalization}
+For \(a,b\in\{0,1\}^2\), fix the series
+\[
+ \vartheta[a,b](Z,0)=\sum_{u\in\mathbb Z^2}
+ \exp\!\left(\pi i\bigl((u+a/2)^tZ(u+a/2)+b^tu\bigr)\right).
+\]
+Let \(\mathfrak E\) be the ten pairs with \(a^tb\) even, and set
+\[
+ \Dtheta(Z)=\prod_{(a,b)\in\mathfrak E}\vartheta[a,b](Z,0).
+\]
+This is the Gritsenko--Nikulin phase convention. Replacing the last
+term by \(b^t(u+a/2)\) multiplies the ten-factor product by \(-1\):
+only \(a=b=(1,1)\) contributes a nontrivial product phase.
+
+\begin{proposition}[Ten-factor leading coefficient]
+In the stated convention,
+\[
+ [q^{1/2}s^{1/2}]\Dtheta=64(r^{1/2}-r^{-1/2}),
+ \qquad [q^{1/2}r^{1/2}s^{1/2}]\Dtheta=64.
+\]
+\end{proposition}
+\begin{proof}
+The four factors with \(a=(0,0)\) start with \(1\). The two
+with \(a=(1,0)\) start with \(2q^{1/8}\), and the two with
+\(a=(0,1)\) start with \(2s^{1/8}\). The remaining pair has
+leading terms
+\[
+ 2q^{1/8}s^{1/8}(r^{1/4}+r^{-1/4}),\qquad
+ 2q^{1/8}s^{1/8}(r^{1/4}-r^{-1/4}).
+\]
+Their product retains both elliptic monomials. Multiplication by
+the other eight factors gives the formula. In particular the
+normalization \(\Dtheta=64\Dmon\) fixes one coefficient and
+does not discard the second term of the boundary coefficient.
+\end{proof}
+
+\begin{proposition}[Boundary factor of the Borcherds product]
+The $m=0$ part of the monic product is
+\[
+ \prod_{n>0,\ell\in\Z}(1-q^nr^\ell)^{f(0,\ell)}
+ \prod_{\ell<0}(1-r^\ell)^{f(0,\ell)}
+ =(1-r^{-1})\prod_{n\ge1}
+ (1-q^nr^{-1})(1-q^n)^{10}(1-q^nr).
+\]
+Consequently the first Fourier--Jacobi coefficient is
+\[
+ q^{1/2}r^{1/2}(1-r^{-1})
+ \prod_{n\ge1}(1-q^nr^{-1})(1-q^n)^{10}(1-q^nr)
+ =\eta(\tau)^9\vartheta_{11}(\tau,z),
+\]
+where the odd theta function is fixed by the exact convention
+\[
+ \vartheta_{11}(\tau,z)
+ =-q^{1/8}r^{-1/2}
+ \prod_{n\ge1}(1-q^{n-1}r)(1-q^nr^{-1})(1-q^n).
+\]
+\end{proposition}
+\begin{proof}
+The $q^0$ row of $\phiweak$ has exactly three nonzero coefficients:
+$f(0,-1)=1$, $f(0,0)=10$, and $f(0,1)=1$. Substitution into the $m=0$ factors gives the first formula. The Jacobi triple product and $\eta(\tau)=q^{1/24}\prod_{n\ge1}(1-q^n)$ give the second, including its leading sign and monomial.
+\end{proof}
+
+\begin{corollary}[The scalar square]
+The monic weight-ten form is
+\[
+ \ChiTen=\Dmon^2=2^{-12}\Dtheta^2.
+\]
+Its automorphic character is trivial.
+\end{corollary}
+\begin{proof}
+The identity $\Dtheta=2^6\Dmon$ gives the scalar factor.  The character of $\Dmon$ has order two, so its square is trivial.
+\end{proof}
+
+\section{Divisor, character, and the meaning of the square root}
+Let \(H_1\) be the image of \(z=0\) in the genus-two modular
+stack. Its inverse image in \(\mathbb H_2\) is the orbit of
+that hypersurface.
+
+\begin{theorem}[Diagonal divisor]
+On \(\mathbb H_2\), the divisor of $\Dmon$ is the orbit of
+\(z=0\), with multiplicity one. Equivalently its divisor on the
+modular stack is \(H_1\). The form transforms by the Maass character $\nu_5$ of order two, and $\ChiTen=\Dmon^2$ is scalar-valued.
+\end{theorem}
+\begin{proof}
+This is the defining diagonal-divisor property of the Igusa square root and the first row of the Cl\'ery--Gritsenko classification \cite{Igusa62,Igusa64,GC}.
+\end{proof}
+
+\begin{proposition}[Linear and slash reflection signs]
+\label{comp:prop:reflection-signs}
+For the real reflections, the linear tube action has
+\[
+ \Dmon(s_{\delta_i}Z)=-\Dmon(Z).
+\]
+For the block-diagonal symplectic lifts
+\(g_i=\operatorname{diag}(U_i^{-t},U_i)\), with
+\[
+ U_1=\begin{pmatrix}1&-2\\0&-1\end{pmatrix},\quad
+ U_2=\begin{pmatrix}1&0\\2&-1\end{pmatrix},\quad
+ U_3=\begin{pmatrix}1&0\\0&-1\end{pmatrix},
+\]
+the Maass character satisfies \(\nu_5(g_i)=1\). Thus the
+homogeneous linear reflection character is the sign character of
+\(W\), while these weight-five slash actions have value \(+1\).
+\end{proposition}
+\begin{proof}
+The maps \(Z\mapsto U_i^{-t}ZU_i^{-1}\) give the three tube
+reflections. Every \(U_i\) has determinant \(-1\), and each
+\(g_i\) reduces to the identity modulo two. The Maass character
+is the sign of the permutation of the six odd characteristics,
+so \(\nu_5(g_i)=1\). The automorphy factor is
+\(j(g_i,Z)=\det U_i=-1\). Hence
+\(\Dmon(g_iZ)=\nu_5(g_i)j(g_i,Z)^5\Dmon(Z)=-\Dmon(Z)\).
+Products of these reflections give the sign character in the linear
+action. Dividing by \(j^5\) gives the stated slash action.
+\end{proof}
+
+Real roots of the denominator algebra define Weyl reflections. Imaginary roots contribute root spaces and product exponents. This division of labor is intrinsic to a Borcherds algebra: the Weyl group is generated by real simple roots, while the imaginary simple roots enter the correction term of the denominator identity.
+
+\subsection{Automorphic section, orientation line, and Pfaffian operator}
+An automorphic square root is a section of a line bundle with character. An orientation is a square root of a determinant line. A Pfaffian operator is a skew family whose regularized Pfaffian is a section of that orientation line. These form a sequence of successive refinements:
+\[
+\begin{gathered}
+ \text{automorphic section}
+ \longrightarrow \text{determinant-line identification}\\
+ \longrightarrow \text{oriented square-root line}
+ \longrightarrow \text{Fredholm family and Pfaffian section}.
+\end{gathered}
+\]
+
+A geometric comparison must therefore provide its determinant line,
+a coherent square root, and a section-preserving map to the modular
+line. An operator model also specifies its domain and regularization;
+a differential-operator model specifies its symbol and analytic
+conditions. Chapter~\ref{comp:ch:root-operators} constructs a skew
+Fredholm model of the product and retains the global geometric
+comparison as a separate problem.
+
+\section{The minimal simple-root presentation}
+The real roots form a basis of \(L_{II}\). Write
+\[
+ \alpha=b_1\delta_1+b_2\delta_2+b_3\delta_3,
+ \qquad h(\alpha)=b_1+b_2+b_3.
+\]
+For \(\alpha=\alpha(n,\ell,m)\), this is
+\[
+ (b_1,b_2,b_3)=(n,m,n+m-\ell),\qquad
+ h(\alpha)=2n+2m-\ell.
+\]
+The active product support lies in \(Q_+=\sum_i\mathbb N\delta_i\).
+Indeed, weak index-one Jacobi coefficients vanish when
+\(4nm-\ell^2<-1\). For \(n,m\geq0\) with \(n+m>0\), this implies
+\(\ell\leq n+m\), except possibly \(n=m\), where
+integrality gives the same inequality. The boundary factor has
+\((n,\ell,m)=(0,-1,0)\). Every bounded-height region is finite.
+
+Let \(W\) be the real reflection group and put
+\[
+ \mathcal C=\{a=\textstyle\sum b_i\delta_i:
+       b_i\geq0,\ (a,\delta_i)\leq0\text{ for all }i\}.
+\]
+Its generating rays are
+\(a_{12}=\delta_1+\delta_2\),
+\(a_{13}=\delta_1+\delta_3\), and
+\(a_{23}=\delta_2+\delta_3\). To see this, write
+\[
+ a=t_{12}a_{12}+t_{13}a_{13}+t_{23}a_{23},\qquad
+ t_{ij}=\tfrac12(b_i+b_j-b_k).
+\]
+The chamber inequalities say exactly \(t_{ij}\geq0\), and
+\[
+ (a,a)=-8(t_{12}t_{13}+t_{12}t_{23}+t_{13}t_{23}).
+\]
+Thus the only null rays are the three displayed ones; all other
+nonzero chamber vectors are timelike.
+
+In root-torus notation the chamber Fourier expansion has the form
+\[
+ \Dmon(Z_{\mathrm{root}})=\sum_{w\in W}\det(w)e^{-w\rho}
+       \left(1-\sum_{0\ne a\in\mathcal C\cap L_{II}}
+                         m(a)e^{-wa}\right).
+\]
+Here \(m(a)=-c_{\rho+a}\), where \(c_{\rho+a}\) is the
+coefficient of that monomial in the monic theta product. The
+reflection law makes the Fourier coefficients alternating; wall
+coefficients vanish, and each remaining orbit has a unique chamber
+representative. This gives the displayed expansion
+\cite[Theorem~2.3]{GN97}. Along each primitive null ray,
+\[
+ 1-\sum_{n\geq1}m(na)t^n=\prod_{n\geq1}(1-t^n)^9.
+\]
+The exponent nine follows from the boundary input
+\(\eta^9\vartheta_{11}\), with the other rays obtained by
+chamber permutations.
+
+\begin{definition}[Minimal imaginary generators]
+At a timelike chamber vector \(a\), take
+\(\max(m(a),0)\) even and \(\max(-m(a),0)\) odd generators.
+At every nonzero multiple of each primitive null ray, take nine
+even generators and no odd generator. Together with the three
+even real generators, these form a labelled set \(I_\Delta\),
+with degree \(\alpha_i\) and parity \(p(i)\).
+\end{definition}
+
+The null-ray Euler exponents determine its simple multiplicities;
+the coefficients \(m(na)\) are not themselves those multiplicities.
+At a timelike degree the signed simple multiplicity likewise need
+not equal the signed dimension of the whole root space, which also
+contains brackets.
+
+\begin{definition}[The Igusa Lie superalgebra]
+Take the even Cartan space \(\mathfrak h=L_{II}\otimes\mathbb C\)
+and generators \(e_i,f_i\) of parity \(p(i)\) and degrees
+\(\alpha_i,-\alpha_i\). Identify \(h_i=\alpha_i\in\mathfrak h\)
+and impose
+\[
+ [h,h']=0,\quad [h,e_i]=(h,\alpha_i)e_i,\quad
+ [h,f_i]=-(h,\alpha_i)f_i,\quad [e_i,f_j]=\delta_{ij}h_i.
+\]
+For real \(i\ne j\), impose
+\[
+ (\operatorname{ad}e_i)^{1-(\alpha_i,\alpha_j)}e_j=0,
+ \qquad(\operatorname{ad}f_i)^{1-(\alpha_i,\alpha_j)}f_j=0.
+\]
+For \((\alpha_i,\alpha_j)=0\), impose
+\([e_i,e_j]=[f_i,f_j]=0\). These are super brackets, with
+\([x,y]=-(-1)^{|x||y|}[y,x]\). Denote this presentation by
+\(\gIg\), its positive half generated by the $e_i$ by \(\nIg\),
+and its negative half generated by the $f_i$ by \(\nIg^-\).
+\end{definition}
+
+\begin{theorem}[Root supermultiplicities and denominator]
+This presentation has triangular decomposition
+\(\gIg=\nIg^-\oplus\mathfrak h\oplus\nIg\), with finite
+even and odd root dimensions. On the active positive support,
+\[
+ \operatorname{sdim}\gIg_{\alpha(n,\ell,m)}=f(nm,\ell).
+\]
+In the Gritsenko--Nikulin period convention,
+\[
+ \den(\gIg)=\Dmon(2Z)=2^{-6}\Dtheta(2Z).
+\]
+\end{theorem}
+\begin{proof}
+Distinct simple vectors have nonpositive pairing: the real pairings
+are \(-2\), the mixed pairings are the chamber inequalities,
+and two future nonspacelike vectors pair nonpositively. Thus the
+symmetrizable Borcherds presentation theorem applies. Its free
+labelled Cartan reduces by the central kernel of
+\(h_i\mapsto\alpha_i\), giving the stated Cartan and triangular
+decomposition. In a bounded positive degree only finitely many
+labelled generators and tensor words can occur, so PBW gives finite
+root dimensions.
+
+The Weyl correction of this minimal superdatum is the chamber
+Fourier correction above. For the null rays the pairwise orthogonal
+even generators supply the Euler product of exponent nine. Timelike
+generators supply their signed coefficients. The Gritsenko--Nikulin
+denominator theorem therefore identifies the root product with the
+monic Igusa product \cite{GN97,GN98a,GN98b}. The change to its
+period coordinate is \(Z_{\mathrm{root}}=2Z\).
+\end{proof}
+
+For example, at \(\delta_1+\delta_2+\delta_3\) there are
+29 even and 93 odd vectors. Its even part consists of the two
+real multilinear brackets and 27 brackets between a null-ray
+simple generator and the remaining real generator. Its 93 odd
+vectors are the timelike simple generators, since the correction
+coefficient there is \(-93\). Thus the signed dimension is
+\(-64\), while the total dimension is 122.
+
+\chapter{Positive completions and current constructions}
+\label{comp:ch:root-completions}
+
+Positive height controls products and their limits. It gives a
+finite calculation in each root degree, but distinguishes completion
+of an enveloping algebra from the enveloping algebras of Lie
+quotients. The ordinary bar comparison begins in that setting;
+current fields and Ran envelopes then add their coefficient categories.
+
+\section{Positive height and the ordinary bar}
+\label{comp:sec:positive-bar}
+Let \(Q_+=\mathbb N\delta_1+\mathbb N\delta_2+
+\mathbb N\delta_3\), with height equal to the sum of the three
+coefficients. Every bounded-height set of labelled simple generators
+is finite. The free tensor algebra on these generators therefore has
+finite-dimensional homogeneous pieces, as do its quotient
+\(U(\nIg)\) and the embedded Lie superalgebra \(\nIg\).
+
+For a positively root-graded algebra \(A\), write
+\[
+ A_{\leq H}=A\big/\!\bigoplus_{h(\gamma)>H}A_\gamma,
+ \qquad
+ \widehat A_h=\varprojlim_H A_{\leq H}
+             =\prod_{\gamma\in Q_+}A_\gamma.
+\]
+The ideal is defined by total root height, including the height of a
+product. The completed tensor product uses the same total height in
+both factors. For \(A=U(\nIg)\), the primitive coproduct
+\(x\mapsto x\otimes1+1\otimes x\) extends continuously to that
+tensor product. At finite height its target is the quotient of
+$A\otimes A$ by total height, not the untruncated tensor product
+of two height quotients.
+
+There is also a finite-dimensional nilpotent Lie quotient
+\[
+ \mathfrak n_H=\nIg\big/\!\bigoplus_{h(\alpha)>H}\gIg_\alpha.
+\]
+It is useful for calculations in degrees at most \(H\), but
+\(U(\mathfrak n_H)\) still contains arbitrarily long products
+of low-height generators. Thus \(\varprojlim_HU(\mathfrak n_H)\)
+and \(\widehat U_h(\nIg)\) are different constructions.
+For the one-dimensional even abelian Lie algebra \(\mathbb Cx\)
+of height one, the former limit is \(\mathbb C[x]\), whereas
+the latter is \(\mathbb C[[x]]\).
+
+Let \(B_{\mathrm{word}}A\) be the normalized coaugmented
+ordinary bar coalgebra of an augmented algebra $A$ with $A_0=\mathbb C$.
+Write $\overline A$ for its augmentation ideal. Its underlying graded object is
+\(T^c(s\overline A)\), with deconcatenation and the differential
+from adjacent multiplication. Here \(s\) raises homological
+degree by one; intrinsic parity is recorded separately.
+Complete this coalgebra by the total height of its inputs, and use
+the same completion for the Chevalley chains
+\(C_*(\nIg)=\operatorname{Sym}(s\nIg)\).
+
+\begin{theorem}[Positive-height bar--Chevalley comparison]
+\label{comp:thm:positive-bar}
+Suspended antisymmetrization gives a natural quasi-isomorphism
+of height-complete dg coalgebras
+\[
+ \widehat C_{*,h}(\nIg)\longrightarrow
+ \widehat B_{\mathrm{word},h}U(\nIg).
+\]
+In every fixed root degree it is already obtained from any
+\(\mathfrak n_H\) containing that degree. Its Euler
+supercharacter is
+\[
+ \chi_{\mathrm{root}}\widehat C_{*,h}(\nIg)
+ =\prod_{\alpha>0}(1-e^{-\alpha})^{\operatorname{sdim}\gIg_\alpha}.
+\]
+\end{theorem}
+\begin{proof}
+The map is
+\[
+ sx_1\cdots sx_r\longmapsto
+ \sum_{\sigma\in S_r}\varepsilon(\sigma;sx_1,\ldots,sx_r)
+ [x_{\sigma(1)}|\cdots|x_{\sigma(r)}].
+\]
+Here $\varepsilon$ is the permutation sign in the symmetry of
+complexes of super vector spaces: homological degree and intrinsic
+parity each contribute their Koszul sign. There is no factor \(1/r!\): the unshuffle coproduct on the
+source agrees with deconcatenation of the permutation sum. The
+binary differential agrees because the commutator in the enveloping
+algebra is the given bracket. PBW reduces the filtered comparison
+to the Koszul resolution of the super-symmetric algebra.
+In each fixed root degree all inputs have bounded positive height,
+and the filtration and chain groups are finite. The ordinary
+Koszul contraction therefore proves the quasi-isomorphism there.
+Products of complexes of vector spaces preserve these
+quasi-isomorphisms, giving the completed map.
+
+An intrinsically even root vector becomes an odd Chevalley generator
+and contributes \(1-e^{-\alpha}\) to the Euler supercharacter.
+An intrinsically odd root vector contributes its reciprocal.
+The parity sign and the homological Euler sign together give the
+displayed exponent. Positive height makes each coefficient finite.
+\end{proof}
+
+\begin{proposition}[The bar of the Lie-quotient tower]
+\label{comp:prop:lie-quotient-bar}
+There is also a natural quasi-isomorphism of inverse-limit complexes
+\[
+ \varprojlim_H C_*(\mathfrak n_H)
+       \longrightarrow
+ \varprojlim_H B_{\mathrm{word}}U(\mathfrak n_H).
+\]
+In each homological degree the left side is
+\(\widehat C_{*,h}(\nIg)\). The natural coefficient map from
+the right side to \(\widehat B_{\mathrm{word},h}U(\nIg)\)
+is a quasi-isomorphism as well. These comparisons do not identify
+\(\varprojlim_HU(\mathfrak n_H)\) with \(\widehat U_h(\nIg)\).
+\end{proposition}
+\begin{proof}
+At each \(H\), ordinary antisymmetrization is a quasi-isomorphism
+by PBW, and the comparisons commute with the quotient maps. The
+bonding maps on Chevalley and bar chain groups are surjective:
+they are induced by surjections of Lie algebras, enveloping
+algebras and augmentation ideals. The same is true on the mapping
+cones \(K_H\) of the comparisons. Consequently the Roos sequence
+\[
+ 0\longrightarrow\varprojlim_HK_H\longrightarrow
+ \prod_HK_H\xrightarrow{\,1-\mathrm{shift}\,}\prod_HK_H
+ \longrightarrow0
+\]
+is degreewise exact. Products of complexes of vector spaces preserve
+acyclicity. Since every \(K_H\) is acyclic, its inverse limit
+is acyclic, proving the first assertion.
+
+In Chevalley degree \(r\), a monomial with inputs of height at
+most \(H\) has total height at most \(rH\). Conversely, a
+monomial of total height at most \(H\) has all inputs of height
+at most \(H\). These two filtrations are therefore cofinal in
+each chain degree, identifying the completed Chevalley complexes.
+Every fixed root coefficient of the bar tower also stabilizes,
+giving the stated coefficient map. Its composite with
+antisymmetrization is the map of
+Theorem~\ref{comp:thm:positive-bar}, so it is a quasi-isomorphism.
+The example \(\mathbb C[x]\) versus \(\mathbb C[[x]]\) above
+still distinguishes the two enveloping constructions.
+\end{proof}
+
+Write \(Z_{\mathrm{root}}\) for the root-torus coordinate with
+\[
+ e^{-\alpha(n,\ell,m)}=Q^nR^\ell S^m,
+ \qquad e^{-\rho}=Q^{1/2}R^{1/2}S^{1/2}.
+\]
+The root-torus product is \(\Dmon(Z_{\mathrm{root}})\).
+The Gritsenko--Nikulin period convention substitutes
+\(Z_{\mathrm{root}}=2Z\). Consequently
+\[
+ e^{-\rho}\chi_{\mathrm{root}}\widehat C_{*,h}(\nIg)
+ =\den(\gIg)=\Dmon(2Z).
+\]
+This is an ordinary word-bar identity. An associative algebra on
+Ran space and a chiral field realization require their own
+coefficient categories and comparison maps.
+
+\begin{proposition}[The two-sided root product]
+\label{comp:prop:two-sided-product}
+The Lie bracket has no jointly continuous extension to the
+coordinatewise product of all nonzero root spaces with discrete
+Cartan factor.
+\end{proposition}
+\begin{proof}
+Choose one even simple pair \(e_n,f_n\) at each degree
+\(na,-na\) on a primitive chamber null ray. The presentation gives
+\([e_n,f_m]=\delta_{nm}na\). Both sequences of partial sums
+converge coordinatewise, but their brackets have Cartan component
+\(N(N+1)a/2\), which is not eventually constant. Continuity
+would force convergence in the discrete Cartan space.
+\end{proof}
+
+The positive completion with a discrete finite-support negative
+half does have a continuous bracket. Every mixed output coefficient
+then receives only finitely many terms. A completion of a full
+quantum double needs an analogous specified domain; root-degree
+preservation alone does not provide one.
+\section{Currents and their associative recipient}
+\label{comp:sec:currents}
+On a coordinate disc, the level-zero current Lie conformal
+superalgebra is
+\[
+ \operatorname{Cur}(\mathfrak n_H)=\mathbb C[\partial]\otimes
+ \mathfrak n_H,\qquad [a_\lambda b]=[a,b].
+\]
+Its coordinate-free input is the induced right differential module
+\(N_H=\mathfrak n_H\otimes D_E\), with its Lie-* bracket.
+Let \(V_H=U^{\mathrm{ch}}(N_H)\) be its BD current envelope
+\cite{BD04}. In a coordinate, its vacuum module is spanned by ordered
+negative modes \(a(-j)\), \(j\geq1\).
+
+\begin{proposition}[Current character]
+\label{comp:prop:current-character}
+At fixed root degree and energy, the quotient system \((V_H)_H\)
+stabilizes. Its coefficientwise supercharacter is
+\[
+ \prod_{j\geq1}\prod_{\alpha>0}
+       (1-t^je^{-\alpha})^{-\operatorname{sdim}\gIg_\alpha}.
+\]
+The current generators are primitive for the level-zero current
+coproduct. The coefficientwise completion does not by itself assert
+uniform pole bounds for all completed states.
+\end{proposition}
+\begin{proof}
+PBW identifies the vacuum space with the super-symmetric algebra
+on \(\mathfrak n_H\otimes t^{-1}\mathbb C[t^{-1}]\).
+The mode \(a(-j)\) has energy \(j\); an even mode gives a
+symmetric factor and an odd mode an exterior factor. At fixed
+root height and energy only finitely many modes and products
+contribute. The current coproduct sends
+\(a(z)\) to \(a(z)\otimes1+1\otimes a(z)\), and the
+quotient maps preserve it. Lower truncation for arbitrary completed
+states is a separate continuity condition on fields.
+\end{proof}
+
+An associative bar needs an associative algebra and its tensor.
+Use complexes of super vector spaces, retaining intrinsic parity
+separately from cochain degree. For nonempty finite sets and
+surjections, form
+\[
+ \mathcal R_E=\varprojlim_I D\operatorname{-Mod}(E^I;\mathrm{sVect}_{\mathbb C}),
+ \qquad \mathcal R_E^+=D(\mathrm{sVect}_{\mathbb C})\times\mathcal R_E,
+\]
+using exceptional pullback along the diagonals. For an ordered
+partition \(I=I_1\sqcup I_2\), let \(j_{I_1,I_2}\) be the
+locus where the two blocks are disjoint. The chiral convolution is
+\[
+ (F\star G)_I=\bigoplus_{I=I_1\sqcup I_2}
+ j_{I_1,I_2,*}j_{I_1,I_2}^{!}(F_{I_1}\boxtimes G_{I_2}).
+\]
+Its unit \(K\) has only the empty coefficient \(K_\varnothing
+=\mathbb C\). A positive object has zero empty coefficient.
+The BD vacuum is the unit map $\omega_E\to V_H$. It is
+different from this empty-component unit.
+
+The underlying chiral Lie algebra of \(V_H\) gives the positive
+main-diagonal Lie object \(\mathcal L_H=\iota_*V_H\), with
+\((\iota_*V_H)_I=\delta_{I,*}V_H\). Define its augmented
+associative envelope \(\mathcal A_H=U_\star(\mathcal L_H)\).
+
+\begin{proposition}[Bar of the Ran envelope]
+\label{comp:prop:ran-envelope}
+In \((\mathcal R_E^+,\star,K)\),
+\[
+ B_\star\mathcal A_H\simeq
+ \operatorname{CE}_\star(\mathcal L_H),\qquad
+ \Omega_\star\operatorname{CE}_\star(\mathcal L_H)
+       \simeq\mathcal A_H.
+\]
+The Chevalley coalgebra satisfies factorization.
+\end{proposition}
+\begin{proof}
+A positive convolution word of length \(r\) vanishes on a
+configuration of cardinality less than \(r\). Bar and cobar
+filtrations are therefore finite on each configuration. Flattening
+a bar--cobar word gives one two-term contractible gap complex at
+every internal cut; only the empty and one-input terms survive.
+This proves the associative unit and counit equivalences.
+
+Suspended symmetrization gives the envelope comparison, with the
+same permutation sum as in Theorem~\ref{comp:thm:positive-bar}.
+Its PBW filtration reduces to the super-symmetric Koszul complex;
+the Euler contraction divided by positive polynomial degree is
+valid in characteristic zero. The finite configuration filtration
+proves the equivalence. Finally, the main-diagonal support of
+\(\mathcal L_H\) implies factorization of its chiral Chevalley
+coalgebra \cite[Theorems~5.1.1--5.2.1]{FG12}.
+\end{proof}
+
+The last cited equivalence is Lie--commutative. The associative
+assertion also uses the envelope and the bar--cobar argument.
+The objects \(N_H\), \(V_H\), \(\mathcal L_H\) and
+\(\mathcal A_H\) have different carriers. In particular, this
+proposition does not identify \(\mathcal A_H\) with the BD
+field algebra \(V_H\), or construct a second independently
+defined field dual. Such a comparison must preserve its specified
+supported operations and units.
+
+\section{The primitive comparison and its extensions}
+Let \(\mathfrak p\) be a positive-root-graded Lie superalgebra
+with finite-dimensional homogeneous pieces and a proper positive
+height. A primitive realization of the Igusa presentation is a
+parity-preserving homogeneous map from its labelled simple-root
+spaces to \(\mathfrak p\), satisfying the defining relations.
+
+\begin{theorem}[Universal presentation map]
+\label{igusa:primitive-presentation-map}
+Let \(\mathfrak p\) be a positive-root-graded Lie superalgebra
+over \(\mathbb C\), with finite-dimensional homogeneous pieces.
+Suppose a homogeneous parity-preserving map from every simple-root
+generating space of \(\nIg\) to \(\mathfrak p\) satisfies
+the defining Borcherds--Serre relations. It extends uniquely to
+a graded Lie-superalgebra map
+\[
+ f:\nIg\longrightarrow\mathfrak p.
+\]
+It induces continuous maps on height completions, enveloping
+algebras, Chevalley chains, and level-zero currents. The map \(f\)
+is an isomorphism if and only if it is surjective and the root-graded
+PBW series agree in each parity.
+\end{theorem}
+\begin{proof}
+Extend the chosen maps to the free Lie superalgebra on the
+simple-root spaces. The relation hypothesis makes the defining
+ideal lie in its kernel, giving \(f\). The generators prove
+uniqueness. On enveloping algebras the map sends
+\(x_1\cdots x_j\) to \(f(x_1)\cdots f(x_j)\).
+On Chevalley chains it is the graded symmetric map on the shifted
+generators. It commutes with the Chevalley differential because
+\(f\) preserves brackets. The current map is
+\(\partial^j x\mapsto\partial^j f(x)\), preserving
+\([x_\lambda y]=[x,y]\). Root degree preservation gives
+compatible maps at each height and hence on the stated limits.
+
+If \(f\) is surjective, \(U(f)\) is surjective. Proper
+positive height makes each root-graded PBW component
+finite-dimensional. Equality of its even and odd dimensions makes
+\(U(f)\) bijective in every component. PBW embeds each Lie
+superalgebra into its enveloping algebra, so \(f\) is injective.
+The converse follows by applying the constructions to its inverse.
+\end{proof}
+
+
+A geometric comparison also requires functors on the actual Hall
+and critical categories, a compatible coproduct and Hopf pairing,
+and maps of determinant lines and operator domains. These categories
+and lines are not the domain of the primitive Lie map. The
+additional maps must be constructed and checked against that map.
+They are not consequences of its universal property.
+
+
+\section{The local--wrapped root algebra}
+The positive cone is graded by $\gamma=(n,\ell,m)$, with elliptic degree $m$.  Set
+\[
+ \nIg_{\loc}=\bigoplus_{\substack{\alpha>0\\m(\alpha)=0}}\gIg_\alpha,
+ \qquad
+ \nIg_{\wrap}=\bigoplus_{\substack{\alpha>0\\m(\alpha)>0}}\gIg_\alpha.
+\]
+
+\begin{proposition}[Semidirect local--wrapped decomposition]
+The space $\nIg_{\loc}$ is a Lie subsuperalgebra, $\nIg_{\wrap}$ is a Lie ideal, and
+\[
+ \nIg=\nIg_{\loc}\ltimes\nIg_{\wrap}.
+\]
+The proper height filtration preserves both summands.
+\end{proposition}
+\begin{proof}
+The bracket adds root degrees.  The sum of two roots of elliptic degree zero again has degree zero, and addition of a nonnegative degree to a positive degree remains positive.  Height is additive on every nonzero bracket.
+\end{proof}
+
+Write \(\mathbb U_{\Delta_5}=\widehat U_h(\nIg)\), and
+retain the current system \((V_H)_H\) of
+Section~\ref{comp:sec:currents}. The adjoint action of
+\(\nIg_{\loc}\) on \(\nIg_{\wrap}\) extends to derivations
+of its enveloping algebra. Let \(\#\) denote the resulting
+smash product, completed by total root height.
+
+\begin{theorem}[Local--wrapped enveloping algebra]
+There are natural isomorphisms
+\[
+ \widehat U_h(\nIg)
+ \cong\widehat U_h(\nIg_{\wrap})\#\widehat U_h(\nIg_{\loc}),
+\]
+and
+\[
+ \widehat C_{*,h}(\nIg)
+ \cong\widehat{\operatorname{Tot}}_h
+ C_*(\nIg_{\loc};C_*(\nIg_{\wrap})).
+\]
+The primitive Lie superalgebra of the completed enveloping algebra
+is \(\widehat{\nIg}_h\). The Weyl-shifted Euler supercharacter
+of the completed Chevalley complex is \(\Dmon(2Z)\).
+\end{theorem}
+\begin{proof}
+PBW orders wrapped generators before local generators. Moving a
+local generator past a wrapped one adds their adjoint bracket,
+which is exactly the smash-product relation. All relations preserve
+total height, so the isomorphism extends to the completion.
+Splitting a Chevalley word into its two types gives the
+Hochschild--Serre bicomplex: its differentials are the two internal
+brackets and the adjoint action. This proves the second isomorphism.
+
+In characteristic zero, the primitives of a super-symmetric Hopf
+algebra are its degree-one generators. Apply PBW to the highest
+polynomial degree of a primitive in each finite root-degree piece.
+All higher degrees vanish. This identifies the primitives before
+and after completion. The denominator identity gives the character.
+\end{proof}
+
+These operations define the algebraic semidirect-product example
+of a local--wrapped theory. Extending the local Lie action to chiral
+currents acting on geometric wrapped objects requires supported
+coefficient maps. The adjoint action alone does not specify those
+maps.
+
+\section{The colored elliptic Ran space}
+The elliptic degree is a global charge carried by the whole configuration.  Define
+\[
+ \Ran^{\mathrm{wr}}(E)=\coprod_{m\ge0}\Ran(E)_m
+\]
+with monoidal operation
+\[
+ (I,m)\sqcup(J,n)=(I\sqcup J,m+n)
+\]
+on disjoint supports. The names local and wrapped refer here to
+the degree colors $m=0$ and $m>0$; the underlying current operations
+remain supported on configurations of points.
+
+Let
+\[
+ \nIg=\bigoplus_{m\ge0}\nIg[m]
+\]
+be the elliptic-degree grading.  The root bracket obeys
+\[
+ [\nIg[m],\nIg[n]]\subset\nIg[m+n].
+\]
+
+\begin{construction}[Elliptic-degree factorization coalgebras]
+For each \(H\), take
+\[
+ \mathcal F_H=\operatorname{CE}_\star(\mathcal L_H),
+ \qquad \mathcal L_H=\iota_*V_H.
+\]
+Every current state has an elliptic degree, obtained by adding the
+root degrees of its negative modes. Give each Chevalley word the
+sum of these degrees and place its degree-\(m\) coefficient on
+\(\operatorname{Ran}(E)_m\). The empty coefficient remains the
+unit \(K\) defined in Section~\ref{comp:sec:currents}.
+\end{construction}
+
+\begin{theorem}[Elliptic-degree factorization]
+The coalgebras \(\mathcal F_H\) factorize compatibly with the
+elliptic-degree grading and the quotient system in \(H\).
+Disjoint-union structure maps add the degree labels. Under the
+Lie--commutative Koszul equivalence, their derived Lie primitives
+are \(\mathcal L_H\). The energy-one current states recover
+\(\mathfrak n_H\), with its bracket given by the zeroth product.
+\end{theorem}
+\begin{proof}
+The current bracket and the Chevalley differential preserve root
+degree. The factorization theorem of
+Proposition~\ref{comp:prop:ran-envelope} therefore respects its
+elliptic component. Its Lie inverse recovers \(\mathcal L_H\).
+In a coordinate, PBW identifies the energy-one subspace of \(V_H\)
+with the states \(a(-1)|0\rangle\), for \(a\in\mathfrak n_H\).
+Their zeroth product is \([a,b](-1)|0\rangle\). All constructions
+commute with the root-graded quotient maps.
+\end{proof}
+
+The degree-zero sector acts on every positive-degree sector through
+the current operations. This is a grading of a point-supported
+current construction. A compact sheaf projecting onto the whole
+elliptic curve has different support. Its comparison must map the
+common-torsor extension correspondences to these current operations,
+preserving both support and charge.
+
+\section{Cotangent fields and finite BV models}
+Choose a holomorphic volume form \(\Omega_E\) on \(E\).
+For each finite-height Lie algebra \(\mathfrak n_H\), the local
+dg Lie algebra on \(E\times\mathbb R\) is
+\[
+ \mathfrak L_H=\Omega^{0,*}(E)\widehat\otimes
+             \Omega^*(\mathbb R)\otimes\mathfrak n_H,
+ \qquad d=\bar\partial+d_{\mathbb R}.
+\]
+The tensor product uses smooth local sections. With cohomological
+shifts, the cotangent fields are
+\[
+ \mathcal E_H=
+ \bigl(\Omega^{0,*}(E)\widehat\otimes\Omega^*(\mathbb R)\bigr)
+ \otimes\bigl(\mathfrak n_H[1]\oplus\mathfrak n_H^\vee\bigr).
+\]
+The first summand is \(A\) and the second is \(B\).
+Integration against \(\Omega_E\) makes their pairing have
+degree \(-1\), so this is the odd cotangent theory of
+\(\mathfrak L_H[1]\).
+Its action, on compactly supported fields, is
+\[
+ S_H(A,B)=\int_{E\times\mathbb R}\Omega_E\wedge
+ \left\langle B,dA+\tfrac12[A,A]\right\rangle.
+\]
+
+\begin{proposition}[Classical cotangent action]
+This action satisfies the classical master equation. Its classical
+local observables form a factorization algebra. The same construction
+on \(\mathbb R^2_{\mathrm{top}}\times E\) uses
+\[
+ \mathfrak L_H^{(2)}=\Omega^*(\mathbb R^2)\widehat\otimes
+                   \Omega^{0,*}(E)\otimes\mathfrak n_H
+\]
+with fields in
+$\Omega^*(\mathbb R^2)\widehat\otimes\Omega^{0,*}(E)\otimes
+(\mathfrak n_H[1]\oplus\mathfrak n_H^\vee[1])$
+and action
+\[
+ S_H^{(2)}=\int_{\mathbb R^2\times E}\Omega_E\wedge
+       \langle B,(d+\bar\partial)A+\tfrac12[A,A]\rangle.
+\]
+\end{proposition}
+\begin{proof}
+The vector field \(Q(A)=dA+[A,A]/2\) squares to zero because
+\(d^2=0\), \(d\) is a derivation, and the bracket satisfies
+Jacobi. Its cotangent lift is Hamiltonian with Hamiltonian \(S_H\).
+Thus \(\{S_H,S_H\}=0\). Restriction of fields and extension of
+compactly supported test functions give the local observable maps;
+disjoint supports give their factorization products. The
+Dolbeault--de Rham complex is elliptic; its local descent gives
+Weiss descent for the classical cotangent observables
+\cite{CG1,CG2}. The same argument applies with the second
+topological direction.
+\end{proof}
+
+There is a separate finite-dimensional quantum calculation. Put
+\(M_H=\mathfrak n_H[1]\), and take its odd cotangent space
+\(T^*[-1]M_H\). In linear coordinates \(c^a\) and their
+cotangent coordinates \(b_a\), let \(Q\) be the Chevalley
+vector field and set
+\[
+ S_H^{\mathrm{fin}}=\sum_a b_aQ(c^a).
+\]
+Use the constant Berezin volume to define the BV Laplacian \(\Delta\).
+
+\begin{proposition}[Finite cotangent quantum master equation]
+The finite action satisfies
+\[
+ \tfrac12\{S_H^{\mathrm{fin}},S_H^{\mathrm{fin}}\}
+       +\hbar\Delta S_H^{\mathrm{fin}}=0.
+\]
+\end{proposition}
+\begin{proof}
+The classical term vanishes by \(Q^2=0\). The BV term is the
+divergence of \(Q\); its linear coefficients are the modular
+supertrace \(x\mapsto\operatorname{str}(\operatorname{ad}x)\).
+For an even homogeneous \(x\), the adjoint action strictly raises
+positive root height and is upper triangular with zero diagonal.
+For an odd \(x\), it is an odd endomorphism and has zero
+supertrace. Linearity proves that the entire divergence vanishes.
+\end{proof}
+
+A reduction of the local field theory must specify a contraction of
+its field complex and the induced pairing and operations. Reducing
+only a topological interval leaves the Dolbeault fields on \(E\).
+Even their harmonic complex contains
+\(H^{0,*}(E)=\mathbb C\oplus\mathbb C\eta\), with \(\eta\)
+in degree one. It is not the single copy \(\mathfrak n_H[1]\)
+used in the finite proposition. A quantum pushforward must in
+addition control its measure, boundary conditions and loop terms.
+
+The algebraic boundary model can be specified independently:
+quantize the linear Lie--Poisson space by \(U(\mathfrak n_H)\)
+and take its two augmentation modules. Their derived tensor product is
+\[
+ \mathbb C\otimes^{\mathbb L}_{U(\mathfrak n_H)}\mathbb C
+       \simeq C_*(\mathfrak n_H).
+\]
+The bar--Chevalley map proves this statement. The holomorphic current
+model is \(V_H\). Identifying these algebraic objects with boundary
+observables and an interval amplitude of the field theory requires
+boundary quantization and sewing maps. At infinite height the
+appropriate total-height completion must also be preserved; the
+limit of the uncompleted \(U(\mathfrak n_H)\) is different.
+Dualizing the Lie quotient maps reverses their direction on the
+$B$-fields, so a field-theoretic limit also requires compatible
+pushforward maps.
+
+\chapter{Extensions, charges and quiver Hall models}
+\label{comp:ch:quiver-models}
+
+A geometric Hall product remembers extensions and their relative
+elliptic position. Its first construction is a correspondence over
+the stack of common translation torsors. Quiver models provide
+explicit algebraic examples, while critical coefficients and their
+orientation lines impose additional equations on the same flags.
+
+\section{Extensions over the elliptic classifying stack}
+Work on locally noetherian complex schemes with the fppf topology.
+Let \(BE\) be the stack of right \(E\)-torsors. For a left
+\(E\)-stack \(M\), an object of \([M/E](T)\) is a right
+torsor \(P\to T\) and an equivariant map \(P\to M\).
+Forgetting the map gives \([M/E]\to BE\). All products of
+stacks below are two-fibre products.
+
+\begin{proposition}[The common translation torsor]
+\label{igusa:platonic-common-torsor}
+There is a natural equivalence
+\[
+ [(M\times N)/E_{\mathrm{diag}}]
+ \simeq[M/E]\times_{BE}[N/E].
+\]
+The equivalences for any finite number of factors commute with
+regrouping and insertion of the terminal \(E\)-stack.
+\end{proposition}
+\begin{proof}
+An object on the right is \((P,m),(Q,n)\) together with a
+torsor isomorphism \(\alpha:P\to Q\). Send it to
+\((P,m,n\alpha)\). Conversely, use a common torsor twice
+and its identity isomorphism. A pair of torsor maps \(a,b\)
+on the right satisfies \(b\alpha=\alpha'a\), so \(b\)
+is determined by \(a\). The same construction identifies the
+maps and their descent isomorphisms. It commutes with base change.
+For several factors, every regrouping gives one torsor with the
+same list of equivariant maps, proving all stated coherences.
+\end{proof}
+
+For \(M=N=E\) with translation, the diagonal quotient is
+\(E\), with coordinate \(y-x\). Both separate quotients
+are points. Their fibre product over \(BE\) retains the
+relative translation, while their ordinary product loses it.
+
+Let \(\mathfrak M\) be the stack of coherent sheaves on
+\(X=S\times E\), with families flat over the parameter
+scheme, and put \(\mathfrak Q=[\mathfrak M/E]\).
+An object of \(\mathfrak Q(T)\) is a torsor \(P\to T\)
+and a flat sheaf on \(S\times P\). Fix a polarization and
+write \(\mathfrak Q_\alpha\) for a Hilbert-polynomial component.
+Translation preserves these polynomials. Let
+\(\mathfrak H_{\alpha,\beta}\) classify short exact sequences
+\(0\to A\to F\to B\to0\) on a common \(S\times P\),
+with all terms flat over \(T\) and polynomials
+\(\alpha,\alpha+\beta,\beta\). Its span over \(BE\) is
+\[
+ \mathfrak Q_\alpha\times_{BE}\mathfrak Q_\beta
+ \xleftarrow{p}\mathfrak H_{\alpha,\beta}
+ \xrightarrow{q}\mathfrak Q_{\alpha+\beta}.
+\]
+The category of spans of fppf stacks over \(BE\) has composition
+by fibre product and tensor product \(\times_{BE}\). Its unit
+object is the identity map of \(BE\).
+
+\begin{theorem}[Geometric Hall correspondence]
+\label{igusa:platonic-common-torsor-hall}
+For fixed \(\alpha,\beta\), \(q\) is representable by
+algebraic spaces and proper. The spans form a coherently associative
+unital Hall object in the category of spans over \(BE\).
+Its unit is the zero-sheaf span
+\(BE\leftarrow BE\to\mathfrak Q\).
+\end{theorem}
+\begin{proof}
+Over a fixed \((P,F)\), the fibre of \(q\) classifies
+quotients \(F\twoheadrightarrow B\) of polynomial \(\beta\).
+Its kernel is flat, because \(F\) and \(B\) are flat.
+An automorphism fixing the quotient and \(F\) is the identity.
+Trivializing \(P\) fppf-locally identifies this fibre with the
+fixed-polynomial Quot scheme, projective over the parameter scheme
+by Grothendieck's theorem \cite[Theorem~3.2]{IgusaGrothendieckQuot1961}.
+The quotient functor descends to an algebraic space, and properness
+descends with it.
+
+Both composites of three Hall spans classify
+\(0\subset A\subset D\subset F\) on the same torsor.
+One bracketing concatenates inclusions. The other starts with
+\(A\subset F\) and a subobject \(B\subset F/A\), and sets
+\(D=F\times_{F/A}B\). These constructions are inverse on
+objects and isomorphisms. They preserve flatness and commute with
+base change. For longer flags all regroupings identify the same
+subobjects and quotients. Their comparison maps agree, proving the
+pentagon and higher coherences. Finally \(\mathfrak Q_0=BE\).
+The sequences with zero subobject or zero quotient give the unit
+and its coherences.
+\end{proof}
+
+Properness here concerns the full coherent-sheaf stack on a fixed
+pair of Hilbert-polynomial components. A stability restriction can
+replace its fibre by an open part of a Quot scheme, which need not
+be proper. A bounded charge window also needs closure under the
+extensions and flags used in its operations. A reduced critical-coefficient realization must supply pullback,
+pushforward, and orientation comparisons on these same flags. Its unit has
+stabilizer \(E\). A coefficient theory for this quotient must
+include that nonaffine stabilizer, or work relative to \(BE\),
+on the unit and every flag.
+
+
+\section{Additive physical charge and quadratic automorphic degree}
+Let
+\[
+ \Lam=\widetilde H(S,\Z)
+\]
+be the Mukai lattice, with pairing
+\[
+ (r,c,s)\cdot(r',c',s')=c\cdot c'-rs'-r's
+\]
+and signature $(4,20)$. The electric--magnetic charge lattice is
+\[
+ \Gammphys=\Lam\oplus\Lam,
+ \qquad c=(Q,P).
+\]
+Its addition is the physical superselection law. Define the Gram map
+\[
+ \PiGram(Q,P)=
+ \left(\frac{Q^2}{2},Q\cdot P,\frac{P^2}{2}\right)
+ \in\Gammaind.
+\]
+
+\begin{proposition}[Polarization identity]
+For $c_i=(Q_i,P_i)$,
+\[
+ \PiGram(c_1+c_2)=\PiGram(c_1)+\PiGram(c_2)+B(c_1,c_2),
+\]
+where
+\[
+ B(c_1,c_2)=
+ \bigl(Q_1\cdot Q_2,
+ Q_1\cdot P_2+Q_2\cdot P_1,
+ P_1\cdot P_2\bigr).
+\]
+The cross-term is a symmetric vector-valued two-cocycle:
+\[
+ B(c_1,c_2)+B(c_1+c_2,c_3)
+ =B(c_2,c_3)+B(c_1,c_2+c_3).
+\]
+\end{proposition}
+\begin{proof}
+Expand the three quadratic expressions. The cocycle identity is bilinearity of $B$.
+\end{proof}
+
+\subsection{The polarized central extension}
+Define the abelian central extension
+\[
+ 0\longrightarrow\Gammaind\longrightarrow
+ \widetilde\Gamma_\Pi
+ \longrightarrow\Gammphys\longrightarrow0,
+ \qquad
+ \widetilde\Gamma_\Pi=\Gammphys\times\Gammaind,
+\]
+with multiplication
+\[
+ (c,\lambda)\cdot(d,\mu)
+ =\bigl(c+d,\lambda+\mu+B(c,d)\bigr).
+\]
+The cocycle identity makes this multiplication associative. In fact
+$(c,\lambda)\mapsto(c,\lambda-\PiGram(c))$ identifies it with
+the direct-product group, so the extension is split. The
+polarization identity makes the graph map
+\[
+ j_\Pi:\Gammphys\longrightarrow\widetilde\Gamma_\Pi,
+ \qquad c\longmapsto(c,\PiGram(c))
+\]
+a homomorphism.
+
+Let $A=\bigoplus_{c\in\Gammphys}A_c$ be a charge-graded associative algebra, and let $\kfield[\Gammaind]$ have monomials $u^\lambda$. Define the polarized central-extension algebra
+\[
+ \mathcal R_\Pi(A)=A\tensor\kfield[\Gammaind]
+\]
+with product
+\[
+ (a_cu^\lambda)\star(b_du^\mu)
+ =a_cb_d\,u^{\lambda+\mu+B(c,d)}.
+\]
+Give $a_cu^\lambda$ degree $(c,\lambda)\in\widetilde\Gamma_\Pi$.
+
+\begin{theorem}[Graph-multiplicative polarization]
+The product $\star$ is associative and $\widetilde\Gamma_\Pi$-graded. The map
+\[
+ \iota_\Pi:A\longrightarrow\mathcal R_\Pi(A),
+ \qquad a_c\longmapsto a_cu^{\PiGram(c)}
+\]
+is an algebra homomorphism whose homogeneous degree is the graph element $j_\Pi(c)$.
+\end{theorem}
+\begin{proof}
+The two parenthesizations differ by
+\[
+ B(c,d)+B(c+d,e)-B(d,e)-B(c,d+e),
+\]
+which vanishes by the cocycle identity. The polarization formula gives
+\[
+ \iota_\Pi(a_c)\star\iota_\Pi(b_d)
+ =a_cb_d\,u^{\PiGram(c+d)}.
+\]
+Thus the graph of the quadratic Gram map is multiplicative inside the central extension.
+\end{proof}
+
+The same construction applies to Lie superalgebras and their enveloping algebras. It retains additive physical charge, Gram degree, and the interaction cross-term in one grading group.
+
+\section{Point-local and wrapped sectors}
+Let $p_E:S\times E\to E$ be projection.
+
+\begin{lemma}[Positive elliptic degree is wrapped]
+Let $C\subset S\times E$ be a proper one-dimensional subscheme whose pushforward $(p_E)_*[C]$ has positive degree. Then $p_E(C)=E$.
+\end{lemma}
+\begin{proof}
+Properness makes $p_E(C)$ closed. Positive pushforward degree implies that at least one irreducible component of $C$ dominates a one-dimensional closed subset of $E$. Every one-dimensional closed subset of the irreducible curve $E$ is $E$ itself, so the image of that component, and hence the image of $C$, is all of $E$.
+\end{proof}
+
+Objects whose support has finite image in $E$ give the point-local
+sector. Positive elliptic degree gives support over the whole curve.
+
+\begin{definition}[Mixed geometric operations]
+Fix a symmetric monoidal coefficient theory on the relevant
+configuration, object and flag stacks, with its pullbacks and
+pushforwards. A local--wrapped datum consists of a local
+factorization object \(\mathcal F_{\loc}\), wrapped coefficient
+objects \(W_m\) for \(m>0\), ordered products
+\[
+ W_{m_1}\otimes\cdots\otimes W_{m_r}
+       \longrightarrow W_{m_1+\cdots+m_r},
+\]
+and mixed maps from local insertions and wrapped inputs to wrapped
+outputs on their specified incidence diagrams. These maps must
+commute with disjoint local factorization, regrouping of wrapped
+extensions, substitution of mixed operations, and insertion of the
+unit. A geometric realization supplies the diagrams and coefficient
+maps, not only the resulting grading.
+\end{definition}
+
+Write $\mathsf{Ch}_E(k)$ for a chosen local chiral operation object
+and $\mathsf{Ass}(r)$ for the ordered associative operation object.
+Mixed substitution is additional data. The expression
+\(\mathsf{Ch}_E(k)\otimes\mathsf{Ass}(r)\) alone does not define
+it: substituting several wrapped products requires a rule assigning
+the local insertions to their factors. One can form the free colored
+operad on local, wrapped and mixed generators and then impose the
+identities of a supplied geometric datum. Identifying its operation
+objects with the simple tensor expression requires a proved
+normal-form theorem and the required distribution maps.
+
+There is a concrete algebraic example. Take
+\(L=\nIg_{\loc}\), \(W=U(\nIg_{\wrap})\), and let \(L\)
+act by adjoint derivations. For homogeneous \(x\in L\) and
+\(u,v\in W\),
+\[
+ x\cdot(uv)=(x\cdot u)v+(-1)^{|x||u|}u(x\cdot v),
+ \qquad x\cdot1=0.
+\]
+Jacobi makes this a Lie action. It extends to a module-algebra
+action of \(U(L)\), whose primitive coproduct is the distribution
+rule in the displayed formula. Thus the colored operad generated
+by a Lie bracket, an associative product and a derivation action has
+this local--wrapped algebra. The total-height completion preserves
+it. Chiral currents on a curve and compact wrapped coefficients
+need their supported analogues of these maps.
+
+For \(S\times E\), common-torsor extension and mixed-support
+flag correspondences provide the geometric diagrams to compare.
+A critical coefficient system satisfying base change and the mixed
+substitution equations would realize the preceding datum. Properness
+of a middle-term map alone supplies none of its critical pullback
+or collision maps.
+
+\subsection{Two product conventions for the Gram graph}
+The positive cocycle in \(\mathcal R_\Pi(A)\) makes
+\(a_c\mapsto a_cu^{\PiGram(c)}\) a homomorphism. In the
+ordinary untwisted product on \(A\otimes\mathbb C[\Gammaind]\),
+the same graph monomials instead satisfy
+\[
+ (a_cu^{\PiGram(c)})(b_du^{\PiGram(d)})
+ =u^{-B(c,d)}\,a_cb_du^{\PiGram(c+d)}.
+\]
+This follows by subtracting the polarization identity. The negative
+cocycle therefore describes multiplication in graph coordinates
+for the untwisted algebra. The positive cocycle describes the
+changed multiplication that makes the graph map multiplicative.
+Both retain additive physical charge; neither makes the quadratic
+Gram map additive in its original target \(\Gammaind\).
+
+\section{Finite simple-root windows}
+Let $I_\Delta$ be the multiset of simple roots of the Gritsenko--Nikulin Borcherds superalgebra.  A repeated imaginary simple root is written once for each copy.  The parity map is
+\[
+ p:I_\Delta\longrightarrow\Z/2.
+\]
+Use the positive root height \(h(i)=h(\alpha_i)\), whose
+sublevel sets of labelled generators are finite.  Put
+\[
+ I_H=\set{i\in I_\Delta:h(i)\le H}.
+\]
+The restriction of the invariant form gives a finite symmetric Borcherds--Cartan matrix
+\[
+\begin{aligned}
+ A_H&=(a_{ij})_{i,j\in I_H},\\
+ a_{ii}&=2 &&\text{for real }i,\\
+ a_{ii}&\leq0 &&\text{for imaginary }i,\\
+ a_{ij}&\leq0 &&\text{for }i\neq j.
+\end{aligned}
+\]
+The evenness of the root lattice makes every imaginary diagonal entry even.
+
+\begin{construction}[The Igusa Borcherds quiver]
+Order $I_H$.  For $i<j$ place $-a_{ij}$ arrows from $i$ to $j$.  At an imaginary vertex $i$ place
+\[
+ g_i=1-\frac{a_{ii}}2
+\]
+loops.  A real vertex has loop number zero.  Denote the resulting quiver by $Q_{\Delta,H}$.
+\end{construction}
+
+\begin{proposition}[Euler form]
+For dimension vectors use the Euler form
+$\langle d,e\rangle=\sum_i d_ie_i-\sum_{a:i\to j}d_ie_j$.
+Its symmetrization on the standard vertex basis is $A_H$:
+\[
+ \angles{e_i,e_j}+\angles{e_j,e_i}=a_{ij}.
+\]
+\end{proposition}
+\begin{proof}
+For $i\ne j$, the total number of arrows between the two vertices is $-a_{ij}$, so the symmetrized Euler entry is $a_{ij}$.  At $i$ the value is $2-2g_i=a_{ii}$.
+\end{proof}
+
+The inclusions $I_H\subset I_{H+1}$ identify $Q_{\Delta,H}$ with a full subquiver of $Q_{\Delta,H+1}$.  Representations supported on the old vertices form an exact extension-closed subcategory.  This gives compatible Hall embeddings.
+
+
+\section{Hall realization of the positive algebra}
+In this Hall construction $q$ is a prime power. Let
+$\mathcal E_H=\Rep_{\mathbb F_q}(Q_{\Delta,H})$. Its twisted Hall product is
+\[
+ [M]*[N]
+ =v^{\angles{\dim M,\dim N}}
+ \sum_{[L]}
+ \abs{\set{N'\subset L:N'\cong N,\ L/N'\cong M}}
+ [L],
+ \qquad v^2=q.
+\]
+
+The class $[0]$ is the unit: the required subobject is unique on either
+side. Associativity follows by counting flags $N_1\subset N_2\subset L$
+in two orders. The twist factors agree because the Euler form is
+bilinear:
+\[
+ \langle\alpha,\beta\rangle+\langle\alpha+\beta,\gamma\rangle
+ =\langle\beta,\gamma\rangle+\langle\alpha,\beta+\gamma\rangle.
+\]
+Thus this normalization defines the unital twisted Hall algebra on
+isomorphism classes.
+
+\begin{theorem}[Finite-window composition algebra]
+\label{comp:thm:quiver-composition}
+At each vertex $i$ of $Q_{\Delta,H}$, choose the one-dimensional
+representation $S_i$ supported at $i$, with every loop acting by zero.
+Use the generic composition algebra generated by these classes across
+finite fields, with the twisted subobject-count multiplication above.
+After extending coefficients from $\mathbb Z[v,v^{-1}]$ to
+$\mathbb C(v)$, this is the positive quantum generalized Kac--Moody
+algebra for the even Borcherds--Cartan matrix $A_H$.
+The parameter in Kang--Schiffmann is $v_{\mathrm{KS}}=v^{-1}$.
+Their specified semisimple perverse-sheaf construction on nilpotent
+representation varieties gives the corresponding canonical basis.
+\end{theorem}
+\begin{proof}
+This is the selected-simple composition construction of
+Kang--Schiffmann, Section~2.3 and Theorem~2.2, with one selected
+zero-loop simple at each vertex. Their geometric realization uses
+its split graded Grothendieck group over
+$\mathbb Z[v_{\mathrm{KS}},v_{\mathrm{KS}}^{-1}]$
+(Theorem~4.1), with the stated inversion of parameter
+\cite{KangSchiffmann,KangSchiffmannAddendum}. The selected geometric
+basis objects can be semisimple, as they are for a one-loop vertex;
+they are not all the individual simple perverse sheaves on the
+representation stack. The theorem does not use every simple object
+of the full representation category. A vertex with $c$ loops has
+$q^c$ one-dimensional simple representations over $\mathbb F_q$,
+whereas only the chosen zero-loop representation is the generator here.
+\end{proof}
+
+A semi-derived Hall realization of a full quantum group additionally
+specifies two-periodic complexes, the invertible acyclic classes and
+Cartan reduction \cite{LuBorcherdsHall,AxtellLee}.
+Its coproduct, pairing and completion are separate from the positive
+composition algebra used here.
+
+\subsection{Parity and the quantized superdatum}
+The Gritsenko--Nikulin denominator algebra carries a parity map on its simple-root multiset.  It is additive on the free lattice of labelled simple generators.
+Projection to the Lorentzian degree can identify contributions of
+different parity. Both parity dimensions must therefore be retained
+in each projected root space.  Hong's construction applied to this Borcherds superdatum gives the positive part
+\[
+ U_{q,H}^+
+\]
+and the full quantized Borcherds superalgebra $U_{q,H}$.
+
+\begin{theorem}[Ordinary and super presentations]
+The ordinary quiver Hall presentation and Hong's quantum
+superalgebra use the same specified Cartan matrix and labelled
+simple generators. Their relation ideals and parity conventions
+are different inputs. Equality of their Cartan gradings alone does
+not identify their PBW characters.
+\end{theorem}
+\begin{proof}
+The two presentations are those of the preceding Hall construction
+and Hong's superalgebra construction. The difference already occurs
+for a single isotropic generator. The enveloping algebra of a
+one-dimensional even abelian Lie algebra is \(\mathbb C[x]\).
+Declaring its generator odd only as a graded vector space leaves
+a nonzero vector \(x^2\) in degree two. The enveloping algebra
+of a one-dimensional odd abelian Lie superalgebra is
+\(\bigwedge(\xi)\), since its defining relation is
+\(2\xi^2=[\xi,\xi]=0\). Its degree-two component is zero.
+Thus parity assignment to an ordinary PBW basis does not produce
+the super relation ideal or its character. A comparison must
+respect these relations degree by degree.
+\end{proof}
+
+
+\section{The real-root seed window}
+The three real simple roots are
+\[
+ \delta_1=2f_2-f_3,
+ \qquad
+ \delta_2=2f_{-2}-f_3,
+ \qquad
+ \delta_3=f_3,
+\]
+with Gram matrix
+\[
+ A_{\mathrm{re}}=
+ \begin{pmatrix}
+ 2&-2&-2\\
+ -2&2&-2\\
+ -2&-2&2
+ \end{pmatrix}.
+\]
+Choose the order $\delta_1<\delta_2<\delta_3$.  The real-root quiver $Q_{\mathrm{re}}$ has two arrows from vertex $i$ to vertex $j$ for each $i<j$.
+
+\begin{proposition}[Real-root Hall seed]
+The symmetrized Euler form of $Q_{\mathrm{re}}$ is $A_{\mathrm{re}}$.  The generic twisted Hall composition algebra over $\mathbb C(v)$
+generated by its three simple representations is the positive quantum Kac--Moody algebra with Cartan matrix $A_{\mathrm{re}}$.
+\end{proposition}
+\begin{proof}
+The diagonal Euler entries are $2$.  The total number of arrows between distinct vertices is two, hence the symmetrized off-diagonal entries are $-2$.  The Ringel--Green theorem identifies the generic composition algebra
+with the positive quantum algebra for this symmetric Cartan matrix
+\cite{Ringel,Green}.
+\end{proof}
+
+The three vertices already contain the Weyl group and the reflective divisor.  Imaginary vertices add the automorphic correction.  The finite-height tower therefore begins with a completely explicit hyperbolic Hall algebra and enlarges it by one finite collection of imaginary simple roots at each stage.
+
+\subsection{The first Ginzburg differential}
+Let $a_{ij}^{(1)},a_{ij}^{(2)}:i\to j$ be the two arrows for $i<j$.  Add reverse arrows $(a_{ij}^{(r)})^*:j\to i$ of degree $-1$ and loops $t_i$ of degree $-2$.  The canonical three-Calabi--Yau completion has
+\[
+ d a_{ij}^{(r)}=0,
+ \qquad
+ d(a_{ij}^{(r)})^*=0,
+\]
+and
+\begin{equation}\label{eq:vol3-ginzburg-differential}
+ d t_i=
+ \sum_{a:s(a)=i}aa^*
+ -\sum_{a:t(a)=i}a^*a.
+\end{equation}
+The identity $d^2=0$ follows immediately.  Formula \eqref{eq:vol3-ginzburg-differential} is the derived moment-map equation for the doubled real-root quiver.
+
+\begin{calculation}[Vertex one]
+At vertex $1$,
+\[
+ d t_1=
+ \sum_{r=1}^2
+ \left(
+ a_{12}^{(r)}(a_{12}^{(r)})^*
+ +a_{13}^{(r)}(a_{13}^{(r)})^*
+ \right).
+\]
+At vertex $3$,
+\[
+ d t_3=-\sum_{r=1}^2\left(
+ (a_{13}^{(r)})^*a_{13}^{(r)}+
+ (a_{23}^{(r)})^*a_{23}^{(r)}\right).
+\]
+The sum over vertices is $\sum_a(aa^*-a^*a)$.
+It vanishes in the cyclic quotient and after matrix trace,
+but generally not in the path algebra.
+\end{calculation}
+\begin{proof}
+The outgoing arrows at vertex $1$ have targets $2$ and $3$.
+The incoming arrows at vertex $3$ have sources $1$ and $2$.
+The displayed formulas follow from these incidence lists.
+Each arrow contributes one commutator to the sum over vertices.
+The trace of a commutator vanishes, giving the asserted trace identity.
+\end{proof}
+
+
+\section{The three-Calabi--Yau completion}
+Let $kQ_{\Delta,H}$ be the path algebra. Its algebraic
+three-Calabi--Yau completion is
+\[
+ \Gamma_{\Delta,H}=\Pi_3(kQ_{\Delta,H}).
+\]
+Write $J$ for the ideal generated by all arrows in its graded quiver.
+Its completed version is the separate topological dg algebra
+$\widehat\Gamma_{\Delta,H}=\varprojlim_n\Gamma_{\Delta,H}/J^n$.
+The algebraic Calabi--Yau theorem is used for $\Gamma_{\Delta,H}$;
+a topological Calabi--Yau assertion for $\widehat\Gamma_{\Delta,H}$
+requires its completed bimodule category.
+This is the Ginzburg model with zero potential: a degree-minus-one
+reverse arrow for every arrow and a degree-minus-two loop at each
+vertex. The loop differential is the signed sum of incident
+arrow--reverse-arrow products.
+
+\begin{theorem}[Borcherds--Ginzburg projections]
+For each finite quiver \(Q_{\Delta,H}\), its undeformed
+three-Calabi--Yau completion \(\Gamma_{\Delta,H}\) is the
+Ginzburg dg algebra with zero potential. If \(H\le H'\) and
+\(Q_{\Delta,H}\) is the full subquiver on a subset of vertices,
+there is a surjective dg algebra map
+\[
+ \pi_{H'H}:\Gamma_{\Delta,H'}\longrightarrow\Gamma_{\Delta,H}.
+\]
+It kills the added vertices, every arrow incident to them, the
+corresponding reverse arrows, and the added degree-minus-two loops.
+These maps compose strictly and extend continuously to the completed algebras.
+\end{theorem}
+\begin{proof}
+The finite Calabi--Yau assertion is the Ginzburg model of Keller's
+completion theorem \cite{KellerCY,GinzburgCY}. We concatenate
+paths from left to right, so \(aa^*\) is based at the source
+of \(a\). Original and reverse arrows have zero differential.
+For the degree-minus-two loop \(t_i\), the differential is
+\[
+ d t_i=\sum_{s(a)=i}aa^*-\sum_{t(a)=i}a^*a.
+\]
+The projection deletes exactly the terms involving an added vertex,
+leaving the same sum for the full subquiver. It therefore commutes
+with the differential. It preserves path length and extends to the
+completed path algebra. Successive projections kill the union of
+their omitted vertices and arrows, proving strict composition.
+\end{proof}
+
+The evident inclusion of graded quivers does not give the reverse
+dg map. A single old vertex has loop differential zero. Adding
+an arrow \(a:i\to j\) changes that differential to \(aa^*\)
+at \(i\). The map fixing the old loop therefore fails to commute
+with the differential.
+
+Write \(\Gamma_\Delta=(\Gamma_{\Delta,H},\pi_{H'H})_H\)
+for this pro-system of dg algebras. It is separate from the
+ordinary Hall embeddings obtained by extension by zero on
+representations of a full subquiver. A direct system of
+Calabi--Yau dg categories compatible with those Hall embeddings
+requires additional dg functors. It does not follow from the
+inclusion of the displayed Ginzburg generators.
+
+The quantum group retains its separately specified Borel
+completion. Its transition maps must preserve the Cartan generators,
+coproduct, and pairing. Quotienting the positive nilpotent Lie
+algebra by height and truncating a full quantum group are different
+operations.
+
+\section{Hall states and protected superstates}
+The representation varieties of $Q_{\Delta,H}$ carry the
+perverse-sheaf complexes used in the composition-algebra construction.
+The full equivariant derived category is a larger carrier.
+Already for one real vertex and dimension one, its quotient is
+$B\mathbb G_m$, with $H^*(B\mathbb G_m;\mathbb Q)=\mathbb Q[c_1]$,
+where $|c_1|=2$. Its total equivariant cohomology is infinite-dimensional.
+Finite root multiplicities therefore refer to the specified composition
+algebra, not to total equivariant cohomology of this stack.
+
+\begin{definition}[Igusa Hall category]
+For every dimension vector $\mathbf d$, let
+\[
+ \mathfrak R_{H,\mathbf d}=
+ [\operatorname{Rep}_{\mathbf d}(Q_{\Delta,H})/G_{\mathbf d}].
+\]
+Use bounded equivariant constructible complexes, with coefficients
+$\overline{\mathbb Q}_\ell$ away from the field characteristic.
+The direct sum over dimension vectors has convolution $q_!p^*$
+along the extension stack, with endpoints on the left and middle
+term on the right. Flag base change proves associativity. Denote
+this monoidal category by $\mathcal B_{\Delta,H}$ and set
+\[
+ \mathcal B_\Delta=\varinjlim_H\mathcal B_{\Delta,H}.
+\]
+\end{definition}
+
+Independently, let \(\mathfrak n_{I_H}\) be the positive Lie
+superalgebra generated by the selected labelled simple roots, with
+their Borcherds relations. Its one-particle space is
+\[
+ \mathcal H_{\mathrm{1p},H}=\mathfrak n_{I_H}
+       =\bigoplus_{\alpha>0}(\mathfrak n_{I_H})_\alpha.
+\]
+It generally has infinitely many root degrees. The bound \(H\)
+restricts the simple generators; it is different from the nilpotent
+quotient \(\mathfrak n_H\), which discards all root spaces above
+height \(H\). The corresponding multiparticle space is the
+PBW superspace of \(U(\mathfrak n_{I_H})\).
+
+\begin{theorem}[Hall and protected-state comparison]
+The composition subalgebra in the finite-window Hall theorem
+is the ordinary positive quantum generalized Kac--Moody algebra.
+This statement does not identify the Grothendieck group of the full
+category $\mathcal B_{\Delta,H}$ with that composition algebra.  The protected one-particle superspace has signed root multiplicities
+\[
+ \sdim\mathcal H_{\mathrm{1p},H,\alpha}
+ =\operatorname{sdim}(\mathfrak n_{I_H})_\alpha.
+\]
+Taking the union of labelled windows and then completing by total
+root height gives the PBW character
+\[
+ \sch\Fock(\nIg)
+ =\prod_{\alpha>0}(1-e^{-\alpha})^{-\sdim\gIg_\alpha},
+\]
+and its Weyl-shifted inverse is $\Dmon(2Z)$.  The composition canonical basis and the protected root presentation use the specified simple-root indexing and Cartan grading; the parity refinement belongs to the Borcherds superdatum.
+\end{theorem}
+\begin{proof}
+The composition-algebra assertion is the finite-window theorem. The protected assertion is PBW for the Borcherds Lie superalgebra.  Proper height passes both constructions to the limit.  The Gritsenko--Nikulin denominator theorem gives the final product identity.
+\end{proof}
+
+\section{Extension determinants and critical orientations}
+Let \(\mathcal C\) be a three-Calabi--Yau dg category over
+\(\mathbb C\), with its chosen trace. For families of objects
+\(A,B\) over a base \(T\), let \(C(A,B)\) denote the relative
+derived Hom complex on \(T\). Suppose these complexes are perfect,
+and that the trace gives base-change-compatible duality
+\[
+ C(B,A)\simeq C(A,B)^\vee[-3].
+\]
+Put \(L(A,B)=\det C(A,B)\) and \(D(A)=L(A,A)\).
+The determinant convention is
+\(\det C=\bigotimes_i(\det C^i)^{(-1)^i}\), with symmetry sign
+specified by \(\chi(C)\bmod2\).
+
+\begin{theorem}[Extension determinant]
+For an exact triangle \(A\to F\to B\to A[1]\), there is a
+base-change-compatible isomorphism
+\[
+ D(F)\simeq D(A)\otimes D(B)\otimes L(A,B)^{\otimes2}.
+\]
+The determinant comparisons obtained by refining a flag agree, with
+the stated determinant symmetry signs.
+\end{theorem}
+\begin{proof}
+Apply derived Hom to the triangle in each variable. Determinant
+additivity gives
+\[
+ D(F)\simeq L(B,A)\otimes D(A)\otimes D(B)\otimes L(A,B).
+\]
+Dualization and the odd shift each invert the determinant line.
+Thus Calabi--Yau duality identifies \(L(B,A)\) with \(L(A,B)\).
+Reorder by determinant symmetry to obtain the formula. For a full
+flag, all iterated decompositions identify with the same ordered
+tensor product of \(C(A_i,A_j)\), for its successive quotients
+\(A_i\). Determinant additivity for refined filtrations proves
+coherence. Each operation commutes with base change.
+\end{proof}
+
+A square-root orientation consists of lines \(o_A\) and
+isomorphisms \(o_A^{\otimes2}\simeq D(A)\). Extension
+compatibility requires maps
+\[
+ o_A\otimes o_B\otimes L(A,B)\longrightarrow o_F
+\]
+whose squares are the determinant comparisons. Choosing coordinates
+on a smooth critical chart trivializes its ambient canonical line.
+Hall convolution requires transition maps compatible with the cross
+line and the zero object. On three-step flags, the two orientation
+maps can differ by an element of \(\mu_2\), even when their
+squares agree. That sign must be trivialized coherently.
+
+\begin{example}[A nontrivial cross line]
+Let \(X\) be a smooth projective Calabi--Yau threefold, with a
+chosen volume form, and let \(x\in X\). On
+\(X\times T\), where \(T=\mathbb P^1\), take
+\[
+ A=\mathcal O_X\boxtimes\mathcal O_T(1),\qquad
+ B=\mathcal O_x\boxtimes\mathcal O_T.
+\]
+Then \(C(A,B)=\mathcal O_T(-1)[0]\), and relative Serre
+duality gives \(C(B,A)=\mathcal O_T(1)[-3]\).
+Thus \(L(A,B)=L(B,A)=\mathcal O_T(-1)\).
+The self-Hom complexes of \(A\) and \(B\) have constant
+determinant lines, since the factors \(\mathcal O_T(1)\)
+cancel in the first self-Hom. Nevertheless
+\[
+ D(A\oplus B)=D(A)\otimes D(B)\otimes\mathcal O_T(-2).
+\]
+The orientation cross factor is \(\mathcal O_T(-1)\).
+A sign change cannot replace this line of nonzero degree.
+\end{example}
+
+\begin{corollary}[Oriented critical coefficients]
+Suppose the chosen critical charts have square-root orientation
+maps on overlaps and extension flags, with unit and flag coherences.
+Suppose their vanishing-cycle comparison maps preserve these data.
+Then the local vanishing-cycle complexes descend to the specified
+oriented coefficient object. Their Hall convolution is associative
+whenever its pullback and pushforward maps are defined and satisfy
+base change on the flag diagrams.
+\end{corollary}
+\begin{proof}
+The overlap cocycle identifies the local coefficient complexes by
+descent. On a three-step flag, orientation coherence identifies
+the two Thom--Sebastiani coefficient maps. Proper or compact-support
+base change, on the stipulated domain, identifies the two composites
+of convolution. The zero flag gives the unit equation.
+\end{proof}
+
+For the quiver charts, the remaining construction is an equivariant
+system of square roots and coefficient maps on the actual
+representation and extension stacks, compatible with changes of
+height. For compact \(S\times E\), the reduced complexes and
+the common elliptic torsor must also be retained. A coordinate
+volume on an affine chart specifies neither descent system by itself.
+
+
+\chapter{The quantum root datum}
+\label{comp:ch:quantum-roots}
+
+The labelled presentation also admits a quantum Hopf algebra.
+Its Cartan lattice, parity signs and Borel completion are part of
+the construction. The canonical pairing produces a root tensor;
+a separate Cartan weight operator turns it into the intertwiner
+on the specified representation domain.
+
+\section{The integral colored datum}
+Retain the labelled simple-root set \(I_\Delta\), including its
+multiplicities and parity \(p(i)\). For a finite sublevel
+\(I_H\), use the free lattice
+\[
+ Q_H=\bigoplus_{i\in I_H}\mathbb Z\epsilon_i,
+ \qquad \pi(\epsilon_i)=\alpha_i\in L_{II},
+ \qquad a_{ij}=(\alpha_i,\alpha_j).
+\]
+The sign bicharacter is
+\(\theta(\epsilon_i,\epsilon_j)=(-1)^{p(i)p(j)}\).
+It lives on the labelled lattice. Since \(\pi\) can identify
+opposite parities, it need not descend to \(L_{II}\).
+
+The matrix \(A_H\) is integral and symmetric, with real diagonal
+two, imaginary diagonal nonpositive and even, and off-diagonal
+entries nonpositive. Odd simple generators are imaginary. These
+are the hypotheses for the colored quantum Borcherds construction
+\cite[Section~2]{Hong98}. Work over \(\mathbb C(q)\), where
+\(q\) is indeterminate, so no root-of-unity specialization is implied.
+
+For the extended Cartan, take independent \(h_i,d_i\) with
+\[
+ (h_i,h_j)=a_{ij},\qquad(h_i,d_j)=\delta_{ij},
+ \qquad(d_i,d_j)=0.
+\]
+Its form is nondegenerate. The simple root as a Cartan weight is
+\(x\mapsto(h_i,x)\); the \(d_i\) separate repeated labelled
+roots. The derived quantum algebra uses only the torus generated
+by the \(h_i\), together with the positive and negative generators.
+
+\section{The reduced Cartan and coproduct}
+The derived algebra is generated by \(E_i,F_i,K_h\), with
+\(h\in\bigoplus_i\mathbb Zh_i\), \(|E_i|=|F_i|=p(i)\), and
+\[
+ K_hK_{h'}=K_{h+h'},\qquad
+ K_hE_iK_h^{-1}=q^{(h,h_i)}E_i,\qquad
+ K_hF_iK_h^{-1}=q^{-(h,h_i)}F_i.
+\]
+Its mixed relation is
+\[
+ E_iF_j-(-1)^{p(i)p(j)}F_jE_i
+ =\delta_{ij}\frac{K_{h_i}-K_{h_i}^{-1}}{q-q^{-1}}.
+\]
+For real \(i\ne j\), the positive Serre relation is
+\[
+ \sum_{r=0}^{1-a_{ij}}(-1)^r
+ {1-a_{ij}\brack r}_q E_i^{1-a_{ij}-r}E_jE_i^r=0,
+\]
+with the corresponding relation for \(F\). If \(a_{ij}=0\),
+the two generators supercommute. Here
+\([n]_q=(q^n-q^{-n})/(q-q^{-1})\), and the bracket denotes
+the associated Gaussian binomial coefficient. All tensor products
+of superalgebras use the Koszul multiplication sign.
+
+The coproduct and counit are
+\[
+\begin{aligned}
+ \Delta E_i&=E_i\otimes1+K_{h_i}\otimes E_i,
+ &\epsilon(E_i)&=0,\\
+ \Delta F_i&=F_i\otimes K_{h_i}^{-1}+1\otimes F_i,
+ &\epsilon(F_i)&=0,\\
+ \Delta K_h&=K_h\otimes K_h,
+ &\epsilon(K_h)&=1.
+\end{aligned}
+\]
+The antipode is \(S(E_i)=-K_{h_i}^{-1}E_i\),
+\(S(F_i)=-F_iK_{h_i}\), and \(S(K_h)=K_{-h}\).
+
+\begin{theorem}[Quantization with the Lorentzian Cartan]
+Impose \(K_h=1\) for
+\[
+ h\in\ker\!\left(\bigoplus_{i\in I_H}\mathbb Zh_i
+                 \longrightarrow L_{II},\ h_i\longmapsto\alpha_i\right).
+\]
+This is a central Hopf quotient. Once \(I_H\) contains the three
+real generators, its torus is \(\mathbb C(q)[L_{II}]\), and it has
+triangular decomposition
+\[
+ U_{q,H}^{\mathrm{red}}
+ \cong U_{q,H}^-\otimes\mathbb C(q)[L_{II}]\otimes U_{q,H}^+.
+\]
+The positive and negative labelled PBW dimensions and parities agree
+with those of the classical Borcherds presentation. The inclusions
+of finite labelled sets give a quantum algebra
+\(U_q^{\mathrm{red}}(\gIg)\) with these properties.
+\end{theorem}
+\begin{proof}
+Hong's presentation and triangular decomposition apply to the
+extended datum \cite[Propositions~2.2--2.3 and~3.1]{Hong98}.
+A Cartan vector in the displayed kernel pairs to zero with every
+\(h_j\). Its torus element is therefore central. Moreover
+\[
+ \Delta(K_h-1)=(K_h-1)\otimes K_h+1\otimes(K_h-1),
+\]
+so these relations generate a Hopf ideal. In the triangular
+decomposition the quotient acts only on the middle group algebra.
+Its quotient is the group algebra of the image lattice, which is
+\(L_{II}\) because the real roots form a basis.
+
+The labelled positive and negative relations remain unchanged.
+Hong's character theorem identifies their graded dimensions with
+the classical ones. Relations involving an added generator have
+positive degree in that generator, so they impose no new relation
+on an older positive or negative subalgebra. Triangular decomposition
+then gives the injective transition maps. In a fixed positive
+Lorentzian degree, proper height permits only finitely many labelled
+words. The finite character identity therefore survives both the
+union and the projection to that degree, in each parity.
+\end{proof}
+
+The full quantum algebra has not been completed by taking a product
+of all positive and negative root spaces. The discontinuity in
+Proposition~\ref{comp:prop:two-sided-product} persists as a warning
+against that topology. The Borel completion used for the canonical
+tensor has a different definition.
+
+\section{The canonical tensor and the weight operator}
+For a finite labelled set, let \(U\) be the extended quantum
+algebra. If \(\beta\in Q_H^+\), let
+\[
+ U^{+,\beta}=\bigoplus_{\gamma\nleq\beta}U^+_\gamma,
+ \qquad \widehat U=\varprojlim_\beta U/U\,U^{+,\beta}.
+\]
+The order is coordinatewise on the labelled positive lattice.
+These are left-ideal neighbourhoods, not two-sided root-height
+quotients. Hong constructs the algebra structure and its tensor
+completion in this topology \cite[(7.2)]{Hong98}.
+
+The nondegenerate Borel pairing gives a canonical element
+\(C_\beta\in U^+_\beta\otimes U^-_{-\beta}\).
+Put \(h_\beta=\sum_i\beta_i h_i\) and \(K_\beta=K_{h_\beta}\).
+The completed element is
+\[
+ C=\sum_{\beta\in Q_H^+}\theta(\beta,\beta)
+       q^{(h_\beta,h_\beta)}
+       (K_\beta^{-1}\otimes K_\beta)C_\beta.
+\]
+It satisfies a twisted intertwining identity. The twist \(\Phi\)
+fixes pairs of torus elements and has
+\[
+\begin{aligned}
+ \Phi(E_i\otimes1)&=E_i\otimes K_i,&
+ \Phi(1\otimes E_i)&=K_i\otimes E_i,\\
+ \Phi(F_i\otimes1)&=F_i\otimes K_i^{-1},&
+ \Phi(1\otimes F_i)&=K_i^{-1}\otimes F_i.
+\end{aligned}
+\]
+Here \(K_i=K_{h_i}\). On weight modules for which the weight
+pairing is defined, set
+\[
+ Z(v_\lambda\otimes w_\mu)=q^{(\lambda,\mu)}
+                              v_\lambda\otimes w_\mu.
+\]
+Adjoin the required powers of \(q\) if the chosen weight lattice
+has rational pairing. Restrict to tensor products on which the
+series for \(C\) and its inverse are defined. For example, a
+highest-weight bound on the first factor makes each vector receive
+only finitely many positive-root terms.
+
+\begin{theorem}[The quantum \(R\) operator]
+On this weight-module domain,
+\[
+ R=Z^{-1}C
+\]
+is invertible and satisfies \(R\Delta(a)=\Delta^{\mathrm{op}}(a)R\)
+and the Yang--Baxter equation. The opposite coproduct uses the
+super flip. These conclusions hold for the full labelled system
+on modules satisfying the same finiteness conditions.
+\end{theorem}
+\begin{proof}
+Nondegeneracy of the Borel pairing is
+\cite[Theorem~4.6]{Hong98}. The canonical tensor satisfies
+\(C\Delta(a)=\Phi(\Delta^{\mathrm{op}}a)C\) and the two
+compatible coproduct identities of \cite[Propositions~7.4--7.5 and Theorem~7.6]{Hong98}.
+Conjugation by \(Z\) realizes \(\Phi\). Multiplying by
+\(Z^{-1}\) gives the ordinary intertwining identity. The two
+coproduct identities give the Yang--Baxter equation, as in
+\cite[Theorem~7.7]{Hong98}. The finiteness hypothesis permits these
+identities to act on the stated tensor products. In the full system,
+every contributing finite set of labelled degrees lies in a finite
+window, where the same identities hold.
+\end{proof}
+
+The Cartan factor is necessary even for one real root. On the
+standard two-dimensional \(U_q(\mathfrak{sl}_2)\)-module,
+choose $v_+,v_-$ with $Kv_\pm=q^{\pm1}v_\pm$, $Ev_-=v_+$,
+$Fv_+=v_-$, and $Ev_+=Fv_-=0$. Then
+\[
+ C=1-(q-q^{-1})E\otimes F,\qquad
+ Z=\operatorname{diag}(q^{1/2},q^{-1/2},q^{-1/2},q^{1/2}).
+\]
+With the coproduct above, \(Z^{-1}C\) intertwines it with its
+opposite; \(C\) alone does not. This example also fixes the sign
+of the root term. The reduced Cartan quotient has the Hopf algebra
+constructed above. Its braided representation theory must retain
+weight pairings and a domain on which the same operator descends.
+
+A geometric Hall comparison requires a coproduct, Hopf pairing and
+module functor compatible with this quantization. A current or
+fusion construction requires a further comparison of its supported
+operations with the stated weight-module braiding. Neither follows
+from equality of denominator characters.
+
+\chapter{Fredholm determinants and compact comparisons}
+\label{comp:ch:root-operators}
+
+A formal determinant becomes an analytic operator determinant only
+when both parity dimensions are summable. The minimal simple-root
+presentation gives such a bound through an absolute theta estimate
+and the free tensor algebra. This constructs the root Fredholm
+model before asking for its compact geometric realization.
+
+\section{Finite determinants}
+For a positive height bound \(H\), set
+\[
+ \mathcal V_H=\bigoplus_{h(\alpha)\leq H}\gIg_\alpha,
+ \qquad \mathscr D_H|_{\gIg_\alpha}=(1-e^{-\alpha})\operatorname{id}.
+\]
+All root spaces here are positive. Their two parity dimensions are
+those of the fixed minimal presentation.
+
+\begin{proposition}[Finite Berezinian and formal limit]
+In the total-height completion,
+\[
+ \operatorname{Ber}(\mathscr D_H)
+   =\prod_{h(\alpha)\leq H}(1-e^{-\alpha})^{\operatorname{sdim}\gIg_\alpha},
+ \qquad
+ e^{-\rho}\lim_H\operatorname{Ber}(\mathscr D_H)=\Dmon(2Z).
+\]
+Pullback by \(\jmath(Z)=Z/2\) sends the last expression to
+\(\Dmon(Z)\), whose square is \(\ChiTen(Z)\).
+\end{proposition}
+\begin{proof}
+On a finite super vector space, the Berezinian is the even determinant
+divided by the odd determinant. This gives the product. Each formal
+coefficient uses only finitely many positive-height roots, so it
+stabilizes as \(H\) increases. The denominator theorem supplies
+the Weyl prefactor and the coordinate substitution.
+\end{proof}
+
+\section{An absolute bound for both root parities}
+Let \(M(t)\) count the labelled simple generators by their ordinary
+dimension, with even and odd generators both counted positively.
+For the minimal presentation,
+\[
+ M(t)=3t+\frac{27t^2}{1-t^2}
+       +\sum_{\substack{a\in\mathcal C\cap L_{II}\\(a,a)<0}}
+                                      |m(a)|t^{h(a)}.
+\]
+The second term counts nine even generators at every multiple of
+each of the three height-two null rays.
+
+\begin{lemma}[Theta majorant]
+The series \(M(t)\) converges for \(0<t<1\), and
+\(M(t)\to0\) as \(t\to0^+\).
+\end{lemma}
+\begin{proof}
+Specialize the root-torus variables to
+\[
+ Q=S=t^2,\qquad R=t^{-1}.
+\]
+A monomial of root degree \(\alpha(n,\ell,m)\) has exponent
+\(2n-\ell+2m=h(\alpha)\). A term of a genus-two theta
+constant, indexed by \(x,y\in\mathbb Z+\{0,1/2\}\), has
+absolute value
+\[
+ t^{x^2+y^2-xy},\qquad
+ x^2+y^2-xy=\tfrac12((x-y)^2+x^2+y^2)
+             \geq\tfrac12(x^2+y^2).
+\]
+Each absolute theta series is therefore Gaussian and converges.
+The product of the ten absolute series bounds the sum of absolute
+Fourier coefficients of \(\Dtheta\), including possible
+cancellations in its actual coefficients. Since
+\(m(a)=-c_{\rho+a}\), the last sum in \(M(t)\) is bounded
+by this product divided by \(64t^{h(\rho)}\), where
+\(h(\rho)=3/2\). This proves convergence at every fixed
+\(0<t<1\). All terms of \(M\) have positive integral height.
+Dominated convergence using any fixed \(t_*<1\) then proves
+\(M(t)\to0\).
+\end{proof}
+
+\begin{theorem}[Full root-dimension bound]
+There exist \(C_0,C_1>0\) such that
+\begin{equation}\label{eq:vol3-root-growth}
+ \dim\gIg_\alpha\leq C_0\exp(C_1h(\alpha))
+\end{equation}
+for every positive root. More strongly, for any \(t_0\in(0,1)\)
+with \(M(t_0)<1\),
+\[
+ \sum_{\alpha>0}\dim\gIg_\alpha\,t_0^{h(\alpha)}
+ \leq\frac{1}{1-M(t_0)}-1.
+\]
+Both parity dimensions are included in this estimate.
+\end{theorem}
+\begin{proof}
+Let \(V\) be the superspace of labelled simple generators. The
+tensor algebra has ordinary dimension series
+\[
+ \sum_{r\geq0}\operatorname{Hilb}(V^{\otimes r};t_0)
+       =\sum_{r\geq0}M(t_0)^r=\frac1{1-M(t_0)}.
+\]
+It surjects onto \(U(\nIg)\). PBW embeds \(\nIg\) in that
+enveloping algebra. All maps preserve height and parity, so dimensions
+can only decrease. Removing the unit gives the stated sum. Each
+summand is bounded by its right side, giving the exponential estimate
+with \(C_1=-\log t_0\). The lemma ensures that such \(t_0\)
+exists.
+\end{proof}
+
+A signed multiplicity bound alone would not prove this theorem.
+At the first timelike root it bounds 64, whereas the full root
+space has dimension 122. The tensor-algebra argument starts from
+the specified simple generators and controls all their brackets.
+
+\section{The two root Hilbert spaces}
+Choose a homogeneous orthonormal basis in every root space. Define
+\[
+ \mathcal H_\Delta=\widehat{\bigoplus}_{\alpha>0}\gIg_\alpha.
+\]
+There is also a minimal virtual space
+\[
+ V^{\mathrm{vir}}_\alpha
+  =\mathbb C^{\max(\operatorname{sdim}\gIg_\alpha,0)
+                  \mid\max(-\operatorname{sdim}\gIg_\alpha,0)},
+ \qquad
+ \mathcal H^{\mathrm{vir}}_\Delta
+       =\widehat{\bigoplus}_{\alpha>0}V^{\mathrm{vir}}_\alpha.
+\]
+The hats here mean Hilbert direct sums. The first carrier retains
+both root parities; the second retains only their difference and
+has no supplied root bracket.
+
+On the denominator period domain, put \(Z_{\mathrm{root}}=2Z\).
+Thus \(Q=e^{4\pi i\tau}\), \(R=e^{4\pi iz}\),
+\(S=e^{4\pi i\sigma}\), and use the additive exponent
+\[
+ \alpha(Z)=-4\pi i(n\tau+\ell z+m\sigma),\qquad
+ e^{-\alpha(Z)}=Q^nR^\ell S^m.
+\]
+Let \(\mathfrak C_{\mathrm{abs}}\) be the domain where
+\(\Re\delta_i(Z)>0\) for all three real simple roots and
+\[
+ \sum_{\alpha>0}\dim\gIg_\alpha\,
+                  |e^{-\alpha(Z)}|<\infty.
+\]
+
+\begin{theorem}[Nonempty trace-class domain]
+For every direction \(Z_0\) with
+\(c=\min_i\Re\delta_i(Z_0)>0\), the ray \(TZ_0\) lies
+in \(\mathfrak C_{\mathrm{abs}}\) for all sufficiently large
+\(T>0\). On both Hilbert superspaces the operator
+\[
+ K_Z|_\alpha=e^{-\alpha(Z)}\operatorname{id}
+\]
+is trace class in each parity. The family is holomorphic in trace
+norm on the interior of its convergence domain.
+\end{theorem}
+\begin{proof}
+For \(\alpha=\sum_i b_i\delta_i\), with \(b_i\geq0\),
+\(\Re\alpha(TZ_0)\geq Tc\,h(\alpha)\). Choose \(T\)
+so that \(e^{-Tc}\leq t_0\) in the preceding theorem. Its
+summable bound dominates the trace norm of \(K_Z\). The virtual
+space has no larger dimension in any degree, so the same estimate
+applies there. At any interior point of the convergence domain,
+choose a nearby convergent point with all three real simple
+exponents smaller. Its absolute series dominates a neighbourhood.
+The diagonal holomorphic entries then give a trace-norm holomorphic
+family.
+\end{proof}
+
+\section{Skew doubling and the Fredholm product}
+Put \(D_Z=1-K_Z\). The real parts are positive on the chosen
+domain, so no eigenvalue of \(K_Z\) is one. Its even and odd
+Fredholm determinants are therefore nonzero. On either root
+Hilbert superspace form, separately in each parity,
+\[
+ \mathbb A_{Z,\bar p}=
+ \begin{pmatrix}0&D_{Z,\bar p}\\-D_{Z,\bar p}^{\mathsf t}&0\end{pmatrix}.
+\]
+The transpose uses the chosen basis and its dual. Order the finite
+root truncations by height and then by a fixed order within each
+degree. Normalize each Pfaffian by its value at \(K=0\).
+
+\begin{theorem}[Oriented Fredholm realization]
+The normalized finite Pfaffians converge, and their even-to-odd
+ratio satisfies
+\[
+ \operatorname{sPf}_F(\mathbb A_Z)
+ =\frac{\det_F(D_Z|_{\bar0})}{\det_F(D_Z|_{\bar1})}
+ =\prod_{\alpha>0}(1-e^{-\alpha(Z)})^{\operatorname{sdim}\gIg_\alpha}.
+\]
+For both the full and the minimal virtual root carrier,
+\[
+ e^{-\rho}\operatorname{sPf}_F(\mathbb A_Z)=\Dmon(2Z)
+\]
+in the Gritsenko--Nikulin period convention.
+\end{theorem}
+\begin{proof}
+For a finite square matrix \(D\), the Pfaffian of
+\(\left(\begin{smallmatrix}0&D\\-D^t&0\end{smallmatrix}\right)\)
+is \((-1)^{N(N-1)/2}\det D\). Normalizing at \(D=1\)
+removes that sign. Hence the paritywise normalized Pfaffians equal
+their determinants at every finite height. The truncations of
+\(K_Z\) converge in trace norm, so determinant continuity gives
+the Fredholm limit. The odd determinant is nonzero on the domain,
+allowing the ratio. Both carriers have the same superdimension in
+every degree, so they give the same product. The denominator
+identity supplies its Weyl shift.
+\end{proof}
+
+This is a skew operator model with a specified polarization and
+relative Pfaffian normalization. It does not supply a first-order
+differential operator or its principal symbol. A compact geometric
+family requires its own domain, symbol, line comparison and
+orientation transport, together with an intertwiner to the root model.
+
+\section{What the automorphic character determines}
+\begin{proposition}[Information retained by the product]
+With the cusp and automorphy law fixed, the normalized product
+records its signed exponents, Weyl prefactor, divisor and modular
+multiplier. It does not determine a Lie bracket, the two separate
+parity dimensions, extension correspondences, or an orientation
+comparison with a geometric determinant line.
+\end{proposition}
+\begin{proof}
+The recorded data are the exponents, prefactor and transformation
+law. To see the lost information concretely, put even vectors
+\(x,y\) in degree one and \(z\) in degree two. The abelian
+bracket and the Heisenberg bracket \([x,y]=z\) give nonisomorphic
+Lie algebras with the same PBW character
+\[
+ \frac1{(1-t)^2(1-t^2)}.
+\]
+An added even--odd pair leaves every signed exponent unchanged.
+Neither character calculation specifies an extension correspondence.
+For the line ambiguity, the two square-root pairs on
+\(\mathbb C^\times\), with square isomorphisms given by \(1\)
+and by the coordinate \(t\), have the same square line. They
+are not isomorphic as root pairs, since no unit of
+\(\mathbb C[t,t^{-1}]\) has square \(t\). A comparison must
+retain these structures separately.
+\end{proof}
+
+\begin{recognition}[Primitive recognition from characters]
+Let \(\mathfrak p\) satisfy the proper-height finiteness hypotheses
+of Theorem~\ref{igusa:primitive-presentation-map}, and let
+\(\Psi:\nIg\twoheadrightarrow\mathfrak p\) be a graded,
+parity-preserving Lie map. It is an isomorphism if the two
+parity-refined PBW series agree. More generally, for a surjection
+between positive Lie superalgebras whose root spaces have
+prescribed pure parity, equality of their signed PBW characters
+also suffices. Their induced height completions, Chevalley complexes
+and current envelopes are then isomorphic.
+\end{recognition}
+\begin{proof}
+The first assertion is the universal presentation criterion.
+For the second, the logarithm of the PBW product determines signed
+primitive dimensions inductively in height: contributions from
+proper multiples use smaller degrees and can be subtracted.
+Pure parity recovers ordinary dimensions from these signed
+numbers. Degreewise surjectivity and finite dimension give
+injectivity. All the other maps are induced functorially.
+\end{proof}
+
+The pure-parity criterion does not apply to the first timelike
+Igusa root, where both parities occur. Its comparison uses both
+parity dimensions.
+
+\subsection{The automorphic line and its reflection action}
+The scalar product, with its Weyl prefactor, continues to a section
+of \(\mathcal L^5\otimes\nu_5\), where \(\mathcal L\) is
+the weight-one modular line. This constructs its automorphic
+transition functions. Operator transition maps are additional:
+scalar determinant equality does not identify Hilbert spaces,
+operator domains or their skew families.
+
+Proposition~\ref{comp:prop:reflection-signs} specifies the linear
+and weight-five slash actions separately.
+
+
+An orientation comparison with a geometric skew family must specify
+which of these actions it intertwines, together with the weight-five
+line. The monodromy of a root line is not determined solely by the
+vanishing order of one scalar section.
+
+\section{Reduced curve counting on \texorpdfstring{$K3\times E$}{K3 x E}}
+Let \(S\) be a smooth projective K3 surface and \(E\) an
+elliptic curve. For a nonzero effective primitive class
+\(\beta_h\in H_2(S,\mathbb Z)\), with \(\beta_h^2=2h-2\),
+choose \(\beta_h^\vee\in H^2(S,\mathbb Q)\) satisfying
+\(\int_{\beta_h}\beta_h^\vee=1\). Define
+\[
+ N_{g,h,d}=\int_{[\overline M_{g,1}^{\bullet}
+       (S\times E,(\beta_h,d))]^{\mathrm{red}}}
+       \operatorname{ev}_1^*(\beta_h^\vee\otimes[\mathrm{pt}]_E).
+\]
+The bullet permits disconnected domains with no collapsed connected
+components; \(2g-2\) denotes minus their Euler characteristic.
+The insertion fixes the reduced incidence convention. Reduced
+deformation invariance makes the result depend only on $g,h,d$.
+As $h$ varies, use any pairs $(S,\beta_h)$ with the stated square. Put
+\[
+ \mathcal Z(u,q,s)=\sum_{g,h,d\geq0}
+                 N_{g,h,d}u^{2g-2}q^{h-1}s^{d-1}.
+\]
+\begin{theorem}[Primitive Igusa cusp-form theorem]
+The primitive reduced series is the Laurent expansion in $u$ of
+\[
+ \mathcal Z(u,q,s)=
+   \left.-\ChiTen(q,r,s)^{-1}\right|_{r=e^{iu}}.
+\]
+For fixed $q,s$ degrees, this is the expansion of the corresponding
+rational function of $r$ at $r=1$.
+Equivalently, in theta normalization,
+\[
+ \mathcal Z=-2^{12}\Dtheta^{-2}.
+\]
+\end{theorem}
+\begin{proof}
+Oberdieck and Pixton identify the primitive reduced partition function with the Laurent expansion of $-\ChiTen^{-1}$ \cite{OP}; their normalization is the monic Borcherds product $\ChiTen$. The second formula is the identity $\ChiTen=2^{-12}\Dtheta^2$.
+\end{proof}
+
+The theorem identifies the numerical generating series in its stated
+primitive sector. The Borcherds root algebra supplies a separate
+algebraic character to compare with that series.
+
+\begin{corollary}[Exact character comparison]
+Let $\jmath:\HHtwo\to\HHtwo$ be the half-coordinate map $\jmath(Z)=Z/2$, and let
+\[
+ \Fock(\nIg)=
+ \Sym(\nIg_{\bar0})\tensor\bigwedge(\nIg_{\bar1}).
+\]
+Then
+\[
+ \mathcal Z^{\red}_{S\times E}
+ =-\jmath^*\!\left(
+ e^{2\rho}\sch\bigl(\Fock(\nIg)^{\tensor2}\bigr)
+ \right)
+ =-\ChiTen^{-1}.
+\]
+\end{corollary}
+\begin{proof}
+Put
+\[
+ P=\prod_{\alpha>0}(1-e^{-\alpha})^{\sdim\gIg_\alpha}.
+\]
+The denominator theorem gives $\den(\gIg)=e^{-\rho}P=\Dmon(2Z)$, while PBW gives $\sch\Fock(\nIg)=P^{-1}$.  Hence
+\[
+ e^{2\rho}\sch\bigl(\Fock(\nIg)^{\tensor2}\bigr)
+ =\den(\gIg)^{-2}.
+\]
+Pullback by $\jmath$ sends $\den(\gIg)$ to $\Dmon(Z)$, whose square is $\ChiTen$.  The reduced incidence convention supplies the overall minus sign in the Oberdieck--Pixton theorem.
+\end{proof}
+
+The equality compares the completed root-Fock supercharacter with the
+numerical reduced generating series. Its proof uses the denominator
+identity and the half-coordinate pullback. A map from compact geometric
+states to this Fock space, preserving operators and their trace,
+is an additional comparison.
+
+
+\section{The eight diagonal-divisor forms}
+Cl\'ery and Gritsenko classify eight genus-two diagonal-divisor
+forms \cite{GC}. The table records their groups, weights and
+character orders. Half-integral weights are interpreted on the
+corresponding multiplier covers. These eight rows are not a list
+of cyclic CHL orders. The reflective presentations in
+\cite{GN97,GN98a,GN98b,GovindarajanKrishna2009,Govindarajan2011,GovindarajanSamanta2019}
+have their own specified Jacobi inputs, lattices and chambers.
+\[
+\begin{array}{c|c|c|c}
+\text{form}&\text{group}&\text{weight}&\text{character order}\\ \hline
+\Delta_5&\operatorname{Sp}_4(\Z)&5&2\\
+\Delta_2&\Gamma_2&2&4\\
+\Delta_1&\Gamma_3&1&6\\
+\Delta_{1/2}&\Gamma_4&1/2&8\\
+\nabla_3&\Gamma^{(2)}_0(2)&3&2\\
+\nabla_2&\Gamma^{(2)}_0(3)&2&2\\
+\nabla_{3/2}&\Gamma^{(2)}_0(4)&3/2&4\\
+Q_1&\Gamma_2(2)&1&4
+\end{array}
+\]
+
+\begin{proposition}[Product models and presentation refinements]
+Fix one row with an integral-exponent product
+\[
+ F(Z)=e^{-\rho_F(Z)}\prod_{\gamma>0}(1-e^{-\gamma(Z)})^{c_\gamma}
+\]
+in its declared cusp coordinates and proper positive cone. Its
+minimal virtual root superspace has superdimension \(c_\gamma\)
+and gives this formal determinant after the Weyl prefactor. On any
+domain where \(\sum_\gamma|c_\gamma e^{-\gamma(Z)}|<\infty\)
+and the factors are nonzero, it also gives a Fredholm Berezinian.
+If a symmetrizable Borcherds superpresentation for the same product
+is supplied, the quiver, Calabi--Yau and quantum constructions above
+apply to that datum at their respective stated domains.
+\end{proposition}
+\begin{proof}
+Choose the minimal even or odd vector space according to the sign
+of \(c_\gamma\). Proper height proves formal local finiteness;
+the summability assumption is exactly the trace-norm condition for
+its diagonal operator. Their determinants give the displayed
+product. A supplied presentation specifies the labelled Cartan
+matrix and parity, which are the inputs to the later constructions.
+The ordinary quiver Hall algebra uses the even relation ideal;
+the quantum superalgebra uses the supplied parity relations. The
+shared matrix alone does not identify those two algebras.
+\end{proof}
+
+The Igusa row has the full root-space summability proof given above.
+For another row, an absolute coefficient estimate must be checked
+against its actual product or simple presentation. Neither a
+classification by divisor nor the equality of one scalar product
+constructs its root bracket, quantum pairing or compact Hall map.
+
+\section{The collection of comparison targets}
+\begin{definition}[Igusa comparison targets]
+Associated with the fixed minimal presentation are
+\[
+ \mathfrak K_\Delta=
+ \left(\Gamma_\Delta,\mathcal B_\Delta,\gIg,
+       (V_H,\mathcal A_H,\mathcal F_H)_H,
+       U_q^{\mathrm{red}}(\gIg),\mathbb A_Z\right).
+\]
+These are respectively the pro-system of finite Calabi--Yau
+completions, the ordinary quiver Hall categories, the root Lie
+superalgebra, the current and Ran constructions, the quantum Hopf
+superalgebra, and the oriented skew family on the root Hilbert space.
+The finite BV cotangent models and the classical local BF theories
+provide separate field-theoretic comparison targets.
+\end{definition}
+
+\begin{theorem}[Scalar invariants of the root constructions]
+Put
+\[
+ P=\prod_{\alpha>0}(1-e^{-\alpha})^{\operatorname{sdim}\gIg_\alpha}.
+\]
+The ordinary Chevalley coalgebra has Euler supercharacter \(P\),
+the positive PBW/Fock superspace has supercharacter \(P^{-1}\),
+and the skew Fredholm model has super-Pfaffian \(P\) on its
+convergence domain. Consequently
+\[
+ e^{-\rho}P=\den(\gIg)=\Dmon(2Z),\qquad
+ e^{\rho}\operatorname{sch}\operatorname{Fock}(\nIg)
+     =\den(\gIg)^{-1},
+\]
+and in the primitive reduced incidence convention,
+\[
+ \mathcal Z^{\mathrm{red}}_{S\times E}
+    =-\bigl(\jmath^*\den(\gIg)\bigr)^{-2}
+    =-\ChiTen^{-1}.
+\]
+\end{theorem}
+\begin{proof}
+The ordinary bar--Chevalley comparison gives the first character;
+PBW gives its reciprocal. The Fredholm theorem gives the same
+signed product on its trace-class domain. The denominator theorem
+and the primitive reduced curve-counting theorem then give the
+remaining identities with their stated Weyl and coordinate factors.
+\end{proof}
+
+The constructions retain distinct operations. The minimal root
+datum supplies a bracket and both parities. The quiver supplies
+extension correspondences and a separate ordinary composition
+algebra. The current envelope supplies local fields, and its
+associative Ran envelope supplies a bar in a specified tensor
+category. Hong's Borel pairing supplies an \(R\) operator on its
+weight-module domain. The skew doubling supplies a Pfaffian ratio,
+while the automorphic form supplies a global modular section.
+These scalar identities preserve the common denominator without
+identifying these carriers.
+
+For a compact realization, the first maps are the reduced critical
+coefficient maps on common-torsor extensions and full flags. They
+must preserve the additive physical charge and its polarized Gram
+refinement. Primitive representatives must satisfy the simple-root
+relations and generate with the required parity dimensions, so that
+Theorem~\ref{igusa:primitive-presentation-map} applies. A comparison
+of doubles additionally preserves a coproduct and full Hopf pairing.
+A local--wrapped comparison preserves the supported mixed operations.
+Finally an operator and state comparison must identify the relevant
+orientation lines, sections, domains and sewing maps. The classical
+cotangent action, the finite quantum master equation and the reduced
+scalar formula leave these geometric constructions as separate
+mathematical problems.

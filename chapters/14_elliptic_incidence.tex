@@ -1,0 +1,1943 @@
+\chapter{Elliptic Thom lines and derived incidence}
+\label{ei:chap:incidence}
+
+The elliptic class of Chapter~\ref{ed:chap:euler} transports
+cohomological correspondences. A sheaf-valued coefficient requires
+the line carrying that class and the map defined by its section.
+Already for two interacting colors, the line has nonzero degree.
+Its section vanishes twice at collision. A change of line objects
+can remove a tensor twist while preserving this doubled zero.
+
+We follow the pair coefficient into its simultaneous derived
+intersections. A spanning tree reduces each connected graph to a
+finite algebra. The first cycle gives a nonzero ternary operation,
+and a repeated color changes the character of its perfect trace.
+
+We then study two parameter families of these algebras. Independent
+quadratic parameters produce discriminant modules. The actual
+elliptic displacement gives a different family, with exceptional
+fibers over the elliptic curve and a square root on a halving cover.
+These calculations specify coefficient data for the compact
+comparison posed at the end of the chapter.
+
+\section{The pair coefficient and its image}
+\label{ei:sec:pair}
+
+Fix a smooth complex elliptic curve $E$ with origin, and put
+$\Theta=\mathcal O_E(0)$ with divisor section $\vartheta$.
+This $E$ parametrizes spectral variables. Its role differs from
+the elliptic factor of a threefold and from a curve of field insertions.
+
+Take one point of each of two distinct colors $i,j$, with two
+arrows from $i$ to $j$. Choose weights $(2,0)$ and $(0,2)$.
+Their compatibility imposes
+$2t_1=2t_2$ on the elliptic equivariant parameters.
+In the formal neighborhood of the origin this forces $t_1=t_2$.
+
+We work on the component $t_1=t_2=t$ and set $h=2t$.
+With $u=z_j-z_i$, the forward arrow factor is
+\begin{equation}\label{ei:eq:pair}
+ s_h(u)=\vartheta(u)\vartheta(u+h),\qquad
+ \mathcal S=u^*\Theta\otimes(u+h)^*\Theta,\qquad
+ \mathcal S^{-1}\xrightarrow{s_h}\mathcal O.
+\end{equation}
+The maps $u$ and $u+h$ have domain $E_u\times E_h$.
+There is no same-color factor for this dimension vector.
+
+These are the compatible weights and arrow factor of
+Yang--Zhao.\footnote{Y.~Yang and G.~Zhao,
+\emph{Quiver varieties and elliptic quantum groups},
+\href{https://arxiv.org/abs/1708.01418}{Assumption~2.1,
+Remark~2.2(2) and equations~(2)--(3)}.
+Their Theorem~8.4 compares algebras of rational sections.
+The isomorphism in Remark~8.5 requires localization.}
+
+At $h=0$, write $d:E^2\to E$ for the difference map and
+$\Delta=d^{-1}(0)$. The coefficient map becomes
+\begin{equation}\label{ei:eq:doubled-pair}
+ \mathcal L=d^*\Theta^{-2}
+    =\mathcal O_{E^2}(-2\Delta)
+ \xrightarrow{\vartheta(d)^2}\mathcal O_{E^2}.
+\end{equation}
+Its image is the ideal of $2\Delta$, and its cokernel is
+$\mathcal O_{2\Delta}$.
+
+\begin{proposition}\label{ei:prop:jet}
+The line $\mathcal L$ is nontrivial. On a normal formal disk to
+$\Delta$, its coefficient cokernel is $\mathbb C[[u]]/(u^2)$.
+The sequence
+\begin{equation}\label{ei:eq:jet}
+ 0\longrightarrow\mathcal O_\Delta(-\Delta)
+ \longrightarrow\mathcal O_{2\Delta}
+ \longrightarrow\mathcal O_\Delta\longrightarrow0
+\end{equation}
+does not split over the ambient local ring.
+\end{proposition}
+
+\begin{proof}
+Restrict $\mathcal L$ to $\{z_1\}\times E$. Its degree is $-2$,
+whereas a trivial line has degree zero.
+Choose an invariant differential on $E$ and its normalized formal
+logarithm $u$. In a theta frame,
+$\vartheta(u)=u\,v(u)$ with $v(0)\ne0$.
+Rescaling the source frame removes $v(u)^2$, leaving the map $u^2$.
+
+The ideal $(u)/(u^2)$ is the first term of \eqref{ei:eq:jet}.
+A module section would lift $1$ to an element with nonzero constant
+term annihilated by $u$. Such an element does not exist in
+$\mathbb C[[u]]/(u^2)$.
+\end{proof}
+
+Thus restriction to reduced support loses a normal extension class.
+Even a regular scalar change of frame preserves its doubled vanishing.
+At nonzero displacement, the two orders also have different images.
+In an odd theta frame the reversed factor is
+$\vartheta(u)\vartheta(u-h)$.
+Writing $D_a=\{u=a\}$ on $E_u$, the two image ideals are
+\[
+ \mathcal I_+=\mathcal O(-D_0-D_{-h}),\qquad
+ \mathcal I_-=\mathcal O(-D_0-D_h).
+\]
+Their sum is the image of the two maps together.
+
+\begin{proposition}\label{ei:prop:ordered-images}
+On a fixed fiber, $\mathcal J_h=\mathcal I_++\mathcal I_-$ is
+\[
+ \mathcal J_h=
+ \begin{cases}
+  \mathcal O(-D_0),&2h\ne0,\\
+  \mathcal O(-D_0-D_h),&2h=0,\ h\ne0,\\
+  \mathcal O(-2D_0),&h=0.
+ \end{cases}
+\]
+Near $(u,h)=(0,0)$ the image ideal is
+\begin{equation}\label{ei:eq:sum-ideal}
+ J=(u(u+h),u(u-h))=(u^2,uh)\subset\mathbb C[[u,h]].
+\end{equation}
+Its quotient contains a nonzero class $[u]$ killed by $h$.
+Formation of the image fails to commute with specialization at $h=0$.
+\end{proposition}
+
+\begin{proof}
+The sum of two divisor ideals on a smooth curve has the smaller
+vanishing order at every point. The common zeros are precisely those
+listed in the three cases, with their displayed multiplicities.
+
+Formal logarithms and invertible theta frames give $u(u+h)$ and
+$u(u-h)$. Their sum and difference generate $u^2,uh$ because
+$2$ is invertible. Hence $u\notin J$ and $hu\in J$.
+
+Moreover $uh$ has nonzero class in $J/hJ$. An equality $uh=hj$
+with $j\in J$ would imply $u=j$, contrary to $u\notin J$.
+This class maps to zero in $\mathbb C[[u,h]]/(h)$.
+The specialized maps themselves have image $(u^2)$.
+\end{proof}
+
+When $2h\ne0$, the quotient $\mathcal J_h/\mathcal I_+$ is supported
+at $-h$, and $\mathcal J_h/\mathcal I_-$ is supported at $h$.
+At $2h=0$ the two image divisors agree.
+This identifies divisor lines. An identification of ordered Hall
+operations must also retain their scalar and equivariant data.
+
+\section{Flags, line twists and simultaneous equations}
+\label{ei:sec:flags}
+
+Set $h=0$. Let $G$ be a finite simple graph with ordered vertex set $V$.
+An edge records an interacting pair of multiplicity two.
+For disjoint subsets $A,B\subset V$, define
+\[
+ D_A=\sum_{\substack{i<j,\ i,j\in A\\\{i,j\}\in E(G)}}\Delta_{ij},
+ \qquad
+ D_{A,B}=\sum_{\substack{i\in A,\ j\in B\\\{i,j\}\in E(G)}}\Delta_{ij}.
+\]
+Here $\Delta_{ij}$ is the equality divisor on the product of
+spectral curves. Pull all lines to the common product and put
+\[
+ \mathcal I_A=\mathcal O(-2D_A),\qquad
+ \mathcal L_{A,B}=\mathcal O(-2D_{A,B}).
+\]
+
+The divisor sections define their embeddings into $\mathcal O$.
+Write $\operatorname{Perf}(X)$ for the category of complexes locally
+quasi-isomorphic to bounded complexes of finite-rank vector bundles.
+For $F\in\operatorname{Perf}(E^A)$ and
+$G'\in\operatorname{Perf}(E^B)$, define
+$F\star G'=(F\boxtimes G')\otimes\mathcal L_{A,B}$.
+Here $\boxtimes$ is the derived external tensor product.
+No shuffle symmetrization is included in this definition.
+
+\begin{proposition}\label{ei:prop:flags}
+Multiplication of the pair sections factors through
+\[
+ \mathcal I_A\otimes\mathcal I_B\otimes\mathcal L_{A,B}
+       \xrightarrow{\sim}\mathcal I_{A\cup B}.
+\]
+These isomorphisms are compatible with every ordered flag.
+The line identifications
+\begin{equation}\label{ei:eq:associator}
+ \mathcal L_{A,B}\otimes\mathcal L_{A\cup B,C}
+ \cong
+ \mathcal L_{B,C}\otimes\mathcal L_{A,B\cup C}
+\end{equation}
+preserve the sections and all regroupings. In particular,
+\[
+ \mathcal L_{A,B}
+ \cong\mathcal I_{A\cup B}\otimes\mathcal I_A^{-1}
+                         \otimes\mathcal I_B^{-1}.
+\]
+The functors $\mathsf T_A(F)=F\otimes\mathcal I_A^{-1}$
+untwist $\star$. Halving the divisors gives compatible square
+roots of the line identifications.
+\end{proposition}
+
+\begin{proof}
+The identity
+$D_{A\cup B}=D_A+D_B+D_{A,B}$ separates internal and crossing edges.
+It gives the first isomorphism, its section and the coboundary formula.
+For three blocks, each side of \eqref{ei:eq:associator} contains
+every edge between distinct blocks once.
+The same count applies to any finite ordered flag.
+Thus every composite is the identification of the same divisor line.
+
+Cancelling the internal lines gives
+$\mathsf T_{A\cup B}(F\star G')
+\cong\mathsf T_A(F)\boxtimes\mathsf T_B(G')$.
+The empty sector has $\mathcal I_\varnothing=\mathcal O$.
+Replacing each coefficient $-2$ by $-1$ preserves every divisor
+addition identity and gives the square roots.
+\end{proof}
+
+The doubled-divisor cokernel belongs to the final embedding
+$\mathcal I_{A\cup B}\hookrightarrow\mathcal O$.
+Under $\mathsf T$, the two-color coefficient map becomes
+$\mathcal O\to\mathcal O(2\Delta)$, with its doubled zero unchanged.
+The square roots above concern the specified labeled divisor lines
+at $h=0$. Compact orientation lines, same-color factors and
+shuffle maps require their own comparisons.
+
+To retain simultaneous equations, fix a commutative ring $R$ and
+elements $f_1,\ldots,f_r$. Their Koszul algebra is
+\begin{equation}\label{ei:eq:koszul}
+ K_R(f_1,\ldots,f_r)
+  =\bigl(R\otimes\Lambda(\epsilon_1,\ldots,\epsilon_r),d\bigr),
+ \qquad |\epsilon_i|=-1,\quad d\epsilon_i=f_i.
+\end{equation}
+The differential is a graded derivation of degree one.
+All tensor signs below use this cochain grading.
+
+Over $R=\mathbb C[[u]]$, $K_R(u^2)$ has only
+$H^0=R/(u^2)$. In $K_R(u,u)$, subtract the first odd generator
+from the second. Resolving the remaining regular equation gives
+\[
+ K_R(u,u)\simeq R/(u)\otimes\Lambda(\epsilon),\qquad d\epsilon=0.
+\]
+The first construction retains a nilpotent coordinate.
+The second retains a negative excess class.
+
+For a triangle put $x=z_2-z_1$, $y=z_3-z_2$ in logarithmic
+coordinates. The product coefficient has cone
+$K_{\mathbb C[[x,y]]}(x^2y^2(x+y)^2)$, supported on three doubled
+lines and concentrated in cohomological degree zero.
+The simultaneous pair intersection is
+\begin{equation}\label{ei:eq:triangle-koszul}
+ K_{\mathbb C[[x,y]]}(x^2,y^2,(x+y)^2).
+\end{equation}
+It is supported at the origin and has negative cohomology.
+This additional incidence object does not measure a failure of
+associativity of the original product.
+
+For nonzero $f,g$ in a domain there is instead an exact sequence
+\[
+ 0\longrightarrow R/(f)\xrightarrow{g}R/(fg)
+   \longrightarrow R/(g)\longrightarrow0.
+\]
+Its global version carries the corresponding line twists.
+This filtration of a product cone is different from the derived
+tensor product of the two cones.
+
+\section{A global spectral coefficient and its finite model}
+\label{ei:sec:graph}
+
+Suppose that $G$ is connected, with $n\geq1$ vertices and $m$ edges.
+Common translation acts freely on $E^n$, and differences from the
+first point identify
+\[
+ B_n=E^n/E_{\mathrm{diag}}\cong E^{n-1}.
+\]
+Each equality divisor descends to a divisor $D_e$ on $B_n$.
+Write $L_e=\mathcal O_{B_n}(2D_e)$ and let $s_e$ be its divisor
+section. Define the commutative differential graded sheaf
+\begin{equation}\label{ei:eq:global-koszul}
+ \mathscr K_G=\bigotimes_{e\in E(G)}
+       [L_e^{-1}\xrightarrow{s_e}\mathcal O_{B_n}],
+\end{equation}
+with $L_e^{-1}$ in degree $-1$.
+Its coefficient algebra is $R\Gamma(B_n,\mathscr K_G)$.
+
+\begin{lemma}\label{ei:lem:completion}
+The complex $\mathscr K_G$ is perfect and its cohomology sheaves
+have finite length at the origin of $B_n$.
+Restriction to the formal completion there computes its derived
+global sections as a differential graded algebra.
+\end{lemma}
+
+\begin{proof}
+Every factor is a two-term complex of line bundles.
+Away from their common zero locus, an invertible section makes one
+factor contractible. Connectedness identifies the common zero locus
+with the origin in $B_n$.
+The coherent cohomology sheaves therefore have finite length.
+
+They have no higher cohomology and are unchanged by completion.
+The hypercohomology spectral sequence proves that restriction
+induces a cohomology isomorphism. Restriction also preserves
+multiplication and the differential.
+\end{proof}
+
+For $n=1$, this algebra is $\mathbb C$ on a point.
+The empty configuration has translation quotient
+$[\mathrm{pt}/E]=BE$ and is outside this $n\geq1$ construction.
+The spectral quotient also differs from the common translation
+torsor on compact sheaf moduli.
+
+Formula \eqref{ei:eq:global-koszul} also defines complexes for
+disconnected subgraphs on the same vertex set.
+Adding an edge $e$ gives the exact triangle
+\begin{equation}\label{ei:eq:edge-triangle}
+ \mathscr K_G\otimes L_e^{-1}\xrightarrow{s_e}\mathscr K_G
+ \longrightarrow\mathscr K_{G+e}
+ \longrightarrow\mathscr K_G\otimes L_e^{-1}[1].
+\end{equation}
+The middle map is inclusion of the even summand and preserves the
+differential graded algebra structure. Locally place the new
+generator first and write $a+\epsilon_e b$.
+The last map sends this element to $b$ in the shifted term.
+Its sign follows from
+$d(\epsilon_e b)=s_e b-\epsilon_e db$.
+
+Permuting edges permutes odd generators with exterior signs.
+Thus the edge additions and all subset cubes commute on the full
+Koszul object, including disconnected intermediate subgraphs.
+
+Choose an oriented spanning tree $T$ and let
+$u_1,\ldots,u_{n-1}$ be its logarithmic edge differences.
+These are coordinates in the completed local ring of $B_n$.
+For a chord $c\notin T$, its difference is
+\[
+ \ell_c=\sum_a\sigma_{ca}u_a,\qquad
+ \sigma_{ca}\in\{0,1,-1\}.
+\]
+The signs record traversal of the tree path.
+Put $\beta=m-n+1$ and
+$A_T=\mathbb C[u_1,\ldots,u_{n-1}]/(u_1^2,\ldots,u_{n-1}^2)$.
+
+\begin{theorem}\label{ei:thm:finite-model}
+After these coordinate and frame choices,
+$R\Gamma(B_n,\mathscr K_G)$ is represented by
+\begin{equation}\label{ei:eq:finite-model}
+ C_{G,T}=A_T\otimes\Lambda(\epsilon_c:c\notin T),\qquad
+ d\epsilon_c=2\sum_{a<b}\sigma_{ca}\sigma_{cb}u_au_b.
+\end{equation}
+Its dimension is $2^m$ and its degrees lie in $[-\beta,0]$.
+Different trees give quasi-isomorphic algebras through the full
+edge Koszul complex.
+\end{theorem}
+
+\begin{proof}
+In a theta frame, each section is the square of its logarithmic
+difference times a unit. Divide its Koszul generator by that unit.
+The tree equations form the regular sequence
+$u_1^2,\ldots,u_{n-1}^2$.
+Their Koszul resolution maps multiplicatively to $A_T$.
+Tensoring with the finite free chord factors preserves the
+quasi-isomorphism.
+
+In $A_T$ the squares vanish, leaving the displayed differential.
+Squarefree coordinate monomials and exterior chord monomials give
+$2^{n-1}2^\beta=2^m$ basis elements.
+Every tree reduction starts from the same completed full edge
+complex, giving the asserted zigzag.
+\end{proof}
+
+A change of tree need not strictly identify the two finite models.
+Symmetries act first on the full edge complex.
+A symmetry preserving the chosen tree acts directly on its quotient,
+with the induced exterior signs.
+
+\begin{proposition}\label{ei:prop:trace}
+Fix orders of the tree coordinates and chord generators.
+The top-coefficient functional
+\[
+ \tau(a)=[u_1\cdots u_{n-1}\epsilon_1\cdots\epsilon_\beta]a
+\]
+gives a perfect cochain pairing
+$C_{G,T}\otimes C_{G,T}\to\mathbb C[\beta]$ by multiplication.
+Here $C[r]^i=C^{i+r}$. Consequently
+\[
+ \dim H^{-j}(C_{G,T})
+  =\dim H^{-(\beta-j)}(C_{G,T}).
+\]
+\end{proposition}
+
+\begin{proof}
+Each basis monomial pairs only with its complementary monomial.
+The exterior ordering supplies its sign, so the matrix is a signed
+permutation matrix. The differential lowers exterior length,
+which gives $\tau(da)=0$.
+Applying this identity to $d(ab)$ proves compatibility with the
+differential. A perfect pairing of finite complexes over a field
+induces a perfect pairing on cohomology.
+\end{proof}
+
+The normalization of this trace is part of the construction.
+A graph symmetry may change it by a character.
+We first compute the simplest cycle, then determine this character
+in a repeated-color example.
+
+\section{The triangle and its minimal algebra}
+\label{ei:gio:sec:operations}
+
+For the triangle, \eqref{ei:eq:triangle-koszul} reduces
+along the tree equations $x^2,y^2$ to
+\begin{equation}\label{ei:gio:eq:triangle}
+ A=\mathbb C[x,y]/(x^2,y^2)\otimes\Lambda(\eta),
+ \qquad |x|=|y|=0,\quad |\eta|=-1,\quad d\eta=xy.
+\end{equation}
+Indeed the remaining equation is $2xy$. Dividing its
+odd generator by two gives $\eta$.
+The algebra has eight basis elements. Write $H=H^*(A)$, represented by
+\begin{equation}\label{ei:gio:eq:triangle-cohomology}
+ H^0=\langle1,x,y\rangle,\qquad
+ H^{-1}=\langle x\eta,y\eta,xy\eta\rangle.
+\end{equation}
+
+The radical $V=\langle x,y\rangle\subset H^0$ has square
+zero. Its only nonzero actions on the displayed negative
+classes are
+\[
+ x\cdot y\eta=y\cdot x\eta=xy\eta.
+\]
+Products of two negative classes vanish.
+
+Let $i:H\to A$ include these representatives, and let
+$p:A\to H$ kill $xy$ and $\eta$ and retain the other six
+basis elements. Set
+\[
+ \mathsf h(xy)=\eta,\qquad
+ \mathsf h=0\quad\hbox{on the other basis elements}.
+\]
+Then $pi=1$, $d\mathsf h+\mathsf h d=1-ip$, and
+$\mathsf h^2=\mathsf h i=p\mathsf h=0$.
+Define a symmetric form $q$ on $V$ by
+$q(x,y)=q(y,x)=1$ and $q(x,x)=q(y,y)=0$.
+
+Augment $A$ by $x,y,\eta\mapsto0$, and give $H$ the induced
+augmentation. The augmentation ideal is the kernel of this map.
+
+We fix the bar signs before giving the higher product.
+Write $sa$ for suspension, with $|sa|=|a|-1$.
+On the tensor coalgebra of suspended augmentation ideals
+use the degree-one components
+\begin{align}
+ b_1(sa)&=-s(da),\notag\\
+ b_2(sa,sb)&=(-1)^{|a|}s(ab),\notag\\
+ b_3(sa,sb,sc)&=(-1)^{2|a|+|b|}s\,m_3(a,b,c).
+ \label{ei:gio:eq:bar-signs}
+\end{align}
+Their extension as coderivations uses the Koszul sign
+for passing a degree-one map across the preceding
+suspended inputs. The source algebra $A$ has $b_3=0$.
+The minimal algebra below has $b_1=0$.
+
+\begin{theorem}\label{ei:gio:thm:triangle-minimal}
+The binary product in \eqref{ei:gio:eq:triangle-cohomology}
+extends to a strictly unital minimal $A_\infty$ algebra by
+\begin{equation}\label{ei:gio:eq:triangle-m3}
+ m_3(a,b,c)=\bigl(q(b,c)a-q(a,b)c\bigr)\eta,
+ \qquad a,b,c\in V,
+\end{equation}
+and by setting $m_3=0$ on every other pattern of inputs.
+All $m_n$ with $n\ge4$ vanish. A strictly unital
+quasi-isomorphism from this algebra to $A$ has suspended
+components
+\[
+ I_1(sa)=s\,i(a),\qquad
+ I_2(sa,sb)=s\,\mathsf h(i(a)i(b)),\qquad I_{n\ge3}=0.
+\]
+The second component is nonzero only for inputs in $V$.
+\end{theorem}
+
+\begin{proof}
+The binary product is $p(i(a)i(b))$.
+The only nonzero homotopy replaces $xy$ by $\eta$.
+In arity two the bar comparison equation is exactly
+\[
+ d\mathsf h(i(a)i(b))=i(a)i(b)-i\,m_2(a,b).
+\]
+
+For three inputs in $V$, the two remaining terms are
+\[
+ p\bigl(i(a)\mathsf h(i(b)i(c))-\mathsf h(i(a)i(b))i(c)\bigr),
+\]
+which gives \eqref{ei:gio:eq:triangle-m3} with the signs
+of \eqref{ei:gio:eq:bar-signs}. An input of degree $-1$ already
+contains $\eta$, so both terms vanish.
+
+In every higher transfer tree, a further homotopy above
+an $\eta$-marked expression is zero, or two homotopy
+outputs are multiplied and give $\eta^2=0$.
+Thus all higher products vanish. The same two facts
+kill all comparison equations above arity three and
+all composites of two ternary operations.
+
+In arity four,
+for $a,b,c,d\in V$ the remaining equation is
+\[
+ m_2(m_3(a,b,c),d)+m_2(a,m_3(b,c,d))=0.
+\]
+The two coefficients of $xy\eta$ cancel by
+\eqref{ei:gio:eq:triangle-m3}. If an input has degree
+$-1$, every term vanishes. These formulas give the
+transfer along the stated contraction and verify
+its bar-square equations. Every higher component
+vanishes on a unit, while $I_1(1)=1$.
+\end{proof}
+
+The ternary product is detected without choosing a
+minimal-model basis. Since $xy=d\eta$ and $y^2=0$,
+the triple Massey set is
+\begin{equation}\label{ei:gio:eq:triangle-massey}
+ \langle[x],[y],[y]\rangle
+ =-[y\eta]+\langle[xy\eta]\rangle.
+\end{equation}
+Its indeterminacy is
+$xH^{-1}+H^{-1}y=\langle xy\eta\rangle$.
+It does not contain zero, so $A$ is nonformal.
+This operation belongs to the simultaneous derived
+intersection of the doubled pair divisors. It does not
+assert that the original Hall multiplication fails
+associativity.
+
+\begin{remark}\label{ei:gio:rem:linear-and-euler}
+The multiplicity of the equations matters. With linear
+pair equations the corresponding formal complex is
+$K(x,y,x+y)$. Subtracting the first two odd generators
+from the third makes the latter closed. Resolving $x,y$
+then gives $\mathbb C\otimes\Lambda(\epsilon)$ with zero
+differential. The closed generator records the linear dependence among the
+three equations. The ternary operation in
+\eqref{ei:gio:eq:triangle-m3} records the doubled equations.
+
+There is also an exact algebraic comparison with an Euler
+extension. Put $X=\mathbb P^1\times\mathbb P^1$ and choose
+the two degree-two generators $x,y$ with $\int_Xxy=1$.
+Then $H^*(X;\mathbb C)=\mathbb C[x,y]/(x^2,y^2)$ and
+$e(TX)=4xy$. In the algebra
+$H^*(X;\mathbb C)\otimes\Lambda(e)$ with $|e|=3$ and
+$de=4xy$, set $\eta=e/4$.
+
+Its multiplication and
+differential are exactly those of \eqref{ei:gio:eq:triangle},
+after changing the integer degrees of $x,y,\eta$ to
+$0,0,-1$. Parity is unchanged. This comparison of
+algebras does not identify their geometric sources.
+\end{remark}
+
+\section{Two equal colors}
+
+Take four labeled vertices $0,1,2,3$ with colors
+$(1,1,2,3)$, and join precisely the pairs of unequal
+colors. The tree with edges $02,12,23$ is preserved
+by the transposition $\sigma=(01)$. In logarithmic
+coordinates put
+\[
+ x=z_0-z_2,\qquad y=z_1-z_2,\qquad z=z_3-z_2.
+\]
+The two chords give $(x-z)^2$ and $(y-z)^2$.
+After the tree quotient and rescaling their generators,
+the finite model is
+\begin{equation}\label{ei:gio:eq:repeated-color}
+ C=\mathbb C[x,y,z]/(x^2,y^2,z^2)
+           \otimes\Lambda(\eta_1,\eta_2),
+ \qquad d\eta_1=xz,\quad d\eta_2=yz.
+\end{equation}
+
+All three coordinates have degree zero and both odd
+generators degree $-1$. The actual graph transposition
+acts by
+\[
+ \sigma(x)=y,\quad\sigma(y)=x,\quad\sigma(z)=z,
+ \qquad\sigma(\eta_1)=\eta_2,
+       \sigma(\eta_2)=\eta_1.
+\]
+
+In particular $\sigma(\eta_1\eta_2)=-\eta_1\eta_2$.
+This action commutes with $d$ and is the action induced
+from the full edge complex. Write $C^+$ and $C^-$ for
+its invariant and anti-invariant subcomplexes.
+
+\begin{theorem}\label{ei:gio:thm:color-cohomology}
+The cohomology dimensions, in degrees $0,-1,-2$, are
+\begin{equation}\label{ei:gio:eq:character-dimensions}
+ \dim H^*(C)=(5,10,5),\qquad
+ \dim H^*(C^+)=(4,5,1),\qquad
+ \dim H^*(C^-)=(1,5,4).
+\end{equation}
+The invariant cohomology algebra has bases
+\begin{align*}
+ H^0(C^+)&=\langle1,\alpha,z,\chi\rangle,
+             &\alpha&=x+y,&\chi&=xy,\\
+ H^{-1}(C^+)&=\langle p,q,r,s,t\rangle,\\
+ p&=x\eta_1+y\eta_2,&
+ q&=z(\eta_1+\eta_2),\\
+ r&=xy(\eta_1+\eta_2),&
+ s&=xz\eta_1+yz\eta_2,\\
+ t&=yz\eta_1+xz\eta_2,\\
+ H^{-2}(C^+)&=\langle u\rangle,
+             &u&=z(x-y)\eta_1\eta_2.
+\end{align*}
+Apart from the unit and graded commutativity, its
+nonzero products of these basis elements are
+\begin{equation}\label{ei:gio:eq:color-products}
+ \alpha^2=2\chi,\qquad
+ \alpha p=r,\qquad zp=s,\qquad
+ \alpha q=s+t,\qquad pq=u.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The dimensions of $C$ in degrees $0,-1,-2$ are
+$8,16,8$. The image of $d:C^{-1}\to C^0$ is
+$\langle xz,yz,xyz\rangle$.
+The other differential sends $a\eta_1\eta_2$ to
+$a(xz\eta_2-yz\eta_1)$. Its image has basis
+\[
+ xz\eta_2-yz\eta_1,\quad xyz\eta_1,\quad xyz\eta_2.
+\]
+Both differentials have rank three, proving the total
+dimensions.
+
+The invariant degree-zero space has basis
+$1,\alpha,z,\chi,\alpha z,xyz$, and its boundaries
+span $\alpha z,xyz$. The invariant cycles of degree
+$-1$ have basis $p,q,r,s,t,w$, where
+$w=xyz(\eta_1+\eta_2)$. The invariant degree-$-2$
+space has basis $(x-y)\eta_1\eta_2$ and $u$.
+Their differentials are $-w$ and zero. This proves
+the displayed invariant bases.
+
+Since taking invariants
+is exact over $\mathbb C$, subtraction gives the
+anti-invariant dimensions. Direct multiplication gives
+\eqref{ei:gio:eq:color-products}. Every omitted product
+contains a squared coordinate or is a multiple of the
+boundary $w$.
+\end{proof}
+
+\begin{corollary}\label{ei:gio:cor:color-massey}
+The invariant algebra $C^+$ is nonformal. More precisely,
+\begin{equation}\label{ei:gio:eq:color-massey}
+ \langle[\alpha],[z],[z]\rangle
+ =-[q]+\langle[r],[s],[t]\rangle
+\end{equation}
+does not contain zero.
+\end{corollary}
+
+\begin{proof}
+The invariant primitive $\eta_1+\eta_2$ has differential
+$\alpha z$, and $z^2=0$. It gives the representative
+$-z(\eta_1+\eta_2)=-q$. By
+\eqref{ei:gio:eq:color-products}, the indeterminacy
+$\alpha H^{-1}(C^+)+H^{-1}(C^+)z$ is
+$\langle r,s,t\rangle$. The cohomology basis shows
+that it does not contain $q$.
+\end{proof}
+
+\begin{proposition}\label{ei:gio:prop:trace-character}
+The perfect trace of this labeled model,
+$\tau(a)=[xyz\eta_1\eta_2]a$, satisfies
+$\tau(\sigma a)=-\tau(a)$. Its pairing restricts to
+perfect pairings between opposite characters, and
+vanishes between equal characters. The invariant
+cohomology has no perfect scalar Frobenius pairing
+supported in total degree $-2$.
+\end{proposition}
+
+\begin{proof}
+The coordinate product $xyz$ is fixed and the exterior
+product changes sign. Thus
+$\tau(\sigma a\,\sigma b)=-\tau(ab)$.
+If $a,b$ have characters $\varepsilon,\delta$, a
+nonzero pairing requires $\varepsilon\delta=-1$.
+The full pairing is perfect by
+Proposition~\ref{ei:prop:trace}. Decomposition into
+the two characters proves perfectness of the opposite
+blocks. Such a scalar Frobenius trace on the
+invariant cohomology would pair $H^0$ perfectly with
+$H^{-2}$, but these have dimensions four and one.
+\end{proof}
+
+The character is part of this explicit descent problem.
+It does not rule out a comparison retaining a nontrivial
+orientation line or both character sectors. It rules
+out discarding them while keeping the same perfect
+scalar trace.
+
+\section{Every graph with one cycle}
+
+The triangle dimensions extend to all connected graphs
+with one cycle. Suppose that the cycle has length $c$
+and that the graph has $n$ vertices. Removing a cycle
+edge gives a spanning tree. Orient its $c-1$ edges
+along the remaining cycle path and put
+\[
+ A_s=\mathbb C[u_1,\ldots,u_s]/(u_1^2,\ldots,u_s^2),
+ \qquad s=c-1,\qquad L=u_1+\cdots+u_s.
+\]
+The one chord has equation $L^2$. The $n-c$ tree
+coordinates outside the cycle occur in no chord equation.
+
+For polynomial degree, give every $u_a$ degree one.
+This grading differs from cochain degree.
+
+\begin{theorem}\label{ei:gio:thm:unicyclic}
+For this graph, cohomology occurs only in degrees
+$0,-1$, and
+\begin{equation}\label{ei:gio:eq:cycle-dimensions}
+ \dim H^0(C_{G,T})=\dim H^{-1}(C_{G,T})
+ =2^{n-c}\binom{c}{\lfloor c/2\rfloor}.
+\end{equation}
+For the cycle alone, the polynomial-degree-$k$ part
+of $H^0$ has dimension
+\[
+ \max\left\{\binom{s}{k}-\binom{s}{k-2},0\right\},
+\]
+where a binomial coefficient outside $0,\ldots,s$ is zero.
+\end{theorem}
+
+\begin{proof}
+On the squarefree monomials $u_I$ define
+$F(u_I)=\sum_{i\in I}u_{I\setminus\{i\}}$.
+Multiplication by $L$ and this operator satisfy
+\[
+ [F,L](u_I)=(s-2|I|)u_I.
+\]
+With $H(u_I)=(s-2|I|)u_I$, one also has
+$[H,L]=-2L$ and $[H,F]=2F$.
+These identities can be checked one variable at a
+time. The algebra $A_s$ is the tensor product of the resulting
+two-dimensional representations.
+
+For completeness, give its monomial basis the
+orthonormal positive Hermitian form. Then $F=L^*$.
+A primitive vector $v$ of degree $j$, meaning $Fv=0$,
+generates a string satisfying
+\[
+ F L^r v=r(s-2j-r+1)L^{r-1}v.
+\]
+The formula follows inductively from the commutators.
+
+Its norm identity shows that the nonzero string
+runs from degree $j$ to degree $s-j$. Its span is
+stable under $F,L,H$, so its orthogonal complement
+is stable too. Repetition decomposes $A_s$ into such
+symmetric strings.
+
+Consequently $L^2:(A_s)^{k-2}\to(A_s)^k$ has maximal rank.
+On a string it is nonzero exactly when both positions occur.
+The sets of strings containing these two positions are nested. This proves the cokernel formula.
+
+Summing its positive differences telescopes to
+\[
+ \binom{s}{\lfloor s/2\rfloor}
+ +\binom{s}{\lfloor(s-1)/2\rfloor}
+ =\binom{s+1}{\lfloor(s+1)/2\rfloor}.
+\]
+The kernel and cokernel of the endomorphism $L^2$
+have the same dimension. The remaining $n-c$
+squarefree variables contribute the factor $2^{n-c}$.
+\end{proof}
+
+Thus a tree on four vertices has only $H^0$ of
+dimension eight, a triangle has dimensions $(3,3)$,
+and a four-cycle has $(6,6)$. The repeated-color
+graph above has $(5,10,5)$.
+
+For comparison take the complete graph on four
+distinct colors. Its star-tree model is
+\[
+ A_3\otimes\Lambda(\alpha,\beta,\gamma),\qquad
+ d\alpha=xy,\quad d\beta=xz,\quad d\gamma=yz,
+\]
+where $A_3=\mathbb C[x,y,z]/(x^2,y^2,z^2)$.
+The three differential ranks, from degrees $-1,-2,-3$,
+are $4,6,4$. The first image is
+$\langle xy,xz,yz,xyz\rangle$.
+
+For the middle image use
+\[
+ xy\beta-xz\alpha,\quad xy\gamma-yz\alpha,
+ \quad xz\gamma-yz\beta,
+ \quad xyz\alpha,\quad xyz\beta,\quad xyz\gamma.
+\]
+These six independent vectors span all products of
+the three basic images. 
+The last kernel is the
+common annihilator of $xy,xz,yz$, namely
+$\langle xy,xz,yz,xyz\rangle$.
+Since the term dimensions are $8,24,24,8$, the
+cohomology dimensions are $(4,14,14,4)$.
+This is a four-color example. All these numbers
+measure the specified incidence coefficients,
+rather than root multiplicities of an Igusa algebra.
+
+\section{Independent quadratic parameters}
+\label{ei:sec:independent}
+
+The finite graph complex can occur as a derived fiber of a family
+whose total cohomology is concentrated in degree zero. We first give
+each edge its own quadratic parameter. The actual elliptic
+displacement will then provide a different comparison.
+
+
+Retain the connected graph $G$, spanning tree $T$,
+tree coordinates $u_a$ and chord forms $\ell_c$ of
+Theorem~\ref{ei:thm:finite-model}.
+For a tree edge $a$ also write $\ell_a=u_a$.
+Give every edge an independent parameter $t_e$, and put
+\[
+ R_G=\mathbb C[t_e:e\in E(G)],\qquad
+ B_T=R_G[u_1,\ldots,u_{n-1}]/(u_a^2-t_a:a\in T).
+\]
+The squarefree monomials $u_I$ form an $R_G$-basis of
+$B_T$. Define
+\begin{equation}\label{ei:gif:eq:graph-family}
+ \mathcal C_{G,T}=B_T\otimes\Lambda(\epsilon_c:c\notin T),
+ \qquad d\epsilon_c=\ell_c^2-t_c,
+ \qquad |\epsilon_c|=-1.
+\end{equation}
+
+This is a polynomial deformation of the finite formal
+model. The parameters are independently assigned to
+the edges. No identification with a universal compact
+Hall deformation is part of its definition.
+
+\begin{theorem}\label{ei:gif:thm:graph-family}
+The complex \eqref{ei:gif:eq:graph-family} is finite free
+over $R_G$, with term ranks
+$2^{n-1}\binom{\beta}{k}$ in degree $-k$.
+Its only cohomology is
+\begin{equation}\label{ei:gif:eq:family-cohomology}
+ H^0(\mathcal C_{G,T})\cong
+ \mathbb C[u_1,\ldots,u_{n-1}],\qquad
+ t_e\longmapsto\ell_e^2.
+\end{equation}
+Its derived fiber at $t_e=0$ is the graph algebra
+$C_{G,T}$. The coefficient functional
+\[
+ a\longmapsto
+ [u_1\cdots u_{n-1}\epsilon_1\cdots\epsilon_\beta]a
+\]
+gives a perfect pairing
+$\mathcal C_{G,T}\otimes_{R_G}\mathcal C_{G,T}
+\to R_G[\beta]$ of complexes.
+\end{theorem}
+
+\begin{proof}
+Eliminate the tree parameters to identify
+$B_T$ with the polynomial ring
+$\mathbb C[u_1,\ldots,u_{n-1},t_c:c\notin T]$.
+Each remaining equation $\ell_c^2-t_c$ eliminates
+its own parameter. In any order they form a regular
+sequence, with quotient the ring in
+\eqref{ei:gif:eq:family-cohomology}. Its Koszul resolution
+is precisely \eqref{ei:gif:eq:graph-family}.
+The displayed free basis gives the term ranks and
+computes derived base change by ordinary tensoring.
+At the origin its differential reduces to
+\eqref{ei:eq:finite-model}.
+
+For the pairing, a product $u_Iu_J$ contributes to
+the top squarefree coefficient exactly when
+$J=I^c$. An overlap replaces a square by a parameter
+and loses that coordinate from the squarefree part.
+The exterior factors likewise pair complementary
+subsets. The pairing matrix is therefore a signed
+permutation matrix over $R_G$. Its trace vanishes on
+the differential because exterior length decreases.
+The derivation rule proves compatibility with $d$.
+\end{proof}
+
+The theorem also holds after completion at the parameter
+origin. The image ideal contains every $u_a^2$, so
+the completed degree-zero cohomology is
+$\mathbb C[[u_1,\ldots,u_{n-1}]]$.
+The family need not be flat in cohomology: its central
+derived fiber retains the negative classes computed
+in Section~\ref{ei:gio:sec:operations}.
+On a cover adjoining square roots of the parameters,
+the equations factor as
+$(\ell_e-\sqrt{t_e})(\ell_e+\sqrt{t_e})$.
+No such cover is needed to define the family itself.
+
+\subsection{The triangle discriminant}
+
+For three edges set
+$t_{12}=a$, $t_{23}=b$, and $t_{13}=a+b+2c$.
+After rescaling the chord generator, the family is
+\begin{equation}\label{ei:gif:eq:triangle-family}
+ R=\mathbb C[a,b,c],\qquad
+ B=R[x,y]/(x^2-a,y^2-b),\qquad
+ \mathcal A_R=B\otimes\Lambda(\eta),\quad d\eta=xy-c.
+\end{equation}
+Thus $\mathcal A_R$ is free of rank four in each of
+degrees $-1,0$. Its total cohomology is
+$\mathbb C[x,y]$, with $a=x^2$, $b=y^2$, $c=xy$.
+In the basis $1,x,y,xy$, multiplication by $xy-c$ is
+\begin{equation}\label{ei:gif:eq:triangle-matrix}
+ F=\begin{pmatrix}
+ -c&0&0&ab\\
+ 0&-c&b&0\\
+ 0&a&-c&0\\
+ 1&0&0&-c
+ \end{pmatrix},\qquad
+ \det F=(c^2-ab)^2.
+\end{equation}
+Put $\delta=c^2-ab$ and $S=R/(\delta)$.
+
+\begin{theorem}\label{ei:gif:thm:triangle-module}
+As an $S$-module,
+\begin{equation}\label{ei:gif:eq:nonfree-module}
+ H^0(\mathcal A_R)\cong S\oplus I,
+ \qquad I=(a,c)\subset S.
+\end{equation}
+The second summand has rank one and is nonfree at the
+cone vertex. It has the two-periodic free resolution
+over $S$ determined by
+\begin{equation}\label{ei:gif:eq:matrix-factorization}
+ M=\begin{pmatrix}-c&b\\a&-c\end{pmatrix},\qquad
+ N=\begin{pmatrix}-c&-b\\-a&-c\end{pmatrix},
+ \qquad MN=NM=\delta I_2.
+\end{equation}
+The map $\operatorname{Spec}\mathbb C[x,y]
+\to\operatorname{Spec}S$ is the quotient double cover
+by $(x,y)\mapsto(-x,-y)$. The ring $S$ is already normal.
+\end{theorem}
+
+\begin{proof}
+Split the four basis elements by this involution.
+On $\langle1,xy\rangle$, the matrix is
+$\left(\begin{smallmatrix}-c&ab\\1&-c\end{smallmatrix}\right)$.
+Its unit entry permits invertible row and column
+operations reducing it to $\operatorname{diag}(1,-\delta)$.
+On $\langle x,y\rangle$, the matrix is $M$.
+The invariant subring of $\mathbb C[x,y]$ is generated
+by $x^2,y^2,xy$, with relation $c^2=ab$. It is $S$.
+
+Multiplication by $x$ identifies the anti-invariant
+summand with $(a,c)$, sending $x$ to $a$ and $y$ to $c$.
+This multiplication is injective in $\mathbb C[x,y]$.
+The odd block of \eqref{ei:gif:eq:triangle-matrix} supplies
+its presentation by $M$.
+
+The ideal $I$ is nonzero in the domain $S$, so it has
+rank one. At the maximal ideal $(a,b,c)$ its classes
+$a,c$ are independent modulo $(a,b,c)I$. It therefore
+requires two generators there and cannot be a free
+rank-one module.
+
+The products in \eqref{ei:gif:eq:matrix-factorization}
+follow by multiplication. To prove exactness, suppose
+$M\bar v=0$ over $S$. Lift to $R$, so
+$Mv=\delta w=MNw$. The determinant of $M$ is the
+nonzero polynomial $\delta$, hence $M$ is injective
+over $R$ and $v=Nw$. Thus $\ker\bar M=\operatorname{im}\bar N$.
+Interchanging $M,N$ proves the other equality.
+
+Finally, let an element of the invariant fraction field be
+integral over the invariant ring. It is also integral over the
+normal ring $\mathbb C[x,y]$, so it belongs to that ring.
+It is still invariant, proving that the invariant ring is normal. The invariant
+field has index two in $\mathbb C(x,y)$.
+The cover is consequently not a normalization map.
+\end{proof}
+
+In this decomposition, invariant and anti-invariant
+refer to the simultaneous sign action, not to cochain
+degree or super parity. A generic rank-two module
+has here a nonfree rank-one summand. Replacing it by
+two free copies would lose the module at the vertex.
+
+\begin{proposition}\label{ei:gif:prop:triangle-fibers}
+The derived fibers of \eqref{ei:gif:eq:triangle-family}
+have the following dimensions:
+\[
+\begin{array}{c|ccc}
+ \text{parameter}&\operatorname{rank}F&\dim H^0&\dim H^{-1}\\\hline
+ \delta\ne0&4&0&0\\
+ \delta=0,\ (a,b,c)\ne0&2&2&2\\
+ (a,b,c)=0&1&3&3.
+\end{array}
+\]
+Every smooth-discriminant fiber is formal, with
+cohomology algebra $\mathbb C^2\otimes\Lambda(\xi)$,
+$|\xi|=-1$. The vertex fiber is the nonformal
+triangle algebra \eqref{ei:gio:eq:triangle}.
+\end{proposition}
+
+\begin{proof}
+Off the discriminant, $F$ is invertible.
+At a nonzero point of $\delta=0$, at least one of
+$a,b$ is nonzero. If $a\ne0$, split $x^2=a$ into
+the two roots $r,-r$. Each component is
+\[
+ \mathbb C[y]/(y^2-b)\otimes\Lambda(\eta),
+ \qquad d\eta=r_jy-c,\qquad r_j\in\{r,-r\}.
+\]
+Multiplication by $r_jy-c$ has rank one.
+
+Its kernel is the line generated by $r_jy+c$,
+since $r_j^2b=c^2$ and the coefficient $r_j$ is
+nonzero. Sending $\xi$ to $(r_jy+c)\eta$ and
+$1$ to $1$ gives a differential graded algebra
+quasi-isomorphism from $\Lambda(\xi)$ to this
+component. The case $b\ne0$ is symmetric.
+At the vertex, $F$ has only its bottom-left entry
+nonzero. Its fiber is exactly
+\eqref{ei:gio:eq:triangle}, whose Massey product was
+computed in \eqref{ei:gio:eq:triangle-massey}.
+\end{proof}
+
+Ordinary specialization of $H^0(\mathcal A_R)$ at
+the vertex gives only
+$\mathbb C[x,y]/(x^2,y^2,xy)$. It loses both the
+negative classes and their ternary operation.
+The relative pairing can also be seen directly.
+Extraction of the coefficient of $xy$ in $B$ has
+Gram matrix
+\[
+ P=\begin{pmatrix}
+ 0&0&0&1\\0&0&1&0\\0&1&0&0\\1&0&0&0
+ \end{pmatrix},\qquad F^tP=PF.
+\]
+Extracting additionally $\eta$ gives the perfect
+pairing $\mathcal A_R\otimes_R\mathcal A_R\to R[1]$.
+The jump in fiber cohomology therefore occurs inside
+a fixed free complex with a perfect chain pairing.
+
+\subsection{A nonnormal four-cycle image}
+
+For a four-cycle choose consecutive tree coordinates
+$u,v,w$. Its final edge has difference $u+v+w$.
+Write its parameter as $a+b+c+2z$, where the three
+tree parameters are $a,b,c$. Its finite free family is
+\begin{equation}\label{ei:gif:eq:four-cycle-family}
+ \begin{gathered}
+ R_4=\mathbb C[a,b,c,z],\qquad
+ B_4=R_4[u,v,w]/(u^2-a,v^2-b,w^2-c),\\
+ \mathcal A_4=B_4\otimes\Lambda(\eta),\qquad
+ |\eta|=-1,\qquad d\eta=uv+uw+vw-z.
+ \end{gathered}
+\end{equation}
+It resolves $\mathbb C[u,v,w]$ with parameter map
+\[
+ (a,b,c,z)=(u^2,v^2,w^2,uv+uw+vw).
+\]
+Define the quartic polynomial
+\begin{equation}\label{ei:gif:eq:quartic}
+ P_4=(z^2+ab-c(a+b))^2-4ab(z+c)^2.
+\end{equation}
+
+\begin{theorem}\label{ei:gif:thm:four-cycle-normalization}
+The parameter image in \eqref{ei:gif:eq:four-cycle-family}
+has coordinate ring
+\[
+ A_4=\mathbb C[a,b,c,z]/(P_4),
+\]
+and $P_4$ is irreducible. If $F_4$ is multiplication
+by $uv+uw+vw-z$ on the rank-eight $R_4$-module $B_4$,
+then $\det F_4=P_4^2$.
+The ring $A_4$ is not normal. Its normalization is
+\begin{equation}\label{ei:gif:eq:normalization}
+ D_4=\mathbb C[u,v,w]^{\{\pm1\}},
+\end{equation}
+where the sign acts simultaneously on all three
+variables. The map from $\mathbb A^3$ to
+$\operatorname{Spec}D_4$ still has generic degree two.
+\end{theorem}
+
+\begin{proof}
+Put $z=uv+uw+vw$ and observe that
+$(z-uv)^2-c(u+v)^2=0$.
+The two polynomials $(z-uv)^2-c(u+v)^2$ and
+$(z+uv)^2-c(u-v)^2$ are conjugate under the sign
+change of $uv$. Their product, after using
+$u^2=a,v^2=b,w^2=c$, is
+\[
+ \bigl(z^2+ab-c(a+b)-2uv(z+c)\bigr)
+ \bigl(z^2+ab-c(a+b)+2uv(z+c)\bigr)=P_4.
+\]
+Thus the four possible values of $uv+uw+vw$ under
+independent signs, modulo simultaneous sign, are
+the roots of $P_4$.
+
+Over $\mathbb C(a,b,c)$ the extension obtained by
+adjoining $u,v,w$ is multiquadratic of degree eight.
+Its sign group fixes $uv+uw+vw$ exactly when all
+three signs are equal: the three monomials $uv,uw,vw$
+are independent over $\mathbb C(a,b,c)$.
+Its orbit therefore has four elements, proving that
+$P_4$ is the minimal polynomial. Since $P_4$ is
+monic in $z$, polynomial division shows that the
+kernel of the parameter map is exactly $(P_4)$.
+
+The determinant of multiplication by
+$uv+uw+vw-z$ is its norm. Each of the four orbit
+values occurs twice among the eight sign choices,
+so this norm is $P_4^2$. The identity over the
+fraction field is an identity over $R_4$.
+
+The invariant ring $D_4$ is generated by
+$u^2,v^2,w^2,uv,uw,vw$. Each cross product is
+integral over $A_4$, for example $(uv)^2=ab$.
+They also lie in its fraction field, since
+\begin{equation}\label{ei:gif:eq:cross-product}
+ uv=\frac{z^2+ab-c(a+b)}{2(z+c)},
+\end{equation}
+and cyclically for $uw,vw$. The denominators are
+nonzero elements of that field. Hence $D_4$ is
+finite and birational over $A_4$.
+It is normal by the same finite-invariant argument
+used for the triangle, and is therefore the
+integral closure of $A_4$.
+
+Finally, grade $u,v,w$ by degree one. The degree-two
+part of the image ring $A_4$ is spanned by
+\[
+ u^2,\quad v^2,\quad w^2,\quad uv+uw+vw.
+\]
+It does not contain $uv$. This integral element is
+missing from $A_4$, proving nonnormality. Simultaneous
+sign has order two on the fraction field of
+$\mathbb C[u,v,w]$, so the last assertion follows.
+\end{proof}
+
+For the triangle the squares and the single cross
+product already generate the sign-invariant ring.
+For the four-cycle the parameter records only the
+sum of three cross products. Formula
+\eqref{ei:gif:eq:cross-product} recovers them generically,
+while normalization restores them across the divisors
+where those fractions are not regular expressions.
+The normalization and the double cover thus record
+different geometric operations.
+
+
+\section{The actual elliptic displacement}
+\label{ei:sec:displacement}
+
+Take three ordered distinct colors with arrows pointing
+from lower to higher color. Remove the common spectral
+translation and use differences $x=z_2-z_1$, $y=z_3-z_2$.
+In a formal logarithm the third difference is $x+y$.
+Write $h$ also for the formal displacement parameter and set
+$R=\mathbb C[[h]]$. Consider the Koszul dg algebra over $R[x,y]$ of
+\begin{equation}\label{ei:esf:eq:triangle-equations}
+ x(x+h),\qquad y(y+h),\qquad(x+y)(x+y+h).
+\end{equation}
+
+Its extension to $\mathbb C[[h,x,y]]$ is the formal elliptic
+incidence complex after removing invertible theta factors.
+Each Koszul generator has cohomological degree $-1$ and
+differential equal to its equation. The differential is a
+graded derivation.
+
+\begin{theorem}\label{ei:esf:thm:flat-triangle}
+The Koszul algebra of \eqref{ei:esf:eq:triangle-equations} is
+multiplicatively quasi-isomorphic to
+\begin{equation}\label{ei:esf:eq:triangle}
+ B_h=R[x,y]/(x^2+hx,y^2+hy),\qquad
+ A_h=B_h\otimes\Lambda(\eta),\qquad
+ |\eta|=-1,\quad d\eta=xy.
+\end{equation}
+It is free of rank four in degrees $0$ and $-1$.
+Its cohomology $H=H^*(A_h)$ is free over $R$, with bases
+\begin{equation}\label{ei:esf:eq:cohomology}
+ H^0=R\{1,x,y\},\qquad
+ H^{-1}=R\{k_1,k_2,k_3\},
+ \quad
+ \begin{aligned}
+ k_1&=[(x+h)\eta],\\
+ k_2&=[(y+h)\eta],\\
+ k_3&=[(xy-h^2)\eta].
+ \end{aligned}
+\end{equation}
+The degree-zero relations are $x^2=-hx$, $y^2=-hy$, $xy=0$.
+The action on negative cohomology is
+\begin{equation}\label{ei:esf:eq:action}
+\begin{array}{c|ccc}
+ &k_1&k_2&k_3\\\hline
+ x&0&k_3+hk_1&-hk_3-h^2k_1\\
+ y&k_3+hk_2&0&-hk_3-h^2k_2.
+\end{array}
+\end{equation}
+Every product of two negative classes vanishes.
+\end{theorem}
+
+\begin{proof}
+The first two equations form a regular sequence: each is
+monic in its own variable, also after quotienting by the
+other. Their Koszul algebra resolves $B_h$. Tensoring with
+the remaining free Koszul factor preserves this
+quasi-isomorphism. In $B_h$ the third equation is $2xy$.
+Dividing its odd generator by two gives $\eta$.
+The same reduction applies to the completed coordinate
+ring, since the resulting finite $R$-module is complete.
+
+In the ordered basis $1,x,y,xy$ of $B_h$, multiplication by
+$xy$ has only one nonzero row, namely
+$(1,-h,-h,h^2)$, in the $xy$ row. Its cokernel is free on
+$1,x,y$. The elements $x+h$, $y+h$, $xy-h^2$ are killed by
+$xy$. Subtracting their multiples from any kernel vector
+leaves a scalar killed by the unit entry of the displayed
+row. Thus they form a free basis of the kernel, proving
+\eqref{ei:esf:eq:cohomology}.
+
+Multiplying these representatives in $B_h\otimes\Lambda(\eta)$
+gives \eqref{ei:esf:eq:action}. The relation $\eta^2=0$ gives
+the last claim.
+\end{proof}
+
+The free cohomology has a contraction defined over $R$.
+Let $i:H\to A_h$ include the displayed representatives.
+On the basis $1,x,y,xy,\eta,x\eta,y\eta,xy\eta$, let
+$p:A_h\to H$ kill $xy,\eta$, send the last three elements
+to $k_1,k_2,k_3$, and fix $1,x,y$. Put
+\begin{equation}\label{ei:esf:eq:contraction}
+ \mathsf H(xy)=\eta,\qquad
+ \mathsf H=0\text{ on the other basis elements}.
+\end{equation}
+Then $pi=1$, $d\mathsf H+\mathsf Hd=1-ip$, and
+$\mathsf H^2=\mathsf Hi=p\mathsf H=0$.
+For example,
+$\mathsf Hd(x\eta)=-h\eta=x\eta-i(k_1)$,
+so the parameter term is part of the contraction.
+
+\begin{proposition}\label{ei:esf:prop:trace}
+The functional $\tau:A_h\to R[1]$ extracting the coefficient
+of $xy\eta$ defines a perfect cyclic pairing of complexes
+by $(a,b)\mapsto\tau(ab)$. The induced pairing between
+$H^0$ and $H^{-1}$ is perfect over $R$.
+\end{proposition}
+
+\begin{proof}
+The multiplication-trace matrix on $B_h$, with trace equal
+to the coefficient of $xy$, is
+\[
+ \begin{pmatrix}
+ 0&0&0&1\\0&0&1&-h\\0&1&0&-h\\1&-h&-h&h^2
+ \end{pmatrix}.
+\]
+Its determinant is $1$. It pairs the degree-zero and
+degree-minus-one copies of $B_h$ in $A_h$.
+The trace kills $dA_h$, and the derivation rule gives
+$\tau((da)b)+(-1)^{|a|}\tau(a\,db)=0$.
+Graded commutativity gives cyclicity. On the cohomology
+bases of \eqref{ei:esf:eq:cohomology}, the pairing matrix is
+\[
+ \begin{pmatrix}0&0&1\\0&1&-h\\1&0&-h\end{pmatrix},
+\]
+of determinant $-1$.
+\end{proof}
+
+\subsection{The ternary class at coalescence}
+
+The contraction determines the multiplication beyond
+cohomology. Put $V=Rx\oplus Ry\subset H^0$, and define
+$q:V\otimes_R V\to R$ by
+$q(x,y)=q(y,x)=1$, $q(x,x)=q(y,y)=0$.
+Let $\psi:V\to H^{-1}$ send $x$ to $k_1$ and $y$ to $k_2$.
+
+Augment $A_h$ by $x,y,\eta\mapsto0$ and $H$ by
+$x,y,k_1,k_2,k_3\mapsto0$.
+For $A=A_h$ or $H$, put $\overline A=\ker(A\to R)$.
+On $T^c_R(s\overline A)=\bigoplus_{n\ge1}
+(s\overline A)^{\otimes_Rn}$ use the suspension
+$|sa|=|a|-1$ and bar components
+\[
+ b_1(sa)=-s(da),\quad
+ b_2(sa,sb)=(-1)^{|a|}s(ab),\quad
+ b_3(sa,sb,sc)=(-1)^{2|a|+|b|}s\,m_3(a,b,c).
+\]
+Their coderivation extensions use the Koszul sign for
+passing a degree-one map across the preceding suspended
+inputs. For $A_h$ set $b_3=0$, and for $H$ set $b_1=0$.
+
+\begin{theorem}\label{ei:esf:thm:minimal}
+The multiplication \eqref{ei:esf:eq:action} extends to a
+strictly unital minimal $A_\infty$ algebra on $H$ by
+\begin{equation}\label{ei:esf:eq:ternary}
+ m_3(a,b,c)=q(b,c)\psi(a)-q(a,b)\psi(c),\qquad a,b,c\in V.
+\end{equation}
+The ternary product is zero on all other basis input
+patterns, and $m_n=0$ for $n\ge4$.
+A strictly unital quasi-isomorphism to $A_h$ has suspended
+components
+\[
+ I_1(sa)=s\,i(a),\qquad
+ I_2(sa,sb)=s\,\mathsf H(i(a)i(b)),\qquad I_{n\ge3}=0.
+\]
+\end{theorem}
+
+\begin{proof}
+The binary transfer is $p(i(a)i(b))$.
+In arity two the comparison equation is
+$d\mathsf H(i(a)i(b))=i(a)i(b)-i\,m_2(a,b)$.
+For three degree-zero inputs, the two transfer trees give
+\[
+ p\bigl(i(a)\mathsf H(i(b)i(c))
+       -\mathsf H(i(a)i(b))i(c)\bigr).
+\]
+Since $\mathsf H$ extracts the $xy$ coefficient and
+$p(x\eta)=k_1$, $p(y\eta)=k_2$, this is
+\eqref{ei:esf:eq:ternary}. A negative input makes both terms
+zero. Unit inputs vanish because $p\mathsf H=\mathsf Hi=0$.
+
+Two internal homotopies in a transfer tree either lie on
+the same branch or on different branches. On the same
+branch the second acts on an expression containing $\eta$
+and vanishes. On different branches their outputs
+multiply to zero because $\eta^2=0$.
+All higher transfer products therefore vanish.
+
+For the comparison, the final homotopy
+also kills each expression containing $\eta$, so
+$I_{n\ge3}=0$. The bar comparison in arity three is the
+displayed two-tree formula together with
+$d\mathsf H+\mathsf Hd=1-ip$. In every higher arity its
+terms contain either two $I_2$ outputs or a homotopy
+applied to a negative input and vanish. Thus the bar
+comparison holds in every arity.
+
+Its leading tensor-length
+term is $i^{\otimes n}$, so the induced coalgebra map is
+injective. Compatibility with the square-zero
+bar differential on $A_h$ implies $b_H^2=0$.
+Finally $I_1$ induces the identity on cohomology, and
+every higher component vanishes on a unit.
+\end{proof}
+
+The ternary operation has a more precise relative invariant
+than its nonvanishing formula. Use the normalized Hochschild
+complex of the graded $R$-algebra $(H,m_2)$. An arity-two
+cochain of internal degree $-1$ can be nonzero only on
+$V\otimes V$, with values in $H^{-1}$. Define such a cochain by
+\begin{equation}\label{ei:esf:eq:primitive}
+ G_2(x,x)=0,\quad G_2(x,y)=G_2(y,x)=k_1,\quad G_2(y,y)=k_2.
+\end{equation}
+For degree-zero inputs its coboundary is
+\[
+ (\delta_HG_2)(a,b,c)=aG_2(b,c)-G_2(ab,c)
+                       +G_2(a,bc)-G_2(a,b)c.
+\]
+
+\begin{proposition}\label{ei:esf:prop:torsion-class}
+The arity-three, internal-degree-minus-one Hochschild
+class of $m_3$ is nonzero and has annihilator exactly $(h)$.
+More precisely,
+\begin{equation}\label{ei:esf:eq:torsion-class}
+ \delta_HG_2=h\,m_3.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The arity-four $A_\infty$ identity says that $m_3$ is a
+Hochschild cocycle. On the ordered triples
+$xxx,xxy,xyx,xyy,yxx,yxy,yyx,yyy$, the coboundary of
+\eqref{ei:esf:eq:primitive} is
+\[
+ h(0,k_1,0,-k_2,-k_1,0,k_2,0),
+\]
+by \eqref{ei:esf:eq:action}. These are exactly the values
+of $hm_3$. Other normalized input patterns vanish by
+degree, proving \eqref{ei:esf:eq:torsion-class}.
+
+Reduce modulo $h$, and let $G$ be a normalized two-cochain
+of internal degree $-1$. Since $xy=y^2=0$,
+\[
+ (\delta_HG)(x,y,y)=xG(y,y)-G(x,y)y\in\mathbb Ck_3:
+\]
+the action of $x,y$ on negative classes has image in that line.
+But $m_3(x,y,y)=-k_2$. Hence $m_3$ is not a boundary
+after reduction, and therefore is not a boundary over $R$.
+Every scalar outside $(h)$ is a unit in $R$.
+Equation~\eqref{ei:esf:eq:torsion-class} therefore gives
+the exact annihilator.
+\end{proof}
+
+Equivalently, at $h=0$ the triple Massey set is
+\[
+ \langle[x],[y],[y]\rangle=-k_2+\mathbb Ck_3.
+\]
+Indeed $xy=d\eta$, $y^2=0$, and the indeterminacy is
+$xH^{-1}+H^{-1}y=\mathbb Ck_3$. It excludes zero.
+Thus the central algebra is nonformal even though the
+relative cohomology is free and commutes with base change.
+
+\begin{remark}\label{ei:rem:unary-class}
+The torsion assertion concerns this particular ternary class.
+It does not extend to all positive Hochschild arities.
+Indeed let $D$ act by zero on $H^0$ and by the identity on $H^{-1}$.
+It is an $R$-linear derivation of internal degree zero: multiplication
+by $H^0$ preserves $H^{-1}$, and two negative classes multiply to zero.
+
+In the Hochschild complex of $(H,m_2)$, $D$ is therefore a unary
+cocycle. Unary boundaries of internal degree zero are inner
+commutators, which vanish because $H$ is graded commutative.
+Since $H^{-1}$ is free and nonzero over $R$, no nonzero scalar
+annihilates this class. It remains nonzero after inverting $h$.
+\end{remark}
+
+\subsection{Localization and the independent quadratic family}
+
+Let $K=\mathbb C((h))$. The tree algebra $B_h\otimes_R K$
+has four orthogonal idempotents
+\begin{equation}\label{ei:esf:eq:idempotents}
+ \begin{aligned}
+ e_{00}&=(x+h)(y+h)/h^2,&e_{10}&=-x(y+h)/h^2,\\
+ e_{01}&=-(x+h)y/h^2,&e_{11}&=xy/h^2.
+ \end{aligned}
+\end{equation}
+They sum to $1$ and evaluate at the four points with
+$x,y\in\{0,-h\}$. On the first three, $xy=0$, and on
+the last, $xy=h^2$.
+
+\begin{proposition}\label{ei:esf:prop:generic}
+Projection to the first three idempotent factors gives
+a multiplicative quasi-isomorphism
+\[
+ A_h\otimes_R K\longrightarrow
+ \prod_{\substack{(i,j)\in\{0,1\}^2\\(i,j)\ne(1,1)}}
+ K\otimes\Lambda(\eta_{ij}),
+ \qquad |\eta_{ij}|=-1,\quad d=0.
+\]
+The kernel contracts by multiplication by
+$h^{-2}e_{11}\eta$.
+\end{proposition}
+
+\begin{proof}
+On the $e_{11}$ factor,
+$d(h^{-2}e_{11}\eta)=e_{11}$, so the derivation rule
+gives a contracting homotopy. The other factors have
+zero differential. The product decomposition is by
+central idempotents, hence its projection is multiplicative.
+\end{proof}
+
+The poles in \eqref{ei:esf:eq:idempotents} prevent this
+decomposition from extending across $h=0$. There is also
+an explicit logarithmic connection on the punctured model:
+\begin{equation}\label{ei:esf:eq:connection}
+ \nabla_{\partial_h}
+ =\partial_h+h^{-1}
+       (x\partial_x+y\partial_y+2\eta\partial_\eta).
+\end{equation}
+It preserves $x^2+hx,y^2+hy$ and commutes with $d\eta=xy$.
+The elements $x/h,y/h,\eta/h^2$ are horizontal.
+The residue on the cohomology basis has weights
+$0,1,1,3,3,4$. In the analytic realization on a punctured
+disk its monodromy is trivial.
+
+This specifies an Euler
+connection. An identification with a Gauss--Manin
+connection would require an additional comparison.
+
+The equations $X^2=a$, $Y^2=b$ with chord differential $XY-c$,
+for independent complex parameters $a,b,c$, give a different family.
+The discrepancy already appears under recentering:
+with $X=x+h/2$, $Y=y+h/2$ one has
+\[
+ x^2+hx=X^2-h^2/4,\quad y^2+hy=Y^2-h^2/4,\quad
+ xy=XY-\frac h2(X+Y)+\frac{h^2}{4}.
+\]
+The linear term in the last equation is indispensable.
+There is in fact an obstruction to every base map, not
+only to this attempted change of coordinates.
+
+\begin{proposition}\label{ei:esf:prop:no-quadratic-pullback}
+No map $\mathbb C[a,b,c]\to R$ makes the derived pullback
+of
+\[
+ \mathbb C[a,b,c][X,Y]/(X^2-a,Y^2-b)
+       \otimes\Lambda(\zeta),\qquad |\zeta|=-1,\quad d\zeta=XY-c,
+\]
+quasi-isomorphic to $A_h$ as a dg $R$-algebra.
+\end{proposition}
+
+\begin{proof}
+Over $K$, the differential of the pulled-back complex,
+in the basis $1,X,Y,XY$, is
+\[
+ F=\begin{pmatrix}
+ -c&0&0&ab\\0&-c&b&0\\0&a&-c&0\\1&0&0&-c
+ \end{pmatrix}.
+\]
+Both cohomology dimensions can be $3$ only if $F$ has
+rank $1$. Its two-by-two minors include $a,b,c$ up to
+sign, so this forces $a=b=c=0$ in $K$ and therefore in $R$.
+The pullback would then be the constant central algebra.
+Its Massey set $-k_2+Kk_3$ still excludes zero, so it
+remains nonformal over $K$. Proposition~\ref{ei:esf:prop:generic}
+makes the generic fiber of $A_h$ formal, a contradiction.
+\end{proof}
+
+
+\section{Displacement along signed graph paths}
+\label{ei:sec:shifted-graphs}
+
+The triangle reduction extends to every connected finite
+simple graph $G$ on ordered vertices $0,\ldots,n-1$,
+with $R=\mathbb C[[h]]$ as in the formal triangle.
+Orient each edge from its lower to its higher vertex,
+and assign it the pair equation $\ell_e(\ell_e+h)$,
+where $\ell_{ij}=z_j-z_i$. Set $z_0=0$ to remove common
+spectral translation, choose an oriented spanning tree
+$T$, and use its $k=n-1$ edge differences $u_1,\ldots,u_k$
+as coordinates. For a chord $c$ write
+\[
+ \ell_c=\sum_{a=1}^k\sigma_{ca}u_a,\qquad
+ \sigma_{ca}\in\{-1,0,1\},\qquad
+ \beta=|E(G)|-n+1.
+\]
+The signs record the traversal of its tree path.
+
+\begin{theorem}\label{ei:esf:thm:graphs}
+The Koszul algebra of the shifted edge equations has a
+multiplicative quasi-isomorphism to
+\begin{equation}\label{ei:esf:eq:graph-model}
+ C_{G,h}=
+ R[u_1,\ldots,u_k]/(u_a(u_a+h):1\le a\le k)
+       \otimes\Lambda(\epsilon_c:c\notin T),
+ \qquad |\epsilon_c|=-1,
+\end{equation}
+with differential
+\begin{equation}\label{ei:esf:eq:chord}
+ d\epsilon_c=
+ 2\sum_{a<b}\sigma_{ca}\sigma_{cb}u_au_b
+ +h\sum_a(\sigma_{ca}-\sigma_{ca}^2)u_a.
+\end{equation}
+Its term in degree $-j$ is free of rank
+$2^k\binom\beta j$ over $R$. The total rank is $2^{|E(G)|}$.
+Define the finite set
+\[
+ \mathcal A_G=
+ \left\{s\in\{0,1\}^k:
+       \sum_a\sigma_{ca}s_a\in\{0,1\}
+       \text{ for every chord }c\right\}.
+\]
+Over $K=\mathbb C((h))$ there is a multiplicative
+quasi-isomorphism
+\begin{equation}\label{ei:esf:eq:graph-generic}
+ C_{G,h}\otimes_R K\longrightarrow
+ \prod_{s\in\mathcal A_G}
+       \Lambda_K(\epsilon_1,\ldots,\epsilon_\beta),
+ \qquad d=0.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Tree differences are integral unimodular coordinates
+on the translation quotient. Their monic quadratics
+are a regular sequence. Quotient by them and send the
+tree Koszul generators to zero, retaining the chord
+generators. This is a multiplicative quasi-isomorphism,
+as in Theorem~\ref{ei:esf:thm:flat-triangle}.
+
+Expanding $\ell_c^2+h\ell_c$ and substituting
+$u_a^2=-hu_a$ gives \eqref{ei:esf:eq:chord}.
+In particular a negatively traversed tree edge contributes
+$-2hu_a$, whose linear term cannot be discarded.
+The squarefree monomials in the $u_a$, tensored with
+exterior monomials, give the asserted ranks.
+
+After inverting $h$, the tree algebra splits into the
+points $u_a=-hs_a$, $s_a\in\{0,1\}$. On that factor the
+chord differential is
+$h^2L_c(s)(L_c(s)-1)$, where $L_c(s)=\sum_a\sigma_{ca}s_a$.
+If one such scalar is nonzero it is invertible in $K$.
+Multiplication by $\epsilon_c/(h^2L_c(s)(L_c(s)-1))$
+contracts that factor. On the remaining factors every
+chord differential is zero. Projection onto their product
+is \eqref{ei:esf:eq:graph-generic}.
+\end{proof}
+
+Cohomology over $R$ distinguishes graphs with the same
+generic description. Write $K_n$ for the complete graph
+on $n$ vertices, $ij$ for the edge $\{i,j\}$, and
+$C_{G,0}=C_{G,h}\otimes_R R/(h)$.
+In the following table the dimensions are listed in degrees
+$0,-1,\ldots$. Torsion refers to cohomology modules over $R$.
+
+\begin{proposition}\label{ei:esf:prop:graph-examples}
+For the graphs specified below, the central dimensions,
+generic dimensions and torsion submodules are
+\[
+\begin{array}{c|c|c|c}
+ G&H^*(C_{G,0})&H^*(C_{G,h}\otimes_RK)&R\text{-torsion}\\\hline
+ K_3&(3,3)&(3,3)&0\\
+ 01,12,23,03&(6,6)&(4,4)&(R/(h))^2\text{ in }H^0\\
+ K_4\setminus\{01\}&(5,10,5)&(5,10,5)&0\\
+ K_4&(4,14,14,4)&(4,12,12,4)&(R/(h))^2\text{ in }H^{-1}.
+\end{array}
+\]
+In the third row the colors of vertices $0,1,2,3$ are
+$(1,1,2,3)$, and only intercolor pair factors are included.
+The last row is an auxiliary four-color graph.
+\end{proposition}
+
+\begin{proof}
+Use the following trees and chord path vectors, in the
+orders shown:
+\[
+\begin{array}{c|c|c}
+ G&T& (\sigma_c)_c\\\hline
+ K_3&(01,12)&(1,1)\\
+ 01,12,23,03&(01,03,23)&(-1,1,-1)\\
+ K_4\setminus\{01\}&(02,12,13)&(1,-1,1),\ (0,-1,1)\\
+ K_4&(01,12,23)&(1,1,0),\ (1,1,1),\ (0,1,1).
+\end{array}
+\]
+There are respectively $3,4,5,4$ admissible assignments.
+Theorem~\ref{ei:esf:thm:graphs} gives all generic dimensions.
+
+For the calculation over $R$, order squarefree monomials
+by the bit mask of their tree coordinates, with $u_1$
+the least significant bit. Order exterior subsets
+lexicographically. Multiplication by $u_a$ is the tensor
+product of identity matrices with
+$\left(\begin{smallmatrix}0&0\\1&-h\end{smallmatrix}\right)$
+in the $a$th position. Equation~\eqref{ei:esf:eq:chord}
+therefore specifies every differential matrix. Removing
+the $r$th exterior factor has sign $(-1)^{r-1}$.
+
+Cancel a constant nonzero entry $w$ at row $r$, column
+$c$, replacing the other entries by
+\[
+ D'_{ij}=D_{ij}-D_{ic}w^{-1}D_{rj}
+ \quad(i\ne r,\ j\ne c).
+\]
+Apply the inverse column change to the preceding
+differential and the inverse row change to the following
+one. Their components in the cancelled summand vanish
+because consecutive differentials compose to zero.
+Thus each cancellation splits off the acyclic complex
+$[R\xrightarrow{1}R]$ over $R$.
+
+Choose the first available constant entry, reading
+differentials from lowest degree upwards and each matrix
+by rows. There are $1,2,6,14$ such cancellations in the
+four cases. For the triangle and the third graph the
+remaining differentials are zero, with respective term
+ranks $(3,3)$ and $(5,10,5)$.
+
+For the four-cycle the residual map has size $6$ by $6$.
+Its only nonzero rows, after factoring out $h$, are
+\[
+ \begin{pmatrix}
+ -2h&2h^2&4h&-4h^2&2h^2&-2h^3\\
+ -2&2h&-2&2h&2h&-2h^2\\
+ -2&2h&4&-4h&2h&-2h^2
+ \end{pmatrix}.
+\]
+The first row is $h$ times the third. The other two
+rows have a constant invertible minor in columns $1,3$.
+Every remaining column is an $R$-linear combination
+of these. Hence the two nonzero Smith factors of the
+original residual map are $h,h$.
+
+For $K_4$ the remaining term ranks are $(4,14,14,4)$.
+The sole nonzero differential is from degree $-2$ to
+degree $-1$. After factoring out $h$, deleting its zero
+rows and columns gives
+\[
+ \begin{pmatrix}
+ -2&2h&2&0&-2h&-2h&0\\
+ 2&-2h&0&-2&2h&0&2h\\
+ 0&0&-2&2&0&2h&-2h
+ \end{pmatrix}.
+\]
+
+The rows sum to zero, and the first two rows have a
+constant invertible minor in columns $1,3$. All other
+columns lie in their span. Again the nonzero Smith
+factors are $h,h$. The cokernel therefore has two
+$R/(h)$ summands, now in degree $-1$.
+The residual differentials vanish modulo $h$, giving
+the central dimensions in the table. This also shows
+that no higher power of $h$ occurs in the torsion.
+\end{proof}
+
+The absence of cohomological torsion for the triangle
+is consistent with Proposition~\ref{ei:esf:prop:torsion-class}:
+that proposition concerns a Hochschild class of its
+multiplication. In the repeated-color row a full Hall
+coefficient must also include the same-color factor.
+The number of admissible graph branches by itself
+defines neither a compact BPS multiplicity nor an Igusa
+coefficient.
+
+
+\section{The family over the spectral elliptic curve}
+\label{ei:sec:global-family}
+
+The formal calculation has a global source. On
+$E_x\times E_y\times E_h$ put $u_1=x$, $u_2=y$, $u_3=x+y$,
+and let
+\[
+ \mathcal S_i=u_i^*\Theta\otimes(u_i+h)^*\Theta,
+ \qquad s_i=\vartheta(u_i)\vartheta(u_i+h).
+\]
+Define
+\begin{equation}\label{ei:esf:eq:global}
+ \mathscr K=\bigotimes_{i=1}^3
+    [\mathcal S_i^{-1}\xrightarrow{s_i}\mathcal O],
+ \qquad
+ \mathscr C=R\pi_*\mathscr K,
+ \quad\pi:E_x\times E_y\times E_h\to E_h.
+\end{equation}
+The displayed factors have degrees $-1,0$.
+Write $E[n]=\ker([n]:E\to E)$ for the $n$-torsion subgroup.
+
+\begin{theorem}\label{ei:esf:thm:global-fibers}
+The complex $\mathscr C$ is represented by a two-term
+complex of locally free sheaves of rank four on $E_h$.
+Its derived fiber dimensions are
+\[
+ \begin{array}{c|cc}
+  h&\dim H^0&\dim H^{-1}\\\hline
+  0&3&3\\
+  h\ne0,\ 2h\ne0&3&3\\
+  h\ne0,\ 2h=0&4&4.
+ \end{array}
+\]
+Near a nonzero point $h_0\in E[2]$, three summands have
+zero differential. The fourth has local form
+$[\mathcal O\xrightarrow{v}\mathcal O]$, with $v$ a
+parameter at $h_0$ times a unit.
+It contributes a skyscraper to $H^0(\mathscr C)$.
+Its extra negative fiber class is a $\operatorname{Tor}_1$ class.
+\end{theorem}
+
+\begin{proof}
+The divisors of $s_1,s_2$ cut out
+\[
+ Z=\{x=0\text{ or }-h\}\times_{E_h}
+   \{y=0\text{ or }-h\},
+\]
+with their Cartier multiplicities. Each factor is finite
+flat of degree two over $E_h$: the two sections have no
+vertical component, and their sum has constant degree two.
+Equivalently, near their meeting point its equation is a
+monic quadratic in a relative local coordinate. Their
+product is finite flat of degree four. The first two
+sections are a regular sequence and their Koszul complex
+resolves $\mathcal O_Z$.
+
+Consequently \eqref{ei:esf:eq:global} reduces to the finite
+pushforward of
+$[\mathcal S_3^{-1}|_Z\xrightarrow{s_3}\mathcal O_Z]$.
+An invertible sheaf on a finite flat degree-four scheme
+has a locally free rank-four pushforward. Both terms are
+therefore locally free, and specialization computes every
+derived fiber.
+
+For $h\ne0$, the four points of $Z_h$ are distinct.
+The third section is zero at $(0,0),(0,-h),(-h,0)$.
+At $(-h,-h)$ its value, in the corresponding line, is
+\begin{equation}\label{ei:esf:eq:fourth-branch}
+ \vartheta(-2h)\vartheta(-h).
+\end{equation}
+It is nonzero unless $2h=0$.
+
+At a nonzero two-torsion
+point the first factor has a simple zero, since $[2]$
+is etale, and the second is nonzero. Local line frames
+give the fourth complex in the statement. Its cokernel
+is $\mathcal O/(v)$ and its kernel is zero. Derived
+specialization creates the extra class in degree $-1$.
+
+At $h=0$, formal logarithms and invertible theta frames
+give \eqref{ei:esf:eq:triangle}, with dimensions $(3,3)$.
+\end{proof}
+
+For $h\ne0$ the fiber is formal: each surviving reduced
+tree point carries one exterior factor with zero
+differential, and a nonsurviving point is contractible.
+At the three nonzero two-torsion points there are four
+such exterior factors. No trivialization of the three
+persistent line summands over the parameter curve is
+needed for this local description.
+
+On the original cover $h=2t$, the exceptional extra fibers
+lie at $E[4]\setminus E[2]$, a set of twelve points.
+The nonformal doubled fiber lies at the four points of
+$E[2]$. A formal neighborhood of $t=0$ does not contain
+the twelve exceptional points.
+
+\subsection{A root line on the halving cover}
+
+Choose a rigidification of the symmetric line $\Theta$
+at the origin. Regard
+$\mathcal S=u^*\Theta\otimes(u+h)^*\Theta$ as a line
+on $E_u\times E_h$. For each fixed $h$ it has degree two
+on $E_u$, so it has four degree-one square roots.
+Their variation is a separate question.
+
+\begin{theorem}\label{ei:esf:thm:root-cover}
+There is no line $\mathcal R$ on $E_u\times E_h$ with
+$\mathcal R^{\otimes2}\cong\mathcal S$.
+There is also no continuous relative choice of a
+degree-one root, even after tensoring $\mathcal S$ by
+a line pulled back from $E_h$.
+On the cover $h=2t$ there is an isomorphism
+\begin{equation}\label{ei:esf:eq:parallelogram}
+ u^*\Theta\otimes(u+2t)^*\Theta
+ \cong (u+t)^*\Theta^{\otimes2}\otimes t^*\Theta^{\otimes2},
+\end{equation}
+and hence the root
+\begin{equation}\label{ei:esf:eq:root}
+ \mathcal R_t=(u+t)^*\Theta\otimes t^*\Theta.
+\end{equation}
+For every nonzero $\xi\in E[2]$, the deck transformation
+$t\mapsto t+\xi$ changes its restriction to a $u$-fiber
+by the nontrivial two-torsion line associated to $\xi$.
+For $2t\ne0$, the section
+$\vartheta(u)\vartheta(u+2t)$ is not the square of a
+regular section of $\mathcal R_t$.
+\end{theorem}
+
+\begin{proof}
+Restrict $\mathcal S$ to $\{u_0\}\times E_h$. Its first
+factor is constant and its second has degree one.
+The square of a line has even degree, which proves the
+first assertion. Under $\operatorname{Pic}^1(E)\cong E$,
+a root on a fixed fiber has a point $m$ with $2m=-h$.
+A continuous choice over $E_h$ would induce
+$2m_*=-\mathrm{id}$ on $\pi_1(E)=\mathbb Z^2$, which is
+impossible. A line pulled back from the base does not
+change these relative Picard classes.
+
+For a symmetric rigidified line the cube theorem gives
+the parallelogram identity
+\[
+ (f+g)^*\Theta\otimes(f-g)^*\Theta
+ \cong(f^*\Theta)^{\otimes2}\otimes(g^*\Theta)^{\otimes2}
+\]
+for maps $f,g$ to $E$. The rigidification removes the
+constant fiber factor. Apply the identity with $f=u+t$, $g=t$
+to obtain \eqref{ei:esf:eq:parallelogram}.\footnote{
+J.~S.~Milne, \emph{Abelian Varieties},
+\href{https://www.jmilne.org/math/CourseNotes/AV.pdf}{Section~5},
+the cube theorem and its symmetric-line consequences.
+Stacks Project, \href{https://stacks.math.columbia.edu/tag/0BF4}{
+Theorem of the cube, tag 0BF4}.}
+This proves \eqref{ei:esf:eq:root} with its square isomorphism.
+
+On a $u$-fiber the ratio under a deck shift is the translate
+of $T_\xi^*\Theta\otimes\Theta^{-1}$, where $T_\xi$ is
+translation by $\xi$. The degree-one polarization
+$E\to\operatorname{Pic}^0(E)$ is an isomorphism, so this
+line is nontrivial for $\xi\ne0$ and has order two.
+
+Finally the two zeros $0,-2t$ of the displayed section
+are distinct and simple when $2t\ne0$. A square of a
+regular section has even vanishing order at every point.
+\end{proof}
+
+The isomorphism \eqref{ei:esf:eq:parallelogram} is a line
+identity. The scalar equation
+$\vartheta(u)\vartheta(u+2t)=
+(\vartheta(u+t)\vartheta(t))^2$ is false:
+its right-hand side vanishes identically at $t=0$.
+
+For an ordered flag, tensor \eqref{ei:esf:eq:root} over its
+selected interacting cross-pairs, using the same fixed
+square isomorphism for every labeled pair. Every
+parenthesization contains each pair exactly once.
+Associativity and symmetry of tensor products of lines
+therefore give all flag coherences, and their squares
+are the corresponding coefficient-line identifications.
+For the negative kernel lines use the inverse roots.
+These constructions concern the specified arrow factors.
+Same-color and dynamical factors require their own lines.
+
+\section{The compact coefficient comparison}
+\label{ei:sec:comparison}
+
+The pair map, its simultaneous derived intersection, and its
+parameter module retain different data. A multiplicative coefficient
+comparison must specify which of these objects is its target.
+For the graph intersection it must also preserve the higher products,
+the trace character and derived specialization.
+The independent quadratic family cannot replace the actual elliptic
+displacement family by a change of base.
+
+Let $S$ be a smooth projective K3 surface and let
+$E_{\mathrm{geom}}$ be an elliptic curve.
+A reduced critical Hall theory on $S\times E_{\mathrm{geom}}$
+requires its own compact moduli, orientations and extension maps.
+Extension flags retain their common translation torsor.
+Their empty object lies over $BE_{\mathrm{geom}}$,
+the classifying stack of these torsors.
+The quotient of nonempty spectral configurations constructed above
+does not identify this geometric base.
+
+An operator representation has a different preservation requirement.
+Multiplication by $t$ on the cochain complex $\mathbb C[t]$, with
+zero differential, is a cochain endomorphism.
+It is neither a unital algebra homomorphism nor a derivation.
+Thus an action on a state complex is governed by its endomorphism
+algebra. It need not act by automorphisms of an auxiliary
+multiplication on that state space.
+
+\begin{question}\label{ei:qn:compact}
+Construct the reduced oriented critical coefficient functor for
+the common-torsor extension geometry of $S\times E_{\mathrm{geom}}$.
+Specify its extension pullbacks and supported pushforwards.
+Give a map to a spectral base and determine its recipient:
+the product coefficient cone, the simultaneous pair intersection,
+or an independently defined state complex.
+
+Can a multiplicative comparison retain the ordered coefficient lines,
+their ambient images, the class $[m_3]$ and
+$\delta_HG_2=hm_3$? Can it extend over the whole spectral elliptic
+curve while preserving the exceptional fibers and the halving cover
+with its action on root choices?
+For a state representation, construct the corresponding supported
+operators and identify its marked reduced state.
+\end{question}
+
+A regular multiplicative comparison cannot replace $G_2$ by $G_2/h$
+without changing the coefficient ring.
+The cyclic trace of the spectral model also requires a comparison
+with compact reduced integration.
+The latter has its own dual-number-valued state, as expressed by the
+off-diagonal module coefficient in Section~\ref{nd:sec:comparison}.
+The definition of reduced integration retains this distinction
+already at the numerical level.\footnote{G.~Oberdieck and J.~Shen,
+\emph{Reduced Donaldson--Thomas invariants and the ring of dual numbers},
+\href{https://arxiv.org/abs/1612.03102}{Introduction}.
+See the definition of the reduced integration map.}
+
+Higher comparison terms must be constructed in the actual supported
+Hom complex. The bar residual criterion at the end of
+Chapter~\ref{nd:chap:diagonal} applies once that complex and its
+cohomology projection are supplied.
+The finite incidence contractions compute the operations of their
+own coefficient algebras.
+
+Finally, the root line on a fixed elliptic curve is not yet a
+weight-five automorphic line. The Igusa comparison requires a
+genus-two modular family and an identification of its geometric line
+and section with the denominator line and its automorphic section.
+The local theta factors and the chosen graph trace specify inputs
+for this construction, rather than the required modular comparison.
